@@ -515,6 +515,7 @@ private:
 
     friend class MessagePart;
     friend class CryptoMessagePart;
+    friend class CertMessagePart;
     friend class EncapsulatedRfc822MessagePart;
     friend class TextMessagePart;
 };

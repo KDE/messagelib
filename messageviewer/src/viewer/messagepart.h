@@ -33,6 +33,11 @@
 
 class QTextCodec;
 
+namespace GpgME
+{
+    class ImportResult;
+}
+
 namespace KMime
 {
 class Content;
@@ -174,6 +179,23 @@ public:
 private:
     KMime::Content *mNode;
     bool mOnlyOneMimePart;
+};
+
+class CertMessagePart : public MessagePart
+{
+public:
+    typedef QSharedPointer<CertMessagePart> Ptr;
+    CertMessagePart(MessageViewer::ObjectTreeParser* otp, KMime::Content* node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport);
+    virtual ~CertMessagePart();
+
+    QString text() const Q_DECL_OVERRIDE;
+    void html(bool decorate) Q_DECL_OVERRIDE;
+
+private:
+    KMime::Content* mNode;
+    bool mAutoImport;
+    GpgME::ImportResult mImportResult;
+    const Kleo::CryptoBackend::Protocol *mCryptoProto;
 };
 
 class EncapsulatedRfc822MessagePart : public MessagePart

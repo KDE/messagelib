@@ -42,6 +42,7 @@ private Q_SLOTS:
     void testAsync_data();
     void testAsync();
     void testInlinePGPEncryptedNotDecrypted();
+    void testSMimeAutoCertImport();
 };
 
 QTEST_MAIN(UnencryptedMessageTest)
@@ -265,6 +266,21 @@ void UnencryptedMessageTest::testInlinePGPEncryptedNotDecrypted()
 
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QCOMPARE((bool) unencryptedMessage, false);
+}
+
+void UnencryptedMessageTest::testSMimeAutoCertImport()
+{
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("smime-cert.mbox"));
+
+    NodeHelper nodeHelper;
+    TestHtmlWriter testWriter;
+    TestCSSHelper testCSSHelper;
+    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    ObjectTreeParser otp(&emptySource, &nodeHelper);
+    otp.parseObjectTree(originalMessage.data());
+
+    QCOMPARE(otp.plainTextContent().toLatin1().data(), "");
+    QVERIFY(testWriter.html.contains(QStringLiteral("Sorry, no certificates were found in this message.")));
 }
 
 #include "unencryptedmessagetest.moc"

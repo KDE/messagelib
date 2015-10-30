@@ -19,6 +19,7 @@
 
 #include "messagepart.h"
 #include "messageviewer_debug.h"
+#include <libkleo/importjob.h>
 #include "objecttreeparser.h"
 
 #include <MessageCore/StringUtil>
@@ -27,6 +28,7 @@
 
 #include <interfaces/htmlwriter.h>
 #include <htmlwriter/queuehtmlwriter.h>
+#include <job/kleojobexecutor.h>
 #include <kmime/kmime_content.h>
 #include <gpgme++/key.h>
 #include <gpgme.h>
@@ -323,6 +325,49 @@ void MimeMessagePart::html(bool decorate)
 QString MimeMessagePart::text() const
 {
     return renderInternalText();
+}
+
+//-----CertMessageBlock----------------------
+
+CertMessagePart::CertMessagePart(ObjectTreeParser* otp, KMime::Content* node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport)
+: MessagePart(otp, QString())
+, mAutoImport(autoImport)
+, mCryptoProto(cryptoProto)
+{
+    if (!mNode) {
+        qCWarning(MESSAGEVIEWER_LOG) << "not a valid node";
+        return;
+    }
+
+    if (!mAutoImport) {
+        return;
+    }
+
+    const QByteArray certData = node->decodedContent();
+
+    Kleo::ImportJob *import = mCryptoProto->importJob();
+    KleoJobExecutor executor;
+    mImportResult = executor.exec(import, certData);
+}
+
+CertMessagePart::~CertMessagePart()
+{
+
+}
+
+void CertMessagePart::html(bool decorate)
+{
+    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+
+    if (!writer) {
+        return;
+    }
+    mOtp->writeCertificateImportResult(mImportResult);
+}
+
+QString CertMessagePart::text() const
+{
+    return QString();
 }
 
 //-----CryptMessageBlock---------------------

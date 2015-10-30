@@ -1290,20 +1290,9 @@ bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, 
 
     if (smimeType == QLatin1String("certs-only")) {
         result.setNeverDisplayInline(true);
-        if (!htmlWriter()) {
-            return false;
-        }
 
-        if (!MessageViewer::MessageViewerSettings::self()->autoImportKeys()) {
-            return false;
-        }
-
-        const QByteArray certData = node->decodedContent();
-
-        Kleo::ImportJob *import = smimeCrypto->importJob();
-        KleoJobExecutor executor;
-        const GpgME::ImportResult res = executor.exec(import, certData);
-        writeCertificateImportResult(res);
+        CertMessagePart mp(this, node, smimeCrypto, MessageViewer::MessageViewerSettings::self()->autoImportKeys());
+        mp.html(true);
         return true;
     }
 
