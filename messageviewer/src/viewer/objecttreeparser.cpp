@@ -1058,7 +1058,8 @@ bool ObjectTreeParser::processMultiPartMixedSubtype(KMime::Content *node, Proces
     }
 
     // normal treatment of the parts in the mp/mixed container
-    standardChildHandling(child);
+    MimeMessagePart mp(this, child, false);
+    mp.html(false);
     return true;
 }
 
