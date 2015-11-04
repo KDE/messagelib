@@ -1270,13 +1270,6 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartEncryptedSubtype(KMime::Conte
 
 bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result)
 {
-    if (KMime::Content *child = mNodeHelper->decryptedNodeForContent(node)) {
-        ObjectTreeParser otp(this);
-        otp.parseObjectTreeInternal(child);
-        copyContentFrom(&otp);
-        return true;
-    }
-
     if (node->head().isEmpty()) {
         return false;
     }
