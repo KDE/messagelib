@@ -1122,16 +1122,6 @@ bool ObjectTreeParser::processMultiPartAlternativeSubtype(KMime::Content *node, 
     return true;
 }
 
-bool ObjectTreeParser::processMultiPartDigestSubtype(KMime::Content *node, ProcessResult &result)
-{
-    return processMultiPartMixedSubtype(node, result);
-}
-
-bool ObjectTreeParser::processMultiPartParallelSubtype(KMime::Content *node, ProcessResult &result)
-{
-    return processMultiPartMixedSubtype(node, result);
-}
-
 MessagePart::Ptr ObjectTreeParser::processMultiPartSignedSubtype(KMime::Content *node, ProcessResult &)
 {
     KMime::Content *signedData = MessageCore::NodeHelper::firstChild(node);
