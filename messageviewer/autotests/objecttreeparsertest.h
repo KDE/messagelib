@@ -36,7 +36,10 @@ private Q_SLOTS:
     void test_missingContentTypeHeader();
     void test_inlinePGPDecryption();
     void test_HTML();
+    void test_HTMLasText();
     void test_HTMLOnly();
+    void test_HTMLOnlyText();
+    void test_HTMLExternal();
 };
 
 #endif

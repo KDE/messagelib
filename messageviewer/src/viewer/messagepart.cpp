@@ -423,7 +423,6 @@ void HtmlMessagePart::html(bool decorate)
 {
     fix();
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
-
     if (!writer) {
         return;
     }
@@ -450,7 +449,6 @@ void HtmlMessagePart::html(bool decorate)
         // because only spam contains obfuscated external references.
         if (!mSource->htmlLoadExternal() &&
             containsExternalReferences(bodyText, extraHead)) {
-        Q_ASSERT(false);
             block = HTMLBlock::Ptr(new HTMLWarnBlock(writer, i18n("<b>Note:</b> This HTML message may contain external "
             "references to images etc. For security/privacy reasons "
             "external references are not loaded. If you trust the "
@@ -464,7 +462,6 @@ void HtmlMessagePart::html(bool decorate)
         // if a malicious message uses absolute positioning. #137643
         writer->queue(bodyText);
     } else {
-        Q_ASSERT(false);
         block = HTMLBlock::Ptr(new HTMLWarnBlock(writer, i18n("<b>Note:</b> This is an HTML message. For "
         "security reasons, only the raw HTML code "
         "is shown. If you trust the sender of this "
@@ -516,6 +513,75 @@ void MimeMessagePart::html(bool decorate)
 QString MimeMessagePart::text() const
 {
     return renderInternalText();
+}
+
+//-----AlternativeMessagePart----------------------
+
+AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser* otp, KMime::Content* textNode, KMime::Content* htmlNode)
+    : MessagePart(otp, QString())
+    , mTextNode(textNode)
+    , mHTMLNode(htmlNode)
+    , mViewHtml(false)
+{
+    if (!mTextNode && !mHTMLNode) {
+        qCWarning(MESSAGEVIEWER_LOG) << "not a valid nodes";
+        return;
+    }
+
+    if (mTextNode) {
+        mTextPart = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mTextNode, true));
+    }
+
+    if (mHTMLNode) {
+        mHTMLPart = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mHTMLNode, true));
+    }
+}
+
+AlternativeMessagePart::~AlternativeMessagePart()
+{
+
+}
+
+void AlternativeMessagePart::setViewHtml(bool html)
+{
+    mViewHtml = html;
+}
+
+bool AlternativeMessagePart::viewHtml()
+{
+    return mViewHtml;
+}
+
+void AlternativeMessagePart::html(bool decorate)
+{
+    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+
+    if (!writer) {
+        // If there is no HTML writer, process both the HTML and the plain text nodes, as we're collecting
+        // the plainTextContent and the htmlContent
+        if (mTextPart) {
+            mTextPart->copyContentFrom();
+        }
+        if (mHTMLPart) {
+            mHTMLPart->copyContentFrom();
+        }
+        return;
+    }
+
+    if (viewHtml() && mHTMLPart) {
+        mHTMLPart->copyContentFrom();
+        mHTMLPart->html(decorate);
+    } else if (mTextNode) {
+        mTextPart->html(decorate);
+    }
+}
+
+QString AlternativeMessagePart::text() const
+{
+    if (mTextPart) {
+        return mTextPart->text();
+    }
+    return QString();
 }
 
 //-----CertMessageBlock----------------------

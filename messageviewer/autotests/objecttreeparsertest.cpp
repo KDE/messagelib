@@ -178,6 +178,26 @@ void ObjectTreeParserTester::test_HTML()
     QCOMPARE(otp.htmlContentCharset().data(), "windows-1252");
 }
 
+void ObjectTreeParserTester::test_HTMLasText()
+{
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("html.mbox"));
+
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->contents().size(), 2);
+
+    TestHtmlWriter testWriter;
+    TestCSSHelper testCSSHelper;
+    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    ObjectTreeParser otp(&emptySource);
+    emptySource.setHtmlMail(false);
+    otp.parseObjectTree(msg.data());
+
+    QCOMPARE(otp.htmlContent().toLatin1().constData(), "");
+    QCOMPARE(otp.htmlContentCharset().constData(), "");
+    QCOMPARE(otp.plainTextContent().toLatin1().constData(), "Some HTML text");
+    QCOMPARE(otp.plainTextContentCharset().constData(), "windows-1252");
+}
+
 void ObjectTreeParserTester::test_HTMLOnly()
 {
     KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("htmlonly.mbox"));
@@ -195,3 +215,60 @@ void ObjectTreeParserTester::test_HTMLOnly()
     QCOMPARE(otp.convertedTextContent().toLatin1().data(), "SOME HTML text.\n");
 }
 
+void ObjectTreeParserTester::test_HTMLOnlyText()
+{
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("htmlonly.mbox"));
+
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->contents().size(), 0);
+
+    TestHtmlWriter testWriter;
+    TestCSSHelper testCSSHelper;
+    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    ObjectTreeParser otp(&emptySource);
+
+    emptySource.setHtmlMail(false);
+    otp.parseObjectTree(msg.data());
+
+    QVERIFY(otp.plainTextContent().isEmpty());
+    QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
+    QCOMPARE(otp.convertedTextContent().toLatin1().data(), "SOME HTML text.\n");
+    QVERIFY(testWriter.html.contains(QStringLiteral("This is an HTML message. For security reasons, only the raw HTML code is shown.")));
+    QVERIFY(testWriter.html.contains(QStringLiteral("*SOME* HTML text. <br>")));
+}
+
+
+void ObjectTreeParserTester::test_HTMLExternal()
+{
+    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("htmlonlyexternal.mbox"));
+
+    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->contents().size(), 0);
+
+    {
+        TestHtmlWriter testWriter;
+        TestCSSHelper testCSSHelper;
+        MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        ObjectTreeParser otp(&emptySource);
+
+        otp.parseObjectTree(msg.data());
+
+        QVERIFY(otp.plainTextContent().isEmpty());
+        QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
+        QVERIFY(testWriter.html.contains(QStringLiteral("<b>SOME</b> HTML text.")));
+        QVERIFY(testWriter.html.contains(QStringLiteral("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
+    }
+    {
+        TestHtmlWriter testWriter;
+        TestCSSHelper testCSSHelper;
+        MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        ObjectTreeParser otp(&emptySource);
+
+        emptySource.setHtmlLoadExternal(true);
+        otp.parseObjectTree(msg.data());
+
+        QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
+        QVERIFY(testWriter.html.contains(QStringLiteral("<b>SOME</b> HTML text.")));
+        QVERIFY(!testWriter.html.contains(QStringLiteral("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
+    }
+}

@@ -158,6 +158,23 @@ protected:
     PartMetaData mMetaData;
 };
 
+class MimeMessagePart : public MessagePart
+{
+public:
+    typedef QSharedPointer<MimeMessagePart> Ptr;
+    MimeMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart);
+    virtual ~MimeMessagePart();
+
+    QString text() const Q_DECL_OVERRIDE;
+    void html(bool decorate) Q_DECL_OVERRIDE;
+
+private:
+    KMime::Content *mNode;
+    bool mOnlyOneMimePart;
+
+    friend class AlternativeMessagePart;
+};
+
 class TextMessagePart : public MessagePart
 {
 public:
@@ -200,19 +217,25 @@ private:
     QByteArray mCharset;
 };
 
-class MimeMessagePart : public MessagePart
+class AlternativeMessagePart : public MessagePart
 {
 public:
-    typedef QSharedPointer<MimeMessagePart> Ptr;
-    MimeMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart);
-    virtual ~MimeMessagePart();
+    typedef QSharedPointer<AlternativeMessagePart> Ptr;
+    AlternativeMessagePart (MessageViewer::ObjectTreeParser* otp, KMime::Content* textNode, KMime::Content* htmlNode);
+    virtual ~AlternativeMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
     void html(bool decorate) Q_DECL_OVERRIDE;
 
+    void setViewHtml(bool html);
+    bool viewHtml();
 private:
-    KMime::Content *mNode;
-    bool mOnlyOneMimePart;
+    KMime::Content* mTextNode;
+    KMime::Content* mHTMLNode;
+
+    MimeMessagePart::Ptr mTextPart;
+    MimeMessagePart::Ptr mHTMLPart;
+    bool mViewHtml;
 };
 
 class CertMessagePart : public MessagePart

@@ -37,31 +37,54 @@ namespace Test
 */
 void setupEnv();
 
-// We can't use EmptySource, since that doesn't provide a HTML writer. Therefore, derive
-// from EmptySource so we can provide our own HTML writer.
-// This is only needed because ObjectTreeParser has a bug and doesn't decrypt inline PGP messages
-// when there is no HTML writer, see FIXME comment in ObjectTreeParser::writeBodyString().
+// We can't use EmptySource, since we need to control some emelnets of the source for tests to also test
+// loadExternal and htmlMail.
 class TestObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
     TestObjectTreeSource(MessageViewer::HtmlWriter *writer,
                          MessageViewer::CSSHelper *cssHelper)
-        : mWriter(writer), mCSSHelper(cssHelper)
+        : mWriter(writer)
+        , mCSSHelper(cssHelper)
+        , mHtmlLoadExternal(false)
+        , mHtmlMail(true)
     {
     }
 
-    virtual MessageViewer::HtmlWriter *htmlWriter()
+    MessageViewer::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE
     {
         return mWriter;
     }
-    virtual MessageViewer::CSSHelper *cssHelper()
+    MessageViewer::CSSHelper *cssHelper() Q_DECL_OVERRIDE
     {
         return mCSSHelper;
+    }
+
+    bool htmlLoadExternal() Q_DECL_OVERRIDE
+    {
+        return mHtmlLoadExternal;
+    }
+
+    void setHtmlLoadExternal(bool loadExternal)
+    {
+        mHtmlLoadExternal = loadExternal;
+    }
+
+    bool htmlMail() Q_DECL_OVERRIDE
+    {
+        return mHtmlMail;
+    }
+
+    void setHtmlMail(bool htmlMail)
+    {
+        mHtmlMail = htmlMail;
     }
 
 private:
     MessageViewer::HtmlWriter *mWriter;
     MessageViewer::CSSHelper *mCSSHelper;
+    bool mHtmlLoadExternal;
+    bool mHtmlMail;
 };
 
 }

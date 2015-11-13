@@ -983,36 +983,31 @@ bool ObjectTreeParser::processMultiPartAlternativeSubtype(KMime::Content *node, 
         }
     }
 
-    // If there is no HTML writer, process both the HTML and the plain text nodes, as we're collecting
-    // the plainTextContent and the htmlContent
-    if (!htmlWriter()) {
-        if (dataPlain) {
-            standardChildHandling(dataPlain);
-        }
-        if (dataHtml) {
-            standardChildHandling(dataHtml);
-        }
-        return true;
-    }
+    if (dataPlain || dataHtml) {
+        AlternativeMessagePart mp(this, dataPlain, dataHtml);
 
-    if ((mSource->htmlMail() && dataHtml) ||
+        if ((mSource->htmlMail() && dataHtml) ||
             (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
-        if (dataPlain) {
-            mNodeHelper->setNodeProcessed(dataPlain, false);
+            if (dataPlain) {
+                mNodeHelper->setNodeProcessed(dataPlain, false);
+            }
+            mSource->setHtmlMode(Util::MultipartHtml);
+            mp.setViewHtml(true);
+            mp.html(false);
+            return true;
         }
-        standardChildHandling(dataHtml);
-        mSource->setHtmlMode(Util::MultipartHtml);
-        return true;
+
+        if (!mSource->htmlMail() && dataPlain) {
+            mNodeHelper->setNodeProcessed(dataHtml, false);
+            mSource->setHtmlMode(Util::MultipartPlain);
+            mp.setViewHtml(false);
+            mp.html(false);
+            return true;
+        }
     }
 
-    if (!htmlWriter() || (!mSource->htmlMail() && dataPlain)) {
-        mNodeHelper->setNodeProcessed(dataHtml, false);
-        standardChildHandling(dataPlain);
-        mSource->setHtmlMode(Util::MultipartPlain);
-        return true;
-    }
-
-    standardChildHandling(child);
+    MimeMessagePart mp(this, child, false);
+    mp.html(false);
     return true;
 }
 

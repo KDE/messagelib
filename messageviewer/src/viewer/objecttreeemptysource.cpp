@@ -40,7 +40,6 @@ EmptySource::EmptySource()
     : ObjectTreeSourceIf(),
       d(new MessageViewer::EmptySourcePrivate)
 {
-    d->mAllowDecryption = false;
 }
 
 EmptySource::~EmptySource()
