@@ -398,12 +398,6 @@ private:
 
     bool processMailmanMessage(KMime::Content *node);
 
-    /** Checks whether @p str contains external references. To be precise,
-      we only check whether @p str contains 'xxx="http[s]:' where xxx is
-      not href. Obfuscated external references are ignored on purpose.
-    */
-    static bool containsExternalReferences(const QString &str, const QString &extraHead);
-
 public:// (during refactoring)
 
     bool processTextHtmlSubtype(KMime::Content *node, ProcessResult &result);
@@ -516,6 +510,7 @@ private:
     friend class CertMessagePart;
     friend class EncapsulatedRfc822MessagePart;
     friend class TextMessagePart;
+    friend class HtmlMessagePart;
 };
 
 }

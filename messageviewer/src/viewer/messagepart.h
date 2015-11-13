@@ -46,6 +46,7 @@ class Content;
 namespace MessageViewer
 {
 class ObjectTreeParser;
+class ObjectTreeSourceIf;
 class HtmlWriter;
 class NodeHelper;
 
@@ -118,6 +119,19 @@ private:
     bool mLink;
 };
 
+class HTMLWarnBlock : public HTMLBlock
+{
+public:
+    HTMLWarnBlock(MessageViewer::HtmlWriter* writer, const QString &msg);
+    virtual ~HTMLWarnBlock();
+private:
+    void internalEnter();
+    void internalExit();
+private:
+    HtmlWriter* mWriter;
+    const QString &mMsg;
+};
+
 class MessagePart
 {
 public:
@@ -164,6 +178,26 @@ private:
     QVector<MessagePart::Ptr> mBlocks;
     bool mDrawFrame;
     bool mShowLink;
+};
+
+class HtmlMessagePart : public MessagePart
+{
+public:
+    typedef QSharedPointer<HtmlMessagePart> Ptr;
+    HtmlMessagePart(MessageViewer::ObjectTreeParser* otp, KMime::Content* node, MessageViewer::ObjectTreeSourceIf* source);
+    virtual ~HtmlMessagePart();
+
+    QString text() const Q_DECL_OVERRIDE;
+    void html(bool decorate) Q_DECL_OVERRIDE;
+
+    /* only a function that should be removed if the refactiring is over */
+    void fix();
+
+private:
+    KMime::Content* mNode;
+    ObjectTreeSourceIf *mSource;
+    QString mBodyHTML;
+    QByteArray mCharset;
 };
 
 class MimeMessagePart : public MessagePart

@@ -746,125 +746,20 @@ bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
     return bDecryptionOk;
 }
 
-//static
-bool ObjectTreeParser::containsExternalReferences(const QString &str, const QString &extraHead)
-{
-    const bool hasBaseInHeader = extraHead.contains(QStringLiteral("<base href=\""), Qt::CaseInsensitive);
-    if (hasBaseInHeader && (str.contains(QStringLiteral("href=\"/"), Qt::CaseInsensitive) ||
-                            str.contains(QStringLiteral("<img src=\"/"), Qt::CaseInsensitive))) {
-        return true;
-    }
-    /*
-    //Laurent: workaround for local ref cid
-    if(str.contains(QStringLiteral("<img src=\"cid:"),Qt::CaseInsensitive)) {
-    return true;
-    }
-    */
-    int httpPos = str.indexOf(QLatin1String("\"http:"), Qt::CaseInsensitive);
-    int httpsPos = str.indexOf(QLatin1String("\"https:"), Qt::CaseInsensitive);
-
-    while (httpPos >= 0 || httpsPos >= 0) {
-        // pos = index of next occurrence of "http: or "https: whichever comes first
-        int pos = (httpPos < httpsPos)
-                  ? ((httpPos >= 0) ? httpPos : httpsPos)
-                  : ((httpsPos >= 0) ? httpsPos : httpPos);
-        // look backwards for "href"
-        if (pos > 5) {
-            int hrefPos = str.lastIndexOf(QLatin1String("href"), pos - 5, Qt::CaseInsensitive);
-            // if no 'href' is found or the distance between 'href' and '"http[s]:'
-            // is larger than 7 (7 is the distance in 'href = "http[s]:') then
-            // we assume that we have found an external reference
-            if ((hrefPos == -1) || (pos - hrefPos > 7)) {
-
-                // HTML messages created by KMail itself for now contain the following:
-                // <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-                // Make sure not to show an external references warning for this string
-                int dtdPos = str.indexOf(QLatin1String("http://www.w3.org/TR/html4/loose.dtd"), pos + 1);
-                if (dtdPos != (pos + 1)) {
-                    return true;
-                }
-            }
-        }
-        // find next occurrence of "http: or "https:
-        if (pos == httpPos) {
-            httpPos = str.indexOf(QLatin1String("\"http:"), httpPos + 6, Qt::CaseInsensitive);
-        } else {
-            httpsPos = str.indexOf(QLatin1String("\"https:"), httpsPos + 7, Qt::CaseInsensitive);
-        }
-    }
-    return false;
-}
-
 bool ObjectTreeParser::processTextHtmlSubtype(KMime::Content *curNode, ProcessResult &)
 {
-    const QByteArray partBody(curNode->decodedContent());
-
-    const QString bodyHTML = codecFor(curNode)->toUnicode(partBody);
-    mHtmlContent += bodyHTML;
-    mHtmlContentCharset = NodeHelper::charset(curNode);
-
-    if (!htmlWriter()) {
-        return true;
-    }
+    HtmlMessagePart mp(this, curNode, mSource);
 
     if (curNode->topLevel()->textContent() == curNode  || attachmentStrategy()->defaultDisplay(curNode) == AttachmentStrategy::Inline ||
             showOnlyOneMimePart()) {
-        if (mSource->htmlMail()) {
-            QString bodyText = bodyHTML;
-            HTMLQuoteColorer colorer;
-            colorer.setEnableHtmlQuoteColorer(MessageViewer::MessageViewerSettings::self()->htmlQuoteColorerEnabled());
-            QString extraHead;
-            for (int i = 0; i < 3; ++i) {
-                colorer.setQuoteColor(i, cssHelper()->quoteColor(i));
-            }
-            bodyText = colorer.process(bodyText, extraHead);
-            mNodeHelper->setNodeDisplayedEmbedded(curNode, true);
-            htmlWriter()->extraHead(extraHead);
-
-            // Show the "external references" warning (with possibility to load
-            // external references only if loading external references is disabled
-            // and the HTML code contains obvious external references). For
-            // messages where the external references are obfuscated the user won't
-            // have an easy way to load them but that shouldn't be a problem
-            // because only spam contains obfuscated external references.
-            if (!mSource->htmlLoadExternal() &&
-                    containsExternalReferences(bodyText, extraHead)) {
-                htmlWriter()->queue(QStringLiteral("<div class=\"htmlWarn\">\n"));
-                htmlWriter()->queue(i18n("<b>Note:</b> This HTML message may contain external "
-                                         "references to images etc. For security/privacy reasons "
-                                         "external references are not loaded. If you trust the "
-                                         "sender of this message then you can load the external "
-                                         "references for this message "
-                                         "<a href=\"kmail:loadExternal\">by clicking here</a>."));
-                htmlWriter()->queue(QStringLiteral("</div><br/><br/>"));
-            }
-            htmlWriter()->queue(QStringLiteral("<div style=\"position: relative\">\n"));
-            // Make sure the body is relative, so that nothing is painted over above "Note: ..."
-            // if a malicious message uses absolute positioning. #137643
-            htmlWriter()->queue(bodyText);
-        } else {
-            htmlWriter()->queue(QStringLiteral("<div class=\"htmlWarn\">\n"));
-            htmlWriter()->queue(i18n("<b>Note:</b> This is an HTML message. For "
-                                     "security reasons, only the raw HTML code "
-                                     "is shown. If you trust the sender of this "
-                                     "message then you can activate formatted "
-                                     "HTML display for this message "
-                                     "<a href=\"kmail:showHTML\">by clicking here</a>."));
-            htmlWriter()->queue(QStringLiteral("</div><br/><br/>"));
-            htmlWriter()->queue(QStringLiteral("<div style=\"position: relative\">\n"));
-            // Make sure the body is relative, so that nothing is painted over above "Note: ..."
-            // if a malicious message uses absolute positioning. #137643
-            ConvertHtmlToPlainText convert;
-            convert.setHtmlString(QString::fromUtf8(partBody));
-            QString result = convert.generatePlainText();
-            result.replace(QLatin1String("\n"), QStringLiteral("<br>"));
-            htmlWriter()->queue(result);
-        }
-        htmlWriter()->queue(QStringLiteral("</div>\n"));
-        mSource->setHtmlMode(Util::Html);
-        return true;
+            mp.html(false);
+            return true;
+    } else {
+        // we need the copy of htmlcontent and charset in anycase for the current design of otp.
+        //Should be not neeed if otp don't hold any status anymore
+        mp.fix();
+        return false;
     }
-    return false;
 }
 
 bool ObjectTreeParser::isMailmanMessage(KMime::Content *curNode)
