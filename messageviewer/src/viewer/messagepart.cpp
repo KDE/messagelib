@@ -319,7 +319,7 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 
 void MessagePart::renderInternalHtml() const
 {
-    if (mSubOtp) {
+    if (mSubOtp && mOtp->htmlWriter()) {
         static_cast<QueueHtmlWriter *>(mSubOtp->htmlWriter())->replay();
     }
 }

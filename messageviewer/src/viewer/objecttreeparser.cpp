@@ -939,10 +939,8 @@ void ObjectTreeParser::standardChildHandling(KMime::Content *child)
         return;
     }
 
-    ObjectTreeParser otp(*this);
-    otp.setShowOnlyOneMimePart(false);
-    otp.parseObjectTreeInternal(child);
-    copyContentFrom(&otp);
+    MimeMessagePart mp(this, child, false);
+    mp.html(false);
 }
 
 bool ObjectTreeParser::processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &)
