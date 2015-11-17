@@ -370,7 +370,7 @@ private:
       kroupware hacks) */
     void standardChildHandling(KMime::Content *child);
 
-    void defaultHandling(KMime::Content *node, ProcessResult &result);
+    MessagePart::Ptr defaultHandling(KMime::Content *node, ProcessResult &result);
 
     /** 1. Create a new partNode using 'content' data and Content-Description
           found in 'cntDesc'.
@@ -400,15 +400,15 @@ private:
 
 public:// (during refactoring)
 
-    bool processTextHtmlSubtype(KMime::Content *node, ProcessResult &result);
-    bool processTextPlainSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePart::Ptr processTextHtmlSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePart::Ptr processTextPlainSubtype(KMime::Content *node, ProcessResult &result);
 
-    bool processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &result);
-    bool processMultiPartAlternativeSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePart::Ptr processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePart::Ptr processMultiPartAlternativeSubtype(KMime::Content *node, ProcessResult &result);
     MessagePart::Ptr processMultiPartSignedSubtype(KMime::Content *node, ProcessResult &result);
     MessagePart::Ptr processMultiPartEncryptedSubtype(KMime::Content *node, ProcessResult &result);
 
-    bool processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePart::Ptr  processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
 
     void writeBodyString(const QByteArray &bodyString,
                          const QString &fromAddress,

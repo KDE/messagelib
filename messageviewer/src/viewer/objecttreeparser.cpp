@@ -354,8 +354,13 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
                 mNodeHelper->setNodeDisplayedEmbedded(node, false);
             // fall through:
             case Interface::BodyPartFormatter::Failed:
-                defaultHandling(node, processResult);
+            {
+                const auto mp = defaultHandling(node, processResult);
+                if (mp) {
+                    mp->html(false);
+                }
                 break;
+            }
             case Interface::BodyPartFormatter::Ok:
             case Interface::BodyPartFormatter::NeedContent:
                 // FIXME: incomplete content handling
@@ -366,7 +371,10 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         } else {
             qCCritical(MESSAGEVIEWER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
             AttachmentMarkBlock block(htmlWriter(), node);
-            defaultHandling(node, processResult);
+            const auto mp = defaultHandling(node, processResult);
+            if (mp) {
+                mp->html(false);
+            }
         }
         mNodeHelper->setNodeProcessed(node, false);
 
@@ -383,13 +391,13 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
     }
 }
 
-void ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)
+MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)
 {
     // ### (mmutz) default handling should go into the respective
     // ### bodypartformatters.
     if (!htmlWriter()) {
         qCWarning(MESSAGEVIEWER_LOG) << "no htmlWriter()";
-        return;
+        return MessagePart::Ptr();
     }
 
     // always show images in multipart/related when showing in html, not with an additional icon
@@ -400,16 +408,16 @@ void ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &resu
         QByteArray cid = node->contentID()->identifier();
         htmlWriter()->embedPart(cid, href);
         nodeHelper()->setNodeDisplayedEmbedded(node, true);
-        return;
+        return MessagePart::Ptr();
     }
-
+    MessagePart::Ptr mp;
     if (node->contentType()->mimeType() == QByteArray("application/octet-stream") &&
             (node->contentType()->name().endsWith(QLatin1String("p7m")) ||
              node->contentType()->name().endsWith(QLatin1String("p7s")) ||
              node->contentType()->name().endsWith(QLatin1String("p7c"))
             ) &&
-            processApplicationPkcs7MimeSubtype(node, result)) {
-        return;
+            (mp = processApplicationPkcs7MimeSubtype(node, result))) {
+        return mp;
     }
 
     const AttachmentStrategy *const as = attachmentStrategy();
@@ -417,7 +425,7 @@ void ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &resu
             !showOnlyOneMimePart() &&
             node->parent() /* message is not an attachment */) {
         mNodeHelper->setNodeDisplayedHidden(node, true);
-        return;
+        return MessagePart::Ptr();
     }
 
     bool asIcon = true;
@@ -458,11 +466,12 @@ void ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &resu
         writePartIcon(node, true);
     } else {
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        writeBodyString(node->decodedContent(),
-                        NodeHelper::fromAsString(node),
-                        codecFor(node), result, false);
+        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false));
+        result.setInlineSignatureState(mp->signatureState());
+        result.setInlineEncryptionState(mp->encryptionState());
+        return mp;
     }
-    // end of ###
+    return MessagePart::Ptr();
 }
 
 KMMsgSignatureState ProcessResult::inlineSignatureState() const
@@ -746,20 +755,19 @@ bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
     return bDecryptionOk;
 }
 
-bool ObjectTreeParser::processTextHtmlSubtype(KMime::Content *curNode, ProcessResult &)
+MessagePart::Ptr ObjectTreeParser::processTextHtmlSubtype(KMime::Content *curNode, ProcessResult &)
 {
-    HtmlMessagePart mp(this, curNode, mSource);
+    HtmlMessagePart::Ptr mp(new HtmlMessagePart(this, curNode, mSource));
 
     if (curNode->topLevel()->textContent() == curNode  || attachmentStrategy()->defaultDisplay(curNode) == AttachmentStrategy::Inline ||
             showOnlyOneMimePart()) {
-            mp.html(false);
-            return true;
     } else {
         // we need the copy of htmlcontent and charset in anycase for the current design of otp.
         //Should be not neeed if otp don't hold any status anymore
-        mp.fix();
-        return false;
+        mp->fix();
+
     }
+    return mp;
 }
 
 bool ObjectTreeParser::isMailmanMessage(KMime::Content *curNode)
@@ -895,13 +903,13 @@ void ObjectTreeParser::extractNodeInfos(KMime::Content *curNode, bool isFirstTex
     }
 }
 
-bool ObjectTreeParser::processTextPlainSubtype(KMime::Content *curNode, ProcessResult &result)
+MessagePart::Ptr ObjectTreeParser::processTextPlainSubtype(KMime::Content *curNode, ProcessResult &result)
 {
     const bool isFirstTextPart = (curNode->topLevel()->textContent() == curNode);
 
     if (!isFirstTextPart && attachmentStrategy()->defaultDisplay(curNode) != AttachmentStrategy::Inline &&
             !showOnlyOneMimePart()) {
-        return false;
+        return  MessagePart::Ptr();
     }
 
     extractNodeInfos(curNode, isFirstTextPart);
@@ -915,22 +923,22 @@ bool ObjectTreeParser::processTextPlainSubtype(KMime::Content *curNode, ProcessR
 
     // process old style not-multipart Mailman messages to
     // enable verification of the embedded messages' signatures
-    if (!isMailmanMessage(curNode) ||
-            !processMailmanMessage(curNode)) {
+    //if (!isMailmanMessage(curNode) ||
+    //        !processMailmanMessage(curNode)) {
 
-        TextMessagePart mp(this, curNode, bDrawFrame, !fileName.isEmpty());
-        mp.html(!bDrawFrame);
+        TextMessagePart::Ptr mp(new TextMessagePart(this, curNode, bDrawFrame, !fileName.isEmpty()));
 
-        result.setInlineSignatureState(mp.signatureState());
-        result.setInlineEncryptionState(mp.encryptionState());
+        result.setInlineSignatureState(mp->signatureState());
+        result.setInlineEncryptionState(mp->encryptionState());
 
         if (isFirstTextPart) {
-            mPlainTextContent = mp.text();
+            mPlainTextContent = mp->text();
         }
 
         mNodeHelper->setNodeDisplayedEmbedded(curNode, true);
-    }
-    return true;
+    //}
+
+    return mp;
 }
 
 void ObjectTreeParser::standardChildHandling(KMime::Content *child)
@@ -943,24 +951,23 @@ void ObjectTreeParser::standardChildHandling(KMime::Content *child)
     mp.html(false);
 }
 
-bool ObjectTreeParser::processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &)
+MessagePart::Ptr ObjectTreeParser::processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &)
 {
     KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
     if (!child) {
-        return false;
+        return MessagePart::Ptr();
     }
 
     // normal treatment of the parts in the mp/mixed container
-    MimeMessagePart mp(this, child, false);
-    mp.html(false);
-    return true;
+    MimeMessagePart::Ptr mp(new MimeMessagePart(this, child, false));
+    return mp;
 }
 
-bool ObjectTreeParser::processMultiPartAlternativeSubtype(KMime::Content *node, ProcessResult &)
+MessagePart::Ptr ObjectTreeParser::processMultiPartAlternativeSubtype(KMime::Content *node, ProcessResult &)
 {
     KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
     if (!child) {
-        return false;
+         return MessagePart::Ptr();
     }
 
     KMime::Content *dataHtml = findType(child, "text/html", false, true);
@@ -984,7 +991,7 @@ bool ObjectTreeParser::processMultiPartAlternativeSubtype(KMime::Content *node, 
     }
 
     if (dataPlain || dataHtml) {
-        AlternativeMessagePart mp(this, dataPlain, dataHtml);
+        AlternativeMessagePart::Ptr mp(new AlternativeMessagePart(this, dataPlain, dataHtml));
 
         if ((mSource->htmlMail() && dataHtml) ||
             (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
@@ -992,23 +999,19 @@ bool ObjectTreeParser::processMultiPartAlternativeSubtype(KMime::Content *node, 
                 mNodeHelper->setNodeProcessed(dataPlain, false);
             }
             mSource->setHtmlMode(Util::MultipartHtml);
-            mp.setViewHtml(true);
-            mp.html(false);
-            return true;
+            mp->setViewHtml(true);
         }
 
         if (!mSource->htmlMail() && dataPlain) {
             mNodeHelper->setNodeProcessed(dataHtml, false);
             mSource->setHtmlMode(Util::MultipartPlain);
-            mp.setViewHtml(false);
-            mp.html(false);
-            return true;
+            mp->setViewHtml(false);
         }
+        return mp;
     }
 
-    MimeMessagePart mp(this, child, false);
-    mp.html(false);
-    return true;
+    MimeMessagePart::Ptr mp(new MimeMessagePart(this, child, false));
+    return mp;
 }
 
 MessagePart::Ptr ObjectTreeParser::processMultiPartSignedSubtype(KMime::Content *node, ProcessResult &)
@@ -1147,15 +1150,15 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartEncryptedSubtype(KMime::Conte
     return mp;
 }
 
-bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result)
+MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result)
 {
     if (node->head().isEmpty()) {
-        return false;
+        return MessagePart::Ptr();
     }
 
     const Kleo::CryptoBackend::Protocol *smimeCrypto = Kleo::CryptoBackendFactory::instance()->smime();
     if (!smimeCrypto) {
-        return false;
+        return MessagePart::Ptr();
     }
 
     const QString smimeType = node->contentType()->parameter(QStringLiteral("smime-type")).toLower();
@@ -1163,9 +1166,8 @@ bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, 
     if (smimeType == QLatin1String("certs-only")) {
         result.setNeverDisplayInline(true);
 
-        CertMessagePart mp(this, node, smimeCrypto, MessageViewer::MessageViewerSettings::self()->autoImportKeys());
-        mp.html(true);
-        return true;
+        CertMessagePart::Ptr mp(new CertMessagePart(this, node, smimeCrypto, MessageViewer::MessageViewerSettings::self()->autoImportKeys()));
+        return mp;
     }
 
     CryptoProtocolSaver cpws(this, smimeCrypto);
@@ -1181,6 +1183,7 @@ bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, 
     // We try decrypting the content
     // if we either *know* that it is an encrypted message part
     // or there is neither signed nor encrypted parameter.
+    CryptoMessagePart::Ptr mp;
     if (!isSigned) {
         if (isEncrypted) {
             qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: enveloped (encrypted) data";
@@ -1188,16 +1191,16 @@ bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, 
             qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
         }
 
-        CryptoMessagePart mp(this,
+        mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
                              node->decodedText(), cryptoProtocol(),
-                             NodeHelper::fromAsString(node), node);
+                             NodeHelper::fromAsString(node), node));
 
-        PartMetaData *messagePart(mp.partMetaData());
+        PartMetaData *messagePart(mp->partMetaData());
         if (!mSource->decryptMessage()) {
             isEncrypted = true;
             signTestNode = 0; // PENDING(marc) to be abs. sure, we'd need to have to look at the content
         } else {
-            mp.startDecryption();
+            mp->startDecryption();
             if (messagePart->isDecryptable) {
                 qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  encryption found  -  enveloped (encrypted) data !";
                 isEncrypted = true;
@@ -1212,7 +1215,7 @@ bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, 
                 // decryption failed, or because we didn't know if it was encrypted, tried,
                 // and failed. If the message was not actually encrypted, we continue
                 // assuming it's signed
-                if (mp.mPassphraseError || (smimeType.isEmpty() && messagePart->isEncrypted)) {
+                if (mp->mPassphraseError || (smimeType.isEmpty() && messagePart->isEncrypted)) {
                     isEncrypted = true;
                     signTestNode = 0;
                 }
@@ -1224,7 +1227,6 @@ bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, 
                 }
             }
         }
-        mp.html(false);
 
         if (isEncrypted) {
             mNodeHelper->setEncryptionState(node, KMMsgFullyEncrypted);
@@ -1241,18 +1243,17 @@ bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, 
 
         const QTextCodec *aCodec(codecFor(signTestNode));
         const QByteArray signaturetext = signTestNode->decodedContent();
-        CryptoMessagePart mp(this,
+        mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
                              aCodec->toUnicode(signaturetext), cryptoProtocol(),
-                             NodeHelper::fromAsString(node), signTestNode);
+                             NodeHelper::fromAsString(node), signTestNode));
 
-        PartMetaData *messagePart(mp.partMetaData());
+        PartMetaData *messagePart(mp->partMetaData());
         if (cryptoProtocol()) {
-            mp.startVerificationDetached(signaturetext, 0, QByteArray());
+            mp->startVerificationDetached(signaturetext, 0, QByteArray());
         } else {
             messagePart->auditLogError = GpgME::Error(GPG_ERR_NOT_IMPLEMENTED);
         }
 
-        mp.html(false /*, hideErrors = isEncrypted*/);
         if (messagePart->isSigned) {
             if (!isSigned) {
                 qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  signature found  -  opaque signed data !";
@@ -1268,7 +1269,7 @@ bool ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, 
         }
     }
 
-    return isSigned || isEncrypted;
+    return mp;
 }
 
 void ObjectTreeParser::writeBodyString(const QByteArray &bodyString,

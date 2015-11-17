@@ -227,7 +227,7 @@ MessageViewer::Interface::BodyPartFormatter::Result MultiPartEncryptedBodyPartFo
     { \
         static const subtype##BodyPartFormatter *self; \
     public: \
-        bool process(ObjectTreeParser *, KMime::Content *, ProcessResult &) const;\
+        MessagePart::Ptr process(const Interface::BodyPart &part) const; \
         MessageViewer::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE; \
         using MessageViewer::Interface::BodyPartFormatter::format; \
         static const MessageViewer::Interface::BodyPartFormatter *create(); \
@@ -241,14 +241,18 @@ MessageViewer::Interface::BodyPartFormatter::Result MultiPartEncryptedBodyPartFo
         } \
         return self; \
     } \
-    bool subtype##BodyPartFormatter::process(ObjectTreeParser *otp, KMime::Content *node, ProcessResult &result) const { \
-        return otp->process##subtype##Subtype(node, result); \
+    MessagePart::Ptr subtype##BodyPartFormatter::process(const Interface::BodyPart &part) const { \
+        return part.objectTreeParser()->process##subtype##Subtype(part.content(), *part.processResult()); \
     } \
     \
     MessageViewer::Interface::BodyPartFormatter::Result subtype##BodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const { \
         Q_UNUSED(writer) \
-        const bool result = process(part->objectTreeParser(), part->content(), *part->processResult()); \
-        return result ? Ok : Failed; \
+        MessagePart::Ptr mp = process(*part);\
+        if (!mp.isNull()) {\
+            mp->html(false);\
+            return Ok;\
+        }\
+        return Failed;\
     }
 
 CREATE_BODY_PART_FORMATTER(TextPlain)
