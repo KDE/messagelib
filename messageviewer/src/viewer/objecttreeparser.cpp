@@ -466,7 +466,7 @@ MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, Process
         writePartIcon(node, true);
     } else {
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false));
+        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage()));
         result.setInlineSignatureState(mp->signatureState());
         result.setInlineEncryptionState(mp->encryptionState());
         return mp;
@@ -926,7 +926,7 @@ MessagePart::Ptr ObjectTreeParser::processTextPlainSubtype(KMime::Content *curNo
     //if (!isMailmanMessage(curNode) ||
     //        !processMailmanMessage(curNode)) {
 
-        TextMessagePart::Ptr mp(new TextMessagePart(this, curNode, bDrawFrame, !fileName.isEmpty()));
+        TextMessagePart::Ptr mp(new TextMessagePart(this, curNode, bDrawFrame, !fileName.isEmpty(), mSource->decryptMessage()));
 
         result.setInlineSignatureState(mp->signatureState());
         result.setInlineEncryptionState(mp->encryptionState());
@@ -1270,21 +1270,6 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
     }
 
     return mp;
-}
-
-void ObjectTreeParser::writeBodyString(const QByteArray &bodyString,
-                                       const QString &fromAddress,
-                                       const QTextCodec *codec,
-                                       ProcessResult &result,
-                                       bool decorate)
-{
-    assert(codec);
-    KMMsgSignatureState inlineSignatureState = result.inlineSignatureState();
-    KMMsgEncryptionState inlineEncryptionState = result.inlineEncryptionState();
-    writeBodyStr(bodyString, codec, fromAddress,
-                 inlineSignatureState, inlineEncryptionState, decorate);
-    result.setInlineSignatureState(inlineSignatureState);
-    result.setInlineEncryptionState(inlineEncryptionState);
 }
 
 void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
@@ -2209,120 +2194,6 @@ void ObjectTreeParser::sigStatusToMetaData(const std::vector <GpgME::Signature> 
                     messagePart.signer += QLatin1String(" <") + messagePart.signerMailAddresses.front() + QLatin1Char('>');
                 }
             }
-        }
-    }
-}
-
-//-----------------------------------------------------------------------------
-QVector<MessagePart::Ptr> ObjectTreeParser::writeBodyStr2(const QByteArray &aStr, const QTextCodec *aCodec,
-        const QString &fromAddress,
-        KMMsgSignatureState  &inlineSignatureState,
-        KMMsgEncryptionState &inlineEncryptionState)
-{
-    inlineSignatureState  = KMMsgNotSigned;
-    inlineEncryptionState = KMMsgNotEncrypted;
-    QList<Block> blocks = prepareMessageForDecryption(aStr);
-
-    QVector<MessagePart::Ptr> mpl;
-
-    if (!blocks.isEmpty()) {
-
-        if (blocks.count() > 1 || blocks.at(0).type() != MessageViewer::NoPgpBlock) {
-            const Kleo::CryptoBackend::Protocol *cryptProto = Kleo::CryptoBackendFactory::instance()->openpgp();
-            setCryptoProtocol(cryptProto);
-        }
-
-        QString htmlStr;
-        QString plainTextStr;
-
-        /* The (overall) signature/encrypted status is broken
-         * if one unencrypted part is at the beginning or in the middle
-         * because mailmain adds an unencrypted part at the end this should not break the overall status
-         *
-         * That's why we first set the tmp status and if one crypted/signed block comes afterwards, than
-         * the status is set to unencryped
-         */
-        bool fullySignedOrEncrypted = true;
-        bool fullySignedOrEncryptedTmp = true;
-
-        Q_FOREACH (const Block &block, blocks) {
-
-            if (!fullySignedOrEncryptedTmp) {
-                fullySignedOrEncrypted = false;
-            }
-
-            if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
-                fullySignedOrEncryptedTmp = false;
-                mpl.append(MessagePart::Ptr(new MessagePart(this, aCodec->toUnicode(block.text()))));
-            } else if (block.type() == PgpMessageBlock) {
-                CryptoMessagePart::Ptr mp(new CryptoMessagePart(this, QString(), cryptoProtocol(), fromAddress, 0));
-                mpl.append(mp);
-                if (!mSource->decryptMessage()) {
-                    continue;
-                }
-                mp->startDecryption(block.text(), aCodec);
-                if (mp->partMetaData()->inProgress) {
-                    continue;
-                }
-            } else if (block.type() == ClearsignedBlock) {
-                CryptoMessagePart::Ptr mp(new CryptoMessagePart(this, QString(), cryptoProtocol(), fromAddress, 0));
-                mpl.append(mp);
-                mp->startVerification(block.text(), aCodec);
-            } else {
-                continue;
-            }
-
-            const PartMetaData *messagePart(mpl.last()->partMetaData());
-
-            if (!messagePart->isEncrypted && !messagePart->isSigned && !block.text().trimmed().isEmpty()) {
-                mpl.last()->setText(aCodec->toUnicode(block.text()));
-            }
-
-            if (messagePart->isEncrypted) {
-                inlineEncryptionState = KMMsgPartiallyEncrypted;
-            }
-
-            if (messagePart->isSigned) {
-                inlineSignatureState = KMMsgPartiallySigned;
-            }
-        }
-
-        //Do we have an fully Signed/Encrypted Message?
-        if (fullySignedOrEncrypted) {
-            if (inlineSignatureState == KMMsgPartiallySigned) {
-                inlineSignatureState = KMMsgFullySigned;
-            }
-            if (inlineEncryptionState == KMMsgPartiallyEncrypted) {
-                inlineEncryptionState = KMMsgFullyEncrypted;
-            }
-        }
-    }
-    return mpl;
-}
-
-void ObjectTreeParser::writeBodyStr(const QByteArray &aStr, const QTextCodec *aCodec,
-                                    const QString &fromAddress,
-                                    KMMsgSignatureState  &inlineSignatureState,
-                                    KMMsgEncryptionState &inlineEncryptionState,
-                                    bool decorate)
-{
-    const auto mpl = writeBodyStr2(aStr, aCodec, fromAddress, inlineSignatureState, inlineEncryptionState);
-
-    if (!mpl.isEmpty()) {
-        if (htmlWriter()) {
-            foreach (const MessagePart::Ptr &mp, mpl) {
-                mp->html(decorate);
-            }
-        }
-
-        const bool updatePlainText = (inlineSignatureState != KMMsgNotSigned
-                                      || inlineEncryptionState != KMMsgNotEncrypted);
-        if (updatePlainText || mPlainTextContent.isEmpty()) {
-            mPlainTextContent.clear();
-            foreach (const MessagePart::Ptr &mp, mpl) {
-                mPlainTextContent += mp->text();
-            }
-            mPlainTextContentCharset = aCodec->name();
         }
     }
 }

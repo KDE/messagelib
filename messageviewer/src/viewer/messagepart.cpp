@@ -24,10 +24,12 @@
 #include "converthtmltoplaintext.h"
 #include "htmlquotecolorer.h"
 #include "csshelper.h"
+#include "cryptohelper.h"
 
 #include <MessageCore/StringUtil>
 
 #include <libkleo/importjob.h>
+#include <libkleo/cryptobackendfactory.h>
 
 #include <interfaces/htmlwriter.h>
 #include <htmlwriter/queuehtmlwriter.h>
@@ -341,23 +343,113 @@ QString MessagePart::renderInternalText() const
 
 //-----TextMessageBlock----------------------
 
-TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink)
+TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage)
     : MessagePart(otp, QString())
     , mNode(node)
     , mDrawFrame(drawFrame)
     , mShowLink(showLink)
+    , mDecryptMessage(decryptMessage)
 {
     if (!mNode) {
         qCWarning(MESSAGEVIEWER_LOG) << "not a valid node";
         return;
     }
 
-    mBlocks = mOtp->writeBodyStr2(mNode->decodedContent(), mOtp->codecFor(mNode), NodeHelper::fromAsString(mNode), mSignatureState, mEncryptionState);
+    parseContent();
 }
 
 TextMessagePart::~TextMessagePart()
 {
 
+}
+
+bool TextMessagePart::decryptMessage() const
+{
+    return mDecryptMessage;
+}
+
+void TextMessagePart::parseContent()
+{
+    const auto aCodec = mOtp->codecFor(mNode);
+    const QString &fromAddress = NodeHelper::fromAsString(mNode);
+    mSignatureState  = KMMsgNotSigned;
+    mEncryptionState = KMMsgNotEncrypted;
+    const auto blocks = prepareMessageForDecryption(mNode->decodedContent());
+
+    const auto cryptProto = Kleo::CryptoBackendFactory::instance()->openpgp();
+
+    if (!blocks.isEmpty()) {
+
+        if (blocks.count() > 1 || blocks.at(0).type() != MessageViewer::NoPgpBlock) {
+            mOtp->setCryptoProtocol(cryptProto);
+        }
+
+
+        QString htmlStr;
+        QString plainTextStr;
+
+        /* The (overall) signature/encrypted status is broken
+         * if one unencrypted part is at the beginning or in the middle
+         * because mailmain adds an unencrypted part at the end this should not break the overall status
+         *
+         * That's why we first set the tmp status and if one crypted/signed block comes afterwards, than
+         * the status is set to unencryped
+         */
+        bool fullySignedOrEncrypted = true;
+        bool fullySignedOrEncryptedTmp = true;
+
+        Q_FOREACH (const auto &block, blocks) {
+
+            if (!fullySignedOrEncryptedTmp) {
+                fullySignedOrEncrypted = false;
+            }
+
+            if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
+                fullySignedOrEncryptedTmp = false;
+                mBlocks.append(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(block.text()))));
+            } else if (block.type() == PgpMessageBlock) {
+                CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, 0));
+                mBlocks.append(mp);
+                if (!decryptMessage()) {
+                    continue;
+                }
+                mp->startDecryption(block.text(), aCodec);
+                if (mp->partMetaData()->inProgress) {
+                    continue;
+                }
+            } else if (block.type() == ClearsignedBlock) {
+                CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, 0));
+                mBlocks.append(mp);
+                mp->startVerification(block.text(), aCodec);
+            } else {
+                continue;
+            }
+
+            const PartMetaData *messagePart(mBlocks.last()->partMetaData());
+
+            if (!messagePart->isEncrypted && !messagePart->isSigned && !block.text().trimmed().isEmpty()) {
+                mBlocks.last()->setText(aCodec->toUnicode(block.text()));
+            }
+
+            if (messagePart->isEncrypted) {
+                mEncryptionState = KMMsgPartiallyEncrypted;
+            }
+
+            if (messagePart->isSigned) {
+                mSignatureState = KMMsgPartiallySigned;
+            }
+        }
+
+        //Do we have an fully Signed/Encrypted Message?
+        if (fullySignedOrEncrypted) {
+            if (mSignatureState == KMMsgPartiallySigned) {
+                mSignatureState = KMMsgFullySigned;
+            }
+            if (mEncryptionState == KMMsgPartiallyEncrypted) {
+                mEncryptionState = KMMsgFullyEncrypted;
+            }
+        }
+    }
 }
 
 void TextMessagePart::html(bool decorate)

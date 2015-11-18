@@ -410,11 +410,6 @@ public:// (during refactoring)
 
     MessagePart::Ptr  processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
 
-    void writeBodyString(const QByteArray &bodyString,
-                         const QString &fromAddress,
-                         const QTextCodec *codec,
-                         ProcessResult &result, bool decorate);
-
     void writePartIcon(KMime::Content *msgPart, bool inlineImage = false);
 
     QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
@@ -427,18 +422,6 @@ public:// (during refactoring)
                                const QString &fromAddress,
                                KMime::Content *node = 0);
     QString writeSigstatFooter(PartMetaData &part);
-
-    void writeBodyStr(const QByteArray &bodyString,
-                      const QTextCodec *aCodec,
-                      const QString &fromAddress,
-                      KMMsgSignatureState   &inlineSignatureState,
-                      KMMsgEncryptionState &inlineEncryptionState,
-                      bool decorate);
-
-    QVector<MessagePart::Ptr> writeBodyStr2(const QByteArray &aStr, const QTextCodec *aCodec,
-                                            const QString &fromAddress,
-                                            KMMsgSignatureState  &inlineSignatureState,
-                                            KMMsgEncryptionState &inlineEncryptionState);
 
     bool isMailmanMessage(KMime::Content *curNode);
 

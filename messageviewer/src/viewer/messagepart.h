@@ -179,7 +179,7 @@ class TextMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<TextMessagePart> Ptr;
-    TextMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink);
+    TextMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage);
     virtual ~TextMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -188,13 +188,16 @@ public:
     KMMsgSignatureState signatureState() const;
     KMMsgEncryptionState encryptionState() const;
 
+    bool decryptMessage() const;
 private:
+    void parseContent();
     KMime::Content *mNode;
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;
     QVector<MessagePart::Ptr> mBlocks;
     bool mDrawFrame;
     bool mShowLink;
+    bool mDecryptMessage;
 };
 
 class HtmlMessagePart : public MessagePart
