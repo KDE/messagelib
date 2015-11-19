@@ -941,16 +941,6 @@ MessagePart::Ptr ObjectTreeParser::processTextPlainSubtype(KMime::Content *curNo
     return mp;
 }
 
-void ObjectTreeParser::standardChildHandling(KMime::Content *child)
-{
-    if (!child) {
-        return;
-    }
-
-    MimeMessagePart mp(this, child, false);
-    mp.html(false);
-}
-
 MessagePart::Ptr ObjectTreeParser::processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &)
 {
     KMime::Content *child = MessageCore::NodeHelper::firstChild(node);

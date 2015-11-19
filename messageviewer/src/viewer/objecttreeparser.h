@@ -366,10 +366,6 @@ private:
     */
     void parseObjectTreeInternal(KMime::Content *node);
 
-    /** Standard children handling a.k.a. multipart/mixed (w/o
-      kroupware hacks) */
-    void standardChildHandling(KMime::Content *child);
-
     MessagePart::Ptr defaultHandling(KMime::Content *node, ProcessResult &result);
 
     /** 1. Create a new partNode using 'content' data and Content-Description
