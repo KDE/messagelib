@@ -35,17 +35,53 @@
 #define __KMAIL_INTERFACE_BODYPARTFORMATTER_H__
 
 #include <QObject>
+#include <QSharedPointer>
+
+#include <messageviewer/bodypart.h>
+#include <htmlwriter/queuehtmlwriter.h>
 
 namespace MessageViewer
 {
 
-class HtmlWriter;
 
 namespace Interface
 {
 
-class BodyPart;
+class HtmlWriter;
 class BodyPartURLHandler;
+
+class MessagePart
+{
+public:
+    typedef QSharedPointer<MessagePart> Ptr;
+    explicit MessagePart()
+        : mHtmlWriter(0)
+        , mPart(0)
+    {
+    }
+
+    explicit MessagePart(const BodyPart &part)
+        : mHtmlWriter(0)
+        , mPart(&part)
+    {
+
+    }
+    virtual ~MessagePart() {}
+
+    virtual void html(bool decorate);
+    virtual QString text() const
+    {
+        return QString();
+    }
+
+private:
+    HtmlWriter *htmlWriter();
+
+    HtmlWriter *mHtmlWriter;
+    const BodyPart *mPart;
+
+    friend class BodyPartFormatter;
+};
 
 class BodyPartFormatter
 {
@@ -78,6 +114,17 @@ public:
     {
         Q_UNUSED(asyncResultObserver);
         return format(part, writer);
+    }
+
+    virtual MessagePart::Ptr process(BodyPart &part) const
+    {
+        qDebug() << "should never happen tm";
+        auto mp = MessagePart::Ptr(new MessagePart(part));
+        const auto ret = format(&part,mp->htmlWriter());
+        if (ret != Failed) {
+            return mp;
+        }
+        return MessagePart::Ptr();
     }
 };
 

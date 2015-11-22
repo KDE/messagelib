@@ -333,9 +333,18 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
             subType = node->contentType()->subType();
         }
 
-        // First, try if an external plugin can handle this MIME part
-        if (const Interface::BodyPartFormatter * formatter
-                = BodyPartFormatterFactory::instance()->createFor(mediaType, subType)) {
+        bool bRendered = false;
+        const auto sub = BodyPartFormatterFactory::instance()->subtypeRegistry(mediaType);
+        const auto end = sub.end();
+        auto it = sub.find(subType);
+        if (it == end) {
+            it = sub.find("*");
+        }
+        for (; it != end; ++it) {
+            const auto formatter = (*it).second;
+            if (!formatter) {
+                continue;
+            }
             PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper, codecFor(node));
             // Set the default display strategy for this body part relying on the
             // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
@@ -343,30 +352,38 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
 
             mNodeHelper->setNodeDisplayedEmbedded(node, true);
 
-            AttachmentMarkBlock block(htmlWriter(), node);
-            QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
-            const Interface::BodyPartFormatter::Result result = formatter->format(&part, htmlWriter(), asyncResultObserver);
-            switch (result) {
-            case Interface::BodyPartFormatter::AsIcon:
-                processResult.setNeverDisplayInline(true);
-                mNodeHelper->setNodeDisplayedEmbedded(node, false);
-            // fall through:
-            case Interface::BodyPartFormatter::Failed:
-            {
-                const auto mp = defaultHandling(node, processResult);
-                if (mp) {
-                    mp->html(false);
-                }
-                break;
-            }
-            case Interface::BodyPartFormatter::Ok:
-            case Interface::BodyPartFormatter::NeedContent:
-                // FIXME: incomplete content handling
-                ;
+            const auto result = formatter->process(part);
+            if (!result) {
+                continue;
             }
 
-            // No external plugin can handle the MIME part, handle it internally
-        } else {
+            if (const auto mp = dynamic_cast<MessageViewer::MessagePart*>(result.data())) {
+                AttachmentMarkBlock block(htmlWriter(), node);
+                mp->html(false);
+                bRendered = true;
+                break;
+            } else if (dynamic_cast<MessageViewer::Interface::MessagePart*>(result.data())) {
+                QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
+                const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
+                if (r == Interface::BodyPartFormatter::AsIcon) {
+                    //qDebug() << node << "asIcon";
+                    AttachmentMarkBlock block(htmlWriter(), node);
+                    processResult.setNeverDisplayInline(true);
+                    mNodeHelper->setNodeDisplayedEmbedded(node, false);
+                    const auto mp = defaultHandling(node, processResult);
+                    if (mp) {
+                        mp->html(false);
+                    }
+                    bRendered = true;
+                    break;
+                }
+                continue;
+            } else {
+                continue;
+            }
+        }
+
+        if (!bRendered) {
             qCCritical(MESSAGEVIEWER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
             AttachmentMarkBlock block(htmlWriter(), node);
             const auto mp = defaultHandling(node, processResult);

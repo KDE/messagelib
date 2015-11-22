@@ -22,6 +22,7 @@
 
 #include "partmetadata.h"
 #include "nodehelper.h"
+#include "interfaces/bodypartformatter.h"
 #include <KMime/Message>
 
 #include <Libkleo/CryptoBackend>
@@ -163,7 +164,7 @@ private:
     const QString &mMsg;
 };
 
-class MessagePart
+class MessagePart : public Interface::MessagePart
 {
 public:
     typedef QSharedPointer<MessagePart> Ptr;
@@ -172,9 +173,9 @@ public:
 
     virtual ~MessagePart();
 
-    virtual QString text() const;
+    virtual QString text() const Q_DECL_OVERRIDE;
     void setText(const QString &text);
-    virtual void html(bool decorate);
+    virtual void html(bool decorate) Q_DECL_OVERRIDE;
 
     PartMetaData *partMetaData();
 
