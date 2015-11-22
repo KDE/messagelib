@@ -372,7 +372,7 @@ private:
           found in 'cntDesc'.
       2. Parse the 'node' to display the content.
     */
-    void createAndParseTempNode(KMime::Content *parentNode, const char *content, const char *cntDesc);
+    MimeMessagePart::Ptr createAndParseTempNode( KMime::Content* parentNode, const char* content, const char* cntDesc );
 
     /** Writes out the information contained in a GpgME::ImportResult */
     void writeCertificateImportResult(const GpgME::ImportResult &res);
@@ -392,12 +392,11 @@ private:
     bool okVerify(const QByteArray &data, const Kleo::CryptoBackend::Protocol *cryptProto, MessageViewer::PartMetaData &messagePart, QByteArray &verifiedText, std::vector<GpgME::Signature> &signatures, const QByteArray &signature, KMime::Content *sign);
     void sigStatusToMetaData(const std::vector<GpgME::Signature> &signatures, const Kleo::CryptoBackend::Protocol *cryptoProtocol, PartMetaData &messagePart, GpgME::Key key);
 
-    bool processMailmanMessage(KMime::Content *node);
-
 public:// (during refactoring)
 
     MessagePart::Ptr processTextHtmlSubtype(KMime::Content *node, ProcessResult &result);
     MessagePart::Ptr processTextPlainSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePart::Ptr processMailmanSubtype(KMime::Content *node, ProcessResult &result);
 
     MessagePart::Ptr processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &result);
     MessagePart::Ptr processMultiPartAlternativeSubtype(KMime::Content *node, ProcessResult &result);

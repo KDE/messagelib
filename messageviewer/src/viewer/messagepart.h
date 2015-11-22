@@ -175,14 +175,31 @@ private:
     friend class AlternativeMessagePart;
 };
 
-class TextMessagePart : public MessagePart
+class MessagePartList : public MessagePart
+{
+public:
+    typedef QSharedPointer<MessagePartList> Ptr;
+    MessagePartList(MessageViewer::ObjectTreeParser* otp);
+    virtual ~MessagePartList();
+
+    QString text() const Q_DECL_OVERRIDE;
+    void html(bool decorate) Q_DECL_OVERRIDE;
+
+    void appendMessagePart(const MessagePart::Ptr &messagePart);
+
+    const QVector<MessagePart::Ptr> &messageParts() const;
+
+private:
+    QVector<MessagePart::Ptr> mBlocks;
+};
+
+class TextMessagePart : public MessagePartList
 {
 public:
     typedef QSharedPointer<TextMessagePart> Ptr;
     TextMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage);
     virtual ~TextMessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
     void html(bool decorate) Q_DECL_OVERRIDE;
 
     KMMsgSignatureState signatureState() const;
@@ -194,7 +211,6 @@ private:
     KMime::Content *mNode;
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;
-    QVector<MessagePart::Ptr> mBlocks;
     bool mDrawFrame;
     bool mShowLink;
     bool mDecryptMessage;

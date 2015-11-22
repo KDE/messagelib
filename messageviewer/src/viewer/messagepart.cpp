@@ -341,10 +341,50 @@ QString MessagePart::renderInternalText() const
     return mSubOtp->plainTextContent();
 }
 
+//-----MessagePartList----------------------
+MessagePartList::MessagePartList(ObjectTreeParser* otp)
+    : MessagePart(otp, QString())
+{
+}
+
+MessagePartList::~MessagePartList()
+{
+
+}
+
+void MessagePartList::appendMessagePart(const MessagePart::Ptr& messagePart)
+{
+    mBlocks.append(messagePart);
+}
+
+const QVector<MessagePart::Ptr>& MessagePartList::messageParts() const
+{
+    return mBlocks;
+}
+
+
+void MessagePartList::html(bool decorate)
+{
+    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+
+    foreach (const MessagePart::Ptr &mp, mBlocks) {
+        mp->html(decorate);
+    }
+}
+
+QString MessagePartList::text() const
+{
+    QString text;
+    foreach (const MessagePart::Ptr &mp, mBlocks) {
+        text += mp->text();
+    }
+    return text;
+}
+
 //-----TextMessageBlock----------------------
 
 TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage)
-    : MessagePart(otp, QString())
+    : MessagePartList(otp)
     , mNode(node)
     , mDrawFrame(drawFrame)
     , mShowLink(showLink)
@@ -406,10 +446,10 @@ void TextMessagePart::parseContent()
 
             if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
                 fullySignedOrEncryptedTmp = false;
-                mBlocks.append(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(block.text()))));
+                appendMessagePart(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(block.text()))));
             } else if (block.type() == PgpMessageBlock) {
                 CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, 0));
-                mBlocks.append(mp);
+                appendMessagePart(mp);
                 if (!decryptMessage()) {
                     continue;
                 }
@@ -419,16 +459,16 @@ void TextMessagePart::parseContent()
                 }
             } else if (block.type() == ClearsignedBlock) {
                 CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, 0));
-                mBlocks.append(mp);
+                appendMessagePart(mp);
                 mp->startVerification(block.text(), aCodec);
             } else {
                 continue;
             }
 
-            const PartMetaData *messagePart(mBlocks.last()->partMetaData());
+            const PartMetaData *messagePart(messageParts().last()->partMetaData());
 
             if (!messagePart->isEncrypted && !messagePart->isSigned && !block.text().trimmed().isEmpty()) {
-                mBlocks.last()->setText(aCodec->toUnicode(block.text()));
+                messageParts().last()->setText(aCodec->toUnicode(block.text()));
             }
 
             if (messagePart->isEncrypted) {
@@ -460,18 +500,7 @@ void TextMessagePart::html(bool decorate)
         block = HTMLBlock::Ptr(new TextBlock(writer, mOtp->nodeHelper(), mNode, mShowLink));
     }
 
-    foreach (const MessagePart::Ptr &mp, mBlocks) {
-        mp->html(decorate);
-    }
-}
-
-QString TextMessagePart::text() const
-{
-    QString text;
-    foreach (const MessagePart::Ptr &mp, mBlocks) {
-        text += mp->text();
-    }
-    return text;
+    MessagePartList::html(decorate);
 }
 
 KMMsgEncryptionState TextMessagePart::encryptionState() const

@@ -254,7 +254,7 @@ void ObjectTreeParser::copyContentFrom(const ObjectTreeParser *other)
     }
 }
 
-void ObjectTreeParser::createAndParseTempNode(KMime::Content *parentNode, const char *content, const char *cntDesc)
+MimeMessagePart::Ptr ObjectTreeParser::createAndParseTempNode(KMime::Content *parentNode, const char *content, const char *cntDesc)
 {
     //  qCDebug(MESSAGEVIEWER_LOG) << "CONTENT: " << QByteArray( content ).left( 100 ) << " CNTDESC: " << cntDesc;
 
@@ -273,9 +273,7 @@ void ObjectTreeParser::createAndParseTempNode(KMime::Content *parentNode, const 
     }
     mNodeHelper->attachExtraContent(parentNode, newNode);
 
-    ObjectTreeParser otp(this);
-    otp.parseObjectTreeInternal(newNode);
-    copyContentFrom(&otp);
+    return MimeMessagePart::Ptr(new MimeMessagePart(this, newNode, false));
 }
 
 //-----------------------------------------------------------------------------
@@ -794,8 +792,12 @@ bool ObjectTreeParser::isMailmanMessage(KMime::Content *curNode)
     return false;
 }
 
-bool ObjectTreeParser::processMailmanMessage(KMime::Content *curNode)
+MessagePart::Ptr ObjectTreeParser::processMailmanSubtype(KMime::Content* curNode, ProcessResult& result)
 {
+    if (!isMailmanMessage(curNode)) {
+        return MessagePart::Ptr();
+    }
+
     const QString str = QString::fromLatin1(curNode->decodedContent());
 
     //###
@@ -809,7 +811,7 @@ bool ObjectTreeParser::processMailmanMessage(KMime::Content *curNode)
         thisDelim = str.indexOf(delim2, Qt::CaseInsensitive);
     }
     if (thisDelim == -1) {
-        return false;
+        return MessagePart::Ptr();
     }
 
     int nextDelim = str.indexOf(delim1, thisDelim + 1, Qt::CaseInsensitive);
@@ -823,7 +825,7 @@ bool ObjectTreeParser::processMailmanMessage(KMime::Content *curNode)
         nextDelim = str.indexOf(delimZ2, thisDelim + 1, Qt::CaseInsensitive);
     }
     if (nextDelim < 0) {
-        return false;
+        return MessagePart::Ptr();
     }
 
     //if ( curNode->mRoot )
@@ -832,7 +834,9 @@ bool ObjectTreeParser::processMailmanMessage(KMime::Content *curNode)
     // at least one message found: build a mime tree
     digestHeaderStr = QStringLiteral("Content-Type: text/plain\nContent-Description: digest header\n\n");
     digestHeaderStr += str.midRef(0, thisDelim);
-    createAndParseTempNode(mTopLevelContent, digestHeaderStr.toLatin1(), "Digest Header");
+
+    MessagePartList::Ptr mpl(new MessagePartList(this));
+    mpl->appendMessagePart(createAndParseTempNode(mTopLevelContent, digestHeaderStr.toLatin1(), "Digest Header"));
     //mReader->queueHtml("<br><hr><br>");
     // temporarily change curent node's Content-Type
     // to get our embedded RfC822 messages properly inserted
@@ -857,7 +861,6 @@ bool ObjectTreeParser::processMailmanMessage(KMime::Content *curNode)
         //  ++thisDelim;
 
         partStr = QStringLiteral("Content-Type: message/rfc822\nContent-Description: embedded message\n\n");
-        partStr += QLatin1String("Content-Type: text/plain\n");
         partStr += str.midRef(thisDelim, nextDelim - thisDelim);
         QString subject = QStringLiteral("embedded message");
         QString subSearch = QStringLiteral("\nSubject:");
@@ -870,7 +873,7 @@ bool ObjectTreeParser::processMailmanMessage(KMime::Content *curNode)
             }
         }
         qCDebug(MESSAGEVIEWER_LOG) << "        embedded message found: \"" << subject;
-        createAndParseTempNode(mTopLevelContent, partStr.toLatin1(), subject.toLatin1());
+        mpl->appendMessagePart(createAndParseTempNode(mTopLevelContent, partStr.toLatin1(), subject.toLatin1()));
         //mReader->queueHtml("<br><hr><br>");
         thisDelim = nextDelim + 1;
         nextDelim = str.indexOf(delim1, thisDelim, Qt::CaseInsensitive);
@@ -898,8 +901,8 @@ bool ObjectTreeParser::processMailmanMessage(KMime::Content *curNode)
     }
     partStr = QStringLiteral("Content-Type: text/plain\nContent-Description: digest footer\n\n");
     partStr += str.midRef(thisDelim);
-    createAndParseTempNode(mTopLevelContent, partStr.toLatin1(), "Digest Footer");
-    return true;
+    mpl->appendMessagePart(createAndParseTempNode(mTopLevelContent, partStr.toLatin1(), "Digest Footer"));
+    return mpl;
 }
 
 void ObjectTreeParser::extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart)
@@ -928,22 +931,16 @@ MessagePart::Ptr ObjectTreeParser::processTextPlainSubtype(KMime::Content *curNo
                             && !label.isEmpty();
     const QString fileName = mNodeHelper->writeNodeToTempFile(curNode);
 
-    // process old style not-multipart Mailman messages to
-    // enable verification of the embedded messages' signatures
-    //if (!isMailmanMessage(curNode) ||
-    //        !processMailmanMessage(curNode)) {
+    TextMessagePart::Ptr mp(new TextMessagePart(this, curNode, bDrawFrame, !fileName.isEmpty(), mSource->decryptMessage()));
 
-        TextMessagePart::Ptr mp(new TextMessagePart(this, curNode, bDrawFrame, !fileName.isEmpty(), mSource->decryptMessage()));
+    result.setInlineSignatureState(mp->signatureState());
+    result.setInlineEncryptionState(mp->encryptionState());
 
-        result.setInlineSignatureState(mp->signatureState());
-        result.setInlineEncryptionState(mp->encryptionState());
+    if (isFirstTextPart) {
+        mPlainTextContent = mp->text();
+    }
 
-        if (isFirstTextPart) {
-            mPlainTextContent = mp->text();
-        }
-
-        mNodeHelper->setNodeDisplayedEmbedded(curNode, true);
-    //}
+    mNodeHelper->setNodeDisplayedEmbedded(curNode, true);
 
     return mp;
 }
