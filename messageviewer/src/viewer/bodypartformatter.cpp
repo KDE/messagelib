@@ -143,84 +143,6 @@ MessageViewer::Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatt
     }
 }
 
-class MultiPartSignedBodyPartFormatter
-    : public MessageViewer::Interface::BodyPartFormatter
-{
-public:
-    MessagePart::Ptr process(const Interface::BodyPart &part) const;
-    MessageViewer::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE;
-    using MessageViewer::Interface::BodyPartFormatter::format;
-    static const MessageViewer::Interface::BodyPartFormatter *create();
-private:
-    static const MultiPartSignedBodyPartFormatter *self;
-};
-
-const MultiPartSignedBodyPartFormatter *MultiPartSignedBodyPartFormatter::self;
-
-const MessageViewer::Interface::BodyPartFormatter *MultiPartSignedBodyPartFormatter::create()
-{
-    if (!self) {
-        self = new MultiPartSignedBodyPartFormatter();
-    }
-    return self;
-}
-
-MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(const Interface::BodyPart &part) const
-{
-    return part.objectTreeParser()->processMultiPartSignedSubtype(part.content(), *part.processResult());
-}
-
-MessageViewer::Interface::BodyPartFormatter::Result MultiPartSignedBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
-{
-    Q_UNUSED(writer)
-    MessagePart::Ptr mp = process(*part);
-    if (!mp.isNull()) {
-        mp->html(false);
-        return Ok;
-    }
-
-    return Failed;
-}
-
-class MultiPartEncryptedBodyPartFormatter
-    : public MessageViewer::Interface::BodyPartFormatter
-{
-public:
-    MessagePart::Ptr process(const Interface::BodyPart &part) const;
-    MessageViewer::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE;
-    using MessageViewer::Interface::BodyPartFormatter::format;
-    static const MessageViewer::Interface::BodyPartFormatter *create();
-private:
-    static const MultiPartEncryptedBodyPartFormatter *self;
-};
-
-const MultiPartEncryptedBodyPartFormatter *MultiPartEncryptedBodyPartFormatter::self;
-
-const MessageViewer::Interface::BodyPartFormatter *MultiPartEncryptedBodyPartFormatter::create()
-{
-    if (!self) {
-        self = new MultiPartEncryptedBodyPartFormatter();
-    }
-    return self;
-}
-
-MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(const Interface::BodyPart &part) const
-{
-    return part.objectTreeParser()->processMultiPartEncryptedSubtype(part.content(), *part.processResult());
-}
-
-MessageViewer::Interface::BodyPartFormatter::Result MultiPartEncryptedBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
-{
-    Q_UNUSED(writer)
-    MessagePart::Ptr mp = process(*part);
-    if (!mp.isNull()) {
-        mp->html(false);
-        return Ok;
-    }
-
-    return Failed;
-}
-
 #define CREATE_BODY_PART_FORMATTER(subtype) \
     class subtype##BodyPartFormatter \
         : public MessageViewer::Interface::BodyPartFormatter \
@@ -256,12 +178,15 @@ MessageViewer::Interface::BodyPartFormatter::Result MultiPartEncryptedBodyPartFo
     }
 
 CREATE_BODY_PART_FORMATTER(TextPlain)
+CREATE_BODY_PART_FORMATTER(Mailman)
 CREATE_BODY_PART_FORMATTER(TextHtml)
 
 CREATE_BODY_PART_FORMATTER(ApplicationPkcs7Mime)
 
 CREATE_BODY_PART_FORMATTER(MultiPartMixed)
 CREATE_BODY_PART_FORMATTER(MultiPartAlternative)
+CREATE_BODY_PART_FORMATTER(MultiPartSigned)
+CREATE_BODY_PART_FORMATTER(MultiPartEncrypted)
 
 typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
 
@@ -274,27 +199,29 @@ void BodyPartFormatterFactoryPrivate::messageviewer_create_builtin_bodypart_form
     if (!reg) {
         return;
     }
-    (*reg)["application"]["octet-stream"] = AnyTypeBodyPartFormatter::create();
-    (*reg)["application"]["pgp"] = ApplicationPgpBodyPartFormatter::create();
-    (*reg)["application"]["pkcs7-mime"] = ApplicationPkcs7MimeBodyPartFormatter::create();
-    (*reg)["application"]["x-pkcs7-mime"] = ApplicationPkcs7MimeBodyPartFormatter::create();
-    (*reg)["application"]["*"] = AnyTypeBodyPartFormatter::create();
+    (*reg)["application"].insert(std::make_pair("octet-stream", AnyTypeBodyPartFormatter::create()));
+    (*reg)["application"].insert(std::make_pair("pgp", ApplicationPgpBodyPartFormatter::create()));
+    (*reg)["application"].insert(std::make_pair("pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create()));
+    (*reg)["application"].insert(std::make_pair("x-pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create()));
+    (*reg)["application"].insert(std::make_pair("*", AnyTypeBodyPartFormatter::create()));
 
-    (*reg)["text"]["plain"] = TextPlainBodyPartFormatter::create();
-    (*reg)["text"]["html"] = TextHtmlBodyPartFormatter::create();
-    (*reg)["text"]["rtf"] = AnyTypeBodyPartFormatter::create();
-    (*reg)["text"]["vcard"] = AnyTypeBodyPartFormatter::create();
-    (*reg)["text"]["x-vcard"] = AnyTypeBodyPartFormatter::create();
-    (*reg)["text"]["*"] = TextPlainBodyPartFormatter::create();
+    (*reg)["text"].insert(std::make_pair("html", TextHtmlBodyPartFormatter::create()));
+    (*reg)["text"].insert(std::make_pair("rtf", AnyTypeBodyPartFormatter::create()));
+    (*reg)["text"].insert(std::make_pair("vcard", AnyTypeBodyPartFormatter::create()));
+    (*reg)["text"].insert(std::make_pair("x-vcard", AnyTypeBodyPartFormatter::create()));
+    (*reg)["text"].insert(std::make_pair("plain", MailmanBodyPartFormatter::create()));
+    (*reg)["text"].insert(std::make_pair("plain", TextPlainBodyPartFormatter::create()));
+    (*reg)["text"].insert(std::make_pair("*", MailmanBodyPartFormatter::create()));
+    (*reg)["text"].insert(std::make_pair("*", TextPlainBodyPartFormatter::create()));
 
-    (*reg)["image"]["*"] = ImageTypeBodyPartFormatter::create();
+    (*reg)["image"].insert(std::make_pair("*", ImageTypeBodyPartFormatter::create()));
 
-    (*reg)["message"]["rfc822"] = MessageRfc822BodyPartFormatter::create();
-    (*reg)["message"]["*"] = AnyTypeBodyPartFormatter::create();
+    (*reg)["message"].insert(std::make_pair("rfc822", MessageRfc822BodyPartFormatter::create()));
+    (*reg)["message"].insert(std::make_pair("*", AnyTypeBodyPartFormatter::create()));
 
-    (*reg)["multipart"]["alternative"] = MultiPartAlternativeBodyPartFormatter::create();
-    (*reg)["multipart"]["encrypted"] = MultiPartEncryptedBodyPartFormatter::create();
-    (*reg)["multipart"]["signed"] = MultiPartSignedBodyPartFormatter::create();
-    (*reg)["multipart"]["*"] = MultiPartMixedBodyPartFormatter::create();
-    (*reg)["*"]["*"] = AnyTypeBodyPartFormatter::create();
+    (*reg)["multipart"].insert(std::make_pair("alternative", MultiPartAlternativeBodyPartFormatter::create()));
+    (*reg)["multipart"].insert(std::make_pair("encrypted", MultiPartEncryptedBodyPartFormatter::create()));
+    (*reg)["multipart"].insert(std::make_pair("signed", MultiPartSignedBodyPartFormatter::create()));
+    (*reg)["multipart"].insert(std::make_pair("*", MultiPartMixedBodyPartFormatter::create()));
+    (*reg)["*"].insert(std::make_pair("*", AnyTypeBodyPartFormatter::create()));
 }

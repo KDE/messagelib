@@ -102,7 +102,9 @@ static void insertBodyPartFormatter(const char *type, const char *subtype,
     if (subtype_it != subtype_reg.end()) {
         qCDebug(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: overwriting previously registered formatter for \""
                                    << type << "/" << subtype << "\"";
-        subtype_reg.erase(subtype_it); subtype_it = subtype_reg.end();
+        qDebug() << "BodyPartFormatterFactory: overwriting previously registered formatter for \""
+                                   << type << "/" << subtype << "\"";
+        //subtype_reg.erase(subtype_it); subtype_it = subtype_reg.end();
     }
 
     subtype_reg.insert(std::make_pair(subtype, formatter));
@@ -116,6 +118,7 @@ static void loadPlugins()
         return;
     }
     const QStringList types = pl->types();
+    qDebug() << "BodyPartFormatterFactory: found" << types.size() << "plugins.";
     qCDebug(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: found" << types.size() << "plugins.";
     for (QStringList::const_iterator it = types.begin(); it != types.end(); ++it) {
         const Interface::BodyPartFormatterPlugin *plugin = pl->createForName(*it);
@@ -139,6 +142,7 @@ static void loadPlugins()
                                              << i;
                 break;
             }
+            qDebug() << "plugin for " << type << subtype;
             insertBodyPartFormatter(type, subtype, bfp);
         }
         const Interface::BodyPartURLHandler *handler;
@@ -157,7 +161,36 @@ static void setup()
     }
 }
 
-const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const char *type, const char *subtype) const
+const SubtypeRegistry &BodyPartFormatterFactory::subtypeRegistry(const char* type) const
+{
+    if (!type || !*type) {
+        type = "*";    //krazy:exclude=doublequote_chars
+    }
+
+    setup();
+    assert(all);
+
+    if (all->empty()) {
+        return SubtypeRegistry();
+    }
+
+    TypeRegistry::const_iterator type_it = all->find(type);
+    if (type_it == all->end()) {
+        type_it = all->find("*");
+    }
+    if (type_it == all->end()) {
+        return SubtypeRegistry();
+    }
+
+    const SubtypeRegistry &subtype_reg = type_it->second;
+    if (subtype_reg.empty()) {
+        return SubtypeRegistry();
+    }
+    return subtype_reg;
+}
+
+
+SubtypeRegistry::const_iterator BodyPartFormatterFactory::createForIterator(const char* type, const char* subtype) const
 {
     if (!type || !*type) {
         type = "*";    //krazy:exclude=doublequote_chars
@@ -170,7 +203,7 @@ const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const ch
     assert(all);
 
     if (all->empty()) {
-        return 0;
+        return SubtypeRegistry::const_iterator();
     }
 
     TypeRegistry::const_iterator type_it = all->find(type);
@@ -178,20 +211,21 @@ const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const ch
         type_it = all->find("*");
     }
     if (type_it == all->end()) {
-        return 0;
+        return SubtypeRegistry::const_iterator();
     }
 
     const SubtypeRegistry &subtype_reg = type_it->second;
     if (subtype_reg.empty()) {
-        return 0;
+        return SubtypeRegistry::const_iterator();
     }
 
     SubtypeRegistry::const_iterator subtype_it = subtype_reg.find(subtype);
+    qDebug() << type << subtype << subtype_reg.size();
     if (subtype_it == subtype_reg.end()) {
         subtype_it = subtype_reg.find("*");
     }
     if (subtype_it == subtype_reg.end()) {
-        return 0;
+        return SubtypeRegistry::const_iterator();
     }
 
     if (!(*subtype_it).second) {
@@ -199,7 +233,16 @@ const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const ch
                                      << type << "/" << subtype << "\"!";
     }
 
-    return (*subtype_it).second;
+    return subtype_it;
+}
+
+const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const char *type, const char *subtype) const
+{
+        const auto it = createForIterator(type, subtype);
+        if ((*it).second) {
+            return (*it).second;
+        }
+        return 0;
 }
 
 const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const QString &type, const QString &subtype) const

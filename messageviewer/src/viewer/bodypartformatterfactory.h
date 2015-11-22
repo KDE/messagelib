@@ -34,6 +34,7 @@
 #ifndef __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_H__
 #define __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_H__
 
+#include <map>
 #include <QByteArray>
 
 class QString;
@@ -46,6 +47,15 @@ namespace Interface
 class BodyPartFormatter;
 }
 
+struct ltstr {
+    bool operator()(const char *s1, const char *s2) const
+    {
+        return qstricmp(s1, s2) < 0;
+    }
+};
+
+typedef std::multimap<const char *, const Interface::BodyPartFormatter *, ltstr> SubtypeRegistry;
+
 class BodyPartFormatterFactory
 {
     class gcc_shut_up;
@@ -54,6 +64,9 @@ public:
     ~BodyPartFormatterFactory();
 
     static const BodyPartFormatterFactory *instance();
+
+    SubtypeRegistry::const_iterator createForIterator(const char *type, const char *subtype) const;
+    const SubtypeRegistry &subtypeRegistry(const char *type) const;
 
     const Interface::BodyPartFormatter *createFor(const char *type, const char *subtype) const;
     const Interface::BodyPartFormatter *createFor(const QString &type, const QString &subtype) const;
