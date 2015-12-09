@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 2.8.12)
 
 project(Messagelib)
 
-if(${CMAKE_SOURCE_DIR} STREQUAL ${Messagelib_SOURCE_DIR})
-# ECM setup
 find_package(ECM 5.16.0 CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${Messagelib_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH})
 set(LIBRARY_NAMELINK)
@@ -70,8 +68,6 @@ find_package(KF5Mbox ${KMBOX_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiNotes ${AKONADINOTES_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5Gravatar ${KDEPIM_LIB_VERSION} CONFIG REQUIRED)
 
-endif()
-
 add_subdirectory(messageviewer)
 add_subdirectory(templateparser)
 add_subdirectory(messagecomposer)
@@ -79,6 +75,4 @@ add_subdirectory(messagecore)
 add_subdirectory(messagelist)
 
 install( FILES messagelib.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
-if(${CMAKE_SOURCE_DIR} STREQUAL ${Messagelib_SOURCE_DIR})
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
-endif()
