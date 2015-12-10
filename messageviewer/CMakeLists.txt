@@ -1,8 +1,4 @@
-cmake_minimum_required(VERSION 2.8.12)
-
 project(MessageViewer)
-
-if(${CMAKE_SOURCE_DIR} STREQUAL ${Messagelib_SOURCE_DIR})
 
 find_package(Grantlee5 "5.0" CONFIG REQUIRED)
 ecm_setup_version(${KDEPIM_LIB_VERSION} VARIABLE_PREFIX MESSAGEVIEWER
@@ -41,14 +37,6 @@ install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_version.h
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5} COMPONENT Devel
 )
-
-else()
-ecm_setup_version(${KDEPIM_LIB_VERSION} VARIABLE_PREFIX MESSAGEVIEWER
-                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messageviewer_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5MessageViewerConfigVersion.cmake"
-                        SOVERSION 5
-)
-endif()
 
 add_subdirectory(src)
 if (BUILD_TESTING)
