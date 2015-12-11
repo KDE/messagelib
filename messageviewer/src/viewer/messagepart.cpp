@@ -125,6 +125,12 @@ void CryptoBlock::internalEnter()
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
     if (writer && !entered) {
         entered = true;
+        if (mMetaData->isEncapsulatedRfc822Message) {
+            mInteralBlocks.append(HTMLBlock::Ptr(new EncapsulatedRFC822Block(writer, mOtp->nodeHelper(), mNode)));
+        }
+        if (mMetaData->isEncrypted) {
+            mInteralBlocks.append(HTMLBlock::Ptr(new EncryptedBlock(writer, *mMetaData)));
+        }
         writer->queue(mOtp->writeSigstatHeader(*mMetaData, mCryptoProto, mFromAddress, mNode));
     }
 }
@@ -136,6 +142,103 @@ void CryptoBlock::internalExit()
     }
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
     writer->queue(mOtp->writeSigstatFooter(*mMetaData));
+    while (!mInteralBlocks.isEmpty()) {
+        mInteralBlocks.removeLast();
+    }
+    entered = false;
+}
+
+EncapsulatedRFC822Block::EncapsulatedRFC822Block(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper* nodeHelper, KMime::Content *node)
+    : mWriter(writer)
+    , mNodeHelper(nodeHelper)
+    , mNode(node)
+{
+    internalEnter();
+}
+
+EncapsulatedRFC822Block::~EncapsulatedRFC822Block()
+{
+    internalExit();
+}
+
+void EncapsulatedRFC822Block::internalEnter()
+{
+    if (mWriter && !entered) {
+        const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+        const QString cellPadding(QStringLiteral("cellpadding=\"1\""));
+        const QString cellSpacing(QStringLiteral("cellspacing=\"1\""));
+        mWriter->queue(QLatin1String("<table ")+ cellSpacing + QLatin1Char(' ') + cellPadding + QLatin1String(" class=\"rfc822\">"
+                   "<tr class=\"rfc822H\"><td dir=\"") + dir + QLatin1String("\">"));
+        if (mNode) {
+            const QString href = mNodeHelper->asHREF(mNode, QStringLiteral("body"));
+            mWriter->queue(QLatin1String("<a href=\"") + href + QLatin1String("\">")
+                       + i18n("Encapsulated message") + QLatin1String("</a>"));
+        } else {
+            mWriter->queue(i18n("Encapsulated message"));
+        }
+        mWriter->queue(QLatin1String("</td></tr><tr class=\"rfc822B\"><td>"));
+
+        entered = true;
+    }
+}
+
+void EncapsulatedRFC822Block::internalExit()
+{
+    if (!entered) {
+        return;
+    }
+
+    const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+    mWriter->queue(QLatin1String("</td></tr><tr class=\"rfc822H\"><td dir=\"") + dir + QLatin1String("\">") +
+                   i18n("End of encapsulated message") + QLatin1String("</td></tr></table>"));
+    entered = false;
+}
+
+EncryptedBlock::EncryptedBlock(MessageViewer::HtmlWriter *writer, const PartMetaData &block)
+    : mWriter(writer)
+    , mBlock(block)
+{
+    internalEnter();
+}
+
+EncryptedBlock::~EncryptedBlock()
+{
+    internalExit();
+}
+
+void EncryptedBlock::internalEnter()
+{
+    if (mWriter && !entered) {
+        entered = true;
+        const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+        const QString cellPadding(QStringLiteral("cellpadding=\"1\""));
+        const QString cellSpacing(QStringLiteral("cellspacing=\"1\""));
+
+        mWriter->queue(QLatin1String("<table ")+ cellSpacing + QLatin1Char(' ') + cellPadding + QLatin1String(" class=\"encr\">"
+                       "<tr class=\"encrH\"><td dir=\"") + dir + QLatin1String("\">"));
+        if (mBlock.inProgress) {
+            mWriter->queue(i18n("Please wait while the message is being decrypted..."));
+        } else if (mBlock.isDecryptable) {
+            mWriter->queue(i18n("Encrypted message"));
+        } else {
+            mWriter->queue(i18n("Encrypted message (decryption not possible)"));
+            if (!mBlock.errorText.isEmpty()) {
+                mWriter->queue(QLatin1String("<br />") + i18n("Reason: %1", mBlock.errorText));
+            }
+        }
+        mWriter->queue(QLatin1String("</td></tr><tr class=\"encrB\"><td>"));
+    }
+}
+
+void EncryptedBlock::internalExit()
+{
+    if (!entered) {
+        return;
+    }
+    const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+    mWriter->queue(QLatin1String("</td></tr><tr class=\"encrH\"><td dir=\"") + dir + QLatin1String("\">") +
+                   i18n("End of encrypted message") +
+                   QLatin1String("</td></tr></table>"));
     entered = false;
 }
 

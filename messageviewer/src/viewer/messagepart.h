@@ -65,6 +65,36 @@ protected:
     bool entered;
 };
 
+class EncapsulatedRFC822Block : public HTMLBlock
+{
+public:
+    EncapsulatedRFC822Block(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper* nodeHelper, KMime::Content *node);
+    virtual ~EncapsulatedRFC822Block();
+
+private:
+    void internalEnter();
+    void internalExit();
+
+    HtmlWriter* mWriter;
+    NodeHelper *mNodeHelper;
+    KMime::Content* mNode;
+};
+
+class EncryptedBlock : public HTMLBlock
+{
+public:
+    EncryptedBlock(MessageViewer::HtmlWriter *writer, const PartMetaData &block);
+    virtual ~EncryptedBlock();
+
+private:
+    void internalEnter();
+    void internalExit();
+
+    HtmlWriter* mWriter;
+    const PartMetaData &mBlock;
+    KMime::Content* mNode;
+};
+
 class CryptoBlock: public HTMLBlock
 {
 public:
@@ -84,6 +114,7 @@ private:
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
     QString mFromAddress;
     KMime::Content *mNode;
+    QVector<HTMLBlock::Ptr> mInteralBlocks;
 };
 
 // The attachment mark is a div that is placed around the attchment. It is used for drawing

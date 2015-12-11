@@ -1588,34 +1588,6 @@ QString ObjectTreeParser::writeSigstatHeader(PartMetaData &block,
     const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
     QString cellPadding(QStringLiteral("cellpadding=\"1\""));
 
-    if (block.isEncapsulatedRfc822Message) {
-        htmlStr += QLatin1String("<table cellspacing=\"1\" ") + cellPadding + QLatin1String(" class=\"rfc822\">"
-                   "<tr class=\"rfc822H\"><td dir=\"") + dir + QLatin1String("\">");
-        if (node) {
-            htmlStr += QLatin1String("<a href=\"") + mNodeHelper->asHREF(node, QStringLiteral("body")) + QLatin1String("\">")
-                       + i18n("Encapsulated message") + QLatin1String("</a>");
-        } else {
-            htmlStr += i18n("Encapsulated message");
-        }
-        htmlStr += QLatin1String("</td></tr><tr class=\"rfc822B\"><td>");
-    }
-
-    if (block.isEncrypted) {
-        htmlStr += QLatin1String("<table cellspacing=\"1\" ") + cellPadding + QLatin1String(" class=\"encr\">"
-                   "<tr class=\"encrH\"><td dir=\"") + dir + QLatin1String("\">");
-        if (block.inProgress) {
-            htmlStr += i18n("Please wait while the message is being decrypted...");
-        } else if (block.isDecryptable) {
-            htmlStr += i18n("Encrypted message");
-        } else {
-            htmlStr += i18n("Encrypted message (decryption not possible)");
-            if (!block.errorText.isEmpty()) {
-                htmlStr += QLatin1String("<br />") + i18n("Reason: %1", block.errorText);
-            }
-        }
-        htmlStr += QLatin1String("</td></tr><tr class=\"encrB\"><td>");
-    }
-
     if (block.isSigned && block.inProgress) {
         block.signClass = QStringLiteral("signInProgress");
         htmlStr += QLatin1String("<table cellspacing=\"1\" ") + cellPadding + QLatin1String(" class=\"signInProgress\">"
@@ -1978,18 +1950,6 @@ QString ObjectTreeParser::writeSigstatFooter(PartMetaData &block)
         htmlStr += QLatin1String("</td></tr><tr class=\"") + block.signClass + QLatin1String("H\">");
         htmlStr += QLatin1String("<td dir=\"") + dir + QLatin1String("\">") +
                    i18n("End of signed message") +
-                   QLatin1String("</td></tr></table>");
-    }
-
-    if (block.isEncrypted) {
-        htmlStr += QLatin1String("</td></tr><tr class=\"encrH\"><td dir=\"") + dir + QLatin1String("\">") +
-                   i18n("End of encrypted message") +
-                   QLatin1String("</td></tr></table>");
-    }
-
-    if (block.isEncapsulatedRfc822Message) {
-        htmlStr += QLatin1String("</td></tr><tr class=\"rfc822H\"><td dir=\"") + dir + QLatin1String("\">") +
-                   i18n("End of encapsulated message") +
                    QLatin1String("</td></tr></table>");
     }
 
