@@ -1,6 +1,6 @@
 project(messagecore)
 
-ecm_setup_version(${KDEPIM_LIB_VERSION} VARIABLE_PREFIX MESSAGECORE
+ecm_setup_version(${MESSAGELIB_LIB_VERSION} VARIABLE_PREFIX MESSAGECORE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagecore_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5MessageCoreConfigVersion.cmake"
                         SOVERSION 5

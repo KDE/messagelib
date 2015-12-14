@@ -1,7 +1,7 @@
 @PACKAGE_INIT@
 
 find_dependency(KF5Mime "@KMIME_LIB_VERSION@")
-find_dependency(KF5MessageCore "@KDEPIM_LIB_VERSION@")
+find_dependency(KF5MessageCore "@MESSAGELIB_LIB_VERSION@")
 find_dependency(KF5PimCommon "@PIMCOMMON_LIB_VERSION@")
 find_dependency(KF5Akonadi "@KDEPIMLIBS_LIB_VERSION@")
 find_dependency(KF5IdentityManagement "@IDENTITYMANAGEMENT_LIB_VERSION@")

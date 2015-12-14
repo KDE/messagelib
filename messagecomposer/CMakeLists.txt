@@ -3,7 +3,7 @@ project(messagecomposer)
 remove_definitions( -DQT_NO_CAST_FROM_BYTEARRAY )
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
 
-ecm_setup_version(${KDEPIM_LIB_VERSION} VARIABLE_PREFIX MESSAGECOMPOSER
+ecm_setup_version(${MESSAGELIB_LIB_VERSION} VARIABLE_PREFIX MESSAGECOMPOSER
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5MessageComposerConfigVersion.cmake"
                         SOVERSION 5

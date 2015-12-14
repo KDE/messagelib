@@ -31,7 +31,7 @@
 #define MESSAGECOMPOSER_VERSION_H
 
 
-#define KDEPIM_VERSION "@KDEPIM_VERSION@"
+#define MESSAGELIB_LIB_VERSION "@MESSAGELIB_LIB_VERSION@"
 
 /* GIT revision number, of the form "git-xxxxxxxx" */
 #define KDEPIM_GIT_REVISION_STRING "@kdepim_git_revision@"
