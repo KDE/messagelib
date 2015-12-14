@@ -1,6 +1,5 @@
 project(MessageViewer)
 
-find_package(Grantlee5 "5.0" CONFIG REQUIRED)
 ecm_setup_version(${KDEPIM_LIB_VERSION} VARIABLE_PREFIX MESSAGEVIEWER
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messageviewer_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5MessageViewerConfigVersion.cmake"
