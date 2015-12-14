@@ -34,9 +34,9 @@
 #define MESSAGELIB_LIB_VERSION "@MESSAGELIB_LIB_VERSION@"
 
 /* GIT revision number, of the form "git-xxxxxxxx" */
-#define KDEPIM_GIT_REVISION_STRING "@kdepim_git_revision@"
+#define MESSAGELIB_GIT_REVISION_STRING "@messagelib_git_revision@"
 
 /* Date of last commit, of the form "YYYY-MM-DD" */
-#define KDEPIM_GIT_LAST_CHANGE "@kdepim_git_last_change@"
+#define MESSAGELIB_GIT_LAST_CHANGE "@messagelib_git_last_change@"
 
 #endif

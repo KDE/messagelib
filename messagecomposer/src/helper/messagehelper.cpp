@@ -46,9 +46,9 @@ void initHeader(const KMime::Message::Ptr &message, const KIdentityManagement::I
     message->removeHeader<KMime::Headers::Subject>();
     message->date()->setDateTime(QDateTime::currentDateTime());
 
-    const QStringList extraInfo = QStringList() << QString::fromLocal8Bit(KDEPIM_GIT_REVISION_STRING) << QString::fromLocal8Bit(KDEPIM_GIT_LAST_CHANGE);
+    const QStringList extraInfo = QStringList() << QString::fromLocal8Bit(MESSAGELIB_GIT_REVISION_STRING) << QString::fromLocal8Bit(MESSAGELIB_GIT_LAST_CHANGE);
 
-    message->userAgent()->fromUnicodeString(KProtocolManager::userAgentForApplication(QString::fromLocal8Bit("KMail"), QString::fromLocal8Bit(KDEPIM_GIT_REVISION_STRING), extraInfo), QLatin1String("utf-8").latin1());
+    message->userAgent()->fromUnicodeString(KProtocolManager::userAgentForApplication(QString::fromLocal8Bit("KMail"), QString::fromLocal8Bit(MESSAGELIB_GIT_REVISION_STRING), extraInfo), QLatin1String("utf-8").latin1());
     // This will allow to change Content-Type:
     message->contentType()->setMimeType("text/plain");
 }
