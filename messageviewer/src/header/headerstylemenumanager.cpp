@@ -72,6 +72,7 @@ void HeaderStyleMenuManagerPrivate::setPluginName(const QString &pluginName)
     } else {
         if (lstInterface.isEmpty()) {
             qCCritical(MESSAGEVIEWER_LOG) << "No plugin found !";
+            return;
         } else {
             interface = lstInterface.cbegin().value();
             if (!interface->action().isEmpty()) {

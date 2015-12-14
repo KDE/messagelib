@@ -986,6 +986,7 @@ QString ViewerPrivate::writeMsgHeader(KMime::Message *aMsg, KMime::Content *vCar
 {
     if (!headerStylePlugin()) {
         qCCritical(MESSAGEVIEWER_LOG) << "trying to writeMsgHeader() without a header style set!";
+        return {};
     }
     QString href;
     if (vCardNode) {
