@@ -9,7 +9,7 @@ ecm_setup_version(${KDEPIM_LIB_VERSION} VARIABLE_PREFIX MESSAGECOMPOSER
                         SOVERSION 5
 )
 
-configure_file(src/kdepim-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/src/kdepim-version.h @ONLY)
+configure_file(src/messagecomposer-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/src/messagecomposer-version.h @ONLY)
 ########### Targets ###########
 
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")

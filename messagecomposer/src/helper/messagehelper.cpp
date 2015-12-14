@@ -18,7 +18,7 @@
 */
 
 #include "messagehelper.h"
-#include "kdepim-version.h"
+#include "messagecomposer-version.h"
 #include "utils/util.h"
 #include "settings/messagecomposersettings.h"
 
