@@ -28,7 +28,6 @@
 #include <KComboBox>
 
 #include <QIcon>
-#include <KIconLoader>
 #include <QPushButton>
 
 #include <QToolButton>

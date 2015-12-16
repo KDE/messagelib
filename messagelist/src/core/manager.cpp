@@ -44,7 +44,6 @@
 
 #include <KConfig>
 #include "messagelist_debug.h"
-#include <KIconLoader>
 #include <KLocalizedString>
 
 #include <QStandardPaths>

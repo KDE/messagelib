@@ -87,7 +87,6 @@
 #include <KLocalizedString>
 #include <QTemporaryFile>
 
-#include <kiconloader.h>
 #include <kcodecs.h>
 #include <kconfiggroup.h>
 

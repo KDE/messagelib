@@ -39,7 +39,6 @@
 #include "kpimtextedit/texttospeechwidget.h"
 #include "kpimtextedit/texttospeechinterface.h"
 
-#include <kiconloader.h>
 #include <KLocalizedString>
 #include <KStandardAction>
 #include <kwindowsystem.h>
