@@ -79,9 +79,9 @@ private:
     /// These templates will be deleted when we're saving.
     QStringList mItemsToDelete;
 
-    QPixmap mReplyPix;
-    QPixmap mReplyAllPix;
-    QPixmap mForwardPix;
+    QIcon mReplyPix;
+    QIcon mReplyAllPix;
+    QIcon mForwardPix;
 
     /// Whether or not to Q_EMIT the changed() signal. This is useful to disable when loading
     /// templates, which changes the UI without user action
