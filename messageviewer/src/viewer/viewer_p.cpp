@@ -114,6 +114,7 @@
 #include "widgets/attachmentdialog.h"
 #include "viewer/attachmentstrategy.h"
 #include "csshelper.h"
+#include "messageviewerprintpreviewdialog.h"
 #include "settings/messageviewersettings.h"
 #include "widgets/htmlstatusbar.h"
 #include "htmlwriter/webkitparthtmlwriter.h"
@@ -2210,7 +2211,7 @@ void ViewerPrivate::slotPrintPreview()
     if (!mMessage) {
         return;
     }
-    QPrintPreviewDialog previewdlg(mViewer);
+    MessageViewerPrintPreviewDialog previewdlg(mViewer);
     connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter * printer) {
         mViewer->print(printer);
     });
