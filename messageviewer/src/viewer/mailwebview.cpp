@@ -39,7 +39,6 @@
 #include <limits>
 #include <cassert>
 
-typedef KWebView SuperClass;
 
 using namespace boost;
 using namespace MessageViewer;
@@ -122,7 +121,7 @@ static void handleDuplicateLinkElements(const QWebElement &element, QHash<QStrin
 }
 
 MailWebView::MailWebView(KActionCollection *actionCollection, QWidget *parent)
-    : SuperClass(parent, false),
+    : KWebView(parent, false),
       mScamDetection(new ScamDetection),
       mActionCollection(actionCollection)
 {
@@ -151,7 +150,7 @@ MailWebView::~MailWebView()
 bool MailWebView::event(QEvent *event)
 {
     if (event->type() == QEvent::ContextMenu) {
-        // Don't call SuperClass::event() here, it will do silly things like selecting the text
+        // Don't call KWebView::event() here, it will do silly things like selecting the text
         // under the mouse cursor, which we don't want.
 
         QContextMenuEvent const *contextMenuEvent = static_cast<QContextMenuEvent *>(event);
@@ -163,7 +162,7 @@ bool MailWebView::event(QEvent *event)
         event->accept();
         return true;
     }
-    return SuperClass::event(event);
+    return KWebView::event(event);
 }
 
 void MailWebView::scrollDown(int pixels)
@@ -213,7 +212,7 @@ QString MailWebView::selectedText() const
 
     return textSelected;
     */
-    return SuperClass::selectedText();
+    return KWebView::selectedText();
 }
 
 bool MailWebView::hasVerticalScrollBar() const
@@ -324,7 +323,7 @@ void MailWebView::markAttachment(const QString &id, const QString &style)
 
 void MailWebView::setHtml(const QString &html, const QUrl &base)
 {
-    SuperClass::setHtml(html, base);
+    KWebView::setHtml(html, base);
 }
 
 QString MailWebView::htmlSource() const
@@ -334,7 +333,7 @@ QString MailWebView::htmlSource() const
 
 void MailWebView::setAllowExternalContent(bool allow)
 {
-    SuperClass::setAllowExternalContent(allow);
+    KWebView::setAllowExternalContent(allow);
 }
 
 QUrl MailWebView::linkOrImageUrlAt(const QPoint &global) const
@@ -404,14 +403,14 @@ static QWebPage::FindFlags convert_flags(MailWebView::FindFlags f)
 
 bool MailWebView::findText(const QString &text, FindFlags flags)
 {
-    return SuperClass::findText(text, convert_flags(flags));
+    return KWebView::findText(text, convert_flags(flags));
 }
 
 void MailWebView::clearFindSelection()
 {
     //WEBKIT: TODO: Find a way to unselect last selection
     // http://bugreports.qt.nokia.com/browse/QTWEBKIT-80
-    SuperClass::findText(QString(), QWebPage::HighlightAllOccurrences);
+    KWebView::findText(QString(), QWebPage::HighlightAllOccurrences);
 }
 
 void MailWebView::keyReleaseEvent(QKeyEvent *e)
@@ -425,7 +424,7 @@ void MailWebView::keyReleaseEvent(QKeyEvent *e)
             mAccessKeyActivated = NotActivated;
         }
     }
-    SuperClass::keyReleaseEvent(e);
+    KWebView::keyReleaseEvent(e);
 }
 
 void MailWebView::keyPressEvent(QKeyEvent *e)
@@ -444,7 +443,7 @@ void MailWebView::keyPressEvent(QKeyEvent *e)
             }
         }
     }
-    SuperClass::keyPressEvent(e);
+    KWebView::keyPressEvent(e);
 }
 
 void MailWebView::wheelEvent(QWheelEvent *e)
@@ -452,7 +451,7 @@ void MailWebView::wheelEvent(QWheelEvent *e)
     if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled() && mAccessKeyActivated == PreActivated && (e->modifiers() & Qt::ControlModifier)) {
         mAccessKeyActivated = NotActivated;
     }
-    SuperClass::wheelEvent(e);
+    KWebView::wheelEvent(e);
 }
 
 bool MailWebView::checkForAccessKey(QKeyEvent *event)
