@@ -42,17 +42,6 @@ public:
     explicit MailWebView(KActionCollection *actionCollection = Q_NULLPTR, QWidget *parent = Q_NULLPTR);
     ~MailWebView();
 
-    enum FindFlag {
-        FindWrapsAroundDocument = 1,
-        FindBackward = 2,
-        FindCaseSensitively = 4,
-        HighlightAllOccurrences = 8,
-
-        NumFindFlags
-    };
-    Q_DECLARE_FLAGS(FindFlags, FindFlag)
-
-    bool findText(const QString &test, FindFlags flags);
     void clearFindSelection();
 
     void scrollUp(int pixels);
@@ -70,14 +59,11 @@ public:
     void markAttachment(const QString &id, const QString &style);
     bool replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml);
     void setElementByIdVisible(const QString &id, bool visible);
-    void setHtml(const QString &html, const QUrl &baseUrl);
     QString htmlSource() const;
     void selectAll();
     void clearSelection();
     void scrollToRelativePosition(double pos);
     double relativePosition() const;
-
-    void setAllowExternalContent(bool allow);
 
     QUrl linkOrImageUrlAt(const QPoint &global) const;
 
@@ -134,7 +120,5 @@ private:
 };
 
 }
-
-Q_DECLARE_OPERATORS_FOR_FLAGS(MessageViewer::MailWebView::FindFlags)
 
 #endif /* MESSAGEVIEWER_MAILWEBVIEW_H */

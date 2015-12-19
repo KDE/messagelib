@@ -321,19 +321,9 @@ void MailWebView::markAttachment(const QString &id, const QString &style)
     }
 }
 
-void MailWebView::setHtml(const QString &html, const QUrl &base)
-{
-    KWebView::setHtml(html, base);
-}
-
 QString MailWebView::htmlSource() const
 {
     return page()->mainFrame()->documentElement().toOuterXml();
-}
-
-void MailWebView::setAllowExternalContent(bool allow)
-{
-    KWebView::setAllowExternalContent(allow);
 }
 
 QUrl MailWebView::linkOrImageUrlAt(const QPoint &global) const
@@ -383,28 +373,6 @@ void MailWebView::setElementByIdVisible(const QString &id, bool visible)
     }
 }
 
-static QWebPage::FindFlags convert_flags(MailWebView::FindFlags f)
-{
-    QWebPage::FindFlags result;
-    if (f & MailWebView::FindWrapsAroundDocument) {
-        result |= QWebPage::FindWrapsAroundDocument;
-    }
-    if (f & MailWebView::FindBackward) {
-        result |= QWebPage::FindBackward;
-    }
-    if (f & MailWebView::FindCaseSensitively) {
-        result |= QWebPage::FindCaseSensitively;
-    }
-    if (f & MailWebView::HighlightAllOccurrences) {
-        result |= QWebPage::HighlightAllOccurrences;
-    }
-    return result;
-}
-
-bool MailWebView::findText(const QString &text, FindFlags flags)
-{
-    return KWebView::findText(text, convert_flags(flags));
-}
 
 void MailWebView::clearFindSelection()
 {
