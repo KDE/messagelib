@@ -30,7 +30,10 @@ FindBarMailWebView::FindBarMailWebView(MailWebView *view, QWidget *parent)
     QMenu *options = optionsMenu();
     mHighlightAll = options->addAction(i18n("Highlight all matches"));
     mHighlightAll->setCheckable(true);
+    mFindInSelection = options->addAction(i18n("Find in selection first"));
+    mFindInSelection->setCheckable(true);
     connect(mHighlightAll, &QAction::toggled, this, &FindBarMailWebView::slotHighlightAllChanged);
+    connect(mFindInSelection, &QAction::toggled, this, &FindBarMailWebView::slotFindSelectionFirstChanged);
 }
 
 FindBarMailWebView::~FindBarMailWebView()
@@ -49,6 +52,9 @@ void FindBarMailWebView::searchText(bool backward, bool isAutoSearch)
     }
     if (mHighlightAll->isChecked()) {
         searchOptions |= QWebPage::HighlightAllOccurrences;
+    }
+    if (mFindInSelection->isChecked()) {
+        searchOptions |= QWebPage::FindBeginsInSelection;
     }
     const QString searchWord(mSearch->text());
     if (!isAutoSearch && !mLastSearchStr.contains(searchWord, Qt::CaseSensitive)) {
@@ -83,6 +89,20 @@ void FindBarMailWebView::updateSensitivity(bool sensitivity)
     QWebPage::FindFlags searchOptions = QWebPage::FindWrapsAroundDocument;
     if (sensitivity) {
         searchOptions |= QWebPage::FindCaseSensitively;
+        mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
+    }
+    if (mHighlightAll->isChecked()) {
+        searchOptions |= QWebPage::HighlightAllOccurrences;
+    }
+    const bool found = mView->findText(mLastSearchStr, searchOptions);
+    setFoundMatch(found);
+}
+
+void FindBarMailWebView::slotFindSelectionFirstChanged(bool findSectionFirst)
+{
+    QWebPage::FindFlags searchOptions = QWebPage::FindWrapsAroundDocument;
+    if (findSectionFirst) {
+        searchOptions |= QWebPage::FindBeginsInSelection;
         mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
     }
     if (mHighlightAll->isChecked()) {

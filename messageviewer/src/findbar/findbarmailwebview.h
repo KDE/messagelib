@@ -46,9 +46,12 @@ private:
     void updateHighLight(bool) Q_DECL_OVERRIDE;
     void updateSensitivity(bool sensitivity) Q_DECL_OVERRIDE;
 
+private Q_SLOTS:
+    void slotFindSelectionFirstChanged(bool findSectionFirst);
 private:
     MailWebView *mView;
     QAction *mHighlightAll;
+    QAction *mFindInSelection;
 };
 
 }
