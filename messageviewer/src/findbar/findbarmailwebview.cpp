@@ -27,12 +27,10 @@ using namespace MessageViewer;
 FindBarMailWebView::FindBarMailWebView(MailWebView *view, QWidget *parent)
     : FindBarBase(parent), mView(view)
 {
-#ifndef MESSAGEVIEWER_FINDBAR_NO_HIGHLIGHT_ALL
     QMenu *options = optionsMenu();
     mHighlightAll = options->addAction(i18n("Highlight all matches"));
     mHighlightAll->setCheckable(true);
     connect(mHighlightAll, &QAction::toggled, this, &FindBarMailWebView::slotHighlightAllChanged);
-#endif
 }
 
 FindBarMailWebView::~FindBarMailWebView()
@@ -49,11 +47,9 @@ void FindBarMailWebView::searchText(bool backward, bool isAutoSearch)
     if (mCaseSensitiveAct->isChecked()) {
         searchOptions |= QWebPage::FindCaseSensitively;
     }
-#ifndef MESSAGEVIEWER_FINDBAR_NO_HIGHLIGHT_ALL
     if (mHighlightAll->isChecked()) {
         searchOptions |= QWebPage::HighlightAllOccurrences;
     }
-#endif
     const QString searchWord(mSearch->text());
     if (!isAutoSearch && !mLastSearchStr.contains(searchWord, Qt::CaseSensitive)) {
         clearSelections();
@@ -68,7 +64,6 @@ void FindBarMailWebView::searchText(bool backward, bool isAutoSearch)
 
 void FindBarMailWebView::updateHighLight(bool highLight)
 {
-#ifndef MESSAGEVIEWER_FINDBAR_NO_HIGHLIGHT_ALL
     bool found = false;
     if (highLight) {
         QWebPage::FindFlags searchOptions = QWebPage::FindWrapsAroundDocument;
@@ -81,7 +76,6 @@ void FindBarMailWebView::updateHighLight(bool highLight)
         found = mView->findText(QString(), QWebPage::HighlightAllOccurrences);
     }
     setFoundMatch(found);
-#endif
 }
 
 void FindBarMailWebView::updateSensitivity(bool sensitivity)
@@ -91,11 +85,9 @@ void FindBarMailWebView::updateSensitivity(bool sensitivity)
         searchOptions |= QWebPage::FindCaseSensitively;
         mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
     }
-#ifndef MESSAGEVIEWER_FINDBAR_NO_HIGHLIGHT_ALL
     if (mHighlightAll->isChecked()) {
         searchOptions |= QWebPage::HighlightAllOccurrences;
     }
-#endif
     const bool found = mView->findText(mLastSearchStr, searchOptions);
     setFoundMatch(found);
 }
