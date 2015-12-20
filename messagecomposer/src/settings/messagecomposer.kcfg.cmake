@@ -60,8 +60,8 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     </entry>
 
     <entry name="ShowBalooSearchInComposer" type="Bool" key="showBalooSearchInComposer">
-      <label>Use Baloo search for autocompletion</label>
-      <whatsthis>Disable this option if you do not want baloo search addresses to appear in the autocompletion list in the composer's address fields.</whatsthis>
+      <label>Use addresses indexed from emails for autocompletion</label>
+      <whatsthis>Disable this option if you only want contacts from your addressbooks to appear in the autocompletion list in the composer's address fields.</whatsthis>
       <default>true</default>
     </entry>
 
