@@ -17,8 +17,9 @@
 
 
 #include "messageviewerprintpreviewdialog.h"
-#include "settings/messageviewersettings.h"
 #include <KConfigGroup>
+#include <KSharedConfig>
+
 using namespace MessageViewer;
 
 MessageViewerPrintPreviewDialog::MessageViewerPrintPreviewDialog(QWidget *parent)
@@ -34,7 +35,7 @@ MessageViewerPrintPreviewDialog::~MessageViewerPrintPreviewDialog()
 
 void MessageViewerPrintPreviewDialog::readConfig()
 {
-    KConfigGroup group(MessageViewer::MessageViewerSettings::self()->config(), "MessageViewerPrintPreviewDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), "MessageViewerPrintPreviewDialog");
     const QSize size = group.readEntry("Size", QSize(800, 600));
     if (size.isValid()) {
         resize(size);
@@ -43,7 +44,7 @@ void MessageViewerPrintPreviewDialog::readConfig()
 
 void MessageViewerPrintPreviewDialog::writeConfig()
 {
-    KConfigGroup group(MessageViewer::MessageViewerSettings::self()->config(), "MessageViewerPrintPreviewDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), "MessageViewerPrintPreviewDialog");
     group.writeEntry("Size", size());
     group.sync();
 }
