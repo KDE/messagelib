@@ -1,6 +1,9 @@
 [Desktop Entry]
 Name=Example
 Name[ca]=Exemple
+Name[ca@valencia]=Exemple
+Name[de]=Beispiel
+Name[en_GB]=Example
 Name[fi]=Esimerkki
 Name[gl]=Exemplo
 Name[nb]=Eksempel
@@ -15,6 +18,9 @@ Name[x-test]=xxExamplexx
 Name[zh_CN]=示例
 Description=Example theme for header.
 Description[ca]=Tema d'exemple per a la capçalera.
+Description[ca@valencia]=Tema d'exemple per a la capçalera.
+Description[de]=Beispieldesign für den Vorspann.
+Description[en_GB]=Example theme for header.
 Description[fi]=Esimerkkiotsaketeema.
 Description[gl]=Tema de exemplo para a cabeceira.
 Description[nb]=Eksempel tema for hodelinje.
