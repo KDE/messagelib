@@ -94,7 +94,6 @@ set(libmessageviewer_viewer_SRCS
   viewer/memento/decryptverifybodypartmemento.cpp
   viewer/memento/verifydetachedbodypartmemento.cpp
   viewer/memento/verifyopaquebodypartmemento.cpp
-  viewer/messageviewerprintpreviewdialog.cpp
 )
 
 set(libmessageviewer_widgets_SRCS

@@ -68,7 +68,6 @@
 #include <QTemporaryDir>
 #include <QTemporaryFile>
 #include <KToggleAction>
-#include <QPrintPreviewDialog>
 #include <QIcon>
 #include <kfileitemactions.h>
 #include <KFileItemListProperties>
@@ -101,6 +100,7 @@
 //libkdepim
 #include "Libkdepim/BroadcastStatus"
 #include <MessageCore/AttachmentPropertiesDialog>
+#include <PimCommon/KPimPrintPreviewDialog>
 
 #include <AkonadiCore/collection.h>
 #include <AkonadiCore/itemfetchjob.h>
@@ -114,7 +114,6 @@
 #include "widgets/attachmentdialog.h"
 #include "viewer/attachmentstrategy.h"
 #include "csshelper.h"
-#include "messageviewerprintpreviewdialog.h"
 #include "settings/messageviewersettings.h"
 #include "widgets/htmlstatusbar.h"
 #include "htmlwriter/webkitparthtmlwriter.h"
@@ -2211,7 +2210,7 @@ void ViewerPrivate::slotPrintPreview()
     if (!mMessage) {
         return;
     }
-    MessageViewerPrintPreviewDialog previewdlg(mViewer);
+    PimCommon::KPimPrintPreviewDialog previewdlg(mViewer);
     connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter * printer) {
         mViewer->print(printer);
     });
