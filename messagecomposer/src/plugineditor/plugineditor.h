@@ -31,7 +31,7 @@ public:
     explicit PluginEditor(QObject *parent = Q_NULLPTR);
     ~PluginEditor();
 
-    virtual PluginEditorInterface *createInterface(KActionCollection *ac, QWidget *parent = Q_NULLPTR) = 0;
+    virtual PluginEditorInterface *createInterface(KActionCollection *ac, QObject *parent = Q_NULLPTR) = 0;
 };
 }
 #endif // PLUGINEDITOR_H
