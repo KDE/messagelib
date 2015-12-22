@@ -89,7 +89,14 @@ set(messagecomposer_richtextcomposerng_SRCS
      composer-ng/richtextcomposersignatures.cpp
 )
 
+set(messagecomposer_plugineditor_SRCS
+    plugineditor/plugineditormanager.cpp
+    plugineditor/plugineditor.cpp
+    plugineditor/plugineditorinterface.cpp
+)
+
 set( messagecomposer_src
+     ${messagecomposer_plugineditor_SRCS}
      ${messagecomposer_richtextcomposerng_SRCS}
      ${messagecomposer_part_src}
      ${messagecomposer_imagescaling_src}
@@ -168,6 +175,16 @@ install(TARGETS
     EXPORT KF5MessageComposerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
 )
 
+
+ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
+  HEADER_NAMES
+  PluginEditor
+  PluginEditorInterface
+  PluginEditorManager
+  REQUIRED_HEADERS MessageComposer_plugineditor_HEADERS
+  PREFIX MessageComposer
+  RELATIVE plugineditor
+)
 
 ecm_generate_headers(MessageComposer_Camelcaseattachement_HEADERS
   HEADER_NAMES
@@ -311,7 +328,7 @@ install(FILES
     ${MessageComposer_Camelcaseimagescaling_HEADERS}
     ${MessageComposer_Camelcasejob_HEADERS}
     ${MessageComposer_Camelcaseattachement_HEADERS}
-
+    ${MessageComposer_Camelplugineditor_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
     COMPONENT Devel
 )
@@ -333,6 +350,7 @@ install(FILES
     ${MessageComposer_imagescaling_HEADERS}
     ${MessageComposer_attachement_HEADERS}
     ${MessageComposer_job_HEADERS}
+    ${MessageComposer_plugineditor_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messagecomposer
     COMPONENT Devel
