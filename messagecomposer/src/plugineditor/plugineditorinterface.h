@@ -78,7 +78,7 @@ public:
     virtual void showConfigureDialog(QWidget *parentWidget = Q_NULLPTR);
 
 Q_SIGNALS:
-    void emitPluginActivated(PluginEditorInterface *interface);
+    void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);
 
 private:
     PluginEditorInterfacePrivate *const d;
