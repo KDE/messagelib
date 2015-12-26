@@ -372,6 +372,7 @@ MessagePart::MessagePart(ObjectTreeParser *otp,
     : mText(text)
     , mOtp(otp)
     , mSubOtp(Q_NULLPTR)
+    , mAttachmentNode(Q_NULLPTR)
 {
 
 }
@@ -388,6 +389,24 @@ MessagePart::~MessagePart()
 PartMetaData *MessagePart::partMetaData()
 {
     return &mMetaData;
+}
+
+void MessagePart::setAttachmentFlag(KMime::Content *node)
+{
+    mAttachmentNode = node;
+}
+
+bool MessagePart::isAttachment() const
+{
+    return mAttachmentNode;
+}
+
+HTMLBlock::Ptr MessagePart::attachmentBlock() const
+{
+    if (mOtp->htmlWriter() && isAttachment()) {
+        return HTMLBlock::Ptr(new AttachmentMarkBlock(mOtp->htmlWriter(), mAttachmentNode));
+    }
+    return HTMLBlock::Ptr();
 }
 
 QString MessagePart::text() const
@@ -407,6 +426,8 @@ void MessagePart::html(bool decorate)
     if (!writer) {
         return;
     }
+
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
 
     const CryptoBlock block(mOtp, &mMetaData, Q_NULLPTR, QString(), Q_NULLPTR);
     writer->queue(mOtp->quotedHTML(text(), decorate));
@@ -470,6 +491,13 @@ void MessagePartList::html(bool decorate)
 {
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
 
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
+
+    htmlInternal(decorate);
+}
+
+void MessagePartList::htmlInternal(bool decorate)
+{
     foreach (const MessagePart::Ptr &mp, mBlocks) {
         mp->html(decorate);
     }
@@ -600,8 +628,10 @@ void TextMessagePart::parseContent()
 
 void TextMessagePart::html(bool decorate)
 {
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
     HTMLBlock::Ptr block;
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+
     if (mDrawFrame) {
         block = HTMLBlock::Ptr(new TextBlock(writer, mOtp->nodeHelper(), mNode, mShowLink));
     }
@@ -609,7 +639,7 @@ void TextMessagePart::html(bool decorate)
     if (mAsIcon != MessageViewer::NoIcon) {
         mOtp->writePartIcon(mNode, (mAsIcon == MessageViewer::IconInline));
     } else {
-        MessagePartList::html(decorate);
+        MessagePartList::htmlInternal(decorate);
     }
 }
 
@@ -658,6 +688,7 @@ void HtmlMessagePart::html(bool decorate)
         return;
     }
 
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
     HTMLBlock::Ptr block;
 
     if (mSource->htmlMail()) {
@@ -738,6 +769,8 @@ MimeMessagePart::~MimeMessagePart()
 void MimeMessagePart::html(bool decorate)
 {
     copyContentFrom();
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
+
     renderInternalHtml();
 }
 
@@ -799,6 +832,8 @@ void AlternativeMessagePart::html(bool decorate)
         return;
     }
 
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
+
     if (viewHtml() && mHTMLPart) {
         mHTMLPart->copyContentFrom();
         mHTMLPart->html(decorate);
@@ -850,6 +885,9 @@ void CertMessagePart::html(bool decorate)
     if (!writer) {
         return;
     }
+
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
+
     mOtp->writeCertificateImportResult(mImportResult);
 }
 
@@ -1044,6 +1082,8 @@ void CryptoMessagePart::html(bool decorate)
         return;
     }
 
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
+
     if (mMetaData.isEncrypted && !mDecryptMessage) {
         const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mFromAddress, mNode);
         writeDeferredDecryptionBlock();
@@ -1119,6 +1159,8 @@ void EncapsulatedRfc822MessagePart::html(bool decorate)
         return;
     }
 
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
+
     const CryptoBlock block(mOtp, &mMetaData, Q_NULLPTR, mMessage->from()->asUnicodeString(), mMessage.data());
     writer->queue(mOtp->mSource->createMessageHeader(mMessage.data()));
     renderInternalHtml();
@@ -1130,4 +1172,3 @@ QString EncapsulatedRfc822MessagePart::text() const
 {
     return renderInternalText();
 }
-

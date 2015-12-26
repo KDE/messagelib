@@ -176,6 +176,8 @@ public:
     virtual QString text() const Q_DECL_OVERRIDE;
     void setText(const QString &text);
     virtual void html(bool decorate) Q_DECL_OVERRIDE;
+    void setAttachmentFlag(KMime::Content *node);
+    bool isAttachment() const;
 
     PartMetaData *partMetaData();
 
@@ -184,10 +186,13 @@ protected:
     void renderInternalHtml() const;
     void copyContentFrom() const;
     QString renderInternalText() const;
+    HTMLBlock::Ptr attachmentBlock() const;
+
     QString mText;
     ObjectTreeParser *mOtp;
     ObjectTreeParser *mSubOtp;
     PartMetaData mMetaData;
+    KMime::Content *mAttachmentNode;
 };
 
 class MimeMessagePart : public MessagePart
@@ -220,6 +225,9 @@ public:
     void appendMessagePart(const MessagePart::Ptr &messagePart);
 
     const QVector<MessagePart::Ptr> &messageParts() const;
+
+protected:
+   void htmlInternal(bool decorate);
 
 private:
     QVector<MessagePart::Ptr> mBlocks;

@@ -358,7 +358,7 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
             }
 
             if (const auto mp = dynamic_cast<MessageViewer::MessagePart*>(result.data())) {
-                AttachmentMarkBlock block(htmlWriter(), node);
+                mp->setAttachmentFlag(node);
                 mp->html(false);
                 bRendered = true;
                 break;
@@ -370,7 +370,7 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
                     mNodeHelper->setNodeDisplayedEmbedded(node, false);
                     const auto mp = defaultHandling(node, processResult);
                     if (mp) {
-                        AttachmentMarkBlock block(htmlWriter(), node);
+                        mp->setAttachmentFlag(node);
                         mp->html(false);
                     }
                     bRendered = true;
@@ -386,7 +386,7 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
             qCCritical(MESSAGEVIEWER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
             const auto mp = defaultHandling(node, processResult);
             if (mp) {
-                AttachmentMarkBlock block(htmlWriter(), node);
+                mp->setAttachmentFlag(node);
                 mp->html(false);
             }
         }
