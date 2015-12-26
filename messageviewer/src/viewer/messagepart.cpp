@@ -32,7 +32,6 @@
 #include <libkleo/cryptobackendfactory.h>
 
 #include <interfaces/htmlwriter.h>
-#include <htmlwriter/queuehtmlwriter.h>
 #include <job/kleojobexecutor.h>
 #include <settings/messageviewersettings.h>
 #include <kmime/kmime_content.h>
@@ -366,6 +365,39 @@ void HTMLWarnBlock::internalExit()
     mWriter->queue(QStringLiteral("</div>\n"));
 }
 
+RootBlock::RootBlock(HtmlWriter* writer)
+    : HTMLBlock()
+    , mWriter(writer)
+{
+    internalEnter();
+}
+
+RootBlock::~RootBlock()
+{
+    internalExit();
+}
+
+void RootBlock::internalEnter()
+{
+    if (!mWriter || entered) {
+        return;
+    }
+    entered = true;
+
+    mWriter->queue(QStringLiteral("<div style=\"position: relative; word-wrap: break-word\">\n"));
+}
+
+void RootBlock::internalExit()
+{
+    if (!entered) {
+        return;
+    }
+
+    entered = false;
+
+    mWriter->queue(QStringLiteral("</div>\n"));
+}
+
 //------MessagePart-----------------------
 MessagePart::MessagePart(ObjectTreeParser *otp,
                          const QString &text)
@@ -380,7 +412,6 @@ MessagePart::MessagePart(ObjectTreeParser *otp,
 MessagePart::~MessagePart()
 {
     if (mSubOtp) {
-        delete mSubOtp->htmlWriter();
         delete mSubOtp;
         mSubOtp = Q_NULLPTR;
     }
@@ -437,37 +468,45 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     mSubOtp = new ObjectTreeParser(mOtp, onlyOneMimePart);
     mSubOtp->setAllowAsync(mOtp->allowAsync());
-    if (mOtp->htmlWriter()) {
-        mSubOtp->mHtmlWriter = new QueueHtmlWriter(mOtp->htmlWriter());
-    }
-    mSubOtp->parseObjectTreeInternal(node);
+    mSubMessagePart = mSubOtp->parseObjectTreeInternal(node);
 }
 
-void MessagePart::renderInternalHtml() const
+void MessagePart::renderInternalHtml(bool decorate) const
 {
-    if (mSubOtp && mOtp->htmlWriter()) {
-        static_cast<QueueHtmlWriter *>(mSubOtp->htmlWriter())->replay();
+    if (mSubMessagePart) {
+        mSubMessagePart->html(decorate);
     }
 }
 
 void MessagePart::copyContentFrom() const
 {
-    if (mSubOtp) {
-        mOtp->copyContentFrom(mSubOtp);
+    if (mSubMessagePart) {
+        mSubMessagePart->copyContentFrom();
+        if (mSubOtp) {
+            mOtp->copyContentFrom(mSubOtp);
+        }
     }
 }
 
 QString MessagePart::renderInternalText() const
 {
-    if (!mSubOtp) {
+    if (!mSubMessagePart) {
         return QString();
     }
-    return mSubOtp->plainTextContent();
+    return mSubMessagePart->text();
+}
+
+void MessagePart::fix() const
+{
+    if (mSubMessagePart) {
+        mSubMessagePart->fix();
+    }
 }
 
 //-----MessagePartList----------------------
 MessagePartList::MessagePartList(ObjectTreeParser* otp)
     : MessagePart(otp, QString())
+    , mRoot(false)
 {
 }
 
@@ -476,21 +515,39 @@ MessagePartList::~MessagePartList()
 
 }
 
-void MessagePartList::appendMessagePart(const MessagePart::Ptr& messagePart)
+void MessagePartList::setIsRoot(bool root)
+{
+    mRoot = root;
+}
+
+bool MessagePartList::isRoot() const
+{
+    return mRoot;
+}
+
+HTMLBlock::Ptr MessagePartList::rootBlock() const
+{
+    if (mOtp->htmlWriter() && isRoot()) {
+        return HTMLBlock::Ptr(new RootBlock(mOtp->htmlWriter()));
+    }
+    return HTMLBlock::Ptr();
+}
+
+void MessagePartList::appendMessagePart(const Interface::MessagePart::Ptr& messagePart)
 {
     mBlocks.append(messagePart);
 }
 
-const QVector<MessagePart::Ptr>& MessagePartList::messageParts() const
+const QVector<Interface::MessagePart::Ptr>& MessagePartList::messageParts() const
 {
     return mBlocks;
 }
-
 
 void MessagePartList::html(bool decorate)
 {
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
 
+    const HTMLBlock::Ptr rBlock(rootBlock());
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
     htmlInternal(decorate);
@@ -498,7 +555,7 @@ void MessagePartList::html(bool decorate)
 
 void MessagePartList::htmlInternal(bool decorate)
 {
-    foreach (const MessagePart::Ptr &mp, mBlocks) {
+    foreach (const auto &mp, mBlocks) {
         mp->html(decorate);
     }
 }
@@ -506,10 +563,30 @@ void MessagePartList::htmlInternal(bool decorate)
 QString MessagePartList::text() const
 {
     QString text;
-    foreach (const MessagePart::Ptr &mp, mBlocks) {
+    foreach (const auto &mp, mBlocks) {
         text += mp->text();
     }
     return text;
+}
+
+void MessagePartList::fix() const
+{
+   foreach (const auto &mp, mBlocks) {
+       const auto m = mp.dynamicCast<MessagePart>();
+       if (m) {
+          m->fix();
+       }
+   }
+}
+
+void MessagePartList::copyContentFrom() const
+{
+   foreach (const auto &mp, mBlocks) {
+       const auto m = mp.dynamicCast<MessagePart>();
+       if (m) {
+          m->copyContentFrom();
+       }
+   }
 }
 
 //-----TextMessageBlock----------------------
@@ -599,10 +676,11 @@ void TextMessagePart::parseContent()
                 continue;
             }
 
-            const PartMetaData *messagePart(messageParts().last()->partMetaData());
+            const auto mp = messageParts().last().staticCast<MessagePart>();
+            const PartMetaData *messagePart(mp->partMetaData());
 
             if (!messagePart->isEncrypted && !messagePart->isSigned && !block.text().trimmed().isEmpty()) {
-                messageParts().last()->setText(aCodec->toUnicode(block.text()));
+                mp->setText(aCodec->toUnicode(block.text()));
             }
 
             if (messagePart->isEncrypted) {
@@ -674,7 +752,7 @@ HtmlMessagePart::~HtmlMessagePart()
 {
 }
 
-void HtmlMessagePart::fix()
+void HtmlMessagePart::fix() const
 {
     mOtp->mHtmlContent += mBodyHTML;
     mOtp->mHtmlContentCharset = mCharset;
@@ -682,7 +760,6 @@ void HtmlMessagePart::fix()
 
 void HtmlMessagePart::html(bool decorate)
 {
-    fix();
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
     if (!writer) {
         return;
@@ -768,10 +845,8 @@ MimeMessagePart::~MimeMessagePart()
 
 void MimeMessagePart::html(bool decorate)
 {
-    copyContentFrom();
     const HTMLBlock::Ptr aBlock(attachmentBlock());
-
-    renderInternalHtml();
+    renderInternalHtml(decorate);
 }
 
 QString MimeMessagePart::text() const
@@ -811,7 +886,7 @@ void AlternativeMessagePart::setViewHtml(bool html)
     mViewHtml = html;
 }
 
-bool AlternativeMessagePart::viewHtml()
+bool AlternativeMessagePart::viewHtml() const
 {
     return mViewHtml;
 }
@@ -821,21 +896,12 @@ void AlternativeMessagePart::html(bool decorate)
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
 
     if (!writer) {
-        // If there is no HTML writer, process both the HTML and the plain text nodes, as we're collecting
-        // the plainTextContent and the htmlContent
-        if (mTextPart) {
-            mTextPart->copyContentFrom();
-        }
-        if (mHTMLPart) {
-            mHTMLPart->copyContentFrom();
-        }
         return;
     }
 
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
     if (viewHtml() && mHTMLPart) {
-        mHTMLPart->copyContentFrom();
         mHTMLPart->html(decorate);
     } else if (mTextNode) {
         mTextPart->html(decorate);
@@ -848,6 +914,28 @@ QString AlternativeMessagePart::text() const
         return mTextPart->text();
     }
     return QString();
+}
+
+void AlternativeMessagePart::fix() const
+{
+    if (mTextPart) {
+        mTextPart->fix();
+    }
+
+    if (viewHtml() && mHTMLPart) {
+        mHTMLPart->fix();
+    }
+}
+
+void AlternativeMessagePart::copyContentFrom() const
+{
+    if (mTextPart) {
+        mTextPart->copyContentFrom();
+    }
+
+    if (viewHtml() && mHTMLPart) {
+        mHTMLPart->copyContentFrom();
+    }
 }
 
 //-----CertMessageBlock----------------------
@@ -1071,12 +1159,8 @@ void CryptoMessagePart::writeDeferredDecryptionBlock() const
 
 void CryptoMessagePart::html(bool decorate)
 {
-
     bool hideErrors = false;
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
-
-    //TODO: still the following part should not be here
-    copyContentFrom();
 
     if (!writer) {
         return;
@@ -1110,7 +1194,7 @@ void CryptoMessagePart::html(bool decorate)
             }
         } else if (mNode) {
             const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mFromAddress, mNode);
-            renderInternalHtml();
+            renderInternalHtml(decorate);
         } else {
             MessagePart::html(decorate);
         }
@@ -1149,7 +1233,7 @@ EncapsulatedRfc822MessagePart::~EncapsulatedRfc822MessagePart()
 void EncapsulatedRfc822MessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate)
-    if (!mSubOtp) {
+    if (!mSubMessagePart) {
         return;
     }
 
@@ -1163,7 +1247,7 @@ void EncapsulatedRfc822MessagePart::html(bool decorate)
 
     const CryptoBlock block(mOtp, &mMetaData, Q_NULLPTR, mMessage->from()->asUnicodeString(), mMessage.data());
     writer->queue(mOtp->mSource->createMessageHeader(mMessage.data()));
-    renderInternalHtml();
+    renderInternalHtml(decorate);
 
     mOtp->nodeHelper()->setPartMetaData(mNode, mMetaData);
 }
@@ -1171,4 +1255,12 @@ void EncapsulatedRfc822MessagePart::html(bool decorate)
 QString EncapsulatedRfc822MessagePart::text() const
 {
     return renderInternalText();
+}
+
+void EncapsulatedRfc822MessagePart::copyContentFrom() const
+{
+}
+
+void EncapsulatedRfc822MessagePart::fix() const
+{
 }

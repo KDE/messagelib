@@ -281,7 +281,13 @@ MimeMessagePart::Ptr ObjectTreeParser::createAndParseTempNode(KMime::Content *pa
 void ObjectTreeParser::parseObjectTree(KMime::Content *node)
 {
     mTopLevelContent = node;
-    parseObjectTreeInternal(node);
+    const auto mp = parseObjectTreeInternal(node);
+
+    if (mp) {
+        mp->fix();
+        mp->copyContentFrom();
+        mp->html(false);
+    }
 }
 
 void ObjectTreeParser::setPrinting(bool printing)
@@ -289,10 +295,10 @@ void ObjectTreeParser::setPrinting(bool printing)
     mPrinting = printing;
 }
 
-void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
+MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
 {
     if (!node) {
-        return;
+        return MessagePart::Ptr();
     }
 
     // reset pending async jobs state (we'll rediscover pending jobs as we go)
@@ -310,13 +316,9 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         mNodeHelper->setNodeUnprocessed(node, true);
     }
 
-    // Make sure the whole content is relative, so that nothing is painted over the header
-    // if a malicious message uses absolute positioning.
-    // Also force word wrapping, which is useful for printing, see https://issues.kolab.org/issue3992.
-    bool isRoot = node->isTopLevel();
-    if (isRoot && htmlWriter()) {
-        htmlWriter()->queue(QStringLiteral("<div style=\"position: relative; word-wrap: break-word\">\n"));
-    }
+    const bool isRoot = node->isTopLevel();
+    MessagePartList::Ptr mpl(new MessagePartList(this));
+    mpl->setIsRoot(isRoot);
 
     for (; node; node = MessageCore::NodeHelper::nextSibling(node)) {
         if (mNodeHelper->nodeProcessed(node)) {
@@ -359,7 +361,7 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
 
             if (const auto mp = dynamic_cast<MessageViewer::MessagePart*>(result.data())) {
                 mp->setAttachmentFlag(node);
-                mp->html(false);
+                mpl->appendMessagePart(result);
                 bRendered = true;
                 break;
             } else if (dynamic_cast<MessageViewer::Interface::MessagePart*>(result.data())) {
@@ -371,7 +373,7 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
                     const auto mp = defaultHandling(node, processResult);
                     if (mp) {
                         mp->setAttachmentFlag(node);
-                        mp->html(false);
+                        mpl->appendMessagePart(mp);
                     }
                     bRendered = true;
                     break;
@@ -387,7 +389,7 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
             const auto mp = defaultHandling(node, processResult);
             if (mp) {
                 mp->setAttachmentFlag(node);
-                mp->html(false);
+                mpl->appendMessagePart(mp);
             }
         }
         mNodeHelper->setNodeProcessed(node, false);
@@ -400,9 +402,7 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         }
     }
 
-    if (isRoot && htmlWriter()) {
-        htmlWriter()->queue(QStringLiteral("</div>\n"));
-    }
+    return mpl;
 }
 
 MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)

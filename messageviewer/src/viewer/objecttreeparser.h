@@ -364,7 +364,7 @@ private:
     * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
     * top-level content.
     */
-    void parseObjectTreeInternal(KMime::Content *node);
+    MessagePart::Ptr parseObjectTreeInternal(KMime::Content *node);
 
     MessagePart::Ptr defaultHandling(KMime::Content *node, ProcessResult &result);
 

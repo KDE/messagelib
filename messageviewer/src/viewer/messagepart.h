@@ -164,6 +164,22 @@ private:
     const QString &mMsg;
 };
 
+// Make sure the whole content is relative, so that nothing is painted over the header
+// if a malicious message uses absolute positioning.
+// Also force word wrapping, which is useful for printing, see https://issues.kolab.org/issue3992.
+class RootBlock : public HTMLBlock
+{
+public:
+    RootBlock(MessageViewer::HtmlWriter *writer);
+    virtual ~RootBlock();
+
+private:
+    void internalEnter();
+    void internalExit();
+
+    HtmlWriter* mWriter;
+};
+
 class MessagePart : public Interface::MessagePart
 {
 public:
@@ -181,16 +197,20 @@ public:
 
     PartMetaData *partMetaData();
 
+    /* only a function that should be removed if the refactoring is over */
+    virtual void fix() const;
+    virtual void copyContentFrom() const;
+
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
-    void renderInternalHtml() const;
-    void copyContentFrom() const;
+    void renderInternalHtml( bool decorate ) const;
     QString renderInternalText() const;
     HTMLBlock::Ptr attachmentBlock() const;
 
     QString mText;
     ObjectTreeParser *mOtp;
     ObjectTreeParser *mSubOtp;
+    MessagePart::Ptr mSubMessagePart;
     PartMetaData mMetaData;
     KMime::Content *mAttachmentNode;
 };
@@ -222,15 +242,23 @@ public:
     QString text() const Q_DECL_OVERRIDE;
     void html(bool decorate) Q_DECL_OVERRIDE;
 
-    void appendMessagePart(const MessagePart::Ptr &messagePart);
+    void setIsRoot(bool root);
+    bool isRoot() const;
 
-    const QVector<MessagePart::Ptr> &messageParts() const;
+    void appendMessagePart(const Interface::MessagePart::Ptr &messagePart);
+
+    const QVector<Interface::MessagePart::Ptr> &messageParts() const;
+
+    void fix() const Q_DECL_OVERRIDE;
+    void copyContentFrom() const Q_DECL_OVERRIDE;
 
 protected:
-   void htmlInternal(bool decorate);
+    HTMLBlock::Ptr rootBlock() const;
+    void htmlInternal(bool decorate);
 
 private:
-    QVector<MessagePart::Ptr> mBlocks;
+    QVector<Interface::MessagePart::Ptr> mBlocks;
+    bool mRoot;
 };
 
 enum IconType {
@@ -252,6 +280,7 @@ public:
     KMMsgEncryptionState encryptionState() const;
 
     bool decryptMessage() const;
+
 private:
     void parseContent();
     KMime::Content *mNode;
@@ -273,8 +302,7 @@ public:
     QString text() const Q_DECL_OVERRIDE;
     void html(bool decorate) Q_DECL_OVERRIDE;
 
-    /* only a function that should be removed if the refactiring is over */
-    void fix();
+    void fix() const Q_DECL_OVERRIDE;
 
 private:
     KMime::Content* mNode;
@@ -294,7 +322,9 @@ public:
     void html(bool decorate) Q_DECL_OVERRIDE;
 
     void setViewHtml(bool html);
-    bool viewHtml();
+    bool viewHtml() const;
+    void fix() const Q_DECL_OVERRIDE;
+    void copyContentFrom() const Q_DECL_OVERRIDE;
 private:
     KMime::Content* mTextNode;
     KMime::Content* mHTMLNode;
@@ -331,6 +361,8 @@ public:
     QString text() const Q_DECL_OVERRIDE;
     void html(bool decorate) Q_DECL_OVERRIDE;
 
+    void copyContentFrom() const Q_DECL_OVERRIDE;
+    void fix() const Q_DECL_OVERRIDE;
 private:
     const KMime::Message::Ptr mMessage;
     KMime::Content *mNode;
