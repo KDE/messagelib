@@ -486,19 +486,22 @@ QString MessagePartList::text() const
 
 //-----TextMessageBlock----------------------
 
-TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage)
+TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage, IconType asIcon)
     : MessagePartList(otp)
     , mNode(node)
     , mDrawFrame(drawFrame)
     , mShowLink(showLink)
     , mDecryptMessage(decryptMessage)
+    , mAsIcon(asIcon)
 {
     if (!mNode) {
         qCWarning(MESSAGEVIEWER_LOG) << "not a valid node";
         return;
     }
 
-    parseContent();
+    if (mAsIcon == MessageViewer::NoIcon) {
+        parseContent();
+    }
 }
 
 TextMessagePart::~TextMessagePart()
@@ -603,7 +606,11 @@ void TextMessagePart::html(bool decorate)
         block = HTMLBlock::Ptr(new TextBlock(writer, mOtp->nodeHelper(), mNode, mShowLink));
     }
 
-    MessagePartList::html(decorate);
+    if (mAsIcon != MessageViewer::NoIcon) {
+        mOtp->writePartIcon(mNode, (mAsIcon == MessageViewer::IconInline));
+    } else {
+        MessagePartList::html(decorate);
+    }
 }
 
 KMMsgEncryptionState TextMessagePart::encryptionState() const

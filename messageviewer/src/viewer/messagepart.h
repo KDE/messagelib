@@ -225,11 +225,17 @@ private:
     QVector<MessagePart::Ptr> mBlocks;
 };
 
+enum IconType {
+    NoIcon = 0,
+    IconExternal,
+    IconInline
+};
+
 class TextMessagePart : public MessagePartList
 {
 public:
     typedef QSharedPointer<TextMessagePart> Ptr;
-    TextMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage);
+    TextMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage, IconType asIcon);
     virtual ~TextMessagePart();
 
     void html(bool decorate) Q_DECL_OVERRIDE;
@@ -246,6 +252,7 @@ private:
     bool mDrawFrame;
     bool mShowLink;
     bool mDecryptMessage;
+    IconType mAsIcon;
 };
 
 class HtmlMessagePart : public MessagePart

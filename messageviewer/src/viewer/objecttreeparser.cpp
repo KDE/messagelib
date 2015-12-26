@@ -366,12 +366,11 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
                 QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
                 const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
                 if (r == Interface::BodyPartFormatter::AsIcon) {
-                    //qDebug() << node << "asIcon";
-                    AttachmentMarkBlock block(htmlWriter(), node);
                     processResult.setNeverDisplayInline(true);
                     mNodeHelper->setNodeDisplayedEmbedded(node, false);
                     const auto mp = defaultHandling(node, processResult);
                     if (mp) {
+                        AttachmentMarkBlock block(htmlWriter(), node);
                         mp->html(false);
                     }
                     bRendered = true;
@@ -385,9 +384,9 @@ void ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
 
         if (!bRendered) {
             qCCritical(MESSAGEVIEWER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
-            AttachmentMarkBlock block(htmlWriter(), node);
             const auto mp = defaultHandling(node, processResult);
             if (mp) {
+                AttachmentMarkBlock block(htmlWriter(), node);
                 mp->html(false);
             }
         }
@@ -471,17 +470,17 @@ MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, Process
         if (!(as && as->defaultDisplay(node) == AttachmentStrategy::None) ||
                 showOnlyOneMimePart()) {
             // Write the node as icon only
-            writePartIcon(node);
+            return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MessageViewer::IconExternal));
         } else {
             mNodeHelper->setNodeDisplayedHidden(node, true);
         }
     } else if (result.isImage()) {
         // Embed the image
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        writePartIcon(node, true);
+        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MessageViewer::IconInline));
     } else {
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage()));
+        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MessageViewer::NoIcon));
         result.setInlineSignatureState(mp->signatureState());
         result.setInlineEncryptionState(mp->encryptionState());
         return mp;
@@ -948,7 +947,7 @@ MessagePart::Ptr ObjectTreeParser::processTextPlainSubtype(KMime::Content *curNo
                             && !label.isEmpty();
     const QString fileName = mNodeHelper->writeNodeToTempFile(curNode);
 
-    TextMessagePart::Ptr mp(new TextMessagePart(this, curNode, bDrawFrame, !fileName.isEmpty(), mSource->decryptMessage()));
+    TextMessagePart::Ptr mp(new TextMessagePart(this, curNode, bDrawFrame, !fileName.isEmpty(), mSource->decryptMessage(), MessageViewer::NoIcon));
 
     result.setInlineSignatureState(mp->signatureState());
     result.setInlineEncryptionState(mp->encryptionState());
