@@ -20,6 +20,7 @@
 
 #include <QFileInfo>
 #include <QSet>
+#include <QDebug>
 #include <KPluginLoader>
 #include <kpluginmetadata.h>
 #include <KPluginFactory>
@@ -132,7 +133,6 @@ PluginEditorManager::PluginEditorManager(QObject *parent)
     : QObject(parent),
       d(new MessageComposer::PluginEditorManagerPrivate(this))
 {
-
 }
 
 PluginEditorManager::~PluginEditorManager()

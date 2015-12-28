@@ -108,7 +108,33 @@ bool PluginEditorInterface::hasConfigureDialog() const
     return false;
 }
 
+bool MessageComposer::PluginEditorInterface::hasToolBarSupport() const
+{
+    return false;
+}
+
 void PluginEditorInterface::showConfigureDialog(QWidget *parentWidget)
 {
     Q_UNUSED(parentWidget);
 }
+
+QString PluginEditorInterface::actionXmlExtension(ActionType::Type type)
+{
+    switch(type) {
+    case MessageComposer::ActionType::Tools:
+        return QStringLiteral("_plugins_tools");
+    case MessageComposer::ActionType::Edit:
+        return QStringLiteral("_plugins_edit");
+    case MessageComposer::ActionType::File:
+        return QStringLiteral("_plugins_file");
+    case MessageComposer::ActionType::Action:
+        return QStringLiteral("_plugins_actions");
+    case MessageComposer::ActionType::PopupMenu:
+        return QStringLiteral("_popupmenu_actions");
+    case MessageComposer::ActionType::ToolBar:
+        return QStringLiteral("_toolbar_actions");
+    }
+    return {};
+}
+
+
