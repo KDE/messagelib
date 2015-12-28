@@ -109,7 +109,8 @@ public:
     enum DisplayFormatMessage {
         UseGlobalSetting = 0,
         Text = 1,
-        Html = 2
+        Html = 2,
+        Unknown = 3
     };
 
     enum AttachmentAction {
