@@ -314,7 +314,6 @@ ecm_generate_pri_file(BASE_NAME MessageComposer
 )
 
 
-if(${CMAKE_SOURCE_DIR} STREQUAL ${Messagelib_SOURCE_DIR})
 install(FILES
     ${MessageComposer_Camelcasecomposer_HEADERS}
     ${MessageComposer_Camelcasecomposerng_HEADERS}
@@ -360,4 +359,3 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-endif()

@@ -154,7 +154,7 @@ ecm_generate_pri_file(BASE_NAME MessageCore
 )
 
 
-if(${CMAKE_SOURCE_DIR} STREQUAL ${Messagelib_SOURCE_DIR})
+
 install(FILES
     ${MessageCore_Camelcasehelpers_HEADERS}
     ${MessageCore_Camelcasesettings_HEADERS}
@@ -183,4 +183,4 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-endif()
+

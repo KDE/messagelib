@@ -395,7 +395,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
     DEPS "PimCommon MessageCore AkonadiCore AkonadiMime Contacts Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
 )
 
-if(${CMAKE_SOURCE_DIR} STREQUAL ${Messagelib_SOURCE_DIR})
+
 install(FILES
     ${MessageViewer_Camelcaseheader_HEADERS}
     ${MessageViewer_Camelcaseviewerplugin_HEADERS}
@@ -440,7 +440,6 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-endif()
 
 if (KDEPIM_BUILD_EXAMPLES)
     install(DIRECTORY themes DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer )

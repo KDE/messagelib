@@ -88,7 +88,7 @@ ecm_generate_pri_file(BASE_NAME TemplateParser
 
 
 install(TARGETS KF5TemplateParser EXPORT KF5TemplateParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK})
-if(${CMAKE_SOURCE_DIR} STREQUAL ${Messagelib_SOURCE_DIR})
+
 
 
 install(FILES
@@ -112,4 +112,4 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-endif()
+
