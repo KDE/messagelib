@@ -39,7 +39,8 @@ public:
         File = 2,
         Action = 3,
         PopupMenu = 4,
-        ToolBar = 5
+        ToolBar = 5,
+        Options = 6
     };
     ActionType();
 

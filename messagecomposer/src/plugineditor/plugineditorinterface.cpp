@@ -133,6 +133,8 @@ QString PluginEditorInterface::actionXmlExtension(ActionType::Type type)
         return QStringLiteral("_popupmenu_actions");
     case MessageComposer::ActionType::ToolBar:
         return QStringLiteral("_toolbar_actions");
+    case MessageComposer::ActionType::Options:
+        return QStringLiteral("_plugins_options");
     }
     return {};
 }
