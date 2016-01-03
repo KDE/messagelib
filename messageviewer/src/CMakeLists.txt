@@ -85,6 +85,7 @@ set(libmessageviewer_viewer_SRCS
   viewer/pluginloaderbase.cpp
   viewer/viewer.cpp
   viewer/viewer_p.cpp
+  viewer/webviewaccesskey.cpp
   viewer/messagedisplayformatattribute.cpp
   viewer/urlhandlermanager.cpp
   viewer/mimeparttree/mimeparttreeview.cpp
@@ -271,6 +272,7 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
   CSSHelperBase
   MailWebView
   MessagePart
+  WebViewAccessKey
   REQUIRED_HEADERS MessageViewer_viewer_HEADERS
   PREFIX MessageViewer
   RELATIVE viewer
