@@ -20,10 +20,11 @@
 
 #include <KWebPage>
 #include <QUrl>
+#include "messageviewer_export.h"
 
 namespace MessageViewer
 {
-class WebPage : public KWebPage
+class MESSAGEVIEWER_EXPORT WebPage : public KWebPage
 {
     Q_OBJECT
 public:
