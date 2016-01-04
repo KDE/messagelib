@@ -21,14 +21,14 @@
 #include <KActionMenu>
 class KToggleAction;
 class KActionCollection;
+class QWebView;
 namespace MessageViewer
 {
-class MailWebView;
 class ZoomActionMenu : public KActionMenu
 {
     Q_OBJECT
 public:
-    explicit ZoomActionMenu(MessageViewer::MailWebView *mailViewer, QObject *parent = Q_NULLPTR);
+    explicit ZoomActionMenu(QWebView *mailViewer, QObject *parent = Q_NULLPTR);
     ~ZoomActionMenu();
 
     void createZoomActions();
@@ -63,7 +63,7 @@ private:
     QAction *mZoomOutAction;
     QAction *mZoomResetAction;
     KActionCollection *mActionCollection;
-    MessageViewer::MailWebView *mMailWebViewer;
+    QWebView *mMailWebViewer;
     bool mZoomTextOnly;
 };
 }

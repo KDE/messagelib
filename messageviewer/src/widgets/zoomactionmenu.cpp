@@ -30,7 +30,7 @@ qreal zoomBy()
 }
 }
 
-ZoomActionMenu::ZoomActionMenu(MessageViewer::MailWebView *mailViewer, QObject *parent)
+ZoomActionMenu::ZoomActionMenu(QWebView *mailViewer, QObject *parent)
     : KActionMenu(parent),
       mZoomFactor(100),
       mZoomTextOnlyAction(Q_NULLPTR),
