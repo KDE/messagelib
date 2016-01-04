@@ -49,6 +49,27 @@ public:
     KActionCollection *mActionCollection;
 };
 
+static bool isEditableElement(QWebPage *page)
+{
+    const QWebFrame *frame = (page ? page->currentFrame() : 0);
+    QWebElement element = (frame ? frame->findFirstElement(QStringLiteral(":focus")) : QWebElement());
+    if (!element.isNull()) {
+        const QString tagName(element.tagName());
+        if (tagName.compare(QLatin1String("textarea"), Qt::CaseInsensitive) == 0) {
+            return true;
+        }
+        const QString type(element.attribute(QStringLiteral("type")).toLower());
+        if (tagName.compare(QLatin1String("input"), Qt::CaseInsensitive) == 0
+                && (type.isEmpty() || type == QLatin1String("text") || type == QLatin1String("password"))) {
+            return true;
+        }
+        if (element.evaluateJavaScript(QStringLiteral("this.isContentEditable")).toBool()) {
+            return true;
+        }
+    }
+    return false;
+}
+
 static bool isHiddenElement(const QWebElement &element)
 {
     // width property set to less than zero
@@ -118,6 +139,45 @@ WebViewAccessKey::~WebViewAccessKey()
 {
     delete d;
 }
+
+
+
+void WebViewAccessKey::wheelEvent(QWheelEvent *e)
+{
+    if (d->mAccessKeyActivated == PreActivated && (e->modifiers() & Qt::ControlModifier)) {
+        d->mAccessKeyActivated = NotActivated;
+    }
+}
+
+void WebViewAccessKey::keyPressEvent(QKeyEvent *e)
+{
+    if (e && d->mWebView->hasFocus()) {
+        if (d->mAccessKeyActivated == Activated) {
+            if (checkForAccessKey(e)) {
+                hideAccessKeys();
+                e->accept();
+                return;
+            }
+            hideAccessKeys();
+        } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier && !isEditableElement(d->mWebView->page())) {
+            d->mAccessKeyActivated = PreActivated; // Only preactive here, it will be actually activated in key release.
+        }
+    }
+}
+
+void WebViewAccessKey::keyReleaseEvent(QKeyEvent *e)
+{
+    if (d->mAccessKeyActivated == PreActivated) {
+        // Activate only when the CTRL key is pressed and released by itself.
+        if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
+            showAccessKeys();
+            d->mAccessKeyActivated = Activated;
+        } else {
+            d->mAccessKeyActivated = NotActivated;
+        }
+    }
+}
+
 
 void WebViewAccessKey::setActionCollection(KActionCollection *ac)
 {

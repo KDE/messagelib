@@ -32,7 +32,7 @@ class KActionCollection;
 namespace MessageViewer
 {
 class ScamDetection;
-
+class WebViewAccessKey;
 /// MailWebView extends KWebView so that it can emit the popupMenu() signal
 class MESSAGEVIEWER_EXPORT MailWebView : public KWebView
 {
@@ -98,25 +98,10 @@ protected:
     void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
     void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
 
-private Q_SLOTS:
-    void hideAccessKeys();
-
 private:
-    bool checkForAccessKey(QKeyEvent *event);
-    void showAccessKeys();
-    void makeAccessKeyLabel(QChar accessKey, const QWebElement &element);
-    enum AccessKeyState {
-        NotActivated,
-        PreActivated,
-        Activated
-    };
-    AccessKeyState mAccessKeyActivated;
-    QList<QLabel *> mAccessKeyLabels;
-    QHash<QChar, QWebElement> mAccessKeyNodes;
-    QHash<QString, QChar> mDuplicateLinkElements;
-
     ScamDetection *mScamDetection;
     KActionCollection *mActionCollection;
+    WebViewAccessKey *mWebViewAccessKey;
 };
 
 }

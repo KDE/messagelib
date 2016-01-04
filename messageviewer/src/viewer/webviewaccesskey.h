@@ -25,7 +25,7 @@ class QKeyEvent;
 class QWebElement;
 class QWebView;
 class KActionCollection;
-
+class QWheelEvent;
 namespace MessageViewer
 {
 class WebViewAccessKeyPrivate;
@@ -49,6 +49,9 @@ public:
     void showAccessKeys();
     void makeAccessKeyLabel(QChar accessKey, const QWebElement &element);
 
+    void wheelEvent(QWheelEvent *e);
+    void keyPressEvent(QKeyEvent *e);
+    void keyReleaseEvent(QKeyEvent *e);
 public Q_SLOTS:
     void hideAccessKeys();
 

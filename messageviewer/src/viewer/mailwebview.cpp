@@ -25,6 +25,7 @@
 #include "scamdetection/scamcheckshorturl.h"
 #include "adblock/adblockblockableitemsdialog.h"
 #include "adblock/webpage.h"
+#include "webviewaccesskey.h"
 
 #include <KActionCollection>
 #include <QAction>
@@ -43,88 +44,13 @@
 using namespace boost;
 using namespace MessageViewer;
 
-static QString linkElementKey(const QWebElement &element)
-{
-    if (element.hasAttribute(QStringLiteral("href"))) {
-        const QUrl url = element.webFrame()->baseUrl().resolved(element.attribute(QStringLiteral("href")));
-        QString linkKey(url.toString());
-        if (element.hasAttribute(QStringLiteral("target"))) {
-            linkKey += QLatin1Char('+');
-            linkKey += element.attribute(QStringLiteral("target"));
-        }
-        return linkKey;
-    }
-    return QString();
-}
-
-static bool isHiddenElement(const QWebElement &element)
-{
-    // width property set to less than zero
-    if (element.hasAttribute(QStringLiteral("width")) && element.attribute(QStringLiteral("width")).toInt() < 1) {
-        return true;
-    }
-
-    // height property set to less than zero
-    if (element.hasAttribute(QStringLiteral("height")) && element.attribute(QStringLiteral("height")).toInt() < 1) {
-        return true;
-    }
-
-    // visibility set to 'hidden' in the element itself or its parent elements.
-    if (element.styleProperty(QStringLiteral("visibility"), QWebElement::ComputedStyle).compare(QLatin1String("hidden"), Qt::CaseInsensitive) == 0) {
-        return true;
-    }
-
-    // display set to 'none' in the element itself or its parent elements.
-    if (element.styleProperty(QStringLiteral("display"), QWebElement::ComputedStyle).compare(QLatin1String("none"), Qt::CaseInsensitive) == 0) {
-        return true;
-    }
-
-    return false;
-}
-
-static bool isEditableElement(QWebPage *page)
-{
-    const QWebFrame *frame = (page ? page->currentFrame() : 0);
-    QWebElement element = (frame ? frame->findFirstElement(QStringLiteral(":focus")) : QWebElement());
-    if (!element.isNull()) {
-        const QString tagName(element.tagName());
-        if (tagName.compare(QLatin1String("textarea"), Qt::CaseInsensitive) == 0) {
-            return true;
-        }
-        const QString type(element.attribute(QStringLiteral("type")).toLower());
-        if (tagName.compare(QLatin1String("input"), Qt::CaseInsensitive) == 0
-                && (type.isEmpty() || type == QLatin1String("text") || type == QLatin1String("password"))) {
-            return true;
-        }
-        if (element.evaluateJavaScript(QStringLiteral("this.isContentEditable")).toBool()) {
-            return true;
-        }
-    }
-    return false;
-}
-
-static void handleDuplicateLinkElements(const QWebElement &element, QHash<QString, QChar> *dupLinkList, QChar *accessKey)
-{
-    if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
-        const QString linkKey(linkElementKey(element));
-        // qCDebug(MESSAGEVIEWER_LOG) << "LINK KEY:" << linkKey;
-        if (dupLinkList->contains(linkKey)) {
-            // qCDebug(MESSAGEVIEWER_LOG) << "***** Found duplicate link element:" << linkKey;
-            *accessKey = dupLinkList->value(linkKey);
-        } else if (!linkKey.isEmpty()) {
-            dupLinkList->insert(linkKey, *accessKey);
-        }
-        if (linkKey.isEmpty()) {
-            *accessKey = QChar();
-        }
-    }
-}
-
 MailWebView::MailWebView(KActionCollection *actionCollection, QWidget *parent)
     : KWebView(parent, false),
       mScamDetection(new ScamDetection),
       mActionCollection(actionCollection)
 {
+    mWebViewAccessKey = new WebViewAccessKey(this, this);
+    mWebViewAccessKey->setActionCollection(mActionCollection);
     setPage(new MessageViewer::WebPage(this));
     page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
     settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
@@ -137,9 +63,9 @@ MailWebView::MailWebView(KActionCollection *actionCollection, QWidget *parent)
 
     connect(page(), &QWebPage::linkHovered,
             this,   &MailWebView::linkHovered);
-    connect(this, &QWebView::loadStarted, this, &MailWebView::hideAccessKeys);
+    connect(this, &QWebView::loadStarted, mWebViewAccessKey, &WebViewAccessKey::hideAccessKeys);
     connect(mScamDetection, &ScamDetection::messageMayBeAScam, this, &MailWebView::messageMayBeAScam);
-    connect(page(), &QWebPage::scrollRequested, this, &MailWebView::hideAccessKeys);
+    connect(page(), &QWebPage::scrollRequested, mWebViewAccessKey, &WebViewAccessKey::hideAccessKeys);
 }
 
 MailWebView::~MailWebView()
@@ -383,14 +309,8 @@ void MailWebView::clearFindSelection()
 
 void MailWebView::keyReleaseEvent(QKeyEvent *e)
 {
-    if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled() && mAccessKeyActivated == PreActivated) {
-        // Activate only when the CTRL key is pressed and released by itself.
-        if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
-            showAccessKeys();
-            mAccessKeyActivated = Activated;
-        } else {
-            mAccessKeyActivated = NotActivated;
-        }
+    if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
+        mWebViewAccessKey->keyReleaseEvent(e);
     }
     KWebView::keyReleaseEvent(e);
 }
@@ -399,16 +319,7 @@ void MailWebView::keyPressEvent(QKeyEvent *e)
 {
     if (e && hasFocus()) {
         if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
-            if (mAccessKeyActivated == Activated) {
-                if (checkForAccessKey(e)) {
-                    hideAccessKeys();
-                    e->accept();
-                    return;
-                }
-                hideAccessKeys();
-            } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier && !isEditableElement(page())) {
-                mAccessKeyActivated = PreActivated; // Only preactive here, it will be actually activated in key release.
-            }
+            mWebViewAccessKey->keyPressEvent(e);
         }
     }
     KWebView::keyPressEvent(e);
@@ -416,179 +327,12 @@ void MailWebView::keyPressEvent(QKeyEvent *e)
 
 void MailWebView::wheelEvent(QWheelEvent *e)
 {
-    if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled() && mAccessKeyActivated == PreActivated && (e->modifiers() & Qt::ControlModifier)) {
-        mAccessKeyActivated = NotActivated;
+    if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
+        mWebViewAccessKey->wheelEvent(e);
     }
     KWebView::wheelEvent(e);
 }
 
-bool MailWebView::checkForAccessKey(QKeyEvent *event)
-{
-    if (mAccessKeyLabels.isEmpty()) {
-        return false;
-    }
-    QString text = event->text();
-    if (text.isEmpty()) {
-        return false;
-    }
-    QChar key = text.at(0).toUpper();
-    bool handled = false;
-    if (mAccessKeyNodes.contains(key)) {
-        QWebElement element = mAccessKeyNodes[key];
-        QPoint p = element.geometry().center();
-        QWebFrame *frame = element.webFrame();
-        Q_ASSERT(frame);
-        do {
-            p -= frame->scrollPosition();
-            frame = frame->parentFrame();
-        } while (frame && frame != page()->mainFrame());
-        QMouseEvent pevent(QEvent::MouseButtonPress, p, Qt::LeftButton, 0, 0);
-        QCoreApplication::sendEvent(this, &pevent);
-        QMouseEvent revent(QEvent::MouseButtonRelease, p, Qt::LeftButton, 0, 0);
-        QCoreApplication::sendEvent(this, &revent);
-        handled = true;
-    }
-    return handled;
-}
-
-void MailWebView::hideAccessKeys()
-{
-    if (!mAccessKeyLabels.isEmpty()) {
-        for (int i = 0, count = mAccessKeyLabels.count(); i < count; ++i) {
-            QLabel *label = mAccessKeyLabels[i];
-            label->hide();
-            label->deleteLater();
-        }
-        mAccessKeyLabels.clear();
-        mAccessKeyNodes.clear();
-        mDuplicateLinkElements.clear();
-        mAccessKeyActivated = NotActivated;
-        update();
-    }
-}
-
-void MailWebView::showAccessKeys()
-{
-    QList<QChar> unusedKeys;
-    unusedKeys.reserve(10 + ('Z' - 'A' + 1));
-    for (char c = 'A'; c <= 'Z'; ++c) {
-        unusedKeys << QLatin1Char(c);
-    }
-    for (char c = '0'; c <= '9'; ++c) {
-        unusedKeys << QLatin1Char(c);
-    }
-    if (mActionCollection) {
-        Q_FOREACH (QAction *act, mActionCollection->actions()) {
-            QAction *a = qobject_cast<QAction *>(act);
-            if (a) {
-                const QKeySequence shortCut = a->shortcut();
-                if (!shortCut.isEmpty()) {
-                    Q_FOREACH (QChar c, unusedKeys) {
-                        if (shortCut.matches(QKeySequence(c)) != QKeySequence::NoMatch) {
-                            unusedKeys.removeOne(c);
-                        }
-                    }
-                }
-            }
-        }
-    }
-    QList<QWebElement> unLabeledElements;
-    QRect viewport = QRect(page()->mainFrame()->scrollPosition(), page()->viewportSize());
-    const QString selectorQuery(QStringLiteral("a[href],"
-                                "area,"
-                                "button:not([disabled]),"
-                                "input:not([disabled]):not([hidden]),"
-                                "label[for],"
-                                "legend,"
-                                "select:not([disabled]),"
-                                "textarea:not([disabled])"));
-    QList<QWebElement> result = page()->mainFrame()->findAllElements(selectorQuery).toList();
-
-    // Priority first goes to elements with accesskey attributes
-    Q_FOREACH (const QWebElement &element, result) {
-        const QRect geometry = element.geometry();
-        if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
-            continue;
-        }
-        if (isHiddenElement(element)) {
-            continue;    // Do not show access key for hidden elements...
-        }
-        const QString accessKeyAttribute(element.attribute(QStringLiteral("accesskey")).toUpper());
-        if (accessKeyAttribute.isEmpty()) {
-            unLabeledElements.append(element);
-            continue;
-        }
-        QChar accessKey;
-        for (int i = 0; i < accessKeyAttribute.count(); i += 2) {
-            const QChar &possibleAccessKey = accessKeyAttribute[i];
-            if (unusedKeys.contains(possibleAccessKey)) {
-                accessKey = possibleAccessKey;
-                break;
-            }
-        }
-        if (accessKey.isNull()) {
-            unLabeledElements.append(element);
-            continue;
-        }
-
-        handleDuplicateLinkElements(element, &mDuplicateLinkElements, &accessKey);
-        if (!accessKey.isNull()) {
-            unusedKeys.removeOne(accessKey);
-            makeAccessKeyLabel(accessKey, element);
-        }
-    }
-
-    // Pick an access key first from the letters in the text and then from the
-    // list of unused access keys
-    Q_FOREACH (const QWebElement &element, unLabeledElements) {
-        const QRect geometry = element.geometry();
-        if (unusedKeys.isEmpty()
-                || geometry.size().isEmpty()
-                || !viewport.contains(geometry.topLeft())) {
-            continue;
-        }
-        QChar accessKey;
-        const QString text = element.toPlainText().toUpper();
-        for (int i = 0; i < text.count(); ++i) {
-            const QChar &c = text.at(i);
-            if (unusedKeys.contains(c)) {
-                accessKey = c;
-                break;
-            }
-        }
-        if (accessKey.isNull()) {
-            accessKey = unusedKeys.takeFirst();
-        }
-
-        handleDuplicateLinkElements(element, &mDuplicateLinkElements, &accessKey);
-        if (!accessKey.isNull()) {
-            unusedKeys.removeOne(accessKey);
-            makeAccessKeyLabel(accessKey, element);
-        }
-    }
-
-    mAccessKeyActivated = (mAccessKeyLabels.isEmpty() ? Activated : NotActivated);
-}
-
-void MailWebView::makeAccessKeyLabel(QChar accessKey, const QWebElement &element)
-{
-    QLabel *label = new QLabel(this);
-    QFont font(label->font());
-    font.setBold(true);
-    label->setFont(font);
-    label->setText(accessKey);
-    label->setPalette(QToolTip::palette());
-    label->setAutoFillBackground(true);
-    label->setFrameStyle(QFrame::Box | QFrame::Plain);
-    QPoint point = element.geometry().center();
-    point -= page()->mainFrame()->scrollPosition();
-    label->move(point);
-    label->show();
-    point.setX(point.x() - label->width() / 2);
-    label->move(point);
-    mAccessKeyLabels.append(label);
-    mAccessKeyNodes.insertMulti(accessKey, element);
-}
 
 void MailWebView::scamCheck()
 {
@@ -637,3 +381,4 @@ bool MailWebView::isAShortUrl(const QUrl &url) const
 }
 
 #include "moc_mailwebview.cpp"
+#include "webviewaccesskey.h"
