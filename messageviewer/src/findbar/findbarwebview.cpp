@@ -24,20 +24,44 @@
 #include <QMenu>
 using namespace MessageViewer;
 
-FindBarWebView::FindBarWebView(QWebView *view, QWidget *parent)
-    : FindBarBase(parent), mView(view)
+class MessageViewer::FindBarWebViewPrivate
 {
+public:
+    FindBarWebViewPrivate()
+        : mView(Q_NULLPTR),
+          mHighlightAll(Q_NULLPTR),
+          mFindInSelection(Q_NULLPTR)
+    {
+
+    }
+    QWebView *mView;
+    QAction *mHighlightAll;
+    QAction *mFindInSelection;
+};
+
+FindBarWebView::FindBarWebView(QWebView *view, QWidget *parent)
+    : FindBarBase(parent),
+      d(new MessageViewer::FindBarWebViewPrivate)
+{
+    d->mView = view;
     QMenu *options = optionsMenu();
-    mHighlightAll = options->addAction(i18n("Highlight all matches"));
-    mHighlightAll->setCheckable(true);
-    mFindInSelection = options->addAction(i18n("Find in selection first"));
-    mFindInSelection->setCheckable(true);
-    connect(mHighlightAll, &QAction::toggled, this, &FindBarWebView::slotHighlightAllChanged);
-    connect(mFindInSelection, &QAction::toggled, this, &FindBarWebView::slotFindSelectionFirstChanged);
+    d->mHighlightAll = options->addAction(i18n("Highlight all matches"));
+    d->mHighlightAll->setCheckable(true);
+    d->mFindInSelection = options->addAction(i18n("Find in selection first"));
+    d->mFindInSelection->setCheckable(true);
+    connect(d->mHighlightAll, &QAction::toggled, this, &FindBarWebView::slotHighlightAllChanged);
+    connect(d->mFindInSelection, &QAction::toggled, this, &FindBarWebView::slotFindSelectionFirstChanged);
 }
 
 FindBarWebView::~FindBarWebView()
 {
+    delete d;
+}
+
+FindBarWebView::FindBarWebView(QWidget *parent)
+    : d(new MessageViewer::FindBarWebViewPrivate)
+{
+    Q_UNUSED(parent);
 }
 
 void FindBarWebView::searchText(bool backward, bool isAutoSearch)
@@ -50,20 +74,20 @@ void FindBarWebView::searchText(bool backward, bool isAutoSearch)
     if (mCaseSensitiveAct->isChecked()) {
         searchOptions |= QWebPage::FindCaseSensitively;
     }
-    if (mHighlightAll->isChecked()) {
+    if (d->mHighlightAll->isChecked()) {
         searchOptions |= QWebPage::HighlightAllOccurrences;
     }
-    if (mFindInSelection->isChecked()) {
+    if (d->mFindInSelection->isChecked()) {
         searchOptions |= QWebPage::FindBeginsInSelection;
     }
     const QString searchWord(mSearch->text());
     if (!isAutoSearch && !mLastSearchStr.contains(searchWord, Qt::CaseSensitive)) {
         clearSelections();
     }
-    mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
+    d->mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
 
     mLastSearchStr = searchWord;
-    const bool found = mView->findText(mLastSearchStr, searchOptions);
+    const bool found = d->mView->findText(mLastSearchStr, searchOptions);
 
     setFoundMatch(found);
 }
@@ -77,9 +101,9 @@ void FindBarWebView::updateHighLight(bool highLight)
             searchOptions |= QWebPage::FindCaseSensitively;
         }
         searchOptions |= QWebPage::HighlightAllOccurrences;
-        found = mView->findText(mLastSearchStr, searchOptions);
+        found = d->mView->findText(mLastSearchStr, searchOptions);
     } else {
-        found = mView->findText(QString(), QWebPage::HighlightAllOccurrences);
+        found = d->mView->findText(QString(), QWebPage::HighlightAllOccurrences);
     }
     setFoundMatch(found);
 }
@@ -89,12 +113,12 @@ void FindBarWebView::updateSensitivity(bool sensitivity)
     QWebPage::FindFlags searchOptions = QWebPage::FindWrapsAroundDocument;
     if (sensitivity) {
         searchOptions |= QWebPage::FindCaseSensitively;
-        mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
+        d->mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
     }
-    if (mHighlightAll->isChecked()) {
+    if (d->mHighlightAll->isChecked()) {
         searchOptions |= QWebPage::HighlightAllOccurrences;
     }
-    const bool found = mView->findText(mLastSearchStr, searchOptions);
+    const bool found = d->mView->findText(mLastSearchStr, searchOptions);
     setFoundMatch(found);
 }
 
@@ -103,12 +127,12 @@ void FindBarWebView::slotFindSelectionFirstChanged(bool findSectionFirst)
     QWebPage::FindFlags searchOptions = QWebPage::FindWrapsAroundDocument;
     if (findSectionFirst) {
         searchOptions |= QWebPage::FindBeginsInSelection;
-        mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
+        d->mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
     }
-    if (mHighlightAll->isChecked()) {
+    if (d->mHighlightAll->isChecked()) {
         searchOptions |= QWebPage::HighlightAllOccurrences;
     }
-    const bool found = mView->findText(mLastSearchStr, searchOptions);
+    const bool found = d->mView->findText(mLastSearchStr, searchOptions);
     setFoundMatch(found);
 }
 
@@ -116,7 +140,7 @@ void FindBarWebView::clearSelections()
 {
     //WEBKIT: TODO: Find a way to unselect last selection
     // http://bugreports.qt.nokia.com/browse/QTWEBKIT-80
-    mView->findText(QString(), QWebPage::HighlightAllOccurrences);
+    d->mView->findText(QString(), QWebPage::HighlightAllOccurrences);
     mLastSearchStr.clear();
     FindBarBase::clearSelections();
 }

@@ -26,19 +26,16 @@ class QWebView;
 
 namespace MessageViewer
 {
+class FindBarWebViewPrivate;
 class MESSAGEVIEWER_EXPORT FindBarWebView : public FindBarBase
 {
     Q_OBJECT
-
 public:
     explicit FindBarWebView(QWebView *view, QWidget *parent = Q_NULLPTR);
     ~FindBarWebView();
 
 private:
-    explicit FindBarWebView(QWidget *parent)
-    {
-        Q_UNUSED(parent);
-    }
+    explicit FindBarWebView(QWidget *parent);
     void clearSelections() Q_DECL_OVERRIDE;
     void searchText(bool backward, bool isAutoSearch) Q_DECL_OVERRIDE;
     void updateHighLight(bool) Q_DECL_OVERRIDE;
@@ -47,9 +44,7 @@ private:
 private Q_SLOTS:
     void slotFindSelectionFirstChanged(bool findSectionFirst);
 private:
-    QWebView *mView;
-    QAction *mHighlightAll;
-    QAction *mFindInSelection;
+    FindBarWebViewPrivate *const d;
 };
 
 }
