@@ -149,6 +149,13 @@ void WebViewAccessKey::wheelEvent(QWheelEvent *e)
     }
 }
 
+void WebViewAccessKey::resizeEvent(QResizeEvent *)
+{
+    if (d->mAccessKeyActivated == Activated) {
+        hideAccessKeys();
+    }
+}
+
 void WebViewAccessKey::keyPressEvent(QKeyEvent *e)
 {
     if (e && d->mWebView->hasFocus()) {

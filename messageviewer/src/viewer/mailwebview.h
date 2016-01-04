@@ -97,7 +97,7 @@ protected:
     void keyReleaseEvent(QKeyEvent *) Q_DECL_OVERRIDE;
     void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
     void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
-
+    void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
 private:
     ScamDetection *mScamDetection;
     KActionCollection *mActionCollection;

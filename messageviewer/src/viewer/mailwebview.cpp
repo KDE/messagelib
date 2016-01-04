@@ -333,6 +333,13 @@ void MailWebView::wheelEvent(QWheelEvent *e)
     KWebView::wheelEvent(e);
 }
 
+void MailWebView::resizeEvent(QResizeEvent *e)
+{
+    if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
+        mWebViewAccessKey->resizeEvent(e);
+    }
+    KWebView::resizeEvent(e);
+}
 
 void MailWebView::scamCheck()
 {
