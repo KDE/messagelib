@@ -71,7 +71,7 @@ class HtmlWriter;
 class CSSHelper;
 class AttachmentStrategy;
 class ObjectTreeParser;
-class FindBarMailWebView;
+class FindBarWebView;
 class WebKitPartHtmlWriter;
 class HtmlStatusBar;
 class MailWebView;
@@ -601,7 +601,7 @@ public:
     MimePartTreeView *mMimePartTree;
 #endif
     MailWebView *mViewer;
-    FindBarMailWebView *mFindBar;
+    FindBarWebView *mFindBar;
 
     const AttachmentStrategy *mAttachmentStrategy;
     QTimer mUpdateReaderWinTimer;

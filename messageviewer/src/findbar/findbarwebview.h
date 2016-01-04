@@ -20,24 +20,22 @@
 #define MESSAGEVIEWER_FINDBAR_MAILWEBVIEW_H
 
 #include "findbarbase.h"
+#include "messageviewer_export.h"
+
+class QWebView;
 
 namespace MessageViewer
 {
-class MailWebView;
-}
-
-namespace MessageViewer
-{
-class FindBarMailWebView : public FindBarBase
+class MESSAGEVIEWER_EXPORT FindBarWebView : public FindBarBase
 {
     Q_OBJECT
 
 public:
-    explicit FindBarMailWebView(MailWebView *view, QWidget *parent = Q_NULLPTR);
-    ~FindBarMailWebView();
+    explicit FindBarWebView(QWebView *view, QWidget *parent = Q_NULLPTR);
+    ~FindBarWebView();
 
 private:
-    explicit FindBarMailWebView(QWidget *parent)
+    explicit FindBarWebView(QWidget *parent)
     {
         Q_UNUSED(parent);
     }
@@ -49,7 +47,7 @@ private:
 private Q_SLOTS:
     void slotFindSelectionFirstChanged(bool findSectionFirst);
 private:
-    MailWebView *mView;
+    QWebView *mView;
     QAction *mHighlightAll;
     QAction *mFindInSelection;
 };

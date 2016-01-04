@@ -138,7 +138,7 @@ set(libmessageviewer_scamdetection_SRCS
 
 set(libmessageviewer_findbar_SRCS
   findbar/findbarbase.cpp
-  findbar/findbarmailwebview.cpp
+  findbar/findbarwebview.cpp
   findbar/findbarsourceview.cpp
 )
 
@@ -305,6 +305,16 @@ ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
   RELATIVE utils
 )
 
+ecm_generate_headers(MessageViewer_Camelfindbar_HEADERS
+  HEADER_NAMES
+  FindBarWebView
+  FindBarBase
+  REQUIRED_HEADERS MessageViewer_findbar_HEADERS
+  PREFIX MessageViewer
+  RELATIVE findbar
+)
+
+
 ecm_generate_headers(MessageViewer_Camelcaseantispam_HEADERS
   HEADER_NAMES
   SpamHeaderAnalyzer
@@ -412,6 +422,7 @@ install(FILES
     ${MessageViewer_Camelcasemain_HEADERS}
     ${MessageViewer_Camelcaseviewerjob_HEADERS}
     ${MessageViewer_Camelcaseantispam_HEADERS}
+    ${MessageViewer_Camelfindbar_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     COMPONENT Devel
 )
@@ -430,6 +441,7 @@ install(FILES
     ${MessageViewer_widgets_HEADERS}
     ${MessageViewer_viewerjob_HEADERS}
     ${MessageViewer_antispam_HEADERS}
+    ${MessageViewer_findbar_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h

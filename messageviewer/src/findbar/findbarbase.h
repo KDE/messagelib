@@ -21,7 +21,7 @@
 #define FINDBARBASE_H
 
 #include <QWidget>
-
+#include "messageviewer_export.h"
 class QAction;
 class QPushButton;
 class QMenu;
@@ -32,7 +32,7 @@ class LineEditWithCompleter;
 }
 namespace MessageViewer
 {
-class FindBarBase : public QWidget
+class MESSAGEVIEWER_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT
 public:

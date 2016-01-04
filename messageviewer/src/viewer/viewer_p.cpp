@@ -125,7 +125,7 @@
 #include "messageviewer/messageviewerutil.h"
 #include "widgets/vcardviewer.h"
 #include "viewer/mailwebview.h"
-#include "findbar/findbarmailwebview.h"
+#include "findbar/findbarwebview.h"
 #include "header/headerstylemenumanager.h"
 
 #include "messageviewer/bodypart.h"
@@ -1482,7 +1482,7 @@ void ViewerPrivate::createWidgets()
     mSliderContainer = new KPIMTextEdit::SlideContainer(readerBox);
     mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
     readerBoxVBoxLayout->addWidget(mSliderContainer);
-    mFindBar = new FindBarMailWebView(mViewer, q);
+    mFindBar = new FindBarWebView(mViewer, q);
     connect(mFindBar, &FindBarBase::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
 

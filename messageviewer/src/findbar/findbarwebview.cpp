@@ -16,15 +16,15 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#include "findbarmailwebview.h"
+#include "findbarwebview.h"
 #include "PimCommon/LineEditWithCompleter"
-#include "viewer/mailwebview.h"
+#include <QWebView>
 
 #include <KLocalizedString>
 #include <QMenu>
 using namespace MessageViewer;
 
-FindBarMailWebView::FindBarMailWebView(MailWebView *view, QWidget *parent)
+FindBarWebView::FindBarWebView(QWebView *view, QWidget *parent)
     : FindBarBase(parent), mView(view)
 {
     QMenu *options = optionsMenu();
@@ -32,15 +32,15 @@ FindBarMailWebView::FindBarMailWebView(MailWebView *view, QWidget *parent)
     mHighlightAll->setCheckable(true);
     mFindInSelection = options->addAction(i18n("Find in selection first"));
     mFindInSelection->setCheckable(true);
-    connect(mHighlightAll, &QAction::toggled, this, &FindBarMailWebView::slotHighlightAllChanged);
-    connect(mFindInSelection, &QAction::toggled, this, &FindBarMailWebView::slotFindSelectionFirstChanged);
+    connect(mHighlightAll, &QAction::toggled, this, &FindBarWebView::slotHighlightAllChanged);
+    connect(mFindInSelection, &QAction::toggled, this, &FindBarWebView::slotFindSelectionFirstChanged);
 }
 
-FindBarMailWebView::~FindBarMailWebView()
+FindBarWebView::~FindBarWebView()
 {
 }
 
-void FindBarMailWebView::searchText(bool backward, bool isAutoSearch)
+void FindBarWebView::searchText(bool backward, bool isAutoSearch)
 {
     QWebPage::FindFlags searchOptions = QWebPage::FindWrapsAroundDocument;
 
@@ -68,7 +68,7 @@ void FindBarMailWebView::searchText(bool backward, bool isAutoSearch)
     setFoundMatch(found);
 }
 
-void FindBarMailWebView::updateHighLight(bool highLight)
+void FindBarWebView::updateHighLight(bool highLight)
 {
     bool found = false;
     if (highLight) {
@@ -84,7 +84,7 @@ void FindBarMailWebView::updateHighLight(bool highLight)
     setFoundMatch(found);
 }
 
-void FindBarMailWebView::updateSensitivity(bool sensitivity)
+void FindBarWebView::updateSensitivity(bool sensitivity)
 {
     QWebPage::FindFlags searchOptions = QWebPage::FindWrapsAroundDocument;
     if (sensitivity) {
@@ -98,7 +98,7 @@ void FindBarMailWebView::updateSensitivity(bool sensitivity)
     setFoundMatch(found);
 }
 
-void FindBarMailWebView::slotFindSelectionFirstChanged(bool findSectionFirst)
+void FindBarWebView::slotFindSelectionFirstChanged(bool findSectionFirst)
 {
     QWebPage::FindFlags searchOptions = QWebPage::FindWrapsAroundDocument;
     if (findSectionFirst) {
@@ -112,9 +112,11 @@ void FindBarMailWebView::slotFindSelectionFirstChanged(bool findSectionFirst)
     setFoundMatch(found);
 }
 
-void FindBarMailWebView::clearSelections()
+void FindBarWebView::clearSelections()
 {
-    mView->clearFindSelection();
+    //WEBKIT: TODO: Find a way to unselect last selection
+    // http://bugreports.qt.nokia.com/browse/QTWEBKIT-80
+    mView->findText(QString(), QWebPage::HighlightAllOccurrences);
     mLastSearchStr.clear();
     FindBarBase::clearSelections();
 }

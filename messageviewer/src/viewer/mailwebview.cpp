@@ -299,14 +299,6 @@ void MailWebView::setElementByIdVisible(const QString &id, bool visible)
     }
 }
 
-
-void MailWebView::clearFindSelection()
-{
-    //WEBKIT: TODO: Find a way to unselect last selection
-    // http://bugreports.qt.nokia.com/browse/QTWEBKIT-80
-    KWebView::findText(QString(), QWebPage::HighlightAllOccurrences);
-}
-
 void MailWebView::keyReleaseEvent(QKeyEvent *e)
 {
     if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {

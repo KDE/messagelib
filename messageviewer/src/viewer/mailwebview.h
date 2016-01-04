@@ -42,8 +42,6 @@ public:
     explicit MailWebView(KActionCollection *actionCollection = Q_NULLPTR, QWidget *parent = Q_NULLPTR);
     ~MailWebView();
 
-    void clearFindSelection();
-
     void scrollUp(int pixels);
     void scrollDown(int pixels);
     bool isScrolledToBottom() const;
