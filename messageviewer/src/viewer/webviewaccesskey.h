@@ -34,12 +34,6 @@ class MESSAGEVIEWER_EXPORT WebViewAccessKey : public QObject
 {
     Q_OBJECT
 public:
-    enum AccessKeyState {
-        NotActivated,
-        PreActivated,
-        Activated
-    };
-
     explicit WebViewAccessKey(QWebView *webView, QObject *parent = Q_NULLPTR);
     ~WebViewAccessKey();
 

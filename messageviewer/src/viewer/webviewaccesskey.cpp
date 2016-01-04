@@ -34,14 +34,18 @@ using namespace MessageViewer;
 class MessageViewer::WebViewAccessKeyPrivate
 {
 public:
-
+    enum AccessKeyState {
+        NotActivated,
+        PreActivated,
+        Activated
+    };
     WebViewAccessKeyPrivate(QWebView *webView)
         : mWebView(webView),
           mActionCollection(Q_NULLPTR)
     {
 
     }
-    WebViewAccessKey::AccessKeyState mAccessKeyActivated;
+    AccessKeyState mAccessKeyActivated;
     QList<QLabel *> mAccessKeyLabels;
     QHash<QChar, QWebElement> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
@@ -144,14 +148,14 @@ WebViewAccessKey::~WebViewAccessKey()
 
 void WebViewAccessKey::wheelEvent(QWheelEvent *e)
 {
-    if (d->mAccessKeyActivated == PreActivated && (e->modifiers() & Qt::ControlModifier)) {
-        d->mAccessKeyActivated = NotActivated;
+    if (d->mAccessKeyActivated == WebViewAccessKeyPrivate::PreActivated && (e->modifiers() & Qt::ControlModifier)) {
+        d->mAccessKeyActivated = WebViewAccessKeyPrivate::NotActivated;
     }
 }
 
 void WebViewAccessKey::resizeEvent(QResizeEvent *)
 {
-    if (d->mAccessKeyActivated == Activated) {
+    if (d->mAccessKeyActivated == WebViewAccessKeyPrivate::Activated) {
         hideAccessKeys();
     }
 }
@@ -159,7 +163,7 @@ void WebViewAccessKey::resizeEvent(QResizeEvent *)
 void WebViewAccessKey::keyPressEvent(QKeyEvent *e)
 {
     if (e && d->mWebView->hasFocus()) {
-        if (d->mAccessKeyActivated == Activated) {
+        if (d->mAccessKeyActivated == WebViewAccessKeyPrivate::Activated) {
             if (checkForAccessKey(e)) {
                 hideAccessKeys();
                 e->accept();
@@ -167,20 +171,20 @@ void WebViewAccessKey::keyPressEvent(QKeyEvent *e)
             }
             hideAccessKeys();
         } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier && !isEditableElement(d->mWebView->page())) {
-            d->mAccessKeyActivated = PreActivated; // Only preactive here, it will be actually activated in key release.
+            d->mAccessKeyActivated = WebViewAccessKeyPrivate::PreActivated; // Only preactive here, it will be actually activated in key release.
         }
     }
 }
 
 void WebViewAccessKey::keyReleaseEvent(QKeyEvent *e)
 {
-    if (d->mAccessKeyActivated == PreActivated) {
+    if (d->mAccessKeyActivated == WebViewAccessKeyPrivate::PreActivated) {
         // Activate only when the CTRL key is pressed and released by itself.
         if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
             showAccessKeys();
-            d->mAccessKeyActivated = Activated;
+            d->mAccessKeyActivated = WebViewAccessKeyPrivate::Activated;
         } else {
-            d->mAccessKeyActivated = NotActivated;
+            d->mAccessKeyActivated = WebViewAccessKeyPrivate::NotActivated;
         }
     }
 }
@@ -320,7 +324,7 @@ void WebViewAccessKey::showAccessKeys()
         }
     }
 
-    d->mAccessKeyActivated = (d->mAccessKeyLabels.isEmpty() ? Activated : NotActivated);
+    d->mAccessKeyActivated = (d->mAccessKeyLabels.isEmpty() ? WebViewAccessKeyPrivate::Activated : WebViewAccessKeyPrivate::NotActivated);
 }
 
 void WebViewAccessKey::makeAccessKeyLabel(QChar accessKey, const QWebElement &element)
@@ -355,7 +359,7 @@ void WebViewAccessKey::hideAccessKeys()
         d->mAccessKeyLabels.clear();
         d->mAccessKeyNodes.clear();
         d->mDuplicateLinkElements.clear();
-        d->mAccessKeyActivated = WebViewAccessKey::NotActivated;
+        d->mAccessKeyActivated = WebViewAccessKeyPrivate::NotActivated;
         d->mWebView->update();
     }
 }
