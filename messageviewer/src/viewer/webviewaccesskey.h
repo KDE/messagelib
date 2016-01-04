@@ -24,6 +24,7 @@
 class QKeyEvent;
 class QWebElement;
 class QWebView;
+class KActionCollection;
 
 namespace MessageViewer
 {
@@ -40,6 +41,9 @@ public:
 
     explicit WebViewAccessKey(QWebView *webView, QObject *parent = Q_NULLPTR);
     ~WebViewAccessKey();
+
+    void setActionCollection(KActionCollection *ac);
+
 
     bool checkForAccessKey(QKeyEvent *event);
     void showAccessKeys();
