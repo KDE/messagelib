@@ -58,12 +58,6 @@ FindBarWebView::~FindBarWebView()
     delete d;
 }
 
-FindBarWebView::FindBarWebView(QWidget *parent)
-    : d(new MessageViewer::FindBarWebViewPrivate)
-{
-    Q_UNUSED(parent);
-}
-
 void FindBarWebView::searchText(bool backward, bool isAutoSearch)
 {
     QWebPage::FindFlags searchOptions = QWebPage::FindWrapsAroundDocument;

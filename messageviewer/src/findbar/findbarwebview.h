@@ -35,7 +35,6 @@ public:
     ~FindBarWebView();
 
 private:
-    explicit FindBarWebView(QWidget *parent);
     void clearSelections() Q_DECL_OVERRIDE;
     void searchText(bool backward, bool isAutoSearch) Q_DECL_OVERRIDE;
     void updateHighLight(bool) Q_DECL_OVERRIDE;
