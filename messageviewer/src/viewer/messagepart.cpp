@@ -19,7 +19,6 @@
 
 #include "messagepart.h"
 #include "messageviewer_debug.h"
-#include <libkleo/importjob.h>
 #include "objecttreeparser.h"
 #include "converthtmltoplaintext.h"
 #include "csshelper.h"
