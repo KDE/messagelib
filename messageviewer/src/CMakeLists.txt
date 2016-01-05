@@ -85,6 +85,37 @@ set(libmessageviewer_mailviewer_SRCS
    set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
 
+set(libmessageviewer_otp_SRCS
+  interfaces/bodypartformatter.cpp
+  viewer/bodypartformatter.cpp
+  viewer/bodypartformatterfactory.cpp
+  viewer/cryptohelper.cpp
+  viewer/nodehelper.cpp
+  viewer/objecttreeparser.cpp
+  viewer/messagepart.cpp
+  viewer/partnodebodypart.cpp
+  viewer/pluginloaderbase.cpp
+  viewer/memento/cryptobodypartmemento.cpp
+  viewer/memento/decryptverifybodypartmemento.cpp
+  viewer/memento/verifydetachedbodypartmemento.cpp
+  viewer/memento/verifyopaquebodypartmemento.cpp
+)
+
+set(libmessageviewer_otp_extra_SRCS
+  job/kleojobexecutor.cpp
+  #for quotes
+  viewer/csshelperbase.cpp # only interface without settings
+  viewer/csshelper.cpp
+  viewer/attachmentstrategy.cpp
+  utils/iconnamecache.cpp
+  utils/mimetype.cpp
+  viewer/converthtmltoplaintext.cpp
+  viewer/urlhandlermanager_otp.cpp
+  #HTML Writer
+  htmlwriter/filehtmlwriter.cpp
+  htmlwriter/queuehtmlwriter.cpp
+)
+
 set(libmessageviewer_viewer_SRCS
   viewer/attachmentstrategy.cpp
   viewer/bodypartformatter.cpp
@@ -164,6 +195,7 @@ set(libmessageviewer_utils_SRCS
   utils/iconnamecache.cpp
   utils/markmessagereadhandler.cpp
   utils/messageviewerutil.cpp
+  utils/mimetype.cpp
 )
 
 set(libmessageviewer_htmlwriter_SRCS
@@ -301,6 +333,7 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
   Stl_Util
   CSSHelperBase
   MessagePart
+  Enums
   REQUIRED_HEADERS MessageViewer_viewer_HEADERS
   PREFIX MessageViewer
   RELATIVE viewer
@@ -330,6 +363,7 @@ ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
   MessageViewerUtil
   MarkMessageReadHandler
   IconNameCache
+  MimeType
   REQUIRED_HEADERS MessageViewer_utils_HEADERS
   PREFIX MessageViewer
   RELATIVE utils
@@ -503,3 +537,44 @@ install(FILES header/data/messageviewer_header_themes.knsrc DESTINATION ${KDE_IN
 install(FILES notify/messageviewer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR} )
 install(FILES scamdetection/data/longurlServices.json DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer )
 
+Project(Otp)
+
+set(libotp_SRCS
+  ${libmessageviewer_otp_SRCS}
+  ${libmessageviewer_otp_extra_SRCS}
+  settings/messageviewersettings.cpp
+)
+ecm_qt_declare_logging_category(libotp_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
+
+kconfig_add_kcfg_files(libotp_SRCS
+  settings/globalsettings_messageviewer.kcfgc
+)
+
+add_library(KF5Otp
+  ${libotp_SRCS}
+)
+generate_export_header(KF5Otp BASE_NAME otp)
+add_library(KF5::Otp ALIAS KF5Otp)
+
+target_link_libraries(KF5Otp
+PUBLIC
+  KF5::MessageCore #NodeHelper, StringUtils, Settings
+  KF5::PimCommon #AttachmentTemporaryFile handling
+  KF5::Libkleo
+PRIVATE
+  KF5::Mime
+  KF5::IconThemes
+  ${libmessageviewer_web_LIB}
+  Grantlee5::TextDocument
+)
+
+install(TARGETS
+    KF5Otp
+    EXPORT KF5OtpTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
+)
+
+set_target_properties(KF5Otp PROPERTIES
+    VERSION ${MESSAGEVIEWER_VERSION_STRING}
+    SOVERSION ${MESSAGEVIEWER_SOVERSION}
+    EXPORT_NAME Otp
+)
