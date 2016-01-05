@@ -37,7 +37,6 @@
 #include <QTemporaryFile>
 #include <KLocalizedString>
 #include <kcharsets.h>
-#include <kde_file.h>
 
 #include <QUrl>
 #include <QDir>
@@ -291,13 +290,14 @@ QString NodeHelper::createTempDir(const QString &param)
 {
     QTemporaryFile *tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX") + QLatin1String(".index.") + param);
     tempFile->open();
-    QString fname = tempFile->fileName();
+    const QString fname = tempFile->fileName();
     delete tempFile;
 
-    if (::access(QFile::encodeName(fname), W_OK) != 0) {
+    QFile fFile(fname);
+    if (!(fFile.permissions() & QFileDevice::WriteUser)) {
         // Not there or not writable
-        if (KDE_mkdir(QFile::encodeName(fname), 0) != 0 ||
-                ::chmod(QFile::encodeName(fname), S_IRWXU) != 0) {
+        if (!QDir().mkpath(fname) ||
+            !fFile.setPermissions(QFileDevice::WriteUser | QFileDevice::ReadUser | QFileDevice::ExeUser)) {
             return QString(); //failed create
         }
     }
