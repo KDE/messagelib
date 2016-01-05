@@ -43,7 +43,6 @@
 #include "messagepart.h"
 #include "objecttreesourceif.h"
 
-#include "viewer/viewer_p.h"
 #include "partmetadata.h"
 #include "attachmentstrategy.h"
 #include "interfaces/htmlwriter.h"
