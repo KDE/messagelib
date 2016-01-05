@@ -38,7 +38,6 @@
 
 #include "messageviewer/messageviewerutil.h"
 #include "kpimtextedit/texttospeech.h"
-#include "utils/iconnamecache.h"
 #include "messageviewer/nodehelper.h"
 #include "messageviewer_debug.h"
 #include "MessageCore/MessageCoreSettings"
@@ -72,7 +71,6 @@
 #include <QDBusConnectionInterface>
 #include <QActionGroup>
 #include <QPointer>
-#include <QMimeDatabase>
 
 using namespace MessageViewer;
 
@@ -97,52 +95,6 @@ bool Util::checkOverwrite(const QUrl &url, QWidget *w)
         }
     }
     return true;
-}
-
-QString Util::fileNameForMimetype(const QString &mimeType, int iconSize,
-                                  const QString &fallbackFileName1,
-                                  const QString &fallbackFileName2)
-{
-    QString fileName;
-    QString tMimeType = mimeType;
-
-    // convert non-registered types to registered types
-    if (mimeType == QLatin1String("application/x-vnd.kolab.contact")) {
-        tMimeType = QStringLiteral("text/x-vcard");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.event")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.event");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.task")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.todo");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.journal")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.journal");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.note")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.note");
-    }
-    QMimeDatabase mimeDb;
-    auto mime = mimeDb.mimeTypeForName(tMimeType);
-    if (mime.isValid()) {
-        fileName = mime.iconName();
-    } else {
-        fileName = QStringLiteral("unknown");
-        if (!tMimeType.isEmpty()) {
-            qCWarning(MESSAGEVIEWER_LOG) << "unknown mimetype" << tMimeType;
-        }
-    }
-    //WorkAround for #199083
-    if (fileName == QLatin1String("text-vcard")) {
-        fileName = QStringLiteral("text-x-vcard");
-    }
-    if (fileName.isEmpty()) {
-        fileName = fallbackFileName1;
-        if (fileName.isEmpty()) {
-            fileName = fallbackFileName2;
-        }
-        if (!fileName.isEmpty()) {
-            fileName = mimeDb.mimeTypeForFile(QLatin1String("/tmp/") + fileName).iconName();
-        }
-    }
-
-    return IconNameCache::instance()->iconPath(fileName, iconSize);
 }
 
 #if defined Q_OS_WIN || defined Q_OS_MACX
@@ -527,20 +479,4 @@ QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, Q
     actionGroup->addAction(act);
     act->setData(QVariant::fromValue(service));
     return act;
-}
-
-QMimeType Util::mimetype(const QString &name)
-{
-    QMimeDatabase db;
-    // consider the filename if mimetype cannot be found by content-type
-    auto mimeTypes = db.mimeTypesForFileName(name);
-    foreach (const auto &mt, mimeTypes) {
-        if (mt.name() != QLatin1String("application/octet-stream")) {
-            return mt;
-        }
-    }
-
-    // consider the attachment's contents if neither the Content-Type header
-    // nor the filename give us a clue
-    return db.mimeTypeForFile(name);
 }

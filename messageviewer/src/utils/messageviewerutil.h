@@ -39,6 +39,7 @@
 #define MAILVIEWERUTIL_H
 
 #include "messageviewer_export.h"
+#include "mimetype.h"
 #include "kmime/kmime_content.h"
 #include <QString>
 #include <KService>
@@ -47,7 +48,6 @@ class QUrl;
 class QWidget;
 class QActionGroup;
 class QAction;
-class QMimeType;
 
 namespace KMime
 {
@@ -91,35 +91,11 @@ KMime::Content::List allContents(const KMime::Content *message);
 bool saveContents(QWidget *parent, const KMime::Content::List &contents, QUrl &currentFolder);
 bool saveContent(QWidget *parent, KMime::Content *content, const QUrl &url);
 
-/**
-     * Finds the filename of an icon based on the given mimetype or filenames.
-     *
-     * Always use this functions when looking up icon names for mime types, don't use
-     * KMimeType directly.
-     *
-     * Uses the IconNameCache internally to speed things up.
-     *
-     * @param mimeType The primary mime type used to find the icon, e.g. "application/zip". Alias
-     *                 mimetypes are resolved.
-     * @param size Size of the requested icon, e.g. KIconLoader::Desktop
-     * @param fallbackFileName(1|2) When the icon is not found by the given mime type, use the file
-     *                              name extensions of these file names to look the icon up.
-     *                              Example: "test.zip"
-     * @return the full file name of the icon file
-     */
-QString MESSAGEVIEWER_EXPORT fileNameForMimetype(const QString &mimeType, int iconSize,
-        const QString &fallbackFileName1 = QString(),
-        const QString &fallbackFileName2 = QString());
 bool MESSAGEVIEWER_EXPORT saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
 
 bool MESSAGEVIEWER_EXPORT saveAttachments(const KMime::Content::List &contents, QWidget *parent, QUrl &currentFolder);
 
 MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
-
-/**
- * Search mimetype from filename when mimetype is empty or application/octet-stream
- **/
-QMimeType mimetype(const QString &name);
 }
 
 }
