@@ -1511,7 +1511,10 @@ void ViewerPrivate::createActions()
     if (!ac) {
         return;
     }
-    mZoomActionMenu = new MessageViewer::ZoomActionMenu(mViewer, this);
+    mZoomActionMenu = new MessageViewer::ZoomActionMenu(this);
+    connect(mZoomActionMenu, &ZoomActionMenu::zoomChanged, mViewer, &MailWebView::slotZoomChanged);
+    connect(mZoomActionMenu, &ZoomActionMenu::zoomTextOnlyChanged, mViewer, &MailWebView::slotZoomTextOnlyChanged);
+
     mZoomActionMenu->setActionCollection(ac);
     mZoomActionMenu->createZoomActions();
 

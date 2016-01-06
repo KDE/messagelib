@@ -30,133 +30,149 @@ qreal zoomBy()
 }
 }
 
-ZoomActionMenu::ZoomActionMenu(QWebView *mailViewer, QObject *parent)
+class MessageViewer::ZoomActionMenuPrivate
+{
+public:
+    ZoomActionMenuPrivate()
+        : mZoomFactor(100),
+          mZoomTextOnlyAction(Q_NULLPTR),
+          mZoomInAction(Q_NULLPTR),
+          mZoomOutAction(Q_NULLPTR),
+          mZoomResetAction(Q_NULLPTR),
+          mActionCollection(Q_NULLPTR),
+          mZoomTextOnly(false)
+    {
+
+    }
+    qreal mZoomFactor;
+    KToggleAction *mZoomTextOnlyAction;
+    QAction *mZoomInAction;
+    QAction *mZoomOutAction;
+    QAction *mZoomResetAction;
+    KActionCollection *mActionCollection;
+    bool mZoomTextOnly;
+};
+
+ZoomActionMenu::ZoomActionMenu(QObject *parent)
     : KActionMenu(parent),
-      mZoomFactor(100),
-      mZoomTextOnlyAction(Q_NULLPTR),
-      mZoomInAction(Q_NULLPTR),
-      mZoomOutAction(Q_NULLPTR),
-      mZoomResetAction(Q_NULLPTR),
-      mActionCollection(Q_NULLPTR),
-      mMailWebViewer(mailViewer),
-      mZoomTextOnly(false)
+      d(new MessageViewer::ZoomActionMenuPrivate())
 {
 }
 
 ZoomActionMenu::~ZoomActionMenu()
 {
-
+    delete d;
 }
 
 void ZoomActionMenu::setActionCollection(KActionCollection *ac)
 {
-    mActionCollection = ac;
+    d->mActionCollection = ac;
 }
 
 void ZoomActionMenu::createZoomActions()
 {
     // Zoom actions
-    mZoomTextOnlyAction = new KToggleAction(i18n("Zoom Text Only"), this);
-    mActionCollection->addAction(QStringLiteral("toggle_zoomtextonly"), mZoomTextOnlyAction);
-    connect(mZoomTextOnlyAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomTextOnly);
+    d->mZoomTextOnlyAction = new KToggleAction(i18n("Zoom Text Only"), this);
+    d->mActionCollection->addAction(QStringLiteral("toggle_zoomtextonly"), d->mZoomTextOnlyAction);
+    connect(d->mZoomTextOnlyAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomTextOnly);
 
-    mZoomInAction = new QAction(QIcon::fromTheme(QStringLiteral("zoom-in")), i18n("&Zoom In"), this);
-    mActionCollection->addAction(QStringLiteral("zoom_in"), mZoomInAction);
-    connect(mZoomInAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomIn);
-    mActionCollection->setDefaultShortcut(mZoomInAction, QKeySequence(Qt::CTRL | Qt::Key_Plus));
+    d->mZoomInAction = new QAction(QIcon::fromTheme(QStringLiteral("zoom-in")), i18n("&Zoom In"), this);
+    d->mActionCollection->addAction(QStringLiteral("zoom_in"), d->mZoomInAction);
+    connect(d->mZoomInAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomIn);
+    d->mActionCollection->setDefaultShortcut(d->mZoomInAction, QKeySequence(Qt::CTRL | Qt::Key_Plus));
 
-    mZoomOutAction = new QAction(QIcon::fromTheme(QStringLiteral("zoom-out")), i18n("Zoom &Out"), this);
-    mActionCollection->addAction(QStringLiteral("zoom_out"), mZoomOutAction);
-    connect(mZoomOutAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomOut);
-    mActionCollection->setDefaultShortcut(mZoomOutAction, QKeySequence(Qt::CTRL | Qt::Key_Minus));
+    d->mZoomOutAction = new QAction(QIcon::fromTheme(QStringLiteral("zoom-out")), i18n("Zoom &Out"), this);
+    d->mActionCollection->addAction(QStringLiteral("zoom_out"), d->mZoomOutAction);
+    connect(d->mZoomOutAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomOut);
+    d->mActionCollection->setDefaultShortcut(d->mZoomOutAction, QKeySequence(Qt::CTRL | Qt::Key_Minus));
 
-    mZoomResetAction = new QAction(i18n("Reset"), this);
-    mActionCollection->addAction(QStringLiteral("zoom_reset"), mZoomResetAction);
-    connect(mZoomResetAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomReset);
-    mActionCollection->setDefaultShortcut(mZoomResetAction, QKeySequence(Qt::CTRL | Qt::Key_0));
+    d->mZoomResetAction = new QAction(i18n("Reset"), this);
+    d->mActionCollection->addAction(QStringLiteral("zoom_reset"), d->mZoomResetAction);
+    connect(d->mZoomResetAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomReset);
+    d->mActionCollection->setDefaultShortcut(d->mZoomResetAction, QKeySequence(Qt::CTRL | Qt::Key_0));
 
 }
 
 KToggleAction *ZoomActionMenu::zoomTextOnlyAction() const
 {
-    return mZoomTextOnlyAction;
+    return d->mZoomTextOnlyAction;
 }
 
 QAction *ZoomActionMenu::zoomInAction() const
 {
-    return mZoomInAction;
+    return d->mZoomInAction;
 }
 
 QAction *ZoomActionMenu::zoomOutAction() const
 {
-    return mZoomOutAction;
+    return d->mZoomOutAction;
 }
 
 QAction *ZoomActionMenu::zoomResetAction() const
 {
-    return mZoomResetAction;
+    return d->mZoomResetAction;
 }
 
 void ZoomActionMenu::setZoomFactor(qreal zoomFactor)
 {
-    mZoomFactor = zoomFactor;
+    d->mZoomFactor = zoomFactor;
 }
 
 void ZoomActionMenu::setWebViewerZoomFactor(qreal zoomFactor)
 {
-    mMailWebViewer->setZoomFactor(zoomFactor);
+    Q_EMIT zoomChanged(zoomFactor);
 }
 
 void ZoomActionMenu::slotZoomIn()
 {
-    if (mZoomFactor >= 300) {
+    if (d->mZoomFactor >= 300) {
         return;
     }
-    mZoomFactor += zoomBy();
-    if (mZoomFactor > 300) {
-        mZoomFactor = 300;
+    d->mZoomFactor += zoomBy();
+    if (d->mZoomFactor > 300) {
+        d->mZoomFactor = 300;
     }
-    mMailWebViewer->setZoomFactor(mZoomFactor / 100.0);
+    Q_EMIT zoomChanged(d->mZoomFactor / 100.0);
 }
 
 void ZoomActionMenu::slotZoomOut()
 {
-    if (mZoomFactor <= 10) {
+    if (d->mZoomFactor <= 10) {
         return;
     }
-    mZoomFactor -= zoomBy();
-    if (mZoomFactor < 10) {
-        mZoomFactor = 10;
+    d->mZoomFactor -= zoomBy();
+    if (d->mZoomFactor < 10) {
+        d->mZoomFactor = 10;
     }
-    mMailWebViewer->setZoomFactor(mZoomFactor / 100.0);
+    Q_EMIT zoomChanged(d->mZoomFactor / 100.0);
 }
 
 void ZoomActionMenu::setZoomTextOnly(bool textOnly)
 {
-    mZoomTextOnly = textOnly;
-    if (mZoomTextOnlyAction) {
-        mZoomTextOnlyAction->setChecked(mZoomTextOnly);
+    d->mZoomTextOnly = textOnly;
+    if (d->mZoomTextOnlyAction) {
+        d->mZoomTextOnlyAction->setChecked(d->mZoomTextOnly);
     }
-    mMailWebViewer->settings()->setAttribute(QWebSettings::ZoomTextOnly, mZoomTextOnly);
+    Q_EMIT zoomTextOnlyChanged(d->mZoomTextOnly);
 }
 
 void ZoomActionMenu::slotZoomTextOnly()
 {
-    setZoomTextOnly(!mZoomTextOnly);
+    setZoomTextOnly(!d->mZoomTextOnly);
 }
 
 void ZoomActionMenu::slotZoomReset()
 {
-    mZoomFactor = 100;
-    mMailWebViewer->setZoomFactor(1.0);
+    d->mZoomFactor = 100;
+    Q_EMIT zoomChanged(1.0);
 }
 
 bool ZoomActionMenu::zoomTextOnly() const
 {
-    return mZoomTextOnly;
+    return d->mZoomTextOnly;
 }
 
 qreal ZoomActionMenu::zoomFactor() const
 {
-    return mZoomFactor;
+    return d->mZoomFactor;
 }

@@ -344,6 +344,16 @@ void MailWebView::slotShowDetails()
     mScamDetection->showDetails();
 }
 
+void MailWebView::slotZoomChanged(qreal zoom)
+{
+    setZoomFactor(zoom);
+}
+
+void MailWebView::slotZoomTextOnlyChanged(bool b)
+{
+    settings()->setAttribute(QWebSettings::ZoomTextOnly, b);
+}
+
 void MailWebView::saveMainFrameScreenshotInFile(const QString &filename)
 {
     QWebFrame *frame = page()->mainFrame();

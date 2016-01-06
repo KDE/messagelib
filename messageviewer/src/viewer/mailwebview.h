@@ -77,6 +77,9 @@ public:
 
 public Q_SLOTS:
     void slotShowDetails();
+    void slotZoomChanged(qreal zoom);
+    void slotZoomTextOnlyChanged(bool b);
+
 
 Q_SIGNALS:
 

@@ -291,6 +291,7 @@ ecm_generate_headers(MessageViewer_Camelcasewidgets_HEADERS
   InvitationSettings
   PrintingSettings
   ConfigureWidget
+  ZoomActionMenu
   REQUIRED_HEADERS MessageViewer_widgets_HEADERS
   PREFIX MessageViewer
   RELATIVE widgets
