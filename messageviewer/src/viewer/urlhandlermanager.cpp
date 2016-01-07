@@ -623,6 +623,8 @@ QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate
         } else {
             return QString();
         }
+    } else if (url.scheme() == QLatin1String("help")) {
+        return i18n("Open Documentation");
     }
     return QString();
 }
