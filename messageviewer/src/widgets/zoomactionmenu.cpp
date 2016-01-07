@@ -33,17 +33,19 @@ qreal zoomBy()
 class MessageViewer::ZoomActionMenuPrivate
 {
 public:
-    ZoomActionMenuPrivate()
+    ZoomActionMenuPrivate(KActionMenu *qq)
         : mZoomFactor(100),
           mZoomTextOnlyAction(Q_NULLPTR),
           mZoomInAction(Q_NULLPTR),
           mZoomOutAction(Q_NULLPTR),
           mZoomResetAction(Q_NULLPTR),
           mActionCollection(Q_NULLPTR),
-          mZoomTextOnly(false)
+          mZoomTextOnly(false),
+          q(qq)
     {
 
     }
+    void createMenu();
     qreal mZoomFactor;
     KToggleAction *mZoomTextOnlyAction;
     QAction *mZoomInAction;
@@ -51,11 +53,12 @@ public:
     QAction *mZoomResetAction;
     KActionCollection *mActionCollection;
     bool mZoomTextOnly;
+    KActionMenu *q;
 };
 
 ZoomActionMenu::ZoomActionMenu(QObject *parent)
     : KActionMenu(parent),
-      d(new MessageViewer::ZoomActionMenuPrivate())
+      d(new MessageViewer::ZoomActionMenuPrivate(this))
 {
 }
 
@@ -90,7 +93,7 @@ void ZoomActionMenu::createZoomActions()
     d->mActionCollection->addAction(QStringLiteral("zoom_reset"), d->mZoomResetAction);
     connect(d->mZoomResetAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomReset);
     d->mActionCollection->setDefaultShortcut(d->mZoomResetAction, QKeySequence(Qt::CTRL | Qt::Key_0));
-
+    d->createMenu();
 }
 
 KToggleAction *ZoomActionMenu::zoomTextOnlyAction() const
@@ -175,4 +178,16 @@ bool ZoomActionMenu::zoomTextOnly() const
 qreal ZoomActionMenu::zoomFactor() const
 {
     return d->mZoomFactor;
+}
+
+void ZoomActionMenuPrivate::createMenu()
+{
+    q->setText(i18n("Zoom"));
+    q->addAction(mZoomInAction);
+    q->addAction(mZoomOutAction);
+    q->addSeparator();
+    q->addAction(mZoomResetAction);
+    q->addSeparator();
+    q->addAction(mZoomTextOnlyAction);
+    mActionCollection->addAction(QStringLiteral("zoom_menu"), q);
 }
