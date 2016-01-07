@@ -579,7 +579,7 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
         const QString urlPath(url.path());
         if (urlPath == QLatin1String("showHTML")) {
             w->setDisplayFormatMessageOverwrite(MessageViewer::Viewer::Html);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("goOnline")) {
             w->goOnline();
@@ -589,43 +589,43 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
             return true;
         } else if (urlPath == QLatin1String("loadExternal")) {
             w->setHtmlLoadExtOverride(!w->htmlLoadExtOverride());
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("decryptMessage")) {
             w->setDecryptMessageOverwrite(true);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("showSignatureDetails")) {
             w->setShowSignatureDetails(true);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("hideSignatureDetails")) {
             w->setShowSignatureDetails(false);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("showAttachmentQuicklist")) {
             w->setShowAttachmentQuicklist(true);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("hideAttachmentQuicklist")) {
             w->setShowAttachmentQuicklist(false);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("showFullToAddressList")) {
             w->setShowFullToAddressList(true);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("hideFullToAddressList")) {
             w->setShowFullToAddressList(false);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("showFullCcAddressList")) {
             w->setShowFullCcAddressList(true);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         } else if (urlPath == QLatin1String("hideFullCcAddressList")) {
             w->setShowFullCcAddressList(false);
-            w->update(Viewer::Force);
+            w->update(Force);
             return true;
         }
     }

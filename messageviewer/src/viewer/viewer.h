@@ -24,6 +24,7 @@
 
 #include "messageviewer_export.h"
 #include "messageviewer/viewerplugininterface.h"
+#include "messageviewer/enums.h"
 
 #include <kmime/kmime_message.h>
 
@@ -134,15 +135,6 @@ public:
         NewMessage,
         Print,
         PrintPreview
-    };
-
-    /**
-    * The display update mode: Force updates the display immediately, Delayed updates
-    * after some time (150ms by default)
-    */
-    enum UpdateMode {
-        Force = 0,
-        Delayed
     };
 
     enum ResourceOnlineMode {

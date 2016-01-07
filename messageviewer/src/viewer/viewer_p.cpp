@@ -434,7 +434,7 @@ void ViewerPrivate::itemModifiedResult(KJob *job)
     if (job->error()) {
         qCDebug(MESSAGEVIEWER_LOG) << "Item update failed:" << job->errorString();
     } else {
-        setMessageItem(mMessageItem, MessageViewer::Viewer::Force);
+        setMessageItem(mMessageItem, MessageViewer::Force);
     }
 }
 
@@ -1189,7 +1189,7 @@ void ViewerPrivate::setAttachmentStrategy(const AttachmentStrategy *strategy)
         return;
     }
     mAttachmentStrategy = strategy ? strategy : AttachmentStrategy::smart();
-    update(Viewer::Force);
+    update(Force);
 }
 
 QString ViewerPrivate::overrideEncoding() const
@@ -1225,7 +1225,7 @@ void ViewerPrivate::setOverrideEncoding(const QString &encoding)
             }
         }
     }
-    update(Viewer::Force);
+    update(Force);
 }
 
 void ViewerPrivate::setPrinting(bool enable)
@@ -1237,14 +1237,14 @@ void ViewerPrivate::printMessage(const Akonadi::Item &message)
 {
     disconnect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
     connect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
-    setMessageItem(message, Viewer::Force);
+    setMessageItem(message, Force);
 }
 
 void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
 {
     disconnect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
     connect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
-    setMessageItem(message, Viewer::Force);
+    setMessageItem(message, Force);
 }
 
 void ViewerPrivate::resetStateForNewMessage()
@@ -1279,7 +1279,7 @@ void ViewerPrivate::resetStateForNewMessage()
 }
 
 void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message,
-                                       Viewer::UpdateMode updateMode)
+                                       UpdateMode updateMode)
 {
     mViewerPluginToolManager->updateActions(mMessageItem);
     mMessage = message;
@@ -1294,7 +1294,7 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message,
 
 }
 
-void ViewerPrivate::setMessageItem(const Akonadi::Item &item, Viewer::UpdateMode updateMode)
+void ViewerPrivate::setMessageItem(const Akonadi::Item &item, UpdateMode updateMode)
 {
     resetStateForNewMessage();
     foreach (const Akonadi::Item::Id monitoredId, mMonitor.itemsMonitoredEx()) {
@@ -1317,7 +1317,7 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, Viewer::UpdateMode
     setMessageInternal(mMessageItem.payload<KMime::Message::Ptr>(), updateMode);
 }
 
-void ViewerPrivate::setMessage(const KMime::Message::Ptr &aMsg, Viewer::UpdateMode updateMode)
+void ViewerPrivate::setMessage(const KMime::Message::Ptr &aMsg, UpdateMode updateMode)
 {
     resetStateForNewMessage();
 
@@ -1497,12 +1497,12 @@ void ViewerPrivate::createWidgets()
 void ViewerPrivate::slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin)
 {
     mHeaderStylePlugin = plugin;
-    update(Viewer::Force);
+    update(Force);
 }
 
 void ViewerPrivate::slotStyleUpdated()
 {
-    update(Viewer::Force);
+    update(Force);
 }
 
 void ViewerPrivate::createActions()
@@ -1930,10 +1930,10 @@ const QTextCodec *ViewerPrivate::codecForName(const QByteArray &_str)
     return KCharsets::charsets()->codecForName(QLatin1String(codec));
 }
 
-void ViewerPrivate::update(MessageViewer::Viewer::UpdateMode updateMode)
+void ViewerPrivate::update(MessageViewer::UpdateMode updateMode)
 {
     // Avoid flicker, somewhat of a cludge
-    if (updateMode == Viewer::Force) {
+    if (updateMode == Force) {
         // stop the timer to avoid calling updateReaderWin twice
         mUpdateReaderWinTimer.stop();
         saveRelativePosition();
@@ -2027,7 +2027,7 @@ void ViewerPrivate::slotLoadExternalReference()
         return;
     }
     setHtmlLoadExtOverride(true);
-    update(Viewer::Force);
+    update(Force);
 }
 
 void ViewerPrivate::slotToggleHtmlMode()
@@ -2038,7 +2038,7 @@ void ViewerPrivate::slotToggleHtmlMode()
     mScamDetectionWarning->setVisible(false);
     const bool useHtml  = !htmlMail();
     setDisplayFormatMessageOverwrite(useHtml ? MessageViewer::Viewer::Html : MessageViewer::Viewer::Text);
-    update(Viewer::Force);
+    update(Force);
 }
 
 void ViewerPrivate::slotFind()
@@ -2053,7 +2053,7 @@ void ViewerPrivate::slotFind()
 void ViewerPrivate::slotToggleFixedFont()
 {
     mUseFixedFont = !mUseFixedFont;
-    update(Viewer::Force);
+    update(Force);
 }
 
 void ViewerPrivate::slotToggleMimePartTree()
@@ -2156,7 +2156,7 @@ void ViewerPrivate::slotMimePartSelected(const QModelIndex &index)
 #ifndef QT_NO_TREEVIEW
     KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
     if (!mMimePartTree->mimePartModel()->parent(index).isValid() && index.row() == 0) {
-        update(Viewer::Force);
+        update(Force);
     } else {
         setMessagePart(content);
     }
@@ -2246,7 +2246,7 @@ void ViewerPrivate::slotSetEncoding()
     } else {
         mOverrideEncoding = NodeHelper::encodingForName(mSelectEncodingAction->currentText());
     }
-    update(Viewer::Force);
+    update(Force);
 }
 
 QString ViewerPrivate::picsPath()
@@ -2305,7 +2305,7 @@ void ViewerPrivate::injectAttachments()
 
 void ViewerPrivate::slotSettingsChanged()
 {
-    update(Viewer::Force);
+    update(Force);
 }
 
 void ViewerPrivate::slotMimeTreeContextMenuRequested(const QPoint &pos)
@@ -2509,7 +2509,7 @@ void ViewerPrivate::slotLevelQuote(int l)
 {
     if (mLevelQuote != l) {
         mLevelQuote = l;
-        update(Viewer::Force);
+        update(Force);
     }
 }
 
@@ -2808,7 +2808,7 @@ void ViewerPrivate::slotItemChanged(const Akonadi::Item &item, const QSet<QByteA
         return;
     }
     if (parts.contains("PLD:RFC822")) {
-        setMessageItem(item, Viewer::Force);
+        setMessageItem(item, Force);
     }
 }
 
@@ -2823,7 +2823,7 @@ void ViewerPrivate::slotItemMoved(const Akonadi::Item &item, const Akonadi::Coll
 
 void ViewerPrivate::slotClear()
 {
-    q->clear(Viewer::Force);
+    q->clear(Force);
     Q_EMIT itemRemoved();
 }
 
@@ -2991,7 +2991,7 @@ void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)
 void ViewerPrivate::slotRefreshMessage(const Akonadi::Item &item)
 {
     if (item.id() == mMessageItem.id()) {
-        setMessageItem(item, MessageViewer::Viewer::Force);
+        setMessageItem(item, MessageViewer::Force);
     }
 }
 

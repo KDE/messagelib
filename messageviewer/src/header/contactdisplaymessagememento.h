@@ -61,7 +61,7 @@ public:
 
 Q_SIGNALS:
     // TODO: Factor our update and detach into base class
-    void update(MessageViewer::Viewer::UpdateMode);
+    void update(MessageViewer::UpdateMode);
     void changeDisplayMail(Viewer::DisplayFormatMessage displayAsHtml, bool remoteContent);
 
 private Q_SLOTS:

@@ -239,7 +239,7 @@ void UnencryptedMessageTest::testAsync()
         QEventLoop loop;
         ObjectTreeParser otp(&emptySource, &nodeHelper);
 
-        connect(&nodeHelper, SIGNAL(update(MessageViewer::Viewer::UpdateMode)), &loop, SLOT(quit()));
+        connect(&nodeHelper, &NodeHelper::update, &loop, &QEventLoop::quit);
         otp.setAllowAsync(true);
         otp.parseObjectTree(originalMessage.data());
         loop.exec();

@@ -57,7 +57,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
     Akonadi::ContactSearchJob *searchJob = static_cast<Akonadi::ContactSearchJob *>(job);
     if (searchJob->error()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Unable to fetch contact:" << searchJob->errorText();
-        Q_EMIT update(Viewer::Delayed);
+        Q_EMIT update(Delayed);
         return;
     }
 
@@ -73,7 +73,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
         if (!mPhoto.isEmpty()) {
             //We have a data raw => we can update message
             if (mPhoto.isIntern()) {
-                Q_EMIT update(Viewer::Delayed);
+                Q_EMIT update(Delayed);
             } else {
                 QUrl url = QUrl::fromUserInput(mPhoto.url(), QString(), QUrl::AssumeLocalFile);
                 QImage image;
@@ -98,7 +98,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
                 }
                 if (ok) {
                     mImageFromUrl = image;
-                    Q_EMIT update(Viewer::Delayed);
+                    Q_EMIT update(Delayed);
                 }
             }
         }
@@ -193,6 +193,6 @@ void ContactDisplayMessageMemento::slotGravatarResolvUrlFinished(Gravatar::Grava
 {
     if (job && job->hasGravatar()) {
         mGravatarPixmap = job->pixmap();
-        Q_EMIT update(Viewer::Delayed);
+        Q_EMIT update(Delayed);
     }
 }

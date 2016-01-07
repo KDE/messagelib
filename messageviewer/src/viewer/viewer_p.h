@@ -314,20 +314,20 @@ public:
 
     void resetStateForNewMessage();
 
-    void setMessageInternal(const KMime::Message::Ptr &message, Viewer::UpdateMode updateMode);
+    void setMessageInternal(const KMime::Message::Ptr &message, UpdateMode updateMode);
 
     /** Set the Akonadi item that will be displayed.
     *  @param item - the Akonadi item to be displayed. If it doesn't hold a mail (KMime::Message::Ptr as payload data),
     *                an empty page is shown.
     *  @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
     */
-    void setMessageItem(const Akonadi::Item &item, Viewer::UpdateMode updateMode = Viewer::Delayed);
+    void setMessageItem(const Akonadi::Item &item, UpdateMode updateMode = Delayed);
 
     /** Set the message that shall be shown.
     * @param msg - the message to be shown. If 0, an empty page is displayed.
     * @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
     */
-    void setMessage(const KMime::Message::Ptr &msg, Viewer::UpdateMode updateMode = Viewer::Delayed);
+    void setMessage(const KMime::Message::Ptr &msg, UpdateMode updateMode = Delayed);
 
     /** Instead of settings a message to be shown sets a message part
       to be shown */
@@ -553,7 +553,7 @@ public Q_SLOTS:
     void slotUrlCopy();
     void slotSaveMessage();
     /** Re-parse the current message. */
-    void update(MessageViewer::Viewer::UpdateMode updateMode = Viewer::Delayed);
+    void update(MessageViewer::UpdateMode updateMode = Delayed);
 
     void slotSpeakText();
     void slotCopyImageLocation();

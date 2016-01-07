@@ -686,8 +686,8 @@ bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
                 if (allowAsync()) {
                     QObject::connect(newM, &CryptoBodyPartMemento::update,
                                      nodeHelper(), &NodeHelper::update);
-                    QObject::connect(newM, SIGNAL(update(MessageViewer::Viewer::UpdateMode)), mSource->sourceObject(),
-                                     SLOT(update(MessageViewer::Viewer::UpdateMode)));
+                    QObject::connect(newM, SIGNAL(update(MessageViewer::UpdateMode)), mSource->sourceObject(),
+                                     SLOT(update(MessageViewer::UpdateMode)));
                     if (newM->start()) {
                         decryptionStarted = true;
                         mHasPendingAsyncJobs = true;
@@ -2018,8 +2018,8 @@ bool ObjectTreeParser::okVerify(const QByteArray &data, const Kleo::CryptoBacken
             if (allowAsync()) {
                 QObject::connect(m, &CryptoBodyPartMemento::update,
                                  mNodeHelper, &NodeHelper::update);
-                QObject::connect(m, SIGNAL(update(MessageViewer::Viewer::UpdateMode)),
-                                 mSource->sourceObject(), SLOT(update(MessageViewer::Viewer::UpdateMode)));
+                QObject::connect(m, SIGNAL(update(MessageViewer::UpdateMode)),
+                                 mSource->sourceObject(), SLOT(update(MessageViewer::UpdateMode)));
 
                 if (m->start()) {
                     messagePart.inProgress = true;

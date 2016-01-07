@@ -21,8 +21,8 @@
 #define _MESSAGEVIEWER_NODEHELPER_H
 #include "messageviewer_export.h"
 
-#include "partmetadata.h"
-#include "messageviewer/viewer.h"
+#include "messageviewer/partmetadata.h"
+#include "messageviewer/enums.h"
 
 #include <KMime/Message>
 
@@ -49,24 +49,6 @@ class AttachmentTemporaryFilesDirs;
 }
 namespace MessageViewer
 {
-
-/** Flags for the encryption state. */
-typedef enum {
-    KMMsgEncryptionStateUnknown = ' ',
-    KMMsgNotEncrypted = 'N',
-    KMMsgPartiallyEncrypted = 'P',
-    KMMsgFullyEncrypted = 'F',
-    KMMsgEncryptionProblematic = 'X'
-} KMMsgEncryptionState;
-
-/** Flags for the signature state. */
-typedef enum {
-    KMMsgSignatureStateUnknown = ' ',
-    KMMsgNotSigned = 'N',
-    KMMsgPartiallySigned = 'P',
-    KMMsgFullySigned = 'F',
-    KMMsgSignatureProblematic = 'X'
-} KMMsgSignatureState;
 
 /**
  * @author Andras Mantia <andras@kdab.net>
@@ -270,7 +252,7 @@ public:
     QVector<KMime::Content *> attachmentsOfExtraContents() const;
 
 Q_SIGNALS:
-    void update(MessageViewer::Viewer::UpdateMode);
+    void update(MessageViewer::UpdateMode);
 
 private:
     Q_DISABLE_COPY(NodeHelper)

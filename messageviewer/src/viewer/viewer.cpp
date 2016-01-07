@@ -341,7 +341,7 @@ bool Viewer::event(QEvent *e)
     if (e->type() == QEvent::PaletteChange) {
         delete d->mCSSHelper;
         d->mCSSHelper = new CSSHelper(d->mViewer);
-        d->update(Viewer::Force);   // Force update
+        d->update(Force);   // Force update
         return true;
     }
     return QWidget::event(e);
@@ -480,7 +480,7 @@ QUrl Viewer::imageUrlClicked() const
     return d->mImageUrl;
 }
 
-void Viewer::update(MessageViewer::Viewer::UpdateMode updateMode)
+void Viewer::update(MessageViewer::UpdateMode updateMode)
 {
     Q_D(Viewer);
     d->update(updateMode);
@@ -492,7 +492,7 @@ void Viewer::setMessagePart(KMime::Content *aMsgPart)
     d->setMessagePart(aMsgPart);
 }
 
-void Viewer::clear(Viewer::UpdateMode updateMode)
+void Viewer::clear(UpdateMode updateMode)
 {
     setMessage(KMime::Message::Ptr(), updateMode);
 }
@@ -623,7 +623,7 @@ void Viewer::slotChangeDisplayMail(Viewer::DisplayFormatMessage mode, bool loadE
 {
     setHtmlLoadExtOverride(loadExternal);
     setDisplayFormatMessageOverwrite(mode);
-    update(Viewer::Force);
+    update(Force);
 }
 
 QAction *Viewer::saveMessageDisplayFormatAction() const
