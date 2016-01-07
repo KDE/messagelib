@@ -46,8 +46,6 @@ class ViewerPrivate;
   * @short An interface to reader link handlers
   * @author Marc Mutz <mutz@kde.org>
   *
-  * The KMReaderWin parameters are temporary until such time as
-  * the Memento-store is in place.
   */
 class URLHandler
 {
