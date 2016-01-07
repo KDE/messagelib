@@ -82,6 +82,27 @@ URLHandlerManager *URLHandlerManager::self = 0;
 
 namespace
 {
+class KMailActionURLHandler : public URLHandler
+{
+public:
+    KMailActionURLHandler() : URLHandler() {}
+    ~KMailActionURLHandler() {}
+
+    bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE
+    {
+        return false;
+    }
+    bool handleContextMenuRequest(const QUrl &url, const QPoint &, ViewerPrivate *) const Q_DECL_OVERRIDE
+    {
+        return false;
+    }
+    QString statusBarMessage(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE
+    {
+        return QString();
+    }
+};
+
+
 class KMailProtocolURLHandler : public URLHandler
 {
 public:
@@ -389,6 +410,7 @@ URLHandlerManager::URLHandlerManager()
     registerHandler(new ShowAuditLogURLHandler());
     registerHandler(new InternalImageURLHandler);
     registerHandler(new KRunURLHandler());
+    registerHandler(new KMailActionURLHandler());
 }
 
 URLHandlerManager::~URLHandlerManager()
