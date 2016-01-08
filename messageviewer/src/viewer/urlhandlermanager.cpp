@@ -88,16 +88,44 @@ public:
     KMailActionURLHandler() : URLHandler() {}
     ~KMailActionURLHandler() {}
 
-    bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE
+    bool handleClick(const QUrl &url, ViewerPrivate *) const Q_DECL_OVERRIDE
     {
+        if (url.scheme() == QLatin1String("kmailaction")) {
+            const QString urlPath(url.path());
+            if (urlPath == QStringLiteral("trash")) {
+                return true;
+            } else if (urlPath == QStringLiteral("reply")) {
+                return true;
+            } else if (urlPath == QStringLiteral("replyToAll")) {
+                return true;
+            } else if (urlPath == QStringLiteral("forward")) {
+                return true;
+            } else if (urlPath == QStringLiteral("newMessage")) {
+                return true;
+            }
+        }
         return false;
     }
     bool handleContextMenuRequest(const QUrl &url, const QPoint &, ViewerPrivate *) const Q_DECL_OVERRIDE
     {
         return false;
     }
-    QString statusBarMessage(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE
+    QString statusBarMessage(const QUrl &url, ViewerPrivate *) const Q_DECL_OVERRIDE
     {
+        if (url.scheme() == QLatin1String("kmailaction")) {
+            const QString urlPath(url.path());
+            if (urlPath == QStringLiteral("trash")) {
+                return i18n("Move To Trash");
+            } else if (urlPath == QStringLiteral("reply")) {
+                return i18n("Reply");
+            } else if (urlPath == QStringLiteral("replyToAll")) {
+                return i18n("Reply To All");
+            } else if (urlPath == QStringLiteral("forward")) {
+                return i18n("Forward");
+            } else if (urlPath == QStringLiteral("newMessage")) {
+                return i18n("New Message");
+            }
+        }
         return QString();
     }
 };
