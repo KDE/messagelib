@@ -184,13 +184,6 @@ class ViewerPrivate : public QObject
 {
     Q_OBJECT
 public:
-    enum MailAction {
-        Trash = 0,
-        Reply,
-        ReplyToAll,
-        Forward,
-        NewMessage
-    };
 
     ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollection *actionCollection);
 
@@ -284,7 +277,7 @@ public:
 
     void saveMainFrameScreenshotInFile(const QString &filename);
 
-    void setMailAction(MailAction type);
+    void setMailAction(MessageViewer::Viewer::MailAction type);
 
 private:
     /** HTML initialization. */
@@ -585,6 +578,7 @@ Q_SIGNALS:
 
     void changeDisplayMail(Viewer::DisplayFormatMessage, bool);
     void moveMessageToTrash();
+    void executeMailAction(MessageViewer::Viewer::MailAction type );
 
 private:
     QString attachmentInjectionHtml();

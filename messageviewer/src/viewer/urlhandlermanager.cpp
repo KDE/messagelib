@@ -93,19 +93,19 @@ public:
         if (url.scheme() == QLatin1String("kmailaction")) {
             const QString urlPath(url.path());
             if (urlPath == QStringLiteral("trash")) {
-                viewer->setMailAction(ViewerPrivate::Trash);
+                viewer->setMailAction(MessageViewer::Viewer::Trash);
                 return true;
             } else if (urlPath == QStringLiteral("reply")) {
-                viewer->setMailAction(ViewerPrivate::Reply);
+                viewer->setMailAction(MessageViewer::Viewer::Reply);
                 return true;
             } else if (urlPath == QStringLiteral("replyToAll")) {
-                viewer->setMailAction(ViewerPrivate::ReplyToAll);
+                viewer->setMailAction(MessageViewer::Viewer::ReplyToAll);
                 return true;
             } else if (urlPath == QStringLiteral("forward")) {
-                viewer->setMailAction(ViewerPrivate::Forward);
+                viewer->setMailAction(MessageViewer::Viewer::Forward);
                 return true;
             } else if (urlPath == QStringLiteral("newMessage")) {
-                viewer->setMailAction(ViewerPrivate::NewMessage);
+                viewer->setMailAction(MessageViewer::Viewer::NewMessage);
                 return true;
             }
         }

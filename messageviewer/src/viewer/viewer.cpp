@@ -83,6 +83,7 @@ void Viewer::initialize()
             this, &Viewer::itemRemoved);
     connect(d_ptr, &ViewerPrivate::changeDisplayMail, this, &Viewer::slotChangeDisplayMail);
     connect(d_ptr, &ViewerPrivate::moveMessageToTrash, this, &Viewer::moveMessageToTrash);
+    connect(d_ptr, &ViewerPrivate::executeMailAction, this, &Viewer::executeMailAction);
 
     setMessage(KMime::Message::Ptr(), Delayed);
 }

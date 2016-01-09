@@ -126,6 +126,14 @@ public:
         ScrollTo = 10
     };
 
+    enum MailAction {
+        Trash = 0,
+        Reply,
+        ReplyToAll,
+        Forward,
+        NewMessage
+    };
+
     /**
     * The display update mode: Force updates the display immediately, Delayed updates
     * after some time (150ms by default)
@@ -343,6 +351,7 @@ public:
 
 Q_SIGNALS:
     void moveMessageToTrash();
+    void executeMailAction(MessageViewer::Viewer::MailAction type );
 
     /**
     * Emitted when a status bar message is shown. Note that the status bar message is also set to
