@@ -184,6 +184,13 @@ class ViewerPrivate : public QObject
 {
     Q_OBJECT
 public:
+    enum MailAction {
+        Trash = 0,
+        Reply,
+        ReplyToAll,
+        Forward,
+        NewMessage
+    };
 
     ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollection *actionCollection);
 
@@ -276,6 +283,8 @@ public:
     void showVCard(KMime::Content *msgPart);
 
     void saveMainFrameScreenshotInFile(const QString &filename);
+
+    void setMailAction(MailAction type);
 
 private:
     /** HTML initialization. */

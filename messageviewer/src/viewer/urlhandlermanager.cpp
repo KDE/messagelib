@@ -88,19 +88,24 @@ public:
     KMailActionURLHandler() : URLHandler() {}
     ~KMailActionURLHandler() {}
 
-    bool handleClick(const QUrl &url, ViewerPrivate *) const Q_DECL_OVERRIDE
+    bool handleClick(const QUrl &url, ViewerPrivate *viewer) const Q_DECL_OVERRIDE
     {
         if (url.scheme() == QLatin1String("kmailaction")) {
             const QString urlPath(url.path());
             if (urlPath == QStringLiteral("trash")) {
+                viewer->setMailAction(ViewerPrivate::Trash);
                 return true;
             } else if (urlPath == QStringLiteral("reply")) {
+                viewer->setMailAction(ViewerPrivate::Reply);
                 return true;
             } else if (urlPath == QStringLiteral("replyToAll")) {
+                viewer->setMailAction(ViewerPrivate::ReplyToAll);
                 return true;
             } else if (urlPath == QStringLiteral("forward")) {
+                viewer->setMailAction(ViewerPrivate::Forward);
                 return true;
             } else if (urlPath == QStringLiteral("newMessage")) {
+                viewer->setMailAction(ViewerPrivate::NewMessage);
                 return true;
             }
         }
