@@ -1126,7 +1126,8 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartEncryptedSubtype(KMime::Conte
     CryptoMessagePart::Ptr mp(new CryptoMessagePart(this,
                               data->decodedText(), Kleo::CryptoBackendFactory::instance()->openpgp(),
                               NodeHelper::fromAsString(data), node));
-
+    mp->setIsEncrypted(true);
+    mp->setDecryptMessage(mSource->decryptMessage());
     PartMetaData *messagePart(mp->partMetaData());
     if (!mSource->decryptMessage()) {
         mNodeHelper->setNodeProcessed(data, false);  // Set the data node to done to prevent it from being processed
@@ -1204,7 +1205,8 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
         mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
                              node->decodedText(), cryptoProtocol(),
                              NodeHelper::fromAsString(node), node));
-
+        mp->setIsEncrypted(true);
+        mp->setDecryptMessage(mSource->decryptMessage());
         PartMetaData *messagePart(mp->partMetaData());
         if (!mSource->decryptMessage()) {
             isEncrypted = true;
@@ -1256,7 +1258,7 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
         mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
                              aCodec->toUnicode(signaturetext), cryptoProtocol(),
                              NodeHelper::fromAsString(node), signTestNode));
-
+        mp->setDecryptMessage(mSource->decryptMessage());
         PartMetaData *messagePart(mp->partMetaData());
         if (cryptoProtocol()) {
             mp->startVerificationDetached(signaturetext, 0, QByteArray());
