@@ -379,8 +379,27 @@ xfaceSettings xface(const MessageViewer::HeaderStyle *style, KMime::Message *mes
 
 QString mailAction(Viewer::MailAction action)
 {
+    //TODO load icon.
+    QString html;
+    switch(action) {
+    case Viewer::Trash:
+        html = QStringLiteral("<a href=\"kmailaction:trash\"></a>");
+        break;
+    case Viewer::Reply:
+        html = QStringLiteral("<a href=\"kmailaction:reply\"></a>");
+        break;
+    case Viewer::ReplyToAll:
+        html = QStringLiteral("<a href=\"kmailaction:replyToAll\"></a>");
+        break;
+    case Viewer::Forward:
+        html = QStringLiteral("<a href=\"kmailaction:forward\"></a>");
+        break;
+    case Viewer::NewMessage:
+        html = QStringLiteral("<a href=\"kmailaction:newMessage\"></a>");
+        break;
+    }
     //TODO
-    return QString();
+    return html;
 }
 
 }
