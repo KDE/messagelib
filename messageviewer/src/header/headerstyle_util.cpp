@@ -377,5 +377,11 @@ xfaceSettings xface(const MessageViewer::HeaderStyle *style, KMime::Message *mes
     return settings;
 }
 
+QString mailAction(Viewer::MailAction action)
+{
+    //TODO
+    return QString();
+}
+
 }
 }

@@ -26,6 +26,7 @@
 #include "messageviewer/spamheaderanalyzer.h"
 
 #include "messageviewer/headerstyle.h"
+#include "messageviewer/viewer.h"
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
@@ -48,6 +49,8 @@ QString drawSpamMeter(SpamError spamError, double percent, double confidence,
                       const QString &filterHeader, const QString &confidenceHeader);
 
 QString imgToDataUrl(const QImage &image);
+
+MESSAGEVIEWER_EXPORT QString mailAction(MessageViewer::Viewer::MailAction action);
 
 MESSAGEVIEWER_EXPORT QString spamStatus(KMime::Message *message);
 
