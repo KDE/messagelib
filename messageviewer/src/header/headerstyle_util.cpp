@@ -39,18 +39,18 @@ using namespace MessageViewer;
 //
 // Convenience functions:
 //
-QString HeaderStyleUtil::directionOf(const QString &str)
+QString HeaderStyleUtil::directionOf(const QString &str) const
 {
     return str.isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
 }
 
-QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flags)
+QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flags) const
 {
     return KTextToHTML::convertToHtml(str, flags);
 }
 
 // Prepare the date string (when printing always use the localized date)
-QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, bool shortDate)
+QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, bool shortDate) const
 {
     const QDateTime dateTime = message->date()->dateTime();
     if (!dateTime.isValid()) {
@@ -67,7 +67,7 @@ QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, bool
     }
 }
 
-QString HeaderStyleUtil::subjectString(KMime::Message *message, KTextToHTML::Options flags)
+QString HeaderStyleUtil::subjectString(KMime::Message *message, KTextToHTML::Options flags) const
 {
     QString subjectStr;
     const KMime::Headers::Subject *const subject = message->subject(false);
@@ -84,7 +84,7 @@ QString HeaderStyleUtil::subjectString(KMime::Message *message, KTextToHTML::Opt
     return subjectStr;
 }
 
-QString HeaderStyleUtil::subjectDirectionString(KMime::Message *message)
+QString HeaderStyleUtil::subjectDirectionString(KMime::Message *message) const
 {
     QString subjectDir;
     if (message->subject(false)) {
@@ -95,7 +95,7 @@ QString HeaderStyleUtil::subjectDirectionString(KMime::Message *message)
     return subjectDir;
 }
 
-QString HeaderStyleUtil::spamStatus(KMime::Message *message)
+QString HeaderStyleUtil::spamStatus(KMime::Message *message) const
 {
     QString spamHTML;
     if (MessageViewer::MessageViewerSettings::self()->showSpamStatus()) {
@@ -103,13 +103,13 @@ QString HeaderStyleUtil::spamStatus(KMime::Message *message)
 
         for (SpamScores::const_iterator it = scores.constBegin(), end = scores.constEnd(); it != end; ++it)
             spamHTML += (*it).agent() + QLatin1Char(' ') +
-                        MessageViewer::HeaderStyleUtil::drawSpamMeter((*it).error(), (*it).score(), (*it).confidence(), (*it).spamHeader(), (*it).confidenceHeader());
+                        drawSpamMeter((*it).error(), (*it).score(), (*it).confidence(), (*it).spamHeader(), (*it).confidenceHeader());
     }
     return spamHTML;
 }
 
 QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confidence,
-                      const QString &filterHeader, const QString &confidenceHeader)
+                      const QString &filterHeader, const QString &confidenceHeader) const
 {
     static const int meterWidth = 20;
     static const int meterHeight = 5;
@@ -199,7 +199,7 @@ QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, doub
                 QString::number(meterHeight), titleText) + confidenceString;
 }
 
-QString HeaderStyleUtil::imgToDataUrl(const QImage &image)
+QString HeaderStyleUtil::imgToDataUrl(const QImage &image) const
 {
     QByteArray ba;
     QBuffer buffer(&ba);
@@ -208,7 +208,7 @@ QString HeaderStyleUtil::imgToDataUrl(const QImage &image)
     return QStringLiteral("data:image/%1;base64,%2").arg(QStringLiteral("PNG"), QString::fromLatin1(ba.toBase64()));
 }
 
-QString HeaderStyleUtil::dateStr(const QDateTime &dateTime)
+QString HeaderStyleUtil::dateStr(const QDateTime &dateTime) const
 {
     const time_t unixTime = dateTime.toTime_t();
     return KMime::DateFormatter::formatDate(
@@ -217,13 +217,13 @@ QString HeaderStyleUtil::dateStr(const QDateTime &dateTime)
                unixTime, MessageCore::MessageCoreSettings::self()->customDateFormat());
 }
 
-QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime)
+QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime) const
 {
     KMime::DateFormatter formatter(KMime::DateFormatter::Fancy);
     return formatter.dateString(dateTime);
 }
 
-QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentFromList(KMime::Message *message)
+QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentFromList(KMime::Message *message) const
 {
     // Get the resent-from header into a Mailbox
     QVector<KMime::Types::Mailbox> resentFrom;
@@ -242,7 +242,7 @@ QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentFromList(KMime::Message *m
     return resentFrom;
 }
 
-QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentToList(KMime::Message *message)
+QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentToList(KMime::Message *message) const
 {
     // Get the resent-from header into a Mailbox
     QVector<KMime::Types::Mailbox> resentTo;
@@ -261,7 +261,7 @@ QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentToList(KMime::Message *mes
     return resentTo;
 }
 
-void HeaderStyleUtil::updateXFaceSettings(QImage photo, xfaceSettings &settings)
+void HeaderStyleUtil::updateXFaceSettings(QImage photo, xfaceSettings &settings) const
 {
     if (!photo.isNull()) {
         settings.photoWidth = photo.width();
@@ -277,7 +277,7 @@ void HeaderStyleUtil::updateXFaceSettings(QImage photo, xfaceSettings &settings)
     }
 }
 
-HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::HeaderStyle *style, KMime::Message *message)
+HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::HeaderStyle *style, KMime::Message *message) const
 {
 
     xfaceSettings settings;
@@ -374,7 +374,7 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
     return settings;
 }
 
-QString HeaderStyleUtil::mailAction(Viewer::MailAction action)
+QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
 {
     //TODO load icon.
     QString html;

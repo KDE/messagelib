@@ -46,35 +46,37 @@ public:
     };
 
 
-    static QString directionOf(const QString &str);
+    QString directionOf(const QString &str) const;
 
-    static QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
+    QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
-    static QString dateString(KMime::Message *message, bool printing, bool shortDate);
+    QString dateString(KMime::Message *message, bool printing, bool shortDate) const;
 
-    static QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
+    QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
-    static QString subjectDirectionString(KMime::Message *message);
-
-    static QString drawSpamMeter(SpamError spamError, double percent, double confidence,
-                                 const QString &filterHeader, const QString &confidenceHeader);
-
-    static QString imgToDataUrl(const QImage &image);
-
-    static QString mailAction(MessageViewer::Viewer::MailAction action);
-
-    static QString spamStatus(KMime::Message *message);
-
-    static QString dateStr(const QDateTime &dateTime);
-
-    static QString dateShortStr(const QDateTime &dateTime);
-
-    static QVector<KMime::Types::Mailbox> resentFromList(KMime::Message *message);
-    static QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message);
+    QString subjectDirectionString(KMime::Message *message) const;
 
 
-    static xfaceSettings xface(const HeaderStyle *style, KMime::Message *message);
-    static void updateXFaceSettings(QImage photo, xfaceSettings &settings);
+
+    QString mailAction(MessageViewer::Viewer::MailAction action) const;
+
+    QString spamStatus(KMime::Message *message) const;
+
+    QString dateStr(const QDateTime &dateTime) const;
+
+    QString dateShortStr(const QDateTime &dateTime) const;
+
+    QVector<KMime::Types::Mailbox> resentFromList(KMime::Message *message) const;
+    QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message) const;
+
+
+    xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
+private:
+    void updateXFaceSettings(QImage photo, xfaceSettings &settings) const;
+    QString drawSpamMeter(SpamError spamError, double percent, double confidence,
+                                 const QString &filterHeader, const QString &confidenceHeader) const;
+    QString imgToDataUrl(const QImage &image) const;
+
 };
 }
 
