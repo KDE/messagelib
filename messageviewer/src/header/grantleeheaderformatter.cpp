@@ -42,7 +42,6 @@ public:
     {
         engine = new Grantlee::Engine;
         templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader);
-        engine->addTemplateLoader(templateLoader);
         engine->addDefaultLibrary(QStringLiteral("grantlee_messageheaderfilters"));
         engine->addTemplateLoader(templateLoader);
     }
