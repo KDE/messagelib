@@ -35,25 +35,22 @@
 
 using namespace MessageCore;
 
-namespace MessageViewer
-{
-namespace HeaderStyleUtil
-{
+using namespace MessageViewer;
 //
 // Convenience functions:
 //
-QString directionOf(const QString &str)
+QString HeaderStyleUtil::directionOf(const QString &str)
 {
     return str.isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
 }
 
-QString strToHtml(const QString &str, KTextToHTML::Options flags)
+QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flags)
 {
     return KTextToHTML::convertToHtml(str, flags);
 }
 
 // Prepare the date string (when printing always use the localized date)
-QString dateString(KMime::Message *message, bool printing, bool shortDate)
+QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, bool shortDate)
 {
     const QDateTime dateTime = message->date()->dateTime();
     if (!dateTime.isValid()) {
@@ -70,7 +67,7 @@ QString dateString(KMime::Message *message, bool printing, bool shortDate)
     }
 }
 
-QString subjectString(KMime::Message *message, KTextToHTML::Options flags)
+QString HeaderStyleUtil::subjectString(KMime::Message *message, KTextToHTML::Options flags)
 {
     QString subjectStr;
     const KMime::Headers::Subject *const subject = message->subject(false);
@@ -87,7 +84,7 @@ QString subjectString(KMime::Message *message, KTextToHTML::Options flags)
     return subjectStr;
 }
 
-QString subjectDirectionString(KMime::Message *message)
+QString HeaderStyleUtil::subjectDirectionString(KMime::Message *message)
 {
     QString subjectDir;
     if (message->subject(false)) {
@@ -98,7 +95,7 @@ QString subjectDirectionString(KMime::Message *message)
     return subjectDir;
 }
 
-QString spamStatus(KMime::Message *message)
+QString HeaderStyleUtil::spamStatus(KMime::Message *message)
 {
     QString spamHTML;
     if (MessageViewer::MessageViewerSettings::self()->showSpamStatus()) {
@@ -111,7 +108,7 @@ QString spamStatus(KMime::Message *message)
     return spamHTML;
 }
 
-QString drawSpamMeter(SpamError spamError, double percent, double confidence,
+QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confidence,
                       const QString &filterHeader, const QString &confidenceHeader)
 {
     static const int meterWidth = 20;
@@ -202,7 +199,7 @@ QString drawSpamMeter(SpamError spamError, double percent, double confidence,
                 QString::number(meterHeight), titleText) + confidenceString;
 }
 
-QString imgToDataUrl(const QImage &image)
+QString HeaderStyleUtil::imgToDataUrl(const QImage &image)
 {
     QByteArray ba;
     QBuffer buffer(&ba);
@@ -211,7 +208,7 @@ QString imgToDataUrl(const QImage &image)
     return QStringLiteral("data:image/%1;base64,%2").arg(QStringLiteral("PNG"), QString::fromLatin1(ba.toBase64()));
 }
 
-QString dateStr(const QDateTime &dateTime)
+QString HeaderStyleUtil::dateStr(const QDateTime &dateTime)
 {
     const time_t unixTime = dateTime.toTime_t();
     return KMime::DateFormatter::formatDate(
@@ -220,13 +217,13 @@ QString dateStr(const QDateTime &dateTime)
                unixTime, MessageCore::MessageCoreSettings::self()->customDateFormat());
 }
 
-QString dateShortStr(const QDateTime &dateTime)
+QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime)
 {
     KMime::DateFormatter formatter(KMime::DateFormatter::Fancy);
     return formatter.dateString(dateTime);
 }
 
-QVector<KMime::Types::Mailbox> resentFromList(KMime::Message *message)
+QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentFromList(KMime::Message *message)
 {
     // Get the resent-from header into a Mailbox
     QVector<KMime::Types::Mailbox> resentFrom;
@@ -245,7 +242,7 @@ QVector<KMime::Types::Mailbox> resentFromList(KMime::Message *message)
     return resentFrom;
 }
 
-QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message)
+QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentToList(KMime::Message *message)
 {
     // Get the resent-from header into a Mailbox
     QVector<KMime::Types::Mailbox> resentTo;
@@ -264,7 +261,7 @@ QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message)
     return resentTo;
 }
 
-void updateXFaceSettings(QImage photo, xfaceSettings &settings)
+void HeaderStyleUtil::updateXFaceSettings(QImage photo, xfaceSettings &settings)
 {
     if (!photo.isNull()) {
         settings.photoWidth = photo.width();
@@ -280,7 +277,7 @@ void updateXFaceSettings(QImage photo, xfaceSettings &settings)
     }
 }
 
-xfaceSettings xface(const MessageViewer::HeaderStyle *style, KMime::Message *message)
+HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::HeaderStyle *style, KMime::Message *message)
 {
 
     xfaceSettings settings;
@@ -377,7 +374,7 @@ xfaceSettings xface(const MessageViewer::HeaderStyle *style, KMime::Message *mes
     return settings;
 }
 
-QString mailAction(Viewer::MailAction action)
+QString HeaderStyleUtil::mailAction(Viewer::MailAction action)
 {
     //TODO load icon.
     QString html;
@@ -400,7 +397,4 @@ QString mailAction(Viewer::MailAction action)
     }
     //TODO
     return html;
-}
-
-}
 }

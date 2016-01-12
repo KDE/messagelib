@@ -30,53 +30,53 @@
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
-namespace HeaderStyleUtil
+class MESSAGEVIEWER_EXPORT HeaderStyleUtil
 {
-//
-// Convenience functions:
-//
-MESSAGEVIEWER_EXPORT QString directionOf(const QString &str);
+public:
+    struct xfaceSettings {
+        xfaceSettings()
+            : photoWidth(60),
+              photoHeight(60)
+        {
+        }
 
-MESSAGEVIEWER_EXPORT QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
+        QString photoURL;
+        int photoWidth;
+        int photoHeight;
+    };
 
-MESSAGEVIEWER_EXPORT QString dateString(KMime::Message *message, bool printing, bool shortDate);
 
-MESSAGEVIEWER_EXPORT QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
+    static QString directionOf(const QString &str);
 
-MESSAGEVIEWER_EXPORT QString subjectDirectionString(KMime::Message *message);
+    static QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
 
-QString drawSpamMeter(SpamError spamError, double percent, double confidence,
-                      const QString &filterHeader, const QString &confidenceHeader);
+    static QString dateString(KMime::Message *message, bool printing, bool shortDate);
 
-QString imgToDataUrl(const QImage &image);
+    static QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
 
-MESSAGEVIEWER_EXPORT QString mailAction(MessageViewer::Viewer::MailAction action);
+    static QString subjectDirectionString(KMime::Message *message);
 
-MESSAGEVIEWER_EXPORT QString spamStatus(KMime::Message *message);
+    static QString drawSpamMeter(SpamError spamError, double percent, double confidence,
+                                 const QString &filterHeader, const QString &confidenceHeader);
 
-MESSAGEVIEWER_EXPORT QString dateStr(const QDateTime &dateTime);
+    static QString imgToDataUrl(const QImage &image);
 
-QString dateShortStr(const QDateTime &dateTime);
+    static QString mailAction(MessageViewer::Viewer::MailAction action);
 
-MESSAGEVIEWER_EXPORT QVector<KMime::Types::Mailbox> resentFromList(KMime::Message *message);
-MESSAGEVIEWER_EXPORT QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message);
+    static QString spamStatus(KMime::Message *message);
 
-struct xfaceSettings {
-    xfaceSettings()
-        : photoWidth(60),
-          photoHeight(60)
-    {
-    }
+    static QString dateStr(const QDateTime &dateTime);
 
-    QString photoURL;
-    int photoWidth;
-    int photoHeight;
+    static QString dateShortStr(const QDateTime &dateTime);
+
+    static QVector<KMime::Types::Mailbox> resentFromList(KMime::Message *message);
+    static QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message);
+
+
+    static xfaceSettings xface(const HeaderStyle *style, KMime::Message *message);
+    static void updateXFaceSettings(QImage photo, xfaceSettings &settings);
 };
-
-MESSAGEVIEWER_EXPORT xfaceSettings xface(const HeaderStyle *style, KMime::Message *message);
-void updateXFaceSettings(QImage photo, xfaceSettings &settings);
-
 }
-}
+
 
 #endif // HEADERSTYLE_UTIL_H
