@@ -51,6 +51,7 @@ public:
         delete engine;
     }
 
+    MessageViewer::HeaderStyleUtil headerStyleUtil;
     QSharedPointer<Grantlee::FileSystemTemplateLoader> templateLoader;
     Grantlee::Engine *engine;
 };
@@ -103,10 +104,10 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     const QString absoluteThemePath = QStringLiteral("file://") + absolutePath + QLatin1Char('/');
     headerObject.insert(QStringLiteral("absoluteThemePath"), absoluteThemePath);
     headerObject.insert(QStringLiteral("applicationDir"), QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
-    headerObject.insert(QStringLiteral("subjectDir"), MessageViewer::HeaderStyleUtil::subjectDirectionString(message));
+    headerObject.insert(QStringLiteral("subjectDir"), d->headerStyleUtil.subjectDirectionString(message));
 
     headerObject.insert(QStringLiteral("subjecti18n"), i18n("Subject:"));
-    headerObject.insert(QStringLiteral("subject"), MessageViewer::HeaderStyleUtil::subjectString(message));
+    headerObject.insert(QStringLiteral("subject"), d->headerStyleUtil.subjectString(message));
 
     headerObject.insert(QStringLiteral("toi18n"), i18n("To:"));
     headerObject.insert(QStringLiteral("to"), StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayFullAddress));
@@ -148,41 +149,41 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("from"),  StringUtil::emailAddrAsAnchor(message->from(), StringUtil::DisplayFullAddress));
     headerObject.insert(QStringLiteral("fromStr"), message->from()->asUnicodeString());
 
-    const QString spamHtml = MessageViewer::HeaderStyleUtil::spamStatus(message);
+    const QString spamHtml = d->headerStyleUtil.spamStatus(message);
     if (!spamHtml.isEmpty()) {
         headerObject.insert(QStringLiteral("spamstatusi18n"), i18n("Spam Status:"));
         headerObject.insert(QStringLiteral("spamHTML"), spamHtml);
     }
     headerObject.insert(QStringLiteral("datei18n"), i18n("Date:"));
 
-    headerObject.insert(QStringLiteral("dateshort"), MessageViewer::HeaderStyleUtil::strToHtml(MessageViewer::HeaderStyleUtil::dateString(message, isPrinting, true)));
-    headerObject.insert(QStringLiteral("datelong"), MessageViewer::HeaderStyleUtil::strToHtml(MessageViewer::HeaderStyleUtil::dateString(message, isPrinting, false)));
-    headerObject.insert(QStringLiteral("date"), MessageViewer::HeaderStyleUtil::dateStr(message->date()->dateTime()));
+    headerObject.insert(QStringLiteral("dateshort"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, true)));
+    headerObject.insert(QStringLiteral("datelong"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, false)));
+    headerObject.insert(QStringLiteral("date"), d->headerStyleUtil.dateStr(message->date()->dateTime()));
 
     if (MessageViewer::MessageViewerSettings::self()->showUserAgent()) {
         if (auto hdr = message->userAgent(false)) {
-            headerObject.insert(QStringLiteral("useragent"), MessageViewer::HeaderStyleUtil::strToHtml(hdr->asUnicodeString()));
+            headerObject.insert(QStringLiteral("useragent"), d->headerStyleUtil.strToHtml(hdr->asUnicodeString()));
         }
 
         if (message->headerByType("X-Mailer")) {
-            headerObject.insert(QStringLiteral("xmailer"), MessageViewer::HeaderStyleUtil::strToHtml(message->headerByType("X-Mailer")->asUnicodeString()));
+            headerObject.insert(QStringLiteral("xmailer"), d->headerStyleUtil.strToHtml(message->headerByType("X-Mailer")->asUnicodeString()));
         }
     }
 
     if (message->headerByType("Resent-From")) {
         headerObject.insert(QStringLiteral("resentfromi18n"), i18n("resent from"));
-        const QVector<KMime::Types::Mailbox> resentFrom = MessageViewer::HeaderStyleUtil::resentFromList(message);
+        const QVector<KMime::Types::Mailbox> resentFrom = d->headerStyleUtil.resentFromList(message);
         headerObject.insert(QStringLiteral("resentfrom"), StringUtil::emailAddrAsAnchor(resentFrom, StringUtil::DisplayFullAddress));
     }
 
     if (message->headerByType("Resent-To")) {
-        const QVector<KMime::Types::Mailbox> resentTo = MessageViewer::HeaderStyleUtil::resentToList(message);
+        const QVector<KMime::Types::Mailbox> resentTo = d->headerStyleUtil.resentToList(message);
         headerObject.insert(QStringLiteral("resenttoi18n"), i18np("receiver was", "receivers were", resentTo.count()));
         headerObject.insert(QStringLiteral("resentto"), StringUtil::emailAddrAsAnchor(resentTo, StringUtil::DisplayFullAddress));
     }
 
     if (auto organization = message->organization(false)) {
-        headerObject.insert(QStringLiteral("organization"), MessageViewer::HeaderStyleUtil::strToHtml(organization->asUnicodeString()));
+        headerObject.insert(QStringLiteral("organization"), d->headerStyleUtil.strToHtml(organization->asUnicodeString()));
     }
 
     if (!style->vCardName().isEmpty()) {
@@ -213,7 +214,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("fontcolor"), fontColor.name());
     headerObject.insert(QStringLiteral("linkcolor"), linkColor);
 
-    MessageViewer::HeaderStyleUtil::xfaceSettings xface = MessageViewer::HeaderStyleUtil::xface(style, message);
+    MessageViewer::HeaderStyleUtil::xfaceSettings xface = d->headerStyleUtil.xface(style, message);
     if (!xface.photoURL.isEmpty()) {
         headerObject.insert(QStringLiteral("photowidth"), xface.photoWidth);
         headerObject.insert(QStringLiteral("photoheight"), xface.photoHeight);

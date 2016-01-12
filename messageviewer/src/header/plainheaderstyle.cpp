@@ -59,7 +59,7 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     // considered left-to-right, they are ignored when determining its
     // direction.
 
-    const QString subjectDir = MessageViewer::HeaderStyleUtil::subjectDirectionString(message);
+    const QString subjectDir = mHeaderStyleUtil.subjectDirectionString(message);
     QString headerStr;
 
     if (strategy->headersToDisplay().isEmpty()
@@ -76,10 +76,10 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     //case HdrLong:
     if (strategy->showHeader(QStringLiteral("subject")))
         headerStr += QStringLiteral("<div dir=\"%1\"><b style=\"font-size:130%\">").arg(subjectDir) +
-                     MessageViewer::HeaderStyleUtil::subjectString(message) + QLatin1String("</b></div>\n");
+                     mHeaderStyleUtil.subjectString(message) + QLatin1String("</b></div>\n");
 
     if (strategy->showHeader(QStringLiteral("date"))) {
-        headerStr.append(i18n("Date: ") + MessageViewer::HeaderStyleUtil::strToHtml(MessageViewer::HeaderStyleUtil::dateString(message, isPrinting(), /* short = */ false)) + QLatin1String("<br/>\n"));
+        headerStr.append(i18n("Date: ") + mHeaderStyleUtil.strToHtml(mHeaderStyleUtil.dateString(message, isPrinting(), /* short = */ false)) + QLatin1String("<br/>\n"));
     }
 
     if (strategy->showHeader(QStringLiteral("from"))) {
@@ -92,7 +92,7 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
         if (strategy->showHeader(QStringLiteral("organization"))
                 && message->organization(false))
             headerStr.append(QLatin1String("&nbsp;&nbsp;(") +
-                             MessageViewer::HeaderStyleUtil::strToHtml(message->organization()->asUnicodeString()) + QLatin1Char(')'));
+                             mHeaderStyleUtil.strToHtml(message->organization()->asUnicodeString()) + QLatin1Char(')'));
         headerStr.append(QLatin1String("<br/>\n"));
     }
 
@@ -123,7 +123,7 @@ QString PlainHeaderStyle::formatAllMessageHeaders(KMime::Message *message) const
     KMime::Headers::Base *header = KMime::HeaderParsing::extractFirstHeader(head);
     QString result;
     while (header) {
-        result += MessageViewer::HeaderStyleUtil::strToHtml(QLatin1String(header->type()) + QLatin1String(": ") + header->asUnicodeString());
+        result += mHeaderStyleUtil.strToHtml(QLatin1String(header->type()) + QLatin1String(": ") + header->asUnicodeString());
         result += QLatin1String("<br />\n");
         delete header;
         header = KMime::HeaderParsing::extractFirstHeader(head);

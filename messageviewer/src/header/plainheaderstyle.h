@@ -19,10 +19,10 @@
 #define PLAINHEADERSTYLE_H
 
 #include "messageviewer/headerstyle.h"
+#include "headerstyle_util.h"
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
-
 class MESSAGEVIEWER_EXPORT PlainHeaderStyle : public HeaderStyle
 {
 public:
@@ -36,6 +36,7 @@ public:
 
 private:
     QString formatAllMessageHeaders(KMime::Message *message) const;
+    MessageViewer::HeaderStyleUtil mHeaderStyleUtil;
 };
 }
 #endif // PLAINHEADERSTYLE_H
