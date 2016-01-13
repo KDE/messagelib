@@ -367,6 +367,7 @@ ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
 ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
   HEADER_NAMES
   WebKitPartHtmlWriter
+  QueueHtmlWriter
   REQUIRED_HEADERS MessageViewer_htmlwriter_HEADERS
   PREFIX MessageViewer
   RELATIVE htmlwriter
@@ -402,7 +403,6 @@ ecm_generate_headers(MessageViewer_Camelcaseviewerjob_HEADERS
   PREFIX MessageViewer
   RELATIVE job 
 )
-
 
 ecm_generate_pri_file(BASE_NAME MessageViewer
     LIB_NAME KF5MessageViewer

@@ -36,9 +36,10 @@
 
 #include <QObject>
 #include <QSharedPointer>
+#include <QDebug>
 
-#include <messageviewer/bodypart.h>
-#include <htmlwriter/queuehtmlwriter.h>
+#include "messageviewer/bodypart.h"
+#include "messageviewer/queuehtmlwriter.h"
 
 namespace MessageViewer
 {

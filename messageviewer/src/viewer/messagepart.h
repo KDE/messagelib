@@ -22,7 +22,7 @@
 
 #include "partmetadata.h"
 #include "nodehelper.h"
-#include "interfaces/bodypartformatter.h"
+#include "messageviewer/bodypartformatter.h"
 #include <KMime/Message>
 
 #include <Libkleo/CryptoBackend>
