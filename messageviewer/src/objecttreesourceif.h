@@ -21,7 +21,7 @@
 #define MAILVIEWER_OBJECTTREESOURCE_IF_H
 
 #include "messageviewer_export.h"
-#include "messageviewer/messageviewerutil.h"
+#include "messageviewer/mimetype.h"
 
 #include <KMime/Message>
 
@@ -88,6 +88,13 @@ public:
 
     /** The source object behind the interface. */
     virtual QObject *sourceObject() = 0;
+
+    /** should keys be imported automatically **/
+    virtual bool autoImportKeys() = 0;
+
+    virtual bool showEmoticons() = 0;
+
+    virtual bool showExpandQuotesMark() = 0;
 };
 }
 

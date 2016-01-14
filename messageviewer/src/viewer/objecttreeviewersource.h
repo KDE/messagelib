@@ -48,6 +48,9 @@ public:
     CSSHelper *cssHelper() Q_DECL_OVERRIDE;
     QObject *sourceObject() Q_DECL_OVERRIDE;
 
+    bool autoImportKeys() Q_DECL_OVERRIDE;
+    bool showEmoticons() Q_DECL_OVERRIDE;
+    bool showExpandQuotesMark() Q_DECL_OVERRIDE;
 private:
     ViewerPrivate *mViewer;
 };

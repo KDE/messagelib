@@ -113,5 +113,20 @@ CSSHelper *EmptySource::cssHelper()
     return 0;
 }
 
+bool EmptySource::autoImportKeys()
+{
+    return true;
+}
+
+bool EmptySource::showEmoticons()
+{
+    return false;
+}
+
+bool EmptySource::showExpandQuotesMark()
+{
+    return false;
+}
+
 }
 

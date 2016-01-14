@@ -20,6 +20,7 @@
 #include "objecttreeviewersource.h"
 #include "viewer/viewer_p.h"
 #include "widgets/htmlstatusbar.h"
+#include "settings/messageviewersettings.h"
 
 namespace MessageViewer
 {
@@ -90,6 +91,21 @@ HtmlWriter *MailViewerSource::htmlWriter()
 CSSHelper *MailViewerSource::cssHelper()
 {
     return mViewer->cssHelper();
+}
+
+bool MailViewerSource::autoImportKeys()
+{
+    return MessageViewer::MessageViewerSettings::self()->autoImportKeys();
+}
+
+bool MailViewerSource::showEmoticons()
+{
+    return MessageViewer::MessageViewerSettings::self()->showEmoticons();
+}
+
+bool MailViewerSource::showExpandQuotesMark()
+{
+    return MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark();
 }
 
 }

@@ -46,13 +46,11 @@
 #include "partmetadata.h"
 #include "attachmentstrategy.h"
 #include "interfaces/htmlwriter.h"
-#include "widgets/htmlstatusbar.h"
 #include "csshelper.h"
 #include "viewer/bodypartformatterfactory.h"
 #include "viewer/partnodebodypart.h"
 #include "interfaces/bodypartformatter.h"
-#include "settings/messageviewersettings.h"
-#include "messageviewer/messageviewerutil.h"
+#include "messageviewer/mimetype.h"
 #include "job/kleojobexecutor.h"
 #include "messageviewer/nodehelper.h"
 #include "utils/iconnamecache.h"
@@ -85,8 +83,7 @@
 #include <KLocalizedString>
 #include <QTemporaryFile>
 
-#include <kcodecs.h>
-#include <kconfiggroup.h>
+#include <KCodecs>
 
 #include <KEmailAddress>
 #include <KTextToHTML>
@@ -1175,7 +1172,7 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
     if (smimeType == QLatin1String("certs-only")) {
         result.setNeverDisplayInline(true);
 
-        CertMessagePart::Ptr mp(new CertMessagePart(this, node, smimeCrypto, MessageViewer::MessageViewerSettings::self()->autoImportKeys()));
+        CertMessagePart::Ptr mp(new CertMessagePart(this, node, smimeCrypto, mSource->autoImportKeys()));
         return mp;
     }
 
@@ -2184,7 +2181,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
     assert(cssHelper());
 
     KTextToHTML::Options convertFlags = KTextToHTML::PreserveSpaces | KTextToHTML::HighlightText;
-    if (decorate && MessageViewer::MessageViewerSettings::self()->showEmoticons()) {
+    if (decorate && mSource->showEmoticons()) {
         convertFlags |= KTextToHTML::ReplaceSmileys;
     }
     QString htmlStr;
@@ -2214,7 +2211,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
     int currQuoteLevel = -2; // -2 == no previous lines
     bool curHidden = false; // no hide any block
 
-    if (MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark()) {
+    if (mSource->showExpandQuotesMark()) {
         // Cache Icons
         if (mCollapseIcon.isEmpty()) {
             mCollapseIcon = iconToDataUrl(IconNameCache::instance()->iconPath(QStringLiteral("quotecollapse"), 0));
@@ -2264,7 +2261,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
         bool actHidden = false;
 
         // This quoted line needs be hidden
-        if (MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark() && mSource->levelQuote() >= 0
+        if (mSource->showExpandQuotesMark() && mSource->levelQuote() >= 0
                 && mSource->levelQuote() <= (actQuoteLevel)) {
             actHidden = true;
         }
@@ -2285,7 +2282,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
             if (actQuoteLevel == -1) {
                 htmlStr += normalStartTag;
             } else {
-                if (MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark()) {
+                if (mSource->showExpandQuotesMark()) {
                     if (actHidden) {
                         //only show the QuoteMark when is the first line of the level hidden
                         if (!curHidden) {

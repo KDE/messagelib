@@ -540,13 +540,8 @@ Project(Otp)
 set(libotp_SRCS
   ${libmessageviewer_otp_SRCS}
   ${libmessageviewer_otp_extra_SRCS}
-  settings/messageviewersettings.cpp
 )
 ecm_qt_declare_logging_category(libotp_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
-
-kconfig_add_kcfg_files(libotp_SRCS
-  settings/globalsettings_messageviewer.kcfgc
-)
 
 add_library(KF5Otp
   ${libotp_SRCS}

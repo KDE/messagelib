@@ -76,6 +76,21 @@ public:
         mHtmlMail = htmlMail;
     }
 
+    bool autoImportKeys() Q_DECL_OVERRIDE
+    {
+        return true;
+    }
+
+    bool showEmoticons() Q_DECL_OVERRIDE
+    {
+        return false;
+    }
+
+    bool showExpandQuotesMark() Q_DECL_OVERRIDE
+    {
+        return false;
+    }
+
 private:
     MessageViewer::HtmlWriter *mWriter;
     MessageViewer::CSSHelper *mCSSHelper;
