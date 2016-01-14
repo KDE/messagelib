@@ -65,16 +65,7 @@ namespace MessageViewer
 namespace Util
 {
 
-/**
-      * Describes the type of the displayed message. This depends on the MIME structure
-      * of the mail and on whether HTML mode is enabled (which is decided by htmlMail())
-      */
-enum HtmlMode {
-    Normal,         ///< A normal plaintext message, non-multipart
-    Html,           ///< A HTML message, non-multipart
-    MultipartPlain, ///< A multipart/alternative message, the plain text part is currently displayed
-    MultipartHtml   ///< A multipart/altervative message, the HTML part is currently displayed
-};
+
 
 // return true if we should proceed, false if we should abort
 bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
