@@ -27,7 +27,6 @@
 #include <QPointer>
 
 #include "interfaces/bodypart.h"
-#include "messageviewer/viewer.h"
 
 namespace Kleo
 {
