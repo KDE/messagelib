@@ -29,15 +29,12 @@
     your version.
 */
 
-#include "messageviewer/messageviewersettings.h"
-#include "messagecore/messagecoresettings.h"
-#include "messagecoreutil.h"
 #include "csshelperbase.h"
 
-#include <KColorScheme>
 
 #include <QApplication>
 #include <QPaintDevice>
+#include <QPalette>
 #include <QFontDatabase>
 
 namespace MessageViewer
@@ -75,51 +72,12 @@ inline int getValueOf(const QColor &c)
 }
 }
 
-CSSHelperBase::CSSHelperBase(const QPaintDevice *pd) :
-    mShrinkQuotes(false),
-    mPaintDevice(pd)
+CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
+    : mRecycleQuoteColors(false)
+    , mShrinkQuotes(false)
+    , cHtmlWarning(QColor(0xFF, 0x40, 0x40))
+    , mPaintDevice(pd)
 {
-    const KColorScheme scheme(QPalette::Active, KColorScheme::View);
-
-    // initialize with defaults - should match the corresponding application defaults
-    mForegroundColor = QApplication::palette().color(QPalette::Text);
-    mLinkColor = scheme.foreground(KColorScheme::LinkText).color();
-    mBackgroundColor = QApplication::palette().color(QPalette::Base);
-    cHtmlWarning = QColor(0xFF, 0x40, 0x40);   // warning frame color: light red
-
-    cPgpEncrH  = MessageCore::Util::pgpEncryptedMessageColor();
-    cPgpEncrHT = MessageCore::Util::pgpEncryptedTextColor();
-    cPgpOk1H   = MessageCore::Util::pgpSignedTrustedMessageColor();
-    cPgpOk1HT  = MessageCore::Util::pgpSignedTrustedTextColor();
-    cPgpOk0H   = MessageCore::Util::pgpSignedUntrustedMessageColor();
-    cPgpOk0HT  = MessageCore::Util::pgpSignedUntrustedTextColor();
-    cPgpWarnH  = MessageCore::Util::pgpSignedUntrustedMessageColor();
-    cPgpWarnHT = MessageCore::Util::pgpSignedUntrustedTextColor();
-    cPgpErrH   = MessageCore::Util::pgpSignedBadMessageColor();
-    cPgpErrHT  = MessageCore::Util::pgpSignedBadTextColor();
-
-    if (MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
-        mQuoteColor[0] = MessageCore::Util::quoteLevel1DefaultTextColor();
-        mQuoteColor[1] = MessageCore::Util::quoteLevel2DefaultTextColor();
-        mQuoteColor[2] = MessageCore::Util::quoteLevel3DefaultTextColor();
-    } else {
-        mQuoteColor[0] = MessageCore::MessageCoreSettings::self()->quotedText1();
-        mQuoteColor[1] = MessageCore::MessageCoreSettings::self()->quotedText2();
-        mQuoteColor[2] = MessageCore::MessageCoreSettings::self()->quotedText3();
-    }
-
-    mRecycleQuoteColors = false;
-
-    QFont defaultFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
-    QFont defaultFixedFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
-    mBodyFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer::MessageViewerSettings::self()->bodyFont();
-    mPrintFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer::MessageViewerSettings::self()->printFont();
-    mFixedFont = mFixedPrintFont = defaultFixedFont;
-    defaultFont.setItalic(true);
-    for (int i = 0; i < 3; ++i) {
-        mQuoteFont[i] = defaultFont;
-    }
-
     recalculatePGPColors();
 }
 
