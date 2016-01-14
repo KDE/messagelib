@@ -188,6 +188,7 @@ set(libmessageviewer_SRCS
   ${libmessageviewer_job_SRCS}
   ${libmessageviewer_viewerplugins_SRCS}
   settings/messageviewersettings.cpp
+  interfaces/bodypartformatter.cpp
   ${_mailwebview_cpp}
 )
 
@@ -367,7 +368,6 @@ ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
 ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
   HEADER_NAMES
   WebKitPartHtmlWriter
-  QueueHtmlWriter
   REQUIRED_HEADERS MessageViewer_htmlwriter_HEADERS
   PREFIX MessageViewer
   RELATIVE htmlwriter

@@ -34,57 +34,43 @@
 #ifndef __KMAIL_INTERFACE_BODYPARTFORMATTER_H__
 #define __KMAIL_INTERFACE_BODYPARTFORMATTER_H__
 
+#include "messageviewer_export.h"
+
 #include <QObject>
 #include <QSharedPointer>
-#include <QDebug>
 
-#include "messageviewer/bodypart.h"
-#include "messageviewer/queuehtmlwriter.h"
 
 namespace MessageViewer
 {
-
+    class HtmlWriter;
 
 namespace Interface
 {
 
-class HtmlWriter;
 class BodyPartURLHandler;
+class BodyPart;
 
-class MessagePart
+class MESSAGEVIEWER_EXPORT MessagePart
 {
 public:
     typedef QSharedPointer<MessagePart> Ptr;
-    explicit MessagePart()
-        : mHtmlWriter(0)
-        , mPart(0)
-    {
-    }
-
-    explicit MessagePart(const BodyPart &part)
-        : mHtmlWriter(0)
-        , mPart(&part)
-    {
-
-    }
-    virtual ~MessagePart() {}
+    explicit MessagePart();
+    explicit MessagePart(const BodyPart &part);
+    virtual ~MessagePart();
 
     virtual void html(bool decorate);
-    virtual QString text() const
-    {
-        return QString();
-    }
+    virtual QString text() const;
 
 private:
-    HtmlWriter *htmlWriter();
+    MessageViewer::HtmlWriter *htmlWriter();
 
-    HtmlWriter *mHtmlWriter;
+    MessageViewer::HtmlWriter *mHtmlWriter;
     const BodyPart *mPart;
 
     friend class BodyPartFormatter;
 };
 
-class BodyPartFormatter
+class MESSAGEVIEWER_EXPORT BodyPartFormatter
 {
 public:
     virtual ~BodyPartFormatter() {}
@@ -103,7 +89,7 @@ public:
 
     @return the result code (see above)
     */
-    virtual Result format(BodyPart *part, HtmlWriter *writer) const = 0;
+    virtual Result format(BodyPart *part, MessageViewer::HtmlWriter *writer) const = 0;
 
     /**
       Variant of format that allows implementors to hook notifications up to
@@ -111,22 +97,13 @@ public:
 
       @return the result code (see above)
     */
-    virtual Result format(BodyPart *part, HtmlWriter *writer, QObject *asyncResultObserver) const
+    virtual Result format(BodyPart *part, MessageViewer::HtmlWriter *writer, QObject *asyncResultObserver) const
     {
         Q_UNUSED(asyncResultObserver);
         return format(part, writer);
     }
 
-    virtual MessagePart::Ptr process(BodyPart &part) const
-    {
-        qDebug() << "should never happen tm";
-        auto mp = MessagePart::Ptr(new MessagePart(part));
-        const auto ret = format(&part,mp->htmlWriter());
-        if (ret != Failed) {
-            return mp;
-        }
-        return MessagePart::Ptr();
-    }
+    virtual MessagePart::Ptr process(BodyPart &part) const;
 };
 
 /**

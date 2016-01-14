@@ -42,20 +42,6 @@
 
 using namespace MessageViewer;
 
-Interface::HtmlWriter* Interface::MessagePart::htmlWriter()
-{
-    if (!mHtmlWriter) {
-        mHtmlWriter = mPart->objectTreeParser()->htmlWriter();
-    }
-    return mHtmlWriter;
-}
-
-void Interface::MessagePart::html(bool decorate)
-{
-    static_cast<QueueHtmlWriter *>(mHtmlWriter)->replay();
-}
-
-
 namespace
 {
 class AnyTypeBodyPartFormatter
@@ -63,7 +49,7 @@ class AnyTypeBodyPartFormatter
 {
     static const AnyTypeBodyPartFormatter *self;
 public:
-    Result format(Interface::BodyPart *, Interface::HtmlWriter *) const Q_DECL_OVERRIDE
+    Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE
     {
         qCDebug(MESSAGEVIEWER_LOG) << "Acting as a Interface::BodyPartFormatter!";
         return AsIcon;
@@ -93,7 +79,7 @@ class ImageTypeBodyPartFormatter
 {
     static const ImageTypeBodyPartFormatter *self;
 public:
-    Result format(Interface::BodyPart *, Interface::HtmlWriter *) const Q_DECL_OVERRIDE
+    Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE
     {
         return AsIcon;
     }
@@ -123,7 +109,7 @@ class MessageRfc822BodyPartFormatter
     static const MessageRfc822BodyPartFormatter *self;
 public:
     Interface::MessagePart::Ptr process(Interface::BodyPart &) const Q_DECL_OVERRIDE;
-    MessageViewer::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, Interface::HtmlWriter *) const Q_DECL_OVERRIDE;
+    MessageViewer::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE;
     using MessageViewer::Interface::BodyPartFormatter::format;
     static const MessageViewer::Interface::BodyPartFormatter *create();
 };
@@ -144,7 +130,7 @@ Interface::MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::B
     return MessagePart::Ptr(new EncapsulatedRfc822MessagePart(part.objectTreeParser(), part.content(), message));
 }
 
-Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Interface::BodyPart *part, Interface::HtmlWriter *writer) const
+Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
 {
     Q_UNUSED(writer)
     const ObjectTreeParser *otp = part->objectTreeParser();
@@ -165,7 +151,7 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
         static const subtype##BodyPartFormatter *self; \
     public: \
         Interface::MessagePart::Ptr process(Interface::BodyPart &part) const Q_DECL_OVERRIDE; \
-        MessageViewer::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, Interface::HtmlWriter *) const Q_DECL_OVERRIDE; \
+        MessageViewer::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE; \
         using MessageViewer::Interface::BodyPartFormatter::format; \
         static const MessageViewer::Interface::BodyPartFormatter *create(); \
     }; \
@@ -182,7 +168,7 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
         return part.objectTreeParser()->process##subtype##Subtype(part.content(), *part.processResult()); \
     } \
     \
-    MessageViewer::Interface::BodyPartFormatter::Result subtype##BodyPartFormatter::format(Interface::BodyPart *part, Interface::HtmlWriter *writer) const { \
+    MessageViewer::Interface::BodyPartFormatter::Result subtype##BodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const { \
         Q_UNUSED(writer) \
         const auto p = process(*part);\
         const auto mp = static_cast<MessagePart *>(p.data());\
