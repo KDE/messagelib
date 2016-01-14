@@ -20,15 +20,12 @@
 #include "nodehelper.h"
 #include "messageviewer_debug.h"
 #include "utils/iconnamecache.h"
-#include "settings/messageviewersettings.h"
 #include "partmetadata.h"
 #include "interfaces/bodypart.h"
-#include "messageviewer/messageviewerutil.h"
+#include "messageviewer/mimetype.h"
 #include "PimCommon/AttachmentTemporaryFilesDirs"
 
 #include <MessageCore/NodeHelper>
-#include <MessageCore/StringUtil>
-#include "MessageCore/MessageCoreSettings"
 
 #include <kmime/kmime_content.h>
 #include <kmime/kmime_message.h>

@@ -38,6 +38,7 @@
 #include <kmime/kmime_content.h>
 
 #include <QTextCodec>
+#include <QUrl>
 
 using namespace MessageViewer;
 

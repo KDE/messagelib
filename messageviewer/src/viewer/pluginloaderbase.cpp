@@ -22,9 +22,9 @@
 #include "pluginloaderbase.h"
 #include "messageviewer_debug.h"
 
-#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KConfig>
+#include <KConfigGroup>
 #include <KPluginLoader>
 
 #include <QDir>

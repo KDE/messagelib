@@ -34,8 +34,7 @@
 #ifndef __MESSAGEVIEWER_PARTNODEBODYPART_H_
 #define __MESSAGEVIEWER_PARTNODEBODYPART_H_
 
-#include "messageviewer/bodypart.h"
-#include <AkonadiCore/item.h>
+#include "interfaces/bodypart.h"
 
 class QTextCodec;
 
