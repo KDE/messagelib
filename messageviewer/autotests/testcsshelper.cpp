@@ -76,9 +76,6 @@ TestCSSHelper::TestCSSHelper(const QPaintDevice *pd) :
 
     mShrinkQuotes = false;
 
-    mBackingPixmapStr = QString();
-    mBackingPixmapOn = false;
-
     QPalette pal;
 
     pal.setColor(QPalette::Background, QColor(0xd6, 0xd2, 0xd0));

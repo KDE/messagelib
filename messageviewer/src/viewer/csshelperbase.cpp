@@ -121,8 +121,6 @@ CSSHelperBase::CSSHelperBase(const QPaintDevice *pd) :
         mQuoteFont[i] = defaultFont;
     }
 
-    mBackingPixmapOn = false;
-
     recalculatePGPColors();
 }
 
@@ -343,11 +341,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                                "  font-size: %2px ! important;\n")
                                .arg(mBodyFont.family())
                                .arg(pointsToPixel(helper->mPaintDevice, mBodyFont.pointSize()));
-    const QString background = (mBackingPixmapOn
-                                ? QStringLiteral("  background-image:url(file:///%1) ! important;\n")
-                                .arg(mBackingPixmapStr)
-                                : QStringLiteral("  background-color: %1 ! important;\n")
-                                .arg(bgColor));
+    const QString background =  QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
     const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(fixed))) + QLatin1String("px");
     const QPalette &pal = QApplication::palette();
 

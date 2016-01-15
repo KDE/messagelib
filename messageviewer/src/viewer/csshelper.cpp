@@ -52,7 +52,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd) :
 
     KConfigGroup reader(config, "Reader");
     KConfigGroup fonts(config, "Fonts");
-    KConfigGroup pixmaps(config, "Pixmaps");
 
     mRecycleQuoteColors = reader.readEntry("RecycleQuoteColors", false);
 
@@ -95,9 +94,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd) :
     }
 
     mShrinkQuotes = MessageViewer::MessageViewerSettings::self()->shrinkQuotes();
-
-    mBackingPixmapStr = pixmaps.readPathEntry("Readerwin", QString());
-    mBackingPixmapOn = !mBackingPixmapStr.isEmpty();
 
     recalculatePGPColors();
 }

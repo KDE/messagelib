@@ -90,7 +90,6 @@ protected:
     bool mRecycleQuoteColors;
     bool mBackingPixmapOn;
     bool mShrinkQuotes;
-    QString mBackingPixmapStr;
     QColor mForegroundColor;
     QColor mLinkColor;
     QColor mVisitedLinkColor;
