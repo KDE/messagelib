@@ -67,7 +67,8 @@ namespace MessageViewer
 {
 
 MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
-    : KIO::AccessManager(parent)
+    : KIO::AccessManager(parent),
+      mDoNotTrack(true)
 {
     auto lang = QLocale::system().language();
     QString c = QLocale(lang).name();
@@ -81,6 +82,11 @@ MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
     c.append(QLatin1String(", en-US; q=0.8, en; q=0.6"));
 
     mAcceptLanguage = c.toLatin1();
+}
+
+void MyNetworkAccessManager::setDoNotTrack(bool state)
+{
+    mDoNotTrack = state;
 }
 
 QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
@@ -100,6 +106,10 @@ QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetwor
         // set our "nice" accept-language header...
         QNetworkRequest request = req;
         request.setRawHeader("Accept-Language", mAcceptLanguage);
+        if (mDoNotTrack) {
+            // The 'Do Not Track' header: http://datatracker.ietf.org/doc/draft-mayer-do-not-track
+            request.setRawHeader("DNT", "1");
+        }
 
         return KIO::AccessManager::createRequest(op, req, outgoingData);
     }

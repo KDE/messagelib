@@ -24,6 +24,7 @@
 
 namespace MessageViewer
 {
+class WebPagePrivate;
 class MESSAGEVIEWER_EXPORT WebPage : public KWebPage
 {
     Q_OBJECT
@@ -32,11 +33,12 @@ public:
     ~WebPage();
     QUrl loadingUrl() const;
 
+    void setDoNotTrack(bool state);
 protected:
     bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type) Q_DECL_OVERRIDE;
 
 private:
-    QUrl mLoadingUrl;
+    WebPagePrivate *const d;
 };
 }
 

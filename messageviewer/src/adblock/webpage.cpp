@@ -21,34 +21,52 @@
 
 using namespace MessageViewer;
 
-WebPage::WebPage(QWidget *parent)
-    : KWebPage(parent)
+class MessageViewer::WebPagePrivate
 {
-    MessageViewer::MyNetworkAccessManager *manager = new MessageViewer::MyNetworkAccessManager(this);
-    manager->setEmitReadyReadOnMetaDataChange(true);
-    manager->setCache(0);
+public:
+    WebPagePrivate()
+    {
+
+    }
+    QUrl mLoadingUrl;
+    MessageViewer::MyNetworkAccessManager *mCustomNetworkManager;
+};
+
+WebPage::WebPage(QWidget *parent)
+    : KWebPage(parent),
+      d(new WebPagePrivate)
+{
+    d->mCustomNetworkManager = new MessageViewer::MyNetworkAccessManager(this);
+    d->mCustomNetworkManager->setEmitReadyReadOnMetaDataChange(true);
+    d->mCustomNetworkManager->setCache(0);
     QWidget *window = parent ? parent->window() : 0;
     if (window) {
-        manager->setWindow(window);
+        d->mCustomNetworkManager->setWindow(window);
     }
-    setNetworkAccessManager(manager);
+    setNetworkAccessManager(d->mCustomNetworkManager);
     connect(this, SIGNAL(frameCreated(QWebFrame*)), AdBlockManager::self(), SLOT(applyHidingRules(QWebFrame*)));
 }
 
 WebPage::~WebPage()
 {
+    delete d;
 }
 
 QUrl WebPage::loadingUrl() const
 {
-    return mLoadingUrl;
+    return d->mLoadingUrl;
+}
+
+void WebPage::setDoNotTrack(bool state)
+{
+    d->mCustomNetworkManager->setDoNotTrack(state);
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
     const bool isMainFrameRequest = (frame == mainFrame());
     if (isMainFrameRequest) {
-        mLoadingUrl = request.url();
+        d->mLoadingUrl = request.url();
     }
     return QWebPage::acceptNavigationRequest(frame, request, type);
 }

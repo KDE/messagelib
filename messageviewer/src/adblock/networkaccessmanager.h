@@ -40,6 +40,8 @@ class MyNetworkAccessManager : public KIO::AccessManager
 public:
     explicit MyNetworkAccessManager(QObject *parent = Q_NULLPTR);
 
+    void setDoNotTrack(bool state);
+
 protected:
     QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = Q_NULLPTR) Q_DECL_OVERRIDE;
 
@@ -49,6 +51,7 @@ private Q_SLOTS:
 private:
     QMultiHash<QWebFrame *, QUrl> mBlockedRequests;
     QByteArray mAcceptLanguage;
+    bool mDoNotTrack;
 };
 
 }
