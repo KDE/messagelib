@@ -59,8 +59,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd) :
     if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
         mLinkColor =
             reader.readEntry("LinkColor", mLinkColor);
-        mVisitedLinkColor =
-            reader.readEntry("FollowedColor", mVisitedLinkColor);
         cPgpEncrH =
             reader.readEntry("PGPMessageEncr", cPgpEncrH);
         cPgpOk1H  =

@@ -84,7 +84,6 @@ CSSHelperBase::CSSHelperBase(const QPaintDevice *pd) :
     // initialize with defaults - should match the corresponding application defaults
     mForegroundColor = QApplication::palette().color(QPalette::Text);
     mLinkColor = scheme.foreground(KColorScheme::LinkText).color();
-    mVisitedLinkColor = scheme.foreground(KColorScheme::VisitedText).color();
     mBackgroundColor = QApplication::palette().color(QPalette::Base);
     cHtmlWarning = QColor(0xFF, 0x40, 0x40);   // warning frame color: light red
 

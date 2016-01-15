@@ -92,7 +92,6 @@ protected:
     bool mShrinkQuotes;
     QColor mForegroundColor;
     QColor mLinkColor;
-    QColor mVisitedLinkColor;
     QColor mBackgroundColor;
     // colors for PGP (Frame, Header, HeaderText, Body)
     QColor cPgpOk1F;
