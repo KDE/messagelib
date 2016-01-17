@@ -88,7 +88,6 @@ protected:
     QFont mQuoteFont[3];
     QColor mQuoteColor[3];
     bool mRecycleQuoteColors;
-    bool mBackingPixmapOn;
     bool mShrinkQuotes;
     QColor mForegroundColor;
     QColor mLinkColor;
