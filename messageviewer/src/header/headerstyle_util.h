@@ -19,6 +19,7 @@
 #define HEADERSTYLE_UTIL_H
 
 #include <QString>
+#include <QVariantHash>
 #include <KTextToHTML>
 
 #include <kmime/kmime_message.h>
@@ -71,6 +72,7 @@ public:
 
 
     xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
+    void addMailAction(QVariantHash &headerObject);
 private:
     void updateXFaceSettings(QImage photo, xfaceSettings &settings) const;
     QString drawSpamMeter(SpamError spamError, double percent, double confidence,

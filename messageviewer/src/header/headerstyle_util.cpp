@@ -32,6 +32,7 @@
 
 #include <KEmailAddress>
 #include <KTextToHTML>
+#include <QVariantHash>
 
 using namespace MessageCore;
 
@@ -374,6 +375,15 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
     return settings;
 }
 
+void HeaderStyleUtil::addMailAction(QVariantHash &headerObject)
+{
+    headerObject.insert(QStringLiteral("trashaction"), mailAction(Viewer::Trash));
+    headerObject.insert(QStringLiteral("replyaction"), mailAction(Viewer::Reply));
+    headerObject.insert(QStringLiteral("replyallaction"), mailAction(Viewer::ReplyToAll));
+    headerObject.insert(QStringLiteral("forwardaction"), mailAction(Viewer::Forward));
+    headerObject.insert(QStringLiteral("newmessageaction"), mailAction(Viewer::NewMessage));
+}
+
 QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
 {
     //TODO load icon.
@@ -395,6 +405,5 @@ QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
         html = QStringLiteral("<a href=\"kmailaction:newMessage\"></a>");
         break;
     }
-    //TODO
     return html;
 }

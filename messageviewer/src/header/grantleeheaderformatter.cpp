@@ -231,6 +231,9 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
 
     headerObject.insert(QStringLiteral("vcardi18n"), i18n("[vcard]"));
 
+
+    //Action
+    d->headerStyleUtil.addMailAction(headerObject);
     QVariantHash mapping;
     mapping.insert(QStringLiteral("header"), headerObject);
     Grantlee::Context context(mapping);
