@@ -66,7 +66,6 @@
 #include <KSharedConfigPtr>
 #include <KStandardGuiItem>
 #include <QTemporaryDir>
-#include <QTemporaryFile>
 #include <KToggleAction>
 #include <QIcon>
 #include <kfileitemactions.h>
