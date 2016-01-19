@@ -2931,7 +2931,6 @@ void ViewerPrivate::saveMainFrameScreenshotInFile(const QString &filename)
 void ViewerPrivate::setMailAction(MessageViewer::Viewer::MailAction type)
 {
     Q_EMIT executeMailAction(type);
-    //TODO
 }
 
 void ViewerPrivate::slotAddToWhiteList()
