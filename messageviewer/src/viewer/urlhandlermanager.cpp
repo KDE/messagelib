@@ -107,13 +107,16 @@ public:
             } else if (urlPath == QStringLiteral("newMessage")) {
                 viewer->setMailAction(MessageViewer::Viewer::NewMessage);
                 return true;
+            } else if (urlPath == QStringLiteral("createTodo")) {
+                viewer->setMailAction(MessageViewer::Viewer::CreateTodo);
+                return true;
             }
         }
         return false;
     }
     bool handleContextMenuRequest(const QUrl &url, const QPoint &, ViewerPrivate *) const Q_DECL_OVERRIDE
     {
-        return false;
+        return url.scheme() == QLatin1String("kmailaction");
     }
     QString statusBarMessage(const QUrl &url, ViewerPrivate *) const Q_DECL_OVERRIDE
     {
@@ -129,6 +132,8 @@ public:
                 return i18n("Forward");
             } else if (urlPath == QStringLiteral("newMessage")) {
                 return i18n("New Message");
+            } else if (urlPath == QStringLiteral("createTodo")) {
+                return i18n("Create ToDo");
             }
         }
         return QString();

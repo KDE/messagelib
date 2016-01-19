@@ -131,7 +131,8 @@ public:
         Reply,
         ReplyToAll,
         Forward,
-        NewMessage
+        NewMessage,
+        CreateTodo
     };
 
     /**

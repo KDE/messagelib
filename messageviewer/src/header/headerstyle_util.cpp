@@ -382,6 +382,7 @@ void HeaderStyleUtil::addMailAction(QVariantHash &headerObject)
     headerObject.insert(QStringLiteral("replyallaction"), mailAction(Viewer::ReplyToAll));
     headerObject.insert(QStringLiteral("forwardaction"), mailAction(Viewer::Forward));
     headerObject.insert(QStringLiteral("newmessageaction"), mailAction(Viewer::NewMessage));
+    headerObject.insert(QStringLiteral("createtodoaction"), mailAction(Viewer::CreateTodo));
 }
 
 QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
@@ -403,6 +404,9 @@ QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
         break;
     case Viewer::NewMessage:
         html = QStringLiteral("<a href=\"kmailaction:newMessage\"></a>");
+        break;
+    case Viewer::CreateTodo:
+        html = QStringLiteral("<a href=\"kmailaction:createTodo\"></a>");
         break;
     }
     return html;
