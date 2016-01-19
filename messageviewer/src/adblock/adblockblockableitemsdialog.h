@@ -19,11 +19,12 @@
 #define ADBLOCKBLOCKABLEITEMSDIALOG_H
 
 #include <QDialog>
+#include "messageviewer_export.h"
 class QWebFrame;
 namespace MessageViewer
 {
 class AdBlockBlockableItemsWidget;
-class AdBlockBlockableItemsDialog : public QDialog
+class MESSAGEVIEWER_EXPORT AdBlockBlockableItemsDialog : public QDialog
 {
     Q_OBJECT
 public:
