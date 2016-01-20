@@ -19,12 +19,13 @@
 #define SEARCHLINESTATUS_H
 
 #include <PimCommon/LineEditWithCompleter>
+#include "messagelist_export.h"
 class QAction;
 namespace MessageList
 {
 namespace Core
 {
-class SearchLineStatus : public PimCommon::LineEditWithCompleter
+class MESSAGELIST_EXPORT SearchLineStatus : public PimCommon::LineEditWithCompleter
 {
     Q_OBJECT
 public:

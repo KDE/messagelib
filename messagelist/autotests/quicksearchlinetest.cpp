@@ -21,6 +21,7 @@
 #include "quicksearchlinetest.h"
 #include <qtest.h>
 #include "core/widgets/quicksearchline.h"
+#include "core/widgets/searchlinestatus.h"
 #include <qtestkeyboard.h>
 #include <qtestmouse.h>
 #include <KLineEdit>
@@ -38,7 +39,7 @@ void QuickSearchLineTest::shouldHaveDefaultValueOnCreation()
 {
     QuickSearchLine searchLine;
     QVERIFY(searchLine.searchEdit()->text().isEmpty());
-    QVERIFY(!searchLine.lockSearch()->isChecked());
+    QVERIFY(!searchLine.searchEdit()->locked());
     QWidget *widget = searchLine.findChild<QWidget *>(QStringLiteral("extraoptions"));
     QVERIFY(widget);
     QVERIFY(widget->isHidden());
@@ -166,7 +167,7 @@ void QuickSearchLineTest::shouldResetAllWhenResetFilter()
     searchLine.show();
     searchLine.resetFilter();
     QCOMPARE(searchLine.status().count(), 0);
-    QCOMPARE(searchLine.lockSearch()->isChecked(), false);
+    QCOMPARE(searchLine.searchEdit()->locked(), false);
     QCOMPARE(searchLine.tagFilterComboBox()->currentIndex(), -1);
     QuickSearchLine::SearchOptions options;
     options = QuickSearchLine::SearchEveryWhere;

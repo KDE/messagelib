@@ -29,6 +29,7 @@
 #include "core/model.h"
 #include "core/messageitem.h"
 #include "core/storagemodelbase.h"
+#include "widgets/searchlinestatus.h"
 #include "messagelistsettings.h"
 
 #include "utils/configureaggregationsdialog.h"
@@ -336,7 +337,7 @@ void Widget::setStorageModel(StorageModel *storageModel, PreSelectionMode preSel
     d->setDefaultThemeForStorageModel(storageModel);
     d->setDefaultSortOrderForStorageModel(storageModel);
 
-    if (!d->quickSearchLine->lockSearch()->isChecked()) {
+    if (!d->quickSearchLine->searchEdit()->locked()) {
         if (d->mSearchTimer) {
             d->mSearchTimer->stop();
             delete d->mSearchTimer;

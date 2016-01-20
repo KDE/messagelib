@@ -35,6 +35,7 @@ namespace MessageList
 {
 namespace Core
 {
+class SearchLineStatus;
 class MESSAGELIST_EXPORT QuickSearchLine : public QWidget
 {
     Q_OBJECT
@@ -59,9 +60,8 @@ public:
     void focusQuickSearch(const QString &selectedText);
 
     KComboBox *tagFilterComboBox() const;
-    KLineEdit *searchEdit() const;
+    SearchLineStatus *searchEdit() const;
     QToolButton *openFullSearchButton() const;
-    QToolButton *lockSearch() const;
     void resetFilter();
     QList<Akonadi::MessageStatus> status() const;
 
@@ -81,7 +81,6 @@ Q_SIGNALS:
 protected:
     bool eventFilter(QObject *object, QEvent *e) Q_DECL_OVERRIDE;
 private Q_SLOTS:
-    void slotLockSearchClicked(bool locked);
     void slotSearchOptionChanged();
     void slotSearchEditTextEdited(const QString &text);
     void slotClearButtonClicked();
@@ -93,9 +92,8 @@ private:
     void createQuickSearchButton(const QIcon &icon, const QString &text, int value, QLayout *quickSearchButtonLayout);
     void changeSearchAgainstFromOrToText();
     QList<QToolButton *> mListStatusButton;
-    KLineEdit *mSearchEdit;
+    SearchLineStatus *mSearchEdit;
     KComboBox *mTagFilterCombo;
-    QToolButton *mLockSearch;
     QPushButton *mMoreOptions;
     QPushButton *mSearchEveryWhere;
     QPushButton *mSearchAgainstBody;
