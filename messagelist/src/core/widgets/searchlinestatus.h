@@ -32,6 +32,7 @@ public:
     ~SearchLineStatus();
 
     void setLocked(bool b);
+    bool locked() const;
 private slots:
     void slotToggledLockAction();
 private:

@@ -51,9 +51,20 @@ void SearchLineStatus::setLocked(bool b)
     }
 }
 
+bool SearchLineStatus::locked() const
+{
+    return mLocked;
+}
+
 void SearchLineStatus::initializeActions()
 {
     mLockAction = addAction(QIcon::fromTheme(QStringLiteral("object-locked")), QLineEdit::TrailingPosition);
+    mLockAction->setWhatsThis(
+        i18nc("@info:whatsthis",
+              "Toggle this button if you want to keep your quick search "
+              "locked when moving to other folders or when narrowing the search "
+              "by message status."));
+
     connect(mLockAction, &QAction::triggered, this, &SearchLineStatus::slotToggledLockAction);
     updateLockAction();
 }
