@@ -19,7 +19,7 @@
 #define SEARCHLINESTATUS_H
 
 #include <PimCommon/LineEditWithCompleter>
-
+class QAction;
 namespace MessageList
 {
 namespace Core
@@ -30,6 +30,15 @@ class SearchLineStatus : public PimCommon::LineEditWithCompleter
 public:
     explicit SearchLineStatus(QWidget *parent = Q_NULLPTR);
     ~SearchLineStatus();
+
+    void setLocked(bool b);
+private slots:
+    void slotToggledLockAction();
+private:
+    void updateLockAction();
+    void initializeActions();
+    bool mLocked;
+    QAction *mLockAction;
 };
 
 }
