@@ -24,6 +24,8 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     : PimCommon::LineEditWithCompleter(parent),
       mLocked(false)
 {
+    setClearButtonEnabled(true);
+    setClearButtonShown(false);
     initializeActions();
 }
 
