@@ -107,12 +107,15 @@ public:
 
     void setTheme(const GrantleeTheme::Theme &theme);
     GrantleeTheme::Theme theme() const;
+    void setCollectionName(const QString &name);
+    QString collectionName() const;
 
 private:
     GrantleeTheme::Theme mTheme;
     QString mMessagePath;
     const HeaderStrategy *mStrategy;
     QString mVCardName;
+    QString mCollectionName;
     NodeHelper *mNodeHelper;
     QObject *mSourceObject;
     Akonadi::MessageStatus mMessageStatus;

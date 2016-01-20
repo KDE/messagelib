@@ -188,6 +188,9 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     if (!style->vCardName().isEmpty()) {
         headerObject.insert(QStringLiteral("vcardname"), style->vCardName());
     }
+    if ( !style->collectionName().isEmpty() ) {
+        headerObject.insert(QStringLiteral("collectionname"), style->collectionName() );
+    }
 
     if (isPrinting) {
         //provide a bit more left padding when printing

@@ -162,3 +162,14 @@ GrantleeTheme::Theme HeaderStyle::theme() const
 {
     return mTheme;
 }
+
+void HeaderStyle::setCollectionName(const QString &name)
+{
+    mCollectionName = name;
+}
+
+QString HeaderStyle::collectionName() const
+{
+    return mCollectionName;
+}
+

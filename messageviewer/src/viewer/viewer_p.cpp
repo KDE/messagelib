@@ -1004,6 +1004,9 @@ QString ViewerPrivate::writeMsgHeader(KMime::Message *aMsg, KMime::Content *vCar
         status.setStatusFromFlags(mMessageItem.flags());
 
         headerStylePlugin()->headerStyle()->setMessageStatus(status);
+        headerStylePlugin()->headerStyle()->setCollectionName(mMessageItem.parentCollection().name());
+    } else {
+        headerStylePlugin()->headerStyle()->setCollectionName(QString());
     }
 
     return headerStylePlugin()->headerStyle()->format(aMsg);
