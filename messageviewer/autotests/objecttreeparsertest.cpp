@@ -297,3 +297,13 @@ void ObjectTreeParserTester::test_HTMLExternal()
         QVERIFY(!testWriter.html.contains(QStringLiteral("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
     }
 }
+
+void ObjectTreeParserTester::text_quoteHtml()
+{
+    TestHtmlWriter testWriter;
+    TestCSSHelper testCSSHelper;
+    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    ObjectTreeParser otp(&emptySource);
+    QString result = QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">http</div></div>");
+    QCOMPARE(result, otp.quotedHTML(QStringLiteral("http"), false));
+}

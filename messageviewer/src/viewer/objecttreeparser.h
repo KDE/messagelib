@@ -420,6 +420,9 @@ public:// (during refactoring)
 
     bool isMailmanMessage(KMime::Content *curNode);
 
+    /** Change the string to `quoted' html (meaning, that the quoted
+      part of the message get italized */
+    QString quotedHTML(const QString &pos, bool decorate);
 public:
     static KMime::Content *findType(KMime::Content *content, const QByteArray &mimeType, bool deep, bool wide);
 
@@ -431,10 +434,6 @@ private:
 
     /** ctor helper */
     void init();
-
-    /** Change the string to `quoted' html (meaning, that the quoted
-      part of the message get italized */
-    QString quotedHTML(const QString &pos, bool decorate);
 
     const QTextCodec *codecFor(KMime::Content *node) const;
     /** Check if the newline at position @p newLinePos in string @p s

@@ -2333,7 +2333,9 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                     paraIsRTL = line.isRightToLeft();
                 }
                 htmlStr += QStringLiteral("<div dir=\"%1\">").arg(paraIsRTL ? QStringLiteral("rtl") : QStringLiteral("ltr"));
-                if (quoteLength >= 0) {
+                if (quoteLength == 0) {
+                    htmlStr +=KTextToHTML::convertToHtml( line, convertFlags );
+                } else if (quoteLength > 0) {
                     htmlStr += QString::fromLatin1("<span class=\"quotemarks\">%1</span>%2").arg(line.left(quoteLength))
                             .arg(KTextToHTML::convertToHtml(line.right((line.length())-quoteLength), convertFlags));
                 } else {
