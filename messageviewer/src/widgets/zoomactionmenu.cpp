@@ -19,7 +19,6 @@
 #include <KLocalizedString>
 #include <KToggleAction>
 #include <KActionCollection>
-#include <viewer/mailwebview.h>
 
 using namespace MessageViewer;
 namespace
