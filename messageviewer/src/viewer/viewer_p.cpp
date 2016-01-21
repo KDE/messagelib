@@ -123,7 +123,7 @@
 #include "viewer/urlhandlermanager.h"
 #include "messageviewer/messageviewerutil.h"
 #include "widgets/vcardviewer.h"
-#include "viewer/mailwebview.h"
+#include "viewer/webview/mailwebview.h"
 #include "findbar/findbarwebview.h"
 #include "header/headerstylemenumanager.h"
 

@@ -29,7 +29,7 @@
 #include "widgets/configurewidget.h"
 #include "csshelper.h"
 #include "settings/messageviewersettings.h"
-#include "viewer/mailwebview.h"
+#include "viewer/webview/mailwebview.h"
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "widgets/zoomactionmenu.h"

@@ -45,7 +45,7 @@ if(DEBUG_SIGNATURE)
    add_definitions(-DDEBUG_SIGNATURE)
 endif()
 
-set(_mailwebview_cpp viewer/mailwebview.cpp 
+set(_mailwebview_cpp 
                        adblock/networkaccessmanager.cpp 
                        adblock/webpage.cpp
                        adblock/adblockelementhiding.cpp
@@ -65,6 +65,10 @@ set(_mailwebview_cpp viewer/mailwebview.cpp
                        adblock/adblockcreatefilterdialog.cpp
                        adblock/adblockblockableitemswidget.cpp
                        )
+
+set(libmessageviewer_mailviewer_SRCS
+   viewer/webview/mailwebview.cpp
+   )
 
 set(libmessageviewer_viewer_SRCS
   viewer/attachmentstrategy.cpp
@@ -190,6 +194,7 @@ set(libmessageviewer_SRCS
   settings/messageviewersettings.cpp
   interfaces/bodypartformatter.cpp
   ${_mailwebview_cpp}
+  ${libmessageviewer_mailviewer_SRCS}
 )
 
 ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
@@ -259,6 +264,15 @@ install(TARGETS
     EXPORT KF5MessageViewerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
 )
 
+ecm_generate_headers(MessageViewer_Camelcasewebviewer_HEADERS
+  HEADER_NAMES
+  MailWebView
+  REQUIRED_HEADERS MessageViewer_webviewer_HEADERS
+  PREFIX MessageViewer
+  RELATIVE viewer/webview
+)
+
+
 ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
   HEADER_NAMES
   Viewer
@@ -271,7 +285,6 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
   EditorWatcher
   Stl_Util
   CSSHelperBase
-  MailWebView
   MessagePart
   WebViewAccessKey
   REQUIRED_HEADERS MessageViewer_viewer_HEADERS
@@ -412,6 +425,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 
 
 install(FILES
+    ${MessageViewer_Camelcasewebviewer_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
     ${MessageViewer_Camelcaseviewerplugin_HEADERS}
     ${MessageViewer_Camelcasesettings_HEADERS}
@@ -430,6 +444,7 @@ install(FILES
 )
 
 install(FILES
+    ${MessageViewer_webviewer_HEADERS}
     ${MessageViewer_viewerplugin_HEADERS}
     ${MessageViewer_settings_HEADERS}
     ${MessageViewer_adblock_HEADERS}

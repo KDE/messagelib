@@ -32,7 +32,7 @@
 
 #include "webkitparthtmlwriter.h"
 #include "messageviewer_debug.h"
-#include "viewer/mailwebview.h"
+#include "viewer/webview/mailwebview.h"
 
 #include <QUrl>
 

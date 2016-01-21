@@ -25,7 +25,7 @@
 #include "scamdetection/scamcheckshorturl.h"
 #include "adblock/adblockblockableitemsdialog.h"
 #include "adblock/webpage.h"
-#include "webviewaccesskey.h"
+#include "viewer/webviewaccesskey.h"
 
 #include <KActionCollection>
 #include <QAction>
@@ -390,4 +390,3 @@ bool MailWebView::isAShortUrl(const QUrl &url) const
 }
 
 #include "moc_mailwebview.cpp"
-#include "webviewaccesskey.h"
