@@ -77,6 +77,13 @@ find_package(KF5Gravatar ${GRAVATAR_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5Libkleo ${LIBKLEO_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimCommon ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 
+option(QTWEBENGINE_EXPERIMENTAL_OPTION "Enable support for qtwebengine. False by default." FALSE)
+
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED WebEngine WebEngineWidgets)
+endif()
+
+
 # Support for the GIT revision number in messagecomposer-version.h
 if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
   find_package(Git)
