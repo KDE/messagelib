@@ -2363,9 +2363,9 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
         htmlStr += quoteEnd + cssHelper()->addEndBlockQuote(currQuoteLevel + 1);
     }
 
-    qCDebug(MESSAGEVIEWER_LOG) << "========================================\n"
-                               << htmlStr
-                               << "\n======================================\n";
+    //qCDebug(MESSAGEVIEWER_LOG) << "========================================\n"
+    //                           << htmlStr
+    //                           << "\n======================================\n";
     return htmlStr;
 }
 
