@@ -2252,7 +2252,6 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                 quoteLength = p;
                 break;
             default:  // stop quoting depth calculation
-                quoteLength = p;
                 p = numberOfCaracters;
                 break;
             }
@@ -2336,8 +2335,12 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                 if (quoteLength == 0) {
                     htmlStr +=KTextToHTML::convertToHtml( line, convertFlags );
                 } else if (quoteLength > 0) {
-                    htmlStr += QString::fromLatin1("<span class=\"quotemarks\">%1</span>%2").arg(line.left(quoteLength))
-                            .arg(KTextToHTML::convertToHtml(line.right((line.length())-quoteLength), convertFlags));
+                    quoteLength++;
+                    htmlStr += QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(quoteLength));
+                    const int rightString = (line.length())-quoteLength;
+                    if (rightString > 0) {
+                        htmlStr += KTextToHTML::convertToHtml(line.right(rightString), convertFlags);
+                    }
                 } else {
                     htmlStr += KTextToHTML::convertToHtml( line, convertFlags );
                 }
@@ -2357,8 +2360,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
     if (currQuoteLevel == -1) {
         htmlStr.append(normalEndTag);
     } else {
-        //TODO ?
-        htmlStr.append(quoteEnd);
+        htmlStr += quoteEnd + cssHelper()->addEndBlockQuote(currQuoteLevel + 1);
     }
 
     qCDebug(MESSAGEVIEWER_LOG) << "========================================\n"

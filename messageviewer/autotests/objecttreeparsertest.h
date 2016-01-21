@@ -43,6 +43,7 @@ private Q_SLOTS:
     void test_HTMLExternal();
 
     void text_quoteHtml();
+    void text_quoteHtml_data();
 };
 
 #endif

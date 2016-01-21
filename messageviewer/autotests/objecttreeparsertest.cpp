@@ -298,12 +298,23 @@ void ObjectTreeParserTester::test_HTMLExternal()
     }
 }
 
+void ObjectTreeParserTester::text_quoteHtml_data()
+{
+    QTest::addColumn<QString>("data");
+    QTest::addColumn<QString>("result");
+    QTest::newRow("simpletext") << QStringLiteral("http") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">http</div></div>");
+    QTest::newRow("simplequote") << QStringLiteral(">") << QStringLiteral("<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\">&gt;</div></div></blockquote>");
+    QTest::newRow("doublequotewithtext") << QStringLiteral(">> sddf") << QStringLiteral("<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>> </span>sddf</div></div></blockquote></blockquote>");
+    QTest::newRow("doublequote") << QStringLiteral(">>") << QStringLiteral("<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span></div></div></blockquote></blockquote>");
+}
+
 void ObjectTreeParserTester::text_quoteHtml()
 {
+    QFETCH(QString, data);
+    QFETCH(QString, result);
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
     MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
-    QString result = QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">http</div></div>");
-    QCOMPARE(result, otp.quotedHTML(QStringLiteral("http"), false));
+    QCOMPARE(otp.quotedHTML(data, false), result);
 }
