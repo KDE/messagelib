@@ -2224,6 +2224,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
         }
     }
 
+    int previousQuoteDepth = -1;
     while (beg < length) {
         /* search next occurrence of '\n' */
         pos = s.indexOf(QLatin1Char('\n'), beg, Qt::CaseInsensitive);
@@ -2237,17 +2238,21 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
         /* calculate line's current quoting depth */
         int actQuoteLevel = -1;
         const int numberOfCaracters(line.length());
+        int quoteLength = 0;
         for (int p = 0; p < numberOfCaracters; ++p) {
             switch (line[p].toLatin1()) {
             case '>':
             case '|':
                 actQuoteLevel++;
+                quoteLength = p;
                 break;
             case ' ':  // spaces and tabs are allowed between the quote markers
             case '\t':
             case '\r':
+                quoteLength = p;
                 break;
             default:  // stop quoting depth calculation
+                quoteLength = p;
                 p = numberOfCaracters;
                 break;
             }
@@ -2267,6 +2272,10 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                 htmlStr.append(normalEndTag);
             } else if (currQuoteLevel >= 0 && !curHidden) {
                 htmlStr.append(quoteEnd);
+            }
+            //Close blockquote
+            if (previousQuoteDepth > actQuoteLevel) {
+                htmlStr += cssHelper()->addEndBlockQuote((previousQuoteDepth - actQuoteLevel));
             }
 
             /* start new quotelevel */
@@ -2300,6 +2309,11 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                         }
                     }
                 } else {
+                    // Add blockquote
+                    if (previousQuoteDepth < actQuoteLevel) {
+                        htmlStr += cssHelper()->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
+                    }
+
                     if (actQuoteLevel < 3) {
                         htmlStr += quoteFontTag[actQuoteLevel];
                     } else {
@@ -2319,7 +2333,13 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                     paraIsRTL = line.isRightToLeft();
                 }
                 htmlStr += QStringLiteral("<div dir=\"%1\">").arg(paraIsRTL ? QStringLiteral("rtl") : QStringLiteral("ltr"));
-                htmlStr += KTextToHTML::convertToHtml(line, convertFlags);
+                if (quoteLength >= 0) {
+                    htmlStr += QString::fromLatin1("<span class=\"quotemarks\">%1</span>%2").arg(line.left(quoteLength))
+                            .arg(KTextToHTML::convertToHtml(line.right((line.length())-quoteLength), convertFlags));
+                } else {
+                    htmlStr += KTextToHTML::convertToHtml( line, convertFlags );
+                }
+
                 htmlStr += QLatin1String("</div>");
                 startNewPara = looksLikeParaBreak(s, pos);
             } else {
@@ -2328,12 +2348,14 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                 startNewPara = true;
             }
         }
+        previousQuoteDepth = actQuoteLevel;
     } /* while() */
 
     /* really finish the last quotelevel */
     if (currQuoteLevel == -1) {
         htmlStr.append(normalEndTag);
     } else {
+        //TODO ?
         htmlStr.append(quoteEnd);
     }
 

@@ -175,6 +175,24 @@ void CSSHelperBase::recalculatePGPColors()
     }
 }
 
+QString CSSHelperBase::addEndBlockQuote(int numberBlock) const
+{
+    QString blockQuote;
+    for (int i = 0; i < numberBlock; ++i) {
+        blockQuote += QLatin1String("</blockquote>");
+    }
+    return blockQuote;
+}
+
+QString CSSHelperBase::addStartBlockQuote(int numberBlock) const
+{
+    QString blockQuote;
+    for (int i = 0; i < numberBlock; ++i) {
+        blockQuote += QLatin1String("<blockquote>");
+    }
+    return blockQuote;
+}
+
 QString CSSHelperBase::cssDefinitions(bool fixed) const
 {
     return
@@ -359,7 +377,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
     for (int i = 0; i < 3; ++i) {
         quoteCSS += QStringLiteral("div.quotelevel%1 {\n"
                                    "  color: %2 ! important;\n")
-                    .arg(QString::number(i + 1), mQuoteColor[i].name());
+                    .arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont[i].italic()) {
             quoteCSS += QLatin1String("  font-style: italic ! important;\n");
         }
@@ -376,7 +394,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
     for (int i = 0; i < 3; ++i) {
         quoteCSS += QStringLiteral("div.deepquotelevel%1 {\n"
                                    "  color: %2 ! important;\n")
-                    .arg(QString::number(i + 1), mQuoteColor[i].name());
+                    .arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont[i].italic()) {
             quoteCSS += QLatin1String("  font-style: italic ! important;\n");
         }
@@ -388,6 +406,22 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
         }
         quoteCSS += QLatin1String("}\n\n");
     }
+
+    QString blockQuote;
+    for (int i = 0; i < 9; ++i) {
+        blockQuote += QLatin1String("blockquote ");
+        quoteCSS += QString::fromLatin1("%2{\n"
+                                        "  margin: 4pt 0 4pt 0;\n"
+                                        "  padding: 0 0 0 1em;\n"
+                                        "  border-left: 2px solid %1;\n"
+                                        "  unicode-bidi: -webkit-plaintext\n"
+                                        "}\n\n").arg(quoteColorName(i)).arg(blockQuote);
+    }
+    quoteCSS += QLatin1String(".quotemarks{\n"
+                              "  color:transparent;\n"
+                              "  font-size:0px;\n"
+                              "}\n\n");
+
 
     return
         QStringLiteral("body {\n"
@@ -726,9 +760,14 @@ void CSSHelperBase::setPrintFont(const QFont &font)
     mPrintFont = font;
 }
 
-QColor CSSHelperBase::quoteColor(int level)
+QString CSSHelperBase::quoteColorName( int level ) const
 {
-    const int actualLevel = qMin(qMax(level, 0), 2);
+    return quoteColor(level).name();
+}
+
+QColor CSSHelperBase::quoteColor(int level) const
+{
+    const int actualLevel = qMax( level, 0 ) % 3;
     return mQuoteColor[actualLevel];
 }
 

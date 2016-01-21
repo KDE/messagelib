@@ -71,10 +71,12 @@ public:
     void setPrintFont(const QFont &font);
 
     /** @return the quote color for the given level, where level ranges from 0 to 2 **/
-    QColor quoteColor(int level);
+    QColor quoteColor(int level) const;
 
     QColor pgpWarnColor() const;
 
+    QString addEndBlockQuote(int numberBlock) const;
+    QString addStartBlockQuote(int numberBlock) const;
 protected:
     /** Recalculate PGP frame and body colors (should be called after changing
         color settings) */
@@ -117,6 +119,7 @@ protected:
     QColor cHtmlWarning;
 
 private:
+    QString quoteColorName(int level) const;
     int fontSize(bool fixed, bool print = false) const;
     // returns CSS rules specific to the print media type
     QString printCssDefinitions(bool fixed) const;
