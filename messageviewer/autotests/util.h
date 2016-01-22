@@ -42,7 +42,12 @@ public:
 class TestCSSHelper : public MessageViewer::CSSHelper
 {
 public:
-    TestCSSHelper() : MessageViewer::CSSHelper(0) {}
+    TestCSSHelper() : MessageViewer::CSSHelper(0)
+    {
+        for (int i = 0; i < 3; ++i) {
+            mQuoteColor[i] = QColor(0x00, 0x80 - i * 0x10, 0x00);
+        }
+    }
     virtual ~TestCSSHelper() {}
 
     QString nonQuotedFontTag() const
