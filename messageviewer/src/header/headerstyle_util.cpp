@@ -20,6 +20,7 @@
 #include "header/headerstyle.h"
 #include "messageviewer_debug.h"
 #include <MessageCore/StringUtil>
+#include "utils/iconnamecache.h"
 
 #include "MessageCore/MessageCoreSettings"
 #include "settings/messageviewersettings.h"
@@ -387,27 +388,38 @@ void HeaderStyleUtil::addMailAction(QVariantHash &headerObject)
 
 QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
 {
-    //TODO load icon.
     QString html;
     switch(action) {
-    case Viewer::Trash:
-        html = QStringLiteral("<a href=\"kmailaction:trash\"></a>");
+    case Viewer::Trash: {
+        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("user-trash"), KIconLoader::Small);
+        html = QStringLiteral("<a href=\"kmailaction:trash\"><img src=\"file:///%1\"></a>").arg(iconPath);
         break;
-    case Viewer::Reply:
-        html = QStringLiteral("<a href=\"kmailaction:reply\"></a>");
+    }
+    case Viewer::Reply: {
+        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-sender"), KIconLoader::Small);
+        html = QStringLiteral("<a href=\"kmailaction:reply\"><img src=\"file:///%1\"></a>").arg(iconPath);
         break;
-    case Viewer::ReplyToAll:
-        html = QStringLiteral("<a href=\"kmailaction:replyToAll\"></a>");
+    }
+    case Viewer::ReplyToAll: {
+        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-all"), KIconLoader::Small);
+        html = QStringLiteral("<a href=\"kmailaction:replyToAll\"><img src=\"file:///%1\"></a>").arg(iconPath);
         break;
-    case Viewer::Forward:
-        html = QStringLiteral("<a href=\"kmailaction:forward\"></a>");
+    }
+    case Viewer::Forward: {
+        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-forward"), KIconLoader::Small);
+        html = QStringLiteral("<a href=\"kmailaction:forward\"><img src=\"file:///%1\"></a>").arg(iconPath);
         break;
-    case Viewer::NewMessage:
-        html = QStringLiteral("<a href=\"kmailaction:newMessage\"></a>");
+    }
+    case Viewer::NewMessage: {
+        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-message-new"), KIconLoader::Small);
+        html = QStringLiteral("<a href=\"kmailaction:newMessage\"><img src=\"file:///%1\"></a>").arg(iconPath);
         break;
-    case Viewer::CreateTodo:
-        html = QStringLiteral("<a href=\"kmailaction:createTodo\"></a>");
+    }
+    case Viewer::CreateTodo: {
+        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("task-new"), KIconLoader::Small);
+        html = QStringLiteral("<a href=\"kmailaction:createTodo\"><img src=\"file:///%1\"></a>").arg(iconPath);
         break;
+    }
     }
     return html;
 }
