@@ -773,7 +773,7 @@ void HtmlMessagePart::html(bool decorate)
     if (mSource->htmlMail()) {
         QString bodyText = mBodyHTML;
         HTMLQuoteColorer colorer;
-        colorer.setEnableHtmlQuoteColorer(MessageViewer::MessageViewerSettings::self()->htmlQuoteColorerEnabled());
+        colorer.setEnableHtmlQuoteColorer(false);
         QString extraHead;
         for (int i = 0; i < 3; ++i) {
             colorer.setQuoteColor(i, mSource->cssHelper()->quoteColor(i));

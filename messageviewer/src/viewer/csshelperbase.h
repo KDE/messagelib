@@ -72,6 +72,7 @@ public:
 
     /** @return the quote color for the given level, where level ranges from 0 to 2 **/
     QColor quoteColor(int level) const;
+    QString quoteColorName(int level) const;
 
     QColor pgpWarnColor() const;
 
@@ -119,7 +120,6 @@ protected:
     QColor cHtmlWarning;
 
 private:
-    QString quoteColorName(int level) const;
     int fontSize(bool fixed, bool print = false) const;
     // returns CSS rules specific to the print media type
     QString printCssDefinitions(bool fixed) const;

@@ -2337,7 +2337,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                     htmlStr += QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(quoteLength));
                     const int rightString = (line.length())-quoteLength;
                     if (rightString > 0) {
-                        htmlStr += KTextToHTML::convertToHtml(line.right(rightString), convertFlags);
+                        htmlStr += QStringLiteral("<font color=\"%1\">").arg(cssHelper()->quoteColorName(actQuoteLevel)) + KTextToHTML::convertToHtml(line.right(rightString), convertFlags) + QStringLiteral("</font>");
                     }
                 } else {
                     htmlStr += KTextToHTML::convertToHtml( line, convertFlags );
@@ -2361,9 +2361,9 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
         htmlStr += quoteEnd + cssHelper()->addEndBlockQuote(currQuoteLevel + 1);
     }
 
-    //qCDebug(MESSAGEVIEWER_LOG) << "========================================\n"
-    //                           << htmlStr
-    //                           << "\n======================================\n";
+    // qCDebug(MESSAGEVIEWER_LOG) << "========================================\n"
+    //                            << htmlStr
+    //                            << "\n======================================\n";
     return htmlStr;
 }
 
