@@ -34,17 +34,6 @@ class HTMLQuoteColorer
 public:
 
     explicit HTMLQuoteColorer();
-
-    /**
-     * Sets the quote color of the specific leve.
-     * This class supports 3 levels, from 0 to 2.
-     * Level 2 is the most quoted, with three quote signs in front of the line, and
-     * level 0 is the least quoted, with one quote sign in front of the line.
-     *
-     * If you don't call this, the color of the quoting will be black.
-     */
-    void setQuoteColor(unsigned int level, const QColor &color);
-
     /**
      * Do the work and add nice colors to the HTML.
      * @param htmlSource the input HTML code
@@ -52,10 +41,6 @@ public:
      */
     QString process(const QString &htmlSource, QString &extraHead);
 
-    void setEnableHtmlQuoteColorer(bool enabled);
-private:
-    QColor mQuoteColors[3];
-    bool mEnableHtmlQuoteColorer;
 };
 
 }

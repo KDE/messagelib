@@ -44,7 +44,6 @@ macro(add_messageviewer_crypto_unittest _source)
     add_gpg_crypto_test(${_name} messageviewer-${_name})
 endmacro ()
 
-add_messageviewer_unittest( htmlquotecolorertest.cpp )
 add_messageviewer_crypto_unittest( objecttreeparsertest.cpp )
 add_messageviewer_crypto_unittest( rendertest.cpp )
 add_messageviewer_crypto_unittest( unencryptedmessagetest.cpp )

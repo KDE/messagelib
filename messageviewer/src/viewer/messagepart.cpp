@@ -773,11 +773,7 @@ void HtmlMessagePart::html(bool decorate)
     if (mSource->htmlMail()) {
         QString bodyText = mBodyHTML;
         HTMLQuoteColorer colorer;
-        colorer.setEnableHtmlQuoteColorer(false);
         QString extraHead;
-        for (int i = 0; i < 3; ++i) {
-            colorer.setQuoteColor(i, mSource->cssHelper()->quoteColor(i));
-        }
         bodyText = colorer.process(bodyText, extraHead);
         mOtp->mNodeHelper->setNodeDisplayedEmbedded(mNode, true);
         writer->extraHead(extraHead);
