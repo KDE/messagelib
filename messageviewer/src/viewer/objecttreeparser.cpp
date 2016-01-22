@@ -57,7 +57,6 @@
 #include "job/kleojobexecutor.h"
 #include "messageviewer/nodehelper.h"
 #include "utils/iconnamecache.h"
-#include "viewer/htmlquotecolorer.h"
 #include "messageviewer_debug.h"
 #include "converthtmltoplaintext.h"
 

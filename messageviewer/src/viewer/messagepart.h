@@ -305,6 +305,7 @@ public:
     void fix() const Q_DECL_OVERRIDE;
 
 private:
+    QString processHtml(const QString &htmlSource, QString &extraHead);
     KMime::Content* mNode;
     ObjectTreeSourceIf *mSource;
     QString mBodyHTML;

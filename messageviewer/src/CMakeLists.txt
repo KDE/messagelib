@@ -78,7 +78,6 @@ set(libmessageviewer_viewer_SRCS
   viewer/csshelper.cpp
   viewer/csshelperbase.cpp
   viewer/editorwatcher.cpp
-  viewer/htmlquotecolorer.cpp
   viewer/mimeparttree/mimetreemodel.cpp
   viewer/nodehelper.cpp
   viewer/objecttreeemptysource.cpp

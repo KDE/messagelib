@@ -22,7 +22,6 @@
 #include <libkleo/importjob.h>
 #include "objecttreeparser.h"
 #include "converthtmltoplaintext.h"
-#include "htmlquotecolorer.h"
 #include "csshelper.h"
 #include "cryptohelper.h"
 
@@ -40,6 +39,9 @@
 
 #include <QTextCodec>
 #include <QApplication>
+#include <QWebPage>
+#include <QWebElement>
+#include <QWebFrame>
 
 #include <KLocalizedString>
 
@@ -760,6 +762,26 @@ void HtmlMessagePart::fix() const
     mOtp->mHtmlContentCharset = mCharset;
 }
 
+QString HtmlMessagePart::processHtml(const QString &htmlSource, QString &extraHead)
+{
+    // Create a DOM Document from the HTML source
+    QWebPage page(0);
+    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
+    page.settings()->setAttribute(QWebSettings::JavaEnabled, false);
+    page.settings()->setAttribute(QWebSettings::PluginsEnabled, false);
+
+    page.settings()->setAttribute(QWebSettings::AutoLoadImages, false);
+
+    QWebFrame *frame = page.mainFrame();
+    frame->setHtml(htmlSource);
+
+    const QWebElement body = frame->documentElement().findFirst(QStringLiteral("body"));
+    const QWebElement header = frame->documentElement().findFirst(QStringLiteral("head"));
+
+    extraHead = header.toInnerXml();
+    return body.toInnerXml();
+}
+
 void HtmlMessagePart::html(bool decorate)
 {
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
@@ -772,9 +794,8 @@ void HtmlMessagePart::html(bool decorate)
 
     if (mSource->htmlMail()) {
         QString bodyText = mBodyHTML;
-        HTMLQuoteColorer colorer;
         QString extraHead;
-        bodyText = colorer.process(bodyText, extraHead);
+        bodyText = processHtml(bodyText, extraHead);
         mOtp->mNodeHelper->setNodeDisplayedEmbedded(mNode, true);
         writer->extraHead(extraHead);
 
