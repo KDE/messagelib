@@ -98,7 +98,7 @@ public:
     Core::PreSelectionMode mPreSelectionMode;
 
     QHash<Widget *, QItemSelectionModel *> mWidgetSelectionHash;
-    QList<const QAbstractProxyModel *> mProxyStack;
+    QVector<const QAbstractProxyModel *> mProxyStack;
 
     QToolButton *mNewTabButton;
     QToolButton *mCloseTabButton;
@@ -791,7 +791,7 @@ QItemSelection Pane::Private::mapSelectionFromSource(const QItemSelection &selec
 {
     QItemSelection result = selection;
 
-    typedef QList<const QAbstractProxyModel *>::ConstIterator Iterator;
+    typedef QVector<const QAbstractProxyModel *>::ConstIterator Iterator;
 
     for (Iterator it = mProxyStack.end() - 1; it != mProxyStack.begin(); --it) {
         result = (*it)->mapSelectionFromSource(result);
