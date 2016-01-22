@@ -306,6 +306,8 @@ void ObjectTreeParserTester::text_quoteHtml_data()
     QTest::newRow("simplequote") << QStringLiteral(">") << QStringLiteral("<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\">&gt;</div></div></blockquote>");
     QTest::newRow("doublequotewithtext") << QStringLiteral(">> sddf") << QStringLiteral("<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>> </span><font color=\"#007000\">sddf</font></div></div></blockquote></blockquote>");
     QTest::newRow("doublequote") << QStringLiteral(">>") << QStringLiteral("<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span></div></div></blockquote></blockquote>");
+    QTest::newRow("simplespace") << QStringLiteral(" ") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;</div></div>");
+    QTest::newRow("multispace") << QStringLiteral("            Bug ID: 358324") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bug ID: 358324</div></div>");
 }
 
 void ObjectTreeParserTester::text_quoteHtml()

@@ -2235,6 +2235,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
         QString line(s.mid(beg, pos - beg));
         beg = pos + 1;
 
+        bool foundQuote = false;
         /* calculate line's current quoting depth */
         int actQuoteLevel = -1;
         const int numberOfCaracters(line.length());
@@ -2245,6 +2246,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
             case '|':
                 actQuoteLevel++;
                 quoteLength = p;
+                foundQuote = true;
                 break;
             case ' ':  // spaces and tabs are allowed between the quote markers
             case '\t':
@@ -2256,7 +2258,9 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                 break;
             }
         } /* for() */
-
+        if (!foundQuote) {
+            quoteLength = 0;
+        }
         bool actHidden = false;
 
         // This quoted line needs be hidden
