@@ -2336,7 +2336,8 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                     paraIsRTL = line.isRightToLeft();
                 }
                 htmlStr += QStringLiteral("<div dir=\"%1\">").arg(paraIsRTL ? QStringLiteral("rtl") : QStringLiteral("ltr"));
-                if (quoteLength > 0) {
+                // if quoteLengh == 0 && foundQuote => a simple quote
+                if (foundQuote) {
                     quoteLength++;
                     htmlStr += QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(quoteLength));
                     const int rightString = (line.length())-quoteLength;
