@@ -169,9 +169,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     <entry name="whiteReferer" type="StringList">
         <default></default>
     </entry>
-    <entry name="HtmlQuoteColorerEnabled" type="Bool">
-        <default>false</default>
-    </entry>
   </group>
   <group name="MDN">
     <entry name="notSendWhenEncrypted" type="Bool" key="not-send-when-encrypted">

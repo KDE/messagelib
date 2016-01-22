@@ -23,8 +23,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>457</width>
-    <height>415</height>
+    <width>482</width>
+    <height>456</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -69,13 +69,6 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="kcfg_HtmlQuoteColorerEnabled">
-       <property name="text">
-        <string>Show HTML colored quote (It can take some time on specific html email)</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <spacer name="horizontalSpacer">
@@ -99,7 +92,7 @@
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>Au&amp;tomatic collapse level:</string>
+          <string>Automatic collapse &amp;level:</string>
          </property>
          <property name="buddy">
           <cstring>kcfg_CollapseQuoteLevelSpin</cstring>
@@ -166,7 +159,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>&amp;Override character encoding:</string>
+        <string>O&amp;verride character encoding:</string>
        </property>
        <property name="buddy">
         <cstring>overrideCharacterEncoding</cstring>
@@ -186,7 +179,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Minimum font size:</string>
+        <string>&amp;Minimum font size:</string>
        </property>
        <property name="buddy">
         <cstring>kcfg_MinimumFontSize</cstring>
