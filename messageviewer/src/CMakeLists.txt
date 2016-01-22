@@ -314,6 +314,7 @@ ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
   HEADER_NAMES
   MessageViewerUtil
   MarkMessageReadHandler
+  IconNameCache
   REQUIRED_HEADERS MessageViewer_utils_HEADERS
   PREFIX MessageViewer
   RELATIVE utils

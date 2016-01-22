@@ -21,6 +21,7 @@
 
 #include <QMap>
 #include <QString>
+#include "messageviewer_export.h"
 
 namespace MessageViewer
 {
@@ -32,7 +33,7 @@ namespace MessageViewer
  *
  * The IconNameCache caches the result of iconPath() in a map and solves the slowness.
  */
-class IconNameCache
+class MESSAGEVIEWER_EXPORT IconNameCache
 {
 public:
 
