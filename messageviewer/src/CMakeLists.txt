@@ -74,7 +74,7 @@ set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
 
 if (QTWEBENGINE_EXPERIMENTAL_OPTION)
 set(libmessageviewer_mailviewer_SRCS
-   viewer/webengine/mailwebengine.cpp
+   viewer/webengine/mailwebengineview.cpp
    ${libmessageviewer_mailviewer_SRCS}
    )
    set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})

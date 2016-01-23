@@ -18,13 +18,17 @@
 #ifndef MAILWEBENGINE_H
 #define MAILWEBENGINE_H
 
+#include <QWebEngineView>
+
+
 namespace MessageViewer
 {
-class MailWebEngine
+class MailWebEngineView : public QWebEngineView
 {
+    Q_OBJECT
 public:
-    MailWebEngine();
-    ~MailWebEngine();
+    explicit MailWebEngineView(QWidget *parent = Q_NULLPTR);
+    ~MailWebEngineView();
 };
 }
 

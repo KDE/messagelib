@@ -15,16 +15,17 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailwebengine.h"
+#include "mailwebengineview.h"
 
 using namespace MessageViewer;
 
-MailWebEngine::MailWebEngine()
+MailWebEngineView::MailWebEngineView(QWidget *parent)
+    : QWebEngineView(parent)
 {
 
 }
 
-MailWebEngine::~MailWebEngine()
+MailWebEngineView::~MailWebEngineView()
 {
 
 }
