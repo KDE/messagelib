@@ -66,9 +66,17 @@ set(_mailwebview_cpp
                        adblock/adblockblockableitemswidget.cpp
                        )
 
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+set(libmessageviewer_mailviewer_SRCS
+   viewer/webengine/mailwebengine.cpp
+   )
+   set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets)
+else()
 set(libmessageviewer_mailviewer_SRCS
    viewer/webview/mailwebview.cpp
    )
+   set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
+endif()
 
 set(libmessageviewer_viewer_SRCS
   viewer/attachmentstrategy.cpp
@@ -228,8 +236,7 @@ PUBLIC
   KF5::Libkleo
 PRIVATE
   KF5::ItemViews
-  KF5::WebKit 
-  Qt5::WebKitWidgets
+  ${libmessageviewer_web_LIB}
   KF5::Libkdepim
   KF5::GrantleeTheme
   KF5::KaddressbookGrantlee
