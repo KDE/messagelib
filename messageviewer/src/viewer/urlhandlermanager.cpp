@@ -107,9 +107,6 @@ public:
             } else if (urlPath == QStringLiteral("newMessage")) {
                 viewer->setMailAction(MessageViewer::Viewer::NewMessage);
                 return true;
-            } else if (urlPath == QStringLiteral("createTodo")) {
-                viewer->setMailAction(MessageViewer::Viewer::CreateTodo);
-                return true;
             }
         }
         return false;

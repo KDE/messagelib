@@ -383,7 +383,6 @@ void HeaderStyleUtil::addMailAction(QVariantHash &headerObject)
     headerObject.insert(QStringLiteral("replyallaction"), mailAction(Viewer::ReplyToAll));
     headerObject.insert(QStringLiteral("forwardaction"), mailAction(Viewer::Forward));
     headerObject.insert(QStringLiteral("newmessageaction"), mailAction(Viewer::NewMessage));
-    headerObject.insert(QStringLiteral("createtodoaction"), mailAction(Viewer::CreateTodo));
 }
 
 QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
@@ -413,11 +412,6 @@ QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
     case Viewer::NewMessage: {
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-message-new"), KIconLoader::Small);
         html = QStringLiteral("<a href=\"kmailaction:newMessage\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("New Message"));
-        break;
-    }
-    case Viewer::CreateTodo: {
-        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("task-new"), KIconLoader::Small);
-        html = QStringLiteral("<a href=\"kmailaction:createTodo\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Create To-Do"));
         break;
     }
     }
