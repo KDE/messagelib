@@ -66,16 +66,18 @@ set(_mailwebview_cpp
                        adblock/adblockblockableitemswidget.cpp
                        )
 
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
-set(libmessageviewer_mailviewer_SRCS
-   viewer/webengine/mailwebengine.cpp
-   )
-   set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets)
-else()
+# For the moment we can'r replace mailwebengine
 set(libmessageviewer_mailviewer_SRCS
    viewer/webview/mailwebview.cpp
    )
-   set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
+set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
+
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+set(libmessageviewer_mailviewer_SRCS
+   viewer/webengine/mailwebengine.cpp
+   ${libmessageviewer_mailviewer_SRCS}
+   )
+   set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
 
 set(libmessageviewer_viewer_SRCS
