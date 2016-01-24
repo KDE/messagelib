@@ -16,6 +16,7 @@
 */
 
 #include "mailwebengineview.h"
+#include "mailwebenginepage.h"
 
 using namespace MessageViewer;
 
@@ -23,6 +24,11 @@ MailWebEngineView::MailWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
 
+    MailWebEnginePage *pageEngine = new MailWebEnginePage(this);
+    setPage(pageEngine);
+
+    setFocusPolicy(Qt::WheelFocus);
+    connect(pageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
 }
 
 MailWebEngineView::~MailWebEngineView()

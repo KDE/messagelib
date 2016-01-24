@@ -29,6 +29,8 @@ class MailWebEngineView : public QWebEngineView
 public:
     explicit MailWebEngineView(QWidget *parent = Q_NULLPTR);
     ~MailWebEngineView();
+Q_SIGNALS:
+    void openUrl(const QUrl &url);
 };
 }
 
