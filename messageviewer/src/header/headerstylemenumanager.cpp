@@ -110,6 +110,7 @@ void HeaderStyleMenuManagerPrivate::readSettings()
             qDebug() << "unknown style : headerstyle " << headerStyle << " headerstrategy :" << headerSetDisplayed;
         }
     }
+    //Fallback
     if (headerStyleName.isEmpty()) {
         headerStyleName = QStringLiteral("fancy");
     }
