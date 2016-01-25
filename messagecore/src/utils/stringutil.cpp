@@ -25,11 +25,14 @@
 #include <kmime/kmime_headers.h>
 #include <kmime/kmime_message.h>
 #include <KEmailAddress>
+#include <KLocalizedString>
 
 #include <KConfigGroup>
 #include "messagecore_debug.h"
 #include <KUser>
 
+#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagement/Identity>
 #include <QHostInfo>
 #include <QRegExp>
 #include <QStringList>
@@ -530,6 +533,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
     QString result;
     int numberAddresses = 0;
     bool expandableInserted = false;
+    KIdentityManagement::IdentityManager *im = new KIdentityManagement::IdentityManager( true );
 
     foreach (const KMime::Types::Mailbox &mailbox, mailboxList) {
         if (!mailbox.prettyAddress().isEmpty()) {
@@ -545,14 +549,15 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
                           + QString::fromLatin1(QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
                           + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
             }
+            const bool foundMe = im->identityForAddress( mailbox.prettyAddress() ) != KIdentityManagement::Identity::null();
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.
-                    result += quoteHtmlChars(mailbox.name(), true);
+                    result += foundMe ? i18n("Me") : quoteHtmlChars(mailbox.name(), true);
                 } else {
-                    result += quoteHtmlChars(mailbox.prettyAddress(), true);
+                    result += foundMe ? i18n("Me") : quoteHtmlChars(mailbox.prettyAddress(), true);
                 }
             } else {
-                result += quoteHtmlChars(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary), true);
+                result += foundMe ? i18n("Me") : quoteHtmlChars(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary), true);
             }
             if (link == ShowLink) {
                 result += QLatin1String("</a>, ");

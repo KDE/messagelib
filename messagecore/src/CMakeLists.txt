@@ -68,6 +68,7 @@ PRIVATE
   KF5::IconThemes
   Qt5::Network
   KF5::I18n
+  KF5::IdentityManagement
 )
 
 target_include_directories(KF5MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageCore/;${KDE_INSTALL_INCLUDEDIR_KF5}/messagecore>")
