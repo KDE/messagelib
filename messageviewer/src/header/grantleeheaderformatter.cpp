@@ -155,9 +155,12 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     }
     headerObject.insert(QStringLiteral("datei18n"), i18n("Date:"));
 
-    headerObject.insert(QStringLiteral("dateshort"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, true)));
-    headerObject.insert(QStringLiteral("datelong"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, false)));
+    headerObject.insert(QStringLiteral("dateshort"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::ShortDate)));
+    headerObject.insert(QStringLiteral("datelong"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::CustomDate)));
     headerObject.insert(QStringLiteral("date"), d->headerStyleUtil.dateStr(message->date()->dateTime()));
+    headerObject.insert(QStringLiteral("datefancylong"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::FancyLongDate)));
+    headerObject.insert(QStringLiteral("datefancyshort"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::FancyShortDate)));
+    headerObject.insert(QStringLiteral("datelocalelong"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::LongDate)));
 
     if (MessageViewer::MessageViewerSettings::self()->showUserAgent()) {
         if (auto hdr = message->userAgent(false)) {

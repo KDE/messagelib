@@ -52,7 +52,7 @@ QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flag
 }
 
 // Prepare the date string (when printing always use the localized date)
-QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, bool shortDate) const
+QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const
 {
     const QDateTime dateTime = message->date()->dateTime();
     if (!dateTime.isValid()) {
@@ -61,10 +61,19 @@ QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, bool
     if (printing) {
         return QLocale::system().toString(dateTime, QLocale::ShortFormat);
     } else {
-        if (shortDate) {
+        switch(dateFormat) {
+        case ShortDate:
+            return QLocale::system().toString(dateTime, QLocale::ShortFormat);
+        case LongDate:
+            return QLocale::system().toString(dateTime, QLocale::LongFormat);
+        case FancyShortDate:
             return dateShortStr(dateTime);
-        } else {
-            return dateStr(dateTime);
+        case FancyLongDate:
+            //Laurent fix me
+            //TODO return QLocale::system().toString(dateTime, QLocale::LongFormat);
+        case CustomDate:
+        default:
+            return dateStr( dateTime );
         }
     }
 }

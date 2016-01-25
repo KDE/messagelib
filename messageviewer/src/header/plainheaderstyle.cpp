@@ -79,7 +79,7 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
                      mHeaderStyleUtil.subjectString(message) + QLatin1String("</b></div>\n");
 
     if (strategy->showHeader(QStringLiteral("date"))) {
-        headerStr.append(i18n("Date: ") + mHeaderStyleUtil.strToHtml(mHeaderStyleUtil.dateString(message, isPrinting(), /* short = */ false)) + QLatin1String("<br/>\n"));
+        headerStr.append(i18n("Date: ") + mHeaderStyleUtil.strToHtml(mHeaderStyleUtil.dateString(message, isPrinting(), /* short = */ MessageViewer::HeaderStyleUtil::CustomDate)) + QLatin1String("<br/>\n"));
     }
 
     if (strategy->showHeader(QStringLiteral("from"))) {
