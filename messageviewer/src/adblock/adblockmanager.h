@@ -119,9 +119,6 @@
 // END NOTE ----------------------------------------------------------------------------------------------------------
 
 // Local Includes
-#include "adblockelementhiding.h"
-#include "adblockhostmatcher.h"
-#include "adblock/adblockrule.h"
 #include "messageviewer_export.h"
 // KDE Includes
 #include <KIO/Job>
@@ -136,10 +133,10 @@ class QNetworkRequest;
 class QWebFrame;
 
 // Definitions
-typedef QList<MessageViewer::AdBlockRule> AdBlockRuleList;
 
 namespace MessageViewer
 {
+class AdBlockManagerPrivate;
 class MESSAGEVIEWER_EXPORT AdBlockManager : public QObject
 {
     Q_OBJECT
@@ -189,13 +186,7 @@ Q_SIGNALS:
     void reloadCurrentPage();
 
 private:
-    AdBlockHostMatcher _hostBlackList;
-    AdBlockHostMatcher _hostWhiteList;
-    AdBlockRuleList _blackList;
-    AdBlockRuleList _whiteList;
-
-    AdBlockElementHiding _elementHiding;
-
+    AdBlockManagerPrivate *const d;
     static QWeakPointer<AdBlockManager> s_adBlockManager;
 };
 }

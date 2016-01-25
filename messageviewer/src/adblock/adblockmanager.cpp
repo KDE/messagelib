@@ -29,6 +29,9 @@
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
 #include "adblock/adblockutil.h"
+#include "adblockelementhiding.h"
+#include "adblockhostmatcher.h"
+#include "adblock/adblockrule.h"
 
 #include "webpage.h"
 
@@ -49,7 +52,25 @@
 #include <QWebFrame>
 #include <QRegularExpression>
 
+typedef QList<MessageViewer::AdBlockRule> AdBlockRuleList;
+
 using namespace MessageViewer;
+
+class MessageViewer::AdBlockManagerPrivate
+{
+public:
+    AdBlockManagerPrivate()
+    {
+
+    }
+    AdBlockHostMatcher _hostBlackList;
+    AdBlockHostMatcher _hostWhiteList;
+    AdBlockRuleList _blackList;
+    AdBlockRuleList _whiteList;
+
+    AdBlockElementHiding _elementHiding;
+};
+
 QWeakPointer<AdBlockManager> AdBlockManager::s_adBlockManager;
 
 AdBlockManager *AdBlockManager::self()
@@ -63,15 +84,17 @@ AdBlockManager *AdBlockManager::self()
 // ----------------------------------------------------------------------------------------------
 
 AdBlockManager::AdBlockManager(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      d(new AdBlockManagerPrivate)
 {
     loadSettings();
 }
 
 AdBlockManager::~AdBlockManager()
 {
-    _whiteList.clear();
-    _blackList.clear();
+    d->_whiteList.clear();
+    d->_blackList.clear();
+    delete d;
 }
 
 bool AdBlockManager::isEnabled()
@@ -94,13 +117,13 @@ void AdBlockManager::loadSettings()
     KConfig config(QStringLiteral("messagevieweradblockrc"));
     // ----------------
 
-    _hostWhiteList.clear();
-    _hostBlackList.clear();
+    d->_hostWhiteList.clear();
+    d->_hostBlackList.clear();
 
-    _whiteList.clear();
-    _blackList.clear();
+    d->_whiteList.clear();
+    d->_blackList.clear();
 
-    _elementHiding.clear();
+    d->_elementHiding.clear();
 
     if (!isEnabled()) {
         return;
@@ -174,7 +197,7 @@ void AdBlockManager::loadRuleString(const QString &stringRule)
 
     // white rules
     if (stringRule.startsWith(QStringLiteral("@@"))) {
-        if (_hostWhiteList.tryAddFilter(stringRule)) {
+        if (d->_hostWhiteList.tryAddFilter(stringRule)) {
             return;
         }
 
@@ -184,22 +207,22 @@ void AdBlockManager::loadRuleString(const QString &stringRule)
         }
 
         AdBlockRule rule(filter);
-        _whiteList << rule;
+        d->_whiteList << rule;
         return;
     }
 
     // hide (CSS) rules
     if (stringRule.contains(QStringLiteral("##"))) {
-        _elementHiding.addRule(stringRule);
+        d->_elementHiding.addRule(stringRule);
         return;
     }
 
-    if (_hostBlackList.tryAddFilter(stringRule)) {
+    if (d->_hostBlackList.tryAddFilter(stringRule)) {
         return;
     }
 
     AdBlockRule rule(stringRule);
-    _blackList << rule;
+    d->_blackList << rule;
 }
 
 bool AdBlockManager::blockRequest(const QNetworkRequest &request)
@@ -229,12 +252,12 @@ bool AdBlockManager::blockRequest(const QNetworkRequest &request)
     const QString host = request.url().host();
 
     // check white rules before :)
-    if (_hostWhiteList.match(host)) {
+    if (d->_hostWhiteList.match(host)) {
         qCDebug(MESSAGEVIEWER_LOG) << "ADBLOCK: WHITE RULE (@@) Matched by string: " << urlString;
         return false;
     }
 
-    Q_FOREACH (const AdBlockRule &filter, _whiteList) {
+    Q_FOREACH (const AdBlockRule &filter, d->_whiteList) {
         if (filter.match(request, urlString, urlStringLowerCase)) {
             qCDebug(MESSAGEVIEWER_LOG) << "ADBLOCK: WHITE RULE (@@) Matched by string: " << urlString;
             return false;
@@ -242,12 +265,12 @@ bool AdBlockManager::blockRequest(const QNetworkRequest &request)
     }
 
     // then check the black ones :(
-    if (_hostBlackList.match(host)) {
+    if (d->_hostBlackList.match(host)) {
         qCDebug(MESSAGEVIEWER_LOG) << "ADBLOCK: BLACK RULE Matched by string: " << urlString;
         return true;
     }
 
-    Q_FOREACH (const AdBlockRule &filter, _blackList) {
+    Q_FOREACH (const AdBlockRule &filter, d->_blackList) {
         if (filter.match(request, urlString, urlStringLowerCase)) {
             qCDebug(MESSAGEVIEWER_LOG) << "ADBLOCK: BLACK RULE Matched by string: " << urlString;
             return true;
@@ -360,7 +383,7 @@ bool AdBlockManager::isAdblockEnabledForHost(const QString &host)
         return false;
     }
 
-    return ! _hostWhiteList.match(host);
+    return ! d->_hostWhiteList.match(host);
 }
 
 void AdBlockManager::applyHidingRules(QWebFrame *frame)
@@ -399,6 +422,6 @@ void AdBlockManager::applyHidingRules(bool ok)
 
     QWebElement document = frame->documentElement();
 
-    _elementHiding.apply(document, mainPageHost);
+    d->_elementHiding.apply(document, mainPageHost);
 }
 
