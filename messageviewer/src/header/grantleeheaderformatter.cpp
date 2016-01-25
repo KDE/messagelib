@@ -110,6 +110,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
 
     headerObject.insert(QStringLiteral("toi18n"), i18n("To:"));
     headerObject.insert(QStringLiteral("to"), StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayFullAddress));
+    headerObject.insert(QStringLiteral("toNameOnly"), StringUtil::emailAddrAsAnchor( message->to(), StringUtil::DisplayNameOnly ));
     headerObject.insert(QStringLiteral("toStr"), message->to()->asUnicodeString());
     const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->to(), MessageCore::StringUtil::DisplayFullAddress,
                         QString(), MessageCore::StringUtil::ShowLink,
@@ -121,12 +122,14 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
         headerObject.insert(QStringLiteral("replyToi18n"), i18n("Reply to:"));
         headerObject.insert(QStringLiteral("replyTo"), StringUtil::emailAddrAsAnchor(message->replyTo(), StringUtil::DisplayFullAddress));
         headerObject.insert(QStringLiteral("replyToStr"), message->replyTo()->asUnicodeString());
+        headerObject.insert(QStringLiteral("replyToNameOnly"), StringUtil::emailAddrAsAnchor( message->replyTo(), StringUtil::DisplayNameOnly ));
     }
 
     if (message->cc(false)) {
         headerObject.insert(QStringLiteral("cci18n"), i18n("CC:"));
         headerObject.insert(QStringLiteral("cc"), StringUtil::emailAddrAsAnchor(message->cc(), StringUtil::DisplayFullAddress));
         headerObject.insert(QStringLiteral("ccStr"), message->cc()->asUnicodeString());
+        headerObject.insert(QStringLiteral("ccNameOnly"), StringUtil::emailAddrAsAnchor( message->cc(), StringUtil::DisplayNameOnly ));
         headerObject.insert(QStringLiteral("ccMailbox"), QVariant::fromValue(message->cc()));
         const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->cc(), MessageCore::StringUtil::DisplayFullAddress,
                             QString(), MessageCore::StringUtil::ShowLink,
@@ -137,6 +140,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     if (message->bcc(false)) {
         headerObject.insert(QStringLiteral("bcci18n"), i18n("BCC:"));
         headerObject.insert(QStringLiteral("bcc"), StringUtil::emailAddrAsAnchor(message->bcc(), StringUtil::DisplayFullAddress));
+        headerObject.insert(QStringLiteral("bccNameOnly"), StringUtil::emailAddrAsAnchor( message->bcc(), StringUtil::DisplayNameOnly ));
         headerObject.insert(QStringLiteral("bccStr"), message->bcc()->asUnicodeString());
         headerObject.insert(QStringLiteral("bccMailbox"), QVariant::fromValue(message->bcc()));
         const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->bcc(), MessageCore::StringUtil::DisplayFullAddress,
