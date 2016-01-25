@@ -16,6 +16,8 @@
 */
 
 #include "mailwebenginepage.h"
+#include <QFontDatabase>
+#include <QWebEngineSettings>
 
 using namespace MessageViewer;
 
@@ -23,6 +25,13 @@ MailWebEnginePage::MailWebEnginePage(QObject *parent)
     : QWebEnginePage(parent)
 {
 
+    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
+    //settings()->setAttribute(QWebSettings::JavaEnabled, false);
+    //settings()->setAttribute(QWebSettings::PluginsEnabled, false);
+
+    const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
+    settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
+    settings()->setFontSize(QWebEngineSettings::DefaultFontSize, font.pixelSize());
 }
 
 MailWebEnginePage::~MailWebEnginePage()
