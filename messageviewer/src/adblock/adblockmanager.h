@@ -122,7 +122,7 @@
 #include "adblockelementhiding.h"
 #include "adblockhostmatcher.h"
 #include "adblock/adblockrule.h"
-
+#include "messageviewer_export.h"
 // KDE Includes
 #include <KIO/Job>
 
@@ -140,7 +140,7 @@ typedef QList<MessageViewer::AdBlockRule> AdBlockRuleList;
 
 namespace MessageViewer
 {
-class AdBlockManager : public QObject
+class MESSAGEVIEWER_EXPORT AdBlockManager : public QObject
 {
     Q_OBJECT
 

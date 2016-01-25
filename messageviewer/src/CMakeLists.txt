@@ -401,6 +401,7 @@ ecm_generate_headers(MessageViewer_Camelcaseadblock_HEADERS
   AdBlockSettingWidget  
   AdBlockListWidget
   AdBlockBlockableItemsDialog
+  AdBlockManager
   WebPage
   REQUIRED_HEADERS MessageViewer_adblock_HEADERS
   PREFIX MessageViewer
