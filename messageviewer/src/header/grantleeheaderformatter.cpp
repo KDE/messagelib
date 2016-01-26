@@ -204,6 +204,9 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
         //kolab/issue3254 (printed mail cut at the left side)
         //Use it just for testing if we are in printing mode
         headerObject.insert(QStringLiteral("isprinting"), i18n("Printing mode"));
+        headerObject.insert(QStringLiteral("printmode"), QStringLiteral("printmode"));
+    } else {
+        headerObject.insert(QStringLiteral("screenmode"), QStringLiteral("screenmode"));
     }
 
     // colors depend on if it is encapsulated or not
