@@ -550,14 +550,15 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
                           + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
             }
             const bool foundMe = im->identityForAddress( mailbox.prettyAddress() ) != KIdentityManagement::Identity::null();
+            const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.
-                    result += foundMe ? i18n("Me") : quoteHtmlChars(mailbox.name(), true);
+                    result += foundMe ? i18nMe : quoteHtmlChars(mailbox.name(), true);
                 } else {
-                    result += foundMe ? i18n("Me") : quoteHtmlChars(mailbox.prettyAddress(), true);
+                    result += foundMe ? i18nMe : quoteHtmlChars(mailbox.prettyAddress(), true);
                 }
             } else {
-                result += foundMe ? i18n("Me") : quoteHtmlChars(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary), true);
+                result += foundMe ? i18nMe : quoteHtmlChars(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary), true);
             }
             if (link == ShowLink) {
                 result += QLatin1String("</a>, ");
