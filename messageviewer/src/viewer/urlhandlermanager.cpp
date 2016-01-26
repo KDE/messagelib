@@ -135,8 +135,10 @@ public:
                 return i18n("Forward");
             } else if (urlPath == QStringLiteral("newMessage")) {
                 return i18n("New Message");
-            } else if (urlPath == QStringLiteral("createTodo")) {
-                return i18n("Create ToDo");
+            } else if (urlPath == QStringLiteral("print")) {
+                return i18n("Print Message");
+            } else if (urlPath == QStringLiteral("printpreview")) {
+                return i18n("Print Preview Message");
             }
         }
         return QString();
