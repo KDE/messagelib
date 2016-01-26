@@ -131,7 +131,9 @@ public:
         Reply,
         ReplyToAll,
         Forward,
-        NewMessage
+        NewMessage,
+        Print,
+        PrintPreview
     };
 
     /**

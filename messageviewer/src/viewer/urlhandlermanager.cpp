@@ -107,6 +107,12 @@ public:
             } else if (urlPath == QStringLiteral("newMessage")) {
                 viewer->setMailAction(MessageViewer::Viewer::NewMessage);
                 return true;
+            } else if (urlPath == QStringLiteral("print")) {
+                viewer->setMailAction(MessageViewer::Viewer::Print);
+                return true;
+            } else if (urlPath == QStringLiteral("printpreview")) {
+                viewer->setMailAction(MessageViewer::Viewer::PrintPreview);
+                return true;
             }
         }
         return false;

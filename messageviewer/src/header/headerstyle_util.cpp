@@ -423,6 +423,16 @@ QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
         html = QStringLiteral("<a href=\"kmailaction:newMessage\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("New Message"));
         break;
     }
+    case Viewer::Print: {
+        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("document-print"), KIconLoader::Small);
+        html = QStringLiteral("<a href=\"kmailaction:print\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Print"));
+        break;
+    }
+    case Viewer::PrintPreview: {
+        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("document-print-preview"), KIconLoader::Small);
+        html = QStringLiteral("<a href=\"kmailaction:printpreview\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Print Preview"));
+        break;
+    }
     }
     return html;
 }
