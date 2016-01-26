@@ -392,6 +392,8 @@ void HeaderStyleUtil::addMailAction(QVariantHash &headerObject)
     headerObject.insert(QStringLiteral("replyallaction"), mailAction(Viewer::ReplyToAll));
     headerObject.insert(QStringLiteral("forwardaction"), mailAction(Viewer::Forward));
     headerObject.insert(QStringLiteral("newmessageaction"), mailAction(Viewer::NewMessage));
+    headerObject.insert(QStringLiteral("printmessageaction"), mailAction(Viewer::Print));
+    headerObject.insert(QStringLiteral("printpreviewmessageaction"), mailAction(Viewer::PrintPreview));
 }
 
 QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
