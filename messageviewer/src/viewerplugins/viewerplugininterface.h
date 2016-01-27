@@ -20,7 +20,7 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
-#include <kmime/kmime_message.h>
+#include <KMime/Message>
 #include <AkonadiCore/Item>
 
 class QAction;
