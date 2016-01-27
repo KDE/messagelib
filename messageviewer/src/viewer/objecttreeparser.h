@@ -44,7 +44,6 @@
 
 #include <QList>
 #include "objecttreeemptysource.h"
-#include "messagepart.h"
 
 class QString;
 
@@ -68,6 +67,11 @@ class HtmlWriter;
 class CSSHelper;
 class AttachmentStrategy;
 class NodeHelper;
+class MessagePart;
+class MimeMessagePart;
+
+typedef QSharedPointer<MessagePart> MessagePartPtr;
+typedef QSharedPointer<MimeMessagePart> MimeMessagePartPtr;
 
 class MESSAGEVIEWER_EXPORT ProcessResult
 {
@@ -364,15 +368,15 @@ private:
     * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
     * top-level content.
     */
-    MessagePart::Ptr parseObjectTreeInternal(KMime::Content *node);
+    MessagePartPtr parseObjectTreeInternal(KMime::Content *node);
 
-    MessagePart::Ptr defaultHandling(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
 
     /** 1. Create a new partNode using 'content' data and Content-Description
           found in 'cntDesc'.
       2. Parse the 'node' to display the content.
     */
-    MimeMessagePart::Ptr createAndParseTempNode(KMime::Content *parentNode, const char *content, const char *cntDesc);
+    MimeMessagePartPtr createAndParseTempNode(KMime::Content *parentNode, const char *content, const char *cntDesc);
 
     /** Writes out the information contained in a GpgME::ImportResult */
     void writeCertificateImportResult(const GpgME::ImportResult &res);
@@ -394,16 +398,16 @@ private:
 
 public:// (during refactoring)
 
-    MessagePart::Ptr processTextHtmlSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePart::Ptr processTextPlainSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePart::Ptr processMailmanSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr processTextHtmlSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr processTextPlainSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr processMailmanSubtype(KMime::Content *node, ProcessResult &result);
 
-    MessagePart::Ptr processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePart::Ptr processMultiPartAlternativeSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePart::Ptr processMultiPartSignedSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePart::Ptr processMultiPartEncryptedSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr processMultiPartAlternativeSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr processMultiPartSignedSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr processMultiPartEncryptedSubtype(KMime::Content *node, ProcessResult &result);
 
-    MessagePart::Ptr  processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr  processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
 
     void writePartIcon(KMime::Content *msgPart, bool inlineImage = false);
 
