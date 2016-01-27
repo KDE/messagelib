@@ -22,7 +22,6 @@
 #include "messageviewer_export.h"
 class KToggleAction;
 class KActionCollection;
-class QWebView;
 namespace MessageViewer
 {
 class ZoomActionMenuPrivate;
