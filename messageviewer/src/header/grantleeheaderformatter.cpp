@@ -242,7 +242,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     }
 
     headerObject.insert(QStringLiteral("vcardi18n"), i18n("[vcard]"));
-
+    headerObject.insert(QStringLiteral("readOnlyMessage"), style->readOnlyMessage());
 
     //Action
     d->headerStyleUtil.addMailAction(headerObject);

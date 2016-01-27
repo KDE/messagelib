@@ -49,7 +49,8 @@ HeaderStyle::HeaderStyle()
       mSourceObject(0),
       mPrinting(false),
       mTopLevel(true),
-      mAllowAsync(false)
+      mAllowAsync(false),
+      mReadOnlyMessage(false)
 {
 }
 
@@ -171,5 +172,15 @@ void HeaderStyle::setCollectionName(const QString &name)
 QString HeaderStyle::collectionName() const
 {
     return mCollectionName;
+}
+
+bool HeaderStyle::readOnlyMessage() const
+{
+    return mReadOnlyMessage;
+}
+
+void HeaderStyle::setReadOnlyMessage(bool readOnlyMessage)
+{
+    mReadOnlyMessage = readOnlyMessage;
 }
 

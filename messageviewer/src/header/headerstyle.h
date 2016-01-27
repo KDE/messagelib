@@ -110,6 +110,9 @@ public:
     void setCollectionName(const QString &name);
     QString collectionName() const;
 
+    bool readOnlyMessage() const;
+    void setReadOnlyMessage(bool readOnlyMessage);
+
 private:
     GrantleeTheme::Theme mTheme;
     QString mMessagePath;
@@ -122,6 +125,7 @@ private:
     bool mPrinting;
     bool mTopLevel;
     bool mAllowAsync;
+    bool mReadOnlyMessage;
 };
 }
 
