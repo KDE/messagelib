@@ -77,6 +77,7 @@ set(libmessageviewer_mailviewer_SRCS
    viewer/webengine/mailwebengineview.cpp
    viewer/webengine/mailwebenginepage.cpp
    ${libmessageviewer_mailviewer_SRCS}
+   findbar/findbarwebengineview.cpp 
    )
    set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -99,7 +100,7 @@ set(libmessageviewer_viewer_SRCS
   viewer/pluginloaderbase.cpp
   viewer/viewer.cpp
   viewer/viewer_p.cpp
-  viewer/webviewaccesskey.cpp
+  viewer//webview/webviewaccesskey.cpp
   viewer/messagedisplayformatattribute.cpp
   viewer/urlhandlermanager.cpp
   viewer/mimeparttree/mimeparttreeview.cpp
@@ -276,6 +277,7 @@ install(TARGETS
 ecm_generate_headers(MessageViewer_Camelcasewebviewer_HEADERS
   HEADER_NAMES
   MailWebView
+  WebViewAccessKey
   REQUIRED_HEADERS MessageViewer_webviewer_HEADERS
   PREFIX MessageViewer
   RELATIVE viewer/webview
@@ -295,7 +297,6 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
   Stl_Util
   CSSHelperBase
   MessagePart
-  WebViewAccessKey
   REQUIRED_HEADERS MessageViewer_viewer_HEADERS
   PREFIX MessageViewer
   RELATIVE viewer
