@@ -284,11 +284,11 @@ PRIVATE
   KF5::MailTransport
   KF5::Mime
   KF5::Mbox
-  KF5::KDELibs4Support
   KF5::AkonadiNotes
   KF5::PimTextEdit
   KF5::CalendarCore
   KF5::Gravatar
+  KF5::IconThemes
 )
 if (WIN32)
   target_link_libraries(KF5MessageViewer PUBLIC KF5::Gpgmepp)
