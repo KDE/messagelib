@@ -25,7 +25,7 @@
 #include "scamdetection/scamcheckshorturl.h"
 #include "adblock/adblockblockableitemsdialog.h"
 #include "adblock/webpage.h"
-#include "viewer/webviewaccesskey.h"
+#include "webviewaccesskey.h"
 
 #include <KActionCollection>
 #include <QAction>
