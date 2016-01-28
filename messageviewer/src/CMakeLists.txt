@@ -56,7 +56,7 @@ set(_mailwebview_cpp
                        adblock/adblocksettingwidget.cpp
                        adblock/adblockutil.cpp
                        adblock/adblockaddsubscriptiondialog.cpp
-                       adblock/adblocklistwidget.cpp
+                       adblock/common/adblocklistwidget.cpp
                        adblock/common/adblocksyntaxhighlighter.cpp
                        adblock/common/adblockshowlistdialog.cpp
                        adblock/adblockblockableitemsdialog.cpp
@@ -399,10 +399,18 @@ ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
   RELATIVE htmlwriter
 )
 
+ecm_generate_headers(MessageViewer_Camelcaseadblockcommon_HEADERS
+  HEADER_NAMES
+  AdBlockListWidget
+  REQUIRED_HEADERS MessageViewer_adblockcommon_HEADERS
+  PREFIX MessageViewer
+  RELATIVE adblock/common
+)
+
+
 ecm_generate_headers(MessageViewer_Camelcaseadblock_HEADERS
   HEADER_NAMES
   AdBlockSettingWidget  
-  AdBlockListWidget
   AdBlockBlockableItemsDialog
   AdBlockManager
   REQUIRED_HEADERS MessageViewer_adblock_HEADERS
@@ -452,11 +460,13 @@ install(FILES
     ${MessageViewer_Camelcaseviewerjob_HEADERS}
     ${MessageViewer_Camelcaseantispam_HEADERS}
     ${MessageViewer_Camelfindbar_HEADERS}
+    ${MessageViewer_Camelcaseadblockcommon_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     COMPONENT Devel
 )
 
 install(FILES
+    ${MessageViewer_eadblockcommon_HEADERS}
     ${MessageViewer_webviewer_HEADERS}
     ${MessageViewer_viewerplugin_HEADERS}
     ${MessageViewer_settings_HEADERS}
