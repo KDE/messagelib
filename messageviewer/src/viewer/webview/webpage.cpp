@@ -16,7 +16,7 @@
 */
 
 #include "webpage.h"
-#include "adblock/networkaccessmanager.h"
+#include "networkaccessmanager.h"
 #include "adblock/adblockmanager.h"
 
 using namespace MessageViewer;

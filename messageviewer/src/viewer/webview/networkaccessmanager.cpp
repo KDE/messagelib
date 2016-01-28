@@ -21,7 +21,7 @@
 #include "networkaccessmanager.h"
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
-#include "adblockmanager.h"
+#include "adblock/adblockmanager.h"
 
 #include <KLocalizedString>
 #include <KProtocolInfo>
@@ -63,8 +63,7 @@ protected:
     }
 };
 
-namespace MessageViewer
-{
+using namespace MessageViewer;
 
 MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
     : KIO::AccessManager(parent),
@@ -176,7 +175,5 @@ void MyNetworkAccessManager::slotApplyHidingBlockedElements(bool ok)
     Q_FOREACH (const QUrl &url, urls) {
         hideBlockedElements(url, collection);
     }
-}
-
 }
 

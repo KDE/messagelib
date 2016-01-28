@@ -46,7 +46,6 @@ if(DEBUG_SIGNATURE)
 endif()
 
 set(_mailwebview_cpp 
-                       adblock/networkaccessmanager.cpp 
                        adblock/adblockelementhiding.cpp
                        adblock/adblockhostmatcher.cpp
                        adblock/adblockmanager.cpp
@@ -69,6 +68,7 @@ set(_mailwebview_cpp
 set(libmessageviewer_mailviewer_SRCS
    viewer/webview/mailwebview.cpp
    viewer/webview/webpage.cpp
+   viewer/webview/networkaccessmanager.cpp
    )
 set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
 
@@ -76,6 +76,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
 set(libmessageviewer_mailviewer_SRCS
    viewer/webengine/mailwebengineview.cpp
    viewer/webengine/mailwebenginepage.cpp
+   viewer/webengine/webengineaccesskey.cpp
    ${libmessageviewer_mailviewer_SRCS}
    findbar/findbarwebengineview.cpp 
    )
