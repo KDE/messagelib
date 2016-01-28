@@ -1004,7 +1004,7 @@ QString ViewerPrivate::writeMsgHeader(KMime::Message *aMsg, KMime::Content *vCar
         status.setStatusFromFlags(mMessageItem.flags());
 
         headerStylePlugin()->headerStyle()->setMessageStatus(status);
-        headerStylePlugin()->headerStyle()->setCollectionName(mMessageItem.parentCollection().name());
+        headerStylePlugin()->headerStyle()->setCollectionName(mMessageItem.parentCollection().remoteId());
         //TODO look at collection.
         headerStylePlugin()->headerStyle()->setReadOnlyMessage(false);
     } else {
