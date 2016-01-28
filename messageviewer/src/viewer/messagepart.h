@@ -36,7 +36,7 @@ class QTextCodec;
 
 namespace GpgME
 {
-    class ImportResult;
+class ImportResult;
 }
 
 namespace KMime
@@ -69,16 +69,16 @@ protected:
 class EncapsulatedRFC822Block : public HTMLBlock
 {
 public:
-    EncapsulatedRFC822Block(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper* nodeHelper, KMime::Content *node);
+    EncapsulatedRFC822Block(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper *nodeHelper, KMime::Content *node);
     virtual ~EncapsulatedRFC822Block();
 
 private:
     void internalEnter();
     void internalExit();
 
-    HtmlWriter* mWriter;
+    HtmlWriter *mWriter;
     NodeHelper *mNodeHelper;
-    KMime::Content* mNode;
+    KMime::Content *mNode;
 };
 
 class EncryptedBlock : public HTMLBlock
@@ -91,9 +91,9 @@ private:
     void internalEnter();
     void internalExit();
 
-    HtmlWriter* mWriter;
+    HtmlWriter *mWriter;
     const PartMetaData &mBlock;
-    KMime::Content* mNode;
+    KMime::Content *mNode;
 };
 
 class CryptoBlock: public HTMLBlock
@@ -154,13 +154,13 @@ private:
 class HTMLWarnBlock : public HTMLBlock
 {
 public:
-    HTMLWarnBlock(MessageViewer::HtmlWriter* writer, const QString &msg);
+    HTMLWarnBlock(MessageViewer::HtmlWriter *writer, const QString &msg);
     virtual ~HTMLWarnBlock();
 private:
     void internalEnter();
     void internalExit();
 private:
-    HtmlWriter* mWriter;
+    HtmlWriter *mWriter;
     const QString &mMsg;
 };
 
@@ -177,7 +177,7 @@ private:
     void internalEnter();
     void internalExit();
 
-    HtmlWriter* mWriter;
+    HtmlWriter *mWriter;
 };
 
 class MessagePart : public Interface::MessagePart
@@ -203,7 +203,7 @@ public:
 
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
-    void renderInternalHtml( bool decorate ) const;
+    void renderInternalHtml(bool decorate) const;
     QString renderInternalText() const;
     HTMLBlock::Ptr attachmentBlock() const;
 
@@ -236,7 +236,7 @@ class MessagePartList : public MessagePart
 {
 public:
     typedef QSharedPointer<MessagePartList> Ptr;
-    MessagePartList(MessageViewer::ObjectTreeParser* otp);
+    MessagePartList(MessageViewer::ObjectTreeParser *otp);
     virtual ~MessagePartList();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -296,7 +296,7 @@ class HtmlMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<HtmlMessagePart> Ptr;
-    HtmlMessagePart(MessageViewer::ObjectTreeParser* otp, KMime::Content* node, MessageViewer::ObjectTreeSourceIf* source);
+    HtmlMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, MessageViewer::ObjectTreeSourceIf *source);
     virtual ~HtmlMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -306,7 +306,7 @@ public:
 
 private:
     QString processHtml(const QString &htmlSource, QString &extraHead);
-    KMime::Content* mNode;
+    KMime::Content *mNode;
     ObjectTreeSourceIf *mSource;
     QString mBodyHTML;
     QByteArray mCharset;
@@ -316,7 +316,7 @@ class AlternativeMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<AlternativeMessagePart> Ptr;
-    AlternativeMessagePart (MessageViewer::ObjectTreeParser* otp, KMime::Content* textNode, KMime::Content* htmlNode);
+    AlternativeMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode);
     virtual ~AlternativeMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -327,8 +327,8 @@ public:
     void fix() const Q_DECL_OVERRIDE;
     void copyContentFrom() const Q_DECL_OVERRIDE;
 private:
-    KMime::Content* mTextNode;
-    KMime::Content* mHTMLNode;
+    KMime::Content *mTextNode;
+    KMime::Content *mHTMLNode;
 
     MimeMessagePart::Ptr mTextPart;
     MimeMessagePart::Ptr mHTMLPart;
@@ -339,14 +339,14 @@ class CertMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<CertMessagePart> Ptr;
-    CertMessagePart(MessageViewer::ObjectTreeParser* otp, KMime::Content* node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport);
+    CertMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport);
     virtual ~CertMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
     void html(bool decorate) Q_DECL_OVERRIDE;
 
 private:
-    KMime::Content* mNode;
+    KMime::Content *mNode;
     bool mAutoImport;
     GpgME::ImportResult mImportResult;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;

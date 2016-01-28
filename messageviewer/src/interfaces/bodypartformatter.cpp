@@ -39,7 +39,7 @@
 #include <QDebug>
 
 using namespace MessageViewer::Interface;
-  
+
 MessagePart::MessagePart()
     : mHtmlWriter(Q_NULLPTR)
     , mPart(Q_NULLPTR)
@@ -67,7 +67,7 @@ QString MessagePart::text() const
     return QString();
 }
 
-MessageViewer::HtmlWriter* MessagePart::htmlWriter()
+MessageViewer::HtmlWriter *MessagePart::htmlWriter()
 {
     if (!mHtmlWriter) {
         mHtmlWriter = mPart->objectTreeParser()->htmlWriter();
@@ -79,7 +79,7 @@ MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) const
 {
     qDebug() << "should never happen tm";
     auto mp = MessagePart::Ptr(new MessagePart(part));
-    const auto ret = format(&part,mp->htmlWriter());
+    const auto ret = format(&part, mp->htmlWriter());
     if (ret != Failed) {
         return mp;
     }

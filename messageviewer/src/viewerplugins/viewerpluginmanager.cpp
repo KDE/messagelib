@@ -78,8 +78,10 @@ public:
     ViewerPluginManager *q;
 };
 
-namespace {
-QString pluginVersion() {
+namespace
+{
+QString pluginVersion()
+{
     return QStringLiteral("1.0");
 }
 }

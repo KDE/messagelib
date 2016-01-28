@@ -20,7 +20,6 @@
 
 #include <QWebEnginePage>
 
-
 namespace MessageViewer
 {
 class MailWebEnginePage : public QWebEnginePage

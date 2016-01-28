@@ -145,7 +145,6 @@ public:
     }
 };
 
-
 class KMailProtocolURLHandler : public URLHandler
 {
 public:

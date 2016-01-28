@@ -120,7 +120,7 @@ void PluginEditorInterface::showConfigureDialog(QWidget *parentWidget)
 
 QString PluginEditorInterface::actionXmlExtension(ActionType::Type type)
 {
-    switch(type) {
+    switch (type) {
     case MessageComposer::ActionType::Tools:
         return QStringLiteral("_plugins_tools");
     case MessageComposer::ActionType::Edit:
@@ -138,5 +138,4 @@ QString PluginEditorInterface::actionXmlExtension(ActionType::Type type)
     }
     return {};
 }
-
 

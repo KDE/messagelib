@@ -99,7 +99,6 @@ static bool isHiddenElement(const QWebElement &element)
     return false;
 }
 
-
 static QString linkElementKey(const QWebElement &element)
 {
     if (element.hasAttribute(QStringLiteral("href"))) {
@@ -131,7 +130,6 @@ static void handleDuplicateLinkElements(const QWebElement &element, QHash<QStrin
     }
 }
 
-
 WebViewAccessKey::WebViewAccessKey(QWebView *webView, QObject *parent)
     : QObject(parent),
       d(new MessageViewer::WebViewAccessKeyPrivate(webView))
@@ -143,8 +141,6 @@ WebViewAccessKey::~WebViewAccessKey()
 {
     delete d;
 }
-
-
 
 void WebViewAccessKey::wheelEvent(QWheelEvent *e)
 {
@@ -188,7 +184,6 @@ void WebViewAccessKey::keyReleaseEvent(QKeyEvent *e)
         }
     }
 }
-
 
 void WebViewAccessKey::setActionCollection(KActionCollection *ac)
 {

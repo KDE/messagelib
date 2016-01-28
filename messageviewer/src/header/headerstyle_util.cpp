@@ -61,7 +61,7 @@ QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, Head
     if (printing) {
         return QLocale::system().toString(dateTime, QLocale::ShortFormat);
     } else {
-        switch(dateFormat) {
+        switch (dateFormat) {
         case ShortDate:
             return QLocale::system().toString(dateTime, QLocale::ShortFormat);
         case LongDate:
@@ -69,11 +69,11 @@ QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, Head
         case FancyShortDate:
             return dateShortStr(dateTime);
         case FancyLongDate:
-            //Laurent fix me
-            //TODO return QLocale::system().toString(dateTime, QLocale::LongFormat);
+        //Laurent fix me
+        //TODO return QLocale::system().toString(dateTime, QLocale::LongFormat);
         case CustomDate:
         default:
-            return dateStr( dateTime );
+            return dateStr(dateTime);
         }
     }
 }
@@ -120,7 +120,7 @@ QString HeaderStyleUtil::spamStatus(KMime::Message *message) const
 }
 
 QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confidence,
-                      const QString &filterHeader, const QString &confidenceHeader) const
+                                       const QString &filterHeader, const QString &confidenceHeader) const
 {
     static const int meterWidth = 20;
     static const int meterHeight = 5;
@@ -399,7 +399,7 @@ void HeaderStyleUtil::addMailAction(QVariantHash &headerObject)
 QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
 {
     QString html;
-    switch(action) {
+    switch (action) {
     case Viewer::Trash: {
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("user-trash"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:trash\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Move to Trash"));

@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #ifndef WEBVIEWACCESSKEY_H
 #define WEBVIEWACCESSKEY_H
 
@@ -38,7 +37,6 @@ public:
     ~WebViewAccessKey();
 
     void setActionCollection(KActionCollection *ac);
-
 
     bool checkForAccessKey(QKeyEvent *event);
     void showAccessKeys();

@@ -103,7 +103,7 @@ static void insertBodyPartFormatter(const char *type, const char *subtype,
         qCDebug(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: overwriting previously registered formatter for \""
                                    << type << "/" << subtype << "\"";
         qDebug() << "BodyPartFormatterFactory: overwriting previously registered formatter for \""
-                                   << type << "/" << subtype << "\"";
+                 << type << "/" << subtype << "\"";
         //subtype_reg.erase(subtype_it); subtype_it = subtype_reg.end();
     }
 
@@ -161,7 +161,7 @@ static void setup()
     }
 }
 
-const SubtypeRegistry &BodyPartFormatterFactory::subtypeRegistry(const char* type) const
+const SubtypeRegistry &BodyPartFormatterFactory::subtypeRegistry(const char *type) const
 {
     if (!type || !*type) {
         type = "*";    //krazy:exclude=doublequote_chars
@@ -189,8 +189,7 @@ const SubtypeRegistry &BodyPartFormatterFactory::subtypeRegistry(const char* typ
     return subtype_reg;
 }
 
-
-SubtypeRegistry::const_iterator BodyPartFormatterFactory::createForIterator(const char* type, const char* subtype) const
+SubtypeRegistry::const_iterator BodyPartFormatterFactory::createForIterator(const char *type, const char *subtype) const
 {
     if (!type || !*type) {
         type = "*";    //krazy:exclude=doublequote_chars
@@ -238,11 +237,11 @@ SubtypeRegistry::const_iterator BodyPartFormatterFactory::createForIterator(cons
 
 const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const char *type, const char *subtype) const
 {
-        const auto it = createForIterator(type, subtype);
-        if ((*it).second) {
-            return (*it).second;
-        }
-        return 0;
+    const auto it = createForIterator(type, subtype);
+    if ((*it).second) {
+        return (*it).second;
+    }
+    return 0;
 }
 
 const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const QString &type, const QString &subtype) const

@@ -31,7 +31,10 @@ public:
     virtual void write(const QString &) {}
     virtual void end() {}
     virtual void reset() {}
-    virtual void queue(const QString &str) {html.append(str);}
+    virtual void queue(const QString &str)
+    {
+        html.append(str);
+    }
     virtual void flush() {}
     virtual void embedPart(const QByteArray &, const QString &) {}
     virtual void extraHead(const QString &) {}

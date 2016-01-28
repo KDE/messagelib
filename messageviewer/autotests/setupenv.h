@@ -51,17 +51,14 @@ public:
     {
     }
 
-    MessageViewer::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE
-    {
+    MessageViewer::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
         return mWriter;
     }
-    MessageViewer::CSSHelper *cssHelper() Q_DECL_OVERRIDE
-    {
+    MessageViewer::CSSHelper *cssHelper() Q_DECL_OVERRIDE {
         return mCSSHelper;
     }
 
-    bool htmlLoadExternal() Q_DECL_OVERRIDE
-    {
+    bool htmlLoadExternal() Q_DECL_OVERRIDE {
         return mHtmlLoadExternal;
     }
 
@@ -70,8 +67,7 @@ public:
         mHtmlLoadExternal = loadExternal;
     }
 
-    bool htmlMail() Q_DECL_OVERRIDE
-    {
+    bool htmlMail() Q_DECL_OVERRIDE {
         return mHtmlMail;
     }
 

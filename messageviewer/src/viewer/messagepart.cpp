@@ -148,7 +148,7 @@ void CryptoBlock::internalExit()
     entered = false;
 }
 
-EncapsulatedRFC822Block::EncapsulatedRFC822Block(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper* nodeHelper, KMime::Content *node)
+EncapsulatedRFC822Block::EncapsulatedRFC822Block(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper *nodeHelper, KMime::Content *node)
     : mWriter(writer)
     , mNodeHelper(nodeHelper)
     , mNode(node)
@@ -167,12 +167,12 @@ void EncapsulatedRFC822Block::internalEnter()
         const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
         const QString cellPadding(QStringLiteral("cellpadding=\"1\""));
         const QString cellSpacing(QStringLiteral("cellspacing=\"1\""));
-        mWriter->queue(QLatin1String("<table ")+ cellSpacing + QLatin1Char(' ') + cellPadding + QLatin1String(" class=\"rfc822\">"
-                   "<tr class=\"rfc822H\"><td dir=\"") + dir + QLatin1String("\">"));
+        mWriter->queue(QLatin1String("<table ") + cellSpacing + QLatin1Char(' ') + cellPadding + QLatin1String(" class=\"rfc822\">"
+                       "<tr class=\"rfc822H\"><td dir=\"") + dir + QLatin1String("\">"));
         if (mNode) {
             const QString href = mNodeHelper->asHREF(mNode, QStringLiteral("body"));
             mWriter->queue(QLatin1String("<a href=\"") + href + QLatin1String("\">")
-                       + i18n("Encapsulated message") + QLatin1String("</a>"));
+                           + i18n("Encapsulated message") + QLatin1String("</a>"));
         } else {
             mWriter->queue(i18n("Encapsulated message"));
         }
@@ -214,7 +214,7 @@ void EncryptedBlock::internalEnter()
         const QString cellPadding(QStringLiteral("cellpadding=\"1\""));
         const QString cellSpacing(QStringLiteral("cellspacing=\"1\""));
 
-        mWriter->queue(QLatin1String("<table ")+ cellSpacing + QLatin1Char(' ') + cellPadding + QLatin1String(" class=\"encr\">"
+        mWriter->queue(QLatin1String("<table ") + cellSpacing + QLatin1Char(' ') + cellPadding + QLatin1String(" class=\"encr\">"
                        "<tr class=\"encrH\"><td dir=\"") + dir + QLatin1String("\">"));
         if (mBlock.inProgress) {
             mWriter->queue(i18n("Please wait while the message is being decrypted..."));
@@ -327,7 +327,7 @@ void TextBlock::internalExit()
     mWriter->queue(QStringLiteral("</td></tr></table>"));
 }
 
-HTMLWarnBlock::HTMLWarnBlock(HtmlWriter* writer, const QString& msg)
+HTMLWarnBlock::HTMLWarnBlock(HtmlWriter *writer, const QString &msg)
     : mWriter(writer)
     , mMsg(msg)
 {
@@ -366,7 +366,7 @@ void HTMLWarnBlock::internalExit()
     mWriter->queue(QStringLiteral("</div>\n"));
 }
 
-RootBlock::RootBlock(HtmlWriter* writer)
+RootBlock::RootBlock(HtmlWriter *writer)
     : HTMLBlock()
     , mWriter(writer)
 {
@@ -505,7 +505,7 @@ void MessagePart::fix() const
 }
 
 //-----MessagePartList----------------------
-MessagePartList::MessagePartList(ObjectTreeParser* otp)
+MessagePartList::MessagePartList(ObjectTreeParser *otp)
     : MessagePart(otp, QString())
     , mRoot(false)
 {
@@ -534,12 +534,12 @@ HTMLBlock::Ptr MessagePartList::rootBlock() const
     return HTMLBlock::Ptr();
 }
 
-void MessagePartList::appendMessagePart(const Interface::MessagePart::Ptr& messagePart)
+void MessagePartList::appendMessagePart(const Interface::MessagePart::Ptr &messagePart)
 {
     mBlocks.append(messagePart);
 }
 
-const QVector<Interface::MessagePart::Ptr>& MessagePartList::messageParts() const
+const QVector<Interface::MessagePart::Ptr> &MessagePartList::messageParts() const
 {
     return mBlocks;
 }
@@ -572,22 +572,22 @@ QString MessagePartList::text() const
 
 void MessagePartList::fix() const
 {
-   foreach (const auto &mp, mBlocks) {
-       const auto m = mp.dynamicCast<MessagePart>();
-       if (m) {
-          m->fix();
-       }
-   }
+    foreach (const auto &mp, mBlocks) {
+        const auto m = mp.dynamicCast<MessagePart>();
+        if (m) {
+            m->fix();
+        }
+    }
 }
 
 void MessagePartList::copyContentFrom() const
 {
-   foreach (const auto &mp, mBlocks) {
-       const auto m = mp.dynamicCast<MessagePart>();
-       if (m) {
-          m->copyContentFrom();
-       }
-   }
+    foreach (const auto &mp, mBlocks) {
+        const auto m = mp.dynamicCast<MessagePart>();
+        if (m) {
+            m->copyContentFrom();
+        }
+    }
 }
 
 //-----TextMessageBlock----------------------
@@ -635,7 +635,6 @@ void TextMessagePart::parseContent()
         if (blocks.count() > 1 || blocks.at(0).type() != MessageViewer::NoPgpBlock) {
             mOtp->setCryptoProtocol(cryptProto);
         }
-
 
         QString htmlStr;
         QString plainTextStr;
@@ -736,7 +735,7 @@ KMMsgSignatureState TextMessagePart::signatureState() const
 
 //-----HtmlMessageBlock----------------------
 
-HtmlMessagePart::HtmlMessagePart(ObjectTreeParser* otp, KMime::Content* node, ObjectTreeSourceIf *source)
+HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node, ObjectTreeSourceIf *source)
     : MessagePart(otp, QString())
     , mNode(node)
     , mSource(source)
@@ -805,13 +804,13 @@ void HtmlMessagePart::html(bool decorate)
         // have an easy way to load them but that shouldn't be a problem
         // because only spam contains obfuscated external references.
         if (!mSource->htmlLoadExternal() &&
-            containsExternalReferences(bodyText, extraHead)) {
+                containsExternalReferences(bodyText, extraHead)) {
             block = HTMLBlock::Ptr(new HTMLWarnBlock(writer, i18n("<b>Note:</b> This HTML message may contain external "
-            "references to images etc. For security/privacy reasons "
-            "external references are not loaded. If you trust the "
-            "sender of this message then you can load the external "
-            "references for this message "
-            "<a href=\"kmail:loadExternal\">by clicking here</a>.")));
+                                   "references to images etc. For security/privacy reasons "
+                                   "external references are not loaded. If you trust the "
+                                   "sender of this message then you can load the external "
+                                   "references for this message "
+                                   "<a href=\"kmail:loadExternal\">by clicking here</a>.")));
         } else {
             block = HTMLBlock::Ptr(new HTMLWarnBlock(writer, QString()));
         }
@@ -820,11 +819,11 @@ void HtmlMessagePart::html(bool decorate)
         writer->queue(bodyText);
     } else {
         block = HTMLBlock::Ptr(new HTMLWarnBlock(writer, i18n("<b>Note:</b> This is an HTML message. For "
-        "security reasons, only the raw HTML code "
-        "is shown. If you trust the sender of this "
-        "message then you can activate formatted "
-        "HTML display for this message "
-        "<a href=\"kmail:showHTML\">by clicking here</a>.")));
+                               "security reasons, only the raw HTML code "
+                               "is shown. If you trust the sender of this "
+                               "message then you can activate formatted "
+                               "HTML display for this message "
+                               "<a href=\"kmail:showHTML\">by clicking here</a>.")));
         // Make sure the body is relative, so that nothing is painted over above "Note: ..."
         // if a malicious message uses absolute positioning. #137643
         ConvertHtmlToPlainText convert;
@@ -874,7 +873,7 @@ QString MimeMessagePart::text() const
 
 //-----AlternativeMessagePart----------------------
 
-AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser* otp, KMime::Content* textNode, KMime::Content* htmlNode)
+AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode)
     : MessagePart(otp, QString())
     , mTextNode(textNode)
     , mHTMLNode(htmlNode)
@@ -958,10 +957,10 @@ void AlternativeMessagePart::copyContentFrom() const
 
 //-----CertMessageBlock----------------------
 
-CertMessagePart::CertMessagePart(ObjectTreeParser* otp, KMime::Content* node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport)
-: MessagePart(otp, QString())
-, mAutoImport(autoImport)
-, mCryptoProto(cryptoProto)
+CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport)
+    : MessagePart(otp, QString())
+    , mAutoImport(autoImport)
+    , mCryptoProto(cryptoProto)
 {
     if (!mNode) {
         qCWarning(MESSAGEVIEWER_LOG) << "not a valid node";

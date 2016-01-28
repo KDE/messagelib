@@ -766,14 +766,14 @@ void CSSHelperBase::setPrintFont(const QFont &font)
     mPrintFont = font;
 }
 
-QString CSSHelperBase::quoteColorName( int level ) const
+QString CSSHelperBase::quoteColorName(int level) const
 {
     return quoteColor(level).name();
 }
 
 QColor CSSHelperBase::quoteColor(int level) const
 {
-    const int actualLevel = qMax( level, 0 ) % 3;
+    const int actualLevel = qMax(level, 0) % 3;
     return mQuoteColor[actualLevel];
 }
 

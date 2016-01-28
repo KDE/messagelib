@@ -357,12 +357,12 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
                 continue;
             }
 
-            if (const auto mp = dynamic_cast<MessageViewer::MessagePart*>(result.data())) {
+            if (const auto mp = dynamic_cast<MessageViewer::MessagePart *>(result.data())) {
                 mp->setAttachmentFlag(node);
                 mpl->appendMessagePart(result);
                 bRendered = true;
                 break;
-            } else if (dynamic_cast<MessageViewer::Interface::MessagePart*>(result.data())) {
+            } else if (dynamic_cast<MessageViewer::Interface::MessagePart *>(result.data())) {
                 QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
                 const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
                 if (r == Interface::BodyPartFormatter::AsIcon) {
@@ -806,7 +806,7 @@ bool ObjectTreeParser::isMailmanMessage(KMime::Content *curNode)
     return false;
 }
 
-MessagePart::Ptr ObjectTreeParser::processMailmanSubtype(KMime::Content* curNode, ProcessResult& result)
+MessagePart::Ptr ObjectTreeParser::processMailmanSubtype(KMime::Content *curNode, ProcessResult &result)
 {
     if (!isMailmanMessage(curNode)) {
         return MessagePart::Ptr();
@@ -975,7 +975,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartAlternativeSubtype(KMime::Con
 {
     KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
     if (!child) {
-         return MessagePart::Ptr();
+        return MessagePart::Ptr();
     }
 
     KMime::Content *dataHtml = findType(child, "text/html", false, true);
@@ -1002,7 +1002,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartAlternativeSubtype(KMime::Con
         AlternativeMessagePart::Ptr mp(new AlternativeMessagePart(this, dataPlain, dataHtml));
 
         if ((mSource->htmlMail() && dataHtml) ||
-            (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
+                (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
             if (dataPlain) {
                 mNodeHelper->setNodeProcessed(dataPlain, false);
             }
@@ -1201,8 +1201,8 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
         }
 
         mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
-                             node->decodedText(), cryptoProtocol(),
-                             NodeHelper::fromAsString(node), node));
+                                    node->decodedText(), cryptoProtocol(),
+                                    NodeHelper::fromAsString(node), node));
         mp->setIsEncrypted(true);
         mp->setDecryptMessage(mSource->decryptMessage());
         PartMetaData *messagePart(mp->partMetaData());
@@ -1254,8 +1254,8 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
         const QTextCodec *aCodec(codecFor(signTestNode));
         const QByteArray signaturetext = signTestNode->decodedContent();
         mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
-                             aCodec->toUnicode(signaturetext), cryptoProtocol(),
-                             NodeHelper::fromAsString(node), signTestNode));
+                                    aCodec->toUnicode(signaturetext), cryptoProtocol(),
+                                    NodeHelper::fromAsString(node), signTestNode));
         mp->setDecryptMessage(mSource->decryptMessage());
         PartMetaData *messagePart(mp->partMetaData());
         if (cryptoProtocol()) {
@@ -2338,12 +2338,12 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
                 if (foundQuote) {
                     quoteLength++;
                     htmlStr += QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(quoteLength));
-                    const int rightString = (line.length())-quoteLength;
+                    const int rightString = (line.length()) - quoteLength;
                     if (rightString > 0) {
                         htmlStr += QStringLiteral("<font color=\"%1\">").arg(cssHelper()->quoteColorName(actQuoteLevel)) + KTextToHTML::convertToHtml(line.right(rightString), convertFlags) + QStringLiteral("</font>");
                     }
                 } else {
-                    htmlStr += KTextToHTML::convertToHtml( line, convertFlags );
+                    htmlStr += KTextToHTML::convertToHtml(line, convertFlags);
                 }
 
                 htmlStr += QLatin1String("</div>");

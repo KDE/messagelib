@@ -578,7 +578,7 @@ Q_SIGNALS:
 
     void changeDisplayMail(Viewer::DisplayFormatMessage, bool);
     void moveMessageToTrash();
-    void executeMailAction(MessageViewer::Viewer::MailAction type );
+    void executeMailAction(MessageViewer::Viewer::MailAction type);
 
 private:
     QString attachmentInjectionHtml();

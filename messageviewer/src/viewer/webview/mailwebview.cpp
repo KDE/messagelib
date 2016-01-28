@@ -40,7 +40,6 @@
 #include <limits>
 #include <cassert>
 
-
 using namespace boost;
 using namespace MessageViewer;
 

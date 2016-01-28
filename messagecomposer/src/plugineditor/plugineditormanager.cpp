@@ -55,15 +55,15 @@ public:
     PluginEditor *plugin;
 };
 
-
 Q_GLOBAL_STATIC(PluginEditorManagerInstancePrivate, sInstance)
 
-namespace {
-QString pluginVersion() {
+namespace
+{
+QString pluginVersion()
+{
     return QStringLiteral("1.0");
 }
 }
-
 
 class MessageComposer::PluginEditorManagerPrivate
 {
@@ -114,7 +114,6 @@ void PluginEditorManagerPrivate::loadPlugin(PluginEditorInfo *item)
     item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<PluginEditor>(q, QVariantList() << item->saveName());
 }
 
-
 QVector<PluginEditor *> PluginEditorManagerPrivate::pluginsList() const
 {
     QVector<PluginEditor *> lst;
@@ -126,8 +125,6 @@ QVector<PluginEditor *> PluginEditorManagerPrivate::pluginsList() const
     }
     return lst;
 }
-
-
 
 PluginEditorManager::PluginEditorManager(QObject *parent)
     : QObject(parent),

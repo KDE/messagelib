@@ -39,10 +39,9 @@
 #include <QObject>
 #include <QSharedPointer>
 
-
 namespace MessageViewer
 {
-    class HtmlWriter;
+class HtmlWriter;
 
 namespace Interface
 {

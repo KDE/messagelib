@@ -70,7 +70,6 @@ public:
     void setParentWidget(QWidget *parent);
     QWidget *parentWidget() const;
 
-
     KPIMTextEdit::RichTextEditor *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor);
 

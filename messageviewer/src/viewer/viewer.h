@@ -353,7 +353,7 @@ public:
 
 Q_SIGNALS:
     void moveMessageToTrash();
-    void executeMailAction(MessageViewer::Viewer::MailAction type );
+    void executeMailAction(MessageViewer::Viewer::MailAction type);
 
     /**
     * Emitted when a status bar message is shown. Note that the status bar message is also set to

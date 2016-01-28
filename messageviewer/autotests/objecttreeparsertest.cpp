@@ -262,7 +262,6 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
     QVERIFY(testWriter.html.contains(QStringLiteral("*SOME* HTML text. <br>")));
 }
 
-
 void ObjectTreeParserTester::test_HTMLExternal()
 {
     KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("htmlonlyexternal.mbox"));

@@ -372,7 +372,7 @@ private:
           found in 'cntDesc'.
       2. Parse the 'node' to display the content.
     */
-    MimeMessagePart::Ptr createAndParseTempNode( KMime::Content* parentNode, const char* content, const char* cntDesc );
+    MimeMessagePart::Ptr createAndParseTempNode(KMime::Content *parentNode, const char *content, const char *cntDesc);
 
     /** Writes out the information contained in a GpgME::ImportResult */
     void writeCertificateImportResult(const GpgME::ImportResult &res);
