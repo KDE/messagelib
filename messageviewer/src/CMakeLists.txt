@@ -57,10 +57,10 @@ set(_mailwebview_cpp
                        adblock/adblockutil.cpp
                        adblock/adblockaddsubscriptiondialog.cpp
                        adblock/adblocklistwidget.cpp
-                       adblock/adblocksyntaxhighlighter.cpp
-                       adblock/adblockshowlistdialog.cpp
+                       adblock/common/adblocksyntaxhighlighter.cpp
+                       adblock/common/adblockshowlistdialog.cpp
                        adblock/adblockblockableitemsdialog.cpp
-                       adblock/adblockcreatefilterdialog.cpp
+                       adblock/common/adblockcreatefilterdialog.cpp
                        adblock/adblockblockableitemswidget.cpp
                        )
 
