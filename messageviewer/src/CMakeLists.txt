@@ -47,7 +47,6 @@ endif()
 
 set(_mailwebview_cpp 
                        adblock/networkaccessmanager.cpp 
-                       adblock/webpage.cpp
                        adblock/adblockelementhiding.cpp
                        adblock/adblockhostmatcher.cpp
                        adblock/adblockmanager.cpp
@@ -69,6 +68,7 @@ set(_mailwebview_cpp
 # For the moment we can'r replace mailwebengine
 set(libmessageviewer_mailviewer_SRCS
    viewer/webview/mailwebview.cpp
+   viewer/webview/webpage.cpp
    )
 set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
 
@@ -278,6 +278,7 @@ ecm_generate_headers(MessageViewer_Camelcasewebviewer_HEADERS
   HEADER_NAMES
   MailWebView
   WebViewAccessKey
+  WebPage
   REQUIRED_HEADERS MessageViewer_webviewer_HEADERS
   PREFIX MessageViewer
   RELATIVE viewer/webview
@@ -403,7 +404,6 @@ ecm_generate_headers(MessageViewer_Camelcaseadblock_HEADERS
   AdBlockListWidget
   AdBlockBlockableItemsDialog
   AdBlockManager
-  WebPage
   REQUIRED_HEADERS MessageViewer_adblock_HEADERS
   PREFIX MessageViewer
   RELATIVE adblock

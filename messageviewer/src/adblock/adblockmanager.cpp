@@ -33,7 +33,7 @@
 #include "adblockhostmatcher.h"
 #include "adblock/adblockrule.h"
 
-#include "webpage.h"
+#include "viewer/webview/webpage.h"
 
 // KDE Includes
 #include <KIO/FileCopyJob>
