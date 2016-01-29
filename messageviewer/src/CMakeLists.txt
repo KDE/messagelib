@@ -53,10 +53,10 @@ set(_mailwebview_cpp
                        adblock/adblockrulefallbackimpl.cpp
                        adblock/adblockrulenullimpl.cpp
                        adblock/adblockruletextmatchimpl.cpp
-                       adblock/adblocksettingwidget.cpp
                        adblock/adblockblockableitemsdialog.cpp
                        adblock/adblockblockableitemswidget.cpp
 
+                       adblock/common/adblocksettingwidget.cpp
                        adblock/common/adblockutil.cpp
                        adblock/common/adblockcreatefilterdialog.cpp
                        adblock/common/adblockaddsubscriptiondialog.cpp
@@ -404,6 +404,7 @@ ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
 ecm_generate_headers(MessageViewer_Camelcaseadblockcommon_HEADERS
   HEADER_NAMES
   AdBlockListWidget
+  AdBlockSettingWidget
   REQUIRED_HEADERS MessageViewer_adblockcommon_HEADERS
   PREFIX MessageViewer
   RELATIVE adblock/common
@@ -412,7 +413,6 @@ ecm_generate_headers(MessageViewer_Camelcaseadblockcommon_HEADERS
 
 ecm_generate_headers(MessageViewer_Camelcaseadblock_HEADERS
   HEADER_NAMES
-  AdBlockSettingWidget  
   AdBlockBlockableItemsDialog
   AdBlockManager
   REQUIRED_HEADERS MessageViewer_adblock_HEADERS

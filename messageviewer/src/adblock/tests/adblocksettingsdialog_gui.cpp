@@ -23,7 +23,7 @@
 #include <QDialogButtonBox>
 #include <KConfigGroup>
 #include <QStandardPaths>
-#include "adblock/adblocksettingwidget.h"
+#include "adblock/common/adblocksettingwidget.h"
 
 int main(int argc, char **argv)
 {
