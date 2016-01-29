@@ -54,17 +54,19 @@ set(_mailwebview_cpp
                        adblock/adblockrulenullimpl.cpp
                        adblock/adblockruletextmatchimpl.cpp
                        adblock/adblocksettingwidget.cpp
-                       adblock/adblockutil.cpp
-                       adblock/adblockaddsubscriptiondialog.cpp
+                       adblock/adblockblockableitemsdialog.cpp
+                       adblock/adblockblockableitemswidget.cpp
+
+                       adblock/common/adblockutil.cpp
+                       adblock/common/adblockcreatefilterdialog.cpp
+                       adblock/common/adblockaddsubscriptiondialog.cpp
                        adblock/common/adblocklistwidget.cpp
                        adblock/common/adblocksyntaxhighlighter.cpp
                        adblock/common/adblockshowlistdialog.cpp
-                       adblock/adblockblockableitemsdialog.cpp
-                       adblock/common/adblockcreatefilterdialog.cpp
-                       adblock/adblockblockableitemswidget.cpp
                        )
 
-# For the moment we can'r replace mailwebengine
+
+# For the moment we can't replace mailwebengine
 set(libmessageviewer_mailviewer_SRCS
    viewer/webview/mailwebview.cpp
    viewer/webview/webpage.cpp

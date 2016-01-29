@@ -25,7 +25,7 @@
 #include <KTreeWidgetSearchLine>
 #include <QMenu>
 #include <KConfigGroup>
-#include "adblock/adblockutil.h"
+#include "adblock/common/adblockutil.h"
 #include <QUrl>
 #include <KRun>
 

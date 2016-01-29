@@ -29,10 +29,10 @@
 #include "adblocksettingwidget.h"
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
-#include "adblockaddsubscriptiondialog.h"
+#include "common/adblockaddsubscriptiondialog.h"
 #include "adblockmanager.h"
 #include "common/adblockshowlistdialog.h"
-#include "adblock/adblockutil.h"
+#include "adblock/common/adblockutil.h"
 #include "PimCommon/ConfigureImmutableWidgetUtils"
 using namespace PimCommon::ConfigureImmutableWidgetUtils;
 

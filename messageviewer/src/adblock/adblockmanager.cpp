@@ -28,7 +28,7 @@
 #include "adblockmanager.h"
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
-#include "adblock/adblockutil.h"
+#include "adblock/common/adblockutil.h"
 #include "adblockelementhiding.h"
 #include "adblockhostmatcher.h"
 #include "adblock/adblockrule.h"
