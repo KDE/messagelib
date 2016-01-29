@@ -107,15 +107,17 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("subjecti18n"), i18n("Subject:"));
     headerObject.insert(QStringLiteral("subject"), d->headerStyleUtil.subjectString(message));
 
-    headerObject.insert(QStringLiteral("toi18n"), i18n("To:"));
-    headerObject.insert(QStringLiteral("to"), StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayFullAddress));
-    headerObject.insert(QStringLiteral("toNameOnly"), StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayNameOnly));
-    headerObject.insert(QStringLiteral("toStr"), message->to()->asUnicodeString());
-    const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->to(), MessageCore::StringUtil::DisplayFullAddress,
-                        QString(), MessageCore::StringUtil::ShowLink,
-                        MessageCore::StringUtil::ExpandableAddresses, QStringLiteral("FullToAddressList"));
-    headerObject.insert(QStringLiteral("toExpandable"), val);
-    headerObject.insert(QStringLiteral("toMailbox"), QVariant::fromValue(message->to()));
+    if (message->to(false)) {
+        headerObject.insert(QStringLiteral("toi18n"), i18n("To:"));
+        headerObject.insert(QStringLiteral("to"), StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayFullAddress));
+        headerObject.insert(QStringLiteral("toNameOnly"), StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayNameOnly));
+        headerObject.insert(QStringLiteral("toStr"), message->to()->asUnicodeString());
+        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->to(), MessageCore::StringUtil::DisplayFullAddress,
+                                                                       QString(), MessageCore::StringUtil::ShowLink,
+                                                                       MessageCore::StringUtil::ExpandableAddresses, QStringLiteral("FullToAddressList"));
+        headerObject.insert(QStringLiteral("toExpandable"), val);
+        headerObject.insert(QStringLiteral("toMailbox"), QVariant::fromValue(message->to()));
+    }
 
     if (message->replyTo(false)) {
         headerObject.insert(QStringLiteral("replyToi18n"), i18n("Reply to:"));
