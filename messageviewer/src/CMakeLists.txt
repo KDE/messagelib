@@ -468,7 +468,7 @@ install(FILES
 )
 
 install(FILES
-    ${MessageViewer_eadblockcommon_HEADERS}
+    ${MessageViewer_adblockcommon_HEADERS}
     ${MessageViewer_webviewer_HEADERS}
     ${MessageViewer_viewerplugin_HEADERS}
     ${MessageViewer_settings_HEADERS}
