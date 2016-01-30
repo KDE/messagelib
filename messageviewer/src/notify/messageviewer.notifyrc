@@ -1,6 +1,7 @@
 [Global]
 IconName=kmail
 Comment=Message Viewer
+Comment[ast]=Visor de mensaxes
 Comment[ca]=Visor del missatge
 Comment[ca@valencia]=Visor del missatge
 Comment[de]=Nachrichtenanzeige
