@@ -100,27 +100,31 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
         HeaderStylePluginInfo info;
         info.metaData = i.previous();
 
-        // only load plugins once, even if found multiple times!
-        if (unique.contains(info.saveName())) {
-            continue;
-        }
-        const QVariant p = info.metaData.rawData().value(QStringLiteral("X-KDE-MessageViewer-Header-Order")).toVariant();
-        int order = -1;
-        if (p.isValid()) {
-            order = p.toInt();
-        }
-        int pos = 0;
-        for (; pos < listOrder.count(); ++pos) {
-            if (listOrder.at(pos) > order) {
-                pos--;
-                break;
+        const QString version = info.metaData.version();
+        if (pluginVersion() == version) {
+
+            // only load plugins once, even if found multiple times!
+            if (unique.contains(info.saveName())) {
+                continue;
             }
+            const QVariant p = info.metaData.rawData().value(QStringLiteral("X-KDE-MessageViewer-Header-Order")).toVariant();
+            int order = -1;
+            if (p.isValid()) {
+                order = p.toInt();
+            }
+            int pos = 0;
+            for (; pos < listOrder.count(); ++pos) {
+                if (listOrder.at(pos) > order) {
+                    pos--;
+                    break;
+                }
+            }
+            pos = qMax(0, pos);
+            listOrder.insert(pos, order);
+            info.plugin = Q_NULLPTR;
+            mPluginList.insert(pos, info);
+            unique.insert(info.saveName());
         }
-        pos = qMax(0, pos);
-        listOrder.insert(pos, order);
-        info.plugin = Q_NULLPTR;
-        mPluginList.insert(pos, info);
-        unique.insert(info.saveName());
     }
     QVector<HeaderStylePluginInfo>::iterator end(mPluginList.end());
     for (QVector<HeaderStylePluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
