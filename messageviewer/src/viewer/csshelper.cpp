@@ -75,7 +75,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd) :
             const QString key = QLatin1String("QuotedText") + QString::number(i + 1);
             mQuoteColor[i] = reader.readEntry(key, mQuoteColor[i]);
         }
-        mBackgroundColor = reader.readEntry("BackgroundColor", mBackgroundColor);
     }
 
     if (!MessageCore::MessageCoreSettings::self()->useDefaultFonts()) {
