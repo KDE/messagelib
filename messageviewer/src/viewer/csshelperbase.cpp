@@ -207,7 +207,7 @@ QString CSSHelperBase::cssDefinitions(bool fixed) const
         +
         printCssDefinitions(fixed)
         +
-        QLatin1String("\n");
+        QLatin1String("}\n");
 }
 
 QString CSSHelperBase::htmlHead(bool /*fixed*/) const
