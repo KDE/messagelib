@@ -45,13 +45,15 @@ class PluginEditorInfo
 {
 public:
     PluginEditorInfo()
-        : plugin(Q_NULLPTR)
+        : order(0),
+          plugin(Q_NULLPTR)
     {
 
     }
     QString saveName() const;
 
     KPluginMetaData metaData;
+    int order;
     PluginEditor *plugin;
 };
 
@@ -92,6 +94,12 @@ bool PluginEditorManagerPrivate::initializePlugins()
     while (i.hasPrevious()) {
         PluginEditorInfo info;
         info.metaData = i.previous();
+        const QVariant p = info.metaData.rawData().value(QStringLiteral("X-KDE-KMailEditor-Order")).toVariant();
+        int order = -1;
+        if (p.isValid()) {
+            order = p.toInt();
+        }
+        info.order = order;
         if (pluginVersion() == info.metaData.version()) {
             // only load plugins once, even if found multiple times!
             if (unique.contains(info.saveName())) {
@@ -112,6 +120,7 @@ bool PluginEditorManagerPrivate::initializePlugins()
 void PluginEditorManagerPrivate::loadPlugin(PluginEditorInfo *item)
 {
     item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<PluginEditor>(q, QVariantList() << item->saveName());
+    item->plugin->setOrder(item->order);
 }
 
 QVector<PluginEditor *> PluginEditorManagerPrivate::pluginsList() const

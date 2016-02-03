@@ -19,13 +19,35 @@
 
 using namespace MessageComposer;
 
+class MessageComposer::PluginEditorPrivate
+{
+public:
+    PluginEditorPrivate()
+        : order(0)
+    {
+
+    }
+    int order;
+};
+
 PluginEditor::PluginEditor(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      d(new PluginEditorPrivate)
 {
 
 }
 
 PluginEditor::~PluginEditor()
 {
+    delete d;
+}
 
+void PluginEditor::setOrder(int order)
+{
+    d->order = order;
+}
+
+int PluginEditor::order() const
+{
+    return d->order;
 }

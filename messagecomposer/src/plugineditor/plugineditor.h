@@ -24,14 +24,19 @@ class KActionCollection;
 namespace MessageComposer
 {
 class PluginEditorInterface;
+class PluginEditorPrivate;
 class MESSAGECOMPOSER_EXPORT PluginEditor : public QObject
 {
     Q_OBJECT
 public:
     explicit PluginEditor(QObject *parent = Q_NULLPTR);
     ~PluginEditor();
+    void setOrder(int order);
 
     virtual PluginEditorInterface *createInterface(KActionCollection *ac, QObject *parent = Q_NULLPTR) = 0;
+    int order() const;
+private:
+    PluginEditorPrivate *const d;
 };
 }
 #endif // PLUGINEDITOR_H
