@@ -64,7 +64,7 @@ namespace MessageViewer
 class PartMetaData;
 class ViewerPrivate;
 class HtmlWriter;
-class CSSHelper;
+class CSSHelperBase;
 class AttachmentStrategy;
 class NodeHelper;
 class MessagePart;
@@ -351,7 +351,7 @@ public:
 
     HtmlWriter *htmlWriter() const;
 
-    CSSHelper *cssHelper() const;
+    CSSHelperBase *cssHelper() const;
 
     NodeHelper *nodeHelper() const;
 

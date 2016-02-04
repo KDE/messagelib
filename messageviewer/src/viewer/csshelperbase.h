@@ -50,10 +50,11 @@ public:
         Sub-Classes should put their config loading here.
      */
     explicit CSSHelperBase(const QPaintDevice *pd);
+    virtual ~CSSHelperBase();
 
     /** @return HTML head including style sheet definitions and the
         &gt;body&lt; tag */
-    QString htmlHead(bool fixedFont = false) const;
+    virtual QString htmlHead(bool fixedFont = false) const;
 
     /** @return The collected CSS definitions as a string */
     QString cssDefinitions(bool fixedFont = false) const;

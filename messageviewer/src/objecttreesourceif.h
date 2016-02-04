@@ -31,7 +31,7 @@ class QTextCodec;
 namespace MessageViewer
 {
 class HtmlWriter;
-class CSSHelper;
+class CSSHelperBase;
 class AttachmentStrategy;
 }
 
@@ -84,7 +84,7 @@ public:
     virtual HtmlWriter *htmlWriter() = 0;
 
     /** Return the css helper object */
-    virtual CSSHelper *cssHelper() = 0;
+    virtual CSSHelperBase *cssHelper() = 0;
 
     /** The source object behind the interface. */
     virtual QObject *sourceObject() = 0;

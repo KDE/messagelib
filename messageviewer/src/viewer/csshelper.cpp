@@ -136,6 +136,10 @@ CSSHelper::CSSHelper(const QPaintDevice *pd) :
     recalculatePGPColors();
 }
 
+CSSHelper::~CSSHelper()
+{
+}
+
 QString CSSHelper::htmlHead(bool fixed) const
 {
     return

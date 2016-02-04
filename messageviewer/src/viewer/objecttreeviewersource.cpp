@@ -18,6 +18,7 @@
 */
 
 #include "objecttreeviewersource.h"
+#include "csshelper.h"
 #include "viewer/viewer_p.h"
 #include "widgets/htmlstatusbar.h"
 #include "settings/messageviewersettings.h"
@@ -88,7 +89,7 @@ HtmlWriter *MailViewerSource::htmlWriter()
     return mViewer->htmlWriter();
 }
 
-CSSHelper *MailViewerSource::cssHelper()
+CSSHelperBase *MailViewerSource::cssHelper()
 {
     return mViewer->cssHelper();
 }

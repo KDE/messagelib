@@ -81,6 +81,11 @@ CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
     recalculatePGPColors();
 }
 
+CSSHelperBase::~CSSHelperBase()
+{
+
+}
+
 void CSSHelperBase::recalculatePGPColors()
 {
     // determine the frame and body color for PGP messages from the header color
@@ -168,8 +173,9 @@ QString CSSHelperBase::cssDefinitions(bool fixed) const
         QLatin1String("}\n");
 }
 
-QString CSSHelperBase::htmlHead(bool /*fixed*/) const
+QString CSSHelperBase::htmlHead(bool fixedFont) const
 {
+    Q_UNUSED(fixedFont);
     return
         QStringLiteral("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n"
                        "<html><head><title></title></head>\n"

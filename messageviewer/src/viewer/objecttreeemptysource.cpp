@@ -108,7 +108,7 @@ HtmlWriter *EmptySource::htmlWriter()
     return 0;
 }
 
-CSSHelper *EmptySource::cssHelper()
+CSSHelperBase *EmptySource::cssHelper()
 {
     return 0;
 }

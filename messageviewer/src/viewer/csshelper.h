@@ -43,10 +43,11 @@ class MESSAGEVIEWER_EXPORT CSSHelper : public CSSHelperBase
 {
 public:
     explicit CSSHelper(const QPaintDevice *pd);
+    virtual ~CSSHelper();
 
     /** @return HTML head including style sheet definitions and the
     &gt;body&lt; tag */
-    QString htmlHead(bool fixedFont = false) const;
+    QString htmlHead(bool fixedFont = false) const Q_DECL_OVERRIDE;
 };
 
 }

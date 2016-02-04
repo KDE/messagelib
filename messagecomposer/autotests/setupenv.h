@@ -51,7 +51,7 @@ class TestObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
     TestObjectTreeSource(MessageViewer::HtmlWriter *writer,
-                         MessageViewer::CSSHelper *cssHelper)
+                         MessageViewer::CSSHelperBase *cssHelper)
         : mWriter(writer), mCSSHelper(cssHelper)
     {
     }
@@ -60,14 +60,14 @@ public:
     {
         return mWriter;
     }
-    virtual MessageViewer::CSSHelper *cssHelper()
+    virtual MessageViewer::CSSHelperBase *cssHelper()
     {
         return mCSSHelper;
     }
 
 private:
     MessageViewer::HtmlWriter *mWriter;
-    MessageViewer::CSSHelper *mCSSHelper;
+    MessageViewer::CSSHelperBase *mCSSHelper;
 };
 
 }

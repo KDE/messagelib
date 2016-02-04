@@ -46,7 +46,7 @@ public:
     QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE;
     const AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE;
     HtmlWriter *htmlWriter() Q_DECL_OVERRIDE;
-    CSSHelper *cssHelper() Q_DECL_OVERRIDE;
+    CSSHelperBase *cssHelper() Q_DECL_OVERRIDE;
     QObject *sourceObject() Q_DECL_OVERRIDE;
 
     bool autoImportKeys() Q_DECL_OVERRIDE;

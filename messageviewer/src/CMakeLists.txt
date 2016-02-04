@@ -104,8 +104,7 @@ set(libmessageviewer_otp_SRCS
 set(libmessageviewer_otp_extra_SRCS
   job/kleojobexecutor.cpp
   #for quotes
-  viewer/csshelperbase.cpp # only interface without settings
-  viewer/csshelper.cpp
+  viewer/csshelperbase.cpp
   viewer/attachmentstrategy.cpp
   utils/iconnamecache.cpp
   utils/mimetype.cpp

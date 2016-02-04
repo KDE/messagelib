@@ -43,7 +43,7 @@ class TestObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
     TestObjectTreeSource(MessageViewer::HtmlWriter *writer,
-                         MessageViewer::CSSHelper *cssHelper)
+                         MessageViewer::CSSHelperBase *cssHelper)
         : mWriter(writer)
         , mCSSHelper(cssHelper)
         , mHtmlLoadExternal(false)
@@ -54,7 +54,7 @@ public:
     MessageViewer::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
         return mWriter;
     }
-    MessageViewer::CSSHelper *cssHelper() Q_DECL_OVERRIDE {
+    MessageViewer::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
         return mCSSHelper;
     }
 
@@ -93,7 +93,7 @@ public:
 
 private:
     MessageViewer::HtmlWriter *mWriter;
-    MessageViewer::CSSHelper *mCSSHelper;
+    MessageViewer::CSSHelperBase *mCSSHelper;
     bool mHtmlLoadExternal;
     bool mHtmlMail;
 };

@@ -46,7 +46,7 @@
 #include "partmetadata.h"
 #include "attachmentstrategy.h"
 #include "interfaces/htmlwriter.h"
-#include "csshelper.h"
+#include "csshelperbase.h"
 #include "viewer/bodypartformatterfactory.h"
 #include "viewer/partnodebodypart.h"
 #include "interfaces/bodypartformatter.h"
@@ -2595,7 +2595,7 @@ HtmlWriter *ObjectTreeParser::htmlWriter() const
     return mSource->htmlWriter();
 }
 
-CSSHelper *ObjectTreeParser::cssHelper() const
+CSSHelperBase *ObjectTreeParser::cssHelper() const
 {
     return mSource->cssHelper();
 }
