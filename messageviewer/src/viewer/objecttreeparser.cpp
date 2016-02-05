@@ -1319,7 +1319,8 @@ void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
             mNodeHelper->magicSetType(msgPart);
             //iconName = mNodeHelper->iconName( msgPart );
         }
-        htmlWriter()->queue(QLatin1String("<hr><div><a href=\"") + href + QLatin1String("\"><img align=\"center\" src=\"file:///") +
+        const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
+        htmlWriter()->queue(QLatin1String("<hr><div><a href=\"") + href + QStringLiteral("\"><img align=\"center\" height=\"%1\" width=\"%1\" src=\"file:///").arg(QString::number(iconSize)) +
                             iconName + QLatin1String("\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>") + label +
                             QLatin1String("</a></div>"
                                           "<div>") + comment + QLatin1String("</div>"));
