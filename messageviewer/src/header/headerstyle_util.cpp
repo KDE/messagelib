@@ -41,6 +41,11 @@ using namespace MessageViewer;
 //
 // Convenience functions:
 //
+HeaderStyleUtil::HeaderStyleUtil()
+{
+    mIconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
+}
+
 QString HeaderStyleUtil::directionOf(const QString &str) const
 {
     return str.isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
@@ -402,37 +407,37 @@ QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
     switch (action) {
     case Viewer::Trash: {
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("user-trash"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:trash\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Move to Trash"));
+        html = QStringLiteral("<a href=\"kmailaction:trash\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Move to Trash"), QString::number(mIconSize));
         break;
     }
     case Viewer::Reply: {
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-sender"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:reply\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Reply"));
+        html = QStringLiteral("<a href=\"kmailaction:reply\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Reply"), QString::number(mIconSize));
         break;
     }
     case Viewer::ReplyToAll: {
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-all"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:replyToAll\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Reply to All"));
+        html = QStringLiteral("<a href=\"kmailaction:replyToAll\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Reply to All"), QString::number(mIconSize));
         break;
     }
     case Viewer::Forward: {
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-forward"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:forward\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Forward"));
+        html = QStringLiteral("<a href=\"kmailaction:forward\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Forward"), QString::number(mIconSize));
         break;
     }
     case Viewer::NewMessage: {
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-message-new"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:newMessage\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("New Message"));
+        html = QStringLiteral("<a href=\"kmailaction:newMessage\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"file:///%1\"></a>").arg(iconPath, i18n("New Message"), QString::number(mIconSize));
         break;
     }
     case Viewer::Print: {
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("document-print"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:print\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Print"));
+        html = QStringLiteral("<a href=\"kmailaction:print\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Print"), QString::number(mIconSize));
         break;
     }
     case Viewer::PrintPreview: {
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("document-print-preview"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:printpreview\"><img title=\"%2\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Print Preview"));
+        html = QStringLiteral("<a href=\"kmailaction:printpreview\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"file:///%1\"></a>").arg(iconPath, i18n("Print Preview"), QString::number(mIconSize));
         break;
     }
     }

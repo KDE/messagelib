@@ -34,6 +34,7 @@ namespace MessageViewer
 class MESSAGEVIEWER_EXPORT HeaderStyleUtil
 {
 public:
+    HeaderStyleUtil();
     struct xfaceSettings {
         xfaceSettings()
             : photoWidth(60),
@@ -85,7 +86,7 @@ private:
     QString drawSpamMeter(SpamError spamError, double percent, double confidence,
                           const QString &filterHeader, const QString &confidenceHeader) const;
     QString imgToDataUrl(const QImage &image) const;
-
+    int mIconSize;
 };
 }
 
