@@ -21,6 +21,7 @@
 #include "config-messageviewer.h"
 
 #include <MessageCore/StringUtil>
+#include "utils/iconnamecache.h"
 
 #include <kmime/kmime_message.h>
 #include <kmime/kmime_dateformatter.h>
@@ -245,6 +246,16 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
 
     headerObject.insert(QStringLiteral("vcardi18n"), i18n("[vcard]"));
     headerObject.insert(QStringLiteral("readOnlyMessage"), style->readOnlyMessage());
+
+    const bool messageHasAttachment = KMime::hasAttachment(message);
+    headerObject.insert(QStringLiteral( "hasAttachment" ), messageHasAttachment);
+
+    if (messageHasAttachment) {
+        //TODO fix icon size
+        const QString iconPath = IconNameCache::instance()->iconPath(QLatin1String("mail-attachment"), KIconLoader::Toolbar);
+        const QString html = QStringLiteral("<img height=\"22\" width=\"22\" src=\"file:///%1\"></a>").arg(iconPath);
+        headerObject.insert(QStringLiteral( "attachmentIcon" ), html);
+    }
 
     //Action
     d->headerStyleUtil.addMailAction(headerObject);
