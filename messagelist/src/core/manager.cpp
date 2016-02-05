@@ -59,38 +59,38 @@ Manager::Manager()
 
     mDateFormatter = new KMime::DateFormatter();
 
-    mPixmapMessageNew = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-unread-new")).pixmap(16, 16));
-    mPixmapMessageUnread = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-unread")).pixmap(16, 16));
-    mPixmapMessageRead = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-read")).pixmap(16, 16));
-    mPixmapMessageDeleted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-deleted")).pixmap(16, 16));
-    mPixmapMessageReplied = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-replied")).pixmap(16, 16));
-    mPixmapMessageRepliedAndForwarded = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded-replied")).pixmap(16, 16));
-    mPixmapMessageQueued = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-queued")).pixmap(16, 16));       // mail-queue ?
-    mPixmapMessageActionItem = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-task")).pixmap(16, 16));
-    mPixmapMessageSent = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(16, 16));
-    mPixmapMessageForwarded = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(16, 16));
-    mPixmapMessageImportant = new QPixmap(QIcon::fromTheme(QStringLiteral("emblem-important")).pixmap(16, 16));       // "flag"
+    mPixmapMessageNew = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-unread-new")).pixmap(64, 64));
+    mPixmapMessageUnread = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-unread")).pixmap(64, 64));
+    mPixmapMessageRead = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-read")).pixmap(64, 64));
+    mPixmapMessageDeleted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-deleted")).pixmap(64, 64));
+    mPixmapMessageReplied = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-replied")).pixmap(64, 64));
+    mPixmapMessageRepliedAndForwarded = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded-replied")).pixmap(64, 64));
+    mPixmapMessageQueued = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-queued")).pixmap(64, 64));       // mail-queue ?
+    mPixmapMessageActionItem = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-task")).pixmap(64, 64));
+    mPixmapMessageSent = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(64, 64));
+    mPixmapMessageForwarded = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(64, 64));
+    mPixmapMessageImportant = new QPixmap(QIcon::fromTheme(QStringLiteral("emblem-important")).pixmap(64, 64));       // "flag"
     mPixmapMessageWatched = new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-thread-watch.png")));
     mPixmapMessageIgnored = new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-thread-ignored.png")));
-    mPixmapMessageSpam = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-junk")).pixmap(16, 16));
-    mPixmapMessageHam = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")).pixmap(16, 16));
-    mPixmapMessageFullySigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-verified")).pixmap(16, 16));
-    mPixmapMessagePartiallySigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-part")).pixmap(16, 16));
-    mPixmapMessageUndefinedSigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed")).pixmap(16, 16));
-    mPixmapMessageNotSigned = new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(16, 16));
-    mPixmapMessageFullyEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-full")).pixmap(16, 16));
-    mPixmapMessagePartiallyEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-part")).pixmap(16, 16));
-    mPixmapMessageUndefinedEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted")).pixmap(16, 16));
-    mPixmapMessageNotEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(16, 16));
-    mPixmapMessageAttachment = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-attachment")).pixmap(16, 16));
-    mPixmapMessageAnnotation = new QPixmap(QIcon::fromTheme(QStringLiteral("view-pim-notes")).pixmap(16, 16));
-    mPixmapMessageInvitation = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-invitation")).pixmap(16, 16));
+    mPixmapMessageSpam = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-junk")).pixmap(64, 64));
+    mPixmapMessageHam = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")).pixmap(64, 64));
+    mPixmapMessageFullySigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-verified")).pixmap(64, 64));
+    mPixmapMessagePartiallySigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-part")).pixmap(64, 64));
+    mPixmapMessageUndefinedSigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed")).pixmap(64, 64));
+    mPixmapMessageNotSigned = new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(64, 64));
+    mPixmapMessageFullyEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-full")).pixmap(64, 64));
+    mPixmapMessagePartiallyEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-part")).pixmap(64, 64));
+    mPixmapMessageUndefinedEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted")).pixmap(64, 64));
+    mPixmapMessageNotEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(64, 64));
+    mPixmapMessageAttachment = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-attachment")).pixmap(64, 64));
+    mPixmapMessageAnnotation = new QPixmap(QIcon::fromTheme(QStringLiteral("view-pim-notes")).pixmap(64, 64));
+    mPixmapMessageInvitation = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-invitation")).pixmap(64, 64));
     if (QApplication::isRightToLeft()) {
-        mPixmapShowMore = new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-left")).pixmap(16, 16));
+        mPixmapShowMore = new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-left")).pixmap(64, 64));
     } else {
-        mPixmapShowMore = new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-right")).pixmap(16, 16));
+        mPixmapShowMore = new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-right")).pixmap(64, 64));
     }
-    mPixmapShowLess = new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-down")).pixmap(16, 16));
+    mPixmapShowLess = new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-down")).pixmap(64, 64));
     mPixmapVerticalLine = new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-vertical-separator-line.png")));
     mPixmapHorizontalSpacer = new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-horizontal-space.png")));
 
