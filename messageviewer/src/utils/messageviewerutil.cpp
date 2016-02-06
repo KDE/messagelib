@@ -51,7 +51,7 @@
 #include <kmbox/mbox.h>
 
 #include <KMime/Message>
-
+#include <KFileWidget>
 #include <kcharsets.h>
 #include <KLocalizedString>
 #include <kmessagebox.h>
@@ -60,7 +60,7 @@
 #include <KJobWidgets>
 #include <KIO/StatJob>
 #include <KIO/FileCopyJob>
-
+#include <KRecentDirs>
 #include <QAction>
 #include <QIcon>
 #include <QTemporaryFile>
@@ -414,26 +414,18 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
     }
 
     const QString filter = i18n("email messages (*.mbox);;all files (*)");
-    QPointer<QFileDialog> dlg = new QFileDialog(parent, i18np("Save Message", "Save Messages", retrievedMsgs.count()), fileName, filter);
-    dlg->setFileMode(QFileDialog::AnyFile);
-    dlg->setAcceptMode(QFileDialog::AcceptSave);
 
-    if (appendMessages) {
-        dlg->setOption(QFileDialog::DontConfirmOverwrite);
-    }
-    if (dlg->exec()) {
-        QList<QUrl> url = dlg->selectedUrls();
-        if (url.isEmpty()) {
-            delete dlg;
-            return true;
-        }
+    QString fileClass;
+    const QUrl startUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///savemessage")), fileClass);
+    QFileDialog::Options opt;
+    if (appendMessages)
+        opt |= QFileDialog::DontConfirmOverwrite;
+    QString localFile = startUrl.toLocalFile() + QLatin1Char('/') + fileName;
+    QString saveFileName = QFileDialog::getSaveFileName(parent, i18np("Save Message", "Save Messages", retrievedMsgs.count()), localFile, filter, Q_NULLPTR, opt);
 
-        const QString localFileName = url.at(0).toLocalFile();
-        if (localFileName.isEmpty()) {
-            delete dlg;
-            return true;
-        }
 
+    if(!saveFileName.isEmpty()) {
+        const QString localFileName = saveFileName;
         if (!appendMessages) {
             QFile::remove(localFileName);
         }
@@ -445,7 +437,6 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
             } else {
                 KMessageBox::error(parent, i18n("File %1 could not be created.", localFileName), i18n("Error saving message"));
             }
-            delete dlg;
             return false;
         }
         foreach (const Akonadi::Item &item, retrievedMsgs) {
@@ -456,11 +447,13 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
 
         if (!mbox.save()) {
             KMessageBox::error(parent, i18n("We cannot save message."), i18n("Error saving message"));
-            delete dlg;
             return false;
         }
+        QUrl url = QUrl::fromLocalFile(saveFileName);
+        if(url.isLocalFile()) {
+            KRecentDirs::add(fileClass, url.adjusted(QUrl::RemoveFilename|QUrl::StripTrailingSlash).path());
+        }
     }
-    delete dlg;
     return true;
 }
 
