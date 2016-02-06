@@ -131,7 +131,7 @@ bool ContactDisplayMessageMemento::finished() const
 
 void ContactDisplayMessageMemento::detach()
 {
-    disconnect(this, SIGNAL(update(MessageViewer::Viewer::UpdateMode)), 0, 0);
+    disconnect(this, SIGNAL(update(MessageViewer::UpdateMode)), 0, 0);
     disconnect(this, SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)), 0, 0);
 }
 

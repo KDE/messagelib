@@ -51,6 +51,6 @@ void CryptoBodyPartMemento::setRunning(bool running)
 
 void CryptoBodyPartMemento::detach()
 {
-    disconnect(this, SIGNAL(update(MessageViewer::Viewer::UpdateMode)), 0, 0);
+    disconnect(this, SIGNAL(update(MessageViewer::UpdateMode)), 0, 0);
 }
 

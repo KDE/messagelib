@@ -310,8 +310,8 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
             const QString email = QString::fromLatin1(KEmailAddress::firstEmailAddress(message->from()->as7BitString(false)));
             photoMemento = new ContactDisplayMessageMemento(email);
             style->nodeHelper()->setBodyPartMemento(message, "contactphoto", photoMemento);
-            QObject::connect(photoMemento, SIGNAL(update(MessageViewer::Viewer::UpdateMode)),
-                             style->sourceObject(), SLOT(update(MessageViewer::Viewer::UpdateMode)));
+            QObject::connect(photoMemento, SIGNAL(update(MessageViewer::UpdateMode)),
+                             style->sourceObject(), SLOT(update(MessageViewer::UpdateMode)));
 
             QObject::connect(photoMemento, SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)),
                              style->sourceObject(), SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)));
