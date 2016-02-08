@@ -32,15 +32,17 @@
 #ifndef __MESSAGEVIEWER_TESTCSSHELPER_H__
 #define __MESSAGEVIEWER_TESTCSSHELPER_H__
 
-#include "viewer/csshelper.h"
+#include "viewer/csshelperbase.h"
 
 namespace MessageViewer
 {
 
-class TestCSSHelper : public CSSHelper
+class TestCSSHelper : public CSSHelperBase
 {
 public:
     explicit TestCSSHelper(const QPaintDevice *pd);
+    virtual ~TestCSSHelper();
+    QString htmlHead(bool fixed) const Q_DECL_OVERRIDE;
 };
 
 }
