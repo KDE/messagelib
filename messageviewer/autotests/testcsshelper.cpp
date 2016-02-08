@@ -99,11 +99,8 @@ QString TestCSSHelper::htmlHead(bool fixed) const
     Q_UNUSED(fixed);
     return
         QStringLiteral("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n"
-                      "<html>\n")
-        + QStringLiteral("<head><title></title><style>\n")
-        + cssDefinitions(fixed) +
-        QStringLiteral("</style></head>\n")+
-        QStringLiteral("<body>\n");
+                      "<html>\n"
+                      "<body>\n");
 }
 
 }
