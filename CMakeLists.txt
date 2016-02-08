@@ -61,7 +61,6 @@ set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Sear
 
 find_package(KF5ItemViews ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Contacts ${KCONTACTS_LIB_VERSION} CONFIG REQUIRED)
-find_package(KF5KDELibs4Support ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Mbox ${KMBOX_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiNotes ${AKONADINOTES_LIB_VERSION} CONFIG REQUIRED)
 
