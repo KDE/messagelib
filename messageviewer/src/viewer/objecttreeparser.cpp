@@ -591,12 +591,12 @@ void ObjectTreeParser::writeCertificateImportResult(const GpgME::ImportResult &r
     comment += QLatin1String("&nbsp;<br/>");
     htmlWriter()->queue(comment);
     if (!nImp && !nSKImp) {
-        htmlWriter()->queue(QStringLiteral("<hr>"));
+        htmlWriter()->queue(QStringLiteral("<hr/>"));
         return;
     }
     const std::vector<GpgME::Import> imports = res.imports();
     if (imports.empty()) {
-        htmlWriter()->queue(i18n("Sorry, no details on certificate import available.") + QLatin1String("<hr>"));
+        htmlWriter()->queue(i18n("Sorry, no details on certificate import available.") + QLatin1String("<hr/>"));
         return;
     }
     htmlWriter()->queue(QLatin1String("<b>") + i18n("Certificate import details:") + QLatin1String("</b><br/>"));
@@ -615,7 +615,7 @@ void ObjectTreeParser::writeCertificateImportResult(const GpgME::ImportResult &r
         htmlWriter()->queue(QStringLiteral("<br/>"));
     }
 
-    htmlWriter()->queue(QStringLiteral("<hr>"));
+    htmlWriter()->queue(QStringLiteral("<hr/>"));
 }
 
 bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
@@ -1306,7 +1306,7 @@ void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
     if (inlineImage) {
         const QString fileName = mNodeHelper->writeNodeToTempFile(msgPart);
         // show the filename of the image below the embedded image
-        htmlWriter()->queue(QLatin1String("<hr><div><a href=\"") + href + QLatin1String("\">"
+        htmlWriter()->queue(QLatin1String("<hr/><div><a href=\"") + href + QLatin1String("\">"
                             "<img align=\"center\" src=\"file:///") + fileName + QLatin1String("\" border=\"0\" style=\"max-width: 100%\"/></a>"
                                     "</div>"
                                     "<div><a href=\"") + href + QLatin1String("\">") + label + QLatin1String("</a>"
@@ -1320,7 +1320,7 @@ void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
             //iconName = mNodeHelper->iconName( msgPart );
         }
         const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
-        htmlWriter()->queue(QLatin1String("<hr><div><a href=\"") + href + QStringLiteral("\"><img align=\"center\" height=\"%1\" width=\"%1\" src=\"file:///").arg(QString::number(iconSize)) +
+        htmlWriter()->queue(QLatin1String("<hr/><div><a href=\"") + href + QStringLiteral("\"><img align=\"center\" height=\"%1\" width=\"%1\" src=\"file:///").arg(QString::number(iconSize)) +
                             iconName + QLatin1String("\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>") + label +
                             QLatin1String("</a></div>"
                                           "<div>") + comment + QLatin1String("</div>"));

@@ -1213,7 +1213,7 @@ void CryptoMessagePart::html(bool decorate)
     } else {
         if (mMetaData.isSigned && mVerifiedText.isEmpty() && !hideErrors) {
             const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mFromAddress, mNode);
-            writer->queue(QStringLiteral("<hr><b><h2>"));
+            writer->queue(QStringLiteral("<hr/><b><h2>"));
             writer->queue(i18n("The crypto engine returned no cleartext data."));
             writer->queue(QStringLiteral("</h2></b>"));
             writer->queue(QStringLiteral("<br/>&nbsp;<br/>"));
