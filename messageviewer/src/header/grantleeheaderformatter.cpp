@@ -100,7 +100,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     // the "Re:" and "Fwd:" prefixes would always cause the subject to be
     // considered left-to-right, they are ignored when determining its
     // direction.
-    const QString absoluteThemePath = QStringLiteral("file://") + absolutePath + QLatin1Char('/');
+    const QString absoluteThemePath = QUrl::fromLocalFile(absolutePath + QLatin1Char('/')).url();
     headerObject.insert(QStringLiteral("absoluteThemePath"), absoluteThemePath);
     headerObject.insert(QStringLiteral("applicationDir"), QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
     headerObject.insert(QStringLiteral("subjectDir"), d->headerStyleUtil.subjectDirectionString(message));
@@ -253,7 +253,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     if (messageHasAttachment) {
         //TODO fix icon size
         const QString iconPath = IconNameCache::instance()->iconPath(QLatin1String("mail-attachment"), KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"22\" width=\"22\" src=\"file:///%1\"></a>").arg(iconPath);
+        const QString html = QStringLiteral("<img height=\"22\" width=\"22\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url());
         headerObject.insert(QStringLiteral( "attachmentIcon" ), html);
     }
 

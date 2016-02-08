@@ -2281,15 +2281,23 @@ QString ViewerPrivate::attachmentInjectionHtml()
         return QString();
     }
 
-    QString link;
     //TODO make it as a virtual method
+    QString link;
+    QString textAlign = QStringLiteral("right");
+
     if (headerStylePlugin()->name() == QStringLiteral("fancy")) {
-        link += QLatin1String("<div style=\"text-align: left;\"><a href=\"") + urlHandle + QLatin1String("\"><img src=\"file:///") + imgpath + imgSrc + QLatin1String("\"/></a></div>");
-        html.prepend(link);
+	textAlign = QStringLiteral("left");
+    }
+
+    link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign) +
+	    QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
+	    QStringLiteral("<img src=\"%1/>").arg(QUrl::fromLocalFile(imgpath + imgSrc).url()) +
+	    QStringLiteral("</a></div>");
+
+    html.prepend(link);
+
+    if (headerStylePlugin()->name() == QStringLiteral("fancy")) {
         html.prepend(QStringLiteral("<div style=\"float:left;\">%1&nbsp;</div>").arg(i18n("Attachments:")));
-    } else {
-        link += QLatin1String("<div style=\"text-align: right;\"><a href=\"") + urlHandle + QLatin1String("\"><img src=\"file:///") + imgpath + imgSrc + QLatin1String("\"/></a></div>");
-        html.prepend(link);
     }
     return html;
 }
@@ -2770,8 +2778,10 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(bool doShow, const QString &f
         altText = i18n("Show full address list");
     }
 
-    return QStringLiteral("<span style=\"text-align: right;\"><a href=\"") + urlHandle + QLatin1String("\"><img src=\"file:///") + imgpath + imgSrc + QLatin1String("\""
-            "alt=\"") + altText + QLatin1String("\" /></a></span>");
+    return QStringLiteral("<span style=\"text-align: right;\">") +
+	   QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
+           QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrc).url(), altText) +
+	   QStringLiteral("</a></span>");
 }
 
 void ViewerPrivate::toggleFullAddressList(const QString &field)

@@ -1314,11 +1314,12 @@ void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
                                             "<div>") + comment + QLatin1String("</div>"));
     } else {
         // show the filename next to the image
-        const QString iconName = mNodeHelper->iconName(msgPart);
+        const QString iconName = QUrl::fromLocalFile(mNodeHelper->iconName(msgPart)).url();
         if (iconName.right(14) == QLatin1String("mime_empty.png")) {
             mNodeHelper->magicSetType(msgPart);
             //iconName = mNodeHelper->iconName( msgPart );
         }
+    
         const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
         htmlWriter()->queue(QStringLiteral("<hr/><div><a href=\"%1\">").arg(href) +
                             QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), QUrl::fromLocalFile(iconName).url()) +
