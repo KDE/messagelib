@@ -1177,8 +1177,8 @@ void CryptoMessagePart::writeDeferredDecryptionBlock() const
         return;
     }
 
-    const QString iconName = QLatin1String("file:///") + KIconLoader::global()->iconPath(QStringLiteral("document-decrypt"),
-                             KIconLoader::Small);
+    const QString iconName = QUrl::fromLocalFile(KIconLoader::global()->iconPath(QStringLiteral("document-decrypt"),
+                             KIconLoader::Small)).url();
     writer->queue(QLatin1String("<div style=\"font-size:large; text-align:center;"
                                 "padding-top:20pt;\">")
                   + i18n("This message is encrypted.")

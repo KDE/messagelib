@@ -416,7 +416,7 @@ MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, Process
     if (result.isImage() && node->parent() &&
             node->parent()->contentType()->subType() == "related" && mSource->htmlMail() && !showOnlyOneMimePart()) {
         QString fileName = mNodeHelper->writeNodeToTempFile(node);
-        QString href = QLatin1String("file:///") + fileName;
+        QString href = QUrl::fromLocalFile(fileName).url();
         QByteArray cid = node->contentID()->identifier();
         htmlWriter()->embedPart(cid, href);
         nodeHelper()->setNodeDisplayedEmbedded(node, true);
@@ -1307,7 +1307,7 @@ void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
         const QString fileName = mNodeHelper->writeNodeToTempFile(msgPart);
         // show the filename of the image below the embedded image
         htmlWriter()->queue(QLatin1String("<hr/><div><a href=\"") + href + QLatin1String("\">"
-                            "<img align=\"center\" src=\"file:///") + fileName + QLatin1String("\" border=\"0\" style=\"max-width: 100%\"/></a>"
+                            "<img align=\"center\" src=\"") + QUrl::fromLocalFile(fileName).url() + QLatin1String("\" border=\"0\" style=\"max-width: 100%\"/></a>"
                                     "</div>"
                                     "<div><a href=\"") + href + QLatin1String("\">") + label + QLatin1String("</a>"
                                             "</div>"
@@ -1320,10 +1320,10 @@ void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
             //iconName = mNodeHelper->iconName( msgPart );
         }
         const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
-        htmlWriter()->queue(QLatin1String("<hr/><div><a href=\"") + href + QStringLiteral("\"><img align=\"center\" height=\"%1\" width=\"%1\" src=\"file:///").arg(QString::number(iconSize)) +
-                            iconName + QLatin1String("\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>") + label +
-                            QLatin1String("</a></div>"
-                                          "<div>") + comment + QLatin1String("</div>"));
+        htmlWriter()->queue(QStringLiteral("<hr/><div><a href=\"%1\">").arg(href) +
+                            QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), QUrl::fromLocalFile(iconName).url()) +
+                            label + QStringLiteral("</a></div>") +
+                            QStringLiteral("<div>%1</div>").arg(comment));
     }
 }
 
