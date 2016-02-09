@@ -427,6 +427,7 @@ ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
 ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
   HEADER_NAMES
   WebKitPartHtmlWriter
+  FileHtmlWriter
   REQUIRED_HEADERS MessageViewer_htmlwriter_HEADERS
   PREFIX MessageViewer
   RELATIVE htmlwriter

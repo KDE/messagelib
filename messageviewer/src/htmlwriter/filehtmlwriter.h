@@ -33,7 +33,7 @@
 #define __MESSAGEVIEWER_FILEHTMLWRITER_H__
 
 #include "messageviewer_export.h"
-#include "interfaces/htmlwriter.h"
+#include "messageviewer/htmlwriter.h"
 
 #include <QFile>
 #include <QTextStream>
