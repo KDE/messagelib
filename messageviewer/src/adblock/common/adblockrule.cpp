@@ -31,7 +31,7 @@
 #include "messageviewer_debug.h"
 
 // Local Includes
-#include "adblockrulefallbackimpl.h"
+#include "../adblockrulefallbackimpl.h"
 #include "adblockrulenullimpl.h"
 #include "adblockruletextmatchimpl.h"
 

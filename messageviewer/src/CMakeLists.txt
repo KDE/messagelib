@@ -47,15 +47,14 @@ endif()
 
 set(_mailwebview_cpp 
                        adblock/adblockelementhiding.cpp
-                       adblock/adblockhostmatcher.cpp
                        adblock/adblockmanager.cpp
-                       adblock/adblockrule.cpp
                        adblock/adblockrulefallbackimpl.cpp
-                       adblock/adblockrulenullimpl.cpp
-                       adblock/adblockruletextmatchimpl.cpp
                        adblock/adblockblockableitemsdialog.cpp
                        adblock/adblockblockableitemswidget.cpp
 
+                       adblock/common/adblockrule.cpp
+                       adblock/common/adblockruletextmatchimpl.cpp
+                       adblock/common/adblockrulenullimpl.cpp
                        adblock/common/adblocksettingwidget.cpp
                        adblock/common/adblockutil.cpp
                        adblock/common/adblockcreatefilterdialog.cpp
@@ -63,6 +62,7 @@ set(_mailwebview_cpp
                        adblock/common/adblocklistwidget.cpp
                        adblock/common/adblocksyntaxhighlighter.cpp
                        adblock/common/adblockshowlistdialog.cpp
+                       adblock/common/adblockhostmatcher.cpp
                        )
 
 

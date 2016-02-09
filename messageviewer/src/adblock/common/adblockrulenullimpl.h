@@ -28,7 +28,7 @@
 #define ADBLOCKRULE_NULL_IMPL_H
 
 // Local Includes
-#include "adblockruleimpl.h"
+#include "../adblockruleimpl.h"
 
 // Qt Includes
 #include <QString>

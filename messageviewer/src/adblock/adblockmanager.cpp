@@ -30,8 +30,8 @@
 #include "settings/messageviewersettings.h"
 #include "adblock/common/adblockutil.h"
 #include "adblockelementhiding.h"
-#include "adblockhostmatcher.h"
-#include "adblock/adblockrule.h"
+#include "common/adblockhostmatcher.h"
+#include "common/adblockrule.h"
 
 #include "viewer/webview/webpage.h"
 

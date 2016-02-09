@@ -28,7 +28,7 @@
 #ifndef ADBLOCKRULETEXTMATCHIMPL_H
 #define ADBLOCKRULETEXTMATCHIMPL_H
 
-#include "adblockruleimpl.h"
+#include "../adblockruleimpl.h"
 
 // Qt Includes
 #include <QString>

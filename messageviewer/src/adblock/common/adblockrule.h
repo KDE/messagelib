@@ -27,7 +27,7 @@
 #ifndef ADBLOCKRULE_H
 #define ADBLOCKRULE_H
 
-#include "adblockruleimpl.h"
+#include "../adblockruleimpl.h"
 
 #include <QSharedPointer>
 
