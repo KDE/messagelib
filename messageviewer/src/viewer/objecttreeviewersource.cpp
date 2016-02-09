@@ -34,22 +34,22 @@ MailViewerSource::~MailViewerSource()
 {
 }
 
-bool MailViewerSource::htmlMail()
+bool MailViewerSource::htmlMail() const
 {
     return mViewer->htmlMail();
 }
 
-bool MailViewerSource::decryptMessage()
+bool MailViewerSource::decryptMessage() const
 {
     return mViewer->decryptMessage();
 }
 
-bool MailViewerSource::htmlLoadExternal()
+bool MailViewerSource::htmlLoadExternal() const
 {
     return mViewer->htmlLoadExternal();
 }
 
-bool MailViewerSource::showSignatureDetails()
+bool MailViewerSource::showSignatureDetails() const
 {
     return mViewer->mShowSignatureDetails;
 }
@@ -59,7 +59,7 @@ void MailViewerSource::setHtmlMode(Util::HtmlMode mode)
     mViewer->mColorBar->setMode(mode);
 }
 
-int MailViewerSource::levelQuote()
+int MailViewerSource::levelQuote() const
 {
     return mViewer->mLevelQuote;
 }
@@ -94,17 +94,17 @@ CSSHelperBase *MailViewerSource::cssHelper()
     return mViewer->cssHelper();
 }
 
-bool MailViewerSource::autoImportKeys()
+bool MailViewerSource::autoImportKeys() const
 {
     return MessageViewer::MessageViewerSettings::self()->autoImportKeys();
 }
 
-bool MailViewerSource::showEmoticons()
+bool MailViewerSource::showEmoticons() const
 {
     return MessageViewer::MessageViewerSettings::self()->showEmoticons();
 }
 
-bool MailViewerSource::showExpandQuotesMark()
+bool MailViewerSource::showExpandQuotesMark() const
 {
     return MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark();
 }

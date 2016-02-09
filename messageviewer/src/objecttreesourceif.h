@@ -58,19 +58,19 @@ public:
     virtual void setHtmlMode(MessageViewer::Util::HtmlMode mode) = 0;
 
     /** Return true if the mail should be parsed as a html mail */
-    virtual bool htmlMail() = 0;
+    virtual bool htmlMail() const = 0;
 
     /** Return true if an encrypted mail should be decrypted */
 
-    virtual bool decryptMessage() = 0;
+    virtual bool decryptMessage() const = 0;
 
     /** Return true if external sources should be loaded in a html mail */
-    virtual bool htmlLoadExternal() = 0;
+    virtual bool htmlLoadExternal() const = 0;
 
     /** Return true to include the signature details in the generated html */
-    virtual bool showSignatureDetails() = 0;
+    virtual bool showSignatureDetails() const = 0;
 
-    virtual int levelQuote() = 0;
+    virtual int levelQuote() const = 0;
 
     /** The override codec that should be used for the mail */
     virtual const QTextCodec *overrideCodec() = 0;
@@ -90,11 +90,11 @@ public:
     virtual QObject *sourceObject() = 0;
 
     /** should keys be imported automatically **/
-    virtual bool autoImportKeys() = 0;
+    virtual bool autoImportKeys() const = 0;
 
-    virtual bool showEmoticons() = 0;
+    virtual bool showEmoticons() const = 0;
 
-    virtual bool showExpandQuotesMark() = 0;
+    virtual bool showExpandQuotesMark() const = 0;
 };
 }
 

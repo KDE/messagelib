@@ -47,22 +47,22 @@ EmptySource::~EmptySource()
     delete d;
 }
 
-bool EmptySource::htmlMail()
+bool EmptySource::htmlMail() const
 {
     return true;
 }
 
-bool EmptySource::decryptMessage()
+bool EmptySource::decryptMessage() const
 {
     return d->mAllowDecryption;
 }
 
-bool EmptySource::htmlLoadExternal()
+bool EmptySource::htmlLoadExternal() const
 {
     return false;
 }
 
-bool EmptySource::showSignatureDetails()
+bool EmptySource::showSignatureDetails() const
 {
     return false;
 }
@@ -77,7 +77,7 @@ void EmptySource::setAllowDecryption(bool allowDecryption)
     d->mAllowDecryption = allowDecryption;
 }
 
-int EmptySource::levelQuote()
+int EmptySource::levelQuote() const
 {
     return 1;
 }
@@ -113,17 +113,17 @@ CSSHelperBase *EmptySource::cssHelper()
     return 0;
 }
 
-bool EmptySource::autoImportKeys()
+bool EmptySource::autoImportKeys() const
 {
     return true;
 }
 
-bool EmptySource::showEmoticons()
+bool EmptySource::showEmoticons() const
 {
     return false;
 }
 
-bool EmptySource::showExpandQuotesMark()
+bool EmptySource::showExpandQuotesMark() const
 {
     return false;
 }

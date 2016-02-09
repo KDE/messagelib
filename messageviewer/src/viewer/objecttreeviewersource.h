@@ -35,12 +35,12 @@ class MailViewerSource : public ObjectTreeSourceIf
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);
     ~MailViewerSource();
-    bool htmlMail() Q_DECL_OVERRIDE;
-    bool decryptMessage() Q_DECL_OVERRIDE;
-    bool htmlLoadExternal() Q_DECL_OVERRIDE;
-    bool showSignatureDetails() Q_DECL_OVERRIDE;
+    bool htmlMail() const Q_DECL_OVERRIDE;
+    bool decryptMessage() const Q_DECL_OVERRIDE;
+    bool htmlLoadExternal() const Q_DECL_OVERRIDE;
+    bool showSignatureDetails() const Q_DECL_OVERRIDE;
     void setHtmlMode(Util::HtmlMode mode) Q_DECL_OVERRIDE;
-    int levelQuote() Q_DECL_OVERRIDE;
+    int levelQuote() const Q_DECL_OVERRIDE;
     const QTextCodec *overrideCodec() Q_DECL_OVERRIDE;
     QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE;
     const AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE;
@@ -48,9 +48,9 @@ public:
     CSSHelperBase *cssHelper() Q_DECL_OVERRIDE;
     QObject *sourceObject() Q_DECL_OVERRIDE;
 
-    bool autoImportKeys() Q_DECL_OVERRIDE;
-    bool showEmoticons() Q_DECL_OVERRIDE;
-    bool showExpandQuotesMark() Q_DECL_OVERRIDE;
+    bool autoImportKeys() const Q_DECL_OVERRIDE;
+    bool showEmoticons() const Q_DECL_OVERRIDE;
+    bool showExpandQuotesMark() const Q_DECL_OVERRIDE;
 private:
     ViewerPrivate *mViewer;
 };

@@ -58,7 +58,7 @@ public:
         return mCSSHelper;
     }
 
-    bool htmlLoadExternal() Q_DECL_OVERRIDE {
+    bool htmlLoadExternal() const Q_DECL_OVERRIDE {
         return mHtmlLoadExternal;
     }
 
@@ -67,7 +67,7 @@ public:
         mHtmlLoadExternal = loadExternal;
     }
 
-    bool htmlMail() Q_DECL_OVERRIDE {
+    bool htmlMail() const Q_DECL_OVERRIDE {
         return mHtmlMail;
     }
 
@@ -76,17 +76,17 @@ public:
         mHtmlMail = htmlMail;
     }
 
-    bool autoImportKeys() Q_DECL_OVERRIDE
+    bool autoImportKeys() const Q_DECL_OVERRIDE
     {
         return true;
     }
 
-    bool showEmoticons() Q_DECL_OVERRIDE
+    bool showEmoticons() const Q_DECL_OVERRIDE
     {
         return false;
     }
 
-    bool showExpandQuotesMark() Q_DECL_OVERRIDE
+    bool showExpandQuotesMark() const Q_DECL_OVERRIDE
     {
         return false;
     }
