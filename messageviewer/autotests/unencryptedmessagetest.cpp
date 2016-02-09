@@ -304,7 +304,7 @@ void UnencryptedMessageTest::testSMimeAutoCertImport()
     otp.parseObjectTree(originalMessage.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "");
-    QVERIFY(testWriter.html.contains(QStringLiteral("Sorry, certificate could not be imported.")));
+    QVERIFY(testWriter.html.contains(QStringLiteral("Sorry, no certificates were found in this message.")));
 }
 
 #include "unencryptedmessagetest.moc"
