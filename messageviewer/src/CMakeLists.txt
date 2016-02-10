@@ -65,13 +65,13 @@ set(_mailwebview_cpp
                        adblock/common/adblockhostmatcher.cpp
                        )
 
+
 # For the moment we can't replace mailwebengine
 set(libmessageviewer_mailviewer_SRCS
    viewer/webview/mailwebview.cpp
    viewer/webview/webpage.cpp
    viewer/webview/networkaccessmanager.cpp
    )
-
 set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
 
 if (QTWEBENGINE_EXPERIMENTAL_OPTION)
@@ -238,10 +238,6 @@ set(libmessageviewer_SRCS
   interfaces/bodypartformatter.cpp
   ${_mailwebview_cpp}
   ${libmessageviewer_mailviewer_SRCS}
-)
-
-kconfig_add_kcfg_files(libmessageviewer_SRCS
-  settings/globalsettings_messageviewer.kcfgc
 )
 
 ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
