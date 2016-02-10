@@ -18,7 +18,6 @@
 */
 
 #include "configurewidget.h"
-#include "customheadersettingdialog.h"
 #include "messageviewer_debug.h"
 #include "ui_settings.h"
 #include "messageviewer/messageviewerutil.h"
@@ -73,8 +72,6 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
         MessageViewer::MessageViewerSettings::self()->showExpandQuotesMarkItem()->whatsThis());
 
     connect(d->mSettingsUi->overrideCharacterEncoding, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &ConfigureWidget::settingsChanged);
-
-    connect(d->mSettingsUi->configureCustomHeadersButton, &QPushButton::clicked, this, &ConfigureWidget::showCustomHeadersDialog);
 }
 
 ConfigureWidget::~ConfigureWidget()
@@ -123,15 +120,5 @@ void ConfigureWidget::readCurrentOverrideCodec()
         d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
         MessageCore::MessageCoreSettings::self()->setOverrideCharacterEncoding(QString());
     }
-}
-
-void ConfigureWidget::showCustomHeadersDialog()
-{
-    QPointer<CustomHeaderSettingDialog> dlg = new CustomHeaderSettingDialog(this);
-    if (dlg->exec()) {
-        dlg->writeSettings();
-        settingsChanged();
-    }
-    delete dlg;
 }
 
