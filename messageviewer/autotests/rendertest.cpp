@@ -17,16 +17,19 @@
   02110-1301, USA.
 */
 
-#include "htmlwriter/filehtmlwriter.h"
-#include "viewer/objecttreeparser.h"
+#include "util.h"
 #include "testcsshelper.h"
 #include "setupenv.h"
 
+#include "htmlwriter/filehtmlwriter.h"
+#include "viewer/objecttreeparser.h"
+
 #include <KMime/Message>
-#include <qtest.h>
+
 #include <QDir>
 #include <QObject>
 #include <QProcess>
+#include <QTest>
 
 using namespace MessageViewer;
 
@@ -51,7 +54,7 @@ private Q_SLOTS:
             if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QLatin1String(".html"))) {
                 continue;
             }
-            QTest::newRow(file.toLatin1()) << QString(dir.path() + QLatin1Char('/') +  file) << QString(dir.path() + QLatin1Char('/') + file + QLatin1String(".html")) << QString(file + QLatin1String(".out"));
+            QTest::newRow(file.toLatin1()) << file << QString(dir.path() + QLatin1Char('/') + file + QLatin1String(".html")) << QString(file + QLatin1String(".out"));
         }
     }
 
@@ -64,18 +67,12 @@ private Q_SLOTS:
         const QString htmlFileName = outFileName + QLatin1String(".html");
 
         // load input mail
-        QFile mailFile(mailFileName);
-        QVERIFY(mailFile.open(QIODevice::ReadOnly));
-        const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
-        QVERIFY(!mailData.isEmpty());
-        KMime::Message::Ptr msg(new KMime::Message);
-        msg->setContent(mailData);
-        msg->parse();
+        const KMime::Message::Ptr msg(readAndParseMail(mailFileName));
 
         // render the mail
         FileHtmlWriter fileWriter(outFileName);
         QImage paintDevice;
-        TestCSSHelper cssHelper(&paintDevice);
+        MessageViewer::TestCSSHelper cssHelper(&paintDevice);
         NodeHelper nodeHelper;
         MessageViewer::Test::TestObjectTreeSource testSource(&fileWriter, &cssHelper);
         testSource.setAllowDecryption(true);
