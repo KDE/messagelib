@@ -40,8 +40,8 @@ QMimeType MessageViewer::Util::mimetype(const QString &name)
 }
 
 QString MessageViewer::Util::fileNameForMimetype(const QString &mimeType, int iconSize,
-                                  const QString &fallbackFileName1,
-                                  const QString &fallbackFileName2)
+        const QString &fallbackFileName1,
+        const QString &fallbackFileName2)
 {
     QString fileName;
     QString tMimeType = mimeType;

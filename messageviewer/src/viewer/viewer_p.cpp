@@ -2286,13 +2286,13 @@ QString ViewerPrivate::attachmentInjectionHtml()
     QString textAlign = QStringLiteral("right");
 
     if (headerStylePlugin()->name() == QStringLiteral("fancy")) {
-	textAlign = QStringLiteral("left");
+        textAlign = QStringLiteral("left");
     }
 
     link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign) +
-	    QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
-	    QStringLiteral("<img src=\"%1/>").arg(QUrl::fromLocalFile(imgpath + imgSrc).url()) +
-	    QStringLiteral("</a></div>");
+            QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
+            QStringLiteral("<img src=\"%1/>").arg(QUrl::fromLocalFile(imgpath + imgSrc).url()) +
+            QStringLiteral("</a></div>");
 
     html.prepend(link);
 
@@ -2779,9 +2779,9 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(bool doShow, const QString &f
     }
 
     return QStringLiteral("<span style=\"text-align: right;\">") +
-	   QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
+           QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
            QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrc).url(), altText) +
-	   QStringLiteral("</a></span>");
+           QStringLiteral("</a></span>");
 }
 
 void ViewerPrivate::toggleFullAddressList(const QString &field)

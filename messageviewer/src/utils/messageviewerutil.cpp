@@ -418,13 +418,13 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
     QString fileClass;
     const QUrl startUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///savemessage")), fileClass);
     QFileDialog::Options opt;
-    if (appendMessages)
+    if (appendMessages) {
         opt |= QFileDialog::DontConfirmOverwrite;
+    }
     QString localFile = startUrl.toLocalFile() + QLatin1Char('/') + fileName;
     QString saveFileName = QFileDialog::getSaveFileName(parent, i18np("Save Message", "Save Messages", retrievedMsgs.count()), localFile, filter, Q_NULLPTR, opt);
 
-
-    if(!saveFileName.isEmpty()) {
+    if (!saveFileName.isEmpty()) {
         const QString localFileName = saveFileName;
         if (!appendMessages) {
             QFile::remove(localFileName);
@@ -450,8 +450,8 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
             return false;
         }
         QUrl url = QUrl::fromLocalFile(saveFileName);
-        if(url.isLocalFile()) {
-            KRecentDirs::add(fileClass, url.adjusted(QUrl::RemoveFilename|QUrl::StripTrailingSlash).path());
+        if (url.isLocalFile()) {
+            KRecentDirs::add(fileClass, url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).path());
         }
     }
     return true;

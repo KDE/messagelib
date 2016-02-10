@@ -297,7 +297,7 @@ QString NodeHelper::createTempDir(const QString &param)
     if (!(fFile.permissions() & QFileDevice::WriteUser)) {
         // Not there or not writable
         if (!QDir().mkpath(fname) ||
-            !fFile.setPermissions(QFileDevice::WriteUser | QFileDevice::ReadUser | QFileDevice::ExeUser)) {
+                !fFile.setPermissions(QFileDevice::WriteUser | QFileDevice::ReadUser | QFileDevice::ExeUser)) {
             return QString(); //failed create
         }
     }

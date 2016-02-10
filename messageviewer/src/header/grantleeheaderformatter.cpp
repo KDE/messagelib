@@ -114,8 +114,8 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
         headerObject.insert(QStringLiteral("toNameOnly"), StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayNameOnly));
         headerObject.insert(QStringLiteral("toStr"), message->to()->asUnicodeString());
         const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->to(), MessageCore::StringUtil::DisplayFullAddress,
-                                                                       QString(), MessageCore::StringUtil::ShowLink,
-                                                                       MessageCore::StringUtil::ExpandableAddresses, QStringLiteral("FullToAddressList"));
+                            QString(), MessageCore::StringUtil::ShowLink,
+                            MessageCore::StringUtil::ExpandableAddresses, QStringLiteral("FullToAddressList"));
         headerObject.insert(QStringLiteral("toExpandable"), val);
         headerObject.insert(QStringLiteral("toMailbox"), QVariant::fromValue(message->to()));
     }
@@ -248,13 +248,13 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("readOnlyMessage"), style->readOnlyMessage());
 
     const bool messageHasAttachment = KMime::hasAttachment(message);
-    headerObject.insert(QStringLiteral( "hasAttachment" ), messageHasAttachment);
+    headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
 
     if (messageHasAttachment) {
         //TODO fix icon size
         const QString iconPath = IconNameCache::instance()->iconPath(QLatin1String("mail-attachment"), KIconLoader::Toolbar);
         const QString html = QStringLiteral("<img height=\"22\" width=\"22\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url());
-        headerObject.insert(QStringLiteral( "attachmentIcon" ), html);
+        headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }
 
     //Action
