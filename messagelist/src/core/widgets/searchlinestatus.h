@@ -19,6 +19,7 @@
 #define SEARCHLINESTATUS_H
 
 #include <PimCommon/LineEditWithCompleter>
+#include <Akonadi/KMime/MessageStatus>
 #include "messagelist_export.h"
 class QAction;
 namespace MessageList
@@ -34,13 +35,25 @@ public:
 
     void setLocked(bool b);
     bool locked() const;
-private slots:
+
+    void clearFilterAction();
+
+Q_SIGNALS:
+    void filterActionChanged(const QList<Akonadi::MessageStatus> &lst);
+
+private Q_SLOTS:
     void slotToggledLockAction();
+    void showMenu();
 private:
+    void createFilterAction(const QIcon &icon, const QString &text, int value);
+    void createMenuSearch();
     void updateLockAction();
     void initializeActions();
     bool mLocked;
     QAction *mLockAction;
+    QAction *mFiltersAction;
+    QMenu *mFilterMenu;
+    QList<QAction *> mFilterListActions;
 };
 
 }
