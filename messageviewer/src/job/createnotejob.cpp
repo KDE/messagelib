@@ -82,8 +82,8 @@ void CreateNoteJob::noteCreated(KJob *job)
     } else {
         Akonadi::ItemCreateJob *createJob = static_cast<Akonadi::ItemCreateJob *>(job);
         Akonadi::Relation relation(Akonadi::Relation::GENERIC, mItem, createJob->item());
-        Akonadi::RelationCreateJob *job = new Akonadi::RelationCreateJob(relation);
-        connect(job, &Akonadi::RelationCreateJob::result, this, &CreateNoteJob::relationCreated);
+        Akonadi::RelationCreateJob *rJob = new Akonadi::RelationCreateJob(relation);
+        connect(rJob, &Akonadi::RelationCreateJob::result, this, &CreateNoteJob::relationCreated);
     }
 }
 
