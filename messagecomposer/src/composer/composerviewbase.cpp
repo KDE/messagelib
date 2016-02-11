@@ -1802,6 +1802,9 @@ bool MessageComposer::ComposerViewBase::determineWhetherToSign(bool doSignComple
         case KMessageBox::No:
             markAllAttachmentsForSigning(false);
             return false;
+	default:
+            qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
+            return false;
         }
     }
     break;
@@ -1826,6 +1829,9 @@ bool MessageComposer::ComposerViewBase::determineWhetherToSign(bool doSignComple
             return true;
         case KMessageBox::No:
             markAllAttachmentsForSigning(false);
+            return false;
+	default:
+            qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
             return false;
         }
     }
@@ -1877,6 +1883,9 @@ bool MessageComposer::ComposerViewBase::determineWhetherToSign(bool doSignComple
                 return true;
             case KMessageBox::No:
                 return sign || doSignCompletely;
+            default:
+                qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
+                return false;
             }
         }
     }
@@ -1931,6 +1940,9 @@ bool MessageComposer::ComposerViewBase::determineWhetherToEncrypt(bool doEncrypt
         case KMessageBox::No:
             markAllAttachmentsForEncryption(false);
             return false;
+        default:
+            qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
+            return false;
         }
     }
     break;
@@ -1955,6 +1967,9 @@ bool MessageComposer::ComposerViewBase::determineWhetherToEncrypt(bool doEncrypt
             return true;
         case KMessageBox::No:
             markAllAttachmentsForEncryption(false);
+            return false;
+        default:
+            qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
             return false;
         }
     }
@@ -2011,6 +2026,9 @@ bool MessageComposer::ComposerViewBase::determineWhetherToEncrypt(bool doEncrypt
                 return true;
             case KMessageBox::No:
                 return encrypt || doEncryptCompletely;
+            default:
+                qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
+                return false;
             }
         }
     }
