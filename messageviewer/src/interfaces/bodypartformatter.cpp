@@ -78,7 +78,6 @@ MessageViewer::HtmlWriter *MessagePart::htmlWriter()
 
 MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) const
 {
-    qDebug() << "should never happen tm";
     auto mp = MessagePart::Ptr(new MessagePart(part));
     const auto ret = format(&part, mp->htmlWriter());
     if (ret != Failed) {
