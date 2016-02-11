@@ -805,6 +805,8 @@ bool ObjectTreeParser::isMailmanMessage(KMime::Content *curNode)
 
 MessagePart::Ptr ObjectTreeParser::processMailmanSubtype(KMime::Content *curNode, ProcessResult &result)
 {
+    Q_UNUSED(result);
+
     if (!isMailmanMessage(curNode)) {
         return MessagePart::Ptr();
     }
@@ -1079,6 +1081,8 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartSignedSubtype(KMime::Content 
 
 MessagePart::Ptr ObjectTreeParser::processMultiPartEncryptedSubtype(KMime::Content *node, ProcessResult &result)
 {
+    Q_UNUSED(result);
+
     KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
     if (!child) {
         Q_ASSERT(false);
@@ -1596,6 +1600,8 @@ QString ObjectTreeParser::writeSigstatHeader(PartMetaData &block,
         const QString &fromAddress,
         KMime::Content *node)
 {
+    Q_UNUSED(node);
+
     const bool isSMIME = cryptProto && (cryptProto == Kleo::CryptoBackendFactory::instance()->smime());
     QString signer = block.signer;
 

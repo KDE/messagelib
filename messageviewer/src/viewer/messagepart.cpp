@@ -545,8 +545,6 @@ const QVector<Interface::MessagePart::Ptr> &MessagePartList::messageParts() cons
 
 void MessagePartList::html(bool decorate)
 {
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
-
     const HTMLBlock::Ptr rBlock(rootBlock());
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
@@ -781,6 +779,7 @@ QString HtmlMessagePart::processHtml(const QString &htmlSource, QString &extraHe
 
 void HtmlMessagePart::html(bool decorate)
 {
+    Q_UNUSED(decorate);
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
     if (!writer) {
         return;
@@ -984,6 +983,7 @@ CertMessagePart::~CertMessagePart()
 
 void CertMessagePart::html(bool decorate)
 {
+    Q_UNUSED(decorate);
     MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
 
     if (!writer) {

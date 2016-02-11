@@ -59,6 +59,7 @@ MessagePart::~MessagePart()
 
 void MessagePart::html(bool decorate)
 {
+    Q_UNUSED(decorate);
     static_cast<QueueHtmlWriter *>(mHtmlWriter)->replay();
 }
 
