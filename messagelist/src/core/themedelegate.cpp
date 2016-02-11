@@ -164,6 +164,7 @@ static inline void paint_right_aligned_elided_text(const QString &text, Theme::C
 
 static inline void compute_bounding_rect_for_right_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir, const QFont &font)
 {
+    Q_UNUSED(font);
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);
     const int w = right - left;
     const QString elidedText = fontMetrics.elidedText(text, layoutDir == Qt::LeftToRight ? Qt::ElideLeft : Qt::ElideRight, w);
@@ -202,6 +203,7 @@ static inline void paint_left_aligned_elided_text(const QString &text, Theme::Co
 
 static inline void compute_bounding_rect_for_left_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir, const QFont &font)
 {
+    Q_UNUSED(font);
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);
     const int w = right - left;
     const QString elidedText = fontMetrics.elidedText(text, layoutDir == Qt::LeftToRight ? Qt::ElideRight : Qt::ElideLeft, w);
@@ -516,6 +518,7 @@ static inline void compute_bounding_rect_for_tag_list(const QList< MessageItem::
 static inline void compute_size_hint_for_item(Theme::ContentItem *ci,
         int &maxh, int &totalw, int iconSize, const Item *item)
 {
+    Q_UNUSED(item);
     if (ci->displaysText()) {
         if (sFontHeightCache > maxh) {
             maxh = sFontHeightCache;
