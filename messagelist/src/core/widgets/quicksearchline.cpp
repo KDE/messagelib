@@ -189,6 +189,7 @@ void QuickSearchLine::slotClearButtonClicked()
     if (mTagFilterCombo->isVisible()) {
         mTagFilterCombo->setCurrentIndex(0);
     }
+    mSearchEdit->clearFilterAction();
     Q_EMIT clearButtonClicked();
 }
 
