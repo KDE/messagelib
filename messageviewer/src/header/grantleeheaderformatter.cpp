@@ -27,6 +27,7 @@
 #include <kmime/kmime_dateformatter.h>
 
 #include <KLocalizedString>
+#include <KIconLoader>
 
 #include <grantlee/templateloader.h>
 #include <grantlee/engine.h>
@@ -41,6 +42,7 @@ class Q_DECL_HIDDEN GrantleeHeaderFormatter::Private
 public:
     Private()
     {
+        iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
         engine = new Grantlee::Engine;
         templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader);
         engine->addTemplateLoader(templateLoader);
@@ -52,6 +54,7 @@ public:
 
     MessageViewer::HeaderStyleUtil headerStyleUtil;
     QSharedPointer<Grantlee::FileSystemTemplateLoader> templateLoader;
+    int iconSize;
     Grantlee::Engine *engine;
 };
 
@@ -251,9 +254,8 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
 
     if (messageHasAttachment) {
-        //TODO fix icon size
         const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"22\" width=\"22\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url());
+        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }
 
