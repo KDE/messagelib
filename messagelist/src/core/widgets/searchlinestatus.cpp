@@ -135,6 +135,7 @@ void SearchLineStatus::updateFilterActionIcon()
 void SearchLineStatus::createMenuSearch()
 {
     mFilterMenu = new QMenu(this);
+    mFilterMenu->setObjectName(QStringLiteral("filtermenu"));
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-unread")), i18nc("@action:inmenu Status of a message", "Unread"),
                             Akonadi::MessageStatus::statusUnread().toQInt32());
 
