@@ -40,7 +40,6 @@ private Q_SLOTS:
     void shouldResetComboboxWhenResetFilter();
     void shouldNotEmitTextChangedWhenTextTrimmedIsEmpty();
     void shouldShowExtraOptionWidgetWhenTextTrimmedIsNotEmpty();
-    void shouldShowMoreOptionWhenClickOnMoreButton();
     void shouldChangeFromButtonLabelWhenChangeOutboundMessagesValue();
     void shouldSearchToOrFrom();
     void shouldEmitSearchOptionChangedWhenUseTabPress();
