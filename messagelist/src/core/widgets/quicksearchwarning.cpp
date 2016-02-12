@@ -33,7 +33,6 @@ QuickSearchWarning::QuickSearchWarning(QWidget *parent)
     action->setObjectName(QStringLiteral("donotshowagain"));
     connect(action, &QAction::triggered, this, &QuickSearchWarning::slotDoNotRememberIt);
     addAction(action);
-
 }
 
 QuickSearchWarning::~QuickSearchWarning()
