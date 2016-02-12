@@ -29,7 +29,6 @@ class KLineEdit;
 class KComboBox;
 class QToolButton;
 class QPushButton;
-class QSignalMapper;
 class QPushButton;
 namespace MessageList
 {
@@ -84,26 +83,20 @@ private Q_SLOTS:
     void slotSearchOptionChanged();
     void slotSearchEditTextEdited(const QString &text);
     void slotClearButtonClicked();
-    void slotMoreOptionClicked(bool b);
-    void slotSearchBy();
-
+    void slotSearchBy();    
+    void slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst);
 private:
-    void initializeStatusSearchButton(QLayout *quickSearchButtonLayout);
-    void createQuickSearchButton(const QIcon &icon, const QString &text, int value, QLayout *quickSearchButtonLayout);
     void changeSearchAgainstFromOrToText();
-    QList<QToolButton *> mListStatusButton;
     SearchLineStatus *mSearchEdit;
     KComboBox *mTagFilterCombo;
-    QPushButton *mMoreOptions;
     QPushButton *mSearchEveryWhere;
     QPushButton *mSearchAgainstBody;
     QPushButton *mSearchAgainstSubject;
     QPushButton *mSearchAgainstFromOrTo;
     QPushButton *mSearchAgainstBcc;
     QWidget *mExtraOption;
-    QWidget *mQuickSearchFilterWidget;
+    QList<Akonadi::MessageStatus> mLstStatus;
     bool mContainsOutboundMessages;
-    QSignalMapper *mFilterStatusMapper;
 };
 }
 }
