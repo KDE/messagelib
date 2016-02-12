@@ -22,6 +22,8 @@
 #include <QMenu>
 #include <KIconEngine>
 #include <KIconLoader>
+#include <QWidgetAction>
+#include <QPushButton>
 
 using namespace MessageList::Core;
 SearchLineStatus::SearchLineStatus(QWidget *parent)
@@ -92,21 +94,26 @@ void SearchLineStatus::slotToggledLockAction()
     updateLockAction();
 }
 
+void SearchLineStatus::updateFilters()
+{
+    QList<Akonadi::MessageStatus> lstStatus;
+
+    Q_FOREACH (QAction *act, mFilterListActions ) {
+        if (act->isChecked()) {
+            Akonadi::MessageStatus status;
+            status.fromQInt32(static_cast< qint32 >(act->data().toInt()));
+            lstStatus.append(status);
+        }
+    }
+    mHasFilter = !lstStatus.isEmpty();
+    Q_EMIT filterActionChanged(lstStatus);
+    updateFilterActionIcon();
+}
+
 void SearchLineStatus::showMenu()
 {
     if (mFilterMenu->exec(mapToGlobal(QPoint(0, height())))) {
-        QList<Akonadi::MessageStatus> lstStatus;
-
-        Q_FOREACH (QAction *act, mFilterListActions ) {
-            if (act->isChecked()) {
-                Akonadi::MessageStatus status;
-                status.fromQInt32(static_cast< qint32 >(act->data().toInt()));
-                lstStatus.append(status);
-            }
-        }
-        mHasFilter = !lstStatus.isEmpty();
-        Q_EMIT filterActionChanged(lstStatus);
-        updateFilterActionIcon();
+        updateFilters();
     }
 }
 
@@ -132,9 +139,21 @@ void SearchLineStatus::updateFilterActionIcon()
     mFiltersAction->setIcon(mHasFilter ? mWithFilter : mWithoutFilter);
 }
 
+void SearchLineStatus::clearFilterButtonClicked()
+{
+    clearFilterAction();
+    updateFilters();
+}
+
 void SearchLineStatus::createMenuSearch()
 {
     mFilterMenu = new QMenu(this);
+    QWidgetAction *clearWidgetAction = new QWidgetAction(mFilterMenu);
+    QPushButton *clearFilterButton = new QPushButton(i18n("Clear Filter"), mFilterMenu);
+    connect(clearFilterButton, &QPushButton::clicked, this, &SearchLineStatus::clearFilterButtonClicked);
+
+    clearWidgetAction->setDefaultWidget(clearFilterButton);
+    mFilterMenu->addAction(clearWidgetAction);
     mFilterMenu->setObjectName(QStringLiteral("filtermenu"));
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-unread")), i18nc("@action:inmenu Status of a message", "Unread"),
                             Akonadi::MessageStatus::statusUnread().toQInt32());

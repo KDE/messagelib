@@ -45,12 +45,14 @@ Q_SIGNALS:
 private Q_SLOTS:
     void slotToggledLockAction();
     void showMenu();
+    void clearFilterButtonClicked();
 private:
     void createFilterAction(const QIcon &icon, const QString &text, int value);
     void createMenuSearch();
     void updateLockAction();
     void initializeActions();
     void updateFilterActionIcon();
+    void updateFilters();
     bool mLocked;
     bool mHasFilter;
     QIcon mWithoutFilter;
