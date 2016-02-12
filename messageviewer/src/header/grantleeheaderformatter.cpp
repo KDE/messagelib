@@ -252,7 +252,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
 
     if (messageHasAttachment) {
         //TODO fix icon size
-        const QString iconPath = IconNameCache::instance()->iconPath(QLatin1String("mail-attachment"), KIconLoader::Toolbar);
+        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
         const QString html = QStringLiteral("<img height=\"22\" width=\"22\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url());
         headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }

@@ -175,7 +175,7 @@ void EncapsulatedRFC822Block::internalEnter()
         } else {
             mWriter->queue(i18n("Encapsulated message"));
         }
-        mWriter->queue(QLatin1String("</td></tr><tr class=\"rfc822B\"><td>"));
+        mWriter->queue(QStringLiteral("</td></tr><tr class=\"rfc822B\"><td>"));
 
         entered = true;
     }
@@ -225,7 +225,7 @@ void EncryptedBlock::internalEnter()
                 mWriter->queue(QLatin1String("<br />") + i18n("Reason: %1", mBlock.errorText));
             }
         }
-        mWriter->queue(QLatin1String("</td></tr><tr class=\"encrB\"><td>"));
+        mWriter->queue(QStringLiteral("</td></tr><tr class=\"encrB\"><td>"));
     }
 }
 
@@ -312,7 +312,7 @@ void TextBlock::internalEnter()
     if (!comment.isEmpty()) {
         mWriter->queue(QLatin1String("<br/>") + comment);
     }
-    mWriter->queue(QLatin1String("</td></tr><tr class=\"textAtmB\"><td>"));
+    mWriter->queue(QStringLiteral("</td></tr><tr class=\"textAtmB\"><td>"));
 }
 
 void TextBlock::internalExit()
