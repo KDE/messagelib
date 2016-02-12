@@ -21,6 +21,7 @@
 #include <PimCommon/LineEditWithCompleter>
 #include <Akonadi/KMime/MessageStatus>
 #include "messagelist_export.h"
+#include <QIcon>
 class QAction;
 namespace MessageList
 {
@@ -49,7 +50,11 @@ private:
     void createMenuSearch();
     void updateLockAction();
     void initializeActions();
+    void updateFilterActionIcon();
     bool mLocked;
+    bool mHasFilter;
+    QIcon mWithoutFilter;
+    QIcon mWithFilter;
     QAction *mLockAction;
     QAction *mFiltersAction;
     QMenu *mFilterMenu;

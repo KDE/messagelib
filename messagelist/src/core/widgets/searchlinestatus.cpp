@@ -20,11 +20,14 @@
 #include <QAction>
 #include <QStandardPaths>
 #include <QMenu>
+#include <KIconEngine>
+#include <KIconLoader>
 
 using namespace MessageList::Core;
 SearchLineStatus::SearchLineStatus(QWidget *parent)
     : PimCommon::LineEditWithCompleter(parent),
       mLocked(false),
+      mHasFilter(false),
       mLockAction(Q_NULLPTR),
       mFiltersAction(Q_NULLPTR),
       mFilterMenu(Q_NULLPTR)
@@ -76,7 +79,10 @@ void SearchLineStatus::initializeActions()
     connect(mLockAction, &QAction::triggered, this, &SearchLineStatus::slotToggledLockAction);
     updateLockAction();
 
-    mFiltersAction = addAction(QIcon::fromTheme(QStringLiteral("view-filter")), QLineEdit::LeadingPosition);
+    const QStringList overlays = QStringList() << QStringLiteral("list-add");
+    mWithFilter = QIcon(new KIconEngine(QStringLiteral("view-filter"), KIconLoader::global(), overlays));
+    mWithoutFilter = QIcon::fromTheme(QStringLiteral("view-filter"));
+    mFiltersAction = addAction(mWithoutFilter, QLineEdit::LeadingPosition);
     connect(mFiltersAction, &QAction::triggered, this, &SearchLineStatus::showMenu);
 }
 
@@ -98,7 +104,9 @@ void SearchLineStatus::showMenu()
                 lstStatus.append(status);
             }
         }
+        mHasFilter = !lstStatus.isEmpty();
         Q_EMIT filterActionChanged(lstStatus);
+        updateFilterActionIcon();
     }
 }
 
@@ -116,6 +124,11 @@ void SearchLineStatus::createFilterAction(const QIcon &icon, const QString &text
     act->setData(value);
     mFilterMenu->addAction(act);
     mFilterListActions.append(act);
+}
+
+void SearchLineStatus::updateFilterActionIcon()
+{
+    mFiltersAction->setIcon(mHasFilter ? mWithFilter : mWithoutFilter);
 }
 
 void SearchLineStatus::createMenuSearch()
