@@ -115,6 +115,7 @@ void SearchLineStatus::clearFilterAction()
     Q_FOREACH (QAction *act, mFilterListActions ) {
         act->setChecked(false);
     }
+    updateFilterActionIcon();
 }
 
 void SearchLineStatus::createFilterAction(const QIcon &icon, const QString &text, int value)
