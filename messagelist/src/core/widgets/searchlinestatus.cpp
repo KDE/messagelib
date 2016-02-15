@@ -85,6 +85,8 @@ void SearchLineStatus::initializeActions()
     mWithFilter = QIcon(new KIconEngine(QStringLiteral("view-filter"), KIconLoader::global(), overlays));
     mWithoutFilter = QIcon::fromTheme(QStringLiteral("view-filter"));
     mFiltersAction = addAction(mWithoutFilter, QLineEdit::LeadingPosition);
+    mFiltersAction->setToolTip(i18n("Filter Mails by Status"));
+
     connect(mFiltersAction, &QAction::triggered, this, &SearchLineStatus::showMenu);
 }
 
