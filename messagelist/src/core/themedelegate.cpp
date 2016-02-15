@@ -48,10 +48,10 @@ static const int gMessageHorizontalMargin = 2;
 static const int gHorizontalItemSpacing = 2;
 
 ThemeDelegate::ThemeDelegate(QAbstractItemView *parent)
-    : QStyledItemDelegate(parent)
+    : QStyledItemDelegate(parent),
+      mTheme(Q_NULLPTR)
 {
     mItemView = parent;
-    mTheme = Q_NULLPTR;
 }
 
 ThemeDelegate::~ThemeDelegate()
@@ -327,8 +327,7 @@ static inline const QPixmap *get_spam_ham_state_icon(MessageItem *messageItem)
 {
     if (messageItem->status().isSpam()) {
         return Manager::instance()->pixmapMessageSpam();
-    }
-    if (messageItem->status().isHam()) {
+    } else if (messageItem->status().isHam()) {
         return Manager::instance()->pixmapMessageHam();
     }
     return Q_NULLPTR;
@@ -338,8 +337,7 @@ static inline const QPixmap *get_watched_ignored_state_icon(MessageItem *message
 {
     if (messageItem->status().isIgnored()) {
         return Manager::instance()->pixmapMessageIgnored();
-    }
-    if (messageItem->status().isWatched()) {
+    } else if (messageItem->status().isWatched()) {
         return Manager::instance()->pixmapMessageWatched();
     }
     return Q_NULLPTR;
@@ -1623,12 +1621,8 @@ QSize ThemeDelegate::sizeHintForItemTypeAndColumn(Item::Type type, int column, c
 
 QSize ThemeDelegate::sizeHint(const QStyleOptionViewItem &, const QModelIndex &index) const
 {
-    if (!mTheme) {
+    if (!mTheme || !index.isValid()) {
         return QSize(16, 16);    // hm hm...
-    }
-
-    if (!index.isValid()) {
-        return QSize(16, 16);    // bleah
     }
 
     Item *item = itemFromIndex(index);
