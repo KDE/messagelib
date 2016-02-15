@@ -246,6 +246,7 @@ void QuickSearchLine::resetFilter()
     if (mTagFilterCombo->isVisible()) {
         mTagFilterCombo->setCurrentIndex(0);
     }
+    mSearchEdit->clearFilterAction();
     mSearchEdit->setLocked(false);
     mSearchEveryWhere->setChecked(true);
     mSearchAgainstBody->setChecked(false);

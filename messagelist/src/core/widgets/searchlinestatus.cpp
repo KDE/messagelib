@@ -122,6 +122,7 @@ void SearchLineStatus::clearFilterAction()
     Q_FOREACH (QAction *act, mFilterListActions ) {
         act->setChecked(false);
     }
+    mHasFilter = false;
     updateFilterActionIcon();
 }
 
