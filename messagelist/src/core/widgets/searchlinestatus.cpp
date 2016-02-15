@@ -145,6 +145,7 @@ void SearchLineStatus::updateFilterActionIcon()
 void SearchLineStatus::clearFilterButtonClicked()
 {
     clearFilterAction();
+    clearFilterByAction();
     updateFilters();
 }
 
@@ -200,4 +201,46 @@ void SearchLineStatus::createMenuSearch()
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")),
                             i18nc("@action:inmenu Status of a message", "Ham"),
                             Akonadi::MessageStatus::statusHam().toQInt32());
+    createFilterByAction();
+}
+
+void SearchLineStatus::createFilterByAction()
+{
+    mFilterMenu->addSeparator();
+    QActionGroup *grp = new QActionGroup(mFilterMenu);
+
+    mSearchEveryWhereAction = new QAction(i18n("Full Message"), mFilterMenu);
+    mSearchEveryWhereAction->setCheckable(true);
+    mSearchEveryWhereAction->setChecked(true);
+
+    mFilterMenu->addAction(mSearchEveryWhereAction);
+    grp->addAction(mSearchEveryWhereAction);
+
+    mSearchAgainstBodyAction = new QAction(i18n("Body"), mFilterMenu);
+    grp->addAction(mSearchAgainstBodyAction);
+    mFilterMenu->addAction(mSearchAgainstBodyAction);
+    mSearchAgainstBodyAction->setCheckable(true);
+
+    mSearchAgainstSubjectAction = new QAction(i18n("Subject"), mFilterMenu);
+    grp->addAction(mSearchAgainstSubjectAction);
+    mFilterMenu->addAction(mSearchAgainstSubjectAction);
+    mSearchAgainstSubjectAction->setCheckable(true);
+
+    mSearchAgainstFromOrToAction = new QAction(mFilterMenu);
+    //changeSearchAgainstFromOrToText()
+    grp->addAction(mSearchAgainstFromOrToAction);
+    mFilterMenu->addAction(mSearchAgainstFromOrToAction);
+    mSearchAgainstFromOrToAction->setCheckable(true);
+
+    mSearchAgainstBccAction = new QAction(i18n("bcc"), mFilterMenu);
+    grp->addAction(mSearchAgainstBccAction);
+    mFilterMenu->addAction(mSearchAgainstBccAction);
+    mSearchAgainstBccAction->setCheckable(true);
+
+    //TODO changeSearchType
+}
+
+void SearchLineStatus::clearFilterByAction()
+{
+    mSearchEveryWhereAction->setChecked(true);
 }

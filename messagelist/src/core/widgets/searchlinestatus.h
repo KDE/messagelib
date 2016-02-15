@@ -53,6 +53,9 @@ private:
     void initializeActions();
     void updateFilterActionIcon();
     void updateFilters();
+    void createFilterByAction();
+    void clearFilterByAction();
+
     bool mLocked;
     bool mHasFilter;
     QIcon mWithoutFilter;
@@ -61,6 +64,11 @@ private:
     QAction *mFiltersAction;
     QMenu *mFilterMenu;
     QList<QAction *> mFilterListActions;
+    QAction *mSearchEveryWhereAction;
+    QAction *mSearchAgainstBodyAction;
+    QAction *mSearchAgainstSubjectAction;
+    QAction *mSearchAgainstFromOrToAction;
+    QAction *mSearchAgainstBccAction;
 };
 
 }
