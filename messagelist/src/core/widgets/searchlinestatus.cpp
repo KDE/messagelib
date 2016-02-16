@@ -148,6 +148,7 @@ void SearchLineStatus::clearFilterButtonClicked()
     clearFilterAction();
     clearFilterByAction();
     updateFilters();
+    slotSearchOptionChanged();
 }
 
 void SearchLineStatus::createMenuSearch()
