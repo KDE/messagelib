@@ -32,7 +32,8 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
       mHasFilter(false),
       mLockAction(Q_NULLPTR),
       mFiltersAction(Q_NULLPTR),
-      mFilterMenu(Q_NULLPTR)
+      mFilterMenu(Q_NULLPTR),
+      mContainsOutboundMessages(false)
 {
     setClearButtonEnabled(true);
     setClearButtonShown(false);
@@ -227,7 +228,7 @@ void SearchLineStatus::createFilterByAction()
     mSearchAgainstSubjectAction->setCheckable(true);
 
     mSearchAgainstFromOrToAction = new QAction(mFilterMenu);
-    //changeSearchAgainstFromOrToText()
+    changeSearchAgainstFromOrToText();
     grp->addAction(mSearchAgainstFromOrToAction);
     mFilterMenu->addAction(mSearchAgainstFromOrToAction);
     mSearchAgainstFromOrToAction->setCheckable(true);
@@ -236,11 +237,68 @@ void SearchLineStatus::createFilterByAction()
     grp->addAction(mSearchAgainstBccAction);
     mFilterMenu->addAction(mSearchAgainstBccAction);
     mSearchAgainstBccAction->setCheckable(true);
-
-    //TODO changeSearchType
+    connect(grp, &QActionGroup::triggered, this, &SearchLineStatus::slotFilterActionClicked);
 }
 
 void SearchLineStatus::clearFilterByAction()
 {
     mSearchEveryWhereAction->setChecked(true);
+}
+
+bool SearchLineStatus::containsOutboundMessages() const
+{
+    return mContainsOutboundMessages;
+}
+
+void SearchLineStatus::setContainsOutboundMessages(bool containsOutboundMessages)
+{
+    if (mContainsOutboundMessages != containsOutboundMessages) {
+        mContainsOutboundMessages = containsOutboundMessages;
+        changeSearchAgainstFromOrToText();
+    }
+}
+
+void SearchLineStatus::changeSearchAgainstFromOrToText()
+{
+    if (mContainsOutboundMessages) {
+        mSearchAgainstFromOrToAction->setText(i18n("To"));
+    } else {
+        mSearchAgainstFromOrToAction->setText(i18n("From"));
+    }
+}
+
+QuickSearchLine::SearchOptions SearchLineStatus::searchOptions() const
+{
+    QuickSearchLine::SearchOptions searchOptions;
+    if (mSearchEveryWhereAction->isChecked()) {
+        searchOptions |= QuickSearchLine::SearchEveryWhere;
+    }
+    if (mSearchAgainstBodyAction->isChecked()) {
+        searchOptions |= QuickSearchLine::SearchAgainstBody;
+    }
+    if (mSearchAgainstSubjectAction->isChecked()) {
+        searchOptions |= QuickSearchLine::SearchAgainstSubject;
+    }
+    if (mSearchAgainstFromOrToAction->isChecked()) {
+        if (mContainsOutboundMessages) {
+            searchOptions |= QuickSearchLine::SearchAgainstTo;
+        } else {
+            searchOptions |= QuickSearchLine::SearchAgainstFrom;
+        }
+    }
+    if (mSearchAgainstBccAction->isChecked()) {
+        searchOptions |= QuickSearchLine::SearchAgainstBcc;
+    }
+    return searchOptions;
+}
+
+void SearchLineStatus::slotSearchOptionChanged()
+{
+    Q_EMIT searchOptionChanged();
+}
+
+void SearchLineStatus::slotFilterActionClicked(QAction *act)
+{
+    Q_UNUSED(act);
+    slotSearchOptionChanged();
 }

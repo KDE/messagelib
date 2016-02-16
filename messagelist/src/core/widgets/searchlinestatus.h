@@ -21,6 +21,7 @@
 #include <PimCommon/LineEditWithCompleter>
 #include <Akonadi/KMime/MessageStatus>
 #include "messagelist_export.h"
+#include "quicksearchline.h"
 #include <QIcon>
 class QAction;
 namespace MessageList
@@ -39,13 +40,19 @@ public:
 
     void clearFilterAction();
 
+    void setContainsOutboundMessages(bool containsOutboundMessages);
+    bool containsOutboundMessages() const;
+    QuickSearchLine::SearchOptions searchOptions() const;
 Q_SIGNALS:
     void filterActionChanged(const QList<Akonadi::MessageStatus> &lst);
+    void searchOptionChanged();
 
 private Q_SLOTS:
     void slotToggledLockAction();
     void showMenu();
     void clearFilterButtonClicked();
+    void slotSearchOptionChanged();
+    void slotFilterActionClicked(QAction *act);
 private:
     void createFilterAction(const QIcon &icon, const QString &text, int value);
     void createMenuSearch();
@@ -55,6 +62,7 @@ private:
     void updateFilters();
     void createFilterByAction();
     void clearFilterByAction();
+    void changeSearchAgainstFromOrToText();
 
     bool mLocked;
     bool mHasFilter;
@@ -69,6 +77,7 @@ private:
     QAction *mSearchAgainstSubjectAction;
     QAction *mSearchAgainstFromOrToAction;
     QAction *mSearchAgainstBccAction;
+    bool mContainsOutboundMessages;
 };
 
 }
