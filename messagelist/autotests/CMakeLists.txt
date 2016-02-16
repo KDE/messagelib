@@ -9,5 +9,4 @@ macro(messagelist_unittest _source)
 endmacro ()
 
 messagelist_unittest(itemsizetest.cpp)
-messagelist_unittest(quicksearchlinetest.cpp)
 messagelist_unittest(quicksearchwarningtest.cpp)

@@ -40,8 +40,7 @@
 
 using namespace MessageList::Core;
 QuickSearchLine::QuickSearchLine(QWidget *parent)
-    : QWidget(parent),
-      mContainsOutboundMessages(false)
+    : QWidget(parent)
 {
     QVBoxLayout *vbox = new QVBoxLayout;
     vbox->setMargin(0);
@@ -57,6 +56,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
 
     mSearchEdit = new SearchLineStatus(this);
     connect(mSearchEdit, &SearchLineStatus::filterActionChanged, this, &QuickSearchLine::slotFilterActionChanged);
+    connect(mSearchEdit, &SearchLineStatus::searchOptionChanged, this, &QuickSearchLine::searchOptionChanged);
     mSearchEdit->setPlaceholderText(i18nc("Search for messages.", "Search"));
     mSearchEdit->setObjectName(QStringLiteral("quicksearch"));
     mSearchEdit->setClearButtonShown(true);
@@ -77,63 +77,8 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     mSearchEdit->setEnabled(false);
     mTagFilterCombo->setEnabled(false);
 
-    mExtraOption = new QWidget;
-    mExtraOption->setObjectName(QStringLiteral("extraoptions"));
-    hbox = new QHBoxLayout;
-    hbox->setMargin(0);
-    vbox->addWidget(mExtraOption);
-    mExtraOption->setLayout(hbox);
-    mExtraOption->hide();
-
-    hbox->addStretch(0);
-    QLabel *lab = new QLabel(i18n("Filter message by:"));
-    hbox->addWidget(lab);
-
-    mSearchEveryWhere = new QPushButton(i18n("Full Message"));
-    mSearchEveryWhere->setObjectName(QStringLiteral("full_message"));
-    mSearchEveryWhere->setFlat(true);
-    mSearchEveryWhere->setCheckable(true);
-    mSearchEveryWhere->setChecked(true);
-    connect(mSearchEveryWhere, &QPushButton::clicked, this, &QuickSearchLine::slotSearchBy);
-    hbox->addWidget(mSearchEveryWhere);
-
-    mSearchAgainstBody = new QPushButton(i18n("Body"));
-    mSearchAgainstBody->setObjectName(QStringLiteral("body"));
-    mSearchAgainstBody->setFlat(true);
-    mSearchAgainstBody->setCheckable(true);
-    connect(mSearchAgainstBody, &QPushButton::clicked, this, &QuickSearchLine::slotSearchBy);
-    hbox->addWidget(mSearchAgainstBody);
-
-    mSearchAgainstSubject = new QPushButton(i18n("Subject"));
-    mSearchAgainstSubject->setCheckable(true);
-    mSearchAgainstSubject->setFlat(true);
-    mSearchAgainstSubject->setObjectName(QStringLiteral("subject"));
-    connect(mSearchAgainstSubject, &QPushButton::clicked, this, &QuickSearchLine::slotSearchBy);
-    hbox->addWidget(mSearchAgainstSubject);
-
-    mSearchAgainstFromOrTo = new QPushButton;
-    changeSearchAgainstFromOrToText();
-    mSearchAgainstFromOrTo->setObjectName(QStringLiteral("fromorto"));
-    mSearchAgainstFromOrTo->setCheckable(true);
-    mSearchAgainstFromOrTo->setFlat(true);
-    connect(mSearchAgainstFromOrTo, &QPushButton::clicked, this, &QuickSearchLine::slotSearchBy);
-    hbox->addWidget(mSearchAgainstFromOrTo);
-
-    mSearchAgainstBcc = new QPushButton(i18n("Bcc"));
-    mSearchAgainstBcc->setObjectName(QStringLiteral("bcc"));
-    mSearchAgainstBcc->setCheckable(true);
-    mSearchAgainstBcc->setFlat(true);
-    connect(mSearchAgainstBcc, &QPushButton::clicked, this, &QuickSearchLine::slotSearchBy);
-    hbox->addWidget(mSearchAgainstBcc);
-
     installEventFilter(this);
     mTagFilterCombo->installEventFilter(this);
-    mSearchEveryWhere->installEventFilter(this);
-    mSearchAgainstBody->installEventFilter(this);
-    mSearchAgainstSubject->installEventFilter(this);
-    mSearchAgainstFromOrTo->installEventFilter(this);
-    mSearchAgainstBcc->installEventFilter(this);
-    mExtraOption->installEventFilter(this);
     changeQuicksearchVisibility(MessageListSettings::self()->showQuickSearch());
 }
 
@@ -141,29 +86,6 @@ QuickSearchLine::~QuickSearchLine()
 {
 
 }
-
-void QuickSearchLine::slotSearchBy()
-{
-    QObject *button = sender();
-    if (mSearchEveryWhere != button) {
-        mSearchEveryWhere->setChecked(false);
-    }
-    if (mSearchAgainstBody != button) {
-        mSearchAgainstBody->setChecked(false);
-    }
-    if (mSearchAgainstSubject != button) {
-        mSearchAgainstSubject->setChecked(false);
-    }
-    if (mSearchAgainstFromOrTo != button) {
-        mSearchAgainstFromOrTo->setChecked(false);
-    }
-    if (mSearchAgainstBcc != button) {
-        mSearchAgainstBcc->setChecked(false);
-    }
-
-    slotSearchOptionChanged();
-}
-
 void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
 {
     int minimumStringLength = 3;
@@ -172,10 +94,7 @@ void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
     }
     if (!text.trimmed().isEmpty()) {
         if (text.length() >= minimumStringLength) {
-            mExtraOption->show();
             Q_EMIT searchEditTextEdited(text);
-        } else {
-            mExtraOption->hide();
         }
     } else {
         slotClearButtonClicked();
@@ -184,8 +103,6 @@ void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
 
 void QuickSearchLine::slotClearButtonClicked()
 {
-    mExtraOption->hide();
-    mSearchEveryWhere->setChecked(true);
     if (mTagFilterCombo->isVisible()) {
         mTagFilterCombo->setCurrentIndex(0);
     }
@@ -193,34 +110,9 @@ void QuickSearchLine::slotClearButtonClicked()
     Q_EMIT clearButtonClicked();
 }
 
-void QuickSearchLine::slotSearchOptionChanged()
-{
-    Q_EMIT searchOptionChanged();
-}
-
 QuickSearchLine::SearchOptions QuickSearchLine::searchOptions() const
 {
-    QuickSearchLine::SearchOptions searchOptions;
-    if (mSearchEveryWhere->isChecked()) {
-        searchOptions |= SearchEveryWhere;
-    }
-    if (mSearchAgainstBody->isChecked()) {
-        searchOptions |= SearchAgainstBody;
-    }
-    if (mSearchAgainstSubject->isChecked()) {
-        searchOptions |= SearchAgainstSubject;
-    }
-    if (mSearchAgainstFromOrTo->isChecked()) {
-        if (mContainsOutboundMessages) {
-            searchOptions |= SearchAgainstTo;
-        } else {
-            searchOptions |= SearchAgainstFrom;
-        }
-    }
-    if (mSearchAgainstBcc->isChecked()) {
-        searchOptions |= SearchAgainstBcc;
-    }
-    return searchOptions;
+    return mSearchEdit->searchOptions();
 }
 
 void QuickSearchLine::focusQuickSearch(const QString &selectedText)
@@ -248,13 +140,6 @@ void QuickSearchLine::resetFilter()
     }
     mSearchEdit->clearFilterAction();
     mSearchEdit->setLocked(false);
-    mSearchEveryWhere->setChecked(true);
-    mSearchAgainstBody->setChecked(false);
-    mSearchAgainstSubject->setChecked(false);
-    mSearchAgainstFromOrTo->setChecked(false);
-    mSearchAgainstBcc->setChecked(false);
-
-    mExtraOption->hide();
 }
 
 void QuickSearchLine::slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst)
@@ -268,27 +153,14 @@ QList<Akonadi::MessageStatus> QuickSearchLine::status() const
     return mLstStatus;
 }
 
-
 bool QuickSearchLine::containsOutboundMessages() const
 {
-    return mContainsOutboundMessages;
+    return mSearchEdit->containsOutboundMessages();
 }
 
 void QuickSearchLine::setContainsOutboundMessages(bool containsOutboundMessages)
 {
-    if (mContainsOutboundMessages != containsOutboundMessages) {
-        mContainsOutboundMessages = containsOutboundMessages;
-        changeSearchAgainstFromOrToText();
-    }
-}
-
-void QuickSearchLine::changeSearchAgainstFromOrToText()
-{
-    if (mContainsOutboundMessages) {
-        mSearchAgainstFromOrTo->setText(i18n("To"));
-    } else {
-        mSearchAgainstFromOrTo->setText(i18n("From"));
-    }
+    mSearchEdit->setContainsOutboundMessages(containsOutboundMessages);
 }
 
 void QuickSearchLine::updateComboboxVisibility()

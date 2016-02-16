@@ -28,8 +28,6 @@
 class KLineEdit;
 class KComboBox;
 class QToolButton;
-class QPushButton;
-class QPushButton;
 namespace MessageList
 {
 namespace Core
@@ -80,23 +78,13 @@ Q_SIGNALS:
 protected:
     bool eventFilter(QObject *object, QEvent *e) Q_DECL_OVERRIDE;
 private Q_SLOTS:
-    void slotSearchOptionChanged();
     void slotSearchEditTextEdited(const QString &text);
     void slotClearButtonClicked();
-    void slotSearchBy();    
     void slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst);
 private:
-    void changeSearchAgainstFromOrToText();
     SearchLineStatus *mSearchEdit;
     KComboBox *mTagFilterCombo;
-    QPushButton *mSearchEveryWhere;
-    QPushButton *mSearchAgainstBody;
-    QPushButton *mSearchAgainstSubject;
-    QPushButton *mSearchAgainstFromOrTo;
-    QPushButton *mSearchAgainstBcc;
-    QWidget *mExtraOption;
     QList<Akonadi::MessageStatus> mLstStatus;
-    bool mContainsOutboundMessages;
 };
 }
 }
