@@ -17,6 +17,7 @@
 
 #include "searchlinestatustest.h"
 #include "../src/core/widgets/searchlinestatus.h"
+#include <QMenu>
 #include <QTest>
 
 SearchLineStatusTest::SearchLineStatusTest(QObject *parent)
@@ -27,6 +28,17 @@ SearchLineStatusTest::SearchLineStatusTest(QObject *parent)
 
 SearchLineStatusTest::~SearchLineStatusTest()
 {
+
+}
+
+void SearchLineStatusTest::shouldHaveDefaultValue()
+{
+    MessageList::Core::SearchLineStatus w;
+    QVERIFY(!w.containsOutboundMessages());
+    QVERIFY(!w.locked());
+    QMenu *filterMenu = w.findChild<QMenu *>(QStringLiteral("filtermenu"));
+    QVERIFY(filterMenu);
+    QVERIFY(!filterMenu->actions().isEmpty());
 
 }
 

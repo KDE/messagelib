@@ -154,13 +154,13 @@ void SearchLineStatus::clearFilterButtonClicked()
 void SearchLineStatus::createMenuSearch()
 {
     mFilterMenu = new QMenu(this);
+    mFilterMenu->setObjectName(QStringLiteral("filtermenu"));
     QWidgetAction *clearWidgetAction = new QWidgetAction(mFilterMenu);
     QPushButton *clearFilterButton = new QPushButton(i18n("Clear Filter"), mFilterMenu);
     connect(clearFilterButton, &QPushButton::clicked, this, &SearchLineStatus::clearFilterButtonClicked);
 
     clearWidgetAction->setDefaultWidget(clearFilterButton);
     mFilterMenu->addAction(clearWidgetAction);
-    mFilterMenu->setObjectName(QStringLiteral("filtermenu"));
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-unread")), i18nc("@action:inmenu Status of a message", "Unread"),
                             Akonadi::MessageStatus::statusUnread().toQInt32());
 

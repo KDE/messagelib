@@ -26,6 +26,9 @@ class SearchLineStatusTest : public QObject
 public:
     explicit SearchLineStatusTest(QObject *parent = Q_NULLPTR);
     ~SearchLineStatusTest();
+
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // SEARCHLINESTATUSTEST_H
