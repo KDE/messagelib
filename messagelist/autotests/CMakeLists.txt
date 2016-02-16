@@ -10,3 +10,4 @@ endmacro ()
 
 messagelist_unittest(itemsizetest.cpp)
 messagelist_unittest(quicksearchwarningtest.cpp)
+messagelist_unittest(searchlinestatustest.cpp)
