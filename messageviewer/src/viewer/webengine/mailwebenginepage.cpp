@@ -26,8 +26,7 @@ MailWebEnginePage::MailWebEnginePage(QObject *parent)
 {
 
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
-    //settings()->setAttribute(QWebSettings::JavaEnabled, false);
-    //settings()->setAttribute(QWebSettings::PluginsEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
 
     const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
@@ -41,6 +40,8 @@ MailWebEnginePage::~MailWebEnginePage()
 
 bool MailWebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
 {
-    //TODO
+    Q_UNUSED(type);
+    Q_UNUSED(isMainFrame);
+    Q_EMIT urlClicked(url);
     return false;
 }

@@ -102,7 +102,7 @@ void FindBarWebEngineView::updateHighLight(bool highLight)
             setFoundMatch(found);
         });
     } else {
-#if 0 //TODO
+#if 0
         d->mView->findText(QString(), searchOptions, [this](bool found) {
             setFoundMatch(found);
         });
