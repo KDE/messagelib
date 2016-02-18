@@ -75,14 +75,14 @@ set(libmessageviewer_mailviewer_SRCS
 set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
 
 if (QTWEBENGINE_EXPERIMENTAL_OPTION)
-set(libmessageviewer_mailviewer_SRCS
-   viewer/webengine/mailwebengineview.cpp
-   viewer/webengine/mailwebenginepage.cpp
-   viewer/webengine/webengineaccesskey.cpp
-   ${libmessageviewer_mailviewer_SRCS}
-   findbar/findbarwebengineview.cpp 
-   )
-   set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
+    set(libmessageviewer_mailviewer_SRCS
+        viewer/webengine/mailwebengineview.cpp
+        viewer/webengine/mailwebenginepage.cpp
+        viewer/webengine/webengineaccesskey.cpp
+        ${libmessageviewer_mailviewer_SRCS}
+        findbar/findbarwebengineview.cpp
+        )
+    set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
 
 set(libmessageviewer_otp_SRCS
@@ -367,14 +367,23 @@ ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
 )
 
 ecm_generate_headers(MessageViewer_Camelfindbar_HEADERS
-  HEADER_NAMES
-  FindBarWebView
-  FindBarBase
+    HEADER_NAMES
+    FindBarWebView
+    FindBarBase
   REQUIRED_HEADERS MessageViewer_findbar_HEADERS
   PREFIX MessageViewer
   RELATIVE findbar
 )
 
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+    ecm_generate_headers(MessageViewer_CamelfindbarWebEngine_HEADERS
+        HEADER_NAMES
+        FindBarWebEngineView
+        REQUIRED_HEADERS MessageViewer_findbarWebEngine_HEADERS
+        PREFIX MessageViewer
+        RELATIVE findbar
+        )
+endif()
 
 ecm_generate_headers(MessageViewer_Camelcaseantispam_HEADERS
   HEADER_NAMES
@@ -480,6 +489,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 
 
 install(FILES
+    ${MessageViewer_CamelfindbarWebEngine_HEADERS}
     ${MessageViewer_Camelcasewebviewer_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
     ${MessageViewer_Camelcaseviewerplugin_HEADERS}
@@ -500,6 +510,7 @@ install(FILES
 )
 
 install(FILES
+    ${MessageViewer_findbarWebEngine_HEADERS}
     ${MessageViewer_adblockcommon_HEADERS}
     ${MessageViewer_webviewer_HEADERS}
     ${MessageViewer_viewerplugin_HEADERS}
