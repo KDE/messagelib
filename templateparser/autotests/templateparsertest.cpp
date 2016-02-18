@@ -78,44 +78,6 @@ void TemplateParserTester::test_convertedHtml()
     QCOMPARE(convertedHtmlContent, referenceData);
 }
 
-void TemplateParserTester::test_bodyFromHtml()
-{
-    const QString content(QStringLiteral("<html><head><title>Plain mail with signature</title></head>"
-                                         "<body>This is the message text from Sudhendu Kumar&lt;"
-                                         "dontspamme@yoohoo.com&gt;.<br /><br />-- <br />Thanks &amp; "
-                                         "Regards<br />Sudhendu Kumar</body></html>"));
-    QWebPage page;
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
-    page.settings()->setAttribute(QWebSettings::JavaEnabled, false);
-    page.settings()->setAttribute(QWebSettings::PluginsEnabled, false);
-
-    page.currentFrame()->setHtml(content);
-
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
-
-    const QString bodyElement = page.currentFrame()->evaluateJavaScript(
-                                    QStringLiteral("document.getElementsByTagName('body')[0].innerHTML")).toString();
-
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
-
-    const QString expectedBody(QStringLiteral("This is the message text from Sudhendu Kumar"
-                               "&lt;dontspamme@yoohoo.com&gt;.<br><br>-- <br>"
-                               "Thanks &amp; Regards<br>Sudhendu Kumar"));
-
-    QCOMPARE(bodyElement, expectedBody);
-
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
-
-    const QString headElement = page.currentFrame()->evaluateJavaScript(
-                                    QStringLiteral("document.getElementsByTagName('head')[0].innerHTML")).toString();
-
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
-
-    const QString expectedHead(QStringLiteral("<title>Plain mail with signature</title>"));
-
-    QCOMPARE(headElement, expectedHead);
-}
-
 void TemplateParserTester::test_processWithTemplatesForBody_data()
 {
     QTest::addColumn<QString>("command");

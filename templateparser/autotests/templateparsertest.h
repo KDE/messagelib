@@ -34,11 +34,6 @@ private Q_SLOTS:
     void test_convertedHtml_data();
 
     /**
-     * checks whether body element is properly extracted from a valid HTML
-     */
-    void test_bodyFromHtml();
-
-    /**
      * Tests whether templates are returning required body or not
      */
     void test_processWithTemplatesForBody();
