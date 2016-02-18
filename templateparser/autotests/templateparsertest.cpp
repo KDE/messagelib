@@ -21,12 +21,12 @@
 #define protected public
 #include "templateparser.h"
 #undef protected
-#include "MessageViewer/ObjectTreeParser"
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
-#include <KIdentityManagement/kidentitymanagement/identity.h>
-#include "qwebpage.h"
-#include "qwebframe.h"
-#include "qtest.h"
+
+#include <MessageViewer/ObjectTreeParser>
+#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagement/Identity>
+
+#include <QTest>
 #include <QDir>
 #include <QLocale>
 
