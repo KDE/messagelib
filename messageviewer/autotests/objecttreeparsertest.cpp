@@ -62,7 +62,6 @@ void ObjectTreeParserTester::test_parsePlainMessage()
 
     // Check that the textual content and the charset have the expected values
     QCOMPARE(otp.plainTextContent(), QStringLiteral("This is the message text.\n"));
-    QCOMPARE(otp.convertedTextContent().toLatin1().data(), "This is the message text.\n\n");
     QVERIFY(otp.htmlContent().isEmpty());
     QCOMPARE(otp.plainTextContentCharset().toLower(), QByteArray("iso-8859-15"));
 
@@ -156,7 +155,6 @@ void ObjectTreeParserTester::test_inlinePGPDecryption()
     otp.parseObjectTree(msg.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "some random text");
-    QCOMPARE(otp.convertedTextContent().toLatin1().data(), "some random text\n");
 
     // This test is only a workaround, till we can set the memento to the propper node of the mail.
     KMime::Content *content = new KMime::Content;
@@ -236,7 +234,6 @@ void ObjectTreeParserTester::test_HTMLOnly()
 
     QVERIFY(otp.plainTextContent().isEmpty());
     QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
-    QCOMPARE(otp.convertedTextContent().toLatin1().data(), "SOME HTML text.\n");
 }
 
 void ObjectTreeParserTester::test_HTMLOnlyText()
@@ -256,7 +253,6 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
 
     QVERIFY(otp.plainTextContent().isEmpty());
     QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
-    QCOMPARE(otp.convertedTextContent().toLatin1().data(), "SOME HTML text.\n");
     QVERIFY(testWriter.html.contains(QStringLiteral("This is an HTML message. For security reasons, only the raw HTML code is shown.")));
     QVERIFY(testWriter.html.contains(QStringLiteral("*SOME* HTML text. <br>")));
 }

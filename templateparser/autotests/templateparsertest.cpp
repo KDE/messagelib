@@ -22,7 +22,6 @@
 #include "templateparser.h"
 #undef protected
 #include "MessageViewer/ObjectTreeParser"
-#include "MessageViewer/ObjectTreeEmptySource"
 #include <KIdentityManagement/kidentitymanagement/identitymanager.h>
 #include <KIdentityManagement/kidentitymanagement/identity.h>
 #include "qwebpage.h"
@@ -65,17 +64,15 @@ void TemplateParserTester::test_convertedHtml()
     const QString referenceData = QString::fromLatin1(referenceRawData);
     QVERIFY(!referenceData.isEmpty());
 
-    EmptySource emptySource;
-
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "Plain Message Test");
     QCOMPARE(msg->contents().size(), 0);
 
-    ObjectTreeParser otp(&emptySource);
-    otp.parseObjectTree(msg.data());
+    TemplateParser::TemplateParser parser(msg, TemplateParser::TemplateParser::NewMessage);
+    parser.mOtp->parseObjectTree(msg.data());
+    QVERIFY(parser.mOtp->htmlContent().isEmpty());
+    QVERIFY(!parser.mOtp->plainTextContent().isEmpty());
 
-    QVERIFY(otp.htmlContent().isEmpty());
-    QVERIFY(!otp.plainTextContent().isEmpty());
-    const QString convertedHtmlContent = otp.convertedHtmlContent();
+    const QString convertedHtmlContent = parser.htmlMessageText(false, TemplateParser::TemplateParser::NoSelectionAllowed);
     QVERIFY(!convertedHtmlContent.isEmpty());
 
     QCOMPARE(convertedHtmlContent, referenceData);

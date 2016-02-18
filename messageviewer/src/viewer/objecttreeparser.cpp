@@ -99,8 +99,6 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QPointer>
-#include <QWebPage>
-#include <QWebFrame>
 #include <QUrlQuery>
 
 // other includes
@@ -2533,29 +2531,6 @@ KMime::Content *ObjectTreeParser::findTypeNot(KMime::Content *content, const QBy
         return findTypeNot(next,  mediaType, subType, deep, wide);
     }
     return 0;
-}
-
-QString ObjectTreeParser::convertedTextContent() const
-{
-    QString plainTextContent = mPlainTextContent;
-    if (plainTextContent.isEmpty()) {
-        QWebPage doc;
-        doc.mainFrame()->setHtml(mHtmlContent);
-        plainTextContent = doc.mainFrame()->toPlainText();
-    }
-    return plainTextContent.append(QLatin1Char('\n'));
-}
-
-QString ObjectTreeParser::convertedHtmlContent() const
-{
-    QString htmlContent = mHtmlContent;
-    if (htmlContent.isEmpty()) {
-        QString convertedHtml = mPlainTextContent.toHtmlEscaped();
-        convertedHtml.append(QStringLiteral("</body></html>"));
-        convertedHtml.prepend(QStringLiteral("<html><head></head><body>"));
-        htmlContent = convertedHtml.replace(QStringLiteral("\n"), QStringLiteral("<br />"));
-    }
-    return htmlContent.append(QLatin1Char('\n'));
 }
 
 QByteArray ObjectTreeParser::plainTextContentCharset() const

@@ -30,6 +30,8 @@
 
 #include <QObject>
 
+class TemplateParserTester;
+
 namespace MessageViewer
 {
 class ObjectTreeParser;
@@ -396,6 +398,8 @@ private:
      * Make a HTML content valid by adding missing html/head/body tag.
      */
     void makeValidHtml(QString &body);
+
+    friend class ::TemplateParserTester;
 };
 
 }

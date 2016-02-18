@@ -1532,7 +1532,9 @@ QString TemplateParser::plainMessageText(bool aStripSignature,
     QString result = mOtp->plainTextContent();
 
     if (result.isEmpty()) {   //HTML-only mails
-        result = mOtp->convertedTextContent();
+        QWebPage doc;
+        doc.mainFrame()->setHtml(mOtp->htmlContent());
+        result = doc.mainFrame()->toPlainText();
     }
 
     if (aStripSignature) {
@@ -1552,7 +1554,9 @@ QString TemplateParser::htmlMessageText(bool aStripSignature, AllowSelection isS
     QString htmlElement = mOtp->htmlContent();
 
     if (htmlElement.isEmpty()) {   //plain mails only
-        htmlElement = mOtp->convertedHtmlContent();
+        QString htmlReplace = mOtp->plainTextContent().toHtmlEscaped();
+        htmlReplace = htmlReplace.replace(QStringLiteral("\n"), QStringLiteral("<br />"));
+        htmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
     }
 
     QWebPage page;

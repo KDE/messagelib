@@ -322,17 +322,6 @@ public:
     QString htmlContent() const;
 
     /**
-    * Returns a plain text version of the content, which is either plainTextContent() if that exists,
-    * or htmlContent() converted to plain text otherwise.
-    */
-    QString convertedTextContent() const;
-
-    /** Returns a HTML version of the plain text mail. If the HTML content is already available, it
-    * returns the HTML content as it is.
-    */
-    QString convertedHtmlContent() const;
-
-    /**
     * The original charset of MIME part the plain text was extracted from.
     *
     * If there were more than one text/plain MIME parts in the mail, the this is the charset
