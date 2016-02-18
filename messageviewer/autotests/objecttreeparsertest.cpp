@@ -22,11 +22,10 @@
 #include "viewer/objecttreeparser.h"
 #include "viewer/objecttreeemptysource.h"
 #include "interfaces/htmlwriter.h"
-#include "viewer/csshelper.h"
+#include "viewer/csshelperbase.h"
 
-#include <AkonadiCore/item.h>
+#include <QTest>
 
-#include "qtest.h"
 #include <setupenv.h>
 
 using namespace MessageViewer;
