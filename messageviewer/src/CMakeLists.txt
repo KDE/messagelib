@@ -328,6 +328,11 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         MailWebEnginePage
         MailWebEngineAccessKey
         MailWebEngineView
+        MailNetworkUlrInterceptorPluginManager
+        MailNetworkUlrInterceptor
+        MailNetworkPluginUlrInterceptorInterface
+        MailNetworkPluginUlrInterceptor
+
         REQUIRED_HEADERS MessageViewer_webengine_HEADERS
         PREFIX MessageViewer
         RELATIVE viewer/webengine

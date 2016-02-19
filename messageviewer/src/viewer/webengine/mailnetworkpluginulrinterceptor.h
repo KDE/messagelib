@@ -19,11 +19,11 @@
 #define MAILNETWORKPLUGINULRINTERCEPTOR_H
 
 #include <QObject>
-
+#include "messageviewer_export.h"
 namespace MessageViewer
 {
 class MailNetworkPluginUlrInterceptorInterface;
-class MailNetworkPluginUlrInterceptor : public QObject
+class MESSAGEVIEWER_EXPORT MailNetworkPluginUlrInterceptor : public QObject
 {
     Q_OBJECT
 public:
