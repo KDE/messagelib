@@ -104,7 +104,7 @@ public:
         return format(part, writer);
     }
 
-    virtual void process(ProcessResult &result) const
+    virtual void adaptProcessResult(ProcessResult &result) const
     {
         Q_UNUSED(result);
     }

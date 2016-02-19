@@ -58,7 +58,7 @@ public:
     // unhide the overload with three arguments
     using MessageViewer::Interface::BodyPartFormatter::format;
 
-    void process(ProcessResult &result) const Q_DECL_OVERRIDE
+    void adaptProcessResult(ProcessResult &result) const Q_DECL_OVERRIDE
     {
         result.setNeverDisplayInline(true);
     }
@@ -86,7 +86,7 @@ public:
     // unhide the overload with three arguments
     using MessageViewer::Interface::BodyPartFormatter::format;
 
-    void process(ProcessResult &result) const Q_DECL_OVERRIDE
+    void adaptProcessResult(ProcessResult &result) const Q_DECL_OVERRIDE
     {
         result.setNeverDisplayInline(false);
         result.setIsImage(true);
