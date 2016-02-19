@@ -35,6 +35,7 @@
 #ifndef MAILWEBHITTESTRESULT_H
 #define MAILWEBHITTESTRESULT_H
 
+#include "messageviewer_export.h"
 #include <QUrl>
 #include <QRect>
 #include <QString>
@@ -43,10 +44,10 @@
 class QWebEnginePage;
 namespace MessageViewer
 {
-class WebHitTestResult
+class MESSAGEVIEWER_EXPORT MailWebHitTestResult
 {
 public:
-    explicit WebHitTestResult(QWebEnginePage *page, const QPoint &pos);
+    explicit MailWebHitTestResult(QWebEnginePage *page, const QPoint &pos);
 
     QString alternateText() const;
     QRect boundingRect() const;

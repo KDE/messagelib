@@ -18,11 +18,12 @@
 #ifndef MAILWEBENGINEACCESSKEY_H
 #define MAILWEBENGINEACCESSKEY_H
 
+#include "messageviewer_export.h"
 #include <QObject>
 
 namespace MessageViewer
 {
-class MailWebEngineAccessKey : public QObject
+class MESSAGEVIEWER_EXPORT MailWebEngineAccessKey : public QObject
 {
     Q_OBJECT
 public:

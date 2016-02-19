@@ -40,7 +40,7 @@
 
 using namespace MessageViewer;
 
-WebHitTestResult::WebHitTestResult(QWebEnginePage *page, const QPoint &pos)
+MailWebHitTestResult::MailWebHitTestResult(QWebEnginePage *page, const QPoint &pos)
     : m_isNull(true)
     , m_isContentEditable(false)
     , m_isContentSelected(false)
@@ -106,7 +106,7 @@ WebHitTestResult::WebHitTestResult(QWebEnginePage *page, const QPoint &pos)
     init(page->url(), execJavaScript(page, js).toMap());
 }
 
-QVariant WebHitTestResult::execJavaScript(QWebEnginePage *page, const QString &scriptSource, int timeout)
+QVariant MailWebHitTestResult::execJavaScript(QWebEnginePage *page, const QString &scriptSource, int timeout)
 {
     QPointer<QEventLoop> loop = new QEventLoop;
     QVariant result;
@@ -126,72 +126,72 @@ QVariant WebHitTestResult::execJavaScript(QWebEnginePage *page, const QString &s
 }
 
 
-QString WebHitTestResult::alternateText() const
+QString MailWebHitTestResult::alternateText() const
 {
     return m_alternateText;
 }
 
-QRect WebHitTestResult::boundingRect() const
+QRect MailWebHitTestResult::boundingRect() const
 {
     return m_boundingRect;
 }
 
-QUrl WebHitTestResult::imageUrl() const
+QUrl MailWebHitTestResult::imageUrl() const
 {
     return m_imageUrl;
 }
 
-bool WebHitTestResult::isContentEditable() const
+bool MailWebHitTestResult::isContentEditable() const
 {
     return m_isContentEditable;
 }
 
-bool WebHitTestResult::isContentSelected() const
+bool MailWebHitTestResult::isContentSelected() const
 {
     return m_isContentSelected;
 }
 
-bool WebHitTestResult::isNull() const
+bool MailWebHitTestResult::isNull() const
 {
     return m_isNull;
 }
 
-QString WebHitTestResult::linkTitle() const
+QString MailWebHitTestResult::linkTitle() const
 {
     return m_linkTitle;
 }
 
-QUrl WebHitTestResult::linkUrl() const
+QUrl MailWebHitTestResult::linkUrl() const
 {
     return m_linkUrl;
 }
 
-QUrl WebHitTestResult::mediaUrl() const
+QUrl MailWebHitTestResult::mediaUrl() const
 {
     return m_mediaUrl;
 }
 
-bool WebHitTestResult::mediaPaused() const
+bool MailWebHitTestResult::mediaPaused() const
 {
     return m_mediaPaused;
 }
 
-bool WebHitTestResult::mediaMuted() const
+bool MailWebHitTestResult::mediaMuted() const
 {
     return m_mediaMuted;
 }
 
-QPoint WebHitTestResult::pos() const
+QPoint MailWebHitTestResult::pos() const
 {
     return m_pos;
 }
 
-QString WebHitTestResult::tagName() const
+QString MailWebHitTestResult::tagName() const
 {
     return m_tagName;
 }
 
-void WebHitTestResult::init(const QUrl &url, const QVariantMap &map)
+void MailWebHitTestResult::init(const QUrl &url, const QVariantMap &map)
 {
     if (map.isEmpty())
         return;

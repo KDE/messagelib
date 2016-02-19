@@ -78,7 +78,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
     set(libmessageviewer_mailviewer_SRCS
         viewer/webengine/mailwebengineview.cpp
         viewer/webengine/mailwebenginepage.cpp
-        viewer/webengine/webengineaccesskey.cpp
+        viewer/webengine/mailwebengineaccesskey.cpp
         viewer/webengine/mailwebhittestresult.cpp
         ${libmessageviewer_mailviewer_SRCS}
         findbar/findbarwebengineview.cpp
@@ -317,6 +317,18 @@ ecm_generate_headers(MessageViewer_Camelcasewebviewer_HEADERS
   RELATIVE viewer/webview
 )
 
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
+  HEADER_NAMES
+  MailWebHitTestResult
+  MailWebEnginePage
+  MailWebEngineAccessKey
+  MailWebEngineView
+  REQUIRED_HEADERS MessageViewer_webengine_HEADERS
+  PREFIX MessageViewer
+  RELATIVE viewer/webengine
+)
+endif()
 
 ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
   HEADER_NAMES
@@ -490,6 +502,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 
 
 install(FILES
+    ${MessageViewer_Camelcasewebengine_HEADERS}
     ${MessageViewer_CamelfindbarWebEngine_HEADERS}
     ${MessageViewer_Camelcasewebviewer_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
@@ -511,6 +524,7 @@ install(FILES
 )
 
 install(FILES
+    ${MessageViewer_webengine_HEADERS}
     ${MessageViewer_findbarWebEngine_HEADERS}
     ${MessageViewer_adblockcommon_HEADERS}
     ${MessageViewer_webviewer_HEADERS}
