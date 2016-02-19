@@ -436,10 +436,11 @@ MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, Process
     }
 
     bool asIcon = true;
-    if (!result.neverDisplayInline())
+    if (!result.neverDisplayInline()) {
         if (as) {
             asIcon = as->defaultDisplay(node) == AttachmentStrategy::AsIcon;
         }
+    }
 
     // Show it inline if showOnlyOneMimePart(), which means the user clicked the image
     // in the message structure viewer manually, and therefore wants to see the full image
@@ -1321,7 +1322,7 @@ void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
 
         const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
         htmlWriter()->queue(QStringLiteral("<hr/><div><a href=\"%1\">").arg(href) +
-                            QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), QUrl::fromLocalFile(iconName).url()) +
+                            QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), iconName) +
                             label + QStringLiteral("</a></div>") +
                             QStringLiteral("<div>%1</div>").arg(comment));
     }
