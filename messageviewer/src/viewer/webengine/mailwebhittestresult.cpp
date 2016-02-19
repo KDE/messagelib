@@ -33,11 +33,14 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * ============================================================ */
 #include "mailwebhittestresult.h"
-#include "mailwebenginepage.h"
+#include <QEventLoop>
+#include <QPointer>
+#include <QTimer>
+#include <QWebEnginePage>
 
 using namespace MessageViewer;
 
-WebHitTestResult::WebHitTestResult(MailWebEnginePage *page, const QPoint &pos)
+WebHitTestResult::WebHitTestResult(QWebEnginePage *page, const QPoint &pos)
     : m_isNull(true)
     , m_isContentEditable(false)
     , m_isContentSelected(false)
@@ -100,9 +103,28 @@ WebHitTestResult::WebHitTestResult(MailWebEnginePage *page, const QPoint &pos)
                                     "})()");
 
     const QString &js = source.arg(pos.x()).arg(pos.y());
-    //FIXME
-    //init(page->url(), page->runJavaScript(js).toMap());
+    init(page->url(), execJavaScript(page, js).toMap());
 }
+
+QVariant WebHitTestResult::execJavaScript(QWebEnginePage *page, const QString &scriptSource, int timeout)
+{
+    QPointer<QEventLoop> loop = new QEventLoop;
+    QVariant result;
+    QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
+
+    page->runJavaScript(scriptSource, [loop, &result](const QVariant &res) {
+        if (loop && loop->isRunning()) {
+            result = res;
+            loop->quit();
+        }
+    });
+
+    loop->exec();
+    delete loop;
+
+    return result;
+}
+
 
 QString WebHitTestResult::alternateText() const
 {

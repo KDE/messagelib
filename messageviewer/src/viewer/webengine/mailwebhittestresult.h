@@ -40,13 +40,13 @@
 #include <QString>
 #include <QVariantMap>
 
+class QWebEnginePage;
 namespace MessageViewer
 {
-class MailWebEnginePage;
 class WebHitTestResult
 {
 public:
-    explicit WebHitTestResult(MailWebEnginePage *page, const QPoint &pos);
+    explicit WebHitTestResult(QWebEnginePage *page, const QPoint &pos);
 
     QString alternateText() const;
     QRect boundingRect() const;
@@ -62,6 +62,7 @@ public:
     QPoint pos() const;
     QString tagName() const;
 
+    QVariant execJavaScript(QWebEnginePage *page, const QString &scriptSource, int timeout = 500);
 private:
     void init(const QUrl &url, const QVariantMap &map);
 
