@@ -2291,7 +2291,7 @@ QString ViewerPrivate::attachmentInjectionHtml()
 
     link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign) +
             QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
-            QStringLiteral("<img src=\"%1/>").arg(QUrl::fromLocalFile(imgpath + imgSrc).url()) +
+            QStringLiteral("<img src=\"%1\">").arg(QUrl::fromLocalFile(imgpath + imgSrc).url()) +
             QStringLiteral("</a></div>");
 
     html.prepend(link);
