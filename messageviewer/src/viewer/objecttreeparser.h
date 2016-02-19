@@ -400,17 +400,6 @@ public:// (during refactoring)
 
     void writePartIcon(KMime::Content *msgPart, bool inlineImage = false);
 
-    QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
-                              int status_code,
-                              GpgME::Signature::Summary summary,
-                              int &frameColor,
-                              bool &showKeyInfos);
-    QString writeSigstatHeader(PartMetaData &part,
-                               const Kleo::CryptoBackend::Protocol *cryptProto,
-                               const QString &fromAddress,
-                               KMime::Content *node = 0);
-    QString writeSigstatFooter(PartMetaData &part);
-
     bool isMailmanMessage(KMime::Content *curNode);
 
     /** Change the string to `quoted' html (meaning, that the quoted

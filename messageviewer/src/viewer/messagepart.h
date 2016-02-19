@@ -94,17 +94,35 @@ private:
 
     HtmlWriter *mWriter;
     const PartMetaData &mBlock;
-    KMime::Content *mNode;
+};
+
+class SignedBlock : public HTMLBlock
+{
+public:
+    SignedBlock(MessageViewer::HtmlWriter *writer, const PartMetaData &block,
+                const Kleo::CryptoBackend::Protocol *cryptoProto,
+                ObjectTreeSourceIf *source,
+                QString fromAddress, bool printing);
+    virtual ~SignedBlock();
+
+private:
+    QString simpleHeader();
+    void internalEnter();
+    void internalExit();
+
+    const PartMetaData &mBlock;
+    HtmlWriter *mWriter;
+    const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    ObjectTreeSourceIf *mSource;
+    QString mClass;
+    QString mFromAddress;
+    bool mPrinting;
 };
 
 class CryptoBlock: public HTMLBlock
 {
 public:
-    CryptoBlock(ObjectTreeParser *otp,
-                PartMetaData *block,
-                const Kleo::CryptoBackend::Protocol *cryptoProto,
-                const QString &fromAddress,
-                KMime::Content *node);
+    CryptoBlock(MessageViewer::ObjectTreeParser* otp, MessageViewer::PartMetaData* block, const Kleo::CryptoBackend::Protocol* cryptoProto, MessageViewer::ObjectTreeSourceIf* source, const QString& fromAddress, KMime::Content* node);
     virtual ~CryptoBlock();
 
 private:
@@ -114,6 +132,7 @@ private:
     ObjectTreeParser *mOtp;
     PartMetaData *mMetaData;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    ObjectTreeSourceIf* mSource;
     QString mFromAddress;
     KMime::Content *mNode;
     QVector<HTMLBlock::Ptr> mInteralBlocks;
