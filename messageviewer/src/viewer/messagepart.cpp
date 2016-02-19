@@ -98,6 +98,11 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
     return false;
 }
 
+QString HTMLBlock::dir() const
+{
+    return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+}
+
 //--------CryptoBlock-------------------
 CryptoBlock::CryptoBlock(ObjectTreeParser *otp,
                          PartMetaData *block,
@@ -163,7 +168,6 @@ EncapsulatedRFC822Block::~EncapsulatedRFC822Block()
 void EncapsulatedRFC822Block::internalEnter()
 {
     if (mWriter && !entered) {
-        const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
         QString text;
         if (mNode) {
             const QString href = mNodeHelper->asHREF(mNode, QStringLiteral("body"));
@@ -172,7 +176,7 @@ void EncapsulatedRFC822Block::internalEnter()
             text = i18n("Encapsulated message");
         }
         mWriter->queue(QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"rfc822\">") +
-                       QStringLiteral("<tr class=\"rfc822H\"><td dir=\"%1\">").arg(dir) +
+                       QStringLiteral("<tr class=\"rfc822H\"><td dir=\"%1\">").arg(dir()) +
                        text +
                        QStringLiteral("</td></tr><tr class=\"rfc822B\"><td>"));
 
@@ -186,10 +190,9 @@ void EncapsulatedRFC822Block::internalExit()
         return;
     }
 
-    const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
     mWriter->queue(QStringLiteral("</td></tr>"
                                  "<tr class=\"rfc822H\"><td dir=\"%1\">%2</td></tr>"
-                                 "</table>").arg(dir, i18n("End of encapsulated message")));
+                                 "</table>").arg(dir(), i18n("End of encapsulated message")));
     entered = false;
 }
 
@@ -209,8 +212,6 @@ void EncryptedBlock::internalEnter()
 {
     if (mWriter && !entered) {
         entered = true;
-        const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
-
         QString text;
         if (mBlock.inProgress) {
             text = i18n("Please wait while the message is being decrypted...");
@@ -223,7 +224,7 @@ void EncryptedBlock::internalEnter()
             }
         }
         mWriter->queue(QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"encr\">") +
-                       QStringLiteral("<tr class=\"encrH\"><td dir=\"%1\">").arg(dir) +
+                       QStringLiteral("<tr class=\"encrH\"><td dir=\"%1\">").arg(dir()) +
                        text +
                        QStringLiteral("</td></tr><tr class=\"encrB\"><td>"));
     }
@@ -234,10 +235,9 @@ void EncryptedBlock::internalExit()
     if (!entered) {
         return;
     }
-    const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
     mWriter->queue(QStringLiteral("</td></tr>"
                    "<tr class=\"encrH\"><td dir=\"%1\">%2</td></tr>"
-                   "</table>").arg(dir, i18n("End of encrypted message")));
+                   "</table>").arg(dir(), i18n("End of encrypted message")));
     entered = false;
 }
 
@@ -299,10 +299,8 @@ void TextBlock::internalEnter()
     const QString comment =
         MessageCore::StringUtil::quoteHtmlChars(mNode->contentDescription()->asUnicodeString(), true);
 
-    const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
-
     mWriter->queue(QLatin1String("<table cellspacing=\"1\" class=\"textAtm\">"
-                                 "<tr class=\"textAtmH\"><td dir=\"") + dir + QLatin1String("\">"));
+                                 "<tr class=\"textAtmH\"><td dir=\"") + dir() + QLatin1String("\">"));
     if (!mLink)
         mWriter->queue(QLatin1String("<a href=\"") + mNodeHelper->asHREF(mNode, QStringLiteral("body")) + QLatin1String("\">")
                        + label + QLatin1String("</a>"));

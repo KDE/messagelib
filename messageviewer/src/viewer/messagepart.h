@@ -63,6 +63,7 @@ public:
     virtual ~HTMLBlock() { }
 
 protected:
+    QString dir() const;
     bool entered;
 };
 
