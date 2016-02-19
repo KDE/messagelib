@@ -164,18 +164,17 @@ void EncapsulatedRFC822Block::internalEnter()
 {
     if (mWriter && !entered) {
         const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
-        const QString cellPadding(QStringLiteral("cellpadding=\"1\""));
-        const QString cellSpacing(QStringLiteral("cellspacing=\"1\""));
-        mWriter->queue(QLatin1String("<table ") + cellSpacing + QLatin1Char(' ') + cellPadding + QLatin1String(" class=\"rfc822\">"
-                       "<tr class=\"rfc822H\"><td dir=\"") + dir + QLatin1String("\">"));
+        QString text;
         if (mNode) {
             const QString href = mNodeHelper->asHREF(mNode, QStringLiteral("body"));
-            mWriter->queue(QLatin1String("<a href=\"") + href + QLatin1String("\">")
-                           + i18n("Encapsulated message") + QLatin1String("</a>"));
+            text = QStringLiteral("<a href=\"%1\">%2</a>").arg(href, i18n("Encapsulated message"));
         } else {
-            mWriter->queue(i18n("Encapsulated message"));
+            text = i18n("Encapsulated message");
         }
-        mWriter->queue(QStringLiteral("</td></tr><tr class=\"rfc822B\"><td>"));
+        mWriter->queue(QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"rfc822\">") +
+                       QStringLiteral("<tr class=\"rfc822H\"><td dir=\"%1\">").arg(dir) +
+                       text +
+                       QStringLiteral("</td></tr><tr class=\"rfc822B\"><td>"));
 
         entered = true;
     }
@@ -188,8 +187,9 @@ void EncapsulatedRFC822Block::internalExit()
     }
 
     const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
-    mWriter->queue(QLatin1String("</td></tr><tr class=\"rfc822H\"><td dir=\"") + dir + QLatin1String("\">") +
-                   i18n("End of encapsulated message") + QLatin1String("</td></tr></table>"));
+    mWriter->queue(QStringLiteral("</td></tr>"
+                                 "<tr class=\"rfc822H\"><td dir=\"%1\">%2</td></tr>"
+                                 "</table>").arg(dir, i18n("End of encapsulated message")));
     entered = false;
 }
 
