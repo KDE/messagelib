@@ -539,7 +539,6 @@ void SignedBlock::internalEnter()
         QString signer = mBlock.signer;
 
         QString htmlStr, simpleHtmlStr;
-        QString cellPadding(QStringLiteral("cellpadding=\"1\""));
 
         if (mBlock.inProgress) {
             mClass = QStringLiteral("signInProgress");
@@ -548,9 +547,7 @@ void SignedBlock::internalEnter()
                            i18n("Please wait while the signature is being verified...") +
                            QStringLiteral("</td></tr><tr class=\"signInProgressB\"><td>"));
             return;
-        }
-
-        if (!mBlock.inProgress) {
+        } else {
             const QStringList &blockAddrs(mBlock.signerMailAddresses);
             // note: At the moment frameColor and showKeyInfos are
             //       used for CMS only but not for PGP signatures
@@ -608,9 +605,6 @@ void SignedBlock::internalEnter()
             // temporary hack: always show key information!
             showKeyInfos = true;
 
-            // Sorry for using 'black' as null color but .isValid()
-            // checking with QColor default c'tor did not work for
-            // some reason.
             if (isSMIME && (SIG_FRAME_COL_UNDEF != frameColor)) {
 
                 // new frame settings for CMS:
@@ -763,48 +757,42 @@ void SignedBlock::internalEnter()
 
             } else {
 
+                QString content;
                 // old frame settings for PGP:
 
                 if (mBlock.signer.isEmpty() || mBlock.technicalProblem) {
                     mClass = QStringLiteral("signWarn");
-                    QString frame = QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"%1\">").arg(mClass) +
-                                    QStringLiteral("<tr class=\"%1H\"><td dir=\"%2\">").arg(mClass, dir());
-                    htmlStr += frame + beginVerboseSigstatHeader();
-                    simpleHtmlStr += frame;
-                    simpleHtmlStr += simpleHeader();
+
                     if (mBlock.technicalProblem) {
-                        htmlStr += mBlock.errorText;
+                        content = mBlock.errorText;
                     } else {
                         if (!mBlock.keyId.isEmpty()) {
                             QDateTime created = mBlock.creationTime;
                             if (created.isValid())
-                                htmlStr += i18n("Message was signed on %1 with unknown key %2.",
-                                                QLocale::system().toString(created, QLocale::ShortFormat),
-                                                keyWithWithoutURL);
+                                content = i18n("Message was signed on %1 with unknown key %2.",
+                                               QLocale::system().toString(created, QLocale::ShortFormat),
+                                               keyWithWithoutURL);
                             else
-                                htmlStr += i18n("Message was signed with unknown key %1.",
-                                                keyWithWithoutURL);
+                                content = i18n("Message was signed with unknown key %1.",
+                                               keyWithWithoutURL);
                         } else {
-                            htmlStr += i18n("Message was signed with unknown key.");
+                            content = i18n("Message was signed with unknown key.");
                         }
-                        htmlStr += QStringLiteral("<br />");
-                        htmlStr += i18n("The validity of the signature cannot be "
+                        content += QStringLiteral("<br />");
+                        content += i18n("The validity of the signature cannot be "
                                         "verified.");
                         if (!statusStr.isEmpty()) {
-                            htmlStr += QStringLiteral("<br />");
-                            htmlStr += i18n("Status: ");
-                            htmlStr += QStringLiteral("<i>");
-                            htmlStr += statusStr;
-                            htmlStr += QStringLiteral("</i>");
+                            content += QStringLiteral("<br />");
+                            content += i18n("Status: ");
+                            content += QStringLiteral("<i>");
+                            content += statusStr;
+                            content += QStringLiteral("</i>");
                         }
                     }
-                    frame = QStringLiteral("</td></tr><tr class=\"") + mClass + QStringLiteral("B\"><td>");
-                    htmlStr += endVerboseSigstatHeader(mBlock) + frame;
-                    simpleHtmlStr += frame;
                 } else {
                     // HTMLize the signer's user id and create mailto: link
                     signer = MessageCore::StringUtil::quoteHtmlChars(signer, true);
-                    signer = QStringLiteral("<a href=\"mailto:") + signer + QStringLiteral("\">") + signer + QStringLiteral("</a>");
+                    signer = QStringLiteral("<a href=\"mailto:%1\">%1</a>").arg(signer);
 
                     if (mBlock.isGoodSignature) {
                         if (mBlock.keyTrust < GpgME::Signature::Marginal) {
@@ -813,68 +801,61 @@ void SignedBlock::internalEnter()
                             mClass = QStringLiteral("signOkKeyOk");
                         }
 
-                        QString frame = QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"%1\">").arg(mClass) +
-                                        QStringLiteral("<tr class=\"%1H\"><td dir=\"%2\">").arg(mClass, dir());
-                        htmlStr += frame + beginVerboseSigstatHeader();
-                        simpleHtmlStr += frame;
-                        simpleHtmlStr += simpleHeader();
                         if (!mBlock.keyId.isEmpty())
-                            htmlStr += i18n("Message was signed by %2 (Key ID: %1).",
+                            content = i18n("Message was signed by %2 (Key ID: %1).",
                                             keyWithWithoutURL,
                                             signer);
                         else {
-                            htmlStr += i18n("Message was signed by %1.", signer);
+                            content = i18n("Message was signed by %1.", signer);
                         }
-                        htmlStr += QStringLiteral("<br />");
+                        content += QStringLiteral("<br />");
 
                         switch (mBlock.keyTrust) {
                         case GpgME::Signature::Unknown:
-                            htmlStr += i18n("The signature is valid, but the key's "
+                            content += i18n("The signature is valid, but the key's "
                                             "validity is unknown.");
                             break;
                         case GpgME::Signature::Marginal:
-                            htmlStr += i18n("The signature is valid and the key is "
+                            content += i18n("The signature is valid and the key is "
                                             "marginally trusted.");
                             break;
                         case GpgME::Signature::Full:
-                            htmlStr += i18n("The signature is valid and the key is "
+                            content += i18n("The signature is valid and the key is "
                                             "fully trusted.");
                             break;
                         case GpgME::Signature::Ultimate:
-                            htmlStr += i18n("The signature is valid and the key is "
+                            content += i18n("The signature is valid and the key is "
                                             "ultimately trusted.");
                             break;
                         default:
-                            htmlStr += i18n("The signature is valid, but the key is "
+                            content += i18n("The signature is valid, but the key is "
                                             "untrusted.");
                         }
-                        frame = QStringLiteral("</td></tr>"
-                                            "<tr class=\"") + mClass + QStringLiteral("B\"><td>");
-                        htmlStr += endVerboseSigstatHeader(mBlock) + frame;
-                        simpleHtmlStr += frame;
                     } else {
                         mClass = QStringLiteral("signErr");
 
-                        QString frame = QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"%1\">").arg(mClass) +
-                                        QStringLiteral("<tr class=\"%1H\"><td dir=\"%2\">").arg(mClass, dir());
-                        htmlStr += frame + beginVerboseSigstatHeader();
-                        simpleHtmlStr += frame;
-                        simpleHtmlStr += simpleHeader();
                         if (!mBlock.keyId.isEmpty())
-                            htmlStr += i18n("Message was signed by %2 (Key ID: %1).",
+                            content = i18n("Message was signed by %2 (Key ID: %1).",
                                             keyWithWithoutURL,
                                             signer);
                         else {
-                            htmlStr += i18n("Message was signed by %1.", signer);
+                            content = i18n("Message was signed by %1.", signer);
                         }
-                        htmlStr += QStringLiteral("<br />");
-                        htmlStr += i18n("Warning: The signature is bad.");
-                        frame = QStringLiteral("</td></tr>"
-                                            "<tr class=\"") + mClass + QStringLiteral("B\"><td>");
-                        htmlStr += endVerboseSigstatHeader(mBlock) + frame;
-                        simpleHtmlStr += frame;
+                        content += QStringLiteral("<br />");
+                        content += i18n("Warning: The signature is bad.");
                     }
                 }
+                const QString beginFrame = QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"%1\">").arg(mClass) +
+                                           QStringLiteral("<tr class=\"%1H\"><td dir=\"%2\">").arg(mClass, dir());
+                const QString endFrame = QStringLiteral("</td></tr><tr class=\"%1B\"><td>").arg(mClass);
+
+                htmlStr += beginFrame + beginVerboseSigstatHeader();
+                htmlStr += content;
+                htmlStr += endVerboseSigstatHeader(mBlock) + endFrame;
+
+                simpleHtmlStr += beginFrame;
+                simpleHtmlStr += simpleHeader();
+                simpleHtmlStr += endFrame;
             }
         }
 
