@@ -58,10 +58,9 @@ public:
     // unhide the overload with three arguments
     using MessageViewer::Interface::BodyPartFormatter::format;
 
-    bool process(ObjectTreeParser *, KMime::Content *, ProcessResult &result) const
+    void process(ProcessResult &result) const Q_DECL_OVERRIDE
     {
         result.setNeverDisplayInline(true);
-        return false;
     }
     static const MessageViewer::Interface::BodyPartFormatter *create()
     {
@@ -87,10 +86,10 @@ public:
     // unhide the overload with three arguments
     using MessageViewer::Interface::BodyPartFormatter::format;
 
-    bool process(ObjectTreeParser *, KMime::Content *, ProcessResult &result) const
+    void process(ProcessResult &result) const Q_DECL_OVERRIDE
     {
+        result.setNeverDisplayInline(false);
         result.setIsImage(true);
-        return false;
     }
     static const MessageViewer::Interface::BodyPartFormatter *create()
     {

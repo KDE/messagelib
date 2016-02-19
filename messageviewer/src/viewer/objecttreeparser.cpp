@@ -362,6 +362,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
                 const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
                 if (r == Interface::BodyPartFormatter::AsIcon) {
                     processResult.setNeverDisplayInline(true);
+                    formatter->process(processResult);
                     mNodeHelper->setNodeDisplayedEmbedded(node, false);
                     const auto mp = defaultHandling(node, processResult);
                     if (mp) {

@@ -39,6 +39,8 @@
 #include <QObject>
 #include <QSharedPointer>
 
+#include <viewer/objecttreeparser.h>
+
 namespace MessageViewer
 {
 class HtmlWriter;
@@ -102,6 +104,10 @@ public:
         return format(part, writer);
     }
 
+    virtual void process(ProcessResult &result) const
+    {
+        Q_UNUSED(result);
+    }
     virtual MessagePart::Ptr process(BodyPart &part) const;
 };
 
