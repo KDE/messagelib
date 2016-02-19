@@ -23,7 +23,6 @@ using namespace MessageViewer;
 MailWebEngineView::MailWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
-
     MailWebEnginePage *pageEngine = new MailWebEnginePage(this);
     setPage(pageEngine);
 
