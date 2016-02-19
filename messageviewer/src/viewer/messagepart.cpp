@@ -210,8 +210,6 @@ void EncryptedBlock::internalEnter()
     if (mWriter && !entered) {
         entered = true;
         const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
-        const QString cellPadding(QStringLiteral("cellpadding=\"1\""));
-        const QString cellSpacing(QStringLiteral("cellspacing=\"1\""));
 
         QString text;
         if (mBlock.inProgress) {
@@ -224,7 +222,7 @@ void EncryptedBlock::internalEnter()
                 text += QStringLiteral("<br />") + i18n("Reason: %1", mBlock.errorText);
             }
         }
-        mWriter->queue(QStringLiteral("<table %1 %2 class=\"encr\">").arg(cellSpacing, cellPadding) +
+        mWriter->queue(QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"encr\">") +
                        QStringLiteral("<tr class=\"encrH\"><td dir=\"%1\">").arg(dir) +
                        text +
                        QStringLiteral("</td></tr><tr class=\"encrB\"><td>"));
@@ -239,7 +237,7 @@ void EncryptedBlock::internalExit()
     const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
     mWriter->queue(QStringLiteral("</td></tr>"
                    "<tr class=\"encrH\"><td dir=\"%1\">%2</td></tr>"
-                   "</table>").arg(dir, i18n("End of encrypted message"));
+                   "</table>").arg(dir, i18n("End of encrypted message")));
     entered = false;
 }
 
