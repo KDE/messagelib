@@ -39,7 +39,7 @@
 #include <QObject>
 #include <QSharedPointer>
 
-#include <viewer/objecttreeparser.h>
+#include <messageviewer/objecttreeparser.h>
 
 namespace MessageViewer
 {
