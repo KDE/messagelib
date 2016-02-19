@@ -213,19 +213,21 @@ void EncryptedBlock::internalEnter()
         const QString cellPadding(QStringLiteral("cellpadding=\"1\""));
         const QString cellSpacing(QStringLiteral("cellspacing=\"1\""));
 
-        mWriter->queue(QLatin1String("<table ") + cellSpacing + QLatin1Char(' ') + cellPadding + QLatin1String(" class=\"encr\">"
-                       "<tr class=\"encrH\"><td dir=\"") + dir + QLatin1String("\">"));
+        QString text;
         if (mBlock.inProgress) {
-            mWriter->queue(i18n("Please wait while the message is being decrypted..."));
+            text = i18n("Please wait while the message is being decrypted...");
         } else if (mBlock.isDecryptable) {
-            mWriter->queue(i18n("Encrypted message"));
+            text = i18n("Encrypted message");
         } else {
-            mWriter->queue(i18n("Encrypted message (decryption not possible)"));
+            text = i18n("Encrypted message (decryption not possible)");
             if (!mBlock.errorText.isEmpty()) {
-                mWriter->queue(QLatin1String("<br />") + i18n("Reason: %1", mBlock.errorText));
+                text += QStringLiteral("<br />") + i18n("Reason: %1", mBlock.errorText);
             }
         }
-        mWriter->queue(QStringLiteral("</td></tr><tr class=\"encrB\"><td>"));
+        mWriter->queue(QStringLiteral("<table %1 %2 class=\"encr\">").arg(cellSpacing, cellPadding) +
+                       QStringLiteral("<tr class=\"encrH\"><td dir=\"%1\">").arg(dir) +
+                       text +
+                       QStringLiteral("</td></tr><tr class=\"encrB\"><td>"));
     }
 }
 
@@ -235,9 +237,9 @@ void EncryptedBlock::internalExit()
         return;
     }
     const QString dir = QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
-    mWriter->queue(QLatin1String("</td></tr><tr class=\"encrH\"><td dir=\"") + dir + QLatin1String("\">") +
-                   i18n("End of encrypted message") +
-                   QLatin1String("</td></tr></table>"));
+    mWriter->queue(QStringLiteral("</td></tr>"
+                   "<tr class=\"encrH\"><td dir=\"%1\">%2</td></tr>"
+                   "</table>").arg(dir, i18n("End of encrypted message"));
     entered = false;
 }
 
