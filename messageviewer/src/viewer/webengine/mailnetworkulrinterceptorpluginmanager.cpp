@@ -41,11 +41,20 @@ Q_GLOBAL_STATIC(MailNetworkUlrInterceptorPluginManagerInstancePrivate, sInstance
 class MessageViewer::MailNetworkUlrInterceptorPluginManagerPrivate
 {
 public:
-    MailNetworkUlrInterceptorPluginManagerPrivate()
+    MailNetworkUlrInterceptorPluginManagerPrivate(MailNetworkUlrInterceptorPluginManager *qq)
+        : q(qq)
     {
 
     }
+    void initializePluginList();
+
+    MailNetworkUlrInterceptorPluginManager *q;
 };
+
+void MailNetworkUlrInterceptorPluginManagerPrivate::initializePluginList()
+{
+    //TODO
+}
 
 MailNetworkUlrInterceptorPluginManager *MailNetworkUlrInterceptorPluginManager::self()
 {
@@ -54,12 +63,13 @@ MailNetworkUlrInterceptorPluginManager *MailNetworkUlrInterceptorPluginManager::
 
 MailNetworkUlrInterceptorPluginManager::MailNetworkUlrInterceptorPluginManager(QObject *parent)
     : QObject(parent),
-      d(new MailNetworkUlrInterceptorPluginManagerPrivate)
+      d(new MailNetworkUlrInterceptorPluginManagerPrivate(this))
 {
-
+    d->initializePluginList();
 }
 
 MailNetworkUlrInterceptorPluginManager::~MailNetworkUlrInterceptorPluginManager()
 {
     delete d;
 }
+
