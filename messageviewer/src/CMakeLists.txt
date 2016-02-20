@@ -80,10 +80,10 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         viewer/webengine/mailwebenginepage.cpp
         viewer/webengine/mailwebengineaccesskey.cpp
         viewer/webengine/mailwebhittestresult.cpp
-        viewer/webengine/urlinterceptor/mailnetworkulrinterceptor.cpp
-        viewer/webengine/urlinterceptor/mailnetworkpluginulrinterceptorinterface.cpp
-        viewer/webengine/urlinterceptor/mailnetworkulrinterceptorpluginmanager.cpp
-        viewer/webengine/urlinterceptor/mailnetworkpluginulrinterceptor.cpp
+        viewer/webengine/urlinterceptor/mailnetworkurlinterceptor.cpp
+        viewer/webengine/urlinterceptor/mailnetworkpluginurlinterceptorinterface.cpp
+        viewer/webengine/urlinterceptor/mailnetworkurlinterceptorpluginmanager.cpp
+        viewer/webengine/urlinterceptor/mailnetworkpluginurlinterceptor.cpp
         viewer/webengine/urlinterceptor/mailnetworkurlinterceptormanager.cpp
         ${libmessageviewer_mailviewer_SRCS}
         findbar/findbarwebengineview.cpp
@@ -335,10 +335,10 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         )
     ecm_generate_headers(MessageViewer_Camelcasewebengine_urlinterceptor_HEADERS
         HEADER_NAMES
-        MailNetworkUlrInterceptorPluginManager
-        MailNetworkUlrInterceptor
-        MailNetworkPluginUlrInterceptorInterface
-        MailNetworkPluginUlrInterceptor
+        MailNetworkUrlInterceptorPluginManager
+        MailNetworkUrlInterceptor
+        MailNetworkPluginUrlInterceptorInterface
+        MailNetworkPluginUrlInterceptor
 
         REQUIRED_HEADERS MessageViewer_webengine_urlinterceptor_HEADERS
         PREFIX MessageViewer
