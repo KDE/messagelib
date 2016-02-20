@@ -16,6 +16,8 @@
 */
 
 #include "mailnetworkurlinterceptormanager.h"
+#include "mailnetworkulrinterceptorpluginmanager.h"
+
 
 using namespace MessageViewer;
 
