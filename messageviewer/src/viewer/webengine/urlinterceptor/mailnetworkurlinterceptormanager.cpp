@@ -18,6 +18,7 @@
 #include "mailnetworkurlinterceptormanager.h"
 #include "mailnetworkulrinterceptorpluginmanager.h"
 
+#include <QWebEngineProfile>
 
 using namespace MessageViewer;
 

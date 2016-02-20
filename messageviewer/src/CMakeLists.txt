@@ -80,11 +80,11 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         viewer/webengine/mailwebenginepage.cpp
         viewer/webengine/mailwebengineaccesskey.cpp
         viewer/webengine/mailwebhittestresult.cpp
-        viewer/webengine/mailnetworkulrinterceptor.cpp
-        viewer/webengine/mailnetworkpluginulrinterceptorinterface.cpp
-        viewer/webengine/mailnetworkulrinterceptorpluginmanager.cpp
-        viewer/webengine/mailnetworkpluginulrinterceptor.cpp
-        viewer/webengine/mailnetworkurlinterceptormanager.cpp
+        viewer/webengine/urlinterceptor/mailnetworkulrinterceptor.cpp
+        viewer/webengine/urlinterceptor/mailnetworkpluginulrinterceptorinterface.cpp
+        viewer/webengine/urlinterceptor/mailnetworkulrinterceptorpluginmanager.cpp
+        viewer/webengine/urlinterceptor/mailnetworkpluginulrinterceptor.cpp
+        viewer/webengine/urlinterceptor/mailnetworkurlinterceptormanager.cpp
         ${libmessageviewer_mailviewer_SRCS}
         findbar/findbarwebengineview.cpp
         )
@@ -329,15 +329,22 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         MailWebEnginePage
         MailWebEngineAccessKey
         MailWebEngineView
+        REQUIRED_HEADERS MessageViewer_webengine_HEADERS
+        PREFIX MessageViewer
+        RELATIVE viewer/webengine
+        )
+    ecm_generate_headers(MessageViewer_Camelcasewebengine_urlinterceptor_HEADERS
+        HEADER_NAMES
         MailNetworkUlrInterceptorPluginManager
         MailNetworkUlrInterceptor
         MailNetworkPluginUlrInterceptorInterface
         MailNetworkPluginUlrInterceptor
 
-        REQUIRED_HEADERS MessageViewer_webengine_HEADERS
+        REQUIRED_HEADERS MessageViewer_webengine_urlinterceptor_HEADERS
         PREFIX MessageViewer
-        RELATIVE viewer/webengine
+        RELATIVE viewer/webengine/urlinterceptor
         )
+
 endif()
 
 ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
@@ -512,6 +519,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 
 
 install(FILES
+    ${MessageViewer_Camelcasewebengine_urlinterceptor_HEADERS}
     ${MessageViewer_Camelcasewebengine_HEADERS}
     ${MessageViewer_CamelfindbarWebEngine_HEADERS}
     ${MessageViewer_Camelcasewebviewer_HEADERS}
@@ -534,6 +542,7 @@ install(FILES
     )
 
 install(FILES
+    ${MessageViewer_webengine_urlinterceptor_HEADERS}
     ${MessageViewer_webengine_HEADERS}
     ${MessageViewer_findbarWebEngine_HEADERS}
     ${MessageViewer_adblockcommon_HEADERS}
