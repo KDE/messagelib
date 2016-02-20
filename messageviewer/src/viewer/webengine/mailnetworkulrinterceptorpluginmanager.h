@@ -19,10 +19,12 @@
 #define MAILNETWORKULRINTERCEPTORPLUGINMANAGER_H
 
 #include <QObject>
+#include <QVector>
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
 class MailNetworkUlrInterceptorPluginManagerPrivate;
+class MailNetworkPluginUlrInterceptor;
 class MESSAGEVIEWER_EXPORT MailNetworkUlrInterceptorPluginManager : public QObject
 {
     Q_OBJECT
@@ -31,6 +33,7 @@ public:
     explicit MailNetworkUlrInterceptorPluginManager(QObject *parent = Q_NULLPTR);
     ~MailNetworkUlrInterceptorPluginManager();
 
+    QVector<MessageViewer::MailNetworkPluginUlrInterceptor *> pluginsList() const;
 private:
     MailNetworkUlrInterceptorPluginManagerPrivate *const d;
 };

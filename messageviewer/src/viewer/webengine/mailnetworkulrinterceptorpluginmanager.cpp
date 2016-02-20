@@ -15,7 +15,15 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+#include "mailnetworkpluginulrinterceptor.h"
 #include "mailnetworkulrinterceptorpluginmanager.h"
+
+#include <KPluginLoader>
+#include <KPluginFactory>
+#include <QFileInfo>
+#include <QVariant>
+#include <QSet>
+#include <kpluginmetadata.h>
 
 using namespace MessageViewer;
 
@@ -37,6 +45,32 @@ public:
 
 Q_GLOBAL_STATIC(MailNetworkUlrInterceptorPluginManagerInstancePrivate, sInstance)
 
+class MailNetworkUlrInterceptorPluginInfo
+{
+public:
+    MailNetworkUlrInterceptorPluginInfo()
+        : plugin(Q_NULLPTR)
+    {
+
+    }
+    QString saveName() const;
+
+    KPluginMetaData metaData;
+    MessageViewer::MailNetworkPluginUlrInterceptor *plugin;
+};
+
+QString MailNetworkUlrInterceptorPluginInfo::saveName() const
+{
+    return QFileInfo(metaData.fileName()).baseName();
+}
+
+namespace
+{
+QString pluginVersion()
+{
+    return QStringLiteral("1.0");
+}
+}
 
 class MessageViewer::MailNetworkUlrInterceptorPluginManagerPrivate
 {
@@ -48,12 +82,59 @@ public:
     }
     void initializePluginList();
 
+    void loadPlugin(MailNetworkUlrInterceptorPluginInfo *item);
+    QVector<MessageViewer::MailNetworkPluginUlrInterceptor *> pluginsList() const;
+
+    QVector<MailNetworkUlrInterceptorPluginInfo> mPluginList;
     MailNetworkUlrInterceptorPluginManager *q;
 };
 
 void MailNetworkUlrInterceptorPluginManagerPrivate::initializePluginList()
 {
-    //TODO
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](const KPluginMetaData & md) {
+        return md.serviceTypes().contains(QStringLiteral("MessageViewer/UrlInterceptor"));
+    });
+
+    QVectorIterator<KPluginMetaData> i(plugins);
+    i.toBack();
+    QSet<QString> unique;
+    while (i.hasPrevious()) {
+        MailNetworkUlrInterceptorPluginInfo info;
+        info.metaData = i.previous();
+
+        const QString version = info.metaData.version();
+        if (pluginVersion() == version) {
+
+            // only load plugins once, even if found multiple times!
+            if (unique.contains(info.saveName())) {
+                continue;
+            }
+            info.plugin = Q_NULLPTR;
+            mPluginList.append(info);
+            unique.insert(info.saveName());
+        }
+    }
+    QVector<MailNetworkUlrInterceptorPluginInfo>::iterator end(mPluginList.end());
+    for (QVector<MailNetworkUlrInterceptorPluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
+        loadPlugin(&(*it));
+    }
+}
+
+QVector<MessageViewer::MailNetworkPluginUlrInterceptor *> MailNetworkUlrInterceptorPluginManagerPrivate::pluginsList() const
+{
+    QVector<MessageViewer::MailNetworkPluginUlrInterceptor *> lst;
+    QVector<MailNetworkUlrInterceptorPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<MailNetworkUlrInterceptorPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+        if ((*it).plugin) {
+            lst << (*it).plugin;
+        }
+    }
+    return lst;
+}
+
+void MailNetworkUlrInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUlrInterceptorPluginInfo *item)
+{
+    item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<MessageViewer::MailNetworkPluginUlrInterceptor>(q, QVariantList() << item->saveName());
 }
 
 MailNetworkUlrInterceptorPluginManager *MailNetworkUlrInterceptorPluginManager::self()
@@ -73,3 +154,7 @@ MailNetworkUlrInterceptorPluginManager::~MailNetworkUlrInterceptorPluginManager(
     delete d;
 }
 
+QVector<MessageViewer::MailNetworkPluginUlrInterceptor *> MailNetworkUlrInterceptorPluginManager::pluginsList() const
+{
+    return d->pluginsList();
+}
