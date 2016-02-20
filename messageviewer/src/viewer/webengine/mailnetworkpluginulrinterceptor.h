@@ -30,6 +30,8 @@ public:
     explicit MailNetworkPluginUlrInterceptor(QObject *parent = Q_NULLPTR);
     ~MailNetworkPluginUlrInterceptor();
     virtual MailNetworkPluginUlrInterceptorInterface *createInterface(QObject *parent = Q_NULLPTR) = 0;
+
+    virtual bool hasConfigureSupport() const;
 };
 }
 #endif // MAILNETWORKPLUGINULRINTERCEPTOR_H

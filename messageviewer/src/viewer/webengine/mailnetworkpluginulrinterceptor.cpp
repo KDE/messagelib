@@ -29,3 +29,8 @@ MailNetworkPluginUlrInterceptor::~MailNetworkPluginUlrInterceptor()
 {
 
 }
+
+bool MailNetworkPluginUlrInterceptor::hasConfigureSupport() const
+{
+    return false;
+}
