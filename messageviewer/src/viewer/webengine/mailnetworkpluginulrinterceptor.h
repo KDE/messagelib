@@ -29,7 +29,7 @@ class MESSAGEVIEWER_EXPORT MailNetworkPluginUlrInterceptor : public QObject
 public:
     explicit MailNetworkPluginUlrInterceptor(QObject *parent = Q_NULLPTR);
     ~MailNetworkPluginUlrInterceptor();
-    virtual MailNetworkPluginUlrInterceptorInterface *createInterface() = 0;
+    virtual MailNetworkPluginUlrInterceptorInterface *createInterface(QObject *parent = Q_NULLPTR) = 0;
 };
 }
 #endif // MAILNETWORKPLUGINULRINTERCEPTOR_H
