@@ -16,7 +16,7 @@
 */
 
 #include "mailnetworkurlinterceptormanager.h"
-#include "mailnetworkulrinterceptorpluginmanager.h"
+#include "mailnetworkurlinterceptorpluginmanager.h"
 
 #include <QWebEngineProfile>
 

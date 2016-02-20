@@ -15,27 +15,27 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailnetworkpluginulrinterceptorinterface.h"
-#include "mailnetworkulrinterceptor.h"
+#include "mailnetworkpluginurlinterceptorinterface.h"
+#include "mailnetworkurlinterceptor.h"
 #include "messageviewer_debug.h"
 
 #include <QVector>
 
 using namespace MessageViewer;
 
-class MessageViewer::MailNetworkUlrInterceptorPrivate
+class MessageViewer::MailNetworkUrlInterceptorPrivate
 {
 public:
-    MailNetworkUlrInterceptorPrivate()
+    MailNetworkUrlInterceptorPrivate()
     {
 
     }
-    void addInterceptor(MailNetworkPluginUlrInterceptorInterface *interceptor);
+    void addInterceptor(MailNetworkPluginUrlInterceptorInterface *interceptor);
     void interceptRequest(QWebEngineUrlRequestInfo &info);
-    QVector<MailNetworkPluginUlrInterceptorInterface *> listInterceptor;
+    QVector<MailNetworkPluginUrlInterceptorInterface *> listInterceptor;
 };
 
-void MailNetworkUlrInterceptorPrivate::addInterceptor(MailNetworkPluginUlrInterceptorInterface *interceptor)
+void MailNetworkUrlInterceptorPrivate::addInterceptor(MailNetworkPluginUrlInterceptorInterface *interceptor)
 {
     if (!listInterceptor.contains(interceptor)) {
         listInterceptor.append(interceptor);
@@ -44,31 +44,31 @@ void MailNetworkUlrInterceptorPrivate::addInterceptor(MailNetworkPluginUlrInterc
     }
 }
 
-void MailNetworkUlrInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &info)
+void MailNetworkUrlInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    Q_FOREACH(MailNetworkPluginUlrInterceptorInterface *inter, listInterceptor) {
+    Q_FOREACH(MailNetworkPluginUrlInterceptorInterface *inter, listInterceptor) {
         inter->interceptRequest(info);
     }
 }
 
-MailNetworkUlrInterceptor::MailNetworkUlrInterceptor(QObject *parent)
+MailNetworkUrlInterceptor::MailNetworkUrlInterceptor(QObject *parent)
     : QWebEngineUrlRequestInterceptor(parent),
-      d(new MailNetworkUlrInterceptorPrivate)
+      d(new MailNetworkUrlInterceptorPrivate)
 {
 
 }
 
-MailNetworkUlrInterceptor::~MailNetworkUlrInterceptor()
+MailNetworkUrlInterceptor::~MailNetworkUrlInterceptor()
 {
     delete d;
 }
 
-void MailNetworkUlrInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
+void MailNetworkUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     d->interceptRequest(info);
 }
 
-void MailNetworkUlrInterceptor::addInterceptor(MailNetworkPluginUlrInterceptorInterface *interceptor)
+void MailNetworkUrlInterceptor::addInterceptor(MailNetworkPluginUrlInterceptorInterface *interceptor)
 {
     d->addInterceptor(interceptor);
 }

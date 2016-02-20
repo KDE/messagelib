@@ -15,28 +15,28 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef MAILNETWORKULRINTERCEPTORPLUGINMANAGER_H
-#define MAILNETWORKULRINTERCEPTORPLUGINMANAGER_H
+#ifndef MAILNETWORKURLINTERCEPTORPLUGINMANAGER_H
+#define MAILNETWORKURLINTERCEPTORPLUGINMANAGER_H
 
 #include <QObject>
 #include <QVector>
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
-class MailNetworkUlrInterceptorPluginManagerPrivate;
-class MailNetworkPluginUlrInterceptor;
-class MESSAGEVIEWER_EXPORT MailNetworkUlrInterceptorPluginManager : public QObject
+class MailNetworkUrlInterceptorPluginManagerPrivate;
+class MailNetworkPluginUrlInterceptor;
+class MESSAGEVIEWER_EXPORT MailNetworkUrlInterceptorPluginManager : public QObject
 {
     Q_OBJECT
 public:
-    static MailNetworkUlrInterceptorPluginManager *self();
-    explicit MailNetworkUlrInterceptorPluginManager(QObject *parent = Q_NULLPTR);
-    ~MailNetworkUlrInterceptorPluginManager();
+    static MailNetworkUrlInterceptorPluginManager *self();
+    explicit MailNetworkUrlInterceptorPluginManager(QObject *parent = Q_NULLPTR);
+    ~MailNetworkUrlInterceptorPluginManager();
 
-    QVector<MessageViewer::MailNetworkPluginUlrInterceptor *> pluginsList() const;
+    QVector<MessageViewer::MailNetworkPluginUrlInterceptor *> pluginsList() const;
 private:
-    MailNetworkUlrInterceptorPluginManagerPrivate *const d;
+    MailNetworkUrlInterceptorPluginManagerPrivate *const d;
 };
 }
 
-#endif // MAILNETWORKULRINTERCEPTORPLUGINMANAGER_H
+#endif // MAILNETWORKURLINTERCEPTORPLUGINMANAGER_H
