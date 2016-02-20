@@ -85,6 +85,81 @@ void RenderTest::testRenderInlined()
     testRender();
 }
 
+void RenderTest::testRenderIconic_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+    QTest::addColumn<QString>("outFileName");
+    QTest::addColumn<QString>("attachmentStrategy");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    foreach (const QString &file, dir.entryList(QStringList(QLatin1String("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
+        QString fname = dir.path() + QStringLiteral("/iconic/") + file + QStringLiteral(".html");
+        if (!QFile::exists(fname)) {
+            fname = dir.path() + QStringLiteral("/") + file + QStringLiteral(".html");
+            if (!QFile::exists(fname)) {
+                continue;
+            }
+        }
+        QTest::newRow(file.toLatin1()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("iconic");
+    }
+}
+
+void RenderTest::testRenderIconic()
+{
+    testRender();
+}
+
+void RenderTest::testRenderHidden_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+    QTest::addColumn<QString>("outFileName");
+    QTest::addColumn<QString>("attachmentStrategy");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    foreach (const QString &file, dir.entryList(QStringList(QLatin1String("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
+        QString fname = dir.path() + QStringLiteral("/hidden/") + file + QStringLiteral(".html");
+        if (!QFile::exists(fname)) {
+            fname = dir.path() + QStringLiteral("/") + file + QStringLiteral(".html");
+            if (!QFile::exists(fname)) {
+                continue;
+            }
+        }
+        QTest::newRow(file.toLatin1()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("hidden");
+    }
+}
+
+void RenderTest::testRenderHidden()
+{
+    testRender();
+}
+
+void RenderTest::testRenderHeaderOnly_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+    QTest::addColumn<QString>("outFileName");
+    QTest::addColumn<QString>("attachmentStrategy");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    foreach (const QString &file, dir.entryList(QStringList(QLatin1String("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
+        QString fname = dir.path() + QStringLiteral("/headeronly/") + file + QStringLiteral(".html");
+        if (!QFile::exists(fname)) {
+            fname = dir.path() + QStringLiteral("/") + file + QStringLiteral(".html");
+            if (!QFile::exists(fname)) {
+                continue;
+            }
+        }
+        QTest::newRow(file.toLatin1()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("headeronly");
+    }
+}
+
+void RenderTest::testRenderHeaderOnly()
+{
+    testRender();
+}
+
 void RenderTest::testRender()
 {
     QFETCH(QString, mailFileName);

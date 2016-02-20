@@ -36,6 +36,15 @@ private Q_SLOTS:
 
     void testRenderInlined_data();
     void testRenderInlined();
+
+    void testRenderIconic_data();
+    void testRenderIconic();
+
+    void testRenderHidden_data();
+    void testRenderHidden();
+
+    void testRenderHeaderOnly_data();
+    void testRenderHeaderOnly();
 private:
     void testRender();
 };
