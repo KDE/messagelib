@@ -23,6 +23,7 @@
 
 #include <gpgme++/key.h>
 #include <viewer/objecttreeemptysource.h>
+#include <viewer/attachmentstrategy.h>
 
 namespace MessageViewer
 {
@@ -46,6 +47,7 @@ public:
                          MessageViewer::CSSHelperBase *cssHelper)
         : mWriter(writer)
         , mCSSHelper(cssHelper)
+        , mAttachmentStrategy(QStringLiteral("smart"))
         , mHtmlLoadExternal(false)
         , mHtmlMail(true)
     {
@@ -76,6 +78,16 @@ public:
         mHtmlMail = htmlMail;
     }
 
+    void setAttachmentStrategy(QString strategy)
+    {
+        mAttachmentStrategy = strategy;
+    }
+
+    const AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE
+    {
+        return  AttachmentStrategy::create(mAttachmentStrategy);
+    }
+
     bool autoImportKeys() const Q_DECL_OVERRIDE
     {
         return true;
@@ -94,6 +106,7 @@ public:
 private:
     MessageViewer::HtmlWriter *mWriter;
     MessageViewer::CSSHelperBase *mCSSHelper;
+    QString mAttachmentStrategy;
     bool mHtmlLoadExternal;
     bool mHtmlMail;
 };

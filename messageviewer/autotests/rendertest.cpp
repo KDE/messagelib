@@ -17,6 +17,7 @@
   02110-1301, USA.
 */
 
+#include "rendertest.h"
 #include "util.h"
 #include "testcsshelper.h"
 #include "setupenv.h"
@@ -33,99 +34,124 @@
 
 using namespace MessageViewer;
 
-class RenderTest : public QObject
+void RenderTest::initTestCase()
 {
-    Q_OBJECT
+    MessageViewer::Test::setupEnv();
+}
 
-private Q_SLOTS:
-    void initTestCase()
-    {
-        MessageViewer::Test::setupEnv();
+void RenderTest::testRenderSmart_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+    QTest::addColumn<QString>("outFileName");
+    QTest::addColumn<QString>("attachmentStrategy");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    foreach (const QString &file, dir.entryList(QStringList(QLatin1String("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
+        if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))) {
+            continue;
+        }
+        QTest::newRow(file.toLatin1()) << file << QString(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html")) << QString(file + QStringLiteral(".out")) << QStringLiteral("smart");
     }
+}
 
-    void testRender_data()
-    {
-        QTest::addColumn<QString>("mailFileName");
-        QTest::addColumn<QString>("referenceFileName");
-        QTest::addColumn<QString>("outFileName");
+void RenderTest::testRenderSmart()
+{
+    testRender();
+}
 
-        QDir dir(QStringLiteral(MAIL_DATA_DIR));
-        foreach (const QString &file, dir.entryList(QStringList(QLatin1String("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
-            if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QLatin1String(".html"))) {
+void RenderTest::testRenderInlined_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+    QTest::addColumn<QString>("outFileName");
+    QTest::addColumn<QString>("attachmentStrategy");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    foreach (const QString &file, dir.entryList(QStringList(QLatin1String("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
+        QString fname = dir.path() + QStringLiteral("/inlined/") + file + QStringLiteral(".html");
+        if (!QFile::exists(fname)) {
+            fname = dir.path() + QStringLiteral("/") + file + QStringLiteral(".html");
+            if (!QFile::exists(fname)) {
                 continue;
             }
-            QTest::newRow(file.toLatin1()) << file << QString(dir.path() + QLatin1Char('/') + file + QLatin1String(".html")) << QString(file + QLatin1String(".out"));
         }
+        QTest::newRow(file.toLatin1()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("inlined");
     }
+}
 
-    void testRender()
+void RenderTest::testRenderInlined()
+{
+    testRender();
+}
+
+void RenderTest::testRender()
+{
+    QFETCH(QString, mailFileName);
+    QFETCH(QString, referenceFileName);
+    QFETCH(QString, outFileName);
+    QFETCH(QString, attachmentStrategy);
+
+    const QString htmlFileName = outFileName + QStringLiteral(".html");
+
+    // load input mail
+    const KMime::Message::Ptr msg(readAndParseMail(mailFileName));
+
+    // render the mail
+    FileHtmlWriter fileWriter(outFileName);
+    QImage paintDevice;
+    MessageViewer::TestCSSHelper cssHelper(&paintDevice);
+    NodeHelper nodeHelper;
+    MessageViewer::Test::TestObjectTreeSource testSource(&fileWriter, &cssHelper);
+    testSource.setAllowDecryption(true);
+    testSource.setAttachmentStrategy(attachmentStrategy);
+    ObjectTreeParser otp(&testSource, &nodeHelper);
+
+    fileWriter.begin(QString());
+    fileWriter.queue(cssHelper.htmlHead(false));
+
+    otp.parseObjectTree(msg.data());
+
+    fileWriter.queue(QStringLiteral("</body></html>"));
+    fileWriter.flush();
+    fileWriter.end();
+
+    QVERIFY(QFile::exists(outFileName));
+
+    // validate xml and pretty-print for comparisson
+    // TODO add proper cmake check for xmllint and diff
+    QStringList args = QStringList()
+                        << QStringLiteral("--format")
+                        << QStringLiteral("--encode")
+                        << QStringLiteral("UTF8")
+                        << QStringLiteral("--output")
+                        << htmlFileName
+                        << outFileName;
+    QCOMPARE(QProcess::execute(QStringLiteral("xmllint"), args),  0);
+
+    // get rid of system dependent or random paths
     {
-        QFETCH(QString, mailFileName);
-        QFETCH(QString, referenceFileName);
-        QFETCH(QString, outFileName);
-
-        const QString htmlFileName = outFileName + QLatin1String(".html");
-
-        // load input mail
-        const KMime::Message::Ptr msg(readAndParseMail(mailFileName));
-
-        // render the mail
-        FileHtmlWriter fileWriter(outFileName);
-        QImage paintDevice;
-        MessageViewer::TestCSSHelper cssHelper(&paintDevice);
-        NodeHelper nodeHelper;
-        MessageViewer::Test::TestObjectTreeSource testSource(&fileWriter, &cssHelper);
-        testSource.setAllowDecryption(true);
-        ObjectTreeParser otp(&testSource, &nodeHelper);
-
-        fileWriter.begin(QString());
-        fileWriter.queue(cssHelper.htmlHead(false));
-
-        otp.parseObjectTree(msg.data());
-
-        fileWriter.queue(QStringLiteral("</body></html>"));
-        fileWriter.flush();
-        fileWriter.end();
-
-        QVERIFY(QFile::exists(outFileName));
-
-        // validate xml and pretty-print for comparisson
-        // TODO add proper cmake check for xmllint and diff
-        QStringList args = QStringList()
-                           << QStringLiteral("--format")
-                           << QStringLiteral("--encode")
-                           << QStringLiteral("UTF8")
-                           << QStringLiteral("--output")
-                           << htmlFileName
-                           << outFileName;
-        QCOMPARE(QProcess::execute(QLatin1String("xmllint"), args),  0);
-
-        // get rid of system dependent or random paths
-        {
-            QFile f(htmlFileName);
-            QVERIFY(f.open(QIODevice::ReadOnly));
-            QString content = QString::fromUtf8(f.readAll());
-            f.close();
-            content.replace(QRegExp(QLatin1String("\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")), QStringLiteral("\"file:\\1\""));
-            QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
-            f.write(content.toUtf8());
-            f.close();
-        }
-
-        // compare to reference file
-        args = QStringList()
-               << QStringLiteral("-u")
-               << referenceFileName
-               << htmlFileName;
-        QProcess proc;
-        proc.setProcessChannelMode(QProcess::ForwardedChannels);
-        proc.start(QStringLiteral("diff"), args);
-        QVERIFY(proc.waitForFinished());
-
-        QCOMPARE(proc.exitCode(), 0);
+        QFile f(htmlFileName);
+        QVERIFY(f.open(QIODevice::ReadOnly));
+        QString content = QString::fromUtf8(f.readAll());
+        f.close();
+        content.replace(QRegExp(QStringLiteral("\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")), QStringLiteral("\"file:\\1\""));
+        QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+        f.write(content.toUtf8());
+        f.close();
     }
-};
+
+    // compare to reference file
+    args = QStringList()
+            << QStringLiteral("-u")
+            << referenceFileName
+            << htmlFileName;
+    QProcess proc;
+    proc.setProcessChannelMode(QProcess::ForwardedChannels);
+    proc.start(QStringLiteral("diff"), args);
+    QVERIFY(proc.waitForFinished());
+
+    QCOMPARE(proc.exitCode(), 0);
+}
 
 QTEST_MAIN(RenderTest)
-
-#include "rendertest.moc"
