@@ -19,6 +19,7 @@
 #define MAILNETWORKURLINTERCEPTORMANAGER_H
 
 #include <QObject>
+#include <messageviewer/mailnetworkpluginurlinterceptor.h>
 #include "messageviewer_export.h"
 
 namespace MessageViewer
@@ -31,6 +32,7 @@ public:
     explicit MailNetworkUrlInterceptorManager(QObject *parent = Q_NULLPTR);
     ~MailNetworkUrlInterceptorManager();
 
+    QVector<MailNetworkPluginUrlInterceptorInterface *> interfaceList() const;
 private:
     MailNetworkUrlInterceptorManagerPrivate *const d;
 };

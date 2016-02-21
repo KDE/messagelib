@@ -25,15 +25,27 @@ using namespace MessageViewer;
 class MessageViewer::MailNetworkUrlInterceptorManagerPrivate
 {
 public:
-    MailNetworkUrlInterceptorManagerPrivate()
+    MailNetworkUrlInterceptorManagerPrivate(MailNetworkUrlInterceptorManager *qq)
+        : q(qq)
     {
-
+        createInterfaces();
     }
+    void createInterfaces();
+    QVector<MessageViewer::MailNetworkPluginUrlInterceptorInterface *> mListInterface;
+    MailNetworkUrlInterceptorManager *q;
 };
+
+void MailNetworkUrlInterceptorManagerPrivate::createInterfaces()
+{
+    Q_FOREACH(MailNetworkPluginUrlInterceptor *plugin, MailNetworkUrlInterceptorPluginManager::self()->pluginsList()) {
+        MessageViewer::MailNetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(q);
+        mListInterface.append(interface);
+    }
+}
 
 MailNetworkUrlInterceptorManager::MailNetworkUrlInterceptorManager(QObject *parent)
     : QObject(parent),
-      d(new MailNetworkUrlInterceptorManagerPrivate)
+      d(new MailNetworkUrlInterceptorManagerPrivate(this))
 {
 
 }
@@ -42,3 +54,9 @@ MailNetworkUrlInterceptorManager::~MailNetworkUrlInterceptorManager()
 {
     delete d;
 }
+
+QVector<MessageViewer::MailNetworkPluginUrlInterceptorInterface *> MailNetworkUrlInterceptorManager::interfaceList() const
+{
+    return d->mListInterface;
+}
+
