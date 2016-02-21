@@ -80,6 +80,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         viewer/webengine/mailwebenginepage.cpp
         viewer/webengine/mailwebengineaccesskey.cpp
         viewer/webengine/mailwebhittestresult.cpp
+        viewer/webengine/networkmanager/mailnetworkaccessmanager.cpp
         viewer/webengine/urlinterceptor/mailnetworkurlinterceptor.cpp
         viewer/webengine/urlinterceptor/mailnetworkpluginurlinterceptorinterface.cpp
         viewer/webengine/urlinterceptor/mailnetworkurlinterceptorpluginmanager.cpp
