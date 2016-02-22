@@ -22,13 +22,25 @@
 
 using namespace MessageViewer;
 
-NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QObject *parent)
-    : QNetworkAccessManager(parent)
+class MessageViewer::NetworkAccessManagerWebEnginePrivate
 {
-    MessageViewer::NetworkUrlInterceptorManager *manager = new MessageViewer::NetworkUrlInterceptorManager(this);
+public:
+    NetworkAccessManagerWebEnginePrivate()
+        : mManager(Q_NULLPTR)
+    {
+
+    }
+    MessageViewer::NetworkUrlInterceptorManager *mManager;
+};
+
+NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QObject *parent)
+    : QNetworkAccessManager(parent),
+      d(new NetworkAccessManagerWebEnginePrivate)
+{
+    d->mManager = new MessageViewer::NetworkUrlInterceptorManager(this);
 
     MessageViewer::NetworkUrlInterceptor *networkUrlInterceptor = new MessageViewer::NetworkUrlInterceptor(this);
-    Q_FOREACH (MessageViewer::NetworkPluginUrlInterceptorInterface *interface, manager->interfaceList()) {
+    Q_FOREACH (MessageViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
         networkUrlInterceptor->addInterceptor(interface);
     }
     QWebEngineProfile::defaultProfile()->setRequestInterceptor(networkUrlInterceptor);
