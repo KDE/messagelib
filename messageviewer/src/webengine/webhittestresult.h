@@ -32,8 +32,8 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * ============================================================ */
-#ifndef MAILWEBHITTESTRESULT_H
-#define MAILWEBHITTESTRESULT_H
+#ifndef WebHitTestResult_H
+#define WebHitTestResult_H
 
 #include "messageviewer_export.h"
 #include <QUrl>
@@ -44,10 +44,10 @@
 class QWebEnginePage;
 namespace MessageViewer
 {
-class MESSAGEVIEWER_EXPORT MailWebHitTestResult
+class MESSAGEVIEWER_EXPORT WebHitTestResult
 {
 public:
-    explicit MailWebHitTestResult(QWebEnginePage *page, const QPoint &pos);
+    explicit WebHitTestResult(QWebEnginePage *page, const QPoint &pos);
 
     QString alternateText() const;
     QRect boundingRect() const;

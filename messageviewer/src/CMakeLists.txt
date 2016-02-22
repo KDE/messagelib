@@ -79,7 +79,6 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         viewer/webengine/mailwebengineview.cpp
         viewer/webengine/mailwebenginepage.cpp
         viewer/webengine/mailwebengineaccesskey.cpp
-        viewer/webengine/mailwebhittestresult.cpp
         ${libmessageviewer_mailviewer_SRCS}
         findbar/findbarwebengineview.cpp
         )
@@ -92,6 +91,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         webengine/urlinterceptor/networkpluginurlinterceptor.cpp
         webengine/urlinterceptor/networkurlinterceptormanager.cpp
         webengine/urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
+        webengine/webhittestresult.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -331,7 +331,6 @@ ecm_generate_headers(MessageViewer_Camelcasewebviewer_HEADERS
 if (QTWEBENGINE_EXPERIMENTAL_OPTION)
     ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
         HEADER_NAMES
-        MailWebHitTestResult
         MailWebEnginePage
         MailWebEngineAccessKey
         MailWebEngineView
@@ -359,6 +358,13 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         PREFIX MessageViewer
         RELATIVE webengine/networkmanager
         )
+    ecm_generate_headers(MessageViewer_Camelcasewebengine_misc_HEADERS
+        HEADER_NAMES
+        WebHitTestResult
+        REQUIRED_HEADERS MessageViewer_webengine_misc_HEADERS
+        PREFIX MessageViewer
+        RELATIVE webengine/
+	)
 endif()
 
 ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
@@ -533,6 +539,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 
 
 install(FILES
+    ${MessageViewer_Camelcasewebengine_misc_HEADERS}
     ${MessageViewer_Camelcasewebengine_manager_HEADERS}
     ${MessageViewer_Camelcasewebengine_urlinterceptor_HEADERS}
     ${MessageViewer_Camelcasewebengine_HEADERS}
@@ -557,6 +564,7 @@ install(FILES
     )
 
 install(FILES
+    ${MessageViewer_webengine_misc_HEADERS}
     ${MessageViewer_webengine_manager_HEADERS}
     ${MessageViewer_webengine_urlinterceptor_HEADERS}
     ${MessageViewer_webengine_HEADERS}
