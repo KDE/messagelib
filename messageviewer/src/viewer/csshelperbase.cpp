@@ -31,7 +31,6 @@
 
 #include "csshelperbase.h"
 
-
 #include <QApplication>
 #include <QPaintDevice>
 #include <QPalette>

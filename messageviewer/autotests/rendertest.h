@@ -20,7 +20,6 @@
 #ifndef RENDERTEST_H
 #define RENDERTEST_H
 
-
 #include <QObject>
 
 class RenderTest : public QObject

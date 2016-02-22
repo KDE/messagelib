@@ -196,12 +196,12 @@ void RenderTest::testRender()
     // validate xml and pretty-print for comparisson
     // TODO add proper cmake check for xmllint and diff
     QStringList args = QStringList()
-                        << QStringLiteral("--format")
-                        << QStringLiteral("--encode")
-                        << QStringLiteral("UTF8")
-                        << QStringLiteral("--output")
-                        << htmlFileName
-                        << outFileName;
+                       << QStringLiteral("--format")
+                       << QStringLiteral("--encode")
+                       << QStringLiteral("UTF8")
+                       << QStringLiteral("--output")
+                       << htmlFileName
+                       << outFileName;
     QCOMPARE(QProcess::execute(QStringLiteral("xmllint"), args),  0);
 
     // get rid of system dependent or random paths
@@ -218,9 +218,9 @@ void RenderTest::testRender()
 
     // compare to reference file
     args = QStringList()
-            << QStringLiteral("-u")
-            << referenceFileName
-            << htmlFileName;
+           << QStringLiteral("-u")
+           << referenceFileName
+           << htmlFileName;
     QProcess proc;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);

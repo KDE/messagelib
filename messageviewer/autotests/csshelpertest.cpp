@@ -29,7 +29,7 @@ QTEST_MAIN(CSSHelperTest)
 void CSSHelperTest::testCssDefinition()
 {
     // load css header
-    QFile cssFile(QStringLiteral(MAIL_DATA_DIR)+QStringLiteral("/mailheader.css"));
+    QFile cssFile(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/mailheader.css"));
     QVERIFY(cssFile.open(QIODevice::ReadOnly));
 
     QImage paintDevice;

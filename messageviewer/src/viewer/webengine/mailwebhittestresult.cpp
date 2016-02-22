@@ -112,7 +112,7 @@ QVariant MailWebHitTestResult::execJavaScript(QWebEnginePage *page, const QStrin
     QVariant result;
     QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
 
-    page->runJavaScript(scriptSource, [loop, &result](const QVariant &res) {
+    page->runJavaScript(scriptSource, [loop, &result](const QVariant & res) {
         if (loop && loop->isRunning()) {
             result = res;
             loop->quit();
@@ -124,7 +124,6 @@ QVariant MailWebHitTestResult::execJavaScript(QWebEnginePage *page, const QStrin
 
     return result;
 }
-
 
 QString MailWebHitTestResult::alternateText() const
 {
@@ -193,8 +192,9 @@ QString MailWebHitTestResult::tagName() const
 
 void MailWebHitTestResult::init(const QUrl &url, const QVariantMap &map)
 {
-    if (map.isEmpty())
+    if (map.isEmpty()) {
         return;
+    }
 
     m_alternateText = map.value(QStringLiteral("alternateText")).toString();
     m_imageUrl = map.value(QStringLiteral("imageUrl")).toUrl();
@@ -208,14 +208,18 @@ void MailWebHitTestResult::init(const QUrl &url, const QVariantMap &map)
     m_tagName = map.value(QStringLiteral("tagName")).toString();
 
     const QVariantList &rect = map.value(QStringLiteral("boundingRect")).toList();
-    if (rect.size() == 4)
+    if (rect.size() == 4) {
         m_boundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
+    }
 
-    if (!m_imageUrl.isEmpty())
+    if (!m_imageUrl.isEmpty()) {
         m_imageUrl = url.resolved(m_imageUrl);
-    if (!m_linkUrl.isEmpty())
+    }
+    if (!m_linkUrl.isEmpty()) {
         m_linkUrl = url.resolved(m_linkUrl);
-    if (!m_mediaUrl.isEmpty())
+    }
+    if (!m_mediaUrl.isEmpty()) {
         m_mediaUrl = url.resolved(m_mediaUrl);
+    }
 }
 

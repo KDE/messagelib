@@ -195,8 +195,8 @@ void EncapsulatedRFC822Block::internalExit()
     }
 
     mWriter->queue(QStringLiteral("</td></tr>"
-                                 "<tr class=\"rfc822H\"><td dir=\"%1\">%2</td></tr>"
-                                 "</table>").arg(dir(), i18n("End of encapsulated message")));
+                                  "<tr class=\"rfc822H\"><td dir=\"%1\">%2</td></tr>"
+                                  "</table>").arg(dir(), i18n("End of encapsulated message")));
     entered = false;
 }
 
@@ -240,8 +240,8 @@ void EncryptedBlock::internalExit()
         return;
     }
     mWriter->queue(QStringLiteral("</td></tr>"
-                   "<tr class=\"encrH\"><td dir=\"%1\">%2</td></tr>"
-                   "</table>").arg(dir(), i18n("End of encrypted message")));
+                                  "<tr class=\"encrH\"><td dir=\"%1\">%2</td></tr>"
+                                  "</table>").arg(dir(), i18n("End of encrypted message")));
     entered = false;
 }
 
@@ -270,10 +270,10 @@ static const int SIG_FRAME_COL_UNDEF = 99;
 #define SIG_FRAME_COL_YELLOW  0
 #define SIG_FRAME_COL_GREEN   1
 QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
-        int status_code,
-        GpgME::Signature::Summary summary,
-        int &frameColor,
-        bool &showKeyInfos)
+                          int status_code,
+                          GpgME::Signature::Summary summary,
+                          int &frameColor,
+                          bool &showKeyInfos)
 {
     // note: At the moment frameColor and showKeyInfos are
     //       used for CMS only but not for PGP signatures
@@ -447,7 +447,7 @@ QString SignedBlock::simpleHeader()
         text = i18n("Invalid signature.");
     } else if (mClass == QStringLiteral("signOkKeyBad")
                || mClass == QStringLiteral("signWarn")) {
-       text = i18n("Not enough information to check signature validity.");
+        text = i18n("Not enough information to check signature validity.");
     } else if (mClass == QStringLiteral("signOkKeyOk")) {
 
         QString addr;
@@ -463,7 +463,7 @@ QString SignedBlock::simpleHeader()
         if (addr.isEmpty()) {
             text = i18n("Signature is valid.");
         } else {
-            text= i18n("Signed by <a href=\"mailto:%1\">%2</a>.", addr, name);
+            text = i18n("Signed by <a href=\"mailto:%1\">%2</a>.", addr, name);
         }
 
     } else {
@@ -543,7 +543,7 @@ void SignedBlock::internalEnter()
         if (mBlock.inProgress) {
             mClass = QStringLiteral("signInProgress");
             mWriter->queue(QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"signInProgress\">") +
-                           QStringLiteral("<tr class=\"signInProgressH\"><td dir=\"%1\">").arg(dir()) + 
+                           QStringLiteral("<tr class=\"signInProgressH\"><td dir=\"%1\">").arg(dir()) +
                            i18n("Please wait while the signature is being verified...") +
                            QStringLiteral("</td></tr><tr class=\"signInProgressB\"><td>"));
             return;
@@ -557,10 +557,10 @@ void SignedBlock::internalEnter()
             bool onlyShowKeyURL = false;
             bool cannotCheckSignature = true;
             QString statusStr = sigStatusToString(mCryptoProto,
-                                                mBlock.status_code,
-                                                mBlock.sigSummary,
-                                                frameColor,
-                                                showKeyInfos);
+                                                  mBlock.status_code,
+                                                  mBlock.sigSummary,
+                                                  frameColor,
+                                                  showKeyInfos);
             // if needed fallback to english status text
             // that was reported by the plugin
             if (statusStr.isEmpty()) {
@@ -593,8 +593,8 @@ void SignedBlock::internalEnter()
                 startKeyHREF =
                     QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">")
                     .arg(mCryptoProto->displayName(),
-                        mCryptoProto->name(),
-                        QString::fromLatin1(mBlock.keyId));
+                         mCryptoProto->name(),
+                         QString::fromLatin1(mBlock.keyId));
 
                 keyWithWithoutURL =
                     QStringLiteral("%1%2</a>").arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArray("0x") + mBlock.keyId)));
@@ -672,9 +672,9 @@ void SignedBlock::internalEnter()
                             i18nc("Start of warning message.", "Warning:") +
                             QStringLiteral("</u> ") +
                             i18n("No mail address is stored in the %1 used for signing, "
-                                "so we cannot compare it to the sender's address %2.",
-                                certificate,
-                                msgFrom);
+                                 "so we cannot compare it to the sender's address %2.",
+                                 certificate,
+                                 msgFrom);
                     }
                     if (!greenCaseWarning.isEmpty()) {
                         if (!statusStr.isEmpty()) {
@@ -704,38 +704,39 @@ void SignedBlock::internalEnter()
                         } else {
                             if (!blockAddrs.empty()) {
                                 const QUrl address = KEmailAddress::encodeMailtoUrl(blockAddrs.first());
-                                signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>").arg(QLatin1String(QUrl::toPercentEncoding(address.path())),signer);
+                                signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>").arg(QLatin1String(QUrl::toPercentEncoding(address.path())), signer);
                             }
                         }
 
                         if (mBlock.keyId.isEmpty()) {
                             if (signer.isEmpty() || onlyShowKeyURL) {
                                 htmlStr += i18n("Message was signed with unknown key.");
-                            } else
+                            } else {
                                 htmlStr += i18n("Message was signed by %1.", signer);
+                            }
                         } else {
                             QDateTime created = mBlock.creationTime;
                             if (created.isValid()) {
                                 if (signer.isEmpty()) {
-                                    if (onlyShowKeyURL)
+                                    if (onlyShowKeyURL) {
                                         htmlStr += i18n("Message was signed with key %1.", keyWithWithoutURL);
-                                    else
+                                    } else
                                         htmlStr += i18n("Message was signed on %1 with key %2.",
                                                         QLocale::system().toString(created, QLocale::ShortFormat),
                                                         keyWithWithoutURL);
                                 } else {
-                                    if (onlyShowKeyURL)
+                                    if (onlyShowKeyURL) {
                                         htmlStr += i18n("Message was signed with key %1.", keyWithWithoutURL);
-                                    else
+                                    } else
                                         htmlStr += i18n("Message was signed by %3 on %1 with key %2",
                                                         QLocale::system().toString(created, QLocale::ShortFormat),
                                                         keyWithWithoutURL,
                                                         signer);
                                 }
                             } else {
-                                if (signer.isEmpty() || onlyShowKeyURL)
+                                if (signer.isEmpty() || onlyShowKeyURL) {
                                     htmlStr += i18n("Message was signed with key %1.", keyWithWithoutURL);
-                                else
+                                } else
                                     htmlStr += i18n("Message was signed by %2 with key %1.",
                                                     keyWithWithoutURL,
                                                     signer);
@@ -803,8 +804,8 @@ void SignedBlock::internalEnter()
 
                         if (!mBlock.keyId.isEmpty())
                             content = i18n("Message was signed by %2 (Key ID: %1).",
-                                            keyWithWithoutURL,
-                                            signer);
+                                           keyWithWithoutURL,
+                                           signer);
                         else {
                             content = i18n("Message was signed by %1.", signer);
                         }
@@ -836,8 +837,8 @@ void SignedBlock::internalEnter()
 
                         if (!mBlock.keyId.isEmpty())
                             content = i18n("Message was signed by %2 (Key ID: %1).",
-                                            keyWithWithoutURL,
-                                            signer);
+                                           keyWithWithoutURL,
+                                           signer);
                         else {
                             content = i18n("Message was signed by %1.", signer);
                         }
@@ -873,8 +874,8 @@ void SignedBlock::internalExit()
     }
 
     mWriter->queue(QStringLiteral("</td></tr>"
-                   "<tr class=\"%1H\"><td dir=\"%2\">%3</td></tr>"
-                   "</table>").arg(mClass, dir(), i18n("End of signed message")));
+                                  "<tr class=\"%1H\"><td dir=\"%2\">%3</td></tr>"
+                                  "</table>").arg(mClass, dir(), i18n("End of signed message")));
     entered = false;
 }
 

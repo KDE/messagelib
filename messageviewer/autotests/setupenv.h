@@ -60,7 +60,8 @@ public:
         return mCSSHelper;
     }
 
-    bool htmlLoadExternal() const Q_DECL_OVERRIDE {
+    bool htmlLoadExternal() const Q_DECL_OVERRIDE
+    {
         return mHtmlLoadExternal;
     }
 
@@ -69,7 +70,8 @@ public:
         mHtmlLoadExternal = loadExternal;
     }
 
-    bool htmlMail() const Q_DECL_OVERRIDE {
+    bool htmlMail() const Q_DECL_OVERRIDE
+    {
         return mHtmlMail;
     }
 
@@ -83,8 +85,7 @@ public:
         mAttachmentStrategy = strategy;
     }
 
-    const AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE
-    {
+    const AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE {
         return  AttachmentStrategy::create(mAttachmentStrategy);
     }
 

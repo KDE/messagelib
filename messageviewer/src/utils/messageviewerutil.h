@@ -65,8 +65,6 @@ namespace MessageViewer
 namespace Util
 {
 
-
-
 // return true if we should proceed, false if we should abort
 bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
 

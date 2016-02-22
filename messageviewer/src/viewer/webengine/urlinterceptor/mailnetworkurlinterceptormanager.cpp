@@ -37,7 +37,7 @@ public:
 
 void MailNetworkUrlInterceptorManagerPrivate::createInterfaces()
 {
-    Q_FOREACH(MailNetworkPluginUrlInterceptor *plugin, MailNetworkUrlInterceptorPluginManager::self()->pluginsList()) {
+    Q_FOREACH (MailNetworkPluginUrlInterceptor *plugin, MailNetworkUrlInterceptorPluginManager::self()->pluginsList()) {
         MessageViewer::MailNetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(q);
         mListInterface.append(interface);
     }

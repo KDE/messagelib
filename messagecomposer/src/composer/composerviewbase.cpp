@@ -1802,7 +1802,7 @@ bool MessageComposer::ComposerViewBase::determineWhetherToSign(bool doSignComple
         case KMessageBox::No:
             markAllAttachmentsForSigning(false);
             return false;
-	default:
+        default:
             qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
             return false;
         }
@@ -1830,7 +1830,7 @@ bool MessageComposer::ComposerViewBase::determineWhetherToSign(bool doSignComple
         case KMessageBox::No:
             markAllAttachmentsForSigning(false);
             return false;
-	default:
+        default:
             qCWarning(MESSAGECOMPOSER_LOG) << "Unhandled MessageBox response";
             return false;
         }

@@ -46,7 +46,7 @@ void MailNetworkUrlInterceptorPrivate::addInterceptor(MailNetworkPluginUrlInterc
 
 void MailNetworkUrlInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    Q_FOREACH(MailNetworkPluginUrlInterceptorInterface *inter, listInterceptor) {
+    Q_FOREACH (MailNetworkPluginUrlInterceptorInterface *inter, listInterceptor) {
         inter->interceptRequest(info);
     }
 }

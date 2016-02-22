@@ -101,7 +101,7 @@ void SearchLineStatus::updateFilters()
 {
     QList<Akonadi::MessageStatus> lstStatus;
 
-    Q_FOREACH (QAction *act, mFilterListActions ) {
+    Q_FOREACH (QAction *act, mFilterListActions) {
         if (act->isChecked()) {
             Akonadi::MessageStatus status;
             status.fromQInt32(static_cast< qint32 >(act->data().toInt()));
@@ -122,7 +122,7 @@ void SearchLineStatus::showMenu()
 
 void SearchLineStatus::clearFilterAction()
 {
-    Q_FOREACH (QAction *act, mFilterListActions ) {
+    Q_FOREACH (QAction *act, mFilterListActions) {
         act->setChecked(false);
     }
     mHasFilter = false;
@@ -162,47 +162,47 @@ void SearchLineStatus::createMenuSearch()
     clearWidgetAction->setDefaultWidget(clearFilterButton);
     mFilterMenu->addAction(clearWidgetAction);
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-unread")), i18nc("@action:inmenu Status of a message", "Unread"),
-                            Akonadi::MessageStatus::statusUnread().toQInt32());
+                       Akonadi::MessageStatus::statusUnread().toQInt32());
 
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-replied")),
-                            i18nc("@action:inmenu Status of a message", "Replied"),
-                            Akonadi::MessageStatus::statusReplied().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Replied"),
+                       Akonadi::MessageStatus::statusReplied().toQInt32());
 
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-forwarded")),
-                            i18nc("@action:inmenu Status of a message", "Forwarded"),
-                            Akonadi::MessageStatus::statusForwarded().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Forwarded"),
+                       Akonadi::MessageStatus::statusForwarded().toQInt32());
 
     createFilterAction(QIcon::fromTheme(QStringLiteral("emblem-important")),
-                            i18nc("@action:inmenu Status of a message", "Important"),
-                            Akonadi::MessageStatus::statusImportant().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Important"),
+                       Akonadi::MessageStatus::statusImportant().toQInt32());
 
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-task")),
-                            i18nc("@action:inmenu Status of a message", "Action Item"),
-                            Akonadi::MessageStatus::statusToAct().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Action Item"),
+                       Akonadi::MessageStatus::statusToAct().toQInt32());
 
     createFilterAction(QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-thread-watch.png"))),
-                            i18nc("@action:inmenu Status of a message", "Watched"),
-                            Akonadi::MessageStatus::statusWatched().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Watched"),
+                       Akonadi::MessageStatus::statusWatched().toQInt32());
 
     createFilterAction(QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-thread-ignored.png"))),
-                            i18nc("@action:inmenu Status of a message", "Ignored"),
-                            Akonadi::MessageStatus::statusIgnored().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Ignored"),
+                       Akonadi::MessageStatus::statusIgnored().toQInt32());
 
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-attachment")),
-                            i18nc("@action:inmenu Status of a message", "Has Attachment"),
-                            Akonadi::MessageStatus::statusHasAttachment().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Has Attachment"),
+                       Akonadi::MessageStatus::statusHasAttachment().toQInt32());
 
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-invitation")),
-                            i18nc("@action:inmenu Status of a message", "Has Invitation"),
-                            Akonadi::MessageStatus::statusHasInvitation().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Has Invitation"),
+                       Akonadi::MessageStatus::statusHasInvitation().toQInt32());
 
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-mark-junk")),
-                            i18nc("@action:inmenu Status of a message", "Spam"),
-                            Akonadi::MessageStatus::statusSpam().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Spam"),
+                       Akonadi::MessageStatus::statusSpam().toQInt32());
 
     createFilterAction(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")),
-                            i18nc("@action:inmenu Status of a message", "Ham"),
-                            Akonadi::MessageStatus::statusHam().toQInt32());
+                       i18nc("@action:inmenu Status of a message", "Ham"),
+                       Akonadi::MessageStatus::statusHam().toQInt32());
     createFilterByAction();
 }
 

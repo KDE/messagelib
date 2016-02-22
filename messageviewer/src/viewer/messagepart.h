@@ -122,7 +122,7 @@ private:
 class CryptoBlock: public HTMLBlock
 {
 public:
-    CryptoBlock(MessageViewer::ObjectTreeParser* otp, MessageViewer::PartMetaData* block, const Kleo::CryptoBackend::Protocol* cryptoProto, MessageViewer::ObjectTreeSourceIf* source, const QString& fromAddress, KMime::Content* node);
+    CryptoBlock(MessageViewer::ObjectTreeParser *otp, MessageViewer::PartMetaData *block, const Kleo::CryptoBackend::Protocol *cryptoProto, MessageViewer::ObjectTreeSourceIf *source, const QString &fromAddress, KMime::Content *node);
     virtual ~CryptoBlock();
 
 private:
@@ -132,7 +132,7 @@ private:
     ObjectTreeParser *mOtp;
     PartMetaData *mMetaData;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
-    ObjectTreeSourceIf* mSource;
+    ObjectTreeSourceIf *mSource;
     QString mFromAddress;
     KMime::Content *mNode;
     QVector<HTMLBlock::Ptr> mInteralBlocks;
