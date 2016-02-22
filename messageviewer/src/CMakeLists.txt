@@ -91,6 +91,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         webengine/urlinterceptor/networkurlinterceptorpluginmanager.cpp
         webengine/urlinterceptor/networkpluginurlinterceptor.cpp
         webengine/urlinterceptor/networkurlinterceptormanager.cpp
+        webengine/urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -334,6 +335,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         MailWebEnginePage
         MailWebEngineAccessKey
         MailWebEngineView
+
         REQUIRED_HEADERS MessageViewer_webengine_HEADERS
         PREFIX MessageViewer
         RELATIVE viewer/webengine
@@ -344,6 +346,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         NetworkUrlInterceptor
         NetworkPluginUrlInterceptorInterface
         NetworkPluginUrlInterceptor
+        NetworkPluginUrlInterceptorConfigureWidget
 
         REQUIRED_HEADERS MessageViewer_webengine_urlinterceptor_HEADERS
         PREFIX MessageViewer
