@@ -15,8 +15,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailnetworkpluginurlinterceptor.h"
-#include "mailnetworkurlinterceptorpluginmanager.h"
+#include "networkpluginurlinterceptor.h"
+#include "networkurlinterceptorpluginmanager.h"
 
 #include <KPluginLoader>
 #include <KPluginFactory>

@@ -85,12 +85,12 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         )
 
     set(libmessageviewer_webengine_SRCS
-        webengine/networkmanager/mailnetworkaccessmanager.cpp
-        webengine/urlinterceptor/mailnetworkurlinterceptor.cpp
-        webengine/urlinterceptor/mailnetworkpluginurlinterceptorinterface.cpp
-        webengine/urlinterceptor/mailnetworkurlinterceptorpluginmanager.cpp
-        webengine/urlinterceptor/mailnetworkpluginurlinterceptor.cpp
-        webengine/urlinterceptor/mailnetworkurlinterceptormanager.cpp
+        webengine/networkmanager/networkaccessmanagerwebengine.cpp
+        webengine/urlinterceptor/networkurlinterceptor.cpp
+        webengine/urlinterceptor/networkpluginurlinterceptorinterface.cpp
+        webengine/urlinterceptor/networkurlinterceptorpluginmanager.cpp
+        webengine/urlinterceptor/networkpluginurlinterceptor.cpp
+        webengine/urlinterceptor/networkurlinterceptormanager.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -340,10 +340,10 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         )
     ecm_generate_headers(MessageViewer_Camelcasewebengine_urlinterceptor_HEADERS
         HEADER_NAMES
-        MailNetworkUrlInterceptorPluginManager
-        MailNetworkUrlInterceptor
-        MailNetworkPluginUrlInterceptorInterface
-        MailNetworkPluginUrlInterceptor
+        NetworkUrlInterceptorPluginManager
+        NetworkUrlInterceptor
+        NetworkPluginUrlInterceptorInterface
+        NetworkPluginUrlInterceptor
 
         REQUIRED_HEADERS MessageViewer_webengine_urlinterceptor_HEADERS
         PREFIX MessageViewer
@@ -351,7 +351,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         )
     ecm_generate_headers(MessageViewer_Camelcasewebengine_manager_HEADERS
         HEADER_NAMES
-        MailNetworkAccessManager
+        NetworkAccessManagerWebEngine
         REQUIRED_HEADERS MessageViewer_webengine_manager_HEADERS
         PREFIX MessageViewer
         RELATIVE webengine/networkmanager

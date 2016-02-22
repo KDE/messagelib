@@ -15,8 +15,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailnetworkpluginurlinterceptorinterface.h"
-#include "mailnetworkurlinterceptor.h"
+#include "networkpluginurlinterceptorinterface.h"
+#include "networkurlinterceptor.h"
 #include "messageviewer_debug.h"
 
 #include <QVector>

@@ -15,14 +15,14 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailnetworkaccessmanager.h"
-#include "webengine/urlinterceptor/mailnetworkurlinterceptormanager.h"
-#include "webengine/urlinterceptor/mailnetworkurlinterceptor.h"
+#include "networkaccessmanagerwebengine.h"
+#include "webengine/urlinterceptor/networkurlinterceptormanager.h"
+#include "webengine/urlinterceptor/networkurlinterceptor.h"
 #include <QWebEngineProfile>
 
 using namespace MessageViewer;
 
-NetworkAccessManager::NetworkAccessManager(QObject *parent)
+NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QObject *parent)
     : QNetworkAccessManager(parent)
 {
     MessageViewer::NetworkUrlInterceptorManager *manager = new MessageViewer::NetworkUrlInterceptorManager(this);
@@ -34,7 +34,7 @@ NetworkAccessManager::NetworkAccessManager(QObject *parent)
     QWebEngineProfile::defaultProfile()->setRequestInterceptor(networkUrlInterceptor);
 }
 
-NetworkAccessManager::~NetworkAccessManager()
+NetworkAccessManagerWebEngine::~NetworkAccessManagerWebEngine()
 {
 
 }

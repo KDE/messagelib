@@ -15,17 +15,22 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailnetworkpluginurlinterceptorinterface.h"
+#include "networkpluginurlinterceptor.h"
 
 using namespace MessageViewer;
 
-NetworkPluginUrlInterceptorInterface::NetworkPluginUrlInterceptorInterface(QObject *parent)
+NetworkPluginUrlInterceptor::NetworkPluginUrlInterceptor(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-NetworkPluginUrlInterceptorInterface::~NetworkPluginUrlInterceptorInterface()
+NetworkPluginUrlInterceptor::~NetworkPluginUrlInterceptor()
 {
 
+}
+
+bool NetworkPluginUrlInterceptor::hasConfigureSupport() const
+{
+    return false;
 }
