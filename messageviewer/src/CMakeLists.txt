@@ -80,14 +80,17 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         viewer/webengine/mailwebenginepage.cpp
         viewer/webengine/mailwebengineaccesskey.cpp
         viewer/webengine/mailwebhittestresult.cpp
-        viewer/webengine/networkmanager/mailnetworkaccessmanager.cpp
-        viewer/webengine/urlinterceptor/mailnetworkurlinterceptor.cpp
-        viewer/webengine/urlinterceptor/mailnetworkpluginurlinterceptorinterface.cpp
-        viewer/webengine/urlinterceptor/mailnetworkurlinterceptorpluginmanager.cpp
-        viewer/webengine/urlinterceptor/mailnetworkpluginurlinterceptor.cpp
-        viewer/webengine/urlinterceptor/mailnetworkurlinterceptormanager.cpp
         ${libmessageviewer_mailviewer_SRCS}
         findbar/findbarwebengineview.cpp
+        )
+
+    set(libmessageviewer_webengine_SRCS
+        webengine/networkmanager/mailnetworkaccessmanager.cpp
+        webengine/urlinterceptor/mailnetworkurlinterceptor.cpp
+        webengine/urlinterceptor/mailnetworkpluginurlinterceptorinterface.cpp
+        webengine/urlinterceptor/mailnetworkurlinterceptorpluginmanager.cpp
+        webengine/urlinterceptor/mailnetworkpluginurlinterceptor.cpp
+        webengine/urlinterceptor/mailnetworkurlinterceptormanager.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -231,6 +234,7 @@ set(libmessageviewer_viewerplugins_SRCS
     )
 
 set(libmessageviewer_SRCS
+    ${libmessageviewer_webengine_SRCS}
     ${libmessageviewer_viewer_SRCS}
     ${libmessageviewer_widgets_SRCS}
     ${libmessageviewer_header_SRCS}
@@ -343,14 +347,14 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
 
         REQUIRED_HEADERS MessageViewer_webengine_urlinterceptor_HEADERS
         PREFIX MessageViewer
-        RELATIVE viewer/webengine/urlinterceptor
+        RELATIVE webengine/urlinterceptor
         )
     ecm_generate_headers(MessageViewer_Camelcasewebengine_manager_HEADERS
         HEADER_NAMES
         MailNetworkAccessManager
         REQUIRED_HEADERS MessageViewer_webengine_manager_HEADERS
         PREFIX MessageViewer
-        RELATIVE viewer/webengine/networkmanager
+        RELATIVE webengine/networkmanager
         )
 endif()
 

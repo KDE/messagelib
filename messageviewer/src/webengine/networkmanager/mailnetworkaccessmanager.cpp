@@ -16,8 +16,8 @@
 */
 
 #include "mailnetworkaccessmanager.h"
-#include "viewer/webengine/urlinterceptor/mailnetworkurlinterceptormanager.h"
-#include "viewer/webengine/urlinterceptor/mailnetworkurlinterceptor.h"
+#include "webengine/urlinterceptor/mailnetworkurlinterceptormanager.h"
+#include "webengine/urlinterceptor/mailnetworkurlinterceptor.h"
 #include <QWebEngineProfile>
 
 using namespace MessageViewer;
