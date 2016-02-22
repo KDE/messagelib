@@ -29,14 +29,12 @@ class MessageViewer::FindBarWebEngineViewPrivate
 public:
     FindBarWebEngineViewPrivate()
         : mView(Q_NULLPTR),
-          mHighlightAll(Q_NULLPTR),
-          mFindInSelection(Q_NULLPTR)
+          mHighlightAll(Q_NULLPTR)
     {
 
     }
     QWebEngineView *mView;
     QAction *mHighlightAll;
-    QAction *mFindInSelection;
 };
 
 FindBarWebEngineView::FindBarWebEngineView(QWebEngineView *view, QWidget *parent)
@@ -47,10 +45,7 @@ FindBarWebEngineView::FindBarWebEngineView(QWebEngineView *view, QWidget *parent
     QMenu *options = optionsMenu();
     d->mHighlightAll = options->addAction(i18n("Highlight all matches"));
     d->mHighlightAll->setCheckable(true);
-    d->mFindInSelection = options->addAction(i18n("Find in selection first"));
-    d->mFindInSelection->setCheckable(true);
     connect(d->mHighlightAll, &QAction::toggled, this, &FindBarWebEngineView::slotHighlightAllChanged);
-    connect(d->mFindInSelection, &QAction::toggled, this, &FindBarWebEngineView::slotFindSelectionFirstChanged);
 }
 
 FindBarWebEngineView::~FindBarWebEngineView()
@@ -71,9 +66,6 @@ void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
 #if 0 //Not supported yet
     if (d->mHighlightAll->isChecked()) {
         searchOptions |= QWebEnginePage::HighlightAllOccurrences;
-    }
-    if (d->mFindInSelection->isChecked()) {
-        searchOptions |= QWebEnginePage::FindBeginsInSelection;
     }
 #endif
     const QString searchWord(mSearch->text());
@@ -118,22 +110,6 @@ void FindBarWebEngineView::updateSensitivity(bool sensitivity)
     if (sensitivity) {
         searchOptions |= QWebPage::FindCaseSensitively;
         d->mView->findText(QString(), QWebEnginePage::HighlightAllOccurrences); //Clear an existing highligh
-    }
-    if (d->mHighlightAll->isChecked()) {
-        searchOptions |= QWebEnginePage::HighlightAllOccurrences;
-    }
-    const bool found = d->mView->findText(mLastSearchStr, searchOptions);
-    setFoundMatch(found);
-#endif
-}
-
-void FindBarWebEngineView::slotFindSelectionFirstChanged(bool findSectionFirst)
-{
-#if 0 //TODO not supported
-    QWebPage::FindFlags searchOptions = QWebEnginePage::FindWrapsAroundDocument;
-    if (findSectionFirst) {
-        searchOptions |= QWebEnginePage::FindBeginsInSelection;
-        d->mView->findText(QString(), QWebPage::HighlightAllOccurrences); //Clear an existing highligh
     }
     if (d->mHighlightAll->isChecked()) {
         searchOptions |= QWebEnginePage::HighlightAllOccurrences;
