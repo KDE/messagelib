@@ -22,6 +22,7 @@
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
+class NetworkPluginUrlInterceptorConfigureWidget;
 class NetworkPluginUrlInterceptorInterface;
 class MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptor : public QObject
 {
@@ -32,6 +33,7 @@ public:
     virtual NetworkPluginUrlInterceptorInterface *createInterface(QObject *parent = Q_NULLPTR) = 0;
 
     virtual bool hasConfigureSupport() const;
+    virtual MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *createConfigureWidget(QWidget *parent = Q_NULLPTR);
 };
 }
 #endif // MAILNETWORKPLUGINURLINTERCEPTOR_H

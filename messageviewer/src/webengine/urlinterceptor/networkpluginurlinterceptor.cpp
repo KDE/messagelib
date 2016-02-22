@@ -34,3 +34,9 @@ bool NetworkPluginUrlInterceptor::hasConfigureSupport() const
 {
     return false;
 }
+
+MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *NetworkPluginUrlInterceptor::createConfigureWidget(QWidget *parent)
+{
+    Q_UNUSED(parent);
+    return Q_NULLPTR;
+}
