@@ -19,18 +19,18 @@
 
 using namespace MessageViewer;
 
-MailNetworkPluginUrlInterceptor::MailNetworkPluginUrlInterceptor(QObject *parent)
+NetworkPluginUrlInterceptor::NetworkPluginUrlInterceptor(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-MailNetworkPluginUrlInterceptor::~MailNetworkPluginUrlInterceptor()
+NetworkPluginUrlInterceptor::~NetworkPluginUrlInterceptor()
 {
 
 }
 
-bool MailNetworkPluginUrlInterceptor::hasConfigureSupport() const
+bool NetworkPluginUrlInterceptor::hasConfigureSupport() const
 {
     return false;
 }

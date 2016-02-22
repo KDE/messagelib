@@ -22,12 +22,12 @@
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
-class MESSAGEVIEWER_EXPORT MailNetworkAccessManager : public QNetworkAccessManager
+class MESSAGEVIEWER_EXPORT NetworkAccessManager : public QNetworkAccessManager
 {
     Q_OBJECT
 public:
-    explicit MailNetworkAccessManager(QObject *parent = Q_NULLPTR);
-    ~MailNetworkAccessManager();
+    explicit NetworkAccessManager(QObject *parent = Q_NULLPTR);
+    ~NetworkAccessManager();
 };
 }
 #endif // MAILNETWORKACCESSMANAGER_H

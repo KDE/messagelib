@@ -31,7 +31,7 @@ class MailNetworkUrlInterceptorPluginManagerInstancePrivate
 {
 public:
     MailNetworkUrlInterceptorPluginManagerInstancePrivate()
-        : mailNetworkUrlInterceptorPluginManager(new MailNetworkUrlInterceptorPluginManager)
+        : mailNetworkUrlInterceptorPluginManager(new NetworkUrlInterceptorPluginManager)
     {
     }
 
@@ -40,7 +40,7 @@ public:
         delete mailNetworkUrlInterceptorPluginManager;
     }
 
-    MailNetworkUrlInterceptorPluginManager *mailNetworkUrlInterceptorPluginManager;
+    NetworkUrlInterceptorPluginManager *mailNetworkUrlInterceptorPluginManager;
 };
 
 Q_GLOBAL_STATIC(MailNetworkUrlInterceptorPluginManagerInstancePrivate, sInstance)
@@ -56,7 +56,7 @@ public:
     QString saveName() const;
 
     KPluginMetaData metaData;
-    MessageViewer::MailNetworkPluginUrlInterceptor *plugin;
+    MessageViewer::NetworkPluginUrlInterceptor *plugin;
 };
 
 QString MailNetworkUrlInterceptorPluginInfo::saveName() const
@@ -72,10 +72,10 @@ QString pluginVersion()
 }
 }
 
-class MessageViewer::MailNetworkUrlInterceptorPluginManagerPrivate
+class MessageViewer::NetworkUrlInterceptorPluginManagerPrivate
 {
 public:
-    MailNetworkUrlInterceptorPluginManagerPrivate(MailNetworkUrlInterceptorPluginManager *qq)
+    NetworkUrlInterceptorPluginManagerPrivate(NetworkUrlInterceptorPluginManager *qq)
         : q(qq)
     {
 
@@ -83,13 +83,13 @@ public:
     void initializePluginList();
 
     void loadPlugin(MailNetworkUrlInterceptorPluginInfo *item);
-    QVector<MessageViewer::MailNetworkPluginUrlInterceptor *> pluginsList() const;
+    QVector<MessageViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
 
     QVector<MailNetworkUrlInterceptorPluginInfo> mPluginList;
-    MailNetworkUrlInterceptorPluginManager *q;
+    NetworkUrlInterceptorPluginManager *q;
 };
 
-void MailNetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
+void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](const KPluginMetaData & md) {
         return md.serviceTypes().contains(QStringLiteral("MessageViewer/UrlInterceptor"));
@@ -120,9 +120,9 @@ void MailNetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
     }
 }
 
-QVector<MessageViewer::MailNetworkPluginUrlInterceptor *> MailNetworkUrlInterceptorPluginManagerPrivate::pluginsList() const
+QVector<MessageViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPluginManagerPrivate::pluginsList() const
 {
-    QVector<MessageViewer::MailNetworkPluginUrlInterceptor *> lst;
+    QVector<MessageViewer::NetworkPluginUrlInterceptor *> lst;
     QVector<MailNetworkUrlInterceptorPluginInfo>::ConstIterator end(mPluginList.constEnd());
     for (QVector<MailNetworkUrlInterceptorPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if ((*it).plugin) {
@@ -132,29 +132,29 @@ QVector<MessageViewer::MailNetworkPluginUrlInterceptor *> MailNetworkUrlIntercep
     return lst;
 }
 
-void MailNetworkUrlInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUrlInterceptorPluginInfo *item)
+void NetworkUrlInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUrlInterceptorPluginInfo *item)
 {
-    item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<MessageViewer::MailNetworkPluginUrlInterceptor>(q, QVariantList() << item->saveName());
+    item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<MessageViewer::NetworkPluginUrlInterceptor>(q, QVariantList() << item->saveName());
 }
 
-MailNetworkUrlInterceptorPluginManager *MailNetworkUrlInterceptorPluginManager::self()
+NetworkUrlInterceptorPluginManager *NetworkUrlInterceptorPluginManager::self()
 {
     return sInstance->mailNetworkUrlInterceptorPluginManager;
 }
 
-MailNetworkUrlInterceptorPluginManager::MailNetworkUrlInterceptorPluginManager(QObject *parent)
+NetworkUrlInterceptorPluginManager::NetworkUrlInterceptorPluginManager(QObject *parent)
     : QObject(parent),
-      d(new MailNetworkUrlInterceptorPluginManagerPrivate(this))
+      d(new NetworkUrlInterceptorPluginManagerPrivate(this))
 {
     d->initializePluginList();
 }
 
-MailNetworkUrlInterceptorPluginManager::~MailNetworkUrlInterceptorPluginManager()
+NetworkUrlInterceptorPluginManager::~NetworkUrlInterceptorPluginManager()
 {
     delete d;
 }
 
-QVector<MessageViewer::MailNetworkPluginUrlInterceptor *> MailNetworkUrlInterceptorPluginManager::pluginsList() const
+QVector<MessageViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPluginManager::pluginsList() const
 {
     return d->pluginsList();
 }

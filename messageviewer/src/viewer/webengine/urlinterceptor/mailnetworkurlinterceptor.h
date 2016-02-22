@@ -23,20 +23,20 @@
 
 namespace MessageViewer
 {
-class MailNetworkUrlInterceptorPrivate;
-class MailNetworkPluginUrlInterceptorInterface;
-class MESSAGEVIEWER_EXPORT MailNetworkUrlInterceptor : public QWebEngineUrlRequestInterceptor
+class NetworkUrlInterceptorPrivate;
+class NetworkPluginUrlInterceptorInterface;
+class MESSAGEVIEWER_EXPORT NetworkUrlInterceptor : public QWebEngineUrlRequestInterceptor
 {
     Q_OBJECT
 public:
-    explicit MailNetworkUrlInterceptor(QObject *parent = Q_NULLPTR);
-    ~MailNetworkUrlInterceptor();
+    explicit NetworkUrlInterceptor(QObject *parent = Q_NULLPTR);
+    ~NetworkUrlInterceptor();
 
     void interceptRequest(QWebEngineUrlRequestInfo &info) Q_DECL_OVERRIDE;
 
-    void addInterceptor(MailNetworkPluginUrlInterceptorInterface *interceptor);
+    void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
 private:
-    MailNetworkUrlInterceptorPrivate *const d;
+    NetworkUrlInterceptorPrivate *const d;
 };
 }
 #endif // MAILNETWORKURLINTERCEPTOR_H

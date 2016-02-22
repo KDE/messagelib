@@ -23,19 +23,19 @@
 
 using namespace MessageViewer;
 
-class MessageViewer::MailNetworkUrlInterceptorPrivate
+class MessageViewer::NetworkUrlInterceptorPrivate
 {
 public:
-    MailNetworkUrlInterceptorPrivate()
+    NetworkUrlInterceptorPrivate()
     {
 
     }
-    void addInterceptor(MailNetworkPluginUrlInterceptorInterface *interceptor);
+    void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
     void interceptRequest(QWebEngineUrlRequestInfo &info);
-    QVector<MailNetworkPluginUrlInterceptorInterface *> listInterceptor;
+    QVector<NetworkPluginUrlInterceptorInterface *> listInterceptor;
 };
 
-void MailNetworkUrlInterceptorPrivate::addInterceptor(MailNetworkPluginUrlInterceptorInterface *interceptor)
+void NetworkUrlInterceptorPrivate::addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor)
 {
     if (!listInterceptor.contains(interceptor)) {
         listInterceptor.append(interceptor);
@@ -44,31 +44,31 @@ void MailNetworkUrlInterceptorPrivate::addInterceptor(MailNetworkPluginUrlInterc
     }
 }
 
-void MailNetworkUrlInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &info)
+void NetworkUrlInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    Q_FOREACH (MailNetworkPluginUrlInterceptorInterface *inter, listInterceptor) {
+    Q_FOREACH (NetworkPluginUrlInterceptorInterface *inter, listInterceptor) {
         inter->interceptRequest(info);
     }
 }
 
-MailNetworkUrlInterceptor::MailNetworkUrlInterceptor(QObject *parent)
+NetworkUrlInterceptor::NetworkUrlInterceptor(QObject *parent)
     : QWebEngineUrlRequestInterceptor(parent),
-      d(new MailNetworkUrlInterceptorPrivate)
+      d(new NetworkUrlInterceptorPrivate)
 {
 
 }
 
-MailNetworkUrlInterceptor::~MailNetworkUrlInterceptor()
+NetworkUrlInterceptor::~NetworkUrlInterceptor()
 {
     delete d;
 }
 
-void MailNetworkUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
+void NetworkUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     d->interceptRequest(info);
 }
 
-void MailNetworkUrlInterceptor::addInterceptor(MailNetworkPluginUrlInterceptorInterface *interceptor)
+void NetworkUrlInterceptor::addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor)
 {
     d->addInterceptor(interceptor);
 }

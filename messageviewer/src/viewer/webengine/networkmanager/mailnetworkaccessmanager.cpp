@@ -17,23 +17,24 @@
 
 #include "mailnetworkaccessmanager.h"
 #include "viewer/webengine/urlinterceptor/mailnetworkurlinterceptormanager.h"
+#include "viewer/webengine/urlinterceptor/mailnetworkurlinterceptor.h"
 #include <QWebEngineProfile>
-#include <viewer/webengine/urlinterceptor/mailnetworkurlinterceptor.h>
+
 using namespace MessageViewer;
 
-MailNetworkAccessManager::MailNetworkAccessManager(QObject *parent)
+NetworkAccessManager::NetworkAccessManager(QObject *parent)
     : QNetworkAccessManager(parent)
 {
-    MessageViewer::MailNetworkUrlInterceptorManager *manager = new MessageViewer::MailNetworkUrlInterceptorManager(this);
+    MessageViewer::NetworkUrlInterceptorManager *manager = new MessageViewer::NetworkUrlInterceptorManager(this);
 
-    MessageViewer::MailNetworkUrlInterceptor *networkUrlInterceptor = new MessageViewer::MailNetworkUrlInterceptor(this);
-    Q_FOREACH (MessageViewer::MailNetworkPluginUrlInterceptorInterface *interface, manager->interfaceList()) {
+    MessageViewer::NetworkUrlInterceptor *networkUrlInterceptor = new MessageViewer::NetworkUrlInterceptor(this);
+    Q_FOREACH (MessageViewer::NetworkPluginUrlInterceptorInterface *interface, manager->interfaceList()) {
         networkUrlInterceptor->addInterceptor(interface);
     }
     QWebEngineProfile::defaultProfile()->setRequestInterceptor(networkUrlInterceptor);
 }
 
-MailNetworkAccessManager::~MailNetworkAccessManager()
+NetworkAccessManager::~NetworkAccessManager()
 {
 
 }

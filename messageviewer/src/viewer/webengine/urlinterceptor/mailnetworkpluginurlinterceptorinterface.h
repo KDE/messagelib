@@ -23,12 +23,12 @@
 class QWebEngineUrlRequestInfo;
 namespace MessageViewer
 {
-class MESSAGEVIEWER_EXPORT MailNetworkPluginUrlInterceptorInterface : public QObject
+class MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailNetworkPluginUrlInterceptorInterface(QObject *parent = Q_NULLPTR);
-    ~MailNetworkPluginUrlInterceptorInterface();
+    explicit NetworkPluginUrlInterceptorInterface(QObject *parent = Q_NULLPTR);
+    ~NetworkPluginUrlInterceptorInterface();
 
     virtual void interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
 };

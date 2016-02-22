@@ -22,40 +22,40 @@
 
 using namespace MessageViewer;
 
-class MessageViewer::MailNetworkUrlInterceptorManagerPrivate
+class MessageViewer::NetworkUrlInterceptorManagerPrivate
 {
 public:
-    MailNetworkUrlInterceptorManagerPrivate(MailNetworkUrlInterceptorManager *qq)
+    NetworkUrlInterceptorManagerPrivate(NetworkUrlInterceptorManager *qq)
         : q(qq)
     {
         createInterfaces();
     }
     void createInterfaces();
-    QVector<MessageViewer::MailNetworkPluginUrlInterceptorInterface *> mListInterface;
-    MailNetworkUrlInterceptorManager *q;
+    QVector<MessageViewer::NetworkPluginUrlInterceptorInterface *> mListInterface;
+    NetworkUrlInterceptorManager *q;
 };
 
-void MailNetworkUrlInterceptorManagerPrivate::createInterfaces()
+void NetworkUrlInterceptorManagerPrivate::createInterfaces()
 {
-    Q_FOREACH (MailNetworkPluginUrlInterceptor *plugin, MailNetworkUrlInterceptorPluginManager::self()->pluginsList()) {
-        MessageViewer::MailNetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(q);
+    Q_FOREACH (NetworkPluginUrlInterceptor *plugin, NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
+        MessageViewer::NetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(q);
         mListInterface.append(interface);
     }
 }
 
-MailNetworkUrlInterceptorManager::MailNetworkUrlInterceptorManager(QObject *parent)
+NetworkUrlInterceptorManager::NetworkUrlInterceptorManager(QObject *parent)
     : QObject(parent),
-      d(new MailNetworkUrlInterceptorManagerPrivate(this))
+      d(new NetworkUrlInterceptorManagerPrivate(this))
 {
 
 }
 
-MailNetworkUrlInterceptorManager::~MailNetworkUrlInterceptorManager()
+NetworkUrlInterceptorManager::~NetworkUrlInterceptorManager()
 {
     delete d;
 }
 
-QVector<MessageViewer::MailNetworkPluginUrlInterceptorInterface *> MailNetworkUrlInterceptorManager::interfaceList() const
+QVector<MessageViewer::NetworkPluginUrlInterceptorInterface *> NetworkUrlInterceptorManager::interfaceList() const
 {
     return d->mListInterface;
 }

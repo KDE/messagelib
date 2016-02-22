@@ -24,17 +24,17 @@
 
 namespace MessageViewer
 {
-class MailNetworkUrlInterceptorManagerPrivate;
-class MESSAGEVIEWER_EXPORT MailNetworkUrlInterceptorManager : public QObject
+class NetworkUrlInterceptorManagerPrivate;
+class MESSAGEVIEWER_EXPORT NetworkUrlInterceptorManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailNetworkUrlInterceptorManager(QObject *parent = Q_NULLPTR);
-    ~MailNetworkUrlInterceptorManager();
+    explicit NetworkUrlInterceptorManager(QObject *parent = Q_NULLPTR);
+    ~NetworkUrlInterceptorManager();
 
-    QVector<MailNetworkPluginUrlInterceptorInterface *> interfaceList() const;
+    QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
 private:
-    MailNetworkUrlInterceptorManagerPrivate *const d;
+    NetworkUrlInterceptorManagerPrivate *const d;
 };
 }
 #endif // MAILNETWORKURLINTERCEPTORMANAGER_H

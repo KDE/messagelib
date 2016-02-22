@@ -23,19 +23,19 @@
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
-class MailNetworkUrlInterceptorPluginManagerPrivate;
-class MailNetworkPluginUrlInterceptor;
-class MESSAGEVIEWER_EXPORT MailNetworkUrlInterceptorPluginManager : public QObject
+class NetworkUrlInterceptorPluginManagerPrivate;
+class NetworkPluginUrlInterceptor;
+class MESSAGEVIEWER_EXPORT NetworkUrlInterceptorPluginManager : public QObject
 {
     Q_OBJECT
 public:
-    static MailNetworkUrlInterceptorPluginManager *self();
-    explicit MailNetworkUrlInterceptorPluginManager(QObject *parent = Q_NULLPTR);
-    ~MailNetworkUrlInterceptorPluginManager();
+    static NetworkUrlInterceptorPluginManager *self();
+    explicit NetworkUrlInterceptorPluginManager(QObject *parent = Q_NULLPTR);
+    ~NetworkUrlInterceptorPluginManager();
 
-    QVector<MessageViewer::MailNetworkPluginUrlInterceptor *> pluginsList() const;
+    QVector<MessageViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
 private:
-    MailNetworkUrlInterceptorPluginManagerPrivate *const d;
+    NetworkUrlInterceptorPluginManagerPrivate *const d;
 };
 }
 

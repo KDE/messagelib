@@ -22,14 +22,14 @@
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
-class MailNetworkPluginUrlInterceptorInterface;
-class MESSAGEVIEWER_EXPORT MailNetworkPluginUrlInterceptor : public QObject
+class NetworkPluginUrlInterceptorInterface;
+class MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptor : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailNetworkPluginUrlInterceptor(QObject *parent = Q_NULLPTR);
-    ~MailNetworkPluginUrlInterceptor();
-    virtual MailNetworkPluginUrlInterceptorInterface *createInterface(QObject *parent = Q_NULLPTR) = 0;
+    explicit NetworkPluginUrlInterceptor(QObject *parent = Q_NULLPTR);
+    ~NetworkPluginUrlInterceptor();
+    virtual NetworkPluginUrlInterceptorInterface *createInterface(QObject *parent = Q_NULLPTR) = 0;
 
     virtual bool hasConfigureSupport() const;
 };
