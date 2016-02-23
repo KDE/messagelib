@@ -36,6 +36,10 @@ if(BUILD_TESTING)
     add_subdirectory(scamdetection/tests)
     add_subdirectory(adblock/tests/)
     add_subdirectory(viewerplugins/tests/)
+    if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+        add_subdirectory(webengine/tests)
+    endif()
+
 endif()
 add_subdirectory(pics)
 add_subdirectory(kconf_update)
@@ -74,6 +78,7 @@ set(libmessageviewer_mailviewer_SRCS
     )
 set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
 
+
 if (QTWEBENGINE_EXPERIMENTAL_OPTION)
     set(libmessageviewer_mailviewer_SRCS
         viewer/webengine/mailwebengineview.cpp
@@ -92,6 +97,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         webengine/urlinterceptor/networkurlinterceptormanager.cpp
         webengine/urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
         webengine/webhittestresult.cpp
+        webengine/webenginepage.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -361,6 +367,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
     ecm_generate_headers(MessageViewer_Camelcasewebengine_misc_HEADERS
         HEADER_NAMES
         WebHitTestResult
+        WebEnginePage
         REQUIRED_HEADERS MessageViewer_webengine_misc_HEADERS
         PREFIX MessageViewer
         RELATIVE webengine/
