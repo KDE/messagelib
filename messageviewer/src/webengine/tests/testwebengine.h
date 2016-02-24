@@ -15,15 +15,22 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include <QApplication>
-#include "testwebengine.h"
+#ifndef TESTWEBENGINE_H
+#define TESTWEBENGINE_H
 
-int main(int argc, char *argv[])
+#include <QWidget>
+namespace MessageViewer
 {
-    QApplication app(argc, argv);
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestWebEngine *testWebEngine = new TestWebEngine;
-    testWebEngine->show();
-    const int ret = app.exec();
-    return ret;
+class WebEnginePage;
 }
+class TestWebEngine : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit TestWebEngine(QWidget *parent = Q_NULLPTR);
+    ~TestWebEngine();
+private:
+    MessageViewer::WebEnginePage *mEnginePage;
+};
+
+#endif // TESTWEBENGINE_H

@@ -15,15 +15,23 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include <QApplication>
 #include "testwebengine.h"
-
-int main(int argc, char *argv[])
+#include <QHBoxLayout>
+#include <QWebEngineView>
+#include <MessageViewer/WebEnginePage>
+TestWebEngine::TestWebEngine(QWidget *parent)
+    : QWidget(parent)
 {
-    QApplication app(argc, argv);
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestWebEngine *testWebEngine = new TestWebEngine;
-    testWebEngine->show();
-    const int ret = app.exec();
-    return ret;
+    QHBoxLayout *hboxLayout = new QHBoxLayout(this);
+    QWebEngineView *pageView = new QWebEngineView(this);
+    hboxLayout->addWidget(pageView);
+    mEnginePage = new MessageViewer::WebEnginePage(this);
+    pageView->setPage(mEnginePage);
+
+    pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
+}
+
+TestWebEngine::~TestWebEngine()
+{
+
 }
