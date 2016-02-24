@@ -29,6 +29,8 @@ class TestWebEngine : public QWidget
 public:
     explicit TestWebEngine(QWidget *parent = Q_NULLPTR);
     ~TestWebEngine();
+protected:
+    void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
 private:
     MessageViewer::WebEnginePage *mEnginePage;
 };
