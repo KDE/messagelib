@@ -1239,6 +1239,11 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
     return below;
 }
 
+Item *View::firstMessageItem(MessageTypeFilter messageTypeFilter)
+{
+    return messageItemAfter(Q_NULLPTR, messageTypeFilter, false);
+}
+
 Item *View::nextMessageItem(MessageTypeFilter messageTypeFilter, bool loop)
 {
     return messageItemAfter(currentMessageItem(false), messageTypeFilter, loop);
@@ -1368,6 +1373,11 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
     }
 
     return above;
+}
+
+Item *View::lastMessageItem(MessageTypeFilter messageTypeFilter)
+{
+    return messageItemBefore(Q_NULLPTR, messageTypeFilter, false);
 }
 
 Item *View::previousMessageItem(MessageTypeFilter messageTypeFilter, bool loop)

@@ -1567,6 +1567,66 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
     return true;
 }
 
+const QModelIndex &ThemeDelegate::hitIndex() const
+{
+    return mHitIndex;
+}
+
+Item *ThemeDelegate::hitItem() const
+{
+    return mHitItem;
+}
+
+QRect ThemeDelegate::hitItemRect() const
+{
+    return mHitItemRect;
+}
+
+const Theme::Column *ThemeDelegate::hitColumn() const
+{
+    return mHitColumn;
+}
+
+int ThemeDelegate::hitColumnIndex() const
+{
+    return mHitIndex.column();
+}
+
+const Theme::Row *ThemeDelegate::hitRow() const
+{
+    return mHitRow;
+}
+
+int ThemeDelegate::hitRowIndex() const
+{
+    return mHitRowIndex;
+}
+
+QRect ThemeDelegate::hitRowRect() const
+{
+    return mHitRowRect;
+}
+
+bool ThemeDelegate::hitRowIsMessageRow() const
+{
+    return mHitRowIsMessageRow;
+}
+
+const Theme::ContentItem *ThemeDelegate::hitContentItem() const
+{
+    return mHitContentItem;
+}
+
+bool ThemeDelegate::hitContentItemRight() const
+{
+    return mHitContentItemRight;
+}
+
+QRect ThemeDelegate::hitContentItemRect() const
+{
+    return mHitContentItemRect;
+}
+
 QSize ThemeDelegate::sizeHintForItemTypeAndColumn(Item::Type type, int column, const Item *item) const
 {
     if (!mTheme) {
@@ -1669,5 +1729,10 @@ void ThemeDelegate::generalFontChanged()
     sFontMetricsCache[BoldItalic] = QFontMetrics(font);
 
     sFontHeightCache = sFontMetricsCache[Normal].height();
+}
+
+const Theme *ThemeDelegate::theme() const
+{
+    return mTheme;
 }
 

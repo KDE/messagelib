@@ -70,6 +70,46 @@ Theme::ContentItem::ContentItem(const ContentItem &src)
 {
 }
 
+Theme::ContentItem::Type Theme::ContentItem::type() const
+{
+    return mType;
+}
+
+bool Theme::ContentItem::canBeDisabled() const
+{
+    return (static_cast< int >(mType) & CanBeDisabled) != 0;
+}
+
+bool Theme::ContentItem::canUseCustomColor() const
+{
+    return (static_cast< int >(mType) & CanUseCustomColor) != 0;
+}
+
+bool Theme::ContentItem::displaysText() const
+{
+    return (static_cast< int >(mType) & DisplaysText) != 0;
+}
+
+bool Theme::ContentItem::displaysLongText() const
+{
+    return (static_cast< int >(mType) & LongText) != 0;
+}
+
+bool Theme::ContentItem::isIcon() const
+{
+    return (static_cast< int >(mType) & IsIcon) != 0;
+}
+
+bool Theme::ContentItem::isClickable() const
+{
+    return (static_cast< int >(mType) & IsClickable) != 0;
+}
+
+bool Theme::ContentItem::isSpacer() const
+{
+    return (static_cast< int >(mType) & IsSpacer) != 0;
+}
+
 QString Theme::ContentItem::description(Type type)
 {
     switch (type) {
@@ -147,6 +187,100 @@ QString Theme::ContentItem::description(Type type)
         return i18nc("Description for an Unknown Type", "Unknown");
         break;
     }
+}
+
+bool Theme::ContentItem::useCustomColor() const
+{
+    return mFlags & UseCustomColor;
+}
+
+void Theme::ContentItem::setUseCustomColor(bool useCustomColor)
+{
+    if (useCustomColor) {
+        mFlags |= UseCustomColor;
+    } else {
+        mFlags &= ~UseCustomColor;
+    }
+}
+
+bool Theme::ContentItem::isBold() const
+{
+    return mFlags & IsBold;
+}
+
+void Theme::ContentItem::setBold(bool isBold)
+{
+    if (isBold) {
+        mFlags |= IsBold;
+    } else {
+        mFlags &= !IsBold;
+    }
+}
+
+bool Theme::ContentItem::isItalic() const
+{
+    return mFlags & IsItalic;
+}
+
+void Theme::ContentItem::setItalic(bool isItalic)
+{
+    if (isItalic) {
+        mFlags |= IsItalic;
+    } else {
+        mFlags &= ~IsItalic;
+    }
+}
+
+bool Theme::ContentItem::hideWhenDisabled() const
+{
+    return mFlags & HideWhenDisabled;
+}
+
+void Theme::ContentItem::setHideWhenDisabled(bool hideWhenDisabled)
+{
+    if (hideWhenDisabled) {
+        mFlags |= HideWhenDisabled;
+    } else {
+        mFlags &= ~HideWhenDisabled;
+    }
+}
+
+bool Theme::ContentItem::softenByBlendingWhenDisabled() const
+{
+    return mFlags & SoftenByBlendingWhenDisabled;
+}
+
+void Theme::ContentItem::setSoftenByBlendingWhenDisabled(bool softenByBlendingWhenDisabled)
+{
+    if (softenByBlendingWhenDisabled) {
+        mFlags |= SoftenByBlendingWhenDisabled;
+    } else {
+        mFlags &= ~SoftenByBlendingWhenDisabled;
+    }
+}
+
+bool Theme::ContentItem::softenByBlending() const
+{
+    return mFlags & SoftenByBlending;
+}
+
+void Theme::ContentItem::setSoftenByBlending(bool softenByBlending)
+{
+    if (softenByBlending) {
+        mFlags |= SoftenByBlending;
+    } else {
+        mFlags &= ~SoftenByBlending;
+    }
+}
+
+const QColor &Theme::ContentItem::customColor() const
+{
+    return mCustomColor;
+}
+
+void Theme::ContentItem::setCustomColor(const QColor &clr)
+{
+    mCustomColor = clr;
 }
 
 bool Theme::ContentItem::applicableToMessageItems(Type type)
@@ -245,11 +379,21 @@ void Theme::Row::removeAllLeftItems()
     }
 }
 
+void Theme::Row::addLeftItem(Theme::ContentItem *item)
+{
+    mLeftItems.append(item);
+}
+
 void Theme::Row::removeAllRightItems()
 {
     while (!mRightItems.isEmpty()) {
         delete mRightItems.takeFirst();
     }
+}
+
+void Theme::Row::addRightItem(Theme::ContentItem *item)
+{
+    mRightItems.append(item);
 }
 
 void Theme::Row::insertLeftItem(int idx, ContentItem *item)
@@ -261,6 +405,16 @@ void Theme::Row::insertLeftItem(int idx, ContentItem *item)
     mLeftItems.insert(idx, item);
 }
 
+void Theme::Row::removeLeftItem(Theme::ContentItem *item)
+{
+    mLeftItems.removeAll(item);
+}
+
+const QList<Theme::ContentItem *> &Theme::Row::rightItems() const
+{
+    return mRightItems;
+}
+
 void Theme::Row::insertRightItem(int idx, ContentItem *item)
 {
     if (idx >= mRightItems.count()) {
@@ -268,6 +422,11 @@ void Theme::Row::insertRightItem(int idx, ContentItem *item)
         return;
     }
     mRightItems.insert(idx, item);
+}
+
+void Theme::Row::removeRightItem(Theme::ContentItem *item)
+{
+    mRightItems.removeAll(item);
 }
 
 bool Theme::Row::containsTextItems() const
@@ -362,6 +521,11 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
     return true;
 }
 
+const QList<Theme::ContentItem *> &Theme::Row::leftItems() const
+{
+    return mLeftItems;
+}
+
 bool Theme::Row::load(QDataStream &stream, int themeVersion)
 {
     removeAllLeftItems();
@@ -406,6 +570,31 @@ bool Theme::Column::SharedRuntimeData::deleteReference()
     mReferences--;
     Q_ASSERT(mReferences >= 0);
     return mReferences > 0;
+}
+
+int Theme::Column::SharedRuntimeData::referenceCount() const
+{
+    return mReferences;
+}
+
+bool Theme::Column::SharedRuntimeData::currentlyVisible() const
+{
+    return mCurrentlyVisible;
+}
+
+void Theme::Column::SharedRuntimeData::setCurrentlyVisible(bool visible)
+{
+    mCurrentlyVisible = visible;
+}
+
+int Theme::Column::SharedRuntimeData::currentWidth() const
+{
+    return mCurrentWidth;
+}
+
+void Theme::Column::SharedRuntimeData::setCurrentWidth(int currentWidth)
+{
+    mCurrentWidth = currentWidth;
 }
 
 void Theme::Column::SharedRuntimeData::save(QDataStream &stream) const
@@ -464,6 +653,46 @@ Theme::Column::~Column()
     }
 }
 
+const QString &Theme::Column::label() const
+{
+    return mLabel;
+}
+
+void Theme::Column::setLabel(const QString &label)
+{
+    mLabel = label;
+}
+
+const QString &Theme::Column::pixmapName() const
+{
+    return mPixmapName;
+}
+
+void Theme::Column::setPixmapName(const QString &pixmapName)
+{
+    mPixmapName = pixmapName;
+}
+
+bool Theme::Column::isSenderOrReceiver() const
+{
+    return mIsSenderOrReceiver;
+}
+
+void Theme::Column::setIsSenderOrReceiver(bool sor)
+{
+    mIsSenderOrReceiver = sor;
+}
+
+bool Theme::Column::visibleByDefault() const
+{
+    return mVisibleByDefault;
+}
+
+void Theme::Column::setVisibleByDefault(bool vbd)
+{
+    mVisibleByDefault = vbd;
+}
+
 void Theme::Column::detach()
 {
     if (mSharedRuntimeData->referenceCount() < 2) {
@@ -476,6 +705,41 @@ void Theme::Column::detach()
 
 }
 
+SortOrder::MessageSorting Theme::Column::messageSorting() const
+{
+    return mMessageSorting;
+}
+
+void Theme::Column::setMessageSorting(SortOrder::MessageSorting ms)
+{
+    mMessageSorting = ms;
+}
+
+bool Theme::Column::currentlyVisible() const
+{
+    return mSharedRuntimeData->currentlyVisible();
+}
+
+void Theme::Column::setCurrentlyVisible(bool currentlyVisible)
+{
+    mSharedRuntimeData->setCurrentlyVisible(currentlyVisible);
+}
+
+int Theme::Column::currentWidth() const
+{
+    return mSharedRuntimeData->currentWidth();
+}
+
+void Theme::Column::setCurrentWidth(int currentWidth)
+{
+    mSharedRuntimeData->setCurrentWidth(currentWidth);
+}
+
+const QList<Theme::Row *> &Theme::Column::messageRows() const
+{
+    return mMessageRows;
+}
+
 void Theme::Column::removeAllMessageRows()
 {
     while (!mMessageRows.isEmpty()) {
@@ -483,11 +747,21 @@ void Theme::Column::removeAllMessageRows()
     }
 }
 
+void Theme::Column::addMessageRow(Theme::Row *row)
+{
+    mMessageRows.append(row);
+}
+
 void Theme::Column::removeAllGroupHeaderRows()
 {
     while (!mGroupHeaderRows.isEmpty()) {
         delete mGroupHeaderRows.takeFirst();
     }
+}
+
+void Theme::Column::addGroupHeaderRow(Theme::Row *row)
+{
+    mGroupHeaderRows.append(row);
 }
 
 void Theme::Column::insertMessageRow(int idx, Row *row)
@@ -499,6 +773,16 @@ void Theme::Column::insertMessageRow(int idx, Row *row)
     mMessageRows.insert(idx, row);
 }
 
+void Theme::Column::removeMessageRow(Theme::Row *row)
+{
+    mMessageRows.removeAll(row);
+}
+
+const QList<Theme::Row *> &Theme::Column::groupHeaderRows() const
+{
+    return mGroupHeaderRows;
+}
+
 void Theme::Column::insertGroupHeaderRow(int idx, Row *row)
 {
     if (idx >= mGroupHeaderRows.count()) {
@@ -506,6 +790,11 @@ void Theme::Column::insertGroupHeaderRow(int idx, Row *row)
         return;
     }
     mGroupHeaderRows.insert(idx, row);
+}
+
+void Theme::Column::removeGroupHeaderRow(Theme::Row *row)
+{
+    mGroupHeaderRows.removeAll(row);
 }
 
 bool Theme::Column::containsTextItems() const
@@ -702,11 +991,26 @@ void Theme::resetColumnSizes()
     }
 }
 
+const QList<Theme::Column *> &Theme::columns() const
+{
+    return mColumns;
+}
+
+Theme::Column *Theme::column(int idx) const
+{
+    return mColumns.count() > idx ? mColumns.at(idx) : Q_NULLPTR;
+}
+
 void Theme::removeAllColumns()
 {
     while (!mColumns.isEmpty()) {
         delete mColumns.takeFirst();
     }
+}
+
+void Theme::addColumn(Theme::Column *column)
+{
+    mColumns.append(column);
 }
 
 void Theme::insertColumn(int idx, Column *column)
@@ -716,6 +1020,16 @@ void Theme::insertColumn(int idx, Column *column)
         return;
     }
     mColumns.insert(idx, column);
+}
+
+void Theme::removeColumn(Theme::Column *col)
+{
+    mColumns.removeAll(col);
+}
+
+Theme::GroupHeaderBackgroundMode Theme::groupHeaderBackgroundMode() const
+{
+    return mGroupHeaderBackgroundMode;
 }
 
 void Theme::moveColumn(int idx, int newPosition)
@@ -732,6 +1046,26 @@ void Theme::setGroupHeaderBackgroundMode(GroupHeaderBackgroundMode bm)
     if ((bm == CustomColor) && !mGroupHeaderBackgroundColor.isValid()) {
         mGroupHeaderBackgroundColor = QColor(127, 127, 127);    // something neutral
     }
+}
+
+const QColor &Theme::groupHeaderBackgroundColor() const
+{
+    return mGroupHeaderBackgroundColor;
+}
+
+void Theme::setGroupHeaderBackgroundColor(const QColor &clr)
+{
+    mGroupHeaderBackgroundColor = clr;
+}
+
+Theme::GroupHeaderBackgroundStyle Theme::groupHeaderBackgroundStyle() const
+{
+    return mGroupHeaderBackgroundStyle;
+}
+
+void Theme::setGroupHeaderBackgroundStyle(Theme::GroupHeaderBackgroundStyle groupHeaderBackgroundStyle)
+{
+    mGroupHeaderBackgroundStyle = groupHeaderBackgroundStyle;
 }
 
 QList< QPair< QString, int > > Theme::enumerateViewHeaderPolicyOptions()
@@ -755,6 +1089,21 @@ QList< QPair< QString, int > > Theme::enumerateGroupHeaderBackgroundStyles()
     ret.append(QPair< QString, int >(i18n("Styled Joined Rectangles"), StyledJoinedRect));
 
     return ret;
+}
+
+Theme::ViewHeaderPolicy Theme::viewHeaderPolicy() const
+{
+    return mViewHeaderPolicy;
+}
+
+void Theme::setViewHeaderPolicy(Theme::ViewHeaderPolicy vhp)
+{
+    mViewHeaderPolicy = vhp;
+}
+
+int Theme::iconSize() const
+{
+    return mIconSize;
 }
 
 void Theme::setIconSize(int iconSize)

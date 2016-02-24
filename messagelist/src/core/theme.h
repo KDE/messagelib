@@ -254,10 +254,7 @@ public:
         /**
         * Returns the type of this content item
         */
-        Type type() const
-        {
-            return mType;
-        }
+        Type type() const;
 
         /**
         * Returns true if this ContentItem can be in a "disabled" state.
@@ -265,59 +262,38 @@ public:
         * message has no attachments. For such items the HideWhenDisabled
         * and SoftenByBlendingWhenDisabled flags are meaningful.
         */
-        bool canBeDisabled() const
-        {
-            return (static_cast< int >(mType) & CanBeDisabled) != 0;
-        }
+        bool canBeDisabled() const;
 
         /**
         * Returns true if this ContentItem can make use of a custom color.
         */
-        bool canUseCustomColor() const
-        {
-            return (static_cast< int >(mType) & CanUseCustomColor) != 0;
-        }
+        bool canUseCustomColor() const;
 
         /**
         * Returns true if this item displays some kind of text.
         * Items that display text make use of the customFont() setting.
         */
-        bool displaysText() const
-        {
-            return (static_cast< int >(mType) & DisplaysText) != 0;
-        }
+        bool displaysText() const;
 
         /**
         * Returns true if this item displays a long text.
         * The returned value makes sense only if displaysText() returned true.
         */
-        bool displaysLongText() const
-        {
-            return (static_cast< int >(mType) & LongText) != 0;
-        }
+        bool displaysLongText() const;
 
         /**
         * Returns true if this item displays an icon.
         */
-        bool isIcon() const
-        {
-            return (static_cast< int >(mType) & IsIcon) != 0;
-        }
+        bool isIcon() const;
         /**
         * Returns true if clicking on this kind of item can perform an action
         */
-        bool isClickable() const
-        {
-            return (static_cast< int >(mType) & IsClickable) != 0;
-        }
+        bool isClickable() const;
 
         /**
         * Returns true if this item is a small spacer
         */
-        bool isSpacer() const
-        {
-            return (static_cast< int >(mType) & IsSpacer) != 0;
-        }
+        bool isSpacer() const;
 
         /**
         * Static test that returns true if an instance of ContentItem with the
@@ -340,75 +316,42 @@ public:
         * Returns true if this item uses a custom color.
         * The return value of this function is valid only if canUseCustomColor() returns true.
         */
-        bool useCustomColor() const
-        {
-            return mFlags & UseCustomColor;
-        }
+        bool useCustomColor() const;
 
         /**
         * Makes this item use the custom color that can be set by setCustomColor().
         * The custom color is meaningful only if canUseCustomColor() returns true.
         */
-        void setUseCustomColor(bool useCustomColor)
-        {
-            if (useCustomColor) {
-                mFlags |= UseCustomColor;
-            } else {
-                mFlags &= ~UseCustomColor;
-            }
-        }
+        void setUseCustomColor(bool useCustomColor);
 
         /**
         * Returns true if this item uses a bold text.
         * The return value of this function is valid only if displaysText() returns true.
         */
-        bool isBold() const
-        {
-            return mFlags & IsBold;
-        }
+        bool isBold() const;
 
         /**
          * Makes this item use a bold font.
          */
-        void setBold(bool isBold)
-        {
-            if (isBold) {
-                mFlags |= IsBold;
-            } else {
-                mFlags &= !IsBold;
-            }
-        }
+        void setBold(bool isBold);
 
         /**
         * Returns true if this item uses an italic text.
         * The return value of this function is valid only if displaysText() returns true.
         */
-        bool isItalic() const
-        {
-            return mFlags & IsItalic;
-        }
+        bool isItalic() const;
 
         /**
          * Makes this item use italic font.
          */
-        void setItalic(bool isItalic)
-        {
-            if (isItalic) {
-                mFlags |= IsItalic;
-            } else {
-                mFlags &= ~IsItalic;
-            }
-        }
+        void setItalic(bool isItalic);
 
         /**
         * Returns true if this item should be hidden when in disabled state.
         * Hidden content items simply aren't painted and take no space.
         * This flag has meaning only on items for that canBeDisabled() returns true.
         */
-        bool hideWhenDisabled() const
-        {
-            return mFlags & HideWhenDisabled;
-        }
+        bool hideWhenDisabled() const;
 
         /**
         * Sets the flag that causes this item to be hidden when disabled.
@@ -416,24 +359,14 @@ public:
         * This flag overrides the setSoftenByBlendingWhenDisabled() setting.
         * This flag has meaning only on items for that canBeDisabled() returns true.
         */
-        void setHideWhenDisabled(bool hideWhenDisabled)
-        {
-            if (hideWhenDisabled) {
-                mFlags |= HideWhenDisabled;
-            } else {
-                mFlags &= ~HideWhenDisabled;
-            }
-        }
+        void setHideWhenDisabled(bool hideWhenDisabled);
 
         /**
         * Returns true if this item should be painted in a "soft" fashion when
         * in disabled state. Soft icons are painted with very low opacity.
         * This flag has meaning only on items for that canBeDisabled() returns true.
         */
-        bool softenByBlendingWhenDisabled() const
-        {
-            return mFlags & SoftenByBlendingWhenDisabled;
-        }
+        bool softenByBlendingWhenDisabled() const;
 
         /**
         * Sets the flag that causes this item to be painted "softly" when disabled.
@@ -441,55 +374,32 @@ public:
         * This flag may be overridden by the setHideWhenDisabled() setting.
         * This flag has meaning only on items for that canBeDisabled() returns true.
         */
-        void setSoftenByBlendingWhenDisabled(bool softenByBlendingWhenDisabled)
-        {
-            if (softenByBlendingWhenDisabled) {
-                mFlags |= SoftenByBlendingWhenDisabled;
-            } else {
-                mFlags &= ~SoftenByBlendingWhenDisabled;
-            }
-        }
+        void setSoftenByBlendingWhenDisabled(bool softenByBlendingWhenDisabled);
 
         /**
         * Returns true if this item should be always painted in a "soft" fashion.
         * Meaningful only for text items.
         */
-        bool softenByBlending() const
-        {
-            return mFlags & SoftenByBlending;
-        }
+        bool softenByBlending() const;
 
         /**
         * Sets the flag that causes this item to be painted "softly".
         * Meaningful only for text items.
         */
-        void setSoftenByBlending(bool softenByBlending)
-        {
-            if (softenByBlending) {
-                mFlags |= SoftenByBlending;
-            } else {
-                mFlags &= ~SoftenByBlending;
-            }
-        }
+        void setSoftenByBlending(bool softenByBlending);
 
         /**
         * Returns the custom color set for this item.
         * The return value is meaningful only if canUseCustomColor() returns true
         * returns true and setUseCustomColor( true ) has been called.
         */
-        const QColor &customColor() const
-        {
-            return mCustomColor;
-        }
+        const QColor &customColor() const;
 
         /**
         * Sets the custom color for this item. Meaningful only if canUseCustomColor()
         * returns true and you call setUseCustomColor( true )
         */
-        void setCustomColor(const QColor &clr)
-        {
-            mCustomColor = clr;
-        }
+        void setCustomColor(const QColor &clr);
 
         // Stuff used by ThemeDelegate. This section should be protected but some gcc
         // versions seem to get confused with nested class and friend declarations
@@ -526,10 +436,7 @@ public:
         /**
         * Returns the list of left aligned items for this row
         */
-        const QList< ContentItem * > &leftItems() const
-        {
-            return mLeftItems;
-        }
+        const QList< ContentItem * > &leftItems() const;
 
         /**
         * Removes all the left items from this row: the items are deleted.
@@ -540,10 +447,7 @@ public:
         * Adds a left aligned item to this row. The row takes the ownership
         * of the ContentItem pointer.
         */
-        void addLeftItem(ContentItem *item)
-        {
-            mLeftItems.append(item);
-        }
+        void addLeftItem(ContentItem *item);
 
         /**
         * Adds a left aligned item at the specified position in this row. The row takes the ownership
@@ -555,18 +459,12 @@ public:
         * Removes the specified left aligned content item from this row.
         * The item is NOT deleted.
         */
-        void removeLeftItem(ContentItem *item)
-        {
-            mLeftItems.removeAll(item);
-        }
+        void removeLeftItem(ContentItem *item);
 
         /**
         * Returns the list of right aligned items for this row
         */
-        const QList< ContentItem * > &rightItems() const
-        {
-            return mRightItems;
-        }
+        const QList< ContentItem * > &rightItems() const;
 
         /**
         * Removes all the right items from this row. The items are deleted.
@@ -578,10 +476,7 @@ public:
         * of the ContentItem pointer. Please note that the first right aligned item
         * will start at the right edge, the second right aligned item will come after it etc...
         */
-        void addRightItem(ContentItem *item)
-        {
-            mRightItems.append(item);
-        }
+        void addRightItem(ContentItem *item);
 
         /**
         * Adds a right aligned item at the specified position in this row. The row takes the ownership
@@ -593,10 +488,7 @@ public:
         * Removes the specified right aligned content item from this row.
         * The item is NOT deleted.
         */
-        void removeRightItem(ContentItem *item)
-        {
-            mRightItems.removeAll(item);
-        }
+        void removeRightItem(ContentItem *item);
 
         /**
         * Returns true if this row contains text items.
@@ -661,42 +553,27 @@ public:
             * Returns the current number of reference counts, that is, the number of
             * Theme::Column objects that use this SharedRuntimeData instance.
             */
-            int referenceCount() const
-            {
-                return mReferences;
-            }
+            int referenceCount() const;
 
             /**
             * Returns the current visibility state
             */
-            bool currentlyVisible() const
-            {
-                return mCurrentlyVisible;
-            }
+            bool currentlyVisible() const;
 
             /**
             * Sets the current visibility state
             */
-            void setCurrentlyVisible(bool visible)
-            {
-                mCurrentlyVisible = visible;
-            }
+            void setCurrentlyVisible(bool visible);
 
             /**
             * Returns the current width or -1 if the width is unspecified/invalid
             */
-            int currentWidth() const
-            {
-                return mCurrentWidth;
-            }
+            int currentWidth() const;
 
             /**
             * Sets the current width of the column
             */
-            void setCurrentWidth(int currentWidth)
-            {
-                mCurrentWidth = currentWidth;
-            }
+            void setCurrentWidth(int currentWidth);
 
             /**
             * Saves this runtime data to the specified stream
@@ -741,68 +618,44 @@ public:
         /**
         * Returns the label set for this column
         */
-        const QString &label() const
-        {
-            return mLabel;
-        }
+        const QString &label() const;
 
         /**
         * Sets the label for this column
         */
-        void setLabel(const QString &label)
-        {
-            mLabel = label;
-        }
+        void setLabel(const QString &label);
 
         /**
         * Returns the icon's name (used in SmallIcon) set for this column
         */
-        const QString &pixmapName() const
-        {
-            return mPixmapName;
-        }
+        const QString &pixmapName() const;
 
         /**
         * Sets the icon's name (used in SmallIcon) for this column
         */
-        void setPixmapName(const QString &pixmapName)
-        {
-            mPixmapName = pixmapName;
-        }
+        void setPixmapName(const QString &pixmapName);
 
         /**
         * Returns true if this column is marked as "sender/receiver" and we should
         * update its label on-the-fly.
         */
-        bool isSenderOrReceiver() const
-        {
-            return mIsSenderOrReceiver;
-        }
+        bool isSenderOrReceiver() const;
 
         /**
         * Marks this column as containing the "sender/receiver" field.
         * Such columns will have the label automatically updated.
         */
-        void setIsSenderOrReceiver(bool sor)
-        {
-            mIsSenderOrReceiver = sor;
-        }
+        void setIsSenderOrReceiver(bool sor);
 
         /**
         * Returns true if this column has to be shown by default
         */
-        bool visibleByDefault() const
-        {
-            return mVisibleByDefault;
-        }
+        bool visibleByDefault() const;
 
         /**
         * Sets the "visible by default" tag for this column.
         */
-        void setVisibleByDefault(bool vbd)
-        {
-            mVisibleByDefault = vbd;
-        }
+        void setVisibleByDefault(bool vbd);
 
         /**
         * Detaches the shared runtime data object and makes this object
@@ -814,64 +667,43 @@ public:
         * Returns the sort order for messages that we should switch to
         * when clicking on this column's header (if visible at all).
         */
-        SortOrder::MessageSorting messageSorting() const
-        {
-            return mMessageSorting;
-        }
+        SortOrder::MessageSorting messageSorting() const;
 
         /**
         * Sets the sort order for messages that we should switch to
         * when clicking on this column's header (if visible at all).
         */
-        void setMessageSorting(SortOrder::MessageSorting ms)
-        {
-            mMessageSorting = ms;
-        }
+        void setMessageSorting(SortOrder::MessageSorting ms);
 
         /**
         * Returns the current shared visibility state for this column.
         * This state is shared between all the instances of this theme.
         */
-        bool currentlyVisible() const
-        {
-            return mSharedRuntimeData->currentlyVisible();
-        }
+        bool currentlyVisible() const;
 
         /**
         * Sets the current shared visibility state for this column.
         * This state is shared between all the instances of this theme.
         */
-        void setCurrentlyVisible(bool currentlyVisible)
-        {
-            mSharedRuntimeData->setCurrentlyVisible(currentlyVisible);
-        }
+        void setCurrentlyVisible(bool currentlyVisible);
 
         /**
         * Returns the current shared width setting for this column
         * or -1 if the width is not specified and should be auto-determined.
         * This state is shared between all the instances of this theme.
         */
-        int currentWidth() const
-        {
-            return mSharedRuntimeData->currentWidth();
-        }
+        int currentWidth() const;
 
         /**
         * Sets the current shared width setting for this column.
         * This state is shared between all the instances of this theme.
         */
-        void setCurrentWidth(int currentWidth)
-        {
-            mSharedRuntimeData->setCurrentWidth(currentWidth);
-        }
+        void setCurrentWidth(int currentWidth);
 
         /**
         * Returns the list of rows visible in this column for a MessageItem
         */
-        const QList< Row * > &messageRows() const
-        {
-            return mMessageRows;
-        }
+        const QList< Row * > &messageRows() const;
 
         /**
         * Removes all the message rows from this column.
@@ -882,10 +714,7 @@ public:
         * Appends a message row to this theme column. The Theme takes
         * the ownership of the Row pointer.
         */
-        void addMessageRow(Row *row)
-        {
-            mMessageRows.append(row);
-        }
+        void addMessageRow(Row *row);
 
         /**
         * Inserts a message row to this theme column in the specified position. The Theme takes
@@ -896,18 +725,12 @@ public:
         /**
         * Removes the specified message row. The row is NOT deleted.
         */
-        void removeMessageRow(Row *row)
-        {
-            mMessageRows.removeAll(row);
-        }
+        void removeMessageRow(Row *row);
 
         /**
         * Returns the list of rows visible in this column for a GroupHeaderItem
         */
-        const QList< Row * > &groupHeaderRows() const
-        {
-            return mGroupHeaderRows;
-        }
+        const QList< Row * > &groupHeaderRows() const;
 
         /**
         * Removes all the group header rows from this column.
@@ -918,10 +741,7 @@ public:
         * Appends a group header row to this theme. The Theme takes
         * the ownership of the Row pointer.
         */
-        void addGroupHeaderRow(Row *row)
-        {
-            mGroupHeaderRows.append(row);
-        }
+        void addGroupHeaderRow(Row *row);
 
         /**
         * Inserts a group header row to this theme column in the specified position. The Theme takes
@@ -932,10 +752,7 @@ public:
         /**
         * Removes the specified group header row. The row is NOT deleted.
         */
-        void removeGroupHeaderRow(Row *row)
-        {
-            mGroupHeaderRows.removeAll(row);
-        }
+        void removeGroupHeaderRow(Row *row);
 
         /**
         * Returns true if this column contains text items.
@@ -1044,18 +861,12 @@ public:
     /**
     * Returns the list of columns available in this theme
     */
-    const QList< Column * > &columns() const
-    {
-        return mColumns;
-    }
+    const QList< Column * > &columns() const;
 
     /**
     * Returns a pointer to the column at the specified index or 0 if there is no such column
     */
-    Column *column(int idx) const
-    {
-        return mColumns.count() > idx ? mColumns.at(idx) : Q_NULLPTR;
-    }
+    Column *column(int idx) const;
 
     void moveColumn(int idx, int newPosition);
 
@@ -1067,10 +878,7 @@ public:
     /**
     * Appends a column to this theme
     */
-    void addColumn(Column *column)
-    {
-        mColumns.append(column);
-    }
+    void addColumn(Column *column);
 
     /**
     * Inserts a column to this theme at the specified position.
@@ -1080,18 +888,12 @@ public:
     /**
     * Removes the specified message row. The row is NOT deleted.
     */
-    void removeColumn(Column *col)
-    {
-        mColumns.removeAll(col);
-    }
+    void removeColumn(Column *col);
 
     /**
     * Returns the group header background mode for this theme.
     */
-    GroupHeaderBackgroundMode groupHeaderBackgroundMode() const
-    {
-        return mGroupHeaderBackgroundMode;
-    }
+    GroupHeaderBackgroundMode groupHeaderBackgroundMode() const;
 
     /**
     * Sets the group header background mode for this theme.
@@ -1103,39 +905,27 @@ public:
     * Returns the group header background color for this theme.
     * This color is used only if groupHeaderBackgroundMode() is set to CustomColor.
     */
-    const QColor &groupHeaderBackgroundColor() const
-    {
-        return mGroupHeaderBackgroundColor;
-    }
+    const QColor &groupHeaderBackgroundColor() const;
 
     /**
     * Sets the group header background color for this theme.
     * This color is used only if groupHeaderBackgroundMode() is set to CustomColor.
     */
-    void setGroupHeaderBackgroundColor(const QColor &clr)
-    {
-        mGroupHeaderBackgroundColor = clr;
-    }
+    void setGroupHeaderBackgroundColor(const QColor &clr);
 
     /**
     * Returns the group header background style for this theme.
     * The group header background style makes sense only if groupHeaderBackgroundMode() is
     * set to something different than Transparent.
     */
-    GroupHeaderBackgroundStyle groupHeaderBackgroundStyle() const
-    {
-        return mGroupHeaderBackgroundStyle;
-    }
+    GroupHeaderBackgroundStyle groupHeaderBackgroundStyle() const;
 
     /**
     * Sets the group header background style for this theme.
     * The group header background style makes sense only if groupHeaderBackgroundMode() is
     * set to something different than Transparent.
     */
-    void setGroupHeaderBackgroundStyle(GroupHeaderBackgroundStyle groupHeaderBackgroundStyle)
-    {
-        mGroupHeaderBackgroundStyle = groupHeaderBackgroundStyle;
-    }
+    void setGroupHeaderBackgroundStyle(GroupHeaderBackgroundStyle groupHeaderBackgroundStyle);
 
     /**
     * Enumerates the available group header background styles.
@@ -1147,26 +937,17 @@ public:
     /**
     * Returns the currently set ViewHeaderPolicy
     */
-    ViewHeaderPolicy viewHeaderPolicy() const
-    {
-        return mViewHeaderPolicy;
-    }
+    ViewHeaderPolicy viewHeaderPolicy() const;
 
     /**
     * Sets the ViewHeaderPolicy for this theme
     */
-    void setViewHeaderPolicy(ViewHeaderPolicy vhp)
-    {
-        mViewHeaderPolicy = vhp;
-    }
+    void setViewHeaderPolicy(ViewHeaderPolicy vhp);
 
     /**
     * Returns the currently set icon size
     */
-    int iconSize() const
-    {
-        return mIconSize;
-    }
+    int iconSize() const;
 
     /**
     * Sets the icon size for this theme.

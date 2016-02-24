@@ -77,10 +77,7 @@ private:
     mutable QSize mCachedGroupHeaderItemSizeHint;
 
 public:
-    const Theme *theme() const
-    {
-        return mTheme;
-    }
+    const Theme *theme() const;
     void setTheme(const Theme *theme);
 
     /**
@@ -106,20 +103,14 @@ public:
     * The result of this function is valid only if hitTest() returned true and only
     * within the same calling function.
     */
-    const QModelIndex &hitIndex() const
-    {
-        return mHitIndex;
-    }
+    const QModelIndex &hitIndex() const;
 
     /**
     * Returns the Item that was reported as hit by the previous call to hitTest().
     * The result of this function is valid only if hitTest() returned true and only
     * within the same calling function.
     */
-    Item *hitItem() const
-    {
-        return mHitItem;
-    }
+    Item *hitItem() const;
 
     /**
     * Returns the visual rectangle of the item that was reported as hit by the previous call to hitTest().
@@ -127,20 +118,14 @@ public:
     * within the same calling function. Please note that this rectangle refers
     * to a specific item column (and not all of the columns).
     */
-    QRect hitItemRect() const
-    {
-        return mHitItemRect;
-    }
+    QRect hitItemRect() const;
 
     /**
     * Returns the theme column that was reported as hit by the previous call to hitTest().
     * The result of this function is valid only if hitTest() returned true and only
     * within the same calling function.
     */
-    const Theme::Column *hitColumn() const
-    {
-        return mHitColumn;
-    }
+    const Theme::Column *hitColumn() const;
 
     /**
     * Returns the index of the theme column that was reported as hit by the previous call to hitTest().
@@ -148,10 +133,7 @@ public:
     * within the same calling function.
     * This is the same as hitIndex().column().
     */
-    int hitColumnIndex() const
-    {
-        return mHitIndex.column();
-    }
+    int hitColumnIndex() const;
 
     /**
     * Returns the theme row that was reported as hit by the previous call to hitTest().
@@ -160,19 +142,13 @@ public:
     * when hitTest() returned true. This means that the item was globally hit
     * but no row was exactly hit (the user probably hit the margin instead).
     */
-    const Theme::Row *hitRow() const
-    {
-        return mHitRow;
-    }
+    const Theme::Row *hitRow() const;
 
     /**
     * Returns the index of the theme row that was reported as hit by the previous call to hitTest().
     * The result of this function is valid only if hitRow() returns a non null value.
     */
-    int hitRowIndex() const
-    {
-        return mHitRowIndex;
-    }
+    int hitRowIndex() const;
 
     /**
     * Returns the rectangle of the row that was reported as hit by the previous call to hitTest().
@@ -180,19 +156,13 @@ public:
     * within the same calling function. The result of this function is also invalid
     * if hitRow() returns 0.
     */
-    QRect hitRowRect() const
-    {
-        return mHitRowRect;
-    }
+    QRect hitRowRect() const;
 
     /**
     * Returns true if the hitRow() is a message row, false otherwise.
     * The result of this function has a meaning only if hitRow() returns a non zero result.
     */
-    bool hitRowIsMessageRow() const
-    {
-        return mHitRowIsMessageRow;
-    }
+    bool hitRowIsMessageRow() const;
 
     /**
     * Returns the theme content item that was reported as hit by the previous call to hitTest().
@@ -201,19 +171,13 @@ public:
     * when hitTest() returned true. This means that the item was globally hit
     * but no content item was exactly hit (the user might have clicked inside a blank unused space instead).
     */
-    const Theme::ContentItem *hitContentItem() const
-    {
-        return mHitContentItem;
-    }
+    const Theme::ContentItem *hitContentItem() const;
 
     /**
     * Returns true if the hit theme content item was a right item and false otherwise.
     * The result of this function is valid only if hitContentItem() returns true.
     */
-    bool hitContentItemRight() const
-    {
-        return mHitContentItemRight;
-    }
+    bool hitContentItemRight() const;
 
     /**
     * Returns the bounding rect of the content item that was reported as hit by the previous call to hitTest().
@@ -221,10 +185,7 @@ public:
     * within the same calling function. The result of this function is to be considered
     * invalid also when hitContentItem() returns 0.
     */
-    QRect hitContentItemRect() const
-    {
-        return mHitContentItemRect;
-    }
+    QRect hitContentItemRect() const;
 
 protected:
     /**

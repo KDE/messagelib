@@ -94,70 +94,46 @@ public:
     /**
     * Returns the GroupSorting
     */
-    GroupSorting groupSorting() const
-    {
-        return mGroupSorting;
-    }
+    GroupSorting groupSorting() const;
 
     /**
     * Sets the GroupSorting option.
     * This may not have any effect, depending on the Aggregation this sort order
     * is used in.
     */
-    void setGroupSorting(GroupSorting gs)
-    {
-        mGroupSorting = gs;
-    }
+    void setGroupSorting(GroupSorting gs);
 
     /**
     * Returns the current group SortDirection.
     */
-    SortDirection groupSortDirection() const
-    {
-        return mGroupSortDirection;
-    }
+    SortDirection groupSortDirection() const;
 
     /**
     * Sets the SortDirection for the groups.
     * Note that this option has no meaning if group sorting is set to NoGroupSorting.
     */
-    void setGroupSortDirection(SortDirection groupSortDirection)
-    {
-        mGroupSortDirection = groupSortDirection;
-    }
+    void setGroupSortDirection(SortDirection groupSortDirection);
 
     /**
     * Returns the current message sorting option
     */
-    MessageSorting messageSorting() const
-    {
-        return mMessageSorting;
-    }
+    MessageSorting messageSorting() const;
 
     /**
     * Sets the current message sorting option
     */
-    void setMessageSorting(MessageSorting ms)
-    {
-        mMessageSorting = ms;
-    }
+    void setMessageSorting(MessageSorting ms);
 
     /**
     * Returns the current message SortDirection.
     */
-    SortDirection messageSortDirection() const
-    {
-        return mMessageSortDirection;
-    }
+    SortDirection messageSortDirection() const;
 
     /**
     * Sets the SortDirection for the message.
     * Note that this option has no meaning if message sorting is set to NoMessageSorting.
     */
-    void setMessageSortDirection(SortDirection messageSortDirection)
-    {
-        mMessageSortDirection = messageSortDirection;
-    }
+    void setMessageSortDirection(SortDirection messageSortDirection);
 
     /**
     * Enumerates the message sorting options compatible with the specified Threading setting.

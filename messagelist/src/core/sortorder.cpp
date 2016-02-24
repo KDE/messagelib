@@ -35,6 +35,46 @@ SortOrder::SortOrder()
 {
 }
 
+SortOrder::GroupSorting SortOrder::groupSorting() const
+{
+    return mGroupSorting;
+}
+
+void SortOrder::setGroupSorting(SortOrder::GroupSorting gs)
+{
+    mGroupSorting = gs;
+}
+
+SortOrder::SortDirection SortOrder::groupSortDirection() const
+{
+    return mGroupSortDirection;
+}
+
+void SortOrder::setGroupSortDirection(SortOrder::SortDirection groupSortDirection)
+{
+    mGroupSortDirection = groupSortDirection;
+}
+
+SortOrder::MessageSorting SortOrder::messageSorting() const
+{
+    return mMessageSorting;
+}
+
+void SortOrder::setMessageSorting(SortOrder::MessageSorting ms)
+{
+    mMessageSorting = ms;
+}
+
+SortOrder::SortDirection SortOrder::messageSortDirection() const
+{
+    return mMessageSortDirection;
+}
+
+void SortOrder::setMessageSortDirection(SortOrder::SortDirection messageSortDirection)
+{
+    mMessageSortDirection = messageSortDirection;
+}
+
 QList< QPair< QString, int > > SortOrder::enumerateMessageSortingOptions(Aggregation::Threading t)
 {
     QList< QPair< QString, int > > ret;

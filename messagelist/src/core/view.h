@@ -407,11 +407,6 @@ protected:
     void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
 
     /**
-    * Reimplemented in order to handle context menu request via keyboard
-    */
-    //void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
-
-    /**
     * Reimplemented in order to handle message DnD
     */
     void dragEnterEvent(QDragEnterEvent *e) Q_DECL_OVERRIDE;
@@ -512,10 +507,7 @@ protected:
     *
     * Returns 0 if the view is empty.
     */
-    Item *firstMessageItem(MessageTypeFilter messageTypeFilter)
-    {
-        return messageItemAfter(Q_NULLPTR, messageTypeFilter, false);
-    }
+    Item *firstMessageItem(MessageTypeFilter messageTypeFilter);
 
     /**
     * Finds the previous message item with respect to the current item.
@@ -555,10 +547,7 @@ protected:
     *
     * Returns 0 if the view is empty.
     */
-    Item *lastMessageItem(MessageTypeFilter messageTypeFilter)
-    {
-        return messageItemBefore(Q_NULLPTR, messageTypeFilter, false);
-    }
+    Item *lastMessageItem(MessageTypeFilter messageTypeFilter);
 
     /**
     * This is called by Model to signal a start of a lengthy job batch.

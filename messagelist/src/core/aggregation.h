@@ -153,10 +153,7 @@ public:
     /**
     * Returns the currently set Grouping option.
     */
-    Grouping grouping() const
-    {
-        return mGrouping;
-    }
+    Grouping grouping() const;
 
     /**
     * Sets the Grouping option.
