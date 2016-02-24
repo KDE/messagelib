@@ -22,17 +22,17 @@
 #include <MessageViewer/WebEnginePage>
 #include <QDebug>
 #include <QContextMenuEvent>
+
 TestWebEngine::TestWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *hboxLayout = new QHBoxLayout(this);
-    QWebEngineView *pageView = new QWebEngineView(this);
+    TestWebEngineView *pageView = new TestWebEngineView(this);
     hboxLayout->addWidget(pageView);
     mEnginePage = new MessageViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
     pageView->setContextMenuPolicy(Qt::DefaultContextMenu);
-    setContextMenuPolicy(Qt::CustomContextMenu);
-
+    setContextMenuPolicy(Qt::DefaultContextMenu);
     pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
     //connect(pageView, &QWebEngineView::showContextMenu, this, &TestWebEngine::slotShowContextMenu);
 }
@@ -48,10 +48,16 @@ void TestWebEngine::slotShowContextMenu()
 
 }
 #endif
-void TestWebEngine::contextMenuEvent(QContextMenuEvent *e)
+TestWebEngineView::TestWebEngineView(QWidget *parent)
+    : QWebEngineView(parent)
+{
+    setContextMenuPolicy(Qt::DefaultContextMenu);
+}
+
+void TestWebEngineView::contextMenuEvent(QContextMenuEvent *e)
 {
     qDebug()<<" void TestWebEngine::contextMenuEvent(QContextMenuEvent *e)";
-    const MessageViewer::WebHitTestResult webHit = mEnginePage->hitTestContent(e->pos());
+    const MessageViewer::WebHitTestResult webHit = static_cast<MessageViewer::WebEnginePage *>(page())->hitTestContent(e->pos());
 
     qDebug() << " alternateText"<<webHit.alternateText();
     qDebug() << " boundingRect"<<webHit.boundingRect();

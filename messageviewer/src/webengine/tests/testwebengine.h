@@ -19,18 +19,27 @@
 #define TESTWEBENGINE_H
 
 #include <QWidget>
+#include <qwebengineview.h>
 namespace MessageViewer
 {
 class WebEnginePage;
 }
+
+class TestWebEngineView : public QWebEngineView
+{
+    Q_OBJECT
+public:
+    explicit TestWebEngineView(QWidget *parent = Q_NULLPTR);
+protected:
+    void contextMenuEvent(QContextMenuEvent *e);
+};
+
 class TestWebEngine : public QWidget
 {
     Q_OBJECT
 public:
     explicit TestWebEngine(QWidget *parent = Q_NULLPTR);
     ~TestWebEngine();
-protected:
-    void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
 private:
     MessageViewer::WebEnginePage *mEnginePage;
 };
