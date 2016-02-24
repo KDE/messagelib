@@ -51,6 +51,7 @@
 #include <QDateTime>
 #include <QWebFrame>
 #include <QRegularExpression>
+#include <KConfigGroup>
 
 typedef QList<MessageViewer::AdBlockRule> AdBlockRuleList;
 
@@ -159,10 +160,13 @@ void AdBlockManager::loadSettings()
 
     // load local rules
     const QString localRulesFilePath = MessageViewer::AdBlockUtil::localFilterPath();
-    loadRules(localRulesFilePath);
+    KConfigGroup grp = config.group(QStringLiteral("DisableRules"));
+    const QStringList disableCustomFilters = grp.readEntry("DisableRules", QStringList());
+
+    loadRules(localRulesFilePath, disableCustomFilters);
 }
 
-void AdBlockManager::loadRules(const QString &rulesFilePath)
+void AdBlockManager::loadRules(const QString &rulesFilePath, const QStringList &disableEntries)
 {
     QFile ruleFile(rulesFilePath);
     if (!ruleFile.open(QFile::ReadOnly | QFile::Text)) {
@@ -172,13 +176,21 @@ void AdBlockManager::loadRules(const QString &rulesFilePath)
 
     QTextStream in(&ruleFile);
     while (!in.atEnd()) {
-        QString stringRule = in.readLine();
-        loadRuleString(stringRule);
+        const QString stringRule = in.readLine();
+        if (!disableEntries.contains(stringRule)) {
+            loadRuleString(stringRule);
+        }
     }
 }
 
 void AdBlockManager::loadRuleString(const QString &stringRule)
-{
+{    
+    // empty rules are just dangerous..
+    // (an empty rule in whitelist allows all, in blacklist blocks all..)
+    if (stringRule.isEmpty()) {
+        return;
+    }
+
     // ! rules are comments
     if (stringRule.startsWith(QLatin1Char('!'))) {
         return;
@@ -186,12 +198,6 @@ void AdBlockManager::loadRuleString(const QString &stringRule)
 
     // [ rules are ABP info
     if (stringRule.startsWith(QLatin1Char('['))) {
-        return;
-    }
-
-    // empty rules are just dangerous..
-    // (an empty rule in whitelist allows all, in blacklist blocks all..)
-    if (stringRule.isEmpty()) {
         return;
     }
 

@@ -169,7 +169,7 @@ private:
     bool subscriptionFileExists(int);
 
     // load a file rule, given a path
-    void loadRules(const QString &rulesFilePath);
+    void loadRules(const QString &rulesFilePath, const QStringList &disableEntries = QStringList());
 
     // load a single rule
     void loadRuleString(const QString &stringRule);

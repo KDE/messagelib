@@ -293,6 +293,7 @@ void AdBlockSettingWidget::save()
         return;
     }
 
+    QStringList disableCustomFilter;
     QTextStream out(&ruleFile);
     for (int i = 0; i < manualFiltersListWidget->count(); ++i) {
         QListWidgetItem *subItem = manualFiltersListWidget->item(i);
@@ -300,8 +301,15 @@ void AdBlockSettingWidget::save()
         if (!stringRule.trimmed().isEmpty()) {
             out << stringRule << '\n';
         }
+        if (subItem->checkState() == Qt::Checked) {
+            disableCustomFilter << stringRule;
+        }
     }
 
+    if (!disableCustomFilter.isEmpty()) {
+        KConfigGroup grp = config.group(QStringLiteral("DisableRules"));
+        grp.writeEntry("DisableRules", disableCustomFilter);
+    }
     // -------------------------------------------------------------------------------
     mChanged = false;
     Q_EMIT changed(false);
@@ -431,7 +439,9 @@ void AdBlockSettingWidget::slotImportFilters()
 void AdBlockSettingWidget::addManualFilter(const QString &text)
 {
     QListWidgetItem *subItem = new QListWidgetItem(manualFiltersListWidget);
-    subItem->setFlags(subItem->flags() | Qt::ItemIsEditable);
+    subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+    subItem->setCheckState(Qt::Checked);
+
     subItem->setText(text);
 }
 
