@@ -241,10 +241,13 @@ void AdBlockSettingWidget::doLoadFromGlobalSettings()
         return;
     }
 
+    KConfigGroup grp = config.group(QStringLiteral("DisableRules"));
+    const QStringList disableRules = grp.readEntry("DisableRules", QStringList());
+
     QTextStream in(&ruleFile);
     while (!in.atEnd()) {
         QString stringRule = in.readLine();
-        addManualFilter(stringRule);
+        addManualFilter(stringRule, disableRules);
     }
     updateCheckBox();
 }
@@ -302,7 +305,7 @@ void AdBlockSettingWidget::save()
         if (!stringRule.trimmed().isEmpty()) {
             out << stringRule << '\n';
         }
-        if (subItem->checkState() == Qt::Checked) {
+        if (subItem->checkState() == Qt::Unchecked) {
             disableCustomFilter << stringRule;
         }
     }
@@ -310,6 +313,8 @@ void AdBlockSettingWidget::save()
     if (!disableCustomFilter.isEmpty()) {
         KConfigGroup grp = config.group(QStringLiteral("DisableRules"));
         grp.writeEntry("DisableRules", disableCustomFilter);
+    } else {
+        config.deleteGroup(QStringLiteral("DisableRules"));
     }
     // -------------------------------------------------------------------------------
     mChanged = false;
@@ -437,12 +442,11 @@ void AdBlockSettingWidget::slotImportFilters()
     }
 }
 
-void AdBlockSettingWidget::addManualFilter(const QString &text)
+void AdBlockSettingWidget::addManualFilter(const QString &text, const QStringList &excludeRules)
 {
     QListWidgetItem *subItem = new QListWidgetItem(manualFiltersListWidget);
     subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
-    subItem->setCheckState(Qt::Checked);
-
+    subItem->setCheckState(excludeRules.contains(text) ? Qt::Unchecked : Qt::Checked);
     subItem->setText(text);
 }
 

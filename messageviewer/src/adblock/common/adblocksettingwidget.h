@@ -69,7 +69,7 @@ private Q_SLOTS:
     void slotDeleteList(const QString &listName);
 private:
     void updateCheckBox();
-    void addManualFilter(const QString &text);
+    void addManualFilter(const QString &text, const QStringList &excludeRules = QStringList());
     void showAutomaticFilterList(QListWidgetItem *item);
     enum List {
         UrlList = Qt::UserRole + 1,
