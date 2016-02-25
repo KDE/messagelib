@@ -26,6 +26,8 @@ class AdBlockAutomaticRulesListWidgetTest : public QObject
 public:
     explicit AdBlockAutomaticRulesListWidgetTest(QObject *parent = Q_NULLPTR);
     ~AdBlockAutomaticRulesListWidgetTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // ADBLOCKAUTOMATICRULESLISTWIDGETTEST_H

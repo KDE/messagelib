@@ -23,6 +23,7 @@
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QTest>
+#include <QToolButton>
 
 AdBlockAddSubscriptionDialogTest::AdBlockAddSubscriptionDialogTest(QObject *parent)
     : QObject(parent)
@@ -50,6 +51,9 @@ void AdBlockAddSubscriptionDialogTest::shouldHaveDefaultValue()
 
     QDialogButtonBox *buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("listsubscriptionbuttonBox"));
     QVERIFY(buttonBox);
+
+    QToolButton *showList = w.findChild<QToolButton *>(QStringLiteral("showlisttoolbutton"));
+    QVERIFY(showList);
 }
 
 void AdBlockAddSubscriptionDialogTest::shouldExcludeAllList()

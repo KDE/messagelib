@@ -16,6 +16,7 @@
 */
 
 #include "adblockautomaticruleslistwidgettest.h"
+#include "../adblockautomaticruleslistwidget.h"
 #include <QTest>
 
 AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(QObject *parent)
@@ -27,6 +28,12 @@ AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(QObject
 AdBlockAutomaticRulesListWidgetTest::~AdBlockAutomaticRulesListWidgetTest()
 {
 
+}
+
+void AdBlockAutomaticRulesListWidgetTest::shouldHaveDefaultValue()
+{
+    MessageViewer::AdBlockAutomaticRulesListWidget w;
+    QCOMPARE(w.count(), 0);
 }
 
 QTEST_MAIN(AdBlockAutomaticRulesListWidgetTest)

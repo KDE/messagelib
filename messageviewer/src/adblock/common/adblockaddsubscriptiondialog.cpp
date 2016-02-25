@@ -27,6 +27,7 @@
 #include <KConfigGroup>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QToolButton>
 
 using namespace MessageViewer;
 AdBlockAddSubscriptionDialog::AdBlockAddSubscriptionDialog(const QStringList &excludeList, QWidget *parent)
@@ -46,6 +47,13 @@ AdBlockAddSubscriptionDialog::AdBlockAddSubscriptionDialog(const QStringList &ex
     mListSubscription = new QComboBox;
     mListSubscription->setObjectName(QStringLiteral("listsubscriptioncombobox"));
     lay->addWidget(mListSubscription);
+
+    mShowList = new QToolButton;
+    //TODO setIcon
+    mShowList->setToolTip(i18n("Show List"));
+    mShowList->setObjectName(QStringLiteral("showlisttoolbutton"));
+    lay->addWidget(mShowList);
+    connect(mShowList, &QToolButton::clicked, this, &AdBlockAddSubscriptionDialog::slotShowList);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     buttonBox->setObjectName(QStringLiteral("listsubscriptionbuttonBox"));
@@ -83,3 +91,7 @@ void AdBlockAddSubscriptionDialog::selectedList(QString &name, QString &url)
     url = mListSubscription->itemData(mListSubscription->currentIndex()).toString();
 }
 
+void AdBlockAddSubscriptionDialog::slotShowList()
+{
+    //TODO
+}

@@ -21,10 +21,9 @@
 #include <QDialog>
 
 class QComboBox;
-
+class QToolButton;
 namespace MessageViewer
 {
-
 class AdBlockAddSubscriptionDialog : public QDialog
 {
     Q_OBJECT
@@ -34,9 +33,13 @@ public:
 
     void selectedList(QString &name, QString &url);
 
+private Q_SLOTS:
+    void slotShowList();
+
 private:
     void initializeList(const QStringList &excludeList);
     QComboBox *mListSubscription;
+    QToolButton *mShowList;
 };
 }
 
