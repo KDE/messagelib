@@ -17,6 +17,10 @@
 
 
 #include "adblockaddsubscriptiondialogtest.h"
+#include "../adblockaddsubscriptiondialog.h"
+#include <QComboBox>
+#include <QDialogButtonBox>
+#include <QLabel>
 #include <QTest>
 
 AdBlockAddSubscriptionDialogTest::AdBlockAddSubscriptionDialogTest(QObject *parent)
@@ -28,6 +32,23 @@ AdBlockAddSubscriptionDialogTest::AdBlockAddSubscriptionDialogTest(QObject *pare
 AdBlockAddSubscriptionDialogTest::~AdBlockAddSubscriptionDialogTest()
 {
 
+}
+
+void AdBlockAddSubscriptionDialogTest::shouldHaveDefaultValue()
+{
+    QStringList lst;
+    MessageViewer::AdBlockAddSubscriptionDialog w(lst);
+
+
+    QLabel *lab = w.findChild<QLabel *>(QStringLiteral("listsubscriptionlabel"));
+    QVERIFY(lab);
+
+    QComboBox *listSubscription = w.findChild<QComboBox *>(QStringLiteral("listsubscriptioncombobox"));
+    QVERIFY(listSubscription);
+    QVERIFY(listSubscription->count()>0);
+
+    QDialogButtonBox *buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("listsubscriptionbuttonBox"));
+    QVERIFY(buttonBox);
 }
 
 QTEST_MAIN(AdBlockAddSubscriptionDialogTest)

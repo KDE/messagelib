@@ -26,6 +26,9 @@ class AdBlockAddSubscriptionDialogTest : public QObject
 public:
     explicit AdBlockAddSubscriptionDialogTest(QObject *parent = Q_NULLPTR);
     ~AdBlockAddSubscriptionDialogTest();
+
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // ADBLOCKADDSUBSCRIPTIONDIALOGTEST_H
