@@ -2,4 +2,11 @@ set( adblockaddsubscriptiondialogtest_SRCS adblockaddsubscriptiondialogtest.cpp 
 add_executable( adblockaddsubscriptiondialogtest ${adblockaddsubscriptiondialogtest_SRCS})
 add_test(adblockaddsubscriptiondialogtest adblockaddsubscriptiondialogtest)
 ecm_mark_as_test(adblockaddsubscriptiondialogtest)
-target_link_libraries( adblockaddsubscriptiondialogtest Qt5::Test Qt5::Widgets KF5::MessageViewer)
+target_link_libraries( adblockaddsubscriptiondialogtest Qt5::Test Qt5::Widgets KF5::I18n KF5::ConfigCore)
+
+
+set( adblockautomaticruleslistwidgettest_SRCS adblockautomaticruleslistwidgettest.cpp ../adblockautomaticruleslistwidget.cpp)
+add_executable( adblockautomaticruleslistwidgettest ${adblockautomaticruleslistwidgettest_SRCS})
+add_test(adblockautomaticruleslistwidgettest adblockautomaticruleslistwidgettest)
+ecm_mark_as_test(adblockautomaticruleslistwidgettest)
+target_link_libraries( adblockautomaticruleslistwidgettest Qt5::Test Qt5::Widgets)

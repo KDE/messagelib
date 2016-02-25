@@ -15,21 +15,18 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef ADBLOCKAUTOMATICRULESLISTWIDGET_H
-#define ADBLOCKAUTOMATICRULESLISTWIDGET_H
+#include "adblockautomaticruleslistwidgettest.h"
+#include <QTest>
 
-#include <QListWidget>
+AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(QObject *parent)
+    : QObject(parent)
+{
 
-namespace MessageViewer
-{
-class AdBlockAutomaticRulesListWidget : public QListWidget
-{
-    Q_OBJECT
-public:
-    explicit AdBlockAutomaticRulesListWidget(QWidget *parent = Q_NULLPTR);
-    ~AdBlockAutomaticRulesListWidget();
-    void setRules(const QString &rules);
-};
 }
 
-#endif // ADBLOCKAUTOMATICRULESLISTWIDGET_H
+AdBlockAutomaticRulesListWidgetTest::~AdBlockAutomaticRulesListWidgetTest()
+{
+
+}
+
+QTEST_MAIN(AdBlockAutomaticRulesListWidgetTest)

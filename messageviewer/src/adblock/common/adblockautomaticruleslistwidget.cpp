@@ -30,3 +30,9 @@ AdBlockAutomaticRulesListWidget::~AdBlockAutomaticRulesListWidget()
 {
 
 }
+
+void AdBlockAutomaticRulesListWidget::setRules(const QString &rules)
+{
+    clear();
+
+}
