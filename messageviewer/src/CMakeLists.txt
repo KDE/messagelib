@@ -67,6 +67,7 @@ set(_mailwebview_cpp
     adblock/common/adblocksyntaxhighlighter.cpp
     adblock/common/adblockshowlistdialog.cpp
     adblock/common/adblockhostmatcher.cpp
+    adblock/common/adblockautomaticruleslistwidget.cpp
     )
 
 
