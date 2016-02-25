@@ -33,21 +33,26 @@ AdBlockAddSubscriptionDialog::AdBlockAddSubscriptionDialog(const QStringList &ex
     : QDialog(parent)
 {
     setWindowTitle(i18n("Add subscription"));
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
+
+    QWidget *w = new QWidget;
+    QHBoxLayout *lay = new QHBoxLayout;
+    QLabel *lab = new QLabel(i18n("Select List:"));
+    lab->setObjectName(QStringLiteral("listsubscriptionlabel"));
+    lay->addWidget(lab);
+
+    mListSubscription = new QComboBox;
+    mListSubscription->setObjectName(QStringLiteral("listsubscriptioncombobox"));
+    lay->addWidget(mListSubscription);
+
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    buttonBox->setObjectName(QStringLiteral("listsubscriptionbuttonBox"));
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &AdBlockAddSubscriptionDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &AdBlockAddSubscriptionDialog::reject);
-    QWidget *w = new QWidget;
-    QHBoxLayout *lay = new QHBoxLayout;
-    QLabel *lab = new QLabel(i18n("Select List:"));
-    lay->addWidget(lab);
-
-    mListSubscription = new QComboBox;
-    lay->addWidget(mListSubscription);
 
     w->setLayout(lay);
     mainLayout->addWidget(w);
