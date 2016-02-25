@@ -29,6 +29,7 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldExcludeAllList();
 };
 
 #endif // ADBLOCKADDSUBSCRIPTIONDIALOGTEST_H
