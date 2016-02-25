@@ -1,0 +1,5 @@
+set( adblockaddsubscriptiondialogtest_SRCS adblockaddsubscriptiondialogtest.cpp ../adblockaddsubscriptiondialog.cpp ../adblockutil.cpp)
+add_executable( adblockaddsubscriptiondialogtest ${adblockaddsubscriptiondialogtest_SRCS})
+add_test(adblockaddsubscriptiondialogtest adblockaddsubscriptiondialogtest)
+ecm_mark_as_test(adblockaddsubscriptiondialogtest)
+target_link_libraries( adblockaddsubscriptiondialogtest Qt5::Test Qt5::Widgets KF5::MessageViewer)
