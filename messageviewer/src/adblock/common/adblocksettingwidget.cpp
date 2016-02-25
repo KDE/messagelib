@@ -77,6 +77,7 @@ AdBlockSettingWidget::AdBlockSettingWidget(QWidget *parent)
     connect(removeButton, &QPushButton::clicked, this, &AdBlockSettingWidget::removeRule);
     connect(removeSubscription, &QPushButton::clicked, this, &AdBlockSettingWidget::slotRemoveSubscription);
     connect(manualFiltersListWidget, &QListWidget::currentItemChanged, this, &AdBlockSettingWidget::slotUpdateManualButtons);
+    connect(manualFiltersListWidget, &QListWidget::itemChanged, this, &AdBlockSettingWidget::hasChanged);
 
     spinBox->setSuffix(ki18np(" day", " days"));
 
