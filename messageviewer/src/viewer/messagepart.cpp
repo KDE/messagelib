@@ -149,7 +149,7 @@ void CryptoBlock::internalExit()
     if (!entered) {
         return;
     }
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+
     while (!mInteralBlocks.isEmpty()) {
         mInteralBlocks.removeLast();
     }
