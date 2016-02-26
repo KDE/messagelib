@@ -43,6 +43,9 @@ namespace PrivateBodyPartFormatterFactory
 
 // defined in bodypartformatters.cpp
 void messageviewer_create_builtin_bodypart_formatters();
+
+// defined in pluginloader.cpp
+void loadPlugins();
 }
 
 }

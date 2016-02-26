@@ -114,7 +114,6 @@ set(libmessageviewer_otp_SRCS
     viewer/objecttreeparser.cpp
     viewer/messagepart.cpp
     viewer/partnodebodypart.cpp
-    viewer/pluginloaderbase.cpp
     viewer/memento/cryptobodypartmemento.cpp
     viewer/memento/decryptverifybodypartmemento.cpp
     viewer/memento/verifydetachedbodypartmemento.cpp
@@ -129,7 +128,7 @@ set(libmessageviewer_otp_extra_SRCS
     utils/iconnamecache.cpp
     utils/mimetype.cpp
     viewer/converthtmltoplaintext.cpp
-    viewer/urlhandlermanager_otp.cpp
+    viewer/pluginloader_otp.cpp
     #HTML Writer
     htmlwriter/filehtmlwriter.cpp
     htmlwriter/queuehtmlwriter.cpp
@@ -151,6 +150,7 @@ set(libmessageviewer_viewer_SRCS
     viewer/messagepart.cpp
     viewer/partnodebodypart.cpp
     viewer/pluginloaderbase.cpp
+    viewer/pluginloader.cpp
     viewer/viewer.cpp
     viewer/viewer_p.cpp
     viewer//webview/webviewaccesskey.cpp
