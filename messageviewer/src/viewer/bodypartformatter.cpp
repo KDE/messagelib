@@ -196,31 +196,31 @@ typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
 #undef CREATE_BODY_PART_FORMATTER
 } // anon namespace
 
-void PrivateBodyPartFormatterFactory::messageviewer_create_builtin_bodypart_formatters()
+void BodyPartFormatterFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
 {
-    insertBodyPartFormatter("application", "octet-stream", AnyTypeBodyPartFormatter::create());
-    insertBodyPartFormatter("application", "pgp", ApplicationPgpBodyPartFormatter::create());
-    insertBodyPartFormatter("application", "pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
-    insertBodyPartFormatter("application", "x-pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
-    insertBodyPartFormatter("application", "*", AnyTypeBodyPartFormatter::create());
+    insert("application", "octet-stream", AnyTypeBodyPartFormatter::create());
+    insert("application", "pgp", ApplicationPgpBodyPartFormatter::create());
+    insert("application", "pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert("application", "x-pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert("application", "*", AnyTypeBodyPartFormatter::create());
 
-    insertBodyPartFormatter("text", "html", TextHtmlBodyPartFormatter::create());
-    insertBodyPartFormatter("text", "rtf", AnyTypeBodyPartFormatter::create());
-    insertBodyPartFormatter("text", "vcard", AnyTypeBodyPartFormatter::create());
-    insertBodyPartFormatter("text", "x-vcard", AnyTypeBodyPartFormatter::create());
-    insertBodyPartFormatter("text", "plain", MailmanBodyPartFormatter::create());
-    insertBodyPartFormatter("text", "plain", TextPlainBodyPartFormatter::create());
-    insertBodyPartFormatter("text", "*", MailmanBodyPartFormatter::create());
-    insertBodyPartFormatter("text", "*", TextPlainBodyPartFormatter::create());
+    insert("text", "html", TextHtmlBodyPartFormatter::create());
+    insert("text", "rtf", AnyTypeBodyPartFormatter::create());
+    insert("text", "vcard", AnyTypeBodyPartFormatter::create());
+    insert("text", "x-vcard", AnyTypeBodyPartFormatter::create());
+    insert("text", "plain", MailmanBodyPartFormatter::create());
+    insert("text", "plain", TextPlainBodyPartFormatter::create());
+    insert("text", "*", MailmanBodyPartFormatter::create());
+    insert("text", "*", TextPlainBodyPartFormatter::create());
 
-    insertBodyPartFormatter("image", "*", ImageTypeBodyPartFormatter::create());
+    insert("image", "*", ImageTypeBodyPartFormatter::create());
 
-    insertBodyPartFormatter("message", "rfc822", MessageRfc822BodyPartFormatter::create());
-    insertBodyPartFormatter("message", "*", AnyTypeBodyPartFormatter::create());
+    insert("message", "rfc822", MessageRfc822BodyPartFormatter::create());
+    insert("message", "*", AnyTypeBodyPartFormatter::create());
 
-    insertBodyPartFormatter("multipart", "alternative", MultiPartAlternativeBodyPartFormatter::create());
-    insertBodyPartFormatter("multipart", "encrypted", MultiPartEncryptedBodyPartFormatter::create());
-    insertBodyPartFormatter("multipart", "signed", MultiPartSignedBodyPartFormatter::create());
-    insertBodyPartFormatter("multipart", "*", MultiPartMixedBodyPartFormatter::create());
-    insertBodyPartFormatter("*", "*", AnyTypeBodyPartFormatter::create());
+    insert("multipart", "alternative", MultiPartAlternativeBodyPartFormatter::create());
+    insert("multipart", "encrypted", MultiPartEncryptedBodyPartFormatter::create());
+    insert("multipart", "signed", MultiPartSignedBodyPartFormatter::create());
+    insert("multipart", "*", MultiPartMixedBodyPartFormatter::create());
+    insert("*", "*", AnyTypeBodyPartFormatter::create());
 }

@@ -36,17 +36,21 @@
 
 namespace MessageViewer
 {
+class BodyPartFormatterFactory;
 
-namespace PrivateBodyPartFormatterFactory
+class BodyPartFormatterFactoryPrivate
 {
+public:
+    BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory);
+    ~BodyPartFormatterFactoryPrivate();
 
+    void setup();
+    void messageviewer_create_builtin_bodypart_formatters();
+    void insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
 
-// defined in bodypartformatters.cpp
-void messageviewer_create_builtin_bodypart_formatters();
-
-// defined in pluginloader.cpp
-void loadPlugins();
-}
+    BodyPartFormatterFactory *q;
+    TypeRegistry *all;
+};
 
 }
 

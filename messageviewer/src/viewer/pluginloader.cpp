@@ -20,13 +20,11 @@
 #include "pluginloader.h"
 
 #include "bodypartformatterfactory.h"
-#include "bodypartformatterfactory_p.h"
 #include "urlhandlermanager.h"
 #include "messageviewer_debug.h"
 
 #include "interfaces/bodypartformatter.h"
 
-using namespace MessageViewer::PrivateBodyPartFormatterFactory;
 using namespace MessageViewer;
 
 namespace
@@ -39,7 +37,7 @@ DEFINE_PLUGIN_LOADER(BodyPartFormatterPluginLoader,
 
 }
 
-void MessageViewer::PrivateBodyPartFormatterFactory::loadPlugins()
+void BodyPartFormatterFactory::loadPlugins()
 {
     const BodyPartFormatterPluginLoader *pl = BodyPartFormatterPluginLoader::instance();
     if (!pl) {
@@ -72,7 +70,7 @@ void MessageViewer::PrivateBodyPartFormatterFactory::loadPlugins()
                 break;
             }
             qDebug() << "plugin for " << type << subtype;
-            insertBodyPartFormatter(type, subtype, bfp);
+            insert(type, subtype, bfp);
         }
         const Interface::BodyPartURLHandler *handler;
         for (int i = 0; (handler = plugin->urlHandler(i)); ++i) {

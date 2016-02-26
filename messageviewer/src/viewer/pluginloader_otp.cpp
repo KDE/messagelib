@@ -17,11 +17,12 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include "bodypartformatterfactory_p.h"
+#include "bodypartformatterfactory.h"
 #include "messageviewer_debug.h"
 
+using namespace MessageViewer;
 
-void MessageViewer::PrivateBodyPartFormatterFactory::loadPlugins()
+void BodyPartFormatterFactory::loadPlugins()
 {
     qDebug() << "plugin loading is not enabled in libotp";
 }

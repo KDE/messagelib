@@ -41,33 +41,34 @@
 
 #include <assert.h>
 
-using namespace MessageViewer::PrivateBodyPartFormatterFactory;
 using namespace MessageViewer;
 
 BodyPartFormatterFactory *BodyPartFormatterFactory::mSelf = 0;
 
-const BodyPartFormatterFactory *BodyPartFormatterFactory::instance()
+BodyPartFormatterFactoryPrivate::BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory)
+    : q(factory)
+    , all(0)
 {
-    if (!mSelf) {
-        mSelf = new BodyPartFormatterFactory();
+}
+
+BodyPartFormatterFactoryPrivate::~BodyPartFormatterFactoryPrivate()
+{
+    if (all) {
+        delete all;
+        all = 0;
     }
-    return mSelf;
 }
 
-BodyPartFormatterFactory::BodyPartFormatterFactory()
+void BodyPartFormatterFactoryPrivate::setup()
 {
-    mSelf = this;
+    if (!all) {
+        all = new TypeRegistry();
+        messageviewer_create_builtin_bodypart_formatters();
+        q->loadPlugins();
+    }
 }
 
-BodyPartFormatterFactory::~BodyPartFormatterFactory()
-{
-    mSelf = 0;
-}
-
-static TypeRegistry *all = 0;
-
-void MessageViewer::insertBodyPartFormatter(const char *type, const char *subtype,
-                                    const Interface::BodyPartFormatter *formatter)
+void BodyPartFormatterFactoryPrivate::insert(const char* type, const char* subtype, const Interface::BodyPartFormatter* formatter)
 {
     if (!type || !*type || !subtype || !*subtype || !formatter || !all) {
         return;
@@ -86,13 +87,29 @@ void MessageViewer::insertBodyPartFormatter(const char *type, const char *subtyp
     subtype_reg.insert(std::make_pair(subtype, formatter));
 }
 
-static void setup()
+const BodyPartFormatterFactory *BodyPartFormatterFactory::instance()
 {
-    if (!all) {
-        all = new TypeRegistry();
-        messageviewer_create_builtin_bodypart_formatters();
-        loadPlugins();
+    if (!mSelf) {
+        mSelf = new BodyPartFormatterFactory();
     }
+    return mSelf;
+}
+
+BodyPartFormatterFactory::BodyPartFormatterFactory()
+    : d(new BodyPartFormatterFactoryPrivate(this))
+{
+    mSelf = this;
+}
+
+BodyPartFormatterFactory::~BodyPartFormatterFactory()
+{
+    delete d;
+    mSelf = 0;
+}
+
+void BodyPartFormatterFactory::insert(const char* type, const char* subtype, const Interface::BodyPartFormatter* formatter)
+{
+    d->insert(type, subtype, formatter);
 }
 
 const SubtypeRegistry &BodyPartFormatterFactory::subtypeRegistry(const char *type) const
@@ -101,18 +118,18 @@ const SubtypeRegistry &BodyPartFormatterFactory::subtypeRegistry(const char *typ
         type = "*";    //krazy:exclude=doublequote_chars
     }
 
-    setup();
-    assert(all);
+    d->setup();
+    assert(d->all);
 
-    if (all->empty()) {
+    if (d->all->empty()) {
         return SubtypeRegistry();
     }
 
-    TypeRegistry::const_iterator type_it = all->find(type);
-    if (type_it == all->end()) {
-        type_it = all->find("*");
+    TypeRegistry::const_iterator type_it = d->all->find(type);
+    if (type_it == d->all->end()) {
+        type_it = d->all->find("*");
     }
-    if (type_it == all->end()) {
+    if (type_it == d->all->end()) {
         return SubtypeRegistry();
     }
 
@@ -132,18 +149,18 @@ SubtypeRegistry::const_iterator BodyPartFormatterFactory::createForIterator(cons
         subtype = "*";    //krazy:exclude=doublequote_chars
     }
 
-    setup();
-    assert(all);
+    d->setup();
+    assert(d->all);
 
-    if (all->empty()) {
+    if (d->all->empty()) {
         return SubtypeRegistry::const_iterator();
     }
 
-    TypeRegistry::const_iterator type_it = all->find(type);
-    if (type_it == all->end()) {
-        type_it = all->find("*");
+    TypeRegistry::const_iterator type_it = d->all->find(type);
+    if (type_it == d->all->end()) {
+        type_it = d->all->find("*");
     }
-    if (type_it == all->end()) {
+    if (type_it == d->all->end()) {
         return SubtypeRegistry::const_iterator();
     }
 

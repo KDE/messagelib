@@ -57,14 +57,12 @@ struct ltstr {
 typedef std::multimap<const char *, const Interface::BodyPartFormatter *, ltstr> SubtypeRegistry;
 typedef std::map<const char *, MessageViewer::SubtypeRegistry, MessageViewer::ltstr> TypeRegistry;
 
-void insertBodyPartFormatter(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
+class BodyPartFormatterFactoryPrivate;
 
 class BodyPartFormatterFactory
 {
-    class gcc_shut_up;
-    friend class BodyPartFormatterFactory::gcc_shut_up;
 public:
-    ~BodyPartFormatterFactory();
+    virtual ~BodyPartFormatterFactory();
 
     static const BodyPartFormatterFactory *instance();
 
@@ -75,12 +73,18 @@ public:
     const Interface::BodyPartFormatter *createFor(const QString &type, const QString &subtype) const;
     const Interface::BodyPartFormatter *createFor(const QByteArray &type, const QByteArray &subtype) const;
 
+protected:
+    void insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
+    virtual void loadPlugins();
     //
     // Only boring stuff below:
     //
 private:
     BodyPartFormatterFactory();
     static BodyPartFormatterFactory *mSelf;
+
+    BodyPartFormatterFactoryPrivate *d;
+    friend class BodyPartFormatterFactoryPrivate;
 private:
     // disabled
     const BodyPartFormatterFactory &operator=(const BodyPartFormatterFactory &);
