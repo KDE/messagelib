@@ -82,14 +82,6 @@ void MessageViewer::insertBodyPartFormatter(const char *type, const char *subtyp
     }
 
     SubtypeRegistry &subtype_reg = type_it->second;
-    SubtypeRegistry::iterator subtype_it = subtype_reg.find(subtype);
-    if (subtype_it != subtype_reg.end()) {
-        qCDebug(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: overwriting previously registered formatter for \""
-                                   << type << "/" << subtype << "\"";
-        qDebug() << "BodyPartFormatterFactory: overwriting previously registered formatter for \""
-                 << type << "/" << subtype << "\"";
-        //subtype_reg.erase(subtype_it); subtype_it = subtype_reg.end();
-    }
 
     subtype_reg.insert(std::make_pair(subtype, formatter));
 }
