@@ -1,9 +1,5 @@
 /*
-    bodypartformatterfactory.h
-
-    This file is part of KMail, the KDE mail client.
-    Copyright (c) 2004 Marc Mutz <mutz@kde.org>,
-                       Ingo Kloecker <kloecker@kde.org>
+    Copyright (c) 2016 Sandro Knauß <sknauss@kde.org>
 
     KMail is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by
@@ -31,28 +27,20 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_H__
-#define __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_H__
+#include "bodypartformatterfactorysingleton.h"
+#include "bodypartformatterfactory.h"
 
-#include "messageviewer_export.h"
+#include <QSharedPointer>
 
-#include "messageviewer/bodypartformatterbasefactory.h"
+using namespace MessageViewer;
 
-class QString;
+static QSharedPointer<BodyPartFormatterBaseFactory> singleton;
 
-namespace MessageViewer
+const BodyPartFormatterBaseFactory* MessageViewer::bodyPartFormatterBaseFactoryInstance()
 {
+    if (!singleton) {
+        singleton = QSharedPointer<BodyPartFormatterBaseFactory>(new BodyPartFormatterFactory());
+    }
 
-class MESSAGEVIEWER_EXPORT BodyPartFormatterFactory : public BodyPartFormatterBaseFactory
-{
-public:
-    BodyPartFormatterFactory();
-    virtual ~BodyPartFormatterFactory();
-
-protected:
-    void loadPlugins() Q_DECL_OVERRIDE;
-};
-
+    return singleton.data();
 }
-
-#endif // __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_H__

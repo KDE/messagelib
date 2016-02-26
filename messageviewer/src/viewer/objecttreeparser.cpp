@@ -47,7 +47,7 @@
 #include "attachmentstrategy.h"
 #include "interfaces/htmlwriter.h"
 #include "csshelperbase.h"
-#include "viewer/bodypartformatterfactory.h"
+#include "bodypartformatterbasefactory.h"
 #include "viewer/partnodebodypart.h"
 #include "interfaces/bodypartformatter.h"
 #include "messageviewer/mimetype.h"
@@ -141,7 +141,6 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
       mHtmlWriter(topLevelParser->mHtmlWriter),
       mTopLevelContent(topLevelParser->mTopLevelContent),
       mCryptoProtocol(topLevelParser->mCryptoProtocol),
-      mBodyPartFormatterFactory(topLevelParser->mBodyPartFormatterFactory),
       mShowOnlyOneMimePart(showOnlyOneMimePart),
       mHasPendingAsyncJobs(false),
       mAllowAsync(topLevelParser->mAllowAsync),
@@ -161,7 +160,6 @@ ObjectTreeParser::ObjectTreeParser(ObjectTreeSourceIf *source,
       mHtmlWriter(0),
       mTopLevelContent(0),
       mCryptoProtocol(protocol),
-      mBodyPartFormatterFactory(BodyPartFormatterFactory::instance()),
       mShowOnlyOneMimePart(showOnlyOneMimePart),
       mHasPendingAsyncJobs(false),
       mAllowAsync(false),
@@ -329,7 +327,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         }
 
         bool bRendered = false;
-        const auto sub = mBodyPartFormatterFactory->subtypeRegistry(mediaType);
+        const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType);
         const auto end = sub.end();
         auto it = sub.find(subType);
         if (it == end) {

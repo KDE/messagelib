@@ -21,6 +21,7 @@
 #include "viewer/viewer_p.h"
 
 #include "attachmentstrategy.h"
+#include "bodypartformatterfactorysingleton.h"
 
 namespace MessageViewer
 {
@@ -128,5 +129,9 @@ bool EmptySource::showExpandQuotesMark() const
     return false;
 }
 
+const BodyPartFormatterBaseFactory *EmptySource::bodyPartFormatterFactory()
+{
+    return bodyPartFormatterBaseFactoryInstance();
+}
 }
 

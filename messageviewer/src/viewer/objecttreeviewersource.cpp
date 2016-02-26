@@ -19,6 +19,8 @@
 
 #include "objecttreeviewersource.h"
 #include "csshelper.h"
+#include "bodypartformatterfactorysingleton.h"
+
 #include "viewer/viewer_p.h"
 #include "widgets/htmlstatusbar.h"
 #include "settings/messageviewersettings.h"
@@ -109,4 +111,8 @@ bool MailViewerSource::showExpandQuotesMark() const
     return MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark();
 }
 
+const BodyPartFormatterBaseFactory *MailViewerSource::bodyPartFormatterFactory()
+{
+    return bodyPartFormatterBaseFactoryInstance();
+}
 }

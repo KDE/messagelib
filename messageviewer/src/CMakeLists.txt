@@ -138,6 +138,7 @@ set(libmessageviewer_viewer_SRCS
     viewer/bodypartformatter.cpp
     viewer/bodypartformatterbasefactory.cpp
     viewer/bodypartformatterfactory.cpp
+    viewer/bodypartformatterfactorysingleton.cpp
     viewer/cryptohelper.cpp
     viewer/csshelper.cpp
     viewer/csshelperbase.cpp
@@ -390,6 +391,8 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     CSSHelperBase
     MessagePart
     Enums
+    BodyPartFormatterBaseFactory
+    BodyPartFormatterFactory
     REQUIRED_HEADERS MessageViewer_viewer_HEADERS
     PREFIX MessageViewer
     RELATIVE viewer

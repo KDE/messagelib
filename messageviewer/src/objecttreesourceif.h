@@ -33,6 +33,7 @@ namespace MessageViewer
 class HtmlWriter;
 class CSSHelperBase;
 class AttachmentStrategy;
+class BodyPartFormatterBaseFactory;
 }
 
 namespace MessageViewer
@@ -95,6 +96,8 @@ public:
     virtual bool showEmoticons() const = 0;
 
     virtual bool showExpandQuotesMark() const = 0;
+
+    virtual const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() = 0;
 };
 }
 

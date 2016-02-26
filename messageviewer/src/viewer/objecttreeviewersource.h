@@ -51,6 +51,7 @@ public:
     bool autoImportKeys() const Q_DECL_OVERRIDE;
     bool showEmoticons() const Q_DECL_OVERRIDE;
     bool showExpandQuotesMark() const Q_DECL_OVERRIDE;
+    const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE;
 private:
     ViewerPrivate *mViewer;
 };
