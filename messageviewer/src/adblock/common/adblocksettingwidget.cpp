@@ -391,7 +391,7 @@ void AdBlockSettingWidget::slotShowList()
 void AdBlockSettingWidget::showAutomaticFilterList(QListWidgetItem *item)
 {
     if (item) {
-        QPointer<AdBlockShowListDialog> dlg = new AdBlockShowListDialog(this);
+        QPointer<AdBlockShowListDialog> dlg = new AdBlockShowListDialog(true, this);
         dlg->setListName(item->text());
         dlg->setAdBlockListPath(item->data(PathList).toString(), item->data(UrlList).toString());
         connect(dlg.data(), &AdBlockShowListDialog::deleteList, this, &AdBlockSettingWidget::slotDeleteList);
