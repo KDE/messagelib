@@ -49,9 +49,9 @@ AdBlockAddSubscriptionDialog::AdBlockAddSubscriptionDialog(const QStringList &ex
     lay->addWidget(mListSubscription);
 
     mShowList = new QToolButton;
-    //TODO setIcon
     mShowList->setToolTip(i18n("Show List"));
     mShowList->setObjectName(QStringLiteral("showlisttoolbutton"));
+    mShowList->setIcon(QIcon::fromTheme(QStringLiteral("document-preview")));
     lay->addWidget(mShowList);
     connect(mShowList, &QToolButton::clicked, this, &AdBlockAddSubscriptionDialog::slotShowList);
 
