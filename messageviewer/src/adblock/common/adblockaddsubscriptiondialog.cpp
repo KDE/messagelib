@@ -97,7 +97,7 @@ void AdBlockAddSubscriptionDialog::slotShowList()
 {
     const QString url = mListSubscription->itemData(mListSubscription->currentIndex()).toString();
     if (!url.isEmpty()) {
-        QPointer<AdBlockShowListDialog> dlg = new AdBlockShowListDialog(this);
+        QPointer<AdBlockShowListDialog> dlg = new AdBlockShowListDialog(false, this);
         dlg->setListName(mListSubscription->currentText());
         dlg->setAdBlockListPath(QString(), url);
         dlg->exec();

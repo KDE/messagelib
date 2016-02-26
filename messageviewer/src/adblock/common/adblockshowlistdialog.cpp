@@ -36,20 +36,23 @@
 #include <QVBoxLayout>
 
 using namespace MessageViewer;
-AdBlockShowListDialog::AdBlockShowListDialog(QWidget *parent)
+AdBlockShowListDialog::AdBlockShowListDialog(bool showDeleteBrokenList, QWidget *parent)
     : QDialog(parent),
-      mTemporaryFile(Q_NULLPTR)
+      mTemporaryFile(Q_NULLPTR),
+      mUser1Button(Q_NULLPTR)
 {
     setWindowTitle(i18n("Show adblock list"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
-    mUser1Button = new QPushButton;
-    buttonBox->addButton(mUser1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &AdBlockShowListDialog::reject);
-    mUser1Button->setText(i18n("Delete List"));
-    mUser1Button->setEnabled(false);
-    connect(mUser1Button, &QPushButton::clicked, this, &AdBlockShowListDialog::slotDeleteBrokenList);
+    if (showDeleteBrokenList) {
+        mUser1Button = new QPushButton;
+        buttonBox->addButton(mUser1Button, QDialogButtonBox::ActionRole);
+        mUser1Button->setText(i18n("Delete List"));
+        mUser1Button->setEnabled(false);
+        connect(mUser1Button, &QPushButton::clicked, this, &AdBlockShowListDialog::slotDeleteBrokenList);
+    }
     QWidget *w = new QWidget;
     QVBoxLayout *lay = new QVBoxLayout;
     mTextEdit = new KPIMTextEdit::PlainTextEditorWidget;
@@ -132,7 +135,9 @@ void AdBlockShowListDialog::slotFinished(KJob *job)
     mProgress->stop();
     if (job->error()) {
         mTextEdit->editor()->setPlainText(i18n("An error occurs during download list: \"%1\"", job->errorString()));
-        mUser1Button->setEnabled(true);
+        if (mUser1Button) {
+            mUser1Button->setEnabled(true);
+        }
     } else {
         QFile f(mTemporaryFile->fileName());
         if (f.open(QIODevice::ReadOnly | QIODevice::Text)) {
