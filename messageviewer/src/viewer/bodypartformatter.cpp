@@ -31,8 +31,8 @@
 
 #include "messageviewer_debug.h"
 
-#include "bodypartformatterfactory.h"
-#include "viewer/bodypartformatterfactory_p.h"
+#include "bodypartformatterbasefactory.h"
+#include "viewer/bodypartformatterbasefactory_p.h"
 #include "viewer/attachmentstrategy.h"
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
@@ -196,7 +196,7 @@ typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
 #undef CREATE_BODY_PART_FORMATTER
 } // anon namespace
 
-void BodyPartFormatterFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
+void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
 {
     insert("application", "octet-stream", AnyTypeBodyPartFormatter::create());
     insert("application", "pgp", ApplicationPgpBodyPartFormatter::create());

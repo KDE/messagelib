@@ -31,24 +31,24 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_P_H__
-#define __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_P_H__
+#ifndef __MESSAGEVIEWER_BODYPARTFORMATTERBASEFACTORY_P_H__
+#define __MESSAGEVIEWER_BODYPARTFORMATTERBASEFACTORY_P_H__
 
 namespace MessageViewer
 {
-class BodyPartFormatterFactory;
+class BodyPartFormatterBaseFactory;
 
-class BodyPartFormatterFactoryPrivate
+class BodyPartFormatterBaseFactoryPrivate
 {
 public:
-    BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory);
-    ~BodyPartFormatterFactoryPrivate();
+    BodyPartFormatterBaseFactoryPrivate(BodyPartFormatterBaseFactory *factory);
+    ~BodyPartFormatterBaseFactoryPrivate();
 
     void setup();
-    void messageviewer_create_builtin_bodypart_formatters();
+    void messageviewer_create_builtin_bodypart_formatters();        //defined in bodypartformatter.cpp
     void insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
 
-    BodyPartFormatterFactory *q;
+    BodyPartFormatterBaseFactory *q;
     TypeRegistry *all;
 };
 

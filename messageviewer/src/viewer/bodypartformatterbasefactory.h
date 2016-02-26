@@ -31,24 +31,59 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_H__
-#define __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_H__
+#ifndef __MESSAGEVIEWER_BODYPARTFORMATTERBASEFACTORY_H__
+#define __MESSAGEVIEWER_BODYPARTFORMATTERBASEFACTORY_H__
 
-#include "bodypartformatterbasefactory.h"
+#include <map>
+#include <QByteArray>
 
 class QString;
 
 namespace MessageViewer
 {
 
-class BodyPartFormatterFactory : public BodyPartFormatterBaseFactory
+namespace Interface
+{
+class BodyPartFormatter;
+}
+
+struct ltstr {
+    bool operator()(const char *s1, const char *s2) const
+    {
+        return qstricmp(s1, s2) < 0;
+    }
+};
+
+typedef std::multimap<const char *, const Interface::BodyPartFormatter *, ltstr> SubtypeRegistry;
+typedef std::map<const char *, MessageViewer::SubtypeRegistry, MessageViewer::ltstr> TypeRegistry;
+
+class BodyPartFormatterBaseFactoryPrivate;
+
+class BodyPartFormatterBaseFactory
 {
 public:
-    BodyPartFormatterFactory();
-    virtual ~BodyPartFormatterFactory();
+    BodyPartFormatterBaseFactory();
+    virtual ~BodyPartFormatterBaseFactory();
+
+    SubtypeRegistry::const_iterator createForIterator(const char *type, const char *subtype) const;
+    const SubtypeRegistry &subtypeRegistry(const char *type) const;
+
+    const Interface::BodyPartFormatter *createFor(const char *type, const char *subtype) const;
+    const Interface::BodyPartFormatter *createFor(const QString &type, const QString &subtype) const;
+    const Interface::BodyPartFormatter *createFor(const QByteArray &type, const QByteArray &subtype) const;
 
 protected:
-    void loadPlugins() Q_DECL_OVERRIDE;
+    void insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
+    virtual void loadPlugins();
+private:
+    static BodyPartFormatterBaseFactory *mSelf;
+
+    BodyPartFormatterBaseFactoryPrivate *d;
+    friend class BodyPartFormatterBaseFactoryPrivate;
+private:
+    // disabled
+    const BodyPartFormatterBaseFactory &operator=(const BodyPartFormatterBaseFactory &);
+    BodyPartFormatterBaseFactory(const BodyPartFormatterBaseFactory &);
 };
 
 }

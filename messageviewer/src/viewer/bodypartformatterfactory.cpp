@@ -32,175 +32,71 @@
 */
 
 #include "bodypartformatterfactory.h"
-#include "bodypartformatterfactory_p.h"
+#include "pluginloader.h"
+#include "urlhandlermanager.h"
 #include "messageviewer_debug.h"
 
-// Qt
-#include <QString>
-#include <QStringList>
-
-#include <assert.h>
+#include "interfaces/bodypartformatter.h"
 
 using namespace MessageViewer;
 
-BodyPartFormatterFactory *BodyPartFormatterFactory::mSelf = 0;
-
-BodyPartFormatterFactoryPrivate::BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory)
-    : q(factory)
-    , all(0)
+namespace
 {
+
+DEFINE_PLUGIN_LOADER(BodyPartFormatterPluginLoader,
+                     Interface::BodyPartFormatterPlugin,
+                     "create_bodypart_formatter_plugin",
+                     "messageviewer/plugins/bodypartformatter/")
+
 }
 
-BodyPartFormatterFactoryPrivate::~BodyPartFormatterFactoryPrivate()
-{
-    if (all) {
-        delete all;
-        all = 0;
-    }
-}
-
-void BodyPartFormatterFactoryPrivate::setup()
-{
-    if (!all) {
-        all = new TypeRegistry();
-        messageviewer_create_builtin_bodypart_formatters();
-        q->loadPlugins();
-    }
-}
-
-void BodyPartFormatterFactoryPrivate::insert(const char* type, const char* subtype, const Interface::BodyPartFormatter* formatter)
-{
-    if (!type || !*type || !subtype || !*subtype || !formatter || !all) {
-        return;
-    }
-
-    TypeRegistry::iterator type_it = all->find(type);
-    if (type_it == all->end()) {
-        qCDebug(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: instantiating new Subtype Registry for \""
-                                   << type << "\"";
-        type_it = all->insert(std::make_pair(type, SubtypeRegistry())).first;
-        assert(type_it != all->end());
-    }
-
-    SubtypeRegistry &subtype_reg = type_it->second;
-
-    subtype_reg.insert(std::make_pair(subtype, formatter));
-}
-
-const BodyPartFormatterFactory *BodyPartFormatterFactory::instance()
-{
-    if (!mSelf) {
-        mSelf = new BodyPartFormatterFactory();
-    }
-    return mSelf;
-}
 
 BodyPartFormatterFactory::BodyPartFormatterFactory()
-    : d(new BodyPartFormatterFactoryPrivate(this))
+    : BodyPartFormatterBaseFactory()
 {
-    mSelf = this;
 }
 
 BodyPartFormatterFactory::~BodyPartFormatterFactory()
 {
-    delete d;
-    mSelf = 0;
 }
 
-void BodyPartFormatterFactory::insert(const char* type, const char* subtype, const Interface::BodyPartFormatter* formatter)
+void BodyPartFormatterFactory::loadPlugins()
 {
-    d->insert(type, subtype, formatter);
-}
-
-const SubtypeRegistry &BodyPartFormatterFactory::subtypeRegistry(const char *type) const
-{
-    if (!type || !*type) {
-        type = "*";    //krazy:exclude=doublequote_chars
+    const BodyPartFormatterPluginLoader *pl = BodyPartFormatterPluginLoader::instance();
+    if (!pl) {
+        qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: cannot instantiate plugin loader!";
+        return;
     }
-
-    d->setup();
-    assert(d->all);
-
-    if (d->all->empty()) {
-        return SubtypeRegistry();
+    const QStringList types = pl->types();
+    qCDebug(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: found" << types.size() << "plugins.";
+    for (QStringList::const_iterator it = types.begin(); it != types.end(); ++it) {
+        const Interface::BodyPartFormatterPlugin *plugin = pl->createForName(*it);
+        if (!plugin) {
+            qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << *it << "is not valid!";
+            continue;
+        }
+        const Interface::BodyPartFormatter *bfp;
+        for (int i = 0; (bfp = plugin->bodyPartFormatter(i)); ++i) {
+            const char *type = plugin->type(i);
+            if (!type || !*type) {
+                qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << *it
+                                             << "returned empty type specification for index"
+                                             << i;
+                break;
+            }
+            const char *subtype = plugin->subtype(i);
+            if (!subtype || !*subtype) {
+                qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << *it
+                                             << "returned empty subtype specification for index"
+                                             << i;
+                break;
+            }
+            qCDebug(MESSAGEVIEWER_LOG) << "plugin for " << type << subtype;
+            insert(type, subtype, bfp);
+        }
+        const Interface::BodyPartURLHandler *handler;
+        for (int i = 0; (handler = plugin->urlHandler(i)); ++i) {
+            URLHandlerManager::instance()->registerHandler(handler);
+        }
     }
-
-    TypeRegistry::const_iterator type_it = d->all->find(type);
-    if (type_it == d->all->end()) {
-        type_it = d->all->find("*");
-    }
-    if (type_it == d->all->end()) {
-        return SubtypeRegistry();
-    }
-
-    const SubtypeRegistry &subtype_reg = type_it->second;
-    if (subtype_reg.empty()) {
-        return SubtypeRegistry();
-    }
-    return subtype_reg;
-}
-
-SubtypeRegistry::const_iterator BodyPartFormatterFactory::createForIterator(const char *type, const char *subtype) const
-{
-    if (!type || !*type) {
-        type = "*";    //krazy:exclude=doublequote_chars
-    }
-    if (!subtype || !*subtype) {
-        subtype = "*";    //krazy:exclude=doublequote_chars
-    }
-
-    d->setup();
-    assert(d->all);
-
-    if (d->all->empty()) {
-        return SubtypeRegistry::const_iterator();
-    }
-
-    TypeRegistry::const_iterator type_it = d->all->find(type);
-    if (type_it == d->all->end()) {
-        type_it = d->all->find("*");
-    }
-    if (type_it == d->all->end()) {
-        return SubtypeRegistry::const_iterator();
-    }
-
-    const SubtypeRegistry &subtype_reg = type_it->second;
-    if (subtype_reg.empty()) {
-        return SubtypeRegistry::const_iterator();
-    }
-
-    SubtypeRegistry::const_iterator subtype_it = subtype_reg.find(subtype);
-    qDebug() << type << subtype << subtype_reg.size();
-    if (subtype_it == subtype_reg.end()) {
-        subtype_it = subtype_reg.find("*");
-    }
-    if (subtype_it == subtype_reg.end()) {
-        return SubtypeRegistry::const_iterator();
-    }
-
-    if (!(*subtype_it).second) {
-        qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: a null bodypart formatter sneaked in for \""
-                                     << type << "/" << subtype << "\"!";
-    }
-
-    return subtype_it;
-}
-
-const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const char *type, const char *subtype) const
-{
-    const auto it = createForIterator(type, subtype);
-    if ((*it).second) {
-        return (*it).second;
-    }
-    return 0;
-}
-
-const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const QString &type, const QString &subtype) const
-{
-    return createFor(type.toLatin1(), subtype.toLatin1());
-}
-
-const Interface::BodyPartFormatter *BodyPartFormatterFactory::createFor(const QByteArray &type, const QByteArray &subtype) const
-{
-    return createFor(type.constData(), subtype.constData());
 }

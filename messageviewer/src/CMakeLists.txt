@@ -108,7 +108,7 @@ endif()
 set(libmessageviewer_otp_SRCS
     interfaces/bodypartformatter.cpp
     viewer/bodypartformatter.cpp
-    viewer/bodypartformatterfactory.cpp
+    viewer/bodypartformatterbasefactory.cpp
     viewer/cryptohelper.cpp
     viewer/nodehelper.cpp
     viewer/objecttreeparser.cpp
@@ -128,7 +128,6 @@ set(libmessageviewer_otp_extra_SRCS
     utils/iconnamecache.cpp
     utils/mimetype.cpp
     viewer/converthtmltoplaintext.cpp
-    viewer/pluginloader_otp.cpp
     #HTML Writer
     htmlwriter/filehtmlwriter.cpp
     htmlwriter/queuehtmlwriter.cpp
@@ -137,6 +136,7 @@ set(libmessageviewer_otp_extra_SRCS
 set(libmessageviewer_viewer_SRCS
     viewer/attachmentstrategy.cpp
     viewer/bodypartformatter.cpp
+    viewer/bodypartformatterbasefactory.cpp
     viewer/bodypartformatterfactory.cpp
     viewer/cryptohelper.cpp
     viewer/csshelper.cpp
@@ -150,7 +150,6 @@ set(libmessageviewer_viewer_SRCS
     viewer/messagepart.cpp
     viewer/partnodebodypart.cpp
     viewer/pluginloaderbase.cpp
-    viewer/pluginloader.cpp
     viewer/viewer.cpp
     viewer/viewer_p.cpp
     viewer//webview/webviewaccesskey.cpp
