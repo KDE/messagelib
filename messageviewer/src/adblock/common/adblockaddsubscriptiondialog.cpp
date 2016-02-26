@@ -16,6 +16,7 @@
 */
 
 #include "adblockaddsubscriptiondialog.h"
+#include "adblockshowlistdialog.h"
 #include "adblockutil.h"
 
 #include <KLocalizedString>
@@ -28,6 +29,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QToolButton>
+#include <QPointer>
 
 using namespace MessageViewer;
 AdBlockAddSubscriptionDialog::AdBlockAddSubscriptionDialog(const QStringList &excludeList, QWidget *parent)
@@ -93,5 +95,12 @@ void AdBlockAddSubscriptionDialog::selectedList(QString &name, QString &url)
 
 void AdBlockAddSubscriptionDialog::slotShowList()
 {
-    //TODO
+    const QString url = mListSubscription->itemData(mListSubscription->currentIndex()).toString();
+    if (!url.isEmpty()) {
+        QPointer<AdBlockShowListDialog> dlg = new AdBlockShowListDialog(this);
+        dlg->setListName(mListSubscription->currentText());
+        dlg->setAdBlockListPath(QString(), url);
+        dlg->exec();
+        delete dlg;
+    }
 }
