@@ -20,6 +20,8 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
+class QAction;
+class KActionCollection;
 namespace MessageViewer
 {
 class NetworkPluginUrlInterceptorConfigureWidget;
@@ -32,6 +34,8 @@ public:
     ~NetworkPluginUrlInterceptor();
     virtual NetworkPluginUrlInterceptorInterface *createInterface(QObject *parent = Q_NULLPTR) = 0;
 
+    virtual void createActions(KActionCollection *ac);
+    virtual QList<QAction *> actions() const;
     virtual bool hasConfigureSupport() const;
     virtual MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *createConfigureWidget(QWidget *parent = Q_NULLPTR);
 };
