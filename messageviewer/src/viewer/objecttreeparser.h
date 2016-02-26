@@ -69,6 +69,7 @@ class AttachmentStrategy;
 class NodeHelper;
 class MessagePart;
 class MimeMessagePart;
+class BodyPartFormatterFactory;
 
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 typedef QSharedPointer<MimeMessagePart> MimeMessagePartPtr;
@@ -442,6 +443,7 @@ private:
     QString mHtmlContent;
     KMime::Content *mTopLevelContent;
     const Kleo::CryptoBackend::Protocol *mCryptoProtocol;
+    const BodyPartFormatterFactory *mBodyPartFormatterFactory;
 
     /// Show only one mime part means that the user has selected some node in the message structure
     /// viewer that is not the root, which means the user wants to only see the selected node and its
