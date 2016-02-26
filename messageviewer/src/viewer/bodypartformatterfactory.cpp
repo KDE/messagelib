@@ -47,7 +47,7 @@
 
 #include <assert.h>
 
-using namespace MessageViewer::BodyPartFormatterFactoryPrivate;
+using namespace MessageViewer::PrivateBodyPartFormatterFactory;
 using namespace MessageViewer;
 
 namespace
@@ -82,7 +82,7 @@ BodyPartFormatterFactory::~BodyPartFormatterFactory()
 
 static TypeRegistry *all = 0;
 
-static void insertBodyPartFormatter(const char *type, const char *subtype,
+void MessageViewer::insertBodyPartFormatter(const char *type, const char *subtype,
                                     const Interface::BodyPartFormatter *formatter)
 {
     if (!type || !*type || !subtype || !*subtype || !formatter || !all) {
@@ -156,7 +156,7 @@ static void setup()
 {
     if (!all) {
         all = new TypeRegistry();
-        messageviewer_create_builtin_bodypart_formatters(all);
+        messageviewer_create_builtin_bodypart_formatters();
         loadPlugins();
     }
 }

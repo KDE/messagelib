@@ -30,6 +30,8 @@
 */
 
 #include "messageviewer_debug.h"
+
+#include "bodypartformatterfactory.h"
 #include "viewer/bodypartformatterfactory_p.h"
 #include "viewer/attachmentstrategy.h"
 #include "interfaces/bodypartformatter.h"
@@ -194,35 +196,31 @@ typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
 #undef CREATE_BODY_PART_FORMATTER
 } // anon namespace
 
-// FIXME: port some more BodyPartFormatters to Interface::BodyPartFormatters
-void BodyPartFormatterFactoryPrivate::messageviewer_create_builtin_bodypart_formatters(BodyPartFormatterFactoryPrivate::TypeRegistry *reg)
+void PrivateBodyPartFormatterFactory::messageviewer_create_builtin_bodypart_formatters()
 {
-    if (!reg) {
-        return;
-    }
-    (*reg)["application"].insert(std::make_pair("octet-stream", AnyTypeBodyPartFormatter::create()));
-    (*reg)["application"].insert(std::make_pair("pgp", ApplicationPgpBodyPartFormatter::create()));
-    (*reg)["application"].insert(std::make_pair("pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create()));
-    (*reg)["application"].insert(std::make_pair("x-pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create()));
-    (*reg)["application"].insert(std::make_pair("*", AnyTypeBodyPartFormatter::create()));
+    insertBodyPartFormatter("application", "octet-stream", AnyTypeBodyPartFormatter::create());
+    insertBodyPartFormatter("application", "pgp", ApplicationPgpBodyPartFormatter::create());
+    insertBodyPartFormatter("application", "pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
+    insertBodyPartFormatter("application", "x-pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
+    insertBodyPartFormatter("application", "*", AnyTypeBodyPartFormatter::create());
 
-    (*reg)["text"].insert(std::make_pair("html", TextHtmlBodyPartFormatter::create()));
-    (*reg)["text"].insert(std::make_pair("rtf", AnyTypeBodyPartFormatter::create()));
-    (*reg)["text"].insert(std::make_pair("vcard", AnyTypeBodyPartFormatter::create()));
-    (*reg)["text"].insert(std::make_pair("x-vcard", AnyTypeBodyPartFormatter::create()));
-    (*reg)["text"].insert(std::make_pair("plain", MailmanBodyPartFormatter::create()));
-    (*reg)["text"].insert(std::make_pair("plain", TextPlainBodyPartFormatter::create()));
-    (*reg)["text"].insert(std::make_pair("*", MailmanBodyPartFormatter::create()));
-    (*reg)["text"].insert(std::make_pair("*", TextPlainBodyPartFormatter::create()));
+    insertBodyPartFormatter("text", "html", TextHtmlBodyPartFormatter::create());
+    insertBodyPartFormatter("text", "rtf", AnyTypeBodyPartFormatter::create());
+    insertBodyPartFormatter("text", "vcard", AnyTypeBodyPartFormatter::create());
+    insertBodyPartFormatter("text", "x-vcard", AnyTypeBodyPartFormatter::create());
+    insertBodyPartFormatter("text", "plain", MailmanBodyPartFormatter::create());
+    insertBodyPartFormatter("text", "plain", TextPlainBodyPartFormatter::create());
+    insertBodyPartFormatter("text", "*", MailmanBodyPartFormatter::create());
+    insertBodyPartFormatter("text", "*", TextPlainBodyPartFormatter::create());
 
-    (*reg)["image"].insert(std::make_pair("*", ImageTypeBodyPartFormatter::create()));
+    insertBodyPartFormatter("image", "*", ImageTypeBodyPartFormatter::create());
 
-    (*reg)["message"].insert(std::make_pair("rfc822", MessageRfc822BodyPartFormatter::create()));
-    (*reg)["message"].insert(std::make_pair("*", AnyTypeBodyPartFormatter::create()));
+    insertBodyPartFormatter("message", "rfc822", MessageRfc822BodyPartFormatter::create());
+    insertBodyPartFormatter("message", "*", AnyTypeBodyPartFormatter::create());
 
-    (*reg)["multipart"].insert(std::make_pair("alternative", MultiPartAlternativeBodyPartFormatter::create()));
-    (*reg)["multipart"].insert(std::make_pair("encrypted", MultiPartEncryptedBodyPartFormatter::create()));
-    (*reg)["multipart"].insert(std::make_pair("signed", MultiPartSignedBodyPartFormatter::create()));
-    (*reg)["multipart"].insert(std::make_pair("*", MultiPartMixedBodyPartFormatter::create()));
-    (*reg)["*"].insert(std::make_pair("*", AnyTypeBodyPartFormatter::create()));
+    insertBodyPartFormatter("multipart", "alternative", MultiPartAlternativeBodyPartFormatter::create());
+    insertBodyPartFormatter("multipart", "encrypted", MultiPartEncryptedBodyPartFormatter::create());
+    insertBodyPartFormatter("multipart", "signed", MultiPartSignedBodyPartFormatter::create());
+    insertBodyPartFormatter("multipart", "*", MultiPartMixedBodyPartFormatter::create());
+    insertBodyPartFormatter("*", "*", AnyTypeBodyPartFormatter::create());
 }

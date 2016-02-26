@@ -55,6 +55,9 @@ struct ltstr {
 };
 
 typedef std::multimap<const char *, const Interface::BodyPartFormatter *, ltstr> SubtypeRegistry;
+typedef std::map<const char *, MessageViewer::SubtypeRegistry, MessageViewer::ltstr> TypeRegistry;
+
+void insertBodyPartFormatter(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
 
 class BodyPartFormatterFactory
 {

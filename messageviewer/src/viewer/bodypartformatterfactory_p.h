@@ -34,22 +34,15 @@
 #ifndef __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_P_H__
 #define __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_P_H__
 
-#include "bodypartformatterfactory.h"
-
-#include <map>
-
-#include <QString>
-
 namespace MessageViewer
 {
 
-namespace BodyPartFormatterFactoryPrivate
+namespace PrivateBodyPartFormatterFactory
 {
 
-typedef std::map<const char *, MessageViewer::SubtypeRegistry, MessageViewer::ltstr> TypeRegistry;
 
 // defined in bodypartformatters.cpp
-extern void messageviewer_create_builtin_bodypart_formatters(TypeRegistry *);
+void messageviewer_create_builtin_bodypart_formatters();
 }
 
 }
