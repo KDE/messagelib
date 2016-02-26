@@ -36,4 +36,21 @@ void AdBlockAutomaticRulesListWidgetTest::shouldHaveDefaultValue()
     QCOMPARE(w.count(), 0);
 }
 
+void AdBlockAutomaticRulesListWidgetTest::shouldCreateRules_data()
+{
+    QTest::addColumn<QString>("rules");
+    QTest::addColumn<int>("numberOfItem");
+    QTest::newRow("notest") <<  QString() << 0;
+}
+
+void AdBlockAutomaticRulesListWidgetTest::shouldCreateRules()
+{
+    QFETCH(QString, rules);
+    QFETCH(int, numberOfItem);
+
+    MessageViewer::AdBlockAutomaticRulesListWidget w;
+    w.setRules(rules);
+    QCOMPARE(w.count(), numberOfItem);
+}
+
 QTEST_MAIN(AdBlockAutomaticRulesListWidgetTest)

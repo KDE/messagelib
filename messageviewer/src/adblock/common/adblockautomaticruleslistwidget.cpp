@@ -34,5 +34,19 @@ AdBlockAutomaticRulesListWidget::~AdBlockAutomaticRulesListWidget()
 void AdBlockAutomaticRulesListWidget::setRules(const QString &rules)
 {
     clear();
+    const QStringList lst = rules.split(QLatin1Char('\n'), QString::SkipEmptyParts);
+    Q_FOREACH(const QString &rule, lst) {
+        createItem(rule);
+    }
+}
 
+void AdBlockAutomaticRulesListWidget::createItem(const QString &rule)
+{
+    if (rule.startsWith(QLatin1Char('!'))) {
+
+    }
+    QListWidgetItem *subItem = new QListWidgetItem(this);
+    subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+    subItem->setCheckState(Qt::Checked);
+    subItem->setText(rule);
 }

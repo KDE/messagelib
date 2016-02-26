@@ -29,6 +29,9 @@ public:
     explicit AdBlockAutomaticRulesListWidget(QWidget *parent = Q_NULLPTR);
     ~AdBlockAutomaticRulesListWidget();
     void setRules(const QString &rules);
+
+private:
+    void createItem(const QString &rule);
 };
 }
 

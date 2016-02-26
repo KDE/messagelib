@@ -28,6 +28,8 @@ public:
     ~AdBlockAutomaticRulesListWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldCreateRules_data();
+    void shouldCreateRules();
 };
 
 #endif // ADBLOCKAUTOMATICRULESLISTWIDGETTEST_H
