@@ -23,6 +23,7 @@
 #include "converthtmltoplaintext.h"
 #include "csshelper.h"
 #include "cryptohelper.h"
+#include "utils/iconnamecache.h"
 
 #include <MessageCore/StringUtil>
 
@@ -1812,8 +1813,7 @@ void CryptoMessagePart::writeDeferredDecryptionBlock() const
         return;
     }
 
-    const QString iconName = QUrl::fromLocalFile(KIconLoader::global()->iconPath(QStringLiteral("document-decrypt"),
-                             KIconLoader::Small)).url();
+    const QString iconName = QUrl::fromLocalFile(IconNameCache::instance()->iconPath(QStringLiteral("document-decrypt"), KIconLoader::Small)).url();
     writer->queue(QLatin1String("<div style=\"font-size:large; text-align:center;"
                                 "padding-top:20pt;\">")
                   + i18n("This message is encrypted.")
