@@ -72,9 +72,7 @@ void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
     if (!isAutoSearch && !mLastSearchStr.contains(searchWord, Qt::CaseSensitive)) {
         clearSelections();
     }
-#if 0 //TODO fix me
-    d->mView->findText(QString(), QWebEnginePage::HighlightAllOccurrences); //Clear an existing highligh
-#endif
+    d->mView->findText(QString()); //Clear an existing highligh
     mLastSearchStr = searchWord;
     d->mView->findText(mLastSearchStr, searchOptions, [this](bool found) {
         setFoundMatch(found);
@@ -121,12 +119,7 @@ void FindBarWebEngineView::updateSensitivity(bool sensitivity)
 
 void FindBarWebEngineView::clearSelections()
 {
-    //TODO fix me
-#if 0
-    //WEBKIT: TODO: Find a way to unselect last selection
-    // http://bugreports.qt.nokia.com/browse/QTWEBKIT-80
-    d->mView->findText(QString(), QWebEnginePage::HighlightAllOccurrences);
-#endif
+    d->mView->findText(QString());
     mLastSearchStr.clear();
     FindBarBase::clearSelections();
 }
