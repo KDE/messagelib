@@ -28,13 +28,11 @@ class MessageViewer::FindBarWebEngineViewPrivate
 {
 public:
     FindBarWebEngineViewPrivate()
-        : mView(Q_NULLPTR),
-          mHighlightAll(Q_NULLPTR)
+        : mView(Q_NULLPTR)
     {
 
     }
     QWebEngineView *mView;
-    QAction *mHighlightAll;
 };
 
 FindBarWebEngineView::FindBarWebEngineView(QWebEngineView *view, QWidget *parent)
@@ -42,10 +40,6 @@ FindBarWebEngineView::FindBarWebEngineView(QWebEngineView *view, QWidget *parent
       d(new MessageViewer::FindBarWebEngineViewPrivate)
 {
     d->mView = view;
-    QMenu *options = optionsMenu();
-    d->mHighlightAll = options->addAction(i18n("Highlight all matches"));
-    d->mHighlightAll->setCheckable(true);
-    connect(d->mHighlightAll, &QAction::toggled, this, &FindBarWebEngineView::slotHighlightAllChanged);
 }
 
 FindBarWebEngineView::~FindBarWebEngineView()
@@ -63,11 +57,6 @@ void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
     if (mCaseSensitiveAct->isChecked()) {
         searchOptions |= QWebEnginePage::FindCaseSensitively;
     }
-#if 0 //Not supported yet
-    if (d->mHighlightAll->isChecked()) {
-        searchOptions |= QWebEnginePage::HighlightAllOccurrences;
-    }
-#endif
     const QString searchWord(mSearch->text());
     if (!isAutoSearch && !mLastSearchStr.contains(searchWord, Qt::CaseSensitive)) {
         clearSelections();
@@ -79,42 +68,16 @@ void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
     });
 }
 
-void FindBarWebEngineView::updateHighLight(bool highLight)
-{
-    bool found = false;
-    if (highLight) {
-        QWebEnginePage::FindFlags searchOptions; //TODO not supported = QWebEnginePage::FindWrapsAroundDocument;
-        if (mCaseSensitiveAct->isChecked()) {
-            searchOptions |= QWebEnginePage::FindCaseSensitively;
-        }
-        //TODO not supported searchOptions |= QWebEnginePage::HighlightAllOccurrences;
-        d->mView->findText(mLastSearchStr, searchOptions, [this](bool found) {
-            setFoundMatch(found);
-        });
-    } else {
-#if 0
-        d->mView->findText(QString(), searchOptions, [this](bool found) {
-            setFoundMatch(found);
-        });
-#endif
-    }
-    setFoundMatch(found);
-}
-
 void FindBarWebEngineView::updateSensitivity(bool sensitivity)
 {
-#if 0
-    QWebEnginePage::FindFlags searchOptions; //TODO not supported = QWebEnginePage::FindWrapsAroundDocument;
+    QWebEnginePage::FindFlags searchOptions;
     if (sensitivity) {
-        searchOptions |= QWebPage::FindCaseSensitively;
-        d->mView->findText(QString(), QWebEnginePage::HighlightAllOccurrences); //Clear an existing highligh
+        searchOptions |= QWebEnginePage::FindCaseSensitively;
+        d->mView->findText(QString()); //Clear an existing highligh
     }
-    if (d->mHighlightAll->isChecked()) {
-        searchOptions |= QWebEnginePage::HighlightAllOccurrences;
-    }
-    const bool found = d->mView->findText(mLastSearchStr, searchOptions);
-    setFoundMatch(found);
-#endif
+    d->mView->findText(QString(), searchOptions, [this](bool found) {
+        setFoundMatch(found);
+    });
 }
 
 void FindBarWebEngineView::clearSelections()
