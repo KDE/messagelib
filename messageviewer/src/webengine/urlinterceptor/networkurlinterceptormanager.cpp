@@ -25,27 +25,28 @@ using namespace MessageViewer;
 class MessageViewer::NetworkUrlInterceptorManagerPrivate
 {
 public:
-    NetworkUrlInterceptorManagerPrivate(NetworkUrlInterceptorManager *qq)
+    NetworkUrlInterceptorManagerPrivate(KActionCollection *ac, NetworkUrlInterceptorManager *qq)
         : q(qq)
     {
-        createInterfaces();
+        createInterfaces(ac);
     }
-    void createInterfaces();
+    void createInterfaces(KActionCollection *ac);
     QVector<MessageViewer::NetworkPluginUrlInterceptorInterface *> mListInterface;
     NetworkUrlInterceptorManager *q;
 };
 
-void NetworkUrlInterceptorManagerPrivate::createInterfaces()
+void NetworkUrlInterceptorManagerPrivate::createInterfaces(KActionCollection *ac)
 {
     Q_FOREACH (NetworkPluginUrlInterceptor *plugin, NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
         MessageViewer::NetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(q);
+        plugin->createActions(ac);
         mListInterface.append(interface);
     }
 }
 
-NetworkUrlInterceptorManager::NetworkUrlInterceptorManager(QObject *parent)
+NetworkUrlInterceptorManager::NetworkUrlInterceptorManager(KActionCollection *ac, QObject *parent)
     : QObject(parent),
-      d(new NetworkUrlInterceptorManagerPrivate(this))
+      d(new NetworkUrlInterceptorManagerPrivate(ac, this))
 {
 
 }

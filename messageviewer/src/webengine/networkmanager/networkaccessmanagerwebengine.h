@@ -20,6 +20,7 @@
 
 #include <QNetworkAccessManager>
 #include "messageviewer_export.h"
+class KActionCollection;
 namespace MessageViewer
 {
 class NetworkAccessManagerWebEnginePrivate;
@@ -27,7 +28,7 @@ class MESSAGEVIEWER_EXPORT NetworkAccessManagerWebEngine : public QNetworkAccess
 {
     Q_OBJECT
 public:
-    explicit NetworkAccessManagerWebEngine(QObject *parent = Q_NULLPTR);
+    explicit NetworkAccessManagerWebEngine(KActionCollection *ac, QObject *parent = Q_NULLPTR);
     ~NetworkAccessManagerWebEngine();
 private:
     NetworkAccessManagerWebEnginePrivate *const d;

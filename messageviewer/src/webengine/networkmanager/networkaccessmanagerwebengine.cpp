@@ -33,11 +33,11 @@ public:
     MessageViewer::NetworkUrlInterceptorManager *mManager;
 };
 
-NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QObject *parent)
+NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(KActionCollection *ac, QObject *parent)
     : QNetworkAccessManager(parent),
       d(new NetworkAccessManagerWebEnginePrivate)
 {
-    d->mManager = new MessageViewer::NetworkUrlInterceptorManager(this);
+    d->mManager = new MessageViewer::NetworkUrlInterceptorManager(ac, this);
 
     MessageViewer::NetworkUrlInterceptor *networkUrlInterceptor = new MessageViewer::NetworkUrlInterceptor(this);
     Q_FOREACH (MessageViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
