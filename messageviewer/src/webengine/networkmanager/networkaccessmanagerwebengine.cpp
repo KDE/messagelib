@@ -48,5 +48,5 @@ NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(KActionCollection *
 
 NetworkAccessManagerWebEngine::~NetworkAccessManagerWebEngine()
 {
-
+    delete d;
 }
