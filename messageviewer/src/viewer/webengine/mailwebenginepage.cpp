@@ -22,9 +22,8 @@
 using namespace MessageViewer;
 
 MailWebEnginePage::MailWebEnginePage(QObject *parent)
-    : QWebEnginePage(parent)
+    : MessageViewer::WebEnginePage(parent)
 {
-
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
 

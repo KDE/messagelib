@@ -19,14 +19,14 @@
 #define MAILWEBENGINE_H
 #include "messageviewer_export.h"
 #include <QWebEngineView>
-
+class KActionCollection;
 namespace MessageViewer
 {
 class MESSAGEVIEWER_EXPORT MailWebEngineView : public QWebEngineView
 {
     Q_OBJECT
 public:
-    explicit MailWebEngineView(QWidget *parent = Q_NULLPTR);
+    explicit MailWebEngineView(KActionCollection *ac, QWidget *parent = Q_NULLPTR);
     ~MailWebEngineView();
 Q_SIGNALS:
     void openUrl(const QUrl &url);

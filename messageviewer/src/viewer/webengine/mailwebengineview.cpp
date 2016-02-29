@@ -18,11 +18,14 @@
 #include "mailwebengineview.h"
 #include "mailwebenginepage.h"
 
+#include <MessageViewer/NetworkAccessManagerWebEngine>
+
 using namespace MessageViewer;
 
-MailWebEngineView::MailWebEngineView(QWidget *parent)
+MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     : QWebEngineView(parent)
 {
+    new MessageViewer::NetworkAccessManagerWebEngine(ac, this);
     MailWebEnginePage *pageEngine = new MailWebEnginePage(this);
     setPage(pageEngine);
 
