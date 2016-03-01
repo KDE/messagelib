@@ -100,6 +100,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         webengine/urlinterceptor/networkurlinterceptormanager.cpp
         webengine/urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
         webengine/webhittestresult.cpp
+        webengine/webhittest.cpp
         webengine/webenginepage.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
@@ -371,6 +372,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         HEADER_NAMES
         WebHitTestResult
         WebEnginePage
+        WebHitTest
         REQUIRED_HEADERS MessageViewer_webengine_misc_HEADERS
         PREFIX MessageViewer
         RELATIVE webengine/
