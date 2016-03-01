@@ -121,11 +121,19 @@ WebHitTestResult::WebHitTestResult(WebEnginePage *page, const QPoint &pos, QObje
                                     "})()");
 
     const QString &js = source.arg(pos.x()).arg(pos.y());
-    init(page->url(), page->execJavaScript(js).toMap());
+    //init(page->url(), page->execJavaScript(js).toMap());
+    m_pageUrl = page->url();
+    page->runJavaScript(js, invoke(this, &WebHitTestResult::handleHitTest));
 }
 
 WebHitTestResult::~WebHitTestResult()
 {
+}
+
+void WebHitTestResult::handleHitTest(const QVariant &result)
+{
+    qDebug()<<" result"   <<result.toMap();
+    //init(result.toMap());
 }
 
 QString WebHitTestResult::alternateText() const
@@ -193,7 +201,7 @@ QString WebHitTestResult::tagName() const
     return m_tagName;
 }
 
-void WebHitTestResult::init(const QUrl &url, const QVariantMap &map)
+void WebHitTestResult::init(const QVariantMap &map)
 {
     if (map.isEmpty()) {
         return;
@@ -216,13 +224,13 @@ void WebHitTestResult::init(const QUrl &url, const QVariantMap &map)
     }
 
     if (!m_imageUrl.isEmpty()) {
-        m_imageUrl = url.resolved(m_imageUrl);
+        m_imageUrl = m_pageUrl.resolved(m_imageUrl);
     }
     if (!m_linkUrl.isEmpty()) {
-        m_linkUrl = url.resolved(m_linkUrl);
+        m_linkUrl = m_pageUrl.resolved(m_linkUrl);
     }
     if (!m_mediaUrl.isEmpty()) {
-        m_mediaUrl = url.resolved(m_mediaUrl);
+        m_mediaUrl = m_pageUrl.resolved(m_mediaUrl);
     }
 }
 

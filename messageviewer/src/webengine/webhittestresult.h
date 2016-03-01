@@ -68,8 +68,10 @@ public:
 Q_SIGNALS:
     void finished(WebHitTestResult *);
 
+private Q_SLOTS:
+    void handleHitTest(const QVariant &result);
 private:
-    void init(const QUrl &url, const QVariantMap &map);
+    void init(const QVariantMap &map);
 
     bool m_isNull;
     QString m_alternateText;
@@ -84,6 +86,7 @@ private:
     bool m_mediaMuted;
     QPoint m_pos;
     QString m_tagName;
+    QUrl m_pageUrl;
 };
 }
 #endif // WEBHITTESTRESULT_H
