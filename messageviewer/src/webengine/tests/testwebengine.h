@@ -23,6 +23,7 @@
 namespace MessageViewer
 {
 class WebEnginePage;
+class WebHitTestResult;
 }
 
 class TestWebEngineView : public QWebEngineView
@@ -32,6 +33,8 @@ public:
     explicit TestWebEngineView(QWidget *parent = Q_NULLPTR);
 protected:
     void contextMenuEvent(QContextMenuEvent *e);
+private Q_SLOTS:
+    void slotHitTestFinished(const MessageViewer::WebHitTestResult &result);
 };
 
 class TestWebEngine : public QWidget

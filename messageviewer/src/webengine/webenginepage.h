@@ -23,6 +23,7 @@
 #include <QVariant>
 namespace MessageViewer
 {
+class WebHitTest;
 class WebHitTestResult;
 class WebEnginePagePrivate;
 class MESSAGEVIEWER_EXPORT WebEnginePage : public QWebEnginePage
@@ -31,7 +32,7 @@ class MESSAGEVIEWER_EXPORT WebEnginePage : public QWebEnginePage
 public:
     explicit WebEnginePage(QObject *parent = Q_NULLPTR);
     ~WebEnginePage();
-    WebHitTestResult *hitTestContent(const QPoint &pos);
+    MessageViewer::WebHitTest *hitTestContent(const QPoint &pos);
     QVariant execJavaScript(const QString &scriptSource, int timeout = 500);
 
 private:

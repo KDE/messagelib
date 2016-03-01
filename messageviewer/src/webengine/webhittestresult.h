@@ -41,16 +41,15 @@
 #include <QRect>
 #include <QString>
 #include <QVariantMap>
+class QWebEnginePage;
 
 namespace MessageViewer
 {
-class WebEnginePage;
-class MESSAGEVIEWER_EXPORT WebHitTestResult : public QObject
+class MESSAGEVIEWER_EXPORT WebHitTestResult
 {
-    Q_OBJECT
 public:
-    explicit WebHitTestResult(MessageViewer::WebEnginePage *page, const QPoint &pos, QObject *parent = Q_NULLPTR);
-    ~WebHitTestResult();
+    WebHitTestResult(const QPoint &pos, const QUrl &url, const QVariant &result);
+
     QString alternateText() const;
     QRect boundingRect() const;
     QUrl imageUrl() const;
@@ -65,11 +64,6 @@ public:
     QPoint pos() const;
     QString tagName() const;
 
-Q_SIGNALS:
-    void finished(WebHitTestResult *);
-
-private Q_SLOTS:
-    void handleHitTest(const QVariant &result);
 private:
     void init(const QVariantMap &map);
 
@@ -86,6 +80,24 @@ private:
     bool m_mediaMuted;
     QPoint m_pos;
     QString m_tagName;
+    QUrl m_pageUrl;
+
+};
+
+class MESSAGEVIEWER_EXPORT WebHitTest : public QObject
+{
+    Q_OBJECT
+public:
+    explicit WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent = Q_NULLPTR);
+    ~WebHitTest();
+
+Q_SIGNALS:
+    void finished(const WebHitTestResult &result);
+
+private Q_SLOTS:
+    void handleHitTest(const QVariant &result);
+private:
+    QPoint m_pos;
     QUrl m_pageUrl;
 };
 }

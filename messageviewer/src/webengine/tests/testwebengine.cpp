@@ -54,23 +54,27 @@ TestWebEngineView::TestWebEngineView(QWidget *parent)
     setContextMenuPolicy(Qt::DefaultContextMenu);
 }
 
+void TestWebEngineView::slotHitTestFinished(const MessageViewer::WebHitTestResult &result)
+{
+    qDebug() << " alternateText" << result.alternateText();
+    qDebug() << " boundingRect" << result.boundingRect();
+    qDebug() << " imageUrl" << result.imageUrl();
+    qDebug() << " isContentEditable" << result.isContentEditable();
+    qDebug() << " isContentSelected" << result.isContentSelected();
+    qDebug() << " isNull" << result.isNull();
+    qDebug() << " linkTitle" << result.linkTitle();
+    qDebug() << " linkUrl" << result.linkUrl();
+    qDebug() << " mediaUrl" << result.mediaUrl();
+    qDebug() << " mediaPaused" << result.mediaPaused();
+    qDebug() << " mediaMuted" << result.mediaMuted();
+    qDebug() << " pos" << result.pos();
+    qDebug() << " tagName" << result.tagName();
+
+}
+
 void TestWebEngineView::contextMenuEvent(QContextMenuEvent *e)
 {
     qDebug() << " void TestWebEngine::contextMenuEvent(QContextMenuEvent *e)";
-    MessageViewer::WebHitTestResult *webHit = static_cast<MessageViewer::WebEnginePage *>(page())->hitTestContent(e->pos());
-
-    qDebug() << " alternateText" << webHit->alternateText();
-    qDebug() << " boundingRect" << webHit->boundingRect();
-    qDebug() << " imageUrl" << webHit->imageUrl();
-    qDebug() << " isContentEditable" << webHit->isContentEditable();
-    qDebug() << " isContentSelected" << webHit->isContentSelected();
-    qDebug() << " isNull" << webHit->isNull();
-    qDebug() << " linkTitle" << webHit->linkTitle();
-    qDebug() << " linkUrl" << webHit->linkUrl();
-    qDebug() << " mediaUrl" << webHit->mediaUrl();
-    qDebug() << " mediaPaused" << webHit->mediaPaused();
-    qDebug() << " mediaMuted" << webHit->mediaMuted();
-    qDebug() << " pos" << webHit->pos();
-    qDebug() << " tagName" << webHit->tagName();
-    delete webHit;
+    MessageViewer::WebHitTest *webHit = static_cast<MessageViewer::WebEnginePage *>(page())->hitTestContent(e->pos());
+    connect(webHit, &MessageViewer::WebHitTest::finished, this, &TestWebEngineView::slotHitTestFinished);
 }

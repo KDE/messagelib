@@ -33,7 +33,6 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * ============================================================ */
 #include "webhittestresult.h"
-#include "webenginepage.h"
 #include <QWebEnginePage>
 
 using namespace MessageViewer;
@@ -57,13 +56,8 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
     return wrapper;
 }
 
-WebHitTestResult::WebHitTestResult(WebEnginePage *page, const QPoint &pos, QObject *parent)
+WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
     : QObject(parent),
-      m_isNull(true),
-      m_isContentEditable(false),
-      m_isContentSelected(false),
-      m_mediaPaused(false),
-      m_mediaMuted(false),
       m_pos(pos)
 {
     QString source = QStringLiteral("(function() {"
@@ -121,19 +115,31 @@ WebHitTestResult::WebHitTestResult(WebEnginePage *page, const QPoint &pos, QObje
                                     "})()");
 
     const QString &js = source.arg(pos.x()).arg(pos.y());
-    //init(page->url(), page->execJavaScript(js).toMap());
     m_pageUrl = page->url();
-    page->runJavaScript(js, invoke(this, &WebHitTestResult::handleHitTest));
+    page->runJavaScript(js, invoke(this, &WebHitTest::handleHitTest));
 }
 
-WebHitTestResult::~WebHitTestResult()
+WebHitTest::~WebHitTest()
 {
 }
 
-void WebHitTestResult::handleHitTest(const QVariant &result)
+void WebHitTest::handleHitTest(const QVariant &result)
 {
-    qDebug()<<" result"   <<result.toMap();
-    //init(result.toMap());
+    const WebHitTestResult webHitResult(m_pos, m_pageUrl, result);
+    Q_EMIT finished(webHitResult);
+    deleteLater();
+}
+
+WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &url, const QVariant &result)
+    : m_isNull(true),
+      m_isContentEditable(false),
+      m_isContentSelected(false),
+      m_mediaPaused(false),
+      m_mediaMuted(false),
+      m_pos(pos),
+      m_pageUrl(url)
+{
+    init(result.toMap());
 }
 
 QString WebHitTestResult::alternateText() const
@@ -206,7 +212,7 @@ void WebHitTestResult::init(const QVariantMap &map)
     if (map.isEmpty()) {
         return;
     }
-
+    qDebug()<<" void WebHitTestResult::init(const QVariantMap &map)"<<map;
     m_alternateText = map.value(QStringLiteral("alternateText")).toString();
     m_imageUrl = map.value(QStringLiteral("imageUrl")).toUrl();
     m_isContentEditable = map.value(QStringLiteral("contentEditable")).toBool();
@@ -223,9 +229,11 @@ void WebHitTestResult::init(const QVariantMap &map)
         m_boundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
     }
 
+    qDebug()<<" m_imageUrl"<<m_imageUrl;
     if (!m_imageUrl.isEmpty()) {
         m_imageUrl = m_pageUrl.resolved(m_imageUrl);
     }
+    qDebug()<<" after "<< m_imageUrl;
     if (!m_linkUrl.isEmpty()) {
         m_linkUrl = m_pageUrl.resolved(m_linkUrl);
     }
