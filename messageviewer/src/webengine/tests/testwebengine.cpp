@@ -56,20 +56,20 @@ TestWebEngineView::TestWebEngineView(QWidget *parent)
 
 void TestWebEngineView::contextMenuEvent(QContextMenuEvent *e)
 {
-    qDebug()<<" void TestWebEngine::contextMenuEvent(QContextMenuEvent *e)";
+    qDebug() << " void TestWebEngine::contextMenuEvent(QContextMenuEvent *e)";
     const MessageViewer::WebHitTestResult webHit = static_cast<MessageViewer::WebEnginePage *>(page())->hitTestContent(e->pos());
 
-    qDebug() << " alternateText"<<webHit.alternateText();
-    qDebug() << " boundingRect"<<webHit.boundingRect();
-    qDebug() << " imageUrl"<<webHit.imageUrl();
-    qDebug() << " isContentEditable"<<webHit.isContentEditable();
-    qDebug() << " isContentSelected"<<webHit.isContentSelected();
-    qDebug() << " isNull"<<webHit.isNull();
-    qDebug() << " linkTitle"<<webHit.linkTitle();
-    qDebug() << " linkUrl"<<webHit.linkUrl();
-    qDebug() << " mediaUrl"<<webHit.mediaUrl();
-    qDebug() << " mediaPaused"<<webHit.mediaPaused();
-    qDebug() << " mediaMuted"<<webHit.mediaMuted();
-    qDebug() << " pos"<<webHit.pos();
-    qDebug() << " tagName"<<webHit.tagName();
+    qDebug() << " alternateText" << webHit.alternateText();
+    qDebug() << " boundingRect" << webHit.boundingRect();
+    qDebug() << " imageUrl" << webHit.imageUrl();
+    qDebug() << " isContentEditable" << webHit.isContentEditable();
+    qDebug() << " isContentSelected" << webHit.isContentSelected();
+    qDebug() << " isNull" << webHit.isNull();
+    qDebug() << " linkTitle" << webHit.linkTitle();
+    qDebug() << " linkUrl" << webHit.linkUrl();
+    qDebug() << " mediaUrl" << webHit.mediaUrl();
+    qDebug() << " mediaPaused" << webHit.mediaPaused();
+    qDebug() << " mediaMuted" << webHit.mediaMuted();
+    qDebug() << " pos" << webHit.pos();
+    qDebug() << " tagName" << webHit.tagName();
 }

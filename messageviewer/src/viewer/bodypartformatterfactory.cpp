@@ -50,7 +50,6 @@ DEFINE_PLUGIN_LOADER(BodyPartFormatterPluginLoader,
 
 }
 
-
 BodyPartFormatterFactory::BodyPartFormatterFactory()
     : BodyPartFormatterBaseFactory()
 {

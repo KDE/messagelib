@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "adblockaddsubscriptiondialogtest.h"
 #include "../adblockaddsubscriptiondialog.h"
 #include "../adblockutil.h"
@@ -41,13 +40,12 @@ void AdBlockAddSubscriptionDialogTest::shouldHaveDefaultValue()
     QStringList lst;
     MessageViewer::AdBlockAddSubscriptionDialog w(lst);
 
-
     QLabel *lab = w.findChild<QLabel *>(QStringLiteral("listsubscriptionlabel"));
     QVERIFY(lab);
 
     QComboBox *listSubscription = w.findChild<QComboBox *>(QStringLiteral("listsubscriptioncombobox"));
     QVERIFY(listSubscription);
-    QVERIFY(listSubscription->count()>0);
+    QVERIFY(listSubscription->count() > 0);
 
     QDialogButtonBox *buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("listsubscriptionbuttonBox"));
     QVERIFY(buttonBox);

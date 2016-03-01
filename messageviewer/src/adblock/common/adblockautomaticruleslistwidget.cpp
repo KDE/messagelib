@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "adblockautomaticruleslistwidget.h"
 
 using namespace MessageViewer;
@@ -35,7 +34,7 @@ void AdBlockAutomaticRulesListWidget::setRules(const QString &rules)
 {
     clear();
     const QStringList lst = rules.split(QLatin1Char('\n'), QString::SkipEmptyParts);
-    Q_FOREACH(const QString &rule, lst) {
+    Q_FOREACH (const QString &rule, lst) {
         createItem(rule);
     }
 }

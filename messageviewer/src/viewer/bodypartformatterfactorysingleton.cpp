@@ -36,7 +36,7 @@ using namespace MessageViewer;
 
 static QSharedPointer<BodyPartFormatterBaseFactory> singleton;
 
-const BodyPartFormatterBaseFactory* MessageViewer::bodyPartFormatterBaseFactoryInstance()
+const BodyPartFormatterBaseFactory *MessageViewer::bodyPartFormatterBaseFactoryInstance()
 {
     if (!singleton) {
         singleton = QSharedPointer<BodyPartFormatterBaseFactory>(new BodyPartFormatterFactory());

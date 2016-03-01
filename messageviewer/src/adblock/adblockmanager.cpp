@@ -184,7 +184,7 @@ void AdBlockManager::loadRules(const QString &rulesFilePath, const QStringList &
 }
 
 void AdBlockManager::loadRuleString(const QString &stringRule)
-{    
+{
     // empty rules are just dangerous..
     // (an empty rule in whitelist allows all, in blacklist blocks all..)
     if (stringRule.isEmpty()) {

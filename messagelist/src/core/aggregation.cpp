@@ -54,8 +54,8 @@ Aggregation::Grouping Aggregation::grouping() const
 }
 
 Aggregation::Aggregation(
-        const Aggregation &opt
-        )
+    const Aggregation &opt
+)
     : OptionSet(opt),
       mGrouping(opt.mGrouping),
       mGroupExpandPolicy(opt.mGroupExpandPolicy),
