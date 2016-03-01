@@ -49,7 +49,7 @@ FindBarWebEngineView::~FindBarWebEngineView()
 
 void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
 {
-    QWebEnginePage::FindFlags searchOptions; //TODO not implemented = QWebEnginePage::FindWrapsAroundDocument;
+    QWebEnginePage::FindFlags searchOptions;
 
     if (backward) {
         searchOptions |= QWebEnginePage::FindBackward;
