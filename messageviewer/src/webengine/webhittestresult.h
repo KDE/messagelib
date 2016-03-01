@@ -83,22 +83,5 @@ private:
     QUrl m_pageUrl;
 
 };
-
-class MESSAGEVIEWER_EXPORT WebHitTest : public QObject
-{
-    Q_OBJECT
-public:
-    explicit WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent = Q_NULLPTR);
-    ~WebHitTest();
-
-Q_SIGNALS:
-    void finished(const WebHitTestResult &result);
-
-private Q_SLOTS:
-    void handleHitTest(const QVariant &result);
-private:
-    QPoint m_pos;
-    QUrl m_pageUrl;
-};
 }
 #endif // WEBHITTESTRESULT_H
