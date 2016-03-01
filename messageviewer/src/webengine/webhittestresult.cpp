@@ -37,14 +37,34 @@
 #include <QWebEnginePage>
 
 using namespace MessageViewer;
+template<typename Arg, typename R, typename C>
 
-WebHitTestResult::WebHitTestResult(WebEnginePage *page, const QPoint &pos)
-    : m_isNull(true)
-    , m_isContentEditable(false)
-    , m_isContentSelected(false)
-    , m_mediaPaused(false)
-    , m_mediaMuted(false)
-    , m_pos(pos)
+struct InvokeWrapper
+{
+    R *receiver;
+    void (C::*memberFunction)(Arg);
+    void operator()(Arg result)
+    {
+        (receiver->*memberFunction)(result);
+    }
+};
+
+template<typename Arg, typename R, typename C>
+
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFunction};
+    return wrapper;
+}
+
+WebHitTestResult::WebHitTestResult(WebEnginePage *page, const QPoint &pos, QObject *parent)
+    : QObject(parent),
+      m_isNull(true),
+      m_isContentEditable(false),
+      m_isContentSelected(false),
+      m_mediaPaused(false),
+      m_mediaMuted(false),
+      m_pos(pos)
 {
     QString source = QStringLiteral("(function() {"
                                     "var e = document.elementFromPoint(%1, %2);"

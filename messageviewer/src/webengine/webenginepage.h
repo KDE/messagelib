@@ -31,7 +31,7 @@ class MESSAGEVIEWER_EXPORT WebEnginePage : public QWebEnginePage
 public:
     explicit WebEnginePage(QObject *parent = Q_NULLPTR);
     ~WebEnginePage();
-    WebHitTestResult hitTestContent(const QPoint &pos);
+    WebHitTestResult *hitTestContent(const QPoint &pos);
     QVariant execJavaScript(const QString &scriptSource, int timeout = 500);
 
 private:

@@ -36,6 +36,7 @@
 #define WebHitTestResult_H
 
 #include "messageviewer_export.h"
+#include <QObject>
 #include <QUrl>
 #include <QRect>
 #include <QString>
@@ -44,10 +45,11 @@
 namespace MessageViewer
 {
 class WebEnginePage;
-class MESSAGEVIEWER_EXPORT WebHitTestResult
+class MESSAGEVIEWER_EXPORT WebHitTestResult : public QObject
 {
+    Q_OBJECT
 public:
-    explicit WebHitTestResult(MessageViewer::WebEnginePage *page, const QPoint &pos);
+    explicit WebHitTestResult(MessageViewer::WebEnginePage *page, const QPoint &pos, QObject *parent = Q_NULLPTR);
     ~WebHitTestResult();
     QString alternateText() const;
     QRect boundingRect() const;
@@ -62,6 +64,9 @@ public:
     bool mediaMuted() const;
     QPoint pos() const;
     QString tagName() const;
+
+Q_SIGNALS:
+    void finished(WebHitTestResult *);
 
 private:
     void init(const QUrl &url, const QVariantMap &map);

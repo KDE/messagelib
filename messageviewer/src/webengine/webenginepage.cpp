@@ -45,9 +45,9 @@ WebEnginePage::~WebEnginePage()
     delete d;
 }
 
-MessageViewer::WebHitTestResult WebEnginePage::hitTestContent(const QPoint &pos)
+MessageViewer::WebHitTestResult *WebEnginePage::hitTestContent(const QPoint &pos)
 {
-    return WebHitTestResult(this, pos);
+    return new WebHitTestResult(this, pos);
 }
 
 QVariant WebEnginePage::execJavaScript(const QString &scriptSource, int timeout)
