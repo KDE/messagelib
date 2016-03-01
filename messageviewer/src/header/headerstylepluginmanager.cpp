@@ -22,7 +22,6 @@
 #include <kpluginmetadata.h>
 #include <QFileInfo>
 #include <QSet>
-#include <QDebug>
 
 using namespace MessageViewer;
 

@@ -29,7 +29,6 @@
 #include <KLocalizedString>
 #include <KToggleAction>
 
-#include <QDebug>
 
 using namespace MessageViewer;
 
@@ -107,7 +106,7 @@ void HeaderStyleMenuManagerPrivate::readSettings()
         } else if ((headerStyle == QLatin1String("plain")) && (headerSetDisplayed == QLatin1String("standard"))) { //Standard
             headerStyleName = QStringLiteral("standards-header");
         } else {
-            qDebug() << "unknown style : headerstyle " << headerStyle << " headerstrategy :" << headerSetDisplayed;
+            qCDebug(MESSAGEVIEWER_LOG) << "unknown style : headerstyle " << headerStyle << " headerstrategy :" << headerSetDisplayed;
         }
     }
     //Fallback

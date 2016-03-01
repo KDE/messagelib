@@ -33,8 +33,6 @@
 
 #include "headerstrategy.h"
 
-#include <qdebug.h>
-
 //
 // HeaderStrategy abstract base:
 //
