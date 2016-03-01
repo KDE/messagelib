@@ -234,7 +234,7 @@ void SearchLineStatus::createFilterByAction()
     mFilterMenu->addAction(mSearchAgainstFromOrToAction);
     mSearchAgainstFromOrToAction->setCheckable(true);
 
-    mSearchAgainstBccAction = new QAction(i18n("bcc"), mFilterMenu);
+    mSearchAgainstBccAction = new QAction(i18n("BCC"), mFilterMenu);
     grp->addAction(mSearchAgainstBccAction);
     mFilterMenu->addAction(mSearchAgainstBccAction);
     mSearchAgainstBccAction->setCheckable(true);
