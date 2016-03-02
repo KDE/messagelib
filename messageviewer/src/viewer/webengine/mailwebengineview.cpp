@@ -23,11 +23,24 @@
 
 using namespace MessageViewer;
 
-MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
-    : QWebEngineView(parent)
+class MessageViewer::MailWebEngineViewPrivate
 {
-    mWebViewAccessKey = new MailWebEngineAccessKey(this);
-    mWebViewAccessKey->setActionCollection(ac);
+public:
+    MailWebEngineViewPrivate()
+        : mWebViewAccessKey(Q_NULLPTR)
+    {
+
+    }
+    MailWebEngineAccessKey *mWebViewAccessKey;
+};
+
+MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
+    : QWebEngineView(parent),
+      d(new MessageViewer::MailWebEngineViewPrivate)
+
+{
+    d->mWebViewAccessKey = new MailWebEngineAccessKey(this);
+    d->mWebViewAccessKey->setActionCollection(ac);
 
     new MessageViewer::NetworkAccessManagerWebEngine(ac, this);
     MailWebEnginePage *pageEngine = new MailWebEnginePage(this);
@@ -39,5 +52,5 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
 
 MailWebEngineView::~MailWebEngineView()
 {
-
+    delete d;
 }

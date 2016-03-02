@@ -23,6 +23,7 @@ class KActionCollection;
 namespace MessageViewer
 {
 class MailWebEngineAccessKey;
+class MailWebEngineViewPrivate;
 class MESSAGEVIEWER_EXPORT MailWebEngineView : public QWebEngineView
 {
     Q_OBJECT
@@ -32,7 +33,7 @@ public:
 Q_SIGNALS:
     void openUrl(const QUrl &url);
 private:
-    MailWebEngineAccessKey *mWebViewAccessKey;
+    MailWebEngineViewPrivate *const d;
 };
 }
 
