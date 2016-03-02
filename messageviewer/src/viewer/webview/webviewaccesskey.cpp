@@ -40,7 +40,8 @@ public:
         Activated
     };
     WebViewAccessKeyPrivate(QWebView *webView)
-        : mWebView(webView),
+        : mAccessKeyActivated(NotActivated),
+          mWebView(webView),
           mActionCollection(Q_NULLPTR)
     {
 
