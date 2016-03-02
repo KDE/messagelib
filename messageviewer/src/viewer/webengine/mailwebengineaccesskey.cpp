@@ -24,11 +24,19 @@ using namespace MessageViewer;
 class MessageViewer::MailWebEngineAccessKeyPrivate
 {
 public:
+    enum AccessKeyState {
+        NotActivated,
+        PreActivated,
+        Activated
+    };
+
     MailWebEngineAccessKeyPrivate()
-        : mActionCollection(Q_NULLPTR)
+        : mAccessKeyActivated(NotActivated),
+          mActionCollection(Q_NULLPTR)
     {
 
     }
+    AccessKeyState mAccessKeyActivated;
     KActionCollection *mActionCollection;
 };
 
