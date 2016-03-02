@@ -17,15 +17,19 @@
 
 #include "mailwebengineaccesskey.h"
 
+#include <KActionCollection>
+
 using namespace MessageViewer;
 
 class MessageViewer::MailWebEngineAccessKeyPrivate
 {
 public:
     MailWebEngineAccessKeyPrivate()
+        : mActionCollection(Q_NULLPTR)
     {
 
     }
+    KActionCollection *mActionCollection;
 };
 
 MailWebEngineAccessKey::MailWebEngineAccessKey(QObject *parent)
@@ -38,4 +42,9 @@ MailWebEngineAccessKey::MailWebEngineAccessKey(QObject *parent)
 MailWebEngineAccessKey::~MailWebEngineAccessKey()
 {
     delete d;
+}
+
+void MailWebEngineAccessKey::setActionCollection(KActionCollection *ac)
+{
+    d->mActionCollection = ac;
 }

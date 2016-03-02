@@ -21,6 +21,7 @@
 #include "messageviewer_export.h"
 #include <QObject>
 
+class KActionCollection;
 namespace MessageViewer
 {
 class MailWebEngineAccessKeyPrivate;
@@ -30,6 +31,8 @@ class MESSAGEVIEWER_EXPORT MailWebEngineAccessKey : public QObject
 public:
     explicit MailWebEngineAccessKey(QObject *parent = Q_NULLPTR);
     ~MailWebEngineAccessKey();
+
+    void setActionCollection(KActionCollection *ac);
 
 private:
     MailWebEngineAccessKeyPrivate *const d;
