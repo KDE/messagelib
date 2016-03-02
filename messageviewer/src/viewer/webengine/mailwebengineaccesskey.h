@@ -22,6 +22,9 @@
 #include <QObject>
 
 class KActionCollection;
+class QWheelEvent;
+class QResizeEvent;
+class QKeyEvent;
 namespace MessageViewer
 {
 class MailWebEngineAccessKeyPrivate;
@@ -34,6 +37,10 @@ public:
 
     void setActionCollection(KActionCollection *ac);
 
+    void wheelEvent(QWheelEvent *e);
+    void resizeEvent(QResizeEvent *);
+    void keyPressEvent(QKeyEvent *e);
+    void keyReleaseEvent(QKeyEvent *e);
 private:
     MailWebEngineAccessKeyPrivate *const d;
 };

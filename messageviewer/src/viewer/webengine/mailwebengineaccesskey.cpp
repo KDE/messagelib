@@ -18,6 +18,7 @@
 #include "mailwebengineaccesskey.h"
 
 #include <KActionCollection>
+#include <QKeyEvent>
 
 using namespace MessageViewer;
 
@@ -55,4 +56,51 @@ MailWebEngineAccessKey::~MailWebEngineAccessKey()
 void MailWebEngineAccessKey::setActionCollection(KActionCollection *ac)
 {
     d->mActionCollection = ac;
+}
+
+void MailWebEngineAccessKey::wheelEvent(QWheelEvent *e)
+{
+    if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::PreActivated && (e->modifiers() & Qt::ControlModifier)) {
+        d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::NotActivated;
+    }
+}
+
+void MailWebEngineAccessKey::resizeEvent(QResizeEvent *)
+{
+    if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::Activated) {
+        //FIXME hideAccessKeys();
+    }
+}
+
+void MailWebEngineAccessKey::keyPressEvent(QKeyEvent *e)
+{
+#if 0
+    if (e && d->mWebView->hasFocus()) {
+        if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::Activated) {
+#if 0 //FIXME
+            if (checkForAccessKey(e)) {
+                hideAccessKeys();
+                e->accept();
+                return;
+            }
+            hideAccessKeys();
+#endif
+        } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier && !isEditableElement(d->mWebView->page())) {
+            d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::PreActivated; // Only preactive here, it will be actually activated in key release.
+        }
+    }
+#endif
+}
+
+void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
+{
+    if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::PreActivated) {
+        // Activate only when the CTRL key is pressed and released by itself.
+        if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
+            //FIXME showAccessKeys();
+            d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::Activated;
+        } else {
+            d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::NotActivated;
+        }
+    }
 }
