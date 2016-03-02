@@ -19,13 +19,23 @@
 
 using namespace MessageViewer;
 
+class MessageViewer::MailWebEngineAccessKeyPrivate
+{
+public:
+    MailWebEngineAccessKeyPrivate()
+    {
+
+    }
+};
+
 MailWebEngineAccessKey::MailWebEngineAccessKey(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      d(new MessageViewer::MailWebEngineAccessKeyPrivate)
 {
 
 }
 
 MailWebEngineAccessKey::~MailWebEngineAccessKey()
 {
-
+    delete d;
 }

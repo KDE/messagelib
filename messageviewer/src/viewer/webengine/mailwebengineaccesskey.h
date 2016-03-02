@@ -23,12 +23,16 @@
 
 namespace MessageViewer
 {
+class MailWebEngineAccessKeyPrivate;
 class MESSAGEVIEWER_EXPORT MailWebEngineAccessKey : public QObject
 {
     Q_OBJECT
 public:
     explicit MailWebEngineAccessKey(QObject *parent = Q_NULLPTR);
     ~MailWebEngineAccessKey();
+
+private:
+    MailWebEngineAccessKeyPrivate *const d;
 };
 }
 
