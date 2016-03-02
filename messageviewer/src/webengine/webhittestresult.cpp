@@ -119,7 +119,7 @@ void WebHitTestResult::init(const QVariantMap &map)
     if (map.isEmpty()) {
         return;
     }
-    qDebug()<<" void WebHitTestResult::init(const QVariantMap &map)"<<map;
+    //qDebug()<<" void WebHitTestResult::init(const QVariantMap &map)"<<map;
     m_alternateText = map.value(QStringLiteral("alternateText")).toString();
     m_imageUrl = map.value(QStringLiteral("imageUrl")).toUrl();
     m_isContentEditable = map.value(QStringLiteral("contentEditable")).toBool();
