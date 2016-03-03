@@ -20,6 +20,7 @@
 
 #include <QDialog>
 class QTabWidget;
+class QWebEnginePage;
 namespace MessageViewer
 {
 class FindBarSourceView;
@@ -32,7 +33,7 @@ public:
     ~MailSourceWebEngineViewer();
 
     void setRawSource(const QString &source);
-    void setDisplayedSource(const QString &source);
+    void setDisplayedSource(QWebEnginePage *page);
     void setFixedFont();
 private:
     QString reformat(const QString &src);

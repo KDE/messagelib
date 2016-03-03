@@ -42,6 +42,7 @@ using namespace MessageViewer;
 #include <QMenu>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QWebEnginePage>
 
 using namespace MessageViewer;
 
@@ -107,10 +108,21 @@ void MailSourceWebEngineViewer::setRawSource(const QString &source)
     mRawBrowser->setText(source);
 }
 
-void MailSourceWebEngineViewer::setDisplayedSource(const QString &source)
+struct SetPlainTextFunctor {
+    MailSourceViewTextBrowserWidget *textEdit;
+    explicit SetPlainTextFunctor(MailSourceViewTextBrowserWidget *textEdit)
+        : textEdit(textEdit)
+    {
+    }
+    void operator()(const QString &result) {
+        textEdit->setPlainText(result);
+    }
+};
+
+void MailSourceWebEngineViewer::setDisplayedSource(QWebEnginePage *page)
 {
 #ifndef NDEBUG
-    mHtmlBrowser->setPlainText(reformat(source));
+    page->toHtml(SetPlainTextFunctor(mHtmlBrowser));
 #else
     Q_UNUSED(source);
 #endif
