@@ -32,8 +32,6 @@
 #ifndef MAILSOURCEVIEWER_H
 #define MAILSOURCEVIEWER_H
 
-#include <QSyntaxHighlighter>
-#include <QPlainTextEdit>
 #include <QDialog>
 #include <KConfigGroup>
 class QTabWidget;

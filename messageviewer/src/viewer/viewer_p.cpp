@@ -95,6 +95,7 @@
 #include <QPrintDialog>
 #include <QHeaderView>
 #include <QMimeDatabase>
+#include <QWheelEvent>
 
 //libkdepim
 #include "Libkdepim/BroadcastStatus"
