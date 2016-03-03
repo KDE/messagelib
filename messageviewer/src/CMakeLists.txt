@@ -178,6 +178,12 @@ set(libmessageviewer_widgets_SRCS
     widgets/zoomactionmenu.cpp
     )
 
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+    set(libmessageviewer_widgets_webengine_SRCS
+       widgets/mailsourcewebengineviewer.cpp
+    )
+endif()
+
 set(libmessageviewer_header_SRCS
     header/contactdisplaymessagememento.cpp
     header/headerstrategy.cpp
@@ -253,6 +259,7 @@ set(libmessageviewer_viewerplugins_SRCS
     )
 
 set(libmessageviewer_SRCS
+    ${libmessageviewer_widgets_webengine_SRCS}
     ${libmessageviewer_webengine_SRCS}
     ${libmessageviewer_viewer_SRCS}
     ${libmessageviewer_widgets_SRCS}
