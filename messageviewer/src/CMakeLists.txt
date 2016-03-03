@@ -102,6 +102,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         webengine/webhittestresult.cpp
         webengine/webhittest.cpp
         webengine/webenginepage.cpp
+        webengine/webenginescript.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -207,6 +208,7 @@ set(libmessageviewer_scamdetection_SRCS
     scamdetection/scamdetectiondetailsdialog.cpp
     scamdetection/scamattribute.cpp
     scamdetection/scamcheckshorturl.cpp
+    scamdetection/scamexpandurljob.cpp
     )
 
 set(libmessageviewer_findbar_SRCS
@@ -234,7 +236,7 @@ set(libmessageviewer_htmlwriter_SRCS
     htmlwriter/queuehtmlwriter.cpp
     htmlwriter/teehtmlwriter.cpp
     htmlwriter/webkitparthtmlwriter.cpp
-    #${libmessageviewer_htmlwriter_webengine_SRCS}
+    ${libmessageviewer_htmlwriter_webengine_SRCS}
     )
 
 set(libmessageviewer_antispam_SRCS
