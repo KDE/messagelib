@@ -33,7 +33,6 @@
 #define MAILSOURCEVIEWER_H
 
 #include <QDialog>
-#include <KConfigGroup>
 class QTabWidget;
 namespace MessageViewer
 {
