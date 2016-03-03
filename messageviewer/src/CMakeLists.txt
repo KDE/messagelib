@@ -216,11 +216,19 @@ set(libmessageviewer_utils_SRCS
     utils/mimetype.cpp
     )
 
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+    set(libmessageviewer_htmlwriter_webengine_SRCS
+        htmlwriter/webengineparthtmlwriter.cpp
+    )
+endif()
+
+
 set(libmessageviewer_htmlwriter_SRCS
     htmlwriter/filehtmlwriter.cpp
     htmlwriter/queuehtmlwriter.cpp
     htmlwriter/teehtmlwriter.cpp
     htmlwriter/webkitparthtmlwriter.cpp
+    #${libmessageviewer_htmlwriter_webengine_SRCS}
     )
 
 set(libmessageviewer_antispam_SRCS
