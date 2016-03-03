@@ -54,3 +54,13 @@ MailWebEngineView::~MailWebEngineView()
 {
     delete d;
 }
+
+void MailWebEngineView::selectAll()
+{
+    page()->triggerAction(QWebEnginePage::SelectAll);
+}
+
+QString MailWebEngineView::htmlSource() const
+{
+    return QString();//page()->mainFrame()->documentElement().toOuterXml();
+}

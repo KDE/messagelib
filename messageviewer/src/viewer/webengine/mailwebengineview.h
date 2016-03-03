@@ -30,6 +30,11 @@ class MESSAGEVIEWER_EXPORT MailWebEngineView : public QWebEngineView
 public:
     explicit MailWebEngineView(KActionCollection *ac, QWidget *parent = Q_NULLPTR);
     ~MailWebEngineView();
+
+    void selectAll();
+
+    QString htmlSource() const;
+
 Q_SIGNALS:
     void openUrl(const QUrl &url);
 private:
