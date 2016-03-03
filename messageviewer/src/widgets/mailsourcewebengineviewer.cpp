@@ -122,9 +122,11 @@ struct SetPlainTextFunctor {
 void MailSourceWebEngineViewer::setDisplayedSource(QWebEnginePage *page)
 {
 #ifndef NDEBUG
-    page->toHtml(SetPlainTextFunctor(mHtmlBrowser));
+    if (page) {
+        page->toHtml(SetPlainTextFunctor(mHtmlBrowser));
+    }
 #else
-    Q_UNUSED(source);
+    Q_UNUSED(page);
 #endif
 }
 
