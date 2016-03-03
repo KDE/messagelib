@@ -21,6 +21,10 @@
 
 #include <MessageViewer/NetworkAccessManagerWebEngine>
 
+#include "scamdetection/scamdetection.h"
+#include "scamdetection/scamcheckshorturl.h"
+
+
 using namespace MessageViewer;
 
 class MessageViewer::MailWebEngineViewPrivate
@@ -32,6 +36,7 @@ public:
 
     }
     MailWebEngineAccessKey *mWebViewAccessKey;
+    ScamDetection *mScamDetection;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -60,7 +65,12 @@ void MailWebEngineView::selectAll()
     page()->triggerAction(QWebEnginePage::SelectAll);
 }
 
-QString MailWebEngineView::htmlSource() const
+void MailWebEngineView::expandUrl(const QUrl &url)
 {
-    return QString();//page()->mainFrame()->documentElement().toOuterXml();
+    d->mScamDetection->scamCheckShortUrl()->expandedUrl(url);
+}
+
+bool MailWebEngineView::isAShortUrl(const QUrl &url) const
+{
+    return d->mScamDetection->scamCheckShortUrl()->isShortUrl(url);
 }

@@ -32,9 +32,8 @@ public:
     ~MailWebEngineView();
 
     void selectAll();
-
-    QString htmlSource() const;
-
+    void expandUrl(const QUrl &url);
+    bool isAShortUrl(const QUrl &url) const;
 Q_SIGNALS:
     void openUrl(const QUrl &url);
 private:
