@@ -264,11 +264,6 @@ QUrl MailWebView::linkOrImageUrlAt(const QPoint &global) const
     }
 }
 
-void MailWebView::setScrollBarPolicy(Qt::Orientation orientation, Qt::ScrollBarPolicy policy)
-{
-    page()->mainFrame()->setScrollBarPolicy(orientation, policy);
-}
-
 Qt::ScrollBarPolicy MailWebView::scrollBarPolicy(Qt::Orientation orientation) const
 {
     return page()->mainFrame()->scrollBarPolicy(orientation);

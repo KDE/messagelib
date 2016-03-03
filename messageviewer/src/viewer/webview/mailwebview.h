@@ -66,7 +66,6 @@ public:
 
     QUrl linkOrImageUrlAt(const QPoint &global) const;
 
-    void setScrollBarPolicy(Qt::Orientation orientation, Qt::ScrollBarPolicy policy);
     Qt::ScrollBarPolicy scrollBarPolicy(Qt::Orientation orientation) const;
 
     bool isAShortUrl(const QUrl &url) const;
