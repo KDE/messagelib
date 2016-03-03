@@ -17,7 +17,7 @@
 #include "webengineparthtmlwriter.h"
 
 #include "messageviewer_debug.h"
-//#include "viewer/webview/mailwebview.h"
+#include "viewer/webengine/mailwebengineview.h"
 
 #include <QUrl>
 
@@ -26,7 +26,7 @@
 
 using namespace MessageViewer;
 
-WebEnginePartHtmlWriter::WebEnginePartHtmlWriter(MailWebView *view, QObject *parent)
+WebEnginePartHtmlWriter::WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent)
     : QObject(parent), HtmlWriter(),
       mHtmlView(view), mState(Ended)
 {
@@ -47,11 +47,12 @@ void WebEnginePartHtmlWriter::begin(const QString &css)
     }
 
     mEmbeddedPartMap.clear();
-
+#if 0 //FIXME
     // clear the widget:
     mHtmlView->setUpdatesEnabled(false);
     mHtmlView->scrollUp(10);
     // PENDING(marc) push into MailWebView
+#endif
     mHtmlView->load(QUrl());
     mState = Begun;
 }
@@ -70,7 +71,9 @@ void WebEnginePartHtmlWriter::end()
     mHtml.clear();
 
     resolveCidUrls();
+#if 0 //FIXME
     mHtmlView->scamCheck();
+#endif
     mHtmlView->setUpdatesEnabled(true);
     mHtmlView->update();
     mState = Ended;
@@ -114,6 +117,7 @@ void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId,
 
 void WebEnginePartHtmlWriter::resolveCidUrls()
 {
+#if 0
     // FIXME: instead of patching around in the HTML source, this should
     // be replaced by a custom QNetworkAccessManager (for QWebView), or
     // virtual loadResource() (for QTextBrowser)
@@ -130,6 +134,7 @@ void WebEnginePartHtmlWriter::resolveCidUrls()
             }
         }
     }
+#endif
 }
 
 void WebEnginePartHtmlWriter::insertExtraHead()

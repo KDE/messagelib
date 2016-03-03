@@ -26,7 +26,7 @@
 
 namespace MessageViewer
 {
-class MailWebView;
+class MailWebEngineView;
 }
 
 namespace MessageViewer
@@ -36,8 +36,8 @@ class WebEnginePartHtmlWriter : public QObject, public HtmlWriter
 {
     Q_OBJECT
 public:
-    explicit WebKitPartHtmlWriter(MailWebView *view, QObject *parent = Q_NULLPTR);
-    ~WebKitPartHtmlWriter();
+    explicit WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent = Q_NULLPTR);
+    ~WebEnginePartHtmlWriter();
 
     void begin(const QString &cssDefs) Q_DECL_OVERRIDE;
     void end() Q_DECL_OVERRIDE;
@@ -55,7 +55,7 @@ private:
     void insertExtraHead();
 
 private:
-    MailWebView *mHtmlView;
+    MailWebEngineView *mHtmlView;
     QString mHtml;
     QString mExtraHead;
     enum State {
