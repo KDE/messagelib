@@ -307,12 +307,6 @@ public:
     static Akonadi::ItemFetchJob *createFetchJob(const Akonadi::Item &item);
 
     /**
-    * Returns the scrollbar policy for the scrollbar defined by orientation.
-    * @see setScrollBarPolicy()
-    */
-    Qt::ScrollBarPolicy scrollBarPolicy(Qt::Orientation orientation) const;
-
-    /**
     * Adds a @p handler for actions that will be executed when the message
     * has been loaded into the view.
     */

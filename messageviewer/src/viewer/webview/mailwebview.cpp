@@ -264,11 +264,6 @@ QUrl MailWebView::linkOrImageUrlAt(const QPoint &global) const
     }
 }
 
-Qt::ScrollBarPolicy MailWebView::scrollBarPolicy(Qt::Orientation orientation) const
-{
-    return page()->mainFrame()->scrollBarPolicy(orientation);
-}
-
 bool MailWebView::replaceInnerHtml(const QString &id, const function<QString()> &delayedHtml)
 {
     QWebElement doc = page()->currentFrame()->documentElement();
