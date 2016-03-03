@@ -22,15 +22,9 @@
 #include "messageviewer_export.h"
 
 #include <QObject>
-
 #include <QUrl>
-
 #include <QStringList>
-#include <QNetworkReply>
 
-class QNetworkConfigurationManager;
-class QNetworkAccessManager;
-class QNetworkReply;
 namespace MessageViewer
 {
 class MESSAGEVIEWER_EXPORT ScamCheckShortUrl : public QObject
@@ -46,18 +40,8 @@ public:
 
     static void loadLongUrlServices();
 
-private Q_SLOTS:
-    void slotExpandFinished(QNetworkReply *);
-    void slotError(QNetworkReply::NetworkError error);
-
-Q_SIGNALS:
-    void urlExpanded(const QString &shortUrl, const QString &expandedUrl);
-    void expandUrlError(QNetworkReply::NetworkError error);
-
 private:
     static QStringList sSupportedServices;
-    QNetworkAccessManager *mNetworkAccessManager;
-    QNetworkConfigurationManager *mNetworkConfigurationManager;
 };
 }
 

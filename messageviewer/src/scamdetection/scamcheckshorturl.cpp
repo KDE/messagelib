@@ -17,74 +17,34 @@
 */
 
 #include "scamcheckshorturl.h"
+#include "scamexpandurljob.h"
 #include "messageviewer_debug.h"
-#include <Libkdepim/BroadcastStatus>
 
 #include <KLocalizedString>
 
 #include <QFile>
 #include <QVariantMap>
 
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
 #include <QStandardPaths>
-#include <QNetworkConfigurationManager>
 #include <QJsonDocument>
 
 using namespace MessageViewer;
 QStringList ScamCheckShortUrl::sSupportedServices = QStringList();
 
 ScamCheckShortUrl::ScamCheckShortUrl(QObject *parent)
-    : QObject(parent),
-      mNetworkAccessManager(new QNetworkAccessManager(this))
+    : QObject(parent)
 {
     loadLongUrlServices();
-    connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &ScamCheckShortUrl::slotExpandFinished);
-    mNetworkConfigurationManager = new QNetworkConfigurationManager();
 }
 
 ScamCheckShortUrl::~ScamCheckShortUrl()
 {
-    delete mNetworkConfigurationManager;
 }
 
 void ScamCheckShortUrl::expandedUrl(const QUrl &url)
 {
-    if (!mNetworkConfigurationManager->isOnline()) {
-        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("No network connection detected, we cannot expand url."));
-        return;
-    }
-    const QUrl newUrl = QStringLiteral("http://api.longurl.org/v2/expand?url=%1&format=json").arg(url.url());
-
-    qCDebug(MESSAGEVIEWER_LOG) << " newUrl " << newUrl;
-    QNetworkReply *reply = mNetworkAccessManager->get(QNetworkRequest(newUrl));
-    reply->setProperty("shortUrl", url.url());
-    connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &ScamCheckShortUrl::slotError);
-}
-
-void ScamCheckShortUrl::slotExpandFinished(QNetworkReply *reply)
-{
-    QUrl shortUrl;
-    if (!reply->property("shortUrl").isNull()) {
-        shortUrl.setUrl(reply->property("shortUrl").toString());
-    }
-    QJsonDocument jsonDoc = QJsonDocument::fromBinaryData(reply->readAll());
-    reply->deleteLater();
-    if (!jsonDoc.isNull()) {
-        const QMap<QString, QVariant> map = jsonDoc.toVariant().toMap();
-        QUrl longUrl;
-        if (map.contains(QStringLiteral("long-url"))) {
-            longUrl.setUrl(map.value(QStringLiteral("long-url")).toString());
-        } else {
-            return;
-        }
-        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Short url \'%1\' redirects to \'%2\'.", shortUrl.url(), longUrl.toDisplayString()));
-    }
-}
-
-void ScamCheckShortUrl::slotError(QNetworkReply::NetworkError error)
-{
-    Q_EMIT expandUrlError(error);
+    MessageViewer::ScamExpandUrlJob *job = new MessageViewer::ScamExpandUrlJob(this);
+    job->expandedUrl(url);
 }
 
 bool ScamCheckShortUrl::isShortUrl(const QUrl &url)

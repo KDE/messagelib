@@ -19,6 +19,9 @@
 #define SCAMEXPANDURLJOB_H
 
 #include <QObject>
+#include <QNetworkReply>
+class QNetworkAccessManager;
+class QNetworkConfigurationManager;
 namespace MessageViewer
 {
 class ScamExpandUrlJob : public QObject
@@ -27,6 +30,19 @@ class ScamExpandUrlJob : public QObject
 public:
     explicit ScamExpandUrlJob(QObject *parent = Q_NULLPTR);
     ~ScamExpandUrlJob();
+
+    void expandedUrl(const QUrl &url);
+Q_SIGNALS:
+    void urlExpanded(const QString &shortUrl, const QString &expandedUrl);
+    void expandUrlError(QNetworkReply::NetworkError error);
+
+private Q_SLOTS:
+    void slotError(QNetworkReply::NetworkError error);
+    void slotExpandFinished(QNetworkReply *reply);
+
+private:
+    QNetworkAccessManager *mNetworkAccessManager;
+    QNetworkConfigurationManager *mNetworkConfigurationManager;
 };
 }
 #endif // SCAMEXPANDURLJOB_H
