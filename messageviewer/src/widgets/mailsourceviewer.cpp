@@ -39,7 +39,6 @@
 #include "PimCommon/PimUtil"
 #include <kiconloader.h>
 #include <KLocalizedString>
-#include <KStandardAction>
 #include <kwindowsystem.h>
 #include <QTabWidget>
 #include <KMessageBox>
@@ -51,11 +50,7 @@
 #include <QApplication>
 #include <QShortcut>
 #include <QVBoxLayout>
-#include <QContextMenuEvent>
 
-#include <QMenu>
-#include <QFontDatabase>
-#include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <QPushButton>
 
