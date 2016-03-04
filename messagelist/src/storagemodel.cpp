@@ -41,7 +41,6 @@
 
 #include <QAbstractItemModel>
 #include <QAtomicInt>
-#include <QScopedPointer>
 #include <QItemSelectionModel>
 #include <QMimeData>
 #include <QCryptographicHash>

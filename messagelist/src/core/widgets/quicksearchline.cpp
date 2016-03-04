@@ -28,14 +28,9 @@
 #include <KLineEdit>
 #include <KComboBox>
 
-#include <QIcon>
 #include <QPushButton>
 
-#include <QToolButton>
 #include <QHBoxLayout>
-#include <QButtonGroup>
-#include <QLabel>
-#include <QSignalMapper>
 #include <QStandardPaths>
 
 using namespace MessageList::Core;

@@ -51,7 +51,6 @@
 #include <KComboBox>
 #include <KLineEdit>
 #include <KLocalizedString>
-#include <QFontDialog>
 #include <QMenu>
 #include <KIconLoader>
 #include <KPluralHandlingSpinBox>

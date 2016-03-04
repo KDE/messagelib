@@ -29,7 +29,6 @@
 
 #include <core/optionset.h>
 #include <core/sortorder.h>
-#include <QFontDatabase>
 
 namespace MessageList
 {

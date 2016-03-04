@@ -36,7 +36,6 @@
 #include "utils/configurethemesdialog.h"
 
 #include <QVBoxLayout>
-#include <QToolButton>
 #include <QActionGroup>
 #include <QHeaderView>
 #include <QTimer>

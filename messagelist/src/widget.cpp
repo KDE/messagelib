@@ -28,7 +28,6 @@
 #include "core/view.h"
 #include <messagelistsettings.h>
 
-#include <QTimer>
 #include <QAction>
 #include <QApplication>
 #include <QDrag>
