@@ -191,7 +191,7 @@ void WebViewAccessKey::setActionCollection(KActionCollection *ac)
     d->mActionCollection = ac;
 }
 
-bool MessageViewer::WebViewAccessKey::checkForAccessKey(QKeyEvent *event)
+bool WebViewAccessKey::checkForAccessKey(QKeyEvent *event)
 {
     if (d->mAccessKeyLabels.isEmpty()) {
         return false;
