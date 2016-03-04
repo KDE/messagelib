@@ -41,7 +41,6 @@
 #include "messageviewer_export.h"
 #include "mimetype.h"
 #include "kmime/kmime_content.h"
-#include <QString>
 #include <KService>
 #include <AkonadiCore/Item>
 class QUrl;

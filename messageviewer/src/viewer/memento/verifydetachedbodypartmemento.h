@@ -22,7 +22,6 @@
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/key.h>
 
-#include <QObject>
 #include <QString>
 #include <QPointer>
 

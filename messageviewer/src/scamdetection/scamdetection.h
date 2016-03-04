@@ -20,7 +20,6 @@
 
 #include "messageviewer_export.h"
 #include <QObject>
-#include <QPointer>
 
 class QWebElement;
 class QWebFrame;

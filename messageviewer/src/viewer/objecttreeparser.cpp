@@ -80,24 +80,14 @@
 // KDE includes
 
 #include <KLocalizedString>
-#include <QTemporaryFile>
 
-#include <KCodecs>
 
-#include <KEmailAddress>
 #include <KTextToHTML>
 
 // Qt includes
-#include <QApplication>
-#include <QTextDocument>
-#include <QDir>
 #include <QFile>
 #include <QTextCodec>
 #include <QByteArray>
-#include <QBuffer>
-#include <QPixmap>
-#include <QPainter>
-#include <QPointer>
 
 // other includes
 #include <sstream>

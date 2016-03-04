@@ -29,7 +29,6 @@
 #include <QImage>
 #include <QRegExp>
 #include <QString>
-#include <QPainter>
 
 #include <stdlib.h>
 #include <string.h>

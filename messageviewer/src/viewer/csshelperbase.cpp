@@ -34,7 +34,6 @@
 #include <QApplication>
 #include <QPaintDevice>
 #include <QPalette>
-#include <QFontDatabase>
 
 namespace MessageViewer
 {

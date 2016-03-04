@@ -18,7 +18,6 @@
 #include "networkurlinterceptormanager.h"
 #include "networkurlinterceptorpluginmanager.h"
 
-#include <QWebEngineProfile>
 
 using namespace MessageViewer;
 

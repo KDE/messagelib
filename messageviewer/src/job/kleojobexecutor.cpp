@@ -23,7 +23,6 @@
 #include <Libkleo/VerifyDetachedJob>
 #include <Libkleo/VerifyOpaqueJob>
 
-#include <QBuffer>
 #include <QEventLoop>
 
 #include <cassert>

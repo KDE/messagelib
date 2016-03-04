@@ -23,10 +23,8 @@
 
 #include <QUrl>
 #include <QStandardPaths>
-#include <QPointer>
 #include <QVBoxLayout>
 #include <QWebView>
-#include <QWebPage>
 #include <QPushButton>
 #include <QFileDialog>
 #include <QApplication>

@@ -23,7 +23,6 @@
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
 
-#include <QObject>
 #include <QString>
 #include <QPointer>
 

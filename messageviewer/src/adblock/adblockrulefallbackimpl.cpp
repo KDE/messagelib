@@ -30,8 +30,8 @@
 
 // Qt Includes
 #include <QWebFrame>
-#include <QNetworkReply>
 #include <QStringList>
+#include <QNetworkRequest>
 
 using namespace MessageViewer;
 static inline bool isRegExpFilter(const QString &filter)

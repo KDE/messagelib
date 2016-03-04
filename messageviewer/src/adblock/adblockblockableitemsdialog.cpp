@@ -20,10 +20,8 @@
 
 #include <KLocalizedString>
 #include <KTreeWidgetSearchLine>
-#include <QMenu>
 
 #include <QVBoxLayout>
-#include <QTreeWidget>
 #include <QWebFrame>
 #include <KSharedConfig>
 #include <QDialogButtonBox>

@@ -18,7 +18,6 @@
 #include "findbarsourceview.h"
 #include "PimCommon/LineEditWithCompleter"
 
-#include <KLocalizedString>
 #include <QPlainTextEdit>
 #include <QAction>
 

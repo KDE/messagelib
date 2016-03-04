@@ -36,7 +36,6 @@
 #define WebHitTestResult_H
 
 #include "messageviewer_export.h"
-#include <QObject>
 #include <QUrl>
 #include <QRect>
 #include <QString>

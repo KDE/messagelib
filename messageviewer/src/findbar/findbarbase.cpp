@@ -25,10 +25,10 @@
 #include <klineedit.h>
 #include <KColorScheme>
 
+#include <QHBoxLayout>
 #include <QPushButton>
 #include <QTimer>
 #include <QLabel>
-#include <QLayout>
 #include <QMenu>
 #include <QToolButton>
 #include <QEvent>

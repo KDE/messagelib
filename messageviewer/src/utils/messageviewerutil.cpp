@@ -65,12 +65,9 @@
 #include <QIcon>
 #include <QTemporaryFile>
 #include <QFileDialog>
-#include <QTextCodec>
 #include <QWidget>
-#include <QDBusInterface>
 #include <QDBusConnectionInterface>
 #include <QActionGroup>
-#include <QPointer>
 
 using namespace MessageViewer;
 

@@ -20,10 +20,8 @@
 #include "scamexpandurljob.h"
 #include "messageviewer_debug.h"
 
-#include <KLocalizedString>
 
 #include <QFile>
-#include <QVariantMap>
 
 #include <QStandardPaths>
 #include <QJsonDocument>

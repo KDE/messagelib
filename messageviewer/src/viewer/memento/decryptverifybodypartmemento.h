@@ -23,8 +23,6 @@
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
 
-#include <QObject>
-#include <QString>
 #include <QPointer>
 
 #include "interfaces/bodypart.h"

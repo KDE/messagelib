@@ -25,6 +25,7 @@
 #include <QRegularExpression>
 #include <QWebElement>
 #include <QWebFrame>
+#include <QPointer>
 
 using namespace MessageViewer;
 static QString addWarningColor(const QString &url)

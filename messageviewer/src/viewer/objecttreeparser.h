@@ -42,7 +42,6 @@
 #include <Libkleo/CryptoBackend>
 #include <gpgme++/verificationresult.h>
 
-#include <QList>
 #include "objecttreeemptysource.h"
 
 class QString;

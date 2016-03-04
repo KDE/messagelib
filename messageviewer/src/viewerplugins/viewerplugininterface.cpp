@@ -16,8 +16,7 @@
 */
 
 #include "viewerplugininterface.h"
-
-#include <KToggleAction>
+#include <QAction>
 using namespace MessageViewer;
 
 class MessageViewer::ViewerPluginInterfacePrivate

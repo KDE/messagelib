@@ -34,7 +34,6 @@
 #include "headerstyle.h"
 #include "messageviewer_debug.h"
 
-#include <KLocalizedString>
 
 using namespace MessageViewer;
 // #####################

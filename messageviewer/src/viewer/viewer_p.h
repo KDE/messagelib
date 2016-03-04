@@ -36,7 +36,6 @@
 
 #include <QObject>
 #include <QTimer>
-#include <QWebElement>
 
 namespace KIO
 {

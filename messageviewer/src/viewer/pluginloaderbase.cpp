@@ -28,7 +28,6 @@
 #include <KPluginLoader>
 
 #include <QDir>
-#include <QFile>
 #include <QStringList>
 
 PluginLoaderBase::PluginLoaderBase() : d(0) {}

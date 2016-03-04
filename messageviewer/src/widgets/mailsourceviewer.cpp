@@ -41,9 +41,6 @@
 #include <KLocalizedString>
 #include <kwindowsystem.h>
 #include <QTabWidget>
-#include <KMessageBox>
-#include <QAction>
-#include <QIcon>
 #include <KIconTheme>
 
 #include <QRegExp>

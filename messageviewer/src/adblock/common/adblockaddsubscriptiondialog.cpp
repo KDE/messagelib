@@ -25,7 +25,6 @@
 #include <QLabel>
 #include <QHBoxLayout>
 #include <QDialogButtonBox>
-#include <KConfigGroup>
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QToolButton>

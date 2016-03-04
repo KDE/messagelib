@@ -38,7 +38,6 @@
 #include <QClipboard>
 #include <QApplication>
 #include <QFile>
-#include <QPainter>
 
 using namespace MessageViewer;
 

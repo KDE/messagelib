@@ -21,7 +21,6 @@
 #include <KLocalizedString>
 #include <QCommandLineParser>
 #include <QDialogButtonBox>
-#include <KConfigGroup>
 #include <QStandardPaths>
 #include "adblock/common/adblocksettingwidget.h"
 

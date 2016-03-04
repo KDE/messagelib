@@ -21,7 +21,6 @@
 #include "adblock/adblockblockableitemswidget.h"
 
 #include <QDialog>
-#include <KConfigGroup>
 namespace Ui
 {
 class AdBlockCreateFilterWidget;

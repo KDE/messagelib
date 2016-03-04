@@ -22,7 +22,6 @@
 #include <KLocalizedString>
 #include <QUrl>
 
-#include <QPointer>
 #include <QVBoxLayout>
 #include <QWebView>
 #include <QWebPage>

@@ -27,19 +27,14 @@ using namespace MessageViewer;
 #include "PimCommon/PimUtil"
 #include <kiconloader.h>
 #include <KLocalizedString>
-#include <KStandardAction>
 #include <kwindowsystem.h>
 #include <QTabWidget>
-#include <KMessageBox>
-#include <QAction>
-#include <QIcon>
 #include <QApplication>
 
 #include <QRegExp>
 #include <QShortcut>
 #include <QVBoxLayout>
 
-#include <QMenu>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QWebEnginePage>

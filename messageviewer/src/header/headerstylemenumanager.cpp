@@ -27,7 +27,6 @@
 #include <KActionMenu>
 #include <KActionCollection>
 #include <KLocalizedString>
-#include <KToggleAction>
 
 
 using namespace MessageViewer;

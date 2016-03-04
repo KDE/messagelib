@@ -28,7 +28,6 @@
 #include <KSharedConfig>
 #include <QUrl>
 
-#include <QHBoxLayout>
 
 #include <QDialogButtonBox>
 #include <KConfigGroup>

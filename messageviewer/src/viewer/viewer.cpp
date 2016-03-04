@@ -44,9 +44,6 @@
 
 #include <KLocalizedString>
 
-#include <QWebView>
-#include <QWebPage>
-#include <QWebFrame>
 #include <QAction>
 
 namespace MessageViewer

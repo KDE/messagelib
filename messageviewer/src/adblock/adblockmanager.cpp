@@ -42,9 +42,7 @@
 #include <KLocalizedString>
 // Qt Includes
 #include <QUrl>
-#include <QTimer>
 #include <QWebElement>
-#include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QtConcurrent/QtConcurrentRun>
 #include <QFile>

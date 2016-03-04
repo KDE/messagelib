@@ -20,8 +20,6 @@
 #include "messageviewer/viewer.h"
 #include <qtestmouse.h>
 #include <KActionCollection>
-#include <KToggleAction>
-#include <QUrl>
 
 ViewerTest::ViewerTest()
 {

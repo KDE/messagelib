@@ -28,7 +28,6 @@
 #include <KMime/Message>
 
 #include <QDir>
-#include <QObject>
 #include <QProcess>
 #include <QTest>
 

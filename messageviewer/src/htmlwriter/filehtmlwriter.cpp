@@ -33,7 +33,6 @@
 
 #include "messageviewer_debug.h"
 
-#include <QTextStream>
 
 namespace MessageViewer
 {

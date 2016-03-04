@@ -26,7 +26,6 @@
 
 #include "MessageCore/MessageCoreSettings"
 
-#include <KConfigDialogManager>
 #include <KLocalizedString>
 
 using namespace MessageViewer;

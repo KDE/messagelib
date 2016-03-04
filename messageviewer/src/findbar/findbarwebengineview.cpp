@@ -19,9 +19,8 @@
 #include "findbarwebengineview.h"
 #include "PimCommon/LineEditWithCompleter"
 #include <QWebEngineView>
+#include <QAction>
 
-#include <KLocalizedString>
-#include <QMenu>
 using namespace MessageViewer;
 
 class MessageViewer::FindBarWebEngineViewPrivate

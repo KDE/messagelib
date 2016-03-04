@@ -40,6 +40,7 @@
 #include "job/attachmenteditjob.h"
 #include "job/modifymessagedisplayformatjob.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
+#include <KContacts/VCardConverter>
 #ifdef MESSAGEVIEWER_READER_HTML_DEBUG
 #include "htmlwriter/filehtmlwriter.h"
 #include "htmlwriter/teehtmlwriter.h"
@@ -53,9 +54,7 @@
 #include <KActionCollection>
 #include <KActionMenu>
 #include <KCharsets>
-#include <KGuiItem>
 #include <QWebView>
-#include <QWebPage>
 #include <QWebFrame>
 #include <QMenu>
 #include <KMessageBox>
@@ -69,11 +68,8 @@
 #include <KToggleAction>
 #include <QIcon>
 #include <kfileitemactions.h>
-#include <KFileItemListProperties>
 #include <KLocalizedString>
 #include <QMimeData>
-#include <KContacts/Addressee>
-#include <KContacts/VCardConverter>
 #include <KEmailAddress>
 #include <AkonadiCore/ItemModifyJob>
 #include <AkonadiCore/ItemCreateJob>
@@ -93,7 +89,6 @@
 #include <QTreeView>
 #include <QPrinter>
 #include <QPrintDialog>
-#include <QHeaderView>
 #include <QMimeDatabase>
 #include <QWheelEvent>
 

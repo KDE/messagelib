@@ -39,9 +39,8 @@
 #include <cassert>
 #include <QByteArray>
 #include <QWebView>
-#include <QWebPage>
-#include <QWebFrame>
 #include <QWebElement>
+#include <QWebFrame>
 
 using namespace MessageViewer;
 

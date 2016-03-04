@@ -37,7 +37,6 @@
 
 // Qt
 #include <QString>
-#include <QStringList>
 
 #include <assert.h>
 

@@ -126,7 +126,6 @@
 // Qt Includes
 #include <QObject>
 #include <QStringList>
-#include <QByteArray>
 
 // Forward Includes
 class QNetworkRequest;

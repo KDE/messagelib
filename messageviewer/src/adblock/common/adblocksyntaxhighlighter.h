@@ -19,7 +19,6 @@
 #define ADBLOCKSYNTAXHIGHLIGHTER_H
 
 #include <KPIMTextEdit/SyntaxHighlighterBase>
-#include <QList>
 
 namespace MessageViewer
 {

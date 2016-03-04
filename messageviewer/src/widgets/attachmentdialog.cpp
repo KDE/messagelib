@@ -27,7 +27,6 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <KGuiItem>
-#include <QVBoxLayout>
 using namespace MessageViewer;
 
 //---------------------------------------------------------------------

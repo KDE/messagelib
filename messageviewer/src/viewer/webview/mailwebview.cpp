@@ -28,14 +28,11 @@
 #include "webviewaccesskey.h"
 
 #include <KActionCollection>
-#include <QAction>
-
+#include <QPointer>
 #include <QCoreApplication>
 #include <QContextMenuEvent>
 #include <QWebFrame>
 #include <QWebElement>
-#include <QLabel>
-#include <QToolTip>
 
 #include <limits>
 #include <cassert>

@@ -34,8 +34,6 @@
 
 #include <QSyntaxHighlighter>
 #include <QPlainTextEdit>
-#include <QDialog>
-#include <KConfigGroup>
 namespace KPIMTextEdit
 {
 class SlideContainer;
