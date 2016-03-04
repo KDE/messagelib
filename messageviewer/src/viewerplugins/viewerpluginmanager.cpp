@@ -75,6 +75,8 @@ public:
     void loadPlugin(ViewerPluginInfo *item);
     QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
     QVector<ViewerPluginInfo> mPluginList;
+    QString serviceTypeName;
+    QString pluginName;
     ViewerPluginManager *q;
 };
 
@@ -153,4 +155,24 @@ ViewerPluginManager *ViewerPluginManager::self()
 QVector<MessageViewer::ViewerPlugin *> ViewerPluginManager::pluginsList() const
 {
     return d->pluginsList();
+}
+
+void ViewerPluginManager::setServiceTypeName(const QString &serviceName)
+{
+    d->serviceTypeName = serviceName;
+}
+
+QString ViewerPluginManager::serviceTypeName() const
+{
+    return d->serviceTypeName;
+}
+
+void ViewerPluginManager::setPluginName(const QString &pluginName)
+{
+    d->pluginName = pluginName;
+}
+
+QString ViewerPluginManager::pluginName() const
+{
+    return d->pluginName;
 }

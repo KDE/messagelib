@@ -35,6 +35,12 @@ public:
 
     QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
 
+    void setServiceTypeName(const QString &serviceName);
+    QString serviceTypeName() const;
+
+    void setPluginName(const QString &pluginName);
+    QString pluginName() const;
+
 private:
     ViewerPluginManagerPrivate *const d;
 };
