@@ -41,7 +41,6 @@
 #include <QRect>
 #include <QString>
 #include <QVariantMap>
-class QWebEnginePage;
 
 namespace MessageViewer
 {

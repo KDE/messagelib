@@ -22,7 +22,6 @@
 class KActionCollection;
 namespace MessageViewer
 {
-class MailWebEngineAccessKey;
 class MailWebEngineViewPrivate;
 class MESSAGEVIEWER_EXPORT MailWebEngineView : public QWebEngineView
 {

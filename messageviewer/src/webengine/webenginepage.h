@@ -24,7 +24,6 @@
 namespace MessageViewer
 {
 class WebHitTest;
-class WebHitTestResult;
 class WebEnginePagePrivate;
 class MESSAGEVIEWER_EXPORT WebEnginePage : public QWebEnginePage
 {
