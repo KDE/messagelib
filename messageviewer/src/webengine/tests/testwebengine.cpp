@@ -21,6 +21,7 @@
 #include <MessageViewer/WebHitTestResult>
 #include <MessageViewer/WebEnginePage>
 #include <QDebug>
+#include <QWebEngineSettings>
 #include <QContextMenuEvent>
 #include <webengine/webhittest.h>
 
@@ -53,6 +54,7 @@ TestWebEngineView::TestWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
     setContextMenuPolicy(Qt::DefaultContextMenu);
+    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
 }
 
 void TestWebEngineView::slotHitTestFinished(const MessageViewer::WebHitTestResult &result)
