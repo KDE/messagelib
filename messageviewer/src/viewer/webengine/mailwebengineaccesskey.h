@@ -41,6 +41,14 @@ public:
     void resizeEvent(QResizeEvent *);
     void keyPressEvent(QKeyEvent *e);
     void keyReleaseEvent(QKeyEvent *e);
+
+    void showAccessKeys();
+    //void makeAccessKeyLabel(QChar accessKey, const QWebElement &element);
+
+    bool checkForAccessKey(QKeyEvent *event);
+public Q_SLOTS:
+    void hideAccessKeys();
+
 private:
     MailWebEngineAccessKeyPrivate *const d;
 };
