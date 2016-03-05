@@ -49,6 +49,11 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     MessageViewer::ViewerPluginToolManager *toolManager = new MessageViewer::ViewerPluginToolManager(toolManagerWidget, this);
     connect(toolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this, &ViewerPluginTest::slotActivatePlugin);
 
+    toolManager->setPluginName(QStringLiteral("messageviewer"));
+    toolManager->setServiceTypeName(QStringLiteral("MessageViewer/ViewerPlugin"));
+    if (!toolManager->initializePluginList()) {
+        qDebug() << " Impossible to initialize plugins";
+    }
     toolManager->setActionCollection(new KActionCollection(this));
     toolManager->createView();
     QMenu *menu = new QMenu(this);
