@@ -41,6 +41,7 @@ public:
     void setPluginName(const QString &pluginName);
     QString pluginName() const;
 
+    bool initializePluginList();
 private:
     ViewerPluginManagerPrivate *const d;
 };

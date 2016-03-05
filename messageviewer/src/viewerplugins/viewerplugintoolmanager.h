@@ -45,7 +45,7 @@ public:
 
     void setPluginName(const QString &pluginName);
     QString pluginName() const;
-
+    bool initializePluginList();
     QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
 
     void updateActions(const Akonadi::Item &messageItem);

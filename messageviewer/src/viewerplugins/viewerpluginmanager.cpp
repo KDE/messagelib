@@ -71,7 +71,7 @@ public:
     {
 
     }
-    void initializePluginList();
+    bool initializePluginList();
     void loadPlugin(ViewerPluginInfo *item);
     QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
     QVector<ViewerPluginInfo> mPluginList;
@@ -87,12 +87,20 @@ QString pluginVersion()
     return QStringLiteral("1.0");
 }
 }
-void ViewerPluginManagerPrivate::initializePluginList()
-{
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](const KPluginMetaData & md) {
-        return md.serviceTypes().contains(QStringLiteral("MessageViewer/ViewerPlugin"));
-    });
 
+bool ViewerPluginManagerPrivate::initializePluginList()
+{
+    if (serviceTypeName.isEmpty() || pluginName.isEmpty()) {
+        return false;
+    }
+    if (!mPluginList.isEmpty()) {
+        return true;
+    }
+
+    static const QString s_serviceTypeName = serviceTypeName;
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(pluginName, [](const KPluginMetaData & md) {
+        return md.serviceTypes().contains(s_serviceTypeName);
+    });
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     QSet<QString> unique;
@@ -115,7 +123,7 @@ void ViewerPluginManagerPrivate::initializePluginList()
     for (QVector<ViewerPluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
-
+    return true;
 }
 
 void ViewerPluginManagerPrivate::loadPlugin(ViewerPluginInfo *item)
@@ -139,12 +147,16 @@ ViewerPluginManager::ViewerPluginManager(QObject *parent)
     : QObject(parent),
       d(new MessageViewer::ViewerPluginManagerPrivate(this))
 {
-    d->initializePluginList();
 }
 
 MessageViewer::ViewerPluginManager::~ViewerPluginManager()
 {
     delete d;
+}
+
+bool ViewerPluginManager::initializePluginList()
+{
+    return d->initializePluginList();
 }
 
 ViewerPluginManager *ViewerPluginManager::self()

@@ -159,6 +159,11 @@ QString ViewerPluginToolManager::pluginName() const
     return d->pluginName();
 }
 
+bool ViewerPluginToolManager::initializePluginList()
+{
+    return MessageViewer::ViewerPluginManager::self()->initializePluginList();
+}
+
 QList<QAction *> ViewerPluginToolManager::viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const
 {
     return d->actionList(features);

@@ -1475,6 +1475,11 @@ void ViewerPrivate::createWidgets()
 
     mViewerPluginToolManager = new MessageViewer::ViewerPluginToolManager(readerBox, this);
     mViewerPluginToolManager->setActionCollection(mActionCollection);
+    mViewerPluginToolManager->setPluginName(QStringLiteral("messageviewer"));
+    mViewerPluginToolManager->setServiceTypeName(QStringLiteral("MessageViewer/ViewerPlugin"));
+    if (!mViewerPluginToolManager->initializePluginList()) {
+        qCDebug(MESSAGEVIEWER_LOG) << " Impossible to initialize plugins";
+    }
     mViewerPluginToolManager->createView();
     connect(mViewerPluginToolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this, &ViewerPrivate::slotActivatePlugin);
 
