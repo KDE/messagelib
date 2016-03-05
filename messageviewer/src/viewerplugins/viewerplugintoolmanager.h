@@ -40,6 +40,12 @@ public:
     void createView();
     void setActionCollection(KActionCollection *ac);
 
+    void setServiceTypeName(const QString &serviceName);
+    QString serviceTypeName() const;
+
+    void setPluginName(const QString &pluginName);
+    QString pluginName() const;
+
     QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
 
     void updateActions(const Akonadi::Item &messageItem);

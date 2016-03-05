@@ -34,6 +34,10 @@ public:
     {
 
     }
+    void setServiceTypeName(const QString &serviceName);
+    QString serviceTypeName() const;
+    void setPluginName(const QString &pluginName);
+    QString pluginName() const;
     void createView();
     void closeAllTools();
     void setActionCollection(KActionCollection *ac);
@@ -44,6 +48,26 @@ public:
     QWidget *mParentWidget;
     ViewerPluginToolManager *q;
 };
+
+void ViewerPluginToolManagerPrivate::setServiceTypeName(const QString &serviceName)
+{
+    MessageViewer::ViewerPluginManager::self()->setServiceTypeName(serviceName);
+}
+
+QString ViewerPluginToolManagerPrivate::serviceTypeName() const
+{
+    return MessageViewer::ViewerPluginManager::self()->serviceTypeName();
+}
+
+void ViewerPluginToolManagerPrivate::setPluginName(const QString &pluginName)
+{
+    MessageViewer::ViewerPluginManager::self()->setPluginName(pluginName);
+}
+
+QString ViewerPluginToolManagerPrivate::pluginName() const
+{
+    return MessageViewer::ViewerPluginManager::self()->pluginName();
+}
 
 void ViewerPluginToolManagerPrivate::createView()
 {
@@ -113,6 +137,26 @@ void ViewerPluginToolManager::createView()
 void ViewerPluginToolManager::setActionCollection(KActionCollection *ac)
 {
     d->setActionCollection(ac);
+}
+
+void ViewerPluginToolManager::setServiceTypeName(const QString &serviceName)
+{
+    d->setServiceTypeName(serviceName);
+}
+
+QString ViewerPluginToolManager::serviceTypeName() const
+{
+    return d->serviceTypeName();
+}
+
+void ViewerPluginToolManager::setPluginName(const QString &pluginName)
+{
+    d->setPluginName(pluginName);
+}
+
+QString ViewerPluginToolManager::pluginName() const
+{
+    return d->pluginName();
 }
 
 QList<QAction *> ViewerPluginToolManager::viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const
