@@ -20,11 +20,12 @@
 
 #include <QObject>
 #include <QNetworkReply>
+#include "messageviewer_export.h"
 class QNetworkAccessManager;
 class QNetworkConfigurationManager;
 namespace MessageViewer
 {
-class ScamExpandUrlJob : public QObject
+class MESSAGEVIEWER_EXPORT ScamExpandUrlJob : public QObject
 {
     Q_OBJECT
 public:
