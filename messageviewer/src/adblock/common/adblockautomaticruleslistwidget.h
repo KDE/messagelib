@@ -32,7 +32,12 @@ public:
 
     void setDisabledRules(const QStringList &disabledRules);
     QStringList disabledRules() const;
+
+private Q_SLOTS:
+    void slotItemChanged(QListWidgetItem *item);
+
 private:
+    void updateItem(QListWidgetItem *item);
     void createItem(const QString &rule);
     QStringList mDisabledRules;
 };

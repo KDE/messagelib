@@ -22,12 +22,25 @@ using namespace MessageViewer;
 AdBlockAutomaticRulesListWidget::AdBlockAutomaticRulesListWidget(QWidget *parent)
     : QListWidget(parent)
 {
-
+    connect(this, &AdBlockAutomaticRulesListWidget::itemChanged, this, &AdBlockAutomaticRulesListWidget::slotItemChanged);
 }
 
 AdBlockAutomaticRulesListWidget::~AdBlockAutomaticRulesListWidget()
 {
 
+}
+
+void AdBlockAutomaticRulesListWidget::slotItemChanged(QListWidgetItem *item)
+{
+    updateItem(item);
+}
+
+void AdBlockAutomaticRulesListWidget::updateItem(QListWidgetItem *item)
+{
+    const bool itemIsChecked = (item->checkState() & Qt::Checked);
+    QFont font = item->font();
+    font.setItalic(!itemIsChecked);
+    item->setFont(font);
 }
 
 void AdBlockAutomaticRulesListWidget::setDisabledRules(const QStringList &disabledRules)
@@ -55,11 +68,7 @@ void AdBlockAutomaticRulesListWidget::createItem(const QString &rule)
         subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
         const bool checkState = mDisabledRules.contains(rule);
         subItem->setCheckState(checkState ? Qt::Unchecked : Qt::Checked);
-        if (checkState) {
-            QFont font = subItem->font();
-            font.setItalic(true);
-            subItem->setFont(font);
-        }
+        updateItem(subItem);
     }
     //TODO define color here.
 }
@@ -77,3 +86,4 @@ QStringList AdBlockAutomaticRulesListWidget::disabledRules() const
     }
     return currentDisabledRules;
 }
+
