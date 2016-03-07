@@ -50,6 +50,7 @@ AdBlockShowListDialog::AdBlockShowListDialog(bool showDeleteBrokenList, QWidget 
         buttonBox->addButton(mUser1Button, QDialogButtonBox::ActionRole);
         mUser1Button->setText(i18n("Delete List"));
         mUser1Button->setEnabled(false);
+        mUser1Button->hide();
         connect(mUser1Button, &QPushButton::clicked, this, &AdBlockShowListDialog::slotDeleteBrokenList);
     }
     QWidget *w = new QWidget;
@@ -135,6 +136,7 @@ void AdBlockShowListDialog::slotFinished(KJob *job)
     if (job->error()) {
         mTextEdit->editor()->setPlainText(i18n("An error occurs during download list: \"%1\"", job->errorString()));
         if (mUser1Button) {
+            mUser1Button->show();
             mUser1Button->setEnabled(true);
         }
     } else {
