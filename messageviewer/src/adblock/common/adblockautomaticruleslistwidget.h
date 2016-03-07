@@ -34,6 +34,7 @@ public:
     QStringList disabledRules() const;
 private:
     void createItem(const QString &rule);
+    QStringList mDisabledRules;
 };
 }
 
