@@ -55,9 +55,19 @@ void AdBlockAutomaticRulesListWidget::createItem(const QString &rule)
         subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
         subItem->setCheckState(mDisabledRules.contains(rule) ? Qt::Unchecked : Qt::Checked);
     }
+    //TODO define color here.
 }
 
 QStringList AdBlockAutomaticRulesListWidget::disabledRules() const
 {
-    return QStringList();
+    QStringList currentDisabledRules;
+    for (int i = 0; i < count(); ++i) {
+        QListWidgetItem *row = item(i);
+        if (row->flags() & Qt::ItemIsUserCheckable) {
+            if (row->checkState() == Qt::Unchecked) {
+                currentDisabledRules << row->text();
+            }
+        }
+    }
+    return currentDisabledRules;
 }
