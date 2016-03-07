@@ -21,10 +21,9 @@
 #include <QObject>
 #include <QNetworkReply>
 #include "messageviewer_export.h"
-class QNetworkAccessManager;
-class QNetworkConfigurationManager;
 namespace MessageViewer
 {
+class ScamExpandUrlJobPrivate;
 class MESSAGEVIEWER_EXPORT ScamExpandUrlJob : public QObject
 {
     Q_OBJECT
@@ -42,8 +41,7 @@ private Q_SLOTS:
     void slotExpandFinished(QNetworkReply *reply);
 
 private:
-    QNetworkAccessManager *mNetworkAccessManager;
-    QNetworkConfigurationManager *mNetworkConfigurationManager;
+    ScamExpandUrlJobPrivate *const d;
 };
 }
 #endif // SCAMEXPANDURLJOB_H

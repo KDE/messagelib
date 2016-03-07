@@ -28,23 +28,42 @@
 #include <QNetworkReply>
 
 using namespace MessageViewer;
+class MessageViewer::ScamExpandUrlJobPrivate
+{
+public:
+    ScamExpandUrlJobPrivate()
+        : mNetworkAccessManager(Q_NULLPTR),
+          mNetworkConfigurationManager(Q_NULLPTR)
+    {
+
+    }
+    ~ScamExpandUrlJobPrivate()
+    {
+        delete mNetworkConfigurationManager;
+    }
+
+    QNetworkAccessManager *mNetworkAccessManager;
+    QNetworkConfigurationManager *mNetworkConfigurationManager;
+};
 
 ScamExpandUrlJob::ScamExpandUrlJob(QObject *parent)
     : QObject(parent),
-      mNetworkAccessManager(new QNetworkAccessManager(this))
+      d(new ScamExpandUrlJobPrivate)
 {
-    connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &ScamExpandUrlJob::slotExpandFinished);
-    mNetworkConfigurationManager = new QNetworkConfigurationManager();
+    d->mNetworkAccessManager = new QNetworkAccessManager(this);
+
+    connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &ScamExpandUrlJob::slotExpandFinished);
+    d->mNetworkConfigurationManager = new QNetworkConfigurationManager();
 }
 
 ScamExpandUrlJob::~ScamExpandUrlJob()
 {
-    delete mNetworkConfigurationManager;
+    delete d;
 }
 
 void ScamExpandUrlJob::expandedUrl(const QUrl &url)
 {
-    if (!mNetworkConfigurationManager->isOnline()) {
+    if (!d->mNetworkConfigurationManager->isOnline()) {
         KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("No network connection detected, we cannot expand url."));
         deleteLater();
         return;
@@ -52,7 +71,7 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
     const QUrl newUrl = QStringLiteral("http://api.longurl.org/v2/expand?url=%1&format=json").arg(url.url());
 
     qCDebug(MESSAGEVIEWER_LOG) << " newUrl " << newUrl;
-    QNetworkReply *reply = mNetworkAccessManager->get(QNetworkRequest(newUrl));
+    QNetworkReply *reply = d->mNetworkAccessManager->get(QNetworkRequest(newUrl));
     reply->setProperty("shortUrl", url.url());
     connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &ScamExpandUrlJob::slotError);
 }
