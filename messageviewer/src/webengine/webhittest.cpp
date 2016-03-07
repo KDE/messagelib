@@ -40,9 +40,21 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
     return wrapper;
 }
 
+class MessageViewer::WebHitTestPrivate
+{
+public:
+    WebHitTestPrivate(const QPoint &pos)
+        : m_pos(pos)
+    {
+
+    }
+    QPoint m_pos;
+    QUrl m_pageUrl;
+};
+
 WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
     : QObject(parent),
-      m_pos(pos)
+      d(new WebHitTestPrivate(pos))
 {
     QString source = QStringLiteral("(function() {"
                                     "var e = document.elementFromPoint(%1, %2);"
@@ -99,17 +111,18 @@ WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
                                     "})()");
 
     const QString &js = source.arg(pos.x()).arg(pos.y());
-    m_pageUrl = page->url();
+    d->m_pageUrl = page->url();
     page->runJavaScript(js, invoke(this, &WebHitTest::handleHitTest));
 }
 
 WebHitTest::~WebHitTest()
 {
+    delete d;
 }
 
 void WebHitTest::handleHitTest(const QVariant &result)
 {
-    const WebHitTestResult webHitResult(m_pos, m_pageUrl, result);
+    const WebHitTestResult webHitResult(d->m_pos, d->m_pageUrl, result);
     Q_EMIT finished(webHitResult);
     deleteLater();
 }

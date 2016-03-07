@@ -26,6 +26,7 @@ class QWebEnginePage;
 namespace MessageViewer
 {
 class WebHitTestResult;
+class WebHitTestPrivate;
 class MESSAGEVIEWER_EXPORT WebHitTest : public QObject
 {
     Q_OBJECT
@@ -39,8 +40,7 @@ Q_SIGNALS:
 private Q_SLOTS:
     void handleHitTest(const QVariant &result);
 private:
-    QPoint m_pos;
-    QUrl m_pageUrl;
+    WebHitTestPrivate *const d;
 };
 }
 
