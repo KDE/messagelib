@@ -39,6 +39,7 @@ NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(KActionCollection *
 {
     d->mManager = new MessageViewer::NetworkUrlInterceptorManager(ac, this);
 
+    // Add interceptor.
     MessageViewer::NetworkUrlInterceptor *networkUrlInterceptor = new MessageViewer::NetworkUrlInterceptor(this);
     Q_FOREACH (MessageViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
         networkUrlInterceptor->addInterceptor(interface);
