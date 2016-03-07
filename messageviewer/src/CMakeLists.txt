@@ -396,6 +396,16 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
 	)
 endif()
 
+ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
+    HEADER_NAMES
+    ScamExpandUrlJob
+
+    REQUIRED_HEADERS MessageViewer_scam_HEADERS
+    PREFIX MessageViewer
+    RELATIVE scamdetection
+    )
+
+
 ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     HEADER_NAMES
     Viewer
@@ -590,11 +600,13 @@ install(FILES
     ${MessageViewer_Camelcaseantispam_HEADERS}
     ${MessageViewer_Camelfindbar_HEADERS}
     ${MessageViewer_Camelcaseadblockcommon_HEADERS}
+    ${MessageViewer_Camelcasescam_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     COMPONENT Devel
     )
 
 install(FILES
+    ${MessageViewer_scam_HEADERS}
     ${MessageViewer_webengine_misc_HEADERS}
     ${MessageViewer_webengine_manager_HEADERS}
     ${MessageViewer_webengine_urlinterceptor_HEADERS}
