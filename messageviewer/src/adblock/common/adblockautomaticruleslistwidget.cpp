@@ -53,7 +53,13 @@ void AdBlockAutomaticRulesListWidget::createItem(const QString &rule)
         subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
     } else {
         subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
-        subItem->setCheckState(mDisabledRules.contains(rule) ? Qt::Unchecked : Qt::Checked);
+        const bool checkState = mDisabledRules.contains(rule);
+        subItem->setCheckState(checkState ? Qt::Unchecked : Qt::Checked);
+        if (checkState) {
+            QFont font = subItem->font();
+            font.setItalic(true);
+            subItem->setFont(font);
+        }
     }
     //TODO define color here.
 }
