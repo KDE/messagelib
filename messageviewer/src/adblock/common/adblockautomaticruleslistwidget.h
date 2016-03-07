@@ -30,6 +30,8 @@ public:
     ~AdBlockAutomaticRulesListWidget();
     void setRules(const QString &rules);
 
+    void setDisabledRules(const QStringList &disabledRules);
+    QStringList disabledRules() const;
 private:
     void createItem(const QString &rule);
 };

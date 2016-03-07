@@ -30,6 +30,12 @@ AdBlockAutomaticRulesListWidget::~AdBlockAutomaticRulesListWidget()
 
 }
 
+void AdBlockAutomaticRulesListWidget::setDisabledRules(const QStringList &disabledRules)
+{
+    //TODO
+    Q_UNUSED(disabledRules);
+}
+
 void AdBlockAutomaticRulesListWidget::setRules(const QString &rules)
 {
     clear();
@@ -41,11 +47,18 @@ void AdBlockAutomaticRulesListWidget::setRules(const QString &rules)
 
 void AdBlockAutomaticRulesListWidget::createItem(const QString &rule)
 {
-    if (rule.startsWith(QLatin1Char('!'))) {
-
-    }
     QListWidgetItem *subItem = new QListWidgetItem(this);
-    subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
     subItem->setCheckState(Qt::Checked);
     subItem->setText(rule);
+    if (rule.startsWith(QLatin1Char('!'))) {
+        //Comment
+        subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+    } else {
+        subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+    }
+}
+
+QStringList AdBlockAutomaticRulesListWidget::disabledRules() const
+{
+    return QStringList();
 }
