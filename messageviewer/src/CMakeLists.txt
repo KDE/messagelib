@@ -209,6 +209,7 @@ set(libmessageviewer_scamdetection_SRCS
     scamdetection/scamattribute.cpp
     scamdetection/scamcheckshorturl.cpp
     scamdetection/scamexpandurljob.cpp
+    scamdetection/scamcheckshorturlmanager.cpp
     )
 
 set(libmessageviewer_findbar_SRCS
@@ -399,7 +400,7 @@ endif()
 ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     HEADER_NAMES
     ScamExpandUrlJob
-
+    ScamCheckShortUrlManager
     REQUIRED_HEADERS MessageViewer_scam_HEADERS
     PREFIX MessageViewer
     RELATIVE scamdetection
