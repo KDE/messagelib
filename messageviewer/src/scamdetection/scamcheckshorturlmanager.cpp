@@ -39,15 +39,25 @@ public:
 
 Q_GLOBAL_STATIC(ScamCheckShortUrlManagerInstancePrivate, sInstance)
 
+class MessageViewer::ScamCheckShortUrlManagerPrivate
+{
+public:
+    ScamCheckShortUrlManagerPrivate()
+    {
+
+    }
+};
+
 ScamCheckShortUrlManager::ScamCheckShortUrlManager(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      d(new ScamCheckShortUrlManagerPrivate)
 {
 
 }
 
 ScamCheckShortUrlManager::~ScamCheckShortUrlManager()
 {
-
+    delete d;
 }
 
 ScamCheckShortUrlManager *ScamCheckShortUrlManager::self()

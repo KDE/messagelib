@@ -21,6 +21,7 @@
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
+class ScamCheckShortUrlManagerPrivate;
 class MESSAGEVIEWER_EXPORT ScamCheckShortUrlManager : public QObject
 {
     Q_OBJECT
@@ -28,7 +29,8 @@ public:
     explicit ScamCheckShortUrlManager(QObject *parent = Q_NULLPTR);
     ~ScamCheckShortUrlManager();
     static ScamCheckShortUrlManager *self();
-
+private:
+    ScamCheckShortUrlManagerPrivate *const d;
 };
 }
 #endif // SCAMCHECKSHORTURLMANAGER_H
