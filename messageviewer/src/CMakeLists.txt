@@ -401,6 +401,7 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     HEADER_NAMES
     ScamExpandUrlJob
     ScamCheckShortUrlManager
+    ScamCheckShortUrl
     REQUIRED_HEADERS MessageViewer_scam_HEADERS
     PREFIX MessageViewer
     RELATIVE scamdetection
