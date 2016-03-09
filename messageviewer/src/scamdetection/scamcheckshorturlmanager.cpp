@@ -16,6 +16,7 @@
 */
 
 
+#include "scamcheckshorturl.h"
 #include "scamcheckshorturlmanager.h"
 
 using namespace MessageViewer;
@@ -43,16 +44,18 @@ class MessageViewer::ScamCheckShortUrlManagerPrivate
 {
 public:
     ScamCheckShortUrlManagerPrivate()
+        : mCheckShortUrl(Q_NULLPTR)
     {
 
     }
+    ScamCheckShortUrl *mCheckShortUrl;
 };
 
 ScamCheckShortUrlManager::ScamCheckShortUrlManager(QObject *parent)
     : QObject(parent),
       d(new ScamCheckShortUrlManagerPrivate)
 {
-
+    d->mCheckShortUrl = new ScamCheckShortUrl(this);
 }
 
 ScamCheckShortUrlManager::~ScamCheckShortUrlManager()
@@ -63,4 +66,9 @@ ScamCheckShortUrlManager::~ScamCheckShortUrlManager()
 ScamCheckShortUrlManager *ScamCheckShortUrlManager::self()
 {
     return sInstance->scamCheckShortUrlManager;
+}
+
+ScamCheckShortUrl *ScamCheckShortUrlManager::scamCheckShortUrl() const
+{
+    return d->mCheckShortUrl;
 }

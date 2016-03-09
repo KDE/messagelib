@@ -18,6 +18,7 @@
 #include "scamdetection.h"
 #include "scamdetectiondetailsdialog.h"
 #include "scamcheckshorturl.h"
+#include "scamcheckshorturlmanager.h"
 #include "settings/messageviewersettings.h"
 
 #include <KLocalizedString>
@@ -36,19 +37,17 @@ static QString addWarningColor(const QString &url)
 class MessageViewer::ScamDetectionPrivate
 {
 public:
-    ScamDetectionPrivate(ScamDetection *q)
-        : mCheckShortUrl(new ScamCheckShortUrl(q))
+    ScamDetectionPrivate()
     {
 
     }
     QString mDetails;
     QPointer<MessageViewer::ScamDetectionDetailsDialog> mDetailsDialog;
-    ScamCheckShortUrl *mCheckShortUrl;
 };
 
 ScamDetection::ScamDetection(QObject *parent)
     : QObject(parent),
-      d(new MessageViewer::ScamDetectionPrivate(this))
+      d(new MessageViewer::ScamDetectionPrivate())
 {
 }
 
@@ -59,7 +58,7 @@ ScamDetection::~ScamDetection()
 
 ScamCheckShortUrl *ScamDetection::scamCheckShortUrl() const
 {
-    return d->mCheckShortUrl;
+    return MessageViewer::ScamCheckShortUrlManager::self()->scamCheckShortUrl();
 }
 
 void ScamDetection::scanPage(QWebFrame *frame)
