@@ -52,6 +52,12 @@ QAction *ViewerPluginInterface::action() const
     return Q_NULLPTR;
 }
 
+void ViewerPluginInterface::setUrl(const QUrl &url)
+{
+    Q_UNUSED(url);
+    // Reimplement in subclass
+}
+
 void ViewerPluginInterface::setMessage(const KMime::Message::Ptr &value)
 {
     Q_UNUSED(value);

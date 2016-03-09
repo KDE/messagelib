@@ -76,6 +76,7 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     MessageViewer::ViewerPluginInterface::SpecificFeatureTypes featureTypes;
     featureTypes |= MessageViewer::ViewerPluginInterface::NeedMessage;
     featureTypes |= MessageViewer::ViewerPluginInterface::NeedSelection;
+    featureTypes |= MessageViewer::ViewerPluginInterface::NeedUrl;
     menu->addActions(toolManager->viewerPluginActionList(featureTypes));
     menuBar->addMenu(menu);
 }

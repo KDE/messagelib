@@ -37,13 +37,15 @@ public:
         None = 0,
         NeedSelection = 2,
         NeedMessage = 4,
-        All = 8
+        NeedUrl = 8,
+        All = 16
     };
     Q_FLAGS(SpecificFeatureTypes)
     Q_DECLARE_FLAGS(SpecificFeatureTypes, SpecificFeatureType)
 
     virtual void setText(const QString &text);
     virtual QAction *action() const;
+    virtual void setUrl(const QUrl &url);
     virtual void setMessage(const KMime::Message::Ptr &value);
     virtual void setMessageItem(const Akonadi::Item &item);
     virtual void closePlugin();
