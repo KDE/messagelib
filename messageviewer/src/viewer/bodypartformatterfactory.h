@@ -38,7 +38,6 @@
 
 #include "messageviewer/bodypartformatterbasefactory.h"
 
-
 namespace MessageViewer
 {
 

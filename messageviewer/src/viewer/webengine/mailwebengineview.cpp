@@ -24,7 +24,6 @@
 #include "scamdetection/scamdetection.h"
 #include "scamdetection/scamcheckshorturl.h"
 
-
 using namespace MessageViewer;
 
 class MessageViewer::MailWebEngineViewPrivate

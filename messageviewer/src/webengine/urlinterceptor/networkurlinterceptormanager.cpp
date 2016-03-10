@@ -18,7 +18,6 @@
 #include "networkurlinterceptormanager.h"
 #include "networkurlinterceptorpluginmanager.h"
 
-
 using namespace MessageViewer;
 
 class MessageViewer::NetworkUrlInterceptorManagerPrivate

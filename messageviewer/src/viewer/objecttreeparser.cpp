@@ -81,7 +81,6 @@
 
 #include <KLocalizedString>
 
-
 #include <KTextToHTML>
 
 // Qt includes

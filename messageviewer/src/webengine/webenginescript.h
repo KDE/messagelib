@@ -20,7 +20,6 @@
 #include <QString>
 #include "messageviewer_export.h"
 
-
 namespace MessageViewer
 {
 namespace WebEngineScript

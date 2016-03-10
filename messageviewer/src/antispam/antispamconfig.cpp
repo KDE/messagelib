@@ -36,7 +36,6 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
-
 namespace MessageViewer
 {
 

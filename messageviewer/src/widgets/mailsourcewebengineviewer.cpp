@@ -109,7 +109,8 @@ struct SetPlainTextFunctor {
         : textEdit(textEdit)
     {
     }
-    void operator()(const QString &result) {
+    void operator()(const QString &result)
+    {
         textEdit->setPlainText(result);
     }
 };

@@ -20,7 +20,6 @@
 #include "scamexpandurljob.h"
 #include "messageviewer_debug.h"
 
-
 #include <QFile>
 
 #include <QStandardPaths>

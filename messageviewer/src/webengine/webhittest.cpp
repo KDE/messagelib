@@ -22,8 +22,7 @@
 using namespace MessageViewer;
 template<typename Arg, typename R, typename C>
 
-struct InvokeWrapper
-{
+struct InvokeWrapper {
     R *receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)

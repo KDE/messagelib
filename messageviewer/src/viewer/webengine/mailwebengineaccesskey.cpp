@@ -126,7 +126,7 @@ void MailWebEngineAccessKey::hideAccessKeys()
     }
 }
 
- #if 0
+#if 0
 void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const QWebElement &element)
 {
     QLabel *label = new QLabel(d->mWebView);

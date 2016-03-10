@@ -33,7 +33,6 @@
 
 #include "messageviewer_debug.h"
 
-
 namespace MessageViewer
 {
 

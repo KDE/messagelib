@@ -28,7 +28,6 @@
 #include <KSharedConfig>
 #include <QUrl>
 
-
 #include <QDialogButtonBox>
 #include <KConfigGroup>
 #include <QPushButton>

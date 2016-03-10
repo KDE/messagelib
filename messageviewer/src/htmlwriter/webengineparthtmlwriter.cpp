@@ -110,7 +110,7 @@ void WebEnginePartHtmlWriter::flush()
 }
 
 void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId,
-                                     const QString &contentURL)
+                                        const QString &contentURL)
 {
     mEmbeddedPartMap[QLatin1String(contentId)] = contentURL;
 }

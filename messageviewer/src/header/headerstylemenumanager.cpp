@@ -28,7 +28,6 @@
 #include <KActionCollection>
 #include <KLocalizedString>
 
-
 using namespace MessageViewer;
 
 class MessageViewer::HeaderStyleMenuManagerPrivate
