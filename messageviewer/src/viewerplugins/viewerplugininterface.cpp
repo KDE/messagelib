@@ -40,6 +40,11 @@ ViewerPluginInterface::~ViewerPluginInterface()
     delete d;
 }
 
+void ViewerPluginInterface::execute()
+{
+    showWidget();
+}
+
 void ViewerPluginInterface::setText(const QString &text)
 {
     Q_UNUSED(text);
@@ -71,6 +76,11 @@ void ViewerPluginInterface::setMessageItem(const Akonadi::Item &item)
 }
 
 void ViewerPluginInterface::closePlugin()
+{
+    // Reimplement in subclass
+}
+
+void ViewerPluginInterface::showWidget()
 {
     // Reimplement in subclass
 }

@@ -88,7 +88,7 @@ ViewerPluginTest::~ViewerPluginTest()
 
 void ViewerPluginTest::slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface)
 {
-    interface->showWidget();
+    interface->execute();
 }
 
 int main(int argc, char **argv)

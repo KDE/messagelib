@@ -2391,7 +2391,7 @@ void ViewerPrivate::slotActivatePlugin(ViewerPluginInterface *interface)
     if (!text.isEmpty()) {
         interface->setText(text);
     }
-    interface->showWidget();
+    interface->execute();
 }
 
 void ViewerPrivate::slotAttachmentSaveAs()
