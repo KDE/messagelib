@@ -102,6 +102,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         return md.serviceTypes().contains(s_serviceTypeName);
     });
 
+    // We need common plugin to avoid to duplicate code between akregator/kmail
     plugins += KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](const KPluginMetaData & md) {
         return md.serviceTypes().contains(QStringLiteral("MessageViewer/ViewerCommonPlugin"));
     });
