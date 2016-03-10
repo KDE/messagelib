@@ -98,8 +98,12 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     }
 
     static const QString s_serviceTypeName = serviceTypeName;
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(pluginName, [](const KPluginMetaData & md) {
+    QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(pluginName, [](const KPluginMetaData & md) {
         return md.serviceTypes().contains(s_serviceTypeName);
+    });
+
+    plugins += KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](const KPluginMetaData & md) {
+        return md.serviceTypes().contains(QStringLiteral("MessageViewer/ViewerCommonPlugin"));
     });
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
