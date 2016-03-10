@@ -69,8 +69,15 @@ void AdBlockAutomaticRulesListWidget::createItem(const QString &rule)
         const bool checkState = mDisabledRules.contains(rule);
         subItem->setCheckState(checkState ? Qt::Unchecked : Qt::Checked);
         updateItem(subItem);
+
+        if (rule.contains(QRegularExpression(QStringLiteral("^@@.*")))) {
+            subItem->setTextColor(Qt::magenta);
+        } else if (rule.contains(QRegularExpression(QStringLiteral("^\\[.*")))) {
+            subItem->setTextColor(Qt::red);
+        } else if (rule.contains(QRegularExpression(QStringLiteral(".*##.*")))) {
+            subItem->setTextColor(Qt::blue);
+        }
     }
-    //TODO define color here.
 }
 
 QStringList AdBlockAutomaticRulesListWidget::disabledRules() const
