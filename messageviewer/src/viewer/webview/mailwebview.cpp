@@ -364,15 +364,4 @@ void MailWebView::openBlockableItemsDialog()
     }
     delete dlg;
 }
-
-void MailWebView::expandUrl(const QUrl &url)
-{
-    mScamDetection->scamCheckShortUrl()->expandedUrl(url);
-}
-
-bool MailWebView::isAShortUrl(const QUrl &url) const
-{
-    return mScamDetection->scamCheckShortUrl()->isShortUrl(url);
-}
-
 #include "moc_mailwebview.cpp"

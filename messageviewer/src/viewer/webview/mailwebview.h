@@ -66,9 +66,6 @@ public:
 
     QUrl linkOrImageUrlAt(const QPoint &global) const;
 
-    bool isAShortUrl(const QUrl &url) const;
-    void expandUrl(const QUrl &url);
-
     void scamCheck();
     void saveMainFrameScreenshotInFile(const QString &filename);
     void openBlockableItemsDialog();

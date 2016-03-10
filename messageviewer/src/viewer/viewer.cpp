@@ -652,18 +652,6 @@ QAction *Viewer::openBlockableItems() const
     return d->mBlockableItems;
 }
 
-bool Viewer::isAShortUrl(const QUrl &url) const
-{
-    Q_D(const Viewer);
-    return d->isAShortUrl(url);
-}
-
-QAction *Viewer::expandShortUrlAction() const
-{
-    Q_D(const Viewer);
-    return d->mExpandUrlAction;
-}
-
 KActionMenu *Viewer::shareServiceUrlMenu() const
 {
     Q_D(const Viewer);

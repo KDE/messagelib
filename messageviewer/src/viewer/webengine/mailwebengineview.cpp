@@ -36,7 +36,6 @@ public:
 
     }
     MailWebEngineAccessKey *mWebViewAccessKey;
-    ScamDetection *mScamDetection;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -63,14 +62,4 @@ MailWebEngineView::~MailWebEngineView()
 void MailWebEngineView::selectAll()
 {
     page()->triggerAction(QWebEnginePage::SelectAll);
-}
-
-void MailWebEngineView::expandUrl(const QUrl &url)
-{
-    d->mScamDetection->scamCheckShortUrl()->expandedUrl(url);
-}
-
-bool MailWebEngineView::isAShortUrl(const QUrl &url) const
-{
-    return d->mScamDetection->scamCheckShortUrl()->isShortUrl(url);
 }

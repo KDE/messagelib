@@ -1709,11 +1709,6 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("adblock_blockable_items"), mBlockableItems);
     connect(mBlockableItems, &QAction::triggered, this, &ViewerPrivate::slotOpenBlockableItems);
 
-    mExpandUrlAction = new QAction(i18n("Expand Short URL"), this);
-    ac->addAction(QStringLiteral("expand_short_url"), mExpandUrlAction);
-    ac->setShortcutsConfigurable(mExpandUrlAction, false);
-    connect(mExpandUrlAction, &QAction::triggered, this, &ViewerPrivate::slotExpandShortUrl);
-
     mShareServiceUrlMenu = mShareServiceManager->menu();
     ac->addAction(QStringLiteral("shareservice_menu"), mShareServiceUrlMenu);
     connect(mShareServiceManager, &PimCommon::ShareServiceUrlManager::serviceUrlSelected, this, &ViewerPrivate::slotServiceUrlSelected);
@@ -2977,18 +2972,6 @@ void ViewerPrivate::slotBlockImage()
 void ViewerPrivate::slotOpenBlockableItems()
 {
     mViewer->openBlockableItemsDialog();
-}
-
-bool ViewerPrivate::isAShortUrl(const QUrl &url) const
-{
-    return mViewer->isAShortUrl(url);
-}
-
-void ViewerPrivate::slotExpandShortUrl()
-{
-    if (mClickedUrl.isValid()) {
-        mViewer->expandUrl(mClickedUrl);
-    }
 }
 
 void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)

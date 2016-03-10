@@ -283,7 +283,6 @@ public:
     QAction *resetMessageDisplayFormatAction() const;
     QAction *blockImage() const;
     QAction *openBlockableItems() const;
-    QAction *expandShortUrlAction() const;
     KActionMenu *shareServiceUrlMenu() const;
     HeaderStylePlugin *headerStylePlugin() const;
     void setPluginName(const QString &pluginName);
@@ -324,8 +323,6 @@ public:
 
     void saveMainFrameScreenshotInFile(const QString &filename);
     bool adblockEnabled() const;
-    bool isAShortUrl(const QUrl &url) const;
-
     bool mimePartTreeIsEmpty() const;
 
     void showOpenAttachmentFolderWidget(const QUrl &url);

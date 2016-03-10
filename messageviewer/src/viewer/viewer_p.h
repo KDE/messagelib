@@ -422,8 +422,6 @@ public:
     void goOnline();
     void goResourceOnline();
 
-    bool isAShortUrl(const QUrl &url) const;
-
     void showOpenAttachmentFolderWidget(const QUrl &url);
 
     bool mimePartTreeIsEmpty() const;
@@ -560,7 +558,6 @@ public Q_SLOTS:
     void slotResetMessageDisplayFormat();
     void slotBlockImage();
     void slotOpenBlockableItems();
-    void slotExpandShortUrl();
 
     void slotGeneralFontChanged();
 
@@ -643,7 +640,6 @@ public:
     QAction *mCopyImageLocation;
     QAction *mBlockImage;
     QAction *mBlockableItems;
-    QAction *mExpandUrlAction;
     QUrl mHoveredUrl;
     QUrl mClickedUrl;
     QUrl mImageUrl;
