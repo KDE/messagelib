@@ -21,3 +21,11 @@ target_link_libraries(adblockblockableitemdialog_gui
   Qt5::WebKitWidgets
   KF5::ItemViews 
 )
+
+
+set(adblockautomaticruleslistwidget_gui_SRCS adblockautomaticruleslistwidget_gui.cpp)
+add_executable(adblockautomaticruleslistwidget_gui ${adblockautomaticruleslistwidget_gui_SRCS})
+target_link_libraries(adblockautomaticruleslistwidget_gui
+  KF5::MessageViewer
+  KF5::ItemViews
+)

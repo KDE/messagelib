@@ -17,10 +17,15 @@
 
 #include "adblockautomaticruleslistwidget_gui.h"
 
-#include <KAboutData>
-#include <QCommandLineParser>
 
-AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(const QString &filename, QWidget *parent)
+#include <KAboutData>
+#include <KLocalizedString>
+#include <QCommandLineParser>
+#include <QHBoxLayout>
+#include <QApplication>
+#include <QStandardPaths>
+
+AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout;
@@ -35,29 +40,18 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    KAboutData aboutData(QStringLiteral("adblockblockableitemtest_gui"), i18n("adblockblockableitemtest_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(i18n("Test for adblockblokabledialog"));
+    KAboutData aboutData(QStringLiteral("AdBlockAutomaticRulesListWidget_gui"), i18n("AdBlockAutomaticRulesListWidget_Gui"), QStringLiteral("1.0"));
+    aboutData.setShortDescription(i18n("Test for AdBlockAutomaticRulesListWidget"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), i18n("URL of an html file to be opened")));
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    QString fileName;
-    if (parser.positionalArguments().count()) {
-        fileName = parser.positionalArguments().at(0);
-    } else {
-        fileName = QFileDialog::getOpenFileName(0, QString(), QString(), i18n("HTML File (*.html)"));
-    }
-    if (fileName.isEmpty()) {
-        return 0;
-    }
-
-    AdBlockAutomaticRulesListWidgetTest *w = new AdBlockAutomaticRulesListWidgetTest(fileName);
+    AdBlockAutomaticRulesListWidgetTest *w = new AdBlockAutomaticRulesListWidgetTest();
 
     w->resize(800, 600);
     w->show();
