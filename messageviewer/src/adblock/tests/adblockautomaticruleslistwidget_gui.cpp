@@ -16,6 +16,7 @@
 */
 
 #include "adblockautomaticruleslistwidget_gui.h"
+#include "../common/adblockautomaticruleslistwidget.h"
 
 
 #include <KAboutData>
@@ -29,6 +30,8 @@ AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(QWidget
     : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout;
+    MessageViewer::AdBlockAutomaticRulesListWidget *list = new MessageViewer::AdBlockAutomaticRulesListWidget(this);
+    lay->addWidget(list);
 
 }
 
