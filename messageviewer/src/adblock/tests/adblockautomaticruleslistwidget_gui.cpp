@@ -31,9 +31,10 @@ AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(const Q
     : QWidget(parent)
 {
     //TODO fileName
-    QVBoxLayout *lay = new QVBoxLayout;
+    QVBoxLayout *lay = new QVBoxLayout(this);
     MessageViewer::AdBlockAutomaticRulesListWidget *list = new MessageViewer::AdBlockAutomaticRulesListWidget(this);
     lay->addWidget(list);
+
 
 }
 
