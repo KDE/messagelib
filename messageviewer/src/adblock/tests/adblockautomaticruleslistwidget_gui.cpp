@@ -30,12 +30,15 @@
 AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(const QString &fileName, QWidget *parent)
     : QWidget(parent)
 {
-    //TODO fileName
     QVBoxLayout *lay = new QVBoxLayout(this);
+    QFile localFile(fileName);
+    QString adblockList;
+    if (localFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        adblockList = QString::fromLatin1(localFile.readAll());
+    }
     MessageViewer::AdBlockAutomaticRulesListWidget *list = new MessageViewer::AdBlockAutomaticRulesListWidget(this);
+    list->setRules(adblockList);
     lay->addWidget(list);
-
-
 }
 
 AdBlockAutomaticRulesListWidgetTest::~AdBlockAutomaticRulesListWidgetTest()
