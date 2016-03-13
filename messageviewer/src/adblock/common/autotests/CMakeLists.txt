@@ -11,4 +11,4 @@ set( adblockautomaticruleslistwidgettest_SRCS adblockautomaticruleslistwidgettes
 add_executable( adblockautomaticruleslistwidgettest ${adblockautomaticruleslistwidgettest_SRCS})
 add_test(adblockautomaticruleslistwidgettest adblockautomaticruleslistwidgettest)
 ecm_mark_as_test(adblockautomaticruleslistwidgettest)
-target_link_libraries( adblockautomaticruleslistwidgettest Qt5::Test Qt5::Widgets)
+target_link_libraries( adblockautomaticruleslistwidgettest Qt5::Test Qt5::Widgets KF5::MessageViewer)

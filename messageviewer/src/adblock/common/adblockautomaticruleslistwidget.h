@@ -19,10 +19,10 @@
 #define ADBLOCKAUTOMATICRULESLISTWIDGET_H
 
 #include <QListWidget>
-
+#include "messageviewer_export.h"
 namespace MessageViewer
 {
-class AdBlockAutomaticRulesListWidget : public QListWidget
+class MESSAGEVIEWER_EXPORT AdBlockAutomaticRulesListWidget : public QListWidget
 {
     Q_OBJECT
 public:

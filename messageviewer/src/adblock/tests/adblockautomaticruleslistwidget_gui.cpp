@@ -16,6 +16,7 @@
 */
 
 #include "adblockautomaticruleslistwidget_gui.h"
+#include "../common/adblockautomaticruleslistwidget.h"
 
 
 #include <KAboutData>
@@ -24,12 +25,20 @@
 #include <QHBoxLayout>
 #include <QApplication>
 #include <QStandardPaths>
+#include <QFileDialog>
 
-AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(QWidget *parent)
+AdBlockAutomaticRulesListWidgetTest::AdBlockAutomaticRulesListWidgetTest(const QString &fileName, QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout;
-
+    QVBoxLayout *lay = new QVBoxLayout(this);
+    QFile localFile(fileName);
+    QString adblockList;
+    if (localFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        adblockList = QString::fromLatin1(localFile.readAll());
+    }
+    MessageViewer::AdBlockAutomaticRulesListWidget *list = new MessageViewer::AdBlockAutomaticRulesListWidget(this);
+    list->setRules(adblockList);
+    lay->addWidget(list);
 }
 
 AdBlockAutomaticRulesListWidgetTest::~AdBlockAutomaticRulesListWidgetTest()
@@ -46,12 +55,25 @@ int main(int argc, char **argv)
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), i18n("URL of adblock file list")));
+
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    AdBlockAutomaticRulesListWidgetTest *w = new AdBlockAutomaticRulesListWidgetTest();
+    QString fileName;
+    if (parser.positionalArguments().count()) {
+        fileName = parser.positionalArguments().at(0);
+    } else {
+        fileName = QFileDialog::getOpenFileName(0, QString(), QString(), i18n("Adblock File (*)"));
+    }
+    if (fileName.isEmpty()) {
+        return 0;
+    }
+
+
+    AdBlockAutomaticRulesListWidgetTest *w = new AdBlockAutomaticRulesListWidgetTest(fileName);
 
     w->resize(800, 600);
     w->show();

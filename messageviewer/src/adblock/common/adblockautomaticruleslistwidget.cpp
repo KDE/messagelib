@@ -39,8 +39,24 @@ void AdBlockAutomaticRulesListWidget::updateItem(QListWidgetItem *item)
 {
     const bool itemIsChecked = (item->checkState() & Qt::Checked);
     QFont font = item->font();
-    font.setItalic(!itemIsChecked);
-    item->setFont(font);
+    const QString rule = item->text();
+    if (itemIsChecked) {
+        font.setItalic(false);
+        item->setFont(font);
+        if (rule.contains(QRegularExpression(QStringLiteral("^@@.*")))) {
+            item->setTextColor(Qt::magenta);
+        } else if (rule.contains(QRegularExpression(QStringLiteral("^\\[.*")))) {
+            item->setTextColor(Qt::red);
+        } else if (rule.contains(QRegularExpression(QStringLiteral(".*##.*")))) {
+            item->setTextColor(Qt::blue);
+        } else {
+            item->setTextColor(Qt::black);
+        }
+    } else {
+        font.setItalic(true);
+        item->setFont(font);
+        item->setTextColor(Qt::gray);
+    }
 }
 
 void AdBlockAutomaticRulesListWidget::setDisabledRules(const QStringList &disabledRules)
@@ -64,19 +80,12 @@ void AdBlockAutomaticRulesListWidget::createItem(const QString &rule)
     if (rule.startsWith(QLatin1Char('!')) || rule.startsWith(QLatin1Char('['))) {
         //Comment
         subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+        subItem->setTextColor(Qt::gray);
     } else {
         subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
         const bool checkState = mDisabledRules.contains(rule);
         subItem->setCheckState(checkState ? Qt::Unchecked : Qt::Checked);
         updateItem(subItem);
-
-        if (rule.contains(QRegularExpression(QStringLiteral("^@@.*")))) {
-            subItem->setTextColor(Qt::magenta);
-        } else if (rule.contains(QRegularExpression(QStringLiteral("^\\[.*")))) {
-            subItem->setTextColor(Qt::red);
-        } else if (rule.contains(QRegularExpression(QStringLiteral(".*##.*")))) {
-            subItem->setTextColor(Qt::blue);
-        }
     }
 }
 
