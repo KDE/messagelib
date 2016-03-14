@@ -34,7 +34,8 @@
 
 class QListWidgetItem;
 
-namespace Ui {
+namespace Ui
+{
 class adblock;
 }
 

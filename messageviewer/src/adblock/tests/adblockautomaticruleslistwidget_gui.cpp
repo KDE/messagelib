@@ -18,7 +18,6 @@
 #include "adblockautomaticruleslistwidget_gui.h"
 #include "../common/adblockautomaticruleslistwidget.h"
 
-
 #include <KAboutData>
 #include <KLocalizedString>
 #include <QCommandLineParser>
@@ -57,7 +56,6 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), i18n("URL of adblock file list")));
 
-
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
@@ -71,7 +69,6 @@ int main(int argc, char **argv)
     if (fileName.isEmpty()) {
         return 0;
     }
-
 
     AdBlockAutomaticRulesListWidgetTest *w = new AdBlockAutomaticRulesListWidgetTest(fileName);
 
