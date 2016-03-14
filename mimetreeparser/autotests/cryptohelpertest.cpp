@@ -20,8 +20,7 @@
 
 #include "viewer/cryptohelper.h"
 
-#include <qtest_kde.h>
-#include <KDebug>
+#include <QTest>
 
 using namespace MessageViewer;
 
@@ -142,4 +141,4 @@ void CryptoHelperTest::testMultipleBlockMessage()
     QCOMPARE(blocks[3].text(), QByteArray("-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n"));
 }
 
-QTEST_KDEMAIN(CryptoHelperTest, GUI)
+QTEST_MAIN(CryptoHelperTest)
