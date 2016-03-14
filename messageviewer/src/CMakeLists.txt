@@ -212,6 +212,12 @@ set(libmessageviewer_scamdetection_SRCS
     scamdetection/scamcheckshorturlmanager.cpp
     )
 
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+   set(libmessageviewer_scamdetection_webengine_SRCS
+       scamdetection/scamdetectionwebengine.cpp
+   )
+endif()
+
 set(libmessageviewer_findbar_SRCS
     findbar/findbarbase.cpp
     findbar/findbarwebview.cpp
@@ -262,6 +268,7 @@ set(libmessageviewer_viewerplugins_SRCS
     )
 
 set(libmessageviewer_SRCS
+    ${libmessageviewer_scamdetection_webengine_SRCS}
     ${libmessageviewer_widgets_webengine_SRCS}
     ${libmessageviewer_webengine_SRCS}
     ${libmessageviewer_viewer_SRCS}
