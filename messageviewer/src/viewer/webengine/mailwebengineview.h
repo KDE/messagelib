@@ -36,6 +36,13 @@ public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
 
     void slotShowDetails();
+
+protected:
+    void keyReleaseEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
+
 Q_SIGNALS:
     void openUrl(const QUrl &url);
 private:
