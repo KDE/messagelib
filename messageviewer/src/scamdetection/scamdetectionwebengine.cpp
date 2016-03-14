@@ -19,8 +19,12 @@
 #include "scamdetectionwebengine.h"
 #include "scamcheckshorturlmanager.h"
 #include "scamdetectiondetailsdialog.h"
+#include "settings/messageviewersettings.h"
+
+#include <KLocalizedString>
 
 #include <QPointer>
+#include <QWebEnginePage>
 
 using namespace MessageViewer;
 
@@ -50,6 +54,19 @@ ScamDetectionWebEngine::~ScamDetectionWebEngine()
 ScamCheckShortUrl *ScamDetectionWebEngine::scamCheckShortUrl() const
 {
     return MessageViewer::ScamCheckShortUrlManager::self()->scamCheckShortUrl();
+}
+
+void ScamDetectionWebEngine::scanPage(QWebEnginePage *page)
+{
+    if (MessageViewer::MessageViewerSettings::self()->scamDetectionEnabled()) {
+        bool foundScam = false;
+        d->mDetails.clear();
+        d->mDetails = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
+        //TODO
+        if (foundScam) {
+            Q_EMIT messageMayBeAScam();
+        }
+    }
 }
 
 #if 0 //TODO

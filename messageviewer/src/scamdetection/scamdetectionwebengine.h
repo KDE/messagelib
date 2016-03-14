@@ -20,6 +20,7 @@
 
 #include <QObject>
 
+class QWebEnginePage;
 namespace MessageViewer
 {
 class ScamCheckShortUrl;
@@ -32,6 +33,7 @@ public:
     ~ScamDetectionWebEngine();
     ScamCheckShortUrl *scamCheckShortUrl() const;
 
+    void scanPage(QWebEnginePage *page);
 public Q_SLOTS:
     void showDetails();
 
