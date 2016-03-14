@@ -140,34 +140,20 @@ set(libmessageviewer_otp_extra_SRCS
     )
 
 set(libmessageviewer_viewer_SRCS
-    viewer/attachmentstrategy.cpp
-    viewer/bodypartformatter.cpp
-    viewer/bodypartformatterbasefactory.cpp
     viewer/bodypartformatterfactory.cpp
     viewer/bodypartformatterfactorysingleton.cpp
-    viewer/cryptohelper.cpp
     viewer/csshelper.cpp
-    viewer/csshelperbase.cpp
     viewer/editorwatcher.cpp
-    viewer/mimeparttree/mimetreemodel.cpp
-    viewer/nodehelper.cpp
     viewer/objecttreeemptysource.cpp
-    viewer/objecttreeparser.cpp
     viewer/objecttreeviewersource.cpp
-    viewer/messagepart.cpp
-    viewer/partnodebodypart.cpp
     viewer/pluginloaderbase.cpp
     viewer/viewer.cpp
     viewer/viewer_p.cpp
-    viewer//webview/webviewaccesskey.cpp
+    viewer/webview/webviewaccesskey.cpp
     viewer/messagedisplayformatattribute.cpp
     viewer/urlhandlermanager.cpp
     viewer/mimeparttree/mimeparttreeview.cpp
-    viewer/converthtmltoplaintext.cpp
-    viewer/memento/cryptobodypartmemento.cpp
-    viewer/memento/decryptverifybodypartmemento.cpp
-    viewer/memento/verifydetachedbodypartmemento.cpp
-    viewer/memento/verifyopaquebodypartmemento.cpp
+    viewer/mimeparttree/mimetreemodel.cpp
     )
 
 set(libmessageviewer_widgets_SRCS
@@ -229,10 +215,8 @@ set(libmessageviewer_findbar_SRCS
     )
 
 set(libmessageviewer_utils_SRCS
-    utils/iconnamecache.cpp
     utils/markmessagereadhandler.cpp
     utils/messageviewerutil.cpp
-    utils/mimetype.cpp
     )
 
 if (QTWEBENGINE_EXPERIMENTAL_OPTION)
@@ -243,8 +227,6 @@ endif()
 
 
 set(libmessageviewer_htmlwriter_SRCS
-    htmlwriter/filehtmlwriter.cpp
-    htmlwriter/queuehtmlwriter.cpp
     htmlwriter/teehtmlwriter.cpp
     htmlwriter/webkitparthtmlwriter.cpp
     ${libmessageviewer_htmlwriter_webengine_SRCS}
@@ -261,7 +243,6 @@ set(libmessageviewer_job_SRCS
     job/createnotejob.cpp
     job/attachmenteditjob.cpp
     job/modifymessagedisplayformatjob.cpp
-    job/kleojobexecutor.cpp
     )
 
 set(libmessageviewer_viewerplugins_SRCS
@@ -286,7 +267,6 @@ set(libmessageviewer_SRCS
     ${libmessageviewer_job_SRCS}
     ${libmessageviewer_viewerplugins_SRCS}
     settings/messageviewersettings.cpp
-    interfaces/bodypartformatter.cpp
     ${_mailwebview_cpp}
     ${libmessageviewer_mailviewer_SRCS}
     )
@@ -321,6 +301,7 @@ target_link_libraries(KF5MessageViewer
     KF5::AkonadiMime
     KF5::Contacts
     KF5::Libkleo
+    KF5::MimeTreeParser
     PRIVATE
     KF5::ItemViews
     ${libmessageviewer_web_LIB}
@@ -424,30 +405,14 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     HEADER_NAMES
     Viewer
     CSSHelper
-    PartMetaData
-    ObjectTreeParser
     ObjectTreeEmptySource
-    AttachmentStrategy
-    NodeHelper
     EditorWatcher
     Stl_Util
-    CSSHelperBase
-    MessagePart
-    Enums
-    BodyPartFormatterBaseFactory
     BodyPartFormatterFactory
     REQUIRED_HEADERS MessageViewer_viewer_HEADERS
     PREFIX MessageViewer
     RELATIVE viewer
     )
-
-ecm_generate_headers(MessageViewer_Camelcasemain_HEADERS
-    HEADER_NAMES
-    ObjectTreeSourceIf
-    REQUIRED_HEADERS MessageViewer_main_HEADERS
-    PREFIX MessageViewer
-    )
-
 
 ecm_generate_headers(MessageViewer_Camelcasewidgets_HEADERS
     HEADER_NAMES
@@ -464,8 +429,6 @@ ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
     HEADER_NAMES
     MessageViewerUtil
     MarkMessageReadHandler
-    IconNameCache
-    MimeType
     REQUIRED_HEADERS MessageViewer_utils_HEADERS
     PREFIX MessageViewer
     RELATIVE utils
@@ -500,10 +463,7 @@ ecm_generate_headers(MessageViewer_Camelcaseantispam_HEADERS
 
 ecm_generate_headers(MessageViewer_Camelcaseinterfaces_HEADERS
     HEADER_NAMES
-    BodyPartFormatter
-    BodyPart
     BodyPartURLHandler
-    HtmlWriter
     URLHandler
     REQUIRED_HEADERS MessageViewer_interfaces_HEADERS
     PREFIX MessageViewer
@@ -541,7 +501,6 @@ ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
 ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
     HEADER_NAMES
     WebKitPartHtmlWriter
-    FileHtmlWriter
     REQUIRED_HEADERS MessageViewer_htmlwriter_HEADERS
     PREFIX MessageViewer
     RELATIVE htmlwriter
@@ -589,7 +548,7 @@ ecm_generate_headers(MessageViewer_Camelcaseviewerjob_HEADERS
 
 ecm_generate_pri_file(BASE_NAME MessageViewer
     LIB_NAME KF5MessageViewer
-    DEPS "PimCommon MessageCore AkonadiCore AkonadiMime Contacts Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
+    DEPS "PimCommon MessageCore AkonadiCore AkonadiMime Contacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     )
 
 
@@ -609,7 +568,6 @@ install(FILES
     ${MessageViewer_Camelcaseinterfaces_HEADERS}
     ${MessageViewer_Camelcaseviewer_HEADERS}
     ${MessageViewer_Camelcasewidgets_HEADERS}
-    ${MessageViewer_Camelcasemain_HEADERS}
     ${MessageViewer_Camelcaseviewerjob_HEADERS}
     ${MessageViewer_Camelcaseantispam_HEADERS}
     ${MessageViewer_Camelfindbar_HEADERS}
@@ -637,7 +595,6 @@ install(FILES
     ${MessageViewer_interfaces_HEADERS}
     ${MessageViewer_HEADERS}
     ${MessageViewer_viewer_HEADERS}
-    ${MessageViewer_main_HEADERS}
     ${MessageViewer_widgets_HEADERS}
     ${MessageViewer_viewerjob_HEADERS}
     ${MessageViewer_antispam_HEADERS}
@@ -659,42 +616,3 @@ install(FILES header/data/messageviewer_header_themes.knsrc DESTINATION ${KDE_IN
 
 install(FILES notify/messageviewer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR} )
 install(FILES scamdetection/data/longurlServices.json DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer )
-
-# Disabled libotp for 16.04, because it is not ready for release yet.
-
-# Project(Otp)
-# 
-# set(libotp_SRCS
-#     ${libmessageviewer_otp_SRCS}
-#     ${libmessageviewer_otp_extra_SRCS}
-#     )
-# ecm_qt_declare_logging_category(libotp_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
-# 
-# add_library(KF5Otp
-#     ${libotp_SRCS}
-#     )
-# generate_export_header(KF5Otp BASE_NAME otp)
-# add_library(KF5::Otp ALIAS KF5Otp)
-# 
-# target_link_libraries(KF5Otp
-#     PUBLIC
-#     KF5::MessageCore #NodeHelper, StringUtils, Settings
-#     KF5::PimCommon #AttachmentTemporaryFile handling
-#     KF5::Libkleo
-#     PRIVATE
-#     KF5::Mime
-#     KF5::IconThemes
-#     ${libmessageviewer_web_LIB}
-#     Grantlee5::TextDocument
-#     )
-# 
-# install(TARGETS
-#     KF5Otp
-#     EXPORT KF5OtpTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
-#     )
-# 
-# set_target_properties(KF5Otp PROPERTIES
-#     VERSION ${MESSAGEVIEWER_VERSION_STRING}
-#     SOVERSION ${MESSAGEVIEWER_SOVERSION}
-#     EXPORT_NAME Otp
-#     )
