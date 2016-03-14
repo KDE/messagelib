@@ -17,7 +17,7 @@
   02110-1301, USA.
 */
 #include "interfaces/htmlwriter.h"
-#include "viewer/csshelper.h"
+#include "viewer/csshelperbase.h"
 
 #include <KMime/Message>
 
@@ -42,10 +42,10 @@ public:
     QString html;
 };
 
-class TestCSSHelper : public MessageViewer::CSSHelper
+class TestCSSHelper : public MessageViewer::CSSHelperBase
 {
 public:
-    TestCSSHelper() : MessageViewer::CSSHelper(0)
+    TestCSSHelper() : MessageViewer::CSSHelperBase(0)
     {
         for (int i = 0; i < 3; ++i) {
             mQuoteColor[i] = QColor(0x00, 0x80 - i * 0x10, 0x00);
