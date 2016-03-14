@@ -40,7 +40,7 @@
 #include "viewer/objecttreeparser.h"
 #include "messagepart.h"
 
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 
 using namespace MessageViewer;
 

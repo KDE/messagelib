@@ -74,8 +74,8 @@
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
-#include <kmime/kmime_message.h>
-#include <kmime/kmime_headers.h>
+#include <KMime/Message>
+#include <KMime/Headers>
 
 // KDE includes
 

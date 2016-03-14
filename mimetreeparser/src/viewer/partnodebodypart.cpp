@@ -35,7 +35,7 @@
 #include "nodehelper.h"
 #include "objecttreeparser.h"
 #include "messageviewer_debug.h"
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 
 #include <QTextCodec>
 #include <QUrl>

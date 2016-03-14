@@ -32,7 +32,7 @@
 
 #include <interfaces/htmlwriter.h>
 #include <job/kleojobexecutor.h>
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 #include <gpgme++/key.h>
 #include <gpgme.h>
 

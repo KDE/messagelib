@@ -27,9 +27,9 @@
 
 #include <MessageCore/NodeHelper>
 
-#include <kmime/kmime_content.h>
-#include <kmime/kmime_message.h>
-#include <kmime/kmime_headers.h>
+#include <KMime/Content>
+#include <KMime/Message>
+#include <KMime/Headers>
 
 #include <QTemporaryFile>
 #include <KLocalizedString>

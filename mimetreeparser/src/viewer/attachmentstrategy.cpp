@@ -35,7 +35,7 @@
 
 #include "nodehelper.h"
 
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 
 #include "messageviewer_debug.h"
 namespace MessageViewer
