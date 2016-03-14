@@ -105,6 +105,7 @@ if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
   endif()
 endif()
 
+add_subdirectory(mimetreeparser)
 add_subdirectory(messageviewer)
 add_subdirectory(templateparser)
 add_subdirectory(messagecomposer)
