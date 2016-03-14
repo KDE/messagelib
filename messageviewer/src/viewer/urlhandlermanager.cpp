@@ -50,7 +50,7 @@
 
 #include <Akonadi/Contact/ContactSearchJob>
 
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 #include <KEmailAddress>
 
 #include <KRun>

@@ -22,7 +22,7 @@
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/MimeType>
 
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 #include <KMime/Message>
 
 #include <KLocalizedString>

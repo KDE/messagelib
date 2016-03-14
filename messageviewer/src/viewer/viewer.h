@@ -26,7 +26,7 @@
 #include "messageviewer/viewerplugininterface.h"
 #include <MimeTreeParser/Enums>
 
-#include <kmime/kmime_message.h>
+#include <KMime/Message>
 
 #include <QWidget>
 

@@ -29,7 +29,7 @@
 #include <AkonadiCore/item.h>
 #include <AkonadiCore/monitor.h>
 #include <kio/job.h>
-#include <kmime/kmime_message.h>
+#include <KMime/Message>
 #include <kservice.h>
 #include <ksharedconfig.h>
 #include <QUrl>

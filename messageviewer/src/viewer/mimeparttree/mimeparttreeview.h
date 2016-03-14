@@ -19,7 +19,7 @@
 #define MIMEPARTTREEVIEW_H
 
 #include <QTreeView>
-#include <kmime/kmime_message.h>
+#include <KMime/Message>
 
 namespace MessageViewer
 {
