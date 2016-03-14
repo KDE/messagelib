@@ -49,7 +49,7 @@ enum HtmlMode {
 /**
  * Search mimetype from filename when mimetype is empty or application/octet-stream
  **/
-QMimeType mimetype(const QString &name);
+QMimeType MESSAGEVIEWER_EXPORT mimetype(const QString &name);
 
 /**
      * Finds the filename of an icon based on the given mimetype or filenames.

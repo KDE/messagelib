@@ -34,7 +34,8 @@
 #ifndef __MESSAGEVIEWER_PARTNODEBODYPART_H_
 #define __MESSAGEVIEWER_PARTNODEBODYPART_H_
 
-#include "interfaces/bodypart.h"
+#include "messageviewer_export.h"
+#include "mimetreeparser/bodypart.h"
 
 class QTextCodec;
 
@@ -54,7 +55,7 @@ namespace MessageViewer
 /**
     @short an implementation of the BodyPart interface using KMime::Content's
 */
-class PartNodeBodyPart : public Interface::BodyPart
+class MESSAGEVIEWER_EXPORT PartNodeBodyPart : public Interface::BodyPart
 {
 public:
     explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content,
