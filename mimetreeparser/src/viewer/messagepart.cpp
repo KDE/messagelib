@@ -21,7 +21,7 @@
 #include "messageviewer_debug.h"
 #include "objecttreeparser.h"
 #include "converthtmltoplaintext.h"
-#include "csshelper.h"
+#include "csshelperbase.h"
 #include "cryptohelper.h"
 #include "utils/iconnamecache.h"
 
