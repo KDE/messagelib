@@ -38,7 +38,7 @@
 
 #include "messageviewer/messageviewerutil.h"
 #include "kpimtextedit/texttospeech.h"
-#include "messageviewer/nodehelper.h"
+#include <MimeTreeParser/NodeHelper>
 #include "messageviewer_debug.h"
 #include "MessageCore/MessageCoreSettings"
 #include "MessageCore/NodeHelper"

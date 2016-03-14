@@ -32,7 +32,7 @@
 #ifndef __MESSAGEVIEWER_CSSHELPER_H__
 #define __MESSAGEVIEWER_CSSHELPER_H__
 
-#include "csshelperbase.h"
+#include <MimeTreeParser/CSSHelperBase>
 
 #include "messageviewer_export.h"
 

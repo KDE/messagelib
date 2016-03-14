@@ -24,7 +24,7 @@
 
 #include "messageviewer_export.h"
 #include "messageviewer/viewerplugininterface.h"
-#include "messageviewer/enums.h"
+#include <MimeTreeParser/Enums>
 
 #include <kmime/kmime_message.h>
 

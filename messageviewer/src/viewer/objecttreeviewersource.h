@@ -20,7 +20,7 @@
 #ifndef MAILVIEWER_OBJECTTREEVIEWERSOURCE_H
 #define MAILVIEWER_OBJECTTREEVIEWERSOURCE_H
 
-#include "objecttreesourceif.h"
+#include <MimeTreeParser/ObjectTreeSourceIf>
 
 class QString;
 

@@ -21,7 +21,7 @@
 #ifndef MAILVIEWER_P_H
 #define MAILVIEWER_P_H
 
-#include "messageviewer/nodehelper.h"
+#include <MimeTreeParser/NodeHelper>
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
 #include "PimCommon/ShareServiceUrlManager"
 #include "messageviewer/viewerplugininterface.h"

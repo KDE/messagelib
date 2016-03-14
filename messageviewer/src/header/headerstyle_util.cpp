@@ -16,11 +16,11 @@
 */
 
 #include "headerstyle_util.h"
-#include "messageviewer/nodehelper.h"
 #include "header/headerstyle.h"
 #include "messageviewer_debug.h"
 #include <MessageCore/StringUtil>
-#include "utils/iconnamecache.h"
+#include <MimeTreeParser/IconNameCache>
+#include <MimeTreeParser/NodeHelper>
 
 #include "MessageCore/MessageCoreSettings"
 #include "settings/messageviewersettings.h"

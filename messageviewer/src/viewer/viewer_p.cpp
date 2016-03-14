@@ -42,7 +42,7 @@
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KContacts/VCardConverter>
 #ifdef MESSAGEVIEWER_READER_HTML_DEBUG
-#include "htmlwriter/filehtmlwriter.h"
+#include <MimeMessagePart/FileHtmlWriter>
 #include "htmlwriter/teehtmlwriter.h"
 #endif
 #include <unistd.h> // link()
@@ -114,8 +114,8 @@
 #include "htmlwriter/webkitparthtmlwriter.h"
 #include "widgets/mailsourceviewer.h"
 #include "viewer/mimeparttree/mimetreemodel.h"
-#include "messageviewer/nodehelper.h"
-#include "viewer/objecttreeparser.h"
+#include <MimeTreeParser/NodeHelper>
+#include <MimeTreeParser/ObjectTreeParser>
 #include "viewer/urlhandlermanager.h"
 #include "messageviewer/messageviewerutil.h"
 #include "widgets/vcardviewer.h"
@@ -123,8 +123,8 @@
 #include "findbar/findbarwebview.h"
 #include "header/headerstylemenumanager.h"
 
-#include "messageviewer/bodypart.h"
-#include "interfaces/htmlwriter.h"
+#include <MimeTreeParser/BodyPart>
+#include <MimeTreeParser/HtmlWriter>
 
 #include <MessageCore/StringUtil>
 

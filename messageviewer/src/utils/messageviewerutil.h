@@ -39,7 +39,7 @@
 #define MAILVIEWERUTIL_H
 
 #include "messageviewer_export.h"
-#include "mimetype.h"
+#include <MimeTreeParser/MimeType>
 #include "kmime/kmime_content.h"
 #include <KService>
 #include <AkonadiCore/Item>

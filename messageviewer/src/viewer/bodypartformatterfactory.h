@@ -36,7 +36,7 @@
 
 #include "messageviewer_export.h"
 
-#include "messageviewer/bodypartformatterbasefactory.h"
+#include <MimeTreeParser/BodyPartFormatterBaseFactory>
 
 namespace MessageViewer
 {

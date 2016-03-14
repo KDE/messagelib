@@ -20,9 +20,9 @@
 #include "configurewidget.h"
 #include "messageviewer_debug.h"
 #include "ui_settings.h"
-#include "messageviewer/messageviewerutil.h"
+#include "utils/messageviewerutil.h"
 #include "settings/messageviewersettings.h"
-#include "messageviewer/nodehelper.h"
+#include <MimeTreeParser/NodeHelper>
 
 #include "MessageCore/MessageCoreSettings"
 

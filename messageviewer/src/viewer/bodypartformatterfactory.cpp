@@ -36,7 +36,7 @@
 #include "urlhandlermanager.h"
 #include "messageviewer_debug.h"
 
-#include "interfaces/bodypartformatter.h"
+#include <MimeTreeParser/BodyPartFormatter>
 
 using namespace MessageViewer;
 
