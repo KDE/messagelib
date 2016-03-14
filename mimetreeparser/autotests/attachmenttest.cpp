@@ -19,8 +19,6 @@
 #include "viewer/objecttreeparser.h"
 #include "util.h"
 
-#include "viewer/objecttreeemptysource.h"
-
 #include "setupenv.h"
 
 #include <qtest.h>
@@ -57,9 +55,9 @@ void AttachmentTest::testEncryptedAttachment()
     QFETCH(QString, mbox);
     auto msg = readAndParseMail(mbox);
     NodeHelper nodeHelper;
-    EmptySource emptySource;
-    emptySource.setAllowDecryption(true);
-    ObjectTreeParser otp(&emptySource, &nodeHelper);
+    Test::TestObjectTreeSource testSource(Q_NULLPTR, Q_NULLPTR);
+    testSource.setAllowDecryption(true);
+    ObjectTreeParser otp(&testSource, &nodeHelper);
     otp.parseObjectTree(msg.data());
 
     auto attachments = msg->attachments();

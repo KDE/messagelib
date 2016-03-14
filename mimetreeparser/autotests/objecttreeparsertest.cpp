@@ -20,7 +20,6 @@
 #include "util.h"
 
 #include "viewer/objecttreeparser.h"
-#include "viewer/objecttreeemptysource.h"
 #include "interfaces/htmlwriter.h"
 #include "viewer/csshelperbase.h"
 
@@ -56,7 +55,7 @@ void ObjectTreeParserTester::test_parsePlainMessage()
     QCOMPARE(msg->contents().size(), 0);
 
     // Parse the message
-    EmptySource emptySource;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     ObjectTreeParser otp(&emptySource);
     otp.parseObjectTree(msg.data());
 
@@ -190,7 +189,7 @@ void ObjectTreeParserTester::test_HTML()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
 
-    EmptySource emptySource;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     ObjectTreeParser otp(&emptySource);
 
     otp.parseObjectTree(msg.data());
@@ -227,7 +226,7 @@ void ObjectTreeParserTester::test_HTMLOnly()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
-    EmptySource emptySource;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     ObjectTreeParser otp(&emptySource);
 
     otp.parseObjectTree(msg.data());

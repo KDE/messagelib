@@ -19,8 +19,6 @@
 #include "viewer/objecttreeparser.h"
 #include "util.h"
 
-#include "viewer/objecttreeemptysource.h"
-
 #include <setupenv.h>
 
 #include <qtest.h>
@@ -50,14 +48,14 @@ QTEST_MAIN(UnencryptedMessageTest)
 
 void UnencryptedMessageTest::initTestCase()
 {
-    MessageViewer::Test::setupEnv();
+    Test::setupEnv();
 }
 
 void UnencryptedMessageTest::testMailWithoutEncryption()
 {
     KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
     NodeHelper nodeHelper;
-    EmptySource emptySource;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
     QVERIFY(!nodeHelper.unencryptedMessage(originalMessage));
@@ -70,7 +68,7 @@ void UnencryptedMessageTest::testSignedForwardedOpenPGPSignedEncrypted()
     NodeHelper nodeHelper;
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
 
@@ -89,7 +87,7 @@ void UnencryptedMessageTest::testForwardedOpenPGPSignedEncrypted()
     NodeHelper nodeHelper;
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     emptySource.setAllowDecryption(true);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -125,7 +123,7 @@ void UnencryptedMessageTest::testSMIMESignedEncrypted()
     KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("smime-signed-encrypted.mbox"));
 
     NodeHelper nodeHelper;
-    EmptySource emptySource;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     emptySource.setAllowDecryption(true);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -154,7 +152,7 @@ void UnencryptedMessageTest::testOpenPGPSignedEncrypted()
     KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-signed-encrypted.mbox"));
 
     NodeHelper nodeHelper;
-    EmptySource emptySource;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     emptySource.setAllowDecryption(true);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -183,7 +181,7 @@ void UnencryptedMessageTest::testOpenPGPEncrypted()
     KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
 
     NodeHelper nodeHelper;
-    EmptySource emptySource;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     emptySource.setAllowDecryption(true);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -203,7 +201,7 @@ void UnencryptedMessageTest::testOpenPGPEncryptedNotDecrypted()
     KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
 
     NodeHelper nodeHelper;
-    EmptySource emptySource;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     emptySource.setAllowDecryption(false);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -233,7 +231,7 @@ void UnencryptedMessageTest::testAsync()
 
     KMime::Message::Ptr originalMessage = readAndParseMail(mailFileName);
     NodeHelper nodeHelper;
-    EmptySource emptySource;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     emptySource.setAllowDecryption(true);
     {
         QEventLoop loop;
@@ -276,7 +274,7 @@ void UnencryptedMessageTest::testNotDecrypted()
     NodeHelper nodeHelper;
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     emptySource.setAllowDecryption(false);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -299,7 +297,7 @@ void UnencryptedMessageTest::testSMimeAutoCertImport()
     NodeHelper nodeHelper;
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
 

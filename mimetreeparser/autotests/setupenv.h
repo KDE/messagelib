@@ -22,8 +22,9 @@
 #define MESSAGECORE_TESTS_UTIL_H
 
 #include <gpgme++/key.h>
-#include <viewer/objecttreeemptysource.h>
+#include "objecttreesourceif.h"
 #include <viewer/attachmentstrategy.h>
+#include "viewer/bodypartformatterbasefactory.h"
 
 namespace MessageViewer
 {
@@ -40,7 +41,7 @@ void setupEnv();
 
 // We can't use EmptySource, since we need to control some emelnets of the source for tests to also test
 // loadExternal and htmlMail.
-class TestObjectTreeSource : public MessageViewer::EmptySource
+class TestObjectTreeSource : public MessageViewer::ObjectTreeSourceIf
 {
 public:
     TestObjectTreeSource(MessageViewer::HtmlWriter *writer,
@@ -50,6 +51,7 @@ public:
         , mAttachmentStrategy(QStringLiteral("smart"))
         , mHtmlLoadExternal(false)
         , mHtmlMail(true)
+        , mDecryptMessage(false)
     {
     }
 
@@ -104,12 +106,60 @@ public:
         return false;
     }
 
+    const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE
+    {
+	return &mBodyPartFormatterBaseFactory;
+    }
+
+    bool decryptMessage() const Q_DECL_OVERRIDE
+    {
+	return mDecryptMessage;
+    }
+
+    void setAllowDecryption(bool allowDecryption)
+    {
+	mDecryptMessage = allowDecryption;
+    }
+
+    bool showSignatureDetails() const Q_DECL_OVERRIDE
+    {
+        return false;
+    }
+
+    void setHtmlMode(MessageViewer::Util::HtmlMode mode) Q_DECL_OVERRIDE
+    {
+        Q_UNUSED(mode);
+    }
+
+    int levelQuote() const Q_DECL_OVERRIDE
+    {
+        return 1;
+    }
+
+    const QTextCodec *overrideCodec() Q_DECL_OVERRIDE
+    {
+	return Q_NULLPTR;
+    }
+
+    QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE
+    {
+        Q_UNUSED(message);
+        return QString(); //do nothing
+    }
+
+    QObject *sourceObject() Q_DECL_OVERRIDE
+    {
+	return Q_NULLPTR;
+    }
+
 private:
     MessageViewer::HtmlWriter *mWriter;
     MessageViewer::CSSHelperBase *mCSSHelper;
     QString mAttachmentStrategy;
+    BodyPartFormatterBaseFactory mBodyPartFormatterBaseFactory;
     bool mHtmlLoadExternal;
     bool mHtmlMail;
+    bool mDecryptMessage;
 };
 
 }
