@@ -62,3 +62,14 @@ void MailWebEngineView::selectAll()
 {
     page()->triggerAction(QWebEnginePage::SelectAll);
 }
+
+void MailWebEngineView::slotZoomChanged(qreal zoom)
+{
+    setZoomFactor(zoom);
+}
+
+void MailWebEngineView::slotShowDetails()
+{
+    //TODO
+    //mScamDetection->showDetails();
+}

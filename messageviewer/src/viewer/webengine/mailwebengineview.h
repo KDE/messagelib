@@ -31,6 +31,11 @@ public:
     ~MailWebEngineView();
 
     void selectAll();
+
+public Q_SLOTS:
+    void slotZoomChanged(qreal zoom);
+
+    void slotShowDetails();
 Q_SIGNALS:
     void openUrl(const QUrl &url);
 private:
