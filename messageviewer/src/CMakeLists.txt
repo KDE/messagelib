@@ -633,7 +633,6 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h
-    ${CMAKE_CURRENT_BINARY_DIR}/ui_settings_adblock.h
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer
     COMPONENT Devel
