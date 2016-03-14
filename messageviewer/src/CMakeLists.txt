@@ -648,39 +648,41 @@ install(FILES header/data/messageviewer_header_themes.knsrc DESTINATION ${KDE_IN
 install(FILES notify/messageviewer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR} )
 install(FILES scamdetection/data/longurlServices.json DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer )
 
-Project(Otp)
+# Disabled libotp for 16.04, because it is not ready for release yet.
 
-set(libotp_SRCS
-    ${libmessageviewer_otp_SRCS}
-    ${libmessageviewer_otp_extra_SRCS}
-    )
-ecm_qt_declare_logging_category(libotp_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
-
-add_library(KF5Otp
-    ${libotp_SRCS}
-    )
-generate_export_header(KF5Otp BASE_NAME otp)
-add_library(KF5::Otp ALIAS KF5Otp)
-
-target_link_libraries(KF5Otp
-    PUBLIC
-    KF5::MessageCore #NodeHelper, StringUtils, Settings
-    KF5::PimCommon #AttachmentTemporaryFile handling
-    KF5::Libkleo
-    PRIVATE
-    KF5::Mime
-    KF5::IconThemes
-    ${libmessageviewer_web_LIB}
-    Grantlee5::TextDocument
-    )
-
-install(TARGETS
-    KF5Otp
-    EXPORT KF5OtpTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
-    )
-
-set_target_properties(KF5Otp PROPERTIES
-    VERSION ${MESSAGEVIEWER_VERSION_STRING}
-    SOVERSION ${MESSAGEVIEWER_SOVERSION}
-    EXPORT_NAME Otp
-    )
+# Project(Otp)
+# 
+# set(libotp_SRCS
+#     ${libmessageviewer_otp_SRCS}
+#     ${libmessageviewer_otp_extra_SRCS}
+#     )
+# ecm_qt_declare_logging_category(libotp_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
+# 
+# add_library(KF5Otp
+#     ${libotp_SRCS}
+#     )
+# generate_export_header(KF5Otp BASE_NAME otp)
+# add_library(KF5::Otp ALIAS KF5Otp)
+# 
+# target_link_libraries(KF5Otp
+#     PUBLIC
+#     KF5::MessageCore #NodeHelper, StringUtils, Settings
+#     KF5::PimCommon #AttachmentTemporaryFile handling
+#     KF5::Libkleo
+#     PRIVATE
+#     KF5::Mime
+#     KF5::IconThemes
+#     ${libmessageviewer_web_LIB}
+#     Grantlee5::TextDocument
+#     )
+# 
+# install(TARGETS
+#     KF5Otp
+#     EXPORT KF5OtpTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
+#     )
+# 
+# set_target_properties(KF5Otp PROPERTIES
+#     VERSION ${MESSAGEVIEWER_VERSION_STRING}
+#     SOVERSION ${MESSAGEVIEWER_SOVERSION}
+#     EXPORT_NAME Otp
+#     )
