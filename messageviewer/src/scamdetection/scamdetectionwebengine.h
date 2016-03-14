@@ -22,6 +22,7 @@
 
 namespace MessageViewer
 {
+class ScamCheckShortUrl;
 class ScamDetectionWebEnginePrivate;
 class ScamDetectionWebEngine : public QObject
 {
@@ -29,6 +30,14 @@ class ScamDetectionWebEngine : public QObject
 public:
     explicit ScamDetectionWebEngine(QObject *parent = Q_NULLPTR);
     ~ScamDetectionWebEngine();
+    ScamCheckShortUrl *scamCheckShortUrl() const;
+
+public Q_SLOTS:
+    void showDetails();
+
+Q_SIGNALS:
+    void messageMayBeAScam();
+
 private:
     ScamDetectionWebEnginePrivate *const d;
 };
