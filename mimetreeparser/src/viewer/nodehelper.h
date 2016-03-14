@@ -21,8 +21,8 @@
 #define _MESSAGEVIEWER_NODEHELPER_H
 #include "messageviewer_export.h"
 
-#include "messageviewer/partmetadata.h"
-#include "messageviewer/enums.h"
+#include "mimetreeparser/partmetadata.h"
+#include "mimetreeparser/enums.h"
 
 #include <KMime/Message>
 

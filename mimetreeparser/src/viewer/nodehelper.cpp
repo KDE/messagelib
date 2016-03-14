@@ -22,7 +22,7 @@
 #include "utils/iconnamecache.h"
 #include "partmetadata.h"
 #include "interfaces/bodypart.h"
-#include "messageviewer/mimetype.h"
+#include "utils/mimetype.h"
 #include "PimCommon/AttachmentTemporaryFilesDirs"
 
 #include <MessageCore/NodeHelper>

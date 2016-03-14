@@ -36,13 +36,11 @@
 
 #include "messageviewer_export.h"
 
-#include "messageviewer/nodehelper.h"
+#include "mimetreeparser/nodehelper.h"
 #include "objecttreesourceif.h"
 
 #include <Libkleo/CryptoBackend>
 #include <gpgme++/verificationresult.h>
-
-#include "objecttreeemptysource.h"
 
 class QString;
 

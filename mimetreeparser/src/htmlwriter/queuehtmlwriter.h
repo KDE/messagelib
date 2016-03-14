@@ -21,7 +21,7 @@
 #define __MESSAGEVIEWER_QUEUEHTMLWRITER_H__
 
 #include "messageviewer_export.h"
-#include "messageviewer/htmlwriter.h"
+#include "mimetreeparser/htmlwriter.h"
 
 #include<QVector>
 #include<QVariant>
