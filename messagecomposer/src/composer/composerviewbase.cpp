@@ -46,7 +46,7 @@
 #include "settings/messagecomposersettings.h"
 
 #include <MessageViewer/ObjectTreeEmptySource>
-#include <MessageViewer/ObjectTreeParser>
+#include <MimeTreeParser/ObjectTreeParser>
 #ifndef QT_NO_CURSOR
 #include <Libkdepim/KCursorSaver>
 #endif

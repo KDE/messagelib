@@ -22,7 +22,7 @@
 #include "templateparser.h"
 #undef protected
 
-#include <MessageViewer/ObjectTreeParser>
+#include <MimeTreeParser/ObjectTreeParser>
 #include <KIdentityManagement/IdentityManager>
 #include <KIdentityManagement/Identity>
 

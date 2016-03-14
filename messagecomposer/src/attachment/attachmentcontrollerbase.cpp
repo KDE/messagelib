@@ -30,7 +30,7 @@
 
 #include "MessageComposer/GlobalPart"
 #include "MessageViewer/EditorWatcher"
-#include "messageviewer/nodehelper.h"
+#include <MimeTreeParser/NodeHelper>
 #include "MessageViewer/MessageViewerUtil"
 #include "MessageCore/StringUtil"
 
