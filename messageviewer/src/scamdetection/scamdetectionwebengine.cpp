@@ -27,6 +27,11 @@
 #include <QWebEnginePage>
 
 using namespace MessageViewer;
+static QString addWarningColor(const QString &url)
+{
+    const QString error = QStringLiteral("<font color=#FF0000>%1</font>").arg(url);
+    return error;
+}
 
 class MessageViewer::ScamDetectionWebEnginePrivate
 {
