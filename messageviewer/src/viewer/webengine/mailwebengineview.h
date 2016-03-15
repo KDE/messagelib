@@ -31,6 +31,7 @@ public:
     ~MailWebEngineView();
 
     void selectAll();
+    void scamCheck();
 
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);

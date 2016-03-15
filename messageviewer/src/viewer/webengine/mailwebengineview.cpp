@@ -21,7 +21,7 @@
 #include "messageviewer/messageviewersettings.h"
 #include <MessageViewer/NetworkAccessManagerWebEngine>
 
-#include "scamdetection/scamdetection.h"
+#include "scamdetection/scamdetectionwebengine.h"
 #include "scamdetection/scamcheckshorturl.h"
 
 using namespace MessageViewer;
@@ -34,6 +34,7 @@ public:
     {
 
     }
+    ScamDetectionWebEngine *mScamDetection;
     MailWebEngineAccessKey *mWebViewAccessKey;
 };
 
@@ -42,8 +43,9 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
       d(new MessageViewer::MailWebEngineViewPrivate)
 
 {
-    d->mWebViewAccessKey = new MailWebEngineAccessKey(this);
+    d->mWebViewAccessKey = new MailWebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
+    d->mScamDetection = new ScamDetectionWebEngine(this);
 
     new MessageViewer::NetworkAccessManagerWebEngine(ac, this);
     MailWebEnginePage *pageEngine = new MailWebEnginePage(this);
@@ -68,10 +70,14 @@ void MailWebEngineView::slotZoomChanged(qreal zoom)
     setZoomFactor(zoom);
 }
 
+void MailWebEngineView::scamCheck()
+{
+    d->mScamDetection->scanPage(page());
+}
+
 void MailWebEngineView::slotShowDetails()
 {
-    //TODO
-    //mScamDetection->showDetails();
+    d->mScamDetection->showDetails();
 }
 
 void MailWebEngineView::keyReleaseEvent(QKeyEvent *e)
