@@ -15,33 +15,32 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef SCAMDETECTIONWEBENGINE_H
-#define SCAMDETECTIONWEBENGINE_H
+#ifndef TEST_SCAMDETECTIONWEBENGINE_GUI_H
+#define TEST_SCAMDETECTIONWEBENGINE_GUI_H
 
-#include <QObject>
-#include "messageviewer_export.h"
-class QWebEnginePage;
+#include <QWidget>
+
 namespace MessageViewer
 {
-class ScamCheckShortUrl;
-class ScamDetectionWebEnginePrivate;
-class MESSAGEVIEWER_EXPORT ScamDetectionWebEngine : public QObject
+class ScamDetectionWarningWidget;
+class ScamDetectionWebEngine;
+}
+class QWebEngineView;
+class ScamDetectionWebEngineTestWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ScamDetectionWebEngine(QObject *parent = Q_NULLPTR);
-    ~ScamDetectionWebEngine();
-    ScamCheckShortUrl *scamCheckShortUrl() const;
+    explicit ScamDetectionWebEngineTestWidget(const QString &filename, QWidget *parent = Q_NULLPTR);
+    ~ScamDetectionWebEngineTestWidget();
 
-    void scanPage(QWebEnginePage *page);
-public Q_SLOTS:
-    void showDetails();
-
-Q_SIGNALS:
-    void messageMayBeAScam();
+private Q_SLOTS:
+    void slotLoadFinished();
+    void slotOpenHtml();
 
 private:
-    ScamDetectionWebEnginePrivate *const d;
+    MessageViewer::ScamDetectionWarningWidget *mScamWarningWidget;
+    MessageViewer::ScamDetectionWebEngine *mScamDetection;
+    QWebEngineView *mWebEngineView;
 };
-}
-#endif // SCAMDETECTIONWEBENGINE_H
+
+#endif
