@@ -20,6 +20,7 @@
 #include "scamcheckshorturlmanager.h"
 #include "scamdetectiondetailsdialog.h"
 #include "settings/messageviewersettings.h"
+#include "webengine/webenginescript.h"
 
 #include <KLocalizedString>
 
@@ -27,6 +28,25 @@
 #include <QWebEnginePage>
 
 using namespace MessageViewer;
+
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
+    R *receiver;
+    void (C::*memberFunction)(Arg);
+    void operator()(Arg result)
+    {
+        (receiver->*memberFunction)(result);
+    }
+};
+
+template<typename Arg, typename R, typename C>
+
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFunction};
+    return wrapper;
+}
+
 static QString addWarningColor(const QString &url)
 {
     const QString error = QStringLiteral("<font color=#FF0000>%1</font>").arg(url);
@@ -64,13 +84,19 @@ ScamCheckShortUrl *ScamDetectionWebEngine::scamCheckShortUrl() const
 void ScamDetectionWebEngine::scanPage(QWebEnginePage *page)
 {
     if (MessageViewer::MessageViewerSettings::self()->scamDetectionEnabled()) {
-        bool foundScam = false;
-        d->mDetails.clear();
-        d->mDetails = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
-        //TODO
-        if (foundScam) {
-            Q_EMIT messageMayBeAScam();
-        }
+        page->runJavaScript(MessageViewer::WebEngineScript::findAllAnchors(), invoke(this, &ScamDetectionWebEngine::handleScanPage));
+    }
+}
+
+void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
+{
+    bool foundScam = false;
+    d->mDetails.clear();
+    d->mDetails = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
+    qDebug()<<" void ScamDetectionWebEngine::handleScanPage(const QVariant &result)"<< result;
+    //TODO
+    if (foundScam) {
+        Q_EMIT messageMayBeAScam();
     }
 }
 

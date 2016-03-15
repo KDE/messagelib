@@ -19,6 +19,7 @@
 #define SCAMDETECTIONWEBENGINE_H
 
 #include <QObject>
+#include <QVariant>
 #include "messageviewer_export.h"
 class QWebEnginePage;
 namespace MessageViewer
@@ -34,8 +35,12 @@ public:
     ScamCheckShortUrl *scamCheckShortUrl() const;
 
     void scanPage(QWebEnginePage *page);
+
 public Q_SLOTS:
     void showDetails();
+
+private Q_SLOTS:
+    void handleScanPage(const QVariant &result);
 
 Q_SIGNALS:
     void messageMayBeAScam();
