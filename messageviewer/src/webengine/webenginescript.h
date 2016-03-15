@@ -27,6 +27,7 @@ namespace WebEngineScript
 MESSAGEVIEWER_EXPORT QString findAllImages();
 MESSAGEVIEWER_EXPORT QString findAllScripts();
 MESSAGEVIEWER_EXPORT QString findAllAnchors();
+MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
 }
 }
 #endif // WEBENGINESCRIPT_H

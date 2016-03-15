@@ -58,12 +58,37 @@ QString WebEngineScript::findAllAnchors()
                                          "var out = [];"
                                          "var anchors = document.getElementsByTagName('a');"
                                          "for (var i = 0; i < anchors.length; ++i) {"
+                                         "    var r = anchors[i].getBoundingClientRect();"
+                                         "    out.push({"
+                                         "        src: anchors[i].href,"
+                                         "        title: anchors[i].title,"
+                                         "        boudingRect: [r.top, r.left, r.width, r.height]"
+                                         "    });"
+                                         "}"
+                                         "return out;"
+                                         "})()");
+
+    return source;
+}
+
+QString WebEngineScript::findAllAnchorsAndForms()
+{
+    const QString source = QLatin1String("(function() {"
+                                         "var res = [];"
+                                         "var out = [];"
+                                         "var anchors = document.getElementsByTagName('a');"
+                                         "for (var i = 0; i < anchors.length; ++i) {"
                                          "    out.push({"
                                          "        src: anchors[i].href,"
                                          "        title: anchors[i].title"
                                          "    });"
                                          "}"
-                                         "return out;"
+                                         "var forms = document.getElementsByTagName('form');"
+                                         "res.push({"
+                                         "    anchors: out,"
+                                         "    forms:  forms.length"
+                                         "    });"
+                                         "return res;"
                                          "})()");
 
     return source;
