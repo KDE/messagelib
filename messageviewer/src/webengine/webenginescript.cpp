@@ -16,7 +16,9 @@
 */
 #include "webenginescript.h"
 
-QString MessageViewer::WebEngineScript::findAllImages()
+using namespace MessageViewer;
+
+QString WebEngineScript::findAllImages()
 {
     const QString source = QLatin1String("(function() {"
                                          "var out = [];"
@@ -33,7 +35,7 @@ QString MessageViewer::WebEngineScript::findAllImages()
     return source;
 }
 
-QString MessageViewer::WebEngineScript::findAllScripts()
+QString WebEngineScript::findAllScripts()
 {
     const QString source = QLatin1String("(function() {"
                                          "var out = [];"
@@ -42,6 +44,24 @@ QString MessageViewer::WebEngineScript::findAllScripts()
                                          "    var e = scripts[i];"
                                          "    out.push({"
                                          "        src: e.src"
+                                         "    });"
+                                         "}"
+                                         "return out;"
+                                         "})()");
+
+    return source;
+}
+
+QString WebEngineScript::findAllAnchors()
+{
+    const QString source = QLatin1String("(function() {"
+                                         "var out = [];"
+                                         "var anchor = document.getElementsByTagName('a');"
+                                         "for (var i = 0; i < anchor.length; ++i) {"
+                                         "    var e = anchor[i];"
+                                         "    out.push({"
+                                         "        src: e.getAttribute('href');"
+                                         "        title = e.text;"
                                          "    });"
                                          "}"
                                          "return out;"
