@@ -25,6 +25,7 @@ class KActionCollection;
 class QWheelEvent;
 class QResizeEvent;
 class QKeyEvent;
+class QWebEngineView;
 namespace MessageViewer
 {
 class MailWebEngineAccessKeyPrivate;
@@ -32,7 +33,7 @@ class MESSAGEVIEWER_EXPORT MailWebEngineAccessKey : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailWebEngineAccessKey(QObject *parent = Q_NULLPTR);
+    explicit MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent = Q_NULLPTR);
     ~MailWebEngineAccessKey();
 
     void setActionCollection(KActionCollection *ac);
