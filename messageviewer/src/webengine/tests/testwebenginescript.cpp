@@ -78,8 +78,10 @@ void TestWebEngineScript::handleScript(const QVariant &res)
 void TestWebEngineScript::slotExecuteScript()
 {
     const QString script = mTestScriptWidget->script();
-    qDebug()<<" script"<<script;
-    mTestWebEngine->page()->runJavaScript(script, invoke(this, &TestWebEngineScript::handleScript));
+    if (!script.isEmpty()) {
+        qDebug()<<" script"<<script;
+        mTestWebEngine->page()->runJavaScript(script, invoke(this, &TestWebEngineScript::handleScript));
+    }
 }
 
 int main(int argc, char *argv[])
