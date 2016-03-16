@@ -16,23 +16,23 @@
 */
 
 #include "testwebengineaccesskey.h"
-
+#include "viewer/webengine/mailwebengineaccesskey.h"
+#include "viewer/webengine/mailwebengineview.h"
+#include "messageviewer/messageviewersettings.h"
 #include <QApplication>
 #include <QHBoxLayout>
 #include <QWebEngineSettings>
+#include <QStandardPaths>
 
+#include <KActionCollection>
 
-TestWebEngineAccesskeyView::TestWebEngineAccesskeyView(QWidget *parent)
-    : QWebEngineView(parent)
-{
-    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
-}
 
 TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
-    mTestWebEngine = new TestWebEngineAccesskeyView(this);
+    MessageViewer::MessageViewerSettings::self()->setAccessKeyEnabled(true);
+    mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     vboxLayout->addWidget(mTestWebEngine);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
 }
@@ -45,6 +45,7 @@ TestWebEngineAccesskey::~TestWebEngineAccesskey()
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    QStandardPaths::setTestModeEnabled(true);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     TestWebEngineAccesskey *testWebEngine = new TestWebEngineAccesskey;
     testWebEngine->show();

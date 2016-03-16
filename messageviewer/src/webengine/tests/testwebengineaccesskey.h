@@ -20,12 +20,10 @@
 
 #include <QWebEngineView>
 #include <QWidget>
-class TestWebEngineAccesskeyView : public QWebEngineView
+namespace MessageViewer
 {
-    Q_OBJECT
-public:
-    explicit TestWebEngineAccesskeyView(QWidget *parent = Q_NULLPTR);
-};
+class MailWebEngineView;
+}
 
 class TestWebEngineAccesskey : public QWidget
 {
@@ -35,7 +33,7 @@ public:
     ~TestWebEngineAccesskey();
 
 private:
-    TestWebEngineAccesskeyView *mTestWebEngine;
+    MessageViewer::MailWebEngineView *mTestWebEngine;
 };
 
 #endif // TESTWEBENGINEACCESSKEY_H
