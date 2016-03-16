@@ -19,11 +19,22 @@
 #include "testwebenginescript.h"
 
 #include <QApplication>
+#include <QHBoxLayout>
+#include <QWebEngineSettings>
+
+TestWebEngineScriptView::TestWebEngineScriptView(QWidget *parent)
+    : QWebEngineView(parent)
+{
+    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
+}
 
 TestWebEngineScript::TestWebEngineScript(QWidget *parent)
     : QWidget(parent)
 {
-
+    QHBoxLayout *hboxLayout = new QHBoxLayout(this);
+    TestWebEngineScriptView *pageView = new TestWebEngineScriptView(this);
+    hboxLayout->addWidget(pageView);
+    pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
 }
 
 TestWebEngineScript::~TestWebEngineScript()

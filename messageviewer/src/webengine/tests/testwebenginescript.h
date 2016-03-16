@@ -19,7 +19,16 @@
 #ifndef TESTWEBENGINESCRIPT_H
 #define TESTWEBENGINESCRIPT_H
 
+#include <QWebEngineView>
 #include <QWidget>
+
+class TestWebEngineScriptView : public QWebEngineView
+{
+    Q_OBJECT
+public:
+    explicit TestWebEngineScriptView(QWidget *parent = Q_NULLPTR);
+};
+
 
 class TestWebEngineScript : public QWidget
 {
