@@ -18,3 +18,13 @@ add_executable(webenginescripttest ${webenginescript_test_SRCS})
 target_link_libraries(webenginescripttest
     Qt5::Widgets KF5::MessageViewer Qt5::WebEngine Qt5::WebEngineWidgets
     )
+
+set(webengineaccesskey_test_SRCS
+    testwebengineaccesskey.cpp
+    )
+
+add_executable(webengineaccesskeytest ${webengineaccesskey_test_SRCS})
+
+target_link_libraries(webengineaccesskeytest
+    Qt5::Widgets KF5::MessageViewer Qt5::WebEngine Qt5::WebEngineWidgets
+    )
