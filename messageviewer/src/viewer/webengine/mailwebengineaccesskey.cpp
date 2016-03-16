@@ -88,7 +88,7 @@ MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObjec
     : QObject(parent),
       d(new MessageViewer::MailWebEngineAccessKeyPrivate(webEngine))
 {
-
+    qDebug()<<" MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
 }
 
 MailWebEngineAccessKey::~MailWebEngineAccessKey()
@@ -103,6 +103,7 @@ void MailWebEngineAccessKey::setActionCollection(KActionCollection *ac)
 
 void MailWebEngineAccessKey::wheelEvent(QWheelEvent *e)
 {
+    qDebug()<<" void MailWebEngineAccessKey::wheelEvent(QWheelEvent *e)";
     if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::PreActivated && (e->modifiers() & Qt::ControlModifier)) {
         d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::NotActivated;
     }
@@ -117,27 +118,29 @@ void MailWebEngineAccessKey::resizeEvent(QResizeEvent *)
 
 void MailWebEngineAccessKey::keyPressEvent(QKeyEvent *e)
 {
-#if 0
-    if (e && d->mWebView->hasFocus()) {
+    if (e && d->mWebEngine->hasFocus()) {
         if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::Activated) {
-#if 0 //FIXME
             if (checkForAccessKey(e)) {
                 hideAccessKeys();
                 e->accept();
                 return;
             }
             hideAccessKeys();
-#endif
-        } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier && !isEditableElement(d->mWebView->page())) {
+        } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier
+           #if 0 //FIXME
+                   && !isEditableElement(d->mWebView->page())
+           #endif
+                   ) {
             d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::PreActivated; // Only preactive here, it will be actually activated in key release.
         }
     }
-#endif
 }
 
 void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
 {
+    qDebug()<<" void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
     if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::PreActivated) {
+        qDebug()<<" void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
         // Activate only when the CTRL key is pressed and released by itself.
         if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
             showAccessKeys();
@@ -230,6 +233,9 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 
 void MailWebEngineAccessKey::showAccessKeys()
 {
+    //TODO fix me.
+    searchAccessKey();
+
     QList<QChar> unusedKeys;
     unusedKeys.reserve(10 + ('Z' - 'A' + 1));
     for (char c = 'A'; c <= 'Z'; ++c) {
