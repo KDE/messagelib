@@ -104,6 +104,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         webengine/webhittest.cpp
         webengine/webenginepage.cpp
         webengine/webenginescript.cpp
+        webengine/webengineview.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -398,6 +399,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         HEADER_NAMES
         WebHitTestResult
         WebEnginePage
+        WebEngineView
         WebHitTest
         REQUIRED_HEADERS MessageViewer_webengine_misc_HEADERS
         PREFIX MessageViewer
