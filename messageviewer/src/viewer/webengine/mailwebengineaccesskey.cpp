@@ -70,8 +70,18 @@ public:
 
 QString MailWebEngineAccessKeyPrivate::script() const
 {
-    //TODO
-    return QString();
+    const QString script = QString::fromLatin1("(function() {"
+                                               "var out = [];"
+                                               "var matches = document.querySelectorAll(\"a[href], area,button:not([disabled]), input:not([disabled]):not([hidden]),label[for],legend,select:not([disabled]),textarea:not([disabled])\");"
+                                               "for (var i = 0; i < matches.length; ++i) {"
+                                               "     var r = matches[i].getBoundingClientRect();"
+                                               "    out.push({"
+                                               "       src: matches[i].href,"
+                                               "       boudingRect: [r.top, r.left, r.width, r.height]"
+                                               "       });"
+                                               "}"
+                                               "return out;})()");
+    return script;
 }
 
 
