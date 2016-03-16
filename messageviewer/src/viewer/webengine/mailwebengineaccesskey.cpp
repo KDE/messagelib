@@ -218,6 +218,17 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
     return handled;
 }
 
+void MailWebEngineAccessKey::searchAccessKey()
+{
+    d->mWebEngine->page()->runJavaScript(d->script(), invoke(this, &MailWebEngineAccessKey::handleSearchAccessKey));
+}
+
+void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
+{
+    qDebug()<<" void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)"<<res;
+    //TODO
+}
+
 void MailWebEngineAccessKey::showAccessKeys()
 {
     QList<QChar> unusedKeys;

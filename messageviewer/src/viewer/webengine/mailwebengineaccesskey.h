@@ -50,7 +50,11 @@ public:
 public Q_SLOTS:
     void hideAccessKeys();
 
+private Q_SLOTS:
+    void handleSearchAccessKey(const QVariant &res);
+
 private:
+    void searchAccessKey(); //TODO move it
     MailWebEngineAccessKeyPrivate *const d;
 };
 }
