@@ -16,6 +16,7 @@
 */
 
 #include "mailwebengineaccesskey.h"
+#include "mailwebengineaccesskeyanchor.h"
 
 #include <KActionCollection>
 #include <QKeyEvent>
@@ -58,6 +59,7 @@ public:
     {
 
     }
+    QString script() const;
     QList<QLabel *> mAccessKeyLabels;
     //QHash<QChar, QWebElement> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
@@ -65,6 +67,13 @@ public:
     AccessKeyState mAccessKeyActivated;
     KActionCollection *mActionCollection;
 };
+
+QString MailWebEngineAccessKeyPrivate::script() const
+{
+    //TODO
+    return QString();
+}
+
 
 MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)
     : QObject(parent),
@@ -177,9 +186,9 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
     if (text.isEmpty()) {
         return false;
     }
-#if 0
     QChar key = text.at(0).toUpper();
     bool handled = false;
+#if 0
     if (d->mAccessKeyNodes.contains(key)) {
         QWebElement element = d->mAccessKeyNodes[key];
         QPoint p = element.geometry().center();
@@ -195,10 +204,8 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
         QCoreApplication::sendEvent(this, &revent);
         handled = true;
     }
-    return handled;
-#else
-    return false;
 #endif
+    return handled;
 }
 
 void MailWebEngineAccessKey::showAccessKeys()
@@ -302,6 +309,7 @@ void MailWebEngineAccessKey::showAccessKeys()
         }
     }
 
-    d->mAccessKeyActivated = (d->mAccessKeyLabels.isEmpty() ? MailWebEngineAccessKeyPrivate::Activated : MailWebEngineAccessKeyPrivate::NotActivated);
 #endif
+    d->mAccessKeyActivated = (d->mAccessKeyLabels.isEmpty() ? MailWebEngineAccessKeyPrivate::Activated : MailWebEngineAccessKeyPrivate::NotActivated);
 }
+
