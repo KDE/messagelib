@@ -19,6 +19,7 @@
 #include "testwebenginescript.h"
 
 #include <QApplication>
+#include <QPushButton>
 #include <QHBoxLayout>
 #include <QTextEdit>
 #include <QWebEngineSettings>
@@ -58,11 +59,25 @@ TestWebEngineScript::TestWebEngineScript(QWidget *parent)
 
     mTestScriptWidget = new TestScriptWidget(this);
     vboxLayout->addWidget(mTestScriptWidget);
+    connect(mTestScriptWidget, &TestScriptWidget::executeScript, this, &TestWebEngineScript::slotExecuteScript);
 }
 
 TestWebEngineScript::~TestWebEngineScript()
 {
 
+}
+
+void TestWebEngineScript::handleScript(const QVariant &res)
+{
+    qDebug()<<" res"<<res;
+    //TODO
+    //mTestScriptWidget->setResult();
+}
+
+void TestWebEngineScript::slotExecuteScript()
+{
+    mTestWebEngine->page()->runJavaScript(mTestScriptWidget->script(), invoke(this, &TestWebEngineScript::handleScript));
+    //TODO
 }
 
 int main(int argc, char *argv[])
@@ -81,8 +96,26 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout(this);
 
     mScriptEdit = new QTextEdit;
+    mScriptEdit->setAcceptRichText(false);
     layout->addWidget(mScriptEdit);
+
+    QVBoxLayout *vboxLayout = new QVBoxLayout;
+    layout->addLayout(vboxLayout);
+
     mResultEdit = new QTextEdit;
     mResultEdit->setReadOnly(true);
-    layout->addWidget(mResultEdit);
+    vboxLayout->addWidget(mResultEdit);
+    QPushButton *button = new QPushButton(QStringLiteral("Execute Script"), this);
+    connect(button, &QPushButton::clicked, this, &TestScriptWidget::executeScript);
+    vboxLayout->addWidget(button);
+}
+
+void TestScriptWidget::setResult(const QString &res)
+{
+    mResultEdit->setText(res);
+}
+
+QString TestScriptWidget::script() const
+{
+    return mScriptEdit->toPlainText();
 }

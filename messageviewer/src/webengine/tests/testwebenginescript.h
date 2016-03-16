@@ -27,6 +27,10 @@ class TestScriptWidget : public QWidget
     Q_OBJECT
 public:
     explicit TestScriptWidget(QWidget *parent = Q_NULLPTR);
+    void setResult(const QString &res);
+    QString script() const;
+Q_SIGNALS:
+    void executeScript();
 private:
     QTextEdit *mScriptEdit;
     QTextEdit *mResultEdit;
@@ -46,6 +50,12 @@ class TestWebEngineScript : public QWidget
 public:
     explicit TestWebEngineScript(QWidget *parent = Q_NULLPTR);
     ~TestWebEngineScript();
+
+
+private Q_SLOTS:
+    void slotExecuteScript();
+    void handleScript(const QVariant &res);
+
 private:
     TestScriptWidget *mTestScriptWidget;
     TestWebEngineScriptView *mTestWebEngine;
