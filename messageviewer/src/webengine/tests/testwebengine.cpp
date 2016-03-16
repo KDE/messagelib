@@ -71,7 +71,6 @@ void TestWebEngineView::slotHitTestFinished(const MessageViewer::WebHitTestResul
 
 void TestWebEngineView::contextMenuEvent(QContextMenuEvent *e)
 {
-    qDebug() << " void TestWebEngine::contextMenuEvent(QContextMenuEvent *e)";
     MessageViewer::WebHitTest *webHit = static_cast<MessageViewer::WebEnginePage *>(page())->hitTestContent(e->pos());
     connect(webHit, &MessageViewer::WebHitTest::finished, this, &TestWebEngineView::slotHitTestFinished);
 }
