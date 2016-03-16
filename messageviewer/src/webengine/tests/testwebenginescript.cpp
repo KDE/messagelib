@@ -20,7 +20,27 @@
 
 #include <QApplication>
 #include <QHBoxLayout>
+#include <QTextEdit>
 #include <QWebEngineSettings>
+
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
+    R *receiver;
+    void (C::*memberFunction)(Arg);
+    void operator()(Arg result)
+    {
+        (receiver->*memberFunction)(result);
+    }
+};
+
+template<typename Arg, typename R, typename C>
+
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFunction};
+    return wrapper;
+}
+
 
 TestWebEngineScriptView::TestWebEngineScriptView(QWidget *parent)
     : QWebEngineView(parent)
@@ -31,10 +51,13 @@ TestWebEngineScriptView::TestWebEngineScriptView(QWidget *parent)
 TestWebEngineScript::TestWebEngineScript(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *hboxLayout = new QHBoxLayout(this);
-    TestWebEngineScriptView *pageView = new TestWebEngineScriptView(this);
-    hboxLayout->addWidget(pageView);
-    pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    QVBoxLayout *vboxLayout = new QVBoxLayout(this);
+    mTestWebEngine = new TestWebEngineScriptView(this);
+    vboxLayout->addWidget(mTestWebEngine);
+    mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
+
+    mTestScriptWidget = new TestScriptWidget(this);
+    vboxLayout->addWidget(mTestScriptWidget);
 }
 
 TestWebEngineScript::~TestWebEngineScript()
@@ -50,4 +73,16 @@ int main(int argc, char *argv[])
     testWebEngine->show();
     const int ret = app.exec();
     return ret;
+}
+
+TestScriptWidget::TestScriptWidget(QWidget *parent)
+    : QWidget(parent)
+{
+    QHBoxLayout *layout = new QHBoxLayout(this);
+
+    mScriptEdit = new QTextEdit;
+    layout->addWidget(mScriptEdit);
+    mResultEdit = new QTextEdit;
+    mResultEdit->setReadOnly(true);
+    layout->addWidget(mResultEdit);
 }

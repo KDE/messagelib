@@ -21,6 +21,16 @@
 
 #include <QWebEngineView>
 #include <QWidget>
+class QTextEdit;
+class TestScriptWidget : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit TestScriptWidget(QWidget *parent = Q_NULLPTR);
+private:
+    QTextEdit *mScriptEdit;
+    QTextEdit *mResultEdit;
+};
 
 class TestWebEngineScriptView : public QWebEngineView
 {
@@ -36,6 +46,9 @@ class TestWebEngineScript : public QWidget
 public:
     explicit TestWebEngineScript(QWidget *parent = Q_NULLPTR);
     ~TestWebEngineScript();
+private:
+    TestScriptWidget *mTestScriptWidget;
+    TestWebEngineScriptView *mTestWebEngine;
 };
 
 #endif // TESTWEBENGINESCRIPT_H
