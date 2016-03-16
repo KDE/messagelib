@@ -37,7 +37,6 @@ TestWebEngine::TestWebEngine(QWidget *parent)
     pageView->setContextMenuPolicy(Qt::DefaultContextMenu);
     setContextMenuPolicy(Qt::DefaultContextMenu);
     pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
-    //connect(pageView, &QWebEngineView::showContextMenu, this, &TestWebEngine::slotShowContextMenu);
 }
 
 TestWebEngine::~TestWebEngine()
@@ -45,12 +44,6 @@ TestWebEngine::~TestWebEngine()
 
 }
 
-#if 0
-void TestWebEngine::slotShowContextMenu()
-{
-
-}
-#endif
 TestWebEngineView::TestWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
