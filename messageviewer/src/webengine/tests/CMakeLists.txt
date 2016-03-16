@@ -1,5 +1,4 @@
 set(webengine_test_SRCS
-    main.cpp
     testwebengine.cpp
     )
 

@@ -17,6 +17,7 @@
 
 #include "testwebengine.h"
 #include <QHBoxLayout>
+#include <QApplication>
 #include <QWebEngineView>
 #include <MessageViewer/WebHitTestResult>
 #include <MessageViewer/WebEnginePage>
@@ -80,4 +81,14 @@ void TestWebEngineView::contextMenuEvent(QContextMenuEvent *e)
     qDebug() << " void TestWebEngine::contextMenuEvent(QContextMenuEvent *e)";
     MessageViewer::WebHitTest *webHit = static_cast<MessageViewer::WebEnginePage *>(page())->hitTestContent(e->pos());
     connect(webHit, &MessageViewer::WebHitTest::finished, this, &TestWebEngineView::slotHitTestFinished);
+}
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+    TestWebEngine *testWebEngine = new TestWebEngine;
+    testWebEngine->show();
+    const int ret = app.exec();
+    return ret;
 }
