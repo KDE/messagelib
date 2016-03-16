@@ -83,7 +83,7 @@ void MailWebEngineView::slotShowDetails()
 void MailWebEngineView::keyReleaseEvent(QKeyEvent *e)
 {
     if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
-        //mWebViewAccessKey->keyReleaseEvent(e);
+        d->mWebViewAccessKey->keyReleaseEvent(e);
     }
     QWebEngineView::keyReleaseEvent(e);
 }
@@ -92,7 +92,7 @@ void MailWebEngineView::keyPressEvent(QKeyEvent *e)
 {
     if (e && hasFocus()) {
         if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
-            //mWebViewAccessKey->keyPressEvent(e);
+            d->mWebViewAccessKey->keyPressEvent(e);
         }
     }
     QWebEngineView::keyPressEvent(e);
@@ -101,7 +101,7 @@ void MailWebEngineView::keyPressEvent(QKeyEvent *e)
 void MailWebEngineView::wheelEvent(QWheelEvent *e)
 {
     if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
-        //mWebViewAccessKey->wheelEvent(e);
+        d->mWebViewAccessKey->wheelEvent(e);
     }
     QWebEngineView::wheelEvent(e);
 }
@@ -109,7 +109,7 @@ void MailWebEngineView::wheelEvent(QWheelEvent *e)
 void MailWebEngineView::resizeEvent(QResizeEvent *e)
 {
     if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
-        //mWebViewAccessKey->resizeEvent(e);
+        d->mWebViewAccessKey->resizeEvent(e);
     }
     QWebEngineView::resizeEvent(e);
 }
