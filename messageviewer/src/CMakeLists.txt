@@ -87,6 +87,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         viewer/webengine/mailwebengineview.cpp
         viewer/webengine/mailwebenginepage.cpp
         viewer/webengine/mailwebengineaccesskey.cpp
+        viewer/webengine/mailwebengineaccesskeyanchor.cpp
         ${libmessageviewer_mailviewer_SRCS}
         findbar/findbarwebengineview.cpp
         )
