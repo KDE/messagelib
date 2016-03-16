@@ -17,6 +17,7 @@
 
 
 #include "testwebenginescript.h"
+#include "webengine/webenginescript.h"
 
 #include <QApplication>
 #include <QPushButton>
@@ -46,7 +47,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
 TestWebEngineScriptView::TestWebEngineScriptView(QWidget *parent)
     : QWebEngineView(parent)
 {
-    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
 }
 
 TestWebEngineScript::TestWebEngineScript(QWidget *parent)
