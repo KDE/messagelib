@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "testwebenginescript.h"
 #include "webengine/webenginescript.h"
 
@@ -43,7 +42,6 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
     return wrapper;
 }
 
-
 TestWebEngineScriptView::TestWebEngineScriptView(QWidget *parent)
     : QWebEngineView(parent)
 {
@@ -70,7 +68,7 @@ TestWebEngineScript::~TestWebEngineScript()
 
 void TestWebEngineScript::handleScript(const QVariant &res)
 {
-    qDebug()<<" res"<<res;
+    qDebug() << " res" << res;
     //TODO
     //mTestScriptWidget->setResult();
 }
@@ -79,7 +77,7 @@ void TestWebEngineScript::slotExecuteScript()
 {
     const QString script = mTestScriptWidget->script();
     if (!script.isEmpty()) {
-        qDebug()<<" script"<<script;
+        qDebug() << " script" << script;
         mTestWebEngine->page()->runJavaScript(script, invoke(this, &TestWebEngineScript::handleScript));
     }
 }

@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "scamdetectionwebengine.h"
 #include "scamcheckshorturlmanager.h"
 #include "scamdetectiondetailsdialog.h"
@@ -97,7 +96,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
     d->mDetails = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
     QRegularExpression ip4regExp(QStringLiteral("\\b[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{0,3})?(?:\\.[0-9]{0,3})?"));
     const QList<QVariant> lst = result.toList();
-    Q_FOREACH(const QVariant &var, lst) {
+    Q_FOREACH (const QVariant &var, lst) {
         QMap<QString, QVariant> mapVariant = var.toMap();
         //qDebug()<<" mapVariant"<<mapVariant;
 

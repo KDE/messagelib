@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #ifndef TESTWEBENGINESCRIPT_H
 #define TESTWEBENGINESCRIPT_H
 
@@ -43,14 +42,12 @@ public:
     explicit TestWebEngineScriptView(QWidget *parent = Q_NULLPTR);
 };
 
-
 class TestWebEngineScript : public QWidget
 {
     Q_OBJECT
 public:
     explicit TestWebEngineScript(QWidget *parent = Q_NULLPTR);
     ~TestWebEngineScript();
-
 
 private Q_SLOTS:
     void slotExecuteScript();

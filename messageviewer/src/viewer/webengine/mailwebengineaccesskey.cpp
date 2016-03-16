@@ -71,19 +71,18 @@ public:
 QString MailWebEngineAccessKeyPrivate::script() const
 {
     const QString script = QString::fromLatin1("(function() {"
-                                               "var out = [];"
-                                               "var matches = document.querySelectorAll(\"a[href], area,button:not([disabled]), input:not([disabled]):not([hidden]),label[for],legend,select:not([disabled]),textarea:not([disabled])\");"
-                                               "for (var i = 0; i < matches.length; ++i) {"
-                                               "     var r = matches[i].getBoundingClientRect();"
-                                               "    out.push({"
-                                               "       src: matches[i].href,"
-                                               "       boudingRect: [r.top, r.left, r.width, r.height]"
-                                               "       });"
-                                               "}"
-                                               "return out;})()");
+                           "var out = [];"
+                           "var matches = document.querySelectorAll(\"a[href], area,button:not([disabled]), input:not([disabled]):not([hidden]),label[for],legend,select:not([disabled]),textarea:not([disabled])\");"
+                           "for (var i = 0; i < matches.length; ++i) {"
+                           "     var r = matches[i].getBoundingClientRect();"
+                           "    out.push({"
+                           "       src: matches[i].href,"
+                           "       boudingRect: [r.top, r.left, r.width, r.height]"
+                           "       });"
+                           "}"
+                           "return out;})()");
     return script;
 }
-
 
 MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)
     : QObject(parent),
@@ -225,7 +224,7 @@ void MailWebEngineAccessKey::searchAccessKey()
 
 void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
-    qDebug()<<" void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)"<<res;
+    qDebug() << " void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
     //TODO
 }
 
