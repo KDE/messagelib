@@ -61,7 +61,7 @@ public:
     }
     QString script() const;
     QList<QLabel *> mAccessKeyLabels;
-    //QHash<QChar, QWebElement> mAccessKeyNodes;
+    QHash<QChar, MessageViewer::MailWebEngineAccessKeyAnchor> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
     QWebEngineView *mWebEngine;
     AccessKeyState mAccessKeyActivated;
@@ -160,7 +160,7 @@ void MailWebEngineAccessKey::hideAccessKeys()
             label->deleteLater();
         }
         d->mAccessKeyLabels.clear();
-        //FIXME d->mAccessKeyNodes.clear();
+        d->mAccessKeyNodes.clear();
         d->mDuplicateLinkElements.clear();
         d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::NotActivated;
         d->mWebEngine->update();
@@ -228,13 +228,8 @@ void MailWebEngineAccessKey::searchAccessKey()
 void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
     qDebug() << " void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
-    //TODO
-}
+    //TODO create QVector of MailWebEngineAccessKeyAnchor
 
-void MailWebEngineAccessKey::showAccessKeys()
-{
-    //TODO fix me.
-    searchAccessKey();
 
     QList<QChar> unusedKeys;
     unusedKeys.reserve(10 + ('Z' - 'A' + 1));
@@ -337,5 +332,10 @@ void MailWebEngineAccessKey::showAccessKeys()
 
 #endif
     d->mAccessKeyActivated = (d->mAccessKeyLabels.isEmpty() ? MailWebEngineAccessKeyPrivate::Activated : MailWebEngineAccessKeyPrivate::NotActivated);
+}
+
+void MailWebEngineAccessKey::showAccessKeys()
+{
+    searchAccessKey();
 }
 

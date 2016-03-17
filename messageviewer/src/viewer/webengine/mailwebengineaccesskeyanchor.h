@@ -26,6 +26,8 @@ class MailWebEngineAccessKeyAnchor
 {
 public:
     MailWebEngineAccessKeyAnchor(const QVariant &result);
+private:
+    void initialize(const QVariant &result);
 };
 }
 #endif // MAILWEBENGINEACCESSKEYANCHOR_H

@@ -21,5 +21,10 @@ using namespace MessageViewer;
 
 MailWebEngineAccessKeyAnchor::MailWebEngineAccessKeyAnchor(const QVariant &result)
 {
+    initialize(result);
+}
 
+void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
+{
+    //TODO
 }
