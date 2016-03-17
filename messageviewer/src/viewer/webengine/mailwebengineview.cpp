@@ -110,3 +110,18 @@ void MailWebEngineView::resizeEvent(QResizeEvent *e)
     }
     QWebEngineView::resizeEvent(e);
 }
+
+void MailWebEngineView::saveMainFrameScreenshotInFile(const QString &filename)
+{
+    //TODO need to verify it
+    QImage image(size(), QImage::Format_ARGB32_Premultiplied);
+    image.fill(Qt::transparent);
+
+    QPainter painter(&image);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setRenderHint(QPainter::TextAntialiasing, true);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform, true);
+    render(&painter);
+    painter.end();
+    image.save(filename);
+}

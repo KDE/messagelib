@@ -33,6 +33,8 @@ public:
     void selectAll();
     void scamCheck();
 
+    void saveMainFrameScreenshotInFile(const QString &filename);
+
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
 
