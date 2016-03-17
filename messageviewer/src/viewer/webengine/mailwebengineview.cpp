@@ -39,7 +39,7 @@ public:
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
-    : QWebEngineView(parent),
+    : MessageViewer::WebEngineView(parent),
       d(new MessageViewer::MailWebEngineViewPrivate)
 
 {

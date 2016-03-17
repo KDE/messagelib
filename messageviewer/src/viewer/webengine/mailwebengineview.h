@@ -18,12 +18,12 @@
 #ifndef MAILWEBENGINE_H
 #define MAILWEBENGINE_H
 #include "messageviewer_export.h"
-#include <QWebEngineView>
+#include <MessageViewer/WebEngineView>
 class KActionCollection;
 namespace MessageViewer
 {
 class MailWebEngineViewPrivate;
-class MESSAGEVIEWER_EXPORT MailWebEngineView : public QWebEngineView
+class MESSAGEVIEWER_EXPORT MailWebEngineView : public MessageViewer::WebEngineView
 {
     Q_OBJECT
 public:
