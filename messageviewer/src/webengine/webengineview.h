@@ -30,6 +30,16 @@ class MESSAGEVIEWER_EXPORT WebEngineView : public QWebEngineView
 public:
     explicit WebEngineView(QWidget *parent = Q_NULLPTR);
     ~WebEngineView();
+
+protected:
+    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
+
+    void forwardWheelEvent(QWheelEvent *event);
+    void forwardKeyPressEvent(QKeyEvent *event);
+    void forwardKeyReleaseEvent(QKeyEvent *event);
+    void forwardMousePressEvent(QMouseEvent *event);
+    void forwardMouseMoveEvent(QMouseEvent *event);
+    void forwardMouseReleaseEvent(QMouseEvent *event);
 private:
     WebEngineViewPrivate *const d;
 };
