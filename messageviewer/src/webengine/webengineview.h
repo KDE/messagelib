@@ -34,12 +34,12 @@ public:
 protected:
     bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
 
-    void forwardWheelEvent(QWheelEvent *event);
-    void forwardKeyPressEvent(QKeyEvent *event);
-    void forwardKeyReleaseEvent(QKeyEvent *event);
-    void forwardMousePressEvent(QMouseEvent *event);
-    void forwardMouseMoveEvent(QMouseEvent *event);
-    void forwardMouseReleaseEvent(QMouseEvent *event);
+    virtual void forwardWheelEvent(QWheelEvent *event);
+    virtual void forwardKeyPressEvent(QKeyEvent *event);
+    virtual void forwardKeyReleaseEvent(QKeyEvent *event);
+    virtual void forwardMousePressEvent(QMouseEvent *event);
+    virtual void forwardMouseMoveEvent(QMouseEvent *event);
+    virtual void forwardMouseReleaseEvent(QMouseEvent *event);
 private:
     WebEngineViewPrivate *const d;
 };
