@@ -48,32 +48,32 @@ WebEngineView::~WebEngineView()
 
 void WebEngineView::forwardWheelEvent(QWheelEvent *event)
 {
-    qDebug()<<" void WebEngineView::forwardWheelEvent(QWheelEvent *event)";
+    //qDebug()<<" void WebEngineView::forwardWheelEvent(QWheelEvent *event)";
 }
 
 void WebEngineView::forwardKeyPressEvent(QKeyEvent *event)
 {
-    qDebug()<<" void WebEngineView::forwardKeyPressEvent(QKeyEvent *event)";
+    //qDebug()<<" void WebEngineView::forwardKeyPressEvent(QKeyEvent *event)";
 }
 
 void WebEngineView::forwardKeyReleaseEvent(QKeyEvent *event)
 {
-    qDebug()<<" void WebEngineView::forwardKeyReleaseEvent(QKeyEvent *event)";
+    //qDebug()<<" void WebEngineView::forwardKeyReleaseEvent(QKeyEvent *event)";
 }
 
 void WebEngineView::forwardMousePressEvent(QMouseEvent *event)
 {
-    qDebug()<<" void WebEngineView::forwardMousePressEvent(QKeyEvent *event)";
+    //qDebug()<<" void WebEngineView::forwardMousePressEvent(QKeyEvent *event)";
 }
 
 void WebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 {
-    qDebug()<<" void WebEngineView::forwardMouseMoveEvent(QKeyEvent *event)";
+    //qDebug()<<" void WebEngineView::forwardMouseMoveEvent(QKeyEvent *event)";
 }
 
 void WebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 {
-    qDebug()<<" void WebEngineView::forwardMouseReleaseEvent(QKeyEvent *event)";
+    //qDebug()<<" void WebEngineView::forwardMouseReleaseEvent(QKeyEvent *event)";
 }
 
 bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
