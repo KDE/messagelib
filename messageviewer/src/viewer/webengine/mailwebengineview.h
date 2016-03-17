@@ -39,9 +39,10 @@ public Q_SLOTS:
     void slotShowDetails();
 
 protected:
-    void keyReleaseEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
-    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
-    void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
+    virtual void forwardWheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
+    virtual void forwardKeyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    virtual void forwardKeyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+
     void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
 
 Q_SIGNALS:

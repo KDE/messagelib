@@ -80,30 +80,27 @@ void MailWebEngineView::slotShowDetails()
     d->mScamDetection->showDetails();
 }
 
-void MailWebEngineView::keyReleaseEvent(QKeyEvent *e)
+void MailWebEngineView::forwardKeyReleaseEvent(QKeyEvent *e)
 {
     if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
         d->mWebViewAccessKey->keyReleaseEvent(e);
     }
-    QWebEngineView::keyReleaseEvent(e);
 }
 
-void MailWebEngineView::keyPressEvent(QKeyEvent *e)
+void MailWebEngineView::forwardKeyPressEvent(QKeyEvent *e)
 {
     if (e && hasFocus()) {
         if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
             d->mWebViewAccessKey->keyPressEvent(e);
         }
     }
-    QWebEngineView::keyPressEvent(e);
 }
 
-void MailWebEngineView::wheelEvent(QWheelEvent *e)
+void MailWebEngineView::forwardWheelEvent(QWheelEvent *e)
 {
     if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
         d->mWebViewAccessKey->wheelEvent(e);
     }
-    QWebEngineView::wheelEvent(e);
 }
 
 void MailWebEngineView::resizeEvent(QResizeEvent *e)
