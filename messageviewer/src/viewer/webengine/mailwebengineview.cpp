@@ -125,3 +125,8 @@ void MailWebEngineView::saveMainFrameScreenshotInFile(const QString &filename)
     painter.end();
     image.save(filename);
 }
+
+void MailWebEngineView::showAccessKeys()
+{
+    d->mWebViewAccessKey->showAccessKeys();
+}

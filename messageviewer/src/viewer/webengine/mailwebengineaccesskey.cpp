@@ -167,9 +167,9 @@ void MailWebEngineAccessKey::hideAccessKeys()
     }
 }
 
-#if 0
-void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const QWebElement &element)
+void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element)
 {
+#if 0
     QLabel *label = new QLabel(d->mWebView);
     QFont font(label->font());
     font.setBold(true);
@@ -186,8 +186,8 @@ void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const QWebEleme
     label->move(point);
     d->mAccessKeyLabels.append(label);
     d->mAccessKeyNodes.insertMulti(accessKey, element);
-}
 #endif
+}
 
 bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
 {
@@ -220,15 +220,17 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
     return handled;
 }
 
-void MailWebEngineAccessKey::searchAccessKey()
-{
-    d->mWebEngine->page()->runJavaScript(d->script(), invoke(this, &MailWebEngineAccessKey::handleSearchAccessKey));
-}
-
 void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
-    qDebug() << " void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
+    //qDebug() << " void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
     //TODO create QVector of MailWebEngineAccessKeyAnchor
+    const QVariantList lst = res.toList();
+    QVector<MessageViewer::MailWebEngineAccessKeyAnchor> anchorList;
+    anchorList.reserve(lst.count());
+    Q_FOREACH(const QVariant &var, lst) {
+        qDebug()<<" var"<<var;
+        anchorList << MessageViewer::MailWebEngineAccessKeyAnchor(var);
+    }
 
 
     QList<QChar> unusedKeys;
@@ -336,6 +338,6 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 
 void MailWebEngineAccessKey::showAccessKeys()
 {
-    searchAccessKey();
+    d->mWebEngine->page()->runJavaScript(d->script(), invoke(this, &MailWebEngineAccessKey::handleSearchAccessKey));
 }
 

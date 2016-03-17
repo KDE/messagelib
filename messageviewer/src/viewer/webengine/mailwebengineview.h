@@ -34,6 +34,7 @@ public:
     void scamCheck();
 
     void saveMainFrameScreenshotInFile(const QString &filename);
+    void showAccessKeys();
 
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);

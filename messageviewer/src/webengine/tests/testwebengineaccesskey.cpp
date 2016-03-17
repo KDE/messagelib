@@ -25,6 +25,7 @@
 #include <QStandardPaths>
 
 #include <KActionCollection>
+#include <QPushButton>
 
 
 TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
@@ -33,13 +34,22 @@ TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     MessageViewer::MessageViewerSettings::self()->setAccessKeyEnabled(true);
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
+    mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vboxLayout->addWidget(mTestWebEngine);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
+    QPushButton *searchAccessKey = new QPushButton(QStringLiteral("AccessKey"), this);
+    vboxLayout->addWidget(searchAccessKey);
+    connect(searchAccessKey, &QPushButton::clicked, this, &TestWebEngineAccesskey::slotShowAccessKey);
 }
 
 TestWebEngineAccesskey::~TestWebEngineAccesskey()
 {
 
+}
+
+void TestWebEngineAccesskey::slotShowAccessKey()
+{
+    mTestWebEngine->showAccessKeys();
 }
 
 int main(int argc, char *argv[])

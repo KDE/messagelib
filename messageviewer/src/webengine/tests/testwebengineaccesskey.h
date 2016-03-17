@@ -32,6 +32,9 @@ public:
     explicit TestWebEngineAccesskey(QWidget *parent = Q_NULLPTR);
     ~TestWebEngineAccesskey();
 
+private Q_SLOTS:
+    void slotShowAccessKey();
+
 private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
 };

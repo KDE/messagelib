@@ -19,6 +19,7 @@
 #define MAILWEBENGINEACCESSKEYANCHOR_H
 
 #include <QVariant>
+#include <QRect>
 
 namespace MessageViewer
 {
@@ -26,8 +27,10 @@ class MailWebEngineAccessKeyAnchor
 {
 public:
     MailWebEngineAccessKeyAnchor(const QVariant &result);
+    MailWebEngineAccessKeyAnchor();
 private:
     void initialize(const QVariant &result);
+    QRect mBoundingRect;
 };
 }
 #endif // MAILWEBENGINEACCESSKEYANCHOR_H
