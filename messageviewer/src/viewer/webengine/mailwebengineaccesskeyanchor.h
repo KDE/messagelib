@@ -34,11 +34,14 @@ public:
 
     QString href() const;
 
+    QString target() const;
+
 private:
     void initialize(const QVariant &result);
     QRect mBoundingRect;
     QString mAccessKey;
     QString mHref;
+    QString mTarget;
 };
 }
 #endif // MAILWEBENGINEACCESSKEYANCHOR_H

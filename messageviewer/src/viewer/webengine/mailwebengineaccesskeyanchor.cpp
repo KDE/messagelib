@@ -39,8 +39,14 @@ void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
         }
         mHref = map.value(QStringLiteral("href")).toString();
         mAccessKey = map.value(QStringLiteral("accessKey")).toString();
+        mTarget = map.value(QStringLiteral("target")).toString();
         //TODO
     }
+}
+
+QString MailWebEngineAccessKeyAnchor::target() const
+{
+    return mTarget;
 }
 
 QString MailWebEngineAccessKeyAnchor::href() const

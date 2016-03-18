@@ -106,6 +106,20 @@ static void handleDuplicateLinkElements(const QWebElement &element, QHash<QStrin
     }
 }
 
+static QString linkElementKey(const QWebElement &element)
+{
+    if (element.hasAttribute(QStringLiteral("href"))) {
+        const QUrl url = element.webFrame()->baseUrl().resolved(element.attribute(QStringLiteral("href")));
+        QString linkKey(url.toString());
+        if (element.hasAttribute(QStringLiteral("target"))) {
+            linkKey += QLatin1Char('+');
+            linkKey += element.attribute(QStringLiteral("target"));
+        }
+        return linkKey;
+    }
+    return QString();
+}
+
 #endif
 
 static bool isHiddenElement(const MessageViewer::MailWebEngineAccessKeyAnchor &element)
@@ -143,7 +157,8 @@ QString MailWebEngineAccessKeyPrivate::script() const
                            "    out.push({"
                            "       src: matches[i].href,"
                            "       boudingRect: [r.top, r.left, r.width, r.height],"
-                           "       accessKey: matches[i].getAttribute('accesskey')"
+                           "       accessKey: matches[i].getAttribute('accesskey'),"
+                           "       target: matches[i].getAttribute('target')"
                            "       });"
                            "}"
                            "return out;})()");
