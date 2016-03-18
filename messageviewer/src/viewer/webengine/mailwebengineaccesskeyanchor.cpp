@@ -37,6 +37,23 @@ void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
         if (rect.size() == 4) {
             mBoundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
         }
+        mHref = map.value(QStringLiteral("href")).toString();
+        mAccessKey = map.value(QStringLiteral("accesskey")).toString();
         //TODO
     }
+}
+
+QString MailWebEngineAccessKeyAnchor::href() const
+{
+    return mHref;
+}
+
+QString MailWebEngineAccessKeyAnchor::accessKey() const
+{
+    return mAccessKey;
+}
+
+QRect MailWebEngineAccessKeyAnchor::boundingRect() const
+{
+    return mBoundingRect;
 }

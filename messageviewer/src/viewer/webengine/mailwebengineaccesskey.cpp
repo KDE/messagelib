@@ -142,7 +142,8 @@ QString MailWebEngineAccessKeyPrivate::script() const
                            "     var r = matches[i].getBoundingClientRect();"
                            "    out.push({"
                            "       src: matches[i].href,"
-                           "       boudingRect: [r.top, r.left, r.width, r.height]"
+                           "       boudingRect: [r.top, r.left, r.width, r.height],"
+                           "       accessKey: matches[i].getAttribute('accesskey')"
                            "       });"
                            "}"
                            "return out;})()");
@@ -265,8 +266,8 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
     }
     QChar key = text.at(0).toUpper();
     bool handled = false;
-#if 0
     if (d->mAccessKeyNodes.contains(key)) {
+#if 0
         QWebElement element = d->mAccessKeyNodes[key];
         QPoint p = element.geometry().center();
         QWebFrame *frame = element.webFrame();
@@ -280,8 +281,8 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
         QMouseEvent revent(QEvent::MouseButtonRelease, p, Qt::LeftButton, 0, 0);
         QCoreApplication::sendEvent(this, &revent);
         handled = true;
-    }
 #endif
+    }
     return handled;
 }
 

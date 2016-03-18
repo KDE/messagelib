@@ -30,9 +30,15 @@ public:
     MailWebEngineAccessKeyAnchor();
     QRect boundingRect() const;
 
+    QString accessKey() const;
+
+    QString href() const;
+
 private:
     void initialize(const QVariant &result);
     QRect mBoundingRect;
+    QString mAccessKey;
+    QString mHref;
 };
 }
 #endif // MAILWEBENGINEACCESSKEYANCHOR_H
