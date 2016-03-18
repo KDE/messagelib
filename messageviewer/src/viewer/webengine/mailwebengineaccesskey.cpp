@@ -110,16 +110,15 @@ static void handleDuplicateLinkElements(const QWebElement &element, QHash<QStrin
 
 static bool isHiddenElement(const MessageViewer::MailWebEngineAccessKeyAnchor &element)
 {
-#if 0
     // width property set to less than zero
-    if (element.hasAttribute(QStringLiteral("width")) && element.attribute(QStringLiteral("width")).toInt() < 1) {
+    if (element.boundingRect().width() < 1) {
         return true;
     }
-
     // height property set to less than zero
-    if (element.hasAttribute(QStringLiteral("height")) && element.attribute(QStringLiteral("height")).toInt() < 1) {
+    if (element.boundingRect().height()  < 1) {
         return true;
     }
+#if 0
 
     // visibility set to 'hidden' in the element itself or its parent elements.
     if (element.styleProperty(QStringLiteral("visibility"), QWebElement::ComputedStyle).compare(QLatin1String("hidden"), Qt::CaseInsensitive) == 0) {

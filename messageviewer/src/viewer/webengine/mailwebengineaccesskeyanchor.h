@@ -28,6 +28,8 @@ class MailWebEngineAccessKeyAnchor
 public:
     MailWebEngineAccessKeyAnchor(const QVariant &result);
     MailWebEngineAccessKeyAnchor();
+    QRect boundingRect() const;
+
 private:
     void initialize(const QVariant &result);
     QRect mBoundingRect;
