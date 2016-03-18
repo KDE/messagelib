@@ -23,6 +23,7 @@
 #include <QLabel>
 #include <QAction>
 #include <QWebEngineView>
+#include <QToolTip>
 
 using namespace MessageViewer;
 template<typename Arg, typename R, typename C>
@@ -106,21 +107,21 @@ static void handleDuplicateLinkElements(const QWebElement &element, QHash<QStrin
     }
 }
 
-static QString linkElementKey(const QWebElement &element)
+
+#endif
+static QString linkElementKey(const MessageViewer::MailWebEngineAccessKeyAnchor &element, const QUrl &baseUrl)
 {
-    if (element.hasAttribute(QStringLiteral("href"))) {
-        const QUrl url = element.webFrame()->baseUrl().resolved(element.attribute(QStringLiteral("href")));
+    if (!element.href().isEmpty()) {
+        const QUrl url = baseUrl.resolved(element.href());
         QString linkKey(url.toString());
-        if (element.hasAttribute(QStringLiteral("target"))) {
+        if (!element.target().isEmpty()) {
             linkKey += QLatin1Char('+');
-            linkKey += element.attribute(QStringLiteral("target"));
+            linkKey += element.target();
         }
         return linkKey;
     }
     return QString();
 }
-
-#endif
 
 static bool isHiddenElement(const MessageViewer::MailWebEngineAccessKeyAnchor &element)
 {
@@ -154,7 +155,8 @@ QString MailWebEngineAccessKeyPrivate::script() const
                            "var matches = document.querySelectorAll(\"a[href], area,button:not([disabled]), input:not([disabled]):not([hidden]),label[for],legend,select:not([disabled]),textarea:not([disabled])\");"
                            "for (var i = 0; i < matches.length; ++i) {"
                            "     var r = matches[i].getBoundingClientRect();"
-                           "    out.push({"
+                           "     out.push({"
+                           "       tagName: matches[i].tagName,"
                            "       src: matches[i].href,"
                            "       boudingRect: [r.top, r.left, r.width, r.height],"
                            "       accessKey: matches[i].getAttribute('accesskey'),"
@@ -250,8 +252,7 @@ void MailWebEngineAccessKey::hideAccessKeys()
 
 void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element)
 {
-#if 0
-    QLabel *label = new QLabel(d->mWebView);
+    QLabel *label = new QLabel(d->mWebEngine);
     QFont font(label->font());
     font.setBold(true);
     label->setFont(font);
@@ -259,15 +260,16 @@ void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageVi
     label->setPalette(QToolTip::palette());
     label->setAutoFillBackground(true);
     label->setFrameStyle(QFrame::Box | QFrame::Plain);
-    QPoint point = element.geometry().center();
+    QPoint point = element.boundingRect().center();
+#if 0
     point -= d->mWebView->page()->mainFrame()->scrollPosition();
+#endif
     label->move(point);
     label->show();
     point.setX(point.x() - label->width() / 2);
     label->move(point);
     d->mAccessKeyLabels.append(label);
     d->mAccessKeyNodes.insertMulti(accessKey, element);
-#endif
 }
 
 bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)

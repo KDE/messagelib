@@ -40,8 +40,14 @@ void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
         mHref = map.value(QStringLiteral("href")).toString();
         mAccessKey = map.value(QStringLiteral("accessKey")).toString();
         mTarget = map.value(QStringLiteral("target")).toString();
+        mTagName = map.value(QStringLiteral("tagName")).toString();
         //TODO
     }
+}
+
+QString MailWebEngineAccessKeyAnchor::tagName() const
+{
+    return mTagName;
 }
 
 QString MailWebEngineAccessKeyAnchor::target() const
