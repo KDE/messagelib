@@ -32,11 +32,11 @@ MailWebEngineAccessKeyAnchor::MailWebEngineAccessKeyAnchor()
 void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
 {
     if (result.isValid()) {
+        const QVariantMap map = result.toMap();
+        const QVariantList &rect = map.value(QStringLiteral("boundingRect")).toList();
+        if (rect.size() == 4) {
+            mBoundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
+        }
         //TODO
-    }
-    const QVariantMap map = result.toMap();
-    const QVariantList &rect = map.value(QStringLiteral("boundingRect")).toList();
-    if (rect.size() == 4) {
-        mBoundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
     }
 }

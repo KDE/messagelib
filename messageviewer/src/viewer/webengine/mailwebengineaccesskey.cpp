@@ -68,6 +68,72 @@ public:
     KActionCollection *mActionCollection;
 };
 
+#if 0
+static bool isEditableElement(QWebPage *page)
+{
+    const QWebFrame *frame = (page ? page->currentFrame() : 0);
+    QWebElement element = (frame ? frame->findFirstElement(QStringLiteral(":focus")) : QWebElement());
+    if (!element.isNull()) {
+        const QString tagName(element.tagName());
+        if (tagName.compare(QLatin1String("textarea"), Qt::CaseInsensitive) == 0) {
+            return true;
+        }
+        const QString type(element.attribute(QStringLiteral("type")).toLower());
+        if (tagName.compare(QLatin1String("input"), Qt::CaseInsensitive) == 0
+                && (type.isEmpty() || type == QLatin1String("text") || type == QLatin1String("password"))) {
+            return true;
+        }
+        if (element.evaluateJavaScript(QStringLiteral("this.isContentEditable")).toBool()) {
+            return true;
+        }
+    }
+    return false;
+}
+static void handleDuplicateLinkElements(const QWebElement &element, QHash<QString, QChar> *dupLinkList, QChar *accessKey)
+{
+    if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
+        const QString linkKey(linkElementKey(element));
+        // qCDebug(MESSAGEVIEWER_LOG) << "LINK KEY:" << linkKey;
+        if (dupLinkList->contains(linkKey)) {
+            // qCDebug(MESSAGEVIEWER_LOG) << "***** Found duplicate link element:" << linkKey;
+            *accessKey = dupLinkList->value(linkKey);
+        } else if (!linkKey.isEmpty()) {
+            dupLinkList->insert(linkKey, *accessKey);
+        }
+        if (linkKey.isEmpty()) {
+            *accessKey = QChar();
+        }
+    }
+}
+
+#endif
+
+static bool isHiddenElement(const MessageViewer::MailWebEngineAccessKeyAnchor &element)
+{
+#if 0
+    // width property set to less than zero
+    if (element.hasAttribute(QStringLiteral("width")) && element.attribute(QStringLiteral("width")).toInt() < 1) {
+        return true;
+    }
+
+    // height property set to less than zero
+    if (element.hasAttribute(QStringLiteral("height")) && element.attribute(QStringLiteral("height")).toInt() < 1) {
+        return true;
+    }
+
+    // visibility set to 'hidden' in the element itself or its parent elements.
+    if (element.styleProperty(QStringLiteral("visibility"), QWebElement::ComputedStyle).compare(QLatin1String("hidden"), Qt::CaseInsensitive) == 0) {
+        return true;
+    }
+
+    // display set to 'none' in the element itself or its parent elements.
+    if (element.styleProperty(QStringLiteral("display"), QWebElement::ComputedStyle).compare(QLatin1String("none"), Qt::CaseInsensitive) == 0) {
+        return true;
+    }
+#endif
+    return false;
+}
+
 QString MailWebEngineAccessKeyPrivate::script() const
 {
     const QString script = QString::fromLatin1("(function() {"
