@@ -1270,9 +1270,6 @@ void TextMessagePart::parseContent()
             mOtp->setCryptoProtocol(cryptProto);
         }
 
-        QString htmlStr;
-        QString plainTextStr;
-
         /* The (overall) signature/encrypted status is broken
          * if one unencrypted part is at the beginning or in the middle
          * because mailmain adds an unencrypted part at the end this should not break the overall status
