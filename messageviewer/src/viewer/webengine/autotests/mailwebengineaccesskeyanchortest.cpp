@@ -38,6 +38,8 @@ void MailWebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()
     QVERIFY(accessKeyAnchor.href().isEmpty());
     QVERIFY(accessKeyAnchor.accessKey().isEmpty());
     QVERIFY(accessKeyAnchor.boundingRect().isEmpty());
+    QVERIFY(accessKeyAnchor.tagName().isEmpty());
+    QVERIFY(accessKeyAnchor.target().isEmpty());
 }
 
 QTEST_MAIN(MailWebEngineAccessKeyAnchorTest)
