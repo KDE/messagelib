@@ -1591,6 +1591,7 @@ void AlternativeMessagePart::copyContentFrom() const
 
 CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport)
     : MessagePart(otp, QString())
+    , mNode(node)
     , mAutoImport(autoImport)
     , mCryptoProto(cryptoProto)
 {
