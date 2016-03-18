@@ -137,11 +137,15 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
     const ObjectTreeParser *otp = part->objectTreeParser();
     const auto p = process(*part);
     const auto mp =  static_cast<MessagePart *>(p.data());
-    if (mp && !otp->attachmentStrategy()->inlineNestedMessages() && !otp->showOnlyOneMimePart()) {
-        return Failed;
+    if (mp) {
+        if (!otp->attachmentStrategy()->inlineNestedMessages() && !otp->showOnlyOneMimePart()) {
+            return Failed;
+        } else {
+            mp->html(true);
+            return Ok;
+        }
     } else {
-        mp->html(true);
-        return Ok;
+        return Failed;
     }
 }
 
