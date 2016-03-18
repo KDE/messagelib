@@ -26,6 +26,8 @@ class MailWebEngineAccessKeyAnchorTest : public QObject
 public:
     explicit MailWebEngineAccessKeyAnchorTest(QObject *parent = Q_NULLPTR);
     ~MailWebEngineAccessKeyAnchorTest();
+private Q_SLOTS:
+    void shouldReturnEmptyAccessKeyAnchor();
 };
 
 #endif // MAILWEBENGINEACCESSKEYANCHORTEST_H

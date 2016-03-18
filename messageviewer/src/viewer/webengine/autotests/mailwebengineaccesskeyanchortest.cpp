@@ -16,6 +16,7 @@
 */
 
 #include "mailwebengineaccesskeyanchortest.h"
+#include "../mailwebengineaccesskeyanchor.h"
 #include <QTest>
 
 
@@ -28,6 +29,15 @@ MailWebEngineAccessKeyAnchorTest::MailWebEngineAccessKeyAnchorTest(QObject *pare
 MailWebEngineAccessKeyAnchorTest::~MailWebEngineAccessKeyAnchorTest()
 {
 
+}
+
+void MailWebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()
+{
+    QVariant var;
+    MessageViewer::MailWebEngineAccessKeyAnchor accessKeyAnchor(var);
+    QVERIFY(accessKeyAnchor.href().isEmpty());
+    QVERIFY(accessKeyAnchor.accessKey().isEmpty());
+    QVERIFY(accessKeyAnchor.boundingRect().isEmpty());
 }
 
 QTEST_MAIN(MailWebEngineAccessKeyAnchorTest)
