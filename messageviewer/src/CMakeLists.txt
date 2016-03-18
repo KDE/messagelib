@@ -39,6 +39,7 @@ if(BUILD_TESTING)
     add_subdirectory(viewerplugins/tests/)
     if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         add_subdirectory(webengine/tests)
+        add_subdirectory(viewer/webengine/autotests)
     endif()
 
 endif()
