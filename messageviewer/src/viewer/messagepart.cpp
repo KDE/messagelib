@@ -1643,6 +1643,7 @@ CryptoMessagePart::CryptoMessagePart(ObjectTreeParser *otp,
                                      const QString &fromAddress,
                                      KMime::Content *node)
     : MessagePart(otp, text)
+    , mPassphraseError(false)
     , mCryptoProto(cryptoProto)
     , mFromAddress(fromAddress)
     , mNode(node)
