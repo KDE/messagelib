@@ -254,7 +254,6 @@ protected:
     bool mWrap;
     int mColWrap;
     QStringList m_charsets;
-    AllowSelection isSelectionAllowed;
     MessageViewer::ObjectTreeParser *mOtp;
     MessageViewer::EmptySource *mEmptySource;
     QString mHeadElement;
