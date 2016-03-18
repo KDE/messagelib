@@ -16,6 +16,7 @@
 */
 
 #include "mailwebengineaccesskeyanchor.h"
+#include <QDebug>
 
 using namespace MessageViewer;
 
@@ -43,6 +44,11 @@ void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
         mTagName = map.value(QStringLiteral("tagName")).toString();
         //TODO
     }
+}
+
+QString MailWebEngineAccessKeyAnchor::innerText() const
+{
+    return mInnerText;
 }
 
 QString MailWebEngineAccessKeyAnchor::tagName() const
