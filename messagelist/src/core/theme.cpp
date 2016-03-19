@@ -213,7 +213,7 @@ void Theme::ContentItem::setBold(bool isBold)
     if (isBold) {
         mFlags |= IsBold;
     } else {
-        mFlags &= !IsBold;
+        mFlags &= ~IsBold;
     }
 }
 
