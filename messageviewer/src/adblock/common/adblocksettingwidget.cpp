@@ -61,6 +61,7 @@ AdBlockSettingWidget::AdBlockSettingWidget(QWidget *parent)
     : QWidget(parent)
     , mChanged(false)
 {
+    mUi = new Ui::adblock;
     mUi->setupUi(this);
 
     mUi->hintLabel->setText(i18n("<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href=\"filterhelp\">more information</a>):"));
