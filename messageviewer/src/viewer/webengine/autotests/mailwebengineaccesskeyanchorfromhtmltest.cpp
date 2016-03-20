@@ -25,4 +25,9 @@ MailWebEngineAccessKeyAnchorFromHtmlTest::MailWebEngineAccessKeyAnchorFromHtmlTe
 
 }
 
+void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAnchor()
+{
+
+}
+
 QTEST_MAIN(MailWebEngineAccessKeyAnchorFromHtmlTest)

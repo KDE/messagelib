@@ -25,6 +25,8 @@ class MailWebEngineAccessKeyAnchorFromHtmlTest : public QObject
     Q_OBJECT
 public:
     explicit MailWebEngineAccessKeyAnchorFromHtmlTest(QObject *parent = Q_NULLPTR);
+private Q_SLOTS:
+    void shouldNotShowAccessKeyWhenHtmlAsNotAnchor();
 };
 
 #endif // MAILWEBENGINEACCESSKEYANCHORFROMHTMLTEST_H
