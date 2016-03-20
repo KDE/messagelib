@@ -411,6 +411,8 @@ public:
 
     static KMime::Content *findTypeNot(KMime::Content *content, const QByteArray &mediaType, const QByteArray &subType, bool deep = true, bool wide = true);
 
+    bool printing() const;
+
 private:
 
     /** ctor helper */

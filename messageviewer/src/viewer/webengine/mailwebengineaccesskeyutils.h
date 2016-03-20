@@ -14,20 +14,18 @@
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
-#ifndef WEBENGINESCRIPT_H
-#define WEBENGINESCRIPT_H
+
+#ifndef MAILWEBENGINEACCESSKEYUTILS_H
+#define MAILWEBENGINEACCESSKEYUTILS_H
 
 #include <QString>
-#include "messageviewer_export.h"
 
 namespace MessageViewer
 {
-namespace WebEngineScript
+namespace MailWebEngineAccessKeyUtils
 {
-MESSAGEVIEWER_EXPORT QString findAllImages();
-MESSAGEVIEWER_EXPORT QString findAllScripts();
-MESSAGEVIEWER_EXPORT QString findAllAnchors();
-MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
+QString script();
 }
 }
-#endif // WEBENGINESCRIPT_H
+
+#endif // MAILWEBENGINEACCESSKEYUTILS_H

@@ -319,9 +319,7 @@ void Widget::saveCurrentSelection()
         // Save the current selection
         MessageItem *lastSelectedMessageItem = d->mView->currentMessageItem(false);
         if (lastSelectedMessageItem) {
-            d->mStorageModel->savePreSelectedMessage(
-                lastSelectedMessageItem ? lastSelectedMessageItem->uniqueId() : 0
-            );
+            d->mStorageModel->savePreSelectedMessage(lastSelectedMessageItem->uniqueId());
         }
     }
 }

@@ -15,14 +15,21 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+#include "testwebenginescrolladdattachment.h"
+
 #include <QApplication>
-#include "testwebengine.h"
+
+TestWebEngineScrollAddAttachment::TestWebEngineScrollAddAttachment(QWidget *parent)
+    : QWidget(parent)
+{
+
+}
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestWebEngine *testWebEngine = new TestWebEngine;
+    TestWebEngineScrollAddAttachment *testWebEngine = new TestWebEngineScrollAddAttachment;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;

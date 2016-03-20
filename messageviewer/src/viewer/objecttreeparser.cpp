@@ -183,7 +183,8 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser &other)
       mHasPendingAsyncJobs(other.hasPendingAsyncJobs()),
       mAllowAsync(other.allowAsync()),
       mAttachmentStrategy(other.attachmentStrategy()),
-      mDeleteNodeHelper(false)   // TODO see above
+      mDeleteNodeHelper(false),   // TODO see above
+      mPrinting(other.printing())
 {
 
 }
@@ -232,6 +233,11 @@ void ObjectTreeParser::copyContentFrom(const ObjectTreeParser *other)
     if (!other->htmlContentCharset().isEmpty()) {
         mHtmlContentCharset = other->htmlContentCharset();
     }
+}
+
+bool ObjectTreeParser::printing() const
+{
+    return mPrinting;
 }
 
 MimeMessagePart::Ptr ObjectTreeParser::createAndParseTempNode(KMime::Content *parentNode, const char *content, const char *cntDesc)

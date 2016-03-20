@@ -18,12 +18,12 @@
 #ifndef MAILWEBENGINE_H
 #define MAILWEBENGINE_H
 #include "messageviewer_export.h"
-#include <QWebEngineView>
+#include <MessageViewer/WebEngineView>
 class KActionCollection;
 namespace MessageViewer
 {
 class MailWebEngineViewPrivate;
-class MESSAGEVIEWER_EXPORT MailWebEngineView : public QWebEngineView
+class MESSAGEVIEWER_EXPORT MailWebEngineView : public MessageViewer::WebEngineView
 {
     Q_OBJECT
 public:
@@ -31,6 +31,23 @@ public:
     ~MailWebEngineView();
 
     void selectAll();
+    void scamCheck();
+
+    void saveMainFrameScreenshotInFile(const QString &filename);
+    void showAccessKeys();
+
+public Q_SLOTS:
+    void slotZoomChanged(qreal zoom);
+
+    void slotShowDetails();
+
+protected:
+    virtual void forwardWheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
+    virtual void forwardKeyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    virtual void forwardKeyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+
+    void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
+
 Q_SIGNALS:
     void openUrl(const QUrl &url);
 private:

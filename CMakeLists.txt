@@ -36,7 +36,9 @@ set(KPIMTEXTEDIT_LIB_VERSION "5.2.40")
 set(KDEPIM_APPS_LIB_VERSION "5.2.40")
 set(LIBKDEPIM_LIB_VERSION "5.2.40")
 
-find_package(KF5Akonadi ${KDEPIMLIBS_LIB_VERSION} CONFIG REQUIRED)
+set(AKONADI_VERSION "5.1.80")
+
+find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test UiTools Network WebKitWidgets)
 find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
@@ -75,6 +77,8 @@ find_package(KF5GrantleeTheme ${GRANTLEETHEME_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5Gravatar ${GRAVATAR_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5Libkleo ${LIBKLEO_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimCommon ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
+
+option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
 option(QTWEBENGINE_EXPERIMENTAL_OPTION "Enable support for qtwebengine. False by default." FALSE)
 

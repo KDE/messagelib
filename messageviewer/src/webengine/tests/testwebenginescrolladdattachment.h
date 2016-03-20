@@ -14,20 +14,17 @@
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
-#ifndef WEBENGINESCRIPT_H
-#define WEBENGINESCRIPT_H
 
-#include <QString>
-#include "messageviewer_export.h"
+#ifndef TESTWEBENGINESCROLLADDATTACHMENT_H
+#define TESTWEBENGINESCROLLADDATTACHMENT_H
 
-namespace MessageViewer
+#include <QWidget>
+
+class TestWebEngineScrollAddAttachment : public QWidget
 {
-namespace WebEngineScript
-{
-MESSAGEVIEWER_EXPORT QString findAllImages();
-MESSAGEVIEWER_EXPORT QString findAllScripts();
-MESSAGEVIEWER_EXPORT QString findAllAnchors();
-MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
-}
-}
-#endif // WEBENGINESCRIPT_H
+    Q_OBJECT
+public:
+    explicit TestWebEngineScrollAddAttachment(QWidget *parent = Q_NULLPTR);
+};
+
+#endif // TESTWEBENGINESCROLLADDATTACHMENT_H

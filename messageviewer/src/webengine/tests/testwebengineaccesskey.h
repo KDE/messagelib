@@ -14,20 +14,29 @@
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
-#ifndef WEBENGINESCRIPT_H
-#define WEBENGINESCRIPT_H
 
-#include <QString>
-#include "messageviewer_export.h"
+#ifndef TESTWEBENGINEACCESSKEY_H
+#define TESTWEBENGINEACCESSKEY_H
 
+#include <QWebEngineView>
+#include <QWidget>
 namespace MessageViewer
 {
-namespace WebEngineScript
+class MailWebEngineView;
+}
+
+class TestWebEngineAccesskey : public QWidget
 {
-MESSAGEVIEWER_EXPORT QString findAllImages();
-MESSAGEVIEWER_EXPORT QString findAllScripts();
-MESSAGEVIEWER_EXPORT QString findAllAnchors();
-MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
-}
-}
-#endif // WEBENGINESCRIPT_H
+    Q_OBJECT
+public:
+    explicit TestWebEngineAccesskey(QWidget *parent = Q_NULLPTR);
+    ~TestWebEngineAccesskey();
+
+private Q_SLOTS:
+    void slotShowAccessKey();
+
+private:
+    MessageViewer::MailWebEngineView *mTestWebEngine;
+};
+
+#endif // TESTWEBENGINEACCESSKEY_H

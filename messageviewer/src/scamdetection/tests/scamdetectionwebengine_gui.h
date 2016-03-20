@@ -14,20 +14,33 @@
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
-#ifndef WEBENGINESCRIPT_H
-#define WEBENGINESCRIPT_H
 
-#include <QString>
-#include "messageviewer_export.h"
+#ifndef TEST_SCAMDETECTIONWEBENGINE_GUI_H
+#define TEST_SCAMDETECTIONWEBENGINE_GUI_H
+
+#include <QWidget>
 
 namespace MessageViewer
 {
-namespace WebEngineScript
+class ScamDetectionWarningWidget;
+class ScamDetectionWebEngine;
+}
+class QWebEngineView;
+class ScamDetectionWebEngineTestWidget : public QWidget
 {
-MESSAGEVIEWER_EXPORT QString findAllImages();
-MESSAGEVIEWER_EXPORT QString findAllScripts();
-MESSAGEVIEWER_EXPORT QString findAllAnchors();
-MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
-}
-}
-#endif // WEBENGINESCRIPT_H
+    Q_OBJECT
+public:
+    explicit ScamDetectionWebEngineTestWidget(const QString &filename, QWidget *parent = Q_NULLPTR);
+    ~ScamDetectionWebEngineTestWidget();
+
+private Q_SLOTS:
+    void slotLoadFinished();
+    void slotOpenHtml();
+
+private:
+    MessageViewer::ScamDetectionWarningWidget *mScamWarningWidget;
+    MessageViewer::ScamDetectionWebEngine *mScamDetection;
+    QWebEngineView *mWebEngineView;
+};
+
+#endif

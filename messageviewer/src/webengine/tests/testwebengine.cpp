@@ -17,6 +17,7 @@
 
 #include "testwebengine.h"
 #include <QHBoxLayout>
+#include <QApplication>
 #include <QWebEngineView>
 #include <MessageViewer/WebHitTestResult>
 #include <MessageViewer/WebEnginePage>
@@ -36,7 +37,6 @@ TestWebEngine::TestWebEngine(QWidget *parent)
     pageView->setContextMenuPolicy(Qt::DefaultContextMenu);
     setContextMenuPolicy(Qt::DefaultContextMenu);
     pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
-    //connect(pageView, &QWebEngineView::showContextMenu, this, &TestWebEngine::slotShowContextMenu);
 }
 
 TestWebEngine::~TestWebEngine()
@@ -44,12 +44,6 @@ TestWebEngine::~TestWebEngine()
 
 }
 
-#if 0
-void TestWebEngine::slotShowContextMenu()
-{
-
-}
-#endif
 TestWebEngineView::TestWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
@@ -77,7 +71,16 @@ void TestWebEngineView::slotHitTestFinished(const MessageViewer::WebHitTestResul
 
 void TestWebEngineView::contextMenuEvent(QContextMenuEvent *e)
 {
-    qDebug() << " void TestWebEngine::contextMenuEvent(QContextMenuEvent *e)";
     MessageViewer::WebHitTest *webHit = static_cast<MessageViewer::WebEnginePage *>(page())->hitTestContent(e->pos());
     connect(webHit, &MessageViewer::WebHitTest::finished, this, &TestWebEngineView::slotHitTestFinished);
+}
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+    TestWebEngine *testWebEngine = new TestWebEngine;
+    testWebEngine->show();
+    const int ret = app.exec();
+    return ret;
 }

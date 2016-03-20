@@ -51,7 +51,6 @@ public:
     void scrollPageUp(int percent);
     void scrollToAnchor(const QString &anchor);
 
-    QString selectedText() const;
     bool isAttachmentInjectionPoint(const QPoint &globalPos) const;
     void injectAttachments(const boost::function<QString()> &delayedHtml);
     bool removeAttachmentMarking(const QString &id);

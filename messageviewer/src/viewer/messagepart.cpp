@@ -1270,9 +1270,6 @@ void TextMessagePart::parseContent()
             mOtp->setCryptoProtocol(cryptProto);
         }
 
-        QString htmlStr;
-        QString plainTextStr;
-
         /* The (overall) signature/encrypted status is broken
          * if one unencrypted part is at the beginning or in the middle
          * because mailmain adds an unencrypted part at the end this should not break the overall status
@@ -1594,6 +1591,7 @@ void AlternativeMessagePart::copyContentFrom() const
 
 CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport)
     : MessagePart(otp, QString())
+    , mNode(node)
     , mAutoImport(autoImport)
     , mCryptoProto(cryptoProto)
 {
@@ -1645,6 +1643,7 @@ CryptoMessagePart::CryptoMessagePart(ObjectTreeParser *otp,
                                      const QString &fromAddress,
                                      KMime::Content *node)
     : MessagePart(otp, text)
+    , mPassphraseError(false)
     , mCryptoProto(cryptoProto)
     , mFromAddress(fromAddress)
     , mNode(node)

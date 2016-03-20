@@ -27,20 +27,27 @@
 #ifndef AD_BLOCK_SETTINGS_WIDGET_H
 #define AD_BLOCK_SETTINGS_WIDGET_H
 
-#include "ui_settings_adblock.h"
 #include "messageviewer_export.h"
 
 // Qt Includes
 #include <QWidget>
 
+class QListWidgetItem;
+
+namespace Ui
+{
+class adblock;
+}
+
 namespace MessageViewer
 {
-class MESSAGEVIEWER_EXPORT AdBlockSettingWidget : public QWidget, private Ui::adblock
+class MESSAGEVIEWER_EXPORT AdBlockSettingWidget : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit AdBlockSettingWidget(QWidget *parent = Q_NULLPTR);
+    virtual ~AdBlockSettingWidget();
 
     bool changed() const;
 
@@ -76,7 +83,7 @@ private:
         PathList = Qt::UserRole + 2,
         LastUpdateList = Qt::UserRole + 3
     };
-
+    Ui::adblock *mUi;
     bool mChanged;
 };
 }

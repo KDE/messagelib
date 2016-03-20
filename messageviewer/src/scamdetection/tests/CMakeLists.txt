@@ -14,4 +14,14 @@ target_link_libraries(scamdetection_gui
 
 
 
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+  set(scamdetectionwebengine_gui_SRCS scamdetectionwebengine_gui.cpp)
+  add_executable(scamdetectionwebengine_gui ${scamdetectionwebengine_gui_SRCS})
+  target_link_libraries(scamdetectionwebengine_gui
+    KF5::KIOCore
+    KF5::MessageViewer
+    Qt5::WebEngine 
+    Qt5::WebEngineWidgets
+  )
+endif()
 

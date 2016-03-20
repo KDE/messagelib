@@ -718,6 +718,7 @@ KMime::Message::Ptr MessageFactory::createMDN(KMime::MDN::ActionMode a,
         break;
     case 0:
     default:
+        delete thirdMsgPart;
         break;
     };
 

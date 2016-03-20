@@ -123,20 +123,6 @@ void MailWebView::scrollPageUp(int percent)
     scrollPageDown(-percent);
 }
 
-QString MailWebView::selectedText() const
-{
-    //TODO HTML selection
-    /* settings()->setAttribute( QWebSettings::JavascriptEnabled, true );
-    QString textSelected = page()->currentFrame()->evaluateJavaScript(
-    "var span = document.createElement( 'SPAN' ); span.appendChild( window.getSelection().getRangeAt(0).cloneContents() );
-    ).toString();
-    settings()->setAttribute( QWebSettings::JavascriptEnabled, false );
-
-    return textSelected;
-    */
-    return KWebView::selectedText();
-}
-
 bool MailWebView::hasVerticalScrollBar() const
 {
     return page()->mainFrame()->scrollBarGeometry(Qt::Vertical).isValid();
@@ -194,7 +180,6 @@ static bool has_parent_div_with_id(const QWebElement &start, const QString &id)
 
 bool MailWebView::isAttachmentInjectionPoint(const QPoint &global) const
 {
-    // for QTextBrowser, can be implemented as 'return false'
     const QPoint local = page()->view()->mapFromGlobal(global);
     const QWebHitTestResult hit = page()->currentFrame()->hitTestContent(local);
     return has_parent_div_with_id(hit.enclosingBlockElement(), QStringLiteral("attachmentInjectionPoint"));
@@ -202,7 +187,6 @@ bool MailWebView::isAttachmentInjectionPoint(const QPoint &global) const
 
 void MailWebView::injectAttachments(const function<QString()> &delayedHtml)
 {
-    // for QTextBrowser, can be implemented empty
     QWebElement doc = page()->currentFrame()->documentElement();
     QWebElement injectionPoint = doc.findFirst(QStringLiteral("*#attachmentInjectionPoint"));
     if (injectionPoint.isNull()) {

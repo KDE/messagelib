@@ -14,20 +14,20 @@
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
-#ifndef WEBENGINESCRIPT_H
-#define WEBENGINESCRIPT_H
 
-#include <QString>
-#include "messageviewer_export.h"
+#ifndef MAILWEBENGINEACCESSKEYANCHORTEST_H
+#define MAILWEBENGINEACCESSKEYANCHORTEST_H
 
-namespace MessageViewer
+#include <QObject>
+
+class MailWebEngineAccessKeyAnchorTest : public QObject
 {
-namespace WebEngineScript
-{
-MESSAGEVIEWER_EXPORT QString findAllImages();
-MESSAGEVIEWER_EXPORT QString findAllScripts();
-MESSAGEVIEWER_EXPORT QString findAllAnchors();
-MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
-}
-}
-#endif // WEBENGINESCRIPT_H
+    Q_OBJECT
+public:
+    explicit MailWebEngineAccessKeyAnchorTest(QObject *parent = Q_NULLPTR);
+    ~MailWebEngineAccessKeyAnchorTest();
+private Q_SLOTS:
+    void shouldReturnEmptyAccessKeyAnchor();
+};
+
+#endif // MAILWEBENGINEACCESSKEYANCHORTEST_H

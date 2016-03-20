@@ -27,6 +27,7 @@
 
 // Self Includes
 #include "adblocksettingwidget.h"
+#include "ui_settings_adblock.h"
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
 #include "adblockaddsubscriptiondialog.h"
@@ -60,74 +61,80 @@ AdBlockSettingWidget::AdBlockSettingWidget(QWidget *parent)
     : QWidget(parent)
     , mChanged(false)
 {
-    setupUi(this);
+    mUi = new Ui::adblock;
+    mUi->setupUi(this);
 
-    hintLabel->setText(i18n("<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href=\"filterhelp\">more information</a>):"));
-    connect(hintLabel, &QLabel::linkActivated, this, &AdBlockSettingWidget::slotInfoLinkActivated);
-    hintLabel->setContextMenuPolicy(Qt::NoContextMenu);
+    mUi->hintLabel->setText(i18n("<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href=\"filterhelp\">more information</a>):"));
+    connect(mUi->hintLabel, &QLabel::linkActivated, this, &AdBlockSettingWidget::slotInfoLinkActivated);
+    mUi->hintLabel->setContextMenuPolicy(Qt::NoContextMenu);
 
-    manualFiltersListWidget->setSelectionMode(QAbstractItemView::MultiSelection);
+    mUi->manualFiltersListWidget->setSelectionMode(QAbstractItemView::MultiSelection);
 
-    searchLine->setListWidget(manualFiltersListWidget);
+    mUi->searchLine->setListWidget(mUi->manualFiltersListWidget);
 
-    insertButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
-    connect(insertButton, &QToolButton::clicked, this, &AdBlockSettingWidget::insertRule);
+    mUi->insertButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    connect(mUi->insertButton, &QToolButton::clicked, this, &AdBlockSettingWidget::insertRule);
 
-    removeButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
-    connect(removeButton, &QPushButton::clicked, this, &AdBlockSettingWidget::removeRule);
-    connect(removeSubscription, &QPushButton::clicked, this, &AdBlockSettingWidget::slotRemoveSubscription);
-    connect(manualFiltersListWidget, &QListWidget::currentItemChanged, this, &AdBlockSettingWidget::slotUpdateManualButtons);
-    connect(manualFiltersListWidget, &QListWidget::itemChanged, this, &AdBlockSettingWidget::hasChanged);
+    mUi->removeButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
+    connect(mUi->removeButton, &QPushButton::clicked, this, &AdBlockSettingWidget::removeRule);
+    connect(mUi->removeSubscription, &QPushButton::clicked, this, &AdBlockSettingWidget::slotRemoveSubscription);
+    connect(mUi->manualFiltersListWidget, &QListWidget::currentItemChanged, this, &AdBlockSettingWidget::slotUpdateManualButtons);
+    connect(mUi->manualFiltersListWidget, &QListWidget::itemChanged, this, &AdBlockSettingWidget::hasChanged);
 
-    spinBox->setSuffix(ki18np(" day", " days"));
+    mUi->spinBox->setSuffix(ki18np(" day", " days"));
 
-    removeSubscription->setEnabled(false);
-    showList->setEnabled(false);
+    mUi->removeSubscription->setEnabled(false);
+    mUi->showList->setEnabled(false);
     // Q_EMIT changed signal
-    connect(checkEnableAdblock, &QCheckBox::stateChanged, this, &AdBlockSettingWidget::hasChanged);
-    connect(checkHideAds, &QCheckBox::stateChanged, this, &AdBlockSettingWidget::hasChanged);
-    connect(spinBox, static_cast<void (KPluralHandlingSpinBox::*)(int)>(&KPluralHandlingSpinBox::valueChanged), this, &AdBlockSettingWidget::hasChanged);
-    connect(addFilters, &QPushButton::clicked, this, &AdBlockSettingWidget::slotAddFilter);
-    connect(showList, &QPushButton::clicked, this, &AdBlockSettingWidget::slotShowList);
-    connect(editFilter, &QPushButton::clicked, this, &AdBlockSettingWidget::slotEditFilter);
+    connect(mUi->checkEnableAdblock, &QCheckBox::stateChanged, this, &AdBlockSettingWidget::hasChanged);
+    connect(mUi->checkHideAds, &QCheckBox::stateChanged, this, &AdBlockSettingWidget::hasChanged);
+    connect(mUi->spinBox, static_cast<void (KPluralHandlingSpinBox::*)(int)>(&KPluralHandlingSpinBox::valueChanged), this, &AdBlockSettingWidget::hasChanged);
+    connect(mUi->addFilters, &QPushButton::clicked, this, &AdBlockSettingWidget::slotAddFilter);
+    connect(mUi->showList, &QPushButton::clicked, this, &AdBlockSettingWidget::slotShowList);
+    connect(mUi->editFilter, &QPushButton::clicked, this, &AdBlockSettingWidget::slotEditFilter);
 
-    connect(automaticFiltersListWidget, &MessageViewer::AdBlockListWidget::itemChanged, this, &AdBlockSettingWidget::hasChanged);
-    connect(automaticFiltersListWidget, &MessageViewer::AdBlockListWidget::currentItemChanged, this, &AdBlockSettingWidget::slotUpdateButtons);
-    connect(automaticFiltersListWidget, &MessageViewer::AdBlockListWidget::itemDoubleClicked, this, &AdBlockSettingWidget::slotAutomaticFilterDouble);
+    connect(mUi->automaticFiltersListWidget, &MessageViewer::AdBlockListWidget::itemChanged, this, &AdBlockSettingWidget::hasChanged);
+    connect(mUi->automaticFiltersListWidget, &MessageViewer::AdBlockListWidget::currentItemChanged, this, &AdBlockSettingWidget::slotUpdateButtons);
+    connect(mUi->automaticFiltersListWidget, &MessageViewer::AdBlockListWidget::itemDoubleClicked, this, &AdBlockSettingWidget::slotAutomaticFilterDouble);
 
-    connect(importFilters, &QPushButton::clicked, this, &AdBlockSettingWidget::slotImportFilters);
-    connect(exportFilters, &QPushButton::clicked, this, &AdBlockSettingWidget::slotExportFilters);
-    connect(addFilterLineEdit, &QLineEdit::textChanged, this, &AdBlockSettingWidget::slotManualFilterLineEditTextChanged);
+    connect(mUi->importFilters, &QPushButton::clicked, this, &AdBlockSettingWidget::slotImportFilters);
+    connect(mUi->exportFilters, &QPushButton::clicked, this, &AdBlockSettingWidget::slotExportFilters);
+    connect(mUi->addFilterLineEdit, &QLineEdit::textChanged, this, &AdBlockSettingWidget::slotManualFilterLineEditTextChanged);
     slotUpdateManualButtons();
-    insertButton->setEnabled(false);
+    mUi->insertButton->setEnabled(false);
+}
+
+AdBlockSettingWidget::~AdBlockSettingWidget()
+{
+    delete mUi;
 }
 
 void AdBlockSettingWidget::slotManualFilterLineEditTextChanged(const QString &text)
 {
-    insertButton->setEnabled(!text.isEmpty());
+    mUi->insertButton->setEnabled(!text.isEmpty());
 }
 
 void AdBlockSettingWidget::slotEditFilter()
 {
-    QListWidgetItem *item = manualFiltersListWidget->currentItem();
+    QListWidgetItem *item = mUi->manualFiltersListWidget->currentItem();
     if (item) {
-        manualFiltersListWidget->editItem(item);
+        mUi->manualFiltersListWidget->editItem(item);
     }
 }
 
 void AdBlockSettingWidget::slotUpdateButtons()
 {
-    const bool enabled = automaticFiltersListWidget->currentItem();
-    removeSubscription->setEnabled(enabled);
-    showList->setEnabled(enabled);
+    const bool enabled = mUi->automaticFiltersListWidget->currentItem();
+    mUi->removeSubscription->setEnabled(enabled);
+    mUi->showList->setEnabled(enabled);
 }
 
 void AdBlockSettingWidget::slotUpdateManualButtons()
 {
-    const bool enabled = manualFiltersListWidget->currentItem();
-    removeButton->setEnabled(enabled);
-    editFilter->setEnabled(enabled);
-    exportFilters->setEnabled(manualFiltersListWidget->count() > 0);
+    const bool enabled = mUi->manualFiltersListWidget->currentItem();
+    mUi->removeButton->setEnabled(enabled);
+    mUi->editFilter->setEnabled(enabled);
+    mUi->exportFilters->setEnabled(mUi->manualFiltersListWidget->count() > 0);
 }
 
 void AdBlockSettingWidget::slotInfoLinkActivated(const QString &url)
@@ -147,57 +154,57 @@ void AdBlockSettingWidget::slotInfoLinkActivated(const QString &url)
 
 void AdBlockSettingWidget::insertRule()
 {
-    const QString rule = addFilterLineEdit->text();
+    const QString rule = mUi->addFilterLineEdit->text();
     if (rule.isEmpty()) {
         return;
     }
-    const int numberItem(manualFiltersListWidget->count());
+    const int numberItem(mUi->manualFiltersListWidget->count());
     for (int i = 0; i < numberItem; ++i) {
-        if (manualFiltersListWidget->item(i)->text() == rule) {
-            addFilterLineEdit->clear();
+        if (mUi->manualFiltersListWidget->item(i)->text() == rule) {
+            mUi->addFilterLineEdit->clear();
             return;
         }
     }
 
     addManualFilter(rule);
-    exportFilters->setEnabled(manualFiltersListWidget->count() > 0);
-    addFilterLineEdit->clear();
+    mUi->exportFilters->setEnabled(mUi->manualFiltersListWidget->count() > 0);
+    mUi->addFilterLineEdit->clear();
     hasChanged();
 }
 
 void AdBlockSettingWidget::removeRule()
 {
-    QList<QListWidgetItem *> select = manualFiltersListWidget->selectedItems();
+    QList<QListWidgetItem *> select = mUi->manualFiltersListWidget->selectedItems();
     if (select.isEmpty()) {
         return;
     }
     Q_FOREACH (QListWidgetItem *item, select) {
         delete item;
     }
-    exportFilters->setEnabled(manualFiltersListWidget->count() > 0);
+    mUi->exportFilters->setEnabled(mUi->manualFiltersListWidget->count() > 0);
     hasChanged();
 }
 
 void AdBlockSettingWidget::doResetToDefaultsOther()
 {
     const bool bUseDefaults = MessageViewer::MessageViewerSettings::self()->useDefaults(true);
-    loadWidget(checkEnableAdblock, MessageViewer::MessageViewerSettings::self()->adBlockEnabledItem());
-    tabWidget->setEnabled(MessageViewer::MessageViewerSettings::self()->adBlockEnabled());
-    saveCheckBox(checkHideAds, MessageViewer::MessageViewerSettings::self()->hideAdsEnabledItem());
-    loadWidget(spinBox, MessageViewer::MessageViewerSettings::self()->adBlockUpdateIntervalItem());
+    loadWidget(mUi->checkEnableAdblock, MessageViewer::MessageViewerSettings::self()->adBlockEnabledItem());
+    mUi->tabWidget->setEnabled(MessageViewer::MessageViewerSettings::self()->adBlockEnabled());
+    saveCheckBox(mUi->checkHideAds, MessageViewer::MessageViewerSettings::self()->hideAdsEnabledItem());
+    loadWidget(mUi->spinBox, MessageViewer::MessageViewerSettings::self()->adBlockUpdateIntervalItem());
     MessageViewer::MessageViewerSettings::self()->useDefaults(bUseDefaults);
 }
 
 void AdBlockSettingWidget::doLoadFromGlobalSettings()
 {
-    manualFiltersListWidget->clear();
-    automaticFiltersListWidget->clear();
-    loadWidget(checkEnableAdblock, MessageViewer::MessageViewerSettings::self()->adBlockEnabledItem());
+    mUi->manualFiltersListWidget->clear();
+    mUi->automaticFiltersListWidget->clear();
+    loadWidget(mUi->checkEnableAdblock, MessageViewer::MessageViewerSettings::self()->adBlockEnabledItem());
 
     // update enabled status
-    tabWidget->setEnabled(MessageViewer::MessageViewerSettings::self()->adBlockEnabled());
-    loadWidget(checkHideAds, MessageViewer::MessageViewerSettings::self()->hideAdsEnabledItem());
-    loadWidget(spinBox, MessageViewer::MessageViewerSettings::self()->adBlockUpdateIntervalItem());
+    mUi->tabWidget->setEnabled(MessageViewer::MessageViewerSettings::self()->adBlockEnabled());
+    loadWidget(mUi->checkHideAds, MessageViewer::MessageViewerSettings::self()->hideAdsEnabledItem());
+    loadWidget(mUi->spinBox, MessageViewer::MessageViewerSettings::self()->adBlockUpdateIntervalItem());
 
     // ------------------------------------------------------------------------------
 
@@ -216,7 +223,7 @@ void AdBlockSettingWidget::doLoadFromGlobalSettings()
             continue;
         }
 
-        QListWidgetItem *subItem = new QListWidgetItem(automaticFiltersListWidget);
+        QListWidgetItem *subItem = new QListWidgetItem(mUi->automaticFiltersListWidget);
         subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
         if (isFilterEnabled) {
             subItem->setCheckState(Qt::Checked);
@@ -259,9 +266,9 @@ void AdBlockSettingWidget::save()
     }
 
     // General settings
-    saveCheckBox(checkEnableAdblock, MessageViewer::MessageViewerSettings::self()->adBlockEnabledItem());
-    saveCheckBox(checkHideAds, MessageViewer::MessageViewerSettings::self()->hideAdsEnabledItem());
-    saveSpinBox(spinBox, MessageViewer::MessageViewerSettings::self()->adBlockUpdateIntervalItem());
+    saveCheckBox(mUi->checkEnableAdblock, MessageViewer::MessageViewerSettings::self()->adBlockEnabledItem());
+    saveCheckBox(mUi->checkHideAds, MessageViewer::MessageViewerSettings::self()->hideAdsEnabledItem());
+    saveSpinBox(mUi->spinBox, MessageViewer::MessageViewerSettings::self()->adBlockUpdateIntervalItem());
 
     // automatic filters
     KConfig config(QStringLiteral("messagevieweradblockrc"));
@@ -270,9 +277,9 @@ void AdBlockSettingWidget::save()
         config.deleteGroup(group);
     }
 
-    const int numberItem(automaticFiltersListWidget->count());
+    const int numberItem(mUi->automaticFiltersListWidget->count());
     for (int i = 0; i < numberItem; ++i) {
-        QListWidgetItem *subItem = automaticFiltersListWidget->item(i);
+        QListWidgetItem *subItem = mUi->automaticFiltersListWidget->item(i);
         KConfigGroup grp = config.group(QStringLiteral("FilterList %1").arg(i));
         grp.writeEntry(QStringLiteral("FilterEnabled"), subItem->checkState() == Qt::Checked);
         grp.writeEntry(QStringLiteral("url"), subItem->data(UrlList).toString());
@@ -299,8 +306,8 @@ void AdBlockSettingWidget::save()
 
     QStringList disableCustomFilter;
     QTextStream out(&ruleFile);
-    for (int i = 0; i < manualFiltersListWidget->count(); ++i) {
-        QListWidgetItem *subItem = manualFiltersListWidget->item(i);
+    for (int i = 0; i < mUi->manualFiltersListWidget->count(); ++i) {
+        QListWidgetItem *subItem = mUi->manualFiltersListWidget->item(i);
         const QString stringRule = subItem->text();
         if (!stringRule.trimmed().isEmpty()) {
             out << stringRule << '\n';
@@ -325,8 +332,8 @@ void AdBlockSettingWidget::save()
 void AdBlockSettingWidget::updateCheckBox()
 {
     // update enabled status
-    checkHideAds->setEnabled(checkEnableAdblock->isChecked());
-    tabWidget->setEnabled(checkEnableAdblock->isChecked());
+    mUi->checkHideAds->setEnabled(mUi->checkEnableAdblock->isChecked());
+    mUi->tabWidget->setEnabled(mUi->checkEnableAdblock->isChecked());
 }
 
 void AdBlockSettingWidget::hasChanged()
@@ -344,17 +351,17 @@ bool AdBlockSettingWidget::changed() const
 void AdBlockSettingWidget::slotAddFilter()
 {
     QStringList excludeList;
-    const int numberItem(automaticFiltersListWidget->count());
+    const int numberItem(mUi->automaticFiltersListWidget->count());
     excludeList.reserve(numberItem);
     for (int i = 0; i < numberItem; ++i) {
-        excludeList << automaticFiltersListWidget->item(i)->text();
+        excludeList << mUi->automaticFiltersListWidget->item(i)->text();
     }
     QPointer<MessageViewer::AdBlockAddSubscriptionDialog> dlg = new MessageViewer::AdBlockAddSubscriptionDialog(excludeList, this);
     if (dlg->exec()) {
         QString name;
         QString url;
         dlg->selectedList(name, url);
-        QListWidgetItem *subItem = new QListWidgetItem(automaticFiltersListWidget);
+        QListWidgetItem *subItem = new QListWidgetItem(mUi->automaticFiltersListWidget);
         subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
         subItem->setCheckState(Qt::Checked);
         subItem->setText(name);
@@ -368,7 +375,7 @@ void AdBlockSettingWidget::slotAddFilter()
 
 void AdBlockSettingWidget::slotRemoveSubscription()
 {
-    QListWidgetItem *item = automaticFiltersListWidget->currentItem();
+    QListWidgetItem *item = mUi->automaticFiltersListWidget->currentItem();
     if (item) {
         if (KMessageBox::questionYesNo(this, i18n("Do you want to delete list \"%1\"?", item->text()), i18n("Delete current list")) == KMessageBox::Yes) {
             const QString path = item->data(PathList).toString();
@@ -385,7 +392,7 @@ void AdBlockSettingWidget::slotRemoveSubscription()
 
 void AdBlockSettingWidget::slotShowList()
 {
-    showAutomaticFilterList(automaticFiltersListWidget->currentItem());
+    showAutomaticFilterList(mUi->automaticFiltersListWidget->currentItem());
 }
 
 void AdBlockSettingWidget::showAutomaticFilterList(QListWidgetItem *item)
@@ -402,7 +409,7 @@ void AdBlockSettingWidget::showAutomaticFilterList(QListWidgetItem *item)
 
 void AdBlockSettingWidget::slotDeleteList(const QString &listName)
 {
-    QListWidgetItem *item = automaticFiltersListWidget->currentItem();
+    QListWidgetItem *item = mUi->automaticFiltersListWidget->currentItem();
     if (item && item->text() == listName) {
         const QString path = item->data(PathList).toString();
         if (!path.isEmpty()) {
@@ -424,10 +431,10 @@ void AdBlockSettingWidget::slotImportFilters()
     }
     const QStringList listFilter = result.split(QLatin1Char('\n'));
     QStringList excludeFilter;
-    const int numberOfElements(manualFiltersListWidget->count());
+    const int numberOfElements(mUi->manualFiltersListWidget->count());
     excludeFilter.reserve(numberOfElements);
     for (int i = 0; i < numberOfElements; ++i) {
-        QListWidgetItem *subItem = manualFiltersListWidget->item(i);
+        QListWidgetItem *subItem = mUi->manualFiltersListWidget->item(i);
         excludeFilter.append(subItem->text());
     }
 
@@ -444,7 +451,7 @@ void AdBlockSettingWidget::slotImportFilters()
 
 void AdBlockSettingWidget::addManualFilter(const QString &text, const QStringList &excludeRules)
 {
-    QListWidgetItem *subItem = new QListWidgetItem(manualFiltersListWidget);
+    QListWidgetItem *subItem = new QListWidgetItem(mUi->manualFiltersListWidget);
     subItem->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
     subItem->setCheckState(excludeRules.contains(text) ? Qt::Unchecked : Qt::Checked);
     subItem->setText(text);
@@ -454,9 +461,9 @@ void AdBlockSettingWidget::slotExportFilters()
 {
     const QString filter = i18n("All Files (*)");
     QString exportFilters;
-    const int numberOfElement(manualFiltersListWidget->count());
+    const int numberOfElement(mUi->manualFiltersListWidget->count());
     for (int i = 0; i < numberOfElement; ++i) {
-        QListWidgetItem *subItem = manualFiltersListWidget->item(i);
+        QListWidgetItem *subItem = mUi->manualFiltersListWidget->item(i);
         const QString stringRule = subItem->text();
         if (!stringRule.isEmpty()) {
             exportFilters += stringRule + QLatin1Char('\n');

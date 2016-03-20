@@ -39,6 +39,7 @@ if(BUILD_TESTING)
     add_subdirectory(viewerplugins/tests/)
     if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         add_subdirectory(webengine/tests)
+        add_subdirectory(viewer/webengine/autotests)
     endif()
 
 endif()
@@ -87,6 +88,8 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         viewer/webengine/mailwebengineview.cpp
         viewer/webengine/mailwebenginepage.cpp
         viewer/webengine/mailwebengineaccesskey.cpp
+        viewer/webengine/mailwebengineaccesskeyanchor.cpp
+        viewer/webengine/mailwebengineaccesskeyutils.cpp
         ${libmessageviewer_mailviewer_SRCS}
         findbar/findbarwebengineview.cpp
         )
@@ -103,6 +106,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         webengine/webhittest.cpp
         webengine/webenginepage.cpp
         webengine/webenginescript.cpp
+        webengine/webengineview.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -212,6 +216,12 @@ set(libmessageviewer_scamdetection_SRCS
     scamdetection/scamcheckshorturlmanager.cpp
     )
 
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+   set(libmessageviewer_scamdetection_webengine_SRCS
+       scamdetection/scamdetectionwebengine.cpp
+   )
+endif()
+
 set(libmessageviewer_findbar_SRCS
     findbar/findbarbase.cpp
     findbar/findbarwebview.cpp
@@ -262,6 +272,7 @@ set(libmessageviewer_viewerplugins_SRCS
     )
 
 set(libmessageviewer_SRCS
+    ${libmessageviewer_scamdetection_webengine_SRCS}
     ${libmessageviewer_widgets_webengine_SRCS}
     ${libmessageviewer_webengine_SRCS}
     ${libmessageviewer_viewer_SRCS}
@@ -390,6 +401,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         HEADER_NAMES
         WebHitTestResult
         WebEnginePage
+        WebEngineView
         WebHitTest
         REQUIRED_HEADERS MessageViewer_webengine_misc_HEADERS
         PREFIX MessageViewer
@@ -633,7 +645,6 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h
-    ${CMAKE_CURRENT_BINARY_DIR}/ui_settings_adblock.h
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer
     COMPONENT Devel
@@ -649,39 +660,41 @@ install(FILES header/data/messageviewer_header_themes.knsrc DESTINATION ${KDE_IN
 install(FILES notify/messageviewer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR} )
 install(FILES scamdetection/data/longurlServices.json DESTINATION ${KDE_INSTALL_DATADIR}/messageviewer )
 
-Project(Otp)
+# Disabled libotp for 16.04, because it is not ready for release yet.
 
-set(libotp_SRCS
-    ${libmessageviewer_otp_SRCS}
-    ${libmessageviewer_otp_extra_SRCS}
-    )
-ecm_qt_declare_logging_category(libotp_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
-
-add_library(KF5Otp
-    ${libotp_SRCS}
-    )
-generate_export_header(KF5Otp BASE_NAME otp)
-add_library(KF5::Otp ALIAS KF5Otp)
-
-target_link_libraries(KF5Otp
-    PUBLIC
-    KF5::MessageCore #NodeHelper, StringUtils, Settings
-    KF5::PimCommon #AttachmentTemporaryFile handling
-    KF5::Libkleo
-    PRIVATE
-    KF5::Mime
-    KF5::IconThemes
-    ${libmessageviewer_web_LIB}
-    Grantlee5::TextDocument
-    )
-
-install(TARGETS
-    KF5Otp
-    EXPORT KF5OtpTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
-    )
-
-set_target_properties(KF5Otp PROPERTIES
-    VERSION ${MESSAGEVIEWER_VERSION_STRING}
-    SOVERSION ${MESSAGEVIEWER_SOVERSION}
-    EXPORT_NAME Otp
-    )
+# Project(Otp)
+# 
+# set(libotp_SRCS
+#     ${libmessageviewer_otp_SRCS}
+#     ${libmessageviewer_otp_extra_SRCS}
+#     )
+# ecm_qt_declare_logging_category(libotp_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
+# 
+# add_library(KF5Otp
+#     ${libotp_SRCS}
+#     )
+# generate_export_header(KF5Otp BASE_NAME otp)
+# add_library(KF5::Otp ALIAS KF5Otp)
+# 
+# target_link_libraries(KF5Otp
+#     PUBLIC
+#     KF5::MessageCore #NodeHelper, StringUtils, Settings
+#     KF5::PimCommon #AttachmentTemporaryFile handling
+#     KF5::Libkleo
+#     PRIVATE
+#     KF5::Mime
+#     KF5::IconThemes
+#     ${libmessageviewer_web_LIB}
+#     Grantlee5::TextDocument
+#     )
+# 
+# install(TARGETS
+#     KF5Otp
+#     EXPORT KF5OtpTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
+#     )
+# 
+# set_target_properties(KF5Otp PROPERTIES
+#     VERSION ${MESSAGEVIEWER_VERSION_STRING}
+#     SOVERSION ${MESSAGEVIEWER_SOVERSION}
+#     EXPORT_NAME Otp
+#     )

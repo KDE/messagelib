@@ -16,7 +16,9 @@
 */
 #include "webenginescript.h"
 
-QString MessageViewer::WebEngineScript::findAllImages()
+using namespace MessageViewer;
+
+QString WebEngineScript::findAllImages()
 {
     const QString source = QLatin1String("(function() {"
                                          "var out = [];"
@@ -33,7 +35,7 @@ QString MessageViewer::WebEngineScript::findAllImages()
     return source;
 }
 
-QString MessageViewer::WebEngineScript::findAllScripts()
+QString WebEngineScript::findAllScripts()
 {
     const QString source = QLatin1String("(function() {"
                                          "var out = [];"
@@ -45,6 +47,48 @@ QString MessageViewer::WebEngineScript::findAllScripts()
                                          "    });"
                                          "}"
                                          "return out;"
+                                         "})()");
+
+    return source;
+}
+
+QString WebEngineScript::findAllAnchors()
+{
+    const QString source = QLatin1String("(function() {"
+                                         "var out = [];"
+                                         "var anchors = document.getElementsByTagName('a');"
+                                         "for (var i = 0; i < anchors.length; ++i) {"
+                                         "    var r = anchors[i].getBoundingClientRect();"
+                                         "    out.push({"
+                                         "        src: anchors[i].href,"
+                                         "        title: anchors[i].title,"
+                                         "        boudingRect: [r.top, r.left, r.width, r.height]"
+                                         "    });"
+                                         "}"
+                                         "return out;"
+                                         "})()");
+
+    return source;
+}
+
+QString WebEngineScript::findAllAnchorsAndForms()
+{
+    const QString source = QLatin1String("(function() {"
+                                         "var res = [];"
+                                         "var out = [];"
+                                         "var anchors = document.getElementsByTagName('a');"
+                                         "for (var i = 0; i < anchors.length; ++i) {"
+                                         "    out.push({"
+                                         "        src: anchors[i].href,"
+                                         "        title: anchors[i].title"
+                                         "    });"
+                                         "}"
+                                         "var forms = document.getElementsByTagName('form');"
+                                         "res.push({"
+                                         "    anchors: out,"
+                                         "    forms:  forms.length"
+                                         "    });"
+                                         "return res;"
                                          "})()");
 
     return source;

@@ -65,6 +65,7 @@ public:
     Private(StorageModel *owner)
         : q(owner),
           mModel(Q_NULLPTR),
+          mChildrenFilterModel(Q_NULLPTR),
           mSelectionModel(Q_NULLPTR)
     {}
 };

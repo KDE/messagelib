@@ -14,20 +14,40 @@
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
-#ifndef WEBENGINESCRIPT_H
-#define WEBENGINESCRIPT_H
 
-#include <QString>
-#include "messageviewer_export.h"
+#ifndef MAILWEBENGINEACCESSKEYANCHOR_H
+#define MAILWEBENGINEACCESSKEYANCHOR_H
+
+#include <QVariant>
+#include <QRect>
 
 namespace MessageViewer
 {
-namespace WebEngineScript
+class MailWebEngineAccessKeyAnchor
 {
-MESSAGEVIEWER_EXPORT QString findAllImages();
-MESSAGEVIEWER_EXPORT QString findAllScripts();
-MESSAGEVIEWER_EXPORT QString findAllAnchors();
-MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
+public:
+    MailWebEngineAccessKeyAnchor(const QVariant &result);
+    MailWebEngineAccessKeyAnchor();
+    QRect boundingRect() const;
+
+    QString accessKey() const;
+
+    QString href() const;
+
+    QString target() const;
+
+    QString tagName() const;
+
+    QString innerText() const;
+
+private:
+    void initialize(const QVariant &result);
+    QRect mBoundingRect;
+    QString mAccessKey;
+    QString mHref;
+    QString mTarget;
+    QString mTagName;
+    QString mInnerText;
+};
 }
-}
-#endif // WEBENGINESCRIPT_H
+#endif // MAILWEBENGINEACCESSKEYANCHOR_H

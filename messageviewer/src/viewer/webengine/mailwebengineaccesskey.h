@@ -25,14 +25,16 @@ class KActionCollection;
 class QWheelEvent;
 class QResizeEvent;
 class QKeyEvent;
+class QWebEngineView;
 namespace MessageViewer
 {
 class MailWebEngineAccessKeyPrivate;
+class MailWebEngineAccessKeyAnchor;
 class MESSAGEVIEWER_EXPORT MailWebEngineAccessKey : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailWebEngineAccessKey(QObject *parent = Q_NULLPTR);
+    explicit MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent = Q_NULLPTR);
     ~MailWebEngineAccessKey();
 
     void setActionCollection(KActionCollection *ac);
@@ -43,11 +45,14 @@ public:
     void keyReleaseEvent(QKeyEvent *e);
 
     void showAccessKeys();
-    //void makeAccessKeyLabel(QChar accessKey, const QWebElement &element);
+    void makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element);
 
     bool checkForAccessKey(QKeyEvent *event);
 public Q_SLOTS:
     void hideAccessKeys();
+
+private Q_SLOTS:
+    void handleSearchAccessKey(const QVariant &res);
 
 private:
     MailWebEngineAccessKeyPrivate *const d;

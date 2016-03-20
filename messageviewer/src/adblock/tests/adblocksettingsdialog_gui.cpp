@@ -18,6 +18,8 @@
 #include <QDialog>
 #include <QApplication>
 #include <KAboutData>
+#include <QVBoxLayout>
+#include <QPushButton>
 #include <KLocalizedString>
 #include <QCommandLineParser>
 #include <QDialogButtonBox>
