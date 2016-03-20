@@ -42,7 +42,6 @@ void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
         mAccessKey = map.value(QStringLiteral("accessKey")).toString();
         mTarget = map.value(QStringLiteral("target")).toString();
         mTagName = map.value(QStringLiteral("tagName")).toString();
-        //TODO
     }
 }
 
