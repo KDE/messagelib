@@ -19,13 +19,15 @@
 #include "mailwebengineaccesskeyanchor.h"
 #include "mailwebengineaccesskeyutils.h"
 
+
 #include <KActionCollection>
 #include <QKeyEvent>
 #include <QLabel>
 #include <QAction>
 #include <QWebEngineView>
 #include <QToolTip>
-
+#include <QCoreApplication>
+#include <QDebug>
 using namespace MessageViewer;
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -95,8 +97,10 @@ static bool isEditableElement(QWebPage *page)
 #endif
 static QString linkElementKey(const MessageViewer::MailWebEngineAccessKeyAnchor &element, const QUrl &baseUrl)
 {
+    qDebug()<<" element.href()"<<element.href();
     if (!element.href().isEmpty()) {
         const QUrl url = baseUrl.resolved(element.href());
+        qDebug()<< "URL " << url;
         QString linkKey(url.toString());
         if (!element.target().isEmpty()) {
             linkKey += QLatin1Char('+');
@@ -111,9 +115,9 @@ static void handleDuplicateLinkElements(const MessageViewer::MailWebEngineAccess
 {
     if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
         const QString linkKey(linkElementKey(element, baseUrl));
-        // qCDebug(MESSAGEVIEWER_LOG) << "LINK KEY:" << linkKey;
+        qDebug() << "LINK KEY:" << linkKey;
         if (dupLinkList->contains(linkKey)) {
-            // qCDebug(MESSAGEVIEWER_LOG) << "***** Found duplicate link element:" << linkKey;
+            qDebug() << "***** Found duplicate link element:" << linkKey;
             *accessKey = dupLinkList->value(linkKey);
         } else if (!linkKey.isEmpty()) {
             dupLinkList->insert(linkKey, *accessKey);
@@ -239,6 +243,7 @@ void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageVi
     font.setBold(true);
     label->setFont(font);
     label->setText(accessKey);
+    qDebug()<<" accessKey"<<accessKey<< label->width();
     label->setPalette(QToolTip::palette());
     label->setAutoFillBackground(true);
     label->setFrameStyle(QFrame::Box | QFrame::Plain);
@@ -275,12 +280,12 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
             p -= frame->scrollPosition();
             frame = frame->parentFrame();
         } while (frame && frame != d->mWebView->page()->mainFrame());
+#endif
         QMouseEvent pevent(QEvent::MouseButtonPress, p, Qt::LeftButton, 0, 0);
         QCoreApplication::sendEvent(this, &pevent);
         QMouseEvent revent(QEvent::MouseButtonRelease, p, Qt::LeftButton, 0, 0);
         QCoreApplication::sendEvent(this, &revent);
         handled = true;
-#endif
     }
     return handled;
 }
