@@ -28,7 +28,7 @@ set(webengineaccesskey_test_SRCS
 add_executable(webengineaccesskeytest ${webengineaccesskey_test_SRCS})
 
 target_link_libraries(webengineaccesskeytest
-    Qt5::Widgets KF5::MessageViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes
+    Qt5::Widgets KF5::MessageViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::WebKit Qt5::WebKitWidgets
     )
 
 ####

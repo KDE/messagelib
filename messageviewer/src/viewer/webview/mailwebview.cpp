@@ -348,4 +348,9 @@ void MailWebView::openBlockableItemsDialog()
     }
     delete dlg;
 }
+
+void MailWebView::showAccessKeys()
+{
+    mWebViewAccessKey->showAccessKeys();
+}
 #include "moc_mailwebview.cpp"

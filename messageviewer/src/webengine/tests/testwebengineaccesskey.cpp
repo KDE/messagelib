@@ -18,6 +18,10 @@
 #include "testwebengineaccesskey.h"
 #include "viewer/webengine/mailwebengineaccesskey.h"
 #include "viewer/webengine/mailwebengineview.h"
+
+#include "viewer/webview/mailwebview.h"
+#include "viewer/webview/webviewaccesskey.h"
+
 #include "messageviewer/messageviewersettings.h"
 #include <QApplication>
 #include <QHBoxLayout>
@@ -36,6 +40,9 @@ TestWidget::TestWidget(QWidget *parent)
     hbox->setMargin(0);
     TestWebEngineAccesskey *webEngine = new TestWebEngineAccesskey(this);
     hbox->addWidget(webEngine);
+
+    TestWebKitAccesskey *webKit = new TestWebKitAccesskey(this);
+    hbox->addWidget(webKit);
 }
 
 TestWidget::~TestWidget()
@@ -50,8 +57,7 @@ TestWebKitAccesskey::TestWebKitAccesskey(QWidget *parent)
     QLabel *label = new QLabel(QStringLiteral("WebKit"));
     vboxLayout->addWidget(label);
 
-    mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
-    mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+    mTestWebEngine = new MessageViewer::MailWebView(new KActionCollection(this), this);
     vboxLayout->addWidget(mTestWebEngine);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
     QPushButton *searchAccessKey = new QPushButton(QStringLiteral("AccessKey"), this);
@@ -74,6 +80,8 @@ TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
+    QLabel *label = new QLabel(QStringLiteral("WebEngine"));
+    vboxLayout->addWidget(label);
 
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);

@@ -69,6 +69,7 @@ public:
     void saveMainFrameScreenshotInFile(const QString &filename);
     void openBlockableItemsDialog();
 
+    void showAccessKeys();
 public Q_SLOTS:
     void slotShowDetails();
     void slotZoomChanged(qreal zoom);

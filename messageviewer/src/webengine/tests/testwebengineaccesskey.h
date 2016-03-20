@@ -23,6 +23,7 @@
 namespace MessageViewer
 {
 class MailWebEngineView;
+class MailWebView;
 }
 
 class TestWidget : public QWidget
@@ -45,7 +46,7 @@ private Q_SLOTS:
     void slotShowAccessKey();
 
 private:
-    MessageViewer::MailWebEngineView *mTestWebEngine;
+    MessageViewer::MailWebView *mTestWebEngine;
 };
 
 
