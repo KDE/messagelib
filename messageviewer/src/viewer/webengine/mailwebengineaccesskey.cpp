@@ -334,14 +334,17 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
             continue;
         }
+        qDebug()<<" Element 111"<<element.href() << " accesskey :"<<element.accessKey().toUpper();;
         if (isHiddenElement(element)) {
             continue;    // Do not show access key for hidden elements...
         }
+        qDebug()<<" Element 2222"<<element.href() << " accesskey :"<<element.accessKey().toUpper();
         const QString accessKeyAttribute(element.accessKey().toUpper());
         if (accessKeyAttribute.isEmpty()) {
             unLabeledElements.append(element);
             continue;
         }
+        qDebug()<<" Element 333"<<element.href() << " accesskey :"<<element.accessKey().toUpper();;
         QChar accessKey;
         for (int i = 0; i < accessKeyAttribute.count(); i += 2) {
             const QChar &possibleAccessKey = accessKeyAttribute[i];
@@ -350,11 +353,13 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
                 break;
             }
         }
+        qDebug()<<" Element 444"<<element.href() << " accesskey :"<<accessKey;
         if (accessKey.isNull()) {
             unLabeledElements.append(element);
             continue;
         }
 
+        qDebug()<<" Element "<<element.href();
         handleDuplicateLinkElements(element, &d->mDuplicateLinkElements, &accessKey, d->mWebEngine->url());
         if (!accessKey.isNull()) {
             unusedKeys.removeOne(accessKey);
@@ -373,6 +378,7 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         }
         QChar accessKey;
         const QString text = element.innerText().toUpper();
+        qDebug()<<" Other text "<<text;
         for (int i = 0; i < text.count(); ++i) {
             const QChar &c = text.at(i);
             if (unusedKeys.contains(c)) {
@@ -384,6 +390,7 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
             accessKey = unusedKeys.takeFirst();
         }
 
+        qDebug()<<" Other text "<<text << " accesskey"<<accessKey<< " href"<<element.href() << " test "<<element.innerText();
         handleDuplicateLinkElements(element, &d->mDuplicateLinkElements, &accessKey, d->mWebEngine->url());
         if (!accessKey.isNull()) {
             unusedKeys.removeOne(accessKey);
