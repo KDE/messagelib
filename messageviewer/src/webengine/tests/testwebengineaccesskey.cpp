@@ -25,14 +25,56 @@
 #include <QStandardPaths>
 
 #include <KActionCollection>
+#include <QLabel>
 #include <QPushButton>
+
+TestWidget::TestWidget(QWidget *parent)
+    : QWidget(parent)
+{
+    MessageViewer::MessageViewerSettings::self()->setAccessKeyEnabled(true);
+    QHBoxLayout *hbox = new QHBoxLayout(this);
+    hbox->setMargin(0);
+    TestWebEngineAccesskey *webEngine = new TestWebEngineAccesskey(this);
+    hbox->addWidget(webEngine);
+}
+
+TestWidget::~TestWidget()
+{
+
+}
+
+TestWebKitAccesskey::TestWebKitAccesskey(QWidget *parent)
+    : QWidget(parent)
+{
+    QVBoxLayout *vboxLayout = new QVBoxLayout(this);
+    QLabel *label = new QLabel(QStringLiteral("WebKit"));
+    vboxLayout->addWidget(label);
+
+    mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
+    mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+    vboxLayout->addWidget(mTestWebEngine);
+    mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
+    QPushButton *searchAccessKey = new QPushButton(QStringLiteral("AccessKey"), this);
+    vboxLayout->addWidget(searchAccessKey);
+    connect(searchAccessKey, &QPushButton::clicked, this, &TestWebKitAccesskey::slotShowAccessKey);
+}
+
+TestWebKitAccesskey::~TestWebKitAccesskey()
+{
+
+}
+
+void TestWebKitAccesskey::slotShowAccessKey()
+{
+    mTestWebEngine->showAccessKeys();
+}
 
 
 TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
-    MessageViewer::MessageViewerSettings::self()->setAccessKeyEnabled(true);
+
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vboxLayout->addWidget(mTestWebEngine);
@@ -57,8 +99,9 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    TestWebEngineAccesskey *testWebEngine = new TestWebEngineAccesskey;
+    TestWidget *testWebEngine = new TestWidget;
     testWebEngine->show();
     const int ret = app.exec();
     return ret;
 }
+

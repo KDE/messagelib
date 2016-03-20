@@ -25,6 +25,30 @@ namespace MessageViewer
 class MailWebEngineView;
 }
 
+class TestWidget : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit TestWidget(QWidget *parent = Q_NULLPTR);
+    ~TestWidget();
+};
+
+
+class TestWebKitAccesskey : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit TestWebKitAccesskey(QWidget *parent = Q_NULLPTR);
+    ~TestWebKitAccesskey();
+
+private Q_SLOTS:
+    void slotShowAccessKey();
+
+private:
+    MessageViewer::MailWebEngineView *mTestWebEngine;
+};
+
+
 class TestWebEngineAccesskey : public QWidget
 {
     Q_OBJECT
