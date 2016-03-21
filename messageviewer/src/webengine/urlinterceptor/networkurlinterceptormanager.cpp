@@ -24,28 +24,28 @@ using namespace MessageViewer;
 class MessageViewer::NetworkUrlInterceptorManagerPrivate
 {
 public:
-    NetworkUrlInterceptorManagerPrivate(KActionCollection *ac, NetworkUrlInterceptorManager *qq)
+    NetworkUrlInterceptorManagerPrivate(QWebEngineView *webEngine, KActionCollection *ac, NetworkUrlInterceptorManager *qq)
         : q(qq)
     {
-        createInterfaces(ac);
+        createInterfaces(webEngine, ac);
     }
-    void createInterfaces(KActionCollection *ac);
+    void createInterfaces(QWebEngineView *webEngine, KActionCollection *ac);
     QVector<MessageViewer::NetworkPluginUrlInterceptorInterface *> mListInterface;
     NetworkUrlInterceptorManager *q;
 };
 
-void NetworkUrlInterceptorManagerPrivate::createInterfaces(KActionCollection *ac)
+void NetworkUrlInterceptorManagerPrivate::createInterfaces(QWebEngineView *webEngine, KActionCollection *ac)
 {
     Q_FOREACH (NetworkPluginUrlInterceptor *plugin, NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
-        MessageViewer::NetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(q);
+        MessageViewer::NetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(webEngine, q);
         interface->createActions(ac);
         mListInterface.append(interface);
     }
 }
 
-NetworkUrlInterceptorManager::NetworkUrlInterceptorManager(KActionCollection *ac, QObject *parent)
+NetworkUrlInterceptorManager::NetworkUrlInterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent)
     : QObject(parent),
-      d(new NetworkUrlInterceptorManagerPrivate(ac, this))
+      d(new NetworkUrlInterceptorManagerPrivate(webEngine, ac, this))
 {
 
 }

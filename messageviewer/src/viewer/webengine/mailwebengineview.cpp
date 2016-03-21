@@ -47,7 +47,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mWebViewAccessKey->setActionCollection(ac);
     d->mScamDetection = new ScamDetectionWebEngine(this);
 
-    new MessageViewer::NetworkAccessManagerWebEngine(ac, this);
+    new MessageViewer::NetworkAccessManagerWebEngine(this, ac, this);
     MailWebEnginePage *pageEngine = new MailWebEnginePage(this);
     setPage(pageEngine);
 
