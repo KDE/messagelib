@@ -29,10 +29,11 @@
     your version.
 */
 
-#ifndef MESSAGEVIEWER_CSSHELPERBASE_H
-#define MESSAGEVIEWER_CSSHELPERBASE_H
+#ifndef __MIMETREEPARSER_CSSHELPERBASE_H__
+#define __MIMETREEPARSER_CSSHELPERBASE_H__
 
 #include "mimetreeparser_export.h"
+
 #include <QColor>
 #include <QFont>
 

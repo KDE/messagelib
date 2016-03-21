@@ -16,8 +16,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef _MESSAGEVIEWER_KLEOJOBEXECUTOR_H
-#define _MESSAGEVIEWER_KLEOJOBEXECUTOR_H
+#ifndef __MIMETREEPARSER_KLEOJOBEXECUTOR_H__
+#define __MIMETREEPARSER_KLEOJOBEXECUTOR_H__
 
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/importresult.h>

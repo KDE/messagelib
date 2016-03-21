@@ -16,8 +16,8 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#ifndef ICONNAMECACHE_H
-#define ICONNAMECACHE_H
+#ifndef __MIMETREEPARSER_ICONNAMECACHE_H__
+#define __MIMETREEPARSER_ICONNAMECACHE_H__
 
 #include <QMap>
 #include <QString>

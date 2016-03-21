@@ -15,8 +15,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef CRYPTOBODYPARTMEMENTO_H
-#define CRYPTOBODYPARTMEMENTO_H
+#ifndef __MIMETREEPARSER_CRYPTOBODYPARTMEMENTO_H__
+#define __MIMETREEPARSER_CRYPTOBODYPARTMEMENTO_H__
 
 #include <gpgme++/error.h>
 
@@ -72,4 +72,4 @@ private:
     GpgME::Error m_auditLogError;
 };
 }
-#endif // CRYPTOBODYPARTMEMENTO_H
+#endif // __MIMETREEPARSER_CRYPTOBODYPARTMEMENTO_H__

@@ -31,8 +31,8 @@
     your version.
 */
 
-#ifndef _MESSAGEVIEWER_OBJECTTREEPARSER_H_
-#define _MESSAGEVIEWER_OBJECTTREEPARSER_H_
+#ifndef __MIMETREEPARSER_OBJECTTREEPARSER_H__
+#define __MIMETREEPARSER_OBJECTTREEPARSER_H__
 
 #include "mimetreeparser_export.h"
 
@@ -473,5 +473,5 @@ private:
 
 }
 
-#endif // _KMAIL_OBJECTTREEPARSER_H_
+#endif // __MIMETREEPARSER_OBJECTTREEPARSER_H__
 

@@ -16,8 +16,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef _MESSAGEVIEWER_ENUMS_H
-#define _MESSAGEVIEWER_ENUMS_H
+#ifndef __MIMETREEPARSER_ENUMS_H__
+#define __MIMETREEPARSER_ENUMS_H__
 
 namespace MessageViewer
 {

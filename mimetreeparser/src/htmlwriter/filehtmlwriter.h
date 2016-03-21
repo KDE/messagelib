@@ -29,8 +29,8 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_FILEHTMLWRITER_H__
-#define __MESSAGEVIEWER_FILEHTMLWRITER_H__
+#ifndef __MIMETREEPARSER_FILEHTMLWRITER_H__
+#define __MIMETREEPARSER_FILEHTMLWRITER_H__
 
 #include "mimetreeparser_export.h"
 #include "mimetreeparser/htmlwriter.h"
@@ -67,4 +67,4 @@ private:
 
 } // namespace MessageViewer
 
-#endif // __MESSAGEVIEWER_FILEHTMLWRITER_H__
+#endif // __MIMETREEPARSER_FILEHTMLWRITER_H__

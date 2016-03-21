@@ -17,8 +17,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef MAILVIEWER_OBJECTTREESOURCE_IF_H
-#define MAILVIEWER_OBJECTTREESOURCE_IF_H
+#ifndef __MIMETREEPARSER_OBJECTTREESOURCE_IF_H__
+#define __MIMETREEPARSER_OBJECTTREESOURCE_IF_H__
 
 #include "mimetreeparser_export.h"
 #include "mimetreeparser/mimetype.h"

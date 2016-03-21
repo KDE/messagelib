@@ -31,8 +31,8 @@
     your version.
 */
 
-#ifndef __KMAIL_INTERFACES_BODYPART_H__
-#define __KMAIL_INTERFACES_BODYPART_H__
+#ifndef __MIMETREEPARSER_INTERFACES_BODYPART_H__
+#define __MIMETREEPARSER_INTERFACES_BODYPART_H__
 
 #include <QByteArray>
 #include <QString>
@@ -202,4 +202,4 @@ public:
 
 }
 
-#endif // __KMAIL_INTERFACES_BODYPART_H__
+#endif // __MIMETREEPARSER_INTERFACES_BODYPART_H__

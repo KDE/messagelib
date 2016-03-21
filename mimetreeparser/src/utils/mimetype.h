@@ -17,8 +17,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef MESSAGEVIEWER_UTIL_MIMETYPE_H
-#define MESSAGEVIEWER_UTIL_MIMETYPE_H
+#ifndef __MIMETREEPARSER_UTIL_MIMETYPE_H__
+#define __MIMETREEPARSER_UTIL_MIMETYPE_H__
 
 #include "mimetreeparser_export.h"
 

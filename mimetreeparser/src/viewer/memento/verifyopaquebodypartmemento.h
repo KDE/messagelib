@@ -15,8 +15,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef VERIFYOPAQUEBODYPARTMEMENTO_H
-#define VERIFYOPAQUEBODYPARTMEMENTO_H
+#ifndef __MIMETREEPARSER_VERIFYOPAQUEBODYPARTMEMENTO_H__
+#define __MIMETREEPARSER_VERIFYOPAQUEBODYPARTMEMENTO_H__
 
 #include "cryptobodypartmemento.h"
 #include <gpgme++/verificationresult.h>
@@ -90,4 +90,4 @@ private:
 
 }
 
-#endif // VERIFYOPAQUEBODYPARTMEMENTO_H
+#endif // __MIMETREEPARSER_VERIFYOPAQUEBODYPARTMEMENTO_H__

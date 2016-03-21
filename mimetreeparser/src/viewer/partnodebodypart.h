@@ -31,8 +31,8 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_PARTNODEBODYPART_H_
-#define __MESSAGEVIEWER_PARTNODEBODYPART_H_
+#ifndef __MIMETREEPARSER_PARTNODEBODYPART_H__
+#define __MIMETREEPARSER_PARTNODEBODYPART_H__
 
 #include "mimetreeparser_export.h"
 #include "mimetreeparser/bodypart.h"
@@ -109,4 +109,4 @@ private:
 
 }
 
-#endif // __MESSAGEVIEWER_PARTNODEBODYPART_H_
+#endif // __MIMETREEPARSER_PARTNODEBODYPART_H__

@@ -30,8 +30,8 @@
     your version.
 */
 
-#ifndef __KMAIL_INTERFACES_HTMLWRITER_H__
-#define __KMAIL_INTERFACES_HTMLWRITER_H__
+#ifndef __MIMETREEPARSER_INTERFACES_HTMLWRITER_H__
+#define __MIMETREEPARSER_INTERFACES_HTMLWRITER_H__
 
 class QByteArray;
 class QString;
@@ -121,5 +121,5 @@ public:
 
 }
 
-#endif // __KMAIL_INTERFACES_HTMLWRITER_H__
+#endif // __MIMETREEPARSER_INTERFACES_HTMLWRITER_H__
 

@@ -13,8 +13,8 @@
     Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, US
 */
 
-#ifndef _MESSAGEVIEWER_PARTMETADATA_H_
-#define _MESSAGEVIEWER_PARTMETADATA_H_
+#ifndef __MIMETREEPARSER_PARTMETADATA_H__
+#define __MIMETREEPARSER_PARTMETADATA_H__
 
 #include "mimetreeparser_export.h"
 
@@ -65,5 +65,5 @@ public:
 
 }
 
-#endif // _KMAIL_PARTMETADATA_H_
+#endif // __MIMETREEPARSER_PARTMETADATA_H__
 

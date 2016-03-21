@@ -17,8 +17,8 @@
    02110-1301, USA.
 */
 
-#ifndef __MESSAGEVIEWER_QUEUEHTMLWRITER_H__
-#define __MESSAGEVIEWER_QUEUEHTMLWRITER_H__
+#ifndef __MIMETREEPARSER_QUEUEHTMLWRITER_H__
+#define __MIMETREEPARSER_QUEUEHTMLWRITER_H__
 
 #include "mimetreeparser_export.h"
 #include "mimetreeparser/htmlwriter.h"
@@ -71,4 +71,4 @@ private:
 
 } // namespace MessageViewer
 
-#endif // __MESSAGEVIEWER_QUEUEHTMLWRITER_H__
+#endif // __MIMETREEPARSER_QUEUEHTMLWRITER_H__

@@ -29,8 +29,8 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_TESTCSSHELPER_H__
-#define __MESSAGEVIEWER_TESTCSSHELPER_H__
+#ifndef __MIMETREEPARSER_TESTCSSHELPER_H__
+#define __MIMETREEPARSER_TESTCSSHELPER_H__
 
 #include "viewer/csshelperbase.h"
 
@@ -47,4 +47,4 @@ public:
 
 }
 
-#endif // __MESSAGEVIEWER_TESTCSSHELPER_H__
+#endif // __MIMETREEPARSER_TESTCSSHELPER_H__
