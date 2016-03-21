@@ -33,6 +33,7 @@ public:
     ~NetworkUrlInterceptorManager();
 
     QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
+    QList<QAction *> actions() const;
 private:
     NetworkUrlInterceptorManagerPrivate *const d;
 };
