@@ -15,6 +15,7 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+#include "networkpluginurlinterceptorinterface.h"
 #include "networkurlinterceptormanager.h"
 #include "networkurlinterceptorpluginmanager.h"
 
@@ -37,7 +38,7 @@ void NetworkUrlInterceptorManagerPrivate::createInterfaces(KActionCollection *ac
 {
     Q_FOREACH (NetworkPluginUrlInterceptor *plugin, NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
         MessageViewer::NetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(q);
-        plugin->createActions(ac);
+        interface->createActions(ac);
         mListInterface.append(interface);
     }
 }

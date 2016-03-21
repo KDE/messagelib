@@ -29,3 +29,13 @@ NetworkPluginUrlInterceptorInterface::~NetworkPluginUrlInterceptorInterface()
 {
 
 }
+
+void NetworkPluginUrlInterceptorInterface::createActions(KActionCollection *ac)
+{
+    Q_UNUSED(ac);
+}
+
+QList<QAction *> NetworkPluginUrlInterceptorInterface::actions() const
+{
+    return {};
+}

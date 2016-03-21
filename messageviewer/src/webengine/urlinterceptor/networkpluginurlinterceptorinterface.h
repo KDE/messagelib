@@ -21,6 +21,8 @@
 #include <QObject>
 #include "messageviewer_export.h"
 class QWebEngineUrlRequestInfo;
+class KActionCollection;
+class QAction;
 namespace MessageViewer
 {
 class MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObject
@@ -29,6 +31,9 @@ class MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObject
 public:
     explicit NetworkPluginUrlInterceptorInterface(QObject *parent = Q_NULLPTR);
     ~NetworkPluginUrlInterceptorInterface();
+
+    virtual void createActions(KActionCollection *ac);
+    virtual QList<QAction *> actions() const;
 
     virtual void interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
 };

@@ -30,11 +30,6 @@ NetworkPluginUrlInterceptor::~NetworkPluginUrlInterceptor()
 
 }
 
-void NetworkPluginUrlInterceptor::createActions(KActionCollection *ac)
-{
-    Q_UNUSED(ac);
-}
-
 bool NetworkPluginUrlInterceptor::hasConfigureSupport() const
 {
     return false;
@@ -44,9 +39,4 @@ MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *NetworkPluginUrlInter
 {
     Q_UNUSED(parent);
     return Q_NULLPTR;
-}
-
-QList<QAction *> MessageViewer::NetworkPluginUrlInterceptor::actions() const
-{
-    return {};
 }
