@@ -34,7 +34,7 @@ private Q_SLOTS:
 
     void handleSearchAccessKey(const QVariant &var);
 Q_SIGNALS:
-    void accessKeySearchFinished();
+    void accessKeySearchFinished(const QVariant &var);
 
 private:
     QWebEngineView *mEngineView;

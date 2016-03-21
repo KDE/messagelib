@@ -21,6 +21,7 @@
 #include <QTest>
 #include <QHBoxLayout>
 #include <QWebEngineView>
+#include <QSignalSpy>
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -61,13 +62,12 @@ void TestWebEngineAccessKey::setHtml(const QString &html)
 
 void TestWebEngineAccessKey::handleSearchAccessKey(const QVariant &var)
 {
-    //TODO
+    Q_EMIT accessKeySearchFinished(var);
 }
 
 void TestWebEngineAccessKey::loadFinished(bool b)
 {
     mEngineView->page()->runJavaScript(MessageViewer::MailWebEngineAccessKeyUtils::script(), invoke(this, &TestWebEngineAccessKey::handleSearchAccessKey));
-    //TODO
 }
 
 MailWebEngineAccessKeyAnchorFromHtmlTest::MailWebEngineAccessKeyAnchorFromHtmlTest(QObject *parent)
@@ -78,6 +78,10 @@ MailWebEngineAccessKeyAnchorFromHtmlTest::MailWebEngineAccessKeyAnchorFromHtmlTe
 
 void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAnchor()
 {
+    TestWebEngineAccessKey w;
+    QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVariant)));
+    w.setHtml(QStringLiteral("<body>foo</body>"));
+    QVERIFY(accessKeySpy.wait());
 
 }
 
