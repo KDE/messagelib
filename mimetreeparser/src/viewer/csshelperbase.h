@@ -32,7 +32,7 @@
 #ifndef MESSAGEVIEWER_CSSHELPERBASE_H
 #define MESSAGEVIEWER_CSSHELPERBASE_H
 
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 #include <QColor>
 #include <QFont>
 
@@ -42,7 +42,7 @@ class QPaintDevice;
 namespace MessageViewer
 {
 
-class MESSAGEVIEWER_EXPORT CSSHelperBase
+class MIMETREEPARSER_EXPORT CSSHelperBase
 {
 public:
     /** Construct a CSSHelper object and set its font and color settings to

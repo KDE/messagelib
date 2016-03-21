@@ -16,7 +16,7 @@
 #ifndef _MESSAGEVIEWER_PARTMETADATA_H_
 #define _MESSAGEVIEWER_PARTMETADATA_H_
 
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/context.h>

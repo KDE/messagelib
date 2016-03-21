@@ -19,7 +19,7 @@
 
 #ifndef _MESSAGEVIEWER_NODEHELPER_H
 #define _MESSAGEVIEWER_NODEHELPER_H
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 
 #include "mimetreeparser/partmetadata.h"
 #include "mimetreeparser/enums.h"
@@ -53,7 +53,7 @@ namespace MessageViewer
 /**
  * @author Andras Mantia <andras@kdab.net>
  */
-class MESSAGEVIEWER_EXPORT NodeHelper: public QObject
+class MIMETREEPARSER_EXPORT NodeHelper: public QObject
 {
     Q_OBJECT
 public:

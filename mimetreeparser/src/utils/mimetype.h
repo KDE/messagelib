@@ -20,7 +20,7 @@
 #ifndef MESSAGEVIEWER_UTIL_MIMETYPE_H
 #define MESSAGEVIEWER_UTIL_MIMETYPE_H
 
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 
 #include <QString>
 class QMimeType;
@@ -49,7 +49,7 @@ enum HtmlMode {
 /**
  * Search mimetype from filename when mimetype is empty or application/octet-stream
  **/
-QMimeType MESSAGEVIEWER_EXPORT mimetype(const QString &name);
+QMimeType MIMETREEPARSER_EXPORT mimetype(const QString &name);
 
 /**
      * Finds the filename of an icon based on the given mimetype or filenames.
@@ -67,7 +67,7 @@ QMimeType MESSAGEVIEWER_EXPORT mimetype(const QString &name);
      *                              Example: "test.zip"
      * @return the full file name of the icon file
      */
-QString MESSAGEVIEWER_EXPORT fileNameForMimetype(const QString &mimeType, int iconSize,
+QString MIMETREEPARSER_EXPORT fileNameForMimetype(const QString &mimeType, int iconSize,
         const QString &fallbackFileName1 = QString(),
         const QString &fallbackFileName2 = QString());
 }

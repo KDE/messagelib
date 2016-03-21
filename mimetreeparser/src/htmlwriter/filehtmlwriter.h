@@ -32,7 +32,7 @@
 #ifndef __MESSAGEVIEWER_FILEHTMLWRITER_H__
 #define __MESSAGEVIEWER_FILEHTMLWRITER_H__
 
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 #include "mimetreeparser/htmlwriter.h"
 
 #include <QFile>
@@ -43,7 +43,7 @@ class QString;
 namespace MessageViewer
 {
 
-class MESSAGEVIEWER_EXPORT FileHtmlWriter : public HtmlWriter
+class MIMETREEPARSER_EXPORT FileHtmlWriter : public HtmlWriter
 {
 public:
     explicit FileHtmlWriter(const QString &filename);

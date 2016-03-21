@@ -34,7 +34,7 @@
 #ifndef __KMAIL_INTERFACE_BODYPARTFORMATTER_H__
 #define __KMAIL_INTERFACE_BODYPARTFORMATTER_H__
 
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 
 #include <QObject>
 #include <QSharedPointer>
@@ -51,7 +51,7 @@ namespace Interface
 class BodyPartURLHandler;
 class BodyPart;
 
-class MESSAGEVIEWER_EXPORT MessagePart
+class MIMETREEPARSER_EXPORT MessagePart
 {
 public:
     typedef QSharedPointer<MessagePart> Ptr;
@@ -71,7 +71,7 @@ private:
     friend class BodyPartFormatter;
 };
 
-class MESSAGEVIEWER_EXPORT BodyPartFormatter
+class MIMETREEPARSER_EXPORT BodyPartFormatter
 {
 public:
     virtual ~BodyPartFormatter() {}

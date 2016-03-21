@@ -34,7 +34,7 @@
 #ifndef __MESSAGEVIEWER_BODYPARTFORMATTERBASEFACTORY_H__
 #define __MESSAGEVIEWER_BODYPARTFORMATTERBASEFACTORY_H__
 
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 
 #include <map>
 #include <QByteArray>
@@ -61,7 +61,7 @@ typedef std::map<const char *, MessageViewer::SubtypeRegistry, MessageViewer::lt
 
 class BodyPartFormatterBaseFactoryPrivate;
 
-class MESSAGEVIEWER_EXPORT BodyPartFormatterBaseFactory
+class MIMETREEPARSER_EXPORT BodyPartFormatterBaseFactory
 {
 public:
     BodyPartFormatterBaseFactory();

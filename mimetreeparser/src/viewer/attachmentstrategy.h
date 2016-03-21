@@ -34,7 +34,7 @@
 #ifndef __MESSAGEVIEWER_ATTACHMENTSTRATEGY_H__
 #define __MESSAGEVIEWER_ATTACHMENTSTRATEGY_H__
 
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 
 class QString;
 namespace KMime
@@ -45,7 +45,7 @@ class Content;
 namespace MessageViewer
 {
 
-class MESSAGEVIEWER_EXPORT AttachmentStrategy
+class MIMETREEPARSER_EXPORT AttachmentStrategy
 {
 protected:
     AttachmentStrategy();

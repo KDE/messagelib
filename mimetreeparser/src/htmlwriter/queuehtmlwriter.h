@@ -20,7 +20,7 @@
 #ifndef __MESSAGEVIEWER_QUEUEHTMLWRITER_H__
 #define __MESSAGEVIEWER_QUEUEHTMLWRITER_H__
 
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 #include "mimetreeparser/htmlwriter.h"
 
 #include<QVector>

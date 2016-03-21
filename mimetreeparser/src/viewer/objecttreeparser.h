@@ -34,7 +34,7 @@
 #ifndef _MESSAGEVIEWER_OBJECTTREEPARSER_H_
 #define _MESSAGEVIEWER_OBJECTTREEPARSER_H_
 
-#include "messageviewer_export.h"
+#include "mimetreeparser_export.h"
 
 #include "mimetreeparser/nodehelper.h"
 #include "objecttreesourceif.h"
@@ -70,7 +70,7 @@ class MimeMessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 typedef QSharedPointer<MimeMessagePart> MimeMessagePartPtr;
 
-class MESSAGEVIEWER_EXPORT ProcessResult
+class MIMETREEPARSER_EXPORT ProcessResult
 {
 public:
     explicit ProcessResult(NodeHelper *nodeHelper, KMMsgSignatureState  inlineSignatureState  = KMMsgNotSigned,
@@ -277,7 +277,7 @@ is used to mark an attachment in the body with a yellow border when the user cli
 in the header. Finally, parseObjectTree() creates an anchor with the id 'att%1', which is used in
 the Viewer to scroll to the attachment.
 */
-class MESSAGEVIEWER_EXPORT ObjectTreeParser
+class MIMETREEPARSER_EXPORT ObjectTreeParser
 {
     class CryptoProtocolSaver;
     /**
