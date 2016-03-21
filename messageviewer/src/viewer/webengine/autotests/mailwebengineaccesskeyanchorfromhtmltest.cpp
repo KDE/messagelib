@@ -62,7 +62,13 @@ void TestWebEngineAccessKey::setHtml(const QString &html)
 
 void TestWebEngineAccessKey::handleSearchAccessKey(const QVariant &var)
 {
-    Q_EMIT accessKeySearchFinished(var);
+    const QVariantList lst = var.toList();
+    QVector<MessageViewer::MailWebEngineAccessKeyAnchor> anchorList;
+    anchorList.reserve(lst.count());
+    Q_FOREACH(const QVariant &anchor, lst) {
+        anchorList << MessageViewer::MailWebEngineAccessKeyAnchor(anchor);
+    }
+    Q_EMIT accessKeySearchFinished(anchorList);
 }
 
 void TestWebEngineAccessKey::loadFinished(bool b)
@@ -70,22 +76,34 @@ void TestWebEngineAccessKey::loadFinished(bool b)
     mEngineView->page()->runJavaScript(MessageViewer::MailWebEngineAccessKeyUtils::script(), invoke(this, &TestWebEngineAccessKey::handleSearchAccessKey));
 }
 
+Q_DECLARE_METATYPE(QVector<MessageViewer::MailWebEngineAccessKeyAnchor>)
+
 MailWebEngineAccessKeyAnchorFromHtmlTest::MailWebEngineAccessKeyAnchorFromHtmlTest(QObject *parent)
     : QObject(parent)
 {
-
+    qRegisterMetaType<QVector<MessageViewer::MailWebEngineAccessKeyAnchor> >();
 }
 
 void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAnchor()
 {
     TestWebEngineAccessKey w;
-    QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVariant)));
+    QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVector<MessageViewer::MailWebEngineAccessKeyAnchor>)));
     w.setHtml(QStringLiteral("<body>foo</body>"));
     QVERIFY(accessKeySpy.wait());
-
+    QCOMPARE(accessKeySpy.count(), 1);
+    const QVector<MessageViewer::MailWebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<MessageViewer::MailWebEngineAccessKeyAnchor> >();
+    QCOMPARE(resultLst.count(), 0);
 }
 
-
-
+void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
+{
+    TestWebEngineAccessKey w;
+    QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVector<MessageViewer::MailWebEngineAccessKeyAnchor>)));
+    w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a></body>"));
+    QVERIFY(accessKeySpy.wait());
+    QCOMPARE(accessKeySpy.count(), 1);
+    const QVector<MessageViewer::MailWebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<MessageViewer::MailWebEngineAccessKeyAnchor> >();
+    QCOMPARE(resultLst.count(), 1);
+}
 
 QTEST_MAIN(MailWebEngineAccessKeyAnchorFromHtmlTest)

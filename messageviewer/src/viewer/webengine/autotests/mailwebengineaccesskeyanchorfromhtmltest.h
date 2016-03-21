@@ -20,6 +20,8 @@
 
 #include <QObject>
 #include <QWidget>
+
+#include "../mailwebengineaccesskeyanchor.h"
 class QWebEngineView;
 class TestWebEngineAccessKey : public QWidget
 {
@@ -34,7 +36,7 @@ private Q_SLOTS:
 
     void handleSearchAccessKey(const QVariant &var);
 Q_SIGNALS:
-    void accessKeySearchFinished(const QVariant &var);
+    void accessKeySearchFinished(const QVector<MessageViewer::MailWebEngineAccessKeyAnchor> &var);
 
 private:
     QWebEngineView *mEngineView;
@@ -47,6 +49,7 @@ public:
     explicit MailWebEngineAccessKeyAnchorFromHtmlTest(QObject *parent = Q_NULLPTR);
 private Q_SLOTS:
     void shouldNotShowAccessKeyWhenHtmlAsNotAnchor();
+    void shouldReturnOneAnchor();
 };
 
 #endif // MAILWEBENGINEACCESSKEYANCHORFROMHTMLTEST_H

@@ -50,4 +50,6 @@ private:
     QString mInnerText;
 };
 }
+
+Q_DECLARE_TYPEINFO(MessageViewer::MailWebEngineAccessKeyAnchor, Q_MOVABLE_TYPE);
 #endif // MAILWEBENGINEACCESSKEYANCHOR_H
