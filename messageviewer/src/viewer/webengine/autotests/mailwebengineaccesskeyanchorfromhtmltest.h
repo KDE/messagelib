@@ -19,6 +19,26 @@
 #define MAILWEBENGINEACCESSKEYANCHORFROMHTMLTEST_H
 
 #include <QObject>
+#include <QWidget>
+class QWebEngineView;
+class TestWebEngineAccessKey : public QWidget
+{
+    Q_OBJECT
+public:
+    explicit TestWebEngineAccessKey(QWidget *parent = Q_NULLPTR);
+    ~TestWebEngineAccessKey();
+
+    void setHtml(const QString &html);
+private Q_SLOTS:
+    void loadFinished(bool b);
+
+    void handleSearchAccessKey(const QVariant &var);
+Q_SIGNALS:
+    void accessKeySearchFinished();
+
+private:
+    QWebEngineView *mEngineView;
+};
 
 class MailWebEngineAccessKeyAnchorFromHtmlTest : public QObject
 {

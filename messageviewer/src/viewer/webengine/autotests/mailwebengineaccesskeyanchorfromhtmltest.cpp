@@ -17,7 +17,58 @@
 
 
 #include "mailwebengineaccesskeyanchorfromhtmltest.h"
+#include "../mailwebengineaccesskeyutils.h"
 #include <QTest>
+#include <QHBoxLayout>
+#include <QWebEngineView>
+
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
+    R *receiver;
+    void (C::*memberFunction)(Arg);
+    void operator()(Arg result)
+    {
+        (receiver->*memberFunction)(result);
+    }
+};
+
+template<typename Arg, typename R, typename C>
+
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFunction};
+    return wrapper;
+}
+
+TestWebEngineAccessKey::TestWebEngineAccessKey(QWidget *parent)
+    : QWidget(parent)
+{
+    QHBoxLayout *hbox = new QHBoxLayout(this);
+    mEngineView = new QWebEngineView(this);
+    connect(mEngineView, &QWebEngineView::loadFinished, this, &TestWebEngineAccessKey::loadFinished);
+    hbox->addWidget(mEngineView);
+}
+
+TestWebEngineAccessKey::~TestWebEngineAccessKey()
+{
+
+}
+
+void TestWebEngineAccessKey::setHtml(const QString &html)
+{
+    mEngineView->setHtml(html);
+}
+
+void TestWebEngineAccessKey::handleSearchAccessKey(const QVariant &var)
+{
+    //TODO
+}
+
+void TestWebEngineAccessKey::loadFinished(bool b)
+{
+    mEngineView->page()->runJavaScript(MessageViewer::MailWebEngineAccessKeyUtils::script(), invoke(this, &TestWebEngineAccessKey::handleSearchAccessKey));
+    //TODO
+}
 
 MailWebEngineAccessKeyAnchorFromHtmlTest::MailWebEngineAccessKeyAnchorFromHtmlTest(QObject *parent)
     : QObject(parent)
@@ -29,5 +80,8 @@ void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsN
 {
 
 }
+
+
+
 
 QTEST_MAIN(MailWebEngineAccessKeyAnchorFromHtmlTest)
