@@ -47,7 +47,7 @@ struct Command {
     QByteArray b;
 };
 
-class MESSAGEVIEWER_DEPRECATED_EXPORT QueueHtmlWriter : public HtmlWriter
+class MIMETREEPARSER_DEPRECATED_EXPORT QueueHtmlWriter : public HtmlWriter
 {
 public:
     explicit QueueHtmlWriter(MessageViewer::HtmlWriter *base);
