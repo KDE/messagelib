@@ -16,7 +16,7 @@
 */
 
 #include "verifyopaquebodypartmemento.h"
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 
 #include <Libkleo/VerifyOpaqueJob>
 #include <Libkleo/KeyListJob>
@@ -56,12 +56,12 @@ bool VerifyOpaqueBodyPartMemento::start()
 {
     assert(m_job);
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento started";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento started";
 #endif
     if (const Error err = m_job->start(m_signature)) {
         m_vr = VerificationResult(err);
 #ifdef DEBUG_SIGNATURE
-        qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento stopped with error";
+        qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento stopped with error";
 #endif
         return false;
     }
@@ -77,11 +77,11 @@ void VerifyOpaqueBodyPartMemento::exec()
     setRunning(true);
     QByteArray plainText;
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento execed";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento execed";
 #endif
     saveResult(m_job->exec(m_signature, plainText), plainText);
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento after execed";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento after execed";
 #endif
     m_job->deleteLater(); // exec'ed jobs don't delete themselves
     m_job = 0;
@@ -119,7 +119,7 @@ void VerifyOpaqueBodyPartMemento::saveResult(const VerificationResult &vr,
 {
     assert(m_job);
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::saveResult called";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::saveResult called";
 #endif
     m_vr = vr;
     m_plainText = plainText;
@@ -130,13 +130,13 @@ void VerifyOpaqueBodyPartMemento::slotResult(const VerificationResult &vr,
         const QByteArray &plainText)
 {
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::slotResult called";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::slotResult called";
 #endif
     saveResult(vr, plainText);
     m_job = 0;
     if (canStartKeyListJob() && startKeyListJob()) {
 #ifdef DEBUG_SIGNATURE
-        qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento: canStartKeyListJob && startKeyListJob";
+        qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento: canStartKeyListJob && startKeyListJob";
 #endif
         return;
     }
@@ -163,7 +163,7 @@ bool VerifyOpaqueBodyPartMemento::startKeyListJob()
 void VerifyOpaqueBodyPartMemento::slotNextKey(const GpgME::Key &key)
 {
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::slotNextKey called";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::slotNextKey called";
 #endif
     m_key = key;
 }
@@ -171,7 +171,7 @@ void VerifyOpaqueBodyPartMemento::slotNextKey(const GpgME::Key &key)
 void VerifyOpaqueBodyPartMemento::slotKeyListJobDone()
 {
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::slotKeyListJobDone called";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::slotKeyListJobDone called";
 #endif
     m_keylistjob = 0;
     setRunning(false);

@@ -34,7 +34,7 @@
 #include "partnodebodypart.h"
 #include "nodehelper.h"
 #include "objecttreeparser.h"
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 #include <KMime/Content>
 
 #include <QTextCodec>
@@ -90,7 +90,7 @@ QString PartNodeBodyPart::contentDispositionParameter(const char *param) const
 
 bool PartNodeBodyPart::hasCompleteBody() const
 {
-    qCWarning(MESSAGEVIEWER_LOG) << "Sorry, not yet implemented.";
+    qCWarning(MIMETREEPARSER_LOG) << "Sorry, not yet implemented.";
     return true;
 }
 

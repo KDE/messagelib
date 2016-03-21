@@ -125,8 +125,6 @@ set(libmimetreeparser_SRCS
     ${libmimetreeparser_extra_SRCS}
     )
 
-ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
-
 ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME log_mimetreeparser)
 
 add_library(KF5MimeTreeParser

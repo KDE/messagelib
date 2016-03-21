@@ -29,7 +29,7 @@
     your version.
 */
 
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 
 #include "bodypartformatterbasefactory.h"
 #include "viewer/bodypartformatterbasefactory_p.h"
@@ -53,7 +53,7 @@ class AnyTypeBodyPartFormatter
 public:
     Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE
     {
-        qCDebug(MESSAGEVIEWER_LOG) << "Acting as a Interface::BodyPartFormatter!";
+        qCDebug(MIMETREEPARSER_LOG) << "Acting as a Interface::BodyPartFormatter!";
         return AsIcon;
     }
 

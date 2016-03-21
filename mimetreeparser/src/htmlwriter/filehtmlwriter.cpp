@@ -31,7 +31,7 @@
 
 #include "filehtmlwriter.h"
 
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 
 namespace MessageViewer
 {
@@ -46,7 +46,7 @@ FileHtmlWriter::FileHtmlWriter(const QString &filename)
 FileHtmlWriter::~FileHtmlWriter()
 {
     if (mFile.isOpen()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "FileHtmlWriter: file still open!";
+        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: file still open!";
         mStream.setDevice(0);
         mFile.close();
     }
@@ -95,12 +95,12 @@ void FileHtmlWriter::flush()
 void FileHtmlWriter::openOrWarn()
 {
     if (mFile.isOpen()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "FileHtmlWriter: file still open!";
+        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: file still open!";
         mStream.setDevice(0);
         mFile.close();
     }
     if (!mFile.open(QIODevice::WriteOnly)) {
-        qCWarning(MESSAGEVIEWER_LOG) << "FileHtmlWriter: Cannot open file" << mFile.fileName();
+        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: Cannot open file" << mFile.fileName();
     } else {
         mStream.setDevice(&mFile);
     }

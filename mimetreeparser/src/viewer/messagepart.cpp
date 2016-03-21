@@ -18,7 +18,7 @@
 */
 
 #include "messagepart.h"
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 #include "objecttreeparser.h"
 #include "converthtmltoplaintext.h"
 #include "csshelperbase.h"
@@ -497,10 +497,10 @@ static QString makeShowAuditLogLink(const GpgME::Error &err, const QString &audi
     // equally applies there:
     if (const unsigned int code = err.code()) {
         if (code == GPG_ERR_NOT_IMPLEMENTED) {
-            qCDebug(MESSAGEVIEWER_LOG) << "not showing link (not implemented)";
+            qCDebug(MIMETREEPARSER_LOG) << "not showing link (not implemented)";
             return QString();
         } else if (code == GPG_ERR_NO_DATA) {
-            qCDebug(MESSAGEVIEWER_LOG) << "not showing link (not available)";
+            qCDebug(MIMETREEPARSER_LOG) << "not showing link (not available)";
             return i18n("No Audit Log available");
         } else {
             return i18n("Error Retrieving Audit Log: %1", QString::fromLocal8Bit(err.asString()));
@@ -1236,7 +1236,7 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
     , mAsIcon(asIcon)
 {
     if (!mNode) {
-        qCWarning(MESSAGEVIEWER_LOG) << "not a valid node";
+        qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
     }
 
@@ -1373,7 +1373,7 @@ HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node, Ob
     , mSource(source)
 {
     if (!mNode) {
-        qCWarning(MESSAGEVIEWER_LOG) << "not a valid node";
+        qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
     }
 
@@ -1481,7 +1481,7 @@ MimeMessagePart::MimeMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
     , mOnlyOneMimePart(onlyOneMimePart)
 {
     if (!mNode) {
-        qCWarning(MESSAGEVIEWER_LOG) << "not a valid node";
+        qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
     }
 
@@ -1513,7 +1513,7 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
     , mViewHtml(false)
 {
     if (!mTextNode && !mHTMLNode) {
-        qCWarning(MESSAGEVIEWER_LOG) << "not a valid nodes";
+        qCWarning(MIMETREEPARSER_LOG) << "not a valid nodes";
         return;
     }
 
@@ -1597,7 +1597,7 @@ CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, co
     , mCryptoProto(cryptoProto)
 {
     if (!mNode) {
-        qCWarning(MESSAGEVIEWER_LOG) << "not a valid node";
+        qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
     }
 
@@ -1882,7 +1882,7 @@ EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *o
     mOtp->nodeHelper()->setPartMetaData(mNode, mMetaData);
 
     if (!mMessage) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Node is of type message/rfc822 but doesn't have a message!";
+        qCWarning(MIMETREEPARSER_LOG) << "Node is of type message/rfc822 but doesn't have a message!";
         return;
     }
 

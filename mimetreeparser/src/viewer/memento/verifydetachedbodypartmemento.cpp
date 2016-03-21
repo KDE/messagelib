@@ -16,7 +16,7 @@
 */
 
 #include "verifydetachedbodypartmemento.h"
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 
 #include <Libkleo/VerifyDetachedJob>
 #include <Libkleo/KeyListJob>
@@ -58,14 +58,14 @@ bool VerifyDetachedBodyPartMemento::start()
 {
     assert(m_job);
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyDetachedBodyPartMemento started";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento started";
 #endif
     connect(m_job, SIGNAL(result(GpgME::VerificationResult)),
             this, SLOT(slotResult(GpgME::VerificationResult)));
     if (const Error err = m_job->start(m_signature, m_plainText)) {
         m_vr = VerificationResult(err);
 #ifdef DEBUG_SIGNATURE
-        qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyDetachedBodyPartMemento stopped with error";
+        qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento stopped with error";
 #endif
         return false;
     }
@@ -78,13 +78,13 @@ void VerifyDetachedBodyPartMemento::exec()
     assert(m_job);
     setRunning(true);
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyDetachedBodyPartMemento execed";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento execed";
 #endif
     saveResult(m_job->exec(m_signature, m_plainText));
     m_job->deleteLater(); // exec'ed jobs don't delete themselves
     m_job = 0;
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyDetachedBodyPartMemento after execed";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento after execed";
 #endif
     if (canStartKeyListJob()) {
         std::vector<GpgME::Key> keys;
@@ -119,7 +119,7 @@ void VerifyDetachedBodyPartMemento::saveResult(const VerificationResult &vr)
 {
     assert(m_job);
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::saveResult called";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::saveResult called";
 #endif
     m_vr = vr;
     setAuditLog(m_job->auditLogError(), m_job->auditLogAsHtml());
@@ -128,13 +128,13 @@ void VerifyDetachedBodyPartMemento::saveResult(const VerificationResult &vr)
 void VerifyDetachedBodyPartMemento::slotResult(const VerificationResult &vr)
 {
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::slotResult called";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::slotResult called";
 #endif
     saveResult(vr);
     m_job = 0;
     if (canStartKeyListJob() && startKeyListJob()) {
 #ifdef DEBUG_SIGNATURE
-        qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyDetachedBodyPartMemento: canStartKeyListJob && startKeyListJob";
+        qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento: canStartKeyListJob && startKeyListJob";
 #endif
         return;
     }
@@ -161,7 +161,7 @@ bool VerifyDetachedBodyPartMemento::startKeyListJob()
 void VerifyDetachedBodyPartMemento::slotNextKey(const GpgME::Key &key)
 {
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::slotNextKey called";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::slotNextKey called";
 #endif
     m_key = key;
 }
@@ -169,7 +169,7 @@ void VerifyDetachedBodyPartMemento::slotNextKey(const GpgME::Key &key)
 void VerifyDetachedBodyPartMemento::slotKeyListJobDone()
 {
 #ifdef DEBUG_SIGNATURE
-    qCDebug(MESSAGEVIEWER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::slotKeyListJobDone called";
+    qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::slotKeyListJobDone called";
 #endif
     m_keylistjob = 0;
     setRunning(false);

@@ -37,7 +37,7 @@
 
 #include <KMime/Content>
 
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 namespace MessageViewer
 {
 
@@ -266,7 +266,7 @@ const AttachmentStrategy *AttachmentStrategy::create(Type type)
     case Hidden:     return hidden();
     case HeaderOnly: return headerOnly();
     }
-    qCCritical(MESSAGEVIEWER_LOG) << "Unknown attachment startegy ( type =="
+    qCCritical(MIMETREEPARSER_LOG) << "Unknown attachment startegy ( type =="
                                   << (int)type << ") requested!";
     return 0; // make compiler happy
 }

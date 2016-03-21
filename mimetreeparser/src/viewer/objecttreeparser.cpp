@@ -54,7 +54,7 @@
 #include "job/kleojobexecutor.h"
 #include "nodehelper.h"
 #include "utils/iconnamecache.h"
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 #include "converthtmltoplaintext.h"
 
 // KDEPIM includes
@@ -242,16 +242,16 @@ bool ObjectTreeParser::printing() const
 
 MimeMessagePart::Ptr ObjectTreeParser::createAndParseTempNode(KMime::Content *parentNode, const char *content, const char *cntDesc)
 {
-    //  qCDebug(MESSAGEVIEWER_LOG) << "CONTENT: " << QByteArray( content ).left( 100 ) << " CNTDESC: " << cntDesc;
+    //  qCDebug(MIMETREEPARSER_LOG) << "CONTENT: " << QByteArray( content ).left( 100 ) << " CNTDESC: " << cntDesc;
 
     KMime::Content *newNode = new KMime::Content();
     newNode->setContent(KMime::CRLFtoLF(content));
     newNode->parse();
     /*
-    qCDebug(MESSAGEVIEWER_LOG)  << "MEDIATYPE: " << newNode->contentType()->mediaType() << newNode->contentType()->mimeType()    ;
-    qCDebug(MESSAGEVIEWER_LOG) << "DECODEDCONTENT: " << newNode->decodedContent().left(400);
-    qCDebug(MESSAGEVIEWER_LOG) << "ENCODEDCONTENT: " << newNode->encodedContent().left(400);
-    qCDebug(MESSAGEVIEWER_LOG) << "BODY: " << newNode->body().left(400);
+    qCDebug(MIMETREEPARSER_LOG)  << "MEDIATYPE: " << newNode->contentType()->mediaType() << newNode->contentType()->mimeType()    ;
+    qCDebug(MIMETREEPARSER_LOG) << "DECODEDCONTENT: " << newNode->decodedContent().left(400);
+    qCDebug(MIMETREEPARSER_LOG) << "ENCODEDCONTENT: " << newNode->encodedContent().left(400);
+    qCDebug(MIMETREEPARSER_LOG) << "BODY: " << newNode->body().left(400);
     */
 
     if (!newNode->head().isEmpty()) {
@@ -372,7 +372,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         }
 
         if (!bRendered) {
-            qCCritical(MESSAGEVIEWER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
+            qCCritical(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
             const auto mp = defaultHandling(node, processResult);
             if (mp) {
                 mp->setAttachmentFlag(node);
@@ -397,7 +397,7 @@ MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, Process
     // ### (mmutz) default handling should go into the respective
     // ### bodypartformatters.
     if (!htmlWriter()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "no htmlWriter()";
+        qCWarning(MIMETREEPARSER_LOG) << "no htmlWriter()";
         return MessagePart::Ptr();
     }
 
@@ -657,10 +657,10 @@ bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
             deb += QLatin1String("\"");
         }
         deb += "\n\n";
-        qCDebug(MESSAGEVIEWER_LOG) << deb;
+        qCDebug(MIMETREEPARSER_LOG) << deb;
 #endif
 
-        qCDebug(MESSAGEVIEWER_LOG) << "going to call CRYPTPLUG" << cryptPlugLibName;
+        qCDebug(MIMETREEPARSER_LOG) << "going to call CRYPTPLUG" << cryptPlugLibName;
 
         // Check whether the memento contains a result from last time:
         const DecryptVerifyBodyPartMemento *m
@@ -702,7 +702,7 @@ bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
             const GpgME::VerificationResult &verifyResult = m->verifyResult();
             std::stringstream ss;
             ss << decryptResult << '\n' << verifyResult;
-            qCDebug(MESSAGEVIEWER_LOG) << ss.str().c_str();
+            qCDebug(MIMETREEPARSER_LOG) << ss.str().c_str();
             signatureFound = verifyResult.signatures().size() > 0;
             signatures = verifyResult.signatures();
             bDecryptionOk = !decryptResult.error();
@@ -723,7 +723,7 @@ bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
                     partMetaData.keyId = decryptResult.recipient(0).keyID();
                 }
 
-                qCDebug(MESSAGEVIEWER_LOG) << "ObjectTreeParser::decryptMIME: returned from CRYPTPLUG";
+                qCDebug(MIMETREEPARSER_LOG) << "ObjectTreeParser::decryptMIME: returned from CRYPTPLUG";
                 if (bDecryptionOk) {
                     decryptedData = plainText;
                 } else if (htmlWriter() && showWarning) {
@@ -878,7 +878,7 @@ MessagePart::Ptr ObjectTreeParser::processMailmanSubtype(KMime::Content *curNode
                 subject.truncate(thisEoL);
             }
         }
-        qCDebug(MESSAGEVIEWER_LOG) << "        embedded message found: \"" << subject;
+        qCDebug(MIMETREEPARSER_LOG) << "        embedded message found: \"" << subject;
         mpl->appendMessagePart(createAndParseTempNode(mTopLevelContent, partStr.toLatin1(), subject.toLatin1()));
         //mReader->queueHtml("<br><hr><br>");
         thisDelim = nextDelim + 1;
@@ -1019,7 +1019,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartSignedSubtype(KMime::Content 
     KMime::Content *signedData = MessageCore::NodeHelper::firstChild(node);
     assert(signedData);
     if (node->contents().size() != 2) {
-        qCDebug(MESSAGEVIEWER_LOG) << "mulitpart/signed must have exactly two child parts!" << endl
+        qCDebug(MIMETREEPARSER_LOG) << "mulitpart/signed must have exactly two child parts!" << endl
                                    << "processing as multipart/mixed";
 
         return MessagePart::Ptr(new MimeMessagePart(this, signedData, false));
@@ -1031,7 +1031,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartSignedSubtype(KMime::Content 
     QString protocolContentType = node->contentType()->parameter(QStringLiteral("protocol")).toLower();
     const QString signatureContentType = QLatin1String(signature->contentType()->mimeType().toLower());
     if (protocolContentType.isEmpty()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Message doesn't set the protocol for the multipart/signed content-type, "
+        qCWarning(MIMETREEPARSER_LOG) << "Message doesn't set the protocol for the multipart/signed content-type, "
                                      "using content-type of the signature:" << signatureContentType;
         protocolContentType = signatureContentType;
     }
@@ -1129,7 +1129,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartEncryptedSubtype(KMime::Conte
     } else {
         mp->startDecryption(data);
 
-        qCDebug(MESSAGEVIEWER_LOG) << "decrypted, signed?:" << messagePart->isSigned;
+        qCDebug(MIMETREEPARSER_LOG) << "decrypted, signed?:" << messagePart->isSigned;
 
         if (!messagePart->inProgress) {
             mNodeHelper->setNodeProcessed(data, false);   // Set the data node to done to prevent it from being processed
@@ -1146,7 +1146,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartEncryptedSubtype(KMime::Conte
                 // MUA 'should' have sent.  :-D       (khz, 12.09.2002)
 
                 mNodeHelper->setSignatureState(node, KMMsgFullySigned);
-                qCDebug(MESSAGEVIEWER_LOG) << "setting FULLY SIGNED to:" << node;
+                qCDebug(MIMETREEPARSER_LOG) << "setting FULLY SIGNED to:" << node;
             }
         }
     }
@@ -1189,9 +1189,9 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
     CryptoMessagePart::Ptr mp;
     if (!isSigned) {
         if (isEncrypted) {
-            qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: enveloped (encrypted) data";
+            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: enveloped (encrypted) data";
         } else {
-            qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
+            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
         }
 
         mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
@@ -1206,7 +1206,7 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
         } else {
             mp->startDecryption();
             if (messagePart->isDecryptable) {
-                qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  encryption found  -  enveloped (encrypted) data !";
+                qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  encryption found  -  enveloped (encrypted) data !";
                 isEncrypted = true;
                 mNodeHelper->setEncryptionState(node, KMMsgFullyEncrypted);
                 if (messagePart->isSigned) {
@@ -1225,9 +1225,9 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
                 }
 
                 if (isEncrypted) {
-                    qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  ERROR: COULD NOT DECRYPT enveloped data !";
+                    qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  ERROR: COULD NOT DECRYPT enveloped data !";
                 } else {
-                    qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  NO encryption found";
+                    qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  NO encryption found";
                 }
             }
         }
@@ -1240,9 +1240,9 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
     // We now try signature verification if necessarry.
     if (signTestNode) {
         if (isSigned) {
-            qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: opaque signed data";
+            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: opaque signed data";
         } else {
-            qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  type unknown  -  opaque signed data ?";
+            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  opaque signed data ?";
         }
 
         const QTextCodec *aCodec(codecFor(signTestNode));
@@ -1260,7 +1260,7 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
 
         if (messagePart->isSigned) {
             if (!isSigned) {
-                qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  signature found  -  opaque signed data !";
+                qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  signature found  -  opaque signed data !";
                 isSigned = true;
             }
 
@@ -1269,7 +1269,7 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
                 mNodeHelper->setSignatureState(node, KMMsgFullySigned);
             }
         } else {
-            qCDebug(MESSAGEVIEWER_LOG) << "pkcs7 mime  -  NO signature found   :-(";
+            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  NO signature found   :-(";
         }
     }
 
@@ -1449,21 +1449,21 @@ void ObjectTreeParser::sigStatusToMetaData(const std::vector <GpgME::Signature> 
             // trust etc.
             Kleo::KeyListJob *job = cryptProto->keyListJob(false);    // local, no sigs
             if (!job) {
-                qCDebug(MESSAGEVIEWER_LOG) << "The Crypto backend does not support listing keys. ";
+                qCDebug(MIMETREEPARSER_LOG) << "The Crypto backend does not support listing keys. ";
             } else {
                 std::vector<GpgME::Key> found_keys;
                 // As we are local it is ok to make this synchronous
                 GpgME::KeyListResult res = job->exec(QStringList(QLatin1String(signature.fingerprint())), false, found_keys);
                 if (res.error()) {
-                    qCDebug(MESSAGEVIEWER_LOG) << "Error while searching key for Fingerprint: " << signature.fingerprint();
+                    qCDebug(MIMETREEPARSER_LOG) << "Error while searching key for Fingerprint: " << signature.fingerprint();
                 }
                 if (found_keys.size() > 1) {
                     // Should not Happen
-                    qCDebug(MESSAGEVIEWER_LOG) << "Oops: Found more then one Key for Fingerprint: " << signature.fingerprint();
+                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found more then one Key for Fingerprint: " << signature.fingerprint();
                 }
                 if (found_keys.size() != 1) {
                     // Should not Happen at this point
-                    qCDebug(MESSAGEVIEWER_LOG) << "Oops: Found no Key for Fingerprint: " << signature.fingerprint();
+                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found no Key for Fingerprint: " << signature.fingerprint();
                 } else {
                     key = found_keys[0];
                 }
@@ -1714,7 +1714,7 @@ QString ObjectTreeParser::quotedHTML(const QString &s, bool decorate)
         htmlStr += quoteEnd + cssHelper()->addEndBlockQuote(currQuoteLevel + 1);
     }
 
-    // qCDebug(MESSAGEVIEWER_LOG) << "========================================\n"
+    // qCDebug(MIMETREEPARSER_LOG) << "========================================\n"
     //                            << htmlStr
     //                            << "\n======================================\n";
     return htmlStr;

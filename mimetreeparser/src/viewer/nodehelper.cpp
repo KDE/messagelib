@@ -18,7 +18,7 @@
 */
 
 #include "nodehelper.h"
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 #include "utils/iconnamecache.h"
 #include "partmetadata.h"
 #include "interfaces/bodypart.h"
@@ -97,7 +97,7 @@ void NodeHelper::setNodeProcessed(KMime::Content *node, bool recurse)
         return;
     }
     mProcessedNodes.append(node);
-    qCDebug(MESSAGEVIEWER_LOG) << "Node processed: " << node->index().toString() << node->contentType()->as7BitString();
+    qCDebug(MIMETREEPARSER_LOG) << "Node processed: " << node->index().toString() << node->contentType()->as7BitString();
     //<< " decodedContent" << node->decodedContent();
     if (recurse) {
         auto contents = node->contents();
@@ -124,11 +124,11 @@ void NodeHelper::setNodeUnprocessed(KMime::Content *node, bool recurse)
             }
         }
         qDeleteAll(it.value());
-        qCDebug(MESSAGEVIEWER_LOG) << "mExtraContents deleted for" << it.key();
+        qCDebug(MIMETREEPARSER_LOG) << "mExtraContents deleted for" << it.key();
         mExtraContents.erase(it);
     }
 
-    qCDebug(MESSAGEVIEWER_LOG) << "Node UNprocessed: " << node;
+    qCDebug(MIMETREEPARSER_LOG) << "Node UNprocessed: " << node;
     if (recurse) {
         auto contents = node->contents();
         Q_FOREACH (KMime::Content *c, contents) {
@@ -176,7 +176,7 @@ void NodeHelper::clear()
             }
         }
         qDeleteAll(it.value());
-        qCDebug(MESSAGEVIEWER_LOG) << "mExtraContents deleted for" << it.key();
+        qCDebug(MIMETREEPARSER_LOG) << "mExtraContents deleted for" << it.key();
     }
     mExtraContents.clear();
     mDisplayEmbeddedNodes.clear();
@@ -239,7 +239,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
     }
     fname += QLatin1Char('/') + fileName;
 
-    qCDebug(MESSAGEVIEWER_LOG) << "Create temp file: " << fname;
+    qCDebug(MIMETREEPARSER_LOG) << "Create temp file: " << fname;
     QByteArray data = node->decodedContent();
     if (node->contentType()->isText() && data.size() > 0) {
         // convert CRLF to LF before writing text attachments to disk
@@ -247,7 +247,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
     }
     QFile f(fname);
     if (!f.open(QIODevice::ReadWrite)) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Failed to write note to file:" << f.errorString();
+        qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
         return QString();
     }
     f.write(data);
@@ -393,7 +393,7 @@ KMMsgEncryptionState NodeHelper::overallEncryptionState(KMime::Content *node) co
         }
     }
 
-    qCDebug(MESSAGEVIEWER_LOG) << "\n\n  KMMsgEncryptionState:" << myState;
+    qCDebug(MIMETREEPARSER_LOG) << "\n\n  KMMsgEncryptionState:" << myState;
 
     return myState;
 }
@@ -443,7 +443,7 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
         }
     }
 
-    qCDebug(MESSAGEVIEWER_LOG) << "\n\n  KMMsgSignatureState:" << myState;
+    qCDebug(MIMETREEPARSER_LOG) << "\n\n  KMMsgSignatureState:" << myState;
 
     return myState;
 }
@@ -488,7 +488,7 @@ QString NodeHelper::replacePrefixes(const QString &str,
                         .arg(prefixRegExps.join(QStringLiteral(")|(?:")));
     QRegExp rx(bigRegExp, Qt::CaseInsensitive);
     if (!rx.isValid()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "bigRegExp = \""
+        qCWarning(MIMETREEPARSER_LOG) << "bigRegExp = \""
                                      << bigRegExp << "\"\n"
                                      << "prefix regexp is invalid!";
         // try good ole Re/Fwd:
@@ -615,13 +615,13 @@ void NodeHelper::setBodyPartMemento(KMime::Content *node, const QByteArray &whic
 
 bool NodeHelper::isNodeDisplayedEmbedded(KMime::Content *node) const
 {
-    qCDebug(MESSAGEVIEWER_LOG) << "IS NODE: " << mDisplayEmbeddedNodes.contains(node);
+    qCDebug(MIMETREEPARSER_LOG) << "IS NODE: " << mDisplayEmbeddedNodes.contains(node);
     return mDisplayEmbeddedNodes.contains(node);
 }
 
 void NodeHelper::setNodeDisplayedEmbedded(KMime::Content *node, bool displayedEmbedded)
 {
-    qCDebug(MESSAGEVIEWER_LOG) << "SET NODE: " << node << displayedEmbedded;
+    qCDebug(MIMETREEPARSER_LOG) << "SET NODE: " << node << displayedEmbedded;
     if (displayedEmbedded) {
         mDisplayEmbeddedNodes.insert(node);
     } else {
@@ -785,7 +785,7 @@ QString NodeHelper::fromAsString(KMime::Content *node)
 
 void NodeHelper::attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content)
 {
-    qCDebug(MESSAGEVIEWER_LOG) << "mExtraContents added for" << topLevelNode << " extra content: " << content;
+    qCDebug(MIMETREEPARSER_LOG) << "mExtraContents added for" << topLevelNode << " extra content: " << content;
     mExtraContents[topLevelNode].append(content);
 }
 
@@ -803,7 +803,7 @@ void NodeHelper::mergeExtraNodes(KMime::Content *node)
     QList<KMime::Content * > extraNodes = extraContents(node);
     Q_FOREACH (KMime::Content *extra, extraNodes) {
         if (node->bodyIsMessage()) {
-            qCWarning(MESSAGEVIEWER_LOG) << "Asked to attach extra content to a kmime::message, this does not make sense. Attaching to:" << node <<
+            qCWarning(MIMETREEPARSER_LOG) << "Asked to attach extra content to a kmime::message, this does not make sense. Attaching to:" << node <<
                                          node->encodedContent() << "\n====== with =======\n" <<  extra << extra->encodedContent();
             continue;
         }
@@ -858,8 +858,8 @@ KMime::Message *NodeHelper::messageWithExtraContent(KMime::Content *topLevelNode
     m->parse();
 
     cleanFromExtraNodes(topLevelNode);
-//   qCDebug(MESSAGEVIEWER_LOG) << "MESSAGE WITH EXTRA: " << m->encodedContent();
-//   qCDebug(MESSAGEVIEWER_LOG) << "MESSAGE WITHOUT EXTRA: " << topLevelNode->encodedContent();
+//   qCDebug(MIMETREEPARSER_LOG) << "MESSAGE WITH EXTRA: " << m->encodedContent();
+//   qCDebug(MIMETREEPARSER_LOG) << "MESSAGE WITHOUT EXTRA: " << topLevelNode->encodedContent();
 
     return m;
 }
@@ -895,7 +895,7 @@ KMime::Content *NodeHelper::decryptedNodeForContent(KMime::Content *content) con
         if (xc.size() == 1) {
             return xc.front();
         } else {
-            qCWarning(MESSAGEVIEWER_LOG) << "WTF, encrypted node has multiple extra contents?";
+            qCWarning(MIMETREEPARSER_LOG) << "WTF, encrypted node has multiple extra contents?";
         }
     }
     return 0;
@@ -913,7 +913,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
         const bool isMultipart = node->contentType(false) && node->contentType()->isMultipart();
         bool isSignature = false;
 
-        qCDebug(MESSAGEVIEWER_LOG) << "(" << recursionLevel << ") Looking at" << type << "/" << subType;
+        qCDebug(MIMETREEPARSER_LOG) << "(" << recursionLevel << ") Looking at" << type << "/" << subType;
 
         if (isMultipart) {
             if (subType == "signed") {
@@ -936,7 +936,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
         }
 
         if (decryptedNode) {
-            qCDebug(MESSAGEVIEWER_LOG) << "Current node has an associated decrypted node, adding a modified header "
+            qCDebug(MIMETREEPARSER_LOG) << "Current node has an associated decrypted node, adding a modified header "
                                        "and then processing the children.";
 
             Q_ASSERT(addHeaders);
@@ -972,7 +972,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
         }
 
         else if (isSignature) {
-            qCDebug(MESSAGEVIEWER_LOG) << "Current node is a signature, adding it as-is.";
+            qCDebug(MIMETREEPARSER_LOG) << "Current node is a signature, adding it as-is.";
             // We can't change the nodes under the signature, as that would invalidate it. Add the signature
             // and its child as-is
             if (addHeaders) {
@@ -983,7 +983,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
         }
 
         else if (isMultipart) {
-            qCDebug(MESSAGEVIEWER_LOG) << "Current node is a multipart node, adding its header and then processing all children.";
+            qCDebug(MIMETREEPARSER_LOG) << "Current node is a multipart node, adding its header and then processing all children.";
             // Normal multipart node, add the header and all of its children
             bool somethingChanged = false;
             if (addHeaders) {
@@ -1002,7 +1002,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
         }
 
         else if (curNode->bodyIsMessage()) {
-            qCDebug(MESSAGEVIEWER_LOG) << "Current node is a message, adding the header and then processing the child.";
+            qCDebug(MIMETREEPARSER_LOG) << "Current node is a message, adding the header and then processing the child.";
             if (addHeaders) {
                 resultingData += curNode->head() + '\n';
             }
@@ -1011,7 +1011,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
         }
 
         else {
-            qCDebug(MESSAGEVIEWER_LOG) << "Current node is an ordinary leaf node, adding it as-is.";
+            qCDebug(MIMETREEPARSER_LOG) << "Current node is an ordinary leaf node, adding it as-is.";
             if (addHeaders) {
                 resultingData += curNode->head() + '\n';
             }
@@ -1020,7 +1020,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
         }
     }
 
-    qCDebug(MESSAGEVIEWER_LOG) << "(" << recursionLevel << ") done.";
+    qCDebug(MIMETREEPARSER_LOG) << "(" << recursionLevel << ") done.";
     return returnValue;
 }
 
@@ -1030,7 +1030,7 @@ KMime::Message::Ptr NodeHelper::unencryptedMessage(const KMime::Message::Ptr &or
     const bool messageChanged = unencryptedMessage_helper(originalMessage.data(), resultingData, true);
     if (messageChanged) {
 #if 0
-        qCDebug(MESSAGEVIEWER_LOG) << "Resulting data is:" << resultingData;
+        qCDebug(MIMETREEPARSER_LOG) << "Resulting data is:" << resultingData;
         QFile bla("stripped.mbox");
         bla.open(QIODevice::WriteOnly);
         bla.write(resultingData);

@@ -19,7 +19,7 @@
 
 #include "queuehtmlwriter.h"
 
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 
 #include<QByteArray>
 #include<QString>

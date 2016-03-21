@@ -19,7 +19,7 @@
 
 #include "utils/mimetype.h"
 #include "utils/iconnamecache.h"
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 
 #include <QMimeDatabase>
 
@@ -65,7 +65,7 @@ QString MessageViewer::Util::fileNameForMimetype(const QString &mimeType, int ic
     } else {
         fileName = QStringLiteral("unknown");
         if (!tMimeType.isEmpty()) {
-            qCWarning(MESSAGEVIEWER_LOG) << "unknown mimetype" << tMimeType;
+            qCWarning(MIMETREEPARSER_LOG) << "unknown mimetype" << tMimeType;
         }
     }
     //WorkAround for #199083

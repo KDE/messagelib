@@ -33,7 +33,7 @@
 
 #include "bodypartformatterbasefactory.h"
 #include "bodypartformatterbasefactory_p.h"
-#include "messageviewer_debug.h"
+#include "mimetreeparser_debug.h"
 
 // Qt
 #include <QString>
@@ -73,7 +73,7 @@ void BodyPartFormatterBaseFactoryPrivate::insert(const char *type, const char *s
 
     TypeRegistry::iterator type_it = all->find(type);
     if (type_it == all->end()) {
-        qCDebug(MESSAGEVIEWER_LOG) << "BodyPartFormatterBaseFactory: instantiating new Subtype Registry for \""
+        qCDebug(MIMETREEPARSER_LOG) << "BodyPartFormatterBaseFactory: instantiating new Subtype Registry for \""
                                    << type << "\"";
         type_it = all->insert(std::make_pair(type, SubtypeRegistry())).first;
         assert(type_it != all->end());
@@ -166,7 +166,7 @@ SubtypeRegistry::const_iterator BodyPartFormatterBaseFactory::createForIterator(
     }
 
     if (!(*subtype_it).second) {
-        qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterBaseFactory: a null bodypart formatter sneaked in for \""
+        qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterBaseFactory: a null bodypart formatter sneaked in for \""
                                      << type << "/" << subtype << "\"!";
     }
 
@@ -194,5 +194,5 @@ const Interface::BodyPartFormatter *BodyPartFormatterBaseFactory::createFor(cons
 
 void BodyPartFormatterBaseFactory::loadPlugins()
 {
-    qCDebug(MESSAGEVIEWER_LOG) << "plugin loading is not enabled in libotp";
+    qCDebug(MIMETREEPARSER_LOG) << "plugin loading is not enabled in libotp";
 }
