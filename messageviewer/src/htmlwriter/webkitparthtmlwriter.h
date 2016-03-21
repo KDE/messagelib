@@ -33,7 +33,7 @@
 #ifndef MESSAGEVIEWER_WEBKITPARTHTMLWRITER_H
 #define MESSAGEVIEWER_WEBKITPARTHTMLWRITER_H
 
-#include "messageviewer/htmlwriter.h"
+#include <MimeTreeParser/HtmlWriter>
 #include <QObject>
 
 #include <QString>

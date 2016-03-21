@@ -17,7 +17,7 @@
 #ifndef WEBENGINEPARTHTMLWRITER_H
 #define WEBENGINEPARTHTMLWRITER_H
 
-#include "messageviewer/htmlwriter.h"
+#include <MimeTreeParser/HtmlWriter>
 #include <QObject>
 
 #include <QString>

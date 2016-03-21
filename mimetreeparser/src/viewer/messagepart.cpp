@@ -23,6 +23,8 @@
 #include "converthtmltoplaintext.h"
 #include "csshelperbase.h"
 #include "cryptohelper.h"
+#include "interfaces/htmlwriter.h"
+#include "job/kleojobexecutor.h"
 #include "utils/iconnamecache.h"
 
 #include <MessageCore/StringUtil>
@@ -30,9 +32,8 @@
 #include <libkleo/importjob.h>
 #include <libkleo/cryptobackendfactory.h>
 
-#include <interfaces/htmlwriter.h>
-#include <job/kleojobexecutor.h>
 #include <KMime/Content>
+
 #include <gpgme++/key.h>
 #include <gpgme.h>
 

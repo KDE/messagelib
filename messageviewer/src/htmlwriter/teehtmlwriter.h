@@ -32,7 +32,7 @@
 #ifndef __MESSAGEVIEWER_TEEHTMLWRITER_H__
 #define __MESSAGEVIEWER_TEEHTMLWRITER_H__
 
-#include "interfaces/htmlwriter.h"
+#include <MimeTreeParser/HtmlWriter>
 
 #include <QList>
 
