@@ -384,6 +384,7 @@ if (QTWEBENGINE_EXPERIMENTAL_OPTION)
         WebEnginePage
         WebEngineView
         WebHitTest
+        WebEngineScript
         REQUIRED_HEADERS MessageViewer_webengine_misc_HEADERS
         PREFIX MessageViewer
         RELATIVE webengine/
