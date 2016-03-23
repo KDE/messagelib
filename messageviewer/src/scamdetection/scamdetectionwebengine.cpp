@@ -166,6 +166,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
     if (foundScam) {
         Q_EMIT messageMayBeAScam();
     }
+    Q_EMIT resultScanDetection(foundScam);
 }
 
 void ScamDetectionWebEngine::showDetails()

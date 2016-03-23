@@ -15,39 +15,45 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef SCAMDETECTIONWEBENGINE_H
-#define SCAMDETECTIONWEBENGINE_H
+#ifndef SCAMDETECTIONWEBENGINETEST_H
+#define SCAMDETECTIONWEBENGINETEST_H
 
 #include <QObject>
-#include <QVariant>
-#include "messageviewer_export.h"
-class QWebEnginePage;
+#include <QWidget>
+
 namespace MessageViewer
 {
-class ScamCheckShortUrl;
-class ScamDetectionWebEnginePrivate;
-class MESSAGEVIEWER_EXPORT ScamDetectionWebEngine : public QObject
+class ScamDetectionWebEngine;
+}
+class QWebEngineView;
+class TestWebEngineScamDetection : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ScamDetectionWebEngine(QObject *parent = Q_NULLPTR);
-    ~ScamDetectionWebEngine();
-    ScamCheckShortUrl *scamCheckShortUrl() const;
+    explicit TestWebEngineScamDetection(QWidget *parent = Q_NULLPTR);
+    ~TestWebEngineScamDetection();
 
-    void scanPage(QWebEnginePage *page);
-
-public Q_SLOTS:
-    void showDetails();
-
+    void setHtml(const QString &html);
 private Q_SLOTS:
-    void handleScanPage(const QVariant &result);
-
+    void loadFinished(bool b);
 Q_SIGNALS:
-    void messageMayBeAScam();
-    void resultScanDetection(bool foundScam);
+    void resultScanDetection(bool result);
 
 private:
-    ScamDetectionWebEnginePrivate *const d;
+    QWebEngineView *mEngineView;
+    MessageViewer::ScamDetectionWebEngine *mScamDetectionWebEngine;
 };
-}
-#endif // SCAMDETECTIONWEBENGINE_H
+
+
+class ScamDetectionWebEngineTest : public QObject
+{
+    Q_OBJECT
+public:
+    explicit ScamDetectionWebEngineTest(QObject *parent = Q_NULLPTR);
+    ~ScamDetectionWebEngineTest();
+private Q_SLOTS:
+    void scamtest_data();
+    void scamtest();
+};
+
+#endif // SCAMDETECTIONWEBENGINETEST_H
