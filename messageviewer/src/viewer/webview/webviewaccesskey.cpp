@@ -320,7 +320,7 @@ void WebViewAccessKey::showAccessKeys()
         }
     }
 
-    d->mAccessKeyActivated = (d->mAccessKeyLabels.isEmpty() ? WebViewAccessKeyPrivate::Activated : WebViewAccessKeyPrivate::NotActivated);
+    d->mAccessKeyActivated = (!d->mAccessKeyLabels.isEmpty() ? WebViewAccessKeyPrivate::Activated : WebViewAccessKeyPrivate::NotActivated);
 }
 
 void WebViewAccessKey::makeAccessKeyLabel(QChar accessKey, const QWebElement &element)
