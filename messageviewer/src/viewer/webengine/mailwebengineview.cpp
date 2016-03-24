@@ -53,6 +53,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
 
     setFocusPolicy(Qt::WheelFocus);
     connect(pageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
+    //TODO need info about scrolling
 }
 
 MailWebEngineView::~MailWebEngineView()

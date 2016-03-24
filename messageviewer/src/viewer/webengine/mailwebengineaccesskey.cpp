@@ -97,10 +97,10 @@ static bool isEditableElement(QWebPage *page)
 #endif
 static QString linkElementKey(const MessageViewer::MailWebEngineAccessKeyAnchor &element, const QUrl &baseUrl)
 {
-    qDebug()<<" element.href()"<<element.href();
+    //qDebug()<<" element.href()"<<element.href();
     if (!element.href().isEmpty()) {
         const QUrl url = baseUrl.resolved(element.href());
-        qDebug()<< "URL " << url;
+        //qDebug()<< "URL " << url;
         QString linkKey(url.toString());
         if (!element.target().isEmpty()) {
             linkKey += QLatin1Char('+');
@@ -115,9 +115,9 @@ static void handleDuplicateLinkElements(const MessageViewer::MailWebEngineAccess
 {
     if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
         const QString linkKey(linkElementKey(element, baseUrl));
-        qDebug() << "LINK KEY:" << linkKey;
+        //qDebug() << "LINK KEY:" << linkKey;
         if (dupLinkList->contains(linkKey)) {
-            qDebug() << "***** Found duplicate link element:" << linkKey;
+            //qDebug() << "***** Found duplicate link element:" << linkKey;
             *accessKey = dupLinkList->value(linkKey);
         } else if (!linkKey.isEmpty()) {
             dupLinkList->insert(linkKey, *accessKey);
@@ -274,7 +274,7 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
     QChar key = text.at(0).toUpper();
     bool handled = false;
     if (d->mAccessKeyNodes.contains(key)) {
-        qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<key;
+        //qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<key;
         MessageViewer::MailWebEngineAccessKeyAnchor element = d->mAccessKeyNodes[key];
         QPoint p = element.boundingRect().center();
 #if 0
@@ -332,23 +332,18 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
     QVector<MessageViewer::MailWebEngineAccessKeyAnchor> unLabeledElements;
     QRect viewport = d->mWebEngine->rect();//QRect(d->mWebEngine->page()->mainFrame()->scrollPosition(), d->mWebEngine->page()->viewportSize());
     Q_FOREACH (const MessageViewer::MailWebEngineAccessKeyAnchor &element, anchorList) {
-        qDebug()<<" Element 00"<<element.href() << " accesskey :"<<element.accessKey().toUpper();;
         const QRect geometry = element.boundingRect();
         if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
             continue;
         }
-        qDebug()<<" geometry"<<geometry << " viewport " <<viewport;
-        qDebug()<<" Element 111"<<element.href() << " accesskey :"<<element.accessKey().toUpper();;
         if (isHiddenElement(element)) {
             continue;    // Do not show access key for hidden elements...
         }
-        qDebug()<<" Element 2222"<<element.href() << " accesskey :"<<element.accessKey().toUpper();
         const QString accessKeyAttribute(element.accessKey().toUpper());
         if (accessKeyAttribute.isEmpty()) {
             unLabeledElements.append(element);
             continue;
         }
-        qDebug()<<" Element 333"<<element.href() << " accesskey :"<<element.accessKey().toUpper();;
         QChar accessKey;
         for (int i = 0; i < accessKeyAttribute.count(); i += 2) {
             const QChar &possibleAccessKey = accessKeyAttribute[i];
@@ -357,13 +352,11 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
                 break;
             }
         }
-        qDebug()<<" Element 444"<<element.href() << " accesskey :"<<accessKey;
         if (accessKey.isNull()) {
             unLabeledElements.append(element);
             continue;
         }
 
-        qDebug()<<" Element "<<element.href();
         handleDuplicateLinkElements(element, &d->mDuplicateLinkElements, &accessKey, d->mWebEngine->url());
         if (!accessKey.isNull()) {
             unusedKeys.removeOne(accessKey);
@@ -382,7 +375,6 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         }
         QChar accessKey;
         const QString text = element.innerText().toUpper();
-        qDebug()<<" Other text "<<text;
         for (int i = 0; i < text.count(); ++i) {
             const QChar &c = text.at(i);
             if (unusedKeys.contains(c)) {
@@ -396,7 +388,6 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 
         handleDuplicateLinkElements(element, &d->mDuplicateLinkElements, &accessKey, d->mWebEngine->url());
         if (!accessKey.isNull()) {
-            qDebug()<<" Other text "<<text << " accesskey"<<accessKey<< " href"<<element.href() << " test "<<element.innerText() << "bounding "<< element.boundingRect();
             unusedKeys.removeOne(accessKey);
             makeAccessKeyLabel(accessKey, element);
         }
