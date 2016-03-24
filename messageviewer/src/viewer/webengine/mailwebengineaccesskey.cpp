@@ -273,13 +273,12 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
     }
     QChar key = text.at(0).toUpper();
     bool handled = false;
-    qDebug()<<" sssssssssssssssss";
     if (d->mAccessKeyNodes.contains(key)) {
-        qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<key;
         MessageViewer::MailWebEngineAccessKeyAnchor element = d->mAccessKeyNodes[key];
         if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
             const QString linkKey(linkElementKey(element, d->mWebEngine->url()));
             if (!linkKey.isEmpty()) {
+                //qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<linkKey;
                 Q_EMIT openUrl(QUrl(linkKey));
                 handled = true;
             }
@@ -295,7 +294,7 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
     QVector<MessageViewer::MailWebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
     Q_FOREACH(const QVariant &var, lst) {
-        qDebug()<<" var"<<var;
+        //qDebug()<<" var"<<var;
         anchorList << MessageViewer::MailWebEngineAccessKeyAnchor(var);
     }
 
@@ -387,7 +386,6 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         }
     }
     d->mAccessKeyActivated = (!d->mAccessKeyLabels.isEmpty() ? MailWebEngineAccessKeyPrivate::Activated : MailWebEngineAccessKeyPrivate::NotActivated);
-    qDebug()<<" d->mAccessKeyActivated"<<d->mAccessKeyActivated;
 }
 
 void MailWebEngineAccessKey::showAccessKeys()
