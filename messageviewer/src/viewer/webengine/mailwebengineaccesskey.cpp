@@ -271,6 +271,7 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
     QChar key = text.at(0).toUpper();
     bool handled = false;
     if (d->mAccessKeyNodes.contains(key)) {
+        qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<key;
         MessageViewer::MailWebEngineAccessKeyAnchor element = d->mAccessKeyNodes[key];
         QPoint p = element.boundingRect().center();
 #if 0
@@ -293,7 +294,6 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
 void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
     //qDebug() << " void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
-    //TODO create QVector of MailWebEngineAccessKeyAnchor
     const QVariantList lst = res.toList();
     QVector<MessageViewer::MailWebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
@@ -327,13 +327,14 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         }
     }
     QVector<MessageViewer::MailWebEngineAccessKeyAnchor> unLabeledElements;
-    //QRect viewport = QRect(d->mWebEngine->page()->mainFrame()->scrollPosition(), d->mWebView->page()->viewportSize());
     QRect viewport = d->mWebEngine->rect();//QRect(d->mWebEngine->page()->mainFrame()->scrollPosition(), d->mWebEngine->page()->viewportSize());
     Q_FOREACH (const MessageViewer::MailWebEngineAccessKeyAnchor &element, anchorList) {
+        qDebug()<<" Element 00"<<element.href() << " accesskey :"<<element.accessKey().toUpper();;
         const QRect geometry = element.boundingRect();
         if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
             continue;
         }
+        qDebug()<<" geometry"<<geometry << " viewport " <<viewport;
         qDebug()<<" Element 111"<<element.href() << " accesskey :"<<element.accessKey().toUpper();;
         if (isHiddenElement(element)) {
             continue;    // Do not show access key for hidden elements...
@@ -390,9 +391,9 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
             accessKey = unusedKeys.takeFirst();
         }
 
-        qDebug()<<" Other text "<<text << " accesskey"<<accessKey<< " href"<<element.href() << " test "<<element.innerText();
         handleDuplicateLinkElements(element, &d->mDuplicateLinkElements, &accessKey, d->mWebEngine->url());
         if (!accessKey.isNull()) {
+            qDebug()<<" Other text "<<text << " accesskey"<<accessKey<< " href"<<element.href() << " test "<<element.innerText();
             unusedKeys.removeOne(accessKey);
             makeAccessKeyLabel(accessKey, element);
         }

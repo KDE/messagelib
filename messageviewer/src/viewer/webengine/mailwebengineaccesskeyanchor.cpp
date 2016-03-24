@@ -38,7 +38,7 @@ void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
         if (rect.size() == 4) {
             mBoundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
         }
-        mHref = map.value(QStringLiteral("href")).toString();
+        mHref = map.value(QStringLiteral("src")).toString();
         mAccessKey = map.value(QStringLiteral("accessKey")).toString();
         mTarget = map.value(QStringLiteral("target")).toString();
         mTagName = map.value(QStringLiteral("tagName")).toString();
