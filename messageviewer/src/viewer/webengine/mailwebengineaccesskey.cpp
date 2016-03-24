@@ -243,7 +243,8 @@ void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageVi
     font.setBold(true);
     label->setFont(font);
     label->setText(accessKey);
-    qDebug()<<" accessKey"<<accessKey<< label->width();
+    QFontMetrics metric(label->font());
+    label->setFixedWidth(metric.width(QStringLiteral("WW")));
     label->setPalette(QToolTip::palette());
     label->setAutoFillBackground(true);
     label->setFrameStyle(QFrame::Box | QFrame::Plain);
