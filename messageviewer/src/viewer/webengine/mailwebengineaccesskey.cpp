@@ -212,7 +212,7 @@ void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
         // Activate only when the CTRL key is pressed and released by itself.
         if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
             showAccessKeys();
-            d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::Activated;
+
         } else {
             d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::NotActivated;
         }
@@ -273,23 +273,17 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
     }
     QChar key = text.at(0).toUpper();
     bool handled = false;
+    qDebug()<<" sssssssssssssssss";
     if (d->mAccessKeyNodes.contains(key)) {
-        //qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<key;
+        qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<key;
         MessageViewer::MailWebEngineAccessKeyAnchor element = d->mAccessKeyNodes[key];
-        QPoint p = element.boundingRect().center();
-#if 0
-        QWebFrame *frame = element.webFrame();
-        Q_ASSERT(frame);
-        do {
-            p -= frame->scrollPosition();
-            frame = frame->parentFrame();
-        } while (frame && frame != d->mWebView->page()->mainFrame());
-#endif
-        QMouseEvent pevent(QEvent::MouseButtonPress, p, Qt::LeftButton, 0, 0);
-        QCoreApplication::sendEvent(this, &pevent);
-        QMouseEvent revent(QEvent::MouseButtonRelease, p, Qt::LeftButton, 0, 0);
-        QCoreApplication::sendEvent(this, &revent);
-        handled = true;
+        if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
+            const QString linkKey(linkElementKey(element, d->mWebEngine->url()));
+            if (!linkKey.isEmpty()) {
+                Q_EMIT openUrl(QUrl(linkKey));
+                handled = true;
+            }
+        }
     }
     return handled;
 }
@@ -392,11 +386,13 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
             makeAccessKeyLabel(accessKey, element);
         }
     }
-    d->mAccessKeyActivated = (d->mAccessKeyLabels.isEmpty() ? MailWebEngineAccessKeyPrivate::Activated : MailWebEngineAccessKeyPrivate::NotActivated);
+    d->mAccessKeyActivated = (!d->mAccessKeyLabels.isEmpty() ? MailWebEngineAccessKeyPrivate::Activated : MailWebEngineAccessKeyPrivate::NotActivated);
+    qDebug()<<" d->mAccessKeyActivated"<<d->mAccessKeyActivated;
 }
 
 void MailWebEngineAccessKey::showAccessKeys()
 {
+    d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::Activated;
     d->mWebEngine->page()->runJavaScript(MessageViewer::MailWebEngineAccessKeyUtils::script(), invoke(this, &MailWebEngineAccessKey::handleSearchAccessKey));
 }
 

@@ -48,6 +48,8 @@ public:
     void makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element);
 
     bool checkForAccessKey(QKeyEvent *event);
+Q_SIGNALS:
+    void openUrl(const QUrl &url);
 public Q_SLOTS:
     void hideAccessKeys();
 
