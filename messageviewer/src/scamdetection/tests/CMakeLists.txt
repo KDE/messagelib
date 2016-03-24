@@ -14,7 +14,7 @@ target_link_libraries(scamdetection_gui
 
 
 
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+if (QTWEBENGINE_SUPPORT_OPTION)
   set(scamdetectionwebengine_gui_SRCS scamdetectionwebengine_gui.cpp)
   add_executable(scamdetectionwebengine_gui ${scamdetectionwebengine_gui_SRCS})
   target_link_libraries(scamdetectionwebengine_gui

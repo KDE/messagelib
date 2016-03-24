@@ -37,7 +37,7 @@ if(BUILD_TESTING)
     add_subdirectory(adblock/tests/)
     add_subdirectory(adblock/common/autotests)
     add_subdirectory(viewerplugins/tests/)
-    if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+    if (QTWEBENGINE_SUPPORT_OPTION)
         add_subdirectory(webengine/tests)
         add_subdirectory(viewer/webengine/autotests)
     endif()
@@ -83,7 +83,7 @@ set(libmessageviewer_mailviewer_SRCS
 set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
 
 
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_mailviewer_SRCS
         viewer/webengine/mailwebengineview.cpp
         viewer/webengine/mailwebenginepage.cpp
@@ -169,7 +169,7 @@ set(libmessageviewer_widgets_SRCS
     widgets/zoomactionmenu.cpp
     )
 
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_widgets_webengine_SRCS
        widgets/mailsourcewebengineviewer.cpp
     )
@@ -202,7 +202,7 @@ set(libmessageviewer_scamdetection_SRCS
     scamdetection/scamcheckshorturlmanager.cpp
     )
 
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+if (QTWEBENGINE_SUPPORT_OPTION)
    set(libmessageviewer_scamdetection_webengine_SRCS
        scamdetection/scamdetectionwebengine.cpp
    )
@@ -219,7 +219,7 @@ set(libmessageviewer_utils_SRCS
     utils/messageviewerutil.cpp
     )
 
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_htmlwriter_webengine_SRCS
         htmlwriter/webengineparthtmlwriter.cpp
     )
@@ -348,7 +348,7 @@ ecm_generate_headers(MessageViewer_Camelcasewebviewer_HEADERS
     RELATIVE viewer/webview
     )
 
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+if (QTWEBENGINE_SUPPORT_OPTION)
     ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
         HEADER_NAMES
         MailWebEnginePage
@@ -444,7 +444,7 @@ ecm_generate_headers(MessageViewer_Camelfindbar_HEADERS
     RELATIVE findbar
     )
 
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+if (QTWEBENGINE_SUPPORT_OPTION)
     ecm_generate_headers(MessageViewer_CamelfindbarWebEngine_HEADERS
         HEADER_NAMES
         FindBarWebEngineView

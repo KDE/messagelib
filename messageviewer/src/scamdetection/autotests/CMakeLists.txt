@@ -10,7 +10,7 @@ ecm_add_test(scamattributetest.cpp ../scamattribute.cpp
     LINK_LIBRARIES Qt5::Test KF5::AkonadiCore
 )
 
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+if (QTWEBENGINE_SUPPORT_OPTION)
     ecm_add_test(scamdetectionwebenginetest.cpp
         TEST_NAME scamdetectionwebenginetest
         NAME_PREFIX "messageviewer-scamwebenginedetection-"
