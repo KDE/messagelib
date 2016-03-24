@@ -393,7 +393,7 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 
         handleDuplicateLinkElements(element, &d->mDuplicateLinkElements, &accessKey, d->mWebEngine->url());
         if (!accessKey.isNull()) {
-            qDebug()<<" Other text "<<text << " accesskey"<<accessKey<< " href"<<element.href() << " test "<<element.innerText();
+            qDebug()<<" Other text "<<text << " accesskey"<<accessKey<< " href"<<element.href() << " test "<<element.innerText() << "bounding "<< element.boundingRect();
             unusedKeys.removeOne(accessKey);
             makeAccessKeyLabel(accessKey, element);
         }

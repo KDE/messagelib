@@ -28,7 +28,7 @@ QString MessageViewer::MailWebEngineAccessKeyUtils::script()
                            "       text: matches[i].innerText,"
                            "       tagName: matches[i].tagName,"
                            "       src: matches[i].href,"
-                           "       boundingRect: [r.top, r.left, r.width, r.height],"
+                           "       boundingRect: [r.top, r.left, r.right - r.left, r.bottom - r.top],"
                            "       accessKey: matches[i].getAttribute('accesskey'),"
                            "       target: matches[i].getAttribute('target')"
                            "       });"
