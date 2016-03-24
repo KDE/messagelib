@@ -43,6 +43,7 @@ void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
         mTarget = map.value(QStringLiteral("target")).toString();
         mTagName = map.value(QStringLiteral("tagName")).toString();
         mInnerText = map.value(QStringLiteral("text")).toString();
+        qDebug()<<" mInnerText"<<mInnerText<< "bounding"<<mBoundingRect;
     }
 }
 

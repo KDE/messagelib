@@ -248,12 +248,14 @@ void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageVi
     label->setAutoFillBackground(true);
     label->setFrameStyle(QFrame::Box | QFrame::Plain);
     QPoint point = element.boundingRect().center();
+    qDebug()<<" point label"<<point;
 #if 0
     point -= d->mWebView->page()->mainFrame()->scrollPosition();
 #endif
     label->move(point);
     label->show();
     point.setX(point.x() - label->width() / 2);
+    qDebug() << "new point "<<point;
     label->move(point);
     d->mAccessKeyLabels.append(label);
     d->mAccessKeyNodes.insertMulti(accessKey, element);
