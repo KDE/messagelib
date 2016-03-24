@@ -106,4 +106,15 @@ void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
     QCOMPARE(resultLst.count(), 1);
 }
 
+void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldReturnTwoAnchor()
+{
+    TestWebEngineAccessKey w;
+    QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVector<MessageViewer::MailWebEngineAccessKeyAnchor>)));
+    w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a><a href=\"http://www.kde.vv\">foo</a></body>"));
+    QVERIFY(accessKeySpy.wait());
+    QCOMPARE(accessKeySpy.count(), 1);
+    const QVector<MessageViewer::MailWebEngineAccessKeyAnchor> resultLst = accessKeySpy.at(0).at(0).value<QVector<MessageViewer::MailWebEngineAccessKeyAnchor> >();
+    QCOMPARE(resultLst.count(), 2);
+}
+
 QTEST_MAIN(MailWebEngineAccessKeyAnchorFromHtmlTest)

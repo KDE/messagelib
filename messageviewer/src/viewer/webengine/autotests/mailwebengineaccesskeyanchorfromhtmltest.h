@@ -50,6 +50,7 @@ public:
 private Q_SLOTS:
     void shouldNotShowAccessKeyWhenHtmlAsNotAnchor();
     void shouldReturnOneAnchor();
+    void shouldReturnTwoAnchor();
 };
 
 #endif // MAILWEBENGINEACCESSKEYANCHORFROMHTMLTEST_H
