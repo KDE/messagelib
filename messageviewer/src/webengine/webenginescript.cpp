@@ -15,6 +15,7 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 #include "webenginescript.h"
+#include <QDebug>
 
 using namespace MessageViewer;
 
@@ -91,5 +92,17 @@ QString WebEngineScript::findAllAnchorsAndForms()
                                          "return res;"
                                          "})()");
 
+    return source;
+}
+
+
+QString WebEngineScript::searchElementPosition(const QString &elementStr)
+{
+    const QString source = QString::fromLatin1("var element = document.querySelector('%1'); "
+                                               "if (element) { "
+                                               "    var geometry = element.getBoundingClientRect(); "
+                                               "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
+                                               "}").arg(elementStr);
+    qDebug()<<" source "<<source;
     return source;
 }

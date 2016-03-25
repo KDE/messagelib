@@ -19,12 +19,21 @@
 #define TESTWEBENGINESCROLLADDATTACHMENT_H
 
 #include <QWidget>
-
+namespace MessageViewer
+{
+class MailWebEngineView;
+}
 class TestWebEngineScrollAddAttachment : public QWidget
 {
     Q_OBJECT
 public:
     explicit TestWebEngineScrollAddAttachment(QWidget *parent = Q_NULLPTR);
+
+private Q_SLOTS:
+    void slotScrollToAttachment();
+    void handleScrollToAnchor(const QVariant &result);
+private:
+    MessageViewer::MailWebEngineView *mTestWebEngine;
 };
 
 #endif // TESTWEBENGINESCROLLADDATTACHMENT_H

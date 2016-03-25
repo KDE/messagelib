@@ -16,13 +16,57 @@
 */
 
 #include "testwebenginescrolladdattachment.h"
+#include "webengine/webenginescript.h"
 
+#include <KActionCollection>
 #include <QApplication>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QWebEngineSettings>
+
+#include <viewer/webengine/mailwebengineview.h>
+
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
+    R *receiver;
+    void (C::*memberFunction)(Arg);
+    void operator()(Arg result)
+    {
+        (receiver->*memberFunction)(result);
+    }
+};
+
+template<typename Arg, typename R, typename C>
+
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFunction};
+    return wrapper;
+}
 
 TestWebEngineScrollAddAttachment::TestWebEngineScrollAddAttachment(QWidget *parent)
     : QWidget(parent)
 {
+    QVBoxLayout *vboxLayout = new QVBoxLayout(this);
 
+    mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
+    mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+    vboxLayout->addWidget(mTestWebEngine);
+    mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
+    QPushButton *scrollToButton = new QPushButton(QStringLiteral("Scroll to Attachment"), this);
+    vboxLayout->addWidget(scrollToButton);
+    connect(scrollToButton, &QPushButton::clicked, this, &TestWebEngineScrollAddAttachment::slotScrollToAttachment);
+
+}
+
+void TestWebEngineScrollAddAttachment::handleScrollToAnchor(const QVariant &result)
+{
+    qDebug() << " result "<<result;
+}
+
+void TestWebEngineScrollAddAttachment::slotScrollToAttachment()
+{
+    mTestWebEngine->page()->runJavaScript(MessageViewer::WebEngineScript::searchElementPosition(QStringLiteral("#footer_text")), invoke(this, &TestWebEngineScrollAddAttachment::handleScrollToAnchor));
 }
 
 int main(int argc, char *argv[])

@@ -28,6 +28,7 @@ MESSAGEVIEWER_EXPORT QString findAllImages();
 MESSAGEVIEWER_EXPORT QString findAllScripts();
 MESSAGEVIEWER_EXPORT QString findAllAnchors();
 MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
+MESSAGEVIEWER_EXPORT QString searchElementPosition(const QString &elementStr);
 }
 }
 #endif // WEBENGINESCRIPT_H
