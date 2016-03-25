@@ -18,6 +18,7 @@
 #include "mailwebengineview.h"
 #include "mailwebenginepage.h"
 #include "mailwebengineaccesskey.h"
+#include "webengine/webenginescript.h"
 #include "messageviewer/messageviewersettings.h"
 #include <MessageViewer/NetworkAccessManagerWebEngine>
 
@@ -25,6 +26,23 @@
 #include "scamdetection/scamcheckshorturl.h"
 
 using namespace MessageViewer;
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
+    R *receiver;
+    void (C::*memberFunction)(Arg);
+    void operator()(Arg result)
+    {
+        (receiver->*memberFunction)(result);
+    }
+};
+
+template<typename Arg, typename R, typename C>
+
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFunction};
+    return wrapper;
+}
 
 class MessageViewer::MailWebEngineViewPrivate
 {
@@ -131,4 +149,44 @@ void MailWebEngineView::saveMainFrameScreenshotInFile(const QString &filename)
 void MailWebEngineView::showAccessKeys()
 {
     d->mWebViewAccessKey->showAccessKeys();
+}
+
+void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)
+{
+    page()->runJavaScript(MessageViewer::WebEngineScript::setElementByIdVisible(id, visible));
+}
+
+bool MailWebEngineView::removeAttachmentMarking(const QString &id)
+{
+#if 0
+    QWebElement doc = page()->mainFrame()->documentElement();
+    QWebElement attachmentDiv = doc.findFirst(QLatin1String("*#") + id);
+    if (attachmentDiv.isNull()) {
+        return false;
+    }
+    attachmentDiv.removeAttribute(QStringLiteral("style"));
+#endif
+    return true;
+}
+
+void MailWebEngineView::markAttachment(const QString &id, const QString &style)
+{
+    //TODO verify "*#" + id
+    page()->runJavaScript(MessageViewer::WebEngineScript::setStyleToElement(QLatin1String("*#") + id, style));
+}
+
+void MailWebEngineView::scrollToAnchor(const QString &anchor)
+{
+    page()->runJavaScript(MessageViewer::WebEngineScript::searchElementPosition(anchor), invoke(this, &MailWebEngineView::handleScrollToAnchor));
+}
+
+void MailWebEngineView::handleScrollToAnchor(const QVariant &result)
+{
+    if (result.isValid()) {
+        const QList<QVariant> lst = result.toList();
+        if (lst.count() == 2) {
+            const QPoint pos(lst.at(0).toInt(), lst.at(1).toInt());
+            page()->runJavaScript(MessageViewer::WebEngineScript::scrollToPosition(pos));
+        }
+    }
 }

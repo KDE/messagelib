@@ -59,21 +59,9 @@ TestWebEngineScrollAddAttachment::TestWebEngineScrollAddAttachment(QWidget *pare
 
 }
 
-void TestWebEngineScrollAddAttachment::handleScrollToAnchor(const QVariant &result)
-{
-    qDebug() << " result "<<result;
-    if (result.isValid()) {
-        const QList<QVariant> lst = result.toList();
-        if (lst.count() == 2) {
-            const QPoint pos(lst.at(0).toInt(), lst.at(1).toInt());
-            mTestWebEngine->page()->runJavaScript(MessageViewer::WebEngineScript::scrollToPosition(pos));
-        }
-    }
-}
-
 void TestWebEngineScrollAddAttachment::slotScrollToAttachment()
 {
-    mTestWebEngine->page()->runJavaScript(MessageViewer::WebEngineScript::searchElementPosition(QStringLiteral("module")), invoke(this, &TestWebEngineScrollAddAttachment::handleScrollToAnchor));
+    mTestWebEngine->scrollToAnchor(QStringLiteral("module"));
 }
 
 int main(int argc, char *argv[])

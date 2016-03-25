@@ -36,6 +36,10 @@ public:
     void saveMainFrameScreenshotInFile(const QString &filename);
     void showAccessKeys();
 
+    void setElementByIdVisible(const QString &id, bool visible);
+    bool removeAttachmentMarking(const QString &id);
+    void markAttachment(const QString &id, const QString &style);
+    void scrollToAnchor(const QString &anchor);
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
 
@@ -50,6 +54,10 @@ protected:
 
 Q_SIGNALS:
     void openUrl(const QUrl &url);
+
+private Q_SLOTS:
+    void handleScrollToAnchor(const QVariant &result);
+
 private:
     MailWebEngineViewPrivate *const d;
 };

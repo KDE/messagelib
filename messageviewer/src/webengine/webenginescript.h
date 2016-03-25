@@ -31,6 +31,8 @@ MESSAGEVIEWER_EXPORT QString findAllAnchors();
 MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
 MESSAGEVIEWER_EXPORT QString searchElementPosition(const QString &elementStr);
 MESSAGEVIEWER_EXPORT QString scrollToPosition(const QPoint &pos);
+MESSAGEVIEWER_EXPORT QString setElementByIdVisible(const QString &elementStr, bool visibility);
+MESSAGEVIEWER_EXPORT QString setStyleToElement(const QString &elementStr, const QString &style);
 }
 }
 #endif // WEBENGINESCRIPT_H

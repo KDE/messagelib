@@ -96,6 +96,23 @@ QString WebEngineScript::findAllAnchorsAndForms()
 }
 
 
+QString WebEngineScript::setElementByIdVisible(const QString &elementStr, bool visibility)
+{
+    if (visibility) {
+        const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+                                                   "if (element) { "
+                                                   "    element.style.removeProperty( 'display' );"
+                                                   "}").arg(elementStr);
+        return source;
+    } else {
+        const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+                                                   "if (element) { "
+                                                   "    element.style.display = \"none\";"
+                                                   "}").arg(elementStr);
+        return source;
+    }
+}
+
 QString WebEngineScript::searchElementPosition(const QString &elementStr)
 {
     const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
@@ -111,5 +128,14 @@ QString WebEngineScript::scrollToPosition(const QPoint &pos)
 {
     const QString source = QString::fromLatin1("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x()).arg(pos.y());
     qDebug()<<" source "<<source;
+    return source;
+}
+
+QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style)
+{
+    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+                                               "if (element) { "
+                                               "    element.style = '%2';"
+                                               "}").arg(elementStr).arg(style);
     return source;
 }

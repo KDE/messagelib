@@ -31,7 +31,6 @@ public:
 
 private Q_SLOTS:
     void slotScrollToAttachment();
-    void handleScrollToAnchor(const QVariant &result);
 private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
 };
