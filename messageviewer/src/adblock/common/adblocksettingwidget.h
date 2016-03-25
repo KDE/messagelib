@@ -58,6 +58,8 @@ public:
 Q_SIGNALS:
     void changed(bool);
 
+protected:
+    bool event(QEvent *event) Q_DECL_OVERRIDE;
 private Q_SLOTS:
     void hasChanged();
     void slotInfoLinkActivated(const QString &);

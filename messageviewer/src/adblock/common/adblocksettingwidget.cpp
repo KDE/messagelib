@@ -46,6 +46,7 @@ using namespace PimCommon::ConfigureImmutableWidgetUtils;
 
 #include <KMessageBox>
 #include <KLocalizedString>
+#include <QWhatsThisClickedEvent>
 
 // Qt Includes
 #include <QWhatsThis>
@@ -55,6 +56,7 @@ using namespace PimCommon::ConfigureImmutableWidgetUtils;
 #include <QTextStream>
 #include <QStandardPaths>
 #include <QRegularExpression>
+#include <KRun>
 
 using namespace MessageViewer;
 AdBlockSettingWidget::AdBlockSettingWidget(QWidget *parent)
@@ -141,16 +143,28 @@ void AdBlockSettingWidget::slotInfoLinkActivated(const QString &url)
 {
     Q_UNUSED(url)
 
+    const QString href = QStringLiteral("https://adblockplus.org/en/filters");
     const QString hintHelpString = i18n("<qt><p>Enter an expression to filter. Filters can be defined as either:"
                                         "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, "
                                         "the wildcards <tt>*?[]</tt> may be used</li>"
                                         "<li>a full regular expression by surrounding the string with '<tt>/</tt>', "
                                         "e.g. <tt>/\\/(ad|banner)\\./</tt></li></ul>"
                                         "<p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist (allow) any matching URL, "
-                                        "which takes priority over any blacklist (blocking) filter.");
+                                        "which takes priority over any blacklist (blocking) filter.<br><a href=\'%1\'>%2</a></qt>", href, i18n("More information"));
 
-    QWhatsThis::showText(QCursor::pos(), hintHelpString);
+    QWhatsThis::showText(QCursor::pos(), hintHelpString, this);
 }
+
+bool AdBlockSettingWidget::event(QEvent *event)
+{
+    if (event->type() == QEvent::WhatsThisClicked) {
+        QWhatsThisClickedEvent *clicked = static_cast<QWhatsThisClickedEvent *>(event);
+        new KRun(QUrl(clicked->href()), this);
+        return true;
+    }
+    return QWidget::event(event);
+}
+
 
 void AdBlockSettingWidget::insertRule()
 {
