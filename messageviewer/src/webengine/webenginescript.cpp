@@ -98,7 +98,7 @@ QString WebEngineScript::findAllAnchorsAndForms()
 
 QString WebEngineScript::searchElementPosition(const QString &elementStr)
 {
-    const QString source = QString::fromLatin1("var element = document.querySelector('%1'); "
+    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
                                                "if (element) { "
                                                "    var geometry = element.getBoundingClientRect(); "
                                                "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
