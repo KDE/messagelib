@@ -73,7 +73,7 @@ void TestWebEngineScrollAddAttachment::handleScrollToAnchor(const QVariant &resu
 
 void TestWebEngineScrollAddAttachment::slotScrollToAttachment()
 {
-    mTestWebEngine->page()->runJavaScript(MessageViewer::WebEngineScript::searchElementPosition(QStringLiteral("#footer_text")), invoke(this, &TestWebEngineScrollAddAttachment::handleScrollToAnchor));
+    mTestWebEngine->page()->runJavaScript(MessageViewer::WebEngineScript::searchElementPosition(QStringLiteral("#module")), invoke(this, &TestWebEngineScrollAddAttachment::handleScrollToAnchor));
 }
 
 int main(int argc, char *argv[])
