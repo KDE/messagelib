@@ -18,6 +18,7 @@
 #define WEBENGINESCRIPT_H
 
 #include <QString>
+#include <QPoint>
 #include "messageviewer_export.h"
 
 namespace MessageViewer
@@ -29,6 +30,7 @@ MESSAGEVIEWER_EXPORT QString findAllScripts();
 MESSAGEVIEWER_EXPORT QString findAllAnchors();
 MESSAGEVIEWER_EXPORT QString findAllAnchorsAndForms();
 MESSAGEVIEWER_EXPORT QString searchElementPosition(const QString &elementStr);
+MESSAGEVIEWER_EXPORT QString scrollToPosition(const QPoint &pos);
 }
 }
 #endif // WEBENGINESCRIPT_H
