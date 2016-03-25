@@ -49,6 +49,9 @@ public:
 public Q_SLOTS:
     void hideAccessKeys();
 
+Q_SIGNALS:
+    void openUrl(const QUrl &url);
+
 private:
     WebViewAccessKeyPrivate *const d;
 };

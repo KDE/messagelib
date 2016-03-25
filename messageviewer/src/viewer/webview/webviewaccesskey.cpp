@@ -205,17 +205,14 @@ bool WebViewAccessKey::checkForAccessKey(QKeyEvent *event)
     if (d->mAccessKeyNodes.contains(key)) {
         QWebElement element = d->mAccessKeyNodes[key];
         QPoint p = element.geometry().center();
-        QWebFrame *frame = element.webFrame();
-        Q_ASSERT(frame);
-        do {
-            p -= frame->scrollPosition();
-            frame = frame->parentFrame();
-        } while (frame && frame != d->mWebView->page()->mainFrame());
-        QMouseEvent pevent(QEvent::MouseButtonPress, p, Qt::LeftButton, 0, 0);
-        QCoreApplication::sendEvent(this, &pevent);
-        QMouseEvent revent(QEvent::MouseButtonRelease, p, Qt::LeftButton, 0, 0);
-        QCoreApplication::sendEvent(this, &revent);
-        handled = true;
+
+        if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
+            const QString linkKey(linkElementKey(element));
+            if (!linkKey.isEmpty()) {
+                handled = true;
+                Q_EMIT openUrl(QUrl(linkKey));
+            }
+        }
     }
     return handled;
 }

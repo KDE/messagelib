@@ -62,6 +62,7 @@ MailWebView::MailWebView(KActionCollection *actionCollection, QWidget *parent)
     connect(this, &QWebView::loadStarted, mWebViewAccessKey, &WebViewAccessKey::hideAccessKeys);
     connect(mScamDetection, &ScamDetection::messageMayBeAScam, this, &MailWebView::messageMayBeAScam);
     connect(page(), &QWebPage::scrollRequested, mWebViewAccessKey, &WebViewAccessKey::hideAccessKeys);
+    connect(mWebViewAccessKey, &WebViewAccessKey::openUrl, this, &MailWebView::linkClicked);
 }
 
 MailWebView::~MailWebView()
