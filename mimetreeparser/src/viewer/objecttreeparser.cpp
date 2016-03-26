@@ -301,54 +301,55 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
 
         bool bRendered = false;
         const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType);
-        const auto end = sub.end();
-        auto it = sub.find(subType);
-        if (it == end) {
-            it = sub.find("*");
-        }
-        for (; it != end; ++it) {
-            const auto formatter = (*it).second;
-            if (!formatter) {
-                continue;
-            }
-            PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper, codecFor(node));
-            // Set the default display strategy for this body part relying on the
-            // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
-            part.setDefaultDisplay((Interface::BodyPart::Display) attachmentStrategy()->defaultDisplay(node));
+        while (true) {
+            auto range =  sub.equal_range(subType);
+            for (auto it=range.first; it != range.second; ++it) {
+                const auto formatter = (*it).second;
+                if (!formatter) {
+                    continue;
+                }
+                PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper, codecFor(node));
+                // Set the default display strategy for this body part relying on the
+                // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
+                part.setDefaultDisplay((Interface::BodyPart::Display) attachmentStrategy()->defaultDisplay(node));
 
-            mNodeHelper->setNodeDisplayedEmbedded(node, true);
+                mNodeHelper->setNodeDisplayedEmbedded(node, true);
 
-            const auto result = formatter->process(part);
-            if (!result) {
-                continue;
-            }
+                const auto result = formatter->process(part);
+                if (!result) {
+                    continue;
+                }
 
-            if (const auto mp = dynamic_cast<MessageViewer::MessagePart *>(result.data())) {
-                mp->setAttachmentFlag(node);
-                mpl->appendMessagePart(result);
-                bRendered = true;
-                break;
-            } else if (dynamic_cast<MessageViewer::Interface::MessagePart *>(result.data())) {
-                QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
-                const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
-                if (r == Interface::BodyPartFormatter::AsIcon) {
-                    processResult.setNeverDisplayInline(true);
-                    formatter->adaptProcessResult(processResult);
-                    mNodeHelper->setNodeDisplayedEmbedded(node, false);
-                    const auto mp = defaultHandling(node, processResult);
-                    if (mp) {
-                        mp->setAttachmentFlag(node);
-                        mpl->appendMessagePart(mp);
-                    }
+                if (const auto mp = dynamic_cast<MessageViewer::MessagePart *>(result.data())) {
+                    mp->setAttachmentFlag(node);
+                    mpl->appendMessagePart(result);
                     bRendered = true;
                     break;
+                } else if (dynamic_cast<MessageViewer::Interface::MessagePart *>(result.data())) {
+                    QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
+                    const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
+                    if (r == Interface::BodyPartFormatter::AsIcon) {
+                        processResult.setNeverDisplayInline(true);
+                        formatter->adaptProcessResult(processResult);
+                        mNodeHelper->setNodeDisplayedEmbedded(node, false);
+                        const auto mp = defaultHandling(node, processResult);
+                        if (mp) {
+                            mp->setAttachmentFlag(node);
+                            mpl->appendMessagePart(mp);
+                        }
+                        bRendered = true;
+                        break;
+                    }
+                    continue;
+                } else {
+                    continue;
                 }
-                continue;
-            } else {
-                continue;
             }
+            if (bRendered || subType == "*") {
+                break;
+            }
+            subType = "*";
         }
-
         if (!bRendered) {
             qCCritical(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
             const auto mp = defaultHandling(node, processResult);
