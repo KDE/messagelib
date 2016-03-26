@@ -31,6 +31,8 @@
 
 #include "mimetreeparser_debug.h"
 
+#include "bodyformatter/mailman.h"
+
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
 
@@ -186,7 +188,6 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
     }
 
 CREATE_BODY_PART_FORMATTER(TextPlain)
-CREATE_BODY_PART_FORMATTER(Mailman)
 CREATE_BODY_PART_FORMATTER(TextHtml)
 
 CREATE_BODY_PART_FORMATTER(ApplicationPkcs7Mime)

@@ -357,12 +357,6 @@ private:
 
     MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
 
-    /** 1. Create a new partNode using 'content' data and Content-Description
-          found in 'cntDesc'.
-      2. Parse the 'node' to display the content.
-    */
-    MimeMessagePartPtr createAndParseTempNode(KMime::Content *parentNode, const char *content, const char *cntDesc);
-
     /** Writes out the information contained in a GpgME::ImportResult */
     void writeCertificateImportResult(const GpgME::ImportResult &res);
 
@@ -385,7 +379,6 @@ public:// (during refactoring)
 
     MessagePartPtr processTextHtmlSubtype(KMime::Content *node, ProcessResult &result);
     MessagePartPtr processTextPlainSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePartPtr processMailmanSubtype(KMime::Content *node, ProcessResult &result);
 
     MessagePartPtr processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &result);
     MessagePartPtr processMultiPartAlternativeSubtype(KMime::Content *node, ProcessResult &result);
@@ -395,8 +388,6 @@ public:// (during refactoring)
     MessagePartPtr  processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
 
     void writePartIcon(KMime::Content *msgPart, bool inlineImage = false);
-
-    bool isMailmanMessage(KMime::Content *curNode);
 
     /** Change the string to `quoted' html (meaning, that the quoted
       part of the message get italized */

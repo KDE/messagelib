@@ -9,6 +9,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser\")
 include_directories(${GPGME_INCLUDES})
 
 set(libmimetreeparser_main_SRCS
+    bodyformatter/mailman.cpp
     interfaces/bodypartformatter.cpp
     job/kleojobexecutor.cpp
     viewer/attachmentstrategy.cpp
