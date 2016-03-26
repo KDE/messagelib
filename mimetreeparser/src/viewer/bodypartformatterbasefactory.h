@@ -70,10 +70,6 @@ public:
     SubtypeRegistry::const_iterator createForIterator(const char *type, const char *subtype) const;
     const SubtypeRegistry &subtypeRegistry(const char *type) const;
 
-    const Interface::BodyPartFormatter *createFor(const char *type, const char *subtype) const;
-    const Interface::BodyPartFormatter *createFor(const QString &type, const QString &subtype) const;
-    const Interface::BodyPartFormatter *createFor(const QByteArray &type, const QByteArray &subtype) const;
-
 protected:
     void insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
     virtual void loadPlugins();

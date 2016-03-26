@@ -173,26 +173,7 @@ SubtypeRegistry::const_iterator BodyPartFormatterBaseFactory::createForIterator(
     return subtype_it;
 }
 
-const Interface::BodyPartFormatter *BodyPartFormatterBaseFactory::createFor(const char *type, const char *subtype) const
-{
-    const auto it = createForIterator(type, subtype);
-    if ((*it).second) {
-        return (*it).second;
-    }
-    return 0;
-}
-
-const Interface::BodyPartFormatter *BodyPartFormatterBaseFactory::createFor(const QString &type, const QString &subtype) const
-{
-    return createFor(type.toLatin1(), subtype.toLatin1());
-}
-
-const Interface::BodyPartFormatter *BodyPartFormatterBaseFactory::createFor(const QByteArray &type, const QByteArray &subtype) const
-{
-    return createFor(type.constData(), subtype.constData());
-}
-
 void BodyPartFormatterBaseFactory::loadPlugins()
 {
-    qCDebug(MIMETREEPARSER_LOG) << "plugin loading is not enabled in libotp";
+    qCDebug(MIMETREEPARSER_LOG) << "plugin loading is not enabled in libmimetreeparser";
 }
