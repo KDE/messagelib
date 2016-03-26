@@ -31,6 +31,7 @@
 
 #include "mimetreeparser_debug.h"
 
+#include "bodyformatter/applicationpgpencrypted.h"
 #include "bodyformatter/mailman.h"
 
 #include "interfaces/bodypartformatter.h"
@@ -208,6 +209,7 @@ void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_
     insert("application", "pgp", ApplicationPgpBodyPartFormatter::create());
     insert("application", "pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
     insert("application", "x-pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert("application", "pgp-encrypted", ApplicationPGPEncryptedBodyPartFormatter::create());
     insert("application", "*", AnyTypeBodyPartFormatter::create());
 
     insert("text", "html", TextHtmlBodyPartFormatter::create());

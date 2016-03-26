@@ -9,6 +9,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser\")
 include_directories(${GPGME_INCLUDES})
 
 set(libmimetreeparser_main_SRCS
+    bodyformatter/applicationpgpencrypted.cpp
     bodyformatter/mailman.cpp
     bodyformatter/utils.cpp
     interfaces/bodypartformatter.cpp
