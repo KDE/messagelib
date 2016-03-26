@@ -141,7 +141,7 @@ void CryptoBlock::internalEnter()
             mInteralBlocks.append(HTMLBlock::Ptr(new EncryptedBlock(writer, *mMetaData)));
         }
         if (mMetaData->isSigned) {
-            mInteralBlocks.append(HTMLBlock::Ptr(new SignedBlock(writer, *mMetaData, mOtp->cryptoProtocol(), mSource, mFromAddress, false)));
+            mInteralBlocks.append(HTMLBlock::Ptr(new SignedBlock(writer, *mMetaData, mCryptoProto, mSource, mFromAddress, false)));
         }
     }
 }
