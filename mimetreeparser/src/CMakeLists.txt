@@ -10,6 +10,7 @@ include_directories(${GPGME_INCLUDES})
 
 set(libmimetreeparser_main_SRCS
     bodyformatter/mailman.cpp
+    bodyformatter/utils.cpp
     interfaces/bodypartformatter.cpp
     job/kleojobexecutor.cpp
     viewer/attachmentstrategy.cpp

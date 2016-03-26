@@ -19,6 +19,8 @@
 
 #include "mailman.h"
 
+#include "utils.h"
+
 #include "viewer/objecttreeparser.h"
 #include "viewer/messagepart.h"
 
@@ -46,27 +48,6 @@ Interface::BodyPartFormatter::Result MailmanBodyPartFormatter::format(Interface:
     }
     return Failed;
 }
-
-/**
-  1. Create a new partNode using 'content' data and Content-Description
-     found in 'cntDesc'.
-  2. Parse the 'node' to display the content.
-*/
-
-MimeMessagePart::Ptr createAndParseTempNode(Interface::BodyPart &part, KMime::Content *parentNode, const char *content, const char *cntDesc)
-{
-    KMime::Content *newNode = new KMime::Content();
-    newNode->setContent(KMime::CRLFtoLF(content));
-    newNode->parse();
-
-    if (!newNode->head().isEmpty()) {
-        newNode->contentDescription()->from7BitString(cntDesc);
-    }
-    part.nodeHelper()->attachExtraContent(parentNode, newNode);
-
-    return MimeMessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, false));
-}
-
 
 bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content* curNode) const
 {
