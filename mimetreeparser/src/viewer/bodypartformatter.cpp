@@ -31,14 +31,15 @@
 
 #include "mimetreeparser_debug.h"
 
-#include "bodypartformatterbasefactory.h"
-#include "viewer/bodypartformatterbasefactory_p.h"
-#include "viewer/attachmentstrategy.h"
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
 
+#include "viewer/bodypartformatterbasefactory.h"
+#include "viewer/bodypartformatterbasefactory_p.h"
+
+#include "viewer/attachmentstrategy.h"
 #include "viewer/objecttreeparser.h"
-#include "messagepart.h"
+#include "viewer/messagepart.h"
 
 #include <KMime/Content>
 
