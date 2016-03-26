@@ -463,6 +463,7 @@ private:
     bool mDeleteNodeHelper;
     bool mPrinting;
 
+    friend class PartNodeBodyPart;
     friend class MessagePart;
     friend class CryptoMessagePart;
     friend class CertMessagePart;

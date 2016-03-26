@@ -47,6 +47,8 @@ namespace MessageViewer
 class NodeHelper;
 class ObjectTreeParser;
 class ProcessResult;
+class ObjectTreeSourceIf;
+
 namespace Interface
 {
 
@@ -195,6 +197,7 @@ public:
      * For making it easier to refactor, add objectTreeParser
      */
     virtual MessageViewer::ObjectTreeParser *objectTreeParser() const = 0;
+    virtual MessageViewer::ObjectTreeSourceIf *source() const = 0;
     virtual MessageViewer::ProcessResult *processResult() const = 0;
 };
 
