@@ -1636,8 +1636,29 @@ QString CertMessagePart::text() const
     return QString();
 }
 
-//-----CryptMessageBlock---------------------
+// A small class that eases temporary CryptPlugWrapper changes:
+class CryptoProtocolSaver
+{
+    ObjectTreeParser *otp;
+    const Kleo::CryptoBackend::Protocol *protocol;
+public:
+    CryptoProtocolSaver(ObjectTreeParser *_otp, const Kleo::CryptoBackend::Protocol *_w)
+        : otp(_otp), protocol(_otp ? _otp->cryptoProtocol() : 0)
+    {
+        if (otp) {
+            otp->setCryptoProtocol(_w);
+        }
+    }
 
+    ~CryptoProtocolSaver()
+    {
+        if (otp) {
+            otp->setCryptoProtocol(protocol);
+        }
+    }
+};
+
+//-----CryptMessageBlock---------------------
 CryptoMessagePart::CryptoMessagePart(ObjectTreeParser *otp,
                                      const QString &text,
                                      const Kleo::CryptoBackend::Protocol *cryptoProto,
@@ -1712,6 +1733,7 @@ void CryptoMessagePart::startDecryption(KMime::Content *data)
     bool actuallyEncrypted = true;
     bool decryptionStarted;
 
+    CryptoProtocolSaver saver(mOtp, mCryptoProto);
     bool bOkDecrypt = mOtp->okDecryptMIME(*data,
                                           mDecryptedData,
                                           signatureFound,
@@ -1774,6 +1796,7 @@ void CryptoMessagePart::startVerificationDetached(const QByteArray &text, KMime:
     mMetaData.isEncrypted = false;
     mMetaData.isDecryptable = false;
 
+    CryptoProtocolSaver saver(mOtp, mCryptoProto);
     mOtp->okVerify(text, mCryptoProto, mMetaData, mVerifiedText, mSignatures, signature, mNode);
 
     if (mMetaData.isSigned) {

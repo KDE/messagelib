@@ -279,7 +279,6 @@ the Viewer to scroll to the attachment.
 */
 class MIMETREEPARSER_EXPORT ObjectTreeParser
 {
-    class CryptoProtocolSaver;
     /**
     * @internal
     * Copies the context of @p other, but not it's rawDecryptedBody, plainTextContent or htmlContent.

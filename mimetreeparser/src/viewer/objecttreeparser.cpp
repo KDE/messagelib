@@ -100,28 +100,6 @@
 using namespace MessageViewer;
 using namespace MessageCore;
 
-// A small class that eases temporary CryptPlugWrapper changes:
-class ObjectTreeParser::CryptoProtocolSaver
-{
-    ObjectTreeParser *otp;
-    const Kleo::CryptoBackend::Protocol *protocol;
-public:
-    CryptoProtocolSaver(ObjectTreeParser *_otp, const Kleo::CryptoBackend::Protocol *_w)
-        : otp(_otp), protocol(_otp ? _otp->cryptoProtocol() : 0)
-    {
-        if (otp) {
-            otp->setCryptoProtocol(_w);
-        }
-    }
-
-    ~CryptoProtocolSaver()
-    {
-        if (otp) {
-            otp->setCryptoProtocol(protocol);
-        }
-    }
-};
-
 ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
                                    bool showOnlyOneMimePart,
                                    const AttachmentStrategy *strategy)
@@ -1036,7 +1014,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartSignedSubtype(KMime::Content 
         protocolContentType = signatureContentType;
     }
 
-    const Kleo::CryptoBackend::Protocol *protocol = 0;
+    const Kleo::CryptoBackend::Protocol *protocol = Q_NULLPTR;
     if (protocolContentType == QLatin1String("application/pkcs7-signature") ||
             protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
         protocol = Kleo::CryptoBackendFactory::instance()->smime();
@@ -1051,19 +1029,18 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartSignedSubtype(KMime::Content 
 
     mNodeHelper->setNodeProcessed(signature, true);
 
-    CryptoProtocolSaver saver(this, protocol);
     mNodeHelper->setSignatureState(node, KMMsgFullySigned);
 
     const QByteArray cleartext = KMime::LFtoCRLF(signedData->encodedContent());
     const QTextCodec *aCodec(codecFor(signedData));
 
     CryptoMessagePart::Ptr mp(new CryptoMessagePart(this,
-                              aCodec->toUnicode(cleartext), cryptoProtocol(),
+                              aCodec->toUnicode(cleartext), protocol,
                               NodeHelper::fromAsString(node), signature));
     PartMetaData *messagePart(mp->partMetaData());
     messagePart->isSigned = true;
 
-    if (cryptoProtocol()) {
+    if (protocol) {
         mp->startVerificationDetached(cleartext, signedData, signature->decodedContent());
     } else {
         messagePart->auditLogError = GpgME::Error(GPG_ERR_NOT_IMPLEMENTED);
@@ -1105,8 +1082,6 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartEncryptedSubtype(KMime::Conte
         return MessagePart::Ptr(new MimeMessagePart(this, child, false));
     }
 
-    CryptoProtocolSaver cpws(this, useThisCryptProto);
-
     KMime::Content *dataChild = MessageCore::NodeHelper::firstChild(data);
     if (dataChild) {
         Q_ASSERT(false);
@@ -1116,7 +1091,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartEncryptedSubtype(KMime::Conte
     mNodeHelper->setEncryptionState(node, KMMsgFullyEncrypted);
 
     CryptoMessagePart::Ptr mp(new CryptoMessagePart(this,
-                              data->decodedText(), Kleo::CryptoBackendFactory::instance()->openpgp(),
+                              data->decodedText(), useThisCryptProto,
                               NodeHelper::fromAsString(data), node));
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(mSource->decryptMessage());
@@ -1173,8 +1148,6 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
         return mp;
     }
 
-    CryptoProtocolSaver cpws(this, smimeCrypto);
-
     bool isSigned      = (smimeType == QLatin1String("signed-data"));
     bool isEncrypted   = (smimeType == QLatin1String("enveloped-data"));
 
@@ -1195,7 +1168,7 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
         }
 
         mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
-                                    node->decodedText(), cryptoProtocol(),
+                                    node->decodedText(), smimeCrypto,
                                     NodeHelper::fromAsString(node), node));
         mp->setIsEncrypted(true);
         mp->setDecryptMessage(mSource->decryptMessage());
@@ -1248,11 +1221,11 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
         const QTextCodec *aCodec(codecFor(signTestNode));
         const QByteArray signaturetext = signTestNode->decodedContent();
         mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
-                                    aCodec->toUnicode(signaturetext), cryptoProtocol(),
+                                    aCodec->toUnicode(signaturetext), smimeCrypto,
                                     NodeHelper::fromAsString(node), signTestNode));
         mp->setDecryptMessage(mSource->decryptMessage());
         PartMetaData *messagePart(mp->partMetaData());
-        if (cryptoProtocol()) {
+        if (smimeCrypto) {
             mp->startVerificationDetached(signaturetext, 0, QByteArray());
         } else {
             messagePart->auditLogError = GpgME::Error(GPG_ERR_NOT_IMPLEMENTED);
