@@ -48,7 +48,7 @@ public:
     void scrollPageUp(int percent);
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
-
+    void slotZoomTextOnlyChanged(bool b);
     void slotShowDetails();
 
 protected:

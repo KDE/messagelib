@@ -100,6 +100,12 @@ void MailWebEngineView::slotZoomChanged(qreal zoom)
     setZoomFactor(zoom);
 }
 
+void MailWebEngineView::slotZoomTextOnlyChanged(bool b)
+{
+    Q_UNUSED(b);
+    qDebug() << "MailWebEngineView::slotZoomTextOnlyChanged unimplemented";
+}
+
 void MailWebEngineView::scamCheck()
 {
     d->mScamDetection->scanPage(page());
