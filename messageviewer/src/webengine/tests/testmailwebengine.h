@@ -31,6 +31,10 @@ class TestMailWebEngine : public QWidget
 public:
     explicit TestMailWebEngine(QWidget *parent = Q_NULLPTR);
     ~TestMailWebEngine();
+private Q_SLOTS:
+    void slotScrollUp();
+
+    void slotScrollDown();
 private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
 };

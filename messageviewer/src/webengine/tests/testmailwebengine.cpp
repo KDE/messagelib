@@ -15,10 +15,13 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 #include "testmailwebengine.h"
+#include "webengine/webenginescript.h"
 
 #include <KActionCollection>
 #include <QApplication>
+#include <QPushButton>
 #include <QVBoxLayout>
+#include <QWebEngineSettings>
 
 #include <viewer/webengine/mailwebengineview.h>
 
@@ -28,12 +31,34 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
 {
     QVBoxLayout *vbox = new QVBoxLayout(this);
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
+    mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
+    mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vbox->addWidget(mTestWebEngine);
+    QHBoxLayout *hButtonBox = new QHBoxLayout;
+    vbox->addLayout(hButtonBox);
+
+    QPushButton *scrollUp = new QPushButton(QStringLiteral("scrollUp 10px"), this);
+    connect(scrollUp, &QPushButton::clicked, this, &TestMailWebEngine::slotScrollUp);
+    hButtonBox->addWidget(scrollUp);
+
+    QPushButton *scrollDown = new QPushButton(QStringLiteral("scrollDown 10px"), this);
+    connect(scrollDown, &QPushButton::clicked, this, &TestMailWebEngine::slotScrollDown);
+    hButtonBox->addWidget(scrollDown);
 }
 
 TestMailWebEngine::~TestMailWebEngine()
 {
 
+}
+
+void TestMailWebEngine::slotScrollDown()
+{
+    mTestWebEngine->page()->runJavaScript(MessageViewer::WebEngineScript::scrollDown(10));
+}
+
+void TestMailWebEngine::slotScrollUp()
+{
+    mTestWebEngine->page()->runJavaScript(MessageViewer::WebEngineScript::scrollUp(10));
 }
 
 
