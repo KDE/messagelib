@@ -200,3 +200,25 @@ void MailWebEngineView::handleScrollToAnchor(const QVariant &result)
         }
     }
 }
+
+
+void MailWebEngineView::scrollPageDown(int percent)
+{
+#if 0
+    const qint64 height =  page()->viewportSize().height();
+    const qint64 current = page()->mainFrame()->scrollBarValue(Qt::Vertical);
+    // do arithmetic in higher precision, and check for overflow:
+    const qint64 newPosition = current + height * percent / 100;
+    if (newPosition > std::numeric_limits<int>::max()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "new position" << newPosition << "exceeds range of 'int'!";
+    }
+    page()->mainFrame()->setScrollBarValue(Qt::Vertical, newPosition);
+#endif
+}
+
+void MailWebEngineView::scrollPageUp(int percent)
+{
+#if 0
+    scrollPageDown(-percent);
+#endif
+}

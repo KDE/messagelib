@@ -44,6 +44,8 @@ public:
     bool removeAttachmentMarking(const QString &id);
     void markAttachment(const QString &id, const QString &style);
     void scrollToAnchor(const QString &anchor);
+    void scrollPageDown(int percent);
+    void scrollPageUp(int percent);
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
 

@@ -124,6 +124,12 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
     return source;
 }
 
+QString WebEngineScript::scrollPercentage(int percent)
+{
+    //TODO
+    return QString();
+}
+
 QString WebEngineScript::scrollUp(int pixel)
 {
     const QString source = QString::fromLatin1("window.scrollBy(0, %1);").arg(-pixel);
