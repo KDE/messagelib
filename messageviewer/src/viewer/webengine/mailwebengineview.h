@@ -19,6 +19,7 @@
 #define MAILWEBENGINE_H
 #include "messageviewer_export.h"
 #include <MessageViewer/WebEngineView>
+#include <boost/function.hpp>
 class KActionCollection;
 namespace MessageViewer
 {
@@ -46,6 +47,8 @@ public:
     void scrollToAnchor(const QString &anchor);
     void scrollPageDown(int percent);
     void scrollPageUp(int percent);
+    void injectAttachments(const boost::function<QString ()> &delayedHtml);
+    bool replaceInnerHtml(const QString &id, const boost::function<QString ()> &delayedHtml);
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotZoomTextOnlyChanged(bool b);

@@ -228,3 +228,38 @@ void MailWebEngineView::scrollPageUp(int percent)
     scrollPageDown(-percent);
 #endif
 }
+
+void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
+{
+    //TODO
+#if 0
+    QWebElement doc = page()->currentFrame()->documentElement();
+    QWebElement injectionPoint = doc.findFirst(QStringLiteral("*#attachmentInjectionPoint"));
+    if (injectionPoint.isNull()) {
+        return;
+    }
+
+    const QString html = delayedHtml();
+    if (html.isEmpty()) {
+        return;
+    }
+
+    assert(injectionPoint.tagName().toLower() == QLatin1String("div"));
+    injectionPoint.setInnerXml(html)
+#endif
+}
+
+bool MailWebEngineView::replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml)
+{
+#if 0
+    QWebElement doc = page()->currentFrame()->documentElement();
+    QWebElement tag = doc.findFirst(QLatin1String("*#") + id);
+    if (tag.isNull()) {
+        return false;
+    }
+    tag.setInnerXml(delayedHtml());
+    return true;
+#endif
+    //TODO
+    return false;
+}
