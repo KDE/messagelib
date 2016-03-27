@@ -33,6 +33,8 @@ MESSAGEVIEWER_EXPORT QString searchElementPosition(const QString &elementStr);
 MESSAGEVIEWER_EXPORT QString scrollToPosition(const QPoint &pos);
 MESSAGEVIEWER_EXPORT QString setElementByIdVisible(const QString &elementStr, bool visibility);
 MESSAGEVIEWER_EXPORT QString setStyleToElement(const QString &elementStr, const QString &style);
+MESSAGEVIEWER_EXPORT QString scrollDown(int pixel);
+MESSAGEVIEWER_EXPORT QString scrollUp(int pixel);
 }
 }
 #endif // WEBENGINESCRIPT_H

@@ -124,6 +124,19 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
     return source;
 }
 
+QString WebEngineScript::scrollUp(int pixel)
+{
+    const QString source = QString::fromLatin1("window.scrollBy(0, %1").arg(pixel);
+    return source;
+}
+
+QString WebEngineScript::scrollDown(int pixel)
+{
+    const QString source = QString::fromLatin1("window.scrollBy(0, %1").arg(-pixel);
+    return source;
+}
+
+
 QString WebEngineScript::scrollToPosition(const QPoint &pos)
 {
     const QString source = QString::fromLatin1("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x()).arg(pos.y());

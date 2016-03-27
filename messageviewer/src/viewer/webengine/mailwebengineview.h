@@ -30,6 +30,10 @@ public:
     explicit MailWebEngineView(KActionCollection *ac, QWidget *parent = Q_NULLPTR);
     ~MailWebEngineView();
 
+    void scrollUp(int pixels);
+    void scrollDown(int pixels);
+
+
     void selectAll();
     void scamCheck();
 

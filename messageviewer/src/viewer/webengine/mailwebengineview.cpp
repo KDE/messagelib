@@ -80,6 +80,16 @@ MailWebEngineView::~MailWebEngineView()
     delete d;
 }
 
+void MailWebEngineView::scrollUp(int pixels)
+{
+    page()->runJavaScript(MessageViewer::WebEngineScript::scrollUp(pixels));
+}
+
+void MailWebEngineView::scrollDown(int pixels)
+{
+    page()->runJavaScript(MessageViewer::WebEngineScript::scrollDown(pixels));
+}
+
 void MailWebEngineView::selectAll()
 {
     page()->triggerAction(QWebEnginePage::SelectAll);
