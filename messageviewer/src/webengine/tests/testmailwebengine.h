@@ -20,12 +20,19 @@
 
 #include <QWidget>
 
+namespace MessageViewer
+{
+class MailWebEngineView;
+}
+
 class TestMailWebEngine : public QWidget
 {
     Q_OBJECT
 public:
     explicit TestMailWebEngine(QWidget *parent = Q_NULLPTR);
     ~TestMailWebEngine();
+private:
+    MessageViewer::MailWebEngineView *mTestWebEngine;
 };
 
 #endif // TESTMAILWEBENGINE_H

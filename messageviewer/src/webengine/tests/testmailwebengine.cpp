@@ -16,12 +16,19 @@
 */
 #include "testmailwebengine.h"
 
+#include <KActionCollection>
 #include <QApplication>
+#include <QVBoxLayout>
+
+#include <viewer/webengine/mailwebengineview.h>
+
 
 TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     : QWidget(parent)
 {
-
+    QVBoxLayout *vbox = new QVBoxLayout(this);
+    mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
+    vbox->addWidget(mTestWebEngine);
 }
 
 TestMailWebEngine::~TestMailWebEngine()
