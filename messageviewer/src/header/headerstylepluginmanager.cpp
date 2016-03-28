@@ -22,6 +22,7 @@
 #include <kpluginmetadata.h>
 #include <QFileInfo>
 #include <QSet>
+#include <QDebug>
 
 using namespace MessageViewer;
 
@@ -123,6 +124,8 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
             info.plugin = Q_NULLPTR;
             mPluginList.insert(pos, info);
             unique.insert(info.saveName());
+        } else {
+            qWarning() << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<HeaderStylePluginInfo>::iterator end(mPluginList.end());

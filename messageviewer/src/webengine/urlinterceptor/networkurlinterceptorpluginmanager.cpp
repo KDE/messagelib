@@ -23,6 +23,7 @@
 #include <QFileInfo>
 #include <QVariant>
 #include <QSet>
+#include <QDebug>
 #include <kpluginmetadata.h>
 
 using namespace MessageViewer;
@@ -112,6 +113,8 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
             info.plugin = Q_NULLPTR;
             mPluginList.append(info);
             unique.insert(info.saveName());
+        } else {
+            qWarning() << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<MailNetworkUrlInterceptorPluginInfo>::iterator end(mPluginList.end());
