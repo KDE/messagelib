@@ -50,6 +50,16 @@ public:
     void scrollPageUp(int percent);
     void injectAttachments(const boost::function<QString ()> &delayedHtml);
     bool replaceInnerHtml(const QString &id, const boost::function<QString ()> &delayedHtml);
+
+    bool hasVerticalScrollBar() const;
+    bool isAttachmentInjectionPoint(const QPoint &globalPos) const;
+    QString htmlSource() const;
+    void clearSelection();
+    void scrollToRelativePosition(double pos);
+    double relativePosition() const;
+    QUrl linkOrImageUrlAt(const QPoint &global) const;
+    void openBlockableItemsDialog();
+
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotZoomTextOnlyChanged(bool b);

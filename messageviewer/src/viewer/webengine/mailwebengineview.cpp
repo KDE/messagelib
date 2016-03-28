@@ -270,3 +270,48 @@ bool MailWebEngineView::replaceInnerHtml(const QString &id, const boost::functio
     //TODO
     return false;
 }
+
+bool MailWebEngineView::hasVerticalScrollBar() const
+{
+    //TODO
+    return false;
+}
+
+bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) const
+{
+    //TODO
+    return false;
+}
+
+QString MailWebEngineView::htmlSource() const
+{
+    //TODO remove it when convert to QtWebEngine
+    return {};
+}
+
+void MailWebEngineView::clearSelection()
+{
+    //TODO
+}
+
+void MailWebEngineView::scrollToRelativePosition(double pos)
+{
+    //TODO
+}
+
+double MailWebEngineView::relativePosition() const
+{
+    //TODO
+    return {};
+}
+
+QUrl MailWebEngineView::linkOrImageUrlAt(const QPoint &global) const
+{
+    //TODO
+    return {};
+}
+
+void MailWebEngineView::openBlockableItemsDialog()
+{
+    //TODO
+}
