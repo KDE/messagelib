@@ -23,6 +23,7 @@
 #include <KPluginFactory>
 #include <QFileInfo>
 #include <QSet>
+#include <QDebug>
 
 using namespace MessageViewer;
 
@@ -122,6 +123,8 @@ bool ViewerPluginManagerPrivate::initializePluginList()
             info.plugin = Q_NULLPTR;
             mPluginList.push_back(info);
             unique.insert(info.saveName());
+        } else {
+            qWarning() << "Plugin name :" << info.metaData.name() << " doesn't have correct plugin version. Please update it";
         }
     }
     QVector<ViewerPluginInfo>::iterator end(mPluginList.end());
