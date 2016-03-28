@@ -40,7 +40,7 @@
 
 #include <assert.h>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 BodyPartFormatterBaseFactoryPrivate::BodyPartFormatterBaseFactoryPrivate(BodyPartFormatterBaseFactory *factory)
     : q(factory)

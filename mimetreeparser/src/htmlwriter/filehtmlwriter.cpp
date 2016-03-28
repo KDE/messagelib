@@ -33,7 +33,7 @@
 
 #include "mimetreeparser_debug.h"
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 FileHtmlWriter::FileHtmlWriter(const QString &filename)

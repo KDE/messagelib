@@ -21,7 +21,7 @@
 
 #include <KMime/Message>
 
-class TestHtmlWriter : public MessageViewer::HtmlWriter
+class TestHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
     explicit TestHtmlWriter() {}
@@ -42,10 +42,10 @@ public:
     QString html;
 };
 
-class TestCSSHelper : public MessageViewer::CSSHelperBase
+class TestCSSHelper : public MimeTreeParser::CSSHelperBase
 {
 public:
-    TestCSSHelper() : MessageViewer::CSSHelperBase(0)
+    TestCSSHelper() : MimeTreeParser::CSSHelperBase(0)
     {
         for (int i = 0; i < 3; ++i) {
             mQuoteColor[i] = QColor(0x00, 0x80 - i * 0x10, 0x00);

@@ -28,7 +28,7 @@
 class QObject;
 class QTextCodec;
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 class HtmlWriter;
 class CSSHelperBase;
@@ -36,7 +36,7 @@ class AttachmentStrategy;
 class BodyPartFormatterBaseFactory;
 }
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 /**
@@ -56,7 +56,7 @@ public:
       * information to the user, for example KMail displays a HTML status bar.
       * Note: This is not called when the mode is "Normal".
       */
-    virtual void setHtmlMode(MessageViewer::Util::HtmlMode mode) = 0;
+    virtual void setHtmlMode(MimeTreeParser::Util::HtmlMode mode) = 0;
 
     /** Return true if the mail should be parsed as a html mail */
     virtual bool htmlMail() const = 0;

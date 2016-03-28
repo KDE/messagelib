@@ -41,7 +41,7 @@
 
 #include "mimetreeparser/objecttreeparser.h"
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 class HtmlWriter;
 
@@ -63,9 +63,9 @@ public:
     virtual QString text() const;
 
 private:
-    MessageViewer::HtmlWriter *htmlWriter();
+    MimeTreeParser::HtmlWriter *htmlWriter();
 
-    MessageViewer::HtmlWriter *mHtmlWriter;
+    MimeTreeParser::HtmlWriter *mHtmlWriter;
     const BodyPart *mPart;
 
     friend class BodyPartFormatter;
@@ -90,7 +90,7 @@ public:
 
     @return the result code (see above)
     */
-    virtual Result format(BodyPart *part, MessageViewer::HtmlWriter *writer) const = 0;
+    virtual Result format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const = 0;
 
     /**
       Variant of format that allows implementors to hook notifications up to
@@ -98,7 +98,7 @@ public:
 
       @return the result code (see above)
     */
-    virtual Result format(BodyPart *part, MessageViewer::HtmlWriter *writer, QObject *asyncResultObserver) const
+    virtual Result format(BodyPart *part, MimeTreeParser::HtmlWriter *writer, QObject *asyncResultObserver) const
     {
         Q_UNUSED(asyncResultObserver);
         return format(part, writer);

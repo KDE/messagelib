@@ -25,7 +25,7 @@
 
 #include <KMime/Content>
 
-namespace MessageViewer 
+namespace MimeTreeParser
 {
 /**
   1. Create a new partNode using 'content' data and Content-Description

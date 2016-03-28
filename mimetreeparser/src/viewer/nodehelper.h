@@ -36,7 +36,7 @@
 class QUrl;
 class QTextCodec;
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 namespace Interface
 {
@@ -48,7 +48,7 @@ namespace PimCommon
 {
 class AttachmentTemporaryFilesDirs;
 }
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 /**
@@ -253,7 +253,7 @@ public:
     QVector<KMime::Content *> attachmentsOfExtraContents() const;
 
 Q_SIGNALS:
-    void update(MessageViewer::UpdateMode);
+    void update(MimeTreeParser::UpdateMode);
 
 private:
     Q_DISABLE_COPY(NodeHelper)

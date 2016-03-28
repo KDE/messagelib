@@ -23,7 +23,7 @@
 
 #include <qtest.h>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 class AttachmentTest : public QObject
 {
@@ -38,7 +38,7 @@ QTEST_MAIN(AttachmentTest)
 
 void AttachmentTest::initTestCase()
 {
-    MessageViewer::Test::setupEnv();
+    MimeTreeParser::Test::setupEnv();
 }
 
 void AttachmentTest::testEncryptedAttachment_data()

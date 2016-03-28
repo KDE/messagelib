@@ -42,7 +42,7 @@ namespace KMime
 class Content;
 }
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class MIMETREEPARSER_EXPORT AttachmentStrategy

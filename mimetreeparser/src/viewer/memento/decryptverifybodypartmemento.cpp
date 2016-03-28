@@ -23,7 +23,7 @@
 
 using namespace Kleo;
 using namespace GpgME;
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 DecryptVerifyBodyPartMemento::DecryptVerifyBodyPartMemento(DecryptVerifyJob *job, const QByteArray &cipherText)
     : CryptoBodyPartMemento(),

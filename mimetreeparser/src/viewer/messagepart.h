@@ -44,7 +44,7 @@ namespace KMime
 class Content;
 }
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 class ObjectTreeParser;
 class ObjectTreeSourceIf;
@@ -70,7 +70,7 @@ protected:
 class EncapsulatedRFC822Block : public HTMLBlock
 {
 public:
-    EncapsulatedRFC822Block(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper *nodeHelper, KMime::Content *node);
+    EncapsulatedRFC822Block(MimeTreeParser::HtmlWriter *writer, MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node);
     virtual ~EncapsulatedRFC822Block();
 
 private:
@@ -85,7 +85,7 @@ private:
 class EncryptedBlock : public HTMLBlock
 {
 public:
-    EncryptedBlock(MessageViewer::HtmlWriter *writer, const PartMetaData &block);
+    EncryptedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block);
     virtual ~EncryptedBlock();
 
 private:
@@ -99,7 +99,7 @@ private:
 class SignedBlock : public HTMLBlock
 {
 public:
-    SignedBlock(MessageViewer::HtmlWriter *writer, const PartMetaData &block,
+    SignedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block,
                 const Kleo::CryptoBackend::Protocol *cryptoProto,
                 ObjectTreeSourceIf *source,
                 QString fromAddress, bool printing);
@@ -122,7 +122,7 @@ private:
 class CryptoBlock: public HTMLBlock
 {
 public:
-    CryptoBlock(MessageViewer::ObjectTreeParser *otp, MessageViewer::PartMetaData *block, const Kleo::CryptoBackend::Protocol *cryptoProto, MessageViewer::ObjectTreeSourceIf *source, const QString &fromAddress, KMime::Content *node);
+    CryptoBlock(MimeTreeParser::ObjectTreeParser *otp, MimeTreeParser::PartMetaData *block, const Kleo::CryptoBackend::Protocol *cryptoProto, MimeTreeParser::ObjectTreeSourceIf *source, const QString &fromAddress, KMime::Content *node);
     virtual ~CryptoBlock();
 
 private:
@@ -144,7 +144,7 @@ private:
 class AttachmentMarkBlock : public HTMLBlock
 {
 public:
-    AttachmentMarkBlock(MessageViewer::HtmlWriter *writer, KMime::Content *node);
+    AttachmentMarkBlock(MimeTreeParser::HtmlWriter *writer, KMime::Content *node);
     virtual ~AttachmentMarkBlock();
 
 private:
@@ -158,7 +158,7 @@ private:
 class TextBlock : public HTMLBlock
 {
 public:
-    TextBlock(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper *nodeHelper, KMime::Content *node, bool link);
+    TextBlock(MimeTreeParser::HtmlWriter *writer, MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node, bool link);
     virtual ~TextBlock();
 private:
     void internalEnter();
@@ -174,7 +174,7 @@ private:
 class HTMLWarnBlock : public HTMLBlock
 {
 public:
-    HTMLWarnBlock(MessageViewer::HtmlWriter *writer, const QString &msg);
+    HTMLWarnBlock(MimeTreeParser::HtmlWriter *writer, const QString &msg);
     virtual ~HTMLWarnBlock();
 private:
     void internalEnter();
@@ -190,7 +190,7 @@ private:
 class RootBlock : public HTMLBlock
 {
 public:
-    RootBlock(MessageViewer::HtmlWriter *writer);
+    RootBlock(MimeTreeParser::HtmlWriter *writer);
     virtual ~RootBlock();
 
 private:
@@ -239,7 +239,7 @@ class MimeMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<MimeMessagePart> Ptr;
-    MimeMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart);
+    MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart);
     virtual ~MimeMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -256,7 +256,7 @@ class MessagePartList : public MessagePart
 {
 public:
     typedef QSharedPointer<MessagePartList> Ptr;
-    MessagePartList(MessageViewer::ObjectTreeParser *otp);
+    MessagePartList(MimeTreeParser::ObjectTreeParser *otp);
     virtual ~MessagePartList();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -291,7 +291,7 @@ class TextMessagePart : public MessagePartList
 {
 public:
     typedef QSharedPointer<TextMessagePart> Ptr;
-    TextMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage, IconType asIcon);
+    TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage, IconType asIcon);
     virtual ~TextMessagePart();
 
     void html(bool decorate) Q_DECL_OVERRIDE;
@@ -316,7 +316,7 @@ class HtmlMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<HtmlMessagePart> Ptr;
-    HtmlMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, MessageViewer::ObjectTreeSourceIf *source);
+    HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, MimeTreeParser::ObjectTreeSourceIf *source);
     virtual ~HtmlMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -336,7 +336,7 @@ class AlternativeMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<AlternativeMessagePart> Ptr;
-    AlternativeMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode);
+    AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode);
     virtual ~AlternativeMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -359,7 +359,7 @@ class CertMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<CertMessagePart> Ptr;
-    CertMessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport);
+    CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport);
     virtual ~CertMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -376,7 +376,7 @@ class EncapsulatedRfc822MessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<EncapsulatedRfc822MessagePart> Ptr;
-    EncapsulatedRfc822MessagePart(MessageViewer::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
+    EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
     virtual ~EncapsulatedRfc822MessagePart();
 
     QString text() const Q_DECL_OVERRIDE;

@@ -26,7 +26,7 @@
 #include <viewer/attachmentstrategy.h>
 #include "viewer/bodypartformatterbasefactory.h"
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 namespace Test
@@ -41,11 +41,11 @@ void setupEnv();
 
 // We can't use EmptySource, since we need to control some emelnets of the source for tests to also test
 // loadExternal and htmlMail.
-class TestObjectTreeSource : public MessageViewer::ObjectTreeSourceIf
+class TestObjectTreeSource : public MimeTreeParser::ObjectTreeSourceIf
 {
 public:
-    TestObjectTreeSource(MessageViewer::HtmlWriter *writer,
-                         MessageViewer::CSSHelperBase *cssHelper)
+    TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
+                         MimeTreeParser::CSSHelperBase *cssHelper)
         : mWriter(writer)
         , mCSSHelper(cssHelper)
         , mAttachmentStrategy(QStringLiteral("smart"))
@@ -55,10 +55,10 @@ public:
     {
     }
 
-    MessageViewer::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
+    MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
         return mWriter;
     }
-    MessageViewer::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
+    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
         return mCSSHelper;
     }
 
@@ -126,7 +126,7 @@ public:
         return false;
     }
 
-    void setHtmlMode(MessageViewer::Util::HtmlMode mode) Q_DECL_OVERRIDE
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode) Q_DECL_OVERRIDE
     {
         Q_UNUSED(mode);
     }
@@ -153,8 +153,8 @@ public:
     }
 
 private:
-    MessageViewer::HtmlWriter *mWriter;
-    MessageViewer::CSSHelperBase *mCSSHelper;
+    MimeTreeParser::HtmlWriter *mWriter;
+    MimeTreeParser::CSSHelperBase *mCSSHelper;
     QString mAttachmentStrategy;
     BodyPartFormatterBaseFactory mBodyPartFormatterBaseFactory;
     bool mHtmlLoadExternal;

@@ -21,7 +21,7 @@
 #include <QByteArray>
 #include <QList>
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 enum PGPBlockType {
@@ -55,8 +55,8 @@ public:
 */
 QList<Block> prepareMessageForDecryption(const QByteArray &msg);
 
-} // namespace MessageViewer
+} // namespace MimeTreeParser
 
-Q_DECLARE_TYPEINFO(MessageViewer::Block, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_MOVABLE_TYPE);
 
 #endif

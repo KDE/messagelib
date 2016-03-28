@@ -31,11 +31,11 @@
 #include <QProcess>
 #include <QTest>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 void RenderTest::initTestCase()
 {
-    MessageViewer::Test::setupEnv();
+    MimeTreeParser::Test::setupEnv();
 }
 
 void RenderTest::testRenderSmart_data()
@@ -174,9 +174,9 @@ void RenderTest::testRender()
     // render the mail
     FileHtmlWriter fileWriter(outFileName);
     QImage paintDevice;
-    MessageViewer::TestCSSHelper cssHelper(&paintDevice);
+    MimeTreeParser::TestCSSHelper cssHelper(&paintDevice);
     NodeHelper nodeHelper;
-    MessageViewer::Test::TestObjectTreeSource testSource(&fileWriter, &cssHelper);
+    MimeTreeParser::Test::TestObjectTreeSource testSource(&fileWriter, &cssHelper);
     testSource.setAllowDecryption(true);
     testSource.setAttachmentStrategy(attachmentStrategy);
     ObjectTreeParser otp(&testSource, &nodeHelper);

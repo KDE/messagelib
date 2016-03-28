@@ -38,7 +38,7 @@
 #include <KMime/Content>
 
 #include "mimetreeparser_debug.h"
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 static AttachmentStrategy::Display smartDisplay(KMime::Content *node)

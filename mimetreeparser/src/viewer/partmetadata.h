@@ -24,7 +24,7 @@
 #include <QStringList>
 #include <qdatetime.h>
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class PartMetaData

@@ -23,7 +23,7 @@
 
 #include <QMimeDatabase>
 
-QMimeType MessageViewer::Util::mimetype(const QString &name)
+QMimeType MimeTreeParser::Util::mimetype(const QString &name)
 {
     QMimeDatabase db;
     // consider the filename if mimetype cannot be found by content-type
@@ -39,7 +39,7 @@ QMimeType MessageViewer::Util::mimetype(const QString &name)
     return db.mimeTypeForFile(name);
 }
 
-QString MessageViewer::Util::fileNameForMimetype(const QString &mimeType, int iconSize,
+QString MimeTreeParser::Util::fileNameForMimetype(const QString &mimeType, int iconSize,
         const QString &fallbackFileName1,
         const QString &fallbackFileName2)
 {

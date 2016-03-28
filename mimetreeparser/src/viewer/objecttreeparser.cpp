@@ -97,7 +97,7 @@
 #include <MessageCore/NodeHelper>
 #include <qtextdocument.h>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 using namespace MessageCore;
 
 ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
@@ -118,7 +118,7 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
 }
 
 ObjectTreeParser::ObjectTreeParser(ObjectTreeSourceIf *source,
-                                   MessageViewer::NodeHelper *nodeHelper,
+                                   MimeTreeParser::NodeHelper *nodeHelper,
                                    const Kleo::CryptoBackend::Protocol *protocol,
                                    bool showOnlyOneMimePart,
                                    const AttachmentStrategy *strategy)
@@ -298,12 +298,12 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
                     continue;
                 }
 
-                if (const auto mp = dynamic_cast<MessageViewer::MessagePart *>(result.data())) {
+                if (const auto mp = dynamic_cast<MimeTreeParser::MessagePart *>(result.data())) {
                     mp->setAttachmentFlag(node);
                     mpl->appendMessagePart(result);
                     bRendered = true;
                     break;
-                } else if (dynamic_cast<MessageViewer::Interface::MessagePart *>(result.data())) {
+                } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
                     QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
                     const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
                     if (r == Interface::BodyPartFormatter::AsIcon) {
@@ -415,17 +415,17 @@ MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, Process
         if (!(as && as->defaultDisplay(node) == AttachmentStrategy::None) ||
                 showOnlyOneMimePart()) {
             // Write the node as icon only
-            return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MessageViewer::IconExternal));
+            return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconExternal));
         } else {
             mNodeHelper->setNodeDisplayedHidden(node, true);
         }
     } else if (result.isImage()) {
         // Embed the image
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MessageViewer::IconInline));
+        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconInline));
     } else {
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MessageViewer::NoIcon));
+        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::NoIcon));
         result.setInlineSignatureState(mp->signatureState());
         result.setInlineEncryptionState(mp->encryptionState());
         return mp;
@@ -633,8 +633,8 @@ bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
                 if (allowAsync()) {
                     QObject::connect(newM, &CryptoBodyPartMemento::update,
                                      nodeHelper(), &NodeHelper::update);
-                    QObject::connect(newM, SIGNAL(update(MessageViewer::UpdateMode)), mSource->sourceObject(),
-                                     SLOT(update(MessageViewer::UpdateMode)));
+                    QObject::connect(newM, SIGNAL(update(MimeTreeParser::UpdateMode)), mSource->sourceObject(),
+                                     SLOT(update(MimeTreeParser::UpdateMode)));
                     if (newM->start()) {
                         decryptionStarted = true;
                         mHasPendingAsyncJobs = true;
@@ -763,7 +763,7 @@ MessagePart::Ptr ObjectTreeParser::processTextPlainSubtype(KMime::Content *curNo
                             && !label.isEmpty();
     const QString fileName = mNodeHelper->writeNodeToTempFile(curNode);
 
-    TextMessagePart::Ptr mp(new TextMessagePart(this, curNode, bDrawFrame, !fileName.isEmpty(), mSource->decryptMessage(), MessageViewer::NoIcon));
+    TextMessagePart::Ptr mp(new TextMessagePart(this, curNode, bDrawFrame, !fileName.isEmpty(), mSource->decryptMessage(), MimeTreeParser::NoIcon));
 
     result.setInlineSignatureState(mp->signatureState());
     result.setInlineEncryptionState(mp->encryptionState());
@@ -1189,8 +1189,8 @@ bool ObjectTreeParser::okVerify(const QByteArray &data, const Kleo::CryptoBacken
             if (allowAsync()) {
                 QObject::connect(m, &CryptoBodyPartMemento::update,
                                  mNodeHelper, &NodeHelper::update);
-                QObject::connect(m, SIGNAL(update(MessageViewer::UpdateMode)),
-                                 mSource->sourceObject(), SLOT(update(MessageViewer::UpdateMode)));
+                QObject::connect(m, SIGNAL(update(MimeTreeParser::UpdateMode)),
+                                 mSource->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));
 
                 if (m->start()) {
                     messagePart.inProgress = true;
@@ -1749,7 +1749,7 @@ CSSHelperBase *ObjectTreeParser::cssHelper() const
     return mSource->cssHelper();
 }
 
-MessageViewer::NodeHelper *ObjectTreeParser::nodeHelper() const
+MimeTreeParser::NodeHelper *ObjectTreeParser::nodeHelper() const
 {
     return mNodeHelper;
 }

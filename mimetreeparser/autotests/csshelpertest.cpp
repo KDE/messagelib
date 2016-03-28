@@ -22,7 +22,7 @@
 
 #include <QTest>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 QTEST_MAIN(CSSHelperTest)
 

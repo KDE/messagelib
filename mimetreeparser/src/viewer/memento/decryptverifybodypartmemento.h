@@ -32,7 +32,7 @@ namespace Kleo
 class DecryptVerifyJob;
 }
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class DecryptVerifyBodyPartMemento

@@ -34,7 +34,7 @@
 
 #include "viewer/csshelperbase.h"
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class TestCSSHelper : public CSSHelperBase

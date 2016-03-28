@@ -21,9 +21,9 @@
 
 #include <MessageCore/NodeHelper>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
-MimeMessagePart::Ptr MessageViewer::createAndParseTempNode(Interface::BodyPart &part, KMime::Content *parentNode, const char *content, const char *cntDesc)
+MimeMessagePart::Ptr MimeTreeParser::createAndParseTempNode(Interface::BodyPart &part, KMime::Content *parentNode, const char *content, const char *cntDesc)
 {
     KMime::Content *newNode = new KMime::Content();
     newNode->setContent(KMime::CRLFtoLF(content));
@@ -37,7 +37,7 @@ MimeMessagePart::Ptr MessageViewer::createAndParseTempNode(Interface::BodyPart &
     return MimeMessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, false));
 }
 
-KMime::Content *MessageViewer::findType(KMime::Content *content, const QByteArray &mimeType, bool deep, bool wide)
+KMime::Content *MimeTreeParser::findType(KMime::Content *content, const QByteArray &mimeType, bool deep, bool wide)
 {
     if ((!content->contentType()->isEmpty())
             && (mimeType.isEmpty()  || (mimeType == content->contentType()->mimeType()))) {

@@ -36,7 +36,7 @@
 #include "htmlwriter/queuehtmlwriter.h"
 #include "viewer/objecttreeparser.h"
 
-using namespace MessageViewer::Interface;
+using namespace MimeTreeParser::Interface;
 
 MessagePart::MessagePart()
     : mHtmlWriter(Q_NULLPTR)
@@ -66,7 +66,7 @@ QString MessagePart::text() const
     return QString();
 }
 
-MessageViewer::HtmlWriter *MessagePart::htmlWriter()
+MimeTreeParser::HtmlWriter *MessagePart::htmlWriter()
 {
     if (!mHtmlWriter) {
         mHtmlWriter = mPart->objectTreeParser()->htmlWriter();

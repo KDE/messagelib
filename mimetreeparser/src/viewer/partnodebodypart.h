@@ -44,12 +44,12 @@ namespace KMime
 class Content;
 }
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 class NodeHelper;
 }
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 /**

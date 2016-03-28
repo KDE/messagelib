@@ -34,7 +34,7 @@
 #ifndef __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_P_H__
 #define __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_P_H__
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 class BodyPartFormatterBaseFactory;
 

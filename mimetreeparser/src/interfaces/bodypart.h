@@ -42,7 +42,7 @@ namespace KMime
 class Content;
 }
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 class NodeHelper;
 class ObjectTreeParser;
@@ -191,14 +191,14 @@ public:
      * Ok, this is ugly, exposing the node helper here, but there is too much useful stuff in there
      * for real-world plugins. Still, there should be a nicer way for this.
      */
-    virtual MessageViewer::NodeHelper *nodeHelper() const = 0;
+    virtual MimeTreeParser::NodeHelper *nodeHelper() const = 0;
 
     /**
      * For making it easier to refactor, add objectTreeParser
      */
-    virtual MessageViewer::ObjectTreeParser *objectTreeParser() const = 0;
-    virtual MessageViewer::ObjectTreeSourceIf *source() const = 0;
-    virtual MessageViewer::ProcessResult *processResult() const = 0;
+    virtual MimeTreeParser::ObjectTreeParser *objectTreeParser() const = 0;
+    virtual MimeTreeParser::ObjectTreeSourceIf *source() const = 0;
+    virtual MimeTreeParser::ProcessResult *processResult() const = 0;
 };
 
 } // namespace Interface

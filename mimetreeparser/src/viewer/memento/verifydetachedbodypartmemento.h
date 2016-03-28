@@ -35,7 +35,7 @@ class KeyListJob;
 
 class QStringList;
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class VerifyDetachedBodyPartMemento

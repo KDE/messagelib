@@ -55,7 +55,7 @@ class Error;
 class ImportResult;
 }
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class PartMetaData;
@@ -372,7 +372,7 @@ private:
                        bool &decryptionStarted,
                        PartMetaData &partMetaData);
 
-    bool okVerify(const QByteArray &data, const Kleo::CryptoBackend::Protocol *cryptProto, MessageViewer::PartMetaData &messagePart, QByteArray &verifiedText, std::vector<GpgME::Signature> &signatures, const QByteArray &signature, KMime::Content *sign);
+    bool okVerify(const QByteArray &data, const Kleo::CryptoBackend::Protocol *cryptProto, MimeTreeParser::PartMetaData &messagePart, QByteArray &verifiedText, std::vector<GpgME::Signature> &signatures, const QByteArray &signature, KMime::Content *sign);
     void sigStatusToMetaData(const std::vector<GpgME::Signature> &signatures, const Kleo::CryptoBackend::Protocol *cryptoProtocol, PartMetaData &messagePart, GpgME::Key key);
 
 public:// (during refactoring)

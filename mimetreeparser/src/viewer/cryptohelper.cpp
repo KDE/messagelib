@@ -15,7 +15,7 @@
 
 #include "cryptohelper.h"
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 PGPBlockType Block::determineType() const
 {
@@ -44,7 +44,7 @@ PGPBlockType Block::determineType() const
     }
 }
 
-QList<Block> MessageViewer::prepareMessageForDecryption(const QByteArray &msg)
+QList<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
 {
     PGPBlockType pgpBlock = NoPgpBlock;
     QList<Block>  blocks;
@@ -139,7 +139,7 @@ Block::Block(const QByteArray &m, PGPBlockType t)
 
 }
 
-QByteArray MessageViewer::Block::text() const
+QByteArray MimeTreeParser::Block::text() const
 {
     return msg;
 }

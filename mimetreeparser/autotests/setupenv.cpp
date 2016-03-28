@@ -25,7 +25,7 @@
 #include <QFile>
 #include <QDir>
 
-void MessageViewer::Test::setupEnv()
+void MimeTreeParser::Test::setupEnv()
 {
     setenv("LC_ALL", "C", 1);
     setenv("KDEHOME", QFile::encodeName(QDir::homePath() + QString::fromLatin1("/.qttest")), 1);

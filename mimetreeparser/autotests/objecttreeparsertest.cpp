@@ -27,13 +27,13 @@
 
 #include <setupenv.h>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 QTEST_MAIN(ObjectTreeParserTester)
 
 void ObjectTreeParserTester::initTestCase()
 {
-    MessageViewer::Test::setupEnv();
+    MimeTreeParser::Test::setupEnv();
 }
 
 void ObjectTreeParserTester::test_parsePlainMessage()
@@ -94,7 +94,7 @@ void ObjectTreeParserTester::test_parseEncapsulatedMessage()
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
     NodeHelper nodeHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(msg.data());
 
@@ -129,7 +129,7 @@ void ObjectTreeParserTester::test_missingContentTypeHeader()
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
     NodeHelper nodeHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(msg.data());
 
@@ -147,7 +147,7 @@ void ObjectTreeParserTester::test_inlinePGPDecryption()
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
     NodeHelper nodeHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
 
     emptySource.setAllowDecryption(true);
@@ -172,7 +172,7 @@ void ObjectTreeParserTester::test_inlinePGPSigned()
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
     NodeHelper nodeHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
 
     emptySource.setAllowDecryption(true);
@@ -208,7 +208,7 @@ void ObjectTreeParserTester::test_HTMLasText()
 
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
     emptySource.setHtmlMail(false);
     otp.parseObjectTree(msg.data());
@@ -244,7 +244,7 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
 
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
 
     emptySource.setHtmlMail(false);
@@ -266,7 +266,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
     {
         TestHtmlWriter testWriter;
         TestCSSHelper testCSSHelper;
-        MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         otp.parseObjectTree(msg.data());
@@ -279,7 +279,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
     {
         TestHtmlWriter testWriter;
         TestCSSHelper testCSSHelper;
-        MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setHtmlLoadExternal(true);
@@ -309,7 +309,7 @@ void ObjectTreeParserTester::text_quoteHtml()
     QFETCH(QString, result);
     TestHtmlWriter testWriter;
     TestCSSHelper testCSSHelper;
-    MessageViewer::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
     QCOMPARE(otp.quotedHTML(data, false), result);
 }

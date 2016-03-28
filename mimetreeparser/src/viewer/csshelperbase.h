@@ -40,7 +40,7 @@
 class QString;
 class QPaintDevice;
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class MIMETREEPARSER_EXPORT CSSHelperBase

@@ -21,7 +21,7 @@
 
 #include <QObject>
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class CryptoHelperTest : public QObject

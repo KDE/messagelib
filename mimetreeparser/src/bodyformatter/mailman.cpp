@@ -28,7 +28,7 @@
 
 #include "mimetreeparser_debug.h"
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 const MailmanBodyPartFormatter *MailmanBodyPartFormatter::self;
 

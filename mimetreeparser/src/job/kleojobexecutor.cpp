@@ -29,7 +29,7 @@
 
 using namespace Kleo;
 using namespace GpgME;
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 using boost::shared_ptr;
 
 KleoJobExecutor::KleoJobExecutor(QObject *parent) : QObject(parent)

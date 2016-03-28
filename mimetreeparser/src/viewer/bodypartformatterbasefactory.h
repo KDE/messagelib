@@ -41,7 +41,7 @@
 
 class QString;
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 namespace Interface
@@ -57,7 +57,7 @@ struct ltstr {
 };
 
 typedef std::multimap<const char *, const Interface::BodyPartFormatter *, ltstr> SubtypeRegistry;
-typedef std::map<const char *, MessageViewer::SubtypeRegistry, MessageViewer::ltstr> TypeRegistry;
+typedef std::map<const char *, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
 
 class BodyPartFormatterBaseFactoryPrivate;
 

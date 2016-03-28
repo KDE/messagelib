@@ -22,7 +22,7 @@
 
 #include <grantlee/plaintextmarkupbuilder.h>
 #include <QTextDocument>
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 ConvertHtmlToPlainText::ConvertHtmlToPlainText()
 {
 

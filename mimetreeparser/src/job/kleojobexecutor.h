@@ -37,7 +37,7 @@ class VerifyDetachedJob;
 class VerifyOpaqueJob;
 }
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 /**

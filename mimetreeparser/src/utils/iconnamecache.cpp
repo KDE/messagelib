@@ -21,7 +21,7 @@
 
 #include <KIconLoader>
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 Q_GLOBAL_STATIC(IconNameCache, s_iconNameCache)
 

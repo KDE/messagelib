@@ -19,7 +19,7 @@
 #ifndef __MIMETREEPARSER_ENUMS_H__
 #define __MIMETREEPARSER_ENUMS_H__
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 /**

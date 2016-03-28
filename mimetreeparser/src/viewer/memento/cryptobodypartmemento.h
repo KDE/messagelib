@@ -26,7 +26,7 @@
 #include "interfaces/bodypart.h"
 #include "viewer/enums.h"
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class CryptoBodyPartMemento
@@ -54,12 +54,12 @@ public:
     void detach() Q_DECL_OVERRIDE;
 
 Q_SIGNALS:
-    void update(MessageViewer::UpdateMode);
+    void update(MimeTreeParser::UpdateMode);
 
 protected Q_SLOTS:
     void notify()
     {
-        Q_EMIT update(MessageViewer::Force);
+        Q_EMIT update(MimeTreeParser::Force);
     }
 
 protected:

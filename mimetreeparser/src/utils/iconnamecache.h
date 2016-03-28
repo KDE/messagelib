@@ -23,7 +23,7 @@
 #include <QString>
 #include "mimetreeparser_export.h"
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 /**

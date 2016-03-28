@@ -25,7 +25,7 @@
 #include <QString>
 class QMimeType;
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 /**

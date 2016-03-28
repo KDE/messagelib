@@ -23,7 +23,7 @@
 
 #include <KMime/Message>
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 class NodeHelperTest : public QObject

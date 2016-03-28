@@ -35,20 +35,20 @@ ConvertHtmlToPlainTextTest::~ConvertHtmlToPlainTextTest()
 
 void ConvertHtmlToPlainTextTest::shouldHaveDefaultValue()
 {
-    MessageViewer::ConvertHtmlToPlainText convert;
+    MimeTreeParser::ConvertHtmlToPlainText convert;
     QVERIFY(convert.htmlString().isEmpty());
 }
 
 void ConvertHtmlToPlainTextTest::shouldReturnEmptyStringIfInputTextIsEmpty()
 {
-    MessageViewer::ConvertHtmlToPlainText convert;
+    MimeTreeParser::ConvertHtmlToPlainText convert;
     convert.setHtmlString(QString());
     QVERIFY(convert.generatePlainText().isEmpty());
 }
 
 void ConvertHtmlToPlainTextTest::shouldReturnNotEmptyStringIfInputTextIsNotEmpty()
 {
-    MessageViewer::ConvertHtmlToPlainText convert;
+    MimeTreeParser::ConvertHtmlToPlainText convert;
     const QString str = QStringLiteral("foo bla");
     convert.setHtmlString(str);
     const QString result = convert.generatePlainText();
@@ -72,7 +72,7 @@ void ConvertHtmlToPlainTextTest::shouldConvertToPlainText()
     QFETCH(QString, inputText);
     QFETCH(QString, convertedText);
 
-    MessageViewer::ConvertHtmlToPlainText convert;
+    MimeTreeParser::ConvertHtmlToPlainText convert;
     convert.setHtmlString(inputText);
     const QString result = convert.generatePlainText();
     QVERIFY(!result.isEmpty());

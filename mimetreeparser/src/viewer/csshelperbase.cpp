@@ -35,7 +35,7 @@
 #include <QPaintDevice>
 #include <QPalette>
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 namespace

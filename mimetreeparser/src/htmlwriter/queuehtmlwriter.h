@@ -29,7 +29,7 @@
 class QString;
 class QByteArray;
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 /**
 \brief Cache HTML output and not write them directy.
@@ -50,7 +50,7 @@ struct Command {
 class MIMETREEPARSER_DEPRECATED_EXPORT QueueHtmlWriter : public HtmlWriter
 {
 public:
-    explicit QueueHtmlWriter(MessageViewer::HtmlWriter *base);
+    explicit QueueHtmlWriter(MimeTreeParser::HtmlWriter *base);
     virtual ~QueueHtmlWriter();
 
     void begin(const QString &cssDefs) Q_DECL_OVERRIDE;
@@ -69,6 +69,6 @@ private:
     QVector<Command> mQueue;
 };
 
-} // namespace MessageViewer
+} // namespace MimeTreeParser
 
 #endif // __MIMETREEPARSER_QUEUEHTMLWRITER_H__

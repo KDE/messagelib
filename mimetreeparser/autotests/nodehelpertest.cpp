@@ -22,7 +22,7 @@
 
 #include <qtest.h>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 NodeHelperTest::NodeHelperTest()
     : QObject()

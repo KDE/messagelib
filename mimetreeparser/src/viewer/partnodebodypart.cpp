@@ -40,7 +40,7 @@
 #include <QTextCodec>
 #include <QUrl>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 static int serial = 0;
 

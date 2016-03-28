@@ -45,12 +45,12 @@
 
 #include <KMime/Content>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 namespace
 {
 class AnyTypeBodyPartFormatter
-    : public MessageViewer::Interface::BodyPartFormatter
+    : public MimeTreeParser::Interface::BodyPartFormatter
 {
     static const AnyTypeBodyPartFormatter *self;
 public:
@@ -61,13 +61,13 @@ public:
     }
 
     // unhide the overload with three arguments
-    using MessageViewer::Interface::BodyPartFormatter::format;
+    using MimeTreeParser::Interface::BodyPartFormatter::format;
 
     void adaptProcessResult(ProcessResult &result) const Q_DECL_OVERRIDE
     {
         result.setNeverDisplayInline(true);
     }
-    static const MessageViewer::Interface::BodyPartFormatter *create()
+    static const MimeTreeParser::Interface::BodyPartFormatter *create()
     {
         if (!self) {
             self = new AnyTypeBodyPartFormatter();
@@ -79,7 +79,7 @@ public:
 const AnyTypeBodyPartFormatter *AnyTypeBodyPartFormatter::self = 0;
 
 class ImageTypeBodyPartFormatter
-    : public MessageViewer::Interface::BodyPartFormatter
+    : public MimeTreeParser::Interface::BodyPartFormatter
 {
     static const ImageTypeBodyPartFormatter *self;
 public:
@@ -89,14 +89,14 @@ public:
     }
 
     // unhide the overload with three arguments
-    using MessageViewer::Interface::BodyPartFormatter::format;
+    using MimeTreeParser::Interface::BodyPartFormatter::format;
 
     void adaptProcessResult(ProcessResult &result) const Q_DECL_OVERRIDE
     {
         result.setNeverDisplayInline(false);
         result.setIsImage(true);
     }
-    static const MessageViewer::Interface::BodyPartFormatter *create()
+    static const MimeTreeParser::Interface::BodyPartFormatter *create()
     {
         if (!self) {
             self = new ImageTypeBodyPartFormatter();
@@ -108,19 +108,19 @@ public:
 const ImageTypeBodyPartFormatter *ImageTypeBodyPartFormatter::self = 0;
 
 class MessageRfc822BodyPartFormatter
-    : public MessageViewer::Interface::BodyPartFormatter
+    : public MimeTreeParser::Interface::BodyPartFormatter
 {
     static const MessageRfc822BodyPartFormatter *self;
 public:
     Interface::MessagePart::Ptr process(Interface::BodyPart &) const Q_DECL_OVERRIDE;
-    MessageViewer::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE;
-    using MessageViewer::Interface::BodyPartFormatter::format;
-    static const MessageViewer::Interface::BodyPartFormatter *create();
+    MimeTreeParser::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE;
+    using MimeTreeParser::Interface::BodyPartFormatter::format;
+    static const MimeTreeParser::Interface::BodyPartFormatter *create();
 };
 
 const MessageRfc822BodyPartFormatter *MessageRfc822BodyPartFormatter::self;
 
-const MessageViewer::Interface::BodyPartFormatter *MessageRfc822BodyPartFormatter::create()
+const MimeTreeParser::Interface::BodyPartFormatter *MessageRfc822BodyPartFormatter::create()
 {
     if (!self) {
         self = new MessageRfc822BodyPartFormatter();
@@ -154,19 +154,19 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
 
 #define CREATE_BODY_PART_FORMATTER(subtype) \
     class subtype##BodyPartFormatter \
-        : public MessageViewer::Interface::BodyPartFormatter \
+        : public MimeTreeParser::Interface::BodyPartFormatter \
     { \
         static const subtype##BodyPartFormatter *self; \
     public: \
         Interface::MessagePart::Ptr process(Interface::BodyPart &part) const Q_DECL_OVERRIDE; \
-        MessageViewer::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE; \
-        using MessageViewer::Interface::BodyPartFormatter::format; \
-        static const MessageViewer::Interface::BodyPartFormatter *create(); \
+        MimeTreeParser::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE; \
+        using MimeTreeParser::Interface::BodyPartFormatter::format; \
+        static const MimeTreeParser::Interface::BodyPartFormatter *create(); \
     }; \
     \
     const subtype##BodyPartFormatter *subtype##BodyPartFormatter::self; \
     \
-    const MessageViewer::Interface::BodyPartFormatter *subtype##BodyPartFormatter::create() { \
+    const MimeTreeParser::Interface::BodyPartFormatter *subtype##BodyPartFormatter::create() { \
         if ( !self ) { \
             self = new subtype##BodyPartFormatter(); \
         } \
@@ -176,7 +176,7 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
         return part.objectTreeParser()->process##subtype##Subtype(part.content(), *part.processResult()); \
     } \
     \
-    MessageViewer::Interface::BodyPartFormatter::Result subtype##BodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const { \
+    MimeTreeParser::Interface::BodyPartFormatter::Result subtype##BodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const { \
         Q_UNUSED(writer) \
         const auto p = process(*part);\
         const auto mp = static_cast<MessagePart *>(p.data());\

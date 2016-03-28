@@ -36,7 +36,7 @@
 #include <QPalette>
 #include <QApplication>
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 TestCSSHelper::TestCSSHelper(const QPaintDevice *pd) :

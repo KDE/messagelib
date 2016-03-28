@@ -46,7 +46,7 @@
 #include <KLocalizedString>
 #include <KEmailAddress>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 /** Checks whether @p str contains external references. To be precise,
     we only check whether @p str contains 'xxx="http[s]:' where xxx is
@@ -131,7 +131,7 @@ CryptoBlock::~CryptoBlock()
 
 void CryptoBlock::internalEnter()
 {
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
     if (writer && !entered) {
         entered = true;
         if (mMetaData->isEncapsulatedRfc822Message) {
@@ -158,7 +158,7 @@ void CryptoBlock::internalExit()
     entered = false;
 }
 
-EncapsulatedRFC822Block::EncapsulatedRFC822Block(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper *nodeHelper, KMime::Content *node)
+EncapsulatedRFC822Block::EncapsulatedRFC822Block(MimeTreeParser::HtmlWriter *writer, MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node)
     : mWriter(writer)
     , mNodeHelper(nodeHelper)
     , mNode(node)
@@ -202,7 +202,7 @@ void EncapsulatedRFC822Block::internalExit()
     entered = false;
 }
 
-EncryptedBlock::EncryptedBlock(MessageViewer::HtmlWriter *writer, const PartMetaData &block)
+EncryptedBlock::EncryptedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block)
     : mWriter(writer)
     , mBlock(block)
 {
@@ -247,7 +247,7 @@ void EncryptedBlock::internalExit()
     entered = false;
 }
 
-SignedBlock::SignedBlock(MessageViewer::HtmlWriter *writer, const PartMetaData &block,
+SignedBlock::SignedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block,
                          const Kleo::CryptoBackend::Protocol *cryptoProto,
                          ObjectTreeSourceIf *source,
                          QString fromAddress, bool printing)
@@ -881,7 +881,7 @@ void SignedBlock::internalExit()
     entered = false;
 }
 
-AttachmentMarkBlock::AttachmentMarkBlock(MessageViewer::HtmlWriter *writer, KMime::Content *node)
+AttachmentMarkBlock::AttachmentMarkBlock(MimeTreeParser::HtmlWriter *writer, KMime::Content *node)
     : mNode(node)
     , mWriter(writer)
 {
@@ -913,7 +913,7 @@ void AttachmentMarkBlock::internalExit()
     entered = false;
 }
 
-TextBlock::TextBlock(MessageViewer::HtmlWriter *writer, MessageViewer::NodeHelper *nodeHelper, KMime::Content *node, bool link)
+TextBlock::TextBlock(MimeTreeParser::HtmlWriter *writer, MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node, bool link)
     : mWriter(writer)
     , mNodeHelper(nodeHelper)
     , mNode(node)
@@ -1090,7 +1090,7 @@ void MessagePart::setText(const QString &text)
 
 void MessagePart::html(bool decorate)
 {
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
 
     if (!writer) {
         return;
@@ -1240,7 +1240,7 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
         return;
     }
 
-    if (mAsIcon == MessageViewer::NoIcon) {
+    if (mAsIcon == MimeTreeParser::NoIcon) {
         parseContent();
     }
 }
@@ -1267,7 +1267,7 @@ void TextMessagePart::parseContent()
 
     if (!blocks.isEmpty()) {
 
-        if (blocks.count() > 1 || blocks.at(0).type() != MessageViewer::NoPgpBlock) {
+        if (blocks.count() > 1 || blocks.at(0).type() != MimeTreeParser::NoPgpBlock) {
             mOtp->setCryptoProtocol(cryptProto);
         }
 
@@ -1342,14 +1342,14 @@ void TextMessagePart::html(bool decorate)
 {
     const HTMLBlock::Ptr aBlock(attachmentBlock());
     HTMLBlock::Ptr block;
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
 
     if (mDrawFrame) {
         block = HTMLBlock::Ptr(new TextBlock(writer, mOtp->nodeHelper(), mNode, mShowLink));
     }
 
-    if (mAsIcon != MessageViewer::NoIcon) {
-        mOtp->writePartIcon(mNode, (mAsIcon == MessageViewer::IconInline));
+    if (mAsIcon != MimeTreeParser::NoIcon) {
+        mOtp->writePartIcon(mNode, (mAsIcon == MimeTreeParser::IconInline));
     } else {
         MessagePartList::htmlInternal(decorate);
     }
@@ -1415,7 +1415,7 @@ QString HtmlMessagePart::processHtml(const QString &htmlSource, QString &extraHe
 void HtmlMessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate);
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
     if (!writer) {
         return;
     }
@@ -1543,7 +1543,7 @@ bool AlternativeMessagePart::viewHtml() const
 
 void AlternativeMessagePart::html(bool decorate)
 {
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
 
     if (!writer) {
         return;
@@ -1620,7 +1620,7 @@ CertMessagePart::~CertMessagePart()
 void CertMessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate);
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
 
     if (!writer) {
         return;
@@ -1831,7 +1831,7 @@ void CryptoMessagePart::writeDeferredDecryptionBlock() const
     Q_ASSERT(mMetaData.isEncrypted);
     Q_ASSERT(!decryptMessage());
 
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
     if (!writer) {
         return;
     }
@@ -1851,7 +1851,7 @@ void CryptoMessagePart::writeDeferredDecryptionBlock() const
 void CryptoMessagePart::html(bool decorate)
 {
     bool hideErrors = false;
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
 
     if (!writer) {
         return;
@@ -1928,7 +1928,7 @@ void EncapsulatedRfc822MessagePart::html(bool decorate)
         return;
     }
 
-    MessageViewer::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
 
     if (!writer) {
         return;

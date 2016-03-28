@@ -24,7 +24,7 @@
 #include<QByteArray>
 #include<QString>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 QueueHtmlWriter::QueueHtmlWriter(HtmlWriter *base)
     : HtmlWriter()

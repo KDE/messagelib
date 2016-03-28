@@ -23,7 +23,7 @@
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
 
-namespace MessageViewer 
+namespace MimeTreeParser
 {
 
 class MailmanBodyPartFormatter : public Interface::BodyPartFormatter

@@ -47,7 +47,7 @@
 #include <QMimeType>
 #include <QFileDevice>
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 
 QStringList replySubjPrefixes(QStringList() << QStringLiteral("Re\\s*:") << QStringLiteral("Re\\[\\d+\\]:") << QStringLiteral("Re\\d+:"));

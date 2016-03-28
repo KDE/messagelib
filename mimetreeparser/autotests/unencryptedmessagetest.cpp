@@ -23,7 +23,7 @@
 
 #include <qtest.h>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 class UnencryptedMessageTest : public QObject
 {

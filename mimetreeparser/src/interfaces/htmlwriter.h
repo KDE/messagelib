@@ -36,7 +36,7 @@
 class QByteArray;
 class QString;
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 /**
   * @short An interface for HTML sinks.

@@ -29,7 +29,7 @@
 
 using namespace Kleo;
 using namespace GpgME;
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 VerifyOpaqueBodyPartMemento::VerifyOpaqueBodyPartMemento(VerifyOpaqueJob *job,
         KeyListJob   *klj,
