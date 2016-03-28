@@ -111,34 +111,6 @@ if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
 
-set(libmessageviewer_otp_SRCS
-    interfaces/bodypartformatter.cpp
-    viewer/bodypartformatter.cpp
-    viewer/bodypartformatterbasefactory.cpp
-    viewer/cryptohelper.cpp
-    viewer/nodehelper.cpp
-    viewer/objecttreeparser.cpp
-    viewer/messagepart.cpp
-    viewer/partnodebodypart.cpp
-    viewer/memento/cryptobodypartmemento.cpp
-    viewer/memento/decryptverifybodypartmemento.cpp
-    viewer/memento/verifydetachedbodypartmemento.cpp
-    viewer/memento/verifyopaquebodypartmemento.cpp
-    )
-
-set(libmessageviewer_otp_extra_SRCS
-    job/kleojobexecutor.cpp
-    #for quotes
-    viewer/csshelperbase.cpp
-    viewer/attachmentstrategy.cpp
-    utils/iconnamecache.cpp
-    utils/mimetype.cpp
-    viewer/converthtmltoplaintext.cpp
-    #HTML Writer
-    htmlwriter/filehtmlwriter.cpp
-    htmlwriter/queuehtmlwriter.cpp
-    )
-
 set(libmessageviewer_viewer_SRCS
     viewer/bodypartformatterfactory.cpp
     viewer/bodypartformatterfactorysingleton.cpp
