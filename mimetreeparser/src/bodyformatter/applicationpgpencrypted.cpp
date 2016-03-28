@@ -36,14 +36,16 @@ using namespace MimeTreeParser;
 
 const ApplicationPGPEncryptedBodyPartFormatter *ApplicationPGPEncryptedBodyPartFormatter::self;
 
-const Interface::BodyPartFormatter *ApplicationPGPEncryptedBodyPartFormatter::create() {
-    if ( !self ) {
+const Interface::BodyPartFormatter *ApplicationPGPEncryptedBodyPartFormatter::create()
+{
+    if (!self) {
         self = new ApplicationPGPEncryptedBodyPartFormatter();
     }
     return self;
 }
 
-Interface::BodyPartFormatter::Result ApplicationPGPEncryptedBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const {
+Interface::BodyPartFormatter::Result ApplicationPGPEncryptedBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
+{
     Q_UNUSED(writer)
     const auto p = process(*part);
     const auto mp = static_cast<MessagePart *>(p.data());
@@ -54,13 +56,14 @@ Interface::BodyPartFormatter::Result ApplicationPGPEncryptedBodyPartFormatter::f
     return Failed;
 }
 
-Interface::MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(Interface::BodyPart &part) const {
-    KMime::Content *node (part.content());
-   
+Interface::MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(Interface::BodyPart &part) const
+{
+    KMime::Content *node(part.content());
+
     if (node->decodedContent().trimmed() != "Version: 1") {
-       qCWarning(MIMETREEPARSER_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
+        qCWarning(MIMETREEPARSER_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
     }
-    
+
     KMime::Content *data = findType(part.content(), "application/octet-stream", false, true);
 
     if (!data) {

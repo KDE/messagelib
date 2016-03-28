@@ -106,19 +106,18 @@ public:
         return false;
     }
 
-    const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE
-    {
-	return &mBodyPartFormatterBaseFactory;
+    const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE {
+        return &mBodyPartFormatterBaseFactory;
     }
 
     bool decryptMessage() const Q_DECL_OVERRIDE
     {
-	return mDecryptMessage;
+        return mDecryptMessage;
     }
 
     void setAllowDecryption(bool allowDecryption)
     {
-	mDecryptMessage = allowDecryption;
+        mDecryptMessage = allowDecryption;
     }
 
     bool showSignatureDetails() const Q_DECL_OVERRIDE
@@ -126,8 +125,7 @@ public:
         return false;
     }
 
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode) Q_DECL_OVERRIDE
-    {
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode) Q_DECL_OVERRIDE {
         Q_UNUSED(mode);
     }
 
@@ -136,20 +134,17 @@ public:
         return 1;
     }
 
-    const QTextCodec *overrideCodec() Q_DECL_OVERRIDE
-    {
-	return Q_NULLPTR;
+    const QTextCodec *overrideCodec() Q_DECL_OVERRIDE {
+        return Q_NULLPTR;
     }
 
-    QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE
-    {
+    QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE {
         Q_UNUSED(message);
         return QString(); //do nothing
     }
 
-    QObject *sourceObject() Q_DECL_OVERRIDE
-    {
-	return Q_NULLPTR;
+    QObject *sourceObject() Q_DECL_OVERRIDE {
+        return Q_NULLPTR;
     }
 
 private:

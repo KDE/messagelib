@@ -74,7 +74,7 @@ void BodyPartFormatterBaseFactoryPrivate::insert(const char *type, const char *s
     TypeRegistry::iterator type_it = all->find(type);
     if (type_it == all->end()) {
         qCDebug(MIMETREEPARSER_LOG) << "BodyPartFormatterBaseFactory: instantiating new Subtype Registry for \""
-                                   << type << "\"";
+                                    << type << "\"";
         type_it = all->insert(std::make_pair(type, SubtypeRegistry())).first;
         assert(type_it != all->end());
     }
@@ -167,7 +167,7 @@ SubtypeRegistry::const_iterator BodyPartFormatterBaseFactory::createForIterator(
 
     if (!(*subtype_it).second) {
         qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterBaseFactory: a null bodypart formatter sneaked in for \""
-                                     << type << "/" << subtype << "\"!";
+                                      << type << "/" << subtype << "\"!";
     }
 
     return subtype_it;

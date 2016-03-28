@@ -32,13 +32,15 @@ using namespace MimeTreeParser;
 
 const MailmanBodyPartFormatter *MailmanBodyPartFormatter::self;
 
-const Interface::BodyPartFormatter *MailmanBodyPartFormatter::create() {
-    if ( !self ) {
+const Interface::BodyPartFormatter *MailmanBodyPartFormatter::create()
+{
+    if (!self) {
         self = new MailmanBodyPartFormatter();
     }
     return self;
 }
-Interface::BodyPartFormatter::Result MailmanBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const {
+Interface::BodyPartFormatter::Result MailmanBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
+{
     Q_UNUSED(writer)
     const auto p = process(*part);
     const auto mp = static_cast<MessagePart *>(p.data());
@@ -49,7 +51,7 @@ Interface::BodyPartFormatter::Result MailmanBodyPartFormatter::format(Interface:
     return Failed;
 }
 
-bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content* curNode) const
+bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content *curNode) const
 {
     if (!curNode || curNode->head().isEmpty()) {
         return false;

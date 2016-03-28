@@ -281,7 +281,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType);
         while (true) {
             auto range =  sub.equal_range(subType);
-            for (auto it=range.first; it != range.second; ++it) {
+            for (auto it = range.first; it != range.second; ++it) {
                 const auto formatter = (*it).second;
                 if (!formatter) {
                     continue;
@@ -736,7 +736,6 @@ MessagePart::Ptr ObjectTreeParser::processTextHtmlSubtype(KMime::Content *curNod
     return mp;
 }
 
-
 void ObjectTreeParser::extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart)
 {
     if (isFirstTextPart) {
@@ -846,7 +845,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartSignedSubtype(KMime::Content 
     assert(signedData);
     if (node->contents().size() != 2) {
         qCDebug(MIMETREEPARSER_LOG) << "mulitpart/signed must have exactly two child parts!" << endl
-                                   << "processing as multipart/mixed";
+                                    << "processing as multipart/mixed";
 
         return MessagePart::Ptr(new MimeMessagePart(this, signedData, false));
     }
@@ -858,7 +857,7 @@ MessagePart::Ptr ObjectTreeParser::processMultiPartSignedSubtype(KMime::Content 
     const QString signatureContentType = QLatin1String(signature->contentType()->mimeType().toLower());
     if (protocolContentType.isEmpty()) {
         qCWarning(MIMETREEPARSER_LOG) << "Message doesn't set the protocol for the multipart/signed content-type, "
-                                     "using content-type of the signature:" << signatureContentType;
+                                      "using content-type of the signature:" << signatureContentType;
         protocolContentType = signatureContentType;
     }
 
