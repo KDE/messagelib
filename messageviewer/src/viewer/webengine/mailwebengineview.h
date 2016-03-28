@@ -40,6 +40,7 @@ public:
 
     void saveMainFrameScreenshotInFile(const QString &filename);
     void showAccessKeys();
+    bool isScrolledToBottom() const;
 
     void setElementByIdVisible(const QString &id, bool visible);
     bool removeAttachmentMarking(const QString &id);

@@ -167,6 +167,13 @@ void MailWebEngineView::showAccessKeys()
     d->mWebViewAccessKey->showAccessKeys();
 }
 
+bool MailWebEngineView::isScrolledToBottom() const
+{
+    //Convert as async
+    //TODO '(window.innerHeight + window.scrollY) >= document.body.offsetHeight)'
+    return false;
+}
+
 void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)
 {
     page()->runJavaScript(MessageViewer::WebEngineScript::setElementByIdVisible(id, visible));
