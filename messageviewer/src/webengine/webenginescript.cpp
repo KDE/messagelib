@@ -120,7 +120,7 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
                                                "    var geometry = element.getBoundingClientRect(); "
                                                "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
                                                "}").arg(elementStr);
-    qDebug()<<" source "<<source;
+    //qDebug()<<" source "<<source;
     return source;
 }
 
@@ -146,7 +146,7 @@ QString WebEngineScript::scrollDown(int pixel)
 QString WebEngineScript::scrollToPosition(const QPoint &pos)
 {
     const QString source = QString::fromLatin1("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x()).arg(pos.y());
-    qDebug()<<" source "<<source;
+    //qDebug()<<" source "<<source;
     return source;
 }
 
