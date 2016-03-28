@@ -51,10 +51,10 @@ void ViewerPluginInterface::setText(const QString &text)
     // Reimplement in subclass.
 }
 
-QAction *ViewerPluginInterface::action() const
+QList<QAction *> ViewerPluginInterface::actions() const
 {
     // Reimplement in subclass
-    return Q_NULLPTR;
+    return {};
 }
 
 void ViewerPluginInterface::setUrl(const QUrl &url)

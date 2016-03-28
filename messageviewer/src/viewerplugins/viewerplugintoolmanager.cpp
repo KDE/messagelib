@@ -96,10 +96,10 @@ QList<QAction *> ViewerPluginToolManagerPrivate::actionList(ViewerPluginInterfac
     QList<QAction *> lstAction;
     Q_FOREACH (MessageViewer::ViewerPluginInterface *interface, mListInterface) {
         if (features & ViewerPluginInterface::All) {
-            lstAction.append(interface->action());
+            lstAction.append(interface->actions());
         } else {
             if (interface->featureTypes() & features) {
-                lstAction.append(interface->action());
+                lstAction.append(interface->actions());
             }
         }
     }

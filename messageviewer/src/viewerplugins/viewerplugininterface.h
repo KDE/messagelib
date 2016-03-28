@@ -46,7 +46,7 @@ public:
     virtual void execute();
 
     virtual void setText(const QString &text);
-    virtual QAction *action() const;
+    virtual QList<QAction *> actions() const;
     virtual void setUrl(const QUrl &url);
     virtual void setMessage(const KMime::Message::Ptr &value);
     virtual void setMessageItem(const Akonadi::Item &item);
