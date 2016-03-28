@@ -37,10 +37,13 @@
 class QString;
 class QPoint;
 
-namespace MessageViewer
+namespace MessasgeViewer
 {
-
 class ViewerPrivate;
+}
+
+namespace MimeTreeParser
+{
 
 /**
   * @short An interface to reader link handlers
@@ -59,7 +62,7 @@ public:
       * @return true if the click was handled by this URLHandler,
       *         false otherwise.
       */
-    virtual bool handleClick(const QUrl &url, ViewerPrivate *w) const = 0;
+    virtual bool handleClick(const QUrl &url, MessageViewer::ViewerPrivate *w) const = 0;
 
     /**
       * Called when RMB-clicking on a link in the reader. Should show
@@ -69,7 +72,7 @@ public:
       * @return true if the right-click was handled by this
       * URLHandler, false otherwise.
       */
-    virtual bool handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w) const = 0;
+    virtual bool handleContextMenuRequest(const QUrl &url, const QPoint &p, MessageViewer::ViewerPrivate *w) const = 0;
 
     /**
       * Called when hovering over a link.
@@ -77,13 +80,13 @@ public:
       * @return a string to be shown in the status bar while hoverin
       * over this link.
       */
-    virtual QString statusBarMessage(const QUrl &url, ViewerPrivate *w) const = 0;
+    virtual QString statusBarMessage(const QUrl &url, MessageViewer::ViewerPrivate *w) const = 0;
 
     /**
      * Called when shift-clicking the link in the reader.
      * @return true if the click was handled by this URLHandler, false otherwise
      */
-    virtual bool handleShiftClick(const QUrl &url, ViewerPrivate *window) const
+    virtual bool handleShiftClick(const QUrl &url, MessageViewer::ViewerPrivate *window) const
     {
         Q_UNUSED(url);
         Q_UNUSED(window);
@@ -93,7 +96,7 @@ public:
     /**
      * @return should return true if this URLHandler will handle the drag
      */
-    virtual bool willHandleDrag(const QUrl &url, ViewerPrivate *window) const
+    virtual bool willHandleDrag(const QUrl &url, MessageViewer::ViewerPrivate *window) const
     {
         Q_UNUSED(url);
         Q_UNUSED(window);
@@ -105,7 +108,7 @@ public:
      * If the drag is handled, you should create a drag object.
      * @return true if the click was handled by this URLHandler, false otherwise
      */
-    virtual bool handleDrag(const QUrl &url, ViewerPrivate *window) const
+    virtual bool handleDrag(const QUrl &url, MessageViewer::ViewerPrivate *window) const
     {
         Q_UNUSED(url);
         Q_UNUSED(window);

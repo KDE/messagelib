@@ -48,7 +48,7 @@ class MailWebView;
 namespace MessageViewer
 {
 
-class WebKitPartHtmlWriter : public QObject, public HtmlWriter
+class WebKitPartHtmlWriter : public QObject, public MimeTreeParser::HtmlWriter
 {
     Q_OBJECT
 public:

@@ -39,7 +39,7 @@
 namespace MessageViewer
 {
 
-class MESSAGEVIEWER_EXPORT CSSHelper : public CSSHelperBase
+class MESSAGEVIEWER_EXPORT CSSHelper : public MimeTreeParser::CSSHelperBase
 {
 public:
     explicit CSSHelper(const QPaintDevice *pd);

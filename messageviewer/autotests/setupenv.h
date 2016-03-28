@@ -43,8 +43,8 @@ void setupEnv();
 class TestObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
-    TestObjectTreeSource(MessageViewer::HtmlWriter *writer,
-                         MessageViewer::CSSHelperBase *cssHelper)
+    TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
+                         MimeTreeParser::CSSHelperBase *cssHelper)
         : mWriter(writer)
         , mCSSHelper(cssHelper)
         , mAttachmentStrategy(QStringLiteral("smart"))
@@ -53,10 +53,10 @@ public:
     {
     }
 
-    MessageViewer::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
+    MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
         return mWriter;
     }
-    MessageViewer::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
+    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
         return mCSSHelper;
     }
 
@@ -85,8 +85,8 @@ public:
         mAttachmentStrategy = strategy;
     }
 
-    const AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE {
-        return  AttachmentStrategy::create(mAttachmentStrategy);
+    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE {
+        return  MimeTreeParser::AttachmentStrategy::create(mAttachmentStrategy);
     }
 
     bool autoImportKeys() const Q_DECL_OVERRIDE
@@ -105,8 +105,8 @@ public:
     }
 
 private:
-    MessageViewer::HtmlWriter *mWriter;
-    MessageViewer::CSSHelperBase *mCSSHelper;
+    MimeTreeParser::HtmlWriter *mWriter;
+    MimeTreeParser::CSSHelperBase *mCSSHelper;
     QString mAttachmentStrategy;
     bool mHtmlLoadExternal;
     bool mHtmlMail;

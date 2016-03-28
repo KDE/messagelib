@@ -909,7 +909,7 @@ void AttachmentControllerBase::showAddAttachmentFileDialog()
                                          d->wParent,
                                          i18nc("@title:window", "Attach File"));
     if (!result.URLs.isEmpty()) {
-        const QString encoding = MessageViewer::NodeHelper::fixEncoding(result.encoding);
+        const QString encoding = MimeTreeParser::NodeHelper::fixEncoding(result.encoding);
         const int numberOfFiles(result.URLs.count());
         for (int i = 0; i < numberOfFiles; ++i) {
             const QUrl url = result.URLs.at(i);

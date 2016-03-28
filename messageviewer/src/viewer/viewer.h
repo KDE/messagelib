@@ -36,6 +36,11 @@ class Item;
 class ItemFetchJob;
 }
 
+namespace MimeTreeParser
+{
+class AttachmentStrategy;
+}
+
 class KActionCollection;
 class QAction;
 class KToggleAction;
@@ -49,7 +54,6 @@ class QResizeEvent;
 namespace MessageViewer
 {
 class HeaderStylePlugin;
-class AttachmentStrategy;
 class CSSHelper;
 class ViewerPrivate;
 
@@ -147,7 +151,7 @@ public:
     * @param msg - the message to be shown. If 0, an empty page is displayed.
     * @param updateMode - update the display immediately or not. See UpdateMode.
     */
-    void setMessage(const KMime::Message::Ptr &message, UpdateMode updateMode = Delayed);
+    void setMessage(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /**
     * Set the Akonadi item that will be displayed.
@@ -155,7 +159,7 @@ public:
     *               an empty page is shown.
     * @param updateMode - update the display immediately or not. See UpdateMode.
     */
-    void setMessageItem(const Akonadi::Item &item, UpdateMode updateMode = Delayed);
+    void setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /**
     * The path to the message in terms of Akonadi collection hierarchy.
@@ -178,9 +182,9 @@ public:
     * returned by message() to 0.
     * @param updateMode - update the display immediately or not. See UpdateMode.
     */
-    void clear(UpdateMode updateMode = Delayed);
+    void clear(MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
-    void update(UpdateMode updateMode = Delayed);
+    void update(MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /**
     * Sets a message as the current one and print it immediately.
@@ -249,8 +253,8 @@ public:
     * Initiates a delete, by sending a signal to delete the message item */
     void deleteMessage();
 
-    const AttachmentStrategy *attachmentStrategy() const;
-    void setAttachmentStrategy(const AttachmentStrategy *strategy);
+    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() const;
+    void setAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *strategy);
 
     QString overrideEncoding() const;
     void setOverrideEncoding(const QString &encoding);

@@ -41,7 +41,7 @@
 namespace MessageViewer
 {
 
-class MESSAGEVIEWER_EXPORT BodyPartFormatterFactory : public BodyPartFormatterBaseFactory
+class MESSAGEVIEWER_EXPORT BodyPartFormatterFactory : public MimeTreeParser::BodyPartFormatterBaseFactory
 {
 public:
     BodyPartFormatterFactory();

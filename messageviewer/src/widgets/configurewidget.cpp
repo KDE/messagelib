@@ -56,7 +56,7 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
     d->mSettingsUi->setupUi(this);
     layout()->setContentsMargins(0, 0, 0, 0);
 
-    QStringList encodings = NodeHelper::supportedEncodings(false);
+    QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
     encodings.prepend(i18n("Auto"));
     d->mSettingsUi->overrideCharacterEncoding->addItems(encodings);
     d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
@@ -90,7 +90,7 @@ void ConfigureWidget::writeConfig()
     MessageCore::MessageCoreSettings::self()->setOverrideCharacterEncoding(
         d->mSettingsUi->overrideCharacterEncoding->currentIndex() == 0 ?
         QString() :
-        NodeHelper::encodingForName(d->mSettingsUi->overrideCharacterEncoding->currentText()));
+        MimeTreeParser::NodeHelper::encodingForName(d->mSettingsUi->overrideCharacterEncoding->currentText()));
 }
 
 void ConfigureWidget::readCurrentOverrideCodec()
@@ -100,13 +100,13 @@ void ConfigureWidget::readCurrentOverrideCodec()
         d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
         return;
     }
-    QStringList encodings = NodeHelper::supportedEncodings(false);
+    QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
     encodings.prepend(i18n("Auto"));
     QStringList::ConstIterator it(encodings.constBegin());
     const QStringList::ConstIterator end(encodings.constEnd());
     int i = 0;
     for (; it != end; ++it) {
-        if (NodeHelper::encodingForName(*it) == currentOverrideEncoding) {
+        if (MimeTreeParser::NodeHelper::encodingForName(*it) == currentOverrideEncoding) {
             d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(i);
             break;
         }

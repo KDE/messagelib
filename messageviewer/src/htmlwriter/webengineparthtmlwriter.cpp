@@ -27,7 +27,7 @@
 using namespace MessageViewer;
 
 WebEnginePartHtmlWriter::WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent)
-    : QObject(parent), HtmlWriter(),
+    : QObject(parent), MimeTreeParser::HtmlWriter(),
       mHtmlView(view), mState(Ended)
 {
     assert(view);

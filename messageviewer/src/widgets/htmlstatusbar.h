@@ -73,7 +73,7 @@ public:
     ~HtmlStatusBar();
 
     /** @return current mode. */
-    Util::HtmlMode mode() const;
+    MimeTreeParser::Util::HtmlMode mode() const;
     bool isHtml() const;
     bool isNormal() const;
     bool isMultipartHtml() const;
@@ -91,7 +91,7 @@ public Q_SLOTS:
     /** Switch to "multipart plain mode". */
     void setMultipartPlainMode();
     /** Switch to mode @p m */
-    void setMode(Util::HtmlMode m, UpdateMode mode = Update);
+    void setMode(MimeTreeParser::Util::HtmlMode m, UpdateMode mode = Update);
 
 Q_SIGNALS:
     /** The user has clicked the status bar. */
@@ -106,7 +106,7 @@ private:
     QColor bgColor() const;
     QColor fgColor() const;
 
-    Util::HtmlMode mMode;
+    MimeTreeParser::Util::HtmlMode mMode;
 };
 
 }

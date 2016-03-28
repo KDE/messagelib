@@ -95,7 +95,7 @@ TemplateParser::TemplateParser(const KMime::Message::Ptr &amsg, const Mode amode
     mEmptySource = new MessageViewer::EmptySource;
     mEmptySource->setAllowDecryption(mAllowDecryption);
 
-    mOtp = new MessageViewer::ObjectTreeParser(mEmptySource);
+    mOtp = new MimeTreeParser::ObjectTreeParser(mEmptySource);
     mOtp->setAllowAsync(false);
 }
 

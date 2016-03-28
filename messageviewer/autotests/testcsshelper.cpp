@@ -40,7 +40,7 @@ namespace MessageViewer
 {
 
 TestCSSHelper::TestCSSHelper(const QPaintDevice *pd) :
-    CSSHelperBase(pd)
+    MimeTreeParser::CSSHelperBase(pd)
 {
     mRecycleQuoteColors = false;
     mBackgroundColor = QColor(0xff, 0xff, 0xff);

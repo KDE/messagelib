@@ -25,7 +25,7 @@
 
 // Objecttreeparser needs a valid html writer othewise it doesn't parse
 // inline messages, so give it one to chew on.
-class TestHtmlWriter : public MessageViewer::HtmlWriter
+class TestHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
     explicit TestHtmlWriter() {}

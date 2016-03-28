@@ -37,7 +37,7 @@
 namespace MessageViewer
 {
 
-class TestCSSHelper : public CSSHelperBase
+class TestCSSHelper : public MimeTreeParser::CSSHelperBase
 {
 public:
     explicit TestCSSHelper(const QPaintDevice *pd);

@@ -45,7 +45,7 @@
 using namespace MessageViewer;
 
 WebKitPartHtmlWriter::WebKitPartHtmlWriter(MailWebView *view, QObject *parent)
-    : QObject(parent), HtmlWriter(),
+    : QObject(parent), MimeTreeParser::HtmlWriter(),
       mHtmlView(view), mState(Ended)
 {
     assert(view);

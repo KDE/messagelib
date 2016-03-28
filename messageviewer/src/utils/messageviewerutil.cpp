@@ -145,7 +145,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
     } else {
         // only one item, get the desired filename
         KMime::Content *content = contents.first();
-        QString fileName = NodeHelper::fileName(content);
+        QString fileName = MimeTreeParser::NodeHelper::fileName(content);
         fileName = MessageCore::StringUtil::cleanFileName(fileName);
         if (fileName.isEmpty()) {
             fileName = i18nc("filename for an unnamed attachment", "attachment.1");
@@ -166,7 +166,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
         QUrl curUrl;
         if (!dirUrl.isEmpty()) {
             curUrl = dirUrl;
-            QString fileName = MessageViewer::NodeHelper::fileName(content);
+            QString fileName = MimeTreeParser::NodeHelper::fileName(content);
             fileName = MessageCore::StringUtil::cleanFileName(fileName);
             if (fileName.isEmpty()) {
                 ++unnamedAtmCount;
@@ -260,9 +260,9 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
     //        password dialog for decrypting messages is shown twice)
 #if 0 // totally broken
     KMime::Content *topContent  = content->topLevel();
-    MessageViewer::NodeHelper *mNodeHelper = new MessageViewer::NodeHelper;
+    MimeTreeParser::NodeHelper *mNodeHelper = new MimeTreeParser::NodeHelper;
     bool bSaveEncrypted = false;
-    bool bEncryptedParts = mNodeHelper->encryptionState(content) != MessageViewer::KMMsgNotEncrypted;
+    bool bEncryptedParts = mNodeHelper->encryptionState(content) != MimeTreeParser::KMMsgNotEncrypted;
     if (bEncryptedParts)
         if (KMessageBox::questionYesNo(parent,
                                        i18n("The part %1 of the message is encrypted. Do you want to keep the encryption when saving?",
@@ -273,7 +273,7 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
         }
 
     bool bSaveWithSig = true;
-    if (mNodeHelper->signatureState(content) != MessageViewer::KMMsgNotSigned)
+    if (mNodeHelper->signatureState(content) != MessageViewer::MimeTreeParser::KMMsgNotSigned)
         if (KMessageBox::questionYesNo(parent,
                                        i18n("The part %1 of the message is signed. Do you want to keep the signature when saving?",
                                             url.fileName()),
@@ -290,16 +290,16 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
         if (!bSaveWithSig) {
             if (topContent->contentType()->mimeType() == "multipart/signed")  {
                 // carefully look for the part that is *not* the signature part:
-                if (ObjectTreeParser::findType(topContent, "application/pgp-signature", true, false)) {
-                    dataNode = ObjectTreeParser::findTypeNot(topContent, "application", "pgp-signature", true, false);
-                } else if (ObjectTreeParser::findType(topContent, "application/pkcs7-mime", true, false)) {
-                    dataNode = ObjectTreeParser::findTypeNot(topContent, "application", "pkcs7-mime", true, false);
+                if (MimeTreeParser::ObjectTreeParser::findType(topContent, "application/pgp-signature", true, false)) {
+                    dataNode = MimeTreeParser::ObjectTreeParser ::findTypeNot(topContent, "application", "pgp-signature", true, false);
+                } else if (MimeTreeParser::ObjectTreeParser::findType(topContent, "application/pkcs7-mime", true, false)) {
+                    dataNode = MimeTreeParser::ObjectTreeParser ::findTypeNot(topContent, "application", "pkcs7-mime", true, false);
                 } else {
-                    dataNode = ObjectTreeParser::findTypeNot(topContent, "multipart", "", true, false);
+                    dataNode = MimeTreeParser::ObjectTreeParser ::findTypeNot(topContent, "multipart", "", true, false);
                 }
             } else {
                 EmptySource emptySource;
-                ObjectTreeParser otp(&emptySource, 0, 0, false, false);
+                MimeTreeParser::ObjectTreeParser otp(&emptySource, 0, 0, false, false);
 
                 // process this node and all it's siblings and descendants
                 mNodeHelper->setNodeUnprocessed(dataNode, true);
@@ -400,7 +400,7 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
     const Akonadi::Item msgBase = retrievedMsgs.first();
 
     if (msgBase.hasPayload<KMime::Message::Ptr>()) {
-        fileName = MessageCore::StringUtil::cleanFileName(MessageViewer::NodeHelper::cleanSubject(msgBase.payload<KMime::Message::Ptr>().data()).trimmed());
+        fileName = MessageCore::StringUtil::cleanFileName(MimeTreeParser::NodeHelper::cleanSubject(msgBase.payload<KMime::Message::Ptr>().data()).trimmed());
         fileName.remove(QLatin1Char('\"'));
     } else {
         fileName = i18n("message");

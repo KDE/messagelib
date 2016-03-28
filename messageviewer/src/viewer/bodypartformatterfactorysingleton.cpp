@@ -34,12 +34,12 @@
 
 using namespace MessageViewer;
 
-static QSharedPointer<BodyPartFormatterBaseFactory> singleton;
+static QSharedPointer<MimeTreeParser::BodyPartFormatterBaseFactory> singleton;
 
-const BodyPartFormatterBaseFactory *MessageViewer::bodyPartFormatterBaseFactoryInstance()
+const MimeTreeParser::BodyPartFormatterBaseFactory *MessageViewer::bodyPartFormatterBaseFactoryInstance()
 {
     if (!singleton) {
-        singleton = QSharedPointer<BodyPartFormatterBaseFactory>(new BodyPartFormatterFactory());
+        singleton = QSharedPointer<MimeTreeParser::BodyPartFormatterBaseFactory>(new BodyPartFormatterFactory());
     }
 
     return singleton.data();

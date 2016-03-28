@@ -42,12 +42,15 @@ class QPoint;
 
 namespace MessageViewer
 {
+class ViewerPrivate;
+}
+
+namespace MimeTreeParser
+{
 namespace Interface
 {
 class BodyPartURLHandler;
 }
-
-class ViewerPrivate;
 class URLHandler;
 }
 
@@ -68,11 +71,11 @@ public:
 
     static URLHandlerManager *instance();
 
-    void registerHandler(const URLHandler *handler);
-    void unregisterHandler(const URLHandler *handler);
+    void registerHandler(const MimeTreeParser::URLHandler *handler);
+    void unregisterHandler(const MimeTreeParser::URLHandler *handler);
 
-    void registerHandler(const Interface::BodyPartURLHandler *handler);
-    void unregisterHandler(const Interface::BodyPartURLHandler *handler);
+    void registerHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
+    void unregisterHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
 
     bool handleClick(const QUrl &url, ViewerPrivate *w = Q_NULLPTR) const;
     bool handleShiftClick(const QUrl &url, ViewerPrivate *window = Q_NULLPTR) const;
@@ -82,7 +85,7 @@ public:
     QString statusBarMessage(const QUrl &url, ViewerPrivate *w = Q_NULLPTR) const;
 
 private:
-    typedef QVector<const URLHandler *> HandlerList;
+    typedef QVector<const MimeTreeParser::URLHandler *> HandlerList;
     HandlerList mHandlers;
     class BodyPartURLHandlerManager;
     BodyPartURLHandlerManager *mBodyPartURLHandlerManager;

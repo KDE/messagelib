@@ -156,14 +156,14 @@ void CryptoComposerTest::testEncryptSameAttachments()
     TestCSSHelper testCSSHelper;
     MessageComposer::Test::TestObjectTreeSource testSource(&testWriter, &testCSSHelper);
     testSource.setAllowDecryption(true);
-    MessageViewer::NodeHelper *nh = new MessageViewer::NodeHelper;
-    MessageViewer::ObjectTreeParser otp(&testSource, nh);
-    MessageViewer::ProcessResult pResult(nh);
+    MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
+    MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
+    MimeTreeParser::ProcessResult pResult(nh);
 
     otp.parseObjectTree(message.data());
     KMime::Message::Ptr  unencrypted = nh->unencryptedMessage(message);
 
-    KMime::Content *testAttachment = MessageViewer::ObjectTreeParser::findType(unencrypted.data(), "x-some", "x-type", true, true);
+    KMime::Content *testAttachment = MimeTreeParser::ObjectTreeParser::findType(unencrypted.data(), "x-some", "x-type", true, true);
 
     QCOMPARE(testAttachment->body(), QString::fromLatin1("abc").toUtf8());
     QCOMPARE(testAttachment->contentDisposition()->filename(), QString::fromLatin1("anattachment.txt"));

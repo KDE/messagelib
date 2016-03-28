@@ -46,7 +46,7 @@ namespace MessageViewer
 {
 
 CSSHelper::CSSHelper(const QPaintDevice *pd) :
-    CSSHelperBase(pd)
+    MimeTreeParser::CSSHelperBase(pd)
 {
     const KColorScheme scheme(QPalette::Active, KColorScheme::View);
 

@@ -370,12 +370,12 @@ void MessageFactoryTest::testCreateMDN()
       TestHtmlWriter testWriter;
       TestCSSHelper testCSSHelper;
       TestObjectTreeSource testSource( &testWriter, &testCSSHelper );
-      MessageViewer::NodeHelper* nh = new MessageViewer::NodeHelper;
-      MessageViewer::ObjectTreeParser otp( &testSource, nh, 0, false, true, 0 );
-      MessageViewer::ProcessResult pResult( nh ); */
+      MimeTreeParser::NodeHelper* nh = new MimeTreeParser::NodeHelper;
+      MimeTreeParser::ObjectTreeParser otp( &testSource, nh, 0, false, true, 0 );
+      MimeTreeParser::ProcessResult pResult( nh ); */
 
 //   qDebug() << MessageCore::NodeHelper::firstChild( mdn->mainBodyPart() )->encodedContent();
-//   qDebug() << MessageCore::NodeHelper::next(  MessageViewer::ObjectTreeParser::findType( mdn.data(), "multipart", "report", true, true ) )->body();
+//   qDebug() << MessageCore::NodeHelper::next(  MimeTreeParser::ObjectTreeParser::findType( mdn.data(), "multipart", "report", true, true ) )->body();
 
     QString mdnContent = QString::fromLatin1("The message sent on %1 to %2 with subject \"%3\" has been displayed. "
                          "This is no guarantee that the message has been read or understood.");
@@ -384,7 +384,7 @@ void MessageFactoryTest::testCreateMDN()
 
     qDebug() << "comparing with:" << mdnContent;
 
-    QCOMPARE_OR_DIFF(MessageCore::NodeHelper::next(MessageViewer::ObjectTreeParser::findType(mdn.data(), "multipart", "report", true, true))->body(),
+    QCOMPARE_OR_DIFF(MessageCore::NodeHelper::next(MimeTreeParser::ObjectTreeParser::findType(mdn.data(), "multipart", "report", true, true))->body(),
                      mdnContent.toLatin1());
 }
 

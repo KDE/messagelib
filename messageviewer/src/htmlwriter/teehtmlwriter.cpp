@@ -34,8 +34,8 @@
 namespace MessageViewer
 {
 
-TeeHtmlWriter::TeeHtmlWriter(HtmlWriter *writer1, HtmlWriter *writer2)
-    : HtmlWriter()
+TeeHtmlWriter::TeeHtmlWriter(HtmlWriter *writer1, MimeTreeParser::HtmlWriter *writer2)
+    : MimeTreeParser::HtmlWriter()
 {
     if (writer1) {
         mWriters.append(writer1);

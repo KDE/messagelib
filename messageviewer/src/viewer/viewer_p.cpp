@@ -157,7 +157,7 @@ static QAtomicInt _k_attributeInitialized;
 ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
                              KActionCollection *actionCollection)
     : QObject(aParent),
-      mNodeHelper(new NodeHelper),
+      mNodeHelper(new MimeTreeParser::NodeHelper),
       mViewer(0),
       mFindBar(0),
       mAttachmentStrategy(0),
@@ -325,12 +325,12 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QString &name)
     }
 
     if (!mimetype.isValid() || mimetype.name() == QLatin1String("application/octet-stream")) {
-        mimetype = Util::mimetype(name);
+        mimetype = MimeTreeParser::Util::mimetype(name);
     }
     KService::Ptr offer =
         KMimeTypeTrader::self()->preferredService(mimetype.name(), QStringLiteral("Application"));
 
-    const QString filenameText = NodeHelper::fileName(node);
+    const QString filenameText = MimeTreeParser::NodeHelper::fileName(node);
 
     AttachmentDialog dialog(mMainWindow, filenameText, offer ? offer->name() : QString(),
                             QLatin1String("askSave_") + mimetype.name());
@@ -430,7 +430,7 @@ void ViewerPrivate::itemModifiedResult(KJob *job)
     if (job->error()) {
         qCDebug(MESSAGEVIEWER_LOG) << "Item update failed:" << job->errorString();
     } else {
-        setMessageItem(mMessageItem, MessageViewer::Force);
+        setMessageItem(mMessageItem, MimeTreeParser::Force);
     }
 }
 
@@ -667,7 +667,7 @@ KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
 
     if (!mimetype.isValid() || mimetype.name() == QLatin1String("application/octet-stream")) {
         /*TODO(Andris) port when on-demand loading is done   && msgPart.isComplete() */
-        mimetype = MessageViewer::Util::mimetype(fileName);
+        mimetype = MimeTreeParser::Util::mimetype(fileName);
     }
     return KMimeTypeTrader::self()->preferredService(mimetype.name(), QStringLiteral("Application"));
 }
@@ -714,7 +714,7 @@ void ViewerPrivate::attachmentOpen(KMime::Content *node)
     attachmentOpenWith(node, offer);
 }
 
-HtmlWriter *ViewerPrivate::htmlWriter() const
+MimeTreeParser::HtmlWriter *ViewerPrivate::htmlWriter() const
 {
     return mHtmlWriter;
 }
@@ -724,7 +724,7 @@ CSSHelper *ViewerPrivate::cssHelper() const
     return mCSSHelper;
 }
 
-MessageViewer::NodeHelper *ViewerPrivate::nodeHelper() const
+MimeTreeParser::NodeHelper *ViewerPrivate::nodeHelper() const
 {
     return mNodeHelper;
 }
@@ -814,7 +814,7 @@ void ViewerPrivate::displayMessage()
 
     // Don't update here, parseMsg() can overwrite the HTML mode, which would lead to flicker.
     // It is updated right after parseMsg() instead.
-    mColorBar->setMode(Util::Normal, HtmlStatusBar::NoUpdate);
+    mColorBar->setMode(MimeTreeParser::Util::Normal, HtmlStatusBar::NoUpdate);
 
     if (mMessageItem.hasAttribute<ErrorAttribute>()) {
         //TODO: Insert link to clear error so that message might be resent
@@ -883,7 +883,7 @@ void ViewerPrivate::collectionFetchedForStoringDecryptedMessage(KJob *job)
     }
 }
 
-void ViewerPrivate::postProcessMessage(ObjectTreeParser *otp, KMMsgEncryptionState encryptionState)
+void ViewerPrivate::postProcessMessage(MimeTreeParser::ObjectTreeParser *otp, MimeTreeParser::KMMsgEncryptionState encryptionState)
 {
     if (MessageViewer::MessageViewerSettings::self()->storeDisplayedMessagesUnencrypted()) {
 
@@ -899,8 +899,8 @@ void ViewerPrivate::postProcessMessage(ObjectTreeParser *otp, KMMsgEncryptionSta
         //       by deciding when (or when not, resp.) to set the 'dataNode' to
         //       something different than 'curNode'.
 
-        const bool messageAtLeastPartiallyEncrypted = (KMMsgFullyEncrypted == encryptionState) ||
-                (KMMsgPartiallyEncrypted == encryptionState);
+        const bool messageAtLeastPartiallyEncrypted = (MimeTreeParser::KMMsgFullyEncrypted == encryptionState) ||
+                (MimeTreeParser::KMMsgPartiallyEncrypted == encryptionState);
         // only proceed if we were called the normal way - not by
         // double click on the message (==not running in a separate window)
         if (decryptMessage() && // only proceed if the message has actually been decrypted
@@ -951,7 +951,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     mNodeHelper->removeTempFiles();
     mNodeHelper->setNodeUnprocessed(mMessage.data(), true);
     MailViewerSource otpSource(this);
-    ObjectTreeParser otp(&otpSource, mNodeHelper, 0, mMessage.data() != content /* show only single node */);
+    MimeTreeParser::ObjectTreeParser otp(&otpSource, mNodeHelper, 0, mMessage.data() != content /* show only single node */);
     otp.setAllowAsync(!mPrinting);
     otp.setPrinting(mPrinting);
     otp.parseObjectTree(content);
@@ -961,13 +961,13 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     // of messages that were parsed at least once
     // store encrypted/signed status information in the KMMessage
     //  - this can only be done *after* calling parseObjectTree()
-    KMMsgEncryptionState encryptionState = mNodeHelper->overallEncryptionState(content);
-    KMMsgSignatureState  signatureState  = mNodeHelper->overallSignatureState(content);
+    MimeTreeParser::KMMsgEncryptionState encryptionState = mNodeHelper->overallEncryptionState(content);
+    MimeTreeParser::KMMsgSignatureState signatureState  = mNodeHelper->overallSignatureState(content);
     mNodeHelper->setEncryptionState(content, encryptionState);
     // Don't reset the signature state to "not signed" (e.g. if one canceled the
     // decryption of a signed messages which has already been decrypted before).
-    if (signatureState != KMMsgNotSigned ||
-            mNodeHelper->signatureState(content) == KMMsgSignatureStateUnknown) {
+    if (signatureState != MimeTreeParser::KMMsgNotSigned ||
+            mNodeHelper->signatureState(content) == MimeTreeParser::KMMsgSignatureStateUnknown) {
         mNodeHelper->setSignatureState(content, signatureState);
     }
 
@@ -1123,7 +1123,7 @@ void ViewerPrivate::readConfig()
         mHeaderStyleMenuManager->readConfig();
     }
 
-    setAttachmentStrategy(AttachmentStrategy::create(MessageViewer::MessageViewerSettings::self()->attachmentStrategy()));
+    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::create(MessageViewer::MessageViewerSettings::self()->attachmentStrategy()));
     KToggleAction *raction = actionForAttachmentStrategy(attachmentStrategy());
     if (raction) {
         raction->setChecked(true);
@@ -1174,18 +1174,18 @@ void ViewerPrivate::writeConfig(bool sync)
     }
 }
 
-const AttachmentStrategy *ViewerPrivate::attachmentStrategy() const
+const MimeTreeParser::AttachmentStrategy *ViewerPrivate::attachmentStrategy() const
 {
     return mAttachmentStrategy;
 }
 
-void ViewerPrivate::setAttachmentStrategy(const AttachmentStrategy *strategy)
+void ViewerPrivate::setAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *strategy)
 {
     if (mAttachmentStrategy == strategy) {
         return;
     }
-    mAttachmentStrategy = strategy ? strategy : AttachmentStrategy::smart();
-    update(Force);
+    mAttachmentStrategy = strategy ? strategy : MimeTreeParser::AttachmentStrategy::smart();
+    update(MimeTreeParser::Force);
 }
 
 QString ViewerPrivate::overrideEncoding() const
@@ -1207,7 +1207,7 @@ void ViewerPrivate::setOverrideEncoding(const QString &encoding)
             const QStringList encodings = mSelectEncodingAction->items();
             int i = 0;
             for (QStringList::const_iterator it = encodings.constBegin(), end = encodings.constEnd(); it != end; ++it, ++i) {
-                if (NodeHelper::encodingForName(*it) == encoding) {
+                if (MimeTreeParser::NodeHelper::encodingForName(*it) == encoding) {
                     mSelectEncodingAction->setCurrentItem(i);
                     break;
                 }
@@ -1221,7 +1221,7 @@ void ViewerPrivate::setOverrideEncoding(const QString &encoding)
             }
         }
     }
-    update(Force);
+    update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::setPrinting(bool enable)
@@ -1233,14 +1233,14 @@ void ViewerPrivate::printMessage(const Akonadi::Item &message)
 {
     disconnect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
     connect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
-    setMessageItem(message, Force);
+    setMessageItem(message, MimeTreeParser::Force);
 }
 
 void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
 {
     disconnect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
     connect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
-    setMessageItem(message, Force);
+    setMessageItem(message, MimeTreeParser::Force);
 }
 
 void ViewerPrivate::resetStateForNewMessage()
@@ -1275,7 +1275,7 @@ void ViewerPrivate::resetStateForNewMessage()
 }
 
 void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message,
-                                       UpdateMode updateMode)
+                                       MimeTreeParser::UpdateMode updateMode)
 {
     mViewerPluginToolManager->updateActions(mMessageItem);
     mMessage = message;
@@ -1290,7 +1290,7 @@ void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message,
 
 }
 
-void ViewerPrivate::setMessageItem(const Akonadi::Item &item, UpdateMode updateMode)
+void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode)
 {
     resetStateForNewMessage();
     foreach (const Akonadi::Item::Id monitoredId, mMonitor.itemsMonitoredEx()) {
@@ -1313,7 +1313,7 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, UpdateMode updateM
     setMessageInternal(mMessageItem.payload<KMime::Message::Ptr>(), updateMode);
 }
 
-void ViewerPrivate::setMessage(const KMime::Message::Ptr &aMsg, UpdateMode updateMode)
+void ViewerPrivate::setMessage(const KMime::Message::Ptr &aMsg, MimeTreeParser::UpdateMode updateMode)
 {
     resetStateForNewMessage();
 
@@ -1338,7 +1338,7 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
         if (node->bodyIsMessage()) {
             mMainWindow->setWindowTitle(node->bodyAsMessage()->subject()->asUnicodeString());
         } else {
-            QString windowTitle = NodeHelper::fileName(node);
+            QString windowTitle = MimeTreeParser::NodeHelper::fileName(node);
             if (windowTitle.isEmpty()) {
                 windowTitle = node->contentDescription()->asUnicodeString();
             }
@@ -1498,12 +1498,12 @@ void ViewerPrivate::createWidgets()
 void ViewerPrivate::slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin)
 {
     mHeaderStylePlugin = plugin;
-    update(Force);
+    update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::slotStyleUpdated()
 {
-    update(Force);
+    update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::createActions()
@@ -1570,7 +1570,7 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("encoding"), mSelectEncodingAction);
     connect(mSelectEncodingAction, SIGNAL(triggered(int)),
             SLOT(slotSetEncoding()));
-    QStringList encodings = NodeHelper::supportedEncodings(false);
+    QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
     encodings.prepend(i18n("Auto"));
     mSelectEncodingAction->setItems(encodings);
     mSelectEncodingAction->setCurrentItem(0);
@@ -1777,21 +1777,21 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
 
 }
 
-KToggleAction *ViewerPrivate::actionForAttachmentStrategy(const AttachmentStrategy *as)
+KToggleAction *ViewerPrivate::actionForAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *as)
 {
     if (!mActionCollection) {
         return 0;
     }
     QString actionName;
-    if (as == AttachmentStrategy::iconic()) {
+    if (as == MimeTreeParser::AttachmentStrategy::iconic()) {
         actionName = QStringLiteral("view_attachments_as_icons");
-    } else if (as == AttachmentStrategy::smart()) {
+    } else if (as == MimeTreeParser::AttachmentStrategy::smart()) {
         actionName = QStringLiteral("view_attachments_smart");
-    } else if (as == AttachmentStrategy::inlined()) {
+    } else if (as == MimeTreeParser::AttachmentStrategy::inlined()) {
         actionName = QStringLiteral("view_attachments_inline");
-    } else if (as == AttachmentStrategy::hidden()) {
+    } else if (as == MimeTreeParser::AttachmentStrategy::hidden()) {
         actionName = QStringLiteral("view_attachments_hide");
-    } else if (as == AttachmentStrategy::headerOnly()) {
+    } else if (as == MimeTreeParser::AttachmentStrategy::headerOnly()) {
         actionName = QStringLiteral("view_attachments_headeronly");
     }
 
@@ -1864,7 +1864,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             }
         }
     } else {
-        NodeHelper::AttachmentDisplayInfo info = NodeHelper::attachmentDisplayInfo(node);
+        MimeTreeParser::NodeHelper::AttachmentDisplayInfo info = MimeTreeParser::NodeHelper::attachmentDisplayInfo(node);
         if (info.displayInHeader) {
             html += QLatin1String("<div style=\"float:left;\">");
             html += QStringLiteral("<span style=\"white-space:nowrap; border-width: 0px; border-left-width: 5px; border-color: %1; 2px; border-left-style: solid;\">").arg(bgColor.name());
@@ -1926,10 +1926,10 @@ const QTextCodec *ViewerPrivate::codecForName(const QByteArray &_str)
     return KCharsets::charsets()->codecForName(QLatin1String(codec));
 }
 
-void ViewerPrivate::update(MessageViewer::UpdateMode updateMode)
+void ViewerPrivate::update(MimeTreeParser::UpdateMode updateMode)
 {
     // Avoid flicker, somewhat of a cludge
-    if (updateMode == Force) {
+    if (updateMode == MimeTreeParser::Force) {
         // stop the timer to avoid calling updateReaderWin twice
         mUpdateReaderWinTimer.stop();
         saveRelativePosition();
@@ -2023,7 +2023,7 @@ void ViewerPrivate::slotLoadExternalReference()
         return;
     }
     setHtmlLoadExtOverride(true);
-    update(Force);
+    update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::slotToggleHtmlMode()
@@ -2034,7 +2034,7 @@ void ViewerPrivate::slotToggleHtmlMode()
     mScamDetectionWarning->setVisible(false);
     const bool useHtml  = !htmlMail();
     setDisplayFormatMessageOverwrite(useHtml ? MessageViewer::Viewer::Html : MessageViewer::Viewer::Text);
-    update(Force);
+    update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::slotFind()
@@ -2049,7 +2049,7 @@ void ViewerPrivate::slotFind()
 void ViewerPrivate::slotToggleFixedFont()
 {
     mUseFixedFont = !mUseFixedFont;
-    update(Force);
+    update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::slotToggleMimePartTree()
@@ -2152,7 +2152,7 @@ void ViewerPrivate::slotMimePartSelected(const QModelIndex &index)
 #ifndef QT_NO_TREEVIEW
     KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
     if (!mMimePartTree->mimePartModel()->parent(index).isValid() && index.row() == 0) {
-        update(Force);
+        update(MimeTreeParser::Force);
     } else {
         setMessagePart(content);
     }
@@ -2161,27 +2161,27 @@ void ViewerPrivate::slotMimePartSelected(const QModelIndex &index)
 
 void ViewerPrivate::slotIconicAttachments()
 {
-    setAttachmentStrategy(AttachmentStrategy::iconic());
+    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::iconic());
 }
 
 void ViewerPrivate::slotSmartAttachments()
 {
-    setAttachmentStrategy(AttachmentStrategy::smart());
+    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::smart());
 }
 
 void ViewerPrivate::slotInlineAttachments()
 {
-    setAttachmentStrategy(AttachmentStrategy::inlined());
+    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::inlined());
 }
 
 void ViewerPrivate::slotHideAttachments()
 {
-    setAttachmentStrategy(AttachmentStrategy::hidden());
+    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::hidden());
 }
 
 void ViewerPrivate::slotHeaderOnlyAttachments()
 {
-    setAttachmentStrategy(AttachmentStrategy::headerOnly());
+    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::headerOnly());
 }
 
 void ViewerPrivate::attachmentView(KMime::Content *atmNode)
@@ -2240,9 +2240,9 @@ void ViewerPrivate::slotSetEncoding()
     if (mSelectEncodingAction->currentItem() == 0) { // Auto
         mOverrideEncoding.clear();
     } else {
-        mOverrideEncoding = NodeHelper::encodingForName(mSelectEncodingAction->currentText());
+        mOverrideEncoding = MimeTreeParser::NodeHelper::encodingForName(mSelectEncodingAction->currentText());
     }
-    update(Force);
+    update(MimeTreeParser::Force);
 }
 
 QString ViewerPrivate::picsPath()
@@ -2309,7 +2309,7 @@ void ViewerPrivate::injectAttachments()
 
 void ViewerPrivate::slotSettingsChanged()
 {
-    update(Force);
+    update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::slotMimeTreeContextMenuRequested(const QPoint &pos)
@@ -2514,7 +2514,7 @@ void ViewerPrivate::slotLevelQuote(int l)
 {
     if (mLevelQuote != l) {
         mLevelQuote = l;
-        update(Force);
+        update(MimeTreeParser::Force);
     }
 }
 
@@ -2815,7 +2815,7 @@ void ViewerPrivate::slotItemChanged(const Akonadi::Item &item, const QSet<QByteA
         return;
     }
     if (parts.contains("PLD:RFC822")) {
-        setMessageItem(item, Force);
+        setMessageItem(item, MimeTreeParser::Force);
     }
 }
 
@@ -2830,7 +2830,7 @@ void ViewerPrivate::slotItemMoved(const Akonadi::Item &item, const Akonadi::Coll
 
 void ViewerPrivate::slotClear()
 {
-    q->clear(Force);
+    q->clear(MimeTreeParser::Force);
     Q_EMIT itemRemoved();
 }
 
@@ -2986,7 +2986,7 @@ void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)
 void ViewerPrivate::slotRefreshMessage(const Akonadi::Item &item)
 {
     if (item.id() == mMessageItem.id()) {
-        setMessageItem(item, MessageViewer::Force);
+        setMessageItem(item, MimeTreeParser::Force);
     }
 }
 

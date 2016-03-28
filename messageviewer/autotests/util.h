@@ -21,7 +21,7 @@
 
 #include <KMime/Message>
 
-class TestHtmlWriter : public MessageViewer::HtmlWriter
+class TestHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
     explicit TestHtmlWriter() {}

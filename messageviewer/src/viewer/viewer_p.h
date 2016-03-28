@@ -63,13 +63,17 @@ namespace PimCommon
 class ShareServiceUrlManager;
 }
 
+namespace MimeTreeParser
+{
+class AttachmentStrategy;
+class HtmlWriter;
+class ObjectTreeParser;
+}
+
 namespace MessageViewer
 {
 class HeaderStylePlugin;
-class HtmlWriter;
 class CSSHelper;
-class AttachmentStrategy;
-class ObjectTreeParser;
 class FindBarWebView;
 class WebKitPartHtmlWriter;
 class HtmlStatusBar;
@@ -103,23 +107,22 @@ automatically updated on external changes.
 Once a message is set, update() is called. update() can also be called after the message has already
 been displayed. As an example, this is the case when the user decides to decrypt the message. The
 decryption can happen async, and once the decryption is finished, update() is called to display the
-now decrypted content. See the documentation of ObjectTreeParser on how exactly decryption is
+now decrypted content. See the documentation of MimeTreeParser::ObjectTreeParser on how exactly decryption is
 handled.
 update() is just a thin wrapper that calls updateReaderWin(). The only difference is that update()
 has a timer that prevents too many slow calls to updateReaderWin() in a short time frame.
 updateReaderWin() again is only a thin wrapper that resets some state and then calls
 displayMessage().
-displayMessage() itself is again a thin wrapper, which starts the HtmlWriter and then calls
+displayMessage() itself is again a thin wrapper, which starts the MimeTreeParser::HtmlWriter and then calls
 parseMsg().
-Finally, parseMsg() does the real work. It uses ObjectTreeParser::parseObjectTree() to let the
-ObjectTreeParser parse the message and generate the HTML code for it.
-As mentioned before, it can happen that the ObjectTreeParser needs to do some operation that happens
-async, for example decrypting. In this case, the ObjectTreeParser will create a BodyPartMemento,
+Finally, parseMsg() does the real work. It uses MimeTreeParser::ObjectTreeParser ::parseObjectTree() to let the
+MimeTreeParser::ObjectTreeParser parse the message and generate the HTML code for it.
+As mentioned before, it can happen that the MimeTreeParser::ObjectTreeParser needs to do some operation that happens
+async, for example decrypting. In this case, the MimeTreeParser::ObjectTreeParser will create a BodyPartMemento,
 which basically is a wrapper around the job that does the async operation. Once the async operation
 is finished. the BodyPartMemento will trigger an update() of ViewerPrivate, so that
-ObjectTreeParser::parseObjectTree() gets called again and the ObjectTreeParser then can generate
-HTML which has the decrypted content of the message. Again, see the documentation of ObjectTreeParser
-for the details.
+MimeTreeParser::ObjectTreeParser ::parseObjectTree() gets called again and the MimeTreeParser::ObjectTreeParser then can generate
+HTML which has the decrypted content of the message. Again, see the documentation of MimeTreeParser::ObjectTreeParser for the details.
 Additionally, parseMsg() does some evil hack for saving unencrypted messages should the config
 option for that be set.
 
@@ -143,9 +146,9 @@ ItemModifyJob to store the changes of the attachment. A map of currently active 
 their KMime::Content is available in mEditorWatchers.
 For most attachment actions, the attachment is first written to a temp file. The action is then
 executed on this temp file. Writing the attachment to a temp file is done with
-NodeHelper::writeNodeToTempFile(). This method is called before opening or copying an attachment or
-when rendering the attachment list. The ObjectTreeParser also calls NodeHelper::writeNodeToTempFile()
-in some places. Once the temp file is written, NodeHelper::tempFileUrlFromNode() can be used to get
+MimeTreeParser::NodeHelper::writeNodeToTempFile(). This method is called before opening or copying an attachment or
+when rendering the attachment list. The MimeTreeParser::ObjectTreeParser also calls MimeTreeParser::NodeHelper::writeNodeToTempFile()
+in some places. Once the temp file is written, MimeTreeParser::NodeHelper::tempFileUrlFromNode() can be used to get
 the file name of the temp file for a specific MIME part. This is for example used by the handler for
 'attachment:' URLs, AttachmentURLHandler.
 
@@ -153,7 +156,7 @@ Since URLs for attachments are in the "attachment:" scheme, dragging them as-is 
 wouldn't work, since other applications don't understand this scheme. Therefore, the viewer has
 special handling for dragging URLs: In eventFilter(), drags are detected, and the URL handler is
 called to deal with the drag. The attachment URL handler then starts a drag with the file:// URL
-of the temp file of the attachment, which it gets with NodeHelper::tempFileUrlFromNode().
+of the temp file of the attachment, which it gets with MimeTreeParser::NodeHelper::tempFileUrlFromNode().
 
 TODO: How are attachment handled that are loaded on demand? How does prepareHandleAttachment() work?
 TODO: This temp file handling is a big mess and could use a rewrite, especially in the face of load
@@ -163,19 +166,19 @@ Some header styles display an attachment list in the header. The HTML code for t
 cannot be generated by the HeaderStyle itself, since that does not know about all attachments.
 Therefore, the attachment list needs to be created by ViewerPrivate. For this, the HeaderStyle
 writes out a placeholder for the attachment list when it creates the HTML for the header. Once the
-ObjectTreeParser is finished with the message, injectAttachments() is called. injectAttachments()
+MimeTreeParser::ObjectTreeParser is finished with the message, injectAttachments() is called. injectAttachments()
 searches for the placeholder and replaces that with the real HTML code for the attachments.
 
 One of the attachment actions is to scoll to the attachment. That action is only available when
 right-clicking the header. The action scrolls to the attachment in the body and draws a yellow frame
 around the attachment. This is done in scrollToAttachment(). The attachment in the body and the div
-which is used for the colored frame are both created by the ObjectTreeParser.
+which is used for the colored frame are both created by the MimeTreeParser::ObjectTreeParser .
 
 \par Misc
 
-ViewerPrivate holds the NodeHelper, which is passed on to the ObjectTreeParser when it needs it.
-It also holds the HeaderStyle, HeaderStrategy, AttachmentStrategy, CSSHelper, HtmlWriter and more,
-some of them again passed to the ObjectTreeParser when it needs it.
+ViewerPrivate holds the MimeTreeParser::NodeHelper, which is passed on to the MimeTreeParser::ObjectTreeParser when it needs it.
+It also holds the HeaderStyle, HeaderStrategy, MimeTreeParser::AttachmentStrategy, CSSHelper, MimeTreeParser::HtmlWriter and more,
+some of them again passed to the MimeTreeParser::ObjectTreeParser when it needs it.
 
 @author andras@kdab.net
  */
@@ -222,7 +225,7 @@ public:
     */
     void prepareHandleAttachment(KMime::Content *node, const QString &fileName);
 
-    void postProcessMessage(ObjectTreeParser *otp, KMMsgEncryptionState encryptionState);
+    void postProcessMessage(MimeTreeParser::ObjectTreeParser *otp, MimeTreeParser::KMMsgEncryptionState encryptionState);
 
     QString createAtmFileLink(const QString &atmFileName) const;
     KService::Ptr getServiceOffer(KMime::Content *content);
@@ -230,14 +233,14 @@ public:
     void attachmentOpenWith(KMime::Content *node, const KService::Ptr &offer = KService::Ptr());
     void attachmentOpen(KMime::Content *node);
 
-    /** Return the HtmlWriter connected to the MailWebView we use */
-    HtmlWriter *htmlWriter() const;
+    /** Return the MimeTreeParser::HtmlWriter connected to the MailWebView we use */
+    MimeTreeParser::HtmlWriter *htmlWriter() const;
 
     HeaderStylePlugin *headerStylePlugin() const;
 
     CSSHelper *cssHelper() const;
 
-    NodeHelper *nodeHelper() const;
+    MimeTreeParser::NodeHelper *nodeHelper() const;
 
     Viewer *viewer() const;
 
@@ -293,8 +296,8 @@ public:
     void writeConfig(bool withSync = true);
 
     /** Get/set the message attachment strategy. */
-    const AttachmentStrategy *attachmentStrategy() const;
-    void setAttachmentStrategy(const AttachmentStrategy *strategy);
+    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() const;
+    void setAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *strategy);
 
     /** Get selected override character encoding.
       @return The encoding selected by the user or an empty string if auto-detection
@@ -313,20 +316,20 @@ public:
 
     void resetStateForNewMessage();
 
-    void setMessageInternal(const KMime::Message::Ptr &message, UpdateMode updateMode);
+    void setMessageInternal(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode);
 
     /** Set the Akonadi item that will be displayed.
     *  @param item - the Akonadi item to be displayed. If it doesn't hold a mail (KMime::Message::Ptr as payload data),
     *                an empty page is shown.
     *  @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
     */
-    void setMessageItem(const Akonadi::Item &item, UpdateMode updateMode = Delayed);
+    void setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /** Set the message that shall be shown.
     * @param msg - the message to be shown. If 0, an empty page is displayed.
     * @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
     */
-    void setMessage(const KMime::Message::Ptr &msg, UpdateMode updateMode = Delayed);
+    void setMessage(const KMime::Message::Ptr &msg, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /** Instead of settings a message to be shown sets a message part
       to be shown */
@@ -347,7 +350,7 @@ public:
 
     void showContextMenu(KMime::Content *content, const QPoint &point);
 
-    KToggleAction *actionForAttachmentStrategy(const AttachmentStrategy *);
+    KToggleAction *actionForAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *);
     /** Read override codec from configuration */
     void readGlobalOverrideCodec();
 
@@ -357,7 +360,7 @@ public:
 
     QString renderAttachments(KMime::Content *node, const QColor &bgColor) const;
 
-    KMime::Content *findContentByType(KMime::Content *content, const QByteArray &type); //TODO(Andras) move to NodeHelper
+    KMime::Content *findContentByType(KMime::Content *content, const QByteArray &type); //TODO(Andras) move to MimeTreeParser::NodeHelper
 
     /** Return a QTextCodec for the specified charset.
     * This function is a bit more tolerant, than QTextCodec::codecForName */
@@ -550,7 +553,7 @@ public Q_SLOTS:
     void slotUrlCopy();
     void slotSaveMessage();
     /** Re-parse the current message. */
-    void update(MessageViewer::UpdateMode updateMode = Delayed);
+    void update(MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     void slotSpeakText();
     void slotCopyImageLocation();
@@ -586,7 +589,7 @@ private:
 
     QString picsPath();
 public:
-    NodeHelper *mNodeHelper;
+    MimeTreeParser::NodeHelper *mNodeHelper;
     bool mHtmlMailGlobalSetting;
     bool mHtmlLoadExternalGlobalSetting;
     bool mHtmlLoadExtOverride;
@@ -602,7 +605,7 @@ public:
     MailWebView *mViewer;
     FindBarWebView *mFindBar;
 
-    const AttachmentStrategy *mAttachmentStrategy;
+    const MimeTreeParser::AttachmentStrategy *mAttachmentStrategy;
     QTimer mUpdateReaderWinTimer;
     QTimer mResizeTimer;
     QString mOverrideEncoding;
@@ -645,7 +648,7 @@ public:
     QUrl mImageUrl;
     QPoint mLastClickPosition;
     bool mCanStartDrag;
-    HtmlWriter *mHtmlWriter;
+    MimeTreeParser::HtmlWriter *mHtmlWriter;
     /** Used only to be able to connect and disconnect finished() signal
       in printMsg() and slotPrintMsg() since mHtmlWriter points only to abstract non-QObject class. */
     QPointer<WebKitPartHtmlWriter> mPartHtmlWriter;

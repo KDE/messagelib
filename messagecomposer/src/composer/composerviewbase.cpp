@@ -181,7 +181,7 @@ void MessageComposer::ComposerViewBase::setMessage(const KMime::Message::Ptr &ms
     msgContent->setContent(m_msg->encodedContent());
     msgContent->parse();
     MessageViewer::EmptySource emptySource;
-    MessageViewer::ObjectTreeParser otp(&emptySource);  //All default are ok
+    MimeTreeParser::ObjectTreeParser otp(&emptySource);  //All default are ok
     emptySource.setAllowDecryption(allowDecryption);
     otp.parseObjectTree(msgContent);
 
@@ -229,7 +229,7 @@ void MessageComposer::ComposerViewBase::updateTemplate(const KMime::Message::Ptr
     msgContent->setContent(msg->encodedContent());
     msgContent->parse();
     MessageViewer::EmptySource emptySource;
-    MessageViewer::ObjectTreeParser otp(&emptySource);  //All default are ok
+    MimeTreeParser::ObjectTreeParser otp(&emptySource);  //All default are ok
     otp.parseObjectTree(msgContent);
     // Set the HTML text and collect HTML images
     if (!otp.htmlContent().isEmpty()) {
@@ -1650,7 +1650,7 @@ int MessageComposer::ComposerViewBase::autoSaveInterval() const
 //-----------------------------------------------------------------------------
 void MessageComposer::ComposerViewBase::collectImages(KMime::Content *root)
 {
-    if (KMime::Content *n = MessageViewer::ObjectTreeParser::findType(root, "multipart/alternative", true, true)) {
+    if (KMime::Content *n = MimeTreeParser::ObjectTreeParser::findType(root, "multipart/alternative", true, true)) {
         KMime::Content *parentnode = n->parent();
         if (parentnode &&
                 parentnode->contentType()->isMultipart() &&

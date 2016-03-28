@@ -82,7 +82,7 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::moveMessageToTrash, this, &Viewer::moveMessageToTrash);
     connect(d_ptr, &ViewerPrivate::executeMailAction, this, &Viewer::executeMailAction);
 
-    setMessage(KMime::Message::Ptr(), Delayed);
+    setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
 }
 
 void Viewer::changeEvent(QEvent *event)
@@ -94,7 +94,7 @@ void Viewer::changeEvent(QEvent *event)
     QWidget::changeEvent(event);
 }
 
-void Viewer::setMessage(const KMime::Message::Ptr &message, UpdateMode updateMode)
+void Viewer::setMessage(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode)
 {
     Q_D(Viewer);
     if (message == d->message()) {
@@ -103,7 +103,7 @@ void Viewer::setMessage(const KMime::Message::Ptr &message, UpdateMode updateMod
     d->setMessage(message, updateMode);
 }
 
-void Viewer::setMessageItem(const Akonadi::Item &item, UpdateMode updateMode)
+void Viewer::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode)
 {
     Q_D(Viewer);
     if (d->messageItem() == item) {
@@ -338,7 +338,7 @@ bool Viewer::event(QEvent *e)
     if (e->type() == QEvent::PaletteChange) {
         delete d->mCSSHelper;
         d->mCSSHelper = new CSSHelper(d->mViewer);
-        d->update(Force);   // Force update
+        d->update(MimeTreeParser::Force);
         return true;
     }
     return QWidget::event(e);
@@ -350,13 +350,13 @@ void Viewer::slotFind()
     d->slotFind();
 }
 
-const AttachmentStrategy *Viewer::attachmentStrategy() const
+const MimeTreeParser::AttachmentStrategy *Viewer::attachmentStrategy() const
 {
     Q_D(const Viewer);
     return d->attachmentStrategy();
 }
 
-void Viewer::setAttachmentStrategy(const AttachmentStrategy *strategy)
+void Viewer::setAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *strategy)
 {
     Q_D(Viewer);
     d->setAttachmentStrategy(strategy);
@@ -477,7 +477,7 @@ QUrl Viewer::imageUrlClicked() const
     return d->mImageUrl;
 }
 
-void Viewer::update(MessageViewer::UpdateMode updateMode)
+void Viewer::update(MimeTreeParser::UpdateMode updateMode)
 {
     Q_D(Viewer);
     d->update(updateMode);
@@ -489,7 +489,7 @@ void Viewer::setMessagePart(KMime::Content *aMsgPart)
     d->setMessagePart(aMsgPart);
 }
 
-void Viewer::clear(UpdateMode updateMode)
+void Viewer::clear(MimeTreeParser::UpdateMode updateMode)
 {
     setMessage(KMime::Message::Ptr(), updateMode);
 }
@@ -614,7 +614,7 @@ void Viewer::slotChangeDisplayMail(Viewer::DisplayFormatMessage mode, bool loadE
 {
     setHtmlLoadExtOverride(loadExternal);
     setDisplayFormatMessageOverwrite(mode);
-    update(Force);
+    update(MimeTreeParser::Force);
 }
 
 QAction *Viewer::saveMessageDisplayFormatAction() const

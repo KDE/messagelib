@@ -28,7 +28,7 @@
 namespace MessageViewer
 {
 MailViewerSource::MailViewerSource(ViewerPrivate *viewer) :
-    ObjectTreeSourceIf(), mViewer(viewer)
+    MimeTreeParser::ObjectTreeSourceIf(), mViewer(viewer)
 {
 }
 
@@ -56,7 +56,7 @@ bool MailViewerSource::showSignatureDetails() const
     return mViewer->mShowSignatureDetails;
 }
 
-void MailViewerSource::setHtmlMode(Util::HtmlMode mode)
+void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode)
 {
     mViewer->mColorBar->setMode(mode);
 }
@@ -81,17 +81,17 @@ QObject *MailViewerSource::sourceObject()
     return mViewer;
 }
 
-const AttachmentStrategy *MailViewerSource::attachmentStrategy()
+const MimeTreeParser::AttachmentStrategy *MailViewerSource::attachmentStrategy()
 {
     return mViewer->attachmentStrategy();
 }
 
-HtmlWriter *MailViewerSource::htmlWriter()
+MimeTreeParser::HtmlWriter *MailViewerSource::htmlWriter()
 {
     return mViewer->htmlWriter();
 }
 
-CSSHelperBase *MailViewerSource::cssHelper()
+MimeTreeParser::CSSHelperBase *MailViewerSource::cssHelper()
 {
     return mViewer->cssHelper();
 }
@@ -111,7 +111,7 @@ bool MailViewerSource::showExpandQuotesMark() const
     return MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark();
 }
 
-const BodyPartFormatterBaseFactory *MailViewerSource::bodyPartFormatterFactory()
+const MimeTreeParser::BodyPartFormatterBaseFactory *MailViewerSource::bodyPartFormatterFactory()
 {
     return bodyPartFormatterBaseFactoryInstance();
 }

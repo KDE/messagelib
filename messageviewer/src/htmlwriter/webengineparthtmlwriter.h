@@ -32,7 +32,7 @@ class MailWebEngineView;
 namespace MessageViewer
 {
 
-class WebEnginePartHtmlWriter : public QObject, public HtmlWriter
+class WebEnginePartHtmlWriter : public QObject, public MimeTreeParser::HtmlWriter
 {
     Q_OBJECT
 public:

@@ -29,10 +29,14 @@
 
 #ifndef __MESSAGEVIEWER_BODYPARTFORMATTERFACTORYSIGNLETON_P_H__
 #define __MESSAGEVIEWER_BODYPARTFORMATTERFACTORYSIGNLETON_P_H__
-namespace MessageViewer
+
+namespace MimeTreeParser
 {
 class BodyPartFormatterBaseFactory;
+}
 
-const BodyPartFormatterBaseFactory *bodyPartFormatterBaseFactoryInstance();
+namespace MessageViewer
+{
+const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterBaseFactoryInstance();
 }
 #endif

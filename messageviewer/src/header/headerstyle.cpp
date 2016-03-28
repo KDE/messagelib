@@ -112,12 +112,12 @@ bool HeaderStyle::isTopLevel() const
     return mTopLevel;
 }
 
-void HeaderStyle::setNodeHelper(NodeHelper *nodeHelper)
+void HeaderStyle::setNodeHelper(MimeTreeParser::NodeHelper *nodeHelper)
 {
     mNodeHelper = nodeHelper;
 }
 
-NodeHelper *HeaderStyle::nodeHelper() const
+MimeTreeParser::NodeHelper *HeaderStyle::nodeHelper() const
 {
     return mNodeHelper;
 }

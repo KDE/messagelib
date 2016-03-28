@@ -30,7 +30,7 @@ namespace MessageViewer
 class ViewerPrivate;
 
 /** An ObjectTreeParser source working on a MailViewer object */
-class MailViewerSource : public ObjectTreeSourceIf
+class MailViewerSource : public MimeTreeParser::ObjectTreeSourceIf
 {
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);
@@ -39,19 +39,19 @@ public:
     bool decryptMessage() const Q_DECL_OVERRIDE;
     bool htmlLoadExternal() const Q_DECL_OVERRIDE;
     bool showSignatureDetails() const Q_DECL_OVERRIDE;
-    void setHtmlMode(Util::HtmlMode mode) Q_DECL_OVERRIDE;
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode) Q_DECL_OVERRIDE;
     int levelQuote() const Q_DECL_OVERRIDE;
     const QTextCodec *overrideCodec() Q_DECL_OVERRIDE;
     QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE;
-    const AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE;
-    HtmlWriter *htmlWriter() Q_DECL_OVERRIDE;
-    CSSHelperBase *cssHelper() Q_DECL_OVERRIDE;
+    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE;
+    MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE;
+    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE;
     QObject *sourceObject() Q_DECL_OVERRIDE;
 
     bool autoImportKeys() const Q_DECL_OVERRIDE;
     bool showEmoticons() const Q_DECL_OVERRIDE;
     bool showExpandQuotesMark() const Q_DECL_OVERRIDE;
-    const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE;
+    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE;
 private:
     ViewerPrivate *mViewer;
 };

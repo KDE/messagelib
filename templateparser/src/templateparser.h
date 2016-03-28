@@ -32,7 +32,7 @@
 
 class TemplateParserTester;
 
-namespace MessageViewer
+namespace MimeTreeParser
 {
 class ObjectTreeParser;
 }
@@ -254,7 +254,7 @@ protected:
     bool mWrap;
     int mColWrap;
     QStringList m_charsets;
-    MessageViewer::ObjectTreeParser *mOtp;
+    MimeTreeParser::ObjectTreeParser *mOtp;
     MessageViewer::EmptySource *mEmptySource;
     QString mHeadElement;
     Quotes mQuotes;

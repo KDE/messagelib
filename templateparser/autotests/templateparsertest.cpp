@@ -30,7 +30,7 @@
 #include <QDir>
 #include <QLocale>
 
-using namespace MessageViewer;
+using namespace MimeTreeParser;
 
 void TemplateParserTester::test_convertedHtml_data()
 {

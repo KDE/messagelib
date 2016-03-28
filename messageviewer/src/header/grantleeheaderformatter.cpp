@@ -254,7 +254,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
 
     if (messageHasAttachment) {
-        const QString iconPath = IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
+        const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
         const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }

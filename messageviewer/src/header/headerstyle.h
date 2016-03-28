@@ -43,11 +43,15 @@
 
 class QString;
 
+namespace MimeTreeParser
+{
+class NodeHelper;
+}
+
 namespace MessageViewer
 {
 
 class HeaderStrategy;
-class NodeHelper;
 
 /** This class encapsulates the visual appearance of message
     headers. Together with HeaderStrategy, which determines
@@ -93,8 +97,8 @@ public:
     void setTopLevel(bool topLevel);
     bool isTopLevel() const;
 
-    void setNodeHelper(NodeHelper *nodeHelper);
-    NodeHelper *nodeHelper() const;
+    void setNodeHelper(MimeTreeParser::NodeHelper *nodeHelper);
+    MimeTreeParser::NodeHelper *nodeHelper() const;
 
     void setAllowAsync(bool allowAsync);
     bool allowAsync() const;
@@ -119,7 +123,7 @@ private:
     const HeaderStrategy *mStrategy;
     QString mVCardName;
     QString mCollectionName;
-    NodeHelper *mNodeHelper;
+    MimeTreeParser::NodeHelper *mNodeHelper;
     QObject *mSourceObject;
     Akonadi::MessageStatus mMessageStatus;
     bool mPrinting;

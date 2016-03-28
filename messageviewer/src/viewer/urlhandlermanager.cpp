@@ -83,10 +83,10 @@ URLHandlerManager *URLHandlerManager::self = 0;
 
 namespace
 {
-class KMailActionURLHandler : public URLHandler
+class KMailActionURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    KMailActionURLHandler() : URLHandler() {}
+    KMailActionURLHandler() : MimeTreeParser::URLHandler() {}
     ~KMailActionURLHandler() {}
 
     bool handleClick(const QUrl &url, ViewerPrivate *viewer) const Q_DECL_OVERRIDE
@@ -146,10 +146,10 @@ public:
     }
 };
 
-class KMailProtocolURLHandler : public URLHandler
+class KMailProtocolURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    KMailProtocolURLHandler() : URLHandler() {}
+    KMailProtocolURLHandler() : MimeTreeParser::URLHandler() {}
     ~KMailProtocolURLHandler() {}
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
@@ -160,10 +160,10 @@ public:
     QString statusBarMessage(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
 };
 
-class ExpandCollapseQuoteURLManager : public URLHandler
+class ExpandCollapseQuoteURLManager : public MimeTreeParser::URLHandler
 {
 public:
-    ExpandCollapseQuoteURLManager() : URLHandler() {}
+    ExpandCollapseQuoteURLManager() : MimeTreeParser::URLHandler() {}
     ~ExpandCollapseQuoteURLManager() {}
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
@@ -175,10 +175,10 @@ public:
 
 };
 
-class SMimeURLHandler : public URLHandler
+class SMimeURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    SMimeURLHandler() : URLHandler() {}
+    SMimeURLHandler() : MimeTreeParser::URLHandler() {}
     ~SMimeURLHandler() {}
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
@@ -189,10 +189,10 @@ public:
     QString statusBarMessage(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
 };
 
-class MailToURLHandler : public URLHandler
+class MailToURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    MailToURLHandler() : URLHandler() {}
+    MailToURLHandler() : MimeTreeParser::URLHandler() {}
     ~MailToURLHandler() {}
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE
@@ -206,10 +206,10 @@ public:
     QString statusBarMessage(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
 };
 
-class ContactUidURLHandler : public URLHandler
+class ContactUidURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    ContactUidURLHandler() : URLHandler() {}
+    ContactUidURLHandler() : MimeTreeParser::URLHandler() {}
     ~ContactUidURLHandler() {}
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
@@ -217,10 +217,10 @@ public:
     QString statusBarMessage(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
 };
 
-class HtmlAnchorHandler : public URLHandler
+class HtmlAnchorHandler : public MimeTreeParser::URLHandler
 {
 public:
-    HtmlAnchorHandler() : URLHandler() {}
+    HtmlAnchorHandler() : MimeTreeParser::URLHandler() {}
     ~HtmlAnchorHandler() {}
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
@@ -234,10 +234,10 @@ public:
     }
 };
 
-class AttachmentURLHandler : public URLHandler
+class AttachmentURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    AttachmentURLHandler() : URLHandler() {}
+    AttachmentURLHandler() : MimeTreeParser::URLHandler() {}
     ~AttachmentURLHandler() {}
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
@@ -251,10 +251,10 @@ private:
     bool attachmentIsInHeader(const QUrl &url) const;
 };
 
-class ShowAuditLogURLHandler : public URLHandler
+class ShowAuditLogURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    ShowAuditLogURLHandler() : URLHandler() {}
+    ShowAuditLogURLHandler() : MimeTreeParser::URLHandler() {}
     ~ShowAuditLogURLHandler() {}
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
@@ -264,10 +264,10 @@ public:
 
 // Handler that prevents dragging of internal images added by KMail, such as the envelope image
 // in the enterprise header
-class InternalImageURLHandler : public URLHandler
+class InternalImageURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    InternalImageURLHandler() : URLHandler()
+    InternalImageURLHandler() : MimeTreeParser::URLHandler()
     {}
     ~InternalImageURLHandler()
     {}
@@ -287,10 +287,10 @@ public:
     }
 };
 
-class KRunURLHandler : public URLHandler
+class KRunURLHandler : public MimeTreeParser::URLHandler
 {
 public:
-    KRunURLHandler() : URLHandler()
+    KRunURLHandler() : MimeTreeParser::URLHandler()
     {}
     ~KRunURLHandler()
     {}
@@ -314,31 +314,31 @@ public:
 //
 //
 
-class URLHandlerManager::BodyPartURLHandlerManager : public URLHandler
+class URLHandlerManager::BodyPartURLHandlerManager : public MimeTreeParser::URLHandler
 {
 public:
-    BodyPartURLHandlerManager() : URLHandler() {}
+    BodyPartURLHandlerManager() : MimeTreeParser::URLHandler() {}
     ~BodyPartURLHandlerManager();
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
     bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const Q_DECL_OVERRIDE;
     QString statusBarMessage(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
 
-    void registerHandler(const Interface::BodyPartURLHandler *handler);
-    void unregisterHandler(const Interface::BodyPartURLHandler *handler);
+    void registerHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
+    void unregisterHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
 
 private:
-    typedef QVector<const Interface::BodyPartURLHandler *> BodyPartHandlerList;
+    typedef QVector<const MimeTreeParser::Interface::BodyPartURLHandler *> BodyPartHandlerList;
     BodyPartHandlerList mHandlers;
 };
 
 URLHandlerManager::BodyPartURLHandlerManager::~BodyPartURLHandlerManager()
 {
     for_each(mHandlers.begin(), mHandlers.end(),
-             DeleteAndSetToZero<Interface::BodyPartURLHandler>());
+             DeleteAndSetToZero<MimeTreeParser::Interface::BodyPartURLHandler>());
 }
 
-void URLHandlerManager::BodyPartURLHandlerManager::registerHandler(const Interface::BodyPartURLHandler *handler)
+void URLHandlerManager::BodyPartURLHandlerManager::registerHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler)
 {
     if (!handler) {
         return;
@@ -347,7 +347,7 @@ void URLHandlerManager::BodyPartURLHandlerManager::registerHandler(const Interfa
     mHandlers.push_back(handler);
 }
 
-void URLHandlerManager::BodyPartURLHandlerManager::unregisterHandler(const Interface::BodyPartURLHandler *handler)
+void URLHandlerManager::BodyPartURLHandlerManager::unregisterHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler)
 {
     // don't delete them, only remove them from the list!
     mHandlers.erase(remove(mHandlers.begin(), mHandlers.end(), handler), mHandlers.end());
@@ -386,7 +386,7 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url, 
         return false;
     }
 
-    PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper(), w->overrideCodec());
+    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper(), w->overrideCodec());
     BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
 
     for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
@@ -406,7 +406,7 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleContextMenuRequest(cons
         return false;
     }
 
-    PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper(), w->overrideCodec());
+    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper(), w->overrideCodec());
     BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
     for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it)
         if ((*it)->handleContextMenuRequest(&part, path, p)) {
@@ -423,7 +423,7 @@ QString URLHandlerManager::BodyPartURLHandlerManager::statusBarMessage(const QUr
         return QString();
     }
 
-    PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper(), w->overrideCodec());
+    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper(), w->overrideCodec());
     BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
     for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
         const QString msg = (*it)->statusBarMessage(&part, path);
@@ -459,7 +459,7 @@ URLHandlerManager::URLHandlerManager()
 URLHandlerManager::~URLHandlerManager()
 {
     for_each(mHandlers.begin(), mHandlers.end(),
-             DeleteAndSetToZero<URLHandler>());
+             DeleteAndSetToZero<MimeTreeParser::URLHandler>());
 }
 
 URLHandlerManager *URLHandlerManager::instance()
@@ -470,7 +470,7 @@ URLHandlerManager *URLHandlerManager::instance()
     return self;
 }
 
-void URLHandlerManager::registerHandler(const URLHandler *handler)
+void URLHandlerManager::registerHandler(const MimeTreeParser::URLHandler *handler)
 {
     if (!handler) {
         return;
@@ -479,20 +479,20 @@ void URLHandlerManager::registerHandler(const URLHandler *handler)
     mHandlers.push_back(handler);
 }
 
-void URLHandlerManager::unregisterHandler(const URLHandler *handler)
+void URLHandlerManager::unregisterHandler(const MimeTreeParser::URLHandler *handler)
 {
     // don't delete them, only remove them from the list!
     mHandlers.erase(remove(mHandlers.begin(), mHandlers.end(), handler), mHandlers.end());
 }
 
-void URLHandlerManager::registerHandler(const Interface::BodyPartURLHandler *handler)
+void URLHandlerManager::registerHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler)
 {
     if (mBodyPartURLHandlerManager) {
         mBodyPartURLHandlerManager->registerHandler(handler);
     }
 }
 
-void URLHandlerManager::unregisterHandler(const Interface::BodyPartURLHandler *handler)
+void URLHandlerManager::unregisterHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler)
 {
     if (mBodyPartURLHandlerManager) {
         mBodyPartURLHandlerManager->unregisterHandler(handler);
@@ -580,7 +580,7 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
         const QString urlPath(url.path());
         if (urlPath == QLatin1String("showHTML")) {
             w->setDisplayFormatMessageOverwrite(MessageViewer::Viewer::Html);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("goOnline")) {
             w->goOnline();
@@ -590,43 +590,43 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
             return true;
         } else if (urlPath == QLatin1String("loadExternal")) {
             w->setHtmlLoadExtOverride(!w->htmlLoadExtOverride());
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("decryptMessage")) {
             w->setDecryptMessageOverwrite(true);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("showSignatureDetails")) {
             w->setShowSignatureDetails(true);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("hideSignatureDetails")) {
             w->setShowSignatureDetails(false);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("showAttachmentQuicklist")) {
             w->setShowAttachmentQuicklist(true);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("hideAttachmentQuicklist")) {
             w->setShowAttachmentQuicklist(false);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("showFullToAddressList")) {
             w->setShowFullToAddressList(true);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("hideFullToAddressList")) {
             w->setShowFullToAddressList(false);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("showFullCcAddressList")) {
             w->setShowFullCcAddressList(true);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("hideFullCcAddressList")) {
             w->setShowFullCcAddressList(false);
-            w->update(Force);
+            w->update(MimeTreeParser::Force);
             return true;
         }
     }
@@ -1003,7 +1003,7 @@ QString AttachmentURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *w
     if (!node) {
         return QString();
     }
-    const QString name = MessageViewer::NodeHelper::fileName(node);
+    const QString name = MimeTreeParser::NodeHelper::fileName(node);
     if (!name.isEmpty()) {
         return i18n("Attachment: %1", name);
     } else if (dynamic_cast<KMime::Message *>(node)) {

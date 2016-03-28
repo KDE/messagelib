@@ -45,7 +45,7 @@ using namespace MessageViewer;
 
 HtmlStatusBar::HtmlStatusBar(QWidget *parent)
     : QLabel(parent),
-      mMode(Util::Normal)
+      mMode(MimeTreeParser::Util::Normal)
 {
     setAlignment(Qt::AlignHCenter | Qt::AlignTop);
     setAutoFillBackground(true);
@@ -54,29 +54,29 @@ HtmlStatusBar::HtmlStatusBar(QWidget *parent)
 
 HtmlStatusBar::~HtmlStatusBar() {}
 
-Util::HtmlMode HtmlStatusBar::mode() const
+MimeTreeParser::Util::HtmlMode HtmlStatusBar::mode() const
 {
     return mMode;
 }
 
 bool HtmlStatusBar::isHtml() const
 {
-    return mode() == Util::Html;
+    return mode() == MimeTreeParser::Util::Html;
 }
 
 bool HtmlStatusBar::isNormal() const
 {
-    return mode() == Util::Normal;
+    return mode() == MimeTreeParser::Util::Normal;
 }
 
 bool HtmlStatusBar::isMultipartHtml() const
 {
-    return mode() == Util::MultipartHtml;
+    return mode() == MimeTreeParser::Util::MultipartHtml;
 }
 
 bool HtmlStatusBar::isMultipartPlain() const
 {
-    return mode() == Util::MultipartPlain;
+    return mode() == MimeTreeParser::Util::MultipartPlain;
 }
 
 void HtmlStatusBar::update()
@@ -91,25 +91,25 @@ void HtmlStatusBar::update()
 
 void HtmlStatusBar::setNormalMode()
 {
-    setMode(Util::Normal);
+    setMode(MimeTreeParser::Util::Normal);
 }
 
 void HtmlStatusBar::setHtmlMode()
 {
-    setMode(Util::Html);
+    setMode(MimeTreeParser::Util::Html);
 }
 
 void HtmlStatusBar::setMultipartPlainMode()
 {
-    setMode(Util::MultipartPlain);
+    setMode(MimeTreeParser::Util::MultipartPlain);
 }
 
 void HtmlStatusBar::setMultipartHtmlMode()
 {
-    setMode(Util::MultipartHtml);
+    setMode(MimeTreeParser::Util::MultipartHtml);
 }
 
-void HtmlStatusBar::setMode(Util::HtmlMode m, UpdateMode mode)
+void HtmlStatusBar::setMode(MimeTreeParser::Util::HtmlMode m, UpdateMode mode)
 {
     if (mMode != m) {
         mMode = m;
@@ -129,17 +129,17 @@ void HtmlStatusBar::mousePressEvent(QMouseEvent *event)
 QString HtmlStatusBar::message() const
 {
     switch (mode()) {
-    case Util::Html: // bold: "HTML Message"
-    case Util::MultipartHtml:
+    case MimeTreeParser::Util::Html: // bold: "HTML Message"
+    case MimeTreeParser::Util::MultipartHtml:
         return i18nc("'HTML Message' with html linebreaks between each letter and in bold text.",
                      "<qt><b><br />H<br />T<br />M<br />L<br /> "
                      "<br />M<br />e<br />s<br />s<br />a<br />g<br />e</b></qt>");
-    case Util::Normal: // normal: "No HTML Message"
+    case MimeTreeParser::Util::Normal: // normal: "No HTML Message"
         return i18nc("'No HTML Message' with html linebreaks between each letter.",
                      "<qt><br />N<br />o<br /> "
                      "<br />H<br />T<br />M<br />L<br /> "
                      "<br />M<br />e<br />s<br />s<br />a<br />g<br />e</qt>");
-    case Util::MultipartPlain: // normal: "Plain Message"
+    case MimeTreeParser::Util::MultipartPlain: // normal: "Plain Message"
         return i18nc("'Plain Message' with html linebreaks between each letter.",
                      "<qt><br />P<br />l<br />a<br />i<br />n<br /> "
                      "<br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>");
@@ -151,12 +151,12 @@ QString HtmlStatusBar::message() const
 QString HtmlStatusBar::toolTip() const
 {
     switch (mode()) {
-    case Util::Html:
-    case Util::MultipartHtml:
-    case Util::MultipartPlain:
+    case MimeTreeParser::Util::Html:
+    case MimeTreeParser::Util::MultipartHtml:
+    case MimeTreeParser::Util::MultipartPlain:
         return i18n("Click to toggle between HTML and plain text.");
     default:
-    case Util::Normal:
+    case MimeTreeParser::Util::Normal:
         break;
     }
 
@@ -168,16 +168,16 @@ QColor HtmlStatusBar::fgColor() const
     KConfigGroup conf(MessageViewer::MessageViewerSettings::self()->config(), "Reader");
     QColor defaultColor, color;
     switch (mode()) {
-    case Util::Html:
-    case Util::MultipartHtml:
+    case MimeTreeParser::Util::Html:
+    case MimeTreeParser::Util::MultipartHtml:
         defaultColor = Qt::white;
         color = defaultColor;
         if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
             color = conf.readEntry("ColorbarForegroundHTML", defaultColor);
         }
         return color;
-    case Util::Normal:
-    case Util::MultipartPlain:
+    case MimeTreeParser::Util::Normal:
+    case MimeTreeParser::Util::MultipartPlain:
         defaultColor = Qt::black;
         color = defaultColor;
         if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
@@ -195,16 +195,16 @@ QColor HtmlStatusBar::bgColor() const
 
     QColor defaultColor, color;
     switch (mode()) {
-    case Util::Html:
-    case Util::MultipartHtml:
+    case MimeTreeParser::Util::Html:
+    case MimeTreeParser::Util::MultipartHtml:
         defaultColor = Qt::black;
         color = defaultColor;
         if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
             color = conf.readEntry("ColorbarBackgroundHTML", defaultColor);
         }
         return color;
-    case Util::Normal:
-    case Util::MultipartPlain:
+    case MimeTreeParser::Util::Normal:
+    case MimeTreeParser::Util::MultipartPlain:
         defaultColor = Qt::lightGray;
         color = defaultColor;
         if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {

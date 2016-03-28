@@ -38,7 +38,7 @@ public:
 };
 
 EmptySource::EmptySource()
-    : ObjectTreeSourceIf(),
+    : MimeTreeParser::ObjectTreeSourceIf(),
       d(new MessageViewer::EmptySourcePrivate)
 {
 }
@@ -68,7 +68,7 @@ bool EmptySource::showSignatureDetails() const
     return false;
 }
 
-void EmptySource::setHtmlMode(Util::HtmlMode mode)
+void EmptySource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode)
 {
     Q_UNUSED(mode);
 }
@@ -99,17 +99,17 @@ QObject *EmptySource::sourceObject()
     return 0;
 }
 
-const AttachmentStrategy *EmptySource::attachmentStrategy()
+const MimeTreeParser::AttachmentStrategy *EmptySource::attachmentStrategy()
 {
-    return AttachmentStrategy::smart();
+    return MimeTreeParser::AttachmentStrategy::smart();
 }
 
-HtmlWriter *EmptySource::htmlWriter()
+MimeTreeParser::HtmlWriter *EmptySource::htmlWriter()
 {
     return 0;
 }
 
-CSSHelperBase *EmptySource::cssHelper()
+MimeTreeParser::CSSHelperBase *EmptySource::cssHelper()
 {
     return 0;
 }
@@ -129,7 +129,7 @@ bool EmptySource::showExpandQuotesMark() const
     return false;
 }
 
-const BodyPartFormatterBaseFactory *EmptySource::bodyPartFormatterFactory()
+const MimeTreeParser::BodyPartFormatterBaseFactory *EmptySource::bodyPartFormatterFactory()
 {
     return bodyPartFormatterBaseFactoryInstance();
 }

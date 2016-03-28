@@ -41,7 +41,7 @@ class ContactSearchJob;
 namespace MessageViewer
 {
 
-class ContactDisplayMessageMemento : public QObject, public Interface::BodyPartMemento
+class ContactDisplayMessageMemento : public QObject, public MimeTreeParser::Interface::BodyPartMemento
 {
     Q_OBJECT
 public:
@@ -61,7 +61,7 @@ public:
 
 Q_SIGNALS:
     // TODO: Factor our update and detach into base class
-    void update(MessageViewer::UpdateMode);
+    void update(MimeTreeParser::UpdateMode);
     void changeDisplayMail(Viewer::DisplayFormatMessage displayAsHtml, bool remoteContent);
 
 private Q_SLOTS:

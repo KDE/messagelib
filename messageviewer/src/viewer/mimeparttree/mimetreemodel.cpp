@@ -46,7 +46,7 @@ public:
         if (message && message->subject(false)) {
             return message->subject()->asUnicodeString();
         }
-        const QString name = NodeHelper::fileName(content);
+        const QString name = MimeTreeParser::NodeHelper::fileName(content);
         if (!name.isEmpty()) {
             return name;
         }
@@ -95,7 +95,7 @@ public:
             auto mimeType = m_mimeDb.mimeTypeForName(QString::fromLatin1(content->contentType()->mimeType()));
             if (!mimeType.isValid() || mimeType.name() == QLatin1String("application/octet-stream")) {
                 const QString name = descriptionForContent(content);
-                mimeType = MessageViewer::Util::mimetype(name);
+                mimeType = MimeTreeParser::Util::mimetype(name);
             }
             if (!mimeType.isValid() || mimeType.iconName().isEmpty()) {
                 return QIcon();

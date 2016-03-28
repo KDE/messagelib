@@ -44,11 +44,11 @@ namespace MessageViewer
 /** @short A HtmlWriter that dispatches all calls to a list of other HtmlWriters
       @author Marc Mutz <mutz@kde.org>
   **/
-class TeeHtmlWriter : public HtmlWriter
+class TeeHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
     explicit TeeHtmlWriter(HtmlWriter *writer1 = 0,
-                           HtmlWriter *writer2 = 0);
+                           MimeTreeParser::HtmlWriter *writer2 = 0);
     virtual ~TeeHtmlWriter();
 
     void addHtmlWriter(HtmlWriter *writer);
