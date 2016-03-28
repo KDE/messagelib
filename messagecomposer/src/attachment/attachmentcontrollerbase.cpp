@@ -27,12 +27,14 @@
 #include "MessageComposer/AttachmentFromPublicKeyJob"
 #include "MessageComposer/AttachmentVcardFromAddressBookJob"
 #include "MessageComposer/Composer"
-
 #include "MessageComposer/GlobalPart"
-#include "MessageViewer/EditorWatcher"
+
+#include <MessageViewer/EditorWatcher>
+#include <MessageViewer/MessageViewerUtil>
+
 #include <MimeTreeParser/NodeHelper>
-#include "MessageViewer/MessageViewerUtil"
-#include "MessageCore/StringUtil"
+
+#include <MessageCore/StringUtil>
 
 #include <AkonadiCore/itemfetchjob.h>
 #include <kio/jobuidelegate.h>

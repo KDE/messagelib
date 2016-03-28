@@ -28,11 +28,12 @@
 #include <QUrl>
 
 #include <MessageCore/AttachmentPart>
-#include <AkonadiCore/item.h>
+#include <MessageViewer/EditorWatcher>
+#include <AkonadiCore/Item>
 #include <KJob>
 #include <KService>
 #include "messagecomposer_export.h"
-#include "MessageViewer/EditorWatcher"
+
 class KActionCollection;
 class QAction;
 
