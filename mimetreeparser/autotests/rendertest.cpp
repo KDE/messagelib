@@ -210,6 +210,7 @@ void RenderTest::testRender()
         QString content = QString::fromUtf8(f.readAll());
         f.close();
         content.replace(QRegExp(QStringLiteral("\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")), QStringLiteral("\"file:\\1\""));
+        content.replace(QStringLiteral("image-png.png"), QStringLiteral("image-x-generic.png"));  //Make test run with oxygen and breeze icons
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(content.toUtf8());
         f.close();
