@@ -85,7 +85,7 @@ namespace
 {
 QString pluginVersion()
 {
-    return QStringLiteral("1.0");
+    return QStringLiteral("2.0");
 }
 }
 
