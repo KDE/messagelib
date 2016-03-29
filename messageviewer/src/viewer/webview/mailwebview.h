@@ -57,7 +57,6 @@ public:
     void markAttachment(const QString &id, const QString &style);
     bool replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml);
     void setElementByIdVisible(const QString &id, bool visible);
-    QString htmlSource() const;
     void selectAll();
     void clearSelection();
     void scrollToRelativePosition(double pos);

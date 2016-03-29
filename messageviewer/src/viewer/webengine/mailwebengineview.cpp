@@ -283,12 +283,6 @@ bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) cons
     return false;
 }
 
-QString MailWebEngineView::htmlSource() const
-{
-    //TODO remove it when convert to QtWebEngine
-    return {};
-}
-
 void MailWebEngineView::clearSelection()
 {
     //TODO

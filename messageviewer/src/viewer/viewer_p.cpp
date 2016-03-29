@@ -91,6 +91,7 @@
 #include <QPrintDialog>
 #include <QMimeDatabase>
 #include <QWheelEvent>
+#include <QWebElement>
 
 //libkdepim
 #include "Libkdepim/BroadcastStatus"
@@ -2069,7 +2070,7 @@ void ViewerPrivate::slotShowMessageSource()
     }
     mNodeHelper->messageWithExtraContent(mMessage.data());
     const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
-    const QString htmlSource = mViewer->htmlSource();
+    const QString htmlSource = mViewer->page()->mainFrame()->documentElement().toOuterXml();
 
     MailSourceViewer *viewer = new MailSourceViewer(); // deletes itself upon close
     viewer->setWindowTitle(i18n("Message as Plain Text"));

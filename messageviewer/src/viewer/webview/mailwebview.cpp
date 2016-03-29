@@ -228,11 +228,6 @@ void MailWebView::markAttachment(const QString &id, const QString &style)
     }
 }
 
-QString MailWebView::htmlSource() const
-{
-    return page()->mainFrame()->documentElement().toOuterXml();
-}
-
 QUrl MailWebView::linkOrImageUrlAt(const QPoint &global) const
 {
     const QPoint local = page()->view()->mapFromGlobal(global);

@@ -53,7 +53,6 @@ public:
 
     bool hasVerticalScrollBar() const;
     bool isAttachmentInjectionPoint(const QPoint &globalPos) const;
-    QString htmlSource() const;
     void clearSelection();
     void scrollToRelativePosition(double pos);
     double relativePosition() const;
