@@ -20,6 +20,7 @@
 #include "mailwebengineaccesskey.h"
 #include "webengine/webenginescript.h"
 #include "messageviewer/messageviewersettings.h"
+#include "webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
 #include <MessageViewer/NetworkAccessManagerWebEngine>
 
 #include "scamdetection/scamdetectionwebengine.h"
@@ -48,12 +49,15 @@ class MessageViewer::MailWebEngineViewPrivate
 {
 public:
     MailWebEngineViewPrivate()
-        : mWebViewAccessKey(Q_NULLPTR)
+        : mScamDetection(Q_NULLPTR),
+          mWebViewAccessKey(Q_NULLPTR),
+          mExternalReference(Q_NULLPTR)
     {
 
     }
     ScamDetectionWebEngine *mScamDetection;
     MailWebEngineAccessKey *mWebViewAccessKey;
+    MessageViewer::LoadExternalReferencesUrlInterceptor *mExternalReference;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -64,9 +68,12 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mWebViewAccessKey = new MailWebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
     d->mScamDetection = new ScamDetectionWebEngine(this);
+    connect(d->mScamDetection, &ScamDetectionWebEngine::messageMayBeAScam, this, &MailWebEngineView::messageMayBeAScam);
     connect(d->mWebViewAccessKey, &MailWebEngineAccessKey::openUrl, this, &MailWebEngineView::openUrl);
 
-    new MessageViewer::NetworkAccessManagerWebEngine(this, ac, this);
+    MessageViewer::NetworkAccessManagerWebEngine *networkAccessManager = new MessageViewer::NetworkAccessManagerWebEngine(this, ac, this);
+    d->mExternalReference = new MessageViewer::LoadExternalReferencesUrlInterceptor(this);
+    networkAccessManager->addInterceptor(d->mExternalReference);
     MailWebEnginePage *pageEngine = new MailWebEnginePage(this);
     setPage(pageEngine);
 
@@ -308,4 +315,10 @@ QUrl MailWebEngineView::linkOrImageUrlAt(const QPoint &global) const
 void MailWebEngineView::openBlockableItemsDialog()
 {
     //TODO
+}
+
+void MailWebEngineView::setAllowExternalContent(bool b)
+{
+    d->mExternalReference->setAllowExternalContent(b);
+    reload();
 }

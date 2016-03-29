@@ -59,6 +59,8 @@ public:
     QUrl linkOrImageUrlAt(const QPoint &global) const;
     void openBlockableItemsDialog();
 
+    void setAllowExternalContent(bool b);
+
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotZoomTextOnlyChanged(bool b);
@@ -73,6 +75,7 @@ protected:
 
 Q_SIGNALS:
     void openUrl(const QUrl &url);
+    void messageMayBeAScam();
 
 private Q_SLOTS:
     void handleScrollToAnchor(const QVariant &result);
