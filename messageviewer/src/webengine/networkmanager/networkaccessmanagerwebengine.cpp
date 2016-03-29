@@ -26,11 +26,13 @@ class MessageViewer::NetworkAccessManagerWebEnginePrivate
 {
 public:
     NetworkAccessManagerWebEnginePrivate()
-        : mManager(Q_NULLPTR)
+        : mManager(Q_NULLPTR),
+          mNetworkUrlInterceptor(Q_NULLPTR)
     {
 
     }
     MessageViewer::NetworkUrlInterceptorManager *mManager;
+    MessageViewer::NetworkUrlInterceptor *mNetworkUrlInterceptor;
 };
 
 NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent)
@@ -40,14 +42,19 @@ NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QWebEngineView *web
     d->mManager = new MessageViewer::NetworkUrlInterceptorManager(webEngine, ac, this);
 
     // Add interceptor.
-    MessageViewer::NetworkUrlInterceptor *networkUrlInterceptor = new MessageViewer::NetworkUrlInterceptor(this);
+    d->mNetworkUrlInterceptor = new MessageViewer::NetworkUrlInterceptor(this);
     Q_FOREACH (MessageViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
-        networkUrlInterceptor->addInterceptor(interface);
+        d->mNetworkUrlInterceptor->addInterceptor(interface);
     }
-    QWebEngineProfile::defaultProfile()->setRequestInterceptor(networkUrlInterceptor);
+    QWebEngineProfile::defaultProfile()->setRequestInterceptor(d->mNetworkUrlInterceptor);
 }
 
 NetworkAccessManagerWebEngine::~NetworkAccessManagerWebEngine()
 {
     delete d;
+}
+
+void NetworkAccessManagerWebEngine::addInterceptor(MessageViewer::NetworkPluginUrlInterceptorInterface *interceptor)
+{
+    d->mNetworkUrlInterceptor->addInterceptor(interceptor);
 }
