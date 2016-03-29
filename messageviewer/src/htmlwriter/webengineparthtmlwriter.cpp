@@ -47,12 +47,10 @@ void WebEnginePartHtmlWriter::begin(const QString &css)
     }
 
     mEmbeddedPartMap.clear();
-#if 0 //FIXME
     // clear the widget:
     mHtmlView->setUpdatesEnabled(false);
     mHtmlView->scrollUp(10);
     // PENDING(marc) push into MailWebView
-#endif
     mHtmlView->load(QUrl());
     mState = Begun;
 }
@@ -71,9 +69,7 @@ void WebEnginePartHtmlWriter::end()
     mHtml.clear();
 
     resolveCidUrls();
-#if 0 //FIXME
     mHtmlView->scamCheck();
-#endif
     mHtmlView->setUpdatesEnabled(true);
     mHtmlView->update();
     mState = Ended;
@@ -134,6 +130,8 @@ void WebEnginePartHtmlWriter::resolveCidUrls()
             }
         }
     }
+#else
+    qDebug() << "WebEnginePartHtmlWriter::resolveCidUrls() not implemented";
 #endif
 }
 
