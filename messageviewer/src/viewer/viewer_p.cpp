@@ -2561,7 +2561,9 @@ void ViewerPrivate::slotHandleAttachment(int choice)
 void ViewerPrivate::slotSpeakText()
 {
     const QString text = mViewer->selectedText();
-    mTextToSpeechWidget->say(text);
+    if (!text.isEmpty()) {
+        mTextToSpeechWidget->say(text);
+    }
 }
 
 void ViewerPrivate::slotCopyImageLocation()
