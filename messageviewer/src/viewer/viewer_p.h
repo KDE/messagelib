@@ -75,10 +75,16 @@ namespace MessageViewer
 {
 class HeaderStylePlugin;
 class CSSHelper;
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+class FindBarWebEngineView;
+class MailWebEngineView;
+class WebEnginePartHtmlWriter;
+#else
 class FindBarWebView;
-class WebKitPartHtmlWriter;
-class HtmlStatusBar;
 class MailWebView;
+class WebKitPartHtmlWriter;
+#endif
+class HtmlStatusBar;
 class ScamDetectionWarningWidget;
 class MimePartTreeView;
 class OpenAttachmentFolderWidget;
@@ -601,8 +607,13 @@ public:
 #ifndef QT_NO_TREEVIEW
     MimePartTreeView *mMimePartTree;
 #endif
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    FindBarWebEngineView *mFindBar;
+    MailWebEngineView *mViewer;
+#else
     MailWebView *mViewer;
     FindBarWebView *mFindBar;
+#endif
 
     const MimeTreeParser::AttachmentStrategy *mAttachmentStrategy;
     QTimer mUpdateReaderWinTimer;
@@ -650,7 +661,11 @@ public:
     MimeTreeParser::HtmlWriter *mHtmlWriter;
     /** Used only to be able to connect and disconnect finished() signal
       in printMsg() and slotPrintMsg() since mHtmlWriter points only to abstract non-QObject class. */
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    QPointer<WebEnginePartHtmlWriter> mPartHtmlWriter;
+#else
     QPointer<WebKitPartHtmlWriter> mPartHtmlWriter;
+#endif
 
     float mSavedRelativePosition;
     int mLevelQuote;
