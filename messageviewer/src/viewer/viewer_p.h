@@ -480,7 +480,7 @@ public Q_SLOTS:
     void slotUrlOpen(const QUrl &url = QUrl());
 
     /** The mouse has moved on or off an URL. */
-    void slotUrlOn(const QString &link, const QString &title, const QString &textContent);
+    void slotUrlOn(const QString &link);
 
     /** The user presses the right mouse button on an URL. */
     void slotUrlPopup(const QUrl &, const QUrl &imageUrl, const QPoint &mousePos);
@@ -608,8 +608,8 @@ public:
     MimePartTreeView *mMimePartTree;
 #endif
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-    FindBarWebEngineView *mFindBar;
     MailWebEngineView *mViewer;
+    FindBarWebEngineView *mFindBar;
 #else
     MailWebView *mViewer;
     FindBarWebView *mFindBar;

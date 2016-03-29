@@ -25,11 +25,16 @@
 //#define KMAIL_READER_HTML_DEBUG 1
 
 #include "viewer.h"
+#include "config-messageviewer.h"
 #include "viewer_p.h"
 #include "widgets/configurewidget.h"
 #include "csshelper.h"
 #include "settings/messageviewersettings.h"
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+#include "viewer/webengine/mailwebengineview.h"
+#else
 #include "viewer/webview/mailwebview.h"
+#endif
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "widgets/zoomactionmenu.h"

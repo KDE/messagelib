@@ -107,6 +107,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         webengine/webenginepage.cpp
         webengine/webenginescript.cpp
         webengine/webengineview.cpp
+        webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()

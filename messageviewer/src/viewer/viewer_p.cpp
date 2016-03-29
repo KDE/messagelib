@@ -20,7 +20,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 //#define MESSAGEVIEWER_READER_HTML_DEBUG 1
-
 #include "viewer_p.h"
 #include "viewer.h"
 #include "messageviewer_debug.h"
@@ -112,8 +111,6 @@
 #include "csshelper.h"
 #include "settings/messageviewersettings.h"
 #include "widgets/htmlstatusbar.h"
-#include "htmlwriter/webkitparthtmlwriter.h"
-#include "widgets/mailsourceviewer.h"
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
@@ -124,7 +121,12 @@
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 #include "findbar/findbarwebengineview.h"
 #include "viewer/webengine/mailwebengineview.h"
+#include <QWebEngineSettings>
+#include "htmlwriter/webengineparthtmlwriter.h"
+#include <widgets/mailsourcewebengineviewer.h>
 #else
+#include "widgets/mailsourceviewer.h"
+#include "htmlwriter/webkitparthtmlwriter.h"
 #include "viewer/webview/mailwebview.h"
 #include "findbar/findbarwebview.h"
 #endif
@@ -1050,12 +1052,14 @@ void ViewerPrivate::initHtmlWidget()
     }
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     //TODO
-    connect(mViewer, &MailWebEngineView::linkHovered,
+    connect(mViewer->page(), &QWebEnginePage::linkHovered,
             this, &ViewerPrivate::slotUrlOn);
+#if 0 //PORTING
     connect(mViewer, &MailWebEngineView::linkClicked,
             this, &ViewerPrivate::slotUrlOpen, Qt::QueuedConnection);
     connect(mViewer, &MailWebEngineView::popupMenu,
             this, &ViewerPrivate::slotUrlPopup);
+#endif
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
 #else
@@ -1162,7 +1166,7 @@ void ViewerPrivate::readConfig()
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumLogicalFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
-    mViewer->settings()->setAttribute(QWebEngineSettings::PrintElementBackgrounds, MessageViewer::MessageViewerSettings::self()->printBackgroundColorImages());
+    //FIXME mViewer->settings()->setAttribute(QWebEngineSettings::PrintElementBackgrounds, MessageViewer::MessageViewerSettings::self()->printBackgroundColorImages());
 #else
     mViewer->settings()->setFontSize(QWebSettings::MinimumFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
     mViewer->settings()->setFontSize(QWebSettings::MinimumLogicalFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
@@ -2015,15 +2019,17 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     Q_EMIT urlClicked(mMessageItem, mClickedUrl);
 }
 
-void ViewerPrivate::slotUrlOn(const QString &link, const QString &title, const QString &textContent)
+void ViewerPrivate::slotUrlOn(const QString &link)
 {
-    Q_UNUSED(title)
-    Q_UNUSED(textContent)
-
     // The "link" we get here is not URL-encoded, and therefore there is no way QUrl could
     // parse it correctly. To workaround that, we use QWebFrame::hitTestContent() on the mouse position
     // to get the URL before WebKit managed to mangle it.
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    //TODO
+    QUrl url(link);
+#else
     QUrl url(mViewer->linkOrImageUrlAt(QCursor::pos()));
+#endif
     const QString protocol = url.scheme();
     if (protocol == QLatin1String("kmail") ||
             protocol == QLatin1String("x-kmail") ||
@@ -2127,13 +2133,11 @@ void ViewerPrivate::slotShowMessageSource()
     mNodeHelper->messageWithExtraContent(mMessage.data());
 
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-    //TODO
     MailSourceWebEngineViewer *viewer = new MailSourceWebEngineViewer(); // deletes itself upon close
     viewer->setWindowTitle(i18n("Message as Plain Text"));
     const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
     viewer->setRawSource(rawMessage);
-    //const QString htmlSource = mViewer->page()->mainFrame()->documentElement().toOuterXml();
-    viewer->setDisplayedSource(htmlSource);
+    viewer->setDisplayedSource(mViewer->page());
     if (mUseFixedFont) {
         viewer->setFixedFont();
     }
@@ -2186,8 +2190,11 @@ void ViewerPrivate::updateReaderWin()
     }
     mRecursionCountForDisplayMessage++;
 
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     mViewer->setAllowExternalContent(htmlLoadExternal());
-
+#else
+    mViewer->setAllowExternalContent(htmlLoadExternal());
+#endif
     htmlWriter()->reset();
     //TODO: if the item doesn't have the payload fetched, try to fetch it? Maybe not here, but in setMessageItem.
     if (mMessage) {
@@ -2310,7 +2317,6 @@ void ViewerPrivate::slotPrintMsg()
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     qDebug() << " ViewerPrivate::slotPrintMsg() not implemented";
 #else
-
     QPrinter printer;
 
     QScopedPointer<QPrintDialog> dlg(new QPrintDialog(&printer));
