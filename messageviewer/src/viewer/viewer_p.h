@@ -213,9 +213,7 @@ public:
     cancelled the editing, true in all other cases! */
     void editAttachment(KMime::Content *node, bool showWarning = true);
 
-    /** Access to the MailWebView used for the viewer. Use with
-      care! */
-    MailWebView *mailViewer() const;
+    void scrollToAnchor(const QString &anchor);
 
     void showAttachmentPopup(KMime::Content *node, const QString &name, const QPoint &p);
 

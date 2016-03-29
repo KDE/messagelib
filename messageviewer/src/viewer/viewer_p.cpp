@@ -446,9 +446,9 @@ void ViewerPrivate::editAttachment(KMime::Content *node, bool showWarning)
     job->canDeleteJob();
 }
 
-MailWebView *ViewerPrivate::mailViewer() const
+void ViewerPrivate::scrollToAnchor(const QString &anchor)
 {
-    return mViewer;
+    mViewer->scrollToAnchor(anchor);
 }
 
 void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr, bool fromCurrentContent)

@@ -792,7 +792,7 @@ bool HtmlAnchorHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         return false;
     }
 
-    w->mailViewer()->scrollToAnchor(url.fragment());
+    w->scrollToAnchor(url.fragment());
     return true;
 }
 }
