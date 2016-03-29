@@ -48,7 +48,7 @@ void LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
 {
     if (!d->mAllowLoadExternalReference) {
         //TODO add more resource type
-        if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
+        if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile()) {
             info.block(true);
         }
     }
