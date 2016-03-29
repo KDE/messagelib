@@ -671,8 +671,7 @@ bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
                 bDecryptionOk = true;
                 decryptedData = plainText;
             } else {
-                passphraseError =  decryptResult.error().isCanceled()
-                                   || decryptResult.error().code() == GPG_ERR_NO_SECKEY;
+                passphraseError =  decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_NO_SECKEY;
                 actuallyEncrypted = decryptResult.error().code() != GPG_ERR_NO_DATA;
                 partMetaData.errorText = QString::fromLocal8Bit(decryptResult.error().asString());
                 partMetaData.isEncrypted = actuallyEncrypted;
@@ -684,9 +683,31 @@ bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
                 if (bDecryptionOk) {
                     decryptedData = plainText;
                 } else if (htmlWriter() && showWarning) {
-                    decryptedData = "<div style=\"font-size:x-large; text-align:center; padding:20pt;\">"
-                                    + errorMsg.toUtf8()
-                                    + "</div>";
+                    bool noSecKey = true;
+                    const QString sNoSecKeyHeader = i18n("No secret key found to encrypt the message. It is encrypted for following keys:");
+                    QString secKeyList;
+                    foreach (const GpgME::DecryptionResult::Recipient &recipient, decryptResult.recipients()) {
+                        noSecKey &= (recipient.status().code() == GPG_ERR_NO_SECKEY);
+
+                        if (!secKeyList.isEmpty()) {
+                            secKeyList += QStringLiteral("<br />");
+                        }
+
+                        secKeyList += QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">%4</a>")
+                            .arg(cryptProto->displayName(),
+                                cryptProto->name(),
+                                QString::fromLatin1(recipient.keyID()),
+                                QString::fromLatin1(QByteArray("0x") + recipient.keyID())
+                            );
+                    }
+
+                    decryptedData = "<div style=\"font-size:x-large; text-align:center; padding:20pt;\">";
+                    if (noSecKey) {
+                        decryptedData += QString(sNoSecKeyHeader + QStringLiteral("<br />") + secKeyList).toUtf8();
+                    } else {
+                        decryptedData += errorMsg.toUtf8();
+                    }
+                    decryptedData += "</div>";
                     if (!passphraseError) {
                         partMetaData.errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName)
                                                  + QLatin1String("<br />")
