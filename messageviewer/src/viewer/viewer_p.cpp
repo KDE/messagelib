@@ -446,7 +446,7 @@ void ViewerPrivate::editAttachment(KMime::Content *node, bool showWarning)
     job->canDeleteJob();
 }
 
-MailWebView *ViewerPrivate::htmlPart() const
+MailWebView *ViewerPrivate::mailViewer() const
 {
     return mViewer;
 }

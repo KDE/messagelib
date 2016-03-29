@@ -215,7 +215,7 @@ public:
 
     /** Access to the MailWebView used for the viewer. Use with
       care! */
-    MailWebView *htmlPart() const;
+    MailWebView *mailViewer() const;
 
     void showAttachmentPopup(KMime::Content *node, const QString &name, const QPoint &p);
 
