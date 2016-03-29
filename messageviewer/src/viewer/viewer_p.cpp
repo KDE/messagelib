@@ -2069,12 +2069,11 @@ void ViewerPrivate::slotShowMessageSource()
         return;
     }
     mNodeHelper->messageWithExtraContent(mMessage.data());
-    const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
-    const QString htmlSource = mViewer->page()->mainFrame()->documentElement().toOuterXml();
-
     MailSourceViewer *viewer = new MailSourceViewer(); // deletes itself upon close
     viewer->setWindowTitle(i18n("Message as Plain Text"));
+    const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
     viewer->setRawSource(rawMessage);
+    const QString htmlSource = mViewer->page()->mainFrame()->documentElement().toOuterXml();
     viewer->setDisplayedSource(htmlSource);
     if (mUseFixedFont) {
         viewer->setFixedFont();
