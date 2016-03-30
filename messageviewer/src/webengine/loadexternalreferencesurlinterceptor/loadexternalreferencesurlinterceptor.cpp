@@ -44,14 +44,15 @@ LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
     delete d;
 }
 
-void LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
+bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     if (!d->mAllowLoadExternalReference) {
         //TODO add more resource type
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile()) {
-            info.block(true);
+            return true;
         }
     }
+    return false;
 }
 
 void LoadExternalReferencesUrlInterceptor::setAllowExternalContent(bool b)

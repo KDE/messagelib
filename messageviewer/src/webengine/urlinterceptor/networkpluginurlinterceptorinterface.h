@@ -35,7 +35,7 @@ public:
     virtual void createActions(KActionCollection *ac);
     virtual QList<QAction *> actions() const;
 
-    virtual void interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
+    virtual bool interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
 };
 }
 #endif // MAILNETWORKPLUGINURLINTERCEPTORINTERFACE_H

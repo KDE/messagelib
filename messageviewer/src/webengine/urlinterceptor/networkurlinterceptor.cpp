@@ -47,7 +47,10 @@ void NetworkUrlInterceptorPrivate::addInterceptor(NetworkPluginUrlInterceptorInt
 void NetworkUrlInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     Q_FOREACH (NetworkPluginUrlInterceptorInterface *inter, listInterceptor) {
-        inter->interceptRequest(info);
+        if (inter->interceptRequest(info)) {
+            info.block(true);
+            break;
+        }
     }
 }
 
