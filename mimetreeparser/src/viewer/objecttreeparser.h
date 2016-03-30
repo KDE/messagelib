@@ -288,7 +288,6 @@ class MIMETREEPARSER_EXPORT ObjectTreeParser
 public:
     explicit ObjectTreeParser(ObjectTreeSourceIf *source,
                               NodeHelper *nodeHelper = 0,
-                              const Kleo::CryptoBackend::Protocol *protocol = Q_NULLPTR,
                               bool showOneMimePart = false,
                               const AttachmentStrategy *attachmentStrategy = Q_NULLPTR);
 
@@ -325,9 +324,6 @@ public:
     */
     QByteArray plainTextContentCharset() const;
     QByteArray htmlContentCharset() const;
-
-    void setCryptoProtocol(const Kleo::CryptoBackend::Protocol *protocol);
-    const Kleo::CryptoBackend::Protocol *cryptoProtocol() const;
 
     bool showOnlyOneMimePart() const;
     void setShowOnlyOneMimePart(bool show);
@@ -418,7 +414,6 @@ private:
     QString mPlainTextContent;
     QString mHtmlContent;
     KMime::Content *mTopLevelContent;
-    const Kleo::CryptoBackend::Protocol *mCryptoProtocol;
 
     /// Show only one mime part means that the user has selected some node in the message structure
     /// viewer that is not the root, which means the user wants to only see the selected node and its

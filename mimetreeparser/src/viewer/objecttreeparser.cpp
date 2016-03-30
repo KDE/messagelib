@@ -60,7 +60,6 @@
 #include <MessageCore/StringUtil>
 #include <Libkleo/SpecialJob>
 #include <Libkleo/CryptoBackendFactory>
-#include <Libkleo/DecryptVerifyJob>
 #include <Libkleo/VerifyDetachedJob>
 #include <Libkleo/VerifyOpaqueJob>
 #include <Libkleo/KeyListJob>
@@ -105,7 +104,6 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
       mNodeHelper(topLevelParser->mNodeHelper),
       mHtmlWriter(topLevelParser->mHtmlWriter),
       mTopLevelContent(topLevelParser->mTopLevelContent),
-      mCryptoProtocol(topLevelParser->mCryptoProtocol),
       mShowOnlyOneMimePart(showOnlyOneMimePart),
       mHasPendingAsyncJobs(false),
       mAllowAsync(topLevelParser->mAllowAsync),
@@ -117,14 +115,12 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
 
 ObjectTreeParser::ObjectTreeParser(ObjectTreeSourceIf *source,
                                    MimeTreeParser::NodeHelper *nodeHelper,
-                                   const Kleo::CryptoBackend::Protocol *protocol,
                                    bool showOnlyOneMimePart,
                                    const AttachmentStrategy *strategy)
     : mSource(source),
       mNodeHelper(nodeHelper),
       mHtmlWriter(0),
       mTopLevelContent(0),
-      mCryptoProtocol(protocol),
       mShowOnlyOneMimePart(showOnlyOneMimePart),
       mHasPendingAsyncJobs(false),
       mAllowAsync(false),
@@ -154,7 +150,6 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser &other)
       mNodeHelper(other.nodeHelper()),   //TODO(Andras) hm, review what happens if mDeleteNodeHelper was true in the source
       mHtmlWriter(other.mHtmlWriter),
       mTopLevelContent(other.mTopLevelContent),
-      mCryptoProtocol(other.cryptoProtocol()),
       mShowOnlyOneMimePart(other.showOnlyOneMimePart()),
       mHasPendingAsyncJobs(other.hasPendingAsyncJobs()),
       mAllowAsync(other.allowAsync()),
@@ -1550,16 +1545,6 @@ QByteArray ObjectTreeParser::plainTextContentCharset() const
 QByteArray ObjectTreeParser::htmlContentCharset() const
 {
     return mHtmlContentCharset;
-}
-
-void ObjectTreeParser::setCryptoProtocol(const Kleo::CryptoBackend::Protocol *protocol)
-{
-    mCryptoProtocol = protocol;
-}
-
-const Kleo::CryptoBackend::Protocol *ObjectTreeParser::cryptoProtocol() const
-{
-    return mCryptoProtocol;
 }
 
 bool ObjectTreeParser::showOnlyOneMimePart() const

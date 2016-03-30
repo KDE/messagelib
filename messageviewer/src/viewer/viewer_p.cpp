@@ -965,7 +965,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     mNodeHelper->removeTempFiles();
     mNodeHelper->setNodeUnprocessed(mMessage.data(), true);
     MailViewerSource otpSource(this);
-    MimeTreeParser::ObjectTreeParser otp(&otpSource, mNodeHelper, 0, mMessage.data() != content /* show only single node */);
+    MimeTreeParser::ObjectTreeParser otp(&otpSource, mNodeHelper, mMessage.data() != content /* show only single node */);
     otp.setAllowAsync(!mPrinting);
     otp.setPrinting(mPrinting);
     otp.parseObjectTree(content);

@@ -1103,7 +1103,7 @@ void MessagePart::html(bool decorate)
 
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
-    const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mOtp->nodeHelper(), mOtp->cryptoProtocol(), mOtp->mSource, QString(), Q_NULLPTR);
+    const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mOtp->nodeHelper(), Q_NULLPTR, mOtp->mSource, QString(), Q_NULLPTR);
     writer->queue(mOtp->quotedHTML(text(), decorate));
 }
 
@@ -1271,10 +1271,6 @@ void TextMessagePart::parseContent()
     const auto cryptProto = Kleo::CryptoBackendFactory::instance()->openpgp();
 
     if (!blocks.isEmpty()) {
-
-        if (blocks.count() > 1 || blocks.at(0).type() != MimeTreeParser::NoPgpBlock) {
-            mOtp->setCryptoProtocol(cryptProto);
-        }
 
         /* The (overall) signature/encrypted status is broken
          * if one unencrypted part is at the beginning or in the middle
@@ -1641,28 +1637,6 @@ QString CertMessagePart::text() const
     return QString();
 }
 
-// A small class that eases temporary CryptPlugWrapper changes:
-class CryptoProtocolSaver
-{
-    ObjectTreeParser *otp;
-    const Kleo::CryptoBackend::Protocol *protocol;
-public:
-    CryptoProtocolSaver(ObjectTreeParser *_otp, const Kleo::CryptoBackend::Protocol *_w)
-        : otp(_otp), protocol(_otp ? _otp->cryptoProtocol() : 0)
-    {
-        if (otp) {
-            otp->setCryptoProtocol(_w);
-        }
-    }
-
-    ~CryptoProtocolSaver()
-    {
-        if (otp) {
-            otp->setCryptoProtocol(protocol);
-        }
-    }
-};
-
 //-----CryptMessageBlock---------------------
 CryptoMessagePart::CryptoMessagePart(ObjectTreeParser *otp,
                                      const QString &text,
@@ -1852,7 +1826,6 @@ void CryptoMessagePart::startDecryption(KMime::Content *data)
 
     mMetaData.isEncrypted = true;
 
-    CryptoProtocolSaver saver(mOtp, mCryptoProto);
     bool bOkDecrypt = okDecryptMIME(*data);
 
     if (mMetaData.inProgress) {
@@ -1905,7 +1878,6 @@ void CryptoMessagePart::startVerificationDetached(const QByteArray &text, KMime:
     mMetaData.isEncrypted = false;
     mMetaData.isDecryptable = false;
 
-    CryptoProtocolSaver saver(mOtp, mCryptoProto);
     mOtp->okVerify(text, mCryptoProto, mMetaData, mVerifiedText, mSignatures, signature, mNode);
 
     if (mMetaData.isSigned) {
