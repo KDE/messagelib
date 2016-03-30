@@ -93,7 +93,6 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("numeric scam3") << QStringLiteral("<html><body><a href=\"http://1.0.1.1/\">test</a></body></html>") << true;
     QTest::newRow("numeric scam4") << QStringLiteral("<html><body><a href=\"http://255.500.1.1/\">test</a></body></html>") << true;
     QTest::newRow("numeric no scam5") << QStringLiteral("<html><body><a href=\"http://baseball.2ndhalfplays.com/nested/attribs/\">http://baseball2.2ndhalfplays.com/nested/attribs</html>") << false;
-    QTest::newRow("numeric no scam5") << QStringLiteral("<html><body><a href=\"http://baseball.2ndhalfplays.com/nested/attribs/\">http://baseball2.2ndhalfplays.com/nested/attribs</html>") << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
