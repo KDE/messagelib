@@ -52,20 +52,9 @@ if(DEBUG_SIGNATURE)
 endif()
 
 set(_mailwebview_cpp 
-    adblock/adblockelementhiding.cpp
-    adblock/adblockmanager.cpp
-    adblock/adblockrulefallbackimpl.cpp
-    adblock/adblockblockableitemsdialog.cpp
-    adblock/adblockblockableitemswidget.cpp
-
-    adblock/common/matcher/adblockrule.cpp
-    adblock/common/matcher/adblockruletextmatchimpl.cpp
-    adblock/common/matcher/adblockrulenullimpl.cpp
-    adblock/common/matcher/adblockhostmatcher.cpp
 
     adblock/common/adblocksettingwidget.cpp
     adblock/common/adblockutil.cpp
-    adblock/common/adblockcreatefilterdialog.cpp
     adblock/common/adblockaddsubscriptiondialog.cpp
     adblock/common/adblocklistwidget.cpp
     adblock/common/adblocksyntaxhighlighter.cpp
@@ -73,15 +62,32 @@ set(_mailwebview_cpp
     adblock/common/adblockautomaticruleslistwidget.cpp
     )
 
+if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
+    set(_mailwebview_cpp
+        adblock/common/adblockcreatefilterdialog.cpp
+        adblock/common/matcher/adblockrule.cpp
+        adblock/common/matcher/adblockruletextmatchimpl.cpp
+        adblock/common/matcher/adblockrulenullimpl.cpp
+        adblock/common/matcher/adblockhostmatcher.cpp
+        adblock/adblockelementhiding.cpp
+        adblock/adblockmanager.cpp
+        adblock/adblockrulefallbackimpl.cpp
+        adblock/adblockblockableitemsdialog.cpp
+        adblock/adblockblockableitemswidget.cpp
+        ${_mailwebview_cpp}
+        )
+endif()
 
 # For the moment we can't replace mailwebengine
+if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
 set(libmessageviewer_mailviewer_SRCS
     viewer/webview/mailwebview.cpp
     viewer/webview/webpage.cpp
     viewer/webview/networkaccessmanager.cpp
+    viewer/webview/webviewaccesskey.cpp
     )
 set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
-
+endif()
 
 if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_mailviewer_SRCS
@@ -122,7 +128,6 @@ set(libmessageviewer_viewer_SRCS
     viewer/pluginloaderbase.cpp
     viewer/viewer.cpp
     viewer/viewer_p.cpp
-    viewer/webview/webviewaccesskey.cpp
     viewer/messagedisplayformatattribute.cpp
     viewer/urlhandlermanager.cpp
     viewer/mimeparttree/mimeparttreeview.cpp
@@ -167,13 +172,15 @@ set(libmessageviewer_header_SRCS
 
 set(libmessageviewer_scamdetection_SRCS
     scamdetection/scamdetectionwarningwidget.cpp
-    scamdetection/scamdetection.cpp
     scamdetection/scamdetectiondetailsdialog.cpp
     scamdetection/scamattribute.cpp
     scamdetection/scamcheckshorturl.cpp
     scamdetection/scamexpandurljob.cpp
     scamdetection/scamcheckshorturlmanager.cpp
     )
+if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
+    set(libmessageviewer_scamdetection_SRCS scamdetection/scamdetection.cpp ${libmessageviewer_scamdetection_SRCS})
+endif()
 
 if (QTWEBENGINE_SUPPORT_OPTION)
    set(libmessageviewer_scamdetection_webengine_SRCS
@@ -183,9 +190,11 @@ endif()
 
 set(libmessageviewer_findbar_SRCS
     findbar/findbarbase.cpp
-    findbar/findbarwebview.cpp
     findbar/findbarsourceview.cpp
     )
+if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
+    set(libmessageviewer_findbar_SRCS findbar/findbarwebview.cpp ${libmessageviewer_findbar_SRCS})
+endif()
 
 set(libmessageviewer_utils_SRCS
     utils/markmessagereadhandler.cpp
@@ -198,12 +207,16 @@ if (QTWEBENGINE_SUPPORT_OPTION)
     )
 endif()
 
-
 set(libmessageviewer_htmlwriter_SRCS
     htmlwriter/teehtmlwriter.cpp
-    htmlwriter/webkitparthtmlwriter.cpp
     ${libmessageviewer_htmlwriter_webengine_SRCS}
     )
+
+if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
+    set(libmessageviewer_htmlwriter_SRCS htmlwriter/webkitparthtmlwriter.cpp ${libmessageviewer_htmlwriter_SRCS})
+endif()
+
+
 
 set(libmessageviewer_antispam_SRCS
     antispam/spamheaderanalyzer.cpp

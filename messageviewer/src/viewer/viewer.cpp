@@ -33,12 +33,12 @@
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 #include "viewer/webengine/mailwebengineview.h"
 #else
+#include "adblock/adblockmanager.h"
 #include "viewer/webview/mailwebview.h"
 #endif
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "widgets/zoomactionmenu.h"
-#include "adblock/adblockmanager.h"
 
 #include <Akonadi/KMime/MessageParts>
 #include <AkonadiCore/itemfetchjob.h>
@@ -643,7 +643,11 @@ QAction *Viewer::blockImage() const
 
 bool Viewer::adblockEnabled() const
 {
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    return false;
+#else
     return MessageViewer::AdBlockManager::self()->isEnabled();
+#endif
 }
 
 QAction *Viewer::openBlockableItems() const

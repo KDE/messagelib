@@ -11,17 +11,17 @@ target_link_libraries(adblocksettingsdialog_gui
   KF5::MessageViewer
   KF5::ItemViews
 )
-
-set(adblockblockableitemdialog_gui_SRCS adblockblockableitemdialog_gui.cpp)
-add_executable(adblockblockableitemdialog_gui ${adblockblockableitemdialog_gui_SRCS})
-target_link_libraries(adblockblockableitemdialog_gui
-  KF5::KIOCore
-  KF5::MessageViewer
-  KF5::Libkdepim
-  Qt5::WebKitWidgets
-  KF5::ItemViews 
-)
-
+if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
+    set(adblockblockableitemdialog_gui_SRCS adblockblockableitemdialog_gui.cpp)
+    add_executable(adblockblockableitemdialog_gui ${adblockblockableitemdialog_gui_SRCS})
+    target_link_libraries(adblockblockableitemdialog_gui
+        KF5::KIOCore
+        KF5::MessageViewer
+        KF5::Libkdepim
+        Qt5::WebKitWidgets
+        KF5::ItemViews
+        )
+endif()
 
 set(adblockautomaticruleslistwidget_gui_SRCS adblockautomaticruleslistwidget_gui.cpp)
 add_executable(adblockautomaticruleslistwidget_gui ${adblockautomaticruleslistwidget_gui_SRCS})

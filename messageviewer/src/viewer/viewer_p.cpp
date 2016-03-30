@@ -2061,7 +2061,6 @@ void ViewerPrivate::slotUrlPopup(const QUrl &aUrl, const QUrl &imageUrl, const Q
     mClickedUrl = aUrl;
     mImageUrl = imageUrl;
 
-    qDebug()<<" aUrl"<<aUrl;
     if (URLHandlerManager::instance()->handleContextMenuRequest(aUrl, aPos, this)) {
         return;
     }
@@ -3058,7 +3057,11 @@ void ViewerPrivate::slotBlockImage()
     if (mImageUrl.isEmpty()) {
         return;
     }
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    qDebug() << "void ViewerPrivate::slotBlockImage() unimplemented";
+#else
     MessageViewer::AdBlockManager::self()->addCustomRule(mImageUrl.url(), true);
+#endif
 }
 
 void ViewerPrivate::slotOpenBlockableItems()
