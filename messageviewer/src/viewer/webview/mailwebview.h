@@ -58,7 +58,6 @@ public:
     bool replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml);
     void setElementByIdVisible(const QString &id, bool visible);
     void selectAll();
-    void clearSelection();
     void scrollToRelativePosition(double pos);
     double relativePosition() const;
 

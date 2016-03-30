@@ -551,8 +551,6 @@ public Q_SLOTS:
     /** Select message body. */
     void selectAll();
 
-    void clearSelection();
-
     /** Copy URL in mUrlCurrent to clipboard. Removes "mailto:" at
       beginning of URL before copying. */
     void slotUrlCopy();

@@ -309,11 +309,6 @@ bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) cons
     return false;
 }
 
-void MailWebEngineView::clearSelection()
-{
-    //TODO
-}
-
 void MailWebEngineView::scrollToRelativePosition(double pos)
 {
     //TODO

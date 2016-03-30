@@ -262,7 +262,6 @@ public:
     void setPrinting(bool enable);
 
     void selectAll();
-    void clearSelection();
     void copySelectionToClipboard();
 
     void setZoomFactor(qreal zoomFactor);

@@ -2687,11 +2687,6 @@ void ViewerPrivate::selectAll()
     mViewer->selectAll();
 }
 
-void ViewerPrivate::clearSelection()
-{
-    mViewer->clearSelection();
-}
-
 void ViewerPrivate::slotUrlCopy()
 {
 #ifndef QT_NO_CLIPBOARD

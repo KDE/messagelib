@@ -561,11 +561,6 @@ void Viewer::selectAll()
     d->selectAll();
 }
 
-void Viewer::clearSelection()
-{
-    Q_D(Viewer);
-    d->clearSelection();
-}
 
 void Viewer::copySelectionToClipboard()
 {

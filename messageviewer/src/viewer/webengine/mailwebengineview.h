@@ -54,7 +54,6 @@ public:
 
     bool hasVerticalScrollBar() const;
     bool isAttachmentInjectionPoint(const QPoint &globalPos) const;
-    void clearSelection();
     void scrollToRelativePosition(double pos);
     double relativePosition() const;
     QUrl linkOrImageUrlAt(const QPoint &global) const;
