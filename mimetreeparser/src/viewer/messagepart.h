@@ -71,7 +71,7 @@ protected:
 class EncapsulatedRFC822Block : public HTMLBlock
 {
 public:
-    EncapsulatedRFC822Block(MimeTreeParser::HtmlWriter *writer, MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node);
+    EncapsulatedRFC822Block(MimeTreeParser::HtmlWriter *writer, const MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node);
     virtual ~EncapsulatedRFC822Block();
 
 private:
@@ -79,7 +79,7 @@ private:
     void internalExit();
 
     HtmlWriter *mWriter;
-    NodeHelper *mNodeHelper;
+    const NodeHelper *mNodeHelper;
     KMime::Content *mNode;
 };
 

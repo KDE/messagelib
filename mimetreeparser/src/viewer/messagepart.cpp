@@ -162,7 +162,7 @@ void CryptoBlock::internalExit()
     entered = false;
 }
 
-EncapsulatedRFC822Block::EncapsulatedRFC822Block(MimeTreeParser::HtmlWriter *writer, MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node)
+EncapsulatedRFC822Block::EncapsulatedRFC822Block(MimeTreeParser::HtmlWriter *writer, const MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node)
     : mWriter(writer)
     , mNodeHelper(nodeHelper)
     , mNode(node)
