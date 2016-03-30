@@ -1060,7 +1060,7 @@ MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Con
                 // decryption failed, or because we didn't know if it was encrypted, tried,
                 // and failed. If the message was not actually encrypted, we continue
                 // assuming it's signed
-                if (mp->mPassphraseError || (smimeType.isEmpty() && messagePart->isEncrypted)) {
+                if (mp->passphraseError() || (smimeType.isEmpty() && messagePart->isEncrypted)) {
                     isEncrypted = true;
                     signTestNode = 0;
                 }

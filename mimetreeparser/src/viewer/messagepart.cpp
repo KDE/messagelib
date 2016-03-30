@@ -1706,6 +1706,11 @@ bool CryptoMessagePart::isEncrypted() const
     return mMetaData.isEncrypted;
 }
 
+bool CryptoMessagePart::passphraseError() const
+{
+    return mPassphraseError;
+}
+
 void CryptoMessagePart::startDecryption(const QByteArray &text, const QTextCodec *aCodec)
 {
     KMime::Content *content = new KMime::Content;

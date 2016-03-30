@@ -407,13 +407,14 @@ public:
     void setIsEncrypted(bool encrypted);
     bool isEncrypted() const;
 
+    bool passphraseError() const;
+
     void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
     void startDecryption(KMime::Content *data = 0);
     void startVerification(const QByteArray &text, const QTextCodec *aCodec);
     void startVerificationDetached(const QByteArray &text, KMime::Content *textNode, const QByteArray &signature);
     void html(bool decorate) Q_DECL_OVERRIDE;
 
-    bool mPassphraseError;
     QByteArray mDecryptedData;
     std::vector<GpgME::Signature> mSignatures;
 
@@ -423,6 +424,7 @@ private:
     void writeDeferredDecryptionBlock() const;
 
 protected:
+    bool mPassphraseError;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
     QString mFromAddress;
     KMime::Content *mNode;
