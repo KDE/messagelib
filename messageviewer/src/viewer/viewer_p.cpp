@@ -1054,9 +1054,9 @@ void ViewerPrivate::initHtmlWidget()
     //TODO
     connect(mViewer->page(), &QWebEnginePage::linkHovered,
             this, &ViewerPrivate::slotUrlOn);
-#if 0 //PORTING
-    connect(mViewer, &MailWebEngineView::linkClicked,
+    connect(mViewer, &MailWebEngineView::openUrl,
             this, &ViewerPrivate::slotUrlOpen, Qt::QueuedConnection);
+#if 0 //PORTING
     connect(mViewer, &MailWebEngineView::popupMenu,
             this, &ViewerPrivate::slotUrlPopup);
 #endif
