@@ -39,7 +39,6 @@
 #include "memento/verifydetachedbodypartmemento.h"
 #include "memento/verifyopaquebodypartmemento.h"
 #include "memento/cryptobodypartmemento.h"
-#include "memento/decryptverifybodypartmemento.h"
 #include "messagepart.h"
 #include "objecttreesourceif.h"
 
@@ -70,7 +69,6 @@
 
 // KDEPIMLIBS includes
 #include <gpgme++/importresult.h>
-#include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
@@ -563,183 +561,6 @@ void ObjectTreeParser::writeCertificateImportResult(const GpgME::ImportResult &r
     }
 
     htmlWriter()->queue(QStringLiteral("<hr/>"));
-}
-
-bool ObjectTreeParser::okDecryptMIME(KMime::Content &data,
-                                     QByteArray &decryptedData,
-                                     bool &signatureFound,
-                                     std::vector<GpgME::Signature> &signatures,
-                                     bool showWarning,
-                                     bool &passphraseError,
-                                     bool &actuallyEncrypted,
-                                     bool &decryptionStarted,
-                                     PartMetaData &partMetaData)
-{
-    passphraseError = false;
-    decryptionStarted = false;
-    partMetaData.errorText.clear();
-    partMetaData.auditLogError = GpgME::Error();
-    partMetaData.auditLog.clear();
-    bool bDecryptionOk = false;
-    enum { NO_PLUGIN, NOT_INITIALIZED, CANT_DECRYPT }
-    cryptPlugError = NO_PLUGIN;
-
-    const Kleo::CryptoBackend::Protocol *cryptProto = cryptoProtocol();
-
-    QString cryptPlugLibName;
-    if (cryptProto) {
-        cryptPlugLibName = cryptProto->name();
-    }
-
-    assert(mSource->decryptMessage());
-
-    const QString errorMsg = i18n("Could not decrypt the data.");
-    if (cryptProto) {
-        QByteArray ciphertext = data.decodedContent();
-#ifdef MARCS_DEBUG
-        QString cipherStr = QString::fromLatin1(ciphertext);
-        bool cipherIsBinary = (!cipherStr.contains(QStringLiteral("BEGIN ENCRYPTED MESSAGE"), Qt::CaseInsensitive)) &&
-                              (!cipherStr.contains(QStringLiteral("BEGIN PGP ENCRYPTED MESSAGE"), Qt::CaseInsensitive)) &&
-                              (!cipherStr.contains(QStringLiteral("BEGIN PGP MESSAGE"), Qt::CaseInsensitive));
-
-        dumpToFile("dat_04_reader.encrypted", ciphertext.data(), ciphertext.size());
-
-        QString deb;
-        deb =  QLatin1String("\n\nE N C R Y P T E D    D A T A = ");
-        if (cipherIsBinary) {
-            deb += QLatin1String("[binary data]");
-        } else {
-            deb += QLatin1String("\"");
-            deb += cipherStr;
-            deb += QLatin1String("\"");
-        }
-        deb += "\n\n";
-        qCDebug(MIMETREEPARSER_LOG) << deb;
-#endif
-
-        qCDebug(MIMETREEPARSER_LOG) << "going to call CRYPTPLUG" << cryptPlugLibName;
-
-        // Check whether the memento contains a result from last time:
-        const DecryptVerifyBodyPartMemento *m
-            = dynamic_cast<DecryptVerifyBodyPartMemento *>(mNodeHelper->bodyPartMemento(&data, "decryptverify"));
-        if (!m) {
-            Kleo::DecryptVerifyJob *job = cryptProto->decryptVerifyJob();
-            if (!job) {
-                cryptPlugError = CANT_DECRYPT;
-                cryptProto = 0;
-            } else {
-                DecryptVerifyBodyPartMemento *newM
-                    = new DecryptVerifyBodyPartMemento(job, ciphertext);
-                if (allowAsync()) {
-                    QObject::connect(newM, &CryptoBodyPartMemento::update,
-                                     nodeHelper(), &NodeHelper::update);
-                    QObject::connect(newM, SIGNAL(update(MimeTreeParser::UpdateMode)), mSource->sourceObject(),
-                                     SLOT(update(MimeTreeParser::UpdateMode)));
-                    if (newM->start()) {
-                        decryptionStarted = true;
-                        mHasPendingAsyncJobs = true;
-                    } else {
-                        m = newM;
-                    }
-                } else {
-                    newM->exec();
-                    m = newM;
-                }
-                mNodeHelper->setBodyPartMemento(&data, "decryptverify", newM);
-            }
-        } else if (m->isRunning()) {
-            decryptionStarted = true;
-            mHasPendingAsyncJobs = true;
-            m = 0;
-        }
-
-        if (m) {
-            const QByteArray &plainText = m->plainText();
-            const GpgME::DecryptionResult &decryptResult = m->decryptResult();
-            const GpgME::VerificationResult &verifyResult = m->verifyResult();
-            std::stringstream ss;
-            ss << decryptResult << '\n' << verifyResult;
-            qCDebug(MIMETREEPARSER_LOG) << ss.str().c_str();
-            signatureFound = verifyResult.signatures().size() > 0;
-            signatures = verifyResult.signatures();
-            bDecryptionOk = !decryptResult.error();
-            partMetaData.auditLogError = m->auditLogError();
-            partMetaData.auditLog = m->auditLogAsHtml();
-            if (!bDecryptionOk && signatureFound) {
-                //Only a signed part
-                actuallyEncrypted = false;
-                bDecryptionOk = true;
-                decryptedData = plainText;
-            } else {
-                passphraseError =  decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_NO_SECKEY;
-                actuallyEncrypted = decryptResult.error().code() != GPG_ERR_NO_DATA;
-                partMetaData.errorText = QString::fromLocal8Bit(decryptResult.error().asString());
-                partMetaData.isEncrypted = actuallyEncrypted;
-                if (actuallyEncrypted && decryptResult.numRecipients() > 0) {
-                    partMetaData.keyId = decryptResult.recipient(0).keyID();
-                }
-
-                qCDebug(MIMETREEPARSER_LOG) << "ObjectTreeParser::decryptMIME: returned from CRYPTPLUG";
-                if (bDecryptionOk) {
-                    decryptedData = plainText;
-                } else if (htmlWriter() && showWarning) {
-                    bool noSecKey = true;
-                    const QString sNoSecKeyHeader = i18n("No secret key found to encrypt the message. It is encrypted for following keys:");
-                    QString secKeyList;
-                    foreach (const GpgME::DecryptionResult::Recipient &recipient, decryptResult.recipients()) {
-                        noSecKey &= (recipient.status().code() == GPG_ERR_NO_SECKEY);
-
-                        if (!secKeyList.isEmpty()) {
-                            secKeyList += QStringLiteral("<br />");
-                        }
-
-                        secKeyList += QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">%4</a>")
-                            .arg(cryptProto->displayName(),
-                                cryptProto->name(),
-                                QString::fromLatin1(recipient.keyID()),
-                                QString::fromLatin1(QByteArray("0x") + recipient.keyID())
-                            );
-                    }
-
-                    decryptedData = "<div style=\"font-size:x-large; text-align:center; padding:20pt;\">";
-                    if (noSecKey) {
-                        decryptedData += QString(sNoSecKeyHeader + QStringLiteral("<br />") + secKeyList).toUtf8();
-                    } else {
-                        decryptedData += errorMsg.toUtf8();
-                    }
-                    decryptedData += "</div>";
-                    if (!passphraseError) {
-                        partMetaData.errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName)
-                                                 + QLatin1String("<br />")
-                                                 + i18n("Error: %1", partMetaData.errorText);
-                    }
-                }
-            }
-        }
-    }
-
-    if (!cryptProto) {
-        decryptedData = "<div style=\"text-align:center; padding:20pt;\">"
-                        + errorMsg.toUtf8()
-                        + "</div>";
-        switch (cryptPlugError) {
-        case NOT_INITIALIZED:
-            partMetaData.errorText = i18n("Crypto plug-in \"%1\" is not initialized.",
-                                          cryptPlugLibName);
-            break;
-        case CANT_DECRYPT:
-            partMetaData.errorText = i18n("Crypto plug-in \"%1\" cannot decrypt messages.",
-                                          cryptPlugLibName);
-            break;
-        case NO_PLUGIN:
-            partMetaData.errorText = i18n("No appropriate crypto plug-in was found.");
-            break;
-        }
-    }
-
-    dumpToFile("dat_05_reader.decrypted", decryptedData.data(), decryptedData.size());
-
-    return bDecryptionOk;
 }
 
 MessagePart::Ptr ObjectTreeParser::processTextHtmlSubtype(KMime::Content *curNode, ProcessResult &)

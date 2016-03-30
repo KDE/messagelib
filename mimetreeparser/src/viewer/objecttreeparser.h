@@ -360,18 +360,6 @@ private:
     /** Writes out the information contained in a GpgME::ImportResult */
     void writeCertificateImportResult(const GpgME::ImportResult &res);
 
-    /** Returns the contents of the given multipart/encrypted
-      object. Data is decypted.  May contain body parts. */
-    bool okDecryptMIME(KMime::Content &data,
-                       QByteArray &decryptedData,
-                       bool &signatureFound,
-                       std::vector<GpgME::Signature> &signatures,
-                       bool showWarning,
-                       bool &passphraseError,
-                       bool &actuallyEncrypted,
-                       bool &decryptionStarted,
-                       PartMetaData &partMetaData);
-
     bool okVerify(const QByteArray &data, const Kleo::CryptoBackend::Protocol *cryptProto, MimeTreeParser::PartMetaData &messagePart, QByteArray &verifiedText, std::vector<GpgME::Signature> &signatures, const QByteArray &signature, KMime::Content *sign);
     void sigStatusToMetaData(const std::vector<GpgME::Signature> &signatures, const Kleo::CryptoBackend::Protocol *cryptoProtocol, PartMetaData &messagePart, GpgME::Key key);
 

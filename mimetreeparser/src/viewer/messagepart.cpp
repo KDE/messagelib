@@ -27,6 +27,8 @@
 #include "job/kleojobexecutor.h"
 #include "utils/iconnamecache.h"
 
+#include "memento/decryptverifybodypartmemento.h"
+
 #include <MessageCore/StringUtil>
 
 #include <libkleo/importjob.h>
@@ -45,6 +47,8 @@
 
 #include <KLocalizedString>
 #include <KEmailAddress>
+
+#include <sstream>
 
 using namespace MimeTreeParser;
 
@@ -1666,6 +1670,7 @@ CryptoMessagePart::CryptoMessagePart(ObjectTreeParser *otp,
                                      KMime::Content *node)
     : MessagePart(otp, text)
     , mPassphraseError(false)
+    , mNoSecKey(false)
     , mCryptoProto(cryptoProto)
     , mFromAddress(fromAddress)
     , mNode(node)
@@ -1724,6 +1729,116 @@ void CryptoMessagePart::startDecryption(const QByteArray &text, const QTextCodec
     }
 }
 
+bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
+{
+    mPassphraseError = false;
+    mMetaData.inProgress = false;
+    mMetaData.errorText.clear();
+    mMetaData.auditLogError = GpgME::Error();
+    mMetaData.auditLog.clear();
+    bool bDecryptionOk = false;
+    bool cannotDecrypt = false;
+    ObjectTreeSourceIf *source = mOtp->mSource;
+    NodeHelper *nodeHelper = mOtp->nodeHelper();
+
+    assert(decryptMessage());
+
+    // Check whether the memento contains a result from last time:
+    const DecryptVerifyBodyPartMemento *m
+        = dynamic_cast<DecryptVerifyBodyPartMemento *>(nodeHelper->bodyPartMemento(&data, "decryptverify"));
+
+    assert(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completly wrong
+
+    if (!m && mCryptoProto) {
+        Kleo::DecryptVerifyJob *job = mCryptoProto->decryptVerifyJob();
+        if (!job) {
+            cannotDecrypt = true;
+        } else {
+            const QByteArray ciphertext = data.decodedContent();
+            DecryptVerifyBodyPartMemento *newM
+                = new DecryptVerifyBodyPartMemento(job, ciphertext);
+            if (mOtp->allowAsync()) {
+                QObject::connect(newM, &CryptoBodyPartMemento::update,
+                                    nodeHelper, &NodeHelper::update);
+                QObject::connect(newM, SIGNAL(update(MimeTreeParser::UpdateMode)), source->sourceObject(),
+                                    SLOT(update(MimeTreeParser::UpdateMode)));
+                if (newM->start()) {
+                    mMetaData.inProgress = true;
+                    mOtp->mHasPendingAsyncJobs = true;
+                } else {
+                    m = newM;
+                }
+            } else {
+                newM->exec();
+                m = newM;
+            }
+            nodeHelper->setBodyPartMemento(&data, "decryptverify", newM);
+        }
+    } else if (m->isRunning()) {
+        mMetaData.inProgress = true;
+        mOtp->mHasPendingAsyncJobs = true;
+        m = 0;
+    }
+
+    if (m) {
+        const QByteArray &plainText = m->plainText();
+        const GpgME::DecryptionResult &decryptResult = m->decryptResult();
+        const GpgME::VerificationResult &verifyResult = m->verifyResult();
+        mMetaData.isSigned = verifyResult.signatures().size() > 0;
+        mSignatures = verifyResult.signatures();
+        mDecryptRecipients = decryptResult.recipients();
+        bDecryptionOk = !decryptResult.error();
+        mMetaData.auditLogError = m->auditLogError();
+        mMetaData.auditLog = m->auditLogAsHtml();
+
+//        std::stringstream ss;
+//        ss << decryptResult << '\n' << verifyResult;
+//        qCDebug(MIMETREEPARSER_LOG) << ss.str().c_str();
+
+        if (!bDecryptionOk && mMetaData.isSigned) {
+            //Only a signed part
+            mMetaData.isEncrypted = false;
+            bDecryptionOk = true;
+            mDecryptedData = plainText;
+        } else {
+            mPassphraseError =  decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_NO_SECKEY;
+            mMetaData.isEncrypted = decryptResult.error().code() != GPG_ERR_NO_DATA;
+            mMetaData.errorText = QString::fromLocal8Bit(decryptResult.error().asString());
+            if (mMetaData.isEncrypted && decryptResult.numRecipients() > 0) {
+                mMetaData.keyId = decryptResult.recipient(0).keyID();
+            }
+
+            if (bDecryptionOk) {
+                mDecryptedData = plainText;
+            } else {
+                mNoSecKey = true;
+                foreach (const GpgME::DecryptionResult::Recipient &recipient, decryptResult.recipients()) {
+                    mNoSecKey &= (recipient.status().code() == GPG_ERR_NO_SECKEY);
+                }
+            }
+        }
+    }
+
+    if (!bDecryptionOk) {
+        QString cryptPlugLibName;
+        if (mCryptoProto) {
+            cryptPlugLibName = mCryptoProto->name();
+        }
+
+        if (!mCryptoProto) {
+            mMetaData.errorText = i18n("No appropriate crypto plug-in was found.");
+        } else if (cannotDecrypt) {
+            mMetaData.errorText = i18n("Crypto plug-in \"%1\" cannot decrypt messages.",
+                                       cryptPlugLibName);
+        } else if (!passphraseError()) {
+            mMetaData.errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName)
+            + QLatin1String("<br />")
+            + i18n("Error: %1", mMetaData.errorText);
+        }
+    }
+    return bDecryptionOk;
+}
+
 void CryptoMessagePart::startDecryption(KMime::Content *data)
 {
     if (!mNode && !data) {
@@ -1734,27 +1849,15 @@ void CryptoMessagePart::startDecryption(KMime::Content *data)
         data = mNode;
     }
 
-    bool signatureFound;
-    bool actuallyEncrypted = true;
-    bool decryptionStarted;
+    mMetaData.isEncrypted = true;
 
     CryptoProtocolSaver saver(mOtp, mCryptoProto);
-    bool bOkDecrypt = mOtp->okDecryptMIME(*data,
-                                          mDecryptedData,
-                                          signatureFound,
-                                          mSignatures,
-                                          true,
-                                          mPassphraseError,
-                                          actuallyEncrypted,
-                                          decryptionStarted,
-                                          mMetaData);
-    if (decryptionStarted) {
-        mMetaData.inProgress = true;
+    bool bOkDecrypt = okDecryptMIME(*data);
+
+    if (mMetaData.inProgress) {
         return;
     }
     mMetaData.isDecryptable = bOkDecrypt;
-    mMetaData.isEncrypted = actuallyEncrypted;
-    mMetaData.isSigned = signatureFound;
 
     if (!mMetaData.isDecryptable) {
         setText(QString::fromUtf8(mDecryptedData.constData()));
@@ -1872,7 +1975,32 @@ void CryptoMessagePart::html(bool decorate)
         // In progress has no special body
     } else if (mMetaData.isEncrypted && !mMetaData.isDecryptable) {
         const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress, mNode);
-        writer->queue(text());           //Do not quote ErrorText
+        const QString errorMsg = i18n("Could not decrypt the data.");
+        const QString sNoSecKeyHeader = i18n("No secret key found to encrypt the message. It is encrypted for following keys:");
+        QString secKeyList;
+
+        if (mNoSecKey) {
+            foreach (const GpgME::DecryptionResult::Recipient &recipient, mDecryptRecipients) {
+                if (!secKeyList.isEmpty()) {
+                    secKeyList += QStringLiteral("<br />");
+                }
+
+                secKeyList += QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">%4</a>")
+                .arg(mCryptoProto->displayName(),
+                    mCryptoProto->name(),
+                    QString::fromLatin1(recipient.keyID()),
+                    QString::fromLatin1(QByteArray("0x") + recipient.keyID())
+                );
+            }
+        }
+
+        writer->queue(QStringLiteral("<div style=\"font-size:x-large; text-align:center; padding:20pt;\">"));
+        if (mNoSecKey) {
+            writer->queue(sNoSecKeyHeader + QStringLiteral("<br />") + secKeyList);
+        } else {
+            writer->queue(errorMsg);
+        }
+        writer->queue(QStringLiteral("</div>"));
     } else {
         if (mMetaData.isSigned && mVerifiedText.isEmpty() && !hideErrors) {
             const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress, mNode);

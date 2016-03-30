@@ -27,6 +27,7 @@
 
 #include <Libkleo/CryptoBackend>
 #include <gpgme++/verificationresult.h>
+#include <gpgme++/decryptionresult.h>
 #include <importresult.h>
 
 #include <QString>
@@ -423,13 +424,21 @@ private:
       but we're deferring decryption for later. */
     void writeDeferredDecryptionBlock() const;
 
+    /** Handles the dectyptioon of a given content
+     * returns true if the decryption was successfull
+     * if used in async mode, check if mMetaData.inProgress is true, it inicates a running decryption process.
+     */
+    bool okDecryptMIME(KMime::Content &data);
+
 protected:
     bool mPassphraseError;
+    bool mNoSecKey;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
     QString mFromAddress;
     KMime::Content *mNode;
     bool mDecryptMessage;
     QByteArray mVerifiedText;
+    std::vector<GpgME::DecryptionResult::Recipient> mDecryptRecipients;
 };
 
 }
