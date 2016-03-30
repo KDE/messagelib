@@ -2061,6 +2061,7 @@ void ViewerPrivate::slotUrlPopup(const QUrl &aUrl, const QUrl &imageUrl, const Q
     mClickedUrl = aUrl;
     mImageUrl = imageUrl;
 
+    qDebug()<<" aUrl"<<aUrl;
     if (URLHandlerManager::instance()->handleContextMenuRequest(aUrl, aPos, this)) {
         return;
     }

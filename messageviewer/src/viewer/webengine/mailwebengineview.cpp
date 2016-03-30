@@ -29,6 +29,8 @@
 #include <MessageViewer/WebHitTest>
 #include <MessageViewer/WebHitTestResult>
 
+#include <QWebEngineSettings>
+
 using namespace MessageViewer;
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -70,6 +72,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
       d(new MessageViewer::MailWebEngineViewPrivate)
 
 {
+    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     d->mWebViewAccessKey = new MailWebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
     d->mScamDetection = new ScamDetectionWebEngine(this);
@@ -101,7 +104,6 @@ void MailWebEngineView::contextMenuEvent(QContextMenuEvent *e)
 void MailWebEngineView::slotWebHitFinished(const MessageViewer::WebHitTestResult &result)
 {
     Q_EMIT popupMenu(result.linkUrl(), result.imageUrl(), mapToGlobal(result.pos()));
-    // Q_EMIT popupMenu(const QUrl &url, const QUrl &imageUrl, const QPoint &point);
 }
 
 void MailWebEngineView::scrollUp(int pixels)
