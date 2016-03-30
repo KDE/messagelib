@@ -25,6 +25,9 @@
 
 #include "scamdetection/scamdetectionwebengine.h"
 #include "scamdetection/scamcheckshorturl.h"
+#include <QContextMenuEvent>
+#include <MessageViewer/WebHitTest>
+#include <MessageViewer/WebHitTestResult>
 
 using namespace MessageViewer;
 template<typename Arg, typename R, typename C>
@@ -51,13 +54,15 @@ public:
     MailWebEngineViewPrivate()
         : mScamDetection(Q_NULLPTR),
           mWebViewAccessKey(Q_NULLPTR),
-          mExternalReference(Q_NULLPTR)
+          mExternalReference(Q_NULLPTR),
+          mPageEngine(Q_NULLPTR)
     {
 
     }
     ScamDetectionWebEngine *mScamDetection;
     MailWebEngineAccessKey *mWebViewAccessKey;
     MessageViewer::LoadExternalReferencesUrlInterceptor *mExternalReference;
+    MailWebEnginePage *mPageEngine;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -74,17 +79,29 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     MessageViewer::NetworkAccessManagerWebEngine *networkAccessManager = new MessageViewer::NetworkAccessManagerWebEngine(this, ac, this);
     d->mExternalReference = new MessageViewer::LoadExternalReferencesUrlInterceptor(this);
     networkAccessManager->addInterceptor(d->mExternalReference);
-    MailWebEnginePage *pageEngine = new MailWebEnginePage(this);
-    setPage(pageEngine);
+    d->mPageEngine = new MailWebEnginePage(this);
+    setPage(d->mPageEngine);
 
     setFocusPolicy(Qt::WheelFocus);
-    connect(pageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
+    connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
     //TODO need info about scrolling
 }
 
 MailWebEngineView::~MailWebEngineView()
 {
     delete d;
+}
+
+void MailWebEngineView::contextMenuEvent(QContextMenuEvent *e)
+{
+    MessageViewer::WebHitTest *webHit = d->mPageEngine->hitTestContent(e->pos());
+    connect(webHit, &MessageViewer::WebHitTest::finished, this, &MailWebEngineView::slotWebHitFinished);
+}
+
+void MailWebEngineView::slotWebHitFinished(const MessageViewer::WebHitTestResult &result)
+{
+    Q_EMIT popupMenu(result.linkUrl(), result.imageUrl(), mapToGlobal(result.pos()));
+    // Q_EMIT popupMenu(const QUrl &url, const QUrl &imageUrl, const QPoint &point);
 }
 
 void MailWebEngineView::scrollUp(int pixels)

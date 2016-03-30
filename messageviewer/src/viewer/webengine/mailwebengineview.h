@@ -23,6 +23,7 @@
 class KActionCollection;
 namespace MessageViewer
 {
+class WebHitTestResult;
 class MailWebEngineViewPrivate;
 class MESSAGEVIEWER_EXPORT MailWebEngineView : public MessageViewer::WebEngineView
 {
@@ -73,13 +74,19 @@ protected:
 
     void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
 
+    void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
 Q_SIGNALS:
     void openUrl(const QUrl &url);
     void messageMayBeAScam();
+    /// Emitted when the user right-clicks somewhere
+    /// @param url if an URL was under the cursor, this parameter contains it. Otherwise empty
+    /// @param point position where the click happened, in local coordinates
+    void popupMenu(const QUrl &url, const QUrl &imageUrl, const QPoint &point);
 
 private Q_SLOTS:
     void handleScrollToAnchor(const QVariant &result);
 
+    void slotWebHitFinished(const MessageViewer::WebHitTestResult &result);
 private:
     MailWebEngineViewPrivate *const d;
 };
