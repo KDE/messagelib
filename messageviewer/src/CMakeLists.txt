@@ -80,13 +80,13 @@ endif()
 
 # For the moment we can't replace mailwebengine
 if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
-set(libmessageviewer_mailviewer_SRCS
-    viewer/webview/mailwebview.cpp
-    viewer/webview/webpage.cpp
-    viewer/webview/networkaccessmanager.cpp
-    viewer/webview/webviewaccesskey.cpp
-    )
-set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
+    set(libmessageviewer_mailviewer_SRCS
+        viewer/webview/mailwebview.cpp
+        viewer/webview/webpage.cpp
+        viewer/webview/networkaccessmanager.cpp
+        viewer/webview/webviewaccesskey.cpp
+        )
+    set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
 endif()
 
 if (QTWEBENGINE_SUPPORT_OPTION)
@@ -149,8 +149,8 @@ set(libmessageviewer_widgets_SRCS
 
 if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_widgets_webengine_SRCS
-       widgets/mailsourcewebengineviewer.cpp
-    )
+        widgets/mailsourcewebengineviewer.cpp
+        )
 endif()
 
 set(libmessageviewer_header_SRCS
@@ -183,9 +183,9 @@ if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
 endif()
 
 if (QTWEBENGINE_SUPPORT_OPTION)
-   set(libmessageviewer_scamdetection_webengine_SRCS
-       scamdetection/scamdetectionwebengine.cpp
-   )
+    set(libmessageviewer_scamdetection_webengine_SRCS
+        scamdetection/scamdetectionwebengine.cpp
+        )
 endif()
 
 set(libmessageviewer_findbar_SRCS
@@ -204,7 +204,7 @@ set(libmessageviewer_utils_SRCS
 if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_htmlwriter_webengine_SRCS
         htmlwriter/webengineparthtmlwriter.cpp
-    )
+        )
 endif()
 
 set(libmessageviewer_htmlwriter_SRCS
@@ -374,7 +374,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         REQUIRED_HEADERS MessageViewer_webengine_misc_HEADERS
         PREFIX MessageViewer
         RELATIVE webengine/
-	)
+        )
 endif()
 
 ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
