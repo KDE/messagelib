@@ -123,15 +123,22 @@ private:
 class CryptoBlock: public HTMLBlock
 {
 public:
-    CryptoBlock(MimeTreeParser::ObjectTreeParser *otp, MimeTreeParser::PartMetaData *block, const Kleo::CryptoBackend::Protocol *cryptoProto, MimeTreeParser::ObjectTreeSourceIf *source, const QString &fromAddress, KMime::Content *node);
+    CryptoBlock(MimeTreeParser::HtmlWriter *writer,
+                PartMetaData *block,
+                const NodeHelper *nodeHelper,
+                const Kleo::CryptoBackend::Protocol *cryptoProto,
+                ObjectTreeSourceIf *source,
+                const QString &fromAddress,
+                KMime::Content *node);
     virtual ~CryptoBlock();
 
 private:
     void internalEnter();
     void internalExit();
 
-    ObjectTreeParser *mOtp;
+    HtmlWriter *mWriter;
     PartMetaData *mMetaData;
+    const NodeHelper* mNodeHelper;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
     ObjectTreeSourceIf *mSource;
     QString mFromAddress;

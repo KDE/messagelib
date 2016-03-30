@@ -111,15 +111,17 @@ QString HTMLBlock::dir() const
 }
 
 //--------CryptoBlock-------------------
-CryptoBlock::CryptoBlock(ObjectTreeParser *otp,
+CryptoBlock::CryptoBlock(HtmlWriter *writer,
                          PartMetaData *block,
+                         const NodeHelper *nodeHelper,
                          const Kleo::CryptoBackend::Protocol *cryptoProto,
                          ObjectTreeSourceIf *source,
                          const QString &fromAddress,
                          KMime::Content *node)
     : HTMLBlock()
-    , mOtp(otp)
+    , mWriter(writer)
     , mMetaData(block)
+    , mNodeHelper(nodeHelper)
     , mCryptoProto(cryptoProto)
     , mSource(source)
     , mFromAddress(fromAddress)
@@ -135,17 +137,16 @@ CryptoBlock::~CryptoBlock()
 
 void CryptoBlock::internalEnter()
 {
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
-    if (writer && !entered) {
+    if (mWriter && !entered) {
         entered = true;
         if (mMetaData->isEncapsulatedRfc822Message) {
-            mInteralBlocks.append(HTMLBlock::Ptr(new EncapsulatedRFC822Block(writer, mOtp->nodeHelper(), mNode)));
+            mInteralBlocks.append(HTMLBlock::Ptr(new EncapsulatedRFC822Block(mWriter, mNodeHelper, mNode)));
         }
         if (mMetaData->isEncrypted) {
-            mInteralBlocks.append(HTMLBlock::Ptr(new EncryptedBlock(writer, *mMetaData)));
+            mInteralBlocks.append(HTMLBlock::Ptr(new EncryptedBlock(mWriter, *mMetaData)));
         }
         if (mMetaData->isSigned) {
-            mInteralBlocks.append(HTMLBlock::Ptr(new SignedBlock(writer, *mMetaData, mCryptoProto, mSource, mFromAddress, false)));
+            mInteralBlocks.append(HTMLBlock::Ptr(new SignedBlock(mWriter, *mMetaData, mCryptoProto, mSource, mFromAddress, false)));
         }
     }
 }
@@ -1102,7 +1103,7 @@ void MessagePart::html(bool decorate)
 
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
-    const CryptoBlock block(mOtp, &mMetaData, mOtp->cryptoProtocol(), mOtp->mSource, QString(), Q_NULLPTR);
+    const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mOtp->nodeHelper(), mOtp->cryptoProtocol(), mOtp->mSource, QString(), Q_NULLPTR);
     writer->queue(mOtp->quotedHTML(text(), decorate));
 }
 
@@ -1968,13 +1969,13 @@ void CryptoMessagePart::html(bool decorate)
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
     if (mMetaData.isEncrypted && !decryptMessage()) {
-        const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress, mNode);
+        const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mOtp->nodeHelper(), mCryptoProto, mOtp->mSource, mFromAddress, mNode);
         writeDeferredDecryptionBlock();
     } else if (mMetaData.inProgress) {
-        const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress, mNode);
+        const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mOtp->nodeHelper(), mCryptoProto, mOtp->mSource, mFromAddress, mNode);
         // In progress has no special body
     } else if (mMetaData.isEncrypted && !mMetaData.isDecryptable) {
-        const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress, mNode);
+        const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mOtp->nodeHelper(), mCryptoProto, mOtp->mSource, mFromAddress, mNode);
         const QString errorMsg = i18n("Could not decrypt the data.");
         const QString sNoSecKeyHeader = i18n("No secret key found to encrypt the message. It is encrypted for following keys:");
         QString secKeyList;
@@ -2003,7 +2004,7 @@ void CryptoMessagePart::html(bool decorate)
         writer->queue(QStringLiteral("</div>"));
     } else {
         if (mMetaData.isSigned && mVerifiedText.isEmpty() && !hideErrors) {
-            const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress, mNode);
+            const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mOtp->nodeHelper(), mCryptoProto, mOtp->mSource, mFromAddress, mNode);
             writer->queue(QStringLiteral("<hr/><b><h2>"));
             writer->queue(i18n("The crypto engine returned no cleartext data."));
             writer->queue(QStringLiteral("</h2></b>"));
@@ -2017,7 +2018,7 @@ void CryptoMessagePart::html(bool decorate)
                 writer->queue(i18nc("Status of message unknown.", "(unknown)"));
             }
         } else if (mNode) {
-            const CryptoBlock block(mOtp, &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress, mNode);
+            const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mOtp->nodeHelper(), mCryptoProto, mOtp->mSource, mFromAddress, mNode);
             renderInternalHtml(decorate);
         } else {
             MessagePart::html(decorate);
@@ -2069,7 +2070,7 @@ void EncapsulatedRfc822MessagePart::html(bool decorate)
 
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
-    const CryptoBlock block(mOtp, &mMetaData, Q_NULLPTR, Q_NULLPTR, mMessage->from()->asUnicodeString(), mMessage.data());
+    const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mOtp->nodeHelper(), Q_NULLPTR, Q_NULLPTR, mMessage->from()->asUnicodeString(), mMessage.data());
     writer->queue(mOtp->mSource->createMessageHeader(mMessage.data()));
     renderInternalHtml(decorate);
 
