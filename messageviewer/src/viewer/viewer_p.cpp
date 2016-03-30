@@ -1163,6 +1163,7 @@ void ViewerPrivate::readConfig()
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumLogicalFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
+    //TODO verify Qt5.7
     //FIXME mViewer->settings()->setAttribute(QWebEngineSettings::PrintElementBackgrounds, MessageViewer::MessageViewerSettings::self()->printBackgroundColorImages());
 #else
     mViewer->settings()->setFontSize(QWebSettings::MinimumFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
@@ -1568,7 +1569,6 @@ void ViewerPrivate::createActions()
     mZoomActionMenu = new MessageViewer::ZoomActionMenu(this);
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     connect(mZoomActionMenu, &ZoomActionMenu::zoomChanged, mViewer, &MailWebEngineView::slotZoomChanged);
-    connect(mZoomActionMenu, &ZoomActionMenu::zoomTextOnlyChanged, mViewer, &MailWebEngineView::slotZoomTextOnlyChanged);
 #else
     connect(mZoomActionMenu, &ZoomActionMenu::zoomChanged, mViewer, &MailWebView::slotZoomChanged);
     connect(mZoomActionMenu, &ZoomActionMenu::zoomTextOnlyChanged, mViewer, &MailWebView::slotZoomTextOnlyChanged);
@@ -3066,7 +3066,11 @@ void ViewerPrivate::slotBlockImage()
 
 void ViewerPrivate::slotOpenBlockableItems()
 {
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    qDebug() << "void ViewerPrivate::slotOpenBlockableItems() unimplemented";
+#else
     mViewer->openBlockableItemsDialog();
+#endif
 }
 
 void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)

@@ -123,13 +123,8 @@ void MailWebEngineView::selectAll()
 
 void MailWebEngineView::slotZoomChanged(qreal zoom)
 {
+    qDebug()<<" void MailWebEngineView::slotZoomChanged(qreal zoom)*******"<<zoom;
     setZoomFactor(zoom);
-}
-
-void MailWebEngineView::slotZoomTextOnlyChanged(bool b)
-{
-    Q_UNUSED(b);
-    qDebug() << "MailWebEngineView::slotZoomTextOnlyChanged unimplemented";
 }
 
 void MailWebEngineView::scamCheck()
@@ -325,13 +320,10 @@ QUrl MailWebEngineView::linkOrImageUrlAt(const QPoint &global) const
     return {};
 }
 
-void MailWebEngineView::openBlockableItemsDialog()
-{
-    //TODO
-}
-
 void MailWebEngineView::setAllowExternalContent(bool b)
 {
-    d->mExternalReference->setAllowExternalContent(b);
-    reload();
+    if (d->mExternalReference->allowExternalContent() != b) {
+        d->mExternalReference->setAllowExternalContent(b);
+        reload();
+    }
 }
