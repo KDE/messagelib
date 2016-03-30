@@ -257,9 +257,7 @@ void MailWebEngineView::scrollPageDown(int percent)
 
 void MailWebEngineView::scrollPageUp(int percent)
 {
-#if 0
     scrollPageDown(-percent);
-#endif
 }
 
 void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
@@ -311,11 +309,12 @@ bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) cons
 
 void MailWebEngineView::scrollToRelativePosition(double pos)
 {
-    //TODO
+    page()->runJavaScript(MessageViewer::WebEngineScript::scrollToRelativePosition(pos));
 }
 
 double MailWebEngineView::relativePosition() const
 {
+
     //TODO
     return {};
 }

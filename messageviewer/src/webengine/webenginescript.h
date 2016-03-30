@@ -36,6 +36,7 @@ MESSAGEVIEWER_EXPORT QString setStyleToElement(const QString &elementStr, const 
 MESSAGEVIEWER_EXPORT QString scrollDown(int pixel);
 MESSAGEVIEWER_EXPORT QString scrollUp(int pixel);
 MESSAGEVIEWER_EXPORT QString scrollPercentage(int percent);
+MESSAGEVIEWER_EXPORT QString scrollToRelativePosition(int pos);
 }
 }
 #endif // WEBENGINESCRIPT_H
