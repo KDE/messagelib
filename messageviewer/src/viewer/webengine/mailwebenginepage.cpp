@@ -41,6 +41,8 @@ bool MailWebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType 
 {
     Q_UNUSED(type);
     Q_UNUSED(isMainFrame);
-    Q_EMIT urlClicked(url);
+    if (isMainFrame && type == NavigationTypeLinkClicked) {
+        Q_EMIT urlClicked(url);
+    }
     return false;
 }
