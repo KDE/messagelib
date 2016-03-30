@@ -203,9 +203,7 @@ bool WebViewAccessKey::checkForAccessKey(QKeyEvent *event)
     QChar key = text.at(0).toUpper();
     bool handled = false;
     if (d->mAccessKeyNodes.contains(key)) {
-        QWebElement element = d->mAccessKeyNodes[key];
-        QPoint p = element.geometry().center();
-
+        const QWebElement element = d->mAccessKeyNodes[key];
         if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
             const QString linkKey(linkElementKey(element));
             if (!linkKey.isEmpty()) {
