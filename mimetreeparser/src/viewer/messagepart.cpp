@@ -1870,19 +1870,8 @@ void CryptoMessagePart::startDecryption(KMime::Content *data)
 
 bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signature)
 {
-    enum { NO_PLUGIN, NOT_INITIALIZED, CANT_VERIFY_SIGNATURES }
-    cryptPlugError = NO_PLUGIN;
-
-    QString cryptPlugLibName;
-    QString cryptPlugDisplayName;
-
     NodeHelper *nodeHelper = mOtp->nodeHelper();
     ObjectTreeSourceIf *source = mOtp->mSource;
-
-    if (mCryptoProto) {
-        cryptPlugLibName = mCryptoProto->name();
-        cryptPlugDisplayName = mCryptoProto->displayName();
-    }
 
     mMetaData.isSigned = false;
     mMetaData.technicalProblem = (mCryptoProto == 0);
@@ -1893,23 +1882,18 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
     const QByteArray mementoName = "verification";
 
     CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(mNode, mementoName));
+    assert(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completly wrong
 
-    if (!m) {
+    if (!m && mCryptoProto) {
         if (!signature.isEmpty()) {
             Kleo::VerifyDetachedJob *job = mCryptoProto->verifyDetachedJob();
             if (job) {
                 m = new VerifyDetachedBodyPartMemento(job, mCryptoProto->keyListJob(), signature, data);
-            } else {
-                cryptPlugError = CANT_VERIFY_SIGNATURES;
-                mCryptoProto = 0;
             }
         } else {
             Kleo::VerifyOpaqueJob *job = mCryptoProto->verifyOpaqueJob();
             if (job) {
                 m = new VerifyOpaqueBodyPartMemento(job, mCryptoProto->keyListJob(), data);
-            } else {
-                cryptPlugError = CANT_VERIFY_SIGNATURES;
-                mCryptoProto = 0;
             }
         }
         if (m) {
@@ -1931,7 +1915,6 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
     } else if (m->isRunning()) {
         mMetaData.inProgress = true;
         mOtp->mHasPendingAsyncJobs = true;
-        m = 0;
     } else {
         mMetaData.inProgress = false;
         mOtp->mHasPendingAsyncJobs = false;
@@ -1952,18 +1935,16 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
         mMetaData.isSigned = !mSignatures.empty();
     }
 
-    if (!mCryptoProto) {
+    if (!m && !mMetaData.inProgress) {
         QString errorMsg;
-        switch (cryptPlugError) {
-        case NOT_INITIALIZED:
-            errorMsg = i18n("Crypto plug-in \"%1\" is not initialized.",
-                            cryptPlugLibName);
-            break;
-        case CANT_VERIFY_SIGNATURES:
-            errorMsg = i18n("Crypto plug-in \"%1\" cannot verify mSignatures.",
-                            cryptPlugLibName);
-            break;
-        case NO_PLUGIN:
+        QString cryptPlugLibName;
+        QString cryptPlugDisplayName;
+        if (mCryptoProto) {
+            cryptPlugLibName = mCryptoProto->name();
+            cryptPlugDisplayName = mCryptoProto->displayName();
+        }
+
+        if (!mCryptoProto) {
             if (cryptPlugDisplayName.isEmpty()) {
                 errorMsg = i18n("No appropriate crypto plug-in was found.");
             } else {
@@ -1971,7 +1952,9 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
                                  "No %1 plug-in was found.",
                                  cryptPlugDisplayName);
             }
-            break;
+        } else {
+            errorMsg = i18n("Crypto plug-in \"%1\" cannot verify mSignatures.",
+                            cryptPlugLibName);
         }
         mMetaData.errorText = i18n("The message is signed, but the "
                                      "validity of the signature cannot be "
