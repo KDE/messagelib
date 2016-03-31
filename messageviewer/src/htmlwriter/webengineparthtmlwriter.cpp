@@ -69,7 +69,6 @@ void WebEnginePartHtmlWriter::end()
     mHtml.clear();
 
     resolveCidUrls();
-    mHtmlView->scamCheck();
     mHtmlView->setUpdatesEnabled(true);
     mHtmlView->update();
     mState = Ended;

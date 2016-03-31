@@ -59,6 +59,7 @@ public:
 
     void setAllowExternalContent(bool b);
 
+    QList<QAction *> interceptorUrlActions() const;
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();

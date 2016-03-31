@@ -80,6 +80,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mScamDetection = new ScamDetectionWebEngine(this);
     connect(d->mScamDetection, &ScamDetectionWebEngine::messageMayBeAScam, this, &MailWebEngineView::messageMayBeAScam);
     connect(d->mWebViewAccessKey, &MailWebEngineAccessKey::openUrl, this, &MailWebEngineView::openUrl);
+    connect(this, &MailWebEngineView::loadFinished, this, &MailWebEngineView::slotLoadFinished);
 
     d->mNetworkAccessManager = new MessageViewer::NetworkAccessManagerWebEngine(this, ac, this);
     d->mExternalReference = new MessageViewer::LoadExternalReferencesUrlInterceptor(this);
@@ -327,4 +328,14 @@ void MailWebEngineView::setAllowExternalContent(bool b)
         d->mExternalReference->setAllowExternalContent(b);
         reload();
     }
+}
+
+QList<QAction *> MailWebEngineView::interceptorUrlActions() const
+{
+    return d->mNetworkAccessManager->actions();
+}
+
+void MailWebEngineView::slotLoadFinished()
+{
+    scamCheck();
 }
