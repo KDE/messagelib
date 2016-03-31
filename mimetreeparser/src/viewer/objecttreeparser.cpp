@@ -1234,23 +1234,6 @@ bool ObjectTreeParser::looksLikeParaBreak(const QString &s, unsigned int newLine
     return prevLineLength + wordLength + 1 < WRAP_COL;
 }
 
-#ifdef MARCS_DEBUG
-void ObjectTreeParser::dumpToFile(const char *filename, const char *start,
-                                  size_t len)
-{
-    assert(filename);
-
-    QFile f(QString::fromAscii(filename));
-    if (f.open(QIODevice::WriteOnly)) {
-        if (start) {
-            QDataStream ds(&f);
-            ds.writeRawData(start, len);
-        }
-        f.close();  // If data is 0 we just create a zero length file.
-    }
-}
-#endif // !NDEBUG
-
 KMime::Content *ObjectTreeParser::findType(KMime::Content *content, const QByteArray &mimeType, bool deep, bool wide)
 {
     if ((!content->contentType()->isEmpty())
