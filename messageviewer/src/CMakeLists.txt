@@ -78,7 +78,6 @@ if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
         )
 endif()
 
-# For the moment we can't replace mailwebengine
 if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
     set(libmessageviewer_mailviewer_SRCS
         viewer/webview/mailwebview.cpp
