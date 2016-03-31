@@ -1868,7 +1868,7 @@ void CryptoMessagePart::startDecryption(KMime::Content *data)
     }
 }
 
-bool CryptoMessagePart::okVerify(const QByteArray &data, const Kleo::CryptoBackend::Protocol *cryptProto, PartMetaData &messagePart, QByteArray &verifiedText, std::vector <GpgME::Signature> &signatures, const QByteArray &signature, KMime::Content *sign)
+bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signature)
 {
     enum { NO_PLUGIN, NOT_INITIALIZED, CANT_VERIFY_SIGNATURES }
     cryptPlugError = NO_PLUGIN;
@@ -1879,37 +1879,37 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const Kleo::CryptoBacke
     NodeHelper *nodeHelper = mOtp->nodeHelper();
     ObjectTreeSourceIf *source = mOtp->mSource;
 
-    if (cryptProto) {
-        cryptPlugLibName = cryptProto->name();
-        cryptPlugDisplayName = cryptProto->displayName();
+    if (mCryptoProto) {
+        cryptPlugLibName = mCryptoProto->name();
+        cryptPlugDisplayName = mCryptoProto->displayName();
     }
 
-    messagePart.isSigned = false;
-    messagePart.technicalProblem = (cryptProto == 0);
-    messagePart.keyTrust = GpgME::Signature::Unknown;
-    messagePart.status = i18n("Wrong Crypto Plug-In.");
-    messagePart.status_code = GPGME_SIG_STAT_NONE;
+    mMetaData.isSigned = false;
+    mMetaData.technicalProblem = (mCryptoProto == 0);
+    mMetaData.keyTrust = GpgME::Signature::Unknown;
+    mMetaData.status = i18n("Wrong Crypto Plug-In.");
+    mMetaData.status_code = GPGME_SIG_STAT_NONE;
 
     const QByteArray mementoName = "verification";
 
-    CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(sign, mementoName));
+    CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(mNode, mementoName));
 
     if (!m) {
         if (!signature.isEmpty()) {
-            Kleo::VerifyDetachedJob *job = cryptProto->verifyDetachedJob();
+            Kleo::VerifyDetachedJob *job = mCryptoProto->verifyDetachedJob();
             if (job) {
-                m = new VerifyDetachedBodyPartMemento(job, cryptProto->keyListJob(), signature, data);
+                m = new VerifyDetachedBodyPartMemento(job, mCryptoProto->keyListJob(), signature, data);
             } else {
                 cryptPlugError = CANT_VERIFY_SIGNATURES;
-                cryptProto = 0;
+                mCryptoProto = 0;
             }
         } else {
-            Kleo::VerifyOpaqueJob *job = cryptProto->verifyOpaqueJob();
+            Kleo::VerifyOpaqueJob *job = mCryptoProto->verifyOpaqueJob();
             if (job) {
-                m = new VerifyOpaqueBodyPartMemento(job, cryptProto->keyListJob(), data);
+                m = new VerifyOpaqueBodyPartMemento(job, mCryptoProto->keyListJob(), data);
             } else {
                 cryptPlugError = CANT_VERIFY_SIGNATURES;
-                cryptProto = 0;
+                mCryptoProto = 0;
             }
         }
         if (m) {
@@ -1920,39 +1920,39 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const Kleo::CryptoBacke
                                  source->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));
 
                 if (m->start()) {
-                    messagePart.inProgress = true;
+                    mMetaData.inProgress = true;
                     mOtp->mHasPendingAsyncJobs = true;
                 }
             } else {
                 m->exec();
             }
-            nodeHelper->setBodyPartMemento(sign, mementoName, m);
+            nodeHelper->setBodyPartMemento(mNode, mementoName, m);
         }
     } else if (m->isRunning()) {
-        messagePart.inProgress = true;
+        mMetaData.inProgress = true;
         mOtp->mHasPendingAsyncJobs = true;
         m = 0;
     } else {
-        messagePart.inProgress = false;
+        mMetaData.inProgress = false;
         mOtp->mHasPendingAsyncJobs = false;
     }
 
-    if (m && !messagePart.inProgress) {
+    if (m && !mMetaData.inProgress) {
         if (!signature.isEmpty()) {
             VerifyDetachedBodyPartMemento *vm = dynamic_cast<VerifyDetachedBodyPartMemento *>(m);
-            verifiedText = data;
-            signatures = vm->verifyResult().signatures();
+            mVerifiedText = data;
+            mSignatures = vm->verifyResult().signatures();
         } else {
             VerifyOpaqueBodyPartMemento *vm = dynamic_cast<VerifyOpaqueBodyPartMemento *>(m);
-            verifiedText = vm->plainText();
-            signatures = vm->verifyResult().signatures();
+            mVerifiedText = vm->plainText();
+            mSignatures = vm->verifyResult().signatures();
         }
-        messagePart.auditLogError = m->auditLogError();
-        messagePart.auditLog = m->auditLogAsHtml();
-        messagePart.isSigned = !signatures.empty();
+        mMetaData.auditLogError = m->auditLogError();
+        mMetaData.auditLog = m->auditLogAsHtml();
+        mMetaData.isSigned = !mSignatures.empty();
     }
 
-    if (!cryptProto) {
+    if (!mCryptoProto) {
         QString errorMsg;
         switch (cryptPlugError) {
         case NOT_INITIALIZED:
@@ -1960,7 +1960,7 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const Kleo::CryptoBacke
                             cryptPlugLibName);
             break;
         case CANT_VERIFY_SIGNATURES:
-            errorMsg = i18n("Crypto plug-in \"%1\" cannot verify signatures.",
+            errorMsg = i18n("Crypto plug-in \"%1\" cannot verify mSignatures.",
                             cryptPlugLibName);
             break;
         case NO_PLUGIN:
@@ -1973,16 +1973,15 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const Kleo::CryptoBacke
             }
             break;
         }
-        messagePart.errorText = i18n("The message is signed, but the "
+        mMetaData.errorText = i18n("The message is signed, but the "
                                      "validity of the signature cannot be "
                                      "verified.<br />"
                                      "Reason: %1",
                                      errorMsg);
     }
 
-    return messagePart.isSigned;
+    return mMetaData.isSigned;
 }
-
 
 void CryptoMessagePart::startVerification(const QByteArray &text, const QTextCodec *aCodec)
 {
@@ -1998,7 +1997,7 @@ void CryptoMessagePart::startVerificationDetached(const QByteArray &text, KMime:
     mMetaData.isEncrypted = false;
     mMetaData.isDecryptable = false;
 
-    okVerify(text, mCryptoProto, mMetaData, mVerifiedText, mSignatures, signature, mNode);
+    okVerify(text, signature);
 
     if (mMetaData.isSigned) {
         mOtp->sigStatusToMetaData(mSignatures, mCryptoProto, mMetaData, GpgME::Key());

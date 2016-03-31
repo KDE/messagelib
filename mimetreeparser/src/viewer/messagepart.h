@@ -437,7 +437,12 @@ private:
      */
     bool okDecryptMIME(KMime::Content &data);
 
-    bool okVerify(const QByteArray &data, const Kleo::CryptoBackend::Protocol *cryptProto, PartMetaData &messagePart, QByteArray &verifiedText, std::vector <GpgME::Signature> &signatures, const QByteArray &signature, KMime::Content *sign);
+    /** Handles the verification of data
+     * If signature is empty it is handled as inline signature otherwise as detached signature mode.
+     * Returns true if the verfication was successfull and the block is signed.
+     * If used in async mode, check if mMetaData.inProgress is true, it inicates a running verification process.
+     */
+    bool okVerify(const QByteArray &data, const QByteArray &signature);
 protected:
     bool mPassphraseError;
     bool mNoSecKey;
