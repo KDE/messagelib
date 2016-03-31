@@ -1845,7 +1845,7 @@ void CryptoMessagePart::startDecryption(KMime::Content *data)
     }
 
     if (mMetaData.isSigned) {
-        sigStatusToMetaData(mSignatures, mCryptoProto, mMetaData, GpgME::Key());
+        sigStatusToMetaData();
         mVerifiedText = mDecryptedData;
     }
 
@@ -1989,19 +1989,20 @@ static int signatureToStatus(const GpgME::Signature &sig)
     }
 }
 
-void CryptoMessagePart::sigStatusToMetaData(const std::vector <GpgME::Signature> &signatures, const Kleo::CryptoBackend::Protocol *cryptProto, PartMetaData &messagePart, GpgME::Key key)
+void CryptoMessagePart::sigStatusToMetaData()
 {
-    if (messagePart.isSigned) {
-        GpgME::Signature signature = signatures.front();
-        messagePart.status_code = signatureToStatus(signature);
-        messagePart.isGoodSignature = messagePart.status_code & GPGME_SIG_STAT_GOOD;
+    GpgME::Key key;
+    if (mMetaData.isSigned) {
+        GpgME::Signature signature = mSignatures.front();
+        mMetaData.status_code = signatureToStatus(signature);
+        mMetaData.isGoodSignature = mMetaData.status_code & GPGME_SIG_STAT_GOOD;
         // save extended signature status flags
-        messagePart.sigSummary = signature.summary();
+        mMetaData.sigSummary = signature.summary();
 
-        if (messagePart.isGoodSignature && !key.keyID()) {
+        if (mMetaData.isGoodSignature && !key.keyID()) {
             // Search for the key by it's fingerprint so that we can check for
             // trust etc.
-            Kleo::KeyListJob *job = cryptProto->keyListJob(false);    // local, no sigs
+            Kleo::KeyListJob *job = mCryptoProto->keyListJob(false);    // local, no sigs
             if (!job) {
                 qCDebug(MIMETREEPARSER_LOG) << "The Crypto backend does not support listing keys. ";
             } else {
@@ -2025,14 +2026,14 @@ void CryptoMessagePart::sigStatusToMetaData(const std::vector <GpgME::Signature>
         }
 
         if (key.keyID()) {
-            messagePart.keyId = key.keyID();
+            mMetaData.keyId = key.keyID();
         }
-        if (messagePart.keyId.isEmpty()) {
-            messagePart.keyId = signature.fingerprint();
+        if (mMetaData.keyId.isEmpty()) {
+            mMetaData.keyId = signature.fingerprint();
         }
-        messagePart.keyTrust = signature.validity();
+        mMetaData.keyTrust = signature.validity();
         if (key.numUserIDs() > 0 && key.userID(0).id()) {
-            messagePart.signer = Kleo::DN(key.userID(0).id()).prettyDN();
+            mMetaData.signer = Kleo::DN(key.userID(0).id()).prettyDN();
         }
         for (uint iMail = 0; iMail < key.numUserIDs(); ++iMail) {
             // The following if /should/ always result in TRUE but we
@@ -2045,25 +2046,25 @@ void CryptoMessagePart::sigStatusToMetaData(const std::vector <GpgME::Signature>
                     email = email.mid(1, email.length() - 2);
                 }
                 if (!email.isEmpty()) {
-                    messagePart.signerMailAddresses.append(email);
+                    mMetaData.signerMailAddresses.append(email);
                 }
             }
         }
 
         if (signature.creationTime()) {
-            messagePart.creationTime.setTime_t(signature.creationTime());
+            mMetaData.creationTime.setTime_t(signature.creationTime());
         } else {
-            messagePart.creationTime = QDateTime();
+            mMetaData.creationTime = QDateTime();
         }
-        if (messagePart.signer.isEmpty()) {
+        if (mMetaData.signer.isEmpty()) {
             if (key.numUserIDs() > 0 && key.userID(0).name()) {
-                messagePart.signer = Kleo::DN(key.userID(0).name()).prettyDN();
+                mMetaData.signer = Kleo::DN(key.userID(0).name()).prettyDN();
             }
-            if (!messagePart.signerMailAddresses.empty()) {
-                if (messagePart.signer.isEmpty()) {
-                    messagePart.signer = messagePart.signerMailAddresses.front();
+            if (!mMetaData.signerMailAddresses.empty()) {
+                if (mMetaData.signer.isEmpty()) {
+                    mMetaData.signer = mMetaData.signerMailAddresses.front();
                 } else {
-                    messagePart.signer += QLatin1String(" <") + messagePart.signerMailAddresses.front() + QLatin1Char('>');
+                    mMetaData.signer += QLatin1String(" <") + mMetaData.signerMailAddresses.front() + QLatin1Char('>');
                 }
             }
         }
@@ -2087,7 +2088,7 @@ void CryptoMessagePart::startVerificationDetached(const QByteArray &text, KMime:
     okVerify(text, signature);
 
     if (mMetaData.isSigned) {
-        sigStatusToMetaData(mSignatures, mCryptoProto, mMetaData, GpgME::Key());
+        sigStatusToMetaData();
     } else {
         mMetaData.creationTime = QDateTime();
     }

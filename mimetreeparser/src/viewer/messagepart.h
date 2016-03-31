@@ -444,7 +444,7 @@ private:
      */
     bool okVerify(const QByteArray &data, const QByteArray &signature);
 
-    void sigStatusToMetaData(const std::vector <GpgME::Signature> &signatures, const Kleo::CryptoBackend::Protocol *cryptProto, PartMetaData &messagePart, GpgME::Key key);
+    void sigStatusToMetaData();
 protected:
     bool mPassphraseError;
     bool mNoSecKey;
