@@ -2188,11 +2188,7 @@ void ViewerPrivate::updateReaderWin()
     }
     mRecursionCountForDisplayMessage++;
 
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     mViewer->setAllowExternalContent(htmlLoadExternal());
-#else
-    mViewer->setAllowExternalContent(htmlLoadExternal());
-#endif
     htmlWriter()->reset();
     //TODO: if the item doesn't have the payload fetched, try to fetch it? Maybe not here, but in setMessageItem.
     if (mMessage) {
