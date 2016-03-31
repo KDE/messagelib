@@ -26,8 +26,8 @@
 #include <Libkleo/Enum>
 #include <Libkleo/KeyListJob>
 #include <Libkleo/CryptoBackendFactory>
-#include <kmime/kmime_message.h>
-#include <kmime/kmime_content.h>
+#include <KMime/Message>
+#include <KMime/Content>
 
 #include <MessageViewer/CSSHelper>
 #include <MessageViewer/ObjectTreeEmptySource>
@@ -140,7 +140,6 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, QByteArray encr
     testSource.setAllowDecryption(true);
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
-    MimeTreeParser::ProcessResult pResult(nh);
 
     if (f & Kleo::OpenPGPMIMEFormat) {
         // ensure the enc part exists and is parseable
@@ -160,10 +159,9 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, QByteArray encr
             resultMessage->parse();
         }
 
-        otp.processTextPlainSubtype(resultMessage.data(), pResult);
+        otp.parseObjectTree(resultMessage.data());
 
-        QCOMPARE(pResult.inlineEncryptionState(), MimeTreeParser::KMMsgFullyEncrypted);
-
+        QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
     } else if (f & Kleo::AnySMIME) {
         // ensure the enc part exists and is parseable
         KMime::Content *encPart = MimeTreeParser::ObjectTreeParser::findType(resultMessage.data(), "application", "pkcs7-mime", true, true);
@@ -199,7 +197,6 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, QBy
     testSource.setAllowDecryption(true);
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
-    MimeTreeParser::ProcessResult pResult(nh);
 
     if (f & Kleo::OpenPGPMIMEFormat) {
         // ensure the enc part exists and is parseable
@@ -210,14 +207,13 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, QBy
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
 
         QList< KMime::Content * > extra = nh->extraContents(resultMessage.data());
-        qDebug() << "size:" << extra.size();
         QCOMPARE(extra.size(), 1);
         QCOMPARE(nh->signatureState(extra[ 0 ]), MimeTreeParser::KMMsgFullySigned);
     } else if (f & Kleo::InlineOpenPGPFormat) {
-        otp.processTextPlainSubtype(resultMessage.data(), pResult);
+        otp.parseObjectTree(resultMessage.data());
 
-        QCOMPARE(pResult.inlineEncryptionState(), MimeTreeParser::KMMsgFullyEncrypted);
-        QCOMPARE(pResult.inlineSignatureState(), MimeTreeParser::KMMsgFullySigned);
+        QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
+        QCOMPARE(nh->signatureState(resultMessage.data()), MimeTreeParser::KMMsgFullySigned);
     } else if (f & Kleo::AnySMIME) {
         KMime::Content *encPart = MimeTreeParser::ObjectTreeParser::findType(resultMessage.data(), "application", "pkcs7-mime", true, true);
         Q_ASSERT(encPart);
@@ -232,7 +228,6 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, QBy
         QCOMPARE(nh->encryptionState(resultMessage.data()), MimeTreeParser::KMMsgFullyEncrypted);
 
         QList< KMime::Content * > extra = nh->extraContents(resultMessage.data());
-        qDebug() << "size:" << extra.size();
         QCOMPARE(extra.size(), 1);
         QCOMPARE(nh->signatureState(extra[ 0 ]), MimeTreeParser::KMMsgFullySigned);
     }

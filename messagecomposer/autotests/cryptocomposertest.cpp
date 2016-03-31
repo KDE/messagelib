@@ -556,7 +556,7 @@ void CryptoComposerTest::fillComposerCryptoData(Composer *composer)
 {
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys();
 
-    qDebug() << "got num of keys:" << keys.size();
+    //qDebug() << "got num of keys:" << keys.size();
 
     QStringList recipients;
     recipients << QString::fromLocal8Bit("you@you.you");
