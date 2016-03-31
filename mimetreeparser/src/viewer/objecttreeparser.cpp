@@ -36,46 +36,44 @@
 
 #include "objecttreeparser.h"
 
+#include "attachmentstrategy.h"
+#include "bodypartformatterbasefactory.h"
+#include "converthtmltoplaintext.h"
+#include "csshelperbase.h"
+#include "nodehelper.h"
 #include "messagepart.h"
+#include "partmetadata.h"
+#include "partnodebodypart.h"
+
+#include "mimetreeparser_debug.h"
 #include "objecttreesourceif.h"
 
-#include "partmetadata.h"
-#include "attachmentstrategy.h"
-#include "interfaces/htmlwriter.h"
-#include "csshelperbase.h"
-#include "bodypartformatterbasefactory.h"
-#include "viewer/partnodebodypart.h"
 #include "interfaces/bodypartformatter.h"
-#include "utils/mimetype.h"
-#include "job/kleojobexecutor.h"
-#include "nodehelper.h"
+#include "interfaces/htmlwriter.h"
 #include "utils/iconnamecache.h"
-#include "mimetreeparser_debug.h"
-#include "converthtmltoplaintext.h"
+#include "utils/mimetype.h"
 
-// KDEPIM includes
+#include <MessageCore/NodeHelper>
 #include <MessageCore/StringUtil>
-#include <Libkleo/SpecialJob>
+
 #include <Libkleo/CryptoBackendFactory>
 #include <Libkleo/ImportJob>
 
-// KDEPIMLIBS includes
 #include <gpgme++/importresult.h>
-#include <gpgme++/key.h>
 #include <gpgme.h>
-#include <KMime/Message>
+
 #include <KMime/Headers>
+#include <KMime/Message>
 
 // KDE includes
-
 #include <KLocalizedString>
-
 #include <KTextToHTML>
 
 // Qt includes
+#include <QByteArray>
 #include <QFile>
 #include <QTextCodec>
-#include <QByteArray>
+#include <QTextDocument>
 
 // other includes
 #include <sstream>
@@ -83,8 +81,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <memory>
-#include <MessageCore/NodeHelper>
-#include <qtextdocument.h>
 
 using namespace MimeTreeParser;
 using namespace MessageCore;
