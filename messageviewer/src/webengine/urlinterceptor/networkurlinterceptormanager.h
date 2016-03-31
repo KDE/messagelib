@@ -34,6 +34,7 @@ public:
 
     QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
     QList<QAction *> actions() const;
+    QList<MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *> configureInterceptorList(QWidget *parent) const;
 private:
     NetworkUrlInterceptorManagerPrivate *const d;
 };

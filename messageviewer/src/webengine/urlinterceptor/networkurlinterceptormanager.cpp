@@ -31,6 +31,7 @@ public:
     }
 
     QList<QAction *> actions() const;
+    QList<NetworkPluginUrlInterceptorConfigureWidget *> configureInterceptorList(QWidget *parent) const;
     void createInterfaces(QWebEngineView *webEngine, KActionCollection *ac);
     QVector<MessageViewer::NetworkPluginUrlInterceptorInterface *> mListInterface;
     QList<QAction *> mActionList;
@@ -40,6 +41,17 @@ public:
 QList<QAction *> NetworkUrlInterceptorManagerPrivate::actions() const
 {
     return mActionList;
+}
+
+QList<NetworkPluginUrlInterceptorConfigureWidget *> NetworkUrlInterceptorManagerPrivate::configureInterceptorList(QWidget *parent) const
+{
+    QList<NetworkPluginUrlInterceptorConfigureWidget *> lstConfigureWidget;
+    Q_FOREACH (NetworkPluginUrlInterceptor *plugin, NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
+        if (plugin->hasConfigureSupport()) {
+            lstConfigureWidget.append(plugin->createConfigureWidget(parent));
+        }
+    }
+    return lstConfigureWidget;
 }
 
 void NetworkUrlInterceptorManagerPrivate::createInterfaces(QWebEngineView *webEngine, KActionCollection *ac)
@@ -72,5 +84,10 @@ QVector<MessageViewer::NetworkPluginUrlInterceptorInterface *> NetworkUrlInterce
 QList<QAction *> NetworkUrlInterceptorManager::actions() const
 {
     return d->actions();
+}
+
+QList<NetworkPluginUrlInterceptorConfigureWidget *> NetworkUrlInterceptorManager::configureInterceptorList(QWidget *parent) const
+{
+    return d->configureInterceptorList(parent);
 }
 

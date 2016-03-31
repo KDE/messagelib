@@ -27,6 +27,7 @@ namespace MessageViewer
 {
 class NetworkPluginUrlInterceptorInterface;
 class NetworkAccessManagerWebEnginePrivate;
+class NetworkPluginUrlInterceptorConfigureWidget;
 class MESSAGEVIEWER_EXPORT NetworkAccessManagerWebEngine : public QNetworkAccessManager
 {
     Q_OBJECT
@@ -35,6 +36,7 @@ public:
     ~NetworkAccessManagerWebEngine();
     void addInterceptor(MessageViewer::NetworkPluginUrlInterceptorInterface *interceptor);
     QList<QAction *> actions() const;
+    QList<MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *> configureInterceptorList(QWidget *parent = Q_NULLPTR) const;
 private:
     NetworkAccessManagerWebEnginePrivate *const d;
 };
