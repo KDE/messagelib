@@ -368,7 +368,7 @@ public:// (during refactoring)
     MessagePartPtr processMultiPartSignedSubtype(KMime::Content *node, ProcessResult &result);
     MessagePartPtr processMultiPartEncryptedSubtype(KMime::Content *node, ProcessResult &result);
 
-    MessagePartPtr  processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
+    MessagePartPtr processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
 
     void writePartIcon(KMime::Content *msgPart, bool inlineImage = false);
 
