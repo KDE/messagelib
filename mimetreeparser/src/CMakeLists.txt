@@ -11,6 +11,12 @@ include_directories(${GPGME_INCLUDES})
 set(libmimetreeparser_main_SRCS
     bodyformatter/applicationpgpencrypted.cpp
     bodyformatter/mailman.cpp
+    bodyformatter/multipartalternative.cpp
+    bodyformatter/multipartencrypted.cpp
+    bodyformatter/multipartmixed.cpp
+    bodyformatter/multipartsigned.cpp
+    bodyformatter/textplain.cpp
+    bodyformatter/texthtml.cpp
     bodyformatter/utils.cpp
     interfaces/bodypartformatter.cpp
     job/kleojobexecutor.cpp

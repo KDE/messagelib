@@ -344,6 +344,7 @@ public:
 
 private:
     void extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart);
+    void setPlainTextContent(QString plainTextContent);
 
     /**
     * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
@@ -357,15 +358,6 @@ private:
     void writeCertificateImportResult(const GpgME::ImportResult &res);
 
 public:// (during refactoring)
-
-    MessagePartPtr processTextHtmlSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePartPtr processTextPlainSubtype(KMime::Content *node, ProcessResult &result);
-
-    MessagePartPtr processMultiPartMixedSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePartPtr processMultiPartAlternativeSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePartPtr processMultiPartSignedSubtype(KMime::Content *node, ProcessResult &result);
-    MessagePartPtr processMultiPartEncryptedSubtype(KMime::Content *node, ProcessResult &result);
-
     MessagePartPtr processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
 
     void writePartIcon(KMime::Content *msgPart, bool inlineImage = false);
@@ -434,6 +426,8 @@ private:
     friend class EncapsulatedRfc822MessagePart;
     friend class TextMessagePart;
     friend class HtmlMessagePart;
+    friend class TextPlainBodyPartFormatter;
+    friend class MultiPartSignedBodyPartFormatter;
 };
 
 }

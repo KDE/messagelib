@@ -33,6 +33,12 @@
 
 #include "bodyformatter/applicationpgpencrypted.h"
 #include "bodyformatter/mailman.h"
+#include "bodyformatter/multipartalternative.h"
+#include "bodyformatter/multipartmixed.h"
+#include "bodyformatter/multipartencrypted.h"
+#include "bodyformatter/multipartsigned.h"
+#include "bodyformatter/texthtml.h"
+#include "bodyformatter/textplain.h"
 
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
@@ -188,15 +194,7 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
         return Failed;\
     }
 
-CREATE_BODY_PART_FORMATTER(TextPlain)
-CREATE_BODY_PART_FORMATTER(TextHtml)
-
 CREATE_BODY_PART_FORMATTER(ApplicationPkcs7Mime)
-
-CREATE_BODY_PART_FORMATTER(MultiPartMixed)
-CREATE_BODY_PART_FORMATTER(MultiPartAlternative)
-CREATE_BODY_PART_FORMATTER(MultiPartSigned)
-CREATE_BODY_PART_FORMATTER(MultiPartEncrypted)
 
 typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
 
