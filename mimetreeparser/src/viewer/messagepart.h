@@ -443,6 +443,8 @@ private:
      * If used in async mode, check if mMetaData.inProgress is true, it inicates a running verification process.
      */
     bool okVerify(const QByteArray &data, const QByteArray &signature);
+
+    void sigStatusToMetaData(const std::vector <GpgME::Signature> &signatures, const Kleo::CryptoBackend::Protocol *cryptProto, PartMetaData &messagePart, GpgME::Key key);
 protected:
     bool mPassphraseError;
     bool mNoSecKey;

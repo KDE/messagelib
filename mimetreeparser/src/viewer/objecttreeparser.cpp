@@ -57,14 +57,11 @@
 #include <MessageCore/StringUtil>
 #include <Libkleo/SpecialJob>
 #include <Libkleo/CryptoBackendFactory>
-#include <Libkleo/KeyListJob>
 #include <Libkleo/ImportJob>
-#include <Libkleo/Dn>
 
 // KDEPIMLIBS includes
 #include <gpgme++/importresult.h>
 #include <gpgme++/key.h>
-#include <gpgme++/keylistresult.h>
 #include <gpgme.h>
 #include <KMime/Message>
 #include <KMime/Headers>
@@ -473,26 +470,6 @@ void ProcessResult::adjustCryptoStatesOfNode(KMime::Content *node) const
 //////////////////
 //////////////////
 //////////////////
-
-static int signatureToStatus(const GpgME::Signature &sig)
-{
-    switch (sig.status().code()) {
-    case GPG_ERR_NO_ERROR:
-        return GPGME_SIG_STAT_GOOD;
-    case GPG_ERR_BAD_SIGNATURE:
-        return GPGME_SIG_STAT_BAD;
-    case GPG_ERR_NO_PUBKEY:
-        return GPGME_SIG_STAT_NOKEY;
-    case GPG_ERR_NO_DATA:
-        return GPGME_SIG_STAT_NOSIG;
-    case GPG_ERR_SIG_EXPIRED:
-        return GPGME_SIG_STAT_GOOD_EXP;
-    case GPG_ERR_KEY_EXPIRED:
-        return GPGME_SIG_STAT_GOOD_EXPKEY;
-    default:
-        return GPGME_SIG_STAT_ERROR;
-    }
-}
 
 void ObjectTreeParser::writeCertificateImportResult(const GpgME::ImportResult &res)
 {
@@ -971,87 +948,6 @@ void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
                             QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), iconName) +
                             label + QStringLiteral("</a></div>") +
                             QStringLiteral("<div>%1</div>").arg(comment));
-    }
-}
-
-void ObjectTreeParser::sigStatusToMetaData(const std::vector <GpgME::Signature> &signatures, const Kleo::CryptoBackend::Protocol *cryptProto, PartMetaData &messagePart, GpgME::Key key)
-{
-    if (messagePart.isSigned) {
-        GpgME::Signature signature = signatures.front();
-        messagePart.status_code = signatureToStatus(signature);
-        messagePart.isGoodSignature = messagePart.status_code & GPGME_SIG_STAT_GOOD;
-        // save extended signature status flags
-        messagePart.sigSummary = signature.summary();
-
-        if (messagePart.isGoodSignature && !key.keyID()) {
-            // Search for the key by it's fingerprint so that we can check for
-            // trust etc.
-            Kleo::KeyListJob *job = cryptProto->keyListJob(false);    // local, no sigs
-            if (!job) {
-                qCDebug(MIMETREEPARSER_LOG) << "The Crypto backend does not support listing keys. ";
-            } else {
-                std::vector<GpgME::Key> found_keys;
-                // As we are local it is ok to make this synchronous
-                GpgME::KeyListResult res = job->exec(QStringList(QLatin1String(signature.fingerprint())), false, found_keys);
-                if (res.error()) {
-                    qCDebug(MIMETREEPARSER_LOG) << "Error while searching key for Fingerprint: " << signature.fingerprint();
-                }
-                if (found_keys.size() > 1) {
-                    // Should not Happen
-                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found more then one Key for Fingerprint: " << signature.fingerprint();
-                }
-                if (found_keys.size() != 1) {
-                    // Should not Happen at this point
-                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found no Key for Fingerprint: " << signature.fingerprint();
-                } else {
-                    key = found_keys[0];
-                }
-            }
-        }
-
-        if (key.keyID()) {
-            messagePart.keyId = key.keyID();
-        }
-        if (messagePart.keyId.isEmpty()) {
-            messagePart.keyId = signature.fingerprint();
-        }
-        messagePart.keyTrust = signature.validity();
-        if (key.numUserIDs() > 0 && key.userID(0).id()) {
-            messagePart.signer = Kleo::DN(key.userID(0).id()).prettyDN();
-        }
-        for (uint iMail = 0; iMail < key.numUserIDs(); ++iMail) {
-            // The following if /should/ always result in TRUE but we
-            // won't trust implicitely the plugin that gave us these data.
-            if (key.userID(iMail).email()) {
-                QString email = QString::fromUtf8(key.userID(iMail).email());
-                // ### work around gpgme 0.3.x / cryptplug bug where the
-                // ### email addresses are specified as angle-addr, not addr-spec:
-                if (email.startsWith(QLatin1Char('<')) && email.endsWith(QLatin1Char('>'))) {
-                    email = email.mid(1, email.length() - 2);
-                }
-                if (!email.isEmpty()) {
-                    messagePart.signerMailAddresses.append(email);
-                }
-            }
-        }
-
-        if (signature.creationTime()) {
-            messagePart.creationTime.setTime_t(signature.creationTime());
-        } else {
-            messagePart.creationTime = QDateTime();
-        }
-        if (messagePart.signer.isEmpty()) {
-            if (key.numUserIDs() > 0 && key.userID(0).name()) {
-                messagePart.signer = Kleo::DN(key.userID(0).name()).prettyDN();
-            }
-            if (!messagePart.signerMailAddresses.empty()) {
-                if (messagePart.signer.isEmpty()) {
-                    messagePart.signer = messagePart.signerMailAddresses.front();
-                } else {
-                    messagePart.signer += QLatin1String(" <") + messagePart.signerMailAddresses.front() + QLatin1Char('>');
-                }
-            }
-        }
     }
 }
 

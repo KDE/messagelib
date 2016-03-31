@@ -356,8 +356,6 @@ private:
     /** Writes out the information contained in a GpgME::ImportResult */
     void writeCertificateImportResult(const GpgME::ImportResult &res);
 
-    void sigStatusToMetaData(const std::vector<GpgME::Signature> &signatures, const Kleo::CryptoBackend::Protocol *cryptoProtocol, PartMetaData &messagePart, GpgME::Key key);
-
 public:// (during refactoring)
 
     MessagePartPtr processTextHtmlSubtype(KMime::Content *node, ProcessResult &result);
