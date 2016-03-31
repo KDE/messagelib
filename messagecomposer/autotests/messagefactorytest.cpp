@@ -220,7 +220,7 @@ void MessageFactoryTest::testCreateForward()
                          "X-KMail-Transport: 0\n"
                          "MIME-Version: 1.0\n"
                          "Subject: Fwd: Test Email Subject\n"
-                         "Content-Type: text/plain; charset=\"ISO-8859-1\"\n"
+                         "Content-Type: text/plain; charset=\"US-ASCII\"\n"
                          "Content-Transfer-Encoding: 8Bit\n"
                          "X-KMail-Link-Message: 0\n"
                          "X-KMail-Link-Type: forward\n"
