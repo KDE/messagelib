@@ -106,7 +106,7 @@ void MailWebEngineView::contextMenuEvent(QContextMenuEvent *e)
 
 void MailWebEngineView::slotWebHitFinished(const MessageViewer::WebHitTestResult &result)
 {
-    Q_EMIT popupMenu(result.linkUrl(), result.imageUrl(), mapToGlobal(result.pos()));
+    Q_EMIT popupMenu(result);
 }
 
 void MailWebEngineView::scrollUp(int pixels)

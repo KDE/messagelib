@@ -79,6 +79,7 @@ class CSSHelper;
 class FindBarWebEngineView;
 class MailWebEngineView;
 class WebEnginePartHtmlWriter;
+class WebHitTestResult;
 #else
 class FindBarWebView;
 class MailWebView;
@@ -483,7 +484,11 @@ public Q_SLOTS:
     void slotUrlOn(const QString &link);
 
     /** The user presses the right mouse button on an URL. */
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    void slotUrlPopup(const MessageViewer::WebHitTestResult &result);
+#else
     void slotUrlPopup(const QUrl &, const QUrl &imageUrl, const QPoint &mousePos);
+#endif
 
     /** The user selected "Find" from the menu. */
     void slotFind();

@@ -175,7 +175,6 @@ void ScamDetectionWebEngine::showDetails()
     if (!d->mDetailsDialog) {
         d->mDetailsDialog = new MessageViewer::ScamDetectionDetailsDialog;
     }
-
     d->mDetailsDialog->setDetails(d->mDetails);
     d->mDetailsDialog->show();
 }

@@ -78,12 +78,13 @@ Q_SIGNALS:
     /// Emitted when the user right-clicks somewhere
     /// @param url if an URL was under the cursor, this parameter contains it. Otherwise empty
     /// @param point position where the click happened, in local coordinates
-    void popupMenu(const QUrl &url, const QUrl &imageUrl, const QPoint &point);
+    void popupMenu(const MessageViewer::WebHitTestResult &result);
 
 private Q_SLOTS:
     void handleScrollToAnchor(const QVariant &result);
 
     void slotWebHitFinished(const MessageViewer::WebHitTestResult &result);
+    void slotLoadFinished();
 private:
     MailWebEngineViewPrivate *const d;
 };

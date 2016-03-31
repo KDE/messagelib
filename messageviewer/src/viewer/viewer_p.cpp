@@ -124,6 +124,7 @@
 #include <QWebEngineSettings>
 #include "htmlwriter/webengineparthtmlwriter.h"
 #include <widgets/mailsourcewebengineviewer.h>
+#include <MessageViewer/WebHitTestResult>
 #else
 #include "widgets/mailsourceviewer.h"
 #include "htmlwriter/webkitparthtmlwriter.h"
@@ -152,6 +153,7 @@
 #include <viewerplugins/viewerplugininterface.h>
 #include <widgets/zoomactionmenu.h>
 #include <kpimtextedit/texttospeechwidget.h>
+
 
 #include <grantleetheme/grantleethememanager.h>
 #include <grantleetheme/grantleetheme.h>
@@ -2052,7 +2054,33 @@ void ViewerPrivate::slotUrlOn(const QString &link)
     KPIM::BroadcastStatus::instance()->setTransientStatusMsg(msg);
     Q_EMIT showStatusBarMessage(msg);
 }
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+void ViewerPrivate::slotUrlPopup(const MessageViewer::WebHitTestResult &result)
+{
+    if (!mMsgDisplay) {
+        return;
+    }
+    mClickedUrl = result.linkUrl();
+    mImageUrl = result.imageUrl();
+    const QPoint aPos = mViewer->mapToGlobal(result.pos());
+    if (URLHandlerManager::instance()->handleContextMenuRequest(mClickedUrl, aPos, this)) {
+        return;
+    }
 
+    if (!mActionCollection) {
+        return;
+    }
+
+    if (mClickedUrl.scheme() == QLatin1String("mailto")) {
+        mCopyURLAction->setText(i18n("Copy Email Address"));
+    } else {
+        mCopyURLAction->setText(i18n("Copy Link Address"));
+    }
+
+    Q_EMIT popupMenu(mMessageItem, mClickedUrl, mImageUrl, aPos);
+}
+
+#else
 void ViewerPrivate::slotUrlPopup(const QUrl &aUrl, const QUrl &imageUrl, const QPoint &aPos)
 {
     if (!mMsgDisplay) {
@@ -2077,6 +2105,7 @@ void ViewerPrivate::slotUrlPopup(const QUrl &aUrl, const QUrl &imageUrl, const Q
 
     Q_EMIT popupMenu(mMessageItem, aUrl, imageUrl, aPos);
 }
+#endif
 
 void ViewerPrivate::slotLoadExternalReference()
 {
