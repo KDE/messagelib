@@ -22,6 +22,7 @@
 #include "messageviewer_export.h"
 class KActionCollection;
 class QWebEngineView;
+class QAction;
 namespace MessageViewer
 {
 class NetworkPluginUrlInterceptorInterface;
@@ -33,6 +34,7 @@ public:
     explicit NetworkAccessManagerWebEngine(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = Q_NULLPTR);
     ~NetworkAccessManagerWebEngine();
     void addInterceptor(MessageViewer::NetworkPluginUrlInterceptorInterface *interceptor);
+    QList<QAction *> actions() const;
 private:
     NetworkAccessManagerWebEnginePrivate *const d;
 };

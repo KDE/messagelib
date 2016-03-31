@@ -57,7 +57,8 @@ public:
         : mScamDetection(Q_NULLPTR),
           mWebViewAccessKey(Q_NULLPTR),
           mExternalReference(Q_NULLPTR),
-          mPageEngine(Q_NULLPTR)
+          mPageEngine(Q_NULLPTR),
+          mNetworkAccessManager(Q_NULLPTR)
     {
 
     }
@@ -65,6 +66,7 @@ public:
     MailWebEngineAccessKey *mWebViewAccessKey;
     MessageViewer::LoadExternalReferencesUrlInterceptor *mExternalReference;
     MailWebEnginePage *mPageEngine;
+    MessageViewer::NetworkAccessManagerWebEngine *mNetworkAccessManager;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -79,9 +81,9 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     connect(d->mScamDetection, &ScamDetectionWebEngine::messageMayBeAScam, this, &MailWebEngineView::messageMayBeAScam);
     connect(d->mWebViewAccessKey, &MailWebEngineAccessKey::openUrl, this, &MailWebEngineView::openUrl);
 
-    MessageViewer::NetworkAccessManagerWebEngine *networkAccessManager = new MessageViewer::NetworkAccessManagerWebEngine(this, ac, this);
+    d->mNetworkAccessManager = new MessageViewer::NetworkAccessManagerWebEngine(this, ac, this);
     d->mExternalReference = new MessageViewer::LoadExternalReferencesUrlInterceptor(this);
-    networkAccessManager->addInterceptor(d->mExternalReference);
+    d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
     d->mPageEngine = new MailWebEnginePage(this);
     setPage(d->mPageEngine);
 

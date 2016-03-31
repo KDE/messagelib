@@ -19,6 +19,7 @@
 #include "webengine/urlinterceptor/networkurlinterceptormanager.h"
 #include "webengine/urlinterceptor/networkurlinterceptor.h"
 #include <QWebEngineProfile>
+#include <MessageViewer/NetworkPluginUrlInterceptorInterface>
 
 using namespace MessageViewer;
 
@@ -57,4 +58,13 @@ NetworkAccessManagerWebEngine::~NetworkAccessManagerWebEngine()
 void NetworkAccessManagerWebEngine::addInterceptor(MessageViewer::NetworkPluginUrlInterceptorInterface *interceptor)
 {
     d->mNetworkUrlInterceptor->addInterceptor(interceptor);
+}
+
+QList<QAction *> NetworkAccessManagerWebEngine::actions() const
+{
+    QList<QAction *> actions;
+    Q_FOREACH (MessageViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
+        actions.append(interface->actions());
+    }
+    return actions;
 }
