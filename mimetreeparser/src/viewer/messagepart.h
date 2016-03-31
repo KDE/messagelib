@@ -437,6 +437,7 @@ private:
      */
     bool okDecryptMIME(KMime::Content &data);
 
+    bool okVerify(const QByteArray &data, const Kleo::CryptoBackend::Protocol *cryptProto, PartMetaData &messagePart, QByteArray &verifiedText, std::vector <GpgME::Signature> &signatures, const QByteArray &signature, KMime::Content *sign);
 protected:
     bool mPassphraseError;
     bool mNoSecKey;

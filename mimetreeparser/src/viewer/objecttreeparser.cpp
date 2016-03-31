@@ -36,9 +36,6 @@
 
 #include "objecttreeparser.h"
 
-#include "memento/verifydetachedbodypartmemento.h"
-#include "memento/verifyopaquebodypartmemento.h"
-#include "memento/cryptobodypartmemento.h"
 #include "messagepart.h"
 #include "objecttreesourceif.h"
 
@@ -60,8 +57,6 @@
 #include <MessageCore/StringUtil>
 #include <Libkleo/SpecialJob>
 #include <Libkleo/CryptoBackendFactory>
-#include <Libkleo/VerifyDetachedJob>
-#include <Libkleo/VerifyOpaqueJob>
 #include <Libkleo/KeyListJob>
 #include <Libkleo/ImportJob>
 #include <Libkleo/Dn>
@@ -977,119 +972,6 @@ void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
                             label + QStringLiteral("</a></div>") +
                             QStringLiteral("<div>%1</div>").arg(comment));
     }
-}
-
-//-----------------------------------------------------------------------------
-
-bool ObjectTreeParser::okVerify(const QByteArray &data, const Kleo::CryptoBackend::Protocol *cryptProto, PartMetaData &messagePart, QByteArray &verifiedText, std::vector <GpgME::Signature> &signatures, const QByteArray &signature, KMime::Content *sign)
-{
-    enum { NO_PLUGIN, NOT_INITIALIZED, CANT_VERIFY_SIGNATURES }
-    cryptPlugError = NO_PLUGIN;
-
-    QString cryptPlugLibName;
-    QString cryptPlugDisplayName;
-    if (cryptProto) {
-        cryptPlugLibName = cryptProto->name();
-        cryptPlugDisplayName = cryptProto->displayName();
-    }
-
-    messagePart.isSigned = false;
-    messagePart.technicalProblem = (cryptProto == 0);
-    messagePart.keyTrust = GpgME::Signature::Unknown;
-    messagePart.status = i18n("Wrong Crypto Plug-In.");
-    messagePart.status_code = GPGME_SIG_STAT_NONE;
-
-    const QByteArray mementoName = "verification";
-
-    CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(mNodeHelper->bodyPartMemento(sign, mementoName));
-
-    if (!m) {
-        if (!signature.isEmpty()) {
-            Kleo::VerifyDetachedJob *job = cryptProto->verifyDetachedJob();
-            if (job) {
-                m = new VerifyDetachedBodyPartMemento(job, cryptProto->keyListJob(), signature, data);
-            } else {
-                cryptPlugError = CANT_VERIFY_SIGNATURES;
-                cryptProto = 0;
-            }
-        } else {
-            Kleo::VerifyOpaqueJob *job = cryptProto->verifyOpaqueJob();
-            if (job) {
-                m = new VerifyOpaqueBodyPartMemento(job, cryptProto->keyListJob(), data);
-            } else {
-                cryptPlugError = CANT_VERIFY_SIGNATURES;
-                cryptProto = 0;
-            }
-        }
-        if (m) {
-            if (allowAsync()) {
-                QObject::connect(m, &CryptoBodyPartMemento::update,
-                                 mNodeHelper, &NodeHelper::update);
-                QObject::connect(m, SIGNAL(update(MimeTreeParser::UpdateMode)),
-                                 mSource->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));
-
-                if (m->start()) {
-                    messagePart.inProgress = true;
-                    mHasPendingAsyncJobs = true;
-                }
-            } else {
-                m->exec();
-            }
-            mNodeHelper->setBodyPartMemento(sign, mementoName, m);
-        }
-    } else if (m->isRunning()) {
-        messagePart.inProgress = true;
-        mHasPendingAsyncJobs = true;
-        m = 0;
-    } else {
-        messagePart.inProgress = false;
-        mHasPendingAsyncJobs = false;
-    }
-
-    if (m && !messagePart.inProgress) {
-        if (!signature.isEmpty()) {
-            VerifyDetachedBodyPartMemento *vm = dynamic_cast<VerifyDetachedBodyPartMemento *>(m);
-            verifiedText = data;
-            signatures = vm->verifyResult().signatures();
-        } else {
-            VerifyOpaqueBodyPartMemento *vm = dynamic_cast<VerifyOpaqueBodyPartMemento *>(m);
-            verifiedText = vm->plainText();
-            signatures = vm->verifyResult().signatures();
-        }
-        messagePart.auditLogError = m->auditLogError();
-        messagePart.auditLog = m->auditLogAsHtml();
-        messagePart.isSigned = !signatures.empty();
-    }
-
-    if (!cryptProto) {
-        QString errorMsg;
-        switch (cryptPlugError) {
-        case NOT_INITIALIZED:
-            errorMsg = i18n("Crypto plug-in \"%1\" is not initialized.",
-                            cryptPlugLibName);
-            break;
-        case CANT_VERIFY_SIGNATURES:
-            errorMsg = i18n("Crypto plug-in \"%1\" cannot verify signatures.",
-                            cryptPlugLibName);
-            break;
-        case NO_PLUGIN:
-            if (cryptPlugDisplayName.isEmpty()) {
-                errorMsg = i18n("No appropriate crypto plug-in was found.");
-            } else {
-                errorMsg = i18nc("%1 is either 'OpenPGP' or 'S/MIME'",
-                                 "No %1 plug-in was found.",
-                                 cryptPlugDisplayName);
-            }
-            break;
-        }
-        messagePart.errorText = i18n("The message is signed, but the "
-                                     "validity of the signature cannot be "
-                                     "verified.<br />"
-                                     "Reason: %1",
-                                     errorMsg);
-    }
-
-    return messagePart.isSigned;
 }
 
 void ObjectTreeParser::sigStatusToMetaData(const std::vector <GpgME::Signature> &signatures, const Kleo::CryptoBackend::Protocol *cryptProto, PartMetaData &messagePart, GpgME::Key key)
