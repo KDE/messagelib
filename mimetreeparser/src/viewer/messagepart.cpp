@@ -1299,7 +1299,7 @@ void TextMessagePart::parseContent()
                 fullySignedOrEncryptedTmp = false;
                 appendMessagePart(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(block.text()))));
             } else if (block.type() == PgpMessageBlock) {
-                CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, 0));
+                CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, Q_NULLPTR));
                 mp->setDecryptMessage(decryptMessage());
                 mp->setIsEncrypted(true);
                 appendMessagePart(mp);
@@ -1311,7 +1311,7 @@ void TextMessagePart::parseContent()
                     continue;
                 }
             } else if (block.type() == ClearsignedBlock) {
-                CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, 0));
+                CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, Q_NULLPTR));
                 appendMessagePart(mp);
                 mp->startVerification(block.text(), aCodec);
             } else {
@@ -2072,7 +2072,7 @@ void CryptoMessagePart::sigStatusToMetaData(const std::vector <GpgME::Signature>
 
 void CryptoMessagePart::startVerification(const QByteArray &text, const QTextCodec *aCodec)
 {
-    startVerificationDetached(text, 0, QByteArray());
+    startVerificationDetached(text, Q_NULLPTR, QByteArray());
 
     if (!mNode && mMetaData.isSigned) {
         setText(aCodec->toUnicode(mVerifiedText));
