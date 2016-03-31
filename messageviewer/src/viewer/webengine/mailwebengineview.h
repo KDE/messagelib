@@ -35,7 +35,6 @@ public:
     void scrollUp(int pixels);
     void scrollDown(int pixels);
 
-
     void selectAll();
     void scamCheck();
 
@@ -49,8 +48,8 @@ public:
     void scrollToAnchor(const QString &anchor);
     void scrollPageDown(int percent);
     void scrollPageUp(int percent);
-    void injectAttachments(const boost::function<QString ()> &delayedHtml);
-    bool replaceInnerHtml(const QString &id, const boost::function<QString ()> &delayedHtml);
+    void injectAttachments(const boost::function<QString()> &delayedHtml);
+    bool replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml);
 
     bool hasVerticalScrollBar() const;
     bool isAttachmentInjectionPoint(const QPoint &globalPos) const;

@@ -1734,9 +1734,9 @@ bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
                 = new DecryptVerifyBodyPartMemento(job, ciphertext);
             if (mOtp->allowAsync()) {
                 QObject::connect(newM, &CryptoBodyPartMemento::update,
-                                    nodeHelper, &NodeHelper::update);
+                                 nodeHelper, &NodeHelper::update);
                 QObject::connect(newM, SIGNAL(update(MimeTreeParser::UpdateMode)), source->sourceObject(),
-                                    SLOT(update(MimeTreeParser::UpdateMode)));
+                                 SLOT(update(MimeTreeParser::UpdateMode)));
                 if (newM->start()) {
                     mMetaData.inProgress = true;
                     mOtp->mHasPendingAsyncJobs = true;
@@ -1807,8 +1807,8 @@ bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
                                        cryptPlugLibName);
         } else if (!passphraseError()) {
             mMetaData.errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName)
-            + QLatin1String("<br />")
-            + i18n("Error: %1", mMetaData.errorText);
+                                  + QLatin1String("<br />")
+                                  + i18n("Error: %1", mMetaData.errorText);
         }
     }
     return bDecryptionOk;
@@ -1959,11 +1959,11 @@ void CryptoMessagePart::html(bool decorate)
                 }
 
                 secKeyList += QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">%4</a>")
-                .arg(mCryptoProto->displayName(),
-                    mCryptoProto->name(),
-                    QString::fromLatin1(recipient.keyID()),
-                    QString::fromLatin1(QByteArray("0x") + recipient.keyID())
-                );
+                              .arg(mCryptoProto->displayName(),
+                                   mCryptoProto->name(),
+                                   QString::fromLatin1(recipient.keyID()),
+                                   QString::fromLatin1(QByteArray("0x") + recipient.keyID())
+                                  );
             }
         }
 

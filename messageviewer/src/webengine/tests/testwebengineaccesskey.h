@@ -34,7 +34,6 @@ public:
     ~TestWidget();
 };
 
-
 class TestWebKitAccesskey : public QWidget
 {
     Q_OBJECT
@@ -48,7 +47,6 @@ private Q_SLOTS:
 private:
     MessageViewer::MailWebView *mTestWebEngine;
 };
-
 
 class TestWebEngineAccesskey : public QWidget
 {

@@ -44,7 +44,6 @@ private:
     MessageViewer::ScamDetectionWebEngine *mScamDetectionWebEngine;
 };
 
-
 class ScamDetectionWebEngineTest : public QObject
 {
     Q_OBJECT

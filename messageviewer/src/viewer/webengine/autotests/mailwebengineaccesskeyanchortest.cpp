@@ -19,7 +19,6 @@
 #include "../mailwebengineaccesskeyanchor.h"
 #include <QTest>
 
-
 MailWebEngineAccessKeyAnchorTest::MailWebEngineAccessKeyAnchorTest(QObject *parent)
     : QObject(parent)
 {

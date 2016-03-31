@@ -2009,7 +2009,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     // known URLs, otherwise fallback to emitting a signal.
     // That signal is caught by KMail, and in case of mailto URLs, a composer is shown.
 
-    qDebug()<<" void ViewerPrivate::slotUrlOpen(const QUrl &url)"<<url;
+    qDebug() << " void ViewerPrivate::slotUrlOpen(const QUrl &url)" << url;
     if (URLHandlerManager::instance()->handleClick(mClickedUrl, this)) {
         return;
     }

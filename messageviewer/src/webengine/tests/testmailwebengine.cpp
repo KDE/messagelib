@@ -25,7 +25,6 @@
 
 #include <viewer/webengine/mailwebengineview.h>
 
-
 TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     : QWidget(parent)
 {
@@ -60,7 +59,6 @@ void TestMailWebEngine::slotScrollUp()
 {
     mTestWebEngine->page()->runJavaScript(MessageViewer::WebEngineScript::scrollUp(10));
 }
-
 
 int main(int argc, char *argv[])
 {

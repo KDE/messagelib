@@ -85,7 +85,6 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("Redirect scam") << QStringLiteral("<html><body><a href=\"http://www.google.fr/url?q=http://www.yahoo.com\">test</a></body></html>") << true;
     QTest::newRow("Redirect no scam") << QStringLiteral("<html><body><a href=\"kmail:showAuditLog?log=http://www.foo.com%3http://www.bla.com\">test</a></body></html>") << false;
 
-
     //Numeric value
     QTest::newRow("numeric no scam") << QStringLiteral("<html><body><a href=\"http://baseball2.2ndhalfplays.com/nested/attribs/\">http://baseball2.2ndhalfplays.com/nested/attribs</html>") << false;
     QTest::newRow("numeric scam1") << QStringLiteral("<html><body><a href=\"http://25.15.55.88/\">test</a></body></html>") << true;
@@ -108,6 +107,5 @@ void ScamDetectionWebEngineTest::scamtest()
     const bool scamResult = scamDetectionSpy.at(0).at(0).toBool();
     QCOMPARE(scamResult, result);
 }
-
 
 QTEST_MAIN(ScamDetectionWebEngineTest)

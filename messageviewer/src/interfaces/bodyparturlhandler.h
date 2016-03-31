@@ -40,7 +40,7 @@ namespace MimeTreeParser
 {
 namespace Interface
 {
-    class BodyPart;
+class BodyPart;
 }
 }
 

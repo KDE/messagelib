@@ -86,7 +86,7 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 {
     // Hack to find widget that receives input events
     if (obj == this && event->type() == QEvent::ChildAdded) {
-        QWidget *child = qobject_cast<QWidget*>(static_cast<QChildEvent*>(event)->child());
+        QWidget *child = qobject_cast<QWidget *>(static_cast<QChildEvent *>(event)->child());
         if (child && child->inherits("QtWebEngineCore::RenderWidgetHostViewQtDelegateWidget")) {
             d->mCurrentWidget = child;
             d->mCurrentWidget->installEventFilter(this);
@@ -96,14 +96,14 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
     // Forward events to WebEngineView
     if (obj == d->mCurrentWidget) {
 #define HANDLE_EVENT(f, t) \
-        { \
+    { \
         bool wasAccepted = event->isAccepted(); \
         event->setAccepted(false); \
         f(static_cast<t*>(event)); \
         bool ret = event->isAccepted(); \
         event->setAccepted(wasAccepted); \
         return ret; \
-        }
+    }
 
         switch (event->type()) {
         case QEvent::KeyPress:

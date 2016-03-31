@@ -138,7 +138,7 @@ private:
 
     HtmlWriter *mWriter;
     PartMetaData *mMetaData;
-    const NodeHelper* mNodeHelper;
+    const NodeHelper *mNodeHelper;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
     ObjectTreeSourceIf *mSource;
     QString mFromAddress;

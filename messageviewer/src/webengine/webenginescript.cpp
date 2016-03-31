@@ -95,20 +95,19 @@ QString WebEngineScript::findAllAnchorsAndForms()
     return source;
 }
 
-
 QString WebEngineScript::setElementByIdVisible(const QString &elementStr, bool visibility)
 {
     if (visibility) {
         const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
-                                                   "if (element) { "
-                                                   "    element.style.removeProperty( 'display' );"
-                                                   "}").arg(elementStr);
+                               "if (element) { "
+                               "    element.style.removeProperty( 'display' );"
+                               "}").arg(elementStr);
         return source;
     } else {
         const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
-                                                   "if (element) { "
-                                                   "    element.style.display = \"none\";"
-                                                   "}").arg(elementStr);
+                               "if (element) { "
+                               "    element.style.display = \"none\";"
+                               "}").arg(elementStr);
         return source;
     }
 }
@@ -116,10 +115,10 @@ QString WebEngineScript::setElementByIdVisible(const QString &elementStr, bool v
 QString WebEngineScript::searchElementPosition(const QString &elementStr)
 {
     const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
-                                               "if (element) { "
-                                               "    var geometry = element.getBoundingClientRect(); "
-                                               "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
-                                               "}").arg(elementStr);
+                           "if (element) { "
+                           "    var geometry = element.getBoundingClientRect(); "
+                           "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
+                           "}").arg(elementStr);
     //qDebug()<<" source "<<source;
     return source;
 }
@@ -142,7 +141,6 @@ QString WebEngineScript::scrollDown(int pixel)
     return source;
 }
 
-
 QString WebEngineScript::scrollToPosition(const QPoint &pos)
 {
     const QString source = QString::fromLatin1("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x()).arg(pos.y());
@@ -153,9 +151,9 @@ QString WebEngineScript::scrollToPosition(const QPoint &pos)
 QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style)
 {
     const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
-                                               "if (element) { "
-                                               "    element.style = '%2';"
-                                               "}").arg(elementStr).arg(style);
+                           "if (element) { "
+                           "    element.style = '%2';"
+                           "}").arg(elementStr).arg(style);
     return source;
 }
 

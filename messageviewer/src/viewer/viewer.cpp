@@ -561,7 +561,6 @@ void Viewer::selectAll()
     d->selectAll();
 }
 
-
 void Viewer::copySelectionToClipboard()
 {
     Q_D(Viewer);

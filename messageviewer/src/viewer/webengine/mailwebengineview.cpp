@@ -123,7 +123,7 @@ void MailWebEngineView::selectAll()
 
 void MailWebEngineView::slotZoomChanged(qreal zoom)
 {
-    qDebug()<<" void MailWebEngineView::slotZoomChanged(qreal zoom)*******"<<zoom;
+    qDebug() << " void MailWebEngineView::slotZoomChanged(qreal zoom)*******" << zoom;
     setZoomFactor(zoom);
 }
 
@@ -234,7 +234,6 @@ void MailWebEngineView::handleScrollToAnchor(const QVariant &result)
         }
     }
 }
-
 
 void MailWebEngineView::scrollPageDown(int percent)
 {

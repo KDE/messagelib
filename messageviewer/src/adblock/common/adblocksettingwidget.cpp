@@ -169,7 +169,6 @@ bool AdBlockSettingWidget::event(QEvent *event)
     return QWidget::event(event);
 }
 
-
 void AdBlockSettingWidget::insertRule()
 {
     const QString rule = mUi->addFilterLineEdit->text();

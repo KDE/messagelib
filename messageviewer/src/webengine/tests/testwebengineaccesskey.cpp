@@ -75,7 +75,6 @@ void TestWebKitAccesskey::slotShowAccessKey()
     mTestWebEngine->showAccessKeys();
 }
 
-
 TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
     : QWidget(parent)
 {

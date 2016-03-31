@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "mailwebengineaccesskeyanchorfromhtmltest.h"
 #include "../mailwebengineaccesskeyutils.h"
 #include <QTest>
@@ -65,7 +64,7 @@ void TestWebEngineAccessKey::handleSearchAccessKey(const QVariant &var)
     const QVariantList lst = var.toList();
     QVector<MessageViewer::MailWebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
-    Q_FOREACH(const QVariant &anchor, lst) {
+    Q_FOREACH (const QVariant &anchor, lst) {
         anchorList << MessageViewer::MailWebEngineAccessKeyAnchor(anchor);
     }
     Q_EMIT accessKeySearchFinished(anchorList);

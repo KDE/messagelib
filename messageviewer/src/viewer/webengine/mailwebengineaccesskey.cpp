@@ -19,7 +19,6 @@
 #include "mailwebengineaccesskeyanchor.h"
 #include "mailwebengineaccesskeyutils.h"
 
-
 #include <KActionCollection>
 #include <QKeyEvent>
 #include <QLabel>
@@ -93,7 +92,6 @@ static bool isEditableElement(QWebPage *page)
     return false;
 }
 
-
 #endif
 static QString linkElementKey(const MessageViewer::MailWebEngineAccessKeyAnchor &element, const QUrl &baseUrl)
 {
@@ -157,7 +155,7 @@ MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObjec
     : QObject(parent),
       d(new MessageViewer::MailWebEngineAccessKeyPrivate(webEngine))
 {
-    qDebug()<<" MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
+    qDebug() << " MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
 }
 
 MailWebEngineAccessKey::~MailWebEngineAccessKey()
@@ -196,10 +194,10 @@ void MailWebEngineAccessKey::keyPressEvent(QKeyEvent *e)
             }
             hideAccessKeys();
         } else if (e->key() == Qt::Key_Control && e->modifiers() == Qt::ControlModifier
-           #if 0 //FIXME
+#if 0 //FIXME
                    && !isEditableElement(d->mWebView->page())
-           #endif
-                   ) {
+#endif
+                  ) {
             d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::PreActivated; // Only preactive here, it will be actually activated in key release.
         }
     }
@@ -207,7 +205,7 @@ void MailWebEngineAccessKey::keyPressEvent(QKeyEvent *e)
 
 void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
 {
-    qDebug()<<" void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
+    qDebug() << " void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
     if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::PreActivated) {
         // Activate only when the CTRL key is pressed and released by itself.
         if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
@@ -249,14 +247,14 @@ void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageVi
     label->setAutoFillBackground(true);
     label->setFrameStyle(QFrame::Box | QFrame::Plain);
     QPoint point = element.boundingRect().center();
-    qDebug()<<" point label"<<point;
+    qDebug() << " point label" << point;
 #if 0
     point -= d->mWebView->page()->mainFrame()->scrollPosition();
 #endif
     label->move(point);
     label->show();
     point.setX(point.x() - label->width() / 2);
-    qDebug() << "new point "<<point;
+    qDebug() << "new point " << point;
     label->move(point);
     d->mAccessKeyLabels.append(label);
     d->mAccessKeyNodes.insertMulti(accessKey, element);
@@ -293,11 +291,10 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
     const QVariantList lst = res.toList();
     QVector<MessageViewer::MailWebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
-    Q_FOREACH(const QVariant &var, lst) {
+    Q_FOREACH (const QVariant &var, lst) {
         //qDebug()<<" var"<<var;
         anchorList << MessageViewer::MailWebEngineAccessKeyAnchor(var);
     }
-
 
     QList<QChar> unusedKeys;
     unusedKeys.reserve(10 + ('Z' - 'A' + 1));
