@@ -57,10 +57,6 @@
 #include <MessageCore/StringUtil>
 
 #include <Libkleo/CryptoBackendFactory>
-#include <Libkleo/ImportJob>
-
-#include <gpgme++/importresult.h>
-#include <gpgme.h>
 
 #include <KMime/Headers>
 #include <KMime/Message>
@@ -461,69 +457,6 @@ void ProcessResult::adjustCryptoStatesOfNode(KMime::Content *node) const
         mNodeHelper->setSignatureState(node, inlineSignatureState());
         mNodeHelper->setEncryptionState(node, inlineEncryptionState());
     }
-}
-
-//////////////////
-//////////////////
-//////////////////
-
-void ObjectTreeParser::writeCertificateImportResult(const GpgME::ImportResult &res)
-{
-    if (res.error()) {
-        htmlWriter()->queue(i18n("Sorry, certificate could not be imported.<br />"
-                                 "Reason: %1", QString::fromLocal8Bit(res.error().asString())));
-        return;
-    }
-
-    const int nImp = res.numImported();
-    const int nUnc = res.numUnchanged();
-    const int nSKImp = res.numSecretKeysImported();
-    const int nSKUnc = res.numSecretKeysUnchanged();
-    if (!nImp && !nSKImp && !nUnc && !nSKUnc) {
-        htmlWriter()->queue(i18n("Sorry, no certificates were found in this message."));
-        return;
-    }
-    QString comment = QLatin1String("<b>") + i18n("Certificate import status:") + QLatin1String("</b><br/>&nbsp;<br/>");
-    if (nImp)
-        comment += i18np("1 new certificate was imported.",
-                         "%1 new certificates were imported.", nImp) + QLatin1String("<br/>");
-    if (nUnc)
-        comment += i18np("1 certificate was unchanged.",
-                         "%1 certificates were unchanged.", nUnc) + QLatin1String("<br/>");
-    if (nSKImp)
-        comment += i18np("1 new secret key was imported.",
-                         "%1 new secret keys were imported.", nSKImp) + QLatin1String("<br/>");
-    if (nSKUnc)
-        comment += i18np("1 secret key was unchanged.",
-                         "%1 secret keys were unchanged.", nSKUnc) + QLatin1String("<br/>");
-    comment += QLatin1String("&nbsp;<br/>");
-    htmlWriter()->queue(comment);
-    if (!nImp && !nSKImp) {
-        htmlWriter()->queue(QStringLiteral("<hr/>"));
-        return;
-    }
-    const std::vector<GpgME::Import> imports = res.imports();
-    if (imports.empty()) {
-        htmlWriter()->queue(i18n("Sorry, no details on certificate import available.") + QLatin1String("<hr/>"));
-        return;
-    }
-    htmlWriter()->queue(QLatin1String("<b>") + i18n("Certificate import details:") + QLatin1String("</b><br/>"));
-    std::vector<GpgME::Import>::const_iterator end(imports.end());
-    for (std::vector<GpgME::Import>::const_iterator it = imports.begin(); it != end; ++it) {
-        if ((*it).error()) {
-            htmlWriter()->queue(i18nc("Certificate import failed.", "Failed: %1 (%2)", QLatin1String((*it).fingerprint()),
-                                      QString::fromLocal8Bit((*it).error().asString())));
-        } else if ((*it).status() & ~GpgME::Import::ContainedSecretKey) {
-            if ((*it).status() & GpgME::Import::ContainedSecretKey) {
-                htmlWriter()->queue(i18n("New or changed: %1 (secret key available)", QLatin1String((*it).fingerprint())));
-            } else {
-                htmlWriter()->queue(i18n("New or changed: %1", QLatin1String((*it).fingerprint())));
-            }
-        }
-        htmlWriter()->queue(QStringLiteral("<br/>"));
-    }
-
-    htmlWriter()->queue(QStringLiteral("<hr/>"));
 }
 
 void ObjectTreeParser::extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart)

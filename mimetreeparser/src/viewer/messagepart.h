@@ -374,6 +374,9 @@ public:
     void html(bool decorate) Q_DECL_OVERRIDE;
 
 private:
+    /** Writes out the information contained in a GpgME::ImportResult */
+    void writeCertificateImportResult();
+
     KMime::Content *mNode;
     bool mAutoImport;
     GpgME::ImportResult mImportResult;

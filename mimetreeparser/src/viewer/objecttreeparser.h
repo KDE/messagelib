@@ -354,9 +354,6 @@ private:
 
     MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
 
-    /** Writes out the information contained in a GpgME::ImportResult */
-    void writeCertificateImportResult(const GpgME::ImportResult &res);
-
 public:// (during refactoring)
     MessagePartPtr processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);
 
@@ -422,7 +419,6 @@ private:
     friend class PartNodeBodyPart;
     friend class MessagePart;
     friend class CryptoMessagePart;
-    friend class CertMessagePart;
     friend class EncapsulatedRfc822MessagePart;
     friend class TextMessagePart;
     friend class HtmlMessagePart;
