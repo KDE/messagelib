@@ -15,7 +15,7 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailwebengineaccesskeyutils.h"
+#include "webengineaccesskeyutils.h"
 
 QString MessageViewer::WebEngineAccessKeyUtils::script()
 {

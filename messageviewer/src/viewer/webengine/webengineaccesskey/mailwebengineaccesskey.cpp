@@ -17,7 +17,7 @@
 
 #include "mailwebengineaccesskey.h"
 #include "mailwebengineaccesskeyanchor.h"
-#include "mailwebengineaccesskeyutils.h"
+#include "webengineaccesskeyutils.h"
 
 #include <KActionCollection>
 #include <QKeyEvent>

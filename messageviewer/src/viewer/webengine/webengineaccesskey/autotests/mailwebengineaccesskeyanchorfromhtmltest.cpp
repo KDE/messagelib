@@ -16,7 +16,7 @@
 */
 
 #include "mailwebengineaccesskeyanchorfromhtmltest.h"
-#include "../mailwebengineaccesskeyutils.h"
+#include "../webengineaccesskeyutils.h"
 #include <QTest>
 #include <QHBoxLayout>
 #include <QWebEngineView>
