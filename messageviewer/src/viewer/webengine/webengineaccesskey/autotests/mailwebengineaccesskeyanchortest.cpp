@@ -33,7 +33,7 @@ MailWebEngineAccessKeyAnchorTest::~MailWebEngineAccessKeyAnchorTest()
 void MailWebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()
 {
     QVariant var;
-    MessageViewer::MailWebEngineAccessKeyAnchor accessKeyAnchor(var);
+    MessageViewer::WebEngineAccessKeyAnchor accessKeyAnchor(var);
     QVERIFY(accessKeyAnchor.href().isEmpty());
     QVERIFY(accessKeyAnchor.accessKey().isEmpty());
     QVERIFY(accessKeyAnchor.boundingRect().isEmpty());

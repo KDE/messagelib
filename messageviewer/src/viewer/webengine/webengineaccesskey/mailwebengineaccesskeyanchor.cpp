@@ -20,17 +20,17 @@
 
 using namespace MessageViewer;
 
-MailWebEngineAccessKeyAnchor::MailWebEngineAccessKeyAnchor(const QVariant &result)
+WebEngineAccessKeyAnchor::WebEngineAccessKeyAnchor(const QVariant &result)
 {
     initialize(result);
 }
 
-MailWebEngineAccessKeyAnchor::MailWebEngineAccessKeyAnchor()
+WebEngineAccessKeyAnchor::WebEngineAccessKeyAnchor()
 {
 
 }
 
-void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
+void WebEngineAccessKeyAnchor::initialize(const QVariant &result)
 {
     if (result.isValid()) {
         const QVariantMap map = result.toMap();
@@ -46,32 +46,32 @@ void MailWebEngineAccessKeyAnchor::initialize(const QVariant &result)
     }
 }
 
-QString MailWebEngineAccessKeyAnchor::innerText() const
+QString WebEngineAccessKeyAnchor::innerText() const
 {
     return mInnerText;
 }
 
-QString MailWebEngineAccessKeyAnchor::tagName() const
+QString WebEngineAccessKeyAnchor::tagName() const
 {
     return mTagName;
 }
 
-QString MailWebEngineAccessKeyAnchor::target() const
+QString WebEngineAccessKeyAnchor::target() const
 {
     return mTarget;
 }
 
-QString MailWebEngineAccessKeyAnchor::href() const
+QString WebEngineAccessKeyAnchor::href() const
 {
     return mHref;
 }
 
-QString MailWebEngineAccessKeyAnchor::accessKey() const
+QString WebEngineAccessKeyAnchor::accessKey() const
 {
     return mAccessKey;
 }
 
-QRect MailWebEngineAccessKeyAnchor::boundingRect() const
+QRect WebEngineAccessKeyAnchor::boundingRect() const
 {
     return mBoundingRect;
 }

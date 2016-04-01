@@ -23,11 +23,11 @@
 
 namespace MessageViewer
 {
-class MailWebEngineAccessKeyAnchor
+class WebEngineAccessKeyAnchor
 {
 public:
-    MailWebEngineAccessKeyAnchor(const QVariant &result);
-    MailWebEngineAccessKeyAnchor();
+    WebEngineAccessKeyAnchor(const QVariant &result);
+    WebEngineAccessKeyAnchor();
     QRect boundingRect() const;
 
     QString accessKey() const;
@@ -51,5 +51,5 @@ private:
 };
 }
 
-Q_DECLARE_TYPEINFO(MessageViewer::MailWebEngineAccessKeyAnchor, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(MessageViewer::WebEngineAccessKeyAnchor, Q_MOVABLE_TYPE);
 #endif // MAILWEBENGINEACCESSKEYANCHOR_H

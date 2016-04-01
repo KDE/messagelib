@@ -22,7 +22,7 @@
 
 namespace MessageViewer
 {
-namespace MailWebEngineAccessKeyUtils
+namespace WebEngineAccessKeyUtils
 {
 QString script();
 }

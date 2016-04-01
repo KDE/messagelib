@@ -36,7 +36,7 @@ private Q_SLOTS:
 
     void handleSearchAccessKey(const QVariant &var);
 Q_SIGNALS:
-    void accessKeySearchFinished(const QVector<MessageViewer::MailWebEngineAccessKeyAnchor> &var);
+    void accessKeySearchFinished(const QVector<MessageViewer::WebEngineAccessKeyAnchor> &var);
 
 private:
     QWebEngineView *mEngineView;

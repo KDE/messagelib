@@ -63,7 +63,7 @@ public:
 
     }
     QList<QLabel *> mAccessKeyLabels;
-    QHash<QChar, MessageViewer::MailWebEngineAccessKeyAnchor> mAccessKeyNodes;
+    QHash<QChar, MessageViewer::WebEngineAccessKeyAnchor> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
     QWebEngineView *mWebEngine;
     AccessKeyState mAccessKeyActivated;
@@ -93,7 +93,7 @@ static bool isEditableElement(QWebPage *page)
 }
 
 #endif
-static QString linkElementKey(const MessageViewer::MailWebEngineAccessKeyAnchor &element, const QUrl &baseUrl)
+static QString linkElementKey(const MessageViewer::WebEngineAccessKeyAnchor &element, const QUrl &baseUrl)
 {
     //qDebug()<<" element.href()"<<element.href();
     if (!element.href().isEmpty()) {
@@ -109,7 +109,7 @@ static QString linkElementKey(const MessageViewer::MailWebEngineAccessKeyAnchor 
     return QString();
 }
 
-static void handleDuplicateLinkElements(const MessageViewer::MailWebEngineAccessKeyAnchor &element, QHash<QString, QChar> *dupLinkList, QChar *accessKey, const QUrl &baseUrl)
+static void handleDuplicateLinkElements(const MessageViewer::WebEngineAccessKeyAnchor &element, QHash<QString, QChar> *dupLinkList, QChar *accessKey, const QUrl &baseUrl)
 {
     if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
         const QString linkKey(linkElementKey(element, baseUrl));
@@ -126,7 +126,7 @@ static void handleDuplicateLinkElements(const MessageViewer::MailWebEngineAccess
     }
 }
 
-static bool isHiddenElement(const MessageViewer::MailWebEngineAccessKeyAnchor &element)
+static bool isHiddenElement(const MessageViewer::WebEngineAccessKeyAnchor &element)
 {
     // width property set to less than zero
     if (element.boundingRect().width() < 1) {
@@ -233,7 +233,7 @@ void MailWebEngineAccessKey::hideAccessKeys()
     }
 }
 
-void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element)
+void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element)
 {
     //qDebug()<<" void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element)";
     QLabel *label = new QLabel(d->mWebEngine);
@@ -272,7 +272,7 @@ bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
     QChar key = text.at(0).toUpper();
     bool handled = false;
     if (d->mAccessKeyNodes.contains(key)) {
-        MessageViewer::MailWebEngineAccessKeyAnchor element = d->mAccessKeyNodes[key];
+        MessageViewer::WebEngineAccessKeyAnchor element = d->mAccessKeyNodes[key];
         if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
             const QString linkKey(linkElementKey(element, d->mWebEngine->url()));
             if (!linkKey.isEmpty()) {
@@ -289,11 +289,11 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
     //qDebug() << " void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
     const QVariantList lst = res.toList();
-    QVector<MessageViewer::MailWebEngineAccessKeyAnchor> anchorList;
+    QVector<MessageViewer::WebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
     Q_FOREACH (const QVariant &var, lst) {
         //qDebug()<<" var"<<var;
-        anchorList << MessageViewer::MailWebEngineAccessKeyAnchor(var);
+        anchorList << MessageViewer::WebEngineAccessKeyAnchor(var);
     }
 
     QList<QChar> unusedKeys;
@@ -319,9 +319,9 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
             }
         }
     }
-    QVector<MessageViewer::MailWebEngineAccessKeyAnchor> unLabeledElements;
+    QVector<MessageViewer::WebEngineAccessKeyAnchor> unLabeledElements;
     QRect viewport = d->mWebEngine->rect();//QRect(d->mWebEngine->page()->mainFrame()->scrollPosition(), d->mWebEngine->page()->viewportSize());
-    Q_FOREACH (const MessageViewer::MailWebEngineAccessKeyAnchor &element, anchorList) {
+    Q_FOREACH (const MessageViewer::WebEngineAccessKeyAnchor &element, anchorList) {
         const QRect geometry = element.boundingRect();
         if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
             continue;
@@ -356,7 +356,7 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 
     // Pick an access key first from the letters in the text and then from the
     // list of unused access keys
-    Q_FOREACH (const MessageViewer::MailWebEngineAccessKeyAnchor &element, unLabeledElements) {
+    Q_FOREACH (const MessageViewer::WebEngineAccessKeyAnchor &element, unLabeledElements) {
         const QRect geometry = element.boundingRect();
         if (unusedKeys.isEmpty()
                 || geometry.size().isEmpty()
@@ -388,6 +388,6 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 void MailWebEngineAccessKey::showAccessKeys()
 {
     d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::Activated;
-    d->mWebEngine->page()->runJavaScript(MessageViewer::MailWebEngineAccessKeyUtils::script(), invoke(this, &MailWebEngineAccessKey::handleSearchAccessKey));
+    d->mWebEngine->page()->runJavaScript(MessageViewer::WebEngineAccessKeyUtils::script(), invoke(this, &MailWebEngineAccessKey::handleSearchAccessKey));
 }
 

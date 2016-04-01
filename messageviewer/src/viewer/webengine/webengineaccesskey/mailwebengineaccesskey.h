@@ -29,7 +29,7 @@ class QWebEngineView;
 namespace MessageViewer
 {
 class MailWebEngineAccessKeyPrivate;
-class MailWebEngineAccessKeyAnchor;
+class WebEngineAccessKeyAnchor;
 class MESSAGEVIEWER_EXPORT MailWebEngineAccessKey : public QObject
 {
     Q_OBJECT
@@ -45,7 +45,7 @@ public:
     void keyReleaseEvent(QKeyEvent *e);
 
     void showAccessKeys();
-    void makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element);
+    void makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element);
 
     bool checkForAccessKey(QKeyEvent *event);
 Q_SIGNALS:

@@ -17,7 +17,7 @@
 
 #include "mailwebengineaccesskeyutils.h"
 
-QString MessageViewer::MailWebEngineAccessKeyUtils::script()
+QString MessageViewer::WebEngineAccessKeyUtils::script()
 {
     const QString script = QString::fromLatin1("(function() {"
                            "var out = [];"
