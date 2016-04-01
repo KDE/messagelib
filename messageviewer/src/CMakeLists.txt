@@ -40,7 +40,7 @@ if(BUILD_TESTING)
     add_subdirectory(htmlwriter/autotests/)
     if (QTWEBENGINE_SUPPORT_OPTION)
         add_subdirectory(webengine/tests)
-        add_subdirectory(viewer/webengine/autotests)
+        add_subdirectory(viewer/webengine/webengineaccesskey/autotests)
     endif()
 
 endif()
@@ -93,9 +93,9 @@ if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_mailviewer_SRCS
         viewer/webengine/mailwebengineview.cpp
         viewer/webengine/mailwebenginepage.cpp
-        viewer/webengine/mailwebengineaccesskey.cpp
-        viewer/webengine/mailwebengineaccesskeyanchor.cpp
-        viewer/webengine/mailwebengineaccesskeyutils.cpp
+        viewer/webengine/webengineaccesskey/mailwebengineaccesskey.cpp
+        viewer/webengine/webengineaccesskey/mailwebengineaccesskeyanchor.cpp
+        viewer/webengine/webengineaccesskey/mailwebengineaccesskeyutils.cpp
         viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
         viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
 
@@ -341,12 +341,19 @@ if (QTWEBENGINE_SUPPORT_OPTION)
     ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
         HEADER_NAMES
         MailWebEnginePage
-        MailWebEngineAccessKey
         MailWebEngineView
 
         REQUIRED_HEADERS MessageViewer_webengine_HEADERS
         PREFIX MessageViewer
         RELATIVE viewer/webengine
+        )
+    ecm_generate_headers(MessageViewer_Camelcasewebengine_accesskey_HEADERS
+        HEADER_NAMES
+        MailWebEngineAccessKey
+
+        REQUIRED_HEADERS MessageViewer_webengine_accesskey_HEADERS
+        PREFIX MessageViewer
+        RELATIVE viewer/webengine/webengineaccesskey
         )
     ecm_generate_headers(MessageViewer_Camelcasewebengine_urlinterceptor_HEADERS
         HEADER_NAMES
@@ -547,6 +554,7 @@ install(FILES
     ${MessageViewer_Camelcasewebengine_manager_HEADERS}
     ${MessageViewer_Camelcasewebengine_urlinterceptor_HEADERS}
     ${MessageViewer_Camelcasewebengine_HEADERS}
+    ${MessageViewer_Camelcasewebengine_accesskey_HEADERS}
     ${MessageViewer_CamelfindbarWebEngine_HEADERS}
     ${MessageViewer_Camelcasewebviewer_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
@@ -573,6 +581,7 @@ install(FILES
     ${MessageViewer_webengine_manager_HEADERS}
     ${MessageViewer_webengine_urlinterceptor_HEADERS}
     ${MessageViewer_webengine_HEADERS}
+    ${MessageViewer_webengine_accesskey_HEADERS}
     ${MessageViewer_findbarWebEngine_HEADERS}
     ${MessageViewer_adblockcommon_HEADERS}
     ${MessageViewer_webviewer_HEADERS}
