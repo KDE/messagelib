@@ -32,6 +32,7 @@
 #include "mimetreeparser_debug.h"
 
 #include "bodyformatter/applicationpgpencrypted.h"
+#include "bodyformatter/applicationpkcs7mime.h"
 #include "bodyformatter/mailman.h"
 #include "bodyformatter/multipartalternative.h"
 #include "bodyformatter/multipartmixed.h"
@@ -159,46 +160,8 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
     }
 }
 
-#define CREATE_BODY_PART_FORMATTER(subtype) \
-    class subtype##BodyPartFormatter \
-        : public MimeTreeParser::Interface::BodyPartFormatter \
-    { \
-        static const subtype##BodyPartFormatter *self; \
-    public: \
-        Interface::MessagePart::Ptr process(Interface::BodyPart &part) const Q_DECL_OVERRIDE; \
-        MimeTreeParser::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE; \
-        using MimeTreeParser::Interface::BodyPartFormatter::format; \
-        static const MimeTreeParser::Interface::BodyPartFormatter *create(); \
-    }; \
-    \
-    const subtype##BodyPartFormatter *subtype##BodyPartFormatter::self; \
-    \
-    const MimeTreeParser::Interface::BodyPartFormatter *subtype##BodyPartFormatter::create() { \
-        if ( !self ) { \
-            self = new subtype##BodyPartFormatter(); \
-        } \
-        return self; \
-    } \
-    Interface::MessagePart::Ptr subtype##BodyPartFormatter::process(Interface::BodyPart &part) const { \
-        return part.objectTreeParser()->process##subtype##Subtype(part.content(), *part.processResult()); \
-    } \
-    \
-    MimeTreeParser::Interface::BodyPartFormatter::Result subtype##BodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const { \
-        Q_UNUSED(writer) \
-        const auto p = process(*part);\
-        const auto mp = static_cast<MessagePart *>(p.data());\
-        if (mp) { \
-            mp->html(false);\
-            return Ok;\
-        }\
-        return Failed;\
-    }
-
-CREATE_BODY_PART_FORMATTER(ApplicationPkcs7Mime)
-
 typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
 
-#undef CREATE_BODY_PART_FORMATTER
 } // anon namespace
 
 void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()

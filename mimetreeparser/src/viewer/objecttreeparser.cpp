@@ -214,6 +214,58 @@ void ObjectTreeParser::setPrinting(bool printing)
     mPrinting = printing;
 }
 
+bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet)
+{
+    bool bRendered = false;
+    const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType);
+    auto range =  sub.equal_range(subType);
+    for (auto it = range.first; it != range.second; ++it) {
+        const auto formatter = (*it).second;
+        if (!formatter) {
+            continue;
+        }
+        PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper, codecFor(node));
+        // Set the default display strategy for this body part relying on the
+        // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
+        part.setDefaultDisplay((Interface::BodyPart::Display) attachmentStrategy()->defaultDisplay(node));
+
+        mNodeHelper->setNodeDisplayedEmbedded(node, true);
+
+        const Interface::MessagePart::Ptr result = formatter->process(part);
+        if (!result) {
+            continue;
+        }
+
+        if (const auto mp = result.dynamicCast<MessagePart>()) {
+            mp->setAttachmentFlag(node);
+            mpRet = result;
+            bRendered = true;
+            break;
+        } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
+            QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
+            const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
+            if (r == Interface::BodyPartFormatter::AsIcon) {
+                processResult.setNeverDisplayInline(true);
+                formatter->adaptProcessResult(processResult);
+                mNodeHelper->setNodeDisplayedEmbedded(node, false);
+                const Interface::MessagePart::Ptr mp = defaultHandling(node, processResult);
+                if (mp) {
+                    if (auto _mp = mp.dynamicCast<MessagePart>()) {
+                        _mp->setAttachmentFlag(node);
+                    }
+                    mpRet = mp;
+                }
+                bRendered = true;
+                break;
+            }
+            continue;
+        } else {
+            continue;
+        }
+    }
+    return bRendered;
+}
+
 MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
 {
     if (!node) {
@@ -254,62 +306,22 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
             subType = node->contentType()->subType();
         }
 
-        bool bRendered = false;
-        const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType);
-        while (true) {
-            auto range =  sub.equal_range(subType);
-            for (auto it = range.first; it != range.second; ++it) {
-                const auto formatter = (*it).second;
-                if (!formatter) {
-                    continue;
-                }
-                PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper, codecFor(node));
-                // Set the default display strategy for this body part relying on the
-                // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
-                part.setDefaultDisplay((Interface::BodyPart::Display) attachmentStrategy()->defaultDisplay(node));
-
-                mNodeHelper->setNodeDisplayedEmbedded(node, true);
-
-                const auto result = formatter->process(part);
-                if (!result) {
-                    continue;
-                }
-
-                if (const auto mp = dynamic_cast<MimeTreeParser::MessagePart *>(result.data())) {
-                    mp->setAttachmentFlag(node);
-                    mpl->appendMessagePart(result);
-                    bRendered = true;
-                    break;
-                } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
-                    QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
-                    const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
-                    if (r == Interface::BodyPartFormatter::AsIcon) {
-                        processResult.setNeverDisplayInline(true);
-                        formatter->adaptProcessResult(processResult);
-                        mNodeHelper->setNodeDisplayedEmbedded(node, false);
-                        const auto mp = defaultHandling(node, processResult);
-                        if (mp) {
-                            mp->setAttachmentFlag(node);
-                            mpl->appendMessagePart(mp);
-                        }
-                        bRendered = true;
-                        break;
-                    }
-                    continue;
-                } else {
-                    continue;
-                }
+        Interface::MessagePartPtr mp;
+        if (processType(node, processResult, mediaType, subType, mp)) {
+            if (mp) {
+                mpl->appendMessagePart(mp);
             }
-            if (bRendered || subType == "*") {
-                break;
+        } else if (processType(node, processResult, mediaType, "*", mp)) {
+            if (mp) {
+                mpl->appendMessagePart(mp);
             }
-            subType = "*";
-        }
-        if (!bRendered) {
-            qCCritical(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
+        } else {
+            qCWarning(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
             const auto mp = defaultHandling(node, processResult);
             if (mp) {
-                mp->setAttachmentFlag(node);
+                if (auto _mp = mp.dynamicCast<MessagePart>()) {
+                    _mp->setAttachmentFlag(node);
+                }
                 mpl->appendMessagePart(mp);
             }
         }
@@ -326,7 +338,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
     return mpl;
 }
 
-MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)
+Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)
 {
     // ### (mmutz) default handling should go into the respective
     // ### bodypartformatters.
@@ -345,13 +357,15 @@ MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, Process
         nodeHelper()->setNodeDisplayedEmbedded(node, true);
         return MessagePart::Ptr();
     }
-    MessagePart::Ptr mp;
+    Interface::MessagePart::Ptr mp;
+    ProcessResult processResult(mNodeHelper);
+
     if (node->contentType()->mimeType() == QByteArray("application/octet-stream") &&
             (node->contentType()->name().endsWith(QLatin1String("p7m")) ||
              node->contentType()->name().endsWith(QLatin1String("p7s")) ||
              node->contentType()->name().endsWith(QLatin1String("p7c"))
             ) &&
-            (mp = processApplicationPkcs7MimeSubtype(node, result))) {
+            processType(node, processResult, "application", "pkcs7-mime", mp)) {
         return mp;
     }
 
@@ -470,127 +484,6 @@ void ObjectTreeParser::extractNodeInfos(KMime::Content *curNode, bool isFirstTex
 void ObjectTreeParser::setPlainTextContent(QString plainTextContent)
 {
     mPlainTextContent = plainTextContent;
-}
-
-MessagePart::Ptr ObjectTreeParser::processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result)
-{
-    if (node->head().isEmpty()) {
-        return MessagePart::Ptr();
-    }
-
-    const Kleo::CryptoBackend::Protocol *smimeCrypto = Kleo::CryptoBackendFactory::instance()->smime();
-    if (!smimeCrypto) {
-        return MessagePart::Ptr();
-    }
-
-    const QString smimeType = node->contentType()->parameter(QStringLiteral("smime-type")).toLower();
-
-    if (smimeType == QLatin1String("certs-only")) {
-        result.setNeverDisplayInline(true);
-
-        CertMessagePart::Ptr mp(new CertMessagePart(this, node, smimeCrypto, mSource->autoImportKeys()));
-        return mp;
-    }
-
-    bool isSigned      = (smimeType == QLatin1String("signed-data"));
-    bool isEncrypted   = (smimeType == QLatin1String("enveloped-data"));
-
-    // Analyze "signTestNode" node to find/verify a signature.
-    // If zero this verification was successfully done after
-    // decrypting via recursion by insertAndParseNewChildNode().
-    KMime::Content *signTestNode = isEncrypted ? 0 : node;
-
-    // We try decrypting the content
-    // if we either *know* that it is an encrypted message part
-    // or there is neither signed nor encrypted parameter.
-    CryptoMessagePart::Ptr mp;
-    if (!isSigned) {
-        if (isEncrypted) {
-            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: enveloped (encrypted) data";
-        } else {
-            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
-        }
-
-        mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
-                                    node->decodedText(), smimeCrypto,
-                                    NodeHelper::fromAsString(node), node));
-        mp->setIsEncrypted(true);
-        mp->setDecryptMessage(mSource->decryptMessage());
-        PartMetaData *messagePart(mp->partMetaData());
-        if (!mSource->decryptMessage()) {
-            isEncrypted = true;
-            signTestNode = 0; // PENDING(marc) to be abs. sure, we'd need to have to look at the content
-        } else {
-            mp->startDecryption();
-            if (messagePart->isDecryptable) {
-                qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  encryption found  -  enveloped (encrypted) data !";
-                isEncrypted = true;
-                mNodeHelper->setEncryptionState(node, KMMsgFullyEncrypted);
-                if (messagePart->isSigned) {
-                    mNodeHelper->setSignatureState(node, KMMsgFullySigned);
-                }
-                signTestNode = 0;
-
-            } else {
-                // decryption failed, which could be because the part was encrypted but
-                // decryption failed, or because we didn't know if it was encrypted, tried,
-                // and failed. If the message was not actually encrypted, we continue
-                // assuming it's signed
-                if (mp->passphraseError() || (smimeType.isEmpty() && messagePart->isEncrypted)) {
-                    isEncrypted = true;
-                    signTestNode = 0;
-                }
-
-                if (isEncrypted) {
-                    qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  ERROR: COULD NOT DECRYPT enveloped data !";
-                } else {
-                    qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  NO encryption found";
-                }
-            }
-        }
-
-        if (isEncrypted) {
-            mNodeHelper->setEncryptionState(node, KMMsgFullyEncrypted);
-        }
-    }
-
-    // We now try signature verification if necessarry.
-    if (signTestNode) {
-        if (isSigned) {
-            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: opaque signed data";
-        } else {
-            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  opaque signed data ?";
-        }
-
-        const QTextCodec *aCodec(codecFor(signTestNode));
-        const QByteArray signaturetext = signTestNode->decodedContent();
-        mp = CryptoMessagePart::Ptr(new CryptoMessagePart(this,
-                                    aCodec->toUnicode(signaturetext), smimeCrypto,
-                                    NodeHelper::fromAsString(node), signTestNode));
-        mp->setDecryptMessage(mSource->decryptMessage());
-        PartMetaData *messagePart(mp->partMetaData());
-        if (smimeCrypto) {
-            mp->startVerificationDetached(signaturetext, 0, QByteArray());
-        } else {
-            messagePart->auditLogError = GpgME::Error(GPG_ERR_NOT_IMPLEMENTED);
-        }
-
-        if (messagePart->isSigned) {
-            if (!isSigned) {
-                qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  signature found  -  opaque signed data !";
-                isSigned = true;
-            }
-
-            mNodeHelper->setSignatureState(signTestNode, KMMsgFullySigned);
-            if (signTestNode != node) {
-                mNodeHelper->setSignatureState(node, KMMsgFullySigned);
-            }
-        } else {
-            qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  NO signature found   :-(";
-        }
-    }
-
-    return mp;
 }
 
 void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)

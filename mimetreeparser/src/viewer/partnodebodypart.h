@@ -66,7 +66,6 @@ public:
     QByteArray asBinary() const Q_DECL_OVERRIDE;
     QString contentTypeParameter(const char *param) const Q_DECL_OVERRIDE;
     QString contentDescription() const Q_DECL_OVERRIDE;
-    //int contentDisposition() const;
     QString contentDispositionParameter(const char *param) const Q_DECL_OVERRIDE;
     bool hasCompleteBody() const Q_DECL_OVERRIDE;
 
