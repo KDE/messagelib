@@ -43,7 +43,7 @@ public:
     bool isScrolledToBottom() const;
 
     void setElementByIdVisible(const QString &id, bool visible);
-    bool removeAttachmentMarking(const QString &id);
+    void removeAttachmentMarking(const QString &id);
     void markAttachment(const QString &id, const QString &style);
     void scrollToAnchor(const QString &anchor);
     void scrollPageDown(int percent);

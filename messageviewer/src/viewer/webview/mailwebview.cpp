@@ -199,15 +199,14 @@ void MailWebView::scrollToAnchor(const QString &anchor)
     page()->mainFrame()->scrollToAnchor(anchor);
 }
 
-bool MailWebView::removeAttachmentMarking(const QString &id)
+void MailWebView::removeAttachmentMarking(const QString &id)
 {
     QWebElement doc = page()->mainFrame()->documentElement();
     QWebElement attachmentDiv = doc.findFirst(QLatin1String("*#") + id);
     if (attachmentDiv.isNull()) {
-        return false;
+        return;
     }
     attachmentDiv.removeAttribute(QStringLiteral("style"));
-    return true;
 }
 
 void MailWebView::markAttachment(const QString &id, const QString &style)

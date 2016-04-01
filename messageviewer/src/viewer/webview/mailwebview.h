@@ -53,7 +53,7 @@ public:
 
     bool isAttachmentInjectionPoint(const QPoint &globalPos) const;
     void injectAttachments(const boost::function<QString()> &delayedHtml);
-    bool removeAttachmentMarking(const QString &id);
+    void removeAttachmentMarking(const QString &id);
     void markAttachment(const QString &id, const QString &style);
     bool replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml);
     void setElementByIdVisible(const QString &id, bool visible);

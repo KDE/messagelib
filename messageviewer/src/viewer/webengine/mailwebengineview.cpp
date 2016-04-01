@@ -208,7 +208,7 @@ void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)
     page()->runJavaScript(MessageViewer::WebEngineScript::setElementByIdVisible(id, visible));
 }
 
-bool MailWebEngineView::removeAttachmentMarking(const QString &id)
+void MailWebEngineView::removeAttachmentMarking(const QString &id)
 {
     qDebug() << "bool MailWebEngineView::removeAttachmentMarking(const QString &id) not implemented";
 #if 0
@@ -219,7 +219,6 @@ bool MailWebEngineView::removeAttachmentMarking(const QString &id)
     }
     attachmentDiv.removeAttribute(QStringLiteral("style"));
 #endif
-    return true;
 }
 
 void MailWebEngineView::markAttachment(const QString &id, const QString &style)
