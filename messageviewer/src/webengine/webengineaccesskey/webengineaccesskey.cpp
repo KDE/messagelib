@@ -15,7 +15,7 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailwebengineaccesskey.h"
+#include "webengineaccesskey.h"
 #include "webengineaccesskeyanchor.h"
 #include "webengineaccesskeyutils.h"
 
@@ -46,7 +46,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
     return wrapper;
 }
 
-class MessageViewer::MailWebEngineAccessKeyPrivate
+class MessageViewer::WebEngineAccessKeyPrivate
 {
 public:
     enum AccessKeyState {
@@ -55,7 +55,7 @@ public:
         Activated
     };
 
-    MailWebEngineAccessKeyPrivate(MailWebEngineAccessKey *qq, QWebEngineView *webEngine)
+    WebEngineAccessKeyPrivate(WebEngineAccessKey *qq, QWebEngineView *webEngine)
         : mWebEngine(webEngine),
           mAccessKeyActivated(NotActivated),
           mActionCollection(Q_NULLPTR),
@@ -71,7 +71,7 @@ public:
     QWebEngineView *mWebEngine;
     AccessKeyState mAccessKeyActivated;
     KActionCollection *mActionCollection;
-    MailWebEngineAccessKey *q;
+    WebEngineAccessKey *q;
 };
 
 #if 0
@@ -155,7 +155,7 @@ static bool isHiddenElement(const MessageViewer::WebEngineAccessKeyAnchor &eleme
     return false;
 }
 
-bool MailWebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
+bool WebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
 {
     if (mAccessKeyLabels.isEmpty()) {
         return false;
@@ -171,7 +171,7 @@ bool MailWebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
         if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
             const QString linkKey(linkElementKey(element, mWebEngine->url()));
             if (!linkKey.isEmpty()) {
-                //qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<linkKey;
+                //qDebug()<<" WebEngineAccessKey::checkForAccessKey****"<<linkKey;
                 Q_EMIT q->openUrl(QUrl(linkKey));
                 handled = true;
             }
@@ -180,9 +180,9 @@ bool MailWebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
     return handled;
 }
 
-void MailWebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element)
+void WebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element)
 {
-    //qDebug()<<" void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element)";
+    //qDebug()<<" void WebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element)";
     QLabel *label = new QLabel(mWebEngine);
     QFont font(label->font());
     font.setBold(true);
@@ -202,42 +202,42 @@ void MailWebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const Me
     mAccessKeyNodes.insertMulti(accessKey, element);
 }
 
-MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)
+WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)
     : QObject(parent),
-      d(new MessageViewer::MailWebEngineAccessKeyPrivate(this, webEngine))
+      d(new MessageViewer::WebEngineAccessKeyPrivate(this, webEngine))
 {
-    //qDebug() << " MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
+    //qDebug() << " WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
 }
 
-MailWebEngineAccessKey::~MailWebEngineAccessKey()
+WebEngineAccessKey::~WebEngineAccessKey()
 {
     delete d;
 }
 
-void MailWebEngineAccessKey::setActionCollection(KActionCollection *ac)
+void WebEngineAccessKey::setActionCollection(KActionCollection *ac)
 {
     d->mActionCollection = ac;
 }
 
-void MailWebEngineAccessKey::wheelEvent(QWheelEvent *e)
+void WebEngineAccessKey::wheelEvent(QWheelEvent *e)
 {
     hideAccessKeys();
-    if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::PreActivated && (e->modifiers() & Qt::ControlModifier)) {
-        d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::NotActivated;
+    if (d->mAccessKeyActivated == WebEngineAccessKeyPrivate::PreActivated && (e->modifiers() & Qt::ControlModifier)) {
+        d->mAccessKeyActivated = WebEngineAccessKeyPrivate::NotActivated;
     }
 }
 
-void MailWebEngineAccessKey::resizeEvent(QResizeEvent *)
+void WebEngineAccessKey::resizeEvent(QResizeEvent *)
 {
-    if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::Activated) {
+    if (d->mAccessKeyActivated == WebEngineAccessKeyPrivate::Activated) {
         hideAccessKeys();
     }
 }
 
-void MailWebEngineAccessKey::keyPressEvent(QKeyEvent *e)
+void WebEngineAccessKey::keyPressEvent(QKeyEvent *e)
 {
     if (e && d->mWebEngine->hasFocus()) {
-        if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::Activated) {
+        if (d->mAccessKeyActivated == WebEngineAccessKeyPrivate::Activated) {
             if (d->checkForAccessKey(e)) {
                 hideAccessKeys();
                 e->accept();
@@ -249,26 +249,26 @@ void MailWebEngineAccessKey::keyPressEvent(QKeyEvent *e)
                    && !isEditableElement(d->mWebView->page())
 #endif
                   ) {
-            d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::PreActivated; // Only preactive here, it will be actually activated in key release.
+            d->mAccessKeyActivated = WebEngineAccessKeyPrivate::PreActivated; // Only preactive here, it will be actually activated in key release.
         }
     }
 }
 
-void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
+void WebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
 {
-    //qDebug() << " void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
-    if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::PreActivated) {
+    //qDebug() << " void WebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
+    if (d->mAccessKeyActivated == WebEngineAccessKeyPrivate::PreActivated) {
         // Activate only when the CTRL key is pressed and released by itself.
         if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
             showAccessKeys();
 
         } else {
-            d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::NotActivated;
+            d->mAccessKeyActivated = WebEngineAccessKeyPrivate::NotActivated;
         }
     }
 }
 
-void MailWebEngineAccessKey::hideAccessKeys()
+void WebEngineAccessKey::hideAccessKeys()
 {
     if (!d->mAccessKeyLabels.isEmpty()) {
         for (int i = 0, count = d->mAccessKeyLabels.count(); i < count; ++i) {
@@ -279,16 +279,16 @@ void MailWebEngineAccessKey::hideAccessKeys()
         d->mAccessKeyLabels.clear();
         d->mAccessKeyNodes.clear();
         d->mDuplicateLinkElements.clear();
-        d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::NotActivated;
+        d->mAccessKeyActivated = WebEngineAccessKeyPrivate::NotActivated;
         d->mWebEngine->update();
     }
 }
 
 
 
-void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
+void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
-    //qDebug() << " void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
+    //qDebug() << " void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;
     const QVariantList lst = res.toList();
     QVector<MessageViewer::WebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
@@ -383,12 +383,12 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
             d->makeAccessKeyLabel(accessKey, element);
         }
     }
-    d->mAccessKeyActivated = (!d->mAccessKeyLabels.isEmpty() ? MailWebEngineAccessKeyPrivate::Activated : MailWebEngineAccessKeyPrivate::NotActivated);
+    d->mAccessKeyActivated = (!d->mAccessKeyLabels.isEmpty() ? WebEngineAccessKeyPrivate::Activated : WebEngineAccessKeyPrivate::NotActivated);
 }
 
-void MailWebEngineAccessKey::showAccessKeys()
+void WebEngineAccessKey::showAccessKeys()
 {
-    d->mAccessKeyActivated = MailWebEngineAccessKeyPrivate::Activated;
-    d->mWebEngine->page()->runJavaScript(MessageViewer::WebEngineAccessKeyUtils::script(), invoke(this, &MailWebEngineAccessKey::handleSearchAccessKey));
+    d->mAccessKeyActivated = WebEngineAccessKeyPrivate::Activated;
+    d->mWebEngine->page()->runJavaScript(MessageViewer::WebEngineAccessKeyUtils::script(), invoke(this, &WebEngineAccessKey::handleSearchAccessKey));
 }
 

@@ -113,7 +113,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         webengine/webenginepage.cpp
         webengine/webenginescript.cpp
         webengine/webengineview.cpp
-        webengine/webengineaccesskey/mailwebengineaccesskey.cpp
+        webengine/webengineaccesskey/webengineaccesskey.cpp
         webengine/webengineaccesskey/webengineaccesskeyanchor.cpp
         webengine/webengineaccesskey/webengineaccesskeyutils.cpp
         )
@@ -349,7 +349,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         )
     ecm_generate_headers(MessageViewer_Camelcasewebengine_accesskey_HEADERS
         HEADER_NAMES
-        MailWebEngineAccessKey
+        WebEngineAccessKey
 
         REQUIRED_HEADERS MessageViewer_webengine_accesskey_HEADERS
         PREFIX MessageViewer

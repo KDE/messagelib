@@ -17,7 +17,7 @@
 
 #include "mailwebengineview.h"
 #include "mailwebenginepage.h"
-#include "webengine/webengineaccesskey/mailwebengineaccesskey.h"
+#include "webengine/webengineaccesskey/webengineaccesskey.h"
 #include "webengine/webenginescript.h"
 #include "messageviewer/messageviewersettings.h"
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
@@ -65,7 +65,7 @@ public:
 
     }
     ScamDetectionWebEngine *mScamDetection;
-    MailWebEngineAccessKey *mWebViewAccessKey;
+    WebEngineAccessKey *mWebViewAccessKey;
     MessageViewer::LoadExternalReferencesUrlInterceptor *mExternalReference;
     MailWebEnginePage *mPageEngine;
     MessageViewer::NetworkAccessManagerWebEngine *mNetworkAccessManager;
@@ -77,11 +77,11 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
 
 {
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
-    d->mWebViewAccessKey = new MailWebEngineAccessKey(this, this);
+    d->mWebViewAccessKey = new WebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
     d->mScamDetection = new ScamDetectionWebEngine(this);
     connect(d->mScamDetection, &ScamDetectionWebEngine::messageMayBeAScam, this, &MailWebEngineView::messageMayBeAScam);
-    connect(d->mWebViewAccessKey, &MailWebEngineAccessKey::openUrl, this, &MailWebEngineView::openUrl);
+    connect(d->mWebViewAccessKey, &WebEngineAccessKey::openUrl, this, &MailWebEngineView::openUrl);
     connect(this, &MailWebEngineView::loadFinished, this, &MailWebEngineView::slotLoadFinished);
 
     d->mNetworkAccessManager = new MessageViewer::NetworkAccessManagerWebEngine(this, ac, this);

@@ -28,14 +28,14 @@ class QKeyEvent;
 class QWebEngineView;
 namespace MessageViewer
 {
-class MailWebEngineAccessKeyPrivate;
+class WebEngineAccessKeyPrivate;
 class WebEngineAccessKeyAnchor;
-class MESSAGEVIEWER_EXPORT MailWebEngineAccessKey : public QObject
+class MESSAGEVIEWER_EXPORT WebEngineAccessKey : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent = Q_NULLPTR);
-    ~MailWebEngineAccessKey();
+    explicit WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent = Q_NULLPTR);
+    ~WebEngineAccessKey();
 
     void setActionCollection(KActionCollection *ac);
 
@@ -55,7 +55,7 @@ private Q_SLOTS:
     void handleSearchAccessKey(const QVariant &res);
 
 private:
-    MailWebEngineAccessKeyPrivate *const d;
+    WebEngineAccessKeyPrivate *const d;
 };
 }
 
