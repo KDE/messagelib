@@ -10,6 +10,7 @@ include_directories(${GPGME_INCLUDES})
 
 set(libmimetreeparser_main_SRCS
     bodyformatter/applicationpgpencrypted.cpp
+    bodyformatter/applicationpkcs7mime.cpp
     bodyformatter/mailman.cpp
     bodyformatter/multipartalternative.cpp
     bodyformatter/multipartencrypted.cpp
