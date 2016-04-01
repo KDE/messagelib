@@ -244,6 +244,8 @@ void MailWebEngineView::handleScrollToAnchor(const QVariant &result)
 
 void MailWebEngineView::scrollPageDown(int percent)
 {
+    page()->runJavaScript(MessageViewer::WebEngineScript::scrollPercentage(percent));
+    qDebug()<<" void MailWebEngineView::scrollPageDown(int percent) not implemented";
 #if 0
     const qint64 height =  page()->viewportSize().height();
     const qint64 current = page()->mainFrame()->scrollBarValue(Qt::Vertical);
@@ -263,6 +265,7 @@ void MailWebEngineView::scrollPageUp(int percent)
 
 void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
 {
+    qDebug()<<" void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml) not implemented";
     //TODO
 #if 0
     QWebElement doc = page()->currentFrame()->documentElement();
@@ -298,12 +301,14 @@ bool MailWebEngineView::replaceInnerHtml(const QString &id, const boost::functio
 
 bool MailWebEngineView::hasVerticalScrollBar() const
 {
+    qDebug() << "bool MailWebEngineView::hasVerticalScrollBar() const not implemented";
     //TODO
     return false;
 }
 
 bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) const
 {
+    qDebug() << "bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) const not implemented";
     //TODO
     return false;
 }
@@ -316,6 +321,7 @@ void MailWebEngineView::scrollToRelativePosition(double pos)
 double MailWebEngineView::relativePosition() const
 {
 
+    qDebug()<<"double MailWebEngineView::relativePosition() const not implemented";
     //TODO
     return {};
 }
