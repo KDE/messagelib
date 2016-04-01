@@ -94,7 +94,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         viewer/webengine/mailwebengineview.cpp
         viewer/webengine/mailwebenginepage.cpp
         viewer/webengine/webengineaccesskey/mailwebengineaccesskey.cpp
-        viewer/webengine/webengineaccesskey/mailwebengineaccesskeyanchor.cpp
+        viewer/webengine/webengineaccesskey/webengineaccesskeyanchor.cpp
         viewer/webengine/webengineaccesskey/webengineaccesskeyutils.cpp
         viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
         viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp

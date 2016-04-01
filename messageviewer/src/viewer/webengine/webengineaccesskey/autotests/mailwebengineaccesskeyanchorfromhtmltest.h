@@ -21,7 +21,7 @@
 #include <QObject>
 #include <QWidget>
 
-#include "../mailwebengineaccesskeyanchor.h"
+#include "../webengineaccesskeyanchor.h"
 class QWebEngineView;
 class TestWebEngineAccessKey : public QWidget
 {

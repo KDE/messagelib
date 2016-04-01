@@ -16,7 +16,7 @@
 */
 
 #include "mailwebengineaccesskey.h"
-#include "mailwebengineaccesskeyanchor.h"
+#include "webengineaccesskeyanchor.h"
 #include "webengineaccesskeyutils.h"
 
 #include <KActionCollection>

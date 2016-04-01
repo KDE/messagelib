@@ -20,12 +20,12 @@
 
 #include <QObject>
 
-class MailWebEngineAccessKeyAnchorTest : public QObject
+class WebEngineAccessKeyAnchorTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailWebEngineAccessKeyAnchorTest(QObject *parent = Q_NULLPTR);
-    ~MailWebEngineAccessKeyAnchorTest();
+    explicit WebEngineAccessKeyAnchorTest(QObject *parent = Q_NULLPTR);
+    ~WebEngineAccessKeyAnchorTest();
 private Q_SLOTS:
     void shouldReturnEmptyAccessKeyAnchor();
 };

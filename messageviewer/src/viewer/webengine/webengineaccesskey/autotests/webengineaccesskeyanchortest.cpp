@@ -15,22 +15,22 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailwebengineaccesskeyanchortest.h"
-#include "../mailwebengineaccesskeyanchor.h"
+#include "webengineaccesskeyanchortest.h"
+#include "../webengineaccesskeyanchor.h"
 #include <QTest>
 
-MailWebEngineAccessKeyAnchorTest::MailWebEngineAccessKeyAnchorTest(QObject *parent)
+WebEngineAccessKeyAnchorTest::WebEngineAccessKeyAnchorTest(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-MailWebEngineAccessKeyAnchorTest::~MailWebEngineAccessKeyAnchorTest()
+WebEngineAccessKeyAnchorTest::~WebEngineAccessKeyAnchorTest()
 {
 
 }
 
-void MailWebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()
+void WebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()
 {
     QVariant var;
     MessageViewer::WebEngineAccessKeyAnchor accessKeyAnchor(var);
@@ -42,4 +42,4 @@ void MailWebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()
     QVERIFY(accessKeyAnchor.innerText().isEmpty());
 }
 
-QTEST_MAIN(MailWebEngineAccessKeyAnchorTest)
+QTEST_MAIN(WebEngineAccessKeyAnchorTest)
