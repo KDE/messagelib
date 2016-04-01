@@ -37,6 +37,7 @@ if(BUILD_TESTING)
     add_subdirectory(adblock/tests/)
     add_subdirectory(adblock/common/autotests)
     add_subdirectory(viewerplugins/tests/)
+    add_subdirectory(htmlwriter/autotests/)
     if (QTWEBENGINE_SUPPORT_OPTION)
         add_subdirectory(webengine/tests)
         add_subdirectory(viewer/webengine/autotests)
@@ -113,6 +114,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         webengine/webenginescript.cpp
         webengine/webengineview.cpp
         webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
+        webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -203,6 +205,7 @@ set(libmessageviewer_utils_SRCS
 if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_htmlwriter_webengine_SRCS
         htmlwriter/webengineparthtmlwriter.cpp
+        htmlwriter/webengineembedpart.cpp
         )
 endif()
 

@@ -51,7 +51,6 @@ Q_SIGNALS:
     void finished();
 
 private:
-    void resolveCidUrls();
     void insertExtraHead();
 
 private:
@@ -63,9 +62,6 @@ private:
         Queued,
         Ended
     } mState;
-    // Key is Content-Id, value is URL
-    typedef QMap<QString, QString> EmbeddedPartMap;
-    EmbeddedPartMap mEmbeddedPartMap;
 };
 
 }

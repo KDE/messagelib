@@ -21,6 +21,7 @@
 #include "webengine/webenginescript.h"
 #include "messageviewer/messageviewersettings.h"
 #include "webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
+#include "webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
 #include <MessageViewer/NetworkAccessManagerWebEngine>
 
 #include "scamdetection/scamdetectionwebengine.h"
@@ -85,6 +86,8 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager = new MessageViewer::NetworkAccessManagerWebEngine(this, ac, this);
     d->mExternalReference = new MessageViewer::LoadExternalReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
+    MessageViewer::CidReferencesUrlInterceptor *cidReference = new MessageViewer::CidReferencesUrlInterceptor(this);
+    d->mNetworkAccessManager->addInterceptor(cidReference);
     d->mPageEngine = new MailWebEnginePage(this);
     setPage(d->mPageEngine);
 

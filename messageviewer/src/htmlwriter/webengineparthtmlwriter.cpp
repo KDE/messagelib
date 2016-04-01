@@ -15,6 +15,7 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 #include "webengineparthtmlwriter.h"
+#include "webengineembedpart.h"
 
 #include "messageviewer_debug.h"
 #include "viewer/webengine/mailwebengineview.h"
@@ -46,7 +47,7 @@ void WebEnginePartHtmlWriter::begin(const QString &css)
         reset();
     }
 
-    mEmbeddedPartMap.clear();
+    MessageViewer::WebEngineEmbedPart::self()->clear();
     // clear the widget:
     mHtmlView->setUpdatesEnabled(false);
     mHtmlView->scrollUp(10);
@@ -68,7 +69,6 @@ void WebEnginePartHtmlWriter::end()
     mHtmlView->show();
     mHtml.clear();
 
-    resolveCidUrls();
     mHtmlView->setUpdatesEnabled(true);
     mHtmlView->update();
     mState = Ended;
@@ -107,31 +107,7 @@ void WebEnginePartHtmlWriter::flush()
 void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId,
                                         const QString &contentURL)
 {
-    mEmbeddedPartMap[QLatin1String(contentId)] = contentURL;
-}
-
-void WebEnginePartHtmlWriter::resolveCidUrls()
-{
-#if 0
-    // FIXME: instead of patching around in the HTML source, this should
-    // be replaced by a custom QNetworkAccessManager (for QWebView), or
-    // virtual loadResource() (for QTextBrowser)
-    QWebElement root = mHtmlView->page()->mainFrame()->documentElement();
-    QWebElementCollection images = root.findAll(QStringLiteral("img"));
-    QWebElementCollection::iterator end(images.end());
-    for (QWebElementCollection::iterator it = images.begin(); it != end; ++it) {
-        QUrl url((*it).attribute(QStringLiteral("src")));
-        if (url.scheme() == QLatin1String("cid")) {
-            EmbeddedPartMap::const_iterator cit = mEmbeddedPartMap.constFind(url.path());
-            if (cit != mEmbeddedPartMap.constEnd()) {
-                qCDebug(MESSAGEVIEWER_LOG) << "Replacing" << url.toDisplayString() << "by" << cit.value();
-                (*it).setAttribute(QStringLiteral("src"), cit.value());
-            }
-        }
-    }
-#else
-    qDebug() << "WebEnginePartHtmlWriter::resolveCidUrls() not implemented";
-#endif
+    MessageViewer::WebEngineEmbedPart::self()->addEmbedPart(contentId, contentURL);
 }
 
 void WebEnginePartHtmlWriter::insertExtraHead()
