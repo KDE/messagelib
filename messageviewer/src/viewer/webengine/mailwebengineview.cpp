@@ -289,6 +289,7 @@ void MailWebEngineView::injectAttachments(const boost::function<QString()> &dela
 
 bool MailWebEngineView::replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml)
 {
+    qDebug() << "bool MailWebEngineView::replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml)";
 #if 0
     QWebElement doc = page()->currentFrame()->documentElement();
     QWebElement tag = doc.findFirst(QLatin1String("*#") + id);
