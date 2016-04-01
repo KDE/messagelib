@@ -31,6 +31,7 @@
 #include <MessageViewer/WebHitTestResult>
 
 #include <QWebEngineSettings>
+#include <QWebEngineProfile>
 
 using namespace MessageViewer;
 template<typename Arg, typename R, typename C>
@@ -90,7 +91,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager->addInterceptor(cidReference);
     d->mPageEngine = new MailWebEnginePage(this);
     setPage(d->mPageEngine);
-
+    QWebEngineProfile::defaultProfile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
     //TODO need info about scrolling
