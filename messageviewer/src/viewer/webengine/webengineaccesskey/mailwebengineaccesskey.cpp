@@ -55,19 +55,23 @@ public:
         Activated
     };
 
-    MailWebEngineAccessKeyPrivate(QWebEngineView *webEngine)
+    MailWebEngineAccessKeyPrivate(MailWebEngineAccessKey *qq, QWebEngineView *webEngine)
         : mWebEngine(webEngine),
           mAccessKeyActivated(NotActivated),
-          mActionCollection(Q_NULLPTR)
+          mActionCollection(Q_NULLPTR),
+          q(qq)
     {
 
     }
+    void makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element);
+    bool checkForAccessKey(QKeyEvent *event);
     QList<QLabel *> mAccessKeyLabels;
     QHash<QChar, MessageViewer::WebEngineAccessKeyAnchor> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
     QWebEngineView *mWebEngine;
     AccessKeyState mAccessKeyActivated;
     KActionCollection *mActionCollection;
+    MailWebEngineAccessKey *q;
 };
 
 #if 0
@@ -151,9 +155,56 @@ static bool isHiddenElement(const MessageViewer::WebEngineAccessKeyAnchor &eleme
     return false;
 }
 
+bool MailWebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
+{
+    if (mAccessKeyLabels.isEmpty()) {
+        return false;
+    }
+    QString text = event->text();
+    if (text.isEmpty()) {
+        return false;
+    }
+    QChar key = text.at(0).toUpper();
+    bool handled = false;
+    if (mAccessKeyNodes.contains(key)) {
+        MessageViewer::WebEngineAccessKeyAnchor element = mAccessKeyNodes[key];
+        if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
+            const QString linkKey(linkElementKey(element, mWebEngine->url()));
+            if (!linkKey.isEmpty()) {
+                //qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<linkKey;
+                Q_EMIT q->openUrl(QUrl(linkKey));
+                handled = true;
+            }
+        }
+    }
+    return handled;
+}
+
+void MailWebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element)
+{
+    //qDebug()<<" void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element)";
+    QLabel *label = new QLabel(mWebEngine);
+    QFont font(label->font());
+    font.setBold(true);
+    label->setFont(font);
+    label->setText(accessKey);
+    QFontMetrics metric(label->font());
+    label->setFixedWidth(metric.width(QStringLiteral("WW")));
+    label->setPalette(QToolTip::palette());
+    label->setAutoFillBackground(true);
+    label->setFrameStyle(QFrame::Box | QFrame::Plain);
+    QPoint point = element.boundingRect().center();
+    label->move(point);
+    label->show();
+    point.setX(point.x() - label->width() / 2);
+    label->move(point);
+    mAccessKeyLabels.append(label);
+    mAccessKeyNodes.insertMulti(accessKey, element);
+}
+
 MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)
     : QObject(parent),
-      d(new MessageViewer::MailWebEngineAccessKeyPrivate(webEngine))
+      d(new MessageViewer::MailWebEngineAccessKeyPrivate(this, webEngine))
 {
     //qDebug() << " MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
 }
@@ -187,7 +238,7 @@ void MailWebEngineAccessKey::keyPressEvent(QKeyEvent *e)
 {
     if (e && d->mWebEngine->hasFocus()) {
         if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::Activated) {
-            if (checkForAccessKey(e)) {
+            if (d->checkForAccessKey(e)) {
                 hideAccessKeys();
                 e->accept();
                 return;
@@ -233,57 +284,7 @@ void MailWebEngineAccessKey::hideAccessKeys()
     }
 }
 
-void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element)
-{
-    //qDebug()<<" void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageViewer::MailWebEngineAccessKeyAnchor &element)";
-    QLabel *label = new QLabel(d->mWebEngine);
-    QFont font(label->font());
-    font.setBold(true);
-    label->setFont(font);
-    label->setText(accessKey);
-    QFontMetrics metric(label->font());
-    label->setFixedWidth(metric.width(QStringLiteral("WW")));
-    label->setPalette(QToolTip::palette());
-    label->setAutoFillBackground(true);
-    label->setFrameStyle(QFrame::Box | QFrame::Plain);
-    QPoint point = element.boundingRect().center();
-    //qDebug() << " point label" << point;
-//#if 0
-    //point -= d->mWebView->page()->mainFrame()->scrollPosition();
-//#endif
-    label->move(point);
-    label->show();
-    point.setX(point.x() - label->width() / 2);
-    //qDebug() << "new point " << point;
-    label->move(point);
-    d->mAccessKeyLabels.append(label);
-    d->mAccessKeyNodes.insertMulti(accessKey, element);
-}
 
-bool MailWebEngineAccessKey::checkForAccessKey(QKeyEvent *event)
-{
-    if (d->mAccessKeyLabels.isEmpty()) {
-        return false;
-    }
-    QString text = event->text();
-    if (text.isEmpty()) {
-        return false;
-    }
-    QChar key = text.at(0).toUpper();
-    bool handled = false;
-    if (d->mAccessKeyNodes.contains(key)) {
-        MessageViewer::WebEngineAccessKeyAnchor element = d->mAccessKeyNodes[key];
-        if (element.tagName().compare(QLatin1String("A"), Qt::CaseInsensitive) == 0) {
-            const QString linkKey(linkElementKey(element, d->mWebEngine->url()));
-            if (!linkKey.isEmpty()) {
-                //qDebug()<<" MailWebEngineAccessKey::checkForAccessKey****"<<linkKey;
-                Q_EMIT openUrl(QUrl(linkKey));
-                handled = true;
-            }
-        }
-    }
-    return handled;
-}
 
 void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
@@ -350,7 +351,7 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         handleDuplicateLinkElements(element, &d->mDuplicateLinkElements, &accessKey, d->mWebEngine->url());
         if (!accessKey.isNull()) {
             unusedKeys.removeOne(accessKey);
-            makeAccessKeyLabel(accessKey, element);
+            d->makeAccessKeyLabel(accessKey, element);
         }
     }
 
@@ -379,7 +380,7 @@ void MailWebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         handleDuplicateLinkElements(element, &d->mDuplicateLinkElements, &accessKey, d->mWebEngine->url());
         if (!accessKey.isNull()) {
             unusedKeys.removeOne(accessKey);
-            makeAccessKeyLabel(accessKey, element);
+            d->makeAccessKeyLabel(accessKey, element);
         }
     }
     d->mAccessKeyActivated = (!d->mAccessKeyLabels.isEmpty() ? MailWebEngineAccessKeyPrivate::Activated : MailWebEngineAccessKeyPrivate::NotActivated);

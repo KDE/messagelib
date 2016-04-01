@@ -55,8 +55,6 @@ private Q_SLOTS:
     void handleSearchAccessKey(const QVariant &res);
 
 private:
-    bool checkForAccessKey(QKeyEvent *event);
-    void makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element);
     MailWebEngineAccessKeyPrivate *const d;
 };
 }
