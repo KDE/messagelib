@@ -17,7 +17,7 @@
 
 #include "mailwebengineview.h"
 #include "mailwebenginepage.h"
-#include "webengineaccesskey/mailwebengineaccesskey.h"
+#include "webengine/webengineaccesskey/mailwebengineaccesskey.h"
 #include "webengine/webenginescript.h"
 #include "messageviewer/messageviewersettings.h"
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"

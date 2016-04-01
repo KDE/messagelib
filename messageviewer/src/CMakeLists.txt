@@ -40,7 +40,7 @@ if(BUILD_TESTING)
     add_subdirectory(htmlwriter/autotests/)
     if (QTWEBENGINE_SUPPORT_OPTION)
         add_subdirectory(webengine/tests)
-        add_subdirectory(viewer/webengine/webengineaccesskey/autotests)
+        add_subdirectory(webengine/webengineaccesskey/autotests)
     endif()
 
 endif()
@@ -93,9 +93,6 @@ if (QTWEBENGINE_SUPPORT_OPTION)
     set(libmessageviewer_mailviewer_SRCS
         viewer/webengine/mailwebengineview.cpp
         viewer/webengine/mailwebenginepage.cpp
-        viewer/webengine/webengineaccesskey/mailwebengineaccesskey.cpp
-        viewer/webengine/webengineaccesskey/webengineaccesskeyanchor.cpp
-        viewer/webengine/webengineaccesskey/webengineaccesskeyutils.cpp
         viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
         viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
 
@@ -116,6 +113,9 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         webengine/webenginepage.cpp
         webengine/webenginescript.cpp
         webengine/webengineview.cpp
+        webengine/webengineaccesskey/mailwebengineaccesskey.cpp
+        webengine/webengineaccesskey/webengineaccesskeyanchor.cpp
+        webengine/webengineaccesskey/webengineaccesskeyutils.cpp
         )
     set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
@@ -353,7 +353,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
 
         REQUIRED_HEADERS MessageViewer_webengine_accesskey_HEADERS
         PREFIX MessageViewer
-        RELATIVE viewer/webengine/webengineaccesskey
+        RELATIVE webengine/webengineaccesskey
         )
     ecm_generate_headers(MessageViewer_Camelcasewebengine_urlinterceptor_HEADERS
         HEADER_NAMES
