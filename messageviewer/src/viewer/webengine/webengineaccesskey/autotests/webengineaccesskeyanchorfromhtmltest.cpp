@@ -15,7 +15,7 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "mailwebengineaccesskeyanchorfromhtmltest.h"
+#include "webengineaccesskeyanchorfromhtmltest.h"
 #include "../webengineaccesskeyutils.h"
 #include <QTest>
 #include <QHBoxLayout>
@@ -77,13 +77,13 @@ void TestWebEngineAccessKey::loadFinished(bool b)
 
 Q_DECLARE_METATYPE(QVector<MessageViewer::WebEngineAccessKeyAnchor>)
 
-MailWebEngineAccessKeyAnchorFromHtmlTest::MailWebEngineAccessKeyAnchorFromHtmlTest(QObject *parent)
+WebEngineAccessKeyAnchorFromHtmlTest::WebEngineAccessKeyAnchorFromHtmlTest(QObject *parent)
     : QObject(parent)
 {
     qRegisterMetaType<QVector<MessageViewer::WebEngineAccessKeyAnchor> >();
 }
 
-void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAnchor()
+void WebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAnchor()
 {
     TestWebEngineAccessKey w;
     QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVector<MessageViewer::WebEngineAccessKeyAnchor>)));
@@ -94,7 +94,7 @@ void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsN
     QCOMPARE(resultLst.count(), 0);
 }
 
-void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
+void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
 {
     TestWebEngineAccessKey w;
     QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVector<MessageViewer::WebEngineAccessKeyAnchor>)));
@@ -105,7 +105,7 @@ void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
     QCOMPARE(resultLst.count(), 1);
 }
 
-void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldReturnTwoAnchor()
+void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnTwoAnchor()
 {
     TestWebEngineAccessKey w;
     QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVector<MessageViewer::WebEngineAccessKeyAnchor>)));
@@ -116,4 +116,4 @@ void MailWebEngineAccessKeyAnchorFromHtmlTest::shouldReturnTwoAnchor()
     QCOMPARE(resultLst.count(), 2);
 }
 
-QTEST_MAIN(MailWebEngineAccessKeyAnchorFromHtmlTest)
+QTEST_MAIN(WebEngineAccessKeyAnchorFromHtmlTest)

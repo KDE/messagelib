@@ -42,11 +42,11 @@ private:
     QWebEngineView *mEngineView;
 };
 
-class MailWebEngineAccessKeyAnchorFromHtmlTest : public QObject
+class WebEngineAccessKeyAnchorFromHtmlTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailWebEngineAccessKeyAnchorFromHtmlTest(QObject *parent = Q_NULLPTR);
+    explicit WebEngineAccessKeyAnchorFromHtmlTest(QObject *parent = Q_NULLPTR);
 private Q_SLOTS:
     void shouldNotShowAccessKeyWhenHtmlAsNotAnchor();
     void shouldReturnOneAnchor();
