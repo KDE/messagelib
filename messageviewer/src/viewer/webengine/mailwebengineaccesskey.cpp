@@ -155,7 +155,7 @@ MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObjec
     : QObject(parent),
       d(new MessageViewer::MailWebEngineAccessKeyPrivate(webEngine))
 {
-    qDebug() << " MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
+    //qDebug() << " MailWebEngineAccessKey::MailWebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
 }
 
 MailWebEngineAccessKey::~MailWebEngineAccessKey()
@@ -205,7 +205,7 @@ void MailWebEngineAccessKey::keyPressEvent(QKeyEvent *e)
 
 void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
 {
-    qDebug() << " void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
+    //qDebug() << " void MailWebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)";
     if (d->mAccessKeyActivated == MailWebEngineAccessKeyPrivate::PreActivated) {
         // Activate only when the CTRL key is pressed and released by itself.
         if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
@@ -247,14 +247,14 @@ void MailWebEngineAccessKey::makeAccessKeyLabel(QChar accessKey, const MessageVi
     label->setAutoFillBackground(true);
     label->setFrameStyle(QFrame::Box | QFrame::Plain);
     QPoint point = element.boundingRect().center();
-    qDebug() << " point label" << point;
-#if 0
-    point -= d->mWebView->page()->mainFrame()->scrollPosition();
-#endif
+    //qDebug() << " point label" << point;
+//#if 0
+    //point -= d->mWebView->page()->mainFrame()->scrollPosition();
+//#endif
     label->move(point);
     label->show();
     point.setX(point.x() - label->width() / 2);
-    qDebug() << "new point " << point;
+    //qDebug() << "new point " << point;
     label->move(point);
     d->mAccessKeyLabels.append(label);
     d->mAccessKeyNodes.insertMulti(accessKey, element);
