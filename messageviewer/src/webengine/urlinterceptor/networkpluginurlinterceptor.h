@@ -27,9 +27,9 @@ namespace MessageViewer
 {
 class NetworkPluginUrlInterceptorConfigureWidget;
 class NetworkPluginUrlInterceptorInterface;
-struct MESSAGEVIEWER_EXPORT ConfigureWidgetSetting
+struct MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidgetSetting
 {
-    ConfigureWidgetSetting()
+    NetworkPluginUrlInterceptorConfigureWidgetSetting()
         : configureWidget(Q_NULLPTR)
     {
 
