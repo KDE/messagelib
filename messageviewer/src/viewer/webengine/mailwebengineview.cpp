@@ -20,8 +20,8 @@
 #include "mailwebengineaccesskey.h"
 #include "webengine/webenginescript.h"
 #include "messageviewer/messageviewersettings.h"
-#include "webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
-#include "webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
+#include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
+#include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
 #include <MessageViewer/NetworkAccessManagerWebEngine>
 
 #include "scamdetection/scamdetectionwebengine.h"
