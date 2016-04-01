@@ -148,6 +148,12 @@ QString WebEngineScript::scrollToPosition(const QPoint &pos)
     return source;
 }
 
+QString WebEngineScript::removeStyleToElement(const QString &element)
+{
+    //TODO
+    return {};
+}
+
 QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style)
 {
     const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
