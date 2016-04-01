@@ -39,6 +39,7 @@ struct MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidgetSetting
     MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *configureWidget;
 };
 
+
 class MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptor : public QObject
 {
     Q_OBJECT
@@ -51,4 +52,6 @@ public:
     virtual NetworkPluginUrlInterceptorConfigureWidgetSetting createConfigureWidget(QWidget *parent = Q_NULLPTR);
 };
 }
+
+Q_DECLARE_TYPEINFO(MessageViewer::NetworkPluginUrlInterceptorConfigureWidgetSetting, Q_MOVABLE_TYPE);
 #endif // MAILNETWORKPLUGINURLINTERCEPTOR_H
