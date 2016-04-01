@@ -21,6 +21,7 @@
 #include <QObject>
 #include <messageviewer/networkpluginurlinterceptor.h>
 #include "messageviewer_export.h"
+#include <QVector>
 
 namespace MessageViewer
 {
@@ -34,7 +35,7 @@ public:
 
     QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
     QList<QAction *> actions() const;
-    QList<MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *> configureInterceptorList(QWidget *parent) const;
+    QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> configureInterceptorList(QWidget *parent) const;
 private:
     NetworkUrlInterceptorManagerPrivate *const d;
 };

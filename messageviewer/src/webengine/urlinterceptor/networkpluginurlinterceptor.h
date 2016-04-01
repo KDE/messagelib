@@ -48,7 +48,7 @@ public:
     virtual NetworkPluginUrlInterceptorInterface *createInterface(QWebEngineView *webEngine, QObject *parent = Q_NULLPTR) = 0;
 
     virtual bool hasConfigureSupport() const;
-    virtual MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *createConfigureWidget(QWidget *parent = Q_NULLPTR);
+    virtual NetworkPluginUrlInterceptorConfigureWidgetSetting createConfigureWidget(QWidget *parent = Q_NULLPTR);
 };
 }
 #endif // MAILNETWORKPLUGINURLINTERCEPTOR_H

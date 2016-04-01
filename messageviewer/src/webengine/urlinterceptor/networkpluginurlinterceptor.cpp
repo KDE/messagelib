@@ -35,7 +35,7 @@ bool NetworkPluginUrlInterceptor::hasConfigureSupport() const
     return false;
 }
 
-NetworkPluginUrlInterceptorConfigureWidget *NetworkPluginUrlInterceptor::createConfigureWidget(QWidget *parent)
+NetworkPluginUrlInterceptorConfigureWidgetSetting NetworkPluginUrlInterceptor::createConfigureWidget(QWidget *parent)
 {
     Q_UNUSED(parent);
     return {};

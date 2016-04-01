@@ -69,7 +69,7 @@ QList<QAction *> NetworkAccessManagerWebEngine::actions() const
     return actions;
 }
 
-QList<MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *> NetworkAccessManagerWebEngine::configureInterceptorList(QWidget *parent) const
+QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> NetworkAccessManagerWebEngine::configureInterceptorList(QWidget *parent) const
 {
     return d->mManager->configureInterceptorList(parent);
 }
