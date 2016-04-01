@@ -148,11 +148,13 @@ QString WebEngineScript::scrollToPosition(const QPoint &pos)
     return source;
 }
 
-QString WebEngineScript::removeStyleToElement(const QString &element)
+QString WebEngineScript::removeStyleToElement(const QString &elementStr)
 {
-    qDebug()<< "QString WebEngineScript::removeStyleToElement(const QString &element) not implemented";
-    //TODO
-    return {};
+    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+                                               "if (element) { "
+                                               "    element.removeAttribute(\"style\");"
+                                               "}").arg(elementStr);
+    return source;
 }
 
 QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style)
