@@ -197,6 +197,7 @@ void MailWebEngineView::showAccessKeys()
 
 bool MailWebEngineView::isScrolledToBottom() const
 {
+    qDebug() << "bool MailWebEngineView::isScrolledToBottom() const not implemented";
     //Convert as async
     //TODO '(window.innerHeight + window.scrollY) >= document.body.offsetHeight)'
     return false;
@@ -209,6 +210,7 @@ void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)
 
 bool MailWebEngineView::removeAttachmentMarking(const QString &id)
 {
+    qDebug() << "bool MailWebEngineView::removeAttachmentMarking(const QString &id) not implemented";
 #if 0
     QWebElement doc = page()->mainFrame()->documentElement();
     QWebElement attachmentDiv = doc.findFirst(QLatin1String("*#") + id);
