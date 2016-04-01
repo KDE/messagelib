@@ -58,6 +58,12 @@ class ImportResult;
 namespace MimeTreeParser
 {
 
+namespace Interface
+{
+    class MessagePart;
+    typedef QSharedPointer<MessagePart> MessagePartPtr;
+}
+
 class PartMetaData;
 class ViewerPrivate;
 class HtmlWriter;
@@ -351,8 +357,9 @@ private:
     * top-level content.
     */
     MessagePartPtr parseObjectTreeInternal(KMime::Content *node);
+    bool processType(KMime::Content* node, MimeTreeParser::ProcessResult& processResult, const QByteArray& mediaType, const QByteArray& subType, Interface::MessagePartPtr& mpRet);
 
-    MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
+    Interface::MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
 
 public:// (during refactoring)
     MessagePartPtr processApplicationPkcs7MimeSubtype(KMime::Content *node, ProcessResult &result);

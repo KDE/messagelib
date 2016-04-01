@@ -214,6 +214,58 @@ void ObjectTreeParser::setPrinting(bool printing)
     mPrinting = printing;
 }
 
+bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet)
+{
+    bool bRendered = false;
+    const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType);
+    auto range =  sub.equal_range(subType);
+    for (auto it = range.first; it != range.second; ++it) {
+        const auto formatter = (*it).second;
+        if (!formatter) {
+            continue;
+        }
+        PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper, codecFor(node));
+        // Set the default display strategy for this body part relying on the
+        // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
+        part.setDefaultDisplay((Interface::BodyPart::Display) attachmentStrategy()->defaultDisplay(node));
+
+        mNodeHelper->setNodeDisplayedEmbedded(node, true);
+
+        const Interface::MessagePart::Ptr result = formatter->process(part);
+        if (!result) {
+            continue;
+        }
+
+        if (const auto mp = result.dynamicCast<MessagePart>()) {
+            mp->setAttachmentFlag(node);
+            mpRet = result;
+            bRendered = true;
+            break;
+        } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
+            QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
+            const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
+            if (r == Interface::BodyPartFormatter::AsIcon) {
+                processResult.setNeverDisplayInline(true);
+                formatter->adaptProcessResult(processResult);
+                mNodeHelper->setNodeDisplayedEmbedded(node, false);
+                const Interface::MessagePart::Ptr mp = defaultHandling(node, processResult);
+                if (mp) {
+                    if (auto _mp = mp.dynamicCast<MessagePart>()) {
+                        _mp->setAttachmentFlag(node);
+                    }
+                    mpRet = mp;
+                }
+                bRendered = true;
+                break;
+            }
+            continue;
+        } else {
+            continue;
+        }
+    }
+    return bRendered;
+}
+
 MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
 {
     if (!node) {
@@ -254,62 +306,22 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
             subType = node->contentType()->subType();
         }
 
-        bool bRendered = false;
-        const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType);
-        while (true) {
-            auto range =  sub.equal_range(subType);
-            for (auto it = range.first; it != range.second; ++it) {
-                const auto formatter = (*it).second;
-                if (!formatter) {
-                    continue;
-                }
-                PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper, codecFor(node));
-                // Set the default display strategy for this body part relying on the
-                // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
-                part.setDefaultDisplay((Interface::BodyPart::Display) attachmentStrategy()->defaultDisplay(node));
-
-                mNodeHelper->setNodeDisplayedEmbedded(node, true);
-
-                const auto result = formatter->process(part);
-                if (!result) {
-                    continue;
-                }
-
-                if (const auto mp = dynamic_cast<MimeTreeParser::MessagePart *>(result.data())) {
-                    mp->setAttachmentFlag(node);
-                    mpl->appendMessagePart(result);
-                    bRendered = true;
-                    break;
-                } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
-                    QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
-                    const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
-                    if (r == Interface::BodyPartFormatter::AsIcon) {
-                        processResult.setNeverDisplayInline(true);
-                        formatter->adaptProcessResult(processResult);
-                        mNodeHelper->setNodeDisplayedEmbedded(node, false);
-                        const auto mp = defaultHandling(node, processResult);
-                        if (mp) {
-                            mp->setAttachmentFlag(node);
-                            mpl->appendMessagePart(mp);
-                        }
-                        bRendered = true;
-                        break;
-                    }
-                    continue;
-                } else {
-                    continue;
-                }
+        Interface::MessagePartPtr mp;
+        if (processType(node, processResult, mediaType, subType, mp)) {
+            if (mp) {
+                mpl->appendMessagePart(mp);
             }
-            if (bRendered || subType == "*") {
-                break;
+        } else if (processType(node, processResult, mediaType, "*", mp)) {
+            if (mp) {
+                mpl->appendMessagePart(mp);
             }
-            subType = "*";
-        }
-        if (!bRendered) {
-            qCCritical(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
+        } else {
+            qCWarning(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
             const auto mp = defaultHandling(node, processResult);
             if (mp) {
-                mp->setAttachmentFlag(node);
+                if (auto _mp = mp.dynamicCast<MessagePart>()) {
+                    _mp->setAttachmentFlag(node);
+                }
                 mpl->appendMessagePart(mp);
             }
         }
@@ -326,7 +338,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
     return mpl;
 }
 
-MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)
+Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)
 {
     // ### (mmutz) default handling should go into the respective
     // ### bodypartformatters.
@@ -345,13 +357,15 @@ MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, Process
         nodeHelper()->setNodeDisplayedEmbedded(node, true);
         return MessagePart::Ptr();
     }
-    MessagePart::Ptr mp;
+    Interface::MessagePart::Ptr mp;
+    ProcessResult processResult(mNodeHelper);
+
     if (node->contentType()->mimeType() == QByteArray("application/octet-stream") &&
             (node->contentType()->name().endsWith(QLatin1String("p7m")) ||
              node->contentType()->name().endsWith(QLatin1String("p7s")) ||
              node->contentType()->name().endsWith(QLatin1String("p7c"))
             ) &&
-            (mp = processApplicationPkcs7MimeSubtype(node, result))) {
+            processType(node, processResult, "application", "pkcs7-mime", mp)) {
         return mp;
     }
 
