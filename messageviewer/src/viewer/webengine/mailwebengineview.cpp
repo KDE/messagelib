@@ -210,17 +210,7 @@ void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)
 
 void MailWebEngineView::removeAttachmentMarking(const QString &id)
 {
-    qDebug() << "bool MailWebEngineView::removeAttachmentMarking(const QString &id) not implemented";
     page()->runJavaScript(MessageViewer::WebEngineScript::removeStyleToElement(QLatin1String("*#") + id));
-
-#if 0
-    QWebElement doc = page()->mainFrame()->documentElement();
-    QWebElement attachmentDiv = doc.findFirst(QLatin1String("*#") + id);
-    if (attachmentDiv.isNull()) {
-        return false;
-    }
-    attachmentDiv.removeAttribute(QStringLiteral("style"));
-#endif
 }
 
 void MailWebEngineView::markAttachment(const QString &id, const QString &style)
