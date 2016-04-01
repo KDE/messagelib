@@ -45,9 +45,7 @@ public:
     void keyReleaseEvent(QKeyEvent *e);
 
     void showAccessKeys();
-    void makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element);
 
-    bool checkForAccessKey(QKeyEvent *event);
 Q_SIGNALS:
     void openUrl(const QUrl &url);
 public Q_SLOTS:
@@ -57,6 +55,8 @@ private Q_SLOTS:
     void handleSearchAccessKey(const QVariant &res);
 
 private:
+    bool checkForAccessKey(QKeyEvent *event);
+    void makeAccessKeyLabel(QChar accessKey, const MessageViewer::WebEngineAccessKeyAnchor &element);
     MailWebEngineAccessKeyPrivate *const d;
 };
 }
