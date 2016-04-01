@@ -35,12 +35,12 @@ CidReferencesUrlInterceptor::~CidReferencesUrlInterceptor()
 
 bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    qDebug()<<" info.requestUrl().scheme()"<<info.requestUrl().scheme();
+    //qDebug()<<" info.requestUrl().scheme()"<<info.requestUrl().scheme();
     if (info.requestUrl().scheme() == QLatin1String("cid")) {
-        qDebug() << "cid requested "<<info.requestUrl();
+        //qDebug() << "cid requested "<<info.requestUrl();
         const QString newUrl = MessageViewer::WebEngineEmbedPart::self()->contentUrl(info.requestUrl().path());
         if (!newUrl.isEmpty()) {
-            qDebug()<<" newUrl "<<newUrl;
+            //qDebug()<<" newUrl "<<newUrl;
             info.redirect(QUrl(newUrl));
         }
     }
