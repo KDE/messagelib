@@ -150,6 +150,7 @@ QString WebEngineScript::scrollToPosition(const QPoint &pos)
 
 QString WebEngineScript::removeStyleToElement(const QString &element)
 {
+    qDebug()<< "QString WebEngineScript::removeStyleToElement(const QString &element) not implemented";
     //TODO
     return {};
 }
