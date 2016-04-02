@@ -311,6 +311,7 @@ public:
 
 private:
     void parseContent();
+    void writePartIcon();
     KMime::Content *mNode;
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;

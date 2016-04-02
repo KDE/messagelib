@@ -1346,6 +1346,55 @@ void TextMessagePart::parseContent()
     }
 }
 
+void TextMessagePart::writePartIcon()
+{
+    HtmlWriter *writer = mOtp->htmlWriter();
+    NodeHelper *nodeHelper = mOtp->nodeHelper();
+
+    if (!writer || !mNode || mAsIcon == MimeTreeParser::NoIcon) {
+        return;
+    }
+
+    const QString name = mNode->contentType()->name();
+    QString label = name.isEmpty() ? NodeHelper::fileName(mNode) : name;
+    if (label.isEmpty()) {
+        label = i18nc("display name for an unnamed attachment", "Unnamed");
+    }
+    label = MessageCore::StringUtil::quoteHtmlChars(label, true);
+
+    QString comment = mNode->contentDescription()->asUnicodeString();
+    comment = MessageCore::StringUtil::quoteHtmlChars(comment, true);
+    if (label == comment) {
+        comment.clear();
+    }
+
+    QString href = nodeHelper->asHREF(mNode, QStringLiteral("body"));
+
+    if (mAsIcon == MimeTreeParser::IconInline) {
+        const QString fileName = nodeHelper->writeNodeToTempFile(mNode);
+        // show the filename of the image below the embedded image
+        writer->queue(QLatin1String("<hr/><div><a href=\"") + href + QLatin1String("\">"
+                            "<img align=\"center\" src=\"") + QUrl::fromLocalFile(fileName).url() + QLatin1String("\" border=\"0\" style=\"max-width: 100%\"/></a>"
+                                    "</div>"
+                                    "<div><a href=\"") + href + QLatin1String("\">") + label + QLatin1String("</a>"
+                                            "</div>"
+                                            "<div>") + comment + QLatin1String("</div>"));
+    } else {
+        // show the filename next to the image
+        const QString iconName = QUrl::fromLocalFile(nodeHelper->iconName(mNode)).url();
+        if (iconName.right(14) == QLatin1String("mime_empty.png")) {
+            nodeHelper->magicSetType(mNode);
+            //iconName = nodeHelper->iconName( mNode );
+        }
+
+        const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
+        writer->queue(QStringLiteral("<hr/><div><a href=\"%1\">").arg(href) +
+                            QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), iconName) +
+                            label + QStringLiteral("</a></div>") +
+                            QStringLiteral("<div>%1</div>").arg(comment));
+    }
+}
+
 void TextMessagePart::html(bool decorate)
 {
     const HTMLBlock::Ptr aBlock(attachmentBlock());
@@ -1357,7 +1406,7 @@ void TextMessagePart::html(bool decorate)
     }
 
     if (mAsIcon != MimeTreeParser::NoIcon) {
-        mOtp->writePartIcon(mNode, (mAsIcon == MimeTreeParser::IconInline));
+        writePartIcon();
     } else {
         MessagePartList::htmlInternal(decorate);
     }

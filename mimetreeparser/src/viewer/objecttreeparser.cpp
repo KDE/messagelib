@@ -54,9 +54,6 @@
 #include "utils/mimetype.h"
 
 #include <MessageCore/NodeHelper>
-#include <MessageCore/StringUtil>
-
-#include <Libkleo/CryptoBackendFactory>
 
 #include <KMime/Headers>
 #include <KMime/Message>
@@ -69,7 +66,7 @@
 #include <QByteArray>
 #include <QFile>
 #include <QTextCodec>
-#include <QTextDocument>
+#include <QUrl>
 
 // other includes
 #include <sstream>
@@ -484,52 +481,6 @@ void ObjectTreeParser::extractNodeInfos(KMime::Content *curNode, bool isFirstTex
 void ObjectTreeParser::setPlainTextContent(QString plainTextContent)
 {
     mPlainTextContent = plainTextContent;
-}
-
-void ObjectTreeParser::writePartIcon(KMime::Content *msgPart, bool inlineImage)
-{
-    if (!htmlWriter() || !msgPart) {
-        return;
-    }
-
-    const QString name = msgPart->contentType()->name();
-    QString label = name.isEmpty() ? NodeHelper::fileName(msgPart) : name;
-    if (label.isEmpty()) {
-        label = i18nc("display name for an unnamed attachment", "Unnamed");
-    }
-    label = StringUtil::quoteHtmlChars(label, true);
-
-    QString comment = msgPart->contentDescription()->asUnicodeString();
-    comment = StringUtil::quoteHtmlChars(comment, true);
-    if (label == comment) {
-        comment.clear();
-    }
-
-    QString href = mNodeHelper->asHREF(msgPart, QStringLiteral("body"));
-
-    if (inlineImage) {
-        const QString fileName = mNodeHelper->writeNodeToTempFile(msgPart);
-        // show the filename of the image below the embedded image
-        htmlWriter()->queue(QLatin1String("<hr/><div><a href=\"") + href + QLatin1String("\">"
-                            "<img align=\"center\" src=\"") + QUrl::fromLocalFile(fileName).url() + QLatin1String("\" border=\"0\" style=\"max-width: 100%\"/></a>"
-                                    "</div>"
-                                    "<div><a href=\"") + href + QLatin1String("\">") + label + QLatin1String("</a>"
-                                            "</div>"
-                                            "<div>") + comment + QLatin1String("</div>"));
-    } else {
-        // show the filename next to the image
-        const QString iconName = QUrl::fromLocalFile(mNodeHelper->iconName(msgPart)).url();
-        if (iconName.right(14) == QLatin1String("mime_empty.png")) {
-            mNodeHelper->magicSetType(msgPart);
-            //iconName = mNodeHelper->iconName( msgPart );
-        }
-
-        const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
-        htmlWriter()->queue(QStringLiteral("<hr/><div><a href=\"%1\">").arg(href) +
-                            QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), iconName) +
-                            label + QStringLiteral("</a></div>") +
-                            QStringLiteral("<div>%1</div>").arg(comment));
-    }
 }
 
 static QString iconToDataUrl(const QString &iconPath)

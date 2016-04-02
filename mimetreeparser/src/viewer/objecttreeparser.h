@@ -362,8 +362,6 @@ private:
     Interface::MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
 
 public:// (during refactoring)
-    void writePartIcon(KMime::Content *msgPart, bool inlineImage = false);
-
     /** Change the string to `quoted' html (meaning, that the quoted
       part of the message get italized */
     QString quotedHTML(const QString &pos, bool decorate);
