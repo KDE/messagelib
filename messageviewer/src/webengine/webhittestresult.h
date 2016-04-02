@@ -47,6 +47,7 @@ class WebHitTestResultPrivate;
 class MESSAGEVIEWER_EXPORT WebHitTestResult
 {
 public:
+    WebHitTestResult();
     WebHitTestResult(const QPoint &pos, const QUrl &url, const QVariant &result);
     ~WebHitTestResult();
 
@@ -68,4 +69,5 @@ private:
     WebHitTestResultPrivate *const d;
 };
 }
+Q_DECLARE_METATYPE(MessageViewer::WebHitTestResult)
 #endif // WEBHITTESTRESULT_H

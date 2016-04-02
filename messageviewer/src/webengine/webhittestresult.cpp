@@ -40,7 +40,7 @@ using namespace MessageViewer;
 class MessageViewer::WebHitTestResultPrivate
 {
 public:
-    WebHitTestResultPrivate(const QPoint &pos, const QUrl &url, const QVariant &result)
+    WebHitTestResultPrivate(const QPoint &pos = QPoint(), const QUrl &url = QUrl(), const QVariant &result = QVariant())
         : m_isNull(true),
           m_isContentEditable(false),
           m_isContentSelected(false),
@@ -101,6 +101,12 @@ void WebHitTestResultPrivate::init(const QVariantMap &map)
         m_mediaUrl = m_pageUrl.resolved(m_mediaUrl);
     }
 }
+WebHitTestResult::WebHitTestResult()
+    : d(new WebHitTestResultPrivate)
+{
+
+}
+
 WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &url, const QVariant &result)
     : d(new WebHitTestResultPrivate(pos, url, result))
 {
