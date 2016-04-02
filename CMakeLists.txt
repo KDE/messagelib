@@ -89,6 +89,9 @@ if (QTWEBENGINE_SUPPORT_OPTION)
     find_package(Qt5 ${QT_REQUIRED_MINIMUM_WEBENGINE_VERSION} CONFIG REQUIRED WebEngine WebEngineWidgets)
 endif()
 
+if (MESSAGEVIEWER_USE_QTWEBENGINE AND NOT  QTWEBENGINE_SUPPORT_OPTION)
+    MESSAGE(FATAL_ERROR "QTWEBENGINE_SUPPORT_OPTION must be ON when you activate MESSAGEVIEWER_USE_QTWEBENGINE support.")
+endif()
 
 # Support for the GIT revision number in messagecomposer-version.h
 if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
