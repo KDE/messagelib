@@ -3125,3 +3125,10 @@ void ViewerPrivate::slotServiceUrlSelected(PimCommon::ShareServiceUrlManager::Se
     const QUrl url = mShareServiceManager->generateServiceUrl(mClickedUrl.toString(), QString(), serviceType);
     mShareServiceManager->openUrl(url);
 }
+
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+QList<QAction *> ViewerPrivate::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
+{
+    return mViewer->interceptorUrlActions(result);
+}
+#endif

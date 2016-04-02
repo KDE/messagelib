@@ -438,6 +438,9 @@ public:
     void setPluginName(const QString &pluginName);
 
     QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
+#endif
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -586,7 +589,6 @@ Q_SIGNALS:
     void changeDisplayMail(Viewer::DisplayFormatMessage, bool);
     void moveMessageToTrash();
     void executeMailAction(MessageViewer::Viewer::MailAction type);
-
 private:
     QString attachmentInjectionHtml();
     QString recipientsQuickListLinkHtml(bool, const QString &);

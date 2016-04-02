@@ -23,6 +23,7 @@
 #define MESSAGEVIEWER_H
 
 #include "messageviewer_export.h"
+#include "config-messageviewer.h"
 #include "messageviewer/viewerplugininterface.h"
 #include <MimeTreeParser/Enums>
 
@@ -53,6 +54,10 @@ class QResizeEvent;
 
 namespace MessageViewer
 {
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+class WebHitTestResult;
+#endif
+
 class HeaderStylePlugin;
 class CSSHelper;
 class ViewerPrivate;
@@ -330,6 +335,9 @@ public:
 
     void showOpenAttachmentFolderWidget(const QUrl &url);
     QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
+#endif
 
 Q_SIGNALS:
     void moveMessageToTrash();

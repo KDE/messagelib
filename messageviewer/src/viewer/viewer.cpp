@@ -25,7 +25,6 @@
 //#define KMAIL_READER_HTML_DEBUG 1
 
 #include "viewer.h"
-#include "config-messageviewer.h"
 #include "viewer_p.h"
 #include "widgets/configurewidget.h"
 #include "csshelper.h"
@@ -684,6 +683,14 @@ QList<QAction *> Viewer::viewerPluginActionList(ViewerPluginInterface::SpecificF
     Q_D(Viewer);
     return d->viewerPluginActionList(features);
 }
+
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+QList<QAction *> Viewer::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
+{
+    Q_D(const Viewer);
+    return d->interceptorUrlActions(result);
+}
+#endif
 
 }
 
