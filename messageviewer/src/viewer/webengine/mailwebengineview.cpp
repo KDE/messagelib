@@ -273,7 +273,7 @@ void MailWebEngineView::toggleFullAddressList(const QString &field, const boost:
     }
 
     qDebug() << "void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow)" << html << " fields " << field;
-    page()->runJavaScript(MessageViewer::WebEngineScript::toggleFullAddressList(field, QStringLiteral("*#attachmentInjectionPoint"), doShow));
+    page()->runJavaScript(MessageViewer::WebEngineScript::toggleFullAddressList(field, QStringLiteral("attachmentInjectionPoint"), doShow));
 }
 
 bool MailWebEngineView::hasVerticalScrollBar() const

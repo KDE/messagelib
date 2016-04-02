@@ -200,6 +200,19 @@ QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QSt
 
 QString WebEngineScript::toggleFullAddressList(const QString &field, const QString &html, bool doShow)
 {
+    const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
+    const QString dotsFullStr = QLatin1String("dotsFull")   + field + QLatin1String("AddressList");
+    const QString hiddenFullStr = QLatin1String("hiddenFull") + field + QLatin1String("AddressList");
+    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+                                               "if (element) { "
+                                               "    element.innerHTML += '%2';"
+                                               "    %3;"
+                                               "    %4;"
+                                               "}").arg(replaceInnerHtmlStr).arg(html)
+            .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
+            .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
+    qDebug() << "QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :"<<source;
+    return source;
 #if 0
     if (mViewer->replaceInnerHtml(QLatin1String("iconFull") + field + QLatin1String("AddressList"),
                                   bind(&ViewerPrivate::recipientsQuickListLinkHtml, this, doShow, field))) {
