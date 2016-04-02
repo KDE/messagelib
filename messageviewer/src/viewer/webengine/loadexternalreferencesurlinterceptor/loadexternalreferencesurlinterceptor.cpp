@@ -48,7 +48,9 @@ LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
 bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     if (!d->mAllowLoadExternalReference) {
-        if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage && !info.requestUrl().isLocalFile() && (info.requestUrl().scheme() != QLatin1String("cid"))) {
+        if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage
+                && !info.requestUrl().isLocalFile()
+                && (info.requestUrl().scheme() != QLatin1String("cid"))) {
             return true;
         } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeMedia) {
             return true;
