@@ -90,7 +90,6 @@
 #include <QPrintDialog>
 #include <QMimeDatabase>
 #include <QWheelEvent>
-#include <QWebElement>
 
 //libkdepim
 #include "Libkdepim/BroadcastStatus"
@@ -126,6 +125,7 @@
 #include <widgets/mailsourcewebengineviewer.h>
 #include <MessageViewer/WebHitTestResult>
 #else
+#include <QWebElement>
 #include "widgets/mailsourceviewer.h"
 #include "htmlwriter/webkitparthtmlwriter.h"
 #include "viewer/webview/mailwebview.h"
