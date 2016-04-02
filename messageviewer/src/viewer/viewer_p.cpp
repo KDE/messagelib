@@ -2902,8 +2902,8 @@ void ViewerPrivate::toggleFullAddressList(const QString &field)
 {
     const bool doShow = (field == QLatin1String("To") && showFullToAddressList()) || (field == QLatin1String("Cc") && showFullCcAddressList());
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-    //TODO
     qDebug() << "void ViewerPrivate::toggleFullAddressList(const QString &field) not implemented";
+    mViewer->toggleFullAddressList(field, bind(&ViewerPrivate::recipientsQuickListLinkHtml, this, doShow, field), doShow);
 #else
     // First inject the correct icon
     if (mViewer->replaceInnerHtml(QLatin1String("iconFull") + field + QLatin1String("AddressList"),

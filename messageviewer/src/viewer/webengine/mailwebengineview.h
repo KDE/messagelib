@@ -49,7 +49,6 @@ public:
     void scrollPageDown(int percent);
     void scrollPageUp(int percent);
     void injectAttachments(const boost::function<QString()> &delayedHtml);
-    bool replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml);
 
     bool hasVerticalScrollBar() const;
     bool isAttachmentInjectionPoint(const QPoint &globalPos) const;
@@ -60,6 +59,8 @@ public:
     void setAllowExternalContent(bool b);
 
     QList<QAction *> interceptorUrlActions() const;
+    void toggleFullAddressList(const QString &field, const boost::function<QString ()> &delayedHtml, bool doShow);
+
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();
