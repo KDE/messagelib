@@ -1166,8 +1166,9 @@ void ViewerPrivate::writeConfig(bool sync)
     if (attachmentStrategy()) {
         MessageViewer::MessageViewerSettings::self()->setAttachmentStrategy(QLatin1String(attachmentStrategy()->name()));
     }
-    MessageViewer::MessageViewerSettings::self()->setZoomTextOnly(mZoomActionMenu->zoomTextOnly());
-
+    if (mZoomActionMenu) {
+        MessageViewer::MessageViewerSettings::self()->setZoomTextOnly(mZoomActionMenu->zoomTextOnly());
+    }
     saveSplitterSizes();
     if (sync) {
         Q_EMIT requestConfigSync();
