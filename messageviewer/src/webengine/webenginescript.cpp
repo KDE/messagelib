@@ -198,22 +198,4 @@ QString WebEngineScript::toggleFullAddressList(const QString &field, const QStri
             .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
     qDebug() << "QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :"<<source;
     return source;
-#if 0
-    if (mViewer->replaceInnerHtml(QLatin1String("iconFull") + field + QLatin1String("AddressList"),
-                                  bind(&ViewerPrivate::recipientsQuickListLinkHtml, this, doShow, field))) {
-        // Then show/hide the full address list
-        mViewer->setElementByIdVisible(QLatin1String("dotsFull")   + field + QLatin1String("AddressList"), !doShow);
-        mViewer->setElementByIdVisible(QLatin1String("hiddenFull") + field + QLatin1String("AddressList"),  doShow);
-    }
-    qDebug() << "bool MailWebEngineView::replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml)";
-    QWebElement doc = page()->currentFrame()->documentElement();
-    QWebElement tag = doc.findFirst(QLatin1String("*#") + id);
-    if (tag.isNull()) {
-        return false;
-    }
-    tag.setInnerXml(delayedHtml());
-    return true;
-#endif
-    //TODO
-    return {};
 }
