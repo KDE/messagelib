@@ -262,9 +262,7 @@ void MailWebEngineView::injectAttachments(const boost::function<QString()> &dela
     if (html.isEmpty()) {
         return;
     }
-    qDebug()<<" void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml) " << html;
-    //TODO verify
-    page()->runJavaScript(MessageViewer::WebEngineScript::injectAttachments(html, QStringLiteral("*#attachmentInjectionPoint")));
+    page()->runJavaScript(MessageViewer::WebEngineScript::injectAttachments(html, QStringLiteral("attachmentInjectionPoint")));
 }
 
 void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow)
