@@ -258,7 +258,11 @@ void MailWebEngineView::scrollPageUp(int percent)
 
 void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
 {
-    qDebug()<<" void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml) not implemented";
+    const QString html = delayedHtml();
+    qDebug()<<" void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml) not implemented " << delayedHtml;
+    if (html.isEmpty()) {
+        return;
+    }
     //TODO
 #if 0
     QWebElement doc = page()->currentFrame()->documentElement();
@@ -267,10 +271,6 @@ void MailWebEngineView::injectAttachments(const boost::function<QString()> &dela
         return;
     }
 
-    const QString html = delayedHtml();
-    if (html.isEmpty()) {
-        return;
-    }
 
     assert(injectionPoint.tagName().toLower() == QLatin1String("div"));
     injectionPoint.setInnerXml(html)
