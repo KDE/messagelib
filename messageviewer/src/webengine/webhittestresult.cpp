@@ -37,84 +37,39 @@
 
 using namespace MessageViewer;
 
-WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &url, const QVariant &result)
-    : m_isNull(true),
-      m_isContentEditable(false),
-      m_isContentSelected(false),
-      m_mediaPaused(false),
-      m_mediaMuted(false),
-      m_pos(pos),
-      m_pageUrl(url)
+class MessageViewer::WebHitTestResultPrivate
 {
-    init(result.toMap());
-}
+public:
+    WebHitTestResultPrivate(const QPoint &pos, const QUrl &url, const QVariant &result)
+        : m_isNull(true),
+          m_isContentEditable(false),
+          m_isContentSelected(false),
+          m_mediaPaused(false),
+          m_mediaMuted(false),
+          m_pos(pos),
+          m_pageUrl(url)
+    {
+        init(result.toMap());
+    }
+    void init(const QVariantMap &map);
 
-QString WebHitTestResult::alternateText() const
-{
-    return m_alternateText;
-}
+    bool m_isNull;
+    QString m_alternateText;
+    QRect m_boundingRect;
+    QUrl m_imageUrl;
+    bool m_isContentEditable;
+    bool m_isContentSelected;
+    QString m_linkTitle;
+    QUrl m_linkUrl;
+    QUrl m_mediaUrl;
+    bool m_mediaPaused;
+    bool m_mediaMuted;
+    QPoint m_pos;
+    QString m_tagName;
+    QUrl m_pageUrl;
+};
 
-QRect WebHitTestResult::boundingRect() const
-{
-    return m_boundingRect;
-}
-
-QUrl WebHitTestResult::imageUrl() const
-{
-    return m_imageUrl;
-}
-
-bool WebHitTestResult::isContentEditable() const
-{
-    return m_isContentEditable;
-}
-
-bool WebHitTestResult::isContentSelected() const
-{
-    return m_isContentSelected;
-}
-
-bool WebHitTestResult::isNull() const
-{
-    return m_isNull;
-}
-
-QString WebHitTestResult::linkTitle() const
-{
-    return m_linkTitle;
-}
-
-QUrl WebHitTestResult::linkUrl() const
-{
-    return m_linkUrl;
-}
-
-QUrl WebHitTestResult::mediaUrl() const
-{
-    return m_mediaUrl;
-}
-
-bool WebHitTestResult::mediaPaused() const
-{
-    return m_mediaPaused;
-}
-
-bool WebHitTestResult::mediaMuted() const
-{
-    return m_mediaMuted;
-}
-
-QPoint WebHitTestResult::pos() const
-{
-    return m_pos;
-}
-
-QString WebHitTestResult::tagName() const
-{
-    return m_tagName;
-}
-
-void WebHitTestResult::init(const QVariantMap &map)
+void WebHitTestResultPrivate::init(const QVariantMap &map)
 {
     if (map.isEmpty()) {
         return;
@@ -146,4 +101,77 @@ void WebHitTestResult::init(const QVariantMap &map)
         m_mediaUrl = m_pageUrl.resolved(m_mediaUrl);
     }
 }
+WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &url, const QVariant &result)
+    : d(new WebHitTestResultPrivate(pos, url, result))
+{
+}
 
+WebHitTestResult::~WebHitTestResult()
+{
+    delete d;
+}
+
+QString WebHitTestResult::alternateText() const
+{
+    return d->m_alternateText;
+}
+
+QRect WebHitTestResult::boundingRect() const
+{
+    return d->m_boundingRect;
+}
+
+QUrl WebHitTestResult::imageUrl() const
+{
+    return d->m_imageUrl;
+}
+
+bool WebHitTestResult::isContentEditable() const
+{
+    return d->m_isContentEditable;
+}
+
+bool WebHitTestResult::isContentSelected() const
+{
+    return d->m_isContentSelected;
+}
+
+bool WebHitTestResult::isNull() const
+{
+    return d->m_isNull;
+}
+
+QString WebHitTestResult::linkTitle() const
+{
+    return d->m_linkTitle;
+}
+
+QUrl WebHitTestResult::linkUrl() const
+{
+    return d->m_linkUrl;
+}
+
+QUrl WebHitTestResult::mediaUrl() const
+{
+    return d->m_mediaUrl;
+}
+
+bool WebHitTestResult::mediaPaused() const
+{
+    return d->m_mediaPaused;
+}
+
+bool WebHitTestResult::mediaMuted() const
+{
+    return d->m_mediaMuted;
+}
+
+QPoint WebHitTestResult::pos() const
+{
+    return d->m_pos;
+}
+
+QString WebHitTestResult::tagName() const
+{
+    return d->m_tagName;
+}

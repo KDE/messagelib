@@ -43,10 +43,12 @@
 
 namespace MessageViewer
 {
+class WebHitTestResultPrivate;
 class MESSAGEVIEWER_EXPORT WebHitTestResult
 {
 public:
     WebHitTestResult(const QPoint &pos, const QUrl &url, const QVariant &result);
+    ~WebHitTestResult();
 
     QString alternateText() const;
     QRect boundingRect() const;
@@ -63,23 +65,7 @@ public:
     QString tagName() const;
 
 private:
-    void init(const QVariantMap &map);
-
-    bool m_isNull;
-    QString m_alternateText;
-    QRect m_boundingRect;
-    QUrl m_imageUrl;
-    bool m_isContentEditable;
-    bool m_isContentSelected;
-    QString m_linkTitle;
-    QUrl m_linkUrl;
-    QUrl m_mediaUrl;
-    bool m_mediaPaused;
-    bool m_mediaMuted;
-    QPoint m_pos;
-    QString m_tagName;
-    QUrl m_pageUrl;
-
+    WebHitTestResultPrivate *const d;
 };
 }
 #endif // WEBHITTESTRESULT_H
