@@ -259,22 +259,12 @@ void MailWebEngineView::scrollPageUp(int percent)
 void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
 {
     const QString html = delayedHtml();
-    qDebug()<<" void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml) not implemented " << delayedHtml;
     if (html.isEmpty()) {
         return;
     }
-    //TODO
-#if 0
-    QWebElement doc = page()->currentFrame()->documentElement();
-    QWebElement injectionPoint = doc.findFirst(QStringLiteral("*#attachmentInjectionPoint"));
-    if (injectionPoint.isNull()) {
-        return;
-    }
-
-
-    assert(injectionPoint.tagName().toLower() == QLatin1String("div"));
-    injectionPoint.setInnerXml(html)
-#endif
+    qDebug()<<" void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml) " << html;
+    //TODO verify
+    page()->runJavaScript(MessageViewer::WebEngineScript::injectAttachments(html, QStringLiteral("*#attachmentInjectionPoint")));
 }
 
 bool MailWebEngineView::replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml)

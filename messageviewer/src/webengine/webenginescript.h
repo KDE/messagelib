@@ -39,6 +39,7 @@ MESSAGEVIEWER_EXPORT QString scrollPercentage(int percent);
 MESSAGEVIEWER_EXPORT QString scrollToRelativePosition(int pos);
 MESSAGEVIEWER_EXPORT QString removeStyleToElement(const QString &element);
 MESSAGEVIEWER_EXPORT QString replaceInnerHtml();
+MESSAGEVIEWER_EXPORT QString injectAttachments(const QString &delayedHtml, const QString &element);
 }
 }
 #endif // WEBENGINESCRIPT_H

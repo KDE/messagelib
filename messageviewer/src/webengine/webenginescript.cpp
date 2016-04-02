@@ -187,3 +187,12 @@ QString WebEngineScript::replaceInnerHtml()
     //TODO
     return {};
 }
+
+QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
+{
+    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+                           "if (element) { "
+                           "    element.innerHTML = '%2';"
+                           "}").arg(elementStr).arg(delayedHtml);
+    return source;
+}
