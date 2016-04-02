@@ -173,21 +173,6 @@ QString WebEngineScript::scrollToRelativePosition(int pos)
     return source;
 }
 
-QString WebEngineScript::replaceInnerHtml()
-{
-#if 0
-    // First inject the correct icon
-    if (mViewer->replaceInnerHtml(QLatin1String("iconFull") + field + QLatin1String("AddressList"),
-                                  bind(&ViewerPrivate::recipientsQuickListLinkHtml, this, doShow, field))) {
-        // Then show/hide the full address list
-        mViewer->setElementByIdVisible(QLatin1String("dotsFull")   + field + QLatin1String("AddressList"), !doShow);
-        mViewer->setElementByIdVisible(QLatin1String("hiddenFull") + field + QLatin1String("AddressList"),  doShow);
-    }
-#endif
-    //TODO
-    return {};
-}
-
 QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
 {
     const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
