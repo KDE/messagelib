@@ -2077,7 +2077,7 @@ void ViewerPrivate::slotUrlPopup(const MessageViewer::WebHitTestResult &result)
     } else {
         mCopyURLAction->setText(i18n("Copy Link Address"));
     }
-
+    Q_EMIT displayPopupMenu(mMessageItem, result, aPos);
     Q_EMIT popupMenu(mMessageItem, mClickedUrl, mImageUrl, aPos);
 }
 

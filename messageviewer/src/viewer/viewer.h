@@ -357,7 +357,9 @@ Q_SIGNALS:
 
     /** The user presses the right mouse button. 'url' may be 0. */
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
-
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    void displayPopupMenu(const Akonadi::Item &msg, const MessageViewer::WebHitTestResult &result, const QPoint &mousePos);
+#endif
     /**
     * The message viewer handles some types of urls itself, most notably http(s)
     * and ftp(s). When it can't handle the url it will Q_EMIT this signal.

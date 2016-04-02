@@ -69,6 +69,10 @@ void Viewer::initialize()
 {
     connect(d_ptr, &ViewerPrivate::replaceMsgByUnencryptedVersion,
             this, &Viewer::replaceMsgByUnencryptedVersion);
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    connect(d_ptr, &ViewerPrivate::displayPopupMenu,
+            this, &Viewer::displayPopupMenu);
+#endif
     connect(d_ptr, &ViewerPrivate::popupMenu,
             this, &Viewer::popupMenu);
     connect(d_ptr, SIGNAL(urlClicked(Akonadi::Item,QUrl)),

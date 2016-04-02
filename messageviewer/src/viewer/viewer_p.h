@@ -579,6 +579,10 @@ Q_SIGNALS:
     void showStatusBarMessage(const QString &message);
     void replaceMsgByUnencryptedVersion();
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    void displayPopupMenu(const Akonadi::Item &msg, const MessageViewer::WebHitTestResult &result, const QPoint &mousePos);
+#endif
+
     void urlClicked(const Akonadi::Item &msg, const QUrl &url);
     void requestConfigSync();
     void showReader(KMime::Content *aMsgPart, bool aHTML, const QString &encoding);
