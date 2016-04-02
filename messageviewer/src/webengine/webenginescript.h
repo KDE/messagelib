@@ -40,6 +40,7 @@ MESSAGEVIEWER_EXPORT QString scrollToRelativePosition(int pos);
 MESSAGEVIEWER_EXPORT QString removeStyleToElement(const QString &element);
 MESSAGEVIEWER_EXPORT QString replaceInnerHtml();
 MESSAGEVIEWER_EXPORT QString injectAttachments(const QString &delayedHtml, const QString &element);
+MESSAGEVIEWER_EXPORT QString toggleFullAddressList(const QString &field, const QString &html, bool doShow);
 }
 }
 #endif // WEBENGINESCRIPT_H

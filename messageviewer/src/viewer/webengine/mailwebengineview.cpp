@@ -275,29 +275,7 @@ void MailWebEngineView::toggleFullAddressList(const QString &field, const boost:
     }
 
     qDebug() << "void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow)" << html << " fields " << field;
-    //page()->runJavaScript(MessageViewer::WebEngineScript::toggleFullAddressList(field, QStringLiteral("*#attachmentInjectionPoint")));
-
-#if 0
-    if (mViewer->replaceInnerHtml(QLatin1String("iconFull") + field + QLatin1String("AddressList"),
-                                  bind(&ViewerPrivate::recipientsQuickListLinkHtml, this, doShow, field))) {
-        // Then show/hide the full address list
-        mViewer->setElementByIdVisible(QLatin1String("dotsFull")   + field + QLatin1String("AddressList"), !doShow);
-        mViewer->setElementByIdVisible(QLatin1String("hiddenFull") + field + QLatin1String("AddressList"),  doShow);
-    }
-    qDebug() << "bool MailWebEngineView::replaceInnerHtml(const QString &id, const boost::function<QString()> &delayedHtml)";
-#if 0
-    QWebElement doc = page()->currentFrame()->documentElement();
-    QWebElement tag = doc.findFirst(QLatin1String("*#") + id);
-    if (tag.isNull()) {
-        return false;
-    }
-    tag.setInnerXml(delayedHtml());
-    return true;
-#endif
-    //TODO
-    return false;
-#endif
-    //TODO
+    page()->runJavaScript(MessageViewer::WebEngineScript::toggleFullAddressList(field, QStringLiteral("*#attachmentInjectionPoint"), doShow));
 }
 
 bool MailWebEngineView::hasVerticalScrollBar() const
