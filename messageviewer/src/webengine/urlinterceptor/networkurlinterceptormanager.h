@@ -25,6 +25,7 @@
 
 namespace MessageViewer
 {
+class WebHitTestResult;
 class NetworkUrlInterceptorManagerPrivate;
 class MESSAGEVIEWER_EXPORT NetworkUrlInterceptorManager : public QObject
 {
@@ -34,7 +35,7 @@ public:
     ~NetworkUrlInterceptorManager();
 
     QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
-    QList<QAction *> actions() const;
+    QList<QAction *> actions(const MessageViewer::WebHitTestResult &result) const;
     QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> configureInterceptorList(QWidget *parent) const;
 private:
     NetworkUrlInterceptorManagerPrivate *const d;

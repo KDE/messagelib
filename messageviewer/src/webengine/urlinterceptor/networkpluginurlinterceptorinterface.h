@@ -25,6 +25,7 @@ class KActionCollection;
 class QAction;
 namespace MessageViewer
 {
+class WebHitTestResult;
 class MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObject
 {
     Q_OBJECT
@@ -33,7 +34,7 @@ public:
     ~NetworkPluginUrlInterceptorInterface();
 
     virtual void createActions(KActionCollection *ac);
-    virtual QList<QAction *> actions() const;
+    virtual QList<QAction *> actions(const MessageViewer::WebHitTestResult &result) const;
 
     virtual bool interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
 };

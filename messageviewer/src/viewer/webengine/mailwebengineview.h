@@ -58,7 +58,7 @@ public:
 
     void setAllowExternalContent(bool b);
 
-    QList<QAction *> interceptorUrlActions() const;
+    QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
     void toggleFullAddressList(const QString &field, const boost::function<QString ()> &delayedHtml, bool doShow);
 
 public Q_SLOTS:
