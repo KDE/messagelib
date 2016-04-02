@@ -35,7 +35,7 @@ void NetworkPluginUrlInterceptorInterface::createActions(KActionCollection *ac)
     Q_UNUSED(ac);
 }
 
-QList<QAction *> NetworkPluginUrlInterceptorInterface::actions(const MessageViewer::WebHitTestResult &result) const
+QList<QAction *> NetworkPluginUrlInterceptorInterface::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
 {
     Q_UNUSED(result);
     return {};

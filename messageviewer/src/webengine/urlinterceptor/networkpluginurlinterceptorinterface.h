@@ -34,7 +34,7 @@ public:
     ~NetworkPluginUrlInterceptorInterface();
 
     virtual void createActions(KActionCollection *ac);
-    virtual QList<QAction *> actions(const MessageViewer::WebHitTestResult &result) const;
+    virtual QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
 
     virtual bool interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
 };

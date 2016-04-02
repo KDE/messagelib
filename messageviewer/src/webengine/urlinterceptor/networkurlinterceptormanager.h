@@ -35,7 +35,7 @@ public:
     ~NetworkUrlInterceptorManager();
 
     QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
-    QList<QAction *> actions(const MessageViewer::WebHitTestResult &result) const;
+    QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
     QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> configureInterceptorList(QWidget *parent) const;
 private:
     NetworkUrlInterceptorManagerPrivate *const d;

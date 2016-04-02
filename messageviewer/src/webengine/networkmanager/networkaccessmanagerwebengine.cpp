@@ -60,11 +60,11 @@ void NetworkAccessManagerWebEngine::addInterceptor(MessageViewer::NetworkPluginU
     d->mNetworkUrlInterceptor->addInterceptor(interceptor);
 }
 
-QList<QAction *> NetworkAccessManagerWebEngine::actions(const MessageViewer::WebHitTestResult &result) const
+QList<QAction *> NetworkAccessManagerWebEngine::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
 {
     QList<QAction *> actions;
     Q_FOREACH (MessageViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
-        actions.append(interface->actions(result));
+        actions.append(interface->interceptorUrlActions(result));
     }
     return actions;
 }

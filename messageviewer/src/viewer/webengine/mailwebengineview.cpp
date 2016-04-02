@@ -343,7 +343,7 @@ void MailWebEngineView::setAllowExternalContent(bool b)
 
 QList<QAction *> MailWebEngineView::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
 {
-    return d->mNetworkAccessManager->actions(result);
+    return d->mNetworkAccessManager->interceptorUrlActions(result);
 }
 
 void MailWebEngineView::slotLoadFinished()

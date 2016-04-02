@@ -32,18 +32,18 @@ public:
         createInterfaces(webEngine, ac);
     }
 
-    QList<QAction *> actions(const MessageViewer::WebHitTestResult &result) const;
+    QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
     QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> configureInterceptorList(QWidget *parent) const;
     void createInterfaces(QWebEngineView *webEngine, KActionCollection *ac);
     QVector<MessageViewer::NetworkPluginUrlInterceptorInterface *> mListInterface;
     NetworkUrlInterceptorManager *q;
 };
 
-QList<QAction *> NetworkUrlInterceptorManagerPrivate::actions(const MessageViewer::WebHitTestResult &result) const
+QList<QAction *> NetworkUrlInterceptorManagerPrivate::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
 {
     QList<QAction *> lstActions;
     Q_FOREACH(MessageViewer::NetworkPluginUrlInterceptorInterface *interface, mListInterface) {
-        lstActions.append(interface->actions(result));
+        lstActions.append(interface->interceptorUrlActions(result));
     }
     return lstActions;
 }
@@ -85,9 +85,9 @@ QVector<MessageViewer::NetworkPluginUrlInterceptorInterface *> NetworkUrlInterce
     return d->mListInterface;
 }
 
-QList<QAction *> NetworkUrlInterceptorManager::actions(const MessageViewer::WebHitTestResult &result) const
+QList<QAction *> NetworkUrlInterceptorManager::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
 {
-    return d->actions(result);
+    return d->interceptorUrlActions(result);
 }
 
 QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> NetworkUrlInterceptorManager::configureInterceptorList(QWidget *parent) const

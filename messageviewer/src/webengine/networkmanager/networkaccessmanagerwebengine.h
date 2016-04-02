@@ -37,7 +37,7 @@ public:
     explicit NetworkAccessManagerWebEngine(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = Q_NULLPTR);
     ~NetworkAccessManagerWebEngine();
     void addInterceptor(MessageViewer::NetworkPluginUrlInterceptorInterface *interceptor);
-    QList<QAction *> actions(const MessageViewer::WebHitTestResult &result) const;
+    QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
     QVector<MessageViewer::NetworkPluginUrlInterceptorConfigureWidgetSetting> configureInterceptorList(QWidget *parent = Q_NULLPTR) const;
 private:
     NetworkAccessManagerWebEnginePrivate *const d;
