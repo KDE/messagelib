@@ -20,7 +20,6 @@ set(libmimetreeparser_main_SRCS
     bodyformatter/texthtml.cpp
     bodyformatter/utils.cpp
     interfaces/bodypartformatter.cpp
-    job/kleojobexecutor.cpp
     viewer/attachmentstrategy.cpp
     viewer/bodypartformatter.cpp
     viewer/bodypartformatterbasefactory.cpp

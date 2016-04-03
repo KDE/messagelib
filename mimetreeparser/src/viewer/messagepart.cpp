@@ -24,7 +24,6 @@
 #include "csshelperbase.h"
 #include "cryptohelper.h"
 #include "interfaces/htmlwriter.h"
-#include "job/kleojobexecutor.h"
 #include "utils/iconnamecache.h"
 
 #include "memento/decryptverifybodypartmemento.h"
@@ -1670,7 +1669,6 @@ CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, co
     const QByteArray certData = node->decodedContent();
 
     QGpgME::ImportJob *import = mCryptoProto->importJob();
-    KleoJobExecutor executor;
     mImportResult = import->exec(certData);
 }
 
