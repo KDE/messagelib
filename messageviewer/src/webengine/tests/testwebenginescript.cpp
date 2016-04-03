@@ -48,11 +48,24 @@ TestWebEngineScriptView::TestWebEngineScriptView(QWidget *parent)
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
 }
 
+TestWebEngineScriptPage::TestWebEngineScriptPage(QObject *parent)
+    : QWebEnginePage(parent)
+{
+    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
+}
+
+void TestWebEngineScriptPage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID)
+{
+    qDebug() << "JAVASCRIPT MESSAGE : "<< message;
+}
+
 TestWebEngineScript::TestWebEngineScript(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     mTestWebEngine = new TestWebEngineScriptView(this);
+    mTestWebEngine->setPage(new TestWebEngineScriptPage(this));
+
     vboxLayout->addWidget(mTestWebEngine);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
 
