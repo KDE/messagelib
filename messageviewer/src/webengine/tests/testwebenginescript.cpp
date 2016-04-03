@@ -57,6 +57,8 @@ TestWebEngineScriptPage::TestWebEngineScriptPage(QObject *parent)
 void TestWebEngineScriptPage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID)
 {
     qDebug() << "JAVASCRIPT MESSAGE : "<< message;
+    //TODO improve it.
+    Q_EMIT showConsoleMessage(message);
 }
 
 TestWebEngineScript::TestWebEngineScript(QWidget *parent)
@@ -64,17 +66,23 @@ TestWebEngineScript::TestWebEngineScript(QWidget *parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     mTestWebEngine = new TestWebEngineScriptView(this);
-    mTestWebEngine->setPage(new TestWebEngineScriptPage(this));
-
+    TestWebEngineScriptPage *page = new TestWebEngineScriptPage(this);
+    mTestWebEngine->setPage(page);
     vboxLayout->addWidget(mTestWebEngine);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
 
     mTestScriptWidget = new TestScriptWidget(this);
     vboxLayout->addWidget(mTestScriptWidget);
     connect(mTestScriptWidget, &TestScriptWidget::executeScript, this, &TestWebEngineScript::slotExecuteScript);
+    connect(page, &TestWebEngineScriptPage::showConsoleMessage, this, &TestWebEngineScript::slotShowConsoleMessage);
 }
 
 TestWebEngineScript::~TestWebEngineScript()
+{
+
+}
+
+void TestWebEngineScript::slotShowConsoleMessage(const QString &msg)
 {
 
 }

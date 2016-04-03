@@ -40,8 +40,12 @@ class TestWebEngineScriptPage : public QWebEnginePage
     Q_OBJECT
 public:
     explicit TestWebEngineScriptPage(QObject *parent = Q_NULLPTR);
+
 protected:
     void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) Q_DECL_OVERRIDE;
+
+Q_SIGNALS:
+    void showConsoleMessage(const QString &msg);
 };
 
 class TestWebEngineScriptView : public QWebEngineView
@@ -60,8 +64,8 @@ public:
 
 private Q_SLOTS:
     void slotExecuteScript();
-    void handleScript(const QVariant &res);
-
+    void handleScript(const QVariant &res);    
+    void slotShowConsoleMessage(const QString &msg);
 private:
     TestScriptWidget *mTestScriptWidget;
     TestWebEngineScriptView *mTestWebEngine;
