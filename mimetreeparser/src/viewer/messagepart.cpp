@@ -1868,7 +1868,7 @@ bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
     } else if (m->isRunning()) {
         mMetaData.inProgress = true;
         mOtp->mHasPendingAsyncJobs = true;
-        m = 0;
+        m = Q_NULLPTR;
     }
 
     if (m) {
