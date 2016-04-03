@@ -1802,6 +1802,16 @@ bool CryptoMessagePart::isEncrypted() const
     return mMetaData.isEncrypted;
 }
 
+void CryptoMessagePart::setIsSigned(bool isSigned)
+{
+    mMetaData.isSigned = isSigned;
+}
+
+bool CryptoMessagePart::isSigned() const
+{
+    return mMetaData.isSigned;
+}
+
 bool CryptoMessagePart::passphraseError() const
 {
     return mPassphraseError;

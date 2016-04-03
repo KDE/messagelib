@@ -419,6 +419,9 @@ public:
     void setIsEncrypted(bool encrypted);
     bool isEncrypted() const;
 
+    void setIsSigned(bool isSigned);
+    bool isSigned() const;
+
     bool passphraseError() const;
 
     void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
