@@ -206,7 +206,7 @@ QString WebEngineScript::toggleFullAddressList(const QString &field, const QStri
     const QString hiddenFullStr = QLatin1String("hiddenFull") + field + QLatin1String("AddressList");
     const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
                                                "if (element) { "
-                                               "    element.innerHTML += '%2';"
+                                               "    element.innerHTML = '%2';"
                                                "    %3;"
                                                "    %4;"
                                                "}").arg(replaceInnerHtmlStr).arg(html)
