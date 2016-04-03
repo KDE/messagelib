@@ -1336,17 +1336,17 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
 
     case Aggregation::GroupBySenderOrReceiver:
         date = mi->date();
-        groupLabel = MessageCore::StringUtil::stripEmailAddr(mi->senderOrReceiver());
+        groupLabel = mi->displaySenderOrReceiver();
         break;
 
     case Aggregation::GroupBySender:
         date = mi->date();
-        groupLabel = MessageCore::StringUtil::stripEmailAddr(mi->sender());
+        groupLabel = mi->displaySender();
         break;
 
     case Aggregation::GroupByReceiver:
         date = mi->date();
-        groupLabel = MessageCore::StringUtil::stripEmailAddr(mi->receiver());
+        groupLabel = mi->displayReceiver();
         break;
 
     case Aggregation::NoGrouping:

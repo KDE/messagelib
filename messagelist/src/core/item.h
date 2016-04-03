@@ -317,6 +317,11 @@ public:
     void setSender(const QString &sender);
 
     /**
+    * Display sender.
+    */
+    QString displaySender() const;
+
+    /**
     * Returns the receiver associated to this item.
     */
     const QString &receiver() const;
@@ -327,9 +332,19 @@ public:
     void setReceiver(const QString &receiver);
 
     /**
+    * Display receiver.
+    */
+    QString displayReceiver() const;
+
+    /**
     * Returns the sender or the receiver, depending on the underlying StorageModel settings.
     */
     const QString &senderOrReceiver() const;
+
+    /**
+    * Display sender or receiver.
+    */
+    QString displaySenderOrReceiver() const;
 
     /**
     * Returns whether sender or receiver is supposed to be displayed.

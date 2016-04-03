@@ -2414,12 +2414,12 @@ bool View::event(QEvent *e)
                 "</tr>");
 
         if (textIsLeftToRight) {
-            tip += htmlCodeForStandardRow.arg(i18n("From")).arg(MessageCore::StringUtil::stripEmailAddr(mi->sender()));
-            tip += htmlCodeForStandardRow.arg(i18nc("Receiver of the email", "To")).arg(MessageCore::StringUtil::stripEmailAddr(mi->receiver()));
+            tip += htmlCodeForStandardRow.arg(i18n("From")).arg(mi->displaySender());
+            tip += htmlCodeForStandardRow.arg(i18nc("Receiver of the email", "To")).arg(mi->displayReceiver());
             tip += htmlCodeForStandardRow.arg(i18n("Date")).arg(mi->formattedDate());
         } else {
-            tip += htmlCodeForStandardRow.arg(MessageCore::StringUtil::stripEmailAddr(mi->sender())).arg(i18n("From"));
-            tip += htmlCodeForStandardRow.arg(MessageCore::StringUtil::stripEmailAddr(mi->receiver())).arg(i18nc("Receiver of the email", "To"));
+            tip += htmlCodeForStandardRow.arg(mi->displaySender()).arg(i18n("From"));
+            tip += htmlCodeForStandardRow.arg(mi->displayReceiver()).arg(i18nc("Receiver of the email", "To"));
             tip += htmlCodeForStandardRow.arg(mi->formattedDate(), i18n("Date"));
         }
 

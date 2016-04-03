@@ -475,6 +475,12 @@ void Item::setSender(const QString &sender)
     d_ptr->mSender = sender;
 }
 
+QString Item::displaySender() const
+{
+    return MessageCore::StringUtil::stripEmailAddr(sender());
+}
+
+
 const QString &Item::receiver() const
 {
     return d_ptr->mReceiver;
@@ -485,9 +491,19 @@ void Item::setReceiver(const QString &receiver)
     d_ptr->mReceiver = receiver;
 }
 
+QString Item::displayReceiver() const
+{
+    return MessageCore::StringUtil::stripEmailAddr(receiver());
+}
+
 const QString &Item::senderOrReceiver() const
 {
     return d_ptr->mUseReceiver ? d_ptr->mReceiver : d_ptr->mSender;
+}
+
+QString Item::displaySenderOrReceiver() const
+{
+    return MessageCore::StringUtil::stripEmailAddr(senderOrReceiver());
 }
 
 bool Item::useReceiver() const

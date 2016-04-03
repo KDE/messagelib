@@ -353,8 +353,8 @@ class ItemSenderComparator
 public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
-        const int ret = MessageCore::StringUtil::stripEmailAddr(first->sender()).compare(
-                            MessageCore::StringUtil::stripEmailAddr(second->sender()), Qt::CaseInsensitive);
+        const int ret = first->displaySender().compare(
+                            second->displaySender(), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
@@ -375,8 +375,8 @@ class ItemReceiverComparator
 public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
-        const int ret = MessageCore::StringUtil::stripEmailAddr(first->receiver()).compare(
-                            MessageCore::StringUtil::stripEmailAddr(second->receiver()), Qt::CaseInsensitive);
+        const int ret = first->displayReceiver().compare(
+                            second->displayReceiver(), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
@@ -397,8 +397,8 @@ class ItemSenderOrReceiverComparator
 public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
-        const int ret = MessageCore::StringUtil::stripEmailAddr(first->senderOrReceiver()).compare(
-                            MessageCore::StringUtil::stripEmailAddr(second->senderOrReceiver()), Qt::CaseInsensitive);
+        const int ret = first->displaySenderOrReceiver().compare(
+                            second->displaySenderOrReceiver(), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
