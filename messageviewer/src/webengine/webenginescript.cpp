@@ -199,6 +199,26 @@ QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QSt
     return source;
 }
 
+
+QString WebEngineScript::replaceInnerHtml(const QString &field, const QString &html, bool doShow)
+{
+    const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
+    const QString source = QString::fromLatin1("var doShow = %3;"
+                                               "var field = \'%4\';"
+                                               "var out = [];"
+                                               "var element = document.getElementById('%1'); "
+                                               "if (element) { "
+                                               "    element.innerHTML = '%2';"
+                                               "    out.push({"
+                                               "        field: field,"
+                                               "        doShow: doShow"
+                                               "    });"
+                                               "}").arg(replaceInnerHtmlStr).arg(html).arg(doShow).arg(field);
+    qDebug() << "QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :"<<source;
+    return source;
+
+}
+
 QString WebEngineScript::toggleFullAddressList(const QString &field, const QString &html, bool doShow)
 {
     const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
