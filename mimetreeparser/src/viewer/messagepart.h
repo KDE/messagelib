@@ -25,7 +25,8 @@
 #include "mimetreeparser/bodypartformatter.h"
 #include <KMime/Message>
 
-#include <Libkleo/CryptoBackend>
+//#include <Libkleo/CryptoBackend>
+#include <qgpgme/qgpgmebackend.h>
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
 #include <importresult.h>
@@ -101,7 +102,7 @@ class SignedBlock : public HTMLBlock
 {
 public:
     SignedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block,
-                const Kleo::CryptoBackend::Protocol *cryptoProto,
+                const QGpgME::Protocol *cryptoProto,
                 ObjectTreeSourceIf *source,
                 QString fromAddress, bool printing);
     virtual ~SignedBlock();
@@ -113,7 +114,7 @@ private:
 
     const PartMetaData &mBlock;
     HtmlWriter *mWriter;
-    const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    const QGpgME::Protocol *mCryptoProto;
     ObjectTreeSourceIf *mSource;
     QString mClass;
     QString mFromAddress;
@@ -126,7 +127,7 @@ public:
     CryptoBlock(MimeTreeParser::HtmlWriter *writer,
                 PartMetaData *block,
                 const NodeHelper *nodeHelper,
-                const Kleo::CryptoBackend::Protocol *cryptoProto,
+                const QGpgME::Protocol *cryptoProto,
                 ObjectTreeSourceIf *source,
                 const QString &fromAddress,
                 KMime::Content *node);
@@ -139,7 +140,7 @@ private:
     HtmlWriter *mWriter;
     PartMetaData *mMetaData;
     const NodeHelper *mNodeHelper;
-    const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    const QGpgME::Protocol *mCryptoProto;
     ObjectTreeSourceIf *mSource;
     QString mFromAddress;
     KMime::Content *mNode;
@@ -368,7 +369,7 @@ class CertMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<CertMessagePart> Ptr;
-    CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport);
+    CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const QGpgME::Protocol *cryptoProto, bool autoImport);
     virtual ~CertMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -381,7 +382,7 @@ private:
     KMime::Content *mNode;
     bool mAutoImport;
     GpgME::ImportResult mImportResult;
-    const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    const QGpgME::Protocol *mCryptoProto;
 };
 
 class EncapsulatedRfc822MessagePart : public MessagePart
@@ -407,7 +408,7 @@ public:
     typedef QSharedPointer<CryptoMessagePart> Ptr;
     CryptoMessagePart(ObjectTreeParser *otp,
                       const QString &text,
-                      const Kleo::CryptoBackend::Protocol *cryptoProto,
+                      const QGpgME::Protocol *cryptoProto,
                       const QString &fromAddress,
                       KMime::Content *node);
 
@@ -455,7 +456,7 @@ private:
 protected:
     bool mPassphraseError;
     bool mNoSecKey;
-    const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
     KMime::Content *mNode;
     bool mDecryptMessage;

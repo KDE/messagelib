@@ -162,6 +162,7 @@ target_link_libraries(KF5MimeTreeParser
     PUBLIC
     KF5::MessageCore #NodeHelper, StringUtils
     KF5::Libkleo
+    QGpgme
     PRIVATE
     KF5::Codecs
     KF5::ConfigCore

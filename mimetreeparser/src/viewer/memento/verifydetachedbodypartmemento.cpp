@@ -18,8 +18,10 @@
 #include "verifydetachedbodypartmemento.h"
 #include "mimetreeparser_debug.h"
 
-#include <Libkleo/VerifyDetachedJob>
-#include <Libkleo/KeyListJob>
+//#include <Libkleo/VerifyDetachedJob>
+#include <qgpgme/verifydetachedjob.h>
+//#include <Libkleo/KeyListJob>
+#include <qgpgme/keylistjob.h>
 
 #include <gpgme++/keylistresult.h>
 
@@ -27,7 +29,7 @@
 
 #include <cassert>
 
-using namespace Kleo;
+using namespace QGpgME;
 using namespace GpgME;
 using namespace MimeTreeParser;
 

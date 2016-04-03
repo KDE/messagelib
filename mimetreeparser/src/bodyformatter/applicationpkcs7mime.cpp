@@ -23,7 +23,8 @@
 #include "viewer/objecttreeparser.h"
 #include "viewer/messagepart.h"
 
-#include <Libkleo/CryptoBackendFactory>
+//#include <Libkleo/CryptoBackendFactory>
+#include <qgpgme/qgpgmebackend.h>
 
 #include <KMime/Content>
 
@@ -62,7 +63,7 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
         return MessagePart::Ptr();
     }
 
-    const Kleo::CryptoBackend::Protocol *smimeCrypto = Kleo::CryptoBackendFactory::instance()->smime();
+    const QGpgME::Protocol *smimeCrypto = QGpgME::smime();
     if (!smimeCrypto) {
         return MessagePart::Ptr();
     }

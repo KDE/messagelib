@@ -34,11 +34,16 @@
 #include <MessageCore/StringUtil>
 
 #include <Libkleo/Dn>
-#include <Libkleo/ImportJob>
-#include <Libkleo/CryptoBackendFactory>
-#include <Libkleo/KeyListJob>
-#include <Libkleo/VerifyDetachedJob>
-#include <Libkleo/VerifyOpaqueJob>
+//#include <Libkleo/CryptoBackendFactory>
+#include <qgpgme/qgpgmebackend.h>
+//#include <Libkleo/ImportJob>
+#include <qgpgme/importjob.h>
+//#include <Libkleo/KeyListJob>
+#include <qgpgme/keylistjob.h>
+//#include <Libkleo/VerifyDetachedJob>
+#include <qgpgme/verifydetachedjob.h>
+//#include <Libkleo/VerifyOpaqueJob>
+#include <qgpgme/verifyopaquejob.h>
 
 #include <KMime/Content>
 
@@ -121,7 +126,7 @@ QString HTMLBlock::dir() const
 CryptoBlock::CryptoBlock(HtmlWriter *writer,
                          PartMetaData *block,
                          const NodeHelper *nodeHelper,
-                         const Kleo::CryptoBackend::Protocol *cryptoProto,
+                         const QGpgME::Protocol *cryptoProto,
                          ObjectTreeSourceIf *source,
                          const QString &fromAddress,
                          KMime::Content *node)
@@ -260,7 +265,7 @@ void EncryptedBlock::internalExit()
 }
 
 SignedBlock::SignedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block,
-                         const Kleo::CryptoBackend::Protocol *cryptoProto,
+                         const QGpgME::Protocol *cryptoProto,
                          ObjectTreeSourceIf *source,
                          QString fromAddress, bool printing)
     : HTMLBlock()
@@ -283,7 +288,7 @@ static const int SIG_FRAME_COL_UNDEF = 99;
 #define SIG_FRAME_COL_RED    -1
 #define SIG_FRAME_COL_YELLOW  0
 #define SIG_FRAME_COL_GREEN   1
-QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
+QString sigStatusToString(const QGpgME::Protocol *cryptProto,
                           int status_code,
                           GpgME::Signature::Summary summary,
                           int &frameColor,
@@ -295,7 +300,7 @@ QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
     showKeyInfos = true;
     QString result;
     if (cryptProto) {
-        if (cryptProto == Kleo::CryptoBackendFactory::instance()->openpgp()) {
+        if (cryptProto == QGpgME::openpgp()) {
             // process enum according to it's definition to be read in
             // GNU Privacy Guard CVS repository /gpgme/gpgme/gpgme.h
             switch (status_code) {
@@ -332,7 +337,7 @@ QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
                 result.clear();   // do *not* return a default text here !
                 break;
             }
-        } else if (cryptProto == Kleo::CryptoBackendFactory::instance()->smime()) {
+        } else if (cryptProto == QGpgME::smime()) {
             // process status bits according to SigStatus_...
             // definitions in kdenetwork/libkdenetwork/cryptplug.h
 
@@ -549,7 +554,7 @@ void SignedBlock::internalEnter()
 {
     if (mWriter && !entered) {
         entered = true;
-        const bool isSMIME = mCryptoProto && (mCryptoProto == Kleo::CryptoBackendFactory::instance()->smime());
+        const bool isSMIME = mCryptoProto && (mCryptoProto == QGpgME::smime());
         QString signer = mBlock.signer;
 
         QString htmlStr, simpleHtmlStr;
@@ -1275,7 +1280,7 @@ void TextMessagePart::parseContent()
     mEncryptionState = KMMsgNotEncrypted;
     const auto blocks = prepareMessageForDecryption(mNode->decodedContent());
 
-    const auto cryptProto = Kleo::CryptoBackendFactory::instance()->openpgp();
+    const auto cryptProto = QGpgME::openpgp();
 
     if (!blocks.isEmpty()) {
 
@@ -1647,7 +1652,7 @@ void AlternativeMessagePart::copyContentFrom() const
 
 //-----CertMessageBlock----------------------
 
-CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport)
+CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, const QGpgME::Protocol *cryptoProto, bool autoImport)
     : MessagePart(otp, QString())
     , mNode(node)
     , mAutoImport(autoImport)
@@ -1664,9 +1669,9 @@ CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, co
 
     const QByteArray certData = node->decodedContent();
 
-    Kleo::ImportJob *import = mCryptoProto->importJob();
+    QGpgME::ImportJob *import = mCryptoProto->importJob();
     KleoJobExecutor executor;
-    mImportResult = executor.exec(import, certData);
+    mImportResult = import->exec(certData);
 }
 
 CertMessagePart::~CertMessagePart()
@@ -1756,7 +1761,7 @@ QString CertMessagePart::text() const
 //-----CryptMessageBlock---------------------
 CryptoMessagePart::CryptoMessagePart(ObjectTreeParser *otp,
                                      const QString &text,
-                                     const Kleo::CryptoBackend::Protocol *cryptoProto,
+                                     const QGpgME::Protocol *cryptoProto,
                                      const QString &fromAddress,
                                      KMime::Content *node)
     : MessagePart(otp, text)
@@ -1851,7 +1856,7 @@ bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
     assert(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completly wrong
 
     if (!m && mCryptoProto) {
-        Kleo::DecryptVerifyJob *job = mCryptoProto->decryptVerifyJob();
+        QGpgME::DecryptVerifyJob *job = mCryptoProto->decryptVerifyJob();
         if (!job) {
             cannotDecrypt = true;
         } else {
@@ -2008,12 +2013,12 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
 
     if (!m && mCryptoProto) {
         if (!signature.isEmpty()) {
-            Kleo::VerifyDetachedJob *job = mCryptoProto->verifyDetachedJob();
+            QGpgME::VerifyDetachedJob *job = mCryptoProto->verifyDetachedJob();
             if (job) {
                 m = new VerifyDetachedBodyPartMemento(job, mCryptoProto->keyListJob(), signature, data);
             }
         } else {
-            Kleo::VerifyOpaqueJob *job = mCryptoProto->verifyOpaqueJob();
+            QGpgME::VerifyOpaqueJob *job = mCryptoProto->verifyOpaqueJob();
             if (job) {
                 m = new VerifyOpaqueBodyPartMemento(job, mCryptoProto->keyListJob(), data);
             }
@@ -2121,7 +2126,7 @@ void CryptoMessagePart::sigStatusToMetaData()
         if (mMetaData.isGoodSignature && !key.keyID()) {
             // Search for the key by it's fingerprint so that we can check for
             // trust etc.
-            Kleo::KeyListJob *job = mCryptoProto->keyListJob(false);    // local, no sigs
+            QGpgME::KeyListJob *job = mCryptoProto->keyListJob(false);    // local, no sigs
             if (!job) {
                 qCDebug(MIMETREEPARSER_LOG) << "The Crypto backend does not support listing keys. ";
             } else {

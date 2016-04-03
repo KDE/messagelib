@@ -28,7 +28,7 @@
 
 #include "interfaces/bodypart.h"
 
-namespace Kleo
+namespace QGpgME
 {
 class VerifyOpaqueJob;
 class KeyListJob;
@@ -44,8 +44,8 @@ class VerifyOpaqueBodyPartMemento
 {
     Q_OBJECT
 public:
-    VerifyOpaqueBodyPartMemento(Kleo::VerifyOpaqueJob *job,
-                                Kleo::KeyListJob *klj,
+    VerifyOpaqueBodyPartMemento(QGpgME::VerifyOpaqueJob *job,
+                                QGpgME::KeyListJob *klj,
                                 const QByteArray &signature);
     ~VerifyOpaqueBodyPartMemento();
 
@@ -80,8 +80,8 @@ private:
 private:
     // input:
     const QByteArray m_signature;
-    QPointer<Kleo::VerifyOpaqueJob> m_job;
-    QPointer<Kleo::KeyListJob> m_keylistjob;
+    QPointer<QGpgME::VerifyOpaqueJob> m_job;
+    QPointer<QGpgME::KeyListJob> m_keylistjob;
     // output:
     GpgME::VerificationResult m_vr;
     QByteArray m_plainText;

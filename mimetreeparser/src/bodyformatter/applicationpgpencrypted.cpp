@@ -24,7 +24,8 @@
 #include "viewer/objecttreeparser.h"
 #include "viewer/messagepart.h"
 
-#include <Libkleo/CryptoBackendFactory>
+//#include <Libkleo/CryptoBackendFactory>
+#include <qgpgme/qgpgmebackend.h>
 
 #include <KMime/Content>
 
@@ -75,7 +76,7 @@ Interface::MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(In
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
 
     CryptoMessagePart::Ptr mp(new CryptoMessagePart(part.objectTreeParser(),
-                              data->decodedText(), Kleo::CryptoBackendFactory::instance()->openpgp(),
+                              data->decodedText(), QGpgME::openpgp(),
                               NodeHelper::fromAsString(data), node));
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(part.source()->decryptMessage());

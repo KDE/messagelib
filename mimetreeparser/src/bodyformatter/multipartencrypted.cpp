@@ -26,7 +26,8 @@
 
 #include <KMime/Content>
 
-#include <Libkleo/CryptoBackendFactory>
+//#include <Libkleo/CryptoBackendFactory>
+#include <qgpgme/qgpgmebackend.h>
 
 #include "mimetreeparser_debug.h"
 
@@ -61,19 +62,19 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
         return MessagePart::Ptr();
     }
 
-    const Kleo::CryptoBackend::Protocol *useThisCryptProto = Q_NULLPTR;
+    const QGpgME::Protocol *useThisCryptProto = Q_NULLPTR;
 
     /*
     ATTENTION: This code is to be replaced by the new 'auto-detect' feature. --------------------------------------
     */
     KMime::Content *data = findTypeInDirectChilds(node, "application/octet-stream");
     if (data) {
-        useThisCryptProto = Kleo::CryptoBackendFactory::instance()->openpgp();
+        useThisCryptProto = QGpgME::openpgp();
     }
     if (!data) {
         data = findTypeInDirectChilds(node, "application/pkcs7-mime");
         if (data) {
-            useThisCryptProto = Kleo::CryptoBackendFactory::instance()->smime();
+            useThisCryptProto = QGpgME::smime();
         }
     }
     /*

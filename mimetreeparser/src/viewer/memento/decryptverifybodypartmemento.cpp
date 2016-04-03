@@ -17,12 +17,13 @@
 
 #include "decryptverifybodypartmemento.h"
 
-#include <Libkleo/DecryptVerifyJob>
+//#include <Libkleo/DecryptVerifyJob>
+#include <qgpgme/decryptverifyjob.h>
 
 #include <qstringlist.h>
 
-using namespace Kleo;
 using namespace GpgME;
+using namespace QGpgME;
 using namespace MimeTreeParser;
 
 DecryptVerifyBodyPartMemento::DecryptVerifyBodyPartMemento(DecryptVerifyJob *job, const QByteArray &cipherText)
