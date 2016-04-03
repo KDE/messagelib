@@ -23,6 +23,7 @@
 #include <QHBoxLayout>
 #include <QTextEdit>
 #include <QWebEngineSettings>
+#include <QComboBox>
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -118,9 +119,19 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
 
+    QVBoxLayout *vScriptLayout = new QVBoxLayout;
+    layout->addLayout(vScriptLayout);
+
+    QComboBox *scriptCombo = new QComboBox;
+    vScriptLayout->addWidget(scriptCombo);
+    //TODO fill with script
+    fillScriptCombo(scriptCombo);
+
     mScriptEdit = new QTextEdit;
     mScriptEdit->setAcceptRichText(false);
-    layout->addWidget(mScriptEdit);
+    vScriptLayout->addWidget(mScriptEdit);
+
+
 
     QVBoxLayout *vboxLayout = new QVBoxLayout;
     layout->addLayout(vboxLayout);
@@ -131,6 +142,11 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     QPushButton *button = new QPushButton(QStringLiteral("Execute Script"), this);
     connect(button, &QPushButton::clicked, this, &TestScriptWidget::executeScript);
     vboxLayout->addWidget(button);
+}
+
+void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
+{
+    //TODO
 }
 
 void TestScriptWidget::setResult(const QString &res)

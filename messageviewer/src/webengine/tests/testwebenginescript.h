@@ -21,6 +21,7 @@
 #include <QWebEngineView>
 #include <QWidget>
 class QTextEdit;
+class QComboBox;
 class TestScriptWidget : public QWidget
 {
     Q_OBJECT
@@ -31,6 +32,7 @@ public:
 Q_SIGNALS:
     void executeScript();
 private:
+    void fillScriptCombo(QComboBox *scriptCombo);
     QTextEdit *mScriptEdit;
     QTextEdit *mResultEdit;
 };
