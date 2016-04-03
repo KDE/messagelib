@@ -262,7 +262,22 @@ void MailWebEngineView::toggleFullAddressList(const QString &field, const boost:
     }
 
     qDebug() << "void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow)" << html << " fields " << field;
-    page()->runJavaScript(MessageViewer::WebEngineScript::toggleFullAddressList(field, html, doShow));
+    page()->runJavaScript(MessageViewer::WebEngineScript::replaceInnerHtml(field, html, doShow), invoke(this, &MailWebEngineView::updateToggleFullAddressList));
+}
+
+void MailWebEngineView::updateToggleFullAddressList(const QVariant &result)
+{
+    qDebug()<<" result" << result;
+    if (result.isValid()) {
+        const QList<QVariant> lst = result.toList();
+        if (lst.count() == 1) {
+            const QVariantMap map = lst.at(0).toMap();
+            qDebug() << "map !!!! "<<map;
+            const bool show = map.value(QStringLiteral("show")).toBool();
+            const QString field = map.value(QStringLiteral("field")).toString();
+            page()->runJavaScript(MessageViewer::WebEngineScript::updateToggleFullAddressList(field, show));
+        }
+    }
 }
 
 bool MailWebEngineView::hasVerticalScrollBar() const

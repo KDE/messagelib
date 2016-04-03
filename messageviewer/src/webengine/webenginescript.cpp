@@ -203,7 +203,8 @@ QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QSt
 QString WebEngineScript::replaceInnerHtml(const QString &field, const QString &html, bool doShow)
 {
     const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
-    const QString source = QString::fromLatin1("var doShow = %3;"
+    const QString source = QString::fromLatin1("(function() {"
+                                               "var doShow = %3;"
                                                "var field = \'%4\';"
                                                "var out = [];"
                                                "var element = document.getElementById('%1'); "
@@ -213,8 +214,23 @@ QString WebEngineScript::replaceInnerHtml(const QString &field, const QString &h
                                                "        field: field,"
                                                "        doShow: doShow"
                                                "    });"
-                                               "}").arg(replaceInnerHtmlStr).arg(html).arg(doShow).arg(field);
-    qDebug() << "QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :"<<source;
+                                               "}"
+                                               "return out;"
+                                               "})()").arg(replaceInnerHtmlStr).arg(html).arg(doShow).arg(field);
+    qDebug() << "QString WebEngineScript::replaceInnerHtml(const QString &delayedHtml, const QString &elementStr) :"<<source;
+    return source;
+
+}
+
+QString WebEngineScript::updateToggleFullAddressList(const QString &field, bool doShow)
+{
+    const QString dotsFullStr = QLatin1String("dotsFull")   + field + QLatin1String("AddressList");
+    const QString hiddenFullStr = QLatin1String("hiddenFull") + field + QLatin1String("AddressList");
+    const QString source = QString::fromLatin1("    %1;"
+                                               "    %2;")
+            .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
+            .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
+    qDebug() << "QString WebEngineScript::updateToggleFullAddressList(const QString &delayedHtml, const QString &elementStr) :"<<source;
     return source;
 
 }

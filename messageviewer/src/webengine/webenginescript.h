@@ -41,6 +41,7 @@ MESSAGEVIEWER_EXPORT QString removeStyleToElement(const QString &element);
 MESSAGEVIEWER_EXPORT QString injectAttachments(const QString &delayedHtml, const QString &element);
 MESSAGEVIEWER_EXPORT QString toggleFullAddressList(const QString &field, const QString &html, bool doShow);
 MESSAGEVIEWER_EXPORT QString replaceInnerHtml(const QString &field, const QString &html, bool doShow);
+MESSAGEVIEWER_EXPORT QString updateToggleFullAddressList(const QString &field, bool doShow);
 }
 }
 #endif // WEBENGINESCRIPT_H

@@ -83,6 +83,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void handleScrollToAnchor(const QVariant &result);
+    void updateToggleFullAddressList(const QVariant &result);
 
     void slotWebHitFinished(const MessageViewer::WebHitTestResult &result);
     void slotLoadFinished();
