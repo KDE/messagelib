@@ -33,6 +33,9 @@ public:
     virtual void loadSettings() = 0;
     virtual void saveSettings() = 0;
     virtual void resetSettings() = 0;
+
+Q_SIGNALS:
+    void configureChanged();
 };
 }
 #endif // NETWORKPLUGINURLINTERCEPTORCONFIGUREWIDGET_H
