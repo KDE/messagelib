@@ -2364,7 +2364,7 @@ void ViewerPrivate::slotSetEncoding()
 QString ViewerPrivate::picsPath()
 {
     if (mPicsPath.isEmpty()) {
-        mPicsPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/libmessageviewer/pics/"), QStandardPaths::LocateDirectory);
+        mPicsPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("libmessageviewer/pics/"), QStandardPaths::LocateDirectory);
     }
     return mPicsPath;
 }
