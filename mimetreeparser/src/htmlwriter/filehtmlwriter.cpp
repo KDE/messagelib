@@ -40,7 +40,6 @@ FileHtmlWriter::FileHtmlWriter(const QString &filename)
     : HtmlWriter(),
       mFile(filename.isEmpty() ? QStringLiteral("filehtmlwriter.out") : filename)
 {
-    mStream.setCodec("UTF-8");
 }
 
 FileHtmlWriter::~FileHtmlWriter()
@@ -77,7 +76,7 @@ void FileHtmlWriter::reset()
 
 void FileHtmlWriter::write(const QString &str)
 {
-    mStream << str.toUtf8();
+    mStream << str;
     flush();
 }
 
@@ -103,6 +102,7 @@ void FileHtmlWriter::openOrWarn()
         qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: Cannot open file" << mFile.fileName();
     } else {
         mStream.setDevice(&mFile);
+        mStream.setCodec("UTF-8");
     }
 }
 
