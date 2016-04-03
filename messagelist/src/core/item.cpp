@@ -30,6 +30,157 @@
 
 using namespace MessageList::Core;
 
+/**
+  * Returns a displayable string from the list of email @p addresses.
+  * Inefficient, use KMime::Headers::*::displayString() directly instead.
+  */
+QString stripEmailAddr(const QString &aStr)
+{
+    //qCDebug(MESSAGECORE_LOG) << "(" << aStr << ")";
+
+    if (aStr.isEmpty()) {
+        return QString();
+    }
+
+    QString result;
+
+    // The following is a primitive parser for a mailbox-list (cf. RFC 2822).
+    // The purpose is to extract a displayable string from the mailboxes.
+    // Comments in the addr-spec are not handled. No error checking is done.
+
+    QString name;
+    QString comment;
+    QString angleAddress;
+    enum { TopLevel, InComment, InAngleAddress } context = TopLevel;
+    bool inQuotedString = false;
+    int commentLevel = 0;
+
+    QChar ch;
+    int strLength(aStr.length());
+    for (int index = 0; index < strLength; ++index) {
+        ch = aStr[index];
+        switch (context) {
+        case TopLevel : {
+            switch (ch.toLatin1()) {
+            case '"' : inQuotedString = !inQuotedString;
+                break;
+            case '(' : if (!inQuotedString) {
+                    context = InComment;
+                    commentLevel = 1;
+                } else {
+                    name += ch;
+                }
+                break;
+            case '<' : if (!inQuotedString) {
+                    context = InAngleAddress;
+                } else {
+                    name += ch;
+                }
+                break;
+            case '\\' : // quoted character
+                ++index; // skip the '\'
+                if (index < aStr.length()) {
+                    name += aStr[index];
+                }
+                break;
+            case ',' : if (!inQuotedString) {
+                    // next email address
+                    if (!result.isEmpty()) {
+                        result += QLatin1String(", ");
+                    }
+                    name = name.trimmed();
+                    comment = comment.trimmed();
+                    angleAddress = angleAddress.trimmed();
+                    if (angleAddress.isEmpty() && !comment.isEmpty()) {
+                        // handle Outlook-style addresses like
+                        // john.doe@invalid (John Doe)
+                        result += comment;
+                    } else if (!name.isEmpty()) {
+                        result += name;
+                    } else if (!comment.isEmpty()) {
+                        result += comment;
+                    } else if (!angleAddress.isEmpty()) {
+                        result += angleAddress;
+                    }
+                    name.clear();
+                    comment.clear();
+                    angleAddress.clear();
+                } else {
+                    name += ch;
+                }
+                break;
+            default :  name += ch;
+            }
+            break;
+        }
+        case InComment : {
+            switch (ch.toLatin1()) {
+            case '(' : ++commentLevel;
+                comment += ch;
+                break;
+            case ')' : --commentLevel;
+                if (commentLevel == 0) {
+                    context = TopLevel;
+                    comment += QLatin1Char(' '); // separate the text of several comments
+                } else {
+                    comment += ch;
+                }
+                break;
+            case '\\' : // quoted character
+                ++index; // skip the '\'
+                if (index < aStr.length()) {
+                    comment += aStr[index];
+                }
+                break;
+            default :  comment += ch;
+            }
+            break;
+        }
+        case InAngleAddress : {
+            switch (ch.toLatin1()) {
+            case '"' : inQuotedString = !inQuotedString;
+                angleAddress += ch;
+                break;
+            case '>' : if (!inQuotedString) {
+                    context = TopLevel;
+                } else {
+                    angleAddress += ch;
+                }
+                break;
+            case '\\' : // quoted character
+                ++index; // skip the '\'
+                if (index < aStr.length()) {
+                    angleAddress += aStr[index];
+                }
+                break;
+            default :  angleAddress += ch;
+            }
+            break;
+        }
+        } // switch ( context )
+    }
+    if (!result.isEmpty()) {
+        result += QLatin1String(", ");
+    }
+    name = name.trimmed();
+    comment = comment.trimmed();
+    angleAddress = angleAddress.trimmed();
+    if (angleAddress.isEmpty() && !comment.isEmpty()) {
+        // handle Outlook-style addresses like
+        // john.doe@invalid (John Doe)
+        result += comment;
+    } else if (!name.isEmpty()) {
+        result += name;
+    } else if (!comment.isEmpty()) {
+        result += comment;
+    } else if (!angleAddress.isEmpty()) {
+        result += angleAddress;
+    }
+
+    //qCDebug(MESSAGECORE_LOG) << "Returns \"" << result << "\"";
+    return result;
+}
+
 Item::Item(Type type)
     : d_ptr(new ItemPrivate(this))
 {
@@ -477,9 +628,8 @@ void Item::setSender(const QString &sender)
 
 QString Item::displaySender() const
 {
-    return MessageCore::StringUtil::stripEmailAddr(sender());
+    return stripEmailAddr(sender());
 }
-
 
 const QString &Item::receiver() const
 {
@@ -493,7 +643,7 @@ void Item::setReceiver(const QString &receiver)
 
 QString Item::displayReceiver() const
 {
-    return MessageCore::StringUtil::stripEmailAddr(receiver());
+    return stripEmailAddr(receiver());
 }
 
 const QString &Item::senderOrReceiver() const
@@ -503,7 +653,7 @@ const QString &Item::senderOrReceiver() const
 
 QString Item::displaySenderOrReceiver() const
 {
-    return MessageCore::StringUtil::stripEmailAddr(senderOrReceiver());
+    return stripEmailAddr(senderOrReceiver());
 }
 
 bool Item::useReceiver() const
