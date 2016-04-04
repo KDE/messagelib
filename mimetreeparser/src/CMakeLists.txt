@@ -46,6 +46,9 @@ set(libmimetreeparser_extra_SRCS
     htmlwriter/queuehtmlwriter.cpp
     )
 
+set(mimetreeparser_temporaryfile_SRCS
+    temporaryfile/attachmenttemporaryfilesdirs.cpp
+    )
 
 ecm_generate_headers(MimeTreeParser_Camelcaseviewer_HEADERS
     HEADER_NAMES
@@ -97,12 +100,21 @@ ecm_generate_headers(MimeTreeParser_Camelcasehtmlwriter_HEADERS
     RELATIVE htmlwriter
     )
 
+ecm_generate_headers(MimeTreeParser_Camelcasetemporaryfile_HEADERS
+    HEADER_NAMES
+    AttachmentTemporaryFilesDirs
+    REQUIRED_HEADERS MimeTreeParser_temporaryfile_HEADERS
+    PREFIX MimeTreeParser
+    RELATIVE temporaryfile
+    )
+
 install(FILES
     ${MimeTreeParser_Camelcasehtmlwriter_HEADERS}
     ${MimeTreeParser_Camelcaseutils_HEADERS}
     ${MimeTreeParser_Camelcaseinterfaces_HEADERS}
     ${MimeTreeParser_Camelcaseviewer_HEADERS}
     ${MimeTreeParser_Camelcasemain_HEADERS}
+    ${MimeTreeParser_Camelcasetemporaryfile_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
     COMPONENT Devel
     )
@@ -113,6 +125,7 @@ install(FILES
     ${MimeTreeParser_interfaces_HEADERS}
     ${MimeTreeParser_viewer_HEADERS}
     ${MimeTreeParser_main_HEADERS}
+    ${MimeTreeParser_temporaryfile_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_debug.h
 
@@ -122,7 +135,7 @@ install(FILES
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParser
     LIB_NAME KF5MimeTreeParser
-    DEPS "PimCommon MessageCore Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
+    DEPS "MessageCore Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
     )
 
 install(FILES
@@ -133,6 +146,7 @@ install(FILES
 set(libmimetreeparser_SRCS
     ${libmimetreeparser_main_SRCS}
     ${libmimetreeparser_extra_SRCS}
+    ${mimetreeparser_temporaryfile_SRCS}
     )
 
 ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME log_mimetreeparser)
@@ -147,12 +161,15 @@ add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
 target_link_libraries(KF5MimeTreeParser
     PUBLIC
     KF5::MessageCore #NodeHelper, StringUtils
-    KF5::PimCommon #AttachmentTemporaryFile handling
     KF5::Libkleo
     PRIVATE
+    KF5::Codecs
+    KF5::ConfigCore
+    KF5::CoreAddons
+    KF5::IconThemes
+    KF5::I18n
     KF5::Mime
     Qt5::WebKitWidgets
-    KF5::IconThemes
     Grantlee5::TextDocument
     )
 

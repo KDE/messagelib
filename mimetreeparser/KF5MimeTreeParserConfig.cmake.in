@@ -1,6 +1,5 @@
 @PACKAGE_INIT@
 
-find_dependency(KF5PimCommon "@PIMCOMMON_LIB_VERSION@")
 find_dependency(KF5MessageCore "@MESSAGELIB_LIB_VERSION@")
 find_dependency(KF5Mime "@KMIME_LIB_VERSION@")
 

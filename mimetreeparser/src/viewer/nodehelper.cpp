@@ -23,7 +23,7 @@
 #include "partmetadata.h"
 #include "interfaces/bodypart.h"
 #include "utils/mimetype.h"
-#include "PimCommon/AttachmentTemporaryFilesDirs"
+#include "temporaryfile/attachmenttemporaryfilesdirs.h"
 
 #include <MessageCore/NodeHelper>
 
@@ -54,7 +54,7 @@ QStringList replySubjPrefixes(QStringList() << QStringLiteral("Re\\s*:") << QStr
 QStringList forwardSubjPrefixes(QStringList() << QStringLiteral("Fwd:") << QStringLiteral("FW:"));
 
 NodeHelper::NodeHelper() :
-    mAttachmentFilesDir(new PimCommon::AttachmentTemporaryFilesDirs())
+    mAttachmentFilesDir(new AttachmentTemporaryFilesDirs())
 {
     //TODO(Andras) add methods to modify these prefixes
 
@@ -316,7 +316,7 @@ void NodeHelper::removeTempFiles()
 {
     //Don't delete it it will delete in class
     mAttachmentFilesDir->removeTempFiles();
-    mAttachmentFilesDir = new PimCommon::AttachmentTemporaryFilesDirs();
+    mAttachmentFilesDir = new AttachmentTemporaryFilesDirs();
 }
 
 void NodeHelper::addTempFile(const QString &file)

@@ -38,16 +38,13 @@ class QTextCodec;
 
 namespace MimeTreeParser
 {
+class AttachmentTemporaryFilesDirs;
 namespace Interface
 {
 class BodyPartMemento;
 }
 }
 
-namespace PimCommon
-{
-class AttachmentTemporaryFilesDirs;
-}
 namespace MimeTreeParser
 {
 
@@ -297,7 +294,7 @@ private:
     QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *> > mBodyPartMementoMap;
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
     QMap<KMime::Message::Content *, QList<KMime::Content *> > mExtraContents;
-    PimCommon::AttachmentTemporaryFilesDirs *mAttachmentFilesDir;
+    AttachmentTemporaryFilesDirs *mAttachmentFilesDir;
 
     friend class NodeHelperTest;
 };
