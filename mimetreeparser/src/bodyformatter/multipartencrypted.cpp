@@ -24,7 +24,6 @@
 #include "viewer/objecttreeparser.h"
 #include "viewer/messagepart.h"
 
-#include <MessageCore/NodeHelper>
 #include <KMime/Content>
 
 #include <Libkleo/CryptoBackendFactory>
@@ -57,8 +56,7 @@ Interface::BodyPartFormatter::Result MultiPartEncryptedBodyPartFormatter::format
 Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
-    if (!child) {
+    if (node->contents().isEmpty()) {
         Q_ASSERT(false);
         return MessagePart::Ptr();
     }
@@ -68,12 +66,12 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
     /*
     ATTENTION: This code is to be replaced by the new 'auto-detect' feature. --------------------------------------
     */
-    KMime::Content *data = findType(child, "application/octet-stream", false, true);
+    KMime::Content *data = findTypeInDirectChilds(node, "application/octet-stream");
     if (data) {
         useThisCryptProto = Kleo::CryptoBackendFactory::instance()->openpgp();
     }
     if (!data) {
-        data = findType(child, "application/pkcs7-mime", false, true);
+        data = findTypeInDirectChilds(node, "application/pkcs7-mime");
         if (data) {
             useThisCryptProto = Kleo::CryptoBackendFactory::instance()->smime();
         }
@@ -83,13 +81,7 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
     */
 
     if (!data) {
-        return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), child, false));
-    }
-
-    KMime::Content *dataChild = MessageCore::NodeHelper::firstChild(data);
-    if (dataChild) {
-        Q_ASSERT(false);
-        return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), dataChild, false));
+        return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), node->contents().at(0), false));
     }
 
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);

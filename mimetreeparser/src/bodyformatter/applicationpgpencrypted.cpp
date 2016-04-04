@@ -64,16 +64,14 @@ Interface::MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(In
         qCWarning(MIMETREEPARSER_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
     }
 
-    KMime::Content *data = findType(part.content(), "application/octet-stream", false, true);
+    if (!part.content()->parent()) {
+        return MessagePart::Ptr();
+    }
+
+    KMime::Content *data = findTypeInDirectChilds(part.content()->parent(), "application/octet-stream");
 
     if (!data) {
         return MessagePart::Ptr(); //new MimeMessagePart(part.objectTreeParser(), node, false));
-    }
-
-    KMime::Content *dataChild = MessageCore::NodeHelper::firstChild(data);
-    if (dataChild) {
-        Q_ASSERT(false);
-        return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), dataChild, false));
     }
 
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);

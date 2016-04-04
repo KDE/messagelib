@@ -19,8 +19,6 @@
 
 #include "utils.h"
 
-#include <MessageCore/NodeHelper>
-
 using namespace MimeTreeParser;
 
 MimeMessagePart::Ptr MimeTreeParser::createAndParseTempNode(Interface::BodyPart &part, KMime::Content *parentNode, const char *content, const char *cntDesc)
@@ -37,21 +35,17 @@ MimeMessagePart::Ptr MimeTreeParser::createAndParseTempNode(Interface::BodyPart 
     return MimeMessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, false));
 }
 
-KMime::Content *MimeTreeParser::findType(KMime::Content *content, const QByteArray &mimeType, bool deep, bool wide)
+KMime::Content *MimeTreeParser::findTypeInDirectChilds(KMime::Content *content, const QByteArray &mimeType)
 {
-    if ((!content->contentType()->isEmpty())
-            && (mimeType.isEmpty()  || (mimeType == content->contentType()->mimeType()))) {
+    if (mimeType.isEmpty()) {
         return content;
     }
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(content);
-    if (child && deep) { //first child
-        return findType(child, mimeType, deep, wide);
-    }
 
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(content);
-    if (next &&  wide) { //next on the same level
-        return findType(next, mimeType, deep, wide);
+    foreach (auto child, content->contents()) {
+        if ((!child->contentType()->isEmpty())
+            && (mimeType == child->contentType()->mimeType())) {
+            return child;
+        }
     }
-
     return Q_NULLPTR;
 }

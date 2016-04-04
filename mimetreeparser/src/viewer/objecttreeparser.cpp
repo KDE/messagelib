@@ -276,7 +276,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
     if (showOnlyOneMimePart()) {
         // ... this node and all descendants
         mNodeHelper->setNodeUnprocessed(node, false);
-        if (MessageCore::NodeHelper::firstChild(node)) {
+        if (!node->contents().isEmpty()) {
             mNodeHelper->setNodeUnprocessed(node, true);
         }
     } else if (!node->parent()) {
@@ -287,8 +287,14 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
     const bool isRoot = node->isTopLevel();
     MessagePartList::Ptr mpl(new MessagePartList(this));
     mpl->setIsRoot(isRoot);
-
-    for (; node; node = MessageCore::NodeHelper::nextSibling(node)) {
+    KMime::Content *parent = node->parent();
+    auto contents = parent ? parent->contents(): KMime::Content::List();
+    if (contents.isEmpty()) {
+        contents.append(node);
+    }
+    int i = contents.indexOf(const_cast<KMime::Content *>(node));
+    for (; i < contents.size(); ++i) {
+        node = contents.at(i);
         if (mNodeHelper->nodeProcessed(node)) {
             continue;
         }

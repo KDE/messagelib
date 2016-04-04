@@ -57,16 +57,19 @@ Interface::BodyPartFormatter::Result MultiPartSignedBodyPartFormatter::format(In
 Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();
-    KMime::Content *signedData = MessageCore::NodeHelper::firstChild(node);
-    assert(signedData);
     if (node->contents().size() != 2) {
         qCDebug(MIMETREEPARSER_LOG) << "mulitpart/signed must have exactly two child parts!" << endl
                                     << "processing as multipart/mixed";
-
-        return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), signedData, false));
+        if (!node->contents().isEmpty()) {
+            return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), node->contents().at(0), false));
+        } else {
+            return MessagePart::Ptr();
+        }
     }
 
+    KMime::Content *signedData =  node->contents().at(0);
     KMime::Content *signature = node->contents().at(1);
+    assert(signedData);
     assert(signature);
 
     QString protocolContentType = node->contentType()->parameter(QStringLiteral("protocol")).toLower();
