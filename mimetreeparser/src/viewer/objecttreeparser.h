@@ -366,12 +366,6 @@ public:// (during refactoring)
       part of the message get italized */
     QString quotedHTML(const QString &pos, bool decorate);
 public:
-    static KMime::Content *findType(KMime::Content *content, const QByteArray &mimeType, bool deep, bool wide);
-
-    static KMime::Content *findType(KMime::Content *content, const QByteArray &mediaType, const QByteArray &subType, bool deep, bool wide);
-
-    static KMime::Content *findTypeNot(KMime::Content *content, const QByteArray &mediaType, const QByteArray &subType, bool deep = true, bool wide = true);
-
     bool printing() const;
 
 private:

@@ -776,66 +776,6 @@ bool ObjectTreeParser::looksLikeParaBreak(const QString &s, unsigned int newLine
     return prevLineLength + wordLength + 1 < WRAP_COL;
 }
 
-KMime::Content *ObjectTreeParser::findType(KMime::Content *content, const QByteArray &mimeType, bool deep, bool wide)
-{
-    if ((!content->contentType()->isEmpty())
-            && (mimeType.isEmpty()  || (mimeType == content->contentType()->mimeType()))) {
-        return content;
-    }
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(content);
-    if (child && deep) { //first child
-        return findType(child, mimeType, deep, wide);
-    }
-
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(content);
-    if (next &&  wide) { //next on the same level
-        return findType(next, mimeType, deep, wide);
-    }
-
-    return 0;
-}
-
-KMime::Content *ObjectTreeParser::findType(KMime::Content *content, const QByteArray &mediaType, const QByteArray &subType, bool deep, bool wide)
-{
-    if (!content->contentType()->isEmpty()) {
-        if ((mediaType.isEmpty()  ||  mediaType == content->contentType()->mediaType())
-                && (subType.isEmpty()  ||  subType == content->contentType()->subType())) {
-            return content;
-        }
-    }
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(content);
-    if (child && deep) { //first child
-        return findType(child, mediaType, subType, deep, wide);
-    }
-
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(content);
-    if (next &&  wide) { //next on the same level
-        return findType(next, mediaType, subType, deep, wide);
-    }
-
-    return 0;
-}
-
-KMime::Content *ObjectTreeParser::findTypeNot(KMime::Content *content, const QByteArray &mediaType, const QByteArray &subType, bool deep, bool wide)
-{
-    if ((!content->contentType()->isEmpty())
-            && (mediaType.isEmpty() || content->contentType()->mediaType() != mediaType)
-            && (subType.isEmpty() || content->contentType()->subType() != subType)
-       ) {
-        return content;
-    }
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(content);
-    if (child && deep) {
-        return findTypeNot(child, mediaType, subType, deep, wide);
-    }
-
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(content);
-    if (next && wide) {
-        return findTypeNot(next,  mediaType, subType, deep, wide);
-    }
-    return 0;
-}
-
 QByteArray ObjectTreeParser::plainTextContentCharset() const
 {
     return mPlainTextContentCharset;
