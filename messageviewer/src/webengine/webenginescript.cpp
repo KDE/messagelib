@@ -179,6 +179,7 @@ QString WebEngineScript::setStyleToElement(const QString &elementStr, const QStr
                            "if (element) { "
                            "    element.style = '%2';"
                            "}").arg(elementStr).arg(style);
+    qDebug() << "QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style) "<<source;
     return source;
 }
 
