@@ -357,9 +357,8 @@ KMMsgEncryptionState NodeHelper::overallEncryptionState(KMime::Content *node) co
 
     if (encryptionState(node) == KMMsgNotEncrypted) {
         // NOTE: children are tested ONLY when parent is not encrypted
-        KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
-        if (child) {
-            myState = overallEncryptionState(child);
+        if (!node->contents().isEmpty()) {
+            myState = overallEncryptionState(node->contents().at(0));
         } else {
             myState = KMMsgNotEncrypted;
         }
@@ -407,9 +406,8 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
 
     if (signatureState(node) == KMMsgNotSigned) {
         // children are tested ONLY when parent is not signed
-        KMime::Content *child = MessageCore::NodeHelper::firstChild(node);
-        if (child) {
-            myState = overallSignatureState(child);
+        if (!node->contents().isEmpty()) {
+            myState = overallSignatureState(node->contents().at(0));
         } else {
             myState = KMMsgNotSigned;
         }

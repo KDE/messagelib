@@ -26,8 +26,6 @@
 
 #include <Libkleo/CryptoBackendFactory>
 
-#include <MessageCore/NodeHelper>
-
 #include <KMime/Content>
 
 #include "mimetreeparser_debug.h"

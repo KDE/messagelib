@@ -22,7 +22,6 @@
 #include "viewer/objecttreeparser.h"
 #include "viewer/messagepart.h"
 
-#include <MessageCore/NodeHelper>
 #include <KMime/Content>
 
 #include "mimetreeparser_debug.h"
@@ -52,12 +51,11 @@ Interface::BodyPartFormatter::Result MultiPartMixedBodyPartFormatter::format(Int
 
 Interface::MessagePart::Ptr MultiPartMixedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
-    KMime::Content *child = MessageCore::NodeHelper::firstChild(part.content());
-    if (!child) {
+    if (part.content()->contents().isEmpty()) {
         return MessagePart::Ptr();
     }
 
     // normal treatment of the parts in the mp/mixed container
-    MimeMessagePart::Ptr mp(new MimeMessagePart(part.objectTreeParser(), child, false));
+    MimeMessagePart::Ptr mp(new MimeMessagePart(part.objectTreeParser(), part.content()->contents().at(0), false));
     return mp;
 }

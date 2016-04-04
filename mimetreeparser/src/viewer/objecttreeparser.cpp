@@ -53,8 +53,6 @@
 #include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
 
-#include <MessageCore/NodeHelper>
-
 #include <KMime/Headers>
 #include <KMime/Message>
 
@@ -76,7 +74,6 @@
 #include <memory>
 
 using namespace MimeTreeParser;
-using namespace MessageCore;
 
 ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
                                    bool showOnlyOneMimePart,

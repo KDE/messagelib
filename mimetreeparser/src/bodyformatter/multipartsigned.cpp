@@ -22,7 +22,6 @@
 #include "viewer/objecttreeparser.h"
 #include "viewer/messagepart.h"
 
-#include <MessageCore/NodeHelper>
 #include <KMime/Content>
 
 #include <Libkleo/CryptoBackendFactory>
