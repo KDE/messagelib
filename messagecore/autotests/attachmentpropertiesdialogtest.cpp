@@ -23,7 +23,7 @@
 #include <QCheckBox>
 
 #include "messagecore_debug.h"
-#include <KComboBox>
+#include <QComboBox>
 #include <QLineEdit>
 #include <qtest.h>
 
@@ -72,10 +72,10 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
     QLineEdit *descriptionEdit = dialog->findChild<QLineEdit *>(QStringLiteral("description"));
     Q_ASSERT(descriptionEdit);
     QCOMPARE(descriptionEdit->text(), description);
-    KComboBox *mimeTypeCombo = dialog->findChild<KComboBox *>(QStringLiteral("mimeType"));
+    QComboBox *mimeTypeCombo = dialog->findChild<QComboBox *>(QStringLiteral("mimeType"));
     Q_ASSERT(mimeTypeCombo);
     QCOMPARE(mimeTypeCombo->currentText().toLatin1(), mimeType);
-    KComboBox *encodingCombo = dialog->findChild<KComboBox *>(QStringLiteral("encoding"));
+    QComboBox *encodingCombo = dialog->findChild<QComboBox *>(QStringLiteral("encoding"));
     Q_ASSERT(encodingCombo);
     QCOMPARE(encodingCombo->currentIndex(), int(encoding));
     QCheckBox *autoDisplayCheck = dialog->findChild<QCheckBox *>(QStringLiteral("autoDisplay"));
@@ -92,7 +92,14 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
     // Make some changes in the dialog.
     nameEdit->setText(newName);
     descriptionEdit->setText(newDescription);
-    mimeTypeCombo->setCurrentItem(QString::fromLatin1(newMimeType), true);
+    const QString comboBoxMimeType = QString::fromLatin1(newMimeType);
+    int index = mimeTypeCombo->findText(comboBoxMimeType);
+    if (index == -1) {
+        mimeTypeCombo->insertItem(0, comboBoxMimeType);
+        mimeTypeCombo->setCurrentIndex(0);
+    } else {
+        mimeTypeCombo->setCurrentIndex(index);
+    }
     encodingCombo->setCurrentIndex(int(newEncoding));
     autoDisplayCheck->setChecked(!autoDisplay);
     encryptCheck->setChecked(!encrypt);

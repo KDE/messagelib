@@ -37,7 +37,7 @@
       </layout>
      </item>
      <item row="0" column="1">
-      <widget class="KComboBox" name="mimeType">
+      <widget class="QComboBox" name="mimeType">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -167,7 +167,7 @@
       </layout>
      </item>
      <item row="4" column="1" colspan="2">
-      <widget class="KComboBox" name="encoding"/>
+      <widget class="QComboBox" name="encoding"/>
      </item>
      <item row="5" column="1" colspan="2">
       <widget class="QCheckBox" name="autoDisplay">
@@ -207,13 +207,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

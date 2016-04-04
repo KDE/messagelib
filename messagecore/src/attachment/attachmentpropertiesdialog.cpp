@@ -263,7 +263,14 @@ void AttachmentPropertiesDialog::Private::loadFromPart()
         uiReadOnly->description->setText(mPart->description());
         uiReadOnly->encoding->setText(KMime::nameForEncoding(mPart->encoding()));
     } else {
-        ui->mimeType->setCurrentItem(QString::fromLatin1(mPart->mimeType()), true);
+        const QString mimeType = QString::fromLatin1(mPart->mimeType());
+        const int index = ui->mimeType->findText(mimeType);
+        if (index == -1) {
+            ui->mimeType->insertItem(0, mimeType);
+            ui->mimeType->setCurrentIndex(0);
+        } else {
+            ui->mimeType->setCurrentIndex(index);
+        }
         ui->size->setText(KFormat().formatByteSize(mPart->size()));
         ui->name->setText(mPart->name().isEmpty() ? mPart->fileName() : mPart->name());
         ui->description->setText(mPart->description());
