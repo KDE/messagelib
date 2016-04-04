@@ -79,6 +79,11 @@ MESSAGECOMPOSER_EXPORT QString cleanedUpHeaderString(const QString &s);
 void addSendReplyForwardAction(const KMime::Message::Ptr &message, MailTransport::MessageQueueJob *qjob);
 MESSAGECOMPOSER_EXPORT bool sendMailDispatcherIsOnline(QWidget *parent = Q_NULLPTR);
 MESSAGECOMPOSER_EXPORT void removeNotNecessaryHeaders(const KMime::Message::Ptr &msg);
+
+/**
+ * find mimetype in message
+ */
+MESSAGECOMPOSER_EXPORT KMime::Content *findTypeInMessage(KMime::Content* data, const QByteArray& mimeType, const QByteArray& subType);
 }
 
 }

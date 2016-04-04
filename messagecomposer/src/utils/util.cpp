@@ -310,3 +310,29 @@ void MessageComposer::Util::removeNotNecessaryHeaders(const KMime::Message::Ptr 
     msg->removeHeader("X-KMail-EncryptActionEnabled");
     msg->removeHeader("X-KMail-CryptoMessageFormat");
 }
+
+KMime::Content* MessageComposer::Util::findTypeInMessage(KMime::Content *data, const QByteArray &mimeType, const QByteArray &subType)
+{
+    if (!data->contentType()->isEmpty()) {
+        if (mimeType.isEmpty() || subType.isEmpty()) {
+            return data;
+        }
+        if ((mimeType == data->contentType()->mediaType())
+            && (subType == data->contentType()->subType())) {
+            return data;
+        }
+    }
+
+    foreach (auto child, data->contents()) {
+        if ((!child->contentType()->isEmpty())
+            && (mimeType == child->contentType()->mimeType())
+            && (subType == child->contentType()->subType())) {
+            return child;
+        }
+        auto ret = findTypeInMessage(child, mimeType, subType);
+        if (ret) {
+            return ret;
+        }
+    }
+    return Q_NULLPTR;
+}

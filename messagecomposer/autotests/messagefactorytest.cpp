@@ -29,6 +29,7 @@
 #include "MessageComposer/MessageFactory"
 #include "MessageComposer/GlobalPart"
 #include "MessageComposer/MessageComposerSettings"
+#include "MessageComposer/Util"
 
 #include "MessageComposer/InfoPart"
 #include "MessageComposer/TextPart"
@@ -52,7 +53,6 @@
 #include <QLocale>
 #include "globalsettings_templateparser.h"
 
-using namespace MessageComposer;
 using namespace MessageComposer;
 
 namespace
@@ -374,9 +374,6 @@ void MessageFactoryTest::testCreateMDN()
       MimeTreeParser::ObjectTreeParser otp( &testSource, nh, 0, false, true, 0 );
       MimeTreeParser::ProcessResult pResult( nh ); */
 
-//   qDebug() << MessageCore::NodeHelper::firstChild( mdn->mainBodyPart() )->encodedContent();
-//   qDebug() << MessageCore::NodeHelper::next(  MimeTreeParser::ObjectTreeParser::findType( mdn.data(), "multipart", "report", true, true ) )->body();
-
     QString mdnContent = QString::fromLatin1("The message sent on %1 to %2 with subject \"%3\" has been displayed. "
                          "This is no guarantee that the message has been read or understood.");
     mdnContent = mdnContent.arg(KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t()))
@@ -384,7 +381,7 @@ void MessageFactoryTest::testCreateMDN()
 
     qDebug() << "comparing with:" << mdnContent;
 
-    QCOMPARE_OR_DIFF(MessageCore::NodeHelper::next(MimeTreeParser::ObjectTreeParser::findType(mdn.data(), "multipart", "report", true, true))->body(),
+    QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(),
                      mdnContent.toLatin1());
 }
 

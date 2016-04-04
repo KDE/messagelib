@@ -1650,7 +1650,7 @@ int MessageComposer::ComposerViewBase::autoSaveInterval() const
 //-----------------------------------------------------------------------------
 void MessageComposer::ComposerViewBase::collectImages(KMime::Content *root)
 {
-    if (KMime::Content *n = MimeTreeParser::ObjectTreeParser::findType(root, "multipart/alternative", true, true)) {
+    if (KMime::Content *n = Util::findTypeInMessage(root, "multipart", "alternative")) {
         KMime::Content *parentnode = n->parent();
         if (parentnode &&
                 parentnode->contentType()->isMultipart() &&

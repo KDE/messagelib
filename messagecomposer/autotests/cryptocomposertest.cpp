@@ -40,6 +40,7 @@ using namespace KMime;
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/TextPart>
+#include "MessageComposer/Util"
 #include <attachment/attachmentmodel.h>
 #include <attachment/attachmentcontrollerbase.h>
 using namespace MessageComposer;
@@ -163,7 +164,7 @@ void CryptoComposerTest::testEncryptSameAttachments()
     otp.parseObjectTree(message.data());
     KMime::Message::Ptr  unencrypted = nh->unencryptedMessage(message);
 
-    KMime::Content *testAttachment = MimeTreeParser::ObjectTreeParser::findType(unencrypted.data(), "x-some", "x-type", true, true);
+    KMime::Content *testAttachment = Util::findTypeInMessage(unencrypted.data(), "x-some", "x-type");
 
     QCOMPARE(testAttachment->body(), QString::fromLatin1("abc").toUtf8());
     QCOMPARE(testAttachment->contentDisposition()->filename(), QString::fromLatin1("anattachment.txt"));
