@@ -11,6 +11,7 @@ if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
         KF5::KIOCore
         KF5::MessageViewer
         Qt5::WebKitWidgets
+        KF5::I18n
         )
 endif()
 
@@ -24,6 +25,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         KF5::MessageViewer
         Qt5::WebEngine
         Qt5::WebEngineWidgets
+        KF5::I18n
         )
 endif()
 

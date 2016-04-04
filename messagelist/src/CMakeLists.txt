@@ -74,6 +74,8 @@ target_link_libraries(KF5MessageList
     KF5::XmlGui
     KF5::IconThemes
     KF5::Completion
+    KF5::I18n
+    KF5::TextWidgets
     )
 
 set_target_properties(KF5MessageList PROPERTIES

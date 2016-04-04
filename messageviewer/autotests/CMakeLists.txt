@@ -20,7 +20,7 @@ macro(add_messageviewer_class_unittest _source _additionalSource)
     ecm_add_test(${_source} ${_additionalSource}
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer Qt5::Test KF5::IconThemes KF5::XmlGui Qt5::WebKitWidgets
+        LINK_LIBRARIES KF5::MessageViewer Qt5::Test KF5::IconThemes KF5::XmlGui Qt5::WebKitWidgets KF5::I18n
     )
 endmacro ()
 
