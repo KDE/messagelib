@@ -51,6 +51,8 @@ target_link_libraries(KF5TemplateParser
     KF5::IconThemes
     KF5::Completion
     KF5::Libkleo
+    KF5::I18n
+    KF5::SonnetUi
     )
 set_target_properties(KF5TemplateParser PROPERTIES
     VERSION ${TEMPLATEPARSER_VERSION_STRING}

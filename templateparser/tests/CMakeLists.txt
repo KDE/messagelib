@@ -9,6 +9,7 @@ target_link_libraries(templateeditor_gui
   KF5::KIOCore
   KF5::TemplateParser
   KF5::PimTextEdit
+  KF5::I18n
 )
 
 set(templateconfigurewidget_gui_SRCS templateconfigurewidget_gui.cpp)
