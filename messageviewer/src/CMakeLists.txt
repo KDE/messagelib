@@ -117,7 +117,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         webengine/webengineaccesskey/webengineaccesskeyanchor.cpp
         webengine/webengineaccesskey/webengineaccesskeyutils.cpp
         )
-    set(libmessageviewer_web_LIB Qt5::WebEngine Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
+    set(libmessageviewer_web_LIB Qt5::WebEngineWidgets ${libmessageviewer_web_LIB})
 endif()
 
 set(libmessageviewer_viewer_SRCS
