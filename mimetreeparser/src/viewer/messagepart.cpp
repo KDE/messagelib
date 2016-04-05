@@ -1374,11 +1374,11 @@ void TextMessagePart::writePartIcon()
         const QString fileName = nodeHelper->writeNodeToTempFile(mNode);
         // show the filename of the image below the embedded image
         writer->queue(QLatin1String("<hr/><div><a href=\"") + href + QLatin1String("\">"
-                            "<img align=\"center\" src=\"") + QUrl::fromLocalFile(fileName).url() + QLatin1String("\" border=\"0\" style=\"max-width: 100%\"/></a>"
-                                    "</div>"
-                                    "<div><a href=\"") + href + QLatin1String("\">") + label + QLatin1String("</a>"
-                                            "</div>"
-                                            "<div>") + comment + QLatin1String("</div>"));
+                      "<img align=\"center\" src=\"") + QUrl::fromLocalFile(fileName).url() + QLatin1String("\" border=\"0\" style=\"max-width: 100%\"/></a>"
+                              "</div>"
+                              "<div><a href=\"") + href + QLatin1String("\">") + label + QLatin1String("</a>"
+                                      "</div>"
+                                      "<div>") + comment + QLatin1String("</div>"));
     } else {
         // show the filename next to the image
         const QString iconName = QUrl::fromLocalFile(nodeHelper->iconName(mNode)).url();
@@ -1389,9 +1389,9 @@ void TextMessagePart::writePartIcon()
 
         const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
         writer->queue(QStringLiteral("<hr/><div><a href=\"%1\">").arg(href) +
-                            QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), iconName) +
-                            label + QStringLiteral("</a></div>") +
-                            QStringLiteral("<div>%1</div>").arg(comment));
+                      QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), iconName) +
+                      label + QStringLiteral("</a></div>") +
+                      QStringLiteral("<div>%1</div>").arg(comment));
     }
 }
 
@@ -1679,7 +1679,7 @@ void CertMessagePart::writeCertificateImportResult()
     MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
     if (mImportResult.error()) {
         writer->queue(i18n("Sorry, certificate could not be imported.<br />"
-                                 "Reason: %1", QString::fromLocal8Bit(mImportResult.error().asString())));
+                           "Reason: %1", QString::fromLocal8Bit(mImportResult.error().asString())));
         return;
     }
 
@@ -1720,7 +1720,7 @@ void CertMessagePart::writeCertificateImportResult()
     for (std::vector<GpgME::Import>::const_iterator it = imports.begin(); it != end; ++it) {
         if ((*it).error()) {
             writer->queue(i18nc("Certificate import failed.", "Failed: %1 (%2)", QLatin1String((*it).fingerprint()),
-                                      QString::fromLocal8Bit((*it).error().asString())));
+                                QString::fromLocal8Bit((*it).error().asString())));
         } else if ((*it).status() & ~GpgME::Import::ContainedSecretKey) {
             if ((*it).status() & GpgME::Import::ContainedSecretKey) {
                 writer->queue(i18n("New or changed: %1 (secret key available)", QLatin1String((*it).fingerprint())));
@@ -2079,10 +2079,10 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
                             cryptPlugLibName);
         }
         mMetaData.errorText = i18n("The message is signed, but the "
-                                     "validity of the signature cannot be "
-                                     "verified.<br />"
-                                     "Reason: %1",
-                                     errorMsg);
+                                   "validity of the signature cannot be "
+                                   "verified.<br />"
+                                   "Reason: %1",
+                                   errorMsg);
     }
 
     return mMetaData.isSigned;

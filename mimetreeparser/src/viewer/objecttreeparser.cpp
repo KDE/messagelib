@@ -285,7 +285,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
     MessagePartList::Ptr mpl(new MessagePartList(this));
     mpl->setIsRoot(isRoot);
     KMime::Content *parent = node->parent();
-    auto contents = parent ? parent->contents(): KMime::Content::List();
+    auto contents = parent ? parent->contents() : KMime::Content::List();
     if (contents.isEmpty()) {
         contents.append(node);
     }

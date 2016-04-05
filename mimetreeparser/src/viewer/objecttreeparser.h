@@ -60,8 +60,8 @@ namespace MimeTreeParser
 
 namespace Interface
 {
-    class MessagePart;
-    typedef QSharedPointer<MessagePart> MessagePartPtr;
+class MessagePart;
+typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
 
 class PartMetaData;
@@ -357,7 +357,7 @@ private:
     * top-level content.
     */
     MessagePartPtr parseObjectTreeInternal(KMime::Content *node);
-    bool processType(KMime::Content* node, MimeTreeParser::ProcessResult& processResult, const QByteArray& mediaType, const QByteArray& subType, Interface::MessagePartPtr& mpRet);
+    bool processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet);
 
     Interface::MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
 
