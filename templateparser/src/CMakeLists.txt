@@ -38,8 +38,6 @@ generate_export_header(KF5TemplateParser BASE_NAME templateparser)
 add_library(KF5::TemplateParser ALIAS KF5TemplateParser)
 
 target_link_libraries(KF5TemplateParser
-    PUBLIC
-    KF5::PimCommon
     PRIVATE
     KF5::Mime
     KF5::AkonadiCore
@@ -85,7 +83,7 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
 
 ecm_generate_pri_file(BASE_NAME TemplateParser
     LIB_NAME KF5TemplateParser
-    DEPS "PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/TemplateParser
+    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/TemplateParser
     )
 
 
