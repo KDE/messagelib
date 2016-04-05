@@ -100,6 +100,7 @@ void WebHitTestResultPrivate::init(const QVariantMap &map)
     if (!m_mediaUrl.isEmpty()) {
         m_mediaUrl = m_pageUrl.resolved(m_mediaUrl);
     }
+    m_isNull = false;
 }
 WebHitTestResult::WebHitTestResult()
     : d(new WebHitTestResultPrivate)
@@ -107,8 +108,8 @@ WebHitTestResult::WebHitTestResult()
 
 }
 
-WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &url, const QVariant &result)
-    : d(new WebHitTestResultPrivate(pos, url, result))
+WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QVariant &result)
+    : d(new WebHitTestResultPrivate(pos, pageUrl, result))
 {
 }
 
@@ -116,6 +117,15 @@ WebHitTestResult::~WebHitTestResult()
 {
     delete d;
 }
+
+WebHitTestResult &WebHitTestResult::operator=(const WebHitTestResult &other)
+{
+    if (this != &other) {
+        d = other.d;
+    }
+    return *this;
+}
+
 
 QString WebHitTestResult::alternateText() const
 {
@@ -180,4 +190,9 @@ QPoint WebHitTestResult::pos() const
 QString WebHitTestResult::tagName() const
 {
     return d->m_tagName;
+}
+
+QUrl WebHitTestResult::pageUrl() const
+{
+    return d->m_pageUrl;
 }

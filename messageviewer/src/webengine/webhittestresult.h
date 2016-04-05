@@ -48,7 +48,7 @@ class MESSAGEVIEWER_EXPORT WebHitTestResult
 {
 public:
     WebHitTestResult();
-    WebHitTestResult(const QPoint &pos, const QUrl &url, const QVariant &result);
+    WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QVariant &result);
     ~WebHitTestResult();
 
     QString alternateText() const;
@@ -64,9 +64,11 @@ public:
     bool mediaMuted() const;
     QPoint pos() const;
     QString tagName() const;
+    QUrl pageUrl() const;
 
+    WebHitTestResult &operator=(const WebHitTestResult &webHit);
 private:
-    WebHitTestResultPrivate *const d;
+    WebHitTestResultPrivate *d;
 };
 }
 Q_DECLARE_METATYPE(MessageViewer::WebHitTestResult)
