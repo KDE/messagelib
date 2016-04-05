@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "webhittestresulttest.h"
 #include "../webhittestresult.h"
 #include <QTest>
@@ -52,7 +51,7 @@ void WebHitTestResultTest::shouldHaveDefaultValues()
 
 void WebHitTestResultTest::shouldAssignPosAndUrl()
 {
-    QPoint pos(5,5);
+    QPoint pos(5, 5);
     QUrl url(QStringLiteral("http://www.kde.org"));
     MessageViewer::WebHitTestResult result(pos, url, QVariant());
     QVERIFY(result.alternateText().isEmpty());
@@ -74,7 +73,7 @@ void WebHitTestResultTest::shouldAssignPosAndUrl()
 
 void WebHitTestResultTest::shouldAssignFromQVariant()
 {
-    QPoint pos(5,5);
+    QPoint pos(5, 5);
     QUrl pageUrl(QStringLiteral("http://www.kde.org"));
 
     QVariantMap map;
@@ -98,7 +97,7 @@ void WebHitTestResultTest::shouldAssignFromQVariant()
     map.insert(QStringLiteral("mediaMuted"), mediaMuted);
     QString tagName = QStringLiteral("HHHHHH");
     map.insert(QStringLiteral("tagName"), tagName);
-    QRect boundingRect(5,7,9,11);
+    QRect boundingRect(5, 7, 9, 11);
     QVariantList lstRect;
     lstRect << boundingRect.left() << boundingRect.top() << boundingRect.width() << boundingRect.height();
     map.insert(QStringLiteral("boundingRect"), lstRect);
@@ -123,7 +122,7 @@ void WebHitTestResultTest::shouldAssignFromQVariant()
 
 void WebHitTestResultTest::shouldCopyWebHitTestResult()
 {
-    QPoint pos(5,5);
+    QPoint pos(5, 5);
     QUrl pageUrl(QStringLiteral("http://www.kde.org"));
 
     QVariantMap map;
@@ -147,7 +146,7 @@ void WebHitTestResultTest::shouldCopyWebHitTestResult()
     map.insert(QStringLiteral("mediaMuted"), mediaMuted);
     QString tagName = QStringLiteral("HHHHHH");
     map.insert(QStringLiteral("tagName"), tagName);
-    QRect boundingRect(5,7,9,11);
+    QRect boundingRect(5, 7, 9, 11);
     QVariantList lstRect;
     lstRect << boundingRect.left() << boundingRect.top() << boundingRect.width() << boundingRect.height();
     map.insert(QStringLiteral("boundingRect"), lstRect);

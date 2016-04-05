@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #ifndef WEBHITTESTRESULTTEST_H
 #define WEBHITTESTRESULTTEST_H
 
@@ -32,7 +31,6 @@ private Q_SLOTS:
     void shouldAssignPosAndUrl();
     void shouldAssignFromQVariant();
     void shouldCopyWebHitTestResult();
-
 
 };
 

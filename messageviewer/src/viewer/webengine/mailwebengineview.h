@@ -59,7 +59,7 @@ public:
     void setAllowExternalContent(bool b);
 
     QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
-    void toggleFullAddressList(const QString &field, const boost::function<QString ()> &delayedHtml, bool doShow);
+    void toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow);
 
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);

@@ -42,7 +42,7 @@ public:
 QList<QAction *> NetworkUrlInterceptorManagerPrivate::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
 {
     QList<QAction *> lstActions;
-    Q_FOREACH(MessageViewer::NetworkPluginUrlInterceptorInterface *interface, mListInterface) {
+    Q_FOREACH (MessageViewer::NetworkPluginUrlInterceptorInterface *interface, mListInterface) {
         lstActions.append(interface->interceptorUrlActions(result));
     }
     return lstActions;

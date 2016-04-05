@@ -66,7 +66,7 @@ public:
 
 private Q_SLOTS:
     void slotExecuteScript();
-    void handleScript(const QVariant &res);    
+    void handleScript(const QVariant &res);
     void slotShowConsoleMessage(const QString &msg);
 private:
     TestScriptWidget *mTestScriptWidget;

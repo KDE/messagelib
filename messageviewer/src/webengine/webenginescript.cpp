@@ -126,9 +126,9 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
 QString WebEngineScript::scrollPercentage(int percent)
 {
     const QString source = QString::fromLatin1("var current = document.body.scrollTop;"
-                                               "var height = document.height;"
-                                               "var newPosition = current + height * %1 / 100;"
-                                               "window.scrollTo(window.scrollX, newPostion); [window.scrollX, window.scrollY];").arg(percent);
+                           "var height = document.height;"
+                           "var newPosition = current + height * %1 / 100;"
+                           "window.scrollTo(window.scrollX, newPostion); [window.scrollX, window.scrollY];").arg(percent);
 #if 0
     const qint64 height =  page()->viewportSize().height();
     const qint64 current = page()->mainFrame()->scrollBarValue(Qt::Vertical);
@@ -140,7 +140,7 @@ QString WebEngineScript::scrollPercentage(int percent)
     page()->mainFrame()->setScrollBarValue(Qt::Vertical, newPosition);
 #endif
 
-    qDebug() << "QString WebEngineScript::scrollPercentage(int percent) "<<source;
+    qDebug() << "QString WebEngineScript::scrollPercentage(int percent) " << source;
     //TODO
     return source;
 }
@@ -167,9 +167,9 @@ QString WebEngineScript::scrollToPosition(const QPoint &pos)
 QString WebEngineScript::removeStyleToElement(const QString &elementStr)
 {
     const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
-                                               "if (element) { "
-                                               "    element.removeAttribute(\"style\");"
-                                               "}").arg(elementStr);
+                           "if (element) { "
+                           "    element.removeAttribute(\"style\");"
+                           "}").arg(elementStr);
     return source;
 }
 
@@ -179,7 +179,7 @@ QString WebEngineScript::setStyleToElement(const QString &elementStr, const QStr
                            "if (element) { "
                            "    element.style = '%2';"
                            "}").arg(elementStr).arg(style);
-    qDebug() << "QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style) "<<source;
+    qDebug() << "QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style) " << source;
     return source;
 }
 
@@ -196,29 +196,28 @@ QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QSt
                            "if (element) { "
                            "    element.innerHTML += '%2';"
                            "}").arg(elementStr).arg(delayedHtml);
-    qDebug() << "QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :"<<source;
+    qDebug() << "QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :" << source;
     return source;
 }
-
 
 QString WebEngineScript::replaceInnerHtml(const QString &field, const QString &html, bool doShow)
 {
     const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
     const QString source = QString::fromLatin1("(function() {"
-                                               "var doShow = %3;"
-                                               "var field = \'%4\';"
-                                               "var out = [];"
-                                               "var element = document.getElementById('%1'); "
-                                               "if (element) { "
-                                               "    element.innerHTML = '%2';"
-                                               "    out.push({"
-                                               "        field: field,"
-                                               "        doShow: doShow"
-                                               "    });"
-                                               "}"
-                                               "return out;"
-                                               "})()").arg(replaceInnerHtmlStr).arg(html).arg(doShow).arg(field);
-    qDebug() << "QString WebEngineScript::replaceInnerHtml(const QString &delayedHtml, const QString &elementStr) :"<<source;
+                           "var doShow = %3;"
+                           "var field = \'%4\';"
+                           "var out = [];"
+                           "var element = document.getElementById('%1'); "
+                           "if (element) { "
+                           "    element.innerHTML = '%2';"
+                           "    out.push({"
+                           "        field: field,"
+                           "        doShow: doShow"
+                           "    });"
+                           "}"
+                           "return out;"
+                           "})()").arg(replaceInnerHtmlStr).arg(html).arg(doShow).arg(field);
+    qDebug() << "QString WebEngineScript::replaceInnerHtml(const QString &delayedHtml, const QString &elementStr) :" << source;
     return source;
 
 }
@@ -228,10 +227,10 @@ QString WebEngineScript::updateToggleFullAddressList(const QString &field, bool 
     const QString dotsFullStr = QLatin1String("dotsFull")   + field + QLatin1String("AddressList");
     const QString hiddenFullStr = QLatin1String("hiddenFull") + field + QLatin1String("AddressList");
     const QString source = QString::fromLatin1("    %1;"
-                                               "    %2;")
-            .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
-            .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
-    qDebug() << "QString WebEngineScript::updateToggleFullAddressList(const QString &delayedHtml, const QString &elementStr) :"<<source;
+                           "    %2;")
+                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
+                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
+    qDebug() << "QString WebEngineScript::updateToggleFullAddressList(const QString &delayedHtml, const QString &elementStr) :" << source;
     return source;
 
 }
@@ -242,13 +241,13 @@ QString WebEngineScript::toggleFullAddressList(const QString &field, const QStri
     const QString dotsFullStr = QLatin1String("dotsFull")   + field + QLatin1String("AddressList");
     const QString hiddenFullStr = QLatin1String("hiddenFull") + field + QLatin1String("AddressList");
     const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
-                                               "if (element) { "
-                                               "    element.innerHTML = '%2';"
-                                               "    %3;"
-                                               "    %4;"
-                                               "}").arg(replaceInnerHtmlStr).arg(html)
-            .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
-            .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
-    qDebug() << "QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :"<<source;
+                           "if (element) { "
+                           "    element.innerHTML = '%2';"
+                           "    %3;"
+                           "    %4;"
+                           "}").arg(replaceInnerHtmlStr).arg(html)
+                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
+                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
+    qDebug() << "QString WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :" << source;
     return source;
 }

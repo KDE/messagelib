@@ -120,7 +120,6 @@ WebHitTestResult::WebHitTestResult(const WebHitTestResult &other)
     (*this) = other;
 }
 
-
 WebHitTestResult::~WebHitTestResult()
 {
     delete d;
@@ -133,7 +132,6 @@ WebHitTestResult &WebHitTestResult::operator=(const WebHitTestResult &other)
     }
     return *this;
 }
-
 
 QString WebHitTestResult::alternateText() const
 {

@@ -154,7 +154,6 @@
 #include <widgets/zoomactionmenu.h>
 #include <kpimtextedit/texttospeechwidget.h>
 
-
 #include <grantleetheme/grantleethememanager.h>
 #include <grantleetheme/grantleetheme.h>
 

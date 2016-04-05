@@ -57,7 +57,7 @@ TestWebEngineScriptPage::TestWebEngineScriptPage(QObject *parent)
 
 void TestWebEngineScriptPage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID)
 {
-    qDebug() << "JAVASCRIPT MESSAGE : "<< message;
+    qDebug() << "JAVASCRIPT MESSAGE : " << message;
     //TODO improve it.
     Q_EMIT showConsoleMessage(message);
 }
@@ -131,8 +131,6 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     mScriptEdit->setAcceptRichText(false);
     vScriptLayout->addWidget(mScriptEdit);
 
-
-
     QVBoxLayout *vboxLayout = new QVBoxLayout;
     layout->addLayout(vboxLayout);
 
@@ -151,19 +149,19 @@ void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
     MessageViewer::WebEngineScript::findAllScripts();
     MessageViewer::WebEngineScript::findAllAnchors();
     MessageViewer::WebEngineScript::findAllAnchorsAndForms();
-    MessageViewer::WebEngineScript::searchElementPosition(const QString &elementStr);
-    MessageViewer::WebEngineScript::scrollToPosition(const QPoint &pos);
-    MessageViewer::WebEngineScript::setElementByIdVisible(const QString &elementStr, bool visibility);
-    MessageViewer::WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style);
+    MessageViewer::WebEngineScript::searchElementPosition(const QString & elementStr);
+    MessageViewer::WebEngineScript::scrollToPosition(const QPoint & pos);
+    MessageViewer::WebEngineScript::setElementByIdVisible(const QString & elementStr, bool visibility);
+    MessageViewer::WebEngineScript::setStyleToElement(const QString & elementStr, const QString & style);
     MessageViewer::WebEngineScript::scrollDown(int pixel);
     MessageViewer::WebEngineScript::scrollUp(int pixel);
     MessageViewer::WebEngineScript::scrollPercentage(int percent);
     MessageViewer::WebEngineScript::scrollToRelativePosition(int pos);
-    MessageViewer::WebEngineScript::removeStyleToElement(const QString &element);
-    MessageViewer::WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &element);
-    MessageViewer::WebEngineScript::toggleFullAddressList(const QString &field, const QString &html, bool doShow);
-    MessageViewer::WebEngineScript::replaceInnerHtml(const QString &field, const QString &html, bool doShow);
-    MessageViewer::WebEngineScript::updateToggleFullAddressList(const QString &field, bool doShow);
+    MessageViewer::WebEngineScript::removeStyleToElement(const QString & element);
+    MessageViewer::WebEngineScript::injectAttachments(const QString & delayedHtml, const QString & element);
+    MessageViewer::WebEngineScript::toggleFullAddressList(const QString & field, const QString & html, bool doShow);
+    MessageViewer::WebEngineScript::replaceInnerHtml(const QString & field, const QString & html, bool doShow);
+    MessageViewer::WebEngineScript::updateToggleFullAddressList(const QString & field, bool doShow);
 #endif
     //TODO
 }

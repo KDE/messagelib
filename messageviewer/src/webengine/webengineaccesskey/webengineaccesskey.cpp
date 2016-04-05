@@ -284,8 +284,6 @@ void WebEngineAccessKey::hideAccessKeys()
     }
 }
 
-
-
 void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 {
     //qDebug() << " void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)" << res;

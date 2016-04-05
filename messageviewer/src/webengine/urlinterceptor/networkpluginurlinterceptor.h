@@ -27,8 +27,7 @@ namespace MessageViewer
 {
 class NetworkPluginUrlInterceptorConfigureWidget;
 class NetworkPluginUrlInterceptorInterface;
-struct MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidgetSetting
-{
+struct MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidgetSetting {
     NetworkPluginUrlInterceptorConfigureWidgetSetting()
         : configureWidget(Q_NULLPTR)
     {
@@ -38,7 +37,6 @@ struct MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidgetSetting
     QString name;
     MessageViewer::NetworkPluginUrlInterceptorConfigureWidget *configureWidget;
 };
-
 
 class MESSAGEVIEWER_EXPORT NetworkPluginUrlInterceptor : public QObject
 {
