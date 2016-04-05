@@ -40,6 +40,7 @@ if(BUILD_TESTING)
     add_subdirectory(htmlwriter/autotests/)
     if (QTWEBENGINE_SUPPORT_OPTION)
         add_subdirectory(webengine/tests)
+        add_subdirectory(webengine/autotests)
         add_subdirectory(webengine/webengineaccesskey/autotests)
     endif()
 
