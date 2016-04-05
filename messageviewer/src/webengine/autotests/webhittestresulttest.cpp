@@ -121,4 +121,55 @@ void WebHitTestResultTest::shouldAssignFromQVariant()
     QCOMPARE(result.pageUrl(), pageUrl);
 }
 
+void WebHitTestResultTest::shouldCopyWebHitTestResult()
+{
+    QPoint pos(5,5);
+    QUrl pageUrl(QStringLiteral("http://www.kde.org"));
+
+    QVariantMap map;
+    QString alternateText = QStringLiteral("FOO");
+    map.insert(QStringLiteral("alternateText"), alternateText);
+    bool contentEditable = true;
+    map.insert(QStringLiteral("contentEditable"), contentEditable);
+    bool contentSelected = true;
+    map.insert(QStringLiteral("contentSelected"), contentSelected);
+    QString linkTitle = QStringLiteral("GGGG");
+    map.insert(QStringLiteral("linkTitle"), linkTitle);
+    QUrl imageUrl(QStringLiteral("https://www.foo.net"));
+    map.insert(QStringLiteral("imageUrl"), imageUrl);
+    QUrl linkUrl(QStringLiteral("https://www.linux.org"));
+    map.insert(QStringLiteral("linkUrl"), linkUrl);
+    QUrl mediaUrl(QStringLiteral("https://www.media.org"));
+    map.insert(QStringLiteral("mediaUrl"), mediaUrl);
+    bool mediaPaused = true;
+    map.insert(QStringLiteral("mediaPaused"), mediaPaused);
+    bool mediaMuted = true;
+    map.insert(QStringLiteral("mediaMuted"), mediaMuted);
+    QString tagName = QStringLiteral("HHHHHH");
+    map.insert(QStringLiteral("tagName"), tagName);
+    QRect boundingRect(5,7,9,11);
+    QVariantList lstRect;
+    lstRect << boundingRect.left() << boundingRect.top() << boundingRect.width() << boundingRect.height();
+    map.insert(QStringLiteral("boundingRect"), lstRect);
+
+    const MessageViewer::WebHitTestResult result1(pos, pageUrl, map);
+    MessageViewer::WebHitTestResult result = result1;
+
+    QCOMPARE(result.alternateText(), alternateText);
+    QCOMPARE(result.boundingRect(), boundingRect);
+    QCOMPARE(result.imageUrl(), imageUrl);
+    QCOMPARE(result.isContentEditable(), contentEditable);
+    QCOMPARE(result.isContentSelected(), contentSelected);
+    QCOMPARE(result.isNull(), false);
+    QCOMPARE(result.linkTitle(), linkTitle);
+    QCOMPARE(result.linkUrl(), linkUrl);
+    QCOMPARE(result.mediaUrl(), mediaUrl);
+    QCOMPARE(result.mediaPaused(), mediaPaused);
+    QCOMPARE(result.mediaMuted(), mediaMuted);
+    QCOMPARE(result.pos(), pos);
+    QCOMPARE(result.tagName(), tagName);
+    QCOMPARE(result.pageUrl(), pageUrl);
+
+}
+
 QTEST_MAIN(WebHitTestResultTest)

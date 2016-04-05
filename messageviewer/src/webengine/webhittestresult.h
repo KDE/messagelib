@@ -49,6 +49,7 @@ class MESSAGEVIEWER_EXPORT WebHitTestResult
 public:
     WebHitTestResult();
     WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QVariant &result);
+    WebHitTestResult(const WebHitTestResult &other);
     ~WebHitTestResult();
 
     QString alternateText() const;

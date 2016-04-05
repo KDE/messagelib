@@ -31,6 +31,7 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldAssignPosAndUrl();
     void shouldAssignFromQVariant();
+    void shouldCopyWebHitTestResult();
 
 
 };

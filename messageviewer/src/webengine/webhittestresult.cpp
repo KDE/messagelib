@@ -113,6 +113,14 @@ WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const
 {
 }
 
+WebHitTestResult::WebHitTestResult(const WebHitTestResult &other)
+    : d(other.d)
+{
+    d = new WebHitTestResultPrivate;
+    (*this) = other;
+}
+
+
 WebHitTestResult::~WebHitTestResult()
 {
     delete d;
@@ -121,7 +129,7 @@ WebHitTestResult::~WebHitTestResult()
 WebHitTestResult &WebHitTestResult::operator=(const WebHitTestResult &other)
 {
     if (this != &other) {
-        d = other.d;
+        *d = *(other.d);
     }
     return *this;
 }
