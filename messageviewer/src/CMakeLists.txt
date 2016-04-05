@@ -297,7 +297,6 @@ target_link_libraries(KF5MessageViewer
     KF5::Libkdepim
     KF5::GrantleeTheme
     KF5::KaddressbookGrantlee
-    Grantlee5::TextDocument
     Grantlee5::Templates
     KF5::MailTransport
     KF5::Mime
