@@ -57,6 +57,7 @@ public:
 
 Q_SIGNALS:
     void changed(bool);
+    void settingsChanged();
 
 protected:
     bool event(QEvent *event) Q_DECL_OVERRIDE;

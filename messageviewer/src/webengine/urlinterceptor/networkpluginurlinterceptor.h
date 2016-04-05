@@ -20,8 +20,6 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
-class QAction;
-class KActionCollection;
 class QWebEngineView;
 namespace MessageViewer
 {

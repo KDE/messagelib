@@ -36,7 +36,7 @@ set(KPIMTEXTEDIT_LIB_VERSION "5.2.40")
 set(KDEPIM_APPS_LIB_VERSION "5.2.40")
 set(LIBKDEPIM_LIB_VERSION "5.2.40")
 
-set(AKONADI_VERSION "5.1.80")
+set(AKONADI_VERSION "5.2.41")
 
 find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test UiTools Network WebKitWidgets)
@@ -58,7 +58,7 @@ find_package(KF5Completion ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Codecs ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5Config ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5AkonadiSearch "5.0.42" CONFIG REQUIRED)
+find_package(KF5AkonadiSearch "5.2.40" CONFIG REQUIRED)
 set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "http://www.kde.org" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
 find_package(KF5ItemViews ${KF5_VERSION} CONFIG REQUIRED)

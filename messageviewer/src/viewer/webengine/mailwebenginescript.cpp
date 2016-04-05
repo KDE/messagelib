@@ -1,0 +1,82 @@
+/*
+  Copyright (c) 2016 Montel Laurent <montel@kde.org>
+
+  This program is free software; you can redistribute it and/or modify it
+  under the terms of the GNU General Public License, version 2, as
+  published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+#include "mailwebenginescript.h"
+#include "webengine/webenginescript.h"
+#include <QDebug>
+using namespace MessageViewer;
+
+QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
+{
+    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+                           "if (element) { "
+                           "    element.innerHTML += '%2';"
+                           "}").arg(elementStr).arg(delayedHtml);
+    qDebug() << "QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :" << source;
+    return source;
+}
+
+QString MailWebEngineScript::replaceInnerHtml(const QString &field, const QString &html, bool doShow)
+{
+    const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
+    const QString source = QString::fromLatin1("(function() {"
+                           "var doShow = %3;"
+                           "var field = \'%4\';"
+                           "var out = [];"
+                           "var element = document.getElementById('%1'); "
+                           "if (element) { "
+                           "    element.innerHTML = '%2';"
+                           "    out.push({"
+                           "        field: field,"
+                           "        doShow: doShow"
+                           "    });"
+                           "}"
+                           "return out;"
+                           "})()").arg(replaceInnerHtmlStr).arg(html).arg(doShow).arg(field);
+    qDebug() << "QString MailWebEngineScript::replaceInnerHtml(const QString &delayedHtml, const QString &elementStr) :" << source;
+    return source;
+
+}
+
+QString MailWebEngineScript::updateToggleFullAddressList(const QString &field, bool doShow)
+{
+    const QString dotsFullStr = QLatin1String("dotsFull")   + field + QLatin1String("AddressList");
+    const QString hiddenFullStr = QLatin1String("hiddenFull") + field + QLatin1String("AddressList");
+    const QString source = QString::fromLatin1("    %1;"
+                           "    %2;")
+                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
+                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
+    qDebug() << "QString MailWebEngineScript::updateToggleFullAddressList(const QString &delayedHtml, const QString &elementStr) :" << source;
+    return source;
+
+}
+
+QString MailWebEngineScript::toggleFullAddressList(const QString &field, const QString &html, bool doShow)
+{
+    const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
+    const QString dotsFullStr = QLatin1String("dotsFull")   + field + QLatin1String("AddressList");
+    const QString hiddenFullStr = QLatin1String("hiddenFull") + field + QLatin1String("AddressList");
+    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+                           "if (element) { "
+                           "    element.innerHTML = '%2';"
+                           "    %3;"
+                           "    %4;"
+                           "}").arg(replaceInnerHtmlStr).arg(html)
+                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
+                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
+    qDebug() << "QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :" << source;
+    return source;
+}

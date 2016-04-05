@@ -362,6 +362,7 @@ void AdBlockSettingWidget::hasChanged()
     updateCheckBox();
     mChanged = true;
     Q_EMIT changed(true);
+    Q_EMIT settingsChanged();
 }
 
 bool AdBlockSettingWidget::changed() const

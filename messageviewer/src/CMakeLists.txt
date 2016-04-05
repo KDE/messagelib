@@ -96,6 +96,7 @@ if (QTWEBENGINE_SUPPORT_OPTION)
         viewer/webengine/mailwebenginepage.cpp
         viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
         viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
+        viewer/webengine/mailwebenginescript.cpp
 
         ${libmessageviewer_mailviewer_SRCS}
         findbar/findbarwebengineview.cpp

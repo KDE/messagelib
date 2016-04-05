@@ -85,17 +85,24 @@ ScamCheckShortUrl *ScamDetectionWebEngine::scamCheckShortUrl() const
 void ScamDetectionWebEngine::scanPage(QWebEnginePage *page)
 {
     if (MessageViewer::MessageViewerSettings::self()->scamDetectionEnabled()) {
-        page->runJavaScript(MessageViewer::WebEngineScript::findAllAnchors(), invoke(this, &ScamDetectionWebEngine::handleScanPage));
+        page->runJavaScript(MessageViewer::WebEngineScript::findAllAnchorsAndForms(), invoke(this, &ScamDetectionWebEngine::handleScanPage));
     }
 }
 
 void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
 {
     bool foundScam = false;
+
     d->mDetails.clear();
+    const QVariantList resultList = result.toList();
+    if (resultList.count() != 1) {
+        Q_EMIT resultScanDetection(foundScam);
+        return;
+    }
     d->mDetails = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
     QRegularExpression ip4regExp(QStringLiteral("\\b[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{0,3})?(?:\\.[0-9]{0,3})?"));
-    const QList<QVariant> lst = result.toList();
+    const QVariantMap mapResult = resultList.at(0).toMap();
+    const QList<QVariant> lst = mapResult.value(QStringLiteral("anchors")).toList();
     Q_FOREACH (const QVariant &var, lst) {
         QMap<QString, QVariant> mapVariant = var.toMap();
         //qDebug()<<" mapVariant"<<mapVariant;
@@ -155,13 +162,10 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             }
         }
     }
-#if 0 //FIXME
-    //3) has form
-    if (rootElement.findAll(QStringLiteral("form")).count() > 0) {
+    if (mapResult.value(QStringLiteral("forms")).toInt() > 0) {
         d->mDetails += QLatin1String("<li></b>") + i18n("Message contains form element. This is often the case in scam emails.") + QLatin1String("</b></li>");
         foundScam = true;
     }
-#endif
     d->mDetails += QLatin1String("</ul>");
     //qDebug()<<" d->mDetails "<< d->mDetails;
     if (foundScam) {

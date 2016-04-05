@@ -29,7 +29,6 @@ class QWebEngineView;
 namespace MessageViewer
 {
 class WebEngineAccessKeyPrivate;
-class WebEngineAccessKeyAnchor;
 class MESSAGEVIEWER_EXPORT WebEngineAccessKey : public QObject
 {
     Q_OBJECT
