@@ -41,6 +41,8 @@ void AdBlockAutomaticRulesListWidgetTest::shouldCreateRules_data()
     QTest::addColumn<QString>("rules");
     QTest::addColumn<int>("numberOfItem");
     QTest::newRow("notest") <<  QString() << 0;
+    QTest::newRow("oneline") <<  QStringLiteral("ssdfsfsdf") << 1;
+    QTest::newRow("twoline") <<  QStringLiteral("ssdfsfsdf\nfoo") << 2;
 }
 
 void AdBlockAutomaticRulesListWidgetTest::shouldCreateRules()
