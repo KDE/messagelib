@@ -1,0 +1,130 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer\")
+
+
+if(BUILD_TESTING)
+    #add_subdirectory(tests)
+    #add_subdirectory(autotests)
+    #add_subdirectory(webengineaccesskey/autotests)
+endif()
+
+
+set(libwebengineviewer_webengine_SRCS
+    networkmanager/networkaccessmanagerwebengine.cpp
+    urlinterceptor/networkurlinterceptor.cpp
+    urlinterceptor/networkpluginurlinterceptorinterface.cpp
+    urlinterceptor/networkurlinterceptorpluginmanager.cpp
+    urlinterceptor/networkpluginurlinterceptor.cpp
+    urlinterceptor/networkurlinterceptormanager.cpp
+    urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
+    webhittestresult.cpp
+    webhittest.cpp
+    webenginepage.cpp
+    webenginescript.cpp
+    webengineview.cpp
+    webengineaccesskey/webengineaccesskey.cpp
+    webengineaccesskey/webengineaccesskeyanchor.cpp
+    webengineaccesskey/webengineaccesskeyutils.cpp
+    )
+set(libmessageviewer_web_LIB Qt5::WebEngineWidgets )
+
+set(libwebengineviewer_SRCS
+    ${libwebengineviewer_webengine_SRCS}
+    )
+
+ecm_qt_declare_logging_category(libwebengineviewer_webengine_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME log_webengineviewer)
+
+
+add_library(KF5WebEngineViewer ${libwebengineviewer_webengine_SRCS})
+generate_export_header(KF5WebEngineViewer BASE_NAME webengineviewer)
+add_library(KF5::WebEngineViewer ALIAS KF5WebEngineViewer)
+
+target_include_directories(KF5WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/webengineviewer>")
+target_include_directories(KF5WebEngineViewer PUBLIC "$<BUILD_INTERFACE:${WebEngineViewer_SOURCE_DIR}/src;${WebEngineViewer_BINARY_DIR}/src;>")
+
+target_link_libraries(KF5WebEngineViewer
+    PUBLIC
+    Qt5::WebEngineWidgets
+    PRIVATE
+    KF5::CoreAddons
+    KF5::XmlGui
+    )
+
+set_target_properties(KF5WebEngineViewer PROPERTIES
+    VERSION ${WEBENGINEVIEWER_VERSION_STRING}
+    SOVERSION ${WEBENGINEVIEWER_SOVERSION}
+    EXPORT_NAME WebEngineViewer
+    )
+
+install(TARGETS
+    KF5WebEngineViewer
+    EXPORT KF5WebEngineViewerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
+    )
+
+ecm_generate_headers(WebEngineViewer_Camelcasewebengine_accesskey_HEADERS
+    HEADER_NAMES
+    WebEngineAccessKey
+
+    REQUIRED_HEADERS WebEngineViewer_webengine_accesskey_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE webengineaccesskey
+    )
+ecm_generate_headers(WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS
+    HEADER_NAMES
+    NetworkUrlInterceptorPluginManager
+    NetworkUrlInterceptor
+    NetworkPluginUrlInterceptorInterface
+    NetworkPluginUrlInterceptor
+    NetworkPluginUrlInterceptorConfigureWidget
+
+    REQUIRED_HEADERS WebEngineViewer_webengine_urlinterceptor_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE urlinterceptor
+    )
+ecm_generate_headers(WebEngineViewer_Camelcasewebengine_manager_HEADERS
+    HEADER_NAMES
+    NetworkAccessManagerWebEngine
+    REQUIRED_HEADERS WebEngineViewer_webengine_manager_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE networkmanager
+    )
+ecm_generate_headers(WebEngineViewer_Camelcasewebengine_misc_HEADERS
+    HEADER_NAMES
+    WebHitTestResult
+    WebEnginePage
+    WebEngineView
+    WebHitTest
+    WebEngineScript
+    REQUIRED_HEADERS WebEngineViewer_webengine_misc_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE
+    )
+
+ecm_generate_pri_file(BASE_NAME WebEngineViewer
+    LIB_NAME KF5WebEngineViewer
+    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
+    )
+
+
+install(FILES
+    ${WebEngineViewer_Camelcasewebengine_accesskey_HEADERS}
+    ${WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS}
+    ${WebEngineViewer_Camelcasewebengine_manager_HEADERS}
+    ${WebEngineViewer_Camelcasewebengine_misc_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
+    COMPONENT Devel
+    )
+
+install(FILES
+    ${WebEngineViewer_webengine_accesskey_HEADERS}
+    ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
+    ${WebEngineViewer_webengine_manager_HEADERS}
+    ${WebEngineViewer_webengine_misc_HEADERS}
+    ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/webengineviewer
+    COMPONENT Devel
+    )
+
+install(FILES
+    ${PRI_FILENAME}
+    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+
