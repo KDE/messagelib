@@ -19,11 +19,11 @@
 #define MAILWEBENGINEPAGE_H
 
 #include "messageviewer_export.h"
-#include <MessageViewer/WebEnginePage>
+#include <WebEngineViewer/WebEnginePage>
 
 namespace MessageViewer
 {
-class MESSAGEVIEWER_EXPORT MailWebEnginePage : public MessageViewer::WebEnginePage
+class MESSAGEVIEWER_EXPORT MailWebEnginePage : public WebEngineViewer::WebEnginePage
 {
     Q_OBJECT
 public:

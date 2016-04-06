@@ -15,7 +15,7 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 #include "mailwebenginescript.h"
-#include "webengine/webenginescript.h"
+#include "webengineviewer/webenginescript.h"
 #include <QDebug>
 using namespace MessageViewer;
 
@@ -57,8 +57,8 @@ QString MailWebEngineScript::updateToggleFullAddressList(const QString &field, b
     const QString hiddenFullStr = QLatin1String("hiddenFull") + field + QLatin1String("AddressList");
     const QString source = QString::fromLatin1("    %1;"
                            "    %2;")
-                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
-                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
+                           .arg(WebEngineViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
+                           .arg(WebEngineViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
     qDebug() << "QString MailWebEngineScript::updateToggleFullAddressList(const QString &delayedHtml, const QString &elementStr) :" << source;
     return source;
 
@@ -75,8 +75,8 @@ QString MailWebEngineScript::toggleFullAddressList(const QString &field, const Q
                            "    %3;"
                            "    %4;"
                            "}").arg(replaceInnerHtmlStr).arg(html)
-                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
-                           .arg(MessageViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
+                           .arg(WebEngineViewer::WebEngineScript::setElementByIdVisible(dotsFullStr, !doShow))
+                           .arg(WebEngineViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
     qDebug() << "QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :" << source;
     return source;
 }

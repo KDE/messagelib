@@ -34,7 +34,7 @@ public:
 };
 
 LoadExternalReferencesUrlInterceptor::LoadExternalReferencesUrlInterceptor(QObject *parent)
-    : NetworkPluginUrlInterceptorInterface(parent),
+    : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent),
       d(new LoadExternalReferencesUrlInterceptorPrivate)
 {
 

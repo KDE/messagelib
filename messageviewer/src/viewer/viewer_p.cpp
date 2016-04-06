@@ -123,7 +123,7 @@
 #include <QWebEngineSettings>
 #include "htmlwriter/webengineparthtmlwriter.h"
 #include <widgets/mailsourcewebengineviewer.h>
-#include <MessageViewer/WebHitTestResult>
+#include <WebEngineViewer/WebHitTestResult>
 #else
 #include <QWebElement>
 #include "widgets/mailsourceviewer.h"
@@ -2055,7 +2055,7 @@ void ViewerPrivate::slotUrlOn(const QString &link)
     Q_EMIT showStatusBarMessage(msg);
 }
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-void ViewerPrivate::slotUrlPopup(const MessageViewer::WebHitTestResult &result)
+void ViewerPrivate::slotUrlPopup(const WebEngineViewer::WebHitTestResult &result)
 {
     if (!mMsgDisplay) {
         return;
@@ -3126,7 +3126,7 @@ void ViewerPrivate::slotServiceUrlSelected(PimCommon::ShareServiceUrlManager::Se
 }
 
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-QList<QAction *> ViewerPrivate::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
+QList<QAction *> ViewerPrivate::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     return mViewer->interceptorUrlActions(result);
 }

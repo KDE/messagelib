@@ -71,6 +71,13 @@ class HtmlWriter;
 class ObjectTreeParser;
 }
 
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+namespace WebEngineViewer
+{
+class WebHitTestResult;
+
+}
+#endif
 namespace MessageViewer
 {
 class HeaderStylePlugin;
@@ -79,7 +86,6 @@ class CSSHelper;
 class FindBarWebEngineView;
 class MailWebEngineView;
 class WebEnginePartHtmlWriter;
-class WebHitTestResult;
 #else
 class FindBarWebView;
 class MailWebView;
@@ -439,7 +445,7 @@ public:
 
     QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-    QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
+    QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 #endif
 
 private Q_SLOTS:
@@ -488,7 +494,7 @@ public Q_SLOTS:
 
     /** The user presses the right mouse button on an URL. */
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-    void slotUrlPopup(const MessageViewer::WebHitTestResult &result);
+    void slotUrlPopup(const WebEngineViewer::WebHitTestResult &result);
 #else
     void slotUrlPopup(const QUrl &, const QUrl &imageUrl, const QPoint &mousePos);
 #endif
@@ -580,7 +586,7 @@ Q_SIGNALS:
     void replaceMsgByUnencryptedVersion();
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-    void displayPopupMenu(const Akonadi::Item &msg, const MessageViewer::WebHitTestResult &result, const QPoint &mousePos);
+    void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result, const QPoint &mousePos);
 #endif
 
     void urlClicked(const Akonadi::Item &msg, const QUrl &url);

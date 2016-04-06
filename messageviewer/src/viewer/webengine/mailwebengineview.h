@@ -18,14 +18,17 @@
 #ifndef MAILWEBENGINE_H
 #define MAILWEBENGINE_H
 #include "messageviewer_export.h"
-#include <MessageViewer/WebEngineView>
+#include <WebEngineViewer/WebEngineView>
 #include <boost/function.hpp>
 class KActionCollection;
-namespace MessageViewer
+namespace WebEngineViewer
 {
 class WebHitTestResult;
+}
+namespace MessageViewer
+{
 class MailWebEngineViewPrivate;
-class MESSAGEVIEWER_EXPORT MailWebEngineView : public MessageViewer::WebEngineView
+class MESSAGEVIEWER_EXPORT MailWebEngineView : public WebEngineViewer::WebEngineView
 {
     Q_OBJECT
 public:
@@ -58,7 +61,7 @@ public:
 
     void setAllowExternalContent(bool b);
 
-    QList<QAction *> interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const;
+    QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
     void toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow);
 
 public Q_SLOTS:
@@ -79,13 +82,13 @@ Q_SIGNALS:
     /// Emitted when the user right-clicks somewhere
     /// @param url if an URL was under the cursor, this parameter contains it. Otherwise empty
     /// @param point position where the click happened, in local coordinates
-    void popupMenu(const MessageViewer::WebHitTestResult &result);
+    void popupMenu(const WebEngineViewer::WebHitTestResult &result);
 
 private Q_SLOTS:
     void handleScrollToAnchor(const QVariant &result);
     void updateToggleFullAddressList(const QVariant &result);
 
-    void slotWebHitFinished(const MessageViewer::WebHitTestResult &result);
+    void slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result);
     void slotLoadFinished();
 private:
     MailWebEngineViewPrivate *const d;

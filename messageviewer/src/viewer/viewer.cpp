@@ -31,6 +31,7 @@
 #include "settings/messageviewersettings.h"
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 #include "viewer/webengine/mailwebengineview.h"
+#include <WebEngineViewer/WebHitTestResult>
 #else
 #include "adblock/adblockmanager.h"
 #include "viewer/webview/mailwebview.h"
@@ -689,7 +690,7 @@ QList<QAction *> Viewer::viewerPluginActionList(ViewerPluginInterface::SpecificF
 }
 
 #ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-QList<QAction *> Viewer::interceptorUrlActions(const MessageViewer::WebHitTestResult &result) const
+QList<QAction *> Viewer::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     Q_D(const Viewer);
     return d->interceptorUrlActions(result);

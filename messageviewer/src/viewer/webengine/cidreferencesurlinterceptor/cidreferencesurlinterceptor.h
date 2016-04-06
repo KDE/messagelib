@@ -18,11 +18,11 @@
 #ifndef CIDREFERENCESURLINTERCEPTOR_H
 #define CIDREFERENCESURLINTERCEPTOR_H
 
-#include <MessageViewer/NetworkPluginUrlInterceptorInterface>
+#include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 
 namespace MessageViewer
 {
-class CidReferencesUrlInterceptor : public NetworkPluginUrlInterceptorInterface
+class CidReferencesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:

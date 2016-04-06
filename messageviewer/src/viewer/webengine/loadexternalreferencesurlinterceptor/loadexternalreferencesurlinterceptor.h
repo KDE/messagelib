@@ -18,12 +18,12 @@
 #ifndef LOADEXTERNALREFERENCESURLINTERCEPTOR_H
 #define LOADEXTERNALREFERENCESURLINTERCEPTOR_H
 
-#include <MessageViewer/NetworkPluginUrlInterceptorInterface>
+#include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 
 namespace MessageViewer
 {
 class LoadExternalReferencesUrlInterceptorPrivate;
-class LoadExternalReferencesUrlInterceptor : public NetworkPluginUrlInterceptorInterface
+class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:

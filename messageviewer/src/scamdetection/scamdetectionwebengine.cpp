@@ -20,7 +20,7 @@
 #include "scamdetectiondetailsdialog.h"
 #include "settings/messageviewersettings.h"
 #include "MessageViewer/ScamCheckShortUrl"
-#include "webengine/webenginescript.h"
+#include "webengineviewer/webenginescript.h"
 
 #include <KLocalizedString>
 
@@ -85,7 +85,7 @@ ScamCheckShortUrl *ScamDetectionWebEngine::scamCheckShortUrl() const
 void ScamDetectionWebEngine::scanPage(QWebEnginePage *page)
 {
     if (MessageViewer::MessageViewerSettings::self()->scamDetectionEnabled()) {
-        page->runJavaScript(MessageViewer::WebEngineScript::findAllAnchorsAndForms(), invoke(this, &ScamDetectionWebEngine::handleScanPage));
+        page->runJavaScript(WebEngineViewer::WebEngineScript::findAllAnchorsAndForms(), invoke(this, &ScamDetectionWebEngine::handleScanPage));
     }
 }
 

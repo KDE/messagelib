@@ -24,7 +24,7 @@
 using namespace MessageViewer;
 
 CidReferencesUrlInterceptor::CidReferencesUrlInterceptor(QObject *parent)
-    : NetworkPluginUrlInterceptorInterface(parent)
+    : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
 
 }
