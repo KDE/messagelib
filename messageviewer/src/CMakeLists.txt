@@ -490,6 +490,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 
 
 install(FILES
+    ${MessageViewer_Camelcasewebengine_HEADERS}
     ${MessageViewer_CamelfindbarWebEngine_HEADERS}
     ${MessageViewer_Camelcasewebviewer_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
@@ -511,6 +512,7 @@ install(FILES
     )
 
 install(FILES
+    ${MessageViewer_webengine_HEADERS}
     ${MessageViewer_scam_HEADERS}
     ${MessageViewer_findbarWebEngine_HEADERS}
     ${MessageViewer_adblockcommon_HEADERS}
