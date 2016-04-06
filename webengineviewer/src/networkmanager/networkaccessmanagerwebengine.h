@@ -20,7 +20,7 @@
 
 #include <QNetworkAccessManager>
 #include "webengineviewer_export.h"
-#include "urlinterceptor/networkpluginurlinterceptor.h"
+#include "webengineviewer/networkpluginurlinterceptor.h"
 class KActionCollection;
 class QWebEngineView;
 class QAction;
