@@ -19,6 +19,7 @@
 #include "mailwebenginepage.h"
 #include "webengine/webengineaccesskey/webengineaccesskey.h"
 #include "webengine/webenginescript.h"
+#include "mailwebenginescript.h"
 #include "messageviewer/messageviewersettings.h"
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
 #include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
@@ -251,7 +252,7 @@ void MailWebEngineView::injectAttachments(const boost::function<QString()> &dela
     if (html.isEmpty()) {
         return;
     }
-    page()->runJavaScript(MessageViewer::WebEngineScript::injectAttachments(html, QStringLiteral("attachmentInjectionPoint")));
+    page()->runJavaScript(MessageViewer::MailWebEngineScript::injectAttachments(html, QStringLiteral("attachmentInjectionPoint")));
 }
 
 void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow)
@@ -262,7 +263,7 @@ void MailWebEngineView::toggleFullAddressList(const QString &field, const boost:
     }
 
     qDebug() << "void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow)" << html << " fields " << field;
-    page()->runJavaScript(MessageViewer::WebEngineScript::replaceInnerHtml(field, html, doShow), invoke(this, &MailWebEngineView::updateToggleFullAddressList));
+    page()->runJavaScript(MessageViewer::MailWebEngineScript::replaceInnerHtml(field, html, doShow), invoke(this, &MailWebEngineView::updateToggleFullAddressList));
 }
 
 void MailWebEngineView::updateToggleFullAddressList(const QVariant &result)
@@ -275,7 +276,7 @@ void MailWebEngineView::updateToggleFullAddressList(const QVariant &result)
             qDebug() << "map !!!! " << map;
             const bool show = map.value(QStringLiteral("show")).toBool();
             const QString field = map.value(QStringLiteral("field")).toString();
-            page()->runJavaScript(MessageViewer::WebEngineScript::updateToggleFullAddressList(field, show));
+            page()->runJavaScript(MessageViewer::MailWebEngineScript::updateToggleFullAddressList(field, show));
         }
     }
 }
