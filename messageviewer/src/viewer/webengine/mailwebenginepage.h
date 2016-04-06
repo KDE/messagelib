@@ -29,12 +29,6 @@ class MESSAGEVIEWER_EXPORT MailWebEnginePage : public WebEngineViewer::WebEngine
 public:
     explicit MailWebEnginePage(QObject *parent = Q_NULLPTR);
     ~MailWebEnginePage();
-
-Q_SIGNALS:
-    void urlClicked(const QUrl &url);
-
-protected:
-    bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) Q_DECL_OVERRIDE;
 };
 }
 #endif // MAILWEBENGINEPAGE_H

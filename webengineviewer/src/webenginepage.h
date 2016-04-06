@@ -34,6 +34,12 @@ public:
     WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
     QVariant execJavaScript(const QString &scriptSource, int timeout = 500);
 
+Q_SIGNALS:
+    void urlClicked(const QUrl &url);
+
+protected:
+    bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) Q_DECL_OVERRIDE;
+
 private:
     WebEnginePagePrivate *const d;
 };
