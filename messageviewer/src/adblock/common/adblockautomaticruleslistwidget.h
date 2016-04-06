@@ -40,6 +40,7 @@ private:
     void updateItem(QListWidgetItem *item);
     void createItem(const QString &rule);
     QStringList mDisabledRules;
+    QColor defaultTextColor;
 };
 }
 

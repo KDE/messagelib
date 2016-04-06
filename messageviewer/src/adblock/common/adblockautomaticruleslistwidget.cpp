@@ -50,7 +50,11 @@ void AdBlockAutomaticRulesListWidget::updateItem(QListWidgetItem *item)
         } else if (rule.contains(QRegularExpression(QStringLiteral(".*##.*")))) {
             item->setTextColor(Qt::blue);
         } else {
-            item->setTextColor(Qt::black);
+            if (!defaultTextColor.isValid()) {
+                const QPalette palette = viewport()->palette();
+                defaultTextColor = palette.text().color();
+            }
+            item->setTextColor(defaultTextColor);
         }
     } else {
         font.setItalic(true);
