@@ -23,13 +23,13 @@
 #include <QVBoxLayout>
 #include <QWebEngineSettings>
 
-#include <webengineviewer/mailwebengineview.h>
+#include <MessageViewer/MailWebEngineView>
 
 TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vbox = new QVBoxLayout(this);
-    mTestWebEngine = new WebEngineViewer::MailWebEngineView(new KActionCollection(this), this);
+    mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vbox->addWidget(mTestWebEngine);

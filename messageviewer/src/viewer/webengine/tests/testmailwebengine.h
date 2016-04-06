@@ -15,24 +15,28 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef TESTWEBENGINESCROLLADDATTACHMENT_H
-#define TESTWEBENGINESCROLLADDATTACHMENT_H
+#ifndef TESTMAILWEBENGINE_H
+#define TESTMAILWEBENGINE_H
 
 #include <QWidget>
-namespace WebEngineViewer
+
+namespace MessageViewer
 {
 class MailWebEngineView;
 }
-class TestWebEngineScrollAddAttachment : public QWidget
+
+class TestMailWebEngine : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestWebEngineScrollAddAttachment(QWidget *parent = Q_NULLPTR);
-
+    explicit TestMailWebEngine(QWidget *parent = Q_NULLPTR);
+    ~TestMailWebEngine();
 private Q_SLOTS:
-    void slotScrollToAttachment();
+    void slotScrollUp();
+
+    void slotScrollDown();
 private:
-    WebEngineViewer::MailWebEngineView *mTestWebEngine;
+    MessageViewer::MailWebEngineView *mTestWebEngine;
 };
 
-#endif // TESTWEBENGINESCROLLADDATTACHMENT_H
+#endif // TESTMAILWEBENGINE_H

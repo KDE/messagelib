@@ -24,7 +24,7 @@
 #include <QVBoxLayout>
 #include <QWebEngineSettings>
 
-#include <webengineviewer/mailwebengineview.h>
+#include <messageviewer/mailwebengineview.h>
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -49,7 +49,7 @@ TestWebEngineScrollAddAttachment::TestWebEngineScrollAddAttachment(QWidget *pare
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
 
-    mTestWebEngine = new WebEngineViewer::MailWebEngineView(new KActionCollection(this), this);
+    mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vboxLayout->addWidget(mTestWebEngine);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
