@@ -2,9 +2,9 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer\")
 
 
 if(BUILD_TESTING)
-    #add_subdirectory(tests)
-    #add_subdirectory(autotests)
-    #add_subdirectory(webengineaccesskey/autotests)
+    add_subdirectory(tests)
+    add_subdirectory(autotests)
+    add_subdirectory(webengineaccesskey/autotests)
 endif()
 
 

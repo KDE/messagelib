@@ -23,7 +23,7 @@
 #include <QVBoxLayout>
 #include <QWebEngineSettings>
 
-#include <viewer/webengine/mailwebengineview.h>
+#include <webengineviewer/mailwebengineview.h>
 
 TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     : QWidget(parent)

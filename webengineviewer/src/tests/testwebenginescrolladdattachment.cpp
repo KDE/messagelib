@@ -24,7 +24,7 @@
 #include <QVBoxLayout>
 #include <QWebEngineSettings>
 
-#include <viewer/webengine/mailwebengineview.h>
+#include <webengineviewer/mailwebengineview.h>
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {

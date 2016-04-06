@@ -24,7 +24,7 @@
 #include <QDebug>
 #include <QWebEngineSettings>
 #include <QContextMenuEvent>
-#include <webengine/webhittest.h>
+#include <webengineviewer/webhittest.h>
 
 TestWebEngine::TestWebEngine(QWidget *parent)
     : QWidget(parent)
