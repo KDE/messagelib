@@ -204,7 +204,7 @@ void CryptoComposerTest::testEditEncryptAttachments()
 
     KMime::Message::Ptr message = composer->resultMessages().first();
     delete composer;
-    composer = 0;
+    composer = Q_NULLPTR;
 
     // setup a viewer
     ComposerViewBase view(this, 0);
@@ -270,7 +270,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
 
     KMime::Message::Ptr message = composer->resultMessages().first();
     delete composer;
-    composer = 0;
+    composer = Q_NULLPTR;
 
     // setup a viewer
     ComposerViewBase view(this, 0);
