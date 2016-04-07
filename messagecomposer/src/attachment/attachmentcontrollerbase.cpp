@@ -22,7 +22,7 @@
 
 #include "attachmentcontrollerbase.h"
 
-#include "MessageComposer/AttachmentModel"
+#include <MessageComposer/AttachmentModel>
 #include "MessageComposer/AttachmentJob"
 #include "MessageComposer/AttachmentFromPublicKeyJob"
 #include "MessageComposer/AttachmentVcardFromAddressBookJob"
