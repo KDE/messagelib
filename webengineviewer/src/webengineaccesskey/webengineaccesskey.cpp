@@ -319,7 +319,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         }
     }
     QVector<WebEngineViewer::WebEngineAccessKeyAnchor> unLabeledElements;
-    QRect viewport = d->mWebEngine->rect();//QRect(d->mWebEngine->page()->mainFrame()->scrollPosition(), d->mWebEngine->page()->viewportSize());
+    QRect viewport = d->mWebEngine->rect();
     Q_FOREACH (const WebEngineViewer::WebEngineAccessKeyAnchor &element, anchorList) {
         const QRect geometry = element.boundingRect();
         if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
