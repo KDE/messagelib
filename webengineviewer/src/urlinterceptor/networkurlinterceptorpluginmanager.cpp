@@ -92,7 +92,7 @@ public:
 
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](const KPluginMetaData & md) {
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("webengineviewer"), [](const KPluginMetaData & md) {
         return md.serviceTypes().contains(QStringLiteral("WebEngineViewer/UrlInterceptor"));
     });
 
