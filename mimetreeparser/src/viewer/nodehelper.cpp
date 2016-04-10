@@ -355,20 +355,25 @@ KMMsgEncryptionState NodeHelper::overallEncryptionState(KMime::Content *node) co
         return myState;
     }
 
-    if (encryptionState(node) == KMMsgNotEncrypted) {
-        // NOTE: children are tested ONLY when parent is not encrypted
-        if (!node->contents().isEmpty()) {
-            myState = overallEncryptionState(node->contents().at(0));
-        } else {
-            myState = KMMsgNotEncrypted;
-        }
-    } else { // part is partially or fully encrypted
-        myState = encryptionState(node);
+    KMime::Content *parent = node->parent();
+    auto contents = parent ?  parent->contents(): KMime::Content::List();
+    if (contents.isEmpty()) {
+        contents.append(node);
     }
-    // siblings are tested always
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(node);
-    if (next) {
-        KMMsgEncryptionState otherState = overallEncryptionState(next);
+    int i = contents.indexOf(const_cast<KMime::Content *>(node));
+    for (; i < contents.size(); ++i) {
+        auto next = contents.at(i);
+        KMMsgEncryptionState otherState = encryptionState(next);
+
+        // NOTE: children are tested ONLY when parent is not encrypted
+        if (otherState == KMMsgNotEncrypted && !next->contents().isEmpty()) {
+            otherState = overallEncryptionState(next->contents().at(0));
+        }
+
+        if (next == node) {
+            myState = otherState;
+        }
+
         switch (otherState) {
         case KMMsgEncryptionStateUnknown:
             break;
@@ -404,20 +409,25 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
         return myState;
     }
 
-    if (signatureState(node) == KMMsgNotSigned) {
-        // children are tested ONLY when parent is not signed
-        if (!node->contents().isEmpty()) {
-            myState = overallSignatureState(node->contents().at(0));
-        } else {
-            myState = KMMsgNotSigned;
-        }
-    } else { // part is partially or fully signed
-        myState = signatureState(node);
+    KMime::Content *parent = node->parent();
+    auto contents = parent ? parent->contents(): KMime::Content::List();
+    if (contents.isEmpty()) {
+        contents.append(node);
     }
-    // siblings are tested always
-    KMime::Content *next = MessageCore::NodeHelper::nextSibling(node);
-    if (next) {
-        KMMsgSignatureState otherState = overallSignatureState(next);
+    int i = contents.indexOf(const_cast<KMime::Content *>(node));
+    for (; i < contents.size(); ++i) {
+        auto next = contents.at(i);
+        KMMsgSignatureState otherState = signatureState(next);
+
+        // NOTE: children are tested ONLY when parent is not encrypted
+        if (otherState == KMMsgNotSigned && !next->contents().isEmpty()) {
+            otherState = overallSignatureState(next->contents().at(0));
+        }
+
+        if (next == node) {
+            myState = otherState;
+        }
+
         switch (otherState) {
         case KMMsgSignatureStateUnknown:
             break;

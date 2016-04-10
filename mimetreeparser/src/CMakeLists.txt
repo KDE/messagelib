@@ -160,7 +160,7 @@ add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
 
 target_link_libraries(KF5MimeTreeParser
     PUBLIC
-    KF5::MessageCore #NodeHelper, StringUtils
+    KF5::MessageCore #StringUtils
     KF5::Libkleo
     PRIVATE
     KF5::Codecs
