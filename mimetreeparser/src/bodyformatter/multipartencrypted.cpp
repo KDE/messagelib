@@ -109,15 +109,7 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
                 //       without encapsulating a nicely formatted
                 //       ~~~~~~~                 Multipart/Signed part.
                 //                               (see RFC 3156 --> 6.2)
-                // In part.objectTreeParser() case we paint a _2nd_ frame inside the
-                // encryption frame, but we do _not_ show a respective
-                // encapsulated MIME part in the Mime Tree Viewer
-                // since we do want to show the _true_ structure of the
-                // message there - not the structure that the sender's
-                // MUA 'should' have sent.  :-D       (khz, 12.09.2002)
-
                 part.nodeHelper()->setSignatureState(node, KMMsgFullySigned);
-                qCDebug(MIMETREEPARSER_LOG) << "setting FULLY SIGNED to:" << node;
             }
         }
     }

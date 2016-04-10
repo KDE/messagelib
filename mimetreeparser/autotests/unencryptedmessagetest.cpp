@@ -33,6 +33,7 @@ private Q_SLOTS:
     void testMailWithoutEncryption();
     void testSMIMESignedEncrypted();
     void testOpenPGPSignedEncrypted();
+    void testOpenPGPEncryptedAndSigned();
     void testForwardedOpenPGPSignedEncrypted();
     void testSignedForwardedOpenPGPSignedEncrypted();
     void testOpenPGPEncrypted();
@@ -166,6 +167,31 @@ void UnencryptedMessageTest::testOpenPGPSignedEncrypted()
 
     // TODO: Check that the signature is valid
 }
+
+void UnencryptedMessageTest::testOpenPGPEncryptedAndSigned()
+{
+    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted+signed.mbox"));
+
+    NodeHelper nodeHelper;
+    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    emptySource.setAllowDecryption(true);
+    ObjectTreeParser otp(&emptySource, &nodeHelper);
+    otp.parseObjectTree(originalMessage.data());
+
+    QCOMPARE(otp.plainTextContent().toLatin1().data(), "encrypted message text");
+    QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgFullyEncrypted);
+
+    QCOMPARE(nodeHelper.overallSignatureState(originalMessage.data()), KMMsgFullySigned);
+
+    // Now, test that the unencrypted message is generated correctly
+    KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
+    QCOMPARE(unencryptedMessage->contentType()->mimeType().data(), "text/plain");
+    QCOMPARE(unencryptedMessage->contents().size(), 0);
+    QCOMPARE(unencryptedMessage->decodedContent().data(), "encrypted message text");
+
+    // TODO: Check that the signature is valid
+}
+
 
 void UnencryptedMessageTest::testOpenPGPEncrypted()
 {
