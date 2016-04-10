@@ -39,13 +39,15 @@
 using namespace MimeTreeParser::Interface;
 
 MessagePart::MessagePart()
-    : mHtmlWriter(Q_NULLPTR)
+    : QObject()
+    , mHtmlWriter(Q_NULLPTR)
     , mPart(Q_NULLPTR)
 {
 }
 
 MessagePart::MessagePart(const BodyPart &part)
-    : mHtmlWriter(Q_NULLPTR)
+    : QObject()
+    , mHtmlWriter(Q_NULLPTR)
     , mPart(&part)
 {
 

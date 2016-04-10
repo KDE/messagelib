@@ -51,8 +51,9 @@ namespace Interface
 class BodyPartURLHandler;
 class BodyPart;
 
-class MIMETREEPARSER_EXPORT MessagePart
+class MIMETREEPARSER_EXPORT MessagePart : public QObject
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<MessagePart> Ptr;
     explicit MessagePart();
