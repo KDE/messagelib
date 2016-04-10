@@ -370,6 +370,10 @@ KMMsgEncryptionState NodeHelper::overallEncryptionState(KMime::Content *node) co
             otherState = overallEncryptionState(next->contents().at(0));
         }
 
+        if (otherState == KMMsgNotEncrypted && !extraContents(next).isEmpty()) {
+            otherState = overallEncryptionState(extraContents(next).at(0));
+        }
+
         if (next == node) {
             myState = otherState;
         }
@@ -422,6 +426,10 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
         // NOTE: children are tested ONLY when parent is not encrypted
         if (otherState == KMMsgNotSigned && !next->contents().isEmpty()) {
             otherState = overallSignatureState(next->contents().at(0));
+        }
+
+        if (otherState == KMMsgNotSigned && !extraContents(next).isEmpty()) {
+            otherState = overallSignatureState(extraContents(next).at(0));
         }
 
         if (next == node) {

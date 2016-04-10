@@ -95,10 +95,7 @@ void UnencryptedMessageTest::testForwardedOpenPGPSignedEncrypted()
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "bla bla bla");   // The textual content doesn't include the encrypted encapsulated message by design
     QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgPartiallyEncrypted);
 
-    // Signature state handling is broken. First, the state is apparently not calculated correctly,
-    // and then the state is never stored somewhere so it can't be remembered.
-    QEXPECT_FAIL("", "Signature state handling broken!", Continue);
-    QVERIFY(nodeHelper.overallSignatureState(originalMessage.data()) != KMMsgNotSigned);
+    QCOMPARE(nodeHelper.overallSignatureState(originalMessage.data()), KMMsgPartiallySigned);
 
     // Now, test that the unencrypted message is generated correctly
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
@@ -131,10 +128,7 @@ void UnencryptedMessageTest::testSMIMESignedEncrypted()
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "encrypted message text");
     QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgFullyEncrypted);
 
-    // Signature state handling is broken. First, the state is apparently not calculated correctly,
-    // and then the state is never stored somewhere so it can't be remembered.
-    QEXPECT_FAIL("", "Signature state handling broken!", Continue);
-    QVERIFY(nodeHelper.overallSignatureState(originalMessage.data()) != KMMsgNotSigned);
+    QCOMPARE(nodeHelper.overallSignatureState(originalMessage.data()), KMMsgFullySigned);
 
     // Now, test that the unencrypted message is generated correctly
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
@@ -160,10 +154,7 @@ void UnencryptedMessageTest::testOpenPGPSignedEncrypted()
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "encrypted message text");
     QCOMPARE(nodeHelper.overallEncryptionState(originalMessage.data()), KMMsgFullyEncrypted);
 
-    // Signature state handling is broken. First, the state is apparently not calculated correctly,
-    // and then the state is never stored somewhere so it can't be remembered.
-    QEXPECT_FAIL("", "Signature state handling broken!", Continue);
-    QVERIFY(nodeHelper.overallSignatureState(originalMessage.data()) != KMMsgNotSigned);
+    QCOMPARE(nodeHelper.overallSignatureState(originalMessage.data()), KMMsgFullySigned);
 
     // Now, test that the unencrypted message is generated correctly
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
