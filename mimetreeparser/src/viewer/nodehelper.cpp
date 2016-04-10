@@ -188,7 +188,7 @@ void NodeHelper::setEncryptionState(KMime::Content *node, const KMMsgEncryptionS
     mEncryptionState[node] = state;
 }
 
-KMMsgEncryptionState NodeHelper::encryptionState(KMime::Content *node) const
+KMMsgEncryptionState NodeHelper::encryptionState(const KMime::Content *node) const
 {
     return mEncryptionState.value(node, KMMsgNotEncrypted);
 }
@@ -198,7 +198,7 @@ void NodeHelper::setSignatureState(KMime::Content *node, const KMMsgSignatureSta
     mSignatureState[node] = state;
 }
 
-KMMsgSignatureState NodeHelper::signatureState(KMime::Content *node) const
+KMMsgSignatureState NodeHelper::signatureState(const KMime::Content *node) const
 {
     return mSignatureState.value(node, KMMsgNotSigned);
 }

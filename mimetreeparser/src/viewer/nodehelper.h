@@ -66,10 +66,10 @@ public:
     void forceCleanTempFiles();
 
     void setEncryptionState(KMime::Content *node, const KMMsgEncryptionState state);
-    KMMsgEncryptionState encryptionState(KMime::Content *node) const;
+    KMMsgEncryptionState encryptionState(const KMime::Content *node) const;
 
     void setSignatureState(KMime::Content *node, const KMMsgSignatureState state);
-    KMMsgSignatureState signatureState(KMime::Content *node) const;
+    KMMsgSignatureState signatureState(const KMime::Content *node) const;
 
     KMMsgSignatureState overallSignatureState(KMime::Content *node) const;
     KMMsgEncryptionState overallEncryptionState(KMime::Content *node) const;
@@ -285,8 +285,8 @@ private:
 private:
     QList<KMime::Content *> mProcessedNodes;
     QList<KMime::Content *> mNodesUnderProcess;
-    QMap<KMime::Content *, KMMsgEncryptionState> mEncryptionState;
-    QMap<KMime::Content *, KMMsgSignatureState> mSignatureState;
+    QMap<const KMime::Content *, KMMsgEncryptionState> mEncryptionState;
+    QMap<const KMime::Content *, KMMsgSignatureState> mSignatureState;
     QSet<KMime::Content *> mDisplayEmbeddedNodes;
     QSet<KMime::Content *> mDisplayHiddenNodes;
     QTextCodec *mLocalCodec;
