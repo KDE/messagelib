@@ -308,11 +308,11 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         Interface::MessagePartPtr mp;
         if (processType(node, processResult, mediaType, subType, mp)) {
             if (mp) {
-                mpl->appendMessagePart(mp);
+                mpl->appendSubPart(mp);
             }
         } else if (processType(node, processResult, mediaType, "*", mp)) {
             if (mp) {
-                mpl->appendMessagePart(mp);
+                mpl->appendSubPart(mp);
             }
         } else {
             qCWarning(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
@@ -321,7 +321,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
                 if (auto _mp = mp.dynamicCast<MessagePart>()) {
                     _mp->setAttachmentFlag(node);
                 }
-                mpl->appendMessagePart(mp);
+                mpl->appendSubPart(mp);
             }
         }
         mNodeHelper->setNodeProcessed(node, false);

@@ -63,11 +63,15 @@ public:
     virtual void html(bool decorate);
     virtual QString text() const;
 
+    void setParentPart(MessagePart *parentPart);
+    MessagePart *parentPart() const;
+
 private:
     MimeTreeParser::HtmlWriter *htmlWriter();
 
     MimeTreeParser::HtmlWriter *mHtmlWriter;
     const BodyPart *mPart;
+    MessagePart *mParentPart;
 
     friend class BodyPartFormatter;
 };

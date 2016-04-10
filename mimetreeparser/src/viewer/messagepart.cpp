@@ -1123,6 +1123,9 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
     mSubOtp = new ObjectTreeParser(mOtp, onlyOneMimePart);
     mSubOtp->setAllowAsync(mOtp->allowAsync());
     mSubMessagePart = mSubOtp->parseObjectTreeInternal(node);
+    foreach(auto part, mSubMessagePart->subParts()) {
+        part->setParentPart(this);
+    }
 }
 
 void MessagePart::renderInternalHtml(bool decorate) const
@@ -1157,6 +1160,22 @@ void MessagePart::fix() const
     }
 }
 
+void MessagePart::appendSubPart(const Interface::MessagePart::Ptr &messagePart)
+{
+    messagePart->setParentPart(this);
+    mBlocks.append(messagePart);
+}
+
+const QVector<Interface::MessagePart::Ptr> &MessagePart::subParts() const
+{
+    return mBlocks;
+}
+
+bool MessagePart::hasSubParts() const
+{
+    return !mBlocks.isEmpty();
+}
+
 //-----MessagePartList----------------------
 MessagePartList::MessagePartList(ObjectTreeParser *otp)
     : MessagePart(otp, QString())
@@ -1187,15 +1206,6 @@ HTMLBlock::Ptr MessagePartList::rootBlock() const
     return HTMLBlock::Ptr();
 }
 
-void MessagePartList::appendMessagePart(const Interface::MessagePart::Ptr &messagePart)
-{
-    mBlocks.append(messagePart);
-}
-
-const QVector<Interface::MessagePart::Ptr> &MessagePartList::messageParts() const
-{
-    return mBlocks;
-}
 
 void MessagePartList::html(bool decorate)
 {
@@ -1207,7 +1217,7 @@ void MessagePartList::html(bool decorate)
 
 void MessagePartList::htmlInternal(bool decorate)
 {
-    foreach (const auto &mp, mBlocks) {
+    foreach (const auto &mp, subParts()) {
         mp->html(decorate);
     }
 }
@@ -1215,7 +1225,7 @@ void MessagePartList::htmlInternal(bool decorate)
 QString MessagePartList::text() const
 {
     QString text;
-    foreach (const auto &mp, mBlocks) {
+    foreach (const auto &mp, subParts()) {
         text += mp->text();
     }
     return text;
@@ -1223,7 +1233,7 @@ QString MessagePartList::text() const
 
 void MessagePartList::fix() const
 {
-    foreach (const auto &mp, mBlocks) {
+    foreach (const auto &mp, subParts()) {
         const auto m = mp.dynamicCast<MessagePart>();
         if (m) {
             m->fix();
@@ -1233,7 +1243,7 @@ void MessagePartList::fix() const
 
 void MessagePartList::copyContentFrom() const
 {
-    foreach (const auto &mp, mBlocks) {
+    foreach (const auto &mp, subParts()) {
         const auto m = mp.dynamicCast<MessagePart>();
         if (m) {
             m->copyContentFrom();
@@ -1301,12 +1311,12 @@ void TextMessagePart::parseContent()
 
             if (block.type() == NoPgpBlock && !block.text().trimmed().isEmpty()) {
                 fullySignedOrEncryptedTmp = false;
-                appendMessagePart(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(block.text()))));
+                appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(block.text()))));
             } else if (block.type() == PgpMessageBlock) {
                 CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, Q_NULLPTR));
                 mp->setDecryptMessage(decryptMessage());
                 mp->setIsEncrypted(true);
-                appendMessagePart(mp);
+                appendSubPart(mp);
                 if (!decryptMessage()) {
                     continue;
                 }
@@ -1316,13 +1326,13 @@ void TextMessagePart::parseContent()
                 }
             } else if (block.type() == ClearsignedBlock) {
                 CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, Q_NULLPTR));
-                appendMessagePart(mp);
+                appendSubPart(mp);
                 mp->startVerification(block.text(), aCodec);
             } else {
                 continue;
             }
 
-            const auto mp = messageParts().last().staticCast<MessagePart>();
+            const auto mp = subParts().last().staticCast<MessagePart>();
             const PartMetaData *messagePart(mp->partMetaData());
 
             if (!messagePart->isEncrypted && !messagePart->isSigned && !block.text().trimmed().isEmpty()) {

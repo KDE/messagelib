@@ -114,7 +114,7 @@ Interface::MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPar
     digestHeaderStr += str.midRef(0, thisDelim);
 
     MessagePartList::Ptr mpl(new MessagePartList(part.objectTreeParser()));
-    mpl->appendMessagePart(createAndParseTempNode(part, part.topLevelContent(), digestHeaderStr.toLatin1(), "Digest Header"));
+    mpl->appendSubPart(createAndParseTempNode(part, part.topLevelContent(), digestHeaderStr.toLatin1(), "Digest Header"));
     //mReader->queueHtml("<br><hr><br>");
     // temporarily change curent node's Content-Type
     // to get our embedded RfC822 messages properly inserted
@@ -151,7 +151,7 @@ Interface::MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPar
             }
         }
         qCDebug(MIMETREEPARSER_LOG) << "        embedded message found: \"" << subject;
-        mpl->appendMessagePart(createAndParseTempNode(part, part.topLevelContent(), partStr.toLatin1(), subject.toLatin1()));
+        mpl->appendSubPart(createAndParseTempNode(part, part.topLevelContent(), partStr.toLatin1(), subject.toLatin1()));
         //mReader->queueHtml("<br><hr><br>");
         thisDelim = nextDelim + 1;
         nextDelim = str.indexOf(delim1, thisDelim, Qt::CaseInsensitive);
@@ -179,6 +179,6 @@ Interface::MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPar
     }
     partStr = QStringLiteral("Content-Type: text/plain\nContent-Description: digest footer\n\n");
     partStr += str.midRef(thisDelim);
-    mpl->appendMessagePart(createAndParseTempNode(part, part.topLevelContent(), partStr.toLatin1(), "Digest Footer"));
+    mpl->appendSubPart(createAndParseTempNode(part, part.topLevelContent(), partStr.toLatin1(), "Digest Footer"));
     return mpl;
 }

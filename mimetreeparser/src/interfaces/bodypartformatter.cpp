@@ -42,6 +42,7 @@ MessagePart::MessagePart()
     : QObject()
     , mHtmlWriter(Q_NULLPTR)
     , mPart(Q_NULLPTR)
+    , mParentPart(Q_NULLPTR)
 {
 }
 
@@ -49,6 +50,7 @@ MessagePart::MessagePart(const BodyPart &part)
     : QObject()
     , mHtmlWriter(Q_NULLPTR)
     , mPart(&part)
+    , mParentPart(Q_NULLPTR)
 {
 
 }
@@ -66,6 +68,16 @@ void MessagePart::html(bool decorate)
 QString MessagePart::text() const
 {
     return QString();
+}
+
+MessagePart* MessagePart::parentPart() const
+{
+    return mParentPart;
+}
+
+void MessagePart::setParentPart(MessagePart* parentPart)
+{
+    mParentPart = parentPart;
 }
 
 MimeTreeParser::HtmlWriter *MessagePart::htmlWriter()

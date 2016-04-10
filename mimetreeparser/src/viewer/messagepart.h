@@ -233,6 +233,10 @@ public:
     virtual void fix() const;
     virtual void copyContentFrom() const;
 
+    void appendSubPart(const Interface::MessagePart::Ptr &messagePart);
+    const QVector<Interface::MessagePart::Ptr> &subParts() const;
+    bool hasSubParts() const;
+
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
     void renderInternalHtml(bool decorate) const;
@@ -245,6 +249,8 @@ protected:
     MessagePart::Ptr mSubMessagePart;
     PartMetaData mMetaData;
     KMime::Content *mAttachmentNode;
+private:
+    QVector<Interface::MessagePart::Ptr> mBlocks;
 };
 
 class MimeMessagePart : public MessagePart
@@ -277,10 +283,6 @@ public:
     void setIsRoot(bool root);
     bool isRoot() const;
 
-    void appendMessagePart(const Interface::MessagePart::Ptr &messagePart);
-
-    const QVector<Interface::MessagePart::Ptr> &messageParts() const;
-
     void fix() const Q_DECL_OVERRIDE;
     void copyContentFrom() const Q_DECL_OVERRIDE;
 
@@ -289,7 +291,6 @@ protected:
     void htmlInternal(bool decorate);
 
 private:
-    QVector<Interface::MessagePart::Ptr> mBlocks;
     bool mRoot;
 };
 
