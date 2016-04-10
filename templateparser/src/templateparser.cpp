@@ -52,7 +52,7 @@ namespace TemplateParser
 
 static const int PipeTimeout = 15 * 1000;
 
-QTextCodec *selectCharset(const QStringList &charsets, const QString &text)
+static QTextCodec *selectCharset(const QStringList &charsets, const QString &text)
 {
     foreach (const QString &name, charsets) {
         // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
