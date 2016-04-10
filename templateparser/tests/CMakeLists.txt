@@ -10,6 +10,7 @@ target_link_libraries(templateeditor_gui
   KF5::TemplateParser
   KF5::PimTextEdit
   KF5::I18n
+  KF5::MessageViewer
 )
 
 set(templateconfigurewidget_gui_SRCS templateconfigurewidget_gui.cpp)
@@ -20,4 +21,5 @@ target_link_libraries(templateconfigurewidget_gui
   KF5::TemplateParser
   KF5::I18n
   KF5::PimTextEdit
+  KF5::MessageViewer
 )
