@@ -464,7 +464,7 @@ void ProcessResult::setIsImage(bool image)
     mIsImage = image;
 }
 
-void ProcessResult::adjustCryptoStatesOfNode(KMime::Content *node) const
+void ProcessResult::adjustCryptoStatesOfNode(const KMime::Content *node) const
 {
     if ((inlineSignatureState()  != KMMsgNotSigned) ||
             (inlineEncryptionState() != KMMsgNotEncrypted)) {

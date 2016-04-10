@@ -65,10 +65,10 @@ public:
     void clear();
     void forceCleanTempFiles();
 
-    void setEncryptionState(KMime::Content *node, const KMMsgEncryptionState state);
+    void setEncryptionState(const KMime::Content *node, const KMMsgEncryptionState state);
     KMMsgEncryptionState encryptionState(const KMime::Content *node) const;
 
-    void setSignatureState(KMime::Content *node, const KMMsgSignatureState state);
+    void setSignatureState(const KMime::Content *node, const KMMsgSignatureState state);
     KMMsgSignatureState signatureState(const KMime::Content *node) const;
 
     KMMsgSignatureState overallSignatureState(KMime::Content *node) const;

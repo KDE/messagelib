@@ -183,7 +183,7 @@ void NodeHelper::clear()
     mDisplayHiddenNodes.clear();
 }
 
-void NodeHelper::setEncryptionState(KMime::Content *node, const KMMsgEncryptionState state)
+void NodeHelper::setEncryptionState(const KMime::Content *node, const KMMsgEncryptionState state)
 {
     mEncryptionState[node] = state;
 }
@@ -193,7 +193,7 @@ KMMsgEncryptionState NodeHelper::encryptionState(const KMime::Content *node) con
     return mEncryptionState.value(node, KMMsgNotEncrypted);
 }
 
-void NodeHelper::setSignatureState(KMime::Content *node, const KMMsgSignatureState state)
+void NodeHelper::setSignatureState(const KMime::Content *node, const KMMsgSignatureState state)
 {
     mSignatureState[node] = state;
 }

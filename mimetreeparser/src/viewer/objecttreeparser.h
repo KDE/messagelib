@@ -101,7 +101,7 @@ public:
     bool isImage() const;
     void setIsImage(bool image);
 
-    void adjustCryptoStatesOfNode(KMime::Content *node) const;
+    void adjustCryptoStatesOfNode(const KMime::Content* node) const;
 
 private:
     KMMsgSignatureState mInlineSignatureState;
