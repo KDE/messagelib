@@ -46,7 +46,6 @@
 #include "partnodebodypart.h"
 
 #include "mimetreeparser_debug.h"
-#include "objecttreesourceif.h"
 
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/htmlwriter.h"

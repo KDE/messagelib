@@ -34,6 +34,8 @@
 #ifndef __MIMETREEPARSER_INTERFACES_BODYPART_H__
 #define __MIMETREEPARSER_INTERFACES_BODYPART_H__
 
+#include "mimetreeparser_export.h"
+
 #include <QByteArray>
 #include <QString>
 
@@ -59,10 +61,10 @@ namespace Interface
 /**
     @short interface of classes that implement status for BodyPartFormatters.
 */
-class BodyPartMemento
+class MIMETREEPARSER_EXPORT BodyPartMemento
 {
 public:
-    virtual ~BodyPartMemento() {}
+    virtual ~BodyPartMemento();
 
     virtual void detach() = 0;
 #if 0
@@ -88,10 +90,10 @@ public:
 /**
     @short interface of message body parts.
 */
-class BodyPart
+class MIMETREEPARSER_EXPORT BodyPart
 {
 public:
-    virtual ~BodyPart() {}
+    virtual ~BodyPart();
 
     /**
     @return a string respresentation of an URL that can be used

@@ -33,6 +33,8 @@
 #ifndef __MIMETREEPARSER_INTERFACES_HTMLWRITER_H__
 #define __MIMETREEPARSER_INTERFACES_HTMLWRITER_H__
 
+#include "mimetreeparser_export.h"
+
 class QByteArray;
 class QString;
 
@@ -45,10 +47,10 @@ namespace MimeTreeParser
   */
 namespace Interface
 {
-class HtmlWriter
+class MIMETREEPARSER_EXPORT HtmlWriter
 {
 public:
-    virtual ~HtmlWriter() {}
+    virtual ~HtmlWriter();
 
     /** Signal the begin of stuff to write, and give the CSS definitions */
     virtual void begin(const QString &cssDefinitions) = 0;
@@ -98,10 +100,10 @@ public:
   * Naturally, whenever you queued data in a given session, that
   * session must be ended by calling #flush(), not #end().
   */
-class HtmlWriter : public Interface::HtmlWriter
+class MIMETREEPARSER_EXPORT HtmlWriter : public Interface::HtmlWriter
 {
 public:
-    virtual ~HtmlWriter() {}
+    virtual ~HtmlWriter();
 
     /** Stop all possibly pending processing in order to be able to
       *  call #begin() again. */

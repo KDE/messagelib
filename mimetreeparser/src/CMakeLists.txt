@@ -20,6 +20,9 @@ set(libmimetreeparser_main_SRCS
     bodyformatter/texthtml.cpp
     bodyformatter/utils.cpp
     interfaces/bodypartformatter.cpp
+    interfaces/objecttreesourceif.cpp
+    interfaces/bodypart.cpp
+    interfaces/htmlwriter.cpp
     job/kleojobexecutor.cpp
     viewer/attachmentstrategy.cpp
     viewer/bodypartformatter.cpp
@@ -66,13 +69,6 @@ ecm_generate_headers(MimeTreeParser_Camelcaseviewer_HEADERS
     RELATIVE viewer
     )
 
-ecm_generate_headers(MimeTreeParser_Camelcasemain_HEADERS
-    HEADER_NAMES
-    ObjectTreeSourceIf
-    REQUIRED_HEADERS MimeTreeParser_main_HEADERS
-    PREFIX MimeTreeParser
-    )
-
 ecm_generate_headers(MimeTreeParser_Camelcaseutils_HEADERS
     HEADER_NAMES
     IconNameCache
@@ -87,6 +83,7 @@ ecm_generate_headers(MimeTreeParser_Camelcaseinterfaces_HEADERS
     BodyPartFormatter
     BodyPart
     HtmlWriter
+    ObjectTreeSourceIf
     REQUIRED_HEADERS MimeTreeParser_interfaces_HEADERS
     PREFIX MimeTreeParser
     RELATIVE interfaces
@@ -113,7 +110,6 @@ install(FILES
     ${MimeTreeParser_Camelcaseutils_HEADERS}
     ${MimeTreeParser_Camelcaseinterfaces_HEADERS}
     ${MimeTreeParser_Camelcaseviewer_HEADERS}
-    ${MimeTreeParser_Camelcasemain_HEADERS}
     ${MimeTreeParser_Camelcasetemporaryfile_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
     COMPONENT Devel
@@ -124,7 +120,6 @@ install(FILES
     ${MimeTreeParser_utils_HEADERS}
     ${MimeTreeParser_interfaces_HEADERS}
     ${MimeTreeParser_viewer_HEADERS}
-    ${MimeTreeParser_main_HEADERS}
     ${MimeTreeParser_temporaryfile_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_debug.h
