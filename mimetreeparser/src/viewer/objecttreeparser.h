@@ -37,7 +37,7 @@
 #include "mimetreeparser_export.h"
 
 #include "mimetreeparser/nodehelper.h"
-#include "objecttreesourceif.h"
+#include "mimetreeparser/objecttreesourceif.h"
 
 #include <Libkleo/CryptoBackend>
 #include <gpgme++/verificationresult.h>

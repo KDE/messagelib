@@ -22,7 +22,7 @@
 #define MESSAGECORE_TESTS_UTIL_H
 
 #include <gpgme++/key.h>
-#include "objecttreesourceif.h"
+#include "interfaces/objecttreesourceif.h"
 #include <viewer/attachmentstrategy.h>
 #include "viewer/bodypartformatterbasefactory.h"
 

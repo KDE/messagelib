@@ -61,7 +61,7 @@ public:
         : entered(false)
     { }
 
-    virtual ~HTMLBlock() { }
+    virtual ~HTMLBlock();
 
 protected:
     QString dir() const;

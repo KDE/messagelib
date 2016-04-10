@@ -112,6 +112,10 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
     return false;
 }
 
+HTMLBlock::~HTMLBlock()
+{
+}
+
 QString HTMLBlock::dir() const
 {
     return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
