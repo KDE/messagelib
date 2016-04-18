@@ -31,6 +31,7 @@ public:
     {
 
     }
+    QString mJquery;
     QWidget *mCurrentWidget;
 };
 
@@ -38,6 +39,13 @@ WebEngineView::WebEngineView(QWidget *parent)
     : QWebEngineView(parent),
       d(new WebEngineViewer::WebEngineViewPrivate)
 {
+    QFile file;
+    file.setFileName(QStringLiteral(":/data/jquery.min.js"));
+    file.open(QIODevice::ReadOnly);
+    d->mJquery = QString::fromUtf8(file.readAll());
+    d->mJquery.append(QStringLiteral("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
+    file.close();
+
     installEventFilter(this);
     connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
 }
@@ -145,5 +153,6 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 
 void WebEngineView::slotLoadFinished()
 {
-    //TODO load jquery
+    page()->runJavaScript(d->mJquery);
+    //qDebug() << " d->mJquery" << d->mJquery;
 }
