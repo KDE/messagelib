@@ -132,7 +132,7 @@ void MailWebEngineView::selectAll()
 
 void MailWebEngineView::slotZoomChanged(qreal zoom)
 {
-    qDebug() << " void MailWebEngineView::slotZoomChanged(qreal zoom)*******" << zoom;
+    //qDebug() << " void MailWebEngineView::slotZoomChanged(qreal zoom)*******" << zoom;
     setZoomFactor(zoom);
 }
 
@@ -269,12 +269,12 @@ void MailWebEngineView::toggleFullAddressList(const QString &field, const boost:
 
 void MailWebEngineView::updateToggleFullAddressList(const QVariant &result)
 {
-    qDebug() << " result" << result;
+    //qDebug() << " result" << result;
     if (result.isValid()) {
         const QList<QVariant> lst = result.toList();
         if (lst.count() == 1) {
             const QVariantMap map = lst.at(0).toMap();
-            qDebug() << "map !!!! " << map;
+            //qDebug() << "map !!!! " << map;
             const bool show = map.value(QStringLiteral("show")).toBool();
             const QString field = map.value(QStringLiteral("field")).toString();
             page()->runJavaScript(MessageViewer::MailWebEngineScript::updateToggleFullAddressList(field, show));
