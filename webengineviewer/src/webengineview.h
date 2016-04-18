@@ -40,6 +40,8 @@ protected:
     virtual void forwardMousePressEvent(QMouseEvent *event);
     virtual void forwardMouseMoveEvent(QMouseEvent *event);
     virtual void forwardMouseReleaseEvent(QMouseEvent *event);
+private Q_SLOTS:
+    void slotLoadFinished();
 private:
     WebEngineViewPrivate *const d;
 };

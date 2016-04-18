@@ -39,6 +39,7 @@ WebEngineView::WebEngineView(QWidget *parent)
       d(new WebEngineViewer::WebEngineViewPrivate)
 {
     installEventFilter(this);
+    connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
 }
 
 WebEngineView::~WebEngineView()
@@ -140,4 +141,9 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
         }
     }
     return QWebEngineView::eventFilter(obj, event);
+}
+
+void WebEngineView::slotLoadFinished()
+{
+    //TODO load jquery
 }
