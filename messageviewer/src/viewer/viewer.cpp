@@ -251,8 +251,7 @@ void Viewer::slotScrollNext()
 QString Viewer::selectedText() const
 {
     Q_D(const Viewer);
-    QString temp = d->mViewer->selectedText();
-    return temp;
+    return d->mViewer->selectedText();
 }
 
 Viewer::DisplayFormatMessage Viewer::displayFormatMessageOverwrite() const

@@ -189,3 +189,11 @@ QString WebEngineScript::scrollToRelativePosition(int pos)
     const QString source = QString::fromLatin1("window.scrollTo(window.scrollX, %1); [window.scrollX, window.scrollY];").arg(pos);
     return source;
 }
+
+QString WebEngineScript::clearSelection()
+{
+    const QString source = QString::fromLatin1("if(\"document.selection\") {"
+                                               "   document.selection.clear ();"
+                                               "};");
+    return source;
+}

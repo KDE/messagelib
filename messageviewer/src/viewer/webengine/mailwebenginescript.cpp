@@ -80,3 +80,4 @@ QString MailWebEngineScript::toggleFullAddressList(const QString &field, const Q
     qDebug() << "QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :" << source;
     return source;
 }
+

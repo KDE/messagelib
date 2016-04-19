@@ -1290,6 +1290,9 @@ void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
 
 void ViewerPrivate::resetStateForNewMessage()
 {
+#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+    mViewer->clearSelection();
+#endif
     mClickedUrl.clear();
     mImageUrl.clear();
     enableMessageDisplay(); // just to make sure it's on
