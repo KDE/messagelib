@@ -1,3 +1,1 @@
 #cmakedefine HAVE_SYS_INOTIFY_H 1
-
-#cmakedefine MESSAGEVIEWER_USE_QTWEBENGINE 1

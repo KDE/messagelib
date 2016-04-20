@@ -28,7 +28,6 @@
 #include "messagedisplayformatattribute.h"
 #include "scamdetection/scamdetectionwarningwidget.h"
 #include "scamdetection/scamattribute.h"
-#include "adblock/adblockmanager.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "widgets/openattachmentfolderwidget.h"
 #include "messageviewer/headerstyle.h"
@@ -117,20 +116,12 @@
 #include "messageviewer/messageviewerutil.h"
 #include "widgets/vcardviewer.h"
 
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 #include "findbar/findbarwebengineview.h"
 #include "viewer/webengine/mailwebengineview.h"
 #include <QWebEngineSettings>
 #include "htmlwriter/webengineparthtmlwriter.h"
 #include <widgets/mailsourcewebengineviewer.h>
 #include <WebEngineViewer/WebHitTestResult>
-#else
-#include <QWebElement>
-#include "widgets/mailsourceviewer.h"
-#include "htmlwriter/webkitparthtmlwriter.h"
-#include "viewer/webview/mailwebview.h"
-#include "findbar/findbarwebview.h"
-#endif
 #include "header/headerstylemenumanager.h"
 
 #include <MimeTreeParser/BodyPart>
@@ -844,13 +835,8 @@ void ViewerPrivate::displayMessage()
     mColorBar->update();
 
     htmlWriter()->queue(QStringLiteral("</body></html>"));
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::injectAttachments, Qt::UniqueConnection);
     connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotMessageRendered, Qt::UniqueConnection);
-#else
-    connect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::injectAttachments, Qt::UniqueConnection);
-    connect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotMessageRendered, Qt::UniqueConnection);
-#endif
     connect(mPartHtmlWriter, SIGNAL(finished()), this, SLOT(toggleFullAddressList()), Qt::UniqueConnection);
     htmlWriter()->flush();
 }
@@ -1039,11 +1025,7 @@ void ViewerPrivate::initHtmlWidget()
     mViewer->installEventFilter(this);
 
     if (!htmlWriter()) {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
         mPartHtmlWriter = new WebEnginePartHtmlWriter(mViewer, 0);
-#else
-        mPartHtmlWriter = new WebKitPartHtmlWriter(mViewer, 0);
-#endif
 #ifdef MESSAGEVIEWER_READER_HTML_DEBUG
         mHtmlWriter = new TeeHtmlWriter(new FileHtmlWriter(QString()),
                                         mPartHtmlWriter);
@@ -1051,7 +1033,6 @@ void ViewerPrivate::initHtmlWidget()
         mHtmlWriter = mPartHtmlWriter;
 #endif
     }
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     connect(mViewer->page(), &QWebEnginePage::linkHovered,
             this, &ViewerPrivate::slotUrlOn);
     connect(mViewer, &MailWebEngineView::openUrl,
@@ -1060,16 +1041,6 @@ void ViewerPrivate::initHtmlWidget()
             this, &ViewerPrivate::slotUrlPopup);
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
-#else
-    connect(mViewer, &MailWebView::linkHovered,
-            this, &ViewerPrivate::slotUrlOn);
-    connect(mViewer, &QWebView::linkClicked,
-            this, &ViewerPrivate::slotUrlOpen, Qt::QueuedConnection);
-    connect(mViewer, &MailWebView::popupMenu,
-            this, &ViewerPrivate::slotUrlPopup);
-    connect(mViewer, &MailWebView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
-    connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebView::slotShowDetails);
-#endif
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::messageIsNotAScam, this, &ViewerPrivate::slotMessageIsNotAScam);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::addToWhiteList, this, &ViewerPrivate::slotAddToWhiteList);
@@ -1161,16 +1132,10 @@ void ViewerPrivate::readConfig()
     adjustLayout();
 
     readGlobalOverrideCodec();
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumLogicalFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
     //TODO verify Qt5.7
     //FIXME mViewer->settings()->setAttribute(QWebEngineSettings::PrintElementBackgrounds, MessageViewer::MessageViewerSettings::self()->printBackgroundColorImages());
-#else
-    mViewer->settings()->setFontSize(QWebSettings::MinimumFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
-    mViewer->settings()->setFontSize(QWebSettings::MinimumLogicalFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
-    mViewer->settings()->setAttribute(QWebSettings::PrintElementBackgrounds, MessageViewer::MessageViewerSettings::self()->printBackgroundColorImages());
-#endif
     if (mMessage) {
         update();
     }
@@ -1266,33 +1231,21 @@ void ViewerPrivate::setPrinting(bool enable)
 
 void ViewerPrivate::printMessage(const Akonadi::Item &message)
 {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
     connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
-#else
-    disconnect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
-    connect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
-#endif
     setMessageItem(message, MimeTreeParser::Force);
 }
 
 void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
 {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
     connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
-#else
-    disconnect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
-    connect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
-#endif
     setMessageItem(message, MimeTreeParser::Force);
 }
 
 void ViewerPrivate::resetStateForNewMessage()
 {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     mViewer->clearSelection();
-#endif
     mClickedUrl.clear();
     mImageUrl.clear();
     enableMessageDisplay(); // just to make sure it's on
@@ -1517,11 +1470,7 @@ void ViewerPrivate::createWidgets()
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
     readerBoxVBoxLayout->addWidget(mTextToSpeechWidget);
 
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     mViewer = new MailWebEngineView(mActionCollection, readerBox);
-#else
-    mViewer = new MailWebView(mActionCollection, readerBox);
-#endif
     readerBoxVBoxLayout->addWidget(mViewer);
     mViewer->setObjectName(QStringLiteral("mViewer"));
 
@@ -1538,11 +1487,7 @@ void ViewerPrivate::createWidgets()
     mSliderContainer = new KPIMTextEdit::SlideContainer(readerBox);
     mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
     readerBoxVBoxLayout->addWidget(mSliderContainer);
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     mFindBar = new FindBarWebEngineView(mViewer, q);
-#else
-    mFindBar = new FindBarWebView(mViewer, q);
-#endif
     connect(mFindBar, &FindBarBase::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
 
@@ -1572,12 +1517,7 @@ void ViewerPrivate::createActions()
         return;
     }
     mZoomActionMenu = new MessageViewer::ZoomActionMenu(this);
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     connect(mZoomActionMenu, &ZoomActionMenu::zoomChanged, mViewer, &MailWebEngineView::slotZoomChanged);
-#else
-    connect(mZoomActionMenu, &ZoomActionMenu::zoomChanged, mViewer, &MailWebView::slotZoomChanged);
-    connect(mZoomActionMenu, &ZoomActionMenu::zoomTextOnlyChanged, mViewer, &MailWebView::slotZoomTextOnlyChanged);
-#endif
     mZoomActionMenu->setActionCollection(ac);
     mZoomActionMenu->createZoomActions();
 
@@ -1641,13 +1581,8 @@ void ViewerPrivate::createActions()
     // copy selected text to clipboard
     mCopyAction = ac->addAction(KStandardAction::Copy, QStringLiteral("kmail_copy"), this,
                                 SLOT(slotCopySelectedText()));
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     connect(mViewer, &MailWebEngineView::selectionChanged,
             this, &ViewerPrivate::viewerSelectionChanged);
-#else
-    connect(mViewer, &QWebView::selectionChanged,
-            this, &ViewerPrivate::viewerSelectionChanged);
-#endif
     viewerSelectionChanged();
 
     // copy all text to clipboard
@@ -2027,12 +1962,8 @@ void ViewerPrivate::slotUrlOn(const QString &link)
     // The "link" we get here is not URL-encoded, and therefore there is no way QUrl could
     // parse it correctly. To workaround that, we use QWebFrame::hitTestContent() on the mouse position
     // to get the URL before WebKit managed to mangle it.
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     //TODO
     QUrl url(link);
-#else
-    QUrl url(mViewer->linkOrImageUrlAt(QCursor::pos()));
-#endif
     const QString protocol = url.scheme();
     if (protocol == QLatin1String("kmail") ||
             protocol == QLatin1String("x-kmail") ||
@@ -2057,7 +1988,7 @@ void ViewerPrivate::slotUrlOn(const QString &link)
     KPIM::BroadcastStatus::instance()->setTransientStatusMsg(msg);
     Q_EMIT showStatusBarMessage(msg);
 }
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
+
 void ViewerPrivate::slotUrlPopup(const WebEngineViewer::WebHitTestResult &result)
 {
     if (!mMsgDisplay) {
@@ -2082,33 +2013,6 @@ void ViewerPrivate::slotUrlPopup(const WebEngineViewer::WebHitTestResult &result
     Q_EMIT displayPopupMenu(mMessageItem, result, aPos);
     Q_EMIT popupMenu(mMessageItem, mClickedUrl, mImageUrl, aPos);
 }
-
-#else
-void ViewerPrivate::slotUrlPopup(const QUrl &aUrl, const QUrl &imageUrl, const QPoint &aPos)
-{
-    if (!mMsgDisplay) {
-        return;
-    }
-    mClickedUrl = aUrl;
-    mImageUrl = imageUrl;
-
-    if (URLHandlerManager::instance()->handleContextMenuRequest(aUrl, aPos, this)) {
-        return;
-    }
-
-    if (!mActionCollection) {
-        return;
-    }
-
-    if (aUrl.scheme() == QLatin1String("mailto")) {
-        mCopyURLAction->setText(i18n("Copy Email Address"));
-    } else {
-        mCopyURLAction->setText(i18n("Copy Link Address"));
-    }
-
-    Q_EMIT popupMenu(mMessageItem, aUrl, imageUrl, aPos);
-}
-#endif
 
 void ViewerPrivate::slotLoadExternalReference()
 {
@@ -2162,7 +2066,6 @@ void ViewerPrivate::slotShowMessageSource()
     }
     mNodeHelper->messageWithExtraContent(mMessage.data());
 
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     MailSourceWebEngineViewer *viewer = new MailSourceWebEngineViewer(); // deletes itself upon close
     viewer->setWindowTitle(i18n("Message as Plain Text"));
     const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
@@ -2171,17 +2074,6 @@ void ViewerPrivate::slotShowMessageSource()
     if (mUseFixedFont) {
         viewer->setFixedFont();
     }
-#else
-    MailSourceViewer *viewer = new MailSourceViewer(); // deletes itself upon close
-    viewer->setWindowTitle(i18n("Message as Plain Text"));
-    const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
-    viewer->setRawSource(rawMessage);
-    const QString htmlSource = mViewer->page()->mainFrame()->documentElement().toOuterXml();
-    viewer->setDisplayedSource(htmlSource);
-    if (mUseFixedFont) {
-        viewer->setFixedFont();
-    }
-#endif
     // Well, there is no widget to be seen here, so we have to use QCursor::pos()
     // Update: (GS) I'm not going to make this code behave according to Xinerama
     //         configuration because this is quite the hack.
@@ -2310,47 +2202,21 @@ void ViewerPrivate::slotDelayedResize()
 
 void ViewerPrivate::slotPrintPreview()
 {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
-#else
-    disconnect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintPreview);
-#endif
     if (!mMessage) {
         return;
     }
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     qDebug() << "ViewerPrivate::slotPrintPreview() not implemented";
-#else
-    PimCommon::KPimPrintPreviewDialog previewdlg(mViewer);
-    connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter * printer) {
-        mViewer->print(printer);
-    });
-    previewdlg.exec();
-#endif
 }
 
 void ViewerPrivate::slotPrintMsg()
 {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
-#else
-    disconnect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
-#endif
 
     if (!mMessage) {
         return;
     }
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     qDebug() << " ViewerPrivate::slotPrintMsg() not implemented";
-#else
-    QPrinter printer;
-
-    QScopedPointer<QPrintDialog> dlg(new QPrintDialog(&printer));
-
-    if (dlg && dlg->exec() == QDialog::Accepted) {
-        mViewer->print(&printer);
-    }
-#endif
 }
 
 void ViewerPrivate::slotSetEncoding()
@@ -2418,11 +2284,7 @@ QString ViewerPrivate::attachmentInjectionHtml()
 
 void ViewerPrivate::injectAttachments()
 {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::injectAttachments);
-#else
-    disconnect(mPartHtmlWriter.data(), &WebKitPartHtmlWriter::finished, this, &ViewerPrivate::injectAttachments);
-#endif
     // inject attachments in header view
     // we have to do that after the otp has run so we also see encrypted parts
 
@@ -2903,18 +2765,8 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(bool doShow, const QString &f
 void ViewerPrivate::toggleFullAddressList(const QString &field)
 {
     const bool doShow = (field == QLatin1String("To") && showFullToAddressList()) || (field == QLatin1String("Cc") && showFullCcAddressList());
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     qDebug() << "void ViewerPrivate::toggleFullAddressList(const QString &field) not implemented";
     mViewer->toggleFullAddressList(field, bind(&ViewerPrivate::recipientsQuickListLinkHtml, this, doShow, field), doShow);
-#else
-    // First inject the correct icon
-    if (mViewer->replaceInnerHtml(QLatin1String("iconFull") + field + QLatin1String("AddressList"),
-                                  bind(&ViewerPrivate::recipientsQuickListLinkHtml, this, doShow, field))) {
-        // Then show/hide the full address list
-        mViewer->setElementByIdVisible(QLatin1String("dotsFull")   + field + QLatin1String("AddressList"), !doShow);
-        mViewer->setElementByIdVisible(QLatin1String("hiddenFull") + field + QLatin1String("AddressList"),  doShow);
-    }
-#endif
 }
 
 void ViewerPrivate::itemFetchResult(KJob *job)
@@ -3090,20 +2942,12 @@ void ViewerPrivate::slotBlockImage()
     if (mImageUrl.isEmpty()) {
         return;
     }
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     qDebug() << "void ViewerPrivate::slotBlockImage() unimplemented";
-#else
-    MessageViewer::AdBlockManager::self()->addCustomRule(mImageUrl.url(), true);
-#endif
 }
 
 void ViewerPrivate::slotOpenBlockableItems()
 {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     qDebug() << "void ViewerPrivate::slotOpenBlockableItems() unimplemented";
-#else
-    mViewer->openBlockableItemsDialog();
-#endif
 }
 
 void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)
@@ -3128,9 +2972,7 @@ void ViewerPrivate::slotServiceUrlSelected(PimCommon::ShareServiceUrlManager::Se
     mShareServiceManager->openUrl(url);
 }
 
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 QList<QAction *> ViewerPrivate::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     return mViewer->interceptorUrlActions(result);
 }
-#endif

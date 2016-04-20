@@ -52,18 +52,14 @@ class QCloseEvent;
 class QEvent;
 class QResizeEvent;
 
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 namespace WebEngineViewer
 {
 class WebHitTestResult;
 }
-#endif
 
 namespace MessageViewer
 {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 class WebHitTestResult;
-#endif
 
 class HeaderStylePlugin;
 class CSSHelper;
@@ -342,9 +338,7 @@ public:
 
     void showOpenAttachmentFolderWidget(const QUrl &url);
     QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
-#endif
 
 Q_SIGNALS:
     void moveMessageToTrash();
@@ -364,9 +358,7 @@ Q_SIGNALS:
 
     /** The user presses the right mouse button. 'url' may be 0. */
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result, const QPoint &mousePos);
-#endif
     /**
     * The message viewer handles some types of urls itself, most notably http(s)
     * and ftp(s). When it can't handle the url it will Q_EMIT this signal.

@@ -29,13 +29,8 @@
 #include "widgets/configurewidget.h"
 #include "csshelper.h"
 #include "settings/messageviewersettings.h"
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 #include "viewer/webengine/mailwebengineview.h"
 #include <WebEngineViewer/WebHitTestResult>
-#else
-#include "adblock/adblockmanager.h"
-#include "viewer/webview/mailwebview.h"
-#endif
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "widgets/zoomactionmenu.h"
@@ -70,10 +65,8 @@ void Viewer::initialize()
 {
     connect(d_ptr, &ViewerPrivate::replaceMsgByUnencryptedVersion,
             this, &Viewer::replaceMsgByUnencryptedVersion);
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     connect(d_ptr, &ViewerPrivate::displayPopupMenu,
             this, &Viewer::displayPopupMenu);
-#endif
     connect(d_ptr, &ViewerPrivate::popupMenu,
             this, &Viewer::popupMenu);
     connect(d_ptr, SIGNAL(urlClicked(Akonadi::Item,QUrl)),
@@ -645,11 +638,7 @@ QAction *Viewer::blockImage() const
 
 bool Viewer::adblockEnabled() const
 {
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     return false;
-#else
-    return MessageViewer::AdBlockManager::self()->isEnabled();
-#endif
 }
 
 QAction *Viewer::openBlockableItems() const
@@ -688,13 +677,11 @@ QList<QAction *> Viewer::viewerPluginActionList(ViewerPluginInterface::SpecificF
     return d->viewerPluginActionList(features);
 }
 
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 QList<QAction *> Viewer::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     Q_D(const Viewer);
     return d->interceptorUrlActions(result);
 }
-#endif
 
 }
 

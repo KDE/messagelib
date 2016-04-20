@@ -71,26 +71,17 @@ class HtmlWriter;
 class ObjectTreeParser;
 }
 
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 namespace WebEngineViewer
 {
 class WebHitTestResult;
-
 }
-#endif
 namespace MessageViewer
 {
 class HeaderStylePlugin;
 class CSSHelper;
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
 class FindBarWebEngineView;
 class MailWebEngineView;
 class WebEnginePartHtmlWriter;
-#else
-class FindBarWebView;
-class MailWebView;
-class WebKitPartHtmlWriter;
-#endif
 class HtmlStatusBar;
 class ScamDetectionWarningWidget;
 class MimePartTreeView;
@@ -444,9 +435,7 @@ public:
     void setPluginName(const QString &pluginName);
 
     QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
-#endif
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -493,11 +482,7 @@ public Q_SLOTS:
     void slotUrlOn(const QString &link);
 
     /** The user presses the right mouse button on an URL. */
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     void slotUrlPopup(const WebEngineViewer::WebHitTestResult &result);
-#else
-    void slotUrlPopup(const QUrl &, const QUrl &imageUrl, const QPoint &mousePos);
-#endif
 
     /** The user selected "Find" from the menu. */
     void slotFind();
@@ -585,9 +570,7 @@ Q_SIGNALS:
     void showStatusBarMessage(const QString &message);
     void replaceMsgByUnencryptedVersion();
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result, const QPoint &mousePos);
-#endif
 
     void urlClicked(const Akonadi::Item &msg, const QUrl &url);
     void requestConfigSync();
@@ -622,13 +605,8 @@ public:
 #ifndef QT_NO_TREEVIEW
     MimePartTreeView *mMimePartTree;
 #endif
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     MailWebEngineView *mViewer;
     FindBarWebEngineView *mFindBar;
-#else
-    MailWebView *mViewer;
-    FindBarWebView *mFindBar;
-#endif
 
     const MimeTreeParser::AttachmentStrategy *mAttachmentStrategy;
     QTimer mUpdateReaderWinTimer;
@@ -676,11 +654,7 @@ public:
     MimeTreeParser::HtmlWriter *mHtmlWriter;
     /** Used only to be able to connect and disconnect finished() signal
       in printMsg() and slotPrintMsg() since mHtmlWriter points only to abstract non-QObject class. */
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
     QPointer<WebEnginePartHtmlWriter> mPartHtmlWriter;
-#else
-    QPointer<WebKitPartHtmlWriter> mPartHtmlWriter;
-#endif
 
     float mSavedRelativePosition;
     int mLevelQuote;

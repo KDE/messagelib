@@ -187,9 +187,5 @@ void ZoomActionMenuPrivate::createMenu()
     q->addAction(mZoomOutAction);
     q->addSeparator();
     q->addAction(mZoomResetAction);
-#ifndef MESSAGEVIEWER_USE_QTWEBENGINE
-    q->addSeparator();
-    q->addAction(mZoomTextOnlyAction);
-#endif
     mActionCollection->addAction(QStringLiteral("zoom_menu"), q);
 }

@@ -59,23 +59,6 @@ set(_mailwebview_cpp
     adblock/common/adblockautomaticruleslistwidget.cpp
     )
 
-if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
-    set(_mailwebview_cpp
-        adblock/common/adblockcreatefilterdialog.cpp
-        adblock/common/matcher/adblockrule.cpp
-        adblock/common/matcher/adblockruletextmatchimpl.cpp
-        adblock/common/matcher/adblockrulenullimpl.cpp
-        adblock/common/matcher/adblockhostmatcher.cpp
-        adblock/adblockelementhiding.cpp
-        adblock/adblockmanager.cpp
-        adblock/adblockrulefallbackimpl.cpp
-        adblock/adblockblockableitemsdialog.cpp
-        adblock/adblockblockableitemswidget.cpp
-        ${_mailwebview_cpp}
-        )
-endif()
-
-
 set(libmessageviewer_mailviewer_SRCS
     viewer/webengine/mailwebengineview.cpp
     viewer/webengine/mailwebenginepage.cpp
@@ -147,9 +130,6 @@ set(libmessageviewer_scamdetection_SRCS
     scamdetection/scamexpandurljob.cpp
     scamdetection/scamcheckshorturlmanager.cpp
     )
-if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
-    set(libmessageviewer_scamdetection_SRCS scamdetection/scamdetection.cpp ${libmessageviewer_scamdetection_SRCS})
-endif()
 
 set(libmessageviewer_scamdetection_webengine_SRCS
     scamdetection/scamdetectionwebengine.cpp
@@ -159,9 +139,6 @@ set(libmessageviewer_findbar_SRCS
     findbar/findbarbase.cpp
     findbar/findbarsourceview.cpp
     )
-if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
-    set(libmessageviewer_findbar_SRCS findbar/findbarwebview.cpp ${libmessageviewer_findbar_SRCS})
-endif()
 
 set(libmessageviewer_utils_SRCS
     utils/markmessagereadhandler.cpp
@@ -282,16 +259,6 @@ install(TARGETS
     EXPORT KF5MessageViewerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
     )
 
-ecm_generate_headers(MessageViewer_Camelcasewebviewer_HEADERS
-    HEADER_NAMES
-    MailWebView
-    WebViewAccessKey
-    WebPage
-    REQUIRED_HEADERS MessageViewer_webviewer_HEADERS
-    PREFIX MessageViewer
-    RELATIVE viewer/webview
-    )
-
 ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
     HEADER_NAMES
     MailWebEnginePage
@@ -348,7 +315,6 @@ ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
 
 ecm_generate_headers(MessageViewer_Camelfindbar_HEADERS
     HEADER_NAMES
-    FindBarWebView
     FindBarBase
     REQUIRED_HEADERS MessageViewer_findbar_HEADERS
     PREFIX MessageViewer
@@ -408,14 +374,6 @@ ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
     RELATIVE header
     )
 
-ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
-    HEADER_NAMES
-    WebKitPartHtmlWriter
-    REQUIRED_HEADERS MessageViewer_htmlwriter_HEADERS
-    PREFIX MessageViewer
-    RELATIVE htmlwriter
-    )
-
 ecm_generate_headers(MessageViewer_Camelcaseadblockcommon_HEADERS
     HEADER_NAMES
     AdBlockListWidget
@@ -423,16 +381,6 @@ ecm_generate_headers(MessageViewer_Camelcaseadblockcommon_HEADERS
     REQUIRED_HEADERS MessageViewer_adblockcommon_HEADERS
     PREFIX MessageViewer
     RELATIVE adblock/common
-    )
-
-
-ecm_generate_headers(MessageViewer_Camelcaseadblock_HEADERS
-    HEADER_NAMES
-    AdBlockBlockableItemsDialog
-    AdBlockManager
-    REQUIRED_HEADERS MessageViewer_adblock_HEADERS
-    PREFIX MessageViewer
-    RELATIVE adblock
     )
 
 ecm_generate_headers(MessageViewer_Camelcaseviewerplugin_HEADERS

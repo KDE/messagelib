@@ -33,9 +33,6 @@
 #include "settings/messageviewersettings.h"
 #include "adblockaddsubscriptiondialog.h"
 
-#ifndef MESSAGEVIEWER_USE_QTWEBENGINE
-#include "adblock/adblockmanager.h"
-#endif
 #include "adblockshowlistdialog.h"
 #include "adblock/common/adblockutil.h"
 #include "PimCommon/ConfigureImmutableWidgetUtils"
@@ -343,11 +340,7 @@ void AdBlockSettingWidget::save()
     // -------------------------------------------------------------------------------
     mChanged = false;
     Q_EMIT changed(false);
-#ifdef MESSAGEVIEWER_USE_QTWEBENGINE
-    //FIXME
-#else
-    AdBlockManager::self()->reloadConfig();
-#endif
+    //FIXME AdBlockManager::self()->reloadConfig();
 }
 
 void AdBlockSettingWidget::updateCheckBox()
