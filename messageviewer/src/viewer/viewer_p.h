@@ -561,8 +561,6 @@ public Q_SLOTS:
     void slotCopyImageLocation();
     void slotSaveMessageDisplayFormat();
     void slotResetMessageDisplayFormat();
-    void slotBlockImage();
-    void slotOpenBlockableItems();
 
     void slotGeneralFontChanged();
 
@@ -644,8 +642,6 @@ public:
     KToggleAction *mToggleMimePartTreeAction;
     QAction *mSpeakTextAction;
     QAction *mCopyImageLocation;
-    QAction *mBlockImage;
-    QAction *mBlockableItems;
     QUrl mHoveredUrl;
     QUrl mClickedUrl;
     QUrl mImageUrl;

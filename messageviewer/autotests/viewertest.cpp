@@ -80,8 +80,6 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     QVERIFY(viewer.saveAsAction());
     QVERIFY(viewer.saveMessageDisplayFormatAction());
     QVERIFY(viewer.resetMessageDisplayFormatAction());
-    QVERIFY(viewer.blockImage());
-    QVERIFY(viewer.openBlockableItems());
     QVERIFY(viewer.urlClicked().isEmpty());
     QVERIFY(viewer.imageUrlClicked().isEmpty());
     QCOMPARE(viewer.isFixedFont(), false);

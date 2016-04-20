@@ -1698,15 +1698,6 @@ void ViewerPrivate::createActions()
     connect(mFindInMessageAction, &QAction::triggered, this, &ViewerPrivate::slotFind);
     ac->setDefaultShortcut(mFindInMessageAction, KStandardShortcut::find().first());
 
-    mBlockImage = new QAction(i18n("Block image"), this);
-    ac->addAction(QStringLiteral("adblock_image"), mBlockImage);
-    ac->setShortcutsConfigurable(mBlockImage, false);
-    connect(mBlockImage, &QAction::triggered, this, &ViewerPrivate::slotBlockImage);
-
-    mBlockableItems = new QAction(i18n("Open Blockable Items..."), this);
-    ac->addAction(QStringLiteral("adblock_blockable_items"), mBlockableItems);
-    connect(mBlockableItems, &QAction::triggered, this, &ViewerPrivate::slotOpenBlockableItems);
-
     mShareServiceUrlMenu = mShareServiceManager->menu();
     ac->addAction(QStringLiteral("shareservice_menu"), mShareServiceUrlMenu);
     connect(mShareServiceManager, &PimCommon::ShareServiceUrlManager::serviceUrlSelected, this, &ViewerPrivate::slotServiceUrlSelected);
@@ -2935,19 +2926,6 @@ void ViewerPrivate::slotAddToWhiteList()
             MessageViewer::MessageViewerSettings::self()->save();
         }
     }
-}
-
-void ViewerPrivate::slotBlockImage()
-{
-    if (mImageUrl.isEmpty()) {
-        return;
-    }
-    qDebug() << "void ViewerPrivate::slotBlockImage() unimplemented";
-}
-
-void ViewerPrivate::slotOpenBlockableItems()
-{
-    qDebug() << "void ViewerPrivate::slotOpenBlockableItems() unimplemented";
 }
 
 void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)

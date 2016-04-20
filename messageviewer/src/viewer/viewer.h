@@ -292,8 +292,6 @@ public:
     QAction *saveAsAction() const;
     QAction *saveMessageDisplayFormatAction() const;
     QAction *resetMessageDisplayFormatAction() const;
-    QAction *blockImage() const;
-    QAction *openBlockableItems() const;
     KActionMenu *shareServiceUrlMenu() const;
     HeaderStylePlugin *headerStylePlugin() const;
     void setPluginName(const QString &pluginName);
@@ -333,7 +331,6 @@ public:
     void setExternalWindow(bool b);
 
     void saveMainFrameScreenshotInFile(const QString &filename);
-    bool adblockEnabled() const;
     bool mimePartTreeIsEmpty() const;
 
     void showOpenAttachmentFolderWidget(const QUrl &url);

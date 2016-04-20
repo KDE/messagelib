@@ -630,23 +630,6 @@ void Viewer::saveMainFrameScreenshotInFile(const QString &filename)
     return d->saveMainFrameScreenshotInFile(filename);
 }
 
-QAction *Viewer::blockImage() const
-{
-    Q_D(const Viewer);
-    return d->mBlockImage;
-}
-
-bool Viewer::adblockEnabled() const
-{
-    return false;
-}
-
-QAction *Viewer::openBlockableItems() const
-{
-    Q_D(const Viewer);
-    return d->mBlockableItems;
-}
-
 KActionMenu *Viewer::shareServiceUrlMenu() const
 {
     Q_D(const Viewer);
