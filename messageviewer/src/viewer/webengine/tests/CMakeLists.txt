@@ -1,14 +1,15 @@
-if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
-set(webengineaccesskey_test_SRCS
-    testwebengineaccesskey.cpp
-    )
+#laurent reactive it
+#if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
+#set(webengineaccesskey_test_SRCS
+#    testwebengineaccesskey.cpp
+#    )
 
-add_executable(webengineaccesskeytest ${webengineaccesskey_test_SRCS})
+#add_executable(webengineaccesskeytest ${webengineaccesskey_test_SRCS})
 
-target_link_libraries(webengineaccesskeytest
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::WebKit Qt5::WebKitWidgets
-    )
-endif()
+#target_link_libraries(webengineaccesskeytest
+#    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::WebKit Qt5::WebKitWidgets
+#    )
+#endif()
 ####
 
 set(scrolladdattachment_test_SRCS

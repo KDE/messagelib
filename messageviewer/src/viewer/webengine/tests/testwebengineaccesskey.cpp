@@ -16,8 +16,8 @@
 */
 
 #include "testwebengineaccesskey.h"
-#include "viewer/webengine/mailwebengineaccesskey.h"
-#include "viewer/webengine/mailwebengineview.h"
+#include "../mailwebengineaccesskey.h"
+#include "../mailwebengineview.h"
 
 #include "viewer/webview/mailwebview.h"
 #include "viewer/webview/webviewaccesskey.h"
