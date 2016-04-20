@@ -34,8 +34,6 @@ if(BUILD_TESTING)
     add_subdirectory(scamdetection/autotests)
     add_subdirectory(findbar/autotests)
     add_subdirectory(scamdetection/tests)
-    add_subdirectory(adblock/tests/)
-    add_subdirectory(adblock/common/autotests)
     add_subdirectory(viewerplugins/tests/)
     add_subdirectory(htmlwriter/autotests/)
     add_subdirectory(viewer/webengine/tests)
@@ -48,29 +46,14 @@ if(DEBUG_SIGNATURE)
     add_definitions(-DDEBUG_SIGNATURE)
 endif()
 
-set(_mailwebview_cpp 
-
-    adblock/common/adblocksettingwidget.cpp
-    adblock/common/adblockutil.cpp
-    adblock/common/adblockaddsubscriptiondialog.cpp
-    adblock/common/adblocklistwidget.cpp
-    adblock/common/adblocksyntaxhighlighter.cpp
-    adblock/common/adblockshowlistdialog.cpp
-    adblock/common/adblockautomaticruleslistwidget.cpp
-    )
-
 set(libmessageviewer_mailviewer_SRCS
     viewer/webengine/mailwebengineview.cpp
     viewer/webengine/mailwebenginepage.cpp
     viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
     viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
     viewer/webengine/mailwebenginescript.cpp
-
-    ${libmessageviewer_mailviewer_SRCS}
     findbar/findbarwebengineview.cpp
     )
-
-set(libmessageviewer_web_LIB Qt5::WebEngineWidgets ${libmessageviewer_web_LIB} KF5::WebEngineViewer)
 
 set(libmessageviewer_viewer_SRCS
     viewer/bodypartformatterfactory.cpp
@@ -189,7 +172,6 @@ set(libmessageviewer_SRCS
     ${libmessageviewer_job_SRCS}
     ${libmessageviewer_viewerplugins_SRCS}
     settings/messageviewersettings.cpp
-    ${_mailwebview_cpp}
     ${libmessageviewer_mailviewer_SRCS}
     )
 
@@ -203,8 +185,6 @@ ki18n_wrap_ui(libmessageviewer_SRCS
     ui/settings.ui
     ui/invitationsettings.ui
     ui/printingsettings.ui
-    adblock/ui/settings_adblock.ui
-    adblock/ui/adblockcreatefilterwidget.ui
     )
 
 
@@ -226,7 +206,8 @@ target_link_libraries(KF5MessageViewer
     KF5::MimeTreeParser
     PRIVATE
     KF5::ItemViews
-    ${libmessageviewer_web_LIB}
+    Qt5::WebEngineWidgets
+    KF5::WebEngineViewer
     KF5::Libkdepim
     KF5::GrantleeTheme
     KF5::KaddressbookGrantlee
@@ -374,15 +355,6 @@ ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
     RELATIVE header
     )
 
-ecm_generate_headers(MessageViewer_Camelcaseadblockcommon_HEADERS
-    HEADER_NAMES
-    AdBlockListWidget
-    AdBlockSettingWidget
-    REQUIRED_HEADERS MessageViewer_adblockcommon_HEADERS
-    PREFIX MessageViewer
-    RELATIVE adblock/common
-    )
-
 ecm_generate_headers(MessageViewer_Camelcaseviewerplugin_HEADERS
     HEADER_NAMES
     ViewerPluginManager
@@ -413,11 +385,9 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 install(FILES
     ${MessageViewer_Camelcasewebengine_HEADERS}
     ${MessageViewer_CamelfindbarWebEngine_HEADERS}
-    ${MessageViewer_Camelcasewebviewer_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
     ${MessageViewer_Camelcaseviewerplugin_HEADERS}
     ${MessageViewer_Camelcasesettings_HEADERS}
-    ${MessageViewer_Camelcaseadblock_HEADERS}
     ${MessageViewer_Camelcasehtmlwriter_HEADERS}
     ${MessageViewer_Camelcaseutils_HEADERS}
     ${MessageViewer_Camelcaseinterfaces_HEADERS}
@@ -426,7 +396,6 @@ install(FILES
     ${MessageViewer_Camelcaseviewerjob_HEADERS}
     ${MessageViewer_Camelcaseantispam_HEADERS}
     ${MessageViewer_Camelfindbar_HEADERS}
-    ${MessageViewer_Camelcaseadblockcommon_HEADERS}
     ${MessageViewer_Camelcasescam_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     COMPONENT Devel
@@ -436,11 +405,8 @@ install(FILES
     ${MessageViewer_webengine_HEADERS}
     ${MessageViewer_scam_HEADERS}
     ${MessageViewer_findbarWebEngine_HEADERS}
-    ${MessageViewer_adblockcommon_HEADERS}
-    ${MessageViewer_webviewer_HEADERS}
     ${MessageViewer_viewerplugin_HEADERS}
     ${MessageViewer_settings_HEADERS}
-    ${MessageViewer_adblock_HEADERS}
     ${MessageViewer_htmlwriter_HEADERS}
     ${MessageViewer_header_HEADERS}
     ${MessageViewer_utils_HEADERS}
