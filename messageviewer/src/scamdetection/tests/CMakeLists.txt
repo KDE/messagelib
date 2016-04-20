@@ -4,28 +4,13 @@ include(ECMAddTests)
 
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
 
-if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
-    set(scamdetection_gui_SRCS scamdetection_gui.cpp)
-    add_executable(scamdetection_gui ${scamdetection_gui_SRCS})
-    target_link_libraries(scamdetection_gui
-        KF5::KIOCore
-        KF5::MessageViewer
-        Qt5::WebKitWidgets
-        KF5::I18n
-        )
-endif()
-
-
-
-if (QTWEBENGINE_SUPPORT_OPTION)
-    set(scamdetectionwebengine_gui_SRCS scamdetectionwebengine_gui.cpp)
-    add_executable(scamdetectionwebengine_gui ${scamdetectionwebengine_gui_SRCS})
-    target_link_libraries(scamdetectionwebengine_gui
-        KF5::KIOCore
-        KF5::MessageViewer
-        Qt5::WebEngine
-        Qt5::WebEngineWidgets
-        KF5::I18n
-        )
-endif()
+set(scamdetectionwebengine_gui_SRCS scamdetectionwebengine_gui.cpp)
+add_executable(scamdetectionwebengine_gui ${scamdetectionwebengine_gui_SRCS})
+target_link_libraries(scamdetectionwebengine_gui
+    KF5::KIOCore
+    KF5::MessageViewer
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
+    KF5::I18n
+    )
 

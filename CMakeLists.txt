@@ -18,7 +18,7 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
 
-set(MESSAGELIB_LIB_VERSION "5.2.56")
+set(MESSAGELIB_LIB_VERSION "5.2.57")
 
 set(KF5_VERSION "5.19.0")
 set(KDEPIMLIBS_LIB_VERSION "5.2.40")
@@ -80,17 +80,8 @@ find_package(KF5PimCommon ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
-option(QTWEBENGINE_SUPPORT_OPTION "Enable support for QtWebEngine. False by default." FALSE)
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED WebEngine WebEngineWidgets)
 
-option(MESSAGEVIEWER_USE_QTWEBENGINE "Use QtWebEngine in mail viewer. False by default." FALSE)
-
-if (QTWEBENGINE_SUPPORT_OPTION)
-    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED WebEngine WebEngineWidgets)
-endif()
-
-if (MESSAGEVIEWER_USE_QTWEBENGINE AND NOT  QTWEBENGINE_SUPPORT_OPTION)
-    MESSAGE(FATAL_ERROR "QTWEBENGINE_SUPPORT_OPTION must be ON when you activate MESSAGEVIEWER_USE_QTWEBENGINE support.")
-endif()
 
 # Support for the GIT revision number in messagecomposer-version.h
 if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
@@ -115,9 +106,7 @@ add_subdirectory(templateparser)
 add_subdirectory(messagecomposer)
 add_subdirectory(messagecore)
 add_subdirectory(messagelist)
-if (QTWEBENGINE_SUPPORT_OPTION)
-    add_subdirectory(webengineviewer)
-endif()
+add_subdirectory(webengineviewer)
 
 install( FILES messagelib.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

@@ -38,9 +38,7 @@ if(BUILD_TESTING)
     add_subdirectory(adblock/common/autotests)
     add_subdirectory(viewerplugins/tests/)
     add_subdirectory(htmlwriter/autotests/)
-    if (QTWEBENGINE_SUPPORT_OPTION)
-        add_subdirectory(viewer/webengine/tests)
-    endif()
+    add_subdirectory(viewer/webengine/tests)
 endif()
 add_subdirectory(pics)
 add_subdirectory(kconf_update)
@@ -77,30 +75,19 @@ if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
         )
 endif()
 
-if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
-    set(libmessageviewer_mailviewer_SRCS
-        viewer/webview/mailwebview.cpp
-        viewer/webview/webpage.cpp
-        viewer/webview/networkaccessmanager.cpp
-        viewer/webview/webviewaccesskey.cpp
-        )
-    set(libmessageviewer_web_LIB KF5::WebKit Qt5::WebKitWidgets)
-endif()
 
-if (QTWEBENGINE_SUPPORT_OPTION)
-    set(libmessageviewer_mailviewer_SRCS
-        viewer/webengine/mailwebengineview.cpp
-        viewer/webengine/mailwebenginepage.cpp
-        viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
-        viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
-        viewer/webengine/mailwebenginescript.cpp
+set(libmessageviewer_mailviewer_SRCS
+    viewer/webengine/mailwebengineview.cpp
+    viewer/webengine/mailwebenginepage.cpp
+    viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
+    viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
+    viewer/webengine/mailwebenginescript.cpp
 
-        ${libmessageviewer_mailviewer_SRCS}
-        findbar/findbarwebengineview.cpp
-        )
+    ${libmessageviewer_mailviewer_SRCS}
+    findbar/findbarwebengineview.cpp
+    )
 
-    set(libmessageviewer_web_LIB Qt5::WebEngineWidgets ${libmessageviewer_web_LIB} KF5::WebEngineViewer)
-endif()
+set(libmessageviewer_web_LIB Qt5::WebEngineWidgets ${libmessageviewer_web_LIB} KF5::WebEngineViewer)
 
 set(libmessageviewer_viewer_SRCS
     viewer/bodypartformatterfactory.cpp
@@ -131,11 +118,9 @@ set(libmessageviewer_widgets_SRCS
     widgets/zoomactionmenu.cpp
     )
 
-if (QTWEBENGINE_SUPPORT_OPTION)
-    set(libmessageviewer_widgets_webengine_SRCS
-        widgets/mailsourcewebengineviewer.cpp
-        )
-endif()
+set(libmessageviewer_widgets_webengine_SRCS
+    widgets/mailsourcewebengineviewer.cpp
+    )
 
 set(libmessageviewer_header_SRCS
     header/contactdisplaymessagememento.cpp
@@ -166,11 +151,9 @@ if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
     set(libmessageviewer_scamdetection_SRCS scamdetection/scamdetection.cpp ${libmessageviewer_scamdetection_SRCS})
 endif()
 
-if (QTWEBENGINE_SUPPORT_OPTION)
-    set(libmessageviewer_scamdetection_webengine_SRCS
-        scamdetection/scamdetectionwebengine.cpp
-        )
-endif()
+set(libmessageviewer_scamdetection_webengine_SRCS
+    scamdetection/scamdetectionwebengine.cpp
+    )
 
 set(libmessageviewer_findbar_SRCS
     findbar/findbarbase.cpp
@@ -185,23 +168,15 @@ set(libmessageviewer_utils_SRCS
     utils/messageviewerutil.cpp
     )
 
-if (QTWEBENGINE_SUPPORT_OPTION)
-    set(libmessageviewer_htmlwriter_webengine_SRCS
-        htmlwriter/webengineparthtmlwriter.cpp
-        htmlwriter/webengineembedpart.cpp
-        )
-endif()
+set(libmessageviewer_htmlwriter_webengine_SRCS
+    htmlwriter/webengineparthtmlwriter.cpp
+    htmlwriter/webengineembedpart.cpp
+    )
 
 set(libmessageviewer_htmlwriter_SRCS
     htmlwriter/teehtmlwriter.cpp
     ${libmessageviewer_htmlwriter_webengine_SRCS}
     )
-
-if (NOT MESSAGEVIEWER_USE_QTWEBENGINE)
-    set(libmessageviewer_htmlwriter_SRCS htmlwriter/webkitparthtmlwriter.cpp ${libmessageviewer_htmlwriter_SRCS})
-endif()
-
-
 
 set(libmessageviewer_antispam_SRCS
     antispam/spamheaderanalyzer.cpp
@@ -317,17 +292,15 @@ ecm_generate_headers(MessageViewer_Camelcasewebviewer_HEADERS
     RELATIVE viewer/webview
     )
 
-if (QTWEBENGINE_SUPPORT_OPTION)
-    ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
-        HEADER_NAMES
-        MailWebEnginePage
-        MailWebEngineView
+ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
+    HEADER_NAMES
+    MailWebEnginePage
+    MailWebEngineView
 
-        REQUIRED_HEADERS MessageViewer_webengine_HEADERS
-        PREFIX MessageViewer
-        RELATIVE viewer/webengine
-        )
-endif()
+    REQUIRED_HEADERS MessageViewer_webengine_HEADERS
+    PREFIX MessageViewer
+    RELATIVE viewer/webengine
+    )
 
 ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
     HEADER_NAMES
@@ -382,15 +355,13 @@ ecm_generate_headers(MessageViewer_Camelfindbar_HEADERS
     RELATIVE findbar
     )
 
-if (QTWEBENGINE_SUPPORT_OPTION)
-    ecm_generate_headers(MessageViewer_CamelfindbarWebEngine_HEADERS
-        HEADER_NAMES
-        FindBarWebEngineView
-        REQUIRED_HEADERS MessageViewer_findbarWebEngine_HEADERS
-        PREFIX MessageViewer
-        RELATIVE findbar
-        )
-endif()
+ecm_generate_headers(MessageViewer_CamelfindbarWebEngine_HEADERS
+    HEADER_NAMES
+    FindBarWebEngineView
+    REQUIRED_HEADERS MessageViewer_findbarWebEngine_HEADERS
+    PREFIX MessageViewer
+    RELATIVE findbar
+    )
 
 ecm_generate_headers(MessageViewer_Camelcaseantispam_HEADERS
     HEADER_NAMES
