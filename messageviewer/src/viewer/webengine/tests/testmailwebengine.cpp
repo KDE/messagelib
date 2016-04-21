@@ -31,6 +31,7 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     mZoom = 1.0;
     QVBoxLayout *vbox = new QVBoxLayout(this);
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
+    connect(mTestWebEngine, &MessageViewer::MailWebEngineView::openUrl, this, &TestMailWebEngine::slotOpenUrl);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vbox->addWidget(mTestWebEngine);
@@ -60,6 +61,11 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
 TestMailWebEngine::~TestMailWebEngine()
 {
 
+}
+
+void TestMailWebEngine::slotOpenUrl(const QUrl &url)
+{
+    mTestWebEngine->load(url);
 }
 
 void TestMailWebEngine::slotScrollDown()

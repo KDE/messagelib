@@ -37,6 +37,7 @@ private Q_SLOTS:
     void slotScrollDown();
     void slotZoomUp();
     void slotZoomDown();
+    void slotOpenUrl(const QUrl &url);
 private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
     qreal mZoom;
