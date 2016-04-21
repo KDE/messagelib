@@ -53,8 +53,8 @@ WebEngineViewer::WebHitTest *WebEnginePage::hitTestContent(const QPoint &pos)
 
 QVariant WebEnginePage::execJavaScript(const QString &scriptSource, int timeout)
 {
-    QPointer<QEventLoop> loop = new QEventLoop;
     QVariant result;
+    QPointer<QEventLoop> loop = new QEventLoop;
     QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
 
     runJavaScript(scriptSource, [loop, &result](const QVariant & res) {
@@ -65,7 +65,6 @@ QVariant WebEnginePage::execJavaScript(const QString &scriptSource, int timeout)
     });
     loop->exec();
     delete loop;
-
     return result;
 }
 
@@ -75,7 +74,8 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type
     Q_UNUSED(isMainFrame);
     if (isMainFrame && type == NavigationTypeLinkClicked) {
         Q_EMIT urlClicked(url);
+        return false;
     }
-    return false;
+    return true;
 }
 
