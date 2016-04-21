@@ -28,6 +28,7 @@
 TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     : QWidget(parent)
 {
+    mZoom = 1.0;
     QVBoxLayout *vbox = new QVBoxLayout(this);
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
@@ -43,6 +44,17 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     QPushButton *scrollDown = new QPushButton(QStringLiteral("scrollDown 10px"), this);
     connect(scrollDown, &QPushButton::clicked, this, &TestMailWebEngine::slotScrollDown);
     hButtonBox->addWidget(scrollDown);
+
+    hButtonBox = new QHBoxLayout;
+    vbox->addLayout(hButtonBox);
+
+    QPushButton *zoomUp = new QPushButton(QStringLiteral("zoom Up"), this);
+    connect(zoomUp, &QPushButton::clicked, this, &TestMailWebEngine::slotZoomUp);
+    hButtonBox->addWidget(zoomUp);
+
+    QPushButton *zoomDown = new QPushButton(QStringLiteral("zoom Down"), this);
+    connect(zoomDown, &QPushButton::clicked, this, &TestMailWebEngine::slotZoomDown);
+    hButtonBox->addWidget(zoomDown);
 }
 
 TestMailWebEngine::~TestMailWebEngine()
@@ -58,6 +70,18 @@ void TestMailWebEngine::slotScrollDown()
 void TestMailWebEngine::slotScrollUp()
 {
     mTestWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollUp(10));
+}
+
+void TestMailWebEngine::slotZoomDown()
+{
+    mZoom -= 0.2;
+    mTestWebEngine->setZoomFactor(mZoom);
+}
+
+void TestMailWebEngine::slotZoomUp()
+{
+    mZoom += 0.2;
+    mTestWebEngine->setZoomFactor(mZoom);
 }
 
 int main(int argc, char *argv[])

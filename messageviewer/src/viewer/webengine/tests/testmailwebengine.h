@@ -35,8 +35,11 @@ private Q_SLOTS:
     void slotScrollUp();
 
     void slotScrollDown();
+    void slotZoomUp();
+    void slotZoomDown();
 private:
     MessageViewer::MailWebEngineView *mTestWebEngine;
+    qreal mZoom;
 };
 
 #endif // TESTMAILWEBENGINE_H
