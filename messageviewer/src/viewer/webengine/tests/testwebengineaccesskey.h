@@ -23,7 +23,6 @@
 namespace WebEngineViewer
 {
 class MailWebEngineView;
-class MailWebView;
 }
 
 class TestWidget : public QWidget
@@ -32,20 +31,6 @@ class TestWidget : public QWidget
 public:
     explicit TestWidget(QWidget *parent = Q_NULLPTR);
     ~TestWidget();
-};
-
-class TestWebKitAccesskey : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit TestWebKitAccesskey(QWidget *parent = Q_NULLPTR);
-    ~TestWebKitAccesskey();
-
-private Q_SLOTS:
-    void slotShowAccessKey();
-
-private:
-    WebEngineViewer::MailWebView *mTestWebEngine;
 };
 
 class TestWebEngineAccesskey : public QWidget

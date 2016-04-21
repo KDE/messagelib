@@ -16,11 +16,8 @@
 */
 
 #include "testwebengineaccesskey.h"
-#include "../mailwebengineaccesskey.h"
 #include "../mailwebengineview.h"
 
-#include "viewer/webview/mailwebview.h"
-#include "viewer/webview/webviewaccesskey.h"
 
 #include "messageviewer/messageviewersettings.h"
 #include <QApplication>
@@ -28,7 +25,6 @@
 #include <QWebEngineSettings>
 #include <QStandardPaths>
 
-#include <KActionCollection>
 #include <QLabel>
 #include <QPushButton>
 
@@ -48,31 +44,6 @@ TestWidget::TestWidget(QWidget *parent)
 TestWidget::~TestWidget()
 {
 
-}
-
-TestWebKitAccesskey::TestWebKitAccesskey(QWidget *parent)
-    : QWidget(parent)
-{
-    QVBoxLayout *vboxLayout = new QVBoxLayout(this);
-    QLabel *label = new QLabel(QStringLiteral("WebKit"));
-    vboxLayout->addWidget(label);
-
-    mTestWebEngine = new WebEngineViewer::MailWebView(new KActionCollection(this), this);
-    vboxLayout->addWidget(mTestWebEngine);
-    mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
-    QPushButton *searchAccessKey = new QPushButton(QStringLiteral("AccessKey"), this);
-    vboxLayout->addWidget(searchAccessKey);
-    connect(searchAccessKey, &QPushButton::clicked, this, &TestWebKitAccesskey::slotShowAccessKey);
-}
-
-TestWebKitAccesskey::~TestWebKitAccesskey()
-{
-
-}
-
-void TestWebKitAccesskey::slotShowAccessKey()
-{
-    mTestWebEngine->showAccessKeys();
 }
 
 TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
