@@ -37,7 +37,6 @@ void ZoomActionMenuTest::shouldHaveDefaultValue()
     menu.setActionCollection(new KActionCollection(this));
     menu.createZoomActions();
 
-    QVERIFY(menu.zoomTextOnlyAction());
     QVERIFY(menu.zoomInAction());
     QVERIFY(menu.zoomOutAction());
     QVERIFY(menu.zoomResetAction());

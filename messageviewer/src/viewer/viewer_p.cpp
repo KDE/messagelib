@@ -1115,9 +1115,6 @@ void ViewerPrivate::readConfig()
     mHtmlMailGlobalSetting = MessageViewer::MessageViewerSettings::self()->htmlMail();
     mHtmlLoadExternalGlobalSetting = MessageViewer::MessageViewerSettings::self()->htmlLoadExternal();
 
-    if (mZoomActionMenu) {
-        mZoomActionMenu->setZoomTextOnly(MessageViewer::MessageViewerSettings::self()->zoomTextOnly());
-    }
     readGravatarConfig();
     if (mHeaderStyleMenuManager) {
         mHeaderStyleMenuManager->readConfig();
@@ -1164,9 +1161,6 @@ void ViewerPrivate::writeConfig(bool sync)
     MessageViewer::MessageViewerSettings::self()->setUseFixedFont(mUseFixedFont);
     if (attachmentStrategy()) {
         MessageViewer::MessageViewerSettings::self()->setAttachmentStrategy(QLatin1String(attachmentStrategy()->name()));
-    }
-    if (mZoomActionMenu) {
-        MessageViewer::MessageViewerSettings::self()->setZoomTextOnly(mZoomActionMenu->zoomTextOnly());
     }
     saveSplitterSizes();
     if (sync) {

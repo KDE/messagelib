@@ -33,7 +33,6 @@ public:
     ~ZoomActionMenu();
 
     void createZoomActions();
-    KToggleAction *zoomTextOnlyAction() const;
 
     QAction *zoomInAction() const;
 
@@ -47,17 +46,13 @@ public:
     qreal zoomFactor() const;
 
     void setWebViewerZoomFactor(qreal zoomFactor);
-    bool zoomTextOnly() const;
 
 Q_SIGNALS:
     void zoomChanged(qreal value);
-    void zoomTextOnlyChanged(bool b);
 
 public Q_SLOTS:
     void slotZoomIn();
     void slotZoomOut();
-    void setZoomTextOnly(bool textOnly);
-    void slotZoomTextOnly();
     void slotZoomReset();
 
 private:

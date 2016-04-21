@@ -274,9 +274,6 @@ public:
 
     void setZoomFactor(qreal zoomFactor);
 
-    void setZoomTextOnly(bool textOnly);
-    bool zoomTextOnly() const;
-
     KToggleAction *toggleFixFontAction() const;
 
     KToggleAction *toggleMimePartTreeAction() const;

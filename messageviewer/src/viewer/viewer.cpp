@@ -587,18 +587,6 @@ void Viewer::slotZoomOut()
     d->mZoomActionMenu->slotZoomOut();
 }
 
-void Viewer::setZoomTextOnly(bool textOnly)
-{
-    Q_D(Viewer);
-    d->mZoomActionMenu->setZoomTextOnly(textOnly);
-}
-
-bool Viewer::zoomTextOnly() const
-{
-    Q_D(const Viewer);
-    return d->mZoomTextOnly;
-}
-
 QAction *Viewer::findInMessageAction() const
 {
     Q_D(const Viewer);

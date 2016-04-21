@@ -35,24 +35,20 @@ class MessageViewer::ZoomActionMenuPrivate
 public:
     ZoomActionMenuPrivate(KActionMenu *qq)
         : mZoomFactor(100),
-          mZoomTextOnlyAction(Q_NULLPTR),
           mZoomInAction(Q_NULLPTR),
           mZoomOutAction(Q_NULLPTR),
           mZoomResetAction(Q_NULLPTR),
           mActionCollection(Q_NULLPTR),
-          mZoomTextOnly(false),
           q(qq)
     {
 
     }
     void createMenu();
     qreal mZoomFactor;
-    KToggleAction *mZoomTextOnlyAction;
     QAction *mZoomInAction;
     QAction *mZoomOutAction;
     QAction *mZoomResetAction;
     KActionCollection *mActionCollection;
-    bool mZoomTextOnly;
     KActionMenu *q;
 };
 
@@ -75,10 +71,6 @@ void ZoomActionMenu::setActionCollection(KActionCollection *ac)
 void ZoomActionMenu::createZoomActions()
 {
     // Zoom actions
-    d->mZoomTextOnlyAction = new KToggleAction(i18n("Zoom Text Only"), this);
-    d->mActionCollection->addAction(QStringLiteral("toggle_zoomtextonly"), d->mZoomTextOnlyAction);
-    connect(d->mZoomTextOnlyAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomTextOnly);
-
     d->mZoomInAction = new QAction(QIcon::fromTheme(QStringLiteral("zoom-in")), i18n("&Zoom In"), this);
     d->mActionCollection->addAction(QStringLiteral("zoom_in"), d->mZoomInAction);
     connect(d->mZoomInAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomIn);
@@ -94,11 +86,6 @@ void ZoomActionMenu::createZoomActions()
     connect(d->mZoomResetAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomReset);
     d->mActionCollection->setDefaultShortcut(d->mZoomResetAction, QKeySequence(Qt::CTRL | Qt::Key_0));
     d->createMenu();
-}
-
-KToggleAction *ZoomActionMenu::zoomTextOnlyAction() const
-{
-    return d->mZoomTextOnlyAction;
 }
 
 QAction *ZoomActionMenu::zoomInAction() const
@@ -150,29 +137,10 @@ void ZoomActionMenu::slotZoomOut()
     Q_EMIT zoomChanged(d->mZoomFactor / 100.0);
 }
 
-void ZoomActionMenu::setZoomTextOnly(bool textOnly)
-{
-    d->mZoomTextOnly = textOnly;
-    if (d->mZoomTextOnlyAction) {
-        d->mZoomTextOnlyAction->setChecked(d->mZoomTextOnly);
-    }
-    Q_EMIT zoomTextOnlyChanged(d->mZoomTextOnly);
-}
-
-void ZoomActionMenu::slotZoomTextOnly()
-{
-    setZoomTextOnly(!d->mZoomTextOnly);
-}
-
 void ZoomActionMenu::slotZoomReset()
 {
     d->mZoomFactor = 100;
     Q_EMIT zoomChanged(1.0);
-}
-
-bool ZoomActionMenu::zoomTextOnly() const
-{
-    return d->mZoomTextOnly;
 }
 
 qreal ZoomActionMenu::zoomFactor() const

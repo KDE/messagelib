@@ -658,7 +658,6 @@ public:
     bool mShowSignatureDetails;
     bool mShowAttachmentQuicklist;
     bool mExternalWindow;
-    bool mZoomTextOnly;
     int mRecursionCountForDisplayMessage;
     KMime::Content *mCurrentContent;
     KMime::Content *mMessagePartNode;
