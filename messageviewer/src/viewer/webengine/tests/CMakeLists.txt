@@ -18,3 +18,25 @@ add_executable(testmailwebengine ${testmailwebengine_test_SRCS})
 target_link_libraries(testmailwebengine
     Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
+
+#####
+#set(testwebengineaccesskey_test_SRCS
+#    testwebengineaccesskey.cpp
+#    )
+
+#add_executable(testwebengineaccesskey ${testwebengineaccesskey_test_SRCS})
+
+#target_link_libraries(testwebengineaccesskey
+#    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::MessageViewer
+#    )
+
+####
+set(testmailwebengineselection_test_SRCS
+    testmailwebengineselection.cpp
+    )
+
+add_executable(testmailwebengineselection ${testmailwebengineselection_test_SRCS})
+
+target_link_libraries(testmailwebengineselection
+    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    )
