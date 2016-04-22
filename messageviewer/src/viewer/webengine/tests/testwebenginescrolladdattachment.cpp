@@ -16,7 +16,6 @@
 */
 
 #include "testwebenginescrolladdattachment.h"
-#include "webenginescript.h"
 
 #include <KActionCollection>
 #include <QApplication>
