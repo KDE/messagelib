@@ -151,6 +151,17 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
     return QWebEngineView::eventFilter(obj, event);
 }
 
+QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
+{
+    //TODO
+    qDebug() << " QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)";
+#if 0
+    QWebEngineView *view = new QWebEngineView(this);
+    view->show();
+#endif
+    return Q_NULLPTR;
+}
+
 void WebEngineView::slotLoadFinished()
 {
     page()->runJavaScript(d->mJquery);
