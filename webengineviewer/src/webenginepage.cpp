@@ -70,8 +70,6 @@ QVariant WebEnginePage::execJavaScript(const QString &scriptSource, int timeout)
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
 {
-    Q_UNUSED(type);
-    Q_UNUSED(isMainFrame);
     if (isMainFrame && type == NavigationTypeLinkClicked) {
         Q_EMIT urlClicked(url);
         return false;
