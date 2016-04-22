@@ -388,7 +388,6 @@ install(FILES
     ${MessageViewer_Camelcaseheader_HEADERS}
     ${MessageViewer_Camelcaseviewerplugin_HEADERS}
     ${MessageViewer_Camelcasesettings_HEADERS}
-    ${MessageViewer_Camelcasehtmlwriter_HEADERS}
     ${MessageViewer_Camelcaseutils_HEADERS}
     ${MessageViewer_Camelcaseinterfaces_HEADERS}
     ${MessageViewer_Camelcaseviewer_HEADERS}
@@ -407,7 +406,6 @@ install(FILES
     ${MessageViewer_findbarWebEngine_HEADERS}
     ${MessageViewer_viewerplugin_HEADERS}
     ${MessageViewer_settings_HEADERS}
-    ${MessageViewer_htmlwriter_HEADERS}
     ${MessageViewer_header_HEADERS}
     ${MessageViewer_utils_HEADERS}
     ${MessageViewer_interfaces_HEADERS}
