@@ -31,10 +31,13 @@ public:
     QString script() const;
 Q_SIGNALS:
     void executeScript();
+private Q_SLOTS:
+    void slotCurrentIndexChanged(int);
 private:
     void fillScriptCombo(QComboBox *scriptCombo);
     QTextEdit *mScriptEdit;
     QTextEdit *mResultEdit;
+    QComboBox *mScriptCombo;
 };
 
 class TestWebEngineScriptPage : public QWebEnginePage

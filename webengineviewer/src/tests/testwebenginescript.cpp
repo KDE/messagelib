@@ -122,10 +122,10 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     QVBoxLayout *vScriptLayout = new QVBoxLayout;
     layout->addLayout(vScriptLayout);
 
-    QComboBox *scriptCombo = new QComboBox;
-    vScriptLayout->addWidget(scriptCombo);
-    //TODO fill with script
-    fillScriptCombo(scriptCombo);
+    mScriptCombo = new QComboBox;
+    vScriptLayout->addWidget(mScriptCombo);
+    fillScriptCombo(mScriptCombo);
+    connect(mScriptCombo, SIGNAL(currentIndexChanged(int)), this, SLOT(slotCurrentIndexChanged(int)));
 
     mScriptEdit = new QTextEdit;
     mScriptEdit->setAcceptRichText(false);
@@ -142,19 +142,28 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     vboxLayout->addWidget(button);
 }
 
+void TestScriptWidget::slotCurrentIndexChanged(int index)
+{
+    if (index != -1) {
+        const QString str = mScriptCombo->currentData().toString();
+        mScriptEdit->setText(str);
+    }
+}
+
 void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
 {
-#if 0
-    WebEngineViewer::WebEngineScript::findAllImages();
-    WebEngineViewer::WebEngineScript::findAllScripts();
-    WebEngineViewer::WebEngineScript::findAllAnchors();
-    WebEngineViewer::WebEngineScript::findAllAnchorsAndForms();
-    WebEngineViewer::WebEngineScript::searchElementPosition(const QString & elementStr);
-    WebEngineViewer::WebEngineScript::scrollToPosition(const QPoint & pos);
+    scriptCombo->addItem(QStringLiteral("find all images"), WebEngineViewer::WebEngineScript::findAllImages());
+    scriptCombo->addItem(QStringLiteral("find all scripts"), WebEngineViewer::WebEngineScript::findAllScripts());
+    scriptCombo->addItem(QStringLiteral("find all anchors"), WebEngineViewer::WebEngineScript::findAllAnchors());
+    scriptCombo->addItem(QStringLiteral("find all anchors and forms"), WebEngineViewer::WebEngineScript::findAllAnchorsAndForms());
+    scriptCombo->addItem(QStringLiteral("search element position"), WebEngineViewer::WebEngineScript::searchElementPosition(QStringLiteral("elements")));
+    scriptCombo->addItem(QStringLiteral("scroll to position"), WebEngineViewer::WebEngineScript::scrollToPosition(QPoint()));
+    scriptCombo->addItem(QStringLiteral("scroll down"), WebEngineViewer::WebEngineScript::scrollDown(0));
+    scriptCombo->addItem(QStringLiteral("scroll up"), WebEngineViewer::WebEngineScript::scrollUp(0));
+    scriptCombo->addItem(QStringLiteral("scroll percentage"), WebEngineViewer::WebEngineScript::scrollPercentage(0));
+#if 0    
     WebEngineViewer::WebEngineScript::setElementByIdVisible(const QString & elementStr, bool visibility);
     WebEngineViewer::WebEngineScript::setStyleToElement(const QString & elementStr, const QString & style);
-    WebEngineViewer::WebEngineScript::scrollDown(int pixel);
-    WebEngineViewer::WebEngineScript::scrollUp(int pixel);
     WebEngineViewer::WebEngineScript::scrollPercentage(int percent);
     WebEngineViewer::WebEngineScript::scrollToRelativePosition(int pos);
     WebEngineViewer::WebEngineScript::removeStyleToElement(const QString & element);
