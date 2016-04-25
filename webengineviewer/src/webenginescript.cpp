@@ -133,7 +133,6 @@ QString WebEngineScript::scrollPercentage(int percent)
                                                "window.scrollTo(window.scrollX, newPosition); [window.scrollX, window.scrollY];").arg(percent);
 
     qDebug() << "QString WebEngineScript::scrollPercentage(int percent) " << source;
-    //TODO
     return source;
 }
 
