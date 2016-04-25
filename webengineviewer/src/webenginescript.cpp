@@ -126,19 +126,11 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
 QString WebEngineScript::scrollPercentage(int percent)
 {
     const QString source = QString::fromLatin1("var current = document.body.scrollTop;"
-                           "var height = document.height;"
-                           "var newPosition = current + height * %1 / 100;"
-                           "window.scrollTo(window.scrollX, newPosition); [window.scrollX, window.scrollY];").arg(percent);
-#if 0
-    const qint64 height =  page()->viewportSize().height();
-    const qint64 current = page()->mainFrame()->scrollBarValue(Qt::Vertical);
-    // do arithmetic in higher precision, and check for overflow:
-    const qint64 newPosition = current + height * percent / 100;
-    if (newPosition > std::numeric_limits<int>::max()) {
-        qCWarning(WEBENGINEVIEWER_LOG) << "new position" << newPosition << "exceeds range of 'int'!";
-    }
-    page()->mainFrame()->setScrollBarValue(Qt::Vertical, newPosition);
-#endif
+                                               "var body = document.body;"
+                                               "html = document.documentElement;"
+                                               "var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );"
+                                               "var newPosition = current + height * %1 /100;"
+                                               "window.scrollTo(window.scrollX, newPosition); [window.scrollX, window.scrollY];").arg(percent);
 
     qDebug() << "QString WebEngineScript::scrollPercentage(int percent) " << source;
     //TODO
