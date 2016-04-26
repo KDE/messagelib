@@ -5,6 +5,7 @@ if(BUILD_TESTING)
     add_subdirectory(tests)
     add_subdirectory(autotests)
     add_subdirectory(webengineaccesskey/autotests)
+    add_subdirectory(findbar/autotests)
 endif()
 
 
@@ -25,10 +26,18 @@ set(libwebengineviewer_webengine_SRCS
     webengineaccesskey/webengineaccesskeyanchor.cpp
     webengineaccesskey/webengineaccesskeyutils.cpp
     )
+
+set(libwebengineviewer_findbar_SRCS
+        findbar/findbarbase.cpp
+        findbar/findbarwebengineview.cpp
+    )
+
+
 set(libmessageviewer_web_LIB Qt5::WebEngineWidgets )
 
 set(libwebengineviewer_SRCS
     ${libwebengineviewer_webengine_SRCS}
+    ${libwebengineviewer_findbar_SRCS}
     )
 
 qt5_add_resources(libwebengineviewer_webengine_SRCS jquery.qrc)
@@ -36,7 +45,7 @@ qt5_add_resources(libwebengineviewer_webengine_SRCS jquery.qrc)
 ecm_qt_declare_logging_category(libwebengineviewer_webengine_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME log_webengineviewer)
 
 
-add_library(KF5WebEngineViewer ${libwebengineviewer_webengine_SRCS})
+add_library(KF5WebEngineViewer ${libwebengineviewer_SRCS} ${libwebengineviewer_webengine_SRCS})
 generate_export_header(KF5WebEngineViewer BASE_NAME webengineviewer)
 add_library(KF5::WebEngineViewer ALIAS KF5WebEngineViewer)
 
@@ -49,6 +58,9 @@ target_link_libraries(KF5WebEngineViewer
     PRIVATE
     KF5::CoreAddons
     KF5::XmlGui
+    KF5::Completion
+    KF5::I18n
+    KF5::PimCommon
     )
 
 set_target_properties(KF5WebEngineViewer PROPERTIES

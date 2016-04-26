@@ -38,7 +38,7 @@ FindBarBaseTest::~FindBarBaseTest()
 
 void FindBarBaseTest::shouldHaveDefaultValue()
 {
-    MessageViewer::FindBarBase bar;
+    WebEngineViewer::FindBarBase bar;
     QLabel *status = bar.findChild<QLabel *>(QStringLiteral("status"));
     QVERIFY(status);
     QVERIFY(status->text().isEmpty());
@@ -61,7 +61,7 @@ void FindBarBaseTest::shouldHaveDefaultValue()
 
 void FindBarBaseTest::shouldClearLineWhenClose()
 {
-    MessageViewer::FindBarBase bar;
+    WebEngineViewer::FindBarBase bar;
     bar.show();
     QSignalSpy spy(&bar, SIGNAL(hideFindBar()));
     QTest::qWaitForWindowExposed(&bar);
@@ -79,7 +79,7 @@ void FindBarBaseTest::shouldClearLineWhenClose()
 
 void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
 {
-    MessageViewer::FindBarBase bar;
+    WebEngineViewer::FindBarBase bar;
     bar.show();
     QTest::qWaitForWindowExposed(&bar);
     QPushButton *previous = bar.findChild<QPushButton *>(QStringLiteral("findprevious"));
@@ -98,7 +98,7 @@ void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
 
 void FindBarBaseTest::shouldClearAllWhenShowBar()
 {
-    MessageViewer::FindBarBase bar;
+    WebEngineViewer::FindBarBase bar;
     bar.show();
     QTest::qWaitForWindowExposed(&bar);
     QLabel *status = bar.findChild<QLabel *>(QStringLiteral("status"));
