@@ -32,7 +32,6 @@ class MESSAGEVIEWER_EXPORT ScamDetectionWebEngine : public QObject
 public:
     explicit ScamDetectionWebEngine(QObject *parent = Q_NULLPTR);
     ~ScamDetectionWebEngine();
-    ScamCheckShortUrl *scamCheckShortUrl() const;
 
     void scanPage(QWebEnginePage *page);
 

@@ -77,11 +77,6 @@ ScamDetectionWebEngine::~ScamDetectionWebEngine()
     delete d;
 }
 
-ScamCheckShortUrl *ScamDetectionWebEngine::scamCheckShortUrl() const
-{
-    return MessageViewer::ScamCheckShortUrlManager::self()->scamCheckShortUrl();
-}
-
 void ScamDetectionWebEngine::scanPage(QWebEnginePage *page)
 {
     if (MessageViewer::MessageViewerSettings::self()->scamDetectionEnabled()) {
