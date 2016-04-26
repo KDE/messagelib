@@ -18,8 +18,9 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
 
-set(MESSAGELIB_LIB_VERSION "5.2.60")
+set(PIM_VERSION "5.2.60")
 
+set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
 set(KF5_VERSION "5.19.0")
 set(KDEPIMLIBS_LIB_VERSION "5.2.40")
 
