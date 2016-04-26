@@ -61,49 +61,56 @@ void TeeHtmlWriter::addHtmlWriter(HtmlWriter *writer)
 
 void TeeHtmlWriter::begin(const QString &css)
 {
-    for (QList<HtmlWriter *>::Iterator it = mWriters.begin(); it != mWriters.end(); ++it) {
+    QList<HtmlWriter *>::const_iterator end(mWriters.constEnd());
+    for (QList<HtmlWriter *>::const_iterator it = mWriters.constBegin(); it != end; ++it) {
         (*it)->begin(css);
     }
 }
 
 void TeeHtmlWriter::end()
 {
-    for (QList<HtmlWriter *>::Iterator it = mWriters.begin(); it != mWriters.end(); ++it) {
+    QList<HtmlWriter *>::const_iterator end(mWriters.constEnd());
+    for (QList<HtmlWriter *>::const_iterator it = mWriters.constBegin(); it != end; ++it) {
         (*it)->end();
     }
 }
 
 void TeeHtmlWriter::reset()
 {
-    for (QList<HtmlWriter *>::Iterator it = mWriters.begin(); it != mWriters.end(); ++it) {
+    QList<HtmlWriter *>::const_iterator end(mWriters.constEnd());
+    for (QList<HtmlWriter *>::const_iterator it = mWriters.constBegin(); it != end; ++it) {
         (*it)->reset();
     }
 }
 
 void TeeHtmlWriter::write(const QString &str)
 {
-    for (QList<HtmlWriter *>::Iterator it = mWriters.begin(); it != mWriters.end(); ++it) {
+    QList<HtmlWriter *>::const_iterator end(mWriters.constEnd());
+    for (QList<HtmlWriter *>::const_iterator it = mWriters.constBegin(); it != end; ++it) {
         (*it)->write(str);
     }
 }
 
 void TeeHtmlWriter::queue(const QString &str)
 {
-    for (QList<HtmlWriter *>::Iterator it = mWriters.begin(); it != mWriters.end(); ++it) {
+    QList<HtmlWriter *>::const_iterator end(mWriters.constEnd());
+    for (QList<HtmlWriter *>::const_iterator it = mWriters.constBegin(); it != end; ++it) {
         (*it)->queue(str);
     }
 }
 
 void TeeHtmlWriter::flush()
 {
-    for (QList<HtmlWriter *>::Iterator it = mWriters.begin(); it != mWriters.end(); ++it) {
+    QList<HtmlWriter *>::const_iterator end(mWriters.constEnd());
+    for (QList<HtmlWriter *>::const_iterator it = mWriters.constBegin(); it != end; ++it) {
         (*it)->flush();
     }
 }
 
 void TeeHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
 {
-    for (QList<HtmlWriter *>::Iterator it = mWriters.begin(); it != mWriters.end(); ++it) {
+    QList<HtmlWriter *>::const_iterator end(mWriters.constEnd());
+    for (QList<HtmlWriter *>::const_iterator it = mWriters.constBegin(); it != end; ++it) {
         (*it)->embedPart(contentId, url);
     }
 }
