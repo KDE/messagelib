@@ -75,6 +75,7 @@ namespace WebEngineViewer
 {
 class WebHitTestResult;
 class FindBarWebEngineView;
+class ZoomActionMenu;
 }
 namespace MessageViewer
 {
@@ -89,7 +90,6 @@ class OpenAttachmentFolderWidget;
 class HeaderStyleMenuManager;
 class ViewerPluginToolManager;
 class ViewerPluginInterface;
-class ZoomActionMenu;
 /**
 \brief Private class for the Viewer, the main widget in the messageviewer library.
 
@@ -681,7 +681,7 @@ public:
     MessageViewer::HeaderStylePlugin *mHeaderStylePlugin;
     MessageViewer::HeaderStyleMenuManager *mHeaderStyleMenuManager;
     MessageViewer::ViewerPluginToolManager *mViewerPluginToolManager;
-    MessageViewer::ZoomActionMenu *mZoomActionMenu;
+    WebEngineViewer::ZoomActionMenu *mZoomActionMenu;
 };
 
 }

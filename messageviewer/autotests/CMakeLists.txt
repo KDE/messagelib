@@ -25,7 +25,6 @@ macro(add_messageviewer_class_unittest _source _additionalSource)
 endmacro ()
 
 add_messageviewer_unittest( messagedisplayformatattributetest.cpp )
-add_messageviewer_class_unittest(zoomactionmenutest.cpp "../src/widgets/zoomactionmenu.cpp")
 
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)

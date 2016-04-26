@@ -5,3 +5,9 @@ ecm_add_test(webhittestresulttest.cpp  ../webhittestresult.cpp
 )
 
 
+ecm_add_test(zoomactionmenutest.cpp 
+    TEST_NAME zoomactionmenutest
+    NAME_PREFIX "webengineviewer-"
+    LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer KF5::XmlGui
+)
+

@@ -15,17 +15,17 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef ZOOMACTIONMENU_H
-#define ZOOMACTIONMENU_H
+#ifndef WEBENGINEZOOMACTIONMENU_H
+#define WEBENGINEZOOMACTIONMENU_H
 
 #include <KActionMenu>
-#include "messageviewer_export.h"
+#include "webengineviewer_export.h"
 class KToggleAction;
 class KActionCollection;
-namespace MessageViewer
+namespace WebEngineViewer
 {
 class ZoomActionMenuPrivate;
-class MESSAGEVIEWER_EXPORT ZoomActionMenu : public KActionMenu
+class WEBENGINEVIEWER_EXPORT ZoomActionMenu : public KActionMenu
 {
     Q_OBJECT
 public:

@@ -28,8 +28,12 @@ set(libwebengineviewer_webengine_SRCS
     )
 
 set(libwebengineviewer_findbar_SRCS
-        findbar/findbarbase.cpp
-        findbar/findbarwebengineview.cpp
+    findbar/findbarbase.cpp
+    findbar/findbarwebengineview.cpp
+    )
+
+set(libwebengineviewer_widgets_SRCS
+    widgets/zoomactionmenu.cpp
     )
 
 
@@ -38,6 +42,7 @@ set(libmessageviewer_web_LIB Qt5::WebEngineWidgets )
 set(libwebengineviewer_SRCS
     ${libwebengineviewer_webengine_SRCS}
     ${libwebengineviewer_findbar_SRCS}
+    ${libwebengineviewer_widgets_SRCS}
     )
 
 qt5_add_resources(libwebengineviewer_webengine_SRCS jquery.qrc)
@@ -122,6 +127,16 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_misc_HEADERS
     RELATIVE
     )
 
+ecm_generate_headers(WebEngineViewer_Camelcasewidgets_HEADERS
+    HEADER_NAMES
+    ZoomActionMenu
+    REQUIRED_HEADERS WebEngineViewer_widgets_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE widgets
+    )
+
+
+
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
     LIB_NAME KF5WebEngineViewer
     DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
@@ -134,6 +149,7 @@ install(FILES
     ${WebEngineViewer_Camelcasewebengine_manager_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_misc_HEADERS}
     ${WebEngineViewer_Camelfindbar_HEADERS}
+    ${WebEngineViewer_Camelcasewidgets_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
     COMPONENT Devel
     )
@@ -144,6 +160,7 @@ install(FILES
     ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
     ${WebEngineViewer_webengine_manager_HEADERS}
     ${WebEngineViewer_webengine_misc_HEADERS}
+    ${WebEngineViewer_widgets_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/webengineviewer
     COMPONENT Devel

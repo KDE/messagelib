@@ -81,7 +81,6 @@ set(libmessageviewer_widgets_SRCS
     widgets/openattachmentfolderwidget.cpp
     widgets/mailsourceviewer.cpp
     widgets/mailsourceviewtextbrowserwidget.cpp
-    widgets/zoomactionmenu.cpp
     )
 
 set(libmessageviewer_widgets_webengine_SRCS
@@ -278,7 +277,6 @@ ecm_generate_headers(MessageViewer_Camelcasewidgets_HEADERS
     InvitationSettings
     PrintingSettings
     ConfigureWidget
-    ZoomActionMenu
     REQUIRED_HEADERS MessageViewer_widgets_HEADERS
     PREFIX MessageViewer
     RELATIVE widgets

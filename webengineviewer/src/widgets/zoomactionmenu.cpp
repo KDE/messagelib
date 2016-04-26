@@ -16,12 +16,11 @@
 */
 
 #include "zoomactionmenu.h"
-#include "config-messageviewer.h"
 #include <KLocalizedString>
 #include <KToggleAction>
 #include <KActionCollection>
 
-using namespace MessageViewer;
+using namespace WebEngineViewer;
 namespace
 {
 qreal zoomBy()
@@ -30,7 +29,7 @@ qreal zoomBy()
 }
 }
 
-class MessageViewer::ZoomActionMenuPrivate
+class WebEngineViewer::ZoomActionMenuPrivate
 {
 public:
     ZoomActionMenuPrivate(KActionMenu *qq)
@@ -54,7 +53,7 @@ public:
 
 ZoomActionMenu::ZoomActionMenu(QObject *parent)
     : KActionMenu(parent),
-      d(new MessageViewer::ZoomActionMenuPrivate(this))
+      d(new WebEngineViewer::ZoomActionMenuPrivate(this))
 {
 }
 

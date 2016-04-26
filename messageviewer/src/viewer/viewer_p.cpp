@@ -142,7 +142,7 @@
 #include <QStandardPaths>
 #include <header/headerstyleplugin.h>
 #include <viewerplugins/viewerplugininterface.h>
-#include <widgets/zoomactionmenu.h>
+#include <WebEngineViewer/ZoomActionMenu>
 #include <kpimtextedit/texttospeechwidget.h>
 
 #include <grantleetheme/grantleethememanager.h>
@@ -1510,8 +1510,8 @@ void ViewerPrivate::createActions()
     if (!ac) {
         return;
     }
-    mZoomActionMenu = new MessageViewer::ZoomActionMenu(this);
-    connect(mZoomActionMenu, &ZoomActionMenu::zoomChanged, mViewer, &MailWebEngineView::slotZoomChanged);
+    mZoomActionMenu = new WebEngineViewer::ZoomActionMenu(this);
+    connect(mZoomActionMenu, &WebEngineViewer::ZoomActionMenu::zoomChanged, mViewer, &MailWebEngineView::slotZoomChanged);
     mZoomActionMenu->setActionCollection(ac);
     mZoomActionMenu->createZoomActions();
 
