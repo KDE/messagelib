@@ -116,7 +116,7 @@
 #include "messageviewer/messageviewerutil.h"
 #include "widgets/vcardviewer.h"
 
-#include "findbar/findbarwebengineview.h"
+#include <WebEngineViewer/FindBarWebEngineView>
 #include "viewer/webengine/mailwebengineview.h"
 #include <QWebEngineSettings>
 #include "htmlwriter/webengineparthtmlwriter.h"
@@ -1481,8 +1481,8 @@ void ViewerPrivate::createWidgets()
     mSliderContainer = new KPIMTextEdit::SlideContainer(readerBox);
     mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
     readerBoxVBoxLayout->addWidget(mSliderContainer);
-    mFindBar = new FindBarWebEngineView(mViewer, q);
-    connect(mFindBar, &FindBarBase::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
+    mFindBar = new WebEngineViewer::FindBarWebEngineView(mViewer, q);
+    connect(mFindBar, &WebEngineViewer::FindBarWebEngineView::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
 
 #ifndef QT_NO_TREEVIEW

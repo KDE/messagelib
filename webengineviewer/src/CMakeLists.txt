@@ -74,6 +74,15 @@ install(TARGETS
     EXPORT KF5WebEngineViewerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
     )
 
+ecm_generate_headers(WebEngineViewer_Camelfindbar_HEADERS
+    HEADER_NAMES
+    FindBarBase
+    FindBarWebEngineView
+    REQUIRED_HEADERS WebEngineViewer_findbar_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE findbar
+    )
+
 ecm_generate_headers(WebEngineViewer_Camelcasewebengine_accesskey_HEADERS
     HEADER_NAMES
     WebEngineAccessKey
@@ -124,12 +133,14 @@ install(FILES
     ${WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_manager_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_misc_HEADERS}
+    ${WebEngineViewer_Camelfindbar_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
     COMPONENT Devel
     )
 
 install(FILES
     ${WebEngineViewer_webengine_accesskey_HEADERS}
+    ${WebEngineViewer_findbar_HEADERS}
     ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
     ${WebEngineViewer_webengine_manager_HEADERS}
     ${WebEngineViewer_webengine_misc_HEADERS}

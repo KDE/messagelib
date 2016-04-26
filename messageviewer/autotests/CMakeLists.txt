@@ -31,10 +31,10 @@ add_messageviewer_class_unittest(zoomactionmenutest.cpp "../src/widgets/zoomacti
 macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     set(_test ${_source} util.cpp)
     get_filename_component(_name ${_source} NAME_WE)
-    ecm_add_test(${_source} util.cpp ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarbase.cpp ../src/findbar/findbarsourceview.cpp
+    ecm_add_test(${_source} util.cpp ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES Qt5::Test Qt5::Gui Qt5::Widgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::PimTextEdit KF5::PimCommon KF5::MessageViewer
+        LINK_LIBRARIES Qt5::Test Qt5::Gui Qt5::Widgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::PimTextEdit KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer
     )
 endmacro ()
 

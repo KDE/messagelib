@@ -19,13 +19,13 @@
 #ifndef FINDBARSOURCEVIEW_H
 #define FINDBARSOURCEVIEW_H
 
-#include "findbarbase.h"
+#include <WebEngineViewer/FindBarBase>
 
 class QPlainTextEdit;
 
 namespace MessageViewer
 {
-class FindBarSourceView : public FindBarBase
+class FindBarSourceView : public WebEngineViewer::FindBarBase
 {
     Q_OBJECT
 

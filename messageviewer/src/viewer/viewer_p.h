@@ -74,12 +74,12 @@ class ObjectTreeParser;
 namespace WebEngineViewer
 {
 class WebHitTestResult;
+class FindBarWebEngineView;
 }
 namespace MessageViewer
 {
 class HeaderStylePlugin;
 class CSSHelper;
-class FindBarWebEngineView;
 class MailWebEngineView;
 class WebEnginePartHtmlWriter;
 class HtmlStatusBar;
@@ -604,7 +604,7 @@ public:
     MimePartTreeView *mMimePartTree;
 #endif
     MailWebEngineView *mViewer;
-    FindBarWebEngineView *mFindBar;
+    WebEngineViewer::FindBarWebEngineView *mFindBar;
 
     const MimeTreeParser::AttachmentStrategy *mAttachmentStrategy;
     QTimer mUpdateReaderWinTimer;

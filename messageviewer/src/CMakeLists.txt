@@ -52,7 +52,7 @@ set(libmessageviewer_mailviewer_SRCS
     viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
     viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
     viewer/webengine/mailwebenginescript.cpp
-    findbar/findbarwebengineview.cpp
+    #findbar/findbarwebengineview.cpp
     )
 
 set(libmessageviewer_viewer_SRCS
@@ -119,7 +119,6 @@ set(libmessageviewer_scamdetection_webengine_SRCS
     )
 
 set(libmessageviewer_findbar_SRCS
-    findbar/findbarbase.cpp
     findbar/findbarsourceview.cpp
     )
 
@@ -294,22 +293,6 @@ ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
     RELATIVE utils
     )
 
-ecm_generate_headers(MessageViewer_Camelfindbar_HEADERS
-    HEADER_NAMES
-    FindBarBase
-    REQUIRED_HEADERS MessageViewer_findbar_HEADERS
-    PREFIX MessageViewer
-    RELATIVE findbar
-    )
-
-ecm_generate_headers(MessageViewer_CamelfindbarWebEngine_HEADERS
-    HEADER_NAMES
-    FindBarWebEngineView
-    REQUIRED_HEADERS MessageViewer_findbarWebEngine_HEADERS
-    PREFIX MessageViewer
-    RELATIVE findbar
-    )
-
 ecm_generate_headers(MessageViewer_Camelcaseantispam_HEADERS
     HEADER_NAMES
     SpamHeaderAnalyzer
@@ -384,7 +367,6 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 
 install(FILES
     ${MessageViewer_Camelcasewebengine_HEADERS}
-    ${MessageViewer_CamelfindbarWebEngine_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
     ${MessageViewer_Camelcaseviewerplugin_HEADERS}
     ${MessageViewer_Camelcasesettings_HEADERS}
@@ -403,7 +385,6 @@ install(FILES
 install(FILES
     ${MessageViewer_webengine_HEADERS}
     ${MessageViewer_scam_HEADERS}
-    ${MessageViewer_findbarWebEngine_HEADERS}
     ${MessageViewer_viewerplugin_HEADERS}
     ${MessageViewer_settings_HEADERS}
     ${MessageViewer_header_HEADERS}

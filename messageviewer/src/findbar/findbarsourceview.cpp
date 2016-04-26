@@ -24,7 +24,7 @@
 using namespace MessageViewer;
 
 FindBarSourceView::FindBarSourceView(QPlainTextEdit *view, QWidget *parent)
-    : FindBarBase(parent), mView(view)
+    : WebEngineViewer::FindBarBase(parent), mView(view)
 {
 }
 
@@ -62,7 +62,7 @@ void FindBarSourceView::clearSelections()
     textCursor.setPosition(0);
     mView->setTextCursor(textCursor);
 
-    FindBarBase::clearSelections();
+    WebEngineViewer::FindBarBase::clearSelections();
 }
 
 void FindBarSourceView::updateHighLight(bool)
