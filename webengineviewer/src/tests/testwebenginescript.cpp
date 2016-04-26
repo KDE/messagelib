@@ -161,10 +161,10 @@ void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
     scriptCombo->addItem(QStringLiteral("scroll down"), WebEngineViewer::WebEngineScript::scrollDown(0));
     scriptCombo->addItem(QStringLiteral("scroll up"), WebEngineViewer::WebEngineScript::scrollUp(0));
     scriptCombo->addItem(QStringLiteral("scroll percentage"), WebEngineViewer::WebEngineScript::scrollPercentage(0));
+    scriptCombo->addItem(QStringLiteral("clear selection"), WebEngineViewer::WebEngineScript::clearSelection());
 #if 0    
     WebEngineViewer::WebEngineScript::setElementByIdVisible(const QString & elementStr, bool visibility);
     WebEngineViewer::WebEngineScript::setStyleToElement(const QString & elementStr, const QString & style);
-    WebEngineViewer::WebEngineScript::scrollPercentage(int percent);
     WebEngineViewer::WebEngineScript::scrollToRelativePosition(int pos);
     WebEngineViewer::WebEngineScript::removeStyleToElement(const QString & element);
     WebEngineViewer::WebEngineScript::injectAttachments(const QString & delayedHtml, const QString & element);
