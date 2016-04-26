@@ -36,9 +36,6 @@ set(libwebengineviewer_widgets_SRCS
     widgets/zoomactionmenu.cpp
     )
 
-
-set(libmessageviewer_web_LIB Qt5::WebEngineWidgets )
-
 set(libwebengineviewer_SRCS
     ${libwebengineviewer_webengine_SRCS}
     ${libwebengineviewer_findbar_SRCS}
