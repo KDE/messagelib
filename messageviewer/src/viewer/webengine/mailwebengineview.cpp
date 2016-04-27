@@ -96,7 +96,9 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     QWebEngineProfile::defaultProfile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
-    //TODO need info about scrolling
+#if QT_VERSION >= 0x050700
+    connect(page(), &QWebEnginePage::scrollPositionChanged, d->mWebViewAccessKey, &WebEngineViewer::WebEngineAccessKey::hideAccessKeys);
+#endif
 }
 
 MailWebEngineView::~MailWebEngineView()
