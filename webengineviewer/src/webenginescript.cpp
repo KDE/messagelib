@@ -174,7 +174,7 @@ QString WebEngineScript::setStyleToElement(const QString &elementStr, const QStr
     return source;
 }
 
-QString WebEngineScript::scrollToRelativePosition(int pos)
+QString WebEngineScript::scrollToRelativePosition(qreal pos)
 {
     //TODO verify it
     const QString source = QString::fromLatin1("window.scrollTo(window.scrollX, %1); [window.scrollX, window.scrollY];").arg(pos);

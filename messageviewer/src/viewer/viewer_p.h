@@ -652,7 +652,7 @@ public:
       in printMsg() and slotPrintMsg() since mHtmlWriter points only to abstract non-QObject class. */
     QPointer<WebEnginePartHtmlWriter> mPartHtmlWriter;
 
-    float mSavedRelativePosition;
+    qreal mSavedRelativePosition;
     int mLevelQuote;
     bool mDecrytMessageOverwrite;
     bool mShowSignatureDetails;

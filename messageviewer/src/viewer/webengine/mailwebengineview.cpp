@@ -302,14 +302,16 @@ bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) cons
     return false;
 }
 
-void MailWebEngineView::scrollToRelativePosition(double pos)
+void MailWebEngineView::scrollToRelativePosition(qreal pos)
 {
     page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollToRelativePosition(pos));
 }
 
-double MailWebEngineView::relativePosition() const
+qreal MailWebEngineView::relativePosition() const
 {
-
+#if QT_VERSION >= 0x050700
+    return page()->scrollPosition().toPoint().y();
+#endif
     qDebug() << "double MailWebEngineView::relativePosition() const not implemented";
     //TODO
     return {};
