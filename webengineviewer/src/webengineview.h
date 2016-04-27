@@ -35,7 +35,6 @@ protected:
     bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
     QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) Q_DECL_OVERRIDE;
 
-
     virtual void forwardWheelEvent(QWheelEvent *event);
     virtual void forwardKeyPressEvent(QKeyEvent *event);
     virtual void forwardKeyReleaseEvent(QKeyEvent *event);

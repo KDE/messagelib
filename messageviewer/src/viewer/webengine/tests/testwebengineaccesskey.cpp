@@ -18,7 +18,6 @@
 #include "testwebengineaccesskey.h"
 #include "../mailwebengineview.h"
 
-
 #include "messageviewer/messageviewersettings.h"
 #include <QApplication>
 #include <QHBoxLayout>

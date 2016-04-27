@@ -134,7 +134,7 @@ void MailWebEngineView::selectAll()
 
 void MailWebEngineView::slotZoomChanged(qreal zoom)
 {
-    setZoomFactor(zoom*100);
+    setZoomFactor(zoom * 100);
 }
 
 void MailWebEngineView::scamCheck()

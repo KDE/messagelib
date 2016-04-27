@@ -126,11 +126,11 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
 QString WebEngineScript::scrollPercentage(int percent)
 {
     const QString source = QString::fromLatin1("var current = document.body.scrollTop;"
-                                               "var body = document.body;"
-                                               "html = document.documentElement;"
-                                               "var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );"
-                                               "var newPosition = current + height * %1 /100;"
-                                               "window.scrollTo(window.scrollX, newPosition); [window.scrollX, window.scrollY];").arg(percent);
+                           "var body = document.body;"
+                           "html = document.documentElement;"
+                           "var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );"
+                           "var newPosition = current + height * %1 /100;"
+                           "window.scrollTo(window.scrollX, newPosition); [window.scrollX, window.scrollY];").arg(percent);
 
     qDebug() << "QString WebEngineScript::scrollPercentage(int percent) " << source;
     return source;
