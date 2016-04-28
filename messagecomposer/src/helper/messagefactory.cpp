@@ -310,9 +310,11 @@ MessageFactory::MessageReply MessageFactory::createReply()
         parser.setIdentityManager(m_identityManager);
         parser.setCharsets(MessageComposerSettings::self()->preferredCharsets());
         parser.setWordWrap(MessageComposerSettings::wordWrap(), MessageComposerSettings::lineWrapWidth());
+#ifdef QTWEBENGINE_BUG_SELECTION_FIXED
         if (MessageComposer::MessageComposerSettings::quoteSelectionOnly()) {
             parser.setSelection(m_selection);
         }
+#endif
         parser.setAllowDecryption(true);
         if (!m_template.isEmpty()) {
             parser.process(m_template, m_origMsg);
