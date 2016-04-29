@@ -304,13 +304,7 @@ bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) cons
 
 void MailWebEngineView::scrollToRelativePosition(qreal pos)
 {
-#if QT_VERSION >= 0x050700
-    const QPointF currentPos = page()->scrollPosition();
-    const QPointF newPos(currentPos.x(), pos);
-    page()->setScrollPosition(newPos);
-#else
     page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollToRelativePosition(pos));
-#endif
 }
 
 qreal MailWebEngineView::relativePosition() const
