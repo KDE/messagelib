@@ -57,6 +57,8 @@ QString MimeTreeParser::Util::fileNameForMimetype(const QString &mimeType, int i
         tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.journal");
     } else if (mimeType == QLatin1String("application/x-vnd.kolab.note")) {
         tMimeType = QStringLiteral("application/x-vnd.akonadi.note");
+    } else if (mimeType == QLatin1String("image/jpg")) {
+        tMimeType = QStringLiteral("image/jpeg");
     }
     QMimeDatabase mimeDb;
     auto mime = mimeDb.mimeTypeForName(tMimeType);
@@ -72,6 +74,7 @@ QString MimeTreeParser::Util::fileNameForMimetype(const QString &mimeType, int i
     if (fileName == QLatin1String("text-vcard")) {
         fileName = QStringLiteral("text-x-vcard");
     }
+
     if (fileName.isEmpty()) {
         fileName = fallbackFileName1;
         if (fileName.isEmpty()) {
