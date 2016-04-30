@@ -51,7 +51,6 @@ void ComposerTest::testAttachments()
     QVERIFY(composer->exec());
     QCOMPARE(composer->resultMessages().size(), 1);
     KMime::Message::Ptr message = composer->resultMessages().first();
-    qDebug() << message->encodedContent();
     delete composer;
     composer = Q_NULLPTR;
 
@@ -121,7 +120,6 @@ void ComposerTest::testNonAsciiHeaders()
     QVERIFY(composer->exec());
     QCOMPARE(composer->resultMessages().size(), 1);
     const KMime::Message::Ptr message = composer->resultMessages().first();
-    qDebug() << message->encodedContent();
     message->assemble();
     message->parse();
     QCOMPARE(message->bcc(false)->displayNames().size(), 1);
@@ -129,11 +127,11 @@ void ComposerTest::testNonAsciiHeaders()
     QCOMPARE(message->cc(false)->displayNames().size(), 1);
     QCOMPARE(message->from(false)->displayNames().size(), 1);
     QCOMPARE(message->replyTo(false)->displayNames().size(), 1);
-    QCOMPARE(message->from()->displayNames().first().toUtf8(), fromDisplayName.toUtf8());
-    QCOMPARE(message->to()->displayNames().first().toUtf8(), toDisplayName.toUtf8());
-    QCOMPARE(message->cc()->displayNames().first().toUtf8(), ccDisplayName.toUtf8());
-    QCOMPARE(message->bcc()->displayNames().first().toUtf8(), bccDisplayName.toUtf8());
-    QCOMPARE(message->replyTo()->displayNames().first().toUtf8(), replyToDisplayName.toUtf8());
+    QCOMPARE(message->from()->displayNames().first(), fromDisplayName);
+    QCOMPARE(message->to()->displayNames().first(), toDisplayName);
+    QCOMPARE(message->cc()->displayNames().first(), ccDisplayName);
+    QCOMPARE(message->bcc()->displayNames().first(), bccDisplayName);
+    QCOMPARE(message->replyTo()->displayNames().first(), replyToDisplayName);
     delete composer;
     composer = Q_NULLPTR;
 }

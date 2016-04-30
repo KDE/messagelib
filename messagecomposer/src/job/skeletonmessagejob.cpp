@@ -71,18 +71,23 @@ void SkeletonMessageJobPrivate::doStart()
         KMime::Headers::From *from = new KMime::Headers::From;
         KMime::Types::Mailbox address;
         address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from()));
-        from->addAddress(address);
+        from->fromUnicodeString(QString::fromLatin1(address.as7BitString("utf-8")), "utf-8");
         message->setHeader(from);
     }
 
     // To:
     {
         KMime::Headers::To *to = new KMime::Headers::To;
+        QByteArray sTo;
         foreach (const QString &a, infoPart->to()) {
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
-            to->addAddress(address);
+            if (!sTo.isEmpty()) {
+               sTo.append(",");
+            }
+            sTo.append(address.as7BitString("utf-8"));
         }
+        to->fromUnicodeString(QString::fromLatin1(sTo),"utf-8");
         message->setHeader(to);
     }
 
@@ -91,29 +96,39 @@ void SkeletonMessageJobPrivate::doStart()
         KMime::Headers::ReplyTo *replyTo = new KMime::Headers::ReplyTo;
         KMime::Types::Mailbox address;
         address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->replyTo()));
-        replyTo->addAddress(address);
+        replyTo->fromUnicodeString(QString::fromLatin1(address.as7BitString("utf-8")), "utf-8");
         message->setHeader(replyTo);
     }
 
     // Cc:
     {
         KMime::Headers::Cc *cc = new KMime::Headers::Cc;
+        QByteArray sCc;
         foreach (const QString &a, infoPart->cc()) {
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
-            cc->addAddress(address);
+            if (!sCc.isEmpty()) {
+               sCc.append(",");
+            }
+            sCc.append(address.as7BitString("utf-8"));
         }
+        cc->fromUnicodeString(QString::fromLatin1(sCc),"utf-8");
         message->setHeader(cc);
     }
 
     // Bcc:
     {
         KMime::Headers::Bcc *bcc = new KMime::Headers::Bcc;
+        QByteArray sBcc;
         foreach (const QString &a, infoPart->bcc()) {
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
-            bcc->addAddress(address);
+            if (!sBcc.isEmpty()) {
+               sBcc.append(",");
+            }
+            sBcc.append(address.as7BitString("utf-8"));
         }
+        bcc->fromUnicodeString(QString::fromLatin1(sBcc),"utf-8");
         message->setHeader(bcc);
     }
 
