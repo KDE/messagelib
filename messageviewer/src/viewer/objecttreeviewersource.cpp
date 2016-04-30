@@ -28,7 +28,7 @@
 namespace MessageViewer
 {
 MailViewerSource::MailViewerSource(ViewerPrivate *viewer) :
-    MimeTreeParser::ObjectTreeSourceIf(), mViewer(viewer)
+    MimeTreeParser::Interface::ObjectTreeSource(), mViewer(viewer)
 {
 }
 

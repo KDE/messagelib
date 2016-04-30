@@ -20,7 +20,7 @@
 #ifndef MAILVIEWER_OBJECTTREEEMPTYSOURCE_H
 #define MAILVIEWER_OBJECTTREEEMPTYSOURCE_H
 
-#include <MimeTreeParser/ObjectTreeSourceIf>
+#include <MimeTreeParser/ObjectTreeSource>
 #include "messageviewer_export.h"
 class QString;
 
@@ -29,7 +29,7 @@ namespace MessageViewer
 
 /** An ObjectTreeSource that does not work on anything */
 class EmptySourcePrivate;
-class MESSAGEVIEWER_EXPORT EmptySource : public MimeTreeParser::ObjectTreeSourceIf
+class MESSAGEVIEWER_EXPORT EmptySource : public MimeTreeParser::Interface::ObjectTreeSource
 {
 public:
     EmptySource();

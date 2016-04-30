@@ -119,7 +119,7 @@ void PartNodeBodyPart::setDefaultDisplay(Interface::BodyPart::Display d)
     mDefaultDisplay = d;
 }
 
-ObjectTreeSourceIf *PartNodeBodyPart::source() const
+Interface::ObjectTreeSource *PartNodeBodyPart::source() const
 {
     return mObjectTreeParser->mSource;
 }

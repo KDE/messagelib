@@ -126,7 +126,7 @@ CryptoBlock::CryptoBlock(HtmlWriter *writer,
                          PartMetaData *block,
                          const NodeHelper *nodeHelper,
                          const Kleo::CryptoBackend::Protocol *cryptoProto,
-                         ObjectTreeSourceIf *source,
+                         Interface::ObjectTreeSource *source,
                          const QString &fromAddress,
                          KMime::Content *node)
     : HTMLBlock()
@@ -265,7 +265,7 @@ void EncryptedBlock::internalExit()
 
 SignedBlock::SignedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block,
                          const Kleo::CryptoBackend::Protocol *cryptoProto,
-                         ObjectTreeSourceIf *source,
+                         Interface::ObjectTreeSource *source,
                          QString fromAddress, bool printing)
     : HTMLBlock()
     , mBlock(block)
@@ -1428,7 +1428,7 @@ KMMsgSignatureState TextMessagePart::signatureState() const
 
 //-----HtmlMessageBlock----------------------
 
-HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node, ObjectTreeSourceIf *source)
+HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node, Interface::ObjectTreeSource *source)
     : MessagePart(otp, QString())
     , mNode(node)
     , mSource(source)
@@ -1843,7 +1843,7 @@ bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
     mMetaData.auditLog.clear();
     bool bDecryptionOk = false;
     bool cannotDecrypt = false;
-    ObjectTreeSourceIf *source = mOtp->mSource;
+    Interface::ObjectTreeSource *source = mOtp->mSource;
     NodeHelper *nodeHelper = mOtp->nodeHelper();
 
     assert(decryptMessage());
@@ -1997,7 +1997,7 @@ void CryptoMessagePart::startDecryption(KMime::Content *data)
 bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signature)
 {
     NodeHelper *nodeHelper = mOtp->nodeHelper();
-    ObjectTreeSourceIf *source = mOtp->mSource;
+    Interface::ObjectTreeSource *source = mOtp->mSource;
 
     mMetaData.isSigned = false;
     mMetaData.technicalProblem = (mCryptoProto == 0);

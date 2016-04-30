@@ -38,16 +38,17 @@ class BodyPartFormatterBaseFactory;
 
 namespace MimeTreeParser
 {
-
+namespace Interface
+{
 /**
  * Interface for object tree sources.
  * @author Andras Mantia <amantia@kdab.net>
  */
-class MIMETREEPARSER_EXPORT ObjectTreeSourceIf
+class MIMETREEPARSER_EXPORT ObjectTreeSource
 {
 
 public:
-    virtual ~ObjectTreeSourceIf();
+    virtual ~ObjectTreeSource();
 
     /**
       * Sets the type of mail that is currently displayed. Applications can display this
@@ -98,5 +99,5 @@ public:
     virtual const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() = 0;
 };
 }
-
+}
 #endif

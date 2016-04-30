@@ -17,8 +17,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#include "objecttreesourceif.h"
+#include "objecttreesource.h"
 
-MimeTreeParser::ObjectTreeSourceIf::~ObjectTreeSourceIf()
+MimeTreeParser::Interface::ObjectTreeSource::~ObjectTreeSource()
 {
 }

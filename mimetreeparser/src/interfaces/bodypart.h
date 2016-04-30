@@ -49,10 +49,11 @@ namespace MimeTreeParser
 class NodeHelper;
 class ObjectTreeParser;
 class ProcessResult;
-class ObjectTreeSourceIf;
 
 namespace Interface
 {
+
+class ObjectTreeSource;
 
 /*FIXME(Andras) review, port
   class Observer;
@@ -199,7 +200,7 @@ public:
      * For making it easier to refactor, add objectTreeParser
      */
     virtual MimeTreeParser::ObjectTreeParser *objectTreeParser() const = 0;
-    virtual MimeTreeParser::ObjectTreeSourceIf *source() const = 0;
+    virtual MimeTreeParser::Interface::ObjectTreeSource *source() const = 0;
     virtual MimeTreeParser::ProcessResult *processResult() const = 0;
 };
 

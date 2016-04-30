@@ -37,7 +37,7 @@
 #include "mimetreeparser_export.h"
 
 #include "mimetreeparser/nodehelper.h"
-#include "mimetreeparser/objecttreesourceif.h"
+#include "mimetreeparser/objecttreesource.h"
 
 #include <Libkleo/CryptoBackend>
 #include <gpgme++/verificationresult.h>
@@ -126,8 +126,8 @@ KMime::Content.
 
 The ObjectTreeParser basically has two modes: Generating the HTML code for the Viewer, or only
 extracting the plainTextContent() for situations where only the message text is needed, for example
-when inline forwarding a message. The mode depends on the ObjectTreeSourceIf passed to the
-constructor: If ObjectTreeSourceIf::htmlWriter() is not 0, then the HTML code generation mode is
+when inline forwarding a message. The mode depends on the Interface::ObjectTreeSource passed to the
+constructor: If Interface::ObjectTreeSource::htmlWriter() is not 0, then the HTML code generation mode is
 used.
 
 Basically, all the ObjectTreeParser does is going through the tree of MIME parts and operating on
@@ -190,7 +190,7 @@ For signature and decryption handling, there are functions which help with gener
 for the signature header and footer. These are writeDeferredDecryptionBlock(), writeSigstatFooter()
 and writeSigstatHeader(). As the name writeDeferredDecryptionBlock() suggests, a setting can cause
 the message to not be decrypted unless the user clicks a link. Whether the message should be
-decrypted or not can be controlled by ObjectTreeSourceIf::decryptMessage(). When the user clicks the
+decrypted or not can be controlled by Interface::ObjectTreeSource::decryptMessage(). When the user clicks the
 decryption link, the URLHandler for 'kmail:' URLs sets that variable to true and triggers an update
 of the Viewer, which will cause parseObjectTree() to be called again.
 
@@ -292,7 +292,7 @@ class MIMETREEPARSER_EXPORT ObjectTreeParser
     ObjectTreeParser(const ObjectTreeParser &other);
 
 public:
-    explicit ObjectTreeParser(ObjectTreeSourceIf *source,
+    explicit ObjectTreeParser(Interface::ObjectTreeSource *source,
                               NodeHelper *nodeHelper = 0,
                               bool showOneMimePart = false,
                               const AttachmentStrategy *attachmentStrategy = Q_NULLPTR);
@@ -383,7 +383,7 @@ private:
     void copyContentFrom(const ObjectTreeParser *other);
 
 private:
-    ObjectTreeSourceIf *mSource;
+    Interface::ObjectTreeSource *mSource;
     NodeHelper *mNodeHelper;
     HtmlWriter *mHtmlWriter;
     QByteArray mPlainTextContentCharset;

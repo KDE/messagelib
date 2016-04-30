@@ -48,9 +48,13 @@ class Content;
 namespace MimeTreeParser
 {
 class ObjectTreeParser;
-class ObjectTreeSourceIf;
 class HtmlWriter;
 class NodeHelper;
+
+namespace Interface
+{
+class ObjectTreeSource;
+}
 
 class HTMLBlock
 {
@@ -102,7 +106,7 @@ class SignedBlock : public HTMLBlock
 public:
     SignedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block,
                 const Kleo::CryptoBackend::Protocol *cryptoProto,
-                ObjectTreeSourceIf *source,
+                Interface::ObjectTreeSource *source,
                 QString fromAddress, bool printing);
     virtual ~SignedBlock();
 
@@ -114,7 +118,7 @@ private:
     const PartMetaData &mBlock;
     HtmlWriter *mWriter;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
-    ObjectTreeSourceIf *mSource;
+    Interface::ObjectTreeSource *mSource;
     QString mClass;
     QString mFromAddress;
     bool mPrinting;
@@ -127,7 +131,7 @@ public:
                 PartMetaData *block,
                 const NodeHelper *nodeHelper,
                 const Kleo::CryptoBackend::Protocol *cryptoProto,
-                ObjectTreeSourceIf *source,
+                Interface::ObjectTreeSource *source,
                 const QString &fromAddress,
                 KMime::Content *node);
     virtual ~CryptoBlock();
@@ -140,7 +144,7 @@ private:
     PartMetaData *mMetaData;
     const NodeHelper *mNodeHelper;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
-    ObjectTreeSourceIf *mSource;
+    Interface::ObjectTreeSource *mSource;
     QString mFromAddress;
     KMime::Content *mNode;
     QVector<HTMLBlock::Ptr> mInteralBlocks;
@@ -325,7 +329,7 @@ class HtmlMessagePart : public MessagePart
 {
 public:
     typedef QSharedPointer<HtmlMessagePart> Ptr;
-    HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, MimeTreeParser::ObjectTreeSourceIf *source);
+    HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, MimeTreeParser::Interface::ObjectTreeSource *source);
     virtual ~HtmlMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -336,7 +340,7 @@ public:
 private:
     QString processHtml(const QString &htmlSource, QString &extraHead);
     KMime::Content *mNode;
-    ObjectTreeSourceIf *mSource;
+    Interface::ObjectTreeSource *mSource;
     QString mBodyHTML;
     QByteArray mCharset;
 };

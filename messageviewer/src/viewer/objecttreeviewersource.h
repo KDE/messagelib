@@ -20,7 +20,7 @@
 #ifndef MAILVIEWER_OBJECTTREEVIEWERSOURCE_H
 #define MAILVIEWER_OBJECTTREEVIEWERSOURCE_H
 
-#include <MimeTreeParser/ObjectTreeSourceIf>
+#include <MimeTreeParser/ObjectTreeSource>
 
 class QString;
 
@@ -30,7 +30,7 @@ namespace MessageViewer
 class ViewerPrivate;
 
 /** An ObjectTreeParser source working on a MailViewer object */
-class MailViewerSource : public MimeTreeParser::ObjectTreeSourceIf
+class MailViewerSource : public MimeTreeParser::Interface::ObjectTreeSource
 {
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);

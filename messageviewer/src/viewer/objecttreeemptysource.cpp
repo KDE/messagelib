@@ -38,7 +38,7 @@ public:
 };
 
 EmptySource::EmptySource()
-    : MimeTreeParser::ObjectTreeSourceIf(),
+    : MimeTreeParser::Interface::ObjectTreeSource(),
       d(new MessageViewer::EmptySourcePrivate)
 {
 }

@@ -20,7 +20,7 @@ set(libmimetreeparser_main_SRCS
     bodyformatter/texthtml.cpp
     bodyformatter/utils.cpp
     interfaces/bodypartformatter.cpp
-    interfaces/objecttreesourceif.cpp
+    interfaces/objecttreesource.cpp
     interfaces/bodypart.cpp
     interfaces/htmlwriter.cpp
     job/kleojobexecutor.cpp
@@ -83,7 +83,7 @@ ecm_generate_headers(MimeTreeParser_Camelcaseinterfaces_HEADERS
     BodyPartFormatter
     BodyPart
     HtmlWriter
-    ObjectTreeSourceIf
+    ObjectTreeSource
     REQUIRED_HEADERS MimeTreeParser_interfaces_HEADERS
     PREFIX MimeTreeParser
     RELATIVE interfaces

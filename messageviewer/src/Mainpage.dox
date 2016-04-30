@@ -15,7 +15,7 @@ based on WebKit.
 \section ObjectTreeParser
 
 The class ObjectTreeParser is used to parse the KMime::Message and create a HTML representation out
-of it. An implementation of the ObjectTreeSourceIf interface is passed to the ObjectTreeParser,
+of it. An implementation of the ObjectTreeSource interface is passed to the ObjectTreeParser,
 which provides an interface for the ObjectTreeParser to interact with the viewer widget. The most
 import part of this interface is that it provides a HtmlWriter, which the ObjectTreeParser uses to
 write the HTML it generates to.
@@ -27,7 +27,7 @@ the textual content that the ObjectTreeParser extracted, which can be retrieved 
 ObjectTreeParser::textualContent(). This is used for example when KMail creates an inline forward
 message.
 
-The Viewer of course uses a non-dummy implementation of the ObjectTreeSourceIf, the MailViewerSource.
+The Viewer of course uses a non-dummy implementation of the ObjectTreeSource, the MailViewerSource.
 The HtmlWriter provided by the MailViewerSource is a WebKitPartHtmlWriter, which writes the HTML
 directly to the MailWebView widget, which is a KWebView.
 
@@ -35,7 +35,7 @@ The header of the message or the headers of any embedded messages are formatted 
 The user can chose between many styles of header formatting, like 'fancy' or 'brief'. The creation
 of the HTML code for these headers is handled by HeaderStyle. The ObjectTreeParser does not use
 the HeaderStyle classes directly; instead, it is delegated to ViewerPrivate::writeMsgHeader() via
-ObjectTreeSourceIf::createMessageHeader().
+ObjectTreeSource::createMessageHeader().
 
 The 'fancy' header style can display the spam status of the message in a nice way. To extract the
 spam information, SpamHeaderAnalyzer, AntiSpamConfig and SpamAgent are used.
@@ -44,7 +44,7 @@ The HeaderStrategy controls which parts of the header should be shown. Based on 
 HeaderStyle implementations decide which header fields to include in the HTML code they generate.
 
 Some parts of the appearance of the message can be customized by changing the CSS. For this, the
-CSSHelper class is used, which is passed to the ObjectTreeParser with ObjectTreeSourceIf::cssHelper().
+CSSHelper class is used, which is passed to the ObjectTreeParser with ObjectTreeSource::cssHelper().
 
 The ObjectTreeParser can have plugins that create the HTML for special MIME parts themselves. Those
 plugins are found in kdepim/plugins/messageviewer. Examples are plugins that render the vCard in a

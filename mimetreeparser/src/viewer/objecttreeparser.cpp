@@ -90,7 +90,7 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
     init();
 }
 
-ObjectTreeParser::ObjectTreeParser(ObjectTreeSourceIf *source,
+ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source,
                                    MimeTreeParser::NodeHelper *nodeHelper,
                                    bool showOnlyOneMimePart,
                                    const AttachmentStrategy *strategy)

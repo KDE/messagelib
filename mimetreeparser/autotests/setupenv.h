@@ -22,7 +22,7 @@
 #define MESSAGECORE_TESTS_UTIL_H
 
 #include <gpgme++/key.h>
-#include "interfaces/objecttreesourceif.h"
+#include "interfaces/objecttreesource.h"
 #include <viewer/attachmentstrategy.h>
 #include "viewer/bodypartformatterbasefactory.h"
 
@@ -41,7 +41,7 @@ void setupEnv();
 
 // We can't use EmptySource, since we need to control some emelnets of the source for tests to also test
 // loadExternal and htmlMail.
-class TestObjectTreeSource : public MimeTreeParser::ObjectTreeSourceIf
+class TestObjectTreeSource : public MimeTreeParser::Interface::ObjectTreeSource
 {
 public:
     TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
