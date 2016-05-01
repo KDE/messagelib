@@ -227,6 +227,9 @@ public:
     void setAttachmentFlag(KMime::Content *node);
     bool isAttachment() const;
 
+    void setIsRoot(bool root);
+    bool isRoot() const;
+
     PartMetaData *partMetaData();
 
     /* only a function that should be removed if the refactoring is over */
@@ -241,16 +244,25 @@ protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
     void renderInternalHtml(bool decorate) const;
     QString renderInternalText() const;
+
     HTMLBlock::Ptr attachmentBlock() const;
+    HTMLBlock::Ptr rootBlock() const;
 
     QString mText;
     ObjectTreeParser *mOtp;
     ObjectTreeParser *mSubOtp;
-    MessagePart::Ptr mSubMessagePart;
     PartMetaData mMetaData;
     KMime::Content *mAttachmentNode;
+    bool mRoot;
+
 private:
+    KMime::Content *attachmentNode() const;
+    HTMLBlock::Ptr internalAttachmentBlock() const;
+    HTMLBlock::Ptr internalRootBlock() const;
+
     QVector<Interface::MessagePart::Ptr> mBlocks;
+    KMime::Content *mInternalAttachmentNode;
+    bool mIsInternalRoot;
 };
 
 class MimeMessagePart : public MessagePart
@@ -280,18 +292,8 @@ public:
     QString text() const Q_DECL_OVERRIDE;
     void html(bool decorate) Q_DECL_OVERRIDE;
 
-    void setIsRoot(bool root);
-    bool isRoot() const;
-
-    void fix() const Q_DECL_OVERRIDE;
-    void copyContentFrom() const Q_DECL_OVERRIDE;
-
-protected:
-    HTMLBlock::Ptr rootBlock() const;
-    void htmlInternal(bool decorate);
 
 private:
-    bool mRoot;
 };
 
 enum IconType {

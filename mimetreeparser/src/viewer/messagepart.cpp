@@ -1059,6 +1059,9 @@ MessagePart::MessagePart(ObjectTreeParser *otp,
     , mOtp(otp)
     , mSubOtp(Q_NULLPTR)
     , mAttachmentNode(Q_NULLPTR)
+    , mRoot(false)
+    , mInternalAttachmentNode(Q_NULLPTR)
+    , mIsInternalRoot(false)
 {
 
 }
@@ -1086,10 +1089,33 @@ bool MessagePart::isAttachment() const
     return mAttachmentNode;
 }
 
+KMime::Content *MessagePart::attachmentNode() const
+{
+    return mAttachmentNode;
+}
+
 HTMLBlock::Ptr MessagePart::attachmentBlock() const
 {
     if (mOtp->htmlWriter() && isAttachment()) {
         return HTMLBlock::Ptr(new AttachmentMarkBlock(mOtp->htmlWriter(), mAttachmentNode));
+    }
+    return HTMLBlock::Ptr();
+}
+
+void MessagePart::setIsRoot(bool root)
+{
+    mRoot = root;
+}
+
+bool MessagePart::isRoot() const
+{
+    return mRoot;
+}
+
+HTMLBlock::Ptr MessagePart::rootBlock() const
+{
+    if (mOtp->htmlWriter() && isRoot()) {
+        return HTMLBlock::Ptr(new RootBlock(mOtp->htmlWriter()));
     }
     return HTMLBlock::Ptr();
 }
@@ -1122,41 +1148,70 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     mSubOtp = new ObjectTreeParser(mOtp, onlyOneMimePart);
     mSubOtp->setAllowAsync(mOtp->allowAsync());
-    mSubMessagePart = mSubOtp->parseObjectTreeInternal(node);
-    foreach(auto part, mSubMessagePart->subParts()) {
-        part->setParentPart(this);
+    auto subMessagePart = mSubOtp->parseObjectTreeInternal(node);
+    mInternalAttachmentNode = subMessagePart->attachmentNode();
+    mIsInternalRoot = subMessagePart->isRoot();
+    foreach(auto part, subMessagePart->subParts()) {
+        appendSubPart(part);
     }
 }
+
+HTMLBlock::Ptr MessagePart::internalRootBlock() const
+{
+    if (mOtp->htmlWriter() && mIsInternalRoot) {
+        return HTMLBlock::Ptr(new RootBlock(mOtp->htmlWriter()));
+    }
+    return HTMLBlock::Ptr();
+}
+
+HTMLBlock::Ptr MessagePart::internalAttachmentBlock() const
+{
+    if (mOtp->htmlWriter() && mInternalAttachmentNode) {
+        return HTMLBlock::Ptr(new AttachmentMarkBlock(mOtp->htmlWriter(), mInternalAttachmentNode));
+    }
+    return HTMLBlock::Ptr();
+}
+
 
 void MessagePart::renderInternalHtml(bool decorate) const
 {
-    if (mSubMessagePart) {
-        mSubMessagePart->html(decorate);
-    }
-}
+    const HTMLBlock::Ptr rBlock(internalRootBlock());
+    const HTMLBlock::Ptr aBlock(internalAttachmentBlock());
 
-void MessagePart::copyContentFrom() const
-{
-    if (mSubMessagePart) {
-        mSubMessagePart->copyContentFrom();
-        if (mSubOtp) {
-            mOtp->copyContentFrom(mSubOtp);
-        }
+    foreach (const auto &mp, subParts()) {
+        mp->html(decorate);
     }
 }
 
 QString MessagePart::renderInternalText() const
 {
-    if (!mSubMessagePart) {
-        return QString();
+    QString text;
+    foreach (const auto &mp, subParts()) {
+        text += mp->text();
     }
-    return mSubMessagePart->text();
+    return text;
+}
+
+void MessagePart::copyContentFrom() const
+{
+    foreach (const auto &mp, subParts()) {
+        const auto m = mp.dynamicCast<MessagePart>();
+        if (m) {
+            m->copyContentFrom();
+        }
+    }
+    if (hasSubParts() && mSubOtp) {
+        mOtp->copyContentFrom(mSubOtp);
+    }
 }
 
 void MessagePart::fix() const
 {
-    if (mSubMessagePart) {
-        mSubMessagePart->fix();
+    foreach (const auto &mp, subParts()) {
+        const auto m = mp.dynamicCast<MessagePart>();
+        if (m) {
+            m->fix();
+        }
     }
 }
 
@@ -1179,7 +1234,6 @@ bool MessagePart::hasSubParts() const
 //-----MessagePartList----------------------
 MessagePartList::MessagePartList(ObjectTreeParser *otp)
     : MessagePart(otp, QString())
-    , mRoot(false)
 {
 }
 
@@ -1188,67 +1242,17 @@ MessagePartList::~MessagePartList()
 
 }
 
-void MessagePartList::setIsRoot(bool root)
-{
-    mRoot = root;
-}
-
-bool MessagePartList::isRoot() const
-{
-    return mRoot;
-}
-
-HTMLBlock::Ptr MessagePartList::rootBlock() const
-{
-    if (mOtp->htmlWriter() && isRoot()) {
-        return HTMLBlock::Ptr(new RootBlock(mOtp->htmlWriter()));
-    }
-    return HTMLBlock::Ptr();
-}
-
-
 void MessagePartList::html(bool decorate)
 {
     const HTMLBlock::Ptr rBlock(rootBlock());
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
-    htmlInternal(decorate);
-}
-
-void MessagePartList::htmlInternal(bool decorate)
-{
-    foreach (const auto &mp, subParts()) {
-        mp->html(decorate);
-    }
+    renderInternalHtml(decorate);
 }
 
 QString MessagePartList::text() const
 {
-    QString text;
-    foreach (const auto &mp, subParts()) {
-        text += mp->text();
-    }
-    return text;
-}
-
-void MessagePartList::fix() const
-{
-    foreach (const auto &mp, subParts()) {
-        const auto m = mp.dynamicCast<MessagePart>();
-        if (m) {
-            m->fix();
-        }
-    }
-}
-
-void MessagePartList::copyContentFrom() const
-{
-    foreach (const auto &mp, subParts()) {
-        const auto m = mp.dynamicCast<MessagePart>();
-        if (m) {
-            m->copyContentFrom();
-        }
-    }
+    return renderInternalText();
 }
 
 //-----TextMessageBlock----------------------
@@ -1422,7 +1426,7 @@ void TextMessagePart::html(bool decorate)
     if (mAsIcon != MimeTreeParser::NoIcon) {
         writePartIcon();
     } else {
-        MessagePartList::htmlInternal(decorate);
+        renderInternalHtml(decorate);
     }
 }
 
@@ -2370,7 +2374,7 @@ EncapsulatedRfc822MessagePart::~EncapsulatedRfc822MessagePart()
 void EncapsulatedRfc822MessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate)
-    if (!mSubMessagePart) {
+    if (!hasSubParts()) {
         return;
     }
 
