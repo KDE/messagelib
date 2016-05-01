@@ -96,7 +96,7 @@ ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source,
                                    const AttachmentStrategy *strategy)
     : mSource(source),
       mNodeHelper(nodeHelper),
-      mHtmlWriter(0),
+      mHtmlWriter(Q_NULLPTR),
       mTopLevelContent(0),
       mShowOnlyOneMimePart(showOnlyOneMimePart),
       mHasPendingAsyncJobs(false),
@@ -141,7 +141,7 @@ ObjectTreeParser::~ObjectTreeParser()
 {
     if (mDeleteNodeHelper) {
         delete mNodeHelper;
-        mNodeHelper = 0;
+        mNodeHelper = Q_NULLPTR;
     }
 }
 
@@ -235,7 +235,7 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
             bRendered = true;
             break;
         } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
-            QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : 0;
+            QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : Q_NULLPTR;
             const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
             if (r == Interface::BodyPartFormatter::AsIcon) {
                 processResult.setNeverDisplayInline(true);
