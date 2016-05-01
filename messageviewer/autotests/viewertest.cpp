@@ -31,41 +31,24 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     viewer.show();
     QTest::qWaitForWindowExposed(&viewer);
 
-    QVERIFY(!viewer.message());
-    QWidget *createtodowidget = viewer.findChild<QWidget *>(QStringLiteral("todoedit"));
-    QVERIFY(createtodowidget);
-    QCOMPARE(createtodowidget->isVisible(), false);
+    QWidget *mViewer = viewer.findChild<QWidget *>(QStringLiteral("mViewer"));
+    QVERIFY(mViewer);
+    QCOMPARE(mViewer->isVisible(), true);
 
     QWidget *sliderContainer = viewer.findChild<QWidget *>(QStringLiteral("slidercontainer"));
     QVERIFY(sliderContainer);
-    QVERIFY(sliderContainer->isVisible());
-
-    QWidget *translaterwidget = viewer.findChild<QWidget *>(QStringLiteral("translatorwidget"));
-    QVERIFY(translaterwidget);
-    QVERIFY(!translaterwidget->isVisible());
+    QCOMPARE(sliderContainer->isVisible(), false);
 
     QWidget *colorBar = viewer.findChild<QWidget *>(QStringLiteral("mColorBar"));
     QVERIFY(colorBar);
 
     QWidget *scandetectionWidget = viewer.findChild<QWidget *>(QStringLiteral("scandetectionwarning"));
     QVERIFY(scandetectionWidget);
-    QVERIFY(!scandetectionWidget->isVisible());
+    QCOMPARE(scandetectionWidget->isVisible(), false);
 
     QWidget *openattachementfolderwidget = viewer.findChild<QWidget *>(QStringLiteral("openattachementfolderwidget"));
     QVERIFY(openattachementfolderwidget);
-    QVERIFY(!openattachementfolderwidget->isVisible());
-
-    QWidget *createeventwidget = viewer.findChild<QWidget *>(QStringLiteral("eventedit"));
-    QVERIFY(createeventwidget);
-    QCOMPARE(createeventwidget->isVisible(), false);
-
-    QWidget *createnotewidget = viewer.findChild<QWidget *>(QStringLiteral("noteedit"));
-    QVERIFY(createnotewidget);
-    QCOMPARE(createnotewidget->isVisible(), false);
-
-    QWidget *mViewer = viewer.findChild<QWidget *>(QStringLiteral("mViewer"));
-    QVERIFY(mViewer);
-    QCOMPARE(mViewer->isVisible(), true);
+    QCOMPARE(openattachementfolderwidget->isVisible(), false);
 
     QVERIFY(viewer.toggleFixFontAction());
     QVERIFY(viewer.toggleMimePartTreeAction());
