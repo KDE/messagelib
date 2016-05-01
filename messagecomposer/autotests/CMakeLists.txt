@@ -16,7 +16,6 @@ macro( add_messagecomposer_cryptotest _source )
     set( _test cryptofunctions.cpp setupenv.cpp ${_source} )
     get_filename_component( _name ${_source} NAME_WE )
     add_executable( ${_name} ${_test} )
-    ecm_mark_as_test(messagecomposer-${_name})
     target_link_libraries(
         ${_name}
         KF5::Mime
@@ -34,7 +33,7 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::MailTransport
         KF5::Ldap
     )
-    add_gpg_crypto_test(${_name} ${_name})
+    add_gpg_crypto_test(${_name} messagecomposer-${_name})
 endmacro()
 
 
