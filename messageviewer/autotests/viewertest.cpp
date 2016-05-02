@@ -27,46 +27,47 @@ ViewerTest::ViewerTest()
 
 void ViewerTest::shouldHaveDefaultValuesOnCreation()
 {
-    MessageViewer::Viewer viewer(0, 0, new KActionCollection(this));
-    viewer.show();
-    QTest::qWaitForWindowExposed(&viewer);
+    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(0, 0, new KActionCollection(this));
+    viewer->show();
+    QTest::qWaitForWindowExposed(viewer);
 
-    QWidget *mViewer = viewer.findChild<QWidget *>(QStringLiteral("mViewer"));
+    QWidget *mViewer = viewer->findChild<QWidget *>(QStringLiteral("mViewer"));
     QVERIFY(mViewer);
     QCOMPARE(mViewer->isVisible(), true);
 
-    QWidget *sliderContainer = viewer.findChild<QWidget *>(QStringLiteral("slidercontainer"));
+    QWidget *sliderContainer = viewer->findChild<QWidget *>(QStringLiteral("slidercontainer"));
     QVERIFY(sliderContainer);
     QCOMPARE(sliderContainer->isVisible(), false);
 
-    QWidget *colorBar = viewer.findChild<QWidget *>(QStringLiteral("mColorBar"));
+    QWidget *colorBar = viewer->findChild<QWidget *>(QStringLiteral("mColorBar"));
     QVERIFY(colorBar);
 
-    QWidget *scandetectionWidget = viewer.findChild<QWidget *>(QStringLiteral("scandetectionwarning"));
+    QWidget *scandetectionWidget = viewer->findChild<QWidget *>(QStringLiteral("scandetectionwarning"));
     QVERIFY(scandetectionWidget);
     QCOMPARE(scandetectionWidget->isVisible(), false);
 
-    QWidget *openattachementfolderwidget = viewer.findChild<QWidget *>(QStringLiteral("openattachementfolderwidget"));
+    QWidget *openattachementfolderwidget = viewer->findChild<QWidget *>(QStringLiteral("openattachementfolderwidget"));
     QVERIFY(openattachementfolderwidget);
     QCOMPARE(openattachementfolderwidget->isVisible(), false);
 
-    QVERIFY(viewer.toggleFixFontAction());
-    QVERIFY(viewer.toggleMimePartTreeAction());
-    QVERIFY(viewer.selectAllAction());
-    QVERIFY(viewer.copyURLAction());
-    QVERIFY(viewer.copyAction());
-    QVERIFY(viewer.urlOpenAction());
-    QVERIFY(viewer.speakTextAction());
-    QVERIFY(viewer.copyImageLocation());
-    QVERIFY(viewer.viewSourceAction());
-    QVERIFY(viewer.findInMessageAction());
-    QVERIFY(viewer.saveAsAction());
-    QVERIFY(viewer.saveMessageDisplayFormatAction());
-    QVERIFY(viewer.resetMessageDisplayFormatAction());
-    QVERIFY(viewer.urlClicked().isEmpty());
-    QVERIFY(viewer.imageUrlClicked().isEmpty());
-    QCOMPARE(viewer.isFixedFont(), false);
-    QVERIFY(viewer.shareServiceUrlMenu());
+    QVERIFY(viewer->toggleFixFontAction());
+    QVERIFY(viewer->toggleMimePartTreeAction());
+    QVERIFY(viewer->selectAllAction());
+    QVERIFY(viewer->copyURLAction());
+    QVERIFY(viewer->copyAction());
+    QVERIFY(viewer->urlOpenAction());
+    QVERIFY(viewer->speakTextAction());
+    QVERIFY(viewer->copyImageLocation());
+    QVERIFY(viewer->viewSourceAction());
+    QVERIFY(viewer->findInMessageAction());
+    QVERIFY(viewer->saveAsAction());
+    QVERIFY(viewer->saveMessageDisplayFormatAction());
+    QVERIFY(viewer->resetMessageDisplayFormatAction());
+    QVERIFY(viewer->urlClicked().isEmpty());
+    QVERIFY(viewer->imageUrlClicked().isEmpty());
+    QCOMPARE(viewer->isFixedFont(), false);
+    QVERIFY(viewer->shareServiceUrlMenu());
+    delete viewer;
 }
 
 QTEST_MAIN(ViewerTest)
