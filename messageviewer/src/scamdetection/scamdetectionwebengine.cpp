@@ -32,11 +32,13 @@ using namespace MessageViewer;
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
-    R *receiver;
+    QPointer<R> receiver;
     void (C::*memberFunction)(Arg);
     void operator()(Arg result)
     {
-        (receiver->*memberFunction)(result);
+        if (receiver) {
+            (receiver->*memberFunction)(result);
+        }
     }
 };
 
