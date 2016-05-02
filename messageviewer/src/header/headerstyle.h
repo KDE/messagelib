@@ -36,7 +36,7 @@
 
 #include "messageviewer_export.h"
 
-#include "grantleetheme/grantleetheme.h"
+//#include "grantleetheme/grantleetheme.h"
 
 #include <Akonadi/KMime/MessageStatus>
 #include <KMime/Message>
@@ -46,6 +46,11 @@ class QString;
 namespace MimeTreeParser
 {
 class NodeHelper;
+}
+
+namespace GrantleeTheme
+{
+class Theme;
 }
 
 namespace MessageViewer
@@ -62,6 +67,7 @@ class HeaderStrategy;
     @author Marc Mutz <mutz@kde.org>
     @see HeaderStrategy
 **/
+class HeaderStylePrivate;
 class MESSAGEVIEWER_EXPORT  HeaderStyle
 {
 protected:
@@ -118,18 +124,7 @@ public:
     void setReadOnlyMessage(bool readOnlyMessage);
 
 private:
-    GrantleeTheme::Theme mTheme;
-    QString mMessagePath;
-    const HeaderStrategy *mStrategy;
-    QString mVCardName;
-    QString mCollectionName;
-    MimeTreeParser::NodeHelper *mNodeHelper;
-    QObject *mSourceObject;
-    Akonadi::MessageStatus mMessageStatus;
-    bool mPrinting;
-    bool mTopLevel;
-    bool mAllowAsync;
-    bool mReadOnlyMessage;
+    HeaderStylePrivate *const d;
 };
 }
 

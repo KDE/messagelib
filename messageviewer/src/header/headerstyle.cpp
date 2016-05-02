@@ -33,6 +33,7 @@
 
 #include "headerstyle.h"
 #include "messageviewer_debug.h"
+#include "grantleetheme/grantleetheme.h"
 
 using namespace MessageViewer;
 // #####################
@@ -40,21 +41,44 @@ using namespace MessageViewer;
 //
 // HeaderStyle abstract base:
 //
+class MessageViewer::HeaderStylePrivate
+{
+public:
+    HeaderStylePrivate()
+        : mStrategy(0),
+          mNodeHelper(0),
+          mSourceObject(0),
+          mPrinting(false),
+          mTopLevel(true),
+          mAllowAsync(false),
+          mReadOnlyMessage(false)
+    {
+
+    }
+    GrantleeTheme::Theme mTheme;
+    QString mMessagePath;
+    const HeaderStrategy *mStrategy;
+    QString mVCardName;
+    QString mCollectionName;
+    MimeTreeParser::NodeHelper *mNodeHelper;
+    QObject *mSourceObject;
+    Akonadi::MessageStatus mMessageStatus;
+    bool mPrinting;
+    bool mTopLevel;
+    bool mAllowAsync;
+    bool mReadOnlyMessage;
+};
+
+
 
 HeaderStyle::HeaderStyle()
-    : mStrategy(0),
-      mNodeHelper(0),
-      mSourceObject(0),
-      mPrinting(false),
-      mTopLevel(true),
-      mAllowAsync(false),
-      mReadOnlyMessage(false)
+    : d(new MessageViewer::HeaderStylePrivate)
 {
 }
 
 HeaderStyle::~HeaderStyle()
 {
-
+    delete d;
 }
 
 bool HeaderStyle::hasAttachmentQuickList() const
@@ -64,121 +88,121 @@ bool HeaderStyle::hasAttachmentQuickList() const
 
 void HeaderStyle::setMessagePath(const QString &path)
 {
-    mMessagePath = path;
+    d->mMessagePath = path;
 }
 
 QString HeaderStyle::messagePath() const
 {
-    return mMessagePath;
+    return d->mMessagePath;
 }
 
 void HeaderStyle::setHeaderStrategy(const HeaderStrategy *strategy)
 {
-    mStrategy = strategy;
+    d->mStrategy = strategy;
 }
 
 const HeaderStrategy *HeaderStyle::headerStrategy() const
 {
-    return mStrategy;
+    return d->mStrategy;
 }
 
 void HeaderStyle::setVCardName(const QString &vCardName)
 {
-    mVCardName = vCardName;
+    d->mVCardName = vCardName;
 }
 
 QString HeaderStyle::vCardName() const
 {
-    return mVCardName;
+    return d->mVCardName;
 }
 
 void HeaderStyle::setPrinting(bool printing)
 {
-    mPrinting = printing;
+    d->mPrinting = printing;
 }
 
 bool HeaderStyle::isPrinting() const
 {
-    return mPrinting;
+    return d->mPrinting;
 }
 
 void HeaderStyle::setTopLevel(bool topLevel)
 {
-    mTopLevel = topLevel;
+    d->mTopLevel = topLevel;
 }
 
 bool HeaderStyle::isTopLevel() const
 {
-    return mTopLevel;
+    return d->mTopLevel;
 }
 
 void HeaderStyle::setNodeHelper(MimeTreeParser::NodeHelper *nodeHelper)
 {
-    mNodeHelper = nodeHelper;
+    d->mNodeHelper = nodeHelper;
 }
 
 MimeTreeParser::NodeHelper *HeaderStyle::nodeHelper() const
 {
-    return mNodeHelper;
+    return d->mNodeHelper;
 }
 
 void HeaderStyle::setAllowAsync(bool allowAsync)
 {
-    mAllowAsync = allowAsync;
+    d->mAllowAsync = allowAsync;
 }
 
 bool HeaderStyle::allowAsync() const
 {
-    return mAllowAsync;
+    return d->mAllowAsync;
 }
 
 void HeaderStyle::setSourceObject(QObject *sourceObject)
 {
-    mSourceObject = sourceObject;
+    d->mSourceObject = sourceObject;
 }
 
 QObject *HeaderStyle::sourceObject() const
 {
-    return mSourceObject;
+    return d->mSourceObject;
 }
 
 void HeaderStyle::setMessageStatus(Akonadi::MessageStatus status)
 {
-    mMessageStatus = status;
+    d->mMessageStatus = status;
 }
 
 Akonadi::MessageStatus HeaderStyle::messageStatus() const
 {
-    return mMessageStatus;
+    return d->mMessageStatus;
 }
 
 void HeaderStyle::setTheme(const GrantleeTheme::Theme &theme)
 {
-    mTheme = theme;
+    d->mTheme = theme;
 }
 
 GrantleeTheme::Theme HeaderStyle::theme() const
 {
-    return mTheme;
+    return d->mTheme;
 }
 
 void HeaderStyle::setCollectionName(const QString &name)
 {
-    mCollectionName = name;
+    d->mCollectionName = name;
 }
 
 QString HeaderStyle::collectionName() const
 {
-    return mCollectionName;
+    return d->mCollectionName;
 }
 
 bool HeaderStyle::readOnlyMessage() const
 {
-    return mReadOnlyMessage;
+    return d->mReadOnlyMessage;
 }
 
 void HeaderStyle::setReadOnlyMessage(bool readOnlyMessage)
 {
-    mReadOnlyMessage = readOnlyMessage;
+    d->mReadOnlyMessage = readOnlyMessage;
 }
 

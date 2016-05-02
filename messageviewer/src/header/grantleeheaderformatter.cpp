@@ -17,6 +17,7 @@
 
 #include "grantleeheaderformatter.h"
 #include "headerstyle_util.h"
+#include "grantleetheme/grantleetheme.h"
 #include "settings/messageviewersettings.h"
 #include "config-messageviewer.h"
 
