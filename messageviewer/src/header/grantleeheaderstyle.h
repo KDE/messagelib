@@ -23,7 +23,7 @@
 namespace MessageViewer
 {
 class GrantleeHeaderFormatter;
-//Temporary.
+class GrantleeHeaderStylePrivate;
 class MESSAGEVIEWER_EXPORT GrantleeHeaderStyle : public HeaderStyle
 {
 public:
@@ -38,7 +38,7 @@ public:
     bool hasAttachmentQuickList() const Q_DECL_OVERRIDE;
 
 private:
-    GrantleeHeaderFormatter *mGrantleeFormatter;
+    GrantleeHeaderStylePrivate *const d;
 };
 }
 #endif // GRANTLEEHEADERSTYLE_H

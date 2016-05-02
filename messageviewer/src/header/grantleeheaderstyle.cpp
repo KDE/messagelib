@@ -18,23 +18,36 @@
 #include "grantleeheaderstyle.h"
 #include "header/grantleeheaderformatter.h"
 #include "header/headerstrategy.h"
+#include "grantleetheme/grantleetheme.h"
 
 #include <kmime/kmime_message.h>
 
 using namespace MessageViewer;
-
-namespace MessageViewer
+class MessageViewer::GrantleeHeaderStylePrivate
 {
+public:
+    GrantleeHeaderStylePrivate()
+        : mGrantleeFormatter(Q_NULLPTR)
+    {
+        mGrantleeFormatter = new GrantleeHeaderFormatter;
+    }
+    ~GrantleeHeaderStylePrivate()
+    {
+        delete mGrantleeFormatter;
+    }
+
+    GrantleeHeaderFormatter *mGrantleeFormatter;
+};
 
 GrantleeHeaderStyle::GrantleeHeaderStyle()
-    : HeaderStyle()
+    : HeaderStyle(),
+      d(new MessageViewer::GrantleeHeaderStylePrivate)
 {
-    mGrantleeFormatter = new GrantleeHeaderFormatter;
 }
 
 GrantleeHeaderStyle::~GrantleeHeaderStyle()
 {
-    delete mGrantleeFormatter;
+    delete d;
 }
 
 const char *GrantleeHeaderStyle::name() const
@@ -47,12 +60,10 @@ QString GrantleeHeaderStyle::format(KMime::Message *message) const
     if (!message) {
         return QString();
     }
-    return mGrantleeFormatter->toHtml(theme(), isPrinting(), this, message);
+    return d->mGrantleeFormatter->toHtml(theme(), isPrinting(), this, message);
 }
 
 bool GrantleeHeaderStyle::hasAttachmentQuickList() const
 {
     return true;
-}
-
 }
