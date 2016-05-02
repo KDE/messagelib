@@ -42,9 +42,9 @@ QTEST_MAIN(AttachmentJobTest)
 
 void AttachmentJobTest::testAttachment()
 {
-    const QString name = QString::fromLatin1("name");
-    const QString fileName = QString::fromLatin1("filename");
-    const QString description = QString::fromLatin1("long long long description...");
+    const QString name = QStringLiteral("name");
+    const QString fileName = QStringLiteral("filename");
+    const QString description = QStringLiteral("long long long description...");
     const QByteArray mimeType("x-some/x-type");
     const QByteArray data("la la la");
 
