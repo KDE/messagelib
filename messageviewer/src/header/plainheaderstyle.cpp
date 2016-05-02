@@ -31,10 +31,43 @@ using namespace MessageCore;
 
 using namespace MessageViewer;
 
+class MessageViewer::PlainHeaderStylePrivate
+{
+public:
+    PlainHeaderStylePrivate()
+    {
+
+    }
+    QString formatAllMessageHeaders(KMime::Message *message) const;
+    MessageViewer::HeaderStyleUtil mHeaderStyleUtil;
+};
+
+
+QString PlainHeaderStylePrivate::formatAllMessageHeaders(KMime::Message *message) const
+{
+    QByteArray head = message->head();
+    KMime::Headers::Base *header = KMime::HeaderParsing::extractFirstHeader(head);
+    QString result;
+    while (header) {
+        result += mHeaderStyleUtil.strToHtml(QLatin1String(header->type()) + QLatin1String(": ") + header->asUnicodeString());
+        result += QLatin1String("<br />\n");
+        delete header;
+        header = KMime::HeaderParsing::extractFirstHeader(head);
+    }
+
+    return result;
+}
+
 PlainHeaderStyle::PlainHeaderStyle()
-    : HeaderStyle()
+    : HeaderStyle(),
+      d(new MessageViewer::PlainHeaderStylePrivate)
 {
 
+}
+
+PlainHeaderStyle::~PlainHeaderStyle()
+{
+    delete d;
 }
 
 //
@@ -59,7 +92,7 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     // considered left-to-right, they are ignored when determining its
     // direction.
 
-    const QString subjectDir = mHeaderStyleUtil.subjectDirectionString(message);
+    const QString subjectDir = d->mHeaderStyleUtil.subjectDirectionString(message);
     QString headerStr;
 
     if (strategy->headersToDisplay().isEmpty()
@@ -67,7 +100,7 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
         // crude way to emulate "all" headers - Note: no strings have
         // i18n(), so direction should always be ltr.
         headerStr = QStringLiteral("<div class=\"header\" dir=\"ltr\">");
-        headerStr += formatAllMessageHeaders(message);
+        headerStr += d->formatAllMessageHeaders(message);
         return headerStr + QLatin1String("</div>");
     }
 
@@ -76,10 +109,10 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     //case HdrLong:
     if (strategy->showHeader(QStringLiteral("subject")))
         headerStr += QStringLiteral("<div dir=\"%1\"><b style=\"font-size:130%\">").arg(subjectDir) +
-                     mHeaderStyleUtil.subjectString(message) + QLatin1String("</b></div>\n");
+                     d->mHeaderStyleUtil.subjectString(message) + QLatin1String("</b></div>\n");
 
     if (strategy->showHeader(QStringLiteral("date"))) {
-        headerStr.append(i18n("Date: ") + mHeaderStyleUtil.strToHtml(mHeaderStyleUtil.dateString(message, isPrinting(), /* short = */ MessageViewer::HeaderStyleUtil::CustomDate)) + QLatin1String("<br/>\n"));
+        headerStr.append(i18n("Date: ") + d->mHeaderStyleUtil.strToHtml(d->mHeaderStyleUtil.dateString(message, isPrinting(), /* short = */ MessageViewer::HeaderStyleUtil::CustomDate)) + QLatin1String("<br/>\n"));
     }
 
     if (strategy->showHeader(QStringLiteral("from"))) {
@@ -92,7 +125,7 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
         if (strategy->showHeader(QStringLiteral("organization"))
                 && message->organization(false))
             headerStr.append(QLatin1String("&nbsp;&nbsp;(") +
-                             mHeaderStyleUtil.strToHtml(message->organization()->asUnicodeString()) + QLatin1Char(')'));
+                             d->mHeaderStyleUtil.strToHtml(message->organization()->asUnicodeString()) + QLatin1Char(')'));
         headerStr.append(QLatin1String("<br/>\n"));
     }
 
@@ -117,20 +150,6 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     return headerStr;
 }
 
-QString PlainHeaderStyle::formatAllMessageHeaders(KMime::Message *message) const
-{
-    QByteArray head = message->head();
-    KMime::Headers::Base *header = KMime::HeaderParsing::extractFirstHeader(head);
-    QString result;
-    while (header) {
-        result += mHeaderStyleUtil.strToHtml(QLatin1String(header->type()) + QLatin1String(": ") + header->asUnicodeString());
-        result += QLatin1String("<br />\n");
-        delete header;
-        header = KMime::HeaderParsing::extractFirstHeader(head);
-    }
-
-    return result;
-}
 
 const char *MessageViewer::PlainHeaderStyle::name() const
 {
