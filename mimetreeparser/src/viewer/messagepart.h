@@ -208,8 +208,9 @@ private:
     HtmlWriter *mWriter;
 };
 
-class MessagePart : public Interface::MessagePart
+class MIMETREEPARSER_EXPORT MessagePart : public Interface::MessagePart
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<MessagePart> Ptr;
     MessagePart(ObjectTreeParser *otp,
@@ -271,8 +272,9 @@ private:
     bool mIsInternalRoot;
 };
 
-class MimeMessagePart : public MessagePart
+class MIMETREEPARSER_EXPORT MimeMessagePart : public MessagePart
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<MimeMessagePart> Ptr;
     MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart);
@@ -288,8 +290,9 @@ private:
     friend class AlternativeMessagePart;
 };
 
-class MessagePartList : public MessagePart
+class MIMETREEPARSER_EXPORT MessagePartList : public MessagePart
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<MessagePartList> Ptr;
     MessagePartList(MimeTreeParser::ObjectTreeParser *otp);
@@ -308,8 +311,9 @@ enum IconType {
     IconInline
 };
 
-class TextMessagePart : public MessagePartList
+class MIMETREEPARSER_EXPORT TextMessagePart : public MessagePartList
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<TextMessagePart> Ptr;
     TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage, IconType asIcon);
@@ -334,8 +338,9 @@ private:
     IconType mAsIcon;
 };
 
-class HtmlMessagePart : public MessagePart
+class MIMETREEPARSER_EXPORT HtmlMessagePart : public MessagePart
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<HtmlMessagePart> Ptr;
     HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, MimeTreeParser::Interface::ObjectTreeSource *source);
@@ -354,8 +359,9 @@ private:
     QByteArray mCharset;
 };
 
-class AlternativeMessagePart : public MessagePart
+class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<AlternativeMessagePart> Ptr;
     AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode);
@@ -377,8 +383,9 @@ private:
     bool mViewHtml;
 };
 
-class CertMessagePart : public MessagePart
+class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<CertMessagePart> Ptr;
     CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport);
@@ -397,8 +404,9 @@ private:
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
 };
 
-class EncapsulatedRfc822MessagePart : public MessagePart
+class MIMETREEPARSER_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<EncapsulatedRfc822MessagePart> Ptr;
     EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
@@ -414,8 +422,9 @@ private:
     KMime::Content *mNode;
 };
 
-class CryptoMessagePart : public MessagePart
+class MIMETREEPARSER_EXPORT CryptoMessagePart : public MessagePart
 {
+    Q_OBJECT
 public:
     typedef QSharedPointer<CryptoMessagePart> Ptr;
     CryptoMessagePart(ObjectTreeParser *otp,
