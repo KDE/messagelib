@@ -129,11 +129,9 @@ class CryptoBlock: public HTMLBlock
 public:
     CryptoBlock(MimeTreeParser::HtmlWriter *writer,
                 PartMetaData *block,
-                const NodeHelper *nodeHelper,
                 const Kleo::CryptoBackend::Protocol *cryptoProto,
                 Interface::ObjectTreeSource *source,
-                const QString &fromAddress,
-                KMime::Content *node);
+                const QString &fromAddress);
     virtual ~CryptoBlock();
 
 private:
@@ -142,11 +140,9 @@ private:
 
     HtmlWriter *mWriter;
     PartMetaData *mMetaData;
-    const NodeHelper *mNodeHelper;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
     Interface::ObjectTreeSource *mSource;
     QString mFromAddress;
-    KMime::Content *mNode;
     QVector<HTMLBlock::Ptr> mInteralBlocks;
 };
 
