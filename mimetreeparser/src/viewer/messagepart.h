@@ -237,6 +237,10 @@ public:
     bool hasSubParts() const;
 
 protected:
+    /** Change the string to `quoted' html (meaning, that the quoted
+      part of the message get italized */
+    QString quotedHTML(const QString &s, bool decorate);
+
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
     void renderInternalHtml(bool decorate) const;
     QString renderInternalText() const;
@@ -252,6 +256,12 @@ protected:
     bool mRoot;
 
 private:
+    CSSHelperBase *cssHelper() const;
+    Interface::ObjectTreeSource *source() const;
+
+    QString mCollapseIcon;
+    QString mExpandIcon;
+
     KMime::Content *attachmentNode() const;
     HTMLBlock::Ptr internalAttachmentBlock() const;
     HTMLBlock::Ptr internalRootBlock() const;

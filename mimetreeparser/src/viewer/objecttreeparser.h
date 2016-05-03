@@ -361,10 +361,6 @@ private:
 
     Interface::MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
 
-public:// (during refactoring)
-    /** Change the string to `quoted' html (meaning, that the quoted
-      part of the message get italized */
-    QString quotedHTML(const QString &pos, bool decorate);
 public:
     bool printing() const;
 
@@ -374,11 +370,6 @@ private:
     void init();
 
     const QTextCodec *codecFor(KMime::Content *node) const;
-    /** Check if the newline at position @p newLinePos in string @p s
-      seems to separate two paragraphs (important for correct BiDi
-      behavior, but is heuristic because paragraphs are not
-      well-defined) */
-    bool looksLikeParaBreak(const QString &s, unsigned int newLinePos) const;
 
     void copyContentFrom(const ObjectTreeParser *other);
 
