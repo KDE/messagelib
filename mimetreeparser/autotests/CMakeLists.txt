@@ -30,7 +30,7 @@ macro(add_mimetreeparser_crypto_unittest _source)
     target_link_libraries( ${_name}
         KF5::MimeTreeParser
         Qt5::Test
-	KF5::IconThemes
+        KF5::IconThemes
     )
     add_gpg_crypto_test(${_name} mimetreeparser-${_name})
 endmacro ()
