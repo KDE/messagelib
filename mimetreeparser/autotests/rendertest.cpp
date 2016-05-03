@@ -24,6 +24,7 @@
 
 #include "htmlwriter/filehtmlwriter.h"
 #include "viewer/objecttreeparser.h"
+#include "viewer/messagepart.h"
 
 #include <KMime/Message>
 
@@ -159,6 +160,50 @@ void RenderTest::testRenderHeaderOnly()
     testRender();
 }
 
+QString renderTreeHelper(const Interface::MessagePart::Ptr &messagePart, QString indent)
+{
+    QString ret;
+    const QString line = QStringLiteral("%1 * %3\n").arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
+    ret += line;
+
+    indent += QStringLiteral(" ");
+    const auto m = messagePart.dynamicCast<MessagePart>();
+    if (m) {
+        foreach(const auto &subPart, m->subParts()) {
+            ret += renderTreeHelper(subPart, indent);
+        }
+    }
+    return ret;
+}
+
+void RenderTest::testRenderTree(const MessagePart::Ptr &messagePart)
+{
+    QString renderedTree = renderTreeHelper(messagePart, QString());
+
+    QFETCH(QString, mailFileName);
+    QFETCH(QString, outFileName);
+    const QString treeFileName = QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName + QStringLiteral(".tree");
+    const QString outTreeFileName = outFileName + QStringLiteral(".tree");
+
+    {
+        QFile f(outTreeFileName);
+        f.open(QIODevice::WriteOnly);
+        f.write(renderedTree.toUtf8());
+        f.close();
+    }
+    // compare to reference file
+    const QStringList args = QStringList()
+           << QStringLiteral("-u")
+           << treeFileName
+           << outTreeFileName;
+    QProcess proc;
+    proc.setProcessChannelMode(QProcess::ForwardedChannels);
+    proc.start(QStringLiteral("diff"), args);
+    QVERIFY(proc.waitForFinished());
+
+    QCOMPARE(proc.exitCode(), 0);
+}
+
 void RenderTest::testRender()
 {
     QFETCH(QString, mailFileName);
@@ -186,6 +231,7 @@ void RenderTest::testRender()
 
     otp.parseObjectTree(msg.data());
 
+    testRenderTree(otp.parsedPart());
     fileWriter.queue(QStringLiteral("</body></html>"));
     fileWriter.flush();
     fileWriter.end();

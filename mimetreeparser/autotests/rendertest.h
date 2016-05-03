@@ -21,6 +21,7 @@
 #define RENDERTEST_H
 
 #include <QObject>
+#include "viewer/messagepart.h"
 
 class RenderTest : public QObject
 {
@@ -46,6 +47,7 @@ private Q_SLOTS:
     void testRenderHeaderOnly();
 private:
     void testRender();
+    void testRenderTree(const MimeTreeParser::MessagePart::Ptr &messagePart);
 };
 
 #endif
