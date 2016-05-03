@@ -347,6 +347,7 @@ public:
     void parseObjectTree(KMime::Content *node);
 
     void setPrinting(bool printing);
+    bool printing() const;
 
 private:
     void extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart);
@@ -360,9 +361,6 @@ private:
     bool processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet);
 
     Interface::MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
-
-public:
-    bool printing() const;
 
 private:
 

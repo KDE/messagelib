@@ -181,11 +181,6 @@ void ObjectTreeParser::copyContentFrom(const ObjectTreeParser *other)
     }
 }
 
-bool ObjectTreeParser::printing() const
-{
-    return mPrinting;
-}
-
 //-----------------------------------------------------------------------------
 
 void ObjectTreeParser::parseObjectTree(KMime::Content *node)
@@ -203,6 +198,11 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
 void ObjectTreeParser::setPrinting(bool printing)
 {
     mPrinting = printing;
+}
+
+bool ObjectTreeParser::printing() const
+{
+    return mPrinting;
 }
 
 bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet)
