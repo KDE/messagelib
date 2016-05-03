@@ -29,6 +29,7 @@ set(libmimetreeparser_main_SRCS
     viewer/bodypartformatterbasefactory.cpp
     viewer/cryptohelper.cpp
     viewer/csshelperbase.cpp
+    viewer/htmlblock.cpp
     viewer/nodehelper.cpp
     viewer/objecttreeparser.cpp
     viewer/messagepart.cpp
