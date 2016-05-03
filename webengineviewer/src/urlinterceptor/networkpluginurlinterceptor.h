@@ -32,6 +32,13 @@ struct WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidgetSetting 
 
     }
 
+    NetworkPluginUrlInterceptorConfigureWidgetSetting(WebEngineViewer::NetworkPluginUrlInterceptorConfigureWidget *w, const QString &widgetName)
+        : name(widgetName),
+          configureWidget(w)
+    {
+
+    }
+
     QString name;
     WebEngineViewer::NetworkPluginUrlInterceptorConfigureWidget *configureWidget;
 };
