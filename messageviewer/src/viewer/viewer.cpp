@@ -49,9 +49,8 @@
 namespace MessageViewer
 {
 
-Viewer::Viewer(QWidget *aParent, QWidget *mainWindow, KActionCollection *actionCollection,
-               Qt::WindowFlags aFlags)
-    : QWidget(aParent, aFlags), d_ptr(new ViewerPrivate(this, mainWindow, actionCollection))
+Viewer::Viewer(QWidget *aParent, QWidget *mainWindow, KActionCollection *actionCollection)
+    : QWidget(aParent), d_ptr(new ViewerPrivate(this, mainWindow, actionCollection))
 {
     initialize();
 }

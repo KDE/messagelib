@@ -47,7 +47,7 @@ void ZoomActionMenuTest::shouldAssignZoomFactor()
     WebEngineViewer::ZoomActionMenu menu(this);
     menu.setActionCollection(new KActionCollection(this));
     menu.createZoomActions();
-    qreal initialValue = 50;
+    const qreal initialValue = 50;
     menu.setZoomFactor(initialValue);
     QCOMPARE(menu.zoomFactor(), initialValue);
 }

@@ -165,5 +165,4 @@ QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 void WebEngineView::slotLoadFinished()
 {
     page()->runJavaScript(d->mJquery);
-    //qDebug() << " d->mJquery" << d->mJquery;
 }

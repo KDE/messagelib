@@ -132,12 +132,8 @@ static void handleDuplicateLinkElements(const WebEngineViewer::WebEngineAccessKe
 
 static bool isHiddenElement(const WebEngineViewer::WebEngineAccessKeyAnchor &element)
 {
-    // width property set to less than zero
-    if (element.boundingRect().width() < 1) {
-        return true;
-    }
-    // height property set to less than zero
-    if (element.boundingRect().height()  < 1) {
+    // width or height property set to less than zero
+    if (element.boundingRect().width() < 1 || element.boundingRect().height()  < 1) {
         return true;
     }
 #if 0
