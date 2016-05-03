@@ -58,14 +58,14 @@ Manager::Manager()
 
     mDateFormatter = new KMime::DateFormatter();
 
-    mPixmapMessageNew = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-unread-new")).pixmap(64, 64));
-    mPixmapMessageUnread = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-unread")).pixmap(64, 64));
-    mPixmapMessageRead = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-read")).pixmap(64, 64));
+    mPixmapMessageNew = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-unread-new")).pixmap(64, 64));
+    mPixmapMessageUnread = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-unread")).pixmap(64, 64));
+    mPixmapMessageRead = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-read")).pixmap(64, 64));
     mPixmapMessageDeleted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-deleted")).pixmap(64, 64));
     mPixmapMessageReplied = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-replied")).pixmap(64, 64));
     mPixmapMessageRepliedAndForwarded = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded-replied")).pixmap(64, 64));
     mPixmapMessageQueued = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-queued")).pixmap(64, 64));       // mail-queue ?
-    mPixmapMessageActionItem = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-task")).pixmap(64, 64));
+    mPixmapMessageActionItem = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-task")).pixmap(64, 64));
     mPixmapMessageSent = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(64, 64));
     mPixmapMessageForwarded = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(64, 64));
     mPixmapMessageImportant = new QPixmap(QIcon::fromTheme(QStringLiteral("emblem-important")).pixmap(64, 64));       // "flag"
@@ -730,7 +730,7 @@ void Manager::createDefaultThemes()
     add_theme_simple_text_column(s, i18n("Most Recent Date"), Theme::ContentItem::MostRecentDate, false, SortOrder::SortMessagesByDateTimeOfMostRecent, false, true);
     add_theme_simple_text_column(s, i18nc("Size of a message", "Size"), Theme::ContentItem::Size, false, SortOrder::SortMessagesBySize, false, false);
     add_theme_simple_icon_column(s, i18nc("Attachement indication", "Attachment"), QStringLiteral("mail-attachment"), Theme::ContentItem::AttachmentStateIcon, false, SortOrder::SortMessagesByAttachmentStatus);
-    add_theme_simple_icon_column(s, i18n("Read/Unread"), QStringLiteral("mail-unread-new"), Theme::ContentItem::ReadStateIcon, false, SortOrder::SortMessagesByUnreadStatus);
+    add_theme_simple_icon_column(s, i18n("Read/Unread"), QStringLiteral("mail-mark-unread-new"), Theme::ContentItem::ReadStateIcon, false, SortOrder::SortMessagesByUnreadStatus);
     add_theme_simple_icon_column(s, i18n("Replied"), QStringLiteral("mail-replied"), Theme::ContentItem::RepliedStateIcon, false, SortOrder::NoMessageSorting);
     add_theme_simple_icon_column(s, i18nc("Message importance indication", "Important"), QStringLiteral("emblem-important"), Theme::ContentItem::ImportantStateIcon, false, SortOrder::SortMessagesByImportantStatus);
     add_theme_simple_icon_column(s, i18n("Action Item"), QStringLiteral("mail-task"), Theme::ContentItem::ActionItemStateIcon, false, SortOrder::SortMessagesByActionItemStatus);
