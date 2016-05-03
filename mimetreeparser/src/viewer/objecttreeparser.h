@@ -345,6 +345,7 @@ public:
     /** Parse beginning at a given node and recursively parsing
       the children of that node and it's next sibling. */
     void parseObjectTree(KMime::Content *node);
+    MessagePartPtr parsedPart() const;
 
     void setPrinting(bool printing);
     bool printing() const;
@@ -380,6 +381,7 @@ private:
     QString mPlainTextContent;
     QString mHtmlContent;
     KMime::Content *mTopLevelContent;
+    MessagePartPtr mParsedPart;
 
     /// Show only one mime part means that the user has selected some node in the message structure
     /// viewer that is not the root, which means the user wants to only see the selected node and its

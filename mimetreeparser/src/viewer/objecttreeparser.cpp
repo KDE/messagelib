@@ -186,13 +186,19 @@ void ObjectTreeParser::copyContentFrom(const ObjectTreeParser *other)
 void ObjectTreeParser::parseObjectTree(KMime::Content *node)
 {
     mTopLevelContent = node;
-    const auto mp = parseObjectTreeInternal(node);
+    mParsedPart = MessagePart::Ptr(new MessagePartList(this));
+    parseObjectTreeInternal(node);
 
-    if (mp) {
-        mp->fix();
-        mp->copyContentFrom();
-        mp->html(false);
+    if (mParsedPart) {
+        mParsedPart->fix();
+        mParsedPart->copyContentFrom();
+        mParsedPart->html(false);
     }
+}
+
+MessagePartPtr ObjectTreeParser::parsedPart() const
+{
+    return mParsedPart;
 }
 
 void ObjectTreeParser::setPrinting(bool printing)
@@ -279,8 +285,8 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
     }
 
     const bool isRoot = node->isTopLevel();
-    MessagePartList::Ptr mpl(new MessagePartList(this));
-    mpl->setIsRoot(isRoot);
+    mParsedPart = MessagePart::Ptr(new MessagePartList(this));
+    mParsedPart->setIsRoot(isRoot);
     KMime::Content *parent = node->parent();
     auto contents = parent ? parent->contents() : KMime::Content::List();
     if (contents.isEmpty()) {
@@ -306,11 +312,11 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         Interface::MessagePartPtr mp;
         if (processType(node, processResult, mediaType, subType, mp)) {
             if (mp) {
-                mpl->appendSubPart(mp);
+                mParsedPart->appendSubPart(mp);
             }
         } else if (processType(node, processResult, mediaType, "*", mp)) {
             if (mp) {
-                mpl->appendSubPart(mp);
+                mParsedPart->appendSubPart(mp);
             }
         } else {
             qCWarning(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
@@ -319,7 +325,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
                 if (auto _mp = mp.dynamicCast<MessagePart>()) {
                     _mp->setAttachmentFlag(node);
                 }
-                mpl->appendSubPart(mp);
+                mParsedPart->appendSubPart(mp);
             }
         }
         mNodeHelper->setNodeProcessed(node, false);
@@ -332,7 +338,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         }
     }
 
-    return mpl;
+    return mParsedPart;
 }
 
 Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)
