@@ -1,4 +1,4 @@
-/* Copyright 2009 Thomas McGuire <mcguire@kde.org>
+/* Copyright 2016 Sandro Knauß <sknauss@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
@@ -16,12 +16,12 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef OBJECTTREEPARSERTEST_H
-#define OBJECTTREEPARSERTEST_H
+#ifndef MESSAGEPARTTEST_H
+#define MESSAGEPARTTEST_H
 
 #include <QObject>
 
-class ObjectTreeParserTester : public QObject
+class MessagePartTest : public QObject
 {
     Q_OBJECT
 
@@ -29,16 +29,8 @@ public Q_SLOTS:
     void initTestCase();
 
 private Q_SLOTS:
-    void test_parseEncapsulatedMessage();
-    void test_parsePlainMessage();
-    void test_missingContentTypeHeader();
-    void test_inlinePGPDecryption();
-    void test_inlinePGPSigned();
-    void test_HTML();
-    void test_HTMLasText();
-    void test_HTMLOnly();
-    void test_HTMLOnlyText();
-    void test_HTMLExternal();
+    void testQuoteHtml();
+    void testQuoteHtml_data();
 };
 
 #endif

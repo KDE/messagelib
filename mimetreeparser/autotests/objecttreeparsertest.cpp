@@ -290,26 +290,3 @@ void ObjectTreeParserTester::test_HTMLExternal()
         QVERIFY(!testWriter.html.contains(QStringLiteral("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
     }
 }
-
-void ObjectTreeParserTester::text_quoteHtml_data()
-{
-    QTest::addColumn<QString>("data");
-    QTest::addColumn<QString>("result");
-    QTest::newRow("simpletext") << QStringLiteral("http") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">http</div></div>");
-    QTest::newRow("simplequote") << QStringLiteral(">") << QStringLiteral("<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span></div></div></blockquote>");
-    QTest::newRow("doublequotewithtext") << QStringLiteral(">> sddf") << QStringLiteral("<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>> </span><font color=\"#007000\">sddf</font></div></div></blockquote></blockquote>");
-    QTest::newRow("doublequote") << QStringLiteral(">>") << QStringLiteral("<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span></div></div></blockquote></blockquote>");
-    QTest::newRow("simplespace") << QStringLiteral(" ") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;</div></div>");
-    QTest::newRow("multispace") << QStringLiteral("            Bug ID: 358324") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bug ID: 358324</div></div>");
-}
-
-void ObjectTreeParserTester::text_quoteHtml()
-{
-    QFETCH(QString, data);
-    QFETCH(QString, result);
-    TestHtmlWriter testWriter;
-    TestCSSHelper testCSSHelper;
-    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
-    ObjectTreeParser otp(&emptySource);
-    QCOMPARE(otp.quotedHTML(data, false), result);
-}
