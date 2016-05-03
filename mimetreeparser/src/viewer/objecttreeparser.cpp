@@ -358,7 +358,9 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
         QByteArray cid = node->contentID()->identifier();
         htmlWriter()->embedPart(cid, href);
         nodeHelper()->setNodeDisplayedEmbedded(node, true);
-        return MessagePart::Ptr();
+        mNodeHelper->setNodeDisplayedHidden(node, true);
+        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconInline));
+        return mp;
     }
     Interface::MessagePart::Ptr mp;
     ProcessResult processResult(mNodeHelper);
@@ -377,7 +379,8 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
             !showOnlyOneMimePart() &&
             node->parent() /* message is not an attachment */) {
         mNodeHelper->setNodeDisplayedHidden(node, true);
-        return MessagePart::Ptr();
+        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconInline));
+        return mp;
     }
 
     bool asIcon = true;
@@ -406,13 +409,9 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
     */
 
     if (asIcon) {
-        if (!(as && as->defaultDisplay(node) == AttachmentStrategy::None) ||
-                showOnlyOneMimePart()) {
-            // Write the node as icon only
-            return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconExternal));
-        } else {
-            mNodeHelper->setNodeDisplayedHidden(node, true);
-        }
+        bool hidePart = (as && as->defaultDisplay(node) == AttachmentStrategy::None) || showOnlyOneMimePart();
+        mNodeHelper->setNodeDisplayedHidden(node, hidePart);
+        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconExternal));
     } else if (result.isImage()) {
         // Embed the image
         mNodeHelper->setNodeDisplayedEmbedded(node, true);

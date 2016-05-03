@@ -1557,9 +1557,7 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
         return;
     }
 
-    if (mAsIcon == MimeTreeParser::NoIcon) {
-        parseContent();
-    }
+    parseContent();
 }
 
 TextMessagePart::~TextMessagePart()
@@ -1702,6 +1700,10 @@ void TextMessagePart::writePartIcon()
 
 void TextMessagePart::html(bool decorate)
 {
+    if (mOtp->nodeHelper()->isNodeDisplayedHidden(mNode)) {
+        return;
+    }
+
     const HTMLBlock::Ptr aBlock(attachmentBlock());
     HTMLBlock::Ptr block;
     MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
