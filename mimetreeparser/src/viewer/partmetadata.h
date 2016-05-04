@@ -22,7 +22,7 @@
 #include <gpgme++/context.h>
 
 #include <QStringList>
-#include <qdatetime.h>
+#include <QDateTime>
 
 namespace MimeTreeParser
 {
