@@ -310,7 +310,7 @@ MessageFactory::MessageReply MessageFactory::createReply()
         parser.setIdentityManager(m_identityManager);
         parser.setCharsets(MessageComposerSettings::self()->preferredCharsets());
         parser.setWordWrap(MessageComposerSettings::wordWrap(), MessageComposerSettings::lineWrapWidth());
-#ifdef QTWEBENGINE_BUG_SELECTION_FIXED
+#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 1)
         if (MessageComposer::MessageComposerSettings::quoteSelectionOnly()) {
             parser.setSelection(m_selection);
         }
