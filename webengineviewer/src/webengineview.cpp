@@ -58,25 +58,21 @@ WebEngineView::~WebEngineView()
 void WebEngineView::forwardWheelEvent(QWheelEvent *event)
 {
     Q_UNUSED(event);
-    //qDebug()<<" void WebEngineView::forwardWheelEvent(QWheelEvent *event)";
 }
 
 void WebEngineView::forwardKeyPressEvent(QKeyEvent *event)
 {
     Q_UNUSED(event);
-    //qDebug()<<" void WebEngineView::forwardKeyPressEvent(QKeyEvent *event)";
 }
 
 void WebEngineView::forwardKeyReleaseEvent(QKeyEvent *event)
 {
     Q_UNUSED(event);
-    //qDebug()<<" void WebEngineView::forwardKeyReleaseEvent(QKeyEvent *event)";
 }
 
 void WebEngineView::forwardMousePressEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    //qDebug()<<" void WebEngineView::forwardMousePressEvent(QKeyEvent *event)";
 }
 
 void WebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
@@ -88,7 +84,6 @@ void WebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 void WebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    //qDebug()<<" void WebEngineView::forwardMouseReleaseEvent(QKeyEvent *event)";
 }
 
 bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
@@ -154,7 +149,6 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 {
     //TODO
-    qDebug() << " QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)";
 #if 0
     QWebEngineView *view = new QWebEngineView(this);
     view->show();

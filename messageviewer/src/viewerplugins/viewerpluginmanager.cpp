@@ -17,13 +17,13 @@
 
 #include "viewerpluginmanager.h"
 #include "viewerplugin.h"
+#include "messageviewer_debug.h"
 
 #include <kpluginmetadata.h>
 #include <KPluginLoader>
 #include <KPluginFactory>
 #include <QFileInfo>
 #include <QSet>
-#include <QDebug>
 
 using namespace MessageViewer;
 
@@ -124,7 +124,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
             mPluginList.push_back(info);
             unique.insert(info.saveName());
         } else {
-            qWarning() << "Plugin name :" << info.metaData.name() << " doesn't have correct plugin version. Please update it";
+            qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << info.metaData.name() << " doesn't have correct plugin version. Please update it";
         }
     }
     QVector<ViewerPluginInfo>::iterator end(mPluginList.end());

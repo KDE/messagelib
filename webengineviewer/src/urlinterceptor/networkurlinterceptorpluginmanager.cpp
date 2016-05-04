@@ -17,13 +17,13 @@
 
 #include "networkpluginurlinterceptor.h"
 #include "networkurlinterceptorpluginmanager.h"
+#include "webengineviewer_debug.h"
 
 #include <KPluginLoader>
 #include <KPluginFactory>
 #include <QFileInfo>
 #include <QVariant>
 #include <QSet>
-#include <QDebug>
 #include <kpluginmetadata.h>
 
 using namespace WebEngineViewer;
@@ -114,7 +114,7 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
             mPluginList.append(info);
             unique.insert(info.saveName());
         } else {
-            qWarning() << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
+            qCWarning(WEBENGINEVIEWER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<MailNetworkUrlInterceptorPluginInfo>::iterator end(mPluginList.end());

@@ -16,7 +16,6 @@
 */
 
 #include "webengineaccesskeyanchor.h"
-#include <QDebug>
 
 using namespace WebEngineViewer;
 

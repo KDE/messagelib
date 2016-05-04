@@ -18,7 +18,6 @@
 #include "loadexternalreferencesurlinterceptor.h"
 
 #include <QWebEngineUrlRequestInfo>
-#include <QDebug>
 
 using namespace MessageViewer;
 

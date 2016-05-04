@@ -132,7 +132,7 @@ QString WebEngineScript::scrollPercentage(int percent)
                            "var newPosition = current + height * %1 /100;"
                            "window.scrollTo(window.scrollX, newPosition); [window.scrollX, window.scrollY];").arg(percent);
 
-    qDebug() << "QString WebEngineScript::scrollPercentage(int percent) " << source;
+    //qDebug() << "QString WebEngineScript::scrollPercentage(int percent) " << source;
     return source;
 }
 
@@ -170,7 +170,7 @@ QString WebEngineScript::setStyleToElement(const QString &elementStr, const QStr
                            "if (element) { "
                            "    element.style = '%2';"
                            "}").arg(elementStr).arg(style);
-    qDebug() << "QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style) " << source;
+    //qDebug() << "QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style) " << source;
     return source;
 }
 
@@ -199,6 +199,6 @@ QString WebEngineScript::clearSelection()
                            "  }"
                            "}"
                            "})()");
-    qDebug() << " source " << source;
+    //qDebug() << " source " << source;
     return source;
 }

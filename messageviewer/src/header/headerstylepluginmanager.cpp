@@ -17,12 +17,12 @@
 
 #include "headerstylepluginmanager.h"
 #include "headerstyleplugin.h"
+#include "messageviewer_debug.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <kpluginmetadata.h>
 #include <QFileInfo>
 #include <QSet>
-#include <QDebug>
 
 using namespace MessageViewer;
 
@@ -125,7 +125,7 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
             mPluginList.insert(pos, info);
             unique.insert(info.saveName());
         } else {
-            qWarning() << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
+            qCWarning(MESSAGEVIEWER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<HeaderStylePluginInfo>::iterator end(mPluginList.end());
