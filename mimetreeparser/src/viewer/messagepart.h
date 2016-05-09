@@ -94,6 +94,7 @@ protected:
 
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
     void renderInternalHtml(bool decorate) const;
+    QString internalContent() const;
     QString renderInternalText() const;
 
     HTMLBlockPtr attachmentBlock() const;
@@ -177,7 +178,7 @@ public:
 
 private:
     void parseContent();
-    void writePartIcon();
+
     KMime::Content *mNode;
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;

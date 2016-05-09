@@ -157,22 +157,6 @@ private:
     HtmlWriter *mWriter;
 };
 
-class TextBlock : public HTMLBlock
-{
-public:
-    TextBlock(MimeTreeParser::HtmlWriter *writer, MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node, bool link);
-    virtual ~TextBlock();
-private:
-    void internalEnter();
-    void internalExit();
-private:
-    HtmlWriter *mWriter;
-    NodeHelper *mNodeHelper;
-    KMime::Content *mNode;
-    QString mFileName;
-    bool mLink;
-};
-
 class HTMLWarnBlock : public HTMLBlock
 {
 public:

@@ -45,6 +45,7 @@
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
 
+#include <QApplication>
 #include <QFile>
 #include <QTextCodec>
 #include <QWebPage>
@@ -53,6 +54,11 @@
 
 #include <KLocalizedString>
 #include <KTextToHTML>
+
+#include <grantlee/context.h>
+#include <grantlee/engine.h>
+#include <grantlee/templateloader.h>
+#include <grantlee/template.h>
 
 #include <sstream>
 
@@ -109,6 +115,19 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
         }
     }
     return false;
+}
+
+Grantlee::Template getGrantleeTemplate(QObject *parent, const QString &name)
+{
+    auto m_engine = QSharedPointer<Grantlee::Engine>(new Grantlee::Engine(parent));
+    m_engine->addDefaultLibrary(QStringLiteral("grantlee_i18n"));
+    m_engine->addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
+
+    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader());
+    loader->setTemplateDirs(QStringList() << QStringLiteral("/work/source/kde/pim/messagelib/mimetreeparser/src/themes/default"));
+    m_engine->addTemplateLoader(loader);
+
+    return  m_engine->loadByName(name);
 }
 
 //------MessagePart-----------------------
@@ -533,6 +552,54 @@ void MessagePart::renderInternalHtml(bool decorate) const
     }
 }
 
+class TestHtmlWriter : public MimeTreeParser::HtmlWriter
+{
+public:
+    explicit TestHtmlWriter(MimeTreeParser::HtmlWriter *baseWriter)
+    : mBaseWriter(baseWriter)
+    {}
+    virtual ~TestHtmlWriter() {}
+
+    void begin(const QString &text) Q_DECL_OVERRIDE {mBaseWriter->begin(text);}
+    void write(const QString &text) Q_DECL_OVERRIDE {mBaseWriter->write(text);}
+    void end() Q_DECL_OVERRIDE {mBaseWriter->end();}
+    void reset() Q_DECL_OVERRIDE {mBaseWriter->reset();}
+    void queue(const QString &str) Q_DECL_OVERRIDE
+    {
+        html.append(str);
+    }
+    void flush() Q_DECL_OVERRIDE {mBaseWriter->flush();}
+    void embedPart(const QByteArray &contentId, const QString &url) Q_DECL_OVERRIDE {mBaseWriter->embedPart(contentId, url);}
+    void extraHead(const QString &extra) Q_DECL_OVERRIDE {mBaseWriter->extraHead(extra);}
+
+    QString html;
+    MimeTreeParser::HtmlWriter *mBaseWriter;
+};
+
+QString MessagePart::internalContent() const
+{
+    const auto oldWriter = mOtp->htmlWriter();
+    TestHtmlWriter htmlWriter(oldWriter);
+
+    if (oldWriter) {
+        mOtp->mHtmlWriter = &htmlWriter;
+
+        const HTMLBlock::Ptr rBlock(internalRootBlock());
+        const HTMLBlock::Ptr aBlock(internalAttachmentBlock());
+
+        foreach (const auto &mp, subParts()) {
+            const auto m = mp.dynamicCast<MessagePart>();
+            if (m) {
+                m->mOtp->mHtmlWriter = &htmlWriter;
+                m->html(false);
+                m->mOtp->mHtmlWriter = oldWriter;
+            }
+        }
+        mOtp->mHtmlWriter = oldWriter;
+    }
+    return htmlWriter.html;
+}
+
 QString MessagePart::renderInternalText() const
 {
     QString text;
@@ -712,74 +779,80 @@ void TextMessagePart::parseContent()
     }
 }
 
-void TextMessagePart::writePartIcon()
-{
-    HtmlWriter *writer = mOtp->htmlWriter();
-    NodeHelper *nodeHelper = mOtp->nodeHelper();
-
-    if (!writer || !mNode || mAsIcon == MimeTreeParser::NoIcon) {
-        return;
-    }
-
-    const QString name = mNode->contentType()->name();
-    QString label = name.isEmpty() ? NodeHelper::fileName(mNode) : name;
-    if (label.isEmpty()) {
-        label = i18nc("display name for an unnamed attachment", "Unnamed");
-    }
-    label = MessageCore::StringUtil::quoteHtmlChars(label, true);
-
-    QString comment = mNode->contentDescription()->asUnicodeString();
-    comment = MessageCore::StringUtil::quoteHtmlChars(comment, true);
-    if (label == comment) {
-        comment.clear();
-    }
-
-    QString href = nodeHelper->asHREF(mNode, QStringLiteral("body"));
-
-    if (mAsIcon == MimeTreeParser::IconInline) {
-        const QString fileName = nodeHelper->writeNodeToTempFile(mNode);
-        // show the filename of the image below the embedded image
-        writer->queue(QLatin1String("<hr/><div><a href=\"") + href + QLatin1String("\">"
-                      "<img align=\"center\" src=\"") + QUrl::fromLocalFile(fileName).url() + QLatin1String("\" border=\"0\" style=\"max-width: 100%\"/></a>"
-                              "</div>"
-                              "<div><a href=\"") + href + QLatin1String("\">") + label + QLatin1String("</a>"
-                                      "</div>"
-                                      "<div>") + comment + QLatin1String("</div>"));
-    } else {
-        // show the filename next to the image
-        const QString iconName = QUrl::fromLocalFile(nodeHelper->iconName(mNode)).url();
-        if (iconName.right(14) == QLatin1String("mime_empty.png")) {
-            nodeHelper->magicSetType(mNode);
-            //iconName = nodeHelper->iconName( mNode );
-        }
-
-        static const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
-        writer->queue(QStringLiteral("<hr/><div><a href=\"%1\">").arg(href) +
-                      QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), iconName) +
-                      label + QStringLiteral("</a></div>") +
-                      QStringLiteral("<div>%1</div>").arg(comment));
-    }
-}
-
 void TextMessagePart::html(bool decorate)
 {
     if (mOtp->nodeHelper()->isNodeDisplayedHidden(mNode)) {
         return;
     }
 
-    const HTMLBlock::Ptr aBlock(attachmentBlock());
-    HTMLBlock::Ptr block;
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
+    HtmlWriter *writer = mOtp->htmlWriter();
 
-    if (mDrawFrame) {
-        block = HTMLBlock::Ptr(new TextBlock(writer, mOtp->nodeHelper(), mNode, mShowLink));
+    if (!writer) {
+        return;
     }
+
+    const HTMLBlock::Ptr aBlock(attachmentBlock());
+
+    Grantlee::Template t;
+    Grantlee::Context c;
+    QObject block;
+
+    c.insert(QStringLiteral("block"), &block);
+
+    block.setProperty("showTextFrame", mDrawFrame);
+    block.setProperty("label", MessageCore::StringUtil::quoteHtmlChars(NodeHelper::fileName(mNode), true));
+    block.setProperty("comment", MessageCore::StringUtil::quoteHtmlChars(mNode->contentDescription()->asUnicodeString(), true));
+    block.setProperty("link", mOtp->nodeHelper()->asHREF(mNode, QStringLiteral("body")));
+    block.setProperty("showLink", !mShowLink);
+    block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
 
     if (mAsIcon != MimeTreeParser::NoIcon) {
-        writePartIcon();
+        t = getGrantleeTemplate(this, QStringLiteral("asiconpart.html"));
+        block.setProperty("iconSize", KIconLoader::global()->currentSize(KIconLoader::Desktop));
+        block.setProperty("inline", (mAsIcon == MimeTreeParser::IconInline));
+
+        QString iconPath;
+        if (mAsIcon == MimeTreeParser::IconInline) {
+            iconPath = mOtp->nodeHelper()->writeNodeToTempFile(mNode);
+        } else {
+            iconPath = mOtp->nodeHelper()->iconName(mNode);
+            if (iconPath.right(14) == QLatin1String("mime_empty.png")) {
+                mOtp->nodeHelper()->magicSetType(mNode);
+                iconPath = mOtp->nodeHelper()->iconName(mNode);
+            }
+        }
+        block.setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
+
+        const QString name = mNode->contentType()->name();
+        QString label = name.isEmpty() ? NodeHelper::fileName(mNode) : name;
+        QString comment = mNode->contentDescription()->asUnicodeString();
+
+        if (label.isEmpty()) {
+            label = i18nc("display name for an unnamed attachment", "Unnamed");
+        }
+        label = MessageCore::StringUtil::quoteHtmlChars(label, true);
+
+        comment = MessageCore::StringUtil::quoteHtmlChars(comment, true);
+        if (label == comment) {
+            comment.clear();
+        }
+
+        block.setProperty("label", label);
+        block.setProperty("comment", comment);
+
     } else {
-        renderInternalHtml(decorate);
+        t = getGrantleeTemplate(this, QStringLiteral("textmessagepart.html"));
+        c.insert(QStringLiteral("content"), internalContent());
     }
+
+    if (t->error()) {
+        qWarning() << t->errorString();
+        return;
+    }
+
+    const auto html = t->render(&c);
+
+    writer->queue(html);
 }
 
 KMMsgEncryptionState TextMessagePart::encryptionState() const

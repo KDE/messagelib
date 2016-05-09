@@ -167,6 +167,7 @@ target_link_libraries(KF5MimeTreeParser
     KF5::Mime
     Qt5::WebKitWidgets
     Grantlee5::TextDocument
+    Grantlee5::Templates
     )
 
 install(TARGETS

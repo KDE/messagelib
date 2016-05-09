@@ -1,0 +1,24 @@
+{% if block.showTextFrame %}
+    <table cellspacing="1" class="textAtm">
+        <tr class="textAtmH">
+            <td dir="{{block.dir}}">
+            {% if block.showLink %}
+                <a href="{{block.link}}">{{ block.label }}</a>
+            {% else %}
+                {{ block.label }}
+            {% endif %}
+            {% if block.comment %}
+                <br/>
+                {{ block.comment }}
+            {% endif %}
+            </td>
+        </tr>
+        <tr class="textAtmB">
+            <td>
+                {{content|safe}}
+            </td>
+        </tr>
+    </table>
+{% else %}
+    {{content|safe}}
+{% endif %}

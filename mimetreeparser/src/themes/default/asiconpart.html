@@ -1,0 +1,14 @@
+<hr/>
+{% if block.inline %}
+     <div>
+        <a href="{{block.link}}"><img align="center" src="{{block.iconPath}}" border="0" style="max-width: 100%"/></a>
+    </div>
+    <div>
+        <a href="{{block.link}}">{{block.label}}</a>
+    </div>
+{% else %}
+    <div>
+        <a href="{{block.link}}"><img align="center" height="{{block.iconSize}}" width="{{block.iconSize}}" src="{{block.iconPath}}" border="0" style="max-width: 100%" alt=""/>{{block.label}}</a>
+    </div>
+{% endif %}
+<div>{{block.comment}}</div>

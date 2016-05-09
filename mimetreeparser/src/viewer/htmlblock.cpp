@@ -847,57 +847,6 @@ void AttachmentMarkBlock::internalExit()
     entered = false;
 }
 
-TextBlock::TextBlock(MimeTreeParser::HtmlWriter *writer, MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node, bool link)
-    : mWriter(writer)
-    , mNodeHelper(nodeHelper)
-    , mNode(node)
-    , mLink(link)
-{
-    internalEnter();
-}
-
-TextBlock::~TextBlock()
-{
-    internalExit();
-}
-
-void TextBlock::internalEnter()
-{
-    if (!mWriter || entered) {
-        return;
-    }
-    entered = true;
-
-    const QString label = MessageCore::StringUtil::quoteHtmlChars(NodeHelper::fileName(mNode), true);
-
-    const QString comment =
-        MessageCore::StringUtil::quoteHtmlChars(mNode->contentDescription()->asUnicodeString(), true);
-
-    mWriter->queue(QLatin1String("<table cellspacing=\"1\" class=\"textAtm\">"
-                                 "<tr class=\"textAtmH\"><td dir=\"") + dir() + QLatin1String("\">"));
-    if (!mLink)
-        mWriter->queue(QLatin1String("<a href=\"") + mNodeHelper->asHREF(mNode, QStringLiteral("body")) + QLatin1String("\">")
-                       + label + QLatin1String("</a>"));
-    else {
-        mWriter->queue(label);
-    }
-    if (!comment.isEmpty()) {
-        mWriter->queue(QLatin1String("<br/>") + comment);
-    }
-    mWriter->queue(QStringLiteral("</td></tr><tr class=\"textAtmB\"><td>"));
-}
-
-void TextBlock::internalExit()
-{
-    if (!entered) {
-        return;
-    }
-
-    entered = false;
-
-    mWriter->queue(QStringLiteral("</td></tr></table>"));
-}
-
 HTMLWarnBlock::HTMLWarnBlock(HtmlWriter *writer, const QString &msg)
     : mWriter(writer)
     , mMsg(msg)
