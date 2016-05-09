@@ -75,7 +75,7 @@ Interface::MessagePart::Ptr TextPlainBodyPartFormatter::process(Interface::BodyP
                             && iconType == MimeTreeParser::NoIcon;
     const QString fileName = part.nodeHelper()->writeNodeToTempFile(node);
 
-    TextMessagePart::Ptr mp(new TextMessagePart(part.objectTreeParser(), node, bDrawFrame, !fileName.isEmpty(), part.source()->decryptMessage(), iconType));
+    TextMessagePart::Ptr mp(new TextMessagePart(part.objectTreeParser(), node, bDrawFrame, fileName.isEmpty(), part.source()->decryptMessage(), iconType));
 
     part.processResult()->setInlineSignatureState(mp->signatureState());
     part.processResult()->setInlineEncryptionState(mp->encryptionState());

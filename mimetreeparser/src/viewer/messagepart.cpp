@@ -803,7 +803,7 @@ void TextMessagePart::html(bool decorate)
     block.setProperty("label", MessageCore::StringUtil::quoteHtmlChars(NodeHelper::fileName(mNode), true));
     block.setProperty("comment", MessageCore::StringUtil::quoteHtmlChars(mNode->contentDescription()->asUnicodeString(), true));
     block.setProperty("link", mOtp->nodeHelper()->asHREF(mNode, QStringLiteral("body")));
-    block.setProperty("showLink", !mShowLink);
+    block.setProperty("showLink", mShowLink);
     block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
 
     if (mAsIcon != MimeTreeParser::NoIcon) {

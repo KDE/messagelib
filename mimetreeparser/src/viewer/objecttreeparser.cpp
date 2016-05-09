@@ -359,7 +359,7 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
         htmlWriter()->embedPart(cid, href);
         nodeHelper()->setNodeDisplayedEmbedded(node, true);
         mNodeHelper->setNodeDisplayedHidden(node, true);
-        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconInline));
+        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::IconInline));
         return mp;
     }
     Interface::MessagePart::Ptr mp;
@@ -379,7 +379,7 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
             !showOnlyOneMimePart() &&
             node->parent() /* message is not an attachment */) {
         mNodeHelper->setNodeDisplayedHidden(node, true);
-        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconInline));
+        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::IconInline));
         return mp;
     }
 
@@ -411,14 +411,14 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
     if (asIcon) {
         bool hidePart = (as && as->defaultDisplay(node) == AttachmentStrategy::None) || showOnlyOneMimePart();
         mNodeHelper->setNodeDisplayedHidden(node, hidePart);
-        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconExternal));
+        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::IconExternal));
     } else if (result.isImage()) {
         // Embed the image
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::IconInline));
+        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::IconInline));
     } else {
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, false, mSource->decryptMessage(), MimeTreeParser::NoIcon));
+        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::NoIcon));
         result.setInlineSignatureState(mp->signatureState());
         result.setInlineEncryptionState(mp->encryptionState());
         return mp;
