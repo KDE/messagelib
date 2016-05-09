@@ -238,6 +238,22 @@ void RenderTest::testRender()
 
     QVERIFY(QFile::exists(outFileName));
 
+    // remove tailing newlines and spaces and make htmlmore uniform (breaks pre tags)
+    {
+        QFile f(outFileName);
+        QVERIFY(f.open(QIODevice::ReadOnly));
+        QString content = QString::fromUtf8(f.readAll());
+        f.close();
+        content.replace(QRegExp(QStringLiteral("[\t ]+")), QStringLiteral(" "));
+        content.replace(QRegExp(QStringLiteral("[\t ]*\n+[\t ]*")), QStringLiteral("\n"));
+        content.replace(QRegExp(QStringLiteral("([\n\t ])\\1+")), QStringLiteral("\\1"));
+        content.replace(QRegExp(QStringLiteral(">\n+[\t ]*")), QStringLiteral(">"));
+        content.replace(QRegExp(QStringLiteral("[\t ]*\n+[\t ]*<")), QStringLiteral("<"));
+        QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+        f.write(content.toUtf8());
+        f.close();
+    }
+
     // validate xml and pretty-print for comparisson
     // TODO add proper cmake check for xmllint and diff
     QStringList args = QStringList()
