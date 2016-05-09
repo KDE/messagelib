@@ -8,6 +8,17 @@ if(BUILD_TESTING)
     add_subdirectory(findbar/autotests)
 endif()
 
+find_package(Poppler "0.12.1" COMPONENTS Qt5)
+set_package_properties("Poppler" PROPERTIES
+    TYPE RECOMMENDED
+    PURPOSE "Support for print preview.")
+
+if (Poppler_Qt5_FOUND)
+    set(libwebengineviewer_print_SRCS
+        print/printpreviewdialog.cpp
+        )
+    set(poppler_lib Poppler::Qt5)
+endif()
 
 set(libwebengineviewer_webengine_SRCS
     networkmanager/networkaccessmanagerwebengine.cpp
@@ -40,6 +51,7 @@ set(libwebengineviewer_SRCS
     ${libwebengineviewer_webengine_SRCS}
     ${libwebengineviewer_findbar_SRCS}
     ${libwebengineviewer_widgets_SRCS}
+    ${libwebengineviewer_print_SRCS}
     )
 
 qt5_add_resources(libwebengineviewer_webengine_SRCS jquery.qrc)
@@ -63,6 +75,7 @@ target_link_libraries(KF5WebEngineViewer
     KF5::Completion
     KF5::I18n
     KF5::PimCommon
+    ${poppler_lib}
     )
 
 set_target_properties(KF5WebEngineViewer PROPERTIES
