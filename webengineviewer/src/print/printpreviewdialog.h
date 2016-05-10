@@ -36,6 +36,8 @@ public:
     void loadFile(const QString &path);
 
 private:
+    void writeConfig();
+    void readConfig();
     PrintPreviewPageViewer *mPrintPreviewPage;
     Poppler::Document *mDoc;
 };

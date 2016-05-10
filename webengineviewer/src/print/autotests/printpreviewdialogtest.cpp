@@ -20,6 +20,7 @@
 #include "../printpreviewdialog.h"
 #include "../printpreviewpageviewer.h"
 #include <QTest>
+#include <QDialogButtonBox>
 
 PrintPreviewDialogTest::PrintPreviewDialogTest(QObject *parent)
     : QObject(parent)
@@ -37,6 +38,8 @@ void PrintPreviewDialogTest::shouldHaveDefaultValue()
     WebEngineViewer::PrintPreviewDialog dlg;
     WebEngineViewer::PrintPreviewPageViewer *page = dlg.findChild<WebEngineViewer::PrintPreviewPageViewer *>(QStringLiteral("printpreviewpage"));
     QVERIFY(page);
+    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    QVERIFY(buttonBox);
 }
 
 QTEST_MAIN(PrintPreviewDialogTest)

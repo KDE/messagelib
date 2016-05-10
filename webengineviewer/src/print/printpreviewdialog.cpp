@@ -22,6 +22,8 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QVBoxLayout>
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <QDialogButtonBox>
 
 using namespace WebEngineViewer;
@@ -36,11 +38,34 @@ PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
     mPrintPreviewPage = new PrintPreviewPageViewer(this);
     mPrintPreviewPage->setObjectName(QStringLiteral("printpreviewpage"));
     layout->addWidget(mPrintPreviewPage);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
+    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    layout->addWidget(buttonBox);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &PrintPreviewDialog::reject);
 }
 
 PrintPreviewDialog::~PrintPreviewDialog()
 {
+    writeConfig();
+    delete mDoc;
+    mDoc = 0;
+}
 
+void PrintPreviewDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "PrintPreviewDialog");
+    group.writeEntry("Size", size());
+    group.sync();
+}
+
+void PrintPreviewDialog::readConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "PrintPreviewDialog");
+
+    const QSize size = group.readEntry("Size", QSize(500, 300));
+    if (size.isValid()) {
+        resize(size);
+    }
 }
 
 void PrintPreviewDialog::loadFile(const QString &path)
