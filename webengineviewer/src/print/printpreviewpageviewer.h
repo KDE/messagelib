@@ -15,22 +15,19 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "printpreviewdialog.h"
-#include "printpreviewpageviewer.h"
+#ifndef PRINTPREVIEWPAGEVIEWER_H
+#define PRINTPREVIEWPAGEVIEWER_H
 
-#include <KLocalizedString>
-#include <QVBoxLayout>
-#include <QDialogButtonBox>
-
-using namespace WebEngineViewer;
-
-PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
-    : QDialog(parent)
+#include <QScrollArea>
+namespace WebEngineViewer
 {
-
+class PrintPreviewPageViewer : public QScrollArea
+{
+    Q_OBJECT
+public:
+    explicit PrintPreviewPageViewer(QWidget *parent = Q_NULLPTR);
+    ~PrintPreviewPageViewer();
+};
 }
 
-PrintPreviewDialog::~PrintPreviewDialog()
-{
-
-}
+#endif // PRINTPREVIEWPAGEVIEWER_H
