@@ -8,16 +8,18 @@ if(BUILD_TESTING)
     add_subdirectory(findbar/autotests)
 endif()
 
-find_package(Poppler "0.12.1" COMPONENTS Qt5)
-set_package_properties("Poppler" PROPERTIES
-    TYPE RECOMMENDED
-    PURPOSE "Support for print preview.")
+if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
+    find_package(Poppler "0.12.1" COMPONENTS Qt5)
+    set_package_properties("Poppler" PROPERTIES
+        TYPE RECOMMENDED
+        PURPOSE "Support for print preview.")
 
-if (Poppler_Qt5_FOUND)
-    set(libwebengineviewer_print_SRCS
-        print/printpreviewdialog.cpp
-        )
-    set(poppler_lib Poppler::Qt5)
+    if (Poppler_Qt5_FOUND)
+        set(libwebengineviewer_print_SRCS
+            print/printpreviewdialog.cpp
+            )
+        set(poppler_lib Poppler::Qt5)
+    endif()
 endif()
 
 set(libwebengineviewer_webengine_SRCS
