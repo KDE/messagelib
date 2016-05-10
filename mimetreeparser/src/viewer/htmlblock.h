@@ -66,21 +66,6 @@ protected:
     bool entered;
 };
 
-class EncapsulatedRFC822Block : public HTMLBlock
-{
-public:
-    EncapsulatedRFC822Block(MimeTreeParser::HtmlWriter *writer, const MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node);
-    virtual ~EncapsulatedRFC822Block();
-
-private:
-    void internalEnter();
-    void internalExit();
-
-    HtmlWriter *mWriter;
-    const NodeHelper *mNodeHelper;
-    KMime::Content *mNode;
-};
-
 class EncryptedBlock : public HTMLBlock
 {
 public:

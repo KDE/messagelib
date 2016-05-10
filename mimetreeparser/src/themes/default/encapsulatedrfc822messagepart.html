@@ -1,0 +1,22 @@
+<table cellspacing="1" cellpadding="1" class="rfc822">
+    <tr class="rfc822H">
+        <td dir="{{block.dir}}">
+        {% if block.link %}
+            <a href="{{block.link}}">{% i18n "Encapsulated message" %}</a>
+        {% else %}
+            {% i18n "Encapsulated message" %}
+        {% endif %}
+        </td>
+     </tr>
+     <tr class="rfc822B">
+        <td>
+            {{msgHeader|safe}}
+            {{content|safe}}
+        </td>
+    </tr>
+    <tr class="rfc822H">
+        <td dir="{{block.dir}}">
+            {% i18n "End of encapsulated message" %}
+        </td>
+    </tr>
+</table>

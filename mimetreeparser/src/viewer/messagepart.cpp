@@ -1812,11 +1812,21 @@ void EncapsulatedRfc822MessagePart::html(bool decorate)
     }
 
     const HTMLBlock::Ptr aBlock(attachmentBlock());
-    const EncapsulatedRFC822Block block(mOtp->htmlWriter(), mOtp->nodeHelper(), mMessage.data());
-    writer->queue(mOtp->mSource->createMessageHeader(mMessage.data()));
-    renderInternalHtml(decorate);
 
-    mOtp->nodeHelper()->setPartMetaData(mNode, mMetaData);
+    Grantlee::Template t = getGrantleeTemplate(this, QStringLiteral("encapsulatedrfc822messagepart.html"));
+    Grantlee::Context c;
+    QObject block;
+
+    c.insert(QStringLiteral("block"), &block);
+    block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
+    block.setProperty("link", mOtp->nodeHelper()->asHREF(mMessage.data(), QStringLiteral("body")));
+
+    c.insert(QStringLiteral("msgHeader"), mOtp->mSource->createMessageHeader(mMessage.data()));
+    c.insert(QStringLiteral("content"), internalContent());
+
+    const auto html = t->render(&c);
+
+    writer->queue(html);
 }
 
 QString EncapsulatedRfc822MessagePart::text() const

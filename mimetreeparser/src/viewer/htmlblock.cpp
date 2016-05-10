@@ -92,50 +92,6 @@ void CryptoBlock::internalExit()
     entered = false;
 }
 
-EncapsulatedRFC822Block::EncapsulatedRFC822Block(MimeTreeParser::HtmlWriter *writer, const MimeTreeParser::NodeHelper *nodeHelper, KMime::Content *node)
-    : mWriter(writer)
-    , mNodeHelper(nodeHelper)
-    , mNode(node)
-{
-    internalEnter();
-}
-
-EncapsulatedRFC822Block::~EncapsulatedRFC822Block()
-{
-    internalExit();
-}
-
-void EncapsulatedRFC822Block::internalEnter()
-{
-    if (mWriter && !entered) {
-        QString text;
-        if (mNode) {
-            const QString href = mNodeHelper->asHREF(mNode, QStringLiteral("body"));
-            text = QStringLiteral("<a href=\"%1\">%2</a>").arg(href, i18n("Encapsulated message"));
-        } else {
-            text = i18n("Encapsulated message");
-        }
-        mWriter->queue(QStringLiteral("<table cellspacing=\"1\" cellpadding=\"1\" class=\"rfc822\">") +
-                       QStringLiteral("<tr class=\"rfc822H\"><td dir=\"%1\">").arg(dir()) +
-                       text +
-                       QStringLiteral("</td></tr><tr class=\"rfc822B\"><td>"));
-
-        entered = true;
-    }
-}
-
-void EncapsulatedRFC822Block::internalExit()
-{
-    if (!entered) {
-        return;
-    }
-
-    mWriter->queue(QStringLiteral("</td></tr>"
-                                  "<tr class=\"rfc822H\"><td dir=\"%1\">%2</td></tr>"
-                                  "</table>").arg(dir(), i18n("End of encapsulated message")));
-    entered = false;
-}
-
 EncryptedBlock::EncryptedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block)
     : mWriter(writer)
     , mBlock(block)
