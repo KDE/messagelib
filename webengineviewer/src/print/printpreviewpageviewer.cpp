@@ -16,13 +16,17 @@
 */
 
 #include "printpreviewpageviewer.h"
+#include <QLabel>
 
 using namespace WebEngineViewer;
 
 PrintPreviewPageViewer::PrintPreviewPageViewer(QWidget *parent)
     : QScrollArea(parent)
 {
-
+    mImage = new QLabel(this);
+    mImage->setObjectName(QStringLiteral("page"));
+    mImage->resize(0, 0);
+    setWidget(mImage);
 }
 
 PrintPreviewPageViewer::~PrintPreviewPageViewer()

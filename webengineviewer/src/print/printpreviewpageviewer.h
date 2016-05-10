@@ -19,6 +19,8 @@
 #define PRINTPREVIEWPAGEVIEWER_H
 
 #include <QScrollArea>
+
+class QLabel;
 namespace WebEngineViewer
 {
 class PrintPreviewPageViewer : public QScrollArea
@@ -27,6 +29,8 @@ class PrintPreviewPageViewer : public QScrollArea
 public:
     explicit PrintPreviewPageViewer(QWidget *parent = Q_NULLPTR);
     ~PrintPreviewPageViewer();
+private:
+    QLabel *mImage;
 };
 }
 
