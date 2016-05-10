@@ -174,8 +174,8 @@ KMime::Content *MessagePart::attachmentNode() const
 
 HTMLBlock::Ptr MessagePart::attachmentBlock() const
 {
-    if (mOtp->htmlWriter() && isAttachment()) {
-        return HTMLBlock::Ptr(new AttachmentMarkBlock(mOtp->htmlWriter(), mAttachmentNode));
+    if (htmlWriter() && isAttachment()) {
+        return HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter(), mAttachmentNode));
     }
     return HTMLBlock::Ptr();
 }
@@ -192,8 +192,8 @@ bool MessagePart::isRoot() const
 
 HTMLBlock::Ptr MessagePart::rootBlock() const
 {
-    if (mOtp->htmlWriter() && isRoot()) {
-        return HTMLBlock::Ptr(new RootBlock(mOtp->htmlWriter()));
+    if (htmlWriter() && isRoot()) {
+        return HTMLBlock::Ptr(new RootBlock(htmlWriter()));
     }
     return HTMLBlock::Ptr();
 }
@@ -218,6 +218,12 @@ Interface::ObjectTreeSource *MessagePart::source() const
 {
     Q_ASSERT(mOtp);
     return mOtp->mSource;
+}
+
+HtmlWriter *MessagePart::htmlWriter() const
+{
+    Q_ASSERT(mOtp);
+    return mOtp->htmlWriter();
 }
 
 static QString iconToDataUrl(const QString &iconPath)
@@ -504,7 +510,7 @@ QString MessagePart::quotedHTML(const QString &s, bool decorate)
 
 void MessagePart::html(bool decorate)
 {
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = htmlWriter();
 
     if (!writer) {
         return;
@@ -528,16 +534,16 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 
 HTMLBlock::Ptr MessagePart::internalRootBlock() const
 {
-    if (mOtp->htmlWriter() && mIsInternalRoot) {
-        return HTMLBlock::Ptr(new RootBlock(mOtp->htmlWriter()));
+    if (htmlWriter() && mIsInternalRoot) {
+        return HTMLBlock::Ptr(new RootBlock(htmlWriter()));
     }
     return HTMLBlock::Ptr();
 }
 
 HTMLBlock::Ptr MessagePart::internalAttachmentBlock() const
 {
-    if (mOtp->htmlWriter() && mInternalAttachmentNode) {
-        return HTMLBlock::Ptr(new AttachmentMarkBlock(mOtp->htmlWriter(), mInternalAttachmentNode));
+    if (htmlWriter() && mInternalAttachmentNode) {
+        return HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter(), mInternalAttachmentNode));
     }
     return HTMLBlock::Ptr();
 }
@@ -561,7 +567,10 @@ public:
     virtual ~TestHtmlWriter() {}
 
     void begin(const QString &text) Q_DECL_OVERRIDE {mBaseWriter->begin(text);}
-    void write(const QString &text) Q_DECL_OVERRIDE {mBaseWriter->write(text);}
+    void write(const QString &str) Q_DECL_OVERRIDE
+    {
+        html.append(str);
+    }
     void end() Q_DECL_OVERRIDE {mBaseWriter->end();}
     void reset() Q_DECL_OVERRIDE {mBaseWriter->reset();}
     void queue(const QString &str) Q_DECL_OVERRIDE
@@ -578,7 +587,7 @@ public:
 
 QString MessagePart::internalContent() const
 {
-    const auto oldWriter = mOtp->htmlWriter();
+    const auto oldWriter = htmlWriter();
     TestHtmlWriter htmlWriter(oldWriter);
 
     if (oldWriter) {
@@ -661,10 +670,14 @@ MessagePartList::~MessagePartList()
 
 void MessagePartList::html(bool decorate)
 {
+    if (!htmlWriter()) {
+        return;
+    }
+
     const HTMLBlock::Ptr rBlock(rootBlock());
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
-    renderInternalHtml(decorate);
+    htmlWriter()->queue(internalContent());
 }
 
 QString MessagePartList::text() const
@@ -785,7 +798,7 @@ void TextMessagePart::html(bool decorate)
         return;
     }
 
-    HtmlWriter *writer = mOtp->htmlWriter();
+    HtmlWriter *writer = htmlWriter();
 
     if (!writer) {
         return;
@@ -915,7 +928,7 @@ QString HtmlMessagePart::processHtml(const QString &htmlSource, QString &extraHe
 void HtmlMessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate);
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = htmlWriter();
     if (!writer) {
         return;
     }
@@ -996,7 +1009,7 @@ MimeMessagePart::~MimeMessagePart()
 void MimeMessagePart::html(bool decorate)
 {
     const HTMLBlock::Ptr aBlock(attachmentBlock());
-    renderInternalHtml(decorate);
+    htmlWriter()->queue(internalContent());
 }
 
 QString MimeMessagePart::text() const
@@ -1043,7 +1056,7 @@ bool AlternativeMessagePart::viewHtml() const
 
 void AlternativeMessagePart::html(bool decorate)
 {
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = htmlWriter();
 
     if (!writer) {
         return;
@@ -1119,7 +1132,7 @@ CertMessagePart::~CertMessagePart()
 
 void CertMessagePart::writeCertificateImportResult()
 {
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = htmlWriter();
     if (mImportResult.error()) {
         writer->queue(i18n("Sorry, certificate could not be imported.<br />"
                            "Reason: %1", QString::fromLocal8Bit(mImportResult.error().asString())));
@@ -1180,7 +1193,7 @@ void CertMessagePart::writeCertificateImportResult()
 void CertMessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate);
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = htmlWriter();
 
     if (!writer) {
         return;
@@ -1681,7 +1694,7 @@ void CryptoMessagePart::writeDeferredDecryptionBlock() const
     Q_ASSERT(mMetaData.isEncrypted);
     Q_ASSERT(!decryptMessage());
 
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = htmlWriter();
     if (!writer) {
         return;
     }
@@ -1702,7 +1715,7 @@ void CryptoMessagePart::writeDeferredDecryptionBlock() const
 void CryptoMessagePart::html(bool decorate)
 {
     bool hideErrors = false;
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = htmlWriter();
 
     if (!writer) {
         return;
@@ -1711,13 +1724,13 @@ void CryptoMessagePart::html(bool decorate)
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
     if (mMetaData.isEncrypted && !decryptMessage()) {
-        const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
+        const CryptoBlock block(htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
         writeDeferredDecryptionBlock();
     } else if (mMetaData.inProgress) {
-        const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
+        const CryptoBlock block(htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
         // In progress has no special body
     } else if (mMetaData.isEncrypted && !mMetaData.isDecryptable) {
-        const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
+        const CryptoBlock block(htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
         const QString errorMsg = i18n("Could not decrypt the data.");
         const QString sNoSecKeyHeader = i18n("No secret key found to encrypt the message. It is encrypted for following keys:");
         QString secKeyList;
@@ -1746,7 +1759,7 @@ void CryptoMessagePart::html(bool decorate)
         writer->queue(QStringLiteral("</div>"));
     } else {
         if (mMetaData.isSigned && mVerifiedText.isEmpty() && !hideErrors) {
-            const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
+            const CryptoBlock block(htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
             writer->queue(QStringLiteral("<hr/><b><h2>"));
             writer->queue(i18n("The crypto engine returned no cleartext data."));
             writer->queue(QStringLiteral("</h2></b>"));
@@ -1760,10 +1773,10 @@ void CryptoMessagePart::html(bool decorate)
                 writer->queue(i18nc("Status of message unknown.", "(unknown)"));
             }
         } else if (mNode) {
-            const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
-            renderInternalHtml(decorate);
+            const CryptoBlock block(htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
+            writer->queue(internalContent());
         } else {
-            const CryptoBlock block(mOtp->htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
+            const CryptoBlock block(htmlWriter(), &mMetaData, mCryptoProto, mOtp->mSource, mFromAddress);
             MessagePart::html(decorate);
         }
     }
@@ -1805,7 +1818,7 @@ void EncapsulatedRfc822MessagePart::html(bool decorate)
         return;
     }
 
-    MimeTreeParser::HtmlWriter *writer = mOtp->htmlWriter();
+    MimeTreeParser::HtmlWriter *writer = htmlWriter();
 
     if (!writer) {
         return;

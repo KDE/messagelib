@@ -100,6 +100,8 @@ protected:
     HTMLBlockPtr attachmentBlock() const;
     HTMLBlockPtr rootBlock() const;
 
+    HtmlWriter* htmlWriter() const;
+
     QString mText;
     ObjectTreeParser *mOtp;
     ObjectTreeParser *mSubOtp;
