@@ -27,6 +27,8 @@ using namespace WebEngineViewer;
 PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
     : QDialog(parent)
 {
+    QVBoxLayout *layout = new QVBoxLayout;
+    setLayout(layout);
 
 }
 

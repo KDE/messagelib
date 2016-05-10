@@ -22,12 +22,15 @@
 
 namespace WebEngineViewer
 {
+class PrintPreviewPageViewer;
 class PrintPreviewDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit PrintPreviewDialog(QWidget *parent = Q_NULLPTR);
     ~PrintPreviewDialog();
+private:
+    PrintPreviewPageViewer *mPrintPreviewPage;
 };
 }
 
