@@ -1130,66 +1130,6 @@ CertMessagePart::~CertMessagePart()
 
 }
 
-void CertMessagePart::writeCertificateImportResult()
-{
-    MimeTreeParser::HtmlWriter *writer = htmlWriter();
-    if (mImportResult.error()) {
-        writer->queue(i18n("Sorry, certificate could not be imported.<br />"
-                           "Reason: %1", QString::fromLocal8Bit(mImportResult.error().asString())));
-        return;
-    }
-
-    const int nImp = mImportResult.numImported();
-    const int nUnc = mImportResult.numUnchanged();
-    const int nSKImp = mImportResult.numSecretKeysImported();
-    const int nSKUnc = mImportResult.numSecretKeysUnchanged();
-    if (!nImp && !nSKImp && !nUnc && !nSKUnc) {
-        writer->queue(i18n("Sorry, no certificates were found in this message."));
-        return;
-    }
-    QString comment = QLatin1String("<b>") + i18n("Certificate import status:") + QLatin1String("</b><br/>&nbsp;<br/>");
-    if (nImp)
-        comment += i18np("1 new certificate was imported.",
-                         "%1 new certificates were imported.", nImp) + QLatin1String("<br/>");
-    if (nUnc)
-        comment += i18np("1 certificate was unchanged.",
-                         "%1 certificates were unchanged.", nUnc) + QLatin1String("<br/>");
-    if (nSKImp)
-        comment += i18np("1 new secret key was imported.",
-                         "%1 new secret keys were imported.", nSKImp) + QLatin1String("<br/>");
-    if (nSKUnc)
-        comment += i18np("1 secret key was unchanged.",
-                         "%1 secret keys were unchanged.", nSKUnc) + QLatin1String("<br/>");
-    comment += QLatin1String("&nbsp;<br/>");
-    writer->queue(comment);
-    if (!nImp && !nSKImp) {
-        writer->queue(QStringLiteral("<hr/>"));
-        return;
-    }
-    const std::vector<GpgME::Import> imports = mImportResult.imports();
-    if (imports.empty()) {
-        writer->queue(i18n("Sorry, no details on certificate import available.") + QLatin1String("<hr/>"));
-        return;
-    }
-    writer->queue(QLatin1String("<b>") + i18n("Certificate import details:") + QLatin1String("</b><br/>"));
-    std::vector<GpgME::Import>::const_iterator end(imports.end());
-    for (std::vector<GpgME::Import>::const_iterator it = imports.begin(); it != end; ++it) {
-        if ((*it).error()) {
-            writer->queue(i18nc("Certificate import failed.", "Failed: %1 (%2)", QLatin1String((*it).fingerprint()),
-                                QString::fromLocal8Bit((*it).error().asString())));
-        } else if ((*it).status() & ~GpgME::Import::ContainedSecretKey) {
-            if ((*it).status() & GpgME::Import::ContainedSecretKey) {
-                writer->queue(i18n("New or changed: %1 (secret key available)", QLatin1String((*it).fingerprint())));
-            } else {
-                writer->queue(i18n("New or changed: %1", QLatin1String((*it).fingerprint())));
-            }
-        }
-        writer->queue(QStringLiteral("<br/>"));
-    }
-
-    writer->queue(QStringLiteral("<hr/>"));
-}
-
 void CertMessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate);
@@ -1201,7 +1141,31 @@ void CertMessagePart::html(bool decorate)
 
     const HTMLBlock::Ptr aBlock(attachmentBlock());
 
-    writeCertificateImportResult();
+    Grantlee::Template t = getGrantleeTemplate(this, QStringLiteral("certmessagepart.html"));
+    Grantlee::Context c;
+    QObject block;
+
+    c.insert(QStringLiteral("block"), &block);
+    block.setProperty("importError", QString::fromLocal8Bit(mImportResult.error().asString()));
+    block.setProperty("nImp", mImportResult.numImported());
+    block.setProperty("nUnc", mImportResult.numUnchanged());
+    block.setProperty("nSKImp", mImportResult.numSecretKeysImported());
+    block.setProperty("nSKUnc", mImportResult.numSecretKeysUnchanged());
+
+    QVariantList keylist;
+    const auto imports = mImportResult.imports();
+
+    auto end(imports.end());
+    for (auto it = imports.begin(); it != end; ++it) {
+        QObject *key(new QObject(this));
+        key->setProperty("error", QString::fromLocal8Bit((*it).error().asString()));
+        key->setProperty("status", (*it).status());
+        key->setProperty("fingerprint", QLatin1String((*it).fingerprint()));
+        keylist << QVariant::fromValue(key);
+    }
+    const auto html = t->render(&c);
+
+    writer->queue(html);
 }
 
 QString CertMessagePart::text() const

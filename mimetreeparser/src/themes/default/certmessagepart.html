@@ -1,0 +1,41 @@
+{% if block.importError %}
+    {% i18n "Sorry, certificate could not be imported." %}
+    <br />
+    {% i18n "Reason: %1" block.importError %}
+{% else %}
+{% if not block.nImp and not block.nSKImp and not block.nUnc and not block.nSKUnc %}
+    {% i18n "Sorry, no certificates were found in this message." %}
+{% else %}
+    <b>{% i18n "Certificate import status:" %}</b>
+    <br/>
+    &nbsp;<br/>
+    {% if block.nImp %}
+        {% i18np "1 new certificate was imported." "%1 new certificates were imported." nImp %}
+    {% endif %}
+    {% if block.nUnc %}
+        {% i18np "1 certificate was unchanged." "%1 certificates were unchanged." nUnc %}
+    {% endif %}
+    {% if block.nSKImp %}
+        {% i18np "1 new secret key was imported." "%1 new secret keys were imported." nSKImp %}
+    {% endif %}
+    {% if block.nSKUnc %}
+        {% i18np "1 secret key was unchanged." "%1 secret keys were unchanged." nSKUnc %}
+    {% endif %}
+    <br/>
+    &nbsp;<br/>
+    {% if block.nImp or block.nSKImp %}
+        {% if not block.imports %}
+            {% i18n "Sorry, no details on certificate import available." %}
+        {% else %}
+            <b>{% i18n "Certificate import details:" %}</b><br/>
+        {% endif %}
+        {% for cert in block.imports %}
+            {% if cert.error %}
+                {% i18nc "Certificate import failed." "Failed: %1 (%2)" cert.fingerprint cert.error %}
+            {% endif %}
+            <br/>
+        {% endfor %}
+    {% endif%}
+    <hr/>
+{% endif %}
+{% endif %}
