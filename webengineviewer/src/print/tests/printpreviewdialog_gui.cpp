@@ -17,6 +17,7 @@
 
 
 #include "printpreviewdialog_gui.h"
+#include "../printpreviewdialog.h"
 
 #include <QApplication>
 
@@ -29,7 +30,8 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    //TODO
+    WebEngineViewer::PrintPreviewDialog dlg;
+    dlg.show();
     const int ret = app.exec();
     return ret;
 }
