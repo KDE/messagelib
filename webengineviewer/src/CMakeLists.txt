@@ -23,6 +23,7 @@ if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
     endif()
     if(BUILD_TESTING)
         add_subdirectory(print/autotests)
+        add_subdirectory(print/tests)
     endif()
 endif()
 
