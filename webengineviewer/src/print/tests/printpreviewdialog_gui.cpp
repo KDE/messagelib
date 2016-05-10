@@ -20,6 +20,8 @@
 #include "../printpreviewdialog.h"
 
 #include <QApplication>
+#include <QStandardPaths>
+#include <QFileDialog>
 
 PrintPreviewDialog_gui::PrintPreviewDialog_gui()
 {
@@ -29,8 +31,11 @@ PrintPreviewDialog_gui::PrintPreviewDialog_gui()
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    QStandardPaths::setTestModeEnabled(true);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+    const QString filename = QFileDialog::getOpenFileName(0, QStringLiteral("Open PDF"), QString(), QStringLiteral("*.pdf"));
     WebEngineViewer::PrintPreviewDialog dlg;
+    dlg.loadFile(filename);
     dlg.show();
     const int ret = app.exec();
     return ret;
