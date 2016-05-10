@@ -15,30 +15,28 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef PRINTPREVIEWDIALOG_H
-#define PRINTPREVIEWDIALOG_H
+#include "printpreviewpageviewertest.h"
+#include "../printpreviewpageviewer.h"
 
-#include <QDialog>
+#include <QLabel>
+#include <QTest>
 
-namespace Poppler
+PrintPreviewPageViewerTest::PrintPreviewPageViewerTest(QObject *parent)
+    : QObject(parent)
 {
-class Document;
-}
-namespace WebEngineViewer
-{
-class PrintPreviewPageViewer;
-class PrintPreviewDialog : public QDialog
-{
-    Q_OBJECT
-public:
-    explicit PrintPreviewDialog(QWidget *parent = Q_NULLPTR);
-    ~PrintPreviewDialog();
-    void loadFile(const QString &path);
 
-private:
-    PrintPreviewPageViewer *mPrintPreviewPage;
-    Poppler::Document *mDoc;
-};
 }
 
-#endif // PRINTPREVIEWDIALOG_H
+PrintPreviewPageViewerTest::~PrintPreviewPageViewerTest()
+{
+
+}
+
+void PrintPreviewPageViewerTest::shouldHaveDefaultValue()
+{
+    WebEngineViewer::PrintPreviewPageViewer page;
+    QLabel *label = page.findChild<QLabel *>(QStringLiteral("page"));
+    QVERIFY(label);
+}
+
+QTEST_MAIN(PrintPreviewPageViewerTest)

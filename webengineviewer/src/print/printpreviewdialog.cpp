@@ -17,22 +17,42 @@
 
 #include "printpreviewdialog.h"
 #include "printpreviewpageviewer.h"
+#include <poppler-qt5.h>
 
 #include <KLocalizedString>
+#include <KMessageBox>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
 
 using namespace WebEngineViewer;
 
 PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
-    : QDialog(parent)
+    : QDialog(parent),
+      mDoc(Q_NULLPTR)
 {
     QVBoxLayout *layout = new QVBoxLayout;
     setLayout(layout);
 
+    mPrintPreviewPage = new PrintPreviewPageViewer(this);
+    mPrintPreviewPage->setObjectName(QStringLiteral("printpreviewpage"));
+    layout->addWidget(mPrintPreviewPage);
 }
 
 PrintPreviewDialog::~PrintPreviewDialog()
 {
 
+}
+
+void PrintPreviewDialog::loadFile(const QString &path)
+{
+    if (path.isEmpty()) {
+        return;
+    }
+    mDoc = Poppler::Document::load(path);
+    if (!mDoc) {
+        KMessageBox::error(this, i18n("Unable to open file \"%1\"", path), i18n("Open file error"));
+        return;
+    }
+
+    //TODO
 }

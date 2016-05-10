@@ -15,30 +15,19 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef PRINTPREVIEWDIALOG_H
-#define PRINTPREVIEWDIALOG_H
+#ifndef PRINTPREVIEWDIALOGTEST_H
+#define PRINTPREVIEWDIALOGTEST_H
 
-#include <QDialog>
+#include <QObject>
 
-namespace Poppler
-{
-class Document;
-}
-namespace WebEngineViewer
-{
-class PrintPreviewPageViewer;
-class PrintPreviewDialog : public QDialog
+class PrintPreviewDialogTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit PrintPreviewDialog(QWidget *parent = Q_NULLPTR);
-    ~PrintPreviewDialog();
-    void loadFile(const QString &path);
-
-private:
-    PrintPreviewPageViewer *mPrintPreviewPage;
-    Poppler::Document *mDoc;
+    explicit PrintPreviewDialogTest(QObject *parent = Q_NULLPTR);
+    ~PrintPreviewDialogTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
-}
 
-#endif // PRINTPREVIEWDIALOG_H
+#endif // PRINTPREVIEWDIALOGTEST_H

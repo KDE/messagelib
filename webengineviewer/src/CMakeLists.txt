@@ -21,6 +21,9 @@ if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
             )
         set(poppler_lib Poppler::Qt5)
     endif()
+    if(BUILD_TESTING)
+        add_subdirectory(print/autotests)
+    endif()
 endif()
 
 set(libwebengineviewer_webengine_SRCS
@@ -78,6 +81,7 @@ target_link_libraries(KF5WebEngineViewer
     KF5::Completion
     KF5::I18n
     KF5::PimCommon
+    KF5::WidgetsAddons
     ${poppler_lib}
     )
 
