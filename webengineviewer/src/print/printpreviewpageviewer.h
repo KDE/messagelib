@@ -21,6 +21,10 @@
 #include <QScrollArea>
 
 class QLabel;
+namespace Poppler
+{
+class Page;
+}
 namespace WebEngineViewer
 {
 class PrintPreviewPageViewer : public QScrollArea
@@ -29,7 +33,12 @@ class PrintPreviewPageViewer : public QScrollArea
 public:
     explicit PrintPreviewPageViewer(QWidget *parent = Q_NULLPTR);
     ~PrintPreviewPageViewer();
+
+    void showPage(Poppler::Page *page);
+
 private:
+    int mDpiX;
+    int mDpiY;
     QLabel *mImage;
 };
 }

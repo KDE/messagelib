@@ -38,6 +38,7 @@ public:
 private:
     void writeConfig();
     void readConfig();
+    void showPage(int index);
     PrintPreviewPageViewer *mPrintPreviewPage;
     Poppler::Document *mDoc;
 };

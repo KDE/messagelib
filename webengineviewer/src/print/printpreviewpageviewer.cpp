@@ -16,13 +16,20 @@
 */
 
 #include "printpreviewpageviewer.h"
+#include <poppler-qt5.h>
+
 #include <QLabel>
+#include <QApplication>
+#include <QDesktopWidget>
 
 using namespace WebEngineViewer;
 
 PrintPreviewPageViewer::PrintPreviewPageViewer(QWidget *parent)
-    : QScrollArea(parent)
+    : QScrollArea(parent),
+      mDpiX(QApplication::desktop()->physicalDpiX()),
+      mDpiY(QApplication::desktop()->physicalDpiY())
 {
+
     mImage = new QLabel(this);
     mImage->setObjectName(QStringLiteral("page"));
     mImage->resize(0, 0);
@@ -32,4 +39,16 @@ PrintPreviewPageViewer::PrintPreviewPageViewer(QWidget *parent)
 PrintPreviewPageViewer::~PrintPreviewPageViewer()
 {
 
+}
+
+void PrintPreviewPageViewer::showPage(Poppler::Page *page)
+{
+    const QImage image = page->renderToImage(mDpiX, mDpiY);
+    if (!image.isNull()) {
+        mImage->resize(image.size());
+        mImage->setPixmap(QPixmap::fromImage(image));
+    } else {
+        mImage->resize(0, 0);
+        mImage->setPixmap(QPixmap());
+    }
 }

@@ -78,6 +78,12 @@ void PrintPreviewDialog::loadFile(const QString &path)
         KMessageBox::error(this, i18n("Unable to open file \"%1\"", path), i18n("Open file error"));
         return;
     }
+    showPage(0);
+}
 
-    //TODO
+void PrintPreviewDialog::showPage(int index)
+{
+    Poppler::Page *popplerPage = mDoc->page(index);
+    mPrintPreviewPage->showPage(popplerPage);
+    delete popplerPage;
 }
