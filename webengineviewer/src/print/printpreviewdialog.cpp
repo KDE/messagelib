@@ -16,11 +16,9 @@
 */
 
 #include "printpreviewdialog.h"
-#include "printpreviewpageviewer.h"
-#include <poppler-qt5.h>
+#include "printpreviewpagewidget.h"
 
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <QVBoxLayout>
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -29,15 +27,14 @@
 using namespace WebEngineViewer;
 
 PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
-    : QDialog(parent),
-      mDoc(Q_NULLPTR)
+    : QDialog(parent)
 {
     QVBoxLayout *layout = new QVBoxLayout;
     setLayout(layout);
 
-    mPrintPreviewPage = new PrintPreviewPageViewer(this);
-    mPrintPreviewPage->setObjectName(QStringLiteral("printpreviewpage"));
-    layout->addWidget(mPrintPreviewPage);
+    mPrintPreviewWidget = new PrintPreviewPageWidget(this);
+    mPrintPreviewWidget->setObjectName(QStringLiteral("printpreviewwidget"));
+    layout->addWidget(mPrintPreviewWidget);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     layout->addWidget(buttonBox);
@@ -47,8 +44,6 @@ PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
 PrintPreviewDialog::~PrintPreviewDialog()
 {
     writeConfig();
-    delete mDoc;
-    mDoc = 0;
 }
 
 void PrintPreviewDialog::writeConfig()
@@ -70,20 +65,5 @@ void PrintPreviewDialog::readConfig()
 
 void PrintPreviewDialog::loadFile(const QString &path)
 {
-    if (path.isEmpty()) {
-        return;
-    }
-    mDoc = Poppler::Document::load(path);
-    if (!mDoc) {
-        KMessageBox::error(this, i18n("Unable to open file \"%1\"", path), i18n("Open file error"));
-        return;
-    }
-    showPage(0);
-}
-
-void PrintPreviewDialog::showPage(int index)
-{
-    Poppler::Page *popplerPage = mDoc->page(index);
-    mPrintPreviewPage->showPage(popplerPage);
-    delete popplerPage;
+    mPrintPreviewWidget->loadFile(path);
 }

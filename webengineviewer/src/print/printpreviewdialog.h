@@ -20,13 +20,9 @@
 
 #include <QDialog>
 
-namespace Poppler
-{
-class Document;
-}
 namespace WebEngineViewer
 {
-class PrintPreviewPageViewer;
+class PrintPreviewPageWidget;
 class PrintPreviewDialog : public QDialog
 {
     Q_OBJECT
@@ -38,9 +34,7 @@ public:
 private:
     void writeConfig();
     void readConfig();
-    void showPage(int index);
-    PrintPreviewPageViewer *mPrintPreviewPage;
-    Poppler::Document *mDoc;
+    PrintPreviewPageWidget *mPrintPreviewWidget;
 };
 }
 

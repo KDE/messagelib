@@ -18,6 +18,7 @@ if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
         set(libwebengineviewer_print_SRCS
             print/printpreviewdialog.cpp
             print/printpreviewpageviewer.cpp
+            print/printpreviewpagewidget.cpp
             )
         set(poppler_lib Poppler::Qt5)
     endif()

@@ -2,6 +2,7 @@ set(printpreviewdialog_gui_test_SRCS
     printpreviewdialog_gui.cpp
     ../printpreviewdialog.cpp
     ../printpreviewpageviewer.cpp
+    ../printpreviewpagewidget.cpp
     )
 
 add_executable(printpreviewdialog_gui ${printpreviewdialog_gui_test_SRCS})
