@@ -27,7 +27,7 @@ class WebEngineViewer::WebEngineViewPrivate
 {
 public:
     WebEngineViewPrivate()
-        : mSavedRelativePosition(0),
+        : mSavedRelativePosition(-1),
           mCurrentWidget(Q_NULLPTR)
     {
 
@@ -165,7 +165,7 @@ void WebEngineView::slotLoadFinished()
 
 void WebEngineView::clearRelativePosition()
 {
-    d->mSavedRelativePosition = 0;
+    d->mSavedRelativePosition = -1;
 }
 
 void WebEngineView::saveRelativePosition()
