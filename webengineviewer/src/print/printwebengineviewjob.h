@@ -20,6 +20,7 @@
 
 #include <QObject>
 
+class QWebEngineView;
 namespace WebEngineViewer
 {
 class PrintWebEngineViewJob : public QObject
@@ -28,6 +29,14 @@ class PrintWebEngineViewJob : public QObject
 public:
     explicit PrintWebEngineViewJob(QObject *parent = Q_NULLPTR);
     ~PrintWebEngineViewJob();
+
+    void start();
+
+    QWebEngineView *engineView() const;
+    void setEngineView(QWebEngineView *engineView);
+
+private:
+    QWebEngineView *mEngineView;
 };
 }
 #endif // PRINTWEBENGINEVIEWJOB_H

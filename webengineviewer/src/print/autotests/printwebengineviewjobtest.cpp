@@ -15,33 +15,18 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "printwebengineviewjob.h"
+#include "printwebengineviewjobtest.h"
+#include <QTest>
 
-using namespace WebEngineViewer;
-
-PrintWebEngineViewJob::PrintWebEngineViewJob(QObject *parent)
-    : QObject(parent),
-      mEngineView(Q_NULLPTR)
+PrintWebEngineViewJobTest::PrintWebEngineViewJobTest(QObject *parent)
+    : QObject(parent)
 {
 
 }
 
-PrintWebEngineViewJob::~PrintWebEngineViewJob()
+PrintWebEngineViewJobTest::~PrintWebEngineViewJobTest()
 {
 
 }
 
-void PrintWebEngineViewJob::start()
-{
-    //TODO
-}
-
-QWebEngineView *PrintWebEngineViewJob::engineView() const
-{
-    return mEngineView;
-}
-
-void PrintWebEngineViewJob::setEngineView(QWebEngineView *engineView)
-{
-    mEngineView = engineView;
-}
+QTEST_MAIN(PrintWebEngineViewJobTest)
