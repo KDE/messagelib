@@ -95,3 +95,8 @@ void PrintPreviewPageWidget::showPage(int index)
     mPrintPreviewPage->showPage(popplerPage);
     delete popplerPage;
 }
+
+void PrintPreviewPageWidget::print(const QList<int> &page)
+{
+    //TODO
+}

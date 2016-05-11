@@ -37,6 +37,7 @@ public:
 
     void loadFile(const QString &path);
 
+    void print(const QList<int> &page);
 private Q_SLOTS:
     void showPage(int index);
 

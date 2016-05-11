@@ -19,6 +19,7 @@
 #define PRINTWEBENGINEVIEWJOB_H
 
 #include <QObject>
+
 namespace WebEngineViewer
 {
 class PrintWebEngineViewJob : public QObject
