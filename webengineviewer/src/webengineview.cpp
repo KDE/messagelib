@@ -27,11 +27,13 @@ class WebEngineViewer::WebEngineViewPrivate
 {
 public:
     WebEngineViewPrivate()
-        : mCurrentWidget(Q_NULLPTR)
+        : mSavedRelativePosition(0),
+          mCurrentWidget(Q_NULLPTR)
     {
 
     }
     QString mJquery;
+    qreal mSavedRelativePosition;
     QWidget *mCurrentWidget;
 };
 
@@ -159,4 +161,21 @@ QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 void WebEngineView::slotLoadFinished()
 {
     page()->runJavaScript(d->mJquery);
+}
+
+void WebEngineView::clearRelativePosition()
+{
+    d->mSavedRelativePosition = 0;
+}
+
+void WebEngineView::saveRelativePosition()
+{
+#if QT_VERSION >= 0x050700
+    d->mSavedRelativePosition = page()->scrollPosition().toPoint().y();
+#endif
+}
+
+qreal WebEngineView::relativePosition() const
+{
+    return d->mSavedRelativePosition;
 }

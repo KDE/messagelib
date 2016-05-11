@@ -31,6 +31,10 @@ public:
     explicit WebEngineView(QWidget *parent = Q_NULLPTR);
     ~WebEngineView();
 
+    void clearRelativePosition();
+    void saveRelativePosition();
+    qreal relativePosition() const;
+
 protected:
     bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
     QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) Q_DECL_OVERRIDE;

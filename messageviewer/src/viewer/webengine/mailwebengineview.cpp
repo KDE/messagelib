@@ -307,16 +307,6 @@ void MailWebEngineView::scrollToRelativePosition(qreal pos)
     page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollToRelativePosition(pos));
 }
 
-qreal MailWebEngineView::relativePosition() const
-{
-#if QT_VERSION >= 0x050700
-    return page()->scrollPosition().toPoint().y();
-#endif
-    qDebug() << "double MailWebEngineView::relativePosition() const not implemented";
-    //TODO
-    return {};
-}
-
 QUrl MailWebEngineView::linkOrImageUrlAt(const QPoint &global) const
 {
     //TODO

@@ -185,7 +185,6 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
       mSpeakTextAction(0),
       mCanStartDrag(false),
       mHtmlWriter(0),
-      mSavedRelativePosition(0),
       mDecrytMessageOverwrite(false),
       mShowSignatureDetails(false),
       mShowAttachmentQuicklist(true),
@@ -1249,7 +1248,7 @@ void ViewerPrivate::resetStateForNewMessage()
 #ifndef QT_NO_TREEVIEW
     mMimePartTree->clearModel();
 #endif
-    mSavedRelativePosition = 0;
+    mViewer->clearRelativePosition();
     setShowSignatureDetails(false);
     mFindBar->closeBar();
     mViewerPluginToolManager->closeAllTools();
@@ -2118,10 +2117,8 @@ void ViewerPrivate::updateReaderWin()
         htmlWriter()->end();
     }
 
-    if (mSavedRelativePosition) {
-        mViewer->scrollToRelativePosition(mSavedRelativePosition);
-        mSavedRelativePosition = 0;
-    }
+    mViewer->scrollToRelativePosition(mViewer->relativePosition());
+    mViewer->clearRelativePosition();
     mRecursionCountForDisplayMessage--;
 }
 
@@ -2593,7 +2590,7 @@ void ViewerPrivate::slotSaveMessage()
 
 void ViewerPrivate::saveRelativePosition()
 {
-    mSavedRelativePosition = mViewer->relativePosition();
+    mViewer->saveRelativePosition();
 }
 
 //TODO(Andras) inline them
