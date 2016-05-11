@@ -29,6 +29,8 @@ if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
     endif()
 endif()
 
+configure_file(config-webengineviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-webengineviewer.h )
+
 set(libwebengineviewer_webengine_SRCS
     networkmanager/networkaccessmanagerwebengine.cpp
     urlinterceptor/networkurlinterceptor.cpp
