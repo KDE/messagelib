@@ -19,6 +19,7 @@ if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
             print/printpreviewdialog.cpp
             print/printpreviewpageviewer.cpp
             print/printpreviewpagewidget.cpp
+            print/printwebengineviewjob.cpp
             )
         set(poppler_lib Poppler::Qt5)
     endif()
