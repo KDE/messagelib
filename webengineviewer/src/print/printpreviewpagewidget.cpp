@@ -49,7 +49,6 @@ PrintPreviewPageWidget::PrintPreviewPageWidget(QWidget *parent)
     hbox->addStretch(1);
     connect(mPageComboBox, SIGNAL(activated(int)), this, SLOT(showPage(int)));
 
-
     mPrintPreviewPage = new PrintPreviewPageViewer(this);
     mPrintPreviewPage->setObjectName(QStringLiteral("printpreviewpage"));
     layout->addWidget(mPrintPreviewPage);
@@ -85,9 +84,9 @@ void PrintPreviewPageWidget::fillComboBox()
 {
     mPageComboBox->clear();
     const int pageCount = mDoc->numPages();
-     for (int i = 0; i < pageCount; ++i) {
-         mPageComboBox->addItem(QString::number(i + 1));
-     }
+    for (int i = 0; i < pageCount; ++i) {
+        mPageComboBox->addItem(QString::number(i + 1));
+    }
 }
 
 void PrintPreviewPageWidget::showPage(int index)

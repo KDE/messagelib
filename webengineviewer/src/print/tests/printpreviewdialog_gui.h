@@ -15,10 +15,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #ifndef PRINTPREVIEWDIALOG_GUI_H
 #define PRINTPREVIEWDIALOG_GUI_H
-
 
 class PrintPreviewDialog_gui
 {

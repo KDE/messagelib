@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "printpreviewdialogtest.h"
 #include "../printpreviewdialog.h"
 #include "../printpreviewpagewidget.h"

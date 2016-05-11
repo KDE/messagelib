@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "printpreviewpagewidgettest.h"
 #include "../printpreviewpagewidget.h"
 #include "../printpreviewpageviewer.h"
@@ -49,7 +48,6 @@ void PrintPreviewPageWidgetTest::shouldHaveDefaultValue()
     WebEngineViewer::PrintPreviewPageWidget w;
     WebEngineViewer::PrintPreviewPageViewer *page = w.findChild<WebEngineViewer::PrintPreviewPageViewer *>(QStringLiteral("printpreviewpage"));
     QVERIFY(page);
-
 
     QHBoxLayout *hbox = w.findChild<QHBoxLayout *>(QStringLiteral("layoutcombobox"));
     QVERIFY(hbox);
