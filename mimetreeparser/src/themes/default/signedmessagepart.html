@@ -1,0 +1,157 @@
+<table cellspacing="1" cellpadding="1" class="{{block.signClass}}">
+    <tr class="{{block.signClass}}H">
+        <td dir="{{block.dir}}">
+        {% if block.inProgress %}
+            {% i18n "Please wait while the signature is being verified..." %}
+        {% else %}
+            <table cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                    <td>
+                    {% if block.isSMIME and block.detailHeader %}
+                        <table cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <td rowspan="2">
+                                {% if block.technicalProblem %}
+                                    {{block.errorText|safe}}
+                                {% elif block.showKeyInfos %}
+                                    {% if block.cannotCheckSignature %}
+                                        {% i18n "Not enough information to check signature. %1" keyWithWithoutURL %}
+                                    {% else %}
+                                        {% if not block.keyId %}
+                                            {% if block.signer and block.onlyShowKeyURL %}
+                                                {% i18n "Message was signed by %1." block.signer %}
+                                            {% else %}
+                                                {% i18n "Message was signed with unknown key." %}
+                                            {% endif %}
+                                        {% else %}
+                                            {% if block.creationTime %}
+                                                {% if block.signer %}
+                                                    {% if block.onlyShowKeyURL %}
+                                                        {% i18n "Message was signed with key %1." keyWithWithoutURL %}
+                                                    {% else %}
+                                                        {% i18n "Message was signed by %3 on %1 with key %2" block.creationTime keyWithWithoutURL block.signer %}
+                                                    {% endif %}
+                                                {% else %}
+                                                    {% if block.onlyShowKeyURL %}
+                                                        {% i18n "Message was signed with key %1." keyWithWithoutURL %}
+                                                    {% else %}
+                                                        {% i18n "Message was signed on %1 with key %2." block.creationTime keyWithWithoutURL %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% else %}
+                                                {% if block.signer and block.onlyShowKeyURL %}
+                                                    {% i18n "Message was signed by %2 with key %1." keyWithWithoutURL block.signer %}
+                                                {% else %}
+                                                    {% i18n "Message was signed with key %1." keyWithWithoutURL %}
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endif %}
+                                    <br />
+                                    {% if block.statusStr %}
+                                        &nbsp;<br />
+                                        {% i18n "Status: " %}
+                                        <i>{{block.statusStr}}</i>
+                                    {% endif %}
+                                {% else %}
+                                    <i>{{block.statusStr}}</i>
+                                {% endif %}
+                                </td>
+                                <td align="right" valign="top" nowrap="nowrap"><a href="kmail:hideSignatureDetails">{% i18n "Hide Details" %}</a></td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="bottom" nowrap="nowrap">{{block.auditlog}}</td>
+                            </tr>
+                        </table>
+                    {% elif block.detailHeader %}
+                        <table cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <td rowspan="2">
+                                {% if mClass == "signWarn" %}
+                                     {% if block.technicalProblem %}
+                                        {{block.errorText|safe}}
+                                     {% else %}
+                                        {% if block.keyId %}
+                                            {% if block.creationTime %}
+                                                {% i18n "Message was signed on %1 with unknown key %2." _(block.creationTime) keyWithWithoutURL %}
+                                            {% else %} 
+                                                {% i18n "Message was signed with unknown key %1." keyWithWithoutURL %}
+                                            {% endif %}
+                                        {% else %}
+                                           {% i18n "Message was signed with unknown key." %}
+                                        {% endif %}
+                                        <br />
+                                        {% i18n "The validity of the signature cannot be verified." %}
+                                        {% if block.statusStr %}
+                                            <br />
+                                            {% i18n "Status: " %}
+                                            <i>{{block.statusStr}}</i>
+                                        {% endif %}
+                                    {% endif %}
+                                {% else %}
+                                    {% if block.isGoodSignature %}
+                                        {% if block.keyId %}
+                                            {% i18n "Message was signed by %2 (Key ID: %1)." keyWithWithoutURL block.signer %}
+                                        {% else %}
+                                            {% i18n "Message was signed by %1." block.signer %}
+                                        {% endif %}
+                                        <br />
+                                        {% if block.keyTrust == "unknown" %}
+                                            {% i18n "The signature is valid, but the key's validity is unknown." %}
+                                        {% elif block.keyTrust == "marginal" %}
+                                            {% i18n "The signature is valid and the key is marginally trusted." %}
+                                        {% elif block.keyTrust == "full" %}
+                                            {% i18n "The signature is valid and the key is fully trusted." %}
+                                        {% elif block.keyTrust == "ultimate" %}
+                                            {% i18n "The signature is valid and the key is ultimately trusted." %}
+                                        {% else %}
+                                            {% i18n "The signature is valid, but the key is untrusted." %}
+                                        {% endif %}
+                                    {% else %}
+                                        {% if block.keyId %}
+                                            {% i18n "Message was signed by %2 (Key ID: %1)." keyWithWithoutURL block.signer %}
+                                        {% else %}
+                                            {% i18n "Message was signed by %1." block.signer %}
+                                        {% endif %}
+                                        <br />
+                                        {% i18n "Warning: The signature is bad." %}
+                                    {% endif %}
+                                {% endif %}
+                                </td>
+                                <td align="right" valign="top" nowrap="nowrap"><a href="kmail:hideSignatureDetails">{% i18n "Hide Details" %}</a></td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="bottom" nowrap="nowrap">{{block.auditlog}}</td>
+                            </tr>
+                        </table>
+                    {% endif %}
+                    {% if block.signClass == "signErr" %}
+                        {% i18n "Invalid signature." %}
+                    {% elif block.signClass == "signOkKeyBad" or block.signClass == "signWarn" %}
+                        {% i18n "Not enough information to check signature validity." %}
+                    {% elif block.signClass == "signOkKeyOk" %}
+                        {% if block.addr %}
+                            {% i18n_var "Signed by <a href="mailto:%1">%2</a>." block.addr block.addr as signed %}
+                            {{ signed|safe }}
+                        {% else %}
+                            {% i18n "Signature is valid." %}
+                        {% endif %}
+                    {% else %}
+                        {% i18n "Unknown signature state" %}
+                    {% endif %}
+                    </td>
+                    {% if not block.printing %}
+                        <td align="right"><a href="kmail:showSignatureDetails">{% i18n "Show Details" %}</a></td>
+                    {% endif %}
+                </tr>
+            </table>
+        {% endif %}
+        </td>
+    </tr>
+    <tr class="{{block.signClass}}B">
+        <td>{{content|safe}}</td>
+    </tr>
+    <tr class="{{block.signClass}}H">
+        <td dir="{{block.dir}}">{% i18n "End of signed message" %}</td>
+    </tr>
+</table>

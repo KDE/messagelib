@@ -1,0 +1,48 @@
+{% if not block.isDecrypted %}
+    <div style="font-size:large; text-align:center; padding-top:20pt;">
+        {% i18n "This message is encrypted." %}
+    </div>
+    <div style="text-align:center; padding-bottom:20pt;">
+        <a href="kmail:decryptMessage"> <img src="{{block.decryptIcon}}"/> {% i18n "Decrypt Message" %} </a>
+    </div>
+{% else %}
+    <table cellspacing="1" cellpadding="1" class="encr">
+        <tr class="encrH">
+            <td dir="{{block.dir}}">
+            {% if block.inProgress %}
+                {% i18n "Please wait while the message is being decrypted..." %}
+            {% elif block.isDecryptable %}
+                {% i18n "Encrypted message" %}
+            {% else %}
+                {% i18n "Encrypted message (decryption not possible)" %}
+                {% if block.errorText %}
+                    <br />
+                    {%  i18n "Reason: " %}{{block.errorText|safe}}
+                {% endif %}
+            {% endif %}
+            </td>
+        </tr>
+       <tr class="encrB">
+            <td>
+            {% if block.isDecryptable %}
+                {{content|safe}}
+            {% else %}
+                <div style="font-size:x-large; text-align:center; padding:20pt;">
+                {% if block.noSecKey %}
+                    {% i18n "No secret key found to encrypt the message. It is encrypted for following keys:" %}
+                    {% for recipient in decryptedRecipients %}
+                        <br />
+                        <a href="kmail:showCertificate#{{cryptoProto.displayName}} ### {{cryptoProto.name}} ### {{recipient.keyID}}">0x{{recipient.keyID}}</a>
+                    {% endfor %}
+                {% else %}
+                    {% i18n "Could not decrypt the data." %}
+                {% endif %}
+                </div>
+            {% endif %}
+            </td>
+        </tr>
+        <tr class="encrH">
+            <td dir="{{block.dir}}">{% i18n "End of encrypted message" %}</td>
+        </tr>
+    </table>
+{% endif %}

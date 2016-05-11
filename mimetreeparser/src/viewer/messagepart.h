@@ -109,9 +109,9 @@ protected:
     KMime::Content *mAttachmentNode;
     bool mRoot;
 
+    Interface::ObjectTreeSource *source() const;
 private:
     CSSHelperBase *cssHelper() const;
-    Interface::ObjectTreeSource *source() const;
 
     QString mCollapseIcon;
     QString mExpandIcon;
@@ -305,10 +305,6 @@ public:
     std::vector<GpgME::Signature> mSignatures;
 
 private:
-    /** Writes out the block that we use when the node is encrypted,
-      but we're deferring decryption for later. */
-    void writeDeferredDecryptionBlock() const;
-
     /** Handles the dectyptioon of a given content
      * returns true if the decryption was successfull
      * if used in async mode, check if mMetaData.inProgress is true, it inicates a running decryption process.
@@ -321,6 +317,8 @@ private:
      * If used in async mode, check if mMetaData.inProgress is true, it inicates a running verification process.
      */
     bool okVerify(const QByteArray &data, const QByteArray &signature);
+
+    QString renderSigned();
 
     void sigStatusToMetaData();
 protected:
@@ -335,4 +333,5 @@ protected:
 };
 
 }
+
 #endif //__MIMETREEPARSER_MESSAGEPART_H__

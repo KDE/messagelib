@@ -66,65 +66,6 @@ protected:
     bool entered;
 };
 
-class EncryptedBlock : public HTMLBlock
-{
-public:
-    EncryptedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block);
-    virtual ~EncryptedBlock();
-
-private:
-    void internalEnter();
-    void internalExit();
-
-    HtmlWriter *mWriter;
-    const PartMetaData &mBlock;
-};
-
-class SignedBlock : public HTMLBlock
-{
-public:
-    SignedBlock(MimeTreeParser::HtmlWriter *writer, const PartMetaData &block,
-                const Kleo::CryptoBackend::Protocol *cryptoProto,
-                Interface::ObjectTreeSource *source,
-                QString fromAddress, bool printing);
-    virtual ~SignedBlock();
-
-private:
-    QString simpleHeader();
-    void internalEnter();
-    void internalExit();
-
-    const PartMetaData &mBlock;
-    HtmlWriter *mWriter;
-    const Kleo::CryptoBackend::Protocol *mCryptoProto;
-    Interface::ObjectTreeSource *mSource;
-    QString mClass;
-    QString mFromAddress;
-    bool mPrinting;
-};
-
-class CryptoBlock: public HTMLBlock
-{
-public:
-    CryptoBlock(MimeTreeParser::HtmlWriter *writer,
-                PartMetaData *block,
-                const Kleo::CryptoBackend::Protocol *cryptoProto,
-                Interface::ObjectTreeSource *source,
-                const QString &fromAddress);
-    virtual ~CryptoBlock();
-
-private:
-    void internalEnter();
-    void internalExit();
-
-    HtmlWriter *mWriter;
-    PartMetaData *mMetaData;
-    const Kleo::CryptoBackend::Protocol *mCryptoProto;
-    Interface::ObjectTreeSource *mSource;
-    QString mFromAddress;
-    QVector<HTMLBlock::Ptr> mInteralBlocks;
-};
-
 // The attachment mark is a div that is placed around the attchment. It is used for drawing
 // a yellow border around the attachment when scrolling to it. When scrolling to it, the border
 // color of the div is changed, see KMReaderWin::scrollToAttachment().
