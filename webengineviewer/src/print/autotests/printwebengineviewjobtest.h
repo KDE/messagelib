@@ -26,6 +26,8 @@ class PrintWebEngineViewJobTest : public QObject
 public:
     explicit PrintWebEngineViewJobTest(QObject *parent = Q_NULLPTR);
     ~PrintWebEngineViewJobTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // PRINTWEBENGINEVIEWJOBTEST_H
