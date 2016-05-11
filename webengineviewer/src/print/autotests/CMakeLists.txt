@@ -19,5 +19,5 @@ ecm_add_test(printpreviewpagewidgettest.cpp  ../printpreviewpagewidget.cpp ../pr
 ecm_add_test(printwebengineviewjobtest.cpp  ../printwebengineviewjob.cpp
     TEST_NAME printwebengineviewjobtest
     NAME_PREFIX "webengineviewer-print-"
-    LINK_LIBRARIES Qt5::Test Qt5::Widgets
+    LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::WebEngineWidgets
 )

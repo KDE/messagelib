@@ -19,6 +19,7 @@
 #define PRINTWEBENGINEVIEWJOB_H
 
 #include <QObject>
+#include <QTemporaryFile>
 
 class QWebEngineView;
 namespace WebEngineViewer
@@ -35,7 +36,15 @@ public:
     QWebEngineView *engineView() const;
     void setEngineView(QWebEngineView *engineView);
 
+Q_SIGNALS:
+    void failed();
+    void success();
+
+private Q_SLOTS:
+    void slotHandlePdfPrinted(const QByteArray &result);
+
 private:
+    QTemporaryFile mTemporaryFile;
     QWebEngineView *mEngineView;
 };
 }

@@ -35,6 +35,8 @@ public:
     void saveRelativePosition();
     qreal relativePosition() const;
 
+    bool hasPrintPreviewSupport() const;
+
 protected:
     bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
     QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) Q_DECL_OVERRIDE;

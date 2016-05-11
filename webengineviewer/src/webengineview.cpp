@@ -16,6 +16,7 @@
 */
 
 #include "webengineview.h"
+#include "config-webengineviewer.h"
 #include <QEvent>
 #include <QKeyEvent>
 #include <QMouseEvent>
@@ -178,4 +179,17 @@ void WebEngineView::saveRelativePosition()
 qreal WebEngineView::relativePosition() const
 {
     return d->mSavedRelativePosition;
+}
+
+bool WebEngineView::hasPrintPreviewSupport() const
+{
+#if QT_VERSION < 0x050700
+    return false;
+#endif
+
+#ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
+    return true;
+#else
+    return false;
+#endif
 }
