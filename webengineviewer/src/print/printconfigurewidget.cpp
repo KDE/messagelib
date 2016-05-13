@@ -20,11 +20,14 @@
 #include <KLocalizedString>
 #include <QLabel>
 #include <QToolButton>
+#include <QPageSetupDialog>
+#include <QPrinter>
 
 using namespace WebEngineViewer;
 
 PrintConfigureWidget::PrintConfigureWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      mCurrentPageLayout(QPageLayout(QPageSize(QPageSize::A4), QPageLayout::Portrait, QMarginsF(0.0, 0.0, 0.0, 0.0)))
 {
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
@@ -46,6 +49,7 @@ PrintConfigureWidget::PrintConfigureWidget(QWidget *parent)
     layout->addWidget(mSelectPrintLayout);
     connect(mSelectPrintLayout, &QToolButton::clicked, this, &PrintConfigureWidget::slotSelectPrintLayout);
 
+    updatePageLayoutLabel();
 }
 
 PrintConfigureWidget::~PrintConfigureWidget()
@@ -55,5 +59,26 @@ PrintConfigureWidget::~PrintConfigureWidget()
 
 void PrintConfigureWidget::slotSelectPrintLayout()
 {
-    //TODO
+    QPrinter printer;
+    printer.setPageLayout(mCurrentPageLayout);
+    QPageSetupDialog dlg(&printer, this);
+    if (dlg.exec() != QDialog::Accepted)
+        return;
+    mCurrentPageLayout.setPageSize(printer.pageLayout().pageSize());
+    mCurrentPageLayout.setOrientation(printer.pageLayout().orientation());
+    updatePageLayoutLabel();
+}
+
+QPageLayout PrintConfigureWidget::currentPageLayout() const
+{
+    return mCurrentPageLayout;
+}
+
+void PrintConfigureWidget::updatePageLayoutLabel()
+{
+    mPrintLayoutLabel->setText(QStringLiteral("%1, %2").arg(
+                                   mCurrentPageLayout.pageSize().name(),
+                                   mCurrentPageLayout.orientation() == QPageLayout::Portrait
+                                   ? i18n("Portrait") : i18n("Landscape")));
+
 }

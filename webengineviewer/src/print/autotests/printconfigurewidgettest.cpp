@@ -40,6 +40,7 @@ void PrintConfigureWidgetTest::shouldHaveDefaultValue()
 
     QLabel *printLayoutLabel = w.findChild<QLabel *>(QStringLiteral("printlayoutlabel"));
     QVERIFY(printLayoutLabel);
+    QVERIFY(!printLayoutLabel->text().isEmpty());
 
     QVBoxLayout *printLayout =  w.findChild<QVBoxLayout *>(QStringLiteral("printLayout"));
     QVERIFY(printLayout);
@@ -47,6 +48,8 @@ void PrintConfigureWidgetTest::shouldHaveDefaultValue()
 
     QToolButton *selectPrintLayout = w.findChild<QToolButton *>(QStringLiteral("selectprintlayout"));
     QVERIFY(selectPrintLayout);
+
+    QVERIFY(w.currentPageLayout().isValid());
 }
 
 QTEST_MAIN(PrintConfigureWidgetTest)
