@@ -22,7 +22,7 @@ ecm_add_test(printwebengineviewjobtest.cpp  ../printwebengineviewjob.cpp
     LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::WebEngineWidgets
     )
 
-ecm_add_test(printconfiguredialogtest.cpp  ../printconfiguredialog.cpp
+ecm_add_test(printconfiguredialogtest.cpp  ../printconfiguredialog.cpp ../printconfigurewidget.cpp
     TEST_NAME printconfiguredialogtest
     NAME_PREFIX "webengineviewer-print-"
     LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n

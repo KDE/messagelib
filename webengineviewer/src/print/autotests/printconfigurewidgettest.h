@@ -25,6 +25,8 @@ class PrintConfigureWidgetTest : public QObject
 public:
     explicit PrintConfigureWidgetTest(QObject *parent = Q_NULLPTR);
     ~PrintConfigureWidgetTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // PRINTCONFIGUREWIDGETTEST_H

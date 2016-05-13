@@ -16,6 +16,7 @@
 */
 
 #include "printconfiguredialog.h"
+#include "printconfigurewidget.h"
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <KLocalizedString>
@@ -28,6 +29,9 @@ PrintConfigureDialog::PrintConfigureDialog(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
 
+    mConfigureWidget = new PrintConfigureWidget(this);
+    mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
+    mainLayout->addWidget(mConfigureWidget);
 }
 
 PrintConfigureDialog::~PrintConfigureDialog()

@@ -21,12 +21,15 @@
 #include <QDialog>
 namespace WebEngineViewer
 {
+class PrintConfigureWidget;
 class PrintConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit PrintConfigureDialog(QWidget *parent = Q_NULLPTR);
     ~PrintConfigureDialog();
+private:
+    PrintConfigureWidget *mConfigureWidget;
 };
 }
 #endif // PRINTCONFIGUREDIALOG_H

@@ -24,7 +24,9 @@ using namespace WebEngineViewer;
 PrintConfigureWidget::PrintConfigureWidget(QWidget *parent)
     : QWidget(parent)
 {
-
+    QHBoxLayout *layout = new QHBoxLayout;
+    layout->setMargin(0);
+    setLayout(layout);
 }
 
 PrintConfigureWidget::~PrintConfigureWidget()

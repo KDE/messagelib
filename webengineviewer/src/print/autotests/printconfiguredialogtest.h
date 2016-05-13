@@ -27,6 +27,8 @@ class PrintConfigureDialogTest : public QObject
 public:
     explicit PrintConfigureDialogTest(QObject *parent = Q_NULLPTR);
     ~PrintConfigureDialogTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // PRINTCONFIGUREDIALOGTEST_H

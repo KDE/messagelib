@@ -16,8 +16,9 @@
 */
 
 #include "printconfigurewidgettest.h"
-
+#include "../printconfigurewidget.h"
 #include <QTest>
+#include <QLayout>
 
 PrintConfigureWidgetTest::PrintConfigureWidgetTest(QObject *parent)
     : QObject(parent)
@@ -28,6 +29,12 @@ PrintConfigureWidgetTest::PrintConfigureWidgetTest(QObject *parent)
 PrintConfigureWidgetTest::~PrintConfigureWidgetTest()
 {
 
+}
+
+void PrintConfigureWidgetTest::shouldHaveDefaultValue()
+{
+    WebEngineViewer::PrintConfigureWidget w;
+    QCOMPARE(w.layout()->margin(), 0);
 }
 
 QTEST_MAIN(PrintConfigureWidgetTest)
