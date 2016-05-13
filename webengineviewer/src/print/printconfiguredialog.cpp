@@ -32,6 +32,11 @@ PrintConfigureDialog::PrintConfigureDialog(QWidget *parent)
     mConfigureWidget = new PrintConfigureWidget(this);
     mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
     mainLayout->addWidget(mConfigureWidget);
+
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel);
+    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    mainLayout->addWidget(buttonBox);
+
 }
 
 PrintConfigureDialog::~PrintConfigureDialog()

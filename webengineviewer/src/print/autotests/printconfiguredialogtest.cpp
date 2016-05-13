@@ -19,6 +19,7 @@
 #include "../printconfiguredialog.h"
 #include "../printconfigurewidget.h"
 #include <QTest>
+#include <QDialogButtonBox>
 
 PrintConfigureDialogTest::PrintConfigureDialogTest(QObject *parent)
     : QObject(parent)
@@ -36,6 +37,9 @@ void PrintConfigureDialogTest::shouldHaveDefaultValue()
     WebEngineViewer::PrintConfigureDialog dlg;
     WebEngineViewer::PrintConfigureWidget *w = dlg.findChild<WebEngineViewer::PrintConfigureWidget *>(QStringLiteral("configurewidget"));
     QVERIFY(w);
+
+    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    QVERIFY(buttonBox);
 }
 
 QTEST_MAIN(PrintConfigureDialogTest)
