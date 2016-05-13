@@ -16,6 +16,9 @@
 */
 
 #include "printconfigurewidget.h"
+#include <QHBoxLayout>
+#include <KLocalizedString>
+
 using namespace WebEngineViewer;
 
 PrintConfigureWidget::PrintConfigureWidget(QWidget *parent)
