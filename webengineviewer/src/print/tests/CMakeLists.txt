@@ -22,6 +22,9 @@ set(printwebenginetest_gui_test_SRCS
     ../printpreviewdialog.cpp
     ../printpreviewpageviewer.cpp
     ../printpreviewpagewidget.cpp
+    ../printwebengineviewjob.cpp
+    ../printconfiguredialog.cpp
+    ../printconfigurewidget.cpp
     )
 
 add_executable(printwebenginetest_gui ${printwebenginetest_gui_test_SRCS})

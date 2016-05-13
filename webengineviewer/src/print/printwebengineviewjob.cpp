@@ -59,7 +59,6 @@ void PrintWebEngineViewJob::start()
             if (mPageLayout.isValid()) {
                 mTemporaryFile.setAutoRemove(false);
 #if QT_VERSION >= 0x050700
-                //Print to pdf
                 mEngineView->page()->printToPdf(invoke(this, &PrintWebEngineViewJob::slotHandlePdfPrinted), mPageLayout);
 #endif
             } else {

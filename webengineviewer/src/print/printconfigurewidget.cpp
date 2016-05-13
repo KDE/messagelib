@@ -22,6 +22,7 @@
 #include <QToolButton>
 #include <QPageSetupDialog>
 #include <QPrinter>
+#include <QDebug>
 
 using namespace WebEngineViewer;
 
@@ -60,12 +61,15 @@ PrintConfigureWidget::~PrintConfigureWidget()
 void PrintConfigureWidget::slotSelectPrintLayout()
 {
     QPrinter printer;
-    printer.setPageLayout(mCurrentPageLayout);
+
+    //TODO port to qCDebug
+    if (!printer.setPageLayout(mCurrentPageLayout)) {
+        qDebug() << "Print Setup unsupported";
+    }
     QPageSetupDialog dlg(&printer, this);
     if (dlg.exec() != QDialog::Accepted)
         return;
-    mCurrentPageLayout.setPageSize(printer.pageLayout().pageSize());
-    mCurrentPageLayout.setOrientation(printer.pageLayout().orientation());
+    mCurrentPageLayout = printer.pageLayout();
     updatePageLayoutLabel();
 }
 

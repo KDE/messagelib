@@ -17,6 +17,8 @@
 
 
 #include "printwebenginetest_gui.h"
+#include "../printwebengineviewjob.h"
+#include "../printconfiguredialog.h"
 
 #include <QApplication>
 #include <QStandardPaths>
@@ -28,11 +30,12 @@
 PrintWebEngineTest_Gui::PrintWebEngineTest_Gui(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *mainLayout = new QHBoxLayout;
+    QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
 
     mWebEngine = new QWebEngineView(this);
     mainLayout->addWidget(mWebEngine);
+    mWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
 
     QPushButton *printButton = new QPushButton(QStringLiteral("Print"), this);
     mainLayout->addWidget(printButton);
@@ -47,6 +50,11 @@ PrintWebEngineTest_Gui::~PrintWebEngineTest_Gui()
 void PrintWebEngineTest_Gui::slotPrint()
 {
     //TODO
+    WebEngineViewer::PrintConfigureDialog dlg(this);
+    if (dlg.exec()) {
+        const QPageLayout pageLayout = dlg.currentPageLayout();
+        //TODO
+    }
 }
 
 int main(int argc, char *argv[])
