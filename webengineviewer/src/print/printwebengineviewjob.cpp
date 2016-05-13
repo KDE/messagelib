@@ -56,11 +56,16 @@ void PrintWebEngineViewJob::start()
             Q_EMIT failed();
             deleteLater();
         } else {
-            mTemporaryFile.setAutoRemove(false);
+            if (mPageLayout.isValid()) {
+                mTemporaryFile.setAutoRemove(false);
 #if QT_VERSION >= 0x050700
-            //Print to pdf
-            //mEngineView->page()->printToPdf(invoke(this, &PrintWebEngineViewJob::slotHandlePdfPrinted), printer.pageLayout());
+                //Print to pdf
+                mEngineView->page()->printToPdf(invoke(this, &PrintWebEngineViewJob::slotHandlePdfPrinted), mPageLayout);
 #endif
+            } else {
+                Q_EMIT failed();
+                deleteLater();
+            }
         }
     } else {
         Q_EMIT failed();
