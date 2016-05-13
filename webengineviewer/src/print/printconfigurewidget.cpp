@@ -18,6 +18,8 @@
 #include "printconfigurewidget.h"
 #include <QHBoxLayout>
 #include <KLocalizedString>
+#include <QLabel>
+#include <QToolButton>
 
 using namespace WebEngineViewer;
 
@@ -27,9 +29,31 @@ PrintConfigureWidget::PrintConfigureWidget(QWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);
     setLayout(layout);
+
+    QVBoxLayout *printLayout = new QVBoxLayout;
+    printLayout->setObjectName(QStringLiteral("printLayout"));
+    layout->addLayout(printLayout);
+    printLayout->setMargin(0);
+
+    mPrintLayoutLabel = new QLabel(this);
+    mPrintLayoutLabel->setObjectName(QStringLiteral("printlayoutlabel"));
+    layout->addWidget(mPrintLayoutLabel);
+
+    mSelectPrintLayout = new QToolButton(this);
+    mSelectPrintLayout->setText(i18n("..."));
+    mSelectPrintLayout->setObjectName(QStringLiteral("selectprintlayout"));
+    mSelectPrintLayout->setToolTip(i18n("Select Print Layout"));
+    layout->addWidget(mSelectPrintLayout);
+    connect(mSelectPrintLayout, &QToolButton::clicked, this, &PrintConfigureWidget::slotSelectPrintLayout);
+
 }
 
 PrintConfigureWidget::~PrintConfigureWidget()
 {
 
+}
+
+void PrintConfigureWidget::slotSelectPrintLayout()
+{
+    //TODO
 }

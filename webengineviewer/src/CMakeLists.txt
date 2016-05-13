@@ -23,7 +23,7 @@ if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
             print/printconfiguredialog.cpp
             print/printconfigurewidget.cpp
             )
-        set(poppler_lib Poppler::Qt5)
+        set(poppler_lib Poppler::Qt5 Qt5::PrintSupport)
     endif()
     if(BUILD_TESTING)
         add_subdirectory(print/autotests)

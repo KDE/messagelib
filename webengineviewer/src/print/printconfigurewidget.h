@@ -19,6 +19,8 @@
 #define PRINTCONFIGUREWIDGET_H
 
 #include <QWidget>
+class QLabel;
+class QToolButton;
 namespace WebEngineViewer
 {
 class PrintConfigureWidget : public QWidget
@@ -27,6 +29,13 @@ class PrintConfigureWidget : public QWidget
 public:
     explicit PrintConfigureWidget(QWidget *parent = Q_NULLPTR);
     ~PrintConfigureWidget();
+
+private Q_SLOTS:
+    void slotSelectPrintLayout();
+
+private:
+    QLabel *mPrintLayoutLabel;
+    QToolButton *mSelectPrintLayout;
 };
 }
 #endif // PRINTCONFIGUREWIDGET_H

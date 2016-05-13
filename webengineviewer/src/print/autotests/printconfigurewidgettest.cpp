@@ -19,6 +19,8 @@
 #include "../printconfigurewidget.h"
 #include <QTest>
 #include <QLayout>
+#include <QLabel>
+#include <QToolButton>
 
 PrintConfigureWidgetTest::PrintConfigureWidgetTest(QObject *parent)
     : QObject(parent)
@@ -35,6 +37,16 @@ void PrintConfigureWidgetTest::shouldHaveDefaultValue()
 {
     WebEngineViewer::PrintConfigureWidget w;
     QCOMPARE(w.layout()->margin(), 0);
+
+    QLabel *printLayoutLabel = w.findChild<QLabel *>(QStringLiteral("printlayoutlabel"));
+    QVERIFY(printLayoutLabel);
+
+    QVBoxLayout *printLayout =  w.findChild<QVBoxLayout *>(QStringLiteral("printLayout"));
+    QVERIFY(printLayout);
+    QCOMPARE(printLayout->margin(), 0);
+
+    QToolButton *selectPrintLayout = w.findChild<QToolButton *>(QStringLiteral("selectprintlayout"));
+    QVERIFY(selectPrintLayout);
 }
 
 QTEST_MAIN(PrintConfigureWidgetTest)

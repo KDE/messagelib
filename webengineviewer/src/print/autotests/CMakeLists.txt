@@ -19,17 +19,17 @@ ecm_add_test(printpreviewpagewidgettest.cpp  ../printpreviewpagewidget.cpp ../pr
 ecm_add_test(printwebengineviewjobtest.cpp  ../printwebengineviewjob.cpp
     TEST_NAME printwebengineviewjobtest
     NAME_PREFIX "webengineviewer-print-"
-    LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::WebEngineWidgets
+    LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::WebEngineWidgets Qt5::PrintSupport
     )
 
 ecm_add_test(printconfiguredialogtest.cpp  ../printconfiguredialog.cpp ../printconfigurewidget.cpp
     TEST_NAME printconfiguredialogtest
     NAME_PREFIX "webengineviewer-print-"
-    LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n
+    LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n Qt5::PrintSupport
     )
 
 ecm_add_test(printconfigurewidgettest.cpp  ../printconfigurewidget.cpp
     TEST_NAME printconfigurewidgettest
     NAME_PREFIX "webengineviewer-print-"
-    LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n
+    LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n Qt5::PrintSupport
     )
