@@ -19,6 +19,7 @@
 #define PRINTWEBENGINEVIEWJOB_H
 
 #include <QObject>
+#include <QPageLayout>
 #include <QTemporaryFile>
 
 class QWebEngineView;
@@ -36,6 +37,11 @@ public:
     QWebEngineView *engineView() const;
     void setEngineView(QWebEngineView *engineView);
 
+
+    void setPageLayout(const QPageLayout &pageLayout);
+
+    QPageLayout pageLayout() const;
+
 Q_SIGNALS:
     void failed();
     void success();
@@ -44,6 +50,7 @@ private Q_SLOTS:
     void slotHandlePdfPrinted(const QByteArray &result);
 
 private:
+    QPageLayout mPageLayout;
     QTemporaryFile mTemporaryFile;
     QWebEngineView *mEngineView;
 };

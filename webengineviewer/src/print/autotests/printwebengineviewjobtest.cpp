@@ -18,6 +18,7 @@
 #include "printwebengineviewjobtest.h"
 #include "../printwebengineviewjob.h"
 #include <QTest>
+#include <QPageLayout>
 
 PrintWebEngineViewJobTest::PrintWebEngineViewJobTest(QObject *parent)
     : QObject(parent)
@@ -34,6 +35,7 @@ void PrintWebEngineViewJobTest::shouldHaveDefaultValue()
 {
     WebEngineViewer::PrintWebEngineViewJob job;
     QVERIFY(!job.engineView());
+    QVERIFY(!job.pageLayout().isValid());
 }
 
 QTEST_MAIN(PrintWebEngineViewJobTest)

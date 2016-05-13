@@ -46,3 +46,8 @@ PrintConfigureDialog::~PrintConfigureDialog()
 {
 
 }
+
+QPageLayout PrintConfigureDialog::currentPageLayout() const
+{
+    return mConfigureWidget->currentPageLayout();
+}

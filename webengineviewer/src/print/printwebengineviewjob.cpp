@@ -73,6 +73,11 @@ void PrintWebEngineViewJob::slotHandlePdfPrinted(const QByteArray &result)
     //TODO
 }
 
+QPageLayout PrintWebEngineViewJob::pageLayout() const
+{
+    return mPageLayout;
+}
+
 QWebEngineView *PrintWebEngineViewJob::engineView() const
 {
     return mEngineView;
@@ -81,4 +86,9 @@ QWebEngineView *PrintWebEngineViewJob::engineView() const
 void PrintWebEngineViewJob::setEngineView(QWebEngineView *engineView)
 {
     mEngineView = engineView;
+}
+
+void PrintWebEngineViewJob::setPageLayout(const QPageLayout &pageLayout)
+{
+    mPageLayout = pageLayout;
 }

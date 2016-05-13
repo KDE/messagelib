@@ -19,6 +19,8 @@
 #define PRINTCONFIGUREDIALOG_H
 
 #include <QDialog>
+#include <QPageLayout>
+
 namespace WebEngineViewer
 {
 class PrintConfigureWidget;
@@ -28,6 +30,7 @@ class PrintConfigureDialog : public QDialog
 public:
     explicit PrintConfigureDialog(QWidget *parent = Q_NULLPTR);
     ~PrintConfigureDialog();
+    QPageLayout currentPageLayout() const;
 private:
     PrintConfigureWidget *mConfigureWidget;
 };
