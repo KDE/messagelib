@@ -15,19 +15,18 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "printconfiguredialog.h"
-#include <QDialogButtonBox>
-#include <KLocalizedString>
+#include "printconfiguredialogtest.h"
+#include <QTest>
 
-using namespace WebEngineViewer;
-
-PrintConfigureDialog::PrintConfigureDialog(QWidget *parent)
-    : QDialog(parent)
+PrintConfigureDialogTest::PrintConfigureDialogTest(QObject *parent)
+    : QObject(parent)
 {
 
 }
 
-PrintConfigureDialog::~PrintConfigureDialog()
+PrintConfigureDialogTest::~PrintConfigureDialogTest()
 {
 
 }
+
+QTEST_MAIN(PrintConfigureDialogTest)
