@@ -83,7 +83,7 @@ MESSAGECOMPOSER_EXPORT void removeNotNecessaryHeaders(const KMime::Message::Ptr 
 /**
  * find mimetype in message
  */
-MESSAGECOMPOSER_EXPORT KMime::Content *findTypeInMessage(KMime::Content* data, const QByteArray& mimeType, const QByteArray& subType);
+MESSAGECOMPOSER_EXPORT KMime::Content *findTypeInMessage(KMime::Content *data, const QByteArray &mimeType, const QByteArray &subType);
 }
 
 }

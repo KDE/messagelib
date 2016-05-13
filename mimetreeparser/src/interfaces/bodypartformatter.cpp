@@ -70,12 +70,12 @@ QString MessagePart::text() const
     return QString();
 }
 
-MessagePart* MessagePart::parentPart() const
+MessagePart *MessagePart::parentPart() const
 {
     return mParentPart;
 }
 
-void MessagePart::setParentPart(MessagePart* parentPart)
+void MessagePart::setParentPart(MessagePart *parentPart)
 {
     mParentPart = parentPart;
 }

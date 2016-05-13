@@ -192,7 +192,6 @@ void UnencryptedMessageTest::testOpenPGPEncryptedAndSigned()
     // TODO: Check that the signature is valid
 }
 
-
 void UnencryptedMessageTest::testOpenPGPEncrypted()
 {
     KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));

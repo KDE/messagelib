@@ -29,7 +29,6 @@ public:
     PlainHeaderStyle();
     ~PlainHeaderStyle();
 
-
 public:
     const char *name() const Q_DECL_OVERRIDE;
 

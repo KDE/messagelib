@@ -151,7 +151,6 @@ public:
     QString text() const Q_DECL_OVERRIDE;
     void html(bool decorate) Q_DECL_OVERRIDE;
 
-
 private:
 };
 

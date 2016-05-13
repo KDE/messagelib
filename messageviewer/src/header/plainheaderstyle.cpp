@@ -42,7 +42,6 @@ public:
     MessageViewer::HeaderStyleUtil mHeaderStyleUtil;
 };
 
-
 QString PlainHeaderStylePrivate::formatAllMessageHeaders(KMime::Message *message) const
 {
     QByteArray head = message->head();
@@ -149,7 +148,6 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
 
     return headerStr;
 }
-
 
 const char *MessageViewer::PlainHeaderStyle::name() const
 {

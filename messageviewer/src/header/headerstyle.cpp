@@ -69,8 +69,6 @@ public:
     bool mReadOnlyMessage;
 };
 
-
-
 HeaderStyle::HeaderStyle()
     : d(new MessageViewer::HeaderStylePrivate)
 {

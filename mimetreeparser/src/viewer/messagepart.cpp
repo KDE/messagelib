@@ -195,7 +195,7 @@ CSSHelperBase *MessagePart::cssHelper() const
     return mOtp->cssHelper();
 }
 
-Interface::ObjectTreeSource* MessagePart::source() const
+Interface::ObjectTreeSource *MessagePart::source() const
 {
     Q_ASSERT(mOtp);
     return mOtp->mSource;
@@ -502,7 +502,7 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
     auto subMessagePart = mSubOtp->parseObjectTreeInternal(node);
     mInternalAttachmentNode = subMessagePart->attachmentNode();
     mIsInternalRoot = subMessagePart->isRoot();
-    foreach(auto part, subMessagePart->subParts()) {
+    foreach (auto part, subMessagePart->subParts()) {
         appendSubPart(part);
     }
 }
@@ -522,7 +522,6 @@ HTMLBlock::Ptr MessagePart::internalAttachmentBlock() const
     }
     return HTMLBlock::Ptr();
 }
-
 
 void MessagePart::renderInternalHtml(bool decorate) const
 {
@@ -1739,7 +1738,7 @@ void EncapsulatedRfc822MessagePart::html(bool decorate)
     }
 
     const HTMLBlock::Ptr aBlock(attachmentBlock());
-    const EncapsulatedRFC822Block block(mOtp->htmlWriter(),mOtp->nodeHelper(), mMessage.data());
+    const EncapsulatedRFC822Block block(mOtp->htmlWriter(), mOtp->nodeHelper(), mMessage.data());
     writer->queue(mOtp->mSource->createMessageHeader(mMessage.data()));
     renderInternalHtml(decorate);
 

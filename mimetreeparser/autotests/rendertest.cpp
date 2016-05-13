@@ -169,7 +169,7 @@ QString renderTreeHelper(const Interface::MessagePart::Ptr &messagePart, QString
     indent += QStringLiteral(" ");
     const auto m = messagePart.dynamicCast<MessagePart>();
     if (m) {
-        foreach(const auto &subPart, m->subParts()) {
+        foreach (const auto &subPart, m->subParts()) {
             ret += renderTreeHelper(subPart, indent);
         }
     }
@@ -193,9 +193,9 @@ void RenderTest::testRenderTree(const MessagePart::Ptr &messagePart)
     }
     // compare to reference file
     const QStringList args = QStringList()
-           << QStringLiteral("-u")
-           << treeFileName
-           << outTreeFileName;
+                             << QStringLiteral("-u")
+                             << treeFileName
+                             << outTreeFileName;
     QProcess proc;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
     proc.start(QStringLiteral("diff"), args);

@@ -497,7 +497,6 @@ const QTextCodec *ObjectTreeParser::codecFor(KMime::Content *node) const
     return mNodeHelper->codec(node);
 }
 
-
 QByteArray ObjectTreeParser::plainTextContentCharset() const
 {
     return mPlainTextContentCharset;

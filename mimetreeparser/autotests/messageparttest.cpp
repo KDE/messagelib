@@ -25,9 +25,7 @@
 #include "viewer/csshelperbase.h"
 #include "viewer/messagepart.h"
 
-
 #include <QTest>
-
 
 using namespace MimeTreeParser;
 
