@@ -15,22 +15,19 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "printconfiguredialog.h"
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
-#include <KLocalizedString>
+#include "printconfigurewidgettest.h"
 
-using namespace WebEngineViewer;
+#include <QTest>
 
-PrintConfigureDialog::PrintConfigureDialog(QWidget *parent)
-    : QDialog(parent)
-{
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
-
-}
-
-PrintConfigureDialog::~PrintConfigureDialog()
+PrintConfigureWidgetTest::PrintConfigureWidgetTest(QObject *parent)
+    : QObject(parent)
 {
 
 }
+
+PrintConfigureWidgetTest::~PrintConfigureWidgetTest()
+{
+
+}
+
+QTEST_MAIN(PrintConfigureWidgetTest)

@@ -15,22 +15,18 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "printconfiguredialog.h"
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
-#include <KLocalizedString>
+#ifndef PRINTCONFIGUREWIDGET_H
+#define PRINTCONFIGUREWIDGET_H
 
-using namespace WebEngineViewer;
-
-PrintConfigureDialog::PrintConfigureDialog(QWidget *parent)
-    : QDialog(parent)
+#include <QWidget>
+namespace WebEngineViewer
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
-
-}
-
-PrintConfigureDialog::~PrintConfigureDialog()
+class PrintConfigureWidget : public QWidget
 {
-
+    Q_OBJECT
+public:
+    explicit PrintConfigureWidget(QWidget *parent = Q_NULLPTR);
+    ~PrintConfigureWidget();
+};
 }
+#endif // PRINTCONFIGUREWIDGET_H

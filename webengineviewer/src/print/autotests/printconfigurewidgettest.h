@@ -14,23 +14,17 @@
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
+#ifndef PRINTCONFIGUREWIDGETTEST_H
+#define PRINTCONFIGUREWIDGETTEST_H
 
-#include "printconfiguredialog.h"
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
-#include <KLocalizedString>
+#include <QObject>
 
-using namespace WebEngineViewer;
-
-PrintConfigureDialog::PrintConfigureDialog(QWidget *parent)
-    : QDialog(parent)
+class PrintConfigureWidgetTest : public QObject
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    Q_OBJECT
+public:
+    explicit PrintConfigureWidgetTest(QObject *parent = Q_NULLPTR);
+    ~PrintConfigureWidgetTest();
+};
 
-}
-
-PrintConfigureDialog::~PrintConfigureDialog()
-{
-
-}
+#endif // PRINTCONFIGUREWIDGETTEST_H
