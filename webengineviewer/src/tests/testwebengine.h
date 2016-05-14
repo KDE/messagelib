@@ -32,7 +32,7 @@ class TestWebEngineView : public QWebEngineView
 public:
     explicit TestWebEngineView(QWidget *parent = Q_NULLPTR);
 protected:
-    void contextMenuEvent(QContextMenuEvent *e);
+    void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
 private Q_SLOTS:
     void slotHitTestFinished(const WebEngineViewer::WebHitTestResult &result);
 };

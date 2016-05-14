@@ -27,17 +27,17 @@ public:
     explicit TestHtmlWriter() {}
     virtual ~TestHtmlWriter() {}
 
-    virtual void begin(const QString &) {}
-    virtual void write(const QString &) {}
-    virtual void end() {}
-    virtual void reset() {}
-    virtual void queue(const QString &str)
+    void begin(const QString &) Q_DECL_OVERRIDE {}
+    void write(const QString &) Q_DECL_OVERRIDE {}
+    void end() Q_DECL_OVERRIDE {}
+    void reset() Q_DECL_OVERRIDE {}
+    void queue(const QString &str) Q_DECL_OVERRIDE
     {
         html.append(str);
     }
-    virtual void flush() {}
-    virtual void embedPart(const QByteArray &, const QString &) {}
-    virtual void extraHead(const QString &) {}
+    void flush() Q_DECL_OVERRIDE {}
+    void embedPart(const QByteArray &, const QString &) Q_DECL_OVERRIDE {}
+    void extraHead(const QString &) Q_DECL_OVERRIDE {}
 
     QString html;
 };
