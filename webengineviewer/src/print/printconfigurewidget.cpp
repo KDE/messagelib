@@ -80,7 +80,7 @@ QPageLayout PrintConfigureWidget::currentPageLayout() const
 
 void PrintConfigureWidget::updatePageLayoutLabel()
 {
-    mPrintLayoutLabel->setText(QStringLiteral("%1, %2").arg(
+    mPrintLayoutLabel->setText(i18n("Print Layout: %1, %2",
                                    mCurrentPageLayout.pageSize().name(),
                                    mCurrentPageLayout.orientation() == QPageLayout::Portrait
                                    ? i18n("Portrait") : i18n("Landscape")));
