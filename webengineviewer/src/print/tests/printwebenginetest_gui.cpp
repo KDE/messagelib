@@ -19,6 +19,7 @@
 #include "printwebenginetest_gui.h"
 #include "../printwebengineviewjob.h"
 #include "../printconfiguredialog.h"
+#include "../printpreviewdialog.h"
 
 #include <QApplication>
 #include <QStandardPaths>
@@ -49,12 +50,30 @@ PrintWebEngineTest_Gui::~PrintWebEngineTest_Gui()
 
 void PrintWebEngineTest_Gui::slotPrint()
 {
-    //TODO
     WebEngineViewer::PrintConfigureDialog dlg(this);
     if (dlg.exec()) {
         const QPageLayout pageLayout = dlg.currentPageLayout();
-        //TODO
+        WebEngineViewer::PrintWebEngineViewJob *job = new WebEngineViewer::PrintWebEngineViewJob(this);
+        job->setEngineView(mWebEngine);
+        job->setPageLayout(pageLayout);
+        connect(job, &WebEngineViewer::PrintWebEngineViewJob::failed, this, &PrintWebEngineTest_Gui::slotPdfFailed);
+        connect(job, &WebEngineViewer::PrintWebEngineViewJob::success, this, &PrintWebEngineTest_Gui::slotPdfCreated);
+        job->start();
+        //Don't delete it, it's autodelete
     }
+}
+
+void PrintWebEngineTest_Gui::slotPdfCreated(const QString &filename)
+{
+    WebEngineViewer::PrintPreviewDialog dlg(this);
+    dlg.loadFile(filename);
+    dlg.exec();
+    //TODO delete filename
+}
+
+void PrintWebEngineTest_Gui::slotPdfFailed()
+{
+    qDebug() << "void PrintWebEngineTest_Gui::slotPdfFailed()";
 }
 
 int main(int argc, char *argv[])

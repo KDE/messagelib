@@ -29,8 +29,9 @@ public:
     ~PrintWebEngineTest_Gui();
 
 private Q_SLOTS:
-    void slotPrint();
-
+    void slotPrint();    
+    void slotPdfFailed();
+    void slotPdfCreated(const QString &filename);
 private:
     QWebEngineView *mWebEngine;
 };
