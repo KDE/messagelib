@@ -74,7 +74,21 @@ void PrintWebEngineViewJob::start()
 
 void PrintWebEngineViewJob::slotHandlePdfPrinted(const QByteArray &result)
 {
-    //TODO
+    if (!result.size())
+        return;
+
+    QFile file(mTemporaryFile.fileName());
+    if (!file.open(QFile::WriteOnly)) {
+        //TODO warning.
+        Q_EMIT failed();
+        deleteLater();
+        return;
+    }
+
+    file.write(result.data(), result.size());
+    file.close();
+    Q_EMIT success(mTemporaryFile.fileName());
+    deleteLater();
 }
 
 QPageLayout PrintWebEngineViewJob::pageLayout() const

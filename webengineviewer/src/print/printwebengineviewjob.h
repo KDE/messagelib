@@ -44,7 +44,7 @@ public:
 
 Q_SIGNALS:
     void failed();
-    void success();
+    void success(const QString &temporaryFileName);
 
 private Q_SLOTS:
     void slotHandlePdfPrinted(const QByteArray &result);
