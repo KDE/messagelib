@@ -17,6 +17,7 @@
 
 #include "printwebengineviewjob.h"
 #include <QWebEngineView>
+#include <QDebug>
 
 using namespace WebEngineViewer;
 
@@ -79,12 +80,12 @@ void PrintWebEngineViewJob::start()
 
 void PrintWebEngineViewJob::slotHandlePdfPrinted(const QByteArray &result)
 {
-    if (!result.size())
+    if (result.isEmpty())
         return;
 
     QFile file(mTemporaryFile.fileName());
     if (!file.open(QFile::WriteOnly)) {
-        //TODO warning.
+        qDebug() << "unable to open temporary file";
         unableToPrint();
         return;
     }
