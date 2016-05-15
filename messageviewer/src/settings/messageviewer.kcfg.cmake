@@ -50,7 +50,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     </entry>
     <entry name="showColorBar" type="Bool">
       <default>true</default>
-      <label>Show HTML status bar</label>
+      <label>Show HTML Side Bar</label>
     </entry>
     <entry name="showSpamStatus" type="Bool">
       <default>true</default>
