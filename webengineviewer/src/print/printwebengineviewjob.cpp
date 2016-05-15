@@ -49,26 +49,31 @@ PrintWebEngineViewJob::~PrintWebEngineViewJob()
 
 }
 
+void PrintWebEngineViewJob::unableToPrint()
+{
+    Q_EMIT failed();
+    deleteLater();
+}
+
 void PrintWebEngineViewJob::start()
 {
     if (mEngineView) {
         if (!mTemporaryFile.open()) {
-            Q_EMIT failed();
-            deleteLater();
+            unableToPrint();
         } else {
             if (mPageLayout.isValid()) {
                 mTemporaryFile.setAutoRemove(false);
 #if QT_VERSION >= 0x050700
                 mEngineView->page()->printToPdf(invoke(this, &PrintWebEngineViewJob::slotHandlePdfPrinted), mPageLayout);
+#else
+                unableToPrint();
 #endif
             } else {
-                Q_EMIT failed();
-                deleteLater();
+                unableToPrint();
             }
         }
     } else {
-        Q_EMIT failed();
-        deleteLater();
+        unableToPrint();
     }
 }
 
@@ -80,8 +85,7 @@ void PrintWebEngineViewJob::slotHandlePdfPrinted(const QByteArray &result)
     QFile file(mTemporaryFile.fileName());
     if (!file.open(QFile::WriteOnly)) {
         //TODO warning.
-        Q_EMIT failed();
-        deleteLater();
+        unableToPrint();
         return;
     }
 

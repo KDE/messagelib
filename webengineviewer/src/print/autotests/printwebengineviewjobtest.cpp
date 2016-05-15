@@ -19,6 +19,7 @@
 #include "../printwebengineviewjob.h"
 #include <QTest>
 #include <QPageLayout>
+#include <QSignalSpy>
 
 PrintWebEngineViewJobTest::PrintWebEngineViewJobTest(QObject *parent)
     : QObject(parent)
@@ -36,6 +37,16 @@ void PrintWebEngineViewJobTest::shouldHaveDefaultValue()
     WebEngineViewer::PrintWebEngineViewJob job;
     QVERIFY(!job.engineView());
     QVERIFY(!job.pageLayout().isValid());
+}
+
+void PrintWebEngineViewJobTest::shouldFailedWhenWebEngineIsNotDefined()
+{
+    WebEngineViewer::PrintWebEngineViewJob job;
+    QSignalSpy spyFailed(&job, SIGNAL(failed()));
+    QSignalSpy spySuccess(&job, SIGNAL(success(QString)));
+    job.start();
+    QCOMPARE(spyFailed.count(), 1);
+    QCOMPARE(spySuccess.count(), 0);
 }
 
 QTEST_MAIN(PrintWebEngineViewJobTest)

@@ -28,6 +28,7 @@ public:
     ~PrintWebEngineViewJobTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldFailedWhenWebEngineIsNotDefined();
 };
 
 #endif // PRINTWEBENGINEVIEWJOBTEST_H

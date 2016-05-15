@@ -50,6 +50,7 @@ private Q_SLOTS:
     void slotHandlePdfPrinted(const QByteArray &result);
 
 private:
+    void unableToPrint();
     QPageLayout mPageLayout;
     QTemporaryFile mTemporaryFile;
     QWebEngineView *mEngineView;
