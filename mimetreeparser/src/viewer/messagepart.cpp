@@ -946,50 +946,40 @@ void HtmlMessagePart::html(bool decorate)
     }
 
     const HTMLBlock::Ptr aBlock(attachmentBlock());
-    HTMLBlock::Ptr block;
 
-    if (mSource->htmlMail()) {
-        QString bodyText = mBodyHTML;
+    Grantlee::Template t = getGrantleeTemplate(this, QStringLiteral("htmlmessagepart.html"));
+    Grantlee::Context c;
+    QObject block;
+
+    c.insert(QStringLiteral("block"), &block);
+
+    block.setProperty("htmlMail", mSource->htmlMail());
+    block.setProperty("loadExternal", mSource->htmlLoadExternal());
+
+    {
         QString extraHead;
-        bodyText = processHtml(bodyText, extraHead);
-        mOtp->mNodeHelper->setNodeDisplayedEmbedded(mNode, true);
-        writer->extraHead(extraHead);
+        QString bodyText = processHtml(mBodyHTML, extraHead);
 
-        // Show the "external references" warning (with possibility to load
-        // external references only if loading external references is disabled
-        // and the HTML code contains obvious external references). For
-        // messages where the external references are obfuscated the user won't
-        // have an easy way to load them but that shouldn't be a problem
-        // because only spam contains obfuscated external references.
-        if (!mSource->htmlLoadExternal() &&
-                containsExternalReferences(bodyText, extraHead)) {
-            block = HTMLBlock::Ptr(new HTMLWarnBlock(writer, i18n("<b>Note:</b> This HTML message may contain external "
-                                   "references to images etc. For security/privacy reasons "
-                                   "external references are not loaded. If you trust the "
-                                   "sender of this message then you can load the external "
-                                   "references for this message "
-                                   "<a href=\"kmail:loadExternal\">by clicking here</a>.")));
-        } else {
-            block = HTMLBlock::Ptr(new HTMLWarnBlock(writer, QString()));
+        if (mSource->htmlMail()) {
+            mOtp->mNodeHelper->setNodeDisplayedEmbedded(mNode, true);
+            writer->extraHead(extraHead);
         }
-        // Make sure the body is relative, so that nothing is painted over above "Note: ..."
-        // if a malicious message uses absolute positioning. #137643
-        writer->queue(bodyText);
-    } else {
-        block = HTMLBlock::Ptr(new HTMLWarnBlock(writer, i18n("<b>Note:</b> This is an HTML message. For "
-                               "security reasons, only the raw HTML code "
-                               "is shown. If you trust the sender of this "
-                               "message then you can activate formatted "
-                               "HTML display for this message "
-                               "<a href=\"kmail:showHTML\">by clicking here</a>.")));
-        // Make sure the body is relative, so that nothing is painted over above "Note: ..."
-        // if a malicious message uses absolute positioning. #137643
+
+        block.setProperty("containsExternalReferences", containsExternalReferences(bodyText, extraHead));
+        c.insert(QStringLiteral("content"), bodyText);
+    }
+
+    {
         ConvertHtmlToPlainText convert;
         convert.setHtmlString(mBodyHTML);
-        QString result = convert.generatePlainText();
-        result.replace(QLatin1String("\n"), QStringLiteral("<br>"));
-        writer->queue(result);
+        QString plaintext = convert.generatePlainText();
+        plaintext.replace(QLatin1String("\n"), QStringLiteral("<br>"));
+        c.insert(QStringLiteral("plaintext"), plaintext);
     }
+
+    const auto html = t->render(&c);
+    writer->queue(html);
+
     mSource->setHtmlMode(Util::Html);
 }
 
