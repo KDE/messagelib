@@ -1,3 +1,6 @@
+set(print_test_SRCS)
+ecm_qt_declare_logging_category(print_test_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME log_webengineviewer)
+
 set(printpreviewdialog_gui_test_SRCS
     printpreviewdialog_gui.cpp
     ../printpreviewdialog.cpp
@@ -25,6 +28,7 @@ set(printwebenginetest_gui_test_SRCS
     ../printwebengineviewjob.cpp
     ../printconfiguredialog.cpp
     ../printconfigurewidget.cpp
+    ${print_test_SRCS}
     )
 
 add_executable(printwebenginetest_gui ${printwebenginetest_gui_test_SRCS})

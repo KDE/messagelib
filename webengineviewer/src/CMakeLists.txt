@@ -1,5 +1,5 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer\")
-
+include_directories(${WebEngineViewer_BINARY_DIR}/src)
 
 if(BUILD_TESTING)
     add_subdirectory(tests)

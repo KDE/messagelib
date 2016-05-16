@@ -16,6 +16,7 @@
 */
 
 #include "printwebengineviewjob.h"
+#include "webengineviewer_debug.h"
 #include <QWebEngineView>
 #include <QDebug>
 
@@ -85,7 +86,7 @@ void PrintWebEngineViewJob::slotHandlePdfPrinted(const QByteArray &result)
 
     QFile file(mTemporaryFile.fileName());
     if (!file.open(QFile::WriteOnly)) {
-        qDebug() << "unable to open temporary file";
+        qCDebug(WEBENGINEVIEWER_LOG) << "unable to open temporary file";
         unableToPrint();
         return;
     }
