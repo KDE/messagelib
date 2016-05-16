@@ -16,13 +16,13 @@
 */
 
 #include "printconfigurewidget.h"
+#include "webengineviewer_debug.h"
 #include <QHBoxLayout>
 #include <KLocalizedString>
 #include <QLabel>
 #include <QToolButton>
 #include <QPageSetupDialog>
 #include <QPrinter>
-#include <QDebug>
 
 using namespace WebEngineViewer;
 
@@ -62,9 +62,8 @@ void PrintConfigureWidget::slotSelectPrintLayout()
 {
     QPrinter printer;
 
-    //TODO port to qCDebug
     if (!printer.setPageLayout(mCurrentPageLayout)) {
-        qDebug() << "Print Setup unsupported";
+        qCDebug(WEBENGINEVIEWER_LOG) << "Print Setup unsupported";
     }
     QPageSetupDialog dlg(&printer, this);
     if (dlg.exec() != QDialog::Accepted)

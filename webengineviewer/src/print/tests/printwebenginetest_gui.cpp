@@ -21,12 +21,14 @@
 #include "../printconfiguredialog.h"
 #include "../printpreviewdialog.h"
 
+
 #include <QApplication>
 #include <QStandardPaths>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QWebEngineView>
+#include <QDebug>
 
 PrintWebEngineTest_Gui::PrintWebEngineTest_Gui(QWidget *parent)
     : QWidget(parent)
