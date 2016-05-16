@@ -37,7 +37,6 @@ public:
     QWebEngineView *engineView() const;
     void setEngineView(QWebEngineView *engineView);
 
-
     void setPageLayout(const QPageLayout &pageLayout);
 
     QPageLayout pageLayout() const;

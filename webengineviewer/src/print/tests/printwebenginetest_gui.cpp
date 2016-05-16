@@ -15,12 +15,10 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "printwebenginetest_gui.h"
 #include "../printwebengineviewjob.h"
 #include "../printconfiguredialog.h"
 #include "../printpreviewdialog.h"
-
 
 #include <QApplication>
 #include <QStandardPaths>

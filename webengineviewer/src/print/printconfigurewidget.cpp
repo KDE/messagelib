@@ -66,8 +66,9 @@ void PrintConfigureWidget::slotSelectPrintLayout()
         qCDebug(WEBENGINEVIEWER_LOG) << "Print Setup unsupported";
     }
     QPageSetupDialog dlg(&printer, this);
-    if (dlg.exec() != QDialog::Accepted)
+    if (dlg.exec() != QDialog::Accepted) {
         return;
+    }
     mCurrentPageLayout = printer.pageLayout();
     updatePageLayoutLabel();
 }
@@ -80,8 +81,8 @@ QPageLayout PrintConfigureWidget::currentPageLayout() const
 void PrintConfigureWidget::updatePageLayoutLabel()
 {
     mPrintLayoutLabel->setText(i18n("Print Layout: %1, %2",
-                                   mCurrentPageLayout.pageSize().name(),
-                                   mCurrentPageLayout.orientation() == QPageLayout::Portrait
-                                   ? i18n("Portrait") : i18n("Landscape")));
+                                    mCurrentPageLayout.pageSize().name(),
+                                    mCurrentPageLayout.orientation() == QPageLayout::Portrait
+                                    ? i18n("Portrait") : i18n("Landscape")));
 
 }

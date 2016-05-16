@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #ifndef PRINTWEBENGINETEST_GUI_H
 #define PRINTWEBENGINETEST_GUI_H
 
@@ -29,7 +28,7 @@ public:
     ~PrintWebEngineTest_Gui();
 
 private Q_SLOTS:
-    void slotPrint();    
+    void slotPrint();
     void slotPdfFailed();
     void slotPdfCreated(const QString &filename);
 private:

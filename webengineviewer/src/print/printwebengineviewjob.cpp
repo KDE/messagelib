@@ -80,8 +80,9 @@ void PrintWebEngineViewJob::start()
 
 void PrintWebEngineViewJob::slotHandlePdfPrinted(const QByteArray &result)
 {
-    if (result.isEmpty())
+    if (result.isEmpty()) {
         return;
+    }
 
     QFile file(mTemporaryFile.fileName());
     if (!file.open(QFile::WriteOnly)) {
