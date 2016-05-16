@@ -72,6 +72,7 @@ void TestWebEngineAccessKey::handleSearchAccessKey(const QVariant &var)
 
 void TestWebEngineAccessKey::loadFinished(bool b)
 {
+    Q_UNUSED(b);
     mEngineView->page()->runJavaScript(WebEngineViewer::WebEngineAccessKeyUtils::script(), invoke(this, &TestWebEngineAccessKey::handleSearchAccessKey));
 }
 
