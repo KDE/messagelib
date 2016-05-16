@@ -101,6 +101,7 @@ protected:
     HTMLBlockPtr rootBlock() const;
 
     HtmlWriter* htmlWriter() const;
+    void setHtmlWriter(HtmlWriter *htmlWriter) const;
 
     QString mText;
     ObjectTreeParser *mOtp;
@@ -123,6 +124,8 @@ private:
     QVector<Interface::MessagePart::Ptr> mBlocks;
     KMime::Content *mInternalAttachmentNode;
     bool mIsInternalRoot;
+
+    friend class HtmlRenderer;
 };
 
 class MIMETREEPARSER_EXPORT MimeMessagePart : public MessagePart

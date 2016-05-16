@@ -238,6 +238,11 @@ HtmlWriter *MessagePart::htmlWriter() const
     return mOtp->htmlWriter();
 }
 
+void MessagePart::setHtmlWriter(HtmlWriter *htmlWriter) const
+{
+    mOtp->mHtmlWriter = htmlWriter;
+}
+
 static QString iconToDataUrl(const QString &iconPath)
 {
     QFile f(iconPath);
@@ -603,7 +608,7 @@ QString MessagePart::internalContent() const
     TestHtmlWriter htmlWriter(oldWriter);
 
     if (oldWriter) {
-        mOtp->mHtmlWriter = &htmlWriter;
+        setHtmlWriter(&htmlWriter);
 
         const HTMLBlock::Ptr rBlock(internalRootBlock());
         const HTMLBlock::Ptr aBlock(internalAttachmentBlock());
@@ -611,12 +616,12 @@ QString MessagePart::internalContent() const
         foreach (const auto &mp, subParts()) {
             const auto m = mp.dynamicCast<MessagePart>();
             if (m) {
-                m->mOtp->mHtmlWriter = &htmlWriter;
+                m->setHtmlWriter(&htmlWriter);
                 m->html(false);
-                m->mOtp->mHtmlWriter = oldWriter;
+                m->setHtmlWriter(oldWriter);
             }
         }
-        mOtp->mHtmlWriter = oldWriter;
+        setHtmlWriter(oldWriter);
     }
     return htmlWriter.html;
 }

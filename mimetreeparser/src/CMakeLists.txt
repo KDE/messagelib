@@ -48,6 +48,7 @@ set(libmimetreeparser_extra_SRCS
     #HTML Writer
     htmlwriter/filehtmlwriter.cpp
     htmlwriter/queuehtmlwriter.cpp
+    themes/default/mailrenderer.cpp
     )
 
 set(mimetreeparser_temporaryfile_SRCS

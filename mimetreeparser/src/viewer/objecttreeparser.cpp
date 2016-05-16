@@ -49,6 +49,7 @@
 
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/htmlwriter.h"
+#include "themes/default/mailrenderer.h"
 #include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
 
@@ -192,7 +193,11 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
     if (mParsedPart) {
         mParsedPart->fix();
         mParsedPart->copyContentFrom();
-        mParsedPart->html(false);
+
+        if (htmlWriter()) {
+            HtmlRenderer renderer(mParsedPart);
+            mHtmlWriter->queue(renderer.html());
+        }
     }
 }
 
