@@ -93,7 +93,6 @@
 //libkdepim
 #include "Libkdepim/BroadcastStatus"
 #include <MessageCore/AttachmentPropertiesDialog>
-#include <PimCommon/KPimPrintPreviewDialog>
 
 #include <AkonadiCore/collection.h>
 #include <AkonadiCore/itemfetchjob.h>
