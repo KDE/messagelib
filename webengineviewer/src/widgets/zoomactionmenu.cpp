@@ -73,17 +73,17 @@ void ZoomActionMenu::createZoomActions()
     d->mZoomInAction = new QAction(QIcon::fromTheme(QStringLiteral("zoom-in")), i18n("&Zoom In"), this);
     d->mActionCollection->addAction(QStringLiteral("zoom_in"), d->mZoomInAction);
     connect(d->mZoomInAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomIn);
-    d->mActionCollection->setDefaultShortcut(d->mZoomInAction, QKeySequence(Qt::CTRL | Qt::Key_Plus));
+    d->mActionCollection->setDefaultShortcut(d->mZoomInAction, QKeySequence(Qt::CTRL + Qt::Key_Plus));
 
     d->mZoomOutAction = new QAction(QIcon::fromTheme(QStringLiteral("zoom-out")), i18n("Zoom &Out"), this);
     d->mActionCollection->addAction(QStringLiteral("zoom_out"), d->mZoomOutAction);
     connect(d->mZoomOutAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomOut);
-    d->mActionCollection->setDefaultShortcut(d->mZoomOutAction, QKeySequence(Qt::CTRL | Qt::Key_Minus));
+    d->mActionCollection->setDefaultShortcut(d->mZoomOutAction, QKeySequence(Qt::CTRL + Qt::Key_Minus));
 
     d->mZoomResetAction = new QAction(i18n("Reset"), this);
     d->mActionCollection->addAction(QStringLiteral("zoom_reset"), d->mZoomResetAction);
     connect(d->mZoomResetAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomReset);
-    d->mActionCollection->setDefaultShortcut(d->mZoomResetAction, QKeySequence(Qt::CTRL | Qt::Key_0));
+    d->mActionCollection->setDefaultShortcut(d->mZoomResetAction, QKeySequence(Qt::CTRL + Qt::Key_0));
     d->createMenu();
 }
 
