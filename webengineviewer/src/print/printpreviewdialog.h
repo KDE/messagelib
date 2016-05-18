@@ -31,6 +31,9 @@ public:
     ~PrintPreviewDialog();
     void loadFile(const QString &path);
 
+private Q_SLOTS:
+    void slotPrint();
+
 private:
     void writeConfig();
     void readConfig();
