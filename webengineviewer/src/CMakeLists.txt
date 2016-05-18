@@ -46,9 +46,11 @@ set(libwebengineviewer_webengine_SRCS
     webenginepage.cpp
     webenginescript.cpp
     webengineview.cpp
+
     webengineaccesskey/webengineaccesskey.cpp
     webengineaccesskey/webengineaccesskeyanchor.cpp
     webengineaccesskey/webengineaccesskeyutils.cpp
+    webengineprintmessagebox.cpp
     )
 
 set(libwebengineviewer_findbar_SRCS
