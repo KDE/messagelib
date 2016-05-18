@@ -66,6 +66,7 @@
 #include <QScrollBar>
 #include <QIcon>
 #include <QLocale>
+#include <QElapsedTimer>
 
 namespace MessageList
 {
@@ -2320,11 +2321,10 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi)
 //
 // When messages are added, mark it as dirty only (?)
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass5(ViewItemJob *job, const QTime &tStart)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass5(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
 {
     // In this pass we scan the group headers that are in mGroupHeadersThatNeedUpdate.
     // Empty groups get deleted while the other ones are re-sorted.
-    int elapsed;
 
     int curIndex = job->currentIndex();
 
@@ -2408,8 +2408,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass5
         //        a subtree with a LOT of messages inside. If interactivity is favored
         //        we should check the time really more often.
         if ((curIndex % mViewItemJobStepMessageCheckCount) == 0) {
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 if (it != mGroupHeadersThatNeedUpdate.end()) {
                     job->setCurrentIndex(curIndex);
                     return ViewItemJobInterrupted;
@@ -2422,7 +2421,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass5
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4(ViewItemJob *job, const QTime &tStart)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
 {
     // In this pass we scan mUnassignedMessageListForPass4 which now
     // contains both items with parents and items without parents.
@@ -2431,8 +2430,6 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4
     // clear mUnassignedMessageList.
 
     // We call this pass "Grouping"
-
-    int elapsed;
 
     int curIndex = job->currentIndex();
     int endIndex = job->endIndex();
@@ -2452,8 +2449,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4
         //        a subtree with a LOT of messages inside. If interactivity is favored
         //        we should check the time really more often.
         if ((curIndex % mViewItemJobStepMessageCheckCount) == 0) {
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 if (curIndex <= endIndex) {
                     job->setCurrentIndex(curIndex);
                     return ViewItemJobInterrupted;
@@ -2466,7 +2462,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3(ViewItemJob *job, const QTime &tStart)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
 {
     // In this pass we scan the mUnassignedMessageListForPass3 and try to do construct the threads
     // by using subject based threading. If subject based threading is not in effect then
@@ -2478,8 +2474,6 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3
     // - mUnassignedMessageList is a QList which is basically an array. It's faster
     //   to traverse an array of N entries than to remove K>0 entries one by one and
     //   to traverse the remaining N-K entries.
-
-    int elapsed;
 
     int curIndex = job->currentIndex();
     int endIndex = job->endIndex();
@@ -2536,8 +2530,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3
         //        a subtree with a LOT of messages inside. If interactivity is favored
         //        we should check the time really more often.
         if ((curIndex % mViewItemJobStepMessageCheckCount) == 0) {
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 if (curIndex <= endIndex) {
                     job->setCurrentIndex(curIndex);
                     return ViewItemJobInterrupted;
@@ -2550,7 +2543,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2(ViewItemJob *job, const QTime &tStart)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
 {
     // In this pass we scan the mUnassignedMessageList and try to do construct the threads.
     // If some thread leader message got attacched to the viewable tree in Pass1Fill then
@@ -2564,8 +2557,6 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
     //   to traverse the remaining N-K entries.
 
     // We call this pass "Threading"
-
-    int elapsed;
 
     int curIndex = job->currentIndex();
     int endIndex = job->endIndex();
@@ -2635,8 +2626,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
         //        a subtree with a LOT of messages inside. If interactivity is favored
         //        we should check the time really more often.
         if ((curIndex % mViewItemJobStepMessageCheckCount) == 0) {
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 if (curIndex <= endIndex) {
                     job->setCurrentIndex(curIndex);
                     return ViewItemJobInterrupted;
@@ -2649,7 +2639,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Fill(ViewItemJob *job, const QTime &tStart)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Fill(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
 {
     // In this pass we scan the a contiguous region of the underlying storage (that is
     // assumed to be FLAT) and create the corresponding MessageItem objects.
@@ -2659,8 +2649,6 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     // to mUnassignedMessageList and wait for Pass2.
 
     // We call this pass "Processing"
-
-    int elapsed;
 
     // Should we use the receiver or the sender field for sorting ?
     bool bUseReceiver = mStorageModelContainsOutboundMessages;
@@ -2897,8 +2885,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
         curIndex++;
 
         if ((curIndex % mViewItemJobStepMessageCheckCount) == 0) {
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 if (curIndex <= endIndex) {
                     job->setCurrentIndex(curIndex);
                     return ViewItemJobInterrupted;
@@ -2913,7 +2900,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Cleanup(ViewItemJob *job, const QTime &tStart)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Cleanup(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
 {
     Q_ASSERT(mModelForItemFunctions);   // UI must be not disconnected here
     // In this pass we remove the MessageItem objects that are present in the job
@@ -2925,8 +2912,6 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     // We don't shrink the invalidatedMessages because it's basically an array.
     // It's faster to traverse an array of N entries than to remove K>0 entries
     // one by one and to traverse the remaining N-K entries.
-
-    int elapsed;
 
     // The begin index of our work
     int curIndex = job->currentIndex();
@@ -3101,8 +3086,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
         //        code above can generate large message tree movements
         //        for each single item we sweep in the invalidatedMessages list.
         if ((curIndex % mViewItemJobStepMessageCheckCount) == 0) {
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 if (curIndex <= endIndex) {
                     job->setCurrentIndex(curIndex);
                     return ViewItemJobInterrupted;
@@ -3138,8 +3122,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
 
         // FIXME: We could take "larger" steps here
         if ((curIndex % mViewItemJobStepMessageCheckCount) == 0) {
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 if (it != mOrphanChildrenHash.end()) {
                     return ViewItemJobInterrupted;
                 }
@@ -3150,7 +3133,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Update(ViewItemJob *job, const QTime &tStart)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1Update(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
 {
     Q_ASSERT(mModelForItemFunctions);   // UI must be not disconnected here
 
@@ -3162,8 +3145,6 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     // We don't shrink the messagesThatNeedUpdate because it's basically an array.
     // It's faster to traverse an array of N entries than to remove K>0 entries
     // one by one and to traverse the remaining N-K entries.
-
-    int elapsed;
 
     // The begin index of our work
     int curIndex = job->currentIndex();
@@ -3281,8 +3262,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
         //        code above can generate large message tree movements
         //        for each single item we sweep in the messagesThatNeedUpdate list.
         if ((curIndex % mViewItemJobStepMessageCheckCount) == 0) {
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 if (curIndex <= endIndex) {
                     job->setCurrentIndex(curIndex);
                     return ViewItemJobInterrupted;
@@ -3294,7 +3274,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     return ViewItemJobCompleted;
 }
 
-ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(ViewItemJob *job, const QTime &tStart)
+ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
 {
     // This function does a timed chunk of work for a single Fill View job.
     // It attempts to process messages until a timeout forces it to return to the caller.
@@ -3303,11 +3283,9 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
     // to place debugger breakpoints then we need it explicited.
     // A (template) helper would need to pass many parameters and would not be inlined...
 
-    int elapsed;
-
     if (job->currentPass() == ViewItemJob::Pass1Fill) {
         // We're in Pass1Fill of the job.
-        switch (viewItemJobStepInternalForJobPass1Fill(job, tStart)) {
+        switch (viewItemJobStepInternalForJobPass1Fill(job, elapsedTimer)) {
         case ViewItemJobInterrupted:
             // current job interrupted by timeout: propagate status to caller
             return ViewItemJobInterrupted;
@@ -3322,8 +3300,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
             // of a small number of messages. At the end of each job check
             // the time used and if we're timeoutting and there is another job
             // then interrupt.
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 return ViewItemJobInterrupted;
             } // else proceed with the next pass
             break;
@@ -3335,7 +3312,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
         }
     } else if (job->currentPass() == ViewItemJob::Pass1Cleanup) {
         // We're in Pass1Cleanup of the job.
-        switch (viewItemJobStepInternalForJobPass1Cleanup(job, tStart)) {
+        switch (viewItemJobStepInternalForJobPass1Cleanup(job, elapsedTimer)) {
         case ViewItemJobInterrupted:
             // current job interrupted by timeout: propagate status to caller
             return ViewItemJobInterrupted;
@@ -3349,8 +3326,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
             // of a small number of messages. At the end of each job check
             // the time used and if we're timeoutting and there is another job
             // then interrupt.
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 return ViewItemJobInterrupted;
             } // else proceed with the next pass
             break;
@@ -3362,7 +3338,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
         }
     } else if (job->currentPass() == ViewItemJob::Pass1Update) {
         // We're in Pass1Update of the job.
-        switch (viewItemJobStepInternalForJobPass1Update(job, tStart)) {
+        switch (viewItemJobStepInternalForJobPass1Update(job, elapsedTimer)) {
         case ViewItemJobInterrupted:
             // current job interrupted by timeout: propagate status to caller
             return ViewItemJobInterrupted;
@@ -3378,8 +3354,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
             // of a small number of messages. At the end of each job check
             // the time used and if we're timeoutting and there is another job
             // then interrupt.
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 return ViewItemJobInterrupted;
             } // else proceed with the next pass
             break;
@@ -3395,7 +3370,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
 
     if (job->currentPass() == ViewItemJob::Pass2) {
         // We're in Pass2 of the job.
-        switch (viewItemJobStepInternalForJobPass2(job, tStart)) {
+        switch (viewItemJobStepInternalForJobPass2(job, elapsedTimer)) {
         case ViewItemJobInterrupted:
             // current job interrupted by timeout: propagate status to caller
             return ViewItemJobInterrupted;
@@ -3409,8 +3384,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
             // of a small number of messages. At the end of each job check
             // the time used and if we're timeoutting and there is another job
             // then interrupt.
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 return ViewItemJobInterrupted;
             }
             // else proceed with the next pass
@@ -3425,7 +3399,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
 
     if (job->currentPass() == ViewItemJob::Pass3) {
         // We're in Pass3 of the job.
-        switch (viewItemJobStepInternalForJobPass3(job, tStart)) {
+        switch (viewItemJobStepInternalForJobPass3(job, elapsedTimer)) {
         case ViewItemJobInterrupted:
             // current job interrupted by timeout: propagate status to caller
             return ViewItemJobInterrupted;
@@ -3439,8 +3413,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
             // of a small number of messages. At the end of each job check
             // the time used and if we're timeoutting and there is another job
             // then interrupt.
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 return ViewItemJobInterrupted;
             }
             // else proceed with the next pass
@@ -3455,7 +3428,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
 
     if (job->currentPass() == ViewItemJob::Pass4) {
         // We're in Pass4 of the job.
-        switch (viewItemJobStepInternalForJobPass4(job, tStart)) {
+        switch (viewItemJobStepInternalForJobPass4(job, elapsedTimer)) {
         case ViewItemJobInterrupted:
             // current job interrupted by timeout: propagate status to caller
             return ViewItemJobInterrupted;
@@ -3469,8 +3442,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
             // of a small number of messages. At the end of each job check
             // the time used and if we're timeoutting and there is another job
             // then interrupt.
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if (elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) {
                 return ViewItemJobInterrupted;
             }
             // else proceed with the next pass
@@ -3484,7 +3456,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
     }
 
     // Pass4 has been already completed. Proceed to Pass5.
-    return viewItemJobStepInternalForJobPass5(job, tStart);
+    return viewItemJobStepInternalForJobPass5(job, elapsedTimer);
 }
 
 #ifdef KDEPIM_FOLDEROPEN_PROFILE
@@ -3625,8 +3597,8 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternal()
     // It attempts to do processing until it either runs out of jobs
     // to be done or a timeout forces it to interrupt and jump back to the caller.
 
-    QTime tStart = QTime::currentTime();
-    int elapsed;
+    QElapsedTimer elapsedTimer;
+    elapsedTimer.start();
 
     while (!mViewItemJobs.isEmpty()) {
         // Have a job to do.
@@ -3685,7 +3657,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternal()
             //mView->setUpdatesEnabled( false );
         }
 
-        switch (viewItemJobStepInternalForJob(job, tStart)) {
+        switch (viewItemJobStepInternalForJob(job, elapsedTimer)) {
         case ViewItemJobInterrupted: {
             // current job interrupted by timeout: will propagate status to caller
             // but before this, give some feedback to the user
@@ -3794,8 +3766,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternal()
             // of a small number of messages. At the end of each job check
             // the time used and if we're timeoutting and there is another job
             // then interrupt.
-            elapsed = tStart.msecsTo(QTime::currentTime());
-            if ((elapsed > mViewItemJobStepChunkTimeout) || (elapsed < 0)) {
+            if ((elapsedTimer.elapsed() > mViewItemJobStepChunkTimeout) || (elapsedTimer.elapsed() < 0)) {
                 if (!mViewItemJobs.isEmpty()) {
                     return ViewItemJobInterrupted;
                 }
