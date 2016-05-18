@@ -1297,7 +1297,11 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
         } else if (daysAgo == 1) { // Yesterday
             groupLabel = mCachedYesterdayLabel;
         } else if (daysAgo > 1 && daysAgo < daysInWeek) {   // Within last seven days
-            groupLabel = QLocale::system().standaloneDayName(dDate.dayOfWeek());
+            auto dayName = mCachedDayNameLabel.find(dDate.dayOfWeek()); // non-const call, but non-shared container
+            if (dayName == mCachedDayNameLabel.end()) {
+                dayName = mCachedDayNameLabel.insert(dDate.dayOfWeek(), QLocale::system().standaloneDayName(dDate.dayOfWeek()));
+            }
+            groupLabel = *dayName;
         } else if (mAggregation->grouping() == Aggregation::GroupByDate) {   // GroupByDate seven days or more ago
             groupLabel = QLocale::system().toString(dDate, QLocale::ShortFormat);
         } else if (dDate.month() == mTodayDate.month() &&       // GroupByDateRange within this month
@@ -1327,9 +1331,17 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
                 groupLabel = mCachedUnknownLabel;
             }
         } else if (dDate.year() == mTodayDate.year()) {       // GroupByDateRange within this year
-            groupLabel = QLocale::system().standaloneMonthName(dDate.month());
+            auto monthName = mCachedMonthNameLabel.find(dDate.month()); // non-const call, but non-shared container
+            if (monthName == mCachedMonthNameLabel.end()) {
+                monthName = mCachedMonthNameLabel.insert(dDate.month(), QLocale::system().standaloneMonthName(dDate.month()));
+            }
+            groupLabel = *monthName;
         } else { // GroupByDateRange in previous years
-            groupLabel = i18nc("Message Aggregation Group Header: Month name and Year number", "%1 %2", QLocale::system().standaloneMonthName(dDate.month()),
+            auto monthName = mCachedMonthNameLabel.find(dDate.month()); // non-const call, but non-shared container
+            if (monthName == mCachedMonthNameLabel.end()) {
+                monthName = mCachedMonthNameLabel.insert(dDate.month(), QLocale::system().standaloneMonthName(dDate.month()));
+            }
+            groupLabel = i18nc("Message Aggregation Group Header: Month name and Year number", "%1 %2", *monthName,
                                QLocale::system().toString(dDate, QLatin1Literal("yyyy")));
         }
         break;

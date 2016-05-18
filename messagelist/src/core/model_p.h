@@ -347,6 +347,16 @@ public:
     qint32 mCachedWatchedOrIgnoredStatusBits;
 
     /**
+     * The labels for week days names group items, cached, so we don't query QLocale multiple times.
+     */
+    QMap<int, QString> mCachedDayNameLabel;
+
+    /*
+     * The labels for month names group items, cached, so we don't query QLocale multiple times.
+     */
+    QMap<int, QString> mCachedMonthNameLabel;
+
+    /**
      * Flag signaling a possibly long job batch. This is checked by other
      * classes and used to display some kind of "please wait" feedback to the user.
      */
