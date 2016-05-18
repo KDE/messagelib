@@ -18,3 +18,8 @@ ecm_add_test(webengineprintmessageboxtest.cpp
     LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer
 )
 
+ecm_add_test(webengineexporthtmlpagejobtest.cpp
+    TEST_NAME webengineexporthtmlpagejobtest
+    NAME_PREFIX "webengineviewer-"
+    LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer
+)
