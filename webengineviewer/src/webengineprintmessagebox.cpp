@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "webengineprintmessagebox.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
