@@ -85,6 +85,8 @@ public:
 View::View(Widget *pParent)
     : QTreeView(pParent), d(new Private(this, pParent))
 {
+    setFocusPolicy(Qt::NoFocus);
+
     d->mSaveThemeColumnStateTimer = new QTimer();
     connect(d->mSaveThemeColumnStateTimer, &QTimer::timeout, this, &View::saveThemeColumnState);
 
