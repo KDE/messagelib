@@ -29,9 +29,15 @@ WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
 
+    //TODO add more.
+    QLabel *lab = new QLabel(i18n("Printing WebEngine is limited for the moment."), this);
+    lab->setObjectName(QStringLiteral("webengineprintmessageboxlabel"));
+    mainLayout->addWidget(lab);
+
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &WebEnginePrintMessageBox::reject);
+    mainLayout->addWidget(buttonBox);
 }
 
 WebEnginePrintMessageBox::~WebEnginePrintMessageBox()
