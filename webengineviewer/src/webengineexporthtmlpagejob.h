@@ -19,6 +19,7 @@
 #define WEBENGINEEXPORTHTMLPAGEJOB_H
 
 #include <QObject>
+class QWebEngineView;
 namespace WebEngineViewer
 {
 class WebEngineExportHtmlPageJob : public QObject
@@ -27,6 +28,14 @@ class WebEngineExportHtmlPageJob : public QObject
 public:
     explicit WebEngineExportHtmlPageJob(QObject *parent = Q_NULLPTR);
     ~WebEngineExportHtmlPageJob();
+
+    void start();
+
+    QWebEngineView *engineView() const;
+    void setEngineView(QWebEngineView *engineView);
+
+private:
+    QWebEngineView *mEngineView;
 };
 }
 

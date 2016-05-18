@@ -16,6 +16,7 @@
 */
 
 #include "webengineexporthtmlpagejobtest.h"
+#include "../webengineexporthtmlpagejob.h"
 #include <QTest>
 
 WebEngineExportHtmlPageJobTest::WebEngineExportHtmlPageJobTest(QObject *parent)
@@ -27,6 +28,12 @@ WebEngineExportHtmlPageJobTest::WebEngineExportHtmlPageJobTest(QObject *parent)
 WebEngineExportHtmlPageJobTest::~WebEngineExportHtmlPageJobTest()
 {
 
+}
+
+void WebEngineExportHtmlPageJobTest::shouldHaveDefaultValue()
+{
+    WebEngineViewer::WebEngineExportHtmlPageJob job;
+    QVERIFY(!job.engineView());
 }
 
 QTEST_MAIN(WebEngineExportHtmlPageJobTest)

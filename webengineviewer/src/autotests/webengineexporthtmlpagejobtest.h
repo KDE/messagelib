@@ -26,6 +26,8 @@ class WebEngineExportHtmlPageJobTest : public QObject
 public:
     explicit WebEngineExportHtmlPageJobTest(QObject *parent = Q_NULLPTR);
     ~WebEngineExportHtmlPageJobTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // WEBENGINEEXPORTHTMLPAGEJOBTEST_H

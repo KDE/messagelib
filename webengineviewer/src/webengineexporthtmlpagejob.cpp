@@ -20,7 +20,8 @@
 using namespace WebEngineViewer;
 
 WebEngineExportHtmlPageJob::WebEngineExportHtmlPageJob(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mEngineView(Q_NULLPTR)
 {
 
 }
@@ -28,4 +29,19 @@ WebEngineExportHtmlPageJob::WebEngineExportHtmlPageJob(QObject *parent)
 WebEngineExportHtmlPageJob::~WebEngineExportHtmlPageJob()
 {
 
+}
+
+void WebEngineExportHtmlPageJob::start()
+{
+
+}
+
+QWebEngineView *WebEngineExportHtmlPageJob::engineView() const
+{
+    return mEngineView;
+}
+
+void WebEngineExportHtmlPageJob::setEngineView(QWebEngineView *engineView)
+{
+    mEngineView = engineView;
 }
