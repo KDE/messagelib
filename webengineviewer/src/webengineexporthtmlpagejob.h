@@ -34,6 +34,9 @@ public:
     QWebEngineView *engineView() const;
     void setEngineView(QWebEngineView *engineView);
 
+Q_SIGNALS:
+    void failed();
+
 private:
     QWebEngineView *mEngineView;
 };
