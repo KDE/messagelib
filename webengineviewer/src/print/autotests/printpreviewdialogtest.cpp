@@ -20,6 +20,7 @@
 #include "../printpreviewpagewidget.h"
 #include <QTest>
 #include <QDialogButtonBox>
+#include <QPushButton>
 
 PrintPreviewDialogTest::PrintPreviewDialogTest(QObject *parent)
     : QObject(parent)
@@ -40,6 +41,9 @@ void PrintPreviewDialogTest::shouldHaveDefaultValue()
     QVERIFY(widget);
     QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
     QVERIFY(buttonBox);
+
+    QPushButton *printButton = buttonBox->findChild<QPushButton *>(QStringLiteral("printbutton"));
+    QVERIFY(printButton);
 }
 
 QTEST_MAIN(PrintPreviewDialogTest)

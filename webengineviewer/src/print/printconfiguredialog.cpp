@@ -39,7 +39,6 @@ PrintConfigureDialog::PrintConfigureDialog(QWidget *parent)
 
     connect(buttonBox, &QDialogButtonBox::accepted, this, &PrintConfigureDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &PrintConfigureDialog::reject);
-
 }
 
 PrintConfigureDialog::~PrintConfigureDialog()
