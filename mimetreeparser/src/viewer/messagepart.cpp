@@ -19,7 +19,6 @@
 
 #include "messagepart.h"
 #include "mimetreeparser_debug.h"
-#include "converthtmltoplaintext.h"
 #include "csshelperbase.h"
 #include "cryptohelper.h"
 #include "htmlblock.h"
@@ -32,7 +31,6 @@
 #include "utils/iconnamecache.h"
 
 #include <KMime/Content>
-#include <MessageCore/StringUtil>
 
 #include <Libkleo/Dn>
 #include <Libkleo/ImportJob>
@@ -45,7 +43,6 @@
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
 
-#include <QApplication>
 #include <QFile>
 #include <QTextCodec>
 #include <QWebPage>
@@ -55,93 +52,7 @@
 #include <KLocalizedString>
 #include <KTextToHTML>
 
-#include <grantlee/context.h>
-#include <grantlee/engine.h>
-#include <grantlee/metatype.h>
-#include <grantlee/templateloader.h>
-#include <grantlee/template.h>
-
-#include <sstream>
-
-// Make it possible to put GpgME::DecryptionResult::Recipient in a QVariant.
-Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
-
-// Read-only introspection of GpgME::DecryptionResult::Recipient object.
-GRANTLEE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
-if (property == QStringLiteral("keyID")) {
-    return QString::fromLatin1(object.keyID());
-}
-GRANTLEE_END_LOOKUP
-
 using namespace MimeTreeParser;
-
-/** Checks whether @p str contains external references. To be precise,
-    we only check whether @p str contains 'xxx="http[s]:' where xxx is
-    not href. Obfuscated external references are ignored on purpose.
-*/
-
-bool containsExternalReferences(const QString &str, const QString &extraHead)
-{
-    const bool hasBaseInHeader = extraHead.contains(QStringLiteral("<base href=\""), Qt::CaseInsensitive);
-    if (hasBaseInHeader && (str.contains(QStringLiteral("href=\"/"), Qt::CaseInsensitive) ||
-                            str.contains(QStringLiteral("<img src=\"/"), Qt::CaseInsensitive))) {
-        return true;
-    }
-    /*
-    //Laurent: workaround for local ref cid
-    if(str.contains(QStringLiteral("<img src=\"cid:"),Qt::CaseInsensitive)) {
-    return true;
-    }
-    */
-    int httpPos = str.indexOf(QLatin1String("\"http:"), Qt::CaseInsensitive);
-    int httpsPos = str.indexOf(QLatin1String("\"https:"), Qt::CaseInsensitive);
-
-    while (httpPos >= 0 || httpsPos >= 0) {
-        // pos = index of next occurrence of "http: or "https: whichever comes first
-        int pos = (httpPos < httpsPos)
-                  ? ((httpPos >= 0) ? httpPos : httpsPos)
-                  : ((httpsPos >= 0) ? httpsPos : httpPos);
-        // look backwards for "href"
-        if (pos > 5) {
-            int hrefPos = str.lastIndexOf(QLatin1String("href"), pos - 5, Qt::CaseInsensitive);
-            // if no 'href' is found or the distance between 'href' and '"http[s]:'
-            // is larger than 7 (7 is the distance in 'href = "http[s]:') then
-            // we assume that we have found an external reference
-            if ((hrefPos == -1) || (pos - hrefPos > 7)) {
-
-                // HTML messages created by KMail itself for now contain the following:
-                // <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-                // Make sure not to show an external references warning for this string
-                int dtdPos = str.indexOf(QLatin1String("http://www.w3.org/TR/html4/loose.dtd"), pos + 1);
-                if (dtdPos != (pos + 1)) {
-                    return true;
-                }
-            }
-        }
-        // find next occurrence of "http: or "https:
-        if (pos == httpPos) {
-            httpPos = str.indexOf(QLatin1String("\"http:"), httpPos + 6, Qt::CaseInsensitive);
-        } else {
-            httpsPos = str.indexOf(QLatin1String("\"https:"), httpsPos + 7, Qt::CaseInsensitive);
-        }
-    }
-    return false;
-}
-
-Grantlee::Template getGrantleeTemplate(QObject *parent, const QString &name)
-{
-    Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
-    auto m_engine = QSharedPointer<Grantlee::Engine>(new Grantlee::Engine(parent));
-    m_engine->setSmartTrimEnabled(true);
-    m_engine->addDefaultLibrary(QStringLiteral("grantlee_i18n"));
-    m_engine->addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
-
-    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader());
-    loader->setTemplateDirs(QStringList() << QStringLiteral("/work/source/kde/pim/messagelib/mimetreeparser/src/themes/default"));
-    m_engine->addTemplateLoader(loader);
-
-    return  m_engine->loadByName(name);
-}
 
 //------MessagePart-----------------------
 MessagePart::MessagePart(ObjectTreeParser *otp,
@@ -151,7 +62,6 @@ MessagePart::MessagePart(ObjectTreeParser *otp,
     , mSubOtp(Q_NULLPTR)
     , mAttachmentNode(Q_NULLPTR)
     , mRoot(false)
-    , mInternalAttachmentNode(Q_NULLPTR)
     , mIsInternalRoot(false)
 {
 }
@@ -542,7 +452,6 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
     mSubOtp = new ObjectTreeParser(mOtp, onlyOneMimePart);
     mSubOtp->setAllowAsync(mOtp->allowAsync());
     auto subMessagePart = mSubOtp->parseObjectTreeInternal(node);
-    mInternalAttachmentNode = subMessagePart->attachmentNode();
     mIsInternalRoot = subMessagePart->isRoot();
     foreach (auto part, subMessagePart->subParts()) {
         appendSubPart(part);
@@ -557,18 +466,9 @@ HTMLBlock::Ptr MessagePart::internalRootBlock() const
     return HTMLBlock::Ptr();
 }
 
-HTMLBlock::Ptr MessagePart::internalAttachmentBlock() const
-{
-    if (htmlWriter() && mInternalAttachmentNode) {
-        return HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter(), mInternalAttachmentNode));
-    }
-    return HTMLBlock::Ptr();
-}
-
 void MessagePart::renderInternalHtml(bool decorate) const
 {
     const HTMLBlock::Ptr rBlock(internalRootBlock());
-    const HTMLBlock::Ptr aBlock(internalAttachmentBlock());
 
     foreach (const auto &mp, subParts()) {
         mp->html(decorate);
@@ -611,7 +511,6 @@ QString MessagePart::internalContent() const
         setHtmlWriter(&htmlWriter);
 
         const HTMLBlock::Ptr rBlock(internalRootBlock());
-        const HTMLBlock::Ptr aBlock(internalAttachmentBlock());
 
         foreach (const auto &mp, subParts()) {
             const auto m = mp.dynamicCast<MessagePart>();
@@ -683,18 +582,6 @@ MessagePartList::MessagePartList(ObjectTreeParser *otp)
 MessagePartList::~MessagePartList()
 {
 
-}
-
-void MessagePartList::html(bool decorate)
-{
-    if (!htmlWriter()) {
-        return;
-    }
-
-    const HTMLBlock::Ptr rBlock(rootBlock());
-    const HTMLBlock::Ptr aBlock(attachmentBlock());
-
-    htmlWriter()->queue(internalContent());
 }
 
 QString MessagePartList::text() const
@@ -809,82 +696,6 @@ void TextMessagePart::parseContent()
     }
 }
 
-void TextMessagePart::html(bool decorate)
-{
-    if (mOtp->nodeHelper()->isNodeDisplayedHidden(mNode)) {
-        return;
-    }
-
-    HtmlWriter *writer = htmlWriter();
-
-    if (!writer) {
-        return;
-    }
-
-    const HTMLBlock::Ptr aBlock(attachmentBlock());
-
-    Grantlee::Template t;
-    Grantlee::Context c;
-    QObject block;
-
-    c.insert(QStringLiteral("block"), &block);
-
-    block.setProperty("showTextFrame", mDrawFrame);
-    block.setProperty("label", MessageCore::StringUtil::quoteHtmlChars(NodeHelper::fileName(mNode), true));
-    block.setProperty("comment", MessageCore::StringUtil::quoteHtmlChars(mNode->contentDescription()->asUnicodeString(), true));
-    block.setProperty("link", mOtp->nodeHelper()->asHREF(mNode, QStringLiteral("body")));
-    block.setProperty("showLink", mShowLink);
-    block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
-
-    if (mAsIcon != MimeTreeParser::NoIcon) {
-        t = getGrantleeTemplate(this, QStringLiteral("asiconpart.html"));
-        block.setProperty("iconSize", KIconLoader::global()->currentSize(KIconLoader::Desktop));
-        block.setProperty("inline", (mAsIcon == MimeTreeParser::IconInline));
-
-        QString iconPath;
-        if (mAsIcon == MimeTreeParser::IconInline) {
-            iconPath = mOtp->nodeHelper()->writeNodeToTempFile(mNode);
-        } else {
-            iconPath = mOtp->nodeHelper()->iconName(mNode);
-            if (iconPath.right(14) == QLatin1String("mime_empty.png")) {
-                mOtp->nodeHelper()->magicSetType(mNode);
-                iconPath = mOtp->nodeHelper()->iconName(mNode);
-            }
-        }
-        block.setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
-
-        const QString name = mNode->contentType()->name();
-        QString label = name.isEmpty() ? NodeHelper::fileName(mNode) : name;
-        QString comment = mNode->contentDescription()->asUnicodeString();
-
-        if (label.isEmpty()) {
-            label = i18nc("display name for an unnamed attachment", "Unnamed");
-        }
-        label = MessageCore::StringUtil::quoteHtmlChars(label, true);
-
-        comment = MessageCore::StringUtil::quoteHtmlChars(comment, true);
-        if (label == comment) {
-            comment.clear();
-        }
-
-        block.setProperty("label", label);
-        block.setProperty("comment", comment);
-
-    } else {
-        t = getGrantleeTemplate(this, QStringLiteral("textmessagepart.html"));
-        c.insert(QStringLiteral("content"), internalContent());
-    }
-
-    if (t->error()) {
-        qWarning() << t->errorString();
-        return;
-    }
-
-    const auto html = t->render(&c);
-
-    writer->queue(html);
-}
-
 KMMsgEncryptionState TextMessagePart::encryptionState() const
 {
     return mEncryptionState;
@@ -942,52 +753,6 @@ QString HtmlMessagePart::processHtml(const QString &htmlSource, QString &extraHe
     return body.toInnerXml();
 }
 
-void HtmlMessagePart::html(bool decorate)
-{
-    Q_UNUSED(decorate);
-    MimeTreeParser::HtmlWriter *writer = htmlWriter();
-    if (!writer) {
-        return;
-    }
-
-    const HTMLBlock::Ptr aBlock(attachmentBlock());
-
-    Grantlee::Template t = getGrantleeTemplate(this, QStringLiteral("htmlmessagepart.html"));
-    Grantlee::Context c;
-    QObject block;
-
-    c.insert(QStringLiteral("block"), &block);
-
-    block.setProperty("htmlMail", mSource->htmlMail());
-    block.setProperty("loadExternal", mSource->htmlLoadExternal());
-
-    {
-        QString extraHead;
-        QString bodyText = processHtml(mBodyHTML, extraHead);
-
-        if (mSource->htmlMail()) {
-            mOtp->mNodeHelper->setNodeDisplayedEmbedded(mNode, true);
-            writer->extraHead(extraHead);
-        }
-
-        block.setProperty("containsExternalReferences", containsExternalReferences(bodyText, extraHead));
-        c.insert(QStringLiteral("content"), bodyText);
-    }
-
-    {
-        ConvertHtmlToPlainText convert;
-        convert.setHtmlString(mBodyHTML);
-        QString plaintext = convert.generatePlainText();
-        plaintext.replace(QLatin1String("\n"), QStringLiteral("<br>"));
-        c.insert(QStringLiteral("plaintext"), plaintext);
-    }
-
-    const auto html = t->render(&c);
-    writer->queue(html);
-
-    mSource->setHtmlMode(Util::Html);
-}
-
 QString HtmlMessagePart::text() const
 {
     return mBodyHTML;
@@ -1011,12 +776,6 @@ MimeMessagePart::MimeMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
 MimeMessagePart::~MimeMessagePart()
 {
 
-}
-
-void MimeMessagePart::html(bool decorate)
-{
-    const HTMLBlock::Ptr aBlock(attachmentBlock());
-    htmlWriter()->queue(internalContent());
 }
 
 QString MimeMessagePart::text() const
@@ -1059,23 +818,6 @@ void AlternativeMessagePart::setViewHtml(bool html)
 bool AlternativeMessagePart::viewHtml() const
 {
     return mViewHtml;
-}
-
-void AlternativeMessagePart::html(bool decorate)
-{
-    MimeTreeParser::HtmlWriter *writer = htmlWriter();
-
-    if (!writer) {
-        return;
-    }
-
-    const HTMLBlock::Ptr aBlock(attachmentBlock());
-
-    if (viewHtml() && mHTMLPart) {
-        mHTMLPart->html(decorate);
-    } else if (mTextNode) {
-        mTextPart->html(decorate);
-    }
 }
 
 QString AlternativeMessagePart::text() const
@@ -1135,44 +877,6 @@ CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, co
 CertMessagePart::~CertMessagePart()
 {
 
-}
-
-void CertMessagePart::html(bool decorate)
-{
-    Q_UNUSED(decorate);
-    MimeTreeParser::HtmlWriter *writer = htmlWriter();
-
-    if (!writer) {
-        return;
-    }
-
-    const HTMLBlock::Ptr aBlock(attachmentBlock());
-
-    Grantlee::Template t = getGrantleeTemplate(this, QStringLiteral("certmessagepart.html"));
-    Grantlee::Context c;
-    QObject block;
-
-    c.insert(QStringLiteral("block"), &block);
-    block.setProperty("importError", QString::fromLocal8Bit(mImportResult.error().asString()));
-    block.setProperty("nImp", mImportResult.numImported());
-    block.setProperty("nUnc", mImportResult.numUnchanged());
-    block.setProperty("nSKImp", mImportResult.numSecretKeysImported());
-    block.setProperty("nSKUnc", mImportResult.numSecretKeysUnchanged());
-
-    QVariantList keylist;
-    const auto imports = mImportResult.imports();
-
-    auto end(imports.end());
-    for (auto it = imports.begin(); it != end; ++it) {
-        QObject *key(new QObject(this));
-        key->setProperty("error", QString::fromLocal8Bit((*it).error().asString()));
-        key->setProperty("status", (*it).status());
-        key->setProperty("fingerprint", QLatin1String((*it).fingerprint()));
-        keylist << QVariant::fromValue(key);
-    }
-    const auto html = t->render(&c);
-
-    writer->queue(html);
 }
 
 QString CertMessagePart::text() const
@@ -1660,472 +1364,6 @@ void CryptoMessagePart::startVerificationDetached(const QByteArray &text, KMime:
 
 }
 
-#include <KEmailAddress>
-static const int SIG_FRAME_COL_UNDEF = 99;
-#define SIG_FRAME_COL_RED    -1
-#define SIG_FRAME_COL_YELLOW  0
-#define SIG_FRAME_COL_GREEN   1
-QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
-                          int status_code,
-                          GpgME::Signature::Summary summary,
-                          int &frameColor,
-                          bool &showKeyInfos)
-{
-    // note: At the moment frameColor and showKeyInfos are
-    //       used for CMS only but not for PGP signatures
-    // pending(khz): Implement usage of these for PGP sigs as well.
-    showKeyInfos = true;
-    QString result;
-    if (cryptProto) {
-        if (cryptProto == Kleo::CryptoBackendFactory::instance()->openpgp()) {
-            // process enum according to it's definition to be read in
-            // GNU Privacy Guard CVS repository /gpgme/gpgme/gpgme.h
-            switch (status_code) {
-            case 0: // GPGME_SIG_STAT_NONE
-                result = i18n("Error: Signature not verified");
-                break;
-            case 1: // GPGME_SIG_STAT_GOOD
-                result = i18n("Good signature");
-                break;
-            case 2: // GPGME_SIG_STAT_BAD
-                result = i18n("<b>Bad</b> signature");
-                break;
-            case 3: // GPGME_SIG_STAT_NOKEY
-                result = i18n("No public key to verify the signature");
-                break;
-            case 4: // GPGME_SIG_STAT_NOSIG
-                result = i18n("No signature found");
-                break;
-            case 5: // GPGME_SIG_STAT_ERROR
-                result = i18n("Error verifying the signature");
-                break;
-            case 6: // GPGME_SIG_STAT_DIFF
-                result = i18n("Different results for signatures");
-                break;
-            /* PENDING(khz) Verify exact meaning of the following values:
-            case 7: // GPGME_SIG_STAT_GOOD_EXP
-            return i18n("Signature certificate is expired");
-            break;
-            case 8: // GPGME_SIG_STAT_GOOD_EXPKEY
-            return i18n("One of the certificate's keys is expired");
-            break;
-            */
-            default:
-                result.clear();   // do *not* return a default text here !
-                break;
-            }
-        } else if (cryptProto == Kleo::CryptoBackendFactory::instance()->smime()) {
-            // process status bits according to SigStatus_...
-            // definitions in kdenetwork/libkdenetwork/cryptplug.h
-
-            if (summary == GpgME::Signature::None) {
-                result = i18n("No status information available.");
-                frameColor = SIG_FRAME_COL_YELLOW;
-                showKeyInfos = false;
-                return result;
-            }
-
-            if (summary & GpgME::Signature::Valid) {
-                result = i18n("Good signature.");
-                // Note:
-                // Here we are work differently than KMail did before!
-                //
-                // The GOOD case ( == sig matching and the complete
-                // certificate chain was verified and is valid today )
-                // by definition does *not* show any key
-                // information but just states that things are OK.
-                //           (khz, according to LinuxTag 2002 meeting)
-                frameColor = SIG_FRAME_COL_GREEN;
-                showKeyInfos = false;
-                return result;
-            }
-
-            // we are still there?  OK, let's test the different cases:
-
-            // we assume green, test for yellow or red (in this order!)
-            frameColor = SIG_FRAME_COL_GREEN;
-            QString result2;
-            if (summary & GpgME::Signature::KeyExpired) {
-                // still is green!
-                result2 += i18n("One key has expired.");
-            }
-            if (summary & GpgME::Signature::SigExpired) {
-                // and still is green!
-                result2 += i18n("The signature has expired.");
-            }
-
-            // test for yellow:
-            if (summary & GpgME::Signature::KeyMissing) {
-                result2 += i18n("Unable to verify: key missing.");
-                // if the signature certificate is missing
-                // we cannot show information on it
-                showKeyInfos = false;
-                frameColor = SIG_FRAME_COL_YELLOW;
-            }
-            if (summary & GpgME::Signature::CrlMissing) {
-                result2 += i18n("CRL not available.");
-                frameColor = SIG_FRAME_COL_YELLOW;
-            }
-            if (summary & GpgME::Signature::CrlTooOld) {
-                result2 += i18n("Available CRL is too old.");
-                frameColor = SIG_FRAME_COL_YELLOW;
-            }
-            if (summary & GpgME::Signature::BadPolicy) {
-                result2 += i18n("A policy was not met.");
-                frameColor = SIG_FRAME_COL_YELLOW;
-            }
-            if (summary & GpgME::Signature::SysError) {
-                result2 += i18n("A system error occurred.");
-                // if a system error occurred
-                // we cannot trust any information
-                // that was given back by the plug-in
-                showKeyInfos = false;
-                frameColor = SIG_FRAME_COL_YELLOW;
-            }
-
-            // test for red:
-            if (summary & GpgME::Signature::KeyRevoked) {
-                // this is red!
-                result2 += i18n("One key has been revoked.");
-                frameColor = SIG_FRAME_COL_RED;
-            }
-            if (summary & GpgME::Signature::Red) {
-                if (result2.isEmpty())
-                    // Note:
-                    // Here we are work differently than KMail did before!
-                    //
-                    // The BAD case ( == sig *not* matching )
-                    // by definition does *not* show any key
-                    // information but just states that things are BAD.
-                    //
-                    // The reason for this: In this case ALL information
-                    // might be falsificated, we can NOT trust the data
-                    // in the body NOT the signature - so we don't show
-                    // any key/signature information at all!
-                    //         (khz, according to LinuxTag 2002 meeting)
-                {
-                    showKeyInfos = false;
-                }
-                frameColor = SIG_FRAME_COL_RED;
-            } else {
-                result.clear();
-            }
-
-            if (SIG_FRAME_COL_GREEN == frameColor) {
-                result = i18n("Good signature.");
-            } else if (SIG_FRAME_COL_RED == frameColor) {
-                result = i18n("<b>Bad</b> signature.");
-            } else {
-                result.clear();
-            }
-
-            if (!result2.isEmpty()) {
-                if (!result.isEmpty()) {
-                    result.append(QLatin1String("<br />"));
-                }
-                result.append(result2);
-            }
-        }
-        /*
-        // add i18n support for 3rd party plug-ins here:
-        else if ( cryptPlug->libName().contains( "yetanotherpluginname", Qt::CaseInsensitive )) {
-
-        }
-        */
-    }
-    return result;
-}
-
-QString CryptoMessagePart::renderSigned()
-{
-    const bool isSMIME = mCryptoProto && (mCryptoProto == Kleo::CryptoBackendFactory::instance()->smime());
-    MimeTreeParser::HtmlWriter *writer = htmlWriter();
-
-    Grantlee::Template t = getGrantleeTemplate(this, QStringLiteral("signedmessagepart.html"));
-    Grantlee::Context c;
-    QObject block;
-    QObject cryptoProto;
-
-    if (mNode) {
-        c.insert(QStringLiteral("content"), internalContent());
-    } else {
-        TestHtmlWriter htmlWriter(writer);
-        mOtp->mHtmlWriter = &htmlWriter;
-        MessagePart::html(false);
-        mOtp->mHtmlWriter = writer;
-        c.insert(QStringLiteral("content"), htmlWriter.html);
-    }
-
-    c.insert(QStringLiteral("cryptoProto"), &cryptoProto);
-    c.insert(QStringLiteral("block"), &block);
-
-    cryptoProto.setProperty("name", mCryptoProto->name());
-    cryptoProto.setProperty("displayName", mCryptoProto->displayName());
-    
-    block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
-    block.setProperty("inProgress", mMetaData.inProgress);
-    block.setProperty("errorText", mMetaData.errorText);
-
-    block.setProperty("detailHeader", source()->showSignatureDetails());
-    block.setProperty("printing", false);
-    block.setProperty("addr", mMetaData.signerMailAddresses);
-    block.setProperty("technicalProblem", mMetaData.technicalProblem);
-    block.setProperty("keyId", mMetaData.keyId);
-    block.setProperty("creationTime", mMetaData.creationTime);
-    block.setProperty("isGoodSignature", mMetaData.isGoodSignature);
-    if (mMetaData.keyTrust == GpgME::Signature::Unknown) {
-        block.setProperty("keyTrust", QStringLiteral("unknown"));
-    } else if (mMetaData.keyTrust == GpgME::Signature::Marginal) {
-        block.setProperty("keyTrust", QStringLiteral("marginal"));
-    } else if (mMetaData.keyTrust == GpgME::Signature::Full) {
-        block.setProperty("keyTrust", QStringLiteral("full"));
-    } else if (mMetaData.keyTrust == GpgME::Signature::Ultimate) {
-        block.setProperty("keyTrust", QStringLiteral("ultimate"));
-    } else { 
-        block.setProperty("keyTrust", QStringLiteral("untrusted"));
-    }
-
-    QString startKeyHREF;
-    {
-        QString keyWithWithoutURL;
-        if (mCryptoProto) {
-            startKeyHREF =
-            QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">")
-            .arg(mCryptoProto->displayName(),
-                mCryptoProto->name(),
-                QString::fromLatin1(mMetaData.keyId));
-
-            keyWithWithoutURL = QStringLiteral("%1%2</a>").arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArray("0x") + mMetaData.keyId)));
-        } else {
-            keyWithWithoutURL = QStringLiteral("0x") + QString::fromUtf8(mMetaData.keyId);
-        }
-        block.setProperty("keyWithWithoutURL", keyWithWithoutURL);
-    }
-
-    bool onlyShowKeyURL = false;
-    bool showKeyInfos = false;
-    bool cannotCheckSignature = true;
-    QString signer = mMetaData.signer;
-    QString statusStr;
-    QString mClass;
-
-     if (mMetaData.inProgress) {
-        mClass = QStringLiteral("signInProgress");
-    } else {
-        const QStringList &blockAddrs(mMetaData.signerMailAddresses);
-        // note: At the moment frameColor and showKeyInfos are
-        //       used for CMS only but not for PGP signatures
-        // pending(khz): Implement usage of these for PGP sigs as well.
-        int frameColor = SIG_FRAME_COL_UNDEF;
-        statusStr = sigStatusToString(mCryptoProto,
-                                                mMetaData.status_code,
-                                                mMetaData.sigSummary,
-                                                frameColor,
-                                                showKeyInfos);
-        // if needed fallback to english status text
-        // that was reported by the plugin
-        if (statusStr.isEmpty()) {
-            statusStr = mMetaData.status;
-        }
-        if (mMetaData.technicalProblem) {
-            frameColor = SIG_FRAME_COL_YELLOW;
-        }
-
-        switch (frameColor) {
-        case SIG_FRAME_COL_RED:
-            cannotCheckSignature = false;
-            break;
-        case SIG_FRAME_COL_YELLOW:
-            cannotCheckSignature = true;
-            break;
-        case SIG_FRAME_COL_GREEN:
-            cannotCheckSignature = false;
-            break;
-        }
-
-        // temporary hack: always show key information!
-        showKeyInfos = true;
-
-        if (isSMIME && (SIG_FRAME_COL_UNDEF != frameColor)) {
-
-            switch (frameColor) {
-            case SIG_FRAME_COL_RED:
-                mClass = QStringLiteral("signErr");
-                onlyShowKeyURL = true;
-                break;
-            case SIG_FRAME_COL_YELLOW:
-                if (mMetaData.technicalProblem) {
-                    mClass = QStringLiteral("signWarn");
-                } else {
-                    mClass = QStringLiteral("signOkKeyBad");
-                }
-                break;
-            case SIG_FRAME_COL_GREEN:
-                mClass = QStringLiteral("signOkKeyOk");
-                // extra hint for green case
-                // that email addresses in DN do not match fromAddress
-                QString greenCaseWarning;
-                QString msgFrom(KEmailAddress::extractEmailAddress(mFromAddress));
-                QString certificate;
-                if (mMetaData.keyId.isEmpty()) {
-                    certificate = i18n("certificate");
-                } else {
-                    certificate = startKeyHREF + i18n("certificate") + QStringLiteral("</a>");
-                }
-
-                if (!blockAddrs.empty()) {
-                    if (!blockAddrs.contains(msgFrom, Qt::CaseInsensitive)) {
-                        greenCaseWarning =
-                            QStringLiteral("<u>") +
-                            i18nc("Start of warning message.", "Warning:") +
-                            QStringLiteral("</u> ") +
-                            i18n("Sender's mail address is not stored in the %1 used for signing.",
-                                    certificate) +
-                            QStringLiteral("<br />") +
-                            i18n("sender: ") +
-                            msgFrom +
-                            QStringLiteral("<br />") +
-                            i18n("stored: ");
-                        // We cannot use Qt's join() function here but
-                        // have to join the addresses manually to
-                        // extract the mail addresses (without '<''>')
-                        // before including it into our string:
-                        bool bStart = true;
-                        for (QStringList::ConstIterator it = blockAddrs.constBegin();
-                                it != blockAddrs.constEnd(); ++it) {
-                            if (!bStart) {
-                                greenCaseWarning.append(QStringLiteral(", <br />&nbsp; &nbsp;"));
-                            }
-                            bStart = false;
-                            greenCaseWarning.append(KEmailAddress::extractEmailAddress(*it));
-                        }
-                    }
-                } else {
-                    greenCaseWarning =
-                        QStringLiteral("<u>") +
-                        i18nc("Start of warning message.", "Warning:") +
-                        QStringLiteral("</u> ") +
-                        i18n("No mail address is stored in the %1 used for signing, "
-                                "so we cannot compare it to the sender's address %2.",
-                                certificate,
-                                msgFrom);
-                }
-                if (!greenCaseWarning.isEmpty()) {
-                    if (!statusStr.isEmpty()) {
-                        statusStr.append(QStringLiteral("<br />&nbsp;<br />"));
-                    }
-                    statusStr.append(greenCaseWarning);
-                }
-                break;
-            }
-
-            if (showKeyInfos && !cannotCheckSignature) {
-                if (mMetaData.signer.isEmpty()) {
-                    signer.clear();
-                } else {
-                    if (!blockAddrs.empty()) {
-                        const QUrl address = KEmailAddress::encodeMailtoUrl(blockAddrs.first());
-                        signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>").arg(QLatin1String(QUrl::toPercentEncoding(address.path())), signer);
-                    }
-                }
-            }
-        } else {
-            if (mMetaData.signer.isEmpty() || mMetaData.technicalProblem) {
-                mClass = QStringLiteral("signWarn");
-            } else {
-                // HTMLize the signer's user id and create mailto: link
-                signer = MessageCore::StringUtil::quoteHtmlChars(signer, true);
-                signer = QStringLiteral("<a href=\"mailto:%1\">%1</a>").arg(signer);
-
-                if (mMetaData.isGoodSignature) {
-                    if (mMetaData.keyTrust < GpgME::Signature::Marginal) {
-                        mClass = QStringLiteral("signOkKeyBad");
-                    } else {
-                        mClass = QStringLiteral("signOkKeyOk");
-                    }
-                } else {
-                    mClass = QStringLiteral("signErr");
-                }
-            }
-        }
-    }
-
-    block.setProperty("onlyShowKeyURL", onlyShowKeyURL);
-    block.setProperty("showKeyInfos", showKeyInfos);
-    block.setProperty("cannotCheckSignature", cannotCheckSignature);
-    block.setProperty("signer", signer);
-    block.setProperty("statusStr", statusStr);
-    block.setProperty("signClass", mClass);
-
-    const auto html = t->render(&c);
-
-    return html;
-}
-
-void CryptoMessagePart::html(bool decorate)
-{
-    bool hideErrors = false;
-    MimeTreeParser::HtmlWriter *writer = htmlWriter();
-
-    if (!writer) {
-        return;
-    }
-
-    const HTMLBlock::Ptr aBlock(attachmentBlock());
-
-    if (mMetaData.isEncrypted) {
-        Grantlee::Template t = getGrantleeTemplate(this, QStringLiteral("encryptedmessagepart.html"));
-        Grantlee::Context c;
-        QObject block;
-        QObject cryptoProto;
-
-        if (mMetaData.isSigned) {
-            c.insert(QStringLiteral("content"), renderSigned());
-        } else if (mNode) {
-            c.insert(QStringLiteral("content"), internalContent());
-        } else {
-            TestHtmlWriter htmlWriter(writer);
-            mOtp->mHtmlWriter = &htmlWriter;
-            MessagePart::html(decorate);
-            mOtp->mHtmlWriter = writer;
-            c.insert(QStringLiteral("content"), htmlWriter.html);
-        }
-
-        c.insert(QStringLiteral("cryptoProto"), &cryptoProto);
-        if (mDecryptRecipients.size() > 0) {
-            c.insert(QStringLiteral("decryptedRecipients"), QVariant::fromValue(mDecryptRecipients));
-        }
-        c.insert(QStringLiteral("block"), &block);
-
-        cryptoProto.setProperty("name", mCryptoProto->name());
-        cryptoProto.setProperty("displayName", mCryptoProto->displayName());
-
-        block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
-        block.setProperty("inProgress", mMetaData.inProgress);
-        block.setProperty("isDecrypted", decryptMessage());
-        block.setProperty("isDecryptable", mMetaData.isDecryptable);
-        block.setProperty("decryptIcon", QUrl::fromLocalFile(IconNameCache::instance()->iconPath(QStringLiteral("document-decrypt"), KIconLoader::Small)).url());
-        block.setProperty("errorText", mMetaData.errorText);
-        block.setProperty("noSecKey", mNoSecKey);
-
-        const auto html = t->render(&c);
-
-        writer->queue(html);
-        return;
-    }
-
-    if (mMetaData.isSigned) {
-        writer->queue(renderSigned());
-        return;
-    }
-
-    if (mNode) {
-        writer->queue(internalContent());
-    } else {
-        MessagePart::html(decorate);
-    }
-}
-
 EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message)
     : MessagePart(otp, QString())
     , mMessage(message)
@@ -2153,37 +1391,6 @@ EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *o
 EncapsulatedRfc822MessagePart::~EncapsulatedRfc822MessagePart()
 {
 
-}
-
-void EncapsulatedRfc822MessagePart::html(bool decorate)
-{
-    Q_UNUSED(decorate)
-    if (!hasSubParts()) {
-        return;
-    }
-
-    MimeTreeParser::HtmlWriter *writer = htmlWriter();
-
-    if (!writer) {
-        return;
-    }
-
-    const HTMLBlock::Ptr aBlock(attachmentBlock());
-
-    Grantlee::Template t = getGrantleeTemplate(this, QStringLiteral("encapsulatedrfc822messagepart.html"));
-    Grantlee::Context c;
-    QObject block;
-
-    c.insert(QStringLiteral("block"), &block);
-    block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
-    block.setProperty("link", mOtp->nodeHelper()->asHREF(mMessage.data(), QStringLiteral("body")));
-
-    c.insert(QStringLiteral("msgHeader"), mOtp->mSource->createMessageHeader(mMessage.data()));
-    c.insert(QStringLiteral("content"), internalContent());
-
-    const auto html = t->render(&c);
-
-    writer->queue(html);
 }
 
 QString EncapsulatedRfc822MessagePart::text() const

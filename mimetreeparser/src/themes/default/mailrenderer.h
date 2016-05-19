@@ -26,20 +26,19 @@ namespace MimeTreeParser
 {
 
 class MessagePart;
+class HtmlRendererPrivate;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 
 class HtmlRenderer
 {
 public:
     HtmlRenderer(MessagePartPtr msgPart);
+    ~HtmlRenderer();
 
     const QString &html();
 
 private:
-    void render();
-
-    QString mHtml;
-    MessagePartPtr mMsgPart;
+    HtmlRendererPrivate *d;
 };
 }
 #endif //__MIMETREEPARSER_MAILRENDERER_H__

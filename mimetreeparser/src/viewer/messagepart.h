@@ -118,14 +118,12 @@ private:
     QString mExpandIcon;
 
     KMime::Content *attachmentNode() const;
-    HTMLBlockPtr internalAttachmentBlock() const;
     HTMLBlockPtr internalRootBlock() const;
 
     QVector<Interface::MessagePart::Ptr> mBlocks;
-    KMime::Content *mInternalAttachmentNode;
     bool mIsInternalRoot;
 
-    friend class HtmlRenderer;
+    friend class HtmlRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT MimeMessagePart : public MessagePart
@@ -137,7 +135,6 @@ public:
     virtual ~MimeMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
-    void html(bool decorate) Q_DECL_OVERRIDE;
 
 private:
     KMime::Content *mNode;
@@ -155,7 +152,6 @@ public:
     virtual ~MessagePartList();
 
     QString text() const Q_DECL_OVERRIDE;
-    void html(bool decorate) Q_DECL_OVERRIDE;
 
 private:
 };
@@ -174,7 +170,6 @@ public:
     TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage, IconType asIcon);
     virtual ~TextMessagePart();
 
-    void html(bool decorate) Q_DECL_OVERRIDE;
 
     KMMsgSignatureState signatureState() const;
     KMMsgEncryptionState encryptionState() const;
@@ -191,6 +186,8 @@ private:
     bool mShowLink;
     bool mDecryptMessage;
     IconType mAsIcon;
+
+    friend class HtmlRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT HtmlMessagePart : public MessagePart
@@ -202,7 +199,6 @@ public:
     virtual ~HtmlMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
-    void html(bool decorate) Q_DECL_OVERRIDE;
 
     void fix() const Q_DECL_OVERRIDE;
 
@@ -212,6 +208,8 @@ private:
     Interface::ObjectTreeSource *mSource;
     QString mBodyHTML;
     QByteArray mCharset;
+
+    friend class HtmlRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
@@ -223,7 +221,6 @@ public:
     virtual ~AlternativeMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
-    void html(bool decorate) Q_DECL_OVERRIDE;
 
     void setViewHtml(bool html);
     bool viewHtml() const;
@@ -236,6 +233,7 @@ private:
     MimeMessagePart::Ptr mTextPart;
     MimeMessagePart::Ptr mHTMLPart;
     bool mViewHtml;
+    friend class HtmlRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart
@@ -247,13 +245,13 @@ public:
     virtual ~CertMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
-    void html(bool decorate) Q_DECL_OVERRIDE;
 
 private:
     KMime::Content *mNode;
     bool mAutoImport;
     GpgME::ImportResult mImportResult;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    friend class HtmlRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
@@ -265,13 +263,14 @@ public:
     virtual ~EncapsulatedRfc822MessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
-    void html(bool decorate) Q_DECL_OVERRIDE;
 
     void copyContentFrom() const Q_DECL_OVERRIDE;
     void fix() const Q_DECL_OVERRIDE;
 private:
     const KMime::Message::Ptr mMessage;
     KMime::Content *mNode;
+
+    friend class HtmlRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT CryptoMessagePart : public MessagePart
@@ -302,7 +301,6 @@ public:
     void startDecryption(KMime::Content *data = 0);
     void startVerification(const QByteArray &text, const QTextCodec *aCodec);
     void startVerificationDetached(const QByteArray &text, KMime::Content *textNode, const QByteArray &signature);
-    void html(bool decorate) Q_DECL_OVERRIDE;
 
     QByteArray mDecryptedData;
     std::vector<GpgME::Signature> mSignatures;
@@ -321,8 +319,6 @@ private:
      */
     bool okVerify(const QByteArray &data, const QByteArray &signature);
 
-    QString renderSigned();
-
     void sigStatusToMetaData();
 protected:
     bool mPassphraseError;
@@ -333,6 +329,8 @@ protected:
     bool mDecryptMessage;
     QByteArray mVerifiedText;
     std::vector<GpgME::DecryptionResult::Recipient> mDecryptRecipients;
+
+    friend class HtmlRendererPrivate;
 };
 
 }
