@@ -582,7 +582,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         return;    // hm...
     }
 
-    QStyleOptionViewItemV4 opt = option;
+    QStyleOptionViewItem opt = option;
     initStyleOption(&opt, index);
 
     opt.text.clear(); // draw no text for me, please.. I'll do it in a while
@@ -695,8 +695,8 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             }
             break;
             case Theme::PlainJoinedRect: {
-                int rleft = (opt.viewItemPosition == QStyleOptionViewItemV4::Beginning) || (opt.viewItemPosition == QStyleOptionViewItemV4::OnlyOne) ? left : opt.rect.left();
-                int rright = (opt.viewItemPosition == QStyleOptionViewItemV4::End) || (opt.viewItemPosition == QStyleOptionViewItemV4::OnlyOne) ? right : opt.rect.left() + opt.rect.width();
+                int rleft = (opt.viewItemPosition == QStyleOptionViewItem::Beginning) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne) ? left : opt.rect.left();
+                int rright = (opt.viewItemPosition == QStyleOptionViewItem::End) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne) ? right : opt.rect.left() + opt.rect.width();
                 painter->fillRect(
                     QRect(rleft, top, rright - rleft, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
                     QBrush(mGroupHeaderBackgroundColor)
@@ -704,19 +704,19 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             }
             break;
             case Theme::RoundedJoinedRect: {
-                if (opt.viewItemPosition == QStyleOptionViewItemV4::Middle) {
+                if (opt.viewItemPosition == QStyleOptionViewItem::Middle) {
                     painter->fillRect(
                         QRect(opt.rect.left(), top, opt.rect.width(), opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
                         QBrush(mGroupHeaderBackgroundColor)
                     );
                     break; // don't fall through
                 }
-                if (opt.viewItemPosition == QStyleOptionViewItemV4::Beginning) {
+                if (opt.viewItemPosition == QStyleOptionViewItem::Beginning) {
                     painter->fillRect(
                         QRect(opt.rect.left() + opt.rect.width() - 10, top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
                         QBrush(mGroupHeaderBackgroundColor)
                     );
-                } else if (opt.viewItemPosition == QStyleOptionViewItemV4::End) {
+                } else if (opt.viewItemPosition == QStyleOptionViewItem::End) {
                     painter->fillRect(
                         QRect(opt.rect.left(), top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
                         QBrush(mGroupHeaderBackgroundColor)
@@ -749,19 +749,19 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 QLinearGradient gradient(0, top, 0, top + opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2));
                 gradient.setColorAt(0.0, KColorScheme::shade(mGroupHeaderBackgroundColor, KColorScheme::LightShade, 0.3));
                 gradient.setColorAt(1.0, mGroupHeaderBackgroundColor);
-                if (opt.viewItemPosition == QStyleOptionViewItemV4::Middle) {
+                if (opt.viewItemPosition == QStyleOptionViewItem::Middle) {
                     painter->fillRect(
                         QRect(opt.rect.left(), top, opt.rect.width(), opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
                         QBrush(gradient)
                     );
                     break; // don't fall through
                 }
-                if (opt.viewItemPosition == QStyleOptionViewItemV4::Beginning) {
+                if (opt.viewItemPosition == QStyleOptionViewItem::Beginning) {
                     painter->fillRect(
                         QRect(opt.rect.left() + opt.rect.width() - 10, top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
                         QBrush(gradient)
                     );
-                } else if (opt.viewItemPosition == QStyleOptionViewItemV4::End) {
+                } else if (opt.viewItemPosition == QStyleOptionViewItem::End) {
                     painter->fillRect(
                         QRect(opt.rect.left(), top, 10, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2)),
                         QBrush(gradient)
@@ -797,14 +797,14 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 // oxygen, for instance, has a nice graphics for selected items
                 opt.rect = QRect(left, top, right - left, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2));
                 opt.state |= QStyle::State_Selected;
-                opt.viewItemPosition = QStyleOptionViewItemV4::OnlyOne;
+                opt.viewItemPosition = QStyleOptionViewItem::OnlyOne;
                 opt.palette.setColor(cg, QPalette::Highlight, mGroupHeaderBackgroundColor);
                 style->drawControl(QStyle::CE_ItemViewItem, &opt, painter, mItemView);
             }
             break;
             case Theme::StyledJoinedRect: {
-                int rleft = (opt.viewItemPosition == QStyleOptionViewItemV4::Beginning) || (opt.viewItemPosition == QStyleOptionViewItemV4::OnlyOne) ? left : opt.rect.left();
-                int rright = (opt.viewItemPosition == QStyleOptionViewItemV4::End) || (opt.viewItemPosition == QStyleOptionViewItemV4::OnlyOne) ? right : opt.rect.left() + opt.rect.width();
+                int rleft = (opt.viewItemPosition == QStyleOptionViewItem::Beginning) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne) ? left : opt.rect.left();
+                int rright = (opt.viewItemPosition == QStyleOptionViewItem::End) || (opt.viewItemPosition == QStyleOptionViewItem::OnlyOne) ? right : opt.rect.left() + opt.rect.width();
                 opt.rect = QRect(rleft, top, rright - rleft, opt.rect.height() - (gGroupHeaderInnerVerticalMargin * 2));
                 opt.state |= QStyle::State_Selected;
                 opt.palette.setColor(cg, QPalette::Highlight, mGroupHeaderBackgroundColor);
