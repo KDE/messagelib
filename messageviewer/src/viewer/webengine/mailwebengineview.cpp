@@ -268,11 +268,6 @@ void MailWebEngineView::toggleFullAddressList(const QString &field, const boost:
     page()->runJavaScript(MessageViewer::MailWebEngineScript::replaceInnerHtml(field, html, doShow), invoke(this, &MailWebEngineView::updateToggleFullAddressList));
 }
 
-void MailWebEngineView::clearSelection()
-{
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::clearSelection());
-}
-
 void MailWebEngineView::updateToggleFullAddressList(const QVariant &result)
 {
     //qDebug() << " result" << result;
