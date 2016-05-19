@@ -21,6 +21,7 @@
 #include <QWebEnginePage>
 #include "webengineviewer_export.h"
 #include <QVariant>
+class QWebEngineProfile;
 namespace WebEngineViewer
 {
 class WebHitTest;
@@ -30,6 +31,8 @@ class WEBENGINEVIEWER_EXPORT WebEnginePage : public QWebEnginePage
     Q_OBJECT
 public:
     explicit WebEnginePage(QObject *parent = Q_NULLPTR);
+    explicit WebEnginePage(QWebEngineProfile *profile, QObject *parent = Q_NULLPTR);
+
     ~WebEnginePage();
     WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
     QVariant execJavaScript(const QString &scriptSource, int timeout = 500);
