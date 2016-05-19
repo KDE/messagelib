@@ -34,13 +34,15 @@ class MessageComposer::RecipientPrivate
 public:
     RecipientPrivate(const QString &email, Recipient::Type type)
         : mEmail(email),
+          mEncryptionAction(Kleo::Impossible),
           mType(type)
     {
-
     }
 
     QString mEmail;
     QString mName;
+    Kleo::Action mEncryptionAction;
+    GpgME::Key mKey;
     MessageComposer::Recipient::Type mType;
 };
 
@@ -133,4 +135,24 @@ QStringList Recipient::allTypeLabels()
     types.append(typeLabel(Cc));
     types.append(typeLabel(Bcc));
     return types;
+}
+
+GpgME::Key Recipient::key() const
+{
+    return d->mKey;
+}
+
+void Recipient::setKey(const GpgME::Key &key)
+{
+    d->mKey = key;
+}
+
+Kleo::Action MessageComposer::Recipient::encryptionAction() const
+{
+    return d->mEncryptionAction;
+}
+
+void MessageComposer::Recipient::setEncryptionAction(const Kleo::Action action)
+{
+    d->mEncryptionAction = action;
 }
