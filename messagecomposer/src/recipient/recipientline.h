@@ -61,7 +61,7 @@ protected:
     void keyPressEvent(QKeyEvent *ev) Q_DECL_OVERRIDE;
 };
 
-class RecipientLineNG : public KPIM::MultiplyingLine
+class MESSAGECOMPOSER_EXPORT RecipientLineNG : public KPIM::MultiplyingLine
 {
     Q_OBJECT
 public:
@@ -95,6 +95,8 @@ public:
     Recipient::Type recipientType() const;
     QSharedPointer<Recipient> recipient() const;
 
+    void setIcon(const QIcon &icon, const QString &tooltip = QString());
+
     /**
      * Sets the config file used for storing recent addresses.
      */
@@ -104,6 +106,8 @@ Q_SIGNALS:
     void typeModified(RecipientLineNG *);
     void addRecipient(RecipientLineNG *, const QString &);
     void countChanged();
+    void iconClicked();
+
 
 protected Q_SLOTS:
     void slotEditingFinished();
