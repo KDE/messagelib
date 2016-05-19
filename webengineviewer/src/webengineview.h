@@ -20,7 +20,7 @@
 
 #include <QWebEngineView>
 #include "webengineviewer_export.h"
-
+class QWebEngineDownloadItem;
 namespace WebEngineViewer
 {
 class WebEngineViewPrivate;
@@ -36,6 +36,7 @@ public:
     qreal relativePosition() const;
 
     bool hasPrintPreviewSupport() const;
+    void saveHtml(QWebEngineDownloadItem *download);
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;

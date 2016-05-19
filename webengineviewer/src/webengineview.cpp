@@ -21,6 +21,12 @@
 #include <QKeyEvent>
 #include <QMouseEvent>
 #include <QWheelEvent>
+#include <QFileDialog>
+#include <QWebEngineProfile>
+
+#include <KLocalizedString>
+#include <QWebEngineDownloadItem>
+
 
 using namespace WebEngineViewer;
 
@@ -51,6 +57,9 @@ WebEngineView::WebEngineView(QWidget *parent)
 
     installEventFilter(this);
     connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    connect(page()->profile(), &QWebEngineProfile::downloadRequested, this, &WebEngineView::saveHtml);
+#endif
 }
 
 WebEngineView::~WebEngineView()
@@ -191,5 +200,19 @@ bool WebEngineView::hasPrintPreviewSupport() const
     return true;
 #else
     return false;
+#endif
+}
+
+void WebEngineView::saveHtml(QWebEngineDownloadItem *download)
+{
+#if QT_VERSION >= 0x050700
+    const QString fileName = QFileDialog::getSaveFileName(this, i18n("Save Html Page"));
+    if (!fileName.isEmpty()) {
+        download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
+        download->setPath(fileName);
+        download->accept();
+    }
+#else
+    Q_UNUSED(download);
 #endif
 }
