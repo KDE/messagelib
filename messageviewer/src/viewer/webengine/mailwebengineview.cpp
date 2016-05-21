@@ -292,6 +292,7 @@ bool MailWebEngineView::hasVerticalScrollBar() const
 
 bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) const
 {
+    Q_UNUSED(globalPos);
     qDebug() << "bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) const not implemented";
     //TODO
     return false;
@@ -304,6 +305,7 @@ void MailWebEngineView::scrollToRelativePosition(qreal pos)
 
 QUrl MailWebEngineView::linkOrImageUrlAt(const QPoint &global) const
 {
+    Q_UNUSED(global);
     //TODO
     return {};
 }

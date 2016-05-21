@@ -160,6 +160,7 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 
 QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 {
+    Q_UNUSED(type);
     //TODO
 #if 0
     QWebEngineView *view = new QWebEngineView(this);
