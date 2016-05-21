@@ -108,8 +108,9 @@ const SubtypeRegistry &BodyPartFormatterBaseFactory::subtypeRegistry(const char 
     d->setup();
     assert(d->all);
 
+    static SubtypeRegistry emptyRegistry;
     if (d->all->empty()) {
-        return SubtypeRegistry();
+        return emptyRegistry;
     }
 
     TypeRegistry::const_iterator type_it = d->all->find(type);
@@ -117,12 +118,12 @@ const SubtypeRegistry &BodyPartFormatterBaseFactory::subtypeRegistry(const char 
         type_it = d->all->find("*");
     }
     if (type_it == d->all->end()) {
-        return SubtypeRegistry();
+        return emptyRegistry;
     }
 
     const SubtypeRegistry &subtype_reg = type_it->second;
     if (subtype_reg.empty()) {
-        return SubtypeRegistry();
+        return emptyRegistry;
     }
     return subtype_reg;
 }
