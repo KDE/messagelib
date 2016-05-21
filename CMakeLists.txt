@@ -95,7 +95,7 @@ if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
     execute_process(COMMAND ${GIT_EXECUTABLE} log -1 --oneline --format=%ci
                     WORKING_DIRECTORY ${Messagelib_SOURCE_DIR}
                     OUTPUT_VARIABLE messagelib_git_last_change)
-    string(REGEX REPLACE " [0-9:+ ]*\n" "" messagelib_git_last_change "${messagelib_git_last_change}")
+    string(REGEX REPLACE " [-0-9:+ ]*\n" "" messagelib_git_last_change "${messagelib_git_last_change}")
   endif()
 endif()
 
