@@ -33,7 +33,12 @@ WebEngineExportHtmlPageJob::~WebEngineExportHtmlPageJob()
 
 void WebEngineExportHtmlPageJob::start()
 {
-
+    if (!mEngineView) {
+        Q_EMIT failed();
+        deleteLater();
+        return;
+    }
+    //TODO
 }
 
 QWebEngineView *WebEngineExportHtmlPageJob::engineView() const

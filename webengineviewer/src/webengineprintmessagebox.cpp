@@ -16,6 +16,7 @@
 */
 
 #include "webengineprintmessagebox.h"
+#include "config-webengineviewer.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
