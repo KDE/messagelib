@@ -29,6 +29,7 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldFailedWhenWebEngineIsNotDefined();
+    void shouldFailedWhenPageLayoutIsNotDefined();
 };
 
 #endif // PRINTWEBENGINEVIEWJOBTEST_H
