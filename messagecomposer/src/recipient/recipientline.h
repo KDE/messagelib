@@ -83,7 +83,6 @@ public:
     void fixTabOrder(QWidget *previous) Q_DECL_OVERRIDE;
     QWidget *tabOut() const Q_DECL_OVERRIDE;
 
-    void moveCompletionPopup() Q_DECL_OVERRIDE;
     void setCompletionMode(KCompletion::CompletionMode mode) Q_DECL_OVERRIDE;
 
     int setColumnWidth(int w) Q_DECL_OVERRIDE;

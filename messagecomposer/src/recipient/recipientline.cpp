@@ -237,17 +237,6 @@ void RecipientLineNG::clear()
     mEdit->clear();
 }
 
-void RecipientLineNG::moveCompletionPopup()
-{
-    if (mEdit->completionBox(false)) {
-        if (mEdit->completionBox()->isVisible()) {
-            // ### trigger moving, is there a nicer way to do that?
-            mEdit->completionBox()->hide();
-            mEdit->completionBox()->show();
-        }
-    }
-}
-
 void RecipientLineNG::setCompletionMode(KCompletion::CompletionMode mode)
 {
     mEdit->setCompletionMode(mode);
