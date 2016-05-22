@@ -103,23 +103,12 @@ void MailSourceWebEngineViewer::setRawSource(const QString &source)
     mRawBrowser->setText(source);
 }
 
-struct SetPlainTextFunctor {
-    MailSourceViewTextBrowserWidget *textEdit;
-    explicit SetPlainTextFunctor(MailSourceViewTextBrowserWidget *textEdit)
-        : textEdit(textEdit)
-    {
-    }
-    void operator()(const QString &result)
-    {
-        textEdit->setPlainText(result);
-    }
-};
-
 void MailSourceWebEngineViewer::setDisplayedSource(QWebEnginePage *page)
 {
 #ifndef NDEBUG
     if (page) {
-        page->toHtml(SetPlainTextFunctor(mHtmlBrowser));
+        MailSourceViewTextBrowserWidget *browser = mHtmlBrowser;
+        page->toHtml([browser](const QString &result){ browser->setPlainText(result); });
     }
 #else
     Q_UNUSED(page);
