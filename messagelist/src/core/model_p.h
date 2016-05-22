@@ -430,6 +430,11 @@ public:
      * virtual (so it's always an indirect function call). Caching makes sense.
      */
     bool mStorageModelContainsOutboundMessages;
+
+    /**
+     * Vector of signal-slot connections between StorageModel and us
+     */
+    QVector<QMetaObject::Connection> mStorageModelConnections;
 };
 
 } // namespace Core

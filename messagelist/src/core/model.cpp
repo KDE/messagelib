@@ -68,6 +68,8 @@
 #include <QLocale>
 #include <QElapsedTimer>
 
+#include <algorithm>
+
 namespace MessageList
 {
 
@@ -309,8 +311,8 @@ Model::Model(View *pParent)
     d->mFillStepTimer.setSingleShot(true);
     d->mInvariantRowMapper = new ModelInvariantRowMapper();
     d->mModelForItemFunctions = this;
-    connect(&d->mFillStepTimer, SIGNAL(timeout()),
-            SLOT(viewItemJobStep()));
+    connect(&d->mFillStepTimer, &QTimer::timeout,
+            this, [this]() { d->viewItemJobStep(); });
 
     d->mCachedTodayLabel = i18n("Today");
     d->mCachedYesterdayLabel = i18n("Yesterday");
@@ -324,8 +326,8 @@ Model::Model(View *pParent)
 
     d->mCachedWatchedOrIgnoredStatusBits = Akonadi::MessageStatus::statusIgnored().toQInt32() | Akonadi::MessageStatus::statusWatched().toQInt32();
 
-    connect(_k_heartBeatTimer, SIGNAL(timeout()),
-            this, SLOT(checkIfDateChanged()));
+    connect(_k_heartBeatTimer, &QTimer::timeout,
+            this, [this]() { d->checkIfDateChanged(); });
 
     if (!_k_heartBeatTimer->isActive()) {   // First model starts it
         _k_heartBeatTimer->start(60000);   // 1 minute
@@ -378,7 +380,7 @@ void Model::setFilter(const Filter *filter)
     d->mFilter = filter;
 
     if (d->mFilter) {
-        connect(d->mFilter, SIGNAL(finished()), this, SLOT(slotApplyFilter()));
+        connect(d->mFilter, &Filter::finished, this, [this]() { d->slotApplyFilter(); });
     }
 
     d->slotApplyFilter();
@@ -734,20 +736,10 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
     d->clear();
 
     if (d->mStorageModel) {
-        disconnect(d->mStorageModel, SIGNAL(rowsInserted(QModelIndex,int,int)),
-                   this, SLOT(slotStorageModelRowsInserted(QModelIndex,int,int)));
-        disconnect(d->mStorageModel, SIGNAL(rowsRemoved(QModelIndex,int,int)),
-                   this, SLOT(slotStorageModelRowsRemoved(QModelIndex,int,int)));
-
-        disconnect(d->mStorageModel, SIGNAL(layoutChanged()),
-                   this, SLOT(slotStorageModelLayoutChanged()));
-        disconnect(d->mStorageModel, SIGNAL(modelReset()),
-                   this, SLOT(slotStorageModelLayoutChanged()));
-
-        disconnect(d->mStorageModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-                   this, SLOT(slotStorageModelDataChanged(QModelIndex,QModelIndex)));
-        disconnect(d->mStorageModel, SIGNAL(headerDataChanged(Qt::Orientation,int,int)),
-                   this, SLOT(slotStorageModelHeaderDataChanged(Qt::Orientation,int,int)));
+        // Disconnect all signals from old storageModel
+        std::for_each(d->mStorageModelConnections.cbegin(), d->mStorageModelConnections.cend(),
+                      [](const QMetaObject::Connection &c) -> bool { return QObject::disconnect(c); });
+        d->mStorageModelConnections.clear();
     }
 
     d->mStorageModel = storageModel;
@@ -762,20 +754,32 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
     d->mPreSelectionMode = preSelectionMode;
     d->mStorageModelContainsOutboundMessages = d->mStorageModel->containsOutboundMessages();
 
-    connect(d->mStorageModel, SIGNAL(rowsInserted(QModelIndex,int,int)),
-            this, SLOT(slotStorageModelRowsInserted(QModelIndex,int,int)));
-    connect(d->mStorageModel, SIGNAL(rowsRemoved(QModelIndex,int,int)),
-            this, SLOT(slotStorageModelRowsRemoved(QModelIndex,int,int)));
-
-    connect(d->mStorageModel, SIGNAL(layoutChanged()),
-            this, SLOT(slotStorageModelLayoutChanged()));
-    connect(d->mStorageModel, SIGNAL(modelReset()),
-            this, SLOT(slotStorageModelLayoutChanged()));
-
-    connect(d->mStorageModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-            this, SLOT(slotStorageModelDataChanged(QModelIndex,QModelIndex)));
-    connect(d->mStorageModel, SIGNAL(headerDataChanged(Qt::Orientation,int,int)),
-            this, SLOT(slotStorageModelHeaderDataChanged(Qt::Orientation,int,int)));
+    d->mStorageModelConnections = {
+        connect(d->mStorageModel, &StorageModel::rowsInserted,
+            this, [this](const QModelIndex &parent, int first, int last) {
+                d->slotStorageModelRowsInserted(parent, first, last);
+            }),
+        connect(d->mStorageModel, &StorageModel::rowsRemoved,
+            this, [this](const QModelIndex &parent, int first, int last) {
+                d->slotStorageModelRowsRemoved(parent, first, last);
+            }),
+        connect(d->mStorageModel, &StorageModel::layoutChanged,
+            this, [this]() {
+                d->slotStorageModelLayoutChanged();
+            }),
+        connect(d->mStorageModel, &StorageModel::modelReset,
+            this, [this]() {
+                d->slotStorageModelLayoutChanged();
+            }),
+        connect(d->mStorageModel, &StorageModel::dataChanged,
+            this, [this](const QModelIndex &topLeft, const QModelIndex &bottomRight) {
+                d->slotStorageModelDataChanged(topLeft, bottomRight);
+            }),
+        connect(d->mStorageModel, &StorageModel::headerDataChanged,
+            this, [this](Qt::Orientation orientation, int first, int last) {
+                d->slotStorageModelHeaderDataChanged(orientation, first, last);
+            })
+    };
 
     if (d->mStorageModel->rowCount() == 0) {
         return;    // folder empty: nothing to fill

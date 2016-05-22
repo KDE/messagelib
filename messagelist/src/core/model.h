@@ -223,15 +223,6 @@ Q_SIGNALS:
     void statusMessage(const QString &message);
 
 private:
-    Q_PRIVATE_SLOT(d, void checkIfDateChanged())
-    Q_PRIVATE_SLOT(d, void viewItemJobStep())
-    Q_PRIVATE_SLOT(d, void slotStorageModelRowsInserted(const QModelIndex &, int, int))
-    Q_PRIVATE_SLOT(d, void slotStorageModelRowsRemoved(const QModelIndex &, int, int))
-    Q_PRIVATE_SLOT(d, void slotStorageModelDataChanged(const QModelIndex &, const QModelIndex &))
-    Q_PRIVATE_SLOT(d, void slotStorageModelHeaderDataChanged(Qt::Orientation, int, int))
-    Q_PRIVATE_SLOT(d, void slotStorageModelLayoutChanged())
-    Q_PRIVATE_SLOT(d, void slotApplyFilter())
-
     friend class ModelPrivate;
     ModelPrivate *const d;
 };
