@@ -37,7 +37,7 @@ PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
     mPrintPreviewWidget->setObjectName(QStringLiteral("printpreviewwidget"));
     layout->addWidget(mPrintPreviewWidget);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-    QPushButton *printButton = new QPushButton;
+    QPushButton *printButton = new QPushButton(i18n("Print"));
     printButton->setObjectName(QStringLiteral("printbutton"));
     connect(printButton, &QPushButton::clicked, this, &PrintPreviewDialog::slotPrint);
     buttonBox->addButton(printButton, QDialogButtonBox::ActionRole);
