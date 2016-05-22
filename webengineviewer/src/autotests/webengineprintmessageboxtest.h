@@ -15,30 +15,17 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef PRINTPREVIEWDIALOG_H
-#define PRINTPREVIEWDIALOG_H
+#ifndef WEBENGINEPRINTMESSAGEBOXTEST_H
+#define WEBENGINEPRINTMESSAGEBOXTEST_H
 
-#include <QDialog>
+#include <QObject>
 
-namespace WebEngineViewer
-{
-class PrintPreviewPageWidget;
-class PrintPreviewDialog : public QDialog
+class WebEnginePrintMessageBoxTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit PrintPreviewDialog(QWidget *parent = Q_NULLPTR);
-    ~PrintPreviewDialog();
-    void loadFile(const QString &path);
-
-private Q_SLOTS:
-    void slotPrint();
-
-private:
-    void writeConfig();
-    void readConfig();
-    PrintPreviewPageWidget *mPrintPreviewWidget;
+    explicit WebEnginePrintMessageBoxTest(QObject *parent = Q_NULLPTR);
+    ~WebEnginePrintMessageBoxTest();
 };
-}
 
-#endif // PRINTPREVIEWDIALOG_H
+#endif // WEBENGINEPRINTMESSAGEBOXTEST_H

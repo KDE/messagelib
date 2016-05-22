@@ -179,25 +179,3 @@ QString WebEngineScript::scrollToRelativePosition(qreal pos)
     const QString source = QString::fromLatin1("window.scrollTo(window.scrollX, %1); [window.scrollX, window.scrollY];").arg(pos);
     return source;
 }
-
-QString WebEngineScript::clearSelection()
-{
-#if 0
-    if (window.getSelection) {
-        if (window.getSelection().empty) {  // Chrome
-            window.getSelection().empty();
-        } else if (window.getSelection().removeAllRanges) {  // Firefox
-            window.getSelection().removeAllRanges();
-        }
-    }
-#endif
-    const QString source = QString::fromLatin1("(function() {"
-                           "if (window.getSelection) {"
-                           "  if (window.getSelection().empty) {"
-                           "    window.getSelection().empty();"
-                           "  }"
-                           "}"
-                           "})()");
-    //qDebug() << " source " << source;
-    return source;
-}

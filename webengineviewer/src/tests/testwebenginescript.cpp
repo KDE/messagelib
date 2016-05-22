@@ -57,6 +57,9 @@ TestWebEngineScriptPage::TestWebEngineScriptPage(QObject *parent)
 
 void TestWebEngineScriptPage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID)
 {
+    Q_UNUSED(level);
+    Q_UNUSED(lineNumber);
+    Q_UNUSED(sourceID);
     qDebug() << "JAVASCRIPT MESSAGE : " << message;
     //TODO improve it.
     Q_EMIT showConsoleMessage(message);
@@ -80,12 +83,11 @@ TestWebEngineScript::TestWebEngineScript(QWidget *parent)
 
 TestWebEngineScript::~TestWebEngineScript()
 {
-
 }
 
 void TestWebEngineScript::slotShowConsoleMessage(const QString &msg)
 {
-
+    Q_UNUSED(msg);
 }
 
 void TestWebEngineScript::handleScript(const QVariant &res)
@@ -161,7 +163,6 @@ void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
     scriptCombo->addItem(QStringLiteral("scroll down"), WebEngineViewer::WebEngineScript::scrollDown(0));
     scriptCombo->addItem(QStringLiteral("scroll up"), WebEngineViewer::WebEngineScript::scrollUp(0));
     scriptCombo->addItem(QStringLiteral("scroll percentage"), WebEngineViewer::WebEngineScript::scrollPercentage(0));
-    scriptCombo->addItem(QStringLiteral("clear selection"), WebEngineViewer::WebEngineScript::clearSelection());
 #if 0
     WebEngineViewer::WebEngineScript::setElementByIdVisible(const QString & elementStr, bool visibility);
     WebEngineViewer::WebEngineScript::setStyleToElement(const QString & elementStr, const QString & style);

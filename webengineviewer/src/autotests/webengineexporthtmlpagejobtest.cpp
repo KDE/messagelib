@@ -15,30 +15,25 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef PRINTPREVIEWDIALOG_H
-#define PRINTPREVIEWDIALOG_H
+#include "webengineexporthtmlpagejobtest.h"
+#include "../webengineexporthtmlpagejob.h"
+#include <QTest>
 
-#include <QDialog>
-
-namespace WebEngineViewer
+WebEngineExportHtmlPageJobTest::WebEngineExportHtmlPageJobTest(QObject *parent)
+    : QObject(parent)
 {
-class PrintPreviewPageWidget;
-class PrintPreviewDialog : public QDialog
-{
-    Q_OBJECT
-public:
-    explicit PrintPreviewDialog(QWidget *parent = Q_NULLPTR);
-    ~PrintPreviewDialog();
-    void loadFile(const QString &path);
 
-private Q_SLOTS:
-    void slotPrint();
-
-private:
-    void writeConfig();
-    void readConfig();
-    PrintPreviewPageWidget *mPrintPreviewWidget;
-};
 }
 
-#endif // PRINTPREVIEWDIALOG_H
+WebEngineExportHtmlPageJobTest::~WebEngineExportHtmlPageJobTest()
+{
+
+}
+
+void WebEngineExportHtmlPageJobTest::shouldHaveDefaultValue()
+{
+    WebEngineViewer::WebEngineExportHtmlPageJob job;
+    QVERIFY(!job.engineView());
+}
+
+QTEST_MAIN(WebEngineExportHtmlPageJobTest)

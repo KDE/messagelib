@@ -11,7 +11,6 @@ include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
 include(ECMPackageConfigHelpers)
-include(ECMSetupVersion)
 include(FeatureSummary)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -19,7 +18,7 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
 
-set(PIM_VERSION "5.2.64")
+set(PIM_VERSION "5.2.66")
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
 set(KDEPIMLIBS_LIB_VERSION "5.2.40")
@@ -34,7 +33,7 @@ set(KMBOX_LIB_VERSION "5.2.40")
 set(AKONADINOTES_LIB_VERSION "5.2.40")
 set(KPIMTEXTEDIT_LIB_VERSION "5.2.40")
 set(KDEPIM_APPS_LIB_VERSION "5.2.40")
-set(LIBKDEPIM_LIB_VERSION "5.2.40")
+set(LIBKDEPIM_LIB_VERSION "5.2.41")
 
 set(AKONADI_VERSION "5.2.41")
 
@@ -96,7 +95,7 @@ if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
     execute_process(COMMAND ${GIT_EXECUTABLE} log -1 --oneline --format=%ci
                     WORKING_DIRECTORY ${Messagelib_SOURCE_DIR}
                     OUTPUT_VARIABLE messagelib_git_last_change)
-    string(REGEX REPLACE " [0-9:+ ]*\n" "" messagelib_git_last_change "${messagelib_git_last_change}")
+    string(REGEX REPLACE " [-0-9:+ ]*\n" "" messagelib_git_last_change "${messagelib_git_last_change}")
   endif()
 endif()
 

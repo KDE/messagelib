@@ -15,38 +15,32 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "printconfiguredialog.h"
-#include "printconfigurewidget.h"
+#include "webengineprintmessagebox.h"
+#include "config-webengineviewer.h"
+#include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <KLocalizedString>
+#include <QLabel>
 
 using namespace WebEngineViewer;
-
-PrintConfigureDialog::PrintConfigureDialog(QWidget *parent)
+WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     : QDialog(parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
 
-    mConfigureWidget = new PrintConfigureWidget(this);
-    mConfigureWidget->setObjectName(QStringLiteral("configurewidget"));
-    mainLayout->addWidget(mConfigureWidget);
+    //TODO add more.
+    QLabel *lab = new QLabel(i18n("Printing WebEngine is limited for the moment."), this);
+    lab->setObjectName(QStringLiteral("webengineprintmessageboxlabel"));
+    mainLayout->addWidget(lab);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    buttonBox->setObjectName(QStringLiteral("buttonBox"));
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel);
+    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &WebEnginePrintMessageBox::reject);
     mainLayout->addWidget(buttonBox);
-
-    connect(buttonBox, &QDialogButtonBox::accepted, this, &PrintConfigureDialog::accept);
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &PrintConfigureDialog::reject);
 }
 
-PrintConfigureDialog::~PrintConfigureDialog()
+WebEnginePrintMessageBox::~WebEnginePrintMessageBox()
 {
 
-}
-
-QPageLayout PrintConfigureDialog::currentPageLayout() const
-{
-    return mConfigureWidget->currentPageLayout();
 }

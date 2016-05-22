@@ -8,27 +8,31 @@ if(BUILD_TESTING)
     add_subdirectory(findbar/autotests)
 endif()
 
-if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
-    find_package(Poppler "0.12.1" COMPONENTS Qt5)
-    set_package_properties("Poppler" PROPERTIES
-        TYPE RECOMMENDED
-        PURPOSE "Support for print preview.")
+if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.6.99")
+    if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
+        find_package(Poppler "0.12.1" COMPONENTS Qt5)
+        set_package_properties("Poppler" PROPERTIES
+            TYPE RECOMMENDED
+            PURPOSE "Support for print preview.")
 
-    if (Poppler_Qt5_FOUND)
-        set(libwebengineviewer_print_SRCS
-            print/printpreviewdialog.cpp
-            print/printpreviewpageviewer.cpp
-            print/printpreviewpagewidget.cpp
-            print/printwebengineviewjob.cpp
-            print/printconfiguredialog.cpp
-            print/printconfigurewidget.cpp
-            )
-        set(poppler_lib Poppler::Qt5 Qt5::PrintSupport)
+        if (Poppler_Qt5_FOUND)
+            set(libwebengineviewer_print_SRCS
+                print/printpreviewdialog.cpp
+                print/printpreviewpageviewer.cpp
+                print/printpreviewpagewidget.cpp
+                print/printwebengineviewjob.cpp
+                print/printconfiguredialog.cpp
+                print/printconfigurewidget.cpp
+                )
+            set(poppler_lib Poppler::Qt5 Qt5::PrintSupport)
+        endif()
+        if(BUILD_TESTING)
+            add_subdirectory(print/autotests)
+            add_subdirectory(print/tests)
+        endif()
     endif()
-    if(BUILD_TESTING)
-        add_subdirectory(print/autotests)
-        add_subdirectory(print/tests)
-    endif()
+else()
+    set(WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT FALSE)
 endif()
 
 configure_file(config-webengineviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-webengineviewer.h )
@@ -46,9 +50,11 @@ set(libwebengineviewer_webengine_SRCS
     webenginepage.cpp
     webenginescript.cpp
     webengineview.cpp
+
     webengineaccesskey/webengineaccesskey.cpp
     webengineaccesskey/webengineaccesskeyanchor.cpp
     webengineaccesskey/webengineaccesskeyutils.cpp
+    webengineprintmessagebox.cpp
     )
 
 set(libwebengineviewer_findbar_SRCS

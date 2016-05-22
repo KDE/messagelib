@@ -20,6 +20,7 @@
 #include <QTest>
 #include <QPageLayout>
 #include <QSignalSpy>
+#include <QWebEngineView>
 
 PrintWebEngineViewJobTest::PrintWebEngineViewJobTest(QObject *parent)
     : QObject(parent)
@@ -47,6 +48,18 @@ void PrintWebEngineViewJobTest::shouldFailedWhenWebEngineIsNotDefined()
     job.start();
     QCOMPARE(spyFailed.count(), 1);
     QCOMPARE(spySuccess.count(), 0);
+}
+
+void PrintWebEngineViewJobTest::shouldFailedWhenPageLayoutIsNotDefined()
+{
+    WebEngineViewer::PrintWebEngineViewJob job;
+    QSignalSpy spyFailed(&job, SIGNAL(failed()));
+    QSignalSpy spySuccess(&job, SIGNAL(success(QString)));
+    job.setEngineView(new QWebEngineView());
+    job.start();
+    QCOMPARE(spyFailed.count(), 1);
+    QCOMPARE(spySuccess.count(), 0);
+
 }
 
 QTEST_MAIN(PrintWebEngineViewJobTest)

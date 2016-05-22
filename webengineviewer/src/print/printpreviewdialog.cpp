@@ -23,6 +23,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
+#include <QPushButton>
 
 using namespace WebEngineViewer;
 
@@ -36,6 +37,10 @@ PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
     mPrintPreviewWidget->setObjectName(QStringLiteral("printpreviewwidget"));
     layout->addWidget(mPrintPreviewWidget);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
+    QPushButton *printButton = new QPushButton;
+    printButton->setObjectName(QStringLiteral("printbutton"));
+    connect(printButton, &QPushButton::clicked, this, &PrintPreviewDialog::slotPrint);
+    buttonBox->addButton(printButton, QDialogButtonBox::ActionRole);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     layout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &PrintPreviewDialog::reject);
@@ -66,4 +71,11 @@ void PrintPreviewDialog::readConfig()
 void PrintPreviewDialog::loadFile(const QString &path)
 {
     mPrintPreviewWidget->loadFile(path);
+}
+
+void PrintPreviewDialog::slotPrint()
+{
+    //TODO select page ?
+    //mPrintPreviewWidget->print();
+    //TODO
 }

@@ -94,6 +94,7 @@ RecipientLineNG::RecipientLineNG(QWidget *parent)
     connect(mEdit, &RecipientLineEdit::focusUp, this, &RecipientLineNG::slotFocusUp);
     connect(mEdit, &RecipientLineEdit::focusDown, this, &RecipientLineNG::slotFocusDown);
     connect(mEdit, &RecipientLineEdit::rightPressed, this, &RecipientLineNG::rightPressed);
+    connect(mEdit, &RecipientLineEdit::iconClicked, this, &RecipientLineNG::iconClicked);
 
     connect(mEdit, SIGNAL(leftPressed()), mCombo, SLOT(setFocus()));
     connect(mEdit, &RecipientLineEdit::editingFinished, this, &RecipientLineNG::slotEditingFinished);
@@ -165,7 +166,13 @@ void RecipientLineNG::dataFromFields()
     if (!mData) {
         return;
     }
-    mData->setEmail(mEdit->text());
+    QString displayName, addrSpec, comment;
+    if (KEmailAddress::splitAddress(mEdit->text(), displayName, addrSpec, comment) == KEmailAddress::AddressOk) {
+        mData->setName(displayName);
+        mData->setEmail(addrSpec);
+    } else {
+        mData->setEmail(mEdit->text());
+    }
     mData->setType(Recipient::idToType(mCombo->currentIndex()));
     mModified = false;
 }
@@ -230,17 +237,6 @@ void RecipientLineNG::clear()
     mEdit->clear();
 }
 
-void RecipientLineNG::moveCompletionPopup()
-{
-    if (mEdit->completionBox(false)) {
-        if (mEdit->completionBox()->isVisible()) {
-            // ### trigger moving, is there a nicer way to do that?
-            mEdit->completionBox()->hide();
-            mEdit->completionBox()->show();
-        }
-    }
-}
-
 void RecipientLineNG::setCompletionMode(KCompletion::CompletionMode mode)
 {
     mEdit->setCompletionMode(mode);
@@ -267,3 +263,7 @@ Recipient::Ptr RecipientLineNG::recipient() const
     return qSharedPointerDynamicCast<Recipient>(data());
 }
 
+void RecipientLineNG::setIcon(const QIcon &icon, const QString &tooltip)
+{
+    mEdit->setIcon(icon, tooltip);
+}

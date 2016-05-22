@@ -41,6 +41,13 @@ WebEnginePage::WebEnginePage(QObject *parent)
 {
 }
 
+WebEnginePage::WebEnginePage(QWebEngineProfile *profile, QObject *parent)
+    : QWebEnginePage(profile, parent),
+      d(new WebEnginePagePrivate)
+{
+
+}
+
 WebEnginePage::~WebEnginePage()
 {
     delete d;

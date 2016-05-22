@@ -29,6 +29,9 @@
 
 #include <Libkdepim/MultiplyingLine>
 
+#include <gpgme++/key.h>
+#include <libkleo/enum.h>
+
 #include <QString>
 #include <QSharedPointer>
 namespace MessageComposer
@@ -64,6 +67,12 @@ public:
     QString typeLabel() const;
     static QString typeLabel(Type type);
     static QStringList allTypeLabels();
+
+    void setEncryptionAction(const Kleo::Action action);
+    Kleo::Action encryptionAction() const;
+
+    void setKey(const GpgME::Key &key);
+    GpgME::Key key() const;
 
 private:
     RecipientPrivate *const d;
