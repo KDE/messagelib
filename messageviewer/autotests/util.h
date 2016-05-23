@@ -31,8 +31,7 @@ public:
     void write(const QString &) Q_DECL_OVERRIDE {}
     void end() Q_DECL_OVERRIDE {}
     void reset() Q_DECL_OVERRIDE {}
-    void queue(const QString &str) Q_DECL_OVERRIDE
-    {
+    void queue(const QString &str) Q_DECL_OVERRIDE {
         html.append(str);
     }
     void flush() Q_DECL_OVERRIDE {}

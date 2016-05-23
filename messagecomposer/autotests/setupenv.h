@@ -56,12 +56,10 @@ public:
     {
     }
 
-    MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE
-    {
+    MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
         return mWriter;
     }
-    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE
-    {
+    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
         return mCSSHelper;
     }
 

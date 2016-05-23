@@ -27,7 +27,6 @@
 #include <KLocalizedString>
 #include <QWebEngineDownloadItem>
 
-
 using namespace WebEngineViewer;
 
 class WebEngineViewer::WebEngineViewPrivate

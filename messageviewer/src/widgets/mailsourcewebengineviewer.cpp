@@ -108,7 +108,9 @@ void MailSourceWebEngineViewer::setDisplayedSource(QWebEnginePage *page)
 #ifndef NDEBUG
     if (page) {
         MailSourceViewTextBrowserWidget *browser = mHtmlBrowser;
-        page->toHtml([browser](const QString &result){ browser->setPlainText(result); });
+        page->toHtml([browser](const QString & result) {
+            browser->setPlainText(result);
+        });
     }
 #else
     Q_UNUSED(page);

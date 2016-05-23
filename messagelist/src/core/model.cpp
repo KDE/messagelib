@@ -312,7 +312,9 @@ Model::Model(View *pParent)
     d->mInvariantRowMapper = new ModelInvariantRowMapper();
     d->mModelForItemFunctions = this;
     connect(&d->mFillStepTimer, &QTimer::timeout,
-            this, [this]() { d->viewItemJobStep(); });
+    this, [this]() {
+        d->viewItemJobStep();
+    });
 
     d->mCachedTodayLabel = i18n("Today");
     d->mCachedYesterdayLabel = i18n("Yesterday");
@@ -327,7 +329,9 @@ Model::Model(View *pParent)
     d->mCachedWatchedOrIgnoredStatusBits = Akonadi::MessageStatus::statusIgnored().toQInt32() | Akonadi::MessageStatus::statusWatched().toQInt32();
 
     connect(_k_heartBeatTimer, &QTimer::timeout,
-            this, [this]() { d->checkIfDateChanged(); });
+    this, [this]() {
+        d->checkIfDateChanged();
+    });
 
     if (!_k_heartBeatTimer->isActive()) {   // First model starts it
         _k_heartBeatTimer->start(60000);   // 1 minute
@@ -380,7 +384,9 @@ void Model::setFilter(const Filter *filter)
     d->mFilter = filter;
 
     if (d->mFilter) {
-        connect(d->mFilter, &Filter::finished, this, [this]() { d->slotApplyFilter(); });
+        connect(d->mFilter, &Filter::finished, this, [this]() {
+            d->slotApplyFilter();
+        });
     }
 
     d->slotApplyFilter();
@@ -738,7 +744,7 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
     if (d->mStorageModel) {
         // Disconnect all signals from old storageModel
         std::for_each(d->mStorageModelConnections.cbegin(), d->mStorageModelConnections.cend(),
-                      [](const QMetaObject::Connection &c) -> bool { return QObject::disconnect(c); });
+                      [](const QMetaObject::Connection & c) -> bool { return QObject::disconnect(c); });
         d->mStorageModelConnections.clear();
     }
 
@@ -756,29 +762,35 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
 
     d->mStorageModelConnections = {
         connect(d->mStorageModel, &StorageModel::rowsInserted,
-            this, [this](const QModelIndex &parent, int first, int last) {
-                d->slotStorageModelRowsInserted(parent, first, last);
-            }),
+        this, [this](const QModelIndex & parent, int first, int last)
+        {
+            d->slotStorageModelRowsInserted(parent, first, last);
+        }),
         connect(d->mStorageModel, &StorageModel::rowsRemoved,
-            this, [this](const QModelIndex &parent, int first, int last) {
-                d->slotStorageModelRowsRemoved(parent, first, last);
-            }),
+        this, [this](const QModelIndex & parent, int first, int last)
+        {
+            d->slotStorageModelRowsRemoved(parent, first, last);
+        }),
         connect(d->mStorageModel, &StorageModel::layoutChanged,
-            this, [this]() {
-                d->slotStorageModelLayoutChanged();
-            }),
+        this, [this]()
+        {
+            d->slotStorageModelLayoutChanged();
+        }),
         connect(d->mStorageModel, &StorageModel::modelReset,
-            this, [this]() {
-                d->slotStorageModelLayoutChanged();
-            }),
+        this, [this]()
+        {
+            d->slotStorageModelLayoutChanged();
+        }),
         connect(d->mStorageModel, &StorageModel::dataChanged,
-            this, [this](const QModelIndex &topLeft, const QModelIndex &bottomRight) {
-                d->slotStorageModelDataChanged(topLeft, bottomRight);
-            }),
+        this, [this](const QModelIndex & topLeft, const QModelIndex & bottomRight)
+        {
+            d->slotStorageModelDataChanged(topLeft, bottomRight);
+        }),
         connect(d->mStorageModel, &StorageModel::headerDataChanged,
-            this, [this](Qt::Orientation orientation, int first, int last) {
-                d->slotStorageModelHeaderDataChanged(orientation, first, last);
-            })
+        this, [this](Qt::Orientation orientation, int first, int last)
+        {
+            d->slotStorageModelHeaderDataChanged(orientation, first, last);
+        })
     };
 
     if (d->mStorageModel->rowCount() == 0) {

@@ -107,7 +107,6 @@ Q_SIGNALS:
     void countChanged();
     void iconClicked();
 
-
 protected Q_SLOTS:
     void slotEditingFinished();
     void slotTypeModified();
