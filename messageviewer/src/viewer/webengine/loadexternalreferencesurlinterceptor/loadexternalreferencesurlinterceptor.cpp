@@ -46,7 +46,9 @@ LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
 
 bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    if (!d->mAllowLoadExternalReference) {
+    if (d->mAllowLoadExternalReference) {
+        return false;
+    } else {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage
                 && !info.requestUrl().isLocalFile()
                 && (info.requestUrl().scheme() != QLatin1String("cid"))) {
