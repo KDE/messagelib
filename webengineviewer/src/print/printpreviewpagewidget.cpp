@@ -22,6 +22,7 @@
 
 #include <QLabel>
 #include <QComboBox>
+#include <QDebug>
 #include <QFile>
 #include <QVBoxLayout>
 #include <KMessageBox>
