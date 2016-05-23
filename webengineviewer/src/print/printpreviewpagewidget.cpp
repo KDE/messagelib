@@ -22,6 +22,7 @@
 
 #include <QLabel>
 #include <QComboBox>
+#include <QFile>
 #include <QVBoxLayout>
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -30,6 +31,7 @@ using namespace WebEngineViewer;
 
 PrintPreviewPageWidget::PrintPreviewPageWidget(QWidget *parent)
     : QWidget(parent),
+      mDeleteFile(false),
       mDoc(Q_NULLPTR)
 {
     QVBoxLayout *layout = new QVBoxLayout;
@@ -58,15 +60,24 @@ PrintPreviewPageWidget::PrintPreviewPageWidget(QWidget *parent)
 
 PrintPreviewPageWidget::~PrintPreviewPageWidget()
 {
+    if (mDeleteFile && !mFilePath.isEmpty()) {
+        QFile file(mFilePath);
+        bool removeFile = file.remove();
+        if (!removeFile) {
+            qWarning() << "Impossible to remove file " << mFilePath;
+        }
+    }
     delete mDoc;
     mDoc = Q_NULLPTR;
 }
 
-void PrintPreviewPageWidget::loadFile(const QString &path)
+void PrintPreviewPageWidget::loadFile(const QString &path, bool deleteFile)
 {
     if (path.isEmpty()) {
         return;
     }
+    mDeleteFile = deleteFile;
+    mFilePath = path;
     mDoc = Poppler::Document::load(path);
     if (!mDoc) {
         KMessageBox::error(this, i18n("Unable to open file \"%1\"", path), i18n("Open file error"));
@@ -87,6 +98,11 @@ void PrintPreviewPageWidget::fillComboBox()
     for (int i = 0; i < pageCount; ++i) {
         mPageComboBox->addItem(QString::number(i + 1));
     }
+}
+
+bool PrintPreviewPageWidget::deleteFile() const
+{
+    return mDeleteFile;
 }
 
 void PrintPreviewPageWidget::showPage(int index)

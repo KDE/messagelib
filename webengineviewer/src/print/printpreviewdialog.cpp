@@ -68,9 +68,9 @@ void PrintPreviewDialog::readConfig()
     }
 }
 
-void PrintPreviewDialog::loadFile(const QString &path)
+void PrintPreviewDialog::loadFile(const QString &path, bool deleteFile)
 {
-    mPrintPreviewWidget->loadFile(path);
+    mPrintPreviewWidget->loadFile(path, deleteFile);
 }
 
 void PrintPreviewDialog::slotPrint()

@@ -35,14 +35,18 @@ public:
     explicit PrintPreviewPageWidget(QWidget *parent = Q_NULLPTR);
     ~PrintPreviewPageWidget();
 
-    void loadFile(const QString &path);
+    void loadFile(const QString &path, bool deleteFile = false);
 
     void print(const QList<int> &page);
+    bool deleteFile() const;
+
 private Q_SLOTS:
     void showPage(int index);
 
 private:
     void fillComboBox();
+    QString mFilePath;
+    bool mDeleteFile;
     PrintPreviewPageViewer *mPrintPreviewPage;
     Poppler::Document *mDoc;
     QComboBox *mPageComboBox;

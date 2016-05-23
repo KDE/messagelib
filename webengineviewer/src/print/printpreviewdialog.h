@@ -29,7 +29,7 @@ class PrintPreviewDialog : public QDialog
 public:
     explicit PrintPreviewDialog(QWidget *parent = Q_NULLPTR);
     ~PrintPreviewDialog();
-    void loadFile(const QString &path);
+    void loadFile(const QString &path, bool deleteFile = false);
 
 private Q_SLOTS:
     void slotPrint();

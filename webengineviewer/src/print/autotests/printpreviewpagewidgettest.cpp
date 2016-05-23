@@ -59,6 +59,8 @@ void PrintPreviewPageWidgetTest::shouldHaveDefaultValue()
     QComboBox *mPageComboBox = w.findChild<QComboBox *>(QStringLiteral("pagecombobox"));
     QVERIFY(mPageComboBox);
     QCOMPARE(mPageComboBox->count(), 0);
+
+    QVERIFY(!w.deleteFile());
 }
 
 QTEST_MAIN(PrintPreviewPageWidgetTest)
