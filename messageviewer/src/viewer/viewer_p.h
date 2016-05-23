@@ -474,6 +474,7 @@ private Q_SLOTS:
     void slotServiceUrlSelected(PimCommon::ShareServiceUrlManager::ServiceType serviceType);
     void slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin);
     void slotStyleUpdated();
+    void slotWheelZoomChanged(int numSteps);
 public Q_SLOTS:
     /** An URL has been activate with a click. */
     void slotUrlOpen(const QUrl &url = QUrl());

@@ -32,6 +32,7 @@
 
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
+#include <QDebug>
 
 #include <WebEngineViewer/WebHitTestResult>
 
@@ -154,6 +155,21 @@ void MailWebEngineView::forwardKeyReleaseEvent(QKeyEvent *e)
     }
 }
 
+void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
+{
+    //qDebug()<<" void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)";
+}
+
+void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
+{
+    //qDebug() << "void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)";
+}
+
+void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
+{
+    //qDebug() << "void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)";
+}
+
 void MailWebEngineView::forwardKeyPressEvent(QKeyEvent *e)
 {
     if (e && hasFocus()) {
@@ -167,6 +183,12 @@ void MailWebEngineView::forwardWheelEvent(QWheelEvent *e)
 {
     if (MessageViewer::MessageViewerSettings::self()->accessKeyEnabled()) {
         d->mWebViewAccessKey->wheelEvent(e);
+    }
+    if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
+        const int numDegrees = e->delta() / 8;
+        const int numSteps = numDegrees / 15;
+        Q_EMIT wheelZoomChanged(numSteps);
+        e->accept();
     }
 }
 
@@ -326,4 +348,16 @@ QList<QAction *> MailWebEngineView::interceptorUrlActions(const WebEngineViewer:
 void MailWebEngineView::slotLoadFinished()
 {
     scamCheck();
+}
+
+void MailWebEngineView::dragEnterEvent(QDragEnterEvent *event)
+{
+    qDebug()<<" void MailWebEngineView::dragEnterEvent(QDragEnterEvent *event)";
+}
+
+void MailWebEngineView::dragMoveEvent(QDragMoveEvent *e)
+{
+    qDebug()<<" void MailWebEngineView::dragMoveEvent(QDragMoveEvent *e)";
+    WebEngineViewer::WebEngineView::dragMoveEvent(e);
+    //TODO
 }

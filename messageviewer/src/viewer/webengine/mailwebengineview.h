@@ -68,14 +68,20 @@ public Q_SLOTS:
     void slotShowDetails();
 
 protected:
-    virtual void forwardWheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
-    virtual void forwardKeyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    virtual void forwardKeyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    void forwardWheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
+    void forwardKeyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    void forwardKeyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    void forwardMousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void forwardMouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void forwardMouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 
     void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
 
     void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
+    void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
+    void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
 Q_SIGNALS:
+    void wheelZoomChanged(int numSteps);
     void openUrl(const QUrl &url);
     void messageMayBeAScam();
     /// Emitted when the user right-clicks somewhere

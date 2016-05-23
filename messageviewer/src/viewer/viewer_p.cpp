@@ -1037,6 +1037,8 @@ void ViewerPrivate::initHtmlWidget()
             this, &ViewerPrivate::slotUrlOpen, Qt::QueuedConnection);
     connect(mViewer, &MailWebEngineView::popupMenu,
             this, &ViewerPrivate::slotUrlPopup);
+    connect(mViewer, &MailWebEngineView::wheelZoomChanged,
+            this, &ViewerPrivate::slotWheelZoomChanged);
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
@@ -1060,7 +1062,6 @@ bool ViewerPrivate::eventFilter(QObject *, QEvent *e)
     } else if (e->type() ==  QEvent::MouseButtonRelease) {
         mCanStartDrag = false;
     } else if (e->type() == QEvent::MouseMove) {
-
         QMouseEvent *me = static_cast<QMouseEvent *>(e);
 
         // First, update the hovered URL
@@ -1081,23 +1082,18 @@ bool ViewerPrivate::eventFilter(QObject *, QEvent *e)
             return true;
         }
     }
-    //Don't tell to WebEngine to get zoom > 300 and < 100
-    else if (e->type() == QEvent::Wheel) {
-        QWheelEvent *me = static_cast<QWheelEvent *>(e);
-        if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
-            const int numDegrees = me->delta() / 8;
-            const int numSteps = numDegrees / 15;
-            const qreal factor = mZoomActionMenu->zoomFactor() + numSteps * 10;
-            if (factor >= 10 && factor <= 300) {
-                mZoomActionMenu->setZoomFactor(factor);
-                mZoomActionMenu->setWebViewerZoomFactor(factor / 100.0);
-            }
-            return true;
-        }
-    }
 
     // standard event processing
     return false;
+}
+
+void ViewerPrivate::slotWheelZoomChanged(int numSteps)
+{
+    const qreal factor = mZoomActionMenu->zoomFactor() + numSteps * 10;
+    if (factor >= 10 && factor <= 300) {
+        mZoomActionMenu->setZoomFactor(factor);
+        mZoomActionMenu->setWebViewerZoomFactor(factor / 100.0);
+    }
 }
 
 void ViewerPrivate::readConfig()
