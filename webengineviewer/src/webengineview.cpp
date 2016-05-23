@@ -206,7 +206,7 @@ bool WebEngineView::hasPrintPreviewSupport() const
 void WebEngineView::saveHtml(QWebEngineDownloadItem *download)
 {
 #if QT_VERSION >= 0x050700
-    const QString fileName = QFileDialog::getSaveFileName(this, i18n("Save Html Page"));
+    const QString fileName = QFileDialog::getSaveFileName(this, i18n("Save HTML Page"));
     if (!fileName.isEmpty()) {
         download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
         download->setPath(fileName);
