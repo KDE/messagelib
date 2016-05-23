@@ -753,7 +753,7 @@ void TextMessagePart::writePartIcon()
             //iconName = nodeHelper->iconName( mNode );
         }
 
-        const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
+        static const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
         writer->queue(QStringLiteral("<hr/><div><a href=\"%1\">").arg(href) +
                       QStringLiteral("<img align=\"center\" height=\"%1\" width=\"%1\" src=\"%2\" border=\"0\" style=\"max-width: 100%\" alt=\"\"/>").arg(QString::number(iconSize), iconName) +
                       label + QStringLiteral("</a></div>") +
@@ -1614,13 +1614,14 @@ void CryptoMessagePart::writeDeferredDecryptionBlock() const
     }
 
     const QString iconName = QUrl::fromLocalFile(IconNameCache::instance()->iconPath(QStringLiteral("document-decrypt"), KIconLoader::Small)).url();
+    static const int iconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
     writer->queue(QLatin1String("<div style=\"font-size:large; text-align:center;"
                                 "padding-top:20pt;\">")
                   + i18n("This message is encrypted.")
-                  + QLatin1String("</div>"
+                  + QString::fromLatin1("</div>"
                                   "<div style=\"text-align:center; padding-bottom:20pt;\">"
                                   "<a href=\"kmail:decryptMessage\">"
-                                  "<img src=\"") + iconName + QLatin1String("\"/>")
+                                  "<img height=\"%1\" width=\"%1\" src=\"").arg(iconSize) + iconName + QLatin1String("\"/>")
                   + i18n("Decrypt Message")
                   + QLatin1String("</a></div>"));
 }
