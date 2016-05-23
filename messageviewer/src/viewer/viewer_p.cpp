@@ -467,7 +467,7 @@ void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTyp
             menu->menuAction()->setObjectName(QStringLiteral("openWith_submenu")); // for the unittest
             topMenu->addMenu(menu);
         }
-        qCDebug(MESSAGEVIEWER_LOG) << offers.count() << "offers" << topMenu << menu;
+        //qCDebug(MESSAGEVIEWER_LOG) << offers.count() << "offers" << topMenu << menu;
 
         KService::List::ConstIterator it = offers.constBegin();
         KService::List::ConstIterator end = offers.constEnd();
