@@ -40,6 +40,7 @@ void WebEngineExportHtmlPageJob::start()
         return;
     }
     //TODO
+    deleteLater();
 }
 
 QWebEngineView *WebEngineExportHtmlPageJob::engineView() const
