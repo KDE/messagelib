@@ -36,6 +36,7 @@ public:
 
 Q_SIGNALS:
     void failed();
+    void success(const QString &filename);
 
 private:
     QWebEngineView *mEngineView;

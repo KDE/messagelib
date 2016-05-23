@@ -17,6 +17,7 @@
 
 #include "webengineexporthtmlpagejobtest.h"
 #include "../webengineexporthtmlpagejob.h"
+#include <QSignalSpy>
 #include <QTest>
 
 WebEngineExportHtmlPageJobTest::WebEngineExportHtmlPageJobTest(QObject *parent)
@@ -33,7 +34,12 @@ WebEngineExportHtmlPageJobTest::~WebEngineExportHtmlPageJobTest()
 void WebEngineExportHtmlPageJobTest::shouldHaveDefaultValue()
 {
     WebEngineViewer::WebEngineExportHtmlPageJob job;
+    QSignalSpy spyFailed(&job, SIGNAL(failed()));
+    QSignalSpy spySuccess(&job, SIGNAL(success(QString)));
     QVERIFY(!job.engineView());
+    job.start();
+    QCOMPARE(spyFailed.count(), 1);
+    QCOMPARE(spySuccess.count(), 0);
 }
 
 QTEST_MAIN(WebEngineExportHtmlPageJobTest)

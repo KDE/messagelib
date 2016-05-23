@@ -16,6 +16,7 @@
 */
 
 #include "webengineexporthtmlpagejob.h"
+#include "config-webengineviewer.h"
 
 using namespace WebEngineViewer;
 
