@@ -1081,7 +1081,7 @@ bool ViewerPrivate::eventFilter(QObject *, QEvent *e)
             return true;
         }
     }
-    //Don't tell to Webkit to get zoom > 300 and < 100
+    //Don't tell to WebEngine to get zoom > 300 and < 100
     else if (e->type() == QEvent::Wheel) {
         QWheelEvent *me = static_cast<QWheelEvent *>(e);
         if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
