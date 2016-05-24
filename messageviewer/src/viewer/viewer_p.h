@@ -510,7 +510,7 @@ public Q_SLOTS:
       after rendering is finished.
       In the very end it deletes the KMReaderWin window that was created
       for the purpose of rendering. */
-    void slotPrintMsg();
+    void slotPrintMessage();
     void slotPrintPreview();
 
     void slotSetEncoding();

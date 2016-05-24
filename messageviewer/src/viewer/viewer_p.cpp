@@ -1215,8 +1215,8 @@ void ViewerPrivate::setPrinting(bool enable)
 
 void ViewerPrivate::printMessage(const Akonadi::Item &message)
 {
-    disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
-    connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
+    disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMessage);
+    connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMessage);
     setMessageItem(message, MimeTreeParser::Force);
 }
 
@@ -2180,9 +2180,9 @@ void ViewerPrivate::slotPrintPreview()
     qDebug() << "ViewerPrivate::slotPrintPreview() not implemented";
 }
 
-void ViewerPrivate::slotPrintMsg()
+void ViewerPrivate::slotPrintMessage()
 {
-    disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMsg);
+    disconnect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotPrintMessage);
 
     if (!mMessage) {
         return;

@@ -164,7 +164,7 @@ void Viewer::printPreview()
 void Viewer::print()
 {
     Q_D(Viewer);
-    d->slotPrintMsg();
+    d->slotPrintMessage();
 }
 
 void Viewer::resizeEvent(QResizeEvent *)
