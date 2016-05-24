@@ -17,6 +17,7 @@
 
 #include "webengineexporthtmlpagejob.h"
 #include "config-webengineviewer.h"
+#include <QTemporaryFile>
 #include <QWebEngineView>
 
 using namespace WebEngineViewer;
@@ -60,7 +61,17 @@ void WebEngineExportHtmlPageJob::start()
 
 void WebEngineExportHtmlPageJob::slotSaveHtmlToPage(const QString &text)
 {
-    //TODO
+    QTemporaryFile mTemporaryFile;
+    QFile file(mTemporaryFile.fileName());
+    if (!file.open(QFile::WriteOnly)) {
+        Q_EMIT failed();
+        deleteLater();
+        return;
+    }
+    QTextStream stream(&file);
+    stream << text;
+    file.close();
+    Q_EMIT success(mTemporaryFile.fileName());
     deleteLater();
 }
 
