@@ -1088,10 +1088,12 @@ bool ViewerPrivate::eventFilter(QObject *, QEvent *e)
 
 void ViewerPrivate::slotWheelZoomChanged(int numSteps)
 {
-    const qreal factor = mZoomActionMenu->zoomFactor() + numSteps * 10;
-    if (factor >= 10 && factor <= 300) {
-        mZoomActionMenu->setZoomFactor(factor);
-        mZoomActionMenu->setWebViewerZoomFactor(factor / 100.0);
+    if (mZoomActionMenu) {
+        const qreal factor = mZoomActionMenu->zoomFactor() + numSteps * 10;
+        if (factor >= 10 && factor <= 300) {
+            mZoomActionMenu->setZoomFactor(factor);
+            mZoomActionMenu->setWebViewerZoomFactor(factor / 100.0);
+        }
     }
 }
 
@@ -2195,12 +2197,14 @@ void ViewerPrivate::slotPrintMsg()
 
 void ViewerPrivate::slotSetEncoding()
 {
-    if (mSelectEncodingAction->currentItem() == 0) { // Auto
-        mOverrideEncoding.clear();
-    } else {
-        mOverrideEncoding = MimeTreeParser::NodeHelper::encodingForName(mSelectEncodingAction->currentText());
+    if (mSelectEncodingAction) {
+        if (mSelectEncodingAction->currentItem() == 0) { // Auto
+            mOverrideEncoding.clear();
+        } else {
+            mOverrideEncoding = MimeTreeParser::NodeHelper::encodingForName(mSelectEncodingAction->currentText());
+        }
+        update(MimeTreeParser::Force);
     }
-    update(MimeTreeParser::Force);
 }
 
 QString ViewerPrivate::picsPath()
