@@ -113,6 +113,8 @@ public:
             } else if (urlPath == QStringLiteral("printpreview")) {
                 viewer->setMailAction(MessageViewer::Viewer::PrintPreview);
                 return true;
+            } else {
+                qCDebug(MESSAGEVIEWER_LOG) << "Unknown urlPath " << urlPath;
             }
         }
         return false;
@@ -139,6 +141,8 @@ public:
                 return i18n("Print Message");
             } else if (urlPath == QStringLiteral("printpreview")) {
                 return i18n("Print Preview Message");
+            } else {
+                qCDebug(MESSAGEVIEWER_LOG) << "Unknown urlPath " << urlPath;
             }
         }
         return QString();
@@ -373,8 +377,8 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
         return 0;
     }
     //KMime::ContentIndex index( urlParts[1] );
-    *path = QUrl::fromPercentEncoding(urlParts[2].toLatin1());
-    return w->nodeFromUrl(urlParts[1]);
+    *path = QUrl::fromPercentEncoding(urlParts.at(2).toLatin1());
+    return w->nodeFromUrl(urlParts.at(1));
 }
 
 bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url, ViewerPrivate *w) const
