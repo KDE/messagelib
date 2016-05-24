@@ -17,6 +17,7 @@
 
 #include "printpreviewpagewidget.h"
 #include "printpreviewpageviewer.h"
+#include "webengineviewer_debug.h"
 
 #include <poppler-qt5.h>
 
@@ -65,9 +66,9 @@ PrintPreviewPageWidget::~PrintPreviewPageWidget()
         QFile file(mFilePath);
         bool removeFile = file.remove();
         if (removeFile) {
-            qWarning() << "File removed " << mFilePath;
+            qCWarning(WEBENGINEVIEWER_LOG) << "File removed " << mFilePath;
         } else {
-            qWarning() << "Impossible to remove file " << mFilePath;
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove file " << mFilePath;
         }
     }
     delete mDoc;
