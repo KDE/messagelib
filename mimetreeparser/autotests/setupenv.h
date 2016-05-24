@@ -120,9 +120,14 @@ public:
         mDecryptMessage = allowDecryption;
     }
 
+    void setShowSignatureDetails(bool showSignatureDetails)
+    {
+        mShowSignatureDetails = showSignatureDetails;
+    }
+
     bool showSignatureDetails() const Q_DECL_OVERRIDE
     {
-        return false;
+        return mShowSignatureDetails;
     }
 
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode) Q_DECL_OVERRIDE {
@@ -155,6 +160,7 @@ private:
     bool mHtmlLoadExternal;
     bool mHtmlMail;
     bool mDecryptMessage;
+    bool mShowSignatureDetails;
 };
 
 }

@@ -34,6 +34,9 @@ private Q_SLOTS:
     void testRenderSmart_data();
     void testRenderSmart();
 
+    void testRenderSmartDetails_data();
+    void testRenderSmartDetails();
+
     void testRenderInlined_data();
     void testRenderInlined();
 
