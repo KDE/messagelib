@@ -658,6 +658,8 @@ public:
         block.setProperty("keyId", metaData.keyId);
         block.setProperty("creationTime", metaData.creationTime);
         block.setProperty("isGoodSignature", metaData.isGoodSignature);
+        block.setProperty("isSMIME", isSMIME);
+
         if (metaData.keyTrust == GpgME::Signature::Unknown) {
             block.setProperty("keyTrust", QStringLiteral("unknown"));
         } else if (metaData.keyTrust == GpgME::Signature::Marginal) {
@@ -693,6 +695,7 @@ public:
         QString signer = metaData.signer;
         QString statusStr;
         QString mClass;
+        QString greenCaseWarning;
 
         if (metaData.inProgress) {
             mClass = QStringLiteral("signInProgress");
@@ -749,7 +752,6 @@ public:
                     mClass = QStringLiteral("signOkKeyOk");
                     // extra hint for green case
                     // that email addresses in DN do not match fromAddress
-                    QString greenCaseWarning;
                     QString msgFrom(KEmailAddress::extractEmailAddress(mp->mFromAddress));
                     QString certificate;
                     if (metaData.keyId.isEmpty()) {
@@ -796,12 +798,6 @@ public:
                                     certificate,
                                     msgFrom);
                     }
-                    if (!greenCaseWarning.isEmpty()) {
-                        if (!statusStr.isEmpty()) {
-                            statusStr.append(QStringLiteral("<br />&nbsp;<br />"));
-                        }
-                        statusStr.append(greenCaseWarning);
-                    }
                     break;
                 }
 
@@ -842,6 +838,7 @@ public:
         block.setProperty("signer", signer);
         block.setProperty("statusStr", statusStr);
         block.setProperty("signClass", mClass);
+        block.setProperty("greenCaseWarning", greenCaseWarning);
 
         const auto html = t->render(&c);
 
