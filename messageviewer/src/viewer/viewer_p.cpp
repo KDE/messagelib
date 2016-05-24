@@ -1019,7 +1019,6 @@ void ViewerPrivate::showVCard(KMime::Content *msgPart)
 
 void ViewerPrivate::initHtmlWidget()
 {
-    mViewer->setFocusPolicy(Qt::WheelFocus);
     mViewer->installEventFilter(this);
 
     if (!htmlWriter()) {
