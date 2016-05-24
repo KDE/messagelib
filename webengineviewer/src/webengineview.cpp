@@ -27,6 +27,7 @@
 #include <KLocalizedString>
 #include <QWebEngineDownloadItem>
 
+//#define USE_JQUERY_SCRIPT 1
 using namespace WebEngineViewer;
 
 class WebEngineViewer::WebEngineViewPrivate
@@ -38,7 +39,9 @@ public:
     {
 
     }
+#ifdef USE_JQUERY_SCRIPT
     QString mJquery;
+#endif
     qreal mSavedRelativePosition;
     QWidget *mCurrentWidget;
 };
@@ -47,15 +50,17 @@ WebEngineView::WebEngineView(QWidget *parent)
     : QWebEngineView(parent),
       d(new WebEngineViewer::WebEngineViewPrivate)
 {
+    installEventFilter(this);
+#ifdef USE_JQUERY_SCRIPT
     QFile file;
     file.setFileName(QStringLiteral(":/data/jquery.min.js"));
     file.open(QIODevice::ReadOnly);
     d->mJquery = QString::fromUtf8(file.readAll());
     d->mJquery.append(QStringLiteral("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
     file.close();
-
-    installEventFilter(this);
     connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
+#endif
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     connect(page()->profile(), &QWebEngineProfile::downloadRequested, this, &WebEngineView::saveHtml);
 #endif
@@ -170,7 +175,9 @@ QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 
 void WebEngineView::slotLoadFinished()
 {
+#ifdef USE_JQUERY_SCRIPT
     page()->runJavaScript(d->mJquery);
+#endif
 }
 
 void WebEngineView::clearRelativePosition()
