@@ -64,7 +64,9 @@ PrintPreviewPageWidget::~PrintPreviewPageWidget()
     if (mDeleteFile && !mFilePath.isEmpty()) {
         QFile file(mFilePath);
         bool removeFile = file.remove();
-        if (!removeFile) {
+        if (removeFile) {
+            qWarning() << "File removed " << mFilePath;
+        } else {
             qWarning() << "Impossible to remove file " << mFilePath;
         }
     }
