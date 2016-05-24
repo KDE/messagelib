@@ -40,3 +40,13 @@ add_executable(testmailwebengineselection ${testmailwebengineselection_test_SRCS
 target_link_libraries(testmailwebengineselection
     Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
+######
+
+set(testmaildndattachment_test_SRCS
+    testmaildndattachment.cpp
+    )
+add_executable(testmaildndattachment ${testmaildndattachment_test_SRCS})
+
+target_link_libraries(testmaildndattachment
+    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    )
