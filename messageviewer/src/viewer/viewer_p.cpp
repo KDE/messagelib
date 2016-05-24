@@ -1121,8 +1121,6 @@ void ViewerPrivate::readConfig()
     readGlobalOverrideCodec();
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumLogicalFontSize, MessageViewer::MessageViewerSettings::self()->minimumFontSize());
-    //TODO verify Qt5.7
-    //FIXME mViewer->settings()->setAttribute(QWebEngineSettings::PrintElementBackgrounds, MessageViewer::MessageViewerSettings::self()->printBackgroundColorImages());
     if (mMessage) {
         update();
     }
