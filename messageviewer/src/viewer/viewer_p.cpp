@@ -752,11 +752,6 @@ bool ViewerPrivate::decryptMessage() const
     }
 }
 
-int ViewerPrivate::pointsToPixel(int pointSize) const
-{
-    return (pointSize * mViewer->logicalDpiY() + 36) / 72;
-}
-
 void ViewerPrivate::displaySplashPage(const QString &message)
 {
     displaySplashPage(QStringLiteral("status.html"), {

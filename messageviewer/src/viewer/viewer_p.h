@@ -254,9 +254,6 @@ public:
     /** Returns whether the message should be decryted. */
     bool decryptMessage() const;
 
-    /** Calculate the pixel size */
-    int pointsToPixel(int pointSize) const;
-
     /** Display a generic HTML splash page instead of a message. */
     void displaySplashPage(const QString &templateName, const QVariantHash &data);
 
