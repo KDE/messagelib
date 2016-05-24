@@ -20,6 +20,7 @@
 #define TESTMAILDNDATTACHMENT_H
 
 #include <QWidget>
+#include <KMime/Message>
 
 namespace MessageViewer
 {
@@ -33,7 +34,7 @@ public:
     explicit TestMailDndAttachment(QWidget *parent = Q_NULLPTR);
     ~TestMailDndAttachment();
 private:
-    MessageViewer::MailWebEngineView *mTestWebEngine;
+    KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 };
 
 #endif // TESTMAILDNDATTACHMENT_H

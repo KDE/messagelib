@@ -18,25 +18,48 @@
 
 #include "testmaildndattachment.h"
 
+#include <KMime/Content>
 #include <KActionCollection>
 #include <QApplication>
+#include <QFile>
 #include <QVBoxLayout>
+#include <QDebug>
 
 #include <MessageViewer/MailWebEngineView>
+#include <MessageViewer/Viewer>
 
 TestMailDndAttachment::TestMailDndAttachment(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vbox = new QVBoxLayout;
     setLayout(vbox);
-    mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
-    vbox->addWidget(mTestWebEngine);
+
+    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(0);
+    vbox->addWidget(viewer);
+    //viewer->setPluginName(parser.value(QStringLiteral("headerstyleplugin")));
+    viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")));
 }
 
 TestMailDndAttachment::~TestMailDndAttachment()
 {
 
 }
+
+KMime::Message::Ptr TestMailDndAttachment::readAndParseMail(const QString &mailFile)
+{
+    QFile file(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    Q_ASSERT(file.open(QIODevice::ReadOnly));
+    qDebug()<<" file"<<file.fileName();
+    const QByteArray data = KMime::CRLFtoLF(file.readAll());
+    qDebug()<<" data "<< data;
+    Q_ASSERT(!data.isEmpty());
+    KMime::Message::Ptr msg(new KMime::Message);
+    msg->setContent(data);
+    msg->parse();
+    return msg;
+}
+
+
 
 int main(int argc, char *argv[])
 {
