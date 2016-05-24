@@ -361,3 +361,8 @@ void MailWebEngineView::dragMoveEvent(QDragMoveEvent *e)
     WebEngineViewer::WebEngineView::dragMoveEvent(e);
     //TODO
 }
+
+void MailWebEngineView::dropEvent(QDropEvent *e)
+{
+    qDebug()<<" MailWebEngineView::dropEvent";
+}

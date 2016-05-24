@@ -48,6 +48,11 @@ protected:
     virtual void forwardMousePressEvent(QMouseEvent *event);
     virtual void forwardMouseMoveEvent(QMouseEvent *event);
     virtual void forwardMouseReleaseEvent(QMouseEvent *event);
+
+    void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
+    void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
+    void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
+
 private Q_SLOTS:
     void slotLoadFinished();
 private:

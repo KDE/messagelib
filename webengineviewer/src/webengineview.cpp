@@ -102,6 +102,21 @@ void WebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
     Q_UNUSED(event);
 }
 
+void WebEngineView::dragMoveEvent(QDragMoveEvent *e)
+{
+    qDebug()<<" void WebEngineView::dragMoveEvent(QDragMoveEvent *e)";
+}
+
+void WebEngineView::dragEnterEvent(QDragEnterEvent *event)
+{
+    qDebug()<<" void WebEngineView::dragEnterEvent(QDragEnterEvent *event)";
+}
+
+void WebEngineView::dropEvent(QDropEvent *e)
+{
+    qDebug()<<" WebEngineView::dropEvent ";
+}
+
 bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 {
     // Hack to find widget that receives input events
