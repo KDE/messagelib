@@ -12,10 +12,10 @@ ecm_add_test(zoomactionmenutest.cpp
 )
 
 
-ecm_add_test(webengineprintmessageboxtest.cpp
+ecm_add_test(webengineprintmessageboxtest.cpp ../webengineprintmessagebox.cpp
     TEST_NAME webengineprintmessageboxtest
     NAME_PREFIX "webengineviewer-"
-    LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer
+    LINK_LIBRARIES Qt5::Test KF5::WebEngineViewer KF5::I18n
 )
 
 ecm_add_test(webengineexporthtmlpagejobtest.cpp ../webengineexporthtmlpagejob.cpp

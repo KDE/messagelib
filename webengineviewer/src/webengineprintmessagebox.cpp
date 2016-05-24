@@ -16,11 +16,14 @@
 */
 
 #include "webengineprintmessagebox.h"
+#include "webengineexporthtmlpagejob.h"
 #include "config-webengineviewer.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QPushButton>
+#include <QWebEngineView>
 
 using namespace WebEngineViewer;
 WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
@@ -37,10 +40,25 @@ WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &WebEnginePrintMessageBox::reject);
+    QPushButton *openInBrowser = new QPushButton(i18n("Open In Browser"), this);
+    connect(openInBrowser, &QPushButton::clicked, this, &WebEnginePrintMessageBox::slotOpenInBrowser);
+    openInBrowser->setObjectName(QStringLiteral("openinbrowser"));
+    buttonBox->addButton(openInBrowser, QDialogButtonBox::ActionRole);
+
     mainLayout->addWidget(buttonBox);
 }
 
 WebEnginePrintMessageBox::~WebEnginePrintMessageBox()
 {
 
+}
+
+void WebEnginePrintMessageBox::setWebEngineView(QWebEngineView *engineView)
+{
+    //TODO
+}
+
+void WebEnginePrintMessageBox::slotOpenInBrowser()
+{
+    //TODO
 }

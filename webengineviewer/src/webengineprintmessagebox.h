@@ -19,7 +19,7 @@
 #define WEBENGINEPRINTMESSAGEBOX_H
 
 #include <QDialog>
-
+class QWebEngineView;
 namespace WebEngineViewer
 {
 class WebEnginePrintMessageBox : public QDialog
@@ -28,6 +28,11 @@ class WebEnginePrintMessageBox : public QDialog
 public:
     explicit WebEnginePrintMessageBox(QWidget *parent = Q_NULLPTR);
     ~WebEnginePrintMessageBox();
+
+    void setWebEngineView(QWebEngineView *engineView);
+
+private Q_SLOTS:
+    void slotOpenInBrowser();
 };
 }
 #endif // WEBENGINEPRINTMESSAGEBOX_H

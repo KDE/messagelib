@@ -26,6 +26,9 @@ class WebEnginePrintMessageBoxTest : public QObject
 public:
     explicit WebEnginePrintMessageBoxTest(QObject *parent = Q_NULLPTR);
     ~WebEnginePrintMessageBoxTest();
+
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // WEBENGINEPRINTMESSAGEBOXTEST_H

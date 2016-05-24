@@ -16,17 +16,25 @@
 */
 
 #include "webengineprintmessageboxtest.h"
+#include "../webengineprintmessagebox.h"
 #include <QTest>
+#include <QPushButton>
 
 WebEnginePrintMessageBoxTest::WebEnginePrintMessageBoxTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 WebEnginePrintMessageBoxTest::~WebEnginePrintMessageBoxTest()
 {
 
+}
+
+void WebEnginePrintMessageBoxTest::shouldHaveDefaultValue()
+{
+    WebEngineViewer::WebEnginePrintMessageBox box;
+    QPushButton *openInBrowser = box.findChild<QPushButton *>(QStringLiteral("openinbrowser"));
+    QVERIFY(openInBrowser);
 }
 
 QTEST_MAIN(WebEnginePrintMessageBoxTest)
