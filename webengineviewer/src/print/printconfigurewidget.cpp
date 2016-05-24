@@ -84,5 +84,4 @@ void PrintConfigureWidget::updatePageLayoutLabel()
                                     mCurrentPageLayout.pageSize().name(),
                                     mCurrentPageLayout.orientation() == QPageLayout::Portrait
                                     ? i18n("Portrait") : i18n("Landscape")));
-
 }

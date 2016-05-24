@@ -59,7 +59,6 @@ void PrintWebEngineViewJobTest::shouldFailedWhenPageLayoutIsNotDefined()
     job.start();
     QCOMPARE(spyFailed.count(), 1);
     QCOMPARE(spySuccess.count(), 0);
-
 }
 
 QTEST_MAIN(PrintWebEngineViewJobTest)

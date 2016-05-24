@@ -38,6 +38,9 @@ Q_SIGNALS:
     void failed();
     void success(const QString &filename);
 
+private Q_SLOTS:
+    void slotSaveHtmlToPage(const QString &text);
+
 private:
     QWebEngineView *mEngineView;
 };
