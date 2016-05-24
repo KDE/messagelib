@@ -66,9 +66,8 @@ void PrintWebEngineTest_Gui::slotPrint()
 void PrintWebEngineTest_Gui::slotPdfCreated(const QString &filename)
 {
     WebEngineViewer::PrintPreviewDialog dlg(this);
-    dlg.loadFile(filename);
+    dlg.loadFile(filename, true);
     dlg.exec();
-    //TODO delete filename
 }
 
 void PrintWebEngineTest_Gui::slotPdfFailed()
