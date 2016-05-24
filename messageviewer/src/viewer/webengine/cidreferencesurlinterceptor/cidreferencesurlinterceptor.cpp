@@ -34,8 +34,9 @@ CidReferencesUrlInterceptor::~CidReferencesUrlInterceptor()
 
 bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    if (info.requestUrl().scheme() == QLatin1String("cid")) {
-        const QString newUrl = MessageViewer::WebEngineEmbedPart::self()->contentUrl(info.requestUrl().path());
+    const QUrl urlRequestUrl(info.requestUrl());
+    if (urlRequestUrl.scheme() == QLatin1String("cid")) {
+        const QString newUrl = MessageViewer::WebEngineEmbedPart::self()->contentUrl(urlRequestUrl.path());
         if (!newUrl.isEmpty()) {
             info.redirect(QUrl(newUrl));
         }
