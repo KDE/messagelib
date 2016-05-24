@@ -312,14 +312,6 @@ void Viewer::setDecryptMessageOverwrite(bool overwrite)
     d->setDecryptMessageOverwrite(overwrite);
 }
 
-QWidget *Viewer::configWidget()
-{
-    Q_D(Viewer);
-    ConfigureWidget *w = new ConfigureWidget();
-    connect(w, &ConfigureWidget::settingsChanged, d, &ViewerPrivate::slotSettingsChanged);
-    return w;
-}
-
 KMime::Message::Ptr Viewer::message() const
 {
     Q_D(const Viewer);

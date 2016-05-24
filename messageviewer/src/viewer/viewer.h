@@ -251,12 +251,6 @@ public:
     void setDecryptMessageOverwrite(bool overwrite = true);
 
     /**
-    * Get an instance for the configuration widget. The caller has the ownership and must delete the widget. See also configObject();
-    * The caller should also call the widget's slotSettingsChanged() if the configuration has changed.
-    */
-    QWidget *configWidget();
-
-    /**
     * Initiates a delete, by sending a signal to delete the message item */
     void deleteMessage();
 
