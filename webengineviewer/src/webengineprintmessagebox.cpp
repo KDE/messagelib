@@ -27,7 +27,8 @@
 
 using namespace WebEngineViewer;
 WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
-    : QDialog(parent)
+    : QDialog(parent),
+      mEngineView(Q_NULLPTR)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
@@ -55,10 +56,15 @@ WebEnginePrintMessageBox::~WebEnginePrintMessageBox()
 
 void WebEnginePrintMessageBox::setWebEngineView(QWebEngineView *engineView)
 {
-    //TODO
+    mEngineView = engineView;
 }
 
 void WebEnginePrintMessageBox::slotOpenInBrowser()
 {
     //TODO
+}
+
+QWebEngineView *WebEnginePrintMessageBox::engineView() const
+{
+    return mEngineView;
 }

@@ -33,6 +33,7 @@ WebEnginePrintMessageBoxTest::~WebEnginePrintMessageBoxTest()
 void WebEnginePrintMessageBoxTest::shouldHaveDefaultValue()
 {
     WebEngineViewer::WebEnginePrintMessageBox box;
+    QVERIFY(!box.engineView());
     QPushButton *openInBrowser = box.findChild<QPushButton *>(QStringLiteral("openinbrowser"));
     QVERIFY(openInBrowser);
 }

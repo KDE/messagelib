@@ -31,8 +31,13 @@ public:
 
     void setWebEngineView(QWebEngineView *engineView);
 
+    QWebEngineView *engineView() const;
+
 private Q_SLOTS:
     void slotOpenInBrowser();
+
+private:
+    QWebEngineView *mEngineView;
 };
 }
 #endif // WEBENGINEPRINTMESSAGEBOX_H
