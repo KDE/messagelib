@@ -43,10 +43,10 @@ set(libmimetreeparser_extra_SRCS
     #for quotes
     utils/iconnamecache.cpp
     utils/mimetype.cpp
-    viewer/converthtmltoplaintext.cpp
     #HTML Writer
     htmlwriter/filehtmlwriter.cpp
     htmlwriter/queuehtmlwriter.cpp
+    themes/default/converthtmltoplaintext.cpp
     themes/default/mailrenderer.cpp
     themes/default/htmlblock.cpp
     )

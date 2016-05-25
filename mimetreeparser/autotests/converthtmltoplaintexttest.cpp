@@ -19,8 +19,8 @@
 */
 
 #include "converthtmltoplaintexttest.h"
-#include "../src/viewer/converthtmltoplaintext.h"
-#include <qtest.h>
+#include "../src/themes/default/converthtmltoplaintext.h"
+#include <QTest>
 
 ConvertHtmlToPlainTextTest::ConvertHtmlToPlainTextTest(QObject *parent)
     : QObject(parent)

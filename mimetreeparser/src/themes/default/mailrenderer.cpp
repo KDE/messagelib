@@ -19,12 +19,12 @@
 
 #include "mailrenderer.h"
 
+#include "converthtmltoplaintext.h"
 #include "htmlblock.h"
 
 #include "interfaces/htmlwriter.h"
 #include "utils/iconnamecache.h"
 #include "viewer/csshelperbase.h"
-#include "viewer/converthtmltoplaintext.h"
 #include "viewer/messagepart.h"
 #include "viewer/objecttreeparser.h"
 

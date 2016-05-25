@@ -44,7 +44,7 @@ add_mimetreeparser_unittest(nodehelpertest.cpp)
 add_mimetreeparser_unittest(csshelpertest.cpp)
 add_mimetreeparser_class_unittest( cryptohelpertest.cpp "../src/viewer/cryptohelper.cpp")
 
-ecm_add_test(converthtmltoplaintexttest.cpp ../src/viewer/converthtmltoplaintext.cpp
+ecm_add_test(converthtmltoplaintexttest.cpp ../src/themes/default/converthtmltoplaintext.cpp
     TEST_NAME converthtmltoplaintexttest
     NAME_PREFIX "mimetreeparser-"
     LINK_LIBRARIES Qt5::Test Grantlee5::TextDocument
