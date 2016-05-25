@@ -19,11 +19,11 @@
 #define PRINTPREVIEWDIALOG_H
 
 #include <QDialog>
-
+#include <webengineviewer_export.h>
 namespace WebEngineViewer
 {
 class PrintPreviewPageWidget;
-class PrintPreviewDialog : public QDialog
+class WEBENGINEVIEWER_EXPORT PrintPreviewDialog : public QDialog
 {
     Q_OBJECT
 public:

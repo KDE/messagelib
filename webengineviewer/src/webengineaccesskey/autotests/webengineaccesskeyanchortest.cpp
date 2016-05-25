@@ -42,4 +42,4 @@ void WebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()
     QVERIFY(accessKeyAnchor.innerText().isEmpty());
 }
 
-QTEST_MAIN(WebEngineAccessKeyAnchorTest)
+QTEST_APPLESS_MAIN(WebEngineAccessKeyAnchorTest)

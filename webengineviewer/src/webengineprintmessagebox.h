@@ -19,10 +19,11 @@
 #define WEBENGINEPRINTMESSAGEBOX_H
 
 #include <QDialog>
+#include "webengineviewer_export.h"
 class QWebEngineView;
 namespace WebEngineViewer
 {
-class WebEnginePrintMessageBox : public QDialog
+class WEBENGINEVIEWER_EXPORT WebEnginePrintMessageBox : public QDialog
 {
     Q_OBJECT
 public:

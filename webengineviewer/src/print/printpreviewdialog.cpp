@@ -75,6 +75,8 @@ void PrintPreviewDialog::loadFile(const QString &path, bool deleteFile)
 
 void PrintPreviewDialog::slotPrint()
 {
+    //TODO add dialog box to select page.
+
     //TODO select page ?
     //mPrintPreviewWidget->print();
     //TODO

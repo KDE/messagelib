@@ -38,6 +38,7 @@
 #include "job/attachmenteditjob.h"
 #include "job/modifymessagedisplayformatjob.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
+#include <WebEngineViewer/WebEnginePrintMessageBox>
 #include <KContacts/VCardConverter>
 #ifdef MESSAGEVIEWER_READER_HTML_DEBUG
 #include <MimeMessagePart/FileHtmlWriter>
@@ -52,8 +53,7 @@
 #include <KActionCollection>
 #include <KActionMenu>
 #include <KCharsets>
-#include <QWebView>
-#include <QWebFrame>
+
 #include <QMenu>
 #include <KMessageBox>
 #include <KMimeTypeChooser>
@@ -89,7 +89,7 @@
 #include <QPrintDialog>
 #include <QMimeDatabase>
 #include <QWheelEvent>
-
+#include <QPointer>
 //libkdepim
 #include "Libkdepim/BroadcastStatus"
 #include <MessageCore/AttachmentPropertiesDialog>
@@ -2175,7 +2175,23 @@ void ViewerPrivate::slotPrintPreview()
     if (!mMessage) {
         return;
     }
-    qDebug() << "ViewerPrivate::slotPrintPreview() not implemented";
+    QPointer<WebEngineViewer::WebEnginePrintMessageBox> dialog = new WebEngineViewer::WebEnginePrintMessageBox(q);
+    connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openInBrowser, this, &ViewerPrivate::slotOpenInBrowser);
+    connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openPrintPreview, this, &ViewerPrivate::slotOpenPrintPreviewDialog);
+    dialog->setWebEngineView(mViewer);
+    dialog->exec();
+    delete dialog;
+}
+
+void ViewerPrivate::slotOpenInBrowser(const QString &filename)
+{
+    //TODO
+}
+
+void ViewerPrivate::slotOpenPrintPreviewDialog()
+{
+//TODO exclude when we have not support.
+    //TODO
 }
 
 void ViewerPrivate::slotPrintMessage()
@@ -2185,7 +2201,12 @@ void ViewerPrivate::slotPrintMessage()
     if (!mMessage) {
         return;
     }
-    qDebug() << " ViewerPrivate::slotPrintMsg() not implemented";
+    QPointer<WebEngineViewer::WebEnginePrintMessageBox> dialog = new WebEngineViewer::WebEnginePrintMessageBox(q);
+    connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openInBrowser, this, &ViewerPrivate::slotOpenInBrowser);
+    connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openPrintPreview, this, &ViewerPrivate::slotOpenPrintPreviewDialog);
+    dialog->setWebEngineView(mViewer);
+    dialog->exec();
+    delete dialog;
 }
 
 void ViewerPrivate::slotSetEncoding()

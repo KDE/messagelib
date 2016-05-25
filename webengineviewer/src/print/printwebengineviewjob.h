@@ -18,6 +18,8 @@
 #ifndef PRINTWEBENGINEVIEWJOB_H
 #define PRINTWEBENGINEVIEWJOB_H
 
+#include "webengineviewer_export.h"
+
 #include <QObject>
 #include <QPageLayout>
 #include <QTemporaryFile>
@@ -25,7 +27,7 @@
 class QWebEngineView;
 namespace WebEngineViewer
 {
-class PrintWebEngineViewJob : public QObject
+class WEBENGINEVIEWER_EXPORT PrintWebEngineViewJob : public QObject
 {
     Q_OBJECT
 public:
