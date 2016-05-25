@@ -38,6 +38,7 @@ private Q_SLOTS:
     void slotOpenInBrowser();
 
     void slotExportHtmlPageSuccess(const QString &filename);
+    void slotPrintPreview();
 private:
     QWebEngineView *mEngineView;
 };
