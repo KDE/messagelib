@@ -20,9 +20,6 @@
 #ifndef __MIMETREEPARSER_HTMLBLOCK_H__
 #define __MIMETREEPARSER_HTMLBLOCK_H__
 
-#include "partmetadata.h"
-#include <Libkleo/CryptoBackend>
-
 #include <QString>
 #include <QSharedPointer>
 #include <QVector>
@@ -81,19 +78,6 @@ private:
 
     KMime::Content *mNode;
     HtmlWriter *mWriter;
-};
-
-class HTMLWarnBlock : public HTMLBlock
-{
-public:
-    HTMLWarnBlock(MimeTreeParser::HtmlWriter *writer, const QString &msg);
-    virtual ~HTMLWarnBlock();
-private:
-    void internalEnter();
-    void internalExit();
-private:
-    HtmlWriter *mWriter;
-    const QString &mMsg;
 };
 
 // Make sure the whole content is relative, so that nothing is painted over the header

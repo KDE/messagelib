@@ -70,7 +70,6 @@ public:
 
     virtual QString text() const Q_DECL_OVERRIDE;
     void setText(const QString &text);
-    virtual void html(bool decorate) Q_DECL_OVERRIDE;
     void setAttachmentFlag(KMime::Content *node);
     bool isAttachment() const;
 
@@ -88,17 +87,8 @@ public:
     bool hasSubParts() const;
 
 protected:
-    /** Change the string to `quoted' html (meaning, that the quoted
-      part of the message get italized */
-    QString quotedHTML(const QString &s, bool decorate);
-
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
-    void renderInternalHtml(bool decorate) const;
-    QString internalContent() const;
     QString renderInternalText() const;
-
-    HTMLBlockPtr attachmentBlock() const;
-    HTMLBlockPtr rootBlock() const;
 
     HtmlWriter* htmlWriter() const;
     void setHtmlWriter(HtmlWriter *htmlWriter) const;
@@ -114,11 +104,7 @@ protected:
 private:
     CSSHelperBase *cssHelper() const;
 
-    QString mCollapseIcon;
-    QString mExpandIcon;
-
     KMime::Content *attachmentNode() const;
-    HTMLBlockPtr internalRootBlock() const;
 
     QVector<Interface::MessagePart::Ptr> mBlocks;
     bool mIsInternalRoot;

@@ -20,18 +20,9 @@
 #include "htmlblock.h"
 #include "mimetreeparser_debug.h"
 
-#include "interfaces/objecttreesource.h"
 #include "interfaces/htmlwriter.h"
-#include "nodehelper.h"
 
-#include <MessageCore/StringUtil>
 #include <KMime/Content>
-
-#include <gpgme.h>
-#include <Libkleo/CryptoBackendFactory>
-
-#include <KLocalizedString>
-#include <KEmailAddress>
 
 #include <QApplication>
 
@@ -76,45 +67,6 @@ void AttachmentMarkBlock::internalExit()
 
     mWriter->queue(QStringLiteral("</div>"));
     entered = false;
-}
-
-HTMLWarnBlock::HTMLWarnBlock(HtmlWriter *writer, const QString &msg)
-    : mWriter(writer)
-    , mMsg(msg)
-{
-    internalEnter();
-}
-
-HTMLWarnBlock::~HTMLWarnBlock()
-{
-    internalExit();
-}
-
-void HTMLWarnBlock::internalEnter()
-{
-    if (!mWriter || entered) {
-        return;
-    }
-    entered = true;
-
-    if (!mMsg.isEmpty()) {
-        mWriter->queue(QStringLiteral("<div class=\"htmlWarn\">\n"));
-        mWriter->queue(mMsg);
-        mWriter->queue(QStringLiteral("</div><br/><br/>"));
-    }
-
-    mWriter->queue(QStringLiteral("<div style=\"position: relative\">\n"));
-}
-
-void HTMLWarnBlock::internalExit()
-{
-    if (!entered) {
-        return;
-    }
-
-    entered = false;
-
-    mWriter->queue(QStringLiteral("</div>\n"));
 }
 
 RootBlock::RootBlock(HtmlWriter *writer)
