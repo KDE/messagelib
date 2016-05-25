@@ -19,6 +19,8 @@
 
 #include "mailrenderer.h"
 
+#include "mimetreeparser_debug.h"
+
 #include "converthtmltoplaintext.h"
 #include "htmlblock.h"
 
@@ -40,6 +42,7 @@
 #include <QApplication>
 #include <QDebug>
 #include <QFile>
+#include <QStandardPaths>
 #include <QTextCodec>
 #include <QUrl>
 
@@ -86,10 +89,14 @@ Grantlee::Template getGrantleeTemplate(QObject *parent, const QString &name)
     m_engine->addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
 
     auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader());
-    loader->setTemplateDirs(QStringList() << QStringLiteral("/work/source/kde/pim/messagelib/mimetreeparser/src/themes/default"));
+    loader->setTemplateDirs(QStringList() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/mimetreeparser/themes/default"), QStandardPaths::LocateDirectory));
     m_engine->addTemplateLoader(loader);
 
-    return  m_engine->loadByName(name);
+    Grantlee::Template t = m_engine->loadByName(name);
+    if (t->error()) {
+        qCWarning(MIMETREEPARSER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+    }
+    return t;
 }
 
 static QString iconToDataUrl(const QString &iconPath)
