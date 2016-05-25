@@ -33,6 +33,9 @@ public:
 
     QWebEngineView *engineView() const;
 
+Q_SIGNALS:
+    void openPrintPreview();
+
 private Q_SLOTS:
     void slotExportHtmlPageFailed();
     void slotOpenInBrowser();

@@ -16,6 +16,7 @@
 */
 
 #include "webengineprintmessageboxtest.h"
+#include "config-webengineviewer.h"
 #include "../webengineprintmessagebox.h"
 #include <QTest>
 #include <QPushButton>
@@ -36,6 +37,11 @@ void WebEnginePrintMessageBoxTest::shouldHaveDefaultValue()
     QVERIFY(!box.engineView());
     QPushButton *openInBrowser = box.findChild<QPushButton *>(QStringLiteral("openinbrowser"));
     QVERIFY(openInBrowser);
+
+#ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
+    QPushButton *openInPreviewDialogBox = box.findChild<QPushButton *>(QStringLiteral("openprintpreview"));
+    QVERIFY(openInPreviewDialogBox);
+#endif
 }
 
 QTEST_MAIN(WebEnginePrintMessageBoxTest)

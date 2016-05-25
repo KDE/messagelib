@@ -50,7 +50,7 @@ WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
 #ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
     QPushButton *openInPreviewDialogBox = new QPushButton(i18n("Print Preview"), this);
     connect(openInPreviewDialogBox, &QPushButton::clicked, this, &WebEnginePrintMessageBox::slotPrintPreview);
-    openInPreviewDialogBox->setObjectName(QStringLiteral("openinbrowser"));
+    openInPreviewDialogBox->setObjectName(QStringLiteral("openprintpreview"));
     buttonBox->addButton(openInPreviewDialogBox, QDialogButtonBox::ActionRole);
 #endif
 
@@ -101,7 +101,6 @@ QWebEngineView *WebEnginePrintMessageBox::engineView() const
 
 void WebEnginePrintMessageBox::slotPrintPreview()
 {
-#ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
-    //TODO
-#endif
+    Q_EMIT openPrintPreview();
+    accept();
 }
