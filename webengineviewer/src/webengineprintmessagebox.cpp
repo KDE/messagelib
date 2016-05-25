@@ -34,7 +34,6 @@ WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
 
-    //TODO add more.
     QLabel *lab = new QLabel(i18n("Printing WebEngine is limited for the moment."), this);
     lab->setObjectName(QStringLiteral("webengineprintmessageboxlabel"));
     mainLayout->addWidget(lab);
@@ -83,8 +82,7 @@ void WebEnginePrintMessageBox::slotOpenInBrowser()
 
 void WebEnginePrintMessageBox::slotExportHtmlPageSuccess(const QString &filename)
 {
-    //TODO delete file
-    //TODO open browser
+    Q_EMIT openInBrowser(filename);
     accept();
 }
 

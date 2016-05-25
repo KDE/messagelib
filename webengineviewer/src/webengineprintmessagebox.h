@@ -35,6 +35,7 @@ public:
 
 Q_SIGNALS:
     void openPrintPreview();
+    void openInBrowser(const QString &fileName);
 
 private Q_SLOTS:
     void slotExportHtmlPageFailed();
