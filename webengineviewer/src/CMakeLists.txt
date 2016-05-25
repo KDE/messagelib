@@ -111,6 +111,18 @@ install(TARGETS
     EXPORT KF5WebEngineViewerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
     )
 
+if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
+    ecm_generate_headers(WebEngineViewer_Camelprint_HEADERS
+        HEADER_NAMES
+        PrintPreviewDialog
+        PrintWebEngineViewJob
+        REQUIRED_HEADERS WebEngineViewer_print_HEADERS
+        PREFIX WebEngineViewer
+        RELATIVE print
+        )
+
+endif()
+
 ecm_generate_headers(WebEngineViewer_Camelfindbar_HEADERS
     HEADER_NAMES
     FindBarBase
@@ -154,6 +166,7 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_misc_HEADERS
     WebEngineView
     WebHitTest
     WebEngineScript
+    WebEnginePrintMessageBox
     REQUIRED_HEADERS WebEngineViewer_webengine_misc_HEADERS
     PREFIX WebEngineViewer
     RELATIVE
@@ -182,6 +195,7 @@ install(FILES
     ${WebEngineViewer_Camelcasewebengine_misc_HEADERS}
     ${WebEngineViewer_Camelfindbar_HEADERS}
     ${WebEngineViewer_Camelcasewidgets_HEADERS}
+    ${WebEngineViewer_Camelprint_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
     COMPONENT Devel
     )
@@ -193,6 +207,7 @@ install(FILES
     ${WebEngineViewer_webengine_manager_HEADERS}
     ${WebEngineViewer_webengine_misc_HEADERS}
     ${WebEngineViewer_widgets_HEADERS}
+    ${WebEngineViewer_print_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/webengineviewer
     COMPONENT Devel
