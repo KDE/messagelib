@@ -18,7 +18,7 @@ macro(add_mimetreeparser_class_unittest _source _additionalSource)
     ecm_add_test(${_source} ${_additionalSource}
         TEST_NAME ${_name}
         NAME_PREFIX "mimetreeparser-"
-        LINK_LIBRARIES KF5::MimeTreeParser Qt5::Test
+        LINK_LIBRARIES KF5::MimeTreeParser Qt5::Test KF5::IconThemes KF5::Codecs KF5::I18n KF5::CoreAddons Grantlee5::TextDocument Grantlee5::Templates
     )
 endmacro ()
 
@@ -39,7 +39,7 @@ add_mimetreeparser_crypto_unittest(attachmenttest.cpp)
 add_mimetreeparser_crypto_unittest(objecttreeparsertest.cpp)
 add_mimetreeparser_crypto_unittest(rendertest.cpp)
 add_mimetreeparser_crypto_unittest(unencryptedmessagetest.cpp)
-add_mimetreeparser_unittest(messageparttest.cpp)
+add_mimetreeparser_class_unittest(messageparttest.cpp "setupenv.cpp;../src/themes/default/mailrenderer.cpp;../src/themes/default/htmlblock.cpp;../src/themes/default/converthtmltoplaintext.cpp")
 add_mimetreeparser_unittest(nodehelpertest.cpp)
 add_mimetreeparser_unittest(csshelpertest.cpp)
 add_mimetreeparser_class_unittest( cryptohelpertest.cpp "../src/viewer/cryptohelper.cpp")

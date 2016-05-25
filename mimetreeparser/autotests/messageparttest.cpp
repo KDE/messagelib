@@ -25,6 +25,8 @@
 #include "viewer/csshelperbase.h"
 #include "viewer/messagepart.h"
 
+#include "themes/default/mailrenderer.h"
+
 #include <QTest>
 
 using namespace MimeTreeParser;
@@ -56,7 +58,7 @@ void MessagePartTest::testQuoteHtml()
     TestCSSHelper testCSSHelper;
     MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
-    MessagePart part(&otp, data);
-    part.html(false);
-    QCOMPARE(testWriter.html, result);
+    MessagePart::Ptr part(new MessagePart(&otp, data));
+    HtmlRenderer renderer(part);
+    QCOMPARE(renderer.html(), result);
 }
