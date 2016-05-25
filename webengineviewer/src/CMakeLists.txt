@@ -55,6 +55,7 @@ set(libwebengineviewer_webengine_SRCS
     webengineaccesskey/webengineaccesskeyanchor.cpp
     webengineaccesskey/webengineaccesskeyutils.cpp
     webengineprintmessagebox.cpp
+    webengineexporthtmlpagejob.cpp
     )
 
 set(libwebengineviewer_findbar_SRCS

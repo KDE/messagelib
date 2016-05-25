@@ -61,6 +61,29 @@ void WebEnginePrintMessageBox::setWebEngineView(QWebEngineView *engineView)
 
 void WebEnginePrintMessageBox::slotOpenInBrowser()
 {
+    if (mEngineView) {
+        //AutoDelete
+        WebEngineViewer::WebEngineExportHtmlPageJob *job = new WebEngineViewer::WebEngineExportHtmlPageJob(this);
+        job->setEngineView(mEngineView);
+        connect(job, &WebEngineExportHtmlPageJob::failed, this, &WebEnginePrintMessageBox::slotExportHtmlPageFailed);
+        connect(job, &WebEngineExportHtmlPageJob::success, this, &WebEnginePrintMessageBox::slotExportHtmlPageSuccess);
+        job->start();
+
+    } else {
+
+    }
+    //TODO
+}
+
+void WebEnginePrintMessageBox::slotExportHtmlPageSuccess(const QString &filename)
+{
+    //TODO delete file
+    //TODO open browser
+    accept();
+}
+
+void WebEnginePrintMessageBox::slotExportHtmlPageFailed()
+{
     //TODO
 }
 

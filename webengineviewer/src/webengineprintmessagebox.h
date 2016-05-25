@@ -34,8 +34,10 @@ public:
     QWebEngineView *engineView() const;
 
 private Q_SLOTS:
+    void slotExportHtmlPageFailed();
     void slotOpenInBrowser();
 
+    void slotExportHtmlPageSuccess(const QString &filename);
 private:
     QWebEngineView *mEngineView;
 };
