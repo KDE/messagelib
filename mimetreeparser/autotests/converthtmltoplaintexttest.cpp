@@ -79,4 +79,4 @@ void ConvertHtmlToPlainTextTest::shouldConvertToPlainText()
     QCOMPARE(result, convertedText);
 }
 
-QTEST_MAIN(ConvertHtmlToPlainTextTest)
+QTEST_APPLESS_MAIN(ConvertHtmlToPlainTextTest)

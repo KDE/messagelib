@@ -24,7 +24,7 @@
 
 using namespace MimeTreeParser;
 
-QTEST_MAIN(CSSHelperTest)
+QTEST_APPLESS_MAIN(CSSHelperTest)
 
 void CSSHelperTest::testCssDefinition()
 {

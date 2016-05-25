@@ -186,5 +186,5 @@ void NodeHelperTest::testLocalFiles()
     helper.forceCleanTempFiles();
 }
 
-QTEST_MAIN(NodeHelperTest)
+QTEST_GUILESS_MAIN(NodeHelperTest)
 

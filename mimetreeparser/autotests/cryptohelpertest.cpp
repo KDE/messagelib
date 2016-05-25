@@ -141,4 +141,4 @@ void CryptoHelperTest::testMultipleBlockMessage()
     QCOMPARE(blocks[3].text(), QByteArray("-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n"));
 }
 
-QTEST_MAIN(CryptoHelperTest)
+QTEST_APPLESS_MAIN(CryptoHelperTest)
