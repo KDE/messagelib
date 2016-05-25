@@ -38,11 +38,9 @@
 
 #include "attachmentstrategy.h"
 #include "bodypartformatterbasefactory.h"
-#include "converthtmltoplaintext.h"
 #include "csshelperbase.h"
 #include "nodehelper.h"
 #include "messagepart.h"
-#include "partmetadata.h"
 #include "partnodebodypart.h"
 
 #include "mimetreeparser_debug.h"
@@ -50,7 +48,6 @@
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/htmlwriter.h"
 #include "themes/default/mailrenderer.h"
-#include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
 
 #include <KMime/Headers>
@@ -63,13 +60,6 @@
 #include <QByteArray>
 #include <QTextCodec>
 #include <QUrl>
-
-// other includes
-#include <sstream>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <memory>
 
 using namespace MimeTreeParser;
 
