@@ -20,6 +20,7 @@
 #include "../webengineprintmessagebox.h"
 #include <QTest>
 #include <QPushButton>
+#include <QSignalSpy>
 
 WebEnginePrintMessageBoxTest::WebEnginePrintMessageBoxTest(QObject *parent)
     : QObject(parent)
@@ -42,6 +43,20 @@ void WebEnginePrintMessageBoxTest::shouldHaveDefaultValue()
     QPushButton *openInPreviewDialogBox = box.findChild<QPushButton *>(QStringLiteral("openprintpreview"));
     QVERIFY(openInPreviewDialogBox);
 #endif
+}
+
+void WebEnginePrintMessageBoxTest::shouldEmitOpenPrintPreviewSignal()
+{
+    WebEngineViewer::WebEnginePrintMessageBox box;
+    QSignalSpy spyPrintPreview(&box, SIGNAL(openPrintPreview()));
+#ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
+    QPushButton *openInPreviewDialogBox = box.findChild<QPushButton *>(QStringLiteral("openprintpreview"));
+    QTest::mouseClick(openInPreviewDialogBox, Qt::LeftButton);
+    QCOMPARE(spyPrintPreview.count(), 1);
+#else
+    Q_UNUSED(spyPrintPreview);
+#endif
+
 }
 
 QTEST_MAIN(WebEnginePrintMessageBoxTest)

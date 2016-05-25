@@ -29,6 +29,7 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldEmitOpenPrintPreviewSignal();
 };
 
 #endif // WEBENGINEPRINTMESSAGEBOXTEST_H
