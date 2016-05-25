@@ -129,10 +129,11 @@ KMime::Content::List Util::allContents(const KMime::Content *message)
 bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, QUrl &currentFolder)
 {
     QUrl url, dirUrl;
+    QString recentDirClass;
     const bool multiple = (contents.count() > 1);
     if (multiple) {
         // get the dir
-        dirUrl = QFileDialog::getExistingDirectoryUrl(parent, i18n("Save Attachments To"));
+        dirUrl = QFileDialog::getExistingDirectoryUrl(parent, i18n("Save Attachments To"), KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass));
         if (!dirUrl.isValid()) {
             return false;
         }
@@ -150,13 +151,20 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
         if (fileName.isEmpty()) {
             fileName = i18nc("filename for an unnamed attachment", "attachment.1");
         }
-        QUrl pathUrl(QUrl::fromLocalFile(fileName));
-        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), pathUrl);
+
+        QUrl localUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass);
+        localUrl.setPath(localUrl.path() + QLatin1Char('/') + fileName);
+        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl);
         if (url.isEmpty()) {
             return false;
         }
         currentFolder = KIO::upUrl(url);
     }
+
+    if (!recentDirClass.isEmpty()) {
+        KRecentDirs::add(recentDirClass, currentFolder.path());
+    }
+
     QMap< QString, int > renameNumbering;
 
     bool globalResult = true;
