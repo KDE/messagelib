@@ -38,4 +38,4 @@ void TextPartTest::shouldHaveDefaultValue()
     QVERIFY(!textpart.isHtmlUsed());
 }
 
-QTEST_MAIN(TextPartTest)
+QTEST_APPLESS_MAIN(TextPartTest)

@@ -115,4 +115,4 @@ void MailingListTest::shouldCopyReminderInfo()
     QCOMPARE(ml, restoreMl);
 }
 
-QTEST_MAIN(MailingListTest)
+QTEST_APPLESS_MAIN(MailingListTest)

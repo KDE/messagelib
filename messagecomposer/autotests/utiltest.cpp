@@ -24,7 +24,7 @@
 #include <MessageComposer/Util>
 using namespace MessageComposer;
 
-QTEST_MAIN(UtilTest)
+QTEST_APPLESS_MAIN(UtilTest)
 
 void UtilTest::testSelectCharset()
 {
