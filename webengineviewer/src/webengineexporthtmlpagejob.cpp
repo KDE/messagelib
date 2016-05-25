@@ -62,6 +62,7 @@ void WebEngineExportHtmlPageJob::start()
 void WebEngineExportHtmlPageJob::slotSaveHtmlToPage(const QString &text)
 {
     QTemporaryFile mTemporaryFile;
+    mTemporaryFile.setAutoRemove(false);
     QFile file(mTemporaryFile.fileName());
     if (!file.open(QFile::WriteOnly)) {
         Q_EMIT failed();
@@ -71,6 +72,7 @@ void WebEngineExportHtmlPageJob::slotSaveHtmlToPage(const QString &text)
     QTextStream stream(&file);
     stream << text;
     file.close();
+    //We need to remove this temporary file
     Q_EMIT success(mTemporaryFile.fileName());
     deleteLater();
 }
