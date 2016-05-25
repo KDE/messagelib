@@ -161,8 +161,7 @@ target_link_libraries(KF5MimeTreeParser
     KF5::Libkleo
     PRIVATE
     KF5::Codecs
-    KF5::ConfigCore
-    KF5::CoreAddons
+    KF5::CoreAddons #KTextToHTML
     KF5::IconThemes
     KF5::I18n
     KF5::Mime
