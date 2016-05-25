@@ -636,7 +636,7 @@ QString ViewerPrivate::createAtmFileLink(const QString &atmFileName) const
     const QString tmpPath = QDir::tempPath() + QLatin1Char('/') +  QLatin1String("attachments");
     QDir().mkpath(tmpPath);
     QTemporaryDir *linkDir = new QTemporaryDir(tmpPath);
-    QString linkPath = linkDir->path() + atmFileInfo.fileName();
+    QString linkPath = linkDir->path() + QLatin1Char('/') + atmFileInfo.fileName();
     QFile *linkFile = new QFile(linkPath);
     linkFile->open(QIODevice::ReadWrite);
     const QString linkName = linkFile->fileName();
