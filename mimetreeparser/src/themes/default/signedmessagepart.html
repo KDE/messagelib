@@ -27,7 +27,7 @@
                                             {% i18n_var "Message was signed with key %1." block.keyWithWithoutURL as signed %}
                                             {{signed|safe}}
                                         {% else %}
-                                            {% i18n_var "Message was signed by %3 on %1 with key %2" _(block.creationTime) block.keyWithWithoutURL block.signer as signed %}
+                                            {% i18n_var "Message was signed by %3 on %1 with key %2" block.creationTime block.keyWithWithoutURL block.signer as signed %}
                                             {{signed|safe}}
                                         {% endif %}
                                     {% else %}
@@ -35,7 +35,7 @@
                                             {% i18n_var "Message was signed with key %1." keyWithWithoutURL as signed %}
                                             {{signed|safe}}
                                         {% else %}
-                                            {% i18n_var "Message was signed on %1 with key %2." _(block.creationTime) block.keyWithWithoutURL as signed %}
+                                            {% i18n_var "Message was signed on %1 with key %2." block.creationTime block.keyWithWithoutURL as signed %}
                                             {{signed|safe}}
                                         {% endif %}
                                     {% endif %}
@@ -73,13 +73,13 @@
                     <td align="right" valign="bottom" nowrap="nowrap">{{block.auditlog}}</td>
                 {% elif block.detailHeader %}
                     <td rowspan="2">
-                    {% if mClass == "signWarn" %}
+                    {% if block.signClass == "signWarn" %}
                             {% if block.technicalProblem %}
-                            {{block.errorText|safe}}
+                                {{block.errorText|safe}}
                             {% else %}
                             {% if block.keyId %}
                                 {% if block.creationTime %}
-                                    {% i18n_var "Message was signed on %1 with unknown key %2." _(block.creationTime) block.keyWithWithoutURL as signed %}
+                                    {% i18n_var "Message was signed on %1 with unknown key %2." block.creationTime block.keyWithWithoutURL as signed %}
                                     {{signed|safe}}
                                 {% else %} 
                                     {% i18n_var "Message was signed with unknown key %1." block.keyWithWithoutURL as signed %}
