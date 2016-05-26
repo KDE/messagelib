@@ -116,6 +116,7 @@ if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
         HEADER_NAMES
         PrintPreviewDialog
         PrintWebEngineViewJob
+        PrintConfigureDialog
         REQUIRED_HEADERS WebEngineViewer_print_HEADERS
         PREFIX WebEngineViewer
         RELATIVE print

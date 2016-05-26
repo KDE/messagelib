@@ -474,6 +474,8 @@ private Q_SLOTS:
     void slotWheelZoomChanged(int numSteps);
     void slotOpenPrintPreviewDialog();
     void slotOpenInBrowser(const QString &filename);
+    void slotPdfCreated(const QString &filename);
+    void slotPdfFailed();
 public Q_SLOTS:
     /** An URL has been activate with a click. */
     void slotUrlOpen(const QUrl &url = QUrl());
