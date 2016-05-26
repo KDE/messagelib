@@ -8,7 +8,6 @@ ecm_setup_version(${MESSAGELIB_LIB_VERSION} VARIABLE_PREFIX WEBENGINEVIEWER
 
 
 ########### Targets ###########
-
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
 
 option(WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT "Build the print preview support based on poppler." TRUE)
