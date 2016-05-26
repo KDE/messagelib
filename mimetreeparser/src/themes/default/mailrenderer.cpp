@@ -449,8 +449,8 @@ class MimeTreeParser::HtmlRendererPrivate
 {
 public:
     HtmlRendererPrivate(HtmlRenderer *qPtr, MessagePart::Ptr msgPart)
-        : q(qPtr)
-        , mMsgPart(msgPart)
+        : mMsgPart(msgPart)
+        , q(qPtr)
         , mOldWriter(msgPart->htmlWriter())
     {
         mHtml = renderFactory(mMsgPart, QSharedPointer<TestHtmlWriter>());
