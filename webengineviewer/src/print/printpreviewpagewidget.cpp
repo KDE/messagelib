@@ -99,12 +99,13 @@ void PrintPreviewPageWidget::fillComboBox()
 {
     mPageComboBox->clear();
     const int pageCount = mDoc->numPages();
-    for (int i = 0; i < pageCount; ++i) {
-        mPageComboBox->addItem(QString::number(i + 1));
-    }
     if (pageCount == 1) {
         mPageComboBox->hide();
         mPageComboboxLab->hide();
+    } else {
+        for (int i = 0; i < pageCount; ++i) {
+            mPageComboBox->addItem(QString::number(i + 1));
+        }
     }
 }
 
