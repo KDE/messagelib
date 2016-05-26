@@ -16,7 +16,7 @@
 */
 
 #include "webengineprintmessageboxtest.h"
-#include "config-webengineviewer.h"
+#include "webengineviewer/config-webengineviewer.h"
 #include "../webengineprintmessagebox.h"
 #include <QTest>
 #include <QPushButton>

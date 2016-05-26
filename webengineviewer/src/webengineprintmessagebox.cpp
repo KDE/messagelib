@@ -18,7 +18,7 @@
 #include "webengineprintmessagebox.h"
 #include "webengineviewer_debug.h"
 #include "webengineexporthtmlpagejob.h"
-#include "config-webengineviewer.h"
+#include "webengineviewer/config-webengineviewer.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
