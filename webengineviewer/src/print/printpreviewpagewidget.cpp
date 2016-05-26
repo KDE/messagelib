@@ -125,5 +125,6 @@ void PrintPreviewPageWidget::showPage(int index)
 
 void PrintPreviewPageWidget::print(const QList<int> &page)
 {
+    qDebug()<<" void PrintPreviewPageWidget::print(const QList<int> &page) not implemented";
     //TODO
 }
