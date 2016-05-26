@@ -115,9 +115,11 @@ bool PrintPreviewPageWidget::deleteFile() const
 
 void PrintPreviewPageWidget::showPage(int index)
 {
-    Poppler::Page *popplerPage = mDoc->page(index);
-    mPrintPreviewPage->showPage(popplerPage);
-    delete popplerPage;
+    if (index >= 0) {
+        Poppler::Page *popplerPage = mDoc->page(index);
+        mPrintPreviewPage->showPage(popplerPage);
+        delete popplerPage;
+    }
 }
 
 void PrintPreviewPageWidget::print(const QList<int> &page)
