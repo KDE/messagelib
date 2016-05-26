@@ -16,7 +16,7 @@
 */
 
 #include "webengineview.h"
-#include "webengineviewer/config-webengineviewer.h"
+#include "../config-webengineviewer.h"
 #include <QEvent>
 #include <QKeyEvent>
 #include <QMouseEvent>
