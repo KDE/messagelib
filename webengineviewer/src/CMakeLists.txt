@@ -208,6 +208,7 @@ install(FILES
     ${WebEngineViewer_webengine_misc_HEADERS}
     ${WebEngineViewer_widgets_HEADERS}
     ${WebEngineViewer_print_HEADERS}
+    ${CMAKE_CURRENT_BINARY_DIR}/config-webengineviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/webengineviewer
     COMPONENT Devel
