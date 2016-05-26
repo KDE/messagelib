@@ -26,6 +26,7 @@ using namespace WebEngineViewer;
 PrintConfigureDialog::PrintConfigureDialog(QWidget *parent)
     : QDialog(parent)
 {
+    setWindowTitle(i18n("Print Setup"));
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
 
