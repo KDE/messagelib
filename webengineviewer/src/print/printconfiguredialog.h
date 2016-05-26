@@ -18,13 +18,14 @@
 #ifndef PRINTCONFIGUREDIALOG_H
 #define PRINTCONFIGUREDIALOG_H
 
+#include "webengineviewer_export.h"
 #include <QDialog>
 #include <QPageLayout>
 
 namespace WebEngineViewer
 {
 class PrintConfigureWidget;
-class PrintConfigureDialog : public QDialog
+class WEBENGINEVIEWER_EXPORT PrintConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
