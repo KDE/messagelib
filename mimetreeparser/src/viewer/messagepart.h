@@ -90,7 +90,7 @@ protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
     QString renderInternalText() const;
 
-    HtmlWriter* htmlWriter() const;
+    HtmlWriter *htmlWriter() const;
     void setHtmlWriter(HtmlWriter *htmlWriter) const;
 
     QString mText;
@@ -155,7 +155,6 @@ public:
     typedef QSharedPointer<TextMessagePart> Ptr;
     TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage, IconType asIcon);
     virtual ~TextMessagePart();
-
 
     KMMsgSignatureState signatureState() const;
     KMMsgEncryptionState encryptionState() const;

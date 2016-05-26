@@ -352,17 +352,17 @@ void MailWebEngineView::slotLoadFinished()
 
 void MailWebEngineView::dragEnterEvent(QDragEnterEvent *event)
 {
-    qDebug()<<" void MailWebEngineView::dragEnterEvent(QDragEnterEvent *event)";
+    qDebug() << " void MailWebEngineView::dragEnterEvent(QDragEnterEvent *event)";
 }
 
 void MailWebEngineView::dragMoveEvent(QDragMoveEvent *e)
 {
-    qDebug()<<" void MailWebEngineView::dragMoveEvent(QDragMoveEvent *e)";
+    qDebug() << " void MailWebEngineView::dragMoveEvent(QDragMoveEvent *e)";
     WebEngineViewer::WebEngineView::dragMoveEvent(e);
     //TODO
 }
 
 void MailWebEngineView::dropEvent(QDropEvent *e)
 {
-    qDebug()<<" MailWebEngineView::dropEvent";
+    qDebug() << " MailWebEngineView::dropEvent";
 }

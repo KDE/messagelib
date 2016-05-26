@@ -61,7 +61,6 @@ void RenderTest::testRenderSmart()
     testRender();
 }
 
-
 void RenderTest::testRenderSmartDetails_data()
 {
     QTest::addColumn<QString>("mailFileName");

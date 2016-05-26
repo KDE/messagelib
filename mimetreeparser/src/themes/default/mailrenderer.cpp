@@ -59,16 +59,17 @@ Q_DECLARE_METATYPE(const Kleo::CryptoBackend::Protocol *)
 
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
 GRANTLEE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
-    if (property == QStringLiteral("keyID")) {
-        return QString::fromLatin1(object.keyID());
-    }
+if (property == QStringLiteral("keyID"))
+{
+    return QString::fromLatin1(object.keyID());
+}
 GRANTLEE_END_LOOKUP
 
 // Read-only introspection of Kleo::CryptoBackend::Protocol object.
 namespace Grantlee
 {
 template<>
-inline QVariant TypeAccessor<const Kleo::CryptoBackend::Protocol *>::lookUp(const Kleo::CryptoBackend::Protocol* const object, const QString &property)
+inline QVariant TypeAccessor<const Kleo::CryptoBackend::Protocol *>::lookUp(const Kleo::CryptoBackend::Protocol *const object, const QString &property)
 {
     if (property == QStringLiteral("name")) {
         return object->name();
@@ -187,7 +188,6 @@ bool looksLikeParaBreak(const QString &s, unsigned int newLinePos)
     //    meaningful
     return prevLineLength + wordLength + 1 < WRAP_COL;
 }
-
 
 static const int SIG_FRAME_COL_UNDEF = 99;
 #define SIG_FRAME_COL_RED    -1
@@ -364,7 +364,6 @@ QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
     return result;
 }
 
-
 /** Checks whether @p str contains external references. To be precise,
     we only check whether @p str contains 'xxx="http[s]:' where xxx is
     not href. Obfuscated external references are ignored on purpose.
@@ -422,19 +421,17 @@ class TestHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
     explicit TestHtmlWriter(MimeTreeParser::HtmlWriter *baseWriter)
-    : mBaseWriter(baseWriter)
+        : mBaseWriter(baseWriter)
     {}
     virtual ~TestHtmlWriter() {}
 
     void begin(const QString &text) Q_DECL_OVERRIDE {mBaseWriter->begin(text);}
-    void write(const QString &str) Q_DECL_OVERRIDE
-    {
+    void write(const QString &str) Q_DECL_OVERRIDE {
         html.append(str);
     }
     void end() Q_DECL_OVERRIDE {mBaseWriter->end();}
     void reset() Q_DECL_OVERRIDE {mBaseWriter->reset();}
-    void queue(const QString &str) Q_DECL_OVERRIDE
-    {
+    void queue(const QString &str) Q_DECL_OVERRIDE {
         html.append(str);
     }
     void flush() Q_DECL_OVERRIDE {mBaseWriter->flush();}
@@ -738,18 +735,18 @@ public:
                                 //Expand all quotes
                                 htmlStr += QLatin1String("<div class=\"quotelevelmark\" >");
                                 htmlStr += QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
-                                                        "<img src=\"%2\"/></a>")
-                                        .arg(-1)
-                                        .arg(mExpandIcon);
+                                                          "<img src=\"%2\"/></a>")
+                                           .arg(-1)
+                                           .arg(mExpandIcon);
                                 htmlStr += QLatin1String("</div><br/>");
                                 htmlStr += quoteEnd;
                             }
                         } else {
                             htmlStr += QLatin1String("<div class=\"quotelevelmark\" >");
                             htmlStr += QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
-                                                    "<img src=\"%2\"/></a>")
-                                    .arg(actQuoteLevel)
-                                    .arg(mCollapseIcon);
+                                                      "<img src=\"%2\"/></a>")
+                                       .arg(actQuoteLevel)
+                                       .arg(mCollapseIcon);
                             htmlStr += QLatin1String("</div>");
                             if (actQuoteLevel < 3) {
                                 htmlStr += quoteFontTag[actQuoteLevel];
@@ -983,10 +980,10 @@ public:
             QString keyWithWithoutURL;
             if (cryptoProto) {
                 startKeyHREF =
-                QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">")
-                .arg(cryptoProto->displayName(),
-                    cryptoProto->name(),
-                    QString::fromLatin1(metaData.keyId));
+                    QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">")
+                    .arg(cryptoProto->displayName(),
+                         cryptoProto->name(),
+                         QString::fromLatin1(metaData.keyId));
 
                 keyWithWithoutURL = QStringLiteral("%1%2</a>").arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArray("0x") + metaData.keyId)));
             } else {
@@ -1012,10 +1009,10 @@ public:
             // pending(khz): Implement usage of these for PGP sigs as well.
             int frameColor = SIG_FRAME_COL_UNDEF;
             statusStr = sigStatusToString(cryptoProto,
-                                                    metaData.status_code,
-                                                    metaData.sigSummary,
-                                                    frameColor,
-                                                    showKeyInfos);
+                                          metaData.status_code,
+                                          metaData.sigSummary,
+                                          frameColor,
+                                          showKeyInfos);
             // if needed fallback to english status text
             // that was reported by the plugin
             if (statusStr.isEmpty()) {
@@ -1073,7 +1070,7 @@ public:
                                 i18nc("Start of warning message.", "Warning:") +
                                 QStringLiteral("</u> ") +
                                 i18n("Sender's mail address is not stored in the %1 used for signing.",
-                                        certificate) +
+                                     certificate) +
                                 QStringLiteral("<br />") +
                                 i18n("sender: ") +
                                 msgFrom +
@@ -1100,9 +1097,9 @@ public:
                             i18nc("Start of warning message.", "Warning:") +
                             QStringLiteral("</u> ") +
                             i18n("No mail address is stored in the %1 used for signing, "
-                                    "so we cannot compare it to the sender's address %2.",
-                                    certificate,
-                                    msgFrom);
+                                 "so we cannot compare it to the sender's address %2.",
+                                 certificate,
+                                 msgFrom);
                     }
                     break;
                 }
@@ -1168,7 +1165,7 @@ public:
         }
 
         if (metaData.isSigned) {
-             {
+            {
                 HTMLBlock::Ptr aBlock;
                 if (mp->isAttachment()) {
                     aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
@@ -1323,7 +1320,6 @@ private:
     QString mExpandIcon;
 };
 
-
 HtmlRenderer::HtmlRenderer(MessagePart::Ptr msgPart)
     : d(new HtmlRendererPrivate(this, msgPart))
 {
@@ -1334,7 +1330,7 @@ HtmlRenderer::~HtmlRenderer()
     delete d;
 }
 
-const QString& HtmlRenderer::html()
+const QString &HtmlRenderer::html()
 {
     return d->mHtml;
 }
