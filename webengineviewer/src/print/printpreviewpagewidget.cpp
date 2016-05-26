@@ -43,9 +43,9 @@ PrintPreviewPageWidget::PrintPreviewPageWidget(QWidget *parent)
     hbox->setObjectName(QStringLiteral("layoutcombobox"));
     hbox->setMargin(0);
     layout->addLayout(hbox);
-    QLabel *lab = new QLabel(i18n("Page:"), this);
-    lab->setObjectName(QStringLiteral("labelcombobox"));
-    hbox->addWidget(lab);
+    mPageComboboxLab = new QLabel(i18n("Page:"), this);
+    mPageComboboxLab->setObjectName(QStringLiteral("labelcombobox"));
+    hbox->addWidget(mPageComboboxLab);
 
     mPageComboBox = new QComboBox(this);
     mPageComboBox->setObjectName(QStringLiteral("pagecombobox"));
@@ -101,6 +101,10 @@ void PrintPreviewPageWidget::fillComboBox()
     const int pageCount = mDoc->numPages();
     for (int i = 0; i < pageCount; ++i) {
         mPageComboBox->addItem(QString::number(i + 1));
+    }
+    if (pageCount == 1) {
+        mPageComboBox->hide();
+        mPageComboboxLab->hide();
     }
 }
 

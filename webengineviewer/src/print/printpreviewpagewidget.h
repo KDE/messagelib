@@ -21,6 +21,7 @@
 #include <QWidget>
 
 class QComboBox;
+class QLabel;
 namespace Poppler
 {
 class Document;
@@ -50,6 +51,7 @@ private:
     PrintPreviewPageViewer *mPrintPreviewPage;
     Poppler::Document *mDoc;
     QComboBox *mPageComboBox;
+    QLabel *mPageComboboxLab;
 };
 }
 #endif // PRINTPREVIEWPAGEWIDGET_H

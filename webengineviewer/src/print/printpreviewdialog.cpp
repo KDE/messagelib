@@ -30,6 +30,7 @@ using namespace WebEngineViewer;
 PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
     : QDialog(parent)
 {
+    setWindowTitle(i18n("Preview"));
     QVBoxLayout *layout = new QVBoxLayout;
     setLayout(layout);
 
