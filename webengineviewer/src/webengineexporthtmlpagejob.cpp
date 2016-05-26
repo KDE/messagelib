@@ -41,7 +41,6 @@ WebEngineExportHtmlPageJob::WebEngineExportHtmlPageJob(QObject *parent)
     : QObject(parent),
       mEngineView(Q_NULLPTR)
 {
-
 }
 
 WebEngineExportHtmlPageJob::~WebEngineExportHtmlPageJob()
@@ -61,19 +60,18 @@ void WebEngineExportHtmlPageJob::start()
 
 void WebEngineExportHtmlPageJob::slotSaveHtmlToPage(const QString &text)
 {
-    QTemporaryFile mTemporaryFile;
-    mTemporaryFile.setAutoRemove(false);
-    QFile file(mTemporaryFile.fileName());
-    if (!file.open(QFile::WriteOnly)) {
+    QTemporaryFile temporaryFile;
+    temporaryFile.setAutoRemove(false);
+    if (!temporaryFile.open()) {
         Q_EMIT failed();
         deleteLater();
         return;
     }
-    QTextStream stream(&file);
+    QTextStream stream(&temporaryFile);
     stream << text;
-    file.close();
+    temporaryFile.close();
     //We need to remove this temporary file
-    Q_EMIT success(mTemporaryFile.fileName());
+    Q_EMIT success(temporaryFile.fileName());
     deleteLater();
 }
 

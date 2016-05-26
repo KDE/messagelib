@@ -2191,7 +2191,9 @@ void ViewerPrivate::slotPrintPreview()
 
 void ViewerPrivate::slotOpenInBrowser(const QString &filename)
 {
-    //TODO
+    const QUrl url(QUrl::fromLocalFile(filename));
+    KRun::runUrl(url, QStringLiteral("text/html"), q);
+    //TODO autodelete files
 }
 
 void ViewerPrivate::slotOpenPrintPreviewDialog()
