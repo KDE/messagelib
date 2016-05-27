@@ -214,15 +214,7 @@ qreal WebEngineView::relativePosition() const
 
 bool WebEngineView::hasPrintPreviewSupport() const
 {
-#if QT_VERSION < 0x050700
-    return false;
-#endif
-
-#ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
     return true;
-#else
-    return false;
-#endif
 }
 
 void WebEngineView::saveHtml(QWebEngineDownloadItem *download)
