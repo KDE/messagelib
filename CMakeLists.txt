@@ -99,7 +99,7 @@ if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
   endif()
 endif()
 
-include_directories(${Messagelib_BINARY_DIR})
+
 
 add_subdirectory(mimetreeparser)
 add_subdirectory(messageviewer)

@@ -37,6 +37,8 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5} COMPONENT Devel
     )
 
+include_directories(${Messagelib_BINARY_DIR})
+
 add_subdirectory(src)
 if (BUILD_TESTING)
     add_subdirectory(autotests)
