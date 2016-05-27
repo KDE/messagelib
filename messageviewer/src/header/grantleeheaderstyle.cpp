@@ -27,7 +27,8 @@ class MessageViewer::GrantleeHeaderStylePrivate
 {
 public:
     GrantleeHeaderStylePrivate()
-        : mGrantleeFormatter(Q_NULLPTR)
+        : mGrantleeFormatter(Q_NULLPTR),
+          mShowMailAction(true)
     {
         mGrantleeFormatter = new GrantleeHeaderFormatter;
     }
@@ -37,6 +38,7 @@ public:
     }
 
     GrantleeHeaderFormatter *mGrantleeFormatter;
+    bool mShowMailAction;
 };
 
 GrantleeHeaderStyle::GrantleeHeaderStyle()
@@ -55,15 +57,34 @@ const char *GrantleeHeaderStyle::name() const
     return "grantlee";
 }
 
+
+
 QString GrantleeHeaderStyle::format(KMime::Message *message) const
 {
     if (!message) {
         return QString();
     }
-    return d->mGrantleeFormatter->toHtml(theme(), isPrinting(), this, message);
+
+    GrantleeHeaderFormatter::GrantleeHeaderFormatterSettings settings;
+    settings.isPrinting = isPrinting();
+    settings.theme = theme();
+    settings.style = this;
+    settings.message = message;
+    settings.showMailAction = d->mShowMailAction;
+    return d->mGrantleeFormatter->toHtml(settings);
 }
 
 bool GrantleeHeaderStyle::hasAttachmentQuickList() const
 {
     return true;
+}
+
+bool GrantleeHeaderStyle::showMailAction() const
+{
+    return d->mShowMailAction;
+}
+
+void GrantleeHeaderStyle::setShowMailAction(bool showAction)
+{
+    d->mShowMailAction = showAction;
 }

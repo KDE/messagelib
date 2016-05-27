@@ -71,7 +71,18 @@ GrantleeHeaderFormatter::~GrantleeHeaderFormatter()
 
 QString GrantleeHeaderFormatter::toHtml(const GrantleeHeaderFormatter::GrantleeHeaderFormatterSettings &settings) const
 {
-    return toHtml(settings.theme, settings.isPrinting, settings.style, settings.message);
+    QString errorMessage;
+    if (!settings.theme.isValid()) {
+        errorMessage = i18n("Grantlee theme \"%1\" is not valid.", settings.theme.name());
+        return errorMessage;
+    }
+    d->templateLoader->setTemplateDirs(QStringList() << settings.theme.absolutePath());
+    Grantlee::Template headerTemplate = d->engine->loadByName(settings.theme.themeFilename());
+    if (headerTemplate->error()) {
+        errorMessage = headerTemplate->errorString();
+        return errorMessage;
+    }
+    return format(settings.theme.absolutePath(), headerTemplate, settings.theme.displayExtraVariables(), settings.isPrinting, settings.style, settings.message, settings.showMailAction);
 }
 
 QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const
@@ -84,23 +95,7 @@ QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, 
     return format(absolutPath, headerTemplate, displayExtraHeaders, isPrinting, style, message);
 }
 
-QString GrantleeHeaderFormatter::toHtml(const GrantleeTheme::Theme &theme, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message) const
-{
-    QString errorMessage;
-    if (!theme.isValid()) {
-        errorMessage = i18n("Grantlee theme \"%1\" is not valid.", theme.name());
-        return errorMessage;
-    }
-    d->templateLoader->setTemplateDirs(QStringList() << theme.absolutePath());
-    Grantlee::Template headerTemplate = d->engine->loadByName(theme.themeFilename());
-    if (headerTemplate->error()) {
-        errorMessage = headerTemplate->errorString();
-        return errorMessage;
-    }
-    return format(theme.absolutePath(), headerTemplate, theme.displayExtraVariables(), isPrinting, style, message);
-}
-
-QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message) const
+QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showMailAction) const
 {
     QVariantHash headerObject;
 
@@ -111,6 +106,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     // direction.
     const QString absoluteThemePath = QUrl::fromLocalFile(absolutePath + QLatin1Char('/')).url();
     headerObject.insert(QStringLiteral("absoluteThemePath"), absoluteThemePath);
+    headerObject.insert(QStringLiteral("showMailAction"), showMailAction);
     headerObject.insert(QStringLiteral("applicationDir"), QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
     headerObject.insert(QStringLiteral("subjectDir"), d->headerStyleUtil.subjectDirectionString(message));
 

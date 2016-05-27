@@ -37,6 +37,8 @@ public:
 
     bool hasAttachmentQuickList() const Q_DECL_OVERRIDE;
 
+    bool showMailAction() const;
+    void setShowMailAction(bool showAction);
 private:
     GrantleeHeaderStylePrivate *const d;
 };

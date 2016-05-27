@@ -38,14 +38,16 @@ public:
         GrantleeHeaderFormatterSettings()
             : isPrinting(false),
               style(Q_NULLPTR),
-              message(Q_NULLPTR)
+              message(Q_NULLPTR),
+              showMailAction(true)
         {
 
         }
         GrantleeTheme::Theme theme;
         bool isPrinting;
-        MessageViewer::HeaderStyle *style;
+        mutable const MessageViewer::HeaderStyle *style;
         KMime::Message *message;
+        bool showMailAction;
     };
 
     explicit GrantleeHeaderFormatter();
@@ -53,11 +55,9 @@ public:
 
     QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
 
-    QString toHtml(const GrantleeTheme::Theme &theme, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message) const;
-
     QString toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const;
 private:
-    QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message) const;
+    QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showMailAction = true) const;
     class Private;
     Private *const d;
 };
