@@ -31,6 +31,7 @@ WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     : QDialog(parent),
       mEngineView(Q_NULLPTR)
 {
+    setWindowTitle(i18n("Print Status Information"));
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
 
