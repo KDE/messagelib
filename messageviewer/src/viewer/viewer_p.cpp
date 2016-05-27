@@ -129,6 +129,7 @@
 #include <WebEngineViewer/WebHitTestResult>
 #include "header/headerstylemenumanager.h"
 
+#include <MimeTreeParser/AttachmentTemporaryFilesDirs>
 #include <MimeTreeParser/BodyPart>
 #include <MimeTreeParser/HtmlWriter>
 
@@ -2191,9 +2192,12 @@ void ViewerPrivate::slotPrintPreview()
 
 void ViewerPrivate::slotOpenInBrowser(const QString &filename)
 {
+    MimeTreeParser::AttachmentTemporaryFilesDirs *browserTemporaryFile = new MimeTreeParser::AttachmentTemporaryFilesDirs;
+    browserTemporaryFile->addTempFile(filename);
     const QUrl url(QUrl::fromLocalFile(filename));
     KRun::runUrl(url, QStringLiteral("text/html"), q);
-    //TODO autodelete files
+    browserTemporaryFile->removeTempFiles();
+    browserTemporaryFile = Q_NULLPTR;
 }
 
 void ViewerPrivate::slotOpenPrintPreviewDialog()
