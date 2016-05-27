@@ -417,13 +417,13 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
     return false;
 }
 
-class TestHtmlWriter : public MimeTreeParser::HtmlWriter
+class CacheHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
-    explicit TestHtmlWriter(MimeTreeParser::HtmlWriter *baseWriter)
-        : mBaseWriter(baseWriter)
+    explicit CacheHtmlWriter(MimeTreeParser::HtmlWriter *baseWriter)
+    : mBaseWriter(baseWriter)
     {}
-    virtual ~TestHtmlWriter() {}
+    virtual ~CacheHtmlWriter() {}
 
     void begin(const QString &text) Q_DECL_OVERRIDE {mBaseWriter->begin(text);}
     void write(const QString &str) Q_DECL_OVERRIDE {
@@ -450,7 +450,7 @@ public:
         , mOldWriter(msgPart->htmlWriter())
         , q(qPtr)
     {
-        mHtml = renderFactory(mMsgPart, QSharedPointer<TestHtmlWriter>());
+        mHtml = renderFactory(mMsgPart, QSharedPointer<CacheHtmlWriter>());
     }
 
     CSSHelperBase *cssHelper() const
@@ -463,7 +463,7 @@ public:
         return mMsgPart->source();
     }
 
-    void renderSubParts(MessagePart::Ptr msgPart, const QSharedPointer<TestHtmlWriter> &htmlWriter)
+    void renderSubParts(MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
     {
         foreach (const auto &_m, msgPart->subParts()) {
             const auto m = _m.dynamicCast<MessagePart>();
@@ -475,7 +475,7 @@ public:
 
     QString render(MessagePartList::Ptr mp)
     {
-        auto htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
             HTMLBlock::Ptr rBlock;
             HTMLBlock::Ptr aBlock;
@@ -498,7 +498,7 @@ public:
 
     QString render(MimeMessagePart::Ptr mp)
     {
-        auto htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
             HTMLBlock::Ptr aBlock;
             HTMLBlock::Ptr rBlock;
@@ -531,12 +531,12 @@ public:
 
         c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->mMessage.data()));
         {
-            auto _htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+            auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
             renderSubParts(mp, _htmlWriter);
             c.insert(QStringLiteral("content"), _htmlWriter->html);
         }
 
-        auto htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
@@ -605,12 +605,12 @@ public:
 
         } else {
             t = getGrantleeTemplate(mp.data(), QStringLiteral("textmessagepart.html"));
-            auto _htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+            auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
             renderSubParts(mp, _htmlWriter);
             c.insert(QStringLiteral("content"), _htmlWriter->html);
         }
 
-        auto htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
@@ -817,7 +817,7 @@ public:
 
     QString render(MessagePart::Ptr mp)
     {
-        auto htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
@@ -862,7 +862,7 @@ public:
         }
         mp->source()->setHtmlMode(Util::Html);
 
-        auto htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
@@ -887,7 +887,7 @@ public:
         if (metaData.isSigned) {
             c.insert(QStringLiteral("content"), renderSigned(mp));
         } else if (node) {
-            auto _htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+            auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
             {
                 HTMLBlock::Ptr rBlock;
                 if (mp->mIsInternalRoot) {
@@ -932,7 +932,7 @@ public:
         QObject block;
 
         if (node) {
-            auto _htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+            auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
             {
                 HTMLBlock::Ptr rBlock;
                 if (mp->mIsInternalRoot) {
@@ -1150,7 +1150,7 @@ public:
 
     QString render(CryptoMessagePart::Ptr mp)
     {
-        auto htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         const auto metaData = mp->mMetaData;
 
         if (metaData.isEncrypted) {
@@ -1192,7 +1192,7 @@ public:
 
     QString render(AlternativeMessagePart::Ptr mp)
     {
-        auto htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
@@ -1234,7 +1234,7 @@ public:
             keylist << QVariant::fromValue(key);
         }
 
-        auto htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
@@ -1246,7 +1246,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString renderFactory(MessagePart::Ptr msgPart, const QSharedPointer<TestHtmlWriter> &htmlWriter)
+    QString renderFactory(MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
     {
         const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
@@ -1298,7 +1298,7 @@ public:
 
         auto _htmlWriter = htmlWriter;
         if (!_htmlWriter) {
-            _htmlWriter = QSharedPointer<TestHtmlWriter>(new TestHtmlWriter(mOldWriter));
+            _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         }
         msgPart->setHtmlWriter(_htmlWriter.data());
         msgPart->html(false);
