@@ -20,15 +20,11 @@
 
 #include <QString>
 #include <grantlee/templateloader.h>
+#include <GrantleeTheme/grantleetheme.h>
 #include "messageviewer_export.h"
 namespace KMime
 {
 class Message;
-}
-
-namespace GrantleeTheme
-{
-class Theme;
 }
 
 namespace MessageViewer
@@ -37,8 +33,25 @@ class HeaderStyle;
 class MESSAGEVIEWER_EXPORT GrantleeHeaderFormatter
 {
 public:
+    struct GrantleeHeaderFormatterSettings
+    {
+        GrantleeHeaderFormatterSettings()
+            : isPrinting(false),
+              style(Q_NULLPTR),
+              message(Q_NULLPTR)
+        {
+
+        }
+        GrantleeTheme::Theme theme;
+        bool isPrinting;
+        MessageViewer::HeaderStyle *style;
+        KMime::Message *message;
+    };
+
     explicit GrantleeHeaderFormatter();
     ~GrantleeHeaderFormatter();
+
+    QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
 
     QString toHtml(const GrantleeTheme::Theme &theme, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message) const;
 

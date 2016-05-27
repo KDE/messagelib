@@ -69,6 +69,11 @@ GrantleeHeaderFormatter::~GrantleeHeaderFormatter()
     delete d;
 }
 
+QString GrantleeHeaderFormatter::toHtml(const GrantleeHeaderFormatter::GrantleeHeaderFormatterSettings &settings) const
+{
+    return toHtml(settings.theme, settings.isPrinting, settings.style, settings.message);
+}
+
 QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const
 {
     d->templateLoader->setTemplateDirs(QStringList() << absolutPath);
