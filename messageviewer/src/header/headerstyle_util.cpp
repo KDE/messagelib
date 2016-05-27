@@ -431,17 +431,13 @@ QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
         break;
     }
     case Viewer::Print: {
-#if QT_VERSION >= 0x050700
         const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("document-print"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:print\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Print"), QString::number(mIconSize));
-#endif
         break;
     }
     case Viewer::PrintPreview: {
-#if QT_VERSION >= 0x050700
         const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("document-print-preview"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:printpreview\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Print Preview"), QString::number(mIconSize));
-#endif
         break;
     }
     }
