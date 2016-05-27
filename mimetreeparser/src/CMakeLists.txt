@@ -23,6 +23,7 @@ set(libmimetreeparser_main_SRCS
     interfaces/objecttreesource.cpp
     interfaces/bodypart.cpp
     interfaces/htmlwriter.cpp
+    interfaces/messagepartrenderer.cpp
     job/kleojobexecutor.cpp
     viewer/attachmentstrategy.cpp
     viewer/bodypartformatter.cpp

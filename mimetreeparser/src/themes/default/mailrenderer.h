@@ -20,6 +20,8 @@
 #ifndef __MIMETREEPARSER_MAILRENDERER_H__
 #define __MIMETREEPARSER_MAILRENDERER_H__
 
+#include "interfaces/messagepartrenderer.h"
+
 #include<QSharedPointer>
 
 namespace MimeTreeParser
@@ -29,13 +31,13 @@ class DefaultRendererPrivate;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 
-class DefaultRenderer
+class DefaultRenderer : public Interface::MessagePartRenderer
 {
 public:
     DefaultRenderer(MessagePartPtr msgPart);
     ~DefaultRenderer();
 
-    const QString &html();
+    QString html() const Q_DECL_OVERRIDE;
 
 private:
     DefaultRendererPrivate *d;
