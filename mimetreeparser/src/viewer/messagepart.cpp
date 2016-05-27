@@ -58,7 +58,6 @@ MessagePart::MessagePart(ObjectTreeParser *otp,
     , mSubOtp(Q_NULLPTR)
     , mAttachmentNode(Q_NULLPTR)
     , mRoot(false)
-    , mIsInternalRoot(false)
 {
 }
 
@@ -138,7 +137,7 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
     mSubOtp = new ObjectTreeParser(mOtp, onlyOneMimePart);
     mSubOtp->setAllowAsync(mOtp->allowAsync());
     auto subMessagePart = mSubOtp->parseObjectTreeInternal(node);
-    mIsInternalRoot = subMessagePart->isRoot();
+    mRoot = subMessagePart->isRoot();
     foreach (auto part, subMessagePart->subParts()) {
         appendSubPart(part);
     }

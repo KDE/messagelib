@@ -107,7 +107,6 @@ private:
     KMime::Content *attachmentNode() const;
 
     QVector<Interface::MessagePart::Ptr> mBlocks;
-    bool mIsInternalRoot;
 
     friend class HtmlRendererPrivate;
 };
