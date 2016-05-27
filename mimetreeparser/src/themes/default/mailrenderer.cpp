@@ -485,7 +485,7 @@ public:
             }
 
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
 
             mp->setHtmlWriter(htmlWriter.data());
@@ -503,10 +503,10 @@ public:
             HTMLBlock::Ptr aBlock;
             HTMLBlock::Ptr rBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
 
-            if (mp->mIsInternalRoot) {
+            if (mp->isRoot()) {
                 rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter.data()));
             }
 
@@ -540,7 +540,7 @@ public:
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
             const auto html = t->render(&c);
             htmlWriter->queue(html);
@@ -614,7 +614,7 @@ public:
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
             const auto html = t->render(&c);
             htmlWriter->queue(html);
@@ -821,7 +821,7 @@ public:
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
 
             htmlWriter->queue(quotedHTML(mp->text(), false));
@@ -866,7 +866,7 @@ public:
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
             const auto html = t->render(&c);
             htmlWriter->queue(html);
@@ -890,7 +890,7 @@ public:
             auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
             {
                 HTMLBlock::Ptr rBlock;
-                if (mp->mIsInternalRoot) {
+                if (mp->isRoot()) {
                     rBlock = HTMLBlock::Ptr(new RootBlock(_htmlWriter.data()));
                 }
                 renderSubParts(mp, _htmlWriter);
@@ -935,7 +935,7 @@ public:
             auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
             {
                 HTMLBlock::Ptr rBlock;
-                if (mp->mIsInternalRoot) {
+                if (mp->isRoot()) {
                     rBlock = HTMLBlock::Ptr(new RootBlock(_htmlWriter.data()));
                 }
                 renderSubParts(mp, _htmlWriter);
@@ -1157,7 +1157,7 @@ public:
             {
                 HTMLBlock::Ptr aBlock;
                 if (mp->isAttachment()) {
-                    aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                    aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
                 }
                 htmlWriter->queue(renderEncrypted(mp));
             }
@@ -1168,7 +1168,7 @@ public:
             {
                 HTMLBlock::Ptr aBlock;
                 if (mp->isAttachment()) {
-                    aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                    aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
                 }
                 htmlWriter->queue(renderSigned(mp));
             }
@@ -1178,7 +1178,7 @@ public:
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
 
             if (mp->mNode) {
@@ -1196,7 +1196,7 @@ public:
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
 
             if (mp->viewHtml() && mp->mHTMLPart) {
@@ -1238,7 +1238,7 @@ public:
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->mAttachmentNode));
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
             const auto html = t->render(&c);
             htmlWriter->queue(html);

@@ -589,7 +589,7 @@ bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
     mMetaData.auditLog.clear();
     bool bDecryptionOk = false;
     bool cannotDecrypt = false;
-    Interface::ObjectTreeSource *source = mOtp->mSource;
+    Interface::ObjectTreeSource *_source = source();
     NodeHelper *nodeHelper = mOtp->nodeHelper();
 
     assert(decryptMessage());
@@ -611,7 +611,7 @@ bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
             if (mOtp->allowAsync()) {
                 QObject::connect(newM, &CryptoBodyPartMemento::update,
                                  nodeHelper, &NodeHelper::update);
-                QObject::connect(newM, SIGNAL(update(MimeTreeParser::UpdateMode)), source->sourceObject(),
+                QObject::connect(newM, SIGNAL(update(MimeTreeParser::UpdateMode)), _source->sourceObject(),
                                  SLOT(update(MimeTreeParser::UpdateMode)));
                 if (newM->start()) {
                     mMetaData.inProgress = true;
@@ -743,7 +743,7 @@ void CryptoMessagePart::startDecryption(KMime::Content *data)
 bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signature)
 {
     NodeHelper *nodeHelper = mOtp->nodeHelper();
-    Interface::ObjectTreeSource *source = mOtp->mSource;
+    Interface::ObjectTreeSource *_source = source();
 
     mMetaData.isSigned = false;
     mMetaData.technicalProblem = (mCryptoProto == 0);
@@ -773,7 +773,7 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
                 QObject::connect(m, &CryptoBodyPartMemento::update,
                                  nodeHelper, &NodeHelper::update);
                 QObject::connect(m, SIGNAL(update(MimeTreeParser::UpdateMode)),
-                                 source->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));
+                                 _source->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));
 
                 if (m->start()) {
                     mMetaData.inProgress = true;
