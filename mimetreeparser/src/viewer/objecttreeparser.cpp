@@ -185,7 +185,7 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
         mParsedPart->copyContentFrom();
 
         if (htmlWriter()) {
-            HtmlRenderer renderer(mParsedPart);
+            DefaultRenderer renderer(mParsedPart);
             mHtmlWriter->queue(renderer.html());
         }
     }

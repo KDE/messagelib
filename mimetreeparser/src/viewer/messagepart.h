@@ -172,7 +172,7 @@ private:
     bool mDecryptMessage;
     IconType mAsIcon;
 
-    friend class HtmlRendererPrivate;
+    friend class DefaultRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT HtmlMessagePart : public MessagePart
@@ -194,7 +194,7 @@ private:
     QString mBodyHTML;
     QByteArray mCharset;
 
-    friend class HtmlRendererPrivate;
+    friend class DefaultRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
@@ -218,7 +218,7 @@ private:
     MimeMessagePart::Ptr mTextPart;
     MimeMessagePart::Ptr mHTMLPart;
     bool mViewHtml;
-    friend class HtmlRendererPrivate;
+    friend class DefaultRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart
@@ -236,7 +236,7 @@ private:
     bool mAutoImport;
     GpgME::ImportResult mImportResult;
     const Kleo::CryptoBackend::Protocol *mCryptoProto;
-    friend class HtmlRendererPrivate;
+    friend class DefaultRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
@@ -255,7 +255,7 @@ private:
     const KMime::Message::Ptr mMessage;
     KMime::Content *mNode;
 
-    friend class HtmlRendererPrivate;
+    friend class DefaultRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT CryptoMessagePart : public MessagePart
@@ -315,7 +315,7 @@ protected:
     QByteArray mVerifiedText;
     std::vector<GpgME::DecryptionResult::Recipient> mDecryptRecipients;
 
-    friend class HtmlRendererPrivate;
+    friend class DefaultRendererPrivate;
 };
 
 }

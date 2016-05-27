@@ -59,6 +59,6 @@ void MessagePartTest::testQuoteHtml()
     MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
     MessagePart::Ptr part(new MessagePart(&otp, data));
-    HtmlRenderer renderer(part);
+    DefaultRenderer renderer(part);
     QCOMPARE(renderer.html(), result);
 }

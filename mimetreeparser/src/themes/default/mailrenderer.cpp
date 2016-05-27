@@ -442,13 +442,13 @@ public:
     MimeTreeParser::HtmlWriter *mBaseWriter;
 };
 
-class MimeTreeParser::HtmlRendererPrivate
+class MimeTreeParser::DefaultRendererPrivate
 {
 public:
-    HtmlRendererPrivate(HtmlRenderer *qPtr, MessagePart::Ptr msgPart)
+    DefaultRendererPrivate(DefaultRenderer *qPtr, MessagePart::Ptr msgPart)
         : mMsgPart(msgPart)
-        , q(qPtr)
         , mOldWriter(msgPart->htmlWriter())
+        , q(qPtr)
     {
         mHtml = renderFactory(mMsgPart, QSharedPointer<TestHtmlWriter>());
     }
@@ -1313,24 +1313,24 @@ public:
     QString mHtml;
     MessagePartPtr mMsgPart;
 private:
-    HtmlRenderer *q;
+    DefaultRenderer *q;
     HtmlWriter *mOldWriter;
 
     QString mCollapseIcon;
     QString mExpandIcon;
 };
 
-HtmlRenderer::HtmlRenderer(MessagePart::Ptr msgPart)
-    : d(new HtmlRendererPrivate(this, msgPart))
+DefaultRenderer::DefaultRenderer(MessagePart::Ptr msgPart)
+    : d(new DefaultRendererPrivate(this, msgPart))
 {
 }
 
-HtmlRenderer::~HtmlRenderer()
+DefaultRenderer::~DefaultRenderer()
 {
     delete d;
 }
 
-const QString &HtmlRenderer::html()
+QString DefaultRenderer::html() const
 {
     return d->mHtml;
 }
