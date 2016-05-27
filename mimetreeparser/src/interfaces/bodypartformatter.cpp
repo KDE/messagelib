@@ -38,31 +38,61 @@
 
 using namespace MimeTreeParser::Interface;
 
+namespace MimeTreeParser
+{
+namespace Interface
+{
+
+class MessagePartPrivate
+{
+public:
+    MessagePartPrivate(MessagePart *mp, const BodyPart *part)
+    : mHtmlWriter(Q_NULLPTR)
+    , mPart(part)
+    , mParentPart(Q_NULLPTR)
+    , q(mp)
+    {
+    }
+
+    MimeTreeParser::HtmlWriter *htmlWriter()
+    {
+        if (!mHtmlWriter && mPart) {
+            mHtmlWriter = mPart->objectTreeParser()->htmlWriter();
+        }
+        return mHtmlWriter;
+    }
+
+    MimeTreeParser::HtmlWriter *mHtmlWriter;
+    const BodyPart *mPart;
+    MessagePart *mParentPart;
+
+private:
+    MessagePart *q;
+};
+}
+}
+
 MessagePart::MessagePart()
     : QObject()
-    , mHtmlWriter(Q_NULLPTR)
-    , mPart(Q_NULLPTR)
-    , mParentPart(Q_NULLPTR)
+    , d(new MessagePartPrivate(this, Q_NULLPTR))
 {
 }
 
 MessagePart::MessagePart(const BodyPart &part)
     : QObject()
-    , mHtmlWriter(Q_NULLPTR)
-    , mPart(&part)
-    , mParentPart(Q_NULLPTR)
+    , d(new MessagePartPrivate(this, &part))
 {
-
 }
 
 MessagePart::~MessagePart()
 {
+    delete d;
 }
 
 void MessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate);
-    static_cast<QueueHtmlWriter *>(mHtmlWriter)->replay();
+    static_cast<QueueHtmlWriter *>(d->mHtmlWriter)->replay();
 }
 
 QString MessagePart::text() const
@@ -72,20 +102,17 @@ QString MessagePart::text() const
 
 MessagePart *MessagePart::parentPart() const
 {
-    return mParentPart;
+    return d->mParentPart;
 }
 
 void MessagePart::setParentPart(MessagePart *parentPart)
 {
-    mParentPart = parentPart;
+    d->mParentPart = parentPart;
 }
 
-MimeTreeParser::HtmlWriter *MessagePart::htmlWriter()
+MimeTreeParser::HtmlWriter *MessagePart::htmlWriter() const
 {
-    if (!mHtmlWriter) {
-        mHtmlWriter = mPart->objectTreeParser()->htmlWriter();
-    }
-    return mHtmlWriter;
+    return d->htmlWriter();
 }
 
 MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) const

@@ -50,6 +50,7 @@ namespace Interface
 
 class BodyPartURLHandler;
 class BodyPart;
+class MessagePartPrivate;
 
 class MIMETREEPARSER_EXPORT MessagePart : public QObject
 {
@@ -67,12 +68,8 @@ public:
     MessagePart *parentPart() const;
 
 private:
-    MimeTreeParser::HtmlWriter *htmlWriter();
-
-    MimeTreeParser::HtmlWriter *mHtmlWriter;
-    const BodyPart *mPart;
-    MessagePart *mParentPart;
-
+    MimeTreeParser::HtmlWriter *htmlWriter() const;
+    MessagePartPrivate *d;
     friend class BodyPartFormatter;
 };
 
