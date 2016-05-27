@@ -8,6 +8,7 @@ if(BUILD_TESTING)
     add_subdirectory(findbar/autotests)
 endif()
 
+# Laurent Remove all code when QtWebEngine support real printing
 if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.6.99")
     if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
         find_package(Poppler "0.12.1" COMPONENTS Qt5)
