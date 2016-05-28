@@ -2223,6 +2223,8 @@ void ViewerPrivate::slotPdfCreated(const QString &filename)
     WebEngineViewer::PrintPreviewDialog dlg(q);
     dlg.loadFile(filename, true);
     dlg.exec();
+#else
+    Q_UNUSED(filename);
 #endif
 }
 

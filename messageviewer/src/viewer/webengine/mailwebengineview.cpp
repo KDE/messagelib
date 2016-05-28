@@ -157,16 +157,19 @@ void MailWebEngineView::forwardKeyReleaseEvent(QKeyEvent *e)
 
 void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
 {
+    Q_UNUSED(event);
     //qDebug()<<" void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)";
 }
 
 void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 {
+    Q_UNUSED(event);
     //qDebug() << "void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)";
 }
 
 void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 {
+    Q_UNUSED(event);
     //qDebug() << "void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)";
 }
 
@@ -352,6 +355,7 @@ void MailWebEngineView::slotLoadFinished()
 
 void MailWebEngineView::dragEnterEvent(QDragEnterEvent *event)
 {
+    Q_UNUSED(event);
     qDebug() << " void MailWebEngineView::dragEnterEvent(QDragEnterEvent *event)";
 }
 
@@ -364,5 +368,6 @@ void MailWebEngineView::dragMoveEvent(QDragMoveEvent *e)
 
 void MailWebEngineView::dropEvent(QDropEvent *e)
 {
+    Q_UNUSED(e);
     qDebug() << " MailWebEngineView::dropEvent";
 }

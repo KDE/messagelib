@@ -104,16 +104,19 @@ void WebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 
 void WebEngineView::dragMoveEvent(QDragMoveEvent *e)
 {
+    Q_UNUSED(e);
     qDebug()<<" void WebEngineView::dragMoveEvent(QDragMoveEvent *e)";
 }
 
 void WebEngineView::dragEnterEvent(QDragEnterEvent *event)
 {
+    Q_UNUSED(event);
     qDebug()<<" void WebEngineView::dragEnterEvent(QDragEnterEvent *event)";
 }
 
 void WebEngineView::dropEvent(QDropEvent *e)
 {
+    Q_UNUSED(e);
     qDebug()<<" WebEngineView::dropEvent ";
 }
 
