@@ -36,6 +36,7 @@ WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     setLayout(mainLayout);
 
     QLabel *lab = new QLabel(i18n("Printing WebEngine is limited for the moment. So printing support will done by an external browser to print it."), this);
+    lab->setWordWrap(true);
     lab->setAlignment(Qt::AlignHCenter);
     lab->setObjectName(QStringLiteral("webengineprintmessageboxlabel"));
     mainLayout->addWidget(lab);
