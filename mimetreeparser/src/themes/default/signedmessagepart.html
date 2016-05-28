@@ -140,7 +140,7 @@
                         {% i18n "Not enough information to check signature validity." %}
                     {% elif block.signClass == "signOkKeyOk" %}
                         {% if block.addr %}
-                            {% i18n_var "Signed by <a href="mailto:%1">%2</a>." block.addr block.addr as signed %}
+                            {% i18n_var "Signed by <a href=\"mailto:%1\">%2</a>." block.addr block.addr as signed %}
                             {{ signed|safe }}
                         {% else %}
                             {% i18n "Signature is valid." %}
