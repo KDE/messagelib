@@ -35,7 +35,6 @@ WebEnginePrintMessageBoxTest::~WebEnginePrintMessageBoxTest()
 void WebEnginePrintMessageBoxTest::shouldHaveDefaultValue()
 {
     WebEngineViewer::WebEnginePrintMessageBox box;
-    QVERIFY(!box.engineView());
     QPushButton *openInBrowser = box.findChild<QPushButton *>(QStringLiteral("openinbrowser"));
     QVERIFY(openInBrowser);
 
@@ -56,7 +55,15 @@ void WebEnginePrintMessageBoxTest::shouldEmitOpenPrintPreviewSignal()
 #else
     Q_UNUSED(spyPrintPreview);
 #endif
+}
 
+void WebEnginePrintMessageBoxTest::shouldEmitOpenInBrowserSignal()
+{
+    WebEngineViewer::WebEnginePrintMessageBox box;
+    QSignalSpy spyOpenInPreview(&box, SIGNAL(openInBrowser()));
+    QPushButton *openInBrowser = box.findChild<QPushButton *>(QStringLiteral("openinbrowser"));
+    QTest::mouseClick(openInBrowser, Qt::LeftButton);
+    QCOMPARE(spyOpenInPreview.count(), 1);
 }
 
 QTEST_MAIN(WebEnginePrintMessageBoxTest)

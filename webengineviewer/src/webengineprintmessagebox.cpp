@@ -17,19 +17,16 @@
 
 #include "webengineprintmessagebox.h"
 #include "webengineviewer_debug.h"
-#include "webengineexporthtmlpagejob.h"
 #include <webengineviewer/config-webengineviewer.h>
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QPushButton>
-#include <QWebEngineView>
 
 using namespace WebEngineViewer;
 WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
-    : QDialog(parent),
-      mEngineView(Q_NULLPTR)
+    : QDialog(parent)
 {
     setWindowTitle(i18n("Print Status Information"));
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -65,40 +62,10 @@ WebEnginePrintMessageBox::~WebEnginePrintMessageBox()
 
 }
 
-void WebEnginePrintMessageBox::setWebEngineView(QWebEngineView *engineView)
-{
-    mEngineView = engineView;
-}
-
 void WebEnginePrintMessageBox::slotOpenInBrowser()
 {
-    if (mEngineView) {
-        //AutoDelete
-        WebEngineViewer::WebEngineExportHtmlPageJob *job = new WebEngineViewer::WebEngineExportHtmlPageJob;
-        job->setEngineView(mEngineView);
-        connect(job, &WebEngineExportHtmlPageJob::failed, this, &WebEnginePrintMessageBox::slotExportHtmlPageFailed);
-        connect(job, &WebEngineExportHtmlPageJob::success, this, &WebEnginePrintMessageBox::slotExportHtmlPageSuccess);
-        job->start();
-    } else {
-        qCDebug(WEBENGINEVIEWER_LOG) << "WebEngineView not defined";
-    }
-}
-
-void WebEnginePrintMessageBox::slotExportHtmlPageSuccess(const QString &filename)
-{
-    Q_EMIT openInBrowser(filename);
+    Q_EMIT openInBrowser();
     accept();
-}
-
-void WebEnginePrintMessageBox::slotExportHtmlPageFailed()
-{
-    qCDebug(WEBENGINEVIEWER_LOG) << "Impossible to export html page";
-    accept();
-}
-
-QWebEngineView *WebEnginePrintMessageBox::engineView() const
-{
-    return mEngineView;
 }
 
 void WebEnginePrintMessageBox::slotPrintPreview()

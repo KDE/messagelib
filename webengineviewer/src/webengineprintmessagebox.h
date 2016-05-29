@@ -20,7 +20,6 @@
 
 #include <QDialog>
 #include "webengineviewer_export.h"
-class QWebEngineView;
 namespace WebEngineViewer
 {
 class WEBENGINEVIEWER_EXPORT WebEnginePrintMessageBox : public QDialog
@@ -30,22 +29,13 @@ public:
     explicit WebEnginePrintMessageBox(QWidget *parent = Q_NULLPTR);
     ~WebEnginePrintMessageBox();
 
-    void setWebEngineView(QWebEngineView *engineView);
-
-    QWebEngineView *engineView() const;
-
 Q_SIGNALS:
     void openPrintPreview();
-    void openInBrowser(const QString &fileName);
+    void openInBrowser();
 
 private Q_SLOTS:
-    void slotExportHtmlPageFailed();
     void slotOpenInBrowser();
-
-    void slotExportHtmlPageSuccess(const QString &filename);
     void slotPrintPreview();
-private:
-    QWebEngineView *mEngineView;
 };
 }
 #endif // WEBENGINEPRINTMESSAGEBOX_H

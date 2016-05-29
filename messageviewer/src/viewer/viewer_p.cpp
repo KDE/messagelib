@@ -96,6 +96,7 @@
 #include <QMimeDatabase>
 #include <QWheelEvent>
 #include <QPointer>
+#include <WebEngineViewer/WebEngineExportHtmlPageJob>
 //libkdepim
 #include "Libkdepim/BroadcastStatus"
 #include <MessageCore/AttachmentPropertiesDialog>
@@ -2185,12 +2186,20 @@ void ViewerPrivate::slotPrintPreview()
     QPointer<WebEngineViewer::WebEnginePrintMessageBox> dialog = new WebEngineViewer::WebEnginePrintMessageBox(q);
     connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openInBrowser, this, &ViewerPrivate::slotOpenInBrowser);
     connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openPrintPreview, this, &ViewerPrivate::slotOpenPrintPreviewDialog);
-    dialog->setWebEngineView(mViewer);
     dialog->exec();
     delete dialog;
 }
 
-void ViewerPrivate::slotOpenInBrowser(const QString &filename)
+void ViewerPrivate::slotOpenInBrowser()
+{
+    WebEngineViewer::WebEngineExportHtmlPageJob *job = new WebEngineViewer::WebEngineExportHtmlPageJob;
+    job->setEngineView(mViewer);
+    connect(job, &WebEngineViewer::WebEngineExportHtmlPageJob::failed, this, &ViewerPrivate::slotExportHtmlPageFailed);
+    connect(job, &WebEngineViewer::WebEngineExportHtmlPageJob::success, this, &ViewerPrivate::slotExportHtmlPageSuccess);
+    job->start();
+}
+
+void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
 {
     MimeTreeParser::AttachmentTemporaryFilesDirs *browserTemporaryFile = new MimeTreeParser::AttachmentTemporaryFilesDirs;
     browserTemporaryFile->addTempFile(filename);
@@ -2198,6 +2207,11 @@ void ViewerPrivate::slotOpenInBrowser(const QString &filename)
     KRun::runUrl(url, QStringLiteral("text/html"), q);
     browserTemporaryFile->removeTempFiles();
     browserTemporaryFile = Q_NULLPTR;
+}
+
+void ViewerPrivate::slotExportHtmlPageFailed()
+{
+    qCDebug(MESSAGEVIEWER_LOG) << " Export HTML failed";
 }
 
 void ViewerPrivate::slotOpenPrintPreviewDialog()
@@ -2240,12 +2254,7 @@ void ViewerPrivate::slotPrintMessage()
     if (!mMessage) {
         return;
     }
-    QPointer<WebEngineViewer::WebEnginePrintMessageBox> dialog = new WebEngineViewer::WebEnginePrintMessageBox(q);
-    connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openInBrowser, this, &ViewerPrivate::slotOpenInBrowser);
-    connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openPrintPreview, this, &ViewerPrivate::slotOpenPrintPreviewDialog);
-    dialog->setWebEngineView(mViewer);
-    dialog->exec();
-    delete dialog;
+    slotPrintPreview();
 }
 
 void ViewerPrivate::slotSetEncoding()
