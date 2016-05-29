@@ -19,10 +19,11 @@
 #define WEBENGINEEXPORTHTMLPAGEJOB_H
 
 #include <QObject>
+#include "webengineviewer_export.h"
 class QWebEngineView;
 namespace WebEngineViewer
 {
-class WebEngineExportHtmlPageJob : public QObject
+class WEBENGINEVIEWER_EXPORT WebEngineExportHtmlPageJob : public QObject
 {
     Q_OBJECT
 public:

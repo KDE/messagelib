@@ -44,6 +44,7 @@ WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     connect(buttonBox, &QDialogButtonBox::rejected, this, &WebEnginePrintMessageBox::reject);
+
     QPushButton *openInBrowser = new QPushButton(i18n("Open In Browser"), this);
     connect(openInBrowser, &QPushButton::clicked, this, &WebEnginePrintMessageBox::slotOpenInBrowser);
     openInBrowser->setObjectName(QStringLiteral("openinbrowser"));
@@ -73,7 +74,7 @@ void WebEnginePrintMessageBox::slotOpenInBrowser()
 {
     if (mEngineView) {
         //AutoDelete
-        WebEngineViewer::WebEngineExportHtmlPageJob *job = new WebEngineViewer::WebEngineExportHtmlPageJob(this);
+        WebEngineViewer::WebEngineExportHtmlPageJob *job = new WebEngineViewer::WebEngineExportHtmlPageJob;
         job->setEngineView(mEngineView);
         connect(job, &WebEngineExportHtmlPageJob::failed, this, &WebEnginePrintMessageBox::slotExportHtmlPageFailed);
         connect(job, &WebEngineExportHtmlPageJob::success, this, &WebEnginePrintMessageBox::slotExportHtmlPageSuccess);
