@@ -825,7 +825,7 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
                                  cryptPlugDisplayName);
             }
         } else {
-            errorMsg = i18n("Crypto plug-in \"%1\" cannot verify mSignatures.",
+            errorMsg = i18n("Crypto plug-in \"%1\" cannot verify signatures.",
                             cryptPlugLibName);
         }
         mMetaData.errorText = i18n("The message is signed, but the "
