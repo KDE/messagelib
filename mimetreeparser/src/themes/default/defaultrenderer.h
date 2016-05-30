@@ -28,16 +28,13 @@ namespace MimeTreeParser
 {
 
 class DefaultRendererPrivate;
-namespace Interface
-{
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
-}
 
 class DefaultRenderer : public Interface::MessagePartRenderer
 {
 public:
-    DefaultRenderer(Interface::MessagePartPtr msgPart);
+    DefaultRenderer(MessagePartPtr msgPart);
     ~DefaultRenderer();
 
     QString html() const Q_DECL_OVERRIDE;

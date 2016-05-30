@@ -17,7 +17,7 @@
    02110-1301, USA.
 */
 
-#include "mailrenderer.h"
+#include "defaultrenderer.h"
 
 #include "mimetreeparser_debug.h"
 

@@ -19,7 +19,7 @@
 
 #include "objecttreesource.h"
 #include "bodypartformatter.h"
-#include "themes/default/mailrenderer.h"
+#include "themes/default/defaultrenderer.h"
 
 using namespace MimeTreeParser;
 

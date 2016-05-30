@@ -48,7 +48,7 @@ set(libmimetreeparser_extra_SRCS
     htmlwriter/filehtmlwriter.cpp
     htmlwriter/queuehtmlwriter.cpp
     themes/default/converthtmltoplaintext.cpp
-    themes/default/mailrenderer.cpp
+    themes/default/defaultrenderer.cpp
     themes/default/htmlblock.cpp
     )
 
