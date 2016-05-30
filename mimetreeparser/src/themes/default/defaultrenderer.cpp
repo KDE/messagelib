@@ -445,7 +445,7 @@ public:
 class MimeTreeParser::DefaultRendererPrivate
 {
 public:
-    DefaultRendererPrivate(DefaultRenderer *qPtr, Interface::MessagePart::Ptr msgPart)
+    DefaultRendererPrivate(DefaultRenderer *qPtr, MessagePart::Ptr msgPart)
         : mMsgPart(msgPart)
         , mOldWriter(msgPart->htmlWriter())
         , q(qPtr)
@@ -1254,7 +1254,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString renderFactory(Interface::MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+    QString renderFactory(MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
     {
         const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
@@ -1307,7 +1307,6 @@ public:
 
         qDebug() << className;
 
-        /*
         auto _htmlWriter = htmlWriter;
         if (!_htmlWriter) {
             _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
@@ -1318,13 +1317,12 @@ public:
         if (!htmlWriter) {
             return _htmlWriter->html;
         } 
-        */
 
         return QString();
     }
 
     QString mHtml;
-    Interface::MessagePart::Ptr mMsgPart;
+    MessagePart::Ptr mMsgPart;
 private:
     DefaultRenderer *q;
     HtmlWriter *mOldWriter;
@@ -1333,7 +1331,7 @@ private:
     QString mExpandIcon;
 };
 
-DefaultRenderer::DefaultRenderer(Interface::MessagePart::Ptr msgPart)
+DefaultRenderer::DefaultRenderer(MessagePart::Ptr msgPart)
     : d(new DefaultRendererPrivate(this, msgPart))
 {
 }
