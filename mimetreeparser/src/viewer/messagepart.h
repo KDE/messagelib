@@ -86,6 +86,13 @@ public:
     const QVector<Interface::MessagePart::Ptr> &subParts() const;
     bool hasSubParts() const;
 
+    HtmlWriter* htmlWriter() const Q_DECL_OVERRIDE;
+    void setHtmlWriter(HtmlWriter *htmlWriter) const;
+
+    Interface::ObjectTreeSource *source() const;
+    CSSHelperBase *cssHelper() const;
+    KMime::Content *attachmentNode() const;
+
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
     QString renderInternalText() const;
@@ -97,18 +104,12 @@ protected:
     ObjectTreeParser *mOtp;
     ObjectTreeParser *mSubOtp;
     PartMetaData mMetaData;
-    KMime::Content *mAttachmentNode;
-    bool mRoot;
 
-    Interface::ObjectTreeSource *source() const;
 private:
-    CSSHelperBase *cssHelper() const;
-
-    KMime::Content *attachmentNode() const;
-
     QVector<Interface::MessagePart::Ptr> mBlocks;
 
-    friend class HtmlRendererPrivate;
+    KMime::Content *mAttachmentNode;
+    bool mRoot;
 };
 
 class MIMETREEPARSER_EXPORT MimeMessagePart : public MessagePart

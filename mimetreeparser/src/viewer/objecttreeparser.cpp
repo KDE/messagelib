@@ -47,7 +47,7 @@
 
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/htmlwriter.h"
-#include "themes/default/mailrenderer.h"
+#include "interfaces/messagepartrenderer.h"
 #include "utils/mimetype.h"
 
 #include <KMime/Headers>
@@ -185,8 +185,10 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
         mParsedPart->copyContentFrom();
 
         if (htmlWriter()) {
-            DefaultRenderer renderer(mParsedPart);
-            mHtmlWriter->queue(renderer.html());
+            const auto renderer = mSource->messagePartTheme(mParsedPart);
+            if (renderer) {
+                mHtmlWriter->queue(renderer->html());
+            }
         }
     }
 }

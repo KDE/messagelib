@@ -25,7 +25,7 @@
 
 #include <KMime/Message>
 
-class QObject;
+#include <QSharedPointer>
 class QTextCodec;
 
 namespace MimeTreeParser
@@ -34,12 +34,21 @@ class HtmlWriter;
 class CSSHelperBase;
 class AttachmentStrategy;
 class BodyPartFormatterBaseFactory;
+namespace Interface
+{
+}
 }
 
 namespace MimeTreeParser
 {
 namespace Interface
 {
+
+class MessagePartRenderer;
+typedef QSharedPointer<MessagePartRenderer> MessagePartRendererPtr;
+class MessagePart;
+typedef QSharedPointer<MessagePart> MessagePartPtr;
+
 /**
  * Interface for object tree sources.
  * @author Andras Mantia <amantia@kdab.net>
@@ -97,6 +106,8 @@ public:
     virtual bool showExpandQuotesMark() const = 0;
 
     virtual const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() = 0;
+
+    virtual MessagePartRendererPtr messagePartTheme(Interface::MessagePartPtr msgPart);
 };
 }
 }

@@ -18,7 +18,17 @@
 */
 
 #include "objecttreesource.h"
+#include "bodypartformatter.h"
+#include "themes/default/mailrenderer.h"
 
-MimeTreeParser::Interface::ObjectTreeSource::~ObjectTreeSource()
+using namespace MimeTreeParser;
+
+Interface::ObjectTreeSource::~ObjectTreeSource()
 {
 }
+
+Interface::MessagePartRendererPtr Interface::ObjectTreeSource::messagePartTheme(Interface::MessagePart::Ptr msgPart)
+{
+    return  Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart));
+}
+

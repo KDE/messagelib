@@ -445,7 +445,7 @@ public:
 class MimeTreeParser::DefaultRendererPrivate
 {
 public:
-    DefaultRendererPrivate(DefaultRenderer *qPtr, MessagePart::Ptr msgPart)
+    DefaultRendererPrivate(DefaultRenderer *qPtr, Interface::MessagePart::Ptr msgPart)
         : mMsgPart(msgPart)
         , mOldWriter(msgPart->htmlWriter())
         , q(qPtr)
@@ -455,12 +455,20 @@ public:
 
     CSSHelperBase *cssHelper() const
     {
-        return mMsgPart->cssHelper();
+        auto mp = mMsgPart.dynamicCast<MessagePart>();
+        if (mp) {
+            return mp->cssHelper();
+        }
+        return Q_NULLPTR;
     }
 
     Interface::ObjectTreeSource *source() const
     {
-        return mMsgPart->source();
+        auto mp = mMsgPart.dynamicCast<MessagePart>();
+        if (mp) {
+            return mp->source();
+        }
+        return Q_NULLPTR;
     }
 
     void renderSubParts(MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
@@ -1246,7 +1254,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString renderFactory(MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+    QString renderFactory(Interface::MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
     {
         const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
@@ -1291,11 +1299,15 @@ public:
                 return render(mp);
             }
         } else if (className == QStringLiteral("MimeTreeParser::MessagePart")) {
-            return render(msgPart);
+            auto mp = msgPart.dynamicCast<MessagePart>();
+            if (mp) {
+                return render(mp);
+            }
         }
 
         qDebug() << className;
 
+        /*
         auto _htmlWriter = htmlWriter;
         if (!_htmlWriter) {
             _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
@@ -1305,13 +1317,14 @@ public:
         msgPart->setHtmlWriter(mOldWriter);
         if (!htmlWriter) {
             return _htmlWriter->html;
-        }
+        } 
+        */
 
         return QString();
     }
 
     QString mHtml;
-    MessagePartPtr mMsgPart;
+    Interface::MessagePart::Ptr mMsgPart;
 private:
     DefaultRenderer *q;
     HtmlWriter *mOldWriter;
@@ -1320,7 +1333,7 @@ private:
     QString mExpandIcon;
 };
 
-DefaultRenderer::DefaultRenderer(MessagePart::Ptr msgPart)
+DefaultRenderer::DefaultRenderer(Interface::MessagePart::Ptr msgPart)
     : d(new DefaultRendererPrivate(this, msgPart))
 {
 }

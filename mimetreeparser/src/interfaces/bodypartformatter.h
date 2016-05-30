@@ -67,9 +67,10 @@ public:
     void setParentPart(MessagePart *parentPart);
     MessagePart *parentPart() const;
 
+    virtual MimeTreeParser::HtmlWriter *htmlWriter() const;
 private:
-    MimeTreeParser::HtmlWriter *htmlWriter() const;
     MessagePartPrivate *d;
+
     friend class BodyPartFormatter;
 };
 
