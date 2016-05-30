@@ -23,6 +23,7 @@ set(libmessagelist_SRCS
     core/optionset.cpp
     core/theme.cpp
     core/themedelegate.cpp
+    core/threadingcache.cpp
     core/storagemodelbase.cpp
     core/sortorder.cpp
     core/view.cpp

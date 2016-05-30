@@ -22,6 +22,7 @@
 #define __MESSAGELIST_CORE_MODEL_P_H__
 
 #include "model.h"
+#include "threadingcache.h"
 #include <config-messagelist.h>
 #include <QTimer>
 
@@ -64,7 +65,11 @@ public:
      */
     MessageItem *guessMessageParent(MessageItem *mi);
 
-    void attachMessageToParent(Item *pParent, MessageItem *mi);
+    enum AttachOptions {
+        SkipCacheUpdate = 0,
+        StoreInCache = 1
+    };
+    void attachMessageToParent(Item *pParent, MessageItem *mi, AttachOptions attachOptions = StoreInCache);
     void messageDetachedUpdateParentProperties(Item *oldParent, MessageItem *mi);
     void attachMessageToGroupHeader(MessageItem *mi);
     void attachGroup(GroupHeaderItem *ghi);
@@ -435,6 +440,13 @@ public:
      * Vector of signal-slot connections between StorageModel and us
      */
     QVector<QMetaObject::Connection> mStorageModelConnections;
+
+    /**
+     * Caches child - parent relation based on Akonadi ID and persists the cache
+     * in a file for each Collection. This allows for very fast reconstruction of
+     * threading.
+     */
+    ThreadingCache mThreadingCache;
 };
 
 } // namespace Core

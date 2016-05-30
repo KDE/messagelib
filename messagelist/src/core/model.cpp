@@ -748,6 +748,7 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
         d->mStorageModelConnections.clear();
     }
 
+    const bool isReload = (d->mStorageModel == storageModel);
     d->mStorageModel = storageModel;
 
     if (!d->mStorageModel) {
@@ -756,6 +757,31 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
 
     // Sometimes the folders need to be resurrected...
     d->mStorageModel->prepareForScan();
+
+    // Save threading cache of the previous folder, but only if the cache was
+    // enabled and a different folder is being loaded - reload of the same folder
+    // means change in aggregation in which case we will have to re-build the
+    // cache so there's no point saving the current threading cache.
+    if (d->mThreadingCache.isEnabled() && !isReload) {
+        d->mThreadingCache.save();
+    } else {
+        if (isReload) {
+            qCDebug(MESSAGELIST_LOG) << "Identical folder reloaded, not saving old threading cache";
+        } else {
+            qCDebug(MESSAGELIST_LOG) << "Threading disabled in previous folder, not saving threading cache";
+        }
+    }
+    // Load threading cache for the new folder, but only if threading is enabled,
+    // otherwise we would just be caching a flat list.
+    if (d->mAggregation->threading() != Aggregation::NoThreading) {
+        d->mThreadingCache.setEnabled(true);
+        d->mThreadingCache.load(d->mStorageModel->id(), d->mAggregation);
+    } else {
+        // No threading, no cache - don't even bother inserting entries into the
+        // cache or trying to look them up there
+        d->mThreadingCache.setEnabled(false);
+        qCDebug(MESSAGELIST_LOG) << "Threading disabled in folder" << d->mStorageModel->id() << ", not using threading cache";
+    }
 
     d->mPreSelectionMode = preSelectionMode;
     d->mStorageModelContainsOutboundMessages = d->mStorageModel->containsOutboundMessages();
@@ -1442,6 +1468,9 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
 
         attachMessageToParent(ghi, mi);
     }
+
+    // Remember this message as a thread leader
+    mThreadingCache.updateParent(mi, Q_NULLPTR);
 }
 
 MessageItem *ModelPrivate::findMessageParent(MessageItem *mi)
@@ -2045,7 +2074,7 @@ void ModelPrivate::propagateItemPropertiesToParent(Item *item)
     } // for(;;)
 }
 
-void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi)
+void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachOptions attachOptions)
 {
     Q_ASSERT(pParent);
     Q_ASSERT(mi);
@@ -2124,6 +2153,9 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi)
         case MessageItem::PerfectParentFound:
             if (!mi->inReplyToIdMD5().isEmpty()) {
                 mThreadingCacheMessageInReplyToIdMD5ToMessageItem.remove(mi->inReplyToIdMD5(), mi);
+            }
+            if (attachOptions == StoreInCache && pParent->type() == Item::Message) {
+                mThreadingCache.updateParent(mi, static_cast<MessageItem*>(pParent));
             }
             break;
         case MessageItem::ImperfectParentFound:
@@ -2596,46 +2628,65 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
         // If it has no parent or it has a temporary one (mi->parent() && mi->threadingStatus() == MessageItem::ParentMissing)
         // then we attempt to (re-)thread it. Otherwise we just do nothing (the job has already been done by the previous steps).
         if ((!mi->parent()) || (mi->threadingStatus() == MessageItem::ParentMissing)) {
-            MessageItem *mparent = findMessageParent(mi);
-
+            qint64 parentId;
+            MessageItem *mparent = mThreadingCache.parentForItem(mi, parentId);
             if (mparent) {
-                // parent found, either perfect or imperfect
-                if (mi->isViewable()) {
-                    // mi was already viewable, we're just trying to re-parent it better...
-                    attachMessageToParent(mparent, mi);
-                    if (!mparent->isViewable()) {
-                        // re-attach it immediately (so current item is not lost)
-                        MessageItem *topmost = mparent->topmostMessage();
-                        Q_ASSERT(!topmost->parent());   // groups are always viewable!
-                        topmost->setThreadingStatus(MessageItem::ParentMissing);
-                        attachMessageToGroupHeader(topmost);
-                    }
-                } else {
-                    // mi wasn't viewable yet.. no need to attach parent
-                    attachMessageToParent(mparent, mi);
-                }
-                // and we're done for now
+                mi->setThreadingStatus(MessageItem::PerfectParentFound);
+                attachMessageToParent(mparent, mi, SkipCacheUpdate);
             } else {
-                // so parent not found, (threadingStatus() is either MessageItem::ParentMissing or MessageItem::NonThreadable)
-                switch (mi->threadingStatus()) {
-                case MessageItem::ParentMissing:
-                    if (mAggregation->threading() == Aggregation::PerfectReferencesAndSubject) {
-                        // parent missing but still can be found in Pass3
-                        mUnassignedMessageListForPass3.append(mi);   // this is ~O(1)
+                if (parentId > 0) {
+                    // In second pass we have all available Items in mThreadingCache already. If
+                    // mThreadingCache.parentForItem() returns null, but sets knownParent to true then
+                    // the Item was removed from Akonadi and our threading cache is out-of-date.
+                    mThreadingCache.expireParent(mi);
+                    mparent = findMessageParent(mi);
+                } else if (parentId < 0) {
+                    mparent = findMessageParent(mi);
+                } else {
+                    // parentId = 0: this message is a thread leader so don't
+                    // bother resolving parent, it will be moved directly to
+                    // Pass4 in the code below
+                }
+
+                if (mparent) {
+                    // parent found, either perfect or imperfect
+                    if (mi->isViewable()) {
+                        // mi was already viewable, we're just trying to re-parent it better...
+                        attachMessageToParent(mparent, mi);
+                        if (!mparent->isViewable()) {
+                            // re-attach it immediately (so current item is not lost)
+                            MessageItem *topmost = mparent->topmostMessage();
+                            Q_ASSERT(!topmost->parent());   // groups are always viewable!
+                            topmost->setThreadingStatus(MessageItem::ParentMissing);
+                            attachMessageToGroupHeader(topmost);
+                        }
                     } else {
-                        // We're not doing subject based threading: will never be threaded, go straight to Pass4
-                        mUnassignedMessageListForPass4.append(mi);   // this is ~O(1)
+                        // mi wasn't viewable yet.. no need to attach parent
+                        attachMessageToParent(mparent, mi);
                     }
-                    break;
-                case MessageItem::NonThreadable:
-                    // will never be threaded, go straight to Pass4
-                    mUnassignedMessageListForPass4.append(mi);   // this is ~O(1)
-                    break;
-                default:
-                    // a bug for sure
-                    qCWarning(MESSAGELIST_LOG) << "ERROR: Invalid message threading status returned by findMessageParent()!";
-                    Q_ASSERT(false);
-                    break;
+                    // and we're done for now
+                } else {
+                    // so parent not found, (threadingStatus() is either MessageItem::ParentMissing or MessageItem::NonThreadable)
+                    switch (mi->threadingStatus()) {
+                    case MessageItem::ParentMissing:
+                        if (mAggregation->threading() == Aggregation::PerfectReferencesAndSubject) {
+                            // parent missing but still can be found in Pass3
+                            mUnassignedMessageListForPass3.append(mi);   // this is ~O(1)
+                        } else {
+                            // We're not doing subject based threading: will never be threaded, go straight to Pass4
+                            mUnassignedMessageListForPass4.append(mi);   // this is ~O(1)
+                        }
+                        break;
+                    case MessageItem::NonThreadable:
+                        // will never be threaded, go straight to Pass4
+                        mUnassignedMessageListForPass4.append(mi);   // this is ~O(1)
+                        break;
+                    default:
+                        // a bug for sure
+                        qCWarning(MESSAGELIST_LOG) << "ERROR: Invalid message threading status returned by findMessageParent()!";
+                        Q_ASSERT(false);
+                        break;
+                    }
                 }
             }
         } else {
@@ -2753,146 +2804,166 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
             // Perfect/References threading cache
             mThreadingCacheMessageIdMD5ToMessageItem.insert(mi->messageIdMD5(), mi);
 
-            // Check if this item is a perfect parent for some imperfectly threaded
-            // message (that is actually attacched to it, but not necessairly to the
-            // viewable root). If it is, then remove the imperfect child from its
-            // current parent rebuild the hierarchy on the fly.
+            // Register the current item into the threading cache
+            mThreadingCache.addItemToCache(mi);
 
-            bool needsImmediateReAttach = false;
-
-            if (mThreadingCacheMessageInReplyToIdMD5ToMessageItem.count() > 0) { // unlikely
-                QList< MessageItem * > lImperfectlyThreaded = mThreadingCacheMessageInReplyToIdMD5ToMessageItem.values(mi->messageIdMD5());
-                if (!lImperfectlyThreaded.isEmpty()) {
-                    // must move all of the items in the perfect parent
-                    QList< MessageItem * >::ConstIterator end(lImperfectlyThreaded.constEnd());
-                    for (QList< MessageItem * >::ConstIterator it = lImperfectlyThreaded.constBegin(); it != end; ++it) {
-                        Q_ASSERT((*it)->parent());
-                        Q_ASSERT((*it)->parent() != mi);
-
-                        if (!(((*it)->threadingStatus() == MessageItem::ImperfectParentFound) ||
-                                ((*it)->threadingStatus() == MessageItem::ParentMissing))) {
-                            qCritical() << "Got message " << (*it) << " with threading status" << (*it)->threadingStatus();
-                            Q_ASSERT_X(false, "ModelPrivate::viewItemJobStepInternalForJobPass1Fill", "Wrong threading status");
-                        }
-
-                        // If the item was already attached to the view then
-                        // re-attach it immediately. This will avoid a message
-                        // being displayed for a short while in the view and then
-                        // disappear until a perfect parent isn't found.
-                        if ((*it)->isViewable()) {
-                            needsImmediateReAttach = true;
-                        }
-
-                        (*it)->setThreadingStatus(MessageItem::PerfectParentFound);
-                        attachMessageToParent(mi, *it);
-                    }
-                }
-            }
-
-            // FIXME: Might look by "References" too, here... (?)
-
-            // Attempt to do threading with anything we already have in caches until now
-            // Note that this is likely to work since thread-parent messages tend
-            // to come before thread-children messages in the folders (simply because of
-            // date of arrival).
-
-            Item *pParent;
-
-            // First of all try to find a "perfect parent", that is the message for that
-            // we have the ID in the "In-Reply-To" field. This is actually done by using
-            // MD5 caches of the message ids because of speed. Collisions are very unlikely.
-
-            const QByteArray md5 = mi->inReplyToIdMD5();
-
-            if (!md5.isEmpty()) {
-                // Have an In-Reply-To field MD5.
-                // In well behaved mailing lists 70% of the threadable messages get a parent here :)
-                pParent = mThreadingCacheMessageIdMD5ToMessageItem.value(md5, Q_NULLPTR);
-
-                if (pParent) { // very likely
-                    // Take care of self-referencing (which is always possible)
-                    // and circular In-Reply-To reference loops which are possible
-                    // in case this item was found to be a perfect parent for some
-                    // imperfectly threaded message just above.
-                    if (
-                        (mi == pParent) ||                // self referencing message
-                        (
-                            (mi->childItemCount() > 0) &&   // mi already has children, this is fast to determine
-                            pParent->hasAncestor(mi)        // pParent is in the mi's children tree
-                        )
-                    ) {
-                        // Bad, bad message.. it has In-Reply-To equal to Message-Id
-                        // or it's in a circular In-Reply-To reference loop.
-                        // Will wait for Pass2 with References-Id only
-                        qCWarning(MESSAGELIST_LOG) << "Circular In-Reply-To reference loop detected in the message tree";
-                        mUnassignedMessageListForPass2.append(mi);
-                    } else {
-                        // wow, got a perfect parent for this message!
-                        mi->setThreadingStatus(MessageItem::PerfectParentFound);
-                        attachMessageToParent(pParent, mi);
-                        // we're done with this message (also for Pass2)
-                    }
-                } else {
-                    // got no parent
-                    // will have to wait Pass2
-                    mUnassignedMessageListForPass2.append(mi);
-                }
+            // First of all look into the persistent cache
+            qint64 parentId;
+            Item *pParent = mThreadingCache.parentForItem(mi, parentId);
+            if (pParent) {
+                // We already have the parent MessageItem. Attach current message
+                // to it and mark it as perfect
+                mi->setThreadingStatus(MessageItem::PerfectParentFound);
+                attachMessageToParent(pParent, mi);
+            } else if (parentId > 0) {
+                // We don't have the parent MessageItem yet, but we do know the
+                // parent: delay for pass 2 when we will have the parent MessageItem
+                // for sure.
+                mi->setThreadingStatus(MessageItem::ParentMissing);
+                mUnassignedMessageListForPass2.append(mi);
+            } else if (parentId == 0) {
+                // Message is a thread leader, skip straight to Pass4
+                mi->setThreadingStatus(MessageItem::NonThreadable);
+                mUnassignedMessageListForPass4.append(mi);
             } else {
-                // No In-Reply-To header.
+                // Check if this item is a perfect parent for some imperfectly threaded
+                // message (that is actually attacched to it, but not necessairly to the
+                // viewable root). If it is, then remove the imperfect child from its
+                // current parent rebuild the hierarchy on the fly.
+                bool needsImmediateReAttach = false;
 
-                bool mightHaveOtherMeansForThreading;
+                if (mThreadingCacheMessageInReplyToIdMD5ToMessageItem.count() > 0) { // unlikely
+                    QList< MessageItem * > lImperfectlyThreaded = mThreadingCacheMessageInReplyToIdMD5ToMessageItem.values(mi->messageIdMD5());
+                    if (!lImperfectlyThreaded.isEmpty()) {
+                        // must move all of the items in the perfect parent
+                        QList< MessageItem * >::ConstIterator end(lImperfectlyThreaded.constEnd());
+                        for (QList< MessageItem * >::ConstIterator it = lImperfectlyThreaded.constBegin(); it != end; ++it) {
+                            Q_ASSERT((*it)->parent());
+                            Q_ASSERT((*it)->parent() != mi);
 
-                switch (mAggregation->threading()) {
-                case Aggregation::PerfectReferencesAndSubject:
-                    mightHaveOtherMeansForThreading = mi->subjectIsPrefixed() || !mi->referencesIdMD5().isEmpty();
-                    break;
-                case Aggregation::PerfectAndReferences:
-                    mightHaveOtherMeansForThreading = !mi->referencesIdMD5().isEmpty();
-                    break;
-                case Aggregation::PerfectOnly:
-                    mightHaveOtherMeansForThreading = false;
-                    break;
-                default:
-                    // BUG: there shouldn't be other values (NoThreading is excluded in an upper branch)
-                    Q_ASSERT(false);
-                    mightHaveOtherMeansForThreading = false; // make gcc happy
-                    break;
-                }
+                            if (!(((*it)->threadingStatus() == MessageItem::ImperfectParentFound) ||
+                                    ((*it)->threadingStatus() == MessageItem::ParentMissing))) {
+                                qCritical() << "Got message " << (*it) << " with threading status" << (*it)->threadingStatus();
+                                Q_ASSERT_X(false, "ModelPrivate::viewItemJobStepInternalForJobPass1Fill", "Wrong threading status");
+                            }
 
-                if (mightHaveOtherMeansForThreading) {
-                    // We might have other means for threading this message, wait until Pass2
-                    mUnassignedMessageListForPass2.append(mi);
-                } else {
-                    // No other means for threading this message. This is either
-                    // a standalone message or a thread leader.
-                    // If there is no grouping in effect or thread leaders are just the "topmost"
-                    // messages then we might be done with this one.
-                    if (
-                        (mAggregation->grouping() == Aggregation::NoGrouping) ||
-                        (mAggregation->threadLeader() == Aggregation::TopmostMessage)
-                    ) {
-                        // We're done with this message: it will be surely either toplevel (no grouping in effect)
-                        // or a thread leader with a well defined group. Do it :)
-                        //qCDebug(MESSAGELIST_LOG) << "Setting message status from " << mi->threadingStatus() << " to non threadable (1) " << mi;
-                        mi->setThreadingStatus(MessageItem::NonThreadable);
-                        // Locate the parent group for this item
-                        attachMessageToGroupHeader(mi);
-                        // we're done with this message (also for Pass2)
-                    } else {
-                        // Threads belong to the most recent message in the thread. This means
-                        // that we have to wait until Pass2 or Pass3 to assign a group.
-                        mUnassignedMessageListForPass2.append(mi);
+                            // If the item was already attached to the view then
+                            // re-attach it immediately. This will avoid a message
+                            // being displayed for a short while in the view and then
+                            // disappear until a perfect parent isn't found.
+                            if ((*it)->isViewable()) {
+                                needsImmediateReAttach = true;
+                            }
+
+                            (*it)->setThreadingStatus(MessageItem::PerfectParentFound);
+                            attachMessageToParent(mi, *it);
+                        }
                     }
                 }
-            }
 
-            if (needsImmediateReAttach && !mi->isViewable()) {
-                // The item gathered previously viewable children. They must be immediately
-                // re-shown. So this item must currently be attached to the view.
-                // This is a temporary measure: it will be probably still moved.
-                MessageItem *topmost = mi->topmostMessage();
-                Q_ASSERT(topmost->threadingStatus() == MessageItem::ParentMissing);
-                attachMessageToGroupHeader(topmost);
+                // FIXME: Might look by "References" too, here... (?)
+
+                // Attempt to do threading with anything we already have in caches until now
+                // Note that this is likely to work since thread-parent messages tend
+                // to come before thread-children messages in the folders (simply because of
+                // date of arrival).
+
+
+                // First of all try to find a "perfect parent", that is the message for that
+                // we have the ID in the "In-Reply-To" field. This is actually done by using
+                // MD5 caches of the message ids because of speed. Collisions are very unlikely.
+
+                const QByteArray md5 = mi->inReplyToIdMD5();
+                if (!md5.isEmpty()) {
+                    // Have an In-Reply-To field MD5.
+                    // In well behaved mailing lists 70% of the threadable messages get a parent here :)
+                    pParent = mThreadingCacheMessageIdMD5ToMessageItem.value(md5, Q_NULLPTR);
+
+                    if (pParent) { // very likely
+                        // Take care of self-referencing (which is always possible)
+                        // and circular In-Reply-To reference loops which are possible
+                        // in case this item was found to be a perfect parent for some
+                        // imperfectly threaded message just above.
+                        if (
+                            (mi == pParent) ||                // self referencing message
+                            (
+                                (mi->childItemCount() > 0) &&   // mi already has children, this is fast to determine
+                                pParent->hasAncestor(mi)        // pParent is in the mi's children tree
+                            )
+                        ) {
+                            // Bad, bad message.. it has In-Reply-To equal to Message-Id
+                            // or it's in a circular In-Reply-To reference loop.
+                            // Will wait for Pass2 with References-Id only
+                            qCWarning(MESSAGELIST_LOG) << "Circular In-Reply-To reference loop detected in the message tree";
+                            mUnassignedMessageListForPass2.append(mi);
+                        } else {
+                            // wow, got a perfect parent for this message!
+                            mi->setThreadingStatus(MessageItem::PerfectParentFound);
+                            attachMessageToParent(pParent, mi);
+                            // we're done with this message (also for Pass2)
+                        }
+                    } else {
+                        // got no parent
+                        // will have to wait Pass2
+                        mUnassignedMessageListForPass2.append(mi);
+                    }
+                } else {
+                    // No In-Reply-To header.
+
+                    bool mightHaveOtherMeansForThreading;
+
+                    switch (mAggregation->threading()) {
+                    case Aggregation::PerfectReferencesAndSubject:
+                        mightHaveOtherMeansForThreading = mi->subjectIsPrefixed() || !mi->referencesIdMD5().isEmpty();
+                        break;
+                    case Aggregation::PerfectAndReferences:
+                        mightHaveOtherMeansForThreading = !mi->referencesIdMD5().isEmpty();
+                        break;
+                    case Aggregation::PerfectOnly:
+                        mightHaveOtherMeansForThreading = false;
+                        break;
+                    default:
+                        // BUG: there shouldn't be other values (NoThreading is excluded in an upper branch)
+                        Q_ASSERT(false);
+                        mightHaveOtherMeansForThreading = false; // make gcc happy
+                        break;
+                    }
+
+                    if (mightHaveOtherMeansForThreading) {
+                        // We might have other means for threading this message, wait until Pass2
+                        mUnassignedMessageListForPass2.append(mi);
+                    } else {
+                        // No other means for threading this message. This is either
+                        // a standalone message or a thread leader.
+                        // If there is no grouping in effect or thread leaders are just the "topmost"
+                        // messages then we might be done with this one.
+                        if (
+                            (mAggregation->grouping() == Aggregation::NoGrouping) ||
+                            (mAggregation->threadLeader() == Aggregation::TopmostMessage)
+                        ) {
+                            // We're done with this message: it will be surely either toplevel (no grouping in effect)
+                            // or a thread leader with a well defined group. Do it :)
+                            //qCDebug(MESSAGELIST_LOG) << "Setting message status from " << mi->threadingStatus() << " to non threadable (1) " << mi;
+                            mi->setThreadingStatus(MessageItem::NonThreadable);
+                            // Locate the parent group for this item
+                            attachMessageToGroupHeader(mi);
+                            // we're done with this message (also for Pass2)
+                        } else {
+                            // Threads belong to the most recent message in the thread. This means
+                            // that we have to wait until Pass2 or Pass3 to assign a group.
+                            mUnassignedMessageListForPass2.append(mi);
+                        }
+                    }
+                }
+
+                if (needsImmediateReAttach && !mi->isViewable()) {
+                    // The item gathered previously viewable children. They must be immediately
+                    // re-shown. So this item must currently be attached to the view.
+                    // This is a temporary measure: it will be probably still moved.
+                    MessageItem *topmost = mi->topmostMessage();
+                    Q_ASSERT(topmost->threadingStatus() == MessageItem::ParentMissing);
+                    attachMessageToGroupHeader(topmost);
+                }
             }
 
         } else {
