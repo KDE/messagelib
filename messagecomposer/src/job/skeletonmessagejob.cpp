@@ -83,11 +83,11 @@ void SkeletonMessageJobPrivate::doStart()
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
             if (!sTo.isEmpty()) {
-               sTo.append(",");
+                sTo.append(",");
             }
             sTo.append(address.as7BitString("utf-8"));
         }
-        to->fromUnicodeString(QString::fromLatin1(sTo),"utf-8");
+        to->fromUnicodeString(QString::fromLatin1(sTo), "utf-8");
         message->setHeader(to);
     }
 
@@ -108,11 +108,11 @@ void SkeletonMessageJobPrivate::doStart()
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
             if (!sCc.isEmpty()) {
-               sCc.append(",");
+                sCc.append(",");
             }
             sCc.append(address.as7BitString("utf-8"));
         }
-        cc->fromUnicodeString(QString::fromLatin1(sCc),"utf-8");
+        cc->fromUnicodeString(QString::fromLatin1(sCc), "utf-8");
         message->setHeader(cc);
     }
 
@@ -124,11 +124,11 @@ void SkeletonMessageJobPrivate::doStart()
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
             if (!sBcc.isEmpty()) {
-               sBcc.append(",");
+                sBcc.append(",");
             }
             sBcc.append(address.as7BitString("utf-8"));
         }
-        bcc->fromUnicodeString(QString::fromLatin1(sBcc),"utf-8");
+        bcc->fromUnicodeString(QString::fromLatin1(sBcc), "utf-8");
         message->setHeader(bcc);
     }
 

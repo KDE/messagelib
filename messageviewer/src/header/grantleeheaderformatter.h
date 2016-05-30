@@ -33,8 +33,7 @@ class HeaderStyle;
 class MESSAGEVIEWER_EXPORT GrantleeHeaderFormatter
 {
 public:
-    struct GrantleeHeaderFormatterSettings
-    {
+    struct GrantleeHeaderFormatterSettings {
         GrantleeHeaderFormatterSettings()
             : isPrinting(false),
               style(Q_NULLPTR),

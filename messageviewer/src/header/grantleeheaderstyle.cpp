@@ -57,8 +57,6 @@ const char *GrantleeHeaderStyle::name() const
     return "grantlee";
 }
 
-
-
 QString GrantleeHeaderStyle::format(KMime::Message *message) const
 {
     if (!message) {
