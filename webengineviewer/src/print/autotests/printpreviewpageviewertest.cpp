@@ -39,6 +39,7 @@ void PrintPreviewPageViewerTest::shouldHaveDefaultValue()
     WebEngineViewer::PrintPreviewPageViewer page;
     QLabel *label = page.findChild<QLabel *>(QStringLiteral("page"));
     QVERIFY(label);
+    QCOMPARE(page.zoom(), 1.0);
 }
 
 QTEST_MAIN(PrintPreviewPageViewerTest)

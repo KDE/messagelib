@@ -38,9 +38,15 @@ public:
 
     void showPage(Poppler::Page *page);
 
+    void setZoom(qreal zoom);
+    qreal zoom() const;
+
+Q_SIGNALS:
+    void reloadPage();
 private:
     int mDpiX;
     int mDpiY;
+    qreal mZoom;
     QLabel *mImage;
 };
 }

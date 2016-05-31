@@ -29,7 +29,8 @@ using namespace WebEngineViewer;
 PrintPreviewPageViewer::PrintPreviewPageViewer(QWidget *parent)
     : QScrollArea(parent),
       mDpiX(QApplication::desktop()->physicalDpiX()),
-      mDpiY(QApplication::desktop()->physicalDpiY())
+      mDpiY(QApplication::desktop()->physicalDpiY()),
+      mZoom(1.0)
 {
 
     mImage = new QLabel(this);
@@ -45,7 +46,10 @@ PrintPreviewPageViewer::~PrintPreviewPageViewer()
 
 void PrintPreviewPageViewer::showPage(Poppler::Page *page)
 {
-    const QImage image = page->renderToImage(mDpiX, mDpiY);
+    const double resX = mDpiX * mZoom;
+    const double resY = mDpiY * mZoom;
+
+    const QImage image = page->renderToImage(resX, resY);
     if (!image.isNull()) {
         mImage->resize(image.size());
         mImage->setPixmap(QPixmap::fromImage(image));
@@ -53,4 +57,17 @@ void PrintPreviewPageViewer::showPage(Poppler::Page *page)
         mImage->resize(0, 0);
         mImage->setPixmap(QPixmap());
     }
+}
+
+void PrintPreviewPageViewer::setZoom(qreal zoom)
+{
+    if (mZoom != zoom) {
+        mZoom = zoom;
+        Q_EMIT reloadPage();
+    }
+}
+
+qreal PrintPreviewPageViewer::zoom() const
+{
+    return mZoom;
 }

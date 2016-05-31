@@ -58,6 +58,7 @@ PrintPreviewPageWidget::PrintPreviewPageWidget(QWidget *parent)
     mPrintPreviewPage = new PrintPreviewPageViewer(this);
     mPrintPreviewPage->setObjectName(QStringLiteral("printpreviewpage"));
     layout->addWidget(mPrintPreviewPage);
+    connect(mPrintPreviewPage, &PrintPreviewPageViewer::reloadPage, this, &PrintPreviewPageWidget::slotReloadPage);
 
     setLayout(layout);
 }
@@ -129,4 +130,9 @@ void PrintPreviewPageWidget::print(const QList<int> &page)
 {
     qDebug()<<" void PrintPreviewPageWidget::print(const QList<int> &page) not implemented";
     //TODO
+}
+
+void PrintPreviewPageWidget::slotReloadPage()
+{
+    showPage(mPageComboBox->currentIndex());
 }

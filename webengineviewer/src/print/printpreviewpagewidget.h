@@ -44,7 +44,8 @@ public:
     bool deleteFile() const;
 
 private Q_SLOTS:
-    void showPage(int index);
+    void showPage(int index);    
+    void slotReloadPage();
 
 private:
     void fillComboBox();
