@@ -47,6 +47,7 @@ PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     layout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &PrintPreviewDialog::reject);
+    readConfig();
 }
 
 PrintPreviewDialog::~PrintPreviewDialog()
