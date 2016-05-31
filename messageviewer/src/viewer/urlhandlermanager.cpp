@@ -638,6 +638,7 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
 
 QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
+    qDebug()<<" QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const"<<url;
     if (url.scheme() == QLatin1String("kmail")) {
         const QString urlPath(url.path());
         if (urlPath == QLatin1String("showHTML")) {
