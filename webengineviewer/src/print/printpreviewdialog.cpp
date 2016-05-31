@@ -19,13 +19,14 @@
 
 #include "printpreviewdialog.h"
 #include "printpreviewpagewidget.h"
-
+#include "webengineviewer_debug.h"
 #include <KLocalizedString>
 #include <QVBoxLayout>
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
+
 
 using namespace WebEngineViewer;
 
@@ -79,9 +80,11 @@ void PrintPreviewDialog::loadFile(const QString &path, bool deleteFile)
 
 void PrintPreviewDialog::slotPrint()
 {
+    qCDebug(WEBENGINEVIEWER_LOG) << "void PrintPreviewDialog::slotPrint() not implemented yet";
     //TODO add dialog box to select page.
 
     //TODO select page ?
     //mPrintPreviewWidget->print();
     //TODO
+    accept();
 }
