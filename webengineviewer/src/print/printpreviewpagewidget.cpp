@@ -134,5 +134,6 @@ void PrintPreviewPageWidget::print(const QList<int> &page)
 
 void PrintPreviewPageWidget::slotReloadPage()
 {
-    showPage(mPageComboBox->currentIndex());
+    const int currentIndex = mPageComboBox->currentIndex();
+    showPage(currentIndex == -1 ? 0 : currentIndex);
 }

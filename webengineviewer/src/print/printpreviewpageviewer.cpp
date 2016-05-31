@@ -23,6 +23,7 @@
 #include <QLabel>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QWheelEvent>
 
 using namespace WebEngineViewer;
 
@@ -70,4 +71,20 @@ void PrintPreviewPageViewer::setZoom(qreal zoom)
 qreal PrintPreviewPageViewer::zoom() const
 {
     return mZoom;
+}
+
+void PrintPreviewPageViewer::wheelEvent(QWheelEvent *e)
+{
+    if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
+        const int numDegrees = e->delta() / 8;
+        const int numSteps = numDegrees / 15;
+
+        const qreal factor = (mZoom * 100) + numSteps * 10;
+        if (factor >= 10 && factor <= 300) {
+            setZoom(factor / 100);
+        }
+        e->accept();
+        return;
+    }
+    QScrollArea::wheelEvent(e);
 }

@@ -43,6 +43,10 @@ public:
 
 Q_SIGNALS:
     void reloadPage();
+
+protected:
+    void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
+
 private:
     int mDpiX;
     int mDpiY;
