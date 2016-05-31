@@ -147,7 +147,7 @@ set(libmimetreeparser_SRCS
     ${mimetreeparser_temporaryfile_SRCS}
     )
 
-FILE(GLOB themesfiles_default_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/themes/default/*.html")
+FILE(GLOB themesfiles_default_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/themes/default/templates/*.html")
 install(FILES ${themesfiles_default_SRCS} DESTINATION ${DATA_INSTALL_DIR}/mimetreeparser/themes/default)
 
 ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME log_mimetreeparser)
