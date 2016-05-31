@@ -328,10 +328,10 @@ Model::Model(View *pParent)
 
     d->mCachedWatchedOrIgnoredStatusBits = Akonadi::MessageStatus::statusIgnored().toQInt32() | Akonadi::MessageStatus::statusWatched().toQInt32();
 
-    connect(_k_heartBeatTimer, &QTimer::timeout,
-    this, [this]() {
-        d->checkIfDateChanged();
-    });
+    connect(_k_heartBeatTimer(), &QTimer::timeout,
+            this, [this]() {
+                d->checkIfDateChanged();
+            });
 
     if (!_k_heartBeatTimer->isActive()) {   // First model starts it
         _k_heartBeatTimer->start(60000);   // 1 minute
