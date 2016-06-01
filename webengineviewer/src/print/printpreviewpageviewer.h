@@ -43,13 +43,11 @@ public:
 
 Q_SIGNALS:
     void reloadPage();
+    void pageDown();
+    void pageUp();
 
 protected:
     void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
-
-private Q_SLOTS:
-    void slotPageUp();
-    void slotPageDown();
 
 private:
     void initializeActions();

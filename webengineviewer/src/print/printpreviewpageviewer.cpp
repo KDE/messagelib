@@ -50,21 +50,11 @@ void PrintPreviewPageViewer::initializeActions()
 {
     QShortcut *shortcut = new QShortcut(this);
     shortcut->setKey(QKeySequence(Qt::Key_PageUp));
-    connect(shortcut, &QShortcut::activated, this, &PrintPreviewPageViewer::slotPageUp);
+    connect(shortcut, &QShortcut::activated, this, &PrintPreviewPageViewer::pageUp);
 
     shortcut = new QShortcut(this);
     shortcut->setKey(QKeySequence(Qt::Key_PageDown));
-    connect(shortcut, &QShortcut::activated, this, &PrintPreviewPageViewer::slotPageDown);
-}
-
-void PrintPreviewPageViewer::slotPageUp()
-{
-    //TODO
-}
-
-void PrintPreviewPageViewer::slotPageDown()
-{
-    //TODO
+    connect(shortcut, &QShortcut::activated, this, &PrintPreviewPageViewer::pageDown);
 }
 
 void PrintPreviewPageViewer::showPage(Poppler::Page *page)

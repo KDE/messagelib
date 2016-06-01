@@ -59,6 +59,8 @@ PrintPreviewPageWidget::PrintPreviewPageWidget(QWidget *parent)
     mPrintPreviewPage->setObjectName(QStringLiteral("printpreviewpage"));
     layout->addWidget(mPrintPreviewPage);
     connect(mPrintPreviewPage, &PrintPreviewPageViewer::reloadPage, this, &PrintPreviewPageWidget::slotReloadPage);
+    connect(mPrintPreviewPage, &PrintPreviewPageViewer::pageDown, this, &PrintPreviewPageWidget::slotPageDown);
+    connect(mPrintPreviewPage, &PrintPreviewPageViewer::pageUp, this, &PrintPreviewPageWidget::slotPageUp);
 
     setLayout(layout);
 }
@@ -136,4 +138,26 @@ void PrintPreviewPageWidget::slotReloadPage()
 {
     const int currentIndex = mPageComboBox->currentIndex();
     showPage(currentIndex == -1 ? 0 : currentIndex);
+}
+
+void PrintPreviewPageWidget::slotPageDown()
+{
+    const int currentIndex = mPageComboBox->currentIndex();
+    if (currentIndex != -1) {
+        const int newIndex = currentIndex + 1;
+        if (newIndex < mDoc->numPages()) {
+            showPage(newIndex);
+        }
+    }
+}
+
+void PrintPreviewPageWidget::slotPageUp()
+{
+    const int currentIndex = mPageComboBox->currentIndex();
+    if (currentIndex != -1) {
+        const int newIndex = currentIndex - 1;
+        if (newIndex >= 0) {
+            showPage(newIndex);
+        }
+    }
 }
