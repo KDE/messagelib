@@ -47,7 +47,12 @@ Q_SIGNALS:
 protected:
     void wheelEvent(QWheelEvent *e) Q_DECL_OVERRIDE;
 
+private Q_SLOTS:
+    void slotPageUp();
+    void slotPageDown();
+
 private:
+    void initializeActions();
     int mDpiX;
     int mDpiY;
     qreal mZoom;

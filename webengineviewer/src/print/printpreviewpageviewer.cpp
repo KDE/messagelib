@@ -24,6 +24,7 @@
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QWheelEvent>
+#include <QShortcut>
 
 using namespace WebEngineViewer;
 
@@ -33,16 +34,37 @@ PrintPreviewPageViewer::PrintPreviewPageViewer(QWidget *parent)
       mDpiY(QApplication::desktop()->physicalDpiY()),
       mZoom(1.0)
 {
-
     mImage = new QLabel(this);
     mImage->setObjectName(QStringLiteral("page"));
     mImage->resize(0, 0);
     setWidget(mImage);
+    initializeActions();
 }
 
 PrintPreviewPageViewer::~PrintPreviewPageViewer()
 {
 
+}
+
+void PrintPreviewPageViewer::initializeActions()
+{
+    QShortcut *shortcut = new QShortcut(this);
+    shortcut->setKey(QKeySequence(Qt::Key_PageUp));
+    connect(shortcut, &QShortcut::activated, this, &PrintPreviewPageViewer::slotPageUp);
+
+    shortcut = new QShortcut(this);
+    shortcut->setKey(QKeySequence(Qt::Key_PageDown));
+    connect(shortcut, &QShortcut::activated, this, &PrintPreviewPageViewer::slotPageDown);
+}
+
+void PrintPreviewPageViewer::slotPageUp()
+{
+    //TODO
+}
+
+void PrintPreviewPageViewer::slotPageDown()
+{
+    //TODO
 }
 
 void PrintPreviewPageViewer::showPage(Poppler::Page *page)
