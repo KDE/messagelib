@@ -95,6 +95,12 @@ set(messagecomposer_plugineditor_SRCS
     plugineditor/plugineditorinterface.cpp
     )
 
+set(messagecomposer_plugineditorcheckbeforesend_SRCS
+   plugineditorcheckbeforesend/plugineditorcheckbeforesend.cpp
+   plugineditorcheckbeforesend/plugineditorcheckbeforesendinterface.cpp
+   plugineditorcheckbeforesend/plugineditorcheckbeforesendmanager.cpp
+   )
+
 set( messagecomposer_src
     ${messagecomposer_plugineditor_SRCS}
     ${messagecomposer_richtextcomposerng_SRCS}
@@ -107,6 +113,7 @@ set( messagecomposer_src
     ${messagecomposer_helper_src}
     ${messagecomposer_sender_src}
     ${messagecomposer_followupreminder_SRCS}
+    ${messagecomposer_plugineditorcheckbeforesend_SRCS}
     utils/util.cpp
     settings/messagecomposersettings.cpp
     )
@@ -185,6 +192,17 @@ ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditor
     )
+
+ecm_generate_headers(MessageComposer_Camelplugineditorcheckbeforesend_HEADERS
+    HEADER_NAMES
+    PluginEditorCheckBeforeSend
+    PluginEditorCheckBeforeSendInterface
+    PluginEditorCheckBeforeSendManager
+    REQUIRED_HEADERS MessageComposer_plugineditorcheckbeforesend_HEADERS
+    PREFIX MessageComposer
+    RELATIVE plugineditorcheckbeforesend
+    )
+
 
 ecm_generate_headers(MessageComposer_Camelcaseattachement_HEADERS
     HEADER_NAMES
@@ -315,6 +333,7 @@ ecm_generate_pri_file(BASE_NAME MessageComposer
 
 
 install(FILES
+    ${MessageComposer_Camelplugineditorcheckbeforesend_HEADERS}
     ${MessageComposer_Camelcasecomposer_HEADERS}
     ${MessageComposer_Camelcasecomposerng_HEADERS}
     ${MessageComposer_Camelcasesender_HEADERS}
@@ -350,6 +369,7 @@ install(FILES
     ${MessageComposer_attachement_HEADERS}
     ${MessageComposer_job_HEADERS}
     ${MessageComposer_plugineditor_HEADERS}
+    ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messagecomposer
     COMPONENT Devel
