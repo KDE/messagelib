@@ -97,9 +97,6 @@ protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
     QString renderInternalText() const;
 
-    HtmlWriter *htmlWriter() const;
-    void setHtmlWriter(HtmlWriter *htmlWriter) const;
-
     QString mText;
     ObjectTreeParser *mOtp;
     ObjectTreeParser *mSubOtp;

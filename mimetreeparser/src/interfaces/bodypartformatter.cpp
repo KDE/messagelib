@@ -36,6 +36,8 @@
 #include "htmlwriter/queuehtmlwriter.h"
 #include "viewer/objecttreeparser.h"
 
+#include <QDebug>
+
 using namespace MimeTreeParser::Interface;
 
 namespace MimeTreeParser
@@ -92,6 +94,7 @@ MessagePart::~MessagePart()
 void MessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate);
+    qDebug() << "whoohuu";
     static_cast<QueueHtmlWriter *>(d->mHtmlWriter)->replay();
 }
 

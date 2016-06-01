@@ -21,6 +21,7 @@
 #define __MIMETREEPARSER_OBJECTTREESOURCE_IF_H__
 
 #include "mimetreeparser_export.h"
+#include "mimetreeparser/mimetype.h"
 
 #include <KMime/Message>
 
@@ -33,8 +34,12 @@ class HtmlWriter;
 class CSSHelperBase;
 class AttachmentStrategy;
 class BodyPartFormatterBaseFactory;
+class MessagePart;
+typedef QSharedPointer<MessagePart> MessagePartPtr;
 namespace Interface
 {
+class MessagePartRenderer;
+typedef QSharedPointer<MessagePartRenderer> MessagePartRendererPtr;
 }
 }
 
@@ -42,11 +47,6 @@ namespace MimeTreeParser
 {
 namespace Interface
 {
-
-class MessagePartRenderer;
-typedef QSharedPointer<MessagePartRenderer> MessagePartRendererPtr;
-class MessagePart;
-typedef QSharedPointer<MessagePart> MessagePartPtr;
 
 /**
  * Interface for object tree sources.
@@ -106,7 +106,7 @@ public:
 
     virtual const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() = 0;
 
-    virtual MessagePartRendererPtr messagePartTheme(Interface::MessagePartPtr msgPart);
+    virtual MessagePartRendererPtr messagePartTheme(MessagePartPtr msgPart);
 };
 }
 }

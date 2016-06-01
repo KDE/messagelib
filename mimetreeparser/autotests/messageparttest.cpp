@@ -25,7 +25,7 @@
 #include "viewer/csshelperbase.h"
 #include "viewer/messagepart.h"
 
-#include "themes/default/mailrenderer.h"
+#include "themes/default/defaultrenderer.h"
 
 #include <QTest>
 

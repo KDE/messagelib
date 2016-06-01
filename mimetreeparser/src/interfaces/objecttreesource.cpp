@@ -19,6 +19,7 @@
 
 #include "objecttreesource.h"
 #include "bodypartformatter.h"
+#include "viewer/messagepart.h"
 #include "themes/default/defaultrenderer.h"
 
 using namespace MimeTreeParser;
@@ -27,7 +28,7 @@ Interface::ObjectTreeSource::~ObjectTreeSource()
 {
 }
 
-Interface::MessagePartRendererPtr Interface::ObjectTreeSource::messagePartTheme(Interface::MessagePart::Ptr msgPart)
+Interface::MessagePartRendererPtr Interface::ObjectTreeSource::messagePartTheme(MimeTreeParser::MessagePart::Ptr msgPart)
 {
     return  Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart));
 }
