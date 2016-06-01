@@ -19,9 +19,9 @@
 
 #include "plugineditorcheckbeforesendmanager.h"
 #include "plugineditorcheckbeforesend.h"
+#include "messagecomposer_debug.h"
 #include <QFileInfo>
 #include <QSet>
-#include <QDebug>
 #include <KPluginLoader>
 #include <kpluginmetadata.h>
 #include <KPluginFactory>
@@ -103,7 +103,7 @@ bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
             mPluginList.push_back(info);
             unique.insert(info.saveName());
         } else {
-            qWarning() << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
+            qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<PluginEditorCheckBeforeSendInfo>::iterator end(mPluginList.end());

@@ -26,9 +26,11 @@ class MessageComposer::PluginEditorCheckBeforeSendInterfacePrivate
 {
 public:
     PluginEditorCheckBeforeSendInterfacePrivate()
+        : mParentWidget(Q_NULLPTR)
     {
 
     }
+    QWidget *mParentWidget;
 };
 
 PluginEditorCheckBeforeSendInterface::PluginEditorCheckBeforeSendInterface(QObject *parent)
@@ -41,4 +43,25 @@ PluginEditorCheckBeforeSendInterface::PluginEditorCheckBeforeSendInterface(QObje
 PluginEditorCheckBeforeSendInterface::~PluginEditorCheckBeforeSendInterface()
 {
     delete d;
+}
+
+bool PluginEditorCheckBeforeSendInterface::hasConfigureDialog() const
+{
+    return false;
+}
+
+QWidget *PluginEditorCheckBeforeSendInterface::createConfigureWidget(QWidget *parent) const
+{
+    Q_UNUSED(parent);
+    return {};
+}
+
+void PluginEditorCheckBeforeSendInterface::setParentWidget(QWidget *parent)
+{
+    d->mParentWidget = parent;
+}
+
+QWidget *PluginEditorCheckBeforeSendInterface::parentWidget() const
+{
+    return d->mParentWidget;
 }

@@ -32,6 +32,16 @@ public:
     explicit PluginEditorCheckBeforeSendInterface(QObject *parent = Q_NULLPTR);
     ~PluginEditorCheckBeforeSendInterface();
 
+    virtual bool hasConfigureDialog() const;
+
+    virtual QWidget *createConfigureWidget(QWidget *parent) const;
+
+    virtual void exec() = 0;
+
+    void setParentWidget(QWidget *parent);
+    QWidget *parentWidget() const;
+
+
 private:
     PluginEditorCheckBeforeSendInterfacePrivate *const d;
 };
