@@ -99,6 +99,7 @@ set(messagecomposer_plugineditorcheckbeforesend_SRCS
    plugineditorcheckbeforesend/plugineditorcheckbeforesend.cpp
    plugineditorcheckbeforesend/plugineditorcheckbeforesendinterface.cpp
    plugineditorcheckbeforesend/plugineditorcheckbeforesendmanager.cpp
+   plugineditorcheckbeforesend/plugineditorcheckbeforesendconfigurewidget.cpp
    )
 
 set( messagecomposer_src
@@ -198,6 +199,7 @@ ecm_generate_headers(MessageComposer_Camelplugineditorcheckbeforesend_HEADERS
     PluginEditorCheckBeforeSend
     PluginEditorCheckBeforeSendInterface
     PluginEditorCheckBeforeSendManager
+    PluginEditorCheckBeforeSendConfigureWidget
     REQUIRED_HEADERS MessageComposer_plugineditorcheckbeforesend_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorcheckbeforesend
