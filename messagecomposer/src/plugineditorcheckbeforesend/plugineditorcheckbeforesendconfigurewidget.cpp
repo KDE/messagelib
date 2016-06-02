@@ -22,8 +22,8 @@
 
 using namespace MessageComposer;
 
-PluginEditorCheckBeforeSendConfigureWidget::PluginEditorCheckBeforeSendConfigureWidget(QObject *parent)
-    : QObject(parent)
+PluginEditorCheckBeforeSendConfigureWidget::PluginEditorCheckBeforeSendConfigureWidget(QWidget *parent)
+    : QWidget(parent)
 {
 
 }

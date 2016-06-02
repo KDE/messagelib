@@ -22,15 +22,15 @@
 #define PLUGINEDITORCHECKBEFORESENDCONFIGUREWIDGET_H
 
 #include "messagecomposer_export.h"
-#include <QObject>
+#include <QWidget>
 
 namespace MessageComposer
 {
-class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendConfigureWidget : public QObject
+class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit PluginEditorCheckBeforeSendConfigureWidget(QObject *parent = Q_NULLPTR);
+    explicit PluginEditorCheckBeforeSendConfigureWidget(QWidget *parent = Q_NULLPTR);
     ~PluginEditorCheckBeforeSendConfigureWidget();
 
     virtual void loadSettings() = 0;
