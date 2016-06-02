@@ -41,3 +41,14 @@ PluginEditorCheckBeforeSend::~PluginEditorCheckBeforeSend()
 {
     delete d;
 }
+
+bool PluginEditorCheckBeforeSend::hasConfigureDialog() const
+{
+    return false;
+}
+
+PluginEditorCheckBeforeSendConfigureWidgetSetting PluginEditorCheckBeforeSend::createConfigureWidget(QWidget *parent) const
+{
+    Q_UNUSED(parent);
+    return {};
+}

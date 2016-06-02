@@ -45,17 +45,6 @@ PluginEditorCheckBeforeSendInterface::~PluginEditorCheckBeforeSendInterface()
     delete d;
 }
 
-bool PluginEditorCheckBeforeSendInterface::hasConfigureDialog() const
-{
-    return false;
-}
-
-PluginEditorCheckBeforeSendConfigureWidget *PluginEditorCheckBeforeSendInterface::createConfigureWidget(QWidget *parent) const
-{
-    Q_UNUSED(parent);
-    return {};
-}
-
 void PluginEditorCheckBeforeSendInterface::setParentWidget(QWidget *parent)
 {
     d->mParentWidget = parent;
