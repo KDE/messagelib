@@ -36,7 +36,7 @@ public:
 
     virtual QWidget *createConfigureWidget(QWidget *parent) const;
 
-    virtual void exec() = 0;
+    virtual bool exec() = 0;
 
     void setParentWidget(QWidget *parent);
     QWidget *parentWidget() const;
