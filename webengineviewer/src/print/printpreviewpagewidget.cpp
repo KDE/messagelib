@@ -53,7 +53,7 @@ PrintPreviewPageWidget::PrintPreviewPageWidget(QWidget *parent)
     mPageComboBox->setObjectName(QStringLiteral("pagecombobox"));
     hbox->addWidget(mPageComboBox);
     hbox->addStretch(1);
-    connect(mPageComboBox, SIGNAL(activated(int)), this, SLOT(showPage(int)));
+    connect(mPageComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(showPage(int)));
 
     mPrintPreviewPage = new PrintPreviewPageViewer(this);
     mPrintPreviewPage->setObjectName(QStringLiteral("printpreviewpage"));
@@ -145,8 +145,8 @@ void PrintPreviewPageWidget::slotPageDown()
     const int currentIndex = mPageComboBox->currentIndex();
     if (currentIndex != -1) {
         const int newIndex = currentIndex + 1;
-        if (newIndex < mDoc->numPages()) {
-            showPage(newIndex);
+        if (newIndex < mPageComboBox->count()) {
+            mPageComboBox->setCurrentIndex(newIndex);
         }
     }
 }
@@ -157,7 +157,7 @@ void PrintPreviewPageWidget::slotPageUp()
     if (currentIndex != -1) {
         const int newIndex = currentIndex - 1;
         if (newIndex >= 0) {
-            showPage(newIndex);
+            mPageComboBox->setCurrentIndex(newIndex);
         }
     }
 }
