@@ -33,7 +33,7 @@ public:
     explicit PluginEditorCheckBeforeSend(QObject *parent = Q_NULLPTR);
     ~PluginEditorCheckBeforeSend();
 
-    virtual PluginEditorCheckBeforeSendInterface *createInterface(QWidget *parent) = 0;
+    virtual PluginEditorCheckBeforeSendInterface *createInterface(QObject *parent) = 0;
 
 private:
     PluginEditorCheckBeforeSendPrivate *const d;
