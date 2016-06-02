@@ -50,7 +50,7 @@ bool PluginEditorCheckBeforeSendInterface::hasConfigureDialog() const
     return false;
 }
 
-QWidget *PluginEditorCheckBeforeSendInterface::createConfigureWidget(QWidget *parent) const
+PluginEditorCheckBeforeSendConfigureWidget *PluginEditorCheckBeforeSendInterface::createConfigureWidget(QWidget *parent) const
 {
     Q_UNUSED(parent);
     return {};

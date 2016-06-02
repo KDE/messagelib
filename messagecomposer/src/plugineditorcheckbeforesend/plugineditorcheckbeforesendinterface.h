@@ -25,6 +25,7 @@
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendInterfacePrivate;
+class PluginEditorCheckBeforeSendConfigureWidget;
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendInterface : public QObject
 {
     Q_OBJECT
@@ -34,7 +35,7 @@ public:
 
     virtual bool hasConfigureDialog() const;
 
-    virtual QWidget *createConfigureWidget(QWidget *parent) const;
+    virtual PluginEditorCheckBeforeSendConfigureWidget *createConfigureWidget(QWidget *parent) const;
 
     virtual bool exec() = 0;
 
