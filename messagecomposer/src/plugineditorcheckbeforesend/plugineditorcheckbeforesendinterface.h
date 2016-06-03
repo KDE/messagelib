@@ -38,6 +38,9 @@ public:
     void setParentWidget(QWidget *parent);
     QWidget *parentWidget() const;
 
+public Q_SLOTS:
+    virtual void reloadConfig();
+
 
 private:
     PluginEditorCheckBeforeSendInterfacePrivate *const d;

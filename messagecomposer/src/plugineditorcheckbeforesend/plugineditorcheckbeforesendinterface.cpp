@@ -54,3 +54,8 @@ QWidget *PluginEditorCheckBeforeSendInterface::parentWidget() const
 {
     return d->mParentWidget;
 }
+
+void PluginEditorCheckBeforeSendInterface::reloadConfig()
+{
+    //Reimplement it
+}
