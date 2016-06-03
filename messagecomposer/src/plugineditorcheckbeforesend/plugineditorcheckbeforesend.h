@@ -55,7 +55,7 @@ public:
 
     virtual PluginEditorCheckBeforeSendInterface *createInterface(QObject *parent) = 0;
 
-    virtual bool hasConfigureDialog() const;
+    virtual bool hasConfigureSupport() const;
 
     virtual PluginEditorCheckBeforeSendConfigureWidgetSetting createConfigureWidget(QWidget *parent) const;
 

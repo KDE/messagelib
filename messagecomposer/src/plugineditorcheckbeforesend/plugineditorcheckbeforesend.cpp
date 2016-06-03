@@ -42,7 +42,7 @@ PluginEditorCheckBeforeSend::~PluginEditorCheckBeforeSend()
     delete d;
 }
 
-bool PluginEditorCheckBeforeSend::hasConfigureDialog() const
+bool PluginEditorCheckBeforeSend::hasConfigureSupport() const
 {
     return false;
 }
