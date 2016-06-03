@@ -52,3 +52,8 @@ PluginEditorCheckBeforeSendConfigureWidgetSetting PluginEditorCheckBeforeSend::c
     Q_UNUSED(parent);
     return {};
 }
+
+void PluginEditorCheckBeforeSend::emitConfigChanged()
+{
+    Q_EMIT configChanged();
+}

@@ -59,6 +59,10 @@ public:
 
     virtual PluginEditorCheckBeforeSendConfigureWidgetSetting createConfigureWidget(QWidget *parent) const;
 
+    void emitConfigChanged();
+
+Q_SIGNALS:
+    void configChanged();
 
 private:
     PluginEditorCheckBeforeSendPrivate *const d;
