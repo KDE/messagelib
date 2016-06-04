@@ -18,9 +18,9 @@
 */
 
 #include "mimetreemodel.h"
+#include "utils/mimetype.h"
 
 #include <MimeTreeParser/NodeHelper>
-#include <MimeTreeParser/MimeType>
 
 #include <KMime/Content>
 #include <KMime/Message>
@@ -95,7 +95,7 @@ public:
             auto mimeType = m_mimeDb.mimeTypeForName(QString::fromLatin1(content->contentType()->mimeType()));
             if (!mimeType.isValid() || mimeType.name() == QLatin1String("application/octet-stream")) {
                 const QString name = descriptionForContent(content);
-                mimeType = MimeTreeParser::Util::mimetype(name);
+                mimeType = MessageViewer::Util::mimetype(name);
             }
             if (!mimeType.isValid() || mimeType.iconName().isEmpty()) {
                 return QIcon();

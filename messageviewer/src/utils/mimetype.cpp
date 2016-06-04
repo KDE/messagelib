@@ -19,11 +19,16 @@
 
 #include "utils/mimetype.h"
 #include "utils/iconnamecache.h"
-#include "mimetreeparser_debug.h"
+#include "messageviewer_debug.h"
+
+#include <MimeTreeParser/NodeHelper>
+
+#include <KIconLoader>
+#include <KMime/Content>
 
 #include <QMimeDatabase>
 
-QMimeType MimeTreeParser::Util::mimetype(const QString &name)
+QMimeType MessageViewer::Util::mimetype(const QString &name)
 {
     QMimeDatabase db;
     // consider the filename if mimetype cannot be found by content-type
@@ -39,7 +44,7 @@ QMimeType MimeTreeParser::Util::mimetype(const QString &name)
     return db.mimeTypeForFile(name);
 }
 
-QString MimeTreeParser::Util::fileNameForMimetype(const QString &mimeType, int iconSize,
+QString MessageViewer::Util::fileNameForMimetype(const QString &mimeType, int iconSize,
         const QString &fallbackFileName1,
         const QString &fallbackFileName2)
 {
@@ -67,7 +72,7 @@ QString MimeTreeParser::Util::fileNameForMimetype(const QString &mimeType, int i
     } else {
         fileName = QStringLiteral("unknown");
         if (!tMimeType.isEmpty()) {
-            qCWarning(MIMETREEPARSER_LOG) << "unknown mimetype" << tMimeType;
+            qCWarning(MESSAGEVIEWER_LOG) << "unknown mimetype" << tMimeType;
         }
     }
     //WorkAround for #199083
@@ -86,4 +91,44 @@ QString MimeTreeParser::Util::fileNameForMimetype(const QString &mimeType, int i
     }
 
     return IconNameCache::instance()->iconPath(fileName, iconSize);
+}
+
+QString MessageViewer::Util::fileNameForContent(KMime::Content *node, int size)
+{
+    if (!node) {
+        return QString();
+    }
+
+    QByteArray mimeType = node->contentType()->mimeType();
+    if (mimeType.isNull() || mimeType == "application/octet-stream") {
+        const QString mime = Util::mimetype(node->contentDisposition()->filename()).name();
+        mimeType = mime.toLatin1();
+    }
+    mimeType = mimeType.toLower();
+    return fileNameForMimetype(QLatin1String(mimeType), size, node->contentDisposition()->filename(),
+                               node->contentType()->name());
+}
+
+MessageViewer::Util::AttachmentDisplayInfo MessageViewer::Util::attachmentDisplayInfo(KMime::Content *node)
+{
+    AttachmentDisplayInfo info;
+    info.icon = fileNameForContent(node, KIconLoader::Small);
+    const QString name = node->contentType()->name();
+    info.label = name.isEmpty() ? MimeTreeParser::NodeHelper::fileName(node) : name;
+    if (info.label.isEmpty()) {
+        info.label = node->contentDescription()->asUnicodeString();
+    }
+
+    bool typeBlacklisted = node->contentType()->mediaType().toLower() == "multipart";
+    if (!typeBlacklisted) {
+        typeBlacklisted = KMime::isCryptoPart(node);
+    }
+    typeBlacklisted = typeBlacklisted || node == node->topLevel();
+    const bool firstTextChildOfEncapsulatedMsg =
+        node->contentType()->mediaType().toLower() == "text" &&
+        node->contentType()->subType().toLower() == "plain" &&
+        node->parent() && node->parent()->contentType()->mediaType().toLower() == "message";
+    typeBlacklisted = typeBlacklisted || firstTextChildOfEncapsulatedMsg;
+    info.displayInHeader = !info.label.isEmpty() && !info.icon.isEmpty() && !typeBlacklisted;
+    return info;
 }

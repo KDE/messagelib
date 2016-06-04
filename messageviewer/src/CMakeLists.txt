@@ -126,6 +126,7 @@ set(libmessageviewer_findbar_SRCS
 set(libmessageviewer_utils_SRCS
     utils/markmessagereadhandler.cpp
     utils/messageviewerutil.cpp
+    utils/mimetype.cpp
     )
 
 set(libmessageviewer_htmlwriter_webengine_SRCS
@@ -219,7 +220,8 @@ target_link_libraries(KF5MessageViewer
     KF5::MimeTreeParser
     PRIVATE
     KF5::ItemViews
-    Qt5::WebEngineWidgets
+    Qt5::Network
+    Qt5::WebKitWidgets
     KF5::WebEngineViewer
     KF5::Libkdepim
     KF5::GrantleeTheme
@@ -301,8 +303,9 @@ ecm_generate_headers(MessageViewer_Camelcasewidgets_HEADERS
 
 ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
     HEADER_NAMES
-    MessageViewerUtil
     MarkMessageReadHandler
+    MessageViewerUtil
+    MimeType
     REQUIRED_HEADERS MessageViewer_utils_HEADERS
     PREFIX MessageViewer
     RELATIVE utils

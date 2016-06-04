@@ -48,7 +48,7 @@
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/htmlwriter.h"
 #include "interfaces/messagepartrenderer.h"
-#include "utils/mimetype.h"
+#include "utils/util.h"
 
 #include <KMime/Headers>
 #include <KMime/Message>

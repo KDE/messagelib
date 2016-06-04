@@ -39,8 +39,7 @@
 #define MAILVIEWERUTIL_H
 
 #include "messageviewer_export.h"
-#include <MimeTreeParser/MimeType>
-#include "kmime/kmime_content.h"
+#include <KMime/Content>
 #include <KService>
 #include <AkonadiCore/Item>
 class QUrl;

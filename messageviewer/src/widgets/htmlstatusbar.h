@@ -32,7 +32,9 @@
 #ifndef _MESSAGEVIEWER_HTMLSTATUSBAR_H_
 #define _MESSAGEVIEWER_HTMLSTATUSBAR_H_
 
+#include <MimeTreeParser/Util>
 #include "messageviewer/messageviewerutil.h"
+
 #include <QLabel>
 class QMouseEvent;
 

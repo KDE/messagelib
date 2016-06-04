@@ -17,15 +17,20 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef __MIMETREEPARSER_UTIL_MIMETYPE_H__
-#define __MIMETREEPARSER_UTIL_MIMETYPE_H__
+#ifndef __MESSAGEVIEWER_UTIL_MIMETYPE_H__
+#define __MESSAGEVIEWER_UTIL_MIMETYPE_H__
 
-#include "mimetreeparser_export.h"
+#include "messageviewer_export.h"
 
 #include <QString>
 class QMimeType;
 
-namespace MimeTreeParser
+namespace KMime
+{
+class Content;
+}
+
+namespace MessageViewer
 {
 
 /**
@@ -36,20 +41,9 @@ namespace Util
 {
 
 /**
-      * Describes the type of the displayed message. This depends on the MIME structure
-      * of the mail and on whether HTML mode is enabled (which is decided by htmlMail())
-      */
-enum HtmlMode {
-    Normal,         ///< A normal plaintext message, non-multipart
-    Html,           ///< A HTML message, non-multipart
-    MultipartPlain, ///< A multipart/alternative message, the plain text part is currently displayed
-    MultipartHtml   ///< A multipart/altervative message, the HTML part is currently displayed
-};
-
-/**
  * Search mimetype from filename when mimetype is empty or application/octet-stream
  **/
-QMimeType MIMETREEPARSER_EXPORT mimetype(const QString &name);
+QMimeType MESSAGEVIEWER_EXPORT mimetype(const QString &name);
 
 /**
      * Finds the filename of an icon based on the given mimetype or filenames.
@@ -67,9 +61,20 @@ QMimeType MIMETREEPARSER_EXPORT mimetype(const QString &name);
      *                              Example: "test.zip"
      * @return the full file name of the icon file
      */
-QString MIMETREEPARSER_EXPORT fileNameForMimetype(const QString &mimeType, int iconSize,
+QString MESSAGEVIEWER_EXPORT fileNameForMimetype(const QString &mimeType, int iconSize,
         const QString &fallbackFileName1 = QString(),
         const QString &fallbackFileName2 = QString());
+
+QString MESSAGEVIEWER_EXPORT fileNameForContent(KMime::Content *node, int iconSize);
+
+struct AttachmentDisplayInfo {
+    QString label;
+    QString icon;
+    bool displayInHeader;
+};
+
+AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
+
 }
 }
 #endif

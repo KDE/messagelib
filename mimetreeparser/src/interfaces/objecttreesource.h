@@ -21,7 +21,7 @@
 #define __MIMETREEPARSER_OBJECTTREESOURCE_IF_H__
 
 #include "mimetreeparser_export.h"
-#include "mimetreeparser/mimetype.h"
+#include <MimeTreeParser/Util>
 
 #include <KMime/Message>
 

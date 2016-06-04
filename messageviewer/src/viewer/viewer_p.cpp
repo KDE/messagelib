@@ -23,6 +23,7 @@
 #include "viewer_p.h"
 #include "viewer.h"
 #include "messageviewer_debug.h"
+#include "utils/mimetype.h"
 #include "viewer/objecttreeemptysource.h"
 #include "viewer/objecttreeviewersource.h"
 #include "messagedisplayformatattribute.h"
@@ -332,7 +333,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QString &name)
     }
 
     if (!mimetype.isValid() || mimetype.name() == QLatin1String("application/octet-stream")) {
-        mimetype = MimeTreeParser::Util::mimetype(name);
+        mimetype = MessageViewer::Util::mimetype(name);
     }
     KService::Ptr offer =
         KMimeTypeTrader::self()->preferredService(mimetype.name(), QStringLiteral("Application"));
@@ -674,7 +675,7 @@ KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
 
     if (!mimetype.isValid() || mimetype.name() == QLatin1String("application/octet-stream")) {
         /*TODO(Andris) port when on-demand loading is done   && msgPart.isComplete() */
-        mimetype = MimeTreeParser::Util::mimetype(fileName);
+        mimetype = MessageViewer::Util::mimetype(fileName);
     }
     return KMimeTypeTrader::self()->preferredService(mimetype.name(), QStringLiteral("Application"));
 }
@@ -1842,7 +1843,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             }
         }
     } else {
-        MimeTreeParser::NodeHelper::AttachmentDisplayInfo info = MimeTreeParser::NodeHelper::attachmentDisplayInfo(node);
+        Util::AttachmentDisplayInfo info = Util::attachmentDisplayInfo(node);
         if (info.displayInHeader) {
             html += QLatin1String("<div style=\"float:left;\">");
             html += QStringLiteral("<span style=\"white-space:nowrap; border-width: 0px; border-left-width: 5px; border-color: %1; 2px; border-left-style: solid;\">").arg(bgColor.name());
