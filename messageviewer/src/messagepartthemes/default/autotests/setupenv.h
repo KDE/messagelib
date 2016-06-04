@@ -18,17 +18,18 @@
   02110-1301, USA.
 */
 
-#ifndef MESSAGECORE_TESTS_UTIL_H
-#define MESSAGECORE_TESTS_UTIL_H
+#ifndef __MESSAGEVIEWER_TESTS_SETUPENV_H__
+#define __MESSAGEVIEWER_TESTS_SETUPENV_H__
 
 #include <gpgme++/key.h>
+
 #include <MimeTreeParser/AttachmentStrategy>
-#include <MimeTreeParser/BodyPartFormatter>
 #include <MimeTreeParser/BodyPartFormatterBaseFactory>
-#include <MimeTreeParser/MessagePartRenderer>
 #include <MimeTreeParser/ObjectTreeSource>
 
-namespace MimeTreeParser
+#include <MessageViewer/ObjectTreeEmptySource>
+
+namespace MessageViewer
 {
 
 namespace Test
@@ -43,11 +44,11 @@ void setupEnv();
 
 // We can't use EmptySource, since we need to control some emelnets of the source for tests to also test
 // loadExternal and htmlMail.
-class TestObjectTreeSource : public MimeTreeParser::Interface::ObjectTreeSource
+class ObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
-    TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
-                         MimeTreeParser::CSSHelperBase *cssHelper)
+    ObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
+                     MimeTreeParser::CSSHelperBase *cssHelper)
         : mWriter(writer)
         , mCSSHelper(cssHelper)
         , mAttachmentStrategy(QStringLiteral("smart"))
@@ -89,8 +90,8 @@ public:
         mAttachmentStrategy = strategy;
     }
 
-    const AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE {
-        return  AttachmentStrategy::create(mAttachmentStrategy);
+    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE {
+        return  MimeTreeParser::AttachmentStrategy::create(mAttachmentStrategy);
     }
 
     bool autoImportKeys() const Q_DECL_OVERRIDE
@@ -108,7 +109,7 @@ public:
         return false;
     }
 
-    const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE {
+    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE {
         return &mBodyPartFormatterBaseFactory;
     }
 
@@ -154,15 +155,11 @@ public:
         return Q_NULLPTR;
     }
 
-    Interface::MessagePartRenderer::Ptr messagePartTheme(Interface::MessagePart::Ptr msgPart) Q_DECL_OVERRIDE {
-        Q_UNUSED(msgPart);
-        return  Interface::MessagePartRenderer::Ptr();
-    }
 private:
     MimeTreeParser::HtmlWriter *mWriter;
     MimeTreeParser::CSSHelperBase *mCSSHelper;
     QString mAttachmentStrategy;
-    BodyPartFormatterBaseFactory mBodyPartFormatterBaseFactory;
+    MimeTreeParser::BodyPartFormatterBaseFactory mBodyPartFormatterBaseFactory;
     bool mHtmlLoadExternal;
     bool mHtmlMail;
     bool mDecryptMessage;
@@ -173,4 +170,6 @@ private:
 
 }
 
-#endif
+#endif //__MESSAGEVIEWER_TESTS_SETUPENV_H__
+
+

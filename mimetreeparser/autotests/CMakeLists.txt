@@ -37,8 +37,6 @@ macro(add_mimetreeparser_crypto_unittest _source)
 endmacro ()
 
 add_mimetreeparser_crypto_unittest(attachmenttest.cpp)
-add_mimetreeparser_crypto_unittest(objecttreeparsertest.cpp)
-add_mimetreeparser_crypto_unittest(unencryptedmessagetest.cpp)
 add_mimetreeparser_unittest(nodehelpertest.cpp)
 add_mimetreeparser_unittest(csshelpertest.cpp)
 add_mimetreeparser_class_unittest( cryptohelpertest.cpp "../src/viewer/cryptohelper.cpp")

@@ -1,5 +1,6 @@
 /*
   Copyright (c) 2010 Volker Krause <vkrause@kde.org>
+  Copyright (c) 2016 Sandro Knauß <sknauss@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -18,13 +19,13 @@
 */
 
 #include "rendertest.h"
-#include "util.h"
-#include "testcsshelper.h"
 #include "setupenv.h"
+#include "testcsshelper.h"
+#include "util.h"
 
-#include "htmlwriter/filehtmlwriter.h"
-#include "viewer/objecttreeparser.h"
-#include "viewer/messagepart.h"
+#include <MimeTreeParser/FileHtmlWriter>
+#include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/MessagePart>
 
 #include <KMime/Message>
 
@@ -32,11 +33,11 @@
 #include <QProcess>
 #include <QTest>
 
-using namespace MimeTreeParser;
+using namespace MessageViewer;
 
 void RenderTest::initTestCase()
 {
-    MimeTreeParser::Test::setupEnv();
+    Test::setupEnv();
 }
 
 void RenderTest::testRenderSmart_data()
@@ -188,14 +189,14 @@ void RenderTest::testRenderHeaderOnly()
     testRender();
 }
 
-QString renderTreeHelper(const Interface::MessagePart::Ptr &messagePart, QString indent)
+QString renderTreeHelper(const MimeTreeParser::Interface::MessagePart::Ptr &messagePart, QString indent)
 {
     QString ret;
     const QString line = QStringLiteral("%1 * %3\n").arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
     ret += line;
 
     indent += QStringLiteral(" ");
-    const auto m = messagePart.dynamicCast<MessagePart>();
+    const auto m = messagePart.dynamicCast<MimeTreeParser::MessagePart>();
     if (m) {
         foreach (const auto &subPart, m->subParts()) {
             ret += renderTreeHelper(subPart, indent);
@@ -204,7 +205,7 @@ QString renderTreeHelper(const Interface::MessagePart::Ptr &messagePart, QString
     return ret;
 }
 
-void RenderTest::testRenderTree(const MessagePart::Ptr &messagePart)
+void RenderTest::testRenderTree(const MimeTreeParser::MessagePart::Ptr &messagePart)
 {
     QString renderedTree = renderTreeHelper(messagePart, QString());
 
@@ -243,18 +244,18 @@ void RenderTest::testRender()
     const QString htmlFileName = outFileName + QStringLiteral(".html");
 
     // load input mail
-    const KMime::Message::Ptr msg(readAndParseMail(mailFileName));
+    const KMime::Message::Ptr msg(Test::readAndParseMail(mailFileName));
 
     // render the mail
-    FileHtmlWriter fileWriter(outFileName);
+    MimeTreeParser::FileHtmlWriter fileWriter(outFileName);
     QImage paintDevice;
-    MimeTreeParser::TestCSSHelper cssHelper(&paintDevice);
-    NodeHelper nodeHelper;
-    MimeTreeParser::Test::TestObjectTreeSource testSource(&fileWriter, &cssHelper);
+    Test::TestCSSHelper cssHelper(&paintDevice);
+    MimeTreeParser::NodeHelper nodeHelper;
+    Test::ObjectTreeSource testSource(&fileWriter, &cssHelper);
     testSource.setAllowDecryption(true);
     testSource.setAttachmentStrategy(attachmentStrategy);
     testSource.setShowSignatureDetails(showSignatureDetails);
-    ObjectTreeParser otp(&testSource, &nodeHelper);
+    MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
 
     fileWriter.begin(QString());
     fileWriter.queue(cssHelper.htmlHead(false));

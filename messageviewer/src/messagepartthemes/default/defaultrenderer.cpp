@@ -24,6 +24,7 @@
 #include "converthtmltoplaintext.h"
 #include "htmlblock.h"
 #include "utils/iconnamecache.h"
+#include "utils/mimetype.h"
 
 #include <MimeTreeParser/HtmlWriter>
 #include <MimeTreeParser/CSSHelperBase>
@@ -46,6 +47,9 @@
 #include <QStandardPaths>
 #include <QTextCodec>
 #include <QUrl>
+#include <QWebPage>
+#include <QWebElement>
+#include <QWebFrame>
 
 #include <grantlee/context.h>
 #include <grantlee/engine.h>
@@ -53,8 +57,8 @@
 #include <grantlee/templateloader.h>
 #include <grantlee/template.h>
 
-using namespace MessageViewer;
 using namespace MimeTreeParser;
+using namespace MessageViewer;
 
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const Kleo::CryptoBackend::Protocol *)
@@ -419,6 +423,26 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
     return false;
 }
 
+QString processHtml(const QString &htmlSource, QString &extraHead)
+{
+    // Create a DOM Document from the HTML source
+    QWebPage page(0);
+    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
+    page.settings()->setAttribute(QWebSettings::JavaEnabled, false);
+    page.settings()->setAttribute(QWebSettings::PluginsEnabled, false);
+
+    page.settings()->setAttribute(QWebSettings::AutoLoadImages, false);
+
+    QWebFrame *frame = page.mainFrame();
+    frame->setHtml(htmlSource);
+
+    const QWebElement body = frame->documentElement().findFirst(QStringLiteral("body"));
+    const QWebElement header = frame->documentElement().findFirst(QStringLiteral("head"));
+
+    extraHead = header.toInnerXml();
+    return body.toInnerXml();
+}
+
 class CacheHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
@@ -588,10 +612,10 @@ public:
             if (mp->mAsIcon == MimeTreeParser::IconInline) {
                 iconPath = nodeHelper->writeNodeToTempFile(node);
             } else {
-                iconPath = nodeHelper->iconName(node);
+                iconPath = MessageViewer::Util::fileNameForContent(node, KIconLoader::Desktop);
                 if (iconPath.right(14) == QLatin1String("mime_empty.png")) {
                     nodeHelper->magicSetType(node);
-                    iconPath = nodeHelper->iconName(node);
+                    iconPath = MessageViewer::Util::fileNameForContent(node, KIconLoader::Desktop);
                 }
             }
             block.setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
@@ -839,6 +863,8 @@ public:
         return htmlWriter->html;
     }
 
+
+
     QString render(HtmlMessagePart::Ptr mp)
     {
         Grantlee::Template t = getGrantleeTemplate(mp.data(), QStringLiteral("htmlmessagepart.html"));
@@ -852,7 +878,7 @@ public:
 
         {
             QString extraHead;
-            QString bodyText = mp->processHtml(mp->mBodyHTML, extraHead);
+            QString bodyText = processHtml(mp->mBodyHTML, extraHead);
 
             if (mp->source()->htmlMail()) {
                 mp->mOtp->nodeHelper()->setNodeDisplayedEmbedded(mp->mNode, true);

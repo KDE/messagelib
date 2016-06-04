@@ -16,29 +16,29 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include "messageparttest.h"
+#include "quotehtmltest.h"
+#include "../defaultrenderer.h"
 #include "util.h"
 #include "setupenv.h"
 
-#include "viewer/objecttreeparser.h"
-#include "interfaces/htmlwriter.h"
-#include "viewer/csshelperbase.h"
-#include "viewer/messagepart.h"
+#include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/HtmlWriter>
+#include <MimeTreeParser/CSSHelperBase>
+#include <MimeTreeParser/MessagePart>
 
-#include "themes/default/defaultrenderer.h"
 
 #include <QTest>
 
-using namespace MimeTreeParser;
+using namespace MessageViewer;
 
-QTEST_GUILESS_MAIN(MessagePartTest)
+QTEST_GUILESS_MAIN(QuoteHtmlTest)
 
-void MessagePartTest::initTestCase()
+void QuoteHtmlTest::initTestCase()
 {
-    MimeTreeParser::Test::setupEnv();
+    MessageViewer::Test::setupEnv();
 }
 
-void MessagePartTest::testQuoteHtml_data()
+void QuoteHtmlTest::testQuoteHtml_data()
 {
     QTest::addColumn<QString>("data");
     QTest::addColumn<QString>("result");
@@ -50,15 +50,16 @@ void MessagePartTest::testQuoteHtml_data()
     QTest::newRow("multispace") << QStringLiteral("            Bug ID: 358324") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bug ID: 358324</div></div>");
 }
 
-void MessagePartTest::testQuoteHtml()
+void QuoteHtmlTest::testQuoteHtml()
 {
     QFETCH(QString, data);
     QFETCH(QString, result);
-    TestHtmlWriter testWriter;
-    TestCSSHelper testCSSHelper;
-    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
-    ObjectTreeParser otp(&emptySource);
-    MessagePart::Ptr part(new MessagePart(&otp, data));
+    Test::HtmlWriter testWriter;
+    Test::CSSHelper testCSSHelper;
+    Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    MimeTreeParser::ObjectTreeParser otp(&emptySource);
+    MimeTreeParser::MessagePart::Ptr part(new MimeTreeParser::MessagePart(&otp, data));
+
     DefaultRenderer renderer(part);
     QCOMPARE(renderer.html(), result);
 }

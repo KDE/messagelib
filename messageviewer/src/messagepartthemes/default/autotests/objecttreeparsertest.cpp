@@ -18,22 +18,23 @@
 */
 #include "objecttreeparsertest.h"
 #include "util.h"
+#include "setupenv.h"
 
-#include "viewer/objecttreeparser.h"
-#include "interfaces/htmlwriter.h"
-#include "viewer/csshelperbase.h"
+#include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/HtmlWriter>
+#include <MimeTreeParser/CSSHelperBase>
 
 #include <QTest>
 
-#include <setupenv.h>
 
+using namespace MessageViewer;
 using namespace MimeTreeParser;
 
 QTEST_MAIN(ObjectTreeParserTester)
 
 void ObjectTreeParserTester::initTestCase()
 {
-    MimeTreeParser::Test::setupEnv();
+    Test::setupEnv();
 }
 
 void ObjectTreeParserTester::test_parsePlainMessage()
@@ -55,7 +56,7 @@ void ObjectTreeParserTester::test_parsePlainMessage()
     QCOMPARE(msg->contents().size(), 0);
 
     // Parse the message
-    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     ObjectTreeParser otp(&emptySource);
     otp.parseObjectTree(msg.data());
 
@@ -86,15 +87,15 @@ void ObjectTreeParserTester::test_parsePlainMessage()
 
 void ObjectTreeParserTester::test_parseEncapsulatedMessage()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "Fwd: Test with attachment");
     QCOMPARE(msg->contents().size(), 2);
 
     // Parse the message
-    TestHtmlWriter testWriter;
-    TestCSSHelper testCSSHelper;
+    Test::HtmlWriter testWriter;
+    Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
-    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(msg.data());
 
@@ -122,14 +123,14 @@ void ObjectTreeParserTester::test_parseEncapsulatedMessage()
 
 void ObjectTreeParserTester::test_missingContentTypeHeader()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("no-content-type.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("no-content-type.mbox"));
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "Simple Mail Without Content-Type Header");
     QCOMPARE(msg->contents().size(), 0);
 
-    TestHtmlWriter testWriter;
-    TestCSSHelper testCSSHelper;
+    Test::HtmlWriter testWriter;
+    Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
-    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(msg.data());
 
@@ -139,15 +140,15 @@ void ObjectTreeParserTester::test_missingContentTypeHeader()
 
 void ObjectTreeParserTester::test_inlinePGPDecryption()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("inlinepgpencrypted.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("inlinepgpencrypted.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "inlinepgpencrypted");
     QCOMPARE(msg->contents().size(), 0);
 
-    TestHtmlWriter testWriter;
-    TestCSSHelper testCSSHelper;
+    Test::HtmlWriter testWriter;
+    Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
-    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
 
     emptySource.setAllowDecryption(true);
@@ -164,15 +165,15 @@ void ObjectTreeParserTester::test_inlinePGPDecryption()
 
 void ObjectTreeParserTester::test_inlinePGPSigned()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("openpgp-inline-signed.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("openpgp-inline-signed.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "test");
     QCOMPARE(msg->contents().size(), 0);
 
-    TestHtmlWriter testWriter;
-    TestCSSHelper testCSSHelper;
+    Test::HtmlWriter testWriter;
+    Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
-    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
 
     emptySource.setAllowDecryption(true);
@@ -184,12 +185,12 @@ void ObjectTreeParserTester::test_inlinePGPSigned()
 
 void ObjectTreeParserTester::test_HTML()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("html.mbox"));
+    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("html.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
 
-    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     ObjectTreeParser otp(&emptySource);
 
     otp.parseObjectTree(msg.data());
@@ -201,14 +202,14 @@ void ObjectTreeParserTester::test_HTML()
 
 void ObjectTreeParserTester::test_HTMLasText()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("html.mbox"));
+    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("html.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
 
-    TestHtmlWriter testWriter;
-    TestCSSHelper testCSSHelper;
-    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::HtmlWriter testWriter;
+    Test::CSSHelper testCSSHelper;
+    Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
     emptySource.setHtmlMail(false);
     otp.parseObjectTree(msg.data());
@@ -221,12 +222,12 @@ void ObjectTreeParserTester::test_HTMLasText()
 
 void ObjectTreeParserTester::test_HTMLOnly()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("htmlonly.mbox"));
+    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("htmlonly.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
-    Test::TestObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
     ObjectTreeParser otp(&emptySource);
 
     otp.parseObjectTree(msg.data());
@@ -237,14 +238,14 @@ void ObjectTreeParserTester::test_HTMLOnly()
 
 void ObjectTreeParserTester::test_HTMLOnlyText()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("htmlonly.mbox"));
+    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("htmlonly.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
-    TestHtmlWriter testWriter;
-    TestCSSHelper testCSSHelper;
-    MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+    Test::HtmlWriter testWriter;
+    Test::CSSHelper testCSSHelper;
+    Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
 
     emptySource.setHtmlMail(false);
@@ -258,15 +259,15 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
 
 void ObjectTreeParserTester::test_HTMLExternal()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("htmlonlyexternal.mbox"));
+    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("htmlonlyexternal.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
     {
-        TestHtmlWriter testWriter;
-        TestCSSHelper testCSSHelper;
-        MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        Test::HtmlWriter testWriter;
+        Test::CSSHelper testCSSHelper;
+        Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         otp.parseObjectTree(msg.data());
@@ -277,9 +278,9 @@ void ObjectTreeParserTester::test_HTMLExternal()
         QVERIFY(testWriter.html.contains(QStringLiteral("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
     }
     {
-        TestHtmlWriter testWriter;
-        TestCSSHelper testCSSHelper;
-        MimeTreeParser::Test::TestObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        Test::HtmlWriter testWriter;
+        Test::CSSHelper testCSSHelper;
+        Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setHtmlLoadExternal(true);
