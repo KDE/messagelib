@@ -17,30 +17,39 @@
    02110-1301, USA.
 */
 
-#ifndef __MIMETREEPARSER_MAILRENDERER_H__
-#define __MIMETREEPARSER_MAILRENDERER_H__
+#ifndef __MESSAGEVIEWER_DEFAULTRENDERER_H__
+#define __MESSAGEVIEWER_DEFAULTRENDERER_H__
 
-#include "interfaces/messagepartrenderer.h"
+#include <MimeTreeParser/MessagePartRenderer>
 
 #include<QSharedPointer>
 
 namespace MimeTreeParser
 {
-
 class DefaultRendererPrivate;
+namespace Interface
+{
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
+}
+}
 
-class DefaultRenderer : public Interface::MessagePartRenderer
+namespace MessageViewer
+{
+
+class DefaultRendererPrivate;
+
+
+class DefaultRenderer : public MimeTreeParser::Interface::MessagePartRenderer
 {
 public:
-    DefaultRenderer(MessagePartPtr msgPart);
+    DefaultRenderer(MimeTreeParser::Interface::MessagePartPtr msgPart);
     ~DefaultRenderer();
 
     QString html() const Q_DECL_OVERRIDE;
 
 private:
-    DefaultRendererPrivate *d;
+    MimeTreeParser::DefaultRendererPrivate *d;
 };
 }
 #endif //__MIMETREEPARSER_MAILRENDERER_H__

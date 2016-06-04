@@ -38,6 +38,7 @@ if(BUILD_TESTING)
     add_subdirectory(htmlwriter/autotests/)
     add_subdirectory(viewer/webengine/tests)
     add_subdirectory(messageviewerheaderplugins/autotests)
+    add_subdirectory(messagepartthemes/default/autotests)
 endif()
 add_subdirectory(pics)
 add_subdirectory(kconf_update)
@@ -157,7 +158,20 @@ set(libmessageviewer_viewerplugins_SRCS
     viewerplugins/viewerplugintoolmanager.cpp
     )
 
+set(libmessageviewer_messagepartthemes_default_SRCS
+    messagepartthemes/default/converthtmltoplaintext.cpp
+    messagepartthemes/default/defaultrenderer.cpp
+    messagepartthemes/default/htmlblock.cpp
+    )
+
+FILE(GLOB themesfiles_default_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/messagepartthemes/default/templates/*.html")
+install(FILES ${themesfiles_default_SRCS} DESTINATION ${DATA_INSTALL_DIR}/messageviewer/messagepartthemes/default)
+
+set(libmessageviewer_messagepartthemes_SRCS
+    ${libmessageviewer_messagepartthemes_default_SRCS}
+    )
 set(libmessageviewer_SRCS
+    ${libmessageviewer_messagepartthemes_SRCS}
     ${libmessageviewer_scamdetection_webengine_SRCS}
     ${libmessageviewer_widgets_webengine_SRCS}
     ${libmessageviewer_viewer_SRCS}
@@ -219,6 +233,8 @@ target_link_libraries(KF5MessageViewer
     KF5::CalendarCore
     KF5::Gravatar
     KF5::IconThemes
+    Grantlee5::TextDocument
+    Grantlee5::Templates
     )
 if (WIN32)
     target_link_libraries(KF5MessageViewer PUBLIC KF5::Gpgmepp)

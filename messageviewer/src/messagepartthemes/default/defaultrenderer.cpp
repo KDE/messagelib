@@ -19,16 +19,16 @@
 
 #include "defaultrenderer.h"
 
-#include "mimetreeparser_debug.h"
+#include "messageviewer_debug.h"
 
 #include "converthtmltoplaintext.h"
 #include "htmlblock.h"
-
-#include "interfaces/htmlwriter.h"
 #include "utils/iconnamecache.h"
-#include "viewer/csshelperbase.h"
-#include "viewer/messagepart.h"
-#include "viewer/objecttreeparser.h"
+
+#include <MimeTreeParser/HtmlWriter>
+#include <MimeTreeParser/CSSHelperBase>
+#include <MimeTreeParser/MessagePart>
+#include <MimeTreeParser/ObjectTreeParser>
 
 #include <Libkleo/CryptoBackend>
 #include <Libkleo/CryptoBackendFactory>
@@ -36,6 +36,7 @@
 #include <MessageCore/StringUtil>
 
 #include <KEmailAddress>
+#include <KIconLoader>
 #include <KLocalizedString>
 #include <KTextToHTML>
 
@@ -52,6 +53,7 @@
 #include <grantlee/templateloader.h>
 #include <grantlee/template.h>
 
+using namespace MessageViewer;
 using namespace MimeTreeParser;
 
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
@@ -90,12 +92,12 @@ Grantlee::Template getGrantleeTemplate(QObject *parent, const QString &name)
     m_engine->addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
 
     auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader());
-    loader->setTemplateDirs(QStringList() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/mimetreeparser/themes/default"), QStandardPaths::LocateDirectory));
+    loader->setTemplateDirs(QStringList() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/messageviewer/messagepartthemes/default"), QStandardPaths::LocateDirectory));
     m_engine->addTemplateLoader(loader);
 
     Grantlee::Template t = m_engine->loadByName(name);
     if (t->error()) {
-        qCWarning(MIMETREEPARSER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+        qCWarning(MESSAGEVIEWER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
     }
     return t;
 }
@@ -445,10 +447,10 @@ public:
 class MimeTreeParser::DefaultRendererPrivate
 {
 public:
-    DefaultRendererPrivate(DefaultRenderer *qPtr, MessagePart::Ptr msgPart)
+    DefaultRendererPrivate(DefaultRenderer *qPtr, Interface::MessagePart::Ptr msgPart)
         : mMsgPart(msgPart)
-        , mOldWriter(msgPart->htmlWriter())
         , q(qPtr)
+        , mOldWriter(msgPart->htmlWriter())
     {
         mHtml = renderFactory(mMsgPart, QSharedPointer<CacheHtmlWriter>());
     }
@@ -817,7 +819,7 @@ public:
             htmlStr += quoteEnd + cssHelper()->addEndBlockQuote(currQuoteLevel + 1);
         }
 
-        // qCDebug(MIMETREEPARSER_LOG) << "========================================\n"
+        // qCDebug(MESSAGEVIEWER_LOG) << "========================================\n"
         //                            << htmlStr
         //                            << "\n======================================\n";
         return htmlStr;
@@ -1254,7 +1256,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString renderFactory(MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+    QString renderFactory(Interface::MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
     {
         const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
@@ -1322,7 +1324,7 @@ public:
     }
 
     QString mHtml;
-    MessagePart::Ptr mMsgPart;
+    Interface::MessagePart::Ptr mMsgPart;
 private:
     DefaultRenderer *q;
     HtmlWriter *mOldWriter;
@@ -1331,8 +1333,8 @@ private:
     QString mExpandIcon;
 };
 
-DefaultRenderer::DefaultRenderer(MessagePart::Ptr msgPart)
-    : d(new DefaultRendererPrivate(this, msgPart))
+DefaultRenderer::DefaultRenderer(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
+    : d(new MimeTreeParser::DefaultRendererPrivate(this, msgPart))
 {
 }
 

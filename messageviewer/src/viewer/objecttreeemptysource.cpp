@@ -21,10 +21,15 @@
 #include "viewer/viewer_p.h"
 
 #include <MimeTreeParser/AttachmentStrategy>
+#include <MimeTreeParser/BodyPartFormatter>
+
+#include "messagepartthemes/default/defaultrenderer.h"
+
 #include "bodypartformatterfactorysingleton.h"
 
-namespace MessageViewer
-{
+using namespace MessageViewer;
+
+namespace MessageViewer {
 
 class EmptySourcePrivate
 {
@@ -36,6 +41,8 @@ public:
     }
     bool mAllowDecryption;
 };
+
+}
 
 EmptySource::EmptySource()
     : MimeTreeParser::Interface::ObjectTreeSource(),
@@ -133,5 +140,9 @@ const MimeTreeParser::BodyPartFormatterBaseFactory *EmptySource::bodyPartFormatt
 {
     return bodyPartFormatterBaseFactoryInstance();
 }
+
+MimeTreeParser::Interface::MessagePartRendererPtr EmptySource::messagePartTheme(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
+{
+    return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart));
 }
 

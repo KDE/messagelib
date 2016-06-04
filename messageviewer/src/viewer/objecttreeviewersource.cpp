@@ -21,12 +21,15 @@
 #include "csshelper.h"
 #include "bodypartformatterfactorysingleton.h"
 
+#include <MimeTreeParser/BodyPartFormatter>
+#include "messagepartthemes/default/defaultrenderer.h"
+
 #include "viewer/viewer_p.h"
 #include "widgets/htmlstatusbar.h"
 #include "settings/messageviewersettings.h"
 
-namespace MessageViewer
-{
+using namespace MessageViewer;
+
 MailViewerSource::MailViewerSource(ViewerPrivate *viewer) :
     MimeTreeParser::Interface::ObjectTreeSource(), mViewer(viewer)
 {
@@ -115,4 +118,8 @@ const MimeTreeParser::BodyPartFormatterBaseFactory *MailViewerSource::bodyPartFo
 {
     return bodyPartFormatterBaseFactoryInstance();
 }
+
+MimeTreeParser::Interface::MessagePartRendererPtr MailViewerSource::messagePartTheme(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
+{
+    return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart));
 }

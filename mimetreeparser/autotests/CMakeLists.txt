@@ -38,15 +38,7 @@ endmacro ()
 
 add_mimetreeparser_crypto_unittest(attachmenttest.cpp)
 add_mimetreeparser_crypto_unittest(objecttreeparsertest.cpp)
-add_mimetreeparser_crypto_unittest(rendertest.cpp)
 add_mimetreeparser_crypto_unittest(unencryptedmessagetest.cpp)
-add_mimetreeparser_class_unittest(messageparttest.cpp "setupenv.cpp;../src/themes/default/defaultrenderer.cpp;../src/themes/default/htmlblock.cpp;../src/themes/default/converthtmltoplaintext.cpp;../src/mimetreeparser_debug.cpp")
 add_mimetreeparser_unittest(nodehelpertest.cpp)
 add_mimetreeparser_unittest(csshelpertest.cpp)
 add_mimetreeparser_class_unittest( cryptohelpertest.cpp "../src/viewer/cryptohelper.cpp")
-
-ecm_add_test(converthtmltoplaintexttest.cpp ../src/themes/default/converthtmltoplaintext.cpp
-    TEST_NAME converthtmltoplaintexttest
-    NAME_PREFIX "mimetreeparser-"
-    LINK_LIBRARIES Qt5::Test Grantlee5::TextDocument
-)

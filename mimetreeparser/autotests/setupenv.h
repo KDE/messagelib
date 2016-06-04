@@ -23,7 +23,8 @@
 
 #include <gpgme++/key.h>
 #include "interfaces/objecttreesource.h"
-#include <viewer/attachmentstrategy.h>
+#include "interfaces/messagepartrenderer.h"
+#include "viewer/attachmentstrategy.h"
 #include "viewer/bodypartformatterbasefactory.h"
 
 namespace MimeTreeParser
@@ -152,6 +153,10 @@ public:
         return Q_NULLPTR;
     }
 
+    Interface::MessagePartRenderer::Ptr messagePartTheme(Interface::MessagePart::Ptr msgPart) Q_DECL_OVERRIDE {
+        Q_UNUSED(msgPart);
+        return  Interface::MessagePartRenderer::Ptr();
+    }
 private:
     MimeTreeParser::HtmlWriter *mWriter;
     MimeTreeParser::CSSHelperBase *mCSSHelper;
