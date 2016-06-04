@@ -159,14 +159,9 @@ target_link_libraries(KF5MimeTreeParser
     KF5::Libkleo
     PRIVATE
     KF5::Codecs
-    KF5::CoreAddons #KTextToHTML
-    KF5::IconThemes
     KF5::I18n
-    KF5::MessageCore #StringUtils
     KF5::Mime
-    Qt5::WebKitWidgets
-    Grantlee5::TextDocument
-    Grantlee5::Templates
+    Qt5::Widgets
     )
 
 install(TARGETS
