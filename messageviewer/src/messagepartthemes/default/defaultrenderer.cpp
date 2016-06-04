@@ -1333,7 +1333,7 @@ public:
             }
         }
 
-        qDebug() << className;
+        qDebug(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for " << className;
 
         auto _htmlWriter = htmlWriter;
         if (!_htmlWriter) {
