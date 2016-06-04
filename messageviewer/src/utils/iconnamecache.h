@@ -16,14 +16,14 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#ifndef __MIMETREEPARSER_ICONNAMECACHE_H__
-#define __MIMETREEPARSER_ICONNAMECACHE_H__
+#ifndef __MESSAGEVIEWER_ICONNAMECACHE_H__
+#define __MESSAGEVIEWER_ICONNAMECACHE_H__
 
 #include <QMap>
 #include <QString>
-#include "mimetreeparser_export.h"
+#include "messageviewer_export.h"
 
-namespace MimeTreeParser
+namespace MessageViewer
 {
 
 /**
@@ -33,7 +33,7 @@ namespace MimeTreeParser
  *
  * The IconNameCache caches the result of iconPath() in a map and solves the slowness.
  */
-class MIMETREEPARSER_EXPORT IconNameCache
+class MESSAGEVIEWER_EXPORT IconNameCache
 {
 public:
 

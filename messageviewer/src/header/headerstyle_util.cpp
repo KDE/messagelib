@@ -16,23 +16,26 @@
 */
 
 #include "headerstyle_util.h"
-#include "header/headerstyle.h"
 #include "messageviewer_debug.h"
-#include <MessageCore/StringUtil>
-#include <MimeTreeParser/IconNameCache>
-#include <MimeTreeParser/NodeHelper>
 
-#include "MessageCore/MessageCoreSettings"
-#include "settings/messageviewersettings.h"
-
-#include <KLocalizedString>
-
-#include <QBuffer>
 #include "contactdisplaymessagememento.h"
 #include "kxface.h"
 
+#include "header/headerstyle.h"
+#include "utils/iconnamecache.h"
+#include "settings/messageviewersettings.h"
+
+#include <MessageCore/StringUtil>
+#include <MimeTreeParser/NodeHelper>
+
+#include <MessageCore/MessageCoreSettings>
+
 #include <KEmailAddress>
+#include <KIconLoader>
+#include <KLocalizedString>
 #include <KTextToHTML>
+
+#include <QBuffer>
 #include <QVariantHash>
 
 using namespace MessageCore;
@@ -406,37 +409,37 @@ QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
     QString html;
     switch (action) {
     case Viewer::Trash: {
-        const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("user-trash"), KIconLoader::Toolbar);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("user-trash"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:trash\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Move to Trash"), QString::number(mIconSize));
         break;
     }
     case Viewer::Reply: {
-        const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-sender"), KIconLoader::Toolbar);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-sender"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:reply\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Reply"), QString::number(mIconSize));
         break;
     }
     case Viewer::ReplyToAll: {
-        const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-all"), KIconLoader::Toolbar);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-all"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:replyToAll\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Reply to All"), QString::number(mIconSize));
         break;
     }
     case Viewer::Forward: {
-        const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("mail-forward"), KIconLoader::Toolbar);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-forward"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:forward\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Forward"), QString::number(mIconSize));
         break;
     }
     case Viewer::NewMessage: {
-        const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("mail-message-new"), KIconLoader::Toolbar);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-message-new"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:newMessage\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("New Message"), QString::number(mIconSize));
         break;
     }
     case Viewer::Print: {
-        const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("document-print"), KIconLoader::Toolbar);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("document-print"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:print\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Print"), QString::number(mIconSize));
         break;
     }
     case Viewer::PrintPreview: {
-        const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("document-print-preview"), KIconLoader::Toolbar);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("document-print-preview"), KIconLoader::Toolbar);
         html = QStringLiteral("<a href=\"kmailaction:printpreview\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Print Preview"), QString::number(mIconSize));
         break;
     }

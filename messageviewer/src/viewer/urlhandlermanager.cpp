@@ -54,6 +54,7 @@
 #include <KEmailAddress>
 
 #include <KRun>
+#include <KIconLoader>
 #include <KLocalizedString>
 #include <kmessagebox.h>
 

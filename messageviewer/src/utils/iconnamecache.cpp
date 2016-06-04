@@ -21,8 +21,8 @@
 
 #include <KIconLoader>
 
-namespace MimeTreeParser
-{
+using namespace MessageViewer;
+
 Q_GLOBAL_STATIC(IconNameCache, s_iconNameCache)
 
 IconNameCache *IconNameCache::instance()
@@ -53,5 +53,4 @@ QString IconNameCache::iconPath(const QString &name, int size) const
     const QString fileName = KIconLoader::global()->iconPath(name, size);
     mCachedEntries.insert(entry, fileName);
     return fileName;
-}
 }

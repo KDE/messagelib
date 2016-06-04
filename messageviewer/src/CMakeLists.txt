@@ -124,6 +124,7 @@ set(libmessageviewer_findbar_SRCS
     )
 
 set(libmessageviewer_utils_SRCS
+    utils/iconnamecache.cpp
     utils/markmessagereadhandler.cpp
     utils/messageviewerutil.cpp
     utils/mimetype.cpp
@@ -303,6 +304,7 @@ ecm_generate_headers(MessageViewer_Camelcasewidgets_HEADERS
 
 ecm_generate_headers(MessageViewer_Camelcaseutils_HEADERS
     HEADER_NAMES
+    IconNameCache
     MarkMessageReadHandler
     MessageViewerUtil
     MimeType

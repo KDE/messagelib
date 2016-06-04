@@ -42,7 +42,6 @@ set(libmimetreeparser_main_SRCS
 
 set(libmimetreeparser_extra_SRCS
     #for quotes
-    utils/iconnamecache.cpp
     #HTML Writer
     htmlwriter/filehtmlwriter.cpp
     htmlwriter/queuehtmlwriter.cpp
@@ -73,7 +72,6 @@ ecm_generate_headers(MimeTreeParser_Camelcaseviewer_HEADERS
 
 ecm_generate_headers(MimeTreeParser_Camelcaseutils_HEADERS
     HEADER_NAMES
-    IconNameCache
     Util
     REQUIRED_HEADERS MimeTreeParser_utils_HEADERS
     PREFIX MimeTreeParser

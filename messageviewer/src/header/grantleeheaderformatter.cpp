@@ -19,10 +19,10 @@
 #include "headerstyle_util.h"
 #include "grantleetheme/grantleetheme.h"
 #include "settings/messageviewersettings.h"
+#include "utils/iconnamecache.h"
 #include "config-messageviewer.h"
 
 #include <MessageCore/StringUtil>
-#include "utils/iconnamecache.h"
 
 #include <kmime/kmime_message.h>
 #include <kmime/kmime_dateformatter.h>
@@ -256,7 +256,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
 
     if (messageHasAttachment) {
-        const QString iconPath = MimeTreeParser::IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
         const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }
