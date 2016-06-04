@@ -612,10 +612,10 @@ public:
             if (mp->mAsIcon == MimeTreeParser::IconInline) {
                 iconPath = nodeHelper->writeNodeToTempFile(node);
             } else {
-                iconPath = MessageViewer::Util::fileNameForContent(node, KIconLoader::Desktop);
+                iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
                 if (iconPath.right(14) == QLatin1String("mime_empty.png")) {
                     nodeHelper->magicSetType(node);
-                    iconPath = MessageViewer::Util::fileNameForContent(node, KIconLoader::Desktop);
+                    iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
                 }
             }
             block.setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());

@@ -333,7 +333,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QString &name)
     }
 
     if (!mimetype.isValid() || mimetype.name() == QLatin1String("application/octet-stream")) {
-        mimetype = MessageViewer::Util::mimetype(name);
+        mimetype = MimeTreeParser::Util::mimetype(name);
     }
     KService::Ptr offer =
         KMimeTypeTrader::self()->preferredService(mimetype.name(), QStringLiteral("Application"));
@@ -675,7 +675,7 @@ KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
 
     if (!mimetype.isValid() || mimetype.name() == QLatin1String("application/octet-stream")) {
         /*TODO(Andris) port when on-demand loading is done   && msgPart.isComplete() */
-        mimetype = MessageViewer::Util::mimetype(fileName);
+        mimetype = MimeTreeParser::Util::mimetype(fileName);
     }
     return KMimeTypeTrader::self()->preferredService(mimetype.name(), QStringLiteral("Application"));
 }

@@ -976,7 +976,7 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
     if (!fileName.isEmpty()) {
         QFile f(fileName);
         f.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ReadUser | QFile::ReadGroup | QFile::ReadOther);
-        const QString icon = Util::fileNameForContent(node, KIconLoader::Small);
+        const QString icon = Util::iconPathForContent(node, KIconLoader::Small);
         QDrag *drag = new QDrag(window->viewer());
         QMimeData *mimeData = new QMimeData();
         mimeData->setUrls(QList<QUrl>() << tUrl);

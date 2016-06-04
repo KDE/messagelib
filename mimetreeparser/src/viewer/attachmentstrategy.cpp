@@ -34,12 +34,16 @@
 #include "attachmentstrategy.h"
 
 #include "nodehelper.h"
+#include "utils/util.h"
 
 #include <KMime/Content>
 
+#include <QIcon>
+#include <QMimeDatabase>
+
 #include "mimetreeparser_debug.h"
-namespace MimeTreeParser
-{
+
+using namespace MimeTreeParser;
 
 static AttachmentStrategy::Display smartDisplay(KMime::Content *node)
 {
@@ -227,14 +231,10 @@ public:
             return smartDisplay(node);
         }
 
-        NodeHelper::AttachmentDisplayInfo info = NodeHelper::attachmentDisplayInfo(node);
-        if (info.displayInHeader) {
-            // The entire point about this attachment strategy: Hide attachments in the body that are
-            // already displayed in the attachment quick list
+        if (!Util::labelForContent(node).isEmpty() && QIcon::hasThemeIcon(Util::iconNameForContent(node)) && ! Util::isTypeBlacklisted(node)) {
             return None;
-        } else {
-            return smartDisplay(node);
         }
+        return smartDisplay(node);
     }
 
     bool requiresAttachmentListInHeader() const Q_DECL_OVERRIDE
@@ -341,6 +341,4 @@ const AttachmentStrategy *AttachmentStrategy::headerOnly()
 bool AttachmentStrategy::requiresAttachmentListInHeader() const
 {
     return false;
-}
-
 }

@@ -22,113 +22,32 @@
 #include "messageviewer_debug.h"
 
 #include <MimeTreeParser/NodeHelper>
+#include <MimeTreeParser/Util>
 
 #include <KIconLoader>
 #include <KMime/Content>
 
 #include <QMimeDatabase>
 
-QMimeType MessageViewer::Util::mimetype(const QString &name)
-{
-    QMimeDatabase db;
-    // consider the filename if mimetype cannot be found by content-type
-    auto mimeTypes = db.mimeTypesForFileName(name);
-    foreach (const auto &mt, mimeTypes) {
-        if (mt.name() != QLatin1String("application/octet-stream")) {
-            return mt;
-        }
-    }
-
-    // consider the attachment's contents if neither the Content-Type header
-    // nor the filename give us a clue
-    return db.mimeTypeForFile(name);
-}
-
-QString MessageViewer::Util::fileNameForMimetype(const QString &mimeType, int iconSize,
+QString MessageViewer::Util::iconPathForMimetype(const QString &mimeType, int iconSize,
         const QString &fallbackFileName1,
         const QString &fallbackFileName2)
 {
-    QString fileName;
-    QString tMimeType = mimeType;
-
-    // convert non-registered types to registered types
-    if (mimeType == QLatin1String("application/x-vnd.kolab.contact")) {
-        tMimeType = QStringLiteral("text/x-vcard");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.event")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.event");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.task")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.todo");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.journal")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.journal");
-    } else if (mimeType == QLatin1String("application/x-vnd.kolab.note")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.note");
-    } else if (mimeType == QLatin1String("image/jpg")) {
-        tMimeType = QStringLiteral("image/jpeg");
-    }
-    QMimeDatabase mimeDb;
-    auto mime = mimeDb.mimeTypeForName(tMimeType);
-    if (mime.isValid()) {
-        fileName = mime.iconName();
-    } else {
-        fileName = QStringLiteral("unknown");
-        if (!tMimeType.isEmpty()) {
-            qCWarning(MESSAGEVIEWER_LOG) << "unknown mimetype" << tMimeType;
-        }
-    }
-    //WorkAround for #199083
-    if (fileName == QLatin1String("text-vcard")) {
-        fileName = QStringLiteral("text-x-vcard");
-    }
-
-    if (fileName.isEmpty()) {
-        fileName = fallbackFileName1;
-        if (fileName.isEmpty()) {
-            fileName = fallbackFileName2;
-        }
-        if (!fileName.isEmpty()) {
-            fileName = mimeDb.mimeTypeForFile(QLatin1String("/tmp/") + fileName).iconName();
-        }
-    }
-
-    return IconNameCache::instance()->iconPath(fileName, iconSize);
+    return IconNameCache::instance()->iconPath(MimeTreeParser::Util::iconNameForMimetype(mimeType, fallbackFileName1, fallbackFileName2), iconSize);
 }
 
-QString MessageViewer::Util::fileNameForContent(KMime::Content *node, int size)
+QString MessageViewer::Util::iconPathForContent(KMime::Content *node, int size)
 {
-    if (!node) {
-        return QString();
-    }
-
-    QByteArray mimeType = node->contentType()->mimeType();
-    if (mimeType.isNull() || mimeType == "application/octet-stream") {
-        const QString mime = Util::mimetype(node->contentDisposition()->filename()).name();
-        mimeType = mime.toLatin1();
-    }
-    mimeType = mimeType.toLower();
-    return fileNameForMimetype(QLatin1String(mimeType), size, node->contentDisposition()->filename(),
-                               node->contentType()->name());
+    return  IconNameCache::instance()->iconPath(MimeTreeParser::Util::iconNameForContent(node), size);
 }
 
 MessageViewer::Util::AttachmentDisplayInfo MessageViewer::Util::attachmentDisplayInfo(KMime::Content *node)
 {
     AttachmentDisplayInfo info;
-    info.icon = fileNameForContent(node, KIconLoader::Small);
-    const QString name = node->contentType()->name();
-    info.label = name.isEmpty() ? MimeTreeParser::NodeHelper::fileName(node) : name;
-    if (info.label.isEmpty()) {
-        info.label = node->contentDescription()->asUnicodeString();
-    }
+    info.icon =  iconPathForContent(node, KIconLoader::Small);
+    info.label = MimeTreeParser::Util::labelForContent(node);
 
-    bool typeBlacklisted = node->contentType()->mediaType().toLower() == "multipart";
-    if (!typeBlacklisted) {
-        typeBlacklisted = KMime::isCryptoPart(node);
-    }
-    typeBlacklisted = typeBlacklisted || node == node->topLevel();
-    const bool firstTextChildOfEncapsulatedMsg =
-        node->contentType()->mediaType().toLower() == "text" &&
-        node->contentType()->subType().toLower() == "plain" &&
-        node->parent() && node->parent()->contentType()->mediaType().toLower() == "message";
-    typeBlacklisted = typeBlacklisted || firstTextChildOfEncapsulatedMsg;
+    bool typeBlacklisted = MimeTreeParser::Util::isTypeBlacklisted(node);
     info.displayInHeader = !info.label.isEmpty() && !info.icon.isEmpty() && !typeBlacklisted;
     return info;
 }

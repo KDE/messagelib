@@ -16,8 +16,19 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef __MIMETREEPARSER_UTIL_UTIL_H__
-#define __MIMETREEPARSER_UTIL_UTIL_H__
+#ifndef __MIMETREEPARSER_UTILS_UTIL_H__
+#define __MIMETREEPARSER_UTILS_UTIL_H__
+
+#include "mimetreeparser_export.h"
+
+#include <QString>
+
+class QMimeType;
+
+namespace KMime
+{
+class Content;
+}
 
 namespace MimeTreeParser
 {
@@ -40,6 +51,17 @@ enum HtmlMode {
     MultipartHtml   ///< A multipart/altervative message, the HTML part is currently displayed
 };
 
+bool MIMETREEPARSER_EXPORT isTypeBlacklisted(KMime::Content *node);
+
+QString MIMETREEPARSER_EXPORT labelForContent(KMime::Content *node);
+
+QMimeType MIMETREEPARSER_EXPORT mimetype(const QString &name);
+
+QString MIMETREEPARSER_EXPORT iconNameForMimetype(const QString &mimeType,
+        const QString &fallbackFileName1 = QString(),
+        const QString &fallbackFileName2 = QString());
+
+QString MIMETREEPARSER_EXPORT iconNameForContent(KMime::Content *node);
 }
 }
 

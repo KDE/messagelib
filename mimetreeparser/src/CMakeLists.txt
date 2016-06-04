@@ -25,6 +25,7 @@ set(libmimetreeparser_main_SRCS
     interfaces/htmlwriter.cpp
     interfaces/messagepartrenderer.cpp
     job/kleojobexecutor.cpp
+    utils/util.cpp
     viewer/attachmentstrategy.cpp
     viewer/bodypartformatter.cpp
     viewer/bodypartformatterbasefactory.cpp
@@ -41,7 +42,6 @@ set(libmimetreeparser_main_SRCS
     )
 
 set(libmimetreeparser_extra_SRCS
-    #for quotes
     #HTML Writer
     htmlwriter/filehtmlwriter.cpp
     htmlwriter/queuehtmlwriter.cpp
