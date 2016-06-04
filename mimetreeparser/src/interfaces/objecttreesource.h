@@ -34,10 +34,10 @@ class HtmlWriter;
 class CSSHelperBase;
 class AttachmentStrategy;
 class BodyPartFormatterBaseFactory;
-class MessagePart;
-typedef QSharedPointer<MessagePart> MessagePartPtr;
 namespace Interface
 {
+class MessagePart;
+typedef QSharedPointer<MessagePart> MessagePartPtr;
 class MessagePartRenderer;
 typedef QSharedPointer<MessagePartRenderer> MessagePartRendererPtr;
 }
@@ -106,7 +106,7 @@ public:
 
     virtual const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() = 0;
 
-    virtual MessagePartRendererPtr messagePartTheme(MessagePartPtr msgPart);
+    virtual MessagePartRendererPtr messagePartTheme(MessagePartPtr msgPart) = 0;
 };
 }
 }

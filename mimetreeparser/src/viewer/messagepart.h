@@ -87,7 +87,7 @@ public:
     bool hasSubParts() const;
 
     HtmlWriter* htmlWriter() const Q_DECL_OVERRIDE;
-    void setHtmlWriter(HtmlWriter *htmlWriter) const;
+    void setHtmlWriter(HtmlWriter *htmlWriter) const Q_DECL_OVERRIDE;
 
     Interface::ObjectTreeSource *source() const;
     CSSHelperBase *cssHelper() const;

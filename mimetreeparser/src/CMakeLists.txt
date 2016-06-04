@@ -45,9 +45,6 @@ set(libmimetreeparser_extra_SRCS
     #HTML Writer
     htmlwriter/filehtmlwriter.cpp
     htmlwriter/queuehtmlwriter.cpp
-    themes/default/converthtmltoplaintext.cpp
-    themes/default/defaultrenderer.cpp
-    themes/default/htmlblock.cpp
     )
 
 set(mimetreeparser_temporaryfile_SRCS
@@ -83,6 +80,7 @@ ecm_generate_headers(MimeTreeParser_Camelcaseinterfaces_HEADERS
     BodyPartFormatter
     BodyPart
     HtmlWriter
+    MessagePartRenderer
     ObjectTreeSource
     REQUIRED_HEADERS MimeTreeParser_interfaces_HEADERS
     PREFIX MimeTreeParser
