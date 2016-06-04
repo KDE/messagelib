@@ -19,10 +19,8 @@
 
 #include "nodehelper.h"
 #include "mimetreeparser_debug.h"
-#include "utils/iconnamecache.h"
 #include "partmetadata.h"
 #include "interfaces/bodypart.h"
-#include "utils/mimetype.h"
 #include "temporaryfile/attachmenttemporaryfilesdirs.h"
 
 #include <MessageCore/NodeHelper>
@@ -464,22 +462,6 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
     return myState;
 }
 
-QString NodeHelper::iconName(KMime::Content *node, int size)
-{
-    if (!node) {
-        return QString();
-    }
-
-    QByteArray mimeType = node->contentType()->mimeType();
-    if (mimeType.isNull() || mimeType == "application/octet-stream") {
-        const QString mime = Util::mimetype(node->contentDisposition()->filename()).name();
-        mimeType = mime.toLatin1();
-    }
-    mimeType = mimeType.toLower();
-    return Util::fileNameForMimetype(QLatin1String(mimeType), size, node->contentDisposition()->filename(),
-                                     node->contentType()->name());
-}
-
 void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
 {
     const QByteArray body = (aAutoDecode) ? node->decodedContent() : node->body();
@@ -878,30 +860,6 @@ KMime::Message *NodeHelper::messageWithExtraContent(KMime::Content *topLevelNode
 //   qCDebug(MIMETREEPARSER_LOG) << "MESSAGE WITHOUT EXTRA: " << topLevelNode->encodedContent();
 
     return m;
-}
-
-NodeHelper::AttachmentDisplayInfo NodeHelper::attachmentDisplayInfo(KMime::Content *node)
-{
-    AttachmentDisplayInfo info;
-    info.icon = iconName(node, KIconLoader::Small);
-    const QString name = node->contentType()->name();
-    info.label = name.isEmpty() ? fileName(node) : name;
-    if (info.label.isEmpty()) {
-        info.label = node->contentDescription()->asUnicodeString();
-    }
-
-    bool typeBlacklisted = node->contentType()->mediaType().toLower() == "multipart";
-    if (!typeBlacklisted) {
-        typeBlacklisted = KMime::isCryptoPart(node);
-    }
-    typeBlacklisted = typeBlacklisted || node == node->topLevel();
-    const bool firstTextChildOfEncapsulatedMsg =
-        node->contentType()->mediaType().toLower() == "text" &&
-        node->contentType()->subType().toLower() == "plain" &&
-        node->parent() && node->parent()->contentType()->mediaType().toLower() == "message";
-    typeBlacklisted = typeBlacklisted || firstTextChildOfEncapsulatedMsg;
-    info.displayInHeader = !info.label.isEmpty() && !info.icon.isEmpty() && !typeBlacklisted;
-    return info;
 }
 
 KMime::Content *NodeHelper::decryptedNodeForContent(KMime::Content *content) const

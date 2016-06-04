@@ -27,8 +27,6 @@
 
 #include <KMime/Message>
 
-#include <KIconLoader>
-
 #include <QList>
 #include <QMap>
 #include <QSet>
@@ -76,8 +74,6 @@ public:
 
     void setPartMetaData(KMime::Content *node, const PartMetaData &metaData);
     PartMetaData partMetaData(KMime::Content *node);
-
-    static QString iconName(KMime::Content *node, int size = KIconLoader::Desktop);
 
     /**
      *  Set the 'Content-Type' by mime-magic from the contents of the body.
@@ -216,13 +212,7 @@ public:
 
     static QString fromAsString(KMime::Content *node);
 
-    struct AttachmentDisplayInfo {
-        QString label;
-        QString icon;
-        bool displayInHeader;
-    };
 
-    static AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
 
     KMime::Content *decryptedNodeForContent(KMime::Content *content) const;
 

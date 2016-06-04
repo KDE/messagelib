@@ -41,12 +41,9 @@
 #include <gpgme++/keylistresult.h>
 #include <gpgme.h>
 
-#include <QTextCodec>
-#include <QWebPage>
-#include <QWebElement>
-#include <QWebFrame>
-
 #include <KLocalizedString>
+
+#include <QTextCodec>
 
 using namespace MimeTreeParser;
 
@@ -349,26 +346,6 @@ void HtmlMessagePart::fix() const
 {
     mOtp->mHtmlContent += mBodyHTML;
     mOtp->mHtmlContentCharset = mCharset;
-}
-
-QString HtmlMessagePart::processHtml(const QString &htmlSource, QString &extraHead)
-{
-    // Create a DOM Document from the HTML source
-    QWebPage page(0);
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
-    page.settings()->setAttribute(QWebSettings::JavaEnabled, false);
-    page.settings()->setAttribute(QWebSettings::PluginsEnabled, false);
-
-    page.settings()->setAttribute(QWebSettings::AutoLoadImages, false);
-
-    QWebFrame *frame = page.mainFrame();
-    frame->setHtml(htmlSource);
-
-    const QWebElement body = frame->documentElement().findFirst(QStringLiteral("body"));
-    const QWebElement header = frame->documentElement().findFirst(QStringLiteral("head"));
-
-    extraHead = header.toInnerXml();
-    return body.toInnerXml();
 }
 
 QString HtmlMessagePart::text() const
