@@ -28,6 +28,7 @@ namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendInterfacePrivate;
 class PluginEditorCheckBeforeSendConfigureWidget;
+class PluginEditorCheckBeforeSendParams;
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendInterface : public QObject
 {
     Q_OBJECT
@@ -35,7 +36,7 @@ public:
     explicit PluginEditorCheckBeforeSendInterface(QObject *parent = Q_NULLPTR);
     ~PluginEditorCheckBeforeSendInterface();
 
-    virtual bool exec() = 0;
+    virtual bool exec(const MessageComposer::PluginEditorCheckBeforeSendParams &params) = 0;
 
     void setParentWidget(QWidget *parent);
     QWidget *parentWidget() const;
