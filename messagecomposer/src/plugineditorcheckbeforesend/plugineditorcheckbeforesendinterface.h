@@ -22,6 +22,8 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
+#include "plugineditorcheckbeforesendparams.h"
+
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendInterfacePrivate;
@@ -37,6 +39,9 @@ public:
 
     void setParentWidget(QWidget *parent);
     QWidget *parentWidget() const;
+
+    void setParameters(const MessageComposer::PluginEditorCheckBeforeSendParams &params);
+    MessageComposer::PluginEditorCheckBeforeSendParams parameters() const;
 
 public Q_SLOTS:
     virtual void reloadConfig();

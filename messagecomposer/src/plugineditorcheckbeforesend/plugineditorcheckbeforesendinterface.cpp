@@ -30,6 +30,7 @@ public:
     {
 
     }
+    MessageComposer::PluginEditorCheckBeforeSendParams parameters;
     QWidget *mParentWidget;
 };
 
@@ -53,6 +54,16 @@ void PluginEditorCheckBeforeSendInterface::setParentWidget(QWidget *parent)
 QWidget *PluginEditorCheckBeforeSendInterface::parentWidget() const
 {
     return d->mParentWidget;
+}
+
+void PluginEditorCheckBeforeSendInterface::setParameters(const MessageComposer::PluginEditorCheckBeforeSendParams &params)
+{
+    d->parameters = params;
+}
+
+MessageComposer::PluginEditorCheckBeforeSendParams PluginEditorCheckBeforeSendInterface::parameters() const
+{
+    return d->parameters;
 }
 
 void PluginEditorCheckBeforeSendInterface::reloadConfig()
