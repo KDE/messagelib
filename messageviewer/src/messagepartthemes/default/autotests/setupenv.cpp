@@ -32,7 +32,7 @@ void MessageViewer::Test::setupEnv()
 {
     setenv("KDEHOME", QFile::encodeName(QDir::homePath() + QString::fromLatin1("/.qttest")), 1);
     QStandardPaths::setTestModeEnabled(true);
-    QIcon::setThemeName(QStringLiteral("oxygen"));
+    QIcon::setThemeName(QStringLiteral("breeze"));
     QLocale::setDefault(QLocale(QStringLiteral("en_US")));
 }
 
