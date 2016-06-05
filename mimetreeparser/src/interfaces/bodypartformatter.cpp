@@ -49,10 +49,10 @@ class MessagePartPrivate
 {
 public:
     MessagePartPrivate(MessagePart *mp, const BodyPart *part)
-    : mHtmlWriter(Q_NULLPTR)
-    , mPart(part)
-    , mParentPart(Q_NULLPTR)
-    , q(mp)
+        : mHtmlWriter(Q_NULLPTR)
+        , mPart(part)
+        , mParentPart(Q_NULLPTR)
+        , q(mp)
     {
     }
 
@@ -118,7 +118,7 @@ MimeTreeParser::HtmlWriter *MessagePart::htmlWriter() const
     return d->htmlWriter();
 }
 
-void MessagePart::setHtmlWriter(MimeTreeParser::HtmlWriter* htmlWriter) const
+void MessagePart::setHtmlWriter(MimeTreeParser::HtmlWriter *htmlWriter) const
 {
     if (d->mHtmlWriter) {
         d->mHtmlWriter = htmlWriter;

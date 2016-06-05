@@ -212,8 +212,6 @@ public:
 
     static QString fromAsString(KMime::Content *node);
 
-
-
     KMime::Content *decryptedNodeForContent(KMime::Content *content) const;
 
     /**

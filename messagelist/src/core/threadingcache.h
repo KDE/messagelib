@@ -44,7 +44,6 @@ public:
     void load(const QString &id, const Aggregation *aggregation);
     void save();
 
-
     void addItemToCache(MessageItem *mi)
     {
         if (mEnabled) {
@@ -92,7 +91,6 @@ private:
     Aggregation::ThreadLeader mThreadLeader;
     bool mEnabled;
 };
-
 
 } // namespace Core
 } // namespace MessageList

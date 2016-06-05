@@ -26,7 +26,6 @@
 #include <MimeTreeParser/CSSHelperBase>
 #include <MimeTreeParser/MessagePart>
 
-
 #include <QTest>
 
 using namespace MessageViewer;

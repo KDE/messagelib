@@ -329,9 +329,9 @@ Model::Model(View *pParent)
     d->mCachedWatchedOrIgnoredStatusBits = Akonadi::MessageStatus::statusIgnored().toQInt32() | Akonadi::MessageStatus::statusWatched().toQInt32();
 
     connect(_k_heartBeatTimer(), &QTimer::timeout,
-            this, [this]() {
-                d->checkIfDateChanged();
-            });
+    this, [this]() {
+        d->checkIfDateChanged();
+    });
 
     if (!_k_heartBeatTimer->isActive()) {   // First model starts it
         _k_heartBeatTimer->start(60000);   // 1 minute
@@ -2155,7 +2155,7 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachO
                 mThreadingCacheMessageInReplyToIdMD5ToMessageItem.remove(mi->inReplyToIdMD5(), mi);
             }
             if (attachOptions == StoreInCache && pParent->type() == Item::Message) {
-                mThreadingCache.updateParent(mi, static_cast<MessageItem*>(pParent));
+                mThreadingCache.updateParent(mi, static_cast<MessageItem *>(pParent));
             }
             break;
         case MessageItem::ImperfectParentFound:
@@ -2867,7 +2867,6 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                 // Note that this is likely to work since thread-parent messages tend
                 // to come before thread-children messages in the folders (simply because of
                 // date of arrival).
-
 
                 // First of all try to find a "perfect parent", that is the message for that
                 // we have the ID in the "In-Reply-To" field. This is actually done by using

@@ -26,7 +26,6 @@
 
 #include <QTest>
 
-
 using namespace MessageViewer;
 using namespace MimeTreeParser;
 
@@ -185,7 +184,7 @@ void ObjectTreeParserTester::test_inlinePGPSigned()
 
 void ObjectTreeParserTester::test_HTML()
 {
-    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("html.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("html.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
@@ -202,7 +201,7 @@ void ObjectTreeParserTester::test_HTML()
 
 void ObjectTreeParserTester::test_HTMLasText()
 {
-    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("html.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("html.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
@@ -222,7 +221,7 @@ void ObjectTreeParserTester::test_HTMLasText()
 
 void ObjectTreeParserTester::test_HTMLOnly()
 {
-    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("htmlonly.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("htmlonly.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
@@ -238,7 +237,7 @@ void ObjectTreeParserTester::test_HTMLOnly()
 
 void ObjectTreeParserTester::test_HTMLOnlyText()
 {
-    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("htmlonly.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("htmlonly.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
@@ -259,7 +258,7 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
 
 void ObjectTreeParserTester::test_HTMLExternal()
 {
-    KMime::Message::Ptr msg =Test::readAndParseMail(QStringLiteral("htmlonlyexternal.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("htmlonlyexternal.mbox"));
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);

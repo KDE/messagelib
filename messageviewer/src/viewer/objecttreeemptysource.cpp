@@ -29,7 +29,8 @@
 
 using namespace MessageViewer;
 
-namespace MessageViewer {
+namespace MessageViewer
+{
 
 class EmptySourcePrivate
 {

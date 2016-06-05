@@ -172,4 +172,3 @@ private:
 
 #endif //__MESSAGEVIEWER_TESTS_SETUPENV_H__
 
-

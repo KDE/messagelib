@@ -30,8 +30,7 @@ using namespace MessageList::Core;
 
 namespace
 {
-struct CacheHeader
-{
+struct CacheHeader {
     int version;
     Aggregation::Grouping grouping;
     Aggregation::Threading threading;
@@ -42,21 +41,20 @@ struct CacheHeader
 QDataStream &operator<<(QDataStream &stream, const CacheHeader &header)
 {
     return stream << header.version
-                  << (qint8)header.grouping
-                  << (qint8)header.threading
-                  << (qint8)header.threadLeader
-                  << header.cacheSize;
+           << (qint8)header.grouping
+           << (qint8)header.threading
+           << (qint8)header.threadLeader
+           << header.cacheSize;
 }
 
 QDataStream &operator>>(QDataStream &stream, CacheHeader &header)
 {
     return stream >> header.version
-                  >> (qint8&)header.grouping
-                  >> (qint8&)header.threading
-                  >> (qint8&)header.threadLeader
-                  >> header.cacheSize;
+           >> (qint8 &)header.grouping
+           >> (qint8 &)header.threading
+           >> (qint8 &)header.threadLeader
+           >> header.cacheSize;
 }
-
 
 }
 
@@ -97,8 +95,8 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
     mEnabled = true;
 
     const QString cacheFileName = QStandardPaths::locate(QStandardPaths::CacheLocation,
-                                                         QStringLiteral("/messagelist/threading/%1").arg(id),
-                                                         QStandardPaths::LocateFile);
+                                  QStringLiteral("/messagelist/threading/%1").arg(id),
+                                  QStandardPaths::LocateFile);
     if (cacheFileName.isEmpty()) {
         qCDebug(MESSAGELIST_LOG) << "No threading cache file for collection" << id;
         return;
@@ -124,8 +122,8 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
     }
 
     if (cacheHeader.grouping != mGrouping
-        || cacheHeader.threading != mThreading
-        || cacheHeader.threadLeader != mThreadLeader) {
+            || cacheHeader.threading != mThreading
+            || cacheHeader.threadLeader != mThreadLeader) {
         // The cache is valid, but for a different grouping/threading configuration.
         qCDebug(MESSAGELIST_LOG) << "\tCache file unusable, threading configuration mismatch";
         cacheFile.close();

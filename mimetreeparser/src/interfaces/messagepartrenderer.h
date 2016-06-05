@@ -27,10 +27,10 @@ namespace MimeTreeParser
 {
 namespace Interface
 {
- /**
- * Interface for rendering messageparts to html.
- * @author Andras Mantia <sknauss@kde.org>
- */
+/**
+* Interface for rendering messageparts to html.
+* @author Andras Mantia <sknauss@kde.org>
+*/
 class MIMETREEPARSER_EXPORT MessagePartRenderer
 {
 public:

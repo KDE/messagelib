@@ -49,7 +49,7 @@ QString MimeTreeParser::Util::labelForContent(KMime::Content *node)
     QString label = name.isEmpty() ? NodeHelper::fileName(node) : name;
     if (label.isEmpty()) {
         label = node->contentDescription()->asUnicodeString();
-    } 
+    }
     return label;
 }
 

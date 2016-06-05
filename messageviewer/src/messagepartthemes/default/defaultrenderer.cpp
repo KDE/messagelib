@@ -447,7 +447,7 @@ class CacheHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
     explicit CacheHtmlWriter(MimeTreeParser::HtmlWriter *baseWriter)
-    : mBaseWriter(baseWriter)
+        : mBaseWriter(baseWriter)
     {}
     virtual ~CacheHtmlWriter() {}
 
@@ -862,8 +862,6 @@ public:
         }
         return htmlWriter->html;
     }
-
-
 
     QString render(HtmlMessagePart::Ptr mp)
     {
@@ -1344,7 +1342,7 @@ public:
         msgPart->setHtmlWriter(mOldWriter);
         if (!htmlWriter) {
             return _htmlWriter->html;
-        } 
+        }
 
         return QString();
     }

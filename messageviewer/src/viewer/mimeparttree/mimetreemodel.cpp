@@ -104,7 +104,7 @@ public:
                 return QIcon::fromTheme(QStringLiteral("folder"));
             } else if (!iconName.isEmpty() && iconName != QStringLiteral("unknown")) {
                 return QIcon::fromTheme(iconName);
-            } else if  (mimeType.isValid() && !mimeType.iconName().isEmpty()) {
+            } else if (mimeType.isValid() && !mimeType.iconName().isEmpty()) {
                 return QIcon::fromTheme(mimeType.iconName());
             }
 

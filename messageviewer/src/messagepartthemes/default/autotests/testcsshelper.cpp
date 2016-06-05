@@ -26,7 +26,6 @@
 
 using namespace MessageViewer::Test;
 
-
 TestCSSHelper::TestCSSHelper(const QPaintDevice *pd) :
     MimeTreeParser::CSSHelperBase(pd)
 {

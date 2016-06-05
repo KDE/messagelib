@@ -39,7 +39,6 @@ namespace MessageViewer
 
 class DefaultRendererPrivate;
 
-
 class DefaultRenderer : public MimeTreeParser::Interface::MessagePartRenderer
 {
 public:
