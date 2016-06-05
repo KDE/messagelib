@@ -992,7 +992,7 @@ public:
         block.setProperty("technicalProblem", metaData.technicalProblem);
         block.setProperty("keyId", metaData.keyId);
         if (metaData.creationTime.isValid()) {      //should be handled inside grantlee but currently not possible see: https://bugs.kde.org/363475
-            block.setProperty("creationTime", QLocale::system().toString(metaData.creationTime, QLocale::ShortFormat));
+            block.setProperty("creationTime", QLocale().toString(metaData.creationTime, QLocale::ShortFormat));
         }
         block.setProperty("isGoodSignature", metaData.isGoodSignature);
         block.setProperty("isSMIME", isSMIME);
