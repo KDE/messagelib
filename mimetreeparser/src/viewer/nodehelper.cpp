@@ -23,7 +23,6 @@
 #include "interfaces/bodypart.h"
 #include "temporaryfile/attachmenttemporaryfilesdirs.h"
 
-#include <MessageCore/NodeHelper>
 
 #include <KMime/Content>
 #include <KMime/Message>
