@@ -21,12 +21,43 @@
 
 using namespace MessageComposer;
 
+class MessageComposer::PluginEditorCheckBeforeSendParamsPrivate
+{
+public:
+    PluginEditorCheckBeforeSendParamsPrivate()
+    {
+
+    }
+    QString subject;
+};
+
 PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams()
+    : d(new MessageComposer::PluginEditorCheckBeforeSendParamsPrivate)
 {
 
 }
 
 PluginEditorCheckBeforeSendParams::~PluginEditorCheckBeforeSendParams()
 {
+    delete d;
+}
 
+PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(const PluginEditorCheckBeforeSendParams &other)
+{
+    if (this != &other) {
+        d->subject = other.subject();
+    }
+
+    return *this;
+}
+
+
+void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)
+{
+    d->subject = subject;
+}
+
+QString PluginEditorCheckBeforeSendParams::subject() const
+{
+    return d->subject;
 }

@@ -25,11 +25,19 @@
 
 namespace MessageComposer
 {
+class PluginEditorCheckBeforeSendParamsPrivate;
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendParams
 {
 public:
     PluginEditorCheckBeforeSendParams();
     ~PluginEditorCheckBeforeSendParams();
+
+    void setSubject(const QString &subject);
+    QString subject() const;
+
+    PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
+private:
+    PluginEditorCheckBeforeSendParamsPrivate *const d;
 };
 }
 #endif // PLUGINEDITORCHECKBEFORESENDPARAMS_H
