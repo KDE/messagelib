@@ -128,7 +128,7 @@ install(FILES
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParser
     LIB_NAME KF5MimeTreeParser
-    DEPS "MessageCore Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
+    DEPS "Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
     )
 
 install(FILES
