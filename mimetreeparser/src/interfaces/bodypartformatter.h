@@ -55,6 +55,8 @@ class MessagePartPrivate;
 class MIMETREEPARSER_EXPORT MessagePart : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString plaintextContent READ plaintextContent)
+    Q_PROPERTY(QString htmlContent READ htmlContent)
 public:
     typedef QSharedPointer<MessagePart> Ptr;
     explicit MessagePart();
@@ -66,6 +68,9 @@ public:
 
     void setParentPart(MessagePart *parentPart);
     MessagePart *parentPart() const;
+
+    virtual QString plaintextContent() const;
+    virtual QString htmlContent() const;
 
     virtual MimeTreeParser::HtmlWriter *htmlWriter() const;
     virtual void setHtmlWriter(MimeTreeParser::HtmlWriter *htmlWriter) const;

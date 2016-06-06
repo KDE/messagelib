@@ -113,6 +113,16 @@ void MessagePart::setParentPart(MessagePart *parentPart)
     d->mParentPart = parentPart;
 }
 
+QString MessagePart::htmlContent() const
+{
+    return text();
+}
+
+QString MessagePart::plaintextContent() const
+{
+    return text();
+}
+
 MimeTreeParser::HtmlWriter *MessagePart::htmlWriter() const
 {
     return d->htmlWriter();

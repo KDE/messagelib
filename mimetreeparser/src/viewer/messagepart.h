@@ -61,6 +61,9 @@ class ObjectTreeSource;
 class MIMETREEPARSER_EXPORT MessagePart : public Interface::MessagePart
 {
     Q_OBJECT
+    Q_PROPERTY(bool attachment READ isAttachment)
+    Q_PROPERTY(bool root READ isRoot)
+    Q_PROPERTY(bool isHtml READ isHtml)
 public:
     typedef QSharedPointer<MessagePart> Ptr;
     MessagePart(ObjectTreeParser *otp,
@@ -75,6 +78,8 @@ public:
 
     void setIsRoot(bool root);
     bool isRoot() const;
+
+    virtual bool isHtml() const;
 
     PartMetaData *partMetaData();
 
@@ -119,6 +124,8 @@ public:
 
     QString text() const Q_DECL_OVERRIDE;
 
+    QString plaintextContent() const Q_DECL_OVERRIDE;
+    QString htmlContent() const Q_DECL_OVERRIDE;
 private:
     KMime::Content *mNode;
     bool mOnlyOneMimePart;
@@ -136,6 +143,8 @@ public:
 
     QString text() const Q_DECL_OVERRIDE;
 
+    QString plaintextContent() const Q_DECL_OVERRIDE;
+    QString htmlContent() const Q_DECL_OVERRIDE;
 private:
 };
 
@@ -183,6 +192,7 @@ public:
     QString text() const Q_DECL_OVERRIDE;
 
     void fix() const Q_DECL_OVERRIDE;
+    bool isHtml() const Q_DECL_OVERRIDE;
 
 private:
     KMime::Content *mNode;
@@ -205,6 +215,12 @@ public:
 
     void setViewHtml(bool html);
     bool viewHtml() const;
+
+    bool isHtml() const Q_DECL_OVERRIDE;
+
+    QString plaintextContent() const Q_DECL_OVERRIDE;
+    QString htmlContent() const Q_DECL_OVERRIDE;
+
     void fix() const Q_DECL_OVERRIDE;
     void copyContentFrom() const Q_DECL_OVERRIDE;
 private:
@@ -257,6 +273,10 @@ private:
 class MIMETREEPARSER_EXPORT CryptoMessagePart : public MessagePart
 {
     Q_OBJECT
+    Q_PROPERTY(bool decryptMessage READ decryptMessage WRITE setDecryptMessage)
+    Q_PROPERTY(bool isEncrypted READ isEncrypted)
+    Q_PROPERTY(bool isSigned READ isSigned)
+    Q_PROPERTY(bool passphraseError READ passphraseError)
 public:
     typedef QSharedPointer<CryptoMessagePart> Ptr;
     CryptoMessagePart(ObjectTreeParser *otp,

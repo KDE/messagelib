@@ -106,6 +106,11 @@ void MessagePart::setText(const QString &text)
     mText = text;
 }
 
+bool MessagePart::isHtml() const
+{
+    return false;
+}
+
 CSSHelperBase *MessagePart::cssHelper() const
 {
     Q_ASSERT(mOtp);
@@ -202,6 +207,16 @@ MessagePartList::~MessagePartList()
 QString MessagePartList::text() const
 {
     return renderInternalText();
+}
+
+QString MessagePartList::plaintextContent() const
+{
+    return QString();
+}
+
+QString MessagePartList::htmlContent() const
+{
+    return QString();
 }
 
 //-----TextMessageBlock----------------------
@@ -353,6 +368,11 @@ QString HtmlMessagePart::text() const
     return mBodyHTML;
 }
 
+bool HtmlMessagePart::isHtml() const
+{
+    return true;
+}
+
 //-----MimeMessageBlock----------------------
 
 MimeMessagePart::MimeMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart)
@@ -376,6 +396,16 @@ MimeMessagePart::~MimeMessagePart()
 QString MimeMessagePart::text() const
 {
     return renderInternalText();
+}
+
+QString MimeMessagePart::plaintextContent() const
+{
+    return QString();
+}
+
+QString MimeMessagePart::htmlContent() const
+{
+    return QString();
 }
 
 //-----AlternativeMessagePart----------------------
@@ -442,6 +472,25 @@ void AlternativeMessagePart::copyContentFrom() const
 
     if (viewHtml() && mHTMLPart) {
         mHTMLPart->copyContentFrom();
+    }
+}
+
+bool AlternativeMessagePart::isHtml() const
+{
+    return (mHTMLNode);
+}
+
+QString AlternativeMessagePart::plaintextContent() const
+{
+    return mTextPart->text();
+}
+
+QString AlternativeMessagePart::htmlContent() const
+{
+    if (mHTMLNode) {
+        return mHTMLPart->text();
+    } else {
+        return plaintextContent();
     }
 }
 
