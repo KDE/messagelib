@@ -25,10 +25,14 @@ class MessageComposer::PluginEditorCheckBeforeSendParamsPrivate
 {
 public:
     PluginEditorCheckBeforeSendParamsPrivate()
+        : identity(-1),
+          isHtml(false)
     {
 
     }
     QString subject;
+    uint identity;
+    bool isHtml;
 };
 
 PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams()
@@ -46,8 +50,9 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
 {
     if (this != &other) {
         d->subject = other.subject();
+        d->identity = other.identity();
+        d->isHtml = other.isHtmlMail();
     }
-
     return *this;
 }
 
@@ -60,4 +65,24 @@ void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)
 QString PluginEditorCheckBeforeSendParams::subject() const
 {
     return d->subject;
+}
+
+void PluginEditorCheckBeforeSendParams::setIdentity(uint currentIdentity)
+{
+    d->identity = currentIdentity;
+}
+
+uint PluginEditorCheckBeforeSendParams::identity() const
+{
+    return d->identity;
+}
+
+bool PluginEditorCheckBeforeSendParams::isHtmlMail() const
+{
+    return d->isHtml;
+}
+
+void PluginEditorCheckBeforeSendParams::setHtmlMail(bool html)
+{
+    d->isHtml = html;
 }

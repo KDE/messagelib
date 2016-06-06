@@ -17,33 +17,27 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PLUGINEDITORCHECKBEFORESENDPARAMS_H
-#define PLUGINEDITORCHECKBEFORESENDPARAMS_H
+#include "plugineditorcheckbeforesendparamstest.h"
+#include <MessageComposer/PluginEditorCheckBeforeSendParams>
+#include <QTest>
 
-#include "messagecomposer_export.h"
-#include <QString>
-
-namespace MessageComposer
+PluginEditorCheckBeforeSendParamsTest::PluginEditorCheckBeforeSendParamsTest(QObject *parent)
+    : QObject(parent)
 {
-class PluginEditorCheckBeforeSendParamsPrivate;
-class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendParams
-{
-public:
-    PluginEditorCheckBeforeSendParams();
-    ~PluginEditorCheckBeforeSendParams();
 
-    void setSubject(const QString &subject);
-    QString subject() const;
-
-    void setIdentity(uint currentIdentity);
-    uint identity() const;
-
-    bool isHtmlMail() const;
-    void setHtmlMail(bool html);
-
-    PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
-private:
-    PluginEditorCheckBeforeSendParamsPrivate *const d;
-};
 }
-#endif // PLUGINEDITORCHECKBEFORESENDPARAMS_H
+
+PluginEditorCheckBeforeSendParamsTest::~PluginEditorCheckBeforeSendParamsTest()
+{
+
+}
+
+void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
+{
+    MessageComposer::PluginEditorCheckBeforeSendParams params;
+    QVERIFY(params.subject().isEmpty());
+    QCOMPARE(params.identity(), (uint)-1);
+    QVERIFY(!params.isHtmlMail());
+}
+
+QTEST_MAIN(PluginEditorCheckBeforeSendParamsTest)

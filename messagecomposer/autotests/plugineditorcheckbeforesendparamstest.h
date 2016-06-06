@@ -17,33 +17,20 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PLUGINEDITORCHECKBEFORESENDPARAMS_H
-#define PLUGINEDITORCHECKBEFORESENDPARAMS_H
+#ifndef PLUGINEDITORCHECKBEFORESENDPARAMSTEST_H
+#define PLUGINEDITORCHECKBEFORESENDPARAMSTEST_H
 
-#include "messagecomposer_export.h"
-#include <QString>
+#include <QObject>
 
-namespace MessageComposer
+class PluginEditorCheckBeforeSendParamsTest : public QObject
 {
-class PluginEditorCheckBeforeSendParamsPrivate;
-class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendParams
-{
+    Q_OBJECT
 public:
-    PluginEditorCheckBeforeSendParams();
-    ~PluginEditorCheckBeforeSendParams();
+    explicit PluginEditorCheckBeforeSendParamsTest(QObject *parent = Q_NULLPTR);
+    ~PluginEditorCheckBeforeSendParamsTest();
 
-    void setSubject(const QString &subject);
-    QString subject() const;
-
-    void setIdentity(uint currentIdentity);
-    uint identity() const;
-
-    bool isHtmlMail() const;
-    void setHtmlMail(bool html);
-
-    PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
-private:
-    PluginEditorCheckBeforeSendParamsPrivate *const d;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
-}
-#endif // PLUGINEDITORCHECKBEFORESENDPARAMS_H
+
+#endif // PLUGINEDITORCHECKBEFORESENDPARAMSTEST_H
