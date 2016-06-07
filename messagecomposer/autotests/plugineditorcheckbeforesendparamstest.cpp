@@ -40,4 +40,17 @@ void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
     QVERIFY(!params.isHtmlMail());
 }
 
+void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
+{
+    MessageComposer::PluginEditorCheckBeforeSendParams params1;
+    const QString subject(QStringLiteral("foo"));
+    bool isHmlMail = true;
+    params1.setSubject(subject);
+    params1.setHtmlMail(isHmlMail);
+    MessageComposer::PluginEditorCheckBeforeSendParams params2 = params1;
+    QVERIFY(params2 == params1);
+    QCOMPARE(params2.isHtmlMail(), isHmlMail);
+    QCOMPARE(params2.subject(), subject);
+}
+
 QTEST_MAIN(PluginEditorCheckBeforeSendParamsTest)

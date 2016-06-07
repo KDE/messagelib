@@ -30,6 +30,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendParams
 {
 public:
     PluginEditorCheckBeforeSendParams();
+    PluginEditorCheckBeforeSendParams(const PluginEditorCheckBeforeSendParams &other);
     ~PluginEditorCheckBeforeSendParams();
 
     void setSubject(const QString &subject);

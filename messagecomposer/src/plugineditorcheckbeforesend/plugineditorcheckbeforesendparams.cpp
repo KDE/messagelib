@@ -41,6 +41,13 @@ PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams()
 
 }
 
+PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams(const PluginEditorCheckBeforeSendParams &other)
+    : d(new MessageComposer::PluginEditorCheckBeforeSendParamsPrivate)
+{
+    (*this) = other;
+}
+
+
 PluginEditorCheckBeforeSendParams::~PluginEditorCheckBeforeSendParams()
 {
     delete d;
