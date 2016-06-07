@@ -42,6 +42,7 @@ public:
     void setHtmlMail(bool html);
 
     PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
+    bool operator ==(const PluginEditorCheckBeforeSendParams &other) const;
 private:
     PluginEditorCheckBeforeSendParamsPrivate *const d;
 };

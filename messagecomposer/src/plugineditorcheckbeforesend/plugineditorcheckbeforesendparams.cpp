@@ -56,6 +56,12 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
     return *this;
 }
 
+bool PluginEditorCheckBeforeSendParams::operator ==(const PluginEditorCheckBeforeSendParams &other) const
+{
+    return (d->subject == other.subject()) &&
+            (d->identity = other.identity()) &&
+            (d->isHtml = other.isHtmlMail());
+}
 
 void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)
 {
