@@ -19,7 +19,12 @@
 
 
 #include "printselectpagedialogtest.h"
+#include "../printselectpagewidget.h"
+#include "../printselectpagedialog.h"
+
 #include <QTest>
+#include <QVBoxLayout>
+#include <QDialogButtonBox>
 
 PrintSelectPageDialogTest::PrintSelectPageDialogTest(QObject *parent)
     : QObject(parent)
@@ -30,6 +35,19 @@ PrintSelectPageDialogTest::PrintSelectPageDialogTest(QObject *parent)
 PrintSelectPageDialogTest::~PrintSelectPageDialogTest()
 {
 
+}
+
+void PrintSelectPageDialogTest::shouldHaveDefaultValue()
+{
+    WebEngineViewer::PrintSelectPageDialog dlg;
+    QVBoxLayout *mainLayout = dlg.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    QVERIFY(mainLayout);
+
+    WebEngineViewer::PrintSelectPageWidget *mPrintSelectPage = dlg.findChild<WebEngineViewer::PrintSelectPageWidget *>(QStringLiteral("printselectpage"));
+    QVERIFY(mPrintSelectPage);
+
+    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    QVERIFY(buttonBox);
 }
 
 QTEST_MAIN(PrintSelectPageDialogTest)

@@ -18,7 +18,9 @@
 */
 
 #include "printselectpagewidgettest.h"
+#include "../printselectpagewidget.h"
 #include <QTest>
+#include <QVBoxLayout>
 
 PrintSelectPageWidgetTest::PrintSelectPageWidgetTest(QObject *parent)
     : QObject(parent)
@@ -29,6 +31,14 @@ PrintSelectPageWidgetTest::PrintSelectPageWidgetTest(QObject *parent)
 PrintSelectPageWidgetTest::~PrintSelectPageWidgetTest()
 {
 
+}
+
+void PrintSelectPageWidgetTest::shouldHaveDefaultValue()
+{
+    WebEngineViewer::PrintSelectPageWidget w;
+    QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->margin(), 0);
 }
 
 QTEST_MAIN(PrintSelectPageWidgetTest)

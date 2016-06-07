@@ -29,6 +29,9 @@ class PrintSelectPageDialogTest : public QObject
 public:
     explicit PrintSelectPageDialogTest(QObject *parent = Q_NULLPTR);
     ~PrintSelectPageDialogTest();
+
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // PRINTSELECTPAGEDIALOGTEST_H

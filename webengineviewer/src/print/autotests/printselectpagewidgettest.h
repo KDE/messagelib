@@ -28,6 +28,8 @@ class PrintSelectPageWidgetTest : public QObject
 public:
     explicit PrintSelectPageWidgetTest(QObject *parent = Q_NULLPTR);
     ~PrintSelectPageWidgetTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // PRINTSELECTPAGEWIDGETTEST_H
