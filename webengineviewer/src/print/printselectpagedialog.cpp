@@ -18,6 +18,7 @@
 */
 
 #include "printselectpagedialog.h"
+#include "printselectpagewidget.h"
 
 #include <KLocalizedString>
 #include <QVBoxLayout>
@@ -28,10 +29,25 @@ using namespace WebEngineViewer;
 PrintSelectPageDialog::PrintSelectPageDialog(QWidget *parent)
     : QDialog(parent)
 {
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mPrintSelectPage = new PrintSelectPageWidget(this);
+    mPrintSelectPage->setObjectName(QStringLiteral("printselectpage"));
+    mainLayout->addWidget(mPrintSelectPage);
 
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, this);
+    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    mainLayout->addWidget(buttonBox);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &PrintSelectPageDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &PrintSelectPageDialog::reject);
 }
 
 PrintSelectPageDialog::~PrintSelectPageDialog()
 {
 
+}
+
+QList<int> PrintSelectPageDialog::pages() const
+{
+    return mPrintSelectPage->pages();
 }

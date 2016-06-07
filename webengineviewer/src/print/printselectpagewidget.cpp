@@ -18,15 +18,26 @@
 */
 
 #include "printselectpagewidget.h"
+#include <QVBoxLayout>
+#include <KLocalizedString>
 
 using namespace WebEngineViewer;
 PrintSelectPageWidget::PrintSelectPageWidget(QWidget *parent)
     : QWidget(parent)
 {
-
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setMargin(0);
+    //TODO
 }
 
 PrintSelectPageWidget::~PrintSelectPageWidget()
 {
 
+}
+
+QList<int> PrintSelectPageWidget::pages() const
+{
+    //TODO
+    return {};
 }

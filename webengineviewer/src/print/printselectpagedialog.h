@@ -24,12 +24,17 @@
 
 namespace WebEngineViewer
 {
+class PrintSelectPageWidget;
 class PrintSelectPageDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit PrintSelectPageDialog(QWidget *parent = Q_NULLPTR);
     ~PrintSelectPageDialog();
+
+    QList<int> pages() const;
+private:
+    PrintSelectPageWidget *mPrintSelectPage;
 };
 }
 

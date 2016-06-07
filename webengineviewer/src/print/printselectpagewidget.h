@@ -29,6 +29,8 @@ class PrintSelectPageWidget : public QWidget
 public:
     explicit PrintSelectPageWidget(QWidget *parent = Q_NULLPTR);
     ~PrintSelectPageWidget();
+
+    QList<int> pages() const;
 };
 }
 #endif // PRINTSELECTPAGEWIDGET_H
