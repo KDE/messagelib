@@ -42,6 +42,9 @@ public:
     bool isHtmlMail() const;
     void setHtmlMail(bool html);
 
+    void setPlainText(const QString &text);
+    QString plainText() const;
+
     PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
     bool operator ==(const PluginEditorCheckBeforeSendParams &other) const;
 private:

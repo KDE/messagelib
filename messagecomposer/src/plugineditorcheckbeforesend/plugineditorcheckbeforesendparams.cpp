@@ -30,6 +30,7 @@ public:
     {
 
     }
+    QString plainText;
     QString subject;
     uint identity;
     bool isHtml;
@@ -59,6 +60,7 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
         d->subject = other.subject();
         d->identity = other.identity();
         d->isHtml = other.isHtmlMail();
+        d->plainText = other.plainText();
     }
     return *this;
 }
@@ -66,8 +68,9 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
 bool PluginEditorCheckBeforeSendParams::operator ==(const PluginEditorCheckBeforeSendParams &other) const
 {
     return (d->subject == other.subject()) &&
-            (d->identity = other.identity()) &&
-            (d->isHtml = other.isHtmlMail());
+            (d->identity == other.identity()) &&
+            (d->isHtml == other.isHtmlMail() &&
+            (d->plainText == other.plainText()));
 }
 
 void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)
@@ -98,4 +101,14 @@ bool PluginEditorCheckBeforeSendParams::isHtmlMail() const
 void PluginEditorCheckBeforeSendParams::setHtmlMail(bool html)
 {
     d->isHtml = html;
+}
+
+void PluginEditorCheckBeforeSendParams::setPlainText(const QString &text)
+{
+    d->plainText = text;
+}
+
+QString PluginEditorCheckBeforeSendParams::plainText() const
+{
+    return d->plainText;
 }

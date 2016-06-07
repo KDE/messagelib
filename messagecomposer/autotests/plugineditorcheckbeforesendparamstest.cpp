@@ -36,6 +36,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
 {
     MessageComposer::PluginEditorCheckBeforeSendParams params;
     QVERIFY(params.subject().isEmpty());
+    QVERIFY(params.plainText().isEmpty());
     QCOMPARE(params.identity(), (uint)-1);
     QVERIFY(!params.isHtmlMail());
 }
@@ -44,27 +45,33 @@ void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
 {
     MessageComposer::PluginEditorCheckBeforeSendParams params1;
     const QString subject(QStringLiteral("foo"));
+    const QString plainText(QStringLiteral("bla"));
     bool isHmlMail = true;
     params1.setSubject(subject);
     params1.setHtmlMail(isHmlMail);
+    params1.setPlainText(plainText);
     MessageComposer::PluginEditorCheckBeforeSendParams params2 = params1;
     QVERIFY(params2 == params1);
     QCOMPARE(params2.isHtmlMail(), isHmlMail);
     QCOMPARE(params2.subject(), subject);
+    QCOMPARE(params2.plainText(), plainText);
 }
 
 void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
 {
     MessageComposer::PluginEditorCheckBeforeSendParams params1;
     const QString subject(QStringLiteral("foo"));
+    const QString plainText(QStringLiteral("bla"));
     bool isHmlMail = true;
     uint identity = 5;
     params1.setSubject(subject);
     params1.setHtmlMail(isHmlMail);
+    params1.setPlainText(plainText);
     params1.setIdentity(identity);
     QCOMPARE(params1.isHtmlMail(), isHmlMail);
     QCOMPARE(params1.subject(), subject);
     QCOMPARE(params1.identity(), identity);
+    QCOMPARE(params1.plainText(), plainText);
 }
 
 QTEST_MAIN(PluginEditorCheckBeforeSendParamsTest)
