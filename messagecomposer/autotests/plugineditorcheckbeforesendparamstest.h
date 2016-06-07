@@ -32,6 +32,7 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValues();
     void shouldBeEqual();
+    void shouldAssignValue();
 };
 
 #endif // PLUGINEDITORCHECKBEFORESENDPARAMSTEST_H
