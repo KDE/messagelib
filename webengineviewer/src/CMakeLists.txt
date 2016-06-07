@@ -24,6 +24,8 @@ if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.6.99")
                 print/printwebengineviewjob.cpp
                 print/printconfiguredialog.cpp
                 print/printconfigurewidget.cpp
+                print/printselectpagedialog.cpp
+                print/printselectpagewidget.cpp
                 )
             set(poppler_lib Poppler::Qt5 Qt5::PrintSupport)
         endif()

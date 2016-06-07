@@ -36,3 +36,9 @@ ecm_add_test(printconfigurewidgettest.cpp  ../printconfigurewidget.cpp ${print_a
     NAME_PREFIX "webengineviewer-print-"
     LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n Qt5::PrintSupport
     )
+
+ecm_add_test(printselectpagedialogtest.cpp  ../printselectpagedialog.cpp ${print_autotest_SRCS}
+    TEST_NAME printselectpagedialogtest
+    NAME_PREFIX "webengineviewer-print-"
+    LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n Qt5::PrintSupport
+    )
