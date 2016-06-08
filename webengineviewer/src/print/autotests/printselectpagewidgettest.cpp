@@ -19,6 +19,7 @@
 
 #include "printselectpagewidgettest.h"
 #include "../printselectpagewidget.h"
+#include <QListWidget>
 #include <QTest>
 #include <QVBoxLayout>
 
@@ -39,6 +40,10 @@ void PrintSelectPageWidgetTest::shouldHaveDefaultValue()
     QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->margin(), 0);
+
+    QListWidget *mListPage = w.findChild<QListWidget *>(QStringLiteral("listpage"));
+    QVERIFY(mListPage);
+    QCOMPARE(mListPage->count(), 0);
 }
 
 QTEST_MAIN(PrintSelectPageWidgetTest)

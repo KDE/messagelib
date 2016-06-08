@@ -21,6 +21,7 @@
 #define PRINTSELECTPAGEWIDGET_H
 
 #include <QWidget>
+class QListWidget;
 namespace WebEngineViewer
 {
 class PrintSelectPageWidget : public QWidget
@@ -31,6 +32,8 @@ public:
     ~PrintSelectPageWidget();
 
     QList<int> pages() const;
+private:
+    QListWidget *mListPage;
 };
 }
 #endif // PRINTSELECTPAGEWIDGET_H

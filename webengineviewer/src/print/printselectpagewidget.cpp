@@ -20,6 +20,7 @@
 #include "printselectpagewidget.h"
 #include <QVBoxLayout>
 #include <KLocalizedString>
+#include <QListWidget>
 
 using namespace WebEngineViewer;
 PrintSelectPageWidget::PrintSelectPageWidget(QWidget *parent)
@@ -29,6 +30,10 @@ PrintSelectPageWidget::PrintSelectPageWidget(QWidget *parent)
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setMargin(0);
     //TODO
+
+    mListPage = new QListWidget(this);
+    mListPage->setObjectName(QStringLiteral("listpage"));
+    mainLayout->addWidget(mListPage);
 }
 
 PrintSelectPageWidget::~PrintSelectPageWidget()
