@@ -557,7 +557,7 @@ void View::applyThemeColumns()
             (*it)->setCurrentWidth(columnWidth);
             //Laurent Bug 358855 - message list column widths lost when program closed
             // I need to investigate if this code is still necessary (all method)
-            //header()->resizeSection(idx, columnWidth);
+            header()->resizeSection(idx, columnWidth);
         } else {
             (*it)->setCurrentWidth(-1);
         }
