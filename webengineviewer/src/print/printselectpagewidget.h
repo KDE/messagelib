@@ -32,6 +32,8 @@ public:
     ~PrintSelectPageWidget();
 
     QList<int> pages() const;
+    void setPages(int page);
+
 private:
     QListWidget *mListPage;
 };

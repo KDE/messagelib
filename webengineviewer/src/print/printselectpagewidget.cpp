@@ -41,6 +41,11 @@ PrintSelectPageWidget::~PrintSelectPageWidget()
 
 }
 
+void PrintSelectPageWidget::setPages(int page)
+{
+    //TODO
+}
+
 QList<int> PrintSelectPageWidget::pages() const
 {
     //TODO
