@@ -106,7 +106,7 @@ Error KleoJobExecutor::auditLogError() const
 void KleoJobExecutor::verificationResult(const GpgME::VerificationResult &result)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Detached verification job finished";
-    Kleo::Job *job = dynamic_cast<Kleo::Job *>(sender());
+    Kleo::Job *job = qobject_cast<Kleo::Job *>(sender());
     assert(job);
     mVerificationResult = result;
     mAuditLogError = job->auditLogError();
@@ -117,7 +117,7 @@ void KleoJobExecutor::verificationResult(const GpgME::VerificationResult &result
 void KleoJobExecutor::verificationResult(const GpgME::VerificationResult &result, const QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Opaque verification job finished";
-    Kleo::Job *job = dynamic_cast<Kleo::Job *>(sender());
+    Kleo::Job *job = qobject_cast<Kleo::Job *>(sender());
     assert(job);
     mVerificationResult = result;
     mData = plainText;
@@ -132,7 +132,7 @@ void KleoJobExecutor::decryptResult(
     const QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Decryption job finished";
-    Kleo::Job *job = dynamic_cast<Kleo::Job *>(sender());
+    Kleo::Job *job = qobject_cast<Kleo::Job *>(sender());
     assert(job);
     mVerificationResult = verificationresult;
     mDecryptResult = decryptionresult;
@@ -144,7 +144,7 @@ void KleoJobExecutor::decryptResult(
 
 void KleoJobExecutor::importResult(const GpgME::ImportResult &result)
 {
-    Kleo::Job *job = dynamic_cast<Kleo::Job *>(sender());
+    Kleo::Job *job = qobject_cast<Kleo::Job *>(sender());
     assert(job);
     mImportResult = result;
     mAuditLogError = job->auditLogError();
