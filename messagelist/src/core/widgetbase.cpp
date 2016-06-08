@@ -380,7 +380,7 @@ void Widget::themeMenuAboutToShow()
         return;
     }
 
-    QMenu *menu = dynamic_cast< QMenu * >(sender());
+    QMenu *menu = qobject_cast< QMenu * >(sender());
     if (!menu) {
         return;
     }
@@ -444,7 +444,7 @@ void Widget::themeSelected(bool)
         return;    // nuthin to do
     }
 
-    QAction *act = dynamic_cast< QAction * >(sender());
+    QAction *act = qobject_cast< QAction * >(sender());
     if (!act) {
         return;
     }
@@ -475,7 +475,7 @@ void Widget::themeSelected(bool)
 
 void Widget::aggregationMenuAboutToShow()
 {
-    QMenu *menu = dynamic_cast< QMenu * >(sender());
+    QMenu *menu = qobject_cast< QMenu * >(sender());
     if (!menu) {
         return;
     }
@@ -518,7 +518,7 @@ void Widget::aggregationMenuAboutToShow(QMenu *menu)
 
 void Widget::aggregationSelected(bool)
 {
-    QAction *act = dynamic_cast< QAction * >(sender());
+    QAction *act = qobject_cast< QAction * >(sender());
     if (!act) {
         return;
     }
@@ -563,7 +563,7 @@ void Widget::sortOrderMenuAboutToShow()
         return;
     }
 
-    QMenu *menu = dynamic_cast< QMenu * >(sender());
+    QMenu *menu = qobject_cast< QMenu * >(sender());
     if (!menu) {
         return;
     }

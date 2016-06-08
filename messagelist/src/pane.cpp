@@ -1159,7 +1159,7 @@ bool Pane::searchEditHasFocus() const
 
 void Pane::sortOrderMenuAboutToShow()
 {
-    QMenu *menu = dynamic_cast< QMenu * >(sender());
+    QMenu *menu = qobject_cast< QMenu * >(sender());
     if (!menu) {
         return;
     }
@@ -1169,7 +1169,7 @@ void Pane::sortOrderMenuAboutToShow()
 
 void Pane::aggregationMenuAboutToShow()
 {
-    QMenu *menu = dynamic_cast< QMenu * >(sender());
+    QMenu *menu = qobject_cast< QMenu * >(sender());
     if (!menu) {
         return;
     }
@@ -1179,7 +1179,7 @@ void Pane::aggregationMenuAboutToShow()
 
 void Pane::themeMenuAboutToShow()
 {
-    QMenu *menu = dynamic_cast< QMenu * >(sender());
+    QMenu *menu = qobject_cast< QMenu * >(sender());
     if (!menu) {
         return;
     }
