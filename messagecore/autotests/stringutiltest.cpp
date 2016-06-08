@@ -24,7 +24,7 @@
 #include <QUrl>
 using namespace MessageCore;
 
-QTEST_APPLESS_MAIN(StringUtilTest)
+QTEST_MAIN(StringUtilTest)
 #define lineLength 40
 
 void StringUtilTest::test_SmartQuote()
