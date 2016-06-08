@@ -28,7 +28,11 @@ class MESSAGEVIEWER_EXPORT MailWebEnginePage : public WebEngineViewer::WebEngine
     Q_OBJECT
 public:
     explicit MailWebEnginePage(QObject *parent = Q_NULLPTR);
+    explicit MailWebEnginePage(QWebEngineProfile *profile, QObject *parent = Q_NULLPTR);
     ~MailWebEnginePage();
+
+private:
+    void initialize();
 };
 }
 #endif // MAILWEBENGINEPAGE_H

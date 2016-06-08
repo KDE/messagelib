@@ -24,15 +24,26 @@ using namespace MessageViewer;
 MailWebEnginePage::MailWebEnginePage(QObject *parent)
     : WebEngineViewer::WebEnginePage(parent)
 {
+    initialize();
+}
+
+MailWebEnginePage::MailWebEnginePage(QWebEngineProfile *profile, QObject *parent)
+    : WebEngineViewer::WebEnginePage(profile, parent)
+{
+    initialize();
+}
+
+MailWebEnginePage::~MailWebEnginePage()
+{
+
+}
+
+void MailWebEnginePage::initialize()
+{
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
 
     const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
     settings()->setFontSize(QWebEngineSettings::DefaultFontSize, font.pixelSize());
-}
-
-MailWebEnginePage::~MailWebEnginePage()
-{
-
 }

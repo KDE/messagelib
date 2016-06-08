@@ -79,6 +79,9 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
       d(new MessageViewer::MailWebEngineViewPrivate)
 
 {
+    QWebEngineProfile *profile = new QWebEngineProfile(this);
+    d->mPageEngine = new MailWebEnginePage(profile, this);
+    setPage(d->mPageEngine);
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     d->mWebViewAccessKey = new WebEngineViewer::WebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
@@ -92,8 +95,6 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
     MessageViewer::CidReferencesUrlInterceptor *cidReference = new MessageViewer::CidReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(cidReference);
-    d->mPageEngine = new MailWebEnginePage(this);
-    setPage(d->mPageEngine);
     QWebEngineProfile::defaultProfile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);

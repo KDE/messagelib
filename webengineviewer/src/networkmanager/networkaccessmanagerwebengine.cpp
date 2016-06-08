@@ -49,7 +49,7 @@ NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QWebEngineView *web
     Q_FOREACH (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
         d->mNetworkUrlInterceptor->addInterceptor(interface);
     }
-    QWebEngineProfile::defaultProfile()->setRequestInterceptor(d->mNetworkUrlInterceptor);
+    webEngine->page()->profile()->setRequestInterceptor(d->mNetworkUrlInterceptor);
 }
 
 NetworkAccessManagerWebEngine::~NetworkAccessManagerWebEngine()
