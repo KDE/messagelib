@@ -95,7 +95,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
     MessageViewer::CidReferencesUrlInterceptor *cidReference = new MessageViewer::CidReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(cidReference);
-    QWebEngineProfile::defaultProfile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
+    profile->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
 #if QT_VERSION >= 0x050700
