@@ -53,8 +53,6 @@ add_messagecomposer_test( multipartjobtest.cpp )
 add_messagecomposer_test( attachmentjobtest.cpp )
 add_messagecomposer_test( maintextjobtest.cpp )
 
-add_messagecomposer_test( attachmentvcardfromaddressbookjobtest.cpp )
-
 # Composer.
 add_messagecomposer_test( composertest.cpp )
 add_messagecomposer_cryptotest( cryptocomposertest.cpp )
@@ -73,3 +71,4 @@ set(KDEPIMLIBS_RUN_SQLITE_ISOLATED_TESTS TRUE)
 
 add_akonadi_isolated_test_advanced( followupreminderselectdatedialogtest.cpp  "../src/followupreminder/followupreminderselectdatedialog.cpp" "KF5::CalendarCore;KF5::AkonadiCore;KF5::AkonadiWidgets;KF5::MessageComposer")
 
+add_akonadi_isolated_test_advanced( attachmentvcardfromaddressbookjobtest.cpp "../src/job/attachmentvcardfromaddressbookjob.cpp" "KF5::CalendarCore;KF5::AkonadiCore;KF5::AkonadiWidgets;KF5::MessageComposer")
