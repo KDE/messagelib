@@ -19,6 +19,8 @@
 
 #include "plugineditorcheckbeforesendparams.h"
 
+#include <QStringList>
+
 using namespace MessageComposer;
 
 class MessageComposer::PluginEditorCheckBeforeSendParamsPrivate
@@ -30,6 +32,7 @@ public:
     {
 
     }
+    QStringList listAddress;
     QString plainText;
     QString subject;
     uint identity;
@@ -61,6 +64,7 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
         d->identity = other.identity();
         d->isHtml = other.isHtmlMail();
         d->plainText = other.plainText();
+        d->listAddress = other.addresses();
     }
     return *this;
 }
@@ -69,8 +73,9 @@ bool PluginEditorCheckBeforeSendParams::operator ==(const PluginEditorCheckBefor
 {
     return (d->subject == other.subject()) &&
             (d->identity == other.identity()) &&
-            (d->isHtml == other.isHtmlMail() &&
-            (d->plainText == other.plainText()));
+            (d->isHtml == other.isHtmlMail()) &&
+            (d->plainText == other.plainText()) &&
+            (d->listAddress == other.addresses());
 }
 
 void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)
@@ -111,4 +116,14 @@ void PluginEditorCheckBeforeSendParams::setPlainText(const QString &text)
 QString PluginEditorCheckBeforeSendParams::plainText() const
 {
     return d->plainText;
+}
+
+void PluginEditorCheckBeforeSendParams::setAddresses(const QStringList &lst)
+{
+    d->listAddress = lst;
+}
+
+QStringList PluginEditorCheckBeforeSendParams::addresses() const
+{
+    return d->listAddress;
 }

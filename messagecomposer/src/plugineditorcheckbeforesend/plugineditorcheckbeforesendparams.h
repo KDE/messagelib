@@ -45,6 +45,9 @@ public:
     void setPlainText(const QString &text);
     QString plainText() const;
 
+    void setAddresses(const QStringList &lst);
+    QStringList addresses() const;
+
     PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
     bool operator ==(const PluginEditorCheckBeforeSendParams &other) const;
 private:
