@@ -33,6 +33,7 @@ public:
     ~PrintSelectPageDialog();
 
     QList<int> pages() const;
+    void setPages(int pages);
 private:
     void writeConfig();
     void readConfig();

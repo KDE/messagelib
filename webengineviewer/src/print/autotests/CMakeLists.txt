@@ -1,7 +1,7 @@
 set(print_autotest_SRCS)
 ecm_qt_declare_logging_category(print_autotest_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME log_webengineviewer)
 
-ecm_add_test(printpreviewdialogtest.cpp  ../printpreviewdialog.cpp ../printpreviewpageviewer.cpp ../printpreviewpagewidget.cpp ${print_autotest_SRCS}
+ecm_add_test(printpreviewdialogtest.cpp  ../printpreviewdialog.cpp ../printpreviewpageviewer.cpp ../printpreviewpagewidget.cpp ../printselectpagedialog.cpp ../printselectpagewidget.cpp ${print_autotest_SRCS}
     TEST_NAME printpreviewdialogtest
     NAME_PREFIX "webengineviewer-print-"
     LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n KF5::WidgetsAddons Poppler::Qt5 KF5::ConfigCore
@@ -37,7 +37,7 @@ ecm_add_test(printconfigurewidgettest.cpp  ../printconfigurewidget.cpp ${print_a
     LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n Qt5::PrintSupport
     )
 
-ecm_add_test(printselectpagedialogtest.cpp  ../printselectpagedialog.cpp ../printselectpagewidget.cpp ../printselectpagedialog.cpp ${print_autotest_SRCS}
+ecm_add_test(printselectpagedialogtest.cpp  ../printselectpagedialog.cpp ../printselectpagewidget.cpp  ${print_autotest_SRCS}
     TEST_NAME printselectpagedialogtest
     NAME_PREFIX "webengineviewer-print-"
     LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Gui KF5::I18n Qt5::PrintSupport KF5::ConfigCore

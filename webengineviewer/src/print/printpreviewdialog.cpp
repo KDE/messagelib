@@ -27,6 +27,7 @@
 #include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QPointer>
 
 
 using namespace WebEngineViewer;
@@ -83,11 +84,21 @@ void PrintPreviewDialog::loadFile(const QString &path, bool deleteFile)
 
 void PrintPreviewDialog::slotPrint()
 {
-    qCDebug(WEBENGINEVIEWER_LOG) << "void PrintPreviewDialog::slotPrint() not implemented yet";
-    //TODO add dialog box to select page.
+    QList<int> lstPages;
+    if (mPrintPreviewWidget->pageCount() > 1) {
+        QPointer<WebEngineViewer::PrintSelectPageDialog> dlg = new WebEngineViewer::PrintSelectPageDialog(this);
+        dlg->setPages(mPrintPreviewWidget->pageCount());
+        if (dlg->exec()) {
+            lstPages = dlg->pages();
+        }
+        delete dlg;
+    } else {
+        lstPages.append(0);
+    }
 
-    //TODO select page ?
-    //mPrintPreviewWidget->print();
-    //TODO
+    if (!lstPages.isEmpty()) {
+        qCDebug(WEBENGINEVIEWER_LOG) << "void PrintPreviewDialog::slotPrint() not implemented yet";
+    }
+
     accept();
 }

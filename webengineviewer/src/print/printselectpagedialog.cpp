@@ -72,3 +72,8 @@ QList<int> PrintSelectPageDialog::pages() const
 {
     return mPrintSelectPage->pages();
 }
+
+void PrintSelectPageDialog::setPages(int pages)
+{
+    mPrintSelectPage->setPages(pages);
+}

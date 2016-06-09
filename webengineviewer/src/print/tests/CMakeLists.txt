@@ -6,6 +6,8 @@ set(printpreviewdialog_gui_test_SRCS
     ../printpreviewdialog.cpp
     ../printpreviewpageviewer.cpp
     ../printpreviewpagewidget.cpp
+    ../printselectpagedialog.cpp
+    ../printselectpagewidget.cpp
     ${print_test_SRCS}
     )
 
@@ -29,6 +31,8 @@ set(printwebenginetest_gui_test_SRCS
     ../printwebengineviewjob.cpp
     ../printconfiguredialog.cpp
     ../printconfigurewidget.cpp
+    ../printselectpagedialog.cpp
+    ../printselectpagewidget.cpp
     ${print_test_SRCS}
     )
 
