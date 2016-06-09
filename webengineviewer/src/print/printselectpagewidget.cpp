@@ -29,7 +29,6 @@ PrintSelectPageWidget::PrintSelectPageWidget(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setMargin(0);
-    //TODO
 
     mListPage = new QListWidget(this);
     mListPage->setObjectName(QStringLiteral("listpage"));
@@ -43,11 +42,21 @@ PrintSelectPageWidget::~PrintSelectPageWidget()
 
 void PrintSelectPageWidget::setPages(int page)
 {
-    //TODO
+    for (int i = 0; i < page; ++i) {
+        QListWidgetItem *item = new QListWidgetItem(i18n("Page %1", (i+1)), mListPage);
+        item->setFlags(item->flags() | Qt::ItemIsSelectable);
+        item->setData(PageIndex, i);
+    }
 }
 
 QList<int> PrintSelectPageWidget::pages() const
 {
-    //TODO
-    return {};
+    QList<int> listPages;
+    for (int i = 0; i < mListPage->count(); ++i) {
+        QListWidgetItem *item = mListPage->item(i);
+        if (item->checkState() == Qt::Checked) {
+            listPages.append(item->data(PageIndex).toInt());
+        }
+    }
+    return listPages;
 }

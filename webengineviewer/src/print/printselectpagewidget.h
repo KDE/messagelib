@@ -35,6 +35,10 @@ public:
     void setPages(int page);
 
 private:
+    enum TypeItem {
+        PageIndex = Qt::UserRole + 1
+    };
+
     QListWidget *mListPage;
 };
 }
