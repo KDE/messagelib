@@ -59,13 +59,6 @@ void ThemeComboBox::writeDefaultConfig() const
     }
 }
 
-void ThemeComboBox::writeStorageModelConfig(const Akonadi::Collection &col, bool isPrivateSetting) const
-{
-    if (col.isValid()) {
-        writeStorageModelConfig(QString::number(col.id()), isPrivateSetting);
-    }
-}
-
 void ThemeComboBox::writeStorageModelConfig(MessageList::Core::StorageModel *storageModel, bool isPrivateSetting) const
 {
     writeStorageModelConfig(storageModel->id(), isPrivateSetting);

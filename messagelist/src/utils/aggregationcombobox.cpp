@@ -79,11 +79,6 @@ void AggregationComboBox::writeStorageModelConfig(const QString &id, bool isPriv
     }
 }
 
-void AggregationComboBox::writeStorageModelConfig(const Akonadi::Collection &col, bool isPrivateSetting) const
-{
-    writeStorageModelConfig(QString::number(col.id()), isPrivateSetting);
-}
-
 void AggregationComboBox::readStorageModelConfig(const QString &id, bool &isPrivateSetting)
 {
     if (Manager::instance()) {

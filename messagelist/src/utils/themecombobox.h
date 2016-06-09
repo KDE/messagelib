@@ -54,7 +54,6 @@ public:
     void writeDefaultConfig() const;
 
     void writeStorageModelConfig(MessageList::Core::StorageModel *storageModel, bool isPrivateSetting) const;
-    void writeStorageModelConfig(const Akonadi::Collection &col, bool isPrivateSetting) const;
     void writeStorageModelConfig(const QString &id, bool isPrivateSetting)const;
 
     void readStorageModelConfig(const Akonadi::Collection &col, bool &isPrivateSetting);
