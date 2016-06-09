@@ -2,7 +2,7 @@ Return-Path: <konqi@example.org>
 Date: Wed, 8 Jun 2016 20:34:44 -0700
 From: Konqi <konqi@example.org>
 To: konqi@kde.org
-Subject: A random subject with a empty text alternative
+Subject: A random subject with a empty text alternative contenttype
 MIME-Version: 1.0
 Content-Type: multipart/alternative; 
  boundary="----=_Part_12345678_12345678"
