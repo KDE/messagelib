@@ -111,6 +111,11 @@ bool MessagePart::isHtml() const
     return false;
 }
 
+bool MessagePart::isHidden() const
+{
+    return false;
+}
+
 CSSHelperBase *MessagePart::cssHelper() const
 {
     Q_ASSERT(mOtp);
@@ -228,11 +233,14 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
     , mShowLink(showLink)
     , mDecryptMessage(decryptMessage)
     , mAsIcon(asIcon)
+    , mIsHidden(false)
 {
     if (!mNode) {
         qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
     }
+
+    mIsHidden = mOtp->nodeHelper()->isNodeDisplayedHidden(mNode);
 
     parseContent();
 }
@@ -334,6 +342,11 @@ KMMsgEncryptionState TextMessagePart::encryptionState() const
 KMMsgSignatureState TextMessagePart::signatureState() const
 {
     return mSignatureState;
+}
+
+bool TextMessagePart::isHidden() const
+{
+    return mIsHidden;
 }
 
 //-----HtmlMessageBlock----------------------

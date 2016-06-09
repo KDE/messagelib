@@ -64,6 +64,7 @@ class MIMETREEPARSER_EXPORT MessagePart : public Interface::MessagePart
     Q_PROPERTY(bool attachment READ isAttachment)
     Q_PROPERTY(bool root READ isRoot)
     Q_PROPERTY(bool isHtml READ isHtml)
+    Q_PROPERTY(bool isHidden READ isHidden)
 public:
     typedef QSharedPointer<MessagePart> Ptr;
     MessagePart(ObjectTreeParser *otp,
@@ -80,6 +81,7 @@ public:
     bool isRoot() const;
 
     virtual bool isHtml() const;
+    virtual bool isHidden() const;
 
     PartMetaData *partMetaData();
 
@@ -167,6 +169,8 @@ public:
 
     bool decryptMessage() const;
 
+    bool isHidden() const Q_DECL_OVERRIDE;
+
 private:
     void parseContent();
 
@@ -176,6 +180,7 @@ private:
     bool mDrawFrame;
     bool mShowLink;
     bool mDecryptMessage;
+    bool mIsHidden;
     IconType mAsIcon;
 
     friend class DefaultRendererPrivate;

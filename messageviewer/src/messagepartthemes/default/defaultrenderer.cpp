@@ -587,7 +587,7 @@ public:
         KMime::Content *node = mp->mNode;
         NodeHelper *nodeHelper = mp->mOtp->nodeHelper();
 
-        if (nodeHelper->isNodeDisplayedHidden(node)) {
+        if (mp->isHidden()) {
             return QString();
         }
 
