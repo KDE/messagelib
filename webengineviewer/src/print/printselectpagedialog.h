@@ -34,6 +34,8 @@ public:
 
     QList<int> pages() const;
 private:
+    void writeConfig();
+    void readConfig();
     PrintSelectPageWidget *mPrintSelectPage;
 };
 }

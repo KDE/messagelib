@@ -21,6 +21,8 @@
 #include "printselectpagewidget.h"
 
 #include <KLocalizedString>
+#include <KConfigGroup>
+#include <KSharedConfig>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
 
@@ -40,12 +42,31 @@ PrintSelectPageDialog::PrintSelectPageDialog(QWidget *parent)
     mainLayout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &PrintSelectPageDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &PrintSelectPageDialog::reject);
+    readConfig();
 }
 
 PrintSelectPageDialog::~PrintSelectPageDialog()
 {
-
+    writeConfig();
 }
+
+void PrintSelectPageDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "PrintSelectPageDialog");
+    group.writeEntry("Size", size());
+    group.sync();
+}
+
+void PrintSelectPageDialog::readConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "PrintSelectPageDialog");
+
+    const QSize size = group.readEntry("Size", QSize(500, 300));
+    if (size.isValid()) {
+        resize(size);
+    }
+}
+
 
 QList<int> PrintSelectPageDialog::pages() const
 {
