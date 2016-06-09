@@ -116,9 +116,8 @@ WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const
 }
 
 WebHitTestResult::WebHitTestResult(const WebHitTestResult &other)
-    : d(other.d)
+    : d(new WebHitTestResultPrivate)
 {
-    d = new WebHitTestResultPrivate;
     (*this) = other;
 }
 
