@@ -1021,6 +1021,24 @@ void CryptoMessagePart::startVerificationDetached(const QByteArray &text, KMime:
 
 }
 
+QString CryptoMessagePart::plaintextContent() const
+{
+    if (!mNode) {
+        return MessagePart::text();
+    } else {
+        return QString();
+    }
+}
+
+QString CryptoMessagePart::htmlContent() const
+{
+    if (!mNode) {
+        return MessagePart::text();
+    } else {
+        return QString();
+    }
+}
+
 EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message)
     : MessagePart(otp, QString())
     , mMessage(message)

@@ -311,6 +311,9 @@ public:
     QByteArray mDecryptedData;
     std::vector<GpgME::Signature> mSignatures;
 
+    QString plaintextContent() const Q_DECL_OVERRIDE;
+    QString htmlContent() const Q_DECL_OVERRIDE;
+
 private:
     /** Handles the dectyptioon of a given content
      * returns true if the decryption was successfull
