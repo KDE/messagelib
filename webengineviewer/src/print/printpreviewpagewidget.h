@@ -47,7 +47,7 @@ public:
 
 private Q_SLOTS:
     void showPage(int index);
-    void slotReloadPage();    
+    void slotReloadPage();
     void slotPageDown();
     void slotPageUp();
 

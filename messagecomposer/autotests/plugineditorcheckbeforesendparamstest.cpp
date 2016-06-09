@@ -37,7 +37,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
     MessageComposer::PluginEditorCheckBeforeSendParams params;
     QVERIFY(params.subject().isEmpty());
     QVERIFY(params.plainText().isEmpty());
-    QCOMPARE(params.identity(), (uint)-1);
+    QCOMPARE(params.identity(), (uint) - 1);
     QVERIFY(!params.isHtmlMail());
     QVERIFY(params.addresses().isEmpty());
 

@@ -29,7 +29,6 @@
 #include <QPushButton>
 #include <QPointer>
 
-
 using namespace WebEngineViewer;
 
 PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)

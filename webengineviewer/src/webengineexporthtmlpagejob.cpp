@@ -27,7 +27,8 @@ template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
     R *receiver;
     void (C::*memberFun)(Arg);
-    void operator()(Arg result) {
+    void operator()(Arg result)
+    {
         (receiver->*memberFun)(result);
     }
 };

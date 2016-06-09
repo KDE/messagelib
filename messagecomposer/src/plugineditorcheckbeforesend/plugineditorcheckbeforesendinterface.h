@@ -47,7 +47,6 @@ public:
 public Q_SLOTS:
     virtual void reloadConfig();
 
-
 private:
     PluginEditorCheckBeforeSendInterfacePrivate *const d;
 };

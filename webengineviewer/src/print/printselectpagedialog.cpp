@@ -37,7 +37,7 @@ PrintSelectPageDialog::PrintSelectPageDialog(QWidget *parent)
     mPrintSelectPage->setObjectName(QStringLiteral("printselectpage"));
     mainLayout->addWidget(mPrintSelectPage);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, this);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     mainLayout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &PrintSelectPageDialog::accept);
@@ -66,7 +66,6 @@ void PrintSelectPageDialog::readConfig()
         resize(size);
     }
 }
-
 
 QList<int> PrintSelectPageDialog::pages() const
 {

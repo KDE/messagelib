@@ -27,7 +27,6 @@
 #include <QIcon>
 #include <QLocale>
 
-
 void MessageViewer::Test::setupEnv()
 {
     setenv("KDEHOME", QFile::encodeName(QDir::homePath() + QString::fromLatin1("/.qttest")), 1);

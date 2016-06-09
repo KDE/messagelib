@@ -51,7 +51,6 @@ PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams(const Plugi
     (*this) = other;
 }
 
-
 PluginEditorCheckBeforeSendParams::~PluginEditorCheckBeforeSendParams()
 {
     delete d;
@@ -72,10 +71,10 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
 bool PluginEditorCheckBeforeSendParams::operator ==(const PluginEditorCheckBeforeSendParams &other) const
 {
     return (d->subject == other.subject()) &&
-            (d->identity == other.identity()) &&
-            (d->isHtml == other.isHtmlMail()) &&
-            (d->plainText == other.plainText()) &&
-            (d->listAddress == other.addresses());
+           (d->identity == other.identity()) &&
+           (d->isHtml == other.isHtmlMail()) &&
+           (d->plainText == other.plainText()) &&
+           (d->listAddress == other.addresses());
 }
 
 void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)

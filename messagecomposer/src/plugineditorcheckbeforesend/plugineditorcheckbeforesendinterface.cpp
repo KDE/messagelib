@@ -21,7 +21,6 @@
 
 using namespace MessageComposer;
 
-
 class MessageComposer::PluginEditorCheckBeforeSendInterfacePrivate
 {
 public:
