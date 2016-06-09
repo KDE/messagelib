@@ -43,8 +43,10 @@ public:
     void print(const QList<int> &page);
     bool deleteFile() const;
 
+    int pageCount() const;
+
 private Q_SLOTS:
-    void showPage(int index);    
+    void showPage(int index);
     void slotReloadPage();    
     void slotPageDown();
     void slotPageUp();
@@ -57,6 +59,7 @@ private:
     Poppler::Document *mDoc;
     QComboBox *mPageComboBox;
     QLabel *mPageComboboxLab;
+    int mPageCount;
 };
 }
 #endif // PRINTPREVIEWPAGEWIDGET_H

@@ -36,7 +36,8 @@ using namespace WebEngineViewer;
 PrintPreviewPageWidget::PrintPreviewPageWidget(QWidget *parent)
     : QWidget(parent),
       mDeleteFile(false),
-      mDoc(Q_NULLPTR)
+      mDoc(Q_NULLPTR),
+      mPageCount(0)
 {
     QVBoxLayout *layout = new QVBoxLayout;
     layout->setMargin(0);
@@ -103,15 +104,20 @@ void PrintPreviewPageWidget::loadFile(const QString &path, bool deleteFile)
 void PrintPreviewPageWidget::fillComboBox()
 {
     mPageComboBox->clear();
-    const int pageCount = mDoc->numPages();
-    if (pageCount == 1) {
+    mPageCount = mDoc->numPages();
+    if (mPageCount == 1) {
         mPageComboBox->hide();
         mPageComboboxLab->hide();
     } else {
-        for (int i = 0; i < pageCount; ++i) {
+        for (int i = 0; i < mPageCount; ++i) {
             mPageComboBox->addItem(QString::number(i + 1));
         }
     }
+}
+
+int PrintPreviewPageWidget::pageCount() const
+{
+    return mPageCount;
 }
 
 bool PrintPreviewPageWidget::deleteFile() const
