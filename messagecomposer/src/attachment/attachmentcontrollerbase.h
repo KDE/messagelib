@@ -29,7 +29,6 @@
 
 #include <MessageCore/AttachmentPart>
 #include <MessageViewer/EditorWatcher>
-#include <AkonadiCore/Item>
 #include <KJob>
 #include <KService>
 #include "messagecomposer_export.h"
