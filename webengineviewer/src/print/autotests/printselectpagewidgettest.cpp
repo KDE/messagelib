@@ -46,4 +46,20 @@ void PrintSelectPageWidgetTest::shouldHaveDefaultValue()
     QCOMPARE(mListPage->count(), 0);
 }
 
+void PrintSelectPageWidgetTest::shouldHadItems()
+{
+    WebEngineViewer::PrintSelectPageWidget w;
+    QListWidget *mListPage = w.findChild<QListWidget *>(QStringLiteral("listpage"));
+    w.setPages(5);
+    QCOMPARE(mListPage->count(), 5);
+}
+
+void PrintSelectPageWidgetTest::shouldNotAddPages()
+{
+    WebEngineViewer::PrintSelectPageWidget w;
+    QListWidget *mListPage = w.findChild<QListWidget *>(QStringLiteral("listpage"));
+    w.setPages(0);
+    QCOMPARE(mListPage->count(), 0);
+}
+
 QTEST_MAIN(PrintSelectPageWidgetTest)

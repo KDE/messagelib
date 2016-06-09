@@ -30,6 +30,8 @@ public:
     ~PrintSelectPageWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldHadItems();
+    void shouldNotAddPages();
 };
 
 #endif // PRINTSELECTPAGEWIDGETTEST_H
