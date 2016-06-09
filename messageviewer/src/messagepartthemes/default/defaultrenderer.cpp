@@ -1233,11 +1233,14 @@ public:
                 aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
 
+            MimeMessagePart::Ptr part(mp->mTextPart);
             if (mp->viewHtml() && mp->mHTMLPart) {
-                htmlWriter->queue(render(mp->mHTMLPart));
-            } else if (mp->mTextNode) {
-                htmlWriter->queue(render(mp->mTextPart));
+                part = mp->mHTMLPart;
+            } else if (mp->text().trimmed().isEmpty()) {
+                part = mp->mHTMLPart;
             }
+
+            htmlWriter->queue(render(part));
         }
         return htmlWriter->html;
     }

@@ -290,3 +290,66 @@ void ObjectTreeParserTester::test_HTMLExternal()
         QVERIFY(!testWriter.html.contains(QStringLiteral("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
     }
 }
+
+void ObjectTreeParserTester::test_Alternative()
+{
+    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("alternative.mbox"));
+    QCOMPARE(msg->contents().size(), 2);
+    {
+        Test::HtmlWriter testWriter;
+        Test::CSSHelper testCSSHelper;
+        Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        ObjectTreeParser otp(&emptySource);
+
+        emptySource.setHtmlMail(false);
+        otp.parseObjectTree(msg.data());
+
+        QVERIFY(otp.htmlContent().isEmpty());
+        QVERIFY(otp.plainTextContent().contains(QStringLiteral("If you can see this text it means that your email client couldn't display our newsletter properly.")));
+        QVERIFY(testWriter.html.contains(QStringLiteral("If you can see this text it means that your email client couldn't display our newsletter properly.")));
+    }
+
+    {
+        Test::HtmlWriter testWriter;
+        Test::CSSHelper testCSSHelper;
+        Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        ObjectTreeParser otp(&emptySource);
+
+        emptySource.setHtmlMail(true);
+        otp.parseObjectTree(msg.data());
+
+        QVERIFY(otp.plainTextContent().contains(QStringLiteral("If you can see this text it means that your email client couldn't display our newsletter properly.")));
+        QVERIFY(otp.htmlContent().contains(QStringLiteral("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(testWriter.html.contains(QStringLiteral("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+    }
+
+    msg = Test::readAndParseMail(QStringLiteral("alternative-notext.mbox"));
+    QCOMPARE(msg->contents().size(), 1);
+    {
+        Test::HtmlWriter testWriter;
+        Test::CSSHelper testCSSHelper;
+        Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        ObjectTreeParser otp(&emptySource);
+
+        emptySource.setHtmlMail(false);
+        otp.parseObjectTree(msg.data());
+
+        QVERIFY(otp.plainTextContent().isEmpty());
+        QVERIFY(otp.htmlContent().isEmpty());
+        QVERIFY(testWriter.html.contains(QStringLiteral("Some *HTML* text")));
+    }
+
+    {
+        Test::HtmlWriter testWriter;
+        Test::CSSHelper testCSSHelper;
+        Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
+        ObjectTreeParser otp(&emptySource);
+
+        emptySource.setHtmlMail(true);
+        otp.parseObjectTree(msg.data());
+
+        QVERIFY(otp.plainTextContent().isEmpty());
+        QVERIFY(otp.htmlContent().contains(QStringLiteral("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(testWriter.html.contains(QStringLiteral("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+    }
+}

@@ -39,6 +39,7 @@ private Q_SLOTS:
     void test_HTMLOnly();
     void test_HTMLOnlyText();
     void test_HTMLExternal();
+    void test_Alternative();
 };
 
 #endif
