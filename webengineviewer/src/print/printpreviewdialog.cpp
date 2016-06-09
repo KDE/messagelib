@@ -96,8 +96,7 @@ void PrintPreviewDialog::slotPrint()
     }
 
     if (!lstPages.isEmpty()) {
-        qCDebug(WEBENGINEVIEWER_LOG) << "void PrintPreviewDialog::slotPrint() not implemented yet";
+        mPrintPreviewWidget->print(lstPages);
     }
-
     accept();
 }
