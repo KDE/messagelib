@@ -51,10 +51,7 @@
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 
-#include <AkonadiWidgets/collectiondialog.h>
 #include <Akonadi/Contact/ContactSearchJob>
-#include <AkonadiCore/itemcreatejob.h>
-#include <AkonadiCore/itemmodifyjob.h>
 #include <KLocalizedString>
 #include "messagecomposer_debug.h"
 #include <qinputdialog.h>
