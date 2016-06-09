@@ -81,17 +81,17 @@ PrintPreviewPageWidget::~PrintPreviewPageWidget()
     mDoc = Q_NULLPTR;
 }
 
-void PrintPreviewPageWidget::loadFile(const QString &path, bool deleteFile)
+bool PrintPreviewPageWidget::loadFile(const QString &path, bool deleteFile)
 {
     if (path.isEmpty()) {
-        return;
+        return false;
     }
     mDeleteFile = deleteFile;
     mFilePath = path;
     mDoc = Poppler::Document::load(path);
     if (!mDoc) {
         KMessageBox::error(this, i18n("Unable to open file \"%1\"", path), i18n("Open file error"));
-        return;
+        return false;
     }
     mDoc->setRenderHint(Poppler::Document::TextAntialiasing, true);
     mDoc->setRenderHint(Poppler::Document::Antialiasing, true);
@@ -99,6 +99,7 @@ void PrintPreviewPageWidget::loadFile(const QString &path, bool deleteFile)
     fillComboBox();
 
     showPage(0);
+    return true;
 }
 
 void PrintPreviewPageWidget::fillComboBox()

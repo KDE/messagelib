@@ -40,6 +40,7 @@ private:
     void writeConfig();
     void readConfig();
     PrintPreviewPageWidget *mPrintPreviewWidget;
+    QPushButton *mPrintButton;
 };
 }
 

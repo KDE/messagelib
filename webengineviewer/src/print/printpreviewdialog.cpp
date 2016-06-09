@@ -18,6 +18,7 @@
 */
 
 #include "printpreviewdialog.h"
+#include "printselectpagedialog.h"
 #include "printpreviewpagewidget.h"
 #include "webengineviewer_debug.h"
 #include <KLocalizedString>
@@ -41,10 +42,10 @@ PrintPreviewDialog::PrintPreviewDialog(QWidget *parent)
     mPrintPreviewWidget->setObjectName(QStringLiteral("printpreviewwidget"));
     layout->addWidget(mPrintPreviewWidget);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-    QPushButton *printButton = new QPushButton(i18n("Print"));
-    printButton->setObjectName(QStringLiteral("printbutton"));
-    connect(printButton, &QPushButton::clicked, this, &PrintPreviewDialog::slotPrint);
-    buttonBox->addButton(printButton, QDialogButtonBox::ActionRole);
+    mPrintButton = new QPushButton(i18n("Print"));
+    mPrintButton->setObjectName(QStringLiteral("printbutton"));
+    connect(mPrintButton, &QPushButton::clicked, this, &PrintPreviewDialog::slotPrint);
+    buttonBox->addButton(mPrintButton, QDialogButtonBox::ActionRole);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     layout->addWidget(buttonBox);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &PrintPreviewDialog::reject);
@@ -75,7 +76,9 @@ void PrintPreviewDialog::readConfig()
 
 void PrintPreviewDialog::loadFile(const QString &path, bool deleteFile)
 {
-    mPrintPreviewWidget->loadFile(path, deleteFile);
+    if (!mPrintPreviewWidget->loadFile(path, deleteFile)) {
+        mPrintButton->setEnabled(false);
+    }
 }
 
 void PrintPreviewDialog::slotPrint()

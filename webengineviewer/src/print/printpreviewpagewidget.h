@@ -38,7 +38,7 @@ public:
     explicit PrintPreviewPageWidget(QWidget *parent = Q_NULLPTR);
     ~PrintPreviewPageWidget();
 
-    void loadFile(const QString &path, bool deleteFile = false);
+    bool loadFile(const QString &path, bool deleteFile = false);
 
     void print(const QList<int> &page);
     bool deleteFile() const;
