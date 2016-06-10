@@ -40,6 +40,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
     QCOMPARE(params.identity(), (uint) - 1);
     QVERIFY(!params.isHtmlMail());
     QVERIFY(params.addresses().isEmpty());
+    QVERIFY(params.defaultDomain().isEmpty());
 
 }
 
@@ -49,17 +50,20 @@ void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
     const QString subject(QStringLiteral("foo"));
     const QString plainText(QStringLiteral("bla"));
     const QStringList lst{ QStringLiteral("foo"), QStringLiteral("foo"), QStringLiteral("foo")};
+    const QString defaultDomain(QStringLiteral("bli"));
     bool isHmlMail = true;
     params1.setSubject(subject);
     params1.setHtmlMail(isHmlMail);
     params1.setPlainText(plainText);
     params1.setAddresses(lst);
+    params1.setDefaultDomain(defaultDomain);
     MessageComposer::PluginEditorCheckBeforeSendParams params2 = params1;
     QVERIFY(params2 == params1);
     QCOMPARE(params2.isHtmlMail(), isHmlMail);
     QCOMPARE(params2.subject(), subject);
     QCOMPARE(params2.plainText(), plainText);
     QCOMPARE(params2.addresses(), lst);
+    QCOMPARE(params2.defaultDomain(), defaultDomain);
 }
 
 void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
@@ -67,6 +71,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
     MessageComposer::PluginEditorCheckBeforeSendParams params1;
     const QString subject(QStringLiteral("foo"));
     const QString plainText(QStringLiteral("bla"));
+    const QString defaultDomain(QStringLiteral("bli"));
     bool isHmlMail = true;
     uint identity = 5;
     const QStringList lst{ QStringLiteral("foo"), QStringLiteral("foo"), QStringLiteral("foo")};
@@ -75,11 +80,13 @@ void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
     params1.setPlainText(plainText);
     params1.setIdentity(identity);
     params1.setAddresses(lst);
+    params1.setDefaultDomain(defaultDomain);
     QCOMPARE(params1.isHtmlMail(), isHmlMail);
     QCOMPARE(params1.subject(), subject);
     QCOMPARE(params1.identity(), identity);
     QCOMPARE(params1.plainText(), plainText);
     QCOMPARE(params1.addresses(), lst);
+    QCOMPARE(params1.defaultDomain(), defaultDomain);
 }
 
 QTEST_MAIN(PluginEditorCheckBeforeSendParamsTest)

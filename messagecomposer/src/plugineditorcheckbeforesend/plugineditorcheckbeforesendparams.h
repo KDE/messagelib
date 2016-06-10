@@ -48,6 +48,9 @@ public:
     void setAddresses(const QStringList &lst);
     QStringList addresses() const;
 
+    void setDefaultDomain(const QString &domain);
+    QString defaultDomain() const;
+
     PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
     bool operator ==(const PluginEditorCheckBeforeSendParams &other) const;
 private:

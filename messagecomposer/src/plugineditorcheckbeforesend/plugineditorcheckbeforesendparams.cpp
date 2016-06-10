@@ -35,6 +35,7 @@ public:
     QStringList listAddress;
     QString plainText;
     QString subject;
+    QString defaultDomain;
     uint identity;
     bool isHtml;
 };
@@ -64,6 +65,7 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
         d->isHtml = other.isHtmlMail();
         d->plainText = other.plainText();
         d->listAddress = other.addresses();
+        d->defaultDomain = other.defaultDomain();
     }
     return *this;
 }
@@ -74,7 +76,8 @@ bool PluginEditorCheckBeforeSendParams::operator ==(const PluginEditorCheckBefor
            (d->identity == other.identity()) &&
            (d->isHtml == other.isHtmlMail()) &&
            (d->plainText == other.plainText()) &&
-           (d->listAddress == other.addresses());
+           (d->listAddress == other.addresses()) &&
+           (d->defaultDomain == other.defaultDomain());
 }
 
 void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)
@@ -125,4 +128,14 @@ void PluginEditorCheckBeforeSendParams::setAddresses(const QStringList &lst)
 QStringList PluginEditorCheckBeforeSendParams::addresses() const
 {
     return d->listAddress;
+}
+
+void PluginEditorCheckBeforeSendParams::setDefaultDomain(const QString &domain)
+{
+    d->defaultDomain = domain;
+}
+
+QString PluginEditorCheckBeforeSendParams::defaultDomain() const
+{
+    return d->defaultDomain;
 }
