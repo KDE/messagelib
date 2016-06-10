@@ -161,7 +161,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
 
         QTemporaryDir *tempDir = new QTemporaryDir; // Will remove the directory on destruction.
         d->tempDirs.append(tempDir);
-        const QString fileName = tempDir->path() + attachmentName;
+        const QString fileName = tempDir->path() + QLatin1Char('/') + attachmentName;
         QFile f(fileName);
         if (!f.open(QIODevice::WriteOnly)) {
             qCWarning(MESSAGECOMPOSER_LOG) << "Cannot write attachment:" << f.errorString();
@@ -178,7 +178,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
         QUrl url;
         url.setScheme(QStringLiteral("file"));
         url.setPath(fileName);
-        qCDebug(MESSAGECOMPOSER_LOG) << url;
+        qCDebug(MESSAGECOMPOSER_LOG) <<" temporary file " << url;
         urls.append(url);
     }
 
