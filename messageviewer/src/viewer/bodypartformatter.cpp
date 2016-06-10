@@ -210,8 +210,8 @@ void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_
 
     insert("text", "html", TextHtmlBodyPartFormatter::create());
     insert("text", "rtf", AnyTypeBodyPartFormatter::create());
-    insert("text", "vcard", AnyTypeBodyPartFormatter::create());
-    insert("text", "x-vcard", AnyTypeBodyPartFormatter::create());
+    //insert("text", "vcard", AnyTypeBodyPartFormatter::create());
+    //insert("text", "x-vcard", AnyTypeBodyPartFormatter::create());
     insert("text", "plain", MailmanBodyPartFormatter::create());
     insert("text", "plain", TextPlainBodyPartFormatter::create());
     insert("text", "*", MailmanBodyPartFormatter::create());
