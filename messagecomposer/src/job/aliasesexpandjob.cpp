@@ -150,14 +150,20 @@ void AliasesExpandJob::finishExpansion()
 
         // take prefetched expand distribution list results
         const DistributionListExpansionResult result = mDistListExpansionResults.value(recipient);
+        QString displayName, addrSpec, comment;
 
         if (result.isEmpty) {
+            KEmailAddress::splitAddress(receiver, displayName, addrSpec, comment);
+            mEmailAddressOnly.append(addrSpec);
             mEmailAddresses += receiver;
             mEmptyDistributionLists << receiver;
             continue;
         }
 
         if (!result.addresses.isEmpty()) {
+            KEmailAddress::splitAddress(result.addresses, displayName, addrSpec, comment);
+            mEmailAddressOnly.append(addrSpec);
+
             mEmailAddresses += result.addresses;
             continue;
         }
@@ -166,11 +172,13 @@ void AliasesExpandJob::finishExpansion()
         const QString recipientValue = mNicknameExpansionResults.value(recipient);
         if (!recipientValue.isEmpty()) {
             mEmailAddresses += recipientValue;
+            KEmailAddress::splitAddress(recipientValue, displayName, addrSpec, comment);
+            mEmailAddressOnly.append(addrSpec);
+
             continue;
         }
 
         // check whether the address is missing the domain part
-        QString displayName, addrSpec, comment;
         KEmailAddress::splitAddress(receiver, displayName, addrSpec, comment);
         if (!addrSpec.contains(QLatin1Char('@'))) {
             if (!mDefaultDomain.isEmpty())
@@ -182,7 +190,13 @@ void AliasesExpandJob::finishExpansion()
         } else {
             mEmailAddresses += receiver;
         }
+        mEmailAddressOnly.append(addrSpec);
     }
 
     emitResult();
+}
+
+QStringList AliasesExpandJob::emailAddressOnly() const
+{
+    return mEmailAddressOnly;
 }

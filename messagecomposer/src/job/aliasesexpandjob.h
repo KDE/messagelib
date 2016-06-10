@@ -73,12 +73,17 @@ public:
      */
     QStringList emptyDistributionLists() const;
 
+
+    QStringList emailAddressOnly() const;
+
 private Q_SLOTS:
     void slotDistributionListExpansionDone(KJob *);
     void slotNicknameExpansionDone(KJob *);
 
 private:
     void finishExpansion();
+
+    QStringList mEmailAddressOnly;
 
     QStringList mRecipients;
     QString mDefaultDomain;
