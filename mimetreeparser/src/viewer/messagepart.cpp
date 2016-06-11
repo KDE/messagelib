@@ -232,8 +232,8 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
     , mDrawFrame(drawFrame)
     , mShowLink(showLink)
     , mDecryptMessage(decryptMessage)
-    , mAsIcon(asIcon)
     , mIsHidden(false)
+    , mAsIcon(asIcon)
 {
     if (!mNode) {
         qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
@@ -636,7 +636,7 @@ bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
     const DecryptVerifyBodyPartMemento *m
         = dynamic_cast<DecryptVerifyBodyPartMemento *>(nodeHelper->bodyPartMemento(&data, "decryptverify"));
 
-    assert(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completly wrong
+    assert(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completely wrong
 
     if (!m && mCryptoProto) {
         Kleo::DecryptVerifyJob *job = mCryptoProto->decryptVerifyJob();
@@ -792,7 +792,7 @@ bool CryptoMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
     const QByteArray mementoName = "verification";
 
     CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(mNode, mementoName));
-    assert(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completly wrong
+    assert(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completely wrong
 
     if (!m && mCryptoProto) {
         if (!signature.isEmpty()) {
