@@ -10,8 +10,6 @@ ecm_setup_version(${MESSAGELIB_LIB_VERSION} VARIABLE_PREFIX MIMETREEPARSER
 ########### Targets ###########
 
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
-#verify
-remove_definitions( -DQT_NO_CAST_FROM_BYTEARRAY )
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5MimeTreeParser")
 
