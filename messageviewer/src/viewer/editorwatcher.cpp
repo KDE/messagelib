@@ -96,7 +96,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     mInotifyFd = inotify_init();
     if (mInotifyFd > 0) {
         (void)fcntl(mInotifyFd, F_SETFD, FD_CLOEXEC);
-        mInotifyWatch = inotify_add_watch(mInotifyFd, mUrl.path().toLatin1(), IN_CLOSE | IN_OPEN | IN_MODIFY | IN_ATTRIB);
+        mInotifyWatch = inotify_add_watch(mInotifyFd, mUrl.path().toLatin1().constData(), IN_CLOSE | IN_OPEN | IN_MODIFY | IN_ATTRIB);
         if (mInotifyWatch >= 0) {
             QSocketNotifier *sn = new QSocketNotifier(mInotifyFd, QSocketNotifier::Read, this);
             connect(sn, &QSocketNotifier::activated, this, &EditorWatcher::inotifyEvent);

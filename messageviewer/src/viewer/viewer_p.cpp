@@ -651,7 +651,7 @@ QString ViewerPrivate::createAtmFileLink(const QString &atmFileName) const
     delete linkFile;
     delete linkDir;
 
-    if (::link(QFile::encodeName(atmFileName), QFile::encodeName(linkName)) == 0) {
+    if (::link(QFile::encodeName(atmFileName).constData(), QFile::encodeName(linkName).constData()) == 0) {
         return linkName; // success
     }
     return QString();
@@ -2163,9 +2163,9 @@ void ViewerPrivate::attachmentView(KMime::Content *atmNode)
         const bool isEncapsulatedMessage = atmNode->parent() && atmNode->parent()->bodyIsMessage();
         if (isEncapsulatedMessage) {
             atmViewMsg(atmNode->parent()->bodyAsMessage());
-        } else if ((qstricmp(atmNode->contentType()->mediaType(), "text") == 0) &&
-                   ((qstricmp(atmNode->contentType()->subType(), "x-vcard") == 0) ||
-                    (qstricmp(atmNode->contentType()->subType(), "directory") == 0))) {
+        } else if ((qstricmp(atmNode->contentType()->mediaType().constData(), "text") == 0) &&
+                   ((qstricmp(atmNode->contentType()->subType().constData(), "x-vcard") == 0) ||
+                    (qstricmp(atmNode->contentType()->subType().constData(), "directory") == 0))) {
             setMessagePart(atmNode);
         } else {
             Q_EMIT showReader(atmNode, htmlMail(), overrideEncoding());

@@ -130,7 +130,7 @@ QString KXFace::fromImage(const QImage &image)
     tmp.replace(QRegExp(QLatin1String("(\\w{4})")), QStringLiteral("0x\\1,"));
     len = tmp.length();
     char *fbuf = (char *)malloc(len + 1);
-    strncpy(fbuf, (const char *)tmp.toLatin1(), len);
+    strncpy(fbuf, tmp.toLatin1().constData(), len);
     fbuf[len] = '\0';
     if (!(status = setjmp(comp_env))) {
         ReadFace(fbuf);
@@ -151,7 +151,7 @@ QImage KXFace::toImage(const QString &xface)
 
     char *fbuf = (char *)malloc(MAX_XFACE_LENGTH);
     memset(fbuf, '\0', MAX_XFACE_LENGTH);
-    strncpy(fbuf, xface.toLatin1(), xface.length());
+    strncpy(fbuf, xface.toLatin1().constData(), xface.length());
     QByteArray img;
     if (!(status = setjmp(comp_env))) {
         UnCompAll(fbuf);  /* compress otherwise */

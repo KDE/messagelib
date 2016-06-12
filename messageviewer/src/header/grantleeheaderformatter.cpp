@@ -242,10 +242,10 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
 
     Q_FOREACH (QString header, displayExtraHeaders) {
         const QByteArray baHeader = header.toLocal8Bit();
-        if (message->headerByType(baHeader)) {
+        if (message->headerByType(baHeader.constData())) {
             //Grantlee doesn't support '-' in variable name => remove it.
             header = header.remove(QLatin1Char('-'));
-            headerObject.insert(header, message->headerByType(baHeader)->asUnicodeString());
+            headerObject.insert(header, message->headerByType(baHeader.constData())->asUnicodeString());
         }
     }
 

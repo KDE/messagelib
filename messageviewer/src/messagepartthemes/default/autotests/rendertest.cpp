@@ -53,7 +53,7 @@ void RenderTest::testRenderSmart_data()
         if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))) {
             continue;
         }
-        QTest::newRow(file.toLatin1()) << file << QString(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html")) << QString(file + QStringLiteral(".out")) << QStringLiteral("smart") << false;
+        QTest::newRow(file.toLatin1().constData()) << file << QString(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html")) << QString(file + QStringLiteral(".out")) << QStringLiteral("smart") << false;
     }
 }
 
@@ -76,7 +76,7 @@ void RenderTest::testRenderSmartDetails_data()
         if (!QFile::exists(fname)) {
             continue;
         }
-        QTest::newRow(file.toLatin1()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("smart") << true;
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("smart") << true;
     }
 }
 
@@ -102,7 +102,7 @@ void RenderTest::testRenderInlined_data()
                 continue;
             }
         }
-        QTest::newRow(file.toLatin1()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("inlined") << false;
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("inlined") << false;
     }
 }
 
@@ -128,7 +128,7 @@ void RenderTest::testRenderIconic_data()
                 continue;
             }
         }
-        QTest::newRow(file.toLatin1()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("iconic") << false;
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("iconic") << false;
     }
 }
 
@@ -154,7 +154,7 @@ void RenderTest::testRenderHidden_data()
                 continue;
             }
         }
-        QTest::newRow(file.toLatin1()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("hidden") << false;
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("hidden") << false;
     }
 }
 
@@ -180,7 +180,7 @@ void RenderTest::testRenderHeaderOnly_data()
                 continue;
             }
         }
-        QTest::newRow(file.toLatin1()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("headeronly") << false;
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("headeronly") << false;
     }
 }
 

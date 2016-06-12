@@ -57,7 +57,7 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
         }
 
         // Do we have the needed score field for this agent?
-        KMime::Headers::Base *header = message->headerByType((*it).header());
+        KMime::Headers::Base *header = message->headerByType((*it).header().constData());
         if (!header) {
             continue;
         }
@@ -167,7 +167,7 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
         const QByteArray confidenceHeaderName = (*it).confidenceHeader();
         QString mCField;
         if (!confidenceHeaderName.isEmpty()) {
-            KMime::Headers::Base *cHeader = message->headerByType(confidenceHeaderName);
+            KMime::Headers::Base *cHeader = message->headerByType(confidenceHeaderName.constData());
             if (cHeader) {
                 mCField = cHeader->asUnicodeString();
                 if (! mCField.isEmpty()) {
