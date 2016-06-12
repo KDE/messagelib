@@ -957,7 +957,7 @@ QString MessageFactory::replaceHeadersInString(const KMime::Message::Ptr &msg, c
 
     idx = 0;
     while ((idx = rx.indexIn(result, idx)) != -1) {
-        QString replacement = msg->headerByType(rx.cap(1).toLatin1()) ? msg->headerByType(rx.cap(1).toLatin1())->asUnicodeString() : QStringLiteral("");
+        QString replacement = msg->headerByType(rx.cap(1).toLatin1().constData()) ? msg->headerByType(rx.cap(1).toLatin1().constData())->asUnicodeString() : QStringLiteral("");
         result.replace(idx, rx.matchedLength(), replacement);
         idx += replacement.length();
     }

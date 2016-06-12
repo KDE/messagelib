@@ -117,7 +117,7 @@ bool ImageScaling::resizeImage()
                 format = "PNG";
             }
         }
-        const bool result = d->mImage.save(&d->mBuffer, format);
+        const bool result = d->mImage.save(&d->mBuffer, format.constData());
         d->mBuffer.close();
         return result;
     } else {

@@ -948,7 +948,7 @@ void MessageComposer::ComposerViewBase::queueMessage(const KMime::Message::Ptr &
     QMapIterator<QByteArray, QString> customHeader(m_customHeader);
     while (customHeader.hasNext()) {
         customHeader.next();
-        auto header = new KMime::Headers::Generic(customHeader.key());
+        auto header = new KMime::Headers::Generic(customHeader.key().constData());
         header->fromUnicodeString(customHeader.value(), "utf-8");
         message->setHeader(header);
     }

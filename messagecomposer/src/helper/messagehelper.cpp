@@ -167,12 +167,12 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
 KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, const QByteArray &header)
 {
     KMime::Types::AddrSpecList result;
-    if (!msg->headerByType(header)) {
+    if (!msg->headerByType(header.constData())) {
         return result;
     }
 
     KMime::Types::AddressList al =
-        MessageCore::StringUtil::splitAddressField(msg->headerByType(header)->asUnicodeString().toUtf8());
+        MessageCore::StringUtil::splitAddressField(msg->headerByType(header.constData())->asUnicodeString().toUtf8());
     KMime::Types::AddressList::const_iterator alend(al.constEnd());
     for (KMime::Types::AddressList::const_iterator ait = al.constBegin(); ait != alend; ++ait) {
         KMime::Types::MailboxList::const_iterator mitEnd((*ait).mailboxList.constEnd());
