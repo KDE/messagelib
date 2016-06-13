@@ -51,6 +51,9 @@ public:
     void setDefaultDomain(const QString &domain);
     QString defaultDomain() const;
 
+    bool hasAttachment() const;
+    void setHasAttachment(bool b);
+
     PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
     bool operator ==(const PluginEditorCheckBeforeSendParams &other) const;
 private:

@@ -28,7 +28,8 @@ class MessageComposer::PluginEditorCheckBeforeSendParamsPrivate
 public:
     PluginEditorCheckBeforeSendParamsPrivate()
         : identity(-1),
-          isHtml(false)
+          isHtml(false),
+          hasAttachment(false)
     {
 
     }
@@ -38,6 +39,7 @@ public:
     QString defaultDomain;
     uint identity;
     bool isHtml;
+    bool hasAttachment;
 };
 
 PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams()
@@ -66,6 +68,7 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
         d->plainText = other.plainText();
         d->listAddress = other.addresses();
         d->defaultDomain = other.defaultDomain();
+        d->hasAttachment = other.hasAttachment();
     }
     return *this;
 }
@@ -77,7 +80,8 @@ bool PluginEditorCheckBeforeSendParams::operator ==(const PluginEditorCheckBefor
            (d->isHtml == other.isHtmlMail()) &&
            (d->plainText == other.plainText()) &&
            (d->listAddress == other.addresses()) &&
-           (d->defaultDomain == other.defaultDomain());
+           (d->defaultDomain == other.defaultDomain()) &&
+           (d->hasAttachment == other.hasAttachment());
 }
 
 void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)
@@ -138,4 +142,14 @@ void PluginEditorCheckBeforeSendParams::setDefaultDomain(const QString &domain)
 QString PluginEditorCheckBeforeSendParams::defaultDomain() const
 {
     return d->defaultDomain;
+}
+
+bool PluginEditorCheckBeforeSendParams::hasAttachment() const
+{
+    return d->hasAttachment;
+}
+
+void PluginEditorCheckBeforeSendParams::setHasAttachment(bool b)
+{
+    d->hasAttachment = b;
 }
