@@ -54,6 +54,9 @@ public:
     bool hasAttachment() const;
     void setHasAttachment(bool b);
 
+    int transportId() const;
+    void setTransportId(int id);
+
     PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
     bool operator ==(const PluginEditorCheckBeforeSendParams &other) const;
 private:

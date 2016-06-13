@@ -28,6 +28,7 @@ class MessageComposer::PluginEditorCheckBeforeSendParamsPrivate
 public:
     PluginEditorCheckBeforeSendParamsPrivate()
         : identity(-1),
+          transportId(-1),
           isHtml(false),
           hasAttachment(false)
     {
@@ -38,6 +39,7 @@ public:
     QString subject;
     QString defaultDomain;
     uint identity;
+    int transportId;
     bool isHtml;
     bool hasAttachment;
 };
@@ -69,6 +71,7 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
         d->listAddress = other.addresses();
         d->defaultDomain = other.defaultDomain();
         d->hasAttachment = other.hasAttachment();
+        d->transportId = other.transportId();
     }
     return *this;
 }
@@ -81,7 +84,8 @@ bool PluginEditorCheckBeforeSendParams::operator ==(const PluginEditorCheckBefor
            (d->plainText == other.plainText()) &&
            (d->listAddress == other.addresses()) &&
            (d->defaultDomain == other.defaultDomain()) &&
-           (d->hasAttachment == other.hasAttachment());
+           (d->hasAttachment == other.hasAttachment()) &&
+           (d->transportId == other.transportId());
 }
 
 void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)
@@ -152,4 +156,14 @@ bool PluginEditorCheckBeforeSendParams::hasAttachment() const
 void PluginEditorCheckBeforeSendParams::setHasAttachment(bool b)
 {
     d->hasAttachment = b;
+}
+
+int PluginEditorCheckBeforeSendParams::transportId() const
+{
+    return d->transportId;
+}
+
+void PluginEditorCheckBeforeSendParams::setTransportId(int id)
+{
+    d->transportId = id;
 }

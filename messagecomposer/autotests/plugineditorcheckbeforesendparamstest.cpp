@@ -38,6 +38,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
     QVERIFY(params.subject().isEmpty());
     QVERIFY(params.plainText().isEmpty());
     QCOMPARE(params.identity(), (uint) - 1);
+    QCOMPARE(params.transportId(), -1);
     QVERIFY(!params.isHtmlMail());
     QVERIFY(params.addresses().isEmpty());
     QVERIFY(params.defaultDomain().isEmpty());
@@ -53,12 +54,14 @@ void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
     const QString defaultDomain(QStringLiteral("bli"));
     bool isHmlMail = true;
     bool hasAttachment = true;
+    int transportId = 5;
     params1.setSubject(subject);
     params1.setHtmlMail(isHmlMail);
     params1.setPlainText(plainText);
     params1.setAddresses(lst);
     params1.setDefaultDomain(defaultDomain);
     params1.setHasAttachment(hasAttachment);
+    params1.setTransportId(transportId);
     MessageComposer::PluginEditorCheckBeforeSendParams params2 = params1;
     QVERIFY(params2 == params1);
     QCOMPARE(params2.isHtmlMail(), isHmlMail);
@@ -67,6 +70,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
     QCOMPARE(params2.addresses(), lst);
     QCOMPARE(params2.defaultDomain(), defaultDomain);
     QCOMPARE(params2.hasAttachment(), hasAttachment);
+    QCOMPARE(params2.transportId(), transportId);
 }
 
 void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
@@ -78,6 +82,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
     bool isHmlMail = true;
     bool hasAttachment = true;
     uint identity = 5;
+    int transportId = 6;
     const QStringList lst{ QStringLiteral("foo"), QStringLiteral("foo"), QStringLiteral("foo")};
     params1.setSubject(subject);
     params1.setHtmlMail(isHmlMail);
@@ -86,6 +91,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
     params1.setAddresses(lst);
     params1.setDefaultDomain(defaultDomain);
     params1.setHasAttachment(hasAttachment);
+    params1.setTransportId(transportId);
     QCOMPARE(params1.isHtmlMail(), isHmlMail);
     QCOMPARE(params1.subject(), subject);
     QCOMPARE(params1.identity(), identity);
@@ -93,6 +99,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
     QCOMPARE(params1.addresses(), lst);
     QCOMPARE(params1.defaultDomain(), defaultDomain);
     QCOMPARE(params1.hasAttachment(), hasAttachment);
+    QCOMPARE(params1.transportId(), transportId);
 }
 
 QTEST_MAIN(PluginEditorCheckBeforeSendParamsTest)
