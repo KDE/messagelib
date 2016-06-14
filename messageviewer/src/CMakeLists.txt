@@ -54,7 +54,6 @@ set(libmessageviewer_mailviewer_SRCS
     viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
     viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
     viewer/webengine/mailwebenginescript.cpp
-    #findbar/findbarwebengineview.cpp
     )
 
 set(libmessageviewer_viewer_SRCS
