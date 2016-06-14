@@ -42,7 +42,7 @@ class DefaultRendererPrivate;
 class DefaultRenderer : public MimeTreeParser::Interface::MessagePartRenderer
 {
 public:
-    DefaultRenderer(MimeTreeParser::Interface::MessagePartPtr msgPart);
+    DefaultRenderer(const MimeTreeParser::Interface::MessagePartPtr& msgPart);
     ~DefaultRenderer();
 
     QString html() const Q_DECL_OVERRIDE;

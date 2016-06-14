@@ -1361,7 +1361,7 @@ private:
     QString mExpandIcon;
 };
 
-DefaultRenderer::DefaultRenderer(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
+DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart)
     : d(new MimeTreeParser::DefaultRendererPrivate(this, msgPart))
 {
 }
