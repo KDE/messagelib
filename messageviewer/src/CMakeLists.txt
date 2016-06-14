@@ -145,9 +145,6 @@ set(libmessageviewer_antispam_SRCS
     )
 
 set(libmessageviewer_job_SRCS
-    job/createtodojob.cpp
-    job/createeventjob.cpp
-    job/createnotejob.cpp
     job/attachmenteditjob.cpp
     job/modifymessagedisplayformatjob.cpp
     )
@@ -368,16 +365,6 @@ ecm_generate_headers(MessageViewer_Camelcaseviewerplugin_HEADERS
     RELATIVE viewerplugins
     )
 
-ecm_generate_headers(MessageViewer_Camelcaseviewerjob_HEADERS
-    HEADER_NAMES
-    CreateTodoJob
-    CreateNoteJob
-    CreateEventJob
-    REQUIRED_HEADERS MessageViewer_viewerjob_HEADERS
-    PREFIX MessageViewer
-    RELATIVE job
-    )
-
 ecm_generate_pri_file(BASE_NAME MessageViewer
     LIB_NAME KF5MessageViewer
     DEPS "PimCommon MessageCore AkonadiCore AkonadiMime Contacts Libkleo MimeTreeParser" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
@@ -393,7 +380,6 @@ install(FILES
     ${MessageViewer_Camelcaseinterfaces_HEADERS}
     ${MessageViewer_Camelcaseviewer_HEADERS}
     ${MessageViewer_Camelcasewidgets_HEADERS}
-    ${MessageViewer_Camelcaseviewerjob_HEADERS}
     ${MessageViewer_Camelcaseantispam_HEADERS}
     ${MessageViewer_Camelfindbar_HEADERS}
     ${MessageViewer_Camelcasescam_HEADERS}
@@ -412,7 +398,6 @@ install(FILES
     ${MessageViewer_HEADERS}
     ${MessageViewer_viewer_HEADERS}
     ${MessageViewer_widgets_HEADERS}
-    ${MessageViewer_viewerjob_HEADERS}
     ${MessageViewer_antispam_HEADERS}
     ${MessageViewer_findbar_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
