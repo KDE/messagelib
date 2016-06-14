@@ -453,7 +453,7 @@ public:
 class MimeTreeParser::DefaultRendererPrivate
 {
 public:
-    DefaultRendererPrivate(DefaultRenderer *qPtr, Interface::MessagePart::Ptr msgPart)
+    DefaultRendererPrivate(DefaultRenderer *qPtr, const Interface::MessagePart::Ptr &msgPart)
         : mMsgPart(msgPart)
         , q(qPtr)
         , mOldWriter(msgPart->htmlWriter())
@@ -484,7 +484,7 @@ public:
         return Q_NULLPTR;
     }
 
-    void renderSubParts(MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+    void renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
     {
         foreach (const auto &_m, msgPart->subParts()) {
             const auto m = _m.dynamicCast<MessagePart>();
@@ -494,7 +494,7 @@ public:
         }
     }
 
-    QString render(MessagePartList::Ptr mp)
+    QString render(const MessagePartList::Ptr &mp)
     {
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
@@ -517,7 +517,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString render(MimeMessagePart::Ptr mp)
+    QString render(const MimeMessagePart::Ptr &mp)
     {
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
@@ -537,7 +537,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString render(EncapsulatedRfc822MessagePart::Ptr mp)
+    QString render(const EncapsulatedRfc822MessagePart::Ptr &mp)
     {
         if (!mp->hasSubParts()) {
             return QString();
@@ -569,7 +569,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString render(TextMessagePart::Ptr mp)
+    QString render(const TextMessagePart::Ptr &mp)
     {
         KMime::Content *node = mp->mNode;
         NodeHelper *nodeHelper = mp->mOtp->nodeHelper();
@@ -836,7 +836,7 @@ public:
         return htmlStr;
     }
 
-    QString render(MessagePart::Ptr mp)
+    QString render(const MessagePart::Ptr mp)
     {
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
@@ -850,7 +850,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString render(HtmlMessagePart::Ptr mp)
+    QString render(const HtmlMessagePart::Ptr &mp)
     {
         Grantlee::Template t = getGrantleeTemplate(QStringLiteral("htmlmessagepart.html"));
         Grantlee::Context c;
@@ -896,7 +896,7 @@ public:
 
     }
 
-    QString renderEncrypted(CryptoMessagePart::Ptr mp)
+    QString renderEncrypted(const CryptoMessagePart::Ptr &mp)
     {
         KMime::Content *node = mp->mNode;
         const auto metaData = mp->mMetaData;
@@ -940,7 +940,7 @@ public:
         return html;
     }
 
-    QString renderSigned(CryptoMessagePart::Ptr mp)
+    QString renderSigned(const CryptoMessagePart::Ptr &mp)
     {
         KMime::Content *node = mp->mNode;
         const auto metaData = mp->mMetaData;
@@ -1169,7 +1169,7 @@ public:
         return html;
     }
 
-    QString render(CryptoMessagePart::Ptr mp)
+    QString render(const CryptoMessagePart::Ptr &mp)
     {
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         const auto metaData = mp->mMetaData;
@@ -1211,7 +1211,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString render(AlternativeMessagePart::Ptr mp)
+    QString render(const AlternativeMessagePart::Ptr &mp)
     {
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
@@ -1232,7 +1232,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString render(CertMessagePart::Ptr mp)
+    QString render(const CertMessagePart::Ptr &mp)
     {
         const GpgME::ImportResult &importResult(mp->mImportResult);
         Grantlee::Template t = getGrantleeTemplate(QStringLiteral("certmessagepart.html"));
@@ -1270,7 +1270,7 @@ public:
         return htmlWriter->html;
     }
 
-    QString renderFactory(Interface::MessagePart::Ptr msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+    QString renderFactory(const Interface::MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
     {
         const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
