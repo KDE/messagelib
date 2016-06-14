@@ -87,25 +87,6 @@ inline QVariant TypeAccessor<const Kleo::CryptoBackend::Protocol *>::lookUp(cons
 }
 }
 
-Grantlee::Template getGrantleeTemplate(QObject *parent, const QString &name)
-{
-    Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
-    Grantlee::registerMetaType<const Kleo::CryptoBackend::Protocol *>();
-    auto m_engine = QSharedPointer<Grantlee::Engine>(new Grantlee::Engine(parent));
-    m_engine->setSmartTrimEnabled(true);
-    m_engine->addDefaultLibrary(QStringLiteral("grantlee_i18n"));
-    m_engine->addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
-
-    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new GrantleeTheme::QtResourceTemplateLoader());
-    loader->setTemplateDirs(QStringList() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/messageviewer/messagepartthemes/default"), QStandardPaths::LocateDirectory));
-    m_engine->addTemplateLoader(loader);
-
-    Grantlee::Template t = m_engine->loadByName(name);
-    if (t->error()) {
-        qCWarning(MESSAGEVIEWER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
-    }
-    return t;
-}
 
 static QString iconToDataUrl(const QString &iconPath)
 {
@@ -477,7 +458,12 @@ public:
         , q(qPtr)
         , mOldWriter(msgPart->htmlWriter())
     {
+        initializeGrantleeRenderer();
         mHtml = renderFactory(mMsgPart, QSharedPointer<CacheHtmlWriter>());
+    }
+    ~DefaultRendererPrivate()
+    {
+        delete m_engine;
     }
 
     CSSHelperBase *cssHelper() const
@@ -556,7 +542,7 @@ public:
         if (!mp->hasSubParts()) {
             return QString();
         }
-        Grantlee::Template t = getGrantleeTemplate(mp.data(), QStringLiteral("encapsulatedrfc822messagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("encapsulatedrfc822messagepart.html"));
         Grantlee::Context c;
         QObject block;
 
@@ -605,7 +591,7 @@ public:
         block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
 
         if (mp->mAsIcon != MimeTreeParser::NoIcon) {
-            t = getGrantleeTemplate(mp.data(), QStringLiteral("asiconpart.html"));
+            t = getGrantleeTemplate(QStringLiteral("asiconpart.html"));
             block.setProperty("iconSize", KIconLoader::global()->currentSize(KIconLoader::Desktop));
             block.setProperty("inline", (mp->mAsIcon == MimeTreeParser::IconInline));
 
@@ -639,7 +625,7 @@ public:
             block.setProperty("comment", comment);
 
         } else {
-            t = getGrantleeTemplate(mp.data(), QStringLiteral("textmessagepart.html"));
+            t = getGrantleeTemplate(QStringLiteral("textmessagepart.html"));
             auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
             renderSubParts(mp, _htmlWriter);
             c.insert(QStringLiteral("content"), _htmlWriter->html);
@@ -866,7 +852,7 @@ public:
 
     QString render(HtmlMessagePart::Ptr mp)
     {
-        Grantlee::Template t = getGrantleeTemplate(mp.data(), QStringLiteral("htmlmessagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("htmlmessagepart.html"));
         Grantlee::Context c;
         QObject block;
 
@@ -915,7 +901,7 @@ public:
         KMime::Content *node = mp->mNode;
         const auto metaData = mp->mMetaData;
 
-        Grantlee::Template t = getGrantleeTemplate(mp.data(), QStringLiteral("encryptedmessagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("encryptedmessagepart.html"));
         Grantlee::Context c;
         QObject block;
 
@@ -962,7 +948,7 @@ public:
 
         const bool isSMIME = cryptoProto && (cryptoProto == Kleo::CryptoBackendFactory::instance()->smime());
 
-        Grantlee::Template t = getGrantleeTemplate(mp.data(), QStringLiteral("signedmessagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("signedmessagepart.html"));
         Grantlee::Context c;
         QObject block;
 
@@ -1249,7 +1235,7 @@ public:
     QString render(CertMessagePart::Ptr mp)
     {
         const GpgME::ImportResult &importResult(mp->mImportResult);
-        Grantlee::Template t = getGrantleeTemplate(mp.data(), QStringLiteral("certmessagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("certmessagepart.html"));
         Grantlee::Context c;
         QObject block;
 
@@ -1351,12 +1337,37 @@ public:
         return QString();
     }
 
+
     QString mHtml;
     Interface::MessagePart::Ptr mMsgPart;
 private:
+    void initializeGrantleeRenderer()
+    {
+        Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
+        Grantlee::registerMetaType<const Kleo::CryptoBackend::Protocol *>();
+        m_engine = new Grantlee::Engine;
+        m_engine->setSmartTrimEnabled(true);
+        m_engine->addDefaultLibrary(QStringLiteral("grantlee_i18n"));
+        m_engine->addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
+
+        auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new GrantleeTheme::QtResourceTemplateLoader());
+        loader->setTemplateDirs(QStringList() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/messageviewer/messagepartthemes/default"), QStandardPaths::LocateDirectory));
+        m_engine->addTemplateLoader(loader);
+
+    }
+
+    Grantlee::Template getGrantleeTemplate(const QString &name)
+    {
+        Grantlee::Template t = m_engine->loadByName(name);
+        if (t->error()) {
+            qCWarning(MESSAGEVIEWER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+        }
+        return t;
+    }
     DefaultRenderer *q;
     HtmlWriter *mOldWriter;
 
+    Grantlee::Engine *m_engine;
     QString mCollapseIcon;
     QString mExpandIcon;
 };
