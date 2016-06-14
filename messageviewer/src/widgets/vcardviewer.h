@@ -23,11 +23,6 @@
 #include <QDialog>
 #include <kcontacts/addressee.h>
 
-namespace Akonadi
-{
-class ContactViewer;
-}
-
 namespace KAddressBookGrantlee
 {
 class GrantleeContactViewer;
