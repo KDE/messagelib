@@ -178,7 +178,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
         QUrl url;
         url.setScheme(QStringLiteral("file"));
         url.setPath(fileName);
-        qCDebug(MESSAGECOMPOSER_LOG) <<" temporary file " << url;
+        qCDebug(MESSAGECOMPOSER_LOG) << " temporary file " << url;
         urls.append(url);
     }
 

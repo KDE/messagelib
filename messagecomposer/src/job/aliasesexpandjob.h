@@ -73,7 +73,6 @@ public:
      */
     QStringList emptyDistributionLists() const;
 
-
     QStringList emailAddressOnly() const;
 
 private Q_SLOTS:
