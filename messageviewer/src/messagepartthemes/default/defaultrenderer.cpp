@@ -30,6 +30,7 @@
 #include <MimeTreeParser/CSSHelperBase>
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
+#include <GrantleeTheme/qtresourcetemplateloader.h>
 
 #include <Libkleo/CryptoBackend>
 #include <Libkleo/CryptoBackendFactory>
@@ -95,7 +96,7 @@ Grantlee::Template getGrantleeTemplate(QObject *parent, const QString &name)
     m_engine->addDefaultLibrary(QStringLiteral("grantlee_i18n"));
     m_engine->addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
 
-    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader());
+    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new GrantleeTheme::QtResourceTemplateLoader());
     loader->setTemplateDirs(QStringList() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/messageviewer/messagepartthemes/default"), QStandardPaths::LocateDirectory));
     m_engine->addTemplateLoader(loader);
 
