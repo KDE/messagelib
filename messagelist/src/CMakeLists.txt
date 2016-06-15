@@ -31,6 +31,7 @@ set(libmessagelist_SRCS
     core/widgets/quicksearchline.cpp
     core/widgets/quicksearchwarning.cpp
     core/widgets/searchlinestatus.cpp
+    core/widgets/searchcollectionindexingwarning.cpp
 
     utils/aggregationcombobox.cpp
     utils/aggregationconfigbutton.cpp

@@ -20,6 +20,7 @@
 
 #include "core/widgetbase.h"
 #include "core/widgets/quicksearchwarning.h"
+#include "core/widgets/searchcollectionindexingwarning.h"
 #include "core/aggregation.h"
 #include "core/theme.h"
 #include "core/filter.h"
@@ -61,6 +62,7 @@ public:
     Private(Widget *owner)
         : q(owner),
           quickSearchLine(Q_NULLPTR),
+          searchCollectionIndexingWarning(Q_NULLPTR),
           mView(Q_NULLPTR),
           mSearchTimer(Q_NULLPTR),
           mStorageModel(Q_NULLPTR), mAggregation(Q_NULLPTR),
@@ -97,6 +99,7 @@ public:
     Widget *const q;
 
     QuickSearchWarning *quickSearchWarning;
+    SearchCollectionIndexingWarning *searchCollectionIndexingWarning;
     QuickSearchLine *quickSearchLine;
     View *mView;
     QString mLastAggregationId;
@@ -135,7 +138,6 @@ Widget::Widget(QWidget *pParent)
 
     d->quickSearchLine = new QuickSearchLine;
     d->quickSearchLine->setObjectName(QStringLiteral("quicksearchline"));
-
     connect(d->quickSearchLine, &QuickSearchLine::clearButtonClicked, this, &Widget::searchEditClearButtonClicked);
 
     connect(d->quickSearchLine, &QuickSearchLine::searchEditTextEdited, this, &Widget::searchEditTextEdited);
@@ -144,6 +146,8 @@ Widget::Widget(QWidget *pParent)
     g->addWidget(d->quickSearchLine, 0);
     d->quickSearchWarning = new QuickSearchWarning(this);
     g->addWidget(d->quickSearchWarning, 0);
+    d->searchCollectionIndexingWarning = new SearchCollectionIndexingWarning(this);
+    g->addWidget( d->searchCollectionIndexingWarning, 0);
 
     d->mView = new View(this);
     d->mView->setFrameStyle(QFrame::NoFrame);
@@ -1108,6 +1112,7 @@ bool Widget::selectionEmpty() const
 void Widget::setCurrentFolder(const Akonadi::Collection &collection)
 {
     d->mCurrentFolder = collection;
+    d->searchCollectionIndexingWarning->setCollection(collection);
 }
 
 bool Widget::searchEditHasFocus() const
