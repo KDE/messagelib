@@ -79,16 +79,6 @@ InvitationSettings::InvitationSettings(QWidget *parent)
         i18n(MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem()->whatsThis().toUtf8().constData()));
     connect(d->mInvitationUi->mExchangeCompatibleInvitations, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
 
-    d->mInvitationUi->mOutlookCompatibleInvitationComments->setWhatsThis(
-        i18n(MessageViewer::MessageViewerSettings::self()->
-             outlookCompatibleInvitationReplyCommentsItem()->whatsThis().toUtf8().constData()));
-    connect(d->mInvitationUi->mOutlookCompatibleInvitationComments, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
-
-    d->mInvitationUi->mOutlookCompatibleInvitationComparisons->setWhatsThis(
-        i18n(MessageViewer::MessageViewerSettings::self()->
-             outlookCompatibleInvitationComparisonsItem()->whatsThis().toUtf8().constData()));
-    connect(d->mInvitationUi->mOutlookCompatibleInvitationComparisons, &QCheckBox::stateChanged, this, &InvitationSettings::changed);
-
     //Laurent BUG:257723: in kmail2 it's not possible to not send automatically.
     d->mInvitationUi->mAutomaticSending->hide();
     d->mInvitationUi->mAutomaticSending->setWhatsThis(
@@ -129,8 +119,6 @@ void InvitationSettings::doLoadFromGlobalSettings()
     loadWidget(d->mInvitationUi->mLegacyBodyInvites, MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem());
     d->mInvitationUi->mLegacyBodyInvites->blockSignals(false);
     loadWidget(d->mInvitationUi->mExchangeCompatibleInvitations, MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem());
-    loadWidget(d->mInvitationUi->mOutlookCompatibleInvitationComments, MessageViewer::MessageViewerSettings::self()->outlookCompatibleInvitationReplyCommentsItem());
-    loadWidget(d->mInvitationUi->mOutlookCompatibleInvitationComparisons, MessageViewer::MessageViewerSettings::self()->outlookCompatibleInvitationComparisonsItem());
     loadWidget(d->mInvitationUi->mAutomaticSending, MessageViewer::MessageViewerSettings::self()->automaticSendingItem());
     //TODO verify it
     d->mInvitationUi->mAutomaticSending->setEnabled(!d->mInvitationUi->mLegacyBodyInvites->isChecked());
@@ -142,8 +130,6 @@ void InvitationSettings::save()
     saveCheckBox(d->mInvitationUi->mLegacyMangleFromTo, MessageViewer::MessageViewerSettings::self()->legacyMangleFromToHeadersItem());
     saveCheckBox(d->mInvitationUi->mLegacyBodyInvites, MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem());
     saveCheckBox(d->mInvitationUi->mExchangeCompatibleInvitations, MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem());
-    saveCheckBox(d->mInvitationUi->mOutlookCompatibleInvitationComments, MessageViewer::MessageViewerSettings::self()->outlookCompatibleInvitationReplyCommentsItem());
-    saveCheckBox(d->mInvitationUi->mOutlookCompatibleInvitationComparisons, MessageViewer::MessageViewerSettings::self()->outlookCompatibleInvitationComparisonsItem());
     saveCheckBox(d->mInvitationUi->mAutomaticSending, MessageViewer::MessageViewerSettings::self()->automaticSendingItem());
     saveCheckBox(d->mInvitationUi->mDeleteInvitations, MessageViewer::MessageViewerSettings::self()->deleteInvitationEmailsAfterSendingReplyItem());
 }
@@ -161,8 +147,6 @@ void InvitationSettings::doResetToDefaultsOther()
     loadWidget(d->mInvitationUi->mLegacyBodyInvites, MessageViewer::MessageViewerSettings::self()->legacyBodyInvitesItem());
     d->mInvitationUi->mLegacyBodyInvites->blockSignals(false);
     loadWidget(d->mInvitationUi->mExchangeCompatibleInvitations, MessageViewer::MessageViewerSettings::self()->exchangeCompatibleInvitationsItem());
-    loadWidget(d->mInvitationUi->mOutlookCompatibleInvitationComments, MessageViewer::MessageViewerSettings::self()->outlookCompatibleInvitationReplyCommentsItem());
-    loadWidget(d->mInvitationUi->mOutlookCompatibleInvitationComparisons, MessageViewer::MessageViewerSettings::self()->outlookCompatibleInvitationComparisonsItem());
     loadWidget(d->mInvitationUi->mAutomaticSending, MessageViewer::MessageViewerSettings::self()->automaticSendingItem());
     //TODO verify it
     d->mInvitationUi->mAutomaticSending->setEnabled(!d->mInvitationUi->mLegacyBodyInvites->isChecked());
