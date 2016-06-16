@@ -61,8 +61,9 @@ class Widget::Private
 public:
     Private(Widget *owner)
         : q(owner),
-          quickSearchLine(Q_NULLPTR),
+          quickSearchWarning(Q_NULLPTR),
           searchCollectionIndexingWarning(Q_NULLPTR),
+          quickSearchLine(Q_NULLPTR),
           mView(Q_NULLPTR),
           mSearchTimer(Q_NULLPTR),
           mStorageModel(Q_NULLPTR), mAggregation(Q_NULLPTR),
@@ -1119,4 +1120,3 @@ bool Widget::searchEditHasFocus() const
 {
     return d->quickSearchLine->searchEdit()->hasFocus();
 }
-
