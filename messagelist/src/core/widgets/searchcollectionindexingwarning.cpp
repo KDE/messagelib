@@ -28,6 +28,7 @@
 #include <AkonadiCore/cachepolicy.h>
 
 #include <PimCommon/CollectionIndexStatusJob>
+#include <PimCommon/PimUtil>
 
 #include <QDBusInterface>
 
@@ -137,16 +138,19 @@ void SearchCollectionIndexingWarning::indexerStatsFetchFinished(KJob* job)
     bool allFullyIndexed = true;
     QMap<qint64, qint64> stats = qobject_cast<PimCommon::CollectionIndexStatusJob*>(job)->resultStats();
     Q_FOREACH (const Akonadi::Collection &col, mCollections) {
-        if (col.hasAttribute<Akonadi::EntityHiddenAttribute>() || !col.cachePolicy().localParts().contains(QStringLiteral("RFC822"))) {
+        if (col.hasAttribute<Akonadi::EntityHiddenAttribute>()) {
             continue;
         }
+        if (PimCommon::Util::isImapResource(col.resource()) && !col.cachePolicy().localParts().contains(QLatin1String("RFC822"))) {
+            continue;
+        }
+
         qCDebug(MESSAGELIST_LOG) << "Collection:" << col.displayName() << "(" << col.id() << "), count:" << col.statistics().count() << ", index:" << stats.value(col.id());
         if (col.statistics().count() != stats.value(col.id())) {
             allFullyIndexed = false;
             break;
         }
     }
-
     if (!allFullyIndexed) {
         animatedShow();
     }
