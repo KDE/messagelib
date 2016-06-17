@@ -27,17 +27,19 @@
 #include <AkonadiCore/entityhiddenattribute.h>
 #include <AkonadiCore/cachepolicy.h>
 
-#include <PimCommon/CollectionIndexStatusJob>
 #include <PimCommon/PimUtil>
 
 #include <QDBusInterface>
 
 #include <KLocalizedString>
 
+#include <AkonadiSearch/PIM/indexeditems.h>
+
 using namespace MessageList::Core;
 
 SearchCollectionIndexingWarning::SearchCollectionIndexingWarning(QWidget *parent)
-    : KMessageWidget(parent)
+    : KMessageWidget(parent),
+      mIndexedItems(new Akonadi::Search::PIM::IndexedItems(this))
 {
     setVisible(false);
     setWordWrap(true);
@@ -123,20 +125,7 @@ void SearchCollectionIndexingWarning::queryCollectionFetchFinished(KJob *job)
 
 void SearchCollectionIndexingWarning::queryIndexerStatus()
 {
-    PimCommon::CollectionIndexStatusJob *indexerJob = new PimCommon::CollectionIndexStatusJob(mCollections, this);
-    connect(indexerJob, &PimCommon::CollectionIndexStatusJob::finished, this, &SearchCollectionIndexingWarning::indexerStatsFetchFinished);
-    indexerJob->start();
-}
-
-void SearchCollectionIndexingWarning::indexerStatsFetchFinished(KJob* job)
-{
-    if (job->error()) {
-        qCWarning(MESSAGELIST_LOG) << job->errorString();
-        return;
-    }
-
     bool allFullyIndexed = true;
-    QMap<qint64, qint64> stats = qobject_cast<PimCommon::CollectionIndexStatusJob*>(job)->resultStats();
     Q_FOREACH (const Akonadi::Collection &col, mCollections) {
         if (col.hasAttribute<Akonadi::EntityHiddenAttribute>()) {
             continue;
@@ -144,9 +133,10 @@ void SearchCollectionIndexingWarning::indexerStatsFetchFinished(KJob* job)
         if (PimCommon::Util::isImapResource(col.resource()) && !col.cachePolicy().localParts().contains(QLatin1String("RFC822"))) {
             continue;
         }
+        const qlonglong result = mIndexedItems->indexedItems(col.id());
 
-        qCDebug(MESSAGELIST_LOG) << "Collection:" << col.displayName() << "(" << col.id() << "), count:" << col.statistics().count() << ", index:" << stats.value(col.id());
-        if (col.statistics().count() != stats.value(col.id())) {
+        qCDebug(MESSAGELIST_LOG) << "Collection:" << col.displayName() << "(" << col.id() << "), count:" << col.statistics().count() << ", index:" << result;
+        if (col.statistics().count() != result) {
             allFullyIndexed = false;
             break;
         }

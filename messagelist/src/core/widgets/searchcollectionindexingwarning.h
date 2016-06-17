@@ -25,6 +25,16 @@
 #include "messagelist_export.h"
 class KJob;
 
+namespace Akonadi
+{
+namespace Search
+{
+namespace PIM
+{
+class IndexedItems;
+}
+}
+}
 namespace Akonadi {
 class CollectionFetchJob;
 }
@@ -44,7 +54,6 @@ public:
 private Q_SLOTS:
     void queryRootCollectionFetchFinished(KJob *job);
     void queryCollectionFetchFinished(KJob *job);
-    void indexerStatsFetchFinished(KJob *job);
 
 private:
     Akonadi::CollectionFetchJob *fetchCollections(const Akonadi::Collection::List &cols, bool recursive);
@@ -52,6 +61,7 @@ private:
 
     Akonadi::Collection mCollection;
     Akonadi::Collection::List mCollections;
+    Akonadi::Search::PIM::IndexedItems *mIndexedItems;
 };
 }
 }
