@@ -45,8 +45,14 @@ public:
     void setPlainText(const QString &text);
     QString plainText() const;
 
-    void setAddresses(const QStringList &lst);
-    QStringList addresses() const;
+    void setBccAddresses(const QString &lst);
+    QString bccAddresses() const;
+
+    void setToAddresses(const QString &lst);
+    QString toAddresses() const;
+
+    void setCcAddresses(const QString &lst);
+    QString ccAddresses() const;
 
     void setDefaultDomain(const QString &domain);
     QString defaultDomain() const;

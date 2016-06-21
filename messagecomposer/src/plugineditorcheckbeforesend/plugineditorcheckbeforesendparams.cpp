@@ -34,7 +34,9 @@ public:
     {
 
     }
-    QStringList listAddress;
+    QString ccAddresses;
+    QString bccAddresses;
+    QString toAddresses;
     QString plainText;
     QString subject;
     QString defaultDomain;
@@ -68,10 +70,12 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
         d->identity = other.identity();
         d->isHtml = other.isHtmlMail();
         d->plainText = other.plainText();
-        d->listAddress = other.addresses();
         d->defaultDomain = other.defaultDomain();
         d->hasAttachment = other.hasAttachment();
         d->transportId = other.transportId();
+        d->bccAddresses = other.bccAddresses();
+        d->ccAddresses = other.ccAddresses();
+        d->toAddresses = other.toAddresses();
     }
     return *this;
 }
@@ -82,10 +86,12 @@ bool PluginEditorCheckBeforeSendParams::operator ==(const PluginEditorCheckBefor
            (d->identity == other.identity()) &&
            (d->isHtml == other.isHtmlMail()) &&
            (d->plainText == other.plainText()) &&
-           (d->listAddress == other.addresses()) &&
            (d->defaultDomain == other.defaultDomain()) &&
            (d->hasAttachment == other.hasAttachment()) &&
-           (d->transportId == other.transportId());
+           (d->transportId == other.transportId()) &&
+           (d->bccAddresses == other.bccAddresses()) &&
+           (d->ccAddresses == other.ccAddresses()) &&
+           (d->toAddresses == other.toAddresses());
 }
 
 void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)
@@ -128,14 +134,34 @@ QString PluginEditorCheckBeforeSendParams::plainText() const
     return d->plainText;
 }
 
-void PluginEditorCheckBeforeSendParams::setAddresses(const QStringList &lst)
+void PluginEditorCheckBeforeSendParams::setBccAddresses(const QString &lst)
 {
-    d->listAddress = lst;
+    d->bccAddresses = lst;
 }
 
-QStringList PluginEditorCheckBeforeSendParams::addresses() const
+QString PluginEditorCheckBeforeSendParams::bccAddresses() const
 {
-    return d->listAddress;
+    return d->bccAddresses;
+}
+
+void PluginEditorCheckBeforeSendParams::setToAddresses(const QString &lst)
+{
+    d->toAddresses = lst;
+}
+
+QString PluginEditorCheckBeforeSendParams::toAddresses() const
+{
+    return d->toAddresses;
+}
+
+void PluginEditorCheckBeforeSendParams::setCcAddresses(const QString &lst)
+{
+    d->ccAddresses = lst;
+}
+
+QString PluginEditorCheckBeforeSendParams::ccAddresses() const
+{
+    return d->ccAddresses;
 }
 
 void PluginEditorCheckBeforeSendParams::setDefaultDomain(const QString &domain)
