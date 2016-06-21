@@ -1,12 +1,11 @@
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
-add_definitions( -DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
 include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
 
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
-    ecm_add_test(${_source} util.cpp setupenv.cpp testcsshelper.cpp
+    ecm_add_test(${_source} setupenv.cpp testcsshelper.cpp
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo KF5::QGpgme Qt5::Test Qt5::WebKitWidgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::AkonadiNotes KF5::CalendarCore
@@ -26,9 +25,9 @@ add_messageviewer_unittest( messagedisplayformatattributetest.cpp )
 
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
-    set(_test ${_source} util.cpp)
+    set(_test ${_source} )
     get_filename_component(_name ${_source} NAME_WE)
-    ecm_add_test(${_source} util.cpp ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp
+    ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES Qt5::Test Qt5::Gui Qt5::Widgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::PimTextEdit KF5::PimCommon KF5::MessageViewer KF5::WebEngineViewer
