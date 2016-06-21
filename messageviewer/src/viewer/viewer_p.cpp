@@ -284,7 +284,7 @@ KMime::Content *ViewerPrivate::nodeFromUrl(const QUrl &url) const
     return mNodeHelper->fromHREF(mMessage, url);
 }
 
-void ViewerPrivate::openAttachment(KMime::Content *node, const QString &name)
+void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
 {
     if (!node) {
         return;
@@ -324,16 +324,16 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QString &name)
     }
 
     // special case treatment on mac and windows
-    QString atmName = name;
-    if (name.isEmpty()) {
-        atmName = mNodeHelper->tempFileUrlFromNode(node).toLocalFile();
+    QUrl atmUrl = url;
+    if (url.isEmpty()) {
+        atmUrl = mNodeHelper->tempFileUrlFromNode(node);
     }
-    if (Util::handleUrlWithQDesktopServices(atmName)) {
+    if (Util::handleUrlWithQDesktopServices(atmUrl)) {
         return;
     }
 
     if (!mimetype.isValid() || mimetype.name() == QLatin1String("application/octet-stream")) {
-        mimetype = MimeTreeParser::Util::mimetype(name);
+        mimetype = MimeTreeParser::Util::mimetype(url.isLocalFile() ? url.toLocalFile() : url.fileName());
     }
     KService::Ptr offer =
         KMimeTypeTrader::self()->preferredService(mimetype.name(), QStringLiteral("Application"));

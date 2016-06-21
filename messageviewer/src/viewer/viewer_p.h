@@ -203,7 +203,7 @@ public:
     /** Open the attachment pointed to the node.
     * @param fileName - if not empty, use this file to load the attachment content
     */
-    void openAttachment(KMime::Content *node, const QString &fileName);
+    void openAttachment(KMime::Content *node, const QUrl &url);
 
     /** Delete the attachment the @param node points to. Returns false if the user
     cancelled the deletion, true in all other cases (including failure to delete

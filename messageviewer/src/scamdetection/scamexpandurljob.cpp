@@ -71,7 +71,7 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
         deleteLater();
         return;
     }
-    const QUrl newUrl = QStringLiteral("http://api.longurl.org/v2/expand?url=%1&format=json").arg(url.url());
+    const QUrl newUrl(QStringLiteral("http://api.longurl.org/v2/expand?url=%1&format=json").arg(url.url()));
 
     qCDebug(MESSAGEVIEWER_LOG) << " newUrl " << newUrl;
     QNetworkReply *reply = d->mNetworkAccessManager->get(QNetworkRequest(newUrl));

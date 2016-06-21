@@ -106,7 +106,7 @@ if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
   endif()
 endif()
 
-
+add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 add_subdirectory(mimetreeparser)
 add_subdirectory(messageviewer)

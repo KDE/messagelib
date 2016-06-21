@@ -380,7 +380,7 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
     }
     //KMime::ContentIndex index( urlParts[1] );
     *path = QUrl::fromPercentEncoding(urlParts.at(2).toLatin1());
-    return w->nodeFromUrl(urlParts.at(1));
+    return w->nodeFromUrl(QUrl(urlParts.at(1)));
 }
 
 bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url, ViewerPrivate *w) const
@@ -927,9 +927,8 @@ bool AttachmentURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         w->scrollToAttachment(node);
     }
     if (shouldShowDialog)
-        // PENDING(romain_kdab) : replace with toLocalFile() ?
     {
-        w->openAttachment(node, w->nodeHelper()->tempFileUrlFromNode(node).path());
+        w->openAttachment(node, w->nodeHelper()->tempFileUrlFromNode(node));
     }
 
     return true;
