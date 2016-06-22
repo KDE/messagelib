@@ -42,8 +42,7 @@
 #include <QFont>
 #include <QPalette>
 
-namespace MessageViewer
-{
+using namespace MessageViewer;
 
 CSSHelper::CSSHelper(const QPaintDevice *pd)
     : CSSHelperBase(pd)
@@ -149,6 +148,3 @@ QString CSSHelper::htmlHead(bool fixed) const
         QLatin1String("</style></head>\n"
                       "<body>\n");
 }
-
-}
-
