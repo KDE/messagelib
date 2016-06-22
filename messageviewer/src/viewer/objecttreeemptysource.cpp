@@ -94,7 +94,7 @@ int EmptySource::levelQuote() const
 
 const QTextCodec *EmptySource::overrideCodec()
 {
-    return 0;
+    return Q_NULLPTR;
 }
 
 QString EmptySource::createMessageHeader(KMime::Message *message)
@@ -105,7 +105,7 @@ QString EmptySource::createMessageHeader(KMime::Message *message)
 
 QObject *EmptySource::sourceObject()
 {
-    return 0;
+    return Q_NULLPTR;
 }
 
 const MimeTreeParser::AttachmentStrategy *EmptySource::attachmentStrategy()
@@ -115,12 +115,12 @@ const MimeTreeParser::AttachmentStrategy *EmptySource::attachmentStrategy()
 
 MimeTreeParser::HtmlWriter *EmptySource::htmlWriter()
 {
-    return 0;
+    return Q_NULLPTR;
 }
 
 CSSHelperBase *EmptySource::cssHelper()
 {
-    return 0;
+    return Q_NULLPTR;
 }
 
 bool EmptySource::autoImportKeys() const
