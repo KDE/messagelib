@@ -26,6 +26,7 @@ class QString;
 
 namespace MessageViewer
 {
+class CSSHelperBase;
 
 /** An ObjectTreeSource that does not work on anything */
 class EmptySourcePrivate;
@@ -45,7 +46,7 @@ public:
     QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE;
     const MimeTreeParser::AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE;
     MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE;
-    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE;
+    virtual CSSHelperBase *cssHelper();
     QObject *sourceObject() Q_DECL_OVERRIDE;
 
     bool autoImportKeys() const Q_DECL_OVERRIDE;

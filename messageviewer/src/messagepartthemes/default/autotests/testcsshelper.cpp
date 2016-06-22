@@ -27,7 +27,7 @@
 using namespace MessageViewer::Test;
 
 TestCSSHelper::TestCSSHelper(const QPaintDevice *pd) :
-    MimeTreeParser::CSSHelperBase(pd)
+    MessageViewer::CSSHelperBase(pd)
 {
     mRecycleQuoteColors = false;
     mBackgroundColor = QColor(0xff, 0xff, 0xff);

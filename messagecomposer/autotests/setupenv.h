@@ -23,6 +23,7 @@
 
 #include <gpgme++/key.h>
 #include <MessageViewer/ObjectTreeEmptySource>
+#include <MessageViewer/CSSHelperBase>
 
 namespace MessageComposer
 {
@@ -51,7 +52,7 @@ class TestObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
     TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
-                         MimeTreeParser::CSSHelperBase *cssHelper)
+                         MessageViewer::CSSHelperBase *cssHelper)
         : mWriter(writer), mCSSHelper(cssHelper)
     {
     }
@@ -59,13 +60,13 @@ public:
     MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
         return mWriter;
     }
-    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
+    MessageViewer::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
         return mCSSHelper;
     }
 
 private:
     MimeTreeParser::HtmlWriter *mWriter;
-    MimeTreeParser::CSSHelperBase *mCSSHelper;
+    MessageViewer::CSSHelperBase *mCSSHelper;
 };
 
 }

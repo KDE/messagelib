@@ -17,7 +17,6 @@
   02110-1301, USA.
 */
 #include "interfaces/htmlwriter.h"
-#include "viewer/csshelperbase.h"
 
 #include <KMime/Message>
 
@@ -39,28 +38,6 @@ public:
     void extraHead(const QString &) Q_DECL_OVERRIDE {}
 
     QString html;
-};
-
-class TestCSSHelper : public MimeTreeParser::CSSHelperBase
-{
-public:
-    TestCSSHelper() : MimeTreeParser::CSSHelperBase(0)
-    {
-        for (int i = 0; i < 3; ++i) {
-            mQuoteColor[i] = QColor(0x00, 0x80 - i * 0x10, 0x00);
-        }
-    }
-    virtual ~TestCSSHelper() {}
-
-    QString nonQuotedFontTag() const
-    {
-        return QStringLiteral("<");
-    }
-
-    QString quoteFontTag(int) const
-    {
-        return QStringLiteral("<");
-    }
 };
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile);

@@ -45,7 +45,6 @@ public:
     QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE;
     const MimeTreeParser::AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE;
     MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE;
-    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE;
     QObject *sourceObject() Q_DECL_OVERRIDE;
 
     bool autoImportKeys() const Q_DECL_OVERRIDE;

@@ -46,10 +46,8 @@ void setupEnv();
 class TestObjectTreeSource : public MimeTreeParser::Interface::ObjectTreeSource
 {
 public:
-    TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
-                         MimeTreeParser::CSSHelperBase *cssHelper)
+    TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer)
         : mWriter(writer)
-        , mCSSHelper(cssHelper)
         , mAttachmentStrategy(QStringLiteral("smart"))
         , mHtmlLoadExternal(false)
         , mHtmlMail(true)
@@ -59,9 +57,6 @@ public:
 
     MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
         return mWriter;
-    }
-    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
-        return mCSSHelper;
     }
 
     bool htmlLoadExternal() const Q_DECL_OVERRIDE
@@ -160,7 +155,6 @@ public:
     }
 private:
     MimeTreeParser::HtmlWriter *mWriter;
-    MimeTreeParser::CSSHelperBase *mCSSHelper;
     QString mAttachmentStrategy;
     BodyPartFormatterBaseFactory mBodyPartFormatterBaseFactory;
     bool mHtmlLoadExternal;

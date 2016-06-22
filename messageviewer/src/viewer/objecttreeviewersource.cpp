@@ -94,11 +94,6 @@ MimeTreeParser::HtmlWriter *MailViewerSource::htmlWriter()
     return mViewer->htmlWriter();
 }
 
-MimeTreeParser::CSSHelperBase *MailViewerSource::cssHelper()
-{
-    return mViewer->cssHelper();
-}
-
 bool MailViewerSource::autoImportKeys() const
 {
     return MessageViewer::MessageViewerSettings::self()->autoImportKeys();
@@ -121,5 +116,5 @@ const MimeTreeParser::BodyPartFormatterBaseFactory *MailViewerSource::bodyPartFo
 
 MimeTreeParser::Interface::MessagePartRendererPtr MailViewerSource::messagePartTheme(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
 {
-    return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart));
+    return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart, mViewer->cssHelper()));
 }

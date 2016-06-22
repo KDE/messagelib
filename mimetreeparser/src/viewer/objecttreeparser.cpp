@@ -38,7 +38,6 @@
 
 #include "attachmentstrategy.h"
 #include "bodypartformatterbasefactory.h"
-#include "csshelperbase.h"
 #include "nodehelper.h"
 #include "messagepart.h"
 #include "partnodebodypart.h"
@@ -525,11 +524,6 @@ HtmlWriter *ObjectTreeParser::htmlWriter() const
         return mHtmlWriter;
     }
     return mSource->htmlWriter();
-}
-
-CSSHelperBase *ObjectTreeParser::cssHelper() const
-{
-    return mSource->cssHelper();
 }
 
 MimeTreeParser::NodeHelper *ObjectTreeParser::nodeHelper() const

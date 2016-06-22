@@ -25,9 +25,9 @@
 #include "htmlblock.h"
 #include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
+#include "viewer/csshelperbase.h"
 
 #include <MimeTreeParser/HtmlWriter>
-#include <MimeTreeParser/CSSHelperBase>
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <GrantleeTheme/qtresourcetemplateloader.h>
@@ -453,10 +453,11 @@ public:
 class MimeTreeParser::DefaultRendererPrivate
 {
 public:
-    DefaultRendererPrivate(DefaultRenderer *qPtr, const Interface::MessagePart::Ptr &msgPart)
+    DefaultRendererPrivate(DefaultRenderer *qPtr, const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
         : mMsgPart(msgPart)
         , q(qPtr)
         , mOldWriter(msgPart->htmlWriter())
+        , mCSSHelper(cssHelper)
     {
         initializeGrantleeRenderer();
         mHtml = renderFactory(mMsgPart, QSharedPointer<CacheHtmlWriter>());
@@ -470,7 +471,7 @@ public:
     {
         auto mp = mMsgPart.dynamicCast<MessagePart>();
         if (mp) {
-            return mp->cssHelper();
+            return mCSSHelper;
         }
         return Q_NULLPTR;
     }
@@ -1368,12 +1369,13 @@ private:
     HtmlWriter *mOldWriter;
 
     Grantlee::Engine *m_engine;
+    CSSHelperBase *mCSSHelper;
     QString mCollapseIcon;
     QString mExpandIcon;
 };
 
-DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart)
-    : d(new MimeTreeParser::DefaultRendererPrivate(this, msgPart))
+DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
+    : d(new MimeTreeParser::DefaultRendererPrivate(this, msgPart, cssHelper))
 {
 }
 

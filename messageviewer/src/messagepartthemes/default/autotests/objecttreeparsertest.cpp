@@ -22,7 +22,7 @@
 
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/HtmlWriter>
-#include <MimeTreeParser/CSSHelperBase>
+#include <MessageViewer/CSSHelperBase>
 
 #include <QTest>
 

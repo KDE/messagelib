@@ -19,7 +19,6 @@
 
 #include "messagepart.h"
 #include "mimetreeparser_debug.h"
-#include "csshelperbase.h"
 #include "cryptohelper.h"
 #include "objecttreeparser.h"
 #include "interfaces/htmlwriter.h"
@@ -114,12 +113,6 @@ bool MessagePart::isHtml() const
 bool MessagePart::isHidden() const
 {
     return false;
-}
-
-CSSHelperBase *MessagePart::cssHelper() const
-{
-    Q_ASSERT(mOtp);
-    return mOtp->cssHelper();
 }
 
 Interface::ObjectTreeSource *MessagePart::source() const

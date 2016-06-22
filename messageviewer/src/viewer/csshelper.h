@@ -32,14 +32,14 @@
 #ifndef __MESSAGEVIEWER_CSSHELPER_H__
 #define __MESSAGEVIEWER_CSSHELPER_H__
 
-#include <MimeTreeParser/CSSHelperBase>
+#include <MessageViewer/CSSHelperBase>
 
 #include "messageviewer_export.h"
 
 namespace MessageViewer
 {
 
-class MESSAGEVIEWER_EXPORT CSSHelper : public MimeTreeParser::CSSHelperBase
+class MESSAGEVIEWER_EXPORT CSSHelper : public CSSHelperBase
 {
 public:
     explicit CSSHelper(const QPaintDevice *pd);

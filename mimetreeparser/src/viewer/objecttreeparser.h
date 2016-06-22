@@ -67,7 +67,6 @@ typedef QSharedPointer<MessagePart> MessagePartPtr;
 class PartMetaData;
 class ViewerPrivate;
 class HtmlWriter;
-class CSSHelperBase;
 class AttachmentStrategy;
 class NodeHelper;
 class MessagePart;
@@ -337,8 +336,6 @@ public:
     const AttachmentStrategy *attachmentStrategy() const;
 
     HtmlWriter *htmlWriter() const;
-
-    CSSHelperBase *cssHelper() const;
 
     NodeHelper *nodeHelper() const;
 

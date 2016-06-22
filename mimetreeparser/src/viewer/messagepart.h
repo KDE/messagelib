@@ -97,7 +97,6 @@ public:
     void setHtmlWriter(HtmlWriter *htmlWriter) const Q_DECL_OVERRIDE;
 
     Interface::ObjectTreeSource *source() const;
-    CSSHelperBase *cssHelper() const;
     KMime::Content *attachmentNode() const;
 
 protected:

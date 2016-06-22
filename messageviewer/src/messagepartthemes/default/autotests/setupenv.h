@@ -48,7 +48,7 @@ class ObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
     ObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
-                     MimeTreeParser::CSSHelperBase *cssHelper)
+                     MessageViewer::CSSHelperBase *cssHelper)
         : mWriter(writer)
         , mCSSHelper(cssHelper)
         , mAttachmentStrategy(QStringLiteral("smart"))
@@ -61,7 +61,8 @@ public:
     MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
         return mWriter;
     }
-    MimeTreeParser::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
+
+    CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
         return mCSSHelper;
     }
 
@@ -157,7 +158,7 @@ public:
 
 private:
     MimeTreeParser::HtmlWriter *mWriter;
-    MimeTreeParser::CSSHelperBase *mCSSHelper;
+    MessageViewer::CSSHelperBase *mCSSHelper;
     QString mAttachmentStrategy;
     MimeTreeParser::BodyPartFormatterBaseFactory mBodyPartFormatterBaseFactory;
     bool mHtmlLoadExternal;

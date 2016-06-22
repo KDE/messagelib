@@ -58,6 +58,7 @@ set(libmessageviewer_viewer_SRCS
     viewer/bodypartformatterfactory.cpp
     viewer/bodypartformatterfactorysingleton.cpp
     viewer/csshelper.cpp
+    viewer/csshelperbase.cpp
     viewer/editorwatcher.cpp
     viewer/objecttreeemptysource.cpp
     viewer/objecttreeviewersource.cpp
@@ -276,6 +277,7 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
 ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     HEADER_NAMES
     Viewer
+    CSSHelperBase
     CSSHelper
     ObjectTreeEmptySource
     EditorWatcher

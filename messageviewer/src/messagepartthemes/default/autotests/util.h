@@ -21,7 +21,7 @@
 #define __MESSAGEVIEWER_TESTS_UTIL_H__
 
 #include <MimeTreeParser/HtmlWriter>
-#include <MimeTreeParser/CSSHelperBase>
+#include <MessageViewer/CSSHelperBase>
 
 #include <KMime/Message>
 
@@ -51,10 +51,10 @@ public:
     QString html;
 };
 
-class CSSHelper : public MimeTreeParser::CSSHelperBase
+class CSSHelper : public MessageViewer::CSSHelperBase
 {
 public:
-    CSSHelper() : MimeTreeParser::CSSHelperBase(0)
+    CSSHelper() : MessageViewer::CSSHelperBase(0)
     {
         for (int i = 0; i < 3; ++i) {
             mQuoteColor[i] = QColor(0x00, 0x80 - i * 0x10, 0x00);

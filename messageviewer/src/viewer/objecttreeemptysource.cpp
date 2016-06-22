@@ -19,6 +19,7 @@
 
 #include "objecttreeemptysource.h"
 #include "viewer/viewer_p.h"
+#include "viewer/csshelperbase.h"
 
 #include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BodyPartFormatter>
@@ -117,7 +118,7 @@ MimeTreeParser::HtmlWriter *EmptySource::htmlWriter()
     return 0;
 }
 
-MimeTreeParser::CSSHelperBase *EmptySource::cssHelper()
+CSSHelperBase *EmptySource::cssHelper()
 {
     return 0;
 }
@@ -144,6 +145,6 @@ const MimeTreeParser::BodyPartFormatterBaseFactory *EmptySource::bodyPartFormatt
 
 MimeTreeParser::Interface::MessagePartRendererPtr EmptySource::messagePartTheme(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
 {
-    return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart));
+    return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart, cssHelper()));
 }
 

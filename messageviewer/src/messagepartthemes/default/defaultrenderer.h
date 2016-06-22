@@ -37,12 +37,13 @@ typedef QSharedPointer<MessagePart> MessagePartPtr;
 namespace MessageViewer
 {
 
+class CSSHelperBase;
 class DefaultRendererPrivate;
 
 class DefaultRenderer : public MimeTreeParser::Interface::MessagePartRenderer
 {
 public:
-    DefaultRenderer(const MimeTreeParser::Interface::MessagePartPtr& msgPart);
+    DefaultRenderer(const MimeTreeParser::Interface::MessagePartPtr& msgPart, CSSHelperBase *cssHelder);
     ~DefaultRenderer();
 
     QString html() const Q_DECL_OVERRIDE;

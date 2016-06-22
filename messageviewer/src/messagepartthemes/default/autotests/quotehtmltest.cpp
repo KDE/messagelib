@@ -23,7 +23,7 @@
 
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/HtmlWriter>
-#include <MimeTreeParser/CSSHelperBase>
+#include <MessageViewer/CSSHelperBase>
 #include <MimeTreeParser/MessagePart>
 
 #include <QTest>
@@ -59,6 +59,6 @@ void QuoteHtmlTest::testQuoteHtml()
     MimeTreeParser::ObjectTreeParser otp(&emptySource);
     MimeTreeParser::MessagePart::Ptr part(new MimeTreeParser::MessagePart(&otp, data));
 
-    DefaultRenderer renderer(part);
+    DefaultRenderer renderer(part, &testCSSHelper);
     QCOMPARE(renderer.html(), result);
 }

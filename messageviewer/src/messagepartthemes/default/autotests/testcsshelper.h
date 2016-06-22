@@ -20,14 +20,14 @@
 #ifndef __MESSSAGEVIEWER_TESTCSSHELPER_H__
 #define __MESSSAGEVIEWER_TESTCSSHELPER_H__
 
-#include <MimeTreeParser/CSSHelperBase>
+#include <MessageViewer/CSSHelperBase>
 
 namespace MessageViewer
 {
 namespace Test
 {
 
-class TestCSSHelper : public MimeTreeParser::CSSHelperBase
+class TestCSSHelper : public MessageViewer::CSSHelperBase
 {
 public:
     explicit TestCSSHelper(const QPaintDevice *pd);

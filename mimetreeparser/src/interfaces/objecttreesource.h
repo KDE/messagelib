@@ -31,7 +31,6 @@ class QTextCodec;
 namespace MimeTreeParser
 {
 class HtmlWriter;
-class CSSHelperBase;
 class AttachmentStrategy;
 class BodyPartFormatterBaseFactory;
 namespace Interface
@@ -90,9 +89,6 @@ public:
 
     /** Return the html write object */
     virtual HtmlWriter *htmlWriter() = 0;
-
-    /** Return the css helper object */
-    virtual CSSHelperBase *cssHelper() = 0;
 
     /** The source object behind the interface. */
     virtual QObject *sourceObject() = 0;
