@@ -37,6 +37,8 @@ TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
 
 
     mEditor = new QTextEdit(this);
+    mEditor->setAcceptRichText(false);
+    mEditor->setPlainText(QStringLiteral("qt.jQuery('img').each( function () { qt.jQuery(this).css('-webkit-transition', '-webkit-transform 2s'); qt.jQuery(this).css('-webkit-transform', 'rotate(180deg)') } ); undefined"));
     vboxLayout->addWidget(mEditor);
 
     QPushButton *executeQuery = new QPushButton(QStringLiteral("Execute Query"), this);
@@ -53,9 +55,9 @@ TestJQuerySupportWebEngine::~TestJQuerySupportWebEngine()
 
 void TestJQuerySupportWebEngine::slotExecuteQuery()
 {
-    const QString text = mEditor->toPlainText();
-    if (!text.isEmpty()) {
-
+    const QString code = mEditor->toPlainText();
+    if (!code.isEmpty()) {
+        pageView->page()->runJavaScript(code);
     }
 }
 
