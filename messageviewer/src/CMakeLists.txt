@@ -159,6 +159,7 @@ set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/converthtmltoplaintext.cpp
     messagepartthemes/default/defaultrenderer.cpp
     messagepartthemes/default/htmlblock.cpp
+    messagepartthemes/default/messagepartrenderermanager.cpp
     )
 
 FILE(GLOB themesfiles_default_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/messagepartthemes/default/templates/*.html")
