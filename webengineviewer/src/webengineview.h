@@ -30,7 +30,7 @@ class WEBENGINEVIEWER_EXPORT WebEngineView : public QWebEngineView
 {
     Q_OBJECT
 public:
-    explicit WebEngineView(QWidget *parent = Q_NULLPTR);
+    explicit WebEngineView(bool useJQuery = false, QWidget *parent = Q_NULLPTR);
     ~WebEngineView();
 
     void clearRelativePosition();
