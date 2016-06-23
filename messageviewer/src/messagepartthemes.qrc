@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="asiconpart.html">messagepartthemes/default/templates/asiconpart.html</file>
+        <file alias="attachmentblock.html">messagepartthemes/default/templates/attachmentblock.html</file>
+        <file alias="certmessagepart.html">messagepartthemes/default/templates/certmessagepart.html</file>
+        <file alias="encapsulatedrfc822messagepart.html">messagepartthemes/default/templates/encapsulatedrfc822messagepart.html</file>
+        <file alias="encryptedmessagepart.html">messagepartthemes/default/templates/encryptedmessagepart.html</file>
+        <file alias="textmessagepart.html">messagepartthemes/default/templates/textmessagepart.html</file>
+        <file alias="htmlmessagepart.html">messagepartthemes/default/templates/htmlmessagepart.html</file>
+        <file alias="signedmessagepart.html">messagepartthemes/default/templates/signedmessagepart.html</file>
+    </qresource>
+</RCC>

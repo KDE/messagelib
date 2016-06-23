@@ -519,7 +519,7 @@ public:
         if (!mp->hasSubParts()) {
             return QString();
         }
-        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("encapsulatedrfc822messagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral(":/:/encapsulatedrfc822messagepart.html"));
         Grantlee::Context c;
         QObject block;
 
@@ -568,7 +568,7 @@ public:
         block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
 
         if (mp->mAsIcon != MimeTreeParser::NoIcon) {
-            t = getGrantleeTemplate(QStringLiteral("asiconpart.html"));
+            t = getGrantleeTemplate(QStringLiteral(":/asiconpart.html"));
             block.setProperty("iconSize", KIconLoader::global()->currentSize(KIconLoader::Desktop));
             block.setProperty("inline", (mp->mAsIcon == MimeTreeParser::IconInline));
 
@@ -602,7 +602,7 @@ public:
             block.setProperty("comment", comment);
 
         } else {
-            t = getGrantleeTemplate(QStringLiteral("textmessagepart.html"));
+            t = getGrantleeTemplate(QStringLiteral(":/textmessagepart.html"));
             auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
             renderSubParts(mp, _htmlWriter);
             c.insert(QStringLiteral("content"), _htmlWriter->html);
@@ -829,7 +829,7 @@ public:
 
     QString render(const HtmlMessagePart::Ptr &mp)
     {
-        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("htmlmessagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral(":/htmlmessagepart.html"));
         Grantlee::Context c;
         QObject block;
 
@@ -878,7 +878,7 @@ public:
         KMime::Content *node = mp->mNode;
         const auto metaData = mp->mMetaData;
 
-        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("encryptedmessagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral(":/encryptedmessagepart.html"));
         Grantlee::Context c;
         QObject block;
 
@@ -925,7 +925,7 @@ public:
 
         const bool isSMIME = cryptoProto && (cryptoProto == Kleo::CryptoBackendFactory::instance()->smime());
 
-        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("signedmessagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral(":/signedmessagepart.html"));
         Grantlee::Context c;
         QObject block;
 
@@ -1212,7 +1212,7 @@ public:
     QString render(const CertMessagePart::Ptr &mp)
     {
         const GpgME::ImportResult &importResult(mp->mImportResult);
-        Grantlee::Template t = getGrantleeTemplate(QStringLiteral("certmessagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral(":/certmessagepart.html"));
         Grantlee::Context c;
         QObject block;
 

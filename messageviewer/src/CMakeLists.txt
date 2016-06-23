@@ -162,9 +162,6 @@ set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/messagepartrenderermanager.cpp
     )
 
-FILE(GLOB themesfiles_default_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/messagepartthemes/default/templates/*.html")
-install(FILES ${themesfiles_default_SRCS} DESTINATION ${DATA_INSTALL_DIR}/messageviewer/messagepartthemes/default)
-
 set(libmessageviewer_messagepartthemes_SRCS
     ${libmessageviewer_messagepartthemes_default_SRCS}
     )
@@ -185,6 +182,8 @@ set(libmessageviewer_SRCS
     settings/messageviewersettings.cpp
     ${libmessageviewer_mailviewer_SRCS}
     )
+
+qt5_add_resources(libmessageviewer_SRCS messagepartthemes.qrc)
 
 ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
 
