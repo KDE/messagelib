@@ -36,7 +36,6 @@ TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
     pageView = new WebEngineViewer::WebEngineView(true, this);
     vboxLayout->addWidget(pageView);
 
-
     mEditor = new QTextEdit(this);
     mEditor->setAcceptRichText(false);
     mEditor->setPlainText(QStringLiteral("qt.jQuery('img').each( function () { qt.jQuery(this).css('-webkit-transition', '-webkit-transform 2s'); qt.jQuery(this).css('-webkit-transform', 'rotate(180deg)') } ); undefined"));
