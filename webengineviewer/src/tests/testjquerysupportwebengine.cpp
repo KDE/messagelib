@@ -32,6 +32,7 @@ TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
+    //true => use JQuery
     pageView = new WebEngineViewer::WebEngineView(true, this);
     vboxLayout->addWidget(pageView);
 
