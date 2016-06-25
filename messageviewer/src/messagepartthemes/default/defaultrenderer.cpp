@@ -1083,8 +1083,9 @@ public:
                             // extract the mail addresses (without '<''>')
                             // before including it into our string:
                             bool bStart = true;
+                            QStringList::ConstIterator end(blockAddrs.constEnd());
                             for (QStringList::ConstIterator it = blockAddrs.constBegin();
-                                    it != blockAddrs.constEnd(); ++it) {
+                                    it != end; ++it) {
                                 if (!bStart) {
                                     greenCaseWarning.append(QStringLiteral(", <br />&nbsp; &nbsp;"));
                                 }
