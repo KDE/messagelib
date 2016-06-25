@@ -443,6 +443,10 @@ public:
     {
     }
 
+    inline QString alignText()
+    {
+        return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+    }
     CSSHelperBase *cssHelper() const
     {
         auto mp = mMsgPart.dynamicCast<MessagePart>();
@@ -524,7 +528,7 @@ public:
         QObject block;
 
         c.insert(QStringLiteral("block"), &block);
-        block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
+        block.setProperty("dir", alignText());
         block.setProperty("link", mp->mOtp->nodeHelper()->asHREF(mp->mMessage.data(), QStringLiteral("body")));
 
         c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->mMessage.data()));
@@ -565,7 +569,7 @@ public:
         block.setProperty("comment", MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->asUnicodeString(), true));
         block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
         block.setProperty("showLink", mp->mShowLink);
-        block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
+        block.setProperty("dir", alignText());
 
         if (mp->mAsIcon != MimeTreeParser::NoIcon) {
             t = getGrantleeTemplate(QStringLiteral(":/asiconpart.html"));
@@ -904,7 +908,7 @@ public:
         }
         c.insert(QStringLiteral("block"), &block);
 
-        block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
+        block.setProperty("dir", alignText());
         block.setProperty("inProgress", metaData.inProgress);
         block.setProperty("isDecrypted", mp->decryptMessage());
         block.setProperty("isDecryptable", metaData.isDecryptable);
@@ -946,7 +950,7 @@ public:
         c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(cryptoProto));
         c.insert(QStringLiteral("block"), &block);
 
-        block.setProperty("dir", QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
+        block.setProperty("dir", alignText());
         block.setProperty("inProgress", metaData.inProgress);
         block.setProperty("errorText", metaData.errorText);
 
