@@ -519,7 +519,7 @@ public:
         if (!mp->hasSubParts()) {
             return QString();
         }
-        Grantlee::Template t = getGrantleeTemplate(QStringLiteral(":/:/encapsulatedrfc822messagepart.html"));
+        Grantlee::Template t = getGrantleeTemplate(QStringLiteral(":/encapsulatedrfc822messagepart.html"));
         Grantlee::Context c;
         QObject block;
 
