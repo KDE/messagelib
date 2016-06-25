@@ -123,8 +123,11 @@ bool PluginEditorManagerPrivate::initializePlugins()
 
 void PluginEditorManagerPrivate::loadPlugin(PluginEditorInfo *item)
 {
-    item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<PluginEditor>(q, QVariantList() << item->saveName());
-    item->plugin->setOrder(item->order);
+    KPluginLoader pluginLoader(item->metaData.fileName());
+    if (pluginLoader.factory()) {
+        item->plugin = pluginLoader.factory()->create<PluginEditor>(q, QVariantList() << item->saveName());
+        item->plugin->setOrder(item->order);
+    }
 }
 
 QVector<PluginEditor *> PluginEditorManagerPrivate::pluginsList() const

@@ -115,7 +115,10 @@ bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 
 void PluginEditorCheckBeforeSendManagerPrivate::loadPlugin(PluginEditorCheckBeforeSendInfo *item)
 {
-    item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<PluginEditorCheckBeforeSend>(q, QVariantList() << item->saveName());
+    KPluginLoader pluginLoader(item->metaData.fileName());
+    if (pluginLoader.factory()) {
+        item->plugin = pluginLoader.factory()->create<PluginEditorCheckBeforeSend>(q, QVariantList() << item->saveName());
+    }
 }
 
 QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManagerPrivate::pluginsList() const

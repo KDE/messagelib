@@ -138,7 +138,10 @@ bool ViewerPluginManagerPrivate::initializePluginList()
 
 void ViewerPluginManagerPrivate::loadPlugin(ViewerPluginInfo *item)
 {
-    item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<MessageViewer::ViewerPlugin>(q, QVariantList() << item->saveName());
+    KPluginLoader pluginLoader(item->metaData.fileName());
+    if (pluginLoader.factory()) {
+        item->plugin = pluginLoader.factory()->create<MessageViewer::ViewerPlugin>(q, QVariantList() << item->saveName());
+    }
 }
 
 QVector<ViewerPlugin *> ViewerPluginManagerPrivate::pluginsList() const

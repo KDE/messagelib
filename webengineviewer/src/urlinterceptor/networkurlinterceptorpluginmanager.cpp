@@ -139,7 +139,10 @@ QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPlu
 
 void NetworkUrlInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUrlInterceptorPluginInfo *item)
 {
-    item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<WebEngineViewer::NetworkPluginUrlInterceptor>(q, QVariantList() << item->saveName());
+    KPluginLoader pluginLoader(item->metaData.fileName());
+    if (pluginLoader.factory()) {
+        item->plugin = pluginLoader.factory()->create<WebEngineViewer::NetworkPluginUrlInterceptor>(q, QVariantList() << item->saveName());
+    }
 }
 
 NetworkUrlInterceptorPluginManager *NetworkUrlInterceptorPluginManager::self()

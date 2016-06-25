@@ -148,7 +148,10 @@ QVector<MessageViewer::HeaderStylePlugin *> HeaderStylePluginManagerPrivate::plu
 
 void HeaderStylePluginManagerPrivate::loadPlugin(HeaderStylePluginInfo *item)
 {
-    item->plugin = KPluginLoader(item->metaData.fileName()).factory()->create<MessageViewer::HeaderStylePlugin>(q, QVariantList() << item->saveName());
+    KPluginLoader pluginLoader(item->metaData.fileName());
+    if (pluginLoader.factory()) {
+        item->plugin = pluginLoader.factory()->create<MessageViewer::HeaderStylePlugin>(q, QVariantList() << item->saveName());
+    }
 }
 
 HeaderStylePluginManager *HeaderStylePluginManager::self()
