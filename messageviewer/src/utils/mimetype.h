@@ -23,7 +23,6 @@
 #include "messageviewer_export.h"
 
 #include <QString>
-class QMimeType;
 
 namespace KMime
 {

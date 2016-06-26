@@ -24,12 +24,6 @@
 #include <QSharedPointer>
 #include <QVector>
 
-class QTextCodec;
-
-namespace GpgME
-{
-class ImportResult;
-}
 
 namespace KMime
 {
@@ -38,14 +32,7 @@ class Content;
 
 namespace MimeTreeParser
 {
-class ObjectTreeParser;
 class HtmlWriter;
-class NodeHelper;
-
-namespace Interface
-{
-class ObjectTreeSource;
-}
 
 class HTMLBlock
 {

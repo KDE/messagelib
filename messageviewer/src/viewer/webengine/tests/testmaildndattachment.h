@@ -23,11 +23,6 @@
 #include <QWidget>
 #include <KMime/Message>
 
-namespace MessageViewer
-{
-class MailWebEngineView;
-}
-
 class TestMailDndAttachment : public QWidget
 {
     Q_OBJECT

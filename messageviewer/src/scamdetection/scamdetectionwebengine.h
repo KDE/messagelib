@@ -27,7 +27,6 @@
 class QWebEnginePage;
 namespace MessageViewer
 {
-class ScamCheckShortUrl;
 class ScamDetectionWebEnginePrivate;
 class MESSAGEVIEWER_EXPORT ScamDetectionWebEngine : public QObject
 {

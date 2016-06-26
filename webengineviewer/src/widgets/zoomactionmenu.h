@@ -22,7 +22,6 @@
 
 #include <KActionMenu>
 #include "webengineviewer_export.h"
-class KToggleAction;
 class KActionCollection;
 namespace WebEngineViewer
 {
