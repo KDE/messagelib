@@ -652,52 +652,62 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
     }
 
     QString indexStr = node->index().toString();
-    const KMime::Content *const topLevel = node->topLevel();
-    //if the node is an extra node, prepend the index of the extra node to the url
-    Q_FOREACH (KMime::Content *realNode, mExtraContents.keys()) {
-        const QList<KMime::Content *> &extraNodes = extraContents(realNode);
-        const int extraNodesSize(extraNodes.size());
-        for (int i = 0; i < extraNodesSize; ++i) {
-            if (topLevel == extraNodes[i]) {
-                indexStr = indexStr.prepend(QString::fromLatin1("%1:").arg(i));
-                const QString outsideIndex =  persistentIndex(realNode);
-                if (!outsideIndex.isEmpty()) {
-                    indexStr = QString::fromLatin1("%1:").arg(outsideIndex) + indexStr;
+    if (indexStr.isEmpty()) {
+        Q_FOREACH (KMime::Content *realNode, mExtraContents.keys()) {
+            const auto &extraNodes = mExtraContents.value(realNode);
+            for (int i = 0; i < extraNodes.size(); i++) {
+                if (extraNodes[i] == node) {
+                    indexStr = QString::fromLatin1("e%1").arg(i);
+                    const QString parentIndex = persistentIndex(realNode);
+                    if (!parentIndex.isEmpty()) {
+                        indexStr = QString::fromLatin1("%1:%2").arg(parentIndex, indexStr);
+                    }
+                    return indexStr;
+                }
+            }
+        }
+    } else {
+        const KMime::Content *const topLevel = node->topLevel();
+        //if the node is an extra node, prepend the index of the extra node to the url
+        Q_FOREACH (KMime::Content *realNode, mExtraContents.keys()) {
+            const QList<KMime::Content *> &extraNodes = extraContents(realNode);
+            for (int i = 0; i < extraNodes.size(); ++i) {
+                KMime::Content *const extraNode = extraNodes[i];
+                if (topLevel == extraNode) {
+                    indexStr.prepend(QString::fromLatin1("e%1:").arg(i));
+                    const QString parentIndex = persistentIndex(realNode);
+                    if (!parentIndex.isEmpty()) {
+                        indexStr = QString::fromLatin1("%1:%2").arg(parentIndex, indexStr);
+                    }
+                    return indexStr;
                 }
             }
         }
     }
+
     return indexStr;
 }
 
 KMime::Content *NodeHelper::contentFromIndex(KMime::Content *node, const QString &persistentIndex) const
 {
-    KMime::Content *topLevel = node->topLevel();
-    if (persistentIndex.contains(QLatin1Char(':'))) {
-        //if the content was not found, it might be in an extra node. Get the index of the extra node (the first part of the url),
-        //and use the remaining part as a ContentIndex to find the node inside the extra node
-        QString left = persistentIndex.left(persistentIndex.indexOf(QLatin1Char(':')));
-        QString index = persistentIndex.mid(persistentIndex.indexOf(QLatin1Char(':')) + 1);
-
-        QList<KMime::Content *> extras = extraContents(topLevel);
-
-        if (index.contains(QLatin1Char(':'))) {
-            extras = extraContents(topLevel->content(KMime::ContentIndex(left)));
-            left = index.left(index.indexOf(QLatin1Char(':')));
-            index = index.mid(index.indexOf(QLatin1Char(':')) + 1);
-        }
-        const KMime::ContentIndex idx(index);
-        const int i = left.toInt();
-        if (i >= 0 && i < extras.size()) {
-            const KMime::Content *c = extras[i];
-            return c->content(idx);
-        }
-    } else {
-        if (topLevel) {
-            return topLevel->content(KMime::ContentIndex(persistentIndex));
+    KMime::Content *c = node->topLevel();
+    if (c) {
+        const QStringList pathParts = persistentIndex.split(QLatin1Char(':'), QString::SkipEmptyParts);
+        for (int i = 0; i < pathParts.size(); ++i) {
+            const QString &path = pathParts[i];
+            if (path.startsWith(QLatin1Char('e'))) {
+                const QList<KMime::Content*> &extraParts = mExtraContents.value(c);
+                const int idx = path.midRef(1, -1).toInt();
+                c = (idx < extraParts.size()) ? extraParts[idx] : Q_NULLPTR;
+            } else {
+                c = c->content(KMime::ContentIndex(path));
+            }
+            if (!c) {
+                break;
+            }
         }
     }
-    return 0;
+    return c;
 }
 
 QString NodeHelper::asHREF(const KMime::Content *node, const QString &place) const
@@ -719,7 +729,7 @@ KMime::Content *NodeHelper::fromHREF(const KMime::Message::Ptr &mMessage, const 
         // start of the index is something that is not a number followed by a dot: \D.
         // index is only made of numbers,"." and ":": ([0-9.:]+)
         // index is the last part of the folder name: /
-        const QRegExp rIndex(QStringLiteral("\\D\\.([0-9.:]+)/"));
+        const QRegExp rIndex(QStringLiteral("\\D\\.([e0-9.:]+)/"));
 
         //search the occurence at most at the end
         if (rIndex.lastIndexIn(path) != -1) {

@@ -21,6 +21,7 @@
 #include "viewer/nodehelper.h"
 
 #include <qtest.h>
+#include <QDebug>
 
 using namespace MimeTreeParser;
 
@@ -35,8 +36,13 @@ void NodeHelperTest::testPersistentIndex()
     NodeHelper helper;
 
     KMime::Content *node = new KMime::Content();
+    KMime::Content *node2 = new KMime::Content();
+    KMime::Content *node2Extra = new KMime::Content();
     KMime::Content *subNode = new KMime::Content();
     KMime::Content *subsubNode = new KMime::Content(), *subsubNode2 = new KMime::Content();
+    KMime::Content *node2ExtraSubNode = new KMime::Content();
+    KMime::Content *node2ExtraSubsubNode = new KMime::Content();
+    KMime::Content *node2ExtraSubsubNode2 = new KMime::Content();
     KMime::Content *extra = new KMime::Content(), *extra2 = new KMime::Content();
     KMime::Content *subExtra = new KMime::Content();
     KMime::Content *subsubExtra = new KMime::Content();
@@ -51,6 +57,14 @@ void NodeHelperTest::testPersistentIndex()
     helper.attachExtraContent(subNode, subExtra);
     helper.attachExtraContent(subsubNode2, subsubExtra);
 
+    // This simulates Opaque S/MIME signed and encrypted message with attachment
+    // (attachment is node2SubsubNode2)
+    node2Extra->addContent(node2ExtraSubNode);
+    node2ExtraSubNode->addContent(node2ExtraSubsubNode);
+    node2ExtraSubNode->addContent(node2ExtraSubsubNode2);
+    helper.attachExtraContent(node2, node2Extra);
+    helper.attachExtraContent(node2Extra, node2ExtraSubNode);
+
     /*  all content has a internal first child, so indexes starts at 2
      * node                 ""
      * -> subNode           "2"
@@ -58,16 +72,23 @@ void NodeHelperTest::testPersistentIndex()
      *    -> subsubNode2    "2.3"
      *
      * node                 ""
-     * -> extra             "0:"
-     * -> extra2            "1:"
+     * -> extra             "e0"
+     * -> extra2            "e1"
      *
      * subNode              "2"
-     * -> subExtra          "2:0:"
+     * -> subExtra          "2:e0"
      *
      * subsubNode2          "2.3"
-     * -> subsubExtra       "2.3:0:"
-     *    -> subsubExtraNode    "2.3:0:2"
+     * -> subsubExtra       "2.3:e0"
+     *    -> subsubExtraNode    "2.3:e0:2"
      *
+     * node2                ""
+     *
+     * node2                ""
+     * -> node2Extra        "e0"
+     *    -> node2ExtraSubNode        "e0:2"
+     *       -> node2ExtraSubsubNode  "e0:2.2"
+     *       -> node2ExtraSubsubNode2 "e0:2.3"
      */
 
     QCOMPARE(helper.persistentIndex(node), QStringLiteral(""));
@@ -85,20 +106,23 @@ void NodeHelperTest::testPersistentIndex()
     QCOMPARE(helper.persistentIndex(subsubNode2), QStringLiteral("2.3"));
     QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3")), subsubNode2);
 
-    QCOMPARE(helper.persistentIndex(extra), QStringLiteral("0:"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("0:")), extra);
+    QCOMPARE(helper.persistentIndex(extra), QStringLiteral("e0"));
+    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("e0")), extra);
 
-    QCOMPARE(helper.persistentIndex(extra2), QStringLiteral("1:"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("1:")), extra2);
+    QCOMPARE(helper.persistentIndex(extra2), QStringLiteral("e1"));
+    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("e1")), extra2);
 
-    QCOMPARE(helper.persistentIndex(subExtra), QStringLiteral("2:0:"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2:0:")), subExtra);
+    QCOMPARE(helper.persistentIndex(subExtra), QStringLiteral("2:e0"));
+    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2:e0")), subExtra);
 
-    QCOMPARE(helper.persistentIndex(subsubExtra), QStringLiteral("2.3:0:"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3:0:")), subsubExtra);
+    QCOMPARE(helper.persistentIndex(subsubExtra), QStringLiteral("2.3:e0"));
+    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3:e0")), subsubExtra);
 
-    QCOMPARE(helper.persistentIndex(subsubExtraNode), QStringLiteral("2.3:0:2"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3:0:2")), subsubExtraNode);
+    QCOMPARE(helper.persistentIndex(subsubExtraNode), QStringLiteral("2.3:e0:2"));
+    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3:e0:2")), subsubExtraNode);
+
+    QCOMPARE(helper.persistentIndex(node2ExtraSubsubNode2), QStringLiteral("e0:2.3"));
+    QCOMPARE(helper.contentFromIndex(node2, QStringLiteral("e0:2.3")), node2ExtraSubsubNode2);
 
     delete node;
 }
@@ -129,19 +153,19 @@ void NodeHelperTest::testHREF()
     url = QUrl(QStringLiteral(""));
     QCOMPARE(helper.fromHREF(msg, url), node);
 
-    url = QUrl(QStringLiteral("attachment:0:?place=body"));
+    url = QUrl(QStringLiteral("attachment:e0?place=body"));
     QCOMPARE(helper.fromHREF(msg, url), extra);
 
     url = QUrl(QStringLiteral("attachment:2.2?place=body"));
     QCOMPARE(helper.fromHREF(msg, url), subsubNode);
 
-    url = QUrl(QStringLiteral("attachment:2.3:0:2?place=body"));
+    url = QUrl(QStringLiteral("attachment:2.3:e0:2?place=body"));
     QCOMPARE(helper.fromHREF(msg, url), subsubExtraNode);
 
     QCOMPARE(helper.asHREF(node, QStringLiteral("body")), QStringLiteral("attachment:?place=body"));
-    QCOMPARE(helper.asHREF(extra, QStringLiteral("body")), QStringLiteral("attachment:0:?place=body"));
+    QCOMPARE(helper.asHREF(extra, QStringLiteral("body")), QStringLiteral("attachment:e0?place=body"));
     QCOMPARE(helper.asHREF(subsubNode, QStringLiteral("body")), QStringLiteral("attachment:2.2?place=body"));
-    QCOMPARE(helper.asHREF(subsubExtraNode, QStringLiteral("body")), QStringLiteral("attachment:2.3:0:2?place=body"));
+    QCOMPARE(helper.asHREF(subsubExtraNode, QStringLiteral("body")), QStringLiteral("attachment:2.3:e0:2?place=body"));
 }
 
 void NodeHelperTest::testLocalFiles()
