@@ -49,7 +49,6 @@ namespace MimeTreeParser
 {
 class ObjectTreeParser;
 class HtmlWriter;
-class NodeHelper;
 class HTMLBlock;
 typedef QSharedPointer<HTMLBlock> HTMLBlockPtr;
 

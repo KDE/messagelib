@@ -49,12 +49,6 @@ namespace KMime
 class Content;
 }
 
-namespace GpgME
-{
-class Error;
-class ImportResult;
-}
-
 namespace MimeTreeParser
 {
 
