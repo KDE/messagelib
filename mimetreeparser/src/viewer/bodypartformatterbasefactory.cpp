@@ -158,7 +158,7 @@ SubtypeRegistry::const_iterator BodyPartFormatterBaseFactory::createForIterator(
     }
 
     SubtypeRegistry::const_iterator subtype_it = subtype_reg.find(subtype);
-    qDebug() << type << subtype << subtype_reg.size();
+    qCWarning(MIMETREEPARSER_LOG) << type << subtype << subtype_reg.size();
     if (subtype_it == subtype_reg.end()) {
         subtype_it = subtype_reg.find("*");
     }
