@@ -823,10 +823,15 @@ void ViewerPrivate::displayMessage()
         //TODO: Insert link to clear error so that message might be resent
         const ErrorAttribute *const attr = mMessageItem.attribute<ErrorAttribute>();
         Q_ASSERT(attr);
-        const QColor foreground = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::NegativeText).color();
-        const QColor background = KColorScheme(QPalette::Active, KColorScheme::View).background(KColorScheme::NegativeBackground).color();
+        if (!mForegroundError.isValid()) {
+            const KColorScheme scheme = KColorScheme(QPalette::Active, KColorScheme::View);
+            mForegroundError = scheme.foreground(KColorScheme::NegativeText).color();
+            mBackgroundError = scheme.background(KColorScheme::NegativeBackground).color();
+        }
 
-        htmlWriter()->queue(QStringLiteral("<div style=\"background:%1;color:%2;border:1px solid %3\">%4</div>").arg(background.name(), foreground.name(), foreground.name(), attr->message().toHtmlEscaped()));
+        htmlWriter()->queue(QStringLiteral("<div style=\"background:%1;color:%2;border:1px solid %3\">%4</div>").arg(mBackgroundError.name(),
+                                                                                                                     mForegroundError.name(),
+                                                                                                                     mForegroundError.name(), attr->message().toHtmlEscaped()));
         htmlWriter()->queue(QStringLiteral("<p></p>"));
     }
 
@@ -1724,7 +1729,7 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
             } else {
                 popup.addAction(i18n("Open With..."), this, SLOT(slotAttachmentOpenWith()));
             }
-            popup.addAction(i18nc("to view something", "View"), this, SLOT(slotAttachmentView()));
+            popup.addAction(i18nc("to view something", "View"), this, &ViewerPrivate::slotAttachmentView);
         }
     }
 

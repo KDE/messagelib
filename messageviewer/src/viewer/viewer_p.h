@@ -666,6 +666,12 @@ public:
     KMime::Content *mMessagePartNode;
     QString mCurrentFileName;
     QString mMessagePath;
+
+
+    QColor mForegroundError;
+    QColor mBackgroundError;
+
+
     Viewer *const q;
     bool mShowFullToAddressList;
     bool mShowFullCcAddressList;
