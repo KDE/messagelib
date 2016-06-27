@@ -180,11 +180,11 @@ void SearchLineStatus::createMenuSearch()
                        i18nc("@action:inmenu Status of a message", "Action Item"),
                        Akonadi::MessageStatus::statusToAct().toQInt32());
 
-    createFilterAction(QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-thread-watch.png"))),
+    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-thread-watch.png")),
                        i18nc("@action:inmenu Status of a message", "Watched"),
                        Akonadi::MessageStatus::statusWatched().toQInt32());
 
-    createFilterAction(QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-thread-ignored.png"))),
+    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-thread-ignored.png")),
                        i18nc("@action:inmenu Status of a message", "Ignored"),
                        Akonadi::MessageStatus::statusIgnored().toQInt32());
 

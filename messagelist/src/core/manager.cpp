@@ -69,8 +69,8 @@ Manager::Manager()
     mPixmapMessageSent = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(64, 64));
     mPixmapMessageForwarded = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(64, 64));
     mPixmapMessageImportant = new QPixmap(QIcon::fromTheme(QStringLiteral("emblem-important")).pixmap(64, 64));       // "flag"
-    mPixmapMessageWatched = new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-thread-watch.png")));
-    mPixmapMessageIgnored = new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-thread-ignored.png")));
+    mPixmapMessageWatched = new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-watch.png")).pixmap(64, 64));
+    mPixmapMessageIgnored = new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-ignored.png")).pixmap(64, 64));
     mPixmapMessageSpam = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-junk")).pixmap(64, 64));
     mPixmapMessageHam = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")).pixmap(64, 64));
     mPixmapMessageFullySigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-verified")).pixmap(64, 64));
