@@ -94,7 +94,6 @@ MessagePart::~MessagePart()
 void MessagePart::html(bool decorate)
 {
     Q_UNUSED(decorate);
-    qDebug() << "whoohuu";
     static_cast<QueueHtmlWriter *>(d->mHtmlWriter)->replay();
 }
 
