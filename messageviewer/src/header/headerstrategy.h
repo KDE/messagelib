@@ -46,9 +46,9 @@ class MESSAGEVIEWER_EXPORT HeaderStrategy
 {
 protected:
     HeaderStrategy();
-    virtual ~HeaderStrategy();
 
 public:
+    virtual ~HeaderStrategy();
     //
     // Methods for handling the strategies:
     //

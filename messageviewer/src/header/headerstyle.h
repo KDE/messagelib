@@ -72,9 +72,9 @@ class MESSAGEVIEWER_EXPORT  HeaderStyle
 {
 protected:
     HeaderStyle();
-    virtual ~HeaderStyle();
 
 public:
+    virtual ~HeaderStyle();
     //
     // Methods for handling the styles:
     //
