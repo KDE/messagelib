@@ -33,7 +33,8 @@ StandardsHeaderStylePlugin::StandardsHeaderStylePlugin(QObject *parent, const QL
 
 StandardsHeaderStylePlugin::~StandardsHeaderStylePlugin()
 {
-
+    delete mHeaderStyle;
+    delete mHeaderStrategy;
 }
 
 HeaderStyle *StandardsHeaderStylePlugin::headerStyle() const
