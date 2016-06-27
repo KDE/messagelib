@@ -57,3 +57,8 @@ void PluginEditorCheckBeforeSend::emitConfigChanged()
 {
     Q_EMIT configChanged();
 }
+
+QString PluginEditorCheckBeforeSend::description() const
+{
+    return {};
+}

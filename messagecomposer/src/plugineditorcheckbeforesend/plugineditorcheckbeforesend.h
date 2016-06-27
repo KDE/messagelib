@@ -61,6 +61,8 @@ public:
 
     void emitConfigChanged();
 
+    virtual QString description() const;
+
 Q_SIGNALS:
     void configChanged();
 

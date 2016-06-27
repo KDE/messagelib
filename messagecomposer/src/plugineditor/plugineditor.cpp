@@ -53,3 +53,8 @@ int PluginEditor::order() const
 {
     return d->order;
 }
+
+QString PluginEditor::description() const
+{
+    return {};
+}
