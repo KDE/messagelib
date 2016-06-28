@@ -234,7 +234,7 @@ public:
     * @param templateName - the template to be loaded
     * @param data - data for the template
     */
-    void displaySplashPage(const QString &templateName, const QVariantHash &data);
+    void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
 
     /** Enable the displaying of messages again after an splash (or other) page was displayed */
     void enableMessageDisplay();

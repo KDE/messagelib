@@ -771,7 +771,7 @@ void ViewerPrivate::displaySplashPage(const QString &message)
     });
 }
 
-void ViewerPrivate::displaySplashPage(const QString &templateName, const QVariantHash &data)
+void ViewerPrivate::displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain)
 {
     mMsgDisplay = false;
     adjustLayout();
@@ -782,7 +782,7 @@ void ViewerPrivate::displaySplashPage(const QString &templateName, const QVarian
                                         QStringLiteral("messageviewer/about/"));
     GrantleeTheme::Theme theme = manager.theme(QStringLiteral("default"));
     if (theme.isValid()) {
-        mViewer->setHtml(theme.render(templateName, data),
+        mViewer->setHtml(theme.render(templateName, data, domain),
                          QUrl::fromLocalFile(theme.absolutePath() + QLatin1Char('/')));
     } else {
         qCDebug(MESSAGEVIEWER_LOG) << "Theme error: failed to find splash theme";

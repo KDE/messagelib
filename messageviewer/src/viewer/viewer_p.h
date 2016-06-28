@@ -255,7 +255,7 @@ public:
     bool decryptMessage() const;
 
     /** Display a generic HTML splash page instead of a message. */
-    void displaySplashPage(const QString &templateName, const QVariantHash &data);
+    void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
 
     void displaySplashPage(const QString &message);
 
