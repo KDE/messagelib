@@ -113,7 +113,6 @@ void MessagePartRendererManager::initializeRenderer()
     m_engine->addDefaultLibrary(QStringLiteral("kde_grantlee_plugin"));
 
     auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new GrantleeTheme::QtResourceTemplateLoader());
-    loader->setTemplateDirs(QStringList() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/messageviewer/messagepartthemes/default"), QStandardPaths::LocateDirectory));
     m_engine->addTemplateLoader(loader);
     if (!m_localized) {
         m_localized.reset(new GrantleeTheme::GrantleeKi18nLocalizer());
