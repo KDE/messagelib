@@ -27,6 +27,10 @@ namespace Grantlee
 {
 class Engine;
 }
+namespace GrantleeTheme
+{
+class GrantleeKi18nLocalizer;
+}
 
 namespace MessageViewer
 {
@@ -40,10 +44,11 @@ public:
     static MessagePartRendererManager *self();
 
     Grantlee::Template loadByName(const QString &name);
+    Grantlee::Context createContext();
 private:
     void initializeRenderer();
     Grantlee::Engine *m_engine;
-
+    QSharedPointer<GrantleeTheme::GrantleeKi18nLocalizer> m_localized;
 };
 }
 

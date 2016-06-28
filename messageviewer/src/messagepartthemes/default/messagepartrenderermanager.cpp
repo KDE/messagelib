@@ -22,6 +22,7 @@
 #include "messageviewer_debug.h"
 #include <QStandardPaths>
 #include <GrantleeTheme/qtresourcetemplateloader.h>
+#include <GrantleeTheme/grantleeki18nlocalizer.h>
 
 
 #include <gpgme++/verificationresult.h>
@@ -85,7 +86,8 @@ Q_GLOBAL_STATIC(MessagePartRendererManagerInstancePrivate, sInstance)
 
 MessagePartRendererManager::MessagePartRendererManager(QObject *parent)
     : QObject(parent),
-      m_engine(Q_NULLPTR)
+      m_engine(Q_NULLPTR),
+      m_localized(Q_NULLPTR)
 {
     initializeRenderer();
 }
@@ -108,10 +110,14 @@ void MessagePartRendererManager::initializeRenderer()
     m_engine->setSmartTrimEnabled(true);
     m_engine->addDefaultLibrary(QStringLiteral("grantlee_i18n"));
     m_engine->addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
+    m_engine->addDefaultLibrary(QStringLiteral("kde_grantlee_plugin"));
 
     auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new GrantleeTheme::QtResourceTemplateLoader());
     loader->setTemplateDirs(QStringList() << QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("/messageviewer/messagepartthemes/default"), QStandardPaths::LocateDirectory));
     m_engine->addTemplateLoader(loader);
+    if (!m_localized) {
+        m_localized.reset(new GrantleeTheme::GrantleeKi18nLocalizer());
+    }
 }
 
 Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
@@ -121,4 +127,11 @@ Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
         qCWarning(MESSAGEVIEWER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
     }
     return t;
+}
+
+Grantlee::Context MessagePartRendererManager::createContext()
+{
+    Grantlee::Context c;
+    //FIXME c.setLocalizer(m_localized);
+    return c;
 }

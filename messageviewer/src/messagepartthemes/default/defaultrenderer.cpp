@@ -523,7 +523,7 @@ public:
             return QString();
         }
         Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/encapsulatedrfc822messagepart.html"));
-        Grantlee::Context c;
+        Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
         QObject block;
 
         c.insert(QStringLiteral("block"), &block);
@@ -559,7 +559,7 @@ public:
         }
 
         Grantlee::Template t;
-        Grantlee::Context c;
+        Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
         QObject block;
         c.insert(QStringLiteral("block"), &block);
 
@@ -833,7 +833,7 @@ public:
     QString render(const HtmlMessagePart::Ptr &mp)
     {
         Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/htmlmessagepart.html"));
-        Grantlee::Context c;
+        Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
         QObject block;
 
         c.insert(QStringLiteral("block"), &block);
@@ -882,7 +882,7 @@ public:
         const auto metaData = mp->mMetaData;
 
         Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/encryptedmessagepart.html"));
-        Grantlee::Context c;
+        Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
         QObject block;
 
         if (metaData.isSigned) {
@@ -929,7 +929,7 @@ public:
         const bool isSMIME = cryptoProto && (cryptoProto == Kleo::CryptoBackendFactory::instance()->smime());
 
         Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/signedmessagepart.html"));
-        Grantlee::Context c;
+        Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
         QObject block;
 
         if (node) {
@@ -1217,7 +1217,7 @@ public:
     {
         const GpgME::ImportResult &importResult(mp->mImportResult);
         Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/certmessagepart.html"));
-        Grantlee::Context c;
+        Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
         QObject block;
 
         c.insert(QStringLiteral("block"), &block);
