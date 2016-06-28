@@ -131,6 +131,7 @@ Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
 Grantlee::Context MessagePartRendererManager::createContext()
 {
     Grantlee::Context c;
-    //FIXME c.setLocalizer(m_localized);
+    m_localized->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
+    c.setLocalizer(m_localized);
     return c;
 }
