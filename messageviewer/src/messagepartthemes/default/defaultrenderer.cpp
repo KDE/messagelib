@@ -955,7 +955,7 @@ public:
 
         block.setProperty("detailHeader", mp->source()->showSignatureDetails());
         block.setProperty("printing", false);
-        block.setProperty("addr", metaData.signerMailAddresses);
+        block.setProperty("addr", metaData.signerMailAddresses.join(QStringLiteral(",")));
         block.setProperty("technicalProblem", metaData.technicalProblem);
         block.setProperty("keyId", metaData.keyId);
         if (metaData.creationTime.isValid()) {      //should be handled inside grantlee but currently not possible see: https://bugs.kde.org/363475
