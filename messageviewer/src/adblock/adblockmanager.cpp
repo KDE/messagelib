@@ -46,8 +46,10 @@
 #include <QNetworkRequest>
 #include <QtConcurrent/QtConcurrentRun>
 #include <QFile>
+#include <QDir>
 #include <QDateTime>
 #include <QWebFrame>
+#include <QStandardPaths>
 #include <QRegularExpression>
 #include <KConfigGroup>
 
@@ -86,6 +88,8 @@ AdBlockManager::AdBlockManager(QObject *parent)
     : QObject(parent),
       d(new AdBlockManagerPrivate)
 {
+    const QString savedPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kmail2");
+    QDir().mkpath(savedPath);
     loadSettings();
 }
 
