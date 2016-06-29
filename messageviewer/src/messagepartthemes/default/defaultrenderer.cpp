@@ -914,6 +914,7 @@ public:
         block.setProperty("decryptIcon", QUrl::fromLocalFile(IconNameCache::instance()->iconPath(QStringLiteral("document-decrypt"), KIconLoader::Small)).url());
         block.setProperty("errorText", metaData.errorText);
         block.setProperty("noSecKey", mp->mNoSecKey);
+        block.setProperty("iconSize", MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
 
         const auto html = t->render(&c);
 
