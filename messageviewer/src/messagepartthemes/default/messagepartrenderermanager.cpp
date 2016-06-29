@@ -118,6 +118,7 @@ void MessagePartRendererManager::initializeRenderer()
     if (!m_localized) {
         m_localized.reset(new GrantleeTheme::GrantleeKi18nLocalizer());
     }
+    mCurrentIconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
 }
 
 Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
@@ -135,4 +136,9 @@ Grantlee::Context MessagePartRendererManager::createContext()
     m_localized->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
     c.setLocalizer(m_localized);
     return c;
+}
+
+int MessagePartRendererManager::iconCurrentSize() const
+{
+    return mCurrentIconSize;
 }

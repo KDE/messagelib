@@ -572,7 +572,7 @@ public:
 
         if (mp->mAsIcon != MimeTreeParser::NoIcon) {
             t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/asiconpart.html"));
-            block.setProperty("iconSize", KIconLoader::global()->currentSize(KIconLoader::Desktop));
+            block.setProperty("iconSize", MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
             block.setProperty("inline", (mp->mAsIcon == MimeTreeParser::IconInline));
 
             QString iconPath;

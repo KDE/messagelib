@@ -45,10 +45,12 @@ public:
 
     Grantlee::Template loadByName(const QString &name);
     Grantlee::Context createContext();
+    int iconCurrentSize() const;
 private:
     void initializeRenderer();
     Grantlee::Engine *m_engine;
     QSharedPointer<GrantleeTheme::GrantleeKi18nLocalizer> m_localized;
+    int mCurrentIconSize;
 };
 }
 
