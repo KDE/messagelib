@@ -22,7 +22,7 @@
 
 #include <QString>
 #include <grantlee/templateloader.h>
-#include <GrantleeTheme/grantleetheme.h>
+#include <GrantleeTheme/GrantleeTheme>
 #include "messageviewer_export.h"
 namespace KMime
 {

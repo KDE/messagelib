@@ -20,9 +20,10 @@
 
 #include "messagepartrenderermanager.h"
 #include "messageviewer_debug.h"
+#include <KIconLoader>
 #include <QStandardPaths>
-#include <GrantleeTheme/qtresourcetemplateloader.h>
-#include <GrantleeTheme/grantleeki18nlocalizer.h>
+#include <GrantleeTheme/GrantleeKi18nLocalizer>
+#include <GrantleeTheme/QtResourceTemplateLoader>
 
 
 #include <gpgme++/verificationresult.h>

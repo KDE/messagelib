@@ -31,7 +31,7 @@
 #include <MimeTreeParser/HtmlWriter>
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
-#include <GrantleeTheme/qtresourcetemplateloader.h>
+#include <GrantleeTheme/QtResourceTemplateLoader>
 
 #include <Libkleo/CryptoBackend>
 #include <Libkleo/CryptoBackendFactory>
