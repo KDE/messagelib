@@ -154,6 +154,9 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
 
 void ThreadingCache::save()
 {
+    if (mCacheId.isEmpty()) {
+        return;
+    }
     const QDir cacheDir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
     if (!cacheDir.exists(QStringLiteral("messagelist/threading"))) {
         if (!cacheDir.mkpath(QStringLiteral("messagelist/threading"))) {
@@ -164,7 +167,7 @@ void ThreadingCache::save()
 
     QFile cacheFile(cacheDir.filePath(QStringLiteral("messagelist/threading/%1").arg(mCacheId)));
     if (!cacheFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
-        qCWarning(MESSAGELIST_LOG) << "Failed to create cache file:" << cacheFile.errorString();
+        qCWarning(MESSAGELIST_LOG) << "Failed to create cache file:" << cacheFile.errorString() << " mCacheId "<<mCacheId;
         return;
     }
 
