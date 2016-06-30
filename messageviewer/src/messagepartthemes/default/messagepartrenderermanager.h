@@ -23,13 +23,10 @@
 #include <QObject>
 #include "messageviewer_export.h"
 #include <grantlee/template.h>
-namespace Grantlee
-{
-class Engine;
-}
+
 namespace GrantleeTheme
 {
-class GrantleeKi18nLocalizer;
+class Engine;
 }
 
 namespace MessageViewer
@@ -48,8 +45,7 @@ public:
     int iconCurrentSize() const;
 private:
     void initializeRenderer();
-    Grantlee::Engine *m_engine;
-    QSharedPointer<GrantleeTheme::GrantleeKi18nLocalizer> m_localized;
+    GrantleeTheme::Engine *m_engine;
     int mCurrentIconSize;
 };
 }

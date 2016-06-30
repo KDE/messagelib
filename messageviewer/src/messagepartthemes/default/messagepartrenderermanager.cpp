@@ -24,6 +24,7 @@
 #include <QStandardPaths>
 #include <GrantleeTheme/GrantleeKi18nLocalizer>
 #include <GrantleeTheme/QtResourceTemplateLoader>
+#include <GrantleeTheme/GrantleeThemeEngine>
 
 
 #include <gpgme++/verificationresult.h>
@@ -87,8 +88,7 @@ Q_GLOBAL_STATIC(MessagePartRendererManagerInstancePrivate, sInstance)
 
 MessagePartRendererManager::MessagePartRendererManager(QObject *parent)
     : QObject(parent),
-      m_engine(Q_NULLPTR),
-      m_localized(Q_NULLPTR)
+      m_engine(Q_NULLPTR)
 {
     initializeRenderer();
 }
@@ -107,17 +107,12 @@ void MessagePartRendererManager::initializeRenderer()
 {
     Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
     Grantlee::registerMetaType<const Kleo::CryptoBackend::Protocol *>();
-    m_engine = new Grantlee::Engine;
-    m_engine->setSmartTrimEnabled(true);
-    m_engine->addDefaultLibrary(QStringLiteral("grantlee_i18n"));
-    m_engine->addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
-    m_engine->addDefaultLibrary(QStringLiteral("kde_grantlee_plugin"));
+    m_engine = new GrantleeTheme::Engine;
+    m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
 
     auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new GrantleeTheme::QtResourceTemplateLoader());
     m_engine->addTemplateLoader(loader);
-    if (!m_localized) {
-        m_localized.reset(new GrantleeTheme::GrantleeKi18nLocalizer());
-    }
+
     mCurrentIconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
 }
 
@@ -133,8 +128,7 @@ Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
 Grantlee::Context MessagePartRendererManager::createContext()
 {
     Grantlee::Context c;
-    m_localized->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
-    c.setLocalizer(m_localized);
+    c.setLocalizer(m_engine->localizer());
     return c;
 }
 
