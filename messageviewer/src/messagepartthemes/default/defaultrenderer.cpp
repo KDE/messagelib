@@ -64,7 +64,6 @@ using namespace MessageViewer;
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const Kleo::CryptoBackend::Protocol *)
 
-
 static QString iconToDataUrl(const QString &iconPath)
 {
     QFile f(iconPath);
@@ -1318,7 +1317,6 @@ public:
 
         return QString();
     }
-
 
     QString mHtml;
     Interface::MessagePart::Ptr mMsgPart;

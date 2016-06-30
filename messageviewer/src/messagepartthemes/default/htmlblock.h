@@ -24,7 +24,6 @@
 #include <QSharedPointer>
 #include <QVector>
 
-
 namespace KMime
 {
 class Content;

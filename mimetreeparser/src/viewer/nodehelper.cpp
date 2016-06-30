@@ -696,7 +696,7 @@ KMime::Content *NodeHelper::contentFromIndex(KMime::Content *node, const QString
         for (int i = 0; i < pathParts.size(); ++i) {
             const QString &path = pathParts[i];
             if (path.startsWith(QLatin1Char('e'))) {
-                const QList<KMime::Content*> &extraParts = mExtraContents.value(c);
+                const QList<KMime::Content *> &extraParts = mExtraContents.value(c);
                 const int idx = path.midRef(1, -1).toInt();
                 c = (idx < extraParts.size()) ? extraParts[idx] : Q_NULLPTR;
             } else {

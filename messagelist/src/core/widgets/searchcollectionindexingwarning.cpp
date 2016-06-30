@@ -53,17 +53,16 @@ SearchCollectionIndexingWarning::~SearchCollectionIndexingWarning()
 {
 }
 
-Akonadi::CollectionFetchJob *SearchCollectionIndexingWarning::fetchCollections(const Akonadi::Collection::List& cols, bool recursive)
+Akonadi::CollectionFetchJob *SearchCollectionIndexingWarning::fetchCollections(const Akonadi::Collection::List &cols, bool recursive)
 {
     const Akonadi::CollectionFetchJob::Type type = recursive ? Akonadi::CollectionFetchJob::Recursive : Akonadi::CollectionFetchJob::Base;
     Akonadi::CollectionFetchJob *fetch = new Akonadi::CollectionFetchJob(cols, type, this);
     fetch->fetchScope().setAncestorRetrieval(Akonadi::CollectionFetchScope::None);
     fetch->fetchScope().setContentMimeTypes(QStringList() << Akonadi::Collection::mimeType()
-                                                          << QStringLiteral("message/rfc822"));
+                                            << QStringLiteral("message/rfc822"));
     fetch->fetchScope().setIncludeStatistics(true);
     return fetch;
 }
-
 
 void SearchCollectionIndexingWarning::setCollection(const Akonadi::Collection &collection)
 {
@@ -93,7 +92,7 @@ void SearchCollectionIndexingWarning::setCollection(const Akonadi::Collection &c
     connect(fetch, SIGNAL(finished(KJob*)), this, SLOT(queryRootCollectionFetchFinished(KJob*)));
 }
 
-void SearchCollectionIndexingWarning::queryRootCollectionFetchFinished(KJob* job)
+void SearchCollectionIndexingWarning::queryRootCollectionFetchFinished(KJob *job)
 {
     if (job->error()) {
         qCWarning(MESSAGELIST_LOG) << job->errorString();
@@ -101,7 +100,7 @@ void SearchCollectionIndexingWarning::queryRootCollectionFetchFinished(KJob* job
     }
 
     // Store the root collections
-    mCollections = qobject_cast<Akonadi::CollectionFetchJob*>(job)->collections();
+    mCollections = qobject_cast<Akonadi::CollectionFetchJob *>(job)->collections();
 
     if (job->property("recursiveQuery").toBool()) {
         // Fetch all descendants, if necessary
@@ -119,7 +118,7 @@ void SearchCollectionIndexingWarning::queryCollectionFetchFinished(KJob *job)
         return;
     }
 
-    mCollections += qobject_cast<Akonadi::CollectionFetchJob*>(job)->collections();
+    mCollections += qobject_cast<Akonadi::CollectionFetchJob *>(job)->collections();
     queryIndexerStatus();
 }
 

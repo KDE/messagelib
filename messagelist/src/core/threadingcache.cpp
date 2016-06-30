@@ -167,7 +167,7 @@ void ThreadingCache::save()
 
     QFile cacheFile(cacheDir.filePath(QStringLiteral("messagelist/threading/%1").arg(mCacheId)));
     if (!cacheFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
-        qCWarning(MESSAGELIST_LOG) << "Failed to create cache file:" << cacheFile.errorString() << " mCacheId "<<mCacheId;
+        qCWarning(MESSAGELIST_LOG) << "Failed to create cache file:" << cacheFile.errorString() << " mCacheId " << mCacheId;
         return;
     }
 

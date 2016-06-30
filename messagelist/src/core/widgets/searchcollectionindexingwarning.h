@@ -35,7 +35,8 @@ class IndexedItems;
 }
 }
 }
-namespace Akonadi {
+namespace Akonadi
+{
 class CollectionFetchJob;
 }
 namespace MessageList

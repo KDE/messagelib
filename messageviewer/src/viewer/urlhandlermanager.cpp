@@ -926,8 +926,7 @@ bool AttachmentURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     if (inHeader) {
         w->scrollToAttachment(node);
     }
-    if (shouldShowDialog)
-    {
+    if (shouldShowDialog) {
         w->openAttachment(node, w->nodeHelper()->tempFileUrlFromNode(node));
     }
 

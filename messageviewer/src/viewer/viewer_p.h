@@ -667,10 +667,8 @@ public:
     QString mCurrentFileName;
     QString mMessagePath;
 
-
     QColor mForegroundError;
     QColor mBackgroundError;
-
 
     Viewer *const q;
     bool mShowFullToAddressList;

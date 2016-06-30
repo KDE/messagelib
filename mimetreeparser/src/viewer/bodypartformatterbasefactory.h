@@ -39,7 +39,6 @@
 #include <map>
 #include <QByteArray>
 
-
 namespace MimeTreeParser
 {
 

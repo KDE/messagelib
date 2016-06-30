@@ -17,7 +17,6 @@
    02110-1301, USA.
 */
 
-
 #include "messagepartrenderermanager.h"
 #include "messageviewer_debug.h"
 #include <KIconLoader>
@@ -26,13 +25,11 @@
 #include <GrantleeTheme/QtResourceTemplateLoader>
 #include <GrantleeTheme/GrantleeThemeEngine>
 
-
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
 
 #include <Libkleo/CryptoBackend>
 #include <Libkleo/CryptoBackendFactory>
-
 
 #include <grantlee/context.h>
 #include <grantlee/engine.h>
@@ -63,8 +60,6 @@ inline QVariant TypeAccessor<const Kleo::CryptoBackend::Protocol *>::lookUp(cons
 }
 }
 
-
-
 using namespace MessageViewer;
 
 class MessagePartRendererManagerInstancePrivate
@@ -84,7 +79,6 @@ public:
 };
 
 Q_GLOBAL_STATIC(MessagePartRendererManagerInstancePrivate, sInstance)
-
 
 MessagePartRendererManager::MessagePartRendererManager(QObject *parent)
     : QObject(parent),

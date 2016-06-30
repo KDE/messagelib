@@ -111,8 +111,6 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     QWidget *topFrame = new QWidget(this);
     mainLayout->addWidget(topFrame);
 
-
-
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel);
     mUser1Button = new QPushButton;
     buttonBox->addButton(mUser1Button, QDialogButtonBox::ActionRole);

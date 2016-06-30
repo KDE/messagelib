@@ -69,7 +69,6 @@ void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
     params1.setCcAddresses(cc);
     params1.setToAddresses(to);
 
-
     MessageComposer::PluginEditorCheckBeforeSendParams params2 = params1;
     QVERIFY(params2 == params1);
     QCOMPARE(params2.isHtmlMail(), isHmlMail);

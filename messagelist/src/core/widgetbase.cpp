@@ -148,7 +148,7 @@ Widget::Widget(QWidget *pParent)
     d->quickSearchWarning = new QuickSearchWarning(this);
     g->addWidget(d->quickSearchWarning, 0);
     d->searchCollectionIndexingWarning = new SearchCollectionIndexingWarning(this);
-    g->addWidget( d->searchCollectionIndexingWarning, 0);
+    g->addWidget(d->searchCollectionIndexingWarning, 0);
 
     d->mView = new View(this);
     d->mView->setFrameStyle(QFrame::NoFrame);
