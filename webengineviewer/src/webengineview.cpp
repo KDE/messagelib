@@ -193,6 +193,7 @@ QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 void WebEngineView::slotLoadFinished()
 {
     page()->runJavaScript(d->mJquery);
+    Q_EMIT jQueryLoaded();
 }
 
 void WebEngineView::clearRelativePosition()

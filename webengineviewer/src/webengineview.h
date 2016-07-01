@@ -57,6 +57,10 @@ protected:
 
 private Q_SLOTS:
     void slotLoadFinished();
+
+Q_SIGNALS:
+    void jQueryLoaded();
+
 private:
     WebEngineViewPrivate *const d;
 };

@@ -24,11 +24,9 @@ using namespace MessageViewer;
 
 QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
 {
-    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
-                           "if (element) { "
-                           "    element.innerHTML += '%2';"
-                           "}").arg(elementStr).arg(delayedHtml);
+    const QString source = QString::fromLatin1("qt.jQuery('#%1').append('%2')").arg(elementStr).arg(delayedHtml);
     qDebug() << "QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :" << source;
+
     return source;
 }
 
