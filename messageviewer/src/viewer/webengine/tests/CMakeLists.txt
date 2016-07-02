@@ -52,3 +52,16 @@ add_executable(testmaildndattachment ${testmaildndattachment_test_SRCS})
 target_link_libraries(testmaildndattachment
     Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
+
+#####
+set(testjquerysupportmailwebengine_test_SRCS
+    testjquerysupportmailwebengine.cpp
+    )
+add_executable(testjquerysupportmailwebengine ${testjquerysupportmailwebengine_test_SRCS})
+
+target_link_libraries(testjquerysupportmailwebengine
+    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    )
+
+
+
