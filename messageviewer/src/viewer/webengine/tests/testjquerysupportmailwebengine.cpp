@@ -39,8 +39,8 @@ TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     viewer = new MessageViewer::Viewer(0);
     vboxLayout->addWidget(viewer);
-    viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"))/*KMime::Message::Ptr(msg)*/);
-    viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));
+    viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")));
+    viewer->setPluginName(QStringLiteral("enterprise"));
     viewer->setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::headerOnly());
 
     mEditor = new QTextEdit(this);
