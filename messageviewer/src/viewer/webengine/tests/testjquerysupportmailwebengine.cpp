@@ -45,8 +45,7 @@ TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
 
     mEditor = new QTextEdit(this);
     mEditor->setAcceptRichText(false);
-    mEditor->setPlainText(QStringLiteral("qt.jQuery('#attachmentInjectionPoint').click(function(){qt.jQuery(\"#attachmentkmailid\").toggle();});"));
-    //mEditor->setPlainText(QStringLiteral("qt.jQuery('img').each( function () { qt.jQuery(this).css('-webkit-transition', '-webkit-transform 2s'); qt.jQuery(this).css('-webkit-transform', 'rotate(180deg)') } ); undefined"));
+    mEditor->setPlainText(QStringLiteral("qt.jQuery('img').each( function () { qt.jQuery(this).css('-webkit-transition', '-webkit-transform 2s'); qt.jQuery(this).css('-webkit-transform', 'rotate(180deg)') } ); undefined"));
     vboxLayout->addWidget(mEditor);
 
     QPushButton *executeQuery = new QPushButton(QStringLiteral("Execute Query"), this);
