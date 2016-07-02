@@ -27,14 +27,21 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include <QTextEdit>
+#include <QFile>
+#include <MessageViewer/Viewer>
+
+
 
 TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     //true => use JQuery
-    pageView = new WebEngineViewer::WebEngineView(true, this);
-    vboxLayout->addWidget(pageView);
+
+    viewer = new MessageViewer::Viewer(0);
+    vboxLayout->addWidget(viewer);
+    viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"))/*KMime::Message::Ptr(msg)*/);
+    viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));
 
     mEditor = new QTextEdit(this);
     mEditor->setAcceptRichText(false);
@@ -44,8 +51,6 @@ TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
     QPushButton *executeQuery = new QPushButton(QStringLiteral("Execute Query"), this);
     connect(executeQuery, &QPushButton::clicked, this, &TestJQuerySupportMailWebEngine::slotExecuteQuery);
     vboxLayout->addWidget(executeQuery);
-
-    pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
 }
 
 TestJQuerySupportMailWebEngine::~TestJQuerySupportMailWebEngine()
@@ -53,11 +58,25 @@ TestJQuerySupportMailWebEngine::~TestJQuerySupportMailWebEngine()
 
 }
 
+KMime::Message::Ptr TestJQuerySupportMailWebEngine::readAndParseMail(const QString &mailFile)
+{
+    QFile file(QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    file.open(QIODevice::ReadOnly);
+    QByteArray ba = file.readAll();
+    qDebug() << ba;
+    const QByteArray data = ba;
+    Q_ASSERT(!data.isEmpty());
+    KMime::Message::Ptr msg(new KMime::Message);
+    msg->setContent(data);
+    msg->parse();
+    return msg;
+}
+
 void TestJQuerySupportMailWebEngine::slotExecuteQuery()
 {
     const QString code = mEditor->toPlainText();
     if (!code.isEmpty()) {
-        pageView->page()->runJavaScript(code);
+        viewer->runJavaScript(code);
     }
 }
 

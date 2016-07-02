@@ -21,11 +21,12 @@
 #define TestJQuerySupportMailWebEngine_H
 
 #include <QWidget>
-#include <qwebengineview.h>
-namespace WebEngineViewer
+#include <KMime/Message>
+namespace MessageViewer
 {
-class WebEngineView;
+class Viewer;
 }
+
 class QTextEdit;
 class TestJQuerySupportMailWebEngine : public QWidget
 {
@@ -38,7 +39,8 @@ private Q_SLOTS:
     void slotExecuteQuery();
 
 private:
-    WebEngineViewer::WebEngineView *pageView;
+    KMime::Message::Ptr readAndParseMail(const QString &mailFile);
+    MessageViewer::Viewer *viewer;
     QTextEdit *mEditor;
 };
 

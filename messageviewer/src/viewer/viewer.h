@@ -327,6 +327,7 @@ public:
     QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
+    void runJavaScript(const QString &code);
 Q_SIGNALS:
     void moveMessageToTrash();
     void executeMailAction(MessageViewer::Viewer::MailAction type);

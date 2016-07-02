@@ -645,5 +645,11 @@ QList<QAction *> Viewer::interceptorUrlActions(const WebEngineViewer::WebHitTest
     return d->interceptorUrlActions(result);
 }
 
+void Viewer::runJavaScript(const QString &code)
+{
+    Q_D(Viewer);
+    d->mViewer->page()->runJavaScript(code);
+}
+
 }
 
