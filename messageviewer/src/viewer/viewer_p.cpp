@@ -195,6 +195,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
       mHtmlWriter(0),
       mDecrytMessageOverwrite(false),
       mShowSignatureDetails(false),
+      mShowAttachmentQuicklist(true),
       mRecursionCountForDisplayMessage(0),
       mCurrentContent(0),
       mMessagePartNode(0),
@@ -1825,6 +1826,11 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
     if (child) {
         QString subHtml = renderAttachments(child, nextColor(bgColor));
         if (!subHtml.isEmpty()) {
+            QString visibility;
+            if (!mShowAttachmentQuicklist) {
+                visibility = QStringLiteral("display:none;");
+            }
+
 
             QString margin;
             if (node != mMessage.data() || headerStylePlugin()->hasMargin()) {
@@ -1834,8 +1840,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             const bool result = (node->contentType()->mediaType().toLower() == "message" || node->contentType()->mediaType().toLower() == "multipart" || node == mMessage.data());
             if (result)
                 html += QStringLiteral("<div id=\"attachmentid\" style=\"background:%1; %2"
-                                       "vertical-align:middle; float:%3;\">").arg(bgColor.name()).arg(margin)
-                        .arg(align);
+                                       "vertical-align:middle; float:%3; %4\">").arg(bgColor.name()).arg(margin).arg(align).arg(visibility);
             html += subHtml;
             if (result) {
                 html += QLatin1String("</div>");
@@ -2305,11 +2310,12 @@ QString ViewerPrivate::attachmentInjectionHtml()
         textAlign = QStringLiteral("left");
     }
 
+    const QString visibility = QStringLiteral("style=\"display:none;\"");
     link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign) +
-            QStringLiteral("<a id=\"kmailshowattachment\" href=\"%1\">").arg(urlHandleShow) +
+            QStringLiteral("<a id=\"kmailshowattachment\" href=\"%1\" %2>").arg(urlHandleShow).arg(mShowAttachmentQuicklist ? QString() : visibility) +
             QStringLiteral("<img id=\"imgid\" src=\"%1\" width=\"22\" height=\"22\">").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url()) +
             QStringLiteral("</a>") +
-            QStringLiteral("<a id=\"kmailhideattachment\" href=\"%1\" style=\"display:none;\">").arg(urlHandleHide) +
+            QStringLiteral("<a id=\"kmailhideattachment\" href=\"%1\" %2>").arg(urlHandleHide).arg(mShowAttachmentQuicklist ? visibility : QString()) +
             QStringLiteral("<img id=\"imgid\" src=\"%1\" width=\"22\" height=\"22\">").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url()) +
             QStringLiteral("</a>") +
             QStringLiteral("</div>");
@@ -2711,6 +2717,16 @@ void ViewerPrivate::setShowSignatureDetails(bool showDetails)
 void ViewerPrivate::setExternalWindow(bool b)
 {
     mExternalWindow = b;
+}
+
+bool ViewerPrivate::showAttachmentQuicklist() const
+{
+    return mShowAttachmentQuicklist;
+}
+
+void ViewerPrivate::setShowAttachmentQuicklist(bool showAttachmentQuicklist)
+{
+    mShowAttachmentQuicklist = showAttachmentQuicklist;
 }
 
 void ViewerPrivate::scrollToAttachment(KMime::Content *node)
