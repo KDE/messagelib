@@ -29,6 +29,7 @@
 #include <QTextEdit>
 #include <QFile>
 #include <MessageViewer/Viewer>
+#include <MimeTreeParser/AttachmentStrategy>
 
 
 
@@ -42,6 +43,7 @@ TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
     vboxLayout->addWidget(viewer);
     viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"))/*KMime::Message::Ptr(msg)*/);
     viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));
+    viewer->setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::headerOnly());
 
     mEditor = new QTextEdit(this);
     mEditor->setAcceptRichText(false);
