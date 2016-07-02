@@ -394,11 +394,6 @@ public:
     /** Show signature details. */
     void setShowSignatureDetails(bool showDetails = true);
 
-    /* show or hide the list that points to the attachments */
-    bool showAttachmentQuicklist() const;
-
-    /* show or hide the list that points to the attachments */
-    void setShowAttachmentQuicklist(bool showAttachmentQuicklist = true);
 
     void scrollToAttachment(KMime::Content *node);
     void setUseFixedFont(bool useFixedFont);
@@ -659,7 +654,6 @@ public:
     int mLevelQuote;
     bool mDecrytMessageOverwrite;
     bool mShowSignatureDetails;
-    bool mShowAttachmentQuicklist;
     bool mExternalWindow;
     int mRecursionCountForDisplayMessage;
     KMime::Content *mCurrentContent;

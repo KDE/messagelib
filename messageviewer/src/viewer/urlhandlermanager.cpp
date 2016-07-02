@@ -610,12 +610,8 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
             w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("showAttachmentQuicklist")) {
-            w->setShowAttachmentQuicklist(true);
-            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("hideAttachmentQuicklist")) {
-            w->setShowAttachmentQuicklist(false);
-            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("showFullToAddressList")) {
             w->setShowFullToAddressList(true);

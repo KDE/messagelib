@@ -195,7 +195,6 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
       mHtmlWriter(0),
       mDecrytMessageOverwrite(false),
       mShowSignatureDetails(false),
-      mShowAttachmentQuicklist(true),
       mRecursionCountForDisplayMessage(0),
       mCurrentContent(0),
       mMessagePartNode(0),
@@ -1827,11 +1826,6 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
         QString subHtml = renderAttachments(child, nextColor(bgColor));
         if (!subHtml.isEmpty()) {
 
-            QString visibility;
-            if (!mShowAttachmentQuicklist) {
-                visibility.append(QLatin1String("display:none;"));
-            }
-
             QString margin;
             if (node != mMessage.data() || headerStylePlugin()->hasMargin()) {
                 margin = QStringLiteral("padding:2px; margin:2px; ");
@@ -1839,9 +1833,9 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             QString align = headerStylePlugin()->alignment();
             const bool result = (node->contentType()->mediaType().toLower() == "message" || node->contentType()->mediaType().toLower() == "multipart" || node == mMessage.data());
             if (result)
-                html += QStringLiteral("<div style=\"background:%1; %2"
-                                       "vertical-align:middle; float:%3; %4\">").arg(bgColor.name()).arg(margin)
-                        .arg(align).arg(visibility);
+                html += QStringLiteral("<div id=\"attachmentid\" style=\"background:%1; %2"
+                                       "vertical-align:middle; float:%3;\">").arg(bgColor.name()).arg(margin)
+                        .arg(align);
             html += subHtml;
             if (result) {
                 html += QLatin1String("</div>");
@@ -2290,22 +2284,18 @@ HeaderStylePlugin *ViewerPrivate::headerStylePlugin() const
 
 QString ViewerPrivate::attachmentInjectionHtml()
 {
-    QString imgpath(picsPath());
-    QString urlHandle;
-    QString imgSrc;
-    if (!mShowAttachmentQuicklist) {
-        urlHandle.append(QStringLiteral("kmail:showAttachmentQuicklist"));
-        imgSrc.append(QStringLiteral("quicklistClosed.png"));
-    } else {
-        urlHandle.append(QStringLiteral("kmail:hideAttachmentQuicklist"));
-        imgSrc.append(QStringLiteral("quicklistOpened.png"));
-    }
 
     const QColor background = KColorScheme(QPalette::Active, KColorScheme::View).background().color();
     QString html = renderAttachments(mMessage.data(), background);
     if (html.isEmpty()) {
         return QString();
     }
+
+    QString imgpath(picsPath());
+    const QString urlHandleShow = QStringLiteral("kmail:showAttachmentQuicklist");
+    const QString imgSrcShow = QStringLiteral("quicklistClosed.png");
+    const QString urlHandleHide = QStringLiteral("kmail:hideAttachmentQuicklist");
+    const QString imgSrcHide = QStringLiteral("quicklistOpened.png");
 
     //TODO make it as a virtual method
     QString link;
@@ -2315,10 +2305,14 @@ QString ViewerPrivate::attachmentInjectionHtml()
         textAlign = QStringLiteral("left");
     }
 
-    link += QStringLiteral("<div id=\"attachmentkmailid\" style=\"text-align: %1;\">").arg(textAlign) +
-            QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
-            QStringLiteral("<img src=\"%1\" width=\"22\" height=\"22\">").arg(QUrl::fromLocalFile(imgpath + imgSrc).url()) +
-            QStringLiteral("</a></div>");
+    link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign) +
+            QStringLiteral("<a id=\"kmailshowattachment\" href=\"%1\">").arg(urlHandleShow) +
+            QStringLiteral("<img id=\"imgid\" src=\"%1\" width=\"22\" height=\"22\">").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url()) +
+            QStringLiteral("</a>") +
+            QStringLiteral("<a id=\"kmailhideattachment\" href=\"%1\" style=\"display:none;\">").arg(urlHandleHide) +
+            QStringLiteral("<img id=\"imgid\" src=\"%1\" width=\"22\" height=\"22\">").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url()) +
+            QStringLiteral("</a>") +
+            QStringLiteral("</div>");
 
     html.prepend(link);
 
@@ -2331,10 +2325,21 @@ QString ViewerPrivate::attachmentInjectionHtml()
 void ViewerPrivate::injectAttachments()
 {
     disconnect(mViewer, &MailWebEngineView::jQueryLoaded, this, &ViewerPrivate::injectAttachments);
+    const QString source = QString::fromLatin1("qt.jQuery('#kmailshowattachment').click(function(){"
+                                               "qt.jQuery('#kmailshowattachment').hide();"
+                                               "qt.jQuery(\"#kmailhideattachment\").show();"
+                                               "qt.jQuery(\"#attachmentid\").hide()}"
+                                               ");"
+                                               "qt.jQuery('#kmailhideattachment').click(function(){"
+                                               "qt.jQuery(\"#kmailhideattachment\").hide();"
+                                               "qt.jQuery(\"#kmailshowattachment\").show();"
+                                               "qt.jQuery(\"#attachmentid\").show()}"
+                                               ");");
     // inject attachments in header view
     // we have to do that after the otp has run so we also see encrypted parts
 
     mViewer->injectAttachments(bind(&ViewerPrivate::attachmentInjectionHtml, this));
+    viewer()->runJavaScript(source);
 }
 
 void ViewerPrivate::slotSettingsChanged()
@@ -2711,16 +2716,6 @@ bool ViewerPrivate::showSignatureDetails() const
 void ViewerPrivate::setShowSignatureDetails(bool showDetails)
 {
     mShowSignatureDetails = showDetails;
-}
-
-bool ViewerPrivate::showAttachmentQuicklist() const
-{
-    return mShowAttachmentQuicklist;
-}
-
-void ViewerPrivate::setShowAttachmentQuicklist(bool showAttachmentQuicklist)
-{
-    mShowAttachmentQuicklist = showAttachmentQuicklist;
 }
 
 void ViewerPrivate::setExternalWindow(bool b)
