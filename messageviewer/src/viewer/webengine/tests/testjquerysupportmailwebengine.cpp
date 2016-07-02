@@ -37,8 +37,6 @@ TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
-    //true => use JQuery
-
     viewer = new MessageViewer::Viewer(0);
     vboxLayout->addWidget(viewer);
     viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"))/*KMime::Message::Ptr(msg)*/);
