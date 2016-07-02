@@ -85,6 +85,9 @@ void SearchCollectionIndexingWarning::setCollection(const Akonadi::Collection &c
     Q_FOREACH (qint64 col, attr->queryCollections()) {
         cols.push_back(Akonadi::Collection(col));
     }
+    if (cols.isEmpty()) {
+        return;
+    }
 
     // First retrieve the top-level collections
     Akonadi::CollectionFetchJob *fetch = fetchCollections(cols, false);
