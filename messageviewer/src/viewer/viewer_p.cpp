@@ -2325,21 +2325,11 @@ QString ViewerPrivate::attachmentInjectionHtml()
 void ViewerPrivate::injectAttachments()
 {
     disconnect(mViewer, &MailWebEngineView::jQueryLoaded, this, &ViewerPrivate::injectAttachments);
-    const QString source = QString::fromLatin1("qt.jQuery('#kmailshowattachment').click(function(){"
-                                               "qt.jQuery('#kmailshowattachment').hide();"
-                                               "qt.jQuery(\"#kmailhideattachment\").show();"
-                                               "qt.jQuery(\"#attachmentid\").hide()}"
-                                               ");"
-                                               "qt.jQuery('#kmailhideattachment').click(function(){"
-                                               "qt.jQuery(\"#kmailhideattachment\").hide();"
-                                               "qt.jQuery(\"#kmailshowattachment\").show();"
-                                               "qt.jQuery(\"#attachmentid\").show()}"
-                                               ");");
     // inject attachments in header view
     // we have to do that after the otp has run so we also see encrypted parts
 
     mViewer->injectAttachments(bind(&ViewerPrivate::attachmentInjectionHtml, this));
-    viewer()->runJavaScript(source);
+    mViewer->manageShowHideAttachments();
 }
 
 void ViewerPrivate::slotSettingsChanged()

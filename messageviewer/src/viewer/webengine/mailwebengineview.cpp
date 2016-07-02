@@ -275,6 +275,11 @@ void MailWebEngineView::scrollPageUp(int percent)
     scrollPageDown(-percent);
 }
 
+void MailWebEngineView::manageShowHideAttachments()
+{
+    page()->runJavaScript(MessageViewer::MailWebEngineScript::manageShowHideAttachments());
+}
+
 void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
 {
     const QString html = delayedHtml();

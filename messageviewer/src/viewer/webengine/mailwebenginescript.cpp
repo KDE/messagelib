@@ -22,6 +22,21 @@
 #include <QDebug>
 using namespace MessageViewer;
 
+QString MailWebEngineScript::manageShowHideAttachments()
+{
+    const QString source = QString::fromLatin1("qt.jQuery('#kmailshowattachment').click(function(){"
+                                               "qt.jQuery('#kmailshowattachment').hide();"
+                                               "qt.jQuery(\"#kmailhideattachment\").show();"
+                                               "qt.jQuery(\"#attachmentid\").hide()}"
+                                               ");"
+                                               "qt.jQuery('#kmailhideattachment').click(function(){"
+                                               "qt.jQuery(\"#kmailhideattachment\").hide();"
+                                               "qt.jQuery(\"#kmailshowattachment\").show();"
+                                               "qt.jQuery(\"#attachmentid\").show()}"
+                                               ");");
+    return source;
+}
+
 QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
 {
     const QString source = QString::fromLatin1("qt.jQuery('#%1').append('%2')").arg(elementStr).arg(delayedHtml);

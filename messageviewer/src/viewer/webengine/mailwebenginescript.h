@@ -31,6 +31,7 @@ MESSAGEVIEWER_EXPORT QString injectAttachments(const QString &delayedHtml, const
 MESSAGEVIEWER_EXPORT QString toggleFullAddressList(const QString &field, const QString &html, bool doShow);
 MESSAGEVIEWER_EXPORT QString replaceInnerHtml(const QString &field, const QString &html, bool doShow);
 MESSAGEVIEWER_EXPORT QString updateToggleFullAddressList(const QString &field, bool doShow);
+MESSAGEVIEWER_EXPORT QString manageShowHideAttachments();
 }
 }
 #endif // MAILWEBENGINESCRIPT_H
