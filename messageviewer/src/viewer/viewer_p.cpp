@@ -2315,7 +2315,7 @@ QString ViewerPrivate::attachmentInjectionHtml()
         textAlign = QStringLiteral("left");
     }
 
-    link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign) +
+    link += QStringLiteral("<div id=\"attachmentkmailid\" style=\"text-align: %1;\">").arg(textAlign) +
             QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
             QStringLiteral("<img src=\"%1\" width=\"22\" height=\"22\">").arg(QUrl::fromLocalFile(imgpath + imgSrc).url()) +
             QStringLiteral("</a></div>");
