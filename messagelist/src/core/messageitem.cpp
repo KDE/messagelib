@@ -38,7 +38,7 @@ using namespace MessageList::Core;
 
 Q_GLOBAL_STATIC(TagCache, s_tagCache)
 
-class MessageItem::Tag::Private
+class Q_DECL_HIDDEN MessageItem::Tag::Private
 {
 public:
     Private()
