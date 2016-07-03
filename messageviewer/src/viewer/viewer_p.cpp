@@ -551,7 +551,8 @@ void ViewerPrivate::slotOpenWithAction(QAction *act)
 
 void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &name, const QPoint &globalPos)
 {
-    prepareHandleAttachment(node, name);
+    Q_UNUSED(name);
+    prepareHandleAttachment(node);
     QMenu *menu = new QMenu();
     QAction *action;
     bool deletedAttachment = false;
@@ -630,10 +631,9 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     delete menu;
 }
 
-void ViewerPrivate::prepareHandleAttachment(KMime::Content *node, const QString &fileName)
+void ViewerPrivate::prepareHandleAttachment(KMime::Content *node)
 {
     mCurrentContent = node;
-    mCurrentFileName = fileName;
 }
 
 QString ViewerPrivate::createAtmFileLink(const QString &atmFileName) const

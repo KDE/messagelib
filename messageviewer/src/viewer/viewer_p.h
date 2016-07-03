@@ -226,7 +226,7 @@ public:
     * to the given values.
     * Call this so that slotHandleAttachment() knows which attachment to handle.
     */
-    void prepareHandleAttachment(KMime::Content *node, const QString &fileName);
+    void prepareHandleAttachment(KMime::Content *node);
 
     void postProcessMessage(MimeTreeParser::ObjectTreeParser *otp, MimeTreeParser::KMMsgEncryptionState encryptionState);
 
@@ -664,7 +664,6 @@ public:
     int mRecursionCountForDisplayMessage;
     KMime::Content *mCurrentContent;
     KMime::Content *mMessagePartNode;
-    QString mCurrentFileName;
     QString mMessagePath;
 
     QColor mForegroundError;
