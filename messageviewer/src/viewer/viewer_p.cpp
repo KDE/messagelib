@@ -231,7 +231,6 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
     mUpdateReaderWinTimer.setObjectName(QStringLiteral("mUpdateReaderWinTimer"));
     mResizeTimer.setObjectName(QStringLiteral("mResizeTimer"));
 
-    mExternalWindow  = false;
     mPrinting = false;
 
     createWidgets();
@@ -2714,11 +2713,6 @@ bool ViewerPrivate::showSignatureDetails() const
 void ViewerPrivate::setShowSignatureDetails(bool showDetails)
 {
     mShowSignatureDetails = showDetails;
-}
-
-void ViewerPrivate::setExternalWindow(bool b)
-{
-    mExternalWindow = b;
 }
 
 bool ViewerPrivate::showAttachmentQuicklist() const

@@ -391,12 +391,6 @@ QAction *Viewer::selectAllAction() const
     return d->mSelectAllAction;
 }
 
-void Viewer::setExternalWindow(bool b)
-{
-    Q_D(Viewer);
-    d->setExternalWindow(b);
-}
-
 QAction *Viewer::viewSourceAction() const
 {
     Q_D(const Viewer);

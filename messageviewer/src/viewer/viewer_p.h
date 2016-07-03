@@ -342,8 +342,6 @@ public:
     /** View message part of type message/RFC822 in extra viewer window. */
     void atmViewMsg(const KMime::Message::Ptr &message);
 
-    void setExternalWindow(bool b);
-
     void adjustLayout();
     void createWidgets();
     void createActions();
@@ -660,7 +658,6 @@ public:
     bool mDecrytMessageOverwrite;
     bool mShowSignatureDetails;
     bool mShowAttachmentQuicklist;
-    bool mExternalWindow;
     int mRecursionCountForDisplayMessage;
     KMime::Content *mCurrentContent;
     KMime::Content *mMessagePartNode;
