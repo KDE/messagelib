@@ -655,9 +655,9 @@ QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate
         } else if (urlPath == QLatin1String("hideSignatureDetails")) {
             return i18n("Hide signature details.");
         } else if (urlPath == QLatin1String("showAttachmentQuicklist")) {
-            return i18n("Show attachment list.");
-        } else if (urlPath == QLatin1String("hideAttachmentQuicklist")) {
             return i18n("Hide attachment list.");
+        } else if (urlPath == QLatin1String("hideAttachmentQuicklist")) {
+            return i18n("Show attachment list.");
         } else if (urlPath == QLatin1String("showFullToAddressList")) {
             return i18n("Show full \"To\" list");
         } else if (urlPath == QLatin1String("hideFullToAddressList")) {
