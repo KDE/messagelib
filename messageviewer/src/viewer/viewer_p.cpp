@@ -2312,10 +2312,10 @@ QString ViewerPrivate::attachmentInjectionHtml()
     const QString visibility = QStringLiteral("style=\"display:none;\"");
     link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign) +
             QStringLiteral("<a id=\"kmailshowattachment\" href=\"%1\" %2>").arg(urlHandleShow).arg(mShowAttachmentQuicklist ? QString() : visibility) +
-            QStringLiteral("<img id=\"imgid\" src=\"%1\" width=\"22\" height=\"22\">").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url()) +
+            QStringLiteral("<img id=\"imgid\" src=\"%1\">").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url()) +
             QStringLiteral("</a>") +
             QStringLiteral("<a id=\"kmailhideattachment\" href=\"%1\" %2>").arg(urlHandleHide).arg(mShowAttachmentQuicklist ? visibility : QString()) +
-            QStringLiteral("<img id=\"imgid\" src=\"%1\" width=\"22\" height=\"22\">").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url()) +
+            QStringLiteral("<img id=\"imgid\" src=\"%1\">").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url()) +
             QStringLiteral("</a>") +
             QStringLiteral("</div>");
 
