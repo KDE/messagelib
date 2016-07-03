@@ -1831,7 +1831,6 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
                 visibility = QStringLiteral("display:none;");
             }
 
-
             QString margin;
             if (node != mMessage.data() || headerStylePlugin()->hasMargin()) {
                 margin = QStringLiteral("padding:2px; margin:2px; ");

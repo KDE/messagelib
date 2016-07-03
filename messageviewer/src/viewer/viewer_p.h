@@ -394,13 +394,11 @@ public:
     /** Show signature details. */
     void setShowSignatureDetails(bool showDetails = true);
 
-
     /* show or hide the list that points to the attachments */
     bool showAttachmentQuicklist() const;
 
     /* show or hide the list that points to the attachments */
     void setShowAttachmentQuicklist(bool showAttachmentQuicklist = true);
-
 
     void scrollToAttachment(KMime::Content *node);
     void setUseFixedFont(bool useFixedFont);
