@@ -674,7 +674,6 @@ public:
     bool mShowFullToAddressList;
     bool mShowFullCcAddressList;
     Akonadi::Monitor mMonitor;
-    QString mAppName;
     QSet<AbstractMessageLoadedHandler *> mMessageLoadedHandlers;
     Akonadi::Item::Id mPreviouslyViewedItem;
 

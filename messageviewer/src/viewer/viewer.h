@@ -224,12 +224,6 @@ public:
     bool htmlLoadExternal() const;
 
     /**
-    * Set the application name that is shown when the splash screen is active.
-    * @param appName - A QString that is set to the calling application name.
-    */
-    void setAppName(const QString &appName);
-
-    /**
     * Display a generic HTML splash page instead of a message.
     * @param templateName - the template to be loaded
     * @param data - data for the template
