@@ -1854,13 +1854,16 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             const QString href = mNodeHelper->asHREF(node, QStringLiteral("header"));
             html += QLatin1String("<a href=\"") + href +
                     QLatin1String("\">");
-            QString imageMaxSize;
+
+            const QString imageMaxSize = QStringLiteral("width=\"16\" height=\"16\"");
+#if 0
             if (!info.icon.isEmpty()) {
                 QImage tmpImg(info.icon);
                 if (tmpImg.width() > 48 || tmpImg.height() > 48) {
                     imageMaxSize = QStringLiteral("width=\"48\" height=\"48\"");
                 }
             }
+#endif
             html += QStringLiteral("<img %1 style=\"vertical-align:middle;\" src=\"").arg(imageMaxSize) + info.icon + QLatin1String("\"/>&nbsp;");
             const int elidedTextSize = headerStylePlugin()->elidedTextSize();
             if (elidedTextSize == -1) {
@@ -2312,10 +2315,10 @@ QString ViewerPrivate::attachmentInjectionHtml()
     const QString visibility = QStringLiteral("style=\"display:none;\"");
     link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign) +
             QStringLiteral("<a id=\"kmailshowattachment\" href=\"%1\" %2>").arg(urlHandleShow).arg(mShowAttachmentQuicklist ? QString() : visibility) +
-            QStringLiteral("<img id=\"imgid\" src=\"%1\">").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url()) +
+            QStringLiteral("<img src=\"%1\">").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url()) +
             QStringLiteral("</a>") +
             QStringLiteral("<a id=\"kmailhideattachment\" href=\"%1\" %2>").arg(urlHandleHide).arg(mShowAttachmentQuicklist ? visibility : QString()) +
-            QStringLiteral("<img id=\"imgid\" src=\"%1\">").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url()) +
+            QStringLiteral("<img src=\"%1\">").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url()) +
             QStringLiteral("</a>") +
             QStringLiteral("</div>");
 
