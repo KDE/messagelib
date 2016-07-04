@@ -2789,18 +2789,21 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(bool doShow, const QString &f
     const QString imgpath(picsPath());
     const QString urlHandleShow = QLatin1String("kmail:hideFull") + field + QLatin1String("AddressList");
     const QString imgSrcShow = QStringLiteral("quicklistOpened.png");
-    const QString altTextShow = i18n("Hide full address list");
     const QString urlHandleHide = QLatin1String("kmail:showFull") + field + QLatin1String("AddressList");
     const QString imgSrcHide = QStringLiteral("quicklistClosed.png");
-    const QString altTextHide = i18n("Show full address list");
     const QString visibility = QStringLiteral("style=\"display:none;\"");
 
+    //FIXME altText in french it breaks code
+#if 0
+    const QString altTextShow = i18n("Hide full address list");
+    const QString altTextHide = i18n("Show full address list");
+#endif
     return QStringLiteral("<span style=\"text-align: right;\">") +
             QStringLiteral("<a id=\"kmail%2show\" href=\"%1\" %3>").arg(urlHandleShow).arg(field).arg(doShow ? QString() : visibility) +
-            QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url(), altTextShow) +
+            QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url(), /*altTextShow*/QString()) +
             QStringLiteral("</a>") +
-            QStringLiteral("<a id=\"kmail%2hide\" href=\"%1\" %3>").arg(urlHandleHide).arg(field).arg(doShow ? QString() : visibility) +
-            QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url(), altTextHide) +
+            QStringLiteral("<a id=\"kmail%2hide\" href=\"%1\" %3>").arg(urlHandleHide).arg(field).arg(doShow ? visibility : QString()) +
+            QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url(), /*altTextHide*/QString()) +
             QStringLiteral("</a>") +
             QStringLiteral("</span>");
 }
