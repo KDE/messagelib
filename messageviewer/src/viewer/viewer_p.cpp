@@ -2785,24 +2785,23 @@ void ViewerPrivate::toggleFullAddressList()
 
 QString ViewerPrivate::recipientsQuickListLinkHtml(bool doShow, const QString &field)
 {
-    QString imgpath(picsPath());
-    QString urlHandle;
-    QString imgSrc;
-    QString altText;
-    if (doShow) {
-        urlHandle.append(QLatin1String("kmail:hideFull") + field + QLatin1String("AddressList"));
-        imgSrc.append(QLatin1String("quicklistOpened.png"));
-        altText = i18n("Hide full address list");
-    } else {
-        urlHandle.append(QLatin1String("kmail:showFull") + field + QLatin1String("AddressList"));
-        imgSrc.append(QLatin1String("quicklistClosed.png"));
-        altText = i18n("Show full address list");
-    }
+    const QString imgpath(picsPath());
+    const QString urlHandleShow = QLatin1String("kmail:hideFull") + field + QLatin1String("AddressList");
+    const QString imgSrcShow = QLatin1String("quicklistOpened.png");
+    const QString altTextShow = i18n("Hide full address list");
+    const QString urlHandleHide = QLatin1String("kmail:showFull") + field + QLatin1String("AddressList");
+    const QString imgSrcHide = QLatin1String("quicklistClosed.png");
+    const QString altTextHide = i18n("Show full address list");
+    const QString visibility = QStringLiteral("style=\"display:none;\"");
 
     return QStringLiteral("<span style=\"text-align: right;\">") +
-           QStringLiteral("<a href=\"%1\">").arg(urlHandle) +
-           QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrc).url(), altText) +
-           QStringLiteral("</a></span>");
+            QStringLiteral("<a id=\"kmail%2show\" href=\"%1\" %3>").arg(urlHandleShow).arg(field).arg(doShow ? QString() : visibility) +
+            QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url(), altTextShow) +
+            QStringLiteral("</a>") +
+            QStringLiteral("<a id=\"kmail%2hide\" href=\"%1\" %3>").arg(urlHandleHide).arg(field).arg(doShow ? QString() : visibility) +
+            QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url(), altTextHide) +
+            QStringLiteral("</a>") +
+            QStringLiteral("</span>");
 }
 
 void ViewerPrivate::toggleFullAddressList(const QString &field)
