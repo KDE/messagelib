@@ -403,18 +403,6 @@ public:
 
     void attachmentView(KMime::Content *atmNode);
 
-    /** Return weather to show or hide the full list of "To" addresses */
-    bool showFullToAddressList() const;
-
-    /** Show or hide the full list of "To" addresses */
-    void setShowFullToAddressList(bool showFullToAddressList = true);
-
-    /** Return weather to show or hide the full list of "To" addresses */
-    bool showFullCcAddressList() const;
-
-    /** Show or hide the full list of "To" addresses */
-    void setShowFullCcAddressList(bool showFullCcAddressList = true);
-
     /** Show/Hide the field with id "field" */
     void toggleFullAddressList(const QString &field);
 
@@ -584,7 +572,7 @@ Q_SIGNALS:
     void executeMailAction(MessageViewer::Viewer::MailAction type);
 private:
     QString attachmentInjectionHtml();
-    QString recipientsQuickListLinkHtml(bool, const QString &);
+    QString recipientsQuickListLinkHtml(const QString &);
 
     Akonadi::Relation relatedNoteRelation() const;
     void addHelpTextAction(QAction *act, const QString &text);

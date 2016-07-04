@@ -30,6 +30,7 @@ namespace MailWebEngineScript
 MESSAGEVIEWER_EXPORT QString injectAttachments(const QString &delayedHtml, const QString &element);
 MESSAGEVIEWER_EXPORT QString replaceInnerHtml(const QString &field, const QString &html);
 MESSAGEVIEWER_EXPORT QString manageShowHideAttachments();
+MESSAGEVIEWER_EXPORT QString manageExpandAddresses(const QString &field);
 }
 }
 #endif // MAILWEBENGINESCRIPT_H

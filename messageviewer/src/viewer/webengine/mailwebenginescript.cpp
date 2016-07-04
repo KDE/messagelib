@@ -22,6 +22,23 @@
 #include <QDebug>
 using namespace MessageViewer;
 
+QString MailWebEngineScript::manageExpandAddresses(const QString &field)
+{
+    const QString source = QString::fromLatin1("qt.jQuery('#kmail%1show').click(function(){"
+                           "qt.jQuery('#kmail%1show').hide();"
+                           "qt.jQuery(\"#kmail%1hide\").show();"
+                           "qt.jQuery(\"#dotsFull%1AddressList\").hide();"
+                           "qt.jQuery(\"#hiddenFull%1AddressList\").show();}"
+                           ");"
+                           "qt.jQuery('#kmail%1hide').click(function(){"
+                           "qt.jQuery(\"#kmail%1hide\").hide();"
+                           "qt.jQuery(\"#kmail%1show\").show();"
+                           "qt.jQuery(\"#dotsFull%1AddressList\").show();"
+                           "qt.jQuery(\"#hiddenFull%1AddressList\").hide();}"
+                           ");").arg(field);
+    return source;
+}
+
 QString MailWebEngineScript::manageShowHideAttachments()
 {
     const QString source = QString::fromLatin1("qt.jQuery('#kmailshowattachment').click(function(){"

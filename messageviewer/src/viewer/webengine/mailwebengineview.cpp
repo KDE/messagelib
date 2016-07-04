@@ -277,7 +277,12 @@ void MailWebEngineView::scrollPageUp(int percent)
 
 void MailWebEngineView::manageShowHideAttachments()
 {
-    page()->runJavaScript(MessageViewer::MailWebEngineScript::manageShowHideAttachments());
+    const QString scripts = MessageViewer::MailWebEngineScript::manageShowHideAttachments() +
+            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("To")) +
+            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("Cc"));
+
+    qDebug() << " scripts "<<scripts;
+    page()->runJavaScript(scripts);
 }
 
 void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
