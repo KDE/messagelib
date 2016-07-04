@@ -1851,7 +1851,6 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             const QString href = mNodeHelper->asHREF(node, QStringLiteral("header"));
             html += QLatin1String("<a href=\"") + href +
                     QLatin1String("\">");
-
             const QString imageMaxSize = QStringLiteral("width=\"16\" height=\"16\"");
 #if 0
             if (!info.icon.isEmpty()) {

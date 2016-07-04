@@ -142,7 +142,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
         headerObject.insert(QStringLiteral("ccMailbox"), QVariant::fromValue(message->cc()));
         const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->cc(), MessageCore::StringUtil::DisplayFullAddress,
                             QString(), MessageCore::StringUtil::ShowLink,
-                            MessageCore::StringUtil::ExpandableAddresses, QStringLiteral("FullToAddressList"));
+                            MessageCore::StringUtil::ExpandableAddresses, QStringLiteral("FullCcAddressList"));
         headerObject.insert(QStringLiteral("ccExpandable"), val);
     }
 
@@ -152,10 +152,6 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
         headerObject.insert(QStringLiteral("bccNameOnly"), StringUtil::emailAddrAsAnchor(message->bcc(), StringUtil::DisplayNameOnly));
         headerObject.insert(QStringLiteral("bccStr"), message->bcc()->asUnicodeString());
         headerObject.insert(QStringLiteral("bccMailbox"), QVariant::fromValue(message->bcc()));
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->bcc(), MessageCore::StringUtil::DisplayFullAddress,
-                            QString(), MessageCore::StringUtil::ShowLink,
-                            MessageCore::StringUtil::ExpandableAddresses, QStringLiteral("FullToAddressList"));
-        headerObject.insert(QStringLiteral("bccExpandable"), val);
     }
     headerObject.insert(QStringLiteral("fromi18n"), i18n("From:"));
     headerObject.insert(QStringLiteral("from"),  StringUtil::emailAddrAsAnchor(message->from(), StringUtil::DisplayFullAddress));
