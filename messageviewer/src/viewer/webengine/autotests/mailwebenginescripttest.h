@@ -28,6 +28,9 @@ class MailWebEngineScriptTest : public QObject
 public:
     explicit MailWebEngineScriptTest(QObject *parent = Q_NULLPTR);
     ~MailWebEngineScriptTest();
+private Q_SLOTS:
+    void shouldInjectAttachment();
+    void shouldReplaceInnerHtml();
 };
 
 #endif // MAILWEBENGINESCRIPTTEST_H
