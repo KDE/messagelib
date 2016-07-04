@@ -64,8 +64,6 @@ QString MailWebEngineScript::replaceInnerHtml(const QString &field, const QStrin
 {
     const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
     const QString source = QString::fromLatin1("qt.jQuery('#%1').append('%2')").arg(replaceInnerHtmlStr).arg(html);
-    qDebug() << "QString MailWebEngineScript::replaceInnerHtml(const QString &delayedHtml, const QString &elementStr) :" << source;
-
     return source;
 }
 
