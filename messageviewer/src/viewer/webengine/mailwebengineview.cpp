@@ -275,13 +275,11 @@ void MailWebEngineView::scrollPageUp(int percent)
     scrollPageDown(-percent);
 }
 
-void MailWebEngineView::manageShowHideAttachments()
+void MailWebEngineView::executeCustomRenderingScripts()
 {
     const QString scripts = MessageViewer::MailWebEngineScript::manageShowHideAttachments() +
-            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("To")) +
-            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("Cc"));
-
-    qDebug() << " scripts "<<scripts;
+                            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("To")) +
+                            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("Cc"));
     page()->runJavaScript(scripts);
 }
 

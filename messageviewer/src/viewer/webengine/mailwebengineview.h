@@ -65,7 +65,7 @@ public:
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
     void toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml);
 
-    void manageShowHideAttachments();
+    void executeCustomRenderingScripts();
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();

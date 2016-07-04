@@ -2335,7 +2335,7 @@ void ViewerPrivate::injectAttachments()
 
     mViewer->injectAttachments(bind(&ViewerPrivate::attachmentInjectionHtml, this));
     toggleFullAddressList();
-    mViewer->manageShowHideAttachments();
+    mViewer->executeCustomRenderingScripts();
 }
 
 void ViewerPrivate::slotSettingsChanged()
