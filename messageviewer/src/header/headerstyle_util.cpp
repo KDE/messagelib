@@ -119,13 +119,11 @@ QString HeaderStyleUtil::subjectDirectionString(KMime::Message *message) const
 QString HeaderStyleUtil::spamStatus(KMime::Message *message) const
 {
     QString spamHTML;
-    if (MessageViewer::MessageViewerSettings::self()->showSpamStatus()) {
-        const SpamScores scores = SpamHeaderAnalyzer::getSpamScores(message);
+    const SpamScores scores = SpamHeaderAnalyzer::getSpamScores(message);
 
-        for (SpamScores::const_iterator it = scores.constBegin(), end = scores.constEnd(); it != end; ++it)
-            spamHTML += (*it).agent() + QLatin1Char(' ') +
-                        drawSpamMeter((*it).error(), (*it).score(), (*it).confidence(), (*it).spamHeader(), (*it).confidenceHeader());
-    }
+    for (SpamScores::const_iterator it = scores.constBegin(), end = scores.constEnd(); it != end; ++it)
+        spamHTML += (*it).agent() + QLatin1Char(' ') +
+                    drawSpamMeter((*it).error(), (*it).score(), (*it).confidence(), (*it).spamHeader(), (*it).confidenceHeader());
     return spamHTML;
 }
 

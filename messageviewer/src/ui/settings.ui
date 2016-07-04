@@ -183,13 +183,6 @@
       </layout>
      </item>
      <item>
-      <widget class="QCheckBox" name="kcfg_showSpamStatus">
-       <property name="text">
-        <string>Show spam status &amp;in fancy headers</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QCheckBox" name="kcfg_ShowUserAgent">
        <property name="text">
         <string>Show user agent in fancy headers</string>
