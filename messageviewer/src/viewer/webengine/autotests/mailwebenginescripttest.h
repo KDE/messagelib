@@ -31,6 +31,8 @@ public:
 private Q_SLOTS:
     void shouldInjectAttachment();
     void shouldReplaceInnerHtml();
+    void shouldManageShowHideAttachments();
+    void shouldManageExpandAddresses();
 };
 
 #endif // MAILWEBENGINESCRIPTTEST_H

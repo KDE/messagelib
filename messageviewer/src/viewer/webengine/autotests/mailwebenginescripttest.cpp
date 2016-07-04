@@ -45,4 +45,36 @@ void MailWebEngineScriptTest::shouldReplaceInnerHtml()
     QCOMPARE(MessageViewer::MailWebEngineScript::replaceInnerHtml(QStringLiteral("GG"), QStringLiteral("<a>hello word</a>")), result);
 }
 
+void MailWebEngineScriptTest::shouldManageShowHideAttachments()
+{
+    const QString result = QString::fromLatin1("qt.jQuery('#kmailshowattachment').click(function(){"
+                                               "qt.jQuery('#kmailshowattachment').hide();"
+                                               "qt.jQuery(\"#kmailhideattachment\").show();"
+                                               "qt.jQuery(\"#attachmentid\").hide()}"
+                                               ");"
+                                               "qt.jQuery('#kmailhideattachment').click(function(){"
+                                               "qt.jQuery(\"#kmailhideattachment\").hide();"
+                                               "qt.jQuery(\"#kmailshowattachment\").show();"
+                                               "qt.jQuery(\"#attachmentid\").show()}"
+                                               ");");
+    QCOMPARE(MessageViewer::MailWebEngineScript::manageShowHideAttachments(), result);
+}
+
+void MailWebEngineScriptTest::shouldManageExpandAddresses()
+{
+    const QString result = QString::fromLatin1("qt.jQuery('#kmail%1show').click(function(){"
+                           "qt.jQuery('#kmail%1show').hide();"
+                           "qt.jQuery(\"#kmail%1hide\").show();"
+                           "qt.jQuery(\"#dotsFull%1AddressList\").hide();"
+                           "qt.jQuery(\"#hiddenFull%1AddressList\").show();}"
+                           ");"
+                           "qt.jQuery('#kmail%1hide').click(function(){"
+                           "qt.jQuery(\"#kmail%1hide\").hide();"
+                           "qt.jQuery(\"#kmail%1show\").show();"
+                           "qt.jQuery(\"#dotsFull%1AddressList\").show();"
+                           "qt.jQuery(\"#hiddenFull%1AddressList\").hide();}"
+                           ");").arg(QStringLiteral("FOO"));
+    QCOMPARE(MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("FOO")), result);
+}
+
 QTEST_MAIN(MailWebEngineScriptTest)
