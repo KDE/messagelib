@@ -30,7 +30,6 @@ include_directories(${GPGME_INCLUDES})
 
 if(BUILD_TESTING)
     add_subdirectory(scamdetection/autotests)
-    #add_subdirectory(findbar/autotests)
     add_subdirectory(scamdetection/tests)
     add_subdirectory(viewerplugins/tests/)
     add_subdirectory(htmlwriter/autotests/)
