@@ -393,7 +393,9 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
             numberAddresses++;
             if (expandable == ExpandableAddresses && !expandableInserted && numberAddresses > collapseNumber) {
                 result = QLatin1String("<span id=\"icon") + fieldName + QLatin1String("\"></span>") + result;
-                result += QLatin1String("<span id=\"dots") + fieldName + QLatin1String("\">...</span><span id=\"hidden") + fieldName + QLatin1String("\">");
+                const QString visibility = QStringLiteral(" style=\"display:none;\"");
+
+                result += QLatin1String("<span id=\"dots") + fieldName + QLatin1String("\">...</span><span id=\"hidden") + fieldName + QLatin1String("\")") + visibility + QLatin1String(">");
                 expandableInserted = true;
             }
 
