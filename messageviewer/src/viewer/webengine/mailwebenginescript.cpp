@@ -43,9 +43,10 @@ QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const
     return source;
 }
 
-QString MailWebEngineScript::replaceInnerHtml(const QString &field, const QString &html, bool doShow)
+QString MailWebEngineScript::replaceInnerHtml(const QString &field, const QString &html)
 {
     const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
+#if 0
     const QString source = QString::fromLatin1("(function() {"
                            "var doShow = %3;"
                            "var field = \'%4\';"
@@ -60,11 +61,14 @@ QString MailWebEngineScript::replaceInnerHtml(const QString &field, const QStrin
                            "}"
                            "return out;"
                            "})()").arg(replaceInnerHtmlStr).arg(html).arg(doShow).arg(field);
+#endif
+    const QString source = QString::fromLatin1("qt.jQuery('#%1').append('%2')").arg(replaceInnerHtmlStr).arg(html);
     qDebug() << "QString MailWebEngineScript::replaceInnerHtml(const QString &delayedHtml, const QString &elementStr) :" << source;
-    return source;
 
+    return source;
 }
 
+#if 0
 QString MailWebEngineScript::updateToggleFullAddressList(const QString &field, bool doShow)
 {
     const QString dotsFullStr = QLatin1String("dotsFull")   + field + QLatin1String("AddressList");
@@ -75,7 +79,6 @@ QString MailWebEngineScript::updateToggleFullAddressList(const QString &field, b
                            .arg(WebEngineViewer::WebEngineScript::setElementByIdVisible(hiddenFullStr, doShow));
     qDebug() << "QString MailWebEngineScript::updateToggleFullAddressList(const QString &delayedHtml, const QString &elementStr) :" << source;
     return source;
-
 }
 
 QString MailWebEngineScript::toggleFullAddressList(const QString &field, const QString &html, bool doShow)
@@ -94,4 +97,5 @@ QString MailWebEngineScript::toggleFullAddressList(const QString &field, const Q
     qDebug() << "QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr) :" << source;
     return source;
 }
+#endif
 

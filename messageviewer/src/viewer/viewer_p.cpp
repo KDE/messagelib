@@ -2787,10 +2787,10 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(bool doShow, const QString &f
 {
     const QString imgpath(picsPath());
     const QString urlHandleShow = QLatin1String("kmail:hideFull") + field + QLatin1String("AddressList");
-    const QString imgSrcShow = QLatin1String("quicklistOpened.png");
+    const QString imgSrcShow = QStringLiteral("quicklistOpened.png");
     const QString altTextShow = i18n("Hide full address list");
     const QString urlHandleHide = QLatin1String("kmail:showFull") + field + QLatin1String("AddressList");
-    const QString imgSrcHide = QLatin1String("quicklistClosed.png");
+    const QString imgSrcHide = QStringLiteral("quicklistClosed.png");
     const QString altTextHide = i18n("Show full address list");
     const QString visibility = QStringLiteral("style=\"display:none;\"");
 
@@ -2807,7 +2807,7 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(bool doShow, const QString &f
 void ViewerPrivate::toggleFullAddressList(const QString &field)
 {
     const bool doShow = (field == QLatin1String("To") && showFullToAddressList()) || (field == QLatin1String("Cc") && showFullCcAddressList());
-    mViewer->toggleFullAddressList(field, bind(&ViewerPrivate::recipientsQuickListLinkHtml, this, doShow, field), doShow);
+    mViewer->toggleFullAddressList(field, bind(&ViewerPrivate::recipientsQuickListLinkHtml, this, doShow, field));
 }
 
 void ViewerPrivate::itemFetchResult(KJob *job)

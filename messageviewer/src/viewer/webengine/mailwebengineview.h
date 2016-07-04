@@ -63,7 +63,7 @@ public:
     void setAllowExternalContent(bool b);
 
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
-    void toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow);
+    void toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml);
 
     void manageShowHideAttachments();
 public Q_SLOTS:
@@ -95,7 +95,6 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void handleScrollToAnchor(const QVariant &result);
-    void updateToggleFullAddressList(const QVariant &result);
 
     void slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result);
     void slotLoadFinished();
