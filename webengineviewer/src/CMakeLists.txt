@@ -42,23 +42,30 @@ configure_file(../config-webengineviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/../
 
 set(libwebengineviewer_webengine_SRCS
     networkmanager/networkaccessmanagerwebengine.cpp
+    webhittestresult.cpp
+    webhittest.cpp
+    webenginepage.cpp
+    webenginescript.cpp
+    webengineview.cpp
+    webenginemanagescript.cpp
+
+    webengineprintmessagebox.cpp
+    webengineexporthtmlpagejob.cpp
+    )
+
+set(libwebengineviewer_interceptor_SRCS
     urlinterceptor/networkurlinterceptor.cpp
     urlinterceptor/networkpluginurlinterceptorinterface.cpp
     urlinterceptor/networkurlinterceptorpluginmanager.cpp
     urlinterceptor/networkpluginurlinterceptor.cpp
     urlinterceptor/networkurlinterceptormanager.cpp
     urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
-    webhittestresult.cpp
-    webhittest.cpp
-    webenginepage.cpp
-    webenginescript.cpp
-    webengineview.cpp
+    )
 
+set(libwebengineviewer_accesskey_SRCS
     webengineaccesskey/webengineaccesskey.cpp
     webengineaccesskey/webengineaccesskeyanchor.cpp
     webengineaccesskey/webengineaccesskeyutils.cpp
-    webengineprintmessagebox.cpp
-    webengineexporthtmlpagejob.cpp
     )
 
 set(libwebengineviewer_findbar_SRCS
@@ -71,10 +78,12 @@ set(libwebengineviewer_widgets_SRCS
     )
 
 set(libwebengineviewer_SRCS
+    ${libwebengineviewer_interceptor_SRCS}
     ${libwebengineviewer_webengine_SRCS}
     ${libwebengineviewer_findbar_SRCS}
     ${libwebengineviewer_widgets_SRCS}
     ${libwebengineviewer_print_SRCS}
+    ${libwebengineviewer_accesskey_SRCS}
     )
 
 qt5_add_resources(libwebengineviewer_webengine_SRCS jquery.qrc)
