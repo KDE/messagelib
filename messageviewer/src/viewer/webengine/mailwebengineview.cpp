@@ -76,7 +76,7 @@ public:
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
-    : WebEngineViewer::WebEngineView(true/*useJquery*/, parent),
+    : WebEngineViewer::WebEngineView(parent),
       d(new MessageViewer::MailWebEngineViewPrivate)
 
 {

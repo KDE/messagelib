@@ -32,10 +32,10 @@ TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
-    //true => use JQuery
-    pageView = new WebEngineViewer::WebEngineView(true, this);
+    pageView = new WebEngineViewer::WebEngineView(this);
     vboxLayout->addWidget(pageView);
 
+    pageView->initializeJQueryScript();
     mEditor = new QTextEdit(this);
     mEditor->setAcceptRichText(false);
     mEditor->setPlainText(QStringLiteral("qt.jQuery('img').each( function () { qt.jQuery(this).css('-webkit-transition', '-webkit-transform 2s'); qt.jQuery(this).css('-webkit-transform', 'rotate(180deg)') } ); undefined"));

@@ -31,7 +31,7 @@ class WEBENGINEVIEWER_EXPORT WebEngineView : public QWebEngineView
 {
     Q_OBJECT
 public:
-    explicit WebEngineView(bool useJQuery = false, QWidget *parent = Q_NULLPTR);
+    explicit WebEngineView(QWidget *parent = Q_NULLPTR);
     ~WebEngineView();
 
     void clearRelativePosition();
@@ -57,12 +57,6 @@ protected:
     void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
     void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
     void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
-
-private Q_SLOTS:
-    void slotLoadFinished();
-
-Q_SIGNALS:
-    void jQueryLoaded();
 
 private:
     WebEngineViewPrivate *const d;

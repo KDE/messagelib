@@ -31,7 +31,7 @@ TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *hboxLayout = new QVBoxLayout(this);
-    pageView = new WebEngineViewer::WebEngineView(false, this);
+    pageView = new WebEngineViewer::WebEngineView(this);
     hboxLayout->addWidget(pageView);
     QPushButton *showSelectedText = new QPushButton(QStringLiteral("Show Selected Text"), this);
     connect(showSelectedText, &QPushButton::clicked, this, &TestSelectedTextWebEngine::slotSlowSelectedText);

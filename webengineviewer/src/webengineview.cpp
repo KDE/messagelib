@@ -41,30 +41,17 @@ public:
     {
 
     }
-    QString mJquery;
     qreal mSavedRelativePosition;
     QWidget *mCurrentWidget;
     WebEngineManageScript *mManagerScript;
 };
 
-WebEngineView::WebEngineView(bool useJQuery, QWidget *parent)
+WebEngineView::WebEngineView(QWidget *parent)
     : QWebEngineView(parent),
       d(new WebEngineViewer::WebEngineViewPrivate)
 {
     installEventFilter(this);
     d->mManagerScript = new WebEngineManageScript(this);
-    /*
-    if (useJQuery) {
-        QFile file;
-        file.setFileName(QStringLiteral(":/data/jquery.min.js"));
-        file.open(QIODevice::ReadOnly);
-        d->mJquery = QString::fromUtf8(file.readAll());
-        d->mJquery.append(QStringLiteral("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
-        file.close();
-        //connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
-        d->mManagerScript->addScript(page()->profile(), d->mJquery, QStringLiteral("jquery"), QWebEngineScript::DocumentCreation);
-    }
-    */
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     connect(page()->profile(), &QWebEngineProfile::downloadRequested, this, &WebEngineView::saveHtml);
 #endif
@@ -80,11 +67,10 @@ void WebEngineView::initializeJQueryScript()
     QFile file;
     file.setFileName(QStringLiteral(":/data/jquery.min.js"));
     file.open(QIODevice::ReadOnly);
-    d->mJquery = QString::fromUtf8(file.readAll());
-    d->mJquery.append(QStringLiteral("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
+    QString jquery = QString::fromUtf8(file.readAll());
+    jquery.append(QStringLiteral("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
     file.close();
-    //connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
-    d->mManagerScript->addScript(page()->profile(), d->mJquery, QStringLiteral("jquery"), QWebEngineScript::DocumentCreation);
+    d->mManagerScript->addScript(page()->profile(), jquery, QStringLiteral("jquery"), QWebEngineScript::DocumentCreation);
 
 }
 
@@ -211,12 +197,6 @@ QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
     view->show();
 #endif
     return Q_NULLPTR;
-}
-
-void WebEngineView::slotLoadFinished()
-{
-    page()->runJavaScript(d->mJquery);
-    Q_EMIT jQueryLoaded();
 }
 
 void WebEngineView::clearRelativePosition()
