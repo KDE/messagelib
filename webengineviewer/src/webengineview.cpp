@@ -53,6 +53,7 @@ WebEngineView::WebEngineView(bool useJQuery, QWidget *parent)
 {
     installEventFilter(this);
     d->mManagerScript = new WebEngineManageScript(this);
+    /*
     if (useJQuery) {
         QFile file;
         file.setFileName(QStringLiteral(":/data/jquery.min.js"));
@@ -63,7 +64,7 @@ WebEngineView::WebEngineView(bool useJQuery, QWidget *parent)
         //connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
         d->mManagerScript->addScript(page()->profile(), d->mJquery, QStringLiteral("jquery"), QWebEngineScript::DocumentCreation);
     }
-
+    */
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     connect(page()->profile(), &QWebEngineProfile::downloadRequested, this, &WebEngineView::saveHtml);
 #endif
@@ -72,6 +73,19 @@ WebEngineView::WebEngineView(bool useJQuery, QWidget *parent)
 WebEngineView::~WebEngineView()
 {
     delete d;
+}
+
+void WebEngineView::initializeJQueryScript()
+{
+    QFile file;
+    file.setFileName(QStringLiteral(":/data/jquery.min.js"));
+    file.open(QIODevice::ReadOnly);
+    d->mJquery = QString::fromUtf8(file.readAll());
+    d->mJquery.append(QStringLiteral("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
+    file.close();
+    //connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
+    d->mManagerScript->addScript(page()->profile(), d->mJquery, QStringLiteral("jquery"), QWebEngineScript::DocumentCreation);
+
 }
 
 void WebEngineView::addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint)

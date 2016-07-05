@@ -839,7 +839,7 @@ void ViewerPrivate::displayMessage()
     mColorBar->update();
 
     htmlWriter()->queue(QStringLiteral("</body></html>"));
-    connect(mViewer, &MailWebEngineView::jQueryLoaded, this, &ViewerPrivate::injectAttachments, Qt::UniqueConnection);
+    connect(mViewer, &MailWebEngineView::loadFinished, this, &ViewerPrivate::injectAttachments, Qt::UniqueConnection);
     connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotMessageRendered, Qt::UniqueConnection);
     //connect(mPartHtmlWriter, SIGNAL(finished()), this, SLOT(toggleFullAddressList()), Qt::UniqueConnection);
     htmlWriter()->flush();
@@ -2328,7 +2328,7 @@ QString ViewerPrivate::attachmentInjectionHtml()
 
 void ViewerPrivate::injectAttachments()
 {
-    disconnect(mViewer, &MailWebEngineView::jQueryLoaded, this, &ViewerPrivate::injectAttachments);
+    disconnect(mViewer, &MailWebEngineView::loadFinished, this, &ViewerPrivate::injectAttachments);
     // inject attachments in header view
     // we have to do that after the otp has run so we also see encrypted parts
 

@@ -99,6 +99,7 @@ private Q_SLOTS:
     void slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result);
     void slotLoadFinished();
 private:
+    void initializeScripts();
     MailWebEngineViewPrivate *const d;
 };
 }

@@ -57,6 +57,6 @@ void WebEngineManageScript::addScript(QWebEngineProfile *profile, const QString 
         }
         script.setSourceCode(source);
         profile->scripts()->insert(script);
-        qDebug()<<" insert script:::::::::::::::::::::"<<script.isNull() << "scriptName"<<scriptName ;
+        qDebug()<<" insert script:::::::::::::::::::::"<<script.isNull() << "scriptName"<<scriptName << "profile "<<profile;
     }
 }

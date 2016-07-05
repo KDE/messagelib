@@ -83,6 +83,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     QWebEngineProfile *profile = new QWebEngineProfile(this);
     d->mPageEngine = new MailWebEnginePage(profile, this);
     setPage(d->mPageEngine);
+    qDebug()<<" profile**************"<<profile;
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     d->mWebViewAccessKey = new WebEngineViewer::WebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
@@ -102,11 +103,22 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
 #if QT_VERSION >= 0x050700
     connect(page(), &QWebEnginePage::scrollPositionChanged, d->mWebViewAccessKey, &WebEngineViewer::WebEngineAccessKey::hideAccessKeys);
 #endif
+    initializeScripts();
 }
 
 MailWebEngineView::~MailWebEngineView()
 {
     delete d;
+}
+
+
+void MailWebEngineView::initializeScripts()
+{
+    initializeJQueryScript();
+    const QString scripts = MessageViewer::MailWebEngineScript::manageShowHideAttachments() +
+                            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("To")) +
+                            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("Cc"));
+    addScript(scripts, QStringLiteral("emailmanagement"), QWebEngineScript::DocumentReady);
 }
 
 void MailWebEngineView::contextMenuEvent(QContextMenuEvent *e)
@@ -277,10 +289,12 @@ void MailWebEngineView::scrollPageUp(int percent)
 
 void MailWebEngineView::executeCustomRenderingScripts()
 {
+#if 1
     const QString scripts = MessageViewer::MailWebEngineScript::manageShowHideAttachments() +
                             MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("To")) +
                             MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("Cc"));
     page()->runJavaScript(scripts);
+#endif
 }
 
 void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
