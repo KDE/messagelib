@@ -21,7 +21,9 @@
 #define WEBENGINEMANAGESCRIPT_H
 
 #include <QObject>
+#include <QWebEngineScript>
 
+class QWebEngineProfile;
 namespace WebEngineViewer
 {
 class WebEngineManageScript : public QObject
@@ -30,6 +32,7 @@ class WebEngineManageScript : public QObject
 public:
     explicit WebEngineManageScript(QObject *parent = Q_NULLPTR);
     ~WebEngineManageScript();
+    void addScript(QWebEngineProfile *profile, const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
 };
 }
 #endif // WEBENGINEMANAGESCRIPT_H

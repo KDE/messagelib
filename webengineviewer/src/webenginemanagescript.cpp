@@ -19,6 +19,10 @@
 
 #include "webenginemanagescript.h"
 
+#include <QWebEngineProfile>
+#include <QWebEngineScript>
+#include <QWebEngineScriptCollection>
+
 using namespace WebEngineViewer;
 
 WebEngineManageScript::WebEngineManageScript(QObject *parent)
@@ -30,4 +34,27 @@ WebEngineManageScript::WebEngineManageScript(QObject *parent)
 WebEngineManageScript::~WebEngineManageScript()
 {
 
+}
+
+void WebEngineManageScript::addScript(QWebEngineProfile *profile, const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint)
+{
+    if (profile) {
+        QWebEngineScript script;
+        QList<QWebEngineScript> collectionScripts = profile->scripts()->findScripts(scriptName);
+        if (!collectionScripts.isEmpty()) {
+            script = collectionScripts.first();
+        }
+        Q_FOREACH (const QWebEngineScript &s, collectionScripts) {
+            profile->scripts()->remove(s);
+        }
+
+        if (script.isNull()) {
+            script.setName(scriptName);
+            script.setInjectionPoint(injectionPoint);
+            script.setRunsOnSubFrames(true);
+            script.setWorldId(QWebEngineScript::ApplicationWorld);
+        }
+        script.setSourceCode(source);
+        profile->scripts()->insert(script);
+    }
 }
