@@ -18,6 +18,7 @@
 */
 
 #include "webengineview.h"
+#include "webenginemanagescript.h"
 #include "../config-webengineviewer.h"
 #include <QEvent>
 #include <QKeyEvent>
@@ -43,6 +44,7 @@ public:
     QString mJquery;
     qreal mSavedRelativePosition;
     QWidget *mCurrentWidget;
+    WebEngineManageScript *mManagerScript;
 };
 
 WebEngineView::WebEngineView(bool useJQuery, QWidget *parent)
@@ -50,6 +52,7 @@ WebEngineView::WebEngineView(bool useJQuery, QWidget *parent)
       d(new WebEngineViewer::WebEngineViewPrivate)
 {
     installEventFilter(this);
+    d->mManagerScript = new WebEngineManageScript(this);
     if (useJQuery) {
         QFile file;
         file.setFileName(QStringLiteral(":/data/jquery.min.js"));
@@ -57,7 +60,8 @@ WebEngineView::WebEngineView(bool useJQuery, QWidget *parent)
         d->mJquery = QString::fromUtf8(file.readAll());
         d->mJquery.append(QStringLiteral("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
         file.close();
-        connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
+        //connect(this, &WebEngineView::loadFinished, this, &WebEngineView::slotLoadFinished);
+        d->mManagerScript->addScript(page()->profile(), d->mJquery, QStringLiteral("jquery"), QWebEngineScript::DocumentCreation);
     }
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
@@ -68,6 +72,11 @@ WebEngineView::WebEngineView(bool useJQuery, QWidget *parent)
 WebEngineView::~WebEngineView()
 {
     delete d;
+}
+
+void WebEngineView::addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint)
+{
+    d->mManagerScript->addScript(page()->profile(), source, scriptName, injectionPoint);
 }
 
 void WebEngineView::forwardWheelEvent(QWheelEvent *event)

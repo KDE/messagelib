@@ -21,6 +21,7 @@
 #define WEBENGINEVIEW_H
 
 #include <QWebEngineView>
+#include <QWebEngineScript>
 #include "webengineviewer_export.h"
 class QWebEngineDownloadItem;
 namespace WebEngineViewer
@@ -40,6 +41,7 @@ public:
     bool hasPrintPreviewSupport() const;
     void saveHtml(QWebEngineDownloadItem *download);
 
+    void addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
 protected:
     bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
     QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) Q_DECL_OVERRIDE;

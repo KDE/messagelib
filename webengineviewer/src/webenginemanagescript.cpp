@@ -22,6 +22,7 @@
 #include <QWebEngineProfile>
 #include <QWebEngineScript>
 #include <QWebEngineScriptCollection>
+#include <QDebug>
 
 using namespace WebEngineViewer;
 
@@ -52,9 +53,10 @@ void WebEngineManageScript::addScript(QWebEngineProfile *profile, const QString 
             script.setName(scriptName);
             script.setInjectionPoint(injectionPoint);
             script.setRunsOnSubFrames(true);
-            script.setWorldId(QWebEngineScript::ApplicationWorld);
+            script.setWorldId(QWebEngineScript::MainWorld);
         }
         script.setSourceCode(source);
         profile->scripts()->insert(script);
+        qDebug()<<" insert script:::::::::::::::::::::"<<script.isNull() << "scriptName"<<scriptName ;
     }
 }
