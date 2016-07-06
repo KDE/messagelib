@@ -19,6 +19,7 @@
 
 #include "webengineview.h"
 #include "webenginemanagescript.h"
+#include "webengineviewer_debug.h"
 #include "../config-webengineviewer.h"
 #include <QEvent>
 #include <QKeyEvent>
@@ -213,6 +214,7 @@ void WebEngineView::saveRelativePosition()
 
 qreal WebEngineView::relativePosition() const
 {
+    qCDebug(WEBENGINEVIEWER_LOG) << "Relative Position"<< d->mSavedRelativePosition;
     return d->mSavedRelativePosition;
 }
 
