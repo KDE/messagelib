@@ -55,27 +55,21 @@ Interface::MessagePart::Ptr TextPlainBodyPartFormatter::process(Interface::BodyP
     KMime::Content *node = part.content();
     const bool isFirstTextPart = (node->topLevel()->textContent() == node);
 
-    IconType iconType = NoIcon;
-    if (!isFirstTextPart && part.objectTreeParser()->attachmentStrategy()->defaultDisplay(node) != AttachmentStrategy::Inline &&
-            !part.objectTreeParser()->showOnlyOneMimePart()) {
-        iconType = MimeTreeParser::IconExternal;
-    }
-
-    if (!isFirstTextPart && (part.objectTreeParser()->attachmentStrategy()->defaultDisplay(node) == AttachmentStrategy::None) && !part.objectTreeParser()->showOnlyOneMimePart()) {
-        part.nodeHelper()->setNodeDisplayedHidden(node, true);
-    }
-
     part.objectTreeParser()->extractNodeInfos(node, isFirstTextPart);
 
     QString label = NodeHelper::fileName(node);
 
     const bool bDrawFrame = !isFirstTextPart
                             && !part.objectTreeParser()->showOnlyOneMimePart()
-                            && !label.isEmpty()
-                            && iconType == MimeTreeParser::NoIcon;
+                            && !label.isEmpty();
     const QString fileName = part.nodeHelper()->writeNodeToTempFile(node);
 
-    TextMessagePart::Ptr mp(new TextMessagePart(part.objectTreeParser(), node, bDrawFrame, fileName.isEmpty(), part.source()->decryptMessage(), iconType));
+    TextMessagePart::Ptr mp;
+    if (isFirstTextPart) {
+        mp = TextMessagePart::Ptr(new TextMessagePart(part.objectTreeParser(), node, bDrawFrame, fileName.isEmpty(), part.source()->decryptMessage()));
+    } else {
+        mp = TextMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, bDrawFrame, fileName.isEmpty(), part.source()->decryptMessage()));
+    }
 
     part.processResult()->setInlineSignatureState(mp->signatureState());
     part.processResult()->setInlineEncryptionState(mp->encryptionState());

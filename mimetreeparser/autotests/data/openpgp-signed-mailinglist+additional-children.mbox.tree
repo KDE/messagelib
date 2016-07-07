@@ -3,8 +3,8 @@
    * MimeTreeParser::MimeMessagePart
     * MimeTreeParser::TextMessagePart
      * MimeTreeParser::MessagePart
-    * MimeTreeParser::TextMessagePart
-    * MimeTreeParser::TextMessagePart
+    * MimeTreeParser::AttachmentMessagePart
+    * MimeTreeParser::AttachmentMessagePart
      * MimeTreeParser::MessagePart
-   * MimeTreeParser::TextMessagePart
+   * MimeTreeParser::AttachmentMessagePart
     * MimeTreeParser::MessagePart

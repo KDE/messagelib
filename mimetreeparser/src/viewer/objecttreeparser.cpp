@@ -339,25 +339,6 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
 
 Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)
 {
-    // ### (mmutz) default handling should go into the respective
-    // ### bodypartformatters.
-    if (!htmlWriter()) {
-        qCWarning(MIMETREEPARSER_LOG) << "no htmlWriter()";
-        return MessagePart::Ptr();
-    }
-
-    // always show images in multipart/related when showing in html, not with an additional icon
-    if (result.isImage() && node->parent() &&
-            node->parent()->contentType()->subType() == "related" && mSource->htmlMail() && !showOnlyOneMimePart()) {
-        QString fileName = mNodeHelper->writeNodeToTempFile(node);
-        QString href = QUrl::fromLocalFile(fileName).url();
-        QByteArray cid = node->contentID()->identifier();
-        htmlWriter()->embedPart(cid, href);
-        nodeHelper()->setNodeDisplayedEmbedded(node, true);
-        mNodeHelper->setNodeDisplayedHidden(node, true);
-        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::IconInline));
-        return mp;
-    }
     Interface::MessagePart::Ptr mp;
     ProcessResult processResult(mNodeHelper);
 
@@ -370,56 +351,34 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
         return mp;
     }
 
-    const AttachmentStrategy *const as = attachmentStrategy();
-    if (as && as->defaultDisplay(node) == AttachmentStrategy::None &&
-            !showOnlyOneMimePart() &&
-            node->parent() /* message is not an attachment */) {
-        mNodeHelper->setNodeDisplayedHidden(node, true);
-        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::IconInline));
-        return mp;
-    }
+    const auto _mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(this, node, false, true, mSource->decryptMessage()));
+    result.setInlineSignatureState(_mp->signatureState());
+    result.setInlineEncryptionState(_mp->encryptionState());
+    _mp->setNeverDisplayInline(result.neverDisplayInline());
+    _mp->setIsImage(result.isImage());
+    mp = _mp;
 
-    bool asIcon = true;
-    if (!result.neverDisplayInline()) {
-        if (as) {
-            asIcon = as->defaultDisplay(node) == AttachmentStrategy::AsIcon;
+    // always show images in multipart/related when showing in html, not with an additional icon
+    if (result.isImage() && node->parent() &&
+            node->parent()->contentType()->subType() == "related" && mSource->htmlMail() && !showOnlyOneMimePart()) {
+        QString fileName = mNodeHelper->writeNodeToTempFile(node);
+        QString href = QUrl::fromLocalFile(fileName).url();
+        QByteArray cid = node->contentID()->identifier();
+        if (htmlWriter()) {
+            htmlWriter()->embedPart(cid, href);
         }
+        nodeHelper()->setNodeDisplayedEmbedded(node, true);
+        mNodeHelper->setNodeDisplayedHidden(node, true);
+        return mp;
     }
 
     // Show it inline if showOnlyOneMimePart(), which means the user clicked the image
     // in the message structure viewer manually, and therefore wants to see the full image
     if (result.isImage() && showOnlyOneMimePart() && !result.neverDisplayInline()) {
-        asIcon = false;
-    }
-
-    // neither image nor text -> show as icon
-    if (!result.isImage()
-            && !node->contentType()->isText()) {
-        asIcon = true;
-    }
-
-    /*FIXME(Andras) port it
-    // if the image is not complete do not try to show it inline
-    if ( result.isImage() && !node->msgPart().isComplete() )
-    asIcon = true;
-    */
-
-    if (asIcon) {
-        bool hidePart = (as && as->defaultDisplay(node) == AttachmentStrategy::None) || showOnlyOneMimePart();
-        mNodeHelper->setNodeDisplayedHidden(node, hidePart);
-        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::IconExternal));
-    } else if (result.isImage()) {
-        // Embed the image
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        return TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::IconInline));
-    } else {
-        mNodeHelper->setNodeDisplayedEmbedded(node, true);
-        const auto mp = TextMessagePart::Ptr(new TextMessagePart(this, node, false, true, mSource->decryptMessage(), MimeTreeParser::NoIcon));
-        result.setInlineSignatureState(mp->signatureState());
-        result.setInlineEncryptionState(mp->encryptionState());
-        return mp;
     }
-    return MessagePart::Ptr();
+
+    return mp;
 }
 
 KMMsgSignatureState ProcessResult::inlineSignatureState() const

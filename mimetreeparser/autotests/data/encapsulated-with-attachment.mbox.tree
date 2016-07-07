@@ -4,7 +4,7 @@
     * MimeTreeParser::MessagePart
    * MimeTreeParser::EncapsulatedRfc822MessagePart
     * MimeTreeParser::MimeMessagePart
-     * MimeTreeParser::TextMessagePart
+     * MimeTreeParser::AttachmentMessagePart
       * MimeTreeParser::MessagePart
-     * MimeTreeParser::TextMessagePart
+     * MimeTreeParser::AttachmentMessagePart
       * MimeTreeParser::MessagePart

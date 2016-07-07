@@ -19,6 +19,7 @@
 
 #include "messagepart.h"
 #include "mimetreeparser_debug.h"
+#include "attachmentstrategy.h"
 #include "cryptohelper.h"
 #include "objecttreeparser.h"
 #include "interfaces/htmlwriter.h"
@@ -219,14 +220,13 @@ QString MessagePartList::htmlContent() const
 
 //-----TextMessageBlock----------------------
 
-TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage, IconType asIcon)
+TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage)
     : MessagePartList(otp)
     , mNode(node)
     , mDrawFrame(drawFrame)
     , mShowLink(showLink)
     , mDecryptMessage(decryptMessage)
     , mIsHidden(false)
-    , mAsIcon(asIcon)
 {
     if (!mNode) {
         qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
@@ -340,6 +340,152 @@ KMMsgSignatureState TextMessagePart::signatureState() const
 bool TextMessagePart::isHidden() const
 {
     return mIsHidden;
+}
+
+bool TextMessagePart::showLink() const
+{
+    return mShowLink;
+}
+
+bool TextMessagePart::showTextFrame() const
+{
+    return mDrawFrame;
+}
+
+//-----AttachmentMessageBlock----------------------
+
+AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser* otp, KMime::Content* node, bool drawFrame, bool showLink, bool decryptMessage)
+    : TextMessagePart(otp, node, drawFrame, showLink, decryptMessage)
+    , mIsImage(false)
+    , mNeverDisplayInline(false)
+{
+
+}
+
+AttachmentMessagePart::~AttachmentMessagePart()
+{
+
+}
+
+bool AttachmentMessagePart::neverDisplayInline() const
+{
+    return mNeverDisplayInline;
+}
+
+void AttachmentMessagePart::setNeverDisplayInline(bool displayInline)
+{
+    mNeverDisplayInline = displayInline;
+}
+
+bool AttachmentMessagePart::isImage() const
+{
+    return mIsImage;
+}
+
+void AttachmentMessagePart::setIsImage(bool image)
+{
+    mIsImage = image;
+}
+
+IconType AttachmentMessagePart::asIcon() const
+{
+    const AttachmentStrategy *const as = mOtp->attachmentStrategy();
+    const bool defaultHidden(as && as->defaultDisplay(mNode) == AttachmentStrategy::None);
+    const bool showOnlyOneMimePart(mOtp->showOnlyOneMimePart());
+
+    QByteArray mediaType("text");
+    QByteArray subType("plain");
+    if (mNode->contentType(false) && !mNode->contentType()->mediaType().isEmpty() &&
+            !mNode->contentType()->subType().isEmpty()) {
+        mediaType = mNode->contentType()->mediaType();
+        subType = mNode->contentType()->subType();
+    }
+    const bool isTextPart = (mediaType == QByteArray("text"));
+
+    bool defaultAsIcon = true;
+    if (!neverDisplayInline()) {
+        if (as) {
+            defaultAsIcon = as->defaultDisplay(mNode) == AttachmentStrategy::AsIcon;
+        }
+    }
+    if (isImage() && showOnlyOneMimePart && !neverDisplayInline()) {
+        defaultAsIcon = false;
+    }
+
+    // neither image nor text -> show as icon
+    if (!isImage() && !isTextPart) {
+        defaultAsIcon = true;
+    }
+
+    if (isTextPart) {
+        if (as && as->defaultDisplay(mNode) != AttachmentStrategy::Inline) {
+            return MimeTreeParser::IconExternal;
+        }
+        return MimeTreeParser::NoIcon;
+    } else {
+        if (isImage() && source()->htmlMail() &&
+            mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
+            return MimeTreeParser::IconInline;
+        }
+
+        if(defaultHidden && !showOnlyOneMimePart && mNode->parent()) {
+            return MimeTreeParser::IconInline;
+        }
+
+        if (defaultAsIcon) {
+            return MimeTreeParser::IconExternal;
+        } else if (isImage()) {
+            return MimeTreeParser::IconInline;
+        } else {
+            return MimeTreeParser::NoIcon;
+        }
+    }
+}
+
+bool AttachmentMessagePart::isHidden() const
+{
+    const AttachmentStrategy *const as = mOtp->attachmentStrategy();
+    const bool defaultHidden(as && as->defaultDisplay(mNode) == AttachmentStrategy::None);
+    const bool showOnlyOneMimePart(mOtp->showOnlyOneMimePart());
+
+    QByteArray mediaType("text");
+    QByteArray subType("plain");
+    if (mNode->contentType(false) && !mNode->contentType()->mediaType().isEmpty() &&
+            !mNode->contentType()->subType().isEmpty()) {
+        mediaType = mNode->contentType()->mediaType();
+        subType = mNode->contentType()->subType();
+    }
+    const bool isTextPart = (mediaType == QByteArray("text"));
+
+    bool defaultAsIcon = true;
+    if (!neverDisplayInline()) {
+        if (as) {
+            defaultAsIcon = as->defaultDisplay(mNode) == AttachmentStrategy::AsIcon;
+        }
+    }
+    if (isImage() && showOnlyOneMimePart && !neverDisplayInline()) {
+        defaultAsIcon = false;
+    }
+
+    // neither image nor text -> show as icon
+    if (!isImage() && !isTextPart) {
+        defaultAsIcon = true;
+    }
+
+    bool hidden(false);
+    if (isTextPart) {
+        hidden = defaultHidden && !showOnlyOneMimePart;
+    } else {
+        if (isImage() && source()->htmlMail() &&
+            mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
+            hidden = true;
+        } else {
+            hidden = defaultHidden && !showOnlyOneMimePart && mNode->parent();
+            hidden |= defaultAsIcon && (defaultHidden || showOnlyOneMimePart);
+        }
+    }
+    mOtp->nodeHelper()->setNodeDisplayedHidden(mNode, hidden);
+    return hidden;
 }
 
 //-----HtmlMessageBlock----------------------

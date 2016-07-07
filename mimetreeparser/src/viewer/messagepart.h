@@ -159,7 +159,7 @@ class MIMETREEPARSER_EXPORT TextMessagePart : public MessagePartList
     Q_OBJECT
 public:
     typedef QSharedPointer<TextMessagePart> Ptr;
-    TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage, IconType asIcon);
+    TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage);
     virtual ~TextMessagePart();
 
     KMMsgSignatureState signatureState() const;
@@ -169,19 +169,44 @@ public:
 
     bool isHidden() const Q_DECL_OVERRIDE;
 
+    bool showLink() const;
+    bool showTextFrame() const;
+
+protected:
+    KMime::Content *mNode;
+
 private:
     void parseContent();
 
-    KMime::Content *mNode;
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;
     bool mDrawFrame;
     bool mShowLink;
     bool mDecryptMessage;
     bool mIsHidden;
-    IconType mAsIcon;
-
+    
     friend class DefaultRendererPrivate;
+};
+
+class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
+{
+    Q_OBJECT
+public:
+    typedef QSharedPointer<AttachmentMessagePart> Ptr;
+    AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage);
+    virtual ~AttachmentMessagePart();
+
+    IconType asIcon() const;
+    bool neverDisplayInline() const;
+    void setNeverDisplayInline(bool displayInline);
+    bool isImage() const;
+    void setIsImage(bool image);
+
+    bool isHidden() const Q_DECL_OVERRIDE;
+
+private:
+    bool mIsImage;
+    bool mNeverDisplayInline;
 };
 
 class MIMETREEPARSER_EXPORT HtmlMessagePart : public MessagePart

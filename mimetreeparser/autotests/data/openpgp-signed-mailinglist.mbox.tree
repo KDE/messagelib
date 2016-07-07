@@ -3,5 +3,5 @@
    * MimeTreeParser::CryptoMessagePart
     * MimeTreeParser::TextMessagePart
      * MimeTreeParser::MessagePart
-   * MimeTreeParser::TextMessagePart
+   * MimeTreeParser::AttachmentMessagePart
     * MimeTreeParser::MessagePart
