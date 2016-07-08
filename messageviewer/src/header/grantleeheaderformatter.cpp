@@ -157,6 +157,16 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("from"),  StringUtil::emailAddrAsAnchor(message->from(), StringUtil::DisplayFullAddress));
     headerObject.insert(QStringLiteral("fromStr"), message->from()->asUnicodeString());
 
+    //Sender
+    headerObject.insert(QStringLiteral("sender"), message->sender()->asUnicodeString());
+    headerObject.insert(QStringLiteral("senderi18n"), i18n("Sender:"));
+    headerObject.insert(QStringLiteral("listidi18n"), i18n("List-Id:"));
+
+    if (message->headerByType("List-Id")) {
+        headerObject.insert(QStringLiteral("listid"), message->headerByType("List-Id")->asUnicodeString());
+    }
+
+
     const QString spamHtml = d->headerStyleUtil.spamStatus(message);
     if (!spamHtml.isEmpty()) {
         headerObject.insert(QStringLiteral("spamstatusi18n"), i18n("Spam Status:"));
