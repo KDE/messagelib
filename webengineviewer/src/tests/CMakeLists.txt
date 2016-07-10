@@ -41,3 +41,14 @@ add_executable(jquerysupportwebenginetest ${jquerysupportwebengine_test_SRCS})
 target_link_libraries(jquerysupportwebenginetest
     Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets
     )
+
+##
+set(testdndwebengine_test_SRCS
+    testdndwebengine.cpp
+    )
+
+add_executable(testdndwebenginetest ${testdndwebengine_test_SRCS})
+
+target_link_libraries(testdndwebenginetest
+    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets
+    )
