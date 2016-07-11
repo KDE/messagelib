@@ -1,4 +1,5 @@
  * MimeTreeParser::MessagePartList
   * MimeTreeParser::CryptoMessagePart
-   * MimeTreeParser::TextMessagePart
-    * MimeTreeParser::MessagePart
+   * MimeTreeParser::SignedMessagePart
+    * MimeTreeParser::TextMessagePart
+     * MimeTreeParser::MessagePart

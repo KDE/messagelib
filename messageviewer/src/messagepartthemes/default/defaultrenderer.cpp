@@ -920,13 +920,11 @@ public:
         Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
         QObject block;
 
-        if (metaData.isSigned) {
-            c.insert(QStringLiteral("content"), renderSigned(mp));
-        } else if (node) {
+        if (node || mp->hasSubParts()) {
             auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
             {
                 HTMLBlock::Ptr rBlock;
-                if (mp->isRoot()) {
+                if (node && mp->isRoot()) {
                     rBlock = HTMLBlock::Ptr(new RootBlock(_htmlWriter.data()));
                 }
                 renderSubParts(mp, _htmlWriter);
@@ -956,7 +954,7 @@ public:
         return html;
     }
 
-    QString renderSigned(const CryptoMessagePart::Ptr &mp)
+    QString renderSigned(const SignedMessagePart::Ptr &mp)
     {
         KMime::Content *node = mp->mNode;
         const auto metaData = mp->mMetaData;
@@ -1186,6 +1184,34 @@ public:
         return html;
     }
 
+    QString render(const SignedMessagePart::Ptr &mp)
+    {
+        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
+        const auto metaData = mp->mMetaData;
+        if (metaData.isSigned) {
+            {
+                HTMLBlock::Ptr aBlock;
+                if (mp->isAttachment()) {
+                    aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                }
+                htmlWriter->queue(renderSigned(mp));
+            }
+            return htmlWriter->html;
+        }
+        {
+            HTMLBlock::Ptr aBlock;
+            if (mp->isAttachment()) {
+                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+            }
+            if (mp->hasSubParts()) {
+                renderSubParts(mp, htmlWriter);
+            } else {
+                htmlWriter->queue(render(mp.dynamicCast<MessagePart>()));
+            }
+        }
+        return htmlWriter->html;
+    }
+ 
     QString render(const CryptoMessagePart::Ptr &mp)
     {
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
@@ -1202,24 +1228,13 @@ public:
             return htmlWriter->html;
         }
 
-        if (metaData.isSigned) {
-            {
-                HTMLBlock::Ptr aBlock;
-                if (mp->isAttachment()) {
-                    aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
-                }
-                htmlWriter->queue(renderSigned(mp));
-            }
-            return htmlWriter->html;
-        }
-
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
                 aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
 
-            if (mp->mNode) {
+            if (mp->hasSubParts()) {
                 renderSubParts(mp, htmlWriter);
             } else {
                 htmlWriter->queue(render(mp.dynamicCast<MessagePart>()));
@@ -1318,6 +1333,11 @@ public:
             }
         } else if (className == QStringLiteral("MimeTreeParser::HtmlMessagePart")) {
             auto mp = msgPart.dynamicCast<HtmlMessagePart>();
+            if (mp) {
+                return render(mp);
+            }
+        } else if (className == QStringLiteral("MimeTreeParser::SignedMessagePart")) {
+            auto mp = msgPart.dynamicCast<SignedMessagePart>();
             if (mp) {
                 return render(mp);
             }

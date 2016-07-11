@@ -104,13 +104,6 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
 
         if (!messagePart->inProgress) {
             part.nodeHelper()->setNodeProcessed(data, false);   // Set the data node to done to prevent it from being processed
-            if (messagePart->isDecryptable && messagePart->isSigned) {
-                // Note: Multipart/Encrypted might also be signed
-                //       without encapsulating a nicely formatted
-                //       ~~~~~~~                 Multipart/Signed part.
-                //                               (see RFC 3156 --> 6.2)
-                part.nodeHelper()->setSignatureState(node, KMMsgFullySigned);
-            }
         }
     }
     return mp;

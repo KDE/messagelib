@@ -4,6 +4,6 @@
     * MimeTreeParser::MessagePart
    * MimeTreeParser::EncapsulatedRfc822MessagePart
     * MimeTreeParser::CryptoMessagePart
-     * MimeTreeParser::CryptoMessagePart
+     * MimeTreeParser::SignedMessagePart
       * MimeTreeParser::TextMessagePart
        * MimeTreeParser::MessagePart

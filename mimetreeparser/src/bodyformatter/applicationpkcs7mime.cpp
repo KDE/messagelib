@@ -87,7 +87,7 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
     // We try decrypting the content
     // if we either *know* that it is an encrypted message part
     // or there is neither signed nor encrypted parameter.
-    CryptoMessagePart::Ptr mp;
+    MessagePart::Ptr mp;
     if (!isSigned) {
         if (isEncrypted) {
             qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: enveloped (encrypted) data";
@@ -95,24 +95,22 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
             qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
         }
 
-        mp = CryptoMessagePart::Ptr(new CryptoMessagePart(part.objectTreeParser(),
+        auto _mp = CryptoMessagePart::Ptr(new CryptoMessagePart(part.objectTreeParser(),
                                     node->decodedText(), smimeCrypto,
                                     NodeHelper::fromAsString(node), node));
-        mp->setIsEncrypted(true);
-        mp->setDecryptMessage(part.source()->decryptMessage());
-        PartMetaData *messagePart(mp->partMetaData());
+        mp = _mp;
+        _mp->setIsEncrypted(true);
+        _mp->setDecryptMessage(part.source()->decryptMessage());
+        PartMetaData *messagePart(_mp->partMetaData());
         if (!part.source()->decryptMessage()) {
             isEncrypted = true;
             signTestNode = 0; // PENDING(marc) to be abs. sure, we'd need to have to look at the content
         } else {
-            mp->startDecryption();
+            _mp->startDecryption();
             if (messagePart->isDecryptable) {
                 qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  encryption found  -  enveloped (encrypted) data !";
                 isEncrypted = true;
                 part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
-                if (messagePart->isSigned) {
-                    part.nodeHelper()->setSignatureState(node, KMMsgFullySigned);
-                }
                 signTestNode = 0;
 
             } else {
@@ -120,7 +118,7 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
                 // decryption failed, or because we didn't know if it was encrypted, tried,
                 // and failed. If the message was not actually encrypted, we continue
                 // assuming it's signed
-                if (mp->passphraseError() || (smimeType.isEmpty() && messagePart->isEncrypted)) {
+                if (_mp->passphraseError() || (smimeType.isEmpty() && messagePart->isEncrypted)) {
                     isEncrypted = true;
                     signTestNode = 0;
                 }
@@ -148,24 +146,24 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
 
         const QTextCodec *aCodec(part.objectTreeParser()->codecFor(signTestNode));
         const QByteArray signaturetext = signTestNode->decodedContent();
-        mp = CryptoMessagePart::Ptr(new CryptoMessagePart(part.objectTreeParser(),
+        auto _mp = SignedMessagePart::Ptr(new SignedMessagePart(part.objectTreeParser(),
                                     aCodec->toUnicode(signaturetext), smimeCrypto,
                                     NodeHelper::fromAsString(node), signTestNode));
-        mp->setDecryptMessage(part.source()->decryptMessage());
+        mp = _mp;
+        //mp->setDecryptMessage(part.source()->decryptMessage());
         PartMetaData *messagePart(mp->partMetaData());
         if (smimeCrypto) {
-            mp->startVerificationDetached(signaturetext, 0, QByteArray());
+            _mp->startVerificationDetached(signaturetext, 0, QByteArray());
         } else {
             messagePart->auditLogError = GpgME::Error(GPG_ERR_NOT_IMPLEMENTED);
         }
 
-        if (messagePart->isSigned) {
+        if (_mp->isSigned()) {
             if (!isSigned) {
                 qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  signature found  -  opaque signed data !";
                 isSigned = true;
             }
 
-            part.nodeHelper()->setSignatureState(signTestNode, KMMsgFullySigned);
             if (signTestNode != node) {
                 part.nodeHelper()->setSignatureState(node, KMMsgFullySigned);
             }

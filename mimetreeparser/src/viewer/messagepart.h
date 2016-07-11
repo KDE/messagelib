@@ -51,6 +51,7 @@ class ObjectTreeParser;
 class HtmlWriter;
 class HTMLBlock;
 typedef QSharedPointer<HTMLBlock> HTMLBlockPtr;
+class CryptoBodyPartMemento;
 
 namespace Interface
 {
@@ -303,7 +304,6 @@ class MIMETREEPARSER_EXPORT CryptoMessagePart : public MessagePart
     Q_OBJECT
     Q_PROPERTY(bool decryptMessage READ decryptMessage WRITE setDecryptMessage)
     Q_PROPERTY(bool isEncrypted READ isEncrypted)
-    Q_PROPERTY(bool isSigned READ isSigned)
     Q_PROPERTY(bool passphraseError READ passphraseError)
 public:
     typedef QSharedPointer<CryptoMessagePart> Ptr;
@@ -315,24 +315,20 @@ public:
 
     virtual ~CryptoMessagePart();
 
+    QString text() const Q_DECL_OVERRIDE;
+
     void setDecryptMessage(bool decrypt);
     bool decryptMessage() const;
 
     void setIsEncrypted(bool encrypted);
     bool isEncrypted() const;
 
-    void setIsSigned(bool isSigned);
-    bool isSigned() const;
-
     bool passphraseError() const;
 
     void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
     void startDecryption(KMime::Content *data = 0);
-    void startVerification(const QByteArray &text, const QTextCodec *aCodec);
-    void startVerificationDetached(const QByteArray &text, KMime::Content *textNode, const QByteArray &signature);
 
     QByteArray mDecryptedData;
-    std::vector<GpgME::Signature> mSignatures;
 
     QString plaintextContent() const Q_DECL_OVERRIDE;
     QString htmlContent() const Q_DECL_OVERRIDE;
@@ -344,14 +340,6 @@ private:
      */
     bool okDecryptMIME(KMime::Content &data);
 
-    /** Handles the verification of data
-     * If signature is empty it is handled as inline signature otherwise as detached signature mode.
-     * Returns true if the verfication was successfull and the block is signed.
-     * If used in async mode, check if mMetaData.inProgress is true, it inicates a running verification process.
-     */
-    bool okVerify(const QByteArray &data, const QByteArray &signature);
-
-    void sigStatusToMetaData();
 protected:
     bool mPassphraseError;
     bool mNoSecKey;
@@ -362,6 +350,53 @@ protected:
     QByteArray mVerifiedText;
     std::vector<GpgME::DecryptionResult::Recipient> mDecryptRecipients;
 
+    friend class DefaultRendererPrivate;
+};
+
+class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
+{
+    Q_OBJECT
+    Q_PROPERTY(bool isSigned READ isSigned)
+ public:
+    typedef QSharedPointer<SignedMessagePart> Ptr;
+    SignedMessagePart(ObjectTreeParser *otp,
+                      const QString &text,
+                      const Kleo::CryptoBackend::Protocol *cryptoProto,
+                      const QString &fromAddress,
+                      KMime::Content *node);
+
+    virtual ~SignedMessagePart();
+
+    void setIsSigned(bool isSigned);
+    bool isSigned() const;
+
+    void startVerification(const QByteArray &text, const QTextCodec *aCodec);
+    void startVerificationDetached(const QByteArray &text, KMime::Content *textNode, const QByteArray &signature);
+
+    QByteArray mDecryptedData;
+    std::vector<GpgME::Signature> mSignatures;
+
+    QString plaintextContent() const Q_DECL_OVERRIDE;
+    QString htmlContent() const Q_DECL_OVERRIDE;
+
+private:
+    /** Handles the verification of data
+     * If signature is empty it is handled as inline signature otherwise as detached signature mode.
+     * Returns true if the verfication was successfull and the block is signed.
+     * If used in async mode, check if mMetaData.inProgress is true, it inicates a running verification process.
+     */
+    bool okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode);
+
+    void sigStatusToMetaData();
+
+    void setVerificationResult(const CryptoBodyPartMemento *m, KMime::Content *textNode);
+protected:
+    const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    QString mFromAddress;
+    KMime::Content *mNode;
+    QByteArray mVerifiedText;
+    
+    friend CryptoMessagePart;
     friend class DefaultRendererPrivate;
 };
 

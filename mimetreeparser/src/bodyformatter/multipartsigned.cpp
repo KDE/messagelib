@@ -99,11 +99,10 @@ Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface:
     const QByteArray cleartext = KMime::LFtoCRLF(signedData->encodedContent());
     const QTextCodec *aCodec(part.objectTreeParser()->codecFor(signedData));
 
-    CryptoMessagePart::Ptr mp(new CryptoMessagePart(part.objectTreeParser(),
+    SignedMessagePart::Ptr mp(new SignedMessagePart(part.objectTreeParser(),
                               aCodec->toUnicode(cleartext), protocol,
                               NodeHelper::fromAsString(node), signature));
     PartMetaData *messagePart(mp->partMetaData());
-    messagePart->isSigned = true;
 
     if (protocol) {
         mp->startVerificationDetached(cleartext, signedData, signature->decodedContent());
