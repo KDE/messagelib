@@ -31,9 +31,16 @@ TestDndWebEngine::TestDndWebEngine(QWidget *parent)
 {
     QVBoxLayout *vbox = new QVBoxLayout;
     setLayout(vbox);
+    QHBoxLayout *layout = new QHBoxLayout;
+    vbox->addLayout(layout);
     pageView = new WebEngineViewer::WebEngineView(this);
     pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
-    vbox->addWidget(pageView);
+    layout->addWidget(pageView);
+
+    webEngineView = new QWebEngineView(this);
+    webEngineView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    layout->addWidget(webEngineView);
+
     QTextEdit *edit = new QTextEdit(this);
     vbox->addWidget(edit);
 }

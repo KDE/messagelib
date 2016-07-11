@@ -25,7 +25,7 @@
 namespace WebEngineViewer {
 class WebEngineView;
 }
-
+class QWebEngineView;
 class TestDndWebEngine : public QWidget
 {
     Q_OBJECT
@@ -34,6 +34,7 @@ public:
     ~TestDndWebEngine();
 private:
     WebEngineViewer::WebEngineView *pageView;
+    QWebEngineView *webEngineView;
 };
 
 #endif // TestDndWebEngine_H
