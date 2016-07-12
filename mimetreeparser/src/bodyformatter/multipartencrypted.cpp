@@ -86,7 +86,7 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
 
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
 
-    CryptoMessagePart::Ptr mp(new CryptoMessagePart(part.objectTreeParser(),
+    EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(part.objectTreeParser(),
                               data->decodedText(), useThisCryptProto,
                               NodeHelper::fromAsString(data), node));
     mp->setIsEncrypted(true);

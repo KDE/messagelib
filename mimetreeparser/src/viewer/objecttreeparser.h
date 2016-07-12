@@ -397,7 +397,7 @@ private:
 
     friend class PartNodeBodyPart;
     friend class MessagePart;
-    friend class CryptoMessagePart;
+    friend class EncryptedMessagePart;
     friend class SignedMessagePart;
     friend class EncapsulatedRfc822MessagePart;
     friend class TextMessagePart;

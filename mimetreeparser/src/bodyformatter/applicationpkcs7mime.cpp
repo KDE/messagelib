@@ -95,7 +95,7 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
             qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  type unknown  -  enveloped (encrypted) data ?";
         }
 
-        auto _mp = CryptoMessagePart::Ptr(new CryptoMessagePart(part.objectTreeParser(),
+        auto _mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(part.objectTreeParser(),
                                     node->decodedText(), smimeCrypto,
                                     NodeHelper::fromAsString(node), node));
         mp = _mp;

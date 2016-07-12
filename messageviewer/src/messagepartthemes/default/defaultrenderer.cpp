@@ -911,7 +911,7 @@ public:
 
     }
 
-    QString renderEncrypted(const CryptoMessagePart::Ptr &mp)
+    QString renderEncrypted(const EncryptedMessagePart::Ptr &mp)
     {
         KMime::Content *node = mp->mNode;
         const auto metaData = mp->mMetaData;
@@ -1212,7 +1212,7 @@ public:
         return htmlWriter->html;
     }
  
-    QString render(const CryptoMessagePart::Ptr &mp)
+    QString render(const EncryptedMessagePart::Ptr &mp)
     {
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         const auto metaData = mp->mMetaData;
@@ -1341,8 +1341,8 @@ public:
             if (mp) {
                 return render(mp);
             }
-        } else if (className == QStringLiteral("MimeTreeParser::CryptoMessagePart")) {
-            auto mp = msgPart.dynamicCast<CryptoMessagePart>();
+        } else if (className == QStringLiteral("MimeTreeParser::EncryptedMessagePart")) {
+            auto mp = msgPart.dynamicCast<EncryptedMessagePart>();
             if (mp) {
                 return render(mp);
             }

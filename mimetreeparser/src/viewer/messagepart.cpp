@@ -281,7 +281,7 @@ void TextMessagePart::parseContent()
                 fullySignedOrEncryptedTmp = false;
                 appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(block.text()))));
             } else if (block.type() == PgpMessageBlock) {
-                CryptoMessagePart::Ptr mp(new CryptoMessagePart(mOtp, QString(), cryptProto, fromAddress, Q_NULLPTR));
+                EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, fromAddress, Q_NULLPTR));
                 mp->setDecryptMessage(decryptMessage());
                 mp->setIsEncrypted(true);
                 appendSubPart(mp);
@@ -1001,7 +1001,7 @@ QString SignedMessagePart::htmlContent() const
 }
 
 //-----CryptMessageBlock---------------------
-CryptoMessagePart::CryptoMessagePart(ObjectTreeParser *otp,
+EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp,
                                      const QString &text,
                                      const Kleo::CryptoBackend::Protocol *cryptoProto,
                                      const QString &fromAddress,
@@ -1024,37 +1024,37 @@ CryptoMessagePart::CryptoMessagePart(ObjectTreeParser *otp,
     mMetaData.status_code = GPGME_SIG_STAT_NONE;
 }
 
-CryptoMessagePart::~CryptoMessagePart()
+EncryptedMessagePart::~EncryptedMessagePart()
 {
 
 }
 
-void CryptoMessagePart::setDecryptMessage(bool decrypt)
+void EncryptedMessagePart::setDecryptMessage(bool decrypt)
 {
     mDecryptMessage = decrypt;
 }
 
-bool CryptoMessagePart::decryptMessage() const
+bool EncryptedMessagePart::decryptMessage() const
 {
     return mDecryptMessage;
 }
 
-void CryptoMessagePart::setIsEncrypted(bool encrypted)
+void EncryptedMessagePart::setIsEncrypted(bool encrypted)
 {
     mMetaData.isEncrypted = encrypted;
 }
 
-bool CryptoMessagePart::isEncrypted() const
+bool EncryptedMessagePart::isEncrypted() const
 {
     return mMetaData.isEncrypted;
 }
 
-bool CryptoMessagePart::passphraseError() const
+bool EncryptedMessagePart::passphraseError() const
 {
     return mPassphraseError;
 }
 
-void CryptoMessagePart::startDecryption(const QByteArray &text, const QTextCodec *aCodec)
+void EncryptedMessagePart::startDecryption(const QByteArray &text, const QTextCodec *aCodec)
 {
     KMime::Content *content = new KMime::Content;
     content->setBody(text);
@@ -1076,7 +1076,7 @@ void CryptoMessagePart::startDecryption(const QByteArray &text, const QTextCodec
     }
 }
 
-bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
+bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
 {
     mPassphraseError = false;
     mMetaData.inProgress = false;
@@ -1189,7 +1189,7 @@ bool CryptoMessagePart::okDecryptMIME(KMime::Content &data)
     return bDecryptionOk;
 }
 
-void CryptoMessagePart::startDecryption(KMime::Content *data)
+void EncryptedMessagePart::startDecryption(KMime::Content *data)
 {
     if (!mNode && !data) {
         return;
@@ -1234,7 +1234,7 @@ void CryptoMessagePart::startDecryption(KMime::Content *data)
     }
 }
 
-QString CryptoMessagePart::plaintextContent() const
+QString EncryptedMessagePart::plaintextContent() const
 {
     if (!mNode) {
         return MessagePart::text();
@@ -1243,7 +1243,7 @@ QString CryptoMessagePart::plaintextContent() const
     }
 }
 
-QString CryptoMessagePart::htmlContent() const
+QString EncryptedMessagePart::htmlContent() const
 {
     if (!mNode) {
         return MessagePart::text();
@@ -1252,7 +1252,7 @@ QString CryptoMessagePart::htmlContent() const
     }
 }
 
-QString CryptoMessagePart::text() const
+QString EncryptedMessagePart::text() const
 {
     if (hasSubParts()) {
         auto _mp = (subParts()[0]).dynamicCast<SignedMessagePart>();

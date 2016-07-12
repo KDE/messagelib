@@ -299,21 +299,21 @@ private:
     friend class DefaultRendererPrivate;
 };
 
-class MIMETREEPARSER_EXPORT CryptoMessagePart : public MessagePart
+class MIMETREEPARSER_EXPORT EncryptedMessagePart : public MessagePart
 {
     Q_OBJECT
     Q_PROPERTY(bool decryptMessage READ decryptMessage WRITE setDecryptMessage)
     Q_PROPERTY(bool isEncrypted READ isEncrypted)
     Q_PROPERTY(bool passphraseError READ passphraseError)
 public:
-    typedef QSharedPointer<CryptoMessagePart> Ptr;
-    CryptoMessagePart(ObjectTreeParser *otp,
+    typedef QSharedPointer<EncryptedMessagePart> Ptr;
+    EncryptedMessagePart(ObjectTreeParser *otp,
                       const QString &text,
                       const Kleo::CryptoBackend::Protocol *cryptoProto,
                       const QString &fromAddress,
                       KMime::Content *node);
 
-    virtual ~CryptoMessagePart();
+    virtual ~EncryptedMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
 
@@ -396,7 +396,7 @@ protected:
     KMime::Content *mNode;
     QByteArray mVerifiedText;
     
-    friend CryptoMessagePart;
+    friend EncryptedMessagePart;
     friend class DefaultRendererPrivate;
 };
 

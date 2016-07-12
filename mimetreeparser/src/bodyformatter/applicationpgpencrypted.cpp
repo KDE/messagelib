@@ -74,7 +74,7 @@ Interface::MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(In
 
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
 
-    CryptoMessagePart::Ptr mp(new CryptoMessagePart(part.objectTreeParser(),
+    EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(part.objectTreeParser(),
                               data->decodedText(), Kleo::CryptoBackendFactory::instance()->openpgp(),
                               NodeHelper::fromAsString(data), node));
     mp->setIsEncrypted(true);
