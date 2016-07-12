@@ -54,14 +54,5 @@ Interface::MessagePart::Ptr TextHtmlBodyPartFormatter::process(Interface::BodyPa
 {
     KMime::Content *node = part.content();
     HtmlMessagePart::Ptr mp(new HtmlMessagePart(part.objectTreeParser(), node, part.source()));
-
-    if (node->topLevel()->textContent() == node  || part.objectTreeParser()->attachmentStrategy()->defaultDisplay(node) == AttachmentStrategy::Inline ||
-            part.objectTreeParser()->showOnlyOneMimePart()) {
-    } else {
-        // we need the copy of htmlcontent and charset in anycase for the current design of otp.
-        //Should be not neeed if otp don't hold any status anymore
-        mp->fix();
-
-    }
     return mp;
 }
