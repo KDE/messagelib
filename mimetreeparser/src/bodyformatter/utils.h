@@ -32,10 +32,11 @@ namespace MimeTreeParser
      found in 'cntDesc'.
   2. Parse the 'node' to display the content.
 */
-
 MimeMessagePart::Ptr createAndParseTempNode(Interface::BodyPart &part, KMime::Content *parentNode, const char *content, const char *cntDesc);
 
 KMime::Content *findTypeInDirectChilds(KMime::Content *content, const QByteArray &mimeType);
+
+MessagePart::Ptr toplevelTextNode(MessagePart::Ptr messageTree);
 }
 
 #endif

@@ -56,6 +56,8 @@ Interface::BodyPartFormatter::Result MultiPartEncryptedBodyPartFormatter::format
 Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();
+    const bool isTopLevelPart = (node == part.topLevelContent());
+
     if (node->contents().isEmpty()) {
         Q_ASSERT(false);
         return MessagePart::Ptr();
@@ -96,7 +98,7 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
         part.nodeHelper()->setNodeProcessed(data, false);  // Set the data node to done to prevent it from being processed
     } else if (KMime::Content *newNode = part.nodeHelper()->decryptedNodeForContent(data)) {
         // if we already have a decrypted node for part.objectTreeParser() encrypted node, don't do the decryption again
-        return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, part.objectTreeParser()->showOnlyOneMimePart()));
+        return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, true));
     } else {
         mp->startDecryption(data);
 
@@ -104,6 +106,9 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
 
         if (!messagePart->inProgress) {
             part.nodeHelper()->setNodeProcessed(data, false);   // Set the data node to done to prevent it from being processed
+            if (isTopLevelPart && toplevelTextNode(mp)) {
+                part.objectTreeParser()->setPlainTextContent(toplevelTextNode(mp)->text());
+            }
         }
     }
     return mp;

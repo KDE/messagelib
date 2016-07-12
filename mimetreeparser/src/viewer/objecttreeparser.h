@@ -349,10 +349,10 @@ private:
     * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
     * top-level content.
     */
-    MessagePartPtr parseObjectTreeInternal(KMime::Content *node);
-    bool processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet);
+    MessagePartPtr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
+    bool processType(KMime::Content* node, MimeTreeParser::ProcessResult& processResult, const QByteArray& mediaType, const QByteArray& subType, Interface::MessagePartPtr& mpRet, bool onlyOneMimePart);
 
-    Interface::MessagePartPtr defaultHandling(KMime::Content *node, ProcessResult &result);
+    Interface::MessagePartPtr defaultHandling(KMime::Content* node, MimeTreeParser::ProcessResult& result, bool onlyOneMimePart);
 
 private:
 
@@ -405,6 +405,7 @@ private:
     friend class TextPlainBodyPartFormatter;
     friend class MultiPartSignedBodyPartFormatter;
     friend class ApplicationPkcs7MimeBodyPartFormatter;
+    friend class MultiPartEncryptedBodyPartFormatter;
 };
 
 }

@@ -105,7 +105,6 @@ protected:
 
     QString mText;
     ObjectTreeParser *mOtp;
-    ObjectTreeParser *mSubOtp;
     PartMetaData mMetaData;
 
 private:

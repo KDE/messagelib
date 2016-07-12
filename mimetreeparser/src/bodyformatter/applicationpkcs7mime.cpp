@@ -19,6 +19,8 @@
 
 #include "applicationpkcs7mime.h"
 
+#include "utils.h"
+
 #include "viewer/attachmentstrategy.h"
 #include "viewer/objecttreeparser.h"
 #include "viewer/messagepart.h"
@@ -57,6 +59,7 @@ Interface::BodyPartFormatter::Result ApplicationPkcs7MimeBodyPartFormatter::form
 Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();
+    const bool isTopLevelPart = (node == part.topLevelContent());
 
     if (node->head().isEmpty()) {
         return MessagePart::Ptr();
@@ -170,6 +173,10 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
         } else {
             qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  NO signature found   :-(";
         }
+    }
+
+    if (isTopLevelPart && mp && toplevelTextNode(mp)) {
+        part.objectTreeParser()->setPlainTextContent(toplevelTextNode(mp)->text());
     }
 
     return mp;

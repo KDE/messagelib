@@ -54,8 +54,9 @@ Interface::MessagePart::Ptr TextPlainBodyPartFormatter::process(Interface::BodyP
 {
     KMime::Content *node = part.content();
     const bool isFirstTextPart = (node->topLevel()->textContent() == node);
+    const bool isTopLevelTextPart = (node == part.topLevelContent()->textContent());
 
-    part.objectTreeParser()->extractNodeInfos(node, isFirstTextPart);
+    part.objectTreeParser()->extractNodeInfos(node, isTopLevelTextPart);
 
     QString label = NodeHelper::fileName(node);
 
@@ -74,7 +75,7 @@ Interface::MessagePart::Ptr TextPlainBodyPartFormatter::process(Interface::BodyP
     part.processResult()->setInlineSignatureState(mp->signatureState());
     part.processResult()->setInlineEncryptionState(mp->encryptionState());
 
-    if (isFirstTextPart) {
+    if (isTopLevelTextPart) {
         part.objectTreeParser()->setPlainTextContent(mp->text());
     }
 

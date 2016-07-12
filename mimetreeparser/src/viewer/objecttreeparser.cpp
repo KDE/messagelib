@@ -176,8 +176,7 @@ void ObjectTreeParser::copyContentFrom(const ObjectTreeParser *other)
 void ObjectTreeParser::parseObjectTree(KMime::Content *node)
 {
     mTopLevelContent = node;
-    mParsedPart = MessagePart::Ptr(new MessagePartList(this));
-    parseObjectTreeInternal(node);
+    mParsedPart = parseObjectTreeInternal(node, showOnlyOneMimePart());
 
     if (mParsedPart) {
         mParsedPart->fix();
@@ -207,7 +206,7 @@ bool ObjectTreeParser::printing() const
     return mPrinting;
 }
 
-bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet)
+bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet, bool onlyOneMimePart)
 {
     bool bRendered = false;
     const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType.constData());
@@ -241,7 +240,7 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
                 processResult.setNeverDisplayInline(true);
                 formatter->adaptProcessResult(processResult);
                 mNodeHelper->setNodeDisplayedEmbedded(node, false);
-                const Interface::MessagePart::Ptr mp = defaultHandling(node, processResult);
+                const Interface::MessagePart::Ptr mp = defaultHandling(node, processResult, onlyOneMimePart);
                 if (mp) {
                     if (auto _mp = mp.dynamicCast<MessagePart>()) {
                         _mp->setAttachmentFlag(node);
@@ -259,7 +258,7 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
     return bRendered;
 }
 
-MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
+MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     if (!node) {
         return MessagePart::Ptr();
@@ -269,7 +268,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
     mHasPendingAsyncJobs = false;
 
     // reset "processed" flags for...
-    if (showOnlyOneMimePart()) {
+    if (onlyOneMimePart) {
         // ... this node and all descendants
         mNodeHelper->setNodeUnprocessed(node, false);
         if (!node->contents().isEmpty()) {
@@ -281,8 +280,8 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
     }
 
     const bool isRoot = node->isTopLevel();
-    mParsedPart = MessagePart::Ptr(new MessagePartList(this));
-    mParsedPart->setIsRoot(isRoot);
+    auto parsedPart = MessagePart::Ptr(new MessagePartList(this));
+    parsedPart->setIsRoot(isRoot);
     KMime::Content *parent = node->parent();
     auto contents = parent ? parent->contents() : KMime::Content::List();
     if (contents.isEmpty()) {
@@ -306,22 +305,22 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         }
 
         Interface::MessagePartPtr mp;
-        if (processType(node, processResult, mediaType, subType, mp)) {
+        if (processType(node, processResult, mediaType, subType, mp, onlyOneMimePart)) {
             if (mp) {
-                mParsedPart->appendSubPart(mp);
+                parsedPart->appendSubPart(mp);
             }
-        } else if (processType(node, processResult, mediaType, "*", mp)) {
+        } else if (processType(node, processResult, mediaType, "*", mp, onlyOneMimePart)) {
             if (mp) {
-                mParsedPart->appendSubPart(mp);
+                parsedPart->appendSubPart(mp);
             }
         } else {
             qCWarning(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
-            const auto mp = defaultHandling(node, processResult);
+            const auto mp = defaultHandling(node, processResult, onlyOneMimePart);
             if (mp) {
                 if (auto _mp = mp.dynamicCast<MessagePart>()) {
                     _mp->setAttachmentFlag(node);
                 }
-                mParsedPart->appendSubPart(mp);
+                parsedPart->appendSubPart(mp);
             }
         }
         mNodeHelper->setNodeProcessed(node, false);
@@ -329,15 +328,15 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node)
         // adjust signed/encrypted flags if inline PGP was found
         processResult.adjustCryptoStatesOfNode(node);
 
-        if (showOnlyOneMimePart()) {
+        if (onlyOneMimePart) {
             break;
         }
     }
 
-    return mParsedPart;
+    return parsedPart;
 }
 
-Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result)
+Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result, bool onlyOneMimePart)
 {
     Interface::MessagePart::Ptr mp;
     ProcessResult processResult(mNodeHelper);
@@ -347,7 +346,7 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
              node->contentType()->name().endsWith(QLatin1String("p7s")) ||
              node->contentType()->name().endsWith(QLatin1String("p7c"))
             ) &&
-            processType(node, processResult, "application", "pkcs7-mime", mp)) {
+            processType(node, processResult, "application", "pkcs7-mime", mp, onlyOneMimePart)) {
         return mp;
     }
 
@@ -360,7 +359,7 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
 
     // always show images in multipart/related when showing in html, not with an additional icon
     if (result.isImage() && node->parent() &&
-            node->parent()->contentType()->subType() == "related" && mSource->htmlMail() && !showOnlyOneMimePart()) {
+            node->parent()->contentType()->subType() == "related" && mSource->htmlMail() && !onlyOneMimePart) {
         QString fileName = mNodeHelper->writeNodeToTempFile(node);
         QString href = QUrl::fromLocalFile(fileName).url();
         QByteArray cid = node->contentID()->identifier();
@@ -374,7 +373,7 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
 
     // Show it inline if showOnlyOneMimePart(), which means the user clicked the image
     // in the message structure viewer manually, and therefore wants to see the full image
-    if (result.isImage() && showOnlyOneMimePart() && !result.neverDisplayInline()) {
+    if (result.isImage() && onlyOneMimePart && !result.neverDisplayInline()) {
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
     }
 

@@ -53,7 +53,6 @@ MessagePart::MessagePart(ObjectTreeParser *otp,
                          const QString &text)
     : mText(text)
     , mOtp(otp)
-    , mSubOtp(Q_NULLPTR)
     , mAttachmentNode(Q_NULLPTR)
     , mRoot(false)
 {
@@ -61,10 +60,6 @@ MessagePart::MessagePart(ObjectTreeParser *otp,
 
 MessagePart::~MessagePart()
 {
-    if (mSubOtp) {
-        delete mSubOtp;
-        mSubOtp = Q_NULLPTR;
-    }
 }
 
 PartMetaData *MessagePart::partMetaData()
@@ -136,9 +131,7 @@ void MessagePart::setHtmlWriter(HtmlWriter *htmlWriter) const
 
 void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 {
-    mSubOtp = new ObjectTreeParser(mOtp, onlyOneMimePart);
-    mSubOtp->setAllowAsync(mOtp->allowAsync());
-    auto subMessagePart = mSubOtp->parseObjectTreeInternal(node);
+    auto subMessagePart = mOtp->parseObjectTreeInternal(node, onlyOneMimePart);
     mRoot = subMessagePart->isRoot();
     foreach (auto part, subMessagePart->subParts()) {
         appendSubPart(part);
@@ -161,9 +154,6 @@ void MessagePart::copyContentFrom() const
         if (m) {
             m->copyContentFrom();
         }
-    }
-    if (hasSubParts() && mSubOtp) {
-        mOtp->copyContentFrom(mSubOtp);
     }
 }
 
