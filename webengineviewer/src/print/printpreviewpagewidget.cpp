@@ -24,6 +24,7 @@
 #include <poppler-qt5.h>
 
 #include <QLabel>
+#include <QDir>
 #include <QComboBox>
 #include <QDebug>
 #include <QFile>
@@ -135,9 +136,37 @@ void PrintPreviewPageWidget::showPage(int index)
     }
 }
 
-void PrintPreviewPageWidget::print(const QList<int> &page)
+void PrintPreviewPageWidget::print(const QList<int> &pages)
 {
+#if 0
+    Poppler::PSConverter *psConverter = mDoc->psConverter();
+    QTemporaryFile tf(QDir::tempPath() + QLatin1String("/kmail_XXXXXX.ps"));
+    if ( !tf.open() ) {
+
+    }
+    psConverter->setPageList(pages);
+    psConverter->setRightMargin(0);
+    psConverter->setBottomMargin(0);
+    psConverter->setLeftMargin(0);
+    psConverter->setTopMargin(0);
+    psConverter->setStrictMargins(false);
+    psConverter->setPSOptions(psConverter->psOptions() | Poppler::PSConverter::HideAnnotations );
+    if (psConverter->convert()) {
+        if ( !QStandardPaths::findExecutable(QStringLiteral("lpr-cups")).isEmpty() ) {
+            exe = QStringLiteral("lpr-cups");
+        } else if ( !QStandardPaths::findExecutable(QStringLiteral("lpr.cups")).isEmpty() ) {
+            exe = QStringLiteral("lpr.cups");
+        } else if ( !QStandardPaths::findExecutable(QStringLiteral("lpr")).isEmpty() ) {
+            exe = QStringLiteral("lpr");
+        } else if ( !QStandardPaths::findExecutable(QStringLiteral("lp")).isEmpty() ) {
+            exe = QStringLiteral("lp");
+        } else {
+
+    }
+    delete psConverter;
+#else
     qDebug() << " void PrintPreviewPageWidget::print(const QList<int> &page) not implemented";
+#endif
     //TODO
 }
 
