@@ -65,6 +65,8 @@ std::vector< GpgME::Key, std::allocator< GpgME::Key > > MessageComposer::Test::g
     }
 
     Q_ASSERT(!res.error());
+
+    /*
     qDebug() << "got private keys:" << keys.size();
 
     for (std::vector< GpgME::Key >::iterator i = keys.begin(); i != keys.end(); ++i) {
@@ -74,6 +76,7 @@ std::vector< GpgME::Key, std::allocator< GpgME::Key > > MessageComposer::Test::g
             qDebug() << "userIDs:" << i->userID(k).email();
         }
     }
+    */
 
     return keys;
 }
