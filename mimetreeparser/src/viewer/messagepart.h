@@ -184,8 +184,9 @@ private:
     bool mShowLink;
     bool mDecryptMessage;
     bool mIsHidden;
-    
+
     friend class DefaultRendererPrivate;
+    friend class ObjectTreeParser;
 };
 
 class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
@@ -258,7 +259,9 @@ private:
     MimeMessagePart::Ptr mTextPart;
     MimeMessagePart::Ptr mHTMLPart;
     bool mViewHtml;
+
     friend class DefaultRendererPrivate;
+    friend class ObjectTreeParser;
 };
 
 class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart

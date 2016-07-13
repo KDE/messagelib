@@ -405,7 +405,6 @@ private:
     friend class TextPlainBodyPartFormatter;
     friend class MultiPartSignedBodyPartFormatter;
     friend class ApplicationPkcs7MimeBodyPartFormatter;
-    friend class MultiPartEncryptedBodyPartFormatter;
 };
 
 }

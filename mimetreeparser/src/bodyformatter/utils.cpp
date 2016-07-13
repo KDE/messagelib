@@ -55,8 +55,11 @@ MessagePart::Ptr MimeTreeParser::toplevelTextNode(MessagePart::Ptr messageTree)
     foreach (const auto &mp, messageTree->subParts()) {
         const auto m = mp.dynamicCast<MessagePart>();
         const auto text = mp.dynamicCast<TextMessagePart>();
+        const auto alternative = mp.dynamicCast<AlternativeMessagePart>();
         if (text) {
             return text;
+        } else if (alternative) {
+            return alternative;
         } else {
             auto ret = toplevelTextNode(m);
             if (ret) {

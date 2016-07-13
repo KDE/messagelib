@@ -56,7 +56,6 @@ Interface::BodyPartFormatter::Result MultiPartEncryptedBodyPartFormatter::format
 Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();
-    const bool isTopLevelPart = (node == part.topLevelContent());
 
     if (node->contents().isEmpty()) {
         Q_ASSERT(false);
@@ -106,9 +105,6 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
 
         if (!messagePart->inProgress) {
             part.nodeHelper()->setNodeProcessed(data, false);   // Set the data node to done to prevent it from being processed
-            if (isTopLevelPart && toplevelTextNode(mp)) {
-                part.objectTreeParser()->setPlainTextContent(toplevelTextNode(mp)->text());
-            }
         }
     }
     return mp;

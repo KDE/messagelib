@@ -44,6 +44,7 @@
 
 #include "mimetreeparser_debug.h"
 
+#include "bodyformatter/utils.h"
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/htmlwriter.h"
 #include "interfaces/messagepartrenderer.h"
@@ -181,6 +182,16 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
     if (mParsedPart) {
         mParsedPart->fix();
         mParsedPart->copyContentFrom();
+        if (auto mp = toplevelTextNode(mParsedPart)) {
+            if (auto _mp = mp.dynamicCast<TextMessagePart>()) {
+                extractNodeInfos(_mp->mNode, true);
+            } else if (auto _mp = mp.dynamicCast<AlternativeMessagePart>()) {
+                if (_mp->mTextNode) {
+                    extractNodeInfos(_mp->mTextNode, true);
+                }
+            }
+            setPlainTextContent(mp->text());
+        }
 
         if (htmlWriter()) {
             const auto renderer = mSource->messagePartTheme(mParsedPart);
