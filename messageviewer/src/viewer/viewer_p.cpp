@@ -2204,12 +2204,8 @@ void ViewerPrivate::slotOpenInBrowser()
 
 void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
 {
-    MimeTreeParser::AttachmentTemporaryFilesDirs *browserTemporaryFile = new MimeTreeParser::AttachmentTemporaryFilesDirs;
-    browserTemporaryFile->addTempFile(filename);
     const QUrl url(QUrl::fromLocalFile(filename));
-    KRun::runUrl(url, QStringLiteral("text/html"), q);
-    browserTemporaryFile->removeTempFiles();
-    browserTemporaryFile = Q_NULLPTR;
+    KRun::runUrl(url, QStringLiteral("text/html"), q, true);
 }
 
 void ViewerPrivate::slotExportHtmlPageFailed()
