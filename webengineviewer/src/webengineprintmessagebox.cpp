@@ -26,6 +26,7 @@
 #include <QLabel>
 #include <QPushButton>
 
+//#define PRINTING_IMPLEMENTED 1
 using namespace WebEngineViewer;
 WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     : QDialog(parent)
@@ -49,11 +50,15 @@ WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     openInBrowser->setObjectName(QStringLiteral("openinbrowser"));
     buttonBox->addButton(openInBrowser, QDialogButtonBox::ActionRole);
 
+#ifdef PRINTING_IMPLEMENTED
+
 #ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
     QPushButton *openInPreviewDialogBox = new QPushButton(i18n("Print Preview"), this);
     connect(openInPreviewDialogBox, &QPushButton::clicked, this, &WebEnginePrintMessageBox::slotPrintPreview);
     openInPreviewDialogBox->setObjectName(QStringLiteral("openprintpreview"));
     buttonBox->addButton(openInPreviewDialogBox, QDialogButtonBox::ActionRole);
+#endif
+
 #endif
 
     mainLayout->addWidget(buttonBox);
