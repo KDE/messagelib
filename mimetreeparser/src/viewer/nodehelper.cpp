@@ -80,9 +80,9 @@ NodeHelper::NodeHelper() :
 
 NodeHelper::~NodeHelper()
 {
-    //Don't delete it it will delete in class with a deleteLater;
     if (mAttachmentFilesDir) {
-        mAttachmentFilesDir->removeTempFiles();
+        mAttachmentFilesDir->forceCleanTempFiles();
+        delete mAttachmentFilesDir;
         mAttachmentFilesDir = 0;
     }
 }

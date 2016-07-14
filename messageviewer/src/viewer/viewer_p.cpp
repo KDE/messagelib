@@ -685,25 +685,32 @@ KMime::Content::List ViewerPrivate::selectedContents()
 void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr &offer)
 {
     QString name = mNodeHelper->writeNodeToTempFile(node);
-    QString linkName = createAtmFileLink(name);
-    QList<QUrl> lst;
-    bool autoDelete = true;
 
-    if (linkName.isEmpty()) {
-        autoDelete = false;
-        linkName = name;
+    // Make sure that it will not deleted when we switch from message.
+    QTemporaryFile *tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX"));
+    tempFile->open();
+    const QString tmpFileName = tempFile->fileName();
+    delete tempFile;
+
+    QFile f(name);
+    if (!f.copy(tmpFileName)) {
+        qCDebug(MESSAGEVIEWER_LOG) << " File was not able to copy: filename: " << name << " to " << tmpFileName;
+    } else {
+        name = tmpFileName;
     }
+    f.close();
 
-    const QFileDevice::Permissions perms = QFile::permissions(linkName);
-    QFile::setPermissions(linkName, perms | QFileDevice::ReadUser | QFileDevice::WriteUser);
-    const QUrl url = QUrl::fromLocalFile(linkName);
+    QList<QUrl> lst;
+    const QFileDevice::Permissions perms = QFile::permissions(name);
+    QFile::setPermissions(name, perms | QFileDevice::ReadUser | QFileDevice::WriteUser);
+    const QUrl url = QUrl::fromLocalFile(name);
     lst.append(url);
     if (offer) {
-        if ((!KRun::runService(*offer, lst, 0, autoDelete)) && autoDelete) {
+        if ((!KRun::runService(*offer, lst, 0, true))) {
             QFile::remove(url.toLocalFile());
         }
     } else {
-        if ((! KRun::displayOpenWithDialog(lst, mMainWindow, autoDelete)) && autoDelete) {
+        if ((! KRun::displayOpenWithDialog(lst, mMainWindow, true))) {
             QFile::remove(url.toLocalFile());
         }
     }
