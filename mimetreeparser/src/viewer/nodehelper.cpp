@@ -237,7 +237,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
 
     qCDebug(MIMETREEPARSER_LOG) << "Create temp file: " << fname;
     QByteArray data = node->decodedContent();
-    if (node->contentType()->isText() && data.size() > 0) {
+    if (node->contentType()->isText() && !data.isEmpty()) {
         // convert CRLF to LF before writing text attachments to disk
         data = KMime::CRLFtoLF(data);
     }
