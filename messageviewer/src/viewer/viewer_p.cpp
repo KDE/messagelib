@@ -91,6 +91,7 @@
 #include <QItemSelectionModel>
 #include <QSignalMapper>
 #include <QSplitter>
+#include <QTemporaryFile>
 #include <QTreeView>
 #include <QPrinter>
 #include <QPrintDialog>
