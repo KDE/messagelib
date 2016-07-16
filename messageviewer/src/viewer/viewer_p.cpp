@@ -132,7 +132,6 @@
 #include <WebEngineViewer/WebHitTestResult>
 #include "header/headerstylemenumanager.h"
 
-#include <MimeTreeParser/AttachmentTemporaryFilesDirs>
 #include <MimeTreeParser/BodyPart>
 #include <MimeTreeParser/HtmlWriter>
 
