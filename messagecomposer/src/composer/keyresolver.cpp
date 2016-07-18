@@ -371,15 +371,15 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
     if (!fishies.empty()) {
         // certificates can't have marginal trust
         msg += i18n("\nThe following keys are only marginally trusted: \n");
-        msg += keysAsStrings(fishies).join(QStringLiteral(","));
+        msg += keysAsStrings(fishies).join(QLatin1Char(','));
     }
     if (!ickies.empty()) {
         msg += i18n("\nThe following keys or certificates have unknown trust level: \n");
-        msg += keysAsStrings(ickies).join(QStringLiteral(","));
+        msg += keysAsStrings(ickies).join(QLatin1Char(','));
     }
     if (!rewookies.empty()) {
         msg += i18n("\nThe following keys or certificates are <b>revoked</b>: \n");
-        msg += keysAsStrings(rewookies).join(QStringLiteral(","));
+        msg += keysAsStrings(rewookies).join(QLatin1Char(','));
     }
 
     if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg, i18n("Not Fully Trusted Encryption Keys"),

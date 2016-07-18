@@ -169,7 +169,7 @@ QString StorageModel::id() const
     }
 
     ids.sort();
-    return ids.join(QStringLiteral(":"));
+    return ids.join(QLatin1Char(':'));
 }
 
 bool StorageModel::isOutBoundFolder(const Akonadi::Collection &c) const
