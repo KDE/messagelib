@@ -543,7 +543,14 @@ const QTextCodec *NodeHelper::codec(KMime::Content *node)
     const QTextCodec *c = mOverrideCodecs.value(node, 0);
     if (!c) {
         // no override-codec set for this message, try the CT charset parameter:
-        c = codecForName(node->contentType()->charset());
+        QByteArray charset = node->contentType()->charset();
+
+        // utf-8 is a superset of us-ascii, so we don't loose anything, if we it insead
+        // utf-8 is nowadays that widely, that it is a good guess to use it to fix issus with broken clients.
+        if (charset.toLower() == "us-ascii") {
+            charset = "utf-8";
+        }
+        c = codecForName(charset);
     }
     if (!c) {
         // no charset means us-ascii (RFC 2045), so using local encoding should
