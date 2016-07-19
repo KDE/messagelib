@@ -1722,16 +1722,16 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
 
     if (!isRoot) {
         popup.addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save &As..."),
-                        this, SLOT(slotAttachmentSaveAs()));
+                        this, &ViewerPrivate::slotAttachmentSaveAs);
 
         if (isAttachment) {
             popup.addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("to open", "Open"),
-                            this, SLOT(slotAttachmentOpen()));
+                            this, &ViewerPrivate::slotAttachmentOpen);
 
             if (selectedContents().count() == 1) {
                 createOpenWithMenu(&popup, QLatin1String(content->contentType()->mimeType()), false);
             } else {
-                popup.addAction(i18n("Open With..."), this, SLOT(slotAttachmentOpenWith()));
+                popup.addAction(i18n("Open With..."), this, &ViewerPrivate::slotAttachmentOpenWith);
             }
             popup.addAction(i18nc("to view something", "View"), this, &ViewerPrivate::slotAttachmentView);
         }
@@ -1739,25 +1739,25 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
 
     if (hasAttachments) {
         popup.addAction(i18n("Save All Attachments..."), this,
-                        SLOT(slotAttachmentSaveAll()));
+                        &ViewerPrivate::slotAttachmentSaveAll);
     }
 
     // edit + delete only for attachments
     if (!isRoot) {
         if (isAttachment) {
             popup.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"),
-                            this, SLOT(slotAttachmentCopy()));
+                            this, &ViewerPrivate::slotAttachmentCopy);
 #if 0  //FIXME Laurent Comment for the moment it crash see Bug 287177
             popup.addAction(QIcon::fromTheme("edit-delete"), i18n("Delete Attachment"),
                             this, SLOT(slotAttachmentDelete()));
 #endif
             if (MessageViewer::MessageViewerSettings::self()->allowAttachmentEditing())
                 popup.addAction(QIcon::fromTheme(QStringLiteral("document-properties")), i18n("Edit Attachment"),
-                                this, SLOT(slotAttachmentEdit()));
+                                this, &ViewerPrivate::slotAttachmentEdit);
         }
 
         if (!content->isTopLevel()) {
-            popup.addAction(i18n("Properties"), this, SLOT(slotAttachmentProperties()));
+            popup.addAction(i18n("Properties"), this, &ViewerPrivate::slotAttachmentProperties);
         }
     }
     popup.exec(mMimePartTree->viewport()->mapToGlobal(pos));

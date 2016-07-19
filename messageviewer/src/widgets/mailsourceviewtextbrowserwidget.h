@@ -74,9 +74,8 @@ public:
     void setPlainText(const QString &text);
     void setFixedFont();
     MessageViewer::MailSourceViewTextBrowser *textBrowser() const;
-private Q_SLOTS:
-    void slotFind();
 private:
+    void slotFind();
     MailSourceViewTextBrowser *mTextBrowser;
     FindBarSourceView *mFindBar;
     KPIMTextEdit::SlideContainer *mSliderContainer;
@@ -91,12 +90,11 @@ public:
     explicit MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent = Q_NULLPTR);
 protected:
     void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;
-private Q_SLOTS:
-    void slotSpeakText();
-    void slotSaveAs();
 Q_SIGNALS:
     void findText();
 private:
+    void slotSpeakText();
+    void slotSaveAs();
     KPIMTextEdit::TextToSpeechInterface *mTextToSpeechInterface;
 };
 

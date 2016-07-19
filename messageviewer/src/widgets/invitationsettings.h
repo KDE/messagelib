@@ -46,13 +46,11 @@ public:
     void doLoadFromGlobalSettings();
     void doResetToDefaultsOther();
 
-private Q_SLOTS:
-    void slotLegacyBodyInvitesToggled(bool on);
-
 Q_SIGNALS:
     void changed();
 
 private:
+    void slotLegacyBodyInvitesToggled(bool on);
     InvitationSettingsPrivate *const d;
 };
 

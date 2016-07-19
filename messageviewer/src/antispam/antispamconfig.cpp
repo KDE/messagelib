@@ -36,16 +36,15 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
-namespace MessageViewer
-{
+using namespace MessageViewer;
 
-class AntiSpamConfigSingletonProvider
+class MessageViewer::AntiSpamConfigSingletonProvider
 {
 public:
     AntiSpamConfig instance;
 };
 
-Q_GLOBAL_STATIC(AntiSpamConfigSingletonProvider, theAntiSpamConfigSingletonProvider)
+Q_GLOBAL_STATIC(MessageViewer::AntiSpamConfigSingletonProvider, theAntiSpamConfigSingletonProvider)
 
 AntiSpamConfig *AntiSpamConfig::instance()
 {
@@ -117,5 +116,4 @@ const SpamAgents AntiSpamConfig::uniqueAgents() const
         }
     }
     return agents;
-}
 }

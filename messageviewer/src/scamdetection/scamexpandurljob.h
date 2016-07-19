@@ -39,7 +39,7 @@ Q_SIGNALS:
     void urlExpanded(const QString &shortUrl, const QString &expandedUrl);
     void expandUrlError(QNetworkReply::NetworkError error);
 
-private Q_SLOTS:
+private:
     void slotError(QNetworkReply::NetworkError error);
     void slotExpandFinished(QNetworkReply *reply);
 
