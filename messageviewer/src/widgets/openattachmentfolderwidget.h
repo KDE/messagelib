@@ -38,11 +38,10 @@ public Q_SLOTS:
     void slotShowWarning();
     void slotHideWarning();
 
-private Q_SLOTS:
+private:
     void slotOpenAttachmentFolder();
     void slotTimeOut();
     void slotExplicitlyClosed();
-private:
     QUrl mUrl;
     QTimer *mTimer;
 };

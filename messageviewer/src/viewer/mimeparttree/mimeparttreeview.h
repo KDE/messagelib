@@ -39,10 +39,9 @@ public:
     void setRoot(KMime::Content *root);
 
     KMime::Content::List selectedContents();
-private Q_SLOTS:
-    void slotMimePartDestroyed();
 
 private:
+    void slotMimePartDestroyed();
     void saveMimePartTreeConfig();
     void restoreMimePartTreeConfig();
     MimeTreeModel *mMimePartModel;

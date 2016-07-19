@@ -36,8 +36,6 @@
 #include "grantleetheme/grantleetheme.h"
 
 using namespace MessageViewer;
-// #####################
-
 //
 // HeaderStyle abstract base:
 //

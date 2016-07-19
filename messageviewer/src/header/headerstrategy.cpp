@@ -36,8 +36,7 @@
 //
 // HeaderStrategy abstract base:
 //
-namespace MessageViewer
-{
+using namespace MessageViewer;
 HeaderStrategy::HeaderStrategy()
 {
 
@@ -78,6 +77,4 @@ QStringList HeaderStrategy::stringList(const char *const headers[], int numHeade
         sl.push_back(QLatin1String(headers[i]));
     }
     return sl;
-}
-
 }

@@ -37,10 +37,9 @@
 
 using namespace MessageCore;
 
-namespace MessageViewer
-{
+using namespace MessageViewer;
 
-class Q_DECL_HIDDEN GrantleeHeaderFormatter::Private
+class Q_DECL_HIDDEN MessageViewer::GrantleeHeaderFormatter::Private
 {
 public:
     Private()
@@ -276,6 +275,4 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     Grantlee::Context context(mapping);
 
     return headerTemplate->render(&context);
-}
-
 }

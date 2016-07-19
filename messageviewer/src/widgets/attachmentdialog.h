@@ -52,12 +52,10 @@ public:
     // executes the modal dialog
     int exec();
 
-private Q_SLOTS:
+private:
     void saveClicked();
     void openClicked();
     void openWithClicked();
-
-private:
     QString text, dontAskName;
     QDialog *dialog;
     QDialogButtonBox *mButtonBox;

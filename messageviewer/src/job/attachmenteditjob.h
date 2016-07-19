@@ -50,10 +50,9 @@ public:
 
 Q_SIGNALS:
     void refreshMessage(const Akonadi::Item &item);
-private Q_SLOTS:
+private:
     void slotAttachmentEditDone(MessageViewer::EditorWatcher *editorWatcher);
     void slotItemModifiedResult(KJob *);
-private:
     void removeEditorWatcher(MessageViewer::EditorWatcher *editorWatcher, const QString &name);
     QHash<EditorWatcher *, KMime::Content *> mEditorWatchers;
     Akonadi::Item mMessageItem;

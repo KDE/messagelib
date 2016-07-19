@@ -40,17 +40,15 @@ public:
 public Q_SLOTS:
     void slotShowWarning();
 
-private Q_SLOTS:
-    void slotShowDetails(const QString &content);
-    void slotAddToWhiteList();
-
 Q_SIGNALS:
     void showDetails();
     void moveMessageToTrash();
     void messageIsNotAScam();
     void addToWhiteList();
 
-private Q_SLOTS:
+private:
+    void slotShowDetails(const QString &content);
+    void slotAddToWhiteList();
     void slotDisableScamDetection();
     void slotMessageIsNotAScam();
 

@@ -38,12 +38,10 @@ public:
     explicit VCardViewer(QWidget *parent, const QByteArray &vCard);
     ~VCardViewer();
 
-private Q_SLOTS:
+private:
     void slotUser1();
     void slotUser2();
     void slotUser3();
-
-private:
     void readConfig();
     void writeConfig();
     KAddressBookGrantlee::GrantleeContactViewer *mContactViewer;
@@ -52,7 +50,6 @@ private:
     int mAddresseeListIndex;
     QPushButton *mUser2Button;
     QPushButton *mUser3Button;
-
 };
 
 }

@@ -39,10 +39,8 @@ public:
 
     void setDetails(const QString &details);
 
-private Q_SLOTS:
-    void slotSaveAs();
-
 private:
+    void slotSaveAs();
     void writeConfig();
     void readConfig();
     KPIMTextEdit::RichTextEditorWidget *mDetails;

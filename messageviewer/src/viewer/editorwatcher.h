@@ -69,12 +69,10 @@ public:
 Q_SIGNALS:
     void editDone(MessageViewer::EditorWatcher *watcher);
 
-private Q_SLOTS:
+private:
     void editorExited();
     void inotifyEvent();
     void checkEditDone();
-
-private:
     QUrl mUrl;
     QString mMimeType;
     QTimer mTimer;
