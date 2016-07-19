@@ -192,12 +192,7 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 {
     Q_UNUSED(type);
-    //TODO
-#if 0
-    QWebEngineView *view = new QWebEngineView(this);
-    view->show();
-#endif
-    return Q_NULLPTR;
+    return this;
 }
 
 void WebEngineView::clearRelativePosition()
