@@ -31,3 +31,8 @@ NetworkPluginUrlInterceptorConfigureWidget::~NetworkPluginUrlInterceptorConfigur
 {
 
 }
+
+QString NetworkPluginUrlInterceptorConfigureWidget::helpAnchor() const
+{
+    return QString();
+}
