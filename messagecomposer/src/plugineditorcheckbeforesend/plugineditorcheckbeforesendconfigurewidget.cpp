@@ -31,3 +31,8 @@ PluginEditorCheckBeforeSendConfigureWidget::~PluginEditorCheckBeforeSendConfigur
 {
 
 }
+
+QString PluginEditorCheckBeforeSendConfigureWidget::helpAnchor() const
+{
+    return QString();
+}

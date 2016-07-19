@@ -2460,7 +2460,7 @@ bool View::event(QEvent *e)
         }
 
         tip += QLatin1String(
-                   "</table" \
+                   "</table>" \
                    "</td>" \
                    "</tr>"
                );
