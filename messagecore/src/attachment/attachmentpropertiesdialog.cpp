@@ -28,13 +28,13 @@
 #include <KAboutData>
 #include "messagecore_debug.h"
 #include <KIconLoader>
+#include <PimCommon/PimUtil>
 
 #include <kmime/kmime_content.h>
 #include <kmime/kmime_headers.h>
 
 #include <KLocalizedString>
 #include <KFormat>
-#include <KHelpClient>
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <KConfigGroup>
@@ -391,7 +391,7 @@ void AttachmentPropertiesDialog::accept()
 
 void AttachmentPropertiesDialog::slotHelp()
 {
-    KHelpClient::invokeHelp(QStringLiteral("attachments"), QStringLiteral("kmail"));
+    PimCommon::Util::invokeHelp(QStringLiteral("kmail/the-composer-window.html"),QStringLiteral("attachments"));
 }
 
 #include "moc_attachmentpropertiesdialog.cpp"
