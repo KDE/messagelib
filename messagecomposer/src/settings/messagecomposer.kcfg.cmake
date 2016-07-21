@@ -147,9 +147,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
         <label>Always show the list of encryption keys to select the one which will be used</label>
         <default>true</default>
       </entry>
-      <entry name="PgpAutoEncrypt" type="Bool" key="pgp-auto-encrypt">
-        <default>false</default>
-      </entry>
   </group>
 
   <group name="sending mail">

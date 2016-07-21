@@ -594,11 +594,12 @@ inline bool showKeyApprovalDialog()
 
 QList< MessageComposer::Composer * > MessageComposer::ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
 {
+    const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
 
     qCDebug(MESSAGECOMPOSER_LOG) << "filling crypto info";
     Kleo::KeyResolver *keyResolver = new Kleo::KeyResolver(encryptToSelf(),
             showKeyApprovalDialog(),
-            MessageComposer::MessageComposerSettings::self()->pgpAutoEncrypt(),
+            id.pgpAutoEncrypt(),
             m_cryptoMessageFormat,
             encryptKeyNearExpiryWarningThresholdInDays(),
             signingKeyNearExpiryWarningThresholdInDays(),
@@ -607,7 +608,6 @@ QList< MessageComposer::Composer * > MessageComposer::ComposerViewBase::generate
             encryptChainCertNearExpiryWarningThresholdInDays(),
             signingChainCertNearExpiryWarningThresholdInDays());
 
-    const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
 
     QStringList encryptToSelfKeys;
     QStringList signKeys;
