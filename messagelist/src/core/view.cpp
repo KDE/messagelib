@@ -1950,10 +1950,7 @@ void View::slotSelectionChanged(const QItemSelection &, const QItemSelection &)
     QModelIndex current = currentIndex();
 
     if (!current.isValid()) {
-        if (d->mLastCurrentItem) {
-            d->mWidget->viewMessageSelected(Q_NULLPTR);
-            d->mLastCurrentItem = Q_NULLPTR;
-        }
+        d->mLastCurrentItem = Q_NULLPTR;
         d->mWidget->viewMessageSelected(Q_NULLPTR);
         d->mWidget->viewSelectionChanged();
         return;

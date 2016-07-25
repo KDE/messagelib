@@ -21,7 +21,7 @@ include(ECMAddTests)
 set(PIM_VERSION "5.3.42")
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
-set(AKONADIMIME_LIB_VERSION "5.2.80")
+set(AKONADIMIME_LIB_VERSION "5.2.90")
 
 set(QT_REQUIRED_VERSION "5.6.0")
 
@@ -83,7 +83,7 @@ find_package(KF5PimCommon ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5SendLater ${KDEPIM_APPS_LIB_VERSION} CONFIG REQUIRED)
 
-find_package(KF5AkonadiSearch "5.2.80" CONFIG REQUIRED)
+find_package(KF5AkonadiSearch "5.2.90" CONFIG REQUIRED)
 set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "http://www.kde.org" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
