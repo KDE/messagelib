@@ -276,6 +276,9 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                        "div.fancy.header > div a[href] { color: %3 ! important; }\n\n"
 
                        "div.fancy.header > table.outer{\n"
+                       "  all: inherit;\n"
+                       "  width: auto ! important;\n"
+                       "  border-spacing: 0;\n"
                        "  background-color: %2 ! important;\n"
                        "  color: %3 ! important;\n"
                        "  border-bottom: solid %3 1px ! important;\n"
@@ -564,6 +567,9 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                        "}\n\n"
 
                        "div.fancy.header > table.outer {\n"
+                       "  all: inherit;\n"
+                       "  width: auto ! important;\n"
+                       "  border-spacing: 0;\n"
                        "  background-color: %5 ! important;\n"
                        "  color: %4 ! important;\n"
                        "  border-bottom: solid %4 1px ! important;\n"
