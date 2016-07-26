@@ -52,8 +52,16 @@ public:
         : mHtmlWriter(Q_NULLPTR)
         , mPart(part)
         , mParentPart(Q_NULLPTR)
+        , mCreatedWriter(false)
         , q(mp)
     {
+    }
+
+    ~MessagePartPrivate()
+    {
+        if (mCreatedWriter) {
+            delete mHtmlWriter;
+        }
     }
 
     MimeTreeParser::HtmlWriter *htmlWriter()
@@ -67,6 +75,7 @@ public:
     MimeTreeParser::HtmlWriter *mHtmlWriter;
     const BodyPart *mPart;
     MessagePart *mParentPart;
+    bool mCreatedWriter;
 
 private:
     MessagePart *q;
@@ -137,9 +146,7 @@ void MessagePart::setHtmlWriter(MimeTreeParser::HtmlWriter *htmlWriter) const
 MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) const
 {
     auto mp = MessagePart::Ptr(new MessagePart(part));
-    const auto ret = format(&part, mp->htmlWriter());
-    if (ret != Failed) {
-        return mp;
-    }
-    return MessagePart::Ptr();
+    mp->setHtmlWriter(new QueueHtmlWriter(mp->htmlWriter()));
+    mp->d->mCreatedWriter = true;
+    return mp;
 }

@@ -36,6 +36,11 @@ QueueHtmlWriter::~QueueHtmlWriter()
 {
 }
 
+void QueueHtmlWriter::setBase(HtmlWriter *base)
+{
+    mBase = base;
+}
+
 void QueueHtmlWriter::begin(const QString &css)
 {
     Command cmd;

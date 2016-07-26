@@ -29,6 +29,7 @@
 #include "messagepartrenderermanager.h"
 
 #include <MimeTreeParser/HtmlWriter>
+#include <MimeTreeParser/QueueHtmlWriter>
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <GrantleeTheme/QtResourceTemplateLoader>
@@ -469,6 +470,12 @@ public:
             const auto m = _m.dynamicCast<MessagePart>();
             if (m) {
                 htmlWriter->queue(renderFactory(m, htmlWriter));
+            } else {
+                auto hw = dynamic_cast<MimeTreeParser::QueueHtmlWriter *>(_m->htmlWriter());
+                if (hw) {
+                    hw->setBase(htmlWriter.data());
+                    _m->html(false);
+                }
             }
         }
     }
