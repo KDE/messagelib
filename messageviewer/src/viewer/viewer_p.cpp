@@ -2032,11 +2032,11 @@ Viewer::DisplayFormatMessage translateToDisplayFormat(MimeTreeParser::Util::Html
 
 void ViewerPrivate::slotToggleHtmlMode()
 {
-    if (mColorBar->isNormal()) {
+    const auto availableModes = mColorBar->availableModes();
+    if (mColorBar->isNormal() || availableModes.size() < 2) {
         return;
     }
     mScamDetectionWarning->setVisible(false);
-    const auto availableModes = mColorBar->availableModes();
     const MimeTreeParser::Util::HtmlMode mode = mColorBar->mode();
     const int pos = (availableModes.indexOf(mode) + 1) % availableModes.size();
     setDisplayFormatMessageOverwrite(translateToDisplayFormat(availableModes[pos]));
