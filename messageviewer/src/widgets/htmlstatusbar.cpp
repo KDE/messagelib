@@ -109,6 +109,16 @@ void HtmlStatusBar::setMultipartHtmlMode()
     setMode(MimeTreeParser::Util::MultipartHtml);
 }
 
+void HtmlStatusBar::setAvailableModes(const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
+{
+    mAvailableModes = availableModes;
+}
+
+const QList< MimeTreeParser::Util::HtmlMode >& HtmlStatusBar::availableModes()
+{
+    return mAvailableModes;
+}
+
 void HtmlStatusBar::setMode(MimeTreeParser::Util::HtmlMode m, UpdateMode mode)
 {
     if (mMode != m) {
@@ -143,6 +153,10 @@ QString HtmlStatusBar::message() const
         return i18nc("'Plain Message' with html linebreaks between each letter.",
                      "<qt><br />P<br />l<br />a<br />i<br />n<br /> "
                      "<br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>");
+    case MimeTreeParser::Util::MultipartIcal: // normal: "Calendar Message"
+        return i18nc("'Calendar Message' with html linebreaks between each letter.",
+                     "<qt><br />C<br />a<br />l<br />l<br />e<br />n<br />d<br />a<br />r<br /> "
+                     "<br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>");
     default:
         return QString();
     }
@@ -154,7 +168,8 @@ QString HtmlStatusBar::toolTip() const
     case MimeTreeParser::Util::Html:
     case MimeTreeParser::Util::MultipartHtml:
     case MimeTreeParser::Util::MultipartPlain:
-        return i18n("Click to toggle between HTML and plain text.");
+    case MimeTreeParser::Util::MultipartIcal:
+        return i18n("Click to toggle between HTML, plain text and calendar.");
     default:
     case MimeTreeParser::Util::Normal:
         break;
@@ -178,6 +193,7 @@ QColor HtmlStatusBar::fgColor() const
         return color;
     case MimeTreeParser::Util::Normal:
     case MimeTreeParser::Util::MultipartPlain:
+    case MimeTreeParser::Util::MultipartIcal:
         defaultColor = Qt::black;
         color = defaultColor;
         if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
@@ -205,6 +221,7 @@ QColor HtmlStatusBar::bgColor() const
         return color;
     case MimeTreeParser::Util::Normal:
     case MimeTreeParser::Util::MultipartPlain:
+    case MimeTreeParser::Util::MultipartIcal:
         defaultColor = Qt::lightGray;
         color = defaultColor;
         if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {

@@ -1260,6 +1260,7 @@ void ViewerPrivate::resetStateForNewMessage()
     mViewerPluginToolManager->closeAllTools();
     mScamDetectionWarning->setVisible(false);
     mOpenAttachmentFolderWidget->setVisible(false);
+    mDisplayFormatMessageOverwrite = (mDisplayFormatMessageOverwrite == MessageViewer::Viewer::UseGlobalSetting) ? MessageViewer::Viewer::UseGlobalSetting : MessageViewer::Viewer::Unknown;
 
     if (mPrinting) {
         if (MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettings()) {
@@ -2012,14 +2013,33 @@ void ViewerPrivate::slotLoadExternalReference()
     update(MimeTreeParser::Force);
 }
 
+Viewer::DisplayFormatMessage translateToDisplayFormat(MimeTreeParser::Util::HtmlMode mode)
+{
+    switch(mode) {
+        case MimeTreeParser::Util::Normal:
+            return Viewer::Unknown;
+        case MimeTreeParser::Util::Html:
+            return Viewer::Html;
+        case MimeTreeParser::Util::MultipartPlain:
+            return Viewer::Text;
+        case MimeTreeParser::Util::MultipartHtml:
+            return Viewer::Html;
+        case MimeTreeParser::Util::MultipartIcal:
+            return Viewer::ICal;
+    }
+    return Viewer::Unknown;
+}
+
 void ViewerPrivate::slotToggleHtmlMode()
 {
     if (mColorBar->isNormal()) {
         return;
     }
     mScamDetectionWarning->setVisible(false);
-    const bool useHtml  = !htmlMail();
-    setDisplayFormatMessageOverwrite(useHtml ? MessageViewer::Viewer::Html : MessageViewer::Viewer::Text);
+    const auto availableModes = mColorBar->availableModes();
+    const MimeTreeParser::Util::HtmlMode mode = mColorBar->mode();
+    const int pos = (availableModes.indexOf(mode) + 1) % availableModes.size();
+    setDisplayFormatMessageOverwrite(translateToDisplayFormat(availableModes[pos]));
     update(MimeTreeParser::Force);
 }
 
@@ -2684,6 +2704,11 @@ void ViewerPrivate::setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessag
     if (mToggleDisplayModeAction) {
         mToggleDisplayModeAction->setChecked(htmlMail());
     }
+}
+
+bool ViewerPrivate::htmlMailGlobalSetting() const
+{
+    return mHtmlMailGlobalSetting;
 }
 
 Viewer::DisplayFormatMessage ViewerPrivate::displayFormatMessageOverwrite() const

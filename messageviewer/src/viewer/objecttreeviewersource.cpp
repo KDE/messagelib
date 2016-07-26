@@ -39,11 +39,6 @@ MailViewerSource::~MailViewerSource()
 {
 }
 
-bool MailViewerSource::htmlMail() const
-{
-    return mViewer->htmlMail();
-}
-
 bool MailViewerSource::decryptMessage() const
 {
     return mViewer->decryptMessage();
@@ -59,9 +54,27 @@ bool MailViewerSource::showSignatureDetails() const
     return mViewer->mShowSignatureDetails;
 }
 
-void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode)
+void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
+    mViewer->mColorBar->setAvailableModes(availableModes);
     mViewer->mColorBar->setMode(mode);
+}
+
+MimeTreeParser::Util::HtmlMode MailViewerSource::preferredMode() const
+{
+    switch (mViewer->displayFormatMessageOverwrite()) {
+        case MessageViewer::Viewer::UseGlobalSetting:
+        case MessageViewer::Viewer::Unknown:
+            return mViewer->htmlMailGlobalSetting() ? MimeTreeParser::Util::Html : MimeTreeParser::Util::Normal;
+        case MessageViewer::Viewer::Html:
+            return MimeTreeParser::Util::MultipartHtml;
+        case MessageViewer::Viewer::Text:
+            return MimeTreeParser::Util::MultipartPlain;
+        case MessageViewer::Viewer::ICal:
+            return MimeTreeParser::Util::MultipartIcal;
+    }
+    Q_ASSERT(true);
+    return MimeTreeParser::Util::Html;
 }
 
 int MailViewerSource::levelQuote() const

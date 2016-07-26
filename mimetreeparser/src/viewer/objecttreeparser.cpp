@@ -186,8 +186,8 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
             if (auto _mp = mp.dynamicCast<TextMessagePart>()) {
                 extractNodeInfos(_mp->mNode, true);
             } else if (auto _mp = mp.dynamicCast<AlternativeMessagePart>()) {
-                if (_mp->mTextNode) {
-                    extractNodeInfos(_mp->mTextNode, true);
+                if (_mp->mChildNodes.contains(Util::MultipartPlain)) {
+                    extractNodeInfos(_mp->mChildNodes[Util::MultipartPlain], true);
                 }
             }
             setPlainTextContent(mp->text());
@@ -369,8 +369,10 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
     mp = _mp;
 
     // always show images in multipart/related when showing in html, not with an additional icon
+    auto preferredMode = mSource->preferredMode();
+    bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
     if (result.isImage() && node->parent() &&
-            node->parent()->contentType()->subType() == "related" && mSource->htmlMail() && !onlyOneMimePart) {
+            node->parent()->contentType()->subType() == "related" && isHtmlPreferred && !onlyOneMimePart) {
         QString fileName = mNodeHelper->writeNodeToTempFile(node);
         QString href = QUrl::fromLocalFile(fileName).url();
         QByteArray cid = node->contentID()->identifier();

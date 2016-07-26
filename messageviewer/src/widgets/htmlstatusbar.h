@@ -84,6 +84,9 @@ public:
     // Update the status bar, for example when the color scheme changed.
     void update();
 
+    void setAvailableModes(const QList<MimeTreeParser::Util::HtmlMode> &availableModes);
+    const QList<MimeTreeParser::Util::HtmlMode> &availableModes();
+
 public Q_SLOTS:
     void setHtmlMode();
     /** Switch to "normal mode". */
@@ -109,6 +112,7 @@ private:
     QColor fgColor() const;
 
     MimeTreeParser::Util::HtmlMode mMode;
+    QList<MimeTreeParser::Util::HtmlMode> mAvailableModes;
 };
 
 }

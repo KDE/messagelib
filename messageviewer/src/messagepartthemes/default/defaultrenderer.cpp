@@ -873,14 +873,16 @@ public:
 
         c.insert(QStringLiteral("block"), &block);
 
-        block.setProperty("htmlMail", mp->source()->htmlMail());
+        auto preferredMode = mp->source()->preferredMode();
+        bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
+        block.setProperty("htmlMail", isHtmlPreferred);
         block.setProperty("loadExternal", mp->source()->htmlLoadExternal());
 
         {
             QString extraHead;
             QString bodyText = processHtml(mp->mBodyHTML, extraHead);
 
-            if (mp->source()->htmlMail()) {
+            if (isHtmlPreferred) {
                 mp->mOtp->nodeHelper()->setNodeDisplayedEmbedded(mp->mNode, true);
                 mOldWriter->extraHead(extraHead);
             }
@@ -896,7 +898,7 @@ public:
             plaintext.replace(QLatin1String("\n"), QStringLiteral("<br>"));
             c.insert(QStringLiteral("plaintext"), plaintext);
         }
-        mp->source()->setHtmlMode(Util::Html);
+        mp->source()->setHtmlMode(Util::Html, QList<Util::HtmlMode>() << Util::Html);
 
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         {
@@ -1252,11 +1254,18 @@ public:
                 aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
 
-            MimeMessagePart::Ptr part(mp->mTextPart);
-            if (mp->viewHtml() && mp->mHTMLPart) {
-                part = mp->mHTMLPart;
-            } else if (mp->text().trimmed().isEmpty()) {
-                part = mp->mHTMLPart;
+            auto mode = mp->preferredMode();
+            if (mode == MimeTreeParser::Util::MultipartPlain && mp->text().trimmed().isEmpty()) {
+                foreach(const auto m, mp->availableModes()) {
+                    if (m != MimeTreeParser::Util::MultipartPlain) {
+                        mode = m;
+                        break;
+                    }
+                }
+            }
+            MimeMessagePart::Ptr part(mp->mChildParts.first());
+            if (mp->mChildParts.contains(mode)) {
+                part = mp->mChildParts[mode];
             }
 
             htmlWriter->queue(render(part));

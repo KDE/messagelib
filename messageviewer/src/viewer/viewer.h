@@ -122,7 +122,8 @@ public:
         UseGlobalSetting = 0,
         Text = 1,
         Html = 2,
-        Unknown = 3
+        Unknown = 3,
+        ICal = 4
     };
 
     enum AttachmentAction {

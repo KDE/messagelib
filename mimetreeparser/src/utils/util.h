@@ -48,7 +48,8 @@ enum HtmlMode {
     Normal,         ///< A normal plaintext message, non-multipart
     Html,           ///< A HTML message, non-multipart
     MultipartPlain, ///< A multipart/alternative message, the plain text part is currently displayed
-    MultipartHtml   ///< A multipart/altervative message, the HTML part is currently displayed
+    MultipartHtml,  ///< A multipart/altervative message, the HTML part is currently displayed
+    MultipartIcal   ///< A multipart/altervative message, the ICal part is currently displayed
 };
 
 bool MIMETREEPARSER_EXPORT isTypeBlacklisted(KMime::Content *node);
