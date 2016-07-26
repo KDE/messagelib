@@ -638,7 +638,7 @@ void AlternativeMessagePart::fix() const
 
     const auto mode = preferredMode();
     if (mode != Util::MultipartPlain && mChildParts.contains(mode)) {
-        //mChildParts[mode]->fix();
+        mChildParts[mode]->fix();
     }
 }
 
