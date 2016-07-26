@@ -53,6 +53,8 @@ public:
     explicit QueueHtmlWriter(MimeTreeParser::HtmlWriter *base);
     virtual ~QueueHtmlWriter();
 
+    void setBase(HtmlWriter *base);
+
     void begin(const QString &cssDefs) Q_DECL_OVERRIDE;
     void end() Q_DECL_OVERRIDE;
     void reset() Q_DECL_OVERRIDE;

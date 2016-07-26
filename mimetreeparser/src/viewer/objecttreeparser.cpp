@@ -246,7 +246,7 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
             break;
         } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
             QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : Q_NULLPTR;
-            const auto r = formatter->format(&part, htmlWriter(), asyncResultObserver);
+            const auto r = formatter->format(&part, result->htmlWriter(), asyncResultObserver);
             if (r == Interface::BodyPartFormatter::AsIcon) {
                 processResult.setNeverDisplayInline(true);
                 formatter->adaptProcessResult(processResult);
@@ -258,6 +258,12 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
                     }
                     mpRet = mp;
                 }
+                bRendered = true;
+                break;
+            } else if (r == Interface::BodyPartFormatter::Ok) {
+                processResult.setNeverDisplayInline(true);
+                formatter->adaptProcessResult(processResult);
+                mpRet = result;
                 bRendered = true;
                 break;
             }
