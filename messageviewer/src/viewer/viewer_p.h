@@ -371,6 +371,8 @@ public:
     bool htmlMail() const;
     bool htmlLoadExternal() const;
 
+    bool htmlMailGlobalSetting() const;
+
     /** Get the html override setting */
     Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
 

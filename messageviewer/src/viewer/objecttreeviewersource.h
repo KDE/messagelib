@@ -35,11 +35,11 @@ class MailViewerSource : public MimeTreeParser::Interface::ObjectTreeSource
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);
     ~MailViewerSource();
-    bool htmlMail() const Q_DECL_OVERRIDE;
     bool decryptMessage() const Q_DECL_OVERRIDE;
     bool htmlLoadExternal() const Q_DECL_OVERRIDE;
     bool showSignatureDetails() const Q_DECL_OVERRIDE;
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode) Q_DECL_OVERRIDE;
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) Q_DECL_OVERRIDE;
+    MimeTreeParser::Util::HtmlMode preferredMode() const Q_DECL_OVERRIDE;
     int levelQuote() const Q_DECL_OVERRIDE;
     const QTextCodec *overrideCodec() Q_DECL_OVERRIDE;
     QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE;

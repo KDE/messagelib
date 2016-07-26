@@ -57,11 +57,6 @@ EmptySource::~EmptySource()
     delete d;
 }
 
-bool EmptySource::htmlMail() const
-{
-    return true;
-}
-
 bool EmptySource::decryptMessage() const
 {
     return d->mAllowDecryption;
@@ -77,9 +72,15 @@ bool EmptySource::showSignatureDetails() const
     return false;
 }
 
-void EmptySource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode)
+void EmptySource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
     Q_UNUSED(mode);
+    Q_UNUSED(availableModes);
+}
+
+MimeTreeParser::Util::HtmlMode EmptySource::preferredMode() const
+{
+    return MimeTreeParser::Util::Html;
 }
 
 void EmptySource::setAllowDecryption(bool allowDecryption)

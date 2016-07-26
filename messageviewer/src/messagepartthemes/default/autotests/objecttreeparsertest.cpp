@@ -210,7 +210,7 @@ void ObjectTreeParserTester::test_HTMLasText()
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
-    emptySource.setHtmlMail(false);
+    emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
     otp.parseObjectTree(msg.data());
 
     QCOMPARE(otp.htmlContent().toLatin1().constData(), "");
@@ -247,7 +247,7 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
 
-    emptySource.setHtmlMail(false);
+    emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
     otp.parseObjectTree(msg.data());
 
     QVERIFY(otp.plainTextContent().isEmpty());
@@ -301,7 +301,7 @@ void ObjectTreeParserTester::test_Alternative()
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
-        emptySource.setHtmlMail(false);
+        emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
         otp.parseObjectTree(msg.data());
 
         QVERIFY(otp.htmlContent().isEmpty());
@@ -315,7 +315,7 @@ void ObjectTreeParserTester::test_Alternative()
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
-        emptySource.setHtmlMail(true);
+        emptySource.setPreferredMode(MimeTreeParser::Util::MultipartHtml);
         otp.parseObjectTree(msg.data());
 
         QVERIFY(otp.plainTextContent().contains(QStringLiteral("If you can see this text it means that your email client couldn't display our newsletter properly.")));
@@ -331,7 +331,7 @@ void ObjectTreeParserTester::test_Alternative()
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
-        emptySource.setHtmlMail(false);
+        emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
         otp.parseObjectTree(msg.data());
 
         QVERIFY(otp.plainTextContent().isEmpty());
@@ -345,7 +345,7 @@ void ObjectTreeParserTester::test_Alternative()
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
-        emptySource.setHtmlMail(true);
+        emptySource.setPreferredMode(MimeTreeParser::Util::MultipartHtml);
         otp.parseObjectTree(msg.data());
 
         QVERIFY(otp.plainTextContent().isEmpty());

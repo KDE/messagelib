@@ -62,13 +62,12 @@ public:
       * information to the user, for example KMail displays a HTML status bar.
       * Note: This is not called when the mode is "Normal".
       */
-    virtual void setHtmlMode(MimeTreeParser::Util::HtmlMode mode) = 0;
+    virtual void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) = 0;
 
-    /** Return true if the mail should be parsed as a html mail */
-    virtual bool htmlMail() const = 0;
+    /** Return the mode that is the preferred to display */
+    virtual MimeTreeParser::Util::HtmlMode preferredMode() const = 0;
 
     /** Return true if an encrypted mail should be decrypted */
-
     virtual bool decryptMessage() const = 0;
 
     /** Return true if external sources should be loaded in a html mail */

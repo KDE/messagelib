@@ -23,6 +23,8 @@
 #include "mimetreeparser_export.h"
 
 #include "mimetreeparser/bodypartformatter.h"
+#include "mimetreeparser/util.h"
+
 #include <KMime/Message>
 
 #include <Libkleo/CryptoBackend>
@@ -52,7 +54,7 @@ class HtmlWriter;
 class HTMLBlock;
 typedef QSharedPointer<HTMLBlock> HTMLBlockPtr;
 class CryptoBodyPartMemento;
-
+class MultiPartAlternativeBodyPartFormatter;
 namespace Interface
 {
 class ObjectTreeSource;
@@ -237,31 +239,33 @@ class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
     Q_OBJECT
 public:
     typedef QSharedPointer<AlternativeMessagePart> Ptr;
-    AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode);
+    AlternativeMessagePart(MimeTreeParser::ObjectTreeParser* otp, KMime::Content* node, Util::HtmlMode preferredMode);
     virtual ~AlternativeMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
 
-    void setViewHtml(bool html);
-    bool viewHtml() const;
+    Util::HtmlMode preferredMode() const;
 
     bool isHtml() const Q_DECL_OVERRIDE;
 
     QString plaintextContent() const Q_DECL_OVERRIDE;
     QString htmlContent() const Q_DECL_OVERRIDE;
 
+    QList<Util::HtmlMode> availableModes();
+
     void fix() const Q_DECL_OVERRIDE;
     void copyContentFrom() const Q_DECL_OVERRIDE;
 private:
-    KMime::Content *mTextNode;
-    KMime::Content *mHTMLNode;
+    KMime::Content *mNode;
 
-    MimeMessagePart::Ptr mTextPart;
-    MimeMessagePart::Ptr mHTMLPart;
-    bool mViewHtml;
+    Util::HtmlMode mPreferredMode;
+
+    QMap<Util::HtmlMode, KMime::Content *> mChildNodes;
+    QMap<Util::HtmlMode, MimeMessagePart::Ptr> mChildParts;
 
     friend class DefaultRendererPrivate;
     friend class ObjectTreeParser;
+    friend class MultiPartAlternativeBodyPartFormatter;
 };
 
 class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart

@@ -49,8 +49,8 @@ public:
     TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer)
         : mWriter(writer)
         , mAttachmentStrategy(QStringLiteral("smart"))
+        , mPreferredMode(Util::Html)
         , mHtmlLoadExternal(false)
-        , mHtmlMail(true)
         , mDecryptMessage(false)
     {
     }
@@ -67,16 +67,6 @@ public:
     void setHtmlLoadExternal(bool loadExternal)
     {
         mHtmlLoadExternal = loadExternal;
-    }
-
-    bool htmlMail() const Q_DECL_OVERRIDE
-    {
-        return mHtmlMail;
-    }
-
-    void setHtmlMail(bool htmlMail)
-    {
-        mHtmlMail = htmlMail;
     }
 
     void setAttachmentStrategy(QString strategy)
@@ -127,8 +117,17 @@ public:
         return mShowSignatureDetails;
     }
 
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode) Q_DECL_OVERRIDE {
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) Q_DECL_OVERRIDE {
         Q_UNUSED(mode);
+        Q_UNUSED(availableModes);
+    }
+
+    MimeTreeParser::Util::HtmlMode preferredMode() const Q_DECL_OVERRIDE {
+        return mPreferredMode;
+    }
+
+    void setPreferredMode( MimeTreeParser::Util::HtmlMode mode) {
+        mPreferredMode = mode;
     }
 
     int levelQuote() const Q_DECL_OVERRIDE
@@ -157,8 +156,8 @@ private:
     MimeTreeParser::HtmlWriter *mWriter;
     QString mAttachmentStrategy;
     BodyPartFormatterBaseFactory mBodyPartFormatterBaseFactory;
+    MimeTreeParser::Util::HtmlMode mPreferredMode;
     bool mHtmlLoadExternal;
-    bool mHtmlMail;
     bool mDecryptMessage;
     bool mShowSignatureDetails;
 };

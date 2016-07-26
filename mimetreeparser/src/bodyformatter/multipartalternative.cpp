@@ -58,46 +58,37 @@ Interface::MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Inter
         return MessagePart::Ptr();
     }
 
-    KMime::Content *dataHtml = findTypeInDirectChilds(node, "text/html");
-    KMime::Content *dataPlain = findTypeInDirectChilds(node, "text/plain");
-
-    if (!dataHtml) {
-        // If we didn't find the HTML part as the first child of the multipart/alternative, it might
-        // be that this is a HTML message with images, and text/plain and multipart/related are the
-        // immediate children of this multipart/alternative node.
-        // In this case, the HTML node is a child of multipart/related.
-        dataHtml = findTypeInDirectChilds(node, "multipart/related");
-
-        // Still not found? Stupid apple mail actually puts the attachments inside of the
-        // multipart/alternative, which is wrong. Therefore we also have to look for multipart/mixed
-        // here.
-        // Do this only when prefering HTML mail, though, since otherwise the attachments are hidden
-        // when displaying plain text.
-        if (!dataHtml && part.source()->htmlMail()) {
-            dataHtml = findTypeInDirectChilds(node, "multipart/mixed");
-        }
+    auto preferredMode = part.source()->preferredMode();
+    AlternativeMessagePart::Ptr mp(new AlternativeMessagePart(part.objectTreeParser(), node, preferredMode));
+    if (mp->mChildNodes.isEmpty()) {
+        MimeMessagePart::Ptr _mp(new MimeMessagePart(part.objectTreeParser(), node->contents().at(0), false));
+        return _mp;
     }
 
-    if (dataPlain || dataHtml) {
-        AlternativeMessagePart::Ptr mp(new AlternativeMessagePart(part.objectTreeParser(), dataPlain, dataHtml));
+    KMime::Content *dataIcal = mp->mChildNodes.contains(Util::MultipartIcal) ? mp->mChildNodes[Util::MultipartIcal] : Q_NULLPTR;
+    KMime::Content *dataHtml = mp->mChildNodes.contains(Util::MultipartHtml) ? mp->mChildNodes[Util::MultipartHtml] : Q_NULLPTR;
+    KMime::Content *dataPlain = mp->mChildNodes.contains(Util::MultipartPlain) ? mp->mChildNodes[Util::MultipartPlain] : Q_NULLPTR;
 
-        if ((part.source()->htmlMail() && dataHtml) ||
-                (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
-            if (dataPlain) {
-                part.nodeHelper()->setNodeProcessed(dataPlain, false);
-            }
-            part.source()->setHtmlMode(Util::MultipartHtml);
-            mp->setViewHtml(true);
-        }
-
-        if (!part.source()->htmlMail() && dataPlain) {
+    // Make sure that in default ical is preffered over html and plain text
+    if (dataIcal && ((preferredMode != Util::MultipartHtml && preferredMode != Util::MultipartPlain))) {
+        if (dataHtml) {
             part.nodeHelper()->setNodeProcessed(dataHtml, false);
-            part.source()->setHtmlMode(Util::MultipartPlain);
-            mp->setViewHtml(false);
         }
-        return mp;
+        if (dataPlain) {
+            part.nodeHelper()->setNodeProcessed(dataPlain, false);
+        }
+        preferredMode = Util::MultipartIcal;
+    } else if ((dataHtml && (preferredMode == Util::MultipartHtml || preferredMode == Util::Html)) ||
+            (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
+        if (dataPlain) {
+            part.nodeHelper()->setNodeProcessed(dataPlain, false);
+        }
+        preferredMode = Util::MultipartHtml;
+    } else if (!(preferredMode == Util::MultipartHtml) && dataPlain) {
+        part.nodeHelper()->setNodeProcessed(dataHtml, false);
+        preferredMode = Util::MultipartPlain;
     }
-
-    MimeMessagePart::Ptr mp(new MimeMessagePart(part.objectTreeParser(), node->contents().at(0), false));
+    part.source()->setHtmlMode(preferredMode, mp->availableModes());
+    mp->mPreferredMode = preferredMode;
     return mp;
 }

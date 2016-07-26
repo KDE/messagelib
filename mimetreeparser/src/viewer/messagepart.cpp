@@ -29,6 +29,8 @@
 #include "memento/verifydetachedbodypartmemento.h"
 #include "memento/verifyopaquebodypartmemento.h"
 
+#include "bodyformatter/utils.h"
+
 #include <KMime/Content>
 
 #include <Libkleo/Dn>
@@ -383,6 +385,8 @@ IconType AttachmentMessagePart::asIcon() const
     const AttachmentStrategy *const as = mOtp->attachmentStrategy();
     const bool defaultHidden(as && as->defaultDisplay(mNode) == AttachmentStrategy::None);
     const bool showOnlyOneMimePart(mOtp->showOnlyOneMimePart());
+    auto preferredMode = source()->preferredMode();
+    bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
 
     QByteArray mediaType("text");
     QByteArray subType("plain");
@@ -414,7 +418,7 @@ IconType AttachmentMessagePart::asIcon() const
         }
         return MimeTreeParser::NoIcon;
     } else {
-        if (isImage() && source()->htmlMail() &&
+        if (isImage() && isHtmlPreferred &&
             mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
             return MimeTreeParser::IconInline;
         }
@@ -438,6 +442,8 @@ bool AttachmentMessagePart::isHidden() const
     const AttachmentStrategy *const as = mOtp->attachmentStrategy();
     const bool defaultHidden(as && as->defaultDisplay(mNode) == AttachmentStrategy::None);
     const bool showOnlyOneMimePart(mOtp->showOnlyOneMimePart());
+    auto preferredMode = source()->preferredMode();
+    bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
 
     QByteArray mediaType("text");
     QByteArray subType("plain");
@@ -467,7 +473,7 @@ bool AttachmentMessagePart::isHidden() const
     if (isTextPart) {
         hidden = defaultHidden && !showOnlyOneMimePart;
     } else {
-        if (isImage() && source()->htmlMail() &&
+        if (isImage() && isHtmlPreferred &&
             mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
             hidden = true;
         } else {
@@ -553,23 +559,51 @@ QString MimeMessagePart::htmlContent() const
 
 //-----AlternativeMessagePart----------------------
 
-AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Content *textNode, KMime::Content *htmlNode)
+AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Content *node, Util::HtmlMode preferredMode)
     : MessagePart(otp, QString())
-    , mTextNode(textNode)
-    , mHTMLNode(htmlNode)
-    , mViewHtml(false)
+    , mNode(node)
+    , mPreferredMode(preferredMode)
 {
-    if (!mTextNode && !mHTMLNode) {
-        qCWarning(MIMETREEPARSER_LOG) << "not a valid nodes";
+    KMime::Content *dataIcal = findTypeInDirectChilds(mNode, "text/calendar");
+    KMime::Content *dataHtml = findTypeInDirectChilds(mNode, "text/html");
+    KMime::Content *dataText = findTypeInDirectChilds(mNode, "text/plain");
+
+    if (!dataHtml) {
+        // If we didn't find the HTML part as the first child of the multipart/alternative, it might
+        // be that this is a HTML message with images, and text/plain and multipart/related are the
+        // immediate children of this multipart/alternative node.
+        // In this case, the HTML node is a child of multipart/related.
+        dataHtml = findTypeInDirectChilds(mNode, "multipart/related");
+
+        // Still not found? Stupid apple mail actually puts the attachments inside of the
+        // multipart/alternative, which is wrong. Therefore we also have to look for multipart/mixed
+        // here.
+        // Do this only when prefering HTML mail, though, since otherwise the attachments are hidden
+        // when displaying plain text.
+        if (!dataHtml && mPreferredMode == Util::MultipartHtml) {
+            dataHtml  = findTypeInDirectChilds(mNode, "multipart/mixed");
+        }
+    }
+
+    if (dataIcal) {
+        mChildNodes[Util::MultipartIcal] = dataIcal;
+    }
+
+    if (dataText) {
+        mChildNodes[Util::MultipartPlain] = dataText;
+    }
+
+    if (dataHtml) {
+        mChildNodes[Util::MultipartHtml] = dataHtml;
+    }
+
+    if (mChildNodes.isEmpty()) {
+        qCWarning(MIMETREEPARSER_LOG) << "no valid nodes";
         return;
     }
 
-    if (mTextNode) {
-        mTextPart = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mTextNode, true));
-    }
-
-    if (mHTMLNode) {
-        mHTMLPart = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mHTMLNode, true));
+    foreach(const auto name, mChildNodes.keys()) {
+        mChildParts[name] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mChildNodes[name], true));
     }
 }
 
@@ -578,60 +612,62 @@ AlternativeMessagePart::~AlternativeMessagePart()
 
 }
 
-void AlternativeMessagePart::setViewHtml(bool html)
+Util::HtmlMode AlternativeMessagePart::preferredMode() const
 {
-    mViewHtml = html;
+    return mPreferredMode;
 }
 
-bool AlternativeMessagePart::viewHtml() const
+QList<Util::HtmlMode> AlternativeMessagePart::availableModes()
 {
-    return mViewHtml;
+    return mChildParts.keys();
 }
 
 QString AlternativeMessagePart::text() const
 {
-    if (mTextPart) {
-        return mTextPart->text();
+    if (mChildParts.contains(Util::MultipartPlain)) {
+        return mChildParts[Util::MultipartPlain]->text();
     }
     return QString();
 }
 
 void AlternativeMessagePart::fix() const
 {
-    if (mTextPart) {
-        mTextPart->fix();
+    if (mChildParts.contains(Util::MultipartPlain)) {
+        mChildParts[Util::MultipartPlain]->fix();
     }
 
-    if (viewHtml() && mHTMLPart) {
-        mHTMLPart->fix();
+    const auto mode = preferredMode();
+    if (mode != Util::MultipartPlain && mChildParts.contains(mode)) {
+        //mChildParts[mode]->fix();
     }
 }
 
 void AlternativeMessagePart::copyContentFrom() const
 {
-    if (mTextPart) {
-        mTextPart->copyContentFrom();
+    if (mChildParts.contains(Util::MultipartPlain)) {
+        mChildParts[Util::MultipartPlain]->copyContentFrom();
     }
 
-    if (viewHtml() && mHTMLPart) {
-        mHTMLPart->copyContentFrom();
+    const auto mode = preferredMode();
+    if (mode != Util::MultipartPlain && mChildParts.contains(mode)) {
+        mChildParts[mode]->copyContentFrom();
     }
 }
 
 bool AlternativeMessagePart::isHtml() const
 {
-    return (mHTMLNode);
+    return mChildParts.contains(Util::MultipartHtml);
 }
 
 QString AlternativeMessagePart::plaintextContent() const
 {
-    return mTextPart->text();
+    return text();
 }
 
 QString AlternativeMessagePart::htmlContent() const
 {
-    if (mHTMLNode) {
-        return mHTMLPart->text();
+    if (mChildParts.contains(Util::MultipartHtml)) {
+        return mChildParts[Util::MultipartHtml]->text();
     } else {
         return plaintextContent();
     }
