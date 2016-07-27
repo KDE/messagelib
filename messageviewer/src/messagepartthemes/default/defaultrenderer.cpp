@@ -181,7 +181,7 @@ QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
                 result = i18n("Good signature");
                 break;
             case 2: // GPGME_SIG_STAT_BAD
-                result = i18n("Bad signature");
+                result = i18n("<b>Bad</b> signature");
                 break;
             case 3: // GPGME_SIG_STAT_NOKEY
                 result = i18n("No public key to verify the signature");
@@ -307,7 +307,7 @@ QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
             if (SIG_FRAME_COL_GREEN == frameColor) {
                 result = i18n("Good signature.");
             } else if (SIG_FRAME_COL_RED == frameColor) {
-                result = i18n("Bad signature.");
+                result = i18n("<b>Bad</b> signature.");
             } else {
                 result.clear();
             }

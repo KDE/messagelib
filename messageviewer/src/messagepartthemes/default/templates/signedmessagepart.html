@@ -54,7 +54,7 @@
                         {% if block.statusStr %}
                             &nbsp;<br />
                             {% i18n "Status: " %}
-                            <i>{{block.statusStr}}</i>
+                            <i>{{block.statusStr|safe}}</i>
                             {% if block.greenCaseWarning %}
                                 <br />&nbsp;
                                 <br />
@@ -93,7 +93,7 @@
                             {% if block.statusStr %}
                                 <br />
                                 {% i18n "Status: " %}
-                                <i>{{block.statusStr}}</i>
+                                <i>{{block.statusStr|safe}}</i>
                             {% endif %}
                         {% endif %}
                     {% else %}
