@@ -369,13 +369,25 @@ void StringUtilTest::test_parseMailtoUrl()
 
 void StringUtilTest::test_parseMailtoUrlExtra()
 {
-    auto url = QUrl::fromEncoded("mailto:someone@example.com?subject=This%20is%20the%20subject&cc=someone_else@example.com&body=This%20is%20the%20body");
-    auto data = StringUtil::parseMailtoUrl(url);
+    const QByteArray ba("mailto:someone@example.com?subject=This%20is%20the%20subject&cc=someone_else@example.com&body=This%20is%20the%20body");
+    QUrl url = QUrl(QUrl::fromPercentEncoding(ba));
+    QMap<QString, QString> data = StringUtil::parseMailtoUrl(url);
     QCOMPARE(data.size(), 4);
     QCOMPARE(data.value(QLatin1String("to")), QLatin1String("someone@example.com"));
     QCOMPARE(data.value(QLatin1String("subject")), QLatin1String("This is the subject"));
     QCOMPARE(data.value(QLatin1String("cc")), QLatin1String("someone_else@example.com"));
     QCOMPARE(data.value(QLatin1String("body")), QLatin1String("This is the body"));
+}
+
+void StringUtilTest::test_parseMailToBug832795()
+{
+    const QString ba(QStringLiteral("mailto:832795@bugs.debian.org?In-Reply-To=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3E&subject=Re%3A%20kmail%3A%20unescaping%20mailto%3A%20links%20broken&body=On%20Thu%2C%2028%20Jul%202016References=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3Ebody=On%20Thu%2C%2028%20Jul%202016%2023%3A39%3A03%20%2B0200%20Dominik%20George%20%3Cnik%40naturalnet.de%3E%20wrote%3A%0A%3E%20Package%3A%20kmail%0A%3E%20Version%3A%204%3A16.04.3-1%0A"));
+    QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
+    QMap<QString, QString> data = StringUtil::parseMailtoUrl(urlDecoded);
+    QCOMPARE(data.size(), 4);
+    QCOMPARE(data.value(QLatin1String("to")), QLatin1String("832795@bugs.debian.org"));
+    QCOMPARE(data.value(QLatin1String("subject")), QLatin1String("Re: kmail: unescaping mailto: links broken"));
+    QCOMPARE(data.value(QLatin1String("body")), QLatin1String("On Thu, 28 Jul 2016References=<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>body=On Thu, 28 Jul 2016 23:39:03 +0200 Dominik George <nik@naturalnet.de> wrote:%0A> Package: kmail%0A> Version: 4:16.04.3-1%0A"));
 }
 
 void StringUtilTest::test_stripOffMessagePrefix_data()

@@ -26,6 +26,7 @@ class StringUtilTest : public QObject
     Q_OBJECT
 
 private Q_SLOTS:
+    void test_parseMailToBug832795();
     void test_SmartQuote_data();
     void test_SmartQuote();
     void test_signatureStripping();
