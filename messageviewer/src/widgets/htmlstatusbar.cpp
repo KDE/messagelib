@@ -155,7 +155,7 @@ QString HtmlStatusBar::message() const
                      "<br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>");
     case MimeTreeParser::Util::MultipartIcal: // normal: "Calendar Message"
         return i18nc("'Calendar Message' with html linebreaks between each letter.",
-                     "<qt><br />C<br />a<br />l<br />l<br />e<br />n<br />d<br />a<br />r<br /> "
+                     "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> "
                      "<br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>");
     default:
         return QString();
