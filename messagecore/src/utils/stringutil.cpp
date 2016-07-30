@@ -194,6 +194,12 @@ QMap<QString, QString> parseMailtoUrl(const QUrl &url)
         to << toStr;
     }
 
+    QString body = values.value(QStringLiteral("body"));
+    if (!body.isEmpty()) {
+        // Replace Html %0A to \n
+        body = body.replace(QStringLiteral("%0A"), QStringLiteral("\n"));
+        values.insert(QStringLiteral("body"), body);
+    }
     values.insert(QStringLiteral("to"), to.join(QStringLiteral(", ")));
     return values;
 }
