@@ -25,12 +25,14 @@ class MessageComposer::PluginEditorCheckBeforeSendInterfacePrivate
 {
 public:
     PluginEditorCheckBeforeSendInterfacePrivate()
-        : mParentWidget(Q_NULLPTR)
+        : mParentWidget(Q_NULLPTR),
+          mIdentityManagement(Q_NULLPTR)
     {
 
     }
     MessageComposer::PluginEditorCheckBeforeSendParams parameters;
     QWidget *mParentWidget;
+    KIdentityManagement::IdentityManager *mIdentityManagement;
 };
 
 PluginEditorCheckBeforeSendInterface::PluginEditorCheckBeforeSendInterface(QObject *parent)
@@ -53,6 +55,16 @@ void PluginEditorCheckBeforeSendInterface::setParentWidget(QWidget *parent)
 QWidget *PluginEditorCheckBeforeSendInterface::parentWidget() const
 {
     return d->mParentWidget;
+}
+
+void PluginEditorCheckBeforeSendInterface::setIdentityManagement(KIdentityManagement::IdentityManager *identityManagement)
+{
+    d->mIdentityManagement = identityManagement;
+}
+
+KIdentityManagement::IdentityManager *PluginEditorCheckBeforeSendInterface::identityManagement() const
+{
+    return d->mIdentityManagement;
 }
 
 void PluginEditorCheckBeforeSendInterface::setParameters(const MessageComposer::PluginEditorCheckBeforeSendParams &params)
