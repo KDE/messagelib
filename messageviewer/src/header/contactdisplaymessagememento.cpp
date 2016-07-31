@@ -49,6 +49,7 @@ ContactDisplayMessageMemento::~ContactDisplayMessageMemento()
 {
     if (mSearchJob) {
         disconnect(mSearchJob.data(), &Akonadi::ContactSearchJob::result, this, &ContactDisplayMessageMemento::slotSearchJobFinished);
+        mSearchJob->kill();
     }
 }
 
