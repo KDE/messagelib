@@ -22,6 +22,11 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
+namespace KIdentityManagement
+{
+class IdentityManager;
+}
+
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendPrivate;
@@ -57,7 +62,7 @@ public:
 
     virtual bool hasConfigureSupport() const;
 
-    virtual PluginEditorCheckBeforeSendConfigureWidgetSetting createConfigureWidget(QWidget *parent) const;
+    virtual PluginEditorCheckBeforeSendConfigureWidgetSetting createConfigureWidget(KIdentityManagement::IdentityManager *identityManager, QWidget *parent) const;
 
     void emitConfigChanged();
 

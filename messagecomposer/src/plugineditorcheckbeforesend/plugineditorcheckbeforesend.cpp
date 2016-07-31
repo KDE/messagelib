@@ -47,8 +47,9 @@ bool PluginEditorCheckBeforeSend::hasConfigureSupport() const
     return false;
 }
 
-PluginEditorCheckBeforeSendConfigureWidgetSetting PluginEditorCheckBeforeSend::createConfigureWidget(QWidget *parent) const
+PluginEditorCheckBeforeSendConfigureWidgetSetting PluginEditorCheckBeforeSend::createConfigureWidget(KIdentityManagement::IdentityManager *identityManager, QWidget *parent) const
 {
+    Q_UNUSED(identityManager)
     Q_UNUSED(parent);
     return {};
 }
