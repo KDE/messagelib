@@ -21,9 +21,9 @@
 
 using namespace MessageComposer;
 
-PluginEditorCheckBeforeSendConfigureWidget::PluginEditorCheckBeforeSendConfigureWidget(QWidget *parent)
+PluginEditorCheckBeforeSendConfigureWidget::PluginEditorCheckBeforeSendConfigureWidget(KIdentityManagement::IdentityManager *identityManager, QWidget *parent)
     : QWidget(parent),
-      mIdentityManagement(Q_NULLPTR)
+      mIdentityManagement(identityManager)
 {
 
 }
