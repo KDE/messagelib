@@ -85,6 +85,7 @@ NodeHelper::~NodeHelper()
         delete mAttachmentFilesDir;
         mAttachmentFilesDir = 0;
     }
+    clear();
 }
 
 void NodeHelper::setNodeProcessed(KMime::Content *node, bool recurse)
