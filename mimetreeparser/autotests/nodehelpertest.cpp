@@ -63,7 +63,6 @@ void NodeHelperTest::testPersistentIndex()
     node2ExtraSubNode->addContent(node2ExtraSubsubNode);
     node2ExtraSubNode->addContent(node2ExtraSubsubNode2);
     helper.attachExtraContent(node2, node2Extra);
-    helper.attachExtraContent(node2Extra, node2ExtraSubNode);
 
     /*  all content has a internal first child, so indexes starts at 2
      * node                 ""
