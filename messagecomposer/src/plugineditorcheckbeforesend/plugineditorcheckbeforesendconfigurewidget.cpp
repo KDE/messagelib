@@ -38,12 +38,12 @@ QString PluginEditorCheckBeforeSendConfigureWidget::helpAnchor() const
     return QString();
 }
 
-void PluginEditorCheckBeforeSendConfigureWidget::setIdentityManagement(KIdentityManagement::IdentityManager *identityManagement)
+void PluginEditorCheckBeforeSendConfigureWidget::setIdentityManager(KIdentityManagement::IdentityManager *identityManagement)
 {
     mIdentityManagement = identityManagement;
 }
 
-KIdentityManagement::IdentityManager *PluginEditorCheckBeforeSendConfigureWidget::identityManagement() const
+KIdentityManagement::IdentityManager *PluginEditorCheckBeforeSendConfigureWidget::identityManager() const
 {
     return mIdentityManagement;
 }

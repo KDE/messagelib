@@ -42,8 +42,8 @@ public:
     virtual void resetSettings() = 0;
     virtual QString helpAnchor() const;
 
-    void setIdentityManagement(KIdentityManagement::IdentityManager *identityManagement);
-    KIdentityManagement::IdentityManager *identityManagement() const;
+    void setIdentityManager(KIdentityManagement::IdentityManager *identityManager);
+    KIdentityManagement::IdentityManager *identityManager() const;
 
 Q_SIGNALS:
     void configureChanged();
