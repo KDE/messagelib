@@ -70,4 +70,27 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     delete viewer;
 }
 
+void ViewerTest::shouldDisplayMessage()
+{
+   QByteArray data =
+        "From: Konqui <konqui@kde.org>\n"
+        "To: Friends <friends@kde.org>\n"
+        "Date: Sun, 21 Mar 1993 23:56:48 -0800 (PST)\n"
+        "Subject: Sample message\n"
+        "MIME-Version: 1.0\n"
+        "Content-type: text/plain; charset=us-ascii\n"
+        "\n"
+        "\n"
+        "This is a test message.\n"
+        "\n";
+
+    KMime::Message::Ptr msgPtr = KMime::Message::Ptr(new KMime::Message());
+    msgPtr->setContent(data);
+    msgPtr->parse();
+
+    MessageViewer::Viewer viewer(0, 0, new KActionCollection(this));
+    viewer.setMessage(msgPtr, MimeTreeParser::Force);
+    // not sure what to check, but at least we check it neither crashes nor hangs
+}
+
 QTEST_MAIN(ViewerTest)

@@ -26,6 +26,7 @@ public:
     ViewerTest();
 private Q_SLOTS:
     void shouldHaveDefaultValuesOnCreation();
+    void shouldDisplayMessage();
 };
 
 #endif // VIEWERTEST_H

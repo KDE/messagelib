@@ -37,6 +37,7 @@ private Q_SLOTS:
     void testPersistentIndex();
     void testLocalFiles();
     void testHREF();
+    void testCreateTempDir();
 };
 
 }

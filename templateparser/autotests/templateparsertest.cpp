@@ -202,7 +202,7 @@ void TemplateParserTester::test_processWithTemplatesForContent()
     QCOMPARE(msg->hasHeader("X-KMail-Dictionary"), hasDictionary);
 
     identMan->deleteLater();
-    QCOMPARE(QString::fromLatin1(msg->encodedBody()), expectedBody);
+    QCOMPARE(QString::fromUtf8(msg->encodedBody()), expectedBody);
 }
 
 QTEST_MAIN(TemplateParserTester)
