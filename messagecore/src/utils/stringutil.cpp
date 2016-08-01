@@ -392,7 +392,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
     QString result;
     int numberAddresses = 0;
     bool expandableInserted = false;
-    //KIdentityManagement::IdentityManager im(true);
+    KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
 
     foreach (const KMime::Types::Mailbox &mailbox, mailboxList) {
         if (!mailbox.prettyAddress().isEmpty()) {
@@ -410,7 +410,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
                           + QString::fromLatin1(QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
                           + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
             }
-            const bool foundMe = false;//(im.identities().count() == 1) && (im.identityForAddress(mailbox.prettyAddress()) != KIdentityManagement::Identity::null());
+            const bool foundMe = (im->identities().count() == 1) && (im->identityForAddress(mailbox.prettyAddress()) != KIdentityManagement::Identity::null());
             const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.
