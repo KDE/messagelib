@@ -205,8 +205,22 @@ void NodeHelperTest::testLocalFiles()
     QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(subsubExtra)), subsubExtra);
     helper.writeNodeToTempFile(subsubExtraNode);
     QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(subsubExtraNode)), subsubExtraNode);
+}
 
-    helper.forceCleanTempFiles();
+void NodeHelperTest::testCreateTempDir()
+{
+    QString path;
+    {
+        NodeHelper helper;
+        path = helper.createTempDir(QStringLiteral("foo"));
+
+        QVERIFY(path.endsWith(QStringLiteral(".index.foo")));
+        QVERIFY(QDir(path).exists());
+        QVERIFY(QFile(path).permissions() & QFileDevice::WriteUser);
+        QVERIFY(QFile(path).permissions() & QFileDevice::ExeUser);
+        QVERIFY(QFile(path).permissions() & QFileDevice::ReadUser);
+    }
+    QVERIFY(!QDir(path).exists());
 }
 
 QTEST_GUILESS_MAIN(NodeHelperTest)
