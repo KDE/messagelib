@@ -56,6 +56,7 @@ class MESSAGECOMPOSER_EXPORT RecipientsEditor : public KPIM::MultiplyingLineEdit
     Q_OBJECT
 public:
     explicit RecipientsEditor(QWidget *parent = Q_NULLPTR);
+    explicit RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *parent = Q_NULLPTR);
     ~RecipientsEditor();
 
     Recipient::List recipients() const;
@@ -96,6 +97,7 @@ protected Q_SLOTS:
     void addRecipient(RecipientLineNG *, const QString &);
 
 protected:
+    bool eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
     RecipientLineNG *activeLine() const Q_DECL_OVERRIDE;
 
 private:

@@ -46,7 +46,7 @@ protected:
     void keyPressEvent(QKeyEvent *ev) Q_DECL_OVERRIDE;
 };
 
-class RecipientLineEdit : public MessageComposer::ComposerLineEdit
+class MESSAGECOMPOSER_EXPORT RecipientLineEdit : public MessageComposer::ComposerLineEdit
 {
     Q_OBJECT
 public:
@@ -100,6 +100,14 @@ public:
      * Sets the config file used for storing recent addresses.
      */
     void setRecentAddressConfig(KConfig *config);
+
+    void setEnableIndexSearch(bool enableIndexSearch);
+    bool enableIndexSearch() const;
+
+    void setEnableAkonadiSearch(bool enableAkonadiSearch);
+    bool enableAkonadiSearch() const;
+
+    QString rawData() const;
 
 Q_SIGNALS:
     void typeModified(RecipientLineNG *);

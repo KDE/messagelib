@@ -267,3 +267,28 @@ void RecipientLineNG::setIcon(const QIcon &icon, const QString &tooltip)
 {
     mEdit->setIcon(icon, tooltip);
 }
+
+void RecipientLineNG::setEnableIndexSearch(bool enableIndexSearch)
+{
+    mEdit->setEnableBalooSearch(enableIndexSearch);
+}
+
+bool RecipientLineNG::enableIndexSearch() const
+{
+    return mEdit->enableBalooSearch();
+}
+
+void RecipientLineNG::setEnableAkonadiSearch(bool enableAkonadiSearch)
+{
+    mEdit->setEnableAkonadiSearch(enableAkonadiSearch);
+}
+
+bool RecipientLineNG::enableAkonadiSearch() const
+{
+    return mEdit->enableAkonadiSearch();
+}
+
+QString RecipientLineNG::rawData() const
+{
+    return mEdit->text();
+}

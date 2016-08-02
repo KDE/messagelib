@@ -36,9 +36,12 @@
 #include <KMime/Headers>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KEmailAddress>
 
 #include <QLayout>
 #include <QDebug>
+#include <QKeyEvent>
+#include <QRegularExpression>
 
 using namespace MessageComposer;
 using namespace KPIM;
@@ -70,22 +73,35 @@ class MessageComposer::RecipientsEditorPrivate
 public:
     RecipientsEditorPrivate()
         : mRecentAddressConfig(Q_NULLPTR),
-          mSideWidget(Q_NULLPTR)
+          mSideWidget(Q_NULLPTR),
+          mSkipTotal(false)
     {
 
     }
     KConfig *mRecentAddressConfig;
     RecipientsEditorSideWidget *mSideWidget;
+    bool mSkipTotal;
 };
 
 RecipientsEditor::RecipientsEditor(QWidget *parent)
-    : MultiplyingLineEditor(new RecipientLineFactory(Q_NULLPTR), parent),
+    : RecipientsEditor(new RecipientLineFactory(Q_NULLPTR), parent)
+{
+}
+
+RecipientsEditor::RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *parent)
+    : MultiplyingLineEditor(lineFactory, parent),
       d(new MessageComposer::RecipientsEditorPrivate)
 {
     factory()->setParent(this);   // HACK: can't use 'this' above since it's not yet constructed at that point
     d->mSideWidget = new RecipientsEditorSideWidget(this, this);
 
     layout()->addWidget(d->mSideWidget);
+
+    // Install global event filter and listen for keypress events for RecipientLineEdits.
+    // Unfortunately we can't install ourselves directly as event filter for the edits,
+    // because the RecipientLineEdit has its own event filter installed into QApplication
+    // and so it would eat the event before it would reach us.
+    qApp->installEventFilter(this);
 
     connect(d->mSideWidget, &RecipientsEditorSideWidget::pickedRecipient, this, &RecipientsEditor::slotPickedRecipient);
     connect(d->mSideWidget, &RecipientsEditorSideWidget::saveDistributionList, this, &RecipientsEditor::saveDistributionList);
@@ -286,10 +302,37 @@ void RecipientsEditor::slotLineDeleted(int pos)
     slotCalculateTotal();
 }
 
+bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
+{
+    if (event->type() == QEvent::KeyPress && qobject_cast<RecipientLineEdit*>(object)) {
+        auto ke = static_cast<QKeyEvent*>(event);
+        // Treats comma or semicolon as email separator, will automatically move focus
+        // to a new line, basically preventing user from inputting more than one
+        // email address per line, which breaks our opportunistic crypto in composer
+        if (ke->key() == Qt::Key_Comma || (
+            ke->key() == Qt::Key_Semicolon && MessageComposerSettings::self()->allowSemicolonAsAddressSeparator())) {
+            auto line = qobject_cast<RecipientLineNG*>(object->parent());
+            const auto split = KEmailAddress::splitAddressList(line->rawData() + QLatin1String(", "));
+            if (split.size() > 1) {
+                addRecipient(QString(), line->recipientType());
+                setFocusBottom();
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
 void RecipientsEditor::slotCalculateTotal()
 {
     int count = 0;
     int empty = 0;
+
+    // Prevent endless recursion when splitting recipient
+    if (d->mSkipTotal) {
+        return;
+    }
 
     MultiplyingLine *line;
     foreach (line, lines()) {
@@ -298,7 +341,21 @@ void RecipientsEditor::slotCalculateTotal()
             if (rec->isEmpty()) {
                 ++empty;
             } else {
-                count += rec->recipientsCount();
+                const int recipientsCount = rec->recipientsCount();
+                if (recipientsCount > 1) {
+                    // Ensure we always have only one recipient per line
+                    d->mSkipTotal = true;
+                    Recipient::Ptr recipient = rec->recipient();
+                    const auto split = KEmailAddress::splitAddressList(recipient->email());
+                    for (int i = 1 /* sic! */; i < split.count(); ++i) {
+                        addRecipient(split[i], rec->recipientType());
+                    }
+                    recipient->setEmail(split[0]);
+                    rec->setData(recipient);
+                    setFocusBottom(); // focus next empty entry
+                    d->mSkipTotal = false;
+                }
+                count += recipientsCount;
             }
         }
     }
