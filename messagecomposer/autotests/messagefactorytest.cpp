@@ -151,7 +151,7 @@ void MessageFactoryTest::testCreateReply()
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
-
+    delete identMan;
 }
 
 void MessageFactoryTest::testCreateReplyHtml()
@@ -176,7 +176,7 @@ void MessageFactoryTest::testCreateReplyHtml()
     QCOMPARE(reply.msg->contentType()->mimeType(), QStringLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
     QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
-
+    delete identMan;
 }
 
 void MessageFactoryTest::testCreateReplyUTF16Base64()
@@ -201,7 +201,7 @@ void MessageFactoryTest::testCreateReplyUTF16Base64()
     QCOMPARE(reply.msg->contentType()->mimeType(), QStringLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: asking for reply"));
     QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
-
+    delete identMan;
 }
 
 void MessageFactoryTest::testCreateForward()
@@ -249,6 +249,7 @@ void MessageFactoryTest::testCreateForward()
 //   qDebug() << "got:" << fw->encodedContent() << "against" << fwdMsg.toLatin1();
     QCOMPARE(fw->subject()->asUnicodeString(), QStringLiteral("Fwd: Test Email Subject"));
     QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toLatin1());
+    delete identMan;
 }
 
 void MessageFactoryTest::testCreateRedirect()
@@ -307,6 +308,7 @@ void MessageFactoryTest::testCreateRedirect()
 //   QString fwdStr = QString::fromLatin1( "On " + datetime.toLatin1() + " you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n" );
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
+    delete identMan;
 }
 
 void MessageFactoryTest::testCreateResend()
@@ -359,6 +361,7 @@ void MessageFactoryTest::testCreateResend()
 //   QString fwdStr = QString::fromLatin1( "On " + datetime.toLatin1() + " you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n" );
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
+    delete identMan;
 }
 
 void MessageFactoryTest::testCreateMDN()
@@ -392,6 +395,7 @@ void MessageFactoryTest::testCreateMDN()
 
     QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(),
                      mdnContent.toLatin1());
+    delete identMan;
 }
 
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
@@ -484,5 +488,6 @@ void MessageFactoryTest::test_multipartAlternative()
     QCOMPARE(reply.msg->contentType()->mimeType(), QStringLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE(reply.msg->contents().at(contentAt)->encodedBody().data(), expected.toLatin1().data());
+    delete identMan;
 }
 
