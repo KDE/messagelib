@@ -72,7 +72,9 @@ void WebEngineExportHtmlPageJob::slotSaveHtmlToPage(const QString &text)
     }
     QTextStream stream(&temporaryFile);
     stream.setCodec("UTF-8");
-    stream << text;
+    QString newText = text;
+    newText.replace(QStringLiteral("<!DOCTYPE html>"), QStringLiteral("<!DOCTYPE html><meta charset=\"UTF-8\">"));
+    stream << newText;
     temporaryFile.close();
     //We need to remove this temporary file
     Q_EMIT success(temporaryFile.fileName());
