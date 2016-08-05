@@ -120,6 +120,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     mainLayout->addWidget(buttonBox);
 
     QGridLayout *g = new QGridLayout(base);
+    g->setMargin(0);
 
     d->mAggregationList = new AggregationListWidget(base);
     d->mAggregationList->setSelectionMode(QAbstractItemView::ExtendedSelection);
