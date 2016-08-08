@@ -23,7 +23,6 @@
 #include <QWebEngineView>
 #include <QWebEngineScript>
 #include "webengineviewer_export.h"
-class QWebEngineDownloadItem;
 namespace WebEngineViewer
 {
 class WebEngineViewPrivate;
@@ -39,7 +38,6 @@ public:
     qreal relativePosition() const;
 
     bool hasPrintPreviewSupport() const;
-    void saveHtml(QWebEngineDownloadItem *download);
 
     void addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
     void initializeJQueryScript();
