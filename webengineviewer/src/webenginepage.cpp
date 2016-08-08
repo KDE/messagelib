@@ -21,10 +21,15 @@
 #include "webhittest.h"
 #include "webhittestresult.h"
 
+#include <KLocalizedString>
+
 #include <QEventLoop>
 #include <QWebEngineSettings>
+#include <QWebEngineDownloadItem>
 #include <QPointer>
 #include <QTimer>
+#include <QFileDialog>
+#include <QWebEngineProfile>
 
 using namespace WebEngineViewer;
 
@@ -41,13 +46,14 @@ WebEnginePage::WebEnginePage(QObject *parent)
     : QWebEnginePage(parent),
       d(new WebEnginePagePrivate)
 {
+    init();
 }
 
 WebEnginePage::WebEnginePage(QWebEngineProfile *profile, QObject *parent)
     : QWebEnginePage(profile, parent),
       d(new WebEnginePagePrivate)
 {
-
+    init();
 }
 
 WebEnginePage::~WebEnginePage()
@@ -55,10 +61,32 @@ WebEnginePage::~WebEnginePage()
     delete d;
 }
 
+void WebEnginePage::init()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    connect(profile(), &QWebEngineProfile::downloadRequested, this, &WebEnginePage::saveHtml);
+#endif
+}
+
 WebEngineViewer::WebHitTest *WebEnginePage::hitTestContent(const QPoint &pos)
 {
     return new WebHitTest(this, pos);
 }
+
+void WebEnginePage::saveHtml(QWebEngineDownloadItem *download)
+{
+#if QT_VERSION >= 0x050700
+    const QString fileName = QFileDialog::getSaveFileName(view(), i18n("Save HTML Page"));
+    if (!fileName.isEmpty()) {
+        download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
+        download->setPath(fileName);
+        download->accept();
+    }
+#else
+    Q_UNUSED(download);
+#endif
+}
+
 
 QVariant WebEnginePage::execJavaScript(const QString &scriptSource, int timeout)
 {

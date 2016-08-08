@@ -24,6 +24,7 @@
 #include "webengineviewer_export.h"
 #include <QVariant>
 class QWebEngineProfile;
+class QWebEngineDownloadItem;
 namespace WebEngineViewer
 {
 class WebHitTest;
@@ -39,6 +40,7 @@ public:
     WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
     QVariant execJavaScript(const QString &scriptSource, int timeout = 500);
 
+    void saveHtml(QWebEngineDownloadItem *download);
 Q_SIGNALS:
     void urlClicked(const QUrl &url);
 
@@ -46,6 +48,7 @@ protected:
     bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) Q_DECL_OVERRIDE;
 
 private:
+    void init();
     WebEnginePagePrivate *const d;
 };
 }
