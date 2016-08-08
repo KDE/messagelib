@@ -19,6 +19,7 @@
 #include "mailwebenginepage.h"
 #include <QFontDatabase>
 #include <QWebEngineSettings>
+#include <QWebEngineProfile>
 
 using namespace MessageViewer;
 
@@ -41,6 +42,7 @@ MailWebEnginePage::~MailWebEnginePage()
 
 void MailWebEnginePage::initialize()
 {
+    profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
 

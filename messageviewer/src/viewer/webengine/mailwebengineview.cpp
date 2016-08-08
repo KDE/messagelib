@@ -80,10 +80,8 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
       d(new MessageViewer::MailWebEngineViewPrivate)
 
 {
-    QWebEngineProfile *profile = new QWebEngineProfile(this);
-    d->mPageEngine = new MailWebEnginePage(profile, this);
+    d->mPageEngine = new MailWebEnginePage(new QWebEngineProfile(this), this);
     setPage(d->mPageEngine);
-    settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     d->mWebViewAccessKey = new WebEngineViewer::WebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
     d->mScamDetection = new ScamDetectionWebEngine(this);
@@ -96,7 +94,6 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
     MessageViewer::CidReferencesUrlInterceptor *cidReference = new MessageViewer::CidReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(cidReference);
-    profile->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
 #if QT_VERSION >= 0x050700
