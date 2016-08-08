@@ -83,7 +83,6 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     QWebEngineProfile *profile = new QWebEngineProfile(this);
     d->mPageEngine = new MailWebEnginePage(profile, this);
     setPage(d->mPageEngine);
-    qDebug()<<" profile**************"<<profile;
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     d->mWebViewAccessKey = new WebEngineViewer::WebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
