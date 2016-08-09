@@ -48,34 +48,26 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
       mFindBar(Q_NULLPTR)
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-    QWidget *mainWidget = new QWidget(this);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
-    mainLayout->addWidget(mainWidget);
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &MailSourceWebEngineViewer::reject);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    QVBoxLayout *layout = new QVBoxLayout(mainWidget);
-    layout->setMargin(0);
-    connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &MailSourceWebEngineViewer::close);
 
-    mRawBrowser = new MailSourceViewTextBrowserWidget();
+    mRawBrowser = new MailSourceViewTextBrowserWidget(this);
 
 #ifndef NDEBUG
-    mTabWidget = new QTabWidget;
-    layout->addWidget(mTabWidget);
+    mTabWidget = new QTabWidget(this);
+    mainLayout->addWidget(mTabWidget);
 
     mTabWidget->addTab(mRawBrowser, i18nc("Unchanged mail message", "Raw Source"));
     mTabWidget->setTabToolTip(0, i18n("Raw, unmodified mail as it is stored on the filesystem or on the server"));
 
-    mHtmlBrowser = new MailSourceViewTextBrowserWidget();
+    mHtmlBrowser = new MailSourceViewTextBrowserWidget(this);
     mTabWidget->addTab(mHtmlBrowser, i18nc("Mail message as shown, in HTML format", "HTML Source"));
     mTabWidget->setTabToolTip(1, i18n("HTML code for displaying the message to the user"));
     new KPIMTextEdit::HtmlHighlighter(mHtmlBrowser->textBrowser()->document());
 
     mTabWidget->setCurrentIndex(0);
 #else
-    layout->addWidget(mRawBrowser);
+    mainLayout->addWidget(mRawBrowser);
 #endif
 
     // combining the shortcuts in one qkeysequence() did not work...
@@ -93,6 +85,10 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
                                     IconSize(KIconLoader::Small)));
     new MailSourceHighlighter(mRawBrowser->textBrowser()->document());
     mRawBrowser->textBrowser()->setFocus();
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &MailSourceWebEngineViewer::reject);
+    connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &MailSourceWebEngineViewer::close);
+
     mainLayout->addWidget(buttonBox);
 }
 
