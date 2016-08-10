@@ -79,7 +79,6 @@ set(libmessageviewer_widgets_SRCS
     widgets/vcardviewer.cpp
     widgets/invitationsettings.cpp
     widgets/openattachmentfolderwidget.cpp
-    widgets/mailsourceviewer.cpp
     widgets/mailsourceviewtextbrowserwidget.cpp
     )
 
