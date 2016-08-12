@@ -23,7 +23,6 @@
 #include <QWebEngineProfile>
 #include <QWebEngineScript>
 #include <QWebEngineScriptCollection>
-#include <QDebug>
 
 using namespace WebEngineViewer;
 

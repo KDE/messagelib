@@ -19,7 +19,6 @@
 
 #include "zoomactionmenu.h"
 #include <KLocalizedString>
-#include <KToggleAction>
 #include <KActionCollection>
 
 using namespace WebEngineViewer;

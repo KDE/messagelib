@@ -20,9 +20,7 @@
 #include "testdndwebengine.h"
 
 #include <QApplication>
-#include <QFile>
 #include <QVBoxLayout>
-#include <QDebug>
 #include <webengineview.h>
 #include <QTextEdit>
 

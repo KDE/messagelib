@@ -18,15 +18,12 @@
 */
 
 #include "testjquerysupportwebengine.h"
-#include <QHBoxLayout>
 #include <QApplication>
-#include <QWebEngineView>
 #include <WebEngineViewer/WebEnginePage>
-#include <QDebug>
 #include <webengineview.h>
 #include <QPushButton>
-#include <QMessageBox>
 #include <QTextEdit>
+#include <QVBoxLayout>
 
 TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
     : QWidget(parent)

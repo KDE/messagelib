@@ -20,7 +20,6 @@
 #include "printselectpagedialog.h"
 #include "printselectpagewidget.h"
 
-#include <KLocalizedString>
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QVBoxLayout>

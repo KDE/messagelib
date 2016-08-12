@@ -24,7 +24,6 @@
 #include <KLocalizedString>
 
 #include <QEventLoop>
-#include <QWebEngineSettings>
 #include <QWebEngineDownloadItem>
 #include <QPointer>
 #include <QTimer>

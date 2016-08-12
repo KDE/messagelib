@@ -41,7 +41,7 @@
 #include <QUrl>
 #include <QRect>
 #include <QString>
-#include <QVariantMap>
+#include <QVariant>
 
 namespace WebEngineViewer
 {

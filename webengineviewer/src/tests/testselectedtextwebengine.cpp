@@ -18,14 +18,12 @@
 */
 
 #include "testselectedtextwebengine.h"
-#include <QHBoxLayout>
 #include <QApplication>
-#include <QWebEngineView>
 #include <WebEngineViewer/WebEnginePage>
-#include <QDebug>
 #include <webengineview.h>
 #include <QPushButton>
 #include <QMessageBox>
+#include <QVBoxLayout>
 
 TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
     : QWidget(parent)

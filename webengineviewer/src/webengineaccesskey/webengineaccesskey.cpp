@@ -27,7 +27,6 @@
 #include <QAction>
 #include <QWebEngineView>
 #include <QToolTip>
-#include <QCoreApplication>
 #include <QDebug>
 using namespace WebEngineViewer;
 template<typename Arg, typename R, typename C>

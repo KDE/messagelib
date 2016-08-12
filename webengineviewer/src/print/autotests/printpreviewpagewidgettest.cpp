@@ -21,7 +21,6 @@
 #include "../printpreviewpagewidget.h"
 #include "../printpreviewpageviewer.h"
 
-#include <QDialogButtonBox>
 #include <QTest>
 #include <QLayout>
 #include <QHBoxLayout>

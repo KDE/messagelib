@@ -36,7 +36,6 @@
 #include "mimetreeparser_debug.h"
 
 // Qt
-#include <QString>
 
 #include <assert.h>
 

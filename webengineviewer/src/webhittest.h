@@ -22,7 +22,6 @@
 
 #include <QObject>
 #include "webengineviewer_export.h"
-#include <QUrl>
 #include <QPoint>
 class QWebEnginePage;
 namespace WebEngineViewer

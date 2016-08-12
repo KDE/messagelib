@@ -21,7 +21,6 @@
 #include "viewer/nodehelper.h"
 
 #include <qtest.h>
-#include <QDebug>
 
 using namespace MimeTreeParser;
 

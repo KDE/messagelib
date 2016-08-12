@@ -25,7 +25,6 @@
 #include <QApplication>
 #include <QStandardPaths>
 #include <QVBoxLayout>
-#include <QHBoxLayout>
 #include <QPushButton>
 #include <QWebEngineView>
 #include <QDebug>

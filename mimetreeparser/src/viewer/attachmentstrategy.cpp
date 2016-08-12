@@ -39,7 +39,6 @@
 #include <KMime/Content>
 
 #include <QIcon>
-#include <QMimeDatabase>
 
 #include "mimetreeparser_debug.h"
 

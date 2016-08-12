@@ -25,10 +25,7 @@
 #include <QKeyEvent>
 #include <QMouseEvent>
 #include <QWheelEvent>
-#include <QWebEngineProfile>
 
-#include <KLocalizedString>
-#include <QWebEngineDownloadItem>
 
 using namespace WebEngineViewer;
 

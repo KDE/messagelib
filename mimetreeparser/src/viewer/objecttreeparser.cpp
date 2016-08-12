@@ -54,7 +54,6 @@
 #include <KMime/Message>
 
 // KDE includes
-#include <KLocalizedString>
 
 // Qt includes
 #include <QByteArray>
