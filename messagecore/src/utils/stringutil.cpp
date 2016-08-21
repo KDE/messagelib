@@ -194,10 +194,6 @@ QMap<QString, QString> parseMailtoUrl(const QUrl &url)
         to << toStr;
     }
 
-    QString body = values.value(QStringLiteral("body"));
-    if (!body.isEmpty()) {
-        values.insert(QStringLiteral("body"), body);
-    }
     values.insert(QStringLiteral("to"), to.join(QStringLiteral(", ")));
     return values;
 }
