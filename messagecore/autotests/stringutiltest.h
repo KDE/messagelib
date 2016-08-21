@@ -38,6 +38,7 @@ private Q_SLOTS:
     void test_stripOffMessagePrefix();
     void test_formatQuotePrefix_data();
     void test_formatQuotePrefix();
+    void test_parseMailToBug366981();
 };
 
 #endif
