@@ -1,4 +1,6 @@
-/* Copyright 2009 Thomas McGuire <mcguire@kde.org>
+/*
+   Copyright 2016 Laurent Montel <montel@kde.org>
+   Copyright 2009 Thomas McGuire <mcguire@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
@@ -532,14 +534,15 @@ QString smartQuote(const QString &msg, int maxLineLength)
                 for (int i = textParts.count() - 1; i >= 0; i--) {
 
                     // Check if we have found the From line
-                    if (textParts[i].endsWith(QLatin1Char(':'))) {
-                        fromLine = oldIndent + textParts[i] + QLatin1Char('\n');
+                    const QString textPartElement(textParts[i]);
+                    if (textPartElement.endsWith(QLatin1Char(':'))) {
+                        fromLine = oldIndent + textPartElement + QLatin1Char('\n');
                         textParts.removeAt(i);
                         break;
                     }
 
                     // Abort on first non-empty line
-                    if (!textParts[i].trimmed().isEmpty()) {
+                    if (!textPartElement.trimmed().isEmpty()) {
                         break;
                     }
                 }
