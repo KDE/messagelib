@@ -379,6 +379,17 @@ void StringUtilTest::test_parseMailtoUrlExtra()
     QCOMPARE(data.value(QLatin1String("body")), QLatin1String("This is the body"));
 }
 
+void StringUtilTest::test_parseMailToBug366981()
+{
+    const QString ba(QStringLiteral("mailto:test@test.com?subject=test&body=line1%0D%0Aline2"));
+    QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
+    QMap<QString, QString> data = StringUtil::parseMailtoUrl(urlDecoded);
+    QCOMPARE(data.size(), 3);
+    QCOMPARE(data.value(QLatin1String("to")), QLatin1String("test@test.com"));
+    QCOMPARE(data.value(QLatin1String("subject")), QLatin1String("test"));
+    QCOMPARE(data.value(QLatin1String("body")), QLatin1String("line1\r\nline2"));
+}
+
 void StringUtilTest::test_parseMailToBug832795()
 {
     const QString ba(QStringLiteral("mailto:832795@bugs.debian.org?In-Reply-To=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3E&subject=Re%3A%20kmail%3A%20unescaping%20mailto%3A%20links%20broken&body=On%20Thu%2C%2028%20Jul%202016References=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3Ebody=On%20Thu%2C%2028%20Jul%202016%2023%3A39%3A03%20%2B0200%20Dominik%20George%20%3Cnik%40naturalnet.de%3E%20wrote%3A%0A%3E%20Package%3A%20kmail%0A%3E%20Version%3A%204%3A16.04.3-1%0A"));

@@ -182,7 +182,7 @@ QMap<QString, QString> parseMailtoUrl(const QUrl &url)
         return values;
     }
     QUrlQuery query(url);
-    Q_FOREACH (const auto &queryItem, query.queryItems()) {
+    Q_FOREACH (const auto &queryItem, query.queryItems(QUrl::FullyDecoded)) {
         values.insert(queryItem.first, queryItem.second);
     }
 
@@ -196,8 +196,6 @@ QMap<QString, QString> parseMailtoUrl(const QUrl &url)
 
     QString body = values.value(QStringLiteral("body"));
     if (!body.isEmpty()) {
-        // Replace Html %0A to \n
-        body = body.replace(QStringLiteral("%0A"), QStringLiteral("\n"));
         values.insert(QStringLiteral("body"), body);
     }
     values.insert(QStringLiteral("to"), to.join(QStringLiteral(", ")));
