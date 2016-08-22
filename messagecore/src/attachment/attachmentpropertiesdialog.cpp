@@ -260,7 +260,12 @@ void AttachmentPropertiesDialog::Private::loadFromPart()
         mimeTypeChanged(QString::fromLatin1(mPart->mimeType()));
         uiReadOnly->size->setText(KFormat().formatByteSize(mPart->size()));
         uiReadOnly->name->setText(mPart->name().isEmpty() ? mPart->fileName() : mPart->name());
-        uiReadOnly->description->setText(mPart->description());
+        if (mPart->description().isEmpty()) {
+            uiReadOnly->description->hide();
+            uiReadOnly->descriptionLabel->hide();
+        } else {
+            uiReadOnly->description->setText(mPart->description());
+        }
         uiReadOnly->encoding->setText(KMime::nameForEncoding(mPart->encoding()));
     } else {
         const QString mimeType = QString::fromLatin1(mPart->mimeType());
