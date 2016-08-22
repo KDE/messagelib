@@ -304,14 +304,14 @@ void RecipientsEditor::slotLineDeleted(int pos)
 
 bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
 {
-    if (event->type() == QEvent::KeyPress && qobject_cast<RecipientLineEdit*>(object)) {
-        auto ke = static_cast<QKeyEvent*>(event);
+    if (event->type() == QEvent::KeyPress && qobject_cast<RecipientLineEdit *>(object)) {
+        auto ke = static_cast<QKeyEvent *>(event);
         // Treats comma or semicolon as email separator, will automatically move focus
         // to a new line, basically preventing user from inputting more than one
         // email address per line, which breaks our opportunistic crypto in composer
         if (ke->key() == Qt::Key_Comma || (
-            ke->key() == Qt::Key_Semicolon && MessageComposerSettings::self()->allowSemicolonAsAddressSeparator())) {
-            auto line = qobject_cast<RecipientLineNG*>(object->parent());
+                    ke->key() == Qt::Key_Semicolon && MessageComposerSettings::self()->allowSemicolonAsAddressSeparator())) {
+            auto line = qobject_cast<RecipientLineNG *>(object->parent());
             const auto split = KEmailAddress::splitAddressList(line->rawData() + QLatin1String(", "));
             if (split.size() > 1) {
                 addRecipient(QString(), line->recipientType());

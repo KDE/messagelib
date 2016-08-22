@@ -36,7 +36,6 @@
 #include "htmlwriter/queuehtmlwriter.h"
 #include "viewer/objecttreeparser.h"
 
-
 using namespace MimeTreeParser::Interface;
 
 namespace MimeTreeParser

@@ -22,7 +22,8 @@
 
 #include <QWidget>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 class WebEngineView;
 }
 class QWebEngineView;

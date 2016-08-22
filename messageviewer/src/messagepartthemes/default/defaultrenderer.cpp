@@ -1220,7 +1220,7 @@ public:
         }
         return htmlWriter->html;
     }
- 
+
     QString render(const EncryptedMessagePart::Ptr &mp)
     {
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
@@ -1263,7 +1263,7 @@ public:
 
             auto mode = mp->preferredMode();
             if (mode == MimeTreeParser::Util::MultipartPlain && mp->text().trimmed().isEmpty()) {
-                foreach(const auto m, mp->availableModes()) {
+                foreach (const auto m, mp->availableModes()) {
                     if (m != MimeTreeParser::Util::MultipartPlain) {
                         mode = m;
                         break;

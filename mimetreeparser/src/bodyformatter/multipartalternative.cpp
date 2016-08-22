@@ -79,7 +79,7 @@ Interface::MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Inter
         }
         preferredMode = Util::MultipartIcal;
     } else if ((dataHtml && (preferredMode == Util::MultipartHtml || preferredMode == Util::Html)) ||
-            (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
+               (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
         if (dataPlain) {
             part.nodeHelper()->setNodeProcessed(dataPlain, false);
         }

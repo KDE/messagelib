@@ -122,11 +122,13 @@ public:
         Q_UNUSED(availableModes);
     }
 
-    MimeTreeParser::Util::HtmlMode preferredMode() const Q_DECL_OVERRIDE {
+    MimeTreeParser::Util::HtmlMode preferredMode() const Q_DECL_OVERRIDE
+    {
         return mPreferredMode;
     }
 
-    void setPreferredMode( MimeTreeParser::Util::HtmlMode mode) {
+    void setPreferredMode(MimeTreeParser::Util::HtmlMode mode)
+    {
         mPreferredMode = mode;
     }
 

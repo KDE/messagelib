@@ -37,17 +37,14 @@ public:
     {
     }
 
-    KPIM::MultiplyingLine *newLine(QWidget *parent) Q_DECL_OVERRIDE
-    {
-        auto line = qobject_cast<MessageComposer::RecipientLineNG*>(
+    KPIM::MultiplyingLine *newLine(QWidget *parent) Q_DECL_OVERRIDE {
+        auto line = qobject_cast<MessageComposer::RecipientLineNG *>(
             MessageComposer::RecipientLineFactory::newLine(parent));
         line->setEnableAkonadiSearch(false);
         line->setEnableIndexSearch(false);
         return line;
     }
 };
-
-
 
 class RecipientsEditorTest : public QObject
 {
@@ -59,7 +56,6 @@ private Q_SLOTS:
     void test_splitPastedListToLines();
 };
 
-
 void RecipientsEditorTest::test_addLineOnCommaPress()
 {
     MessageComposer::RecipientsEditor editor(new RecipientsLineTestFactory());
@@ -68,7 +64,7 @@ void RecipientsEditorTest::test_addLineOnCommaPress()
 
     QCOMPARE(editor.recipients().size(), 0);
 
-    auto lineEdit = editor.lines().first()->findChild<MessageComposer::RecipientLineEdit*>();
+    auto lineEdit = editor.lines().first()->findChild<MessageComposer::RecipientLineEdit *>();
     lineEdit->setFocus();
 
     // Simulate typing email address
@@ -79,7 +75,7 @@ void RecipientsEditorTest::test_addLineOnCommaPress()
 
     QTest::keyClick(lineEdit, Qt::Key_Comma, Qt::NoModifier, 0);
 
-    lineEdit = editor.lines().at(1)->findChild<MessageComposer::RecipientLineEdit*>();
+    lineEdit = editor.lines().at(1)->findChild<MessageComposer::RecipientLineEdit *>();
     QVERIFY(lineEdit->hasFocus());
 
     QTest::keyClicks(lineEdit, QStringLiteral("test@example.test"), Qt::NoModifier, 10);
@@ -113,8 +109,7 @@ void RecipientsEditorTest::test_splitPastedListToLines()
 
     clipboard->setText(QStringLiteral("test@example.com, \"Vrátil, Daniel\" <dvratil@kde.org>"));
 
-
-    auto lineEdit = editor.lines().at(0)->findChild<MessageComposer::RecipientLineEdit*>();
+    auto lineEdit = editor.lines().at(0)->findChild<MessageComposer::RecipientLineEdit *>();
     // paste() is protected in KPIM::AddresseeLineEdit
     QMetaObject::invokeMethod(lineEdit, "paste");
 

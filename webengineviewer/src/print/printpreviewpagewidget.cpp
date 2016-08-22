@@ -141,7 +141,7 @@ void PrintPreviewPageWidget::print(const QList<int> &pages)
 #if 0
     Poppler::PSConverter *psConverter = mDoc->psConverter();
     QTemporaryFile tf(QDir::tempPath() + QLatin1String("/kmail_XXXXXX.ps"));
-    if ( !tf.open() ) {
+    if (!tf.open()) {
 
     }
     psConverter->setPageList(pages);
@@ -150,50 +150,50 @@ void PrintPreviewPageWidget::print(const QList<int> &pages)
     psConverter->setLeftMargin(0);
     psConverter->setTopMargin(0);
     psConverter->setStrictMargins(false);
-    psConverter->setPSOptions(psConverter->psOptions() | Poppler::PSConverter::HideAnnotations );
+    psConverter->setPSOptions(psConverter->psOptions() | Poppler::PSConverter::HideAnnotations);
     if (psConverter->convert()) {
-        if ( !QStandardPaths::findExecutable(QStringLiteral("lpr-cups")).isEmpty() ) {
+        if (!QStandardPaths::findExecutable(QStringLiteral("lpr-cups")).isEmpty()) {
             exe = QStringLiteral("lpr-cups");
-        } else if ( !QStandardPaths::findExecutable(QStringLiteral("lpr.cups")).isEmpty() ) {
+        } else if (!QStandardPaths::findExecutable(QStringLiteral("lpr.cups")).isEmpty()) {
             exe = QStringLiteral("lpr.cups");
-        } else if ( !QStandardPaths::findExecutable(QStringLiteral("lpr")).isEmpty() ) {
+        } else if (!QStandardPaths::findExecutable(QStringLiteral("lpr")).isEmpty()) {
             exe = QStringLiteral("lpr");
-        } else if ( !QStandardPaths::findExecutable(QStringLiteral("lp")).isEmpty() ) {
+        } else if (!QStandardPaths::findExecutable(QStringLiteral("lp")).isEmpty()) {
             exe = QStringLiteral("lp");
         } else {
 
-    }
-    delete psConverter;
+        }
+        delete psConverter;
 #else
     qDebug() << " void PrintPreviewPageWidget::print(const QList<int> &page) not implemented";
 #endif
-    //TODO
-}
+        //TODO
+    }
 
-void PrintPreviewPageWidget::slotReloadPage()
-{
-    const int currentIndex = mPageComboBox->currentIndex();
-    showPage(currentIndex == -1 ? 0 : currentIndex);
-}
+    void PrintPreviewPageWidget::slotReloadPage()
+    {
+        const int currentIndex = mPageComboBox->currentIndex();
+        showPage(currentIndex == -1 ? 0 : currentIndex);
+    }
 
-void PrintPreviewPageWidget::slotPageDown()
-{
-    const int currentIndex = mPageComboBox->currentIndex();
-    if (currentIndex != -1) {
-        const int newIndex = currentIndex + 1;
-        if (newIndex < mPageComboBox->count()) {
-            mPageComboBox->setCurrentIndex(newIndex);
+    void PrintPreviewPageWidget::slotPageDown()
+    {
+        const int currentIndex = mPageComboBox->currentIndex();
+        if (currentIndex != -1) {
+            const int newIndex = currentIndex + 1;
+            if (newIndex < mPageComboBox->count()) {
+                mPageComboBox->setCurrentIndex(newIndex);
+            }
         }
     }
-}
 
-void PrintPreviewPageWidget::slotPageUp()
-{
-    const int currentIndex = mPageComboBox->currentIndex();
-    if (currentIndex != -1) {
-        const int newIndex = currentIndex - 1;
-        if (newIndex >= 0) {
-            mPageComboBox->setCurrentIndex(newIndex);
+    void PrintPreviewPageWidget::slotPageUp()
+    {
+        const int currentIndex = mPageComboBox->currentIndex();
+        if (currentIndex != -1) {
+            const int newIndex = currentIndex - 1;
+            if (newIndex >= 0) {
+                mPageComboBox->setCurrentIndex(newIndex);
+            }
         }
     }
-}

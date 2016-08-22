@@ -396,7 +396,7 @@ void AttachmentPropertiesDialog::accept()
 
 void AttachmentPropertiesDialog::slotHelp()
 {
-    PimCommon::Util::invokeHelp(QStringLiteral("kmail/the-composer-window.html"),QStringLiteral("attachments"));
+    PimCommon::Util::invokeHelp(QStringLiteral("kmail/the-composer-window.html"), QStringLiteral("attachments"));
 }
 
 #include "moc_attachmentpropertiesdialog.cpp"

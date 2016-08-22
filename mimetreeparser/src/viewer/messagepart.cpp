@@ -347,7 +347,7 @@ bool TextMessagePart::showTextFrame() const
 
 //-----AttachmentMessageBlock----------------------
 
-AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser* otp, KMime::Content* node, bool drawFrame, bool showLink, bool decryptMessage)
+AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage)
     : TextMessagePart(otp, node, drawFrame, showLink, decryptMessage)
     , mIsImage(false)
     , mNeverDisplayInline(false)
@@ -419,11 +419,11 @@ IconType AttachmentMessagePart::asIcon() const
         return MimeTreeParser::NoIcon;
     } else {
         if (isImage() && isHtmlPreferred &&
-            mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
+                mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
             return MimeTreeParser::IconInline;
         }
 
-        if(defaultHidden && !showOnlyOneMimePart && mNode->parent()) {
+        if (defaultHidden && !showOnlyOneMimePart && mNode->parent()) {
             return MimeTreeParser::IconInline;
         }
 
@@ -474,7 +474,7 @@ bool AttachmentMessagePart::isHidden() const
         hidden = defaultHidden && !showOnlyOneMimePart;
     } else {
         if (isImage() && isHtmlPreferred &&
-            mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
+                mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
             hidden = true;
         } else {
             hidden = defaultHidden && !showOnlyOneMimePart && mNode->parent();
@@ -602,7 +602,7 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
         return;
     }
 
-    foreach(const auto name, mChildNodes.keys()) {
+    foreach (const auto name, mChildNodes.keys()) {
         mChildParts[name] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mChildNodes[name], true));
     }
 }
@@ -988,7 +988,7 @@ void SignedMessagePart::setVerificationResult(const CryptoBodyPartMemento *m, KM
                 if (!mVerifiedText.isEmpty()) {
                     parseInternal(textNode, false);
                 }
-            } else { 
+            } else {
                 mOtp->mNodeHelper->setPartMetaData(mNode, mMetaData);
 
                 if (!mVerifiedText.isEmpty()) {
@@ -1028,10 +1028,10 @@ QString SignedMessagePart::htmlContent() const
 
 //-----CryptMessageBlock---------------------
 EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp,
-                                     const QString &text,
-                                     const Kleo::CryptoBackend::Protocol *cryptoProto,
-                                     const QString &fromAddress,
-                                     KMime::Content *node)
+        const QString &text,
+        const Kleo::CryptoBackend::Protocol *cryptoProto,
+        const QString &fromAddress,
+        KMime::Content *node)
     : MessagePart(otp, text)
     , mPassphraseError(false)
     , mNoSecKey(false)

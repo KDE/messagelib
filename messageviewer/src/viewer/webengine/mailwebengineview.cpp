@@ -107,7 +107,6 @@ MailWebEngineView::~MailWebEngineView()
     delete d;
 }
 
-
 void MailWebEngineView::initializeScripts()
 {
     initializeJQueryScript();

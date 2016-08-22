@@ -239,7 +239,7 @@ class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
     Q_OBJECT
 public:
     typedef QSharedPointer<AlternativeMessagePart> Ptr;
-    AlternativeMessagePart(MimeTreeParser::ObjectTreeParser* otp, KMime::Content* node, Util::HtmlMode preferredMode);
+    AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, Util::HtmlMode preferredMode);
     virtual ~AlternativeMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -314,10 +314,10 @@ class MIMETREEPARSER_EXPORT EncryptedMessagePart : public MessagePart
 public:
     typedef QSharedPointer<EncryptedMessagePart> Ptr;
     EncryptedMessagePart(ObjectTreeParser *otp,
-                      const QString &text,
-                      const Kleo::CryptoBackend::Protocol *cryptoProto,
-                      const QString &fromAddress,
-                      KMime::Content *node);
+                         const QString &text,
+                         const Kleo::CryptoBackend::Protocol *cryptoProto,
+                         const QString &fromAddress,
+                         KMime::Content *node);
 
     virtual ~EncryptedMessagePart();
 
@@ -363,7 +363,7 @@ class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
 {
     Q_OBJECT
     Q_PROPERTY(bool isSigned READ isSigned)
- public:
+public:
     typedef QSharedPointer<SignedMessagePart> Ptr;
     SignedMessagePart(ObjectTreeParser *otp,
                       const QString &text,
@@ -401,7 +401,7 @@ protected:
     QString mFromAddress;
     KMime::Content *mNode;
     QByteArray mVerifiedText;
-    
+
     friend EncryptedMessagePart;
     friend class DefaultRendererPrivate;
 };

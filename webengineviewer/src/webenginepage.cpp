@@ -86,7 +86,6 @@ void WebEnginePage::saveHtml(QWebEngineDownloadItem *download)
 #endif
 }
 
-
 QVariant WebEnginePage::execJavaScript(const QString &scriptSource, int timeout)
 {
     QVariant result;

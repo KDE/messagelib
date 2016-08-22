@@ -88,8 +88,8 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
 
     EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(part.objectTreeParser(),
-                              data->decodedText(), useThisCryptProto,
-                              NodeHelper::fromAsString(data), node));
+                                 data->decodedText(), useThisCryptProto,
+                                 NodeHelper::fromAsString(data), node));
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(part.source()->decryptMessage());
     PartMetaData *messagePart(mp->partMetaData());

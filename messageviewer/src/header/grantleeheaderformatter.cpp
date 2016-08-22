@@ -165,7 +165,6 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
         headerObject.insert(QStringLiteral("listid"), message->headerByType("List-Id")->asUnicodeString());
     }
 
-
     const QString spamHtml = d->headerStyleUtil.spamStatus(message);
     if (!spamHtml.isEmpty()) {
         headerObject.insert(QStringLiteral("spamstatusi18n"), i18n("Spam Status:"));

@@ -26,7 +26,6 @@
 #include <QMouseEvent>
 #include <QWheelEvent>
 
-
 using namespace WebEngineViewer;
 
 class WebEngineViewer::WebEngineViewPrivate
@@ -202,7 +201,7 @@ void WebEngineView::saveRelativePosition()
 
 qreal WebEngineView::relativePosition() const
 {
-    qCDebug(WEBENGINEVIEWER_LOG) << "Relative Position"<< d->mSavedRelativePosition;
+    qCDebug(WEBENGINEVIEWER_LOG) << "Relative Position" << d->mSavedRelativePosition;
     return d->mSavedRelativePosition;
 }
 

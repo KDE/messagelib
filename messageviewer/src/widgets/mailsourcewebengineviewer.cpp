@@ -50,7 +50,6 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     setAttribute(Qt::WA_DeleteOnClose);
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-
     mRawBrowser = new MailSourceViewTextBrowserWidget(this);
 
 #ifndef NDEBUG

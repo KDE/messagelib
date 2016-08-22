@@ -72,7 +72,7 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
 
 void ViewerTest::shouldDisplayMessage()
 {
-   QByteArray data =
+    QByteArray data =
         "From: Konqui <konqui@kde.org>\n"
         "To: Friends <friends@kde.org>\n"
         "Date: Sun, 21 Mar 1993 23:56:48 -0800 (PST)\n"

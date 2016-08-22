@@ -114,7 +114,7 @@ void HtmlStatusBar::setAvailableModes(const QList<MimeTreeParser::Util::HtmlMode
     mAvailableModes = availableModes;
 }
 
-const QList< MimeTreeParser::Util::HtmlMode >& HtmlStatusBar::availableModes()
+const QList< MimeTreeParser::Util::HtmlMode > &HtmlStatusBar::availableModes()
 {
     return mAvailableModes;
 }

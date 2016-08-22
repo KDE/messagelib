@@ -2015,17 +2015,17 @@ void ViewerPrivate::slotLoadExternalReference()
 
 Viewer::DisplayFormatMessage translateToDisplayFormat(MimeTreeParser::Util::HtmlMode mode)
 {
-    switch(mode) {
-        case MimeTreeParser::Util::Normal:
-            return Viewer::Unknown;
-        case MimeTreeParser::Util::Html:
-            return Viewer::Html;
-        case MimeTreeParser::Util::MultipartPlain:
-            return Viewer::Text;
-        case MimeTreeParser::Util::MultipartHtml:
-            return Viewer::Html;
-        case MimeTreeParser::Util::MultipartIcal:
-            return Viewer::ICal;
+    switch (mode) {
+    case MimeTreeParser::Util::Normal:
+        return Viewer::Unknown;
+    case MimeTreeParser::Util::Html:
+        return Viewer::Html;
+    case MimeTreeParser::Util::MultipartPlain:
+        return Viewer::Text;
+    case MimeTreeParser::Util::MultipartHtml:
+        return Viewer::Html;
+    case MimeTreeParser::Util::MultipartIcal:
+        return Viewer::ICal;
     }
     return Viewer::Unknown;
 }

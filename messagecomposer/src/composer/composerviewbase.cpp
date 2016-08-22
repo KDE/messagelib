@@ -608,7 +608,6 @@ QList< MessageComposer::Composer * > MessageComposer::ComposerViewBase::generate
             encryptChainCertNearExpiryWarningThresholdInDays(),
             signingChainCertNearExpiryWarningThresholdInDays());
 
-
     QStringList encryptToSelfKeys;
     QStringList signKeys;
 

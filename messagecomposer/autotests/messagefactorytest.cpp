@@ -63,7 +63,6 @@ void initLocale()
 Q_CONSTRUCTOR_FUNCTION(initLocale)
 #endif
 
-
 namespace
 {
 template <typename String>
