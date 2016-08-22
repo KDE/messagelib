@@ -32,7 +32,7 @@ TestDndWebEngine::TestDndWebEngine(QWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout;
     vbox->addLayout(layout);
     pageView = new WebEngineViewer::WebEngineView(this);
-    pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    pageView->load(QUrl(QStringLiteral("http://www.planetkde.org")));
     layout->addWidget(pageView);
 
     webEngineView = new QWebEngineView(this);
