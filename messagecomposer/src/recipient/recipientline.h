@@ -73,6 +73,7 @@ public:
 
     bool isEmpty() const Q_DECL_OVERRIDE;
     void clear() Q_DECL_OVERRIDE;
+    bool canDeleteLineEdit() const Q_DECL_OVERRIDE;
 
     bool isModified() const Q_DECL_OVERRIDE;
     void clearModified() Q_DECL_OVERRIDE;
