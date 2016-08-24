@@ -235,6 +235,11 @@ void RecipientLineNG::clear()
     mEdit->clear();
 }
 
+bool RecipientLineNG::canDeleteLineEdit() const
+{
+    return mEdit->canDeleteLineEdit();
+}
+
 void RecipientLineNG::setCompletionMode(KCompletion::CompletionMode mode)
 {
     mEdit->setCompletionMode(mode);
