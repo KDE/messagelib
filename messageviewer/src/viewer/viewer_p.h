@@ -460,10 +460,7 @@ private Q_SLOTS:
     void slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin);
     void slotStyleUpdated();
     void slotWheelZoomChanged(int numSteps);
-    void slotOpenPrintPreviewDialog();
     void slotOpenInBrowser();
-    void slotPdfCreated(const QString &filename);
-    void slotPdfFailed();
     void slotExportHtmlPageFailed();
     void slotExportHtmlPageSuccess(const QString &filename);
 public Q_SLOTS:

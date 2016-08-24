@@ -84,7 +84,6 @@ target_link_libraries(KF5WebEngineViewer
     KF5::PimCommon
     KF5::WidgetsAddons
     KF5::ConfigCore
-    ${poppler_lib}
     )
 
 set_target_properties(KF5WebEngineViewer PROPERTIES

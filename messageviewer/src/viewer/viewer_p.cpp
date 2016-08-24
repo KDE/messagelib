@@ -42,11 +42,6 @@
 #include <WebEngineViewer/WebEnginePrintMessageBox>
 #include <KContacts/VCardConverter>
 #include <webengineviewer/config-webengineviewer.h>
-#ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
-#include <WebEngineViewer/PrintPreviewDialog>
-#include <WebEngineViewer/PrintWebEngineViewJob>
-#include <WebEngineViewer/PrintConfigureDialog>
-#endif
 #ifdef MESSAGEVIEWER_READER_HTML_DEBUG
 #include <MimeMessagePart/FileHtmlWriter>
 #include "htmlwriter/teehtmlwriter.h"
@@ -2215,7 +2210,6 @@ void ViewerPrivate::slotPrintPreview()
     }
     QPointer<WebEngineViewer::WebEnginePrintMessageBox> dialog = new WebEngineViewer::WebEnginePrintMessageBox(q);
     connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openInBrowser, this, &ViewerPrivate::slotOpenInBrowser);
-    connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openPrintPreview, this, &ViewerPrivate::slotOpenPrintPreviewDialog);
     dialog->exec();
     delete dialog;
 }
@@ -2238,39 +2232,6 @@ void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
 void ViewerPrivate::slotExportHtmlPageFailed()
 {
     qCDebug(MESSAGEVIEWER_LOG) << " Export HTML failed";
-}
-
-void ViewerPrivate::slotOpenPrintPreviewDialog()
-{
-#ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
-    QPointer<WebEngineViewer::PrintConfigureDialog> dlg = new WebEngineViewer::PrintConfigureDialog(q);
-    if (dlg->exec()) {
-        const QPageLayout pageLayout = dlg->currentPageLayout();
-        WebEngineViewer::PrintWebEngineViewJob *job = new WebEngineViewer::PrintWebEngineViewJob(q);
-        job->setEngineView(mViewer);
-        job->setPageLayout(pageLayout);
-        connect(job, &WebEngineViewer::PrintWebEngineViewJob::failed, this, &ViewerPrivate::slotPdfFailed);
-        connect(job, &WebEngineViewer::PrintWebEngineViewJob::success, this, &ViewerPrivate::slotPdfCreated);
-        job->start();
-    }
-    delete dlg;
-#endif
-}
-
-void ViewerPrivate::slotPdfCreated(const QString &filename)
-{
-#ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
-    WebEngineViewer::PrintPreviewDialog dlg(q);
-    dlg.loadFile(filename, true);
-    dlg.exec();
-#else
-    Q_UNUSED(filename);
-#endif
-}
-
-void ViewerPrivate::slotPdfFailed()
-{
-    qCDebug(MESSAGEVIEWER_LOG) << "Print to pdf Failed";
 }
 
 void ViewerPrivate::slotPrintMessage()
