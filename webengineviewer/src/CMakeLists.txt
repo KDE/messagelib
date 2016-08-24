@@ -8,6 +8,11 @@ if(BUILD_TESTING)
     add_subdirectory(findbar/autotests)
 endif()
 
+if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.7.99")
+    set(WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT true)
+endif()
+
+
 configure_file(../config-webengineviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/../config-webengineviewer.h )
 
 set(libwebengineviewer_webengine_SRCS
