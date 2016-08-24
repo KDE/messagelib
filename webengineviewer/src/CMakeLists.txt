@@ -8,36 +8,6 @@ if(BUILD_TESTING)
     add_subdirectory(findbar/autotests)
 endif()
 
-# Laurent Remove all code when QtWebEngine support real printing Disable it for 5.7 not finish yet
-if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.7.99")
-    if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
-        find_package(Poppler "0.12.1" COMPONENTS Qt5)
-        set_package_properties("Poppler" PROPERTIES
-            TYPE RECOMMENDED
-            PURPOSE "Support for print preview.")
-
-        if (Poppler_Qt5_FOUND)
-            set(libwebengineviewer_print_SRCS
-                print/printpreviewdialog.cpp
-                print/printpreviewpageviewer.cpp
-                print/printpreviewpagewidget.cpp
-                print/printwebengineviewjob.cpp
-                print/printconfiguredialog.cpp
-                print/printconfigurewidget.cpp
-                print/printselectpagedialog.cpp
-                print/printselectpagewidget.cpp
-                )
-            set(poppler_lib Poppler::Qt5 Qt5::PrintSupport)
-        endif()
-        if(BUILD_TESTING)
-            add_subdirectory(print/autotests)
-            add_subdirectory(print/tests)
-        endif()
-    endif()
-else()
-    set(WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT FALSE)
-endif()
-
 configure_file(../config-webengineviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/../config-webengineviewer.h )
 
 set(libwebengineviewer_webengine_SRCS
@@ -122,19 +92,6 @@ install(TARGETS
     KF5WebEngineViewer
     EXPORT KF5WebEngineViewerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
     )
-
-if (WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT)
-    ecm_generate_headers(WebEngineViewer_Camelprint_HEADERS
-        HEADER_NAMES
-        PrintPreviewDialog
-        PrintWebEngineViewJob
-        PrintConfigureDialog
-        REQUIRED_HEADERS WebEngineViewer_print_HEADERS
-        PREFIX WebEngineViewer
-        RELATIVE print
-        )
-
-endif()
 
 ecm_generate_headers(WebEngineViewer_Camelfindbar_HEADERS
     HEADER_NAMES

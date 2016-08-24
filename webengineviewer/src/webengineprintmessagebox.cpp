@@ -19,14 +19,12 @@
 
 #include "webengineprintmessagebox.h"
 #include "webengineviewer_debug.h"
-#include <webengineviewer/config-webengineviewer.h>
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QPushButton>
 
-//#define PRINTING_IMPLEMENTED 1
 using namespace WebEngineViewer;
 WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     : QDialog(parent)
@@ -49,17 +47,6 @@ WebEnginePrintMessageBox::WebEnginePrintMessageBox(QWidget *parent)
     connect(openInBrowser, &QPushButton::clicked, this, &WebEnginePrintMessageBox::slotOpenInBrowser);
     openInBrowser->setObjectName(QStringLiteral("openinbrowser"));
     buttonBox->addButton(openInBrowser, QDialogButtonBox::ActionRole);
-
-#ifdef PRINTING_IMPLEMENTED
-
-#ifdef WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT
-    QPushButton *openInPreviewDialogBox = new QPushButton(i18n("Print Preview"), this);
-    connect(openInPreviewDialogBox, &QPushButton::clicked, this, &WebEnginePrintMessageBox::slotPrintPreview);
-    openInPreviewDialogBox->setObjectName(QStringLiteral("openprintpreview"));
-    buttonBox->addButton(openInPreviewDialogBox, QDialogButtonBox::ActionRole);
-#endif
-
-#endif
 
     mainLayout->addWidget(buttonBox);
 }
