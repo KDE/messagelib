@@ -45,6 +45,9 @@ void MailWebEnginePage::initialize()
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    settings()->setAttribute(QWebEngineSettings::AutoLoadIconsForPage, false);
+#endif
 
     const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
