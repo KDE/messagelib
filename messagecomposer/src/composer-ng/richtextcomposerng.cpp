@@ -378,7 +378,11 @@ void RichTextComposerNg::forceAutoCorrection()
             QTextCursor cur = textCursor();
             cur.movePosition(QTextCursor::Start);
             while(!cur.atEnd()) {
-                cur.movePosition(QTextCursor::NextWord);
+                if(isLineQuoted(cur.block().text())) {
+                    cur.movePosition(QTextCursor::NextBlock);
+                } else {
+                    cur.movePosition(QTextCursor::NextWord);
+                }
                 int cursortPosition = cur.position();
                 d->autoCorrection->autocorrect(richText, *document(), cursortPosition);
             }
