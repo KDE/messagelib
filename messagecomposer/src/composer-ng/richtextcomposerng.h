@@ -52,6 +52,7 @@ public:
     QString toCleanHtml() const;
 
 private:
+    void forceAutoCorrection() Q_DECL_OVERRIDE;
     bool processAutoCorrection(QKeyEvent *event) Q_DECL_OVERRIDE;
     RichTextComposerNgPrivate *const d;
 };

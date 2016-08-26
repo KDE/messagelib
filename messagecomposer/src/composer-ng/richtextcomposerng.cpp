@@ -367,3 +367,8 @@ QString RichTextComposerNg::toCleanHtml() const
 {
     return d->toCleanHtml();
 }
+
+void RichTextComposerNg::forceAutoCorrection()
+{
+    //TODO
+}
