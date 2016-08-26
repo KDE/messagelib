@@ -372,6 +372,20 @@ QString RichTextComposerNg::toCleanHtml() const
 void RichTextComposerNg::forceAutoCorrection()
 {
     if (d->autoCorrection && d->autoCorrection->isEnabledAutoCorrection()) {
-        //TODO
+        if (!document()->isEmpty()) {
+            const bool richText = (textMode() == RichTextComposer::Rich);
+            const int initialPosition = textCursor().position();
+            QTextCursor cur = textCursor();
+            cur.movePosition(QTextCursor::Start);
+            while(!cur.atEnd()) {
+                cur.movePosition(QTextCursor::NextWord);
+                int cursortPosition = cur.position();
+                d->autoCorrection->autocorrect(richText, *document(), cursortPosition);
+            }
+            if (cur.position() != initialPosition) {
+                cur.setPosition(initialPosition);
+                setTextCursor(cur);
+            }
+        }
     }
 }
