@@ -370,5 +370,7 @@ QString RichTextComposerNg::toCleanHtml() const
 
 void RichTextComposerNg::forceAutoCorrection()
 {
-    //TODO
+    if (d->autoCorrection && d->autoCorrection->isEnabledAutoCorrection()) {
+        //TODO
+    }
 }
