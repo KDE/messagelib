@@ -369,8 +369,9 @@ QString RichTextComposerNg::toCleanHtml() const
     return d->toCleanHtml();
 }
 
-void RichTextComposerNg::forceAutoCorrection()
+void RichTextComposerNg::forceAutoCorrection(bool selectedText)
 {
+    Q_UNUSED(selectedText);
     if (d->autoCorrection && d->autoCorrection->isEnabledAutoCorrection()) {
         if (!document()->isEmpty()) {
             const bool richText = (textMode() == RichTextComposer::Rich);
