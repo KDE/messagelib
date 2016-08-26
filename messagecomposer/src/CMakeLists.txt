@@ -9,6 +9,7 @@ add_definitions( -DQT_NO_CAST_TO_ASCII )
 if(BUILD_TESTING)
     add_subdirectory( imagescaling/autotests )
     add_subdirectory( imagescaling/tests )
+    add_subdirectory( composer-ng/autotests )
 endif()
 
 

@@ -360,7 +360,6 @@ void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &s
                 composerControler()->composerImages()->loadImage(image->image, image->name, image->name);
             }
         }
-
     }
 }
 
@@ -371,22 +370,26 @@ QString RichTextComposerNg::toCleanHtml() const
 
 void RichTextComposerNg::forceAutoCorrection(bool selectedText)
 {
-    Q_UNUSED(selectedText);
     if (d->autoCorrection && d->autoCorrection->isEnabledAutoCorrection()) {
         if (!document()->isEmpty()) {
             const bool richText = (textMode() == RichTextComposer::Rich);
             const int initialPosition = textCursor().position();
             QTextCursor cur = textCursor();
             cur.beginEditBlock();
-            cur.movePosition(QTextCursor::Start);
+            if (selectedText && cur.hasSelection()) {
+                //TODO
+                cur.movePosition(QTextCursor::Start);
+            } else {
+                cur.movePosition(QTextCursor::Start);
+            }
             while(!cur.atEnd()) {
                 if(isLineQuoted(cur.block().text())) {
                     cur.movePosition(QTextCursor::NextBlock);
                 } else {
                     cur.movePosition(QTextCursor::NextWord);
                 }
-                int cursortPosition = cur.position();
-                d->autoCorrection->autocorrect(richText, *document(), cursortPosition);
+                int cursorPosition = cur.position();
+                d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
             }
             cur.endEditBlock();
             if (cur.position() != initialPosition) {
