@@ -67,7 +67,7 @@ bool ImageScaling::resizeImage()
 
         int maximumWidth = MessageComposer::MessageComposerSettings::self()->maximumWidth();
         if (maximumWidth == -1) {
-            maximumWidth =  MessageComposer::MessageComposerSettings::self()->customMaximumWidth();
+            maximumWidth = MessageComposer::MessageComposerSettings::self()->customMaximumWidth();
         }
         int maximumHeight = MessageComposer::MessageComposerSettings::self()->maximumHeight();
         if (maximumHeight == -1) {
@@ -91,7 +91,7 @@ bool ImageScaling::resizeImage()
 
         int minimumWidth = MessageComposer::MessageComposerSettings::self()->minimumWidth();
         if (minimumWidth == -1) {
-            minimumWidth =  MessageComposer::MessageComposerSettings::self()->customMinimumWidth();
+            minimumWidth = MessageComposer::MessageComposerSettings::self()->customMinimumWidth();
         }
 
         int minimumHeight = MessageComposer::MessageComposerSettings::self()->minimumHeight();
@@ -111,13 +111,13 @@ bool ImageScaling::resizeImage()
 
         QByteArray format;
         if (d->mMimeType == "image/jpeg") {
-            format = "JPG";
+            format = QByteArrayLiteral("JPG");
         } else if (d->mMimeType == "image/png") {
-            format = "PNG";
+            format = QByteArrayLiteral("PNG");
         } else {
             format = MessageComposer::MessageComposerSettings::self()->writeFormat().toLocal8Bit();
             if (format.isEmpty()) {
-                format = "PNG";
+                format = QByteArrayLiteral("PNG");
             }
         }
         const bool result = d->mImage.save(&d->mBuffer, format.constData());
