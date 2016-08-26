@@ -100,7 +100,8 @@ bool RichTextComposerNg::processAutoCorrection(QKeyEvent *e)
                 const bool addSpace = d->autoCorrection->autocorrect(richText, *document(), position);
                 QTextCursor cur = textCursor();
                 cur.setPosition(position);
-                if (overwriteMode() && e->key() == Qt::Key_Space) {
+                const bool spacePressed = (e->key() == Qt::Key_Space);
+                if (overwriteMode() && spacePressed) {
                     if (addSpace) {
                         const QChar insertChar = QLatin1Char(' ');
                         if (!cur.atBlockEnd()) {
@@ -114,7 +115,7 @@ bool RichTextComposerNg::processAutoCorrection(QKeyEvent *e)
                         setTextCursor(cur);
                     }
                 } else {
-                    const bool spacePressed = (e->key() == Qt::Key_Space);
+
                     const QChar insertChar = spacePressed ? QLatin1Char(' ') : QLatin1Char('\n');
                     if (richText && !isSpecial(initialTextFormat)) {
                         if ((spacePressed && addSpace) || !spacePressed) {
