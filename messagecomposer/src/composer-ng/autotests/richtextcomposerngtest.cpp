@@ -78,6 +78,8 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection_data()
     QTest::addColumn<int>("selectionStart");
     QTest::addColumn<int>("selectionEnd");
     QTest::newRow("noselection") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nBoo bla bli.\nFoo faa") << 0 << 0;
+    QTest::newRow("noselection2") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nBoo bla bli.\nFoo faa") << 1 << 1;
+    QTest::newRow("fullselection") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nBoo bla bli.\nFoo faa") << 0 << 22;
 }
 
 void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
@@ -90,6 +92,10 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
     MessageComposer::RichTextComposerNg richtextComposerNg;
 
     richtextComposerNg.setPlainText(original);
+    QTextCursor cur = richtextComposerNg.textCursor();
+    cur.setPosition(selectionStart);
+    cur.setPosition(selectionEnd, QTextCursor::KeepAnchor);
+    richtextComposerNg.setTextCursor(cur);
     PimCommon::AutoCorrection autocorrection;
     autocorrection.setEnabledAutoCorrection(true);
     autocorrection.setUppercaseFirstCharOfSentence(true);
