@@ -49,6 +49,8 @@ void RichTextComposerNgTest::shouldForceAutoCorrection_data()
     QTest::addColumn<QString>("expected");
     //FIXME first char !
     QTest::newRow("test1") << QStringLiteral("boo bla bli. foo faa") << QStringLiteral("boo bla bli. Foo faa");
+    QTest::newRow("test2") << QStringLiteral("boo bla bli.\nfoo faa") << QStringLiteral("boo bla bli.\nFoo faa");
+    QTest::newRow("test3") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nBoo bla bli.\nFoo faa");
 
 }
 
