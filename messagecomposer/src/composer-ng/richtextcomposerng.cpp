@@ -376,25 +376,25 @@ void RichTextComposerNg::forceAutoCorrection(bool selectedText)
             const int initialPosition = textCursor().position();
             QTextCursor cur = textCursor();
             cur.beginEditBlock();
-            if (selectedText && cur.hasSelection()) {
+            if (/*selectedText && cur.hasSelection()*/0) {
                 //TODO
                 cur.movePosition(QTextCursor::Start);
             } else {
                 cur.movePosition(QTextCursor::Start);
-            }
-            while(!cur.atEnd()) {
-                if(isLineQuoted(cur.block().text())) {
-                    cur.movePosition(QTextCursor::NextBlock);
-                } else {
-                    cur.movePosition(QTextCursor::NextWord);
+                while(!cur.atEnd()) {
+                    if(isLineQuoted(cur.block().text())) {
+                        cur.movePosition(QTextCursor::NextBlock);
+                    } else {
+                        cur.movePosition(QTextCursor::NextWord);
+                    }
+                    int cursorPosition = cur.position();
+                    d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
                 }
-                int cursorPosition = cur.position();
-                d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
-            }
-            cur.endEditBlock();
-            if (cur.position() != initialPosition) {
-                cur.setPosition(initialPosition);
-                setTextCursor(cur);
+                cur.endEditBlock();
+                if (cur.position() != initialPosition) {
+                    cur.setPosition(initialPosition);
+                    setTextCursor(cur);
+                }
             }
         }
     }
