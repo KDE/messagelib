@@ -42,20 +42,31 @@ void RichTextComposerNgTest::shouldHaveDefaultValue()
     QVERIFY(!richtextComposerNg.autocorrection());
 }
 
+
+void RichTextComposerNgTest::shouldForceAutoCorrection_data()
+{
+    QTest::addColumn<QString>("original");
+    QTest::addColumn<QString>("expected");
+    //FIXME first char !
+    QTest::newRow("test1") << QStringLiteral("boo bla bli. foo faa") << QStringLiteral("boo bla bli. Foo faa");
+
+}
+
 void RichTextComposerNgTest::shouldForceAutoCorrection()
 {
+    QFETCH(QString, original);
+    QFETCH(QString, expected);
+
     MessageComposer::RichTextComposerNg richtextComposerNg;
 
-    richtextComposerNg.setPlainText(QStringLiteral("boo bla bli. foo faa"));
+    richtextComposerNg.setPlainText(original);
     PimCommon::AutoCorrection autocorrection;
     autocorrection.setEnabledAutoCorrection(true);
     autocorrection.setUppercaseFirstCharOfSentence(true);
     richtextComposerNg.setAutocorrection(&autocorrection);
     richtextComposerNg.forceAutoCorrection(false);
 
-    //FIXME first char !
-    QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("boo bla bli. Foo faa"));
-//TODO
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
 QTEST_MAIN(RichTextComposerNgTest)

@@ -31,6 +31,7 @@ public:
     ~RichTextComposerNgTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldForceAutoCorrection_data();
     void shouldForceAutoCorrection();
 };
 
