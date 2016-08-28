@@ -71,4 +71,32 @@ void RichTextComposerNgTest::shouldForceAutoCorrection()
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
+void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection_data()
+{
+    QTest::addColumn<QString>("original");
+    QTest::addColumn<QString>("expected");
+    QTest::addColumn<int>("selectionStart");
+    QTest::addColumn<int>("selectionEnd");
+    QTest::newRow("noselection") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nBoo bla bli.\nFoo faa") << 0 << 0;
+}
+
+void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
+{
+    QFETCH(QString, original);
+    QFETCH(QString, expected);
+    QFETCH(int, selectionStart);
+    QFETCH(int, selectionEnd);
+
+    MessageComposer::RichTextComposerNg richtextComposerNg;
+
+    richtextComposerNg.setPlainText(original);
+    PimCommon::AutoCorrection autocorrection;
+    autocorrection.setEnabledAutoCorrection(true);
+    autocorrection.setUppercaseFirstCharOfSentence(true);
+    richtextComposerNg.setAutocorrection(&autocorrection);
+    richtextComposerNg.forceAutoCorrection(true);
+
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
+}
+
 QTEST_MAIN(RichTextComposerNgTest)
