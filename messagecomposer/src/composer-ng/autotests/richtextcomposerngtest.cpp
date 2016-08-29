@@ -81,7 +81,8 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection_data()
     QTest::newRow("noselection2") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nBoo bla bli.\nFoo faa") << 1 << 1;
     QTest::newRow("fullselection") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nBoo bla bli.\nFoo faa") << 0 << 22;
     QTest::newRow("selection1") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nBoo bla bli.\nfoo faa") << 0 << 10;
-    QTest::newRow("selection1") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nboo bla bli.\nfoo faa") << 5 << 10;
+    QTest::newRow("selection2") << QStringLiteral("\nboo bla bli.\nfoo faa") << QStringLiteral("\nboo bla bli.\nfoo faa") << 5 << 10;
+    QTest::newRow("twouppercase") << QStringLiteral("\nBOo bla bli.\nfoo FAa") << QStringLiteral("\nBoo bla bli.\nFoo Faa") << 0 << 22;
 }
 
 void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
@@ -101,6 +102,7 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
     PimCommon::AutoCorrection autocorrection;
     autocorrection.setEnabledAutoCorrection(true);
     autocorrection.setUppercaseFirstCharOfSentence(true);
+    autocorrection.setFixTwoUppercaseChars(true);
     richtextComposerNg.setAutocorrection(&autocorrection);
     richtextComposerNg.forceAutoCorrection(true);
 
