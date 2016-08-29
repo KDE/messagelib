@@ -398,11 +398,11 @@ void RichTextComposerNg::forceAutoCorrection(bool selectedText)
                     int cursorPosition = cur.position();
                     d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
                 }
-                cur.endEditBlock();
-                if (cur.position() != initialPosition) {
-                    cur.setPosition(initialPosition);
-                    setTextCursor(cur);
-                }
+            }
+            cur.endEditBlock();
+            if (cur.position() != initialPosition) {
+                cur.setPosition(initialPosition);
+                setTextCursor(cur);
             }
         }
     }
