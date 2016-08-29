@@ -109,4 +109,9 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
+void RichTextComposerNgTest::shouldAddSignature()
+{
+    //TODO
+}
+
 QTEST_MAIN(RichTextComposerNgTest)

@@ -36,6 +36,9 @@ private Q_SLOTS:
 
     void shouldForceAutoCorrectionWithSelection_data();
     void shouldForceAutoCorrectionWithSelection();
+
+
+    void shouldAddSignature();
 };
 
 #endif // RICHTEXTCOMPOSERNGTEST_H
