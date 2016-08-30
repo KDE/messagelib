@@ -9,7 +9,7 @@ if(BUILD_TESTING)
 endif()
 
 if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.7.99")
-    set(WEBENGINEVIEWER_PRINTPREVIEW_SUPPORT true)
+    set(WEBENGINEVIEWER_PRINT_SUPPORT true)
 endif()
 
 
