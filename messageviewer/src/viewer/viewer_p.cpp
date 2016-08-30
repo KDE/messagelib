@@ -38,6 +38,7 @@
 #include "gravatarsettings.h"
 #include "job/attachmenteditjob.h"
 #include "job/modifymessagedisplayformatjob.h"
+#include "config-messageviewer.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <WebEngineViewer/WebEnginePrintMessageBox>
 #include <KContacts/VCardConverter>
@@ -2241,6 +2242,9 @@ void ViewerPrivate::slotPrintMessage()
     if (!mMessage) {
         return;
     }
+#ifdef WEBENGINEVIEWER_PRINT_SUPPORT
+    //TODO
+#endif
     slotPrintPreview();
 }
 
