@@ -16,6 +16,11 @@ remove_definitions("-DQT_NO_URL_CAST_FROM_STRING")
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5MessageViewer")
 
+if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.7.99")
+    set(WEBENGINEVIEWER_PRINT_SUPPORT true)
+endif()
+
+
 ecm_configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KF5MessageViewerConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF5MessageViewerConfig.cmake"
