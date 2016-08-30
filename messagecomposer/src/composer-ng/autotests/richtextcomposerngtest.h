@@ -38,6 +38,7 @@ private Q_SLOTS:
     void shouldForceAutoCorrectionWithSelection();
 
 
+    void shouldNotChangeSignatureWhenOriginalAndNewSignatureAreSame();
     void shouldAddSignature();
 };
 

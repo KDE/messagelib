@@ -110,14 +110,24 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
-void RichTextComposerNgTest::shouldAddSignature()
+void RichTextComposerNgTest::shouldNotChangeSignatureWhenOriginalAndNewSignatureAreSame()
 {
     MessageComposer::RichTextComposerNg richtextComposerNg;
     KIdentityManagement::Signature oldSignature;
 
     const bool replaceSignature = richtextComposerNg.composerSignature()->replaceSignature(oldSignature, oldSignature);
     QVERIFY(!replaceSignature);
-    //TODO
+}
+
+void RichTextComposerNgTest::shouldAddSignature()
+{
+    MessageComposer::RichTextComposerNg richtextComposerNg;
+    richtextComposerNg.setPlainText(QStringLiteral("foo bla, bli\nbb"));
+    KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
+    newSignature.setEnabledSignature(true);
+    richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddSeparator);
+    QString expected = QStringLiteral("Signaturefoo bla, bli\nbb");
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
 QTEST_MAIN(RichTextComposerNgTest)
