@@ -20,6 +20,7 @@
 
 #include "richtextcomposerngtest.h"
 #include "../richtextcomposerng.h"
+#include "../richtextcomposersignatures.h"
 
 #include <PimCommon/AutoCorrection>
 #include <QTest>
@@ -111,6 +112,11 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
 
 void RichTextComposerNgTest::shouldAddSignature()
 {
+    MessageComposer::RichTextComposerNg richtextComposerNg;
+    KIdentityManagement::Signature oldSignature;
+
+    const bool replaceSignature = richtextComposerNg.composerSignature()->replaceSignature(oldSignature, oldSignature);
+    QVERIFY(!replaceSignature);
     //TODO
 }
 
