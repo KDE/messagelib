@@ -150,6 +150,9 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
         const KIdentityManagement::Signature &newSig)
 {
     bool found = false;
+    if (oldSig == newSig) {
+        return false;
+    }
     QString oldSigText = oldSig.toPlainText();
     if (oldSigText.isEmpty()) {
         return false;
