@@ -44,16 +44,18 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.addHelpOption();
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"), i18n("File containing an email")));
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("headerstyleplugin"), i18n("Header Style Plugin"), QStringLiteral("headerstyleplugin")));
 
-    QCommandLineOption pluginlistnameOption(QStringList() << QStringLiteral("list"), QStringLiteral("Show list of plugin installed."));
-    parser.addOption(pluginlistnameOption);
+    QCommandLineOption headerStylePluginOption(QStringList() << QStringLiteral("headerstyleplugin"), i18n("Header Style Plugin"), QStringLiteral("headerstyleplugin"));
+    parser.addOption(headerStylePluginOption);
+
+    QCommandLineOption listOption(QStringList() << QStringLiteral("list"), QStringLiteral("Show list of plugins installed."));
+    parser.addOption(listOption);
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    if (parser.isSet(pluginlistnameOption)) {
+    if (parser.isSet(listOption)) {
         qDebug() << "List of Plugin :" << MessageViewer::HeaderStylePluginManager::self()->pluginListName();
         return 0;
     }
@@ -84,10 +86,15 @@ int main(int argc, char **argv)
     msg->parse();
 
     Viewer *viewer = new Viewer(0);
-    viewer->setPluginName(parser.value(QStringLiteral("headerstyleplugin")));
+    if (parser.isSet(headerStylePluginOption)) {
+        viewer->setPluginName(parser.value(headerStylePluginOption));
+    }
     viewer->setMessage(KMime::Message::Ptr(msg));
 
     viewer->show();
 
-    return app.exec();
+    const int ret = app.exec();
+
+    delete viewer;
+    return ret;
 }
