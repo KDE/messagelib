@@ -22,6 +22,9 @@
 #include "../richtextcomposerng.h"
 #include "../richtextcomposersignatures.h"
 
+#include <KPIMTextEdit/RichTextComposerControler>
+#include <KActionCollection>
+
 #include <PimCommon/AutoCorrection>
 #include <QTest>
 
@@ -41,6 +44,8 @@ void RichTextComposerNgTest::shouldHaveDefaultValue()
     MessageComposer::RichTextComposerNg richtextComposerNg;
     QVERIFY(richtextComposerNg.composerSignature());
     QVERIFY(!richtextComposerNg.autocorrection());
+    QVERIFY(richtextComposerNg.composerControler());
+    QVERIFY(richtextComposerNg.composerControler()->composerImages());
 }
 
 
@@ -131,19 +136,19 @@ void RichTextComposerNgTest::shouldAddSignature_data()
                                           << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator;
 
     QTest::newRow("startandnewline") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("\n\nSignature\nfoo bla, bli\nbb")
-                                          << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
+                                     << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
 
     QTest::newRow("startandnothing") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("Signaturefoo bla, bli\nbb")
-                                          << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNothing;
+                                     << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNothing;
 
     QTest::newRow("endandaddseparator") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("foo bla, bli\nbb-- \nSignature")
-                                          << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+                                        << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
 
     QTest::newRow("endandnewline") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("foo bla, bli\nbb\nSignature")
-                                          << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddNewLines;
+                                   << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddNewLines;
 
     QTest::newRow("endandnothing") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("foo bla, bli\nbbSignature")
-                                          << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddNothing;
+                                   << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddNothing;
 
     //TODO test "Add Cursor"
 }
@@ -159,6 +164,46 @@ void RichTextComposerNgTest::shouldAddSignature()
 
     KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
     newSignature.setEnabledSignature(true);
+    richtextComposerNg.insertSignature(newSignature, signatureplacement, signatureaddtext);
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
+}
+
+void RichTextComposerNgTest::shouldAddSpecificSignature_data()
+{
+    QTest::addColumn<QString>("original");
+    QTest::addColumn<QString>("expected");
+    QTest::addColumn<KIdentityManagement::Signature::Placement>("signatureplacement");
+    QTest::addColumn<KIdentityManagement::Signature::AddedTextFlag>("signatureaddtext");
+    QTest::addColumn<bool>("enablesignature");
+    QTest::addColumn<bool>("signaturehtml");
+    QTest::newRow("startandaddseparatordisablenonhtml") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("foo bla, bli\nbb")
+                                                 << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator
+                                                 << false << false;
+
+    QTest::newRow("startandaddseparatordisablehtml") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("foo bla, bli\nbb")
+                                                 << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator
+                                                 << false << true;
+
+    QTest::newRow("startandaddseparatorenablehtml") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("-- \nSignaturefoo bla, bli\nbb")
+                                                 << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator
+                                                 << true << true;
+}
+
+void RichTextComposerNgTest::shouldAddSpecificSignature()
+{
+    QFETCH(QString, original);
+    QFETCH(QString, expected);
+    QFETCH(KIdentityManagement::Signature::Placement, signatureplacement);
+    QFETCH(KIdentityManagement::Signature::AddedTextFlag, signatureaddtext);
+    QFETCH(bool, enablesignature);
+    QFETCH(bool, signaturehtml);
+    MessageComposer::RichTextComposerNg richtextComposerNg;
+    richtextComposerNg.createActions(new KActionCollection(this));
+    richtextComposerNg.setPlainText(original);
+
+    KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
+    newSignature.setEnabledSignature(enablesignature);
+    newSignature.setInlinedHtml(signaturehtml);
     richtextComposerNg.insertSignature(newSignature, signatureplacement, signatureaddtext);
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
