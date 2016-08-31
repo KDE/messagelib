@@ -39,6 +39,8 @@ private Q_SLOTS:
 
 
     void shouldNotChangeSignatureWhenOriginalAndNewSignatureAreSame();
+
+    void shouldAddSignature_data();
     void shouldAddSignature();
 };
 

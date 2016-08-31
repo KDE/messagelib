@@ -118,26 +118,37 @@ void RichTextComposerNgTest::shouldNotChangeSignatureWhenOriginalAndNewSignature
     const bool replaceSignature = richtextComposerNg.composerSignature()->replaceSignature(oldSignature, oldSignature);
     QVERIFY(!replaceSignature);
 }
+Q_DECLARE_METATYPE(KIdentityManagement::Signature::Placement)
+Q_DECLARE_METATYPE(KIdentityManagement::Signature::AddedTextFlag)
+
+void RichTextComposerNgTest::shouldAddSignature_data()
+{
+    QTest::addColumn<QString>("original");
+    QTest::addColumn<QString>("expected");
+    QTest::addColumn<KIdentityManagement::Signature::Placement>("signatureplacement");
+    QTest::addColumn<KIdentityManagement::Signature::AddedTextFlag>("signatureaddtext");
+    QTest::newRow("startandaddseparator") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("-- \nSignaturefoo bla, bli\nbb")
+                                          << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator;
+
+    QTest::newRow("startandnewline") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("\n\nSignature\nfoo bla, bli\nbb")
+                                          << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
+
+    QTest::newRow("startandnothing") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("Signaturefoo bla, bli\nbb")
+                                          << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNothing;
+}
 
 void RichTextComposerNgTest::shouldAddSignature()
 {
+    QFETCH(QString, original);
+    QFETCH(QString, expected);
+    QFETCH(KIdentityManagement::Signature::Placement, signatureplacement);
+    QFETCH(KIdentityManagement::Signature::AddedTextFlag, signatureaddtext);
     MessageComposer::RichTextComposerNg richtextComposerNg;
-    richtextComposerNg.setPlainText(QStringLiteral("foo bla, bli\nbb"));
+    richtextComposerNg.setPlainText(original);
+
     KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
     newSignature.setEnabledSignature(true);
-    richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddSeparator);
-    QString expected = QStringLiteral("-- \nSignaturefoo bla, bli\nbb");
-    QCOMPARE(richtextComposerNg.toPlainText(), expected);
-
-
-    richtextComposerNg.setPlainText(QStringLiteral("foo bla, bli\nbb"));
-    richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
-    expected = QStringLiteral("\n\nSignature\nfoo bla, bli\nbb");
-    QCOMPARE(richtextComposerNg.toPlainText(), expected);
-
-    richtextComposerNg.setPlainText(QStringLiteral("foo bla, bli\nbb"));
-    richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNothing);
-    expected = QStringLiteral("Signaturefoo bla, bli\nbb");
+    richtextComposerNg.insertSignature(newSignature, signatureplacement, signatureaddtext);
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
