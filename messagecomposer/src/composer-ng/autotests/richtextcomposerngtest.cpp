@@ -126,7 +126,18 @@ void RichTextComposerNgTest::shouldAddSignature()
     KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
     newSignature.setEnabledSignature(true);
     richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddSeparator);
-    QString expected = QStringLiteral("Signaturefoo bla, bli\nbb");
+    QString expected = QStringLiteral("-- \nSignaturefoo bla, bli\nbb");
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
+
+
+    richtextComposerNg.setPlainText(QStringLiteral("foo bla, bli\nbb"));
+    richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
+    expected = QStringLiteral("\n\nSignature\nfoo bla, bli\nbb");
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
+
+    richtextComposerNg.setPlainText(QStringLiteral("foo bla, bli\nbb"));
+    richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
+    expected = QStringLiteral("\n\nSignature\nfoo bla, bli\nbb");
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
