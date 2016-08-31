@@ -342,7 +342,7 @@ void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &s
 {
     if (signature.isEnabledSignature()) {
         QString signatureStr;
-        if (placement & KIdentityManagement::Signature::AddSeparator) {
+        if (addedText & KIdentityManagement::Signature::AddSeparator) {
             signatureStr = signature.withSeparator();
         } else {
             signatureStr = signature.rawText();
