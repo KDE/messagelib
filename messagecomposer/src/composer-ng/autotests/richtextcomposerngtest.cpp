@@ -144,6 +144,8 @@ void RichTextComposerNgTest::shouldAddSignature_data()
 
     QTest::newRow("endandnothing") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("foo bla, bli\nbbSignature")
                                           << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddNothing;
+
+    //TODO test "Add Cursor"
 }
 
 void RichTextComposerNgTest::shouldAddSignature()
