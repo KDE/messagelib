@@ -135,6 +135,15 @@ void RichTextComposerNgTest::shouldAddSignature_data()
 
     QTest::newRow("startandnothing") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("Signaturefoo bla, bli\nbb")
                                           << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNothing;
+
+    QTest::newRow("endandaddseparator") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("foo bla, bli\nbb-- \nSignature")
+                                          << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+
+    QTest::newRow("endandnewline") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("foo bla, bli\nbb\nSignature")
+                                          << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddNewLines;
+
+    QTest::newRow("endandnothing") << QStringLiteral("foo bla, bli\nbb") << QStringLiteral("foo bla, bli\nbbSignature")
+                                          << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddNothing;
 }
 
 void RichTextComposerNgTest::shouldAddSignature()
