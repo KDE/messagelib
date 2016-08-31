@@ -22,6 +22,7 @@
 
 #include <KIdentityManagement/Signature>
 #include <QTextBlock>
+#include "messagecomposer_debug.h"
 using namespace MessageComposer;
 
 class Q_DECL_HIDDEN RichTextComposerSignatures::RichTextComposerSignaturesPrivate
@@ -153,6 +154,7 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
     if (oldSig == newSig) {
         return false;
     }
+
     QString oldSigText = oldSig.toPlainText();
     if (oldSigText.isEmpty()) {
         return false;
@@ -181,8 +183,8 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
         if (newSig.rawText().isEmpty() &&
                 text.mid(currentMatch - 4, 4) == QLatin1String("-- \n")) {
             cursor.movePosition(QTextCursor::PreviousCharacter,
-                                QTextCursor::MoveAnchor, 5);
-            additionalMove = 5;
+                                QTextCursor::MoveAnchor, 4);
+            additionalMove = 4;
         }
         cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor,
                             oldSigText.length() + additionalMove);
