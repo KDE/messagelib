@@ -205,7 +205,33 @@ void RichTextComposerNgTest::shouldAddSpecificSignature()
     newSignature.setEnabledSignature(enablesignature);
     newSignature.setInlinedHtml(signaturehtml);
     richtextComposerNg.insertSignature(newSignature, signatureplacement, signatureaddtext);
+    //qDebug() << " clean html "<<richtextComposerNg.toCleanHtml();
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
+}
+
+void RichTextComposerNgTest::shouldReplaceSignature()
+{
+    MessageComposer::RichTextComposerNg richtextComposerNg;
+    richtextComposerNg.createActions(new KActionCollection(this));
+    const QString original(QStringLiteral("foo bla, bli\nbb"));
+    richtextComposerNg.setPlainText(original);
+
+    KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
+    newSignature.setEnabledSignature(true);
+    newSignature.setInlinedHtml(false);
+    QString expected(QStringLiteral("foo bla, bli\nbb-- \nSignature"));
+    richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::End, KIdentityManagement::Signature::AddSeparator);
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
+
+    KIdentityManagement::Signature emptySignature;
+
+    bool replaceSignature = richtextComposerNg.composerSignature()->replaceSignature(newSignature, emptySignature);
+    QVERIFY(replaceSignature);
+    QCOMPARE(richtextComposerNg.toPlainText(), original);
+
+    replaceSignature = richtextComposerNg.composerSignature()->replaceSignature(emptySignature, newSignature);
+    //When signature is empty we can't replace it.
+    QVERIFY(!replaceSignature);
 }
 
 QTEST_MAIN(RichTextComposerNgTest)

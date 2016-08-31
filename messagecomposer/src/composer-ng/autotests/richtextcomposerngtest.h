@@ -46,6 +46,9 @@ private Q_SLOTS:
     void shouldAddSpecificSignature_data();
     void shouldAddSpecificSignature();
 
+
+    void shouldReplaceSignature();
+
 };
 
 #endif // RICHTEXTCOMPOSERNGTEST_H
