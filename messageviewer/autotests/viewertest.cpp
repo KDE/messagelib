@@ -70,9 +70,7 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     delete viewer;
 }
 
-void ViewerTest::shouldDisplayMessage()
-{
-   QByteArray data =
+static const char s_mail1[] =
         "From: Konqui <konqui@kde.org>\n"
         "To: Friends <friends@kde.org>\n"
         "Date: Sun, 21 Mar 1993 23:56:48 -0800 (PST)\n"
@@ -84,13 +82,40 @@ void ViewerTest::shouldDisplayMessage()
         "This is a test message.\n"
         "\n";
 
-    KMime::Message::Ptr msgPtr = KMime::Message::Ptr(new KMime::Message());
-    msgPtr->setContent(data);
-    msgPtr->parse();
+static const char s_mail2[] =
+        "From: David Faure <dfaure@example.com>\n"
+        "To: Friends <friends@example.com>\n"
+        "Date: Sun, 31 Aug 2016 23:56:48 +0200 (CEST)\n"
+        "Subject: Second mail\n"
+        "MIME-Version: 1.0\n"
+        "Content-type: text/plain; charset=\"us-ascii\"\n"
+        "\n"
+        "\n"
+        "This is the second message.\n"
+        "\n";
 
+KMime::Message::Ptr createMsg(const char* data)
+{
+    KMime::Message::Ptr msgPtr(new KMime::Message());
+    msgPtr->setContent(QByteArray(data));
+    msgPtr->parse();
+    return msgPtr;
+}
+
+void ViewerTest::shouldDisplayMessage()
+{
     MessageViewer::Viewer viewer(0, 0, new KActionCollection(this));
-    viewer.setMessage(msgPtr, MimeTreeParser::Force);
+    viewer.setMessage(createMsg(s_mail1), MimeTreeParser::Force);
     // not sure what to check, but at least we check it neither crashes nor hangs
+    // TODO: retrieve message text and check it
+}
+
+void ViewerTest::shouldSwitchToAnotherMessage()
+{
+    MessageViewer::Viewer viewer(0, 0, new KActionCollection(this));
+    viewer.setMessage(createMsg(s_mail1), MimeTreeParser::Force);
+
+    viewer.setMessage(createMsg(s_mail2), MimeTreeParser::Force);
 }
 
 QTEST_MAIN(ViewerTest)
