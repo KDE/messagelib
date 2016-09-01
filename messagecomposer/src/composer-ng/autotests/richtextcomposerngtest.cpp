@@ -232,7 +232,6 @@ void RichTextComposerNgTest::shouldReplaceSignature_data()
     QTest::newRow("withnewlineatbeginandend") << QStringLiteral("\nSignature\nnew line\n") << QStringLiteral("foo bla, bli\nbb")
                                               << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
 
-#if 0 //We need to investigate it
     //Add separator AtStart
     QTest::newRow("newlinebody-2") << QStringLiteral("Signature") << QStringLiteral("\n")
                                  << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator;
@@ -248,7 +247,6 @@ void RichTextComposerNgTest::shouldReplaceSignature_data()
                                         << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator;
     QTest::newRow("withnewlineatbeginandend-2   ") << QStringLiteral("\nSignature\nnew line\n") << QStringLiteral("foo bla, bli\nbb")
                                               << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator;
-#endif
 }
 
 void RichTextComposerNgTest::shouldReplaceSignature()
@@ -304,7 +302,7 @@ void RichTextComposerNgTest::shouldReplaceSignature()
     //When signature is empty we can't replace it.=> we need to insertSignature
 
     //=> insertSignature(signature, KIdentityManagement::Signature::End, addedText);
-    richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::End, KIdentityManagement::Signature::AddSeparator);
+    richtextComposerNg.insertSignature(newSignature, signatureplacement, signatureaddtext);
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
