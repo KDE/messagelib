@@ -154,12 +154,10 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
     if (oldSig == newSig) {
         return false;
     }
-
     QString oldSigText = oldSig.toPlainText();
     if (oldSigText.isEmpty()) {
         return false;
     }
-
     QTextCursor cursor(d->richTextComposer->document());
     cursor.beginEditBlock();
     int currentSearchPosition = 0;
@@ -185,6 +183,11 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
             cursor.movePosition(QTextCursor::PreviousCharacter,
                                 QTextCursor::MoveAnchor, 4);
             additionalMove = 4;
+        } else if (newSig.rawText().isEmpty() &&
+                   text.mid(currentMatch - 1, 1) == QLatin1String("\n")) {
+            cursor.movePosition(QTextCursor::PreviousCharacter,
+                                QTextCursor::MoveAnchor, 1);
+            additionalMove = 1;
         }
         cursor.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor,
                             oldSigText.length() + additionalMove);
