@@ -47,6 +47,7 @@ private Q_SLOTS:
     void shouldAddSpecificSignature();
 
 
+    void shouldReplaceSignature_data();
     void shouldReplaceSignature();
 
 };

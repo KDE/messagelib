@@ -209,17 +209,26 @@ void RichTextComposerNgTest::shouldAddSpecificSignature()
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
+void RichTextComposerNgTest::shouldReplaceSignature_data()
+{
+    QTest::addColumn<QString>("signatureText");
+    QTest::newRow("simple") << QStringLiteral("Signature");
+    QTest::newRow("withnewline") << QStringLiteral("Signature\nnew line");
+}
+
 void RichTextComposerNgTest::shouldReplaceSignature()
 {
+    QFETCH(QString, signatureText);
     MessageComposer::RichTextComposerNg richtextComposerNg;
     richtextComposerNg.createActions(new KActionCollection(this));
     const QString original(QStringLiteral("foo bla, bli\nbb"));
     richtextComposerNg.setPlainText(original);
 
-    KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
+    KIdentityManagement::Signature newSignature(signatureText);
     newSignature.setEnabledSignature(true);
     newSignature.setInlinedHtml(false);
-    QString expected(QStringLiteral("foo bla, bli\nbb-- \nSignature"));
+
+    QString expected = QStringLiteral("foo bla, bli\nbb-- \n") + signatureText;
     richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::End, KIdentityManagement::Signature::AddSeparator);
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 
