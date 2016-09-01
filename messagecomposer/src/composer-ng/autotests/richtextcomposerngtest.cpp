@@ -299,7 +299,23 @@ void RichTextComposerNgTest::shouldReplaceSignature_data()
                                         << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddNewLines;
     QTest::newRow("withnewlineatbeginandend-5") << QStringLiteral("\nSignature\nnew line\n") << QStringLiteral("foo bla, bli\nbb")
                                               << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddNewLines;
-
+#if 0 //Need to fix it.
+    //Add newline start
+    QTest::newRow("emptybody-6") << QStringLiteral("Signature") << QString()
+                               << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
+    QTest::newRow("newlinebody-6") << QStringLiteral("Signature") << QStringLiteral("\n")
+                                 << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
+    QTest::newRow("spacebody-6") << QStringLiteral("Signature") << QStringLiteral(" ")
+                               << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
+    QTest::newRow("simple-6") << QStringLiteral("Signature") << QStringLiteral("foo bla, bli\nbb")
+                            << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
+    QTest::newRow("withnewline-6") << QStringLiteral("Signature\nnew line") << QStringLiteral("foo bla, bli\nbb")
+                                 << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
+    QTest::newRow("withnewlineatbegin-6") << QStringLiteral("\nSignature\nnew line") << QStringLiteral("foo bla, bli\nbb")
+                                        << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
+    QTest::newRow("withnewlineatbeginandend6") << QStringLiteral("\nSignature\nnew line\n") << QStringLiteral("foo bla, bli\nbb")
+                                              << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddNewLines;
+#endif
 }
 
 void RichTextComposerNgTest::shouldReplaceSignature()
