@@ -230,8 +230,12 @@ void RichTextComposerNgTest::shouldReplaceSignature()
     QCOMPARE(richtextComposerNg.toPlainText(), original);
 
     replaceSignature = richtextComposerNg.composerSignature()->replaceSignature(emptySignature, newSignature);
-    //When signature is empty we can't replace it.
     QVERIFY(!replaceSignature);
+    //When signature is empty we can't replace it.=> we need to insertSignature
+
+    //=> insertSignature(signature, KIdentityManagement::Signature::End, addedText);
+    richtextComposerNg.insertSignature(newSignature, KIdentityManagement::Signature::End, KIdentityManagement::Signature::AddSeparator);
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
 QTEST_MAIN(RichTextComposerNgTest)
