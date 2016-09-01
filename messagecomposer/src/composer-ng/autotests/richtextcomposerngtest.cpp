@@ -214,6 +214,7 @@ void RichTextComposerNgTest::shouldReplaceSignature_data()
     QTest::addColumn<QString>("signatureText");
     QTest::newRow("simple") << QStringLiteral("Signature");
     QTest::newRow("withnewline") << QStringLiteral("Signature\nnew line");
+    QTest::newRow("withnewlineatbegin") << QStringLiteral("\nSignature\nnew line");
 }
 
 void RichTextComposerNgTest::shouldReplaceSignature()
