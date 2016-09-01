@@ -175,14 +175,9 @@ void SignatureController::applySignature(const KIdentityManagement::Signature &s
         }
         if (MessageComposer::MessageComposerSettings::self()->prependSignature()) {
             d->m_editor->insertSignature(signature, KIdentityManagement::Signature::Start, addedText);
-        }
-        //signature.insertIntoTextEdit(KIdentityManagement::Signature::Start,
-        //                             addedText, d->m_editor);
-        else {
+        } else {
             d->m_editor->insertSignature(signature, KIdentityManagement::Signature::End, addedText);
         }
-        //signature.insertIntoTextEdit(KIdentityManagement::Signature::End,
-        //                             addedText, d->m_editor);
     }
 }
 
