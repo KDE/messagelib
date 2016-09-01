@@ -21,6 +21,7 @@
 #include "messageviewer/headerstylepluginmanager.h"
 #include <KAboutData>
 #include <KLocalizedString>
+#include <KActionCollection>
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -85,7 +86,7 @@ int main(int argc, char **argv)
     }
     msg->parse();
 
-    Viewer *viewer = new Viewer(0);
+    Viewer *viewer = new Viewer(0, 0, new KActionCollection(&app));
     if (parser.isSet(headerStylePluginOption)) {
         viewer->setPluginName(parser.value(headerStylePluginOption));
     }
