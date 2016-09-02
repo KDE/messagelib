@@ -71,30 +71,30 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
 }
 
 static const char s_mail1[] =
-        "From: Konqui <konqui@kde.org>\n"
-        "To: Friends <friends@kde.org>\n"
-        "Date: Sun, 21 Mar 1993 23:56:48 -0800 (PST)\n"
-        "Subject: Sample message\n"
-        "MIME-Version: 1.0\n"
-        "Content-type: text/plain; charset=us-ascii\n"
-        "\n"
-        "\n"
-        "This is a test message.\n"
-        "\n";
+    "From: Konqui <konqui@kde.org>\n"
+    "To: Friends <friends@kde.org>\n"
+    "Date: Sun, 21 Mar 1993 23:56:48 -0800 (PST)\n"
+    "Subject: Sample message\n"
+    "MIME-Version: 1.0\n"
+    "Content-type: text/plain; charset=us-ascii\n"
+    "\n"
+    "\n"
+    "This is a test message.\n"
+    "\n";
 
 static const char s_mail2[] =
-        "From: David Faure <dfaure@example.com>\n"
-        "To: Friends <friends@example.com>\n"
-        "Date: Sun, 31 Aug 2016 23:56:48 +0200 (CEST)\n"
-        "Subject: Second mail\n"
-        "MIME-Version: 1.0\n"
-        "Content-type: text/plain; charset=\"us-ascii\"\n"
-        "\n"
-        "\n"
-        "This is the second message.\n"
-        "\n";
+    "From: David Faure <dfaure@example.com>\n"
+    "To: Friends <friends@example.com>\n"
+    "Date: Sun, 31 Aug 2016 23:56:48 +0200 (CEST)\n"
+    "Subject: Second mail\n"
+    "MIME-Version: 1.0\n"
+    "Content-type: text/plain; charset=\"us-ascii\"\n"
+    "\n"
+    "\n"
+    "This is the second message.\n"
+    "\n";
 
-KMime::Message::Ptr createMsg(const char* data)
+KMime::Message::Ptr createMsg(const char *data)
 {
     KMime::Message::Ptr msgPtr(new KMime::Message());
     msgPtr->setContent(QByteArray(data));

@@ -381,8 +381,8 @@ void RichTextComposerNg::forceAutoCorrection(bool selectedText)
                 const int positionEnd = qMax(cur.selectionEnd(), cur.selectionStart());
                 cur.setPosition(positionStart);
                 int cursorPosition = positionStart;
-                while(cursorPosition < positionEnd) {
-                    if(isLineQuoted(cur.block().text())) {
+                while (cursorPosition < positionEnd) {
+                    if (isLineQuoted(cur.block().text())) {
                         cur.movePosition(QTextCursor::NextBlock);
                     } else {
                         cur.movePosition(QTextCursor::NextWord);
@@ -392,8 +392,8 @@ void RichTextComposerNg::forceAutoCorrection(bool selectedText)
                 }
             } else {
                 cur.movePosition(QTextCursor::Start);
-                while(!cur.atEnd()) {
-                    if(isLineQuoted(cur.block().text())) {
+                while (!cur.atEnd()) {
+                    if (isLineQuoted(cur.block().text())) {
                         cur.movePosition(QTextCursor::NextBlock);
                     } else {
                         cur.movePosition(QTextCursor::NextWord);

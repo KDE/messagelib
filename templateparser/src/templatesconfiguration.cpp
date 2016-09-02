@@ -97,16 +97,15 @@ TemplatesConfiguration::TemplatesConfiguration(QWidget *parent, const QString &n
 TemplatesConfiguration::~TemplatesConfiguration()
 {
     disconnect(textEdit_new->editor(), &QPlainTextEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
+               this, &TemplatesConfiguration::slotTextChanged);
     disconnect(textEdit_reply->editor(), &QPlainTextEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
+               this, &TemplatesConfiguration::slotTextChanged);
     disconnect(textEdit_reply_all->editor(), &QPlainTextEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
+               this, &TemplatesConfiguration::slotTextChanged);
     disconnect(textEdit_forward->editor(), &QPlainTextEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
+               this, &TemplatesConfiguration::slotTextChanged);
     disconnect(lineEdit_quote, &QLineEdit::textChanged,
-            this, &TemplatesConfiguration::slotTextChanged);
-
+               this, &TemplatesConfiguration::slotTextChanged);
 
     delete d;
 }

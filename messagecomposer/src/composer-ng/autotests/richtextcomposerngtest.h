@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef RICHTEXTCOMPOSERNGTEST_H
 #define RICHTEXTCOMPOSERNGTEST_H
 
@@ -37,7 +36,6 @@ private Q_SLOTS:
     void shouldForceAutoCorrectionWithSelection_data();
     void shouldForceAutoCorrectionWithSelection();
 
-
     void shouldNotChangeSignatureWhenOriginalAndNewSignatureAreSame();
 
     void shouldAddSignature_data();
@@ -45,7 +43,6 @@ private Q_SLOTS:
 
     void shouldAddSpecificSignature_data();
     void shouldAddSpecificSignature();
-
 
     void shouldReplaceSignature_data();
     void shouldReplaceSignature();
