@@ -200,7 +200,6 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
         cursor.removeSelectedText();
         d->richTextComposer->setTextCursor(cursor);
         d->richTextComposer->insertSignature(newSig, KIdentityManagement::Signature::AtCursor, KIdentityManagement::Signature::AddNothing);
-        //newSig.insertIntoTextEdit(KIdentityManagement::Signature::AtCursor, KIdentityManagement::Signature::AddNothing, this);
         found = true;
 
         currentSearchPosition += newSig.toPlainText().length();
