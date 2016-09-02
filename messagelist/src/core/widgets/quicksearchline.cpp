@@ -37,10 +37,9 @@ using namespace MessageList::Core;
 QuickSearchLine::QuickSearchLine(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *vbox = new QVBoxLayout;
+    QVBoxLayout *vbox = new QVBoxLayout(this);
     vbox->setMargin(0);
     vbox->setSpacing(0);
-    setLayout(vbox);
 
     QWidget *w = new QWidget;
     QHBoxLayout *hbox = new QHBoxLayout;

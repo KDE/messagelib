@@ -45,16 +45,16 @@ ScamDetectionDetailsDialog::ScamDetectionDetailsDialog(QWidget *parent)
 {
     setWindowTitle(i18n("Details"));
     setAttribute(Qt::WA_DeleteOnClose);
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
-    QPushButton *user1Button = new QPushButton;
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    QPushButton *user1Button = new QPushButton(this);
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &ScamDetectionDetailsDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ScamDetectionDetailsDialog::reject);
     KGuiItem::assign(user1Button, KStandardGuiItem::saveAs());
     setModal(false);
-    mDetails = new KPIMTextEdit::RichTextEditorWidget;
+    mDetails = new KPIMTextEdit::RichTextEditorWidget(this);
     mainLayout->addWidget(mDetails);
     mainLayout->addWidget(buttonBox);
     mDetails->setReadOnly(true);

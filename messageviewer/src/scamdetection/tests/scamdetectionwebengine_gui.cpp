@@ -39,7 +39,7 @@ ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString
 {
     mScamDetection = new MessageViewer::ScamDetectionWebEngine(this);
 
-    QVBoxLayout *lay = new QVBoxLayout;
+    QVBoxLayout *lay = new QVBoxLayout(this);
     mScamWarningWidget = new MessageViewer::ScamDetectionWarningWidget();
     mScamWarningWidget->setUseInTestApps(true);
     lay->addWidget(mScamWarningWidget);
@@ -58,8 +58,6 @@ ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString
     connect(openFile, &QPushButton::clicked, this, &ScamDetectionWebEngineTestWidget::slotOpenHtml);
     hbox->addWidget(openFile);
     lay->addLayout(hbox);
-
-    setLayout(lay);
 }
 
 ScamDetectionWebEngineTestWidget::~ScamDetectionWebEngineTestWidget()

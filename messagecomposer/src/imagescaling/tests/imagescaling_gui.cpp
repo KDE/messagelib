@@ -31,9 +31,8 @@
 ImageScalingTestWidget::ImageScalingTestWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout;
-    lay->addWidget(new MessageComposer::ImageScalingWidget);
-    setLayout(lay);
+    QHBoxLayout *lay = new QHBoxLayout(this);
+    lay->addWidget(new MessageComposer::ImageScalingWidget(this));
 }
 
 ImageScalingTestWidget::~ImageScalingTestWidget()

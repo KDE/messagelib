@@ -49,8 +49,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     setObjectName(QStringLiteral("RecipientsPicker"));
     setWindowTitle(i18n("Select Recipient"));
 
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     mView = new Akonadi::EmailAddressSelectionWidget(this);
     mainLayout->addWidget(mView);
