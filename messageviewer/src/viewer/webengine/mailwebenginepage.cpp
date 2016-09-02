@@ -49,6 +49,10 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::AutoLoadIconsForPage, false);
 #endif
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
+    settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, false);
+#endif
+
     const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
     settings()->setFontSize(QWebEngineSettings::DefaultFontSize, font.pixelSize());
