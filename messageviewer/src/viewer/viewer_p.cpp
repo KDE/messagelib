@@ -159,6 +159,22 @@ using namespace MessageCore;
 
 static QAtomicInt _k_attributeInitialized;
 
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
+    R *receiver;
+    void (C::*memberFun)(Arg);
+    void operator()(Arg result) {
+        (receiver->*memberFun)(result);
+    }
+};
+
+template<typename Arg, typename R, typename C>
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
+    return wrapper;
+}
+
 ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
                              KActionCollection *actionCollection)
     : QObject(aParent),
@@ -204,7 +220,8 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
       mHeaderStylePlugin(Q_NULLPTR),
       mHeaderStyleMenuManager(Q_NULLPTR),
       mViewerPluginToolManager(Q_NULLPTR),
-      mZoomActionMenu(Q_NULLPTR)
+      mZoomActionMenu(Q_NULLPTR),
+      mCurrentPrinter(Q_NULLPTR)
 {
     mMimePartTree = 0;
     if (!mainWindow) {
@@ -2244,10 +2261,30 @@ void ViewerPrivate::slotPrintMessage()
         return;
     }
 #ifdef WEBENGINEVIEWER_PRINT_SUPPORT
-    //TODO
-#endif
+    if (mCurrentPrinter)
+        return;
+    mCurrentPrinter = new QPrinter();
+    QPointer<QPrintDialog> dialog = new QPrintDialog(mCurrentPrinter, mMainWindow);
+    dialog->setWindowTitle(i18n("Print Document"));
+    if (dialog->exec() != QDialog::Accepted) {
+        slotHandlePagePrinted(false);
+        delete dialog;
+        return;
+    }
+    delete dialog;
+    mViewer->page()->print(mCurrentPrinter, invoke(this, &ViewerPrivate::slotHandlePagePrinted));
+#else
     slotPrintPreview();
+#endif
 }
+
+void ViewerPrivate::slotHandlePagePrinted(bool result)
+{
+    Q_UNUSED(result);
+    delete mCurrentPrinter;
+    mCurrentPrinter = Q_NULLPTR;
+}
+
 
 void ViewerPrivate::slotSetEncoding()
 {

@@ -53,6 +53,7 @@ class KActionMenu;
 class QPoint;
 class QSplitter;
 class QModelIndex;
+class QPrinter;
 
 namespace KPIMTextEdit
 {
@@ -463,6 +464,7 @@ private Q_SLOTS:
     void slotOpenInBrowser();
     void slotExportHtmlPageFailed();
     void slotExportHtmlPageSuccess(const QString &filename);
+    void slotHandlePagePrinted(bool result);
 public Q_SLOTS:
     /** An URL has been activate with a click. */
     void slotUrlOpen(const QUrl &url = QUrl());
@@ -671,6 +673,7 @@ public:
     MessageViewer::HeaderStyleMenuManager *mHeaderStyleMenuManager;
     MessageViewer::ViewerPluginToolManager *mViewerPluginToolManager;
     WebEngineViewer::ZoomActionMenu *mZoomActionMenu;
+    QPrinter *mCurrentPrinter;
 };
 
 }
