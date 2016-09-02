@@ -125,6 +125,7 @@ void RichTextComposerNgTest::shouldNotChangeSignatureWhenOriginalAndNewSignature
 }
 Q_DECLARE_METATYPE(KIdentityManagement::Signature::Placement)
 Q_DECLARE_METATYPE(KIdentityManagement::Signature::AddedTextFlag)
+Q_DECLARE_METATYPE(KIdentityManagement::Signature::Type)
 
 void RichTextComposerNgTest::shouldAddSignature_data()
 {
