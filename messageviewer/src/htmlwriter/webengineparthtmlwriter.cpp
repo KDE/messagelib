@@ -48,11 +48,6 @@ void WebEnginePartHtmlWriter::begin(const QString &css)
     }
 
     MessageViewer::WebEngineEmbedPart::self()->clear();
-    // clear the widget:
-    mHtmlView->setUpdatesEnabled(false);
-    mHtmlView->scrollUp(10);
-    // PENDING(marc) push into MailWebView
-    mHtmlView->load(QUrl());
     mState = Begun;
 }
 
