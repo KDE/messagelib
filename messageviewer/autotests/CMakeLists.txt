@@ -6,7 +6,7 @@ macro(add_messageviewer_unittest _source)
     ecm_add_test(${_source}
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo KF5::QGpgme Qt5::Test Qt5::WebKitWidgets KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::AkonadiNotes KF5::CalendarCore
+        LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo KF5::QGpgme Qt5::Test KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::AkonadiNotes KF5::CalendarCore
     )
 endmacro ()
 
@@ -15,7 +15,7 @@ macro(add_messageviewer_class_unittest _source _additionalSource)
     ecm_add_test(${_source} ${_additionalSource}
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer Qt5::Test KF5::IconThemes KF5::XmlGui Qt5::WebKitWidgets KF5::I18n
+        LINK_LIBRARIES KF5::MessageViewer Qt5::Test KF5::IconThemes KF5::XmlGui KF5::I18n
     )
 endmacro ()
 

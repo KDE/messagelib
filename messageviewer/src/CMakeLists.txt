@@ -239,8 +239,6 @@ else()
     target_link_libraries(KF5MessageViewer PUBLIC KF5::Gpgmepp-pthread)
 endif()
 
-target_include_directories(KF5MessageViewer PUBLIC $<TARGET_PROPERTY:KF5::WebKit,INTERFACE_INCLUDE_DIRECTORIES>)
-
 set_target_properties(KF5MessageViewer PROPERTIES
     VERSION ${MESSAGEVIEWER_VERSION_STRING}
     SOVERSION ${MESSAGEVIEWER_SOVERSION}

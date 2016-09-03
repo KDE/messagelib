@@ -1532,6 +1532,8 @@ QString TemplateParser::plainMessageText(bool aStripSignature,
     QString result = mOtp->plainTextContent();
 
     if (result.isEmpty()) {   //HTML-only mails
+        // QtWebEngine port TODO: QWebEnginePage::toPlainText() exists but is asynchronous
+        // The easiest solution might be to do that -before- calling the TemplateParser.
         QWebPage doc;
         doc.mainFrame()->setHtml(mOtp->htmlContent());
         result = doc.mainFrame()->toPlainText();
