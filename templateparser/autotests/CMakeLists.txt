@@ -17,7 +17,6 @@ macro(add_templateparser_unittest _source)
     KF5::MessageViewer
     KF5::QGpgme
     Qt5::Test
-    Qt5::WebKitWidgets
     KF5::KIOCore
     KF5::Mime
     KF5::AkonadiCore
