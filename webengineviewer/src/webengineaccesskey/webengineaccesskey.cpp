@@ -75,29 +75,6 @@ public:
     WebEngineAccessKey *q;
 };
 
-#if 0
-static bool isEditableElement(QWebPage *page)
-{
-    const QWebFrame *frame = (page ? page->currentFrame() : 0);
-    QWebElement element = (frame ? frame->findFirstElement(QStringLiteral(":focus")) : QWebElement());
-    if (!element.isNull()) {
-        const QString tagName(element.tagName());
-        if (tagName.compare(QLatin1String("textarea"), Qt::CaseInsensitive) == 0) {
-            return true;
-        }
-        const QString type(element.attribute(QStringLiteral("type")).toLower());
-        if (tagName.compare(QLatin1String("input"), Qt::CaseInsensitive) == 0
-                && (type.isEmpty() || type == QLatin1String("text") || type == QLatin1String("password"))) {
-            return true;
-        }
-        if (element.evaluateJavaScript(QStringLiteral("this.isContentEditable")).toBool()) {
-            return true;
-        }
-    }
-    return false;
-}
-
-#endif
 static QString linkElementKey(const WebEngineViewer::WebEngineAccessKeyAnchor &element, const QUrl &baseUrl)
 {
     //qDebug()<<" element.href()"<<element.href();
