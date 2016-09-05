@@ -444,4 +444,14 @@ void RichTextComposerNgTest::shouldLoadSignatureFromFile()
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
+void RichTextComposerNgTest::shouldLoadSignatureFromCommand_data()
+{
+    //TODO
+}
+
+void RichTextComposerNgTest::shouldLoadSignatureFromCommand()
+{
+    //TODO
+}
+
 QTEST_MAIN(RichTextComposerNgTest)
