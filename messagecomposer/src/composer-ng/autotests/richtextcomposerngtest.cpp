@@ -371,4 +371,75 @@ void RichTextComposerNgTest::shouldReplaceSignature()
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 }
 
+void RichTextComposerNgTest::shouldLoadSignatureFromFile_data()
+{
+    QTest::addColumn<QString>("signatureFile");
+    QTest::addColumn<QString>("bodytext");
+    QTest::addColumn<KIdentityManagement::Signature::Placement>("signatureplacement");
+    QTest::addColumn<KIdentityManagement::Signature::AddedTextFlag>("signatureaddtext");
+
+    QTest::newRow("newlinebody") << QStringLiteral("signature1.txt") << QStringLiteral("\n")
+                                 << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+
+}
+
+void RichTextComposerNgTest::shouldLoadSignatureFromFile()
+{
+    QFETCH(QString, signatureFile);
+    QFETCH(QString, bodytext);
+    QFETCH(KIdentityManagement::Signature::Placement, signatureplacement);
+    QFETCH(KIdentityManagement::Signature::AddedTextFlag, signatureaddtext);
+
+    MessageComposer::RichTextComposerNg richtextComposerNg;
+    richtextComposerNg.createActions(new KActionCollection(this));
+    const QString original(bodytext);
+    richtextComposerNg.setPlainText(original);
+
+    KIdentityManagement::Signature newSignature(QLatin1String(SIGNATURE_DATA_DIR) + QLatin1Char('/') + signatureFile, false);
+    newSignature.setEnabledSignature(true);
+    newSignature.setInlinedHtml(false);
+
+    QString addText;
+    switch (signatureaddtext) {
+    case KIdentityManagement::Signature::AddNothing:
+        break;
+    case KIdentityManagement::Signature::AddSeparator:
+        addText = QStringLiteral("-- \n");
+        break;
+    case KIdentityManagement::Signature::AddNewLines:
+        addText = QStringLiteral("\n");
+        break;
+    }
+
+    QString expected;
+    QString signatureText = newSignature.toPlainText();
+    switch (signatureplacement) {
+    case KIdentityManagement::Signature::Start:
+        expected = addText + signatureText + bodytext;
+        break;
+    case KIdentityManagement::Signature::End:
+        expected = bodytext + addText + signatureText;
+        break;
+    case KIdentityManagement::Signature::AtCursor:
+        break;
+    }
+
+    richtextComposerNg.insertSignature(newSignature, signatureplacement, signatureaddtext);
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
+
+    KIdentityManagement::Signature emptySignature;
+
+    bool replaceSignature = richtextComposerNg.composerSignature()->replaceSignature(newSignature, emptySignature);
+    QVERIFY(replaceSignature);
+    QCOMPARE(richtextComposerNg.toPlainText(), original);
+
+    replaceSignature = richtextComposerNg.composerSignature()->replaceSignature(emptySignature, newSignature);
+    QVERIFY(!replaceSignature);
+    //When signature is empty we can't replace it.=> we need to insertSignature
+
+    //=> insertSignature(signature, KIdentityManagement::Signature::End, addedText);
+    richtextComposerNg.insertSignature(newSignature, signatureplacement, signatureaddtext);
+    QCOMPARE(richtextComposerNg.toPlainText(), expected);
+}
+
 QTEST_MAIN(RichTextComposerNgTest)
