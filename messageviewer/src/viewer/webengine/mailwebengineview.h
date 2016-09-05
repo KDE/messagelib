@@ -66,6 +66,9 @@ public:
     void toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml);
 
     void executeCustomRenderingScripts();
+
+    void setPrintElementBackground(bool printElementBackground);
+
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();

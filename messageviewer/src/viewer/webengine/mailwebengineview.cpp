@@ -373,3 +373,8 @@ void MailWebEngineView::dropEvent(QDropEvent *e)
     Q_UNUSED(e);
     qDebug() << " MailWebEngineView::dropEvent";
 }
+
+void MailWebEngineView::setPrintElementBackground(bool printElementBackground)
+{
+    d->mPageEngine->setPrintElementBackground(printElementBackground);
+}
