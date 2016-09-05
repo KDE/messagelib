@@ -1065,13 +1065,13 @@ void MessageComposer::ComposerViewBase::updateAutoSave()
     } else {
         if (!m_autoSaveTimer) {
             m_autoSaveTimer = new QTimer(this);
-            if (m_parentWidget)
+            if (m_parentWidget) {
                 connect(m_autoSaveTimer, SIGNAL(timeout()),
                         m_parentWidget, SLOT(autoSaveMessage()));
-            else
+            } else {
                 connect(m_autoSaveTimer, &QTimer::timeout,
                         this, &ComposerViewBase::autoSaveMessage);
-
+            }
         }
         m_autoSaveTimer->start(m_autoSaveInterval);
     }
