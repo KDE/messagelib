@@ -1480,8 +1480,6 @@ bool View::selectNextMessageItem(
         return false;
     }
 
-    setFocus();
-
     if (it->parent() != d->mModel->rootItem()) {
         ensureDisplayedWithParentsExpanded(it);
     }
@@ -1524,8 +1522,6 @@ bool View::selectPreviousMessageItem(
         return false;
     }
 
-    setFocus();
-
     if (it->parent() != d->mModel->rootItem()) {
         ensureDisplayedWithParentsExpanded(it);
     }
@@ -1563,8 +1559,6 @@ bool View::focusNextMessageItem(MessageTypeFilter messageTypeFilter, bool center
         return false;
     }
 
-    setFocus();
-
     if (it->parent() != d->mModel->rootItem()) {
         ensureDisplayedWithParentsExpanded(it);
     }
@@ -1588,8 +1582,6 @@ bool View::focusPreviousMessageItem(MessageTypeFilter messageTypeFilter, bool ce
     if (!it) {
         return false;
     }
-
-    setFocus();
 
     if (it->parent() != d->mModel->rootItem()) {
         ensureDisplayedWithParentsExpanded(it);
@@ -1615,8 +1607,6 @@ void View::selectFocusedMessageItem(bool centerItem)
         return;
     }
 
-    setFocus();
-
     if (selectionModel()->isSelected(idx)) {
         return;
     }
@@ -1641,7 +1631,6 @@ bool View::selectFirstMessageItem(MessageTypeFilter messageTypeFilter, bool cent
 
     Q_ASSERT(it != d->mModel->rootItem());   // must never happen (obviously)
 
-    setFocus();
     ensureDisplayedWithParentsExpanded(it);
 
     QModelIndex idx = d->mModel->index(it, 0);
@@ -1670,7 +1659,6 @@ bool View::selectLastMessageItem(MessageTypeFilter messageTypeFilter, bool cente
 
     Q_ASSERT(it != d->mModel->rootItem());
 
-    setFocus();
     ensureDisplayedWithParentsExpanded(it);
 
     QModelIndex idx = d->mModel->index(it, 0);
