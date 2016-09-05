@@ -109,8 +109,6 @@ void ImageScalingTest::shouldHaveChangeMimetype()
     MessageComposer::MessageComposerSettings::self()->save();
     MessageComposer::ImageScaling scaling;
     scaling.setMimetype(initialmimetype);
-    qDebug() << " scaling.mimetype()" << scaling.mimetype();
-    qDebug() << " scaling.mimetype()" << newmimetype;
     QCOMPARE(scaling.mimetype(), newmimetype);
 }
 
