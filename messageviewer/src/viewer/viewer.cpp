@@ -639,5 +639,11 @@ void Viewer::runJavaScript(const QString &code)
     d->mViewer->page()->runJavaScript(code);
 }
 
+void Viewer::setPrintElementBackground(bool printElementBackground)
+{
+    Q_D(Viewer);
+    d->mViewer->setPrintElementBackground(printElementBackground);
+}
+
 }
 

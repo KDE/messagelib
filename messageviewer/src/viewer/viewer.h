@@ -323,6 +323,7 @@ public:
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void runJavaScript(const QString &code);
+    void setPrintElementBackground(bool printElementBackground);
 Q_SIGNALS:
     void moveMessageToTrash();
     void executeMailAction(MessageViewer::Viewer::MailAction type);

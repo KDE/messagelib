@@ -3017,3 +3017,8 @@ QList<QAction *> ViewerPrivate::interceptorUrlActions(const WebEngineViewer::Web
 {
     return mViewer->interceptorUrlActions(result);
 }
+
+void ViewerPrivate::setPrintElementBackground(bool printElementBackground)
+{
+    mViewer->setPrintElementBackground(printElementBackground);
+}
