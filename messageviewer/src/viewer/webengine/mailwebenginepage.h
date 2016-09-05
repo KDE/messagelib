@@ -32,6 +32,8 @@ public:
     explicit MailWebEnginePage(QWebEngineProfile *profile, QObject *parent = Q_NULLPTR);
     ~MailWebEnginePage();
 
+    void setPrintElementBackground(bool printElementBackground);
+
 private:
     void initialize();
 };

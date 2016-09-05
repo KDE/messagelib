@@ -57,3 +57,10 @@ void MailWebEnginePage::initialize()
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
     settings()->setFontSize(QWebEngineSettings::DefaultFontSize, font.pixelSize());
 }
+
+void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
+    settings()->setAttribute(QWebEngineSettings::PrintElementBackgrounds, printElementBackground);
+#endif
+}
