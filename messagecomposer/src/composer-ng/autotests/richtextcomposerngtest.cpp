@@ -378,9 +378,11 @@ void RichTextComposerNgTest::shouldLoadSignatureFromFile_data()
     QTest::addColumn<KIdentityManagement::Signature::Placement>("signatureplacement");
     QTest::addColumn<KIdentityManagement::Signature::AddedTextFlag>("signatureaddtext");
 
-    QTest::newRow("newlinebody") << QStringLiteral("signature1.txt") << QStringLiteral("\n")
+    QTest::newRow("signature1") << QStringLiteral("signature1.txt") << QStringLiteral("\n")
                                  << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
 
+    QTest::newRow("signature2") << QStringLiteral("signature2.txt") << QStringLiteral("\n")
+                                 << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
 }
 
 void RichTextComposerNgTest::shouldLoadSignatureFromFile()
