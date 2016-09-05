@@ -155,8 +155,6 @@ void SignatureController::insertSignatureHelper(KIdentityManagement::Signature::
         addedText |= KIdentityManagement::Signature::AddSeparator;
     }
     d->m_editor->insertSignature(signature, placement, addedText);
-    //d->m_editor->insertSignature(signature, KIdentityManagement::Signature::AtCursor, KIdentityManagement::Signature::AddNothing);
-    //signature.insertIntoTextEdit(placement, addedText, d->m_editor);
     if ((placement == KIdentityManagement::Signature::Start) || (placement == KIdentityManagement::Signature::End)) {
         Q_EMIT signatureAdded();
     }
