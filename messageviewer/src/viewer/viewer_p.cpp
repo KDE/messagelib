@@ -63,7 +63,7 @@
 #include <KMimeTypeTrader>
 #include <KRun>
 #include <KSelectAction>
-#include <KSharedConfigPtr>
+#include <KSharedConfig>
 #include <KStandardGuiItem>
 #include <QTemporaryDir>
 #include <KToggleAction>
