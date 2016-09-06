@@ -21,11 +21,13 @@
 #include "viewerplugin.h"
 #include "messageviewer_debug.h"
 
+#include <KSharedConfig>
 #include <kpluginmetadata.h>
 #include <KPluginLoader>
 #include <KPluginFactory>
 #include <QFileInfo>
 #include <QSet>
+#include <KConfigGroup>
 
 using namespace MessageViewer;
 
@@ -109,13 +111,25 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     plugins += KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](const KPluginMetaData & md) {
         return md.serviceTypes().contains(QStringLiteral("MessageViewer/ViewerCommonPlugin"));
     });
+
+    KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("pimpluginsrc"));
+    QStringList enabledPlugins;
+    QStringList disabledPlugins;
+    if (config->hasGroup("MessageViewer")) {
+        KConfigGroup grp = config->group("MessageViewer");
+        enabledPlugins = grp.readEntry(QStringLiteral("MessageViewerPluginsEnabled"), QStringList());
+        disabledPlugins = grp.readEntry(QStringLiteral("MessageViewerPluginsDisabled"), QStringList());
+    }
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     QSet<QString> unique;
     while (i.hasPrevious()) {
         ViewerPluginInfo info;
         info.metaData = i.previous();
-        if (info.metaData.isEnabledByDefault()) {
+        const bool pluginEnabledByUser = enabledPlugins.contains(info.metaData.name());
+        const bool pluginDisabledByUser = disabledPlugins.contains(info.metaData.name());
+        if ((info.metaData.isEnabledByDefault() && !pluginDisabledByUser)
+                || (!info.metaData.isEnabledByDefault() && pluginEnabledByUser)) {
             const QString version = info.metaData.version();
             if (pluginVersion() == version) {
                 // only load plugins once, even if found multiple times!
