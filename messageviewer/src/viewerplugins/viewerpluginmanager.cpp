@@ -80,8 +80,10 @@ public:
     void loadPlugin(ViewerPluginInfo *item);
     QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
     QVector<ViewerPluginInfo> mPluginList;
+
     QString serviceTypeName;
     QString pluginName;
+private:
     ViewerPluginManager *q;
 };
 

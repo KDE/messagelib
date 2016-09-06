@@ -30,12 +30,27 @@ class MESSAGECOMPOSER_EXPORT PluginEditorManager : public QObject
 {
     Q_OBJECT
 public:
+    class PluginEditorData
+    {
+    public:
+        PluginEditorData()
+            : mEnableByDefault(false)
+        {
+
+        }
+        QString mDescription;
+        QString mName;
+        bool mEnableByDefault;
+    };
+
     explicit PluginEditorManager(QObject *parent = Q_NULLPTR);
     ~PluginEditorManager();
 
     static PluginEditorManager *self();
 
     QVector<PluginEditor *> pluginsList() const;
+
+    QVector<PluginEditorManager::PluginEditorData> pluginsDataList() const;
 
 private:
     PluginEditorManagerPrivate *const d;

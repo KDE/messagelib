@@ -79,8 +79,12 @@ public:
     }
     void loadPlugin(PluginEditorInfo *item);
     QVector<PluginEditor *> pluginsList() const;
+    QVector<MessageComposer::PluginEditorManager::PluginEditorData> pluginDataList() const;
     bool initializePlugins();
+
+private:
     QVector<PluginEditorInfo> mPluginList;
+    QVector<MessageComposer::PluginEditorManager::PluginEditorData> mPluginDataList;
     PluginEditorManager *q;
 };
 
@@ -96,7 +100,15 @@ bool PluginEditorManagerPrivate::initializePlugins()
     while (i.hasPrevious()) {
         PluginEditorInfo info;
         info.metaData = i.previous();
-        if (info.metaData.isEnabledByDefault()) {
+
+        //Store plugin info
+        MessageComposer::PluginEditorManager::PluginEditorData pluginData;
+        pluginData.mDescription = info.metaData.description();
+        pluginData.mName = info.metaData.name();
+        pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
+        mPluginDataList.append(pluginData);
+
+        if (pluginData.mEnableByDefault) {
             const QVariant p = info.metaData.rawData().value(QStringLiteral("X-KDE-KMailEditor-Order")).toVariant();
             int order = -1;
             if (p.isValid()) {
@@ -144,6 +156,11 @@ QVector<PluginEditor *> PluginEditorManagerPrivate::pluginsList() const
     return lst;
 }
 
+QVector<MessageComposer::PluginEditorManager::PluginEditorData> PluginEditorManagerPrivate::pluginDataList() const
+{
+    return mPluginDataList;
+}
+
 PluginEditorManager::PluginEditorManager(QObject *parent)
     : QObject(parent),
       d(new MessageComposer::PluginEditorManagerPrivate(this))
@@ -168,4 +185,9 @@ QString PluginEditorInfo::saveName() const
 QVector<PluginEditor *> PluginEditorManager::pluginsList() const
 {
     return d->pluginsList();
+}
+
+QVector<MessageComposer::PluginEditorManager::PluginEditorData> PluginEditorManager::pluginsDataList() const
+{
+    return d->pluginDataList();
 }
