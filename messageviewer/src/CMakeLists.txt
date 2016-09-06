@@ -225,13 +225,17 @@ target_link_libraries(KF5MessageViewer
     KF5::MailTransport
     KF5::Mime
     KF5::Mbox
-    KF5::AkonadiNotes
     KF5::PimTextEdit
-    KF5::CalendarCore
     KF5::Gravatar
     KF5::IconThemes
+    KF5::I18n
+    KF5::KIOFileWidgets
+    KF5::KIOWidgets
+    KF5::WindowSystem
+    KF5::XmlGui
     Grantlee5::TextDocument
     Grantlee5::Templates
+    Qt5::PrintSupport
     )
 if (WIN32)
     target_link_libraries(KF5MessageViewer PUBLIC KF5::Gpgmepp)
