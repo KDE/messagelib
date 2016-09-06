@@ -96,22 +96,24 @@ bool PluginEditorManagerPrivate::initializePlugins()
     while (i.hasPrevious()) {
         PluginEditorInfo info;
         info.metaData = i.previous();
-        const QVariant p = info.metaData.rawData().value(QStringLiteral("X-KDE-KMailEditor-Order")).toVariant();
-        int order = -1;
-        if (p.isValid()) {
-            order = p.toInt();
-        }
-        info.order = order;
-        if (pluginVersion() == info.metaData.version()) {
-            // only load plugins once, even if found multiple times!
-            if (unique.contains(info.saveName())) {
-                continue;
+        if (info.metaData.isEnabledByDefault()) {
+            const QVariant p = info.metaData.rawData().value(QStringLiteral("X-KDE-KMailEditor-Order")).toVariant();
+            int order = -1;
+            if (p.isValid()) {
+                order = p.toInt();
             }
-            info.plugin = Q_NULLPTR;
-            mPluginList.push_back(info);
-            unique.insert(info.saveName());
-        } else {
-            qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
+            info.order = order;
+            if (pluginVersion() == info.metaData.version()) {
+                // only load plugins once, even if found multiple times!
+                if (unique.contains(info.saveName())) {
+                    continue;
+                }
+                info.plugin = Q_NULLPTR;
+                mPluginList.push_back(info);
+                unique.insert(info.saveName());
+            } else {
+                qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
+            }
         }
     }
     QVector<PluginEditorInfo>::iterator end(mPluginList.end());

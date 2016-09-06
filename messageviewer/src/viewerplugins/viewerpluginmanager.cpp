@@ -115,18 +115,19 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     while (i.hasPrevious()) {
         ViewerPluginInfo info;
         info.metaData = i.previous();
-
-        const QString version = info.metaData.version();
-        if (pluginVersion() == version) {
-            // only load plugins once, even if found multiple times!
-            if (unique.contains(info.saveName())) {
-                continue;
+        if (info.metaData.isEnabledByDefault()) {
+            const QString version = info.metaData.version();
+            if (pluginVersion() == version) {
+                // only load plugins once, even if found multiple times!
+                if (unique.contains(info.saveName())) {
+                    continue;
+                }
+                info.plugin = Q_NULLPTR;
+                mPluginList.push_back(info);
+                unique.insert(info.saveName());
+            } else {
+                qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << info.metaData.name() << " doesn't have correct plugin version. Please update it";
             }
-            info.plugin = Q_NULLPTR;
-            mPluginList.push_back(info);
-            unique.insert(info.saveName());
-        } else {
-            qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << info.metaData.name() << " doesn't have correct plugin version. Please update it";
         }
     }
     QVector<ViewerPluginInfo>::iterator end(mPluginList.end());
