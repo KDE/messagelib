@@ -129,6 +129,7 @@ void TemplateParser::setCharsets(const QStringList &charsets)
 TemplateParser::~TemplateParser()
 {
     delete mEmptySource;
+    delete mOtp;
 }
 
 int TemplateParser::parseQuotes(const QString &prefix, const QString &str,
