@@ -117,8 +117,9 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("pimpluginsrc"));
     QStringList enabledPlugins;
     QStringList disabledPlugins;
-    if (config->hasGroup("MessageViewer")) {
-        KConfigGroup grp = config->group("MessageViewer");
+    const QString groupPluginName = QStringLiteral("PluginMessageViewer%1").arg(pluginName);
+    if (config->hasGroup(groupPluginName)) {
+        KConfigGroup grp = config->group(groupPluginName);
         enabledPlugins = grp.readEntry(QStringLiteral("MessageViewerPluginsEnabled"), QStringList());
         disabledPlugins = grp.readEntry(QStringLiteral("MessageViewerPluginsDisabled"), QStringList());
     }
