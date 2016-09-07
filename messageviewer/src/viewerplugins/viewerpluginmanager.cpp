@@ -134,11 +134,12 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         MessageViewer::ViewerPluginManager::ViewerPluginData pluginData;
         pluginData.mDescription = info.metaData.description();
         pluginData.mName = info.metaData.name();
+        pluginData.mIdentifier = info.metaData.pluginId();
         pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
         mPluginDataList.append(pluginData);
 
-        const bool pluginEnabledByUser = enabledPlugins.contains(info.metaData.name());
-        const bool pluginDisabledByUser = disabledPlugins.contains(info.metaData.name());
+        const bool pluginEnabledByUser = enabledPlugins.contains(info.metaData.pluginId());
+        const bool pluginDisabledByUser = disabledPlugins.contains(info.metaData.pluginId());
         if ((info.metaData.isEnabledByDefault() && !pluginDisabledByUser)
                 || (!info.metaData.isEnabledByDefault() && pluginEnabledByUser)) {
             const QString version = info.metaData.version();

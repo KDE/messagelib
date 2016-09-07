@@ -105,6 +105,7 @@ bool PluginEditorManagerPrivate::initializePlugins()
         MessageComposer::PluginEditorManager::PluginEditorData pluginData;
         pluginData.mDescription = info.metaData.description();
         pluginData.mName = info.metaData.name();
+        pluginData.mIdentifier = info.metaData.pluginId();
         pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
         mPluginDataList.append(pluginData);
 
