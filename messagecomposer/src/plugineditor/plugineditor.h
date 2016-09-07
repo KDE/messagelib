@@ -38,7 +38,6 @@ public:
     virtual PluginEditorInterface *createInterface(KActionCollection *ac, QObject *parent = Q_NULLPTR) = 0;
     int order() const;
 
-    virtual QString description() const;
 private:
     PluginEditorPrivate *const d;
 };
