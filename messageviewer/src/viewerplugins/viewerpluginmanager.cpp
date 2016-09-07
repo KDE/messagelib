@@ -79,11 +79,13 @@ public:
     bool initializePluginList();
     void loadPlugin(ViewerPluginInfo *item);
     QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
-    QVector<ViewerPluginInfo> mPluginList;
+    QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> pluginDataList() const;
 
     QString serviceTypeName;
     QString pluginName;
 private:
+    QVector<ViewerPluginInfo> mPluginList;
+    QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> mPluginDataList;
     ViewerPluginManager *q;
 };
 
@@ -129,6 +131,12 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     while (i.hasPrevious()) {
         ViewerPluginInfo info;
         info.metaData = i.previous();
+        MessageViewer::ViewerPluginManager::ViewerPluginData pluginData;
+        pluginData.mDescription = info.metaData.description();
+        pluginData.mName = info.metaData.name();
+        pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
+        mPluginDataList.append(pluginData);
+
         const bool pluginEnabledByUser = enabledPlugins.contains(info.metaData.name());
         const bool pluginDisabledByUser = disabledPlugins.contains(info.metaData.name());
         if ((info.metaData.isEnabledByDefault() && !pluginDisabledByUser)
@@ -174,6 +182,12 @@ QVector<ViewerPlugin *> ViewerPluginManagerPrivate::pluginsList() const
     return lst;
 }
 
+QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> ViewerPluginManagerPrivate::pluginDataList() const
+{
+    return mPluginDataList;
+}
+
+
 ViewerPluginManager::ViewerPluginManager(QObject *parent)
     : QObject(parent),
       d(new MessageViewer::ViewerPluginManagerPrivate(this))
@@ -218,4 +232,9 @@ void ViewerPluginManager::setPluginName(const QString &pluginName)
 QString ViewerPluginManager::pluginName() const
 {
     return d->pluginName;
+}
+
+QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> ViewerPluginManager::pluginsDataList() const
+{
+    return d->pluginDataList();
 }
