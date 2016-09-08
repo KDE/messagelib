@@ -38,6 +38,7 @@ public:
     QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> configureInterceptorList(QWidget *parent) const;
     void createInterfaces(QWebEngineView *webEngine, KActionCollection *ac);
     QVector<WebEngineViewer::NetworkPluginUrlInterceptorInterface *> mListInterface;
+private:
     NetworkUrlInterceptorManager *q;
 };
 

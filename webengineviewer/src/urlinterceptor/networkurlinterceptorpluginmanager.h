@@ -36,6 +36,8 @@ public:
     ~NetworkUrlInterceptorPluginManager();
 
     QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
+    QString configGroupName() const;
+    QString configPrefixSettingKey() const;
 private:
     NetworkUrlInterceptorPluginManagerPrivate *const d;
 };

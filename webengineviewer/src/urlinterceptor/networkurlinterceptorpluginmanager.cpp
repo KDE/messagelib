@@ -87,10 +87,23 @@ public:
 
     void loadPlugin(MailNetworkUrlInterceptorPluginInfo *item);
     QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
+    QString configGroupName() const;
+    QString configPrefixSettingKey() const;
 
     QVector<MailNetworkUrlInterceptorPluginInfo> mPluginList;
+private:
     NetworkUrlInterceptorPluginManager *q;
 };
+
+QString NetworkUrlInterceptorPluginManagerPrivate::configGroupName() const
+{
+    return QStringLiteral("NetworkUrlInterceptorPlugins");
+}
+
+QString NetworkUrlInterceptorPluginManagerPrivate::configPrefixSettingKey() const
+{
+    return QStringLiteral("PluginsNetworkUrlInterceptor");
+}
 
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
@@ -166,3 +179,14 @@ QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPlu
 {
     return d->pluginsList();
 }
+
+QString NetworkUrlInterceptorPluginManager::configGroupName() const
+{
+    return d->configGroupName();
+}
+
+QString NetworkUrlInterceptorPluginManager::configPrefixSettingKey() const
+{
+    return d->configPrefixSettingKey();
+}
+
