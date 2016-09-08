@@ -84,6 +84,8 @@ public:
 
     QString serviceTypeName;
     QString pluginName;
+    QString configGroupName() const;
+    QString configPrefixSettingKey() const;
 private:
     QVector<ViewerPluginInfo> mPluginList;
     QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> mPluginDataList;
@@ -96,6 +98,16 @@ QString pluginVersion()
 {
     return QStringLiteral("2.0");
 }
+}
+
+QString ViewerPluginManagerPrivate::configGroupName() const
+{
+    return QStringLiteral("PluginMessageViewer%1").arg(pluginName);
+}
+
+QString ViewerPluginManagerPrivate::configPrefixSettingKey() const
+{
+    return QStringLiteral("MessageViewerPlugins");
 }
 
 bool ViewerPluginManagerPrivate::initializePluginList()
@@ -117,15 +129,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         return md.serviceTypes().contains(QStringLiteral("MessageViewer/ViewerCommonPlugin"));
     });
 
-    KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("pimpluginsrc"));
-    QStringList enabledPlugins;
-    QStringList disabledPlugins;
-    const QString groupPluginName = QStringLiteral("PluginMessageViewer%1").arg(pluginName);
-    if (config->hasGroup(groupPluginName)) {
-        KConfigGroup grp = config->group(groupPluginName);
-        enabledPlugins = grp.readEntry(QStringLiteral("MessageViewerPluginsEnabled"), QStringList());
-        disabledPlugins = grp.readEntry(QStringLiteral("MessageViewerPluginsDisabled"), QStringList());
-    }
+    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     QSet<QString> unique;
@@ -139,7 +143,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
         mPluginDataList.append(pluginData);
 
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(enabledPlugins, disabledPlugins, pluginData.mEnableByDefault, pluginData.mIdentifier);
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
         if (isPluginActivated) {
             const QString version = info.metaData.version();
             if (pluginVersion() == version) {
@@ -237,4 +241,14 @@ QString ViewerPluginManager::pluginName() const
 QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> ViewerPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
+}
+
+QString ViewerPluginManager::configGroupName() const
+{
+    return d->configGroupName();
+}
+
+QString ViewerPluginManager::configPrefixSettingKey() const
+{
+    return d->configPrefixSettingKey();
 }

@@ -59,6 +59,9 @@ public:
     QString pluginName() const;
 
     bool initializePluginList();
+
+    QString configGroupName() const;
+    QString configPrefixSettingKey() const;
 private:
     ViewerPluginManagerPrivate *const d;
 };
