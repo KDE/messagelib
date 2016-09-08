@@ -20,6 +20,7 @@
 #include "plugineditor.h"
 #include "messagecomposer_debug.h"
 #include "plugineditormanager.h"
+#include <PimCommon/PluginUtil>
 
 #include <QFileInfo>
 #include <QSet>
@@ -79,12 +80,14 @@ public:
     }
     void loadPlugin(PluginEditorInfo *item);
     QVector<PluginEditor *> pluginsList() const;
-    QVector<MessageComposer::PluginEditorManager::PluginEditorData> pluginDataList() const;
+    QVector<PimCommon::PluginUtilData> pluginDataList() const;
     bool initializePlugins();
 
+    QString configGroupName() const;
+    QString configPrefixSettingKey() const;
 private:
     QVector<PluginEditorInfo> mPluginList;
-    QVector<MessageComposer::PluginEditorManager::PluginEditorData> mPluginDataList;
+    QVector<PimCommon::PluginUtilData> mPluginDataList;
     PluginEditorManager *q;
 };
 
@@ -94,6 +97,8 @@ bool PluginEditorManagerPrivate::initializePlugins()
         return md.serviceTypes().contains(QStringLiteral("KMailEditor/Plugin"));
     });
 
+    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     QSet<QString> unique;
@@ -102,14 +107,15 @@ bool PluginEditorManagerPrivate::initializePlugins()
         info.metaData = i.previous();
 
         //Store plugin info
-        MessageComposer::PluginEditorManager::PluginEditorData pluginData;
+        PimCommon::PluginUtilData pluginData;
         pluginData.mDescription = info.metaData.description();
         pluginData.mName = info.metaData.name();
         pluginData.mIdentifier = info.metaData.pluginId();
         pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
         mPluginDataList.append(pluginData);
 
-        if (pluginData.mEnableByDefault) {
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
+        if (isPluginActivated) {
             const QVariant p = info.metaData.rawData().value(QStringLiteral("X-KDE-KMailEditor-Order")).toVariant();
             int order = -1;
             if (p.isValid()) {
@@ -157,9 +163,19 @@ QVector<PluginEditor *> PluginEditorManagerPrivate::pluginsList() const
     return lst;
 }
 
-QVector<MessageComposer::PluginEditorManager::PluginEditorData> PluginEditorManagerPrivate::pluginDataList() const
+QVector<PimCommon::PluginUtilData> PluginEditorManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
+}
+
+QString PluginEditorManagerPrivate::configGroupName() const
+{
+    return QStringLiteral("KMailPluginEditor");
+}
+
+QString PluginEditorManagerPrivate::configPrefixSettingKey() const
+{
+    return QStringLiteral("KMailEditorPlugin");
 }
 
 PluginEditorManager::PluginEditorManager(QObject *parent)
@@ -188,7 +204,18 @@ QVector<PluginEditor *> PluginEditorManager::pluginsList() const
     return d->pluginsList();
 }
 
-QVector<MessageComposer::PluginEditorManager::PluginEditorData> PluginEditorManager::pluginsDataList() const
+QVector<PimCommon::PluginUtilData> PluginEditorManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }
+
+QString PluginEditorManager::configGroupName() const
+{
+    return d->configGroupName();
+}
+
+QString PluginEditorManager::configPrefixSettingKey() const
+{
+    return d->configPrefixSettingKey();
+}
+

@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
-
+#include <PimCommon/PluginUtil>
 namespace MessageViewer
 {
 class ViewerPluginManagerPrivate;
@@ -31,26 +31,13 @@ class MESSAGEVIEWER_EXPORT ViewerPluginManager : public QObject
 {
     Q_OBJECT
 public:
-    class ViewerPluginData
-    {
-    public:
-        ViewerPluginData()
-            : mEnableByDefault(false)
-        {
-
-        }
-        QString mDescription;
-        QString mName;
-        QString mIdentifier;
-        bool mEnableByDefault;
-    };
 
     explicit ViewerPluginManager(QObject *parent = Q_NULLPTR);
     ~ViewerPluginManager();
     static ViewerPluginManager *self();
 
     QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
-    QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> pluginsDataList() const;
+    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
 
     void setServiceTypeName(const QString &serviceName);
     QString serviceTypeName() const;

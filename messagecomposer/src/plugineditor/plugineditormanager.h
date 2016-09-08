@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
+#include <PimCommon/PluginUtil>
 namespace MessageComposer
 {
 class PluginEditorManagerPrivate;
@@ -30,19 +31,6 @@ class MESSAGECOMPOSER_EXPORT PluginEditorManager : public QObject
 {
     Q_OBJECT
 public:
-    class PluginEditorData
-    {
-    public:
-        PluginEditorData()
-            : mEnableByDefault(false)
-        {
-
-        }
-        QString mDescription;
-        QString mIdentifier;
-        QString mName;
-        bool mEnableByDefault;
-    };
 
     explicit PluginEditorManager(QObject *parent = Q_NULLPTR);
     ~PluginEditorManager();
@@ -51,8 +39,10 @@ public:
 
     QVector<PluginEditor *> pluginsList() const;
 
-    QVector<PluginEditorManager::PluginEditorData> pluginsDataList() const;
+    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
 
+    QString configGroupName() const;
+    QString configPrefixSettingKey() const;
 private:
     PluginEditorManagerPrivate *const d;
 };

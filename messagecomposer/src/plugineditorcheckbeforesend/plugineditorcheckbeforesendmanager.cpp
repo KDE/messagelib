@@ -79,8 +79,28 @@ public:
     QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
     bool initializePlugins();
     QVector<PluginEditorCheckBeforeSendInfo> mPluginList;
+    QString configPrefixSettingKey() const;
+    QString configGroupName() const;
+    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+private:
+    QVector<PimCommon::PluginUtilData> mPluginDataList;
     PluginEditorCheckBeforeSendManager *q;
 };
+
+QString PluginEditorCheckBeforeSendManagerPrivate::configGroupName() const
+{
+    return QStringLiteral("KMailPluginCheckBefore");
+}
+
+QString PluginEditorCheckBeforeSendManagerPrivate::configPrefixSettingKey() const
+{
+    return QStringLiteral("PluginCheckBefore");
+}
+
+QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pluginsDataList() const
+{
+    return mPluginDataList;
+}
 
 bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 {
@@ -88,22 +108,36 @@ bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
         return md.serviceTypes().contains(QStringLiteral("KMailEditor/PluginCheckBeforeSend"));
     });
 
+    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     QSet<QString> unique;
     while (i.hasPrevious()) {
         PluginEditorCheckBeforeSendInfo info;
         info.metaData = i.previous();
-        if (pluginVersion() == info.metaData.version()) {
-            // only load plugins once, even if found multiple times!
-            if (unique.contains(info.saveName())) {
-                continue;
+
+        //Store plugin info
+        PimCommon::PluginUtilData pluginData;
+        pluginData.mDescription = info.metaData.description();
+        pluginData.mName = info.metaData.name();
+        pluginData.mIdentifier = info.metaData.pluginId();
+        pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
+        mPluginDataList.append(pluginData);
+
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
+        if (isPluginActivated) {
+            if (pluginVersion() == info.metaData.version()) {
+                // only load plugins once, even if found multiple times!
+                if (unique.contains(info.saveName())) {
+                    continue;
+                }
+                info.plugin = Q_NULLPTR;
+                mPluginList.push_back(info);
+                unique.insert(info.saveName());
+            } else {
+                qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
             }
-            info.plugin = Q_NULLPTR;
-            mPluginList.push_back(info);
-            unique.insert(info.saveName());
-        } else {
-            qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<PluginEditorCheckBeforeSendInfo>::iterator end(mPluginList.end());
@@ -157,4 +191,19 @@ QString PluginEditorCheckBeforeSendInfo::saveName() const
 QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManager::pluginsList() const
 {
     return d->pluginsList();
+}
+
+QString PluginEditorCheckBeforeSendManager::configGroupName() const
+{
+    return d->configGroupName();
+}
+
+QString PluginEditorCheckBeforeSendManager::configPrefixSettingKey() const
+{
+    return d->configPrefixSettingKey();
+}
+
+QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManager::pluginsDataList() const
+{
+    return d->pluginsDataList();
 }

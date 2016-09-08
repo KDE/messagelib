@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
+#include <PimCommon/PluginUtil>
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendManagerPrivate;
@@ -36,6 +37,10 @@ public:
     static PluginEditorCheckBeforeSendManager *self();
 
     QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
+
+    QString configGroupName() const;
+    QString configPrefixSettingKey() const;
+    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
 private:
     PluginEditorCheckBeforeSendManagerPrivate *const d;
 };

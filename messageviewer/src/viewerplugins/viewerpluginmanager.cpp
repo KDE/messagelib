@@ -20,7 +20,7 @@
 #include "viewerpluginmanager.h"
 #include "viewerplugin.h"
 #include "messageviewer_debug.h"
-#include <PimCommon/PluginUtil>
+
 
 #include <KSharedConfig>
 #include <kpluginmetadata.h>
@@ -80,7 +80,7 @@ public:
     bool initializePluginList();
     void loadPlugin(ViewerPluginInfo *item);
     QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
-    QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> pluginDataList() const;
+    QVector<PimCommon::PluginUtilData> pluginDataList() const;
 
     QString serviceTypeName;
     QString pluginName;
@@ -88,7 +88,7 @@ public:
     QString configPrefixSettingKey() const;
 private:
     QVector<ViewerPluginInfo> mPluginList;
-    QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> mPluginDataList;
+    QVector<PimCommon::PluginUtilData> mPluginDataList;
     ViewerPluginManager *q;
 };
 
@@ -136,7 +136,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     while (i.hasPrevious()) {
         ViewerPluginInfo info;
         info.metaData = i.previous();
-        MessageViewer::ViewerPluginManager::ViewerPluginData pluginData;
+        PimCommon::PluginUtilData pluginData;
         pluginData.mDescription = info.metaData.description();
         pluginData.mName = info.metaData.name();
         pluginData.mIdentifier = info.metaData.pluginId();
@@ -186,7 +186,7 @@ QVector<ViewerPlugin *> ViewerPluginManagerPrivate::pluginsList() const
     return lst;
 }
 
-QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> ViewerPluginManagerPrivate::pluginDataList() const
+QVector<PimCommon::PluginUtilData> ViewerPluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
@@ -238,7 +238,7 @@ QString ViewerPluginManager::pluginName() const
     return d->pluginName;
 }
 
-QVector<MessageViewer::ViewerPluginManager::ViewerPluginData> ViewerPluginManager::pluginsDataList() const
+QVector<PimCommon::PluginUtilData> ViewerPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }
