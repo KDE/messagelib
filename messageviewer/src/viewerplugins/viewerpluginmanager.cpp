@@ -20,6 +20,7 @@
 #include "viewerpluginmanager.h"
 #include "viewerplugin.h"
 #include "messageviewer_debug.h"
+#include <PimCommon/PluginUtil>
 
 #include <KSharedConfig>
 #include <kpluginmetadata.h>
@@ -138,10 +139,8 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
         mPluginDataList.append(pluginData);
 
-        const bool pluginEnabledByUser = enabledPlugins.contains(info.metaData.pluginId());
-        const bool pluginDisabledByUser = disabledPlugins.contains(info.metaData.pluginId());
-        if ((info.metaData.isEnabledByDefault() && !pluginDisabledByUser)
-                || (!info.metaData.isEnabledByDefault() && pluginEnabledByUser)) {
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(enabledPlugins, disabledPlugins, pluginData.mEnableByDefault, pluginData.mIdentifier);
+        if (isPluginActivated) {
             const QString version = info.metaData.version();
             if (pluginVersion() == version) {
                 // only load plugins once, even if found multiple times!
