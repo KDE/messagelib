@@ -39,7 +39,7 @@ public:
     QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
-    QVector<PimCommon::PluginUtilData> pluginDataList() const;
+    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
 private:
     NetworkUrlInterceptorPluginManagerPrivate *const d;
 };

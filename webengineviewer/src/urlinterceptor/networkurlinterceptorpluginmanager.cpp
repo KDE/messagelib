@@ -210,7 +210,7 @@ QString NetworkUrlInterceptorPluginManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManager::pluginDataList() const
+QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }
