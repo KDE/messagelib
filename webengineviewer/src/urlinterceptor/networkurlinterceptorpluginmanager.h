@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include <QVector>
+#include <PimCommon/PluginUtil>
 #include "webengineviewer_export.h"
 namespace WebEngineViewer
 {
@@ -38,6 +39,7 @@ public:
     QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
+    QVector<PimCommon::PluginUtilData> pluginDataList() const;
 private:
     NetworkUrlInterceptorPluginManagerPrivate *const d;
 };

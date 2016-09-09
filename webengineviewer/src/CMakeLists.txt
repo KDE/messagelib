@@ -76,12 +76,12 @@ target_include_directories(KF5WebEngineViewer PUBLIC "$<BUILD_INTERFACE:${WebEng
 target_link_libraries(KF5WebEngineViewer
     PUBLIC
     Qt5::WebEngineWidgets
+    KF5::PimCommon
     PRIVATE
     KF5::CoreAddons
     KF5::XmlGui
     KF5::Completion
     KF5::I18n
-    KF5::PimCommon
     KF5::WidgetsAddons
     KF5::ConfigCore
     )

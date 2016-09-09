@@ -89,9 +89,10 @@ public:
     QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
-
-    QVector<MailNetworkUrlInterceptorPluginInfo> mPluginList;
+    QVector<PimCommon::PluginUtilData> pluginDataList() const;
 private:
+    QVector<MailNetworkUrlInterceptorPluginInfo> mPluginList;
+    QVector<PimCommon::PluginUtilData> mPluginDataList;
     NetworkUrlInterceptorPluginManager *q;
 };
 
@@ -105,6 +106,11 @@ QString NetworkUrlInterceptorPluginManagerPrivate::configPrefixSettingKey() cons
     return QStringLiteral("PluginsNetworkUrlInterceptor");
 }
 
+QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pluginDataList() const
+{
+    return mPluginDataList;
+}
+
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("webengineviewer"), [](const KPluginMetaData & md) {
@@ -114,22 +120,36 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     QSet<QString> unique;
+    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+
     while (i.hasPrevious()) {
         MailNetworkUrlInterceptorPluginInfo info;
         info.metaData = i.previous();
 
-        const QString version = info.metaData.version();
-        if (pluginVersion() == version) {
+        PimCommon::PluginUtilData pluginData;
+        pluginData.mDescription = info.metaData.description();
+        pluginData.mName = info.metaData.name();
+        pluginData.mIdentifier = info.metaData.pluginId();
+        pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
+        mPluginDataList.append(pluginData);
 
-            // only load plugins once, even if found multiple times!
-            if (unique.contains(info.saveName())) {
-                continue;
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
+        if (isPluginActivated) {
+
+
+            const QString version = info.metaData.version();
+            if (pluginVersion() == version) {
+
+                // only load plugins once, even if found multiple times!
+                if (unique.contains(info.saveName())) {
+                    continue;
+                }
+                info.plugin = Q_NULLPTR;
+                mPluginList.append(info);
+                unique.insert(info.saveName());
+            } else {
+                qCWarning(WEBENGINEVIEWER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
             }
-            info.plugin = Q_NULLPTR;
-            mPluginList.append(info);
-            unique.insert(info.saveName());
-        } else {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<MailNetworkUrlInterceptorPluginInfo>::iterator end(mPluginList.end());
@@ -190,3 +210,7 @@ QString NetworkUrlInterceptorPluginManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
+QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManager::pluginDataList() const
+{
+    return d->pluginDataList();
+}
