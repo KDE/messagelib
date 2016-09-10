@@ -39,7 +39,7 @@ public:
 };
 
 NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent)
-    : QNetworkAccessManager(parent),
+    : QObject(parent),
       d(new NetworkAccessManagerWebEnginePrivate)
 {
     d->mManager = new WebEngineViewer::NetworkUrlInterceptorManager(webEngine, ac, this);

@@ -32,7 +32,7 @@ class WebHitTestResult;
 class NetworkPluginUrlInterceptorInterface;
 class NetworkAccessManagerWebEnginePrivate;
 class NetworkPluginUrlInterceptorConfigureWidget;
-class WEBENGINEVIEWER_EXPORT NetworkAccessManagerWebEngine : public QNetworkAccessManager
+class WEBENGINEVIEWER_EXPORT NetworkAccessManagerWebEngine : public QObject
 {
     Q_OBJECT
 public:
