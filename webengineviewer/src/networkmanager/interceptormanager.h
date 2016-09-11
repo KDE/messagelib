@@ -32,12 +32,12 @@ class WebHitTestResult;
 class NetworkPluginUrlInterceptorInterface;
 class NetworkAccessManagerWebEnginePrivate;
 class NetworkPluginUrlInterceptorConfigureWidget;
-class WEBENGINEVIEWER_EXPORT NetworkAccessManagerWebEngine : public QObject
+class WEBENGINEVIEWER_EXPORT InterceptorManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit NetworkAccessManagerWebEngine(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = Q_NULLPTR);
-    ~NetworkAccessManagerWebEngine();
+    explicit InterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = Q_NULLPTR);
+    ~InterceptorManager();
     void addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
     QVector<WebEngineViewer::NetworkPluginUrlInterceptorConfigureWidgetSetting> configureInterceptorList(QWidget *parent = Q_NULLPTR) const;

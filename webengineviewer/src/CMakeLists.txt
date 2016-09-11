@@ -16,7 +16,7 @@ endif()
 configure_file(../config-webengineviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/../config-webengineviewer.h )
 
 set(libwebengineviewer_webengine_SRCS
-    networkmanager/networkaccessmanagerwebengine.cpp
+    networkmanager/interceptormanager.cpp
     webhittestresult.cpp
     webhittest.cpp
     webenginepage.cpp
@@ -128,7 +128,7 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS
     )
 ecm_generate_headers(WebEngineViewer_Camelcasewebengine_manager_HEADERS
     HEADER_NAMES
-    NetworkAccessManagerWebEngine
+    InterceptorManager
     REQUIRED_HEADERS WebEngineViewer_webengine_manager_HEADERS
     PREFIX WebEngineViewer
     RELATIVE networkmanager

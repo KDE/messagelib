@@ -16,7 +16,7 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#include "networkaccessmanagerwebengine.h"
+#include "interceptormanager.h"
 #include "urlinterceptor/networkurlinterceptormanager.h"
 #include "urlinterceptor/networkurlinterceptor.h"
 #include <QWebEngineProfile>
@@ -38,7 +38,7 @@ public:
     WebEngineViewer::NetworkUrlInterceptor *mNetworkUrlInterceptor;
 };
 
-NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent)
+InterceptorManager::InterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent)
     : QObject(parent),
       d(new NetworkAccessManagerWebEnginePrivate)
 {
@@ -52,17 +52,17 @@ NetworkAccessManagerWebEngine::NetworkAccessManagerWebEngine(QWebEngineView *web
     webEngine->page()->profile()->setRequestInterceptor(d->mNetworkUrlInterceptor);
 }
 
-NetworkAccessManagerWebEngine::~NetworkAccessManagerWebEngine()
+InterceptorManager::~InterceptorManager()
 {
     delete d;
 }
 
-void NetworkAccessManagerWebEngine::addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor)
+void InterceptorManager::addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor)
 {
     d->mNetworkUrlInterceptor->addInterceptor(interceptor);
 }
 
-QList<QAction *> NetworkAccessManagerWebEngine::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
+QList<QAction *> InterceptorManager::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     QList<QAction *> actions;
     Q_FOREACH (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
@@ -71,7 +71,7 @@ QList<QAction *> NetworkAccessManagerWebEngine::interceptorUrlActions(const WebE
     return actions;
 }
 
-QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> NetworkAccessManagerWebEngine::configureInterceptorList(QWidget *parent) const
+QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> InterceptorManager::configureInterceptorList(QWidget *parent) const
 {
     return d->mManager->configureInterceptorList(parent);
 }
