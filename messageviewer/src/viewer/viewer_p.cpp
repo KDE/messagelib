@@ -809,6 +809,9 @@ void ViewerPrivate::displaySplashPage(const QString &templateName, const QVarian
 
 void ViewerPrivate::enableMessageDisplay()
 {
+    if (mMsgDisplay) {
+        return;
+    }
     mMsgDisplay = true;
     adjustLayout();
 }
@@ -1268,6 +1271,7 @@ void ViewerPrivate::resetStateForNewMessage()
     mMimePartTree->clearModel();
 #endif
     mViewer->clearRelativePosition();
+    mViewer->hideAccessKeys();
     setShowSignatureDetails(false);
     mFindBar->closeBar();
     mViewerPluginToolManager->closeAllTools();

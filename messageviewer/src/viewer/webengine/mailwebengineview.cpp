@@ -232,6 +232,11 @@ void MailWebEngineView::showAccessKeys()
     d->mWebViewAccessKey->showAccessKeys();
 }
 
+void MailWebEngineView::hideAccessKeys()
+{
+    d->mWebViewAccessKey->hideAccessKeys();
+}
+
 bool MailWebEngineView::isScrolledToBottom() const
 {
     qDebug() << "bool MailWebEngineView::isScrolledToBottom() const not implemented";

@@ -45,6 +45,7 @@ public:
 
     void saveMainFrameScreenshotInFile(const QString &filename);
     void showAccessKeys();
+    void hideAccessKeys();
     bool isScrolledToBottom() const;
 
     void setElementByIdVisible(const QString &id, bool visible);
