@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
+#include <PimCommon/PluginUtil>
 namespace MessageViewer
 {
 class HeaderStylePlugin;
@@ -38,6 +39,9 @@ public:
     QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;
     QStringList pluginListName() const;
 
+    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    QString configPrefixSettingKey() const;
+    QString configGroupName() const;
 private:
     HeaderStylePluginManagerPrivate *const d;
 };
