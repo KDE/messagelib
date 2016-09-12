@@ -112,11 +112,11 @@ QString ViewerPluginManagerPrivate::configPrefixSettingKey() const
 
 bool ViewerPluginManagerPrivate::initializePluginList()
 {
-    if (serviceTypeName.isEmpty() || pluginName.isEmpty()) {
-        return false;
-    }
     if (!mPluginList.isEmpty()) {
         return true;
+    }
+    if (serviceTypeName.isEmpty() || pluginName.isEmpty()) {
+        return false;
     }
 
     static const QString s_serviceTypeName = serviceTypeName;
