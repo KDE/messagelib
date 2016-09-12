@@ -62,5 +62,7 @@ void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
     settings()->setAttribute(QWebEngineSettings::PrintElementBackgrounds, printElementBackground);
+#else
+    Q_UNUSED(printElementBackground);
 #endif
 }
