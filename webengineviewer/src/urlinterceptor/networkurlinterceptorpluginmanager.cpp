@@ -135,8 +135,6 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 
         const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
         if (isPluginActivated) {
-
-
             const QString version = info.metaData.version();
             if (pluginVersion() == version) {
 
