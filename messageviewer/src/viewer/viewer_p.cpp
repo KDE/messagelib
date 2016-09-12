@@ -864,7 +864,6 @@ void ViewerPrivate::displayMessage()
     htmlWriter()->queue(QStringLiteral("</body></html>"));
     connect(mViewer, &MailWebEngineView::loadFinished, this, &ViewerPrivate::injectAttachments, Qt::UniqueConnection);
     connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotMessageRendered, Qt::UniqueConnection);
-    //connect(mPartHtmlWriter, SIGNAL(finished()), this, SLOT(toggleFullAddressList()), Qt::UniqueConnection);
     htmlWriter()->flush();
 }
 
