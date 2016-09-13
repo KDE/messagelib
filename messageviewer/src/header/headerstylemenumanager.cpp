@@ -70,7 +70,7 @@ void HeaderStyleMenuManagerPrivate::setPluginName(const QString &pluginName)
         }
     } else {
         if (lstInterface.isEmpty()) {
-            qCCritical(MESSAGEVIEWER_LOG) << "No plugin found !";
+            qCCritical(MESSAGEVIEWER_LOG) << "No Header Style plugin found !";
             return;
         } else {
             interface = lstInterface.cbegin().value();
