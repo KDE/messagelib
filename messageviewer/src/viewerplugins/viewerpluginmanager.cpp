@@ -136,11 +136,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     while (i.hasPrevious()) {
         ViewerPluginInfo info;
         info.metaData = i.previous();
-        PimCommon::PluginUtilData pluginData;
-        pluginData.mDescription = info.metaData.description();
-        pluginData.mName = info.metaData.name();
-        pluginData.mIdentifier = info.metaData.pluginId();
-        pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
+        const PimCommon::PluginUtilData pluginData = PimCommon::PluginUtil::createPluginMetaData(info.metaData);
         mPluginDataList.append(pluginData);
 
         const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
