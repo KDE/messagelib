@@ -107,11 +107,7 @@ bool PluginEditorManagerPrivate::initializePlugins()
         info.metaData = i.previous();
 
         //Store plugin info
-        PimCommon::PluginUtilData pluginData;
-        pluginData.mDescription = info.metaData.description();
-        pluginData.mName = info.metaData.name();
-        pluginData.mIdentifier = info.metaData.pluginId();
-        pluginData.mEnableByDefault = info.metaData.isEnabledByDefault();
+        PimCommon::PluginUtilData pluginData = PimCommon::PluginUtil::createPluginMetaData(info.metaData);
         mPluginDataList.append(pluginData);
 
         const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
