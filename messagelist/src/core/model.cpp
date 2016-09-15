@@ -2636,7 +2636,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
             } else {
                 if (parentId > 0) {
                     // In second pass we have all available Items in mThreadingCache already. If
-                    // mThreadingCache.parentForItem() returns null, but sets knownParent to true then
+                    // mThreadingCache.parentForItem() returns null, but returns valid parentId then
                     // the Item was removed from Akonadi and our threading cache is out-of-date.
                     mThreadingCache.expireParent(mi);
                     mparent = findMessageParent(mi);
@@ -3042,6 +3042,10 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                 mPersistentSetManager = Q_NULLPTR;
             }
         }
+
+        // Remove the message from threading cache before we start moving up the
+        // children, so that they don't get mislead by the cache
+        mThreadingCache.expireParent(dyingMessage);
 
         if (dyingMessage->parent()) {
             // Handle saving the current selection: if this item was the current before the step

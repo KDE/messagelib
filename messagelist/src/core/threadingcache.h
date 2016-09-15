@@ -76,6 +76,7 @@ public:
     {
         if (mEnabled) {
             mParentCache.remove(item->itemId());
+            mItemCache.remove(item->itemId());
         }
     }
 
