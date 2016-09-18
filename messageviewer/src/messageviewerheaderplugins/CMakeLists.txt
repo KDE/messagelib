@@ -1,1 +1,1 @@
-add_subdirectory(standardsheaderstyleplugin)
+add_subdirectory(defaultgrantleeheaderstyleplugin)
