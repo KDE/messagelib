@@ -18,7 +18,7 @@
 */
 
 #include "mailsourcewebengineviewer.h"
-
+#include "config-messageviewer.h"
 using namespace MessageViewer;
 
 #include "mailsourceviewtextbrowserwidget.h"
