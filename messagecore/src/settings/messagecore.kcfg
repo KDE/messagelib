@@ -42,10 +42,6 @@
       <label>This is the color used in the 1st level of quoted text</label>
       <default code="true">MessageCore::Util::quoteLevel1DefaultTextColor()</default>
     </entry>
-    <entry name="MisspelledColor" type="Color">
-      <label>This is the color used to highlight misspelled words</label>
-      <default code="true">MessageCore::Util::misspelledDefaultTextColor()</default>
-    </entry>
   </group>
 
   <group name="Composer">
