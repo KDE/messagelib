@@ -826,18 +826,12 @@ void Pane::Private::updateTabControls()
         mMoveTabLeftAction->setEnabled(enableAction);
     }
 
-    if (MessageListSettings::self()->autoHideTabBarWithSingleTab()) {
-        q->tabBar()->setVisible(enableAction);
-        if (enableAction) {
-            q->setCornerWidget(mNewTabButton, Qt::TopLeftCorner);
-            mNewTabButton->setVisible(true);
-        } else {
-            q->setCornerWidget(Q_NULLPTR, Qt::TopLeftCorner);
-        }
-    } else {
-        q->tabBar()->setVisible(true);
+    q->tabBar()->setVisible(enableAction);
+    if (enableAction) {
         q->setCornerWidget(mNewTabButton, Qt::TopLeftCorner);
         mNewTabButton->setVisible(true);
+    } else {
+        q->setCornerWidget(Q_NULLPTR, Qt::TopLeftCorner);
     }
 
     const bool hasCloseButton(MessageListSettings::self()->tabsHaveCloseButton());
