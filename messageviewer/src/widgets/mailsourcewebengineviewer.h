@@ -21,8 +21,14 @@
 #define MAILSOURCEWEBENGINEVIEWER_H
 
 #include <QDialog>
+#include "config-messageviewer.h"
 class QTabWidget;
 class QWebEnginePage;
+
+#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
+#include <SyntaxHighlighting/Repository>
+#endif
+
 namespace MessageViewer
 {
 class FindBarSourceView;
@@ -43,6 +49,9 @@ private:
 #ifndef NDEBUG
     QTabWidget *mTabWidget;
     MailSourceViewTextBrowserWidget *mHtmlBrowser;
+#endif
+#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
+    SyntaxHighlighting::Repository mRepo;
 #endif
 };
 }

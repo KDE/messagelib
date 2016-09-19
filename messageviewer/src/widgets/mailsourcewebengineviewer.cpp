@@ -18,7 +18,7 @@
 */
 
 #include "mailsourcewebengineviewer.h"
-#include "config-messageviewer.h"
+
 using namespace MessageViewer;
 
 #include "mailsourceviewtextbrowserwidget.h"
@@ -28,7 +28,6 @@ using namespace MessageViewer;
 #include "kpimtextedit/slidecontainer.h"
 
 #ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
-#include <SyntaxHighlighting/Repository>
 #include <SyntaxHighlighting/SyntaxHighlighter>
 #include <SyntaxHighlighting/Definition>
 #include <SyntaxHighlighting/Theme>
@@ -70,20 +69,16 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     mHtmlBrowser = new MailSourceViewTextBrowserWidget(this);
     mTabWidget->addTab(mHtmlBrowser, i18nc("Mail message as shown, in HTML format", "HTML Source"));
     mTabWidget->setTabToolTip(1, i18n("HTML code for displaying the message to the user"));
-#if 0 //Disable for the moment.
 #ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
-    SyntaxHighlighting::Repository repo;
     SyntaxHighlighting::Definition def;
-    def = repo.definitionForName(QStringLiteral("HTML"));
+    def = mRepo.definitionForName(QStringLiteral("HTML"));
 
     SyntaxHighlighting::SyntaxHighlighter *hl = new SyntaxHighlighting::SyntaxHighlighter(mHtmlBrowser->textBrowser()->document());
-    hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
-        ? repo.theme(QLatin1String("Breeze Dark"))
-        : repo.theme(QLatin1String("Default")));
+    hl->setTheme((mHtmlBrowser->textBrowser()->palette().color(QPalette::Base).lightness() < 128)
+        ? mRepo.theme(QLatin1String("Breeze Dark"))
+        : mRepo.theme(QLatin1String("Default")));
+
     hl->setDefinition(def);
-#else
-    new KPIMTextEdit::HtmlHighlighter(mHtmlBrowser->textBrowser()->document());
-#endif
 #else
     new KPIMTextEdit::HtmlHighlighter(mHtmlBrowser->textBrowser()->document());
 #endif
