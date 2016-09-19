@@ -38,7 +38,6 @@ public:
     void setDisplayedSource(QWebEnginePage *page);
     void setFixedFont();
 private:
-    QString reformat(const QString &src);
     MailSourceViewTextBrowserWidget *mRawBrowser;
     FindBarSourceView *mFindBar;
 #ifndef NDEBUG
