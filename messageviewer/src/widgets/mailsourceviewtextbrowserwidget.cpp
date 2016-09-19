@@ -126,7 +126,7 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
     QMenu *popup = createStandardContextMenu();
     if (popup) {
         popup->addSeparator();
-        popup->addAction(KStandardAction::find(this, SIGNAL(findText()), this));
+        popup->addAction(KStandardAction::find(this, &MailSourceViewTextBrowser::findText, this));
         //Code from KTextBrowser
         KIconTheme::assignIconsToContextMenu(isReadOnly() ? KIconTheme::ReadOnlyText
                                              : KIconTheme::TextEditor,
