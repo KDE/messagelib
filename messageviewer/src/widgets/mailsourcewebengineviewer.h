@@ -44,14 +44,14 @@ public:
     void setDisplayedSource(QWebEnginePage *page);
     void setFixedFont();
 private:
+#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
+    SyntaxHighlighting::Repository mRepo;
+#endif
     MailSourceViewTextBrowserWidget *mRawBrowser;
     FindBarSourceView *mFindBar;
 #ifndef NDEBUG
     QTabWidget *mTabWidget;
     MailSourceViewTextBrowserWidget *mHtmlBrowser;
-#endif
-#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
-    SyntaxHighlighting::Repository mRepo;
 #endif
 };
 }
