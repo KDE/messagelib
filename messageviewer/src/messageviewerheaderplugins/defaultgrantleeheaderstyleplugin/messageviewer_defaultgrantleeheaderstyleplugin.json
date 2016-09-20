@@ -1,8 +1,22 @@
 {
     "KPlugin": {
         "Description": "This plugin allows you a default grantlee mail header.", 
+        "Description[ca]": "Aquest connector permet una capçalera «Grantlee» predeterminada al correu.", 
+        "Description[es]": "Este complemento le permite un encabezado de correo predeterminado grantlee.", 
+        "Description[nl]": "Deze plug-in stelt u in staat een standaard grantlee e-mailheaderstijl te gebruiken.", 
+        "Description[pt]": "Este 'plugin' permite-lhe definir um cabeçalho por omissão do Grantlee.", 
+        "Description[sv]": "Insticksprogrammet tillhandahåller ett normalt Grantlee-brevhuvud.", 
+        "Description[uk]": "Цей додаток визначає типовий заголовок повідомлення grantlee.", 
+        "Description[x-test]": "xxThis plugin allows you a default grantlee mail header.xx", 
         "EnabledByDefault": "true", 
         "Name": "Default Grantlee Header Style", 
+        "Name[ca]": "Estil de capçalera «Grantlee» predeterminat", 
+        "Name[es]": "Estilo de encabezado predeterminado Grantlee", 
+        "Name[nl]": "Stijl met standaard Grantlee header", 
+        "Name[pt]": "Estilo de Cabeçalhos Predefinido do Grantlee", 
+        "Name[sv]": "Normal Grantlee-huvudstil", 
+        "Name[uk]": "Типовий стиль заголовків Grantlee", 
+        "Name[x-test]": "xxDefault Grantlee Header Stylexx", 
         "ServiceTypes": [
             "MessageViewerHeaderStyle/Plugin"
         ], 
