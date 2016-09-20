@@ -47,7 +47,7 @@ ki18n_wrap_ui(messagecore_LIB_SRCS
     attachment/ui/attachmentpropertiesdialog_readonly.ui
     )
 
-ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME log_messagecore)
+ecm_qt_declare_logging_category(messagecore_LIB_SRCS HEADER messagecore_debug.h IDENTIFIER MESSAGECORE_LOG CATEGORY_NAME org.kde.pim.messagecore)
 
 add_library(KF5MessageCore ${messagecore_LIB_SRCS})
 generate_export_header(KF5MessageCore BASE_NAME messagecore)

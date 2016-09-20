@@ -123,5 +123,5 @@ add_subdirectory(messagecore)
 add_subdirectory(messagelist)
 add_subdirectory(webengineviewer)
 
-install( FILES messagelib.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+install( FILES messagelib.renamecategories messagelib.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

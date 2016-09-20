@@ -141,7 +141,7 @@ set(libmimetreeparser_SRCS
     ${mimetreeparser_temporaryfile_SRCS}
     )
 
-ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME log_mimetreeparser)
+ecm_qt_declare_logging_category(libmimetreeparser_SRCS HEADER mimetreeparser_debug.h IDENTIFIER MIMETREEPARSER_LOG CATEGORY_NAME org.kde.pim.mimetreeparser)
 
 add_library(KF5MimeTreeParser
     ${libmimetreeparser_SRCS}

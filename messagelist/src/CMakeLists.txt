@@ -49,7 +49,7 @@ set(libmessagelist_SRCS
     widget.cpp
     messagelistutil.cpp
     )
-ecm_qt_declare_logging_category(libmessagelist_SRCS HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME log_messagelist)
+ecm_qt_declare_logging_category(libmessagelist_SRCS HEADER messagelist_debug.h IDENTIFIER MESSAGELIST_LOG CATEGORY_NAME org.kde.pim.messagelist)
 
 kconfig_add_kcfg_files(libmessagelist_SRCS
     core/messagelistsettings.kcfgc

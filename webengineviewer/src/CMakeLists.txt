@@ -63,7 +63,7 @@ set(libwebengineviewer_SRCS
 
 qt5_add_resources(libwebengineviewer_webengine_SRCS jquery.qrc)
 
-ecm_qt_declare_logging_category(libwebengineviewer_webengine_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME log_webengineviewer)
+ecm_qt_declare_logging_category(libwebengineviewer_webengine_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer)
 
 
 add_library(KF5WebEngineViewer ${libwebengineviewer_SRCS} ${libwebengineviewer_webengine_SRCS})

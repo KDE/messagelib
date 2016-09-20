@@ -1,7 +1,7 @@
 # messagelib
-log_messagecomposer messagelib (messagecomposer)
-log_messagecore messagelib (messagecore)
-log_messagelist messagelib (messagelist)
-log_messageviewer messagelib (messageviewer)
-log_templateparser messagelib (templateparser)
-log_mimetreeparser messagelib (mimetreeparser)
+org.kde.pim.messagecomposer messagelib (messagecomposer)
+org.kde.pim.messagecore messagelib (messagecore)
+org.kde.pim.messagelist messagelib (messagelist)
+org.kde.pim.messageviewer messagelib (messageviewer)
+org.kde.pim.templateparser messagelib (templateparser)
+org.kde.pim.mimetreeparser messagelib (mimetreeparser)

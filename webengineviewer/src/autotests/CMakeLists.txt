@@ -1,5 +1,5 @@
 set(testwebengineviewer_webengine_SRCS)
-ecm_qt_declare_logging_category(testwebengineviewer_webengine_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME log_webengineviewer)
+ecm_qt_declare_logging_category(testwebengineviewer_webengine_SRCS HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer)
 include_directories(${Messagelib_BINARY_DIR})
 ecm_add_test(webhittestresulttest.cpp  ../webhittestresult.cpp 
     TEST_NAME webhittestresulttest

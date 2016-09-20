@@ -183,7 +183,7 @@ set(libmessageviewer_SRCS
 
 qt5_add_resources(libmessageviewer_SRCS messagepartthemes.qrc)
 
-ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME log_messageviewer)
+ecm_qt_declare_logging_category(libmessageviewer_SRCS HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer)
 
 kconfig_add_kcfg_files(libmessageviewer_SRCS
     settings/globalsettings_messageviewer.kcfgc

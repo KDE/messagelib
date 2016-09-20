@@ -124,7 +124,7 @@ set( messagecomposer_src
 ki18n_wrap_ui(messagecomposer_src
     imagescaling/ui/imagescalingwidget.ui
     )
-ecm_qt_declare_logging_category(messagecomposer_src HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME log_messagecomposer)
+ecm_qt_declare_logging_category(messagecomposer_src HEADER messagecomposer_debug.h IDENTIFIER MESSAGECOMPOSER_LOG CATEGORY_NAME org.kde.pim.messagecomposer)
 
 
 if(KDEPIM_ENTERPRISE_BUILD)
