@@ -33,7 +33,6 @@
 #include "mailsourceviewtextbrowserwidget.h"
 #include "messageviewer/messageviewerutil.h"
 #include "findbar/findbarsourceview.h"
-#include <kpimtextedit/htmlhighlighter.h>
 #include "kpimtextedit/slidecontainer.h"
 #include "PimCommon/PimUtil"
 #include "kpimtextedit/texttospeechwidget.h"
