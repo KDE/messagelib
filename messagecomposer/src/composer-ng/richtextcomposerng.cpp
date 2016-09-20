@@ -370,43 +370,44 @@ QString RichTextComposerNg::toCleanHtml() const
 
 void RichTextComposerNg::forceAutoCorrection(bool selectedText)
 {
+    if (document()->isEmpty())
+        return;
     if (d->autoCorrection && d->autoCorrection->isEnabledAutoCorrection()) {
-        if (!document()->isEmpty()) {
-            const bool richText = (textMode() == RichTextComposer::Rich);
-            const int initialPosition = textCursor().position();
-            QTextCursor cur = textCursor();
-            cur.beginEditBlock();
-            if (selectedText && cur.hasSelection()) {
-                const int positionStart = qMin(cur.selectionEnd(), cur.selectionStart());
-                const int positionEnd = qMax(cur.selectionEnd(), cur.selectionStart());
-                cur.setPosition(positionStart);
-                int cursorPosition = positionStart;
-                while (cursorPosition < positionEnd) {
-                    if (isLineQuoted(cur.block().text())) {
-                        cur.movePosition(QTextCursor::NextBlock);
-                    } else {
-                        cur.movePosition(QTextCursor::NextWord);
-                    }
-                    cursorPosition = cur.position();
-                    d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
+        const bool richText = (textMode() == RichTextComposer::Rich);
+        const int initialPosition = textCursor().position();
+        QTextCursor cur = textCursor();
+        cur.beginEditBlock();
+        if (selectedText && cur.hasSelection()) {
+            const int positionStart = qMin(cur.selectionEnd(), cur.selectionStart());
+            const int positionEnd = qMax(cur.selectionEnd(), cur.selectionStart());
+            cur.setPosition(positionStart);
+            int cursorPosition = positionStart;
+            while (cursorPosition < positionEnd) {
+                if (isLineQuoted(cur.block().text())) {
+                    cur.movePosition(QTextCursor::NextBlock);
+                } else {
+                    cur.movePosition(QTextCursor::NextWord);
                 }
-            } else {
-                cur.movePosition(QTextCursor::Start);
-                while (!cur.atEnd()) {
-                    if (isLineQuoted(cur.block().text())) {
-                        cur.movePosition(QTextCursor::NextBlock);
-                    } else {
-                        cur.movePosition(QTextCursor::NextWord);
-                    }
-                    int cursorPosition = cur.position();
-                    d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
-                }
+                cursorPosition = cur.position();
+                d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
             }
-            cur.endEditBlock();
-            if (cur.position() != initialPosition) {
-                cur.setPosition(initialPosition);
-                setTextCursor(cur);
+        } else {
+            cur.movePosition(QTextCursor::Start);
+            while (!cur.atEnd()) {
+                if (isLineQuoted(cur.block().text())) {
+                    cur.movePosition(QTextCursor::NextBlock);
+                } else {
+                    cur.movePosition(QTextCursor::NextWord);
+                }
+                int cursorPosition = cur.position();
+                d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
             }
         }
+        cur.endEditBlock();
+        if (cur.position() != initialPosition) {
+            cur.setPosition(initialPosition);
+            setTextCursor(cur);
+        }
+
     }
 }
