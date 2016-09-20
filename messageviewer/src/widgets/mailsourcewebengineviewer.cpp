@@ -24,13 +24,14 @@ using namespace MessageViewer;
 #include "mailsourceviewtextbrowserwidget.h"
 #include "messageviewer/messageviewerutil.h"
 #include "findbar/findbarsourceview.h"
-#include <kpimtextedit/htmlhighlighter.h>
 #include "kpimtextedit/slidecontainer.h"
 
 #ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
 #include <SyntaxHighlighting/SyntaxHighlighter>
 #include <SyntaxHighlighting/Definition>
 #include <SyntaxHighlighting/Theme>
+#else
+#include <kpimtextedit/htmlhighlighter.h>
 #endif
 
 #include "PimCommon/PimUtil"
