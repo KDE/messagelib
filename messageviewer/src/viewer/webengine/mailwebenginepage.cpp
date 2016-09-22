@@ -45,6 +45,11 @@ void MailWebEnginePage::initialize()
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
+    settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     settings()->setAttribute(QWebEngineSettings::AutoLoadIconsForPage, false);
 #endif
