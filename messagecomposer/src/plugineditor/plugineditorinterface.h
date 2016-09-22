@@ -21,6 +21,7 @@
 #define PLUGINEDITORINTERFACE_H
 
 #include <QObject>
+#include <PimCommon/AbstractGenericPluginInterface>
 #include "messagecomposer_export.h"
 class QAction;
 class KActionCollection;
@@ -57,7 +58,7 @@ private:
 
 class PluginEditorInterfacePrivate;
 class PluginEditor;
-class MESSAGECOMPOSER_EXPORT PluginEditorInterface : public QObject
+class MESSAGECOMPOSER_EXPORT PluginEditorInterface : public PimCommon::AbstractGenericPluginInterface
 {
     Q_OBJECT
 public:
@@ -67,19 +68,8 @@ public:
     void setActionType(const ActionType &type);
     ActionType actionType() const;
 
-    virtual void createAction(KActionCollection *ac) = 0;
-    virtual void exec() = 0;
-
-    void setPlugin(PluginEditor *plugin);
-    PluginEditor *plugin() const;
-
-    void setParentWidget(QWidget *parent);
-    QWidget *parentWidget() const;
-
     KPIMTextEdit::RichTextEditor *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor);
-
-    virtual void showConfigureDialog(QWidget *parentWidget = Q_NULLPTR);
 
     static QString actionXmlExtension(ActionType::Type type);
 Q_SIGNALS:

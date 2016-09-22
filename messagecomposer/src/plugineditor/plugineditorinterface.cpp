@@ -61,7 +61,7 @@ public:
 };
 
 PluginEditorInterface::PluginEditorInterface(QObject *parent)
-    : QObject(parent),
+    : PimCommon::AbstractGenericPluginInterface(parent),
       d(new MessageComposer::PluginEditorInterfacePrivate)
 {
 
@@ -82,26 +82,6 @@ ActionType PluginEditorInterface::actionType() const
     return d->mActionType;
 }
 
-void PluginEditorInterface::setPlugin(PluginEditor *plugin)
-{
-    d->plugin = plugin;
-}
-
-PluginEditor *PluginEditorInterface::plugin() const
-{
-    return d->plugin;
-}
-
-void PluginEditorInterface::setParentWidget(QWidget *parent)
-{
-    d->mParentWidget = parent;
-}
-
-QWidget *PluginEditorInterface::parentWidget() const
-{
-    return d->mParentWidget;
-}
-
 KPIMTextEdit::RichTextEditor *PluginEditorInterface::richTextEditor() const
 {
     return d->mRichTextEditor;
@@ -110,11 +90,6 @@ KPIMTextEdit::RichTextEditor *PluginEditorInterface::richTextEditor() const
 void PluginEditorInterface::setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor)
 {
     d->mRichTextEditor = richTextEditor;
-}
-
-void PluginEditorInterface::showConfigureDialog(QWidget *parentWidget)
-{
-    Q_UNUSED(parentWidget);
 }
 
 QString PluginEditorInterface::actionXmlExtension(ActionType::Type type)

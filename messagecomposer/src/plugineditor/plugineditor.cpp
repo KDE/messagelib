@@ -33,7 +33,7 @@ public:
 };
 
 PluginEditor::PluginEditor(QObject *parent)
-    : QObject(parent),
+    : PimCommon::AbstractGenericPlugin(parent),
       d(new PluginEditorPrivate)
 {
 
@@ -52,19 +52,4 @@ void PluginEditor::setOrder(int order)
 int PluginEditor::order() const
 {
     return d->order;
-}
-
-bool PluginEditor::hasPopupMenuSupport() const
-{
-    return false;
-}
-
-bool PluginEditor::hasConfigureDialog() const
-{
-    return false;
-}
-
-bool PluginEditor::hasToolBarSupport() const
-{
-    return false;
 }

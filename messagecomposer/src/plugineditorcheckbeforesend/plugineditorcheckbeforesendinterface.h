@@ -32,7 +32,6 @@ class IdentityManager;
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendInterfacePrivate;
-class PluginEditorCheckBeforeSendConfigureWidget;
 class PluginEditorCheckBeforeSendParams;
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendInterface : public QObject
 {
