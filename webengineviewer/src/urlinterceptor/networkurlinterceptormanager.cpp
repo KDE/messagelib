@@ -55,7 +55,7 @@ QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> NetworkUrlInterceptor
 {
     QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> lstConfigureWidget;
     Q_FOREACH (NetworkPluginUrlInterceptor *plugin, NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
-        if (plugin->hasConfigureSupport()) {
+        if (plugin->hasConfigureDialog()) {
             lstConfigureWidget.append(plugin->createConfigureWidget(parent));
         }
     }

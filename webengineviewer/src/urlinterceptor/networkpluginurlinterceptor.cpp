@@ -32,7 +32,7 @@ NetworkPluginUrlInterceptor::~NetworkPluginUrlInterceptor()
 
 }
 
-bool NetworkPluginUrlInterceptor::hasConfigureSupport() const
+bool NetworkPluginUrlInterceptor::hasConfigureDialog() const
 {
     return false;
 }

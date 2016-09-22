@@ -53,7 +53,7 @@ public:
     ~NetworkPluginUrlInterceptor();
     virtual NetworkPluginUrlInterceptorInterface *createInterface(QWebEngineView *webEngine, QObject *parent = Q_NULLPTR) = 0;
 
-    virtual bool hasConfigureSupport() const;
+    virtual bool hasConfigureDialog() const;
     virtual NetworkPluginUrlInterceptorConfigureWidgetSetting createConfigureWidget(QWidget *parent = Q_NULLPTR);
 };
 }
