@@ -56,6 +56,7 @@ private:
 };
 
 class PluginEditorInterfacePrivate;
+class PluginEditor;
 class MESSAGECOMPOSER_EXPORT PluginEditorInterface : public QObject
 {
     Q_OBJECT
@@ -68,6 +69,9 @@ public:
 
     virtual void createAction(KActionCollection *ac) = 0;
     virtual void exec() = 0;
+
+    void setPlugin(PluginEditor *plugin);
+    PluginEditor *plugin() const;
 
     void setParentWidget(QWidget *parent);
     QWidget *parentWidget() const;
