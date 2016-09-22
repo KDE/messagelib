@@ -37,6 +37,9 @@ public:
 
     virtual PluginEditorInterface *createInterface(KActionCollection *ac, QObject *parent = Q_NULLPTR) = 0;
     int order() const;
+    virtual bool hasPopupMenuSupport() const;
+    virtual bool hasConfigureDialog() const;
+    virtual bool hasToolBarSupport() const;
 
 private:
     PluginEditorPrivate *const d;

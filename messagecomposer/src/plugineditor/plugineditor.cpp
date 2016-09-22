@@ -53,3 +53,18 @@ int PluginEditor::order() const
 {
     return d->order;
 }
+
+bool PluginEditor::hasPopupMenuSupport() const
+{
+    return false;
+}
+
+bool PluginEditor::hasConfigureDialog() const
+{
+    return false;
+}
+
+bool PluginEditor::hasToolBarSupport() const
+{
+    return false;
+}

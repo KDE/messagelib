@@ -112,21 +112,6 @@ void PluginEditorInterface::setRichTextEditor(KPIMTextEdit::RichTextEditor *rich
     d->mRichTextEditor = richTextEditor;
 }
 
-bool PluginEditorInterface::hasPopupMenuSupport() const
-{
-    return false;
-}
-
-bool PluginEditorInterface::hasConfigureDialog() const
-{
-    return false;
-}
-
-bool MessageComposer::PluginEditorInterface::hasToolBarSupport() const
-{
-    return false;
-}
-
 void PluginEditorInterface::showConfigureDialog(QWidget *parentWidget)
 {
     Q_UNUSED(parentWidget);

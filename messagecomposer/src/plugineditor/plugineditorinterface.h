@@ -79,9 +79,6 @@ public:
     KPIMTextEdit::RichTextEditor *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor);
 
-    virtual bool hasPopupMenuSupport() const;
-    virtual bool hasConfigureDialog() const;
-    virtual bool hasToolBarSupport() const;
     virtual void showConfigureDialog(QWidget *parentWidget = Q_NULLPTR);
 
     static QString actionXmlExtension(ActionType::Type type);
