@@ -56,16 +56,13 @@ public:
     {
 
     }
-    QString saveName() const;
 
-    KPluginMetaData metaData;
+    QString metaDataFileNameBaseName;
+    QString metaDataFileName;
+    PimCommon::PluginUtilData pluginData;
     WebEngineViewer::NetworkPluginUrlInterceptor *plugin;
+    bool isEnabled;
 };
-
-QString MailNetworkUrlInterceptorPluginInfo::saveName() const
-{
-    return QFileInfo(metaData.fileName()).baseName();
-}
 
 namespace
 {
@@ -124,26 +121,27 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 
     while (i.hasPrevious()) {
         MailNetworkUrlInterceptorPluginInfo info;
-        info.metaData = i.previous();
 
-        PimCommon::PluginUtilData pluginData = PimCommon::PluginUtil::createPluginMetaData(info.metaData);
-        mPluginDataList.append(pluginData);
+        const KPluginMetaData data = i.previous();
 
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
-        if (isPluginActivated) {
-            const QString version = info.metaData.version();
-            if (pluginVersion() == version) {
+        //1) get plugin data => name/description etc.
+        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        //2) look at if plugin is activated
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        info.isEnabled = isPluginActivated;
+        info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
+        info.metaDataFileName = data.fileName();
 
-                // only load plugins once, even if found multiple times!
-                if (unique.contains(info.saveName())) {
-                    continue;
-                }
-                info.plugin = Q_NULLPTR;
-                mPluginList.append(info);
-                unique.insert(info.saveName());
-            } else {
-                qCWarning(WEBENGINEVIEWER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
+        if (pluginVersion() == data.version()) {
+            // only load plugins once, even if found multiple times!
+            if (unique.contains(info.metaDataFileNameBaseName)) {
+                continue;
             }
+            info.plugin = Q_NULLPTR;
+            mPluginList.push_back(info);
+            unique.insert(info.metaDataFileNameBaseName);
+        } else {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<MailNetworkUrlInterceptorPluginInfo>::iterator end(mPluginList.end());
@@ -166,9 +164,12 @@ QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPlu
 
 void NetworkUrlInterceptorPluginManagerPrivate::loadPlugin(MailNetworkUrlInterceptorPluginInfo *item)
 {
-    KPluginLoader pluginLoader(item->metaData.fileName());
+    KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<WebEngineViewer::NetworkPluginUrlInterceptor>(q, QVariantList() << item->saveName());
+        item->plugin = pluginLoader.factory()->create<WebEngineViewer::NetworkPluginUrlInterceptor>(q, QVariantList() << item->metaDataFileNameBaseName);
+        item->plugin->setIsEnabled(item->isEnabled);
+        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
+        mPluginDataList.append(item->pluginData);
     }
 }
 

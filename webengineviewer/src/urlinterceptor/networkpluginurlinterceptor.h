@@ -55,6 +55,12 @@ public:
 
     virtual bool hasConfigureDialog() const;
     virtual NetworkPluginUrlInterceptorConfigureWidgetSetting createConfigureWidget(QWidget *parent = Q_NULLPTR);
+
+    void setIsEnabled(bool enabled);
+    bool isEnabled() const;
+
+private:
+    bool mIsEnabled;
 };
 }
 

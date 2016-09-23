@@ -55,7 +55,7 @@ QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> NetworkUrlInterceptor
 {
     QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> lstConfigureWidget;
     Q_FOREACH (NetworkPluginUrlInterceptor *plugin, NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
-        if (plugin->hasConfigureDialog()) {
+        if (plugin->hasConfigureDialog() && plugin->isEnabled()) {
             lstConfigureWidget.append(plugin->createConfigureWidget(parent));
         }
     }
@@ -65,9 +65,11 @@ QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> NetworkUrlInterceptor
 void NetworkUrlInterceptorManagerPrivate::createInterfaces(QWebEngineView *webEngine, KActionCollection *ac)
 {
     Q_FOREACH (NetworkPluginUrlInterceptor *plugin, NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
-        WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(webEngine, q);
-        interface->createActions(ac);
-        mListInterface.append(interface);
+        if (plugin->isEnabled()) {
+            WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(webEngine, q);
+            interface->createActions(ac);
+            mListInterface.append(interface);
+        }
     }
 }
 

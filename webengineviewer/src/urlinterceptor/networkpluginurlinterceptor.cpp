@@ -22,7 +22,8 @@
 using namespace WebEngineViewer;
 
 NetworkPluginUrlInterceptor::NetworkPluginUrlInterceptor(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mIsEnabled(false)
 {
 
 }
@@ -41,4 +42,14 @@ NetworkPluginUrlInterceptorConfigureWidgetSetting NetworkPluginUrlInterceptor::c
 {
     Q_UNUSED(parent);
     return {};
+}
+
+void NetworkPluginUrlInterceptor::setIsEnabled(bool enabled)
+{
+    mIsEnabled = enabled;
+}
+
+bool NetworkPluginUrlInterceptor::isEnabled() const
+{
+    return mIsEnabled;
 }
