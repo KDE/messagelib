@@ -49,15 +49,17 @@ class PluginEditorInfo
 public:
     PluginEditorInfo()
         : order(0),
-          plugin(Q_NULLPTR)
+          plugin(Q_NULLPTR),
+          isEnabled(true)
     {
 
     }
-    QString saveName() const;
-
-    KPluginMetaData metaData;
+    QString metaDataFileNameBaseName;
+    QString metaDataFileName;
+    PimCommon::PluginUtilData pluginData;
     int order;
     PluginEditor *plugin;
+    bool isEnabled;
 };
 
 Q_GLOBAL_STATIC(PluginEditorManagerInstancePrivate, sInstance)
@@ -104,31 +106,31 @@ bool PluginEditorManagerPrivate::initializePlugins()
     QSet<QString> unique;
     while (i.hasPrevious()) {
         PluginEditorInfo info;
-        info.metaData = i.previous();
+        const KPluginMetaData data = i.previous();
 
-        //Store plugin info
-        PimCommon::PluginUtilData pluginData = PimCommon::PluginUtil::createPluginMetaData(info.metaData);
-        mPluginDataList.append(pluginData);
-
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
-        if (isPluginActivated) {
-            const QVariant p = info.metaData.rawData().value(QStringLiteral("X-KDE-KMailEditor-Order")).toVariant();
-            int order = -1;
-            if (p.isValid()) {
-                order = p.toInt();
+        //1) get plugin data => name/description etc.
+        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        //2) look at if plugin is activated
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        info.isEnabled = isPluginActivated;
+        info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
+        info.metaDataFileName = data.fileName();
+        const QVariant p = data.rawData().value(QStringLiteral("X-KDE-KMailEditor-Order")).toVariant();
+        int order = -1;
+        if (p.isValid()) {
+            order = p.toInt();
+        }
+        info.order = order;
+        if (pluginVersion() == data.version()) {
+            // only load plugins once, even if found multiple times!
+            if (unique.contains(info.metaDataFileNameBaseName)) {
+                continue;
             }
-            info.order = order;
-            if (pluginVersion() == info.metaData.version()) {
-                // only load plugins once, even if found multiple times!
-                if (unique.contains(info.saveName())) {
-                    continue;
-                }
-                info.plugin = Q_NULLPTR;
-                mPluginList.push_back(info);
-                unique.insert(info.saveName());
-            } else {
-                qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
-            }
+            info.plugin = Q_NULLPTR;
+            mPluginList.push_back(info);
+            unique.insert(info.metaDataFileNameBaseName);
+        } else {
+            qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<PluginEditorInfo>::iterator end(mPluginList.end());
@@ -140,10 +142,13 @@ bool PluginEditorManagerPrivate::initializePlugins()
 
 void PluginEditorManagerPrivate::loadPlugin(PluginEditorInfo *item)
 {
-    KPluginLoader pluginLoader(item->metaData.fileName());
+    KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<PluginEditor>(q, QVariantList() << item->saveName());
+        item->plugin = pluginLoader.factory()->create<PluginEditor>(q, QVariantList() << item->metaDataFileNameBaseName);
+        item->plugin->setIsEnabled(item->isEnabled);
+        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
         item->plugin->setOrder(item->order);
+        mPluginDataList.append(item->pluginData);
     }
 }
 
@@ -188,11 +193,6 @@ PluginEditorManager::~PluginEditorManager()
 PluginEditorManager *PluginEditorManager::self()
 {
     return sInstance->pluginManager;
-}
-
-QString PluginEditorInfo::saveName() const
-{
-    return QFileInfo(metaData.fileName()).baseName();
 }
 
 QVector<PluginEditor *> PluginEditorManager::pluginsList() const
