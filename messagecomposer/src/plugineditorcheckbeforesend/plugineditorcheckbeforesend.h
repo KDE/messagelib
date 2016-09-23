@@ -68,6 +68,10 @@ public:
 
     virtual QString description() const;
 
+    void setIsEnabled(bool enabled);
+    bool isEnabled() const;
+
+
 Q_SIGNALS:
     void configChanged();
 

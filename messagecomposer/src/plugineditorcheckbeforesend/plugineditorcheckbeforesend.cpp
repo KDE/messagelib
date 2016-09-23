@@ -25,9 +25,11 @@ class MessageComposer::PluginEditorCheckBeforeSendPrivate
 {
 public:
     PluginEditorCheckBeforeSendPrivate()
+        : mIsEnabled(false)
     {
 
     }
+    bool mIsEnabled;
 };
 
 PluginEditorCheckBeforeSend::PluginEditorCheckBeforeSend(QObject *parent)
@@ -62,4 +64,14 @@ void PluginEditorCheckBeforeSend::emitConfigChanged()
 QString PluginEditorCheckBeforeSend::description() const
 {
     return {};
+}
+
+void PluginEditorCheckBeforeSend::setIsEnabled(bool enabled)
+{
+    d->mIsEnabled = enabled;
+}
+
+bool PluginEditorCheckBeforeSend::isEnabled() const
+{
+    return d->mIsEnabled;
 }

@@ -47,14 +47,16 @@ class PluginEditorCheckBeforeSendInfo
 {
 public:
     PluginEditorCheckBeforeSendInfo()
-        : plugin(Q_NULLPTR)
+        : plugin(Q_NULLPTR),
+          isEnabled(true)
     {
 
     }
-    QString saveName() const;
-
-    KPluginMetaData metaData;
+    QString metaDataFileNameBaseName;
+    QString metaDataFileName;
+    PimCommon::PluginUtilData pluginData;
     PluginEditorCheckBeforeSend *plugin;
+    bool isEnabled;
 };
 
 Q_GLOBAL_STATIC(PluginEditorCheckBeforeSendManagerInstancePrivate, sInstance)
@@ -115,25 +117,25 @@ bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
     QSet<QString> unique;
     while (i.hasPrevious()) {
         PluginEditorCheckBeforeSendInfo info;
-        info.metaData = i.previous();
+        const KPluginMetaData data = i.previous();
 
-        //Store plugin info
-        PimCommon::PluginUtilData pluginData = PimCommon::PluginUtil::createPluginMetaData(info.metaData);
-        mPluginDataList.append(pluginData);
-
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
-        if (isPluginActivated) {
-            if (pluginVersion() == info.metaData.version()) {
-                // only load plugins once, even if found multiple times!
-                if (unique.contains(info.saveName())) {
-                    continue;
-                }
-                info.plugin = Q_NULLPTR;
-                mPluginList.push_back(info);
-                unique.insert(info.saveName());
-            } else {
-                qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << info.metaData.name() << " doesn't have correction plugin version. It will not be loaded.";
+        //1) get plugin data => name/description etc.
+        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        //2) look at if plugin is activated
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        info.isEnabled = isPluginActivated;
+        info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
+        info.metaDataFileName = data.fileName();
+        if (pluginVersion() == data.version()) {
+            // only load plugins once, even if found multiple times!
+            if (unique.contains(info.metaDataFileNameBaseName)) {
+                continue;
             }
+            info.plugin = Q_NULLPTR;
+            mPluginList.push_back(info);
+            unique.insert(info.metaDataFileNameBaseName);
+        } else {
+            qCWarning(MESSAGECOMPOSER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<PluginEditorCheckBeforeSendInfo>::iterator end(mPluginList.end());
@@ -145,9 +147,12 @@ bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 
 void PluginEditorCheckBeforeSendManagerPrivate::loadPlugin(PluginEditorCheckBeforeSendInfo *item)
 {
-    KPluginLoader pluginLoader(item->metaData.fileName());
+    KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<PluginEditorCheckBeforeSend>(q, QVariantList() << item->saveName());
+        item->plugin = pluginLoader.factory()->create<PluginEditorCheckBeforeSend>(q, QVariantList() << item->metaDataFileNameBaseName);
+        item->plugin->setIsEnabled(item->isEnabled);
+        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
+        mPluginDataList.append(item->pluginData);
     }
 }
 
@@ -177,11 +182,6 @@ PluginEditorCheckBeforeSendManager::~PluginEditorCheckBeforeSendManager()
 PluginEditorCheckBeforeSendManager *PluginEditorCheckBeforeSendManager::self()
 {
     return sInstance->pluginManager;
-}
-
-QString PluginEditorCheckBeforeSendInfo::saveName() const
-{
-    return QFileInfo(metaData.fileName()).baseName();
 }
 
 QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManager::pluginsList() const
