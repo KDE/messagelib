@@ -133,10 +133,12 @@ void HeaderStyleMenuManagerPrivate::initialize(KActionCollection *ac)
 
     const QVector<MessageViewer::HeaderStylePlugin *>  lstPlugin = MessageViewer::HeaderStylePluginManager::self()->pluginsList();
     Q_FOREACH (MessageViewer::HeaderStylePlugin *plugin, lstPlugin) {
-        MessageViewer::HeaderStyleInterface *interface = plugin->createView(headerMenu, group, ac, q);
-        lstInterface.insert(plugin->name(), interface);
-        q->connect(interface, &HeaderStyleInterface::styleChanged, q, &HeaderStyleMenuManager::slotStyleChanged);
-        q->connect(interface, &HeaderStyleInterface::styleUpdated, q, &HeaderStyleMenuManager::styleUpdated);
+        if (plugin->isEnabled()) {
+            MessageViewer::HeaderStyleInterface *interface = plugin->createView(headerMenu, group, ac, q);
+            lstInterface.insert(plugin->name(), interface);
+            q->connect(interface, &HeaderStyleInterface::styleChanged, q, &HeaderStyleMenuManager::slotStyleChanged);
+            q->connect(interface, &HeaderStyleInterface::styleUpdated, q, &HeaderStyleMenuManager::styleUpdated);
+        }
     }
 }
 

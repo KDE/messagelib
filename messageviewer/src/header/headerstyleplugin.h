@@ -47,6 +47,10 @@ public:
     virtual QString alignment() const;
     virtual int elidedTextSize() const;
 
+
+    void setIsEnabled(bool enabled);
+    bool isEnabled() const;
+
 private:
     HeaderStylePluginPrivate *const d;
 };

@@ -24,9 +24,11 @@ class MessageViewer::HeaderStylePluginPrivate
 {
 public:
     HeaderStylePluginPrivate()
+        : mIsEnabled(false)
     {
 
     }
+    bool mIsEnabled;
 };
 
 HeaderStylePlugin::HeaderStylePlugin(QObject *parent)
@@ -54,4 +56,14 @@ QString HeaderStylePlugin::alignment() const
 int HeaderStylePlugin::elidedTextSize() const
 {
     return -1;
+}
+
+void HeaderStylePlugin::setIsEnabled(bool enabled)
+{
+    d->mIsEnabled = enabled;
+}
+
+bool HeaderStylePlugin::isEnabled() const
+{
+    return d->mIsEnabled;
 }
