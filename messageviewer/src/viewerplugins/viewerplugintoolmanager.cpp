@@ -75,9 +75,11 @@ void ViewerPluginToolManagerPrivate::createView()
 {
     QVector<MessageViewer::ViewerPlugin *> listPlugin = MessageViewer::ViewerPluginManager::self()->pluginsList();
     Q_FOREACH (MessageViewer::ViewerPlugin *plugin, listPlugin) {
-        MessageViewer::ViewerPluginInterface *interface = plugin->createView(mParentWidget, mActionCollection);
-        q->connect(interface, &MessageViewer::ViewerPluginInterface::activatePlugin, q, &ViewerPluginToolManager::activatePlugin);
-        mListInterface.append(interface);
+        if (plugin->isEnabled()) {
+            MessageViewer::ViewerPluginInterface *interface = plugin->createView(mParentWidget, mActionCollection);
+            q->connect(interface, &MessageViewer::ViewerPluginInterface::activatePlugin, q, &ViewerPluginToolManager::activatePlugin);
+            mListInterface.append(interface);
+        }
     }
 }
 

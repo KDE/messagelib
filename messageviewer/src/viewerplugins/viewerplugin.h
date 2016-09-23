@@ -38,6 +38,9 @@ public:
     virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent, KActionCollection *ac) = 0;
     virtual QString viewerPluginName() const = 0;
 
+    void setIsEnabled(bool enabled);
+    bool isEnabled() const;
+
 private:
     ViewerPluginPrivate *const d;
 };

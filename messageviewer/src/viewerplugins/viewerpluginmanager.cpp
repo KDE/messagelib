@@ -54,20 +54,18 @@ class ViewerPluginInfo
 {
 public:
     ViewerPluginInfo()
-        : plugin(Q_NULLPTR)
+        : plugin(Q_NULLPTR),
+          isEnabled(false)
     {
 
     }
-    QString saveName() const;
 
-    KPluginMetaData metaData;
+    QString metaDataFileNameBaseName;
+    QString metaDataFileName;
+    PimCommon::PluginUtilData pluginData;
     MessageViewer::ViewerPlugin *plugin;
+    bool isEnabled;
 };
-
-QString ViewerPluginInfo::saveName() const
-{
-    return QFileInfo(metaData.fileName()).baseName();
-}
 
 class MessageViewer::ViewerPluginManagerPrivate
 {
@@ -135,24 +133,27 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     QSet<QString> unique;
     while (i.hasPrevious()) {
         ViewerPluginInfo info;
-        info.metaData = i.previous();
-        const PimCommon::PluginUtilData pluginData = PimCommon::PluginUtil::createPluginMetaData(info.metaData);
-        mPluginDataList.append(pluginData);
 
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, pluginData.mEnableByDefault, pluginData.mIdentifier);
-        if (isPluginActivated) {
-            const QString version = info.metaData.version();
-            if (pluginVersion() == version) {
-                // only load plugins once, even if found multiple times!
-                if (unique.contains(info.saveName())) {
-                    continue;
-                }
-                info.plugin = Q_NULLPTR;
-                mPluginList.push_back(info);
-                unique.insert(info.saveName());
-            } else {
-                qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << info.metaData.name() << " doesn't have correct plugin version. Please update it";
+        const KPluginMetaData data = i.previous();
+
+        //1) get plugin data => name/description etc.
+        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        //2) look at if plugin is activated
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        info.isEnabled = isPluginActivated;
+        info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
+        info.metaDataFileName = data.fileName();
+
+        if (pluginVersion() == data.version()) {
+            // only load plugins once, even if found multiple times!
+            if (unique.contains(info.metaDataFileNameBaseName)) {
+                continue;
             }
+            info.plugin = Q_NULLPTR;
+            mPluginList.push_back(info);
+            unique.insert(info.metaDataFileNameBaseName);
+        } else {
+            qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << data.name() << " doesn't have correct plugin version. Please update it";
         }
     }
     QVector<ViewerPluginInfo>::iterator end(mPluginList.end());
@@ -164,9 +165,12 @@ bool ViewerPluginManagerPrivate::initializePluginList()
 
 void ViewerPluginManagerPrivate::loadPlugin(ViewerPluginInfo *item)
 {
-    KPluginLoader pluginLoader(item->metaData.fileName());
+    KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<MessageViewer::ViewerPlugin>(q, QVariantList() << item->saveName());
+        item->plugin = pluginLoader.factory()->create<MessageViewer::ViewerPlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
+        item->plugin->setIsEnabled(item->isEnabled);
+        item->pluginData.mHasConfigureDialog = false; //TODO add support
+        mPluginDataList.append(item->pluginData);
     }
 }
 
