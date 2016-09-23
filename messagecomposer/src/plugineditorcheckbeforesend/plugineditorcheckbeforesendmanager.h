@@ -41,6 +41,7 @@ public:
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
     QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 private:
     PluginEditorCheckBeforeSendManagerPrivate *const d;
 };

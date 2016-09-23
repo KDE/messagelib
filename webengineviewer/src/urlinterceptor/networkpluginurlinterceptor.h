@@ -54,6 +54,8 @@ public:
     virtual NetworkPluginUrlInterceptorInterface *createInterface(QWebEngineView *webEngine, QObject *parent = Q_NULLPTR) = 0;
 
     virtual bool hasConfigureDialog() const;
+    virtual void showConfigureDialog(QWidget *parent = Q_NULLPTR);
+
     virtual NetworkPluginUrlInterceptorConfigureWidgetSetting createConfigureWidget(QWidget *parent = Q_NULLPTR);
 
     void setIsEnabled(bool enabled);

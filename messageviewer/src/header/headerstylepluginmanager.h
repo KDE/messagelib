@@ -42,6 +42,7 @@ public:
     QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     QString configPrefixSettingKey() const;
     QString configGroupName() const;
+    MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 private:
     HeaderStylePluginManagerPrivate *const d;
 };

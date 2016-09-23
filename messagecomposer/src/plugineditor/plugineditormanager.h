@@ -43,6 +43,7 @@ public:
 
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
+    PluginEditor *pluginFromIdentifier(const QString &id);
 private:
     PluginEditorManagerPrivate *const d;
 };

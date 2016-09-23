@@ -87,6 +87,7 @@ public:
 
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
+    PluginEditor *pluginFromIdentifier(const QString &id);
 private:
     QVector<PluginEditorInfo> mPluginList;
     QVector<PimCommon::PluginUtilData> mPluginDataList;
@@ -179,6 +180,17 @@ QString PluginEditorManagerPrivate::configPrefixSettingKey() const
     return QStringLiteral("KMailEditorPlugin");
 }
 
+PluginEditor *PluginEditorManagerPrivate::pluginFromIdentifier(const QString &id)
+{
+    QVector<PluginEditorInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<PluginEditorInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+        if ((*it).pluginData.mIdentifier == id) {
+            return (*it).plugin;
+        }
+    }
+    return {};
+}
+
 PluginEditorManager::PluginEditorManager(QObject *parent)
     : QObject(parent),
       d(new MessageComposer::PluginEditorManagerPrivate(this))
@@ -214,4 +226,10 @@ QString PluginEditorManager::configPrefixSettingKey() const
 {
     return d->configPrefixSettingKey();
 }
+
+PluginEditor *PluginEditorManager::pluginFromIdentifier(const QString &id)
+{
+    return d->pluginFromIdentifier(id);
+}
+
 

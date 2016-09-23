@@ -84,6 +84,7 @@ public:
     QString configPrefixSettingKey() const;
     QString configGroupName() const;
     QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
     PluginEditorCheckBeforeSendManager *q;
@@ -168,6 +169,18 @@ QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManagerPrivate
     return lst;
 }
 
+PluginEditorCheckBeforeSend *PluginEditorCheckBeforeSendManagerPrivate::pluginFromIdentifier(const QString &id)
+{
+    QVector<PluginEditorCheckBeforeSendInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<PluginEditorCheckBeforeSendInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+        if ((*it).pluginData.mIdentifier == id) {
+            return (*it).plugin;
+        }
+    }
+    return {};
+}
+
+
 PluginEditorCheckBeforeSendManager::PluginEditorCheckBeforeSendManager(QObject *parent)
     : QObject(parent),
       d(new MessageComposer::PluginEditorCheckBeforeSendManagerPrivate(this))
@@ -202,4 +215,9 @@ QString PluginEditorCheckBeforeSendManager::configPrefixSettingKey() const
 QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManager::pluginsDataList() const
 {
     return d->pluginsDataList();
+}
+
+PluginEditorCheckBeforeSend *PluginEditorCheckBeforeSendManager::pluginFromIdentifier(const QString &id)
+{
+    return d->pluginFromIdentifier(id);
 }

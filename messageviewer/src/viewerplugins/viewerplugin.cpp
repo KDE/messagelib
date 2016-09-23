@@ -44,6 +44,11 @@ ViewerPlugin::~ViewerPlugin()
     delete d;
 }
 
+void ViewerPlugin::showConfigureDialog(QWidget *parent)
+{
+    Q_UNUSED(parent);
+}
+
 void ViewerPlugin::setIsEnabled(bool enabled)
 {
     d->mEnabled = enabled;

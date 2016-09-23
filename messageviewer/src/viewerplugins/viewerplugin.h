@@ -37,6 +37,7 @@ public:
 
     virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent, KActionCollection *ac) = 0;
     virtual QString viewerPluginName() const = 0;
+    virtual void showConfigureDialog(QWidget *parent = Q_NULLPTR);
 
     void setIsEnabled(bool enabled);
     bool isEnabled() const;

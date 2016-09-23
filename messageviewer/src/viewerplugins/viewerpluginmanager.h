@@ -49,6 +49,7 @@ public:
 
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
+    MessageViewer::ViewerPlugin *pluginFromIdentifier(const QString &id);
 private:
     ViewerPluginManagerPrivate *const d;
 };

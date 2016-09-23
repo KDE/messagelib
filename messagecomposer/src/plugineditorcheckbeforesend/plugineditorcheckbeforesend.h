@@ -62,6 +62,8 @@ public:
 
     virtual bool hasConfigureDialog() const;
 
+    virtual void showConfigureDialog(QWidget *parent = Q_NULLPTR);
+
     virtual PluginEditorCheckBeforeSendConfigureWidgetSetting createConfigureWidget(KIdentityManagement::IdentityManager *identityManager, QWidget *parent) const;
 
     void emitConfigChanged();

@@ -77,6 +77,7 @@ public:
     void loadPlugin(HeaderStylePluginInfo *item);
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
+    MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
     QVector<HeaderStylePluginInfo> mPluginList;
@@ -187,6 +188,18 @@ void HeaderStylePluginManagerPrivate::loadPlugin(HeaderStylePluginInfo *item)
     }
 }
 
+MessageViewer::HeaderStylePlugin *HeaderStylePluginManagerPrivate::pluginFromIdentifier(const QString &id)
+{
+    QVector<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+        if ((*it).pluginData.mIdentifier == id) {
+            return (*it).plugin;
+        }
+    }
+    return {};
+}
+
+
 HeaderStylePluginManager *HeaderStylePluginManager::self()
 {
     return sInstance->headerStylePluginManager;
@@ -231,4 +244,9 @@ QString HeaderStylePluginManager::configPrefixSettingKey() const
 QVector<PimCommon::PluginUtilData> HeaderStylePluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
+}
+
+MessageViewer::HeaderStylePlugin *HeaderStylePluginManager::pluginFromIdentifier(const QString &id)
+{
+    return d->pluginFromIdentifier(id);
 }

@@ -38,6 +38,11 @@ bool NetworkPluginUrlInterceptor::hasConfigureDialog() const
     return false;
 }
 
+void NetworkPluginUrlInterceptor::showConfigureDialog(QWidget *parent)
+{
+    Q_UNUSED(parent);
+}
+
 NetworkPluginUrlInterceptorConfigureWidgetSetting NetworkPluginUrlInterceptor::createConfigureWidget(QWidget *parent)
 {
     Q_UNUSED(parent);

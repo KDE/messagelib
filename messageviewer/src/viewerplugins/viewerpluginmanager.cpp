@@ -84,6 +84,7 @@ public:
     QString pluginName;
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
+    ViewerPlugin *pluginFromIdentifier(const QString &id);
 private:
     QVector<ViewerPluginInfo> mPluginList;
     QVector<PimCommon::PluginUtilData> mPluginDataList;
@@ -191,6 +192,17 @@ QVector<PimCommon::PluginUtilData> ViewerPluginManagerPrivate::pluginDataList() 
     return mPluginDataList;
 }
 
+ViewerPlugin *ViewerPluginManagerPrivate::pluginFromIdentifier(const QString &id)
+{
+    QVector<ViewerPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<ViewerPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+        if ((*it).pluginData.mIdentifier == id) {
+            return (*it).plugin;
+        }
+    }
+    return {};
+}
+
 
 ViewerPluginManager::ViewerPluginManager(QObject *parent)
     : QObject(parent),
@@ -252,3 +264,9 @@ QString ViewerPluginManager::configPrefixSettingKey() const
 {
     return d->configPrefixSettingKey();
 }
+
+MessageViewer::ViewerPlugin *ViewerPluginManager::pluginFromIdentifier(const QString &id)
+{
+    return d->pluginFromIdentifier(id);
+}
+
