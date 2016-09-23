@@ -31,25 +31,6 @@ namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendPrivate;
 class PluginEditorCheckBeforeSendInterface;
-class PluginEditorCheckBeforeSendConfigureWidget;
-
-struct MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendConfigureWidgetSetting {
-    PluginEditorCheckBeforeSendConfigureWidgetSetting()
-        : configureWidget(Q_NULLPTR)
-    {
-
-    }
-
-    PluginEditorCheckBeforeSendConfigureWidgetSetting(MessageComposer::PluginEditorCheckBeforeSendConfigureWidget *w, const QString &widgetName)
-        : name(widgetName),
-          configureWidget(w)
-    {
-
-    }
-
-    QString name;
-    MessageComposer::PluginEditorCheckBeforeSendConfigureWidget *configureWidget;
-};
 
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSend : public QObject
 {
@@ -63,8 +44,6 @@ public:
     virtual bool hasConfigureDialog() const;
 
     virtual void showConfigureDialog(QWidget *parent = Q_NULLPTR);
-
-    virtual PluginEditorCheckBeforeSendConfigureWidgetSetting createConfigureWidget(KIdentityManagement::IdentityManager *identityManager, QWidget *parent) const;
 
     void emitConfigChanged();
 

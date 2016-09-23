@@ -70,8 +70,3 @@ QList<QAction *> InterceptorManager::interceptorUrlActions(const WebEngineViewer
     }
     return actions;
 }
-
-QVector<NetworkPluginUrlInterceptorConfigureWidgetSetting> InterceptorManager::configureInterceptorList(QWidget *parent) const
-{
-    return d->mManager->configureInterceptorList(parent);
-}

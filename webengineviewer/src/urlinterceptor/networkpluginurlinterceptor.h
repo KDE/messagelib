@@ -25,25 +25,7 @@
 class QWebEngineView;
 namespace WebEngineViewer
 {
-class NetworkPluginUrlInterceptorConfigureWidget;
 class NetworkPluginUrlInterceptorInterface;
-struct WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidgetSetting {
-    NetworkPluginUrlInterceptorConfigureWidgetSetting()
-        : configureWidget(Q_NULLPTR)
-    {
-
-    }
-
-    NetworkPluginUrlInterceptorConfigureWidgetSetting(WebEngineViewer::NetworkPluginUrlInterceptorConfigureWidget *w, const QString &widgetName)
-        : name(widgetName),
-          configureWidget(w)
-    {
-
-    }
-
-    QString name;
-    WebEngineViewer::NetworkPluginUrlInterceptorConfigureWidget *configureWidget;
-};
 
 class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptor : public QObject
 {
@@ -56,8 +38,6 @@ public:
     virtual bool hasConfigureDialog() const;
     virtual void showConfigureDialog(QWidget *parent = Q_NULLPTR);
 
-    virtual NetworkPluginUrlInterceptorConfigureWidgetSetting createConfigureWidget(QWidget *parent = Q_NULLPTR);
-
     void setIsEnabled(bool enabled);
     bool isEnabled() const;
 
@@ -66,5 +46,4 @@ private:
 };
 }
 
-Q_DECLARE_TYPEINFO(WebEngineViewer::NetworkPluginUrlInterceptorConfigureWidgetSetting, Q_MOVABLE_TYPE);
 #endif // MAILNETWORKPLUGINURLINTERCEPTOR_H

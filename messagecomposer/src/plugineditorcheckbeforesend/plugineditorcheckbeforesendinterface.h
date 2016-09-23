@@ -45,9 +45,6 @@ public:
     void setParentWidget(QWidget *parent);
     QWidget *parentWidget() const;
 
-    void setIdentityManagement(KIdentityManagement::IdentityManager *identityManagement);
-    KIdentityManagement::IdentityManager *identityManagement() const;
-
     void setParameters(const MessageComposer::PluginEditorCheckBeforeSendParams &params);
     MessageComposer::PluginEditorCheckBeforeSendParams parameters() const;
 

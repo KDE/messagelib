@@ -54,13 +54,6 @@ void PluginEditorCheckBeforeSend::showConfigureDialog(QWidget *parent)
     Q_UNUSED(parent);
 }
 
-PluginEditorCheckBeforeSendConfigureWidgetSetting PluginEditorCheckBeforeSend::createConfigureWidget(KIdentityManagement::IdentityManager *identityManager, QWidget *parent) const
-{
-    Q_UNUSED(identityManager)
-    Q_UNUSED(parent);
-    return {};
-}
-
 void PluginEditorCheckBeforeSend::emitConfigChanged()
 {
     Q_EMIT configChanged();

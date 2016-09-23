@@ -40,7 +40,6 @@ public:
     ~InterceptorManager();
     void addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
-    QVector<WebEngineViewer::NetworkPluginUrlInterceptorConfigureWidgetSetting> configureInterceptorList(QWidget *parent = Q_NULLPTR) const;
 private:
     NetworkAccessManagerWebEnginePrivate *const d;
 };
