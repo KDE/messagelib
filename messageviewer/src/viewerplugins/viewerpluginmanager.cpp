@@ -170,7 +170,7 @@ void ViewerPluginManagerPrivate::loadPlugin(ViewerPluginInfo *item)
     if (pluginLoader.factory()) {
         item->plugin = pluginLoader.factory()->create<MessageViewer::ViewerPlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
         item->plugin->setIsEnabled(item->isEnabled);
-        item->pluginData.mHasConfigureDialog = false; //TODO add support
+        item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
         mPluginDataList.append(item->pluginData);
     }
 }
