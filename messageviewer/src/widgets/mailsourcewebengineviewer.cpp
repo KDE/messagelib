@@ -75,10 +75,9 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     def = mRepo.definitionForName(QStringLiteral("HTML"));
 
     SyntaxHighlighting::SyntaxHighlighter *hl = new SyntaxHighlighting::SyntaxHighlighter(mHtmlBrowser->textBrowser()->document());
-    hl->setTheme((mHtmlBrowser->textBrowser()->palette().color(QPalette::Base).lightness() < 128)
-        ? mRepo.theme(QLatin1String("Breeze Dark"))
-        : mRepo.theme(QLatin1String("Default")));
-
+    hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
+                 ? mRepo.defaultTheme(SyntaxHighlighting::Repository::DarkTheme)
+                 : mRepo.defaultTheme(SyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
 #else
     new KPIMTextEdit::HtmlHighlighter(mHtmlBrowser->textBrowser()->document());
