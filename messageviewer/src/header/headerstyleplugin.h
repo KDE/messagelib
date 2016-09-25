@@ -51,6 +51,9 @@ public:
     void setIsEnabled(bool enabled);
     bool isEnabled() const;
 
+    virtual bool hasConfigureDialog() const;
+
+    virtual void showConfigureDialog(QWidget *parent);
 private:
     HeaderStylePluginPrivate *const d;
 };

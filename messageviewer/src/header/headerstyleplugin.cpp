@@ -67,3 +67,14 @@ bool HeaderStylePlugin::isEnabled() const
 {
     return d->mIsEnabled;
 }
+
+bool HeaderStylePlugin::hasConfigureDialog() const
+{
+    return false;
+}
+
+void HeaderStylePlugin::showConfigureDialog(QWidget *parent)
+{
+    Q_UNUSED(parent);
+    //Reimplement
+}
