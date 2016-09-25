@@ -49,6 +49,11 @@ void ViewerPlugin::showConfigureDialog(QWidget *parent)
     Q_UNUSED(parent);
 }
 
+bool ViewerPlugin::hasConfigureDialog() const
+{
+    return false;
+}
+
 void ViewerPlugin::setIsEnabled(bool enabled)
 {
     d->mEnabled = enabled;
