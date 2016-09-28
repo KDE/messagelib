@@ -2160,8 +2160,6 @@ void ViewerPrivate::updateReaderWin()
         htmlWriter()->end();
     }
 
-    mViewer->scrollToRelativePosition(mViewer->relativePosition());
-    mViewer->clearRelativePosition();
     mRecursionCountForDisplayMessage--;
 }
 
@@ -2364,6 +2362,8 @@ void ViewerPrivate::injectAttachments()
     mViewer->injectAttachments(bind(&ViewerPrivate::attachmentInjectionHtml, this));
     toggleFullAddressList();
     mViewer->executeCustomRenderingScripts();
+    mViewer->scrollToRelativePosition(mViewer->relativePosition());
+    mViewer->clearRelativePosition();
 }
 
 void ViewerPrivate::slotSettingsChanged()
