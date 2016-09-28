@@ -510,7 +510,7 @@ public Q_SLOTS:
     void slotPrintPreview();
 
     void slotSetEncoding();
-    void injectAttachments();
+    void executeCustomScriptsAfterLoading();
     void slotSettingsChanged();
     void slotMimeTreeContextMenuRequested(const QPoint &pos);
     void slotAttachmentOpenWith();
