@@ -239,6 +239,10 @@ void MailWebEngineView::hideAccessKeys()
 
 bool MailWebEngineView::isScrolledToBottom() const
 {
+#if QT_VERSION >= 0x050700
+    qDebug()<<" page position " << page()->scrollPosition().y();
+    qDebug()<<" content size " << page()->contentsSize().height();
+#endif
     qDebug() << "bool MailWebEngineView::isScrolledToBottom() const not implemented";
     //Convert as async
     //TODO '(window.innerHeight + window.scrollY) >= document.body.offsetHeight)'
