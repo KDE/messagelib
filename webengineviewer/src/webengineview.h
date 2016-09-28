@@ -37,8 +37,6 @@ public:
     void saveRelativePosition();
     qreal relativePosition() const;
 
-    bool hasPrintPreviewSupport() const;
-
     void addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
     void initializeJQueryScript();
 protected:

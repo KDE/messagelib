@@ -210,9 +210,3 @@ qreal WebEngineView::relativePosition() const
     qCDebug(WEBENGINEVIEWER_LOG) << "Relative Position" << d->mSavedRelativePosition;
     return d->mSavedRelativePosition;
 }
-
-bool WebEngineView::hasPrintPreviewSupport() const
-{
-    return true;
-}
-
