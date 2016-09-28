@@ -2331,7 +2331,8 @@ QString ViewerPrivate::attachmentInjectionHtml()
     QString link;
     QString textAlign = QStringLiteral("right");
 
-    if (headerStylePlugin()->name() == QStringLiteral("fancy")) {
+    const bool isFancyTheme = (headerStylePlugin()->name() == QStringLiteral("fancy"));
+    if (isFancyTheme) {
         textAlign = QStringLiteral("left");
     }
 
@@ -2347,7 +2348,7 @@ QString ViewerPrivate::attachmentInjectionHtml()
 
     html.prepend(link);
 
-    if (headerStylePlugin()->name() == QStringLiteral("fancy")) {
+    if (isFancyTheme) {
         html.prepend(QStringLiteral("<div style=\"float:left;\">%1&nbsp;</div>").arg(i18n("Attachments:")));
     }
     return html;
