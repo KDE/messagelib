@@ -105,20 +105,26 @@ void WebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 
 void WebEngineView::dragMoveEvent(QDragMoveEvent *e)
 {
-    Q_UNUSED(e);
     qDebug() << " void WebEngineView::dragMoveEvent(QDragMoveEvent *e)";
+    QWebEngineView::dragMoveEvent(e);
 }
 
-void WebEngineView::dragEnterEvent(QDragEnterEvent *event)
+void WebEngineView::dragEnterEvent(QDragEnterEvent *e)
 {
-    Q_UNUSED(event);
     qDebug() << " void WebEngineView::dragEnterEvent(QDragEnterEvent *event)";
+    QWebEngineView::dragEnterEvent(e);
 }
 
 void WebEngineView::dropEvent(QDropEvent *e)
 {
-    Q_UNUSED(e);
     qDebug() << " WebEngineView::dropEvent ";
+    QWebEngineView::dropEvent(e);
+}
+
+void WebEngineView::dragLeaveEvent(QDragLeaveEvent *e)
+{
+    qDebug() << " WebEngineView::dragLeaveEvent ";
+    QWebEngineView::dragLeaveEvent(e);
 }
 
 bool WebEngineView::eventFilter(QObject *obj, QEvent *event)

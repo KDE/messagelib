@@ -55,7 +55,7 @@ protected:
     void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
     void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
     void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
-
+    void dragLeaveEvent(QDragLeaveEvent *e) Q_DECL_OVERRIDE;
 private:
     WebEngineViewPrivate *const d;
 };
