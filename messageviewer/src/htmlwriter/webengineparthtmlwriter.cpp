@@ -61,7 +61,7 @@ void WebEnginePartHtmlWriter::end()
         insertExtraHead();
         mExtraHead.clear();
     }
-    removeJscripts();
+    mHtml = removeJscripts(mHtml);
     mHtmlView->setHtml(mHtml, QUrl(QStringLiteral("file:///")));
     mHtmlView->show();
     mHtml.clear();
@@ -72,10 +72,10 @@ void WebEnginePartHtmlWriter::end()
     Q_EMIT finished();
 }
 
-void WebEnginePartHtmlWriter::removeJscripts()
+QString WebEnginePartHtmlWriter::removeJscripts(QString str)
 {
-    const QRegularExpression reg(QStringLiteral("<script>.*</script>"));
-    mHtml.remove(reg);
+    const QRegularExpression reg(QStringLiteral("<script[^>]*>.*?</script>"));
+    return str.remove(reg);
 }
 
 void WebEnginePartHtmlWriter::reset()

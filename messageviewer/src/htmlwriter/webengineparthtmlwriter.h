@@ -47,6 +47,9 @@ public:
     void flush() Q_DECL_OVERRIDE;
     void embedPart(const QByteArray &contentId, const QString &url) Q_DECL_OVERRIDE;
     void extraHead(const QString &str) Q_DECL_OVERRIDE;
+
+    static QString removeJscripts(QString str);
+
 Q_SIGNALS:
     void finished();
 
@@ -54,7 +57,6 @@ private:
     void insertExtraHead();
 
 private:
-    void removeJscripts();
     MailWebEngineView *mHtmlView;
     QString mHtml;
     QString mExtraHead;
