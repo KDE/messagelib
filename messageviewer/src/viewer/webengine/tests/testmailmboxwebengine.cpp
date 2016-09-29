@@ -36,7 +36,7 @@ TestMailMBoxWebEngine::TestMailMBoxWebEngine(QWidget *parent)
     setLayout(vbox);
     MessageViewer::Viewer *viewer = new MessageViewer::Viewer(0, 0 , new KActionCollection(this));
     vbox->addWidget(viewer);
-    viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"))/*KMime::Message::Ptr(msg)*/);
+    viewer->setMessage(readAndParseMail(QStringLiteral("html.mbox")));
     viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));
 }
 
