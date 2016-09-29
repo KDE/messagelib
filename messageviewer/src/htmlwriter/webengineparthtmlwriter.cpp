@@ -24,6 +24,7 @@
 
 #include <cassert>
 #include <QByteArray>
+#include <QRegularExpression>
 
 using namespace MessageViewer;
 
@@ -60,6 +61,7 @@ void WebEnginePartHtmlWriter::end()
         insertExtraHead();
         mExtraHead.clear();
     }
+    removeJscripts();
     mHtmlView->setHtml(mHtml, QUrl(QStringLiteral("file:///")));
     mHtmlView->show();
     mHtml.clear();
@@ -68,6 +70,12 @@ void WebEnginePartHtmlWriter::end()
     mHtmlView->update();
     mState = Ended;
     Q_EMIT finished();
+}
+
+void WebEnginePartHtmlWriter::removeJscripts()
+{
+    const QRegularExpression reg(QStringLiteral("<script>.*</script>"));
+    mHtml.remove(reg);
 }
 
 void WebEnginePartHtmlWriter::reset()

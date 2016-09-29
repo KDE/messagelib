@@ -54,6 +54,7 @@ private:
     void insertExtraHead();
 
 private:
+    void removeJscripts();
     MailWebEngineView *mHtmlView;
     QString mHtml;
     QString mExtraHead;
