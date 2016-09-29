@@ -862,9 +862,14 @@ void ViewerPrivate::displayMessage()
     mColorBar->update();
 
     htmlWriter()->queue(QStringLiteral("</body></html>"));
+    connect(mViewer, &MailWebEngineView::loadStarted, this, &ViewerPrivate::slotLoadStarted, Qt::UniqueConnection);
     connect(mViewer, &MailWebEngineView::loadFinished, this, &ViewerPrivate::executeCustomScriptsAfterLoading, Qt::UniqueConnection);
     connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotMessageRendered, Qt::UniqueConnection);
     htmlWriter()->flush();
+}
+
+void ViewerPrivate::slotLoadStarted()
+{
 }
 
 void ViewerPrivate::collectionFetchedForStoringDecryptedMessage(KJob *job)
