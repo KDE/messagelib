@@ -74,8 +74,13 @@ void WebEnginePartHtmlWriter::end()
 
 QString WebEnginePartHtmlWriter::removeJscripts(QString str)
 {
-    const QRegularExpression reg(QStringLiteral("<script[^>]*>.*?</script>"));
-    return str.remove(reg);
+    //Remove regular <script>...</script>
+    const QRegularExpression regScript(QStringLiteral("<script[^>]*>.*?</script\\s*>"));
+    str = str.remove(regScript);
+    //Remove string as <script src=http://.../>
+    const QRegularExpression regScript2(QStringLiteral("<script[^>]*/>"));
+    str = str.remove(regScript2);
+    return str;
 }
 
 void WebEnginePartHtmlWriter::reset()
