@@ -60,7 +60,7 @@ MessagePart::Ptr MimeTreeParser::toplevelTextNode(MessagePart::Ptr messageTree)
             return text;
         } else if (alternative) {
             return alternative;
-        } else {
+        } else if (m) {
             auto ret = toplevelTextNode(m);
             if (ret) {
                 return ret;
