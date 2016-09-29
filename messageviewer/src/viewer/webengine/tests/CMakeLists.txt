@@ -63,5 +63,14 @@ target_link_libraries(testjquerysupportmailwebengine
     Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
     )
 
+#####
 
+set(testmailmboxwebengine_test_SRCS
+    testmailmboxwebengine.cpp
+    )
+add_executable(testmailmboxwebengine ${testmailmboxwebengine_test_SRCS})
+
+target_link_libraries(testmailmboxwebengine
+    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    )
 
