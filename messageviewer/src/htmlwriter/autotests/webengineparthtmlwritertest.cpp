@@ -39,6 +39,9 @@ void WebEnginePartHtmlWriterTest::removeScriptInHtml_data()
     QTest::newRow("onescript") << QStringLiteral("<a>boo<script>alert(1)</script></a>") << QStringLiteral("<a>boo</a>");
     QTest::newRow("onescriptwithattribute") << QStringLiteral("<a>boo<script type=\"foo\">alert(1)</script></a>") << QStringLiteral("<a>boo</a>");
     QTest::newRow("severalscriptwithattribute") << QStringLiteral("<p>foo</p><script>a</script><a>boo<script type=\"foo\">alert(1)</script></a>") << QStringLiteral("<p>foo</p><a>boo</a>");
+    //Need to fix it/.QTest::newRow("multiline") << QStringLiteral("<script>\nalert(1)</script>") << QString();
+    QTest::newRow("scriptwithspace") << QStringLiteral("<a>boo<script type=\"foo\" >alert(1)</script ></a>") << QStringLiteral("<a>boo</a>");
+    QTest::newRow("scriptwithremoveaccess") << QStringLiteral("<a>boo<script src=\"http://foo\"/></a>") << QStringLiteral("<a>boo</a>");
     QTest::newRow("empty") << QString() << QString();
 }
 
