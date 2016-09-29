@@ -39,7 +39,6 @@
 #include <KEmailAddress>
 
 #include <QLayout>
-#include <QDebug>
 #include <QKeyEvent>
 #include <QRegularExpression>
 
@@ -105,9 +104,6 @@ RecipientsEditor::RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *p
 
     connect(d->mSideWidget, &RecipientsEditorSideWidget::pickedRecipient, this, &RecipientsEditor::slotPickedRecipient);
     connect(d->mSideWidget, &RecipientsEditorSideWidget::saveDistributionList, this, &RecipientsEditor::saveDistributionList);
-
-    //   connect( mView, SIGNAL(focusRight()),
-    //     d->mSideWidget, SLOT(setFocus()) );
 
     connect(this, &RecipientsEditor::lineAdded, this, &RecipientsEditor::slotLineAdded);
     connect(this, &RecipientsEditor::lineDeleted, this, &RecipientsEditor::slotLineDeleted);
@@ -272,8 +268,6 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
         line->fixTabOrder(lines().last()->tabOut());
     }
     connect(rec, &RecipientLineNG::countChanged, this, &RecipientsEditor::slotCalculateTotal);
-    //   connect( rec->mEdit, SIGNAL(textChanged(QString)),
-    //            SLOT(slotCalculateTotal()) );
 }
 
 void RecipientsEditor::slotLineDeleted(int pos)
