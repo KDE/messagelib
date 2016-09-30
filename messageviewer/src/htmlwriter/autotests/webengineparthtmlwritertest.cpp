@@ -48,6 +48,20 @@ void WebEnginePartHtmlWriterTest::removeScriptInHtml_data()
     QTest::newRow("multiline-scriptwithspace") << QStringLiteral("<a>boo<script type=\"foo\" >\nalert(1)\n</script ></a>") << QStringLiteral("<a>boo</a>");
     QTest::newRow("multiline-severalscriptwithattribute") << QStringLiteral("<p>foo</p><script>\na\n</script><a>boo<script type=\"foo\">\nalert(1)</script></a>") << QStringLiteral("<p>foo</p><a>boo</a>");
     QTest::newRow("multiline-scriptwithspace") << QStringLiteral("<a>boo<script type=\"foo\" >\nalert(1)\nbla\nsl</script ></a>") << QStringLiteral("<a>boo</a>");
+
+    //Insensitive case
+    QTest::newRow("onescript-insensitive") << QStringLiteral("<a>boo<SCRIPT>alert(1)</script></a>") << QStringLiteral("<a>boo</a>");
+    QTest::newRow("onescriptwithattribute-insensitive") << QStringLiteral("<a>boo<SCRIPt type=\"foo\">alert(1)</SCRIPT></a>") << QStringLiteral("<a>boo</a>");
+    QTest::newRow("severalscriptwithattribute-insensitive") << QStringLiteral("<p>foo</p><script>a</SCRIPT><a>boo<SCRIPT type=\"foo\">alert(1)</script></a>") << QStringLiteral("<p>foo</p><a>boo</a>");
+    QTest::newRow("scriptwithspace-insensitive") << QStringLiteral("<a>boo<SCRIPT type=\"foo\" >alert(1)</SCRIPT ></a>") << QStringLiteral("<a>boo</a>");
+    QTest::newRow("scriptwithremoveaccess-insensitive") << QStringLiteral("<a>boo<SCRIPT src=\"http://foo\"/></a>") << QStringLiteral("<a>boo</a>");
+
+
+    //MultiLine insensitive
+    QTest::newRow("multiline-insensitive") << QStringLiteral("<a>boo<sCript>\nalert(1)</Script></a>") << QStringLiteral("<a>boo</a>");
+    QTest::newRow("multiline-scriptwithspace-insensitive") << QStringLiteral("<a>boo<SCRipT type=\"foo\" >\nalert(1)\n</script ></a>") << QStringLiteral("<a>boo</a>");
+    QTest::newRow("multiline-severalscriptwithattribute-insensitive") << QStringLiteral("<p>foo</p><SCRIPT>\na\n</script><a>boo<script type=\"foo\">\nalert(1)</script></a>") << QStringLiteral("<p>foo</p><a>boo</a>");
+    QTest::newRow("multiline-scriptwithspace-insensitive") << QStringLiteral("<a>boo<SCRIPT type=\"foo\" >\nalert(1)\nbla\nsl</script ></a>") << QStringLiteral("<a>boo</a>");
 }
 
 void WebEnginePartHtmlWriterTest::removeScriptInHtml()
