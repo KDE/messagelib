@@ -80,6 +80,7 @@ QString WebEnginePartHtmlWriter::removeJscripts(QString str)
     //Remove string as <script src=http://.../>
     const QRegularExpression regScript2(QStringLiteral("<script[^>]*/>"));
     str.remove(regScript2);
+    //Multiline script
     const QRegularExpression regScriptStart(QStringLiteral("<script[^>]*>"));
     const QRegularExpression regScriptEnd(QStringLiteral("</script\\s*>"));
     int indexStartScriptFound = -1;
