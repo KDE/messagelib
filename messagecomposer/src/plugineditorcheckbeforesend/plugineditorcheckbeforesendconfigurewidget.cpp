@@ -21,9 +21,8 @@
 
 using namespace MessageComposer;
 
-PluginEditorCheckBeforeSendConfigureWidget::PluginEditorCheckBeforeSendConfigureWidget(KIdentityManagement::IdentityManager *identityManager, QWidget *parent)
-    : QWidget(parent),
-      mIdentityManagement(identityManager)
+PluginEditorCheckBeforeSendConfigureWidget::PluginEditorCheckBeforeSendConfigureWidget(QWidget *parent)
+    : QWidget(parent)
 {
 
 }
@@ -36,14 +35,4 @@ PluginEditorCheckBeforeSendConfigureWidget::~PluginEditorCheckBeforeSendConfigur
 QString PluginEditorCheckBeforeSendConfigureWidget::helpAnchor() const
 {
     return QString();
-}
-
-void PluginEditorCheckBeforeSendConfigureWidget::setIdentityManager(KIdentityManagement::IdentityManager *identityManagement)
-{
-    mIdentityManagement = identityManagement;
-}
-
-KIdentityManagement::IdentityManager *PluginEditorCheckBeforeSendConfigureWidget::identityManager() const
-{
-    return mIdentityManagement;
 }

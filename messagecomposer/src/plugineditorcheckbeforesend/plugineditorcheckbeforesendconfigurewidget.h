@@ -23,33 +23,21 @@
 #include "messagecomposer_export.h"
 #include <QWidget>
 
-namespace KIdentityManagement
-{
-class IdentityManager;
-}
-
 namespace MessageComposer
 {
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit PluginEditorCheckBeforeSendConfigureWidget(KIdentityManagement::IdentityManager *identityManager, QWidget *parent = Q_NULLPTR);
+    explicit PluginEditorCheckBeforeSendConfigureWidget(QWidget *parent = Q_NULLPTR);
     ~PluginEditorCheckBeforeSendConfigureWidget();
 
     virtual void loadSettings() = 0;
     virtual void saveSettings() = 0;
     virtual void resetSettings() = 0;
     virtual QString helpAnchor() const;
-
-    void setIdentityManager(KIdentityManagement::IdentityManager *identityManager);
-    KIdentityManagement::IdentityManager *identityManager() const;
-
 Q_SIGNALS:
     void configureChanged();
-
-private:
-    KIdentityManagement::IdentityManager *mIdentityManagement;
 };
 }
 #endif // PLUGINEDITORCHECKBEFORESENDCONFIGUREWIDGET_H
