@@ -75,14 +75,14 @@ void WebEnginePartHtmlWriter::end()
 QString WebEnginePartHtmlWriter::removeJscripts(QString str)
 {
     //Remove regular <script>...</script>
-    const QRegularExpression regScript(QStringLiteral("<script[^>]*>.*?</script\\s*>"));
+    const QRegularExpression regScript(QStringLiteral("<script[^>]*>.*?</script\\s*>"), QRegularExpression::CaseInsensitiveOption);
     str.remove(regScript);
     //Remove string as <script src=http://.../>
-    const QRegularExpression regScript2(QStringLiteral("<script[^>]*/>"));
+    const QRegularExpression regScript2(QStringLiteral("<script[^>]*/>"), QRegularExpression::CaseInsensitiveOption);
     str.remove(regScript2);
     //Multiline script
-    const QRegularExpression regScriptStart(QStringLiteral("<script[^>]*>"));
-    const QRegularExpression regScriptEnd(QStringLiteral("</script\\s*>"));
+    const QRegularExpression regScriptStart(QStringLiteral("<script[^>]*>"), QRegularExpression::CaseInsensitiveOption);
+    const QRegularExpression regScriptEnd(QStringLiteral("</script\\s*>"), QRegularExpression::CaseInsensitiveOption);
     int indexStartScriptFound = -1;
     int indexEndScriptFound = -1;
     int scriptIndexPos = 0;
