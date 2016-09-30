@@ -76,10 +76,27 @@ QString WebEnginePartHtmlWriter::removeJscripts(QString str)
 {
     //Remove regular <script>...</script>
     const QRegularExpression regScript(QStringLiteral("<script[^>]*>.*?</script\\s*>"));
-    str = str.remove(regScript);
+    str.remove(regScript);
     //Remove string as <script src=http://.../>
     const QRegularExpression regScript2(QStringLiteral("<script[^>]*/>"));
-    str = str.remove(regScript2);
+    str.remove(regScript2);
+    const QRegularExpression regScriptStart(QStringLiteral("<script[^>]*>"));
+    const QRegularExpression regScriptEnd(QStringLiteral("</script\\s*>"));
+    int indexStartScriptFound = -1;
+    int indexEndScriptFound = -1;
+    int scriptIndexPos = 0;
+    QRegularExpressionMatch matchScriptStart;
+    QRegularExpressionMatch matchScriptEnd;
+    while ((indexStartScriptFound = str.indexOf(regScriptStart, scriptIndexPos, &matchScriptStart)) != -1) {
+        indexEndScriptFound = str.indexOf(regScriptEnd, indexStartScriptFound + matchScriptStart.capturedLength(), &matchScriptEnd);
+        if (indexEndScriptFound != -1) {
+            str.remove(indexStartScriptFound, (indexEndScriptFound + matchScriptEnd.capturedLength() - indexStartScriptFound));
+        } else {
+            qCWarning(MESSAGEVIEWER_LOG) << "no end script tag";
+            break;
+        }
+        scriptIndexPos = indexStartScriptFound;
+    }
     return str;
 }
 
