@@ -370,8 +370,9 @@ QString RichTextComposerNg::toCleanHtml() const
 
 void RichTextComposerNg::forceAutoCorrection(bool selectedText)
 {
-    if (document()->isEmpty())
+    if (document()->isEmpty()) {
         return;
+    }
     if (d->autoCorrection && d->autoCorrection->isEnabledAutoCorrection()) {
         const bool richText = (textMode() == RichTextComposer::Rich);
         const int initialPosition = textCursor().position();

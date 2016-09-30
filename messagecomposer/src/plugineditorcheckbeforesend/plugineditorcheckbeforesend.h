@@ -52,7 +52,6 @@ public:
     void setIsEnabled(bool enabled);
     bool isEnabled() const;
 
-
 Q_SIGNALS:
     void configChanged();
 

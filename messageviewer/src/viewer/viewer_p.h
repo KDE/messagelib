@@ -423,7 +423,6 @@ public:
     QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
-
     void setPrintElementBackground(bool printElementBackground);
 
 private Q_SLOTS:

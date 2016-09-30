@@ -21,7 +21,6 @@
 #include "viewerplugin.h"
 #include "messageviewer_debug.h"
 
-
 #include <KSharedConfig>
 #include <kpluginmetadata.h>
 #include <KPluginLoader>
@@ -202,7 +201,6 @@ ViewerPlugin *ViewerPluginManagerPrivate::pluginFromIdentifier(const QString &id
     }
     return {};
 }
-
 
 ViewerPluginManager::ViewerPluginManager(QObject *parent)
     : QObject(parent),

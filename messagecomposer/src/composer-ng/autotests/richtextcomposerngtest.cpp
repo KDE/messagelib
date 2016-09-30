@@ -379,10 +379,10 @@ void RichTextComposerNgTest::shouldLoadSignatureFromFile_data()
     QTest::addColumn<KIdentityManagement::Signature::AddedTextFlag>("signatureaddtext");
 
     QTest::newRow("signature1") << QStringLiteral("signature1.txt") << QStringLiteral("\n")
-                                 << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+                                << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
 
     QTest::newRow("signature2") << QStringLiteral("signature2.txt") << QStringLiteral("\n")
-                                 << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+                                << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
 }
 
 void RichTextComposerNgTest::shouldLoadSignatureFromFile()
@@ -453,19 +453,19 @@ void RichTextComposerNgTest::shouldLoadSignatureFromCommand_data()
     QTest::addColumn<KIdentityManagement::Signature::AddedTextFlag>("signatureaddtext");
 
     QTest::newRow("command1") << QStringLiteral("echo \"foo\"") << QStringLiteral("\n")
-                                 << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+                              << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
     QTest::newRow("command2") << QStringLiteral("echo \"foo\"") << QStringLiteral("foo ddd \n")
-                                 << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+                              << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
     QTest::newRow("command3") << QStringLiteral("echo \"foo\"") << QString()
-                                 << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+                              << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
     QTest::newRow("command4") << QStringLiteral("echo \"foo\nsss\"") << QString()
-                                 << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+                              << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
     QTest::newRow("command5") << QStringLiteral("echo \"foo\nsss\n\"") << QStringLiteral("foo ddd \n")
-                                 << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
+                              << KIdentityManagement::Signature::End << KIdentityManagement::Signature::AddSeparator;
 
     //Start
     QTest::newRow("command6") << QStringLiteral("echo \"foo\nsss\n\"") << QStringLiteral("foo ddd \n")
-                                 << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator;
+                              << KIdentityManagement::Signature::Start << KIdentityManagement::Signature::AddSeparator;
 
     //Failed
     //QTest::newRow("command7") << QStringLiteral("echo \"foo\nsss\n\"") << QStringLiteral("foo ddd \n")

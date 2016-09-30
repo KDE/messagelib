@@ -163,7 +163,8 @@ template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
     R *receiver;
     void (C::*memberFun)(Arg);
-    void operator()(Arg result) {
+    void operator()(Arg result)
+    {
         (receiver->*memberFun)(result);
     }
 };
@@ -2267,8 +2268,9 @@ void ViewerPrivate::slotPrintMessage()
         return;
     }
 #ifdef WEBENGINEVIEWER_PRINT_SUPPORT
-    if (mCurrentPrinter)
+    if (mCurrentPrinter) {
         return;
+    }
     mCurrentPrinter = new QPrinter();
     QPointer<QPrintDialog> dialog = new QPrintDialog(mCurrentPrinter, mMainWindow);
     dialog->setWindowTitle(i18n("Print Document"));
@@ -2290,7 +2292,6 @@ void ViewerPrivate::slotHandlePagePrinted(bool result)
     delete mCurrentPrinter;
     mCurrentPrinter = Q_NULLPTR;
 }
-
 
 void ViewerPrivate::slotSetEncoding()
 {

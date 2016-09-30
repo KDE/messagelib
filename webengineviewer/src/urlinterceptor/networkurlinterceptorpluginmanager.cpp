@@ -190,7 +190,6 @@ NetworkUrlInterceptorPluginManager *NetworkUrlInterceptorPluginManager::self()
     return sInstance->mailNetworkUrlInterceptorPluginManager;
 }
 
-
 NetworkUrlInterceptorPluginManager::NetworkUrlInterceptorPluginManager(QObject *parent)
     : QObject(parent),
       d(new NetworkUrlInterceptorPluginManagerPrivate(this))

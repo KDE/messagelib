@@ -56,7 +56,6 @@ void WebEnginePartHtmlWriterTest::removeScriptInHtml_data()
     QTest::newRow("scriptwithspace-insensitive") << QStringLiteral("<a>boo<SCRIPT type=\"foo\" >alert(1)</SCRIPT ></a>") << QStringLiteral("<a>boo</a>");
     QTest::newRow("scriptwithremoveaccess-insensitive") << QStringLiteral("<a>boo<SCRIPT src=\"http://foo\"/></a>") << QStringLiteral("<a>boo</a>");
 
-
     //MultiLine insensitive
     QTest::newRow("multiline-insensitive") << QStringLiteral("<a>boo<sCript>\nalert(1)</Script></a>") << QStringLiteral("<a>boo</a>");
     QTest::newRow("multiline-scriptwithspace-insensitive") << QStringLiteral("<a>boo<SCRipT type=\"foo\" >\nalert(1)\n</script ></a>") << QStringLiteral("<a>boo</a>");
@@ -66,8 +65,8 @@ void WebEnginePartHtmlWriterTest::removeScriptInHtml_data()
 
 void WebEnginePartHtmlWriterTest::removeScriptInHtml()
 {
-    QFETCH (QString, input);
-    QFETCH (QString, output);
+    QFETCH(QString, input);
+    QFETCH(QString, output);
     QCOMPARE(MessageViewer::WebEnginePartHtmlWriter::removeJscripts(input), output);
 }
 

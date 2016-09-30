@@ -180,7 +180,6 @@ PluginEditorCheckBeforeSend *PluginEditorCheckBeforeSendManagerPrivate::pluginFr
     return {};
 }
 
-
 PluginEditorCheckBeforeSendManager::PluginEditorCheckBeforeSendManager(QObject *parent)
     : QObject(parent),
       d(new MessageComposer::PluginEditorCheckBeforeSendManagerPrivate(this))
