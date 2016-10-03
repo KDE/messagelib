@@ -104,6 +104,7 @@ private Q_SLOTS:
     void slotLoadFinished();
 private:
     void initializeScripts();
+    void runJavaScriptInWordId(const QString &script);
     MailWebEngineViewPrivate *const d;
 };
 }

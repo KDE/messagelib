@@ -107,6 +107,11 @@ MailWebEngineView::~MailWebEngineView()
     delete d;
 }
 
+void MailWebEngineView::runJavaScriptInWordId(const QString &script)
+{
+    page()->runJavaScript(script);
+}
+
 void MailWebEngineView::initializeScripts()
 {
     initializeJQueryScript();
@@ -129,12 +134,12 @@ void MailWebEngineView::slotWebHitFinished(const WebEngineViewer::WebHitTestResu
 
 void MailWebEngineView::scrollUp(int pixels)
 {
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollUp(pixels));
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::scrollUp(pixels));
 }
 
 void MailWebEngineView::scrollDown(int pixels)
 {
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollDown(pixels));
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::scrollDown(pixels));
 }
 
 void MailWebEngineView::selectAll()
@@ -251,22 +256,23 @@ bool MailWebEngineView::isScrolledToBottom() const
 
 void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)
 {
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::setElementByIdVisible(id, visible));
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::setElementByIdVisible(id, visible));
 }
 
 void MailWebEngineView::removeAttachmentMarking(const QString &id)
 {
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::removeStyleToElement(QLatin1String("*#") + id));
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::removeStyleToElement(QLatin1String("*#") + id));
 }
 
 void MailWebEngineView::markAttachment(const QString &id, const QString &style)
 {
     //TODO verify "*#" + id
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::setStyleToElement(QLatin1String("*#") + id, style));
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::setStyleToElement(QLatin1String("*#") + id, style));
 }
 
 void MailWebEngineView::scrollToAnchor(const QString &anchor)
 {
+    //TODO add wordid here too
     page()->runJavaScript(WebEngineViewer::WebEngineScript::searchElementPosition(anchor), invoke(this, &MailWebEngineView::handleScrollToAnchor));
 }
 
@@ -276,14 +282,14 @@ void MailWebEngineView::handleScrollToAnchor(const QVariant &result)
         const QList<QVariant> lst = result.toList();
         if (lst.count() == 2) {
             const QPoint pos(lst.at(0).toInt(), lst.at(1).toInt());
-            page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollToPosition(pos));
+            runJavaScriptInWordId(WebEngineViewer::WebEngineScript::scrollToPosition(pos));
         }
     }
 }
 
 void MailWebEngineView::scrollPageDown(int percent)
 {
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollPercentage(percent));
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::scrollPercentage(percent));
 }
 
 void MailWebEngineView::scrollPageUp(int percent)
@@ -296,7 +302,7 @@ void MailWebEngineView::executeCustomRenderingScripts()
     const QString scripts = MessageViewer::MailWebEngineScript::manageShowHideAttachments() +
                             MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("To")) +
                             MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("Cc"));
-    page()->runJavaScript(scripts);
+    runJavaScriptInWordId(scripts);
 }
 
 void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
@@ -305,7 +311,7 @@ void MailWebEngineView::injectAttachments(const boost::function<QString()> &dela
     if (html.isEmpty()) {
         return;
     }
-    page()->runJavaScript(MessageViewer::MailWebEngineScript::injectAttachments(html, QStringLiteral("attachmentInjectionPoint")));
+    runJavaScriptInWordId(MessageViewer::MailWebEngineScript::injectAttachments(html, QStringLiteral("attachmentInjectionPoint")));
 }
 
 void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml)
@@ -316,7 +322,7 @@ void MailWebEngineView::toggleFullAddressList(const QString &field, const boost:
     }
 
     //qDebug() << "void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow)" << html << " fields " << field;
-    page()->runJavaScript(MessageViewer::MailWebEngineScript::replaceInnerHtml(field, html));
+    runJavaScriptInWordId(MessageViewer::MailWebEngineScript::replaceInnerHtml(field, html));
 }
 
 bool MailWebEngineView::hasVerticalScrollBar() const
@@ -336,7 +342,7 @@ bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) cons
 
 void MailWebEngineView::scrollToRelativePosition(qreal pos)
 {
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollToRelativePosition(pos));
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::scrollToRelativePosition(pos));
 }
 
 QUrl MailWebEngineView::linkOrImageUrlAt(const QPoint &global) const
