@@ -109,8 +109,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
             reader.readEntry("PGPMessageWarn", cPgpWarnH);
         cPgpErrH  =
             reader.readEntry("PGPMessageErr", cPgpErrH);
-        cHtmlWarning =
-            reader.readEntry("HTMLWarningColor", cHtmlWarning);
         for (int i = 0; i < 3; ++i) {
             const QString key = QLatin1String("QuotedText") + QString::number(i + 1);
             mQuoteColor[i] = reader.readEntry(key, mQuoteColor[i]);
