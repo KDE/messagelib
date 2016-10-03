@@ -18,7 +18,7 @@
 */
 
 #include "plainheaderstyle.h"
-
+#include "messageviewer/messageviewersettings.h"
 #include "header/headerstyle_util.h"
 
 #include "header/headerstrategy.h"
@@ -108,9 +108,16 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     headerStr = QStringLiteral("<div class=\"header\" dir=\"%1\">").arg(dir);
 
     //case HdrLong:
-    if (strategy->showHeader(QStringLiteral("subject")))
+    if (strategy->showHeader(QStringLiteral("subject"))) {
+        KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
+        if (MessageViewer::MessageViewerSettings::self()->showEmoticons()) {
+            flags |= KTextToHTML::ReplaceSmileys;
+        }
+
+
         headerStr += QStringLiteral("<div dir=\"%1\"><b style=\"font-size:130%\">").arg(subjectDir) +
-                     d->mHeaderStyleUtil.subjectString(message) + QLatin1String("</b></div>\n");
+                     d->mHeaderStyleUtil.subjectString(message, flags) + QLatin1String("</b></div>\n");
+    }
 
     if (strategy->showHeader(QStringLiteral("date"))) {
         headerStr.append(i18n("Date: ") + d->mHeaderStyleUtil.strToHtml(d->mHeaderStyleUtil.dateString(message, isPrinting(), /* short = */ MessageViewer::HeaderStyleUtil::CustomDate)) + QLatin1String("<br/>\n"));

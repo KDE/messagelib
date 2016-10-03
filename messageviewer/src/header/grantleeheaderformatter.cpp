@@ -112,7 +112,12 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("subjectDir"), d->headerStyleUtil.subjectDirectionString(message));
 
     headerObject.insert(QStringLiteral("subjecti18n"), i18n("Subject:"));
-    headerObject.insert(QStringLiteral("subject"), d->headerStyleUtil.subjectString(message));
+    KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
+    if (MessageViewer::MessageViewerSettings::self()->showEmoticons()) {
+        flags |= KTextToHTML::ReplaceSmileys;
+    }
+
+    headerObject.insert(QStringLiteral("subject"), d->headerStyleUtil.subjectString(message, flags));
 
     if (message->to(false)) {
         headerObject.insert(QStringLiteral("toi18n"), i18n("To:"));
