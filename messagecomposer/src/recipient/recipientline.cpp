@@ -86,6 +86,7 @@ RecipientLineNG::RecipientLineNG(QWidget *parent)
     mEdit->setToolTip(i18n("Set the list of email addresses to receive this message"));
     mEdit->setClearButtonEnabled(true);
     topLayout->addWidget(mEdit);
+    mEdit->installEventFilter(this);
 
     connect(mEdit, &RecipientLineEdit::returnPressed, this, &RecipientLineNG::slotReturnPressed);
     connect(mEdit, &RecipientLineEdit::deleteMe, this, &RecipientLineNG::slotPropagateDeletion);
@@ -294,4 +295,15 @@ bool RecipientLineNG::enableAkonadiSearch() const
 QString RecipientLineNG::rawData() const
 {
     return mEdit->text();
+}
+
+bool RecipientLineNG::eventFilter(QObject *watched, QEvent *event)
+{
+    if (watched == mEdit) {
+        if (event->type() == QEvent::FocusIn || event->type() == QEvent::FocusOut) {
+            Q_EMIT activeChanged();
+        }
+    }
+
+    return false;
 }

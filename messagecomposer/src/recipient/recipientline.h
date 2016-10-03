@@ -115,11 +115,15 @@ Q_SIGNALS:
     void addRecipient(RecipientLineNG *, const QString &);
     void countChanged();
     void iconClicked();
+    void activeChanged();
 
 protected Q_SLOTS:
     void slotEditingFinished();
     void slotTypeModified();
     void analyzeLine(const QString &);
+
+protected:
+    bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
 
 private:
     void dataFromFields();
