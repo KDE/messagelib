@@ -22,17 +22,20 @@
 
 #include <QObject>
 #include <QWebEngineScript>
+#include "webengineviewer_export.h"
 
 class QWebEngineProfile;
 namespace WebEngineViewer
 {
-class WebEngineManageScript : public QObject
+class WEBENGINEVIEWER_EXPORT WebEngineManageScript : public QObject
 {
     Q_OBJECT
 public:
     explicit WebEngineManageScript(QObject *parent = Q_NULLPTR);
     ~WebEngineManageScript();
     void addScript(QWebEngineProfile *profile, const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
+
+    static qint32 scriptWordId() { return (QWebEngineScript::UserWorld + 1); }
 };
 }
 #endif // WEBENGINEMANAGESCRIPT_H

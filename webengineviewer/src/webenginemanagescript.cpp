@@ -53,7 +53,7 @@ void WebEngineManageScript::addScript(QWebEngineProfile *profile, const QString 
             script.setName(scriptName);
             script.setInjectionPoint(injectionPoint);
             script.setRunsOnSubFrames(true);
-            script.setWorldId(QWebEngineScript::MainWorld);
+            script.setWorldId(scriptWordId());
         }
         script.setSourceCode(source);
         profile->scripts()->insert(script);
