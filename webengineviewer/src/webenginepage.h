@@ -38,7 +38,6 @@ public:
 
     ~WebEnginePage();
     WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
-    QVariant execJavaScript(const QString &scriptSource, int timeout = 500);
 
     void saveHtml(QWebEngineDownloadItem *download);
 Q_SIGNALS:

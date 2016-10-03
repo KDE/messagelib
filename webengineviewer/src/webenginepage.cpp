@@ -86,23 +86,6 @@ void WebEnginePage::saveHtml(QWebEngineDownloadItem *download)
 #endif
 }
 
-QVariant WebEnginePage::execJavaScript(const QString &scriptSource, int timeout)
-{
-    QVariant result;
-    QPointer<QEventLoop> loop = new QEventLoop;
-    QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
-
-    runJavaScript(scriptSource, [loop, &result](const QVariant & res) {
-        if (loop && loop->isRunning()) {
-            result = res;
-            loop->quit();
-        }
-    });
-    loop->exec();
-    delete loop;
-    return result;
-}
-
 bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
 {
     if (isMainFrame && type == NavigationTypeLinkClicked) {
