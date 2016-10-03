@@ -114,7 +114,8 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
                 job->setUseDefaultPixmap(Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
                 job->setUseLibravatar(Gravatar::GravatarSettings::self()->libravatarSupportEnabled());
                 job->setFallbackGravatar(Gravatar::GravatarSettings::self()->fallbackToGravatar());
-                job->setUseHttps(Gravatar::GravatarSettings::self()->gravatarHttpsSupport());
+                //job->setUseHttps(Gravatar::GravatarSettings::self()->gravatarHttpsSupport());
+                job->setUseHttps(/*Gravatar::GravatarSettings::self()->gravatarHttpsSupport()*/true);
                 if (job->canStart()) {
                     connect(job, &Gravatar::GravatarResolvUrlJob::finished, this, &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
                     job->start();
