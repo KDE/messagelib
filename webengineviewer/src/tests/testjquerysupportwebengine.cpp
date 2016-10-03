@@ -27,6 +27,7 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include <QTextEdit>
+#include <WebEngineViewer/WebEngineManageScript>
 
 TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
     : QWidget(parent)
@@ -57,7 +58,11 @@ void TestJQuerySupportWebEngine::slotExecuteQuery()
 {
     const QString code = mEditor->toPlainText();
     if (!code.isEmpty()) {
+#if QT_VERSION >= 0x050700
+        pageView->page()->runJavaScript(code, WebEngineViewer::WebEngineManageScript::scriptWordId());
+#else
         pageView->page()->runJavaScript(code);
+#endif
     }
 }
 

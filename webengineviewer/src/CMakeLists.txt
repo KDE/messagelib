@@ -179,6 +179,7 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_misc_HEADERS
     WebEngineView
     WebHitTest
     WebEngineScript
+    WebEngineManageScript
     WebEnginePrintMessageBox
     WebEngineExportHtmlPageJob
     REQUIRED_HEADERS WebEngineViewer_webengine_misc_HEADERS

@@ -31,6 +31,7 @@
 #include "settings/messageviewersettings.h"
 #include "viewer/webengine/mailwebengineview.h"
 #include <WebEngineViewer/WebHitTestResult>
+#include <WebEngineViewer/WebEngineManageScript>
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "widgets/zoomactionmenu.h"
@@ -636,8 +637,12 @@ QList<QAction *> Viewer::interceptorUrlActions(const WebEngineViewer::WebHitTest
 void Viewer::runJavaScript(const QString &code)
 {
     Q_D(Viewer);
-    d->mViewer->page()->runJavaScript(code);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    d->mViewer->page()->runJavaScript(code, WebEngineViewer::WebEngineManageScript::scriptWordId());
+#else
+     d->mViewer->page()->runJavaScript(code);
+#endif
 }
-
+ 
 }
 

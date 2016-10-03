@@ -25,6 +25,7 @@
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
 #include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
 #include <WebEngineViewer/NetworkAccessManagerWebEngine>
+#include <WebEngineViewer/WebEngineManageScript>
 
 #include "scamdetection/scamdetectionwebengine.h"
 #include "scamdetection/scamcheckshorturl.h"
@@ -110,7 +111,11 @@ MailWebEngineView::~MailWebEngineView()
 
 void MailWebEngineView::runJavaScriptInWordId(const QString &script)
 {
+#if QT_VERSION >= 0x050700
+    page()->runJavaScript(script, WebEngineViewer::WebEngineManageScript::scriptWordId());
+#else
     page()->runJavaScript(script);
+#endif
 }
 
 void MailWebEngineView::initializeScripts()
@@ -269,8 +274,13 @@ void MailWebEngineView::markAttachment(const QString &id, const QString &style)
 
 void MailWebEngineView::scrollToAnchor(const QString &anchor)
 {
-    //TODO add wordid here too
+#if QT_VERSION >= 0x050700
+    page()->runJavaScript(WebEngineViewer::WebEngineScript::searchElementPosition(anchor),
+                          WebEngineViewer::WebEngineManageScript::scriptWordId(),
+                          invoke(this, &MailWebEngineView::handleScrollToAnchor));
+#else
     page()->runJavaScript(WebEngineViewer::WebEngineScript::searchElementPosition(anchor), invoke(this, &MailWebEngineView::handleScrollToAnchor));
+#endif
 }
 
 void MailWebEngineView::handleScrollToAnchor(const QVariant &result)

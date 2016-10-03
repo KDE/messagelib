@@ -61,7 +61,9 @@ void WebEnginePartHtmlWriter::end()
         insertExtraHead();
         mExtraHead.clear();
     }
+#if QT_VERSION < QT_VERSION_CHECK(5, 7, 0)
     mHtml = removeJscripts(mHtml);
+#endif
     mHtmlView->setHtml(mHtml, QUrl(QStringLiteral("file:///")));
     mHtmlView->show();
     mHtml.clear();

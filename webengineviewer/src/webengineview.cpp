@@ -59,6 +59,11 @@ WebEngineView::~WebEngineView()
     delete d;
 }
 
+WebEngineManageScript *WebEngineView::webEngineManagerScript() const
+{
+    return d->mManagerScript;
+}
+
 void WebEngineView::initializeJQueryScript()
 {
     QFile file;
