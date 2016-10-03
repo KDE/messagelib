@@ -797,6 +797,11 @@ public:
                                 htmlStr += deepQuoteFontTag[actQuoteLevel % 3];
                             }
                         }
+                        // Add blockquote
+                        if (previousQuoteDepth < actQuoteLevel) {
+                            htmlStr += cssHelper()->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
+                        }
+
                     } else {
                         // Add blockquote
                         if (previousQuoteDepth < actQuoteLevel) {
