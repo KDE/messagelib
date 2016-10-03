@@ -665,12 +665,12 @@ public:
         return htmlWriter->html;
     }
 
-    QString quotedHTML(const QString &s, bool decorate)
+    QString quotedHTML(const QString &s)
     {
         assert(cssHelper());
 
         KTextToHTML::Options convertFlags = KTextToHTML::PreserveSpaces | KTextToHTML::HighlightText;
-        if (decorate && source()->showEmoticons()) {
+        if (source()->showEmoticons()) {
             convertFlags |= KTextToHTML::ReplaceSmileys;
         }
         QString htmlStr;
@@ -872,7 +872,7 @@ public:
                 aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
             }
 
-            htmlWriter->queue(quotedHTML(mp->text(), false));
+            htmlWriter->queue(quotedHTML(mp->text()));
         }
         return htmlWriter->html;
     }
