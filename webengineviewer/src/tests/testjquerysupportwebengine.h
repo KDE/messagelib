@@ -38,6 +38,7 @@ private Q_SLOTS:
     void slotExecuteQuery();
 
 private:
+    void handleResultScript(const QVariant &var);
     void slotShowConsoleMessage(const QString &message);
     WebEngineViewer::WebEngineView *pageView;
     QTextEdit *mEditor;

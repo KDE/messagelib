@@ -24,8 +24,30 @@
 #include <QPushButton>
 #include <QTextEdit>
 #include <QVBoxLayout>
+#include <QPointer>
 #include <WebEngineViewer/WebEngineManageScript>
 #include <WebEngineViewer/WebEnginePage>
+
+
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
+    QPointer<R> receiver;
+    void (C::*memberFunction)(Arg);
+    void operator()(Arg result)
+    {
+        if (receiver) {
+            (receiver->*memberFunction)(result);
+        }
+    }
+};
+
+template<typename Arg, typename R, typename C>
+
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFunction};
+    return wrapper;
+}
 
 TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
     : QWidget(parent)
@@ -60,12 +82,18 @@ void TestJQuerySupportWebEngine::slotShowConsoleMessage(const QString &message)
     qDebug() <<"TestJQuerySupportWebEngine::slotShowConsoleMessage :"<<message;
 }
 
+void TestJQuerySupportWebEngine::handleResultScript(const QVariant &var)
+{
+    qDebug() << " void TestJQuerySupportWebEngine::handleResultScript(const QVariant &var)"<<var;
+}
+
 void TestJQuerySupportWebEngine::slotExecuteQuery()
 {
     const QString code = mEditor->toPlainText();
     if (!code.isEmpty()) {
 #if QT_VERSION >= 0x050700
-        pageView->page()->runJavaScript(code, WebEngineViewer::WebEngineManageScript::scriptWordId());
+        pageView->page()->runJavaScript(code, WebEngineViewer::WebEngineManageScript::scriptWordId(),
+                                        invoke(this, &TestJQuerySupportWebEngine::handleResultScript));
 #else
         pageView->page()->runJavaScript(code);
 #endif
