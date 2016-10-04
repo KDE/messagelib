@@ -1622,7 +1622,7 @@ void ViewerPrivate::createActions()
     // open URL
     mUrlOpenAction = new QAction(QIcon::fromTheme(QStringLiteral("document-open")), i18n("Open URL"), this);
     ac->addAction(QStringLiteral("open_url"), mUrlOpenAction);
-    connect(mUrlOpenAction, SIGNAL(triggered(bool)), this, SLOT(slotUrlOpen()));
+    connect(mUrlOpenAction, &QAction::triggered, this, &ViewerPrivate::slotOpenUrl);
 
     // use fixed font
     mToggleFixFontAction = new KToggleAction(i18n("Use Fi&xed Font"), this);
@@ -1950,6 +1950,11 @@ void ViewerPrivate::update(MimeTreeParser::UpdateMode updateMode)
     } else {
         mUpdateReaderWinTimer.start(0);
     }
+}
+
+void ViewerPrivate::slotOpenUrl()
+{
+     slotUrlOpen();
 }
 
 void ViewerPrivate::slotUrlOpen(const QUrl &url)

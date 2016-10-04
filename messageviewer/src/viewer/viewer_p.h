@@ -471,6 +471,7 @@ private Q_SLOTS:
 public Q_SLOTS:
     /** An URL has been activate with a click. */
     void slotUrlOpen(const QUrl &url = QUrl());
+    void slotOpenUrl();
 
     /** The mouse has moved on or off an URL. */
     void slotUrlOn(const QString &link);
