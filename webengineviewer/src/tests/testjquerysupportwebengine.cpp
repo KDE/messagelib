@@ -25,12 +25,15 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 #include <WebEngineViewer/WebEngineManageScript>
+#include <WebEngineViewer/WebEnginePage>
 
 TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
     pageView = new WebEngineViewer::WebEngineView(this);
+    WebEngineViewer::WebEnginePage *page = new WebEngineViewer::WebEnginePage(this);
+    pageView->setPage(page);
     vboxLayout->addWidget(pageView);
 
     pageView->initializeJQueryScript();
@@ -38,6 +41,7 @@ TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
     mEditor->setAcceptRichText(false);
     mEditor->setPlainText(QStringLiteral("qt.jQuery('img').each( function () { qt.jQuery(this).css('-webkit-transition', '-webkit-transform 2s'); qt.jQuery(this).css('-webkit-transform', 'rotate(180deg)') } ); undefined"));
     vboxLayout->addWidget(mEditor);
+    connect(page, &WebEngineViewer::WebEnginePage::showConsoleMessage, this, &TestJQuerySupportWebEngine::slotShowConsoleMessage);
 
     QPushButton *executeQuery = new QPushButton(QStringLiteral("Execute Query"), this);
     connect(executeQuery, &QPushButton::clicked, this, &TestJQuerySupportWebEngine::slotExecuteQuery);
@@ -49,6 +53,11 @@ TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
 TestJQuerySupportWebEngine::~TestJQuerySupportWebEngine()
 {
 
+}
+
+void TestJQuerySupportWebEngine::slotShowConsoleMessage(const QString &message)
+{
+    qDebug() <<"TestJQuerySupportWebEngine::slotShowConsoleMessage :"<<message;
 }
 
 void TestJQuerySupportWebEngine::slotExecuteQuery()
