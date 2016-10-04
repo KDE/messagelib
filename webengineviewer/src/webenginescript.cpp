@@ -180,3 +180,16 @@ QString WebEngineScript::scrollToRelativePosition(qreal pos)
     const QString source = QString::fromLatin1("window.scrollTo(window.scrollX, %1); [window.scrollX, window.scrollY];").arg(pos);
     return source;
 }
+
+QString WebEngineScript::isScrolledToBottom()
+{
+    //TODO
+    return  {};
+    /*
+    $(window).scroll(function() {
+       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+           alert("bottom!");
+       }
+    });
+    */
+}

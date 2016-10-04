@@ -40,6 +40,7 @@ WEBENGINEVIEWER_EXPORT QString scrollUp(int pixel);
 WEBENGINEVIEWER_EXPORT QString scrollPercentage(int percent);
 WEBENGINEVIEWER_EXPORT QString scrollToRelativePosition(qreal pos);
 WEBENGINEVIEWER_EXPORT QString removeStyleToElement(const QString &element);
+WEBENGINEVIEWER_EXPORT QString isScrolledToBottom();
 }
 }
 #endif // WEBENGINESCRIPT_H
