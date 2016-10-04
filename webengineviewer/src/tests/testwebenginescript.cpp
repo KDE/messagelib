@@ -165,6 +165,7 @@ void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
     scriptCombo->addItem(QStringLiteral("scroll down"), WebEngineViewer::WebEngineScript::scrollDown(0));
     scriptCombo->addItem(QStringLiteral("scroll up"), WebEngineViewer::WebEngineScript::scrollUp(0));
     scriptCombo->addItem(QStringLiteral("scroll percentage"), WebEngineViewer::WebEngineScript::scrollPercentage(0));
+    scriptCombo->addItem(QStringLiteral("Test is bottom"), WebEngineViewer::WebEngineScript::isScrolledToBottom());
 #if 0
     WebEngineViewer::WebEngineScript::setElementByIdVisible(const QString & elementStr, bool visibility);
     WebEngineViewer::WebEngineScript::setStyleToElement(const QString & elementStr, const QString & style);
