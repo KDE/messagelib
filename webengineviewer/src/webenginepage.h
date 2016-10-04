@@ -42,13 +42,15 @@ public:
     void saveHtml(QWebEngineDownloadItem *download);
 Q_SIGNALS:
     void urlClicked(const QUrl &url);
+    void showConsoleMessage(const QString &message);
 
 protected:
     bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) Q_DECL_OVERRIDE;
+    void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) Q_DECL_OVERRIDE;
 
 private:
     void init();
-    WebEnginePagePrivate *const d;
+    WebEnginePagePrivate *const d;    
 };
 }
 
