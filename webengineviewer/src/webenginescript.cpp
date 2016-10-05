@@ -181,3 +181,18 @@ QString WebEngineScript::scrollToRelativePosition(qreal pos)
     const QString source = QString::fromLatin1("window.scrollTo(window.scrollX, %1); [window.scrollX, window.scrollY];").arg(pos);
     return source;
 }
+
+QString WebEngineScript::isScrolledToBottom()
+{
+    return QString::fromLatin1("(function() { "
+                               "var isAtBottom = 0;"
+                               "if (qt.jQuery(window).scrollTop() + qt.jQuery(window).height() == qt.jQuery(document).height())"
+                               "{ "
+                               "  isAtBottom = 1;"
+                               "} else {"
+                               "  isAtBottom = 0;"
+                               "}"
+                               "return Boolean(isAtBottom); "
+                               "}());");
+}
+
