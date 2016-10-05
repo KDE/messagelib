@@ -33,6 +33,7 @@
 #include "settings/messageviewersettings.h"
 
 #include "MessageCore/MessageCoreSettings"
+#include <MessageCore/MessageCoreUtil>
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -55,21 +56,21 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     mBackgroundColor = QApplication::palette().color(QPalette::Base);
     cHtmlWarning = QColor(0xFF, 0x40, 0x40);   // warning frame color: light red
 
-    cPgpEncrH  = MessageCore::Util::pgpEncryptedMessageColor();
-    cPgpEncrHT = MessageCore::Util::pgpEncryptedTextColor();
-    cPgpOk1H   = MessageCore::Util::pgpSignedTrustedMessageColor();
-    cPgpOk1HT  = MessageCore::Util::pgpSignedTrustedTextColor();
-    cPgpOk0H   = MessageCore::Util::pgpSignedUntrustedMessageColor();
-    cPgpOk0HT  = MessageCore::Util::pgpSignedUntrustedTextColor();
-    cPgpWarnH  = MessageCore::Util::pgpSignedUntrustedMessageColor();
-    cPgpWarnHT = MessageCore::Util::pgpSignedUntrustedTextColor();
-    cPgpErrH   = MessageCore::Util::pgpSignedBadMessageColor();
-    cPgpErrHT  = MessageCore::Util::pgpSignedBadTextColor();
+    cPgpEncrH  = MessageCore::ColorUtil::self()->pgpEncryptedMessageColor();
+    cPgpEncrHT = MessageCore::ColorUtil::self()->pgpEncryptedTextColor();
+    cPgpOk1H   = MessageCore::ColorUtil::self()->pgpSignedTrustedMessageColor();
+    cPgpOk1HT  = MessageCore::ColorUtil::self()->pgpSignedTrustedTextColor();
+    cPgpOk0H   = MessageCore::ColorUtil::self()->pgpSignedUntrustedMessageColor();
+    cPgpOk0HT  = MessageCore::ColorUtil::self()->pgpSignedUntrustedTextColor();
+    cPgpWarnH  = MessageCore::ColorUtil::self()->pgpSignedUntrustedMessageColor();
+    cPgpWarnHT = MessageCore::ColorUtil::self()->pgpSignedUntrustedTextColor();
+    cPgpErrH   = MessageCore::ColorUtil::self()->pgpSignedBadMessageColor();
+    cPgpErrHT  = MessageCore::ColorUtil::self()->pgpSignedBadTextColor();
 
     if (MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
-        mQuoteColor[0] = MessageCore::Util::quoteLevel1DefaultTextColor();
-        mQuoteColor[1] = MessageCore::Util::quoteLevel2DefaultTextColor();
-        mQuoteColor[2] = MessageCore::Util::quoteLevel3DefaultTextColor();
+        mQuoteColor[0] = MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor();
+        mQuoteColor[1] = MessageCore::ColorUtil::self()->quoteLevel2DefaultTextColor();
+        mQuoteColor[2] = MessageCore::ColorUtil::self()->quoteLevel3DefaultTextColor();
     } else {
         mQuoteColor[0] = MessageCore::MessageCoreSettings::self()->quotedText1();
         mQuoteColor[1] = MessageCore::MessageCoreSettings::self()->quotedText2();

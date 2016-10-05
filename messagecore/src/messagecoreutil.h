@@ -29,6 +29,8 @@ namespace MessageCore
 class MESSAGECORE_EXPORT ColorUtil
 {
 public:
+    static ColorUtil *self();
+
     ColorUtil();
 
     void updateColors();
@@ -62,25 +64,6 @@ private:
     QColor mPgpEncryptedMessageColor;
     QColor mPgpEncryptedTextColor;
 };
-
-namespace Util
-{
-
-MESSAGECORE_EXPORT QColor misspelledDefaultTextColor();
-MESSAGECORE_EXPORT QColor quoteLevel1DefaultTextColor();
-MESSAGECORE_EXPORT QColor quoteLevel2DefaultTextColor();
-MESSAGECORE_EXPORT QColor quoteLevel3DefaultTextColor();
-
-MESSAGECORE_EXPORT QColor pgpSignedTrustedMessageColor();
-MESSAGECORE_EXPORT QColor pgpSignedTrustedTextColor();
-MESSAGECORE_EXPORT QColor pgpSignedUntrustedMessageColor();
-MESSAGECORE_EXPORT QColor pgpSignedUntrustedTextColor();
-MESSAGECORE_EXPORT QColor pgpSignedBadMessageColor();
-MESSAGECORE_EXPORT QColor pgpSignedBadTextColor();
-MESSAGECORE_EXPORT QColor pgpEncryptedMessageColor();
-MESSAGECORE_EXPORT QColor pgpEncryptedTextColor();
-
-}
 }
 
 #endif // MESSAGECORE_UTIL_H

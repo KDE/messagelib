@@ -30,85 +30,12 @@ static bool isLightTheme()
     return qApp->palette().color(QPalette::Background).value() >= 128;
 }
 
-QColor Util::misspelledDefaultTextColor()
-{
-    return KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::NegativeText).color().lighter();
-}
+Q_GLOBAL_STATIC(ColorUtil, s_self)
 
-QColor Util::quoteLevel1DefaultTextColor()
+ColorUtil *ColorUtil::self()
 {
-    auto base = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::PositiveText).color();
-    if (isLightTheme()) {
-        return base.darker(120);
-    } else {
-        return base.lighter(200);
-    }
+    return s_self;
 }
-
-QColor Util::quoteLevel2DefaultTextColor()
-{
-    auto base = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::PositiveText).color();
-    if (isLightTheme()) {
-        return base.darker(150);
-    } else {
-        return base.lighter(170);
-    }
-}
-
-QColor Util::quoteLevel3DefaultTextColor()
-{
-    auto base = KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::PositiveText).color();
-    if (isLightTheme()) {
-        return base.dark(200);
-    } else {
-        return base.lighter(140);
-    }
-}
-
-// The reason the encrypted message colors are hard-coded while the others not
-// is that we simply don't have a KColorScheme role for that that would have a
-// good analogy. The blue color however works nicely with both dark and light
-// themes and has a good contrast
-QColor Util::pgpEncryptedMessageColor()
-{
-    return QColor(0x00, 0x80, 0xFF); // light blue
-}
-
-QColor Util::pgpEncryptedTextColor()
-{
-    return QColor(0xFF, 0xFF, 0xFF); // white
-}
-
-QColor Util::pgpSignedTrustedMessageColor()
-{
-    return KColorScheme(QPalette::Active, KColorScheme::View).background(KColorScheme::PositiveBackground).color();
-}
-
-QColor Util::pgpSignedTrustedTextColor()
-{
-    return KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::PositiveText).color();
-}
-
-QColor Util::pgpSignedUntrustedMessageColor()
-{
-    return KColorScheme(QPalette::Active, KColorScheme::View).background(KColorScheme::NeutralBackground).color();
-}
-
-QColor Util::pgpSignedUntrustedTextColor()
-{
-    return KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::NeutralText).color();
-}
-
-QColor Util::pgpSignedBadMessageColor()
-{
-    return KColorScheme(QPalette::Active, KColorScheme::View).background(KColorScheme::NegativeBackground).color();
-}
-
-QColor Util::pgpSignedBadTextColor()
-{
-    return KColorScheme(QPalette::Active, KColorScheme::View).foreground(KColorScheme::NegativeText).color();
-}
-
 
 ColorUtil::ColorUtil()
 {
