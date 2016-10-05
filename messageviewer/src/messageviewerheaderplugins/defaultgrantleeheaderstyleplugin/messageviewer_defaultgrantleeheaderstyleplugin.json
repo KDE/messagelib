@@ -29,6 +29,7 @@
         "Name[sv]": "Normal Grantlee-huvudstil", 
         "Name[uk]": "Типовий стиль заголовків Grantlee", 
         "Name[x-test]": "xxDefault Grantlee Header Stylexx", 
+        "Name[zh_CN]": "默认 Grantlee 头样式", 
         "ServiceTypes": [
             "MessageViewerHeaderStyle/Plugin"
         ], 
