@@ -121,7 +121,6 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
                            "    var geometry = element.getBoundingClientRect(); "
                            "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
                            "}").arg(elementStr);
-    //qDebug()<<" source "<<source;
     return source;
 }
 
@@ -132,8 +131,6 @@ QString WebEngineScript::scrollPercentage(int percent)
                            "var height = docElement.clientHeight;"
                            "var newPosition = current + height * %1 /100;"
                            "window.scrollTo(window.scrollX, newPosition);").arg(percent);
-
-    //qDebug() << "QString WebEngineScript::scrollPercentage(int percent) " << source;
     return source;
 }
 
@@ -152,7 +149,6 @@ QString WebEngineScript::scrollDown(int pixel)
 QString WebEngineScript::scrollToPosition(const QPoint &pos)
 {
     const QString source = QString::fromLatin1("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x()).arg(pos.y());
-    //qDebug()<<" source "<<source;
     return source;
 }
 
@@ -171,7 +167,6 @@ QString WebEngineScript::setStyleToElement(const QString &elementStr, const QStr
                            "if (element) { "
                            "    element.style = '%2';"
                            "}").arg(elementStr).arg(style);
-    //qDebug() << "QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style) " << source;
     return source;
 }
 
