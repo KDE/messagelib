@@ -248,12 +248,15 @@ void MailWebEngineView::hideAccessKeys()
     d->mWebViewAccessKey->hideAccessKeys();
 }
 
-bool MailWebEngineView::isScrolledToBottom() const
+void MailWebEngineView::isScrolledToBottom()
 {
-    qDebug() << "bool MailWebEngineView::isScrolledToBottom() const not implemented";
-    //Convert as async
-    //TODO '(window.innerHeight + window.scrollY) >= document.body.offsetHeight)'
-    return false;
+#if QT_VERSION >= 0x050700
+    page()->runJavaScript(WebEngineViewer::WebEngineScript::isScrolledToBottom(),
+                          WebEngineViewer::WebEngineManageScript::scriptWordId(),
+                          invoke(this, &MailWebEngineView::handleIsScrolledToBottom));
+#else
+    page()->runJavaScript(WebEngineViewer::WebEngineScript::isScrolledToBottom(), invoke(this, &MailWebEngineView::handleIsScrolledToBottom));
+#endif
 }
 
 void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)
@@ -281,6 +284,15 @@ void MailWebEngineView::scrollToAnchor(const QString &anchor)
 #else
     page()->runJavaScript(WebEngineViewer::WebEngineScript::searchElementPosition(anchor), invoke(this, &MailWebEngineView::handleScrollToAnchor));
 #endif
+}
+
+void MailWebEngineView::handleIsScrolledToBottom(const QVariant &result)
+{
+    bool scrolledToBottomResult = false;
+    if (result.isValid()) {
+        scrolledToBottomResult = result.toBool();
+    }
+    Q_EMIT pageIsScrolledToBottom(scrolledToBottomResult);
 }
 
 void MailWebEngineView::handleScrollToAnchor(const QVariant &result)

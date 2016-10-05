@@ -46,7 +46,7 @@ public:
     void saveMainFrameScreenshotInFile(const QString &filename);
     void showAccessKeys();
     void hideAccessKeys();
-    bool isScrolledToBottom() const;
+    void isScrolledToBottom();
 
     void setElementByIdVisible(const QString &id, bool visible);
     void removeAttachmentMarking(const QString &id);
@@ -93,9 +93,11 @@ Q_SIGNALS:
     /// @param url if an URL was under the cursor, this parameter contains it. Otherwise empty
     /// @param point position where the click happened, in local coordinates
     void popupMenu(const WebEngineViewer::WebHitTestResult &result);
+    void pageIsScrolledToBottom(bool);
 
 private Q_SLOTS:
     void handleScrollToAnchor(const QVariant &result);
+    void handleIsScrolledToBottom(const QVariant &result);
 
     void slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result);
     void slotLoadFinished();

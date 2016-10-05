@@ -83,6 +83,7 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::changeDisplayMail, this, &Viewer::slotChangeDisplayMail);
     connect(d_ptr, &ViewerPrivate::moveMessageToTrash, this, &Viewer::moveMessageToTrash);
     connect(d_ptr, &ViewerPrivate::executeMailAction, this, &Viewer::executeMailAction);
+    connect(d_ptr, &ViewerPrivate::pageIsScrolledToBottom, this, &Viewer::pageIsScrolledToBottom);
 
     setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
 }
@@ -217,10 +218,10 @@ void Viewer::slotScrollDown()
     d->mViewer->scrollDown(10);
 }
 
-bool Viewer::atBottom() const
+void Viewer::atBottom()
 {
     Q_D(const Viewer);
-    return d->mViewer->isScrolledToBottom();
+    d->mViewer->isScrolledToBottom();
 }
 
 void Viewer::slotJumpDown()

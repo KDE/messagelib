@@ -1059,6 +1059,7 @@ void ViewerPrivate::initHtmlWidget()
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::messageIsNotAScam, this, &ViewerPrivate::slotMessageIsNotAScam);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::addToWhiteList, this, &ViewerPrivate::slotAddToWhiteList);
+    connect(mViewer, &MailWebEngineView::pageIsScrolledToBottom, this, &ViewerPrivate::pageIsScrolledToBottom);
 }
 
 bool ViewerPrivate::eventFilter(QObject *, QEvent *e)

@@ -235,7 +235,7 @@ public:
     void enableMessageDisplay();
 
     /** Returns true if the message view is scrolled to the bottom. */
-    bool atBottom() const;
+    void atBottom();
 
     bool isFixedFont() const;
     void setUseFixedFont(bool useFixedFont);
@@ -325,6 +325,7 @@ public:
     void runJavaScript(const QString &code);
 Q_SIGNALS:
     void moveMessageToTrash();
+    void pageIsScrolledToBottom(bool);
     void executeMailAction(MessageViewer::Viewer::MailAction type);
 
     /**

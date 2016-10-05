@@ -572,6 +572,7 @@ Q_SIGNALS:
     void changeDisplayMail(Viewer::DisplayFormatMessage, bool);
     void moveMessageToTrash();
     void executeMailAction(MessageViewer::Viewer::MailAction type);
+    void pageIsScrolledToBottom(bool);
 private:
     QString attachmentInjectionHtml();
     QString recipientsQuickListLinkHtml(const QString &);
