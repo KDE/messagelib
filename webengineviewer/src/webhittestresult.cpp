@@ -43,32 +43,32 @@ class WebEngineViewer::WebHitTestResultPrivate
 {
 public:
     WebHitTestResultPrivate(const QPoint &pos = QPoint(), const QUrl &url = QUrl(), const QVariant &result = QVariant())
-        : m_isNull(true),
-          m_isContentEditable(false),
-          m_isContentSelected(false),
-          m_mediaPaused(false),
-          m_mediaMuted(false),
-          m_pos(pos),
-          m_pageUrl(url)
+        : mIsNull(true),
+          mIsContentEditable(false),
+          mIsContentSelected(false),
+          mMediaPaused(false),
+          mMediaMuted(false),
+          mPos(pos),
+          mPageUrl(url)
     {
         init(result.toMap());
     }
     void init(const QVariantMap &map);
 
-    bool m_isNull;
-    QString m_alternateText;
-    QRect m_boundingRect;
-    QUrl m_imageUrl;
-    bool m_isContentEditable;
-    bool m_isContentSelected;
-    QString m_linkTitle;
-    QUrl m_linkUrl;
-    QUrl m_mediaUrl;
-    bool m_mediaPaused;
-    bool m_mediaMuted;
-    QPoint m_pos;
-    QString m_tagName;
-    QUrl m_pageUrl;
+    bool mIsNull;
+    QString mAlternateText;
+    QRect mBoundingRect;
+    QUrl mImageUrl;
+    bool mIsContentEditable;
+    bool mIsContentSelected;
+    QString mLinkTitle;
+    QUrl mLinkUrl;
+    QUrl mMediaUrl;
+    bool mMediaPaused;
+    bool mMediaMuted;
+    QPoint mPos;
+    QString mTagName;
+    QUrl mPageUrl;
 };
 
 void WebHitTestResultPrivate::init(const QVariantMap &map)
@@ -77,32 +77,32 @@ void WebHitTestResultPrivate::init(const QVariantMap &map)
         return;
     }
     //qDebug()<<" void WebHitTestResult::init(const QVariantMap &map)"<<map;
-    m_alternateText = map.value(QStringLiteral("alternateText")).toString();
-    m_imageUrl = map.value(QStringLiteral("imageUrl")).toUrl();
-    m_isContentEditable = map.value(QStringLiteral("contentEditable")).toBool();
-    m_isContentSelected = map.value(QStringLiteral("contentSelected")).toBool();
-    m_linkTitle = map.value(QStringLiteral("linkTitle")).toString();
-    m_linkUrl = map.value(QStringLiteral("linkUrl")).toUrl();
-    m_mediaUrl = map.value(QStringLiteral("mediaUrl")).toUrl();
-    m_mediaPaused = map.value(QStringLiteral("mediaPaused")).toBool();
-    m_mediaMuted = map.value(QStringLiteral("mediaMuted")).toBool();
-    m_tagName = map.value(QStringLiteral("tagName")).toString();
+    mAlternateText = map.value(QStringLiteral("alternateText")).toString();
+    mImageUrl = map.value(QStringLiteral("imageUrl")).toUrl();
+    mIsContentEditable = map.value(QStringLiteral("contentEditable")).toBool();
+    mIsContentSelected = map.value(QStringLiteral("contentSelected")).toBool();
+    mLinkTitle = map.value(QStringLiteral("linkTitle")).toString();
+    mLinkUrl = map.value(QStringLiteral("linkUrl")).toUrl();
+    mMediaUrl = map.value(QStringLiteral("mediaUrl")).toUrl();
+    mMediaPaused = map.value(QStringLiteral("mediaPaused")).toBool();
+    mMediaMuted = map.value(QStringLiteral("mediaMuted")).toBool();
+    mTagName = map.value(QStringLiteral("tagName")).toString();
 
     const QVariantList &rect = map.value(QStringLiteral("boundingRect")).toList();
     if (rect.size() == 4) {
-        m_boundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
+        mBoundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
     }
 
-    if (!m_imageUrl.isEmpty()) {
-        m_imageUrl = m_pageUrl.resolved(m_imageUrl);
+    if (!mImageUrl.isEmpty()) {
+        mImageUrl = mPageUrl.resolved(mImageUrl);
     }
-    if (!m_linkUrl.isEmpty()) {
-        m_linkUrl = m_pageUrl.resolved(m_linkUrl);
+    if (!mLinkUrl.isEmpty()) {
+        mLinkUrl = mPageUrl.resolved(mLinkUrl);
     }
-    if (!m_mediaUrl.isEmpty()) {
-        m_mediaUrl = m_pageUrl.resolved(m_mediaUrl);
+    if (!mMediaUrl.isEmpty()) {
+        mMediaUrl = mPageUrl.resolved(mMediaUrl);
     }
-    m_isNull = false;
+    mIsNull = false;
 }
 WebHitTestResult::WebHitTestResult()
     : d(new WebHitTestResultPrivate)
@@ -136,70 +136,70 @@ WebHitTestResult &WebHitTestResult::operator=(const WebHitTestResult &other)
 
 QString WebHitTestResult::alternateText() const
 {
-    return d->m_alternateText;
+    return d->mAlternateText;
 }
 
 QRect WebHitTestResult::boundingRect() const
 {
-    return d->m_boundingRect;
+    return d->mBoundingRect;
 }
 
 QUrl WebHitTestResult::imageUrl() const
 {
-    return d->m_imageUrl;
+    return d->mImageUrl;
 }
 
 bool WebHitTestResult::isContentEditable() const
 {
-    return d->m_isContentEditable;
+    return d->mIsContentEditable;
 }
 
 bool WebHitTestResult::isContentSelected() const
 {
-    return d->m_isContentSelected;
+    return d->mIsContentSelected;
 }
 
 bool WebHitTestResult::isNull() const
 {
-    return d->m_isNull;
+    return d->mIsNull;
 }
 
 QString WebHitTestResult::linkTitle() const
 {
-    return d->m_linkTitle;
+    return d->mLinkTitle;
 }
 
 QUrl WebHitTestResult::linkUrl() const
 {
-    return d->m_linkUrl;
+    return d->mLinkUrl;
 }
 
 QUrl WebHitTestResult::mediaUrl() const
 {
-    return d->m_mediaUrl;
+    return d->mMediaUrl;
 }
 
 bool WebHitTestResult::mediaPaused() const
 {
-    return d->m_mediaPaused;
+    return d->mMediaPaused;
 }
 
 bool WebHitTestResult::mediaMuted() const
 {
-    return d->m_mediaMuted;
+    return d->mMediaMuted;
 }
 
 QPoint WebHitTestResult::pos() const
 {
-    return d->m_pos;
+    return d->mPos;
 }
 
 QString WebHitTestResult::tagName() const
 {
-    return d->m_tagName;
+    return d->mTagName;
 }
 
 QUrl WebHitTestResult::pageUrl() const
 {
-    return d->m_pageUrl;
+    return d->mPageUrl;
 }
