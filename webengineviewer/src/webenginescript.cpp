@@ -183,13 +183,14 @@ QString WebEngineScript::scrollToRelativePosition(qreal pos)
 
 QString WebEngineScript::isScrolledToBottom()
 {
-    //TODO
-    return QString::fromLatin1("qt.jQuery(window).scroll(function() { "
-                               "  if (qt.jQuery(window).scrollTop() + qt.jQuery(window).height() == qt.jQuery(document).height()) "
-                               "  { "
-                               "    return true;"
-                               "  } else {"
-                               "    return false;"
-                               "  } "
-                               "});");
+    return QString::fromLatin1("(function() { "
+                               "var isAtBottom = 0;"
+                               "if (qt.jQuery(window).scrollTop() + qt.jQuery(window).height() == qt.jQuery(document).height())"
+                               "{ "
+                               "  isAtBottom = 1;"
+                               "} else {"
+                               "  isAtBottom = 0;"
+                               "}"
+                               "return Boolean(isAtBottom); "
+                               "}());");
 }
