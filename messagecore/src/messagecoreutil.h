@@ -26,6 +26,42 @@
 
 namespace MessageCore
 {
+class MESSAGECORE_EXPORT ColorUtil
+{
+public:
+    ColorUtil();
+
+    void updateColors();
+
+    QColor misspelledDefaultTextColor() const;
+    QColor quoteLevel1DefaultTextColor() const;
+    QColor quoteLevel2DefaultTextColor() const;
+    QColor quoteLevel3DefaultTextColor() const;
+    QColor pgpSignedTrustedMessageColor() const;
+    QColor pgpSignedTrustedTextColor() const;
+    QColor pgpSignedUntrustedMessageColor() const;
+    QColor pgpSignedUntrustedTextColor() const;
+    QColor pgpSignedBadMessageColor() const;
+    QColor pgpSignedBadTextColor() const;
+    QColor pgpEncryptedMessageColor() const;
+    QColor pgpEncryptedTextColor() const;
+
+private:
+    void initializeColors();
+    QColor mMisspelledDefaultTextColor;
+    QColor mQuoteLevel1DefaultTextColor;
+    QColor mQuoteLevel2DefaultTextColor;
+    QColor mQuoteLevel3DefaultTextColor;
+
+    QColor mPgpSignedTrustedMessageColor;
+    QColor mPgpSignedTrustedTextColor;
+    QColor mPgpSignedUntrustedMessageColor;
+    QColor mPgpSignedUntrustedTextColor;
+    QColor mPgpSignedBadMessageColor;
+    QColor mPgpSignedBadTextColor;
+    QColor mPgpEncryptedMessageColor;
+    QColor mPgpEncryptedTextColor;
+};
 
 namespace Util
 {
