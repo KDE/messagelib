@@ -125,7 +125,7 @@ CustomTemplates::~CustomTemplates()
 
 void CustomTemplates::slotNameChanged(const QString &text)
 {
-    mUi->mAdd->setEnabled(!text.isEmpty());
+    mUi->mAdd->setEnabled(!text.trimmed().isEmpty());
 }
 
 QString CustomTemplates::indexToType(int index)
