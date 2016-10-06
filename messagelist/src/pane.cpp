@@ -164,7 +164,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     connect(d->mCloseTabButton, SIGNAL(clicked()),
             SLOT(onCloseTabClicked()));
 
-    setTabsClosable(MessageListSettings::self()->tabsHaveCloseButton());
+    setTabsClosable(true);
     connect(this, SIGNAL(tabCloseRequested(int)), this, SLOT(slotTabCloseRequested(int)));
 
     readConfig(restoreSession);
@@ -834,15 +834,12 @@ void Pane::Private::updateTabControls()
         q->setCornerWidget(Q_NULLPTR, Qt::TopLeftCorner);
     }
 
-    const bool hasCloseButton(MessageListSettings::self()->tabsHaveCloseButton());
-    q->setTabsClosable(hasCloseButton);
-    if (hasCloseButton) {
-        const int numberOfTab(q->count());
-        if (numberOfTab == 1) {
-            q->tabBar()->tabButton(0, QTabBar::RightSide)->setEnabled(false);
-        } else if (numberOfTab > 1) {
-            q->tabBar()->tabButton(0, QTabBar::RightSide)->setEnabled(true);
-        }
+    q->setTabsClosable(true);
+    const int numberOfTab(q->count());
+    if (numberOfTab == 1) {
+        q->tabBar()->tabButton(0, QTabBar::RightSide)->setEnabled(false);
+    } else if (numberOfTab > 1) {
+        q->tabBar()->tabButton(0, QTabBar::RightSide)->setEnabled(true);
     }
 }
 

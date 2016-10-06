@@ -11,11 +11,6 @@
       <label>Display tooltips for messages and group headers</label>
       <whatsthis>Enable this option to display tooltips when hovering over an item in the message list.</whatsthis>
     </entry>
-    <entry name="TabsHaveCloseButton" type="Bool">
-      <default>false</default>
-      <label>Show close button on each tab</label>
-      <whatsthis>Enable this option if you want to have a close button on each tab.</whatsthis>
-    </entry>
     <entry name="ShowQuickSearch" type="Bool">
       <default>true</default>
     </entry>
