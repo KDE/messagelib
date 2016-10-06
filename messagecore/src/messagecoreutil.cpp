@@ -70,6 +70,7 @@ void ColorUtil::initializeColors()
     mPgpSignedUntrustedTextColor = scheme.foreground(KColorScheme::NeutralText).color();
     mPgpSignedBadMessageColor = scheme.background(KColorScheme::NegativeBackground).color();
     mPgpSignedBadTextColor = scheme.foreground(KColorScheme::NegativeText).color();
+    mLinkColor = scheme.foreground(KColorScheme::LinkText).color();
 }
 
 QColor ColorUtil::misspelledDefaultTextColor() const
@@ -130,4 +131,9 @@ QColor ColorUtil::pgpEncryptedMessageColor() const
 QColor ColorUtil::pgpEncryptedTextColor() const
 {
     return mPgpEncryptedTextColor;
+}
+
+QColor ColorUtil::linkColor() const
+{
+    return mLinkColor;
 }

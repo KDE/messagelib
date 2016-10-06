@@ -47,6 +47,7 @@ public:
     QColor pgpSignedBadTextColor() const;
     QColor pgpEncryptedMessageColor() const;
     QColor pgpEncryptedTextColor() const;
+    QColor linkColor() const;
 
 private:
     void initializeColors();
@@ -63,6 +64,7 @@ private:
     QColor mPgpSignedBadTextColor;
     QColor mPgpEncryptedMessageColor;
     QColor mPgpEncryptedTextColor;
+    QColor mLinkColor;
 };
 }
 
