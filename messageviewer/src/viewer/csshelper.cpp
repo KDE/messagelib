@@ -85,9 +85,7 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     mPrintFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer::MessageViewerSettings::self()->printFont();
     mFixedFont = mFixedPrintFont = defaultFixedFont;
     defaultFont.setItalic(true);
-    for (int i = 0; i < 3; ++i) {
-        mQuoteFont[i] = defaultFont;
-    }
+    mQuoteFont = defaultFont;
 
     KConfig *config = MessageViewer::MessageViewerSettings::self()->config();
 
@@ -121,12 +119,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
         mPrintFont = fonts.readEntry("print-font", mPrintFont);
         mFixedFont = fonts.readEntry("fixed-font", mFixedFont);
         mFixedPrintFont = mFixedFont; // FIXME when we have a separate fixed print font
-        QFont defaultFont = mBodyFont;
-        defaultFont.setItalic(true);
-        for (int i = 0; i < 3; ++i) {
-            const QString key = QStringLiteral("quote%1-font").arg(i + 1);
-            mQuoteFont[i] = fonts.readEntry(key, defaultFont);
-        }
     }
 
     mShrinkQuotes = MessageViewer::MessageViewerSettings::self()->shrinkQuotes();

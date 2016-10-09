@@ -56,9 +56,7 @@ TestCSSHelper::TestCSSHelper(const QPaintDevice *pd) :
     mFixedFont = defaultFont;
     mFixedPrintFont = defaultFont;
     defaultFont.setItalic(true);
-    for (int i = 0; i < 3; ++i) {
-        mQuoteFont[i] = defaultFont;
-    }
+    mQuoteFont = defaultFont;
 
     mShrinkQuotes = false;
 

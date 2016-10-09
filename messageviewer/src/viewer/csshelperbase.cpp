@@ -185,7 +185,7 @@ QString CSSHelperBase::quoteFontTag(int level) const
     if (level < 0) {
         level = 0;
     }
-    static const int numQuoteLevels = sizeof mQuoteFont / sizeof * mQuoteFont;
+    static const int numQuoteLevels = 3;
     const int effectiveLevel = mRecycleQuoteColors
                                ? level % numQuoteLevels + 1
                                : qMin(level + 1, numQuoteLevels);
@@ -364,10 +364,10 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
         quoteCSS += QStringLiteral("div.quotelevel%1 {\n"
                                    "  color: %2 ! important;\n")
                     .arg(QString::number(i + 1), quoteColorName(i));
-        if (mQuoteFont[i].italic()) {
+        if (mQuoteFont.italic()) {
             quoteCSS += QLatin1String("  font-style: italic ! important;\n");
         }
-        if (mQuoteFont[i].bold()) {
+        if (mQuoteFont.bold()) {
             quoteCSS += QLatin1String("  font-weight: bold ! important;\n");
         }
         if (mShrinkQuotes)
@@ -381,10 +381,10 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
         quoteCSS += QStringLiteral("div.deepquotelevel%1 {\n"
                                    "  color: %2 ! important;\n")
                     .arg(QString::number(i + 1), quoteColorName(i));
-        if (mQuoteFont[i].italic()) {
+        if (mQuoteFont.italic()) {
             quoteCSS += QLatin1String("  font-style: italic ! important;\n");
         }
-        if (mQuoteFont[i].bold()) {
+        if (mQuoteFont.bold()) {
             quoteCSS += QLatin1String("  font-weight: bold ! important;\n");
         }
         if (mShrinkQuotes) {

@@ -90,7 +90,7 @@ protected:
     QFont mPrintFont;
     QFont mFixedFont;
     QFont mFixedPrintFont;
-    QFont mQuoteFont[3];
+    QFont mQuoteFont;
     QColor mQuoteColor[3];
     bool mRecycleQuoteColors;
     bool mShrinkQuotes;
