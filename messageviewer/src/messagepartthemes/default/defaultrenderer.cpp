@@ -34,8 +34,7 @@
 #include <MimeTreeParser/ObjectTreeParser>
 #include <GrantleeTheme/QtResourceTemplateLoader>
 
-#include <Libkleo/CryptoBackend>
-#include <Libkleo/CryptoBackendFactory>
+#include <QGpgME/Protocol>
 
 #include <MessageCore/StringUtil>
 
@@ -63,7 +62,7 @@ using namespace MimeTreeParser;
 using namespace MessageViewer;
 
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
-Q_DECLARE_METATYPE(const Kleo::CryptoBackend::Protocol *)
+Q_DECLARE_METATYPE(const QGpgME::Protocol *)
 
 static QString iconToDataUrl(const QString &iconPath)
 {
@@ -158,7 +157,7 @@ static const int SIG_FRAME_COL_UNDEF = 99;
 #define SIG_FRAME_COL_RED    -1
 #define SIG_FRAME_COL_YELLOW  0
 #define SIG_FRAME_COL_GREEN   1
-QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
+QString sigStatusToString(const QGpgME::Protocol *cryptProto,
                           int status_code,
                           GpgME::Signature::Summary summary,
                           int &frameColor,
@@ -170,7 +169,7 @@ QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
     showKeyInfos = true;
     QString result;
     if (cryptProto) {
-        if (cryptProto == Kleo::CryptoBackendFactory::instance()->openpgp()) {
+        if (cryptProto == QGpgME::openpgp()) {
             // process enum according to it's definition to be read in
             // GNU Privacy Guard CVS repository /gpgme/gpgme/gpgme.h
             switch (status_code) {
@@ -207,7 +206,7 @@ QString sigStatusToString(const Kleo::CryptoBackend::Protocol *cryptProto,
                 result.clear();   // do *not* return a default text here !
                 break;
             }
-        } else if (cryptProto == Kleo::CryptoBackendFactory::instance()->smime()) {
+        } else if (cryptProto == QGpgME::smime()) {
             // process status bits according to SigStatus_...
             // definitions in kdenetwork/libkdenetwork/cryptplug.h
 
@@ -667,7 +666,7 @@ public:
 
     QString quotedHTML(const QString &s)
     {
-        assert(cssHelper());
+        Q_ASSERT(cssHelper());
 
         KTextToHTML::Options convertFlags = KTextToHTML::PreserveSpaces | KTextToHTML::HighlightText;
         if (source()->showEmoticons()) {
@@ -974,7 +973,7 @@ public:
         const auto metaData = mp->mMetaData;
         auto cryptoProto = mp->mCryptoProto;
 
-        const bool isSMIME = cryptoProto && (cryptoProto == Kleo::CryptoBackendFactory::instance()->smime());
+        const bool isSMIME = cryptoProto && (cryptoProto == QGpgME::smime());
 
         Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/signedmessagepart.html"));
         Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();

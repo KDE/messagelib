@@ -28,8 +28,6 @@
 #include <kmime/kmime_content.h>
 
 #include <Libkleo/Enum>
-#include <Libkleo/KeyListJob>
-#include <Libkleo/CryptoBackendFactory>
 #include <kjob.h>
 
 #include <MessageComposer/Composer>

@@ -21,11 +21,12 @@
 #include "job/encryptjob.h"
 
 #include "contentjobbase_p.h"
-#include "Libkleo/CryptoBackendFactory"
-#include "Libkleo/CryptoBackend"
-#include "Libkleo/EncryptJob"
-#include "Libkleo/Enum"
 #include "utils/util.h"
+
+#include <Libkleo/Enum>
+
+#include <QGpgME/Protocol>
+#include <QGpgME/EncryptJob>
 
 #include "messagecomposer_debug.h"
 
@@ -155,11 +156,11 @@ void EncryptJob::process()
 
     //d->resultContent = new KMime::Content;
 
-    const Kleo::CryptoBackend::Protocol *proto = Q_NULLPTR;
+    const QGpgME::Protocol *proto = Q_NULLPTR;
     if (d->format & Kleo::AnyOpenPGP) {
-        proto = Kleo::CryptoBackendFactory::instance()->openpgp();
+        proto = QGpgME::openpgp();
     } else if (d->format & Kleo::AnySMIME) {
-        proto = Kleo::CryptoBackendFactory::instance()->smime();
+        proto = QGpgME::smime();
     } else {
         qCDebug(MESSAGECOMPOSER_LOG) << "HELP! Encrypt job but have protocol to encrypt with.";
         return;
@@ -168,7 +169,7 @@ void EncryptJob::process()
     Q_ASSERT(proto);
 
     qCDebug(MESSAGECOMPOSER_LOG) << "got backend, starting job";
-    Kleo::EncryptJob *seJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
+    QGpgME::EncryptJob *seJob = proto->encryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat);
 
     // for now just do the main recipients
     QByteArray encryptedBody;

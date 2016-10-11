@@ -21,11 +21,11 @@
 #include "job/signencryptjob.h"
 
 #include "contentjobbase_p.h"
-#include "Libkleo/CryptoBackendFactory"
-#include "Libkleo/CryptoBackend"
-#include "Libkleo/Enum"
-#include "Libkleo/SignEncryptJob"
 #include "utils/util.h"
+
+#include <Libkleo/Enum>
+#include <QGpgME/Protocol>
+#include <QGpgME/SignEncryptJob>
 
 #include "messagecomposer_debug.h"
 #include <kmime/kmime_message.h>
@@ -157,11 +157,11 @@ void SignEncryptJob::process()
         d->content = d->subjobContents.first();
     }
 
-    const Kleo::CryptoBackend::Protocol *proto = Q_NULLPTR;
+    const QGpgME::Protocol *proto = Q_NULLPTR;
     if (d->format & Kleo::AnyOpenPGP) {
-        proto = Kleo::CryptoBackendFactory::instance()->openpgp();
+        proto = QGpgME::openpgp();
     } else if (d->format & Kleo::AnySMIME) {
-        proto = Kleo::CryptoBackendFactory::instance()->smime();
+        proto = QGpgME::smime();
     } else {
         return;
     }
@@ -169,7 +169,7 @@ void SignEncryptJob::process()
     //d->resultContent = new KMime::Content;
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating signencrypt from:" << proto->name() << proto->displayName();
-    std::unique_ptr<Kleo::SignEncryptJob> job(proto->signEncryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
+    std::unique_ptr<QGpgME::SignEncryptJob> job(proto->signEncryptJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
     QByteArray encBody;
     d->content->assemble();
 

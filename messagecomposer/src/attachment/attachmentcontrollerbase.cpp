@@ -58,7 +58,7 @@
 #include <KFileItemActions>
 #include <KActionMenu>
 
-#include <Libkleo/CryptoBackendFactory>
+#include <QGpgME/Protocol>
 #include <Libkleo/KeySelectionDialog>
 
 #include <MessageCore/AttachmentCompressJob>
@@ -390,7 +390,7 @@ void AttachmentControllerBase::Private::createOpenWithMenu(QMenu *topMenu, Attac
 
 void AttachmentControllerBase::exportPublicKey(const QString &fingerprint)
 {
-    if (fingerprint.isEmpty() || !Kleo::CryptoBackendFactory::instance()->openpgp()) {
+    if (fingerprint.isEmpty() || !QGpgME::openpgp()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "Tried to export key with empty fingerprint, or no OpenPGP.";
         return;
     }

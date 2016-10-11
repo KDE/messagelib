@@ -43,10 +43,11 @@
 #include "utils/kleo_util.h"
 
 #include <KEmailAddress>
-#include "Libkleo/KeySelectionDialog"
-#include "Libkleo/CryptoBackendFactory"
-#include "Libkleo/KeyListJob"
-#include "Libkleo/Dn"
+#include <Libkleo/KeySelectionDialog>
+#include <Libkleo/Dn>
+
+#include <QGpgME/Protocol>
+#include <QGpgME/KeyListJob>
 
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
@@ -111,11 +112,6 @@ CopyKeysAndEncryptionPreferences(const Kleo::KeyResolver::Item &oldItem,
                                  const Kleo::KeyApprovalDialog::Item &newItem)
 {
     return Kleo::KeyResolver::Item(oldItem.address, newItem.keys, newItem.pref, oldItem.signPref, oldItem.format);
-}
-
-static inline bool ByKeyID(const GpgME::Key &left, const GpgME::Key &right)
-{
-    return qstrcmp(left.keyID(), right.keyID()) < 0;
 }
 
 static inline bool WithRespectToKeyID(const GpgME::Key &left, const GpgME::Key &right)
@@ -1866,8 +1862,8 @@ std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, b
     qCDebug(MESSAGECOMPOSER_LOG) << "( \"" << patterns.join(QStringLiteral("\", \"")) << "\"," << secret << ")";
     std::vector<GpgME::Key> result;
     if (mCryptoMessageFormats & (InlineOpenPGPFormat | OpenPGPMIMEFormat))
-        if (const Kleo::CryptoBackend::Protocol *p = Kleo::CryptoBackendFactory::instance()->openpgp()) {
-            std::unique_ptr<Kleo::KeyListJob> job(p->keyListJob(false, false, true));     // use validating keylisting
+        if (const QGpgME::Protocol *p = QGpgME::openpgp()) {
+            std::unique_ptr<QGpgME::KeyListJob> job(p->keyListJob(false, false, true));     // use validating keylisting
             if (job.get()) {
                 std::vector<GpgME::Key> keys;
                 job->exec(patterns, secret, keys);
@@ -1875,8 +1871,8 @@ std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, b
             }
         }
     if (mCryptoMessageFormats & (SMIMEFormat | SMIMEOpaqueFormat))
-        if (const Kleo::CryptoBackend::Protocol *p = Kleo::CryptoBackendFactory::instance()->smime()) {
-            std::unique_ptr<Kleo::KeyListJob> job(p->keyListJob(false, false, true));     // use validating keylisting
+        if (const QGpgME::Protocol *p = QGpgME::smime()) {
+            std::unique_ptr<QGpgME::KeyListJob> job(p->keyListJob(false, false, true));     // use validating keylisting
             if (job.get()) {
                 std::vector<GpgME::Key> keys;
                 job->exec(patterns, secret, keys);

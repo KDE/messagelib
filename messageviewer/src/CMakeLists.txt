@@ -235,12 +235,9 @@ target_link_libraries(KF5MessageViewer
     Grantlee5::TextDocument
     Grantlee5::Templates
     Qt5::PrintSupport
+    Gpgmepp
     )
-if (WIN32)
-    target_link_libraries(KF5MessageViewer PUBLIC KF5::Gpgmepp)
-else()
-    target_link_libraries(KF5MessageViewer PUBLIC KF5::Gpgmepp-pthread)
-endif()
+
 if (KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT)
     target_link_libraries(KF5MessageViewer PRIVATE KF5::SyntaxHighlighting)
 endif()

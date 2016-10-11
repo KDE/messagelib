@@ -27,7 +27,7 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::PimTextEdit
         KF5::AkonadiCore
         Qt5::Test
-        KF5::QGpgme
+        QGpgme
         KF5::IconThemes
         KF5::Completion
         KF5::MailTransport

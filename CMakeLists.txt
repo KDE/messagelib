@@ -18,7 +18,7 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
 
-set(PIM_VERSION "5.3.72")
+set(PIM_VERSION "5.3.73")
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
 set(AKONADIMIME_LIB_VERSION "5.3.40")
@@ -38,7 +38,7 @@ set(KMBOX_LIB_VERSION "5.3.40")
 set(KMIME_LIB_VERSION "5.3.40")
 set(KPIMTEXTEDIT_LIB_VERSION "5.3.43")
 set(LIBKDEPIM_LIB_VERSION "5.3.42")
-set(LIBKLEO_LIB_VERSION "5.3.40")
+set(LIBKLEO_LIB_VERSION "5.3.46")
 set(PIMCOMMON_LIB_VERSION "5.3.54")
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test Network PrintSupport WebEngine WebEngineWidgets WebKitWidgets)
@@ -61,7 +61,6 @@ find_package(KF5WindowSystem ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
 
 find_package(Grantlee5 "5.1" CONFIG REQUIRED)
-find_package(Gpgme REQUIRED)
 
 find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(KF5AkonadiMime ${AKONADIMIME_LIB_VERSION} CONFIG REQUIRED)

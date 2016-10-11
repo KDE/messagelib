@@ -20,9 +20,9 @@
 
 #include "setupenv.h"
 
-#include <Libkleo/KeyListJob>
+#include <QGpgME/Protocol>
+#include <QGpgME/KeyListJob>
 #include <gpgme++/keylistresult.h>
-#include <Libkleo/CryptoBackendFactory>
 
 #include <QFile>
 #include <QDir>
@@ -32,26 +32,18 @@ void MessageComposer::Test::setupEnv()
 {
     setenv("LC_ALL", "C", 1);
     setenv("KDEHOME", QFile::encodeName(QDir::homePath() + QString::fromLatin1("/.qttest")).constData(), 1);
-
-    QStringList reasons;
-    Kleo::CryptoBackendFactory::instance()->scanForBackends(&reasons);
-    if (!reasons.isEmpty()) {
-        Q_FOREACH (const QString &reason, reasons) {
-            qWarning() << reason;
-        }
-    }
 }
 
 std::vector< GpgME::Key, std::allocator< GpgME::Key > > MessageComposer::Test::getKeys(bool smime)
 {
-    Kleo::KeyListJob *job = 0;
+    QGpgME::KeyListJob *job = 0;
 
     if (smime) {
-        const Kleo::CryptoBackend::Protocol *const backend = Kleo::CryptoBackendFactory::instance()->smime();
+        const QGpgME::Protocol *const backend = QGpgME::smime();
         Q_ASSERT(backend);
         job = backend->keyListJob(false);
     } else {
-        const Kleo::CryptoBackend::Protocol *const backend = Kleo::CryptoBackendFactory::instance()->openpgp();
+        const QGpgME::Protocol *const backend = QGpgME::openpgp();
         Q_ASSERT(backend);
         job = backend->keyListJob(false);
     }

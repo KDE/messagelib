@@ -15,7 +15,7 @@ macro(add_templateparser_unittest _source)
     KF5::Libkleo
     KF5::TemplateParser
     KF5::MessageViewer
-    KF5::QGpgme
+    QGpgme
     Qt5::Test
     KF5::KIOCore
     KF5::Mime

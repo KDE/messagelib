@@ -21,11 +21,11 @@
 #include "job/signjob.h"
 
 #include "contentjobbase_p.h"
-#include "Libkleo/CryptoBackendFactory"
-#include "Libkleo/CryptoBackend"
-#include "Libkleo/Enum"
-#include "Libkleo/SignJob"
 #include "utils/util.h"
+
+#include <Libkleo/Enum>
+#include <QGpgME/Protocol>
+#include <QGpgME/SignJob>
 
 #include "messagecomposer_debug.h"
 #include <kmime/kmime_headers.h>
@@ -140,17 +140,17 @@ void SignJob::process()
 
     //d->resultContent = new KMime::Content;
 
-    const Kleo::CryptoBackend::Protocol *proto = Q_NULLPTR;
+    const QGpgME::Protocol *proto = Q_NULLPTR;
     if (d->format & Kleo::AnyOpenPGP) {
-        proto = Kleo::CryptoBackendFactory::instance()->openpgp();
+        proto = QGpgME::openpgp();
     } else if (d->format & Kleo::AnySMIME) {
-        proto = Kleo::CryptoBackendFactory::instance()->smime();
+        proto = QGpgME::smime();
     }
 
     Q_ASSERT(proto);
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating signJob from:" << proto->name() << proto->displayName();
-    std::unique_ptr<Kleo::SignJob> job(proto->signJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
+    std::unique_ptr<QGpgME::SignJob> job(proto->signJob(!d->binaryHint(d->format), d->format == Kleo::InlineOpenPGPFormat));
     // for now just do the main recipients
     QByteArray signature;
 

@@ -27,7 +27,7 @@
 
 #include "interfaces/bodypart.h"
 
-namespace Kleo
+namespace QGpgME
 {
 class DecryptVerifyJob;
 }
@@ -40,7 +40,7 @@ class DecryptVerifyBodyPartMemento
 {
     Q_OBJECT
 public:
-    DecryptVerifyBodyPartMemento(Kleo::DecryptVerifyJob *job, const QByteArray &cipherText);
+    DecryptVerifyBodyPartMemento(QGpgME::DecryptVerifyJob *job, const QByteArray &cipherText);
     ~DecryptVerifyBodyPartMemento();
 
     bool start() Q_DECL_OVERRIDE;
@@ -71,7 +71,7 @@ private:
 private:
     // input:
     const QByteArray m_cipherText;
-    QPointer<Kleo::DecryptVerifyJob> m_job;
+    QPointer<QGpgME::DecryptVerifyJob> m_job;
     // output:
     GpgME::DecryptionResult m_dr;
     GpgME::VerificationResult m_vr;

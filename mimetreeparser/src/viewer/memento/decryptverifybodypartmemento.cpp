@@ -17,11 +17,11 @@
 
 #include "decryptverifybodypartmemento.h"
 
-#include <Libkleo/DecryptVerifyJob>
+#include <QGpgME/DecryptVerifyJob>
 
 #include <qstringlist.h>
 
-using namespace Kleo;
+using namespace QGpgME;
 using namespace GpgME;
 using namespace MimeTreeParser;
 
@@ -30,7 +30,7 @@ DecryptVerifyBodyPartMemento::DecryptVerifyBodyPartMemento(DecryptVerifyJob *job
       m_cipherText(cipherText),
       m_job(job)
 {
-    assert(m_job);
+    Q_ASSERT(m_job);
 }
 
 DecryptVerifyBodyPartMemento::~DecryptVerifyBodyPartMemento()
@@ -42,7 +42,7 @@ DecryptVerifyBodyPartMemento::~DecryptVerifyBodyPartMemento()
 
 bool DecryptVerifyBodyPartMemento::start()
 {
-    assert(m_job);
+    Q_ASSERT(m_job);
     if (const Error err = m_job->start(m_cipherText)) {
         m_dr = DecryptionResult(err);
         return false;
@@ -55,7 +55,7 @@ bool DecryptVerifyBodyPartMemento::start()
 
 void DecryptVerifyBodyPartMemento::exec()
 {
-    assert(m_job);
+    Q_ASSERT(m_job);
     QByteArray plainText;
     setRunning(true);
     const std::pair<DecryptionResult, VerificationResult> p = m_job->exec(m_cipherText, plainText);
@@ -68,7 +68,7 @@ void DecryptVerifyBodyPartMemento::saveResult(const DecryptionResult &dr,
         const VerificationResult &vr,
         const QByteArray &plainText)
 {
-    assert(m_job);
+    Q_ASSERT(m_job);
     setRunning(false);
     m_dr = dr;
     m_vr = vr;

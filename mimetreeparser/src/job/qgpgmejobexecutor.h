@@ -29,7 +29,7 @@
 
 class QEventLoop;
 
-namespace Kleo
+namespace QGpgME
 {
 class DecryptVerifyJob;
 class ImportJob;
@@ -43,22 +43,22 @@ namespace MimeTreeParser
 /**
   Helper class for synchronous execution of Kleo crypto jobs.
 */
-class KleoJobExecutor : public QObject
+class QGpgMEJobExecutor : public QObject
 {
     Q_OBJECT
 public:
-    explicit KleoJobExecutor(QObject *parent = Q_NULLPTR);
+    explicit QGpgMEJobExecutor(QObject *parent = Q_NULLPTR);
 
-    GpgME::VerificationResult exec(Kleo::VerifyDetachedJob *job,
+    GpgME::VerificationResult exec(QGpgME::VerifyDetachedJob *job,
                                    const QByteArray &signature,
                                    const QByteArray &signedData);
-    GpgME::VerificationResult exec(Kleo::VerifyOpaqueJob *job,
+    GpgME::VerificationResult exec(QGpgME::VerifyOpaqueJob *job,
                                    const QByteArray &signedData,
                                    QByteArray &plainText);
-    std::pair<GpgME::DecryptionResult, GpgME::VerificationResult> exec(Kleo::DecryptVerifyJob *job,
+    std::pair<GpgME::DecryptionResult, GpgME::VerificationResult> exec(QGpgME::DecryptVerifyJob *job,
             const QByteArray &cipherText,
             QByteArray &plainText);
-    GpgME::ImportResult exec(Kleo::ImportJob *job, const QByteArray &certData);
+    GpgME::ImportResult exec(QGpgME::ImportJob *job, const QByteArray &certData);
 
     GpgME::Error auditLogError() const;
     QString auditLogAsHtml() const;

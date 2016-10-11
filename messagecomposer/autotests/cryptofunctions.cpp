@@ -26,8 +26,6 @@
 #include "MessageComposer/Util"
 
 #include <Libkleo/Enum>
-#include <Libkleo/KeyListJob>
-#include <Libkleo/CryptoBackendFactory>
 #include <KMime/Message>
 #include <KMime/Content>
 

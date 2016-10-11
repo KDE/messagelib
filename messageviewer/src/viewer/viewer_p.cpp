@@ -75,9 +75,6 @@
 #include <AkonadiCore/ItemModifyJob>
 #include <AkonadiCore/ItemCreateJob>
 
-#include <Libkleo/CryptoBackendFactory>
-#include <Libkleo/CryptoBackend>
-
 #include <MailTransport/mailtransport/errorattribute.h>
 
 //Qt includes

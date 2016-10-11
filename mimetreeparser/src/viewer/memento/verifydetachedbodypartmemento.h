@@ -27,7 +27,7 @@
 
 #include "interfaces/bodypart.h"
 
-namespace Kleo
+namespace QGpgME
 {
 class VerifyDetachedJob;
 class KeyListJob;
@@ -43,8 +43,8 @@ class VerifyDetachedBodyPartMemento
 {
     Q_OBJECT
 public:
-    VerifyDetachedBodyPartMemento(Kleo::VerifyDetachedJob *job,
-                                  Kleo::KeyListJob *klj,
+    VerifyDetachedBodyPartMemento(QGpgME::VerifyDetachedJob *job,
+                                  QGpgME::KeyListJob *klj,
                                   const QByteArray &signature,
                                   const QByteArray &plainText);
     ~VerifyDetachedBodyPartMemento();
@@ -75,8 +75,8 @@ private:
     // input:
     const QByteArray m_signature;
     const QByteArray m_plainText;
-    QPointer<Kleo::VerifyDetachedJob> m_job;
-    QPointer<Kleo::KeyListJob> m_keylistjob;
+    QPointer<QGpgME::VerifyDetachedJob> m_job;
+    QPointer<QGpgME::KeyListJob> m_keylistjob;
     // output:
     GpgME::VerificationResult m_vr;
     GpgME::Key m_key;

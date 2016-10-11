@@ -26,8 +26,9 @@
 #include <KDialogJobUiDelegate>
 #include <KLocalizedString>
 
-#include <Libkleo/CryptoBackendFactory>
-#include <Libkleo/ExportJob>
+#include <QGpgME/Protocol>
+#include <QGpgME/ExportJob>
+
 #include <Libkleo/ProgressDialog>
 
 using namespace MessageComposer;
@@ -105,7 +106,7 @@ void AttachmentFromPublicKeyJob::setFingerprint(const QString &fingerprint)
 
 void AttachmentFromPublicKeyJob::doStart()
 {
-    Kleo::ExportJob *job = Kleo::CryptoBackendFactory::instance()->openpgp()->publicKeyExportJob(true);
+    QGpgME::ExportJob *job = QGpgME::openpgp()->publicKeyExportJob(true);
     Q_ASSERT(job);
     QObject::connect(job, SIGNAL(result(GpgME::Error,QByteArray)),
                      this, SLOT(exportResult(GpgME::Error,QByteArray)));

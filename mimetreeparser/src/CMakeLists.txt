@@ -24,7 +24,7 @@ set(libmimetreeparser_main_SRCS
     interfaces/bodypart.cpp
     interfaces/htmlwriter.cpp
     interfaces/messagepartrenderer.cpp
-    job/kleojobexecutor.cpp
+    job/qgpgmejobexecutor.cpp
     utils/util.cpp
     viewer/attachmentstrategy.cpp
     viewer/bodypartformatter.cpp
@@ -154,6 +154,7 @@ target_link_libraries(KF5MimeTreeParser
     PUBLIC
     KF5::Libkleo
     PRIVATE
+    QGpgme
     KF5::Codecs
     KF5::I18n
     KF5::Mime

@@ -27,7 +27,6 @@
 
 #include <KMime/Message>
 
-#include <Libkleo/CryptoBackend>
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
 #include <importresult.h>
@@ -40,6 +39,11 @@ class QTextCodec;
 namespace GpgME
 {
 class ImportResult;
+}
+
+namespace QGpgME
+{
+class Protocol;
 }
 
 namespace KMime
@@ -273,7 +277,7 @@ class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart
     Q_OBJECT
 public:
     typedef QSharedPointer<CertMessagePart> Ptr;
-    CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const Kleo::CryptoBackend::Protocol *cryptoProto, bool autoImport);
+    CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const QGpgME::Protocol *cryptoProto, bool autoImport);
     virtual ~CertMessagePart();
 
     QString text() const Q_DECL_OVERRIDE;
@@ -282,7 +286,7 @@ private:
     KMime::Content *mNode;
     bool mAutoImport;
     GpgME::ImportResult mImportResult;
-    const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    const QGpgME::Protocol *mCryptoProto;
     friend class DefaultRendererPrivate;
 };
 
@@ -315,7 +319,7 @@ public:
     typedef QSharedPointer<EncryptedMessagePart> Ptr;
     EncryptedMessagePart(ObjectTreeParser *otp,
                          const QString &text,
-                         const Kleo::CryptoBackend::Protocol *cryptoProto,
+                         const QGpgME::Protocol *cryptoProto,
                          const QString &fromAddress,
                          KMime::Content *node);
 
@@ -349,7 +353,7 @@ private:
 protected:
     bool mPassphraseError;
     bool mNoSecKey;
-    const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
     KMime::Content *mNode;
     bool mDecryptMessage;
@@ -367,7 +371,7 @@ public:
     typedef QSharedPointer<SignedMessagePart> Ptr;
     SignedMessagePart(ObjectTreeParser *otp,
                       const QString &text,
-                      const Kleo::CryptoBackend::Protocol *cryptoProto,
+                      const QGpgME::Protocol *cryptoProto,
                       const QString &fromAddress,
                       KMime::Content *node);
 
@@ -397,7 +401,7 @@ private:
 
     void setVerificationResult(const CryptoBodyPartMemento *m, KMime::Content *textNode);
 protected:
-    const Kleo::CryptoBackend::Protocol *mCryptoProto;
+    const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
     KMime::Content *mNode;
     QByteArray mVerifiedText;

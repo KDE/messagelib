@@ -18,8 +18,8 @@
 #include "verifyopaquebodypartmemento.h"
 #include "mimetreeparser_debug.h"
 
-#include <Libkleo/VerifyOpaqueJob>
-#include <Libkleo/KeyListJob>
+#include <QGpgME/VerifyOpaqueJob>
+#include <QGpgME/KeyListJob>
 
 #include <gpgme++/keylistresult.h>
 
@@ -27,7 +27,7 @@
 
 #include <cassert>
 
-using namespace Kleo;
+using namespace QGpgME;
 using namespace GpgME;
 using namespace MimeTreeParser;
 

@@ -24,7 +24,7 @@
 
 #include <KMime/Content>
 
-#include <Libkleo/CryptoBackendFactory>
+#include <QGpgME/Protocol>
 
 #include "mimetreeparser_debug.h"
 
@@ -68,8 +68,8 @@ Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface:
 
     KMime::Content *signedData =  node->contents().at(0);
     KMime::Content *signature = node->contents().at(1);
-    assert(signedData);
-    assert(signature);
+    Q_ASSERT(signedData);
+    Q_ASSERT(signature);
 
     QString protocolContentType = node->contentType()->parameter(QStringLiteral("protocol")).toLower();
     const QString signatureContentType = QLatin1String(signature->contentType()->mimeType().toLower());
@@ -79,13 +79,13 @@ Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface:
         protocolContentType = signatureContentType;
     }
 
-    const Kleo::CryptoBackend::Protocol *protocol = Q_NULLPTR;
+    const QGpgME::Protocol *protocol = Q_NULLPTR;
     if (protocolContentType == QLatin1String("application/pkcs7-signature") ||
             protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
-        protocol = Kleo::CryptoBackendFactory::instance()->smime();
+        protocol = QGpgME::smime();
     } else if (protocolContentType == QLatin1String("application/pgp-signature") ||
                protocolContentType == QLatin1String("application/x-pgp-signature")) {
-        protocol = Kleo::CryptoBackendFactory::instance()->openpgp();
+        protocol = QGpgME::openpgp();
     }
 
     if (!protocol) {

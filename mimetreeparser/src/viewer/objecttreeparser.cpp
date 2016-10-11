@@ -97,7 +97,7 @@ ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source,
 
 void ObjectTreeParser::init()
 {
-    assert(mSource);
+    Q_ASSERT(mSource);
     if (!attachmentStrategy()) {
         mAttachmentStrategy = mSource->attachmentStrategy();
     }
@@ -135,7 +135,7 @@ ObjectTreeParser::~ObjectTreeParser()
 
 void ObjectTreeParser::setAllowAsync(bool allow)
 {
-    assert(!mHasPendingAsyncJobs);
+    Q_ASSERT(!mHasPendingAsyncJobs);
     mAllowAsync = allow;
 }
 
@@ -462,7 +462,7 @@ void ObjectTreeParser::setPlainTextContent(QString plainTextContent)
 
 const QTextCodec *ObjectTreeParser::codecFor(KMime::Content *node) const
 {
-    assert(node);
+    Q_ASSERT(node);
     if (mSource->overrideCodec()) {
         return mSource->overrideCodec();
     }

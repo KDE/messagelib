@@ -28,8 +28,7 @@
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
 
-#include <Libkleo/CryptoBackend>
-#include <Libkleo/CryptoBackendFactory>
+#include <QGpgME/Protocol>
 
 #include <grantlee/context.h>
 #include <grantlee/engine.h>
@@ -37,7 +36,7 @@
 #include <grantlee/templateloader.h>
 
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
-Q_DECLARE_METATYPE(const Kleo::CryptoBackend::Protocol *)
+Q_DECLARE_METATYPE(const QGpgME::Protocol *)
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
 GRANTLEE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
 if (property == QStringLiteral("keyID"))
@@ -45,11 +44,11 @@ if (property == QStringLiteral("keyID"))
     return QString::fromLatin1(object.keyID());
 }
 GRANTLEE_END_LOOKUP
-// Read-only introspection of Kleo::CryptoBackend::Protocol object.
+// Read-only introspection of QGpgME::Protocol object.
 namespace Grantlee
 {
 template<>
-inline QVariant TypeAccessor<const Kleo::CryptoBackend::Protocol *>::lookUp(const Kleo::CryptoBackend::Protocol *const object, const QString &property)
+inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object, const QString &property)
 {
     if (property == QStringLiteral("name")) {
         return object->name();
@@ -100,7 +99,7 @@ MessageViewer::MessagePartRendererManager *MessagePartRendererManager::self()
 void MessagePartRendererManager::initializeRenderer()
 {
     Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
-    Grantlee::registerMetaType<const Kleo::CryptoBackend::Protocol *>();
+    Grantlee::registerMetaType<const QGpgME::Protocol *>();
     m_engine = new GrantleeTheme::Engine;
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
 

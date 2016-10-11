@@ -39,7 +39,6 @@
 #include "mimetreeparser/nodehelper.h"
 #include "mimetreeparser/objecttreesource.h"
 
-#include <Libkleo/CryptoBackend>
 #include <gpgme++/verificationresult.h>
 
 class QString;
