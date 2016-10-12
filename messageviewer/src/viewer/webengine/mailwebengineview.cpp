@@ -315,6 +315,24 @@ void MailWebEngineView::scrollPageUp(int percent)
     scrollPageDown(-percent);
 }
 
+void MailWebEngineView::executeHideShowToAddressScripts(bool hide)
+{
+    const QString source = MessageViewer::MailWebEngineScript::manageShowHideToAddress(hide);
+    runJavaScriptInWordId(source);
+}
+
+void MailWebEngineView::executeHideShowCcAddressScripts(bool hide)
+{
+    const QString source = MessageViewer::MailWebEngineScript::manageShowHideCcAddress(hide);
+    runJavaScriptInWordId(source);
+}
+
+void MailWebEngineView::executeHideShowAttachmentsScripts(bool hide)
+{
+    const QString source = MessageViewer::MailWebEngineScript::manageShowHideAttachments(hide);
+    runJavaScriptInWordId(source);
+}
+
 void MailWebEngineView::executeCustomRenderingScripts()
 {
     const QString scripts = MessageViewer::MailWebEngineScript::manageShowHideAttachments() +

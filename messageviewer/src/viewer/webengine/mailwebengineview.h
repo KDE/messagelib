@@ -70,6 +70,9 @@ public:
 
     void setPrintElementBackground(bool printElementBackground);
 
+    void executeHideShowAttachmentsScripts(bool hide);
+    void executeHideShowToAddressScripts(bool hide);
+    void executeHideShowCcAddressScripts(bool hide);
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();

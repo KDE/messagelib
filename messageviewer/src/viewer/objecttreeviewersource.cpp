@@ -114,7 +114,7 @@ bool MailViewerSource::autoImportKeys() const
 
 bool MailViewerSource::showEmoticons() const
 {
-    return MessageViewer::MessageViewerSettings::self()->showEmoticons();
+    return mViewer->showEmoticons();
 }
 
 bool MailViewerSource::showExpandQuotesMark() const

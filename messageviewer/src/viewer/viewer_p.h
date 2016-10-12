@@ -405,6 +405,9 @@ public:
     void setUseFixedFont(bool useFixedFont);
 
     void attachmentView(KMime::Content *atmNode);
+    void setFullToAddressList(bool showFullTo);
+    void setFullCcAddressList(bool showFullCc);
+
 
     /** Show/Hide the field with id "field" */
     void toggleFullAddressList(const QString &field);
@@ -424,6 +427,7 @@ public:
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void setPrintElementBackground(bool printElementBackground);
+    bool showEmoticons() const;
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -559,6 +563,7 @@ public Q_SLOTS:
 
     void slotGeneralFontChanged();
 
+
 Q_SIGNALS:
     void showStatusBarMessage(const QString &message);
     void replaceMsgByUnencryptedVersion();
@@ -661,8 +666,6 @@ public:
     QColor mBackgroundError;
 
     Viewer *const q;
-    bool mShowFullToAddressList;
-    bool mShowFullCcAddressList;
     Akonadi::Monitor mMonitor;
     QSet<AbstractMessageLoadedHandler *> mMessageLoadedHandlers;
     Akonadi::Item::Id mPreviouslyViewedItem;

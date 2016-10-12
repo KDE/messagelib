@@ -740,6 +740,11 @@ void ViewerPrivate::attachmentOpen(KMime::Content *node)
     attachmentOpenWith(node, offer);
 }
 
+bool ViewerPrivate::showEmoticons() const
+{
+    return MessageViewer::MessageViewerSettings::self()->showEmoticons();
+}
+
 MimeTreeParser::HtmlWriter *ViewerPrivate::htmlWriter() const
 {
     return mHtmlWriter;
@@ -2765,9 +2770,20 @@ bool ViewerPrivate::showAttachmentQuicklist() const
     return mShowAttachmentQuicklist;
 }
 
+void ViewerPrivate::setFullToAddressList(bool showFullTo)
+{
+    mViewer->executeHideShowToAddressScripts(showFullTo);
+}
+
+void ViewerPrivate::setFullCcAddressList(bool showFullCc)
+{
+    mViewer->executeHideShowCcAddressScripts(showFullCc);
+}
+
 void ViewerPrivate::setShowAttachmentQuicklist(bool showAttachmentQuicklist)
 {
     mShowAttachmentQuicklist = showAttachmentQuicklist;
+    mViewer->executeHideShowAttachmentsScripts(mShowAttachmentQuicklist);
 }
 
 void ViewerPrivate::scrollToAttachment(KMime::Content *node)

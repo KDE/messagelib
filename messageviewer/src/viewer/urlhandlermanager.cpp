@@ -616,12 +616,16 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
             w->setShowAttachmentQuicklist(true);
             return true;
         } else if (urlPath == QLatin1String("showFullToAddressList")) {
+            w->setFullToAddressList(false);
             return true;
         } else if (urlPath == QLatin1String("hideFullToAddressList")) {
+            w->setFullToAddressList(true);
             return true;
         } else if (urlPath == QLatin1String("showFullCcAddressList")) {
+            w->setFullCcAddressList(false);
             return true;
         } else if (urlPath == QLatin1String("hideFullCcAddressList")) {
+            w->setFullCcAddressList(true);
             return true;
         }
     }

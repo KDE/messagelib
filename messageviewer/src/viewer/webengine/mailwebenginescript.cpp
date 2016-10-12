@@ -39,6 +39,48 @@ QString MailWebEngineScript::manageExpandAddresses(const QString &field)
     return source;
 }
 
+QString MailWebEngineScript::createShowHideAddressScript(const QString &field, bool hide)
+{
+    QString source;
+    if (hide) {
+        source = QString::fromLatin1("qt.jQuery('#kmail%1show').hide();"
+                                     "qt.jQuery(\"#kmail%1hide\").show();"
+                                     "qt.jQuery(\"#dotsFull%1AddressList\").hide();"
+                                     "qt.jQuery(\"#hiddenFull%1AddressList\").show();").arg(field);
+    } else {
+        source = QString::fromLatin1("qt.jQuery(\"#kmail%1hide\").hide();"
+                                     "qt.jQuery(\"#kmail%1show\").show();"
+                                     "qt.jQuery(\"#dotsFull%1AddressList\").show();"
+                                     "qt.jQuery(\"#hiddenFull%1AddressList\").hide();").arg(field);
+    }
+    return source;
+}
+
+QString MailWebEngineScript::manageShowHideToAddress(bool hide)
+{
+    return MailWebEngineScript::createShowHideAddressScript(QStringLiteral("To"), hide);
+}
+
+QString MailWebEngineScript::manageShowHideCcAddress(bool hide)
+{
+    return MailWebEngineScript::createShowHideAddressScript(QStringLiteral("Cc"), hide);
+}
+
+QString MailWebEngineScript::manageShowHideAttachments(bool hide)
+{
+    QString source;
+    if (hide) {
+        source = QString::fromLatin1("qt.jQuery(\"#kmailhideattachment\").hide();"
+                                    "qt.jQuery(\"#kmailshowattachment\").show();"
+                                    "qt.jQuery(\"#attachmentid\").show();");
+    } else {
+        source = QString::fromLatin1("qt.jQuery('#kmailshowattachment').hide();"
+                                     "qt.jQuery(\"#kmailhideattachment\").show();"
+                                     "qt.jQuery(\"#attachmentid\").hide();");
+    }
+    return source;
+}
+
 QString MailWebEngineScript::manageShowHideAttachments()
 {
     const QString source = QString::fromLatin1("qt.jQuery('#kmailshowattachment').click(function(){"
