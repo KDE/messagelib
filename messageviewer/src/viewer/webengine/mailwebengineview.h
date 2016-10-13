@@ -66,8 +66,6 @@ public:
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
     void toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml);
 
-    void executeCustomRenderingScripts();
-
     void setPrintElementBackground(bool printElementBackground);
 
     void executeHideShowAttachmentsScripts(bool hide);

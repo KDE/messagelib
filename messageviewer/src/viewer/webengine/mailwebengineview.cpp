@@ -120,10 +120,6 @@ void MailWebEngineView::runJavaScriptInWordId(const QString &script)
 void MailWebEngineView::initializeScripts()
 {
     initializeJQueryScript();
-    const QString scripts = MessageViewer::MailWebEngineScript::manageShowHideAttachments() +
-                            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("To")) +
-                            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("Cc"));
-    addScript(scripts, QStringLiteral("emailmanagement"), QWebEngineScript::DocumentReady);
 }
 
 void MailWebEngineView::contextMenuEvent(QContextMenuEvent *e)
@@ -331,14 +327,6 @@ void MailWebEngineView::executeHideShowAttachmentsScripts(bool hide)
 {
     const QString source = MessageViewer::MailWebEngineScript::manageShowHideAttachments(hide);
     runJavaScriptInWordId(source);
-}
-
-void MailWebEngineView::executeCustomRenderingScripts()
-{
-    const QString scripts = MessageViewer::MailWebEngineScript::manageShowHideAttachments() +
-                            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("To")) +
-                            MessageViewer::MailWebEngineScript::manageExpandAddresses(QStringLiteral("Cc"));
-    runJavaScriptInWordId(scripts);
 }
 
 void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)

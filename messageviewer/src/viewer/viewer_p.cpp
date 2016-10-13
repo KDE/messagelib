@@ -2376,7 +2376,6 @@ void ViewerPrivate::executeCustomScriptsAfterLoading()
 
     mViewer->injectAttachments(bind(&ViewerPrivate::attachmentInjectionHtml, this));
     toggleFullAddressList();
-    mViewer->executeCustomRenderingScripts();
     mViewer->scrollToRelativePosition(mViewer->relativePosition());
     mViewer->clearRelativePosition();
 }

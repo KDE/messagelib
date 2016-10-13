@@ -22,23 +22,6 @@
 #include <QDebug>
 using namespace MessageViewer;
 
-QString MailWebEngineScript::manageExpandAddresses(const QString &field)
-{
-    const QString source = QString::fromLatin1("qt.jQuery('#kmail%1show').click(function(){"
-                           "qt.jQuery('#kmail%1show').hide();"
-                           "qt.jQuery(\"#kmail%1hide\").show();"
-                           "qt.jQuery(\"#dotsFull%1AddressList\").hide();"
-                           "qt.jQuery(\"#hiddenFull%1AddressList\").show();}"
-                           ");"
-                           "qt.jQuery('#kmail%1hide').click(function(){"
-                           "qt.jQuery(\"#kmail%1hide\").hide();"
-                           "qt.jQuery(\"#kmail%1show\").show();"
-                           "qt.jQuery(\"#dotsFull%1AddressList\").show();"
-                           "qt.jQuery(\"#hiddenFull%1AddressList\").hide();}"
-                           ");").arg(field);
-    return source;
-}
-
 QString MailWebEngineScript::createShowHideAddressScript(const QString &field, bool hide)
 {
     QString source;
@@ -78,21 +61,6 @@ QString MailWebEngineScript::manageShowHideAttachments(bool hide)
                                      "qt.jQuery(\"#kmailhideattachment\").show();"
                                      "qt.jQuery(\"#attachmentid\").hide();");
     }
-    return source;
-}
-
-QString MailWebEngineScript::manageShowHideAttachments()
-{
-    const QString source = QString::fromLatin1("qt.jQuery('#kmailshowattachment').click(function(){"
-                           "qt.jQuery('#kmailshowattachment').hide();"
-                           "qt.jQuery(\"#kmailhideattachment\").show();"
-                           "qt.jQuery(\"#attachmentid\").hide()}"
-                           ");"
-                           "qt.jQuery('#kmailhideattachment').click(function(){"
-                           "qt.jQuery(\"#kmailhideattachment\").hide();"
-                           "qt.jQuery(\"#kmailshowattachment\").show();"
-                           "qt.jQuery(\"#attachmentid\").show()}"
-                           ");");
     return source;
 }
 
