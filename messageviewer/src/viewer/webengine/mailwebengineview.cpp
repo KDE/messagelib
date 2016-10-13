@@ -344,8 +344,6 @@ void MailWebEngineView::toggleFullAddressList(const QString &field, const boost:
     if (html.isEmpty()) {
         return;
     }
-
-    //qDebug() << "void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml, bool doShow)" << html << " fields " << field;
     runJavaScriptInWordId(MessageViewer::MailWebEngineScript::replaceInnerHtml(field, html));
 }
 
