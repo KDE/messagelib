@@ -2761,11 +2761,6 @@ void ViewerPrivate::setShowSignatureDetails(bool showDetails)
     mShowSignatureDetails = showDetails;
 }
 
-bool ViewerPrivate::showAttachmentQuicklist() const
-{
-    return mShowAttachmentQuicklist;
-}
-
 void ViewerPrivate::setFullToAddressList(bool showFullTo)
 {
     mViewer->executeHideShowToAddressScripts(showFullTo);
@@ -2829,11 +2824,6 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(const QString &field)
     const QString imgSrcHide = QStringLiteral("quicklistClosed.png");
     const QString visibility = QStringLiteral("style=\"display:none;\"");
 
-    //FIXME altText in french it breaks code
-#if 0
-    const QString altTextShow = i18n("Hide full address list");
-    const QString altTextHide = i18n("Show full address list");
-#endif
     return QStringLiteral("<span style=\"text-align: right;\">") +
            QStringLiteral("<a id=\"kmail%2show\" href=\"%1\">").arg(urlHandleShow).arg(field) +
            QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url(), /*altTextShow*/QString()) +
