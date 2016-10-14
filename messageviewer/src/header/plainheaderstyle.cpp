@@ -141,13 +141,19 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
         headerStr.append(i18nc("To-field of the mailheader.", "To: ") +
                          StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayFullAddress) + QLatin1String("<br/>\n"));
 
-    if (strategy->showHeader(QStringLiteral("cc")) && message->cc(false))
-        headerStr.append(i18n("CC: ") +
-                         StringUtil::emailAddrAsAnchor(message->cc(), StringUtil::DisplayFullAddress) + QLatin1String("<br/>\n"));
+    if (strategy->showHeader(QStringLiteral("cc")) && message->cc(false)) {
+        const QString str = StringUtil::emailAddrAsAnchor(message->cc(), StringUtil::DisplayFullAddress);
+        if (!str.isEmpty()) {
+            headerStr.append(i18n("CC: ") + str + QLatin1String("<br/>\n"));
+        }
+    }
 
-    if (strategy->showHeader(QStringLiteral("bcc")) && message->bcc(false))
-        headerStr.append(i18n("BCC: ") +
-                         StringUtil::emailAddrAsAnchor(message->bcc(), StringUtil::DisplayFullAddress) + QLatin1String("<br/>\n"));
+    if (strategy->showHeader(QStringLiteral("bcc")) && message->bcc(false)) {
+        const QString str = StringUtil::emailAddrAsAnchor(message->bcc(), StringUtil::DisplayFullAddress);
+        if (!str.isEmpty()) {
+            headerStr.append(i18n("BCC: ") + str + QLatin1String("<br/>\n"));
+        }
+    }
 
     if (strategy->showHeader(QStringLiteral("reply-to")) && message->replyTo(false))
         headerStr.append(i18n("Reply to: ") +
