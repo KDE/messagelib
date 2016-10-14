@@ -206,6 +206,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
       mDecrytMessageOverwrite(false),
       mShowSignatureDetails(false),
       mShowAttachmentQuicklist(true),
+      mForceEmoticons(true),
       mRecursionCountForDisplayMessage(0),
       mCurrentContent(0),
       mMessagePartNode(0),
@@ -739,7 +740,7 @@ void ViewerPrivate::attachmentOpen(KMime::Content *node)
 
 bool ViewerPrivate::showEmoticons() const
 {
-    return MessageViewer::MessageViewerSettings::self()->showEmoticons();
+    return mForceEmoticons;
 }
 
 MimeTreeParser::HtmlWriter *ViewerPrivate::htmlWriter() const
@@ -1268,6 +1269,7 @@ void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
 
 void ViewerPrivate::resetStateForNewMessage()
 {
+    mForceEmoticons = true;
     mClickedUrl.clear();
     mImageUrl.clear();
     enableMessageDisplay(); // just to make sure it's on
@@ -1726,6 +1728,11 @@ void ViewerPrivate::createActions()
     mShareServiceUrlMenu = mShareServiceManager->menu();
     ac->addAction(QStringLiteral("shareservice_menu"), mShareServiceUrlMenu);
     connect(mShareServiceManager, &PimCommon::ShareServiceUrlManager::serviceUrlSelected, this, &ViewerPrivate::slotServiceUrlSelected);
+
+    mDisableEmoticonAction = new QAction(i18n("Disable Emoticon"), this);
+    ac->addAction(QStringLiteral("disable_emoticon"), mDisableEmoticonAction);
+    connect(mDisableEmoticonAction, &QAction::triggered, this, &ViewerPrivate::slotDisableEmoticon);
+    ac->setDefaultShortcut(mFindInMessageAction, KStandardShortcut::find().first());
 }
 
 void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
@@ -3039,4 +3046,12 @@ QList<QAction *> ViewerPrivate::interceptorUrlActions(const WebEngineViewer::Web
 void ViewerPrivate::setPrintElementBackground(bool printElementBackground)
 {
     mViewer->setPrintElementBackground(printElementBackground);
+}
+
+void ViewerPrivate::slotDisableEmoticon()
+{
+    if (mForceEmoticons) {
+        mForceEmoticons = false;
+        update(MimeTreeParser::Force);
+    }
 }

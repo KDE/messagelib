@@ -100,13 +100,6 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="kcfg_ShowEmoticons">
-       <property name="text">
-        <string>Replace smileys &amp;by emoticons</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QCheckBox" name="kcfg_ShrinkQuotes">
        <property name="text">
         <string>Reduce font size for &amp;quoted text</string>
@@ -239,7 +232,6 @@
  <tabstops>
   <tabstop>kcfg_AccessKeyEnabled</tabstop>
   <tabstop>kcfg_showColorBar</tabstop>
-  <tabstop>kcfg_ShowEmoticons</tabstop>
   <tabstop>kcfg_ShrinkQuotes</tabstop>
   <tabstop>kcfg_ShowExpandQuotesMark</tabstop>
   <tabstop>kcfg_CollapseQuoteLevelSpin</tabstop>

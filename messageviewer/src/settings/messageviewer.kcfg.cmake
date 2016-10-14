@@ -52,11 +52,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default>true</default>
       <label>Show HTML Side Bar</label>
     </entry>
-    <entry name="ShowEmoticons" type="Bool">
-      <default>true</default>
-      <label>Replace smileys by emoticons</label>
-      <whatsthis>Enable this if you want smileys like :-) appearing in the message text to be replaced by emoticons (small pictures).</whatsthis>
-    </entry>
     <entry name="ShowExpandQuotesMark" type="Bool">
       <default>false</default>
       <label>Show expand/collapse quote marks</label>

@@ -469,6 +469,7 @@ private Q_SLOTS:
     void slotExportHtmlPageSuccess(const QString &filename);
     void slotHandlePagePrinted(bool result);
     void slotLoadStarted();
+    void slotDisableEmoticon();
 public Q_SLOTS:
     /** An URL has been activate with a click. */
     void slotUrlOpen(const QUrl &url = QUrl());
@@ -633,6 +634,7 @@ public:
     QAction *mFindInMessageAction;
     QAction *mSaveMessageDisplayFormat;
     QAction *mResetMessageDisplayFormat;
+    QAction *mDisableEmoticonAction;
     KToggleAction *mHeaderOnlyAttachmentsAction;
     KSelectAction *mSelectEncodingAction;
     KToggleAction *mToggleFixFontAction;
@@ -654,6 +656,7 @@ public:
     bool mDecrytMessageOverwrite;
     bool mShowSignatureDetails;
     bool mShowAttachmentQuicklist;
+    bool mForceEmoticons;
     int mRecursionCountForDisplayMessage;
     KMime::Content *mCurrentContent;
     KMime::Content *mMessagePartNode;

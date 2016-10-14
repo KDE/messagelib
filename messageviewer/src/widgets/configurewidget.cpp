@@ -63,8 +63,6 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
 
     d->mSettingsUi->overrideCharacterEncoding->setWhatsThis(
         MessageCore::MessageCoreSettings::self()->overrideCharacterEncodingItem()->whatsThis());
-    d->mSettingsUi->kcfg_ShowEmoticons->setWhatsThis(
-        MessageViewer::MessageViewerSettings::self()->showEmoticonsItem()->whatsThis());
     d->mSettingsUi->kcfg_ShrinkQuotes->setWhatsThis(
         MessageViewer::MessageViewerSettings::self()->shrinkQuotesItem()->whatsThis());
     d->mSettingsUi->kcfg_ShowExpandQuotesMark->setWhatsThis(

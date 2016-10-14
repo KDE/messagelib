@@ -109,10 +109,7 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
 
     //case HdrLong:
     if (strategy->showHeader(QStringLiteral("subject"))) {
-        KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
-        if (MessageViewer::MessageViewerSettings::self()->showEmoticons()) {
-            flags |= KTextToHTML::ReplaceSmileys;
-        }
+        const KTextToHTML::Options flags = KTextToHTML::PreserveSpaces | KTextToHTML::ReplaceSmileys;
 
 
         headerStr += QStringLiteral("<div dir=\"%1\"><b style=\"font-size:130%\">").arg(subjectDir) +

@@ -593,6 +593,12 @@ QAction *Viewer::resetMessageDisplayFormatAction() const
     return d->mResetMessageDisplayFormat;
 }
 
+QAction *Viewer::disableEmoticonAction() const
+{
+    Q_D(const Viewer);
+    return d->mDisableEmoticonAction;
+}
+
 void Viewer::saveMainFrameScreenshotInFile(const QString &filename)
 {
     Q_D(Viewer);
