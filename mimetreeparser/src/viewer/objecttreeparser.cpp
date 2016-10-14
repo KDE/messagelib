@@ -72,8 +72,7 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
       mShowOnlyOneMimePart(showOnlyOneMimePart),
       mHasPendingAsyncJobs(false),
       mAllowAsync(topLevelParser->mAllowAsync),
-      mAttachmentStrategy(strategy),
-      mPrinting(false)
+      mAttachmentStrategy(strategy)
 {
     init();
 }
@@ -89,8 +88,7 @@ ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source,
       mShowOnlyOneMimePart(showOnlyOneMimePart),
       mHasPendingAsyncJobs(false),
       mAllowAsync(false),
-      mAttachmentStrategy(strategy),
-      mPrinting(false)
+      mAttachmentStrategy(strategy)
 {
     init();
 }
@@ -119,8 +117,7 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser &other)
       mHasPendingAsyncJobs(other.hasPendingAsyncJobs()),
       mAllowAsync(other.allowAsync()),
       mAttachmentStrategy(other.attachmentStrategy()),
-      mDeleteNodeHelper(false),   // TODO see above
-      mPrinting(other.printing())
+      mDeleteNodeHelper(false)
 {
 
 }
@@ -204,16 +201,6 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
 MessagePartPtr ObjectTreeParser::parsedPart() const
 {
     return mParsedPart;
-}
-
-void ObjectTreeParser::setPrinting(bool printing)
-{
-    mPrinting = printing;
-}
-
-bool ObjectTreeParser::printing() const
-{
-    return mPrinting;
 }
 
 bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet, bool onlyOneMimePart)

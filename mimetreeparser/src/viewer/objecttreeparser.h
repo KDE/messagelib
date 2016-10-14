@@ -337,9 +337,6 @@ public:
     void parseObjectTree(KMime::Content *node);
     MessagePartPtr parsedPart() const;
 
-    void setPrinting(bool printing);
-    bool printing() const;
-
 private:
     void extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart);
     void setPlainTextContent(QString plainTextContent);
@@ -392,7 +389,6 @@ private:
     QString mCollapseIcon;
     QString mExpandIcon;
     bool mDeleteNodeHelper;
-    bool mPrinting;
 
     friend class PartNodeBodyPart;
     friend class MessagePart;
