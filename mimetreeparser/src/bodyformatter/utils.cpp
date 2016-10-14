@@ -53,14 +53,11 @@ KMime::Content *MimeTreeParser::findTypeInDirectChilds(KMime::Content *content, 
 MessagePart::Ptr MimeTreeParser::toplevelTextNode(MessagePart::Ptr messageTree)
 {
     foreach (const auto &mp, messageTree->subParts()) {
-        const auto m = mp.dynamicCast<MessagePart>();
-        const auto text = mp.dynamicCast<TextMessagePart>();
-        const auto alternative = mp.dynamicCast<AlternativeMessagePart>();
-        if (text) {
+        if (const auto text = mp.dynamicCast<TextMessagePart>()) {
             return text;
-        } else if (alternative) {
+        } else if (const auto alternative = mp.dynamicCast<AlternativeMessagePart>()) {
             return alternative;
-        } else if (m) {
+        } else if (const auto m = mp.dynamicCast<MessagePart>()) {
             auto ret = toplevelTextNode(m);
             if (ret) {
                 return ret;
