@@ -1284,7 +1284,6 @@ void ViewerPrivate::resetStateForNewMessage()
     mViewerPluginToolManager->closeAllTools();
     mScamDetectionWarning->setVisible(false);
     mOpenAttachmentFolderWidget->setVisible(false);
-    mDisplayFormatMessageOverwrite = (mDisplayFormatMessageOverwrite == MessageViewer::Viewer::UseGlobalSetting) ? MessageViewer::Viewer::UseGlobalSetting : MessageViewer::Viewer::Unknown;
 
     if (mPrinting) {
         if (MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettings()) {
@@ -1296,6 +1295,8 @@ void ViewerPrivate::resetStateForNewMessage()
         } else {
             mLevelQuote = -1;
         }
+    } else {
+        mDisplayFormatMessageOverwrite = (mDisplayFormatMessageOverwrite == MessageViewer::Viewer::UseGlobalSetting) ? MessageViewer::Viewer::UseGlobalSetting : MessageViewer::Viewer::Unknown;
     }
 }
 
