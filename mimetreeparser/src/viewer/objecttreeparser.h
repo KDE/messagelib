@@ -339,7 +339,7 @@ public:
 
 private:
     void extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart);
-    void setPlainTextContent(QString plainTextContent);
+    void setPlainTextContent(const QString &plainTextContent);
 
     /**
     * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the

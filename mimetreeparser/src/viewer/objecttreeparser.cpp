@@ -442,7 +442,7 @@ void ObjectTreeParser::extractNodeInfos(KMime::Content *curNode, bool isFirstTex
     }
 }
 
-void ObjectTreeParser::setPlainTextContent(QString plainTextContent)
+void ObjectTreeParser::setPlainTextContent(const QString &plainTextContent)
 {
     mPlainTextContent = plainTextContent;
 }
