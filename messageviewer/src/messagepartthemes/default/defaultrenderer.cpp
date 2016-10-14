@@ -886,9 +886,10 @@ public:
 
         auto preferredMode = mp->source()->preferredMode();
         bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
+        const bool isPrinting = mp->source()->isPrinting();
         block.setProperty("htmlMail", isHtmlPreferred);
         block.setProperty("loadExternal", mp->source()->htmlLoadExternal());
-
+        block.setProperty("isPrinting", isPrinting);
         {
             QString extraHead;
             QString bodyText = processHtml(mp->mBodyHTML, extraHead);

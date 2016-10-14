@@ -127,6 +127,11 @@ const MimeTreeParser::BodyPartFormatterBaseFactory *MailViewerSource::bodyPartFo
     return bodyPartFormatterBaseFactoryInstance();
 }
 
+bool MailViewerSource::isPrinting() const
+{
+    return mViewer->mPrinting;
+}
+
 MimeTreeParser::Interface::MessagePartRendererPtr MailViewerSource::messagePartTheme(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
 {
     return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart, mViewer->cssHelper()));

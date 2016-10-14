@@ -102,6 +102,8 @@ public:
     virtual const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() = 0;
 
     virtual MessagePartRendererPtr messagePartTheme(MessagePartPtr msgPart) = 0;
+
+    virtual bool isPrinting() const = 0;
 };
 }
 }

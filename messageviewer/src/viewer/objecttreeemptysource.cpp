@@ -144,6 +144,11 @@ const MimeTreeParser::BodyPartFormatterBaseFactory *EmptySource::bodyPartFormatt
     return bodyPartFormatterBaseFactoryInstance();
 }
 
+bool EmptySource::isPrinting() const
+{
+    return false;
+}
+
 MimeTreeParser::Interface::MessagePartRendererPtr EmptySource::messagePartTheme(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
 {
     return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart, cssHelper()));

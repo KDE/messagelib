@@ -54,6 +54,7 @@ public:
     bool showExpandQuotesMark() const Q_DECL_OVERRIDE;
     const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE;
     MimeTreeParser::Interface::MessagePartRendererPtr messagePartTheme(MimeTreeParser::Interface::MessagePartPtr msgPart) Q_DECL_OVERRIDE;
+    bool isPrinting() const Q_DECL_OVERRIDE;
 private:
     EmptySourcePrivate *const d;
 };
