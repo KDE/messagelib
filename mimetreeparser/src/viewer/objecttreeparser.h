@@ -285,7 +285,7 @@ class MIMETREEPARSER_EXPORT ObjectTreeParser
 
 public:
     explicit ObjectTreeParser(Interface::ObjectTreeSource *source,
-                              NodeHelper *nodeHelper = 0,
+                              NodeHelper *nodeHelper = Q_NULLPTR,
                               bool showOneMimePart = false,
                               const AttachmentStrategy *attachmentStrategy = Q_NULLPTR);
 
