@@ -34,7 +34,7 @@ TestMailMBoxWebEngine::TestMailMBoxWebEngine(QWidget *parent)
 {
     QVBoxLayout *vbox = new QVBoxLayout;
     setLayout(vbox);
-    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(0, 0 , new KActionCollection(this));
+    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(0, 0, new KActionCollection(this));
     vbox->addWidget(viewer);
     viewer->setMessage(readAndParseMail(QStringLiteral("html.mbox")));
     viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));

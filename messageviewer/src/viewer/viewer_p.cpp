@@ -1964,7 +1964,7 @@ void ViewerPrivate::update(MimeTreeParser::UpdateMode updateMode)
 
 void ViewerPrivate::slotOpenUrl()
 {
-     slotUrlOpen();
+    slotUrlOpen();
 }
 
 void ViewerPrivate::slotUrlOpen(const QUrl &url)

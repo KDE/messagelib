@@ -111,7 +111,6 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     if (strategy->showHeader(QStringLiteral("subject"))) {
         const KTextToHTML::Options flags = KTextToHTML::PreserveSpaces | KTextToHTML::ReplaceSmileys;
 
-
         headerStr += QStringLiteral("<div dir=\"%1\"><b style=\"font-size:130%\">").arg(subjectDir) +
                      d->mHeaderStyleUtil.subjectString(message, flags) + QLatin1String("</b></div>\n");
     }

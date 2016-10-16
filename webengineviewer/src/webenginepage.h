@@ -50,7 +50,7 @@ protected:
 
 private:
     void init();
-    WebEnginePagePrivate *const d;    
+    WebEnginePagePrivate *const d;
 };
 }
 

@@ -54,8 +54,8 @@ QString MailWebEngineScript::manageShowHideAttachments(bool hide)
     QString source;
     if (hide) {
         source = QString::fromLatin1("qt.jQuery(\"#kmailhideattachment\").hide();"
-                                    "qt.jQuery(\"#kmailshowattachment\").show();"
-                                    "qt.jQuery(\"#attachmentid\").show();");
+                                     "qt.jQuery(\"#kmailshowattachment\").show();"
+                                     "qt.jQuery(\"#attachmentid\").show();");
     } else {
         source = QString::fromLatin1("qt.jQuery('#kmailshowattachment').hide();"
                                      "qt.jQuery(\"#kmailhideattachment\").show();"

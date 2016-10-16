@@ -154,7 +154,8 @@ public:
         Q_UNUSED(msgPart);
         return  Interface::MessagePartRenderer::Ptr();
     }
-    bool isPrinting() const Q_DECL_OVERRIDE {
+    bool isPrinting() const Q_DECL_OVERRIDE
+    {
         return false;
     }
 private:

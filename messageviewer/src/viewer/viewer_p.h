@@ -405,7 +405,6 @@ public:
     void setFullToAddressList(bool showFullTo);
     void setFullCcAddressList(bool showFullCc);
 
-
     /** Show/Hide the field with id "field" */
     void toggleFullAddressList(const QString &field);
 
@@ -560,7 +559,6 @@ public Q_SLOTS:
     void slotResetMessageDisplayFormat();
 
     void slotGeneralFontChanged();
-
 
 Q_SIGNALS:
     void showStatusBarMessage(const QString &message);

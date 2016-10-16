@@ -28,7 +28,6 @@
 #include <WebEngineViewer/WebEngineManageScript>
 #include <WebEngineViewer/WebEnginePage>
 
-
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
     QPointer<R> receiver;
@@ -79,12 +78,12 @@ TestJQuerySupportWebEngine::~TestJQuerySupportWebEngine()
 
 void TestJQuerySupportWebEngine::slotShowConsoleMessage(const QString &message)
 {
-    qDebug() <<"TestJQuerySupportWebEngine::slotShowConsoleMessage :"<<message;
+    qDebug() << "TestJQuerySupportWebEngine::slotShowConsoleMessage :" << message;
 }
 
 void TestJQuerySupportWebEngine::handleResultScript(const QVariant &var)
 {
-    qDebug() << " void TestJQuerySupportWebEngine::handleResultScript(const QVariant &var)"<<var;
+    qDebug() << " void TestJQuerySupportWebEngine::handleResultScript(const QVariant &var)" << var;
 }
 
 void TestJQuerySupportWebEngine::slotExecuteQuery()
