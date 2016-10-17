@@ -107,10 +107,12 @@ String very_simplistic_diff(const String &a, const String &b)
             //qDebug( "result ( a@%d b@%d ):\n%s\n--end", ai, bi, result.constData() );
         }
 
-    for (int i = ai; i < al.size(); ++i) {
+    const int sizeal(al.size());
+    for (int i = ai; i < sizeal; ++i) {
         result += "- " + al[i] + '\n';
     }
-    for (int i = bi; i < bl.size(); ++i) {
+    const int sizebl(bl.size());
+    for (int i = bi; i < sizebl; ++i) {
         result += "+ " + bl[i] + '\n';
     }
     return result;
