@@ -313,6 +313,8 @@ void MessageFactoryTest::testCreateRedirect()
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
     delete identMan;
+    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateResend()
@@ -366,6 +368,8 @@ void MessageFactoryTest::testCreateResend()
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
     delete identMan;
+    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateMDN()
@@ -493,5 +497,7 @@ void MessageFactoryTest::test_multipartAlternative()
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE(reply.msg->contents().at(contentAt)->encodedBody().data(), expected.toLatin1().data());
     delete identMan;
+    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    dir.removeRecursively();
 }
 
