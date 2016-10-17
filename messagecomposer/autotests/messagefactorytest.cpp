@@ -128,16 +128,17 @@ QTEST_MAIN(MessageFactoryTest)
 
 void MessageFactoryTest::initTestCase()
 {
-    // Force fake XDG dirs and KDEHOME so that KIdentityManagement does not
+    // Force fake XDG dirs so that KIdentityManagement does not
     // read actual user data when running tests locally
     QStandardPaths::setTestModeEnabled(true);
-    qputenv("KDEHOME", "~/.qttest/kde");
 }
 
 void MessageFactoryTest::testCreateReply()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    identMan->newFromScratch(QStringLiteral("foo"));
+    identMan->commit();
 
     MessageFactory factory(msg, 0);
     factory.setIdentityManager(identMan);
