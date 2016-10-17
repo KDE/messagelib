@@ -154,6 +154,8 @@ void MessageFactoryTest::testCreateReply()
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
     delete identMan;
+    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateReplyHtml()
