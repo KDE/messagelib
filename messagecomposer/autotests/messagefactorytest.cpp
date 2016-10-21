@@ -21,7 +21,6 @@
 #include "messagefactorytest.h"
 
 #include "cryptofunctions.h"
-#include "globalsettings_templateparser.h"
 
 #include <MessageCore/StringUtil>
 #include <MessageCore/NodeHelper>
@@ -493,8 +492,7 @@ void MessageFactoryTest::test_multipartAlternative()
 
     MessageFactory::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
-    QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
-    QCOMPARE(reply.msg->contentType()->mimeType(), QStringLiteral("multipart/alternative"));
+    QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE(reply.msg->contents().at(contentAt)->encodedBody().data(), expected.toLatin1().data());
     delete identMan;
