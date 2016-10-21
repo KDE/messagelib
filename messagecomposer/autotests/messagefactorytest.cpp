@@ -21,6 +21,7 @@
 #include "messagefactorytest.h"
 
 #include "cryptofunctions.h"
+#include "globalsettings_templateparser.h"
 
 #include <MessageCore/StringUtil>
 #include <MessageCore/NodeHelper>
@@ -163,22 +164,23 @@ void MessageFactoryTest::testCreateReplyHtml()
     KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("html_utf8_encoded.mbox"));
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
 
-    qDebug() << "html message:" << msg->encodedContent();
+    //qDebug() << "html message:" << msg->encodedContent();
 
     MessageFactory factory(msg, 0);
     factory.setIdentityManager(identMan);
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
 
     MessageFactory::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
-    qDebug() << "html reply" << reply.msg->encodedContent();
+    //qDebug() << "html reply" << reply.msg->encodedContent();
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
-    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> encoded?\n")));
-    QSKIP("This test has been failing for a long time, please someone fix it", SkipSingle);
+    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> encoded?\n\n")));
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
+    QCOMPARE(reply.msg->contents().count(), 2);
     QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
     delete identMan;
 }
