@@ -181,6 +181,18 @@ void MessageFactoryTest::testCreateReplyHtml()
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
     QCOMPARE(reply.msg->contents().count(), 2);
     QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
+
+
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(false);
+    reply =  factory.createReply();
+    reply.replyAll = true;
+    datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("text/plain"));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
+    QCOMPARE(reply.msg->contents().count(), 0);
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
+
     delete identMan;
 }
 
@@ -189,6 +201,7 @@ void MessageFactoryTest::testCreateReplyUTF16Base64()
     KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("plain_utf16.mbox"));
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
 
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
 //   qDebug() << "plain base64 msg message:" << msg->encodedContent();
 
     MessageFactory factory(msg, 0);
