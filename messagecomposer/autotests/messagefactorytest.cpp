@@ -177,7 +177,7 @@ void MessageFactoryTest::testCreateReplyHtml()
     datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> encoded?\n")));
     QSKIP("This test has been failing for a long time, please someone fix it", SkipSingle);
-    QCOMPARE(reply.msg->contentType()->mimeType(), QStringLiteral("multipart/alternative"));
+    QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
     QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
     delete identMan;
