@@ -145,7 +145,7 @@ void MessageFactoryTest::testCreateReply()
 
     MessageFactory::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
-    qDebug() << reply.msg->body();
+    //qDebug() << reply.msg->body();
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
@@ -297,7 +297,7 @@ void MessageFactoryTest::testCreateRedirect()
 
     QRegExp rxmessageid(QString::fromLatin1("Message-ID: ([^\n]+)"));
     rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
-    qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
+    //qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
     QString baseline = QString::fromLatin1("From: me@me.me\n"
                                            "Cc: cc@cc.cc\n"
                                            "Bcc: bcc@bcc.bcc\n"
@@ -374,8 +374,8 @@ void MessageFactoryTest::testCreateResend()
                                            "All happy families are alike; each unhappy family is unhappy in its own way.");
     baseline = baseline.arg(msg->to()->asUnicodeString()).arg(datetime).arg(rxmessageid.cap(1));
 
-    qDebug() << baseline.toLatin1();
-    qDebug() << "instead:" << rdir->encodedContent();
+    //qDebug() << baseline.toLatin1();
+    //qDebug() << "instead:" << rdir->encodedContent();
 
 //   QString fwdStr = QString::fromLatin1( "On " + datetime.toLatin1() + " you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n" );
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
@@ -397,7 +397,7 @@ void MessageFactoryTest::testCreateMDN()
     KMime::Message::Ptr mdn = factory.createMDN(KMime::MDN::AutomaticAction, KMime::MDN::Displayed, KMime::MDN::SentAutomatically);
 
     QVERIFY(mdn.data());
-    qDebug() << "mdn" << mdn->encodedContent();
+    //qDebug() << "mdn" << mdn->encodedContent();
     /*
       // parse the result and make sure it is valid in various ways
       TestHtmlWriter testWriter;
@@ -412,7 +412,7 @@ void MessageFactoryTest::testCreateMDN()
     mdnContent = mdnContent.arg(KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t()))
                  .arg(msg->to()->asUnicodeString()).arg(msg->subject()->asUnicodeString());
 
-    qDebug() << "comparing with:" << mdnContent;
+    //qDebug() << "comparing with:" << mdnContent;
 
     QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(),
                      mdnContent.toLatin1());
