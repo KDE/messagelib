@@ -137,7 +137,8 @@ void MessageFactoryTest::testCreateReply()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    identMan->newFromScratch(QStringLiteral("foo"));
+    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
+    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
     identMan->commit();
 
     MessageFactory factory(msg, 0);
@@ -200,6 +201,10 @@ void MessageFactoryTest::testCreateReplyUTF16Base64()
 {
     KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("plain_utf16.mbox"));
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
+    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
+    identMan->commit();
+
 
     TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
 //   qDebug() << "plain base64 msg message:" << msg->encodedContent();
@@ -491,6 +496,9 @@ void MessageFactoryTest::test_multipartAlternative()
     origMsg->parse();
 
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
+    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
+    identMan->commit();
 
     MessageFactory factory(origMsg, 0);
     factory.setIdentityManager(identMan);
