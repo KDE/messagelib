@@ -30,7 +30,7 @@ class MessageFactoryTest : public QObject
 private Q_SLOTS:
     void initTestCase();
 
-    void testCreateReply();
+    void testCreateReplyAll();
     void testCreateReplyHtml();
     void testCreateReplyUTF16Base64();
     void testCreateForward();

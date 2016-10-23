@@ -133,7 +133,7 @@ void MessageFactoryTest::initTestCase()
     QStandardPaths::setTestModeEnabled(true);
 }
 
-void MessageFactoryTest::testCreateReply()
+void MessageFactoryTest::testCreateReplyAll()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
