@@ -133,6 +133,62 @@ void MessageFactoryTest::initTestCase()
     QStandardPaths::setTestModeEnabled(true);
 }
 
+void MessageFactoryTest::testCreateReplyToAuthor()
+{
+    /*
+    KMime::Message::Ptr msg = createPlainTestMessage();
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
+    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
+    identMan->commit();
+
+    MessageFactory factory(msg, 0);
+    factory.setIdentityManager(identMan);
+
+    MessageFactory::MessageReply reply =  factory.createReply();
+    reply.replyAll = true;
+    //qDebug() << reply.msg->body();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
+    QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+    delete identMan;
+    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    dir.removeRecursively();
+    */
+}
+
+void MessageFactoryTest::testCreateReplyAllWithMultiEmails()
+{
+    KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
+    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
+    identMan->commit();
+
+    MessageFactory factory(msg, 0);
+    factory.setIdentityManager(identMan);
+
+    MessageFactory::MessageReply reply =  factory.createReply();
+    reply.replyAll = true;
+    //qDebug() << reply.msg->body();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
+    //QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+    //QByteArray ba;
+    //QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba);
+    delete identMan;
+    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    dir.removeRecursively();
+}
+
 void MessageFactoryTest::testCreateReplyAll()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
