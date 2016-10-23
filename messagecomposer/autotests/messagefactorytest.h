@@ -45,9 +45,11 @@ private Q_SLOTS:
     void test_multipartAlternative_data();
     void test_multipartAlternative();
 
+    void testCreateForwardMultiEmails();
 private:
     KMime::Message::Ptr createPlainTestMessage();
     KMime::Message::Ptr loadMessageFromFile(QString filename);
+    KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
 };
 
 #endif

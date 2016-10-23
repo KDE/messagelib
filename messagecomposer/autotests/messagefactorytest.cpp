@@ -226,6 +226,55 @@ void MessageFactoryTest::testCreateReplyUTF16Base64()
     delete identMan;
 }
 
+void MessageFactoryTest::testCreateForwardMultiEmails()
+{
+    KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    KIdentityManagement::Identity &ident = identMan->modifyIdentityForUoid(identMan->identityForUoidOrDefault(0).uoid());
+    ident.setFullName(QStringLiteral("another"));
+    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
+    identMan->commit();
+
+    MessageFactory factory(msg, 0);
+    factory.setIdentityManager(identMan);
+
+
+    KMime::Message::Ptr fw =  factory.createForward();
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(", ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+
+
+    QString fwdMsg = QString::fromLatin1(
+                         "From: another <another@another.com>\n"
+                         "Date: %2\n"
+                         "User-Agent: %3\n"
+                         "X-KMail-Transport: 0\n"
+                         "MIME-Version: 1.0\n"
+                         "Subject: Fwd: Test Email Subject\n"
+                         "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                         "Content-Transfer-Encoding: 8Bit\n"
+                         "X-KMail-Link-Message: 0\n"
+                         "X-KMail-Link-Type: forward\n"
+                         "\n"
+                         "----------  Forwarded Message  ----------\n"
+                         "\n"
+                         "Subject: Test Email Subject\n"
+                         "Date: %1\n"
+                         "From: me@me.me\n"
+                         "To: you@you.you, you2@you.you\n"
+                         "CC: cc@cc.cc, cc2@cc.cc\n"
+                         "\n"
+                         "All happy families are alike; each unhappy family is unhappy in its own way.\n"
+                         "-----------------------------------------");
+    fwdMsg = fwdMsg.arg(datetime).arg(fw->date()->asUnicodeString()).arg(fw->userAgent()->asUnicodeString());
+
+//   qDebug() << "got:" << fw->encodedContent() << "against" << fwdMsg.toLatin1();
+    QCOMPARE(fw->subject()->asUnicodeString(), QStringLiteral("Fwd: Test Email Subject"));
+    QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toLatin1());
+    delete identMan;
+}
+
 void MessageFactoryTest::testCreateForward()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
@@ -573,6 +622,28 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
 
     return message;
 }
+
+KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
+{
+    Composer *composer = new Composer;
+    composer->globalPart()->setFallbackCharsetEnabled(true);
+    composer->infoPart()->setFrom(QString::fromLatin1("me@me.me"));
+    composer->infoPart()->setTo(QStringList() << QStringLiteral("you@you.you") << QStringLiteral("you2@you.you"));
+    composer->infoPart()->setCc(QStringList() << QStringLiteral("cc@cc.cc") << QStringLiteral("cc2@cc.cc"));
+    composer->infoPart()->setBcc(QStringList() << QStringLiteral("bcc@bcc.bcc") << QStringLiteral("bcc2@bcc.bcc"));
+    composer->textPart()->setWrappedPlainText(QString::fromLatin1("All happy families are alike; each unhappy family is unhappy in its own way."));
+    composer->infoPart()->setSubject(QStringLiteral("Test Email Subject"));
+    composer->globalPart()->setMDNRequested(true);
+    composer->exec();
+
+    KMime::Message::Ptr message = KMime::Message::Ptr(composer->resultMessages().first());
+    delete composer;
+
+    MessageComposerSettings::self()->setPreferredCharsets(QStringList() << QStringLiteral("us-ascii") << QStringLiteral("iso-8859-1") << QStringLiteral("utf-8"));
+
+    return message;
+}
+
 
 KMime::Message::Ptr MessageFactoryTest::loadMessageFromFile(QString filename)
 {
