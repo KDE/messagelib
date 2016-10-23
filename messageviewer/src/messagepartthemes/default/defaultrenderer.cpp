@@ -751,7 +751,7 @@ public:
 
             // This quoted line needs be hidden
             if (source()->showExpandQuotesMark() && source()->levelQuote() >= 0
-                    && source()->levelQuote() <= (actQuoteLevel)) {
+                    && source()->levelQuote() <= actQuoteLevel) {
                 actHidden = true;
             }
 
@@ -772,6 +772,10 @@ public:
                     htmlStr += normalStartTag;
                 } else {
                     if (source()->showExpandQuotesMark()) {
+                        // Add blockquote
+                        if (previousQuoteDepth < actQuoteLevel) {
+                            htmlStr += cssHelper()->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
+                        }
                         if (actHidden) {
                             //only show the QuoteMark when is the first line of the level hidden
                             if (!curHidden) {
@@ -796,10 +800,6 @@ public:
                             } else {
                                 htmlStr += deepQuoteFontTag[actQuoteLevel % 3];
                             }
-                        }
-                        // Add blockquote
-                        if (previousQuoteDepth < actQuoteLevel) {
-                            htmlStr += cssHelper()->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
                         }
 
                     } else {
