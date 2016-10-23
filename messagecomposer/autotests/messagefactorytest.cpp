@@ -274,6 +274,135 @@ void MessageFactoryTest::testCreateForward()
     delete identMan;
 }
 
+void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
+{
+    KMime::Message::Ptr msg = createPlainTestMessage();
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    KIdentityManagement::Identity &ident = identMan->modifyIdentityForUoid(identMan->identityForUoidOrDefault(0).uoid());
+    ident.setFullName(QStringLiteral("another"));
+    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
+    identMan->commit();
+
+    MessageFactory factory(msg, 0);
+    factory.setIdentityManager(identMan);
+
+    QString redirectTo = QStringLiteral("redir@redir.com");
+    QString redirectCc = QStringLiteral("redircc@redircc.com, redircc2@redircc.com");
+    QString redirectBcc = QStringLiteral("redirbcc@redirbcc.com, redirbcc2@redirbcc.com");
+    KMime::Message::Ptr rdir =  factory.createRedirect(redirectTo, redirectCc, redirectBcc);
+
+    QDateTime date = rdir->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime = rdir->date()->asUnicodeString();
+
+//   qDebug() << rdir->encodedContent();
+
+    QString msgId = MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), QString());
+
+    QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
+    rx.indexIn(QString::fromLatin1(rdir->head()));
+
+    QRegExp rxmessageid(QString::fromLatin1("Message-ID: ([^\n]+)"));
+    rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
+    //qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
+    QString baseline = QString::fromLatin1("From: me@me.me\n"
+                                           "Cc: cc@cc.cc\n"
+                                           "Bcc: bcc@bcc.bcc\n"
+                                           "Subject: Test Email Subject\n"
+                                           "Date: %1\n"
+                                           "X-KMail-Transport: 0\n"
+                                           "Message-ID: %2\n"
+                                           "Disposition-Notification-To: me@me.me\n"
+                                           "MIME-Version: 1.0\n"
+                                           "Content-Transfer-Encoding: 7Bit\n"
+                                           "Content-Type: text/plain; charset=\"us-ascii\"\n"
+                                           "Resent-Message-ID: %3\n"
+                                           "Resent-Date: %4\n"
+                                           "Resent-From: %5\n"
+                                           "To: you@you.you\n"
+                                           "Resent-To: redir@redir.com\n"
+                                           "Resent-Cc: redircc@redircc.com, redircc2@redircc.com\n"
+                                           "Resent-Bcc: redirbcc@redirbcc.com, redirbcc2@redirbcc.com\n"
+                                           "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
+                                           "\n"
+                                           "All happy families are alike; each unhappy family is unhappy in its own way.");
+    baseline = baseline.arg(datetime).arg(rxmessageid.cap(1)).arg(rx.cap(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
+
+//   qDebug() << baseline.toLatin1();
+//   qDebug() << "instead:" << rdir->encodedContent();
+
+//   QString fwdStr = QString::fromLatin1( "On " + datetime.toLatin1() + " you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n" );
+    QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
+    QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
+    delete identMan;
+    //QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    //dir.removeRecursively();
+}
+
+void MessageFactoryTest::testCreateRedirectToAndCC()
+{
+    KMime::Message::Ptr msg = createPlainTestMessage();
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    KIdentityManagement::Identity &ident = identMan->modifyIdentityForUoid(identMan->identityForUoidOrDefault(0).uoid());
+    ident.setFullName(QStringLiteral("another"));
+    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
+    identMan->commit();
+
+    MessageFactory factory(msg, 0);
+    factory.setIdentityManager(identMan);
+
+    QString redirectTo = QStringLiteral("redir@redir.com");
+    QString redirectCc = QStringLiteral("redircc@redircc.com, redircc2@redircc.com");
+    KMime::Message::Ptr rdir =  factory.createRedirect(redirectTo, redirectCc);
+
+    QDateTime date = rdir->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime = rdir->date()->asUnicodeString();
+
+//   qDebug() << rdir->encodedContent();
+
+    QString msgId = MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), QString());
+
+    QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
+    rx.indexIn(QString::fromLatin1(rdir->head()));
+
+    QRegExp rxmessageid(QString::fromLatin1("Message-ID: ([^\n]+)"));
+    rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
+    //qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
+    QString baseline = QString::fromLatin1("From: me@me.me\n"
+                                           "Cc: cc@cc.cc\n"
+                                           "Bcc: bcc@bcc.bcc\n"
+                                           "Subject: Test Email Subject\n"
+                                           "Date: %1\n"
+                                           "X-KMail-Transport: 0\n"
+                                           "Message-ID: %2\n"
+                                           "Disposition-Notification-To: me@me.me\n"
+                                           "MIME-Version: 1.0\n"
+                                           "Content-Transfer-Encoding: 7Bit\n"
+                                           "Content-Type: text/plain; charset=\"us-ascii\"\n"
+                                           "Resent-Message-ID: %3\n"
+                                           "Resent-Date: %4\n"
+                                           "Resent-From: %5\n"
+                                           "To: you@you.you\n"
+                                           "Resent-To: redir@redir.com\n"
+                                           "Resent-Cc: redircc@redircc.com, redircc2@redircc.com\n"
+                                           "X-KMail-Redirect-From: me@me.me (by way of another <another@another.com>)\n"
+                                           "\n"
+                                           "All happy families are alike; each unhappy family is unhappy in its own way.");
+    baseline = baseline.arg(datetime).arg(rxmessageid.cap(1)).arg(rx.cap(1)).arg(datetime).arg(QStringLiteral("another <another@another.com>"));
+
+//   qDebug() << baseline.toLatin1();
+//   qDebug() << "instead:" << rdir->encodedContent();
+
+//   QString fwdStr = QString::fromLatin1( "On " + datetime.toLatin1() + " you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n" );
+    QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
+    QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
+    delete identMan;
+    //QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    //dir.removeRecursively();
+}
+
+
 void MessageFactoryTest::testCreateRedirect()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();

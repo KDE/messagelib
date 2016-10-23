@@ -37,6 +37,9 @@ private Q_SLOTS:
     void testCreateRedirect();
     void testCreateResend();
     void testCreateMDN();
+    void testCreateRedirectToAndCC();
+    void testCreateRedirectToAndCCAndBCC();
+
 
     //MultiPart
     void test_multipartAlternative_data();
