@@ -38,13 +38,13 @@ private Q_SLOTS:
     void testCreateResend();
     void testCreateMDN();
 
+    //MultiPart
+    void test_multipartAlternative_data();
+    void test_multipartAlternative();
+
 private:
     KMime::Message::Ptr createPlainTestMessage();
     KMime::Message::Ptr loadMessageFromFile(QString filename);
-
-private Q_SLOTS:
-    void test_multipartAlternative_data();
-    void test_multipartAlternative();
 };
 
 #endif
