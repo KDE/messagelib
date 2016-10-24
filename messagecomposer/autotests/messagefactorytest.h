@@ -53,6 +53,7 @@ private:
     KMime::Message::Ptr createPlainTestMessage();
     KMime::Message::Ptr loadMessageFromFile(QString filename);
     KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
+    KMime::Message::Ptr loadMessage(const QString &filename);
 };
 
 #endif

@@ -133,9 +133,60 @@ void MessageFactoryTest::initTestCase()
     QStandardPaths::setTestModeEnabled(true);
 }
 
+KMime::Message::Ptr MessageFactoryTest::loadMessage(const QString &filename)
+{
+    QFile mailFile(filename);
+    if (!mailFile.open(QIODevice::ReadOnly)) {
+        return {};
+    }
+    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
+    if (mailData.isEmpty()) {
+        return {};
+    }
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
+    return origMsg;
+}
+
+
 void MessageFactoryTest::testCreateReplyToList()
 {
-    //TODO
+    const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/list_message.mbox"));
+    KMime::Message::Ptr msg = loadMessage(filename);
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
+    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
+    identMan->commit();
+
+    MessageFactory factory(msg, 0);
+    factory.setIdentityManager(identMan);
+    factory.setReplyStrategy(ReplyList);
+
+    MessageFactory::MessageReply reply =  factory.createReply();
+    reply.replyAll = true;
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QString::fromLatin1(QByteArray("> This is a mail from ML"));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
+    QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+    QString userAgent = reply.msg->userAgent()->asUnicodeString();
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("Date: %1\n"
+                                     "User-Agent: %2\n"
+                                     "To: list@list.org\n"
+                                     "Subject: Re: Plain Message Test\n"
+                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n"
+                                     "%3")
+            .arg(dateStr).arg(userAgent).arg(replyStr);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+
+    delete identMan;
 }
 
 void MessageFactoryTest::testCreateReplyToAuthor()
@@ -791,13 +842,7 @@ void MessageFactoryTest::test_multipartAlternative()
     QFETCH(QString, selection);
     QFETCH(QString, expected);
 
-    QFile mailFile(mailFileName);
-    QVERIFY(mailFile.open(QIODevice::ReadOnly));
-    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
-    QVERIFY(!mailData.isEmpty());
-    KMime::Message::Ptr origMsg(new KMime::Message);
-    origMsg->setContent(mailData);
-    origMsg->parse();
+    KMime::Message::Ptr origMsg = loadMessage(mailFileName);
 
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
