@@ -31,6 +31,9 @@ public Q_SLOTS:
 private Q_SLOTS:
     void testQuoteHtml();
     void testQuoteHtml_data();
+private:
+    QString mCollapseIcon;
+    QString mExpandIcon;
 };
 
 #endif

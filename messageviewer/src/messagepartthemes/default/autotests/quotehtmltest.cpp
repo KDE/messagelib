@@ -25,6 +25,7 @@
 #include <MimeTreeParser/HtmlWriter>
 #include <MessageViewer/CSSHelperBase>
 #include <MimeTreeParser/MessagePart>
+#include <MessageViewer/IconNameCache>
 
 #include <QTest>
 
@@ -32,9 +33,22 @@ using namespace MessageViewer;
 
 QTEST_GUILESS_MAIN(QuoteHtmlTest)
 
+static QString iconToDataUrl(const QString &iconPath)
+{
+    QFile f(iconPath);
+    if (!f.open(QIODevice::ReadOnly)) {
+        return QString();
+    }
+
+    const QByteArray ba = f.readAll();
+    return QStringLiteral("data:image/png;base64,%1").arg(QLatin1String(ba.toBase64().constData()));
+}
+
 void QuoteHtmlTest::initTestCase()
 {
     MessageViewer::Test::setupEnv();
+    mCollapseIcon = iconToDataUrl(MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("quotecollapse"), 0));
+    mExpandIcon = iconToDataUrl(MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("quoteexpand"), 0));
 }
 
 void QuoteHtmlTest::testQuoteHtml_data()
@@ -52,6 +66,11 @@ void QuoteHtmlTest::testQuoteHtml_data()
     QTest::newRow("multispace") << QStringLiteral("            Bug ID: 358324") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bug ID: 358324</div></div>") << false << 1;
 
     //Show Expand Quotes
+    QTest::newRow("simpletext-expand") << QStringLiteral("http") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">http</div></div>") << true << 1;
+
+    QString result = QStringLiteral("<blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span></div></div></blockquote>").arg(mCollapseIcon);
+    QTest::newRow("simplequote-expand") << QStringLiteral(">") << result << true << 1;
+    QTest::newRow("simplespace-expand") << QStringLiteral(" ") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;</div></div>") << true << 1;
 
 }
 
