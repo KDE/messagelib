@@ -133,6 +133,11 @@ void MessageFactoryTest::initTestCase()
     QStandardPaths::setTestModeEnabled(true);
 }
 
+void MessageFactoryTest::testCreateReplyToList()
+{
+    //TODO
+}
+
 void MessageFactoryTest::testCreateReplyToAuthor()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();

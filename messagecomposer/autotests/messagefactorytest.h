@@ -48,6 +48,7 @@ private Q_SLOTS:
     void testCreateForwardMultiEmails();
     void testCreateReplyToAuthor();
     void testCreateReplyAllWithMultiEmails();
+    void testCreateReplyToList();
 private:
     KMime::Message::Ptr createPlainTestMessage();
     KMime::Message::Ptr loadMessageFromFile(QString filename);
