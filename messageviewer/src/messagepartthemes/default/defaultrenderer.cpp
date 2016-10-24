@@ -65,17 +65,6 @@ using namespace MessageViewer;
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const Kleo::CryptoBackend::Protocol *)
 
-static QString iconToDataUrl(const QString &iconPath)
-{
-    QFile f(iconPath);
-    if (!f.open(QIODevice::ReadOnly)) {
-        return QString();
-    }
-
-    const QByteArray ba = f.readAll();
-    return QStringLiteral("data:image/png;base64,%1").arg(QLatin1String(ba.toBase64().constData()));
-}
-
 /** Check if the newline at position @p newLinePos in string @p s
     seems to separate two paragraphs (important for correct BiDi
     behavior, but is heuristic because paragraphs are not
@@ -703,10 +692,10 @@ public:
         if (source()->showExpandQuotesMark()) {
             // Cache Icons
             if (mCollapseIcon.isEmpty()) {
-                mCollapseIcon = iconToDataUrl(IconNameCache::instance()->iconPath(QStringLiteral("quotecollapse"), 0));
+                mCollapseIcon = IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quotecollapse.png"));
             }
             if (mExpandIcon.isEmpty()) {
-                mExpandIcon = iconToDataUrl(IconNameCache::instance()->iconPath(QStringLiteral("quoteexpand"), 0));
+                mExpandIcon = IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quoteexpand.png"));
             }
         }
 
@@ -764,7 +753,7 @@ public:
                 }
                 //Close blockquote
                 if (previousQuoteDepth > actQuoteLevel) {
-                    htmlStr += cssHelper()->addEndBlockQuote((previousQuoteDepth - actQuoteLevel));
+                    htmlStr += cssHelper()->addEndBlockQuote(previousQuoteDepth - actQuoteLevel);
                 }
 
                 /* start new quotelevel */
@@ -801,7 +790,6 @@ public:
                                 htmlStr += deepQuoteFontTag[actQuoteLevel % 3];
                             }
                         }
-
                     } else {
                         // Add blockquote
                         if (previousQuoteDepth < actQuoteLevel) {

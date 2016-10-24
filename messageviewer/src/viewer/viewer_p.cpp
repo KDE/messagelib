@@ -27,6 +27,7 @@
 #include "viewer/objecttreeemptysource.h"
 #include "viewer/objecttreeviewersource.h"
 #include "messagedisplayformatattribute.h"
+#include "utils/iconnamecache.h"
 #include "scamdetection/scamdetectionwarningwidget.h"
 #include "scamdetection/scamattribute.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
@@ -2299,14 +2300,6 @@ void ViewerPrivate::slotSetEncoding()
     }
 }
 
-QString ViewerPrivate::picsPath()
-{
-    if (mPicsPath.isEmpty()) {
-        mPicsPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("libmessageviewer/pics/"), QStandardPaths::LocateDirectory);
-    }
-    return mPicsPath;
-}
-
 HeaderStylePlugin *ViewerPrivate::headerStylePlugin() const
 {
     return mHeaderStylePlugin;
@@ -2321,7 +2314,6 @@ QString ViewerPrivate::attachmentInjectionHtml()
         return QString();
     }
 
-    QString imgpath(picsPath());
     const QString urlHandleShow = QStringLiteral("kmail:showAttachmentQuicklist");
     const QString imgSrcShow = QStringLiteral("quicklistClosed.png");
     const QString urlHandleHide = QStringLiteral("kmail:hideAttachmentQuicklist");
@@ -2338,10 +2330,10 @@ QString ViewerPrivate::attachmentInjectionHtml()
     const QString visibility = QStringLiteral("style=\"display:none;\"");
     link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign) +
             QStringLiteral("<a id=\"kmailshowattachment\" href=\"%1\" %2>").arg(urlHandleShow).arg(mShowAttachmentQuicklist ? QString() : visibility) +
-            QStringLiteral("<img src=\"%1\">").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url()) +
+            QStringLiteral("<img src=\"%1\">").arg(QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcShow)).url()) +
             QStringLiteral("</a>") +
             QStringLiteral("<a id=\"kmailhideattachment\" href=\"%1\" %2>").arg(urlHandleHide).arg(mShowAttachmentQuicklist ? visibility : QString()) +
-            QStringLiteral("<img src=\"%1\">").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url()) +
+            QStringLiteral("<img src=\"%1\">").arg(QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcHide)).url()) +
             QStringLiteral("</a>") +
             QStringLiteral("</div>");
 
@@ -2797,7 +2789,6 @@ void ViewerPrivate::toggleFullAddressList()
 
 QString ViewerPrivate::recipientsQuickListLinkHtml(const QString &field)
 {
-    const QString imgpath(picsPath());
     const QString urlHandleShow = QLatin1String("kmail:hideFull") + field + QLatin1String("AddressList");
     const QString imgSrcShow = QStringLiteral("quicklistOpened.png");
     const QString urlHandleHide = QLatin1String("kmail:showFull") + field + QLatin1String("AddressList");
@@ -2811,10 +2802,10 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(const QString &field)
 #endif
     return QStringLiteral("<span style=\"text-align: right;\">") +
            QStringLiteral("<a id=\"kmail%2show\" href=\"%1\">").arg(urlHandleShow).arg(field) +
-           QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrcShow).url(), /*altTextShow*/QString()) +
+           QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcShow)).url(), /*altTextShow*/QString()) +
            QStringLiteral("</a>") +
            QStringLiteral("<a id=\"kmail%2hide\" href=\"%1\" %3>").arg(urlHandleHide).arg(field).arg(visibility) +
-           QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(imgpath + imgSrcHide).url(), /*altTextHide*/QString()) +
+           QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcHide)).url(), /*altTextHide*/QString()) +
            QStringLiteral("</a>") +
            QStringLiteral("</span>");
 }
