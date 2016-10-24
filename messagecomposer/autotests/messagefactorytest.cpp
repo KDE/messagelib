@@ -135,7 +135,6 @@ void MessageFactoryTest::initTestCase()
 
 void MessageFactoryTest::testCreateReplyToAuthor()
 {
-    /*
     KMime::Message::Ptr msg = createPlainTestMessage();
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
@@ -144,6 +143,7 @@ void MessageFactoryTest::testCreateReplyToAuthor()
 
     MessageFactory factory(msg, 0);
     factory.setIdentityManager(identMan);
+    factory.setReplyStrategy(ReplyAuthor);
 
     MessageFactory::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
@@ -155,10 +155,30 @@ void MessageFactoryTest::testCreateReplyToAuthor()
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+    QString userAgent = reply.msg->userAgent()->asUnicodeString();
+    QString replyTo = reply.msg->inReplyTo()->asUnicodeString();
+    QString reference = reply.msg->references()->asUnicodeString();
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
+                                     "User-Agent: %2\n"
+                                     "X-KMail-Transport: 0\n"
+                                     "To: me@me.me\n"
+                                     "References: %4\n"
+                                     "In-Reply-To: %3\n"
+                                     "Subject: Re: Test Email Subject\n"
+                                     "X-KMail-CursorPos: 134\n"
+                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n"
+                                     "%5")
+            .arg(dateStr).arg(userAgent).arg(replyTo).arg(reference).arg(replyStr);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+
     delete identMan;
-    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    dir.removeRecursively();
-    */
+    //QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    //dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateReplyAllWithMultiEmails()
