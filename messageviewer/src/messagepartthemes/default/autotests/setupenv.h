@@ -54,7 +54,10 @@ public:
         , mAttachmentStrategy(QStringLiteral("smart"))
         , mHtmlLoadExternal(false)
         , mDecryptMessage(false)
+        , mShowSignatureDetails(false)
+        , mShowExpandQuotesMark(false)
         , mPreferredMode(MimeTreeParser::Util::Html)
+        , mQuoteLevel(1)
     {
     }
 
@@ -95,9 +98,14 @@ public:
         return false;
     }
 
+    void setShowExpandQuotesMark(bool b)
+    {
+        mShowExpandQuotesMark = b;
+    }
+
     bool showExpandQuotesMark() const Q_DECL_OVERRIDE
     {
-        return false;
+        return mShowExpandQuotesMark;
     }
 
     const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE {
@@ -139,7 +147,12 @@ public:
 
     int levelQuote() const Q_DECL_OVERRIDE
     {
-        return 1;
+        return mQuoteLevel;
+    }
+
+    void setLevelQuote(int level)
+    {
+        mQuoteLevel = level;
     }
 
     const QTextCodec *overrideCodec() Q_DECL_OVERRIDE {
@@ -163,7 +176,9 @@ private:
     bool mHtmlLoadExternal;
     bool mDecryptMessage;
     bool mShowSignatureDetails;
+    bool mShowExpandQuotesMark;
     MimeTreeParser::Util::HtmlMode mPreferredMode;
+    int mQuoteLevel;
 };
 
 }
