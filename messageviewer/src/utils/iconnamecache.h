@@ -39,8 +39,10 @@ public:
 
     static IconNameCache *instance();
     QString iconPath(const QString &name, int size) const;
+    QString iconPathFromLocal(const QString &name) const;
 
 private:
+    QString picsPath() const;
 
     class Entry
     {
@@ -52,6 +54,7 @@ private:
     };
 
     mutable QMap<Entry, QString> mCachedEntries;
+    mutable QString mPicsPath;
 };
 
 }

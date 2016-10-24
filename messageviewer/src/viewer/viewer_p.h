@@ -585,7 +585,6 @@ private:
     void addHelpTextAction(QAction *act, const QString &text);
     void readGravatarConfig();
 
-    QString picsPath();
 public:
     MimeTreeParser::NodeHelper *mNodeHelper;
     bool mHtmlMailGlobalSetting;

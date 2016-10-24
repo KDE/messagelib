@@ -20,6 +20,7 @@
 #include "iconnamecache.h"
 
 #include <KIconLoader>
+#include <QStandardPaths>
 
 using namespace MessageViewer;
 
@@ -53,4 +54,27 @@ QString IconNameCache::iconPath(const QString &name, int size) const
     const QString fileName = KIconLoader::global()->iconPath(name, size);
     mCachedEntries.insert(entry, fileName);
     return fileName;
+}
+
+QString IconNameCache::iconPathFromLocal(const QString &name) const
+{
+    Entry entry;
+    entry.fileName = name;
+    entry.size = 0;
+
+    if (mCachedEntries.contains(entry)) {
+        return mCachedEntries.value(entry);
+    }
+
+    const QString fileName = picsPath() + name;
+    mCachedEntries.insert(entry, fileName);
+    return fileName;
+}
+
+QString IconNameCache::picsPath() const
+{
+    if (mPicsPath.isEmpty()) {
+        mPicsPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("libmessageviewer/pics/"), QStandardPaths::LocateDirectory);
+    }
+    return mPicsPath;
 }
