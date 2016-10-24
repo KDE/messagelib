@@ -688,14 +688,12 @@ public:
         int currQuoteLevel = -2; // -2 == no previous lines
         bool curHidden = false; // no hide any block
 
+
+        QString collapseIconPath;
+        QString mExpandIconPath;
         if (source()->showExpandQuotesMark()) {
-            // Cache Icons
-            if (mCollapseIcon.isEmpty()) {
-                mCollapseIcon = IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quotecollapse.png"));
-            }
-            if (mExpandIcon.isEmpty()) {
-                mExpandIcon = IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quoteexpand.png"));
-            }
+            collapseIconPath = IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quotecollapse.png"));
+            mExpandIconPath = IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quoteexpand.png"));
         }
 
         int previousQuoteDepth = -1;
@@ -772,7 +770,7 @@ public:
                                 htmlStr += QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
                                                           "<img src=\"%2\"/></a>")
                                            .arg(-1)
-                                           .arg(mExpandIcon);
+                                           .arg(mExpandIconPath);
                                 htmlStr += QLatin1String("</div><br/>");
                                 htmlStr += quoteEnd;
                             }
@@ -781,7 +779,7 @@ public:
                             htmlStr += QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
                                                       "<img src=\"%2\"/></a>")
                                        .arg(actQuoteLevel)
-                                       .arg(mCollapseIcon);
+                                       .arg(collapseIconPath);
                             htmlStr += QLatin1String("</div>");
                             if (actQuoteLevel < 3) {
                                 htmlStr += quoteFontTag[actQuoteLevel];
@@ -1395,8 +1393,6 @@ private:
     HtmlWriter *mOldWriter;
 
     CSSHelperBase *mCSSHelper;
-    QString mCollapseIcon;
-    QString mExpandIcon;
 };
 
 DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
