@@ -772,7 +772,6 @@ public:
                                            .arg(-1)
                                            .arg(mExpandIconPath);
                                 htmlStr += QLatin1String("</div><br/>");
-                                htmlStr += quoteEnd;
                             }
                         } else {
                             htmlStr += QLatin1String("<div class=\"quotelevelmark\" >");
