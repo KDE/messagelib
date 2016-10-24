@@ -65,12 +65,42 @@ void QuoteHtmlTest::testQuoteHtml_data()
     QTest::newRow("simplespace") << QStringLiteral(" ") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;</div></div>") << false << 1;
     QTest::newRow("multispace") << QStringLiteral("            Bug ID: 358324") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bug ID: 358324</div></div>") << false << 1;
 
+    QTest::newRow("bug-369072") << QStringLiteral("test\n>quote1\n>>quote2\n>>>quote3\n>>new quote2\n>new quote1\nnew text") <<
+                                   QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">test</div>"
+                                                  "</div><blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">quote1</font></div>"
+                                                  "</div><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">quote2</font></div>"
+                                                  "</div><blockquote><div class=\"quotelevel3\"><div dir=\"ltr\"><span class=\"quotemarks\">>>></span><font color=\"#006000\">quote3</font></div>"
+                                                  "</div></blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new quote2</font></div>"
+                                                  "</div></blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new quote1</font></div>"
+                                                  "</div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>") << false << 1;
+
     //Show Expand Quotes
     QTest::newRow("simpletext-expand") << QStringLiteral("http") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">http</div></div>") << true << 1;
 
     QString result = QStringLiteral("<blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span></div></div></blockquote>").arg(mCollapseIcon);
     QTest::newRow("simplequote-expand") << QStringLiteral(">") << result << true << 1;
     QTest::newRow("simplespace-expand") << QStringLiteral(" ") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;</div></div>") << true << 1;
+
+    QTest::newRow("bug-369072-expand-quotelevel3") << QStringLiteral("test\n>quote1\n>>quote2\n>>>quote3\n>>new quote2\n>new quote1\nnew text") <<
+                                                      QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">test</div>"
+                                                                     "</div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
+                                                                     "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">quote1</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img src=\"%1\"/></a></div>"
+                                                                     "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">quote2</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?2 \"><img src=\"%1\"/></a></div>"
+                                                                     "<div class=\"quotelevel3\"><div dir=\"ltr\"><span class=\"quotemarks\">>>></span><font color=\"#006000\">quote3</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img src=\"%1\"/></a></div>"
+                                                                     "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new quote2</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
+                                                                     "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>").arg(mCollapseIcon)
+                                                   << true << 3;
+
+    //TODO fix me quotelevel
+    QTest::newRow("bug-369072-expand-quotelevel2") << QStringLiteral("test\n>quote1\n>>quote2\n>>>quote3\n>>new quote2\n>new quote1\nnew text") <<
+                                                      QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">test</div>"
+                                                                     "</div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
+                                                                     "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">quote1</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img src=\"%1\"/></a></div>"
+                                                                     "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">quote2</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?-1 \"><img src=\"%1\"/></a></div><br/></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img src=\"%1\"/></a></div>"
+                                                                     "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new quote2</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
+                                                                     "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>").arg(mCollapseIcon)
+                                                   << true << 2;
+
 
 }
 
@@ -90,5 +120,6 @@ void QuoteHtmlTest::testQuoteHtml()
     MimeTreeParser::MessagePart::Ptr part(new MimeTreeParser::MessagePart(&otp, data));
 
     DefaultRenderer renderer(part, &testCSSHelper);
+    //qDebug()<<"renderer.html() "<<renderer.html();
     QCOMPARE(renderer.html(), result);
 }
