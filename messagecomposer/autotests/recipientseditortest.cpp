@@ -71,7 +71,7 @@ void RecipientsEditorTest::test_addLineOnCommaPress()
     QTest::keyClicks(lineEdit, QStringLiteral("\"Vratil, Daniel\" <dvratil@kde.org>"), Qt::NoModifier, 10);
 
     QCOMPARE(editor.recipients().size(), 1);
-    QCOMPARE(editor.recipients().first()->email(), QStringLiteral("dvratil@kde.org"));
+    QCOMPARE(editor.recipients().first()->email(), QStringLiteral("\"Vratil, Daniel\" <dvratil@kde.org>"));
 
     QTest::keyClick(lineEdit, Qt::Key_Comma, Qt::NoModifier, 0);
 
@@ -95,7 +95,7 @@ void RecipientsEditorTest::test_splitStringInputToLines()
 
     QCOMPARE(editor.recipients().size(), 2);
     QCOMPARE(editor.recipients().at(0)->email(), QStringLiteral("test@example.com"));
-    QCOMPARE(editor.recipients().at(1)->email(), QStringLiteral("dvratil@kde.org"));
+    QCOMPARE(editor.recipients().at(1)->email(), QStringLiteral("\"Vrátil, Daniel\" <dvratil@kde.org>"));
 }
 
 void RecipientsEditorTest::test_splitPastedListToLines()
@@ -117,7 +117,7 @@ void RecipientsEditorTest::test_splitPastedListToLines()
     [&editor]() {
         QCOMPARE(editor.recipients().size(), 2);
         QCOMPARE(editor.recipients().at(0)->email(), QStringLiteral("test@example.com"));
-        QCOMPARE(editor.recipients().at(1)->email(), QStringLiteral("dvratil@kde.org"));
+        QCOMPARE(editor.recipients().at(1)->email(), QStringLiteral("\"Vrátil, Daniel\" <dvratil@kde.org>"));
     }();
 
     clipboard->setText(oldText);
