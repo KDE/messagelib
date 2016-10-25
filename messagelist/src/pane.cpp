@@ -252,7 +252,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 
         d->mCloseTabAction = new QAction(i18n("Close Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("close_current_tab"), d->mCloseTabAction);
-        d->mXmlGuiClient->actionCollection()->setDefaultShortcut(d->mCloseTabAction, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_W));
+        d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mCloseTabAction, QList<QKeySequence>() << QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_W) << QKeySequence(Qt::CTRL + Qt::Key_W));
         connect(d->mCloseTabAction, SIGNAL(triggered(bool)), SLOT(onCloseTabClicked()));
         d->mActionMenu->addAction(d->mCloseTabAction);
         d->mCloseTabAction->setEnabled(false);
