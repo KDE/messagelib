@@ -48,9 +48,9 @@ void QuoteHtmlTest::testQuoteHtml_data()
     QTest::addColumn<int>("quotelevel");
     //No Expand Quotes
     QTest::newRow("simpletext") << QStringLiteral("http") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">http</div></div>") << false << 1;
-    QTest::newRow("simplequote") << QStringLiteral(">") << QStringLiteral("<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span></div></div></blockquote>") << false << 1;
+    QTest::newRow("simplequote") << QStringLiteral(">") << QStringLiteral("<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div></div></blockquote>") << false << 1;
     QTest::newRow("doublequotewithtext") << QStringLiteral(">> sddf") << QStringLiteral("<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>> </span><font color=\"#007000\">sddf</font></div></div></blockquote></blockquote>") << false << 1;
-    QTest::newRow("doublequote") << QStringLiteral(">>") << QStringLiteral("<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span></div></div></blockquote></blockquote>") << false << 1;
+    QTest::newRow("doublequote") << QStringLiteral(">>") << QStringLiteral("<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarksemptyline\">>></span></div></div></blockquote></blockquote>") << false << 1;
     QTest::newRow("simplespace") << QStringLiteral(" ") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;</div></div>") << false << 1;
     QTest::newRow("multispace") << QStringLiteral("            Bug ID: 358324") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bug ID: 358324</div></div>") << false << 1;
 
@@ -66,7 +66,7 @@ void QuoteHtmlTest::testQuoteHtml_data()
     //Show Expand Quotes
     QTest::newRow("simpletext-expand") << QStringLiteral("http") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">http</div></div>") << true << 1;
 
-    QString result = QStringLiteral("<blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span></div></div></blockquote>").arg(mCollapseIcon);
+    QString result = QStringLiteral("<blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div></div></blockquote>").arg(mCollapseIcon);
     QTest::newRow("simplequote-expand") << QStringLiteral(">") << result << true << 1;
     QTest::newRow("simplespace-expand") << QStringLiteral(" ") << QStringLiteral("<div class=\"noquote\"><div dir=\"ltr\">&nbsp;</div></div>") << true << 1;
 
@@ -100,9 +100,9 @@ void QuoteHtmlTest::testQuoteHtml_data()
                                    QStringLiteral("<div class=\"noquote\">"
                                                   "<div dir=\"ltr\">test</div></div>"
                                                   "<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">> </span><font color=\"#008000\">blo</font></div>"
-                                                  "<div dir=\"ltr\"><span class=\"quotemarks\">></span></div>"
-                                                  "<div dir=\"ltr\"><span class=\"quotemarks\">></span></div>"
-                                                  "<div dir=\"ltr\"><span class=\"quotemarks\">></span></div>"
+                                                  "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
+                                                  "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
+                                                  "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
                                                   "<div dir=\"ltr\"><span class=\"quotemarks\">> </span><font color=\"#008000\">bla</font></div></div></blockquote>"
                                                   "<div class=\"noquote\"><div dir=\"ltr\">new text</div></div>") << false << 1;
 
