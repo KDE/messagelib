@@ -815,10 +815,12 @@ public:
                     // if quoteLengh == 0 && foundQuote => a simple quote
                     if (foundQuote) {
                         quoteLength++;
-                        htmlStr += QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(quoteLength));
                         const int rightString = (line.length()) - quoteLength;
                         if (rightString > 0) {
+                            htmlStr += QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(quoteLength));
                             htmlStr += QStringLiteral("<font color=\"%1\">").arg(cssHelper()->quoteColorName(actQuoteLevel)) + KTextToHTML::convertToHtml(line.right(rightString), convertFlags) + QStringLiteral("</font>");
+                        } else {
+                            htmlStr += QStringLiteral("<span class=\"quotemarksemptyline\">%1</span>").arg(line.left(quoteLength));
                         }
                     } else {
                         htmlStr += KTextToHTML::convertToHtml(line, convertFlags);
