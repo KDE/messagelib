@@ -149,6 +149,10 @@ KMime::Message::Ptr MessageFactoryTest::loadMessage(const QString &filename)
     return origMsg;
 }
 
+void MessageFactoryTest::testCreateReplyToAllWithUseSender()
+{
+    //TODO
+}
 
 void MessageFactoryTest::testCreateReplyToList()
 {
