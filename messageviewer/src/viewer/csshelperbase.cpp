@@ -332,6 +332,11 @@ QString CSSHelperBase::quoteCssDefinition() const
                               "  color:transparent;\n"
                               "  font-size:0px;\n"
                               "}\n\n");
+    quoteCSS += QLatin1String(".quotemarksemptyline{\n"
+                              "  color:transparent;\n"
+                              "  font-size:0px;\n"
+                              "  line-height: 12pt;\n"
+                              "}\n\n");
     return quoteCSS;
 }
 
