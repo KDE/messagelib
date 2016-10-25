@@ -95,6 +95,18 @@ void QuoteHtmlTest::testQuoteHtml_data()
                                                                      "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>").arg(mCollapseIcon).arg(mExpandIcon)
                                                    << true << 1;
 
+
+    QTest::newRow("bug-370452") << QStringLiteral("test\n> blo\n>\n>\n>\n> bla\nnew text") <<
+                                   QStringLiteral("<div class=\"noquote\">"
+                                                  "<div dir=\"ltr\">test</div></div>"
+                                                  "<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">> </span><font color=\"#008000\">blo</font></div>"
+                                                  "<div dir=\"ltr\"><span class=\"quotemarks\">></span></div>"
+                                                  "<div dir=\"ltr\"><span class=\"quotemarks\">></span></div>"
+                                                  "<div dir=\"ltr\"><span class=\"quotemarks\">></span></div>"
+                                                  "<div dir=\"ltr\"><span class=\"quotemarks\">> </span><font color=\"#008000\">bla</font></div></div></blockquote>"
+                                                  "<div class=\"noquote\"><div dir=\"ltr\">new text</div></div>") << false << 1;
+
+
 }
 
 void QuoteHtmlTest::testQuoteHtml()
