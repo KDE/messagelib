@@ -151,7 +151,50 @@ KMime::Message::Ptr MessageFactoryTest::loadMessage(const QString &filename)
 
 void MessageFactoryTest::testCreateReplyToAllWithUseSender()
 {
-    //TODO
+    const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message.mbox"));
+    KMime::Message::Ptr msg = loadMessage(filename);
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
+    ident.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
+    ident = identMan->newFromScratch(QStringLiteral("foo1"));
+    identMan->setAsDefault(ident.uoid());
+    ident.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
+    identMan->commit();
+
+    MessageFactory factory(msg, 0);
+    factory.setReplyStrategy(ReplyAll);
+    factory.setIdentityManager(identMan);
+
+    MessageFactory::MessageReply reply =  factory.createReply();
+    reply.replyAll = true;
+    //qDebug() << reply.msg->body();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
+    QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+
+    QString userAgent = reply.msg->userAgent()->asUnicodeString();
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("Date: %1\n"
+                                     "User-Agent: %2\n"
+                                     "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>\n"
+                                     "To: Bla <identity1@bla.com>\n"
+                                     "Subject: Re: Plain Message Test\n"
+                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n"
+                                     "%3")
+            .arg(dateStr).arg(userAgent).arg(replyStr);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+
+
+    delete identMan;
+    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateReplyToList()
