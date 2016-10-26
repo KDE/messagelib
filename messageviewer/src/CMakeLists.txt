@@ -80,6 +80,7 @@ set(libmessageviewer_widgets_SRCS
     widgets/invitationsettings.cpp
     widgets/openattachmentfolderwidget.cpp
     widgets/mailsourceviewtextbrowserwidget.cpp
+    widgets/submittedformwarningwidget.cpp
     )
 
 set(libmessageviewer_widgets_webengine_SRCS

@@ -91,6 +91,7 @@ class OpenAttachmentFolderWidget;
 class HeaderStyleMenuManager;
 class ViewerPluginToolManager;
 class ViewerPluginInterface;
+class SubmittedFormWarningWidget;
 /**
 \brief Private class for the Viewer, the main widget in the messageviewer library.
 
@@ -670,6 +671,7 @@ public:
 
     MessageViewer::ScamDetectionWarningWidget *mScamDetectionWarning;
     MessageViewer::OpenAttachmentFolderWidget *mOpenAttachmentFolderWidget;
+    MessageViewer::SubmittedFormWarningWidget *mSubmittedFormWarning;
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget;
     Viewer::DisplayFormatMessage mDisplayFormatMessageOverwrite;
     KPIMTextEdit::SlideContainer *mSliderContainer;

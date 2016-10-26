@@ -120,11 +120,11 @@
 
 #include <WebEngineViewer/FindBarWebEngineView>
 #include "viewer/webengine/mailwebengineview.h"
-#include <QWebEngineSettings>
 #include "htmlwriter/webengineparthtmlwriter.h"
 #include <widgets/mailsourcewebengineviewer.h>
 #include <WebEngineViewer/WebHitTestResult>
 #include "header/headerstylemenumanager.h"
+#include "widgets/submittedformwarningwidget.h"
 
 #include <MimeTreeParser/BodyPart>
 #include <MimeTreeParser/HtmlWriter>
@@ -142,6 +142,7 @@
 #include <KJobWidgets/KJobWidgets>
 #include <QApplication>
 #include <QStandardPaths>
+#include <QWebEngineSettings>
 #include <header/headerstyleplugin.h>
 #include <viewerplugins/viewerplugininterface.h>
 #include <WebEngineViewer/ZoomActionMenu>
@@ -1486,6 +1487,10 @@ void ViewerPrivate::createWidgets()
 
     mColorBar->setObjectName(QStringLiteral("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+
+    mSubmittedFormWarning = new SubmittedFormWarningWidget(readerBox);
+    mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));
+    readerBoxVBoxLayout->addWidget(mSubmittedFormWarning);
 
     mScamDetectionWarning = new ScamDetectionWarningWidget(readerBox);
     mScamDetectionWarning->setObjectName(QStringLiteral("scandetectionwarning"));
@@ -3010,7 +3015,7 @@ void ViewerPrivate::slotAddToWhiteList()
 
 void ViewerPrivate::slotFormSubmittedForbidden()
 {
-    //TODO
+    mSubmittedFormWarning->slotShowWarning();
 }
 
 void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)
