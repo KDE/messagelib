@@ -1,0 +1,84 @@
+Return-path: <sender@example.com>
+Envelope-to: gunter@ohrner.net
+Delivery-date: Mon, 12 Sep 2016 13:38:39 +0200
+Received: from mail.from example.com ([178.251.88.150])
+	by luggage.ohrner.net with esmtps (TLS1.0:DHE_RSA_AES_256_CBC_SHA1:256)
+	(Exim 4.80)
+	(envelope-from <sender@example.com>)
+	id 1bjPYi-0000oA-Re
+	for gunter@ohrner.net; Mon, 12 Sep 2016 13:38:39 +0200
+Received: from example.com.local (172.17.124.205) by from example.com.local
+ (172.17.124.1) with Microsoft SMTP Server id 14.3.266.1; Mon, 12 Sep 2016
+ 13:37:53 +0200
+From: <sender@example.com>
+To: <receiver@example.com>
+Message-ID: <8614416.18.1473680273823.JavaMail.sender@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----=_Part_16_9312243.1473680273820"
+Date: Mon, 12 Sep 2016 13:37:53 +0200
+X-TM-AS-Product-Ver: SMEX-11.1.0.1278-8.000.1202-22570.004
+X-TM-AS-Result: No--23.664000-5.000000-31
+X-TM-AS-User-Approved-Sender: No
+X-TM-AS-User-Blocked-Sender: No
+Subject: A Subject Line
+
+------=_Part_16_9312243.1473680273820
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<html><head></head><body><p><span style="font-family:Arial;">A Body Text</span></p></body></html>
+------=_Part_16_9312243.1473680273820
+Content-Type: application/octet-stream;
+	name="Attachment1.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment
+
+JVBERi0xLjEKJeLjz9MKMSAwIG9iaiAKPDwKL1R5cGUgL0NhdGFsb2cKL1BhZ2VzIDIgMCBSCj4+
+CmVuZG9iaiAKMiAwIG9iaiAKPDwKL0tpZHMgWzMgMCBSXQovVHlwZSAvUGFnZXMKL01lZGlhQm94
+IFswIDAgMzAwIDE0NF0KL0NvdW50IDEKPj4KZW5kb2JqIAozIDAgb2JqIAo8PAovUmVzb3VyY2Vz
+IAo8PAovRm9udCAKPDwKL0YxIAo8PAovU3VidHlwZSAvVHlwZTEKL1R5cGUgL0ZvbnQKL0Jhc2VG
+b250IC9UaW1lcy1Sb21hbgo+Pgo+Pgo+PgovQ29udGVudHMgNCAwIFIKL1BhcmVudCAyIDAgUgov
+VHlwZSAvUGFnZQovTWVkaWFCb3ggWzAgMCAzMDAgMTQ0XQo+PgplbmRvYmogCjQgMCBvYmogCjw8
+Ci9GaWx0ZXIgL0ZsYXRlRGVjb2RlCi9MZW5ndGggNTIKPj4Kc3RyZWFtCnicU1BwCuFSAAJ9N0MF
+QwuFkDQwzwAIQ1LATA2P1JycfIXw/KKcFE2FkCygoGsIACsbDAQKZW5kc3RyZWFtIAplbmRvYmog
+eHJlZgowIDUKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDAw
+NjYgMDAwMDAgbiAKMDAwMDAwMDE0OSAwMDAwMCBuIAowMDAwMDAwMzMxIDAwMDAwIG4gCnRyYWls
+ZXIKCjw8Ci9Sb290IDEgMCBSCi9TaXplIDUKPj4Kc3RhcnR4cmVmCjQ1NgolJUVPRgo=
+
+------=_Part_16_9312243.1473680273820
+Content-Type: application/octet-stream; name="Attachment2.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment
+
+JVBERi0xLjEKJeLjz9MKMSAwIG9iaiAKPDwKL1R5cGUgL0NhdGFsb2cKL1BhZ2VzIDIgMCBSCj4+
+CmVuZG9iaiAKMiAwIG9iaiAKPDwKL0tpZHMgWzMgMCBSXQovVHlwZSAvUGFnZXMKL01lZGlhQm94
+IFswIDAgMzAwIDE0NF0KL0NvdW50IDEKPj4KZW5kb2JqIAozIDAgb2JqIAo8PAovUmVzb3VyY2Vz
+IAo8PAovRm9udCAKPDwKL0YxIAo8PAovU3VidHlwZSAvVHlwZTEKL1R5cGUgL0ZvbnQKL0Jhc2VG
+b250IC9UaW1lcy1Sb21hbgo+Pgo+Pgo+PgovQ29udGVudHMgNCAwIFIKL1BhcmVudCAyIDAgUgov
+VHlwZSAvUGFnZQovTWVkaWFCb3ggWzAgMCAzMDAgMTQ0XQo+PgplbmRvYmogCjQgMCBvYmogCjw8
+Ci9GaWx0ZXIgL0ZsYXRlRGVjb2RlCi9MZW5ndGggNTIKPj4Kc3RyZWFtCnicU1BwCuFSAAJ9N0MF
+QwuFkDQwzwAIQ1LATA2P1JycfIXw/KKcFE2FkCygoGsIACsbDAQKZW5kc3RyZWFtIAplbmRvYmog
+eHJlZgowIDUKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDAw
+NjYgMDAwMDAgbiAKMDAwMDAwMDE0OSAwMDAwMCBuIAowMDAwMDAwMzMxIDAwMDAwIG4gCnRyYWls
+ZXIKCjw8Ci9Sb290IDEgMCBSCi9TaXplIDUKPj4Kc3RhcnR4cmVmCjQ1NgolJUVPRgo=
+
+------=_Part_16_9312243.1473680273820
+Content-Type: application/octet-stream; name="Attachment3.pdf"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment
+
+JVBERi0xLjEKJeLjz9MKMSAwIG9iaiAKPDwKL1R5cGUgL0NhdGFsb2cKL1BhZ2VzIDIgMCBSCj4+
+CmVuZG9iaiAKMiAwIG9iaiAKPDwKL0tpZHMgWzMgMCBSXQovVHlwZSAvUGFnZXMKL01lZGlhQm94
+IFswIDAgMzAwIDE0NF0KL0NvdW50IDEKPj4KZW5kb2JqIAozIDAgb2JqIAo8PAovUmVzb3VyY2Vz
+IAo8PAovRm9udCAKPDwKL0YxIAo8PAovU3VidHlwZSAvVHlwZTEKL1R5cGUgL0ZvbnQKL0Jhc2VG
+b250IC9UaW1lcy1Sb21hbgo+Pgo+Pgo+PgovQ29udGVudHMgNCAwIFIKL1BhcmVudCAyIDAgUgov
+VHlwZSAvUGFnZQovTWVkaWFCb3ggWzAgMCAzMDAgMTQ0XQo+PgplbmRvYmogCjQgMCBvYmogCjw8
+Ci9GaWx0ZXIgL0ZsYXRlRGVjb2RlCi9MZW5ndGggNTIKPj4Kc3RyZWFtCnicU1BwCuFSAAJ9N0MF
+QwuFkDQwzwAIQ1LATA2P1JycfIXw/KKcFE2FkCygoGsIACsbDAQKZW5kc3RyZWFtIAplbmRvYmog
+eHJlZgowIDUKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDAw
+NjYgMDAwMDAgbiAKMDAwMDAwMDE0OSAwMDAwMCBuIAowMDAwMDAwMzMxIDAwMDAwIG4gCnRyYWls
+ZXIKCjw8Ci9Sb290IDEgMCBSCi9TaXplIDUKPj4Kc3RhcnR4cmVmCjQ1NgolJUVPRgo=
+
+------=_Part_16_9312243.1473680273820--
+

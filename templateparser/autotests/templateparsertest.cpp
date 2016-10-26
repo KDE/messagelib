@@ -78,6 +78,58 @@ void TemplateParserTester::test_convertedHtml()
     QCOMPARE(convertedHtmlContent, referenceData);
 }
 
+void TemplateParserTester::test_replyPlain_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    foreach (const QString &file, dir.entryList(QStringList(QLatin1String("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
+        const auto expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".plain.reply");
+        if (!QFile::exists(expectedFile)) {
+            continue;
+        }
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+    }
+}
+
+void TemplateParserTester::test_replyPlain()
+{
+    QFETCH(QString, mailFileName);
+    QFETCH(QString, referenceFileName);
+
+    // load input mail
+    QFile mailFile(mailFileName);
+    QVERIFY(mailFile.open(QIODevice::ReadOnly));
+    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
+    QVERIFY(!mailData.isEmpty());
+    KMime::Message::Ptr msg(new KMime::Message);
+    msg->setContent(mailData);
+    msg->parse();
+
+    // load expected result
+    QFile referenceFile(referenceFileName);
+    QVERIFY(referenceFile.open(QIODevice::ReadOnly));
+    const QByteArray referenceRawData = KMime::CRLFtoLF(referenceFile.readAll());
+    const QString referenceData = QString::fromLatin1(referenceRawData);
+//    QVERIFY(!referenceData.isEmpty());
+
+//    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Plain Message Test");
+ //   QCOMPARE(msg->contents().size(), 0);
+
+    TemplateParser::TemplateParser parser(msg, TemplateParser::TemplateParser::Reply);
+    parser.mOtp->parseObjectTree(msg.data());
+    parser.mOrigMsg = msg;
+//    QVERIFY(parser.mOtp->htmlContent().isEmpty());
+//    QVERIFY(!parser.mOtp->plainTextContent().isEmpty());
+
+    const QString convertedHtmlContent = parser.plainMessageText(false, TemplateParser::TemplateParser::NoSelectionAllowed);
+
+    QCOMPARE(convertedHtmlContent, referenceData);
+}
+
+
+
 void TemplateParserTester::test_processWithTemplatesForBody_data()
 {
     QTest::addColumn<QString>("command");

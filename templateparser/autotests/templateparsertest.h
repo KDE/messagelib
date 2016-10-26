@@ -33,6 +33,9 @@ private Q_SLOTS:
     void test_convertedHtml();
     void test_convertedHtml_data();
 
+    void test_replyPlain();
+    void test_replyPlain_data();
+
     /**
      * Tests whether templates are returning required body or not
      */
