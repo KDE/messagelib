@@ -1076,6 +1076,7 @@ void ViewerPrivate::initHtmlWidget()
     connect(mViewer, &MailWebEngineView::wheelZoomChanged,
             this, &ViewerPrivate::slotWheelZoomChanged);
     connect(mViewer, &MailWebEngineView::messageMayBeAScam, this, &ViewerPrivate::slotMessageMayBeAScam);
+    connect(mViewer, &MailWebEngineView::formSubmittedForbidden, this, &ViewerPrivate::slotFormSubmittedForbidden);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer, &MailWebEngineView::slotShowDetails);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this, &ViewerPrivate::moveMessageToTrash);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::messageIsNotAScam, this, &ViewerPrivate::slotMessageIsNotAScam);
@@ -3005,6 +3006,11 @@ void ViewerPrivate::slotAddToWhiteList()
             MessageViewer::MessageViewerSettings::self()->save();
         }
     }
+}
+
+void ViewerPrivate::slotFormSubmittedForbidden()
+{
+    //TODO
 }
 
 void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)

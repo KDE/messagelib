@@ -33,6 +33,8 @@ public:
     bool interceptRequest(QWebEngineUrlRequestInfo &info) Q_DECL_OVERRIDE;
     void setAllowExternalContent(bool b);
     bool allowExternalContent() const;
+Q_SIGNALS:
+    void formSubmittedForbidden();
 };
 }
 #endif // BLOCKEXTERNALRESOURCESURLINTERCEPTOR_H

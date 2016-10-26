@@ -431,6 +431,7 @@ private Q_SLOTS:
     void slotMessageMayBeAScam();
     void slotMessageIsNotAScam();
     void slotAddToWhiteList();
+    void slotFormSubmittedForbidden();
 
     /** Show hide all fields specified inside this function */
     void toggleFullAddressList();

@@ -51,7 +51,8 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
             ) {
         return true;
     } else if (info.navigationType() == QWebEngineUrlRequestInfo::NavigationTypeFormSubmitted) {
-
+        Q_EMIT formSubmittedForbidden();
+        return true;
     }
     return false;
 }

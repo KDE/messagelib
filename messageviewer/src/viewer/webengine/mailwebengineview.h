@@ -93,6 +93,7 @@ Q_SIGNALS:
     void wheelZoomChanged(int numSteps);
     void openUrl(const QUrl &url);
     void messageMayBeAScam();
+    void formSubmittedForbidden();
     /// Emitted when the user right-clicks somewhere
     /// @param url if an URL was under the cursor, this parameter contains it. Otherwise empty
     /// @param point position where the click happened, in local coordinates
