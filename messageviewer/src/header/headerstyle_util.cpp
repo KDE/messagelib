@@ -379,14 +379,16 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
         }
     }
 
-    if (settings.photoURL.isEmpty() && message->headerByType("X-Face") && useOtherPhotoSources) {
-        // no photo, look for a X-Face header
-        const QString xfhead = message->headerByType("X-Face")->asUnicodeString();
-        if (!xfhead.isEmpty()) {
-            MessageViewer::KXFace xf;
-            settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(xf.toImage(xfhead));
-            settings.photoWidth = 48;
-            settings.photoHeight = 48;
+    if (settings.photoURL.isEmpty() && useOtherPhotoSources) {
+        if (auto hrd = message->headerByType("X-Face")) {
+            // no photo, look for a X-Face header
+            const QString xfhead = hrd->asUnicodeString();
+            if (!xfhead.isEmpty()) {
+                MessageViewer::KXFace xf;
+                settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(xf.toImage(xfhead));
+                settings.photoWidth = 48;
+                settings.photoHeight = 48;
+            }
         }
     }
 

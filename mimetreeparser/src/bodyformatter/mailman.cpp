@@ -59,8 +59,7 @@ bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content *curNode) const
     if (curNode->hasHeader("X-Mailman-Version")) {
         return true;
     }
-    if (curNode->hasHeader("X-Mailer")) {
-        KMime::Headers::Base *header = curNode->headerByType("X-Mailer");
+    if (KMime::Headers::Base *header = curNode->headerByType("X-Mailer")) {
         if (header->asUnicodeString().contains(QStringLiteral("MAILMAN"), Qt::CaseInsensitive)) {
             return true;
         }

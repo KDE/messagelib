@@ -151,7 +151,9 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     if (d->mCustomTransportId != -1) {
         transportId = d->mCustomTransportId;
     } else {
-        transportId = message->headerByType("X-KMail-Transport") ? message->headerByType("X-KMail-Transport")->asUnicodeString().toInt() : -1;
+        if (auto hrd = message->headerByType("X-KMail-Transport")) {
+            transportId = hrd->asUnicodeString().toInt();
+        }
     }
     const Transport *transport = TransportManager::self()->transportById(transportId);
     if (!transport) {
