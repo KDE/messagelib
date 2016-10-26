@@ -35,21 +35,26 @@ BlockExternalResourcesUrlInterceptor::~BlockExternalResourcesUrlInterceptor()
 
 bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    const QWebEngineUrlRequestInfo::ResourceType type = info.resourceType();
-    if (type == QWebEngineUrlRequestInfo::ResourceTypeMedia ||
-            type == QWebEngineUrlRequestInfo::ResourceTypePing ||
-            type == QWebEngineUrlRequestInfo::ResourceTypePrefetch ||
-            type == QWebEngineUrlRequestInfo::ResourceTypeFavicon ||
-            type == QWebEngineUrlRequestInfo::ResourceTypeXhr ||
+    const QWebEngineUrlRequestInfo::ResourceType resourceType = info.resourceType();
+    const QWebEngineUrlRequestInfo::NavigationType navigationType = info.navigationType();
+    if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeMedia ||
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypePing ||
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypePrefetch ||
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypeFavicon ||
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypeXhr ||
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypeObject ||
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypeScript ||
         #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-            type == QWebEngineUrlRequestInfo::ResourceTypePluginResource ||
-            type == QWebEngineUrlRequestInfo::ResourceTypeCspReport ||
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypePluginResource ||
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypeCspReport ||
         #endif
-            type == QWebEngineUrlRequestInfo::ResourceTypeUnknown
-            ) {
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypeUnknown) {
         return true;
-    } else if (info.navigationType() == QWebEngineUrlRequestInfo::NavigationTypeFormSubmitted) {
+    } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeFormSubmitted) {
         Q_EMIT formSubmittedForbidden();
+        return true;
+    } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeReload ||
+               navigationType == QWebEngineUrlRequestInfo::NavigationTypeTyped) {
         return true;
     }
     return false;
