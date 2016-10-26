@@ -332,8 +332,8 @@ MessageFactory::MessageReply MessageFactory::createReply()
         msg->setHeader(header);
     }
 
-    if (m_origMsg->hasHeader("X-KMail-EncryptActionEnabled")) {
-        if (m_origMsg->headerByType("X-KMail-EncryptActionEnabled")->as7BitString(false).contains("true")) {
+    if (auto hrd = m_origMsg->headerByType("X-KMail-EncryptActionEnabled")) {
+        if (hrd->as7BitString(false).contains("true")) {
             auto header = new KMime::Headers::Generic("X-KMail-EncryptActionEnabled");
             header->fromUnicodeString(QStringLiteral("true"), "utf-8");
             msg->setHeader(header);
@@ -693,9 +693,13 @@ KMime::Message::Ptr MessageFactory::createMDN(KMime::MDN::ActionMode a,
     secondMsgPart->contentType()->setMimeType("message/disposition-notification");
 
     secondMsgPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
+    QByteArray originalRecipient = "";
+    if (auto hrd = m_origMsg->headerByType("Original-Recipient")) {
+        originalRecipient = hrd->as7BitString(false);
+    }
     secondMsgPart->setBody(KMime::MDN::dispositionNotificationBodyContent(
                                finalRecipient,
-                               m_origMsg->headerByType("Original-Recipient") ? m_origMsg->headerByType("Original-Recipient")->as7BitString(false) : "",
+                               originalRecipient,
                                m_origMsg->messageID()->as7BitString(false), /* Message-ID */
                                d, a, s, m, special));
     receipt->addContent(secondMsgPart);
@@ -757,8 +761,10 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactory::createForwardDige
     int id = 0;
     foreach (const Akonadi::Item &item, items) {
         KMime::Message::Ptr fMsg = MessageCore::Util::message(item);
-        if (id == 0 && fMsg->hasHeader("X-KMail-Identity")) {
-            id = fMsg->headerByType("X-KMail-Identity")->asUnicodeString().toInt();
+        if (id == 0) {
+            if (auto hrd = fMsg->headerByType("X-KMail-Identity")) {
+                id = hrd->asUnicodeString().toInt();
+            }
         }
 
         MessageCore::StringUtil::removePrivateHeaderFields(fMsg);

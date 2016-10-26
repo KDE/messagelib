@@ -996,8 +996,7 @@ void MessageComposer::ComposerViewBase::fillQueueJobHeaders(MailTransport::Messa
     }
     // if this header is not empty, it contains the real recipient of the message, either the primary or one of the
     //  secondary recipients. so we set that to the transport job, while leaving the message itself alone.
-    if (message->hasHeader("X-KMail-EncBccRecipients")) {
-        KMime::Headers::Base *realTo = message->headerByType("X-KMail-EncBccRecipients");
+    if (KMime::Headers::Base *realTo = message->headerByType("X-KMail-EncBccRecipients")) {
         qjob->addressAttribute().setTo(cleanEmailList(encodeIdn(realTo->asUnicodeString().split(QLatin1Char('%')))));
         message->removeHeader("X-KMail-EncBccRecipients");
         message->assemble();
