@@ -1633,8 +1633,8 @@ QString TemplateParser::quotedHtmlText(const QString &selection) const
 uint TemplateParser::identityUoid(const KMime::Message::Ptr &msg) const
 {
     QString idString;
-    if (msg->headerByType("X-KMail-Identity")) {
-        idString = msg->headerByType("X-KMail-Identity")->asUnicodeString().trimmed();
+    if (auto hrd = msg->headerByType("X-KMail-Identity")) {
+        idString = hrd->asUnicodeString().trimmed();
     }
     bool ok = false;
     int id = idString.toUInt(&ok);

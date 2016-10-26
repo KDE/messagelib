@@ -42,12 +42,18 @@ void MessageCore::Util::addLinkInformation(const KMime::Message::Ptr &msg, Akona
 {
     Q_ASSERT(status.isReplied() || status.isForwarded() || status.isDeleted());
 
-    QString message = msg->headerByType("X-KMail-Link-Message") ? msg->headerByType("X-KMail-Link-Message")->asUnicodeString() : QString();
+    QString message;
+    if (auto hrd = msg->headerByType("X-KMail-Link-Message")) {
+        message = hrd->asUnicodeString();
+    }
     if (!message.isEmpty()) {
         message += QChar::fromLatin1(',');
     }
 
-    QString type = msg->headerByType("X-KMail-Link-Type") ? msg->headerByType("X-KMail-Link-Type")->asUnicodeString() : QString();
+    QString type;
+    if (auto hrd = msg->headerByType("X-KMail-Link-Type")) {
+        type = hrd->asUnicodeString();
+    }
     if (!type.isEmpty()) {
         type += QChar::fromLatin1(',');
     }

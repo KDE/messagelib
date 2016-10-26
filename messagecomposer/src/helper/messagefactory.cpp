@@ -616,7 +616,10 @@ KMime::Message::Ptr MessageFactory::createRedirect(const QString &toStr, const Q
 
 KMime::Message::Ptr MessageFactory::createDeliveryReceipt()
 {
-    QString receiptTo = m_origMsg->headerByType("Disposition-Notification-To") ? m_origMsg->headerByType("Disposition-Notification-To")->asUnicodeString() : QStringLiteral("");
+    QString receiptTo;
+    if (auto hrd = m_origMsg->headerByType("Disposition-Notification-To")) {
+        receiptTo = hrd->asUnicodeString();
+    }
     if (receiptTo.trimmed().isEmpty()) {
         return  KMime::Message::Ptr();
     }
