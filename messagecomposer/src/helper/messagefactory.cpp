@@ -105,7 +105,6 @@ MessageFactory::MessageReply MessageFactory::createReply()
     MessageCore::MailingList::name(m_origMsg, headerName, mailingListStr);
     replyToList = m_origMsg->replyTo()->mailboxes();
 
-
     msg->contentType()->setCharset("utf-8");
 
     if (auto hdr = m_origMsg->headerByType("List-Post")) {

@@ -40,7 +40,6 @@ private Q_SLOTS:
     void testCreateRedirectToAndCC();
     void testCreateRedirectToAndCCAndBCC();
 
-
     //MultiPart
     void test_multipartAlternative_data();
     void test_multipartAlternative();

@@ -688,7 +688,6 @@ public:
         int currQuoteLevel = -2; // -2 == no previous lines
         bool curHidden = false; // no hide any block
 
-
         QString collapseIconPath;
         QString mExpandIconPath;
         if (source()->showExpandQuotesMark()) {
