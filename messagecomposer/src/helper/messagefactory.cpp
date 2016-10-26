@@ -178,6 +178,10 @@ MessageFactory::MessageReply MessageFactory::createReply()
         KMime::Types::Mailbox::List recipients;
         KMime::Types::Mailbox::List ccRecipients;
 
+        QString sender;
+        if (auto hrd = m_origMsg->sender(false)) {
+            sender = hrd->asUnicodeString();
+        }
         // add addresses from the Reply-To header to the list of recipients
         if (!replyToList.isEmpty()) {
             recipients = replyToList;
@@ -191,7 +195,7 @@ MessageFactory::MessageReply MessageFactory::createReply()
                 }
             }
         }
-
+        bool stripMyAddresses = true;
         if (!m_mailingListAddresses.isEmpty()) {
             // this is a mailing list message
             if (recipients.isEmpty() && !m_origMsg->from()->asUnicodeString().isEmpty()) {
@@ -204,17 +208,29 @@ MessageFactory::MessageReply MessageFactory::createReply()
             // if it is a mailing list, add the posting address
             recipients.prepend(m_mailingListAddresses[ 0 ]);
         } else {
-            // this is a normal message
-            if (recipients.isEmpty() && !m_origMsg->from()->asUnicodeString().isEmpty()) {
-                // in case of replying to a normal message only then add the From
-                // address to the list of recipients if there was no Reply-to address
-                recipients += m_origMsg->from()->mailboxes();
-                qCDebug(MESSAGECOMPOSER_LOG) << "Added" << m_origMsg->from()->asUnicodeString() << "to the list of recipients";
+            const QString fromAddress = m_origMsg->from()->asUnicodeString();
+            if (!fromAddress.isEmpty()) {
+                if (!sender.isEmpty() && m_identityManager->thatIsMe(fromAddress)) {
+                    // strip all my addresses from the list of recipients
+                    toList = stripMyAddressesFromAddressList(recipients, m_identityManager);
+                    toList += KMime::Types::Mailbox::listFromUnicodeString(sender);
+                    toList += m_origMsg->from()->mailboxes();
+                    stripMyAddresses = false;
+                } else {
+                    // this is a normal message
+                    if (recipients.isEmpty()) {
+                        // in case of replying to a normal message only then add the From
+                        // address to the list of recipients if there was no Reply-to address
+                        recipients += m_origMsg->from()->mailboxes();
+                        qCDebug(MESSAGECOMPOSER_LOG) << "Added" << m_origMsg->from()->asUnicodeString() << "to the list of recipients";
+                    }
+                }
             }
         }
-
-        // strip all my addresses from the list of recipients
-        toList = stripMyAddressesFromAddressList(recipients, m_identityManager);
+        if (stripMyAddresses) {
+            // strip all my addresses from the list of recipients
+            toList = stripMyAddressesFromAddressList(recipients, m_identityManager);
+        }
 
         // merge To header and CC header into a list of CC recipients
         if (!m_origMsg->cc()->asUnicodeString().isEmpty() || !m_origMsg->to()->asUnicodeString().isEmpty()) {
