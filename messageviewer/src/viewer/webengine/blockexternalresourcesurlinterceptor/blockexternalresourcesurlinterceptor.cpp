@@ -20,7 +20,6 @@
 #include "blockexternalresourcesurlinterceptor.h"
 
 #include <QWebEngineUrlRequestInfo>
-#include <QDebug>
 
 using namespace MessageViewer;
 
@@ -36,7 +35,6 @@ BlockExternalResourcesUrlInterceptor::~BlockExternalResourcesUrlInterceptor()
 
 bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    //qDebug()<<" bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)" << (info.navigationType() == QWebEngineUrlRequestInfo::NavigationTypeFormSubmitted);
     const QWebEngineUrlRequestInfo::ResourceType type = info.resourceType();
     if (type == QWebEngineUrlRequestInfo::ResourceTypeMedia ||
             type == QWebEngineUrlRequestInfo::ResourceTypePing ||
