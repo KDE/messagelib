@@ -23,6 +23,7 @@
 #include "mailwebenginescript.h"
 #include "messageviewer/messageviewersettings.h"
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
+#include "blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
 #include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
 #include <WebEngineViewer/InterceptorManager>
 #include <WebEngineViewer/WebEngineManageScript>
@@ -95,6 +96,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager->addInterceptor(d->mExternalReference);
     MessageViewer::CidReferencesUrlInterceptor *cidReference = new MessageViewer::CidReferencesUrlInterceptor(this);
     d->mNetworkAccessManager->addInterceptor(cidReference);
+    d->mNetworkAccessManager->addInterceptor(new MessageViewer::BlockExternalResourcesUrlInterceptor(this));
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
 #if QT_VERSION >= 0x050700

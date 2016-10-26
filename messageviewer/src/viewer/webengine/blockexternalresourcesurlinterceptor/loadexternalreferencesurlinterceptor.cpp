@@ -55,6 +55,8 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
                 && !info.requestUrl().isLocalFile()
                 && (info.requestUrl().scheme() != QLatin1String("cid"))) {
             return true;
+        } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeMedia) {
+            return true;
         }
     }
     return false;
