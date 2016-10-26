@@ -36,6 +36,7 @@ if(BUILD_TESTING)
     add_subdirectory(viewer/webengine/tests)
     add_subdirectory(messagepartthemes/default/autotests)
     add_subdirectory(viewer/webengine/autotests/)
+    add_subdirectory(checkphishingurl/autotests/)
 endif()
 add_subdirectory(pics)
 add_subdirectory(kconf_update)
@@ -117,6 +118,10 @@ set(libmessageviewer_scamdetection_webengine_SRCS
     scamdetection/scamdetectionwebengine.cpp
     )
 
+set(libmessageviewer_checkphishingurl_SRCS
+   checkphishingurl/checkphishingurljob.cpp
+   )
+
 set(libmessageviewer_findbar_SRCS
     findbar/findbarsourceview.cpp
     )
@@ -135,7 +140,6 @@ set(libmessageviewer_htmlwriter_webengine_SRCS
 
 set(libmessageviewer_htmlwriter_SRCS
     htmlwriter/teehtmlwriter.cpp
-    ${libmessageviewer_htmlwriter_webengine_SRCS}
     )
 
 set(libmessageviewer_antispam_SRCS
@@ -162,10 +166,10 @@ set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/messagepartrenderermanager.cpp
     )
 
-set(libmessageviewer_messagepartthemes_SRCS
-    ${libmessageviewer_messagepartthemes_default_SRCS}
-    )
 set(libmessageviewer_SRCS
+    ${libmessageviewer_checkphishingurl_SRCS}
+    ${libmessageviewer_messagepartthemes_default_SRCS}
+    ${libmessageviewer_htmlwriter_webengine_SRCS}
     ${libmessageviewer_messagepartthemes_SRCS}
     ${libmessageviewer_scamdetection_webengine_SRCS}
     ${libmessageviewer_widgets_webengine_SRCS}
