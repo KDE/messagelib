@@ -126,11 +126,31 @@ String very_simplistic_diff(const String &a, const String &b)
 
 QTEST_MAIN(MessageFactoryTest)
 
+
+void MessageFactoryTest::cleanupTestCase()
+{
+    delete mIdentMan;
+    mIdentMan = Q_NULLPTR;
+    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
+    dir.removeRecursively();
+}
+
 void MessageFactoryTest::initTestCase()
 {
     // Force fake XDG dirs so that KIdentityManagement does not
     // read actual user data when running tests locally
     QStandardPaths::setTestModeEnabled(true);
+    mIdentMan = new KIdentityManagement::IdentityManager;
+
+    KIdentityManagement::Identity &ident = mIdentMan->modifyIdentityForUoid(mIdentMan->identityForUoidOrDefault(0).uoid());
+    ident.setFullName(QStringLiteral("another"));
+    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
+
+    mIdentMan->newFromScratch(QStringLiteral("test1"));
+    mIdentMan->newFromScratch(QStringLiteral("test2"));
+    mIdentMan->newFromScratch(QStringLiteral("test3"));
+    mIdentMan->setAsDefault(ident.uoid());
+    mIdentMan->commit();
 }
 
 KMime::Message::Ptr MessageFactoryTest::loadMessage(const QString &filename)
@@ -153,17 +173,17 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSender()
 {
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message.mbox"));
     KMime::Message::Ptr msg = loadMessage(filename);
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
-    ident.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
-    ident = identMan->newFromScratch(QStringLiteral("foo1"));
-    identMan->setAsDefault(ident.uoid());
-    ident.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
-    identMan->commit();
+    KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
+    i1.setFullName(QStringLiteral("foo1"));
+    i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
+    KIdentityManagement::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
+    i2.setFullName(QStringLiteral("foo2"));
+    i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
+    mIdentMan->commit();
 
     MessageFactory factory(msg, 0);
     factory.setReplyStrategy(ReplyAll);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     MessageFactory::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
@@ -178,10 +198,11 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSender()
 
     QString userAgent = reply.msg->userAgent()->asUnicodeString();
     QString dateStr = reply.msg->date()->asUnicodeString();
-    QString ba = QString::fromLatin1("Date: %1\n"
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
                                      "User-Agent: %2\n"
                                      "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>\n"
-                                     "To: Bla <identity1@bla.com>\n"
+                                     "To: Bla1 <identity2@bla.com>, Bla <identity1@bla.com>\n"
                                      "Subject: Re: Plain Message Test\n"
                                      "Content-Type: text/plain; charset=\"US-ASCII\"\n"
                                      "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
@@ -190,23 +211,61 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSender()
                                      "%3")
                  .arg(dateStr).arg(userAgent).arg(replyStr);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
-
-    delete identMan;
-    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    dir.removeRecursively();
 }
+
+void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentities()
+{
+    const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_without_identity_message.mbox"));
+    KMime::Message::Ptr msg = loadMessage(filename);
+    KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
+    i1.setFullName(QStringLiteral("foo1"));
+    i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
+    KIdentityManagement::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
+    i2.setFullName(QStringLiteral("foo2"));
+    i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
+    mIdentMan->commit();
+
+    MessageFactory factory(msg, 0);
+    factory.setReplyStrategy(ReplyAll);
+    factory.setIdentityManager(mIdentMan);
+
+    MessageFactory::MessageReply reply =  factory.createReply();
+    reply.replyAll = true;
+    //qDebug() << reply.msg->body();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
+    QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+
+    QString userAgent = reply.msg->userAgent()->asUnicodeString();
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
+                                     "User-Agent: %2\n"
+                                     "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>\n"
+                                     "To: Bla <bloblo@bla.com>\n"
+                                     "Subject: Re: Plain Message Test\n"
+                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n"
+                                     "%3")
+                 .arg(dateStr).arg(userAgent).arg(replyStr);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+}
+
 
 void MessageFactoryTest::testCreateReplyToList()
 {
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/list_message.mbox"));
     KMime::Message::Ptr msg = loadMessage(filename);
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
-    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
-    identMan->commit();
+
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
     factory.setReplyStrategy(ReplyList);
 
     MessageFactory::MessageReply reply =  factory.createReply();
@@ -220,7 +279,8 @@ void MessageFactoryTest::testCreateReplyToList()
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
     QString userAgent = reply.msg->userAgent()->asUnicodeString();
     QString dateStr = reply.msg->date()->asUnicodeString();
-    QString ba = QString::fromLatin1("Date: %1\n"
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
                                      "User-Agent: %2\n"
                                      "To: list@list.org\n"
                                      "Subject: Re: Plain Message Test\n"
@@ -231,20 +291,14 @@ void MessageFactoryTest::testCreateReplyToList()
                                      "%3")
                  .arg(dateStr).arg(userAgent).arg(replyStr);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
-
-    delete identMan;
 }
 
 void MessageFactoryTest::testCreateReplyToAuthor()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
-    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
-    identMan->commit();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
     factory.setReplyStrategy(ReplyAuthor);
 
     MessageFactory::MessageReply reply =  factory.createReply();
@@ -277,22 +331,14 @@ void MessageFactoryTest::testCreateReplyToAuthor()
                                      "%5")
                  .arg(dateStr).arg(userAgent).arg(replyTo).arg(reference).arg(replyStr);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
-
-    delete identMan;
-    //QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    //dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateReplyAllWithMultiEmails()
 {
     KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
-    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
-    identMan->commit();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
     factory.setReplyStrategy(ReplyAll);
 
     MessageFactory::MessageReply reply =  factory.createReply();
@@ -323,21 +369,13 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmails()
                                      "X-KMail-Link-Type: reply\n\n> All happy families are alike; each unhappy family is unhappy in its own way.")
                  .arg(dateStr).arg(userAgent).arg(replyTo).arg(reference);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
-    delete identMan;
-    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateReplyAll()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
-    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
-    identMan->commit();
-
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     MessageFactory::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
@@ -349,20 +387,16 @@ void MessageFactoryTest::testCreateReplyAll()
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
-    delete identMan;
-    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateReplyHtml()
 {
     KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("html_utf8_encoded.mbox"));
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
 
     //qDebug() << "html message:" << msg->encodedContent();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
     TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
 
     MessageFactory::MessageReply reply =  factory.createReply();
@@ -387,23 +421,17 @@ void MessageFactoryTest::testCreateReplyHtml()
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
     QCOMPARE(reply.msg->contents().count(), 0);
     TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
-
-    delete identMan;
 }
 
 void MessageFactoryTest::testCreateReplyUTF16Base64()
 {
     KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("plain_utf16.mbox"));
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
-    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
-    identMan->commit();
 
     TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
 //   qDebug() << "plain base64 msg message:" << msg->encodedContent();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     MessageFactory::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
@@ -416,20 +444,14 @@ void MessageFactoryTest::testCreateReplyUTF16Base64()
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: asking for reply"));
     QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
-    delete identMan;
 }
 
 void MessageFactoryTest::testCreateForwardMultiEmails()
 {
     KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity &ident = identMan->modifyIdentityForUoid(identMan->identityForUoidOrDefault(0).uoid());
-    ident.setFullName(QStringLiteral("another"));
-    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
-    identMan->commit();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     KMime::Message::Ptr fw =  factory.createForward();
     QDateTime date = msg->date()->dateTime();
@@ -463,20 +485,14 @@ void MessageFactoryTest::testCreateForwardMultiEmails()
 //   qDebug() << "got:" << fw->encodedContent() << "against" << fwdMsg.toLatin1();
     QCOMPARE(fw->subject()->asUnicodeString(), QStringLiteral("Fwd: Test Email Subject"));
     QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toLatin1());
-    delete identMan;
 }
 
 void MessageFactoryTest::testCreateForward()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity &ident = identMan->modifyIdentityForUoid(identMan->identityForUoidOrDefault(0).uoid());
-    ident.setFullName(QStringLiteral("another"));
-    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
-    identMan->commit();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     KMime::Message::Ptr fw =  factory.createForward();
 
@@ -511,20 +527,14 @@ void MessageFactoryTest::testCreateForward()
 //   qDebug() << "got:" << fw->encodedContent() << "against" << fwdMsg.toLatin1();
     QCOMPARE(fw->subject()->asUnicodeString(), QStringLiteral("Fwd: Test Email Subject"));
     QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toLatin1());
-    delete identMan;
 }
 
 void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity &ident = identMan->modifyIdentityForUoid(identMan->identityForUoidOrDefault(0).uoid());
-    ident.setFullName(QStringLiteral("another"));
-    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
-    identMan->commit();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     QString redirectTo = QStringLiteral("redir@redir.com");
     QString redirectCc = QStringLiteral("redircc@redircc.com, redircc2@redircc.com");
@@ -574,22 +584,14 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 //   QString fwdStr = QString::fromLatin1( "On " + datetime.toLatin1() + " you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n" );
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
-    delete identMan;
-    //QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    //dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateRedirectToAndCC()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity &ident = identMan->modifyIdentityForUoid(identMan->identityForUoidOrDefault(0).uoid());
-    ident.setFullName(QStringLiteral("another"));
-    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
-    identMan->commit();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     QString redirectTo = QStringLiteral("redir@redir.com");
     QString redirectCc = QStringLiteral("redircc@redircc.com, redircc2@redircc.com");
@@ -637,22 +639,14 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
 //   QString fwdStr = QString::fromLatin1( "On " + datetime.toLatin1() + " you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n" );
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
-    delete identMan;
-    //QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    //dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateRedirect()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity &ident = identMan->modifyIdentityForUoid(identMan->identityForUoidOrDefault(0).uoid());
-    ident.setFullName(QStringLiteral("another"));
-    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
-    identMan->commit();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     QString redirectTo = QStringLiteral("redir@redir.com");
     KMime::Message::Ptr rdir =  factory.createRedirect(redirectTo);
@@ -698,22 +692,14 @@ void MessageFactoryTest::testCreateRedirect()
 //   QString fwdStr = QString::fromLatin1( "On " + datetime.toLatin1() + " you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n" );
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
-    delete identMan;
-    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateResend()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity &ident = identMan->modifyIdentityForUoid(identMan->identityForUoidOrDefault(0).uoid());
-    ident.setFullName(QStringLiteral("another"));
-    ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
-    identMan->commit();
 
     MessageFactory factory(msg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     KMime::Message::Ptr rdir =  factory.createResend();
 
@@ -753,19 +739,15 @@ void MessageFactoryTest::testCreateResend()
 //   QString fwdStr = QString::fromLatin1( "On " + datetime.toLatin1() + " you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n" );
     QCOMPARE(rdir->subject()->asUnicodeString(), QStringLiteral("Test Email Subject"));
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toLatin1());
-    delete identMan;
-    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    dir.removeRecursively();
 }
 
 void MessageFactoryTest::testCreateMDN()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
 
     MessageFactory factory(msg, 0);
 
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
 
     KMime::Message::Ptr mdn = factory.createMDN(KMime::MDN::AutomaticAction, KMime::MDN::Displayed, KMime::MDN::SentAutomatically);
 
@@ -789,7 +771,6 @@ void MessageFactoryTest::testCreateMDN()
 
     QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(),
                      mdnContent.toLatin1());
-    delete identMan;
 }
 
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
@@ -884,13 +865,8 @@ void MessageFactoryTest::test_multipartAlternative()
 
     KMime::Message::Ptr origMsg = loadMessage(mailFileName);
 
-    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    KIdentityManagement::Identity ident = identMan->newFromScratch(QStringLiteral("foo"));
-    ident.setPrimaryEmailAddress(QStringLiteral("foo@foo.foo"));
-    identMan->commit();
-
     MessageFactory factory(origMsg, 0);
-    factory.setIdentityManager(identMan);
+    factory.setIdentityManager(mIdentMan);
     factory.setSelection(selection);
     factory.setQuote(true);
     factory.setReplyStrategy(ReplyAll);
@@ -905,8 +881,5 @@ void MessageFactoryTest::test_multipartAlternative()
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE(reply.msg->contents().at(contentAt)->encodedBody().data(), expected.toLatin1().data());
-    delete identMan;
-    QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
-    dir.removeRecursively();
 }
 

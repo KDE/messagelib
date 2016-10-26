@@ -23,7 +23,10 @@
 
 #include <QObject>
 #include <kmime/kmime_message.h>
-
+namespace KIdentityManagement
+{
+class IdentityManager;
+}
 class MessageFactoryTest : public QObject
 {
     Q_OBJECT
@@ -49,12 +52,15 @@ private Q_SLOTS:
     void testCreateReplyAllWithMultiEmails();
     void testCreateReplyToList();
     void testCreateReplyToAllWithUseSender();
+    void testCreateReplyToAllWithUseSenderByNoSameIdentities();
 
+    void cleanupTestCase();
 private:
     KMime::Message::Ptr createPlainTestMessage();
     KMime::Message::Ptr loadMessageFromFile(QString filename);
     KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
     KMime::Message::Ptr loadMessage(const QString &filename);
+    KIdentityManagement::IdentityManager *mIdentMan;
 };
 
 #endif
