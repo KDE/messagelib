@@ -56,7 +56,8 @@ MessagePart::Ptr MimeTreeParser::toplevelTextNode(MessagePart::Ptr messageTree)
         const auto m = mp.dynamicCast<MessagePart>();
         const auto text = mp.dynamicCast<TextMessagePart>();
         const auto alternative = mp.dynamicCast<AlternativeMessagePart>();
-        if (text) {
+        const auto attach = mp.dynamicCast<AttachmentMessagePart>();
+        if (text && !attach) {
             return text;
         } else if (alternative) {
             return alternative;
