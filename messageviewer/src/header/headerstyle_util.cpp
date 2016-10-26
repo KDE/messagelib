@@ -246,8 +246,8 @@ QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentFromList(KMime::Message *m
 {
     // Get the resent-from header into a Mailbox
     QVector<KMime::Types::Mailbox> resentFrom;
-    if (message->headerByType("Resent-From")) {
-        const QByteArray data = message->headerByType("Resent-From")->as7BitString(false);
+    if (auto hrd = message->headerByType("Resent-From")) {
+        const QByteArray data = hrd->as7BitString(false);
         const char *start = data.data();
         const char *end = start + data.length();
         KMime::Types::AddressList addressList;
@@ -265,8 +265,8 @@ QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentToList(KMime::Message *mes
 {
     // Get the resent-from header into a Mailbox
     QVector<KMime::Types::Mailbox> resentTo;
-    if (message->headerByType("Resent-To")) {
-        const QByteArray data = message->headerByType("Resent-To")->as7BitString(false);
+    if (auto hrd = message->headerByType("Resent-To")) {
+        const QByteArray data = hrd->as7BitString(false);
         const char *start = data.data();
         const char *end = start + data.length();
         KMime::Types::AddressList addressList;

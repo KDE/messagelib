@@ -163,8 +163,8 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("senderi18n"), i18n("Sender:"));
     headerObject.insert(QStringLiteral("listidi18n"), i18n("List-Id:"));
 
-    if (message->headerByType("List-Id")) {
-        headerObject.insert(QStringLiteral("listid"), message->headerByType("List-Id")->asUnicodeString());
+    if (auto hrd = message->headerByType("List-Id")) {
+        headerObject.insert(QStringLiteral("listid"), hrd->asUnicodeString());
     }
 
     const QString spamHtml = d->headerStyleUtil.spamStatus(message);
@@ -186,18 +186,18 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
             headerObject.insert(QStringLiteral("useragent"), d->headerStyleUtil.strToHtml(hdr->asUnicodeString()));
         }
 
-        if (message->headerByType("X-Mailer")) {
-            headerObject.insert(QStringLiteral("xmailer"), d->headerStyleUtil.strToHtml(message->headerByType("X-Mailer")->asUnicodeString()));
+        if (auto hrd = message->headerByType("X-Mailer")) {
+            headerObject.insert(QStringLiteral("xmailer"), d->headerStyleUtil.strToHtml(hrd->asUnicodeString()));
         }
     }
 
-    if (message->headerByType("Resent-From")) {
+    if (message->hasHeader("Resent-From")) {
         headerObject.insert(QStringLiteral("resentfromi18n"), i18n("resent from"));
         const QVector<KMime::Types::Mailbox> resentFrom = d->headerStyleUtil.resentFromList(message);
         headerObject.insert(QStringLiteral("resentfrom"), StringUtil::emailAddrAsAnchor(resentFrom, StringUtil::DisplayFullAddress));
     }
 
-    if (message->headerByType("Resent-To")) {
+    if (message->hasHeader("Resent-To")) {
         const QVector<KMime::Types::Mailbox> resentTo = d->headerStyleUtil.resentToList(message);
         headerObject.insert(QStringLiteral("resenttoi18n"), i18np("receiver was", "receivers were", resentTo.count()));
         headerObject.insert(QStringLiteral("resentto"), StringUtil::emailAddrAsAnchor(resentTo, StringUtil::DisplayFullAddress));

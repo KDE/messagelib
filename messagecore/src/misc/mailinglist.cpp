@@ -47,7 +47,10 @@ static QString check_x_beenthere(const KMime::Message::Ptr &message,
                                  QByteArray &headerName,
                                  QString &headerValue)
 {
-    QString header = message->headerByType("X-BeenThere") ? message->headerByType("X-BeenThere")->asUnicodeString() : QString();
+    QString header;
+    if (auto hrd = message->headerByType("X-BeenThere")) {
+        header = hrd->asUnicodeString();
+    }
     if (header.isNull() || header.indexOf(QLatin1Char('@')) == -1) {
         return QString();
     }
@@ -64,7 +67,10 @@ static QString check_delivered_to(const KMime::Message::Ptr &message,
                                   QByteArray &headerName,
                                   QString &headerValue)
 {
-    QString header = message->headerByType("Delivered-To") ? message->headerByType("Delivered-To")->asUnicodeString() : QString();
+    QString header;
+    if (auto hrd = message->headerByType("Delivered-To")) {
+        header = hrd->asUnicodeString();
+    }
     if (header.isNull()
             || header.left(13) != QLatin1String("mailing list")
             || header.indexOf(QLatin1Char('@')) == -1) {
@@ -82,7 +88,10 @@ static QString check_x_mailing_list(const KMime::Message::Ptr &message,
                                     QByteArray &headerName,
                                     QString &headerValue)
 {
-    QString header = message->headerByType("X-Mailing-List") ? message->headerByType("X-Mailing-List")->asUnicodeString() : QString();
+    QString header;
+    if (auto hrd = message->headerByType("X-Mailing-List")) {
+        header = hrd->asUnicodeString();
+    }
     if (header.isEmpty()) {
         return QString();
     }
@@ -107,7 +116,10 @@ static QString check_list_id(const KMime::Message::Ptr &message,
                              QByteArray &headerName,
                              QString &headerValue)
 {
-    QString header = message->headerByType("List-Id") ? message->headerByType("List-Id")->asUnicodeString() : QString();
+    QString header;
+    if (auto hrd = message->headerByType("List-Id")) {
+        header = hrd->asUnicodeString();
+    }
     if (header.isEmpty()) {
         return QString();
     }
@@ -134,7 +146,10 @@ static QString check_list_post(const KMime::Message::Ptr &message,
                                QByteArray &headerName,
                                QString &headerValue)
 {
-    QString header = message->headerByType("List-Post") ? message->headerByType("List-Post")->asUnicodeString() : QString();
+    QString header;
+    if (auto hrd = message->headerByType("List-Post")) {
+        header = hrd->asUnicodeString();
+    }
     if (header.isEmpty()) {
         return QString();
     }
@@ -157,7 +172,10 @@ static QString check_mailing_list(const KMime::Message::Ptr &message,
                                   QByteArray &headerName,
                                   QString &headerValue)
 {
-    QString header = message->headerByType("Mailing-List") ? message->headerByType("Mailing-List")->asUnicodeString() : QString();
+    QString header;
+    if (auto hrd = message->headerByType("Mailing-List")) {
+        header = hrd->asUnicodeString();
+    }
     if (header.isEmpty()) {
         return QString();
     }
@@ -179,7 +197,10 @@ static QString check_x_loop(const KMime::Message::Ptr &message,
                             QByteArray &headerName,
                             QString &headerValue)
 {
-    QString header = message->headerByType("X-Loop") ? message->headerByType("X-Loop")->asUnicodeString() : QString();
+    QString header;
+    if (auto hrd = message->headerByType("X-Loop")) {
+        header = hrd->asUnicodeString();
+    }
     if (header.isEmpty()) {
         return QString();
     }
@@ -201,7 +222,10 @@ static QString check_x_ml_name(const KMime::Message::Ptr &message,
                                QByteArray &headerName,
                                QString &headerValue)
 {
-    QString header = message->headerByType("X-ML-Name") ? message->headerByType("X-ML-Name")->asUnicodeString() : QString();
+    QString header;
+    if (auto hrd = message->headerByType("X-ML-Name")) {
+        header = hrd->asUnicodeString();
+    }
     if (header.isEmpty()) {
         return QString();
     }
@@ -289,36 +313,36 @@ MailingList MailingList::detect(const KMime::Message::Ptr &message)
 {
     MailingList mailingList;
 
-    if (message->headerByType("List-Post")) {
-        mailingList.setPostUrls(QUrl::fromStringList(headerToAddress(message->headerByType("List-Post")->asUnicodeString())));
+    if (auto hrd = message->headerByType("List-Post")) {
+        mailingList.setPostUrls(QUrl::fromStringList(headerToAddress(hrd->asUnicodeString())));
     }
 
-    if (message->headerByType("List-Help")) {
-        mailingList.setHelpUrls(QUrl::fromStringList(headerToAddress(message->headerByType("List-Help")->asUnicodeString())));
+    if (auto hrd = message->headerByType("List-Help")) {
+        mailingList.setHelpUrls(QUrl::fromStringList(headerToAddress(hrd->asUnicodeString())));
     }
 
-    if (message->headerByType("List-Subscribe")) {
-        mailingList.setSubscribeUrls(QUrl::fromStringList(headerToAddress(message->headerByType("List-Subscribe")->asUnicodeString())));
+    if (auto hrd = message->headerByType("List-Subscribe")) {
+        mailingList.setSubscribeUrls(QUrl::fromStringList(headerToAddress(hrd->asUnicodeString())));
     }
 
-    if (message->headerByType("List-Unsubscribe")) {
-        mailingList.setUnsubscribeUrls(QUrl::fromStringList(headerToAddress(message->headerByType("List-Unsubscribe")->asUnicodeString())));
+    if (auto hrd = message->headerByType("List-Unsubscribe")) {
+        mailingList.setUnsubscribeUrls(QUrl::fromStringList(headerToAddress(hrd->asUnicodeString())));
     }
 
-    if (message->headerByType("List-Archive")) {
-        mailingList.setArchiveUrls(QUrl::fromStringList(headerToAddress(message->headerByType("List-Archive")->asUnicodeString())));
+    if (auto hrd = message->headerByType("List-Archive")) {
+        mailingList.setArchiveUrls(QUrl::fromStringList(headerToAddress(hrd->asUnicodeString())));
     }
 
-    if (message->headerByType("List-Owner")) {
-        mailingList.setOwnerUrls(QUrl::fromStringList(headerToAddress(message->headerByType("List-Owner")->asUnicodeString())));
+    if (auto hrd = message->headerByType("List-Owner")) {
+        mailingList.setOwnerUrls(QUrl::fromStringList(headerToAddress(hrd->asUnicodeString())));
     }
 
-    if (message->headerByType("Archived-At")) {
-        mailingList.setArchivedAtUrls(QUrl::fromStringList(headerToAddress(message->headerByType("Archived-At")->asUnicodeString())));
+    if (auto hrd = message->headerByType("Archived-At")) {
+        mailingList.setArchivedAtUrls(QUrl::fromStringList(headerToAddress(hrd->asUnicodeString())));
     }
 
-    if (message->headerByType("List-Id")) {
-        mailingList.setId(message->headerByType("List-Id")->asUnicodeString());
+    if (auto hrd = message->headerByType("List-Id")) {
+        mailingList.setId(hrd->asUnicodeString());
     }
 
     return mailingList;
