@@ -94,15 +94,15 @@ MessageFactory::~MessageFactory()
 MessageFactory::MessageReply MessageFactory::createReply()
 {
     KMime::Message::Ptr msg(new KMime::Message);
-    QString mailingListStr;
-    QByteArray refStr, headerName;
+    //QString mailingListStr;
+    QByteArray refStr;//, headerName;
     bool replyAll = true;
     KMime::Types::Mailbox::List toList;
     KMime::Types::Mailbox::List replyToList;
 
     const uint originalIdentity = identityUoid(m_origMsg);
     MessageHelper::initFromMessage(msg, m_origMsg, m_identityManager, originalIdentity);
-    MessageCore::MailingList::name(m_origMsg, headerName, mailingListStr);
+    //MessageCore::MailingList::name(m_origMsg, headerName, mailingListStr);
     replyToList = m_origMsg->replyTo()->mailboxes();
 
     msg->contentType()->setCharset("utf-8");
