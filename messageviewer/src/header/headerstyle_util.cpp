@@ -346,35 +346,37 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
         useOtherPhotoSources = true;
     }
 
-    if (settings.photoURL.isEmpty() && message->headerByType("Face") && useOtherPhotoSources) {
-        // no photo, look for a Face header
-        const QString faceheader = message->headerByType("Face")->asUnicodeString();
-        if (!faceheader.isEmpty()) {
+    if (settings.photoURL.isEmpty() && useOtherPhotoSources) {
+        if (auto hrd = message->headerByType("Face")) {
+            // no photo, look for a Face header
+            const QString faceheader = hrd->asUnicodeString();
+            if (!faceheader.isEmpty()) {
 
-            qCDebug(MESSAGEVIEWER_LOG) << "Found Face: header";
+                qCDebug(MESSAGEVIEWER_LOG) << "Found Face: header";
 
-            const QByteArray facestring = faceheader.toUtf8();
-            // Spec says header should be less than 998 bytes
-            // Face: is 5 characters
-            if (facestring.length() < 993) {
-                const QByteArray facearray = QByteArray::fromBase64(facestring);
+                const QByteArray facestring = faceheader.toUtf8();
+                // Spec says header should be less than 998 bytes
+                // Face: is 5 characters
+                if (facestring.length() < 993) {
+                    const QByteArray facearray = QByteArray::fromBase64(facestring);
 
-                QImage faceimage;
-                if (faceimage.loadFromData(facearray, "png")) {
-                    // Spec says image must be 48x48 pixels
-                    if ((48 == faceimage.width()) && (48 == faceimage.height())) {
-                        settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(faceimage);
-                        settings.photoWidth = 48;
-                        settings.photoHeight = 48;
+                    QImage faceimage;
+                    if (faceimage.loadFromData(facearray, "png")) {
+                        // Spec says image must be 48x48 pixels
+                        if ((48 == faceimage.width()) && (48 == faceimage.height())) {
+                            settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(faceimage);
+                            settings.photoWidth = 48;
+                            settings.photoHeight = 48;
+                        } else {
+                            qCDebug(MESSAGEVIEWER_LOG) << "Face: header image is" << faceimage.width() << "by"
+                                                       << faceimage.height() << "not 48x48 Pixels";
+                        }
                     } else {
-                        qCDebug(MESSAGEVIEWER_LOG) << "Face: header image is" << faceimage.width() << "by"
-                                                   << faceimage.height() << "not 48x48 Pixels";
+                        qCDebug(MESSAGEVIEWER_LOG) << "Failed to load decoded png from Face: header";
                     }
                 } else {
-                    qCDebug(MESSAGEVIEWER_LOG) << "Failed to load decoded png from Face: header";
+                    qCDebug(MESSAGEVIEWER_LOG) << "Face: header too long at" << facestring.length();
                 }
-            } else {
-                qCDebug(MESSAGEVIEWER_LOG) << "Face: header too long at" << facestring.length();
             }
         }
     }

@@ -154,20 +154,20 @@ void MessageComposer::ComposerViewBase::setMessage(const KMime::Message::Ptr &ms
         m_recipientsEditor->setFocusBottom();
 
         // If we are loading from a draft, load unexpanded aliases as well
-        if (m_msg->hasHeader("X-KMail-UnExpanded-To")) {
-            const QStringList spl = m_msg->headerByType("X-KMail-UnExpanded-To")->asUnicodeString().split(QStringLiteral(","));
+        if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-To")) {
+            const QStringList spl = hrd->asUnicodeString().split(QStringLiteral(","));
             foreach (const QString &addr, spl) {
                 m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To);
             }
         }
-        if (m_msg->hasHeader("X-KMail-UnExpanded-CC")) {
-            const QStringList spl = m_msg->headerByType("X-KMail-UnExpanded-CC")->asUnicodeString().split(QStringLiteral(","));
+        if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-CC")) {
+            const QStringList spl = hrd->asUnicodeString().split(QStringLiteral(","));
             foreach (const QString &addr, spl) {
                 m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc);
             }
         }
-        if (m_msg->hasHeader("X-KMail-UnExpanded-BCC")) {
-            const QStringList spl = m_msg->headerByType("X-KMail-UnExpanded-BCC")->asUnicodeString().split(QStringLiteral(","));
+        if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
+            const QStringList spl = hrd->asUnicodeString().split(QStringLiteral(","));
             foreach (const QString &addr, spl) {
                 m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc);
             }

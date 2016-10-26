@@ -134,10 +134,10 @@ void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, Messa
     MessageQueueJob *qjob = new MessageQueueJob(this);
     if (message->hasHeader("X-KMail-FccDisabled")) {
         qjob->sentBehaviourAttribute().setSentBehaviour(MailTransport::SentBehaviourAttribute::Delete);
-    } else if (message->headerByType("X-KMail-Fcc")) {
+    } else if (auto hrd = message->headerByType("X-KMail-Fcc")) {
         qjob->sentBehaviourAttribute().setSentBehaviour(
             SentBehaviourAttribute::MoveToCollection);
-        const int sentCollectionId = message->headerByType("X-KMail-Fcc")->asUnicodeString().toInt();
+        const int sentCollectionId = hrd->asUnicodeString().toInt();
         qjob->sentBehaviourAttribute().setMoveToCollection(
             Akonadi::Collection(sentCollectionId));
     } else {

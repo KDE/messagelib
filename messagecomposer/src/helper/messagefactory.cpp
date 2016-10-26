@@ -971,7 +971,11 @@ QString MessageFactory::replaceHeadersInString(const KMime::Message::Ptr &msg, c
 
     idx = 0;
     while ((idx = rx.indexIn(result, idx)) != -1) {
-        QString replacement = msg->headerByType(rx.cap(1).toLatin1().constData()) ? msg->headerByType(rx.cap(1).toLatin1().constData())->asUnicodeString() : QStringLiteral("");
+        const QByteArray ba = rx.cap(1).toLatin1();
+        QString replacement;
+        if (auto hrd = msg->headerByType(ba.constData())) {
+            replacement = hrd->asUnicodeString();
+        }
         result.replace(idx, rx.matchedLength(), replacement);
         idx += replacement.length();
     }

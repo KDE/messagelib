@@ -76,12 +76,14 @@ void MessageCore::Util::addLinkInformation(const KMime::Message::Ptr &msg, Akona
 
 bool MessageCore::Util::getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status)
 {
-    if (!msg->headerByType("X-KMail-Link-Message") || !msg->headerByType("X-KMail-Link-Type")) {
+    auto hrdLinkMsg = msg->headerByType("X-KMail-Link-Message");
+    auto hrdLinkType = msg->headerByType("X-KMail-Link-Type");
+    if (!hrdLinkMsg || !hrdLinkType) {
         return false;
     }
 
-    const QStringList messages = msg->headerByType("X-KMail-Link-Message")->asUnicodeString().split(QLatin1Char(','), QString::SkipEmptyParts);
-    const QStringList types = msg->headerByType("X-KMail-Link-Type")->asUnicodeString().split(QLatin1Char(','), QString::SkipEmptyParts);
+    const QStringList messages = hrdLinkMsg->asUnicodeString().split(QLatin1Char(','), QString::SkipEmptyParts);
+    const QStringList types = hrdLinkType->asUnicodeString().split(QLatin1Char(','), QString::SkipEmptyParts);
 
     if (messages.isEmpty() || types.isEmpty()) {
         return false;

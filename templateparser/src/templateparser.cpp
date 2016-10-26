@@ -704,10 +704,10 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 i += len;
                 if (mOrigMsg) {
                     const QString hdr = q;
-                    const QString str =
-                        mOrigMsg->headerByType(hdr.toLocal8Bit().constData()) ?
-                        mOrigMsg->headerByType(hdr.toLocal8Bit().constData())->asUnicodeString() :
-                        QString();
+                    QString str;
+                    if (auto hrdMsgOrigin = mOrigMsg->headerByType(hdr.toLocal8Bit().constData())) {
+                        str = hrdMsgOrigin->asUnicodeString();
+                    }
                     plainBody.append(str);
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
@@ -720,10 +720,10 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 int len = parseQuotes(QStringLiteral("HEADER="), cmd, q);
                 i += len;
                 const QString hdr = q;
-                const QString str =
-                    mMsg->headerByType(hdr.toLocal8Bit().constData()) ?
-                    mMsg->headerByType(hdr.toLocal8Bit().constData())->asUnicodeString() :
-                    QString();
+                QString str;
+                if (auto hrdMsgOrigin = mOrigMsg->headerByType(hdr.toLocal8Bit().constData())) {
+                    str = hrdMsgOrigin->asUnicodeString();
+                }
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
@@ -740,10 +740,10 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 } else {
                     i += re.matchedLength();
                     const QString hdr = re.cap(1);
-                    const QString str =
-                        mMsg->headerByType(hdr.toLocal8Bit().constData()) ?
-                        mMsg->headerByType(hdr.toLocal8Bit().constData())->asUnicodeString() :
-                        QString();
+                    QString str;
+                    if (auto hrdMsgOrigin = mOrigMsg->headerByType(hdr.toLocal8Bit().constData())) {
+                        str = hrdMsgOrigin->asUnicodeString();
+                    }
                     plainBody.append(str);
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
