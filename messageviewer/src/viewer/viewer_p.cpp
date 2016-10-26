@@ -286,6 +286,7 @@ ViewerPrivate::~ViewerPrivate()
     delete mViewer; mViewer = 0;
     delete mCSSHelper;
     mNodeHelper->forceCleanTempFiles();
+    qDeleteAll(mListMailSourceViewer);
     delete mNodeHelper;
 }
 
@@ -2120,7 +2121,8 @@ void ViewerPrivate::slotShowMessageSource()
     }
     mNodeHelper->messageWithExtraContent(mMessage.data());
 
-    MailSourceWebEngineViewer *viewer = new MailSourceWebEngineViewer(); // deletes itself upon close
+    QPointer<MailSourceWebEngineViewer> viewer = new MailSourceWebEngineViewer; // deletes itself upon close
+    mListMailSourceViewer.append(viewer);
     viewer->setWindowTitle(i18n("Message as Plain Text"));
     const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
     viewer->setRawSource(rawMessage);

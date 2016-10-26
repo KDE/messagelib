@@ -33,6 +33,7 @@
 #include <KMime/Message>
 #include <kservice.h>
 #include <ksharedconfig.h>
+#include <QPointer>
 #include <QUrl>
 
 #include <QObject>
@@ -92,6 +93,7 @@ class HeaderStyleMenuManager;
 class ViewerPluginToolManager;
 class ViewerPluginInterface;
 class SubmittedFormWarningWidget;
+class MailSourceWebEngineViewer;
 /**
 \brief Private class for the Viewer, the main widget in the messageviewer library.
 
@@ -682,6 +684,7 @@ public:
     MessageViewer::ViewerPluginToolManager *mViewerPluginToolManager;
     WebEngineViewer::ZoomActionMenu *mZoomActionMenu;
     QPrinter *mCurrentPrinter;
+    QList<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
 };
 
 }
