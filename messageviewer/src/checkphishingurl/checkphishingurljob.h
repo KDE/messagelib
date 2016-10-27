@@ -22,9 +22,10 @@
 
 #include <QObject>
 #include <QUrl>
+#include "messageviewer_export.h"
 
 namespace MessageViewer {
-class CheckPhishingUrlJob : public QObject
+class MESSAGEVIEWER_EXPORT CheckPhishingUrlJob : public QObject
 {
     Q_OBJECT
 public:

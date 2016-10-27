@@ -55,7 +55,33 @@ CheckPhishingUrlGui::~CheckPhishingUrlGui()
 
 void CheckPhishingUrlGui::slotCheckUrl()
 {
+    const QString urlStr = mCheckUrlLineEdit->text().trimmed();
+    if (urlStr.isEmpty()) {
+        return;
+    }
+    mResult->clear();
 
+    MessageViewer::CheckPhishingUrlJob *job = new MessageViewer::CheckPhishingUrlJob(this);
+    connect(job, &MessageViewer::CheckPhishingUrlJob::result, this, &CheckPhishingUrlGui::slotGetResult);
+    job->setUrl(QUrl(urlStr));
+    job->start();
+}
+
+void CheckPhishingUrlGui::slotGetResult(MessageViewer::CheckPhishingUrlJob::UrlStatus result)
+{
+    QString resultStr;
+    switch(result) {
+    case MessageViewer::CheckPhishingUrlJob::Ok:
+        resultStr = QStringLiteral("Url ok");
+        break;
+    case MessageViewer::CheckPhishingUrlJob::MalWare:
+        resultStr = QStringLiteral("Url MalWare");
+        break;
+    case MessageViewer::CheckPhishingUrlJob::Unknown:
+        resultStr = QStringLiteral("Url Unknow state");
+        break;
+    }
+    mResult->setText(resultStr);
 }
 
 int main(int argc, char **argv)

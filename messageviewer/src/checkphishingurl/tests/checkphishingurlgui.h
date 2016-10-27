@@ -22,6 +22,7 @@
 #define CHECKPHISHINGURLGUI_H
 
 #include <QWidget>
+#include "../checkphishingurljob.h"
 class QLineEdit;
 class QTextEdit;
 class CheckPhishingUrlGui : public QWidget
@@ -32,6 +33,7 @@ public:
     ~CheckPhishingUrlGui();
 private Q_SLOTS:
     void slotCheckUrl();
+    void slotGetResult(MessageViewer::CheckPhishingUrlJob::UrlStatus result);
 private:
     QLineEdit *mCheckUrlLineEdit;
     QTextEdit *mResult;
