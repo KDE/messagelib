@@ -213,7 +213,6 @@ MessageFactory::MessageReply MessageFactory::createReply()
                 if (!sender.isEmpty() && m_identityManager->thatIsMe(fromAddress)) {
                     // strip all my addresses from the list of recipients
                     toList = stripMyAddressesFromAddressList(recipients, m_identityManager);
-                    toList += KMime::Types::Mailbox::listFromUnicodeString(sender);
                     toList += m_origMsg->from()->mailboxes();
                     stripMyAddresses = false;
                 } else {

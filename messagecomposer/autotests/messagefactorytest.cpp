@@ -202,7 +202,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSender()
                                      "Date: %1\n"
                                      "User-Agent: %2\n"
                                      "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>\n"
-                                     "To: Bla1 <identity2@bla.com>, Bla <identity1@bla.com>\n"
+                                     "To: Bla <identity1@bla.com>\n"
                                      "Subject: Re: Plain Message Test\n"
                                      "Content-Type: text/plain; charset=\"US-ASCII\"\n"
                                      "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
