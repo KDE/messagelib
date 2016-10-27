@@ -1988,6 +1988,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     if (URLHandlerManager::instance()->handleClick(mClickedUrl, this)) {
         return;
     }
+    //TODO add check url
 
     Q_EMIT urlClicked(mMessageItem, mClickedUrl);
 }
