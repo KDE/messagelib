@@ -18,6 +18,7 @@
 */
 
 #include "checkphishingurljobtest.h"
+#include "../checkphishingurljob.h"
 
 #include <QTest>
 
@@ -30,6 +31,12 @@ CheckPhishingUrlJobTest::CheckPhishingUrlJobTest(QObject *parent)
 CheckPhishingUrlJobTest::~CheckPhishingUrlJobTest()
 {
 
+}
+
+void CheckPhishingUrlJobTest::shouldNotBeAbleToStartWithEmptyUrl()
+{
+    MessageViewer::CheckPhishingUrlJob job;
+    QVERIFY(!job.canStart());
 }
 
 QTEST_MAIN(CheckPhishingUrlJobTest)

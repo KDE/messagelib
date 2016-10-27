@@ -28,6 +28,8 @@ class CheckPhishingUrlJobTest : public QObject
 public:
     explicit CheckPhishingUrlJobTest(QObject *parent = Q_NULLPTR);
     ~CheckPhishingUrlJobTest();
+private Q_SLOTS:
+    void shouldNotBeAbleToStartWithEmptyUrl();
 };
 
 #endif // CHECKPHISHINGURLJOBTEST_H
