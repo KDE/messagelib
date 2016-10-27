@@ -30,6 +30,8 @@ class CheckPhishingUrlGui : public QWidget
 public:
     explicit CheckPhishingUrlGui(QWidget *parent = Q_NULLPTR);
     ~CheckPhishingUrlGui();
+private Q_SLOTS:
+    void slotCheckUrl();
 private:
     QLineEdit *mCheckUrlLineEdit;
     QTextEdit *mResult;

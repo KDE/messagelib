@@ -22,6 +22,7 @@
 #include <QApplication>
 #include <QStandardPaths>
 #include <QLineEdit>
+#include <QPushButton>
 #include <QTextEdit>
 #include <QLabel>
 #include <QVBoxLayout>
@@ -37,6 +38,9 @@ CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
     checkUrlLayout->addWidget(lab);
     mCheckUrlLineEdit = new QLineEdit(this);
     checkUrlLayout->addWidget(mCheckUrlLineEdit);
+    QPushButton *button = new QPushButton(QStringLiteral("Check"), this);
+    checkUrlLayout->addWidget(button);
+    connect(button, &QPushButton::clicked, this, &CheckPhishingUrlGui::slotCheckUrl);
 
     mResult = new QTextEdit(this);
     mResult->setReadOnly(true);
@@ -45,6 +49,11 @@ CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
 }
 
 CheckPhishingUrlGui::~CheckPhishingUrlGui()
+{
+
+}
+
+void CheckPhishingUrlGui::slotCheckUrl()
 {
 
 }
