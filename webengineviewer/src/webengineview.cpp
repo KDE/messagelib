@@ -18,6 +18,7 @@
 */
 
 #include "webengineview.h"
+#include "webenginenavigationrequestinterceptor.h"
 #include "webenginemanagescript.h"
 #include "webengineviewer_debug.h"
 #include "../config-webengineviewer.h"
@@ -37,13 +38,26 @@ class WebEngineViewer::WebEngineViewPrivate
 public:
     WebEngineViewPrivate()
         : mSavedRelativePosition(-1),
-          mCurrentWidget(Q_NULLPTR)
+          mCurrentWidget(Q_NULLPTR),
+          mWebEngineNavigatorInterceptor(Q_NULLPTR),
+          mWebEngineNavigatorInterceptorView(Q_NULLPTR)
+
     {
 
     }
+    ~WebEngineViewPrivate()
+    {
+        delete mWebEngineNavigatorInterceptor;
+        mWebEngineNavigatorInterceptor = Q_NULLPTR;
+        delete mWebEngineNavigatorInterceptorView;
+        mWebEngineNavigatorInterceptorView = Q_NULLPTR;
+    }
+
     qreal mSavedRelativePosition;
     QWidget *mCurrentWidget;
     WebEngineManageScript *mManagerScript;
+    WebEngineNavigationRequestInterceptor *mWebEngineNavigatorInterceptor;
+    WebEngineView *mWebEngineNavigatorInterceptorView;
 };
 
 WebEngineView::WebEngineView(QWidget *parent)
@@ -193,7 +207,13 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 QWebEngineView *WebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 {
     Q_UNUSED(type);
-    return Q_NULLPTR;
+    delete d->mWebEngineNavigatorInterceptor;
+    delete d->mWebEngineNavigatorInterceptorView;
+    d->mWebEngineNavigatorInterceptorView = new WebEngineView();
+
+    d->mWebEngineNavigatorInterceptor = new WebEngineNavigationRequestInterceptor(this->page());
+    d->mWebEngineNavigatorInterceptorView->setPage(d->mWebEngineNavigatorInterceptor);
+    return d->mWebEngineNavigatorInterceptorView;
 }
 
 void WebEngineView::clearRelativePosition()
