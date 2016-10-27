@@ -23,9 +23,9 @@ set(libwebengineviewer_webengine_SRCS
     webenginescript.cpp
     webengineview.cpp
     webenginemanagescript.cpp
-
     webengineprintmessagebox.cpp
     webengineexporthtmlpagejob.cpp
+    webenginenavigationrequestinterceptor.cpp
     )
 
 set(libwebengineviewer_interceptor_SRCS
