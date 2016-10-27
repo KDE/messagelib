@@ -18,13 +18,14 @@
 */
 
 #include "checkphishingurljob.h"
+#include <QNetworkAccessManager>
 
 using namespace MessageViewer;
 
 CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
     : QObject(parent)
 {
-
+    mNetworkAccessManager = new QNetworkAccessManager(this);
 }
 
 CheckPhishingUrlJob::~CheckPhishingUrlJob()
