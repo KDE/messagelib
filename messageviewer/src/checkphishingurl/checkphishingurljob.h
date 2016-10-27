@@ -31,10 +31,19 @@ public:
     explicit CheckPhishingUrlJob(QObject *parent = Q_NULLPTR);
     ~CheckPhishingUrlJob();
 
+    enum UrlStatus {
+        Ok = 0,
+        MalWare,
+        Unknown
+    };
+
     void setUrl(const QUrl &url);
 
     void start();
     bool canStart() const;
+
+Q_SIGNALS:
+    void result(MessageViewer::CheckPhishingUrlJob::UrlStatus status);
 
 private:
     QUrl mUrl;

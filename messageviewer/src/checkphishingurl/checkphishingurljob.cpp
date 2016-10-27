@@ -42,7 +42,7 @@ void CheckPhishingUrlJob::start()
     if (canStart()) {
 
     } else {
-        //TODO emit signal
+        Q_EMIT result(MessageViewer::CheckPhishingUrlJob::Unknown);
         deleteLater();
     }
 }
