@@ -20,7 +20,6 @@
 #ifndef MAILNETWORKACCESSMANAGER_H
 #define MAILNETWORKACCESSMANAGER_H
 
-#include <QNetworkAccessManager>
 #include "webengineviewer_export.h"
 #include "webengineviewer/networkpluginurlinterceptor.h"
 class KActionCollection;
