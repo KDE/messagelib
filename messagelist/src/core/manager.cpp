@@ -97,6 +97,7 @@ Manager::Manager()
 
     loadConfiguration();
     connect(MessageListSettings::self(), &MessageListSettings::configChanged, this, &Manager::reloadGlobalConfiguration);
+    connect(MessageCore::MessageCoreSettings::self(), &MessageCore::MessageCoreSettings::configChanged, this, &Manager::reloadGlobalConfiguration);
 }
 
 Manager::~Manager()
