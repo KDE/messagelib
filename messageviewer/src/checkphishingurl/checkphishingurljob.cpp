@@ -41,14 +41,20 @@ void CheckPhishingUrlJob::setUrl(const QUrl &url)
 void CheckPhishingUrlJob::start()
 {
     if (canStart()) {
-
+        const QString postRequest = createPostRequest();
     } else {
         Q_EMIT result(MessageViewer::CheckPhishingUrlJob::Unknown);
         deleteLater();
     }
 }
 
-bool MessageViewer::CheckPhishingUrlJob::canStart() const
+bool CheckPhishingUrlJob::canStart() const
 {
     return mUrl.isValid();
+}
+
+QString CheckPhishingUrlJob::createPostRequest()
+{
+    return {};
+    //TODO
 }

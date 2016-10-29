@@ -42,6 +42,7 @@ public:
 
     void start();
     bool canStart() const;
+    QString createPostRequest();
 
 Q_SIGNALS:
     void result(MessageViewer::CheckPhishingUrlJob::UrlStatus status);
