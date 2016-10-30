@@ -24,6 +24,8 @@
 #include <QUrl>
 #include "messageviewer_export.h"
 class QNetworkAccessManager;
+class QNetworkReply;
+class QNetworkConfigurationManager;
 namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT CheckPhishingUrlJob : public QObject
 {
@@ -48,8 +50,10 @@ Q_SIGNALS:
     void result(MessageViewer::CheckPhishingUrlJob::UrlStatus status);
 
 private:
+    void slotCheckUrlFinished(QNetworkReply *reply);
     QUrl mUrl;
     QNetworkAccessManager *mNetworkAccessManager;
+    QNetworkConfigurationManager *mNetworkConfigurationManager;
 };
 }
 

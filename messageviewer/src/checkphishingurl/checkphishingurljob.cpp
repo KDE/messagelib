@@ -19,6 +19,8 @@
 
 #include "checkphishingurljob.h"
 #include <QNetworkAccessManager>
+#include <QNetworkConfigurationManager>
+#include <QNetworkReply>
 
 using namespace MessageViewer;
 
@@ -26,12 +28,22 @@ CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
     : QObject(parent)
 {
     mNetworkAccessManager = new QNetworkAccessManager(this);
+    connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CheckPhishingUrlJob::slotCheckUrlFinished);
+    mNetworkConfigurationManager = new QNetworkConfigurationManager();
 }
 
 CheckPhishingUrlJob::~CheckPhishingUrlJob()
 {
-
+    delete mNetworkConfigurationManager;
 }
+
+void CheckPhishingUrlJob::slotCheckUrlFinished(QNetworkReply *reply)
+{
+    Q_UNUSED(reply);
+    //TODO Q_EMIT result(MessageViewer::CheckPhishingUrlJob:: ?);
+    deleteLater();
+}
+
 
 void CheckPhishingUrlJob::setUrl(const QUrl &url)
 {
@@ -42,6 +54,12 @@ void CheckPhishingUrlJob::start()
 {
     if (canStart()) {
         const QString postRequest = createPostRequest();
+        if (postRequest.isEmpty()) {
+            Q_EMIT result(MessageViewer::CheckPhishingUrlJob::Unknown);
+            deleteLater();
+        } else {
+            //TODO
+        }
     } else {
         Q_EMIT result(MessageViewer::CheckPhishingUrlJob::Unknown);
         deleteLater();
@@ -50,6 +68,11 @@ void CheckPhishingUrlJob::start()
 
 bool CheckPhishingUrlJob::canStart() const
 {
+    if (!mNetworkConfigurationManager->isOnline()) {
+        //TODO it's not online !
+        return false;
+    }
+
     return mUrl.isValid();
 }
 
