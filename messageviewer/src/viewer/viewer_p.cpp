@@ -3048,9 +3048,7 @@ void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)
 {
     act->setStatusTip(text);
     act->setToolTip(text);
-    if (act->whatsThis().isEmpty()) {
-        act->setWhatsThis(text);
-    }
+    act->setWhatsThis(text);
 }
 
 void ViewerPrivate::slotRefreshMessage(const Akonadi::Item &item)
