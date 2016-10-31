@@ -2110,6 +2110,7 @@ void ViewerPrivate::slotToggleHtmlMode()
     const int pos = (availableModes.indexOf(mode) + 1) % availableModeSize;
     setDisplayFormatMessageOverwrite(translateToDisplayFormat(availableModes[pos]));
     update(MimeTreeParser::Force);
+    mColorBar->setAvailableModes(availableModes);
 }
 
 void ViewerPrivate::slotFind()
