@@ -1988,9 +1988,31 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     if (URLHandlerManager::instance()->handleClick(mClickedUrl, this)) {
         return;
     }
+#if 0
     //TODO add check url
+    MessageViewer::CheckPhishingUrlJob *job = new MessageViewer::CheckPhishingUrlJob(this);
+    connect(job, &CheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
+    job->setUrl(mClickedUrl);
+    job->start();
+#endif
 
     Q_EMIT urlClicked(mMessageItem, mClickedUrl);
+}
+
+void ViewerPrivate::slotCheckUrl(MessageViewer::CheckPhishingUrlJob::UrlStatus status)
+{
+    switch(status)
+    {
+    case MessageViewer::CheckPhishingUrlJob::Ok:
+        break;
+    case MessageViewer::CheckPhishingUrlJob::MalWare:
+        if (KMessageBox::No == KMessageBox::warningYesNo(mMainWindow, i18n("This web site is a malware, do you want to continue to show it?"), i18n("Malware"))) {
+            return;
+        }
+        break;
+    case MessageViewer::CheckPhishingUrlJob::Unknown:
+        break;
+    }
 }
 
 void ViewerPrivate::slotUrlOn(const QString &link)
