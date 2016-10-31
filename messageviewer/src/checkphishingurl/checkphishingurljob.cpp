@@ -58,12 +58,28 @@ void CheckPhishingUrlJob::start()
             Q_EMIT result(MessageViewer::CheckPhishingUrlJob::Unknown);
             deleteLater();
         } else {
-            //TODO
+            QNetworkRequest request(QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find")));
+            //FIXME ?
+            request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
+
+            QUrlQuery postData;
+            postData.addQueryItem(QStringLiteral("key"), QString() /*TODO*/);
+
+            QNetworkReply *reply = mNetworkAccessManager->post(request, postData.query(QUrl::FullyEncoded).toUtf8());
+            connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CheckPhishingUrlJob::slotError);
         }
     } else {
         Q_EMIT result(MessageViewer::CheckPhishingUrlJob::Unknown);
         deleteLater();
     }
+}
+
+void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
+{
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
+    //mErrorMsg = reply->errorString();
+    //FIXME
+    deleteLater();
 }
 
 bool CheckPhishingUrlJob::canStart() const

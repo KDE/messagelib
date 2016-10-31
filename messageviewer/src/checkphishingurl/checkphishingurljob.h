@@ -22,11 +22,12 @@
 
 #include <QObject>
 #include <QUrl>
+#include <QNetworkReply>
 #include "messageviewer_export.h"
 class QNetworkAccessManager;
-class QNetworkReply;
 class QNetworkConfigurationManager;
 namespace MessageViewer {
+/* https://developers.google.com/safe-browsing/v4/lookup-api */
 class MESSAGEVIEWER_EXPORT CheckPhishingUrlJob : public QObject
 {
     Q_OBJECT
@@ -50,6 +51,7 @@ Q_SIGNALS:
     void result(MessageViewer::CheckPhishingUrlJob::UrlStatus status);
 
 private:
+    void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
     QUrl mUrl;
     QNetworkAccessManager *mNetworkAccessManager;
