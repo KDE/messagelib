@@ -36,8 +36,6 @@ TestWebEngine::TestWebEngine(QWidget *parent)
     hboxLayout->addWidget(pageView);
     mEnginePage = new WebEngineViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
-    pageView->setContextMenuPolicy(Qt::DefaultContextMenu);
-    setContextMenuPolicy(Qt::DefaultContextMenu);
     pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
 }
 
@@ -49,7 +47,6 @@ TestWebEngine::~TestWebEngine()
 TestWebEngineView::TestWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
-    setContextMenuPolicy(Qt::DefaultContextMenu);
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
 }
 
