@@ -39,7 +39,7 @@ CheckPhishingUrlJob::~CheckPhishingUrlJob()
 
 void CheckPhishingUrlJob::slotCheckUrlFinished(QNetworkReply *reply)
 {
-    Q_UNUSED(reply);
+    qDebug() << " info : " << QString::fromUtf8(reply->readAll());
     //TODO Q_EMIT result(MessageViewer::CheckPhishingUrlJob:: ?);
     deleteLater();
 }
