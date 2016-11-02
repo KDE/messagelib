@@ -54,7 +54,9 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
         Q_EMIT formSubmittedForbidden();
         return true;
     } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeReload ||
-               navigationType == QWebEngineUrlRequestInfo::NavigationTypeTyped) {
+               navigationType == QWebEngineUrlRequestInfo::NavigationTypeTyped ||
+               navigationType == QWebEngineUrlRequestInfo::NavigationTypeBackForward ||
+               navigationType == QWebEngineUrlRequestInfo::NavigationTypeOther) {
         return true;
     }
     return false;
