@@ -127,7 +127,7 @@ install(FILES
 
 ecm_generate_pri_file(BASE_NAME MimeTreeParser
     LIB_NAME KF5MimeTreeParser
-    DEPS "Libkleo" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
+    FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
     )
 
 install(FILES
@@ -151,9 +151,8 @@ generate_export_header(KF5MimeTreeParser BASE_NAME mimetreeparser)
 add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
 
 target_link_libraries(KF5MimeTreeParser
-    PUBLIC
-    KF5::Libkleo
     PRIVATE
+    KF5::Libkleo
     QGpgme
     KF5::Codecs
     KF5::I18n
