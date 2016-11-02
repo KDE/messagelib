@@ -6,6 +6,8 @@ if(BUILD_TESTING)
     add_subdirectory(autotests)
     add_subdirectory(webengineaccesskey/autotests)
     add_subdirectory(findbar/autotests)
+    add_subdirectory(checkphishingurl/autotests/)
+    add_subdirectory(checkphishingurl/tests/)
 endif()
 
 if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.7.99")
@@ -27,6 +29,10 @@ set(libwebengineviewer_webengine_SRCS
     webengineexporthtmlpagejob.cpp
     webenginenavigationrequestinterceptor.cpp
     )
+
+set(libwebengineviewer_checkphishingurl_SRCS
+   checkphishingurl/checkphishingurljob.cpp
+   )
 
 set(libwebengineviewer_interceptor_SRCS
     urlinterceptor/networkurlinterceptor.cpp
@@ -53,6 +59,7 @@ set(libwebengineviewer_widgets_SRCS
     )
 
 set(libwebengineviewer_SRCS
+    ${libwebengineviewer_checkphishingurl_SRCS}
     ${libwebengineviewer_interceptor_SRCS}
     ${libwebengineviewer_webengine_SRCS}
     ${libwebengineviewer_findbar_SRCS}
@@ -133,6 +140,13 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_manager_HEADERS
     PREFIX WebEngineViewer
     RELATIVE networkmanager
     )
+ecm_generate_headers(WebEngineViewer_Camelcasewebengine_checkurl_HEADERS
+    HEADER_NAMES
+    CheckPhishingUrlJob
+    REQUIRED_HEADERS WebEngineViewer_webengine_checkurl_HEADERS
+    PREFIX WebEngineViewer
+    RELATIVE checkphishingurl
+    )
 ecm_generate_headers(WebEngineViewer_Camelcasewebengine_misc_HEADERS
     HEADER_NAMES
     WebHitTestResult
@@ -165,6 +179,7 @@ ecm_generate_pri_file(BASE_NAME WebEngineViewer
 
 
 install(FILES
+    ${WebEngineViewer_Camelcasewebengine_checkurl_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_accesskey_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS}
     ${WebEngineViewer_Camelcasewebengine_manager_HEADERS}
@@ -177,6 +192,7 @@ install(FILES
     )
 
 install(FILES
+    ${WebEngineViewer_webengine_checkurl_HEADERS}
     ${WebEngineViewer_webengine_accesskey_HEADERS}
     ${WebEngineViewer_findbar_HEADERS}
     ${WebEngineViewer_webengine_urlinterceptor_HEADERS}

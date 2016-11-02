@@ -1990,7 +1990,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     }
 #if 0
     //TODO add check url
-    MessageViewer::CheckPhishingUrlJob *job = new MessageViewer::CheckPhishingUrlJob(this);
+    WebEngineViewer::CheckPhishingUrlJob *job = new WebEngineViewer::CheckPhishingUrlJob(this);
     connect(job, &CheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
     job->setUrl(mClickedUrl);
     job->start();
@@ -1999,17 +1999,17 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     Q_EMIT urlClicked(mMessageItem, mClickedUrl);
 }
 
-void ViewerPrivate::slotCheckUrl(MessageViewer::CheckPhishingUrlJob::UrlStatus status)
+void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status)
 {
     switch (status) {
-    case MessageViewer::CheckPhishingUrlJob::Ok:
+    case WebEngineViewer::CheckPhishingUrlJob::Ok:
         break;
-    case MessageViewer::CheckPhishingUrlJob::MalWare:
+    case WebEngineViewer::CheckPhishingUrlJob::MalWare:
         if (KMessageBox::No == KMessageBox::warningYesNo(mMainWindow, i18n("This web site is a malware, do you want to continue to show it?"), i18n("Malware"))) {
             return;
         }
         break;
-    case MessageViewer::CheckPhishingUrlJob::Unknown:
+    case WebEngineViewer::CheckPhishingUrlJob::Unknown:
         break;
     }
 }

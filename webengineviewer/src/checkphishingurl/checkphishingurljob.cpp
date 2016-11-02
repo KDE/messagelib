@@ -22,7 +22,7 @@
 #include <QNetworkConfigurationManager>
 #include <QNetworkReply>
 
-using namespace MessageViewer;
+using namespace WebEngineViewer;
 
 CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
     : QObject(parent)
@@ -54,7 +54,7 @@ void CheckPhishingUrlJob::start()
     if (canStart()) {
         const QString postRequest = createPostRequest();
         if (postRequest.isEmpty()) {
-            Q_EMIT result(MessageViewer::CheckPhishingUrlJob::Unknown);
+            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown);
             deleteLater();
         } else {
             QNetworkRequest request(QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find")));
@@ -68,7 +68,7 @@ void CheckPhishingUrlJob::start()
             connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CheckPhishingUrlJob::slotError);
         }
     } else {
-        Q_EMIT result(MessageViewer::CheckPhishingUrlJob::Unknown);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown);
         deleteLater();
     }
 }

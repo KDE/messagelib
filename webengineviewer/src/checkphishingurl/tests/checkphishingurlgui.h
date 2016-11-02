@@ -33,7 +33,7 @@ public:
     ~CheckPhishingUrlGui();
 private Q_SLOTS:
     void slotCheckUrl();
-    void slotGetResult(MessageViewer::CheckPhishingUrlJob::UrlStatus result);
+    void slotGetResult(WebEngineViewer::CheckPhishingUrlJob::UrlStatus result);
 private:
     QLineEdit *mCheckUrlLineEdit;
     QTextEdit *mResult;

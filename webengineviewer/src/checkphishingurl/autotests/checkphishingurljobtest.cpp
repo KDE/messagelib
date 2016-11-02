@@ -35,7 +35,7 @@ CheckPhishingUrlJobTest::~CheckPhishingUrlJobTest()
 
 void CheckPhishingUrlJobTest::shouldNotBeAbleToStartWithEmptyUrl()
 {
-    MessageViewer::CheckPhishingUrlJob job;
+    WebEngineViewer::CheckPhishingUrlJob job;
     QVERIFY(!job.canStart());
 }
 

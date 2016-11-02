@@ -61,23 +61,23 @@ void CheckPhishingUrlGui::slotCheckUrl()
     }
     mResult->clear();
 
-    MessageViewer::CheckPhishingUrlJob *job = new MessageViewer::CheckPhishingUrlJob(this);
-    connect(job, &MessageViewer::CheckPhishingUrlJob::result, this, &CheckPhishingUrlGui::slotGetResult);
+    WebEngineViewer::CheckPhishingUrlJob *job = new WebEngineViewer::CheckPhishingUrlJob(this);
+    connect(job, &WebEngineViewer::CheckPhishingUrlJob::result, this, &CheckPhishingUrlGui::slotGetResult);
     job->setUrl(QUrl(urlStr));
     job->start();
 }
 
-void CheckPhishingUrlGui::slotGetResult(MessageViewer::CheckPhishingUrlJob::UrlStatus result)
+void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlJob::UrlStatus result)
 {
     QString resultStr;
     switch(result) {
-    case MessageViewer::CheckPhishingUrlJob::Ok:
+    case WebEngineViewer::CheckPhishingUrlJob::Ok:
         resultStr = QStringLiteral("Url ok");
         break;
-    case MessageViewer::CheckPhishingUrlJob::MalWare:
+    case WebEngineViewer::CheckPhishingUrlJob::MalWare:
         resultStr = QStringLiteral("Url MalWare");
         break;
-    case MessageViewer::CheckPhishingUrlJob::Unknown:
+    case WebEngineViewer::CheckPhishingUrlJob::Unknown:
         resultStr = QStringLiteral("Url Unknow state");
         break;
     }

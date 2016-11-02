@@ -26,7 +26,7 @@
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
 #include "PimCommon/ShareServiceUrlManager"
 #include "messageviewer/viewerplugininterface.h"
-#include "checkphishingurl/checkphishingurljob.h"
+#include <WebEngineViewer/CheckPhishingUrlJob>
 
 #include <AkonadiCore/item.h>
 #include <AkonadiCore/monitor.h>
@@ -474,7 +474,7 @@ private Q_SLOTS:
     void slotHandlePagePrinted(bool result);
     void slotLoadStarted();
     void slotDisableEmoticon();
-    void slotCheckUrl(MessageViewer::CheckPhishingUrlJob::UrlStatus status);
+    void slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status);
 public Q_SLOTS:
     /** An URL has been activate with a click. */
     void slotUrlOpen(const QUrl &url = QUrl());

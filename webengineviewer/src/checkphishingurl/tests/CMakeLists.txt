@@ -8,7 +8,7 @@ set(checkphishingurlgui_SRCS checkphishingurlgui.cpp)
 add_executable(checkphishingurlgui ${checkphishingurlgui_SRCS})
 target_link_libraries(checkphishingurlgui
     KF5::KIOCore
-    KF5::MessageViewer
+    KF5::WebEngineViewer
     Qt5::WebEngine
     Qt5::WebEngineWidgets
     KF5::I18n
