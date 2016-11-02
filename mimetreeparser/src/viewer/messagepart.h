@@ -29,7 +29,7 @@
 
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
-#include <importresult.h>
+#include <gpgme++/importresult.h>
 
 #include <QString>
 #include <QSharedPointer>
