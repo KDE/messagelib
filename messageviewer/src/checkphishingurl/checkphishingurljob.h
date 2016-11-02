@@ -26,7 +26,8 @@
 #include "messageviewer_export.h"
 class QNetworkAccessManager;
 class QNetworkConfigurationManager;
-namespace MessageViewer {
+namespace MessageViewer
+{
 /* https://developers.google.com/safe-browsing/v4/lookup-api */
 class MESSAGEVIEWER_EXPORT CheckPhishingUrlJob : public QObject
 {

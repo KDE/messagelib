@@ -44,10 +44,10 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeXhr ||
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeObject ||
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeScript ||
-        #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
             resourceType == QWebEngineUrlRequestInfo::ResourceTypePluginResource ||
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeCspReport ||
-        #endif
+#endif
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeUnknown) {
         return true;
     } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeFormSubmitted) {

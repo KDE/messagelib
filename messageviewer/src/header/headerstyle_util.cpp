@@ -63,7 +63,7 @@ QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flag
 
 // Prepare the date string (when printing always use the localized date)
 QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const
-{    
+{
     const QDateTime dateTime = message->date()->dateTime();
     const time_t unixTime = dateTime.toTime_t();
     if (!dateTime.isValid()) {

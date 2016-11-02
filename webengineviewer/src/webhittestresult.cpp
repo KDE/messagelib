@@ -71,7 +71,6 @@ public:
     void init(const QWebEngineContextMenuData &data);
 #endif
 
-
     bool mIsNull;
     QString mAlternateText;
     QRect mBoundingRect;

@@ -2001,8 +2001,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
 
 void ViewerPrivate::slotCheckUrl(MessageViewer::CheckPhishingUrlJob::UrlStatus status)
 {
-    switch(status)
-    {
+    switch (status) {
     case MessageViewer::CheckPhishingUrlJob::Ok:
         break;
     case MessageViewer::CheckPhishingUrlJob::MalWare:

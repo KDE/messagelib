@@ -126,7 +126,6 @@ String very_simplistic_diff(const String &a, const String &b)
 
 QTEST_MAIN(MessageFactoryTest)
 
-
 void MessageFactoryTest::cleanupTestCase()
 {
     delete mIdentMan;
@@ -257,12 +256,10 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentities()
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
-
 void MessageFactoryTest::testCreateReplyToList()
 {
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/list_message.mbox"));
     KMime::Message::Ptr msg = loadMessage(filename);
-
 
     MessageFactory factory(msg, 0);
     factory.setIdentityManager(mIdentMan);

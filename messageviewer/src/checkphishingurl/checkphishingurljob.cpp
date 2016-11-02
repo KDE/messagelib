@@ -44,7 +44,6 @@ void CheckPhishingUrlJob::slotCheckUrlFinished(QNetworkReply *reply)
     deleteLater();
 }
 
-
 void CheckPhishingUrlJob::setUrl(const QUrl &url)
 {
     mUrl = url;

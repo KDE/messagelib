@@ -25,7 +25,6 @@
 
 using namespace MessageViewer;
 
-
 SubmittedFormWarningWidget::SubmittedFormWarningWidget(QWidget *parent)
     : KMessageWidget(parent)
 {

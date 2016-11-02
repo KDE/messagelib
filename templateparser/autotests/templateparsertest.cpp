@@ -115,7 +115,7 @@ void TemplateParserTester::test_replyPlain()
 //    QVERIFY(!referenceData.isEmpty());
 
 //    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Plain Message Test");
- //   QCOMPARE(msg->contents().size(), 0);
+//   QCOMPARE(msg->contents().size(), 0);
 
     TemplateParser::TemplateParser parser(msg, TemplateParser::TemplateParser::Reply);
     parser.mOtp->parseObjectTree(msg.data());
@@ -127,8 +127,6 @@ void TemplateParserTester::test_replyPlain()
 
     QCOMPARE(convertedHtmlContent, referenceData);
 }
-
-
 
 void TemplateParserTester::test_processWithTemplatesForBody_data()
 {
