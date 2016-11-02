@@ -25,7 +25,6 @@
 #include <QNetworkReply>
 #include "webengineviewer_export.h"
 class QNetworkAccessManager;
-class QNetworkConfigurationManager;
 namespace WebEngineViewer
 {
 /* https://developers.google.com/safe-browsing/v4/lookup-api */
@@ -56,7 +55,6 @@ private:
     void slotCheckUrlFinished(QNetworkReply *reply);
     QUrl mUrl;
     QNetworkAccessManager *mNetworkAccessManager;
-    QNetworkConfigurationManager *mNetworkConfigurationManager;
 };
 }
 

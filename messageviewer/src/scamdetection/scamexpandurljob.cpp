@@ -22,6 +22,7 @@
 #include "messageviewer_debug.h"
 
 #include <Libkdepim/BroadcastStatus>
+#include <PimCommon/NetworkManager>
 
 #include <KLocalizedString>
 
@@ -35,18 +36,15 @@ class MessageViewer::ScamExpandUrlJobPrivate
 {
 public:
     ScamExpandUrlJobPrivate()
-        : mNetworkAccessManager(Q_NULLPTR),
-          mNetworkConfigurationManager(Q_NULLPTR)
+        : mNetworkAccessManager(Q_NULLPTR)
     {
 
     }
     ~ScamExpandUrlJobPrivate()
     {
-        delete mNetworkConfigurationManager;
     }
 
     QNetworkAccessManager *mNetworkAccessManager;
-    QNetworkConfigurationManager *mNetworkConfigurationManager;
 };
 
 ScamExpandUrlJob::ScamExpandUrlJob(QObject *parent)
@@ -56,7 +54,6 @@ ScamExpandUrlJob::ScamExpandUrlJob(QObject *parent)
     d->mNetworkAccessManager = new QNetworkAccessManager(this);
 
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &ScamExpandUrlJob::slotExpandFinished);
-    d->mNetworkConfigurationManager = new QNetworkConfigurationManager();
 }
 
 ScamExpandUrlJob::~ScamExpandUrlJob()
@@ -66,7 +63,7 @@ ScamExpandUrlJob::~ScamExpandUrlJob()
 
 void ScamExpandUrlJob::expandedUrl(const QUrl &url)
 {
-    if (!d->mNetworkConfigurationManager->isOnline()) {
+    if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
         KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("No network connection detected, we cannot expand url."));
         deleteLater();
         return;

@@ -21,6 +21,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkConfigurationManager>
 #include <QNetworkReply>
+#include <PimCommon/NetworkManager>
 
 using namespace WebEngineViewer;
 
@@ -29,12 +30,10 @@ CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
 {
     mNetworkAccessManager = new QNetworkAccessManager(this);
     connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CheckPhishingUrlJob::slotCheckUrlFinished);
-    mNetworkConfigurationManager = new QNetworkConfigurationManager();
 }
 
 CheckPhishingUrlJob::~CheckPhishingUrlJob()
 {
-    delete mNetworkConfigurationManager;
 }
 
 void CheckPhishingUrlJob::slotCheckUrlFinished(QNetworkReply *reply)
@@ -83,7 +82,7 @@ void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
 
 bool CheckPhishingUrlJob::canStart() const
 {
-    if (!mNetworkConfigurationManager->isOnline()) {
+    if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
         //TODO it's not online !
         return false;
     }
