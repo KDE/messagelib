@@ -235,7 +235,7 @@ target_link_libraries(KF5MessageViewer
     Grantlee5::TextDocument
     Grantlee5::Templates
     Qt5::PrintSupport
-    Gpgmepp
+    QGpgme
     )
 
 if (KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT)
