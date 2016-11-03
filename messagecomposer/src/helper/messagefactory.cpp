@@ -210,7 +210,7 @@ MessageFactory::MessageReply MessageFactory::createReply()
             if (!fromAddress.isEmpty()) {
                 if (!sender.isEmpty() && m_identityManager->thatIsMe(fromAddress)) {
                     // strip all my addresses from the list of recipients
-                    toList = stripMyAddressesFromAddressList(recipients, m_identityManager);
+                    toList = recipients;
                     toList += m_origMsg->from()->mailboxes();
                     stripMyAddresses = false;
                 } else {
@@ -250,7 +250,9 @@ MessageFactory::MessageReply MessageFactory::createReply()
 
         if (!ccRecipients.isEmpty()) {
             // strip all my addresses from the list of CC recipients
-            ccRecipients = stripMyAddressesFromAddressList(ccRecipients, m_identityManager);
+            if (stripMyAddresses) {
+                ccRecipients = stripMyAddressesFromAddressList(ccRecipients, m_identityManager);
+            }
 
             // in case of a reply to self, toList might be empty. if that's the case
             // then propagate a cc recipient to To: (if there is any).
