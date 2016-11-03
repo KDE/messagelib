@@ -313,7 +313,6 @@ MessageFactory::MessageReply MessageFactory::createReply()
     if (!refStr.isEmpty()) {
         msg->references()->fromUnicodeString(QString::fromLocal8Bit(refStr), "utf-8");
     }
-
     //In-Reply-To = original msg-id
     msg->inReplyTo()->from7BitString(m_origMsg->messageID()->as7BitString(false));
 
@@ -337,7 +336,6 @@ MessageFactory::MessageReply MessageFactory::createReply()
             parser.process(m_origMsg, m_collection);
         }
     }
-
     applyCharset(msg);
 
     MessageCore::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusReplied());
