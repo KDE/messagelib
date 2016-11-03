@@ -76,6 +76,7 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::showReader,
             this, &Viewer::showReader);
     connect(d_ptr, &ViewerPrivate::showMessage, this, &Viewer::showMessage);
+    connect(d_ptr, &ViewerPrivate::replyMessageTo, this, &Viewer::replyMessageTo);
     connect(d_ptr, &ViewerPrivate::showStatusBarMessage,
             this, &Viewer::showStatusBarMessage);
     connect(d_ptr, &ViewerPrivate::itemRemoved,

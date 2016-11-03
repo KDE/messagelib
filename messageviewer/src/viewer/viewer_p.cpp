@@ -566,7 +566,6 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     Q_UNUSED(name);
     prepareHandleAttachment(node);
     QMenu *menu = new QMenu();
-    QAction *action;
     bool deletedAttachment = false;
     if (node->contentType(false)) {
         deletedAttachment = (node->contentType()->mimeType() == "text/x-moz-deleted");
@@ -577,7 +576,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     connect(attachmentMapper, SIGNAL(mapped(int)),
             this, SLOT(slotHandleAttachment(int)));
 
-    action = menu->addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("to open", "Open"));
+    QAction *action = menu->addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("to open", "Open"));
     action->setEnabled(!deletedAttachment);
     connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
     attachmentMapper->setMapping(action, Viewer::Open);
@@ -636,6 +635,14 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     connect(action, SIGNAL(triggered()), attachmentMapper, SLOT(map()));
     attachmentMapper->setMapping(action, Viewer::Delete);
     action->setEnabled(canChange && !deletedAttachment);
+#if 0
+    menu->addSeparator();
+
+    action = menu->addAction(QIcon::fromTheme(QStringLiteral("mail-reply-sender")), i18n("Reply To Author"));
+    connect(action, SIGNAL(triggered()), attachmentMapper, SLOT(map()));
+    attachmentMapper->setMapping(action, Viewer::ReplyMessageToAuthor);
+#endif
+    menu->addSeparator();
     action = menu->addAction(i18n("Properties"));
     connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
     attachmentMapper->setMapping(action, Viewer::Properties);
@@ -2658,6 +2665,32 @@ void ViewerPrivate::slotHandleAttachment(int choice)
     case Viewer::ScrollTo:
         scrollToAttachment(mCurrentContent);
         break;
+    case Viewer::ReplyMessageToAuthor:
+        replyMessageToAuthor(mCurrentContent);
+        break;
+    case Viewer::ReplyMessageToAll:
+        replyMessageToAll(mCurrentContent);
+        break;
+    }
+}
+
+void ViewerPrivate::replyMessageToAuthor(KMime::Content *atmNode)
+{
+    if (atmNode) {
+        const bool isEncapsulatedMessage = atmNode->parent() && atmNode->parent()->bodyIsMessage();
+        if (isEncapsulatedMessage) {
+            Q_EMIT replyMessageTo(atmNode->parent()->bodyAsMessage(), false);
+        }
+    }
+}
+
+void ViewerPrivate::replyMessageToAll(KMime::Content *atmNode)
+{
+    if (atmNode) {
+        const bool isEncapsulatedMessage = atmNode->parent() && atmNode->parent()->bodyIsMessage();
+        if (isEncapsulatedMessage) {
+            Q_EMIT replyMessageTo(atmNode->parent()->bodyAsMessage(), true);
+        }
     }
 }
 

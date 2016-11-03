@@ -136,7 +136,9 @@ public:
         Delete = 7,
         Edit = 8,
         Copy = 9,
-        ScrollTo = 10
+        ScrollTo = 10,
+        ReplyMessageToAuthor = 11,
+        ReplyMessageToAll = 12
     };
 
     enum MailAction {
@@ -358,6 +360,8 @@ Q_SIGNALS:
 
     /// Emitted when the message should be shown in a separate window
     void showMessage(const KMime::Message::Ptr &message, const QString &encoding);
+
+    void replyMessageTo(const KMime::Message::Ptr &message, bool replyToAll);
 
     void deleteMessage(const Akonadi::Item &);
 

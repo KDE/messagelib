@@ -576,6 +576,7 @@ Q_SIGNALS:
     void requestConfigSync();
     void showReader(KMime::Content *aMsgPart, bool aHTML, const QString &encoding);
     void showMessage(const KMime::Message::Ptr &message, const QString &encoding);
+    void replyMessageTo(const KMime::Message::Ptr &message, bool replyToAll);
     void itemRemoved();
     void makeResourceOnline(MessageViewer::Viewer::ResourceOnlineMode mode);
 
@@ -591,6 +592,8 @@ private:
     void addHelpTextAction(QAction *act, const QString &text);
     void readGravatarConfig();
 
+    void replyMessageToAuthor(KMime::Content *atmNode);
+    void replyMessageToAll(KMime::Content *atmNode);
 public:
     MimeTreeParser::NodeHelper *mNodeHelper;
     bool mHtmlMailGlobalSetting;
