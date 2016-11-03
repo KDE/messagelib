@@ -53,6 +53,7 @@ private Q_SLOTS:
     void testCreateReplyToList();
     void testCreateReplyToAllWithUseSender();
     void testCreateReplyToAllWithUseSenderByNoSameIdentities();
+    void testCreateReplyToAllWithUseSenderAndIdentityInCC();
 
     void cleanupTestCase();
 private:
