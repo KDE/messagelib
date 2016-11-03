@@ -42,7 +42,7 @@
 #include <QRect>
 #include <QString>
 #include <QVariant>
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
 #include <QWebEngineContextMenuData>
 #endif
 
@@ -55,7 +55,7 @@ public:
     WebHitTestResult();
     WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QVariant &result);
     WebHitTestResult(const WebHitTestResult &other);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
     WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QWebEngineContextMenuData &data);
 #endif
     ~WebHitTestResult();
