@@ -200,7 +200,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCC()
     QString ba = QString::fromLatin1("From: another <another@another.com>\n"
                                      "Date: %1\n"
                                      "User-Agent: %2\n"
-                                     "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>\n"
+                                     "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>, Bla <identity1@bla.com>\n"
                                      "To: Bla <identity1@bla.com>\n"
                                      "Subject: Re: Plain Message Test\n"
                                      "Content-Type: text/plain; charset=\"US-ASCII\"\n"
