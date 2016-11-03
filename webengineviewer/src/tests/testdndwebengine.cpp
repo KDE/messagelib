@@ -23,6 +23,7 @@
 #include <QVBoxLayout>
 #include <webengineview.h>
 #include <QTextEdit>
+#include <QDebug>
 
 TestDndWebEngine::TestDndWebEngine(QWidget *parent)
     : QWidget(parent)
@@ -35,7 +36,7 @@ TestDndWebEngine::TestDndWebEngine(QWidget *parent)
     pageView->load(QUrl(QStringLiteral("http://www.planetkde.org")));
     layout->addWidget(pageView);
 
-    webEngineView = new QWebEngineView(this);
+    webEngineView = new WebEngineViewBase(this);
     webEngineView->load(QUrl(QStringLiteral("http://www.kde.org")));
     layout->addWidget(webEngineView);
 
@@ -56,4 +57,34 @@ int main(int argc, char *argv[])
     testWebEngine->show();
     const int ret = app.exec();
     return ret;
+}
+
+WebEngineViewBase::WebEngineViewBase(QWidget *parent)
+    : QWebEngineView(parent)
+{
+    qDebug() << "WebEngineViewBase::WebEngineViewBase(QWidget *parent)"<<this;
+}
+
+void WebEngineViewBase::dragEnterEvent(QDragEnterEvent *e)
+{
+    qDebug()<<" void WebEngineViewBase::dragEnterEvent(QDragEnterEvent *e)";
+    QWebEngineView::dragEnterEvent(e);
+}
+
+void WebEngineViewBase::dragLeaveEvent(QDragLeaveEvent *e)
+{
+    qDebug()<<" void WebEngineViewBase::dragLeaveEvent(QDragEnterEvent *e)";
+    QWebEngineView::dragLeaveEvent(e);
+}
+
+void WebEngineViewBase::dragMoveEvent(QDragMoveEvent *e)
+{
+    qDebug() << "void WebEngineViewBase::dragMoveEvent(QDragMoveEvent *e)";
+    QWebEngineView::dragMoveEvent(e);
+}
+
+void WebEngineViewBase::dropEvent(QDropEvent *e)
+{
+    qDebug()<<" void WebEngineViewBase::dropEvent(QDropEvent *e)";
+    QWebEngineView::dropEvent(e);
 }

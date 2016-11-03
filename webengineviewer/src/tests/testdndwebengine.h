@@ -20,13 +20,26 @@
 #ifndef TestDndWebEngine_H
 #define TestDndWebEngine_H
 
+#include <QWebEngineView>
 #include <QWidget>
 
 namespace WebEngineViewer
 {
 class WebEngineView;
 }
-class QWebEngineView;
+
+class WebEngineViewBase : public QWebEngineView
+{
+    Q_OBJECT
+public:
+    explicit WebEngineViewBase(QWidget* parent = Q_NULLPTR);
+protected:
+    void dragEnterEvent(QDragEnterEvent *e) Q_DECL_OVERRIDE;
+    void dragLeaveEvent(QDragLeaveEvent *e) Q_DECL_OVERRIDE;
+    void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
+    void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
+};
+
 class TestDndWebEngine : public QWidget
 {
     Q_OBJECT
@@ -35,7 +48,7 @@ public:
     ~TestDndWebEngine();
 private:
     WebEngineViewer::WebEngineView *pageView;
-    QWebEngineView *webEngineView;
+    WebEngineViewBase *webEngineView;
 };
 
 #endif // TestDndWebEngine_H
