@@ -30,7 +30,6 @@ namespace WebEngineViewer
 class WebHitTestResult;
 class NetworkPluginUrlInterceptorInterface;
 class NetworkAccessManagerWebEnginePrivate;
-class NetworkPluginUrlInterceptorConfigureWidget;
 class WEBENGINEVIEWER_EXPORT InterceptorManager : public QObject
 {
     Q_OBJECT

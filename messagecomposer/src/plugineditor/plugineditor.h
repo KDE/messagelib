@@ -22,10 +22,8 @@
 #include <QObject>
 #include "messagecomposer_export.h"
 #include <PimCommon/AbstractGenericPlugin>
-class KActionCollection;
 namespace MessageComposer
 {
-class PluginEditorInterface;
 class PluginEditorPrivate;
 class MESSAGECOMPOSER_EXPORT PluginEditor : public PimCommon::AbstractGenericPlugin
 {

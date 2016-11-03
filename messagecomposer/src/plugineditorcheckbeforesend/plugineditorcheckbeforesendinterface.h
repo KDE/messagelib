@@ -24,11 +24,6 @@
 #include "messagecomposer_export.h"
 #include "plugineditorcheckbeforesendparams.h"
 
-namespace KIdentityManagement
-{
-class IdentityManager;
-}
-
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendInterfacePrivate;

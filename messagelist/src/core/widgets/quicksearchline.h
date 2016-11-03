@@ -25,7 +25,6 @@
 #include "messagelist_export.h"
 #include <Akonadi/KMime/MessageStatus>
 
-class KLineEdit;
 class KComboBox;
 class QToolButton;
 namespace MessageList

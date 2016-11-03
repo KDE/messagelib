@@ -24,7 +24,6 @@
 #include <PimCommon/AbstractGenericPluginInterface>
 #include "messagecomposer_export.h"
 class QAction;
-class KActionCollection;
 
 namespace KPIMTextEdit
 {

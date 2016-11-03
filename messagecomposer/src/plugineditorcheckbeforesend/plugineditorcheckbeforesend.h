@@ -22,10 +22,6 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
-namespace KIdentityManagement
-{
-class IdentityManager;
-}
 
 namespace MessageComposer
 {
