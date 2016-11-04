@@ -31,6 +31,7 @@
 
 #include <KLocalizedString>
 #include <KIconLoader>
+#include <KColorScheme>
 
 #include <grantlee/templateloader.h>
 #include <grantlee/engine.h>
