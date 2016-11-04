@@ -70,8 +70,8 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     </entry>
     <entry name="ShowUserAgent" type="Bool">
       <default>false</default>
-      <label>Show user agent in fancy headers</label>
-      <whatsthis>Enable this option to get the User-Agent and X-Mailer header lines displayed when using fancy headers.</whatsthis>
+      <label>Show user agent</label>
+      <whatsthis>Enable this option to get the User-Agent and X-Mailer header lines displayed.</whatsthis>
     </entry>
     <entry name="AllowAttachmentEditing" type="Bool">
       <default>false</default>
