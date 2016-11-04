@@ -154,7 +154,8 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
 
         QUrl localUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass);
         localUrl.setPath(localUrl.path() + QLatin1Char('/') + fileName);
-        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl);
+        QFileDialog::Options options = QFileDialog::DontConfirmOverwrite;
+        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl, QString(), Q_NULLPTR, options);
         if (url.isEmpty()) {
             return false;
         }
