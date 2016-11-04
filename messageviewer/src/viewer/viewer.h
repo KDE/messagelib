@@ -326,6 +326,9 @@ public:
 
     void runJavaScript(const QString &code);
     void setPrintElementBackground(bool printElementBackground);
+
+    bool printingMode() const;
+
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
@@ -368,6 +371,8 @@ Q_SIGNALS:
     void itemRemoved();
 
     void makeResourceOnline(MessageViewer::Viewer::ResourceOnlineMode mode);
+
+    void printingFinished();
 
 private:
     void initialize();

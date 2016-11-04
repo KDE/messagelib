@@ -1266,9 +1266,16 @@ void ViewerPrivate::setOverrideEncoding(const QString &encoding)
     update(MimeTreeParser::Force);
 }
 
+
+
 void ViewerPrivate::setPrinting(bool enable)
 {
     mPrinting = enable;
+}
+
+bool ViewerPrivate::printingMode() const
+{
+    return mPrinting;
 }
 
 void ViewerPrivate::printMessage(const Akonadi::Item &message)
@@ -2306,7 +2313,9 @@ void ViewerPrivate::slotPrintPreview()
     }
     QPointer<WebEngineViewer::WebEnginePrintMessageBox> dialog = new WebEngineViewer::WebEnginePrintMessageBox(q);
     connect(dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openInBrowser, this, &ViewerPrivate::slotOpenInBrowser);
-    dialog->exec();
+    if (!dialog->exec()) {
+        Q_EMIT printingFinished();
+    }
     delete dialog;
 }
 
@@ -2323,11 +2332,13 @@ void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
 {
     const QUrl url(QUrl::fromLocalFile(filename));
     KRun::runUrl(url, QStringLiteral("text/html"), q, true);
+    Q_EMIT printingFinished();
 }
 
 void ViewerPrivate::slotExportHtmlPageFailed()
 {
     qCDebug(MESSAGEVIEWER_LOG) << " Export HTML failed";
+    Q_EMIT printingFinished();
 }
 
 void ViewerPrivate::slotPrintMessage()
@@ -2361,6 +2372,7 @@ void ViewerPrivate::slotHandlePagePrinted(bool result)
     Q_UNUSED(result);
     delete mCurrentPrinter;
     mCurrentPrinter = Q_NULLPTR;
+    Q_EMIT printingFinished();
 }
 
 void ViewerPrivate::slotSetEncoding()

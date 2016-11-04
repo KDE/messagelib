@@ -85,6 +85,7 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::moveMessageToTrash, this, &Viewer::moveMessageToTrash);
     connect(d_ptr, &ViewerPrivate::executeMailAction, this, &Viewer::executeMailAction);
     connect(d_ptr, &ViewerPrivate::pageIsScrolledToBottom, this, &Viewer::pageIsScrolledToBottom);
+    connect(d_ptr, &ViewerPrivate::printingFinished, this, &Viewer::printingFinished);
 
     setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
 }
@@ -434,6 +435,12 @@ QAction *Viewer::urlOpenAction() const
 {
     Q_D(const Viewer);
     return d->mUrlOpenAction;
+}
+
+bool Viewer::printingMode() const
+{
+    Q_D(const Viewer);
+    return d->printingMode();
 }
 
 void Viewer::setPrinting(bool enable)

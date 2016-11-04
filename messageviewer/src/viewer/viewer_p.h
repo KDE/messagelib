@@ -313,7 +313,8 @@ public:
     void setOverrideEncoding(const QString &encoding);
 
     /** Set printing mode */
-    virtual void setPrinting(bool enable);
+    void setPrinting(bool enable);
+    bool printingMode() const;
 
     /** Print message. */
     void printMessage(const Akonadi::Item &msg);
@@ -584,6 +585,7 @@ Q_SIGNALS:
     void moveMessageToTrash();
     void executeMailAction(MessageViewer::Viewer::MailAction type);
     void pageIsScrolledToBottom(bool);
+    void printingFinished();
 private:
     QString attachmentInjectionHtml();
     QString recipientsQuickListLinkHtml(const QString &);
