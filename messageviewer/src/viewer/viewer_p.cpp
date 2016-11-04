@@ -2010,11 +2010,15 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
         return;
     }
 #if 0
-    MessageViewer::MailCheckPhishingUrlJob *job = new MessageViewer::MailCheckPhishingUrlJob(this);
-    connect(job, &MessageViewer::MailCheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
-    job->setUrl(mClickedUrl);
-    job->setItem(mMessageItem);
-    job->start();
+    if (MessageViewer::MessageViewerSettings::self()->checkPhishingUrl()) {
+        MessageViewer::MailCheckPhishingUrlJob *job = new MessageViewer::MailCheckPhishingUrlJob(this);
+        connect(job, &MessageViewer::MailCheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
+        job->setUrl(mClickedUrl);
+        job->setItem(mMessageItem);
+        job->start();
+    } else {
+        Q_EMIT urlClicked(mMessageItem, mClickedUrl);
+    }
 #else
     Q_EMIT urlClicked(mMessageItem, mClickedUrl);
 #endif
