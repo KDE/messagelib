@@ -241,24 +241,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     </entry>
   </group>
 
-  <group name="Custom Headers">
-    <entry name="HeadersToDisplay" type="StringList" key="headers to display">
-     <default>subject,from,to,cc,bcc,date</default>
-    </entry>
-    <entry name="HeadersToHide" type="StringList" key="headers to hide">
-     <default></default>
-    </entry>
-    <entry name="CustomHeadersDefaultPolicy" type="Enum">
-     <label></label>
-     <whatsthis></whatsthis>
-     <choices>
-       <choice name="Display"/>
-       <choice name="Hide"/>
-     </choices>
-    <default>Display</default>
-   </entry>
-  </group>
-
     <group name="Todo">
       <entry name="LastSelectedFolder" type="LongLong">
         <whatsthis>The most recent selected folder using for Todo.</whatsthis>
