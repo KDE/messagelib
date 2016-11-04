@@ -44,6 +44,7 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeXhr ||
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeObject ||
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeScript ||
+            resourceType == QWebEngineUrlRequestInfo::ResourceTypeServiceWorker ||
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
             resourceType == QWebEngineUrlRequestInfo::ResourceTypePluginResource ||
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeCspReport ||
