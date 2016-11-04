@@ -2006,7 +2006,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     Q_EMIT urlClicked(mMessageItem, mClickedUrl);
 }
 
-void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status)
+void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url)
 {
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlJob::Ok:
