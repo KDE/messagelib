@@ -40,6 +40,7 @@
 #include "job/attachmenteditjob.h"
 #include "job/modifymessagedisplayformatjob.h"
 #include "config-messageviewer.h"
+#include "mailcheckphishingurljob.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <WebEngineViewer/WebEnginePrintMessageBox>
 #include <KContacts/VCardConverter>
@@ -1996,10 +1997,10 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
         return;
     }
 #if 0
-    //TODO add check url
-    WebEngineViewer::CheckPhishingUrlJob *job = new WebEngineViewer::CheckPhishingUrlJob(this);
-    connect(job, &CheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
+    MessageViewer::MailCheckPhishingUrlJob *job = new MessageViewer::MailCheckPhishingUrlJob(this);
+    connect(job, &MessageViewer::MailCheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
     job->setUrl(mClickedUrl);
+    job->setItem(mMessageItem);
     job->start();
 #else
     Q_EMIT urlClicked(mMessageItem, mClickedUrl);
@@ -2007,7 +2008,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
 
 }
 
-void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url)
+void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, const Akonadi::Item &item)
 {
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork:
@@ -2027,8 +2028,7 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus
         qCWarning(MESSAGEVIEWER_LOG) << "WebEngineViewer::CheckPhishingUrlJob unknown error ";
         break;
     }
-    //TODO fix me.
-    Q_EMIT urlClicked(mMessageItem, url);
+    Q_EMIT urlClicked(item, url);
 }
 
 void ViewerPrivate::slotUrlOn(const QString &link)

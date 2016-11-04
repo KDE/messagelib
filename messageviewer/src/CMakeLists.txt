@@ -69,6 +69,7 @@ set(libmessageviewer_viewer_SRCS
     viewer/urlhandlermanager.cpp
     viewer/mimeparttree/mimeparttreeview.cpp
     viewer/mimeparttree/mimetreemodel.cpp
+    viewer/mailcheckphishingurljob.cpp
     )
 
 set(libmessageviewer_widgets_SRCS
