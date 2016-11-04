@@ -48,7 +48,7 @@ public:
     QString createPostRequest();
 
 Q_SIGNALS:
-    void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status);
+    void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url);
 
 private:
     void slotError(QNetworkReply::NetworkError error);
