@@ -2001,9 +2001,10 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     connect(job, &CheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
     job->setUrl(mClickedUrl);
     job->start();
+#else
+    Q_EMIT urlClicked(mMessageItem, mClickedUrl);
 #endif
 
-    Q_EMIT urlClicked(mMessageItem, mClickedUrl);
 }
 
 void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url)
@@ -2019,6 +2020,8 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus
     case WebEngineViewer::CheckPhishingUrlJob::Unknown:
         break;
     }
+    //TODO fix me.
+    Q_EMIT urlClicked(mMessageItem, url);
 }
 
 void ViewerPrivate::slotUrlOn(const QString &link)
