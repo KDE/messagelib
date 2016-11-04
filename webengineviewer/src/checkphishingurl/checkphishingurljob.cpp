@@ -80,6 +80,7 @@ void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
     //mErrorMsg = reply->errorString();
     //FIXME
+    Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
     deleteLater();
 }
 
