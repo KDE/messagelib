@@ -194,15 +194,6 @@ void SkeletonMessageJobPrivate::doStart()
         }
     }
 
-    // User-Agent
-    if (!infoPart->userAgent().isEmpty()) {
-        QStringList extraInfo;
-        extraInfo << QLatin1String(MESSAGELIB_GIT_REVISION_STRING) << QLatin1String(MESSAGELIB_GIT_LAST_CHANGE);
-        KMime::Headers::UserAgent *ua = new KMime::Headers::UserAgent;
-        ua->fromUnicodeString(KProtocolManager::userAgentForApplication(infoPart->userAgent(), QStringLiteral(MESSAGELIB_LIB_VERSION), extraInfo), "utf-8");
-        message->setHeader(ua);
-    }
-
     // Urgent header
     if (infoPart->urgent()) {
         KMime::Headers::Generic *urg1 = new KMime::Headers::Generic("X-PRIORITY");
