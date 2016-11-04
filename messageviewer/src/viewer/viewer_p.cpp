@@ -642,6 +642,12 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     action = menu->addAction(QIcon::fromTheme(QStringLiteral("mail-reply-sender")), i18n("Reply To Author"));
     connect(action, SIGNAL(triggered()), attachmentMapper, SLOT(map()));
     attachmentMapper->setMapping(action, Viewer::ReplyMessageToAuthor);
+
+    menu->addSeparator();
+
+    action = menu->addAction(QIcon::fromTheme(QStringLiteral("mail-reply-all")), i18n("Reply To All"));
+    connect(action, SIGNAL(triggered()), attachmentMapper, SLOT(map()));
+    attachmentMapper->setMapping(action, Viewer::ReplyMessageToAll);
 #endif
     menu->addSeparator();
     action = menu->addAction(i18n("Properties"));
