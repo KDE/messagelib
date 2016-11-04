@@ -132,13 +132,12 @@ public:
         View = 3,
         Save = 4,
         Properties = 5,
-        ChiasmusEncrypt = 6,
-        Delete = 7,
-        Edit = 8,
-        Copy = 9,
-        ScrollTo = 10,
-        ReplyMessageToAuthor = 11,
-        ReplyMessageToAll = 12
+        Delete = 6,
+        Edit = 7,
+        Copy = 8,
+        ScrollTo = 9,
+        ReplyMessageToAuthor = 10,
+        ReplyMessageToAll = 11
     };
 
     enum MailAction {
