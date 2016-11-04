@@ -50,7 +50,10 @@ void CheckPhishingUrlJob::setUrl(const QUrl &url)
 
 void CheckPhishingUrlJob::start()
 {
-    if (canStart()) {
+    if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork, mUrl);
+        deleteLater();
+    } else if (canStart()) {
         const QString postRequest = createPostRequest();
         if (postRequest.isEmpty()) {
             Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
@@ -67,7 +70,7 @@ void CheckPhishingUrlJob::start()
             connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CheckPhishingUrlJob::slotError);
         }
     } else {
-        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::InvalidUrl, mUrl);
         deleteLater();
     }
 }
@@ -82,11 +85,6 @@ void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
 
 bool CheckPhishingUrlJob::canStart() const
 {
-    if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        //TODO it's not online !
-        return false;
-    }
-
     return mUrl.isValid();
 }
 

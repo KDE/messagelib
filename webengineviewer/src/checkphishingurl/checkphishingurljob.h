@@ -38,6 +38,8 @@ public:
     enum UrlStatus {
         Ok = 0,
         MalWare,
+        BrokenNetwork,
+        InvalidUrl,
         Unknown
     };
 

@@ -2010,6 +2010,12 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
 void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url)
 {
     switch (status) {
+    case WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork:
+        KMessageBox::error(mMainWindow, i18n("The network is broken."), i18n("Check Phishing Url"));
+        break;
+    case WebEngineViewer::CheckPhishingUrlJob::InvalidUrl:
+        KMessageBox::error(mMainWindow, i18n("The url %1 is not valid.", url.toString()), i18n("Check Phishing Url"));
+        break;
     case WebEngineViewer::CheckPhishingUrlJob::Ok:
         break;
     case WebEngineViewer::CheckPhishingUrlJob::MalWare:
@@ -2018,6 +2024,7 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus
         }
         break;
     case WebEngineViewer::CheckPhishingUrlJob::Unknown:
+        qCWarning(MESSAGEVIEWER_LOG) << "WebEngineViewer::CheckPhishingUrlJob unknown error ";
         break;
     }
     //TODO fix me.
