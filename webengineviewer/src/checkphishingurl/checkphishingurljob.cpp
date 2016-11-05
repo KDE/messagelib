@@ -38,8 +38,12 @@ CheckPhishingUrlJob::~CheckPhishingUrlJob()
 
 void CheckPhishingUrlJob::slotCheckUrlFinished(QNetworkReply *reply)
 {
-    qDebug() << " info : " << QString::fromUtf8(reply->readAll());
+    const QString jsonStr = QString::fromUtf8(reply->readAll());
+
+    qDebug() << " info : " << jsonStr;
+    //TODO extract info from
     //TODO Q_EMIT result(MessageViewer::CheckPhishingUrlJob:: ?);
+    reply->deleteLater();
     deleteLater();
 }
 
