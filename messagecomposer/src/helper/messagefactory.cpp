@@ -415,6 +415,7 @@ KMime::Message::Ptr MessageFactory::createForward()
     TemplateParser::TemplateParser parser(msg, TemplateParser::TemplateParser::Forward);
     parser.setIdentityManager(m_identityManager);
     parser.setCharsets(MessageComposerSettings::self()->preferredCharsets());
+    parser.setSelection(m_selection);
     if (!m_template.isEmpty()) {
         parser.process(m_template, m_origMsg);
     } else {
