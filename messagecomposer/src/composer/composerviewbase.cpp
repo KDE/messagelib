@@ -206,10 +206,12 @@ void MessageComposer::ComposerViewBase::setMessage(const KMime::Message::Ptr &ms
     }
 
     // Set the HTML text and collect HTML images
-    const QString htmlContent = otp.htmlContent();
+    QString htmlContent = otp.htmlContent();
     if (htmlContent.isEmpty()) {
         m_editor->setPlainText(otp.plainTextContent());
     } else {
+        //Bug 372085 <div id="name"> is replaced in qtextedit by <a id="name">... => break url
+        htmlContent.replace(QRegularExpression(QStringLiteral("<div\\s*id=\".*\">")), QStringLiteral("<div>"));
         m_editor->setHtml(htmlContent);
         Q_EMIT enableHtml();
         collectImages(m_msg.data());
