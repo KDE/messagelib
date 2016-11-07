@@ -46,6 +46,13 @@ CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
     mResult->setReadOnly(true);
     mResult->setAcceptRichText(false);
     layout->addWidget(mResult);
+
+    mJson = new QTextEdit(this);
+    mJson->setReadOnly(true);
+    mJson->setAcceptRichText(false);
+    layout->addWidget(mJson);
+
+
 }
 
 CheckPhishingUrlGui::~CheckPhishingUrlGui()
@@ -63,8 +70,14 @@ void CheckPhishingUrlGui::slotCheckUrl()
 
     WebEngineViewer::CheckPhishingUrlJob *job = new WebEngineViewer::CheckPhishingUrlJob(this);
     connect(job, &WebEngineViewer::CheckPhishingUrlJob::result, this, &CheckPhishingUrlGui::slotGetResult);
-    job->setUrl(QUrl(urlStr));
+    connect(job, &WebEngineViewer::CheckPhishingUrlJob::debugJson, this, &CheckPhishingUrlGui::slotJSonDebug);
+    job->setUrl(QUrl::fromUserInput(urlStr));
     job->start();
+}
+
+void CheckPhishingUrlGui::slotJSonDebug(const QByteArray &debug)
+{
+    mJson->setText(QString::fromLatin1(debug));
 }
 
 void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlJob::UrlStatus result)
@@ -79,6 +92,12 @@ void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlJob::Ur
         break;
     case WebEngineViewer::CheckPhishingUrlJob::Unknown:
         resultStr = QStringLiteral("Url Unknow state");
+        break;
+    case WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork:
+        resultStr = QStringLiteral("Broken Network");
+        break;
+    case WebEngineViewer::CheckPhishingUrlJob::InvalidUrl:
+        resultStr = QStringLiteral("Invalid Url");
         break;
     }
     mResult->setText(resultStr);

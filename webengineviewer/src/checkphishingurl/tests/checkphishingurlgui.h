@@ -34,8 +34,10 @@ public:
 private Q_SLOTS:
     void slotCheckUrl();
     void slotGetResult(WebEngineViewer::CheckPhishingUrlJob::UrlStatus result);
+    void slotJSonDebug(const QByteArray &debug);
 private:
     QLineEdit *mCheckUrlLineEdit;
+    QTextEdit *mJson;
     QTextEdit *mResult;
 };
 
