@@ -22,6 +22,7 @@
 #include <QNetworkConfigurationManager>
 #include <QNetworkReply>
 #include <PimCommon/NetworkManager>
+#include <QJsonDocument>
 
 using namespace WebEngineViewer;
 
@@ -36,11 +37,21 @@ CheckPhishingUrlJob::~CheckPhishingUrlJob()
 {
 }
 
+QString CheckPhishingUrlJob::apiKey() const
+{
+    return QStringLiteral("AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo");
+}
+
+QString CheckPhishingUrlJob::secretKey() const
+{
+    return QStringLiteral("mdT1DjzohxN3npUUzkENT0gO");
+}
+
 void CheckPhishingUrlJob::slotCheckUrlFinished(QNetworkReply *reply)
 {
-    const QString jsonStr = QString::fromUtf8(reply->readAll());
+    QJsonDocument document = QJsonDocument::fromJson(reply->readAll());
 
-    qDebug() << " info : " << jsonStr;
+    qDebug() << " info : " << document.toJson();
     //TODO extract info from
     //TODO Q_EMIT result(MessageViewer::CheckPhishingUrlJob:: ?);
     reply->deleteLater();
@@ -58,21 +69,62 @@ void CheckPhishingUrlJob::start()
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork, mUrl);
         deleteLater();
     } else if (canStart()) {
-        const QString postRequest = createPostRequest();
-        if (postRequest.isEmpty()) {
-            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
-            deleteLater();
-        } else {
-            QNetworkRequest request(QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find")));
-            //FIXME ?
-            request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
-
-            QUrlQuery postData;
-            postData.addQueryItem(QStringLiteral("key"), QString() /*TODO*/);
-
-            QNetworkReply *reply = mNetworkAccessManager->post(request, postData.query(QUrl::FullyEncoded).toUtf8());
-            connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CheckPhishingUrlJob::slotError);
+        QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find"));
+        safeUrl.addQueryItem(QStringLiteral("key"), apiKey());
+        qDebug() << " safeUrl" << safeUrl;
+        QNetworkRequest request(safeUrl);
+        request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+#if 0
+        {
+            "client": {
+                "clientId":      "yourcompanyname",
+                "clientVersion": "1.5.2"
+            },
+            "threatInfo": {
+                "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
+                "platformTypes":    ["WINDOWS"],
+                "threatEntryTypes": ["URL"],
+                "threatEntries": [
+                {"url": "http://www.urltocheck1.org/"},
+                {"url": "http://www.urltocheck2.org/"},
+                {"url": "http://www.urltocheck3.com/"}
+                ]
+            }
         }
+#endif
+
+        QVariantMap clientMap;
+        QVariantMap map;
+
+        clientMap.insert(QStringLiteral("clientId"), QStringLiteral("KDE"));
+        clientMap.insert(QStringLiteral("clientVersion"), QStringLiteral("5.4.0")); //FIXME
+        map.insert(QStringLiteral("client"), clientMap);
+
+        QVariantMap threatMap;
+        const QVariantList platformList = { QStringLiteral("WINDOWS") };
+        threatMap.insert(QStringLiteral("platformTypes"), platformList);
+
+        const QVariantList threatTypesList = { QStringLiteral("MALWARE") };
+        threatMap.insert(QStringLiteral("threatTypes"), threatTypesList);
+        const QVariantList threatEntryTypesList = { QStringLiteral("URL") };
+        threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
+        QVariantList threatEntriesList;
+        QVariantMap urlMap;
+        urlMap.insert(QStringLiteral("url"), mUrl.toString());
+        threatEntriesList.append(urlMap);
+        threatMap.insert(QStringLiteral("threatEntries"), threatEntriesList);
+
+        map.insert(QStringLiteral("threatInfo"), threatMap);
+
+        const QJsonDocument postData = QJsonDocument::fromVariant(map);
+        const QByteArray baPostData = postData.toJson();
+        qDebug() <<" postData.toJson()"<<baPostData;
+        Q_EMIT debugJson(baPostData);
+        //curl -H "Content-Type: application/json" -X POST -d '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}' https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
+
+
+        QNetworkReply *reply = mNetworkAccessManager->post(request, baPostData);
+        connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CheckPhishingUrlJob::slotError);
     } else {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::InvalidUrl, mUrl);
         deleteLater();
@@ -82,8 +134,10 @@ void CheckPhishingUrlJob::start()
 void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
+    qDebug()<<" error "<<reply->errorString();
     //mErrorMsg = reply->errorString();
     //FIXME
+    reply->deleteLater();
     Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
     deleteLater();
 }
@@ -91,10 +145,4 @@ void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
 bool CheckPhishingUrlJob::canStart() const
 {
     return mUrl.isValid();
-}
-
-QString CheckPhishingUrlJob::createPostRequest()
-{
-    return {};
-    //TODO
 }

@@ -47,12 +47,14 @@ public:
 
     void start();
     bool canStart() const;
-    QString createPostRequest();
 
 Q_SIGNALS:
     void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url);
+    void debugJson(const QByteArray &ba);
 
 private:
+    QString apiKey() const;
+    QString secretKey() const;
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
     QUrl mUrl;
