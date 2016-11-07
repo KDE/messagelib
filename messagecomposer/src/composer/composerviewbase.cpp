@@ -206,12 +206,13 @@ void MessageComposer::ComposerViewBase::setMessage(const KMime::Message::Ptr &ms
     }
 
     // Set the HTML text and collect HTML images
-    if (!otp.htmlContent().isEmpty()) {
-        m_editor->setHtml(otp.htmlContent());
+    const QString htmlContent = otp.htmlContent();
+    if (htmlContent.isEmpty()) {
+        m_editor->setPlainText(otp.plainTextContent());
+    } else {
+        m_editor->setHtml(htmlContent);
         Q_EMIT enableHtml();
         collectImages(m_msg.data());
-    } else {
-        m_editor->setPlainText(otp.plainTextContent());
     }
 
     if (auto hdr = m_msg->headerByType("X-KMail-CursorPos")) {
