@@ -117,7 +117,7 @@ if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
                     OUTPUT_VARIABLE messagelib_git_last_change)
     string(REGEX REPLACE " [-0-9:+ ]*\n" "" messagelib_git_last_change "${messagelib_git_last_change}")
   endif()
-endif (NOT ${MIMETREEPARSER_ONLY_BUILD})
+endif ()
 
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
