@@ -2009,24 +2009,33 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     if (URLHandlerManager::instance()->handleClick(mClickedUrl, this)) {
         return;
     }
-#if 0
-    if (MessageViewer::MessageViewerSettings::self()->checkPhishingUrl()) {
+    Q_EMIT urlClicked(mMessageItem, mClickedUrl);
+}
+
+void ViewerPrivate::checkPhishingUrl()
+{
+    if (MessageViewer::MessageViewerSettings::self()->checkPhishingUrl() && (mClickedUrl.scheme() != QLatin1String("mailto"))) {
         MessageViewer::MailCheckPhishingUrlJob *job = new MessageViewer::MailCheckPhishingUrlJob(this);
         connect(job, &MessageViewer::MailCheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
         job->setUrl(mClickedUrl);
         job->setItem(mMessageItem);
         job->start();
     } else {
-        Q_EMIT urlClicked(mMessageItem, mClickedUrl);
+        executeRunner(mClickedUrl);
     }
-#else
-    Q_EMIT urlClicked(mMessageItem, mClickedUrl);
-#endif
+}
 
+void ViewerPrivate::executeRunner(const QUrl &url)
+{
+    if (!MessageViewer::Util::handleUrlWithQDesktopServices(url)) {
+        KRun *runner = new KRun(url, viewer());   // will delete itself
+        runner->setRunExecutables(false);
+    }
 }
 
 void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, const Akonadi::Item &item)
 {
+    Q_UNUSED(item);
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork:
         KMessageBox::error(mMainWindow, i18n("The network is broken."), i18n("Check Phishing Url"));
@@ -2045,7 +2054,7 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus
         qCWarning(MESSAGEVIEWER_LOG) << "WebEngineViewer::CheckPhishingUrlJob unknown error ";
         break;
     }
-    Q_EMIT urlClicked(item, url);
+    executeRunner(mClickedUrl);
 }
 
 void ViewerPrivate::slotUrlOn(const QString &link)

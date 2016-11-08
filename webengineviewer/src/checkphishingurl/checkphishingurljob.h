@@ -54,9 +54,10 @@ Q_SIGNALS:
     void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url);
     void debugJson(const QByteArray &ba);
 
+private Q_SLOTS:
+    void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
 private:
     QString apiKey() const;
-    QString secretKey() const;
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
     QUrl mUrl;

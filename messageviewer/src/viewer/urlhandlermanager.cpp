@@ -1104,11 +1104,7 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
                 return true;
             }
         }
-        if (!MessageViewer::Util::handleUrlWithQDesktopServices(url)) {
-            KRun *runner = new KRun(url, w->viewer());   // will delete itself
-            runner->setRunExecutables(false);
-        }
-
+        w->checkPhishingUrl();
         return true;
     } else {
         return false;

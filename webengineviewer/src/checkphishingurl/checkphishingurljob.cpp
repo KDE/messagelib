@@ -32,20 +32,22 @@ CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
 {
     mNetworkAccessManager = new QNetworkAccessManager(this);
     connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CheckPhishingUrlJob::slotCheckUrlFinished);
+    connect(mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CheckPhishingUrlJob::slotSslErrors);
 }
 
 CheckPhishingUrlJob::~CheckPhishingUrlJob()
 {
 }
 
+void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
+{
+    qCDebug(WEBENGINEVIEWER_LOG) << " void StorageServiceAbstractJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
+    reply->ignoreSslErrors(error);
+}
+
 QString CheckPhishingUrlJob::apiKey() const
 {
     return QStringLiteral("AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo");
-}
-
-QString CheckPhishingUrlJob::secretKey() const
-{
-    return QStringLiteral("mdT1DjzohxN3npUUzkENT0gO");
 }
 
 void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
@@ -165,9 +167,9 @@ void CheckPhishingUrlJob::start()
 void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    qCDebug(WEBENGINEVIEWER_LOG)<<" error "<<error << " error string : "<< reply->errorString();
+    qDebug()<<" error "<<error << " error string : "<< reply->errorString();
     reply->deleteLater();
-    Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
+    //Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
     deleteLater();
 }
 

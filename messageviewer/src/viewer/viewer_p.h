@@ -429,6 +429,9 @@ public:
 
     void setPrintElementBackground(bool printElementBackground);
     bool showEmoticons() const;
+    void checkPhishingUrl();
+    void executeRunner(const QUrl &url);
+
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
