@@ -42,6 +42,7 @@ public:
     void initializeJQueryScript();
 
     WebEngineManageScript *webEngineManagerScript() const;
+    void setLinkHovered(const QUrl &url);
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
@@ -53,11 +54,6 @@ protected:
     virtual void forwardMousePressEvent(QMouseEvent *event);
     virtual void forwardMouseMoveEvent(QMouseEvent *event);
     virtual void forwardMouseReleaseEvent(QMouseEvent *event);
-
-    void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
-    void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
-    void dragLeaveEvent(QDragLeaveEvent *e) Q_DECL_OVERRIDE;
 private:
     WebEngineViewPrivate *const d;
 };

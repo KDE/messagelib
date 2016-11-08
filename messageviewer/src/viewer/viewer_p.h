@@ -291,9 +291,6 @@ private:
     void initHtmlWidget();
     void createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr, bool fromCurrentContent);
 public:
-    /** Event filter */
-    bool eventFilter(QObject *obj, QEvent *ev) Q_DECL_OVERRIDE;
-
     /** Read settings from app's config file. */
     void readConfig();
 

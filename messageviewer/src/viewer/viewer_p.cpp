@@ -1072,8 +1072,6 @@ void ViewerPrivate::showVCard(KMime::Content *msgPart)
 
 void ViewerPrivate::initHtmlWidget()
 {
-    mViewer->installEventFilter(this);
-
     if (!htmlWriter()) {
         mPartHtmlWriter = new WebEnginePartHtmlWriter(mViewer, 0);
 #ifdef MESSAGEVIEWER_READER_HTML_DEBUG
@@ -1098,47 +1096,6 @@ void ViewerPrivate::initHtmlWidget()
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::messageIsNotAScam, this, &ViewerPrivate::slotMessageIsNotAScam);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::addToWhiteList, this, &ViewerPrivate::slotAddToWhiteList);
     connect(mViewer, &MailWebEngineView::pageIsScrolledToBottom, this, &ViewerPrivate::pageIsScrolledToBottom);
-}
-
-bool ViewerPrivate::eventFilter(QObject *, QEvent *e)
-{
-    if (e->type() == QEvent::MouseButtonPress) {
-        QMouseEvent *me = static_cast<QMouseEvent *>(e);
-        if (me->button() == Qt::LeftButton && (me->modifiers() & Qt::ShiftModifier)) {
-            // special processing for shift+click
-            URLHandlerManager::instance()->handleShiftClick(mHoveredUrl, this);
-            return true;
-        }
-        if (me->button() == Qt::LeftButton) {
-            mCanStartDrag = URLHandlerManager::instance()->willHandleDrag(mHoveredUrl, this);
-            mLastClickPosition = me->pos();
-        }
-    } else if (e->type() ==  QEvent::MouseButtonRelease) {
-        mCanStartDrag = false;
-    } else if (e->type() == QEvent::MouseMove) {
-        QMouseEvent *me = static_cast<QMouseEvent *>(e);
-
-        // First, update the hovered URL
-        mHoveredUrl = mViewer->linkOrImageUrlAt(me->globalPos());
-
-        // If we are potentially handling a drag, deal with that.
-        if (mCanStartDrag && me->buttons() & Qt::LeftButton) {
-
-            if ((mLastClickPosition - me->pos()).manhattanLength() > QApplication::startDragDistance()) {
-                if (URLHandlerManager::instance()->handleDrag(mHoveredUrl, this)) {
-
-                    // If the URL handler manager started a drag, don't handle this in the future
-                    mCanStartDrag = false;
-                }
-            }
-
-            // Don't tell WebKit about this mouse move event, or it might start its own drag!
-            return true;
-        }
-    }
-
-    // standard event processing
-    return false;
 }
 
 void ViewerPrivate::slotWheelZoomChanged(int numSteps)
@@ -1525,6 +1482,7 @@ void ViewerPrivate::createWidgets()
     readerBoxVBoxLayout->addWidget(mTextToSpeechWidget);
 
     mViewer = new MailWebEngineView(mActionCollection, readerBox);
+    mViewer->setViewer(this);
     readerBoxVBoxLayout->addWidget(mViewer);
     mViewer->setObjectName(QStringLiteral("mViewer"));
 
@@ -2060,7 +2018,6 @@ void ViewerPrivate::slotUrlOn(const QString &link)
     // The "link" we get here is not URL-encoded, and therefore there is no way QUrl could
     // parse it correctly. To workaround that, we use QWebFrame::hitTestContent() on the mouse position
     // to get the URL before WebKit managed to mangle it.
-    //TODO
     QUrl url(link);
     const QString protocol = url.scheme();
     if (protocol == QLatin1String("kmail") ||
@@ -2072,6 +2029,7 @@ void ViewerPrivate::slotUrlOn(const QString &link)
         mViewer->setAcceptDrops(true);
     }
 
+    mViewer->setLinkHovered(url);
     if (link.trimmed().isEmpty()) {
         KPIM::BroadcastStatus::instance()->reset();
         Q_EMIT showStatusBarMessage(QString());

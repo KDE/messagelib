@@ -22,6 +22,7 @@
 #include "webengineviewer/webenginescript.h"
 #include "mailwebenginescript.h"
 #include "messageviewer/messageviewersettings.h"
+#include "../urlhandlermanager.h"
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
 #include "blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
 #include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
@@ -66,15 +67,21 @@ public:
           mWebViewAccessKey(Q_NULLPTR),
           mExternalReference(Q_NULLPTR),
           mPageEngine(Q_NULLPTR),
-          mNetworkAccessManager(Q_NULLPTR)
+          mNetworkAccessManager(Q_NULLPTR),
+          mViewer(Q_NULLPTR),
+          mCanStartDrag(false)
     {
 
     }
+    QUrl mHoveredUrl;
+    QPoint mLastClickPosition;
     ScamDetectionWebEngine *mScamDetection;
     WebEngineViewer::WebEngineAccessKey *mWebViewAccessKey;
     MessageViewer::LoadExternalReferencesUrlInterceptor *mExternalReference;
     MailWebEnginePage *mPageEngine;
     WebEngineViewer::InterceptorManager *mNetworkAccessManager;
+    MessageViewer::ViewerPrivate *mViewer;
+    bool mCanStartDrag;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -113,6 +120,11 @@ MailWebEngineView::~MailWebEngineView()
     delete d;
 }
 
+void MailWebEngineView::setLinkHovered(const QUrl &url)
+{
+    d->mHoveredUrl = url;
+}
+
 void MailWebEngineView::runJavaScriptInWordId(const QString &script)
 {
 #if QT_VERSION >= 0x050700
@@ -120,6 +132,11 @@ void MailWebEngineView::runJavaScriptInWordId(const QString &script)
 #else
     page()->runJavaScript(script);
 #endif
+}
+
+void MailWebEngineView::setViewer(MessageViewer::ViewerPrivate *viewer)
+{
+    d->mViewer = viewer;
 }
 
 void MailWebEngineView::initializeScripts()
@@ -177,20 +194,42 @@ void MailWebEngineView::forwardKeyReleaseEvent(QKeyEvent *e)
 
 void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
 {
-    Q_UNUSED(event);
-    //qDebug()<<" void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)";
+    if (d->mViewer) {
+        if (event->button() == Qt::LeftButton && (event->modifiers() & Qt::ShiftModifier)) {
+            // special processing for shift+click
+
+            URLHandlerManager::instance()->handleShiftClick(d->mHoveredUrl, d->mViewer);
+            event->accept();
+            return;
+        }
+        if (event->button() == Qt::LeftButton) {
+            d->mCanStartDrag = URLHandlerManager::instance()->willHandleDrag(d->mHoveredUrl, d->mViewer);
+            d->mLastClickPosition = event->pos();
+        }
+    }
 }
 
 void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 {
-    Q_UNUSED(event);
-    //qDebug() << "void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)";
+    if (d->mViewer) {
+        // If we are potentially handling a drag, deal with that.
+        if (d->mCanStartDrag && event->buttons() & Qt::LeftButton) {
+
+            if ((d->mLastClickPosition - event->pos()).manhattanLength() > QApplication::startDragDistance()) {
+                if (URLHandlerManager::instance()->handleDrag(d->mHoveredUrl, d->mViewer)) {
+                    // If the URL handler manager started a drag, don't handle this in the future
+                    d->mCanStartDrag = false;
+                }
+            }
+            event->accept();
+        }
+    }
 }
 
 void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    //qDebug() << "void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)";
+    d->mCanStartDrag = false;
 }
 
 void MailWebEngineView::forwardKeyPressEvent(QKeyEvent *e)
@@ -372,13 +411,6 @@ void MailWebEngineView::scrollToRelativePosition(qreal pos)
     runJavaScriptInWordId(WebEngineViewer::WebEngineScript::scrollToRelativePosition(pos));
 }
 
-QUrl MailWebEngineView::linkOrImageUrlAt(const QPoint &global) const
-{
-    Q_UNUSED(global);
-    //TODO
-    return {};
-}
-
 void MailWebEngineView::setAllowExternalContent(bool b)
 {
     if (d->mExternalReference->allowExternalContent() != b) {
@@ -395,25 +427,6 @@ QList<QAction *> MailWebEngineView::interceptorUrlActions(const WebEngineViewer:
 void MailWebEngineView::slotLoadFinished()
 {
     scamCheck();
-}
-
-void MailWebEngineView::dragEnterEvent(QDragEnterEvent *event)
-{
-    Q_UNUSED(event);
-    qDebug() << " void MailWebEngineView::dragEnterEvent(QDragEnterEvent *event)";
-}
-
-void MailWebEngineView::dragMoveEvent(QDragMoveEvent *e)
-{
-    qDebug() << " void MailWebEngineView::dragMoveEvent(QDragMoveEvent *e)";
-    WebEngineViewer::WebEngineView::dragMoveEvent(e);
-    //TODO
-}
-
-void MailWebEngineView::dropEvent(QDropEvent *e)
-{
-    Q_UNUSED(e);
-    qDebug() << " MailWebEngineView::dropEvent";
 }
 
 void MailWebEngineView::setPrintElementBackground(bool printElementBackground)

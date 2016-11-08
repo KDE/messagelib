@@ -29,6 +29,7 @@ class WebHitTestResult;
 }
 namespace MessageViewer
 {
+class ViewerPrivate;
 class MailWebEngineViewPrivate;
 class MESSAGEVIEWER_EXPORT MailWebEngineView : public WebEngineViewer::WebEngineView
 {
@@ -59,7 +60,6 @@ public:
     bool hasVerticalScrollBar() const;
     bool isAttachmentInjectionPoint(const QPoint &globalPos) const;
     void scrollToRelativePosition(qreal pos);
-    QUrl linkOrImageUrlAt(const QPoint &global) const;
 
     void setAllowExternalContent(bool b);
 
@@ -71,6 +71,8 @@ public:
     void executeHideShowAttachmentsScripts(bool hide);
     void executeHideShowToAddressScripts(bool hide);
     void executeHideShowCcAddressScripts(bool hide);
+    void setLinkHovered(const QUrl &url);
+    void setViewer(MessageViewer::ViewerPrivate *viewer);
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();
@@ -86,9 +88,6 @@ protected:
     void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
 
     void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
-    void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
-    void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
 Q_SIGNALS:
     void wheelZoomChanged(int numSteps);
     void openUrl(const QUrl &url);
