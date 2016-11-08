@@ -49,6 +49,7 @@ public:
     bool canStart() const;
 
     QByteArray jsonRequest() const;
+    void parse(const QByteArray &replyStr);
 Q_SIGNALS:
     void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url);
     void debugJson(const QByteArray &ba);

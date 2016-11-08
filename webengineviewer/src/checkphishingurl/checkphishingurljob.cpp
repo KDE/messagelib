@@ -48,11 +48,15 @@ QString CheckPhishingUrlJob::secretKey() const
     return QStringLiteral("mdT1DjzohxN3npUUzkENT0gO");
 }
 
+void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
+{
+    QJsonDocument document = QJsonDocument::fromJson(replyStr);
+    qCDebug(WEBENGINEVIEWER_LOG) << " info : " << document.toJson();
+}
+
 void CheckPhishingUrlJob::slotCheckUrlFinished(QNetworkReply *reply)
 {
-    QJsonDocument document = QJsonDocument::fromJson(reply->readAll());
-
-    qCDebug(WEBENGINEVIEWER_LOG) << " info : " << document.toJson();
+    parse(reply->readAll());
     //TODO extract info from
     //TODO Q_EMIT result(MessageViewer::CheckPhishingUrlJob:: ?);
     reply->deleteLater();
@@ -140,7 +144,7 @@ void CheckPhishingUrlJob::start()
 void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    qCDebug(WEBENGINEVIEWER_LOG)<<" error "<<reply->errorString();
+    qCDebug(WEBENGINEVIEWER_LOG)<<" error "<<error << " error string : "<< reply->errorString();
     //mErrorMsg = reply->errorString();
     //FIXME
     reply->deleteLater();
