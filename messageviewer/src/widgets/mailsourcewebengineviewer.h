@@ -25,9 +25,7 @@
 class QTabWidget;
 class QWebEnginePage;
 
-#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
 #include <KSyntaxHighlighting/Repository>
-#endif
 
 namespace MessageViewer
 {
@@ -44,9 +42,7 @@ public:
     void setDisplayedSource(QWebEnginePage *page);
     void setFixedFont();
 private:
-#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
     KSyntaxHighlighting::Repository mRepo;
-#endif
     MailSourceViewTextBrowserWidget *mRawBrowser;
     FindBarSourceView *mFindBar;
 #ifndef NDEBUG

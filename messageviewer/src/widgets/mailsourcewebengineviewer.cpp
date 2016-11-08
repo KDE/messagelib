@@ -26,13 +26,9 @@ using namespace MessageViewer;
 #include "findbar/findbarsourceview.h"
 #include "kpimtextedit/slidecontainer.h"
 
-#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Theme>
-#else
-#include <kpimtextedit/htmlhighlighter.h>
-#endif
 
 #include "PimCommon/PimUtil"
 #include <kiconloader.h>
@@ -70,7 +66,6 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     mHtmlBrowser = new MailSourceViewTextBrowserWidget(this);
     mTabWidget->addTab(mHtmlBrowser, i18nc("Mail message as shown, in HTML format", "HTML Source"));
     mTabWidget->setTabToolTip(1, i18n("HTML code for displaying the message to the user"));
-#ifdef KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT
     KSyntaxHighlighting::Definition def;
     def = mRepo.definitionForName(QStringLiteral("HTML"));
 
@@ -79,9 +74,6 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
                  ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                  : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
-#else
-    new KPIMTextEdit::HtmlHighlighter(mHtmlBrowser->textBrowser()->document());
-#endif
 
     mTabWidget->setCurrentIndex(0);
 #else

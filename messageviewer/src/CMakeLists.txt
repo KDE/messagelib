@@ -214,6 +214,7 @@ target_link_libraries(KF5MessageViewer
     KF5::Libkleo
     KF5::MimeTreeParser
     PRIVATE
+    KF5::SyntaxHighlighting
     KF5::ItemViews
     Qt5::Network
     Qt5::WebKitWidgets
@@ -238,10 +239,6 @@ target_link_libraries(KF5MessageViewer
     Qt5::PrintSupport
     QGpgme
     )
-
-if (KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT)
-    target_link_libraries(KF5MessageViewer PRIVATE KF5::SyntaxHighlighting)
-endif()
 
 set_target_properties(KF5MessageViewer PROPERTIES
     VERSION ${MESSAGEVIEWER_VERSION_STRING}

@@ -4,7 +4,6 @@ project(Messagelib)
 
 option(MIMETREEPARSER_ONLY_BUILD "Build only mimetreeparser" FALSE)
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
-option(KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT "Enable this feature if you want to use new kf5 syntax highlighting module." TRUE)
 
 set(KF5_VERSION "5.28.0")
 find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
@@ -69,6 +68,7 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
    find_package(KF5WidgetsAddons ${KF5_VERSION} CONFIG REQUIRED)
    find_package(KF5WindowSystem ${KF5_VERSION} CONFIG REQUIRED)
    find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
+   find_package(KF5SyntaxHighlighting ${KF5_VERSION} CONFIG REQUIRED)
 
    find_package(Grantlee5 "5.1" CONFIG REQUIRED)
 
@@ -91,15 +91,6 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
 
    find_package(KF5AkonadiSearch "5.3.80" CONFIG REQUIRED)
    set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "http://www.kde.org" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
-
-
-   if (KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT)
-      find_package(KF5SyntaxHighlighting ${KF5_VERSION})
-      if (KF5SyntaxHighlighting_FOUND)
-          MESSAGE(STATUS "found KF5SyntaxHighlighting")
-          set(KDEPIM_KF5SYNTAXHIGHLIGHTING_SUPPORT true)
-      endif()
-   endif()
 endif()
 
 # Support for the GIT revision number in messagecomposer-version.h
