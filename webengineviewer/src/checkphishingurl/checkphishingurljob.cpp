@@ -61,9 +61,9 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
         } else {
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
             if (info.count() == 1) {
-                QVariantMap map = info.at(0).toMap();
+                const QVariantMap map = info.at(0).toMap();
                 if (map[QStringLiteral("threatType")] == QStringLiteral("MALWARE")) {
-                    QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
+                    const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
                         if (urlMap[QStringLiteral("url")].toString() == mUrl.toString()) {
                             Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::MalWare, mUrl);
