@@ -51,18 +51,29 @@ QString CheckPhishingUrlJob::secretKey() const
 void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
 {
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
-    qDebug() << " info : " << document.toJson();
     if (document.isNull()) {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
     } else {
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
             Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Ok, mUrl);
+            return;
         } else {
-            const QVariantMap info = answer.value(QStringLiteral("matches")).toMap();
-            qDebug() << " INFO "<<info;
+            const QVariantList info = answer.value(QStringLiteral("matches")).toList();
+            if (info.count() == 1) {
+                QVariantMap map = info.at(0).toMap();
+                if (map[QStringLiteral("threatType")] == QStringLiteral("MALWARE")) {
+                    QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
+                    if (urlMap.count() == 1) {
+                        if (urlMap[QStringLiteral("url")].toString() == mUrl.toString()) {
+                            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::MalWare, mUrl);
+                            return;
+                        }
+                    }
+                }
+            }
+            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
         }
-        qDebug() << " answer" <<answer;
     }
 }
 
