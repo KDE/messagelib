@@ -30,6 +30,8 @@ public:
     ~CheckPhishingUrlJobTest();
 private Q_SLOTS:
     void shouldNotBeAbleToStartWithEmptyUrl();
+    void shouldCreateRequest_data();
+    void shouldCreateRequest();
 };
 
 #endif // CHECKPHISHINGURLJOBTEST_H

@@ -56,10 +56,10 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
-private:
-    QString apiKey() const;
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
+private:
+    QString apiKey() const;
     QUrl mUrl;
     QNetworkAccessManager *mNetworkAccessManager;
 };

@@ -41,7 +41,7 @@ CheckPhishingUrlJob::~CheckPhishingUrlJob()
 
 void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
 {
-    qCDebug(WEBENGINEVIEWER_LOG) << " void StorageServiceAbstractJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
+    qCDebug(WEBENGINEVIEWER_LOG) << " void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
     reply->ignoreSslErrors(error);
 }
 
@@ -64,7 +64,8 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
             if (info.count() == 1) {
                 const QVariantMap map = info.at(0).toMap();
-                if (map[QStringLiteral("threatType")] == QStringLiteral("MALWARE")) {
+                const QString threatTypeStr = map[QStringLiteral("threatType")].toString();
+                if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
                         if (urlMap[QStringLiteral("url")].toString() == mUrl.toString()) {
@@ -72,7 +73,10 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                             return;
                         }
                     }
+                } else {
+                    qWarning() << " CheckPhishingUrlJob::parse threatTypeStr : " << threatTypeStr;
                 }
+
             }
             Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
         }
@@ -135,7 +139,11 @@ QByteArray CheckPhishingUrlJob::jsonRequest() const
     map.insert(QStringLiteral("threatInfo"), threatMap);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
+#ifdef DEBUG_JSON_REQUEST
     const QByteArray baPostData = postData.toJson();
+#else
+    const QByteArray baPostData = postData.toJson(QJsonDocument::Compact);
+#endif
     return baPostData;
 }
 
