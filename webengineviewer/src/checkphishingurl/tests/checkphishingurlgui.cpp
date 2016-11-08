@@ -41,6 +41,7 @@ CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
     QPushButton *button = new QPushButton(QStringLiteral("Check"), this);
     checkUrlLayout->addWidget(button);
     connect(button, &QPushButton::clicked, this, &CheckPhishingUrlGui::slotCheckUrl);
+    connect(mCheckUrlLineEdit, &QLineEdit::returnPressed, this, &CheckPhishingUrlGui::slotCheckUrl);
 
     mResult = new QTextEdit(this);
     mResult->setReadOnly(true);
