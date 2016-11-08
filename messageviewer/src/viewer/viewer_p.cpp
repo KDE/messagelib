@@ -1266,8 +1266,6 @@ void ViewerPrivate::setOverrideEncoding(const QString &encoding)
     update(MimeTreeParser::Force);
 }
 
-
-
 void ViewerPrivate::setPrinting(bool enable)
 {
     mPrinting = enable;

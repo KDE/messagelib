@@ -32,7 +32,7 @@ class WebEngineViewBase : public QWebEngineView
 {
     Q_OBJECT
 public:
-    explicit WebEngineViewBase(QWidget* parent = Q_NULLPTR);
+    explicit WebEngineViewBase(QWidget *parent = Q_NULLPTR);
 protected:
     void dragEnterEvent(QDragEnterEvent *e) Q_DECL_OVERRIDE;
     void dragLeaveEvent(QDragLeaveEvent *e) Q_DECL_OVERRIDE;

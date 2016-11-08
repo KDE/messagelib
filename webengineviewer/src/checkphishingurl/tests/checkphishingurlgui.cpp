@@ -53,7 +53,6 @@ CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
     mJson->setAcceptRichText(false);
     layout->addWidget(mJson);
 
-
 }
 
 CheckPhishingUrlGui::~CheckPhishingUrlGui()
@@ -84,7 +83,7 @@ void CheckPhishingUrlGui::slotJSonDebug(const QByteArray &debug)
 void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlJob::UrlStatus result)
 {
     QString resultStr;
-    switch(result) {
+    switch (result) {
     case WebEngineViewer::CheckPhishingUrlJob::Ok:
         resultStr = QStringLiteral("Url ok");
         break;

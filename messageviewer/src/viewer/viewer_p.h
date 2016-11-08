@@ -432,7 +432,6 @@ public:
     void checkPhishingUrl();
     void executeRunner(const QUrl &url);
 
-
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
     void slotModifyItemDone(KJob *job);

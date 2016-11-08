@@ -98,22 +98,22 @@ void CheckPhishingUrlJob::setUrl(const QUrl &url)
 QByteArray CheckPhishingUrlJob::jsonRequest() const
 {
 #if 0
-        {
-            "client": {
-                "clientId":      "yourcompanyname",
-                "clientVersion": "1.5.2"
-            },
-            "threatInfo": {
-                "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
-                "platformTypes":    ["WINDOWS"],
-                "threatEntryTypes": ["URL"],
-                "threatEntries": [
-                {"url": "http://www.urltocheck1.org/"},
-                {"url": "http://www.urltocheck2.org/"},
-                {"url": "http://www.urltocheck3.com/"}
-                ]
-            }
+    {
+    "client": {
+        "clientId":      "yourcompanyname",
+        "clientVersion": "1.5.2"
+        },
+    "threatInfo": {
+        "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
+        "platformTypes":    ["WINDOWS"],
+        "threatEntryTypes": ["URL"],
+        "threatEntries": [
+        {"url": "http://www.urltocheck1.org/"},
+        {"url": "http://www.urltocheck2.org/"},
+        {"url": "http://www.urltocheck3.com/"}
+            ]
         }
+    }
 #endif
     QVariantMap clientMap;
     QVariantMap map;
@@ -160,7 +160,7 @@ void CheckPhishingUrlJob::start()
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
         const QByteArray baPostData = jsonRequest();
-        qCDebug(WEBENGINEVIEWER_LOG) <<" postData.toJson()"<<baPostData;
+        qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
         Q_EMIT debugJson(baPostData);
         //curl -H "Content-Type: application/json" -X POST -d '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}' https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
 
@@ -175,7 +175,7 @@ void CheckPhishingUrlJob::start()
 void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    qDebug()<<" error "<<error << " error string : "<< reply->errorString();
+    qDebug() << " error " << error << " error string : " << reply->errorString();
     reply->deleteLater();
     //Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
     deleteLater();
