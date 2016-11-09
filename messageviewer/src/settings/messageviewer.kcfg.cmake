@@ -42,7 +42,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
 
   <group name="Security">
     <entry name="CheckPhishingUrl" type="Bool">
-       <default>true</default>
+       <default>false</default>
     </entry>
   </group>
   <group name="Reader">
