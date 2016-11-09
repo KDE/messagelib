@@ -57,8 +57,6 @@ public:
     void scrollPageUp(int percent);
     void injectAttachments(const boost::function<QString()> &delayedHtml);
 
-    bool hasVerticalScrollBar() const;
-    bool isAttachmentInjectionPoint(const QPoint &globalPos) const;
     void scrollToRelativePosition(qreal pos);
 
     void setAllowExternalContent(bool b);

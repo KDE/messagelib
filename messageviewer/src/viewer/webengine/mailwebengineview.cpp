@@ -391,21 +391,6 @@ void MailWebEngineView::toggleFullAddressList(const QString &field, const boost:
     runJavaScriptInWordId(MessageViewer::MailWebEngineScript::replaceInnerHtml(field, html));
 }
 
-bool MailWebEngineView::hasVerticalScrollBar() const
-{
-    qDebug() << "bool MailWebEngineView::hasVerticalScrollBar() const not implemented";
-    //TODO
-    return false;
-}
-
-bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) const
-{
-    Q_UNUSED(globalPos);
-    qDebug() << "bool MailWebEngineView::isAttachmentInjectionPoint(const QPoint &globalPos) const not implemented";
-    //TODO
-    return false;
-}
-
 void MailWebEngineView::scrollToRelativePosition(qreal pos)
 {
     runJavaScriptInWordId(WebEngineViewer::WebEngineScript::scrollToRelativePosition(pos));

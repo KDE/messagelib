@@ -603,6 +603,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         }
     }
 
+#if 0 //Reimplement in the future
     const bool attachmentInHeader = mViewer->isAttachmentInjectionPoint(globalPos);
     const bool hasScrollbar = mViewer->hasVerticalScrollBar();
     if (attachmentInHeader && hasScrollbar) {
@@ -610,6 +611,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
         attachmentMapper->setMapping(action, Viewer::ScrollTo);
     }
+#endif
 
     action = menu->addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save As..."));
     action->setEnabled(!deletedAttachment);
