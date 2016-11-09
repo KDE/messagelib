@@ -20,7 +20,6 @@
 #include "checkphishingurljob.h"
 #include <QNetworkAccessManager>
 #include <QNetworkConfigurationManager>
-#include <QNetworkReply>
 #include <PimCommon/NetworkManager>
 #include <QJsonDocument>
 #include <webengineviewer_debug.h>
@@ -76,7 +75,6 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                 } else {
                     qWarning() << " CheckPhishingUrlJob::parse threatTypeStr : " << threatTypeStr;
                 }
-
             }
             Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
         }
@@ -97,24 +95,6 @@ void CheckPhishingUrlJob::setUrl(const QUrl &url)
 
 QByteArray CheckPhishingUrlJob::jsonRequest() const
 {
-#if 0
-    {
-    "client": {
-        "clientId":      "yourcompanyname",
-        "clientVersion": "1.5.2"
-        },
-    "threatInfo": {
-        "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
-        "platformTypes":    ["WINDOWS"],
-        "threatEntryTypes": ["URL"],
-        "threatEntries": [
-        {"url": "http://www.urltocheck1.org/"},
-        {"url": "http://www.urltocheck2.org/"},
-        {"url": "http://www.urltocheck3.com/"}
-            ]
-        }
-    }
-#endif
     QVariantMap clientMap;
     QVariantMap map;
 
@@ -175,9 +155,8 @@ void CheckPhishingUrlJob::start()
 void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
 {
     QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-    qDebug() << " error " << error << " error string : " << reply->errorString();
+    qWarning() << " error " << error << " error string : " << reply->errorString();
     reply->deleteLater();
-    //Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
     deleteLater();
 }
 
