@@ -108,14 +108,12 @@ void WebEngineView::forwardKeyReleaseEvent(QKeyEvent *event)
 
 void WebEngineView::forwardMousePressEvent(QMouseEvent *event)
 {
-    qDebug()<<" void WebEngineView::forwardMousePressEvent(QMouseEvent *event)";
     Q_UNUSED(event);
 }
 
 void WebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    //qDebug()<<" void WebEngineView::forwardMouseMoveEvent(QKeyEvent *event)";
 }
 
 void WebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
