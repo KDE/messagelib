@@ -126,6 +126,7 @@
 #include <WebEngineViewer/WebHitTestResult>
 #include "header/headerstylemenumanager.h"
 #include "widgets/submittedformwarningwidget.h"
+#include <WebEngineViewer/CheckPhishingUrlCache>
 
 #include <MimeTreeParser/BodyPart>
 #include <MimeTreeParser/HtmlWriter>
@@ -1973,11 +1974,16 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
 void ViewerPrivate::checkPhishingUrl()
 {
     if (MessageViewer::MessageViewerSettings::self()->checkPhishingUrl() && (mClickedUrl.scheme() != QLatin1String("mailto"))) {
-        MessageViewer::MailCheckPhishingUrlJob *job = new MessageViewer::MailCheckPhishingUrlJob(this);
-        connect(job, &MessageViewer::MailCheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
-        job->setUrl(mClickedUrl);
-        job->setItem(mMessageItem);
-        job->start();
+        WebEngineViewer::CheckPhishingUrlCache::UrlStatus status = WebEngineViewer::CheckPhishingUrlCache::self()->urlStatus(mClickedUrl);
+        if (status == WebEngineViewer::CheckPhishingUrlCache::UrlOk) {
+            executeRunner(mClickedUrl);
+        } else {
+            MessageViewer::MailCheckPhishingUrlJob *job = new MessageViewer::MailCheckPhishingUrlJob(this);
+            connect(job, &MessageViewer::MailCheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
+            job->setUrl(mClickedUrl);
+            job->setItem(mMessageItem);
+            job->start();
+        }
     } else {
         executeRunner(mClickedUrl);
     }
@@ -2002,8 +2008,10 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus
         KMessageBox::error(mMainWindow, i18n("The url %1 is not valid.", url.toString()), i18n("Check Phishing Url"));
         break;
     case WebEngineViewer::CheckPhishingUrlJob::Ok:
+        WebEngineViewer::CheckPhishingUrlCache::self()->setCheckingUrlResult(url, WebEngineViewer::CheckPhishingUrlCache::UrlOk);
         break;
     case WebEngineViewer::CheckPhishingUrlJob::MalWare:
+        WebEngineViewer::CheckPhishingUrlCache::self()->setCheckingUrlResult(url, WebEngineViewer::CheckPhishingUrlCache::MalWare);
         if (KMessageBox::No == KMessageBox::warningYesNo(mMainWindow, i18n("This web site is a malware, do you want to continue to show it?"), i18n("Malware"))) {
             return;
         }
