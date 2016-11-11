@@ -1977,6 +1977,10 @@ void ViewerPrivate::checkPhishingUrl()
         WebEngineViewer::CheckPhishingUrlCache::UrlStatus status = WebEngineViewer::CheckPhishingUrlCache::self()->urlStatus(mClickedUrl);
         if (status == WebEngineViewer::CheckPhishingUrlCache::UrlOk) {
             executeRunner(mClickedUrl);
+        } else if (status == WebEngineViewer::CheckPhishingUrlCache::MalWare) {
+            if (urlIsAMalwareButContinue()) {
+                executeRunner(mClickedUrl);
+            }
         } else {
             MessageViewer::MailCheckPhishingUrlJob *job = new MessageViewer::MailCheckPhishingUrlJob(this);
             connect(job, &MessageViewer::MailCheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
@@ -2011,8 +2015,7 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus
         WebEngineViewer::CheckPhishingUrlCache::self()->setCheckingUrlResult(url, WebEngineViewer::CheckPhishingUrlCache::UrlOk);
         break;
     case WebEngineViewer::CheckPhishingUrlJob::MalWare:
-        WebEngineViewer::CheckPhishingUrlCache::self()->setCheckingUrlResult(url, WebEngineViewer::CheckPhishingUrlCache::MalWare);
-        if (KMessageBox::No == KMessageBox::warningYesNo(mMainWindow, i18n("This web site is a malware, do you want to continue to show it?"), i18n("Malware"))) {
+        if (!urlIsAMalwareButContinue()) {
             return;
         }
         break;
@@ -2020,7 +2023,15 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus
         qCWarning(MESSAGEVIEWER_LOG) << "WebEngineViewer::CheckPhishingUrlJob unknown error ";
         break;
     }
-    executeRunner(mClickedUrl);
+    executeRunner(url);
+}
+
+bool ViewerPrivate::urlIsAMalwareButContinue()
+{
+    if (KMessageBox::No == KMessageBox::warningYesNo(mMainWindow, i18n("This web site is a malware, do you want to continue to show it?"), i18n("Malware"))) {
+        return false;
+    }
+    return true;
 }
 
 void ViewerPrivate::slotUrlOn(const QString &link)

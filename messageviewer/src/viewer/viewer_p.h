@@ -595,6 +595,7 @@ private:
 
     void replyMessageToAuthor(KMime::Content *atmNode);
     void replyMessageToAll(KMime::Content *atmNode);
+    bool urlIsAMalwareButContinue();
 public:
     MimeTreeParser::NodeHelper *mNodeHelper;
     bool mHtmlMailGlobalSetting;
