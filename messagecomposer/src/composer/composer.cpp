@@ -344,7 +344,7 @@ void ComposerPrivate::contentJobFinished(KJob *job)
         headers->setHeader(realTo);
         headers->assemble();
     } else { // just use the saved headers from before
-        if (encData.size() > 0) {
+        if (!encData.isEmpty()) {
             qCDebug(MESSAGECOMPOSER_LOG) << "setting enc data:" << encData[ 0 ].first << "with num keys:" << encData[ 0 ].second.size();
             keys = encData[ 0 ].second;
             recipients = encData[ 0 ].first;
