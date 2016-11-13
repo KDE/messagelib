@@ -172,6 +172,7 @@ public:
     ~ExpandCollapseQuoteURLManager() {}
 
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
+    bool handleDrag(const QUrl &url, ViewerPrivate *window) const Q_DECL_OVERRIDE;
     bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const Q_DECL_OVERRIDE
     {
         return false;
@@ -265,6 +266,7 @@ public:
     bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
     bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const Q_DECL_OVERRIDE;
     QString statusBarMessage(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE;
+    bool handleDrag(const QUrl &url, ViewerPrivate *window) const Q_DECL_OVERRIDE;
 };
 
 // Handler that prevents dragging of internal images added by KMail, such as the envelope image
@@ -690,6 +692,12 @@ bool ExpandCollapseQuoteURLManager::handleClick(const QUrl &url, ViewerPrivate *
     }
     return false;
 }
+
+bool ExpandCollapseQuoteURLManager::handleDrag(const QUrl &url, ViewerPrivate *window) const
+{
+    return true;
+}
+
 QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
     if (url.scheme() == QLatin1String("kmail") && url.path() == QLatin1String("levelquote")) {
@@ -1053,6 +1061,12 @@ QString ShowAuditLogURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate 
         return i18n("Show GnuPG Audit Log for this operation");
     }
 }
+
+bool ShowAuditLogURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
+{
+    return true;
+}
+
 }
 
 namespace
