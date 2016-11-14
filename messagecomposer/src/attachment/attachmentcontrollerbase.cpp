@@ -978,7 +978,7 @@ void AttachmentControllerBase::showAttachPublicKeyDialog()
         KeySelectionDialog::PublicKeys | KeySelectionDialog::OpenPGPKeys,
         false /* no multi selection */,
         false /* no remember choice box */,
-        d->wParent, "attach public key selection dialog");
+        d->wParent);
 
     if (dialog->exec() == QDialog::Accepted && dialog) {
         exportPublicKey(dialog->fingerprint());
