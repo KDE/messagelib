@@ -534,14 +534,11 @@ KMime::Message::Ptr MessageFactory::createRedirect(const QString &toStr, const Q
 
     // X-KMail-Redirect-From: content
     const QString strByWayOf = QString::fromLocal8Bit("%1 (by way of %2 <%3>)")
-                               .arg(m_origMsg->from()->asUnicodeString())
-                               .arg(ident.fullName())
-                               .arg(ident.primaryEmailAddress());
+                               .arg(m_origMsg->from()->asUnicodeString(), ident.fullName(), ident.primaryEmailAddress());
 
     // Resent-From: content
     const QString strFrom = QString::fromLocal8Bit("%1 <%2>")
-                            .arg(ident.fullName())
-                            .arg(ident.primaryEmailAddress());
+                            .arg(ident.fullName(), ident.primaryEmailAddress());
 
     // format the current date to be used in Resent-Date:
     // FIXME: generate datetime the same way as KMime, otherwise we get inconsistency

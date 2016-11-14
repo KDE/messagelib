@@ -89,7 +89,7 @@ void FollowupReminderCreateJob::start()
     if (d->mInfo->isValid()) {
         if (d->mCollection.isValid()) {
             KCalCore::Todo::Ptr todo(new KCalCore::Todo);
-            todo->setSummary(i18n("Wait answer from \"%1\" send to \"%2\"").arg(d->mInfo->subject()).arg(d->mInfo->to()));
+            todo->setSummary(i18n("Wait answer from \"%1\" send to \"%2\"").arg(d->mInfo->subject(), d->mInfo->to()));
             Akonadi::Item newTodoItem;
             newTodoItem.setMimeType(KCalCore::Todo::todoMimeType());
             newTodoItem.setPayload<KCalCore::Todo::Ptr>(todo);

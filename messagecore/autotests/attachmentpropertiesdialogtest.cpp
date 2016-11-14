@@ -36,6 +36,12 @@ using namespace MessageCore;
 
 QTEST_MAIN(AttachmentPropertiesDialogTest)
 
+AttachmentPropertiesDialogTest::AttachmentPropertiesDialogTest(QObject *parent)
+    : QObject(parent)
+{
+
+}
+
 void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
 {
     // Sample data.

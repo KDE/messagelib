@@ -418,9 +418,8 @@ public:
 class MimeTreeParser::DefaultRendererPrivate
 {
 public:
-    DefaultRendererPrivate(DefaultRenderer *qPtr, const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
+    DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
         : mMsgPart(msgPart)
-        , q(qPtr)
         , mOldWriter(msgPart->htmlWriter())
         , mCSSHelper(cssHelper)
     {
@@ -1389,14 +1388,13 @@ public:
     QString mHtml;
     Interface::MessagePart::Ptr mMsgPart;
 private:
-    DefaultRenderer *q;
     HtmlWriter *mOldWriter;
 
     CSSHelperBase *mCSSHelper;
 };
 
 DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
-    : d(new MimeTreeParser::DefaultRendererPrivate(this, msgPart, cssHelper))
+    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper))
 {
 }
 

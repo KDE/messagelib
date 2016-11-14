@@ -23,7 +23,7 @@ using namespace WebEngineViewer;
 
 QString WebEngineScript::findAllImages()
 {
-    const QString source = QLatin1String("(function() {"
+    const QString source = QStringLiteral("(function() {"
                                          "var out = [];"
                                          "var imgs = document.getElementsByTagName('img');"
                                          "for (var i = 0; i < imgs.length; ++i) {"
@@ -40,7 +40,7 @@ QString WebEngineScript::findAllImages()
 
 QString WebEngineScript::findAllScripts()
 {
-    const QString source = QLatin1String("(function() {"
+    const QString source = QStringLiteral("(function() {"
                                          "var out = [];"
                                          "var scripts = document.getElementsByTagName('script');"
                                          "for (var i = 0; i < scripts.length; ++i) {"
@@ -57,7 +57,7 @@ QString WebEngineScript::findAllScripts()
 
 QString WebEngineScript::findAllAnchors()
 {
-    const QString source = QLatin1String("(function() {"
+    const QString source = QStringLiteral("(function() {"
                                          "var out = [];"
                                          "var anchors = document.getElementsByTagName('a');"
                                          "for (var i = 0; i < anchors.length; ++i) {"
@@ -76,7 +76,7 @@ QString WebEngineScript::findAllAnchors()
 
 QString WebEngineScript::findAllAnchorsAndForms()
 {
-    const QString source = QLatin1String("(function() {"
+    const QString source = QStringLiteral("(function() {"
                                          "var res = [];"
                                          "var out = [];"
                                          "var anchors = document.getElementsByTagName('a');"
@@ -166,7 +166,7 @@ QString WebEngineScript::setStyleToElement(const QString &elementStr, const QStr
     const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
                            "if (element) { "
                            "    element.style = '%2';"
-                           "}").arg(elementStr).arg(style);
+                           "}").arg(elementStr, style);
     return source;
 }
 

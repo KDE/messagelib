@@ -33,6 +33,7 @@ class View;
 
 class Delegate : public ThemeDelegate
 {
+    Q_OBJECT
 public:
     explicit Delegate(View *pParent);
     ~Delegate();

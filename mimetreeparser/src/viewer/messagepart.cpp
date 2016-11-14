@@ -603,7 +603,7 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
         return;
     }
 
-    foreach (const auto name, mChildNodes.keys()) {
+    foreach (const auto &name, mChildNodes.keys()) {
         mChildParts[name] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mChildNodes[name], true));
     }
 }

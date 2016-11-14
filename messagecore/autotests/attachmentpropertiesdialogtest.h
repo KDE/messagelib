@@ -25,6 +25,8 @@
 class AttachmentPropertiesDialogTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit AttachmentPropertiesDialogTest(QObject *parent = Q_NULLPTR);
 private Q_SLOTS:
     void testAttachmentPartReadWrite();
     void testAttachmentPartReadOnly();

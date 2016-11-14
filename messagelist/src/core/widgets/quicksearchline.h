@@ -48,7 +48,7 @@ public:
         SearchAgainstTo = 32
     };
 
-    Q_ENUMS(SearchOption)
+    Q_ENUM(SearchOption)
     Q_DECLARE_FLAGS(SearchOptions, SearchOption)
 
     SearchOptions searchOptions() const;
