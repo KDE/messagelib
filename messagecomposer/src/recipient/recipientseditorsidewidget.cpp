@@ -125,7 +125,7 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
     Recipient::List recipients = mEditor->recipients();
     Recipient::List::ConstIterator it;
     Recipient::List::ConstIterator end(recipients.constEnd());
-    for (it = recipients.constBegin(); it != recipients.constEnd(); ++it) {
+    for (it = recipients.constBegin(); it != end; ++it) {
         QString emailLine = QLatin1String("&nbsp;&nbsp;") + (*it)->email().toHtmlEscaped() + QLatin1String("<br/>");
         switch ((*it)->type()) {
         case Recipient::To:
