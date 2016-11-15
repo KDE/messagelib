@@ -43,6 +43,8 @@ public:
 
     void start();
 
+    void setDataBaseState(const QString &value);
+
     void setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload type);
 
     QByteArray jsonRequest() const;
@@ -50,13 +52,16 @@ public:
 Q_SIGNALS:
     void finished();
     void debugJsonResult(const QByteArray &ba);
+    void debugJson(const QByteArray &ba);
 
 private:
     QString apiKey() const;
-    void slotCheckUrlFinished(QNetworkReply *reply);
+    void slotDownloadDataBaseFinished(QNetworkReply *reply);
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);
+    void parseResult(const QByteArray &value);
 
+    QString mDataBaseState;
     DataBaseDownload mDataBaseDownloadNeeded;
     QNetworkAccessManager *mNetworkAccessManager;
 };

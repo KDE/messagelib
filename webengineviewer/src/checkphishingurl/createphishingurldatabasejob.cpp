@@ -24,7 +24,7 @@
 
 #include <QNetworkConfigurationManager>
 #include <QJsonDocument>
-//#define DEBUG_JSON_REQUEST 1
+#define DEBUG_JSON_REQUEST 1
 using namespace WebEngineViewer;
 
 CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)
@@ -32,7 +32,7 @@ CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)
       mDataBaseDownloadNeeded(FullDataBase)
 {
     mNetworkAccessManager = new QNetworkAccessManager(this);
-    connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CreatePhishingUrlDataBaseJob::slotCheckUrlFinished);
+    connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished);
     connect(mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CreatePhishingUrlDataBaseJob::slotSslErrors);
 }
 
@@ -66,11 +66,17 @@ void CreatePhishingUrlDataBaseJob::start()
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
         const QByteArray baPostData = jsonRequest();
+        Q_EMIT debugJson(baPostData);
         qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
         //curl -H "Content-Type: application/json" -X POST -d '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}' https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
         QNetworkReply *reply = mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CreatePhishingUrlDataBaseJob::slotError);
     }
+}
+
+void CreatePhishingUrlDataBaseJob::setDataBaseState(const QString &value)
+{
+    mDataBaseState = value;
 }
 
 void CreatePhishingUrlDataBaseJob::slotError(QNetworkReply::NetworkError error)
@@ -110,21 +116,28 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     clientMap.insert(QStringLiteral("clientVersion"), QStringLiteral("5.4.0")); //FIXME
     map.insert(QStringLiteral("client"), clientMap);
 
+    QVariantList listUpdateRequests;
+
     QVariantMap threatMap;
-    const QVariantList platformList = { QStringLiteral("WINDOWS") };
-    threatMap.insert(QStringLiteral("platformTypes"), platformList);
-    const QVariantList threatTypesList = { QStringLiteral("MALWARE") };
-    threatMap.insert(QStringLiteral("threatTypes"), threatTypesList);
-    const QVariantList threatEntryTypesList = { QStringLiteral("URL") };
-    threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
+    threatMap.insert(QStringLiteral("platformType"), QStringLiteral("WINDOWS"));
+    threatMap.insert(QStringLiteral("threatType"), QStringLiteral("MALWARE"));
+    threatMap.insert(QStringLiteral("threatEntryType"), QStringLiteral("URL"));
 
     //Define state when we want to define update database. Empty is full.
-    threatMap.insert(QStringLiteral("state"), QString());
+    switch(mDataBaseDownloadNeeded) {
+    case FullDataBase:
+        threatMap.insert(QStringLiteral("state"), QString());
+        break;
+    case UpdateDataBase:
+        threatMap.insert(QStringLiteral("state"), mDataBaseState);
+        break;
+    }
 
+    listUpdateRequests.append(threatMap);
     //TODO define contraints
 
 
-    map.insert(QStringLiteral("listUpdateRequests"), threatMap);
+    map.insert(QStringLiteral("listUpdateRequests"), listUpdateRequests);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
 #ifdef DEBUG_JSON_REQUEST
@@ -132,6 +145,7 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
 #else
     const QByteArray baPostData = postData.toJson(QJsonDocument::Compact);
 #endif
+    //qDebug()<<" baPostData "<<baPostData;
     return baPostData;
 }
 
@@ -141,9 +155,29 @@ void CreatePhishingUrlDataBaseJob::setDataBaseDownloadNeeded(CreatePhishingUrlDa
     mDataBaseDownloadNeeded = type;
 }
 
-void CreatePhishingUrlDataBaseJob::slotCheckUrlFinished(QNetworkReply *reply)
+void CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished(QNetworkReply *reply)
 {
-    Q_EMIT debugJsonResult(reply->readAll());
+    const QByteArray returnValue(reply->readAll());
+    Q_EMIT debugJsonResult(returnValue);
+    parseResult(returnValue);
     reply->deleteLater();
-    deleteLater();
+    //TODO deleteLater ?
+}
+
+void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
+{
+    QJsonDocument document = QJsonDocument::fromJson(value);
+    if (document.isNull()) {
+        //TODO
+        deleteLater();
+    } else {
+        const QVariantMap answer = document.toVariant().toMap();
+        if (answer.isEmpty()) {
+            //TODO
+        } else {
+            const QVariantList info = answer.value(QStringLiteral("listUpdateResponses")).toList();
+            //TODO
+        }
+        //TODO
+    }
 }

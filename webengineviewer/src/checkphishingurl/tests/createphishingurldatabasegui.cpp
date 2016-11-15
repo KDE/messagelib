@@ -38,6 +38,12 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     mResult->setReadOnly(true);
     mResult->setAcceptRichText(false);
     layout->addWidget(mResult);
+
+    mJson = new QTextEdit(this);
+    mJson->setReadOnly(true);
+    mJson->setAcceptRichText(false);
+    layout->addWidget(mJson);
+
     QPushButton *button = new QPushButton(QStringLiteral("DownLoad full database"), this);
     connect(button, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase);
     layout->addWidget(button);
@@ -52,7 +58,13 @@ void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 {
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
+    connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJson, this, &CreatePhisingUrlDataBaseGui::slotDebugJSon);
     job->start();
+}
+
+void CreatePhisingUrlDataBaseGui::slotDebugJSon(const QByteArray &data)
+{
+    mJson->setText(QString::fromLatin1(data));
 }
 
 void CreatePhisingUrlDataBaseGui::slotResult(const QByteArray &data)

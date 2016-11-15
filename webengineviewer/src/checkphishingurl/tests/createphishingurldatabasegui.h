@@ -31,8 +31,10 @@ public:
 private Q_SLOTS:
     void slotResult(const QByteArray &data);
     void slotDownloadFullDatabase();
+    void slotDebugJSon(const QByteArray &data);
 private:
     QTextEdit *mResult;
+    QTextEdit *mJson;
 };
 
 #endif // CREATEPHISHINGURLDATABASEGUI_H
