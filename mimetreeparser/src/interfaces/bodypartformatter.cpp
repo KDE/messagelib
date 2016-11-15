@@ -46,12 +46,11 @@ namespace Interface
 class MessagePartPrivate
 {
 public:
-    MessagePartPrivate(MessagePart *mp, const BodyPart *part)
+    MessagePartPrivate(const BodyPart *part)
         : mHtmlWriter(Q_NULLPTR)
         , mPart(part)
         , mParentPart(Q_NULLPTR)
         , mCreatedWriter(false)
-        , q(mp)
     {
     }
 
@@ -75,21 +74,19 @@ public:
     MessagePart *mParentPart;
     bool mCreatedWriter;
 
-private:
-    MessagePart *q;
 };
 }
 }
 
 MessagePart::MessagePart()
     : QObject()
-    , d(new MessagePartPrivate(this, Q_NULLPTR))
+    , d(new MessagePartPrivate(Q_NULLPTR))
 {
 }
 
 MessagePart::MessagePart(const BodyPart &part)
     : QObject()
-    , d(new MessagePartPrivate(this, &part))
+    , d(new MessagePartPrivate(&part))
 {
 }
 

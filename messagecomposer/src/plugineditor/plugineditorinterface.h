@@ -64,7 +64,7 @@ public:
     explicit PluginEditorInterface(QObject *parent = Q_NULLPTR);
     ~PluginEditorInterface();
 
-    void setActionType(const ActionType &type);
+    void setActionType(ActionType type);
     ActionType actionType() const;
 
     KPIMTextEdit::RichTextEditor *richTextEditor() const;

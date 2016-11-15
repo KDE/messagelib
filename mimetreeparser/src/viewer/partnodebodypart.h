@@ -59,7 +59,7 @@ class MIMETREEPARSER_EXPORT PartNodeBodyPart : public Interface::BodyPart
 {
 public:
     explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content,
-                              NodeHelper *nodeHelper, const QTextCodec *codec = 0);
+                              NodeHelper *nodeHelper);
 
     QString makeLink(const QString &path) const Q_DECL_OVERRIDE;
     QString asText() const Q_DECL_OVERRIDE;
@@ -100,7 +100,6 @@ public:
 private:
     KMime::Content *mTopLevelContent;
     KMime::Content *mContent;
-    const QTextCodec *mCodec;
     BodyPart::Display mDefaultDisplay;
     NodeHelper *mNodeHelper;
     ObjectTreeParser *mObjectTreeParser;

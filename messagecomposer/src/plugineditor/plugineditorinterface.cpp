@@ -72,7 +72,7 @@ PluginEditorInterface::~PluginEditorInterface()
     delete d;
 }
 
-void PluginEditorInterface::setActionType(const ActionType &type)
+void PluginEditorInterface::setActionType(ActionType type)
 {
     d->mActionType = type;
 }

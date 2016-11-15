@@ -148,7 +148,7 @@ QString WebEngineScript::scrollDown(int pixel)
 
 QString WebEngineScript::scrollToPosition(const QPoint &pos)
 {
-    const QString source = QString::fromLatin1("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x()).arg(pos.y());
+    const QString source = QString::fromLatin1("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x(), pos.y());
     return source;
 }
 

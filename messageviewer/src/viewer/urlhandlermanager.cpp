@@ -393,7 +393,7 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url, 
         return false;
     }
 
-    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper(), w->overrideCodec());
+    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper());
     BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
 
     for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
@@ -413,7 +413,7 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleContextMenuRequest(cons
         return false;
     }
 
-    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper(), w->overrideCodec());
+    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper());
     BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
     for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it)
         if ((*it)->handleContextMenuRequest(&part, path, p)) {
@@ -430,7 +430,7 @@ QString URLHandlerManager::BodyPartURLHandlerManager::statusBarMessage(const QUr
         return QString();
     }
 
-    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper(), w->overrideCodec());
+    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper());
     BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
     for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
         const QString msg = (*it)->statusBarMessage(&part, path);

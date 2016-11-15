@@ -45,8 +45,8 @@ using namespace MimeTreeParser;
 static int serial = 0;
 
 PartNodeBodyPart::PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content,
-                                   NodeHelper *nodeHelper, const QTextCodec *codec)
-    : Interface::BodyPart(), mTopLevelContent(topLevelContent), mContent(content), mCodec(codec),
+                                   NodeHelper *nodeHelper)
+    : Interface::BodyPart(), mTopLevelContent(topLevelContent), mContent(content),
       mDefaultDisplay(Interface::BodyPart::None), mNodeHelper(nodeHelper)
     , mObjectTreeParser(otp)
     , mProcessResult(result)

@@ -61,7 +61,7 @@ KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentTy
     return ret;
 }
 
-KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *orig, QByteArray encodedBody, Kleo::CryptoMessageFormat format, bool sign, QByteArray hashAlgo)
+KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *orig, QByteArray encodedBody, Kleo::CryptoMessageFormat format, bool sign, const QByteArray &hashAlgo)
 {
     KMime::Content *result = new KMime::Content;
 
@@ -133,7 +133,7 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
 }
 
 // set the correct top-level ContentType on the message
-void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kleo::CryptoMessageFormat format, bool sign, QByteArray hashAlgo)
+void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kleo::CryptoMessageFormat format, bool sign, const QByteArray &hashAlgo)
 {
     switch (format) {
     default:

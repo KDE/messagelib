@@ -85,7 +85,7 @@ void TemplateParserTester::test_replyPlain_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     foreach (const QString &file, dir.entryList(QStringList(QLatin1String("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
-        const auto expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".plain.reply");
+        const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".plain.reply");
         if (!QFile::exists(expectedFile)) {
             continue;
         }

@@ -2378,7 +2378,7 @@ bool View::event(QEvent *e)
                    "</div>" \
                    "</td>" \
                    "</tr>"
-               ).arg(txtColorName).arg(bckColorName).arg(mi->subject().toHtmlEscaped()).arg(textDirection);
+               ).arg(txtColorName, bckColorName, mi->subject().toHtmlEscaped(), textDirection);
 
         tip += QLatin1String(
                    "<tr>" \
@@ -2399,12 +2399,12 @@ bool View::event(QEvent *e)
                 "</tr>");
 
         if (textIsLeftToRight) {
-            tip += htmlCodeForStandardRow.arg(i18n("From")).arg(mi->displaySender());
-            tip += htmlCodeForStandardRow.arg(i18nc("Receiver of the email", "To")).arg(mi->displayReceiver());
-            tip += htmlCodeForStandardRow.arg(i18n("Date")).arg(mi->formattedDate());
+            tip += htmlCodeForStandardRow.arg(i18n("From"), mi->displaySender());
+            tip += htmlCodeForStandardRow.arg(i18nc("Receiver of the email", "To"), mi->displayReceiver());
+            tip += htmlCodeForStandardRow.arg(i18n("Date"), mi->formattedDate());
         } else {
-            tip += htmlCodeForStandardRow.arg(mi->displaySender()).arg(i18n("From"));
-            tip += htmlCodeForStandardRow.arg(mi->displayReceiver()).arg(i18nc("Receiver of the email", "To"));
+            tip += htmlCodeForStandardRow.arg(mi->displaySender(), i18n("From"));
+            tip += htmlCodeForStandardRow.arg(mi->displayReceiver(), i18nc("Receiver of the email", "To"));
             tip += htmlCodeForStandardRow.arg(mi->formattedDate(), i18n("Date"));
         }
 

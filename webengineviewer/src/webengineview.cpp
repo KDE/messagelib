@@ -125,7 +125,7 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 {
     // Hack to find widget that receives input events
     if (obj == this && event->type() == QEvent::ChildAdded) {
-        QWidget *child = qobject_cast<QWidget *>(static_cast<QChildEvent *>(event)->child());
+        QWidget *child = dynamic_cast<QWidget *>(static_cast<QChildEvent *>(event)->child());
         if (child && child->inherits("QtWebEngineCore::RenderWidgetHostViewQtDelegateWidget")) {
             d->mCurrentWidget = child;
             d->mCurrentWidget->installEventFilter(this);

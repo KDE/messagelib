@@ -56,6 +56,7 @@ class FindBarSourceView;
 class MailSourceViewTextBrowser;
 class MailSourceHighlighter : public QSyntaxHighlighter
 {
+    Q_OBJECT
 public:
     explicit MailSourceHighlighter(QTextDocument *textdocument)
         : QSyntaxHighlighter(textdocument)

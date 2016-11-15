@@ -66,14 +66,14 @@ QString MailWebEngineScript::manageShowHideAttachments(bool hide)
 
 QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
 {
-    const QString source = QString::fromLatin1("qt.jQuery('#%1').append('%2')").arg(elementStr).arg(delayedHtml);
+    const QString source = QString::fromLatin1("qt.jQuery('#%1').append('%2')").arg(elementStr, delayedHtml);
     return source;
 }
 
 QString MailWebEngineScript::replaceInnerHtml(const QString &field, const QString &html)
 {
     const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
-    const QString source = QString::fromLatin1("qt.jQuery('#%1').append('%2')").arg(replaceInnerHtmlStr).arg(html);
+    const QString source = QString::fromLatin1("qt.jQuery('#%1').append('%2')").arg(replaceInnerHtmlStr, html);
     return source;
 }
 

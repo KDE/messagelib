@@ -603,8 +603,10 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
         return;
     }
 
-    foreach (const auto &name, mChildNodes.keys()) {
-        mChildParts[name] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, mChildNodes[name], true));
+    QMapIterator<Util::HtmlMode, KMime::Content *> i(mChildNodes);
+    while (i.hasNext()) {
+        i.next();
+        mChildParts[i.key()] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, i.value(), true));
     }
 }
 

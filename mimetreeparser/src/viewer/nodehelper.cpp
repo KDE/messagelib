@@ -661,12 +661,14 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
 
     QString indexStr = node->index().toString();
     if (indexStr.isEmpty()) {
-        Q_FOREACH (KMime::Content *realNode, mExtraContents.keys()) {
-            const auto &extraNodes = mExtraContents.value(realNode);
+        QMapIterator<KMime::Message::Content *, QList<KMime::Content *> > it(mExtraContents);
+        while (it.hasNext()) {
+            it.next();
+            const auto &extraNodes = it.value();
             for (int i = 0; i < extraNodes.size(); i++) {
                 if (extraNodes[i] == node) {
                     indexStr = QString::fromLatin1("e%1").arg(i);
-                    const QString parentIndex = persistentIndex(realNode);
+                    const QString parentIndex = persistentIndex(it.key());
                     if (!parentIndex.isEmpty()) {
                         indexStr = QString::fromLatin1("%1:%2").arg(parentIndex, indexStr);
                     }
@@ -677,15 +679,17 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
     } else {
         const KMime::Content *const topLevel = node->topLevel();
         //if the node is an extra node, prepend the index of the extra node to the url
-        Q_FOREACH (KMime::Content *realNode, mExtraContents.keys()) {
-            const QList<KMime::Content *> &extraNodes = extraContents(realNode);
+        QMapIterator<KMime::Message::Content *, QList<KMime::Content *> > it(mExtraContents);
+        while (it.hasNext()) {
+            it.next();
+            const QList<KMime::Content *> &extraNodes = extraContents(it.key());
             for (int i = 0; i < extraNodes.size(); ++i) {
                 KMime::Content *const extraNode = extraNodes[i];
                 if (topLevel == extraNode) {
-                    indexStr.prepend(QString::fromLatin1("e%1:").arg(i));
-                    const QString parentIndex = persistentIndex(realNode);
+                    indexStr.prepend(QStringLiteral("e%1:").arg(i));
+                    const QString parentIndex = persistentIndex(it.key());
                     if (!parentIndex.isEmpty()) {
-                        indexStr = QString::fromLatin1("%1:%2").arg(parentIndex, indexStr);
+                        indexStr = QStringLiteral("%1:%2").arg(parentIndex, indexStr);
                     }
                     return indexStr;
                 }
