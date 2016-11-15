@@ -19,13 +19,19 @@
 
 
 #include "createphishingurldatabasejob.h"
+#include "webengineviewer_debug.h"
+
+#include <QNetworkReply>
 
 using namespace WebEngineViewer;
 
 CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mDataBaseDownloadNeeded(FullDataBase)
 {
-
+    mNetworkAccessManager = new QNetworkAccessManager(this);
+    connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CreatePhishingUrlDataBaseJob::slotCheckUrlFinished);
+    connect(mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CreatePhishingUrlDataBaseJob::slotSslErrors);
 }
 
 CreatePhishingUrlDataBaseJob::~CreatePhishingUrlDataBaseJob()
@@ -33,7 +39,24 @@ CreatePhishingUrlDataBaseJob::~CreatePhishingUrlDataBaseJob()
 
 }
 
+void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
+{
+    qCDebug(WEBENGINEVIEWER_LOG) << " void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
+    reply->ignoreSslErrors(error);
+}
+
 void CreatePhishingUrlDataBaseJob::start()
 {
 
+}
+
+void CreatePhishingUrlDataBaseJob::setDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::DataBaseDownload type)
+{
+    mDataBaseDownloadNeeded = type;
+}
+
+void CreatePhishingUrlDataBaseJob::slotCheckUrlFinished(QNetworkReply *reply)
+{
+    reply->deleteLater();
+    deleteLater();
 }

@@ -22,19 +22,35 @@
 #define CREATEPHISHINGURLDATABASEJOB_H
 
 #include <QObject>
+#include <QSslError>
 
 #include "webengineviewer_export.h"
-
+class QNetworkAccessManager;
+class QNetworkReply;
 namespace WebEngineViewer
 {
 class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
     Q_OBJECT
 public:
+    enum DataBaseDownload {
+        FullDataBase = 0,
+        UpdateDataBase = 1
+    };
+
     explicit CreatePhishingUrlDataBaseJob(QObject *parent = Q_NULLPTR);
     ~CreatePhishingUrlDataBaseJob();
 
     void start();
+
+    void setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload type);
+
+private:
+    void slotCheckUrlFinished(QNetworkReply *reply);
+    void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
+
+    DataBaseDownload mDataBaseDownloadNeeded;
+    QNetworkAccessManager *mNetworkAccessManager;
 };
 }
 #endif // CREATEPHISHINGURLDATABASEJOB_H
