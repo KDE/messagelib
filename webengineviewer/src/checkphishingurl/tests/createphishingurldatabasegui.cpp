@@ -18,6 +18,7 @@
 */
 
 #include "createphishingurldatabasegui.h"
+#include "../createphishingurldatabasejob.h"
 
 #include <QApplication>
 #include <QStandardPaths>
@@ -27,28 +28,43 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
-CreatePhisingUrlDataBaseGuioi::CreatePhisingUrlDataBaseGuioi(QWidget *parent)
+CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
+
 
     mResult = new QTextEdit(this);
     mResult->setReadOnly(true);
     mResult->setAcceptRichText(false);
     layout->addWidget(mResult);
+    QPushButton *button = new QPushButton(QStringLiteral("DownLoad full database"), this);
+    connect(button, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase);
+    layout->addWidget(button);
+}
+
+CreatePhisingUrlDataBaseGui::~CreatePhisingUrlDataBaseGui()
+{
 
 }
 
-CreatePhisingUrlDataBaseGuioi::~CreatePhisingUrlDataBaseGuioi()
+void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 {
+    WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+    connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
+    job->start();
+}
 
+void CreatePhisingUrlDataBaseGui::slotResult(const QByteArray &data)
+{
+    mResult->setText(QString::fromLatin1(data));
 }
 
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    CreatePhisingUrlDataBaseGuioi *w = new CreatePhisingUrlDataBaseGuioi;
+    CreatePhisingUrlDataBaseGui *w = new CreatePhisingUrlDataBaseGui;
 
     w->show();
     app.exec();

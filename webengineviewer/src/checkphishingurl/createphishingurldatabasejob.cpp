@@ -143,6 +143,7 @@ void CreatePhishingUrlDataBaseJob::setDataBaseDownloadNeeded(CreatePhishingUrlDa
 
 void CreatePhishingUrlDataBaseJob::slotCheckUrlFinished(QNetworkReply *reply)
 {
+    Q_EMIT debugJsonResult(reply->readAll());
     reply->deleteLater();
     deleteLater();
 }

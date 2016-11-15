@@ -49,6 +49,7 @@ public:
 
 Q_SIGNALS:
     void finished();
+    void debugJsonResult(const QByteArray &ba);
 
 private:
     QString apiKey() const;

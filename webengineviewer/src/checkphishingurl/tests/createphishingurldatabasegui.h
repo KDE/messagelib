@@ -21,14 +21,16 @@
 #define CREATEPHISHINGURLDATABASEGUI_H
 
 #include <QWidget>
-#include "../createphishingurldatabasejob.h"
 class QTextEdit;
-class CreatePhisingUrlDataBaseGuioi : public QWidget
+class CreatePhisingUrlDataBaseGui : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CreatePhisingUrlDataBaseGuioi(QWidget *parent = Q_NULLPTR);
-    ~CreatePhisingUrlDataBaseGuioi();
+    explicit CreatePhisingUrlDataBaseGui(QWidget *parent = Q_NULLPTR);
+    ~CreatePhisingUrlDataBaseGui();
+private Q_SLOTS:
+    void slotResult(const QByteArray &data);
+    void slotDownloadFullDatabase();
 private:
     QTextEdit *mResult;
 };
