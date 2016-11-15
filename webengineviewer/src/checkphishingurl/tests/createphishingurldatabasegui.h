@@ -21,7 +21,7 @@
 #define CREATEPHISHINGURLDATABASEGUI_H
 
 #include <QWidget>
-class QLineEdit;
+#include "../createphishingurldatabasejob.h"
 class QTextEdit;
 class CreatePhisingUrlDataBaseGuioi : public QWidget
 {

@@ -21,8 +21,9 @@
 #include "createphishingurldatabasejob.h"
 #include "webengineviewer_debug.h"
 
+#include <QJsonDocument>
 #include <QNetworkReply>
-
+//#define DEBUG_JSON_REQUEST 1
 using namespace WebEngineViewer;
 
 CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)
@@ -49,6 +50,61 @@ void CreatePhishingUrlDataBaseJob::start()
 {
 
 }
+
+QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
+{
+#if 0
+    {
+      "client": {
+        "clientId":       "yourcompanyname",
+        "clientVersion":  "1.5.2"
+      },
+      "listUpdateRequests": [{
+        "threatType":      "MALWARE",
+        "platformType":    "WINDOWS",
+        "threatEntryType": "URL",
+        "state":           "Gg4IBBADIgYQgBAiAQEoAQ==",
+        "constraints": {
+          "maxUpdateEntries":      2048,
+          "maxDatabaseEntries":    4096,
+          "region":                "US",
+          "supportedCompressions": ["RAW"]
+        }
+      }]
+    }
+#endif
+    QVariantMap clientMap;
+    QVariantMap map;
+
+    clientMap.insert(QStringLiteral("clientId"), QStringLiteral("KDE"));
+    clientMap.insert(QStringLiteral("clientVersion"), QStringLiteral("5.4.0")); //FIXME
+    map.insert(QStringLiteral("client"), clientMap);
+
+    QVariantMap threatMap;
+    const QVariantList platformList = { QStringLiteral("WINDOWS") };
+    threatMap.insert(QStringLiteral("platformTypes"), platformList);
+    const QVariantList threatTypesList = { QStringLiteral("MALWARE") };
+    threatMap.insert(QStringLiteral("threatTypes"), threatTypesList);
+    const QVariantList threatEntryTypesList = { QStringLiteral("URL") };
+    threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
+
+    //Define state when we want to define update database. Empty is full.
+    threatMap.insert(QStringLiteral("state"), QString());
+
+    //TODO define contraints
+
+
+    map.insert(QStringLiteral("listUpdateRequests"), threatMap);
+
+    const QJsonDocument postData = QJsonDocument::fromVariant(map);
+#ifdef DEBUG_JSON_REQUEST
+    const QByteArray baPostData = postData.toJson();
+#else
+    const QByteArray baPostData = postData.toJson(QJsonDocument::Compact);
+#endif
+    return baPostData;
+}
+
 
 void CreatePhishingUrlDataBaseJob::setDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::DataBaseDownload type)
 {

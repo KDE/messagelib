@@ -45,6 +45,7 @@ public:
 
     void setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload type);
 
+    QByteArray jsonRequest() const;
 private:
     void slotCheckUrlFinished(QNetworkReply *reply);
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
