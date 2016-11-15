@@ -23,10 +23,10 @@
 
 #include <QObject>
 #include <QSslError>
+#include <QNetworkReply>
 
 #include "webengineviewer_export.h"
 class QNetworkAccessManager;
-class QNetworkReply;
 namespace WebEngineViewer
 {
 class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
@@ -46,9 +46,15 @@ public:
     void setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload type);
 
     QByteArray jsonRequest() const;
+
+Q_SIGNALS:
+    void finished();
+
 private:
+    QString apiKey() const;
     void slotCheckUrlFinished(QNetworkReply *reply);
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
+    void slotError(QNetworkReply::NetworkError error);
 
     DataBaseDownload mDataBaseDownloadNeeded;
     QNetworkAccessManager *mNetworkAccessManager;

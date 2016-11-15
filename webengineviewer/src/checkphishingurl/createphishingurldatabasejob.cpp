@@ -20,9 +20,10 @@
 
 #include "createphishingurldatabasejob.h"
 #include "webengineviewer_debug.h"
+#include <PimCommon/NetworkManager>
 
+#include <QNetworkConfigurationManager>
 #include <QJsonDocument>
-#include <QNetworkReply>
 //#define DEBUG_JSON_REQUEST 1
 using namespace WebEngineViewer;
 
@@ -40,6 +41,12 @@ CreatePhishingUrlDataBaseJob::~CreatePhishingUrlDataBaseJob()
 
 }
 
+QString CreatePhishingUrlDataBaseJob::apiKey() const
+{
+    return QStringLiteral("AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo");
+}
+
+
 void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
 {
     qCDebug(WEBENGINEVIEWER_LOG) << " void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
@@ -48,7 +55,30 @@ void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QLi
 
 void CreatePhishingUrlDataBaseJob::start()
 {
+    if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
+        Q_EMIT finished();
+        deleteLater();
+    } else {
+        QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch"));
+        safeUrl.addQueryItem(QStringLiteral("key"), apiKey());
+        //qDebug() << " safeUrl" << safeUrl;
+        QNetworkRequest request(safeUrl);
+        request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
+        const QByteArray baPostData = jsonRequest();
+        qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
+        //curl -H "Content-Type: application/json" -X POST -d '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}' https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
+        QNetworkReply *reply = mNetworkAccessManager->post(request, baPostData);
+        connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CreatePhishingUrlDataBaseJob::slotError);
+    }
+}
+
+void CreatePhishingUrlDataBaseJob::slotError(QNetworkReply::NetworkError error)
+{
+    QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
+    qWarning() << " error " << error << " error string : " << reply->errorString();
+    reply->deleteLater();
+    deleteLater();
 }
 
 QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
