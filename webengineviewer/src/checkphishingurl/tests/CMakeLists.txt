@@ -13,3 +13,13 @@ target_link_libraries(checkphishingurlgui
     Qt5::WebEngineWidgets
     KF5::I18n
     )
+
+set(createphishingurldatabasegui_SRCS createphishingurldatabasegui.cpp)
+add_executable(createphishingurldatabasegui ${createphishingurldatabasegui_SRCS})
+target_link_libraries(createphishingurldatabasegui
+    KF5::KIOCore
+    KF5::WebEngineViewer
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
+    KF5::I18n
+    )
