@@ -20,6 +20,8 @@
 
 using namespace WebEngineViewer;
 
+Q_GLOBAL_STATIC(LocalDataBaseManager, s_localDataBaseManager)
+
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent)
 {
@@ -29,4 +31,9 @@ LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
 LocalDataBaseManager::~LocalDataBaseManager()
 {
 
+}
+
+LocalDataBaseManager *LocalDataBaseManager::self()
+{
+    return s_localDataBaseManager;
 }

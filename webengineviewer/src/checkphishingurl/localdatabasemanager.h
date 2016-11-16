@@ -29,6 +29,8 @@ class LocalDataBaseManager : public QObject
 public:
     explicit LocalDataBaseManager(QObject *parent = Q_NULLPTR);
     ~LocalDataBaseManager();
+
+    static LocalDataBaseManager *self();
 };
 }
 
