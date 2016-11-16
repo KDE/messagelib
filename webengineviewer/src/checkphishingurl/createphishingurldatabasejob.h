@@ -29,6 +29,7 @@
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
+/* https://developers.google.com/safe-browsing/v4/update-api */
 class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
     Q_OBJECT
