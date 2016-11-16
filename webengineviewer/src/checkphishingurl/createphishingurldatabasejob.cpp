@@ -145,7 +145,6 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
     const QByteArray baPostData = postData.toJson(mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
-    //qDebug()<<" baPostData "<<baPostData;
     return baPostData;
 }
 
@@ -267,7 +266,6 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                     if (!addList.isEmpty()) {
                                         databaseInfo.additionList.append(addList);
                                     }
-
                                 } else if (mapKey == QLatin1String("removals")) {
                                     qDebug() << " removals items " << mapIt.value().typeName();
                                     const QVariantList lst = mapIt.value().toList();
@@ -275,7 +273,6 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                     if (!removeList.isEmpty()) {
                                         databaseInfo.removalList.append(removeList);
                                     }
-
                                 } else if (mapKey == QLatin1String("checksum")) {
                                     QMapIterator<QString, QVariant> mapCheckSum(mapIt.value().toMap());
                                     while (mapCheckSum.hasNext()) {
@@ -305,7 +302,6 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                 } else {
                                     qDebug() << " unknow key " << mapKey;
                                 }
-
                             }
                         }
                     }

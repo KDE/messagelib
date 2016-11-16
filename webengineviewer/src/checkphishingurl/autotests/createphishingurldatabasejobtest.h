@@ -31,6 +31,10 @@ public:
 private Q_SLOTS:
     void shouldCreateRequest_data();
     void shouldCreateRequest();
+
+    void shouldParseResult_data();
+    void shouldParseResult();
+    void initTestcase();
 };
 
 #endif // CREATEPHISHINGURLDATABASEJOBTEST_H

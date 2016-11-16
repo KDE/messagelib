@@ -1,0 +1,26 @@
+{
+  "listUpdateResponses": [{
+    "threatType":      "MALWARE",
+    "threatEntryType": "URL",
+    "platformType":    "WINDOWS",
+    "responseType" :   "PARTIAL_UPDATE",
+    "additions": [{
+      "compressionType": "RAW",
+      "rawHashes": {
+        "prefixSize": 4,
+        "rawHashes":  "rnGLoQ=="
+      }
+    }],
+    "removals": [{
+      "compressionType": "RAW",
+      "rawIndices": {
+        "indices": [0, 2, 4]
+      }
+    }],
+    "newClientState": "ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd",
+    "checksum": {
+      "sha256": "YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM="
+    }
+  }],
+  "minimumWaitDuration": "593.440s"
+}

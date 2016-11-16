@@ -20,6 +20,7 @@
 #include "createphishingurldatabasejobtest.h"
 #include "../createphishingurldatabasejob.h"
 
+#include <QSignalSpy>
 #include <QTest>
 
 QByteArray readJsonFile(const QString &jsonFile)
@@ -44,6 +45,12 @@ CreatePhishingUrlDataBaseJobTest::~CreatePhishingUrlDataBaseJobTest()
 
 }
 
+void CreatePhishingUrlDataBaseJobTest::initTestcase()
+{
+    qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>();
+    qRegisterMetaType<WebEngineViewer::UpdateDataBaseInfo>();
+}
+
 void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest_data()
 {
     QTest::addColumn<QString>("databasestate");
@@ -66,6 +73,30 @@ void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
     job.setDataBaseDownloadNeeded(downloadtype);
     job.setUseCompactJson(true);
     QCOMPARE(job.jsonRequest(), request);
+}
+
+void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
+{
+    QTest::addColumn<QString>("filename");
+    QTest::addColumn<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>("parseResult");
+    QTest::addColumn<WebEngineViewer::UpdateDataBaseInfo>("parseInfo");
+    QTest::newRow("emptydocument") << QStringLiteral("empty.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::InvalidData << WebEngineViewer::UpdateDataBaseInfo();
+    QTest::newRow("emptydocument2") << QStringLiteral("empty2.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::InvalidData << WebEngineViewer::UpdateDataBaseInfo();
+    //QTest::newRow("test1") << QStringLiteral("test1.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::ValidData << WebEngineViewer::UpdateDataBaseInfo();
+}
+
+void CreatePhishingUrlDataBaseJobTest::shouldParseResult()
+{
+    QFETCH (QString, filename);
+    QFETCH(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult, parseResult);
+    QFETCH(WebEngineViewer::UpdateDataBaseInfo, parseInfo);
+    const QByteArray ba = readJsonFile(filename);
+    WebEngineViewer::CreatePhishingUrlDataBaseJob job;
+    QSignalSpy spy1(&job, SIGNAL(finished(WebEngineViewer::UpdateDataBaseInfo,WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)));
+    job.parseResult(ba);
+    QCOMPARE(spy1.count(), 1);
+    QCOMPARE(spy1.at(0).at(1).value<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>(), parseResult);
+    QCOMPARE(spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>(), parseInfo);
 }
 
 

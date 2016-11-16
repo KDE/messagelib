@@ -38,6 +38,10 @@ struct Addition {
     bool isValid() const {
         return !hashString.isEmpty() && (prefixSize > 0);
     }
+    bool operator==(const Addition &other) const {
+        return (hashString == other.hashString) &&
+                (prefixSize == other.prefixSize);
+    }
 
     QByteArray hashString;
     int prefixSize;
@@ -47,6 +51,10 @@ struct Removal {
     Removal()
     {
 
+    }
+
+    bool operator==(const Removal &other) const {
+        return (indexes == other.indexes);
     }
     bool isValid() const {
         return !indexes.isEmpty();
@@ -64,6 +72,17 @@ struct UpdateDataBaseInfo {
     QString platformType;
     QString newClientState;
     QString sha256;
+    bool operator==(const UpdateDataBaseInfo &other) const {
+        return (additionList == other.additionList) &&
+                (removalList == other.removalList) &&
+                (minimumWaitDuration == other.minimumWaitDuration) &&
+                (threatType == other.threatType) &&
+                (threatEntryType == other.threatEntryType) &&
+                (responseType == other.responseType) &&
+                (platformType == other.platformType) &&
+                (newClientState == other.newClientState) &&
+                (sha256 == other.sha256);
+    }
 };
 
 /* https://developers.google.com/safe-browsing/v4/update-api */
@@ -95,6 +114,7 @@ public:
     QByteArray jsonRequest() const;
 
     void setUseCompactJson(bool useCompactJson);
+    void parseResult(const QByteArray &value);
 
 Q_SIGNALS:
     void finished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
@@ -106,7 +126,6 @@ private:
     void slotDownloadDataBaseFinished(QNetworkReply *reply);
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);
-    void parseResult(const QByteArray &value);
     QVector<Removal> parseRemovals(const QVariantList &lst);
     QVector<Addition> parseAdditions(const QVariantList &lst);
 
@@ -117,6 +136,8 @@ private:
 };
 }
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload)
+Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)
+Q_DECLARE_METATYPE(WebEngineViewer::UpdateDataBaseInfo)
 Q_DECLARE_TYPEINFO(WebEngineViewer::Addition, Q_MOVABLE_TYPE);
 Q_DECLARE_TYPEINFO(WebEngineViewer::Removal, Q_MOVABLE_TYPE);
 #endif // CREATEPHISHINGURLDATABASEJOB_H
