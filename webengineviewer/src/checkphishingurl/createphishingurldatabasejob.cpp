@@ -56,7 +56,7 @@ void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QLi
 void CreatePhishingUrlDataBaseJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT finished(UnknownError);
+        Q_EMIT finished(BrokenNetwork);
         deleteLater();
     } else {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch"));

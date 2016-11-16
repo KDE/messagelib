@@ -40,10 +40,10 @@ void CheckPhishingUrlFromLocalDataBaseJob::setCheckPhisingUrl(const QUrl &url)
 void CheckPhishingUrlFromLocalDataBaseJob::start()
 {
     if (mUrl.isValid()) {
-        //TODO
+        Q_EMIT finished(InvalidUrl);
         deleteLater();
     } else {
-        //TODO
+        //TODO check in local database
     }
 }
 

@@ -53,7 +53,8 @@ public:
     enum DataBaseDownloadResult {
         InvalidData = 0,
         ValidData = 1,
-        UnknownError = 2
+        UnknownError = 2,
+        BrokenNetwork = 3
     };
 
     explicit CreatePhishingUrlDataBaseJob(QObject *parent = Q_NULLPTR);

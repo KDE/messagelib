@@ -30,6 +30,14 @@ class WEBENGINEVIEWER_EXPORT CheckPhishingUrlFromLocalDataBaseJob : public QObje
 {
     Q_OBJECT
 public:
+    enum UrlStatus {
+        Ok = 0,
+        MalWare,
+        BrokenNetwork,
+        InvalidUrl,
+        Unknown
+    };
+
     explicit CheckPhishingUrlFromLocalDataBaseJob(QObject *parent = Q_NULLPTR);
     ~CheckPhishingUrlFromLocalDataBaseJob();
     void setCheckPhisingUrl(const QUrl &url);
@@ -40,7 +48,7 @@ public:
     QString createHash();
 
 Q_SIGNALS:
-    void finished();
+    void finished(WebEngineViewer::CheckPhishingUrlFromLocalDataBaseJob::UrlStatus status);
 
 private:
     QUrl mUrl;
