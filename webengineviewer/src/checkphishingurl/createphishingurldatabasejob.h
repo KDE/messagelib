@@ -29,6 +29,17 @@
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
+struct UpdateDataBaseInfo {
+    QList<int> indexToRemove;
+    QString minimumWaitDuration;
+    QString threatType;
+    QString threatEntryType;
+    QString responseType;
+    QString platformType;
+    QString newClientState;
+    QString sha256;
+};
+
 /* https://developers.google.com/safe-browsing/v4/update-api */
 class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
@@ -37,6 +48,12 @@ public:
     enum DataBaseDownload {
         FullDataBase = 0,
         UpdateDataBase = 1
+    };
+
+    enum DataBaseDownloadResult {
+        InvalidData = 0,
+        ValidData = 1,
+        UnknownError = 2
     };
 
     explicit CreatePhishingUrlDataBaseJob(QObject *parent = Q_NULLPTR);
@@ -51,7 +68,7 @@ public:
     QByteArray jsonRequest() const;
 
 Q_SIGNALS:
-    void finished();
+    void finished(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void debugJsonResult(const QByteArray &ba);
     void debugJson(const QByteArray &ba);
 

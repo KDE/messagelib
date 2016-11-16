@@ -56,7 +56,7 @@ void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QLi
 void CreatePhishingUrlDataBaseJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT finished();
+        Q_EMIT finished(UnknownError);
         deleteLater();
     } else {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch"));
@@ -161,19 +161,17 @@ void CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished(QNetworkReply *r
     Q_EMIT debugJsonResult(returnValue);
     parseResult(returnValue);
     reply->deleteLater();
-    //TODO deleteLater ?
 }
 
 void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
 {
     QJsonDocument document = QJsonDocument::fromJson(value);
     if (document.isNull()) {
-        //TODO
-        deleteLater();
+        Q_EMIT finished(InvalidData);
     } else {
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            //TODO
+            Q_EMIT finished(InvalidData);
         } else {
             QMapIterator<QString, QVariant> i(answer);
             while (i.hasNext()) {
@@ -204,9 +202,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                     }
                                 } else if (mapKey == QLatin1String("newClientState")) {
                                     qDebug() << " newClientState " << mapIt.value().toString();
-
                                 } else if (mapKey == QLatin1String("platformType")) {
-
                                     qDebug() << " platformType " << mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("responseType")) {
                                     qDebug() << " responseType " << mapIt.value().toString();
@@ -227,6 +223,9 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                     qDebug() <<" map key unknown " << i.key();
                 }
             }
+            Q_EMIT finished(ValidData);
+
         }
     }
+    deleteLater();
 }
