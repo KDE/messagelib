@@ -163,6 +163,68 @@ void CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished(QNetworkReply *r
     reply->deleteLater();
 }
 
+QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantList &lst)
+{
+    QVector<Addition> additionList;
+    Q_FOREACH(const QVariant &v, lst) {
+        if (v.canConvert<QVariantMap>()) {
+            QMapIterator<QString, QVariant> mapIt(v.toMap());
+            while (mapIt.hasNext()) {
+                mapIt.next();
+                const QString keyStr = mapIt.key();
+                if (keyStr == QLatin1String("compressionType")) {
+                    //TODO ?
+                } else if (keyStr == QLatin1String("rawHashes")) {
+                    Addition tmp;
+                    QMapIterator<QString, QVariant> rawHashesIt(mapIt.value().toMap());
+                    while (rawHashesIt.hasNext()) {
+                        rawHashesIt.next();
+                        //qDebug() << " rawHashesIt.key() " << rawHashesIt.key() << " rawHashesIt.value()" << rawHashesIt.value();
+                        const QString key = rawHashesIt.key();
+                        if (key == QLatin1String("rawHashes")) {
+                            tmp.hashString = rawHashesIt.value().toByteArray();
+                        } else if (key == QLatin1String("prefixSize")) {
+                            tmp.prefixSize = rawHashesIt.value().toInt();
+                        } else {
+                            qDebug() << " CreatePhishingUrlDataBaseJob::parseAdditions unknown rawHashes key " << key;
+                        }
+                    }
+                    //qDebug()<<" rawHashs " << mapIt.value().typeName();
+                } else {
+                    qDebug() << " CreatePhishingUrlDataBaseJob::parseAdditions unknown mapIt.key() " << keyStr;
+                }
+            }
+        } else {
+            qDebug() << " CreatePhishingUrlDataBaseJob::parseAdditions not parsing type "<<v.typeName();
+        }
+    }
+    return additionList;
+}
+
+QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList &lst)
+{
+    QVector<Removal> removalList;
+    Q_FOREACH(const QVariant &v, lst) {
+        if (v.canConvert<QVariantMap>()) {
+            QMapIterator<QString, QVariant> mapIt(v.toMap());
+            while (mapIt.hasNext()) {
+                mapIt.next();
+                const QString keyStr = mapIt.key();
+                if (keyStr == QLatin1String("compressionType")) {
+
+                } else if (keyStr == QLatin1String("rawIndices")) {
+
+                } else {
+                    qDebug() << " CreatePhishingUrlDataBaseJob::parseRemovals unknown mapIt.key() " << keyStr;
+                }
+            }
+        } else {
+            qDebug() << " CreatePhishingUrlDataBaseJob::parseRemovals not parsing type "<<v.typeName();
+        }
+    }
+    return removalList;
+}
+
 void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
 {
     QJsonDocument document = QJsonDocument::fromJson(value);
@@ -179,17 +241,21 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                 if (i.key() == QLatin1String("listUpdateResponses")) {
                     const QVariantList info = i.value().toList();
                     if (info.count() == 1) {
-                        if (info.at(0).canConvert<QVariantMap>()) {
-                            QMapIterator<QString, QVariant> mapIt(info.at(0).toMap());
+                        const QVariant infoVar = info.at(0);
+                        if (infoVar.canConvert<QVariantMap>()) {
+                            QMapIterator<QString, QVariant> mapIt(infoVar.toMap());
                             while (mapIt.hasNext()) {
                                 mapIt.next();
                                 const QString mapKey = mapIt.key();
                                 if (mapKey == QLatin1String("additions")) {
-                                    qDebug() << " addition" << mapIt.value().typeName();
+                                    qDebug() << " additions" << mapIt.value().typeName();
                                     const QVariantList lst = mapIt.value().toList();
+                                    parseAdditions(lst);
+
                                 } else if (mapKey == QLatin1String("removals")) {
-                                    qDebug() << " removals items ";
+                                    qDebug() << " removals items " << mapIt.value().typeName();
                                     const QVariantList lst = mapIt.value().toList();
+                                    parseRemovals(lst);
                                 } else if (mapKey == QLatin1String("checksum")) {
                                     QMapIterator<QString, QVariant> mapCheckSum(mapIt.value().toMap());
                                     while (mapCheckSum.hasNext()) {

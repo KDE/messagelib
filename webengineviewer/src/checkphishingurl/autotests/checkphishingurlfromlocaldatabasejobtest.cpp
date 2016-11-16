@@ -18,6 +18,7 @@
 */
 
 #include "checkphishingurlfromlocaldatabasejobtest.h"
+#include "../checkphishingurlfromlocaldatabasejob.h"
 #include <QTest>
 
 CheckPhishingUrlFromLocalDataBaseJobTest::CheckPhishingUrlFromLocalDataBaseJobTest(QObject *parent)
@@ -27,6 +28,16 @@ CheckPhishingUrlFromLocalDataBaseJobTest::CheckPhishingUrlFromLocalDataBaseJobTe
 }
 
 CheckPhishingUrlFromLocalDataBaseJobTest::~CheckPhishingUrlFromLocalDataBaseJobTest()
+{
+
+}
+
+void CheckPhishingUrlFromLocalDataBaseJobTest::shouldCreateRequest_data()
+{
+
+}
+
+void CheckPhishingUrlFromLocalDataBaseJobTest::shouldCreateRequest()
 {
 
 }

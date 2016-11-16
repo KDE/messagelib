@@ -28,6 +28,9 @@ class CheckPhishingUrlFromLocalDataBaseJobTest : public QObject
 public:
     explicit CheckPhishingUrlFromLocalDataBaseJobTest(QObject *parent = Q_NULLPTR);
     ~CheckPhishingUrlFromLocalDataBaseJobTest();
+private Q_SLOTS:
+    void shouldCreateRequest_data();
+    void shouldCreateRequest();
 };
 
 #endif // CHECKPHISHINGURLFROMLOCALDATABASEJOB_H

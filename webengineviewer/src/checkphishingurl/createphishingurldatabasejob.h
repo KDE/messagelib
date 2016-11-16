@@ -29,8 +29,27 @@
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
+struct Addition {
+    Addition()
+        : prefixSize(0)
+    {
+
+    }
+    QByteArray hashString;
+    int prefixSize;
+};
+
+struct Removal {
+    Removal()
+    {
+
+    }
+    QList<int> indexes;
+};
+
 struct UpdateDataBaseInfo {
-    QList<int> indexToRemove;
+    QList<Addition> additionList;
+    QList<Removal> indexToRemove;
     QString minimumWaitDuration;
     QString threatType;
     QString threatEntryType;
@@ -79,10 +98,15 @@ private:
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);
     void parseResult(const QByteArray &value);
+    QVector<Removal> parseRemovals(const QVariantList &lst);
+    QVector<Addition> parseAdditions(const QVariantList &lst);
 
     QString mDataBaseState;
     DataBaseDownload mDataBaseDownloadNeeded;
     QNetworkAccessManager *mNetworkAccessManager;
 };
 }
+
+Q_DECLARE_TYPEINFO(WebEngineViewer::Addition, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(WebEngineViewer::Removal, Q_MOVABLE_TYPE);
 #endif // CREATEPHISHINGURLDATABASEJOB_H

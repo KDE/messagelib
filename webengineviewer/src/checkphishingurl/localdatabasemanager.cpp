@@ -42,3 +42,9 @@ void LocalDataBaseManager::initializeDataBase()
 {
     //TODO
 }
+
+void LocalDataBaseManager::checkUrl(const QUrl &url)
+{
+    //TODO
+}
+

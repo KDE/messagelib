@@ -21,6 +21,7 @@
 #define LOCALDATABASEMANAGER_H
 
 #include <QObject>
+#include <QUrl>
 namespace WebEngineViewer
 {
 class LocalDataBaseManager : public QObject
@@ -32,6 +33,7 @@ public:
 
     static LocalDataBaseManager *self();
 
+    void checkUrl(const QUrl &url);
 private:
     void initializeDataBase();
 };
