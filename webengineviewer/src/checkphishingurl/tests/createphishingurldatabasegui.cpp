@@ -57,6 +57,7 @@ CreatePhisingUrlDataBaseGui::~CreatePhisingUrlDataBaseGui()
 void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 {
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+    job->setUseCompactJson(false);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJson, this, &CreatePhisingUrlDataBaseGui::slotDebugJSon);
     job->start();

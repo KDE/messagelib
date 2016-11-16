@@ -18,6 +18,7 @@
 */
 
 #include "createphishingurldatabasejobtest.h"
+#include "../createphishingurldatabasejob.h"
 
 #include <QTest>
 
@@ -45,10 +46,25 @@ CreatePhishingUrlDataBaseJobTest::~CreatePhishingUrlDataBaseJobTest()
 
 void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest_data()
 {
+    QTest::addColumn<QString>("databasestate");
+    QTest::addColumn<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload>("downloadtype");
+    QTest::addColumn<QByteArray>("request");
+    QTest::newRow("fulldownload") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}");
+    QTest::newRow("fulldownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}");
+    QTest::newRow("partialdownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"foo\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}");
 }
 
 void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
 {
+    QFETCH (QString, databasestate);
+    QFETCH (WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload, downloadtype);
+    QFETCH (QByteArray, request);
+
+    WebEngineViewer::CreatePhishingUrlDataBaseJob job;
+    job.setDataBaseState(databasestate);
+    job.setDataBaseDownloadNeeded(downloadtype);
+    job.setUseCompactJson(true);
+    QCOMPARE(job.jsonRequest(), request);
 }
 
 

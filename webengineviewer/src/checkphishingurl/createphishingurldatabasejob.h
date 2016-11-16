@@ -94,6 +94,8 @@ public:
 
     QByteArray jsonRequest() const;
 
+    void setUseCompactJson(bool useCompactJson);
+
 Q_SIGNALS:
     void finished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void debugJsonResult(const QByteArray &ba);
@@ -110,10 +112,11 @@ private:
 
     QString mDataBaseState;
     DataBaseDownload mDataBaseDownloadNeeded;
+    bool mUseCompactJson;
     QNetworkAccessManager *mNetworkAccessManager;
 };
 }
-
+Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload)
 Q_DECLARE_TYPEINFO(WebEngineViewer::Addition, Q_MOVABLE_TYPE);
 Q_DECLARE_TYPEINFO(WebEngineViewer::Removal, Q_MOVABLE_TYPE);
 #endif // CREATEPHISHINGURLDATABASEJOB_H

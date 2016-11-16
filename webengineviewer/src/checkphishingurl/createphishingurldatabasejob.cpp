@@ -29,7 +29,8 @@ using namespace WebEngineViewer;
 
 CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)
     : QObject(parent),
-      mDataBaseDownloadNeeded(FullDataBase)
+      mDataBaseDownloadNeeded(FullDataBase),
+      mUseCompactJson(true)
 {
     mNetworkAccessManager = new QNetworkAccessManager(this);
     connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished);
@@ -140,11 +141,7 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     map.insert(QStringLiteral("listUpdateRequests"), listUpdateRequests);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
-#ifdef DEBUG_JSON_REQUEST
-    const QByteArray baPostData = postData.toJson();
-#else
-    const QByteArray baPostData = postData.toJson(QJsonDocument::Compact);
-#endif
+    const QByteArray baPostData = postData.toJson(mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
     //qDebug()<<" baPostData "<<baPostData;
     return baPostData;
 }
@@ -202,6 +199,11 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
         }
     }
     return additionList;
+}
+
+void CreatePhishingUrlDataBaseJob::setUseCompactJson(bool useCompactJson)
+{
+    mUseCompactJson = useCompactJson;
 }
 
 QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList &lst)
