@@ -69,6 +69,7 @@ void CheckPhishingUrlGui::slotCheckUrl()
     mResult->clear();
 
     WebEngineViewer::CheckPhishingUrlJob *job = new WebEngineViewer::CheckPhishingUrlJob(this);
+    job->setUseCompactJson(false);
     connect(job, &WebEngineViewer::CheckPhishingUrlJob::result, this, &CheckPhishingUrlGui::slotGetResult);
     connect(job, &WebEngineViewer::CheckPhishingUrlJob::debugJson, this, &CheckPhishingUrlGui::slotJSonDebug);
     job->setUrl(QUrl::fromUserInput(urlStr));

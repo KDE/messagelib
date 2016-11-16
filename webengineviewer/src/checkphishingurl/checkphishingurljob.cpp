@@ -24,11 +24,11 @@
 #include <QJsonDocument>
 #include <webengineviewer_debug.h>
 
-//#define DEBUG_JSON_REQUEST 1
 using namespace WebEngineViewer;
 
 CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mUseCompactJson(true)
 {
     mNetworkAccessManager = new QNetworkAccessManager(this);
     connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CheckPhishingUrlJob::slotCheckUrlFinished);
@@ -48,6 +48,11 @@ void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslEr
 QString CheckPhishingUrlJob::apiKey() const
 {
     return QStringLiteral("AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo");
+}
+
+void CheckPhishingUrlJob::setUseCompactJson(bool useCompactJson)
+{
+    mUseCompactJson = useCompactJson;
 }
 
 void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
@@ -120,11 +125,7 @@ QByteArray CheckPhishingUrlJob::jsonRequest() const
     map.insert(QStringLiteral("threatInfo"), threatMap);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
-#ifdef DEBUG_JSON_REQUEST
-    const QByteArray baPostData = postData.toJson();
-#else
-    const QByteArray baPostData = postData.toJson(QJsonDocument::Compact);
-#endif
+    const QByteArray baPostData = postData.toJson(mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
     return baPostData;
 }
 
