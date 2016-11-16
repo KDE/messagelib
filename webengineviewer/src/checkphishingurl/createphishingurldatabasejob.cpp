@@ -130,6 +130,9 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
         threatMap.insert(QStringLiteral("state"), QString());
         break;
     case UpdateDataBase:
+        if (mDataBaseState.isEmpty()) {
+            qWarning() << "Partial Download asked but database set is empty";
+        }
         threatMap.insert(QStringLiteral("state"), mDataBaseState);
         break;
     }
