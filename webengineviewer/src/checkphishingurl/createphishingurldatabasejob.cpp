@@ -178,7 +178,6 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
             QMapIterator<QString, QVariant> i(answer);
             while (i.hasNext()) {
                 i.next();
-                qDebug()<<" i.key" << i.key();
                 if (i.key() == QLatin1String("listUpdateResponses")) {
                     const QVariantList info = i.value().toList();
                     if (info.count() == 1) {
@@ -188,21 +187,33 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                 mapIt.next();
                                 const QString mapKey = mapIt.key();
                                 if (mapKey == QLatin1String("additions")) {
-
+                                    qDebug() << " addition" << mapIt.value().typeName();
+                                    const QVariantList lst = mapIt.value().toList();
+                                } else if (mapKey == QLatin1String("removals")) {
+                                    qDebug() << " removals items ";
+                                    const QVariantList lst = mapIt.value().toList();
                                 } else if (mapKey == QLatin1String("checksum")) {
-
+                                    QMapIterator<QString, QVariant> mapCheckSum(mapIt.value().toMap());
+                                    while (mapCheckSum.hasNext()) {
+                                        mapCheckSum.next();
+                                        if (mapCheckSum.key() == QLatin1String("sha256")) {
+                                            qDebug() << " sha256 value " << mapCheckSum.value().toString();
+                                        } else {
+                                            qDebug() << "Invalid checksum key" << mapCheckSum.key();
+                                        }
+                                    }
                                 } else if (mapKey == QLatin1String("newClientState")) {
-
-                                } else if (mapKey == QLatin1String("newClientState")) {
+                                    qDebug() << " newClientState " << mapIt.value().toString();
 
                                 } else if (mapKey == QLatin1String("platformType")) {
 
+                                    qDebug() << " platformType " << mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("responseType")) {
-
+                                    qDebug() << " responseType " << mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("threatEntryType")) {
-
+                                    qDebug() << " threatEntryType " << mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("threatType")) {
-
+                                    qDebug() << " threatType " << mapIt.value().toString();
                                 } else {
                                     qDebug() << " unknow key " << mapKey;
                                 }
@@ -211,8 +222,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                         }
                     }
                 } else if (i.key() == QLatin1String("minimumWaitDuration")) {
-
-                    //qDebug() << " i.key()" << i.key();
+                    qDebug() << " minimumWaitDuration " << i.value().toString();
                 } else {
                     qDebug() <<" map key unknown " << i.key();
                 }
