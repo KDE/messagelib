@@ -56,7 +56,7 @@ void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QLi
 void CreatePhishingUrlDataBaseJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT finished(BrokenNetwork);
+        Q_EMIT finished(UpdateDataBaseInfo(), BrokenNetwork);
         deleteLater();
     } else {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch"));
@@ -189,6 +189,9 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
                             qDebug() << " CreatePhishingUrlDataBaseJob::parseAdditions unknown rawHashes key " << key;
                         }
                     }
+                    if (tmp.isValid()) {
+                        additionList.append(tmp);
+                    }
                     //qDebug()<<" rawHashs " << mapIt.value().typeName();
                 } else {
                     qDebug() << " CreatePhishingUrlDataBaseJob::parseAdditions unknown mapIt.key() " << keyStr;
@@ -206,6 +209,7 @@ QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList 
     QVector<Removal> removalList;
     Q_FOREACH(const QVariant &v, lst) {
         if (v.canConvert<QVariantMap>()) {
+            Removal tmp;
             QMapIterator<QString, QVariant> mapIt(v.toMap());
             while (mapIt.hasNext()) {
                 mapIt.next();
@@ -218,6 +222,9 @@ QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList 
                     qDebug() << " CreatePhishingUrlDataBaseJob::parseRemovals unknown mapIt.key() " << keyStr;
                 }
             }
+            if (tmp.isValid()) {
+                removalList.append(tmp);
+            }
         } else {
             qDebug() << " CreatePhishingUrlDataBaseJob::parseRemovals not parsing type "<<v.typeName();
         }
@@ -227,13 +234,14 @@ QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList 
 
 void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
 {
+    UpdateDataBaseInfo databaseInfo;
     QJsonDocument document = QJsonDocument::fromJson(value);
     if (document.isNull()) {
-        Q_EMIT finished(InvalidData);
+        Q_EMIT finished(databaseInfo, InvalidData);
     } else {
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            Q_EMIT finished(InvalidData);
+            Q_EMIT finished(databaseInfo,InvalidData);
         } else {
             QMapIterator<QString, QVariant> i(answer);
             while (i.hasNext()) {
@@ -250,32 +258,45 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                 if (mapKey == QLatin1String("additions")) {
                                     qDebug() << " additions" << mapIt.value().typeName();
                                     const QVariantList lst = mapIt.value().toList();
-                                    parseAdditions(lst);
+                                    const QVector<Addition> addList = parseAdditions(lst);
+                                    if (!addList.isEmpty()) {
+                                        databaseInfo.additionList.append(addList);
+                                    }
 
                                 } else if (mapKey == QLatin1String("removals")) {
                                     qDebug() << " removals items " << mapIt.value().typeName();
                                     const QVariantList lst = mapIt.value().toList();
-                                    parseRemovals(lst);
+                                    const QVector<Removal> removeList = parseRemovals(lst);
+                                    if (!removeList.isEmpty()) {
+                                        databaseInfo.removalList.append(removeList);
+                                    }
+
                                 } else if (mapKey == QLatin1String("checksum")) {
                                     QMapIterator<QString, QVariant> mapCheckSum(mapIt.value().toMap());
                                     while (mapCheckSum.hasNext()) {
                                         mapCheckSum.next();
                                         if (mapCheckSum.key() == QLatin1String("sha256")) {
                                             qDebug() << " sha256 value " << mapCheckSum.value().toString();
+                                            databaseInfo.sha256 = mapIt.value().toString();
                                         } else {
                                             qDebug() << "Invalid checksum key" << mapCheckSum.key();
                                         }
                                     }
                                 } else if (mapKey == QLatin1String("newClientState")) {
                                     qDebug() << " newClientState " << mapIt.value().toString();
+                                    databaseInfo.newClientState = mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("platformType")) {
                                     qDebug() << " platformType " << mapIt.value().toString();
+                                    databaseInfo.platformType = mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("responseType")) {
                                     qDebug() << " responseType " << mapIt.value().toString();
+                                    databaseInfo.responseType = mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("threatEntryType")) {
                                     qDebug() << " threatEntryType " << mapIt.value().toString();
+                                    databaseInfo.threatEntryType = mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("threatType")) {
                                     qDebug() << " threatType " << mapIt.value().toString();
+                                    databaseInfo.threatType = mapIt.value().toString();
                                 } else {
                                     qDebug() << " unknow key " << mapKey;
                                 }
@@ -289,7 +310,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                     qDebug() <<" map key unknown " << i.key();
                 }
             }
-            Q_EMIT finished(ValidData);
+            Q_EMIT finished(databaseInfo, ValidData);
 
         }
     }

@@ -35,6 +35,10 @@ struct Addition {
     {
 
     }
+    bool isValid() const {
+        return !hashString.isEmpty() && (prefixSize > 0);
+    }
+
     QByteArray hashString;
     int prefixSize;
 };
@@ -44,12 +48,15 @@ struct Removal {
     {
 
     }
+    bool isValid() const {
+        return !indexes.isEmpty();
+    }
     QList<int> indexes;
 };
 
 struct UpdateDataBaseInfo {
-    QList<Addition> additionList;
-    QList<Removal> indexToRemove;
+    QVector<Addition> additionList;
+    QVector<Removal> removalList;
     QString minimumWaitDuration;
     QString threatType;
     QString threatEntryType;
@@ -88,7 +95,7 @@ public:
     QByteArray jsonRequest() const;
 
 Q_SIGNALS:
-    void finished(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
+    void finished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void debugJsonResult(const QByteArray &ba);
     void debugJson(const QByteArray &ba);
 
