@@ -17,21 +17,20 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "checkphishingurlfromlocaldatabasejobtest.h"
-#include "../checkphishingurlfromlocaldatabasejob.h"
-#include <QTest>
+#ifndef CREATEPHISHINGURLDATABASEJOBTEST_H
+#define CREATEPHISHINGURLDATABASEJOBTEST_H
 
+#include <QObject>
 
-CheckPhishingUrlFromLocalDataBaseJobTest::CheckPhishingUrlFromLocalDataBaseJobTest(QObject *parent)
-    : QObject(parent)
+class CreatePhishingUrlDataBaseJobTest : public QObject
 {
+    Q_OBJECT
+public:
+    explicit CreatePhishingUrlDataBaseJobTest(QObject *parent = Q_NULLPTR);
+    ~CreatePhishingUrlDataBaseJobTest();
+private Q_SLOTS:
+    void shouldCreateRequest_data();
+    void shouldCreateRequest();
+};
 
-}
-
-CheckPhishingUrlFromLocalDataBaseJobTest::~CheckPhishingUrlFromLocalDataBaseJobTest()
-{
-
-}
-
-
-QTEST_MAIN(CheckPhishingUrlFromLocalDataBaseJobTest)
+#endif // CREATEPHISHINGURLDATABASEJOBTEST_H

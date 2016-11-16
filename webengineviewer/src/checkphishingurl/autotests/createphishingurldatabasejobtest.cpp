@@ -17,21 +17,39 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "checkphishingurlfromlocaldatabasejobtest.h"
-#include "../checkphishingurlfromlocaldatabasejob.h"
+#include "createphishingurldatabasejobtest.h"
+
 #include <QTest>
 
+QByteArray readJsonFile(const QString &jsonFile)
+{
+    QFile file(QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
+    file.open(QIODevice::ReadOnly);
+    Q_ASSERT(file.isOpen());
+    const QByteArray data = file.readAll();
+    Q_ASSERT(!data.isEmpty());
+    return data;
+}
 
-CheckPhishingUrlFromLocalDataBaseJobTest::CheckPhishingUrlFromLocalDataBaseJobTest(QObject *parent)
+
+CreatePhishingUrlDataBaseJobTest::CreatePhishingUrlDataBaseJobTest(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-CheckPhishingUrlFromLocalDataBaseJobTest::~CheckPhishingUrlFromLocalDataBaseJobTest()
+CreatePhishingUrlDataBaseJobTest::~CreatePhishingUrlDataBaseJobTest()
 {
 
 }
 
+void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest_data()
+{
+}
 
-QTEST_MAIN(CheckPhishingUrlFromLocalDataBaseJobTest)
+void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
+{
+}
+
+
+QTEST_MAIN(CreatePhishingUrlDataBaseJobTest)
