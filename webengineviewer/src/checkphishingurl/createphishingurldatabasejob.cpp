@@ -175,9 +175,48 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
         if (answer.isEmpty()) {
             //TODO
         } else {
-            const QVariantList info = answer.value(QStringLiteral("listUpdateResponses")).toList();
-            //TODO
+            QMapIterator<QString, QVariant> i(answer);
+            while (i.hasNext()) {
+                i.next();
+                qDebug()<<" i.key" << i.key();
+                if (i.key() == QLatin1String("listUpdateResponses")) {
+                    const QVariantList info = i.value().toList();
+                    if (info.count() == 1) {
+                        if (info.at(0).canConvert<QVariantMap>()) {
+                            QMapIterator<QString, QVariant> mapIt(info.at(0).toMap());
+                            while (mapIt.hasNext()) {
+                                mapIt.next();
+                                const QString mapKey = mapIt.key();
+                                if (mapKey == QLatin1String("additions")) {
+
+                                } else if (mapKey == QLatin1String("checksum")) {
+
+                                } else if (mapKey == QLatin1String("newClientState")) {
+
+                                } else if (mapKey == QLatin1String("newClientState")) {
+
+                                } else if (mapKey == QLatin1String("platformType")) {
+
+                                } else if (mapKey == QLatin1String("responseType")) {
+
+                                } else if (mapKey == QLatin1String("threatEntryType")) {
+
+                                } else if (mapKey == QLatin1String("threatType")) {
+
+                                } else {
+                                    qDebug() << " unknow key " << mapKey;
+                                }
+
+                            }
+                        }
+                    }
+                } else if (i.key() == QLatin1String("minimumWaitDuration")) {
+
+                    //qDebug() << " i.key()" << i.key();
+                } else {
+                    qDebug() <<" map key unknown " << i.key();
+                }
+            }
         }
-        //TODO
     }
 }
