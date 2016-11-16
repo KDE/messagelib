@@ -37,3 +37,8 @@ LocalDataBaseManager *LocalDataBaseManager::self()
 {
     return s_localDataBaseManager;
 }
+
+void LocalDataBaseManager::initializeDataBase()
+{
+    //TODO
+}

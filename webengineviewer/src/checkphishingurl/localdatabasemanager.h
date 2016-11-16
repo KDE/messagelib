@@ -31,6 +31,9 @@ public:
     ~LocalDataBaseManager();
 
     static LocalDataBaseManager *self();
+
+private:
+    void initializeDataBase();
 };
 }
 
