@@ -18,7 +18,7 @@
 */
 
 #include "checkphishingurlfromlocaldatabasejob.h"
-
+#include <qcryptographichash.h>
 using namespace WebEngineViewer;
 
 CheckPhishingUrlFromLocalDataBaseJob::CheckPhishingUrlFromLocalDataBaseJob(QObject *parent)
@@ -52,8 +52,7 @@ bool CheckPhishingUrlFromLocalDataBaseJob::canStart() const
     return mUrl.isValid();
 }
 
-QString CheckPhishingUrlFromLocalDataBaseJob::createHash()
+QByteArray CheckPhishingUrlFromLocalDataBaseJob::createHash()
 {
-    //TODO
-    return {};
+    return QCryptographicHash::hash(QByteArray() /*TODO use url*/, QCryptographicHash::Sha256);
 }
