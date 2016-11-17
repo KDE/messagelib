@@ -18,6 +18,9 @@
 */
 #include "localdatabasemanager.h"
 
+#include <QSqlDatabase>
+#include <QSqlError>
+
 using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(LocalDataBaseManager, s_localDataBaseManager)
@@ -33,6 +36,12 @@ LocalDataBaseManager::~LocalDataBaseManager()
 
 }
 
+QString LocalDataBaseManager::localDataBasePath() const
+{
+    //TODO
+    return {};
+}
+
 LocalDataBaseManager *LocalDataBaseManager::self()
 {
     return s_localDataBaseManager;
@@ -40,7 +49,17 @@ LocalDataBaseManager *LocalDataBaseManager::self()
 
 void LocalDataBaseManager::initializeDataBase()
 {
+}
+
+QSqlError LocalDataBaseManager::initDb()
+{
+    QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
+    db.setDatabaseName(QStringLiteral(":phishingurl:"));
+
+    if (!db.open())
+        return db.lastError();
     //TODO
+    return QSqlError();
 }
 
 void LocalDataBaseManager::checkUrl(const QUrl &url)

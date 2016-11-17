@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include <QUrl>
+class QSqlError;
 namespace WebEngineViewer
 {
 class LocalDataBaseManager : public QObject
@@ -35,7 +36,9 @@ public:
 
     void checkUrl(const QUrl &url);
 private:
+    QSqlError initDb();
     void initializeDataBase();
+    QString localDataBasePath() const;
 };
 }
 
