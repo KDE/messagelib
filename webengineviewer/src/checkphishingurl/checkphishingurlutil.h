@@ -16,35 +16,15 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#include "localdatabasemanager.h"
 
-using namespace WebEngineViewer;
+#ifndef CHECKPHISHINGURLUTIL_H
+#define CHECKPHISHINGURLUTIL_H
 
-Q_GLOBAL_STATIC(LocalDataBaseManager, s_localDataBaseManager)
+#include <QString>
 
-LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
-    : QObject(parent)
-{
-    initializeDataBase();
+namespace WebEngineViewer {
+namespace CheckPhishingUrlUtil {
+QString apiKey();
 }
-
-LocalDataBaseManager::~LocalDataBaseManager()
-{
-
 }
-
-LocalDataBaseManager *LocalDataBaseManager::self()
-{
-    return s_localDataBaseManager;
-}
-
-void LocalDataBaseManager::initializeDataBase()
-{
-    //TODO
-}
-
-void LocalDataBaseManager::checkUrl(const QUrl &url)
-{
-    //TODO
-}
-
+#endif // CHECKPHISHINGURLUTIL_H

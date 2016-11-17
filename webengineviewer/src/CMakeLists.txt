@@ -36,6 +36,7 @@ set(libwebengineviewer_checkphishingurl_SRCS
    checkphishingurl/createphishingurldatabasejob.cpp
    checkphishingurl/checkphishingurlfromlocaldatabasejob.cpp
    checkphishingurl/localdatabasemanager.cpp
+   checkphishingurl/checkphishingurlutil.cpp
    )
 
 set(libwebengineviewer_interceptor_SRCS

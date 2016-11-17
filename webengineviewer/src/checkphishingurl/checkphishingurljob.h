@@ -61,7 +61,6 @@ private Q_SLOTS:
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
 private:
-    QString apiKey() const;
     QUrl mUrl;
     bool mUseCompactJson;
     QNetworkAccessManager *mNetworkAccessManager;

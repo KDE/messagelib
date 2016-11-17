@@ -108,7 +108,6 @@ Q_SIGNALS:
     void debugJson(const QByteArray &ba);
 
 private:
-    QString apiKey() const;
     void slotDownloadDataBaseFinished(QNetworkReply *reply);
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);

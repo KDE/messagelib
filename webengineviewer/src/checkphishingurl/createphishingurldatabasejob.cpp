@@ -19,6 +19,7 @@
 
 
 #include "createphishingurldatabasejob.h"
+#include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 #include <PimCommon/NetworkManager>
 
@@ -42,12 +43,6 @@ CreatePhishingUrlDataBaseJob::~CreatePhishingUrlDataBaseJob()
 
 }
 
-QString CreatePhishingUrlDataBaseJob::apiKey() const
-{
-    return QStringLiteral("AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo");
-}
-
-
 void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
 {
     qCDebug(WEBENGINEVIEWER_LOG) << " void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
@@ -61,7 +56,7 @@ void CreatePhishingUrlDataBaseJob::start()
         deleteLater();
     } else {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch"));
-        safeUrl.addQueryItem(QStringLiteral("key"), apiKey());
+        safeUrl.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
         //qDebug() << " safeUrl" << safeUrl;
         QNetworkRequest request(safeUrl);
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));

@@ -18,6 +18,7 @@
 */
 
 #include "checkphishingurljob.h"
+#include "checkphishingurlutil.h"
 #include <QNetworkAccessManager>
 #include <QNetworkConfigurationManager>
 #include <PimCommon/NetworkManager>
@@ -43,11 +44,6 @@ void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslEr
 {
     qCDebug(WEBENGINEVIEWER_LOG) << " void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
     reply->ignoreSslErrors(error);
-}
-
-QString CheckPhishingUrlJob::apiKey() const
-{
-    return QStringLiteral("AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo");
 }
 
 void CheckPhishingUrlJob::setUseCompactJson(bool useCompactJson)
@@ -136,7 +132,7 @@ void CheckPhishingUrlJob::start()
         deleteLater();
     } else if (canStart()) {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find"));
-        safeUrl.addQueryItem(QStringLiteral("key"), apiKey());
+        safeUrl.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
         //qDebug() << " safeUrl" << safeUrl;
         QNetworkRequest request(safeUrl);
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
