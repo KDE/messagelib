@@ -27,7 +27,7 @@ CheckPhishingUrlFromLocalDataBaseJob::CheckPhishingUrlFromLocalDataBaseJob(QObje
 
 }
 
-WebEngineViewer::CheckPhishingUrlFromLocalDataBaseJob::~CheckPhishingUrlFromLocalDataBaseJob()
+CheckPhishingUrlFromLocalDataBaseJob::~CheckPhishingUrlFromLocalDataBaseJob()
 {
 
 }
@@ -40,7 +40,7 @@ void CheckPhishingUrlFromLocalDataBaseJob::setCheckPhisingUrl(const QUrl &url)
 void CheckPhishingUrlFromLocalDataBaseJob::start()
 {
     if (mUrl.isValid()) {
-        Q_EMIT finished(InvalidUrl);
+        Q_EMIT finished(mUrl, InvalidUrl);
         deleteLater();
     } else {
         //TODO check in local database

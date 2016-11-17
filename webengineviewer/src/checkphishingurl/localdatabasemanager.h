@@ -36,6 +36,9 @@ public:
     static LocalDataBaseManager *self();
 
     void checkUrl(const QUrl &url);
+
+Q_SIGNALS:
+    void checkUrlFinished(const QUrl &url);
 private:
     QSqlError initDb();
     bool initializeDataBase();

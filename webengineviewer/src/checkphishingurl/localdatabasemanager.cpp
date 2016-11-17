@@ -18,6 +18,7 @@
 */
 #include "localdatabasemanager.h"
 #include "webengineviewer_debug.h"
+#include "checkphishingurlfromlocaldatabasejob.h"
 
 #include <QStandardPaths>
 #include <QSqlDatabase>
@@ -42,8 +43,7 @@ LocalDataBaseManager::~LocalDataBaseManager()
 
 QString LocalDataBaseManager::localDataBasePath() const
 {
-    //TODO
-    return {};
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl/");
 }
 
 LocalDataBaseManager *LocalDataBaseManager::self()

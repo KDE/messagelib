@@ -22,3 +22,14 @@ target_link_libraries(createphishingurldatabasegui
     Qt5::WebEngineWidgets
     KF5::I18n
     )
+
+set(managelocaldatabasegui_SRCS managelocaldatabasegui.cpp)
+add_executable(managelocaldatabasegui ${managelocaldatabasegui_SRCS})
+target_link_libraries(managelocaldatabasegui
+    KF5::KIOCore
+    KF5::WebEngineViewer
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
+    KF5::I18n
+    Qt5::Sql
+    )
