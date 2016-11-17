@@ -90,6 +90,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     additionList.append(tmp);
     QVector<WebEngineViewer::Removal> removalList;
     WebEngineViewer::Removal tmpRemoval;
+    tmpRemoval.indexes = QList<int>() << 0 << 2 << 4;
     removalList.append(tmpRemoval);
     value.minimumWaitDuration = QStringLiteral("593.440s");
     value.threatType = QStringLiteral("MALWARE");
@@ -99,7 +100,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     value.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
     value.sha256 = QStringLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
     value.additionList = additionList;
-    //value.removalList = removalList;
+    value.removalList = removalList;
 
     QTest::newRow("test1") << QStringLiteral("test1.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::ValidData << value;
 }
