@@ -23,17 +23,24 @@
 #include <QStandardPaths>
 #include <QSqlDatabase>
 #include <QSqlError>
+#include <QSqlQuery>
+#include <QDebug>
+#include <QDir>
 
 using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(LocalDataBaseManager, s_localDataBaseManager)
 
+namespace {
+inline QString tableName() {
+    return QStringLiteral("malware");
+}
+}
+
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent),
       mDataBaseOk(false)
 {
-
-    mDataBaseOk = initializeDataBase();
 }
 
 LocalDataBaseManager::~LocalDataBaseManager()
@@ -41,9 +48,19 @@ LocalDataBaseManager::~LocalDataBaseManager()
 
 }
 
+void LocalDataBaseManager::start()
+{
+    mDataBaseOk = initializeDataBase();
+    if (initializeDataBase()) {
+        if ( !mDataBase.tables().contains( tableName() ) ) {
+            createTable();
+        }
+    }
+}
+
 QString LocalDataBaseManager::localDataBasePath() const
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/phishingurl/");
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl/");
 }
 
 LocalDataBaseManager *LocalDataBaseManager::self()
@@ -61,10 +78,20 @@ bool LocalDataBaseManager::initializeDataBase()
     return true;
 }
 
+bool LocalDataBaseManager::createTable()
+{
+    QSqlQuery query;
+    query.exec(QStringLiteral("create table %1 (id int primary key, "
+                              "hash varchar(20))").arg(tableName()));
+    return true;
+}
+
 QSqlError LocalDataBaseManager::initDb()
 {
     mDataBase = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
-    mDataBase.setDatabaseName(localDataBasePath());
+    qDebug()<<" localDataBasePath()"<<localDataBasePath();
+    QDir().mkpath(localDataBasePath());
+    mDataBase.setDatabaseName(localDataBasePath() + QStringLiteral("/malwaredb.sql"));
     if (!mDataBase.open()) {
         return mDataBase.lastError();
     }
@@ -76,7 +103,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
     if (mDataBaseOk) {
 
     } else {
-
+        Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
     }
     //TODO
 }

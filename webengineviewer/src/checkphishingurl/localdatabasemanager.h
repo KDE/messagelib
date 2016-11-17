@@ -21,15 +21,22 @@
 #define LOCALDATABASEMANAGER_H
 
 #include <QObject>
+#include "webengineviewer_export.h"
 #include <QSqlDatabase>
 #include <QUrl>
 class QSqlError;
 namespace WebEngineViewer
 {
-class LocalDataBaseManager : public QObject
+class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
 {
     Q_OBJECT
 public:
+    enum UrlStatus {
+        Unknown = 0,
+        UrlOk = 1,
+        Malware = 2
+    };
+
     explicit LocalDataBaseManager(QObject *parent = Q_NULLPTR);
     ~LocalDataBaseManager();
 
@@ -37,11 +44,13 @@ public:
 
     void checkUrl(const QUrl &url);
 
+    void start();
 Q_SIGNALS:
-    void checkUrlFinished(const QUrl &url);
+    void checkUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
 private:
     QSqlError initDb();
     bool initializeDataBase();
+    bool createTable();
     QString localDataBasePath() const;
     QSqlDatabase mDataBase;
     bool mDataBaseOk;
