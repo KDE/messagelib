@@ -56,8 +56,9 @@ QSqlError LocalDataBaseManager::initDb()
     QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
     db.setDatabaseName(QStringLiteral(":phishingurl:"));
 
-    if (!db.open())
+    if (!db.open()) {
         return db.lastError();
+    }
     //TODO
     return QSqlError();
 }

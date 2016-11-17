@@ -22,8 +22,10 @@
 
 #include <QString>
 
-namespace WebEngineViewer {
-namespace CheckPhishingUrlUtil {
+namespace WebEngineViewer
+{
+namespace CheckPhishingUrlUtil
+{
 QString apiKey();
 }
 }

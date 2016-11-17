@@ -33,7 +33,6 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-
     mResult = new QTextEdit(this);
     mResult->setReadOnly(true);
     mResult->setAcceptRichText(false);

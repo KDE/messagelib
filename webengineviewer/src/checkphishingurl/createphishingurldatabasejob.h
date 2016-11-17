@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef CREATEPHISHINGURLDATABASEJOB_H
 #define CREATEPHISHINGURLDATABASEJOB_H
 
@@ -35,7 +34,8 @@ struct Addition {
     {
 
     }
-    bool isValid() const {
+    bool isValid() const
+    {
         return !hashString.isEmpty() && (prefixSize > 0);
     }
     bool operator==(const Addition &other) const;
@@ -51,7 +51,8 @@ struct Removal {
     }
 
     bool operator==(const Removal &other) const;
-    bool isValid() const {
+    bool isValid() const
+    {
         return !indexes.isEmpty();
     }
     QList<int> indexes;

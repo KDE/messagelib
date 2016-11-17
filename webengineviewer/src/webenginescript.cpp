@@ -24,16 +24,16 @@ using namespace WebEngineViewer;
 QString WebEngineScript::findAllImages()
 {
     const QString source = QStringLiteral("(function() {"
-                                         "var out = [];"
-                                         "var imgs = document.getElementsByTagName('img');"
-                                         "for (var i = 0; i < imgs.length; ++i) {"
-                                         "    var e = imgs[i];"
-                                         "    out.push({"
-                                         "        src: e.src"
-                                         "    });"
-                                         "}"
-                                         "return out;"
-                                         "})()");
+                                          "var out = [];"
+                                          "var imgs = document.getElementsByTagName('img');"
+                                          "for (var i = 0; i < imgs.length; ++i) {"
+                                          "    var e = imgs[i];"
+                                          "    out.push({"
+                                          "        src: e.src"
+                                          "    });"
+                                          "}"
+                                          "return out;"
+                                          "})()");
 
     return source;
 }
@@ -41,16 +41,16 @@ QString WebEngineScript::findAllImages()
 QString WebEngineScript::findAllScripts()
 {
     const QString source = QStringLiteral("(function() {"
-                                         "var out = [];"
-                                         "var scripts = document.getElementsByTagName('script');"
-                                         "for (var i = 0; i < scripts.length; ++i) {"
-                                         "    var e = scripts[i];"
-                                         "    out.push({"
-                                         "        src: e.src"
-                                         "    });"
-                                         "}"
-                                         "return out;"
-                                         "})()");
+                                          "var out = [];"
+                                          "var scripts = document.getElementsByTagName('script');"
+                                          "for (var i = 0; i < scripts.length; ++i) {"
+                                          "    var e = scripts[i];"
+                                          "    out.push({"
+                                          "        src: e.src"
+                                          "    });"
+                                          "}"
+                                          "return out;"
+                                          "})()");
 
     return source;
 }
@@ -58,18 +58,18 @@ QString WebEngineScript::findAllScripts()
 QString WebEngineScript::findAllAnchors()
 {
     const QString source = QStringLiteral("(function() {"
-                                         "var out = [];"
-                                         "var anchors = document.getElementsByTagName('a');"
-                                         "for (var i = 0; i < anchors.length; ++i) {"
-                                         "    var r = anchors[i].getBoundingClientRect();"
-                                         "    out.push({"
-                                         "        src: anchors[i].href,"
-                                         "        title: anchors[i].title,"
-                                         "        boudingRect: [r.top, r.left, r.width, r.height]"
-                                         "    });"
-                                         "}"
-                                         "return out;"
-                                         "})()");
+                                          "var out = [];"
+                                          "var anchors = document.getElementsByTagName('a');"
+                                          "for (var i = 0; i < anchors.length; ++i) {"
+                                          "    var r = anchors[i].getBoundingClientRect();"
+                                          "    out.push({"
+                                          "        src: anchors[i].href,"
+                                          "        title: anchors[i].title,"
+                                          "        boudingRect: [r.top, r.left, r.width, r.height]"
+                                          "    });"
+                                          "}"
+                                          "return out;"
+                                          "})()");
 
     return source;
 }
@@ -77,22 +77,22 @@ QString WebEngineScript::findAllAnchors()
 QString WebEngineScript::findAllAnchorsAndForms()
 {
     const QString source = QStringLiteral("(function() {"
-                                         "var res = [];"
-                                         "var out = [];"
-                                         "var anchors = document.getElementsByTagName('a');"
-                                         "for (var i = 0; i < anchors.length; ++i) {"
-                                         "    out.push({"
-                                         "        src: anchors[i].href,"
-                                         "        title: anchors[i].title"
-                                         "    });"
-                                         "}"
-                                         "var forms = document.getElementsByTagName('form');"
-                                         "res.push({"
-                                         "    anchors: out,"
-                                         "    forms:  forms.length"
-                                         "    });"
-                                         "return res;"
-                                         "})()");
+                                          "var res = [];"
+                                          "var out = [];"
+                                          "var anchors = document.getElementsByTagName('a');"
+                                          "for (var i = 0; i < anchors.length; ++i) {"
+                                          "    out.push({"
+                                          "        src: anchors[i].href,"
+                                          "        title: anchors[i].title"
+                                          "    });"
+                                          "}"
+                                          "var forms = document.getElementsByTagName('form');"
+                                          "res.push({"
+                                          "    anchors: out,"
+                                          "    forms:  forms.length"
+                                          "    });"
+                                          "return res;"
+                                          "})()");
 
     return source;
 }

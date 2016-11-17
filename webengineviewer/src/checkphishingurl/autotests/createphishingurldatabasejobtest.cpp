@@ -33,7 +33,6 @@ QByteArray readJsonFile(const QString &jsonFile)
     return data;
 }
 
-
 CreatePhishingUrlDataBaseJobTest::CreatePhishingUrlDataBaseJobTest(QObject *parent)
     : QObject(parent)
 {
@@ -102,9 +101,9 @@ void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest_data()
 
 void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
 {
-    QFETCH (QString, databasestate);
-    QFETCH (WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload, downloadtype);
-    QFETCH (QByteArray, request);
+    QFETCH(QString, databasestate);
+    QFETCH(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload, downloadtype);
+    QFETCH(QByteArray, request);
 
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
     job.setDataBaseState(databasestate);
@@ -165,7 +164,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
 
 void CreatePhishingUrlDataBaseJobTest::shouldParseResult()
 {
-    QFETCH (QString, filename);
+    QFETCH(QString, filename);
     QFETCH(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult, parseResult);
     QFETCH(WebEngineViewer::UpdateDataBaseInfo, parseInfo);
     const QByteArray ba = readJsonFile(filename);
@@ -176,6 +175,5 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult()
     QCOMPARE(spy1.at(0).at(1).value<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>(), parseResult);
     QCOMPARE(spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>(), parseInfo);
 }
-
 
 QTEST_MAIN(CreatePhishingUrlDataBaseJobTest)

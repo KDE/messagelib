@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "createphishingurldatabasejob.h"
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
@@ -87,22 +86,22 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
 {
 #if 0
     {
-      "client": {
+    "client": {
         "clientId":       "yourcompanyname",
         "clientVersion":  "1.5.2"
-      },
-      "listUpdateRequests": [{
+        },
+    "listUpdateRequests": [{
         "threatType":      "MALWARE",
         "platformType":    "WINDOWS",
         "threatEntryType": "URL",
         "state":           "Gg4IBBADIgYQgBAiAQEoAQ==",
         "constraints": {
-          "maxUpdateEntries":      2048,
-          "maxDatabaseEntries":    4096,
-          "region":                "US",
-          "supportedCompressions": ["RAW"]
-        }
-      }]
+                "maxUpdateEntries":      2048,
+                "maxDatabaseEntries":    4096,
+            "region":                "US",
+            "supportedCompressions": ["RAW"]
+            }
+        }]
     }
 #endif
     QVariantMap clientMap;
@@ -120,7 +119,7 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     threatMap.insert(QStringLiteral("threatEntryType"), QStringLiteral("URL"));
 
     //Define state when we want to define update database. Empty is full.
-    switch(mDataBaseDownloadNeeded) {
+    switch (mDataBaseDownloadNeeded) {
     case FullDataBase:
         threatMap.insert(QStringLiteral("state"), QString());
         break;
@@ -135,14 +134,12 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     listUpdateRequests.append(threatMap);
     //TODO define contraints
 
-
     map.insert(QStringLiteral("listUpdateRequests"), listUpdateRequests);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
     const QByteArray baPostData = postData.toJson(mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
     return baPostData;
 }
-
 
 void CreatePhishingUrlDataBaseJob::setDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::DataBaseDownload type)
 {
@@ -160,7 +157,7 @@ void CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished(QNetworkReply *r
 QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantList &lst)
 {
     QVector<Addition> additionList;
-    Q_FOREACH(const QVariant &v, lst) {
+    Q_FOREACH (const QVariant &v, lst) {
         if (v.canConvert<QVariantMap>()) {
             QMapIterator<QString, QVariant> mapIt(v.toMap());
             while (mapIt.hasNext()) {
@@ -192,7 +189,7 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
                 }
             }
         } else {
-            qDebug() << " CreatePhishingUrlDataBaseJob::parseAdditions not parsing type "<<v.typeName();
+            qDebug() << " CreatePhishingUrlDataBaseJob::parseAdditions not parsing type " << v.typeName();
         }
     }
     return additionList;
@@ -206,7 +203,7 @@ void CreatePhishingUrlDataBaseJob::setUseCompactJson(bool useCompactJson)
 QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList &lst)
 {
     QVector<Removal> removalList;
-    Q_FOREACH(const QVariant &v, lst) {
+    Q_FOREACH (const QVariant &v, lst) {
         if (v.canConvert<QVariantMap>()) {
             Removal tmp;
             QMapIterator<QString, QVariant> mapIt(v.toMap());
@@ -223,7 +220,7 @@ QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList 
                         if (rawIndicesIt.key() == QStringLiteral("indices")) {
                             const QVariantList lst = rawIndicesIt.value().toList();
                             QList<int> indexList;
-                            Q_FOREACH(const QVariant &var, lst) {
+                            Q_FOREACH (const QVariant &var, lst) {
                                 indexList.append(var.toInt());
                             }
                             tmp.indexes = indexList;
@@ -239,7 +236,7 @@ QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList 
                 removalList.append(tmp);
             }
         } else {
-            qDebug() << " CreatePhishingUrlDataBaseJob::parseRemovals not parsing type "<<v.typeName();
+            qDebug() << " CreatePhishingUrlDataBaseJob::parseRemovals not parsing type " << v.typeName();
         }
     }
     return removalList;
@@ -254,7 +251,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
     } else {
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            Q_EMIT finished(databaseInfo,InvalidData);
+            Q_EMIT finished(databaseInfo, InvalidData);
         } else {
             QMapIterator<QString, QVariant> i(answer);
             while (i.hasNext()) {
@@ -309,7 +306,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                 } else if (i.key() == QLatin1String("minimumWaitDuration")) {
                     databaseInfo.minimumWaitDuration = i.value().toString();
                 } else {
-                    qDebug() <<" map key unknown " << i.key();
+                    qDebug() << " map key unknown " << i.key();
                 }
             }
             Q_EMIT finished(databaseInfo, ValidData);
@@ -333,45 +330,48 @@ void UpdateDataBaseInfo::clear()
 
 }
 
-bool UpdateDataBaseInfo::operator==(const UpdateDataBaseInfo &other) const {
+bool UpdateDataBaseInfo::operator==(const UpdateDataBaseInfo &other) const
+{
     const bool val = (additionList == other.additionList) &&
-            (removalList == other.removalList) &&
-            (minimumWaitDuration == other.minimumWaitDuration) &&
-            (threatType == other.threatType) &&
-            (threatEntryType == other.threatEntryType) &&
-            (responseType == other.responseType) &&
-            (platformType == other.platformType) &&
-            (newClientState == other.newClientState) &&
-            (sha256 == other.sha256);
+                     (removalList == other.removalList) &&
+                     (minimumWaitDuration == other.minimumWaitDuration) &&
+                     (threatType == other.threatType) &&
+                     (threatEntryType == other.threatEntryType) &&
+                     (responseType == other.responseType) &&
+                     (platformType == other.platformType) &&
+                     (newClientState == other.newClientState) &&
+                     (sha256 == other.sha256);
     if (!val) {
-        qDebug() << " sha256 "<<sha256 << " other.sha256 "<< other.sha256;
-        qDebug() << " minimumWaitDuration "<<minimumWaitDuration << " other.minimumWaitDuration "<< other.minimumWaitDuration;
-        qDebug() << " threatType "<<threatType << " other.threatType "<< other.threatType;
-        qDebug() << " threatEntryType "<<threatEntryType << " other.threatEntryType "<< other.threatEntryType;
-        qDebug() << " responseType "<<responseType << " other.responseType "<< other.responseType;
-        qDebug() << " platformType "<<platformType << " other.platformType "<< other.platformType;
-        qDebug() << " newClientState "<<newClientState << " other.newClientState "<< other.newClientState;
-        qDebug() << " threatType "<<threatType << " other.threatType "<< other.threatType;
+        qDebug() << " sha256 " << sha256 << " other.sha256 " << other.sha256;
+        qDebug() << " minimumWaitDuration " << minimumWaitDuration << " other.minimumWaitDuration " << other.minimumWaitDuration;
+        qDebug() << " threatType " << threatType << " other.threatType " << other.threatType;
+        qDebug() << " threatEntryType " << threatEntryType << " other.threatEntryType " << other.threatEntryType;
+        qDebug() << " responseType " << responseType << " other.responseType " << other.responseType;
+        qDebug() << " platformType " << platformType << " other.platformType " << other.platformType;
+        qDebug() << " newClientState " << newClientState << " other.newClientState " << other.newClientState;
+        qDebug() << " threatType " << threatType << " other.threatType " << other.threatType;
         qDebug() << " removalList" << removalList.count() << " other.removalList " << other.removalList.count();
         qDebug() << " additionList" << additionList.count() << " other.additionList " << other.additionList.count();
     }
     return val;
 }
 
-bool Removal::operator==(const Removal &other) const {
+bool Removal::operator==(const Removal &other) const
+{
     bool value = (indexes == other.indexes);
     if (!value) {
-        qDebug() << " indexes "<<indexes << " other.indexes " << other.indexes;
+        qDebug() << " indexes " << indexes << " other.indexes " << other.indexes;
     }
     return value;
 }
 
-bool Addition::operator==(const Addition &other) const {
+bool Addition::operator==(const Addition &other) const
+{
     bool value = (hashString == other.hashString) &&
-            (prefixSize == other.prefixSize);
+                 (prefixSize == other.prefixSize);
     if (!value) {
-        qDebug() << "hashString " << hashString << " other.hashString "<<other.hashString;
-        qDebug() << "prefixSize " << prefixSize << " other.prefixSize "<<other.prefixSize;
+        qDebug() << "hashString " << hashString << " other.hashString " << other.hashString;
+        qDebug() << "prefixSize " << prefixSize << " other.prefixSize " << other.prefixSize;
     }
     return value;
 }
