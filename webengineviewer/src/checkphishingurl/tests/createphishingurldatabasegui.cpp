@@ -27,6 +27,7 @@
 #include <QTextEdit>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QInputDialog>
 
 CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     : QWidget(parent)
@@ -43,9 +44,15 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     mJson->setAcceptRichText(false);
     layout->addWidget(mJson);
 
+    QHBoxLayout *buttonLayout = new QHBoxLayout;
+    layout->addLayout(buttonLayout);
     QPushButton *button = new QPushButton(QStringLiteral("DownLoad full database"), this);
     connect(button, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase);
-    layout->addWidget(button);
+    buttonLayout->addWidget(button);
+
+    QPushButton *button2 = new QPushButton(QStringLiteral("DownLoad partial database"), this);
+    connect(button2, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase);
+    buttonLayout->addWidget(button2);
 }
 
 CreatePhisingUrlDataBaseGui::~CreatePhisingUrlDataBaseGui()
@@ -53,8 +60,26 @@ CreatePhisingUrlDataBaseGui::~CreatePhisingUrlDataBaseGui()
 
 }
 
+void CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase()
+{
+    const QString newValue = QInputDialog::getText(this, QStringLiteral("Define database newClientState"), QStringLiteral("newClientState:"));
+    if (!newValue.isEmpty()) {
+        mJson->clear();
+        mResult->clear();
+        WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+        job->setUseCompactJson(false);
+        job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
+        job->setDataBaseState(newValue);
+        connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
+        connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJson, this, &CreatePhisingUrlDataBaseGui::slotDebugJSon);
+        job->start();
+    }
+}
+
 void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 {
+    mJson->clear();
+    mResult->clear();
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setUseCompactJson(false);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);

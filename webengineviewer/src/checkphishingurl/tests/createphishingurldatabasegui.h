@@ -32,6 +32,7 @@ private Q_SLOTS:
     void slotResult(const QByteArray &data);
     void slotDownloadFullDatabase();
     void slotDebugJSon(const QByteArray &data);
+    void slotDownloadPartialDatabase();
 private:
     QTextEdit *mResult;
     QTextEdit *mJson;
