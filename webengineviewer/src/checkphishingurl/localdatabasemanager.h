@@ -21,6 +21,7 @@
 #define LOCALDATABASEMANAGER_H
 
 #include <QObject>
+#include <QSqlDatabase>
 #include <QUrl>
 class QSqlError;
 namespace WebEngineViewer
@@ -37,8 +38,10 @@ public:
     void checkUrl(const QUrl &url);
 private:
     QSqlError initDb();
-    void initializeDataBase();
+    bool initializeDataBase();
     QString localDataBasePath() const;
+    QSqlDatabase mDataBase;
+    bool mDataBaseOk;
 };
 }
 

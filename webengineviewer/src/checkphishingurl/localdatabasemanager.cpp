@@ -17,7 +17,9 @@
    Boston, MA 02110-1301, USA.
 */
 #include "localdatabasemanager.h"
+#include "webengineviewer_debug.h"
 
+#include <QStandardPaths>
 #include <QSqlDatabase>
 #include <QSqlError>
 
@@ -26,9 +28,11 @@ using namespace WebEngineViewer;
 Q_GLOBAL_STATIC(LocalDataBaseManager, s_localDataBaseManager)
 
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mDataBaseOk(false)
 {
-    initializeDataBase();
+
+    mDataBaseOk = initializeDataBase();
 }
 
 LocalDataBaseManager::~LocalDataBaseManager()
@@ -47,24 +51,33 @@ LocalDataBaseManager *LocalDataBaseManager::self()
     return s_localDataBaseManager;
 }
 
-void LocalDataBaseManager::initializeDataBase()
+bool LocalDataBaseManager::initializeDataBase()
 {
+    const QSqlError err = initDb();
+    if (err.type() != QSqlError::NoError) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open DataBase: " << err.text();
+        return false;
+    }
+    return true;
 }
 
 QSqlError LocalDataBaseManager::initDb()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
-    db.setDatabaseName(QStringLiteral(":phishingurl:"));
-
-    if (!db.open()) {
-        return db.lastError();
+    mDataBase = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
+    mDataBase.setDatabaseName(localDataBasePath());
+    if (!mDataBase.open()) {
+        return mDataBase.lastError();
     }
-    //TODO
     return QSqlError();
 }
 
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
+    if (mDataBaseOk) {
+
+    } else {
+
+    }
     //TODO
 }
 
