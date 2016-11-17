@@ -51,6 +51,44 @@ void CreatePhishingUrlDataBaseJobTest::initTestcase()
     qRegisterMetaType<WebEngineViewer::UpdateDataBaseInfo>();
 }
 
+void CreatePhishingUrlDataBaseJobTest::shouldClearUpdateDataBaseInfo()
+{
+    WebEngineViewer::UpdateDataBaseInfo info;
+    WebEngineViewer::UpdateDataBaseInfo info2;
+    QCOMPARE(info, info2);
+    info.clear();
+    QCOMPARE(info, info2);
+
+    WebEngineViewer::UpdateDataBaseInfo value;
+    QVector<WebEngineViewer::Addition> additionList;
+    WebEngineViewer::Addition tmp;
+    tmp.prefixSize = 4;
+    tmp.hashString = QByteArrayLiteral("rnGLoQ==");
+    additionList.append(tmp);
+    QVector<WebEngineViewer::Removal> removalList;
+    WebEngineViewer::Removal tmpRemoval;
+    tmpRemoval.indexes = QList<int>() << 0 << 2 << 4;
+    removalList.append(tmpRemoval);
+    value.minimumWaitDuration = QStringLiteral("593.440s");
+    value.threatType = QStringLiteral("MALWARE");
+    value.threatEntryType = QStringLiteral("URL");
+    value.responseType = QStringLiteral("PARTIAL_UPDATE");
+    value.platformType = QStringLiteral("WINDOWS");
+    value.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
+    value.sha256 = QStringLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
+    value.additionList = additionList;
+    value.removalList = removalList;
+
+    info = value;
+    QCOMPARE(info, value);
+    info2 = info;
+    QCOMPARE(info, info2);
+    info2.clear();
+    info.clear();
+    QCOMPARE(info, info2);
+
+}
+
 void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest_data()
 {
     QTest::addColumn<QString>("databasestate");

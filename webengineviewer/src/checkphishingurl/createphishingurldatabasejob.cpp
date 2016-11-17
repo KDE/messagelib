@@ -324,6 +324,20 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
     deleteLater();
 }
 
+void UpdateDataBaseInfo::clear()
+{
+    additionList.clear();
+    removalList.clear();
+    minimumWaitDuration.clear();
+    threatType.clear();
+    threatEntryType.clear();
+    responseType.clear();
+    platformType.clear();
+    newClientState.clear();
+    sha256.clear();
+
+}
+
 bool UpdateDataBaseInfo::operator==(const UpdateDataBaseInfo &other) const {
     const bool val = (additionList == other.additionList) &&
             (removalList == other.removalList) &&

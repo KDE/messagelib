@@ -35,6 +35,8 @@ private Q_SLOTS:
     void shouldParseResult_data();
     void shouldParseResult();
     void initTestcase();
+
+    void shouldClearUpdateDataBaseInfo();
 };
 
 #endif // CREATEPHISHINGURLDATABASEJOBTEST_H

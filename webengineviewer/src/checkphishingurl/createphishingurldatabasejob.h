@@ -67,6 +67,7 @@ struct UpdateDataBaseInfo {
     QString platformType;
     QString newClientState;
     QString sha256;
+    void clear();
     bool operator==(const UpdateDataBaseInfo &other) const;
 };
 
