@@ -38,10 +38,7 @@ struct Addition {
     bool isValid() const {
         return !hashString.isEmpty() && (prefixSize > 0);
     }
-    bool operator==(const Addition &other) const {
-        return (hashString == other.hashString) &&
-                (prefixSize == other.prefixSize);
-    }
+    bool operator==(const Addition &other) const;
 
     QByteArray hashString;
     int prefixSize;
@@ -53,9 +50,7 @@ struct Removal {
 
     }
 
-    bool operator==(const Removal &other) const {
-        return (indexes == other.indexes);
-    }
+    bool operator==(const Removal &other) const;
     bool isValid() const {
         return !indexes.isEmpty();
     }

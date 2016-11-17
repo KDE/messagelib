@@ -99,7 +99,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     value.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
     value.sha256 = QStringLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
     value.additionList = additionList;
-    value.removalList = removalList;
+    //value.removalList = removalList;
 
     QTest::newRow("test1") << QStringLiteral("test1.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::ValidData << value;
 }

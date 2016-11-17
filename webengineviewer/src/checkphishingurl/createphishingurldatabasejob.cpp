@@ -338,8 +338,26 @@ bool UpdateDataBaseInfo::operator==(const UpdateDataBaseInfo &other) const {
         qDebug() << " platformType "<<platformType << " other.platformType "<< other.platformType;
         qDebug() << " newClientState "<<newClientState << " other.newClientState "<< other.newClientState;
         qDebug() << " threatType "<<threatType << " other.threatType "<< other.threatType;
-
-
+        qDebug() << " removalList" << removalList.count() << " other.removalList " << other.removalList.count();
+        qDebug() << " additionList" << additionList.count() << " other.additionList " << other.additionList.count();
     }
     return val;
+}
+
+bool Removal::operator==(const Removal &other) const {
+    bool value = (indexes == other.indexes);
+    if (!value) {
+        qDebug() << " indexes "<<indexes << " other.indexes " << other.indexes;
+    }
+    return value;
+}
+
+bool Addition::operator==(const Addition &other) const {
+    bool value = (hashString == other.hashString) &&
+            (prefixSize == other.prefixSize);
+    if (!value) {
+        qDebug() << "hashString " << hashString << " other.hashString "<<other.hashString;
+        qDebug() << "prefixSize " << prefixSize << " other.prefixSize "<<other.prefixSize;
+    }
+    return value;
 }
