@@ -82,7 +82,26 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     QTest::addColumn<WebEngineViewer::UpdateDataBaseInfo>("parseInfo");
     QTest::newRow("emptydocument") << QStringLiteral("empty.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::InvalidData << WebEngineViewer::UpdateDataBaseInfo();
     QTest::newRow("emptydocument2") << QStringLiteral("empty2.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::InvalidData << WebEngineViewer::UpdateDataBaseInfo();
-    //QTest::newRow("test1") << QStringLiteral("test1.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::ValidData << WebEngineViewer::UpdateDataBaseInfo();
+    WebEngineViewer::UpdateDataBaseInfo value;
+    QVector<WebEngineViewer::Addition> additionList;
+    WebEngineViewer::Addition tmp;
+    tmp.prefixSize = 4;
+    tmp.hashString = QByteArrayLiteral("rnGLoQ==");
+    additionList.append(tmp);
+    QVector<WebEngineViewer::Removal> removalList;
+    WebEngineViewer::Removal tmpRemoval;
+    removalList.append(tmpRemoval);
+    value.minimumWaitDuration = QStringLiteral("593.440s");
+    value.threatType = QStringLiteral("MALWARE");
+    value.threatEntryType = QStringLiteral("URL");
+    value.responseType = QStringLiteral("PARTIAL_UPDATE");
+    value.platformType = QStringLiteral("WINDOWS");
+    value.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
+    value.sha256 = QStringLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
+    value.additionList = additionList;
+    value.removalList = removalList;
+
+    QTest::newRow("test1") << QStringLiteral("test1.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::ValidData << value;
 }
 
 void CreatePhishingUrlDataBaseJobTest::shouldParseResult()

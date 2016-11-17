@@ -279,7 +279,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                         mapCheckSum.next();
                                         if (mapCheckSum.key() == QLatin1String("sha256")) {
                                             qDebug() << " sha256 value " << mapCheckSum.value().toString();
-                                            databaseInfo.sha256 = mapIt.value().toString();
+                                            databaseInfo.sha256 = mapCheckSum.value().toString();
                                         } else {
                                             qDebug() << "Invalid checksum key" << mapCheckSum.key();
                                         }
@@ -307,6 +307,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                     }
                 } else if (i.key() == QLatin1String("minimumWaitDuration")) {
                     qDebug() << " minimumWaitDuration " << i.value().toString();
+                    databaseInfo.minimumWaitDuration = i.value().toString();
                 } else {
                     qDebug() <<" map key unknown " << i.key();
                 }
@@ -316,4 +317,29 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
         }
     }
     deleteLater();
+}
+
+bool UpdateDataBaseInfo::operator==(const UpdateDataBaseInfo &other) const {
+    const bool val = (additionList == other.additionList) &&
+            (removalList == other.removalList) &&
+            (minimumWaitDuration == other.minimumWaitDuration) &&
+            (threatType == other.threatType) &&
+            (threatEntryType == other.threatEntryType) &&
+            (responseType == other.responseType) &&
+            (platformType == other.platformType) &&
+            (newClientState == other.newClientState) &&
+            (sha256 == other.sha256);
+    if (!val) {
+        qDebug() << " sha256 "<<sha256 << " other.sha256 "<< other.sha256;
+        qDebug() << " minimumWaitDuration "<<minimumWaitDuration << " other.minimumWaitDuration "<< other.minimumWaitDuration;
+        qDebug() << " threatType "<<threatType << " other.threatType "<< other.threatType;
+        qDebug() << " threatEntryType "<<threatEntryType << " other.threatEntryType "<< other.threatEntryType;
+        qDebug() << " responseType "<<responseType << " other.responseType "<< other.responseType;
+        qDebug() << " platformType "<<platformType << " other.platformType "<< other.platformType;
+        qDebug() << " newClientState "<<newClientState << " other.newClientState "<< other.newClientState;
+        qDebug() << " threatType "<<threatType << " other.threatType "<< other.threatType;
+
+
+    }
+    return val;
 }

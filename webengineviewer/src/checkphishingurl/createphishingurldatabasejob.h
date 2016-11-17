@@ -72,17 +72,7 @@ struct UpdateDataBaseInfo {
     QString platformType;
     QString newClientState;
     QString sha256;
-    bool operator==(const UpdateDataBaseInfo &other) const {
-        return (additionList == other.additionList) &&
-                (removalList == other.removalList) &&
-                (minimumWaitDuration == other.minimumWaitDuration) &&
-                (threatType == other.threatType) &&
-                (threatEntryType == other.threatEntryType) &&
-                (responseType == other.responseType) &&
-                (platformType == other.platformType) &&
-                (newClientState == other.newClientState) &&
-                (sha256 == other.sha256);
-    }
+    bool operator==(const UpdateDataBaseInfo &other) const;
 };
 
 /* https://developers.google.com/safe-browsing/v4/update-api */
