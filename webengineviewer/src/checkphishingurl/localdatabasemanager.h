@@ -24,6 +24,7 @@
 #include "webengineviewer_export.h"
 #include <QSqlDatabase>
 #include <QUrl>
+#include "createphishingurldatabasejob.h"
 class QSqlError;
 namespace WebEngineViewer
 {
@@ -45,13 +46,16 @@ public:
     void checkUrl(const QUrl &url);
 
     void start();
+
+    void closeDataBaseAndDeleteIt();
+
 Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
 private:
+    void slotDownloadFullDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     QSqlError initDb();
     bool initializeDataBase();
     bool createTable();
-    QString localDataBasePath() const;
     QSqlDatabase mDataBase;
     bool mDataBaseOk;
 };

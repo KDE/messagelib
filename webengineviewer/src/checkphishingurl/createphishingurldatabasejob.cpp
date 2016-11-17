@@ -365,6 +365,22 @@ bool Removal::operator==(const Removal &other) const
     return value;
 }
 
+bool Removal::isValid() const
+{
+    return !indexes.isEmpty();
+}
+
+Addition::Addition()
+    : prefixSize(0)
+{
+
+}
+
+bool Addition::isValid() const
+{
+    return !hashString.isEmpty() && (prefixSize > 0);
+}
+
 bool Addition::operator==(const Addition &other) const
 {
     bool value = (hashString == other.hashString) &&

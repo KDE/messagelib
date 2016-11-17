@@ -29,15 +29,8 @@ class QNetworkAccessManager;
 namespace WebEngineViewer
 {
 struct Addition {
-    Addition()
-        : prefixSize(0)
-    {
-
-    }
-    bool isValid() const
-    {
-        return !hashString.isEmpty() && (prefixSize > 0);
-    }
+    Addition();
+    bool isValid() const;
     bool operator==(const Addition &other) const;
 
     QByteArray hashString;
@@ -45,16 +38,8 @@ struct Addition {
 };
 
 struct Removal {
-    Removal()
-    {
-
-    }
-
     bool operator==(const Removal &other) const;
-    bool isValid() const
-    {
-        return !indexes.isEmpty();
-    }
+    bool isValid() const;
     QList<int> indexes;
 };
 
