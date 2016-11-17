@@ -165,7 +165,7 @@ void SignEncryptJob::process()
     } else {
         return;
     }
-
+    Q_ASSERT(proto);
     //d->resultContent = new KMime::Content;
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating signencrypt from:" << proto->name() << proto->displayName();
