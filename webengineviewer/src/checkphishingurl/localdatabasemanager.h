@@ -49,10 +49,12 @@ public:
 
     void closeDataBaseAndDeleteIt();
 
+
 Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
 
 protected:
+    void setDownloadProgress(bool downloadProgress);
     virtual void downloadFullDataBase();
     virtual void downloadPartialDataBase();
 
@@ -66,6 +68,7 @@ private:
     bool initializeDataBase();
     bool createTable();
     QSqlDatabase mDataBase;
+    QString mNewClientState;
     QTimer *mRegularCheckDataBaseTimer;
     bool mDataBaseOk;
     bool mDownloadProgress;

@@ -54,6 +54,7 @@ LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
       mDataBaseOk(false),
       mDownloadProgress(false)
 {
+    readConfig();
 }
 
 LocalDataBaseManager::~LocalDataBaseManager()
@@ -76,27 +77,30 @@ void LocalDataBaseManager::closeDataBaseAndDeleteIt()
 
 void LocalDataBaseManager::readConfig()
 {
-    //TODO
+    KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
+    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
+    mNewClientState = grp.readEntry(QStringLiteral("DataBaseState"));
 }
 
 void LocalDataBaseManager::saveConfig()
 {
+    KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
     //TODO
 }
 
 void LocalDataBaseManager::downloadPartialDataBase()
 {
-    mDownloadProgress = true;
+    setDownloadProgress(true);
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
-    job->setDataBaseState(QString()); //TODO
+    job->setDataBaseState(mNewClientState);
     connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadDataBaseFinished);
     job->start();
 }
 
 void LocalDataBaseManager::downloadFullDataBase()
 {
-    mDownloadProgress = true;
+    setDownloadProgress(true);
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase);
     connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadDataBaseFinished);
@@ -166,15 +170,21 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
         break;
     }
     if (mDataBaseOk) {
-        //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
-        Q_FOREACH(const Addition &add, infoDataBase.additionList) {
-            //qDebug() << " add.size" << add.prefixSize;
-            //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
-            const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
-            for (int i = 0; i < uncompressed.size();) {
-                QByteArray m = uncompressed.mid(i, add.prefixSize);
-                i += add.prefixSize;
-                //qDebug() << "m " << m << " m.size" << m.size();
+        if ((infoDataBase.responseType == QLatin1String("PARTIAL_UPDATE")) &&
+                (mNewClientState == infoDataBase.newClientState)) {
+            qDebug() << "No update necessary ";
+        } else {
+            //Clear database ?
+            //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
+            Q_FOREACH(const Addition &add, infoDataBase.additionList) {
+                //qDebug() << " add.size" << add.prefixSize;
+                //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
+                const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
+                for (int i = 0; i < uncompressed.size();) {
+                    QByteArray m = uncompressed.mid(i, add.prefixSize);
+                    i += add.prefixSize;
+                    //qDebug() << "m " << m << " m.size" << m.size();
+                }
             }
         }
     }
@@ -207,6 +217,11 @@ bool LocalDataBaseManager::createTable()
     QSqlQuery query(mDataBase);
     return query.exec(QStringLiteral("create table %1 (id int primary key, "
                               "hash varchar(32))").arg(tableName()));
+}
+
+void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
+{
+    mDownloadProgress = downloadProgress;
 }
 
 void LocalDataBaseManager::checkUrl(const QUrl &url)
