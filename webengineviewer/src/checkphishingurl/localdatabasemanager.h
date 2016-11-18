@@ -64,6 +64,7 @@ private:
     bool createTable();
     QSqlDatabase mDataBase;
     bool mDataBaseOk;
+    bool mDownloadProgress;
 };
 }
 

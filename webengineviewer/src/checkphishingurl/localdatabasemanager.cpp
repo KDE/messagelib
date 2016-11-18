@@ -49,7 +49,8 @@ inline QString sqlFileName() {
 
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent),
-      mDataBaseOk(false)
+      mDataBaseOk(false),
+      mDownloadProgress(false)
 {
 }
 
@@ -83,6 +84,7 @@ void LocalDataBaseManager::saveConfig()
 
 void LocalDataBaseManager::downloadPartialDataBase()
 {
+    mDownloadProgress = true;
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
     job->setDataBaseState(QString()); //TODO
@@ -92,6 +94,7 @@ void LocalDataBaseManager::downloadPartialDataBase()
 
 void LocalDataBaseManager::downloadFullDataBase()
 {
+    mDownloadProgress = true;
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase);
     connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadDataBaseFinished);
@@ -100,6 +103,9 @@ void LocalDataBaseManager::downloadFullDataBase()
 
 void LocalDataBaseManager::initialize()
 {
+    if (mDownloadProgress) {
+        return;
+    }
     if (!mDataBaseOk) {
         bool initDatabaseSuccess = initializeDataBase();
         if (initDatabaseSuccess) {
@@ -121,6 +127,7 @@ void LocalDataBaseManager::initialize()
 void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
                                                             WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
 {
+
     qDebug() << "LocalDataBaseManager::slotDownloadFullDataBaseFinished "<<status;
     switch(status) {
     case CreatePhishingUrlDataBaseJob::InvalidData:
@@ -153,6 +160,7 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
             }
         }
     }
+    mDownloadProgress = false;
 }
 
 LocalDataBaseManager *LocalDataBaseManager::self()
