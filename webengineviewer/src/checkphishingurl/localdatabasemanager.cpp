@@ -21,6 +21,9 @@
 #include "checkphishingurlfromlocaldatabasejob.h"
 #include "createphishingurldatabasejob.h"
 
+#include <KConfigGroup>
+#include <KSharedConfig>
+
 #include <QStandardPaths>
 #include <QSqlDatabase>
 #include <QSqlError>
@@ -78,6 +81,23 @@ void LocalDataBaseManager::saveConfig()
     //TODO
 }
 
+void LocalDataBaseManager::downloadPartialDataBase()
+{
+    WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+    job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
+    job->setDataBaseState(QString()); //TODO
+    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadFullDataBaseFinished);
+    job->start();
+}
+
+void LocalDataBaseManager::downloadFullDataBase()
+{
+    WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+    job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase);
+    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadFullDataBaseFinished);
+    job->start();
+}
+
 void LocalDataBaseManager::start()
 {
     if (!mDataBaseOk) {
@@ -85,12 +105,7 @@ void LocalDataBaseManager::start()
         if (initDatabaseSuccess) {
             if (!mDataBase.tables().contains(tableName())) {
                 if (createTable()) {
-                    //TODO download full database
-                    mDataBaseOk = true;
-                    WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
-                    job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase);
-                    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadFullDataBaseFinished);
-                    job->start();
+                    downloadFullDataBase();
                 } else {
                     qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to create Table";
                 }
@@ -110,26 +125,32 @@ void LocalDataBaseManager::slotDownloadFullDataBaseFinished(const WebEngineViewe
     switch(status) {
     case CreatePhishingUrlDataBaseJob::InvalidData:
         qCWarning(WEBENGINEVIEWER_LOG) << "Invalid Data.";
+        mDataBaseOk = false;
         break;
     case CreatePhishingUrlDataBaseJob::ValidData:
         qCWarning(WEBENGINEVIEWER_LOG) << "Valid Data.";
+        mDataBaseOk = true;
         break;
     case CreatePhishingUrlDataBaseJob::UnknownError:
         qCWarning(WEBENGINEVIEWER_LOG) << "Unknown data.";
+        mDataBaseOk = false;
         break;
     case CreatePhishingUrlDataBaseJob::BrokenNetwork:
         qCWarning(WEBENGINEVIEWER_LOG) << "Broken Networks.";
+        mDataBaseOk = false;
         break;
     }
-    //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
-    Q_FOREACH(const Addition &add, infoDataBase.additionList) {
-        //qDebug() << " add.size" << add.prefixSize;
-        //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
-        const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
-        for (int i = 0; i < uncompressed.size();) {
-            QByteArray m = uncompressed.mid(i, add.prefixSize);
-            i += add.prefixSize;
-            //qDebug() << "m " << m << " m.size" << m.size();
+    if (mDataBaseOk) {
+        //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
+        Q_FOREACH(const Addition &add, infoDataBase.additionList) {
+            //qDebug() << " add.size" << add.prefixSize;
+            //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
+            const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
+            for (int i = 0; i < uncompressed.size();) {
+                QByteArray m = uncompressed.mid(i, add.prefixSize);
+                i += add.prefixSize;
+                //qDebug() << "m " << m << " m.size" << m.size();
+            }
         }
     }
 }

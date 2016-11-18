@@ -51,8 +51,12 @@ public:
 
 Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
-private:
 
+protected:
+    virtual void downloadFullDataBase();
+
+    virtual void downloadPartialDataBase();
+private:
     void readConfig();
     void saveConfig();
 
