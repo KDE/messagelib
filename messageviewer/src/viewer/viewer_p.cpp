@@ -49,6 +49,7 @@
 #include <MimeMessagePart/FileHtmlWriter>
 #include "htmlwriter/teehtmlwriter.h"
 #endif
+#include <PimCommon/NetworkUtil>
 #include <unistd.h> // link()
 #include <errno.h>
 //KDE includes
@@ -1973,7 +1974,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
 
 void ViewerPrivate::checkPhishingUrl()
 {
-    if (MessageViewer::MessageViewerSettings::self()->checkPhishingUrl() && (mClickedUrl.scheme() != QLatin1String("mailto"))) {
+    if (!PimCommon::NetworkUtil::self()->lowBandwidth() && MessageViewer::MessageViewerSettings::self()->checkPhishingUrl() && (mClickedUrl.scheme() != QLatin1String("mailto"))) {
         WebEngineViewer::CheckPhishingUrlCache::UrlStatus status = WebEngineViewer::CheckPhishingUrlCache::self()->urlStatus(mClickedUrl);
         if (status == WebEngineViewer::CheckPhishingUrlCache::UrlOk) {
             executeRunner(mClickedUrl);
