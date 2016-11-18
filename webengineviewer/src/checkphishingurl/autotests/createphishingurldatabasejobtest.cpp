@@ -71,7 +71,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldClearUpdateDataBaseInfo()
     value.minimumWaitDuration = QStringLiteral("593.440s");
     value.threatType = QStringLiteral("MALWARE");
     value.threatEntryType = QStringLiteral("URL");
-    value.responseType = QStringLiteral("PARTIAL_UPDATE");
+    value.responseType = WebEngineViewer::UpdateDataBaseInfo::PartialUpdate;
     value.platformType = QStringLiteral("WINDOWS");
     value.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
     value.sha256 = QStringLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
@@ -132,7 +132,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     value.minimumWaitDuration = QStringLiteral("593.440s");
     value.threatType = QStringLiteral("MALWARE");
     value.threatEntryType = QStringLiteral("URL");
-    value.responseType = QStringLiteral("PARTIAL_UPDATE");
+    value.responseType = WebEngineViewer::UpdateDataBaseInfo::PartialUpdate;
     value.platformType = QStringLiteral("WINDOWS");
     value.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
     value.sha256 = QStringLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
@@ -153,7 +153,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     value.minimumWaitDuration = QStringLiteral("1786.932s");
     value.threatType = QStringLiteral("MALWARE");
     value.threatEntryType = QStringLiteral("URL");
-    value.responseType = QStringLiteral("FULL_UPDATE");
+    value.responseType = WebEngineViewer::UpdateDataBaseInfo::FullUpdate;
     value.platformType = QStringLiteral("WINDOWS");
     value.newClientState = QStringLiteral("Cg0IARAGGAEiAzAwMTABELmwARoCGAUmgN3G");
     value.sha256 = QStringLiteral("ANcYWR8Umuoir+uNs1AhfxqW0iXEPDkxN6Pp2QF8dSs=");

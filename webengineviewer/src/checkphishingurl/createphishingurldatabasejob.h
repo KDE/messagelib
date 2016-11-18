@@ -44,12 +44,24 @@ struct Removal {
 };
 
 struct UpdateDataBaseInfo {
+    UpdateDataBaseInfo()
+        : responseType(Unknown)
+    {
+
+    }
+
+    enum ResponseType {
+        Unknown = 0,
+        FullUpdate = 1,
+        PartialUpdate = 2
+    };
+
     QVector<Addition> additionList;
     QVector<Removal> removalList;
     QString minimumWaitDuration;
     QString threatType;
     QString threatEntryType;
-    QString responseType;
+    ResponseType responseType;
     QString platformType;
     QString newClientState;
     QString sha256;

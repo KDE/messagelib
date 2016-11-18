@@ -292,7 +292,15 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                 } else if (mapKey == QLatin1String("platformType")) {
                                     databaseInfo.platformType = mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("responseType")) {
-                                    databaseInfo.responseType = mapIt.value().toString();
+                                    const QString str = mapIt.value().toString();
+                                    if (str == QLatin1String("FULL_UPDATE")) {
+                                        databaseInfo.responseType = UpdateDataBaseInfo::FullUpdate;
+                                    } else if (str == QLatin1String("PARTIAL_UPDATE")) {
+                                        databaseInfo.responseType = UpdateDataBaseInfo::PartialUpdate;
+                                    } else {
+                                        qDebug() << " unknow responsetype " << str;
+                                        databaseInfo.responseType = UpdateDataBaseInfo::Unknown;
+                                    }
                                 } else if (mapKey == QLatin1String("threatEntryType")) {
                                     databaseInfo.threatEntryType = mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("threatType")) {
@@ -323,7 +331,7 @@ void UpdateDataBaseInfo::clear()
     minimumWaitDuration.clear();
     threatType.clear();
     threatEntryType.clear();
-    responseType.clear();
+    responseType = UpdateDataBaseInfo::Unknown;
     platformType.clear();
     newClientState.clear();
     sha256.clear();

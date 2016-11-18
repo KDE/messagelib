@@ -170,7 +170,7 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
         break;
     }
     if (mDataBaseOk) {
-        if ((infoDataBase.responseType == QLatin1String("PARTIAL_UPDATE")) &&
+        if ((infoDataBase.responseType == WebEngineViewer::UpdateDataBaseInfo::PartialUpdate) &&
                 (mNewClientState == infoDataBase.newClientState)) {
             qDebug() << "No update necessary ";
         } else {
