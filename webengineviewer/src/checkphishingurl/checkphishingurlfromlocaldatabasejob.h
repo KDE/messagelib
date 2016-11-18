@@ -45,8 +45,6 @@ public:
     void start();
     bool canStart() const;
 
-    QByteArray createHash();
-
 Q_SIGNALS:
     void finished(const QUrl &url, WebEngineViewer::CheckPhishingUrlFromLocalDataBaseJob::UrlStatus status);
 

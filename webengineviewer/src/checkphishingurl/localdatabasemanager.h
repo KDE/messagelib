@@ -70,7 +70,9 @@ private:
     void slotCheckDataBase();
 
     bool initializeDataBase();
+    QByteArray createHash();
     bool createTable();
+
     QSqlDatabase mDataBase;
     QString mNewClientState;
     QTimer *mRegularCheckDataBaseTimer;

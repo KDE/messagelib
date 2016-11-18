@@ -31,6 +31,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QTimer>
+#include <QCryptographicHash>
 
 using namespace WebEngineViewer;
 
@@ -275,3 +276,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
     //TODO
 }
 
+QByteArray LocalDataBaseManager::createHash()
+{
+    return QCryptographicHash::hash(QByteArray() /*TODO use url*/, QCryptographicHash::Sha256);
+}

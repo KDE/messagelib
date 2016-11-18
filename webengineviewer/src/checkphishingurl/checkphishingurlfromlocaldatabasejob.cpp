@@ -45,9 +45,8 @@ void CheckPhishingUrlFromLocalDataBaseJob::start()
         Q_EMIT finished(mUrl, InvalidUrl);
         deleteLater();
     } else {
-        QByteArray hash = createHash();
         connect(LocalDataBaseManager::self(), &LocalDataBaseManager::checkUrlFinished, this, &CheckPhishingUrlFromLocalDataBaseJob::slotCheckUrlFinished);
-        //LocalDataBaseManager::self()->checkUrl(/*TODO*/);
+        LocalDataBaseManager::self()->checkUrl(mUrl);
     }
 }
 
@@ -73,9 +72,4 @@ void CheckPhishingUrlFromLocalDataBaseJob::slotCheckUrlFinished(const QUrl &url,
 bool CheckPhishingUrlFromLocalDataBaseJob::canStart() const
 {
     return mUrl.isValid();
-}
-
-QByteArray CheckPhishingUrlFromLocalDataBaseJob::createHash()
-{
-    return QCryptographicHash::hash(QByteArray() /*TODO use url*/, QCryptographicHash::Sha256);
 }
