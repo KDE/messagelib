@@ -174,8 +174,13 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
                 (mNewClientState == infoDataBase.newClientState)) {
             qDebug() << "No update necessary ";
         } else {
-            //Clear database ?
             //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
+            if (infoDataBase.responseType == WebEngineViewer::UpdateDataBaseInfo::FullUpdate) {
+                //TODO Clear database ?
+            } else if (infoDataBase.responseType == WebEngineViewer::UpdateDataBaseInfo::Unknown) {
+                // ?????
+                return;
+            }
             Q_FOREACH(const Addition &add, infoDataBase.additionList) {
                 //qDebug() << " add.size" << add.prefixSize;
                 //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
