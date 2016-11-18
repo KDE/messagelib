@@ -52,6 +52,10 @@ public:
 Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
 private:
+
+    void readConfig();
+    void saveConfig();
+
     void slotDownloadFullDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     QSqlError initDb();
     bool initializeDataBase();

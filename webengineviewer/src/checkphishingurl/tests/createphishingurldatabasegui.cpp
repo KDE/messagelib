@@ -60,12 +60,17 @@ CreatePhisingUrlDataBaseGui::~CreatePhisingUrlDataBaseGui()
 
 }
 
+void CreatePhisingUrlDataBaseGui::clear()
+{
+    mJson->clear();
+    mResult->clear();
+}
+
 void CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase()
 {
     const QString newValue = QInputDialog::getText(this, QStringLiteral("Define database newClientState"), QStringLiteral("newClientState:"));
     if (!newValue.isEmpty()) {
-        mJson->clear();
-        mResult->clear();
+        clear();
         WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
         job->setUseCompactJson(false);
         job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
@@ -78,8 +83,7 @@ void CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase()
 
 void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 {
-    mJson->clear();
-    mResult->clear();
+    clear();
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setUseCompactJson(false);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);

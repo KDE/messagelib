@@ -68,6 +68,16 @@ void LocalDataBaseManager::closeDataBaseAndDeleteIt()
     }
 }
 
+void LocalDataBaseManager::readConfig()
+{
+    //TODO
+}
+
+void LocalDataBaseManager::saveConfig()
+{
+    //TODO
+}
+
 void LocalDataBaseManager::start()
 {
     if (!mDataBaseOk) {
