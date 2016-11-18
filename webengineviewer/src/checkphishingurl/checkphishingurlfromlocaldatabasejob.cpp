@@ -19,6 +19,8 @@
 
 #include "checkphishingurlfromlocaldatabasejob.h"
 #include <qcryptographichash.h>
+#include "localdatabasemanager.h"
+
 using namespace WebEngineViewer;
 
 CheckPhishingUrlFromLocalDataBaseJob::CheckPhishingUrlFromLocalDataBaseJob(QObject *parent)
@@ -44,10 +46,29 @@ void CheckPhishingUrlFromLocalDataBaseJob::start()
         deleteLater();
     } else {
         QByteArray hash = createHash();
-        //TODO
-        //TODO check in local database
+        connect(LocalDataBaseManager::self(), &LocalDataBaseManager::checkUrlFinished, this, &CheckPhishingUrlFromLocalDataBaseJob::slotCheckUrlFinished);
+        //LocalDataBaseManager::self()->checkUrl(/*TODO*/);
     }
 }
+
+void CheckPhishingUrlFromLocalDataBaseJob::slotCheckUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status)
+{
+    CheckPhishingUrlFromLocalDataBaseJob::UrlStatus currentStatus(CheckPhishingUrlFromLocalDataBaseJob::Unknown);
+    switch(status) {
+    case  WebEngineViewer::LocalDataBaseManager::Unknown:
+        break;
+    case  WebEngineViewer::LocalDataBaseManager::UrlOk:
+        currentStatus = CheckPhishingUrlFromLocalDataBaseJob::Ok;
+        break;
+    case  WebEngineViewer::LocalDataBaseManager::Malware:
+        currentStatus = CheckPhishingUrlFromLocalDataBaseJob::MalWare;
+        break;
+    }
+
+    Q_EMIT finished(url,  currentStatus);
+    deleteLater();
+}
+
 
 bool CheckPhishingUrlFromLocalDataBaseJob::canStart() const
 {

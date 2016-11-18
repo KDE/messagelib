@@ -22,8 +22,8 @@
 
 #include <QObject>
 #include "webengineviewer_export.h"
+#include <WebEngineViewer/LocalDataBaseManager>
 #include <QUrl>
-
 namespace WebEngineViewer
 {
 class WEBENGINEVIEWER_EXPORT CheckPhishingUrlFromLocalDataBaseJob : public QObject
@@ -51,6 +51,7 @@ Q_SIGNALS:
     void finished(const QUrl &url, WebEngineViewer::CheckPhishingUrlFromLocalDataBaseJob::UrlStatus status);
 
 private:
+    void slotCheckUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
     QUrl mUrl;
 };
 }
