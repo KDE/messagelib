@@ -20,3 +20,11 @@ ecm_add_test(createphishingurldatabasejobtest.cpp ../checkphishingurlutil.cpp ..
     NAME_PREFIX "webengineview-checkphishingurl-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
+
+
+
+ecm_add_test(localdatabasemanagertest.cpp ../checkphishingurlutil.cpp ../localdatabasemanager.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME localdatabasemanagertest
+    NAME_PREFIX "webengineview-checkphishingurl-"
+    LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer Qt5::Sql
+    )
