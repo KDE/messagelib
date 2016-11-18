@@ -86,7 +86,7 @@ void LocalDataBaseManager::downloadPartialDataBase()
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
     job->setDataBaseState(QString()); //TODO
-    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadFullDataBaseFinished);
+    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadDataBaseFinished);
     job->start();
 }
 
@@ -94,11 +94,11 @@ void LocalDataBaseManager::downloadFullDataBase()
 {
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase);
-    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadFullDataBaseFinished);
+    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadDataBaseFinished);
     job->start();
 }
 
-void LocalDataBaseManager::start()
+void LocalDataBaseManager::initialize()
 {
     if (!mDataBaseOk) {
         bool initDatabaseSuccess = initializeDataBase();
@@ -118,7 +118,7 @@ void LocalDataBaseManager::start()
     }
 }
 
-void LocalDataBaseManager::slotDownloadFullDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
+void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
                                                             WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
 {
     qDebug() << "LocalDataBaseManager::slotDownloadFullDataBaseFinished "<<status;
@@ -162,9 +162,11 @@ LocalDataBaseManager *LocalDataBaseManager::self()
 
 bool LocalDataBaseManager::initializeDataBase()
 {
-    const QSqlError err = initDb();
-    if (err.type() != QSqlError::NoError) {
-        qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open DataBase: " << err.text();
+    mDataBase = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
+    QDir().mkpath(localDataBasePath());
+    mDataBase.setDatabaseName(localDataBasePath() + sqlFileName());
+    if (!mDataBase.open()) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open DataBase: " << mDataBase.lastError().text();
         return false;
     }
     return true;
@@ -175,17 +177,6 @@ bool LocalDataBaseManager::createTable()
     QSqlQuery query(mDataBase);
     return query.exec(QStringLiteral("create table %1 (id int primary key, "
                               "hash varchar(32))").arg(tableName()));
-}
-
-QSqlError LocalDataBaseManager::initDb()
-{
-    mDataBase = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
-    QDir().mkpath(localDataBasePath());
-    mDataBase.setDatabaseName(localDataBasePath() + sqlFileName());
-    if (!mDataBase.open()) {
-        return mDataBase.lastError();
-    }
-    return QSqlError();
 }
 
 void LocalDataBaseManager::checkUrl(const QUrl &url)

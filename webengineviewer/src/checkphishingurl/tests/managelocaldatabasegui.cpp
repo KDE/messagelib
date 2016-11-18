@@ -51,7 +51,7 @@ ManageLocalDataBaseGui::~ManageLocalDataBaseGui()
 
 void ManageLocalDataBaseGui::slotDownloadFullDatabase()
 {
-    WebEngineViewer::LocalDataBaseManager::self()->start();
+    WebEngineViewer::LocalDataBaseManager::self()->initialize();
 }
 
 
