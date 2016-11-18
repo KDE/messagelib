@@ -18,6 +18,7 @@
 */
 
 #include "localdatabasemanagertest.h"
+#include "../localdatabasemanager.h"
 
 #include <QTest>
 
