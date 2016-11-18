@@ -141,7 +141,7 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     return baPostData;
 }
 
-void CreatePhishingUrlDataBaseJob::setDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::DataBaseDownload type)
+void CreatePhishingUrlDataBaseJob::setDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::DataBaseDownloadType type)
 {
     mDataBaseDownloadNeeded = type;
 }

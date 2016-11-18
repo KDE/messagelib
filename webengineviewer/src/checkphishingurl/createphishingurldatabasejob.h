@@ -74,7 +74,7 @@ class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
     Q_OBJECT
 public:
-    enum DataBaseDownload {
+    enum DataBaseDownloadType {
         FullDataBase = 0,
         UpdateDataBase = 1
     };
@@ -93,7 +93,7 @@ public:
 
     void setDataBaseState(const QString &value);
 
-    void setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload type);
+    void setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType type);
 
     QByteArray jsonRequest() const;
 
@@ -113,12 +113,12 @@ private:
     QVector<Addition> parseAdditions(const QVariantList &lst);
 
     QString mDataBaseState;
-    DataBaseDownload mDataBaseDownloadNeeded;
+    DataBaseDownloadType mDataBaseDownloadNeeded;
     bool mUseCompactJson;
     QNetworkAccessManager *mNetworkAccessManager;
 };
 }
-Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownload)
+Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType)
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)
 Q_DECLARE_METATYPE(WebEngineViewer::UpdateDataBaseInfo)
 Q_DECLARE_TYPEINFO(WebEngineViewer::Addition, Q_MOVABLE_TYPE);
