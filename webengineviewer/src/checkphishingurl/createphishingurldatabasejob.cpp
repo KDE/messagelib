@@ -24,7 +24,7 @@
 
 #include <QNetworkConfigurationManager>
 #include <QJsonDocument>
-#define DEBUG_JSON_REQUEST 1
+
 using namespace WebEngineViewer;
 
 CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)
