@@ -232,7 +232,7 @@ void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
     if (mDataBaseOk) {
-
+        //TODO check in DataBase
     } else {
         Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
     }
