@@ -28,10 +28,6 @@ class LocalDataBaseManagerTest : public QObject
 public:
     explicit LocalDataBaseManagerTest(QObject *parent = Q_NULLPTR);
     ~LocalDataBaseManagerTest();
-
-signals:
-
-public slots:
 };
 
 #endif // LOCALDATABASEMANAGERTEST_H

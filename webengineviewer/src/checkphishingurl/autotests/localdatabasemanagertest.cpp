@@ -31,10 +31,16 @@ public:
 
     }
 
+    void setDownloadInfoSendByServer(const QString &data) {
+        mDownloadInfoSendByServer = data;
+    }
+
     // LocalDataBaseManager interface
 protected:
     void downloadFullDataBase() Q_DECL_OVERRIDE;
     void downloadPartialDataBase() Q_DECL_OVERRIDE;
+private:
+    QString mDownloadInfoSendByServer;
 };
 
 void TestLocalDataBaseManager::downloadFullDataBase()

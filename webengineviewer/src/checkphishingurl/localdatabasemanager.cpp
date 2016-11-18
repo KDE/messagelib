@@ -191,11 +191,18 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
             }
         }
     }
+    checkDataBase();
     mDownloadProgress = false;
     //We finish to download restart timer if necessary
     if (mRegularCheckDataBaseTimer && !mRegularCheckDataBaseTimer->isActive()) {
         mRegularCheckDataBaseTimer->start();
     }
+}
+
+void LocalDataBaseManager::checkDataBase()
+{
+    //TODO get all hash and use sha256
+    //TODO
 }
 
 void LocalDataBaseManager::removeElementFromDataBase(const QVector<Removal> &removalList)

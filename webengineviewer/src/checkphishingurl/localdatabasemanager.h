@@ -71,6 +71,7 @@ private:
 
     bool initializeDataBase();
     QByteArray createHash();
+    void checkDataBase();
     bool createTable();
 
     QSqlDatabase mDataBase;

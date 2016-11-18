@@ -64,7 +64,7 @@ void CheckPhishingUrlFromLocalDataBaseJob::slotCheckUrlFinished(const QUrl &url,
         break;
     }
 
-    Q_EMIT finished(url,  currentStatus);
+    Q_EMIT finished(url, currentStatus);
     deleteLater();
 }
 
