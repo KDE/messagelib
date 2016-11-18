@@ -199,7 +199,9 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
 void LocalDataBaseManager::removeElementFromDataBase(const QVector<Removal> &removalList)
 {
     Q_FOREACH(const Removal &removeItem, removalList) {
-        //TODO
+        Q_FOREACH (int id, removeItem.indexes) {
+            //TODO
+        }
     }
 }
 

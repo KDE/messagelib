@@ -350,16 +350,16 @@ bool UpdateDataBaseInfo::operator==(const UpdateDataBaseInfo &other) const
                      (newClientState == other.newClientState) &&
                      (sha256 == other.sha256);
     if (!val) {
-        qDebug() << " sha256 " << sha256 << " other.sha256 " << other.sha256;
-        qDebug() << " minimumWaitDuration " << minimumWaitDuration << " other.minimumWaitDuration " << other.minimumWaitDuration;
-        qDebug() << " threatType " << threatType << " other.threatType " << other.threatType;
-        qDebug() << " threatEntryType " << threatEntryType << " other.threatEntryType " << other.threatEntryType;
-        qDebug() << " responseType " << responseType << " other.responseType " << other.responseType;
-        qDebug() << " platformType " << platformType << " other.platformType " << other.platformType;
-        qDebug() << " newClientState " << newClientState << " other.newClientState " << other.newClientState;
-        qDebug() << " threatType " << threatType << " other.threatType " << other.threatType;
-        qDebug() << " removalList" << removalList.count() << " other.removalList " << other.removalList.count();
-        qDebug() << " additionList" << additionList.count() << " other.additionList " << other.additionList.count();
+        qCDebug(WEBENGINEVIEWER_LOG) << " sha256 " << sha256 << " other.sha256 " << other.sha256;
+        qCDebug(WEBENGINEVIEWER_LOG) << " minimumWaitDuration " << minimumWaitDuration << " other.minimumWaitDuration " << other.minimumWaitDuration;
+        qCDebug(WEBENGINEVIEWER_LOG) << " threatType " << threatType << " other.threatType " << other.threatType;
+        qCDebug(WEBENGINEVIEWER_LOG) << " threatEntryType " << threatEntryType << " other.threatEntryType " << other.threatEntryType;
+        qCDebug(WEBENGINEVIEWER_LOG) << " responseType " << responseType << " other.responseType " << other.responseType;
+        qCDebug(WEBENGINEVIEWER_LOG) << " platformType " << platformType << " other.platformType " << other.platformType;
+        qCDebug(WEBENGINEVIEWER_LOG) << " newClientState " << newClientState << " other.newClientState " << other.newClientState;
+        qCDebug(WEBENGINEVIEWER_LOG) << " threatType " << threatType << " other.threatType " << other.threatType;
+        qCDebug(WEBENGINEVIEWER_LOG) << " removalList" << removalList.count() << " other.removalList " << other.removalList.count();
+        qCDebug(WEBENGINEVIEWER_LOG) << " additionList" << additionList.count() << " other.additionList " << other.additionList.count();
     }
     return val;
 }
@@ -368,7 +368,7 @@ bool Removal::operator==(const Removal &other) const
 {
     bool value = (indexes == other.indexes);
     if (!value) {
-        qDebug() << " indexes " << indexes << " other.indexes " << other.indexes;
+        qCDebug(WEBENGINEVIEWER_LOG) << " indexes " << indexes << " other.indexes " << other.indexes;
     }
     return value;
 }
@@ -394,8 +394,8 @@ bool Addition::operator==(const Addition &other) const
     bool value = (hashString == other.hashString) &&
                  (prefixSize == other.prefixSize);
     if (!value) {
-        qDebug() << "hashString " << hashString << " other.hashString " << other.hashString;
-        qDebug() << "prefixSize " << prefixSize << " other.prefixSize " << other.prefixSize;
+        qCDebug(WEBENGINEVIEWER_LOG) << "hashString " << hashString << " other.hashString " << other.hashString;
+        qCDebug(WEBENGINEVIEWER_LOG) << "prefixSize " << prefixSize << " other.prefixSize " << other.prefixSize;
     }
     return value;
 }

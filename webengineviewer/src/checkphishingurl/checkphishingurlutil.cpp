@@ -18,8 +18,8 @@
 */
 
 #include "checkphishingurlutil.h"
-
-QString WebEngineViewer::CheckPhishingUrlUtil::apiKey()
+using namespace WebEngineViewer;
+QString CheckPhishingUrlUtil::apiKey()
 {
     return QStringLiteral("AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo");
 }
