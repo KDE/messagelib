@@ -39,6 +39,9 @@ inline QString tableName() {
 inline QString localDataBasePath() {
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl/");
 }
+inline QString sqlFileName() {
+    return QStringLiteral("/malwaredb.sql");
+}
 }
 
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
@@ -58,7 +61,7 @@ void LocalDataBaseManager::closeDataBaseAndDeleteIt()
 {
     if (mDataBaseOk) {
         mDataBase.close();
-        QFile f(localDataBasePath() + QStringLiteral("/malwaredb.sql"));
+        QFile f(localDataBasePath() + sqlFileName());
         if (!f.remove()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "impossible to remove local database file";
         }
@@ -147,7 +150,7 @@ QSqlError LocalDataBaseManager::initDb()
 {
     mDataBase = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
     QDir().mkpath(localDataBasePath());
-    mDataBase.setDatabaseName(localDataBasePath() + QStringLiteral("/malwaredb.sql"));
+    mDataBase.setDatabaseName(localDataBasePath() + sqlFileName());
     if (!mDataBase.open()) {
         return mDataBase.lastError();
     }
