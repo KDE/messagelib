@@ -30,6 +30,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QDir>
+#include <QTimer>
 
 using namespace WebEngineViewer;
 
@@ -49,6 +50,7 @@ inline QString sqlFileName() {
 
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent),
+      mRegularCheckDataBaseTimer(Q_NULLPTR),
       mDataBaseOk(false),
       mDownloadProgress(false)
 {
@@ -122,6 +124,22 @@ void LocalDataBaseManager::initialize()
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized.";
     }
+    if (mDataBaseOk) {
+        if (!mRegularCheckDataBaseTimer) {
+            mRegularCheckDataBaseTimer = new QTimer(this);
+            mRegularCheckDataBaseTimer->setSingleShot(true);
+            mRegularCheckDataBaseTimer->setInterval(60*1000*60*5); //Each 5 hours //Perhaps improve it.
+            connect(mRegularCheckDataBaseTimer, &QTimer::timeout, this, &LocalDataBaseManager::slotCheckDataBase);
+            mRegularCheckDataBaseTimer->start();
+        }
+    }
+}
+
+void LocalDataBaseManager::slotCheckDataBase()
+{
+    if (mDataBaseOk && !mDownloadProgress) {
+        downloadPartialDataBase();
+    }
 }
 
 void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
@@ -161,6 +179,10 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
         }
     }
     mDownloadProgress = false;
+    //We finish to download restart timer if necessary
+    if (mRegularCheckDataBaseTimer && !mRegularCheckDataBaseTimer->isActive()) {
+        mRegularCheckDataBaseTimer->start();
+    }
 }
 
 LocalDataBaseManager *LocalDataBaseManager::self()
