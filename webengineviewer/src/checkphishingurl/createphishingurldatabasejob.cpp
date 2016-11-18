@@ -165,6 +165,8 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
                 const QString keyStr = mapIt.key();
                 if (keyStr == QLatin1String("compressionType")) {
                     //TODO ?
+                } else if (keyStr == QLatin1String("riceHashes")) {
+                    qDebug() << " CreatePhishingUrlDataBaseJob::parseAdditions need to implement riceHashes ";
                 } else if (keyStr == QLatin1String("rawHashes")) {
                     Addition tmp;
                     QMapIterator<QString, QVariant> rawHashesIt(mapIt.value().toMap());
@@ -212,6 +214,9 @@ QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList 
                 const QString keyStr = mapIt.key();
                 if (keyStr == QLatin1String("compressionType")) {
                     //Add ??
+                } else if (keyStr == QLatin1String("riceIndices")) {
+                    //TODO implement it.
+                    qDebug() << " CreatePhishingUrlDataBaseJob::parseRemovals need to implement riceindices ";
                 } else if (keyStr == QLatin1String("rawIndices")) {
                     const QVariantMap map = mapIt.value().toMap();
                     QMapIterator<QString, QVariant> rawIndicesIt(map);
