@@ -175,21 +175,17 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
             qDebug() << "No update necessary ";
         } else {
             //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
-            if (infoDataBase.responseType == WebEngineViewer::UpdateDataBaseInfo::FullUpdate) {
-                //TODO Clear database ?
-            } else if (infoDataBase.responseType == WebEngineViewer::UpdateDataBaseInfo::Unknown) {
-                // ?????
+            switch(infoDataBase.responseType) {
+            case WebEngineViewer::UpdateDataBaseInfo::FullUpdate:
+                fullUpdateDataBase(infoDataBase);
+                break;
+            case WebEngineViewer::UpdateDataBaseInfo::PartialUpdate:
+                partialUpdateDataBase(infoDataBase);
+                break;
+            case WebEngineViewer::UpdateDataBaseInfo::Unknown:
+                //Signal it ?
                 return;
-            }
-            Q_FOREACH(const Addition &add, infoDataBase.additionList) {
-                //qDebug() << " add.size" << add.prefixSize;
-                //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
-                const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
-                for (int i = 0; i < uncompressed.size();) {
-                    QByteArray m = uncompressed.mid(i, add.prefixSize);
-                    i += add.prefixSize;
-                    //qDebug() << "m " << m << " m.size" << m.size();
-                }
+                break;
             }
         }
     }
@@ -198,6 +194,39 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
     if (mRegularCheckDataBaseTimer && !mRegularCheckDataBaseTimer->isActive()) {
         mRegularCheckDataBaseTimer->start();
     }
+}
+
+void LocalDataBaseManager::removeElementFromDataBase(const QVector<Removal> &removalList)
+{
+    Q_FOREACH(const Removal &removeItem, removalList) {
+        //TODO
+    }
+}
+
+void LocalDataBaseManager::addElementToDataBase(const QVector<Addition> &additionList)
+{
+    Q_FOREACH(const Addition &add, additionList) {
+        //qDebug() << " add.size" << add.prefixSize;
+        //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
+        const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
+        for (int i = 0; i < uncompressed.size();) {
+            const QByteArray m = uncompressed.mid(i, add.prefixSize);
+            i += add.prefixSize;
+            //qDebug() << "m " << m << " m.size" << m.size();
+        }
+    }
+}
+
+void LocalDataBaseManager::fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
+{
+    //Clear DataBase
+    addElementToDataBase(infoDataBase.additionList);
+}
+
+void LocalDataBaseManager::partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
+{
+    removeElementFromDataBase(infoDataBase.removalList);
+    addElementToDataBase(infoDataBase.additionList);
 }
 
 LocalDataBaseManager *LocalDataBaseManager::self()

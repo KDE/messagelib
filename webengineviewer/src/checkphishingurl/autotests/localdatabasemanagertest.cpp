@@ -22,6 +22,29 @@
 
 #include <QTest>
 
+class TestLocalDataBaseManager : public WebEngineViewer::LocalDataBaseManager
+{
+public:
+    TestLocalDataBaseManager(QObject *parent)
+        : WebEngineViewer::LocalDataBaseManager(parent)
+    {
+
+    }
+
+    // LocalDataBaseManager interface
+protected:
+    void downloadFullDataBase() Q_DECL_OVERRIDE;
+    void downloadPartialDataBase() Q_DECL_OVERRIDE;
+};
+
+void TestLocalDataBaseManager::downloadFullDataBase()
+{
+}
+
+void TestLocalDataBaseManager::downloadPartialDataBase()
+{
+}
+
 LocalDataBaseManagerTest::LocalDataBaseManagerTest(QObject *parent)
     : QObject(parent)
 {

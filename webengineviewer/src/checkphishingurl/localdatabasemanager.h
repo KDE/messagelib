@@ -62,7 +62,11 @@ private:
     void readConfig();
     void saveConfig();
 
+    void fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
+    void partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
+    void addElementToDataBase(const QVector<Addition> &additionList);
+    void removeElementFromDataBase(const QVector<Removal> &removalList);
     void slotCheckDataBase();
 
     bool initializeDataBase();
