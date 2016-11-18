@@ -43,6 +43,8 @@ void CheckPhishingUrlFromLocalDataBaseJob::start()
         Q_EMIT finished(mUrl, InvalidUrl);
         deleteLater();
     } else {
+        QByteArray hash = createHash();
+        //TODO
         //TODO check in local database
     }
 }

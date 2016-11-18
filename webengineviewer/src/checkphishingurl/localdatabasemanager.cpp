@@ -85,7 +85,8 @@ void LocalDataBaseManager::readConfig()
 void LocalDataBaseManager::saveConfig()
 {
     KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
-    //TODO
+    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
+    grp.writeEntry(QStringLiteral("DataBaseState"), mNewClientState);
 }
 
 void LocalDataBaseManager::downloadPartialDataBase()
@@ -223,12 +224,16 @@ void LocalDataBaseManager::fullUpdateDataBase(const WebEngineViewer::UpdateDataB
 {
     //Clear DataBase
     addElementToDataBase(infoDataBase.additionList);
+    mNewClientState = infoDataBase.newClientState;
+    saveConfig();
 }
 
 void LocalDataBaseManager::partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
     removeElementFromDataBase(infoDataBase.removalList);
     addElementToDataBase(infoDataBase.additionList);
+    mNewClientState = infoDataBase.newClientState;
+    saveConfig();
 }
 
 LocalDataBaseManager *LocalDataBaseManager::self()
