@@ -37,6 +37,7 @@ set(libwebengineviewer_checkphishingurl_SRCS
    checkphishingurl/checkphishingurlfromlocaldatabasejob.cpp
    checkphishingurl/localdatabasemanager.cpp
    checkphishingurl/checkphishingurlutil.cpp
+   checkphishingurl/searchfullhashjob.cpp
    )
 
 set(libwebengineviewer_interceptor_SRCS
@@ -153,6 +154,7 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_checkurl_HEADERS
     CreatePhishingUrlDataBaseJob
     CheckPhishingUrlFromLocalDataBaseJob
     LocalDataBaseManager
+    SearchFullHashJob
     REQUIRED_HEADERS WebEngineViewer_webengine_checkurl_HEADERS
     PREFIX WebEngineViewer
     RELATIVE checkphishingurl
