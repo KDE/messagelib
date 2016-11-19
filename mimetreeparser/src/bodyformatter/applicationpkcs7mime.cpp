@@ -99,7 +99,7 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
 
         auto _mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(part.objectTreeParser(),
                                              node->decodedText(), smimeCrypto,
-                                             NodeHelper::fromAsString(node), node));
+                                             part.nodeHelper()->fromAsString(node), node));
         mp = _mp;
         _mp->setIsEncrypted(true);
         _mp->setDecryptMessage(part.source()->decryptMessage());
@@ -150,7 +150,7 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
         const QByteArray signaturetext = signTestNode->decodedContent();
         auto _mp = SignedMessagePart::Ptr(new SignedMessagePart(part.objectTreeParser(),
                                           aCodec->toUnicode(signaturetext), smimeCrypto,
-                                          NodeHelper::fromAsString(node), signTestNode));
+                                          part.nodeHelper()->fromAsString(node), signTestNode));
         mp = _mp;
         //mp->setDecryptMessage(part.source()->decryptMessage());
         PartMetaData *messagePart(mp->partMetaData());

@@ -222,5 +222,54 @@ void NodeHelperTest::testCreateTempDir()
     QVERIFY(!QDir(path).exists());
 }
 
+void NodeHelperTest::testFromAsString()
+{
+    const QString tlSender = QStringLiteral("Foo <foo@example.com>");
+    const QString encSender = QStringLiteral("Bar <bar@example.com>");
+
+    NodeHelper helper;
+
+    // msg (KMime::Message)
+    //  |- subNode
+    //  |- encNode (KMime::Message)
+    //      |- encSubNode
+    //
+    // subNode
+    //  |- subExtra
+    //
+    // encSubNode
+    //  |- encSubExtra
+
+    KMime::Message msg;
+    msg.from(true)->fromUnicodeString(tlSender, "UTF-8");
+    auto node = msg.topLevel();
+    auto subNode = new KMime::Content();
+    auto subExtra = new KMime::Content();
+
+    // Encapsulated message
+    KMime::Message *encMsg = new KMime::Message;
+    encMsg->from(true)->fromUnicodeString(encSender, "UTF-8");
+    auto encNode = encMsg->topLevel();
+    auto encSubNode = new KMime::Content();
+    auto encSubExtra = new KMime::Content();
+
+    node->addContent(subNode);
+    node->addContent(encMsg);
+    encNode->addContent(encSubNode);
+
+    helper.attachExtraContent(subNode, subExtra);
+    helper.attachExtraContent(encSubNode, encSubExtra);
+
+    QCOMPARE(helper.fromAsString(node), tlSender);
+    QCOMPARE(helper.fromAsString(subNode), tlSender);
+    QCOMPARE(helper.fromAsString(subExtra), tlSender);
+    QEXPECT_FAIL("", "Returning sender of encapsulated message is not yet implemented", Continue);
+    QCOMPARE(helper.fromAsString(encNode), encSender);
+    QEXPECT_FAIL("", "Returning sender of encapsulated message is not yet implemented", Continue);
+    QCOMPARE(helper.fromAsString(encSubNode), encSender);
+    QEXPECT_FAIL("", "Returning sender of encapsulated message is not yet implemented", Continue);
+    QCOMPARE(helper.fromAsString(encSubExtra), encSender);
+}
+
 QTEST_GUILESS_MAIN(NodeHelperTest)
 

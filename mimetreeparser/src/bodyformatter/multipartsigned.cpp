@@ -101,7 +101,7 @@ Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface:
 
     SignedMessagePart::Ptr mp(new SignedMessagePart(part.objectTreeParser(),
                               aCodec->toUnicode(cleartext), protocol,
-                              NodeHelper::fromAsString(node), signature));
+                              part.nodeHelper()->fromAsString(node), signature));
     PartMetaData *messagePart(mp->partMetaData());
 
     if (protocol) {

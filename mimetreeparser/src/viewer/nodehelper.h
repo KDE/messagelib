@@ -210,7 +210,7 @@ public:
      */
     static QStringList supportedEncodings(bool usAscii);   //TODO(Andras) move to a utility class?
 
-    static QString fromAsString(KMime::Content *node);
+    QString fromAsString(KMime::Content *node) const;
 
     KMime::Content *decryptedNodeForContent(KMime::Content *content) const;
 

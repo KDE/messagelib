@@ -38,6 +38,7 @@ private Q_SLOTS:
     void testLocalFiles();
     void testHREF();
     void testCreateTempDir();
+    void testFromAsString();
 };
 
 }

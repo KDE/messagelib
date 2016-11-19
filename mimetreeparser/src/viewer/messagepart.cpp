@@ -245,7 +245,7 @@ bool TextMessagePart::decryptMessage() const
 void TextMessagePart::parseContent()
 {
     const auto aCodec = mOtp->codecFor(mNode);
-    const QString &fromAddress = NodeHelper::fromAsString(mNode);
+    const QString &fromAddress = mOtp->nodeHelper()->fromAsString(mNode);
     mSignatureState  = KMMsgNotSigned;
     mEncryptionState = KMMsgNotEncrypted;
     const auto blocks = prepareMessageForDecryption(mNode->decodedContent());

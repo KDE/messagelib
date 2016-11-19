@@ -793,12 +793,20 @@ QStringList NodeHelper::supportedEncodings(bool usAscii)
     return encodings;
 }
 
-QString NodeHelper::fromAsString(KMime::Content *node)
+QString NodeHelper::fromAsString(KMime::Content *node) const
 {
-    KMime::Message *topLevel = dynamic_cast<KMime::Message *>(node->topLevel());
-    if (topLevel) {
+    if (auto topLevel = dynamic_cast<KMime::Message *>(node->topLevel())) {
         return topLevel->from()->asUnicodeString();
+    } else {
+        auto realNode = std::find_if(mExtraContents.cbegin(), mExtraContents.cend(),
+                                     [node](const QList<KMime::Content*> &nodes) {
+                                         return nodes.contains(node);
+                                     });
+        if (realNode != mExtraContents.cend()) {
+            return fromAsString(realNode.key());
+        }
     }
+
     return QString();
 }
 
