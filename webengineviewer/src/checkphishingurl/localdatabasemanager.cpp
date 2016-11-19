@@ -276,14 +276,25 @@ void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
     if (mDataBaseOk) {
-        //TODO check in DataBase
+        QByteArray hash = createHash(url);
+        if (malwareFound(hash)) {
+            Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Malware);
+        } else {
+            Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::UrlOk);
+        }
     } else {
         Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
     }
     //TODO
 }
 
-QByteArray LocalDataBaseManager::createHash()
+QByteArray LocalDataBaseManager::createHash(const QUrl &url)
 {
     return QCryptographicHash::hash(QByteArray() /*TODO use url*/, QCryptographicHash::Sha256);
+}
+
+bool LocalDataBaseManager::malwareFound(const QByteArray &hash)
+{
+    //TODO
+    return false;
 }

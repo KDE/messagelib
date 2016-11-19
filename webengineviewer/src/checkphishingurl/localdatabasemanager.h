@@ -70,9 +70,10 @@ private:
     void slotCheckDataBase();
 
     bool initializeDataBase();
-    QByteArray createHash();
+    QByteArray createHash(const QUrl &url);
     void checkDataBase();
     bool createTable();
+    bool malwareFound(const QByteArray &hash);
 
     QSqlDatabase mDataBase;
     QString mNewClientState;
