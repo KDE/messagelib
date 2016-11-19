@@ -224,6 +224,7 @@ void LocalDataBaseManager::addElementToDataBase(const QVector<Addition> &additio
             const QByteArray m = uncompressed.mid(i, add.prefixSize);
             i += add.prefixSize;
             //qDebug() << "m " << m << " m.size" << m.size();
+            //TODO add in database
         }
     }
 }
@@ -285,7 +286,6 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
     } else {
         Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
     }
-    //TODO
 }
 
 QByteArray LocalDataBaseManager::createHash(const QUrl &url)
