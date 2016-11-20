@@ -21,18 +21,49 @@
 #define SEARCHFULLHASHJOB_H
 
 #include <QObject>
+#include <QUrl>
+#include <QNetworkReply>
 #include "webengineviewer_export.h"
-
+class QNetworkAccessManager;
 namespace WebEngineViewer
 {
+/* https://developers.google.com/safe-browsing/v4/lookup-api */
 class WEBENGINEVIEWER_EXPORT SearchFullHashJob : public QObject
 {
     Q_OBJECT
 public:
     explicit SearchFullHashJob(QObject *parent = Q_NULLPTR);
     ~SearchFullHashJob();
-    void start();
 
+    enum UrlStatus {
+        Ok = 0,
+        MalWare,
+        BrokenNetwork,
+        InvalidUrl,
+        Unknown
+    };
+
+    void setUrl(const QUrl &url);
+
+    void start();
+    bool canStart() const;
+
+    QByteArray jsonRequest() const;
+    void parse(const QByteArray &replyStr);
+    void setUseCompactJson(bool useCompactJson);
+
+Q_SIGNALS:
+    void result(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url);
+    void debugJson(const QByteArray &ba);
+
+private Q_SLOTS:
+    void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
+    void slotError(QNetworkReply::NetworkError error);
+    void slotCheckUrlFinished(QNetworkReply *reply);
+private:
+    QUrl mUrl;
+    bool mUseCompactJson;
+    QNetworkAccessManager *mNetworkAccessManager;
 };
 }
 
