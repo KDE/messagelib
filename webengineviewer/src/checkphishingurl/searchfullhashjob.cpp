@@ -87,13 +87,14 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
   "negativeCacheDuration": "300.000s"
 }
 */
+    /*
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mUrl);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
     } else {
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Ok, mUrl);
+            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Ok, mHash);
             return;
         } else {
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
@@ -103,8 +104,8 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
-                        if (urlMap[QStringLiteral("url")].toString() == mUrl.toString()) {
-                            Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, mUrl);
+                        if (urlMap[QStringLiteral("url")].toString() == mHash.toString()) {
+                            Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, mHash);
                             return;
                         }
                     }
@@ -112,9 +113,10 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                     qWarning() << " SearchFullHashJob::parse threatTypeStr : " << threatTypeStr;
                 }
             }
-            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mUrl);
+            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
         }
     }
+    */
 }
 
 void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
@@ -124,9 +126,9 @@ void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
     deleteLater();
 }
 
-void SearchFullHashJob::setUrl(const QUrl &url)
+void SearchFullHashJob::setSearchHash(const QByteArray &hash)
 {
-    mUrl = url;
+    mHash = hash;
 }
 
 QByteArray SearchFullHashJob::jsonRequest() const
@@ -161,6 +163,8 @@ QByteArray SearchFullHashJob::jsonRequest() const
     map.insert(QStringLiteral("client"), clientMap);
 
     //clientStates
+    const QVariantList clientStatesList = { QString() }; //Add client states
+    map.insert(QStringLiteral("clientStates"), clientStatesList);
 
 
     QVariantMap threatMap;
@@ -173,7 +177,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
     threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
     QVariantList threatEntriesList;
     QVariantMap hashUrlMap;
-    hashUrlMap.insert(QStringLiteral("hash"), mUrl.toString());
+    hashUrlMap.insert(QStringLiteral("hash"), mHash);
     threatEntriesList.append(hashUrlMap);
     threatMap.insert(QStringLiteral("threatEntries"), threatEntriesList);
 
@@ -187,7 +191,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 void SearchFullHashJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, mUrl);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, mHash);
         deleteLater();
     } else if (canStart()) {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/fullHashes:find"));
@@ -203,7 +207,7 @@ void SearchFullHashJob::start()
         QNetworkReply *reply = mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &SearchFullHashJob::slotError);
     } else {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::InvalidUrl, mUrl);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::InvalidUrl, mHash);
         deleteLater();
     }
 }
@@ -218,5 +222,5 @@ void SearchFullHashJob::slotError(QNetworkReply::NetworkError error)
 
 bool SearchFullHashJob::canStart() const
 {
-    return mUrl.isValid();
+    return !mHash.isEmpty();
 }

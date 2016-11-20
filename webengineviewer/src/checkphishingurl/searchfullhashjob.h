@@ -43,8 +43,6 @@ public:
         Unknown
     };
 
-    void setUrl(const QUrl &url);
-
     void start();
     bool canStart() const;
 
@@ -52,8 +50,9 @@ public:
     void parse(const QByteArray &replyStr);
     void setUseCompactJson(bool useCompactJson);
 
+    void setSearchHash(const QByteArray &hash);
 Q_SIGNALS:
-    void result(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url);
+    void result(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &url);
     void debugJson(const QByteArray &ba);
 
 private Q_SLOTS:
@@ -61,7 +60,7 @@ private Q_SLOTS:
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
 private:
-    QUrl mUrl;
+    QByteArray mHash;
     bool mUseCompactJson;
     QNetworkAccessManager *mNetworkAccessManager;
 };
