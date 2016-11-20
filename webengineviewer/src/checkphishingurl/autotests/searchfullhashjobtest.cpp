@@ -45,7 +45,9 @@ void SearchFullHashJobTest::shouldCreateRequest_data()
     QTest::addColumn<QByteArray>("request");
     QTest::addColumn<bool>("canStart");
     QTest::newRow("no hash") << QByteArray() << QString() << QByteArray() << false;
-    //QTest::newRow("value") << QUrl(QStringLiteral("http://www.kde.org")) << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"url\":\"http://www.kde.org\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}") << true;
+    QTest::newRow("database hash but not hash") << QByteArray() << QStringLiteral("boo") << QByteArray() << false;
+    QTest::newRow("database hash and hash") << QByteArrayLiteral("bla") << QStringLiteral("boo")
+                                            << QByteArrayLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"clientStates\":[\"boo\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":{\"hash\":\"bla\"},\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}") << true;
 }
 
 void SearchFullHashJobTest::shouldCreateRequest()

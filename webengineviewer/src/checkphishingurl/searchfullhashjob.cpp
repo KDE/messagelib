@@ -177,6 +177,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
     threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
     QVariantMap hashUrlMap;
     hashUrlMap.insert(QStringLiteral("hash"), mHash);
+    threatMap.insert(QStringLiteral("threatEntries"), hashUrlMap);
 
     map.insert(QStringLiteral("threatInfo"), threatMap);
 
