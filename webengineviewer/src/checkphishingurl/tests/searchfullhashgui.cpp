@@ -32,16 +32,26 @@ SearchFullHashGui::SearchFullHashGui(QWidget *parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    QHBoxLayout *checkUrlLayout = new QHBoxLayout;
-    layout->addLayout(checkUrlLayout);
-    QLabel *lab = new QLabel(QStringLiteral("Url to Check:"), this);
-    checkUrlLayout->addWidget(lab);
-    mCheckUrlLineEdit = new QLineEdit(this);
-    checkUrlLayout->addWidget(mCheckUrlLineEdit);
+    QHBoxLayout *checkHashLayout = new QHBoxLayout;
+    layout->addLayout(checkHashLayout);
+    QLabel *lab = new QLabel(QStringLiteral("Hash from Url to Check:"), this);
+    checkHashLayout->addWidget(lab);
+    mCheckHashLineEdit = new QLineEdit(this);
+    checkHashLayout->addWidget(mCheckHashLineEdit);
+
+
+    QHBoxLayout *databaseHashLayout = new QHBoxLayout;
+    layout->addLayout(databaseHashLayout);
+    lab = new QLabel(QStringLiteral("Database hash:"), this);
+    checkHashLayout->addWidget(lab);
+    mDataBaseHashLineEdit = new QLineEdit(this);
+    checkHashLayout->addWidget(mDataBaseHashLineEdit);
+
+
     QPushButton *button = new QPushButton(QStringLiteral("Check"), this);
-    checkUrlLayout->addWidget(button);
+    checkHashLayout->addWidget(button);
     connect(button, &QPushButton::clicked, this, &SearchFullHashGui::slotCheckUrl);
-    connect(mCheckUrlLineEdit, &QLineEdit::returnPressed, this, &SearchFullHashGui::slotCheckUrl);
+    connect(mCheckHashLineEdit, &QLineEdit::returnPressed, this, &SearchFullHashGui::slotCheckUrl);
 
     mResult = new QTextEdit(this);
     mResult->setReadOnly(true);
@@ -52,7 +62,6 @@ SearchFullHashGui::SearchFullHashGui(QWidget *parent)
     mJson->setReadOnly(true);
     mJson->setAcceptRichText(false);
     layout->addWidget(mJson);
-
 }
 
 SearchFullHashGui::~SearchFullHashGui()
@@ -62,19 +71,24 @@ SearchFullHashGui::~SearchFullHashGui()
 
 void SearchFullHashGui::slotCheckUrl()
 {
-    const QString urlStr = mCheckUrlLineEdit->text().trimmed();
-    if (urlStr.isEmpty()) {
+    const QString hashStr = mCheckHashLineEdit->text().trimmed();
+    if (hashStr.isEmpty()) {
         return;
     }
+    const QString databaseHashStr = mDataBaseHashLineEdit->text().trimmed();
+    if (databaseHashStr.isEmpty()) {
+        return;
+    }
+
     mResult->clear();
-/*
-    WebEngineViewer::CheckPhishingUrlJob *job = new WebEngineViewer::CheckPhishingUrlJob(this);
+    WebEngineViewer::SearchFullHashJob *job = new WebEngineViewer::SearchFullHashJob(this);
     job->setUseCompactJson(false);
-    connect(job, &WebEngineViewer::CheckPhishingUrlJob::result, this, &SearchFullHashGui::slotGetResult);
-    connect(job, &WebEngineViewer::CheckPhishingUrlJob::debugJson, this, &SearchFullHashGui::slotJSonDebug);
-    job->setUrl(QUrl::fromUserInput(urlStr));
+    connect(job, &WebEngineViewer::SearchFullHashJob::result, this, &SearchFullHashGui::slotGetResult);
+    connect(job, &WebEngineViewer::SearchFullHashJob::debugJson, this, &SearchFullHashGui::slotJSonDebug);
+    job->setDatabaseState(databaseHashStr);
+    job->setSearchHash(hashStr.toLatin1());
+
     job->start();
-    */
 }
 
 void SearchFullHashGui::slotJSonDebug(const QByteArray &debug)

@@ -35,7 +35,8 @@ private Q_SLOTS:
     void slotGetResult(WebEngineViewer::SearchFullHashJob::UrlStatus result);
     void slotJSonDebug(const QByteArray &debug);
 private:
-    QLineEdit *mCheckUrlLineEdit;
+    QLineEdit *mCheckHashLineEdit;
+    QLineEdit *mDataBaseHashLineEdit;
     QTextEdit *mJson;
     QTextEdit *mResult;
 };
