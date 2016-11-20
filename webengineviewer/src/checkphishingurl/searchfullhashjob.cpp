@@ -98,12 +98,37 @@ void SearchFullHashJob::setUrl(const QUrl &url)
 
 QByteArray SearchFullHashJob::jsonRequest() const
 {
+    /*
+{
+  "client": {
+    "clientId":      "yourcompanyname",
+    "clientVersion": "1.5.2"
+  },
+  "clientStates": [
+    "ChAIARABGAEiAzAwMSiAEDABEAE=",
+    "ChAIAhABGAEiAzAwMSiAEDABEOgH"
+  ],
+  "threatInfo": {
+    "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
+    "platformTypes":    ["WINDOWS"],
+    "threatEntryTypes": ["URL"],
+    "threatEntries": [
+      {"hash": "WwuJdQ=="},
+      {"hash": "771MOg=="},
+      {"hash": "5eOrwQ=="}
+    ]
+  }
+}
+     */
     QVariantMap clientMap;
     QVariantMap map;
 
     clientMap.insert(QStringLiteral("clientId"), QStringLiteral("KDE"));
     clientMap.insert(QStringLiteral("clientVersion"), QStringLiteral("5.4.0")); //FIXME
     map.insert(QStringLiteral("client"), clientMap);
+
+    //clientStates
+
 
     QVariantMap threatMap;
     const QVariantList platformList = { QStringLiteral("WINDOWS") };
@@ -114,9 +139,9 @@ QByteArray SearchFullHashJob::jsonRequest() const
     const QVariantList threatEntryTypesList = { QStringLiteral("URL") };
     threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
     QVariantList threatEntriesList;
-    QVariantMap urlMap;
-    urlMap.insert(QStringLiteral("url"), mUrl.toString());
-    threatEntriesList.append(urlMap);
+    QVariantMap hashUrlMap;
+    hashUrlMap.insert(QStringLiteral("hash"), mUrl.toString());
+    threatEntriesList.append(hashUrlMap);
     threatMap.insert(QStringLiteral("threatEntries"), threatEntriesList);
 
     map.insert(QStringLiteral("threatInfo"), threatMap);
