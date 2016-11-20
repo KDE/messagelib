@@ -22,7 +22,6 @@
 
 #include <QObject>
 #include "webengineviewer_export.h"
-#include <QSqlDatabase>
 #include <QUrl>
 #include "createphishingurldatabasejob.h"
 namespace WebEngineViewer
@@ -74,7 +73,6 @@ private:
     bool createTable();
     bool malwareFound(const QByteArray &hash);
 
-    QSqlDatabase mDataBase;
     QString mNewClientState;
     bool mDataBaseOk;
     bool mDownloadProgress;

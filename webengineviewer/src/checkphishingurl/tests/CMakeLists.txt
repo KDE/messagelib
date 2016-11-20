@@ -41,5 +41,4 @@ target_link_libraries(managelocaldatabasegui
     Qt5::WebEngine
     Qt5::WebEngineWidgets
     KF5::I18n
-    Qt5::Sql
     )
