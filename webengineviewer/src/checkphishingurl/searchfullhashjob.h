@@ -46,6 +46,8 @@ public:
     void start();
     bool canStart() const;
 
+    void setDatabaseState(const QString &hash);
+
     QByteArray jsonRequest() const;
     void parse(const QByteArray &replyStr);
     void setUseCompactJson(bool useCompactJson);
@@ -61,6 +63,7 @@ private Q_SLOTS:
     void slotCheckUrlFinished(QNetworkReply *reply);
 private:
     QByteArray mHash;
+    QString mDatabaseHash;
     bool mUseCompactJson;
     QNetworkAccessManager *mNetworkAccessManager;
 };

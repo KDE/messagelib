@@ -163,7 +163,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
     map.insert(QStringLiteral("client"), clientMap);
 
     //clientStates
-    const QVariantList clientStatesList = { QString() }; //Add client states
+    const QVariantList clientStatesList = { mDatabaseHash };
     map.insert(QStringLiteral("clientStates"), clientStatesList);
 
 
@@ -175,11 +175,8 @@ QByteArray SearchFullHashJob::jsonRequest() const
     threatMap.insert(QStringLiteral("threatTypes"), threatTypesList);
     const QVariantList threatEntryTypesList = { QStringLiteral("URL") };
     threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
-    QVariantList threatEntriesList;
     QVariantMap hashUrlMap;
     hashUrlMap.insert(QStringLiteral("hash"), mHash);
-    threatEntriesList.append(hashUrlMap);
-    threatMap.insert(QStringLiteral("threatEntries"), threatEntriesList);
 
     map.insert(QStringLiteral("threatInfo"), threatMap);
 
@@ -223,4 +220,9 @@ void SearchFullHashJob::slotError(QNetworkReply::NetworkError error)
 bool SearchFullHashJob::canStart() const
 {
     return !mHash.isEmpty();
+}
+
+void SearchFullHashJob::setDatabaseState(const QString &hash)
+{
+    mDatabaseHash = hash;
 }
