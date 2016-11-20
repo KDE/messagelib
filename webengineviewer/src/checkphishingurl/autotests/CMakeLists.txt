@@ -10,14 +10,14 @@ ecm_add_test(checkphishingurljobtest.cpp  ../checkphishingurljob.cpp ../checkphi
 
 ecm_add_test(checkphishingurlfromlocaldatabasejobtest.cpp  ../checkphishingurlutil.cpp ../checkphishingurlfromlocaldatabasejob.cpp ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME checkphishingurlfromlocaldatabasetest
-    NAME_PREFIX "webengineview-checkphishingurl-"
+    NAME_PREFIX "webengineview-checkphishingurlfromlocaldatabasejob-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer Qt5::Sql
     )
 
 
 ecm_add_test(createphishingurldatabasejobtest.cpp ../checkphishingurlutil.cpp ../createphishingurldatabasejob.cpp ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME createphishingurldatabasejobtest
-    NAME_PREFIX "webengineview-checkphishingurl-"
+    NAME_PREFIX "webengineview-createphishingurldatabasejob-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
 
@@ -25,6 +25,12 @@ ecm_add_test(createphishingurldatabasejobtest.cpp ../checkphishingurlutil.cpp ..
 
 ecm_add_test(localdatabasemanagertest.cpp ../checkphishingurlutil.cpp ../localdatabasemanager.cpp ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME localdatabasemanagertest
-    NAME_PREFIX "webengineview-checkphishingurl-"
+    NAME_PREFIX "webengineview-localdatabasemanager-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer Qt5::Sql
+    )
+
+ecm_add_test(searchfullhashjobtest.cpp ../checkphishingurlutil.cpp ../searchfullhashjob.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME searchfullhashjobtest
+    NAME_PREFIX "webengineview-searchfullhashjob-"
+    LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
