@@ -219,7 +219,7 @@ void SearchFullHashJob::slotError(QNetworkReply::NetworkError error)
 
 bool SearchFullHashJob::canStart() const
 {
-    return !mHash.isEmpty();
+    return !mHash.isEmpty() && !mDatabaseHash.isEmpty();
 }
 
 void SearchFullHashJob::setDatabaseState(const QString &hash)

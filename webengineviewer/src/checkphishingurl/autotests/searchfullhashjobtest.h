@@ -28,6 +28,11 @@ class SearchFullHashJobTest : public QObject
 public:
     explicit SearchFullHashJobTest(QObject *parent = Q_NULLPTR);
     ~SearchFullHashJobTest();
+
+private Q_SLOTS:
+    void shouldNotBeAbleToStartWithEmptyUrl();
+    void shouldCreateRequest_data();
+    void shouldCreateRequest();
 };
 
 #endif // SEARCHFULLHASHJOBTEST_H

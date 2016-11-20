@@ -18,6 +18,7 @@
 */
 
 #include "searchfullhashjobtest.h"
+#include "../searchfullhashjob.h"
 #include <QTest>
 
 SearchFullHashJobTest::SearchFullHashJobTest(QObject *parent)
@@ -30,5 +31,37 @@ SearchFullHashJobTest::~SearchFullHashJobTest()
 {
 
 }
+
+void SearchFullHashJobTest::shouldNotBeAbleToStartWithEmptyUrl()
+{
+    WebEngineViewer::SearchFullHashJob job;
+    QVERIFY(!job.canStart());
+}
+
+void SearchFullHashJobTest::shouldCreateRequest_data()
+{
+    QTest::addColumn<QByteArray>("hash");
+    QTest::addColumn<QString>("databaseHash");
+    QTest::addColumn<QByteArray>("request");
+    QTest::addColumn<bool>("canStart");
+    QTest::newRow("no hash") << QByteArray() << QString() << QByteArray() << false;
+    //QTest::newRow("value") << QUrl(QStringLiteral("http://www.kde.org")) << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"url\":\"http://www.kde.org\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}") << true;
+}
+
+void SearchFullHashJobTest::shouldCreateRequest()
+{
+    QFETCH(QByteArray, hash);
+    QFETCH(QString, databaseHash);
+    QFETCH(QByteArray, request);
+    QFETCH(bool, canStart);
+    WebEngineViewer::SearchFullHashJob job;
+    job.setDatabaseState(databaseHash);
+    job.setSearchHash(hash);
+    QCOMPARE(job.canStart(), canStart);
+    if (canStart) {
+        QCOMPARE(job.jsonRequest(), request);
+    }
+}
+
 
 QTEST_MAIN(SearchFullHashJobTest)
