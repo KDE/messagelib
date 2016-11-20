@@ -54,13 +54,47 @@ void SearchFullHashJob::setUseCompactJson(bool useCompactJson)
 
 void SearchFullHashJob::parse(const QByteArray &replyStr)
 {
+    /*
+
+{
+  "matches": [{
+    "threatType":      "MALWARE",
+    "platformType":    "WINDOWS",
+    "threatEntryType": "URL",
+    "threat": {
+      "hash": "WwuJdQx48jP-4lxr4y2Sj82AWoxUVcIRDSk1PC9Rf-4="
+    },
+    "threatEntryMetadata": {
+      "entries": [{
+        "key": "bWFsd2FyZV90aHJlYXRfdHlwZQ==",  // base64-encoded "malware_threat_type"
+        "value": "TEFORElORw=="  // base64-encoded "LANDING"
+       }]
+    },
+    "cacheDuration": "300.000s"
+  }, {
+    "threatType":      "SOCIAL_ENGINEERING",
+    "platformType":    "WINDOWS",
+    "threatEntryType": "URL",
+    "threat": {
+      "hash": "771MOrRPMn6xPKlCrXx_CrR-wmCk0LgFFoSgGy7zUiA="
+    },
+    "threatEntryMetadata": {
+      "entries": []
+    },
+    "cacheDuration": "300.000s"
+  }],
+  "minimumWaitDuration": "300.000s",
+  "negativeCacheDuration": "300.000s"
+}
+*/
+    /*
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mUrl);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
     } else {
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Ok, mUrl);
+            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Ok, mHash);
             return;
         } else {
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
@@ -70,8 +104,8 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
-                        if (urlMap[QStringLiteral("url")].toString() == mUrl.toString()) {
-                            Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, mUrl);
+                        if (urlMap[QStringLiteral("url")].toString() == mHash.toString()) {
+                            Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, mHash);
                             return;
                         }
                     }
@@ -79,9 +113,10 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                     qWarning() << " SearchFullHashJob::parse threatTypeStr : " << threatTypeStr;
                 }
             }
-            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mUrl);
+            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
         }
     }
+    */
 }
 
 void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
@@ -91,19 +126,46 @@ void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
     deleteLater();
 }
 
-void SearchFullHashJob::setUrl(const QUrl &url)
+void SearchFullHashJob::setSearchHash(const QByteArray &hash)
 {
-    mUrl = url;
+    mHash = hash;
 }
 
 QByteArray SearchFullHashJob::jsonRequest() const
 {
+    /*
+{
+  "client": {
+    "clientId":      "yourcompanyname",
+    "clientVersion": "1.5.2"
+  },
+  "clientStates": [
+    "ChAIARABGAEiAzAwMSiAEDABEAE=",
+    "ChAIAhABGAEiAzAwMSiAEDABEOgH"
+  ],
+  "threatInfo": {
+    "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
+    "platformTypes":    ["WINDOWS"],
+    "threatEntryTypes": ["URL"],
+    "threatEntries": [
+      {"hash": "WwuJdQ=="},
+      {"hash": "771MOg=="},
+      {"hash": "5eOrwQ=="}
+    ]
+  }
+}
+     */
     QVariantMap clientMap;
     QVariantMap map;
 
     clientMap.insert(QStringLiteral("clientId"), QStringLiteral("KDE"));
     clientMap.insert(QStringLiteral("clientVersion"), QStringLiteral("5.4.0")); //FIXME
     map.insert(QStringLiteral("client"), clientMap);
+
+    //clientStates
+    const QVariantList clientStatesList = { mDatabaseHash };
+    map.insert(QStringLiteral("clientStates"), clientStatesList);
+
 
     QVariantMap threatMap;
     const QVariantList platformList = { QStringLiteral("WINDOWS") };
@@ -113,11 +175,9 @@ QByteArray SearchFullHashJob::jsonRequest() const
     threatMap.insert(QStringLiteral("threatTypes"), threatTypesList);
     const QVariantList threatEntryTypesList = { QStringLiteral("URL") };
     threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
-    QVariantList threatEntriesList;
-    QVariantMap urlMap;
-    urlMap.insert(QStringLiteral("url"), mUrl.toString());
-    threatEntriesList.append(urlMap);
-    threatMap.insert(QStringLiteral("threatEntries"), threatEntriesList);
+    QVariantMap hashUrlMap;
+    hashUrlMap.insert(QStringLiteral("hash"), mHash);
+    threatMap.insert(QStringLiteral("threatEntries"), hashUrlMap);
 
     map.insert(QStringLiteral("threatInfo"), threatMap);
 
@@ -129,7 +189,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 void SearchFullHashJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, mUrl);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, mHash);
         deleteLater();
     } else if (canStart()) {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/fullHashes:find"));
@@ -145,7 +205,7 @@ void SearchFullHashJob::start()
         QNetworkReply *reply = mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &SearchFullHashJob::slotError);
     } else {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::InvalidUrl, mUrl);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::InvalidUrl, mHash);
         deleteLater();
     }
 }
@@ -160,5 +220,10 @@ void SearchFullHashJob::slotError(QNetworkReply::NetworkError error)
 
 bool SearchFullHashJob::canStart() const
 {
-    return mUrl.isValid();
+    return !mHash.isEmpty() && !mDatabaseHash.isEmpty();
+}
+
+void SearchFullHashJob::setDatabaseState(const QString &hash)
+{
+    mDatabaseHash = hash;
 }

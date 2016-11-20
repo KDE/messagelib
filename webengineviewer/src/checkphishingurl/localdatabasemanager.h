@@ -22,10 +22,8 @@
 
 #include <QObject>
 #include "webengineviewer_export.h"
-#include <QSqlDatabase>
 #include <QUrl>
 #include "createphishingurldatabasejob.h"
-class QTimer;
 namespace WebEngineViewer
 {
 class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
@@ -72,12 +70,9 @@ private:
     bool initializeDataBase();
     QByteArray createHash(const QUrl &url);
     void checkDataBase();
-    bool createTable();
     bool malwareFound(const QByteArray &hash);
 
-    QSqlDatabase mDataBase;
     QString mNewClientState;
-    QTimer *mRegularCheckDataBaseTimer;
     bool mDataBaseOk;
     bool mDownloadProgress;
 };

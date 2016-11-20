@@ -17,28 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef CHECKPHISHINGURLGUI_H
-#define CHECKPHISHINGURLGUI_H
+#include "localdatabasefile.h"
 
-#include <QWidget>
-#include "../searchfullhashjob.h"
-class QLineEdit;
-class QTextEdit;
-class SearchFullHashGui : public QWidget
+using namespace WebEngineViewer;
+
+LocalDataBaseFile::LocalDataBaseFile(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
-public:
-    explicit SearchFullHashGui(QWidget *parent = Q_NULLPTR);
-    ~SearchFullHashGui();
-private Q_SLOTS:
-    void slotCheckUrl();
-    void slotGetResult(WebEngineViewer::SearchFullHashJob::UrlStatus result);
-    void slotJSonDebug(const QByteArray &debug);
-private:
-    QLineEdit *mCheckHashLineEdit;
-    QLineEdit *mDataBaseHashLineEdit;
-    QTextEdit *mJson;
-    QTextEdit *mResult;
-};
 
-#endif // CHECKPHISHINGURLGUI_H
+}
+
+LocalDataBaseFile::~LocalDataBaseFile()
+{
+
+}

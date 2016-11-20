@@ -25,9 +25,6 @@
 #include <KSharedConfig>
 
 #include <QStandardPaths>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
 #include <QDebug>
 #include <QDir>
 #include <QTimer>
@@ -38,20 +35,13 @@ using namespace WebEngineViewer;
 Q_GLOBAL_STATIC(LocalDataBaseManager, s_localDataBaseManager)
 
 namespace {
-inline QString tableName() {
-    return QStringLiteral("malware");
-}
 inline QString localDataBasePath() {
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl/");
-}
-inline QString sqlFileName() {
-    return QStringLiteral("/malwaredb.sql");
 }
 }
 
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent),
-      mRegularCheckDataBaseTimer(Q_NULLPTR),
       mDataBaseOk(false),
       mDownloadProgress(false)
 {
@@ -60,13 +50,11 @@ LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
 
 LocalDataBaseManager::~LocalDataBaseManager()
 {
-    if (mDataBaseOk) {
-        mDataBase.close();
-    }
 }
 
 void LocalDataBaseManager::closeDataBaseAndDeleteIt()
 {
+    /*
     if (mDataBaseOk) {
         mDataBase.close();
         QFile f(localDataBasePath() + sqlFileName());
@@ -74,6 +62,7 @@ void LocalDataBaseManager::closeDataBaseAndDeleteIt()
             qCWarning(WEBENGINEVIEWER_LOG) << "impossible to remove local database file";
         }
     }
+    */
 }
 
 void LocalDataBaseManager::readConfig()
@@ -115,6 +104,7 @@ void LocalDataBaseManager::initialize()
         return;
     }
     if (!mDataBaseOk) {
+        /*
         bool initDatabaseSuccess = initializeDataBase();
         if (initDatabaseSuccess) {
             if (!mDataBase.tables().contains(tableName())) {
@@ -127,17 +117,11 @@ void LocalDataBaseManager::initialize()
                 mDataBaseOk = true;
             }
         }
+        */
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized.";
     }
     if (mDataBaseOk) {
-        if (!mRegularCheckDataBaseTimer) {
-            mRegularCheckDataBaseTimer = new QTimer(this);
-            mRegularCheckDataBaseTimer->setSingleShot(true);
-            mRegularCheckDataBaseTimer->setInterval(60*1000*60*5); //Each 5 hours //Perhaps improve it.
-            connect(mRegularCheckDataBaseTimer, &QTimer::timeout, this, &LocalDataBaseManager::slotCheckDataBase);
-            mRegularCheckDataBaseTimer->start();
-        }
     }
 }
 
@@ -193,10 +177,6 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
     }
     checkDataBase();
     mDownloadProgress = false;
-    //We finish to download restart timer if necessary
-    if (mRegularCheckDataBaseTimer && !mRegularCheckDataBaseTimer->isActive()) {
-        mRegularCheckDataBaseTimer->start();
-    }
 }
 
 void LocalDataBaseManager::checkDataBase()
@@ -252,6 +232,7 @@ LocalDataBaseManager *LocalDataBaseManager::self()
 
 bool LocalDataBaseManager::initializeDataBase()
 {
+    /*
     mDataBase = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
     QDir().mkpath(localDataBasePath());
     mDataBase.setDatabaseName(localDataBasePath() + sqlFileName());
@@ -259,14 +240,8 @@ bool LocalDataBaseManager::initializeDataBase()
         qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open DataBase: " << mDataBase.lastError().text();
         return false;
     }
+    */
     return true;
-}
-
-bool LocalDataBaseManager::createTable()
-{
-    QSqlQuery query(mDataBase);
-    return query.exec(QStringLiteral("create table %1 (id int primary key, "
-                              "hash varchar(32))").arg(tableName()));
 }
 
 void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
