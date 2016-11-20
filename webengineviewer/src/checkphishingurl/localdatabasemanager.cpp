@@ -51,7 +51,6 @@ inline QString sqlFileName() {
 
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent),
-      mRegularCheckDataBaseTimer(Q_NULLPTR),
       mDataBaseOk(false),
       mDownloadProgress(false)
 {
@@ -131,13 +130,6 @@ void LocalDataBaseManager::initialize()
         qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized.";
     }
     if (mDataBaseOk) {
-        if (!mRegularCheckDataBaseTimer) {
-            mRegularCheckDataBaseTimer = new QTimer(this);
-            mRegularCheckDataBaseTimer->setSingleShot(true);
-            mRegularCheckDataBaseTimer->setInterval(60*1000*60*5); //Each 5 hours //Perhaps improve it.
-            connect(mRegularCheckDataBaseTimer, &QTimer::timeout, this, &LocalDataBaseManager::slotCheckDataBase);
-            mRegularCheckDataBaseTimer->start();
-        }
     }
 }
 
@@ -193,10 +185,6 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
     }
     checkDataBase();
     mDownloadProgress = false;
-    //We finish to download restart timer if necessary
-    if (mRegularCheckDataBaseTimer && !mRegularCheckDataBaseTimer->isActive()) {
-        mRegularCheckDataBaseTimer->start();
-    }
 }
 
 void LocalDataBaseManager::checkDataBase()

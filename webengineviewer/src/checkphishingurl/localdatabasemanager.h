@@ -25,7 +25,6 @@
 #include <QSqlDatabase>
 #include <QUrl>
 #include "createphishingurldatabasejob.h"
-class QTimer;
 namespace WebEngineViewer
 {
 class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
@@ -77,7 +76,6 @@ private:
 
     QSqlDatabase mDataBase;
     QString mNewClientState;
-    QTimer *mRegularCheckDataBaseTimer;
     bool mDataBaseOk;
     bool mDownloadProgress;
 };
