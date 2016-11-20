@@ -21,8 +21,8 @@
 
 using namespace WebEngineViewer;
 
-LocalDataBaseFile::LocalDataBaseFile(QObject *parent)
-    : QObject(parent)
+LocalDataBaseFile::LocalDataBaseFile(const QString &filename)
+    : mFileName(filename)
 {
 
 }
@@ -30,4 +30,9 @@ LocalDataBaseFile::LocalDataBaseFile(QObject *parent)
 LocalDataBaseFile::~LocalDataBaseFile()
 {
 
+}
+
+void LocalDataBaseFile::initialize()
+{
+    //TODO
 }

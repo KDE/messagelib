@@ -19,16 +19,19 @@
 
 #ifndef LOCALDATABASEFILE_H
 #define LOCALDATABASEFILE_H
-#include <QObject>
+
+#include <QString>
 
 namespace WebEngineViewer
 {
-class LocalDataBaseFile : public QObject
+class LocalDataBaseFile
 {
-    Q_OBJECT
 public:
-    explicit LocalDataBaseFile(QObject *parent = Q_NULLPTR);
+    LocalDataBaseFile(const QString &filename);
     ~LocalDataBaseFile();
+private:
+    void initialize();
+    QString mFileName;
 };
 }
 
