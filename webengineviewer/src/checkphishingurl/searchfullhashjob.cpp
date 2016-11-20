@@ -132,7 +132,7 @@ void SearchFullHashJob::start()
         Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, mUrl);
         deleteLater();
     } else if (canStart()) {
-        QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find"));
+        QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/fullHashes:find"));
         safeUrl.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
         QNetworkRequest request(safeUrl);
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
