@@ -87,7 +87,6 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
   "negativeCacheDuration": "300.000s"
 }
 */
-    /*
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
         Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
@@ -104,10 +103,12 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
+                        /*
                         if (urlMap[QStringLiteral("url")].toString() == mHash.toString()) {
                             Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, mHash);
                             return;
                         }
+                        */
                     }
                 } else {
                     qWarning() << " SearchFullHashJob::parse threatTypeStr : " << threatTypeStr;
@@ -116,7 +117,6 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
             Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
         }
     }
-    */
 }
 
 void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
