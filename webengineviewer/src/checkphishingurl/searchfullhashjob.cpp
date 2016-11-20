@@ -54,6 +54,39 @@ void SearchFullHashJob::setUseCompactJson(bool useCompactJson)
 
 void SearchFullHashJob::parse(const QByteArray &replyStr)
 {
+    /*
+
+{
+  "matches": [{
+    "threatType":      "MALWARE",
+    "platformType":    "WINDOWS",
+    "threatEntryType": "URL",
+    "threat": {
+      "hash": "WwuJdQx48jP-4lxr4y2Sj82AWoxUVcIRDSk1PC9Rf-4="
+    },
+    "threatEntryMetadata": {
+      "entries": [{
+        "key": "bWFsd2FyZV90aHJlYXRfdHlwZQ==",  // base64-encoded "malware_threat_type"
+        "value": "TEFORElORw=="  // base64-encoded "LANDING"
+       }]
+    },
+    "cacheDuration": "300.000s"
+  }, {
+    "threatType":      "SOCIAL_ENGINEERING",
+    "platformType":    "WINDOWS",
+    "threatEntryType": "URL",
+    "threat": {
+      "hash": "771MOrRPMn6xPKlCrXx_CrR-wmCk0LgFFoSgGy7zUiA="
+    },
+    "threatEntryMetadata": {
+      "entries": []
+    },
+    "cacheDuration": "300.000s"
+  }],
+  "minimumWaitDuration": "300.000s",
+  "negativeCacheDuration": "300.000s"
+}
+*/
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
         Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mUrl);
