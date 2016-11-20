@@ -13,6 +13,16 @@ target_link_libraries(checkphishingurlgui
     KF5::I18n
     )
 
+set(searchfullhashgui_SRCS searchfullhashgui.cpp)
+add_executable(searchfullhashgui ${searchfullhashgui_SRCS})
+target_link_libraries(searchfullhashgui
+    KF5::KIOCore
+    KF5::WebEngineViewer
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
+    KF5::I18n
+    )
+
 set(createphishingurldatabasegui_SRCS createphishingurldatabasegui.cpp)
 add_executable(createphishingurldatabasegui ${createphishingurldatabasegui_SRCS})
 target_link_libraries(createphishingurldatabasegui
