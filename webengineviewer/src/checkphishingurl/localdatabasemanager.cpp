@@ -244,16 +244,6 @@ bool LocalDataBaseManager::initializeDataBase()
     return true;
 }
 
-bool LocalDataBaseManager::createTable()
-{
-    return true;
-    /*
-    QSqlQuery query(mDataBase);
-    return query.exec(QStringLiteral("create table %1 (id int primary key, "
-                              "hash varchar(32))").arg(tableName()));
-                              */
-}
-
 void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
 {
     mDownloadProgress = downloadProgress;

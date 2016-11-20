@@ -70,7 +70,6 @@ private:
     bool initializeDataBase();
     QByteArray createHash(const QUrl &url);
     void checkDataBase();
-    bool createTable();
     bool malwareFound(const QByteArray &hash);
 
     QString mNewClientState;
