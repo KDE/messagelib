@@ -26,6 +26,7 @@
 #include "createphishingurldatabasejob.h"
 namespace WebEngineViewer
 {
+class LocalDataBaseManagerPrivate;
 class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
 {
     Q_OBJECT
@@ -72,9 +73,8 @@ private:
     void checkDataBase();
     bool malwareFound(const QByteArray &hash);
 
-    QString mNewClientState;
-    bool mDataBaseOk;
-    bool mDownloadProgress;
+
+    LocalDataBaseManagerPrivate *const d;
 };
 }
 

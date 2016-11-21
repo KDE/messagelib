@@ -40,16 +40,31 @@ inline QString localDataBasePath() {
 }
 }
 
+class WebEngineViewer::LocalDataBaseManagerPrivate
+{
+public:
+    LocalDataBaseManagerPrivate()
+        : mDataBaseOk(false),
+          mDownloadProgress(false)
+    {
+
+    }
+    QString mNewClientState;
+    bool mDataBaseOk;
+    bool mDownloadProgress;
+};
+
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent),
-      mDataBaseOk(false),
-      mDownloadProgress(false)
+      d(new LocalDataBaseManagerPrivate)
+
 {
     readConfig();
 }
 
 LocalDataBaseManager::~LocalDataBaseManager()
 {
+    delete d;
 }
 
 void LocalDataBaseManager::closeDataBaseAndDeleteIt()
@@ -69,14 +84,14 @@ void LocalDataBaseManager::readConfig()
 {
     KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
-    mNewClientState = grp.readEntry(QStringLiteral("DataBaseState"));
+    d->mNewClientState = grp.readEntry(QStringLiteral("DataBaseState"));
 }
 
 void LocalDataBaseManager::saveConfig()
 {
     KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
-    grp.writeEntry(QStringLiteral("DataBaseState"), mNewClientState);
+    grp.writeEntry(QStringLiteral("DataBaseState"), d->mNewClientState);
 }
 
 void LocalDataBaseManager::downloadPartialDataBase()
@@ -84,7 +99,7 @@ void LocalDataBaseManager::downloadPartialDataBase()
     setDownloadProgress(true);
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
-    job->setDataBaseState(mNewClientState);
+    job->setDataBaseState(d->mNewClientState);
     connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadDataBaseFinished);
     job->start();
 }
@@ -100,10 +115,10 @@ void LocalDataBaseManager::downloadFullDataBase()
 
 void LocalDataBaseManager::initialize()
 {
-    if (mDownloadProgress) {
+    if (d->mDownloadProgress) {
         return;
     }
-    if (!mDataBaseOk) {
+    if (!d->mDataBaseOk) {
         /*
         bool initDatabaseSuccess = initializeDataBase();
         if (initDatabaseSuccess) {
@@ -121,13 +136,13 @@ void LocalDataBaseManager::initialize()
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized.";
     }
-    if (mDataBaseOk) {
+    if (d->mDataBaseOk) {
     }
 }
 
 void LocalDataBaseManager::slotCheckDataBase()
 {
-    if (mDataBaseOk && !mDownloadProgress) {
+    if (d->mDataBaseOk && !d->mDownloadProgress) {
         downloadPartialDataBase();
     }
 }
@@ -140,24 +155,24 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
     switch(status) {
     case CreatePhishingUrlDataBaseJob::InvalidData:
         qCWarning(WEBENGINEVIEWER_LOG) << "Invalid Data.";
-        mDataBaseOk = false;
+        d->mDataBaseOk = false;
         break;
     case CreatePhishingUrlDataBaseJob::ValidData:
         qCWarning(WEBENGINEVIEWER_LOG) << "Valid Data.";
-        mDataBaseOk = true;
+        d->mDataBaseOk = true;
         break;
     case CreatePhishingUrlDataBaseJob::UnknownError:
         qCWarning(WEBENGINEVIEWER_LOG) << "Unknown data.";
-        mDataBaseOk = false;
+        d->mDataBaseOk = false;
         break;
     case CreatePhishingUrlDataBaseJob::BrokenNetwork:
         qCWarning(WEBENGINEVIEWER_LOG) << "Broken Networks.";
-        mDataBaseOk = false;
+        d->mDataBaseOk = false;
         break;
     }
-    if (mDataBaseOk) {
+    if (d->mDataBaseOk) {
         if ((infoDataBase.responseType == WebEngineViewer::UpdateDataBaseInfo::PartialUpdate) &&
-                (mNewClientState == infoDataBase.newClientState)) {
+                (d->mNewClientState == infoDataBase.newClientState)) {
             qDebug() << "No update necessary ";
         } else {
             //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
@@ -176,7 +191,7 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
         }
     }
     checkDataBase();
-    mDownloadProgress = false;
+    d->mDownloadProgress = false;
 }
 
 void LocalDataBaseManager::checkDataBase()
@@ -213,7 +228,7 @@ void LocalDataBaseManager::fullUpdateDataBase(const WebEngineViewer::UpdateDataB
 {
     //Clear DataBase
     addElementToDataBase(infoDataBase.additionList);
-    mNewClientState = infoDataBase.newClientState;
+    d->mNewClientState = infoDataBase.newClientState;
     saveConfig();
 }
 
@@ -221,7 +236,7 @@ void LocalDataBaseManager::partialUpdateDataBase(const WebEngineViewer::UpdateDa
 {
     removeElementFromDataBase(infoDataBase.removalList);
     addElementToDataBase(infoDataBase.additionList);
-    mNewClientState = infoDataBase.newClientState;
+    d->mNewClientState = infoDataBase.newClientState;
     saveConfig();
 }
 
@@ -246,12 +261,12 @@ bool LocalDataBaseManager::initializeDataBase()
 
 void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
 {
-    mDownloadProgress = downloadProgress;
+    d->mDownloadProgress = downloadProgress;
 }
 
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
-    if (mDataBaseOk) {
+    if (d->mDataBaseOk) {
         QByteArray hash = createHash(url);
         if (malwareFound(hash)) {
             Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Malware);
