@@ -48,6 +48,8 @@ void SearchFullHashJobTest::shouldCreateRequest_data()
     QTest::newRow("database hash but not hash") << QByteArray() << QStringList{QStringLiteral("boo")} << QByteArray() << false;
     QTest::newRow("database hash and hash") << QByteArrayLiteral("bla") << QStringList{QStringLiteral("boo")}
                                             << QByteArrayLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"clientStates\":[\"boo\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}") << true;
+    QTest::newRow("multi database hash and hash") << QByteArrayLiteral("bla") << (QStringList() << QStringLiteral("boo") << QStringLiteral("bli"))
+                                            << QByteArrayLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"clientStates\":[\"boo\",\"bli\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}") << true;
 }
 
 void SearchFullHashJobTest::shouldCreateRequest()
