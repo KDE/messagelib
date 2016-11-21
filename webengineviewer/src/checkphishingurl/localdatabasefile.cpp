@@ -21,13 +21,38 @@
 
 using namespace WebEngineViewer;
 
-LocalDataBaseFile::LocalDataBaseFile(QObject *parent)
-    : QObject(parent)
+LocalDataBaseFile::LocalDataBaseFile(const QString &filename)
+    : mFile(filename),
+      mValid(false)
 {
-
+    load();
 }
 
 LocalDataBaseFile::~LocalDataBaseFile()
 {
 
+}
+
+bool LocalDataBaseFile::load()
+{
+    if (!mFile.open(QIODevice::ReadOnly))
+        return false;
+    mData = mFile.map(0, mFile.size());
+    if (mData) {
+        const int major = getUint16(0);
+        const int minor = getUint16(2);
+        mValid = (major == 1 && minor >= 1 && minor <= 2);
+    }
+    mMtime = QFileInfo(mFile).lastModified();
+    return mValid;
+}
+
+bool LocalDataBaseFile::reload()
+{
+    mValid = false;
+    if (mFile.isOpen()) {
+        mFile.close();
+    }
+    mData = 0;
+    return load();
 }

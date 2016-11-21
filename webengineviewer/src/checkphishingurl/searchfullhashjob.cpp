@@ -87,7 +87,6 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
   "negativeCacheDuration": "300.000s"
 }
 */
-    /*
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
         Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
@@ -98,16 +97,21 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
             return;
         } else {
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
+            //Implement multi match ?
             if (info.count() == 1) {
                 const QVariantMap map = info.at(0).toMap();
                 const QString threatTypeStr = map[QStringLiteral("threatType")].toString();
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
-                        if (urlMap[QStringLiteral("url")].toString() == mHash.toString()) {
+                        const QString hashStr = urlMap[QStringLiteral("hash")].toString();
+                        //TODO
+                        /*
+                        if (urlMap[QStringLiteral("hash")].toString() == mHash.toString()) {
                             Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, mHash);
                             return;
                         }
+                        */
                     }
                 } else {
                     qWarning() << " SearchFullHashJob::parse threatTypeStr : " << threatTypeStr;
@@ -116,7 +120,6 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
             Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
         }
     }
-    */
 }
 
 void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
@@ -162,7 +165,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
     clientMap.insert(QStringLiteral("clientVersion"), QStringLiteral("5.4.0")); //FIXME
     map.insert(QStringLiteral("client"), clientMap);
 
-    //clientStates
+    //clientStates We can support multi database.
     const QVariantList clientStatesList = { mDatabaseHash };
     map.insert(QStringLiteral("clientStates"), clientStatesList);
 

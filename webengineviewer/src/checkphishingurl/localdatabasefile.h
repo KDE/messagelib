@@ -19,16 +19,44 @@
 
 #ifndef LOCALDATABASEFILE_H
 #define LOCALDATABASEFILE_H
-#include <QObject>
+
+#include <QString>
+#include <QDateTime>
+#include <QFile>
+#include <QFileInfo>
+#include <QtEndian>
 
 namespace WebEngineViewer
 {
-class LocalDataBaseFile : public QObject
+class LocalDataBaseFile
 {
-    Q_OBJECT
 public:
-    explicit LocalDataBaseFile(QObject *parent = Q_NULLPTR);
+    LocalDataBaseFile(const QString &filename);
     ~LocalDataBaseFile();
+
+    bool isValid() const { return mValid; }
+    inline quint16 getUint16(int offset) const
+    {
+        return qFromBigEndian(*reinterpret_cast<quint16 *>(mData + offset));
+    }
+    inline quint32 getUint32(int offset) const
+    {
+        return qFromBigEndian(*reinterpret_cast<quint32 *>(mData + offset));
+    }
+    inline const char *getCharStar(int offset) const
+    {
+        return reinterpret_cast<const char *>(mData + offset);
+    }
+
+
+private:
+    bool load();
+    bool reload();
+
+    QFile mFile;
+    uchar *mData;
+    QDateTime mMtime;
+    bool mValid;
 };
 }
 
