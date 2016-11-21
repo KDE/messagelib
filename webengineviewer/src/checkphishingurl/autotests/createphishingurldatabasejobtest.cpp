@@ -23,6 +23,8 @@
 #include <QSignalSpy>
 #include <QTest>
 
+extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob;
+
 QByteArray readJsonFile(const QString &jsonFile)
 {
     QFile file(QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
@@ -36,7 +38,7 @@ QByteArray readJsonFile(const QString &jsonFile)
 CreatePhishingUrlDataBaseJobTest::CreatePhishingUrlDataBaseJobTest(QObject *parent)
     : QObject(parent)
 {
-
+    webengineview_useCompactJson_CreatePhishingUrlDataBaseJob = true;
 }
 
 CreatePhishingUrlDataBaseJobTest::~CreatePhishingUrlDataBaseJobTest()
@@ -108,7 +110,6 @@ void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
     job.setDataBaseState(databasestate);
     job.setDataBaseDownloadNeeded(downloadtype);
-    job.setUseCompactJson(true);
     QCOMPARE(job.jsonRequest(), request);
 }
 

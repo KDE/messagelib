@@ -27,19 +27,19 @@
 
 using namespace WebEngineViewer;
 
+WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob = true;
+
 class WebEngineViewer::CreatePhishingUrlDataBaseJobPrivate
 {
 public:
     CreatePhishingUrlDataBaseJobPrivate()
         : mDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::FullDataBase),
-          mUseCompactJson(true),
           mNetworkAccessManager(Q_NULLPTR)
     {
 
     }
     QString mDataBaseState;
     CreatePhishingUrlDataBaseJob::DataBaseDownloadType mDataBaseDownloadNeeded;
-    bool mUseCompactJson;
     QNetworkAccessManager *mNetworkAccessManager;
 };
 
@@ -152,7 +152,7 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     map.insert(QStringLiteral("listUpdateRequests"), listUpdateRequests);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
-    const QByteArray baPostData = postData.toJson(d->mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
+    const QByteArray baPostData = postData.toJson(webengineview_useCompactJson_CreatePhishingUrlDataBaseJob ? QJsonDocument::Compact : QJsonDocument::Indented);
     return baPostData;
 }
 
@@ -210,11 +210,6 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
         }
     }
     return additionList;
-}
-
-void CreatePhishingUrlDataBaseJob::setUseCompactJson(bool useCompactJson)
-{
-    d->mUseCompactJson = useCompactJson;
 }
 
 QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList &lst)

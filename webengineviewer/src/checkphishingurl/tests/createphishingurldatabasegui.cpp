@@ -29,9 +29,12 @@
 #include <QVBoxLayout>
 #include <QInputDialog>
 
+extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob;
+
 CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     : QWidget(parent)
 {
+    webengineview_useCompactJson_CreatePhishingUrlDataBaseJob = false;
     QVBoxLayout *layout = new QVBoxLayout(this);
 
     mResult = new QTextEdit(this);
@@ -72,7 +75,6 @@ void CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase()
     if (!newValue.isEmpty()) {
         clear();
         WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
-        job->setUseCompactJson(false);
         job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
         job->setDataBaseState(newValue);
         connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
@@ -85,7 +87,6 @@ void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 {
     clear();
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
-    job->setUseCompactJson(false);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJson, this, &CreatePhisingUrlDataBaseGui::slotDebugJSon);
     job->start();

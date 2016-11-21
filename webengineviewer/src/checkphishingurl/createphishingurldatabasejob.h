@@ -98,7 +98,6 @@ public:
 
     QByteArray jsonRequest() const;
 
-    void setUseCompactJson(bool useCompactJson);
     void parseResult(const QByteArray &value);
 
 Q_SIGNALS:
