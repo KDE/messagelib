@@ -34,3 +34,9 @@ ecm_add_test(searchfullhashjobtest.cpp ../checkphishingurlutil.cpp ../searchfull
     NAME_PREFIX "webengineview-searchfullhashjob-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
+
+ecm_add_test(localdatabasefiletest.cpp ../localdatabasefile.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME localdatabasefiletest
+    NAME_PREFIX "webengineview-localdatabasefile-"
+    LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
+    )
