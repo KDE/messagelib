@@ -27,9 +27,12 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
+extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson;
+
 CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
     : QWidget(parent)
 {
+    webengineview_useCompactJson = false;
     QVBoxLayout *layout = new QVBoxLayout(this);
 
     QHBoxLayout *checkUrlLayout = new QHBoxLayout;
@@ -69,7 +72,6 @@ void CheckPhishingUrlGui::slotCheckUrl()
     mResult->clear();
 
     WebEngineViewer::CheckPhishingUrlJob *job = new WebEngineViewer::CheckPhishingUrlJob(this);
-    job->setUseCompactJson(false);
     connect(job, &WebEngineViewer::CheckPhishingUrlJob::result, this, &CheckPhishingUrlGui::slotGetResult);
     connect(job, &WebEngineViewer::CheckPhishingUrlJob::debugJson, this, &CheckPhishingUrlGui::slotJSonDebug);
     job->setUrl(QUrl::fromUserInput(urlStr));

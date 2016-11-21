@@ -51,7 +51,6 @@ public:
 
     QByteArray jsonRequest() const;
     void parse(const QByteArray &replyStr);
-    void setUseCompactJson(bool useCompactJson);
 
 Q_SIGNALS:
     void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url);

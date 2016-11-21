@@ -27,17 +27,17 @@
 
 using namespace WebEngineViewer;
 
+WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson = true;
+
 class WebEngineViewer::CheckPhishingUrlJobPrivate
 {
 public:
     CheckPhishingUrlJobPrivate()
-        : mUseCompactJson(true),
-          mNetworkAccessManager(Q_NULLPTR)
+        : mNetworkAccessManager(Q_NULLPTR)
     {
 
     }
     QUrl mUrl;
-    bool mUseCompactJson;
     QNetworkAccessManager *mNetworkAccessManager;
 };
 
@@ -59,11 +59,6 @@ void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslEr
 {
     qCDebug(WEBENGINEVIEWER_LOG) << " void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
     reply->ignoreSslErrors(error);
-}
-
-void CheckPhishingUrlJob::setUseCompactJson(bool useCompactJson)
-{
-    d->mUseCompactJson = useCompactJson;
 }
 
 void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
@@ -136,7 +131,7 @@ QByteArray CheckPhishingUrlJob::jsonRequest() const
     map.insert(QStringLiteral("threatInfo"), threatMap);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
-    const QByteArray baPostData = postData.toJson(d->mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
+    const QByteArray baPostData = postData.toJson(webengineview_useCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
     return baPostData;
 }
 
