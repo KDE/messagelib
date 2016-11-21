@@ -27,17 +27,32 @@
 
 using namespace WebEngineViewer;
 
+class WebEngineViewer::CheckPhishingUrlJobPrivate
+{
+public:
+    CheckPhishingUrlJobPrivate()
+        : mUseCompactJson(true),
+          mNetworkAccessManager(Q_NULLPTR)
+    {
+
+    }
+    QUrl mUrl;
+    bool mUseCompactJson;
+    QNetworkAccessManager *mNetworkAccessManager;
+};
+
 CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
     : QObject(parent),
-      mUseCompactJson(true)
+      d(new WebEngineViewer::CheckPhishingUrlJobPrivate)
 {
-    mNetworkAccessManager = new QNetworkAccessManager(this);
-    connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CheckPhishingUrlJob::slotCheckUrlFinished);
-    connect(mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CheckPhishingUrlJob::slotSslErrors);
+    d->mNetworkAccessManager = new QNetworkAccessManager(this);
+    connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CheckPhishingUrlJob::slotCheckUrlFinished);
+    connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CheckPhishingUrlJob::slotSslErrors);
 }
 
 CheckPhishingUrlJob::~CheckPhishingUrlJob()
 {
+    delete d;
 }
 
 void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
@@ -48,18 +63,18 @@ void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslEr
 
 void CheckPhishingUrlJob::setUseCompactJson(bool useCompactJson)
 {
-    mUseCompactJson = useCompactJson;
+    d->mUseCompactJson = useCompactJson;
 }
 
 void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
 {
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
-        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, d->mUrl);
     } else {
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Ok, mUrl);
+            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Ok, d->mUrl);
             return;
         } else {
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
@@ -69,8 +84,8 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
-                        if (urlMap[QStringLiteral("url")].toString() == mUrl.toString()) {
-                            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::MalWare, mUrl);
+                        if (urlMap[QStringLiteral("url")].toString() == d->mUrl.toString()) {
+                            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::MalWare, d->mUrl);
                             return;
                         }
                     }
@@ -78,7 +93,7 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                     qWarning() << " CheckPhishingUrlJob::parse threatTypeStr : " << threatTypeStr;
                 }
             }
-            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, mUrl);
+            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, d->mUrl);
         }
     }
 }
@@ -92,7 +107,7 @@ void CheckPhishingUrlJob::slotCheckUrlFinished(QNetworkReply *reply)
 
 void CheckPhishingUrlJob::setUrl(const QUrl &url)
 {
-    mUrl = url;
+    d->mUrl = url;
 }
 
 QByteArray CheckPhishingUrlJob::jsonRequest() const
@@ -114,21 +129,21 @@ QByteArray CheckPhishingUrlJob::jsonRequest() const
     threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
     QVariantList threatEntriesList;
     QVariantMap urlMap;
-    urlMap.insert(QStringLiteral("url"), mUrl.toString());
+    urlMap.insert(QStringLiteral("url"), d->mUrl.toString());
     threatEntriesList.append(urlMap);
     threatMap.insert(QStringLiteral("threatEntries"), threatEntriesList);
 
     map.insert(QStringLiteral("threatInfo"), threatMap);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
-    const QByteArray baPostData = postData.toJson(mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
+    const QByteArray baPostData = postData.toJson(d->mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
     return baPostData;
 }
 
 void CheckPhishingUrlJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork, mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork, d->mUrl);
         deleteLater();
     } else if (canStart()) {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find"));
@@ -141,10 +156,10 @@ void CheckPhishingUrlJob::start()
         Q_EMIT debugJson(baPostData);
         //curl -H "Content-Type: application/json" -X POST -d '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}' https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
 
-        QNetworkReply *reply = mNetworkAccessManager->post(request, baPostData);
+        QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CheckPhishingUrlJob::slotError);
     } else {
-        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::InvalidUrl, mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::InvalidUrl, d->mUrl);
         deleteLater();
     }
 }
@@ -159,5 +174,5 @@ void CheckPhishingUrlJob::slotError(QNetworkReply::NetworkError error)
 
 bool CheckPhishingUrlJob::canStart() const
 {
-    return mUrl.isValid();
+    return d->mUrl.isValid();
 }

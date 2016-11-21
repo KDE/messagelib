@@ -27,6 +27,7 @@
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
+class CheckPhishingUrlJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/lookup-api */
 class WEBENGINEVIEWER_EXPORT CheckPhishingUrlJob : public QObject
 {
@@ -60,10 +61,9 @@ private Q_SLOTS:
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
+
 private:
-    QUrl mUrl;
-    bool mUseCompactJson;
-    QNetworkAccessManager *mNetworkAccessManager;
+    CheckPhishingUrlJobPrivate *const d;
 };
 }
 

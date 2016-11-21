@@ -26,6 +26,7 @@
 #include <QUrl>
 namespace WebEngineViewer
 {
+class CheckPhishingUrlFromLocalDataBaseJobPrivate;
 class WEBENGINEVIEWER_EXPORT CheckPhishingUrlFromLocalDataBaseJob : public QObject
 {
     Q_OBJECT
@@ -47,10 +48,11 @@ public:
 
 Q_SIGNALS:
     void finished(const QUrl &url, WebEngineViewer::CheckPhishingUrlFromLocalDataBaseJob::UrlStatus status);
+private Q_SLOTS:
+    void slotCheckUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
 
 private:
-    void slotCheckUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
-    QUrl mUrl;
+    CheckPhishingUrlFromLocalDataBaseJobPrivate *const d;
 };
 }
 #endif // CHECKPHISHINGURLFROMLOCALDATABASE_H

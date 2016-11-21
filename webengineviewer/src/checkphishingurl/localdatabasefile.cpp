@@ -18,36 +18,48 @@
 */
 
 #include "localdatabasefile.h"
+#include <QFileInfo>
+#include <QtEndian>
+
 
 using namespace WebEngineViewer;
 
-LocalDataBaseFile::LocalDataBaseFile(const QString &filename)
-    : mFile(filename),
-      mValid(false)
+class WebEngineViewer::LocalDataBaseFilePrivate
 {
-    load();
-}
+public:
+    LocalDataBaseFilePrivate(const QString &filename, LocalDataBaseFile *qq)
+        : mFile(filename),
+          mData(Q_NULLPTR),
+          q(qq),
+          mValid(false)
+    {
+        load();
+    }
+    bool load();
+    bool reload();
 
-LocalDataBaseFile::~LocalDataBaseFile()
-{
+    QFile mFile;
+    uchar *mData;
+    QDateTime mMtime;
+    LocalDataBaseFile *q;
+    bool mValid;
+};
 
-}
-
-bool LocalDataBaseFile::load()
+bool LocalDataBaseFilePrivate::load()
 {
     if (!mFile.open(QIODevice::ReadOnly))
         return false;
     mData = mFile.map(0, mFile.size());
     if (mData) {
-        const int major = getUint16(0);
-        const int minor = getUint16(2);
+        const int major = q->getUint16(0);
+        const int minor = q->getUint16(2);
         mValid = (major == 1 && minor >= 1 && minor <= 2);
     }
     mMtime = QFileInfo(mFile).lastModified();
     return mValid;
 }
 
-bool LocalDataBaseFile::reload()
+bool LocalDataBaseFilePrivate::reload()
 {
     mValid = false;
     if (mFile.isOpen()) {
@@ -55,4 +67,40 @@ bool LocalDataBaseFile::reload()
     }
     mData = 0;
     return load();
+}
+
+
+LocalDataBaseFile::LocalDataBaseFile(const QString &filename)
+    : d(new WebEngineViewer::LocalDataBaseFilePrivate(filename, this))
+{
+}
+
+LocalDataBaseFile::~LocalDataBaseFile()
+{
+    delete d;
+}
+
+bool LocalDataBaseFile::isValid() const
+{
+    return d->mValid;
+}
+
+quint16 LocalDataBaseFile::getUint16(int offset) const
+{
+    return qFromBigEndian(*reinterpret_cast<quint16 *>(d->mData + offset));
+}
+
+quint32 LocalDataBaseFile::getUint32(int offset) const
+{
+    return qFromBigEndian(*reinterpret_cast<quint32 *>(d->mData + offset));
+}
+
+const char *LocalDataBaseFile::getCharStar(int offset) const
+{
+    return reinterpret_cast<const char *>(d->mData + offset);
+}
+
+bool LocalDataBaseFile::reload()
+{
+    return d->reload();
 }

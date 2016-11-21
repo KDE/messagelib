@@ -23,30 +23,41 @@
 
 using namespace WebEngineViewer;
 
+class WebEngineViewer::CheckPhishingUrlFromLocalDataBaseJobPrivate
+{
+public:
+    CheckPhishingUrlFromLocalDataBaseJobPrivate()
+    {
+
+    }
+    QUrl mUrl;
+};
+
 CheckPhishingUrlFromLocalDataBaseJob::CheckPhishingUrlFromLocalDataBaseJob(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      d(new CheckPhishingUrlFromLocalDataBaseJobPrivate)
 {
 
 }
 
 CheckPhishingUrlFromLocalDataBaseJob::~CheckPhishingUrlFromLocalDataBaseJob()
 {
-
+    delete d;
 }
 
 void CheckPhishingUrlFromLocalDataBaseJob::setCheckPhisingUrl(const QUrl &url)
 {
-    mUrl = url;
+    d->mUrl = url;
 }
 
 void CheckPhishingUrlFromLocalDataBaseJob::start()
 {
-    if (mUrl.isValid()) {
-        Q_EMIT finished(mUrl, InvalidUrl);
+    if (d->mUrl.isValid()) {
+        Q_EMIT finished(d->mUrl, InvalidUrl);
         deleteLater();
     } else {
         connect(LocalDataBaseManager::self(), &LocalDataBaseManager::checkUrlFinished, this, &CheckPhishingUrlFromLocalDataBaseJob::slotCheckUrlFinished);
-        LocalDataBaseManager::self()->checkUrl(mUrl);
+        LocalDataBaseManager::self()->checkUrl(d->mUrl);
     }
 }
 
@@ -71,5 +82,5 @@ void CheckPhishingUrlFromLocalDataBaseJob::slotCheckUrlFinished(const QUrl &url,
 
 bool CheckPhishingUrlFromLocalDataBaseJob::canStart() const
 {
-    return mUrl.isValid();
+    return d->mUrl.isValid();
 }

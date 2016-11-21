@@ -64,8 +64,8 @@ private Q_SLOTS:
 private:
     QByteArray mHash;
     QStringList mDatabaseHashes;
-    bool mUseCompactJson;
     QNetworkAccessManager *mNetworkAccessManager;
+    bool mUseCompactJson;
 };
 }
 
