@@ -28,17 +28,33 @@
 
 using namespace WebEngineViewer;
 
+class WebEngineViewer::SearchFullHashJobPrivate
+{
+public:
+    SearchFullHashJobPrivate()
+        : mNetworkAccessManager(Q_NULLPTR),
+          mUseCompactJson(true)
+    {
+
+    }
+    QByteArray mHash;
+    QStringList mDatabaseHashes;
+    QNetworkAccessManager *mNetworkAccessManager;
+    bool mUseCompactJson;
+};
+
 SearchFullHashJob::SearchFullHashJob(QObject *parent)
     : QObject(parent),
-      mUseCompactJson(true)
+      d(new SearchFullHashJobPrivate)
 {
-    mNetworkAccessManager = new QNetworkAccessManager(this);
-    connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &SearchFullHashJob::slotCheckUrlFinished);
-    connect(mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &SearchFullHashJob::slotSslErrors);
+    d->mNetworkAccessManager = new QNetworkAccessManager(this);
+    connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &SearchFullHashJob::slotCheckUrlFinished);
+    connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &SearchFullHashJob::slotSslErrors);
 }
 
 SearchFullHashJob::~SearchFullHashJob()
 {
+    delete d;
 }
 
 void SearchFullHashJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
@@ -49,7 +65,7 @@ void SearchFullHashJob::slotSslErrors(QNetworkReply *reply, const QList<QSslErro
 
 void SearchFullHashJob::setUseCompactJson(bool useCompactJson)
 {
-    mUseCompactJson = useCompactJson;
+    d->mUseCompactJson = useCompactJson;
 }
 
 void SearchFullHashJob::parse(const QByteArray &replyStr)
@@ -89,11 +105,11 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
 */
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mHash);
     } else {
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Ok, mHash);
+            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Ok, d->mHash);
             return;
         } else {
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
@@ -123,7 +139,7 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
             } else {
                 qCWarning(WEBENGINEVIEWER_LOG) << " SearchFullHashJob::parse matches multi element : " << info.count();
             }
-            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, mHash);
+            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mHash);
         }
     }
 }
@@ -137,7 +153,7 @@ void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
 
 void SearchFullHashJob::setSearchHash(const QByteArray &hash)
 {
-    mHash = hash;
+    d->mHash = hash;
 }
 
 QByteArray SearchFullHashJob::jsonRequest() const
@@ -173,7 +189,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 
     //clientStates We can support multi database.
     QVariantList clientStatesList;
-    Q_FOREACH(const QString &str, mDatabaseHashes) {
+    Q_FOREACH(const QString &str, d->mDatabaseHashes) {
         clientStatesList.append(str);
     }
     map.insert(QStringLiteral("clientStates"), clientStatesList);
@@ -191,7 +207,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
     QVariantList threatEntriesList;
 
     QVariantMap hashUrlMap;
-    hashUrlMap.insert(QStringLiteral("hash"), mHash);
+    hashUrlMap.insert(QStringLiteral("hash"), d->mHash);
     threatEntriesList.append(hashUrlMap);
 
     threatMap.insert(QStringLiteral("threatEntries"), threatEntriesList);
@@ -199,14 +215,14 @@ QByteArray SearchFullHashJob::jsonRequest() const
     map.insert(QStringLiteral("threatInfo"), threatMap);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
-    const QByteArray baPostData = postData.toJson(mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
+    const QByteArray baPostData = postData.toJson(d->mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
     return baPostData;
 }
 
 void SearchFullHashJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, mHash);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, d->mHash);
         deleteLater();
     } else if (canStart()) {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/fullHashes:find"));
@@ -217,10 +233,10 @@ void SearchFullHashJob::start()
         const QByteArray baPostData = jsonRequest();
         qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
         Q_EMIT debugJson(baPostData);
-        QNetworkReply *reply = mNetworkAccessManager->post(request, baPostData);
+        QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &SearchFullHashJob::slotError);
     } else {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::InvalidUrl, mHash);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::InvalidUrl, d->mHash);
         deleteLater();
     }
 }
@@ -235,10 +251,10 @@ void SearchFullHashJob::slotError(QNetworkReply::NetworkError error)
 
 bool SearchFullHashJob::canStart() const
 {
-    return !mHash.isEmpty() && !mDatabaseHashes.isEmpty();
+    return !d->mHash.isEmpty() && !d->mDatabaseHashes.isEmpty();
 }
 
 void SearchFullHashJob::setDatabaseState(const QStringList &hash)
 {
-    mDatabaseHashes = hash;
+    d->mDatabaseHashes = hash;
 }

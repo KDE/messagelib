@@ -27,6 +27,7 @@
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
+class SearchFullHashJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/lookup-api */
 class WEBENGINEVIEWER_EXPORT SearchFullHashJob : public QObject
 {
@@ -62,10 +63,7 @@ private Q_SLOTS:
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
 private:
-    QByteArray mHash;
-    QStringList mDatabaseHashes;
-    QNetworkAccessManager *mNetworkAccessManager;
-    bool mUseCompactJson;
+    SearchFullHashJobPrivate *const d;
 };
 }
 
