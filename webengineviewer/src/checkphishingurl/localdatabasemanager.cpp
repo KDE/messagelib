@@ -69,15 +69,7 @@ LocalDataBaseManager::~LocalDataBaseManager()
 
 void LocalDataBaseManager::closeDataBaseAndDeleteIt()
 {
-    /*
-    if (mDataBaseOk) {
-        mDataBase.close();
-        QFile f(localDataBasePath() + sqlFileName());
-        if (!f.remove()) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "impossible to remove local database file";
-        }
-    }
-    */
+    //TODO delete file ?
 }
 
 void LocalDataBaseManager::readConfig()
@@ -119,20 +111,7 @@ void LocalDataBaseManager::initialize()
         return;
     }
     if (!d->mDataBaseOk) {
-        /*
-        bool initDatabaseSuccess = initializeDataBase();
-        if (initDatabaseSuccess) {
-            if (!mDataBase.tables().contains(tableName())) {
-                if (createTable()) {
-                    downloadFullDataBase();
-                } else {
-                    qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to create Table";
-                }
-            } else {
-                mDataBaseOk = true;
-            }
-        }
-        */
+        //TODO intialize file
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized.";
     }
@@ -173,7 +152,7 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
     if (d->mDataBaseOk) {
         if ((infoDataBase.responseType == WebEngineViewer::UpdateDataBaseInfo::PartialUpdate) &&
                 (d->mNewClientState == infoDataBase.newClientState)) {
-            qDebug() << "No update necessary ";
+            qCDebug(WEBENGINEVIEWER_LOG) << "No update necessary ";
         } else {
             //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
             switch(infoDataBase.responseType) {
@@ -243,20 +222,6 @@ void LocalDataBaseManager::partialUpdateDataBase(const WebEngineViewer::UpdateDa
 LocalDataBaseManager *LocalDataBaseManager::self()
 {
     return s_localDataBaseManager;
-}
-
-bool LocalDataBaseManager::initializeDataBase()
-{
-    /*
-    mDataBase = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
-    QDir().mkpath(localDataBasePath());
-    mDataBase.setDatabaseName(localDataBasePath() + sqlFileName());
-    if (!mDataBase.open()) {
-        qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open DataBase: " << mDataBase.lastError().text();
-        return false;
-    }
-    */
-    return true;
 }
 
 void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)

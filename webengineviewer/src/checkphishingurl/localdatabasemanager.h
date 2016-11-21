@@ -68,7 +68,6 @@ private:
     void removeElementFromDataBase(const QVector<Removal> &removalList);
     void slotCheckDataBase();
 
-    bool initializeDataBase();
     QByteArray createHash(const QUrl &url);
     void checkDataBase();
     bool malwareFound(const QByteArray &hash);
