@@ -28,19 +28,19 @@
 
 using namespace WebEngineViewer;
 
+WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_SearchFullHashJob = true;
+
 class WebEngineViewer::SearchFullHashJobPrivate
 {
 public:
     SearchFullHashJobPrivate()
-        : mNetworkAccessManager(Q_NULLPTR),
-          mUseCompactJson(true)
+        : mNetworkAccessManager(Q_NULLPTR)
     {
 
     }
     QByteArray mHash;
     QStringList mDatabaseHashes;
     QNetworkAccessManager *mNetworkAccessManager;
-    bool mUseCompactJson;
 };
 
 SearchFullHashJob::SearchFullHashJob(QObject *parent)
@@ -61,11 +61,6 @@ void SearchFullHashJob::slotSslErrors(QNetworkReply *reply, const QList<QSslErro
 {
     qCDebug(WEBENGINEVIEWER_LOG) << " void SearchFullHashJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
     reply->ignoreSslErrors(error);
-}
-
-void SearchFullHashJob::setUseCompactJson(bool useCompactJson)
-{
-    d->mUseCompactJson = useCompactJson;
 }
 
 void SearchFullHashJob::parse(const QByteArray &replyStr)
@@ -215,7 +210,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
     map.insert(QStringLiteral("threatInfo"), threatMap);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
-    const QByteArray baPostData = postData.toJson(d->mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
+    const QByteArray baPostData = postData.toJson(webengineview_useCompactJson_SearchFullHashJob ? QJsonDocument::Compact : QJsonDocument::Indented);
     return baPostData;
 }
 

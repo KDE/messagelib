@@ -51,7 +51,6 @@ public:
 
     QByteArray jsonRequest() const;
     void parse(const QByteArray &replyStr);
-    void setUseCompactJson(bool useCompactJson);
 
     void setSearchHash(const QByteArray &hash);
 Q_SIGNALS:

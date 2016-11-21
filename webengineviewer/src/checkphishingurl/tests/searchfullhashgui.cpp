@@ -27,9 +27,12 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
+extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_SearchFullHashJob;
+
 SearchFullHashGui::SearchFullHashGui(QWidget *parent)
     : QWidget(parent)
 {
+    webengineview_useCompactJson_SearchFullHashJob = false;
     QVBoxLayout *layout = new QVBoxLayout(this);
 
     QHBoxLayout *checkHashLayout = new QHBoxLayout;
@@ -82,7 +85,6 @@ void SearchFullHashGui::slotCheckUrl()
 
     mResult->clear();
     WebEngineViewer::SearchFullHashJob *job = new WebEngineViewer::SearchFullHashJob(this);
-    job->setUseCompactJson(false);
     connect(job, &WebEngineViewer::SearchFullHashJob::result, this, &SearchFullHashGui::slotGetResult);
     connect(job, &WebEngineViewer::SearchFullHashJob::debugJson, this, &SearchFullHashGui::slotJSonDebug);
     job->setDatabaseState(QStringList() << databaseHashStr);
