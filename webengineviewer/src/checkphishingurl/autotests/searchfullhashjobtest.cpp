@@ -47,7 +47,7 @@ void SearchFullHashJobTest::shouldCreateRequest_data()
     QTest::newRow("no hash") << QByteArray() << QString() << QByteArray() << false;
     QTest::newRow("database hash but not hash") << QByteArray() << QStringLiteral("boo") << QByteArray() << false;
     QTest::newRow("database hash and hash") << QByteArrayLiteral("bla") << QStringLiteral("boo")
-                                            << QByteArrayLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"clientStates\":[\"boo\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":{\"hash\":\"bla\"},\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}") << true;
+                                            << QByteArrayLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"clientStates\":[\"boo\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}") << true;
 }
 
 void SearchFullHashJobTest::shouldCreateRequest()
