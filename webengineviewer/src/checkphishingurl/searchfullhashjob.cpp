@@ -113,6 +113,10 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                         }
                         */
                     }
+                    const QVariantMap threatEntryMetadataMap = map[QStringLiteral("threatEntryMetadata")].toMap();
+                    if (!threatEntryMetadataMap.isEmpty()) {
+                        //TODO
+                    }
                 } else {
                     qWarning() << " SearchFullHashJob::parse threatTypeStr : " << threatTypeStr;
                 }
