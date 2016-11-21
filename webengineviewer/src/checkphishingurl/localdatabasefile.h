@@ -41,6 +41,8 @@ public:
     inline quint32 getUint32(int offset) const;
     inline const char *getCharStar(int offset) const;
 
+    QString searchHash(int posListOffset, const QByteArray &hashToSearch);
+
 private:
     LocalDataBaseFilePrivate *const d;
 };

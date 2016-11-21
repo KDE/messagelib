@@ -53,6 +53,7 @@ bool LocalDataBaseFilePrivate::load()
     if (mData) {
         const int major = q->getUint16(0);
         const int minor = q->getUint16(2);
+        //Check version in binary file.
         mValid = (major == 1 && minor >= 1 && minor <= 2);
     }
     mMtime = QFileInfo(mFile).lastModified();
@@ -65,7 +66,7 @@ bool LocalDataBaseFilePrivate::reload()
     if (mFile.isOpen()) {
         mFile.close();
     }
-    mData = 0;
+    mData = Q_NULLPTR;
     return load();
 }
 
@@ -103,4 +104,30 @@ const char *LocalDataBaseFile::getCharStar(int offset) const
 bool LocalDataBaseFile::reload()
 {
     return d->reload();
+}
+
+QString LocalDataBaseFile::searchHash(int posListOffset, const QByteArray &hashToSearch)
+{
+#if 0
+    const int hashsListOffset = getUint32(posListOffset);
+    const int numHash = getUint32(hashsListOffset);
+    int begin = 0;
+    int end = numHash - 1;
+    while (begin <= end) {
+        const int medium = (begin + end) / 2;
+        const int off = hashsListOffset + 4 + 8 * medium;
+        const int hashOffset = getUint32(off);
+        const char *hashCharStar = getCharStar(hashOffset);
+        const int cmp = qstrcmp(mime, inputMime);
+        if (cmp < 0)
+            begin = medium + 1;
+        else if (cmp > 0)
+            end = medium - 1;
+        else {
+            const int iconOffset = getUint32(off + 4);
+            return QLatin1String(getCharStar(iconOffset));
+        }
+    }
+#endif
+    return QString();
 }

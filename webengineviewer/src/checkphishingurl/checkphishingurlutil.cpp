@@ -23,3 +23,8 @@ QString CheckPhishingUrlUtil::apiKey()
 {
     return QStringLiteral("AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo");
 }
+
+QString CheckPhishingUrlUtil::versionApps()
+{
+    return QStringLiteral("5.4.0");
+}

@@ -19,6 +19,7 @@
 
 #include "checkphishingurljobtest.h"
 #include "../checkphishingurljob.h"
+#include "../checkphishingurlutil.h"
 
 #include <QTest>
 
@@ -42,22 +43,23 @@ void CheckPhishingUrlJobTest::shouldNotBeAbleToStartWithEmptyUrl()
 void CheckPhishingUrlJobTest::shouldCreateRequest_data()
 {
     QTest::addColumn<QUrl>("url");
-    QTest::addColumn<QByteArray>("request");
+    QTest::addColumn<QString>("request");
     QTest::addColumn<bool>("canStart");
-    QTest::newRow("no url") << QUrl() << QByteArray() << false;
-    QTest::newRow("value") << QUrl(QStringLiteral("http://www.kde.org")) << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"url\":\"http://www.kde.org\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}") << true;
+    QTest::newRow("no url") << QUrl() << QString() << false;
+    QTest::newRow("value") << QUrl(QStringLiteral("http://www.kde.org")) << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"url\":\"http://www.kde.org\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
+                              .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps()) << true;
 }
 
 void CheckPhishingUrlJobTest::shouldCreateRequest()
 {
     QFETCH(QUrl, url);
-    QFETCH(QByteArray, request);
+    QFETCH(QString, request);
     QFETCH(bool, canStart);
     WebEngineViewer::CheckPhishingUrlJob job;
     job.setUrl(url);
     QCOMPARE(job.canStart(), canStart);
     if (canStart) {
-        QCOMPARE(job.jsonRequest(), request);
+        QCOMPARE(job.jsonRequest(), request.toLatin1());
     }
 }
 

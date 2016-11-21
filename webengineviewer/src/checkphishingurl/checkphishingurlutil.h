@@ -27,6 +27,7 @@ namespace WebEngineViewer
 namespace CheckPhishingUrlUtil
 {
 QString apiKey();
+QString versionApps();
 }
 }
 #endif // CHECKPHISHINGURLUTIL_H

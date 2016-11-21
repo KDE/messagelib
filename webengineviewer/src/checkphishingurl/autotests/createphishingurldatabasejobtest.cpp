@@ -19,7 +19,7 @@
 
 #include "createphishingurldatabasejobtest.h"
 #include "../createphishingurldatabasejob.h"
-
+#include "../checkphishingurlutil.h"
 #include <QSignalSpy>
 #include <QTest>
 
@@ -94,23 +94,27 @@ void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest_data()
 {
     QTest::addColumn<QString>("databasestate");
     QTest::addColumn<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType>("downloadtype");
-    QTest::addColumn<QByteArray>("request");
-    QTest::newRow("fulldownload") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}");
-    QTest::newRow("fulldownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}");
-    QTest::newRow("partialdownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"foo\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}");
-    QTest::newRow("partialdownloadwithoutdatabasestate") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase << QByteArray("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}");
+    QTest::addColumn<QString>("request");
+    QTest::newRow("fulldownload") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase
+                                  << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
+    QTest::newRow("fulldownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase
+                                                   << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
+    QTest::newRow("partialdownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase
+                                                      << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"foo\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
+    QTest::newRow("partialdownloadwithoutdatabasestate") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase
+                                                         << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());;
 }
 
 void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
 {
     QFETCH(QString, databasestate);
     QFETCH(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType, downloadtype);
-    QFETCH(QByteArray, request);
+    QFETCH(QString, request);
 
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
     job.setDataBaseState(databasestate);
     job.setDataBaseDownloadNeeded(downloadtype);
-    QCOMPARE(job.jsonRequest(), request);
+    QCOMPARE(job.jsonRequest(), request.toLatin1());
 }
 
 void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()

@@ -179,7 +179,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
     QVariantMap map;
 
     clientMap.insert(QStringLiteral("clientId"), QStringLiteral("KDE"));
-    clientMap.insert(QStringLiteral("clientVersion"), QStringLiteral("5.4.0")); //FIXME
+    clientMap.insert(QStringLiteral("clientVersion"), CheckPhishingUrlUtil::versionApps());
     map.insert(QStringLiteral("client"), clientMap);
 
     //clientStates We can support multi database.
