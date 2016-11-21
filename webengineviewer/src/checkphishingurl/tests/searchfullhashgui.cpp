@@ -85,7 +85,7 @@ void SearchFullHashGui::slotCheckUrl()
     job->setUseCompactJson(false);
     connect(job, &WebEngineViewer::SearchFullHashJob::result, this, &SearchFullHashGui::slotGetResult);
     connect(job, &WebEngineViewer::SearchFullHashJob::debugJson, this, &SearchFullHashGui::slotJSonDebug);
-    job->setDatabaseState(databaseHashStr);
+    job->setDatabaseState(QStringList() << databaseHashStr);
     job->setSearchHash(hashStr.toLatin1());
 
     job->start();

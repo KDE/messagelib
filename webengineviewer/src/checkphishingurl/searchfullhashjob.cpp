@@ -170,12 +170,15 @@ QByteArray SearchFullHashJob::jsonRequest() const
     map.insert(QStringLiteral("client"), clientMap);
 
     //clientStates We can support multi database.
-    const QVariantList clientStatesList = { mDatabaseHash };
+    QVariantList clientStatesList;
+    Q_FOREACH(const QString &str, mDatabaseHashes) {
+        clientStatesList.append(str);
+    }
     map.insert(QStringLiteral("clientStates"), clientStatesList);
 
-
     QVariantMap threatMap;
-    const QVariantList platformList = { QStringLiteral("WINDOWS") };
+    QVariantList platformList;
+    platformList.append(QStringLiteral("WINDOWS"));
     threatMap.insert(QStringLiteral("platformTypes"), platformList);
 
     const QVariantList threatTypesList = { QStringLiteral("MALWARE") };
@@ -232,10 +235,10 @@ void SearchFullHashJob::slotError(QNetworkReply::NetworkError error)
 
 bool SearchFullHashJob::canStart() const
 {
-    return !mHash.isEmpty() && !mDatabaseHash.isEmpty();
+    return !mHash.isEmpty() && !mDatabaseHashes.isEmpty();
 }
 
-void SearchFullHashJob::setDatabaseState(const QString &hash)
+void SearchFullHashJob::setDatabaseState(const QStringList &hash)
 {
-    mDatabaseHash = hash;
+    mDatabaseHashes= hash;
 }

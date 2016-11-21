@@ -41,19 +41,19 @@ void SearchFullHashJobTest::shouldNotBeAbleToStartWithEmptyUrl()
 void SearchFullHashJobTest::shouldCreateRequest_data()
 {
     QTest::addColumn<QByteArray>("hash");
-    QTest::addColumn<QString>("databaseHash");
+    QTest::addColumn<QStringList>("databaseHash");
     QTest::addColumn<QByteArray>("request");
     QTest::addColumn<bool>("canStart");
-    QTest::newRow("no hash") << QByteArray() << QString() << QByteArray() << false;
-    QTest::newRow("database hash but not hash") << QByteArray() << QStringLiteral("boo") << QByteArray() << false;
-    QTest::newRow("database hash and hash") << QByteArrayLiteral("bla") << QStringLiteral("boo")
+    QTest::newRow("no hash") << QByteArray() << QStringList() << QByteArray() << false;
+    QTest::newRow("database hash but not hash") << QByteArray() << QStringList{QStringLiteral("boo")} << QByteArray() << false;
+    QTest::newRow("database hash and hash") << QByteArrayLiteral("bla") << QStringList{QStringLiteral("boo")}
                                             << QByteArrayLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"5.4.0\"},\"clientStates\":[\"boo\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}") << true;
 }
 
 void SearchFullHashJobTest::shouldCreateRequest()
 {
     QFETCH(QByteArray, hash);
-    QFETCH(QString, databaseHash);
+    QFETCH(QStringList, databaseHash);
     QFETCH(QByteArray, request);
     QFETCH(bool, canStart);
     WebEngineViewer::SearchFullHashJob job;
