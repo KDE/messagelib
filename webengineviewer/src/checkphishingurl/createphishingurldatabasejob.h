@@ -69,6 +69,7 @@ struct UpdateDataBaseInfo {
     bool operator==(const UpdateDataBaseInfo &other) const;
 };
 
+class CreatePhishingUrlDataBaseJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
 class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
@@ -112,10 +113,7 @@ private:
     QVector<Removal> parseRemovals(const QVariantList &lst);
     QVector<Addition> parseAdditions(const QVariantList &lst);
 
-    QString mDataBaseState;
-    DataBaseDownloadType mDataBaseDownloadNeeded;
-    bool mUseCompactJson;
-    QNetworkAccessManager *mNetworkAccessManager;
+    CreatePhishingUrlDataBaseJobPrivate *const d;
 };
 }
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType)

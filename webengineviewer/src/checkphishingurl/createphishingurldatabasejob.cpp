@@ -27,19 +27,34 @@
 
 using namespace WebEngineViewer;
 
+class WebEngineViewer::CreatePhishingUrlDataBaseJobPrivate
+{
+public:
+    CreatePhishingUrlDataBaseJobPrivate()
+        : mDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::FullDataBase),
+          mUseCompactJson(true),
+          mNetworkAccessManager(Q_NULLPTR)
+    {
+
+    }
+    QString mDataBaseState;
+    CreatePhishingUrlDataBaseJob::DataBaseDownloadType mDataBaseDownloadNeeded;
+    bool mUseCompactJson;
+    QNetworkAccessManager *mNetworkAccessManager;
+};
+
 CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)
     : QObject(parent),
-      mDataBaseDownloadNeeded(FullDataBase),
-      mUseCompactJson(true)
+      d(new CreatePhishingUrlDataBaseJobPrivate)
 {
-    mNetworkAccessManager = new QNetworkAccessManager(this);
-    connect(mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished);
-    connect(mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CreatePhishingUrlDataBaseJob::slotSslErrors);
+    d->mNetworkAccessManager = new QNetworkAccessManager(this);
+    connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished);
+    connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CreatePhishingUrlDataBaseJob::slotSslErrors);
 }
 
 CreatePhishingUrlDataBaseJob::~CreatePhishingUrlDataBaseJob()
 {
-
+    delete d;
 }
 
 void CreatePhishingUrlDataBaseJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
@@ -64,14 +79,14 @@ void CreatePhishingUrlDataBaseJob::start()
         Q_EMIT debugJson(baPostData);
         qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
         //curl -H "Content-Type: application/json" -X POST -d '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}' https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
-        QNetworkReply *reply = mNetworkAccessManager->post(request, baPostData);
+        QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CreatePhishingUrlDataBaseJob::slotError);
     }
 }
 
 void CreatePhishingUrlDataBaseJob::setDataBaseState(const QString &value)
 {
-    mDataBaseState = value;
+    d->mDataBaseState = value;
 }
 
 void CreatePhishingUrlDataBaseJob::slotError(QNetworkReply::NetworkError error)
@@ -119,15 +134,15 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     threatMap.insert(QStringLiteral("threatEntryType"), QStringLiteral("URL"));
 
     //Define state when we want to define update database. Empty is full.
-    switch (mDataBaseDownloadNeeded) {
+    switch (d->mDataBaseDownloadNeeded) {
     case FullDataBase:
         threatMap.insert(QStringLiteral("state"), QString());
         break;
     case UpdateDataBase:
-        if (mDataBaseState.isEmpty()) {
+        if (d->mDataBaseState.isEmpty()) {
             qWarning() << "Partial Download asked but database set is empty";
         }
-        threatMap.insert(QStringLiteral("state"), mDataBaseState);
+        threatMap.insert(QStringLiteral("state"), d->mDataBaseState);
         break;
     }
 
@@ -137,13 +152,13 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     map.insert(QStringLiteral("listUpdateRequests"), listUpdateRequests);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
-    const QByteArray baPostData = postData.toJson(mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
+    const QByteArray baPostData = postData.toJson(d->mUseCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
     return baPostData;
 }
 
 void CreatePhishingUrlDataBaseJob::setDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::DataBaseDownloadType type)
 {
-    mDataBaseDownloadNeeded = type;
+    d->mDataBaseDownloadNeeded = type;
 }
 
 void CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished(QNetworkReply *reply)
@@ -199,7 +214,7 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
 
 void CreatePhishingUrlDataBaseJob::setUseCompactJson(bool useCompactJson)
 {
-    mUseCompactJson = useCompactJson;
+    d->mUseCompactJson = useCompactJson;
 }
 
 QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList &lst)
