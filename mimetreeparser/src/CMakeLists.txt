@@ -151,23 +151,15 @@ generate_export_header(KF5MimeTreeParser BASE_NAME mimetreeparser)
 add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
 
 set(mimetreeparser_LINK_LIBRARIES
+   )
+
+target_link_libraries(KF5MimeTreeParser
+    PRIVATE
     QGpgme
     KF5::Codecs
     KF5::I18n
     KF5::Mime
     Qt5::Gui
-   )
-
-if (${QGpgme_VERSION} VERSION_LESS "1.7.2" OR NOT ${MIMETREEPARSER_ONLY_BUILD})
-   set(mimetreeparser_LINK_LIBRARIES
-      KF5::Libkleo
-      ${mimetreeparser_LINK_LIBRARIES}
-   )
-endif()
-
-target_link_libraries(KF5MimeTreeParser
-    PRIVATE
-    ${mimetreeparser_LINK_LIBRARIES}
     )
 
 install(TARGETS

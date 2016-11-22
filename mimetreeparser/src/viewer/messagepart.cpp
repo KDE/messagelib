@@ -33,13 +33,7 @@
 
 #include <KMime/Content>
 
-#include <qgpgme/qgpgme_version.h>
-
-#if QGPGME_VERSION < 0x010702
-    #include <Libkleo/Dn>
-#else
-    #include <QGpgME/DN>
-#endif
+#include <QGpgME/DN>
 #include <QGpgME/Protocol>
 #include <QGpgME/ImportJob>
 #include <QGpgME/KeyListJob>
@@ -861,11 +855,7 @@ static int signatureToStatus(const GpgME::Signature &sig)
 
 QString prettifyDN(const char *uid)
 {
-#if QGPGME_VERSION < 0x010702
-    return Kleo::DN(uid).prettyDN();
-#else
     return QGpgME::DN(uid).prettyDN();
-#endif
 }
 
 void SignedMessagePart::sigStatusToMetaData()
