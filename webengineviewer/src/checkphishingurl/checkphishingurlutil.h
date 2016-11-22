@@ -28,6 +28,7 @@ namespace CheckPhishingUrlUtil
 {
 QString apiKey();
 QString versionApps();
+QString databaseFileName();
 }
 }
 #endif // CHECKPHISHINGURLUTIL_H

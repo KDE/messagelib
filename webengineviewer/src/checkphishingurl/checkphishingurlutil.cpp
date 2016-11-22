@@ -29,3 +29,8 @@ QString CheckPhishingUrlUtil::versionApps()
 {
     return QStringLiteral(WEBENGINEVIEWER_VERSION_STRING);
 }
+
+QString CheckPhishingUrlUtil::databaseFileName()
+{
+    return QStringLiteral("malware.db");
+}

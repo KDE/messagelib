@@ -38,9 +38,6 @@ namespace {
 inline QString localDataBasePath() {
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl/");
 }
-inline QString databaseFilename() {
-    return QStringLiteral("malware.db");
-}
 }
 
 class WebEngineViewer::LocalDataBaseManagerPrivate
