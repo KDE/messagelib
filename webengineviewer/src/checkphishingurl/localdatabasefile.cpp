@@ -25,6 +25,9 @@
 
 using namespace WebEngineViewer;
 
+WEBENGINEVIEWER_EXPORT int webengineview_LocalDataBaseFile = 1000 * 60 * 60;
+
+
 class WebEngineViewer::LocalDataBaseFilePrivate
 {
 public:
@@ -137,7 +140,7 @@ QString LocalDataBaseFile::searchHash(int posListOffset, const QByteArray &hashT
 bool LocalDataBaseFile::shouldCheck()
 {
     // 1 hours
-    if (d->mLastCheck.isValid() && d->mLastCheck.elapsed() < 1000 * 60 * 60)
+    if (d->mLastCheck.isValid() && d->mLastCheck.elapsed() < webengineview_LocalDataBaseFile)
         return false;
     d->mLastCheck.start();
     return true;
@@ -156,4 +159,10 @@ bool LocalDataBaseFile::checkFileChanged()
         return isValid();
     }
     return somethingChanged;
+}
+
+bool LocalDataBaseFile::fileExists() const
+{
+    QFileInfo fileInfo(d->mFile);
+    return fileInfo.exists();
 }

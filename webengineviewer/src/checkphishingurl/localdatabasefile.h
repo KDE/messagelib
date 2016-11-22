@@ -34,6 +34,8 @@ public:
     LocalDataBaseFile(const QString &filename);
     ~LocalDataBaseFile();
 
+    bool fileExists() const;
+
     bool reload();
 
     bool isValid() const;

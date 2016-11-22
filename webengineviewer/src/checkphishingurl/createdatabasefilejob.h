@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "webengineviewer_export.h"
+#include <QFile>
 
 namespace WebEngineViewer
 {
@@ -29,13 +30,30 @@ class WEBENGINEVIEWER_EXPORT CreateDatabaseFileJob : public QObject
 {
     Q_OBJECT
 public:
+    enum ActionType {
+        CreateFile = 0,
+        UpdateFile = 1,
+        Unknown = 2
+    };
+
     explicit CreateDatabaseFileJob(QObject *parent = Q_NULLPTR);
     ~CreateDatabaseFileJob();
     void start();
     void setFileName(const QString &filename);
     bool canStart() const;
+
+    void createFile();
+    void updateFile();
+
+    void setActionType(const ActionType &actionType);
+
+Q_SIGNALS:
+    void finished();
+
 private:
+    ActionType mActionType;
     QString mFileName;
+    QFile mFile;
 };
 }
 

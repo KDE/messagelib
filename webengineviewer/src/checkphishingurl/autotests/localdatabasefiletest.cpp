@@ -36,6 +36,7 @@ void LocalDataBaseFileTest::shouldBeInvalidWithUnExistingFile()
 {
     WebEngineViewer::LocalDataBaseFile f(QStringLiteral("foo"));
     QVERIFY(!f.isValid());
+    QVERIFY(!f.fileExists());
 }
 
 QTEST_MAIN(LocalDataBaseFileTest)

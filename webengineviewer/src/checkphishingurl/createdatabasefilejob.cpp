@@ -21,8 +21,10 @@
 
 using namespace WebEngineViewer;
 
+
 CreateDatabaseFileJob::CreateDatabaseFileJob(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mActionType(Unknown)
 {
 
 }
@@ -34,15 +36,40 @@ CreateDatabaseFileJob::~CreateDatabaseFileJob()
 
 bool CreateDatabaseFileJob::canStart() const
 {
-    return !mFileName.isEmpty();
+    return !mFileName.isEmpty() && (mActionType != Unknown);
 }
 
 void CreateDatabaseFileJob::start()
 {
-    //TODO
+    if (!canStart()) {
+        Q_EMIT finished();
+        deleteLater();
+    } else {
+        if (mFile.open(QIODevice::WriteOnly)) {
+        } else {
+            Q_EMIT finished();
+            deleteLater();
+
+        }
+    }
 }
 
 void CreateDatabaseFileJob::setFileName(const QString &filename)
 {
     mFileName = filename;
+}
+
+void CreateDatabaseFileJob::createFile()
+{
+
+}
+
+void CreateDatabaseFileJob::updateFile()
+{
+
+}
+
+void CreateDatabaseFileJob::setActionType(const ActionType &actionType)
+{
+    mActionType = actionType;
 }
