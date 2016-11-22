@@ -86,23 +86,25 @@ void LocalDataBaseManager::saveConfig()
     grp.writeEntry(QStringLiteral("DataBaseState"), d->mNewClientState);
 }
 
-void LocalDataBaseManager::downloadPartialDataBase()
+
+void LocalDataBaseManager::downloadDataBase(const QString &clientState)
 {
     setDownloadProgress(true);
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
-    job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
-    job->setDataBaseState(d->mNewClientState);
+    job->setDataBaseDownloadNeeded(clientState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
+    job->setDataBaseState(clientState);
     connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadDataBaseFinished);
     job->start();
 }
 
+void LocalDataBaseManager::downloadPartialDataBase()
+{
+    downloadDataBase(d->mNewClientState);
+}
+
 void LocalDataBaseManager::downloadFullDataBase()
 {
-    setDownloadProgress(true);
-    WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
-    job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase);
-    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadDataBaseFinished);
-    job->start();
+    downloadDataBase(QString());
 }
 
 void LocalDataBaseManager::initialize()

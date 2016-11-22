@@ -67,6 +67,7 @@ private:
     void addElementToDataBase(const QVector<Addition> &additionList);
     void removeElementFromDataBase(const QVector<Removal> &removalList);
     void slotCheckDataBase();
+    void downloadDataBase(const QString &clientState);
 
     QByteArray createHash(const QUrl &url);
     void checkDataBase();
