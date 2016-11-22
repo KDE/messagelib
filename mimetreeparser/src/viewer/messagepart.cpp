@@ -1092,6 +1092,11 @@ bool EncryptedMessagePart::isEncrypted() const
     return mMetaData.isEncrypted;
 }
 
+bool EncryptedMessagePart::isDecryptable() const
+{
+    return mMetaData.isDecryptable;
+}
+
 bool EncryptedMessagePart::passphraseError() const
 {
     return mPassphraseError;

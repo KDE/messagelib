@@ -333,6 +333,8 @@ public:
     void setIsEncrypted(bool encrypted);
     bool isEncrypted() const;
 
+    bool isDecryptable() const;
+
     bool passphraseError() const;
 
     void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
