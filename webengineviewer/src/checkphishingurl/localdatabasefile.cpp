@@ -53,8 +53,8 @@ bool LocalDataBaseFilePrivate::load()
     if (mData) {
         const int major = q->getUint16(0);
         const int minor = q->getUint16(2);
-        //Check version in binary file.
-        mValid = (major == 1 && minor >= 1 && minor <= 2);
+        //Check version in binary file. => version value == 1.0 for the moment
+        mValid = (major == 1 && minor == 0);
     }
     mMtime = QFileInfo(mFile).lastModified();
     return mValid;
