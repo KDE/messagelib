@@ -35,6 +35,7 @@ public:
     void setPrintElementBackground(bool printElementBackground);
 
 private:
+    void slotFeaturePermissionRequested(const QUrl &url, QWebEnginePage::Feature feature);
     void initialize();
 };
 }
