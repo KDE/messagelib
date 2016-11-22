@@ -18,6 +18,7 @@
 */
 
 #include "createdatabasefilejobtest.h"
+#include "../createdatabasefilejob.h"
 
 #include <QTest>
 
@@ -30,6 +31,12 @@ CreateDatabaseFileJobTest::CreateDatabaseFileJobTest(QObject *parent)
 CreateDatabaseFileJobTest::~CreateDatabaseFileJobTest()
 {
 
+}
+
+void CreateDatabaseFileJobTest::shouldHaveDefaultValue()
+{
+    WebEngineViewer::CreateDatabaseFileJob job;
+    QVERIFY(!job.canStart());
 }
 
 QTEST_MAIN(CreateDatabaseFileJobTest)

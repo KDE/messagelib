@@ -33,6 +33,9 @@ public:
     ~CreateDatabaseFileJob();
     void start();
     void setFileName(const QString &filename);
+    bool canStart() const;
+private:
+    QString mFileName;
 };
 }
 

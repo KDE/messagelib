@@ -32,6 +32,11 @@ CreateDatabaseFileJob::~CreateDatabaseFileJob()
 
 }
 
+bool CreateDatabaseFileJob::canStart() const
+{
+    return !mFileName.isEmpty();
+}
+
 void CreateDatabaseFileJob::start()
 {
     //TODO
@@ -39,5 +44,5 @@ void CreateDatabaseFileJob::start()
 
 void CreateDatabaseFileJob::setFileName(const QString &filename)
 {
-    //TODO
+    mFileName = filename;
 }

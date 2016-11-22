@@ -28,6 +28,8 @@ class CreateDatabaseFileJobTest : public QObject
 public:
     explicit CreateDatabaseFileJobTest(QObject *parent = Q_NULLPTR);
     ~CreateDatabaseFileJobTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // CREATEDATABASEFILEJOBTEST_H
