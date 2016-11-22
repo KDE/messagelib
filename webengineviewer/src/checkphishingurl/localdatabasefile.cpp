@@ -18,6 +18,7 @@
 */
 
 #include "localdatabasefile.h"
+#include <QElapsedTimer>
 #include <QFileInfo>
 #include <QtEndian>
 
@@ -38,6 +39,7 @@ public:
     bool load();
     bool reload();
 
+    QElapsedTimer mLastCheck;
     QFile mFile;
     uchar *mData;
     QDateTime mMtime;
@@ -131,3 +133,13 @@ QString LocalDataBaseFile::searchHash(int posListOffset, const QByteArray &hashT
 #endif
     return QString();
 }
+
+bool LocalDataBaseFile::shouldCheck()
+{
+    // 1 hours
+    if (d->mLastCheck.isValid() && d->mLastCheck.elapsed() < 1000 * 60 * 60)
+        return false;
+    d->mLastCheck.start();
+    return true;
+}
+
