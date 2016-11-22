@@ -18,6 +18,7 @@
 */
 
 #include "checkphishingurlutil.h"
+#include "webengineviewer_version.h"
 using namespace WebEngineViewer;
 QString CheckPhishingUrlUtil::apiKey()
 {
@@ -26,5 +27,5 @@ QString CheckPhishingUrlUtil::apiKey()
 
 QString CheckPhishingUrlUtil::versionApps()
 {
-    return QStringLiteral("5.4.0");
+    return QStringLiteral(WEBENGINEVIEWER_VERSION_STRING);
 }
