@@ -143,3 +143,17 @@ bool LocalDataBaseFile::shouldCheck()
     return true;
 }
 
+bool LocalDataBaseFile::checkFileChanged()
+{
+    bool somethingChanged = false;
+    QFileInfo fileInfo(d->mFile);
+    if (!fileInfo.exists() || fileInfo.lastModified() > d->mMtime) {
+        // But the user could use rm -rf :-)
+        reload(); // will mark itself as invalid on failure
+        somethingChanged = true;
+    }
+    if (somethingChanged) {
+        return isValid();
+    }
+    return somethingChanged;
+}

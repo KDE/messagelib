@@ -44,6 +44,7 @@ public:
     QString searchHash(int posListOffset, const QByteArray &hashToSearch);
 
     bool shouldCheck();
+    bool checkFileChanged();
 private:
     LocalDataBaseFilePrivate *const d;
 };
