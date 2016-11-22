@@ -33,8 +33,13 @@
 
 #include <KMime/Content>
 
-#include <Libkleo/Dn>
+#include <qgpgme/qgpgme_version.h>
 
+#if QGPGME_VERSION < 0x010702
+    #include <Libkleo/Dn>
+#else
+    #include <QGpgME/DN>
+#endif
 #include <QGpgME/Protocol>
 #include <QGpgME/ImportJob>
 #include <QGpgME/KeyListJob>
@@ -854,6 +859,15 @@ static int signatureToStatus(const GpgME::Signature &sig)
     }
 }
 
+QString prettifyDN(const char *uid)
+{
+#if QGPGME_VERSION < 0x010702
+    return Kleo::DN(uid).prettyDN();
+#else
+    return QGpgME::DN(uid).prettyDN();
+#endif
+}
+
 void SignedMessagePart::sigStatusToMetaData()
 {
     GpgME::Key key;
@@ -898,7 +912,7 @@ void SignedMessagePart::sigStatusToMetaData()
         }
         mMetaData.keyTrust = signature.validity();
         if (key.numUserIDs() > 0 && key.userID(0).id()) {
-            mMetaData.signer = Kleo::DN(key.userID(0).id()).prettyDN();
+            mMetaData.signer = prettifyDN(key.userID(0).id());
         }
         for (uint iMail = 0; iMail < key.numUserIDs(); ++iMail) {
             // The following if /should/ always result in TRUE but we
@@ -923,7 +937,7 @@ void SignedMessagePart::sigStatusToMetaData()
         }
         if (mMetaData.signer.isEmpty()) {
             if (key.numUserIDs() > 0 && key.userID(0).name()) {
-                mMetaData.signer = Kleo::DN(key.userID(0).name()).prettyDN();
+                mMetaData.signer = prettifyDN(key.userID(0).name());
             }
             if (!mMetaData.signerMailAddresses.empty()) {
                 if (mMetaData.signer.isEmpty()) {
@@ -1076,6 +1090,11 @@ void EncryptedMessagePart::setIsEncrypted(bool encrypted)
 bool EncryptedMessagePart::isEncrypted() const
 {
     return mMetaData.isEncrypted;
+}
+
+bool EncryptedMessagePart::isDecryptable() const
+{
+    return mMetaData.isDecryptable;
 }
 
 bool EncryptedMessagePart::passphraseError() const

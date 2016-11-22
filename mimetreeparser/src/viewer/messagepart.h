@@ -35,6 +35,7 @@
 #include <QSharedPointer>
 
 class QTextCodec;
+class PartPrivate;
 
 namespace GpgME
 {
@@ -137,6 +138,7 @@ private:
     bool mOnlyOneMimePart;
 
     friend class AlternativeMessagePart;
+    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT MessagePartList : public MessagePart
@@ -193,6 +195,7 @@ private:
 
     friend class DefaultRendererPrivate;
     friend class ObjectTreeParser;
+    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
@@ -236,6 +239,7 @@ private:
     QByteArray mCharset;
 
     friend class DefaultRendererPrivate;
+    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
@@ -270,6 +274,7 @@ private:
     friend class DefaultRendererPrivate;
     friend class ObjectTreeParser;
     friend class MultiPartAlternativeBodyPartFormatter;
+    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart
@@ -333,6 +338,8 @@ public:
     void setIsEncrypted(bool encrypted);
     bool isEncrypted() const;
 
+    bool isDecryptable() const;
+
     bool passphraseError() const;
 
     void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
@@ -361,6 +368,7 @@ protected:
     std::vector<GpgME::DecryptionResult::Recipient> mDecryptRecipients;
 
     friend class DefaultRendererPrivate;
+    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
@@ -408,6 +416,7 @@ protected:
 
     friend EncryptedMessagePart;
     friend class DefaultRendererPrivate;
+    friend class ::PartPrivate;
 };
 
 }
