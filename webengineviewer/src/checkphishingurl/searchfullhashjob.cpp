@@ -185,7 +185,9 @@ QByteArray SearchFullHashJob::jsonRequest() const
     //clientStates We can support multi database.
     QVariantList clientStatesList;
     Q_FOREACH(const QString &str, d->mDatabaseHashes) {
-        clientStatesList.append(str);
+        if (!str.isEmpty()) {
+            clientStatesList.append(str);
+        }
     }
     map.insert(QStringLiteral("clientStates"), clientStatesList);
 
@@ -202,6 +204,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
     QVariantList threatEntriesList;
 
     QVariantMap hashUrlMap;
+    //We can have multi hash
     hashUrlMap.insert(QStringLiteral("hash"), d->mHash);
     threatEntriesList.append(hashUrlMap);
 
