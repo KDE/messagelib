@@ -40,3 +40,9 @@ ecm_add_test(localdatabasefiletest.cpp ../localdatabasefile.cpp ${testwebenginev
     NAME_PREFIX "webengineview-localdatabasefile-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
+
+ecm_add_test(createdatabasefilejobtest.cpp ../createdatabasefilejob.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME createdatabasefilejobtest
+    NAME_PREFIX "webengineview-createdatabasefilejob-"
+    LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
+    )

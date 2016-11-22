@@ -17,25 +17,23 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "localdatabasefiletest.h"
-#include "../localdatabasefile.h"
-#include <QTest>
+#ifndef CREATEDATABASEFILEJOB_H
+#define CREATEDATABASEFILEJOB_H
 
-LocalDataBaseFileTest::LocalDataBaseFileTest(QObject *parent)
-    : QObject(parent)
+#include <QObject>
+#include "webengineviewer_export.h"
+
+namespace WebEngineViewer
 {
-
+class WEBENGINEVIEWER_EXPORT CreateDatabaseFileJob : public QObject
+{
+    Q_OBJECT
+public:
+    explicit CreateDatabaseFileJob(QObject *parent = Q_NULLPTR);
+    ~CreateDatabaseFileJob();
+    void start();
+    void setFileName(const QString &filename);
+};
 }
 
-LocalDataBaseFileTest::~LocalDataBaseFileTest()
-{
-
-}
-
-void LocalDataBaseFileTest::shouldBeInvalidWithUnExistingFile()
-{
-    WebEngineViewer::LocalDataBaseFile f(QStringLiteral("foo"));
-    QVERIFY(!f.isValid());
-}
-
-QTEST_MAIN(LocalDataBaseFileTest)
+#endif // CREATEDATABASEFILEJOB_H

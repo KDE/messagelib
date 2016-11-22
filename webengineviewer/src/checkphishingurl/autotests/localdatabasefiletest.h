@@ -28,6 +28,8 @@ class LocalDataBaseFileTest : public QObject
 public:
     explicit LocalDataBaseFileTest(QObject *parent = Q_NULLPTR);
     ~LocalDataBaseFileTest();
+private Q_SLOTS:
+    void shouldBeInvalidWithUnExistingFile();
 };
 
 #endif // LOCALDATABASEFILETEST_H
