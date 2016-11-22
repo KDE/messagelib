@@ -73,6 +73,9 @@ void MailWebEnginePage::initialize()
     const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
     settings()->setFontSize(QWebEngineSettings::DefaultFontSize, font.pixelSize());
+    connect(this, &QWebEnginePage::featurePermissionRequested,
+            this, &MailWebEnginePage::slotFeaturePermissionRequested);
+
 }
 
 void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
@@ -82,4 +85,9 @@ void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
 #else
     Q_UNUSED(printElementBackground);
 #endif
+}
+
+void MailWebEnginePage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature)
+{
+    setFeaturePermission(url, feature, QWebEnginePage::PermissionDeniedByUser);
 }
