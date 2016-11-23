@@ -58,13 +58,12 @@ protected:
     virtual void downloadPartialDataBase();
 
 private:
-    void fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
-    void partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
-    void addElementToDataBase(const QVector<Addition> &additionList);
-    void removeElementFromDataBase(const QVector<Removal> &removalList);
     void slotCheckDataBase();
     void downloadDataBase(const QString &clientState);
+
+    void fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
+    void partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
 
     QByteArray createHash(const QUrl &url);
     void checkDataBase();

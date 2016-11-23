@@ -44,6 +44,7 @@ Q_SIGNALS:
 private:
     void removeElementFromDataBase(const QVector<Removal> &removalList);
     void addElementToDataBase(const QVector<Addition> &additionList);
+    void createBinaryFile();
     WebEngineViewer::UpdateDataBaseInfo mInfoDataBase;
     QString mFileName;
     QFile mFile;

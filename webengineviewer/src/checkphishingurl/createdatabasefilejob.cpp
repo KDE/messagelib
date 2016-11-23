@@ -50,10 +50,25 @@ void CreateDatabaseFileJob::start()
         deleteLater();
     } else {
         if (mFile.open(QIODevice::WriteOnly)) {
+            //TODO
         } else {
             Q_EMIT finished();
             deleteLater();
         }
+    }
+}
+
+void CreateDatabaseFileJob::createBinaryFile()
+{
+    switch (mInfoDataBase.responseType) {
+    case UpdateDataBaseInfo::Unknown:
+        //TODO error here
+        break;
+    case UpdateDataBaseInfo::FullUpdate:
+        break;
+    case UpdateDataBaseInfo::PartialUpdate:
+        break;
+
     }
 }
 

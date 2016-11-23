@@ -189,42 +189,18 @@ void LocalDataBaseManager::checkDataBase()
     //TODO
 }
 
-void LocalDataBaseManager::removeElementFromDataBase(const QVector<Removal> &removalList)
-{
-    Q_FOREACH(const Removal &removeItem, removalList) {
-        Q_FOREACH (int id, removeItem.indexes) {
-            //TODO
-        }
-    }
-}
-
-void LocalDataBaseManager::addElementToDataBase(const QVector<Addition> &additionList)
-{
-    Q_FOREACH(const Addition &add, additionList) {
-        //qDebug() << " add.size" << add.prefixSize;
-        //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
-        const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
-        for (int i = 0; i < uncompressed.size();) {
-            const QByteArray m = uncompressed.mid(i, add.prefixSize);
-            i += add.prefixSize;
-            //qDebug() << "m " << m << " m.size" << m.size();
-            //TODO add in database
-        }
-    }
-}
-
 void LocalDataBaseManager::fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
     //Clear DataBase
-    addElementToDataBase(infoDataBase.additionList);
+    //addElementToDataBase(infoDataBase.additionList);
     d->mNewClientState = infoDataBase.newClientState;
     d->saveConfig();
 }
 
 void LocalDataBaseManager::partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
-    removeElementFromDataBase(infoDataBase.removalList);
-    addElementToDataBase(infoDataBase.additionList);
+    //removeElementFromDataBase(infoDataBase.removalList);
+    //addElementToDataBase(infoDataBase.additionList);
     d->mNewClientState = infoDataBase.newClientState;
     d->saveConfig();
 }
