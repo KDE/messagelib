@@ -107,10 +107,9 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
 {
     //1 add version number
     const QByteArray version = QByteArrayLiteral("1.0");
-    qint64 pos = mFile.write(reinterpret_cast<const char *>(version.data()), version.size());
+    qint64 hashStartPosition = mFile.write(reinterpret_cast<const char *>(version.data()), version.size());
 
     //2 add number of items
-    qint64 hashStartPosition = pos; //TODO add size of version + number of position
     QList<Addition> itemToStore;
     Q_FOREACH (const Addition &add, additionList) {
         //qDebug() << " add.size" << add.prefixSize;
@@ -124,18 +123,29 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
             tmp.hashString = m;
             tmp.prefixSize = add.prefixSize;
             itemToStore << tmp;
+
+            hashStartPosition += tmp.prefixSize;
             //mFile.write(reinterpret_cast<const char *>(&numberOfElement));
             //qDebug() << "m " << m << " m.size" << m.size();
             //TODO add in database
         }
     }
     const int numberOfElement = itemToStore.count();
-    pos += mFile.write(reinterpret_cast<const char *>(&numberOfElement));
+    hashStartPosition += mFile.write(reinterpret_cast<const char *>(&numberOfElement));
 
     //3 add index of items
-
+    qint64 tmpPos = hashStartPosition;
+    Q_FOREACH (const Addition &add, itemToStore) {
+        mFile.write(reinterpret_cast<const char *>(&tmpPos));
+        tmpPos += add.prefixSize;
+    }
+    //TODO verify position.
 
     //4 add items
+    Q_FOREACH (const Addition &add, itemToStore) {
+        QByteArray ba = add.hashString;
+        mFile.write(reinterpret_cast<const char *>(ba.data()), add.hashString.size());
+    }
     mFile.close();
 }
 
