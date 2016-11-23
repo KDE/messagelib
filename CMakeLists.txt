@@ -98,6 +98,7 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
 
    find_package(KF5AkonadiSearch "5.4.40" CONFIG REQUIRED)
    set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "http://www.kde.org" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
+
 endif()
 
 # Support for the GIT revision number in messagecomposer-version.h
@@ -131,3 +132,17 @@ endif()
 
 install( FILES messagelib.renamecategories messagelib.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+if (NOT ${MIMETREEPARSER_ONLY_BUILD})
+    if (${Qt5WebEngine_VERSION} GREATER "5.7.99")
+        MESSAGE(STATUS "QtWebEngine greater or equal 5.8.0 provides printing support and dnd fix. It's a good idea to use it")
+    else()
+        if (${Qt5WebEngine_VERSION} GREATER "5.6.99")
+            MESSAGE(STATUS "QtWebEngine 5.7.0 doesn't provide printing support. It has a lot of regression. Better to upgrade QtWebEngine to 5.8.0")
+        else()
+            if (${Qt5WebEngine_VERSION} GREATER "5.5.99")
+                MESSAGE(STATUS "WARNING !!!!!!!!!!!!!!!!!!!!!!!!!! QtWebEngine doesn't have good support in 5.6.0. Kmail will be limited with this old version.!!!!!!!!!!!!!!!!")
+            endif()
+        endif()
+    endif()
+endif()
