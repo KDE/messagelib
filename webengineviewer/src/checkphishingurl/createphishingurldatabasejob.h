@@ -28,7 +28,7 @@
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
-struct Addition {
+struct WEBENGINEVIEWER_EXPORT Addition {
     Addition();
     bool isValid() const;
     bool operator==(const Addition &other) const;
@@ -37,13 +37,13 @@ struct Addition {
     int prefixSize;
 };
 
-struct Removal {
+struct WEBENGINEVIEWER_EXPORT Removal {
     bool operator==(const Removal &other) const;
     bool isValid() const;
     QList<int> indexes;
 };
 
-struct UpdateDataBaseInfo {
+struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     UpdateDataBaseInfo()
         : responseType(Unknown)
     {

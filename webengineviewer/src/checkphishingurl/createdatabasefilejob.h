@@ -46,6 +46,7 @@ private:
     void addElementToDataBase(const QVector<Addition> &additionList);
     void createBinaryFile();
     void generateFile(bool fullUpdate);
+    void createFileFromFullUpdate(const QVector<Addition> &additionList);
     WebEngineViewer::UpdateDataBaseInfo mInfoDataBase;
     QString mFileName;
     QFile mFile;

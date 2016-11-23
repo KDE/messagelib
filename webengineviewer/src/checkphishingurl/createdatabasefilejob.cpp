@@ -72,6 +72,8 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
     if (fullUpdate) {
         if (!QFile(mFileName).remove()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file "<< mFileName;
+            Q_EMIT finished(false);
+            return;
         }
         mFile.setFileName(mFileName);
         if (!mFile.open(QIODevice::WriteOnly)) {
@@ -80,7 +82,7 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
             Q_EMIT finished(false);
             return;
         }
-        addElementToDataBase(mInfoDataBase.additionList);
+        createFileFromFullUpdate(mInfoDataBase.additionList);
     } else {
         removeElementFromDataBase(mInfoDataBase.removalList);
         addElementToDataBase(mInfoDataBase.additionList);
@@ -99,6 +101,42 @@ void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &re
             //TODO
         }
     }
+}
+
+void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &additionList)
+{
+    //1 add version number
+    const QByteArray version = QByteArrayLiteral("1.0");
+    qint64 pos = mFile.write(reinterpret_cast<const char *>(version.data()), version.size());
+
+    //2 add number of items
+    qint64 hashStartPosition = pos; //TODO add size of version + number of position
+    QList<Addition> itemToStore;
+    Q_FOREACH (const Addition &add, additionList) {
+        //qDebug() << " add.size" << add.prefixSize;
+        //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
+        const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
+        for (int i = 0; i < uncompressed.size();) {
+            const QByteArray m = uncompressed.mid(i, add.prefixSize);
+            i += add.prefixSize;
+
+            Addition tmp;
+            tmp.hashString = m;
+            tmp.prefixSize = add.prefixSize;
+            itemToStore << tmp;
+            //mFile.write(reinterpret_cast<const char *>(&numberOfElement));
+            //qDebug() << "m " << m << " m.size" << m.size();
+            //TODO add in database
+        }
+    }
+    const int numberOfElement = itemToStore.count();
+    pos += mFile.write(reinterpret_cast<const char *>(&numberOfElement));
+
+    //3 add index of items
+
+
+    //4 add items
+    mFile.close();
 }
 
 void CreateDatabaseFileJob::addElementToDataBase(const QVector<Addition> &additionList)
