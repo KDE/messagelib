@@ -31,22 +31,12 @@ class WEBENGINEVIEWER_EXPORT CreateDatabaseFileJob : public QObject
 {
     Q_OBJECT
 public:
-    enum ActionType {
-        CreateFile = 0,
-        UpdateFile = 1,
-        Unknown = 2
-    };
-
     explicit CreateDatabaseFileJob(QObject *parent = Q_NULLPTR);
     ~CreateDatabaseFileJob();
     void start();
     void setFileName(const QString &filename);
     bool canStart() const;
-
-    void createFile();
-    void updateFile();
-
-    void setActionType(const ActionType &actionType);
+    void setUpdateDataBaseInfo(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
 
 Q_SIGNALS:
     void finished();
@@ -54,7 +44,7 @@ Q_SIGNALS:
 private:
     void removeElementFromDataBase(const QVector<Removal> &removalList);
     void addElementToDataBase(const QVector<Addition> &additionList);
-    ActionType mActionType;
+    WebEngineViewer::UpdateDataBaseInfo mInfoDataBase;
     QString mFileName;
     QFile mFile;
 };

@@ -49,6 +49,9 @@ struct UpdateDataBaseInfo {
     {
 
     }
+    bool isValid() const {
+        return (responseType != Unknown);
+    }
 
     enum ResponseType {
         Unknown = 0,

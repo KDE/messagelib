@@ -23,8 +23,7 @@ using namespace WebEngineViewer;
 
 
 CreateDatabaseFileJob::CreateDatabaseFileJob(QObject *parent)
-    : QObject(parent),
-      mActionType(Unknown)
+    : QObject(parent)
 {
 
 }
@@ -36,7 +35,12 @@ CreateDatabaseFileJob::~CreateDatabaseFileJob()
 
 bool CreateDatabaseFileJob::canStart() const
 {
-    return !mFileName.isEmpty() && (mActionType != Unknown);
+    return !mFileName.isEmpty() && mInfoDataBase.isValid();
+}
+
+void CreateDatabaseFileJob::setUpdateDataBaseInfo(const UpdateDataBaseInfo &infoDataBase)
+{
+    mInfoDataBase = infoDataBase;
 }
 
 void CreateDatabaseFileJob::start()
@@ -49,7 +53,6 @@ void CreateDatabaseFileJob::start()
         } else {
             Q_EMIT finished();
             deleteLater();
-
         }
     }
 }
@@ -57,21 +60,6 @@ void CreateDatabaseFileJob::start()
 void CreateDatabaseFileJob::setFileName(const QString &filename)
 {
     mFileName = filename;
-}
-
-void CreateDatabaseFileJob::createFile()
-{
-
-}
-
-void CreateDatabaseFileJob::updateFile()
-{
-
-}
-
-void CreateDatabaseFileJob::setActionType(const ActionType &actionType)
-{
-    mActionType = actionType;
 }
 
 void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &removalList)
