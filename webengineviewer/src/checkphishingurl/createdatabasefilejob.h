@@ -43,7 +43,6 @@ Q_SIGNALS:
 
 private:
     void removeElementFromDataBase(const QVector<Removal> &removalList);
-    void addElementToDataBase(const QVector<Addition> &additionList);
     void createBinaryFile();
     void generateFile(bool fullUpdate);
     void createFileFromFullUpdate(const QVector<Addition> &additionList, const QString &sha256);

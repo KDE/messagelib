@@ -21,7 +21,7 @@
 #define CHECKPHISHINGURLUTIL_H
 
 #include <QString>
-
+#include "webengineviewer_export.h"
 namespace WebEngineViewer
 {
 namespace CheckPhishingUrlUtil
@@ -29,6 +29,8 @@ namespace CheckPhishingUrlUtil
 QString apiKey();
 QString versionApps();
 QString databaseFileName();
+WEBENGINEVIEWER_EXPORT quint16 minorVersion();
+WEBENGINEVIEWER_EXPORT quint16 majorVersion();
 }
 }
 #endif // CHECKPHISHINGURLUTIL_H

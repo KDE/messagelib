@@ -192,16 +192,12 @@ void LocalDataBaseManager::checkDataBase()
 
 void LocalDataBaseManager::fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
-    //Clear DataBase
-    //addElementToDataBase(infoDataBase.additionList);
     d->mNewClientState = infoDataBase.newClientState;
     d->saveConfig();
 }
 
 void LocalDataBaseManager::partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
-    //removeElementFromDataBase(infoDataBase.removalList);
-    //addElementToDataBase(infoDataBase.additionList);
     d->mNewClientState = infoDataBase.newClientState;
     d->saveConfig();
 }

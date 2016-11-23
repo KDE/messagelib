@@ -19,13 +19,28 @@
 
 #include "createdatabasefilejobtest.h"
 #include "../createdatabasefilejob.h"
+#include "../createphishingurldatabasejob.h"
+#include "../localdatabasefile.h"
+#include <QStandardPaths>
 
+#include <QSignalSpy>
 #include <QTest>
+#include <QDebug>
+
+QByteArray readJsonFile(const QString &jsonFile)
+{
+    QFile file(QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
+    file.open(QIODevice::ReadOnly);
+    Q_ASSERT(file.isOpen());
+    const QByteArray data = file.readAll();
+    Q_ASSERT(!data.isEmpty());
+    return data;
+}
 
 CreateDatabaseFileJobTest::CreateDatabaseFileJobTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 CreateDatabaseFileJobTest::~CreateDatabaseFileJobTest()
@@ -37,6 +52,27 @@ void CreateDatabaseFileJobTest::shouldHaveDefaultValue()
 {
     WebEngineViewer::CreateDatabaseFileJob job;
     QVERIFY(!job.canStart());
+}
+
+void CreateDatabaseFileJobTest::shouldCreateFile()
+{
+    QString filename = QStringLiteral("test2.json");
+    const QByteArray ba = readJsonFile(filename);
+    WebEngineViewer::CreatePhishingUrlDataBaseJob job;
+    QSignalSpy spy1(&job, SIGNAL(finished(WebEngineViewer::UpdateDataBaseInfo,WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)));
+    job.parseResult(ba);
+    QCOMPARE(spy1.count(), 1);
+    const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
+    WebEngineViewer::CreateDatabaseFileJob databasejob;
+    const QString createDataBaseName = QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QStringLiteral("/test.db");
+    qDebug()<<" new filename " << createDataBaseName;
+    databasejob.setFileName(createDataBaseName);
+    databasejob.setUpdateDataBaseInfo(info);
+    databasejob.start();
+
+    WebEngineViewer::LocalDataBaseFile newFile(createDataBaseName);
+    QVERIFY(newFile.isValid());
+
 }
 
 QTEST_MAIN(CreateDatabaseFileJobTest)

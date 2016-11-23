@@ -18,7 +18,9 @@
 */
 
 #include "createdatabasefilejob.h"
+#include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
+#include <QFileInfo>
 
 using namespace WebEngineViewer;
 
@@ -70,12 +72,12 @@ void CreateDatabaseFileJob::createBinaryFile()
 void CreateDatabaseFileJob::generateFile(bool fullUpdate)
 {
     if (fullUpdate) {
-        if (!QFile(mFileName).remove()) {
+        mFile.setFileName(mFileName);
+        if (mFile.exists() && !mFile.remove()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file "<< mFileName;
             Q_EMIT finished(false);
             return;
         }
-        mFile.setFileName(mFileName);
         if (!mFile.open(QIODevice::WriteOnly)) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file "<< mFileName;
             //TODO ? assert ?
@@ -85,7 +87,7 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
         createFileFromFullUpdate(mInfoDataBase.additionList, mInfoDataBase.sha256);
     } else {
         removeElementFromDataBase(mInfoDataBase.removalList);
-        addElementToDataBase(mInfoDataBase.additionList);
+        //addElementToDataBase(mInfoDataBase.additionList);
     }
 }
 
@@ -106,8 +108,11 @@ void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &re
 void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &additionList, const QString &sha256)
 {
     //1 add version number
-    const QByteArray version = QByteArrayLiteral("1.0");
-    qint64 hashStartPosition = mFile.write(reinterpret_cast<const char *>(version.data()), version.size());
+    const quint16 major = WebEngineViewer::CheckPhishingUrlUtil::majorVersion();
+    const quint16 minor = WebEngineViewer::CheckPhishingUrlUtil::minorVersion();
+
+    qint64 hashStartPosition = mFile.write(reinterpret_cast<const char *>(&major), sizeof(major));
+    hashStartPosition += mFile.write(reinterpret_cast<const char *>(&minor), sizeof(minor));
 
     //2 add number of items
     QList<Addition> itemToStore;
@@ -125,18 +130,16 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
             itemToStore << tmp;
 
             hashStartPosition += tmp.prefixSize;
-            //mFile.write(reinterpret_cast<const char *>(&numberOfElement));
             //qDebug() << "m " << m << " m.size" << m.size();
-            //TODO add in database
         }
     }
-    const int numberOfElement = itemToStore.count();
-    hashStartPosition += mFile.write(reinterpret_cast<const char *>(&numberOfElement));
+    const qint64 numberOfElement = itemToStore.count();
+    hashStartPosition += mFile.write(reinterpret_cast<const char *>(&numberOfElement), sizeof(qint64));
 
     //3 add index of items
     qint64 tmpPos = hashStartPosition;
     Q_FOREACH (const Addition &add, itemToStore) {
-        mFile.write(reinterpret_cast<const char *>(&tmpPos));
+        mFile.write(reinterpret_cast<const char *>(&tmpPos), sizeof(qint64));
         tmpPos += add.prefixSize;
     }
     //TODO verify position.
@@ -144,23 +147,8 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     //4 add items
     Q_FOREACH (const Addition &add, itemToStore) {
         QByteArray ba = add.hashString;
-        mFile.write(reinterpret_cast<const char *>(ba.data()), add.hashString.size());
+        mFile.write(reinterpret_cast<const char *>(ba.constData()), add.hashString.size());
     }
     mFile.close();
     //Verify hash with sha256
-}
-
-void CreateDatabaseFileJob::addElementToDataBase(const QVector<Addition> &additionList)
-{
-    Q_FOREACH (const Addition &add, additionList) {
-        //qDebug() << " add.size" << add.prefixSize;
-        //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
-        const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
-        for (int i = 0; i < uncompressed.size();) {
-            const QByteArray m = uncompressed.mid(i, add.prefixSize);
-            i += add.prefixSize;
-            //qDebug() << "m " << m << " m.size" << m.size();
-            //TODO add in database
-        }
-    }
 }

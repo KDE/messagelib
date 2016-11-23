@@ -18,9 +18,10 @@
 */
 
 #include "localdatabasefile.h"
+#include "checkphishingurlutil.h"
 #include <QElapsedTimer>
 #include <QFileInfo>
-#include <QtEndian>
+#include <QDebug>
 
 using namespace WebEngineViewer;
 
@@ -35,7 +36,6 @@ public:
           q(qq),
           mValid(false)
     {
-        load();
     }
     bool load();
     bool reload();
@@ -57,8 +57,10 @@ bool LocalDataBaseFilePrivate::load()
     if (mData) {
         const int major = q->getUint16(0);
         const int minor = q->getUint16(2);
-        //Check version in binary file. => version value == 1.0 for the moment
-        mValid = (major == 1 && minor == 0);
+
+        //Check version in binary file. => version value == 1.0 for the moment see CheckPhishingUrlUtil
+        mValid = (major == WebEngineViewer::CheckPhishingUrlUtil::majorVersion() &&
+                  minor == WebEngineViewer::CheckPhishingUrlUtil::minorVersion());
     }
     mMtime = QFileInfo(mFile).lastModified();
     return mValid;
@@ -77,6 +79,7 @@ bool LocalDataBaseFilePrivate::reload()
 LocalDataBaseFile::LocalDataBaseFile(const QString &filename)
     : d(new WebEngineViewer::LocalDataBaseFilePrivate(filename, this))
 {
+    d->load();
 }
 
 LocalDataBaseFile::~LocalDataBaseFile()
@@ -91,12 +94,12 @@ bool LocalDataBaseFile::isValid() const
 
 quint16 LocalDataBaseFile::getUint16(int offset) const
 {
-    return qFromBigEndian(*reinterpret_cast<quint16 *>(d->mData + offset));
+    return *reinterpret_cast<quint16 *>(d->mData + offset);
 }
 
 quint32 LocalDataBaseFile::getUint32(int offset) const
 {
-    return qFromBigEndian(*reinterpret_cast<quint32 *>(d->mData + offset));
+    return *reinterpret_cast<quint32 *>(d->mData + offset);
 }
 
 const char *LocalDataBaseFile::getCharStar(int offset) const

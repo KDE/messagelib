@@ -34,3 +34,14 @@ QString CheckPhishingUrlUtil::databaseFileName()
 {
     return QStringLiteral("malware.db");
 }
+
+quint16 CheckPhishingUrlUtil::majorVersion()
+{
+    return 1;
+}
+
+quint16 CheckPhishingUrlUtil::minorVersion()
+{
+    return 0;
+}
+

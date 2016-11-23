@@ -30,6 +30,7 @@ public:
     ~CreateDatabaseFileJobTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldCreateFile();
 };
 
 #endif // CREATEDATABASEFILEJOBTEST_H
