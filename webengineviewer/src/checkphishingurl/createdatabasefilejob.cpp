@@ -82,7 +82,7 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
             Q_EMIT finished(false);
             return;
         }
-        createFileFromFullUpdate(mInfoDataBase.additionList);
+        createFileFromFullUpdate(mInfoDataBase.additionList, mInfoDataBase.sha256);
     } else {
         removeElementFromDataBase(mInfoDataBase.removalList);
         addElementToDataBase(mInfoDataBase.additionList);
@@ -103,7 +103,7 @@ void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &re
     }
 }
 
-void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &additionList)
+void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &additionList, const QString &sha256)
 {
     //1 add version number
     const QByteArray version = QByteArrayLiteral("1.0");
@@ -147,6 +147,7 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
         mFile.write(reinterpret_cast<const char *>(ba.data()), add.hashString.size());
     }
     mFile.close();
+    //Verify hash with sha256
 }
 
 void CreateDatabaseFileJob::addElementToDataBase(const QVector<Addition> &additionList)
