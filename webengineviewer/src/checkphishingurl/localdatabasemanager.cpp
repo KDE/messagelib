@@ -47,8 +47,16 @@ public:
         : mDataBaseOk(false),
           mDownloadProgress(false)
     {
-
+        QDir().mkpath(localDataBasePath());
+        readConfig();
     }
+    ~LocalDataBaseManagerPrivate()
+    {
+        saveConfig();
+    }
+
+    void readConfig();
+    void saveConfig();
     QString mNewClientState;
     bool mDataBaseOk;
     bool mDownloadProgress;
@@ -59,8 +67,6 @@ LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
       d(new LocalDataBaseManagerPrivate)
 
 {
-    QDir().mkpath(localDataBasePath());
-    readConfig();
 }
 
 LocalDataBaseManager::~LocalDataBaseManager()
@@ -73,18 +79,18 @@ void LocalDataBaseManager::closeDataBaseAndDeleteIt()
     //TODO delete file ?
 }
 
-void LocalDataBaseManager::readConfig()
+void LocalDataBaseManagerPrivate::readConfig()
 {
     KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
-    d->mNewClientState = grp.readEntry(QStringLiteral("DataBaseState"));
+    mNewClientState = grp.readEntry(QStringLiteral("DataBaseState"));
 }
 
-void LocalDataBaseManager::saveConfig()
+void LocalDataBaseManagerPrivate::saveConfig()
 {
     KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
-    grp.writeEntry(QStringLiteral("DataBaseState"), d->mNewClientState);
+    grp.writeEntry(QStringLiteral("DataBaseState"), mNewClientState);
 }
 
 
@@ -211,7 +217,7 @@ void LocalDataBaseManager::fullUpdateDataBase(const WebEngineViewer::UpdateDataB
     //Clear DataBase
     addElementToDataBase(infoDataBase.additionList);
     d->mNewClientState = infoDataBase.newClientState;
-    saveConfig();
+    d->saveConfig();
 }
 
 void LocalDataBaseManager::partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
@@ -219,7 +225,7 @@ void LocalDataBaseManager::partialUpdateDataBase(const WebEngineViewer::UpdateDa
     removeElementFromDataBase(infoDataBase.removalList);
     addElementToDataBase(infoDataBase.additionList);
     d->mNewClientState = infoDataBase.newClientState;
-    saveConfig();
+    d->saveConfig();
 }
 
 LocalDataBaseManager *LocalDataBaseManager::self()

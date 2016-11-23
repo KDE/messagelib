@@ -58,9 +58,6 @@ protected:
     virtual void downloadPartialDataBase();
 
 private:
-    void readConfig();
-    void saveConfig();
-
     void fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
