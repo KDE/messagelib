@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "webengineviewer_export.h"
+#include "createphishingurldatabasejob.h"
 #include <QFile>
 
 namespace WebEngineViewer
@@ -51,6 +52,8 @@ Q_SIGNALS:
     void finished();
 
 private:
+    void removeElementFromDataBase(const QVector<Removal> &removalList);
+    void addElementToDataBase(const QVector<Addition> &additionList);
     ActionType mActionType;
     QString mFileName;
     QFile mFile;

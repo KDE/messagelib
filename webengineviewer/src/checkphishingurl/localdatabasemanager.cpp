@@ -20,6 +20,7 @@
 #include "webengineviewer_debug.h"
 #include "checkphishingurlfromlocaldatabasejob.h"
 #include "createphishingurldatabasejob.h"
+#include "createdatabasefilejob.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>

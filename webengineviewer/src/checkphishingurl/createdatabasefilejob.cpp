@@ -73,3 +73,27 @@ void CreateDatabaseFileJob::setActionType(const ActionType &actionType)
 {
     mActionType = actionType;
 }
+
+void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &removalList)
+{
+    Q_FOREACH(const Removal &removeItem, removalList) {
+        Q_FOREACH (int id, removeItem.indexes) {
+            //TODO
+        }
+    }
+}
+
+void CreateDatabaseFileJob::addElementToDataBase(const QVector<Addition> &additionList)
+{
+    Q_FOREACH(const Addition &add, additionList) {
+        //qDebug() << " add.size" << add.prefixSize;
+        //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
+        const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
+        for (int i = 0; i < uncompressed.size();) {
+            const QByteArray m = uncompressed.mid(i, add.prefixSize);
+            i += add.prefixSize;
+            //qDebug() << "m " << m << " m.size" << m.size();
+            //TODO add in database
+        }
+    }
+}
