@@ -54,7 +54,6 @@ void ManageLocalDataBaseGui::slotDownloadFullDatabase()
     WebEngineViewer::LocalDataBaseManager::self()->initialize();
 }
 
-
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);

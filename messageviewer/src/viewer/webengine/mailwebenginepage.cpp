@@ -87,7 +87,7 @@ void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
 #endif
 }
 
-void MailWebEnginePage::slotFeaturePermissionRequested(const QUrl& url, QWebEnginePage::Feature feature)
+void MailWebEnginePage::slotFeaturePermissionRequested(const QUrl &url, QWebEnginePage::Feature feature)
 {
     //Denied all permissions.
     setFeaturePermission(url, feature, QWebEnginePage::PermissionDeniedByUser);

@@ -42,14 +42,12 @@ SearchFullHashGui::SearchFullHashGui(QWidget *parent)
     mCheckHashLineEdit = new QLineEdit(this);
     checkHashLayout->addWidget(mCheckHashLineEdit);
 
-
     QHBoxLayout *databaseHashLayout = new QHBoxLayout;
     layout->addLayout(databaseHashLayout);
     lab = new QLabel(QStringLiteral("Database hash:"), this);
     checkHashLayout->addWidget(lab);
     mDataBaseHashLineEdit = new QLineEdit(this);
     checkHashLayout->addWidget(mDataBaseHashLineEdit);
-
 
     QPushButton *button = new QPushButton(QStringLiteral("Check"), this);
     checkHashLayout->addWidget(button);

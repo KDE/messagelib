@@ -35,8 +35,10 @@ using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(LocalDataBaseManager, s_localDataBaseManager)
 
-namespace {
-inline QString localDataBasePath() {
+namespace
+{
+inline QString localDataBasePath()
+{
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl/");
 }
 }
@@ -94,7 +96,6 @@ void LocalDataBaseManagerPrivate::saveConfig()
     grp.writeEntry(QStringLiteral("DataBaseState"), mNewClientState);
 }
 
-
 void LocalDataBaseManager::downloadDataBase(const QString &clientState)
 {
     setDownloadProgress(true);
@@ -137,11 +138,11 @@ void LocalDataBaseManager::slotCheckDataBase()
 }
 
 void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
-                                                            WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
+        WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
 {
 
-    qDebug() << "LocalDataBaseManager::slotDownloadFullDataBaseFinished "<<status;
-    switch(status) {
+    qDebug() << "LocalDataBaseManager::slotDownloadFullDataBaseFinished " << status;
+    switch (status) {
     case CreatePhishingUrlDataBaseJob::InvalidData:
         qCWarning(WEBENGINEVIEWER_LOG) << "Invalid Data.";
         d->mDataBaseOk = false;
@@ -165,7 +166,7 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
             qCDebug(WEBENGINEVIEWER_LOG) << "No update necessary ";
         } else {
             //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
-            switch(infoDataBase.responseType) {
+            switch (infoDataBase.responseType) {
             case WebEngineViewer::UpdateDataBaseInfo::FullUpdate:
                 fullUpdateDataBase(infoDataBase);
                 break;

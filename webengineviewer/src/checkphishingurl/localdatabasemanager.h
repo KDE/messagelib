@@ -48,7 +48,6 @@ public:
 
     void closeDataBaseAndDeleteIt();
 
-
 Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
 
@@ -68,7 +67,6 @@ private:
     QByteArray createHash(const QUrl &url);
     void checkDataBase();
     bool malwareFound(const QByteArray &hash);
-
 
     LocalDataBaseManagerPrivate *const d;
 };

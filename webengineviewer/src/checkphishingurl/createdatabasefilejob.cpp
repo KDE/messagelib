@@ -21,7 +21,6 @@
 
 using namespace WebEngineViewer;
 
-
 CreateDatabaseFileJob::CreateDatabaseFileJob(QObject *parent)
     : QObject(parent)
 {
@@ -79,7 +78,7 @@ void CreateDatabaseFileJob::setFileName(const QString &filename)
 
 void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &removalList)
 {
-    Q_FOREACH(const Removal &removeItem, removalList) {
+    Q_FOREACH (const Removal &removeItem, removalList) {
         Q_FOREACH (int id, removeItem.indexes) {
             //TODO
         }
@@ -88,7 +87,7 @@ void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &re
 
 void CreateDatabaseFileJob::addElementToDataBase(const QVector<Addition> &additionList)
 {
-    Q_FOREACH(const Addition &add, additionList) {
+    Q_FOREACH (const Addition &add, additionList) {
         //qDebug() << " add.size" << add.prefixSize;
         //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
         const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);

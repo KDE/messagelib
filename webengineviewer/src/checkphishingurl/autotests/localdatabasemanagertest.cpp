@@ -31,7 +31,8 @@ public:
 
     }
 
-    void setDownloadInfoSendByServer(const QString &data) {
+    void setDownloadInfoSendByServer(const QString &data)
+    {
         mDownloadInfoSendByServer = data;
     }
 

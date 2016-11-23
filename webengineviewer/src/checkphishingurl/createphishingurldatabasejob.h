@@ -49,7 +49,8 @@ struct UpdateDataBaseInfo {
     {
 
     }
-    bool isValid() const {
+    bool isValid() const
+    {
         return (responseType != Unknown);
     }
 

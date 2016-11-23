@@ -50,7 +50,7 @@ void SearchFullHashJobTest::shouldCreateRequest_data()
     QTest::newRow("database hash and hash") << QByteArrayLiteral("bla") << QStringList{QStringLiteral("boo")}
                                             << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"clientStates\":[\"boo\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps()) << true;
     QTest::newRow("multi database hash and hash") << QByteArrayLiteral("bla") << (QStringList() << QStringLiteral("boo") << QStringLiteral("bli"))
-                                            << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"clientStates\":[\"boo\",\"bli\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps()) << true;
+            << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"clientStates\":[\"boo\",\"bli\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps()) << true;
 }
 
 void SearchFullHashJobTest::shouldCreateRequest()
@@ -67,6 +67,5 @@ void SearchFullHashJobTest::shouldCreateRequest()
         QCOMPARE(job.jsonRequest(), request.toLatin1());
     }
 }
-
 
 QTEST_MAIN(SearchFullHashJobTest)

@@ -67,8 +67,8 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
 {
     /*
 
-{
-  "matches": [{
+    {
+    "matches": [{
     "threatType":      "MALWARE",
     "platformType":    "WINDOWS",
     "threatEntryType": "URL",
@@ -82,7 +82,7 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
        }]
     },
     "cacheDuration": "300.000s"
-  }, {
+    }, {
     "threatType":      "SOCIAL_ENGINEERING",
     "platformType":    "WINDOWS",
     "threatEntryType": "URL",
@@ -93,11 +93,11 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
       "entries": []
     },
     "cacheDuration": "300.000s"
-  }],
-  "minimumWaitDuration": "300.000s",
-  "negativeCacheDuration": "300.000s"
-}
-*/
+    }],
+    "minimumWaitDuration": "300.000s",
+    "negativeCacheDuration": "300.000s"
+    }
+    */
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
         Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mHash);
@@ -154,16 +154,16 @@ void SearchFullHashJob::setSearchHash(const QByteArray &hash)
 QByteArray SearchFullHashJob::jsonRequest() const
 {
     /*
-{
-  "client": {
+    {
+    "client": {
     "clientId":      "yourcompanyname",
     "clientVersion": "1.5.2"
-  },
-  "clientStates": [
+    },
+    "clientStates": [
     "ChAIARABGAEiAzAwMSiAEDABEAE=",
     "ChAIAhABGAEiAzAwMSiAEDABEOgH"
-  ],
-  "threatInfo": {
+    ],
+    "threatInfo": {
     "threatTypes":      ["MALWARE", "SOCIAL_ENGINEERING"],
     "platformTypes":    ["WINDOWS"],
     "threatEntryTypes": ["URL"],
@@ -172,8 +172,8 @@ QByteArray SearchFullHashJob::jsonRequest() const
       {"hash": "771MOg=="},
       {"hash": "5eOrwQ=="}
     ]
-  }
-}
+    }
+    }
      */
     QVariantMap clientMap;
     QVariantMap map;
@@ -184,7 +184,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 
     //clientStates We can support multi database.
     QVariantList clientStatesList;
-    Q_FOREACH(const QString &str, d->mDatabaseHashes) {
+    Q_FOREACH (const QString &str, d->mDatabaseHashes) {
         if (!str.isEmpty()) {
             clientStatesList.append(str);
         }

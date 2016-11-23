@@ -47,7 +47,7 @@ void CheckPhishingUrlJobTest::shouldCreateRequest_data()
     QTest::addColumn<bool>("canStart");
     QTest::newRow("no url") << QUrl() << QString() << false;
     QTest::newRow("value") << QUrl(QStringLiteral("http://www.kde.org")) << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"url\":\"http://www.kde.org\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
-                              .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps()) << true;
+                           .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps()) << true;
 }
 
 void CheckPhishingUrlJobTest::shouldCreateRequest()

@@ -64,7 +64,7 @@ void CheckPhishingUrlFromLocalDataBaseJob::start()
 void CheckPhishingUrlFromLocalDataBaseJob::slotCheckUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status)
 {
     CheckPhishingUrlFromLocalDataBaseJob::UrlStatus currentStatus(CheckPhishingUrlFromLocalDataBaseJob::Unknown);
-    switch(status) {
+    switch (status) {
     case  WebEngineViewer::LocalDataBaseManager::Unknown:
         break;
     case  WebEngineViewer::LocalDataBaseManager::UrlOk:
@@ -78,7 +78,6 @@ void CheckPhishingUrlFromLocalDataBaseJob::slotCheckUrlFinished(const QUrl &url,
     Q_EMIT finished(url, currentStatus);
     deleteLater();
 }
-
 
 bool CheckPhishingUrlFromLocalDataBaseJob::canStart() const
 {

@@ -22,11 +22,9 @@
 #include <QFileInfo>
 #include <QtEndian>
 
-
 using namespace WebEngineViewer;
 
 WEBENGINEVIEWER_EXPORT int webengineview_LocalDataBaseFile = 1000 * 60 * 60;
-
 
 class WebEngineViewer::LocalDataBaseFilePrivate
 {
@@ -52,8 +50,9 @@ public:
 
 bool LocalDataBaseFilePrivate::load()
 {
-    if (!mFile.open(QIODevice::ReadOnly))
+    if (!mFile.open(QIODevice::ReadOnly)) {
         return false;
+    }
     mData = mFile.map(0, mFile.size());
     if (mData) {
         const int major = q->getUint16(0);
@@ -74,7 +73,6 @@ bool LocalDataBaseFilePrivate::reload()
     mData = Q_NULLPTR;
     return load();
 }
-
 
 LocalDataBaseFile::LocalDataBaseFile(const QString &filename)
     : d(new WebEngineViewer::LocalDataBaseFilePrivate(filename, this))
@@ -124,11 +122,11 @@ QString LocalDataBaseFile::searchHash(int posListOffset, const QByteArray &hashT
         const int hashOffset = getUint32(off);
         const char *hashCharStar = getCharStar(hashOffset);
         const int cmp = qstrcmp(mime, inputMime);
-        if (cmp < 0)
+        if (cmp < 0) {
             begin = medium + 1;
-        else if (cmp > 0)
+        } else if (cmp > 0) {
             end = medium - 1;
-        else {
+        } else {
             const int iconOffset = getUint32(off + 4);
             return QLatin1String(getCharStar(iconOffset));
         }
@@ -140,8 +138,9 @@ QString LocalDataBaseFile::searchHash(int posListOffset, const QByteArray &hashT
 bool LocalDataBaseFile::shouldCheck()
 {
     // 1 hours
-    if (d->mLastCheck.isValid() && d->mLastCheck.elapsed() < webengineview_LocalDataBaseFile)
+    if (d->mLastCheck.isValid() && d->mLastCheck.elapsed() < webengineview_LocalDataBaseFile) {
         return false;
+    }
     d->mLastCheck.start();
     return true;
 }

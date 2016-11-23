@@ -799,9 +799,9 @@ QString NodeHelper::fromAsString(KMime::Content *node) const
         return topLevel->from()->asUnicodeString();
     } else {
         auto realNode = std::find_if(mExtraContents.cbegin(), mExtraContents.cend(),
-                                     [node](const QList<KMime::Content*> &nodes) {
-                                         return nodes.contains(node);
-                                     });
+        [node](const QList<KMime::Content *> &nodes) {
+            return nodes.contains(node);
+        });
         if (realNode != mExtraContents.cend()) {
             return fromAsString(realNode.key());
         }
