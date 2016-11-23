@@ -39,12 +39,13 @@ public:
     void setUpdateDataBaseInfo(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
 
 Q_SIGNALS:
-    void finished();
+    void finished(bool success);
 
 private:
     void removeElementFromDataBase(const QVector<Removal> &removalList);
     void addElementToDataBase(const QVector<Addition> &additionList);
     void createBinaryFile();
+    void generateFile(bool fullUpdate);
     WebEngineViewer::UpdateDataBaseInfo mInfoDataBase;
     QString mFileName;
     QFile mFile;

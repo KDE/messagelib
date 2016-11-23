@@ -18,6 +18,7 @@
 */
 
 #include "createdatabasefilejob.h"
+#include "webengineviewer_debug.h"
 
 using namespace WebEngineViewer;
 
@@ -45,15 +46,10 @@ void CreateDatabaseFileJob::setUpdateDataBaseInfo(const UpdateDataBaseInfo &info
 void CreateDatabaseFileJob::start()
 {
     if (!canStart()) {
-        Q_EMIT finished();
+        Q_EMIT finished(false);
         deleteLater();
     } else {
-        if (mFile.open(QIODevice::WriteOnly)) {
-            //TODO
-        } else {
-            Q_EMIT finished();
-            deleteLater();
-        }
+        createBinaryFile();
     }
 }
 
@@ -64,10 +60,30 @@ void CreateDatabaseFileJob::createBinaryFile()
         //TODO error here
         break;
     case UpdateDataBaseInfo::FullUpdate:
-        break;
     case UpdateDataBaseInfo::PartialUpdate:
+        generateFile((mInfoDataBase.responseType == UpdateDataBaseInfo::FullUpdate));
         break;
+    }
+    deleteLater();
+}
 
+void CreateDatabaseFileJob::generateFile(bool fullUpdate)
+{
+    if (fullUpdate) {
+        if (!QFile(mFileName).remove()) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file "<< mFileName;
+        }
+        mFile.setFileName(mFileName);
+        if (!mFile.open(QIODevice::WriteOnly)) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file "<< mFileName;
+            //TODO ? assert ?
+            Q_EMIT finished(false);
+            return;
+        }
+        addElementToDataBase(mInfoDataBase.additionList);
+    } else {
+        removeElementFromDataBase(mInfoDataBase.removalList);
+        addElementToDataBase(mInfoDataBase.additionList);
     }
 }
 
