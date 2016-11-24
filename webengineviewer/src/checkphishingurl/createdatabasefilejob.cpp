@@ -134,21 +134,28 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
         }
     }
     const qint64 numberOfElement = itemToStore.count();
-    hashStartPosition += mFile.write(reinterpret_cast<const char *>(&numberOfElement), sizeof(qint64));
+    hashStartPosition += mFile.write(reinterpret_cast<const char *>(&numberOfElement), sizeof(numberOfElement));
 
     //3 add index of items
     qint64 tmpPos = hashStartPosition;
     Q_FOREACH (const Addition &add, itemToStore) {
-        mFile.write(reinterpret_cast<const char *>(&tmpPos), sizeof(qint64));
+        mFile.write(reinterpret_cast<const char *>(&tmpPos), sizeof(tmpPos));
         tmpPos += add.prefixSize;
     }
     //TODO verify position.
 
     //4 add items
+    QByteArray newSsha256;
     Q_FOREACH (const Addition &add, itemToStore) {
         QByteArray ba = add.hashString;
         mFile.write(reinterpret_cast<const char *>(ba.constData()), add.hashString.size());
+        newSsha256 += ba;
     }
     mFile.close();
     //Verify hash with sha256
+    const QByteArray newSsha256Value = QCryptographicHash::hash(newSsha256, QCryptographicHash::Sha256);
+    if (newSsha256Value != sha256.toLatin1()) {
+        qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value << " from server " << sha256;
+        qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256 : " << newSsha256;
+    }
 }
