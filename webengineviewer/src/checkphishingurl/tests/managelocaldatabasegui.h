@@ -21,7 +21,7 @@
 #define MANAGELOCALDATABASEGUI_H
 
 #include <QWidget>
-class QTextEdit;
+class QPlainTextEdit;
 class ManageLocalDataBaseGui : public QWidget
 {
     Q_OBJECT
@@ -31,7 +31,7 @@ public:
 private Q_SLOTS:
     void slotDownloadFullDatabase();
 private:
-    QTextEdit *mResult;
+    QPlainTextEdit *mResult;
 };
 
 #endif // MANAGELOCALDATABASEGUI_H

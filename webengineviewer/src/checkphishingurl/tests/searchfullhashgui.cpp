@@ -23,7 +23,7 @@
 #include <QStandardPaths>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QTextEdit>
+#include <QPlainTextEdit>
 #include <QLabel>
 #include <QVBoxLayout>
 
@@ -54,14 +54,12 @@ SearchFullHashGui::SearchFullHashGui(QWidget *parent)
     connect(button, &QPushButton::clicked, this, &SearchFullHashGui::slotCheckUrl);
     connect(mCheckHashLineEdit, &QLineEdit::returnPressed, this, &SearchFullHashGui::slotCheckUrl);
 
-    mResult = new QTextEdit(this);
+    mResult = new QPlainTextEdit(this);
     mResult->setReadOnly(true);
-    mResult->setAcceptRichText(false);
     layout->addWidget(mResult);
 
-    mJson = new QTextEdit(this);
+    mJson = new QPlainTextEdit(this);
     mJson->setReadOnly(true);
-    mJson->setAcceptRichText(false);
     layout->addWidget(mJson);
 }
 
@@ -93,7 +91,7 @@ void SearchFullHashGui::slotCheckUrl()
 
 void SearchFullHashGui::slotJSonDebug(const QByteArray &debug)
 {
-    mJson->setText(QString::fromLatin1(debug));
+    mJson->setPlainText(QString::fromLatin1(debug));
 }
 
 void SearchFullHashGui::slotGetResult(WebEngineViewer::SearchFullHashJob::UrlStatus result)
@@ -116,7 +114,7 @@ void SearchFullHashGui::slotGetResult(WebEngineViewer::SearchFullHashJob::UrlSta
         resultStr = QStringLiteral("Invalid Url");
         break;
     }
-    mResult->setText(resultStr);
+    mResult->setPlainText(resultStr);
 }
 
 int main(int argc, char **argv)

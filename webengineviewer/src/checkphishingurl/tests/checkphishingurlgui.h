@@ -23,7 +23,7 @@
 #include <QWidget>
 #include "../checkphishingurljob.h"
 class QLineEdit;
-class QTextEdit;
+class QPlainTextEdit;
 class CheckPhishingUrlGui : public QWidget
 {
     Q_OBJECT
@@ -36,8 +36,8 @@ private Q_SLOTS:
     void slotJSonDebug(const QByteArray &debug);
 private:
     QLineEdit *mCheckUrlLineEdit;
-    QTextEdit *mJson;
-    QTextEdit *mResult;
+    QPlainTextEdit *mJson;
+    QPlainTextEdit *mResult;
 };
 
 #endif // CHECKPHISHINGURLGUI_H

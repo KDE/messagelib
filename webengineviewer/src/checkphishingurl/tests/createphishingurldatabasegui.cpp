@@ -24,7 +24,7 @@
 #include <QStandardPaths>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QTextEdit>
+#include <QPlainTextEdit>
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QInputDialog>
@@ -37,14 +37,12 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     webengineview_useCompactJson_CreatePhishingUrlDataBaseJob = false;
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    mResult = new QTextEdit(this);
+    mResult = new QPlainTextEdit(this);
     mResult->setReadOnly(true);
-    mResult->setAcceptRichText(false);
     layout->addWidget(mResult);
 
-    mJson = new QTextEdit(this);
+    mJson = new QPlainTextEdit(this);
     mJson->setReadOnly(true);
-    mJson->setAcceptRichText(false);
     layout->addWidget(mJson);
 
     QHBoxLayout *buttonLayout = new QHBoxLayout;
@@ -94,12 +92,12 @@ void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 
 void CreatePhisingUrlDataBaseGui::slotDebugJSon(const QByteArray &data)
 {
-    mJson->setText(QString::fromLatin1(data));
+    mJson->setPlainText(QString::fromLatin1(data));
 }
 
 void CreatePhisingUrlDataBaseGui::slotResult(const QByteArray &data)
 {
-    mResult->setText(QString::fromLatin1(data));
+    mResult->setPlainText(QString::fromLatin1(data));
 }
 
 int main(int argc, char **argv)

@@ -25,7 +25,7 @@
 #include <QStandardPaths>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QTextEdit>
+#include <QPlainTextEdit>
 #include <QLabel>
 #include <QVBoxLayout>
 
@@ -34,9 +34,8 @@ ManageLocalDataBaseGui::ManageLocalDataBaseGui(QWidget *parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    mResult = new QTextEdit(this);
+    mResult = new QPlainTextEdit(this);
     mResult->setReadOnly(true);
-    mResult->setAcceptRichText(false);
     layout->addWidget(mResult);
 
     QPushButton *button = new QPushButton(QStringLiteral("Create Database"), this);

@@ -23,7 +23,7 @@
 #include <QWidget>
 #include "../searchfullhashjob.h"
 class QLineEdit;
-class QTextEdit;
+class QPlainTextEdit;
 class SearchFullHashGui : public QWidget
 {
     Q_OBJECT
@@ -37,8 +37,8 @@ private Q_SLOTS:
 private:
     QLineEdit *mCheckHashLineEdit;
     QLineEdit *mDataBaseHashLineEdit;
-    QTextEdit *mJson;
-    QTextEdit *mResult;
+    QPlainTextEdit *mJson;
+    QPlainTextEdit *mResult;
 };
 
 #endif // CHECKPHISHINGURLGUI_H

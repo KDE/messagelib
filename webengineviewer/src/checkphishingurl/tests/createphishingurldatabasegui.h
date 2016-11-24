@@ -21,7 +21,7 @@
 #define CREATEPHISHINGURLDATABASEGUI_H
 
 #include <QWidget>
-class QTextEdit;
+class QPlainTextEdit;
 class CreatePhisingUrlDataBaseGui : public QWidget
 {
     Q_OBJECT
@@ -35,8 +35,8 @@ private Q_SLOTS:
     void slotDownloadPartialDatabase();
 private:
     void clear();
-    QTextEdit *mResult;
-    QTextEdit *mJson;
+    QPlainTextEdit *mResult;
+    QPlainTextEdit *mJson;
 };
 
 #endif // CREATEPHISHINGURLDATABASEGUI_H
