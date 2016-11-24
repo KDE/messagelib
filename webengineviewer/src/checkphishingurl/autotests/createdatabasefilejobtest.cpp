@@ -56,7 +56,7 @@ void CreateDatabaseFileJobTest::shouldHaveDefaultValue()
 
 void CreateDatabaseFileJobTest::shouldCreateFile()
 {
-    QString filename = QStringLiteral("test2.json");
+    QString filename = QStringLiteral("current.json");
     const QByteArray ba = readJsonFile(filename);
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
     QSignalSpy spy1(&job, SIGNAL(finished(WebEngineViewer::UpdateDataBaseInfo,WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)));

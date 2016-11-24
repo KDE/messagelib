@@ -119,7 +119,7 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     Q_FOREACH (const Addition &add, additionList) {
         //qDebug() << " add.size" << add.prefixSize;
         //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
-        const QByteArray uncompressed = /*QByteArray::fromBase64*/(add.hashString);
+        const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
         for (int i = 0; i < uncompressed.size();) {
             const QByteArray m = uncompressed.mid(i, add.prefixSize);
             i += add.prefixSize;
@@ -130,7 +130,9 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
             itemToStore << tmp;
 
             hashStartPosition += tmp.prefixSize;
-            qDebug() << "m " << m << " m.size" << m.size();
+            if (m.size() != add.prefixSize) {
+                qDebug() << "m " << m << " m.size" << m.size();
+            }
         }
     }
     const qint64 numberOfElement = itemToStore.count();
@@ -153,10 +155,23 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     }
     mFile.close();
     //Verify hash with sha256
+#if 0
     const QByteArray newSsha256Value = QCryptographicHash::hash(newSsha256, QCryptographicHash::Sha256);
     qCWarning(WEBENGINEVIEWER_LOG) <<  QCryptographicHash::hash(sha256.toLatin1(), QCryptographicHash::Sha256);
     if (newSsha256Value.toHex() != sha256.toLatin1()) {
         qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toHex() << " from server " << sha256;
-        qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256 : " << newSsha256;
+        //qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256 : " << newSsha256;
     }
+#else
+    const QByteArray newSsha256Value = QCryptographicHash::hash(newSsha256.toBase64(), QCryptographicHash::Sha256);
+    qCWarning(WEBENGINEVIEWER_LOG) << newSsha256.toBase64();
+    qCWarning(WEBENGINEVIEWER_LOG) <<  QCryptographicHash::hash(sha256.toLatin1(), QCryptographicHash::Sha256).toHex();
+    qCWarning(WEBENGINEVIEWER_LOG) <<  QCryptographicHash::hash(newSsha256.toBase64(), QCryptographicHash::Sha256).toHex();
+    qCWarning(WEBENGINEVIEWER_LOG) <<  QCryptographicHash::hash(newSsha256, QCryptographicHash::Sha256).toHex();
+    qCWarning(WEBENGINEVIEWER_LOG) <<  QByteArray::fromBase64(sha256.toLatin1());
+    if (newSsha256Value.toHex() != sha256.toLatin1()) {
+        qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toHex() << " from server " << sha256;
+        //qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256 : " << newSsha256;
+    }
+#endif
 }

@@ -198,8 +198,8 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
                         }
                     }
                     if (tmp.isValid()) {
-                        qDebug() << " rawHashesIt.value().toByteArray().Size() " << tmp.hashString.size()/(double)tmp.prefixSize;
-                        qDebug() << " rawHashesIt.value().toByteArray().Size() " << tmp.hashString.size()%(int)tmp.prefixSize;
+                        //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()/(double)tmp.prefixSize;
+                        //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()%(int)tmp.prefixSize;
                         additionList.append(tmp);
                     }
                     //qCDebug(WEBENGINEVIEWER_LOG)<<" rawHashs " << mapIt.value().typeName();
@@ -406,8 +406,13 @@ bool Addition::isValid() const
     bool hasCorrectPrefixSize = (prefixSize >= 4) && (prefixSize <= 32);
     if (!hasCorrectPrefixSize) {
         qCWarning(WEBENGINEVIEWER_LOG) << "Prefix size is not correct";
+        return false;
     }
-    return !hashString.isEmpty() && hasCorrectPrefixSize;
+    if ((QByteArray::fromBase64(hashString).size() % static_cast<int>(prefixSize) ) != 0) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "it's not a correct hash value";
+        return false;
+    }
+    return !hashString.isEmpty();
 }
 
 bool Addition::operator==(const Addition &other) const
