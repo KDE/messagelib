@@ -32,6 +32,9 @@ private Q_SLOTS:
     void shouldCreateRequest_data();
     void shouldCreateRequest();
 
+    void checkAdditionElements();
+    void checkAdditionElements_data();
+
     void shouldParseResult_data();
     void shouldParseResult();
     void initTestcase();

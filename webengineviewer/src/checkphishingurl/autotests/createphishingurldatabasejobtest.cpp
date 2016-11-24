@@ -117,6 +117,28 @@ void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
     QCOMPARE(job.jsonRequest(), request.toLatin1());
 }
 
+void CreatePhishingUrlDataBaseJobTest::checkAdditionElements_data()
+{
+    QTest::addColumn<QByteArray>("hashString");
+    QTest::addColumn<int>("prefixSize");
+    QTest::addColumn<bool>("isValid");
+    QTest::newRow("invalid") << QByteArray() << 4 << false;
+    QTest::newRow("notcorrectsize") << QByteArrayLiteral("foo") << 2 << false;
+    QTest::newRow("valid") << QByteArrayLiteral("fooo") << 4 << true;
+}
+
+void CreatePhishingUrlDataBaseJobTest::checkAdditionElements()
+{
+    QFETCH(QByteArray, hashString);
+    QFETCH(int, prefixSize);
+    QFETCH(bool, isValid);
+
+    WebEngineViewer::Addition a;
+    a.hashString = hashString;
+    a.prefixSize = prefixSize;
+    QCOMPARE(a.isValid(), isValid);
+}
+
 void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
 {
     QTest::addColumn<QString>("filename");
