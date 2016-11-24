@@ -35,6 +35,9 @@ private Q_SLOTS:
     void checkAdditionElements();
     void checkAdditionElements_data();
 
+    void checkRemovalElements();
+    void checkRemovalElements_data();
+
     void shouldParseResult_data();
     void shouldParseResult();
     void initTestcase();

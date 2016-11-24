@@ -141,6 +141,26 @@ void CreatePhishingUrlDataBaseJobTest::checkAdditionElements()
     QCOMPARE(a.isValid(), isValid);
 }
 
+void CreatePhishingUrlDataBaseJobTest::checkRemovalElements_data()
+{
+    QTest::addColumn<QList<int> >("lst");
+    QTest::addColumn<bool>("isValid");
+    QList<int> lst;
+    QTest::newRow("invalid") << lst << false;
+    lst << 1 << 2 << 3;
+    QTest::newRow("valid") << lst << true;
+}
+
+void CreatePhishingUrlDataBaseJobTest::checkRemovalElements()
+{
+    QFETCH(QList<int>, lst);
+    QFETCH(bool, isValid);
+    WebEngineViewer::Removal a;
+    a.indexes = lst;
+    a.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
+    QCOMPARE(a.isValid(), isValid);
+}
+
 void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
 {
     QTest::addColumn<QString>("filename");
