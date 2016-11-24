@@ -341,6 +341,17 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
     deleteLater();
 }
 
+UpdateDataBaseInfo::UpdateDataBaseInfo()
+    : responseType(Unknown)
+{
+
+}
+
+bool UpdateDataBaseInfo::isValid() const
+{
+    return (responseType != Unknown);
+}
+
 void UpdateDataBaseInfo::clear()
 {
     additionList.clear();
@@ -381,29 +392,45 @@ bool UpdateDataBaseInfo::operator==(const UpdateDataBaseInfo &other) const
     return val;
 }
 
+Removal::Removal()
+    : compressionType(UpdateDataBaseInfo::UnknownCompression)
+{
+
+}
+
 bool Removal::operator==(const Removal &other) const
 {
-    bool value = (indexes == other.indexes);
+    bool value = (indexes == other.indexes) && (compressionType == other.compressionType);
     if (!value) {
         qCDebug(WEBENGINEVIEWER_LOG) << " indexes " << indexes << " other.indexes " << other.indexes;
+        qCDebug(WEBENGINEVIEWER_LOG) << "compressionType " << compressionType << " other.compressionType " << other.compressionType;
     }
     return value;
 }
 
 bool Removal::isValid() const
 {
+    if (compressionType == UpdateDataBaseInfo::UnknownCompression) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "Compression Type undefined";
+        return false;
+    }
     return !indexes.isEmpty();
 }
 
 Addition::Addition()
-    : prefixSize(0)
+    : compressionType(UpdateDataBaseInfo::UnknownCompression),
+      prefixSize(0)
 {
 
 }
 
 bool Addition::isValid() const
 {
-    bool hasCorrectPrefixSize = (prefixSize >= 4) && (prefixSize <= 32);
+    if (compressionType == UpdateDataBaseInfo::UnknownCompression) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "Compression Type undefined";
+        return false;
+    }
+    const bool hasCorrectPrefixSize = (prefixSize >= 4) && (prefixSize <= 32);
     if (!hasCorrectPrefixSize) {
         qCWarning(WEBENGINEVIEWER_LOG) << "Prefix size is not correct";
         return false;
@@ -418,10 +445,12 @@ bool Addition::isValid() const
 bool Addition::operator==(const Addition &other) const
 {
     bool value = (hashString == other.hashString) &&
-                 (prefixSize == other.prefixSize);
+                 (prefixSize == other.prefixSize) &&
+                 (compressionType == other.compressionType);
     if (!value) {
         qCDebug(WEBENGINEVIEWER_LOG) << "hashString " << hashString << " other.hashString " << other.hashString;
         qCDebug(WEBENGINEVIEWER_LOG) << "prefixSize " << prefixSize << " other.prefixSize " << other.prefixSize;
+        qCDebug(WEBENGINEVIEWER_LOG) << "compressionType " << compressionType << " other.compressionType " << other.compressionType;
     }
     return value;
 }

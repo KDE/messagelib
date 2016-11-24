@@ -28,37 +28,24 @@
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
-struct WEBENGINEVIEWER_EXPORT Addition {
-    Addition();
-    bool isValid() const;
-    bool operator==(const Addition &other) const;
-
-    QByteArray hashString;
-    int prefixSize;
-};
-
-struct WEBENGINEVIEWER_EXPORT Removal {
-    bool operator==(const Removal &other) const;
-    bool isValid() const;
-    QList<int> indexes;
-};
-
+struct Addition;
+struct Removal;
 struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
-    UpdateDataBaseInfo()
-        : responseType(Unknown)
-    {
-
-    }
-    bool isValid() const
-    {
-        return (responseType != Unknown);
-    }
+    UpdateDataBaseInfo();
+    bool isValid() const;
 
     enum ResponseType {
         Unknown = 0,
         FullUpdate = 1,
         PartialUpdate = 2
     };
+
+    enum CompressionType {
+        UnknownCompression = 0,
+        RiceCompression = 1,
+        RawCompression = 2
+    };
+
 
     QVector<Addition> additionList;
     QVector<Removal> removalList;
@@ -72,6 +59,25 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     void clear();
     bool operator==(const UpdateDataBaseInfo &other) const;
 };
+
+struct WEBENGINEVIEWER_EXPORT Addition {
+    Addition();
+    bool isValid() const;
+    bool operator==(const Addition &other) const;
+
+    QByteArray hashString;
+    UpdateDataBaseInfo::CompressionType compressionType;
+    int prefixSize;
+};
+
+struct WEBENGINEVIEWER_EXPORT Removal {
+    Removal();
+    bool operator==(const Removal &other) const;
+    bool isValid() const;
+    QList<int> indexes;
+    UpdateDataBaseInfo::CompressionType compressionType;
+};
+
 
 class CreatePhishingUrlDataBaseJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
