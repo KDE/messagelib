@@ -137,6 +137,7 @@ void CreatePhishingUrlDataBaseJobTest::checkAdditionElements()
     WebEngineViewer::Addition a;
     a.hashString = hashString;
     a.prefixSize = prefixSize;
+    a.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     QCOMPARE(a.isValid(), isValid);
 }
 
@@ -152,9 +153,11 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     WebEngineViewer::Addition tmp;
     tmp.prefixSize = 4;
     tmp.hashString = QByteArrayLiteral("rnGLoQ==");
+    tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     additionList.append(tmp);
     QVector<WebEngineViewer::Removal> removalList;
     WebEngineViewer::Removal tmpRemoval;
+    tmpRemoval.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     tmpRemoval.indexes = QList<int>() << 0 << 2 << 4;
     removalList.append(tmpRemoval);
     value.minimumWaitDuration = QStringLiteral("593.440s");
@@ -173,9 +176,11 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     QVector<WebEngineViewer::Addition> additionList2;
     tmp.prefixSize = 4;
     tmp.hashString = QByteArrayLiteral("AAAaxAAAG3QAACdhAAA");
+    tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     additionList2.append(tmp);
     tmp.prefixSize = 5;
     tmp.hashString = QByteArrayLiteral("IL5HqwT2c6bltw==");
+    tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     additionList2.append(tmp);
 
     value.minimumWaitDuration = QStringLiteral("1786.932s");

@@ -38,6 +38,7 @@ public:
     {
 
     }
+    UpdateDataBaseInfo::CompressionType parseCompressionType(const QString &str);
     QString mDataBaseState;
     CreatePhishingUrlDataBaseJob::DataBaseDownloadType mDataBaseDownloadNeeded;
     QNetworkAccessManager *mNetworkAccessManager;
@@ -177,13 +178,13 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
             QMapIterator<QString, QVariant> mapIt(v.toMap());
             while (mapIt.hasNext()) {
                 mapIt.next();
+                Addition tmp;
                 const QString keyStr = mapIt.key();
                 if (keyStr == QLatin1String("compressionType")) {
-                    qCDebug(WEBENGINEVIEWER_LOG) << " compression type :" << mapIt.value();
+                    tmp.compressionType = d->parseCompressionType(mapIt.value().toString());
                 } else if (keyStr == QLatin1String("riceHashes")) {
                     qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseAdditions need to implement riceHashes ";
                 } else if (keyStr == QLatin1String("rawHashes")) {
-                    Addition tmp;
                     QMapIterator<QString, QVariant> rawHashesIt(mapIt.value().toMap());
                     while (rawHashesIt.hasNext()) {
                         rawHashesIt.next();
@@ -197,14 +198,14 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
                             qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseAdditions unknown rawHashes key " << key;
                         }
                     }
-                    if (tmp.isValid()) {
-                        //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()/(double)tmp.prefixSize;
-                        //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()%(int)tmp.prefixSize;
-                        additionList.append(tmp);
-                    }
                     //qCDebug(WEBENGINEVIEWER_LOG)<<" rawHashs " << mapIt.value().typeName();
                 } else {
                     qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseAdditions unknown mapIt.key() " << keyStr;
+                }
+                if (tmp.isValid()) {
+                    //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()/(double)tmp.prefixSize;
+                    //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()%(int)tmp.prefixSize;
+                    additionList.append(tmp);
                 }
             }
         } else {
@@ -212,6 +213,21 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
         }
     }
     return additionList;
+}
+
+UpdateDataBaseInfo::CompressionType CreatePhishingUrlDataBaseJobPrivate::parseCompressionType(const QString &str)
+{
+    UpdateDataBaseInfo::CompressionType type(UpdateDataBaseInfo::UnknownCompression);
+    if (str == QLatin1String("COMPRESSION_TYPE_UNSPECIFIED")) {
+        type = UpdateDataBaseInfo::UnknownCompression;
+    } else if (str == QLatin1String("RICE")) {
+        type = UpdateDataBaseInfo::RiceCompression;
+    } else if (str == QLatin1String("RAW")) {
+        type = UpdateDataBaseInfo::RawCompression;
+    } else {
+        qCWarning(WEBENGINEVIEWER_LOG) << "CreatePhishingUrlDataBaseJob::parseCompressionType unknown compression type " << str;
+    }
+    return type;
 }
 
 QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList &lst)
@@ -225,7 +241,7 @@ QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList 
                 mapIt.next();
                 const QString keyStr = mapIt.key();
                 if (keyStr == QLatin1String("compressionType")) {
-                    qCDebug(WEBENGINEVIEWER_LOG) << " compression type :" << mapIt.value();
+                    tmp.compressionType = d->parseCompressionType(mapIt.value().toString());
                 } else if (keyStr == QLatin1String("riceIndices")) {
                     //TODO implement it.
                     qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseRemovals need to implement riceindices ";
