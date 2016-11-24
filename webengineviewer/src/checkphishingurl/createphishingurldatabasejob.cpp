@@ -402,7 +402,11 @@ Addition::Addition()
 
 bool Addition::isValid() const
 {
-    return !hashString.isEmpty() && (prefixSize > 0);
+    bool hasCorrectPrefixSize = (prefixSize >= 4) && (prefixSize <= 32);
+    if (!hasCorrectPrefixSize) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "Prefix size is not correct";
+    }
+    return !hashString.isEmpty() && hasCorrectPrefixSize;
 }
 
 bool Addition::operator==(const Addition &other) const
