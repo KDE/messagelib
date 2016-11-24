@@ -65,6 +65,7 @@ struct WEBENGINEVIEWER_EXPORT Addition {
     bool isValid() const;
     bool operator==(const Addition &other) const;
 
+    //Add riceHashes
     QByteArray hashString;
     UpdateDataBaseInfo::CompressionType compressionType;
     int prefixSize;
@@ -74,6 +75,7 @@ struct WEBENGINEVIEWER_EXPORT Removal {
     Removal();
     bool operator==(const Removal &other) const;
     bool isValid() const;
+    //Add riceIndeces
     QList<int> indexes;
     UpdateDataBaseInfo::CompressionType compressionType;
 };
