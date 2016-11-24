@@ -18,7 +18,7 @@
 */
 
 #include "createphishingurldatabasegui.h"
-#include "../createphishingurldatabasejob.h"
+
 
 #include <QApplication>
 #include <QStandardPaths>
@@ -28,6 +28,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QInputDialog>
+#include <QComboBox>
 
 extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob;
 
@@ -36,6 +37,11 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
 {
     webengineview_useCompactJson_CreatePhishingUrlDataBaseJob = false;
     QVBoxLayout *layout = new QVBoxLayout(this);
+
+    mCompressionType = new QComboBox(this);
+    mCompressionType->addItem(QStringLiteral("RAW"));
+    mCompressionType->addItem(QStringLiteral("RICE"));
+    layout->addWidget(mCompressionType);
 
     mResult = new QPlainTextEdit(this);
     mResult->setReadOnly(true);
@@ -67,12 +73,24 @@ void CreatePhisingUrlDataBaseGui::clear()
     mResult->clear();
 }
 
+WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType CreatePhisingUrlDataBaseGui::compressionType()
+{
+    WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType type = WebEngineViewer::CreatePhishingUrlDataBaseJob::RawCompression;
+    if (mCompressionType->currentText() == QLatin1String("RICE")) {
+        type = WebEngineViewer::CreatePhishingUrlDataBaseJob::RiceCompression;
+    } else if (mCompressionType->currentText() == QLatin1String("RAW")) {
+        type = WebEngineViewer::CreatePhishingUrlDataBaseJob::RawCompression;
+    }
+    return type;
+}
+
 void CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase()
 {
     const QString newValue = QInputDialog::getText(this, QStringLiteral("Define database newClientState"), QStringLiteral("newClientState:"));
     if (!newValue.isEmpty()) {
         clear();
         WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+        job->setContraintsCompressionType(compressionType());
         job->setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
         job->setDataBaseState(newValue);
         connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
@@ -85,6 +103,7 @@ void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 {
     clear();
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+    job->setContraintsCompressionType(compressionType());
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJson, this, &CreatePhisingUrlDataBaseGui::slotDebugJSon);
     job->start();

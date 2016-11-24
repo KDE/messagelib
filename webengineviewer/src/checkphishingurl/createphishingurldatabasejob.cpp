@@ -33,13 +33,18 @@ class WebEngineViewer::CreatePhishingUrlDataBaseJobPrivate
 {
 public:
     CreatePhishingUrlDataBaseJobPrivate()
-        : mDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::FullDataBase),
+        : mContraintsCompressionType(CreatePhishingUrlDataBaseJob::RawCompression),
+          mDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::FullDataBase),
           mNetworkAccessManager(Q_NULLPTR)
     {
 
     }
     UpdateDataBaseInfo::CompressionType parseCompressionType(const QString &str);
+    RiceDeltaEncoding parseRiceDeltaEncoding(const QMap<QString, QVariant> &map);
+    QVector<Removal> parseRemovals(const QVariantList &lst);
+    QVector<Addition> parseAdditions(const QVariantList &lst);
     QString mDataBaseState;
+    CreatePhishingUrlDataBaseJob::ContraintsCompressionType mContraintsCompressionType;
     CreatePhishingUrlDataBaseJob::DataBaseDownloadType mDataBaseDownloadNeeded;
     QNetworkAccessManager *mNetworkAccessManager;
 };
@@ -112,8 +117,8 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
         "threatEntryType": "URL",
         "state":           "Gg4IBBADIgYQgBAiAQEoAQ==",
         "constraints": {
-                "maxUpdateEntries":      2048,
-                "maxDatabaseEntries":    4096,
+            "maxUpdateEntries":      2048,
+            "maxDatabaseEntries":    4096,
             "region":                "US",
             "supportedCompressions": ["RAW"]
             }
@@ -134,6 +139,23 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     threatMap.insert(QStringLiteral("threatType"), QStringLiteral("MALWARE"));
     threatMap.insert(QStringLiteral("threatEntryType"), QStringLiteral("URL"));
 
+
+    //Contrainsts
+    QVariantMap contraintsMap;
+    QVariantList contraintsCompressionList;
+    QString compressionStr;
+    switch (d->mContraintsCompressionType) {
+    case RiceCompression:
+        compressionStr = QStringLiteral("RICE");
+        break;
+    case RawCompression:
+        compressionStr = QStringLiteral("RAW");
+        break;
+    }
+    contraintsCompressionList.append(compressionStr);
+    contraintsMap.insert(QStringLiteral("supportedCompressions"), contraintsCompressionList);
+    threatMap.insert(QStringLiteral("constraints"), contraintsMap);
+
     //Define state when we want to define update database. Empty is full.
     switch (d->mDataBaseDownloadNeeded) {
     case FullDataBase:
@@ -148,7 +170,6 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     }
 
     listUpdateRequests.append(threatMap);
-    //TODO define contraints
 
     map.insert(QStringLiteral("listUpdateRequests"), listUpdateRequests);
 
@@ -170,20 +191,45 @@ void CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished(QNetworkReply *r
     reply->deleteLater();
 }
 
-QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantList &lst)
+RiceDeltaEncoding CreatePhishingUrlDataBaseJobPrivate::parseRiceDeltaEncoding(const QMap<QString, QVariant> &map)
+{
+    QMapIterator<QString, QVariant> riceHashesIt(map);
+    RiceDeltaEncoding riceDeltaEncodingTmp;
+    while (riceHashesIt.hasNext()) {
+        riceHashesIt.next();
+        const QString key = riceHashesIt.key();
+        if (key == QLatin1String("firstValue")) {
+            riceDeltaEncodingTmp.firstValue = riceHashesIt.value().toString();
+        } else if (key == QLatin1String("riceParameter")) {
+            riceDeltaEncodingTmp.riceParameter = riceHashesIt.value().toInt();
+        } else if (key == QLatin1String("numEntries")) {
+            riceDeltaEncodingTmp.numberEntries = riceHashesIt.value().toInt();
+        } else if (key == QLatin1String("encodedData")) {
+            riceDeltaEncodingTmp.encodingData = riceHashesIt.value().toString();
+        } else {
+            qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseRiceDeltaEncoding unknown riceDeltaEncoding key " << key;
+        }
+    }
+    return riceDeltaEncodingTmp;
+}
+
+QVector<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVariantList &lst)
 {
     QVector<Addition> additionList;
     Q_FOREACH (const QVariant &v, lst) {
         if (v.canConvert<QVariantMap>()) {
             QMapIterator<QString, QVariant> mapIt(v.toMap());
+            Addition tmp;
             while (mapIt.hasNext()) {
                 mapIt.next();
-                Addition tmp;
                 const QString keyStr = mapIt.key();
                 if (keyStr == QLatin1String("compressionType")) {
-                    tmp.compressionType = d->parseCompressionType(mapIt.value().toString());
+                    tmp.compressionType = parseCompressionType(mapIt.value().toString());
                 } else if (keyStr == QLatin1String("riceHashes")) {
-                    qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseAdditions need to implement riceHashes ";
+                    RiceDeltaEncoding riceDeltaEncodingTmp = parseRiceDeltaEncoding(mapIt.value().toMap());
+                    if (riceDeltaEncodingTmp.isValid()) {
+                        tmp.riceDeltaEncoding = riceDeltaEncodingTmp;
+                    }
                 } else if (keyStr == QLatin1String("rawHashes")) {
                     QMapIterator<QString, QVariant> rawHashesIt(mapIt.value().toMap());
                     while (rawHashesIt.hasNext()) {
@@ -202,11 +248,11 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
                 } else {
                     qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseAdditions unknown mapIt.key() " << keyStr;
                 }
-                if (tmp.isValid()) {
-                    //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()/(double)tmp.prefixSize;
-                    //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()%(int)tmp.prefixSize;
-                    additionList.append(tmp);
-                }
+            }
+            if (tmp.isValid()) {
+                //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()/(double)tmp.prefixSize;
+                //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()%(int)tmp.prefixSize;
+                additionList.append(tmp);
             }
         } else {
             qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseAdditions not parsing type " << v.typeName();
@@ -230,7 +276,7 @@ UpdateDataBaseInfo::CompressionType CreatePhishingUrlDataBaseJobPrivate::parseCo
     return type;
 }
 
-QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList &lst)
+QVector<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariantList &lst)
 {
     QVector<Removal> removalList;
     Q_FOREACH (const QVariant &v, lst) {
@@ -241,10 +287,12 @@ QVector<Removal> CreatePhishingUrlDataBaseJob::parseRemovals(const QVariantList 
                 mapIt.next();
                 const QString keyStr = mapIt.key();
                 if (keyStr == QLatin1String("compressionType")) {
-                    tmp.compressionType = d->parseCompressionType(mapIt.value().toString());
+                    tmp.compressionType = parseCompressionType(mapIt.value().toString());
                 } else if (keyStr == QLatin1String("riceIndices")) {
-                    //TODO implement it.
-                    qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseRemovals need to implement riceindices ";
+                    RiceDeltaEncoding riceDeltaEncodingTmp = parseRiceDeltaEncoding(mapIt.value().toMap());
+                    if (riceDeltaEncodingTmp.isValid()) {
+                        tmp.riceDeltaEncoding = riceDeltaEncodingTmp;
+                    }
                 } else if (keyStr == QLatin1String("rawIndices")) {
                     const QVariantMap map = mapIt.value().toMap();
                     QMapIterator<QString, QVariant> rawIndicesIt(map);
@@ -300,13 +348,13 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                 const QString mapKey = mapIt.key();
                                 if (mapKey == QLatin1String("additions")) {
                                     const QVariantList lst = mapIt.value().toList();
-                                    const QVector<Addition> addList = parseAdditions(lst);
+                                    const QVector<Addition> addList = d->parseAdditions(lst);
                                     if (!addList.isEmpty()) {
                                         databaseInfo.additionList.append(addList);
                                     }
                                 } else if (mapKey == QLatin1String("removals")) {
                                     const QVariantList lst = mapIt.value().toList();
-                                    const QVector<Removal> removeList = parseRemovals(lst);
+                                    const QVector<Removal> removeList = d->parseRemovals(lst);
                                     if (!removeList.isEmpty()) {
                                         databaseInfo.removalList.append(removeList);
                                     }
@@ -355,6 +403,11 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
         }
     }
     deleteLater();
+}
+
+void CreatePhishingUrlDataBaseJob::setContraintsCompressionType(CreatePhishingUrlDataBaseJob::ContraintsCompressionType type)
+{
+    d->mContraintsCompressionType = type;
 }
 
 UpdateDataBaseInfo::UpdateDataBaseInfo()
@@ -416,7 +469,7 @@ Removal::Removal()
 
 bool Removal::operator==(const Removal &other) const
 {
-    bool value = (indexes == other.indexes) && (compressionType == other.compressionType);
+    bool value = (indexes == other.indexes) && (compressionType == other.compressionType) && (riceDeltaEncoding == other.riceDeltaEncoding);
     if (!value) {
         qCDebug(WEBENGINEVIEWER_LOG) << " indexes " << indexes << " other.indexes " << other.indexes;
         qCDebug(WEBENGINEVIEWER_LOG) << "compressionType " << compressionType << " other.compressionType " << other.compressionType;
@@ -461,12 +514,33 @@ bool Addition::isValid() const
 bool Addition::operator==(const Addition &other) const
 {
     bool value = (hashString == other.hashString) &&
-                 (prefixSize == other.prefixSize) &&
-                 (compressionType == other.compressionType);
+            (prefixSize == other.prefixSize) &&
+            (compressionType == other.compressionType) &&
+            (riceDeltaEncoding == other.riceDeltaEncoding);
     if (!value) {
         qCDebug(WEBENGINEVIEWER_LOG) << "hashString " << hashString << " other.hashString " << other.hashString;
         qCDebug(WEBENGINEVIEWER_LOG) << "prefixSize " << prefixSize << " other.prefixSize " << other.prefixSize;
         qCDebug(WEBENGINEVIEWER_LOG) << "compressionType " << compressionType << " other.compressionType " << other.compressionType;
     }
     return value;
+}
+
+RiceDeltaEncoding::RiceDeltaEncoding()
+    : riceParameter(0),
+      numberEntries(0)
+{
+
+}
+
+bool RiceDeltaEncoding::operator==(const RiceDeltaEncoding &other) const
+{
+    return (firstValue == other.firstValue) &&
+            (encodingData == other.encodingData) &&
+            (riceParameter == other.riceParameter) &&
+            (numberEntries == other.numberEntries);
+}
+
+bool RiceDeltaEncoding::isValid() const
+{
+    return !firstValue.isEmpty() && !encodingData.isEmpty() && (riceParameter != 0) && (numberEntries != 0);
 }

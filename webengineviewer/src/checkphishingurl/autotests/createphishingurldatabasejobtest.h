@@ -43,6 +43,8 @@ private Q_SLOTS:
     void initTestcase();
 
     void shouldClearUpdateDataBaseInfo();
+
+    void checkRiceDeltaEncoding();
 };
 
 #endif // CREATEPHISHINGURLDATABASEJOBTEST_H

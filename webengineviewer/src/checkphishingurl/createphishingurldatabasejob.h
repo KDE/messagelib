@@ -60,13 +60,23 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     bool operator==(const UpdateDataBaseInfo &other) const;
 };
 
+struct WEBENGINEVIEWER_EXPORT RiceDeltaEncoding {
+    RiceDeltaEncoding();
+    bool operator==(const RiceDeltaEncoding &other) const;
+    bool isValid() const;
+    QString firstValue;
+    QString encodingData;
+    int riceParameter;
+    int numberEntries;
+};
+
 struct WEBENGINEVIEWER_EXPORT Addition {
     Addition();
     bool isValid() const;
     bool operator==(const Addition &other) const;
 
-    //Add riceHashes
     QByteArray hashString;
+    RiceDeltaEncoding riceDeltaEncoding;
     UpdateDataBaseInfo::CompressionType compressionType;
     int prefixSize;
 };
@@ -75,8 +85,8 @@ struct WEBENGINEVIEWER_EXPORT Removal {
     Removal();
     bool operator==(const Removal &other) const;
     bool isValid() const;
-    //Add riceIndeces
     QList<int> indexes;
+    RiceDeltaEncoding riceDeltaEncoding;
     UpdateDataBaseInfo::CompressionType compressionType;
 };
 
@@ -99,6 +109,11 @@ public:
         BrokenNetwork = 3
     };
 
+    enum ContraintsCompressionType {
+        RawCompression = 0,
+        RiceCompression = 1
+    };
+
     explicit CreatePhishingUrlDataBaseJob(QObject *parent = Q_NULLPTR);
     ~CreatePhishingUrlDataBaseJob();
 
@@ -112,6 +127,8 @@ public:
 
     void parseResult(const QByteArray &value);
 
+    void setContraintsCompressionType(CreatePhishingUrlDataBaseJob::ContraintsCompressionType type);
+
 Q_SIGNALS:
     void finished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void debugJsonResult(const QByteArray &ba);
@@ -121,15 +138,15 @@ private:
     void slotDownloadDataBaseFinished(QNetworkReply *reply);
     void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     void slotError(QNetworkReply::NetworkError error);
-    QVector<Removal> parseRemovals(const QVariantList &lst);
-    QVector<Addition> parseAdditions(const QVariantList &lst);
 
     CreatePhishingUrlDataBaseJobPrivate *const d;
 };
 }
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType)
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)
+Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType)
 Q_DECLARE_METATYPE(WebEngineViewer::UpdateDataBaseInfo)
 Q_DECLARE_TYPEINFO(WebEngineViewer::Addition, Q_MOVABLE_TYPE);
 Q_DECLARE_TYPEINFO(WebEngineViewer::Removal, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(WebEngineViewer::RiceDeltaEncoding, Q_MOVABLE_TYPE);
 #endif // CREATEPHISHINGURLDATABASEJOB_H

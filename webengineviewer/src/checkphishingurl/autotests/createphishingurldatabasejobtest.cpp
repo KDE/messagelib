@@ -35,6 +35,13 @@ QByteArray readJsonFile(const QString &jsonFile)
     return data;
 }
 
+
+QByteArray createHash(const QByteArray &ba)
+{
+    QByteArray b = QCryptographicHash::hash(ba, QCryptographicHash::Sha256);
+    return b.toBase64();
+}
+
 CreatePhishingUrlDataBaseJobTest::CreatePhishingUrlDataBaseJobTest(QObject *parent)
     : QObject(parent)
 {
@@ -49,6 +56,7 @@ CreatePhishingUrlDataBaseJobTest::~CreatePhishingUrlDataBaseJobTest()
 void CreatePhishingUrlDataBaseJobTest::initTestcase()
 {
     qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>();
+    qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType>();
     qRegisterMetaType<WebEngineViewer::UpdateDataBaseInfo>();
 }
 
@@ -94,27 +102,53 @@ void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest_data()
 {
     QTest::addColumn<QString>("databasestate");
     QTest::addColumn<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType>("downloadtype");
+    QTest::addColumn<WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType>("contraintsCompressionType");
     QTest::addColumn<QString>("request");
-    QTest::newRow("fulldownload") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase
-                                  << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
-    QTest::newRow("fulldownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase
-            << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
-    QTest::newRow("partialdownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase
-            << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"foo\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
-    QTest::newRow("partialdownloadwithoutdatabasestate") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase
-            << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());;
+    QTest::newRow("fulldownload") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase << WebEngineViewer::CreatePhishingUrlDataBaseJob::RawCompression
+                                  << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"constraints\":{\"supportedCompressions\":[\"RAW\"]},\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
+    QTest::newRow("fulldownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase << WebEngineViewer::CreatePhishingUrlDataBaseJob::RawCompression
+                                                   << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"constraints\":{\"supportedCompressions\":[\"RAW\"]},\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
+    QTest::newRow("partialdownloadwithdatabasestate") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase << WebEngineViewer::CreatePhishingUrlDataBaseJob::RawCompression
+                                                      << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"constraints\":{\"supportedCompressions\":[\"RAW\"]},\"platformType\":\"WINDOWS\",\"state\":\"foo\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
+    QTest::newRow("partialdownloadwithoutdatabasestate") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase << WebEngineViewer::CreatePhishingUrlDataBaseJob::RawCompression
+                                                         << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"constraints\":{\"supportedCompressions\":[\"RAW\"]},\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());;
+
+    QTest::newRow("fulldownload-rice") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase << WebEngineViewer::CreatePhishingUrlDataBaseJob::RiceCompression
+                                       << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"constraints\":{\"supportedCompressions\":[\"RICE\"]},\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
+    QTest::newRow("fulldownloadwithdatabasestate-rice") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase << WebEngineViewer::CreatePhishingUrlDataBaseJob::RiceCompression
+                                                        << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"constraints\":{\"supportedCompressions\":[\"RICE\"]},\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
+    QTest::newRow("partialdownloadwithdatabasestate-rice") << QStringLiteral("foo") << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase << WebEngineViewer::CreatePhishingUrlDataBaseJob::RiceCompression
+                                                           << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"constraints\":{\"supportedCompressions\":[\"RICE\"]},\"platformType\":\"WINDOWS\",\"state\":\"foo\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());
+    QTest::newRow("partialdownloadwithoutdatabasestate-rice") << QString() << WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase << WebEngineViewer::CreatePhishingUrlDataBaseJob::RiceCompression
+                                                              << QStringLiteral("{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"listUpdateRequests\":[{\"constraints\":{\"supportedCompressions\":[\"RICE\"]},\"platformType\":\"WINDOWS\",\"state\":\"\",\"threatEntryType\":\"URL\",\"threatType\":\"MALWARE\"}]}").arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps());;
 }
 
 void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
 {
     QFETCH(QString, databasestate);
     QFETCH(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType, downloadtype);
+    QFETCH(WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType, contraintsCompressionType);
     QFETCH(QString, request);
 
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
     job.setDataBaseState(databasestate);
     job.setDataBaseDownloadNeeded(downloadtype);
+    job.setContraintsCompressionType(contraintsCompressionType);
     QCOMPARE(job.jsonRequest(), request.toLatin1());
+}
+
+void CreatePhishingUrlDataBaseJobTest::checkRiceDeltaEncoding()
+{
+    WebEngineViewer::RiceDeltaEncoding a;
+    a.encodingData = QStringLiteral("ff");
+    a.firstValue = QStringLiteral("AAAA");
+    a.numberEntries = 42;
+    a.riceParameter = 99;
+    WebEngineViewer::RiceDeltaEncoding b;
+    a = b;
+    QVERIFY(a.isValid());
+    QVERIFY(b.isValid());
+    QCOMPARE(a, b);
 }
 
 void CreatePhishingUrlDataBaseJobTest::checkAdditionElements_data()
@@ -125,7 +159,9 @@ void CreatePhishingUrlDataBaseJobTest::checkAdditionElements_data()
     QTest::newRow("invalid") << QByteArray() << 4 << false;
     QTest::newRow("notcorrectsize") << QByteArrayLiteral("IL5HqwT2c6bltw==") << 2 << false;
     QTest::newRow("valid") << QByteArrayLiteral("IL5HqwT2c6bltw==") << 5 << true;
-    QTest::newRow("valid1") << QByteArrayLiteral("foossso") << 4 << false;
+    QTest::newRow("invalid1") << QByteArrayLiteral("foossso") << 4 << false;
+    //QByteArray b = createHash(QByteArrayLiteral("abcde"));
+    //QTest::newRow("valid1") << b << 5 << true;
 }
 
 void CreatePhishingUrlDataBaseJobTest::checkAdditionElements()

@@ -116,6 +116,7 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
 
     //2 add number of items
     QList<Addition> itemToStore;
+    //TODO look at raw or rice! Decode it.
     Q_FOREACH (const Addition &add, additionList) {
         //qDebug() << " add.size" << add.prefixSize;
         //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
@@ -151,7 +152,8 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     Q_FOREACH (const Addition &add, itemToStore) {
         QByteArray ba = add.hashString;
         mFile.write(reinterpret_cast<const char *>(ba.constData()), add.hashString.size());
-        newSsha256 += ba;
+        newSsha256 += ba.toBase64();
+        //qDebug() << " ba " << ba;
     }
     mFile.close();
     //Verify hash with sha256
@@ -163,8 +165,9 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
         //qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256 : " << newSsha256;
     }
 #else
-    const QByteArray newSsha256Value = QCryptographicHash::hash(newSsha256.toBase64(), QCryptographicHash::Sha256);
-    qCWarning(WEBENGINEVIEWER_LOG) << newSsha256.toBase64();
+    QByteArray s = newSsha256.toBase64();
+    qDebug() << " newSsha256 " << QCryptographicHash::hash(s, QCryptographicHash::Sha256);
+    const QByteArray newSsha256Value = QCryptographicHash::hash(QByteArray::fromBase64(newSsha256), QCryptographicHash::Sha256);
     qCWarning(WEBENGINEVIEWER_LOG) <<  QCryptographicHash::hash(sha256.toLatin1(), QCryptographicHash::Sha256).toHex();
     qCWarning(WEBENGINEVIEWER_LOG) <<  QCryptographicHash::hash(newSsha256.toBase64(), QCryptographicHash::Sha256).toHex();
     qCWarning(WEBENGINEVIEWER_LOG) <<  QCryptographicHash::hash(newSsha256, QCryptographicHash::Sha256).toHex();
