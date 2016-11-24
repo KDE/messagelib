@@ -198,6 +198,7 @@ QVector<Addition> CreatePhishingUrlDataBaseJob::parseAdditions(const QVariantLis
                         }
                     }
                     if (tmp.isValid()) {
+                        //qDebug() << " rawHashesIt.value().toByteArray().Size() " << tmp.hashString.size()/(double)tmp.prefixSize;
                         additionList.append(tmp);
                     }
                     //qCDebug(WEBENGINEVIEWER_LOG)<<" rawHashs " << mapIt.value().typeName();
