@@ -64,7 +64,7 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     QCOMPARE(spy1.count(), 1);
     const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
-    const QString createDataBaseName = QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QStringLiteral("/test.db");
+    const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl") + QStringLiteral("/test.db");
     qDebug()<<" new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
