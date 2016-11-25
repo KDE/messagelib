@@ -157,6 +157,7 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_checkurl_HEADERS
     CheckPhishingUrlFromLocalDataBaseJob
     LocalDataBaseManager
     SearchFullHashJob
+    UpdateDataBaseInfo
     REQUIRED_HEADERS WebEngineViewer_webengine_checkurl_HEADERS
     PREFIX WebEngineViewer
     RELATIVE checkphishingurl
