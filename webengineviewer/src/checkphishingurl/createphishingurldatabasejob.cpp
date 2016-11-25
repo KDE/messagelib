@@ -237,7 +237,7 @@ QVector<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVar
                         rawHashesIt.next();
                         const QString key = rawHashesIt.key();
                         if (key == QLatin1String("rawHashes")) {
-                            tmp.hashString = rawHashesIt.value().toByteArray();
+                            tmp.hashString = QByteArray::fromBase64(rawHashesIt.value().toByteArray());
                         } else if (key == QLatin1String("prefixSize")) {
                             tmp.prefixSize = rawHashesIt.value().toInt();
                         } else {

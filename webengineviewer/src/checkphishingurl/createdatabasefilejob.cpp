@@ -160,11 +160,13 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     //Verify hash with sha256
 
     const QByteArray newSsha256Value = QCryptographicHash::hash(newSsha256, QCryptographicHash::Sha256);
-    qDebug()<<" newSsha256Value"<<newSsha256Value;
-    qDebug()<<" newSsha256Value"<<newSsha256Value.toBase64();
-    qDebug() << " sha256 " << sha256;
+    //qDebug()<<" newSsha256Value"<<newSsha256Value;
+    //qDebug()<<" newSsha256Value"<<newSsha256Value.toBase64();
+    //qDebug() << " sha256 " << sha256;
 
-    if (sha256.toLatin1() != newSsha256Value.toBase64()) {
+    bool checkSumCorrect = (sha256.toLatin1() == newSsha256Value.toBase64());
+    if (!checkSumCorrect) {
         qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << sha256.toLatin1();
     }
+    finished(checkSumCorrect);
 }
