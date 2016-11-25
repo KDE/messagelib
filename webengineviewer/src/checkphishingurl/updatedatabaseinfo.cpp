@@ -139,7 +139,7 @@ bool Addition::operator==(const Addition &other) const
 
 bool Addition::lessThan(const Addition &s1, const Addition &s2)
 {
-    return s1.hashString <= s2.hashString;
+    return s1.hashString < s2.hashString;
 }
 
 RiceDeltaEncoding::RiceDeltaEncoding()
