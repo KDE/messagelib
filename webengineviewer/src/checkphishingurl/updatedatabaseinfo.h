@@ -74,6 +74,7 @@ struct WEBENGINEVIEWER_EXPORT Addition {
     bool isValid() const;
     bool operator==(const Addition &other) const;
 
+    static bool lessThan(const Addition &s1, const Addition &s2);
     QByteArray hashString;
     RiceDeltaEncoding riceDeltaEncoding;
     UpdateDataBaseInfo::CompressionType compressionType;
