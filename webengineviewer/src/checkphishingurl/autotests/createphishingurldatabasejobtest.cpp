@@ -19,6 +19,7 @@
 
 #include "createphishingurldatabasejobtest.h"
 #include "../createphishingurldatabasejob.h"
+#include "../updatedatabaseinfo.h"
 #include "../checkphishingurlutil.h"
 #include <QSignalSpy>
 #include <QTest>

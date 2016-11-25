@@ -21,6 +21,7 @@
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 #include <QFileInfo>
+#include <QCryptographicHash>
 
 using namespace WebEngineViewer;
 

@@ -28,69 +28,7 @@
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
-struct Addition;
-struct Removal;
-struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
-    UpdateDataBaseInfo();
-    bool isValid() const;
-
-    enum ResponseType {
-        Unknown = 0,
-        FullUpdate = 1,
-        PartialUpdate = 2
-    };
-
-    enum CompressionType {
-        UnknownCompression = 0,
-        RiceCompression = 1,
-        RawCompression = 2
-    };
-
-
-    QVector<Addition> additionList;
-    QVector<Removal> removalList;
-    QString minimumWaitDuration;
-    QString threatType;
-    QString threatEntryType;
-    ResponseType responseType;
-    QString platformType;
-    QString newClientState;
-    QString sha256;
-    void clear();
-    bool operator==(const UpdateDataBaseInfo &other) const;
-};
-
-struct WEBENGINEVIEWER_EXPORT RiceDeltaEncoding {
-    RiceDeltaEncoding();
-    bool operator==(const RiceDeltaEncoding &other) const;
-    bool isValid() const;
-    QString firstValue;
-    QString encodingData;
-    int riceParameter;
-    int numberEntries;
-};
-
-struct WEBENGINEVIEWER_EXPORT Addition {
-    Addition();
-    bool isValid() const;
-    bool operator==(const Addition &other) const;
-
-    QByteArray hashString;
-    RiceDeltaEncoding riceDeltaEncoding;
-    UpdateDataBaseInfo::CompressionType compressionType;
-    int prefixSize;
-};
-
-struct WEBENGINEVIEWER_EXPORT Removal {
-    Removal();
-    bool operator==(const Removal &other) const;
-    bool isValid() const;
-    QList<int> indexes;
-    RiceDeltaEncoding riceDeltaEncoding;
-    UpdateDataBaseInfo::CompressionType compressionType;
-};
-
-
+struct UpdateDataBaseInfo;
 class CreatePhishingUrlDataBaseJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
 class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
@@ -145,8 +83,4 @@ private:
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType)
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)
 Q_DECLARE_METATYPE(WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType)
-Q_DECLARE_METATYPE(WebEngineViewer::UpdateDataBaseInfo)
-Q_DECLARE_TYPEINFO(WebEngineViewer::Addition, Q_MOVABLE_TYPE);
-Q_DECLARE_TYPEINFO(WebEngineViewer::Removal, Q_MOVABLE_TYPE);
-Q_DECLARE_TYPEINFO(WebEngineViewer::RiceDeltaEncoding, Q_MOVABLE_TYPE);
 #endif // CREATEPHISHINGURLDATABASEJOB_H

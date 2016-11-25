@@ -40,6 +40,7 @@ set(libwebengineviewer_checkphishingurl_SRCS
    checkphishingurl/searchfullhashjob.cpp
    checkphishingurl/localdatabasefile.cpp
    checkphishingurl/createdatabasefilejob.cpp
+   checkphishingurl/updatedatabaseinfo.cpp
    )
 
 set(libwebengineviewer_interceptor_SRCS
