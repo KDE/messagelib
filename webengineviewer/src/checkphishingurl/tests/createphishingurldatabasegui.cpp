@@ -29,6 +29,7 @@
 #include <QVBoxLayout>
 #include <QInputDialog>
 #include <QComboBox>
+#include <QFileDialog>
 
 extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob;
 
@@ -60,6 +61,10 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     QPushButton *button2 = new QPushButton(QStringLiteral("DownLoad partial database"), this);
     connect(button2, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase);
     buttonLayout->addWidget(button2);
+
+    QPushButton *save = new QPushButton(QStringLiteral("Save result to disk"), this);
+    connect(save, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotSaveResultToDisk);
+    buttonLayout->addWidget(save);
 }
 
 CreatePhisingUrlDataBaseGui::~CreatePhisingUrlDataBaseGui()
@@ -107,6 +112,23 @@ void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJsonResult, this, &CreatePhisingUrlDataBaseGui::slotResult);
     connect(job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::debugJson, this, &CreatePhisingUrlDataBaseGui::slotDebugJSon);
     job->start();
+}
+
+void CreatePhisingUrlDataBaseGui::slotSaveResultToDisk()
+{
+    if (!mResult->document()->isEmpty()) {
+        const QString filename = QFileDialog::getSaveFileName(this, QStringLiteral("save result to disk"));
+        QTextStream ds;
+        QFile file;
+        file.setFileName(filename);
+        if (!file.open(QIODevice::WriteOnly)) {
+            qWarning() << " impossible to open file " << filename;
+            return;
+        }
+        ds.setDevice(&file);
+        ds << mResult->toPlainText();
+        file.close();
+    }
 }
 
 void CreatePhisingUrlDataBaseGui::slotDebugJSon(const QByteArray &data)

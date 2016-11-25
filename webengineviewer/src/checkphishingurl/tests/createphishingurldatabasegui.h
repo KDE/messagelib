@@ -35,6 +35,7 @@ private Q_SLOTS:
     void slotDownloadFullDatabase();
     void slotDebugJSon(const QByteArray &data);
     void slotDownloadPartialDatabase();
+    void slotSaveResultToDisk();
 private:
     WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType compressionType();
     void clear();
