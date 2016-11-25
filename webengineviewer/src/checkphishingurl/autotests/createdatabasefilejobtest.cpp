@@ -68,6 +68,7 @@ void CreateDatabaseFileJobTest::shouldCreateFile_data()
     QTest::addColumn<bool>("success");
     QTest::newRow("correctdatabase") << QStringLiteral("current.json") << true;
     QTest::newRow("correctdatabase2") << QStringLiteral("newdatabase2.json") << true;
+    QTest::newRow("incorrectdatabase") << QStringLiteral("incorrectdatabase2.json") << false;
 }
 
 void CreateDatabaseFileJobTest::shouldCreateFile()
