@@ -61,9 +61,20 @@ void CreateDatabaseFileJobTest::shouldHaveDefaultValue()
     QVERIFY(!job.canStart());
 }
 
+
+void CreateDatabaseFileJobTest::shouldCreateFile_data()
+{
+    QTest::addColumn<QString>("filename");
+    QTest::addColumn<bool>("success");
+    QTest::newRow("correctdatabase") << QStringLiteral("current.json") << true;
+    QTest::newRow("correctdatabase2") << QStringLiteral("newdatabase2.json") << true;
+}
+
 void CreateDatabaseFileJobTest::shouldCreateFile()
 {
-    QString filename = QStringLiteral("newdatabase2.json");
+    QFETCH(QString, filename);
+    QFETCH(bool, success);
+
     const QByteArray ba = readJsonFile(filename);
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
     QSignalSpy spy1(&job, SIGNAL(finished(WebEngineViewer::UpdateDataBaseInfo,WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)));
@@ -79,12 +90,11 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     QSignalSpy spy2(&databasejob, SIGNAL(finished(bool)));
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
-    bool success = spy2.at(0).at(0).toBool();
-    QVERIFY(success);
+    bool successCreateDataBase = spy2.at(0).at(0).toBool();
+    QCOMPARE(successCreateDataBase, success);
 
     WebEngineViewer::LocalDataBaseFile newFile(createDataBaseName);
     QVERIFY(newFile.isValid());
-
 }
 
 QTEST_MAIN(CreateDatabaseFileJobTest)

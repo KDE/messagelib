@@ -31,7 +31,9 @@ public:
 private Q_SLOTS:
     void initTestcase();
     void shouldHaveDefaultValue();
+
     void shouldCreateFile();
+    void shouldCreateFile_data();
 };
 
 #endif // CREATEDATABASEFILEJOBTEST_H
