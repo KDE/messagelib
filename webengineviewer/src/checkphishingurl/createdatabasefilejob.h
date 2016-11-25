@@ -42,7 +42,7 @@ Q_SIGNALS:
     void finished(bool success);
 
 private:
-    void removeElementFromDataBase(const QVector<Removal> &removalList);
+    void removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition);
     void createBinaryFile();
     void generateFile(bool fullUpdate);
     void createFileFromFullUpdate(const QVector<Addition> &additionList, const QString &sha256);

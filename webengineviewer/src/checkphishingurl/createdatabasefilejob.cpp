@@ -20,6 +20,7 @@
 #include "createdatabasefilejob.h"
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
+#include "localdatabasefile.h"
 #include <QFileInfo>
 #include <QCryptographicHash>
 
@@ -72,8 +73,8 @@ void CreateDatabaseFileJob::createBinaryFile()
 
 void CreateDatabaseFileJob::generateFile(bool fullUpdate)
 {
+    mFile.setFileName(mFileName);
     if (fullUpdate) {
-        mFile.setFileName(mFileName);
         if (mFile.exists() && !mFile.remove()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file "<< mFileName;
             Q_EMIT finished(false);
@@ -81,15 +82,38 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
         }
         if (!mFile.open(QIODevice::WriteOnly)) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file "<< mFileName;
-            //TODO ? assert ?
             Q_EMIT finished(false);
             return;
         }
         createFileFromFullUpdate(mInfoDataBase.additionList, mInfoDataBase.sha256);
     } else {
+        WebEngineViewer::LocalDataBaseFile localeFile(mFileName);
+        if (!localeFile.fileExists()) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to create partial update as file doesn't exist";
+            Q_EMIT finished(false);
+            return;
+        }
         //Read Element from database.
-        removeElementFromDataBase(mInfoDataBase.removalList);
-        //addElementToDataBase(mInfoDataBase.additionList);
+        QVector<Addition> oldDataBaseAddition = localeFile.extractAllInfo();
+
+        removeElementFromDataBase(mInfoDataBase.removalList, oldDataBaseAddition);
+        QVector<Addition> additionList = mInfoDataBase.additionList; // Add value found in database
+        oldDataBaseAddition += additionList;
+
+        //Close file
+        localeFile.close();
+
+        if (!mFile.remove()) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file "<< mFileName;
+            Q_EMIT finished(false);
+            return;
+        }
+        if (!mFile.open(QIODevice::WriteOnly)) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file "<< mFileName;
+            Q_EMIT finished(false);
+            return;
+        }
+        createFileFromFullUpdate(oldDataBaseAddition, mInfoDataBase.sha256);
     }
 }
 
@@ -98,13 +122,22 @@ void CreateDatabaseFileJob::setFileName(const QString &filename)
     mFileName = filename;
 }
 
-void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &removalList)
+void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition)
 {
+    //qDebug() << " oldDataBaseAddition.count() BEFORE : " << oldDataBaseAddition.count();
+    QList<int> indexToRemove;
     Q_FOREACH (const Removal &removeItem, removalList) {
         Q_FOREACH (int id, removeItem.indexes) {
-            //TODO
+            indexToRemove << id;
         }
     }
+    //qDebug() << "indexToRemove.count()" << indexToRemove.count() << " indexToRemove "<<indexToRemove;
+    qSort(indexToRemove);
+    for(int i = (indexToRemove.count() - 1); i >= 0;--i) {
+        oldDataBaseAddition.remove(indexToRemove.at(i));
+        //qDebug() << indexToRemove.at(i);
+    }
+    //qDebug() << " oldDataBaseAddition.count() AFTER : " << oldDataBaseAddition.count();
 }
 
 void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &additionList, const QString &sha256)
@@ -120,7 +153,7 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     QList<Addition> itemToStore;
     //TODO look at raw or rice! Decode it.
     Q_FOREACH (const Addition &add, additionList) {
-        //qDebug() << " add.size" << add.prefixSize;
+        //qCWarning(WEBENGINEVIEWER_LOG) << " add.size" << add.prefixSize;
         const QByteArray uncompressed = add.hashString;
         for (int i = 0; i < uncompressed.size();) {
             const QByteArray m = uncompressed.mid(i, add.prefixSize);
@@ -131,41 +164,44 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
             tmp.prefixSize = add.prefixSize;
             itemToStore << tmp;
 
-            hashStartPosition += tmp.prefixSize;
+            //We store index as 8 octets.
+            hashStartPosition += 8;
             if (m.size() != add.prefixSize) {
-                qDebug() << "m " << m << " m.size" << m.size();
+                qCWarning(WEBENGINEVIEWER_LOG) << "m " << m << " m.size" << m.size();
             }
         }
     }
-    const qint64 numberOfElement = itemToStore.count();
+    const quint64 numberOfElement = itemToStore.count();
     hashStartPosition += mFile.write(reinterpret_cast<const char *>(&numberOfElement), sizeof(numberOfElement));
-
     //3 add index of items
-    qint64 tmpPos = hashStartPosition;
+
+    //Order it first
+    std::sort(itemToStore.begin(), itemToStore.end(), Addition::lessThan);
+
+    quint64 tmpPos = hashStartPosition;
+
     Q_FOREACH (const Addition &add, itemToStore) {
         mFile.write(reinterpret_cast<const char *>(&tmpPos), sizeof(tmpPos));
-        tmpPos += add.prefixSize;
+        tmpPos += add.prefixSize + 1; //We add +1 as we store '\0'
     }
     //TODO verify position.
 
     //4 add items
     QByteArray newSsha256;
-    std::sort(itemToStore.begin(), itemToStore.end(), Addition::lessThan);
     Q_FOREACH (const Addition &add, itemToStore) {
-        QByteArray ba = add.hashString;
-        mFile.write(reinterpret_cast<const char *>(ba.constData()), add.hashString.size());
-        newSsha256 += ba;
-        //qDebug() << " ba " << ba;
+        const QByteArray storedBa = add.hashString + '\0';
+        mFile.write(reinterpret_cast<const char *>(storedBa.constData()), storedBa.size());
+        newSsha256 += add.hashString;
     }
     mFile.close();
     //Verify hash with sha256
 
     const QByteArray newSsha256Value = QCryptographicHash::hash(newSsha256, QCryptographicHash::Sha256);
-    //qDebug()<<" newSsha256Value"<<newSsha256Value;
-    //qDebug()<<" newSsha256Value"<<newSsha256Value.toBase64();
-    //qDebug() << " sha256 " << sha256;
+    //qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value"<<newSsha256Value;
+    //qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value"<<newSsha256Value.toBase64();
+    //qCWarning(WEBENGINEVIEWER_LOG) << " sha256 " << sha256;
 
-    bool checkSumCorrect = (sha256.toLatin1() == newSsha256Value.toBase64());
+    const bool checkSumCorrect = (sha256.toLatin1() == newSsha256Value.toBase64());
     if (!checkSumCorrect) {
         qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << sha256.toLatin1();
     }

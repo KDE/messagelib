@@ -28,25 +28,40 @@
 namespace WebEngineViewer
 {
 class LocalDataBaseFilePrivate;
+class Addition;
 class WEBENGINEVIEWER_EXPORT LocalDataBaseFile
 {
 public:
+    /*
+     * binary file:
+     * index 0 => quint16 => major version
+     * index 2 => quint16 => minor version
+     * index 4 => quint64 => number of element
+     *
+     * After : index of item in binary file
+     *
+     * value
+     */
     LocalDataBaseFile(const QString &filename);
     ~LocalDataBaseFile();
 
+    void close();
     bool fileExists() const;
 
     bool reload();
 
     bool isValid() const;
-    inline quint16 getUint16(int offset) const;
-    inline quint32 getUint32(int offset) const;
-    inline const char *getCharStar(int offset) const;
+    quint16 getUint16(int offset) const;
+    quint32 getUint32(int offset) const;
+    quint64 getUint64(int offset) const;
+    const char *getCharStar(int offset) const;
 
     QString searchHash(int posListOffset, const QByteArray &hashToSearch);
 
     bool shouldCheck();
     bool checkFileChanged();
+    QVector<WebEngineViewer::Addition> extractAllInfo() const;
+
 private:
     LocalDataBaseFilePrivate *const d;
 };

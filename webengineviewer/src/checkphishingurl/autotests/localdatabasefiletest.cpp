@@ -39,4 +39,8 @@ void LocalDataBaseFileTest::shouldBeInvalidWithUnExistingFile()
     QVERIFY(!f.fileExists());
 }
 
+void LocalDataBaseFileTest::shouldCreateCorrectBinaryFile()
+{
+}
+
 QTEST_MAIN(LocalDataBaseFileTest)

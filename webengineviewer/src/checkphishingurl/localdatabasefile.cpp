@@ -19,6 +19,7 @@
 
 #include "localdatabasefile.h"
 #include "checkphishingurlutil.h"
+#include "updatedatabaseinfo.h"
 #include <QElapsedTimer>
 #include <QFileInfo>
 #include <QDebug>
@@ -39,6 +40,7 @@ public:
     }
     bool load();
     bool reload();
+    void close();
 
     QElapsedTimer mLastCheck;
     QFile mFile;
@@ -66,6 +68,15 @@ bool LocalDataBaseFilePrivate::load()
     return mValid;
 }
 
+void LocalDataBaseFilePrivate::close()
+{
+    mValid = false;
+    if (mFile.isOpen()) {
+        mFile.close();
+    }
+    mData = Q_NULLPTR;
+}
+
 bool LocalDataBaseFilePrivate::reload()
 {
     mValid = false;
@@ -87,6 +98,11 @@ LocalDataBaseFile::~LocalDataBaseFile()
     delete d;
 }
 
+void LocalDataBaseFile::close()
+{
+    d->close();
+}
+
 bool LocalDataBaseFile::isValid() const
 {
     return d->mValid;
@@ -100,6 +116,11 @@ quint16 LocalDataBaseFile::getUint16(int offset) const
 quint32 LocalDataBaseFile::getUint32(int offset) const
 {
     return *reinterpret_cast<quint32 *>(d->mData + offset);
+}
+
+quint64 LocalDataBaseFile::getUint64(int offset) const
+{
+    return *reinterpret_cast<quint64 *>(d->mData + offset);
 }
 
 const char *LocalDataBaseFile::getCharStar(int offset) const
@@ -161,6 +182,22 @@ bool LocalDataBaseFile::checkFileChanged()
         return isValid();
     }
     return somethingChanged;
+}
+
+QVector<WebEngineViewer::Addition> LocalDataBaseFile::extractAllInfo() const
+{
+    QVector<WebEngineViewer::Addition> lst;
+    quint64 numberOfElement = getUint64(4);
+    int index = 12; // quint16 major + quint16 minor + quint64 number of element
+    for (quint64 i = 0; i < numberOfElement; ++i) {
+        quint64 value = getUint64(index);
+        Addition tmp;
+        tmp.hashString = QByteArray(getCharStar(value));
+        tmp.prefixSize = tmp.hashString.size();
+        index += 8; //next index based on quint64
+        lst.append(tmp);
+    }
+    return lst;
 }
 
 bool LocalDataBaseFile::fileExists() const
