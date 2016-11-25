@@ -234,7 +234,6 @@ QVector<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVar
                     QMapIterator<QString, QVariant> rawHashesIt(mapIt.value().toMap());
                     while (rawHashesIt.hasNext()) {
                         rawHashesIt.next();
-                        //qCDebug(WEBENGINEVIEWER_LOG) << " rawHashesIt.key() " << rawHashesIt.key() << " rawHashesIt.value()" << rawHashesIt.value();
                         const QString key = rawHashesIt.key();
                         if (key == QLatin1String("rawHashes")) {
                             tmp.hashString = rawHashesIt.value().toByteArray();
@@ -244,14 +243,11 @@ QVector<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVar
                             qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseAdditions unknown rawHashes key " << key;
                         }
                     }
-                    //qCDebug(WEBENGINEVIEWER_LOG)<<" rawHashs " << mapIt.value().typeName();
                 } else {
                     qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseAdditions unknown mapIt.key() " << keyStr;
                 }
             }
             if (tmp.isValid()) {
-                //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()/(double)tmp.prefixSize;
-                //qDebug() << " rawHashesIt.value().toByteArray().Size() " << QByteArray::fromBase64(tmp.hashString).size()%(int)tmp.prefixSize;
                 additionList.append(tmp);
             }
         } else {
