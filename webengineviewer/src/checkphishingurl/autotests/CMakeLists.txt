@@ -46,3 +46,9 @@ ecm_add_test(createdatabasefilejobtest.cpp ../createdatabasefilejob.cpp ${testwe
     NAME_PREFIX "webengineview-createdatabasefilejob-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
+
+ecm_add_test(verifydatabaseupdatetest.cpp ../createdatabasefilejob.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME verifydatabaseupdatetest
+    NAME_PREFIX "webengineview-verifydatabaseupdatetest-"
+    LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
+    )
