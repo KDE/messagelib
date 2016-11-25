@@ -146,7 +146,7 @@ void CreatePhishingUrlDataBaseJobTest::checkRiceDeltaEncoding()
     a.numberEntries = 42;
     a.riceParameter = 99;
     WebEngineViewer::RiceDeltaEncoding b;
-    a = b;
+    b = a;
     QVERIFY(a.isValid());
     QVERIFY(b.isValid());
     QCOMPARE(a, b);
@@ -268,6 +268,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult()
     QCOMPARE(spy1.count(), 1);
     QCOMPARE(spy1.at(0).at(1).value<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>(), parseResult);
     QCOMPARE(spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>(), parseInfo);
+
 }
 
 QTEST_MAIN(CreatePhishingUrlDataBaseJobTest)

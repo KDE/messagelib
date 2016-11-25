@@ -87,6 +87,7 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
         }
         createFileFromFullUpdate(mInfoDataBase.additionList, mInfoDataBase.sha256);
     } else {
+        //Read Element from database.
         removeElementFromDataBase(mInfoDataBase.removalList);
         //addElementToDataBase(mInfoDataBase.additionList);
     }
