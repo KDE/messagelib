@@ -150,6 +150,10 @@ void CreatePhishingUrlDataBaseJobTest::checkRiceDeltaEncoding()
     QVERIFY(a.isValid());
     QVERIFY(b.isValid());
     QCOMPARE(a, b);
+
+    //Invalid
+    WebEngineViewer::RiceDeltaEncoding c;
+    QVERIFY(!c.isValid());
 }
 
 void CreatePhishingUrlDataBaseJobTest::checkAdditionElements_data()
