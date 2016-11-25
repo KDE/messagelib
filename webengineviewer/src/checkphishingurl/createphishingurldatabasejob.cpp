@@ -504,7 +504,7 @@ bool Addition::isValid() const
         qCWarning(WEBENGINEVIEWER_LOG) << "Prefix size is not correct";
         return false;
     }
-    if ((QByteArray::fromBase64(hashString).size() % static_cast<int>(prefixSize) ) != 0) {
+    if (hashString.size() % static_cast<int>(prefixSize) != 0) {
         qCWarning(WEBENGINEVIEWER_LOG) << "it's not a correct hash value";
         return false;
     }

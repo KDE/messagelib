@@ -120,7 +120,7 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     Q_FOREACH (const Addition &add, additionList) {
         //qDebug() << " add.size" << add.prefixSize;
         //qDebug() << " add.hash" << QByteArray::fromBase64(add.hashString).size();
-        const QByteArray uncompressed = QByteArray::fromBase64(add.hashString);
+        const QByteArray uncompressed = add.hashString;
         for (int i = 0; i < uncompressed.size();) {
             const QByteArray m = uncompressed.mid(i, add.prefixSize);
             i += add.prefixSize;
