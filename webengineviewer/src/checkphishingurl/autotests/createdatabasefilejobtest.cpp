@@ -75,7 +75,12 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     qDebug()<<" new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
+
+    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool)));
     databasejob.start();
+    QCOMPARE(spy2.count(), 1);
+    bool success = spy2.at(0).at(0).toBool();
+    QVERIFY(success);
 
     WebEngineViewer::LocalDataBaseFile newFile(createDataBaseName);
     QVERIFY(newFile.isValid());
