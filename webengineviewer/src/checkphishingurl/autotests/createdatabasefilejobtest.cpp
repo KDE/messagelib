@@ -108,6 +108,14 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
 
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 {
+    // Proof of checksum validity using python:
+    // >>> import hashlib
+    // >>> m = hashlib.sha256()
+    // >>> m.update("----11112222254321abcdabcdebbbbbcdefefgh")
+    // >>> m.digest()
+    // "\xbc\xb3\xedk\xe3x\xd1(\xa9\xedz7]"
+    // "x\x18\xbdn]\xa5\xa8R\xf7\xab\xcf\xc1\xa3\xa3\xc5Z,\xa6o"
+
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl") + QStringLiteral("/correctBinary.db");
     qDebug()<<" new filename " << createDataBaseName;
@@ -181,14 +189,58 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
         QCOMPARE(lstInfo.at(i).prefixSize, lstInfo.at(i).hashString.size());
     }
 
-    //TODO remove items.
-    WebEngineViewer::UpdateDataBaseInfo Updateinfo;
+    //Before
+    //storageData << QByteArrayLiteral("----");
+    //storageData << QByteArrayLiteral("1111");
+    //storageData << QByteArrayLiteral("22222");
+    //storageData << QByteArrayLiteral("54321");
+    //storageData << QByteArrayLiteral("abcd");
+    //storageData << QByteArrayLiteral("abcde");
+    //storageData << QByteArrayLiteral("bbbb");
+    //storageData << QByteArrayLiteral("bcdef");
+    //storageData << QByteArrayLiteral("efgh");
 
+    //TODO remove items.
+    WebEngineViewer::UpdateDataBaseInfo updateinfo;
+
+    // we will remove QByteArrayLiteral("22222"); QByteArrayLiteral("54321"); QByteArrayLiteral("abcd");
     WebEngineViewer::Removal r;
     r.indexes = QList<int>() << 2 << 3 << 4;
 
+    // Proof of checksum validity using python:
+    // >>> import hashlib
+    // >>> m = hashlib.sha256()
+    // >>> m.update("----1111abcdebbbbbcdefefgh")
+    // >>> m.digest()
+    // '\xc99\xf2\x8c\x08\x08\x15\xe4\xba\n\xff\x9b\xe0\x82G\x9e\x06\x1bv\xfay\xbb=[\xc7\xd5xz^B\xc9\xe1'
+    // >>> import base64
+    // >>> encoded = base64.b64encode(m.digest())
+    // >>> encoded
+    // 'yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE='
+
     QVector<WebEngineViewer::Removal> lstRemovals;
     lstRemovals << r;
+    updateinfo.removalList = lstRemovals;
+    updateinfo.minimumWaitDuration = QStringLiteral("593.440s");
+    updateinfo.threatType = QStringLiteral("MALWARE");
+    updateinfo.threatEntryType = QStringLiteral("URL");
+    updateinfo.responseType = WebEngineViewer::UpdateDataBaseInfo::PartialUpdate;
+    updateinfo.platformType = QStringLiteral("WINDOWS");
+    updateinfo.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
+    //TODO fix sha256
+    updateinfo.sha256 = QStringLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=");
+
+    WebEngineViewer::CreateDatabaseFileJob updateDatabasejob;
+    qDebug()<<" new filename " << createDataBaseName;
+    updateDatabasejob.setFileName(createDataBaseName);
+
+    updateDatabasejob.setUpdateDataBaseInfo(updateinfo);
+
+    QSignalSpy spy3(&updateDatabasejob, SIGNAL(finished(bool)));
+    updateDatabasejob.start();
+    QCOMPARE(spy3.count(), 1);
+    successCreateDataBase = spy3.at(0).at(0).toBool();
+    QVERIFY(successCreateDataBase);
 
 }
 
