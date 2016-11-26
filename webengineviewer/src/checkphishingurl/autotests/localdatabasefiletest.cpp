@@ -122,10 +122,8 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
     qDebug() << "result : " << val;
     QCOMPARE(!val.isEmpty(), found);
     if (!val.isEmpty()) {
-        //Port to QByteArray ?
         QCOMPARE(resultHash, val);
     }
-    //TODO
 }
 
 QTEST_MAIN(LocalDataBaseFileTest)
