@@ -133,30 +133,25 @@ bool LocalDataBaseFile::reload()
     return d->reload();
 }
 
-QString LocalDataBaseFile::searchHash(int posListOffset, const QByteArray &hashToSearch)
+QByteArray LocalDataBaseFile::searchHash(int posListOffset, const QByteArray &hashToSearch)
 {
-#if 0
-    const int hashsListOffset = getUint32(posListOffset);
-    const int numHash = getUint32(hashsListOffset);
+    const int numHash = getUint64(posListOffset);
     int begin = 0;
     int end = numHash - 1;
     while (begin <= end) {
         const int medium = (begin + end) / 2;
-        const int off = hashsListOffset + 4 + 8 * medium;
+        const int off = posListOffset + 4 + 8 * medium;
         const int hashOffset = getUint32(off);
         const char *hashCharStar = getCharStar(hashOffset);
-        const int cmp = qstrcmp(mime, inputMime);
+        const int cmp = qstrcmp(hashCharStar, hashToSearch.constData());
+        qDebug() << " begin " << begin << " end " << end << " hashCharStar" <<hashCharStar;
         if (cmp < 0) {
             begin = medium + 1;
         } else if (cmp > 0) {
             end = medium - 1;
-        } else {
-            const int iconOffset = getUint32(off + 4);
-            return QLatin1String(getCharStar(iconOffset));
         }
     }
-#endif
-    return QString();
+    return QByteArray();
 }
 
 bool LocalDataBaseFile::shouldCheck()

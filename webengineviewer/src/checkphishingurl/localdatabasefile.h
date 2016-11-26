@@ -56,7 +56,7 @@ public:
     quint64 getUint64(int offset) const;
     const char *getCharStar(int offset) const;
 
-    QString searchHash(int posListOffset, const QByteArray &hashToSearch);
+    QByteArray searchHash(int posListOffset, const QByteArray &hashToSearch);
 
     bool shouldCheck();
     bool checkFileChanged();

@@ -56,13 +56,16 @@ void LocalDataBaseFileTest::shouldBeInvalidWithUnExistingFile()
 void LocalDataBaseFileTest::shouldCheckHashBinaryFile_data()
 {
     QTest::addColumn<QByteArray>("hash");
+    QTest::addColumn<QByteArray>("resultHash");
     QTest::addColumn<bool>("found");
-    QTest::newRow("nohash") << QByteArrayLiteral("foo") << false;
+    QTest::newRow("nohash") << QByteArrayLiteral("foo") << QByteArray() << false;
+    QTest::newRow("foundhash") << QByteArrayLiteral("1111") << QByteArray() << false;
 }
 
 void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
 {
     QFETCH(QByteArray, hash);
+    QFETCH(QByteArray, resultHash);
     QFETCH(bool, found);
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl") + QStringLiteral("/correctBinary.db");
@@ -110,9 +113,16 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
     QVERIFY(newFile.isValid());
     QCOMPARE(newFile.getUint16(0), static_cast<quint16>(1));
     QCOMPARE(newFile.getUint16(2), static_cast<quint16>(0));
-    QCOMPARE(newFile.getUint64(4), static_cast<quint64>(9));
+    quint64 number = newFile.getUint64(4);
+    QCOMPARE(number, static_cast<quint64>(9));
     int index = 4 + sizeof(quint64);
-
+    const QByteArray val = newFile.searchHash(12, hash);
+    qDebug() << "result : " << val;
+    QCOMPARE(!val.isEmpty(), found);
+    if (!val.isEmpty()) {
+        //Port to QByteArray ?
+        QCOMPARE(resultHash, val);
+    }
     //TODO
 }
 
