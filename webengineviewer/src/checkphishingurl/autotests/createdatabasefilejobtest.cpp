@@ -351,7 +351,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
 
 void CreateDatabaseFileJobTest::shouldUpdateDataBase()
 {
-    QString firstFilename = QStringLiteral("current.json");
+    QString firstFilename = QStringLiteral("newdatabase2.json");
     const QByteArray ba = readJsonFile(firstFilename);
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
     QSignalSpy spy1(&job, SIGNAL(finished(WebEngineViewer::UpdateDataBaseInfo,WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)));
@@ -374,10 +374,10 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     QVERIFY(newFile.isValid());
     QCOMPARE(newFile.getUint16(0), static_cast<quint16>(1));
     QCOMPARE(newFile.getUint16(2), static_cast<quint16>(0));
-    QCOMPARE(newFile.getUint64(4), static_cast<quint64>(580600));
+    QCOMPARE(newFile.getUint64(4), static_cast<quint64>(579416));
     newFile.close();
 
-    QString updateFilename = QStringLiteral("partial_download2.json");
+    QString updateFilename = QStringLiteral("partial_download3.json");
     const QByteArray baUpdate = readJsonFile(updateFilename);
 
     WebEngineViewer::CreatePhishingUrlDataBaseJob jobUpdate;
