@@ -126,9 +126,9 @@ bool Addition::isValid() const
 bool Addition::operator==(const Addition &other) const
 {
     bool value = (hashString == other.hashString) &&
-            (prefixSize == other.prefixSize) &&
-            (compressionType == other.compressionType) &&
-            (riceDeltaEncoding == other.riceDeltaEncoding);
+                 (prefixSize == other.prefixSize) &&
+                 (compressionType == other.compressionType) &&
+                 (riceDeltaEncoding == other.riceDeltaEncoding);
     if (!value) {
         qCDebug(WEBENGINEVIEWER_LOG) << "hashString " << hashString << " other.hashString " << other.hashString;
         qCDebug(WEBENGINEVIEWER_LOG) << "prefixSize " << prefixSize << " other.prefixSize " << other.prefixSize;
@@ -152,9 +152,9 @@ RiceDeltaEncoding::RiceDeltaEncoding()
 bool RiceDeltaEncoding::operator==(const RiceDeltaEncoding &other) const
 {
     return (firstValue == other.firstValue) &&
-            (encodingData == other.encodingData) &&
-            (riceParameter == other.riceParameter) &&
-            (numberEntries == other.numberEntries);
+           (encodingData == other.encodingData) &&
+           (riceParameter == other.riceParameter) &&
+           (numberEntries == other.numberEntries);
 }
 
 bool RiceDeltaEncoding::isValid() const

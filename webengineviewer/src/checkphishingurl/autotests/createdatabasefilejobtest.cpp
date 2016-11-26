@@ -61,7 +61,6 @@ void CreateDatabaseFileJobTest::shouldHaveDefaultValue()
     QVERIFY(!job.canStart());
 }
 
-
 void CreateDatabaseFileJobTest::shouldCreateFile_data()
 {
     QTest::addColumn<QString>("filename");
@@ -71,7 +70,6 @@ void CreateDatabaseFileJobTest::shouldCreateFile_data()
     QTest::newRow("correctdatabase2") << QStringLiteral("newdatabase2.json") << static_cast<quint64>(579416) << true;
     QTest::newRow("incorrectdatabase") << QStringLiteral("incorrectdatabase2.json") << static_cast<quint64>(0) << false;
 }
-
 
 void CreateDatabaseFileJobTest::shouldCreateFile()
 {
@@ -87,7 +85,7 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl") + QStringLiteral("/test.db");
-    qDebug()<<" new filename " << createDataBaseName;
+    qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
 
@@ -136,7 +134,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl") + QStringLiteral("/correctBinary.db");
-    qDebug()<<" new filename " << createDataBaseName;
+    qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
 
     WebEngineViewer::UpdateDataBaseInfo info;
@@ -168,7 +166,6 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     info.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
     info.sha256 = QByteArrayLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
 
-
     databasejob.setUpdateDataBaseInfo(info);
 
     QSignalSpy spy2(&databasejob, SIGNAL(finished(bool)));
@@ -198,11 +195,11 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
         quint64 value = newFile.getUint64(index);
         //qDebug() << "char "<< newFile.getCharStar(value);
         QCOMPARE(storageData.at(i), QByteArray(newFile.getCharStar(value)));
-        index+=sizeof(quint64);
+        index += sizeof(quint64);
     }
     const QVector<WebEngineViewer::Addition> lstInfo = newFile.extractAllInfo();
     QCOMPARE(lstInfo.count(), 9);
-    for (int i = 0; i < 9 ; i++) {
+    for (int i = 0; i < 9; i++) {
         QCOMPARE(lstInfo.at(i).hashString, storageData.at(i));
         QCOMPARE(lstInfo.at(i).prefixSize, lstInfo.at(i).hashString.size());
     }
@@ -248,7 +245,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     updateinfo.sha256 = /*QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=")*/ newssha;
 
     WebEngineViewer::CreateDatabaseFileJob updateDatabasejob;
-    qDebug()<<" new filename " << createDataBaseName;
+    qDebug() << " new filename " << createDataBaseName;
     updateDatabasejob.setFileName(createDataBaseName);
 
     updateDatabasejob.setUpdateDataBaseInfo(updateinfo);
@@ -265,7 +262,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
 {
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl") + QStringLiteral("/correctBinary.db");
-    qDebug()<<" new filename " << createDataBaseName;
+    qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
 
     WebEngineViewer::UpdateDataBaseInfo info;
@@ -297,7 +294,6 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
     info.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
     info.sha256 = QByteArrayLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
 
-
     databasejob.setUpdateDataBaseInfo(info);
 
     QSignalSpy spy2(&databasejob, SIGNAL(finished(bool)));
@@ -327,11 +323,11 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
         quint64 value = newFile.getUint64(index);
         //qDebug() << "char "<< newFile.getCharStar(value);
         QCOMPARE(storageData.at(i), QByteArray(newFile.getCharStar(value)));
-        index+=sizeof(quint64);
+        index += sizeof(quint64);
     }
     const QVector<WebEngineViewer::Addition> lstInfo = newFile.extractAllInfo();
     QCOMPARE(lstInfo.count(), 9);
-    for (int i = 0; i < 9 ; i++) {
+    for (int i = 0; i < 9; i++) {
         QCOMPARE(lstInfo.at(i).hashString, storageData.at(i));
         QCOMPARE(lstInfo.at(i).prefixSize, lstInfo.at(i).hashString.size());
     }
@@ -348,7 +344,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
     WebEngineViewer::CreateDatabaseFileJob databasejob;
     const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl") + QStringLiteral("/update.db");
-    qDebug()<<" new filename " << createDataBaseName;
+    qDebug() << " new filename " << createDataBaseName;
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
 
@@ -365,7 +361,6 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     QCOMPARE(newFile.getUint64(4), static_cast<quint64>(580600));
     newFile.close();
 
-
     QString updateFilename = QStringLiteral("partial_download2.json");
     const QByteArray baUpdate = readJsonFile(updateFilename);
 
@@ -381,7 +376,6 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     databasejob2.setFileName(createDataBaseName);
     databasejob2.setUpdateDataBaseInfo(infoUpdate);
 
-
     QSignalSpy spy4(&databasejob2, SIGNAL(finished(bool)));
     databasejob2.start();
     QCOMPARE(spy4.count(), 1);
@@ -389,6 +383,5 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     QVERIFY(successCreateDataBase);
 
 }
-
 
 QTEST_MAIN(CreateDatabaseFileJobTest)

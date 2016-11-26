@@ -118,8 +118,8 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
         "threatEntryType": "URL",
         "state":           "Gg4IBBADIgYQgBAiAQEoAQ==",
         "constraints": {
-            "maxUpdateEntries":      2048,
-            "maxDatabaseEntries":    4096,
+                "maxUpdateEntries":      2048,
+                "maxDatabaseEntries":    4096,
             "region":                "US",
             "supportedCompressions": ["RAW"]
             }
@@ -139,7 +139,6 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     threatMap.insert(QStringLiteral("platformType"), QStringLiteral("WINDOWS"));
     threatMap.insert(QStringLiteral("threatType"), QStringLiteral("MALWARE"));
     threatMap.insert(QStringLiteral("threatEntryType"), QStringLiteral("URL"));
-
 
     //Contrainsts
     QVariantMap contraintsMap;
@@ -396,7 +395,6 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                 }
             }
             Q_EMIT finished(databaseInfo, ValidData);
-
         }
     }
     deleteLater();

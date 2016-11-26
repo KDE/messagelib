@@ -76,12 +76,12 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
     mFile.setFileName(mFileName);
     if (fullUpdate) {
         if (mFile.exists() && !mFile.remove()) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file "<< mFileName;
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
             Q_EMIT finished(false);
             return;
         }
         if (!mFile.open(QIODevice::WriteOnly)) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file "<< mFileName;
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
             Q_EMIT finished(false);
             return;
         }
@@ -104,12 +104,12 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
         localeFile.close();
 
         if (!mFile.remove()) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file "<< mFileName;
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
             Q_EMIT finished(false);
             return;
         }
         if (!mFile.open(QIODevice::WriteOnly)) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file "<< mFileName;
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
             Q_EMIT finished(false);
             return;
         }
@@ -133,7 +133,7 @@ void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &re
     }
     //qDebug() << "indexToRemove.count()" << indexToRemove.count() << " indexToRemove "<<indexToRemove;
     qSort(indexToRemove);
-    for(int i = (indexToRemove.count() - 1); i >= 0;--i) {
+    for (int i = (indexToRemove.count() - 1); i >= 0; --i) {
         oldDataBaseAddition.remove(indexToRemove.at(i));
         //qDebug() << indexToRemove.at(i);
     }

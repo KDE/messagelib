@@ -19,7 +19,6 @@
 
 #include "createphishingurldatabasegui.h"
 
-
 #include <QApplication>
 #include <QStandardPaths>
 #include <QLineEdit>

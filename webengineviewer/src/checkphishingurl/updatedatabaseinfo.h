@@ -45,7 +45,6 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
         RawCompression = 2
     };
 
-
     QVector<Addition> additionList;
     QVector<Removal> removalList;
     QString minimumWaitDuration;

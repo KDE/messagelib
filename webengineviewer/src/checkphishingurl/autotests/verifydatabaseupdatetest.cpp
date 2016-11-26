@@ -60,8 +60,7 @@ void VerifyDataBaseUpdateTest::shouldVerifyCheckSums_data()
     lst << a << b << c << d;
 
     QByteArray calculateCheckSums = QByteArrayLiteral("\xBC\xB3\xEDk\xE3x\xD1(\xA9\xEDz7]x\x18\xBDn]"
-                                                            "\xA5\xA8R\xF7\xAB\xCF\xC1\xA3\xA3\xC5Z,\xA6o");
-
+                                    "\xA5\xA8R\xF7\xAB\xCF\xC1\xA3\xA3\xC5Z,\xA6o");
 
     QTest::newRow("checksum1") << lst << 9 << calculateCheckSums;
 
