@@ -111,11 +111,26 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
     QTest::addColumn<bool>("success");
     QList<int> r = { 2, 3, 4};
     QTest::newRow("correctdatabase") << r << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
-    r = { 3, 2, 4};
+    r = {3, 2, 4};
     QTest::newRow("correctdatabaseotherorder") << r << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
 
-    r = { 4, 2, 3};
+    r = {4, 2, 3};
     QTest::newRow("correctdatabaseotherorder2") << r << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
+
+    //    >>> import hashlib
+    //    >>> m = hashlib.sha256()
+    //    >>> m.update("111154321abcdabcdebbbbbcdef")
+    //    >>> m.digest()
+    //    '\x81\xdd9\xe3\xae\x94s\xfd\x16o\\\xcea \xb7\xbc\x1b+R\nN\x05o\xfe\xeeWY\x7f\x8a\xcb\xbeN'
+    //    >>> import base64
+    //    >>> encoded = base64.b64encode(m.digest())
+    //    >>> encoded
+    //    'gd05466Uc/0Wb1zOYSC3vBsrUgpOBW/+7ldZf4rLvk4='
+    //    >>>
+
+
+    r = {0, 2, 8};
+    QTest::newRow("correctdatabaseotherorder3") << r << QByteArrayLiteral("gd05466Uc/0Wb1zOYSC3vBsrUgpOBW/+7ldZf4rLvk4=") << true;
 }
 
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
