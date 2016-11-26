@@ -134,6 +134,34 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
 
     r = {0, 2, 8};
     QTest::newRow("correctdatabaseotherorder3") << r << lstAdditions << QByteArrayLiteral("gd05466Uc/0Wb1zOYSC3vBsrUgpOBW/+7ldZf4rLvk4=") << true;
+
+
+    r = {0, 2, 8};
+
+
+    WebEngineViewer::Addition c;
+    c.hashString = QByteArray("mnopqrst");
+    c.prefixSize = 4;
+
+    WebEngineViewer::Addition b;
+    b.hashString = QByteArray("uvwx");
+    b.prefixSize = 4;
+
+    lstAdditions << c << b;
+
+    //    >>> import hashlib
+    //    >>> m = hashlib.sha256()
+    //    >>> m.update("111154321abcdabcdebbbbbcdefmnopqrstuvwx")
+    //    >>> m.digest()
+    //    '\n\xae\xe2\xe0!\x8f\xa4\x05N\x89,\xdcJ*\xbe\x85\xa1Q\xc3\x9c\xc8}j\x83*s\xd5L&\xbe\xfbh'
+    //    >>> import base64
+    //    >>> encoded = base64.b64encode(m.digest())
+    //    >>> encoded
+    //    'Cq7i4CGPpAVOiSzcSiq+haFRw5zIfWqDKnPVTCa++2g='
+
+    //m.update("111154321abcdabcdebbbbbcdefmnopqrstuvwx");
+
+    QTest::newRow("correctdatabaseotherorderwithadditions") << r << lstAdditions << QByteArrayLiteral("Cq7i4CGPpAVOiSzcSiq+haFRw5zIfWqDKnPVTCa++2g=") << true;
 }
 
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
