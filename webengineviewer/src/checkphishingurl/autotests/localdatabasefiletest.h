@@ -30,7 +30,9 @@ public:
     ~LocalDataBaseFileTest();
 private Q_SLOTS:
     void shouldBeInvalidWithUnExistingFile();
-    void shouldCreateCorrectBinaryFile();
+
+    void shouldCheckHashBinaryFile_data();
+    void shouldCheckHashBinaryFile();
 };
 
 #endif // LOCALDATABASEFILETEST_H

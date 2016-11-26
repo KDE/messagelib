@@ -19,12 +19,25 @@
 
 #include "localdatabasefiletest.h"
 #include "../localdatabasefile.h"
+#include "../createdatabasefilejob.h"
+#include <QSignalSpy>
+#include <QStandardPaths>
 #include <QTest>
+
+QByteArray readJsonFile(const QString &jsonFile)
+{
+    QFile file(QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
+    file.open(QIODevice::ReadOnly);
+    Q_ASSERT(file.isOpen());
+    const QByteArray data = file.readAll();
+    Q_ASSERT(!data.isEmpty());
+    return data;
+}
 
 LocalDataBaseFileTest::LocalDataBaseFileTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 LocalDataBaseFileTest::~LocalDataBaseFileTest()
@@ -39,8 +52,67 @@ void LocalDataBaseFileTest::shouldBeInvalidWithUnExistingFile()
     QVERIFY(!f.fileExists());
 }
 
-void LocalDataBaseFileTest::shouldCreateCorrectBinaryFile()
+void LocalDataBaseFileTest::shouldCheckHashBinaryFile_data()
 {
+    QTest::addColumn<QByteArray>("hash");
+    QTest::addColumn<bool>("found");
+    QTest::newRow("nohash") << QByteArrayLiteral("foo") << false;
+}
+
+void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
+{
+    QFETCH(QByteArray, hash);
+    QFETCH(bool, found);
+    WebEngineViewer::CreateDatabaseFileJob databasejob;
+    const QString createDataBaseName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl") + QStringLiteral("/correctBinary.db");
+    qDebug() << " new filename " << createDataBaseName;
+    databasejob.setFileName(createDataBaseName);
+
+    WebEngineViewer::UpdateDataBaseInfo info;
+
+    WebEngineViewer::Addition a;
+    a.hashString = QByteArray("----1111bbbb");
+    a.prefixSize = 4;
+
+    WebEngineViewer::Addition b;
+    b.hashString = QByteArray("abcdefgh");
+    b.prefixSize = 4;
+
+    WebEngineViewer::Addition c;
+    c.hashString = QByteArray("54321abcde");
+    c.prefixSize = 5;
+
+    WebEngineViewer::Addition d;
+    d.hashString = QByteArray("22222bcdef");
+    d.prefixSize = 5;
+
+    QVector<WebEngineViewer::Addition> lst;
+    lst << a << b << c << d;
+    info.additionList = lst;
+    info.minimumWaitDuration = QStringLiteral("593.440s");
+    info.threatType = QStringLiteral("MALWARE");
+    info.threatEntryType = QStringLiteral("URL");
+    info.responseType = WebEngineViewer::UpdateDataBaseInfo::FullUpdate;
+    info.platformType = QStringLiteral("WINDOWS");
+    info.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
+    info.sha256 = QByteArrayLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
+
+    databasejob.setUpdateDataBaseInfo(info);
+
+    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool)));
+    databasejob.start();
+    QCOMPARE(spy2.count(), 1);
+    bool successCreateDataBase = spy2.at(0).at(0).toBool();
+    QVERIFY(successCreateDataBase);
+
+    WebEngineViewer::LocalDataBaseFile newFile(createDataBaseName);
+    QVERIFY(newFile.isValid());
+    QCOMPARE(newFile.getUint16(0), static_cast<quint16>(1));
+    QCOMPARE(newFile.getUint16(2), static_cast<quint16>(0));
+    QCOMPARE(newFile.getUint64(4), static_cast<quint64>(9));
+    int index = 4 + sizeof(quint64);
+
+    //TODO
 }
 
 QTEST_MAIN(LocalDataBaseFileTest)
