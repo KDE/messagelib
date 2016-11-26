@@ -38,7 +38,9 @@ private Q_SLOTS:
     void shouldCreateCorrectBinaryFile();
 
     void shouldUpdateDataBase();
+
     void shouldRemoveElementInDataBase();
+    void shouldRemoveElementInDataBase_data();
 };
 
 #endif // CREATEDATABASEFILEJOBTEST_H

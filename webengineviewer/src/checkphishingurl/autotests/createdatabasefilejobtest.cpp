@@ -106,8 +106,26 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     }
 }
 
+void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
+{
+    QTest::addColumn<QList<int> >("listElementToRemove");
+    QTest::addColumn<QByteArray>("newssha");
+    QTest::addColumn<bool>("success");
+    QList<int> r = { 2, 3, 4};
+    QTest::newRow("correctdatabase") << r << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
+    r = { 3, 2, 4};
+    QTest::newRow("correctdatabaseotherorder") << r << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
+
+    r = { 4, 2, 3};
+    QTest::newRow("correctdatabaseotherorder2") << r << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
+}
+
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 {
+    QFETCH(QList<int>, listElementToRemove);
+    QFETCH(QByteArray, newssha);
+    QFETCH(bool, success);
+
     // Proof of checksum validity using python:
     // >>> import hashlib
     // >>> m = hashlib.sha256()
@@ -205,7 +223,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     // we will remove QByteArrayLiteral("22222"); QByteArrayLiteral("54321"); QByteArrayLiteral("abcd");
     WebEngineViewer::Removal r;
-    r.indexes = QList<int>() << 2 << 3 << 4;
+    r.indexes = listElementToRemove;
 
     // Proof of checksum validity using python:
     // >>> import hashlib
@@ -227,7 +245,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     updateinfo.responseType = WebEngineViewer::UpdateDataBaseInfo::PartialUpdate;
     updateinfo.platformType = QStringLiteral("WINDOWS");
     updateinfo.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
-    updateinfo.sha256 = QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=");
+    updateinfo.sha256 = /*QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=")*/ newssha;
 
     WebEngineViewer::CreateDatabaseFileJob updateDatabasejob;
     qDebug()<<" new filename " << createDataBaseName;
@@ -239,7 +257,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     updateDatabasejob.start();
     QCOMPARE(spy3.count(), 1);
     successCreateDataBase = spy3.at(0).at(0).toBool();
-    QVERIFY(successCreateDataBase);
+    QCOMPARE(successCreateDataBase, success);
 
 }
 
