@@ -45,7 +45,7 @@ private:
     void removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition);
     void createBinaryFile();
     void generateFile(bool fullUpdate);
-    void createFileFromFullUpdate(const QVector<Addition> &additionList, const QString &sha256);
+    void createFileFromFullUpdate(const QVector<Addition> &additionList, const QByteArray &sha256);
     WebEngineViewer::UpdateDataBaseInfo mInfoDataBase;
     QString mFileName;
     QFile mFile;

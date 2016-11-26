@@ -148,7 +148,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     info.responseType = WebEngineViewer::UpdateDataBaseInfo::FullUpdate;
     info.platformType = QStringLiteral("WINDOWS");
     info.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
-    info.sha256 = QStringLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
+    info.sha256 = QByteArrayLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
 
 
     databasejob.setUpdateDataBaseInfo(info);
@@ -227,8 +227,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     updateinfo.responseType = WebEngineViewer::UpdateDataBaseInfo::PartialUpdate;
     updateinfo.platformType = QStringLiteral("WINDOWS");
     updateinfo.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
-    //TODO fix sha256
-    updateinfo.sha256 = QStringLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=");
+    updateinfo.sha256 = QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=");
 
     WebEngineViewer::CreateDatabaseFileJob updateDatabasejob;
     qDebug()<<" new filename " << createDataBaseName;
@@ -278,7 +277,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
     info.responseType = WebEngineViewer::UpdateDataBaseInfo::FullUpdate;
     info.platformType = QStringLiteral("WINDOWS");
     info.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
-    info.sha256 = QStringLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
+    info.sha256 = QByteArrayLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
 
 
     databasejob.setUpdateDataBaseInfo(info);

@@ -54,7 +54,7 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     ResponseType responseType;
     QString platformType;
     QString newClientState;
-    QString sha256;
+    QByteArray sha256;
     void clear();
     bool operator==(const UpdateDataBaseInfo &other) const;
 };

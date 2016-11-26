@@ -85,7 +85,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldClearUpdateDataBaseInfo()
     value.responseType = WebEngineViewer::UpdateDataBaseInfo::PartialUpdate;
     value.platformType = QStringLiteral("WINDOWS");
     value.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
-    value.sha256 = QStringLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
+    value.sha256 = QByteArrayLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
     value.additionList = additionList;
     value.removalList = removalList;
 
@@ -227,7 +227,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     value.responseType = WebEngineViewer::UpdateDataBaseInfo::PartialUpdate;
     value.platformType = QStringLiteral("WINDOWS");
     value.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
-    value.sha256 = QStringLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
+    value.sha256 = QByteArrayLiteral("YSgoRtsRlgHDqDA3LAhM1gegEpEzs1TjzU33vqsR8iM=");
     value.additionList = additionList;
     value.removalList = removalList;
 
@@ -250,7 +250,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     value.responseType = WebEngineViewer::UpdateDataBaseInfo::FullUpdate;
     value.platformType = QStringLiteral("WINDOWS");
     value.newClientState = QStringLiteral("Cg0IARAGGAEiAzAwMTABELmwARoCGAUmgN3G");
-    value.sha256 = QStringLiteral("ANcYWR8Umuoir+uNs1AhfxqW0iXEPDkxN6Pp2QF8dSs=");
+    value.sha256 = QByteArrayLiteral("ANcYWR8Umuoir+uNs1AhfxqW0iXEPDkxN6Pp2QF8dSs=");
     value.additionList = additionList2;
 
     QTest::newRow("test2") << QStringLiteral("test2.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::ValidData << value;

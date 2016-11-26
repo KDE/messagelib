@@ -360,7 +360,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                     while (mapCheckSum.hasNext()) {
                                         mapCheckSum.next();
                                         if (mapCheckSum.key() == QLatin1String("sha256")) {
-                                            databaseInfo.sha256 = mapCheckSum.value().toString();
+                                            databaseInfo.sha256 = mapCheckSum.value().toByteArray();
                                         } else {
                                             qCDebug(WEBENGINEVIEWER_LOG) << "Invalid checksum key" << mapCheckSum.key();
                                         }

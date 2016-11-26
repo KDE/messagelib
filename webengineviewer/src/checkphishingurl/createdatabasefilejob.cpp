@@ -140,7 +140,7 @@ void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &re
     //qDebug() << " oldDataBaseAddition.count() AFTER : " << oldDataBaseAddition.count();
 }
 
-void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &additionList, const QString &sha256)
+void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &additionList, const QByteArray &sha256)
 {
     //1 add version number
     const quint16 major = WebEngineViewer::CheckPhishingUrlUtil::majorVersion();
@@ -201,9 +201,9 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     //qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value"<<newSsha256Value.toBase64();
     //qCWarning(WEBENGINEVIEWER_LOG) << " sha256 " << sha256;
 
-    const bool checkSumCorrect = (sha256.toLatin1() == newSsha256Value.toBase64());
+    const bool checkSumCorrect = (sha256 == newSsha256Value.toBase64());
     if (!checkSumCorrect) {
-        qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << sha256.toLatin1();
+        qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << sha256;
     }
     finished(checkSumCorrect);
 }
