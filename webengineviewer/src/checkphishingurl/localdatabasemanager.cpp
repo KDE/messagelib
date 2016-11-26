@@ -180,14 +180,7 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
             }
         }
     }
-    checkDataBase();
     d->mDownloadProgress = false;
-}
-
-void LocalDataBaseManager::checkDataBase()
-{
-    //TODO get all hash and use sha256
-    //TODO
 }
 
 void LocalDataBaseManager::fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
