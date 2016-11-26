@@ -26,7 +26,7 @@
 #include <QSignalSpy>
 #include <QTest>
 #include <QDebug>
-
+Q_DECLARE_METATYPE(QVector<WebEngineViewer::Addition>)
 QByteArray readJsonFile(const QString &jsonFile)
 {
     QFile file(QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
@@ -108,15 +108,17 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
 {
     QTest::addColumn<QList<int> >("listElementToRemove");
+    QTest::addColumn<QVector<WebEngineViewer::Addition> >("listElementToAdd");
     QTest::addColumn<QByteArray>("newssha");
     QTest::addColumn<bool>("success");
+    QVector<WebEngineViewer::Addition> lstAdditions;
     QList<int> r = { 2, 3, 4};
-    QTest::newRow("correctdatabase") << r << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
+    QTest::newRow("correctdatabase") << r << lstAdditions << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
     r = {3, 2, 4};
-    QTest::newRow("correctdatabaseotherorder") << r << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
+    QTest::newRow("correctdatabaseotherorder") << r << lstAdditions << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
 
     r = {4, 2, 3};
-    QTest::newRow("correctdatabaseotherorder2") << r << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
+    QTest::newRow("correctdatabaseotherorder2") << r << lstAdditions << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
 
     //    >>> import hashlib
     //    >>> m = hashlib.sha256()
@@ -131,12 +133,13 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
 
 
     r = {0, 2, 8};
-    QTest::newRow("correctdatabaseotherorder3") << r << QByteArrayLiteral("gd05466Uc/0Wb1zOYSC3vBsrUgpOBW/+7ldZf4rLvk4=") << true;
+    QTest::newRow("correctdatabaseotherorder3") << r << lstAdditions << QByteArrayLiteral("gd05466Uc/0Wb1zOYSC3vBsrUgpOBW/+7ldZf4rLvk4=") << true;
 }
 
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 {
     QFETCH(QList<int>, listElementToRemove);
+    QFETCH(QVector<WebEngineViewer::Addition>, listElementToAdd);
     QFETCH(QByteArray, newssha);
     QFETCH(bool, success);
 
@@ -251,6 +254,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     QVector<WebEngineViewer::Removal> lstRemovals;
     lstRemovals << r;
+    updateinfo.additionList = listElementToAdd;
     updateinfo.removalList = lstRemovals;
     updateinfo.minimumWaitDuration = QStringLiteral("593.440s");
     updateinfo.threatType = QStringLiteral("MALWARE");
