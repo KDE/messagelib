@@ -75,6 +75,7 @@ LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
       d(new LocalDataBaseManagerPrivate)
 
 {
+    initialize();
 }
 
 LocalDataBaseManager::~LocalDataBaseManager()
@@ -135,8 +136,6 @@ void LocalDataBaseManager::initialize()
         }
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized.";
-    }
-    if (d->mDataBaseOk) {
     }
 }
 
