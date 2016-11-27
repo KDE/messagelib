@@ -127,7 +127,12 @@ void LocalDataBaseManager::initialize()
         return;
     }
     if (!d->mDataBaseOk) {
-        //TODO intialize file
+        if (!QFile(databaseFullPath()).exists()) {
+            downloadFullDataBase();
+        } else {
+            //Perhaps don't download for each start of kmail
+            downloadPartialDataBase();
+        }
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized.";
     }
@@ -199,10 +204,8 @@ void LocalDataBaseManager::installNewDataBase(const WebEngineViewer::UpdateDataB
 void LocalDataBaseManager::LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState)
 {
     d->mDownloadProgress = false;
-    if (finished) {
-        d->mNewClientState = newClientState;
-        d->saveConfig();
-    }
+    d->mNewClientState = finished ? newClientState : QString();
+    d->saveConfig();
 }
 
 
