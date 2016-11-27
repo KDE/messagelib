@@ -41,6 +41,7 @@ set(libwebengineviewer_checkphishingurl_SRCS
    checkphishingurl/localdatabasefile.cpp
    checkphishingurl/createdatabasefilejob.cpp
    checkphishingurl/updatedatabaseinfo.cpp
+   checkphishingurl/riceencodingdecoder.cpp
    )
 
 set(libwebengineviewer_interceptor_SRCS
