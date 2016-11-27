@@ -88,7 +88,6 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
         mFile.write(reinterpret_cast<const char *>(&tmpPos), sizeof(tmpPos));
         tmpPos += add.prefixSize + 1; //We add +1 as we store '\0'
     }
-    //TODO verify position.
 
     //4 add items
     QByteArray newSsha256;
@@ -99,11 +98,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     }
     mFile.close();
     //Verify hash with sha256
-
     const QByteArray newSsha256Value = QCryptographicHash::hash(newSsha256, QCryptographicHash::Sha256);
-    //qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value"<<newSsha256Value;
-    //qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value"<<newSsha256Value.toBase64();
-    //qCWarning(WEBENGINEVIEWER_LOG) << " sha256 " << sha256;
 
     const bool checkSumCorrect = (sha256 == newSsha256Value.toBase64());
     if (!checkSumCorrect) {
@@ -155,6 +150,21 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
             return;
         }
         createFileFromFullUpdate(oldDataBaseAddition, mInfoDataBase.sha256);
+    }
+}
+
+void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition)
+{
+    QList<int> indexToRemove;
+    Q_FOREACH (const Removal &removeItem, removalList) {
+        Q_FOREACH (int id, removeItem.indexes) {
+            indexToRemove << id;
+        }
+    }
+
+    qSort(indexToRemove);
+    for (int i = (indexToRemove.count() - 1); i >= 0; --i) {
+        oldDataBaseAddition.remove(indexToRemove.at(i));
     }
 }
 
@@ -212,21 +222,4 @@ void CreateDatabaseFileJob::setFileName(const QString &filename)
     d->mFileName = filename;
 }
 
-void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition)
-{
-    //qDebug() << " oldDataBaseAddition.count() BEFORE : " << oldDataBaseAddition.count();
-    QList<int> indexToRemove;
-    Q_FOREACH (const Removal &removeItem, removalList) {
-        Q_FOREACH (int id, removeItem.indexes) {
-            indexToRemove << id;
-        }
-    }
-    //qDebug() << "indexToRemove.count()" << indexToRemove.count() << " indexToRemove "<<indexToRemove;
-    qSort(indexToRemove);
-    for (int i = (indexToRemove.count() - 1); i >= 0; --i) {
-        oldDataBaseAddition.remove(indexToRemove.at(i));
-        //qDebug() << indexToRemove.at(i);
-    }
-    //qDebug() << " oldDataBaseAddition.count() AFTER : " << oldDataBaseAddition.count();
-}
 
