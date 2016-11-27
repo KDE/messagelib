@@ -42,6 +42,10 @@ inline QString localDataBasePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl/");
 }
+inline QString databaseFullPath()
+{
+    return localDataBasePath() + QLatin1Char('/') + WebEngineViewer::CheckPhishingUrlUtil::databaseFileName();
+}
 }
 
 class WebEngineViewer::LocalDataBaseManagerPrivate
@@ -186,7 +190,7 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
 void LocalDataBaseManager::installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
     WebEngineViewer::CreateDatabaseFileJob *job = new WebEngineViewer::CreateDatabaseFileJob(this);
-    job->setFileName(localDataBasePath() + QLatin1Char('/') + WebEngineViewer::CheckPhishingUrlUtil::databaseFileName());
+    job->setFileName(databaseFullPath());
     job->setUpdateDataBaseInfo(infoDataBase);
     connect(job, &CreateDatabaseFileJob::finished, this, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
     job->start();
