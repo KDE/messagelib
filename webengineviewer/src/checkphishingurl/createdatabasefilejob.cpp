@@ -26,121 +26,25 @@
 
 using namespace WebEngineViewer;
 
-CreateDatabaseFileJob::CreateDatabaseFileJob(QObject *parent)
-    : QObject(parent)
+class WebEngineViewer::CreateDatabaseFileJobPrivate
 {
+public:
+    CreateDatabaseFileJobPrivate(CreateDatabaseFileJob *qq)
+        : q(qq)
+    {
 
-}
-
-CreateDatabaseFileJob::~CreateDatabaseFileJob()
-{
-
-}
-
-bool CreateDatabaseFileJob::canStart() const
-{
-    return !mFileName.isEmpty() && mInfoDataBase.isValid();
-}
-
-void CreateDatabaseFileJob::setUpdateDataBaseInfo(const UpdateDataBaseInfo &infoDataBase)
-{
-    mInfoDataBase = infoDataBase;
-}
-
-void CreateDatabaseFileJob::start()
-{
-    if (!canStart()) {
-        Q_EMIT finished(false, QString());
-        deleteLater();
-    } else {
-        createBinaryFile();
     }
-}
+    void createFileFromFullUpdate(const QVector<Addition> &additionList, const QByteArray &sha256);
+    void removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition);
+    void createBinaryFile();
+    void generateFile(bool fullUpdate);
+    WebEngineViewer::UpdateDataBaseInfo mInfoDataBase;
+    QString mFileName;
+    QFile mFile;
+    CreateDatabaseFileJob *q;
+};
 
-void CreateDatabaseFileJob::createBinaryFile()
-{
-    switch (mInfoDataBase.responseType) {
-    case UpdateDataBaseInfo::Unknown:
-        //TODO error here
-        break;
-    case UpdateDataBaseInfo::FullUpdate:
-    case UpdateDataBaseInfo::PartialUpdate:
-        generateFile((mInfoDataBase.responseType == UpdateDataBaseInfo::FullUpdate));
-        break;
-    }
-    deleteLater();
-}
-
-void CreateDatabaseFileJob::generateFile(bool fullUpdate)
-{
-    mFile.setFileName(mFileName);
-    if (fullUpdate) {
-        if (mFile.exists() && !mFile.remove()) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
-            Q_EMIT finished(false, QString());
-            return;
-        }
-        if (!mFile.open(QIODevice::WriteOnly)) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
-            Q_EMIT finished(false, QString());
-            return;
-        }
-        createFileFromFullUpdate(mInfoDataBase.additionList, mInfoDataBase.sha256);
-    } else {
-        WebEngineViewer::LocalDataBaseFile localeFile(mFileName);
-        if (!localeFile.fileExists()) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to create partial update as file doesn't exist";
-            Q_EMIT finished(false, QString());
-            return;
-        }
-        //Read Element from database.
-        QVector<Addition> oldDataBaseAddition = localeFile.extractAllInfo();
-
-        removeElementFromDataBase(mInfoDataBase.removalList, oldDataBaseAddition);
-        QVector<Addition> additionList = mInfoDataBase.additionList; // Add value found in database
-        oldDataBaseAddition += additionList;
-
-        //Close file
-        localeFile.close();
-
-        if (!mFile.remove()) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
-            Q_EMIT finished(false, QString());
-            return;
-        }
-        if (!mFile.open(QIODevice::WriteOnly)) {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
-            Q_EMIT finished(false, QString());
-            return;
-        }
-        createFileFromFullUpdate(oldDataBaseAddition, mInfoDataBase.sha256);
-    }
-}
-
-void CreateDatabaseFileJob::setFileName(const QString &filename)
-{
-    mFileName = filename;
-}
-
-void CreateDatabaseFileJob::removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition)
-{
-    //qDebug() << " oldDataBaseAddition.count() BEFORE : " << oldDataBaseAddition.count();
-    QList<int> indexToRemove;
-    Q_FOREACH (const Removal &removeItem, removalList) {
-        Q_FOREACH (int id, removeItem.indexes) {
-            indexToRemove << id;
-        }
-    }
-    //qDebug() << "indexToRemove.count()" << indexToRemove.count() << " indexToRemove "<<indexToRemove;
-    qSort(indexToRemove);
-    for (int i = (indexToRemove.count() - 1); i >= 0; --i) {
-        oldDataBaseAddition.remove(indexToRemove.at(i));
-        //qDebug() << indexToRemove.at(i);
-    }
-    //qDebug() << " oldDataBaseAddition.count() AFTER : " << oldDataBaseAddition.count();
-}
-
-void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &additionList, const QByteArray &sha256)
+void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Addition> &additionList, const QByteArray &sha256)
 {
     //1 add version number
     const quint16 major = WebEngineViewer::CheckPhishingUrlUtil::majorVersion();
@@ -205,5 +109,124 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     if (!checkSumCorrect) {
         qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << sha256;
     }
-    Q_EMIT finished(checkSumCorrect, QString::fromLatin1(newSsha256Value));
+    Q_EMIT q->finished(checkSumCorrect, QString::fromLatin1(newSsha256Value));
 }
+
+void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
+{
+    mFile.setFileName(mFileName);
+    if (fullUpdate) {
+        if (mFile.exists() && !mFile.remove()) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
+            Q_EMIT q->finished(false, QString());
+            return;
+        }
+        if (!mFile.open(QIODevice::WriteOnly)) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
+            Q_EMIT q->finished(false, QString());
+            return;
+        }
+        createFileFromFullUpdate(mInfoDataBase.additionList, mInfoDataBase.sha256);
+    } else {
+        WebEngineViewer::LocalDataBaseFile localeFile(mFileName);
+        if (!localeFile.fileExists()) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to create partial update as file doesn't exist";
+            Q_EMIT q->finished(false, QString());
+            return;
+        }
+        //Read Element from database.
+        QVector<Addition> oldDataBaseAddition = localeFile.extractAllInfo();
+
+        removeElementFromDataBase(mInfoDataBase.removalList, oldDataBaseAddition);
+        QVector<Addition> additionList = mInfoDataBase.additionList; // Add value found in database
+        oldDataBaseAddition += additionList;
+
+        //Close file
+        localeFile.close();
+
+        if (!mFile.remove()) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
+            Q_EMIT q->finished(false, QString());
+            return;
+        }
+        if (!mFile.open(QIODevice::WriteOnly)) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
+            Q_EMIT q->finished(false, QString());
+            return;
+        }
+        createFileFromFullUpdate(oldDataBaseAddition, mInfoDataBase.sha256);
+    }
+}
+
+void CreateDatabaseFileJobPrivate::createBinaryFile()
+{
+    switch (mInfoDataBase.responseType) {
+    case UpdateDataBaseInfo::Unknown:
+        //TODO error here
+        break;
+    case UpdateDataBaseInfo::FullUpdate:
+    case UpdateDataBaseInfo::PartialUpdate:
+        generateFile((mInfoDataBase.responseType == UpdateDataBaseInfo::FullUpdate));
+        break;
+    }
+    q->deleteLater();
+}
+
+
+CreateDatabaseFileJob::CreateDatabaseFileJob(QObject *parent)
+    : QObject(parent),
+      d(new WebEngineViewer::CreateDatabaseFileJobPrivate(this))
+{
+
+}
+
+CreateDatabaseFileJob::~CreateDatabaseFileJob()
+{
+    delete d;
+}
+
+bool CreateDatabaseFileJob::canStart() const
+{
+    return !d->mFileName.isEmpty() && d->mInfoDataBase.isValid();
+}
+
+void CreateDatabaseFileJob::setUpdateDataBaseInfo(const UpdateDataBaseInfo &infoDataBase)
+{
+    d->mInfoDataBase = infoDataBase;
+}
+
+void CreateDatabaseFileJob::start()
+{
+    if (!canStart()) {
+        Q_EMIT finished(false, QString());
+        deleteLater();
+    } else {
+        d->createBinaryFile();
+    }
+}
+
+
+
+void CreateDatabaseFileJob::setFileName(const QString &filename)
+{
+    d->mFileName = filename;
+}
+
+void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition)
+{
+    //qDebug() << " oldDataBaseAddition.count() BEFORE : " << oldDataBaseAddition.count();
+    QList<int> indexToRemove;
+    Q_FOREACH (const Removal &removeItem, removalList) {
+        Q_FOREACH (int id, removeItem.indexes) {
+            indexToRemove << id;
+        }
+    }
+    //qDebug() << "indexToRemove.count()" << indexToRemove.count() << " indexToRemove "<<indexToRemove;
+    qSort(indexToRemove);
+    for (int i = (indexToRemove.count() - 1); i >= 0; --i) {
+        oldDataBaseAddition.remove(indexToRemove.at(i));
+        //qDebug() << indexToRemove.at(i);
+    }
+    //qDebug() << " oldDataBaseAddition.count() AFTER : " << oldDataBaseAddition.count();
+}
+

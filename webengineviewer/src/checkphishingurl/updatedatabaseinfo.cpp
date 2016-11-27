@@ -44,7 +44,6 @@ void UpdateDataBaseInfo::clear()
     platformType.clear();
     newClientState.clear();
     sha256.clear();
-
 }
 
 bool UpdateDataBaseInfo::operator==(const UpdateDataBaseInfo &other) const

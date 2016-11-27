@@ -27,6 +27,7 @@
 
 namespace WebEngineViewer
 {
+class CreateDatabaseFileJobPrivate;
 class WEBENGINEVIEWER_EXPORT CreateDatabaseFileJob : public QObject
 {
     Q_OBJECT
@@ -42,13 +43,8 @@ Q_SIGNALS:
     void finished(bool success, const QString &newStateDatabase);
 
 private:
-    void removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition);
-    void createBinaryFile();
-    void generateFile(bool fullUpdate);
-    void createFileFromFullUpdate(const QVector<Addition> &additionList, const QByteArray &sha256);
-    WebEngineViewer::UpdateDataBaseInfo mInfoDataBase;
-    QString mFileName;
-    QFile mFile;
+    CreateDatabaseFileJobPrivate *const d;
+
 };
 }
 

@@ -188,7 +188,7 @@ QVector<WebEngineViewer::Addition> LocalDataBaseFile::extractAllInfo() const
     quint64 numberOfElement = getUint64(4);
     int index = 12; // quint16 major + quint16 minor + quint64 number of element
     for (quint64 i = 0; i < numberOfElement; ++i) {
-        quint64 value = getUint64(index);
+        const quint64 value = getUint64(index);
         Addition tmp;
         tmp.hashString = QByteArray(getCharStar(value));
         tmp.prefixSize = tmp.hashString.size();

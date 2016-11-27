@@ -181,8 +181,6 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
                 installNewDataBase(infoDataBase);
                 break;
             case WebEngineViewer::UpdateDataBaseInfo::Unknown:
-                //Signal it ?
-                return;
                 break;
             }
         }
