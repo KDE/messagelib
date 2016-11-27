@@ -50,7 +50,7 @@ void CreateDatabaseFileJob::setUpdateDataBaseInfo(const UpdateDataBaseInfo &info
 void CreateDatabaseFileJob::start()
 {
     if (!canStart()) {
-        Q_EMIT finished(false);
+        Q_EMIT finished(false, QString());
         deleteLater();
     } else {
         createBinaryFile();
@@ -77,12 +77,12 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
     if (fullUpdate) {
         if (mFile.exists() && !mFile.remove()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
-            Q_EMIT finished(false);
+            Q_EMIT finished(false, QString());
             return;
         }
         if (!mFile.open(QIODevice::WriteOnly)) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
-            Q_EMIT finished(false);
+            Q_EMIT finished(false, QString());
             return;
         }
         createFileFromFullUpdate(mInfoDataBase.additionList, mInfoDataBase.sha256);
@@ -90,7 +90,7 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
         WebEngineViewer::LocalDataBaseFile localeFile(mFileName);
         if (!localeFile.fileExists()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to create partial update as file doesn't exist";
-            Q_EMIT finished(false);
+            Q_EMIT finished(false, QString());
             return;
         }
         //Read Element from database.
@@ -105,12 +105,12 @@ void CreateDatabaseFileJob::generateFile(bool fullUpdate)
 
         if (!mFile.remove()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
-            Q_EMIT finished(false);
+            Q_EMIT finished(false, QString());
             return;
         }
         if (!mFile.open(QIODevice::WriteOnly)) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
-            Q_EMIT finished(false);
+            Q_EMIT finished(false, QString());
             return;
         }
         createFileFromFullUpdate(oldDataBaseAddition, mInfoDataBase.sha256);
@@ -205,5 +205,5 @@ void CreateDatabaseFileJob::createFileFromFullUpdate(const QVector<Addition> &ad
     if (!checkSumCorrect) {
         qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << sha256;
     }
-    finished(checkSumCorrect);
+    Q_EMIT finished(checkSumCorrect, QString::fromLatin1(newSsha256Value));
 }

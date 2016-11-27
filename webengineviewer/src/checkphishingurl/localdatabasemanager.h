@@ -57,12 +57,11 @@ protected:
     virtual void downloadPartialDataBase();
 
 private:
+    void slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void slotCheckDataBase();
     void downloadDataBase(const QString &clientState);
-
-    void fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
-    void partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
+    void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
 
     QByteArray createHash(const QUrl &url);
     bool malwareFound(const QByteArray &hash);

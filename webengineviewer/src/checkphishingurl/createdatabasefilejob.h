@@ -39,7 +39,7 @@ public:
     void setUpdateDataBaseInfo(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
 
 Q_SIGNALS:
-    void finished(bool success);
+    void finished(bool success, const QString &newStateDatabase);
 
 private:
     void removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition);

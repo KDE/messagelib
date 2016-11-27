@@ -21,6 +21,7 @@
 #include "checkphishingurlfromlocaldatabasejob.h"
 #include "createphishingurldatabasejob.h"
 #include "createdatabasefilejob.h"
+#include "checkphishingurlutil.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -168,10 +169,8 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
             //qDebug() << "infoDataBase" << infoDataBase.additionList.count();
             switch (infoDataBase.responseType) {
             case WebEngineViewer::UpdateDataBaseInfo::FullUpdate:
-                fullUpdateDataBase(infoDataBase);
-                break;
             case WebEngineViewer::UpdateDataBaseInfo::PartialUpdate:
-                partialUpdateDataBase(infoDataBase);
+                installNewDataBase(infoDataBase);
                 break;
             case WebEngineViewer::UpdateDataBaseInfo::Unknown:
                 //Signal it ?
@@ -183,17 +182,25 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
     d->mDownloadProgress = false;
 }
 
-void LocalDataBaseManager::fullUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
+
+void LocalDataBaseManager::installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
-    d->mNewClientState = infoDataBase.newClientState;
-    d->saveConfig();
+    WebEngineViewer::CreateDatabaseFileJob *job = new WebEngineViewer::CreateDatabaseFileJob(this);
+    job->setFileName(localDataBasePath() + QLatin1Char('/') + WebEngineViewer::CheckPhishingUrlUtil::databaseFileName());
+    job->setUpdateDataBaseInfo(infoDataBase);
+    connect(job, &CreateDatabaseFileJob::finished, this, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
+    job->start();
 }
 
-void LocalDataBaseManager::partialUpdateDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
+void LocalDataBaseManager::LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState)
 {
-    d->mNewClientState = infoDataBase.newClientState;
-    d->saveConfig();
+    d->mDownloadProgress = false;
+    if (finished) {
+        d->mNewClientState = newClientState;
+        d->saveConfig();
+    }
 }
+
 
 LocalDataBaseManager *LocalDataBaseManager::self()
 {

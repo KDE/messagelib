@@ -105,7 +105,7 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
 
     databasejob.setUpdateDataBaseInfo(info);
 
-    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool)));
+    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString)));
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
     bool successCreateDataBase = spy2.at(0).at(0).toBool();
