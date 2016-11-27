@@ -46,8 +46,6 @@ public:
 
     void initialize();
 
-    void closeDataBaseAndDeleteIt();
-
 Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
 

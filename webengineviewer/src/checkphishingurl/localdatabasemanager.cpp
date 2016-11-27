@@ -83,11 +83,6 @@ LocalDataBaseManager::~LocalDataBaseManager()
     delete d;
 }
 
-void LocalDataBaseManager::closeDataBaseAndDeleteIt()
-{
-    //TODO delete file ?
-}
-
 void LocalDataBaseManagerPrivate::readConfig()
 {
     KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
