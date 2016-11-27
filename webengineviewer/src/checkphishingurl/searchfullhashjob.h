@@ -54,7 +54,7 @@ public:
 
     void setSearchHash(const QByteArray &hash);
 Q_SIGNALS:
-    void result(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &url);
+    void result(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &hash, const QStringList &listHash = QStringList());
     void debugJson(const QByteArray &ba);
 
 private Q_SLOTS:
