@@ -157,7 +157,7 @@ QByteArray LocalDataBaseFile::searchHash(int posListOffset, const QByteArray &ha
     return QByteArray();
 }
 
-bool LocalDataBaseFile::shouldCheck()
+bool LocalDataBaseFile::shouldCheck() const
 {
     // 1 hours
     if (d->mLastCheck.isValid() && d->mLastCheck.elapsed() < webengineview_LocalDataBaseFile) {

@@ -58,7 +58,7 @@ public:
 
     QByteArray searchHash(int posListOffset, const QByteArray &hashToSearch);
 
-    bool shouldCheck();
+    bool shouldCheck() const;
     bool checkFileChanged();
     QVector<WebEngineViewer::Addition> extractAllInfo() const;
 

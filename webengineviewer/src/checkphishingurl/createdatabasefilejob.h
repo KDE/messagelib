@@ -44,7 +44,6 @@ Q_SIGNALS:
 
 private:
     CreateDatabaseFileJobPrivate *const d;
-
 };
 }
 
