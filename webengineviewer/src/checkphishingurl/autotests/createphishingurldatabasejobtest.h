@@ -44,6 +44,7 @@ private Q_SLOTS:
 
     void shouldClearUpdateDataBaseInfo();
 
+    void checkRiceDeltaEncoding_data();
     void checkRiceDeltaEncoding();
 };
 

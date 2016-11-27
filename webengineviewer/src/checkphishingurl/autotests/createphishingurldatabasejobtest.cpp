@@ -137,22 +137,39 @@ void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
     QCOMPARE(job.jsonRequest(), request.toLatin1());
 }
 
+void CreatePhishingUrlDataBaseJobTest::checkRiceDeltaEncoding_data()
+{
+    QTest::addColumn<QString>("encodingData");
+    QTest::addColumn<QString>("firstValue");
+    QTest::addColumn<int>("numberEntries");
+    QTest::addColumn<int>("riceParameter");
+    QTest::addColumn<bool>("valid");
+    QTest::newRow("valid") << QStringLiteral("ff") << QStringLiteral("AAAA") << 15 << 18 << true;
+    QTest::newRow("valid1") << QStringLiteral("ff") << QStringLiteral("AAAA") << 0 << 0 << true;
+    QTest::newRow("invalid") << QStringLiteral("ff") << QStringLiteral("AAAA") << 99 << 200 << false;
+    QTest::newRow("invalid1") << QString() << QStringLiteral("AAAA") << 15 << 18 << false;
+    QTest::newRow("invalid2") << QStringLiteral("AAAA") << QString() << 15 << 18 << false;
+    QTest::newRow("invalid3") << QString() << QString() << 15 << 18 << false;
+}
+
 void CreatePhishingUrlDataBaseJobTest::checkRiceDeltaEncoding()
 {
+    QFETCH(QString, encodingData);
+    QFETCH(QString, firstValue);
+    QFETCH(int, numberEntries);
+    QFETCH(int, riceParameter);
+    QFETCH(bool, valid);
+
     WebEngineViewer::RiceDeltaEncoding a;
-    a.encodingData = QStringLiteral("ff");
-    a.firstValue = QStringLiteral("AAAA");
-    a.numberEntries = 42;
-    a.riceParameter = 99;
+    a.encodingData = encodingData;
+    a.firstValue = firstValue;
+    a.numberEntries = numberEntries;
+    a.riceParameter = riceParameter;
+    QCOMPARE(a.isValid(), valid);
     WebEngineViewer::RiceDeltaEncoding b;
     b = a;
-    QVERIFY(a.isValid());
-    QVERIFY(b.isValid());
+    QCOMPARE(b.isValid(), valid);
     QCOMPARE(a, b);
-
-    //Invalid
-    WebEngineViewer::RiceDeltaEncoding c;
-    QVERIFY(!c.isValid());
 }
 
 void CreatePhishingUrlDataBaseJobTest::checkAdditionElements_data()
