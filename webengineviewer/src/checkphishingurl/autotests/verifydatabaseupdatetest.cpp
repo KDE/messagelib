@@ -19,6 +19,7 @@
 
 #include "verifydatabaseupdatetest.h"
 #include "../updatedatabaseinfo.h"
+#include <QCryptographicHash>
 #include <QTest>
 
 Q_DECLARE_METATYPE(QList<WebEngineViewer::Addition>)
