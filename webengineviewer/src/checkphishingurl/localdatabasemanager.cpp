@@ -189,14 +189,17 @@ void LocalDataBaseManager::installNewDataBase(const WebEngineViewer::UpdateDataB
     job->start();
 }
 
-void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState)
+void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState)
 {
     d->mDownloadProgress = false;
-    d->mNewClientState = finished ? newClientState : QString();
-    //if !finished => redownload full!
+    d->mNewClientState = success ? newClientState : QString();
     d->saveConfig();
+    //if !success => redownload full!
+    if (!success) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "We need to redownload full database";
+        downloadFullDataBase();
+    }
 }
-
 
 LocalDataBaseManager *LocalDataBaseManager::self()
 {
