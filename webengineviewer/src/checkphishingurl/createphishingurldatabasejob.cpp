@@ -380,7 +380,6 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                         qCDebug(WEBENGINEVIEWER_LOG) << " unknow responsetype " << str;
                                         databaseInfo.responseType = UpdateDataBaseInfo::Unknown;
                                     }
-                                    qDebug() << " str  " << str;
                                 } else if (mapKey == QLatin1String("threatEntryType")) {
                                     databaseInfo.threatEntryType = mapIt.value().toString();
                                 } else if (mapKey == QLatin1String("threatType")) {

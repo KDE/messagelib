@@ -100,7 +100,6 @@ void LocalDataBaseManagerPrivate::saveConfig()
 void LocalDataBaseManager::downloadDataBase(const QString &clientState)
 {
     setDownloadProgress(true);
-    qDebug() << " void LocalDataBaseManager::downloadDataBase(const QString &clientState)"<<clientState;
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(clientState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
     job->setDataBaseState(clientState);
@@ -166,7 +165,6 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
     if (d->mDataBaseOk) {
         if (d->mNewClientState == infoDataBase.newClientState) {
             qCDebug(WEBENGINEVIEWER_LOG) << "No update necessary ";
-            qDebug() << "No update necessary ";
         } else {
             switch (infoDataBase.responseType) {
             case WebEngineViewer::UpdateDataBaseInfo::FullUpdate:
