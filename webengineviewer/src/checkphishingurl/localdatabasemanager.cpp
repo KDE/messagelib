@@ -166,8 +166,8 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
         break;
     }
     if (d->mDataBaseOk) {
-        if ((infoDataBase.responseType == WebEngineViewer::UpdateDataBaseInfo::PartialUpdate) &&
-                (d->mNewClientState == infoDataBase.newClientState)) {
+        qDebug() << " d->mNewClientState"<<d->mNewClientState << " infoDataBase.newClientState"<<infoDataBase.newClientState;
+        if (d->mNewClientState == infoDataBase.newClientState) {
             qCDebug(WEBENGINEVIEWER_LOG) << "No update necessary ";
             qDebug() << "No update necessary ";
         } else {
@@ -195,7 +195,7 @@ void LocalDataBaseManager::installNewDataBase(const WebEngineViewer::UpdateDataB
     job->start();
 }
 
-void LocalDataBaseManager::LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState)
+void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState)
 {
     qDebug() << " void LocalDataBaseManager::LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState) : finished ? "<< finished << " newClientState "<<newClientState;
     d->mDownloadProgress = false;
