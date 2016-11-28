@@ -18,6 +18,7 @@
 */
 
 #include "webengineviewwithsafebrowsingsupport.h"
+#include "../localdatabasemanager.h"
 
 #include <QApplication>
 #include <QStandardPaths>
@@ -35,6 +36,8 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
+    //Make sure to initialize database
+    WebEngineViewer::LocalDataBaseManager::self();
     WebEngineViewer::WebEngineView *pageView = new WebEngineViewer::WebEngineView(this);
     layout->addWidget(pageView);
     WebEngineViewer::WebEnginePage *mEnginePage = new WebEngineViewer::WebEnginePage(this);

@@ -104,7 +104,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     if (!checkSumCorrect) {
         qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << sha256;
     }
-    Q_EMIT q->finished(checkSumCorrect, QString::fromLatin1(newSsha256Value));
+    Q_EMIT q->finished(checkSumCorrect, QString::fromLatin1(newSsha256Value.toBase64()));
 }
 
 void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
