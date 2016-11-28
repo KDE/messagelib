@@ -33,6 +33,8 @@ public:
     ~UrlHashing();
 
     QString canonicalizeUrl();
+    QStringList generatePathsToCheck();
+    QStringList generateHostsToCheck();
 
 private:
     QUrl mUrl;

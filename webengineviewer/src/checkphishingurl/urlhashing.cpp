@@ -40,6 +40,17 @@ QString UrlHashing::canonicalizeUrl()
     if (mUrl.path().isEmpty()) {
         mUrl.setPath(QStringLiteral("/"));
     }
+    mUrl.setPort(-1);
 
     return QString::fromLatin1(mUrl.toEncoded(QUrl::RemoveFragment|QUrl::NormalizePathSegments|QUrl::EncodeUnicode));
+}
+
+QStringList UrlHashing::generatePathsToCheck()
+{
+    return {};
+}
+
+QStringList UrlHashing::generateHostsToCheck()
+{
+    return {};
 }

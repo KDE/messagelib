@@ -130,7 +130,7 @@ void LocalDataBaseManager::initialize()
             downloadPartialDataBase();
         }
     } else {
-        qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized.";
+        qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized. It's a bug in code if you call it twice.";
     }
 }
 
@@ -214,6 +214,7 @@ void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
     if (d->mDataBaseOk) {
+#if 0
         QByteArray hash = createHash(url);
         if (malwareFound(hash)) {
             Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Malware);
@@ -222,16 +223,8 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         }
     } else {
         Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
+#endif
+    } else {
+        Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
     }
-}
-
-QByteArray LocalDataBaseManager::createHash(const QUrl &url)
-{
-    return QCryptographicHash::hash(QByteArray() /*TODO use url*/, QCryptographicHash::Sha256);
-}
-
-bool LocalDataBaseManager::malwareFound(const QByteArray &hash)
-{
-    //TODO
-    return false;
 }

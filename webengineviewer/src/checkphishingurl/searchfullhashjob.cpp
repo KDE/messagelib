@@ -120,13 +120,6 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                         urlMapIt.next();
                         const QString hashStr = urlMapIt.value().toString();
                         hashList << hashStr;
-                        //TODO
-                        /*
-                        if (urlMap[QStringLiteral("hash")].toString() == mHash.toString()) {
-                            Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, mHash);
-                            return;
-                        }
-                        */
                     }
                     if (!hashList.isEmpty()) {
                         Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, d->mHash, hashList);

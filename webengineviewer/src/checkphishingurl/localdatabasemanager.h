@@ -61,9 +61,6 @@ private:
     void downloadDataBase(const QString &clientState);
     void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
 
-    QByteArray createHash(const QUrl &url);
-    bool malwareFound(const QByteArray &hash);
-
     LocalDataBaseManagerPrivate *const d;
 };
 }
