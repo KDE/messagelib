@@ -52,3 +52,10 @@ ecm_add_test(verifydatabaseupdatetest.cpp ../createdatabasefilejob.cpp ${testweb
     NAME_PREFIX "webengineview-verifydatabaseupdatetest-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
+
+
+ecm_add_test(urlhashingtest.cpp ../urlhashing.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME urlhashingtest
+    NAME_PREFIX "webengineview-urlhashingtest-"
+    LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
+    )
