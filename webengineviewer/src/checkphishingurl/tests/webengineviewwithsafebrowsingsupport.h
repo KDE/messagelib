@@ -31,6 +31,9 @@ public:
     explicit WebEngineViewWithSafeBrowsingSupport(QWidget *parent = Q_NULLPTR);
     ~WebEngineViewWithSafeBrowsingSupport();
 
+private Q_SLOTS:
+    void slotUrlClicked(const QUrl &url);
+
 private:
     QPlainTextEdit *mDebug;
 };

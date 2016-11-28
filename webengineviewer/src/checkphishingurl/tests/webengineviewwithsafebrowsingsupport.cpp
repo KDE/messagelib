@@ -26,17 +26,35 @@
 #include <QPlainTextEdit>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <webenginepage.h>
+#include <webengineview.h>
 
 
 WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
+
+    WebEngineViewer::WebEngineView *pageView = new WebEngineViewer::WebEngineView(this);
+    layout->addWidget(pageView);
+    WebEngineViewer::WebEnginePage *mEnginePage = new WebEngineViewer::WebEnginePage(this);
+    pageView->setPage(mEnginePage);
+    pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    connect(mEnginePage, &WebEngineViewer::WebEnginePage::urlClicked, this, &WebEngineViewWithSafeBrowsingSupport::slotUrlClicked);
+
+
+    mDebug = new QPlainTextEdit(this);
+    layout->addWidget(mDebug);
 }
 
 WebEngineViewWithSafeBrowsingSupport::~WebEngineViewWithSafeBrowsingSupport()
 {
 
+}
+
+void WebEngineViewWithSafeBrowsingSupport::slotUrlClicked(const QUrl &url)
+{
+    qDebug() << " url clicked " << url;
 }
 
 int main(int argc, char **argv)
