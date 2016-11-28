@@ -37,5 +37,9 @@ QString UrlHashing::canonicalizeUrl()
     if (mUrl.isEmpty()) {
         return {};
     }
-    return mUrl.toString();
+    if (mUrl.path().isEmpty()) {
+        mUrl.setPath(QStringLiteral("/"));
+    }
+
+    return QString::fromLatin1(mUrl.toEncoded(QUrl::RemoveFragment|QUrl::NormalizePathSegments|QUrl::EncodeUnicode));
 }
