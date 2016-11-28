@@ -43,6 +43,7 @@ private Q_SLOTS:
     void testContentChained();
     void testHeaders();
     void testRecommentationRFC3156();
+    void testMixedContent();
 
 private:
     void checkSignJob(MessageComposer::SignJob *sJob);

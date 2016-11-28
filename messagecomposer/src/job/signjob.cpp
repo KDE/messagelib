@@ -168,8 +168,9 @@ void SignJob::process()
         // Note: If any line begins with the string "From ", it is strongly
         //   suggested that either the Quoted-Printable or Base64 MIME encoding
         //   be applied.
-        if (d->content->contentTransferEncoding()->encoding() == KMime::Headers::CEquPr ||
-                d->content->contentTransferEncoding()->encoding() == KMime::Headers::CE7Bit) {
+        const auto encoding = d->content->contentTransferEncoding()->encoding();
+        if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit)
+                && !d->content->contentType(false)) {
             QByteArray body = d->content->encodedBody();
             bool changed = false;
             QList<QByteArray> search;

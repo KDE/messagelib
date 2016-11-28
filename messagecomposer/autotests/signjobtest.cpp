@@ -157,7 +157,55 @@ void SignJobTest::testRecommentationRFC3156()
 
     ComposerTestUtil::verify(true, false, result, data.toUtf8(),
                              Kleo::OpenPGPMIMEFormat, cte);
+}
 
+void SignJobTest::testMixedContent()
+{
+    std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
+
+    QString data = QString::fromUtf8("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
+
+    MessageComposer::Composer *composer = new MessageComposer::Composer;
+    MessageComposer::SignJob* sJob = new MessageComposer::SignJob(composer);
+
+    QVERIFY(composer);
+    QVERIFY(sJob);
+
+    KMime::Content* content = new KMime::Content;
+    content->contentType()->setMimeType(QByteArray("multipart/mixed"));
+    content->contentType()->setBoundary( KMime::multiPartBoundary() );
+    KMime::Content* subcontent = new KMime::Content;
+    subcontent->contentType()->setMimeType(QByteArray("text/plain"));
+    subcontent->setBody( data.toUtf8() );
+    KMime::Content* attachment = new KMime::Content;
+    attachment->contentType()->setMimeType(QByteArray("text/plain"));
+    QByteArray attachmentData("an attachment");
+    attachment->setBody(attachmentData);
+
+    content->addContent(subcontent);
+    content->addContent(attachment);
+    content->assemble();
+
+    sJob->setContent(content);
+    sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    sJob->setSigningKeys(keys);
+
+    VERIFYEXEC(sJob);
+
+    KMime::Content *result = sJob->content();
+    result->assemble();
+    qDebug() << result->encodedContent();
+
+    KMime::Content* firstChild = MessageCore::NodeHelper::firstChild(result);
+    QCOMPARE(result->contents().count(), 2);
+    QCOMPARE(firstChild->contents().count(), 2);
+    QCOMPARE(firstChild->body(), QByteArray());
+    QCOMPARE(firstChild->contentType()->mimeType(), QByteArray("multipart/mixed"));
+    QCOMPARE(firstChild->contents()[0]->body(), data.toUtf8());
+    QCOMPARE(firstChild->contents()[1]->body(), attachmentData);
+
+    ComposerTestUtil::verify(true, false, result, data.toUtf8(),
+                             Kleo::OpenPGPMIMEFormat, KMime::Headers::CE7Bit);
 }
 
 void SignJobTest::checkSignJob(MessageComposer::SignJob *sJob)
