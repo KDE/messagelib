@@ -114,8 +114,12 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                 const QString threatTypeStr = map[QStringLiteral("threatType")].toString();
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
-                    if (urlMap.count() == 1) {
-                        const QString hashStr = urlMap[QStringLiteral("hash")].toString();
+                    QMapIterator<QString, QVariant> urlMapIt(urlMap);
+                    QStringList hashList;
+                    while (urlMapIt.hasNext()) {
+                        urlMapIt.next();
+                        const QString hashStr = urlMapIt.value().toString();
+                        hashList << hashStr;
                         //TODO
                         /*
                         if (urlMap[QStringLiteral("hash")].toString() == mHash.toString()) {
@@ -123,6 +127,9 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                             return;
                         }
                         */
+                    }
+                    if (!hashList.isEmpty()) {
+                        Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, d->mHash, hashList);
                     }
                     const QVariantMap threatEntryMetadataMap = map[QStringLiteral("threatEntryMetadata")].toMap();
                     if (!threatEntryMetadataMap.isEmpty()) {
