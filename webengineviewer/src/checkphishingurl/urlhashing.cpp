@@ -34,5 +34,8 @@ UrlHashing::~UrlHashing()
 
 QString UrlHashing::canonicalizeUrl()
 {
-    return {};
+    if (mUrl.isEmpty()) {
+        return {};
+    }
+    return mUrl.toString();
 }
