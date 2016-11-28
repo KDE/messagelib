@@ -42,3 +42,13 @@ target_link_libraries(managelocaldatabasegui
     Qt5::WebEngineWidgets
     KF5::I18n
     )
+
+set(webengineviewwithsafebrowsingsupport_SRCS webengineviewwithsafebrowsingsupport.cpp)
+add_executable(webengineviewwithsafebrowsingsupport ${webengineviewwithsafebrowsingsupport_SRCS})
+target_link_libraries(webengineviewwithsafebrowsingsupport
+    KF5::KIOCore
+    KF5::WebEngineViewer
+    Qt5::WebEngine
+    Qt5::WebEngineWidgets
+    KF5::I18n
+    )
