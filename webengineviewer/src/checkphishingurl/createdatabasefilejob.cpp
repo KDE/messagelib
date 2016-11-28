@@ -216,8 +216,6 @@ void CreateDatabaseFileJob::start()
     }
 }
 
-
-
 void CreateDatabaseFileJob::setFileName(const QString &filename)
 {
     d->mFileName = filename;

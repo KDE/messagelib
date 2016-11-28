@@ -193,6 +193,7 @@ void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool finished, con
 {
     d->mDownloadProgress = false;
     d->mNewClientState = finished ? newClientState : QString();
+    //if !finished => redownload full!
     d->saveConfig();
 }
 
