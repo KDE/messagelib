@@ -22,6 +22,7 @@
 #include "createphishingurldatabasejob.h"
 #include "createdatabasefilejob.h"
 #include "checkphishingurlutil.h"
+#include "localdatabasefile.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -52,7 +53,8 @@ class WebEngineViewer::LocalDataBaseManagerPrivate
 {
 public:
     LocalDataBaseManagerPrivate()
-        : mDataBaseOk(false),
+        : mFile(databaseFullPath()),
+          mDataBaseOk(false),
           mDownloadProgress(false)
     {
         QDir().mkpath(localDataBasePath());
@@ -65,6 +67,7 @@ public:
 
     void readConfig();
     void saveConfig();
+    LocalDataBaseFile mFile;
     QString mNewClientState;
     bool mDataBaseOk;
     bool mDownloadProgress;
@@ -225,6 +228,10 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
 #endif
     } else {
+        qCWarning(WEBENGINEVIEWER_LOG) << "Database not ok";
         Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
+    }
+    if (d->mFile.checkFileChanged()) {
+        d->mFile.reload();
     }
 }
