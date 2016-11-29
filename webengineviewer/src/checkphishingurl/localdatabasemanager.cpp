@@ -218,16 +218,17 @@ void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
     if (d->mDataBaseOk) {
-#if 0
-        QByteArray hash = createHash(url);
-        if (malwareFound(hash)) {
-            Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Malware);
+        QByteArray hash;
+        QByteArray result = d->mFile.searchHash(hash);
+        if (hash.contains(result)) {
+            WebEngineViewer::SearchFullHashJob *job = new WebEngineViewer::SearchFullHashJob(this);
+            job->setDatabaseState(QStringList() << d->mNewClientState);
+            connect(job, &SearchFullHashJob::result, this, &LocalDataBaseManager::slotSearchOnServerResult);
+            job->start();
+            //TODO verify on server
         } else {
             Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::UrlOk);
         }
-    } else {
-        Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
-#endif
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database not ok";
         Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
@@ -235,4 +236,9 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
     if (d->mFile.checkFileChanged()) {
         d->mFile.reload();
     }
+}
+
+void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &hash, const QStringList &listHash)
+{
+    //TODO
 }

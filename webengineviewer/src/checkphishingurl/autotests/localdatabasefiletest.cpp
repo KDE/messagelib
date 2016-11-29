@@ -118,7 +118,8 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
     quint64 number = newFile.getUint64(4);
     QCOMPARE(number, static_cast<quint64>(9));
     int index = 4 + sizeof(quint64);
-    const QByteArray val = newFile.searchHash(4, hash);
+    QCOMPARE(index, 12);
+    const QByteArray val = newFile.searchHash(hash);
     qDebug() << "result : " << val;
     QCOMPARE(!val.isEmpty(), found);
     if (!val.isEmpty()) {

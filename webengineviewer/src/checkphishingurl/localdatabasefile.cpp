@@ -133,8 +133,15 @@ bool LocalDataBaseFile::reload()
     return d->reload();
 }
 
-QByteArray LocalDataBaseFile::searchHash(int posListOffset, const QByteArray &hashToSearch)
+QByteArray LocalDataBaseFile::searchHash(const QByteArray &hashToSearch)
 {
+    /* database file has:
+     * - one getUint16 => major
+     * - one getUint16 => minor
+     * - one getUint64 => number of item
+     * => 12
+     */
+    int posListOffset = 12;
     const int numHash = getUint64(posListOffset);
     qDebug() << " numHash "<< numHash;
     int begin = 0;

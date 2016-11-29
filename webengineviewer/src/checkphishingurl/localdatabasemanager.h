@@ -24,6 +24,7 @@
 #include "webengineviewer_export.h"
 #include <QUrl>
 #include "createphishingurldatabasejob.h"
+#include "searchfullhashjob.h"
 namespace WebEngineViewer
 {
 class LocalDataBaseManagerPrivate;
@@ -55,6 +56,7 @@ protected:
     virtual void downloadPartialDataBase();
 
 private:
+    void slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &hash, const QStringList &listHash);
     void slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void slotCheckDataBase();
