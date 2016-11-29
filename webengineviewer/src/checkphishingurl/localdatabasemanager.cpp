@@ -23,6 +23,7 @@
 #include "createdatabasefilejob.h"
 #include "checkphishingurlutil.h"
 #include "localdatabasefile.h"
+#include "urlhashing.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>
