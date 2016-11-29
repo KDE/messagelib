@@ -59,3 +59,9 @@ ecm_add_test(urlhashingtest.cpp ../urlhashing.cpp ${testwebengineviewer_webengin
     NAME_PREFIX "webengineview-urlhashingtest-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
+
+ecm_add_test(riceencodingdecodertest.cpp ../riceencodingdecoder.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME riceencodingdecodertest
+    NAME_PREFIX "webengineview-riceencodingdecodertest-"
+    LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
+    )

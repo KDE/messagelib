@@ -21,7 +21,7 @@
 #define RICEENCODINGDECODER_H
 
 #include "webengineviewer_export.h"
-
+#include "updatedatabaseinfo.h"
 namespace WebEngineViewer
 {
 class WEBENGINEVIEWER_EXPORT RiceEncodingDecoder
@@ -29,6 +29,10 @@ class WEBENGINEVIEWER_EXPORT RiceEncodingDecoder
 public:
     RiceEncodingDecoder();
     ~RiceEncodingDecoder();
+
+    QList<int> decodeRiceIndiceDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
+    QByteArray decodeRiceHashesDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
+
 };
 }
 

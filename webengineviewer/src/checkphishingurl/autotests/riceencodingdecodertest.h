@@ -17,27 +17,18 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "riceencodingdecoder.h"
+#ifndef RICEENCODINGDECODERTEST_H
+#define RICEENCODINGDECODERTEST_H
 
-using namespace WebEngineViewer;
-RiceEncodingDecoder::RiceEncodingDecoder()
+#include <QObject>
+
+class RiceEncodingDecoderTest : public QObject
 {
+    Q_OBJECT
+public:
+    explicit RiceEncodingDecoderTest(QObject *parent = Q_NULLPTR);
+    ~RiceEncodingDecoderTest();
 
-}
+};
 
-RiceEncodingDecoder::~RiceEncodingDecoder()
-{
-
-}
-
-QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &riceDeltaEncoding)
-{
-    return {};
-    //TODO
-}
-
-QByteArray RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
-{
-    return {};
-    //TODO
-}
+#endif // RICEENCODINGDECODERTEST_H
