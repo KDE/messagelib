@@ -96,6 +96,9 @@ void CreatePhishingUrlDataBaseJobTest::shouldClearUpdateDataBaseInfo()
     info.clear();
     QCOMPARE(info, info2);
 
+    WebEngineViewer::UpdateDataBaseInfo defaultValue;
+    QCOMPARE(info, defaultValue);
+    QCOMPARE(info2, defaultValue);
 }
 
 void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest_data()
@@ -225,11 +228,14 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     QTest::addColumn<WebEngineViewer::UpdateDataBaseInfo>("parseInfo");
     QTest::newRow("emptydocument") << QStringLiteral("empty.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::InvalidData << WebEngineViewer::UpdateDataBaseInfo();
     QTest::newRow("emptydocument2") << QStringLiteral("empty2.json") << WebEngineViewer::CreatePhishingUrlDataBaseJob::InvalidData << WebEngineViewer::UpdateDataBaseInfo();
+
     WebEngineViewer::UpdateDataBaseInfo value;
     QVector<WebEngineViewer::Addition> additionList;
     WebEngineViewer::Addition tmp;
     tmp.prefixSize = 4;
-    tmp.hashString = QByteArrayLiteral("rnGLoQ==");
+    QByteArray hash = QByteArrayLiteral("rnGLoQ==");
+    hash = QByteArray::fromBase64(hash);
+    tmp.hashString = hash;
     tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     additionList.append(tmp);
     QVector<WebEngineViewer::Removal> removalList;
@@ -251,12 +257,16 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
 
     value.clear();
     QVector<WebEngineViewer::Addition> additionList2;
+    QByteArray hash1 = QByteArrayLiteral("AAAaxAAAG3QAACdhAAA");
+    hash1 = QByteArray::fromBase64(hash1);
+    tmp.hashString = hash1;
     tmp.prefixSize = 4;
-    tmp.hashString = QByteArrayLiteral("AAAaxAAAG3QAACdhAAA");
     tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     additionList2.append(tmp);
+    QByteArray hash2 = QByteArrayLiteral("IL5HqwT2c6bltw==");
+    hash2 = QByteArray::fromBase64(hash2);
+    tmp.hashString = hash2;
     tmp.prefixSize = 5;
-    tmp.hashString = QByteArrayLiteral("IL5HqwT2c6bltw==");
     tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
     additionList2.append(tmp);
 

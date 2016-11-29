@@ -58,16 +58,16 @@ bool UpdateDataBaseInfo::operator==(const UpdateDataBaseInfo &other) const
                      (newClientState == other.newClientState) &&
                      (sha256 == other.sha256);
     if (!val) {
-        qCDebug(WEBENGINEVIEWER_LOG) << " sha256 " << sha256 << " other.sha256 " << other.sha256;
-        qCDebug(WEBENGINEVIEWER_LOG) << " minimumWaitDuration " << minimumWaitDuration << " other.minimumWaitDuration " << other.minimumWaitDuration;
-        qCDebug(WEBENGINEVIEWER_LOG) << " threatType " << threatType << " other.threatType " << other.threatType;
-        qCDebug(WEBENGINEVIEWER_LOG) << " threatEntryType " << threatEntryType << " other.threatEntryType " << other.threatEntryType;
-        qCDebug(WEBENGINEVIEWER_LOG) << " responseType " << responseType << " other.responseType " << other.responseType;
-        qCDebug(WEBENGINEVIEWER_LOG) << " platformType " << platformType << " other.platformType " << other.platformType;
-        qCDebug(WEBENGINEVIEWER_LOG) << " newClientState " << newClientState << " other.newClientState " << other.newClientState;
-        qCDebug(WEBENGINEVIEWER_LOG) << " threatType " << threatType << " other.threatType " << other.threatType;
-        qCDebug(WEBENGINEVIEWER_LOG) << " removalList" << removalList.count() << " other.removalList " << other.removalList.count();
-        qCDebug(WEBENGINEVIEWER_LOG) << " additionList" << additionList.count() << " other.additionList " << other.additionList.count();
+        qCWarning(WEBENGINEVIEWER_LOG) << " sha256 " << sha256 << " other.sha256 " << other.sha256;
+        qCWarning(WEBENGINEVIEWER_LOG) << " minimumWaitDuration " << minimumWaitDuration << " other.minimumWaitDuration " << other.minimumWaitDuration;
+        qCWarning(WEBENGINEVIEWER_LOG) << " threatType " << threatType << " other.threatType " << other.threatType;
+        qCWarning(WEBENGINEVIEWER_LOG) << " threatEntryType " << threatEntryType << " other.threatEntryType " << other.threatEntryType;
+        qCWarning(WEBENGINEVIEWER_LOG) << " responseType " << responseType << " other.responseType " << other.responseType;
+        qCWarning(WEBENGINEVIEWER_LOG) << " platformType " << platformType << " other.platformType " << other.platformType;
+        qCWarning(WEBENGINEVIEWER_LOG) << " newClientState " << newClientState << " other.newClientState " << other.newClientState;
+        qCWarning(WEBENGINEVIEWER_LOG) << " threatType " << threatType << " other.threatType " << other.threatType;
+        qCWarning(WEBENGINEVIEWER_LOG) << " removalList" << removalList.count() << " other.removalList " << other.removalList.count();
+        qCWarning(WEBENGINEVIEWER_LOG) << " additionList" << additionList.count() << " other.additionList " << other.additionList.count();
     }
     return val;
 }
@@ -82,8 +82,8 @@ bool Removal::operator==(const Removal &other) const
 {
     bool value = (indexes == other.indexes) && (compressionType == other.compressionType) && (riceDeltaEncoding == other.riceDeltaEncoding);
     if (!value) {
-        qCDebug(WEBENGINEVIEWER_LOG) << " indexes " << indexes << " other.indexes " << other.indexes;
-        qCDebug(WEBENGINEVIEWER_LOG) << "compressionType " << compressionType << " other.compressionType " << other.compressionType;
+        qCWarning(WEBENGINEVIEWER_LOG) << " indexes " << indexes << " other.indexes " << other.indexes;
+        qCWarning(WEBENGINEVIEWER_LOG) << "compressionType " << compressionType << " other.compressionType " << other.compressionType;
     }
     return value;
 }
@@ -129,9 +129,9 @@ bool Addition::operator==(const Addition &other) const
                  (compressionType == other.compressionType) &&
                  (riceDeltaEncoding == other.riceDeltaEncoding);
     if (!value) {
-        qCDebug(WEBENGINEVIEWER_LOG) << "hashString " << hashString << " other.hashString " << other.hashString;
-        qCDebug(WEBENGINEVIEWER_LOG) << "prefixSize " << prefixSize << " other.prefixSize " << other.prefixSize;
-        qCDebug(WEBENGINEVIEWER_LOG) << "compressionType " << compressionType << " other.compressionType " << other.compressionType;
+        qCWarning(WEBENGINEVIEWER_LOG) << "hashString " << hashString << " other.hashString " << other.hashString;
+        qCWarning(WEBENGINEVIEWER_LOG) << "prefixSize " << prefixSize << " other.prefixSize " << other.prefixSize;
+        qCWarning(WEBENGINEVIEWER_LOG) << "compressionType " << compressionType << " other.compressionType " << other.compressionType;
     }
     return value;
 }
