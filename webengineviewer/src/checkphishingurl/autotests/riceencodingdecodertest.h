@@ -29,6 +29,10 @@ public:
     explicit RiceEncodingDecoderTest(QObject *parent = Q_NULLPTR);
     ~RiceEncodingDecoderTest();
 
+private Q_SLOTS:
+    void shouldDecodeRiceIndices_data();
+    void shouldDecodeRiceIndices();
+
 };
 
 #endif // RICEENCODINGDECODERTEST_H

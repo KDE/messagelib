@@ -142,23 +142,23 @@ void CreatePhishingUrlDataBaseJobTest::shouldCreateRequest()
 
 void CreatePhishingUrlDataBaseJobTest::checkRiceDeltaEncoding_data()
 {
-    QTest::addColumn<QString>("encodingData");
-    QTest::addColumn<QString>("firstValue");
+    QTest::addColumn<QByteArray>("encodingData");
+    QTest::addColumn<QByteArray>("firstValue");
     QTest::addColumn<int>("numberEntries");
     QTest::addColumn<int>("riceParameter");
     QTest::addColumn<bool>("valid");
-    QTest::newRow("valid") << QStringLiteral("ff") << QStringLiteral("AAAA") << 15 << 18 << true;
-    QTest::newRow("valid1") << QStringLiteral("ff") << QStringLiteral("AAAA") << 0 << 0 << true;
-    QTest::newRow("invalid") << QStringLiteral("ff") << QStringLiteral("AAAA") << 99 << 200 << false;
-    QTest::newRow("invalid1") << QString() << QStringLiteral("AAAA") << 15 << 18 << false;
-    QTest::newRow("invalid2") << QStringLiteral("AAAA") << QString() << 15 << 18 << false;
-    QTest::newRow("invalid3") << QString() << QString() << 15 << 18 << false;
+    QTest::newRow("valid") << QByteArrayLiteral("ff") << QByteArrayLiteral("AAAA") << 15 << 18 << true;
+    QTest::newRow("valid1") << QByteArrayLiteral("ff") << QByteArrayLiteral("AAAA") << 0 << 0 << true;
+    QTest::newRow("invalid") << QByteArrayLiteral("ff") << QByteArrayLiteral("AAAA") << 99 << 200 << false;
+    QTest::newRow("invalid1") << QByteArray() << QByteArrayLiteral("AAAA") << 15 << 18 << false;
+    QTest::newRow("invalid2") << QByteArrayLiteral("AAAA") << QByteArray() << 15 << 18 << false;
+    QTest::newRow("invalid3") << QByteArray() << QByteArray() << 15 << 18 << false;
 }
 
 void CreatePhishingUrlDataBaseJobTest::checkRiceDeltaEncoding()
 {
-    QFETCH(QString, encodingData);
-    QFETCH(QString, firstValue);
+    QFETCH(QByteArray, encodingData);
+    QFETCH(QByteArray, firstValue);
     QFETCH(int, numberEntries);
     QFETCH(int, riceParameter);
     QFETCH(bool, valid);

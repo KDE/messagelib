@@ -62,8 +62,8 @@ struct WEBENGINEVIEWER_EXPORT RiceDeltaEncoding {
     RiceDeltaEncoding();
     bool operator==(const RiceDeltaEncoding &other) const;
     bool isValid() const;
-    QString firstValue;
-    QString encodingData;
+    QByteArray firstValue;
+    QByteArray encodingData;
     int riceParameter;
     int numberEntries;
 };

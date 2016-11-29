@@ -201,13 +201,13 @@ RiceDeltaEncoding CreatePhishingUrlDataBaseJobPrivate::parseRiceDeltaEncoding(co
         riceHashesIt.next();
         const QString key = riceHashesIt.key();
         if (key == QLatin1String("firstValue")) {
-            riceDeltaEncodingTmp.firstValue = riceHashesIt.value().toString();
+            riceDeltaEncodingTmp.firstValue = riceHashesIt.value().toByteArray();
         } else if (key == QLatin1String("riceParameter")) {
             riceDeltaEncodingTmp.riceParameter = riceHashesIt.value().toInt();
         } else if (key == QLatin1String("numEntries")) {
             riceDeltaEncodingTmp.numberEntries = riceHashesIt.value().toInt();
         } else if (key == QLatin1String("encodedData")) {
-            riceDeltaEncodingTmp.encodingData = riceHashesIt.value().toString();
+            riceDeltaEncodingTmp.encodingData = riceHashesIt.value().toByteArray();
         } else {
             qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseRiceDeltaEncoding unknown riceDeltaEncoding key " << key;
         }

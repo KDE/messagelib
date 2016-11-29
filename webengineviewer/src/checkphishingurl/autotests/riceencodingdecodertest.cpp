@@ -31,4 +31,16 @@ RiceEncodingDecoderTest::~RiceEncodingDecoderTest()
 
 }
 
+void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()
+{
+    QTest::addColumn<qint64>("firstValue");
+    QTest::addColumn<int>("riceParameter");
+    QTest::addColumn<int>("numberEntries");
+}
+
+void RiceEncodingDecoderTest::shouldDecodeRiceIndices()
+{
+
+}
+
 QTEST_MAIN(RiceEncodingDecoderTest)
