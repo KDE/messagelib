@@ -33,6 +33,8 @@ private Q_SLOTS:
     void shouldDecodeRiceIndices_data();
     void shouldDecodeRiceIndices();
 
+    void shouldDecodeRiceHashes_data();
+    void shouldDecodeRiceHashes();
 };
 
 #endif // RICEENCODINGDECODERTEST_H
