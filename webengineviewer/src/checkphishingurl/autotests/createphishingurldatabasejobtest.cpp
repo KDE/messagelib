@@ -182,7 +182,7 @@ void CreatePhishingUrlDataBaseJobTest::checkAdditionElements_data()
     QTest::addColumn<bool>("isValid");
     QTest::newRow("invalid") << QByteArray() << 4 << false;
     QTest::newRow("notcorrectsize") << QByteArrayLiteral("IL5HqwT2c6bltw==") << 2 << false;
-    QTest::newRow("valid") << QByteArrayLiteral("IL5HqwT2c6bltw==") << 5 << true;
+    QTest::newRow("valid") << QByteArrayLiteral("IL5HqwT2c6bltw=") << 5 << true;
     QTest::newRow("invalid1") << QByteArrayLiteral("foossso") << 4 << false;
     //QByteArray b = createHash(QByteArrayLiteral("abcde"));
     //QTest::newRow("valid1") << b << 5 << true;
