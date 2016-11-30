@@ -142,23 +142,31 @@ QByteArray LocalDataBaseFile::searchHash(const QByteArray &hashToSearch)
     const int numHash = getUint64(4);
     int begin = 0;
     int end = numHash - 1;
-    //QByteArray previousValue;
-    while (begin <= end) {
-        const int medium = (begin + end) / 2;
-        const int off = posListOffset + 8 * medium;
-        const int hashOffset = getUint64(off);
-        const char *hashCharStar = getCharStar(hashOffset);
-        const int cmp = qstrcmp(hashCharStar, hashToSearch.constData());
-        qCWarning(WEBENGINEVIEWER_LOG) << "search " << hashToSearch << " begin " << begin << " end " << end << " hashCharStar" <<hashCharStar;
-        if (cmp < 0) {
-            begin = medium + 1;
-        } else if (cmp > 0) {
-            end = medium - 1;
-        } else {
-            return QByteArray(hashCharStar);
-        }
+    QByteArray previousValue;
+    if (end > 0) {
+        QByteArray currentValue;
+        do {
+            previousValue = currentValue;
+            const int medium = (begin + end) / 2;
+            const int off = posListOffset + 8 * medium;
+            const int hashOffset = getUint64(off);
+            const char *hashCharStar = getCharStar(hashOffset);
+            const int cmp = qstrcmp(hashCharStar, hashToSearch.constData());
+            currentValue = QByteArray(hashCharStar);
+            qCWarning(WEBENGINEVIEWER_LOG) << "search " << hashToSearch << " begin " << begin << " end " << end << " hashCharStar" <<hashCharStar;
+            if (end == begin) {
+                return currentValue;
+            }
+            if (cmp < 0) {
+                begin = medium + 1;
+            } else if (cmp > 0) {
+                end = medium - 1;
+            } else {
+                return currentValue;
+            }
+        } while (begin <= end);
     }
-    return QByteArray();
+    return previousValue;
 }
 
 bool LocalDataBaseFile::shouldCheck() const

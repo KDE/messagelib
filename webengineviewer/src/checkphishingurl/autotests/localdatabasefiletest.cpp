@@ -58,10 +58,11 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile_data()
     QTest::addColumn<QByteArray>("hash");
     QTest::addColumn<QByteArray>("resultHash");
     QTest::addColumn<bool>("found");
-    QTest::newRow("nohash") << QByteArrayLiteral("foo") << QByteArray() << false;
+    QTest::newRow("nohash") << QByteArrayLiteral("foo") << QByteArrayLiteral("efgh") << true;
     QTest::newRow("foundhash") << QByteArrayLiteral("1111") << QByteArrayLiteral("1111") << true;
     QTest::newRow("foundhash1") << QByteArrayLiteral("11111") << QByteArrayLiteral("1111") << true;
-    QTest::newRow("foundhash2") << QByteArrayLiteral("HGsse") << QByteArrayLiteral("1111") << true;
+    QTest::newRow("foundhash2") << QByteArrayLiteral("HGsse") << QByteArrayLiteral("54321") << true;
+    QTest::newRow("foundhash3") << QByteArrayLiteral("1112") << QByteArrayLiteral("1111") << true;
 }
 
 void LocalDataBaseFileTest::shouldCheckHashBinaryFile()

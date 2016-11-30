@@ -36,6 +36,8 @@ public:
     QStringList generatePathsToCheck();
     QStringList generateHostsToCheck();
 
+    QByteArray hashComputation();
+    QByteArray hashPrefixComputation();
 private:
     QUrl mUrl;
 };
