@@ -47,6 +47,8 @@ public:
 
     void initialize();
 
+    void slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState);
+
 Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
 
@@ -57,11 +59,9 @@ protected:
 
 private:
     void slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &hash, const QStringList &listHash);
-    void slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void slotCheckDataBase();
     void downloadDataBase(const QString &clientState);
-    void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
 
     LocalDataBaseManagerPrivate *const d;
 };

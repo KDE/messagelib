@@ -53,10 +53,11 @@ inline QString databaseFullPath()
 class WebEngineViewer::LocalDataBaseManagerPrivate
 {
 public:
-    LocalDataBaseManagerPrivate()
+    LocalDataBaseManagerPrivate(LocalDataBaseManager *qq)
         : mFile(databaseFullPath()),
           mDataBaseOk(false),
-          mDownloadProgress(false)
+          mDownloadProgress(false),
+          q(qq)
     {
         QDir().mkpath(localDataBasePath());
         readConfig();
@@ -66,17 +67,29 @@ public:
         saveConfig();
     }
 
+    void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
     void readConfig();
     void saveConfig();
     LocalDataBaseFile mFile;
     QString mNewClientState;
     bool mDataBaseOk;
     bool mDownloadProgress;
+    LocalDataBaseManager *q;
 };
+
+void LocalDataBaseManagerPrivate::installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
+{
+    WebEngineViewer::CreateDatabaseFileJob *job = new WebEngineViewer::CreateDatabaseFileJob(q);
+    job->setFileName(databaseFullPath());
+    job->setUpdateDataBaseInfo(infoDataBase);
+    q->connect(job, &CreateDatabaseFileJob::finished, q, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
+    job->start();
+}
+
 
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent),
-      d(new LocalDataBaseManagerPrivate)
+      d(new LocalDataBaseManagerPrivate(this))
 
 {
     initialize();
@@ -173,7 +186,7 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
             switch (infoDataBase.responseType) {
             case WebEngineViewer::UpdateDataBaseInfo::FullUpdate:
             case WebEngineViewer::UpdateDataBaseInfo::PartialUpdate:
-                installNewDataBase(infoDataBase);
+                d->installNewDataBase(infoDataBase);
                 break;
             case WebEngineViewer::UpdateDataBaseInfo::Unknown:
                 break;
@@ -184,14 +197,6 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
 }
 
 
-void LocalDataBaseManager::installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
-{
-    WebEngineViewer::CreateDatabaseFileJob *job = new WebEngineViewer::CreateDatabaseFileJob(this);
-    job->setFileName(databaseFullPath());
-    job->setUpdateDataBaseInfo(infoDataBase);
-    connect(job, &CreateDatabaseFileJob::finished, this, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
-    job->start();
-}
 
 void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState)
 {
