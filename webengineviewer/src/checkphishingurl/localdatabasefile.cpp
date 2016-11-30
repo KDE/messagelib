@@ -80,11 +80,7 @@ void LocalDataBaseFilePrivate::close()
 
 bool LocalDataBaseFilePrivate::reload()
 {
-    mValid = false;
-    if (mFile.isOpen()) {
-        mFile.close();
-    }
-    mData = Q_NULLPTR;
+    close();
     return load();
 }
 
