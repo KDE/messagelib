@@ -20,6 +20,7 @@
 #include "localdatabasefile.h"
 #include "checkphishingurlutil.h"
 #include "updatedatabaseinfo.h"
+#include "webengineviewer_debug.h"
 #include <QElapsedTimer>
 #include <QFileInfo>
 #include <QDebug>
@@ -145,12 +146,14 @@ QByteArray LocalDataBaseFile::searchHash(const QByteArray &hashToSearch)
     const int numHash = getUint64(4);
     int begin = 0;
     int end = numHash - 1;
+    //QByteArray previousValue;
     while (begin <= end) {
         const int medium = (begin + end) / 2;
         const int off = posListOffset + 8 * medium;
         const int hashOffset = getUint64(off);
         const char *hashCharStar = getCharStar(hashOffset);
         const int cmp = qstrcmp(hashCharStar, hashToSearch.constData());
+        qCWarning(WEBENGINEVIEWER_LOG) << "search " << hashToSearch << " begin " << begin << " end " << end << " hashCharStar" <<hashCharStar;
         if (cmp < 0) {
             begin = medium + 1;
         } else if (cmp > 0) {
