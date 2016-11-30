@@ -221,11 +221,15 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         QByteArray hash;
         QByteArray result = d->mFile.searchHash(hash);
         if (hash.contains(result)) {
-            WebEngineViewer::SearchFullHashJob *job = new WebEngineViewer::SearchFullHashJob(this);
-            job->setDatabaseState(QStringList() << d->mNewClientState);
-            connect(job, &SearchFullHashJob::result, this, &LocalDataBaseManager::slotSearchOnServerResult);
-            job->start();
-            //TODO verify on server
+            if (d->mNewClientState.isEmpty()) {
+                qCWarning(WEBENGINEVIEWER_LOG) << "Database client state is unknown";
+                Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
+            } else {
+                WebEngineViewer::SearchFullHashJob *job = new WebEngineViewer::SearchFullHashJob(this);
+                job->setDatabaseState(QStringList() << d->mNewClientState);
+                connect(job, &SearchFullHashJob::result, this, &LocalDataBaseManager::slotSearchOnServerResult);
+                job->start();
+            }
         } else {
             Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::UrlOk);
         }
