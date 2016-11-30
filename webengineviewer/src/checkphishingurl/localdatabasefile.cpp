@@ -142,8 +142,7 @@ QByteArray LocalDataBaseFile::searchHash(const QByteArray &hashToSearch)
      * => 12
      */
     int posListOffset = 12;
-    const int numHash = getUint64(posListOffset);
-    qDebug() << " numHash "<< numHash;
+    const int numHash = getUint64(4);
     int begin = 0;
     int end = numHash - 1;
     while (begin <= end) {
@@ -152,7 +151,6 @@ QByteArray LocalDataBaseFile::searchHash(const QByteArray &hashToSearch)
         const int hashOffset = getUint64(off);
         const char *hashCharStar = getCharStar(hashOffset);
         const int cmp = qstrcmp(hashCharStar, hashToSearch.constData());
-        qDebug() << " begin " << begin << " end " << end << " hashCharStar" <<hashCharStar;
         if (cmp < 0) {
             begin = medium + 1;
         } else if (cmp > 0) {
