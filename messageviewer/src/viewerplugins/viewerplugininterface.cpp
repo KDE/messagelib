@@ -93,6 +93,12 @@ void ViewerPluginInterface::updateAction(const Akonadi::Item &item)
     // Reimplement in subclass
 }
 
+void ViewerPluginInterface::refreshActionList(KActionCollection *ac)
+{
+    //TODO
+    Q_UNUSED(ac);
+}
+
 void ViewerPluginInterface::addHelpTextAction(QAction *act, const QString &text)
 {
     act->setStatusTip(text);

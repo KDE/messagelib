@@ -26,6 +26,7 @@
 #include <AkonadiCore/Item>
 
 class QAction;
+class KActionCollection;
 namespace MessageViewer
 {
 class ViewerPluginInterfacePrivate;
@@ -55,6 +56,7 @@ public:
     virtual void closePlugin();
     virtual ViewerPluginInterface::SpecificFeatureTypes featureTypes() const = 0;
     virtual void updateAction(const Akonadi::Item &item);
+    virtual void refreshActionList(KActionCollection *ac);
 
 protected:
     virtual void showWidget();
