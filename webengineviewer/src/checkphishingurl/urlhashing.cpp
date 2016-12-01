@@ -46,6 +46,9 @@ QString UrlHashing::canonicalizeUrl()
         path.remove(QLatin1Char('\t'));
         path.remove(QLatin1Char('\r'));
         path.remove(QLatin1Char('\n'));
+
+        //In the URL, percent-escape all characters that are <= ASCII 32, >= 127, "#", or "%". The escapes should use uppercase hex characters.
+
         mUrl.setPath(path);
     }
     // Remove all leading and trailing dots.
@@ -66,9 +69,8 @@ QString UrlHashing::canonicalizeUrl()
     qDebug() << "2222222 hostname" << hostname;
     mUrl.setHost(hostname);
 #endif
-    mUrl.setPort(-1);
 
-    return QString::fromLatin1(mUrl.toEncoded(QUrl::RemoveFragment|QUrl::NormalizePathSegments|QUrl::EncodeUnicode));
+    return QString::fromLatin1(mUrl.toEncoded(QUrl::RemoveFragment|QUrl::NormalizePathSegments|QUrl::EncodeUnicode|QUrl::RemoveUserInfo|QUrl::RemovePort|QUrl::RemovePassword));
 }
 
 QStringList UrlHashing::generatePathsToCheck()
