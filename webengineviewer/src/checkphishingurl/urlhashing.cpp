@@ -48,6 +48,7 @@ QString UrlHashing::canonicalizeUrl()
         path.remove(QLatin1Char('\n'));
 
         //In the URL, percent-escape all characters that are <= ASCII 32, >= 127, "#", or "%". The escapes should use uppercase hex characters.
+        //TODO
 
         mUrl.setPath(path);
     }
@@ -69,8 +70,11 @@ QString UrlHashing::canonicalizeUrl()
     qDebug() << "2222222 hostname" << hostname;
     mUrl.setHost(hostname);
 #endif
-
-    return QString::fromLatin1(mUrl.toEncoded(QUrl::RemoveFragment|QUrl::NormalizePathSegments|QUrl::EncodeUnicode|QUrl::RemoveUserInfo|QUrl::RemovePort|QUrl::RemovePassword));
+    QByteArray urlEncoded = mUrl.toEncoded(QUrl::RemoveFragment|QUrl::NormalizePathSegments|QUrl::EncodeUnicode|QUrl::RemoveUserInfo|QUrl::RemovePort|QUrl::RemovePassword);
+    //qDebug() << "BEFORE  urlEncoded" <<urlEncoded;
+    urlEncoded.replace(QByteArrayLiteral("%25"), QByteArrayLiteral("%"));
+    //qDebug() << "AFTER  urlEncoded" <<urlEncoded;
+    return QString::fromLatin1(urlEncoded);
 }
 
 QStringList UrlHashing::generatePathsToCheck()
