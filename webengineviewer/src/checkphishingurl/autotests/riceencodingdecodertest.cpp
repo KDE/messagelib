@@ -42,13 +42,11 @@ void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()
     QTest::newRow("empty") << QByteArray() << 0 << 0 << QByteArray() << QList<int>();
     QList<int> result;
     result << 3;
-    QTest::newRow("empty string") << QByteArray("3") << 2 << 0 << QByteArray() << result;
+    QTest::newRow("zero value") << QByteArray("3") << 2 << 0 << QByteArray() << result;
+
     result.clear();
     result << 5 << 20 << 29;
     QTest::newRow("test1") << QByteArray("5") << 2 << 2 << QByteArrayLiteral("\xf7\x2") << result;
-
-
-    //TODO add more
 }
 
 void RiceEncodingDecoderTest::shouldDecodeRiceIndices()

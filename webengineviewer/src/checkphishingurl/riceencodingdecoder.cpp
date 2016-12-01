@@ -18,6 +18,7 @@
 */
 
 #include "riceencodingdecoder.h"
+#include "webengineviewer_debug.h"
 
 using namespace WebEngineViewer;
 RiceEncodingDecoder::RiceEncodingDecoder()
@@ -32,12 +33,30 @@ RiceEncodingDecoder::~RiceEncodingDecoder()
 
 QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
+    bool ok;
+    QList<int> list;
+    if (riceDeltaEncoding.firstValue.isEmpty()) {
+        return list;
+    }
+    quint64 firstValue = riceDeltaEncoding.firstValue.toInt(&ok);
+    if (!ok) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "First value is not a int value " << riceDeltaEncoding.firstValue;
+        return list;
+    }
+    list.reserve(riceDeltaEncoding.numberEntries + 1);
+    list << firstValue;
+    if (riceDeltaEncoding.numberEntries == 0) {
+        return list;
+    }
+
     return {};
     //TODO
 }
 
 QByteArray RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
+    QList<int> list;
+    list.reserve(riceDeltaEncoding.numberEntries + 1);
     return {};
     //TODO
 }

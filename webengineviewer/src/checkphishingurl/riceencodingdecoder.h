@@ -24,14 +24,15 @@
 #include "updatedatabaseinfo.h"
 namespace WebEngineViewer
 {
+//https://developers.google.com/safe-browsing/v4/compression
 class WEBENGINEVIEWER_EXPORT RiceEncodingDecoder
 {
 public:
     RiceEncodingDecoder();
     ~RiceEncodingDecoder();
 
-    QList<int> decodeRiceIndiceDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
-    QByteArray decodeRiceHashesDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
+    static QList<int> decodeRiceIndiceDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
+    static QByteArray decodeRiceHashesDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
 
 };
 }
