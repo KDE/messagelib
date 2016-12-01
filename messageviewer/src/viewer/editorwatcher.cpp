@@ -31,6 +31,7 @@
 #include <qsocketnotifier.h>
 
 #include <cassert>
+#include <memory>
 
 // inotify stuff taken from kdelibs/kio/kio/kdirwatch.cpp
 #ifdef HAVE_SYS_INOTIFY_H
@@ -77,7 +78,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     list.append(mUrl);
     KService::Ptr offer = KMimeTypeTrader::self()->preferredService(mMimeType, QStringLiteral("Application"));
     if ((mOpenWithOption == OpenWithDialog) || !offer) {
-        QScopedPointer<KOpenWithDialog> dlg(new KOpenWithDialog(list, i18n("Edit with:"),
+        std::unique_ptr<KOpenWithDialog> dlg(new KOpenWithDialog(list, i18n("Edit with:"),
                                             QString(), mParentWidget));
         const int dlgrc = dlg->exec();
         if (dlgrc && dlg) {

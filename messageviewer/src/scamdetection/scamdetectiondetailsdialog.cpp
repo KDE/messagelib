@@ -37,6 +37,7 @@
 #include <QPushButton>
 #include <KGuiItem>
 #include <QVBoxLayout>
+#include <memory>
 
 using namespace MessageViewer;
 
@@ -70,7 +71,7 @@ ScamDetectionDetailsDialog::~ScamDetectionDetailsDialog()
 void ScamDetectionDetailsDialog::slotSaveAs()
 {
     QUrl url;
-    QScopedPointer<QFileDialog> fdlg(new QFileDialog(this, QString(), url.path()));
+    std::unique_ptr<QFileDialog> fdlg(new QFileDialog(this, QString(), url.path()));
     fdlg->setAcceptMode(QFileDialog::AcceptSave);
     fdlg->setFileMode(QFileDialog::AnyFile);
     fdlg->selectFile(QStringLiteral("scam-detection.html"));

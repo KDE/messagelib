@@ -201,7 +201,7 @@ void RecipientsEditor::removeRecipient(const QString &recipient, Recipient::Type
 
 void RecipientsEditor::saveDistributionList()
 {
-    QScopedPointer<MessageComposer::DistributionListDialog> dlg(new MessageComposer::DistributionListDialog(this));
+    std::unique_ptr<MessageComposer::DistributionListDialog> dlg(new MessageComposer::DistributionListDialog(this));
     dlg->setRecipients(recipients());
     dlg->exec();
 }
