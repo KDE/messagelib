@@ -179,11 +179,12 @@ void CreatePhishingUrlDataBaseJobTest::checkAdditionElements_data()
 {
     QTest::addColumn<QByteArray>("hashString");
     QTest::addColumn<int>("prefixSize");
+    QTest::addColumn<WebEngineViewer::UpdateDataBaseInfo::CompressionType>("compression");
     QTest::addColumn<bool>("isValid");
-    QTest::newRow("invalid") << QByteArray() << 4 << false;
-    QTest::newRow("notcorrectsize") << QByteArrayLiteral("IL5HqwT2c6bltw==") << 2 << false;
-    QTest::newRow("valid") << QByteArrayLiteral("IL5HqwT2c6bltw=") << 5 << true;
-    QTest::newRow("invalid1") << QByteArrayLiteral("foossso") << 4 << false;
+    QTest::newRow("invalid") << QByteArray() << 4 << WebEngineViewer::UpdateDataBaseInfo::RawCompression << false;
+    QTest::newRow("notcorrectsize") << QByteArrayLiteral("IL5HqwT2c6bltw==") << 2 << WebEngineViewer::UpdateDataBaseInfo::RawCompression << false;
+    QTest::newRow("valid") << QByteArrayLiteral("IL5HqwT2c6bltw=") << 5 << WebEngineViewer::UpdateDataBaseInfo::RawCompression << true;
+    QTest::newRow("invalid1") << QByteArrayLiteral("foossso") << 4 << WebEngineViewer::UpdateDataBaseInfo::RawCompression << false;
     //QByteArray b = createHash(QByteArrayLiteral("abcde"));
     //QTest::newRow("valid1") << b << 5 << true;
 }
@@ -192,32 +193,35 @@ void CreatePhishingUrlDataBaseJobTest::checkAdditionElements()
 {
     QFETCH(QByteArray, hashString);
     QFETCH(int, prefixSize);
+    QFETCH(WebEngineViewer::UpdateDataBaseInfo::CompressionType, compression);
     QFETCH(bool, isValid);
 
     WebEngineViewer::Addition a;
     a.hashString = hashString;
     a.prefixSize = prefixSize;
-    a.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
+    a.compressionType = compression;
     QCOMPARE(a.isValid(), isValid);
 }
 
 void CreatePhishingUrlDataBaseJobTest::checkRemovalElements_data()
 {
     QTest::addColumn<QList<int> >("lst");
+    QTest::addColumn<WebEngineViewer::UpdateDataBaseInfo::CompressionType>("compression");
     QTest::addColumn<bool>("isValid");
     QList<int> lst;
-    QTest::newRow("invalid") << lst << false;
+    QTest::newRow("invalid") << lst << WebEngineViewer::UpdateDataBaseInfo::RawCompression << false;
     lst << 1 << 2 << 3;
-    QTest::newRow("valid") << lst << true;
+    QTest::newRow("valid") << lst << WebEngineViewer::UpdateDataBaseInfo::RawCompression << true;
 }
 
 void CreatePhishingUrlDataBaseJobTest::checkRemovalElements()
 {
     QFETCH(QList<int>, lst);
+    QFETCH(WebEngineViewer::UpdateDataBaseInfo::CompressionType, compression);
     QFETCH(bool, isValid);
     WebEngineViewer::Removal a;
     a.indexes = lst;
-    a.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
+    a.compressionType = compression;
     QCOMPARE(a.isValid(), isValid);
 }
 

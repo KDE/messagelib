@@ -90,6 +90,7 @@ struct WEBENGINEVIEWER_EXPORT Removal {
 };
 }
 Q_DECLARE_METATYPE(WebEngineViewer::UpdateDataBaseInfo)
+Q_DECLARE_METATYPE(WebEngineViewer::UpdateDataBaseInfo::CompressionType)
 Q_DECLARE_TYPEINFO(WebEngineViewer::Addition, Q_MOVABLE_TYPE);
 Q_DECLARE_TYPEINFO(WebEngineViewer::Removal, Q_MOVABLE_TYPE);
 Q_DECLARE_TYPEINFO(WebEngineViewer::RiceDeltaEncoding, Q_MOVABLE_TYPE);
