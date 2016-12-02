@@ -159,13 +159,13 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     //Define state when we want to define update database. Empty is full.
     switch (d->mDataBaseDownloadNeeded) {
     case FullDataBase:
-        qDebug()<<" full update";
+        qCDebug(WEBENGINEVIEWER_LOG) << " full update";
         threatMap.insert(QStringLiteral("state"), QString());
         break;
     case UpdateDataBase:
-        qDebug() << " update database";
+        qCDebug(WEBENGINEVIEWER_LOG) << " update database";
         if (d->mDataBaseState.isEmpty()) {
-            qWarning() << "Partial Download asked but database set is empty";
+            qCWarning(WEBENGINEVIEWER_LOG) << "Partial Download asked but database set is empty";
         }
         threatMap.insert(QStringLiteral("state"), d->mDataBaseState);
         break;

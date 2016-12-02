@@ -106,21 +106,30 @@ Addition::Addition()
 
 bool Addition::isValid() const
 {
-    if (compressionType == UpdateDataBaseInfo::UnknownCompression) {
+    bool valid = false;
+    switch(compressionType) {
+    case UpdateDataBaseInfo::UnknownCompression:
         qCWarning(WEBENGINEVIEWER_LOG) << "Compression Type undefined";
-        return false;
+        valid = false;
+        break;
+    case UpdateDataBaseInfo::RiceCompression:
+        valid = riceDeltaEncoding.isValid();
+        break;
+    case UpdateDataBaseInfo::RawCompression:
+        const bool hasCorrectPrefixSize = (prefixSize >= 4) && (prefixSize <= 32);
+        if (!hasCorrectPrefixSize) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Prefix size is not correct";
+            valid = false;
+        } else if ((hashString.size() % static_cast<int>(prefixSize)) != 0) {
+            qDebug()<< " hashString.size() "<< hashString.size() << "prefixSize "<<prefixSize;
+            qCWarning(WEBENGINEVIEWER_LOG) << "it's not a correct hash value";
+            valid = false;
+        } else {
+            valid = !hashString.isEmpty();
+        }
+        break;
     }
-    const bool hasCorrectPrefixSize = (prefixSize >= 4) && (prefixSize <= 32);
-    if (!hasCorrectPrefixSize) {
-        qCWarning(WEBENGINEVIEWER_LOG) << "Prefix size is not correct";
-        return false;
-    }
-    if ((hashString.size() % static_cast<int>(prefixSize)) != 0) {
-        qDebug()<< " hashString.size() "<< hashString.size() << "prefixSize "<<prefixSize;
-        qCWarning(WEBENGINEVIEWER_LOG) << "it's not a correct hash value";
-        return false;
-    }
-    return !hashString.isEmpty();
+    return valid;
 }
 
 bool Addition::operator==(const Addition &other) const

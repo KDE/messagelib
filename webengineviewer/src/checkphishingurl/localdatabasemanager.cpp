@@ -249,5 +249,6 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
 
 void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &hash, const QStringList &listHash)
 {
+    qCDebug(WEBENGINEVIEWER_LOG) << "hash " << hash << " listHash " << listHash;
     //TODO
 }
