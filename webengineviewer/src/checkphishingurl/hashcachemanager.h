@@ -17,21 +17,25 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef CHECKPHISHINGURLUTIL_H
-#define CHECKPHISHINGURLUTIL_H
 
-#include <QString>
+#ifndef HASHCACHEMANAGER_H
+#define HASHCACHEMANAGER_H
+
+#include <QObject>
 #include "webengineviewer_export.h"
+
 namespace WebEngineViewer
 {
-namespace CheckPhishingUrlUtil
+//https://developers.google.com/safe-browsing/v4/caching
+class WEBENGINEVIEWER_EXPORT HashCacheManager : public QObject
 {
-QString apiKey();
-QString versionApps();
-QString databaseFileName();
-WEBENGINEVIEWER_EXPORT quint16 minorVersion();
-WEBENGINEVIEWER_EXPORT quint16 majorVersion();
-WEBENGINEVIEWER_EXPORT int convertToSecond(QString str);
+    Q_OBJECT
+public:
+    explicit HashCacheManager(QObject *parent = Q_NULLPTR);
+    ~HashCacheManager();
+
+    static HashCacheManager *self();
+};
 }
-}
-#endif // CHECKPHISHINGURLUTIL_H
+
+#endif // HASHCACHEMANAGER_H

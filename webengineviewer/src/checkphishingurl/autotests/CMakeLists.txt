@@ -65,3 +65,15 @@ ecm_add_test(riceencodingdecodertest.cpp ../riceencodingdecoder.cpp ${testwebeng
     NAME_PREFIX "webengineview-riceencodingdecodertest-"
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
+
+ecm_add_test(hashcachemanagertest.cpp ../hashcachemanager.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME hashcachemanagertest
+    NAME_PREFIX "webengineview-hashcachemanagertest-"
+    LINK_LIBRARIES Qt5::Test
+    )
+
+ecm_add_test(checkphishingurlutiltest.cpp ../checkphishingurlutil.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME checkphishingurlutiltest
+    NAME_PREFIX "webengineview-checkphishingurlutiltest-"
+    LINK_LIBRARIES Qt5::Test
+    )

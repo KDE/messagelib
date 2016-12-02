@@ -32,6 +32,10 @@ private Q_SLOTS:
     void shouldNotBeAbleToStartWithEmptyUrl();
     void shouldCreateRequest_data();
     void shouldCreateRequest();
+
+    void shouldParseResult_data();
+    void shouldParseResult();
+
 };
 
 #endif // CHECKPHISHINGURLJOBTEST_H

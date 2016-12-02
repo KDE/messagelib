@@ -76,6 +76,7 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
             if (info.count() == 1) {
                 const QVariantMap map = info.at(0).toMap();
                 const QString threatTypeStr = map[QStringLiteral("threatType")].toString();
+                const QString cacheDuration = map[QStringLiteral("cacheDuration")].toString();
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {

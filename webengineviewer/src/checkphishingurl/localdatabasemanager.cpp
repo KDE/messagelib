@@ -72,6 +72,7 @@ public:
     void saveConfig();
     LocalDataBaseFile mFile;
     QString mNewClientState;
+    QString mMinimumWaitDuration;
     bool mDataBaseOk;
     bool mDownloadProgress;
     LocalDataBaseManager *q;

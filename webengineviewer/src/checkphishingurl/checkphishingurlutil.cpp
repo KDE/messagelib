@@ -45,3 +45,20 @@ quint16 CheckPhishingUrlUtil::minorVersion()
     return 0;
 }
 
+int CheckPhishingUrlUtil::convertToSecond(QString str)
+{
+    QString minimumDuration = str;
+
+    if (!minimumDuration.isEmpty()) {
+        if (minimumDuration.endsWith(QLatin1Char('s'))) {
+            minimumDuration = minimumDuration.left(minimumDuration.length()-1);
+        }
+        bool ok;
+        int val = minimumDuration.toInt(&ok);
+        if (ok) {
+            return val;
+        }
+    }
+    return -1;
+}
+

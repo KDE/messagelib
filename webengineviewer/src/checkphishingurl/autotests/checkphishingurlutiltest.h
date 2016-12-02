@@ -17,21 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef CHECKPHISHINGURLUTIL_H
-#define CHECKPHISHINGURLUTIL_H
+#ifndef CHECKPHISHINGURLUTILTEST_H
+#define CHECKPHISHINGURLUTILTEST_H
 
-#include <QString>
-#include "webengineviewer_export.h"
-namespace WebEngineViewer
+#include <QObject>
+
+class CheckPhishingUrlUtilTest : public QObject
 {
-namespace CheckPhishingUrlUtil
-{
-QString apiKey();
-QString versionApps();
-QString databaseFileName();
-WEBENGINEVIEWER_EXPORT quint16 minorVersion();
-WEBENGINEVIEWER_EXPORT quint16 majorVersion();
-WEBENGINEVIEWER_EXPORT int convertToSecond(QString str);
-}
-}
-#endif // CHECKPHISHINGURLUTIL_H
+    Q_OBJECT
+public:
+    explicit CheckPhishingUrlUtilTest(QObject *parent = Q_NULLPTR);
+    ~CheckPhishingUrlUtilTest();
+};
+
+#endif // CHECKPHISHINGURLUTILTEST_H

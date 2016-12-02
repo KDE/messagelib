@@ -63,4 +63,14 @@ void CheckPhishingUrlJobTest::shouldCreateRequest()
     }
 }
 
+void CheckPhishingUrlJobTest::shouldParseResult_data()
+{
+
+}
+
+void CheckPhishingUrlJobTest::shouldParseResult()
+{
+
+}
+
 QTEST_MAIN(CheckPhishingUrlJobTest)

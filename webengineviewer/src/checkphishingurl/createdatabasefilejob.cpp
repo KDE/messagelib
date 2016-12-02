@@ -34,7 +34,7 @@ public:
     {
 
     }
-    void createFileFromFullUpdate(const QVector<Addition> &additionList, const QByteArray &sha256);
+    void createFileFromFullUpdate(const QVector<Addition> &additionList);
     void removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition);
     void createBinaryFile();
     void generateFile(bool fullUpdate);
@@ -44,7 +44,7 @@ public:
     CreateDatabaseFileJob *q;
 };
 
-void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Addition> &additionList, const QByteArray &sha256)
+void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Addition> &additionList)
 {
     //1 add version number
     const quint16 major = WebEngineViewer::CheckPhishingUrlUtil::majorVersion();
@@ -100,11 +100,11 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     //Verify hash with sha256
     const QByteArray newSsha256Value = QCryptographicHash::hash(newSsha256, QCryptographicHash::Sha256);
 
-    const bool checkSumCorrect = (sha256 == newSsha256Value.toBase64());
+    const bool checkSumCorrect = (mInfoDataBase.sha256 == newSsha256Value.toBase64());
     if (!checkSumCorrect) {
-        qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << sha256;
+        qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << mInfoDataBase.sha256;
     }
-    Q_EMIT q->finished(checkSumCorrect, mInfoDataBase.newClientState);
+    Q_EMIT q->finished(checkSumCorrect, mInfoDataBase.newClientState/*, mInfoDataBase.minimumWaitDuration*/ );
 }
 
 void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
@@ -122,7 +122,7 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
             Q_EMIT q->finished(false, QString());
             return;
         }
-        createFileFromFullUpdate(mInfoDataBase.additionList, mInfoDataBase.sha256);
+        createFileFromFullUpdate(mInfoDataBase.additionList);
     } else {
         WebEngineViewer::LocalDataBaseFile localeFile(mFileName);
         if (!localeFile.fileExists()) {
@@ -150,7 +150,7 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
             Q_EMIT q->finished(false, QString());
             return;
         }
-        createFileFromFullUpdate(oldDataBaseAddition, mInfoDataBase.sha256);
+        createFileFromFullUpdate(oldDataBaseAddition);
     }
 }
 
