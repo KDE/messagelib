@@ -51,6 +51,11 @@ public:
     QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
 
     void updateActions(const Akonadi::Item &messageItem);
+
+    /**
+     * @brief refreshActionList Refresh the list of action menu.
+     */
+    void refreshActionList();
 Q_SIGNALS:
     void activatePlugin(MessageViewer::ViewerPluginInterface *);
 

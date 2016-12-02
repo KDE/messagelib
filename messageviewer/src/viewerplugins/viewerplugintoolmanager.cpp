@@ -41,6 +41,7 @@ public:
     void setPluginName(const QString &pluginName);
     QString pluginName() const;
     void createView();
+    void refreshActionList();
     void closeAllTools();
     void setActionCollection(KActionCollection *ac);
     void updateActions(const Akonadi::Item &messageItem);
@@ -71,6 +72,13 @@ QString ViewerPluginToolManagerPrivate::pluginName() const
     return MessageViewer::ViewerPluginManager::self()->pluginName();
 }
 
+void ViewerPluginToolManagerPrivate::refreshActionList()
+{
+    Q_FOREACH (MessageViewer::ViewerPluginInterface *interface, mListInterface) {
+        interface->refreshActionList(mActionCollection);
+    }
+}
+
 void ViewerPluginToolManagerPrivate::createView()
 {
     QVector<MessageViewer::ViewerPlugin *> listPlugin = MessageViewer::ViewerPluginManager::self()->pluginsList();
@@ -78,6 +86,7 @@ void ViewerPluginToolManagerPrivate::createView()
         if (plugin->isEnabled()) {
             MessageViewer::ViewerPluginInterface *interface = plugin->createView(mParentWidget, mActionCollection);
             q->connect(interface, &MessageViewer::ViewerPluginInterface::activatePlugin, q, &ViewerPluginToolManager::activatePlugin);
+            q->connect(plugin, &ViewerPlugin::configChanged, q, &ViewerPluginToolManager::refreshActionList);
             mListInterface.append(interface);
         }
     }
@@ -131,6 +140,11 @@ ViewerPluginToolManager::~ViewerPluginToolManager()
 void ViewerPluginToolManager::closeAllTools()
 {
     d->closeAllTools();
+}
+
+void ViewerPluginToolManager::refreshActionList()
+{
+    d->refreshActionList();
 }
 
 void ViewerPluginToolManager::createView()
