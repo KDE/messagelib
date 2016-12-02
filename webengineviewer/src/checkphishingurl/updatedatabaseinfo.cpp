@@ -90,11 +90,20 @@ bool Removal::operator==(const Removal &other) const
 
 bool Removal::isValid() const
 {
-    if (compressionType == UpdateDataBaseInfo::UnknownCompression) {
+    bool valid = false;
+    switch (compressionType) {
+    case UpdateDataBaseInfo::UnknownCompression:
         qCWarning(WEBENGINEVIEWER_LOG) << "Compression Type undefined";
-        return false;
+        valid = false;
+        break;
+    case UpdateDataBaseInfo::RiceCompression:
+        valid = riceDeltaEncoding.isValid();
+        break;
+    case UpdateDataBaseInfo::RawCompression:
+        valid = !indexes.isEmpty();
+        break;
     }
-    return !indexes.isEmpty();
+    return valid;
 }
 
 Addition::Addition()
