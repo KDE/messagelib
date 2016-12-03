@@ -1203,6 +1203,9 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
                 foreach (const GpgME::DecryptionResult::Recipient &recipient, decryptResult.recipients()) {
                     mNoSecKey &= (recipient.status().code() == GPG_ERR_NO_SECKEY);
                 }
+                if (!mPassphraseError && !mNoSecKey) {          // GpgME do not detect passphrase error correctly
+                    mPassphraseError = true;
+                }
             }
         }
     }
