@@ -18,6 +18,7 @@
 */
 
 #include "checkphishingurlutiltest.h"
+#include "../checkphishingurlutil.h"
 
 #include <QTest>
 
@@ -34,12 +35,17 @@ CheckPhishingUrlUtilTest::~CheckPhishingUrlUtilTest()
 
 void CheckPhishingUrlUtilTest::shouldConvertToSecond_data()
 {
+    QTest::addColumn<QString>("value");
+    QTest::addColumn<double>("result");
+    QTest::newRow("empty") << QString() << (double)-1;
 
 }
 
 void CheckPhishingUrlUtilTest::shouldConvertToSecond()
 {
-
+    QFETCH(QString, value);
+    QFETCH(double, result);
+    QCOMPARE(WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(value), result);
 }
 
 QTEST_MAIN(CheckPhishingUrlUtilTest)
