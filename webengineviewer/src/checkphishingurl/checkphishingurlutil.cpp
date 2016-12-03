@@ -45,7 +45,7 @@ quint16 CheckPhishingUrlUtil::minorVersion()
     return 0;
 }
 
-int CheckPhishingUrlUtil::convertToSecond(QString str)
+double CheckPhishingUrlUtil::convertToSecond(QString str)
 {
     QString minimumDuration = str;
 
@@ -54,7 +54,7 @@ int CheckPhishingUrlUtil::convertToSecond(QString str)
             minimumDuration = minimumDuration.left(minimumDuration.length()-1);
         }
         bool ok;
-        int val = minimumDuration.toInt(&ok);
+        double val = minimumDuration.toDouble(&ok);
         if (ok) {
             return val;
         }

@@ -32,4 +32,14 @@ CheckPhishingUrlUtilTest::~CheckPhishingUrlUtilTest()
 
 }
 
+void CheckPhishingUrlUtilTest::shouldConvertToSecond_data()
+{
+
+}
+
+void CheckPhishingUrlUtilTest::shouldConvertToSecond()
+{
+
+}
+
 QTEST_MAIN(CheckPhishingUrlUtilTest)
