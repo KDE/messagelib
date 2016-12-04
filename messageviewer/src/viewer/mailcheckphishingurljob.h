@@ -40,10 +40,10 @@ public:
     void setUrl(const QUrl &url);
 
 Q_SIGNALS:
-    void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, const Akonadi::Item &item);
+    void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, const Akonadi::Item &item, uint verifyCacheAfterThisTime);
 
 private Q_SLOTS:
-    void slotCheckPhishingUrlDone(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url);
+    void slotCheckPhishingUrlDone(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, uint verifyCacheAfterThisTime);
 
 private:
     Akonadi::Item mItem;

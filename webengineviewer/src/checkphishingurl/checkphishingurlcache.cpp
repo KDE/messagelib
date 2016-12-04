@@ -27,13 +27,14 @@ Q_GLOBAL_STATIC(CheckPhishingUrlCache, s_checkPhishingUrlCache)
 struct urlCacheInfo
 {
     urlCacheInfo()
-        : status(CheckPhishingUrlCache::Unknown)
+        : status(CheckPhishingUrlCache::Unknown),
+          verifyCacheAfterThisTime(0)
     {
 
     }
 
     CheckPhishingUrlCache::UrlStatus status;
-    int minutes;
+    uint verifyCacheAfterThisTime;
 };
 
 class WebEngineViewer::CheckPhishingUrlCachePrivate
@@ -44,7 +45,7 @@ public:
 
     }
     CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
-    void setCheckingUrlResult(const QUrl &url, bool correctUrl);
+    void setCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime);
     void clearCache();
 private:
     QMap<QUrl, CheckPhishingUrlCache::UrlStatus> mCacheCheckedUrl;
@@ -60,8 +61,11 @@ CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const Q
     return mCacheCheckedUrl.value(url, CheckPhishingUrlCache::Unknown);
 }
 
-void CheckPhishingUrlCachePrivate::setCheckingUrlResult(const QUrl &url, bool correctUrl)
+void CheckPhishingUrlCachePrivate::setCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime)
 {
+    if (verifyCacheAfterThisTime > 0) {
+        //TODO
+    }
     mCacheCheckedUrl.insert(url, correctUrl ? CheckPhishingUrlCache::UrlOk : CheckPhishingUrlCache::MalWare);
 }
 
@@ -77,9 +81,9 @@ CheckPhishingUrlCache::~CheckPhishingUrlCache()
     delete d;
 }
 
-void CheckPhishingUrlCache::setCheckingUrlResult(const QUrl &url, bool correctUrl)
+void CheckPhishingUrlCache::setCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime)
 {
-    d->setCheckingUrlResult(url, correctUrl);
+    d->setCheckingUrlResult(url, correctUrl, verifyCacheAfterThisTime);
 }
 
 CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCache::urlStatus(const QUrl &url)

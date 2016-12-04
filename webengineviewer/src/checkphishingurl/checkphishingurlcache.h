@@ -47,7 +47,7 @@ public:
      * @param url
      * @param correctUrl
      */
-    void setCheckingUrlResult(const QUrl &url, bool correctUrl);
+    void setCheckingUrlResult(const QUrl &url, bool correctUrl, uint cacheDuration = 0);
     /**
      * @brief urlStatus Return the status of cached Url. When we didn't stored it it returns Unknown
      * @param url

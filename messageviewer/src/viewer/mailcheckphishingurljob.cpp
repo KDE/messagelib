@@ -51,8 +51,8 @@ void MailCheckPhishingUrlJob::setUrl(const QUrl &url)
     mCheckPhishingJob->setUrl(url);
 }
 
-void MailCheckPhishingUrlJob::slotCheckPhishingUrlDone(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url)
+void MailCheckPhishingUrlJob::slotCheckPhishingUrlDone(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, uint verifyCacheAfterThisTime)
 {
-    Q_EMIT result(status, url, mItem);
+    Q_EMIT result(status, url, mItem, verifyCacheAfterThisTime);
     deleteLater();
 }

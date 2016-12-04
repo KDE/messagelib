@@ -2002,7 +2002,7 @@ void ViewerPrivate::executeRunner(const QUrl &url)
     }
 }
 
-void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, const Akonadi::Item &item)
+void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, const Akonadi::Item &item, uint verifyCacheAfterThisTime)
 {
     Q_UNUSED(item);
     switch (status) {

@@ -54,7 +54,7 @@ public:
     void parse(const QByteArray &replyStr);
 
 Q_SIGNALS:
-    void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, double cacheDuration = -1);
+    void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, uint verifyCacheAfterThisTime = 0);
     void debugJson(const QByteArray &ba);
 
 private Q_SLOTS:

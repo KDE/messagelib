@@ -78,15 +78,16 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                 const QVariantMap map = info.at(0).toMap();
                 const QString threatTypeStr = map[QStringLiteral("threatType")].toString();
                 const QString cacheDuration = map[QStringLiteral("cacheDuration")].toString();
-                double cacheDurationValue = -1;
+                uint verifyCacheAfterThisTime = 0;
                 if (!cacheDuration.isEmpty()) {
-                    cacheDurationValue = WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(cacheDuration);
+                    double cacheDurationValue = WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(cacheDuration);
                 }
+                //TODO define verifyCacheAfterThisTime
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
                         if (urlMap[QStringLiteral("url")].toString() == d->mUrl.toString()) {
-                            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::MalWare, d->mUrl, cacheDurationValue);
+                            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::MalWare, d->mUrl, verifyCacheAfterThisTime);
                             return;
                         }
                     }
