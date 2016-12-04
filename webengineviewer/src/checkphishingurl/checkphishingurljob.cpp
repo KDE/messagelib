@@ -63,6 +63,7 @@ void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslEr
 
 void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
 {
+    qDebug() << " reply Str " << replyStr;
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, d->mUrl);
@@ -77,11 +78,15 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                 const QVariantMap map = info.at(0).toMap();
                 const QString threatTypeStr = map[QStringLiteral("threatType")].toString();
                 const QString cacheDuration = map[QStringLiteral("cacheDuration")].toString();
+                double cacheDurationValue = -1;
+                if (!cacheDuration.isEmpty()) {
+                    cacheDurationValue = WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(cacheDuration);
+                }
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
                         if (urlMap[QStringLiteral("url")].toString() == d->mUrl.toString()) {
-                            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::MalWare, d->mUrl);
+                            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::MalWare, d->mUrl, cacheDurationValue);
                             return;
                         }
                     }

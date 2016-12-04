@@ -18,6 +18,7 @@
 */
 
 #include "hashcachemanagertest.h"
+#include "../hashcachemanager.h"
 
 #include <QTest>
 
