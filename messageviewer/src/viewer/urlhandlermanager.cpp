@@ -695,6 +695,8 @@ bool ExpandCollapseQuoteURLManager::handleClick(const QUrl &url, ViewerPrivate *
 
 bool ExpandCollapseQuoteURLManager::handleDrag(const QUrl &url, ViewerPrivate *window) const
 {
+    Q_UNUSED(url);
+    Q_UNUSED(window);
     return true;
 }
 
@@ -1064,6 +1066,8 @@ QString ShowAuditLogURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate 
 
 bool ShowAuditLogURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
 {
+    Q_UNUSED(url);
+    Q_UNUSED(window);
     return true;
 }
 
