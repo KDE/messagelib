@@ -2007,10 +2007,10 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus
     Q_UNUSED(item);
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork:
-        KMessageBox::error(mMainWindow, i18n("The network is broken."), i18n("Check Phishing Url"));
+        KMessageBox::error(mMainWindow, i18n("The network is broken."), i18n("Check Phishing URL"));
         break;
     case WebEngineViewer::CheckPhishingUrlJob::InvalidUrl:
-        KMessageBox::error(mMainWindow, i18n("The url %1 is not valid.", url.toString()), i18n("Check Phishing Url"));
+        KMessageBox::error(mMainWindow, i18n("The URL %1 is not valid.", url.toString()), i18n("Check Phishing URL"));
         break;
     case WebEngineViewer::CheckPhishingUrlJob::Ok:
         WebEngineViewer::CheckPhishingUrlCache::self()->setCheckingUrlResult(url, true, verifyCacheAfterThisTime);

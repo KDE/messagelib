@@ -1,6 +1,6 @@
 {
     "KPlugin": {
-        "Description": "This plugin allows you a default grantlee mail header.", 
+        "Description": "This plugin provides a default Grantlee mail header.", 
         "Description[ca@valencia]": "Este connector permet una capçalera «Grantlee» predeterminada al correu.", 
         "Description[ca]": "Aquest connector permet una capçalera «Grantlee» predeterminada al correu.", 
         "Description[cs]": "Tento modul umožňuje výchozí hlavičku e-mailu grantlee.", 
