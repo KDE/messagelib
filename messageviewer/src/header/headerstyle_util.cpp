@@ -76,9 +76,9 @@ QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, Head
         case ShortDate:
             return KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, unixTime);
         case LongDate:
-            return KMime::DateFormatter::formatDate(KMime::DateFormatter::CTime, unixTime);;
+            return KMime::DateFormatter::formatDate(KMime::DateFormatter::CTime, unixTime);
         case FancyShortDate:
-            return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime);;
+            return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime);
         case FancyLongDate:
         //Laurent fix me
         //TODO return QLocale::system().toString(dateTime, QLocale::LongFormat);
