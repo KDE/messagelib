@@ -19,6 +19,8 @@
 
 #include "checkphishingurlutil.h"
 #include "webengineviewer_version.h"
+#include <QDateTime>
+
 using namespace WebEngineViewer;
 QString CheckPhishingUrlUtil::apiKey()
 {
@@ -62,3 +64,11 @@ double CheckPhishingUrlUtil::convertToSecond(QString str)
     return -1;
 }
 
+uint CheckPhishingUrlUtil::refreshingCacheAfterThisTime(double seconds)
+{
+    if (seconds > 0) {
+        return QDateTime::currentDateTime().addMSecs(seconds * 1000).toTime_t();
+    } else {
+        return 0;
+    }
+}
