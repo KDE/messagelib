@@ -2013,10 +2013,10 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus
         KMessageBox::error(mMainWindow, i18n("The URL %1 is not valid.", url.toString()), i18n("Check Phishing URL"));
         break;
     case WebEngineViewer::CheckPhishingUrlJob::Ok:
-        WebEngineViewer::CheckPhishingUrlCache::self()->setCheckingUrlResult(url, true, verifyCacheAfterThisTime);
+        WebEngineViewer::CheckPhishingUrlCache::self()->addCheckingUrlResult(url, true, verifyCacheAfterThisTime);
         break;
     case WebEngineViewer::CheckPhishingUrlJob::MalWare:
-        WebEngineViewer::CheckPhishingUrlCache::self()->setCheckingUrlResult(url, false, verifyCacheAfterThisTime);
+        WebEngineViewer::CheckPhishingUrlCache::self()->addCheckingUrlResult(url, false, verifyCacheAfterThisTime);
         if (!urlIsAMalwareButContinue()) {
             return;
         }

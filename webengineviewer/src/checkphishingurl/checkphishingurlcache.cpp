@@ -60,7 +60,7 @@ public:
         load();
     }
     CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
-    void setCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime);
+    void addCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime);
     void clearCache();
     void load();
     void save();
@@ -136,7 +136,7 @@ CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const Q
     }
 }
 
-void CheckPhishingUrlCachePrivate::setCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime)
+void CheckPhishingUrlCachePrivate::addCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime)
 {
     UrlCacheInfo info;
     info.status = correctUrl ? CheckPhishingUrlCache::UrlOk : CheckPhishingUrlCache::MalWare;
@@ -159,9 +159,9 @@ CheckPhishingUrlCache::~CheckPhishingUrlCache()
     delete d;
 }
 
-void CheckPhishingUrlCache::setCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime)
+void CheckPhishingUrlCache::addCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime)
 {
-    d->setCheckingUrlResult(url, correctUrl, verifyCacheAfterThisTime);
+    d->addCheckingUrlResult(url, correctUrl, verifyCacheAfterThisTime);
 }
 
 CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCache::urlStatus(const QUrl &url)

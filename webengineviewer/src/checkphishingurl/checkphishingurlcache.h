@@ -43,11 +43,11 @@ public:
     ~CheckPhishingUrlCache();
 
     /**
-     * @brief setCheckingUrlResult cache url. If @p correctUrl is true we store as UrlOk otherwise MalWare
+     * @brief addCheckingUrlResult cache url. If @p correctUrl is true we store as UrlOk otherwise MalWare
      * @param url
      * @param correctUrl
      */
-    void setCheckingUrlResult(const QUrl &url, bool correctUrl, uint cacheDuration = 0);
+    void addCheckingUrlResult(const QUrl &url, bool correctUrl, uint cacheDuration = 0);
     /**
      * @brief urlStatus Return the status of cached Url. When we didn't stored it it returns Unknown
      * @param url
@@ -55,6 +55,9 @@ public:
      */
     CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
 
+    /**
+     * @brief clearCache clear the cache and save result in config file.
+     */
     void clearCache();
 private:
     CheckPhishingUrlCachePrivate *const d;
