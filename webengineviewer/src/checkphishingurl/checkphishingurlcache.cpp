@@ -34,10 +34,16 @@ struct UrlCacheInfo
     {
 
     }
+    bool isMalWare() const;
     bool isValid() const;
     CheckPhishingUrlCache::UrlStatus status;
     uint verifyCacheAfterThisTime;
 };
+
+bool UrlCacheInfo::isMalWare() const
+{
+    return (status == CheckPhishingUrlCache::MalWare);
+}
 
 bool UrlCacheInfo::isValid() const
 {
@@ -74,7 +80,13 @@ void CheckPhishingUrlCachePrivate::load()
 
 void CheckPhishingUrlCachePrivate::save()
 {
-    //TODO
+    QMapIterator<QUrl, UrlCacheInfo> i(mCacheCheckedUrl);
+    while (i.hasNext()) {
+        i.next();
+        if (i.value().isMalWare()) {
+            //TODO save it.
+        }
+    }
 }
 
 CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const QUrl &url)
