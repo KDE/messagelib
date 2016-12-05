@@ -336,7 +336,7 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
         if (!file.open(QIODevice::WriteOnly)) {
             KMessageBox::error(parent,
                                xi18nc("1 = file name, 2 = error string",
-                                      "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2",
+                                      "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</qt>",
                                       file.fileName(),
                                       file.errorString()),
                                i18n("Error saving attachment"));
@@ -354,7 +354,7 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
         QFile *f = static_cast<QFile *>(ds.device());
         KMessageBox::error(parent,
                            xi18nc("1 = file name, 2 = error string",
-                                  "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2",
+                                  "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</qt>",
                                   f->fileName(),
                                   f->errorString()),
                            i18n("Error saving attachment"));
@@ -372,7 +372,7 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
         if (!job->exec()) {
             KMessageBox::error(parent,
                                xi18nc("1 = file name, 2 = error string",
-                                      "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2",
+                                      "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</qt>",
                                       url.toDisplayString(),
                                       job->errorString()),
                                i18n("Error saving attachment"));
