@@ -20,12 +20,13 @@
 #include "hashcachemanagertest.h"
 #include "../hashcachemanager.h"
 
+#include <QStandardPaths>
 #include <QTest>
 
 HashCacheManagerTest::HashCacheManagerTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 HashCacheManagerTest::~HashCacheManagerTest()

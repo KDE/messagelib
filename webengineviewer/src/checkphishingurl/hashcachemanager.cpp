@@ -55,17 +55,16 @@ public:
     void save();
     void load();
     void addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration);
+    HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
 private:
     void clear();
 
-    QMap<QByteArray, HashCacheInfo> mMalwareList;
-    QMap<QByteArray, HashCacheInfo> mOkList;
+    QMap<QByteArray, HashCacheInfo> mHashList;
 };
 
 void HashCacheManagerPrivate::clear()
 {
-    mMalwareList.clear();
-    mOkList.clear();
+    mHashList.clear();
 }
 
 void HashCacheManagerPrivate::clearCache()
@@ -76,22 +75,55 @@ void HashCacheManagerPrivate::clearCache()
 
 void HashCacheManagerPrivate::save()
 {
+    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
+    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("Hash"));
+
+    QList<QByteArray> lstMalware;
+    QList<double> lstMalwareDuration;
+
+    QList<QByteArray> lstOk;
+    QList<double> lstOkDuration;
+
+
     //TODO
 }
 
 void HashCacheManagerPrivate::load()
 {
     clear();
+    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
+    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("Hash"));
     //TODO
+}
+
+HashCacheManager::UrlStatus HashCacheManagerPrivate::hashStatus(const QByteArray &hash)
+{
+    const HashCacheInfo info = mHashList.value(hash, HashCacheInfo());
+    if (info.isValid()) {
+        if (CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
+            return info.status;
+        } else {
+            return HashCacheManager::Unknown;
+        }
+    } else {
+        return HashCacheManager::Unknown;
+    }
 }
 
 void HashCacheManagerPrivate::addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration)
 {
+    HashCacheInfo info;
+    info.status = status;
+    info.verifyCacheAfterThisTime = cacheDuration;
     switch (status) {
-    case HashCacheManager::UrlOk:
+    case HashCacheManager::UrlOk: {
+        mHashList.insert(hash, info);
         break;
-    case HashCacheManager::MalWare:
+    }
+    case HashCacheManager::MalWare: {
+        mHashList.insert(hash, info);
         break;
+    }
     case HashCacheManager::Unknown:
         qCWarning(WEBENGINEVIEWER_LOG()) << "HashCacheManagerPrivate::addHashStatus unknow status detected!";
         return;
@@ -124,4 +156,9 @@ void HashCacheManager::clearCache()
 void HashCacheManager::addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration)
 {
     d->addHashStatus(hash, status, cacheDuration);
+}
+
+HashCacheManager::UrlStatus HashCacheManager::hashStatus(const QByteArray &hash)
+{
+    return d->hashStatus(hash);
 }
