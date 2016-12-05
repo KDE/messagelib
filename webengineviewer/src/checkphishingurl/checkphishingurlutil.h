@@ -33,6 +33,7 @@ WEBENGINEVIEWER_EXPORT quint16 minorVersion();
 WEBENGINEVIEWER_EXPORT quint16 majorVersion();
 WEBENGINEVIEWER_EXPORT double convertToSecond(QString str);
 WEBENGINEVIEWER_EXPORT uint refreshingCacheAfterThisTime(double seconds);
+WEBENGINEVIEWER_EXPORT bool cachedValueStillValid(uint seconds);
 }
 }
 #endif // CHECKPHISHINGURLUTIL_H

@@ -18,6 +18,7 @@
 */
 
 #include "checkphishingurlcache.h"
+#include "checkphishingurlutil.h"
 #include <KConfigGroup>
 #include <QMap>
 
@@ -79,8 +80,11 @@ CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const Q
 {
     UrlCacheInfo info = mCacheCheckedUrl.value(url, UrlCacheInfo());
     if (info.isValid()) {
-        //TODO verify time
-        return info.status;
+        if (CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
+            return info.status;
+        } else {
+            return CheckPhishingUrlCache::Unknown;
+        }
     } else {
         return CheckPhishingUrlCache::Unknown;
     }

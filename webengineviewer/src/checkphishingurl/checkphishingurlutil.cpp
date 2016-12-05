@@ -72,3 +72,8 @@ uint CheckPhishingUrlUtil::refreshingCacheAfterThisTime(double seconds)
         return 0;
     }
 }
+
+bool CheckPhishingUrlUtil::cachedValueStillValid(uint seconds)
+{
+    return QDateTime::currentDateTime().toTime_t() < seconds;
+}
