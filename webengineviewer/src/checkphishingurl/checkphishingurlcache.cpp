@@ -18,37 +18,45 @@
 */
 
 #include "checkphishingurlcache.h"
+#include <KConfigGroup>
 #include <QMap>
 
 using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(CheckPhishingUrlCache, s_checkPhishingUrlCache)
 
-struct urlCacheInfo
+struct UrlCacheInfo
 {
-    urlCacheInfo()
+    UrlCacheInfo()
         : status(CheckPhishingUrlCache::Unknown),
           verifyCacheAfterThisTime(0)
     {
 
     }
-
+    bool isValid() const;
     CheckPhishingUrlCache::UrlStatus status;
     uint verifyCacheAfterThisTime;
 };
+
+bool UrlCacheInfo::isValid() const
+{
+    return (status != CheckPhishingUrlCache::Unknown);
+}
 
 class WebEngineViewer::CheckPhishingUrlCachePrivate
 {
 public:
     CheckPhishingUrlCachePrivate()
     {
-
+        load();
     }
     CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
     void setCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime);
     void clearCache();
+    void load();
+    void save();
 private:
-    QMap<QUrl, CheckPhishingUrlCache::UrlStatus> mCacheCheckedUrl;
+    QMap<QUrl, UrlCacheInfo> mCacheCheckedUrl;
 };
 
 void CheckPhishingUrlCachePrivate::clearCache()
@@ -56,17 +64,34 @@ void CheckPhishingUrlCachePrivate::clearCache()
     mCacheCheckedUrl.clear();
 }
 
+void CheckPhishingUrlCachePrivate::load()
+{
+    mCacheCheckedUrl.clear();
+    //TODO
+}
+
+void CheckPhishingUrlCachePrivate::save()
+{
+    //TODO
+}
+
 CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const QUrl &url)
 {
-    return mCacheCheckedUrl.value(url, CheckPhishingUrlCache::Unknown);
+    UrlCacheInfo info = mCacheCheckedUrl.value(url, UrlCacheInfo());
+    if (info.isValid()) {
+        //TODO verify time
+        return info.status;
+    } else {
+        return CheckPhishingUrlCache::Unknown;
+    }
 }
 
 void CheckPhishingUrlCachePrivate::setCheckingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime)
 {
-    if (verifyCacheAfterThisTime > 0) {
-        //TODO
-    }
-    mCacheCheckedUrl.insert(url, correctUrl ? CheckPhishingUrlCache::UrlOk : CheckPhishingUrlCache::MalWare);
+    UrlCacheInfo info;
+    info.status = correctUrl ? CheckPhishingUrlCache::UrlOk : CheckPhishingUrlCache::MalWare;
+    info.verifyCacheAfterThisTime = verifyCacheAfterThisTime;
+    mCacheCheckedUrl.insert(url, info);
 }
 
 CheckPhishingUrlCache::CheckPhishingUrlCache(QObject *parent)
@@ -100,4 +125,5 @@ CheckPhishingUrlCache *CheckPhishingUrlCache::self()
 {
     return s_checkPhishingUrlCache;
 }
+
 
