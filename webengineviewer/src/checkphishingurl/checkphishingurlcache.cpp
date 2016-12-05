@@ -63,6 +63,7 @@ private:
 void CheckPhishingUrlCachePrivate::clearCache()
 {
     mCacheCheckedUrl.clear();
+    save();
 }
 
 void CheckPhishingUrlCachePrivate::load()
