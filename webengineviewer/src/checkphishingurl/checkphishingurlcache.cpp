@@ -18,7 +18,9 @@
 */
 
 #include "checkphishingurlcache.h"
+#include "webengineviewer_debug.h"
 #include "checkphishingurlutil.h"
+#include <KConfig>
 #include <KConfigGroup>
 #include <QMap>
 
@@ -75,18 +77,44 @@ void CheckPhishingUrlCachePrivate::clearCache()
 void CheckPhishingUrlCachePrivate::load()
 {
     mCacheCheckedUrl.clear();
-    //TODO
+    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
+    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("MalwareUrl"));
+    const QList<QUrl> listMalware = grp.readEntry("Url", QList<QUrl>());
+    const QList<double> listMalwareCachedTime = grp.readEntry("CachedTime", QList<double>());
+    if (listMalware.count() != listMalwareCachedTime.count()) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "CheckPhishingUrlCachePrivate invalid number of data stored";
+    } else {
+        UrlCacheInfo info;
+        const int numberOfMalware = listMalware.count();
+        for (int i = 0; i < numberOfMalware; ++i) {
+            info.status = WebEngineViewer::CheckPhishingUrlCache::MalWare;
+            info.verifyCacheAfterThisTime = listMalwareCachedTime.at(i);
+            if (WebEngineViewer::CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
+                mCacheCheckedUrl.insert(listMalware.at(i), info);
+            }
+        }
+    }
 }
 
 void CheckPhishingUrlCachePrivate::save()
 {
+    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
+    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("MalwareUrl"));
+
+    QList<QUrl> listMalware;
+    QList<double> listMalwareCachedTime;
+
     QMapIterator<QUrl, UrlCacheInfo> i(mCacheCheckedUrl);
     while (i.hasNext()) {
         i.next();
-        if (i.value().isMalWare()) {
-            //TODO save it.
+        if (i.value().isMalWare() && WebEngineViewer::CheckPhishingUrlUtil::cachedValueStillValid(i.value().verifyCacheAfterThisTime)) {
+            listMalware.append(i.key());
+            listMalwareCachedTime.append(i.value().verifyCacheAfterThisTime);
         }
     }
+    grp.writeEntry("Url", listMalware);
+    grp.writeEntry("CachedTime", listMalwareCachedTime);
+    grp.sync();
 }
 
 CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const QUrl &url)
