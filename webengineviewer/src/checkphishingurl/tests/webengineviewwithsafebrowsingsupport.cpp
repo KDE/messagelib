@@ -30,7 +30,6 @@
 #include <webenginepage.h>
 #include <webengineview.h>
 
-
 WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidget *parent)
     : QWidget(parent)
 {
@@ -44,7 +43,6 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
     pageView->setPage(mEnginePage);
     pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
     connect(mEnginePage, &WebEngineViewer::WebEnginePage::urlClicked, this, &WebEngineViewWithSafeBrowsingSupport::slotUrlClicked);
-
 
     mDebug = new QPlainTextEdit(this);
     layout->addWidget(mDebug);

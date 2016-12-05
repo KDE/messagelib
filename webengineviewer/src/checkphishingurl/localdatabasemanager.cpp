@@ -87,7 +87,6 @@ void LocalDataBaseManagerPrivate::installNewDataBase(const WebEngineViewer::Upda
     job->start();
 }
 
-
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent),
       d(new LocalDataBaseManagerPrivate(this))
@@ -196,8 +195,6 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
     }
     d->mDownloadProgress = false;
 }
-
-
 
 void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState)
 {

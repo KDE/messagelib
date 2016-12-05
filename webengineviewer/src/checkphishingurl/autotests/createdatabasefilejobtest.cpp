@@ -131,13 +131,10 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
     //    'gd05466Uc/0Wb1zOYSC3vBsrUgpOBW/+7ldZf4rLvk4='
     //    >>>
 
-
     r = {0, 2, 8};
     QTest::newRow("correctdatabaseotherorder3") << r << lstAdditions << QByteArrayLiteral("gd05466Uc/0Wb1zOYSC3vBsrUgpOBW/+7ldZf4rLvk4=") << true;
 
-
     r = {0, 2, 8};
-
 
     WebEngineViewer::Addition c;
     c.hashString = QByteArray("mnopqrst");

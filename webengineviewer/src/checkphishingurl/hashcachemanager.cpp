@@ -27,8 +27,7 @@ using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(HashCacheManager, s_hashCacheManager)
 
-struct HashCacheInfo
-{
+struct HashCacheInfo {
     HashCacheInfo()
         : status(HashCacheManager::Unknown),
           verifyCacheAfterThisTime(0)
@@ -88,7 +87,7 @@ void HashCacheManagerPrivate::load()
 
 void HashCacheManagerPrivate::addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration)
 {
-    switch(status) {
+    switch (status) {
     case HashCacheManager::UrlOk:
         break;
     case HashCacheManager::MalWare:

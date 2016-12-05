@@ -54,7 +54,7 @@ void UrlHashingTest::shouldCanonicalizeUrl_data()
     Canonicalize("http://www.evil.com/blah#frag") = "http://www.evil.com/blah";
     Canonicalize("http://www.GOOgle.com/") = "http://www.google.com/";
     Canonicalize("http://www.google.com.../") = "http://www.google.com/";
-    Canonicalize("http://www.google.com/foo\tbar\rbaz\n2") ="http://www.google.com/foobarbaz2";
+    Canonicalize("http://www.google.com/foo\tbar\rbaz\n2") = "http://www.google.com/foobarbaz2";
     Canonicalize("http://www.google.com/q?") = "http://www.google.com/q?";
     Canonicalize("http://www.google.com/q?r?") = "http://www.google.com/q?r?";
     Canonicalize("http://www.google.com/q?r?s") = "http://www.google.com/q?r?s";
@@ -120,6 +120,5 @@ void UrlHashingTest::shouldCanonicalizeUrl()
     QCOMPARE(handling.canonicalizeUrl(), output);
 
 }
-
 
 QTEST_MAIN(UrlHashingTest)

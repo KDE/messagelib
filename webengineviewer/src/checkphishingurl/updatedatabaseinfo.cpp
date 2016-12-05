@@ -116,7 +116,7 @@ Addition::Addition()
 bool Addition::isValid() const
 {
     bool valid = false;
-    switch(compressionType) {
+    switch (compressionType) {
     case UpdateDataBaseInfo::UnknownCompression:
         qCWarning(WEBENGINEVIEWER_LOG) << "Compression Type undefined";
         valid = false;
@@ -130,7 +130,7 @@ bool Addition::isValid() const
             qCWarning(WEBENGINEVIEWER_LOG) << "Prefix size is not correct";
             valid = false;
         } else if ((hashString.size() % static_cast<int>(prefixSize)) != 0) {
-            qDebug()<< " hashString.size() "<< hashString.size() << "prefixSize "<<prefixSize;
+            qDebug() << " hashString.size() " << hashString.size() << "prefixSize " << prefixSize;
             qCWarning(WEBENGINEVIEWER_LOG) << "it's not a correct hash value";
             valid = false;
         } else {
@@ -177,7 +177,7 @@ bool RiceDeltaEncoding::operator==(const RiceDeltaEncoding &other) const
 
 bool RiceDeltaEncoding::isValid() const
 {
-    if (!firstValue.isEmpty() && !encodingData.isEmpty() &&((riceParameter >= 2 && riceParameter <= 28) || (riceParameter == 0 && numberEntries == 0))) {
+    if (!firstValue.isEmpty() && !encodingData.isEmpty() && ((riceParameter >= 2 && riceParameter <= 28) || (riceParameter == 0 && numberEntries == 0))) {
         return true;
     }
     return false;

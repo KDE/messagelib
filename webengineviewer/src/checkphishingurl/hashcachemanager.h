@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef HASHCACHEMANAGER_H
 #define HASHCACHEMANAGER_H
 

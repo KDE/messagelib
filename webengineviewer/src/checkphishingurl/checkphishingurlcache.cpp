@@ -28,8 +28,7 @@ using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(CheckPhishingUrlCache, s_checkPhishingUrlCache)
 
-struct UrlCacheInfo
-{
+struct UrlCacheInfo {
     UrlCacheInfo()
         : status(CheckPhishingUrlCache::Unknown),
           verifyCacheAfterThisTime(0)
@@ -178,5 +177,4 @@ CheckPhishingUrlCache *CheckPhishingUrlCache::self()
 {
     return s_checkPhishingUrlCache;
 }
-
 

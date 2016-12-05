@@ -104,12 +104,12 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     if (!checkSumCorrect) {
         qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << mInfoDataBase.sha256;
     }
-    Q_EMIT q->finished(checkSumCorrect, mInfoDataBase.newClientState/*, mInfoDataBase.minimumWaitDuration*/ );
+    Q_EMIT q->finished(checkSumCorrect, mInfoDataBase.newClientState/*, mInfoDataBase.minimumWaitDuration*/);
 }
 
 void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
 {
-    qDebug()<<" void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)"<<fullUpdate;
+    qDebug() << " void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)" << fullUpdate;
     mFile.setFileName(mFileName);
     if (fullUpdate) {
         if (mFile.exists() && !mFile.remove()) {
@@ -183,7 +183,6 @@ void CreateDatabaseFileJobPrivate::createBinaryFile()
     q->deleteLater();
 }
 
-
 CreateDatabaseFileJob::CreateDatabaseFileJob(QObject *parent)
     : QObject(parent),
       d(new WebEngineViewer::CreateDatabaseFileJobPrivate(this))
@@ -220,5 +219,4 @@ void CreateDatabaseFileJob::setFileName(const QString &filename)
 {
     d->mFileName = filename;
 }
-
 

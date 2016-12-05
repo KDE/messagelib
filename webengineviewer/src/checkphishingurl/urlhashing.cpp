@@ -56,7 +56,7 @@ QString UrlHashing::canonicalizeUrl()
 #if 0
     QString hostname = mUrl.host();
     qDebug() << " hostname" << hostname;
-    while(!hostname.isEmpty() && hostname.at(0) == QLatin1Char('.')) {
+    while (!hostname.isEmpty() && hostname.at(0) == QLatin1Char('.')) {
         hostname.remove(0, 1);
     }
     qDebug() << "111111 hostname" << hostname;
@@ -70,7 +70,7 @@ QString UrlHashing::canonicalizeUrl()
     qDebug() << "2222222 hostname" << hostname;
     mUrl.setHost(hostname);
 #endif
-    QByteArray urlEncoded = mUrl.toEncoded(QUrl::RemoveFragment|QUrl::NormalizePathSegments|QUrl::EncodeUnicode|QUrl::RemoveUserInfo|QUrl::RemovePort|QUrl::RemovePassword);
+    QByteArray urlEncoded = mUrl.toEncoded(QUrl::RemoveFragment | QUrl::NormalizePathSegments | QUrl::EncodeUnicode | QUrl::RemoveUserInfo | QUrl::RemovePort | QUrl::RemovePassword);
     //qDebug() << "BEFORE  urlEncoded" <<urlEncoded;
     urlEncoded.replace(QByteArrayLiteral("%25"), QByteArrayLiteral("%"));
     //qDebug() << "AFTER  urlEncoded" <<urlEncoded;
@@ -90,29 +90,36 @@ QStringList UrlHashing::generateHostsToCheck()
 QByteArray UrlHashing::hashComputation()
 {
 #if 0
-    Unit Test (in pseudo-C)
+    Unit Test(in pseudo - C)
 
     // Example B1 from FIPS-180-2
     string input1 = "abc";
     string output1 = TruncatedSha256Prefix(input1, 32);
     int expected1[] = { 0xba, 0x78, 0x16, 0xbf };
     assert(output1.size() == 4);  // 4 bytes == 32 bits
-    for (int i = 0; i < output1.size(); i++) assert(output1[i] == expected1[i]);
+    for (int i = 0; i < output1.size(); i++) {
+        assert(output1[i] == expected1[i]);
+    }
 
     // Example B2 from FIPS-180-2
     string input2 = "abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq";
     string output2 = TruncatedSha256Prefix(input2, 48);
     int expected2[] = { 0x24, 0x8d, 0x6a, 0x61, 0xd2, 0x06 };
     assert(output2.size() == 6);
-    for (int i = 0; i < output2.size(); i++) assert(output2[i] == expected2[i]);
+    for (int i = 0; i < output2.size(); i++) {
+        assert(output2[i] == expected2[i]);
+    }
 
     // Example B3 from FIPS-180-2
     string input3(1000000, 'a');  // 'a' repeated a million times
     string output3 = TruncatedSha256Prefix(input3, 96);
     int expected3[] = { 0xcd, 0xc7, 0x6e, 0x5c, 0x99, 0x14, 0xfb, 0x92,
-                        0x81, 0xa1, 0xc7, 0xe2 };
+                        0x81, 0xa1, 0xc7, 0xe2
+                      };
     assert(output3.size() == 12);
-    for (int i = 0; i < output3.size(); i++) assert(output3[i] == expected3[i]);
+    for (int i = 0; i < output3.size(); i++) {
+        assert(output3[i] == expected3[i]);
+    }
 #endif
     return {};
 }

@@ -112,7 +112,6 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
     //Load another instance => data were saved
     cache.addCheckingUrlResult(url, false, currentValue + 2000);
 
-
     WebEngineViewer::CheckPhishingUrlCache cache2;
     KConfig phishingurlKConfig4(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
     grp = phishingurlKConfig4.group(QStringLiteral("MalwareUrl"));

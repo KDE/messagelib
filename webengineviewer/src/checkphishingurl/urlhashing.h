@@ -24,7 +24,8 @@
 #include <QUrl>
 #include <QString>
 
-namespace WebEngineViewer {
+namespace WebEngineViewer
+{
 //https://developers.google.com/safe-browsing/v4/urls-hashing
 class WEBENGINEVIEWER_EXPORT UrlHashing
 {

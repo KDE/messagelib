@@ -58,7 +58,7 @@ double CheckPhishingUrlUtil::convertToSecond(QString str)
 
     if (!minimumDuration.isEmpty()) {
         if (minimumDuration.endsWith(QLatin1Char('s'))) {
-            minimumDuration = minimumDuration.left(minimumDuration.length()-1);
+            minimumDuration = minimumDuration.left(minimumDuration.length() - 1);
         }
         bool ok;
         double val = minimumDuration.toDouble(&ok);
