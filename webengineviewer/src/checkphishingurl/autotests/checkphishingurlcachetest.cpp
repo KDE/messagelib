@@ -18,12 +18,14 @@
 */
 
 #include "checkphishingurlcachetest.h"
+#include "../checkphishingurlcache.h"
 #include <QTest>
+#include <QStandardPaths>
 
 CheckPhishingUrlCacheTest::CheckPhishingUrlCacheTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 CheckPhishingUrlCacheTest::~CheckPhishingUrlCacheTest()
