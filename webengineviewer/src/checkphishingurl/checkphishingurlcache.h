@@ -61,4 +61,6 @@ private:
 };
 }
 
+Q_DECLARE_METATYPE(WebEngineViewer::CheckPhishingUrlCache::UrlStatus)
+
 #endif // CHECKPHISHINGURLCACHE_H

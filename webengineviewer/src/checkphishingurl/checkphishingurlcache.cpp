@@ -81,10 +81,14 @@ CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const Q
 {
     UrlCacheInfo info = mCacheCheckedUrl.value(url, UrlCacheInfo());
     if (info.isValid()) {
-        if (CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
-            return info.status;
+        if (info.verifyCacheAfterThisTime > 0) {
+            if (CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
+                return info.status;
+            } else {
+                return CheckPhishingUrlCache::Unknown;
+            }
         } else {
-            return CheckPhishingUrlCache::Unknown;
+            return info.status;
         }
     } else {
         return CheckPhishingUrlCache::Unknown;
@@ -95,7 +99,7 @@ void CheckPhishingUrlCachePrivate::setCheckingUrlResult(const QUrl &url, bool co
 {
     UrlCacheInfo info;
     info.status = correctUrl ? CheckPhishingUrlCache::UrlOk : CheckPhishingUrlCache::MalWare;
-    info.verifyCacheAfterThisTime = verifyCacheAfterThisTime;
+    info.verifyCacheAfterThisTime = correctUrl ? 0 : verifyCacheAfterThisTime;
     mCacheCheckedUrl.insert(url, info);
 }
 
