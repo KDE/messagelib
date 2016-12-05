@@ -103,14 +103,14 @@ LocalDataBaseManager::~LocalDataBaseManager()
 
 void LocalDataBaseManagerPrivate::readConfig()
 {
-    KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
+    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
     mNewClientState = grp.readEntry(QStringLiteral("DataBaseState"));
 }
 
 void LocalDataBaseManagerPrivate::saveConfig()
 {
-    KConfig phishingurlKConfig(QStringLiteral("phishingurlrc"));
+    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
     grp.writeEntry(QStringLiteral("DataBaseState"), mNewClientState);
 }

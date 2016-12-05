@@ -29,6 +29,7 @@ namespace CheckPhishingUrlUtil
 QString apiKey();
 QString versionApps();
 QString databaseFileName();
+QString configFileName();
 WEBENGINEVIEWER_EXPORT quint16 minorVersion();
 WEBENGINEVIEWER_EXPORT quint16 majorVersion();
 WEBENGINEVIEWER_EXPORT double convertToSecond(QString str);

@@ -47,6 +47,11 @@ quint16 CheckPhishingUrlUtil::minorVersion()
     return 0;
 }
 
+QString CheckPhishingUrlUtil::configFileName()
+{
+    return QStringLiteral("phishingurlrc");
+}
+
 double CheckPhishingUrlUtil::convertToSecond(QString str)
 {
     QString minimumDuration = str;
