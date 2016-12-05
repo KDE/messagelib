@@ -33,6 +33,8 @@ private Q_SLOTS:
 
     void shouldAddValue_data();
     void shouldAddValue();
+
+    void shouldStoreValues();
 };
 
 #endif // CHECKPHISHINGURLCACHETEST_H
