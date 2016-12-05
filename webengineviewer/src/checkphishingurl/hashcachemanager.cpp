@@ -55,15 +55,23 @@ public:
     void clearCache();
     void save();
     void load();
+    void addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration);
 private:
-    QList<HashCacheInfo> mMalwareList;
-    QList<HashCacheInfo> mOkList;
+    void clear();
+
+    QMap<QByteArray, HashCacheInfo> mMalwareList;
+    QMap<QByteArray, HashCacheInfo> mOkList;
 };
 
-void HashCacheManagerPrivate::clearCache()
+void HashCacheManagerPrivate::clear()
 {
     mMalwareList.clear();
     mOkList.clear();
+}
+
+void HashCacheManagerPrivate::clearCache()
+{
+    clear();
     save();
 }
 
@@ -74,7 +82,22 @@ void HashCacheManagerPrivate::save()
 
 void HashCacheManagerPrivate::load()
 {
+    clear();
     //TODO
+}
+
+void HashCacheManagerPrivate::addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration)
+{
+    switch(status) {
+    case HashCacheManager::UrlOk:
+        break;
+    case HashCacheManager::MalWare:
+        break;
+    case HashCacheManager::Unknown:
+        qCWarning(WEBENGINEVIEWER_LOG()) << "HashCacheManagerPrivate::addHashStatus unknow status detected!";
+        return;
+    }
+    save();
 }
 
 HashCacheManager *HashCacheManager::self()
@@ -97,4 +120,9 @@ HashCacheManager::~HashCacheManager()
 void HashCacheManager::clearCache()
 {
     d->clearCache();
+}
+
+void HashCacheManager::addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration)
+{
+    d->addHashStatus(hash, status, cacheDuration);
 }

@@ -44,6 +44,8 @@ public:
 
     void clearCache();
 
+    void addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration);
+
 private:
     HashCacheManagerPrivate *const d;
 };
