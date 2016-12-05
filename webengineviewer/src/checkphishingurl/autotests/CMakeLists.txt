@@ -69,7 +69,7 @@ ecm_add_test(riceencodingdecodertest.cpp ../riceencodingdecoder.cpp ${testwebeng
 ecm_add_test(hashcachemanagertest.cpp ../hashcachemanager.cpp ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME hashcachemanagertest
     NAME_PREFIX "webengineview-hashcachemanagertest-"
-    LINK_LIBRARIES Qt5::Test
+    LINK_LIBRARIES Qt5::Test KF5::ConfigCore
     )
 
 ecm_add_test(checkphishingurlutiltest.cpp ../checkphishingurlutil.cpp ${testwebengineviewer_webengine_common_SRCS}

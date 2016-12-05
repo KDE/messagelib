@@ -18,10 +18,41 @@
 */
 
 #include "hashcachemanager.h"
+#include "webengineviewer_debug.h"
+#include "checkphishingurlutil.h"
+#include <KConfig>
+#include <KConfigGroup>
 
 using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(HashCacheManager, s_hashCacheManager)
+
+class WebEngineViewer::HashCacheManagerPrivate
+{
+public:
+    HashCacheManagerPrivate()
+    {
+
+    }
+    void clearCache();
+    void save();
+    void load();
+};
+
+void HashCacheManagerPrivate::clearCache()
+{
+    //TODO
+}
+
+void HashCacheManagerPrivate::save()
+{
+    //TODO
+}
+
+void HashCacheManagerPrivate::load()
+{
+    //TODO
+}
 
 HashCacheManager *HashCacheManager::self()
 {
@@ -29,13 +60,18 @@ HashCacheManager *HashCacheManager::self()
 }
 
 HashCacheManager::HashCacheManager(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      d(new HashCacheManagerPrivate)
 {
 
 }
 
 HashCacheManager::~HashCacheManager()
 {
-
+    delete d;
 }
 
+void HashCacheManager::clearCache()
+{
+    d->clearCache();
+}

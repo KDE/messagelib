@@ -26,16 +26,28 @@
 
 namespace WebEngineViewer
 {
+class HashCacheManagerPrivate;
 //https://developers.google.com/safe-browsing/v4/caching
 class WEBENGINEVIEWER_EXPORT HashCacheManager : public QObject
 {
     Q_OBJECT
 public:
+    enum UrlStatus {
+        UrlOk = 0,
+        MalWare = 1,
+        Unknown = 2
+    };
     explicit HashCacheManager(QObject *parent = Q_NULLPTR);
     ~HashCacheManager();
 
     static HashCacheManager *self();
+
+    void clearCache();
+
+private:
+    HashCacheManagerPrivate *const d;
 };
 }
 
+Q_DECLARE_METATYPE(WebEngineViewer::HashCacheManager::UrlStatus)
 #endif // HASHCACHEMANAGER_H
