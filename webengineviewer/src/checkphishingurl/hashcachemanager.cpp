@@ -27,21 +27,44 @@ using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(HashCacheManager, s_hashCacheManager)
 
+struct HashCacheInfo
+{
+    HashCacheInfo()
+        : status(HashCacheManager::Unknown),
+          verifyCacheAfterThisTime(0)
+    {
+
+    }
+    bool isValid() const;
+    HashCacheManager::UrlStatus status;
+    uint verifyCacheAfterThisTime;
+};
+
+bool HashCacheInfo::isValid() const
+{
+    return (status != HashCacheManager::Unknown);
+}
+
 class WebEngineViewer::HashCacheManagerPrivate
 {
 public:
     HashCacheManagerPrivate()
     {
-
+        load();
     }
     void clearCache();
     void save();
     void load();
+private:
+    QList<HashCacheInfo> mMalwareList;
+    QList<HashCacheInfo> mOkList;
 };
 
 void HashCacheManagerPrivate::clearCache()
 {
-    //TODO
+    mMalwareList.clear();
+    mOkList.clear();
+    save();
 }
 
 void HashCacheManagerPrivate::save()
