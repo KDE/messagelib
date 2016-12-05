@@ -66,7 +66,7 @@ ecm_add_test(riceencodingdecodertest.cpp ../riceencodingdecoder.cpp ${testwebeng
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
 
-ecm_add_test(hashcachemanagertest.cpp ../hashcachemanager.cpp ${testwebengineviewer_webengine_common_SRCS}
+ecm_add_test(hashcachemanagertest.cpp ../hashcachemanager.cpp ../checkphishingurlutil.cpp ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME hashcachemanagertest
     NAME_PREFIX "webengineview-hashcachemanagertest-"
     LINK_LIBRARIES Qt5::Test KF5::ConfigCore
@@ -82,4 +82,10 @@ ecm_add_test(checkphishingurlcachetest.cpp ../checkphishingurlcache.cpp ../check
     TEST_NAME checkphishingurlcachetest
     NAME_PREFIX "webengineview-checkphishingurlcachetest-"
     LINK_LIBRARIES Qt5::Test KF5::ConfigCore
+    )
+
+ecm_add_test(backoffmodemanagertest.cpp ../backoffmodemanager.cpp ../checkphishingurlutil.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME backoffmodemanagertest
+    NAME_PREFIX "webengineview-backoffmodemanagertest-"
+    LINK_LIBRARIES Qt5::Test
     )

@@ -44,6 +44,7 @@ set(libwebengineviewer_checkphishingurl_SRCS
    checkphishingurl/riceencodingdecoder.cpp
    checkphishingurl/urlhashing.cpp
    checkphishingurl/hashcachemanager.cpp
+   checkphishingurl/backoffmodemanager.cpp
    )
 
 set(libwebengineviewer_interceptor_SRCS
