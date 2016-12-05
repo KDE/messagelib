@@ -31,6 +31,9 @@ public:
 private Q_SLOTS:
     void shouldConvertToSecond_data();
     void shouldConvertToSecond();
+
+    void shouldCacheIsStillValid_data();
+    void shouldCacheIsStillValid();
 };
 
 #endif // CHECKPHISHINGURLUTILTEST_H

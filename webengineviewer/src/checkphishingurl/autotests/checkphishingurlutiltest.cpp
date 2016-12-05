@@ -49,4 +49,20 @@ void CheckPhishingUrlUtilTest::shouldConvertToSecond()
     QCOMPARE(WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(value), result);
 }
 
+void CheckPhishingUrlUtilTest::shouldCacheIsStillValid_data()
+{
+    QTest::addColumn<double>("second");
+    QTest::addColumn<bool>("valid");
+    double currentTime = QDateTime::currentDateTime().toTime_t();
+    QTest::newRow("valid") << (currentTime + 2000) << true;
+    QTest::newRow("invalid") << (currentTime - 2000) << false;
+}
+
+void CheckPhishingUrlUtilTest::shouldCacheIsStillValid()
+{
+    QFETCH(double, second);
+    QFETCH(bool, valid);
+    QCOMPARE(WebEngineViewer::CheckPhishingUrlUtil::cachedValueStillValid(second), valid);
+}
+
 QTEST_MAIN(CheckPhishingUrlUtilTest)
