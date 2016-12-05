@@ -107,9 +107,10 @@ void CheckPhishingUrlCachePrivate::save()
     QMapIterator<QUrl, UrlCacheInfo> i(mCacheCheckedUrl);
     while (i.hasNext()) {
         i.next();
-        if (i.value().isMalWare() && WebEngineViewer::CheckPhishingUrlUtil::cachedValueStillValid(i.value().verifyCacheAfterThisTime)) {
+        const UrlCacheInfo info = i.value();
+        if (info.isMalWare() && WebEngineViewer::CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
             listMalware.append(i.key());
-            listMalwareCachedTime.append(i.value().verifyCacheAfterThisTime);
+            listMalwareCachedTime.append(info.verifyCacheAfterThisTime);
         }
     }
     grp.writeEntry("Url", listMalware);
@@ -119,7 +120,7 @@ void CheckPhishingUrlCachePrivate::save()
 
 CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const QUrl &url)
 {
-    UrlCacheInfo info = mCacheCheckedUrl.value(url, UrlCacheInfo());
+    const UrlCacheInfo info = mCacheCheckedUrl.value(url, UrlCacheInfo());
     if (info.isValid()) {
         if (info.verifyCacheAfterThisTime > 0) {
             if (CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
@@ -141,6 +142,9 @@ void CheckPhishingUrlCachePrivate::setCheckingUrlResult(const QUrl &url, bool co
     info.status = correctUrl ? CheckPhishingUrlCache::UrlOk : CheckPhishingUrlCache::MalWare;
     info.verifyCacheAfterThisTime = correctUrl ? 0 : verifyCacheAfterThisTime;
     mCacheCheckedUrl.insert(url, info);
+    if (info.status == CheckPhishingUrlCache::MalWare) {
+        save();
+    }
 }
 
 CheckPhishingUrlCache::CheckPhishingUrlCache(QObject *parent)
