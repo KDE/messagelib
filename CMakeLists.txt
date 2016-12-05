@@ -50,6 +50,8 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
+include(ECMCoverageOption)
+include(ECMEnableSanitizers)
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Gui Test)
 
