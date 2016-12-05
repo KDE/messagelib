@@ -77,3 +77,9 @@ ecm_add_test(checkphishingurlutiltest.cpp ../checkphishingurlutil.cpp ${testwebe
     NAME_PREFIX "webengineview-checkphishingurlutiltest-"
     LINK_LIBRARIES Qt5::Test
     )
+
+ecm_add_test(checkphishingurlcachetest.cpp ../checkphishingurlcache.cpp ../checkphishingurlutil.cpp ${testwebengineviewer_webengine_common_SRCS}
+    TEST_NAME checkphishingurlcachetest
+    NAME_PREFIX "webengineview-checkphishingurlcachetest-"
+    LINK_LIBRARIES Qt5::Test KF5::ConfigCore
+    )
