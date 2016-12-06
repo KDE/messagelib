@@ -34,6 +34,7 @@ public:
     ~BackOffModeManager();
 
     static BackOffModeManager *self();
+    bool isInOffMode() const;
 private:
     BackOffModeManagerPrivate *const d;
 };

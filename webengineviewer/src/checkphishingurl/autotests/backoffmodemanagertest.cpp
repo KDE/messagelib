@@ -18,6 +18,7 @@
 */
 
 #include "backoffmodemanagertest.h"
+#include "../backoffmodemanager.h"
 #include <QTest>
 
 BackOffModeManagerTest::BackOffModeManagerTest(QObject *parent)
@@ -29,6 +30,12 @@ BackOffModeManagerTest::BackOffModeManagerTest(QObject *parent)
 BackOffModeManagerTest::~BackOffModeManagerTest()
 {
 
+}
+
+void BackOffModeManagerTest::shouldHaveDefaultValue()
+{
+    WebEngineViewer::BackOffModeManager manager;
+    QVERIFY(!manager.isInOffMode());
 }
 
 QTEST_MAIN(BackOffModeManagerTest)

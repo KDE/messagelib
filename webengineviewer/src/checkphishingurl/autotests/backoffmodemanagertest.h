@@ -28,6 +28,8 @@ class BackOffModeManagerTest : public QObject
 public:
     explicit BackOffModeManagerTest(QObject *parent = Q_NULLPTR);
     ~BackOffModeManagerTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // BACKOFFMODEMANAGERTEST_H

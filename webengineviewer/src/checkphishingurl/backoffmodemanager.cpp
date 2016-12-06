@@ -28,9 +28,11 @@ class WebEngineViewer::BackOffModeManagerPrivate
 {
 public:
     BackOffModeManagerPrivate()
+        : isInOffMode(false)
     {
 
     }
+    bool isInOffMode;
 };
 
 BackOffModeManager::BackOffModeManager(QObject *parent)
@@ -48,4 +50,9 @@ BackOffModeManager::~BackOffModeManager()
 BackOffModeManager *BackOffModeManager::self()
 {
     return s_backOffModeManager;
+}
+
+bool BackOffModeManager::isInOffMode() const
+{
+    return d->isInOffMode;
 }
