@@ -19,6 +19,7 @@
 
 
 #include "backoffmodemanager.h"
+#include "webengineviewer_debug.h"
 
 using namespace WebEngineViewer;
 
@@ -27,17 +28,27 @@ Q_GLOBAL_STATIC(BackOffModeManager, s_backOffModeManager)
 class WebEngineViewer::BackOffModeManagerPrivate
 {
 public:
-    BackOffModeManagerPrivate()
+    BackOffModeManagerPrivate(BackOffModeManager *qq)
         : isInOffMode(false)
+        , q(qq)
     {
 
     }
+    void startOffMode();
     bool isInOffMode;
+    BackOffModeManager *q;
 };
+
+void BackOffModeManagerPrivate::startOffMode()
+{
+    qCWarning(WEBENGINEVIEWER_LOG) << "starting back of mode";
+    isInOffMode = true;
+    //TODO add timer here.
+}
 
 BackOffModeManager::BackOffModeManager(QObject *parent)
     : QObject(parent),
-      d(new BackOffModeManagerPrivate)
+      d(new BackOffModeManagerPrivate(this))
 {
 
 }
@@ -59,6 +70,6 @@ bool BackOffModeManager::isInOffMode() const
 
 void BackOffModeManager::startOffMode()
 {
-    d->isInOffMode = true;
-    //TODO
+    d->startOffMode();
 }
+
