@@ -24,16 +24,6 @@
 #include <QStandardPaths>
 #include <QTest>
 
-QByteArray readJsonFile(const QString &jsonFile)
-{
-    QFile file(QLatin1String(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
-    file.open(QIODevice::ReadOnly);
-    Q_ASSERT(file.isOpen());
-    const QByteArray data = file.readAll();
-    Q_ASSERT(!data.isEmpty());
-    return data;
-}
-
 LocalDataBaseFileTest::LocalDataBaseFileTest(QObject *parent)
     : QObject(parent)
 {
