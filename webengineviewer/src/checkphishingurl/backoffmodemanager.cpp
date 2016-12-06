@@ -44,8 +44,8 @@ public:
 
 void BackOffModeManagerPrivate::startOffMode()
 {
-    qCWarning(WEBENGINEVIEWER_LOG) << "starting back of mode";
     if (!isInOffMode) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "starting back of mode";
         isInOffMode = true;
     }
     mNumberOfHttpFailed++;

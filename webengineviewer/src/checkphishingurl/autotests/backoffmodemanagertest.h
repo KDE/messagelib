@@ -31,6 +31,8 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldStartBackOffMode();
+
+    void shouldIncreaseBackOff();
 };
 
 #endif // BACKOFFMODEMANAGERTEST_H
