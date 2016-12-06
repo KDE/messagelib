@@ -66,5 +66,5 @@ private:
     CheckPhishingUrlJobPrivate *const d;
 };
 }
-
+Q_DECLARE_METATYPE(WebEngineViewer::CheckPhishingUrlJob::UrlStatus)
 #endif // CHECKPHISHINGURLJOB_H
