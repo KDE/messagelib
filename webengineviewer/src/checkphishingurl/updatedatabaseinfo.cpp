@@ -177,7 +177,9 @@ bool RiceDeltaEncoding::operator==(const RiceDeltaEncoding &other) const
 
 bool RiceDeltaEncoding::isValid() const
 {
-    if (!firstValue.isEmpty() && !encodingData.isEmpty() && ((riceParameter >= 2 && riceParameter <= 28) || (riceParameter == 0 && numberEntries == 0))) {
+    if (!firstValue.isEmpty() &&
+            !encodingData.isEmpty() &&
+            ((riceParameter >= 2 && riceParameter <= 28) || (riceParameter == 0 && numberEntries == 0))) {
         return true;
     }
     return false;
