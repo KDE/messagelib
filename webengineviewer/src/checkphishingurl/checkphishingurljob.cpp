@@ -63,7 +63,6 @@ void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslEr
 
 void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
 {
-    qDebug() << " reply Str " << replyStr;
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, d->mUrl);
