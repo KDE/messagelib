@@ -61,9 +61,3 @@ void WebEnginePrintMessageBox::slotOpenInBrowser()
     Q_EMIT openInBrowser();
     accept();
 }
-
-void WebEnginePrintMessageBox::slotPrintPreview()
-{
-    Q_EMIT openPrintPreview();
-    accept();
-}

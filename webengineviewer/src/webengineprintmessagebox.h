@@ -32,12 +32,10 @@ public:
     ~WebEnginePrintMessageBox();
 
 Q_SIGNALS:
-    void openPrintPreview();
     void openInBrowser();
 
 private Q_SLOTS:
     void slotOpenInBrowser();
-    void slotPrintPreview();
 };
 }
 #endif // WEBENGINEPRINTMESSAGEBOX_H
