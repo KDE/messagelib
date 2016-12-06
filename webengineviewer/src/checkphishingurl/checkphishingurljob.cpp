@@ -81,8 +81,10 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                 uint verifyCacheAfterThisTime = 0;
                 if (!cacheDuration.isEmpty()) {
                     double cacheDurationValue = WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(cacheDuration);
+                    if (cacheDurationValue > 0) {
+                        verifyCacheAfterThisTime = WebEngineViewer::CheckPhishingUrlUtil::refreshingCacheAfterThisTime(cacheDurationValue);
+                    }
                 }
-                //TODO define verifyCacheAfterThisTime
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
