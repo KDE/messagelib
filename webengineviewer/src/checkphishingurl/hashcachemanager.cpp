@@ -84,8 +84,30 @@ void HashCacheManagerPrivate::save()
     QList<QByteArray> lstOk;
     QList<double> lstOkDuration;
 
+    QMapIterator<QByteArray, HashCacheInfo> i(mHashList);
+    while (i.hasNext()) {
+        i.next();
+        switch(i.value().status) {
+        case HashCacheManager::UrlOk: {
+            lstOk << i.key();
+            lstOkDuration << i.value().verifyCacheAfterThisTime;
+            break;
+        }
+        case HashCacheManager::MalWare: {
+            lstMalware << i.key();
+            lstMalwareDuration << i.value().verifyCacheAfterThisTime;
+            break;
+        }
+        case HashCacheManager::Unknown:
+            break;
+        }
+    }
+    grp.writeEntry("malware", lstMalware);
+    grp.writeEntry("malwareCacheDuration", lstMalwareDuration);
 
-    //TODO
+    grp.writeEntry("safe", lstOk);
+    grp.writeEntry("safeCacheDuration", lstOkDuration);
+    grp.sync();
 }
 
 void HashCacheManagerPrivate::load()
@@ -107,7 +129,25 @@ void HashCacheManagerPrivate::load()
         return;
     }
 
-    //TODO
+    const int nb(lstOk.count());
+    for (int i = 0; i < nb; ++i) {
+        HashCacheInfo info;
+        info.status = HashCacheManager::UrlOk;
+        info.verifyCacheAfterThisTime = lstOkDuration.at(i);
+        if (info.isValid()) {
+            mHashList.insert(lstOk.at(i), info);
+        }
+    }
+
+    const int nb2(lstMalware.count());
+    for (int i = 0; i < nb2; ++i) {
+        HashCacheInfo info;
+        info.status = HashCacheManager::MalWare;
+        info.verifyCacheAfterThisTime = lstMalwareDuration.at(i);
+        if (info.isValid()) {
+            mHashList.insert(lstMalware.at(i), info);
+        }
+    }
 }
 
 HashCacheManager::UrlStatus HashCacheManagerPrivate::hashStatus(const QByteArray &hash)

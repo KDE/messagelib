@@ -28,6 +28,12 @@ class HashCacheManagerTest : public QObject
 public:
     explicit HashCacheManagerTest(QObject *parent = Q_NULLPTR);
     ~HashCacheManagerTest();
+private Q_SLOTS:
+    void shouldBeUnknowByDefault();
+
+    void shouldAddValue_data();
+    void shouldAddValue();
+
 };
 
 #endif // HASHCACHEMANAGERTEST_H
