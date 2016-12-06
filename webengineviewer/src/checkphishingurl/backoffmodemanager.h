@@ -37,6 +37,9 @@ public:
     bool isInOffMode() const;
 
     void startOffMode();
+
+    int numberOfHttpFailed() const;
+
 private:
     BackOffModeManagerPrivate *const d;
 };

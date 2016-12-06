@@ -36,6 +36,7 @@ void BackOffModeManagerTest::shouldHaveDefaultValue()
 {
     WebEngineViewer::BackOffModeManager manager;
     QVERIFY(!manager.isInOffMode());
+    QCOMPARE(manager.numberOfHttpFailed(), 0);
 }
 
 void BackOffModeManagerTest::shouldStartBackOffMode()

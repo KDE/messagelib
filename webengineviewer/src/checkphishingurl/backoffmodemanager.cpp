@@ -29,12 +29,15 @@ class WebEngineViewer::BackOffModeManagerPrivate
 {
 public:
     BackOffModeManagerPrivate(BackOffModeManager *qq)
-        : isInOffMode(false)
-        , q(qq)
+        : mNumberOfHttpFailed(0),
+          isInOffMode(false),
+          q(qq)
     {
 
     }
     void startOffMode();
+    void exitBackOffMode();
+    int mNumberOfHttpFailed;
     bool isInOffMode;
     BackOffModeManager *q;
 };
@@ -42,8 +45,16 @@ public:
 void BackOffModeManagerPrivate::startOffMode()
 {
     qCWarning(WEBENGINEVIEWER_LOG) << "starting back of mode";
-    isInOffMode = true;
+    if (!isInOffMode) {
+        isInOffMode = true;
+    }
+    mNumberOfHttpFailed++;
     //TODO add timer here.
+}
+
+void BackOffModeManagerPrivate::exitBackOffMode()
+{
+    mNumberOfHttpFailed = 0;
 }
 
 BackOffModeManager::BackOffModeManager(QObject *parent)
@@ -73,3 +84,7 @@ void BackOffModeManager::startOffMode()
     d->startOffMode();
 }
 
+int BackOffModeManager::numberOfHttpFailed() const
+{
+    return d->mNumberOfHttpFailed;
+}
