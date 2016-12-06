@@ -22,7 +22,7 @@
 using namespace MessageCore;
 using namespace MessageCore::Util;
 
-KMime::Message::Ptr MessageCore::Util::message(const Akonadi::Item &item)
+KMime::Message::Ptr message(const Akonadi::Item &item)
 {
     if (!item.hasPayload<KMime::Message::Ptr>()) {
         qCWarning(MESSAGECORE_LOG) << "Payload is not a MessagePtr!";
@@ -32,13 +32,13 @@ KMime::Message::Ptr MessageCore::Util::message(const Akonadi::Item &item)
     return item.payload<KMime::Message::Ptr>();
 }
 
-bool MessageCore::Util::isStandaloneMessage(const Akonadi::Item &item)
+bool isStandaloneMessage(const Akonadi::Item &item)
 {
     // standalone message have a valid payload, but are not, themselves valid items
     return item.hasPayload<KMime::Message::Ptr>() && !item.isValid();
 }
 
-void MessageCore::Util::addLinkInformation(const KMime::Message::Ptr &msg, Akonadi::Item::Id id, Akonadi::MessageStatus status)
+void addLinkInformation(const KMime::Message::Ptr &msg, Akonadi::Item::Id id, Akonadi::MessageStatus status)
 {
     Q_ASSERT(status.isReplied() || status.isForwarded() || status.isDeleted());
 
@@ -74,7 +74,7 @@ void MessageCore::Util::addLinkInformation(const KMime::Message::Ptr &msg, Akona
     msg->setHeader(header);
 }
 
-bool MessageCore::Util::getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status)
+bool getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status)
 {
     auto hrdLinkMsg = msg->headerByType("X-KMail-Link-Message");
     auto hrdLinkType = msg->headerByType("X-KMail-Link-Type");
