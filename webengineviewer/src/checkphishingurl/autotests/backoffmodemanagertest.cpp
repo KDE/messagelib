@@ -38,4 +38,11 @@ void BackOffModeManagerTest::shouldHaveDefaultValue()
     QVERIFY(!manager.isInOffMode());
 }
 
+void BackOffModeManagerTest::shouldStartBackOffMode()
+{
+    WebEngineViewer::BackOffModeManager manager;
+    manager.startOffMode();
+    QVERIFY(manager.isInOffMode());
+}
+
 QTEST_MAIN(BackOffModeManagerTest)

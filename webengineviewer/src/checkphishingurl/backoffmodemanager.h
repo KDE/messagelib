@@ -35,6 +35,8 @@ public:
 
     static BackOffModeManager *self();
     bool isInOffMode() const;
+
+    void startOffMode();
 private:
     BackOffModeManagerPrivate *const d;
 };

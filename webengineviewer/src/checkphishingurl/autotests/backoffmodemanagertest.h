@@ -30,6 +30,7 @@ public:
     ~BackOffModeManagerTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldStartBackOffMode();
 };
 
 #endif // BACKOFFMODEMANAGERTEST_H

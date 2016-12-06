@@ -56,3 +56,9 @@ bool BackOffModeManager::isInOffMode() const
 {
     return d->isInOffMode;
 }
+
+void BackOffModeManager::startOffMode()
+{
+    d->isInOffMode = true;
+    //TODO
+}
