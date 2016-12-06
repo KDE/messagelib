@@ -93,6 +93,20 @@ void HashCacheManagerPrivate::load()
     clear();
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("Hash"));
+    QList<QByteArray> lstMalware = grp.readEntry("malware", QList<QByteArray>());
+    QList<double> lstMalwareDuration = grp.readEntry("malwareCacheDuration", QList<double>());
+
+    QList<QByteArray> lstOk = grp.readEntry("safe", QList<QByteArray>());
+    QList<double> lstOkDuration = grp.readEntry("safeCacheDuration", QList<double>());
+    if (lstMalware.count() != lstMalwareDuration.count()) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "unsafe url: HashCacheManagerPrivate invalid number of data stored";
+        return;
+    }
+    if (lstOk.count() != lstOkDuration.count()) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "safe url: HashCacheManagerPrivate invalid number of data stored";
+        return;
+    }
+
     //TODO
 }
 
