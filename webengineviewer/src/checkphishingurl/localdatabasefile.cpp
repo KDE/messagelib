@@ -204,6 +204,7 @@ QVector<WebEngineViewer::Addition> LocalDataBaseFile::extractAllInfo() const
         Addition tmp;
         tmp.hashString = QByteArray(getCharStar(value));
         tmp.prefixSize = tmp.hashString.size();
+        tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
         index += 8; //next index based on quint64
         lst.append(tmp);
     }
