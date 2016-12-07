@@ -122,7 +122,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
 
 void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
 {
-    qDebug() << " void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)" << fullUpdate;
+    qCDebug(WEBENGINEVIEWER_LOG) << " void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)" << fullUpdate;
     mFile.setFileName(mFileName);
     if (fullUpdate) {
         if (mFile.exists() && !mFile.remove()) {
