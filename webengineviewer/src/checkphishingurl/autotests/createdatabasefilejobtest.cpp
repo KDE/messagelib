@@ -139,10 +139,12 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
     WebEngineViewer::Addition c;
     c.hashString = QByteArray("mnopqrst");
     c.prefixSize = 4;
+    c.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition b;
     b.hashString = QByteArray("uvwx");
     b.prefixSize = 4;
+    b.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     lstAdditions << c << b;
 
@@ -186,18 +188,22 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     WebEngineViewer::Addition a;
     a.hashString = QByteArray("----1111bbbb");
     a.prefixSize = 4;
+    a.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition b;
     b.hashString = QByteArray("abcdefgh");
     b.prefixSize = 4;
+    b.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition c;
     c.hashString = QByteArray("54321abcde");
     c.prefixSize = 5;
+    c.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition d;
     d.hashString = QByteArray("22222bcdef");
     d.prefixSize = 5;
+    d.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     QVector<WebEngineViewer::Addition> lst;
     lst << a << b << c << d;
@@ -265,6 +271,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     // we will remove QByteArrayLiteral("22222"); QByteArrayLiteral("54321"); QByteArrayLiteral("abcd");
     WebEngineViewer::Removal r;
     r.indexes = listElementToRemove;
+    r.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     // Proof of checksum validity using python:
     // >>> import hashlib
@@ -315,18 +322,22 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
     WebEngineViewer::Addition a;
     a.hashString = QByteArray("----1111bbbb");
     a.prefixSize = 4;
+    a.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition b;
     b.hashString = QByteArray("abcdefgh");
     b.prefixSize = 4;
+    b.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition c;
     c.hashString = QByteArray("54321abcde");
     c.prefixSize = 5;
+    c.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition d;
     d.hashString = QByteArray("22222bcdef");
     d.prefixSize = 5;
+    d.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     QVector<WebEngineViewer::Addition> lst;
     lst << a << b << c << d;
