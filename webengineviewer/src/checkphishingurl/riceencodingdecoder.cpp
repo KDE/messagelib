@@ -1,6 +1,8 @@
 /*
    Copyright (C) 2016 Laurent Montel <montel@kde.org>
 
+   Code based in v4_rice.cc
+
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
    License as published by the Free Software Foundation; either
@@ -51,21 +53,22 @@ QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &r
 
     RiceDecoder decoder(riceDeltaEncoding.riceParameter, riceDeltaEncoding.numberEntries, riceDeltaEncoding.encodingData);
     int lastValue(firstValue);
+    bool result = false;
     while (decoder.hasOtherEntries()) {
         uint32_t offset;
-#if 0
-        result = decoder.GetNextValue(&offset);
-        if (result != DECODE_SUCCESS) {
-            return result;
+        result = decoder.nextValue(&offset);
+        if (!result) {
+            return QList<int>();
         }
-
         lastValue += offset;
+#if 0
+
         if (!last_value.IsValid()) {
-            return DECODED_INTEGER_OVERFLOW_FAILURE;
+            return false;
         }
+#endif
 
         list << lastValue;
-#endif
     }
     return list;
 }
@@ -99,112 +102,109 @@ bool RiceDecoder::hasOtherEntries() const
     return (mNumberEntries > 0);
 }
 
-void RiceDecoder::nextValue(uint32_t* value)
+bool RiceDecoder::nextValue(uint32_t* value)
 {
-#if 0
-    if (!HasAnotherValue()) {
-        return DECODE_NO_MORE_ENTRIES_FAILURE;
+    if (!hasOtherEntries()) {
+        return false;
     }
-
-    V4DecodeResult result;
+    bool result;
     uint32_t q = 0;
     uint32_t bit;
     do {
         result = nextBits(1, &bit);
-        if (result != DECODE_SUCCESS) {
-            return result;
+        if (!result) {
+            return false;
         }
         q += bit;
     } while (bit);
     uint32_t r = 0;
     result = nextBits(mRiceParameter, &r);
-    if (result != DECODE_SUCCESS) {
-        return result;
+    if (!result) {
+        return false;
     }
 
     *value = (q << mRiceParameter) + r;
     mNumberEntries--;
-    return DECODE_SUCCESS;
-#endif
+    return true;
 }
 
-void RiceDecoder::nextBits(unsigned int num_requested_bits, uint32_t* x)
+bool RiceDecoder::nextBits(unsigned int num_requested_bits, uint32_t* x)
 {
 #if 0
     if (num_requested_bits > kMaxBitIndex) {
-        NOTREACHED();
-        return DECODE_REQUESTED_TOO_MANY_BITS_FAILURE;
+        return false;
     }
 
     if (current_word_bit_index_ == kMaxBitIndex) {
-        V4DecodeResult result = GetNextWord(&current_word_);
-        if (result != DECODE_SUCCESS) {
-            return result;
+        bool result = nextWord(&current_word_);
+        if (!result) {
+            return false;
         }
     }
 
-    unsigned int num_bits_left_in_current_word =
-            kMaxBitIndex - current_word_bit_index_;
+    unsigned int num_bits_left_in_current_word = kMaxBitIndex - current_word_bit_index_;
     if (num_bits_left_in_current_word >= num_requested_bits) {
         // All the bits that we need are in |current_word_|.
-        *x = GetBitsFromCurrentWord(num_requested_bits);
+        *x = bitsFromCurrentWord(num_requested_bits);
     } else {
         // |current_word_| contains fewer bits than we need so read the remaining
         // bits from |current_word_| into |lower|, and then call nextBits on the
         // remaining number of bits, which will read in a new word into
         // |current_word_|.
-        uint32_t lower = GetBitsFromCurrentWord(num_bits_left_in_current_word);
+        uint32_t lower = bitsFromCurrentWord(num_bits_left_in_current_word);
 
         unsigned int num_bits_from_next_word =
                 num_requested_bits - num_bits_left_in_current_word;
         uint32_t upper;
-        V4DecodeResult result = nextBits(num_bits_from_next_word, &upper);
-        if (result != DECODE_SUCCESS) {
-            return result;
+        bool result = nextBits(num_bits_from_next_word, &upper);
+        if (!result) {
+            return false;
         }
         *x = (upper << num_bits_left_in_current_word) | lower;
     }
-    return DECODE_SUCCESS;
 #endif
+    return false;
 }
 
-#if 0
-V4DecodeResult RiceDecoder::nextWord(uint32_t* word)
+bool RiceDecoder::nextWord(uint32_t* word)
 {
-  if (data_byte_index_ >= data_.size()) {
-    return DECODE_RAN_OUT_OF_BITS_FAILURE;
-  }
+#if 0
+    if (data_byte_index_ >= data_.size()) {
+        return false;
+    }
 
-  const size_t mask = 0xFF;
-  *word = (data_[data_byte_index_] & mask);
-  data_byte_index_++;
-  current_word_bit_index_ = 0;
-
-  if (data_byte_index_ < data_.size()) {
-    *word |= ((data_[data_byte_index_] & mask) << 8);
+    const size_t mask = 0xFF;
+    *word = (data_[data_byte_index_] & mask);
     data_byte_index_++;
+    current_word_bit_index_ = 0;
 
     if (data_byte_index_ < data_.size()) {
-      *word |= ((data_[data_byte_index_] & mask) << 16);
-      data_byte_index_++;
-
-      if (data_byte_index_ < data_.size()) {
-        *word |= ((data_[data_byte_index_] & mask) << 24);
+        *word |= ((data_[data_byte_index_] & mask) << 8);
         data_byte_index_++;
-      }
-    }
-  }
 
-  return DECODE_SUCCESS;
+        if (data_byte_index_ < data_.size()) {
+            *word |= ((data_[data_byte_index_] & mask) << 16);
+            data_byte_index_++;
+
+            if (data_byte_index_ < data_.size()) {
+                *word |= ((data_[data_byte_index_] & mask) << 24);
+                data_byte_index_++;
+            }
+        }
+    }
+#endif
+    return true;
 }
 
-uint32_t RiceDecoder::GetBitsFromCurrentWord(unsigned int num_requested_bits)
+uint32_t RiceDecoder::bitsFromCurrentWord(unsigned int num_requested_bits)
 {
+#if 0
     uint32_t mask = 0xFFFFFFFF >> (kMaxBitIndex - num_requested_bits);
     uint32_t x = current_word_ & mask;
     current_word_ = current_word_ >> num_requested_bits;
     current_word_bit_index_ += num_requested_bits;
     return x;
+#endif
+    return {};
 }
 
-#endif

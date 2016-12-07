@@ -32,8 +32,10 @@ public:
     ~RiceDecoder();
 
     bool hasOtherEntries() const;
-    void nextValue(uint32_t *value);
-    void nextBits(unsigned int num_requested_bits, uint32_t *x);
+    bool nextValue(uint32_t *value);
+    bool nextBits(unsigned int num_requested_bits, uint32_t *x);
+    uint32_t bitsFromCurrentWord(unsigned int num_requested_bits);
+    bool nextWord(uint32_t *word);
 private:
     QByteArray mEncodingData;
     int mRiceParameter;
