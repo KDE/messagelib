@@ -47,6 +47,18 @@ void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()
     result.clear();
     result << 5 << 20 << 29;
     QTest::newRow("test1") << QByteArray("5") << 2 << 2 << QByteArrayLiteral("\xf7\x2") << result;
+
+    result.clear();
+    QTest::newRow("failedempty") << QByteArray("3") << 5 << 1 << QByteArray() << result;
+
+
+    result.clear();
+    //TODO fixme
+    //QTest::newRow("failednegativeentries") << QByteArray("3") << 5 << -1 << QByteArray() << result;
+
+    result.clear();
+    QTest::newRow("failednonpositive") << QByteArray("3") << 0 << 1 << QByteArrayLiteral("a") << result;
+    QTest::newRow("failednonpositive1") << QByteArray("3") << -1 << 1 << QByteArrayLiteral("a") << result;
 }
 
 void RiceEncodingDecoderTest::shouldDecodeRiceIndices()
