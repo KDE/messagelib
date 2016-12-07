@@ -119,7 +119,7 @@ void VerifyDataBaseUpdateTest::shouldVerifyCheckSums()
             itemToStore << tmp;
 
             if (m.size() != add.prefixSize) {
-                qDebug() << "m " << m << " m.size" << m.size();
+                qDebug() << "hashstring: " << m << " hash size: " << m.size();
             }
         }
     }

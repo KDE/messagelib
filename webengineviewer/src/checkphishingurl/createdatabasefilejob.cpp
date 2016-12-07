@@ -73,7 +73,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
                 //We store index as 8 octets.
                 hashStartPosition += 8;
                 if (m.size() != add.prefixSize) {
-                    qCWarning(WEBENGINEVIEWER_LOG) << "m " << m << " m.size" << m.size();
+                    qCWarning(WEBENGINEVIEWER_LOG) << "hash string: " << m << " hash string size: " << m.size();
                 }
             }
             break;
