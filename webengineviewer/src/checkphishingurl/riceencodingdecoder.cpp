@@ -140,7 +140,6 @@ bool RiceDecoder::nextBits(unsigned int numRequestedBits, uint32_t* x)
     if (numRequestedBits > kMaxBitIndex) {
         return false;
     }
-
     if (mCurrentWordBitIndex == kMaxBitIndex) {
         bool result = nextWord(&mCurrentWord);
         if (!result) {
@@ -167,7 +166,7 @@ bool RiceDecoder::nextBits(unsigned int numRequestedBits, uint32_t* x)
         }
         *x = (upper << num_bits_left_in_current_word) | lower;
     }
-    return false;
+    return true;
 }
 
 bool RiceDecoder::nextWord(uint32_t* word)
