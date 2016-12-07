@@ -57,22 +57,35 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     QList<Addition> itemToStore;
     //TODO look at raw or rice! Decode it.
     Q_FOREACH (const Addition &add, additionList) {
-        //qCWarning(WEBENGINEVIEWER_LOG) << " add.size" << add.prefixSize;
-        const QByteArray uncompressed = add.hashString;
-        for (int i = 0; i < uncompressed.size();) {
-            const QByteArray m = uncompressed.mid(i, add.prefixSize);
-            i += add.prefixSize;
+        switch(add.compressionType) {
+        case UpdateDataBaseInfo::RawCompression: {
+            //qCWarning(WEBENGINEVIEWER_LOG) << " add.size" << add.prefixSize;
+            const QByteArray uncompressed = add.hashString;
+            for (int i = 0; i < uncompressed.size();) {
+                const QByteArray m = uncompressed.mid(i, add.prefixSize);
+                i += add.prefixSize;
 
-            Addition tmp;
-            tmp.hashString = m;
-            tmp.prefixSize = add.prefixSize;
-            itemToStore << tmp;
+                Addition tmp;
+                tmp.hashString = m;
+                tmp.prefixSize = add.prefixSize;
+                itemToStore << tmp;
 
-            //We store index as 8 octets.
-            hashStartPosition += 8;
-            if (m.size() != add.prefixSize) {
-                qCWarning(WEBENGINEVIEWER_LOG) << "m " << m << " m.size" << m.size();
+                //We store index as 8 octets.
+                hashStartPosition += 8;
+                if (m.size() != add.prefixSize) {
+                    qCWarning(WEBENGINEVIEWER_LOG) << "m " << m << " m.size" << m.size();
+                }
             }
+            break;
+        }
+        case UpdateDataBaseInfo::RiceCompression: {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Rice compression still not implemented";
+            break;
+        }
+        case UpdateDataBaseInfo::UnknownCompression:
+            qCWarning(WEBENGINEVIEWER_LOG) << "Unknow compression type in addition element";
+            break;
+
         }
     }
     const quint64 numberOfElement = itemToStore.count();
@@ -158,8 +171,21 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Remov
 {
     QList<int> indexToRemove;
     Q_FOREACH (const Removal &removeItem, removalList) {
-        Q_FOREACH (int id, removeItem.indexes) {
-            indexToRemove << id;
+        switch(removeItem.compressionType) {
+        case UpdateDataBaseInfo::RawCompression: {
+            Q_FOREACH (int id, removeItem.indexes) {
+                indexToRemove << id;
+            }
+            break;
+        }
+        case UpdateDataBaseInfo::RiceCompression: {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Rice compression still not implemented in removal element";
+            break;
+        }
+        case UpdateDataBaseInfo::UnknownCompression: {
+            qCWarning(WEBENGINEVIEWER_LOG) << " UnknownCompression defined in removal elements. It's a bug";
+            break;
+        }
         }
     }
 
@@ -173,7 +199,7 @@ void CreateDatabaseFileJobPrivate::createBinaryFile()
 {
     switch (mInfoDataBase.responseType) {
     case UpdateDataBaseInfo::Unknown:
-        //TODO error here
+        qCWarning(WEBENGINEVIEWER_LOG) << " Reponse Type of database info is \"unknow\". It's a bug!";
         break;
     case UpdateDataBaseInfo::FullUpdate:
     case UpdateDataBaseInfo::PartialUpdate:
