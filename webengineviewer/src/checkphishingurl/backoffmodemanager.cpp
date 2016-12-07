@@ -35,12 +35,22 @@ public:
     {
 
     }
+    void calculateBackModeTime();
     void startOffMode();
     void exitBackOffMode();
     int mNumberOfHttpFailed;
     bool isInOffMode;
     BackOffModeManager *q;
 };
+
+void BackOffModeManagerPrivate::calculateBackModeTime()
+{
+    //Random between 0-1
+    float r = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
+
+    //MIN((2**N-1 * 15 minutes) * (RAND + 1), 24 hours)
+    int seconds = static_cast<int>(qMin(((2*mNumberOfHttpFailed) - 1) * (15 * 60) * r, static_cast<float>(24 * 60 * 60)));
+}
 
 void BackOffModeManagerPrivate::startOffMode()
 {
