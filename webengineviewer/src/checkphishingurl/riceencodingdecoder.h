@@ -40,6 +40,20 @@ private:
     QByteArray mEncodingData;
     int mRiceParameter;
     int mNumberEntries;
+
+    // Represents how many total bytes have we read from |data_| into
+    // |mCurrentWord|.
+    int mDataByteIndex;
+
+    // Represents the number of bits that we have read from |mCurrentWord|. When
+    // this becomes 32, which is the size of |mCurrentWord|, a new
+    // |mCurrentWord| needs to be read from |data_|.
+    unsigned int mCurrentWordBitIndex;
+
+    // The 32-bit value read from |data_|. All bit reading operations operate on
+    // |mCurrentWord|.
+    uint32_t mCurrentWord;
+
 };
 
 class WEBENGINEVIEWER_EXPORT RiceEncodingDecoder

@@ -84,12 +84,19 @@ QByteArray RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &r
     return ba;
 }
 
+namespace {
+const int kBitsPerByte = 8;
+const unsigned int kMaxBitIndex = kBitsPerByte * sizeof(uint32_t);
+}
+
 RiceDecoder::RiceDecoder(int riceParameter, int numberEntries, const QByteArray& encodingData)
     : mEncodingData(encodingData),
       mRiceParameter(riceParameter),
-      mNumberEntries(numberEntries)
+      mNumberEntries(numberEntries),
+      mCurrentWord(0)
 {
-
+    mDataByteIndex = 0;
+    mCurrentWordBitIndex = kMaxBitIndex;
 }
 
 RiceDecoder::~RiceDecoder()
@@ -128,33 +135,31 @@ bool RiceDecoder::nextValue(uint32_t* value)
     return true;
 }
 
-bool RiceDecoder::nextBits(unsigned int num_requested_bits, uint32_t* x)
+bool RiceDecoder::nextBits(unsigned int numRequestedBits, uint32_t* x)
 {
-#if 0
-    if (num_requested_bits > kMaxBitIndex) {
+    if (numRequestedBits > kMaxBitIndex) {
         return false;
     }
 
-    if (current_word_bit_index_ == kMaxBitIndex) {
-        bool result = nextWord(&current_word_);
+    if (mCurrentWordBitIndex == kMaxBitIndex) {
+        bool result = nextWord(&mCurrentWord);
         if (!result) {
             return false;
         }
     }
-
-    unsigned int num_bits_left_in_current_word = kMaxBitIndex - current_word_bit_index_;
-    if (num_bits_left_in_current_word >= num_requested_bits) {
-        // All the bits that we need are in |current_word_|.
-        *x = bitsFromCurrentWord(num_requested_bits);
+    unsigned int num_bits_left_in_current_word = kMaxBitIndex - mCurrentWordBitIndex;
+    if (num_bits_left_in_current_word >= numRequestedBits) {
+        // All the bits that we need are in |mCurrentWord|.
+        *x = bitsFromCurrentWord(numRequestedBits);
     } else {
-        // |current_word_| contains fewer bits than we need so read the remaining
-        // bits from |current_word_| into |lower|, and then call nextBits on the
+        // |mCurrentWord| contains fewer bits than we need so read the remaining
+        // bits from |mCurrentWord| into |lower|, and then call nextBits on the
         // remaining number of bits, which will read in a new word into
-        // |current_word_|.
+        // |mCurrentWord|.
         uint32_t lower = bitsFromCurrentWord(num_bits_left_in_current_word);
 
         unsigned int num_bits_from_next_word =
-                num_requested_bits - num_bits_left_in_current_word;
+                numRequestedBits - num_bits_left_in_current_word;
         uint32_t upper;
         bool result = nextBits(num_bits_from_next_word, &upper);
         if (!result) {
@@ -162,49 +167,43 @@ bool RiceDecoder::nextBits(unsigned int num_requested_bits, uint32_t* x)
         }
         *x = (upper << num_bits_left_in_current_word) | lower;
     }
-#endif
     return false;
 }
 
 bool RiceDecoder::nextWord(uint32_t* word)
 {
-#if 0
-    if (data_byte_index_ >= data_.size()) {
+    if (mDataByteIndex >= mEncodingData.size()) {
         return false;
     }
 
     const size_t mask = 0xFF;
-    *word = (data_[data_byte_index_] & mask);
-    data_byte_index_++;
-    current_word_bit_index_ = 0;
+    *word = (mEncodingData[mDataByteIndex] & mask);
+    mDataByteIndex++;
+    mCurrentWordBitIndex = 0;
 
-    if (data_byte_index_ < data_.size()) {
-        *word |= ((data_[data_byte_index_] & mask) << 8);
-        data_byte_index_++;
+    if (mDataByteIndex < mEncodingData.size()) {
+        *word |= ((mEncodingData[mDataByteIndex] & mask) << 8);
+        mDataByteIndex++;
 
-        if (data_byte_index_ < data_.size()) {
-            *word |= ((data_[data_byte_index_] & mask) << 16);
-            data_byte_index_++;
+        if (mDataByteIndex < mEncodingData.size()) {
+            *word |= ((mEncodingData[mDataByteIndex] & mask) << 16);
+            mDataByteIndex++;
 
-            if (data_byte_index_ < data_.size()) {
-                *word |= ((data_[data_byte_index_] & mask) << 24);
-                data_byte_index_++;
+            if (mDataByteIndex < mEncodingData.size()) {
+                *word |= ((mEncodingData[mDataByteIndex] & mask) << 24);
+                mDataByteIndex++;
             }
         }
     }
-#endif
     return true;
 }
 
-uint32_t RiceDecoder::bitsFromCurrentWord(unsigned int num_requested_bits)
+uint32_t RiceDecoder::bitsFromCurrentWord(unsigned int numRequestedBits)
 {
-#if 0
-    uint32_t mask = 0xFFFFFFFF >> (kMaxBitIndex - num_requested_bits);
-    uint32_t x = current_word_ & mask;
-    current_word_ = current_word_ >> num_requested_bits;
-    current_word_bit_index_ += num_requested_bits;
+    uint32_t mask = 0xFFFFFFFF >> (kMaxBitIndex - numRequestedBits);
+    uint32_t x = mCurrentWord & mask;
+    mCurrentWord = mCurrentWord >> numRequestedBits;
+    mCurrentWordBitIndex += numRequestedBits;
     return x;
-#endif
-    return {};
 }
 
