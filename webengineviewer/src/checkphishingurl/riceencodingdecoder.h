@@ -25,19 +25,29 @@
 namespace WebEngineViewer
 {
 //https://developers.google.com/safe-browsing/v4/compression
+class RiceDecoder
+{
+public:
+    RiceDecoder(int riceParameter, int numberEntries, const QByteArray& encodingData);
+    ~RiceDecoder();
+
+    bool hasOtherEntries() const;
+    void nextValue(uint32_t *value);
+    void nextBits(unsigned int num_requested_bits, uint32_t *x);
+private:
+    QByteArray mEncodingData;
+    int mRiceParameter;
+    int mNumberEntries;
+};
+
 class WEBENGINEVIEWER_EXPORT RiceEncodingDecoder
 {
 public:
     RiceEncodingDecoder();
     ~RiceEncodingDecoder();
 
-    void setRiceDeltaEncoding(const RiceDeltaEncoding &riceDeltaEncoding);
-    bool hasOtherEntries() const;
-
-
     static QList<int> decodeRiceIndiceDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
     static QByteArray decodeRiceHashesDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
-private:
 };
 }
 
