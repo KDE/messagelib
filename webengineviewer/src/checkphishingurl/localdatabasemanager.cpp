@@ -92,7 +92,6 @@ LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
       d(new LocalDataBaseManagerPrivate(this))
 
 {
-    initialize();
 }
 
 LocalDataBaseManager::~LocalDataBaseManager()
