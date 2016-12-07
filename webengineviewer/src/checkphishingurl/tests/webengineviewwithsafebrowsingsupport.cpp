@@ -34,7 +34,7 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
     : QWidget(parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
-
+    QStandardPaths::setTestModeEnabled(true);
     WebEngineViewer::LocalDataBaseManager::self()->initialize();
     connect(WebEngineViewer::LocalDataBaseManager::self(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished);
     //Make sure to initialize database
