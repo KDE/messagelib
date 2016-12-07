@@ -35,6 +35,8 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
+    WebEngineViewer::LocalDataBaseManager::self()->initialize();
+    connect(WebEngineViewer::LocalDataBaseManager::self(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished);
     //Make sure to initialize database
     WebEngineViewer::LocalDataBaseManager::self();
     WebEngineViewer::WebEngineView *pageView = new WebEngineViewer::WebEngineView(this);
@@ -56,6 +58,12 @@ WebEngineViewWithSafeBrowsingSupport::~WebEngineViewWithSafeBrowsingSupport()
 void WebEngineViewWithSafeBrowsingSupport::slotUrlClicked(const QUrl &url)
 {
     qDebug() << " url clicked " << url;
+    WebEngineViewer::LocalDataBaseManager::self()->checkUrl(url);
+}
+
+void WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status)
+{
+    qDebug() << " checked url: " << url << " result : " << status;
 }
 
 int main(int argc, char **argv)

@@ -22,6 +22,7 @@
 
 #include <QWidget>
 #include "../searchfullhashjob.h"
+#include <WebEngineViewer/LocalDataBaseManager>
 class QLineEdit;
 class QPlainTextEdit;
 class WebEngineViewWithSafeBrowsingSupport : public QWidget
@@ -33,6 +34,7 @@ public:
 
 private Q_SLOTS:
     void slotUrlClicked(const QUrl &url);
+    void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
 
 private:
     QPlainTextEdit *mDebug;
