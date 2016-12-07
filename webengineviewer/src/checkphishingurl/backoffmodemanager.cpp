@@ -19,6 +19,7 @@
 
 
 #include "backoffmodemanager.h"
+#include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 
 using namespace WebEngineViewer;
@@ -35,7 +36,7 @@ public:
     {
 
     }
-    void calculateBackModeTime();
+    int calculateBackModeTime() const;
     void startOffMode();
     void exitBackOffMode();
     int mNumberOfHttpFailed;
@@ -43,13 +44,9 @@ public:
     BackOffModeManager *q;
 };
 
-void BackOffModeManagerPrivate::calculateBackModeTime()
+int BackOffModeManagerPrivate::calculateBackModeTime() const
 {
-    //Random between 0-1
-    float r = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
-
-    //MIN((2**N-1 * 15 minutes) * (RAND + 1), 24 hours)
-    int seconds = static_cast<int>(qMin(((2*mNumberOfHttpFailed) - 1) * (15 * 60) * r, static_cast<float>(24 * 60 * 60)));
+    return WebEngineViewer::CheckPhishingUrlUtil::generateRandomSecondValue(mNumberOfHttpFailed);
 }
 
 void BackOffModeManagerPrivate::startOffMode()

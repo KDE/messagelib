@@ -82,3 +82,13 @@ bool CheckPhishingUrlUtil::cachedValueStillValid(uint seconds)
 {
     return QDateTime::currentDateTime().toTime_t() < seconds;
 }
+
+int CheckPhishingUrlUtil::generateRandomSecondValue(int numberOfFailed)
+{
+    //Random between 0-1
+    float r = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
+
+    //MIN((2**N-1 * 15 minutes) * (RAND + 1), 24 hours)
+    int seconds = static_cast<int>(qMin(((2*numberOfFailed) - 1) * (15 * 60) * r, static_cast<float>(24 * 60 * 60)));
+    return seconds;
+}
