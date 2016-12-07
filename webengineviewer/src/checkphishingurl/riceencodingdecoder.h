@@ -31,9 +31,13 @@ public:
     RiceEncodingDecoder();
     ~RiceEncodingDecoder();
 
+    void setRiceDeltaEncoding(const RiceDeltaEncoding &riceDeltaEncoding);
+    bool hasOtherEntries() const;
+
+
     static QList<int> decodeRiceIndiceDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
     static QByteArray decodeRiceHashesDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
-
+private:
 };
 }
 

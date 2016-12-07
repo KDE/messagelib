@@ -31,6 +31,17 @@ RiceEncodingDecoder::~RiceEncodingDecoder()
 
 }
 
+void RiceEncodingDecoder::setRiceDeltaEncoding(const RiceDeltaEncoding &riceDeltaEncoding)
+{
+
+}
+
+bool RiceEncodingDecoder::hasOtherEntries() const
+{
+    //TODO
+    return false;
+}
+
 QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
     bool ok;
