@@ -79,7 +79,7 @@ QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &r
     return list;
 }
 
-QByteArray RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
+QList<int> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
 #if 0
     QList<int> list;
@@ -163,8 +163,8 @@ QByteArray RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &r
 #endif
     //TODO
 #endif
-    QByteArray ba;
-    return ba;
+
+    return QList<int>();
 }
 
 RiceDecoder::RiceDecoder(int riceParameter, int numberEntries, const QByteArray &encodingData)
