@@ -21,6 +21,7 @@
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 #include "localdatabasefile.h"
+#include "riceencodingdecoder.h"
 #include <QFileInfo>
 #include <QCryptographicHash>
 
@@ -178,8 +179,8 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Remov
             }
             break;
         }
-        case UpdateDataBaseInfo::RiceCompression: {
-            qCWarning(WEBENGINEVIEWER_LOG) << "Rice compression still not implemented in removal element";
+        case UpdateDataBaseInfo::RiceCompression: {            
+            indexToRemove = WebEngineViewer::RiceEncodingDecoder::decodeRiceIndiceDelta(removeItem.riceDeltaEncoding);
             break;
         }
         case UpdateDataBaseInfo::UnknownCompression: {
