@@ -56,7 +56,6 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
 
     //2 add number of items
     QList<Addition> itemToStore;
-    //TODO look at raw or rice! Decode it.
     Q_FOREACH (const Addition &add, additionList) {
         switch (add.compressionType) {
         case UpdateDataBaseInfo::RawCompression: {
@@ -184,7 +183,7 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Remov
             break;
         }
         case UpdateDataBaseInfo::UnknownCompression: {
-            qCWarning(WEBENGINEVIEWER_LOG) << " UnknownCompression defined in removal elements. It's a bug";
+            qCWarning(WEBENGINEVIEWER_LOG) << " Unknown compression type defined in removal elements. It's a bug!";
             break;
         }
         }
