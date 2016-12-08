@@ -21,7 +21,7 @@
 
 #include "riceencodingdecoder.h"
 #include "webengineviewer_debug.h"
-
+#include <QtEndian>
 namespace
 {
 const int kBitsPerByte = 8;
@@ -49,7 +49,7 @@ QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &r
     quint64 firstValue = riceDeltaEncoding.firstValue.toInt(&ok);
     if (!ok) {
         qCWarning(WEBENGINEVIEWER_LOG) << "First value is not a int value " << riceDeltaEncoding.firstValue;
-        return list;
+        return QList<int>();
     }
     list.reserve(riceDeltaEncoding.numberEntries + 1);
     list << firstValue;
@@ -81,19 +81,25 @@ QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &r
 
 QList<int> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
-#if 0
     QList<int> list;
+    bool ok = false;
+    quint64 firstValue = riceDeltaEncoding.firstValue.toInt(&ok);
+    if (!ok) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "First value is not a int value " << riceDeltaEncoding.firstValue;
+        return list;
+    }
+
     list.reserve(riceDeltaEncoding.numberEntries + 1);
     RiceDecoder decoder(riceDeltaEncoding.riceParameter, riceDeltaEncoding.numberEntries, riceDeltaEncoding.encodingData);
     int lastValue(firstValue);
     bool result = false;
-    list << htonl(lastValue);
+    list << qToBigEndian/*htonl*/(lastValue);
 
     while (decoder.hasOtherEntries()) {
         uint32_t offset;
         result = decoder.nextValue(&offset);
         if (!result) {
-            return false;
+            return QList<int>();
         }
 
         lastValue += offset;
@@ -104,67 +110,23 @@ QList<int> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &r
 #endif
         // This flipping is done so that the decoded uint32 is interpreted
         // correcly as a string of 4 bytes.
-        list << htonl(lastValue);
+        list << qToBigEndian(lastValue); /*htonl*/
     }
 
     // Flipping the bytes, as done above, destroys the sort order. Sort the
     // values back.
-    std::sort(out->begin(), out->end());
+    qSort(list);
 
     QByteArray ba;
     // This flipping is done so that when the vector is interpreted as a string,
     // the bytes are in the correct order.
-    for (size_t i = 0; i < out->size(); i++) {
-        (*out)[i] = ntohl((*out)[i]);
+    QList<int> newList;
+    newList.reserve(list.count());
+    const int listCount(list.count());
+    for (int i = 0; i < listCount; ++i) {
+        newList << qFromLittleEndian(list.at(i));
     }
-
-#if 0
-    V4DecodeResult result =
-        ValidateInput(rice_parameter, num_entries, encoded_data);
-    if (result != DECODE_SUCCESS) {
-        return result;
-    }
-    out->reserve((num_entries + 1));
-
-    base::CheckedNumeric<uint32_t> last_value(first_value);
-    out->push_back(htonl(last_value.ValueOrDie()));
-
-    if (num_entries > 0) {
-        V4RiceDecoder decoder(rice_parameter, num_entries, encoded_data);
-        while (decoder.HasAnotherValue()) {
-            uint32_t offset;
-            result = decoder.GetNextValue(&offset);
-            if (result != DECODE_SUCCESS) {
-                return result;
-            }
-
-            last_value += offset;
-            if (!last_value.IsValid()) {
-                NOTREACHED();
-                return DECODED_INTEGER_OVERFLOW_FAILURE;
-            }
-
-            // This flipping is done so that the decoded uint32 is interpreted
-            // correcly as a string of 4 bytes.
-            out->push_back(htonl(last_value.ValueOrDie()));
-        }
-    }
-
-    // Flipping the bytes, as done above, destroys the sort order. Sort the
-    // values back.
-    std::sort(out->begin(), out->end());
-
-    // This flipping is done so that when the vector is interpreted as a string,
-    // the bytes are in the correct order.
-    for (size_t i = 0; i < out->size(); i++) {
-        (*out)[i] = ntohl((*out)[i]);
-    }
-
-#endif
-    //TODO
-#endif
-
-    return QList<int>();
+    return newList;
 }
 
 RiceDecoder::RiceDecoder(int riceParameter, int numberEntries, const QByteArray &encodingData)
