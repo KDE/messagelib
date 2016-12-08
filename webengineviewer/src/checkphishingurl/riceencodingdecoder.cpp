@@ -79,9 +79,9 @@ QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &r
     return list;
 }
 
-QList<int> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
+QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
-    QList<int> list;
+    QList<quint32> list;
     bool ok = false;
     quint64 firstValue = riceDeltaEncoding.firstValue.toInt(&ok);
     if (!ok) {
@@ -99,7 +99,7 @@ QList<int> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &r
         uint32_t offset;
         result = decoder.nextValue(&offset);
         if (!result) {
-            return QList<int>();
+            return QList<quint32>();
         }
 
         lastValue += offset;
@@ -120,7 +120,7 @@ QList<int> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &r
     QByteArray ba;
     // This flipping is done so that when the vector is interpreted as a string,
     // the bytes are in the correct order.
-    QList<int> newList;
+    QList<quint32> newList;
     newList.reserve(list.count());
     const int listCount(list.count());
     for (int i = 0; i < listCount; ++i) {
