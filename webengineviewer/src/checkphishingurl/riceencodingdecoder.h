@@ -28,7 +28,7 @@ namespace WebEngineViewer
 class RiceDecoder
 {
 public:
-    RiceDecoder(int riceParameter, int numberEntries, const QByteArray& encodingData);
+    RiceDecoder(int riceParameter, int numberEntries, const QByteArray &encodingData);
     ~RiceDecoder();
 
     bool hasOtherEntries() const;

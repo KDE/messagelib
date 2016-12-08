@@ -57,7 +57,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     QList<Addition> itemToStore;
     //TODO look at raw or rice! Decode it.
     Q_FOREACH (const Addition &add, additionList) {
-        switch(add.compressionType) {
+        switch (add.compressionType) {
         case UpdateDataBaseInfo::RawCompression: {
             //qCWarning(WEBENGINEVIEWER_LOG) << " add.size" << add.prefixSize;
             const QByteArray uncompressed = add.hashString;
@@ -171,7 +171,7 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Remov
 {
     QList<int> indexToRemove;
     Q_FOREACH (const Removal &removeItem, removalList) {
-        switch(removeItem.compressionType) {
+        switch (removeItem.compressionType) {
         case UpdateDataBaseInfo::RawCompression: {
             Q_FOREACH (int id, removeItem.indexes) {
                 indexToRemove << id;

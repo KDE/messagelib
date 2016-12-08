@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "backoffmodemanager.h"
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"

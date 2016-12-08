@@ -51,7 +51,6 @@ void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()
     result.clear();
     QTest::newRow("failedempty") << QByteArray("3") << 5 << 1 << QByteArray() << result;
 
-
     result.clear();
     //TODO fixme
     //QTest::newRow("failednegativeentries") << QByteArray("3") << 5 << -1 << QByteArray() << result;

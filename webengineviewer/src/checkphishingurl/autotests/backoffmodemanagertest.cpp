@@ -55,6 +55,4 @@ void BackOffModeManagerTest::shouldIncreaseBackOff()
     QCOMPARE(manager.numberOfHttpFailed(), 5);
 }
 
-
-
 QTEST_MAIN(BackOffModeManagerTest)

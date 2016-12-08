@@ -87,7 +87,7 @@ void HashCacheManagerPrivate::save()
     QMapIterator<QByteArray, HashCacheInfo> i(mHashList);
     while (i.hasNext()) {
         i.next();
-        switch(i.value().status) {
+        switch (i.value().status) {
         case HashCacheManager::UrlOk: {
             lstOk << i.key();
             lstOkDuration << i.value().verifyCacheAfterThisTime;

@@ -79,8 +79,6 @@ QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &r
     return list;
 }
 
-
-
 QByteArray RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
 #if 0
@@ -122,7 +120,7 @@ QByteArray RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &r
 
 #if 0
     V4DecodeResult result =
-            ValidateInput(rice_parameter, num_entries, encoded_data);
+        ValidateInput(rice_parameter, num_entries, encoded_data);
     if (result != DECODE_SUCCESS) {
         return result;
     }
@@ -169,7 +167,7 @@ QByteArray RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &r
     return ba;
 }
 
-RiceDecoder::RiceDecoder(int riceParameter, int numberEntries, const QByteArray& encodingData)
+RiceDecoder::RiceDecoder(int riceParameter, int numberEntries, const QByteArray &encodingData)
     : mEncodingData(encodingData),
       mRiceParameter(riceParameter),
       mNumberEntries(numberEntries),
@@ -189,7 +187,7 @@ bool RiceDecoder::hasOtherEntries() const
     return (mNumberEntries > 0);
 }
 
-bool RiceDecoder::nextValue(uint32_t* value)
+bool RiceDecoder::nextValue(uint32_t *value)
 {
     if (!hasOtherEntries()) {
         return false;
@@ -215,7 +213,7 @@ bool RiceDecoder::nextValue(uint32_t* value)
     return true;
 }
 
-bool RiceDecoder::nextBits(unsigned int numRequestedBits, uint32_t* x)
+bool RiceDecoder::nextBits(unsigned int numRequestedBits, uint32_t *x)
 {
     if (numRequestedBits > kMaxBitIndex) {
         return false;
@@ -238,7 +236,7 @@ bool RiceDecoder::nextBits(unsigned int numRequestedBits, uint32_t* x)
         uint32_t lower = bitsFromCurrentWord(num_bits_left_in_current_word);
 
         unsigned int num_bits_from_next_word =
-                numRequestedBits - num_bits_left_in_current_word;
+            numRequestedBits - num_bits_left_in_current_word;
         uint32_t upper;
         bool result = nextBits(num_bits_from_next_word, &upper);
         if (!result) {
@@ -249,7 +247,7 @@ bool RiceDecoder::nextBits(unsigned int numRequestedBits, uint32_t* x)
     return true;
 }
 
-bool RiceDecoder::nextWord(uint32_t* word)
+bool RiceDecoder::nextWord(uint32_t *word)
 {
     if (mDataByteIndex >= mEncodingData.size()) {
         return false;

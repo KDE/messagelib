@@ -63,5 +63,4 @@ void HashCacheManagerTest::shouldAddValue()
     cache.clearCache();
 }
 
-
 QTEST_MAIN(HashCacheManagerTest)
