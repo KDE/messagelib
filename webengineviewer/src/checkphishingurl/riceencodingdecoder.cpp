@@ -22,6 +22,12 @@
 #include "riceencodingdecoder.h"
 #include "webengineviewer_debug.h"
 
+namespace
+{
+const int kBitsPerByte = 8;
+const unsigned int kMaxBitIndex = kBitsPerByte * sizeof(uint32_t);
+}
+
 using namespace WebEngineViewer;
 RiceEncodingDecoder::RiceEncodingDecoder()
 {
@@ -77,16 +83,90 @@ QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &r
 
 QByteArray RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
+#if 0
     QList<int> list;
     list.reserve(riceDeltaEncoding.numberEntries + 1);
+    RiceDecoder decoder(riceDeltaEncoding.riceParameter, riceDeltaEncoding.numberEntries, riceDeltaEncoding.encodingData);
+    int lastValue(firstValue);
+    bool result = false;
+    list << htonl(lastValue);
+
+    while (decoder.hasOtherEntries()) {
+        uint32_t offset;
+        result = decoder.nextValue(&offset);
+        if (!result) {
+            return false;
+        }
+
+        lastValue += offset;
+#if 0
+        if (!last_value) {
+            return false;
+        }
+#endif
+        // This flipping is done so that the decoded uint32 is interpreted
+        // correcly as a string of 4 bytes.
+        list << htonl(lastValue);
+    }
+
+    // Flipping the bytes, as done above, destroys the sort order. Sort the
+    // values back.
+    std::sort(out->begin(), out->end());
+
+    QByteArray ba;
+    // This flipping is done so that when the vector is interpreted as a string,
+    // the bytes are in the correct order.
+    for (size_t i = 0; i < out->size(); i++) {
+        (*out)[i] = ntohl((*out)[i]);
+    }
+
+#if 0
+    V4DecodeResult result =
+            ValidateInput(rice_parameter, num_entries, encoded_data);
+    if (result != DECODE_SUCCESS) {
+        return result;
+    }
+    out->reserve((num_entries + 1));
+
+    base::CheckedNumeric<uint32_t> last_value(first_value);
+    out->push_back(htonl(last_value.ValueOrDie()));
+
+    if (num_entries > 0) {
+        V4RiceDecoder decoder(rice_parameter, num_entries, encoded_data);
+        while (decoder.HasAnotherValue()) {
+            uint32_t offset;
+            result = decoder.GetNextValue(&offset);
+            if (result != DECODE_SUCCESS) {
+                return result;
+            }
+
+            last_value += offset;
+            if (!last_value.IsValid()) {
+                NOTREACHED();
+                return DECODED_INTEGER_OVERFLOW_FAILURE;
+            }
+
+            // This flipping is done so that the decoded uint32 is interpreted
+            // correcly as a string of 4 bytes.
+            out->push_back(htonl(last_value.ValueOrDie()));
+        }
+    }
+
+    // Flipping the bytes, as done above, destroys the sort order. Sort the
+    // values back.
+    std::sort(out->begin(), out->end());
+
+    // This flipping is done so that when the vector is interpreted as a string,
+    // the bytes are in the correct order.
+    for (size_t i = 0; i < out->size(); i++) {
+        (*out)[i] = ntohl((*out)[i]);
+    }
+
+#endif
     //TODO
+#endif
     QByteArray ba;
     return ba;
-}
-
-namespace {
-const int kBitsPerByte = 8;
-const unsigned int kMaxBitIndex = kBitsPerByte * sizeof(uint32_t);
 }
 
 RiceDecoder::RiceDecoder(int riceParameter, int numberEntries, const QByteArray& encodingData)
