@@ -33,7 +33,7 @@ public:
     ~BackOffModeManager();
 
     static BackOffModeManager *self();
-    bool isInOffMode() const;
+    bool isInBackOffMode() const;
 
     void startOffMode();
 

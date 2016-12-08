@@ -21,6 +21,9 @@
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 
+#include <KConfigGroup>
+#include <KConfig>
+
 using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(BackOffModeManager, s_backOffModeManager)
@@ -33,8 +36,10 @@ public:
           isInOffMode(false),
           q(qq)
     {
-
+        load();
     }
+    void save();
+    void load();
     int calculateBackModeTime() const;
     void startOffMode();
     void exitBackOffMode();
@@ -42,6 +47,16 @@ public:
     bool isInOffMode;
     BackOffModeManager *q;
 };
+
+void BackOffModeManagerPrivate::save()
+{
+    //TODO
+}
+
+void BackOffModeManagerPrivate::load()
+{
+    //TODO
+}
 
 int BackOffModeManagerPrivate::calculateBackModeTime() const
 {
@@ -55,7 +70,9 @@ void BackOffModeManagerPrivate::startOffMode()
         isInOffMode = true;
     }
     mNumberOfHttpFailed++;
+    //TODO Start/restart timer.
     //TODO add timer here.
+    save();
 }
 
 void BackOffModeManagerPrivate::exitBackOffMode()
@@ -80,7 +97,7 @@ BackOffModeManager *BackOffModeManager::self()
     return s_backOffModeManager;
 }
 
-bool BackOffModeManager::isInOffMode() const
+bool BackOffModeManager::isInBackOffMode() const
 {
     return d->isInOffMode;
 }
