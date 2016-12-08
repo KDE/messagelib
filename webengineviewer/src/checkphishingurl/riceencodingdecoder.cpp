@@ -21,7 +21,9 @@
 
 #include "riceencodingdecoder.h"
 #include "webengineviewer_debug.h"
-#include <QtEndian>
+
+#include <netinet/in.h>
+
 namespace
 {
 const int kBitsPerByte = 8;
@@ -39,17 +41,17 @@ RiceEncodingDecoder::~RiceEncodingDecoder()
 
 }
 
-QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &riceDeltaEncoding)
+QList<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &riceDeltaEncoding)
 {
     bool ok;
-    QList<int> list;
+    QList<quint32> list;
     if (riceDeltaEncoding.firstValue.isEmpty()) {
         return list;
     }
     quint64 firstValue = riceDeltaEncoding.firstValue.toInt(&ok);
     if (!ok) {
         qCWarning(WEBENGINEVIEWER_LOG) << "First value is not a int value " << riceDeltaEncoding.firstValue;
-        return QList<int>();
+        return QList<quint32>();
     }
     list.reserve(riceDeltaEncoding.numberEntries + 1);
     list << firstValue;
@@ -61,10 +63,10 @@ QList<int> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &r
     int lastValue(firstValue);
     bool result = false;
     while (decoder.hasOtherEntries()) {
-        uint32_t offset;
+        quint32 offset;
         result = decoder.nextValue(&offset);
         if (!result) {
-            return QList<int>();
+            return QList<quint32>();
         }
         lastValue += offset;
 #if 0
@@ -93,10 +95,10 @@ QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncodin
     RiceDecoder decoder(riceDeltaEncoding.riceParameter, riceDeltaEncoding.numberEntries, riceDeltaEncoding.encodingData);
     int lastValue(firstValue);
     bool result = false;
-    list << qToBigEndian/*htonl*/(lastValue);
+    list << htonl(lastValue);
 
     while (decoder.hasOtherEntries()) {
-        uint32_t offset;
+        quint32 offset;
         result = decoder.nextValue(&offset);
         if (!result) {
             return QList<quint32>();
@@ -110,21 +112,20 @@ QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncodin
 #endif
         // This flipping is done so that the decoded uint32 is interpreted
         // correcly as a string of 4 bytes.
-        list << qToBigEndian(lastValue); /*htonl*/
+        list << htonl(lastValue);
     }
 
     // Flipping the bytes, as done above, destroys the sort order. Sort the
     // values back.
     qSort(list);
 
-    QByteArray ba;
     // This flipping is done so that when the vector is interpreted as a string,
     // the bytes are in the correct order.
     QList<quint32> newList;
     newList.reserve(list.count());
     const int listCount(list.count());
     for (int i = 0; i < listCount; ++i) {
-        newList << qFromLittleEndian(list.at(i));
+        newList << ntohl(list.at(i));
     }
     return newList;
 }

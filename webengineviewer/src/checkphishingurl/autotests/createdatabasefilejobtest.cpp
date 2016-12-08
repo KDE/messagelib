@@ -107,12 +107,12 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
 
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
 {
-    QTest::addColumn<QList<int> >("listElementToRemove");
+    QTest::addColumn<QList<quint32> >("listElementToRemove");
     QTest::addColumn<QVector<WebEngineViewer::Addition> >("listElementToAdd");
     QTest::addColumn<QByteArray>("newssha");
     QTest::addColumn<bool>("success");
     QVector<WebEngineViewer::Addition> lstAdditions;
-    QList<int> r = { 2, 3, 4};
+    QList<quint32> r = { 2, 3, 4};
     QTest::newRow("correctdatabase") << r << lstAdditions << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
     r = {3, 2, 4};
     QTest::newRow("correctdatabaseotherorder") << r << lstAdditions << QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=") << true;
@@ -165,7 +165,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase_data()
 
 void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 {
-    QFETCH(QList<int>, listElementToRemove);
+    QFETCH(QList<quint32>, listElementToRemove);
     QFETCH(QVector<WebEngineViewer::Addition>, listElementToAdd);
     QFETCH(QByteArray, newssha);
     QFETCH(bool, success);

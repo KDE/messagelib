@@ -111,6 +111,41 @@ void UrlHashingTest::shouldCanonicalizeUrl_data()
 
 }
 
+void UrlHashingTest::shouldGenerateHostPath_data()
+{
+    QTest::addColumn<QString>("input");
+    QTest::addColumn<QStringList>("hosts");
+    QTest::addColumn<QStringList>("paths");
+    QTest::newRow("empty") << QString() << QStringList() << QStringList();
+    QStringList hosts;
+    QStringList paths;
+    hosts << QStringLiteral("b.c") << QStringLiteral("a.b.c");
+    paths << QStringLiteral("/1/2.html?param=1") << QStringLiteral("/1/2.html") << QStringLiteral("/1/") << QStringLiteral("/");
+    QTest::newRow("http://a.b.c/1/2.html?param=1") << QStringLiteral("http://a.b.c/1/2.html?param=1") << hosts << paths;
+    hosts.clear();
+    paths.clear();
+    hosts << QStringLiteral("f.g") << QStringLiteral("e.f.g") << QStringLiteral("d.e.f.g") << QStringLiteral("c.d.e.f.g") << QStringLiteral("a.b.c.d.e.f.g");
+    paths << QStringLiteral("/1.html") << QStringLiteral("/");
+    QTest::newRow("http://a.b.c.d.e.f.g/1.html") << QStringLiteral("http://a.b.c.d.e.f.g/1.html") << hosts << paths;
+
+    hosts.clear();
+    paths.clear();
+    paths << QStringLiteral("/saw-cgi/eBayISAPI.dll/") << QStringLiteral("/saw-cgi/") << QStringLiteral("/");
+    QTest::newRow("http://a.b/saw-cgi/eBayISAPI.dll/") << QStringLiteral("http://a.b/saw-cgi/eBayISAPI.dll/") << hosts << paths;
+}
+
+void UrlHashingTest::shouldGenerateHostPath()
+{
+    QFETCH(QString, input);
+    QFETCH(QStringList, hosts);
+    QFETCH(QStringList, paths);
+    WebEngineViewer::UrlHashing handling(QUrl::fromUserInput(input));
+    QString result = handling.canonicalizeUrl();
+
+    QCOMPARE(handling.generateHostsToCheck(), hosts);
+    QCOMPARE(handling.generatePathsToCheck(), paths);
+}
+
 void UrlHashingTest::shouldCanonicalizeUrl()
 {
     QFETCH(QString, input);
@@ -118,7 +153,6 @@ void UrlHashingTest::shouldCanonicalizeUrl()
     input = input.trimmed();
     WebEngineViewer::UrlHashing handling(QUrl::fromUserInput(input));
     QCOMPARE(handling.canonicalizeUrl(), output);
-
 }
 
 QTEST_MAIN(UrlHashingTest)

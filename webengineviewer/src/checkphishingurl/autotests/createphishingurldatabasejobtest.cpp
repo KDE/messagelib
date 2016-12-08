@@ -76,7 +76,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldClearUpdateDataBaseInfo()
     additionList.append(tmp);
     QVector<WebEngineViewer::Removal> removalList;
     WebEngineViewer::Removal tmpRemoval;
-    tmpRemoval.indexes = QList<int>() << 0 << 2 << 4;
+    tmpRemoval.indexes = QList<quint32>() << 0 << 2 << 4;
     removalList.append(tmpRemoval);
     value.minimumWaitDuration = QStringLiteral("593.440s");
     value.threatType = QStringLiteral("MALWARE");
@@ -205,10 +205,10 @@ void CreatePhishingUrlDataBaseJobTest::checkAdditionElements()
 
 void CreatePhishingUrlDataBaseJobTest::checkRemovalElements_data()
 {
-    QTest::addColumn<QList<int> >("lst");
+    QTest::addColumn<QList<quint32> >("lst");
     QTest::addColumn<WebEngineViewer::UpdateDataBaseInfo::CompressionType>("compression");
     QTest::addColumn<bool>("isValid");
-    QList<int> lst;
+    QList<quint32> lst;
     QTest::newRow("invalid") << lst << WebEngineViewer::UpdateDataBaseInfo::RawCompression << false;
     lst << 1 << 2 << 3;
     QTest::newRow("valid") << lst << WebEngineViewer::UpdateDataBaseInfo::RawCompression << true;
@@ -216,7 +216,7 @@ void CreatePhishingUrlDataBaseJobTest::checkRemovalElements_data()
 
 void CreatePhishingUrlDataBaseJobTest::checkRemovalElements()
 {
-    QFETCH(QList<int>, lst);
+    QFETCH(QList<quint32>, lst);
     QFETCH(WebEngineViewer::UpdateDataBaseInfo::CompressionType, compression);
     QFETCH(bool, isValid);
     WebEngineViewer::Removal a;
@@ -245,7 +245,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult_data()
     QVector<WebEngineViewer::Removal> removalList;
     WebEngineViewer::Removal tmpRemoval;
     tmpRemoval.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
-    tmpRemoval.indexes = QList<int>() << 0 << 2 << 4;
+    tmpRemoval.indexes = QList<quint32>() << 0 << 2 << 4;
     removalList.append(tmpRemoval);
     value.minimumWaitDuration = QStringLiteral("593.440s");
     value.threatType = QStringLiteral("MALWARE");

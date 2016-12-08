@@ -62,7 +62,7 @@ public:
     RiceEncodingDecoder();
     ~RiceEncodingDecoder();
 
-    static QList<int> decodeRiceIndiceDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
+    static QList<quint32> decodeRiceIndiceDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
     static QList<quint32> decodeRiceHashesDelta(const WebEngineViewer::RiceDeltaEncoding &riceDeltaEncoding);
 };
 }

@@ -84,7 +84,7 @@ struct WEBENGINEVIEWER_EXPORT Removal {
     Removal();
     bool operator==(const Removal &other) const;
     bool isValid() const;
-    QList<int> indexes;
+    QList<quint32> indexes;
     RiceDeltaEncoding riceDeltaEncoding;
     UpdateDataBaseInfo::CompressionType compressionType;
 };

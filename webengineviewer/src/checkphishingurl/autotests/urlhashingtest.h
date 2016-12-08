@@ -31,6 +31,9 @@ public:
 private Q_SLOTS:
     void shouldCanonicalizeUrl();
     void shouldCanonicalizeUrl_data();
+
+    void shouldGenerateHostPath_data();
+    void shouldGenerateHostPath();
 };
 
 #endif // URLHASHINGTEST_H

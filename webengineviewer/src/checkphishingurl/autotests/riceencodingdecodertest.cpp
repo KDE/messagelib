@@ -38,9 +38,9 @@ void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()
     QTest::addColumn<int>("riceParameter");
     QTest::addColumn<int>("numberEntries");
     QTest::addColumn<QByteArray>("encodingData");
-    QTest::addColumn<QList<int> >("result");
-    QTest::newRow("empty") << QByteArray() << 0 << 0 << QByteArray() << QList<int>();
-    QList<int> result;
+    QTest::addColumn<QList<quint32> >("result");
+    QTest::newRow("empty") << QByteArray() << 0 << 0 << QByteArray() << QList<quint32>();
+    QList<quint32> result;
     result << 3;
     QTest::newRow("zero value") << QByteArray("3") << 2 << 0 << QByteArray() << result;
 
@@ -66,14 +66,14 @@ void RiceEncodingDecoderTest::shouldDecodeRiceIndices()
     QFETCH(int, riceParameter);
     QFETCH(int, numberEntries);
     QFETCH(QByteArray, encodingData);
-    QFETCH(QList<int>, result);
+    QFETCH(QList<quint32>, result);
     WebEngineViewer::RiceEncodingDecoder decoding;
     WebEngineViewer::RiceDeltaEncoding deltaEncoding;
     deltaEncoding.encodingData = encodingData;
     deltaEncoding.firstValue = firstValue;
     deltaEncoding.numberEntries = numberEntries;
     deltaEncoding.riceParameter = riceParameter;
-    QList<int> list = decoding.decodeRiceIndiceDelta(deltaEncoding);
+    QList<quint32> list = decoding.decodeRiceIndiceDelta(deltaEncoding);
     QCOMPARE(list.count(), result.count());
     QCOMPARE(list, result);
 }
@@ -106,6 +106,7 @@ void RiceEncodingDecoderTest::shouldDecodeRiceHashes()
     deltaEncoding.numberEntries = numberEntries;
     deltaEncoding.riceParameter = riceParameter;
     const QList<quint32> hash = decoding.decodeRiceHashesDelta(deltaEncoding);
+    qDebug()<<" hash " << hash << " 0xad934c0cu" << 0xad934c0cu;
     QCOMPARE(hash, result);
 }
 

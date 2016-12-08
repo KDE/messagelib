@@ -87,5 +87,5 @@ ecm_add_test(checkphishingurlcachetest.cpp ../checkphishingurlcache.cpp ../check
 ecm_add_test(backoffmodemanagertest.cpp ../backoffmodemanager.cpp ../checkphishingurlutil.cpp ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME backoffmodemanagertest
     NAME_PREFIX "webengineview-backoffmodemanagertest-"
-    LINK_LIBRARIES Qt5::Test
+    LINK_LIBRARIES Qt5::Test KF5::ConfigCore
     )

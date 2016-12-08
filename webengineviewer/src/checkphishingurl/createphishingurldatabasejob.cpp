@@ -298,9 +298,9 @@ QVector<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVaria
                         rawIndicesIt.next();
                         if (rawIndicesIt.key() == QStringLiteral("indices")) {
                             const QVariantList lst = rawIndicesIt.value().toList();
-                            QList<int> indexList;
+                            QList<quint32> indexList;
                             Q_FOREACH (const QVariant &var, lst) {
-                                indexList.append(var.toInt());
+                                indexList.append(var.toUInt());
                             }
                             tmp.indexes = indexList;
                         } else {
