@@ -2,6 +2,7 @@
     "KPlugin": {
         "Description": "This plugin provides a default Grantlee mail header.", 
         "Description[ca]": "Aquest connector proporciona una capçalera «Grantlee» predeterminada al correu.", 
+        "Description[nl]": "Deze plug-in biedt een standaard Grantlee e-mailkop.", 
         "Description[pt]": "Este 'plugin' permite-lhe definir um cabeçalho por omissão do Grantlee.", 
         "Description[sv]": "Insticksprogrammet tillhandahåller ett Grantlee-standardbrevhuvud.", 
         "Description[uk]": "Цей додаток визначає типовий заголовок повідомлення Grantlee.", 
