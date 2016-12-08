@@ -34,6 +34,9 @@ private Q_SLOTS:
 
     void shouldCacheIsStillValid_data();
     void shouldCacheIsStillValid();
+
+    void shouldGenerateBackModeDelay_data();
+    void shouldGenerateBackModeDelay();
 };
 
 #endif // CHECKPHISHINGURLUTILTEST_H
