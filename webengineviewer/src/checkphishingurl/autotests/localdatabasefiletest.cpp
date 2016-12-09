@@ -70,18 +70,22 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
     WebEngineViewer::Addition a;
     a.hashString = QByteArray("----1111bbbb");
     a.prefixSize = 4;
+    a.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition b;
     b.hashString = QByteArray("abcdefgh");
     b.prefixSize = 4;
+    b.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition c;
     c.hashString = QByteArray("54321abcde");
     c.prefixSize = 5;
+    c.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     WebEngineViewer::Addition d;
     d.hashString = QByteArray("22222bcdef");
     d.prefixSize = 5;
+    d.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
 
     QVector<WebEngineViewer::Addition> lst;
     lst << a << b << c << d;
