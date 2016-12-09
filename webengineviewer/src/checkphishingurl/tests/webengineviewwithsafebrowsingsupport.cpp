@@ -39,14 +39,18 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
     connect(WebEngineViewer::LocalDataBaseManager::self(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished);
     //Make sure to initialize database
     WebEngineViewer::LocalDataBaseManager::self();
-    WebEngineViewer::WebEngineView *pageView = new WebEngineViewer::WebEngineView(this);
+    pageView = new WebEngineViewer::WebEngineView(this);
     layout->addWidget(pageView);
     WebEngineViewer::WebEnginePage *mEnginePage = new WebEngineViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
-    pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    //pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    const QString urlPage = QLatin1String(CHECKPHISHINGURL_TEST_DATA_DIR) + QStringLiteral("/test-url.html");
+    qDebug() << " urlPage"<<urlPage;
+    pageView->load(QUrl::fromLocalFile(urlPage));
     connect(mEnginePage, &WebEngineViewer::WebEnginePage::urlClicked, this, &WebEngineViewWithSafeBrowsingSupport::slotUrlClicked);
 
     mDebug = new QPlainTextEdit(this);
+    mDebug->setReadOnly(true);
     layout->addWidget(mDebug);
 }
 
@@ -63,7 +67,24 @@ void WebEngineViewWithSafeBrowsingSupport::slotUrlClicked(const QUrl &url)
 
 void WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status)
 {
-    qDebug() << " checked url: " << url << " result : " << status;
+    QString statusStr;
+    switch(status) {
+    case WebEngineViewer::LocalDataBaseManager::Unknown:
+        statusStr = QStringLiteral("Unknown Status");
+        break;
+    case WebEngineViewer::LocalDataBaseManager::UrlOk:
+        statusStr = QStringLiteral("Url Ok");
+        break;
+    case WebEngineViewer::LocalDataBaseManager::Malware:
+        statusStr = QStringLiteral("MalWare");
+        break;
+    }
+
+    qDebug() << " checked url: " << url << " result : " << statusStr;
+    mDebug->setPlainText(QStringLiteral("Url: %1 , Status %2").arg(url.toDisplayString()).arg(statusStr));
+    if (status != WebEngineViewer::LocalDataBaseManager::Malware) {
+        pageView->load(url);
+    }
 }
 
 int main(int argc, char **argv)

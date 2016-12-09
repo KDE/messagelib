@@ -25,6 +25,10 @@
 #include <WebEngineViewer/LocalDataBaseManager>
 class QLineEdit;
 class QPlainTextEdit;
+namespace WebEngineViewer
+{
+class WebEngineView;
+}
 class WebEngineViewWithSafeBrowsingSupport : public QWidget
 {
     Q_OBJECT
@@ -38,6 +42,7 @@ private Q_SLOTS:
 
 private:
     QPlainTextEdit *mDebug;
+    WebEngineViewer::WebEngineView *pageView;
 };
 
 #endif // CHECKPHISHINGURLGUI_H
