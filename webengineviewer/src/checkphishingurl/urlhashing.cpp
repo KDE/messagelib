@@ -144,6 +144,7 @@ QList<QByteArray> UrlHashing::hashList()
         Q_FOREACH(const QString &host, hosts) {
             Q_FOREACH(const QString &path, paths) {
                 const QString str = host + path;
+                //TODO truncated it.
                 lst << QCryptographicHash::hash(str.toLatin1(), QCryptographicHash::Sha256);
             }
         }
