@@ -84,7 +84,7 @@ void SearchFullHashGui::slotCheckUrl()
     connect(job, &WebEngineViewer::SearchFullHashJob::result, this, &SearchFullHashGui::slotGetResult);
     connect(job, &WebEngineViewer::SearchFullHashJob::debugJson, this, &SearchFullHashGui::slotJSonDebug);
     job->setDatabaseState(QStringList() << databaseHashStr);
-    job->setSearchHash(hashStr.toLatin1());
+    job->setSearchHash(QList<QByteArray>() << hashStr.toLatin1());
 
     job->start();
 }

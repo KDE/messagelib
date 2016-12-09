@@ -80,6 +80,7 @@ void LocalDataBaseFilePrivate::close()
 
 bool LocalDataBaseFilePrivate::reload()
 {
+    qCDebug(WEBENGINEVIEWER_LOG) << "Reload File";
     close();
     return load();
 }
@@ -153,7 +154,7 @@ QByteArray LocalDataBaseFile::searchHash(const QByteArray &hashToSearch)
             const char *hashCharStar = getCharStar(hashOffset);
             const int cmp = qstrcmp(hashCharStar, hashToSearch.constData());
             currentValue = QByteArray(hashCharStar);
-            qCWarning(WEBENGINEVIEWER_LOG) << "search " << hashToSearch << " begin " << begin << " end " << end << " hashCharStar" << hashCharStar;
+            //qCWarning(WEBENGINEVIEWER_LOG) << "search " << hashToSearch << " begin " << begin << " end " << end << " hashCharStar" << hashCharStar;
             if (end == begin) {
                 return currentValue;
             }

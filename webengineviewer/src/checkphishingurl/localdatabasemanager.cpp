@@ -18,7 +18,6 @@
 */
 #include "localdatabasemanager.h"
 #include "webengineviewer_debug.h"
-#include "checkphishingurlfromlocaldatabasejob.h"
 #include "createphishingurldatabasejob.h"
 #include "createdatabasefilejob.h"
 #include "checkphishingurlutil.h"
@@ -139,6 +138,7 @@ void LocalDataBaseManager::initialize()
         return;
     }
     if (!d->mDataBaseOk) {
+        qCDebug(WEBENGINEVIEWER_LOG) << "Start to create database";
         if (!QFile(databaseFullPath()).exists()) {
             downloadFullDataBase();
         } else {
@@ -193,6 +193,7 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
         }
     }
     d->mDownloadProgress = false;
+    qCDebug(WEBENGINEVIEWER_LOG) << "Download done";
 }
 
 void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState)
@@ -220,20 +221,30 @@ void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
     if (d->mDataBaseOk) {
-        QByteArray hash;
-        QByteArray result = d->mFile.searchHash(hash);
-        if (hash.contains(result)) {
+        //TODO fixme short hash! we don't need to use it.
+        WebEngineViewer::UrlHashing urlHashing(url);
+        QList<QByteArray> hashList = urlHashing.hashList();
+        QList<QByteArray> conflictHashs;
+        Q_FOREACH(const QByteArray &ba, hashList) {
+            QByteArray result = d->mFile.searchHash(ba);
+            if (ba == result) {
+                conflictHashs << ba.toBase64();
+            }
+        }
+        if (conflictHashs.isEmpty()) {
+            Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::UrlOk);
+        } else {
+            qCWarning(WEBENGINEVIEWER_LOG) << " We need to Check Server Database";
             if (d->mNewClientState.isEmpty()) {
                 qCWarning(WEBENGINEVIEWER_LOG) << "Database client state is unknown";
                 Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
             } else {
                 WebEngineViewer::SearchFullHashJob *job = new WebEngineViewer::SearchFullHashJob(this);
                 job->setDatabaseState(QStringList() << d->mNewClientState);
+                job->setSearchHash(conflictHashs);
                 connect(job, &SearchFullHashJob::result, this, &LocalDataBaseManager::slotSearchOnServerResult);
                 job->start();
             }
-        } else {
-            Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::UrlOk);
         }
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database not ok";
@@ -244,8 +255,9 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
     }
 }
 
-void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &hash, const QStringList &listHash)
+void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url)
 {
-    qCDebug(WEBENGINEVIEWER_LOG) << "hash " << hash << " listHash " << listHash;
+    qDebug() <<" void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QList<QByteArray> &hashs, const QStringList &listHash)";
+    qCWarning(WEBENGINEVIEWER_LOG) << " Url " << url << " status "<< status;
     //TODO
 }

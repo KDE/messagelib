@@ -58,7 +58,7 @@ protected:
     virtual void downloadPartialDataBase();
 
 private:
-    void slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &hash, const QStringList &listHash);
+    void slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void slotCheckDataBase();
     void downloadDataBase(const QString &clientState);

@@ -38,7 +38,8 @@ public:
     {
 
     }
-    QByteArray mHash;
+    QList<QByteArray> mHashs;
+    QUrl mUrl;
     QStringList mDatabaseHashes;
     QNetworkAccessManager *mNetworkAccessManager;
 };
@@ -100,18 +101,18 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
     */
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mHash);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mUrl);
     } else {
+        qDebug()<<" document" << document.toJson(QJsonDocument::Indented);
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Ok, d->mHash);
+            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Ok, d->mUrl);
             return;
         } else {
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
             //TODO
             const QString minimumWaitDuration = answer.value(QStringLiteral("minimumWaitDuration")).toString();
             const QString negativeCacheDuration = answer.value(QStringLiteral("negativeCacheDuration")).toString();
-
             //Implement multi match ?
             if (info.count() == 1) {
                 const QVariantMap map = info.at(0).toMap();
@@ -122,14 +123,17 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     QMapIterator<QString, QVariant> urlMapIt(urlMap);
-                    QStringList hashList;
+                    QList<QByteArray> hashList;
                     while (urlMapIt.hasNext()) {
                         urlMapIt.next();
-                        const QString hashStr = urlMapIt.value().toString();
+                        const QByteArray hashStr = urlMapIt.value().toByteArray();
                         hashList << hashStr;
                     }
+                    //TODO check if it's the malware url
                     if (!hashList.isEmpty()) {
-                        Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, d->mHash, hashList);
+                        Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, d->mUrl);
+                    } else {
+                        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mUrl);
                     }
                     const QVariantMap threatEntryMetadataMap = map[QStringLiteral("threatEntryMetadata")].toMap();
                     if (!threatEntryMetadataMap.isEmpty()) {
@@ -140,22 +144,22 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                 }
             } else {
                 qCWarning(WEBENGINEVIEWER_LOG) << " SearchFullHashJob::parse matches multi element : " << info.count();
+                Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mUrl);
             }
-            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mHash);
         }
     }
+    deleteLater();
 }
 
 void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
 {
     parse(reply->readAll());
     reply->deleteLater();
-    deleteLater();
 }
 
-void SearchFullHashJob::setSearchHash(const QByteArray &hash)
+void SearchFullHashJob::setSearchHash(const QList<QByteArray> &hash)
 {
-    d->mHash = hash;
+    d->mHashs = hash;
 }
 
 QByteArray SearchFullHashJob::jsonRequest() const
@@ -211,8 +215,9 @@ QByteArray SearchFullHashJob::jsonRequest() const
     QVariantList threatEntriesList;
 
     QVariantMap hashUrlMap;
-    //We can have multi hash
-    hashUrlMap.insert(QStringLiteral("hash"), d->mHash);
+    Q_FOREACH(const QByteArray &hash, d->mHashs) {
+        hashUrlMap.insert(QStringLiteral("hash"), hash);
+    }
     threatEntriesList.append(hashUrlMap);
 
     threatMap.insert(QStringLiteral("threatEntries"), threatEntriesList);
@@ -227,7 +232,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 void SearchFullHashJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, d->mHash);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, d->mUrl);
         deleteLater();
     } else if (canStart()) {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/fullHashes:find"));
@@ -241,7 +246,7 @@ void SearchFullHashJob::start()
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &SearchFullHashJob::slotError);
     } else {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::InvalidUrl, d->mHash);
+        Q_EMIT result(WebEngineViewer::SearchFullHashJob::InvalidUrl, d->mUrl);
         deleteLater();
     }
 }
@@ -256,10 +261,15 @@ void SearchFullHashJob::slotError(QNetworkReply::NetworkError error)
 
 bool SearchFullHashJob::canStart() const
 {
-    return !d->mHash.isEmpty() && !d->mDatabaseHashes.isEmpty();
+    return !d->mHashs.isEmpty() && !d->mDatabaseHashes.isEmpty() && !d->mUrl.isEmpty();
 }
 
 void SearchFullHashJob::setDatabaseState(const QStringList &hash)
 {
     d->mDatabaseHashes = hash;
+}
+
+void SearchFullHashJob::setSearchFullHashForUrl(const QUrl &url)
+{
+    d->mUrl = url;
 }

@@ -28,7 +28,7 @@ class QNetworkAccessManager;
 namespace WebEngineViewer
 {
 class SearchFullHashJobPrivate;
-/* https://developers.google.com/safe-browsing/v4/lookup-api */
+/* https://developers.google.com/safe-browsing/v4/update-api */
 class WEBENGINEVIEWER_EXPORT SearchFullHashJob : public QObject
 {
     Q_OBJECT
@@ -48,13 +48,14 @@ public:
     bool canStart() const;
 
     void setDatabaseState(const QStringList &hash);
+    void setSearchFullHashForUrl(const QUrl &url);
 
     QByteArray jsonRequest() const;
     void parse(const QByteArray &replyStr);
 
-    void setSearchHash(const QByteArray &hash);
+    void setSearchHash(const QList<QByteArray> &hash);
 Q_SIGNALS:
-    void result(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QByteArray &hash, const QStringList &listHash = QStringList());
+    void result(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url);
     void debugJson(const QByteArray &ba);
 
 private Q_SLOTS:

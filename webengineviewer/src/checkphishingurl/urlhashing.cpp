@@ -137,15 +137,18 @@ QList<QByteArray> UrlHashing::hashList()
     QList<QByteArray> lst;
     if (mUrl.isValid()) {
         const QString result = WebEngineViewer::UrlHashing::canonicalizeUrl(mUrl);
-        QUrl url(result);
+        const QUrl url(result);
         const QStringList hosts = WebEngineViewer::UrlHashing::generateHostsToCheck(url.host());
         const QStringList paths = WebEngineViewer::UrlHashing::generatePathsToCheck(url.path(), url.query());
 
         Q_FOREACH(const QString &host, hosts) {
             Q_FOREACH(const QString &path, paths) {
                 const QString str = host + path;
-                //TODO truncated it.
-                lst << QCryptographicHash::hash(str.toLatin1(), QCryptographicHash::Sha256);
+                QByteArray ba = QCryptographicHash::hash(str.toLatin1(), QCryptographicHash::Sha256);
+                qDebug() << " ba " << ba.toBase64();
+                //We need to keep 4
+                ba.truncate(4);
+                lst << ba;
             }
         }
     }
