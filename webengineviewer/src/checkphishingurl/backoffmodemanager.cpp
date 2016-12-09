@@ -48,7 +48,7 @@ public:
     int calculateBackModeTime() const;
     void startOffMode();
     void exitBackOffMode();
-    void updateTimer(int minutes);
+    void updateTimer(int seconds);
     void slotTimerFinished();
 
     int mNumberOfHttpFailed;
@@ -63,10 +63,10 @@ void BackOffModeManagerPrivate::save()
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("BackOffMode"));
     grp.writeEntry("Enabled", isInOffMode);
     if (isInOffMode) {
-        int calculateTimeInMinutes = calculateBackModeTime();
-        uint delay = QDateTime::currentDateTime().addMSecs(calculateTimeInMinutes * 60).toTime_t();
+        int calculateTimeInSeconds = calculateBackModeTime();
+        uint delay = QDateTime::currentDateTime().addSecs(calculateTimeInSeconds * 60).toTime_t();
         grp.writeEntry("Delay", delay);
-        updateTimer(calculateTimeInMinutes);
+        updateTimer(calculateTimeInSeconds);
     } else {
         grp.deleteEntry("Delay");
     }
@@ -80,12 +80,12 @@ void BackOffModeManagerPrivate::slotTimerFinished()
     save();
 }
 
-void BackOffModeManagerPrivate::updateTimer(int minutes)
+void BackOffModeManagerPrivate::updateTimer(int seconds)
 {
     if (mTimer->isActive()) {
         mTimer->stop();
     }
-    mTimer->setInterval(minutes * 60 * 1000);
+    mTimer->setInterval(seconds * 1000);
     mTimer->start();
 }
 
@@ -95,10 +95,11 @@ void BackOffModeManagerPrivate::load()
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("BackOffMode"));
     isInOffMode = grp.readEntry("Enabled", false);
     if (isInOffMode) {
-        uint delay = grp.readEntry("Delay", 0);
-        uint now = QDateTime::currentDateTime().toTime_t();
+        const uint delay = grp.readEntry("Delay", 0);
+        const uint now = QDateTime::currentDateTime().toTime_t();
         if (delay > now) {
-            updateTimer(1);
+            const int diff = (delay - now);
+            updateTimer(diff);
         } else {
             //Disable mode.
             isInOffMode = false;
