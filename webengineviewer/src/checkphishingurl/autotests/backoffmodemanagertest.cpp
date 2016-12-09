@@ -20,11 +20,11 @@
 #include "backoffmodemanagertest.h"
 #include "../backoffmodemanager.h"
 #include <QTest>
-
+#include <QStandardPaths>
 BackOffModeManagerTest::BackOffModeManagerTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 BackOffModeManagerTest::~BackOffModeManagerTest()
