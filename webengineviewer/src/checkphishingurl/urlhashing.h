@@ -38,8 +38,6 @@ public:
     static QStringList generateHostsToCheck(const QString &str);
 
     QList<QByteArray> hashList();
-    QByteArray hashComputation();
-    QByteArray hashPrefixComputation();
 private:
     QUrl mUrl;
 };
