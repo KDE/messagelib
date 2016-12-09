@@ -33,9 +33,9 @@ public:
     UrlHashing(const QUrl &url);
     ~UrlHashing();
 
-    QString canonicalizeUrl();
-    QStringList generatePathsToCheck();
-    QStringList generateHostsToCheck();
+    static QString canonicalizeUrl(QUrl url);
+    static QStringList generatePathsToCheck(const QString &str);
+    static QStringList generateHostsToCheck(const QString &str);
 
     QByteArray hashComputation();
     QByteArray hashPrefixComputation();

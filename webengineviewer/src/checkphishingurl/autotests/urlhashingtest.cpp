@@ -108,8 +108,16 @@ void UrlHashingTest::shouldCanonicalizeUrl_data()
     QTest::newRow("https://www.securesite.com/") << QStringLiteral("https://www.securesite.com/") << QStringLiteral("https://www.securesite.com/");
     QTest::newRow("http://host.com/ab%23cd") << QStringLiteral("http://host.com/ab%23cd") << QStringLiteral("http://host.com/ab%23cd");
     QTest::newRow("http://host.com//twoslashes?more//slashes") << QStringLiteral("http://host.com//twoslashes?more//slashes") << QStringLiteral("http://host.com/twoslashes?more//slashes");
-
 }
+
+void UrlHashingTest::shouldCanonicalizeUrl()
+{
+    QFETCH(QString, input);
+    QFETCH(QString, output);
+    input = input.trimmed();
+    QCOMPARE(WebEngineViewer::UrlHashing::canonicalizeUrl(QUrl::fromUserInput(input)), output);
+}
+
 
 void UrlHashingTest::shouldGenerateHostPath_data()
 {
@@ -139,20 +147,11 @@ void UrlHashingTest::shouldGenerateHostPath()
     QFETCH(QString, input);
     QFETCH(QStringList, hosts);
     QFETCH(QStringList, paths);
-    WebEngineViewer::UrlHashing handling(QUrl::fromUserInput(input));
-    QString result = handling.canonicalizeUrl();
+    QString result = WebEngineViewer::UrlHashing::canonicalizeUrl(QUrl::fromUserInput(input));
 
-    QCOMPARE(handling.generateHostsToCheck(), hosts);
-    QCOMPARE(handling.generatePathsToCheck(), paths);
+    QCOMPARE(WebEngineViewer::UrlHashing::generateHostsToCheck(result), hosts);
+    QCOMPARE(WebEngineViewer::UrlHashing::generatePathsToCheck(result), paths);
 }
 
-void UrlHashingTest::shouldCanonicalizeUrl()
-{
-    QFETCH(QString, input);
-    QFETCH(QString, output);
-    input = input.trimmed();
-    WebEngineViewer::UrlHashing handling(QUrl::fromUserInput(input));
-    QCOMPARE(handling.canonicalizeUrl(), output);
-}
 
 QTEST_MAIN(UrlHashingTest)

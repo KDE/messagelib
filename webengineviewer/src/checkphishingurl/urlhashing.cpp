@@ -33,14 +33,14 @@ UrlHashing::~UrlHashing()
 
 }
 
-QString UrlHashing::canonicalizeUrl()
+QString UrlHashing::canonicalizeUrl(QUrl url)
 {
-    if (mUrl.isEmpty()) {
+    if (url.isEmpty()) {
         return {};
     }
-    QString path = mUrl.path();
-    if (mUrl.path().isEmpty()) {
-        mUrl.setPath(QStringLiteral("/"));
+    QString path = url.path();
+    if (url.path().isEmpty()) {
+        url.setPath(QStringLiteral("/"));
     } else {
         // First, remove tab (0x09), CR (0x0d), and LF (0x0a) characters from the URL. Do not remove escape sequences for these characters (e.g. '%0a').
         path.remove(QLatin1Char('\t'));
@@ -50,11 +50,11 @@ QString UrlHashing::canonicalizeUrl()
         //In the URL, percent-escape all characters that are <= ASCII 32, >= 127, "#", or "%". The escapes should use uppercase hex characters.
         //TODO
 
-        mUrl.setPath(path);
+        url.setPath(path);
     }
     // Remove all leading and trailing dots.
 #if 0
-    QString hostname = mUrl.host();
+    QString hostname = url.host();
     qDebug() << " hostname" << hostname;
     while (!hostname.isEmpty() && hostname.at(0) == QLatin1Char('.')) {
         hostname.remove(0, 1);
@@ -70,19 +70,19 @@ QString UrlHashing::canonicalizeUrl()
     qDebug() << "2222222 hostname" << hostname;
     mUrl.setHost(hostname);
 #endif
-    QByteArray urlEncoded = mUrl.toEncoded(QUrl::RemoveFragment | QUrl::NormalizePathSegments | QUrl::EncodeUnicode | QUrl::RemoveUserInfo | QUrl::RemovePort | QUrl::RemovePassword);
+    QByteArray urlEncoded = url.toEncoded(QUrl::RemoveFragment | QUrl::NormalizePathSegments | QUrl::EncodeUnicode | QUrl::RemoveUserInfo | QUrl::RemovePort | QUrl::RemovePassword);
     //qDebug() << "BEFORE  urlEncoded" <<urlEncoded;
     urlEncoded.replace(QByteArrayLiteral("%25"), QByteArrayLiteral("%"));
     //qDebug() << "AFTER  urlEncoded" <<urlEncoded;
     return QString::fromLatin1(urlEncoded);
 }
 
-QStringList UrlHashing::generatePathsToCheck()
+QStringList UrlHashing::generatePathsToCheck(const QString &str)
 {
     return {};
 }
 
-QStringList UrlHashing::generateHostsToCheck()
+QStringList UrlHashing::generateHostsToCheck(const QString &str)
 {
     return {};
 }
