@@ -8,13 +8,6 @@ ecm_add_test(checkphishingurljobtest.cpp  ../checkphishingurljob.cpp ../updateda
     LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
     )
 
-ecm_add_test(checkphishingurlfromlocaldatabasejobtest.cpp  ../checkphishingurlutil.cpp ../updatedatabaseinfo.cpp ../checkphishingurlfromlocaldatabasejob.cpp ${testwebengineviewer_webengine_common_SRCS}
-    TEST_NAME checkphishingurlfromlocaldatabasetest
-    NAME_PREFIX "webengineview-checkphishingurlfromlocaldatabasejob-"
-    LINK_LIBRARIES Qt5::Test Qt5::WebKitWidgets KF5::WebEngineViewer
-    )
-
-
 ecm_add_test(createphishingurldatabasejobtest.cpp ../checkphishingurlutil.cpp ../updatedatabaseinfo.cpp ../createphishingurldatabasejob.cpp ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME createphishingurldatabasejobtest
     NAME_PREFIX "webengineview-createphishingurldatabasejob-"

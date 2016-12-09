@@ -34,7 +34,6 @@ set(libwebengineviewer_checkphishingurl_SRCS
    checkphishingurl/checkphishingurljob.cpp
    checkphishingurl/checkphishingurlcache.cpp
    checkphishingurl/createphishingurldatabasejob.cpp
-   checkphishingurl/checkphishingurlfromlocaldatabasejob.cpp
    checkphishingurl/localdatabasemanager.cpp
    checkphishingurl/checkphishingurlutil.cpp
    checkphishingurl/searchfullhashjob.cpp
@@ -158,7 +157,6 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_checkurl_HEADERS
     CheckPhishingUrlJob
     CheckPhishingUrlCache
     CreatePhishingUrlDataBaseJob
-    CheckPhishingUrlFromLocalDataBaseJob
     LocalDataBaseManager
     SearchFullHashJob
     UpdateDataBaseInfo
