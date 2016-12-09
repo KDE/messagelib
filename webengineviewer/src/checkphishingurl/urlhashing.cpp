@@ -93,7 +93,7 @@ QStringList UrlHashing::generatePathsToCheck(const QString &str, const QString &
             if (i == 0) {
                 pathToCheck << QStringLiteral("/");
             } else {
-                pathToCheck << str.left(i);
+                pathToCheck << str.left(i+1);
             }
         }
     }
@@ -103,7 +103,6 @@ QStringList UrlHashing::generatePathsToCheck(const QString &str, const QString &
     if (!query.isEmpty()) {
         pathToCheck << str + QLatin1Char('?') + query;
     }
-    qDebug() << "ssssssssssss :" << pathToCheck;
     return pathToCheck;
 }
 

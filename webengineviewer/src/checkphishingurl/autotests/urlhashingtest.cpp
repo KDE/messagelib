@@ -128,17 +128,18 @@ void UrlHashingTest::shouldGenerateHostPath_data()
     QStringList hosts;
     QStringList paths;
     hosts << QStringLiteral("b.c") << QStringLiteral("a.b.c");
-    paths << QStringLiteral("/1/2.html?param=1") << QStringLiteral("/1/2.html") << QStringLiteral("/1/") << QStringLiteral("/");
+    paths << QStringLiteral("/") << QStringLiteral("/1/") << QStringLiteral("/1/2.html") << QStringLiteral("/1/2.html?param=1");
     QTest::newRow("http://a.b.c/1/2.html?param=1") << QStringLiteral("http://a.b.c/1/2.html?param=1") << hosts << paths;
     hosts.clear();
     paths.clear();
     hosts << QStringLiteral("f.g") << QStringLiteral("e.f.g") << QStringLiteral("d.e.f.g") << QStringLiteral("c.d.e.f.g") << QStringLiteral("a.b.c.d.e.f.g");
-    paths << QStringLiteral("/1.html") << QStringLiteral("/");
+    paths << QStringLiteral("/") << QStringLiteral("/1.html");
     QTest::newRow("http://a.b.c.d.e.f.g/1.html") << QStringLiteral("http://a.b.c.d.e.f.g/1.html") << hosts << paths;
 
     hosts.clear();
     paths.clear();
-    paths << QStringLiteral("/saw-cgi/eBayISAPI.dll/") << QStringLiteral("/saw-cgi/") << QStringLiteral("/");
+    hosts << QStringLiteral("a.b");
+    paths << QStringLiteral("/") << QStringLiteral("/saw-cgi/") << QStringLiteral("/saw-cgi/eBayISAPI.dll/");
     QTest::newRow("http://a.b/saw-cgi/eBayISAPI.dll/") << QStringLiteral("http://a.b/saw-cgi/eBayISAPI.dll/") << hosts << paths;
 }
 
