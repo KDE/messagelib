@@ -19,6 +19,7 @@
 
 #include "urlhashing.h"
 #include <QDebug>
+#include <QCryptographicHash>
 
 using namespace WebEngineViewer;
 
@@ -129,6 +130,25 @@ QStringList UrlHashing::generateHostsToCheck(const QString &str)
     }
     hostToCheck << str;
     return hostToCheck;
+}
+
+QList<QByteArray> UrlHashing::hashList()
+{
+    QList<QByteArray> lst;
+    if (mUrl.isValid()) {
+        const QString result = WebEngineViewer::UrlHashing::canonicalizeUrl(mUrl);
+        QUrl url(result);
+        const QStringList hosts = WebEngineViewer::UrlHashing::generateHostsToCheck(url.host());
+        const QStringList paths = WebEngineViewer::UrlHashing::generatePathsToCheck(url.path(), url.query());
+
+        Q_FOREACH(const QString &host, hosts) {
+            Q_FOREACH(const QString &path, paths) {
+                const QString str = host + path;
+                lst << QCryptographicHash::hash(str.toLatin1(), QCryptographicHash::Sha256);
+            }
+        }
+    }
+    return lst;
 }
 
 QByteArray UrlHashing::hashComputation()
