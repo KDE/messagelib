@@ -77,14 +77,59 @@ QString UrlHashing::canonicalizeUrl(QUrl url)
     return QString::fromLatin1(urlEncoded);
 }
 
-QStringList UrlHashing::generatePathsToCheck(const QString &str)
+QStringList UrlHashing::generatePathsToCheck(const QString &str, const QString &query)
 {
-    return {};
+    QStringList pathToCheck;
+    if (str.isEmpty()) {
+        return pathToCheck;
+    }
+    const int strLenght(str.length());
+    for (int i = 0; i < strLenght; ++i) {
+        //We check 5 element => 4 here and host if necessary
+        if (pathToCheck.count() == 4) {
+            break;
+        }
+        if (str.at(i) == QLatin1Char('/')) {
+            if (i == 0) {
+                pathToCheck << QStringLiteral("/");
+            } else {
+                pathToCheck << str.left(i);
+            }
+        }
+    }
+    if (!pathToCheck.isEmpty() && pathToCheck.at(pathToCheck.count()-1) != str) {
+        pathToCheck << str;
+    }
+    if (!query.isEmpty()) {
+        pathToCheck << str + QLatin1Char('?') + query;
+    }
+    qDebug() << "ssssssssssss :" << pathToCheck;
+    return pathToCheck;
 }
 
 QStringList UrlHashing::generateHostsToCheck(const QString &str)
 {
-    return {};
+    QStringList hostToCheck;
+    if (str.isEmpty()) {
+        return hostToCheck;
+    }
+    const int strLenght(str.length());
+    bool lastElement = true;
+    for (int i = strLenght; i > 0; --i) {
+        //We need to check just 5 element => 4 splits hosts + current host
+        if (hostToCheck.count() == 4) {
+            break;
+        }
+        if (str.at(i) == QLatin1Char('.')) {
+            if (lastElement) {
+                lastElement = false;
+            } else {
+                hostToCheck << str.right(strLenght - i - 1);
+            }
+        }
+    }
+    hostToCheck << str;
+    return hostToCheck;
 }
 
 QByteArray UrlHashing::hashComputation()

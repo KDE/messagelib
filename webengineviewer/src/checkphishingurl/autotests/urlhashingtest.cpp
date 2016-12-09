@@ -148,9 +148,10 @@ void UrlHashingTest::shouldGenerateHostPath()
     QFETCH(QStringList, hosts);
     QFETCH(QStringList, paths);
     QString result = WebEngineViewer::UrlHashing::canonicalizeUrl(QUrl::fromUserInput(input));
+    QUrl url(result);
 
-    QCOMPARE(WebEngineViewer::UrlHashing::generateHostsToCheck(result), hosts);
-    QCOMPARE(WebEngineViewer::UrlHashing::generatePathsToCheck(result), paths);
+    QCOMPARE(WebEngineViewer::UrlHashing::generateHostsToCheck(url.host()), hosts);
+    QCOMPARE(WebEngineViewer::UrlHashing::generatePathsToCheck(url.path(), url.query()), paths);
 }
 
 
