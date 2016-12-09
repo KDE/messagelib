@@ -64,7 +64,7 @@ void BackOffModeManagerPrivate::save()
     grp.writeEntry("Enabled", isInOffMode);
     if (isInOffMode) {
         int calculateTimeInSeconds = calculateBackModeTime();
-        uint delay = QDateTime::currentDateTime().addSecs(calculateTimeInSeconds * 60).toTime_t();
+        uint delay = QDateTime::currentDateTime().addSecs(calculateTimeInSeconds).toTime_t();
         grp.writeEntry("Delay", delay);
         updateTimer(calculateTimeInSeconds);
     } else {
@@ -114,11 +114,13 @@ int BackOffModeManagerPrivate::calculateBackModeTime() const
 
 void BackOffModeManagerPrivate::startOffMode()
 {
-    if (!isInOffMode) {
+    mNumberOfHttpFailed++;
+    if (isInOffMode) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "New failed" << mNumberOfHttpFailed;
+    } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "starting back of mode";
         isInOffMode = true;
     }
-    mNumberOfHttpFailed++;
     save();
 }
 
