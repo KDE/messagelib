@@ -24,6 +24,8 @@
 #include <KConfigGroup>
 #include <KConfig>
 
+#include <QTimer>
+
 using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(BackOffModeManager, s_backOffModeManager)
@@ -36,6 +38,9 @@ public:
           isInOffMode(false),
           q(qq)
     {
+        mTimer = new QTimer(q);
+        mTimer->setSingleShot(true);
+        q->connect(mTimer, &QTimer::timeout, q, &BackOffModeManager::slotTimerFinished);
         load();
     }
     void save();
@@ -43,19 +48,62 @@ public:
     int calculateBackModeTime() const;
     void startOffMode();
     void exitBackOffMode();
+    void updateTimer(int minutes);
+    void slotTimerFinished();
+
     int mNumberOfHttpFailed;
     bool isInOffMode;
+    QTimer *mTimer;
     BackOffModeManager *q;
 };
 
 void BackOffModeManagerPrivate::save()
 {
-    //TODO
+    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
+    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("BackOffMode"));
+    grp.writeEntry("Enabled", isInOffMode);
+    if (isInOffMode) {
+        int calculateTimeInMinutes = calculateBackModeTime();
+        uint delay = QDateTime::currentDateTime().addMSecs(calculateTimeInMinutes * 60).toTime_t();
+        grp.writeEntry("Delay", delay);
+        updateTimer(calculateTimeInMinutes);
+    } else {
+        grp.deleteEntry("Delay");
+    }
+    grp.sync();
+}
+
+void BackOffModeManagerPrivate::slotTimerFinished()
+{
+    qCDebug(WEBENGINEVIEWER_LOG) << "Existing from BlackOffMode";
+    isInOffMode = false;
+    save();
+}
+
+void BackOffModeManagerPrivate::updateTimer(int minutes)
+{
+    if (mTimer->isActive()) {
+        mTimer->stop();
+    }
+    mTimer->setInterval(minutes * 60 * 1000);
+    mTimer->start();
 }
 
 void BackOffModeManagerPrivate::load()
 {
-    //TODO
+    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
+    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("BackOffMode"));
+    isInOffMode = grp.readEntry("Enabled", false);
+    if (isInOffMode) {
+        uint delay = grp.readEntry("Delay", 0);
+        uint now = QDateTime::currentDateTime().toTime_t();
+        if (delay > now) {
+            updateTimer(1);
+        } else {
+            //Disable mode.
+            isInOffMode = false;
+        }
+    }
 }
 
 int BackOffModeManagerPrivate::calculateBackModeTime() const
@@ -70,8 +118,6 @@ void BackOffModeManagerPrivate::startOffMode()
         isInOffMode = true;
     }
     mNumberOfHttpFailed++;
-    //TODO Start/restart timer.
-    //TODO add timer here.
     save();
 }
 
@@ -110,4 +156,9 @@ void BackOffModeManager::startOffMode()
 int BackOffModeManager::numberOfHttpFailed() const
 {
     return d->mNumberOfHttpFailed;
+}
+
+void BackOffModeManager::slotTimerFinished()
+{
+    d->slotTimerFinished();
 }

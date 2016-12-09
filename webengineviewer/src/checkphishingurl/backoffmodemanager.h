@@ -39,6 +39,9 @@ public:
 
     int numberOfHttpFailed() const;
 
+public Q_SLOTS:
+    void slotTimerFinished();
+
 private:
     BackOffModeManagerPrivate *const d;
 };
