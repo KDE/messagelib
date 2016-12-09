@@ -34,6 +34,9 @@ private Q_SLOTS:
 
     void shouldGenerateHostPath_data();
     void shouldGenerateHostPath();
+
+    void shouldGenerateHashList_data();
+    void shouldGenerateHashList();
 };
 
 #endif // URLHASHINGTEST_H

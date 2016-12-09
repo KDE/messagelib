@@ -21,6 +21,7 @@
 #include "../urlhashing.h"
 #include <QUrl>
 #include <QTest>
+#include <QList>
 
 UrlHashingTest::UrlHashingTest(QObject *parent)
     : QObject(parent)
@@ -153,6 +154,21 @@ void UrlHashingTest::shouldGenerateHostPath()
 
     QCOMPARE(WebEngineViewer::UrlHashing::generateHostsToCheck(url.host()), hosts);
     QCOMPARE(WebEngineViewer::UrlHashing::generatePathsToCheck(url.path(), url.query()), paths);
+}
+
+void UrlHashingTest::shouldGenerateHashList_data()
+{
+    QTest::addColumn<QUrl>("input");
+    QTest::addColumn<int>("numberItems");
+    QTest::newRow("http://a.b/saw-cgi/eBayISAPI.dll/") << QUrl(QStringLiteral("http://a.b/saw-cgi/eBayISAPI.dll/")) << 3;
+}
+
+void UrlHashingTest::shouldGenerateHashList()
+{
+    QFETCH(QUrl, input);
+    QFETCH(int, numberItems);
+    WebEngineViewer::UrlHashing hashing(input);
+    QCOMPARE(hashing.hashList().count(), numberItems);
 }
 
 
