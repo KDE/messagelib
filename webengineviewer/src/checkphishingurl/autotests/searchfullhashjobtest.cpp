@@ -68,7 +68,7 @@ void SearchFullHashJobTest::shouldCreateRequest()
     job.setDatabaseState(databaseHash);
     job.setSearchFullHashForUrl(url);
     if (!hash.isEmpty()) {
-        job.setSearchHash(QList<QByteArray>() << hash);
+        job.setSearchHashs(QList<QByteArray>() << hash);
     }
     QCOMPARE(job.canStart(), canStart);
     if (canStart) {

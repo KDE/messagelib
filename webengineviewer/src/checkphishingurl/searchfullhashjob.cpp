@@ -38,6 +38,7 @@ public:
     {
 
     }
+    bool foundExactHash(const QList<QByteArray> &listLongHash);
     QList<QByteArray> mHashs;
     QUrl mUrl;
     QStringList mDatabaseHashes;
@@ -129,8 +130,8 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                         const QByteArray hashStr = urlMapIt.value().toByteArray();
                         hashList << hashStr;
                     }
-                    //TODO check if it's the malware url
-                    if (!hashList.isEmpty()) {
+
+                    if (d->foundExactHash(hashList)) {
                         Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, d->mUrl);
                     } else {
                         Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mUrl);
@@ -151,13 +152,18 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
     deleteLater();
 }
 
+bool SearchFullHashJobPrivate::foundExactHash(const QList<QByteArray> &listLongHash)
+{
+    return false;
+}
+
 void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
 {
     parse(reply->readAll());
     reply->deleteLater();
 }
 
-void SearchFullHashJob::setSearchHash(const QList<QByteArray> &hash)
+void SearchFullHashJob::setSearchHashs(const QList<QByteArray> &hash)
 {
     d->mHashs = hash;
 }

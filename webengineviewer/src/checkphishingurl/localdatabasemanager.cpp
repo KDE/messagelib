@@ -241,7 +241,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
             } else {
                 WebEngineViewer::SearchFullHashJob *job = new WebEngineViewer::SearchFullHashJob(this);
                 job->setDatabaseState(QStringList() << d->mNewClientState);
-                job->setSearchHash(conflictHashs);
+                job->setSearchHashs(conflictHashs);
                 connect(job, &SearchFullHashJob::result, this, &LocalDataBaseManager::slotSearchOnServerResult);
                 job->start();
             }
