@@ -37,7 +37,8 @@ public:
     static QStringList generatePathsToCheck(const QString &str, const QString &query);
     static QStringList generateHostsToCheck(const QString &str);
 
-    QList<QByteArray> hashList();
+    /*long hash, short hash*/
+    QHash<QByteArray, QByteArray> hashList();
 private:
     QUrl mUrl;
 };

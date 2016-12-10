@@ -53,7 +53,7 @@ public:
     QByteArray jsonRequest() const;
     void parse(const QByteArray &replyStr);
 
-    void setSearchHashs(const QList<QByteArray> &hash);
+    void setSearchHashs(const QHash<QByteArray, QByteArray> &hash);
 Q_SIGNALS:
     void result(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url);
     void debugJson(const QByteArray &ba);

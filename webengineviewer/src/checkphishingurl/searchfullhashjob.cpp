@@ -39,7 +39,7 @@ public:
 
     }
     bool foundExactHash(const QList<QByteArray> &listLongHash);
-    QList<QByteArray> mHashs;
+    QHash<QByteArray, QByteArray> mHashs;
     QUrl mUrl;
     QStringList mDatabaseHashes;
     QNetworkAccessManager *mNetworkAccessManager;
@@ -154,6 +154,12 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
 
 bool SearchFullHashJobPrivate::foundExactHash(const QList<QByteArray> &listLongHash)
 {
+    QList<QByteArray> lstLongHash = mHashs.keys();
+    Q_FOREACH(const QByteArray &ba, lstLongHash) {
+        if (listLongHash.contains(ba)) {
+            return true;
+        }
+    }
     return false;
 }
 
@@ -163,7 +169,7 @@ void SearchFullHashJob::slotCheckUrlFinished(QNetworkReply *reply)
     reply->deleteLater();
 }
 
-void SearchFullHashJob::setSearchHashs(const QList<QByteArray> &hash)
+void SearchFullHashJob::setSearchHashs(const QHash<QByteArray, QByteArray> &hash)
 {
     d->mHashs = hash;
 }
@@ -221,8 +227,10 @@ QByteArray SearchFullHashJob::jsonRequest() const
     QVariantList threatEntriesList;
 
     QVariantMap hashUrlMap;
-    Q_FOREACH(const QByteArray &hash, d->mHashs) {
-        hashUrlMap.insert(QStringLiteral("hash"), hash);
+    QHashIterator<QByteArray, QByteArray> i(d->mHashs);
+    while (i.hasNext()) {
+        i.next();
+        hashUrlMap.insert(QStringLiteral("hash"), i.value());
     }
     threatEntriesList.append(hashUrlMap);
 

@@ -223,14 +223,27 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
     if (d->mDataBaseOk) {
         //TODO fixme short hash! we don't need to use it.
         WebEngineViewer::UrlHashing urlHashing(url);
-        QList<QByteArray> hashList = urlHashing.hashList();
-        QList<QByteArray> conflictHashs;
-        Q_FOREACH(const QByteArray &ba, hashList) {
+        QHash<QByteArray, QByteArray> hashList = urlHashing.hashList();
+        QHash<QByteArray, QByteArray> conflictHashs;
+
+        QHashIterator<QByteArray, QByteArray> i(hashList);
+        while (i.hasNext()) {
+            i.next();
+            QByteArray ba = i.value();
             QByteArray result = d->mFile.searchHash(ba);
-            if (ba == result) {
+            if (ba.contains(result)) {
+                conflictHashs.insert(i.key().toBase64(), i.value().toBase64());
+            }
+        }
+        qDebug() << "conflictHashs "<< conflictHashs;
+        /*
+        Q_FOREACH(const QByteArray &ba, hashList.values()) {
+            QByteArray result = d->mFile.searchHash(ba);
+            if (ba.contains(result)) {
                 conflictHashs << ba.toBase64();
             }
         }
+        */
         if (conflictHashs.isEmpty()) {
             Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::UrlOk);
         } else {
