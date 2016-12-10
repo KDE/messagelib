@@ -38,7 +38,7 @@ public:
 
 private Q_SLOTS:
     void slotUrlClicked(const QUrl &url);
-    void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
+    void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
 private:
     QPlainTextEdit *mDebug;

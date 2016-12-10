@@ -65,30 +65,30 @@ void WebEngineViewWithSafeBrowsingSupport::slotUrlClicked(const QUrl &url)
     WebEngineViewer::LocalDataBaseManager::self()->checkUrl(url);
 }
 
-void WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status)
+void WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status)
 {
     QString statusStr;
     switch(status) {
-    case WebEngineViewer::LocalDataBaseManager::Unknown:
+    case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
         statusStr = QStringLiteral("Unknown Status");
         break;
-    case WebEngineViewer::LocalDataBaseManager::UrlOk:
+    case WebEngineViewer::CheckPhishingUrlUtil::Ok:
         statusStr = QStringLiteral("Url Ok");
         break;
-    case WebEngineViewer::LocalDataBaseManager::Malware:
+    case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
         statusStr = QStringLiteral("MalWare");
         break;
-    case WebEngineViewer::LocalDataBaseManager::InvalidUrl:
+    case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
         statusStr = QStringLiteral("Invalid Url");
         break;
-    case WebEngineViewer::LocalDataBaseManager::BrokenNetwork:
+    case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
         statusStr = QStringLiteral("Broken Network");
         break;
     }
 
     qDebug() << " checked url: " << url << " result : " << statusStr;
     mDebug->setPlainText(QStringLiteral("Url: %1 , Status %2").arg(url.toDisplayString()).arg(statusStr));
-    if (status != WebEngineViewer::LocalDataBaseManager::Malware) {
+    if (status != WebEngineViewer::CheckPhishingUrlUtil::MalWare) {
         pageView->load(url);
     }
 }

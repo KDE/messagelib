@@ -24,6 +24,7 @@
 #include <QUrl>
 #include <QNetworkReply>
 #include "webengineviewer_export.h"
+#include "checkphishingurlutil.h"
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
@@ -36,14 +37,6 @@ public:
     explicit SearchFullHashJob(QObject *parent = Q_NULLPTR);
     ~SearchFullHashJob();
 
-    enum UrlStatus {
-        Ok = 0,
-        MalWare,
-        BrokenNetwork,
-        InvalidUrl,
-        Unknown
-    };
-
     void start();
     bool canStart() const;
 
@@ -55,7 +48,7 @@ public:
 
     void setSearchHashs(const QHash<QByteArray, QByteArray> &hash);
 Q_SIGNALS:
-    void result(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url);
+    void result(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url);
     void debugJson(const QByteArray &ba);
 
 private Q_SLOTS:

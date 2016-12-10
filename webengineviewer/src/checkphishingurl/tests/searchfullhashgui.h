@@ -32,7 +32,7 @@ public:
     ~SearchFullHashGui();
 private Q_SLOTS:
     void slotCheckUrl();
-    void slotGetResult(WebEngineViewer::SearchFullHashJob::UrlStatus result);
+    void slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result);
     void slotJSonDebug(const QByteArray &debug);
 private:
     QLineEdit *mCheckHashLineEdit;

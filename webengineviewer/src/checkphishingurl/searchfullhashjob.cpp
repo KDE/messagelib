@@ -102,12 +102,12 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
     */
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Unknown, d->mUrl);
     } else {
         qDebug()<<" document" << document.toJson(QJsonDocument::Indented);
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            Q_EMIT result(WebEngineViewer::SearchFullHashJob::Ok, d->mUrl);
+            Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Ok, d->mUrl);
             return;
         } else {
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
@@ -132,9 +132,9 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                     }
 
                     if (d->foundExactHash(hashList)) {
-                        Q_EMIT result(WebEngineViewer::SearchFullHashJob::MalWare, d->mUrl);
+                        Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::MalWare, d->mUrl);
                     } else {
-                        Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mUrl);
+                        Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Unknown, d->mUrl);
                     }
                     const QVariantMap threatEntryMetadataMap = map[QStringLiteral("threatEntryMetadata")].toMap();
                     if (!threatEntryMetadataMap.isEmpty()) {
@@ -145,7 +145,7 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                 }
             } else {
                 qCWarning(WEBENGINEVIEWER_LOG) << " SearchFullHashJob::parse matches multi element : " << info.count();
-                Q_EMIT result(WebEngineViewer::SearchFullHashJob::Unknown, d->mUrl);
+                Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Unknown, d->mUrl);
             }
         }
     }
@@ -246,7 +246,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 void SearchFullHashJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::BrokenNetwork, d->mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork, d->mUrl);
         deleteLater();
     } else if (canStart()) {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/fullHashes:find"));
@@ -260,7 +260,7 @@ void SearchFullHashJob::start()
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &SearchFullHashJob::slotError);
     } else {
-        Q_EMIT result(WebEngineViewer::SearchFullHashJob::InvalidUrl, d->mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl, d->mUrl);
         deleteLater();
     }
 }

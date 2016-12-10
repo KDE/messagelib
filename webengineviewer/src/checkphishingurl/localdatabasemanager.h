@@ -32,14 +32,6 @@ class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
 {
     Q_OBJECT
 public:
-    enum UrlStatus {
-        Unknown = 0,
-        UrlOk = 1,
-        Malware = 2,
-        BrokenNetwork = 3,
-        InvalidUrl = 4
-    };
-
     explicit LocalDataBaseManager(QObject *parent = Q_NULLPTR);
     ~LocalDataBaseManager();
 
@@ -52,7 +44,7 @@ public:
     void slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState);
 
 Q_SIGNALS:
-    void checkUrlFinished(const QUrl &url, WebEngineViewer::LocalDataBaseManager::UrlStatus status);
+    void checkUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
 protected:
     void setDownloadProgress(bool downloadProgress);
@@ -60,7 +52,7 @@ protected:
     virtual void downloadPartialDataBase();
 
 private:
-    void slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url);
+    void slotSearchOnServerResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void slotCheckDataBase();
     void downloadDataBase(const QString &clientState);

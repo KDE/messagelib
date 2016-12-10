@@ -245,12 +245,12 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         }
         */
         if (conflictHashs.isEmpty()) {
-            Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::UrlOk);
+            Q_EMIT checkUrlFinished(url, WebEngineViewer::CheckPhishingUrlUtil::Ok);
         } else {
             qCWarning(WEBENGINEVIEWER_LOG) << " We need to Check Server Database";
             if (d->mNewClientState.isEmpty()) {
                 qCWarning(WEBENGINEVIEWER_LOG) << "Database client state is unknown";
-                Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
+                Q_EMIT checkUrlFinished(url, WebEngineViewer::CheckPhishingUrlUtil::Unknown);
             } else {
                 WebEngineViewer::SearchFullHashJob *job = new WebEngineViewer::SearchFullHashJob(this);
                 job->setDatabaseState(QStringList() << d->mNewClientState);
@@ -262,31 +262,31 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         }
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database not ok";
-        Q_EMIT checkUrlFinished(url, WebEngineViewer::LocalDataBaseManager::Unknown);
+        Q_EMIT checkUrlFinished(url, WebEngineViewer::CheckPhishingUrlUtil::Unknown);
     }
     if (d->mFile.checkFileChanged()) {
         d->mFile.reload();
     }
 }
 
-void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url)
+void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url)
 {
     qCWarning(WEBENGINEVIEWER_LOG) << " Url " << url << " status "<< status;
     switch (status) {
-    case WebEngineViewer::SearchFullHashJob::Ok:
-        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::UrlOk);
+    case WebEngineViewer::CheckPhishingUrlUtil::Ok:
+        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::Ok);
         break;
-    case WebEngineViewer::SearchFullHashJob::MalWare:
-        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::Malware);
+    case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
+        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::MalWare);
         break;
-    case WebEngineViewer::SearchFullHashJob::Unknown:
-        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::Unknown);
+    case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
+        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::Unknown);
         break;
-    case WebEngineViewer::SearchFullHashJob::InvalidUrl:
-        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::InvalidUrl);
+    case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
+        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::InvalidUrl);
         break;
-    case WebEngineViewer::SearchFullHashJob::BrokenNetwork:
-        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::BrokenNetwork);
+    case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
+        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::BrokenNetwork);
         break;
     }
 }

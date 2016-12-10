@@ -99,23 +99,23 @@ void SearchFullHashGui::slotJSonDebug(const QByteArray &debug)
     mJson->setPlainText(QString::fromLatin1(debug));
 }
 
-void SearchFullHashGui::slotGetResult(WebEngineViewer::SearchFullHashJob::UrlStatus result)
+void SearchFullHashGui::slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result)
 {
     QString resultStr;
     switch (result) {
-    case WebEngineViewer::SearchFullHashJob::Ok:
+    case WebEngineViewer::CheckPhishingUrlUtil::Ok:
         resultStr = QStringLiteral("Url ok");
         break;
-    case WebEngineViewer::SearchFullHashJob::MalWare:
+    case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
         resultStr = QStringLiteral("Url MalWare");
         break;
-    case WebEngineViewer::SearchFullHashJob::Unknown:
+    case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
         resultStr = QStringLiteral("Url Unknow state");
         break;
-    case WebEngineViewer::SearchFullHashJob::BrokenNetwork:
+    case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
         resultStr = QStringLiteral("Broken Network");
         break;
-    case WebEngineViewer::SearchFullHashJob::InvalidUrl:
+    case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
         resultStr = QStringLiteral("Invalid Url");
         break;
     }
