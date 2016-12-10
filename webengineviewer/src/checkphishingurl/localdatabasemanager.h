@@ -35,7 +35,9 @@ public:
     enum UrlStatus {
         Unknown = 0,
         UrlOk = 1,
-        Malware = 2
+        Malware = 2,
+        BrokenNetwork = 3,
+        InvalidUrl = 4
     };
 
     explicit LocalDataBaseManager(QObject *parent = Q_NULLPTR);

@@ -78,6 +78,12 @@ void WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished(const QUrl &ur
     case WebEngineViewer::LocalDataBaseManager::Malware:
         statusStr = QStringLiteral("MalWare");
         break;
+    case WebEngineViewer::LocalDataBaseManager::InvalidUrl:
+        statusStr = QStringLiteral("Invalid Url");
+        break;
+    case WebEngineViewer::LocalDataBaseManager::BrokenNetwork:
+        statusStr = QStringLiteral("Broken Network");
+        break;
     }
 
     qDebug() << " checked url: " << url << " result : " << statusStr;

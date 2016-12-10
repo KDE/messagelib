@@ -271,7 +271,22 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
 
 void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QUrl &url)
 {
-    qDebug() <<" void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::SearchFullHashJob::UrlStatus status, const QList<QByteArray> &hashs, const QStringList &listHash)";
     qCWarning(WEBENGINEVIEWER_LOG) << " Url " << url << " status "<< status;
-    //TODO
+    switch (status) {
+    case WebEngineViewer::SearchFullHashJob::Ok:
+        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::UrlOk);
+        break;
+    case WebEngineViewer::SearchFullHashJob::MalWare:
+        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::Malware);
+        break;
+    case WebEngineViewer::SearchFullHashJob::Unknown:
+        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::Unknown);
+        break;
+    case WebEngineViewer::SearchFullHashJob::InvalidUrl:
+        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::InvalidUrl);
+        break;
+    case WebEngineViewer::SearchFullHashJob::BrokenNetwork:
+        Q_EMIT checkUrlFinished(url, LocalDataBaseManager::BrokenNetwork);
+        break;
+    }
 }
