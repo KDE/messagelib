@@ -65,11 +65,11 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
 {
     QJsonDocument document = QJsonDocument::fromJson(replyStr);
     if (document.isNull()) {
-        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, d->mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Unknown, d->mUrl);
     } else {
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
-            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Ok, d->mUrl);
+            Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Ok, d->mUrl);
             return;
         } else {
             const QVariantList info = answer.value(QStringLiteral("matches")).toList();
@@ -88,7 +88,7 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     if (urlMap.count() == 1) {
                         if (urlMap[QStringLiteral("url")].toString() == d->mUrl.toString()) {
-                            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::MalWare, d->mUrl, verifyCacheAfterThisTime);
+                            Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::MalWare, d->mUrl, verifyCacheAfterThisTime);
                             return;
                         }
                     }
@@ -96,7 +96,7 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                     qWarning() << " CheckPhishingUrlJob::parse threatTypeStr : " << threatTypeStr;
                 }
             }
-            Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::Unknown, d->mUrl);
+            Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Unknown, d->mUrl);
         }
     }
 }
@@ -146,7 +146,7 @@ QByteArray CheckPhishingUrlJob::jsonRequest() const
 void CheckPhishingUrlJob::start()
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork, d->mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork, d->mUrl);
         deleteLater();
     } else if (canStart()) {
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find"));
@@ -162,7 +162,7 @@ void CheckPhishingUrlJob::start()
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &CheckPhishingUrlJob::slotError);
     } else {
-        Q_EMIT result(WebEngineViewer::CheckPhishingUrlJob::InvalidUrl, d->mUrl);
+        Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl, d->mUrl);
         deleteLater();
     }
 }

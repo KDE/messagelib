@@ -24,6 +24,7 @@
 #include <QUrl>
 #include <QNetworkReply>
 #include "webengineviewer_export.h"
+#include "checkphishingurlutil.h"
 class QNetworkAccessManager;
 namespace WebEngineViewer
 {
@@ -37,14 +38,6 @@ public:
     explicit CheckPhishingUrlJob(QObject *parent = Q_NULLPTR);
     ~CheckPhishingUrlJob();
 
-    enum UrlStatus {
-        Ok = 0,
-        MalWare,
-        BrokenNetwork,
-        InvalidUrl,
-        Unknown
-    };
-
     void setUrl(const QUrl &url);
 
     void start();
@@ -54,7 +47,7 @@ public:
     void parse(const QByteArray &replyStr);
 
 Q_SIGNALS:
-    void result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, uint verifyCacheAfterThisTime = 0);
+    void result(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url, uint verifyCacheAfterThisTime = 0);
     void debugJson(const QByteArray &ba);
 
 private Q_SLOTS:
@@ -66,5 +59,4 @@ private:
     CheckPhishingUrlJobPrivate *const d;
 };
 }
-Q_DECLARE_METATYPE(WebEngineViewer::CheckPhishingUrlJob::UrlStatus)
 #endif // CHECKPHISHINGURLJOB_H

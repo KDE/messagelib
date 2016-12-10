@@ -81,23 +81,23 @@ void CheckPhishingUrlGui::slotJSonDebug(const QByteArray &debug)
     mJson->setPlainText(QString::fromLatin1(debug));
 }
 
-void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlJob::UrlStatus result, const QUrl &url, double cacheDuration)
+void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result, const QUrl &url, double cacheDuration)
 {
     QString resultStr;
     switch (result) {
-    case WebEngineViewer::CheckPhishingUrlJob::Ok:
+    case WebEngineViewer::CheckPhishingUrlUtil::Ok:
         resultStr = QStringLiteral("Url ok");
         break;
-    case WebEngineViewer::CheckPhishingUrlJob::MalWare:
+    case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
         resultStr = QStringLiteral("Url MalWare");
         break;
-    case WebEngineViewer::CheckPhishingUrlJob::Unknown:
+    case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
         resultStr = QStringLiteral("Url Unknow state");
         break;
-    case WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork:
+    case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
         resultStr = QStringLiteral("Broken Network");
         break;
-    case WebEngineViewer::CheckPhishingUrlJob::InvalidUrl:
+    case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
         resultStr = QStringLiteral("Invalid Url");
         break;
     }

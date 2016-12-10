@@ -32,7 +32,7 @@ public:
     ~CheckPhishingUrlGui();
 private Q_SLOTS:
     void slotCheckUrl();
-    void slotGetResult(WebEngineViewer::CheckPhishingUrlJob::UrlStatus result, const QUrl &url, double cacheDuration);
+    void slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result, const QUrl &url, double cacheDuration);
     void slotJSonDebug(const QByteArray &debug);
 private:
     QLineEdit *mCheckUrlLineEdit;

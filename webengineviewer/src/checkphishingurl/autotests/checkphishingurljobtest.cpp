@@ -69,15 +69,15 @@ void CheckPhishingUrlJobTest::shouldParseResult_data()
     QTest::addColumn<QByteArray>("input");
     QTest::addColumn<QUrl>("checkedUrl");
     QTest::addColumn<uint>("verifyCacheAfterThisTime");
-    QTest::addColumn<WebEngineViewer::CheckPhishingUrlJob::UrlStatus>("urlStatus");
+    QTest::addColumn<WebEngineViewer::CheckPhishingUrlUtil::UrlStatus>("urlStatus");
     uint val = 0;
-    QTest::newRow("empty") << QByteArray() << QUrl() << val << WebEngineViewer::CheckPhishingUrlJob::Unknown;
-    QTest::newRow("empty1") << QByteArray() << QUrl(QStringLiteral("http://www.kde.org")) << val << WebEngineViewer::CheckPhishingUrlJob::Unknown;
+    QTest::newRow("empty") << QByteArray() << QUrl() << val << WebEngineViewer::CheckPhishingUrlUtil::Unknown;
+    QTest::newRow("empty1") << QByteArray() << QUrl(QStringLiteral("http://www.kde.org")) << val << WebEngineViewer::CheckPhishingUrlUtil::Unknown;
 
-    QTest::newRow("urlOk") << QByteArrayLiteral("{}") << QUrl(QStringLiteral("http://www.kde.org")) << val << WebEngineViewer::CheckPhishingUrlJob::Ok;
+    QTest::newRow("urlOk") << QByteArrayLiteral("{}") << QUrl(QStringLiteral("http://www.kde.org")) << val << WebEngineViewer::CheckPhishingUrlUtil::Ok;
 
     val = WebEngineViewer::CheckPhishingUrlUtil::refreshingCacheAfterThisTime(WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(QStringLiteral("300s")));
-    QTest::newRow("malware") << QByteArrayLiteral("{\"matches\":[{\"threatType\":\"MALWARE\",\"platformType\":\"WINDOWS\",\"threat\":{\"url\":\"http://malware.testing.google.test/testing/malware/\"},\"cacheDuration\":\"300s\",\"threatEntryType\":\"URL\"}]}") << QUrl(QStringLiteral("http://malware.testing.google.test/testing/malware/")) << val << WebEngineViewer::CheckPhishingUrlJob::MalWare;
+    QTest::newRow("malware") << QByteArrayLiteral("{\"matches\":[{\"threatType\":\"MALWARE\",\"platformType\":\"WINDOWS\",\"threat\":{\"url\":\"http://malware.testing.google.test/testing/malware/\"},\"cacheDuration\":\"300s\",\"threatEntryType\":\"URL\"}]}") << QUrl(QStringLiteral("http://malware.testing.google.test/testing/malware/")) << val << WebEngineViewer::CheckPhishingUrlUtil::MalWare;
 }
 
 void CheckPhishingUrlJobTest::shouldParseResult()
@@ -85,14 +85,14 @@ void CheckPhishingUrlJobTest::shouldParseResult()
     QFETCH(QByteArray, input);
     QFETCH(QUrl, checkedUrl);
     QFETCH(uint, verifyCacheAfterThisTime);
-    QFETCH(WebEngineViewer::CheckPhishingUrlJob::UrlStatus, urlStatus);
+    QFETCH(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus, urlStatus);
 
     WebEngineViewer::CheckPhishingUrlJob job;
     job.setUrl(checkedUrl);
-    QSignalSpy spy1(&job, SIGNAL(result(WebEngineViewer::CheckPhishingUrlJob::UrlStatus,QUrl,uint)));
+    QSignalSpy spy1(&job, SIGNAL(result(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus,QUrl,uint)));
     job.parse(input);
     QCOMPARE(spy1.count(), 1);
-    QCOMPARE(spy1.at(0).at(0).value<WebEngineViewer::CheckPhishingUrlJob::UrlStatus>(), urlStatus);
+    QCOMPARE(spy1.at(0).at(0).value<WebEngineViewer::CheckPhishingUrlUtil::UrlStatus>(), urlStatus);
     QCOMPARE(spy1.at(0).at(1).value<QUrl>(), checkedUrl);
     QCOMPARE(spy1.at(0).at(2).value<uint>(), verifyCacheAfterThisTime);
 }

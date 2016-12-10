@@ -21,6 +21,7 @@
 #define CHECKPHISHINGURLUTIL_H
 
 #include <QString>
+#include <QObject>
 #include "webengineviewer_export.h"
 namespace WebEngineViewer
 {
@@ -46,4 +47,5 @@ WEBENGINEVIEWER_EXPORT bool cachedValueStillValid(uint seconds);
 WEBENGINEVIEWER_EXPORT int generateRandomSecondValue(int numberOfFailed);
 }
 }
+Q_DECLARE_METATYPE(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus)
 #endif // CHECKPHISHINGURLUTIL_H
