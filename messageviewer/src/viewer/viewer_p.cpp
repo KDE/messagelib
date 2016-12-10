@@ -2002,26 +2002,26 @@ void ViewerPrivate::executeRunner(const QUrl &url)
     }
 }
 
-void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, const Akonadi::Item &item, uint verifyCacheAfterThisTime)
+void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url, const Akonadi::Item &item, uint verifyCacheAfterThisTime)
 {
     Q_UNUSED(item);
     switch (status) {
-    case WebEngineViewer::CheckPhishingUrlJob::BrokenNetwork:
+    case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
         KMessageBox::error(mMainWindow, i18n("The network is broken."), i18n("Check Phishing URL"));
         break;
-    case WebEngineViewer::CheckPhishingUrlJob::InvalidUrl:
+    case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
         KMessageBox::error(mMainWindow, i18n("The URL %1 is not valid.", url.toString()), i18n("Check Phishing URL"));
         break;
-    case WebEngineViewer::CheckPhishingUrlJob::Ok:
+    case WebEngineViewer::CheckPhishingUrlUtil::Ok:
         WebEngineViewer::CheckPhishingUrlCache::self()->addCheckingUrlResult(url, true, verifyCacheAfterThisTime);
         break;
-    case WebEngineViewer::CheckPhishingUrlJob::MalWare:
+    case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
         WebEngineViewer::CheckPhishingUrlCache::self()->addCheckingUrlResult(url, false, verifyCacheAfterThisTime);
         if (!urlIsAMalwareButContinue()) {
             return;
         }
         break;
-    case WebEngineViewer::CheckPhishingUrlJob::Unknown:
+    case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
         qCWarning(MESSAGEVIEWER_LOG) << "WebEngineViewer::CheckPhishingUrlJob unknown error ";
         break;
     }
