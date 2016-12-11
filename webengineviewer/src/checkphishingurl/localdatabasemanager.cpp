@@ -272,21 +272,5 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
 void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url)
 {
     qCWarning(WEBENGINEVIEWER_LOG) << " Url " << url << " status " << status;
-    switch (status) {
-    case WebEngineViewer::CheckPhishingUrlUtil::Ok:
-        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::Ok);
-        break;
-    case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
-        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::MalWare);
-        break;
-    case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
-        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::Unknown);
-        break;
-    case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
-        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::InvalidUrl);
-        break;
-    case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
-        Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::BrokenNetwork);
-        break;
-    }
+    Q_EMIT checkUrlFinished(url, status);
 }
