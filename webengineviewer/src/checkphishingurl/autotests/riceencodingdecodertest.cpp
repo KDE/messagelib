@@ -106,7 +106,7 @@ void RiceEncodingDecoderTest::shouldDecodeRiceHashes()
     deltaEncoding.numberEntries = numberEntries;
     deltaEncoding.riceParameter = riceParameter;
     const QList<quint32> hash = decoding.decodeRiceHashesDelta(deltaEncoding);
-    qDebug()<<" hash " << hash << " 0xad934c0cu" << 0xad934c0cu;
+    qDebug() << " hash " << hash << " 0xad934c0cu" << 0xad934c0cu;
     QCOMPARE(hash, result);
 }
 

@@ -94,11 +94,11 @@ QStringList UrlHashing::generatePathsToCheck(const QString &str, const QString &
             if (i == 0) {
                 pathToCheck << QStringLiteral("/");
             } else {
-                pathToCheck << str.left(i+1);
+                pathToCheck << str.left(i + 1);
             }
         }
     }
-    if (!pathToCheck.isEmpty() && pathToCheck.at(pathToCheck.count()-1) != str) {
+    if (!pathToCheck.isEmpty() && pathToCheck.at(pathToCheck.count() - 1) != str) {
         pathToCheck << str;
     }
     if (!query.isEmpty()) {
@@ -141,8 +141,8 @@ QHash<QByteArray, QByteArray> UrlHashing::hashList()
         const QStringList hosts = WebEngineViewer::UrlHashing::generateHostsToCheck(url.host());
         const QStringList paths = WebEngineViewer::UrlHashing::generatePathsToCheck(url.path(), url.query());
 
-        Q_FOREACH(const QString &host, hosts) {
-            Q_FOREACH(const QString &path, paths) {
+        Q_FOREACH (const QString &host, hosts) {
+            Q_FOREACH (const QString &path, paths) {
                 const QString str = host + path;
                 QByteArray ba = QCryptographicHash::hash(str.toLatin1(), QCryptographicHash::Sha256);
                 QByteArray baShort = ba;

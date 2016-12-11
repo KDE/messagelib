@@ -41,14 +41,14 @@ void SearchFullHashJobTest::shouldNotBeAbleToStartWithEmptyUrl()
 
 void SearchFullHashJobTest::shouldCreateRequest_data()
 {
-    QTest::addColumn<QHash<QByteArray,QByteArray> >("hash");
+    QTest::addColumn<QHash<QByteArray, QByteArray> >("hash");
     QTest::addColumn<QStringList>("databaseHash");
     QTest::addColumn<QString>("request");
     QTest::addColumn<QUrl>("url");
     QTest::addColumn<bool>("canStart");
-    QTest::newRow("no hash") << QHash<QByteArray,QByteArray>() << QStringList() << QString() << QUrl() << false;
-    QTest::newRow("database hash but not hash and not url") << QHash<QByteArray,QByteArray>() << QStringList{QStringLiteral("boo")} << QString() << QUrl() << false;
-    QHash<QByteArray,QByteArray> hashs;
+    QTest::newRow("no hash") << QHash<QByteArray, QByteArray>() << QStringList() << QString() << QUrl() << false;
+    QTest::newRow("database hash but not hash and not url") << QHash<QByteArray, QByteArray>() << QStringList{QStringLiteral("boo")} << QString() << QUrl() << false;
+    QHash<QByteArray, QByteArray> hashs;
     hashs.insert(QByteArrayLiteral("bla"), QByteArrayLiteral("bla"));
     QTest::newRow("database hash but hash and not url") << hashs << QStringList{QStringLiteral("boo")} << QString() << QUrl() << false;
     QTest::newRow("database hash and hash") << hashs << QStringList{QStringLiteral("boo")}
@@ -61,8 +61,8 @@ void SearchFullHashJobTest::shouldCreateRequest_data()
 
 void SearchFullHashJobTest::shouldCreateRequest()
 {
-    typedef QHash<QByteArray,QByteArray> hashdef;
-    QFETCH(hashdef , hash);
+    typedef QHash<QByteArray, QByteArray> hashdef;
+    QFETCH(hashdef, hash);
     QFETCH(QStringList, databaseHash);
     QFETCH(QString, request);
     QFETCH(QUrl, url);

@@ -45,7 +45,7 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
     pageView->setPage(mEnginePage);
     //pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
     const QString urlPage = QLatin1String(CHECKPHISHINGURL_TEST_DATA_DIR) + QStringLiteral("/test-url.html");
-    qDebug() << " urlPage"<<urlPage;
+    qDebug() << " urlPage" << urlPage;
     pageView->load(QUrl::fromLocalFile(urlPage));
     connect(mEnginePage, &WebEngineViewer::WebEnginePage::urlClicked, this, &WebEngineViewWithSafeBrowsingSupport::slotUrlClicked);
 
@@ -68,7 +68,7 @@ void WebEngineViewWithSafeBrowsingSupport::slotUrlClicked(const QUrl &url)
 void WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status)
 {
     QString statusStr;
-    switch(status) {
+    switch (status) {
     case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
         statusStr = QStringLiteral("Unknown Status");
         break;

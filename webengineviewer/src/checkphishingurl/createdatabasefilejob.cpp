@@ -81,7 +81,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
         case UpdateDataBaseInfo::RiceCompression: {
             qCWarning(WEBENGINEVIEWER_LOG) << "Rice compression still not implemented";
             const QList<quint32> listRice = WebEngineViewer::RiceEncodingDecoder::decodeRiceHashesDelta(add.riceDeltaEncoding);
-            qDebug()<<" listRice" << listRice;
+            qDebug() << " listRice" << listRice;
             //TODO
             break;
         }
@@ -181,7 +181,7 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Remov
             }
             break;
         }
-        case UpdateDataBaseInfo::RiceCompression: {            
+        case UpdateDataBaseInfo::RiceCompression: {
             indexToRemove = WebEngineViewer::RiceEncodingDecoder::decodeRiceIndiceDelta(removeItem.riceDeltaEncoding);
             break;
         }

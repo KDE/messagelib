@@ -119,7 +119,6 @@ void UrlHashingTest::shouldCanonicalizeUrl()
     QCOMPARE(WebEngineViewer::UrlHashing::canonicalizeUrl(QUrl::fromUserInput(input)), output);
 }
 
-
 void UrlHashingTest::shouldGenerateHostPath_data()
 {
     QTest::addColumn<QString>("input");
@@ -170,6 +169,5 @@ void UrlHashingTest::shouldGenerateHashList()
     WebEngineViewer::UrlHashing hashing(input);
     QCOMPARE(hashing.hashList().count(), numberItems);
 }
-
 
 QTEST_MAIN(UrlHashingTest)

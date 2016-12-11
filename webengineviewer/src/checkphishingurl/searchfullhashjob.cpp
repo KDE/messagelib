@@ -104,7 +104,7 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
     if (document.isNull()) {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Unknown, d->mUrl);
     } else {
-        qDebug()<<" document" << document.toJson(QJsonDocument::Indented);
+        qDebug() << " document" << document.toJson(QJsonDocument::Indented);
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
             Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Ok, d->mUrl);
@@ -155,7 +155,7 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
 bool SearchFullHashJobPrivate::foundExactHash(const QList<QByteArray> &listLongHash)
 {
     QList<QByteArray> lstLongHash = mHashs.keys();
-    Q_FOREACH(const QByteArray &ba, lstLongHash) {
+    Q_FOREACH (const QByteArray &ba, lstLongHash) {
         if (listLongHash.contains(ba)) {
             return true;
         }

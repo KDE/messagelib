@@ -94,7 +94,7 @@ int CheckPhishingUrlUtil::generateRandomSecondValue(int numberOfFailed)
     //MIN(((2^(n-1))*15 minutes) * (RAND + 1), 24 hours)
     int seconds = 0;
     if (numberOfFailed >= 1 && numberOfFailed < 9) {
-        seconds = static_cast<int>(qMin(static_cast<int>(qPow(2, numberOfFailed- 1)) * (15 * 60) * r, static_cast<float>(numberOfSecondByDay)));
+        seconds = static_cast<int>(qMin(static_cast<int>(qPow(2, numberOfFailed - 1)) * (15 * 60) * r, static_cast<float>(numberOfSecondByDay)));
     } else if (numberOfFailed >= 9) {
         seconds = numberOfSecondByDay;
     }

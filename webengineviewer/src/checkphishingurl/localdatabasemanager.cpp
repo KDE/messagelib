@@ -235,7 +235,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
                 conflictHashs.insert(i.key().toBase64(), i.value().toBase64());
             }
         }
-        qDebug() << "conflictHashs "<< conflictHashs;
+        qDebug() << "conflictHashs " << conflictHashs;
         /*
         Q_FOREACH(const QByteArray &ba, hashList.values()) {
             QByteArray result = d->mFile.searchHash(ba);
@@ -271,7 +271,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
 
 void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url)
 {
-    qCWarning(WEBENGINEVIEWER_LOG) << " Url " << url << " status "<< status;
+    qCWarning(WEBENGINEVIEWER_LOG) << " Url " << url << " status " << status;
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlUtil::Ok:
         Q_EMIT checkUrlFinished(url, CheckPhishingUrlUtil::Ok);
