@@ -151,6 +151,7 @@ void LocalDataBaseManager::initialize()
         } else {
             const uint now = QDateTime::currentDateTime().toTime_t();
             if (now > d->mSecondToStartRefreshing) {
+                qCWarning(WEBENGINEVIEWER_LOG) << " It's not necessary to check now";
                 d->mDataBaseOk = true;
             } else {
                 //Perhaps don't download for each start of kmail
