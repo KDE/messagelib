@@ -104,7 +104,6 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
     if (document.isNull()) {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Unknown, d->mUrl);
     } else {
-        qDebug() << " document" << document.toJson(QJsonDocument::Indented);
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
             Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Ok, d->mUrl);
@@ -255,7 +254,7 @@ void SearchFullHashJob::start()
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 
         const QByteArray baPostData = jsonRequest();
-        qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
+        //qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
         Q_EMIT debugJson(baPostData);
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
         connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &SearchFullHashJob::slotError);
