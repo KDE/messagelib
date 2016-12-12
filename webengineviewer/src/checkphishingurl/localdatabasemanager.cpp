@@ -149,8 +149,13 @@ void LocalDataBaseManager::initialize()
         if (!QFile(databaseFullPath()).exists()) {
             downloadFullDataBase();
         } else {
-            //Perhaps don't download for each start of kmail
-            downloadPartialDataBase();
+            const uint now = QDateTime::currentDateTime().toTime_t();
+            if (now > d->mSecondToStartRefreshing) {
+                d->mDataBaseOk = true;
+            } else {
+                //Perhaps don't download for each start of kmail
+                downloadPartialDataBase();
+            }
         }
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized. It's a bug in code if you call it twice.";
@@ -159,7 +164,8 @@ void LocalDataBaseManager::initialize()
 
 void LocalDataBaseManager::slotCheckDataBase()
 {
-    if (d->mDataBaseOk && !d->mDownloadProgress) {
+    const uint now = QDateTime::currentDateTime().toTime_t();
+    if (d->mDataBaseOk && !d->mDownloadProgress && (d->mSecondToStartRefreshing < now)) {
         downloadPartialDataBase();
     }
 }
