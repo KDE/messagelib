@@ -23,7 +23,6 @@
 #include <QObject>
 #include "webengineviewer_export.h"
 #include "updatedatabaseinfo.h"
-#include <QFile>
 
 namespace WebEngineViewer
 {

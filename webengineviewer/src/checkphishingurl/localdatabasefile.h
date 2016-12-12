@@ -23,7 +23,6 @@
 #include "webengineviewer_export.h"
 #include <QString>
 #include <QDateTime>
-#include <QFile>
 
 namespace WebEngineViewer
 {

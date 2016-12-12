@@ -22,9 +22,9 @@
 
 #include <QObject>
 #include "webengineviewer_export.h"
-#include <QUrl>
 #include "createphishingurldatabasejob.h"
 #include "searchfullhashjob.h"
+#include <QUrl>
 namespace WebEngineViewer
 {
 class LocalDataBaseManagerPrivate;

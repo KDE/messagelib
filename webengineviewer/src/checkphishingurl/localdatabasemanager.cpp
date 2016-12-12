@@ -23,6 +23,7 @@
 #include "checkphishingurlutil.h"
 #include "localdatabasefile.h"
 #include "urlhashing.h"
+#include "backoffmodemanager.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>
