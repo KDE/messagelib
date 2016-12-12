@@ -86,5 +86,5 @@ ecm_add_test(backoffmodemanagertest.cpp ../backoffmodemanager.cpp ../checkphishi
 ecm_add_test(downloadlocaldatabasethreadtest.cpp ../downloadlocaldatabasethread.cpp ../checkphishingurlutil.cpp ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME downloadlocaldatabasethreadtest
     NAME_PREFIX "webengineview-downloadlocaldatabasethreadtest-"
-    LINK_LIBRARIES Qt5::Test
+    LINK_LIBRARIES Qt5::Test Qt5::Network KF5::WebEngineViewer
     )

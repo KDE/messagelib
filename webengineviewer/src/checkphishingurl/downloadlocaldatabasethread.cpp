@@ -18,7 +18,7 @@
 */
 
 #include "downloadlocaldatabasethread.h"
-
+#include <WebEngineViewer/CreatePhishingUrlDataBaseJob>
 using namespace WebEngineViewer;
 
 DownloadLocalDatabaseThread::DownloadLocalDatabaseThread(QObject *parent)
@@ -32,7 +32,23 @@ DownloadLocalDatabaseThread::~DownloadLocalDatabaseThread()
 
 }
 
-void WebEngineViewer::DownloadLocalDatabaseThread::run()
+void DownloadLocalDatabaseThread::setDataBaseState(const QString &value)
 {
-    //TODO
+    mDataBaseState = value;
+}
+
+void DownloadLocalDatabaseThread::run()
+{
+    WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
+    job->setDataBaseDownloadNeeded(mDataBaseState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
+    job->setDataBaseState(mDataBaseState);
+    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &DownloadLocalDatabaseThread::slotDownloadDataBaseFinished);
+    job->start();
+}
+
+void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
+                                                               WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
+{
+    Q_EMIT downloadDataBaseFinished(infoDataBase, status);
+    deleteLater();
 }

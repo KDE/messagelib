@@ -18,6 +18,7 @@
 */
 
 #include "downloadlocaldatabasethreadtest.h"
+#include "../downloadlocaldatabasethread.h"
 
 #include <QTest>
 

@@ -22,6 +22,7 @@
 
 #include <QThread>
 #include "webengineviewer_export.h"
+#include <WebEngineViewer/CreatePhishingUrlDataBaseJob>
 namespace WebEngineViewer
 {
 class WEBENGINEVIEWER_EXPORT DownloadLocalDatabaseThread : public QThread
@@ -31,8 +32,19 @@ public:
     explicit DownloadLocalDatabaseThread(QObject *parent = Q_NULLPTR);
     ~DownloadLocalDatabaseThread();
 
+    void setDataBaseState(const QString &value);
+
+Q_SIGNALS:
+    void downloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
+                                  WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
+
 protected:
     void run() Q_DECL_OVERRIDE;
+
+private:
+    void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
+                                                                   WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
+    QString mDataBaseState;
 };
 }
 #endif // DOWNLOADLOCALDATABASETHREAD_H
