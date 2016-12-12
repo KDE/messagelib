@@ -38,7 +38,7 @@ public:
     static QStringList generateHostsToCheck(const QString &str);
 
     /*long hash, short hash*/
-    QHash<QByteArray, QByteArray> hashList();
+    QHash<QByteArray, QByteArray> hashList() const;
 private:
     QUrl mUrl;
 };

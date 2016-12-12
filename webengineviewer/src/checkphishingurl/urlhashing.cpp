@@ -132,7 +132,7 @@ QStringList UrlHashing::generateHostsToCheck(const QString &str)
     return hostToCheck;
 }
 
-QHash<QByteArray, QByteArray> UrlHashing::hashList()
+QHash<QByteArray, QByteArray> UrlHashing::hashList() const
 {
     QHash<QByteArray, QByteArray> lst;
     if (mUrl.isValid()) {
