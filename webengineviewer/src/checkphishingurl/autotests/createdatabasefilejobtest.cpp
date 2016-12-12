@@ -90,7 +90,7 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
 
-    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString)));
+    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString,QString)));
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
     bool successCreateDataBase = spy2.at(0).at(0).toBool();
@@ -218,7 +218,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     databasejob.setUpdateDataBaseInfo(info);
 
-    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString)));
+    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString,QString)));
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
     bool successCreateDataBase = spy2.at(0).at(0).toBool();
@@ -302,7 +302,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     updateDatabasejob.setUpdateDataBaseInfo(updateinfo);
 
-    QSignalSpy spy3(&updateDatabasejob, SIGNAL(finished(bool,QString)));
+    QSignalSpy spy3(&updateDatabasejob, SIGNAL(finished(bool,QString,QString)));
     updateDatabasejob.start();
     QCOMPARE(spy3.count(), 1);
     successCreateDataBase = spy3.at(0).at(0).toBool();
@@ -352,7 +352,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
 
     databasejob.setUpdateDataBaseInfo(info);
 
-    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString)));
+    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString,QString)));
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
     bool successCreateDataBase = spy2.at(0).at(0).toBool();
@@ -404,7 +404,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
 
-    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString)));
+    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString,QString)));
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
     bool successCreateDataBase = spy2.at(0).at(0).toBool();
@@ -432,7 +432,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     databasejob2.setFileName(createDataBaseName);
     databasejob2.setUpdateDataBaseInfo(infoUpdate);
 
-    QSignalSpy spy4(&databasejob2, SIGNAL(finished(bool,QString)));
+    QSignalSpy spy4(&databasejob2, SIGNAL(finished(bool,QString,QString)));
     databasejob2.start();
     QCOMPARE(spy4.count(), 1);
     successCreateDataBase = spy4.at(0).at(0).toBool();

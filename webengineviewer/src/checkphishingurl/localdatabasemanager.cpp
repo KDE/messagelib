@@ -54,6 +54,7 @@ class WebEngineViewer::LocalDataBaseManagerPrivate
 public:
     LocalDataBaseManagerPrivate(LocalDataBaseManager *qq)
         : mFile(databaseFullPath()),
+          mSecondToStartRefreshing(0),
           mDataBaseOk(false),
           mDownloadProgress(false),
           q(qq)
@@ -72,6 +73,7 @@ public:
     LocalDataBaseFile mFile;
     QString mNewClientState;
     QString mMinimumWaitDuration;
+    uint mSecondToStartRefreshing;
     bool mDataBaseOk;
     bool mDownloadProgress;
     LocalDataBaseManager *q;
@@ -103,6 +105,10 @@ void LocalDataBaseManagerPrivate::readConfig()
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
     mNewClientState = grp.readEntry(QStringLiteral("DataBaseState"));
+    mMinimumWaitDuration = grp.readEntry(QStringLiteral("RefreshDataBase"));
+    if (!mMinimumWaitDuration.isEmpty()) {
+        mSecondToStartRefreshing = WebEngineViewer::CheckPhishingUrlUtil::refreshingCacheAfterThisTime(WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(mMinimumWaitDuration));
+    }
 }
 
 void LocalDataBaseManagerPrivate::saveConfig()
@@ -110,6 +116,7 @@ void LocalDataBaseManagerPrivate::saveConfig()
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
     grp.writeEntry(QStringLiteral("DataBaseState"), mNewClientState);
+    grp.writeEntry(QStringLiteral("RefreshDataBase"), mMinimumWaitDuration);
 }
 
 void LocalDataBaseManager::downloadDataBase(const QString &clientState)
@@ -196,10 +203,11 @@ void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::U
     qCDebug(WEBENGINEVIEWER_LOG) << "Download done";
 }
 
-void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState)
+void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
 {
     d->mDownloadProgress = false;
     d->mNewClientState = success ? newClientState : QString();
+    d->mMinimumWaitDuration = minimumWaitDurationStr;
     d->saveConfig();
     //if !success => redownload full!
     if (!success) {

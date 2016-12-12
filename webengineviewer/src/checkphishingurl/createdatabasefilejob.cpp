@@ -120,7 +120,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     if (!checkSumCorrect) {
         qCWarning(WEBENGINEVIEWER_LOG) << " newSsha256Value different from sha256 : " << newSsha256Value.toBase64() << " from server " << mInfoDataBase.sha256;
     }
-    Q_EMIT q->finished(checkSumCorrect, mInfoDataBase.newClientState/*, mInfoDataBase.minimumWaitDuration*/);
+    Q_EMIT q->finished(checkSumCorrect, mInfoDataBase.newClientState, mInfoDataBase.minimumWaitDuration);
 }
 
 void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
@@ -130,12 +130,12 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
     if (fullUpdate) {
         if (mFile.exists() && !mFile.remove()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
-            Q_EMIT q->finished(false, QString());
+            Q_EMIT q->finished(false, QString(), QString());
             return;
         }
         if (!mFile.open(QIODevice::WriteOnly)) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
-            Q_EMIT q->finished(false, QString());
+            Q_EMIT q->finished(false, QString(), QString());
             return;
         }
         createFileFromFullUpdate(mInfoDataBase.additionList);
@@ -143,7 +143,7 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
         WebEngineViewer::LocalDataBaseFile localeFile(mFileName);
         if (!localeFile.fileExists()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to create partial update as file doesn't exist";
-            Q_EMIT q->finished(false, QString());
+            Q_EMIT q->finished(false, QString(), QString());
             return;
         }
         //Read Element from database.
@@ -158,12 +158,12 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
 
         if (!mFile.remove()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to remove database file " << mFileName;
-            Q_EMIT q->finished(false, QString());
+            Q_EMIT q->finished(false, QString(), QString());
             return;
         }
         if (!mFile.open(QIODevice::WriteOnly)) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to open database file " << mFileName;
-            Q_EMIT q->finished(false, QString());
+            Q_EMIT q->finished(false, QString(), QString());
             return;
         }
         createFileFromFullUpdate(oldDataBaseAddition);
@@ -237,7 +237,7 @@ void CreateDatabaseFileJob::setUpdateDataBaseInfo(const UpdateDataBaseInfo &info
 void CreateDatabaseFileJob::start()
 {
     if (!canStart()) {
-        Q_EMIT finished(false, QString());
+        Q_EMIT finished(false, QString(), QString());
         deleteLater();
     } else {
         d->createBinaryFile();

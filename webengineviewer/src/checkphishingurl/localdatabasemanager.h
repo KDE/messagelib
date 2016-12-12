@@ -41,7 +41,7 @@ public:
 
     void initialize();
 
-    void slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState);
+    void slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState, const QString &minimumWaitDurationStr);
 
 Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);

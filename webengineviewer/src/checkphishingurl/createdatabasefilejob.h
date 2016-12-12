@@ -40,7 +40,7 @@ public:
     void setUpdateDataBaseInfo(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
 
 Q_SIGNALS:
-    void finished(bool success, const QString &newStateDatabase);
+    void finished(bool success, const QString &newStateDatabase, const QString &minimumWaitDurationStr);
 
 private:
     CreateDatabaseFileJobPrivate *const d;
