@@ -21,9 +21,10 @@
 #define DOWNLOADLOCALDATABASETHREAD_H
 
 #include <QThread>
+#include "webengineviewer_export.h"
 namespace WebEngineViewer
 {
-class DownloadLocalDatabaseThread : public QThread
+class WEBENGINEVIEWER_EXPORT DownloadLocalDatabaseThread : public QThread
 {
     Q_OBJECT
 public:
