@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "createdatabasefilejob.h"
 #include "downloadlocaldatabasethread.h"
 #include <WebEngineViewer/CreatePhishingUrlDataBaseJob>
 using namespace WebEngineViewer;
@@ -51,4 +52,15 @@ void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineVi
 {
     Q_EMIT downloadDataBaseFinished(infoDataBase, status);
     deleteLater();
+}
+
+void DownloadLocalDatabaseThread::installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
+{
+#if 0
+    WebEngineViewer::CreateDatabaseFileJob *job = new WebEngineViewer::CreateDatabaseFileJob(this);
+    job->setFileName(databaseFullPath());
+    job->setUpdateDataBaseInfo(infoDataBase);
+    connect(job, &CreateDatabaseFileJob::finished, q, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
+    job->start();
+#endif
 }

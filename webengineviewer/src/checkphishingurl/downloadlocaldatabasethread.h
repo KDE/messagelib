@@ -42,6 +42,7 @@ protected:
     void run() Q_DECL_OVERRIDE;
 
 private:
+    void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
                                                                    WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     QString mDataBaseState;
