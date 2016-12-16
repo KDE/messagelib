@@ -76,7 +76,7 @@ void BackOffModeManagerPrivate::save()
 void BackOffModeManagerPrivate::slotTimerFinished()
 {
     qCDebug(WEBENGINEVIEWER_LOG) << "Existing from BlackOffMode";
-    isInOffMode = false;
+    exitBackOffMode();
     save();
 }
 
@@ -126,6 +126,7 @@ void BackOffModeManagerPrivate::startOffMode()
 
 void BackOffModeManagerPrivate::exitBackOffMode()
 {
+    isInOffMode = false;
     mNumberOfHttpFailed = 0;
 }
 
