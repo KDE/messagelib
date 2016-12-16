@@ -329,6 +329,7 @@ bool Viewer::event(QEvent *e)
         delete d->mCSSHelper;
         d->mCSSHelper = new CSSHelper(d->mViewer);
         d->update(MimeTreeParser::Force);
+        e->accept();
         return true;
     }
     return QWidget::event(e);
