@@ -34,6 +34,7 @@ Comment[zh_CN]=信件查看器
 
 [Event/adblock-list-download-done]
 Name=New Ad-Block list download done
+Name[ast]=Descarga del llistáu nuevu d'anuncios fecha
 Name[ca]=La baixada de la nova llista de bloqueig publicitari ha finalitzat
 Name[ca@valencia]=La baixada de la nova llista de bloqueig publicitari ha finalitzat
 Name[cs]=Stažení nového seznamu pro Ad-Block dokončeno
@@ -64,6 +65,7 @@ Name[sv]=Nerladdning av ny reklamblockeringslista gjord
 Name[uk]=Завершено отримання нового списку блокування реклами
 Name[x-test]=xxNew Ad-Block list download donexx
 Comment=New Ad-Block list download done
+Comment[ast]=Finó la descarga del llistáu nuevu d'anuncios
 Comment[ca]=La baixada de la nova llista de bloqueig publicitari ha finalitzat
 Comment[ca@valencia]=La baixada de la nova llista de bloqueig publicitari ha finalitzat
 Comment[cs]=Stažení nového seznamu pro Ad-Block dokončeno
@@ -97,6 +99,7 @@ Action=Popup
 
 [Event/adblock-list-download-failed]
 Name=New Ad-Block list download failed
+Name[ast]=Descarga del llistáu nuevu d'anuncios fallida
 Name[ca]=La baixada de la nova llista de bloqueig publicitari ha fallat
 Name[ca@valencia]=La baixada de la nova llista de bloqueig publicitari ha fallat
 Name[cs]=Stažení nového seznamu pro Ad-Block selhalo
@@ -126,6 +129,7 @@ Name[sv]=Nerladdning av ny reklamblockeringslista misslyckades
 Name[uk]=Не вдалося отримати новий список блокування реклами
 Name[x-test]=xxNew Ad-Block list download failedxx
 Comment=New Ad-Block list download failed
+Comment[ast]=Falló la descarga del llistáu nuevu d'anuncios
 Comment[ca]=La baixada de la nova llista de bloqueig publicitari ha fallat
 Comment[ca@valencia]=La baixada de la nova llista de bloqueig publicitari ha fallat
 Comment[cs]=Stažení nového seznamu pro Ad-Block selhalo
