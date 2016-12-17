@@ -128,7 +128,6 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadOnly()
 {
     // Sample data.
     const QString name = QStringLiteral("old name");
-    const QString newName = QStringLiteral("new name");
 
     // Create the part.
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
@@ -170,7 +169,6 @@ void AttachmentPropertiesDialogTest::testMimeContentReadOnly()
 {
     // Sample data.
     const QString name = QStringLiteral("old name");
-    const QString newName = QStringLiteral("new name");
     const QByteArray charset("us-ascii");
 
     // Create the MIME Content.

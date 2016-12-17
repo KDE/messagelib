@@ -75,8 +75,6 @@ void AttachmentFromUrlJobTest::testAttachments()
 void AttachmentFromUrlJobTest::testAttachmentTooBig()
 {
     const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("doc.pdf"));
-    const QString name = QString::fromLatin1("doc.pdf");
-    const QByteArray mimetype("application/pdf");
 
     AttachmentFromUrlJob *ljob = new AttachmentFromUrlJob(url, this);
     ljob->setMaximumAllowedSize(1024);   // 1KiB, whereas the file is >9KiB.
