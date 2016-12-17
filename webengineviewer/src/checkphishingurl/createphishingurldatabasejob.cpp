@@ -218,7 +218,7 @@ RiceDeltaEncoding CreatePhishingUrlDataBaseJobPrivate::parseRiceDeltaEncoding(co
 QVector<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVariantList &lst)
 {
     QVector<Addition> additionList;
-    Q_FOREACH (const QVariant &v, lst) {
+    for (const QVariant &v : lst) {
         if (v.canConvert<QVariantMap>()) {
             QMapIterator<QString, QVariant> mapIt(v.toMap());
             Addition tmp;
@@ -277,7 +277,7 @@ UpdateDataBaseInfo::CompressionType CreatePhishingUrlDataBaseJobPrivate::parseCo
 QVector<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariantList &lst)
 {
     QVector<Removal> removalList;
-    Q_FOREACH (const QVariant &v, lst) {
+    for (const QVariant &v : lst) {
         if (v.canConvert<QVariantMap>()) {
             Removal tmp;
             QMapIterator<QString, QVariant> mapIt(v.toMap());
@@ -299,7 +299,7 @@ QVector<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVaria
                         if (rawIndicesIt.key() == QStringLiteral("indices")) {
                             const QVariantList lst = rawIndicesIt.value().toList();
                             QList<quint32> indexList;
-                            Q_FOREACH (const QVariant &var, lst) {
+                            for (const QVariant &var : lst) {
                                 indexList.append(var.toUInt());
                             }
                             tmp.indexes = indexList;

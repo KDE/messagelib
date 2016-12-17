@@ -393,13 +393,13 @@ void ConfigureAggregationsDialog::Private::cloneAggregationButtonClicked()
 
 void ConfigureAggregationsDialog::Private::deleteAggregationButtonClicked()
 {
-    QList<QListWidgetItem *> list = mAggregationList->selectedItems();
+    const QList<QListWidgetItem *> list = mAggregationList->selectedItems();
     if (list.isEmpty()) {
         return;
     }
 
     mEditor->editAggregation(Q_NULLPTR);   // forget it
-    Q_FOREACH (QListWidgetItem *it, list) {
+    for (QListWidgetItem *it : list) {
         AggregationListWidgetItem *item = dynamic_cast< AggregationListWidgetItem * >(it);
         if (!item) {
             return;
@@ -447,7 +447,7 @@ void ConfigureAggregationsDialog::Private::importAggregationButtonClicked()
 
 void ConfigureAggregationsDialog::Private::exportAggregationButtonClicked()
 {
-    QList<QListWidgetItem *> list = mAggregationList->selectedItems();
+    const QList<QListWidgetItem *> list = mAggregationList->selectedItems();
     if (list.isEmpty()) {
         return;
     }
@@ -459,7 +459,7 @@ void ConfigureAggregationsDialog::Private::exportAggregationButtonClicked()
         grp.writeEntry("Count", list.count());
 
         int idx = 0;
-        Q_FOREACH (QListWidgetItem *item, list) {
+        for (QListWidgetItem *item : list) {
             AggregationListWidgetItem *themeItem = static_cast< AggregationListWidgetItem * >(item);
             grp.writeEntry(QStringLiteral("Set%1").arg(idx), themeItem->aggregation()->saveToString());
             ++idx;

@@ -41,11 +41,11 @@ void WebEngineManageScript::addScript(QWebEngineProfile *profile, const QString 
 {
     if (profile) {
         QWebEngineScript script;
-        QList<QWebEngineScript> collectionScripts = profile->scripts()->findScripts(scriptName);
+        const QList<QWebEngineScript> collectionScripts = profile->scripts()->findScripts(scriptName);
         if (!collectionScripts.isEmpty()) {
             script = collectionScripts.first();
         }
-        Q_FOREACH (const QWebEngineScript &s, collectionScripts) {
+        for (const QWebEngineScript &s : collectionScripts) {
             profile->scripts()->remove(s);
         }
 

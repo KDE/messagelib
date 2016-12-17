@@ -141,8 +141,8 @@ QHash<QByteArray, QByteArray> UrlHashing::hashList() const
         const QStringList hosts = WebEngineViewer::UrlHashing::generateHostsToCheck(url.host());
         const QStringList paths = WebEngineViewer::UrlHashing::generatePathsToCheck(url.path(), url.query());
 
-        Q_FOREACH (const QString &host, hosts) {
-            Q_FOREACH (const QString &path, paths) {
+        for (const QString &host : hosts) {
+            for (const QString &path : paths) {
                 const QString str = host + path;
                 QByteArray ba = QCryptographicHash::hash(str.toLatin1(), QCryptographicHash::Sha256);
                 QByteArray baShort = ba;

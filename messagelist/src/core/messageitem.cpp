@@ -567,7 +567,7 @@ QString MessageItem::accessibleText(const Theme *theme, int columnIndex)
     const QList<Theme::Row *> rows = theme->column(columnIndex)->messageRows();
     rowsTexts.reserve(rows.count());
 
-    Q_FOREACH (Theme::Row *row, rows) {
+    for (Theme::Row *row : rows) {
         QStringList leftStrings;
         QStringList rightStrings;
         const QList<Theme::ContentItem *> leftItems = row->leftItems();

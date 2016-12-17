@@ -66,7 +66,7 @@ void TestWebEngineAccessKey::handleSearchAccessKey(const QVariant &var)
     const QVariantList lst = var.toList();
     QVector<WebEngineViewer::WebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
-    Q_FOREACH (const QVariant &anchor, lst) {
+    for (const QVariant &anchor : lst) {
         anchorList << WebEngineViewer::WebEngineAccessKeyAnchor(anchor);
     }
     Q_EMIT accessKeySearchFinished(anchorList);

@@ -56,7 +56,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
 
     //2 add number of items
     QList<Addition> itemToStore;
-    Q_FOREACH (const Addition &add, additionList) {
+    for (const Addition &add : additionList) {
         switch (add.compressionType) {
         case UpdateDataBaseInfo::RawCompression: {
             //qCWarning(WEBENGINEVIEWER_LOG) << " add.size" << add.prefixSize;

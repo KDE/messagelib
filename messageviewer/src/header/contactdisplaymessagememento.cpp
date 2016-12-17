@@ -145,7 +145,7 @@ bool ContactDisplayMessageMemento::allowToRemoteContent() const
 bool ContactDisplayMessageMemento::searchPhoto(const KContacts::AddresseeList &list)
 {
     bool foundPhoto = false;
-    Q_FOREACH (const KContacts::Addressee &addressee, list) {
+    for (const KContacts::Addressee &addressee : list) {
         if (!addressee.photo().isEmpty()) {
             mPhoto = addressee.photo();
             foundPhoto = true;
@@ -168,7 +168,7 @@ QPixmap ContactDisplayMessageMemento::gravatarPixmap() const
 void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &addressee)
 {
     const QStringList customs = addressee.customs();
-    Q_FOREACH (const QString &custom, customs) {
+    for (const QString &custom : customs) {
         if (custom.contains(QStringLiteral("MailPreferedFormatting"))) {
             const QString value = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("MailPreferedFormatting"));
             if (value == QLatin1String("TEXT")) {

@@ -472,7 +472,7 @@ void Widget::viewStartDragRequest()
         return;    // no folder here
     }
 
-    QList<Core::MessageItem *> selection = view()->selectionAsMessageItemList();
+    const QList<Core::MessageItem *> selection = view()->selectionAsMessageItemList();
     if (selection.isEmpty()) {
         return;
     }
@@ -490,7 +490,7 @@ void Widget::viewStartDragRequest()
 
     QList<QUrl> urls;
     urls.reserve(selection.count());
-    Q_FOREACH (Core::MessageItem *mi, selection) {
+    for (Core::MessageItem *mi : selection) {
         const Item i = d->itemForRow(mi->currentModelIndexRow());
         QUrl url = i.url(Item::Item::Item::UrlWithMimeType);
         url.addQueryItem(QStringLiteral("parent"), QString::number(mi->parentCollectionId()));

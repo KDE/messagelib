@@ -32,7 +32,7 @@ bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
     if (!pattern.isEmpty()) {
         //TODO use regexp ?
         const QStringList lstPattern = pattern.split(QLatin1Char(';'));
-        Q_FOREACH (const QString &patternStr, lstPattern) {
+        for (const QString &patternStr : lstPattern) {
             switch (MessageComposer::MessageComposerSettings::self()->filterSourceType()) {
             case MessageComposer::MessageComposerSettings::EnumFilterSourceType::NoFilter:
                 break;
@@ -55,7 +55,7 @@ bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
         if (!formatsType.isEmpty()) {
             const QStringList lstFormat = formatsType.split(QLatin1Char(';'));
             bool willResizeImage = false;
-            Q_FOREACH (const QString &type, lstFormat) {
+            for (const QString &type : lstFormat) {
                 if (QString::fromLatin1(part->mimeType()) == type) {
                     willResizeImage = true;
                     break;
@@ -133,7 +133,7 @@ bool Utils::filterRecipients(const QStringList &recipients)
         if (resizeEmailsPattern.isEmpty()) {
             return false;
         }
-        Q_FOREACH (const QString &emails, recipients) {
+        for (const QString &emails : recipients) {
             if (!emails.contains(resizeEmailsPattern)) {
                 return false;
             }
@@ -143,7 +143,7 @@ bool Utils::filterRecipients(const QStringList &recipients)
         if (resizeEmailsPattern.isEmpty()) {
             return false;
         }
-        Q_FOREACH (const QString &emails, recipients) {
+        for (const QString &emails : recipients) {
             if (emails.contains(resizeEmailsPattern)) {
                 return true;
             }
@@ -153,7 +153,7 @@ bool Utils::filterRecipients(const QStringList &recipients)
         if (doNotResizeEmailsPattern.isEmpty()) {
             return false;
         }
-        Q_FOREACH (const QString &emails, recipients) {
+        for (const QString &emails : recipients) {
             if (!emails.contains(doNotResizeEmailsPattern)) {
                 return false;
             }
@@ -163,7 +163,7 @@ bool Utils::filterRecipients(const QStringList &recipients)
         if (doNotResizeEmailsPattern.isEmpty()) {
             return false;
         }
-        Q_FOREACH (const QString &emails, recipients) {
+        for (const QString &emails : recipients) {
             if (emails.contains(doNotResizeEmailsPattern)) {
                 return true;
             }

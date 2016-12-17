@@ -265,7 +265,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
     const QVariantList lst = res.toList();
     QVector<WebEngineViewer::WebEngineAccessKeyAnchor> anchorList;
     anchorList.reserve(lst.count());
-    Q_FOREACH (const QVariant &var, lst) {
+    for (const QVariant &var : lst) {
         //qDebug()<<" var"<<var;
         anchorList << WebEngineViewer::WebEngineAccessKeyAnchor(var);
     }

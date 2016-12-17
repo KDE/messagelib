@@ -153,8 +153,8 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
 
 bool SearchFullHashJobPrivate::foundExactHash(const QList<QByteArray> &listLongHash)
 {
-    QList<QByteArray> lstLongHash = mHashs.keys();
-    Q_FOREACH (const QByteArray &ba, lstLongHash) {
+    const QList<QByteArray> lstLongHash = mHashs.keys();
+    for (const QByteArray &ba : lstLongHash) {
         if (listLongHash.contains(ba)) {
             return true;
         }

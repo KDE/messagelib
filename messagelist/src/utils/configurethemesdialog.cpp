@@ -397,14 +397,14 @@ void ConfigureThemesDialog::Private::cloneThemeButtonClicked()
 
 void ConfigureThemesDialog::Private::deleteThemeButtonClicked()
 {
-    QList<QListWidgetItem *> list = mThemeList->selectedItems();
+    const QList<QListWidgetItem *> list = mThemeList->selectedItems();
     if (list.isEmpty()) {
         return;
     }
     if (KMessageBox::Yes == KMessageBox::questionYesNo(q, list.count() > 1 ? i18n("Do you want to delete selected themes?")
             : i18n("Do you want to delete \"%1\"?", list.first()->text()), i18nc("@title:window", "Delete Theme"))) {
         mEditor->editTheme(Q_NULLPTR);   // forget it
-        Q_FOREACH (QListWidgetItem *it, list) {
+        for (QListWidgetItem *it : list) {
             ThemeListWidgetItem *item = dynamic_cast< ThemeListWidgetItem * >(it);
             if (!item) {
                 return;
@@ -457,7 +457,7 @@ void ConfigureThemesDialog::Private::importThemeButtonClicked()
 
 void ConfigureThemesDialog::Private::exportThemeButtonClicked()
 {
-    QList<QListWidgetItem *> list = mThemeList->selectedItems();
+    const QList<QListWidgetItem *> list = mThemeList->selectedItems();
     if (list.isEmpty()) {
         return;
     }
@@ -469,7 +469,7 @@ void ConfigureThemesDialog::Private::exportThemeButtonClicked()
         grp.writeEntry("Count", list.count());
 
         int idx = 0;
-        Q_FOREACH (QListWidgetItem *item, list) {
+        for (QListWidgetItem *item : list) {
             ThemeListWidgetItem *themeItem = static_cast< ThemeListWidgetItem * >(item);
             grp.writeEntry(QStringLiteral("Set%1").arg(idx), themeItem->theme()->saveToString());
             ++idx;

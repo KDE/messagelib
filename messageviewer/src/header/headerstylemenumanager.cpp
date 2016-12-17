@@ -132,7 +132,7 @@ void HeaderStyleMenuManagerPrivate::initialize(KActionCollection *ac)
     group = new QActionGroup(q);
 
     const QVector<MessageViewer::HeaderStylePlugin *>  lstPlugin = MessageViewer::HeaderStylePluginManager::self()->pluginsList();
-    Q_FOREACH (MessageViewer::HeaderStylePlugin *plugin, lstPlugin) {
+    for (MessageViewer::HeaderStylePlugin *plugin : lstPlugin) {
         if (plugin->isEnabled()) {
             MessageViewer::HeaderStyleInterface *interface = plugin->createView(headerMenu, group, ac, q);
             lstInterface.insert(plugin->name(), interface);

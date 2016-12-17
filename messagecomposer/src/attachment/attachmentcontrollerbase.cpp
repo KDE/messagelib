@@ -886,7 +886,7 @@ void AttachmentControllerBase::showAttachVcard()
     dlg->view()->view()->setSelectionMode(QAbstractItemView::MultiSelection);
     if (dlg->exec()) {
         const Akonadi::EmailAddressSelection::List selectedEmail = dlg->selectedAddresses();
-        Q_FOREACH (const Akonadi::EmailAddressSelection &selected, selectedEmail) {
+        for (const Akonadi::EmailAddressSelection &selected : selectedEmail) {
             MessageComposer::AttachmentVcardFromAddressBookJob *ajob = new MessageComposer::AttachmentVcardFromAddressBookJob(selected.item(), this);
             connect(ajob, SIGNAL(result(KJob*)), this, SLOT(attachVcardFromAddressBook(KJob*)));
             ajob->start();
