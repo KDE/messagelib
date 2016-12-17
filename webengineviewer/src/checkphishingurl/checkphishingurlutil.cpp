@@ -54,7 +54,7 @@ QString CheckPhishingUrlUtil::configFileName()
     return QStringLiteral("phishingurlrc");
 }
 
-double CheckPhishingUrlUtil::convertToSecond(QString str)
+double CheckPhishingUrlUtil::convertToSecond(const QString &str)
 {
     QString minimumDuration = str;
 

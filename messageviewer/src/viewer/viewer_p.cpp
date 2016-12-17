@@ -2933,7 +2933,7 @@ void ViewerPrivate::itemFetchResult(KJob *job)
         if (fetch->items().isEmpty()) {
             displaySplashPage(i18n("Message not found."));
         } else {
-            setMessageItem(fetch->items().first());
+            setMessageItem(fetch->items().constFirst());
         }
     }
 }

@@ -265,7 +265,7 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
                 rec->setRecipientType(last_rec->recipientType());
             }
         }
-        line->fixTabOrder(lines().last()->tabOut());
+        line->fixTabOrder(lines().constLast()->tabOut());
     }
     connect(rec, &RecipientLineNG::countChanged, this, &RecipientsEditor::slotCalculateTotal);
 }

@@ -968,7 +968,7 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
     }
     if (node->header<KMime::Headers::Subject>()) {
         if (!node->contents().isEmpty()) {
-            node = node->contents().first();
+            node = node->contents().constFirst();
             window->nodeHelper()->writeNodeToTempFile(node);
         }
     }

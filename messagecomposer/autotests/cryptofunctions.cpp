@@ -43,7 +43,7 @@
 
 using namespace MessageComposer;
 
-void ComposerTestUtil::verify(bool sign, bool encrypt, KMime::Content *content, QByteArray origContent, Kleo::CryptoMessageFormat f, KMime::Headers::contentEncoding encoding)
+void ComposerTestUtil::verify(bool sign, bool encrypt, KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, KMime::Headers::contentEncoding encoding)
 {
     if (sign && encrypt) {
         verifySignatureAndEncryption(content, origContent, f, false);
@@ -54,7 +54,7 @@ void ComposerTestUtil::verify(bool sign, bool encrypt, KMime::Content *content, 
     }
 }
 
-void ComposerTestUtil::verifySignature(KMime::Content *content, QByteArray signedContent, Kleo::CryptoMessageFormat f, KMime::Headers::contentEncoding encoding)
+void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray &signedContent, Kleo::CryptoMessageFormat f, KMime::Headers::contentEncoding encoding)
 {
     // store it in a KMime::Message, that's what OTP needs
     KMime::Message *resultMessage =  new KMime::Message;
@@ -128,7 +128,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, QByteArray signe
 
 }
 
-void ComposerTestUtil::verifyEncryption(KMime::Content *content, QByteArray encrContent, Kleo::CryptoMessageFormat f, bool withAttachment)
+void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArray &encrContent, Kleo::CryptoMessageFormat f, bool withAttachment)
 {
     // store it in a KMime::Message, that's what OTP needs
     KMime::Message::Ptr resultMessage = KMime::Message::Ptr(new KMime::Message);
@@ -184,7 +184,7 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, QByteArray encr
     Q_UNUSED(encrContent);
 }
 
-void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, QByteArray origContent, Kleo::CryptoMessageFormat f, bool withAttachment)
+void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, bool withAttachment)
 {
     Q_UNUSED(withAttachment);
     // store it in a KMime::Message, that's what OTP needs

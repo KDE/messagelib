@@ -79,7 +79,7 @@ public:
         mHtmlLoadExternal = loadExternal;
     }
 
-    void setAttachmentStrategy(QString strategy)
+    void setAttachmentStrategy(const QString &strategy)
     {
         mAttachmentStrategy = strategy;
     }
