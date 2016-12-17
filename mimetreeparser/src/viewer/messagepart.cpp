@@ -135,7 +135,7 @@ void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     auto subMessagePart = mOtp->parseObjectTreeInternal(node, onlyOneMimePart);
     mRoot = subMessagePart->isRoot();
-    foreach (auto part, subMessagePart->subParts()) {
+    foreach (const auto &part, subMessagePart->subParts()) {
         appendSubPart(part);
     }
 }
