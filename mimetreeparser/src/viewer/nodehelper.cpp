@@ -850,11 +850,11 @@ void NodeHelper::cleanFromExtraNodes(KMime::Content *node)
     if (!node) {
         return;
     }
-    QList<KMime::Content * > extraNodes = extraContents(node);
-    Q_FOREACH (KMime::Content *extra, extraNodes) {
+    const QList<KMime::Content * > extraNodes = extraContents(node);
+    for (KMime::Content *extra : extraNodes) {
         QByteArray s = extra->encodedContent();
-        auto children = node->contents();
-        Q_FOREACH (KMime::Content *c, children) {
+        const auto children = node->contents();
+        for (KMime::Content *c : children) {
             if (c->encodedContent() == s) {
                 node->removeContent(c);
             }

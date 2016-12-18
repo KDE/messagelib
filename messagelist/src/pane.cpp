@@ -1077,7 +1077,7 @@ void Pane::writeConfig(bool restoreSession)
 
     // Delete list before
     const QStringList list = MessageList::MessageListSettings::self()->config()->groupList().filter(QRegularExpression(QStringLiteral("MessageListTab\\d+")));
-    foreach (const QString &group, list) {
+    for (const QString &group : list) {
         MessageList::MessageListSettings::self()->config()->deleteGroup(group);
     }
 

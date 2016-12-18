@@ -57,8 +57,8 @@ QMimeType MimeTreeParser::Util::mimetype(const QString &name)
 {
     QMimeDatabase db;
     // consider the filename if mimetype cannot be found by content-type
-    auto mimeTypes = db.mimeTypesForFileName(name);
-    foreach (const auto &mt, mimeTypes) {
+    const auto mimeTypes = db.mimeTypesForFileName(name);
+    for (const auto &mt : mimeTypes) {
         if (mt.name() != QLatin1String("application/octet-stream")) {
             return mt;
         }

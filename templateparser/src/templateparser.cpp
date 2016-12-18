@@ -54,7 +54,7 @@ static const int PipeTimeout = 15 * 1000;
 
 static QTextCodec *selectCharset(const QStringList &charsets, const QString &text)
 {
-    foreach (const QString &name, charsets) {
+    for (const QString &name : charsets) {
         // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
         // the former knows us-ascii is latin1.
         bool ok = true;
@@ -1206,8 +1206,8 @@ void TemplateParser::addProcessedBodyToMessage(const QString &plainBody,
 
     // Now, delete the old content and set the new content, which
     // is either only the new text or the new text with some attachments.
-    auto parts = mMsg->contents();
-    foreach (KMime::Content *content, parts) {
+    const auto parts = mMsg->contents();
+    for (KMime::Content *content : parts) {
         mMsg->removeContent(content, true/*delete*/);
     }
 

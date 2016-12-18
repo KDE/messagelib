@@ -142,7 +142,7 @@ void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptio
         const QStringList searchListTmp = mSearchString.split(QLatin1Char(' '), QString::SkipEmptyParts);
         mSearchList.clear();
         newStr.clear();
-        Q_FOREACH (const QString &text, searchListTmp) {
+        for (const QString &text : searchListTmp) {
             if (text.size() >= 3) {
                 mSearchList << text;
                 if (!newStr.isEmpty()) {

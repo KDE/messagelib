@@ -2539,9 +2539,9 @@ void ViewerPrivate::slotAttachmentSaveAll()
 
 void ViewerPrivate::slotAttachmentView()
 {
-    auto contents = selectedContents();
+    const auto contents = selectedContents();
 
-    Q_FOREACH (KMime::Content *content, contents) {
+    for (KMime::Content *content : contents) {
         attachmentView(content);
     }
 
@@ -2549,13 +2549,13 @@ void ViewerPrivate::slotAttachmentView()
 
 void ViewerPrivate::slotAttachmentProperties()
 {
-    auto contents = selectedContents();
+    const auto contents = selectedContents();
 
     if (contents.isEmpty()) {
         return;
     }
 
-    Q_FOREACH (KMime::Content *content, contents) {
+    for (KMime::Content *content : contents) {
         attachmentProperties(content);
     }
 }
@@ -2582,7 +2582,7 @@ void ViewerPrivate::attachmentCopy(const KMime::Content::List &contents)
     }
 
     QList<QUrl> urls;
-    Q_FOREACH (KMime::Content *content, contents) {
+    for (KMime::Content *content : contents) {
         auto url = QUrl::fromLocalFile(mNodeHelper->writeNodeToTempFile(content));
         if (!url.isValid()) {
             continue;
@@ -2602,13 +2602,13 @@ void ViewerPrivate::attachmentCopy(const KMime::Content::List &contents)
 
 void ViewerPrivate::slotAttachmentDelete()
 {
-    auto contents = selectedContents();
+    const auto contents = selectedContents();
     if (contents.isEmpty()) {
         return;
     }
 
     bool showWarning = true;
-    Q_FOREACH (KMime::Content *content, contents) {
+    for (KMime::Content *content : contents) {
         if (!deleteAttachment(content, showWarning)) {
             return;
         }
@@ -2619,7 +2619,7 @@ void ViewerPrivate::slotAttachmentDelete()
 
 void ViewerPrivate::slotAttachmentEdit()
 {
-    auto contents = selectedContents();
+    const auto contents = selectedContents();
     if (contents.isEmpty()) {
         return;
     }
@@ -2631,7 +2631,7 @@ void ViewerPrivate::slotAttachmentEdit()
     job->setMessage(mMessage);
 
     bool showWarning = true;
-    Q_FOREACH (KMime::Content *content, contents) {
+    for  (KMime::Content *content : contents) {
         if (!job->addAttachment(content, showWarning)) {
             break;
         }

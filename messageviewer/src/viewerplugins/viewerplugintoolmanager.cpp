@@ -81,8 +81,8 @@ void ViewerPluginToolManagerPrivate::refreshActionList()
 
 void ViewerPluginToolManagerPrivate::createView()
 {
-    QVector<MessageViewer::ViewerPlugin *> listPlugin = MessageViewer::ViewerPluginManager::self()->pluginsList();
-    Q_FOREACH (MessageViewer::ViewerPlugin *plugin, listPlugin) {
+    const QVector<MessageViewer::ViewerPlugin *> listPlugin = MessageViewer::ViewerPluginManager::self()->pluginsList();
+    for (MessageViewer::ViewerPlugin *plugin : listPlugin) {
         if (plugin->isEnabled()) {
             MessageViewer::ViewerPluginInterface *interface = plugin->createView(mParentWidget, mActionCollection);
             q->connect(interface, &MessageViewer::ViewerPluginInterface::activatePlugin, q, &ViewerPluginToolManager::activatePlugin);
