@@ -47,8 +47,9 @@ QString IconNameCache::iconPath(const QString &name, int size) const
     entry.fileName = name;
     entry.size = size;
 
-    if (mCachedEntries.contains(entry)) {
-        return mCachedEntries.value(entry);
+    const QString val = mCachedEntries.value(entry);
+    if (!val.isEmpty()) {
+        return val;
     }
 
     const QString fileName = KIconLoader::global()->iconPath(name, size);
@@ -62,8 +63,9 @@ QString IconNameCache::iconPathFromLocal(const QString &name) const
     entry.fileName = name;
     entry.size = 0;
 
-    if (mCachedEntries.contains(entry)) {
-        return mCachedEntries.value(entry);
+    const QString val = mCachedEntries.value(entry);
+    if (!val.isEmpty()) {
+        return val;
     }
 
     const QString fileName = picsPath() + name;
