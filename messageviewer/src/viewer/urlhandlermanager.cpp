@@ -697,7 +697,7 @@ bool ExpandCollapseQuoteURLManager::handleDrag(const QUrl &url, ViewerPrivate *w
 {
     Q_UNUSED(url);
     Q_UNUSED(window);
-    return true;
+    return false;
 }
 
 QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerPrivate *) const
