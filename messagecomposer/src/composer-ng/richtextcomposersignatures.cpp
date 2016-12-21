@@ -77,9 +77,8 @@ void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitesp
         }
         // Skip text inside signatures
         bool insideSignature = false;
-        QList< QPair<int, int> > sigPositions = signaturePositions(sig);
-        QPair<int, int> position;
-        foreach (position, sigPositions) {   //krazy:exclude=foreach
+        const QList< QPair<int, int> > sigPositions = signaturePositions(sig);
+        for (const QPair<int, int> &position : sigPositions) {
             if (cursor.position() >= position.first &&
                     cursor.position() <= position.second) {
                 insideSignature = true;
