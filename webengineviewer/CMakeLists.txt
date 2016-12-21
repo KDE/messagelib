@@ -1,5 +1,3 @@
-project(WebEngineViewer)
-
 ecm_setup_version(${MESSAGELIB_LIB_VERSION} VARIABLE_PREFIX WEBENGINEVIEWER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5WebEngineViewerConfigVersion.cmake"

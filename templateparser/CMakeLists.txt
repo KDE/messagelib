@@ -1,5 +1,3 @@
-project(TemplateParser)
-
 
 ecm_setup_version(${MESSAGELIB_LIB_VERSION} VARIABLE_PREFIX TEMPLATEPARSER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/templateparser_version.h"
