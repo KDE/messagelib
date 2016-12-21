@@ -1,5 +1,6 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer\")
-include_directories(${WebEngineViewer_BINARY_DIR}/src ${WebEngineViewer_BINARY_DIR}/)
+include_directories(${CMAKE_BINARY_DIR}/webengineviewer/src ${CMAKE_BINARY_DIR}/webengineviewer)
+
 
 if(BUILD_TESTING)
     add_subdirectory(tests)
