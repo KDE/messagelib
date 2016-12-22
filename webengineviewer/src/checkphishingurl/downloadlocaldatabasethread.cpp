@@ -18,6 +18,7 @@
 */
 
 #include "createdatabasefilejob.h"
+#include "webengineviewer_debug.h"
 #include "downloadlocaldatabasethread.h"
 #include <WebEngineViewer/CreatePhishingUrlDataBaseJob>
 using namespace WebEngineViewer;
@@ -40,6 +41,9 @@ void DownloadLocalDatabaseThread::setDataBaseState(const QString &value)
 
 void DownloadLocalDatabaseThread::run()
 {
+    if (mDatabaseFullPath.isEmpty()) {
+        qCWarning(WEBENGINEVIEWER_LOG) << "Database full path is empty";
+    }
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(mDataBaseState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
     job->setDataBaseState(mDataBaseState);
@@ -54,11 +58,16 @@ void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineVi
     deleteLater();
 }
 
+void DownloadLocalDatabaseThread::setDatabaseFullPath(const QString &databaseFullPath)
+{
+    mDatabaseFullPath = databaseFullPath;
+}
+
 void DownloadLocalDatabaseThread::installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
 #if 0
     WebEngineViewer::CreateDatabaseFileJob *job = new WebEngineViewer::CreateDatabaseFileJob(this);
-    job->setFileName(databaseFullPath());
+    job->setFileName(mDatabaseFullPath);
     job->setUpdateDataBaseInfo(infoDataBase);
     connect(job, &CreateDatabaseFileJob::finished, q, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
     job->start();

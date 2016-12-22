@@ -79,10 +79,10 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
             break;
         }
         case UpdateDataBaseInfo::RiceCompression: {
+            //TODO
             qCWarning(WEBENGINEVIEWER_LOG) << "Rice compression still not implemented";
             const QList<quint32> listRice = WebEngineViewer::RiceEncodingDecoder::decodeRiceHashesDelta(add.riceDeltaEncoding);
             qDebug() << " listRice" << listRice;
-            //TODO
             break;
         }
         case UpdateDataBaseInfo::UnknownCompression:
