@@ -69,7 +69,12 @@ void DownloadLocalDatabaseThread::installNewDataBase(const WebEngineViewer::Upda
     WebEngineViewer::CreateDatabaseFileJob *job = new WebEngineViewer::CreateDatabaseFileJob(this);
     job->setFileName(mDatabaseFullPath);
     job->setUpdateDataBaseInfo(infoDataBase);
-    connect(job, &CreateDatabaseFileJob::finished, q, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
+    connect(job, &CreateDatabaseFileJob::finished, this, &DownloadLocalDatabaseThread::slotCreateDataBaseFileNameFinished);
     job->start();
 #endif
+}
+
+void DownloadLocalDatabaseThread::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
+{
+    //TODO q_emit
 }
