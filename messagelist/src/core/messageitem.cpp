@@ -580,10 +580,10 @@ QString MessageItem::accessibleText(const Theme *theme, int columnIndex)
             rightStrings.insert(rightStrings.begin(), accessibleTextForField(contentItem->type()));
         }
 
-        rowsTexts.append((leftStrings + rightStrings).join(QStringLiteral(" ")));
+        rowsTexts.append((leftStrings + rightStrings).join(QLatin1Char(' ')));
     }
 
-    return rowsTexts.join(QStringLiteral(" "));
+    return rowsTexts.join(QLatin1Char(' '));
 }
 
 void MessageItem::subTreeToList(QList< MessageItem * > &list)
