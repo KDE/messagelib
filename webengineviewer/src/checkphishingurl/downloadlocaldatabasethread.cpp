@@ -52,7 +52,7 @@ void DownloadLocalDatabaseThread::run()
 }
 
 void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
-                                                               WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
+        WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
 {
     Q_EMIT downloadDataBaseFinished(infoDataBase, status);
     deleteLater();

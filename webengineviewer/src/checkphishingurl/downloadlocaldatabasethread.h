@@ -46,7 +46,7 @@ protected:
 private:
     void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
-                                                                   WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
+                                      WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr);
     QString mDataBaseState;
     QString mDatabaseFullPath;
