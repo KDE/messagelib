@@ -85,6 +85,9 @@ LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
       d(new LocalDataBaseManagerPrivate(this))
 
 {
+    qRegisterMetaType<WebEngineViewer::UpdateDataBaseInfo>();
+    qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>();
+    qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType>();
 }
 
 LocalDataBaseManager::~LocalDataBaseManager()
@@ -119,6 +122,7 @@ void LocalDataBaseManager::downloadDataBase(const QString &clientState)
     downloadThread->setDataBaseState(clientState);
     connect(downloadThread, &DownloadLocalDatabaseThread::createDataBaseFailed, this, &LocalDataBaseManager::slotCreateDataBaseFailed);
     connect(downloadThread, &DownloadLocalDatabaseThread::createDataBaseFinished, this, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
+    connect(downloadThread, &DownloadLocalDatabaseThread::finished, downloadThread, &DownloadLocalDatabaseThread::deleteLater);
     downloadThread->start();
 }
 
@@ -174,6 +178,7 @@ void LocalDataBaseManager::slotCheckDataBase()
 
 void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
 {
+    d->mDataBaseOk = success;
     d->mDownloadProgress = false;
     d->mNewClientState = success ? newClientState : QString();
     d->mMinimumWaitDuration = minimumWaitDurationStr;

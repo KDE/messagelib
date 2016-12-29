@@ -11,7 +11,7 @@ option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branc
 
 set(KF5_VERSION "5.28.0")
 
-set(PIM_VERSION "5.4.45")
+set(PIM_VERSION "5.4.46")
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
 set(AKONADIMIME_LIB_VERSION "5.4.40")

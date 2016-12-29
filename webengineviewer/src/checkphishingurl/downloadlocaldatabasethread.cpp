@@ -48,10 +48,12 @@ void DownloadLocalDatabaseThread::run()
         return;
     }
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob;
+    job->moveToThread(this);
     job->setDataBaseDownloadNeeded(mCurrentDataBaseState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
     job->setDataBaseState(mCurrentDataBaseState);
     connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &DownloadLocalDatabaseThread::slotDownloadDataBaseFinished);
     job->start();
+    exec();
 }
 
 void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
@@ -91,7 +93,7 @@ void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineVi
         }
     } else {
         Q_EMIT createDataBaseFailed();
-        deleteLater();
+        quit();
     }
 }
 
@@ -112,5 +114,5 @@ void DownloadLocalDatabaseThread::installNewDataBase(const WebEngineViewer::Upda
 void DownloadLocalDatabaseThread::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
 {
     Q_EMIT createDataBaseFinished(success, newClientState, minimumWaitDurationStr);
-    deleteLater();
+    quit();
 }
