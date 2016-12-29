@@ -69,6 +69,7 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, false);
     settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, false);
 #endif
+    profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
 
     const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
