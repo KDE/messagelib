@@ -25,7 +25,6 @@
 #include <QNetworkReply>
 
 #include "webengineviewer_export.h"
-class QNetworkAccessManager;
 namespace WebEngineViewer
 {
 struct UpdateDataBaseInfo;

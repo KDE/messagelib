@@ -23,7 +23,6 @@
 #include <QWidget>
 #include "../searchfullhashjob.h"
 #include <WebEngineViewer/LocalDataBaseManager>
-class QLineEdit;
 class QPlainTextEdit;
 namespace WebEngineViewer
 {

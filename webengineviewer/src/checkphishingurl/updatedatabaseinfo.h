@@ -24,7 +24,6 @@
 #include <QList>
 #include <QVector>
 #include <QObject>
-class QNetworkAccessManager;
 namespace WebEngineViewer
 {
 struct Addition;

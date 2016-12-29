@@ -25,7 +25,6 @@
 #include <QNetworkReply>
 #include "webengineviewer_export.h"
 #include "checkphishingurlutil.h"
-class QNetworkAccessManager;
 namespace WebEngineViewer
 {
 class SearchFullHashJobPrivate;
