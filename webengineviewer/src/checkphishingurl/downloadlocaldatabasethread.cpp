@@ -24,7 +24,8 @@
 using namespace WebEngineViewer;
 
 DownloadLocalDatabaseThread::DownloadLocalDatabaseThread(QObject *parent)
-    : QThread(parent)
+    : QThread(parent),
+      mDataBaseOk(false)
 {
 
 }
@@ -36,7 +37,7 @@ DownloadLocalDatabaseThread::~DownloadLocalDatabaseThread()
 
 void DownloadLocalDatabaseThread::setDataBaseState(const QString &value)
 {
-    mDataBaseState = value;
+    mCurrentDataBaseState = value;
 }
 
 void DownloadLocalDatabaseThread::run()
@@ -45,8 +46,8 @@ void DownloadLocalDatabaseThread::run()
         qCWarning(WEBENGINEVIEWER_LOG) << "Database full path is empty";
     }
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
-    job->setDataBaseDownloadNeeded(mDataBaseState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
-    job->setDataBaseState(mDataBaseState);
+    job->setDataBaseDownloadNeeded(mCurrentDataBaseState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
+    job->setDataBaseState(mCurrentDataBaseState);
     connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &DownloadLocalDatabaseThread::slotDownloadDataBaseFinished);
     job->start();
 }
@@ -54,8 +55,44 @@ void DownloadLocalDatabaseThread::run()
 void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
         WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
 {
-    Q_EMIT downloadDataBaseFinished(infoDataBase, status);
-    deleteLater();
+    //TODO install database
+#if 0
+    switch (status) {
+    case CreatePhishingUrlDataBaseJob::InvalidData:
+        qCWarning(WEBENGINEVIEWER_LOG) << "Invalid Data.";
+        mDataBaseOk = false;
+        break;
+    case CreatePhishingUrlDataBaseJob::ValidData:
+        qCWarning(WEBENGINEVIEWER_LOG) << "Valid Data.";
+        mDataBaseOk= true;
+        break;
+    case CreatePhishingUrlDataBaseJob::UnknownError:
+        qCWarning(WEBENGINEVIEWER_LOG) << "Unknown data.";
+        mDataBaseOk = false;
+        break;
+    case CreatePhishingUrlDataBaseJob::BrokenNetwork:
+        qCWarning(WEBENGINEVIEWER_LOG) << "Broken Networks.";
+        mDataBaseOk = false;
+        break;
+    }
+    if (mDataBaseOk) {
+        if (mCurrentDataBaseState == infoDataBase.newClientState) {
+            qCDebug(WEBENGINEVIEWER_LOG) << "No update necessary ";
+        } else {
+            switch (infoDataBase.responseType) {
+            case WebEngineViewer::UpdateDataBaseInfo::FullUpdate:
+            case WebEngineViewer::UpdateDataBaseInfo::PartialUpdate:
+                installNewDataBase(infoDataBase);
+                break;
+            case WebEngineViewer::UpdateDataBaseInfo::Unknown:
+                break;
+            }
+        }
+    }
+    qCDebug(WEBENGINEVIEWER_LOG) << "Download done";
+
+#endif
+    //Q_EMIT downloadDataBaseFinished(infoDataBase, status);
 }
 
 void DownloadLocalDatabaseThread::setDatabaseFullPath(const QString &databaseFullPath)
@@ -65,16 +102,16 @@ void DownloadLocalDatabaseThread::setDatabaseFullPath(const QString &databaseFul
 
 void DownloadLocalDatabaseThread::installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
 {
-#if 0
     WebEngineViewer::CreateDatabaseFileJob *job = new WebEngineViewer::CreateDatabaseFileJob(this);
     job->setFileName(mDatabaseFullPath);
     job->setUpdateDataBaseInfo(infoDataBase);
     connect(job, &CreateDatabaseFileJob::finished, this, &DownloadLocalDatabaseThread::slotCreateDataBaseFileNameFinished);
     job->start();
-#endif
 }
 
 void DownloadLocalDatabaseThread::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
 {
     //TODO q_emit
+
+    deleteLater();
 }

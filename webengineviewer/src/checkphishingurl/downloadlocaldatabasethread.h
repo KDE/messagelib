@@ -36,10 +36,6 @@ public:
 
     void setDatabaseFullPath(const QString &databaseFullPath);
 
-Q_SIGNALS:
-    void downloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
-                                  WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
-
 protected:
     void run() Q_DECL_OVERRIDE;
 
@@ -48,8 +44,9 @@ private:
     void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
                                       WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr);
-    QString mDataBaseState;
+    QString mCurrentDataBaseState;
     QString mDatabaseFullPath;
+    bool mDataBaseOk;
 };
 }
 #endif // DOWNLOADLOCALDATABASETHREAD_H
