@@ -50,7 +50,6 @@ private:
     void slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr);
     QString mCurrentDataBaseState;
     QString mDatabaseFullPath;
-    bool mDataBaseOk;
 };
 }
 #endif // DOWNLOADLOCALDATABASETHREAD_H

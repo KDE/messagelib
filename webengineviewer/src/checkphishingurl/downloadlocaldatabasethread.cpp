@@ -24,15 +24,14 @@
 using namespace WebEngineViewer;
 
 DownloadLocalDatabaseThread::DownloadLocalDatabaseThread(QObject *parent)
-    : QThread(parent),
-      mDataBaseOk(false)
+    : QThread(parent)
 {
-
+    qCDebug(WEBENGINEVIEWER_LOG) << "DownloadLocalDatabaseThread::DownloadLocalDatabaseThread " << this;
 }
 
 DownloadLocalDatabaseThread::~DownloadLocalDatabaseThread()
 {
-
+    qCDebug(WEBENGINEVIEWER_LOG) << "DownloadLocalDatabaseThread::~DownloadLocalDatabaseThread " << this;
 }
 
 void DownloadLocalDatabaseThread::setDataBaseState(const QString &value)
@@ -58,26 +57,26 @@ void DownloadLocalDatabaseThread::run()
 void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
         WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
 {
-    //TODO install database
+    bool dataBaseOk = false;
     switch (status) {
     case CreatePhishingUrlDataBaseJob::InvalidData:
         qCWarning(WEBENGINEVIEWER_LOG) << "Invalid Data.";
-        mDataBaseOk = false;
+        dataBaseOk = false;
         break;
     case CreatePhishingUrlDataBaseJob::ValidData:
         qCWarning(WEBENGINEVIEWER_LOG) << "Valid Data.";
-        mDataBaseOk= true;
+        dataBaseOk= true;
         break;
     case CreatePhishingUrlDataBaseJob::UnknownError:
         qCWarning(WEBENGINEVIEWER_LOG) << "Unknown data.";
-        mDataBaseOk = false;
+        dataBaseOk = false;
         break;
     case CreatePhishingUrlDataBaseJob::BrokenNetwork:
         qCWarning(WEBENGINEVIEWER_LOG) << "Broken Networks.";
-        mDataBaseOk = false;
+        dataBaseOk = false;
         break;
     }
-    if (mDataBaseOk) {
+    if (dataBaseOk) {
         if (mCurrentDataBaseState == infoDataBase.newClientState) {
             qCDebug(WEBENGINEVIEWER_LOG) << "No update necessary ";
         } else {
@@ -113,7 +112,5 @@ void DownloadLocalDatabaseThread::installNewDataBase(const WebEngineViewer::Upda
 void DownloadLocalDatabaseThread::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
 {
     Q_EMIT createDataBaseFinished(success, newClientState, minimumWaitDurationStr);
-    //TODO q_emit
-
     deleteLater();
 }
