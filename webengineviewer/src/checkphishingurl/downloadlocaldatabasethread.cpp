@@ -44,6 +44,9 @@ void DownloadLocalDatabaseThread::run()
 {
     if (mDatabaseFullPath.isEmpty()) {
         qCWarning(WEBENGINEVIEWER_LOG) << "Database full path is empty";
+        Q_EMIT createDataBaseFailed();
+        deleteLater();
+        return;
     }
     WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
     job->setDataBaseDownloadNeeded(mCurrentDataBaseState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
@@ -56,7 +59,6 @@ void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineVi
         WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
 {
     //TODO install database
-#if 0
     switch (status) {
     case CreatePhishingUrlDataBaseJob::InvalidData:
         qCWarning(WEBENGINEVIEWER_LOG) << "Invalid Data.";
@@ -88,11 +90,10 @@ void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineVi
                 break;
             }
         }
+    } else {
+        Q_EMIT createDataBaseFailed();
+        deleteLater();
     }
-    qCDebug(WEBENGINEVIEWER_LOG) << "Download done";
-
-#endif
-    //Q_EMIT downloadDataBaseFinished(infoDataBase, status);
 }
 
 void DownloadLocalDatabaseThread::setDatabaseFullPath(const QString &databaseFullPath)
@@ -111,6 +112,7 @@ void DownloadLocalDatabaseThread::installNewDataBase(const WebEngineViewer::Upda
 
 void DownloadLocalDatabaseThread::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
 {
+    Q_EMIT createDataBaseFinished(success, newClientState, minimumWaitDurationStr);
     //TODO q_emit
 
     deleteLater();

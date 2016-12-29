@@ -36,6 +36,10 @@ public:
 
     void setDatabaseFullPath(const QString &databaseFullPath);
 
+Q_SIGNALS:
+    void createDataBaseFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr);
+    void createDataBaseFailed();
+
 protected:
     void run() Q_DECL_OVERRIDE;
 
