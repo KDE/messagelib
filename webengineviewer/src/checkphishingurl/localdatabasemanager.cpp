@@ -114,7 +114,7 @@ void LocalDataBaseManagerPrivate::saveConfig()
 void LocalDataBaseManager::downloadDataBase(const QString &clientState)
 {
     setDownloadProgress(true);
-    WebEngineViewer::DownloadLocalDatabaseThread *downloadThread = new WebEngineViewer::DownloadLocalDatabaseThread(this);
+    WebEngineViewer::DownloadLocalDatabaseThread *downloadThread = new WebEngineViewer::DownloadLocalDatabaseThread;
     downloadThread->setDatabaseFullPath(databaseFullPath());
     downloadThread->setDataBaseState(clientState);
     connect(downloadThread, &DownloadLocalDatabaseThread::createDataBaseFailed, this, &LocalDataBaseManager::slotCreateDataBaseFailed);
