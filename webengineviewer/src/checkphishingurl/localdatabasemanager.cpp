@@ -22,6 +22,7 @@
 #include "createdatabasefilejob.h"
 #include "checkphishingurlutil.h"
 #include "localdatabasefile.h"
+#include "downloadlocaldatabasethread.h"
 #include "urlhashing.h"
 #include "backoffmodemanager.h"
 
@@ -68,7 +69,6 @@ public:
         saveConfig();
     }
 
-    void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);
     void readConfig();
     void saveConfig();
     LocalDataBaseFile mFile;
@@ -79,15 +79,6 @@ public:
     bool mDownloadProgress;
     LocalDataBaseManager *q;
 };
-
-void LocalDataBaseManagerPrivate::installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase)
-{
-    WebEngineViewer::CreateDatabaseFileJob *job = new WebEngineViewer::CreateDatabaseFileJob(q);
-    job->setFileName(databaseFullPath());
-    job->setUpdateDataBaseInfo(infoDataBase);
-    q->connect(job, &CreateDatabaseFileJob::finished, q, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
-    job->start();
-}
 
 LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
     : QObject(parent),
@@ -123,11 +114,18 @@ void LocalDataBaseManagerPrivate::saveConfig()
 void LocalDataBaseManager::downloadDataBase(const QString &clientState)
 {
     setDownloadProgress(true);
-    WebEngineViewer::CreatePhishingUrlDataBaseJob *job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
-    job->setDataBaseDownloadNeeded(clientState.isEmpty() ? WebEngineViewer::CreatePhishingUrlDataBaseJob::FullDataBase : WebEngineViewer::CreatePhishingUrlDataBaseJob::UpdateDataBase);
-    job->setDataBaseState(clientState);
-    connect(job, &CreatePhishingUrlDataBaseJob::finished, this, &LocalDataBaseManager::slotDownloadDataBaseFinished);
-    job->start();
+    WebEngineViewer::DownloadLocalDatabaseThread *downloadThread = new WebEngineViewer::DownloadLocalDatabaseThread(this);
+    downloadThread->setDatabaseFullPath(databaseFullPath());
+    downloadThread->setDataBaseState(clientState);
+    connect(downloadThread, &DownloadLocalDatabaseThread::createDataBaseFailed, this, &LocalDataBaseManager::slotCreateDataBaseFailed);
+    connect(downloadThread, &DownloadLocalDatabaseThread::createDataBaseFinished, this, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
+    downloadThread->start();
+}
+
+void LocalDataBaseManager::slotCreateDataBaseFailed()
+{
+    d->mDataBaseOk = false;
+    d->mDownloadProgress = false;
 }
 
 void LocalDataBaseManager::downloadPartialDataBase()
@@ -173,44 +171,6 @@ void LocalDataBaseManager::slotCheckDataBase()
     }
 }
 
-void LocalDataBaseManager::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
-        WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
-{
-    switch (status) {
-    case CreatePhishingUrlDataBaseJob::InvalidData:
-        qCWarning(WEBENGINEVIEWER_LOG) << "Invalid Data.";
-        d->mDataBaseOk = false;
-        break;
-    case CreatePhishingUrlDataBaseJob::ValidData:
-        qCWarning(WEBENGINEVIEWER_LOG) << "Valid Data.";
-        d->mDataBaseOk = true;
-        break;
-    case CreatePhishingUrlDataBaseJob::UnknownError:
-        qCWarning(WEBENGINEVIEWER_LOG) << "Unknown data.";
-        d->mDataBaseOk = false;
-        break;
-    case CreatePhishingUrlDataBaseJob::BrokenNetwork:
-        qCWarning(WEBENGINEVIEWER_LOG) << "Broken Networks.";
-        d->mDataBaseOk = false;
-        break;
-    }
-    if (d->mDataBaseOk) {
-        if (d->mNewClientState == infoDataBase.newClientState) {
-            qCDebug(WEBENGINEVIEWER_LOG) << "No update necessary ";
-        } else {
-            switch (infoDataBase.responseType) {
-            case WebEngineViewer::UpdateDataBaseInfo::FullUpdate:
-            case WebEngineViewer::UpdateDataBaseInfo::PartialUpdate:
-                d->installNewDataBase(infoDataBase);
-                break;
-            case WebEngineViewer::UpdateDataBaseInfo::Unknown:
-                break;
-            }
-        }
-    }
-    d->mDownloadProgress = false;
-    qCDebug(WEBENGINEVIEWER_LOG) << "Download done";
-}
 
 void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
 {

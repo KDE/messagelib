@@ -53,9 +53,9 @@ protected:
 
 private:
     void slotSearchOnServerResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url);
-    void slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
     void slotCheckDataBase();
     void downloadDataBase(const QString &clientState);
+    void slotCreateDataBaseFailed();
 
     LocalDataBaseManagerPrivate *const d;
 };
