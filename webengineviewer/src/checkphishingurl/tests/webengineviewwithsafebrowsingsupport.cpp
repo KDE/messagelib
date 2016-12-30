@@ -37,8 +37,6 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
     QStandardPaths::setTestModeEnabled(true);
     WebEngineViewer::LocalDataBaseManager::self()->initialize();
     connect(WebEngineViewer::LocalDataBaseManager::self(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished);
-    //Make sure to initialize database
-    WebEngineViewer::LocalDataBaseManager::self();
     pageView = new WebEngineViewer::WebEngineView(this);
     layout->addWidget(pageView);
     WebEngineViewer::WebEnginePage *mEnginePage = new WebEngineViewer::WebEnginePage(this);
