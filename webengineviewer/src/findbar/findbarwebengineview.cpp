@@ -27,7 +27,7 @@ class WebEngineViewer::FindBarWebEngineViewPrivate
 {
 public:
     FindBarWebEngineViewPrivate()
-        : mView(Q_NULLPTR)
+        : mView(nullptr)
     {
 
     }

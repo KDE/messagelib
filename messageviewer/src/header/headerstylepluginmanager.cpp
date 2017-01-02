@@ -50,7 +50,7 @@ class HeaderStylePluginInfo
 {
 public:
     HeaderStylePluginInfo()
-        : plugin(Q_NULLPTR),
+        : plugin(nullptr),
           isEnabled(false)
     {
 
@@ -151,7 +151,7 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
             }
             pos = qMax(0, pos);
             listOrder.insert(pos, order);
-            info.plugin = Q_NULLPTR;
+            info.plugin = nullptr;
             mPluginList.insert(pos, info);
             unique.insert(info.metaDataFileNameBaseName);
         } else {

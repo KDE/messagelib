@@ -34,7 +34,7 @@ class WebEngineViewer::LocalDataBaseFilePrivate
 public:
     LocalDataBaseFilePrivate(const QString &filename, LocalDataBaseFile *qq)
         : mFile(filename),
-          mData(Q_NULLPTR),
+          mData(nullptr),
           q(qq),
           mValid(false)
     {
@@ -75,7 +75,7 @@ void LocalDataBaseFilePrivate::close()
     if (mFile.isOpen()) {
         mFile.close();
     }
-    mData = Q_NULLPTR;
+    mData = nullptr;
 }
 
 bool LocalDataBaseFilePrivate::reload()

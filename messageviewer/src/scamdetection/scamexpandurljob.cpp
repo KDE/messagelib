@@ -36,7 +36,7 @@ class MessageViewer::ScamExpandUrlJobPrivate
 {
 public:
     ScamExpandUrlJobPrivate()
-        : mNetworkAccessManager(Q_NULLPTR)
+        : mNetworkAccessManager(nullptr)
     {
 
     }

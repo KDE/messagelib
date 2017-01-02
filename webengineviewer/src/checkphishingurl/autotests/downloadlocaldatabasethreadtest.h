@@ -26,7 +26,7 @@ class DownloadLocalDatabaseThreadTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit DownloadLocalDatabaseThreadTest(QObject *parent = Q_NULLPTR);
+    explicit DownloadLocalDatabaseThreadTest(QObject *parent = nullptr);
     ~DownloadLocalDatabaseThreadTest();
 };
 

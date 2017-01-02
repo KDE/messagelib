@@ -34,7 +34,7 @@ class MessageViewer::ConfigureWidgetPrivate
 {
 public:
     ConfigureWidgetPrivate()
-        : mSettingsUi(Q_NULLPTR)
+        : mSettingsUi(nullptr)
     {
 
     }
@@ -42,7 +42,7 @@ public:
     ~ConfigureWidgetPrivate()
     {
         delete mSettingsUi;
-        mSettingsUi = Q_NULLPTR;
+        mSettingsUi = nullptr;
     }
 
     Ui_Settings *mSettingsUi;

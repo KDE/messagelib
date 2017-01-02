@@ -26,7 +26,7 @@ class VerifyDataBaseUpdateTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit VerifyDataBaseUpdateTest(QObject *parent = Q_NULLPTR);
+    explicit VerifyDataBaseUpdateTest(QObject *parent = nullptr);
     ~VerifyDataBaseUpdateTest();
 private Q_SLOTS:
 

@@ -49,7 +49,7 @@ static const int gHorizontalItemSpacing = 2;
 
 ThemeDelegate::ThemeDelegate(QAbstractItemView *parent)
     : QStyledItemDelegate(parent),
-      mTheme(Q_NULLPTR)
+      mTheme(nullptr)
 {
     mItemView = parent;
 }
@@ -320,7 +320,7 @@ static inline const QPixmap *get_replied_state_icon(MessageItem *messageItem)
         return Manager::instance()->pixmapMessageForwarded();
     }
 
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 static inline const QPixmap *get_spam_ham_state_icon(MessageItem *messageItem)
@@ -330,7 +330,7 @@ static inline const QPixmap *get_spam_ham_state_icon(MessageItem *messageItem)
     } else if (messageItem->status().isHam()) {
         return Manager::instance()->pixmapMessageHam();
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 static inline const QPixmap *get_watched_ignored_state_icon(MessageItem *messageItem)
@@ -340,7 +340,7 @@ static inline const QPixmap *get_watched_ignored_state_icon(MessageItem *message
     } else if (messageItem->status().isWatched()) {
         return Manager::instance()->pixmapMessageWatched();
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 static inline void paint_vertical_line(QPainter *painter, int &left, int top, int &right, int bottom, bool alignOnRight)
@@ -609,8 +609,8 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
 
     const QList< Theme::Row * > *rows;  // I'd like to have it as reference, but gcc complains...
 
-    MessageItem *messageItem = Q_NULLPTR;
-    GroupHeaderItem *groupHeaderItem = Q_NULLPTR;
+    MessageItem *messageItem = nullptr;
+    GroupHeaderItem *groupHeaderItem = nullptr;
 
     int top = opt.rect.top();
     int right = opt.rect.left() + opt.rect.width(); // don't use opt.rect.right() since it's screwed
@@ -906,8 +906,8 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                                          l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ExpandedStateIcon: {
-                const QPixmap *pix = item->childItemCount() > 0 ? ((option.state & QStyle::State_Open) ? Manager::instance()->pixmapShowLess() : Manager::instance()->pixmapShowMore()) : Q_NULLPTR;
-                paint_boolean_state_icon(pix != Q_NULLPTR, pix ? pix : Manager::instance()->pixmapShowMore(),
+                const QPixmap *pix = item->childItemCount() > 0 ? ((option.state & QStyle::State_Open) ? Manager::instance()->pixmapShowLess() : Manager::instance()->pixmapShowMore()) : nullptr;
+                paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapShowMore(),
                                          ci, painter, l, top, r, layoutDir == Qt::LeftToRight,
                                          mTheme->iconSize());
             }
@@ -915,7 +915,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_replied_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != Q_NULLPTR, pix ? pix : Manager::instance()->pixmapMessageReplied(),
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageReplied(),
                                              ci, painter, l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
@@ -938,7 +938,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_spam_ham_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != Q_NULLPTR, pix ? pix : Manager::instance()->pixmapMessageSpam(),
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageSpam(),
                                              ci, painter, l, top, r, layoutDir == Qt::LeftToRight,
                                              mTheme->iconSize());
                 }
@@ -946,7 +946,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_watched_ignored_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != Q_NULLPTR, pix ? pix : Manager::instance()->pixmapMessageWatched(),
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageWatched(),
                                              ci, painter, l, top, r, layoutDir == Qt::LeftToRight,
                                              mTheme->iconSize());
                 }
@@ -1065,15 +1065,15 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                                          l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ExpandedStateIcon: {
-                const QPixmap *pix = item->childItemCount() > 0 ? ((option.state & QStyle::State_Open) ? Manager::instance()->pixmapShowLess() : Manager::instance()->pixmapShowMore()) : Q_NULLPTR;
-                paint_boolean_state_icon(pix != Q_NULLPTR, pix ? pix : Manager::instance()->pixmapShowMore(),
+                const QPixmap *pix = item->childItemCount() > 0 ? ((option.state & QStyle::State_Open) ? Manager::instance()->pixmapShowLess() : Manager::instance()->pixmapShowMore()) : nullptr;
+                paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapShowMore(),
                                          ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
             }
             break;
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_replied_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != Q_NULLPTR, pix ? pix : Manager::instance()->pixmapMessageReplied(),
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageReplied(),
                                              ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
@@ -1096,14 +1096,14 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_spam_ham_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != Q_NULLPTR, pix ? pix : Manager::instance()->pixmapMessageSpam(),
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageSpam(),
                                              ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_watched_ignored_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != Q_NULLPTR, pix ? pix : Manager::instance()->pixmapMessageWatched(),
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageWatched(),
                                              ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
@@ -1162,10 +1162,10 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
 
 bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
 {
-    mHitItem = Q_NULLPTR;
-    mHitColumn = Q_NULLPTR;
-    mHitRow = Q_NULLPTR;
-    mHitContentItem = Q_NULLPTR;
+    mHitItem = nullptr;
+    mHitColumn = nullptr;
+    mHitRow = nullptr;
+    mHitContentItem = nullptr;
 
     if (!mTheme) {
         return false;    // hm hm...
@@ -1191,16 +1191,16 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
 
     const QList< Theme::Row * > *rows;  // I'd like to have it as reference, but gcc complains...
 
-    MessageItem *messageItem = Q_NULLPTR;
-    GroupHeaderItem *groupHeaderItem = Q_NULLPTR;
+    MessageItem *messageItem = nullptr;
+    GroupHeaderItem *groupHeaderItem = nullptr;
 
     int top = mHitItemRect.top();
     int right = mHitItemRect.right();
     int left = mHitItemRect.left();
 
-    mHitRow = Q_NULLPTR;
+    mHitRow = nullptr;
     mHitRowIndex = -1;
-    mHitContentItem = Q_NULLPTR;
+    mHitContentItem = nullptr;
 
     switch (mHitItem->type()) {
     case Item::Message:
@@ -1231,7 +1231,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
     int bestInexactDistance = 0xffffff;
     bool bestInexactItemRight = false;
     QRect bestInexactRect;
-    const Theme::ContentItem *bestInexactContentItem = Q_NULLPTR;
+    const Theme::ContentItem *bestInexactContentItem = nullptr;
 
     Qt::LayoutDirection layoutDir = mItemView->layoutDirection();
 
@@ -1253,7 +1253,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
 
         bestInexactItemRight = false;
         bestInexactDistance = 0xffffff;
-        bestInexactContentItem = Q_NULLPTR;
+        bestInexactContentItem = nullptr;
 
         // this row!
         mHitRow = *rowit;
@@ -1319,7 +1319,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_replied_state_icon(messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != Q_NULLPTR, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
@@ -1339,13 +1339,13 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_spam_ham_state_icon(messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != Q_NULLPTR, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_watched_ignored_state_icon(messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != Q_NULLPTR, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AttachmentStateIcon:
@@ -1465,7 +1465,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_replied_state_icon(messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != Q_NULLPTR, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
@@ -1485,13 +1485,13 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_spam_ham_state_icon(messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != Q_NULLPTR, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
                     const QPixmap *pix = get_watched_ignored_state_icon(messageItem);
-                    compute_bounding_rect_for_boolean_state_icon(pix != Q_NULLPTR, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
+                    compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AttachmentStateIcon:

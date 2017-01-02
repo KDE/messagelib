@@ -99,16 +99,16 @@ static QStringList encodeIdn(const QStringList &emails)
 MessageComposer::ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
     : QObject(parent)
     , m_msg(KMime::Message::Ptr(new KMime::Message))
-    , m_attachmentController(Q_NULLPTR)
-    , m_attachmentModel(Q_NULLPTR)
-    , m_signatureController(Q_NULLPTR)
-    , m_recipientsEditor(Q_NULLPTR)
-    , m_identityCombo(Q_NULLPTR)
-    , m_identMan(Q_NULLPTR)
-    , m_editor(Q_NULLPTR)
-    , m_transport(Q_NULLPTR)
-    , m_dictionary(Q_NULLPTR)
-    , m_fccCombo(Q_NULLPTR)
+    , m_attachmentController(nullptr)
+    , m_attachmentModel(nullptr)
+    , m_signatureController(nullptr)
+    , m_recipientsEditor(nullptr)
+    , m_identityCombo(nullptr)
+    , m_identMan(nullptr)
+    , m_editor(nullptr)
+    , m_transport(nullptr)
+    , m_dictionary(nullptr)
+    , m_fccCombo(nullptr)
     , m_parentWidget(parentGui)
     , m_sign(false)
     , m_encrypt(false)
@@ -117,10 +117,10 @@ MessageComposer::ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *pa
     , m_urgent(false)
     , m_cryptoMessageFormat(Kleo::AutoFormat)
     , m_pendingQueueJobs(0)
-    , m_autoSaveTimer(Q_NULLPTR)
+    , m_autoSaveTimer(nullptr)
     , m_autoSaveErrorShown(false)
     , m_autoSaveInterval(1 * 1000 * 60)   // default of 1 min
-    , mSendLaterInfo(Q_NULLPTR)
+    , mSendLaterInfo(nullptr)
 {
     m_charsets << "utf-8"; // default, so we have a backup in case client code forgot to set.
 
@@ -1063,7 +1063,7 @@ void MessageComposer::ComposerViewBase::updateAutoSave()
 {
     if (m_autoSaveInterval == 0) {
         delete m_autoSaveTimer;
-        m_autoSaveTimer = Q_NULLPTR;
+        m_autoSaveTimer = nullptr;
     } else {
         if (!m_autoSaveTimer) {
             m_autoSaveTimer = new QTimer(this);
@@ -1082,7 +1082,7 @@ void MessageComposer::ComposerViewBase::updateAutoSave()
 void MessageComposer::ComposerViewBase::cleanupAutoSave()
 {
     delete m_autoSaveTimer;
-    m_autoSaveTimer = Q_NULLPTR;
+    m_autoSaveTimer = nullptr;
     if (!m_autoSaveUUID.isEmpty()) {
 
         qCDebug(MESSAGECOMPOSER_LOG) << "deleting autosave files" << m_autoSaveUUID;
@@ -1300,7 +1300,7 @@ void MessageComposer::ComposerViewBase::slotCreateItemResult(KJob *job)
             mSendLaterInfo->setItemId(item.id());
             SendLater::SendLaterUtil::writeSendLaterInfo(SendLater::SendLaterUtil::defaultConfig(), mSendLaterInfo);
             delete mSendLaterInfo;
-            mSendLaterInfo = Q_NULLPTR;
+            mSendLaterInfo = nullptr;
         }
     }
 

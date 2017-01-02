@@ -40,7 +40,7 @@ void UnencryptedMessageTest::testMailWithoutEncryption()
 {
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
     QVERIFY(!nodeHelper.unencryptedMessage(originalMessage));
@@ -105,7 +105,7 @@ void UnencryptedMessageTest::testSMIMESignedEncrypted()
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(QStringLiteral("smime-signed-encrypted.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     emptySource.setAllowDecryption(true);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -131,7 +131,7 @@ void UnencryptedMessageTest::testOpenPGPSignedEncrypted()
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(QStringLiteral("openpgp-signed-encrypted.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     emptySource.setAllowDecryption(true);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -157,7 +157,7 @@ void UnencryptedMessageTest::testOpenPGPEncryptedAndSigned()
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(QStringLiteral("openpgp-encrypted+signed.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     emptySource.setAllowDecryption(true);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -181,7 +181,7 @@ void UnencryptedMessageTest::testOpenPGPEncrypted()
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     emptySource.setAllowDecryption(true);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -201,7 +201,7 @@ void UnencryptedMessageTest::testOpenPGPEncryptedNotDecrypted()
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     emptySource.setAllowDecryption(false);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
@@ -231,7 +231,7 @@ void UnencryptedMessageTest::testAsync()
 
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(mailFileName);
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     emptySource.setAllowDecryption(true);
     {
         QEventLoop loop;

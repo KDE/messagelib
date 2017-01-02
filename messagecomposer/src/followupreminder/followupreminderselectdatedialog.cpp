@@ -42,9 +42,9 @@ class MessageComposer::FollowUpReminderSelectDateDialogPrivate
 {
 public:
     FollowUpReminderSelectDateDialogPrivate()
-        : mDateComboBox(Q_NULLPTR),
-          mCollectionCombobox(Q_NULLPTR),
-          mOkButton(Q_NULLPTR)
+        : mDateComboBox(nullptr),
+          mCollectionCombobox(nullptr),
+          mOkButton(nullptr)
     {
 
     }

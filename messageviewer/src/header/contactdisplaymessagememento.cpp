@@ -29,12 +29,12 @@
 using namespace MessageViewer;
 
 ContactDisplayMessageMemento::ContactDisplayMessageMemento(const QString &emailAddress)
-    : QObject(Q_NULLPTR),
+    : QObject(nullptr),
       mForceDisplayTo(Viewer::UseGlobalSetting),
       mEmailAddress(emailAddress),
       mFinished(false),
       mMailAllowToRemoteContent(false),
-      mSearchJob(Q_NULLPTR)
+      mSearchJob(nullptr)
 {
     if (!emailAddress.isEmpty()) {
         mSearchJob = new Akonadi::ContactSearchJob();

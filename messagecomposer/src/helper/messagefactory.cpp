@@ -75,7 +75,7 @@ static KMime::Types::Mailbox::List stripMyAddressesFromAddressList(const KMime::
 }
 
 MessageFactory::MessageFactory(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col)
-    : m_identityManager(Q_NULLPTR)
+    : m_identityManager(nullptr)
     , m_origMsg(origMsg)
     , m_folderId(0)
     , m_parentFolderId(0)

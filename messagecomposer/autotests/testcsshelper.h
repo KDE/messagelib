@@ -27,7 +27,7 @@
 class TestCSSHelper : public MessageViewer::CSSHelper
 {
 public:
-    TestCSSHelper() : MessageViewer::CSSHelper(Q_NULLPTR) {}
+    TestCSSHelper() : MessageViewer::CSSHelper(nullptr) {}
     virtual ~TestCSSHelper() {}
 
     QString nonQuotedFontTag() const

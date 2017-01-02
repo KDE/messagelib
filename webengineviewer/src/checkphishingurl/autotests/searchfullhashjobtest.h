@@ -26,7 +26,7 @@ class SearchFullHashJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SearchFullHashJobTest(QObject *parent = Q_NULLPTR);
+    explicit SearchFullHashJobTest(QObject *parent = nullptr);
     ~SearchFullHashJobTest();
 
 private Q_SLOTS:

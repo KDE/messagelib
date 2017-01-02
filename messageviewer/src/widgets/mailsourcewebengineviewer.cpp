@@ -49,7 +49,7 @@ using namespace MessageViewer;
 
 MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     : QDialog(parent),
-      mFindBar(Q_NULLPTR)
+      mFindBar(nullptr)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     QVBoxLayout *mainLayout = new QVBoxLayout(this);

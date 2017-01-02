@@ -43,8 +43,8 @@ void SinglepartJobTest::testContent()
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
-    QVERIFY(result->contentDisposition(false) == Q_NULLPTR);     // Not created unless demanded.
-    QVERIFY(result->contentType(false) == Q_NULLPTR);     // Not created unless demanded.
+    QVERIFY(result->contentDisposition(false) == nullptr);     // Not created unless demanded.
+    QVERIFY(result->contentType(false) == nullptr);     // Not created unless demanded.
     QVERIFY(result->contentTransferEncoding(false));     // KMime gives it a default one (7bit).
 }
 

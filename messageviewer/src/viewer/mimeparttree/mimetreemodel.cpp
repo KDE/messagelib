@@ -37,7 +37,7 @@ class Q_DECL_HIDDEN MimeTreeModel::Private
 {
 public:
     Private() :
-        root(Q_NULLPTR)
+        root(nullptr)
     {}
 
     QString descriptionForContent(KMime::Content *content)

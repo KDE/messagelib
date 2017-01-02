@@ -144,29 +144,29 @@ AttachmentControllerBase::Private::Private(AttachmentControllerBase *qq)
     : q(qq)
     , encryptEnabled(false)
     , signEnabled(false)
-    , model(Q_NULLPTR)
-    , wParent(Q_NULLPTR)
-    , mActionCollection(Q_NULLPTR)
-    , attachPublicKeyAction(Q_NULLPTR)
-    , attachMyPublicKeyAction(Q_NULLPTR)
-    , openContextAction(Q_NULLPTR)
-    , viewContextAction(Q_NULLPTR)
-    , editContextAction(Q_NULLPTR)
-    , editWithContextAction(Q_NULLPTR)
-    , removeAction(Q_NULLPTR)
-    , removeContextAction(Q_NULLPTR)
-    , saveAsAction(Q_NULLPTR)
-    , saveAsContextAction(Q_NULLPTR)
-    , propertiesAction(Q_NULLPTR)
-    , propertiesContextAction(Q_NULLPTR)
-    , addAttachmentFileAction(Q_NULLPTR)
-    , addAttachmentDirectoryAction(Q_NULLPTR)
-    , addContextAction(Q_NULLPTR)
-    , selectAllAction(Q_NULLPTR)
-    , attachmentMenu(Q_NULLPTR)
-    , addOwnVcardAction(Q_NULLPTR)
-    , reloadAttachmentAction(Q_NULLPTR)
-    , attachVCardsAction(Q_NULLPTR)
+    , model(nullptr)
+    , wParent(nullptr)
+    , mActionCollection(nullptr)
+    , attachPublicKeyAction(nullptr)
+    , attachMyPublicKeyAction(nullptr)
+    , openContextAction(nullptr)
+    , viewContextAction(nullptr)
+    , editContextAction(nullptr)
+    , editWithContextAction(nullptr)
+    , removeAction(nullptr)
+    , removeContextAction(nullptr)
+    , saveAsAction(nullptr)
+    , saveAsContextAction(nullptr)
+    , propertiesAction(nullptr)
+    , propertiesContextAction(nullptr)
+    , addAttachmentFileAction(nullptr)
+    , addAttachmentDirectoryAction(nullptr)
+    , addContextAction(nullptr)
+    , selectAllAction(nullptr)
+    , attachmentMenu(nullptr)
+    , addOwnVcardAction(nullptr)
+    , reloadAttachmentAction(nullptr)
+    , attachVCardsAction(nullptr)
 {
 }
 
@@ -434,12 +434,12 @@ static QTemporaryFile *dumpAttachmentToTempFile(const AttachmentPart::Ptr part) 
     if (!file->open()) {
         qCCritical(MESSAGECOMPOSER_LOG) << "Could not open tempfile" << file->fileName();
         delete file;
-        return Q_NULLPTR;
+        return nullptr;
     }
     if (file->write(part->data()) == -1) {
         qCCritical(MESSAGECOMPOSER_LOG) << "Could not dump attachment to tempfile.";
         delete file;
-        return Q_NULLPTR;
+        return nullptr;
     }
     file->flush();
     return file;
@@ -696,7 +696,7 @@ void AttachmentControllerBase::openWith(const KService::Ptr &offer)
     }
     if (!result) {
         delete tempFile;
-        tempFile = Q_NULLPTR;
+        tempFile = nullptr;
     } else {
         // The file was opened.  Delete it only when the composer is closed
         // (and this object is destroyed).
@@ -729,7 +729,7 @@ void AttachmentControllerBase::openAttachment(AttachmentPart::Ptr part)
                                i18n("Unable to open attachment"));
         }
         delete tempFile;
-        tempFile = Q_NULLPTR;
+        tempFile = nullptr;
     } else {
         // The file was opened.  Delete it only when the composer is closed
         // (and this object is destroyed).
@@ -833,7 +833,7 @@ void AttachmentControllerBase::slotPutResult(KJob *job)
 
     if (job->error()) {
         if (job->error() == KIO::ERR_FILE_ALREADY_EXIST) {
-            if (KMessageBox::warningContinueCancel(Q_NULLPTR,
+            if (KMessageBox::warningContinueCancel(nullptr,
                                                    i18n("File %1 exists.\nDo you want to replace it?", _job->url().toLocalFile()), i18n("Save to File"), KGuiItem(i18n("&Replace")))
                     == KMessageBox::Continue) {
                 byteArrayToRemoteFile(_job->data(), _job->url(), true);

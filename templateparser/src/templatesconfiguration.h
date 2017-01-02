@@ -31,7 +31,7 @@ class TEMPLATEPARSER_EXPORT TemplatesConfiguration : public QWidget, Ui::Templat
 
 public:
 
-    explicit TemplatesConfiguration(QWidget *parent = Q_NULLPTR, const QString &name = QString());
+    explicit TemplatesConfiguration(QWidget *parent = nullptr, const QString &name = QString());
     ~TemplatesConfiguration();
 
     void loadFromGlobal();

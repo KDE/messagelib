@@ -61,13 +61,13 @@ class Widget::Private
 public:
     Private(Widget *owner)
         : q(owner),
-          quickSearchWarning(Q_NULLPTR),
-          searchCollectionIndexingWarning(Q_NULLPTR),
-          quickSearchLine(Q_NULLPTR),
-          mView(Q_NULLPTR),
-          mSearchTimer(Q_NULLPTR),
-          mStorageModel(Q_NULLPTR), mAggregation(Q_NULLPTR),
-          mTheme(Q_NULLPTR), mFilter(Q_NULLPTR),
+          quickSearchWarning(nullptr),
+          searchCollectionIndexingWarning(nullptr),
+          quickSearchLine(nullptr),
+          mView(nullptr),
+          mSearchTimer(nullptr),
+          mStorageModel(nullptr), mAggregation(nullptr),
+          mTheme(nullptr), mFilter(nullptr),
           mStorageUsesPrivateTheme(false),
           mStorageUsesPrivateAggregation(false),
           mStorageUsesPrivateSortOrder(false),
@@ -158,12 +158,12 @@ Widget::Widget(QWidget *pParent)
 
     connect(d->mView->header(), &QHeaderView::sectionClicked,
             this, &Widget::slotViewHeaderSectionClicked);
-    d->mSearchTimer = Q_NULLPTR;
+    d->mSearchTimer = nullptr;
 }
 
 Widget::~Widget()
 {
-    d->mView->setStorageModel(Q_NULLPTR);
+    d->mView->setStorageModel(nullptr);
 
     Manager::unregisterWidget(this);
 
@@ -343,7 +343,7 @@ void Widget::setStorageModel(StorageModel *storageModel, PreSelectionMode preSel
         if (d->mSearchTimer) {
             d->mSearchTimer->stop();
             delete d->mSearchTimer;
-            d->mSearchTimer = Q_NULLPTR;
+            d->mSearchTimer = nullptr;
         }
 
         d->quickSearchLine->searchEdit()->clear();
@@ -852,8 +852,8 @@ void Widget::groupSortDirectionSelected(QAction *action)
 void Widget::resetFilter()
 {
     delete d->mFilter;
-    d->mFilter = Q_NULLPTR;
-    d->mView->model()->setFilter(Q_NULLPTR);
+    d->mFilter = nullptr;
+    d->mView->model()->setFilter(nullptr);
     d->quickSearchLine->resetFilter();
     d->quickSearchWarning->animatedHide();
 }

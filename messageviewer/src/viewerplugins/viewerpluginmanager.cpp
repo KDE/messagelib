@@ -53,7 +53,7 @@ class ViewerPluginInfo
 {
 public:
     ViewerPluginInfo()
-        : plugin(Q_NULLPTR),
+        : plugin(nullptr),
           isEnabled(false)
     {
 
@@ -149,7 +149,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
             if (unique.contains(info.metaDataFileNameBaseName)) {
                 continue;
             }
-            info.plugin = Q_NULLPTR;
+            info.plugin = nullptr;
             mPluginList.push_back(info);
             unique.insert(info.metaDataFileNameBaseName);
         } else {

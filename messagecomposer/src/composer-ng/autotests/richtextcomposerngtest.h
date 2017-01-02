@@ -26,7 +26,7 @@ class RichTextComposerNgTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit RichTextComposerNgTest(QObject *parent = Q_NULLPTR);
+    explicit RichTextComposerNgTest(QObject *parent = nullptr);
     ~RichTextComposerNgTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

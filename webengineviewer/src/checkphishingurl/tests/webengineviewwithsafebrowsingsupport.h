@@ -32,7 +32,7 @@ class WebEngineViewWithSafeBrowsingSupport : public QWidget
 {
     Q_OBJECT
 public:
-    explicit WebEngineViewWithSafeBrowsingSupport(QWidget *parent = Q_NULLPTR);
+    explicit WebEngineViewWithSafeBrowsingSupport(QWidget *parent = nullptr);
     ~WebEngineViewWithSafeBrowsingSupport();
 
 private Q_SLOTS:

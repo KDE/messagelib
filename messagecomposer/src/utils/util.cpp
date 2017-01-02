@@ -334,5 +334,5 @@ KMime::Content *MessageComposer::Util::findTypeInMessage(KMime::Content *data, c
             return ret;
         }
     }
-    return Q_NULLPTR;
+    return nullptr;
 }

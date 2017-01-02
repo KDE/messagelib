@@ -32,7 +32,7 @@ class TestJQuerySupportMailWebEngine : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestJQuerySupportMailWebEngine(QWidget *parent = Q_NULLPTR);
+    explicit TestJQuerySupportMailWebEngine(QWidget *parent = nullptr);
     ~TestJQuerySupportMailWebEngine();
 
 private Q_SLOTS:

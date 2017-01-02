@@ -26,7 +26,7 @@ class WebEnginePrintMessageBoxTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebEnginePrintMessageBoxTest(QObject *parent = Q_NULLPTR);
+    explicit WebEnginePrintMessageBoxTest(QObject *parent = nullptr);
     ~WebEnginePrintMessageBoxTest();
 
 private Q_SLOTS:

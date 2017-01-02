@@ -31,7 +31,7 @@ class TestMailWebEngineSelection : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestMailWebEngineSelection(QWidget *parent = Q_NULLPTR);
+    explicit TestMailWebEngineSelection(QWidget *parent = nullptr);
     ~TestMailWebEngineSelection();
 private Q_SLOTS:
     void slotOpenUrl(const QUrl &url);

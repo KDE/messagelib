@@ -34,7 +34,7 @@ class WebEngineViewer::SearchFullHashJobPrivate
 {
 public:
     SearchFullHashJobPrivate()
-        : mNetworkAccessManager(Q_NULLPTR)
+        : mNetworkAccessManager(nullptr)
     {
 
     }

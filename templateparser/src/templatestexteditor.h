@@ -29,7 +29,7 @@ class TemplatesTextEditor : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT
 public:
-    explicit TemplatesTextEditor(QWidget *parent = Q_NULLPTR);
+    explicit TemplatesTextEditor(QWidget *parent = nullptr);
     ~TemplatesTextEditor();
 
 protected:

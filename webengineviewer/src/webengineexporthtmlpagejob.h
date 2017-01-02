@@ -29,7 +29,7 @@ class WEBENGINEVIEWER_EXPORT WebEngineExportHtmlPageJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebEngineExportHtmlPageJob(QObject *parent = Q_NULLPTR);
+    explicit WebEngineExportHtmlPageJob(QObject *parent = nullptr);
     ~WebEngineExportHtmlPageJob();
 
     void start();

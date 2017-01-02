@@ -28,7 +28,7 @@ class CheckPhishingUrlGui : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CheckPhishingUrlGui(QWidget *parent = Q_NULLPTR);
+    explicit CheckPhishingUrlGui(QWidget *parent = nullptr);
     ~CheckPhishingUrlGui();
 private Q_SLOTS:
     void slotCheckUrl();

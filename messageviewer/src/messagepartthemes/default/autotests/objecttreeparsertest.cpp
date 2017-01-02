@@ -55,7 +55,7 @@ void ObjectTreeParserTester::test_parsePlainMessage()
     QCOMPARE(msg->contents().size(), 0);
 
     // Parse the message
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     ObjectTreeParser otp(&emptySource);
     otp.parseObjectTree(msg.data());
 
@@ -189,7 +189,7 @@ void ObjectTreeParserTester::test_HTML()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
 
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     ObjectTreeParser otp(&emptySource);
 
     otp.parseObjectTree(msg.data());
@@ -226,7 +226,7 @@ void ObjectTreeParserTester::test_HTMLOnly()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
-    Test::ObjectTreeSource emptySource(Q_NULLPTR, Q_NULLPTR);
+    Test::ObjectTreeSource emptySource(nullptr, nullptr);
     ObjectTreeParser otp(&emptySource);
 
     otp.parseObjectTree(msg.data());

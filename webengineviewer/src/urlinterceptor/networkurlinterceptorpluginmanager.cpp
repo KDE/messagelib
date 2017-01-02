@@ -52,7 +52,7 @@ class MailNetworkUrlInterceptorPluginInfo
 {
 public:
     MailNetworkUrlInterceptorPluginInfo()
-        : plugin(Q_NULLPTR)
+        : plugin(nullptr)
     {
 
     }
@@ -138,7 +138,7 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
             if (unique.contains(info.metaDataFileNameBaseName)) {
                 continue;
             }
-            info.plugin = Q_NULLPTR;
+            info.plugin = nullptr;
             mPluginList.push_back(info);
             unique.insert(info.metaDataFileNameBaseName);
         } else {

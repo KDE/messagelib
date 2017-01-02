@@ -25,7 +25,7 @@ class MessageComposer::PluginEditorCheckBeforeSendInterfacePrivate
 {
 public:
     PluginEditorCheckBeforeSendInterfacePrivate()
-        : mParentWidget(Q_NULLPTR)
+        : mParentWidget(nullptr)
     {
 
     }

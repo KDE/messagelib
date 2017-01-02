@@ -36,7 +36,7 @@ public:
     CreatePhishingUrlDataBaseJobPrivate()
         : mContraintsCompressionType(CreatePhishingUrlDataBaseJob::RawCompression),
           mDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::FullDataBase),
-          mNetworkAccessManager(Q_NULLPTR)
+          mNetworkAccessManager(nullptr)
     {
 
     }

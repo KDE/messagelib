@@ -26,7 +26,7 @@ class Q_DECL_HIDDEN GlobalPart::Private
 public:
     Private()
         : guiEnabled(true),
-          parentWidgetForGui(Q_NULLPTR),
+          parentWidgetForGui(nullptr),
           fallbackCharsetEnabled(false),
           allow8Bit(false),
           MDNRequested(false)

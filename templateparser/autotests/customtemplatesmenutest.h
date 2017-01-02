@@ -24,7 +24,7 @@ class CustomTemplatesMenuTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit CustomTemplatesMenuTest(QObject *parent = Q_NULLPTR);
+    explicit CustomTemplatesMenuTest(QObject *parent = nullptr);
     ~CustomTemplatesMenuTest();
 
 private Q_SLOTS:

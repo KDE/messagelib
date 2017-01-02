@@ -27,7 +27,7 @@ class FollowupReminderSelectDateDialogTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit FollowupReminderSelectDateDialogTest(QObject *parent = Q_NULLPTR);
+    explicit FollowupReminderSelectDateDialogTest(QObject *parent = nullptr);
     ~FollowupReminderSelectDateDialogTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

@@ -28,7 +28,7 @@ class TestScriptWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestScriptWidget(QWidget *parent = Q_NULLPTR);
+    explicit TestScriptWidget(QWidget *parent = nullptr);
     void setResult(const QString &res);
     QString script() const;
 Q_SIGNALS:
@@ -46,7 +46,7 @@ class TestWebEngineScriptPage : public QWebEnginePage
 {
     Q_OBJECT
 public:
-    explicit TestWebEngineScriptPage(QObject *parent = Q_NULLPTR);
+    explicit TestWebEngineScriptPage(QObject *parent = nullptr);
 
 protected:
     void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) Q_DECL_OVERRIDE;
@@ -59,14 +59,14 @@ class TestWebEngineScriptView : public QWebEngineView
 {
     Q_OBJECT
 public:
-    explicit TestWebEngineScriptView(QWidget *parent = Q_NULLPTR);
+    explicit TestWebEngineScriptView(QWidget *parent = nullptr);
 };
 
 class TestWebEngineScript : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestWebEngineScript(QWidget *parent = Q_NULLPTR);
+    explicit TestWebEngineScript(QWidget *parent = nullptr);
     ~TestWebEngineScript();
 
 private Q_SLOTS:

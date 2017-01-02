@@ -31,7 +31,7 @@ class TestMailWebEngine : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestMailWebEngine(QWidget *parent = Q_NULLPTR);
+    explicit TestMailWebEngine(QWidget *parent = nullptr);
     ~TestMailWebEngine();
 private Q_SLOTS:
     void slotScrollUp();

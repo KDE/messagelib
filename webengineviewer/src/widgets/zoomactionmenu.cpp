@@ -35,10 +35,10 @@ class WebEngineViewer::ZoomActionMenuPrivate
 public:
     ZoomActionMenuPrivate(KActionMenu *qq)
         : mZoomFactor(100),
-          mZoomInAction(Q_NULLPTR),
-          mZoomOutAction(Q_NULLPTR),
-          mZoomResetAction(Q_NULLPTR),
-          mActionCollection(Q_NULLPTR),
+          mZoomInAction(nullptr),
+          mZoomOutAction(nullptr),
+          mZoomResetAction(nullptr),
+          mActionCollection(nullptr),
           q(qq)
     {
 

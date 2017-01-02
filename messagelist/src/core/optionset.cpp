@@ -56,7 +56,7 @@ void OptionSet::generateUniqueId()
 {
     static int nextUniqueId = 0;
     nextUniqueId++;
-    mId = QStringLiteral("%1-%2").arg((unsigned int)::time(Q_NULLPTR)).arg(nextUniqueId);
+    mId = QStringLiteral("%1-%2").arg((unsigned int)::time(nullptr)).arg(nextUniqueId);
 }
 
 QString OptionSet::saveToString() const

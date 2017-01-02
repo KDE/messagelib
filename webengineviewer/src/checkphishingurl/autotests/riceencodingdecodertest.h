@@ -26,7 +26,7 @@ class RiceEncodingDecoderTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit RiceEncodingDecoderTest(QObject *parent = Q_NULLPTR);
+    explicit RiceEncodingDecoderTest(QObject *parent = nullptr);
     ~RiceEncodingDecoderTest();
 
 private Q_SLOTS:

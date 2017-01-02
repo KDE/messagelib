@@ -439,7 +439,7 @@ public:
         if (mp) {
             return mCSSHelper;
         }
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     Interface::ObjectTreeSource *source() const
@@ -448,7 +448,7 @@ public:
         if (mp) {
             return mp->source();
         }
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     void renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)

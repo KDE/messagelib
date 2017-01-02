@@ -37,11 +37,11 @@ class MessageComposer::SinglepartJobPrivate : public ContentJobBasePrivate
 public:
     SinglepartJobPrivate(SinglepartJob *qq)
         : ContentJobBasePrivate(qq)
-        , contentDescription(Q_NULLPTR)
-        , contentDisposition(Q_NULLPTR)
-        , contentID(Q_NULLPTR)
-        , contentTransferEncoding(Q_NULLPTR)
-        , contentType(Q_NULLPTR)
+        , contentDescription(nullptr)
+        , contentDisposition(nullptr)
+        , contentID(nullptr)
+        , contentTransferEncoding(nullptr)
+        , contentType(nullptr)
     {
     }
 

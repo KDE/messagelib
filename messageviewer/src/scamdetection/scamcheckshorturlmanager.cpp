@@ -45,7 +45,7 @@ class MessageViewer::ScamCheckShortUrlManagerPrivate
 {
 public:
     ScamCheckShortUrlManagerPrivate()
-        : mCheckShortUrl(Q_NULLPTR)
+        : mCheckShortUrl(nullptr)
     {
 
     }

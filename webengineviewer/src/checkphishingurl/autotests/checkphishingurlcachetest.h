@@ -26,7 +26,7 @@ class CheckPhishingUrlCacheTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit CheckPhishingUrlCacheTest(QObject *parent = Q_NULLPTR);
+    explicit CheckPhishingUrlCacheTest(QObject *parent = nullptr);
     ~CheckPhishingUrlCacheTest();
 private Q_SLOTS:
     void shouldNotBeAMalware();

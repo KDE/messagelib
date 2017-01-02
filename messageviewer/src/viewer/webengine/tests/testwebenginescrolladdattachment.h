@@ -29,7 +29,7 @@ class TestWebEngineScrollAddAttachment : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestWebEngineScrollAddAttachment(QWidget *parent = Q_NULLPTR);
+    explicit TestWebEngineScrollAddAttachment(QWidget *parent = nullptr);
 
 private Q_SLOTS:
     void slotScrollToAttachment();

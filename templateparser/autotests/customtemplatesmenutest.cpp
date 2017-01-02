@@ -34,7 +34,7 @@ CustomTemplatesMenuTest::~CustomTemplatesMenuTest()
 void CustomTemplatesMenuTest::shouldHaveDefaultValue()
 {
     KActionCollection *collection = new KActionCollection(this);
-    TemplateParser::CustomTemplatesMenu templateMenu(Q_NULLPTR, collection);
+    TemplateParser::CustomTemplatesMenu templateMenu(nullptr, collection);
 
     QVERIFY(templateMenu.replyActionMenu());
     QVERIFY(templateMenu.replyAllActionMenu());

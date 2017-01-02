@@ -155,7 +155,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
         QUrl localUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass);
         localUrl.setPath(localUrl.path() + QLatin1Char('/') + fileName);
         QFileDialog::Options options = QFileDialog::DontConfirmOverwrite;
-        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl, QString(), Q_NULLPTR, options);
+        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl, QString(), nullptr, options);
         if (url.isEmpty()) {
             return false;
         }
@@ -428,7 +428,7 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
         opt |= QFileDialog::DontConfirmOverwrite;
     }
     QString localFile = startUrl.toLocalFile() + QLatin1Char('/') + fileName;
-    QString saveFileName = QFileDialog::getSaveFileName(parent, i18np("Save Message", "Save Messages", retrievedMsgs.count()), localFile, filter, Q_NULLPTR, opt);
+    QString saveFileName = QFileDialog::getSaveFileName(parent, i18np("Save Message", "Save Messages", retrievedMsgs.count()), localFile, filter, nullptr, opt);
 
     if (!saveFileName.isEmpty()) {
         const QString localFileName = saveFileName;

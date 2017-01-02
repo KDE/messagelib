@@ -69,7 +69,7 @@ public:
     }
     void forgetAggregation()
     {
-        mAggregation = Q_NULLPTR;
+        mAggregation = nullptr;
     }
 };
 
@@ -284,12 +284,12 @@ void ConfigureAggregationsDialog::Private::updateButton(QListWidgetItem *cur)
 {
     const int numberOfSelectedItem(mAggregationList->selectedItems().count());
 
-    AggregationListWidgetItem *item = cur ? dynamic_cast< AggregationListWidgetItem * >(cur) : Q_NULLPTR;
+    AggregationListWidgetItem *item = cur ? dynamic_cast< AggregationListWidgetItem * >(cur) : nullptr;
     mDeleteAggregationButton->setEnabled(item && !item->aggregation()->readOnly() && (mAggregationList->count() > 1));
 
     mCloneAggregationButton->setEnabled(numberOfSelectedItem == 1);
     mExportAggregationButton->setEnabled(numberOfSelectedItem > 0);
-    mEditor->editAggregation(item ? item->aggregation() : Q_NULLPTR);
+    mEditor->editAggregation(item ? item->aggregation() : nullptr);
     if (item && !item->isSelected()) {
         item->setSelected(true);    // make sure it's true
     }
@@ -310,7 +310,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
         }
         ++i;
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregationItemById(const QString &aggregationId)
@@ -326,7 +326,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
         }
         ++i;
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregationItemByAggregation(Aggregation *set)
@@ -342,7 +342,7 @@ AggregationListWidgetItem *ConfigureAggregationsDialog::Private::findAggregation
         }
         ++i;
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 QString ConfigureAggregationsDialog::Private::uniqueNameForAggregation(const QString &baseName, Aggregation *skipAggregation)
@@ -398,7 +398,7 @@ void ConfigureAggregationsDialog::Private::deleteAggregationButtonClicked()
         return;
     }
 
-    mEditor->editAggregation(Q_NULLPTR);   // forget it
+    mEditor->editAggregation(nullptr);   // forget it
     for (QListWidgetItem *it : list) {
         AggregationListWidgetItem *item = dynamic_cast< AggregationListWidgetItem * >(it);
         if (!item) {

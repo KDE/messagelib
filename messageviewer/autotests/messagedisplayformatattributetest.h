@@ -27,7 +27,7 @@ class MessageDisplayFormatAttributeTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit MessageDisplayFormatAttributeTest(QObject *parent = Q_NULLPTR);
+    explicit MessageDisplayFormatAttributeTest(QObject *parent = nullptr);
     ~MessageDisplayFormatAttributeTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

@@ -60,7 +60,7 @@ public:
     WebEngineAccessKeyPrivate(WebEngineAccessKey *qq, QWebEngineView *webEngine)
         : mWebEngine(webEngine),
           mAccessKeyActivated(NotActivated),
-          mActionCollection(Q_NULLPTR),
+          mActionCollection(nullptr),
           q(qq)
     {
 

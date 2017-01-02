@@ -79,7 +79,7 @@ Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface:
         protocolContentType = signatureContentType;
     }
 
-    const QGpgME::Protocol *protocol = Q_NULLPTR;
+    const QGpgME::Protocol *protocol = nullptr;
     if (protocolContentType == QLatin1String("application/pkcs7-signature") ||
             protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
         protocol = QGpgME::smime();

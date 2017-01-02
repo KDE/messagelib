@@ -33,7 +33,7 @@ class WebEngineViewer::CheckPhishingUrlJobPrivate
 {
 public:
     CheckPhishingUrlJobPrivate()
-        : mNetworkAccessManager(Q_NULLPTR)
+        : mNetworkAccessManager(nullptr)
     {
 
     }

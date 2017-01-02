@@ -28,7 +28,7 @@ class TestWebEngineAccessKey : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestWebEngineAccessKey(QWidget *parent = Q_NULLPTR);
+    explicit TestWebEngineAccessKey(QWidget *parent = nullptr);
     ~TestWebEngineAccessKey();
 
     void setHtml(const QString &html);
@@ -47,7 +47,7 @@ class WebEngineAccessKeyAnchorFromHtmlTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebEngineAccessKeyAnchorFromHtmlTest(QObject *parent = Q_NULLPTR);
+    explicit WebEngineAccessKeyAnchorFromHtmlTest(QObject *parent = nullptr);
 private Q_SLOTS:
     void shouldNotShowAccessKeyWhenHtmlAsNotAnchor();
     void shouldReturnOneAnchor();

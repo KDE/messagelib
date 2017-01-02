@@ -32,7 +32,7 @@ class TestWebEngineView : public QWebEngineView
 {
     Q_OBJECT
 public:
-    explicit TestWebEngineView(QWidget *parent = Q_NULLPTR);
+    explicit TestWebEngineView(QWidget *parent = nullptr);
 protected:
     void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
 private Q_SLOTS:
@@ -43,7 +43,7 @@ class TestWebEngine : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestWebEngine(QWidget *parent = Q_NULLPTR);
+    explicit TestWebEngine(QWidget *parent = nullptr);
     ~TestWebEngine();
 private:
     WebEngineViewer::WebEnginePage *mEnginePage;

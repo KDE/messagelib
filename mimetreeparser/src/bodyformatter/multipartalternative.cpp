@@ -65,9 +65,9 @@ Interface::MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Inter
         return _mp;
     }
 
-    KMime::Content *dataIcal = mp->mChildNodes.contains(Util::MultipartIcal) ? mp->mChildNodes[Util::MultipartIcal] : Q_NULLPTR;
-    KMime::Content *dataHtml = mp->mChildNodes.contains(Util::MultipartHtml) ? mp->mChildNodes[Util::MultipartHtml] : Q_NULLPTR;
-    KMime::Content *dataPlain = mp->mChildNodes.contains(Util::MultipartPlain) ? mp->mChildNodes[Util::MultipartPlain] : Q_NULLPTR;
+    KMime::Content *dataIcal = mp->mChildNodes.contains(Util::MultipartIcal) ? mp->mChildNodes[Util::MultipartIcal] : nullptr;
+    KMime::Content *dataHtml = mp->mChildNodes.contains(Util::MultipartHtml) ? mp->mChildNodes[Util::MultipartHtml] : nullptr;
+    KMime::Content *dataPlain = mp->mChildNodes.contains(Util::MultipartPlain) ? mp->mChildNodes[Util::MultipartPlain] : nullptr;
 
     // Make sure that in default ical is preffered over html and plain text
     if (dataIcal && ((preferredMode != Util::MultipartHtml && preferredMode != Util::MultipartPlain))) {

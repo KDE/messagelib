@@ -84,7 +84,7 @@ static QTextCodec *selectCharset(const QStringList &charsets, const QString &tex
 TemplateParser::TemplateParser(const KMime::Message::Ptr &amsg, const Mode amode) :
     mMode(amode), mIdentity(0),
     mAllowDecryption(true),
-    mDebug(false), mQuoteString(QStringLiteral("> ")), m_identityManager(Q_NULLPTR),
+    mDebug(false), mQuoteString(QStringLiteral("> ")), m_identityManager(nullptr),
     mWrap(true),
     mColWrap(80),
     mQuotes(ReplyAsOriginalMessage),
@@ -257,7 +257,7 @@ QString TemplateParser::getLastName(const QString &str)
 void TemplateParser::process(const KMime::Message::Ptr &aorig_msg,
                              const Akonadi::Collection &afolder)
 {
-    if (aorig_msg == Q_NULLPTR) {
+    if (aorig_msg == nullptr) {
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
         return;
     }
@@ -358,7 +358,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                     htmlBody.append(body);
                 } else if (mDebug) {
                     KMessageBox::error(
-                        Q_NULLPTR,
+                        nullptr,
                         i18nc("@info",
                               "Cannot insert content from file %1: %2", path, file.errorString()));
                 }
@@ -1501,7 +1501,7 @@ QString TemplateParser::pipe(const QString &cmd, const QString &buf)
 
     if (!success && mDebug) {
         KMessageBox::error(
-            Q_NULLPTR,
+            nullptr,
             xi18nc("@info",
                    "Pipe command <command>%1</command> failed.", cmd));
     }

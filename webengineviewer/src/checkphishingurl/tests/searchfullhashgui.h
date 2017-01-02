@@ -28,7 +28,7 @@ class SearchFullHashGui : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SearchFullHashGui(QWidget *parent = Q_NULLPTR);
+    explicit SearchFullHashGui(QWidget *parent = nullptr);
     ~SearchFullHashGui();
 private Q_SLOTS:
     void slotCheckUrl();

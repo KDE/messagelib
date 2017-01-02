@@ -26,7 +26,7 @@ class ImageScalingTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit ImageScalingTest(QObject *parent = Q_NULLPTR);
+    explicit ImageScalingTest(QObject *parent = nullptr);
     ~ImageScalingTest();
 private Q_SLOTS:
     void initTestCase();

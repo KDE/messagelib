@@ -26,7 +26,7 @@ class CreateDatabaseFileJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit CreateDatabaseFileJobTest(QObject *parent = Q_NULLPTR);
+    explicit CreateDatabaseFileJobTest(QObject *parent = nullptr);
     ~CreateDatabaseFileJobTest();
 private Q_SLOTS:
     void initTestcase();

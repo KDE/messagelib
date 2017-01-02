@@ -34,13 +34,13 @@ class TemplateParser::CustomTemplatesMenuPrivate
 {
 public:
     CustomTemplatesMenuPrivate()
-        : mOwnerActionCollection(Q_NULLPTR),
-          mCustomReplyActionMenu(Q_NULLPTR),
-          mCustomReplyAllActionMenu(Q_NULLPTR),
-          mCustomForwardActionMenu(Q_NULLPTR),
-          mCustomReplyMapper(Q_NULLPTR),
-          mCustomReplyAllMapper(Q_NULLPTR),
-          mCustomForwardMapper(Q_NULLPTR)
+        : mOwnerActionCollection(nullptr),
+          mCustomReplyActionMenu(nullptr),
+          mCustomReplyAllActionMenu(nullptr),
+          mCustomForwardActionMenu(nullptr),
+          mCustomReplyMapper(nullptr),
+          mCustomReplyAllMapper(nullptr),
+          mCustomForwardMapper(nullptr)
     {
 
     }

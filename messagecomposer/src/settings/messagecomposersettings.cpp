@@ -26,7 +26,7 @@
 
 using namespace MessageComposer;
 
-MessageComposerSettings *MessageComposerSettings::mSelf = Q_NULLPTR;
+MessageComposerSettings *MessageComposerSettings::mSelf = nullptr;
 
 MessageComposerSettings *MessageComposerSettings::self()
 {

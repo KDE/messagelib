@@ -30,9 +30,9 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     : PimCommon::LineEditWithCompleter(parent),
       mLocked(false),
       mHasFilter(false),
-      mLockAction(Q_NULLPTR),
-      mFiltersAction(Q_NULLPTR),
-      mFilterMenu(Q_NULLPTR),
+      mLockAction(nullptr),
+      mFiltersAction(nullptr),
+      mFilterMenu(nullptr),
       mContainsOutboundMessages(false)
 {
     setClearButtonEnabled(true);

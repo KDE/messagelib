@@ -24,7 +24,7 @@ class ZoomActionMenuTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit ZoomActionMenuTest(QObject *parent = Q_NULLPTR);
+    explicit ZoomActionMenuTest(QObject *parent = nullptr);
     ~ZoomActionMenuTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

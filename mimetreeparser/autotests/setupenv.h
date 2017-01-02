@@ -138,7 +138,7 @@ public:
     }
 
     const QTextCodec *overrideCodec() Q_DECL_OVERRIDE {
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE {
@@ -147,7 +147,7 @@ public:
     }
 
     QObject *sourceObject() Q_DECL_OVERRIDE {
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     Interface::MessagePartRenderer::Ptr messagePartTheme(Interface::MessagePart::Ptr msgPart) Q_DECL_OVERRIDE {

@@ -27,7 +27,7 @@ class TestMailDndAttachment : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestMailDndAttachment(QWidget *parent = Q_NULLPTR);
+    explicit TestMailDndAttachment(QWidget *parent = nullptr);
     ~TestMailDndAttachment();
 private:
     KMime::Message::Ptr readAndParseMail(const QString &mailFile);

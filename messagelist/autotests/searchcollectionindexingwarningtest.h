@@ -27,7 +27,7 @@ class SearchCollectionIndexingWarningTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SearchCollectionIndexingWarningTest(QObject *parent = Q_NULLPTR);
+    explicit SearchCollectionIndexingWarningTest(QObject *parent = nullptr);
     ~SearchCollectionIndexingWarningTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

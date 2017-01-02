@@ -32,7 +32,7 @@ class TestSelectedTextWebEngine : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestSelectedTextWebEngine(QWidget *parent = Q_NULLPTR);
+    explicit TestSelectedTextWebEngine(QWidget *parent = nullptr);
     ~TestSelectedTextWebEngine();
 
 private Q_SLOTS:

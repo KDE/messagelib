@@ -196,15 +196,15 @@ ThemePreviewDelegate::ThemePreviewDelegate(QAbstractItemView *parent)
 
     mSampleGroupHeaderItem = new GroupHeaderItem(i18n("Message Group"));
 
-    mSampleGroupHeaderItem->setDate(time(Q_NULLPTR));
-    mSampleGroupHeaderItem->setMaxDate(time(Q_NULLPTR) + 31337);
+    mSampleGroupHeaderItem->setDate(time(nullptr));
+    mSampleGroupHeaderItem->setMaxDate(time(nullptr) + 31337);
     mSampleGroupHeaderItem->setSubject(i18n("Very long subject very long subject very long subject very long subject very long subject very long"));
 
     mSampleMessageItem = new FakeItem();
 
-    mSampleMessageItem->setDate(time(Q_NULLPTR));
+    mSampleMessageItem->setDate(time(nullptr));
     mSampleMessageItem->setSize(0x31337);
-    mSampleMessageItem->setMaxDate(time(Q_NULLPTR) + 31337);
+    mSampleMessageItem->setMaxDate(time(nullptr) + 31337);
     mSampleMessageItem->setSender(i18n("Sender"));
     mSampleMessageItem->setReceiver(i18n("Receiver"));
     mSampleMessageItem->setSubject(i18n("Very long subject very long subject very long subject very long subject very long subject very long"));
@@ -253,10 +253,10 @@ Item *ThemePreviewDelegate::itemFromIndex(const QModelIndex &index) const
 
 ThemePreviewWidget::ThemePreviewWidget(QWidget *parent)
     : QTreeWidget(parent),
-      mTheme(Q_NULLPTR)
+      mTheme(nullptr)
 {
-    mSelectedThemeContentItem = Q_NULLPTR;
-    mSelectedThemeColumn = Q_NULLPTR;
+    mSelectedThemeContentItem = nullptr;
+    mSelectedThemeColumn = nullptr;
     mFirstShow = true;
     mReadOnly = false;
 
@@ -411,7 +411,7 @@ void ThemePreviewWidget::setTheme(Theme *theme)
 {
     bool themeChanged = theme != mTheme;
 
-    mSelectedThemeContentItem = Q_NULLPTR;
+    mSelectedThemeContentItem = nullptr;
     mThemeSelectedContentItemRect = QRect();
     mDropIndicatorPoint1 = QPoint();
     mDropIndicatorPoint2 = QPoint();
@@ -557,7 +557,7 @@ void ThemePreviewWidget::dropEvent(QDropEvent *e)
         return;
     }
 
-    Theme::Row *row = Q_NULLPTR;
+    Theme::Row *row = nullptr;
 
     switch (mRowInsertPosition) {
     case AboveRow:
@@ -658,7 +658,7 @@ void ThemePreviewWidget::dropEvent(QDropEvent *e)
 
     mThemeSelectedContentItemRect = QRect();
     mDropIndicatorPoint1 = mDropIndicatorPoint2;
-    mSelectedThemeContentItem = Q_NULLPTR;
+    mSelectedThemeContentItem = nullptr;
 
     setTheme(mTheme);   // this will reset theme cache and trigger a global update
 }
@@ -839,7 +839,7 @@ void ThemePreviewWidget::mouseMoveEvent(QMouseEvent *e)
         }
     }
 
-    mSelectedThemeContentItem = Q_NULLPTR;
+    mSelectedThemeContentItem = nullptr;
     mThemeSelectedContentItemRect = QRect();
     mDropIndicatorPoint1 = mDropIndicatorPoint2;
 
@@ -862,7 +862,7 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
         mSelectedThemeContentItem = const_cast< Theme::ContentItem * >(mDelegate->hitContentItem());
         mThemeSelectedContentItemRect = mSelectedThemeContentItem ? mDelegate->hitContentItemRect() : QRect();
     } else {
-        mSelectedThemeContentItem = Q_NULLPTR;
+        mSelectedThemeContentItem = nullptr;
         mThemeSelectedContentItemRect = QRect();
     }
 
@@ -1262,7 +1262,7 @@ void ThemePreviewWidget::slotAddColumn()
     if (dlg->exec() == QDialog::Accepted) {
         mTheme->insertColumn(newColumnIndex, mSelectedThemeColumn);
 
-        mSelectedThemeContentItem = Q_NULLPTR;
+        mSelectedThemeContentItem = nullptr;
         mThemeSelectedContentItemRect = QRect();
         mDropIndicatorPoint1 = mDropIndicatorPoint2;
 
@@ -1271,7 +1271,7 @@ void ThemePreviewWidget::slotAddColumn()
     } else {
 
         delete mSelectedThemeColumn;
-        mSelectedThemeColumn = Q_NULLPTR;
+        mSelectedThemeColumn = nullptr;
     }
 
     delete dlg;
@@ -1287,7 +1287,7 @@ void ThemePreviewWidget::slotColumnProperties()
         new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Column Properties"));
 
     if (dlg->exec() == QDialog::Accepted) {
-        mSelectedThemeContentItem = Q_NULLPTR;
+        mSelectedThemeContentItem = nullptr;
         mThemeSelectedContentItemRect = QRect();
         mDropIndicatorPoint1 = mDropIndicatorPoint2;
 
@@ -1310,9 +1310,9 @@ void ThemePreviewWidget::slotDeleteColumn()
 
     mTheme->removeColumn(mSelectedThemeColumn);
     delete mSelectedThemeColumn;
-    mSelectedThemeColumn = Q_NULLPTR;
+    mSelectedThemeColumn = nullptr;
 
-    mSelectedThemeContentItem = Q_NULLPTR;
+    mSelectedThemeContentItem = nullptr;
     mThemeSelectedContentItemRect = QRect();
     mDropIndicatorPoint1 = mDropIndicatorPoint2;
 
@@ -1322,7 +1322,7 @@ void ThemePreviewWidget::slotDeleteColumn()
 ThemeEditor::ThemeEditor(QWidget *parent)
     : OptionSetEditor(parent)
 {
-    mCurrentTheme = Q_NULLPTR;
+    mCurrentTheme = nullptr;
 
     // Appearance tab
     QWidget *tab = new QWidget(this);

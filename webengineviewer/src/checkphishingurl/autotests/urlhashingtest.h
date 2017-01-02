@@ -26,7 +26,7 @@ class UrlHashingTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit UrlHashingTest(QObject *parent = Q_NULLPTR);
+    explicit UrlHashingTest(QObject *parent = nullptr);
     ~UrlHashingTest();
 private Q_SLOTS:
     void shouldCanonicalizeUrl();

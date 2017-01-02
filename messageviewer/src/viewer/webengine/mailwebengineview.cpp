@@ -63,12 +63,12 @@ class MessageViewer::MailWebEngineViewPrivate
 {
 public:
     MailWebEngineViewPrivate()
-        : mScamDetection(Q_NULLPTR),
-          mWebViewAccessKey(Q_NULLPTR),
-          mExternalReference(Q_NULLPTR),
-          mPageEngine(Q_NULLPTR),
-          mNetworkAccessManager(Q_NULLPTR),
-          mViewer(Q_NULLPTR),
+        : mScamDetection(nullptr),
+          mWebViewAccessKey(nullptr),
+          mExternalReference(nullptr),
+          mPageEngine(nullptr),
+          mNetworkAccessManager(nullptr),
+          mViewer(nullptr),
           mCanStartDrag(false)
     {
 

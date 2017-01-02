@@ -31,7 +31,7 @@ class TestJQuerySupportWebEngine : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestJQuerySupportWebEngine(QWidget *parent = Q_NULLPTR);
+    explicit TestJQuerySupportWebEngine(QWidget *parent = nullptr);
     ~TestJQuerySupportWebEngine();
 
 private Q_SLOTS:

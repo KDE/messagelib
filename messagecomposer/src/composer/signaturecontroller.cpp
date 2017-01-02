@@ -37,8 +37,8 @@ class MessageComposer::SignatureControllerPrivate
 {
 public:
     SignatureControllerPrivate()
-        : m_editor(Q_NULLPTR),
-          m_identityCombo(Q_NULLPTR),
+        : m_editor(nullptr),
+          m_identityCombo(nullptr),
           m_currentIdentityId(0)
     {
     }

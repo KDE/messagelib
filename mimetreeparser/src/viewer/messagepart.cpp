@@ -55,7 +55,7 @@ MessagePart::MessagePart(ObjectTreeParser *otp,
                          const QString &text)
     : mText(text)
     , mOtp(otp)
-    , mAttachmentNode(Q_NULLPTR)
+    , mAttachmentNode(nullptr)
     , mRoot(false)
 {
 }
@@ -273,7 +273,7 @@ void TextMessagePart::parseContent()
                 fullySignedOrEncryptedTmp = false;
                 appendSubPart(MessagePart::Ptr(new MessagePart(mOtp, aCodec->toUnicode(block.text()))));
             } else if (block.type() == PgpMessageBlock) {
-                EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, fromAddress, Q_NULLPTR));
+                EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, fromAddress, nullptr));
                 mp->setDecryptMessage(decryptMessage());
                 mp->setIsEncrypted(true);
                 appendSubPart(mp);
@@ -285,7 +285,7 @@ void TextMessagePart::parseContent()
                     continue;
                 }
             } else if (block.type() == ClearsignedBlock) {
-                SignedMessagePart::Ptr mp(new SignedMessagePart(mOtp, QString(), cryptProto, fromAddress, Q_NULLPTR));
+                SignedMessagePart::Ptr mp(new SignedMessagePart(mOtp, QString(), cryptProto, fromAddress, nullptr));
                 appendSubPart(mp);
                 mp->startVerification(block.text(), aCodec);
             } else {
@@ -942,7 +942,7 @@ void SignedMessagePart::sigStatusToMetaData()
 
 void SignedMessagePart::startVerification(const QByteArray &text, const QTextCodec *aCodec)
 {
-    startVerificationDetached(text, Q_NULLPTR, QByteArray());
+    startVerificationDetached(text, nullptr, QByteArray());
 
     if (!mNode && mMetaData.isSigned) {
         setText(aCodec->toUnicode(mVerifiedText));
@@ -1162,7 +1162,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
     } else if (m->isRunning()) {
         mMetaData.inProgress = true;
         mOtp->mHasPendingAsyncJobs = true;
-        m = Q_NULLPTR;
+        m = nullptr;
     }
 
     if (m) {
@@ -1173,7 +1173,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
 
         if (verifyResult.signatures().size() > 0) {
             auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, MessagePart::text(), mCryptoProto, mFromAddress, mNode));
-            subPart->setVerificationResult(m, Q_NULLPTR);
+            subPart->setVerificationResult(m, nullptr);
             appendSubPart(subPart);
         }
 

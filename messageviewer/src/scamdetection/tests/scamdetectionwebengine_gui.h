@@ -32,7 +32,7 @@ class ScamDetectionWebEngineTestWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ScamDetectionWebEngineTestWidget(const QString &filename, QWidget *parent = Q_NULLPTR);
+    explicit ScamDetectionWebEngineTestWidget(const QString &filename, QWidget *parent = nullptr);
     ~ScamDetectionWebEngineTestWidget();
 
 private Q_SLOTS:

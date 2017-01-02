@@ -26,7 +26,7 @@ class HashCacheManagerTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit HashCacheManagerTest(QObject *parent = Q_NULLPTR);
+    explicit HashCacheManagerTest(QObject *parent = nullptr);
     ~HashCacheManagerTest();
 private Q_SLOTS:
     void shouldBeUnknowByDefault();

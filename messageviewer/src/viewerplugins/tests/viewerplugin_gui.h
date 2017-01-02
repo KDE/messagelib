@@ -30,7 +30,7 @@ class ViewerPluginTest : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ViewerPluginTest(QWidget *parent = Q_NULLPTR);
+    explicit ViewerPluginTest(QWidget *parent = nullptr);
     ~ViewerPluginTest();
 
 private Q_SLOTS:

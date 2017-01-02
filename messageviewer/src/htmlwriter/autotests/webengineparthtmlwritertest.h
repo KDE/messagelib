@@ -24,7 +24,7 @@ class WebEnginePartHtmlWriterTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebEnginePartHtmlWriterTest(QObject *parent = Q_NULLPTR);
+    explicit WebEnginePartHtmlWriterTest(QObject *parent = nullptr);
     ~WebEnginePartHtmlWriterTest();
 private Q_SLOTS:
     void removeScriptInHtml_data();

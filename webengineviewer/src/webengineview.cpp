@@ -34,9 +34,9 @@ class WebEngineViewer::WebEngineViewPrivate
 public:
     WebEngineViewPrivate()
         : mSavedRelativePosition(-1),
-          mCurrentWidget(Q_NULLPTR),
-          mWebEngineNavigatorInterceptor(Q_NULLPTR),
-          mWebEngineNavigatorInterceptorView(Q_NULLPTR)
+          mCurrentWidget(nullptr),
+          mWebEngineNavigatorInterceptor(nullptr),
+          mWebEngineNavigatorInterceptorView(nullptr)
 
     {
 
@@ -44,9 +44,9 @@ public:
     ~WebEngineViewPrivate()
     {
         delete mWebEngineNavigatorInterceptor;
-        mWebEngineNavigatorInterceptor = Q_NULLPTR;
+        mWebEngineNavigatorInterceptor = nullptr;
         delete mWebEngineNavigatorInterceptorView;
-        mWebEngineNavigatorInterceptorView = Q_NULLPTR;
+        mWebEngineNavigatorInterceptorView = nullptr;
     }
 
     qreal mSavedRelativePosition;

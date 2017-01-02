@@ -49,7 +49,7 @@
 
 using namespace MessageList::Core;
 
-Manager *Manager::mInstance = Q_NULLPTR;
+Manager *Manager::mInstance = nullptr;
 
 Manager::Manager()
     : QObject()
@@ -139,7 +139,7 @@ Manager::~Manager()
 
     delete mDateFormatter;
 
-    mInstance = Q_NULLPTR;
+    mInstance = nullptr;
 }
 
 void Manager::registerWidget(Widget *pWidget)
@@ -162,7 +162,7 @@ void Manager::unregisterWidget(Widget *pWidget)
 
     if (mInstance->mWidgetList.isEmpty()) {
         delete mInstance;
-        mInstance = Q_NULLPTR;
+        mInstance = nullptr;
     }
 }
 
@@ -183,7 +183,7 @@ const Aggregation *Manager::defaultAggregation()
 
     const QString aggregationId = conf.readEntry(QStringLiteral("DefaultSet"), "");
 
-    Aggregation *opt = Q_NULLPTR;
+    Aggregation *opt = nullptr;
 
     if (!aggregationId.isEmpty()) {
         opt = mAggregations.value(aggregationId);
@@ -265,12 +265,12 @@ const Aggregation *Manager::aggregationForStorageModel(const QString &storageId,
 
     const QString aggregationId = conf.readEntry(MessageList::Util::setForStorageModelConfigName().arg(storageId), "");
 
-    Aggregation *opt = Q_NULLPTR;
+    Aggregation *opt = nullptr;
 
     if (!aggregationId.isEmpty()) {
         // a private aggregation was stored
         opt = mAggregations.value(aggregationId);
-        *storageUsesPrivateAggregation = (opt != Q_NULLPTR);
+        *storageUsesPrivateAggregation = (opt != nullptr);
     }
 
     if (opt) {
@@ -504,7 +504,7 @@ const Theme *Manager::defaultTheme()
 
     const QString themeId = conf.readEntry(QStringLiteral("DefaultSet"), "");
 
-    Theme *opt = Q_NULLPTR;
+    Theme *opt = nullptr;
 
     if (!themeId.isEmpty()) {
         opt = mThemes.value(themeId);
@@ -586,12 +586,12 @@ const Theme *Manager::themeForStorageModel(const QString &id, bool *storageUsesP
     KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelThemesGroup());
     const QString themeId = conf.readEntry(MessageList::Util::setForStorageModelConfigName().arg(id), "");
 
-    Theme *opt = Q_NULLPTR;
+    Theme *opt = nullptr;
 
     if (!themeId.isEmpty()) {
         // a private theme was stored
         opt = mThemes.value(themeId);
-        *storageUsesPrivateTheme = (opt != Q_NULLPTR);
+        *storageUsesPrivateTheme = (opt != nullptr);
     }
 
     if (opt) {

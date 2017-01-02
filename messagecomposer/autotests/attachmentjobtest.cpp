@@ -61,7 +61,7 @@ void AttachmentJobTest::testAttachment()
     QVERIFY(ajob->exec());
     Content *result = ajob->content();
     delete ajob;
-    ajob = Q_NULLPTR;
+    ajob = nullptr;
     result->assemble();
     qDebug() << result->encodedContent();
 

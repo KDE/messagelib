@@ -32,7 +32,7 @@ class WebEngineViewBase : public QWebEngineView
 {
     Q_OBJECT
 public:
-    explicit WebEngineViewBase(QWidget *parent = Q_NULLPTR);
+    explicit WebEngineViewBase(QWidget *parent = nullptr);
 protected:
     void dragEnterEvent(QDragEnterEvent *e) Q_DECL_OVERRIDE;
     void dragLeaveEvent(QDragLeaveEvent *e) Q_DECL_OVERRIDE;
@@ -44,7 +44,7 @@ class TestDndWebEngine : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestDndWebEngine(QWidget *parent = Q_NULLPTR);
+    explicit TestDndWebEngine(QWidget *parent = nullptr);
     ~TestDndWebEngine();
 private:
     WebEngineViewer::WebEngineView *pageView;

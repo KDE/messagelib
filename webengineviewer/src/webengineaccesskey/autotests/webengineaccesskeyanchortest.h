@@ -26,7 +26,7 @@ class WebEngineAccessKeyAnchorTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebEngineAccessKeyAnchorTest(QObject *parent = Q_NULLPTR);
+    explicit WebEngineAccessKeyAnchorTest(QObject *parent = nullptr);
     ~WebEngineAccessKeyAnchorTest();
 private Q_SLOTS:
     void shouldReturnEmptyAccessKeyAnchor();

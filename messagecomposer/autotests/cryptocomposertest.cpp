@@ -100,7 +100,7 @@ void CryptoComposerTest::testOpenPGPMime()
 
     KMime::Message::Ptr message = composer->resultMessages().first();
     delete composer;
-    composer = Q_NULLPTR;
+    composer = nullptr;
 
     //qDebug()<< "message:" << message.data()->encodedContent();
     ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(),
@@ -144,7 +144,7 @@ void CryptoComposerTest::testEncryptSameAttachments()
 
     KMime::Message::Ptr message = composer->resultMessages().first();
     delete composer;
-    composer = Q_NULLPTR;
+    composer = nullptr;
 
     //qDebug()<< "message:" << message.data()->encodedContent();
     ComposerTestUtil::verifyEncryption(message.data(), data.toUtf8(),
@@ -204,7 +204,7 @@ void CryptoComposerTest::testEditEncryptAttachments()
 
     KMime::Message::Ptr message = composer->resultMessages().first();
     delete composer;
-    composer = Q_NULLPTR;
+    composer = nullptr;
 
     // setup a viewer
     ComposerViewBase view(this, nullptr);
@@ -270,7 +270,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
 
     KMime::Message::Ptr message = composer->resultMessages().first();
     delete composer;
-    composer = Q_NULLPTR;
+    composer = nullptr;
 
     // setup a viewer
     ComposerViewBase view(this, nullptr);
@@ -327,7 +327,7 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
 
     KMime::Message::Ptr message = composer->resultMessages().first();
     delete composer;
-    composer = Q_NULLPTR;
+    composer = nullptr;
 
     // as we have an additional attachment, just ignore it when checking for sign/encrypt
     KMime::Content *b = MessageCore::NodeHelper::firstChild(message.data());
@@ -388,7 +388,7 @@ void CryptoComposerTest::testBCCEncrypt()
     KMime::Message::Ptr primMessage = composer->resultMessages().first();
     KMime::Message::Ptr secMessage = composer->resultMessages()[1];
     delete composer;
-    composer = Q_NULLPTR;
+    composer = nullptr;
 
     ComposerTestUtil::verifySignatureAndEncryption(primMessage.data(), data.toUtf8(),
             (Kleo::CryptoMessageFormat) format);
@@ -438,7 +438,7 @@ void CryptoComposerTest::testOpenPGPInline()
 
     KMime::Message::Ptr message = composer->resultMessages().first();
     delete composer;
-    composer = Q_NULLPTR;
+    composer = nullptr;
 
     if (sign && !encrypt) {
         data += QString::fromLatin1("\n");
@@ -602,7 +602,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
         QCOMPARE(composer->resultMessages().size(), 1);
         KMime::Message::Ptr message = composer->resultMessages().first();
         delete composer;
-        composer = Q_NULLPTR;
+        composer = nullptr;
 
         //qDebug() << "message:" << message->encodedContent();
 

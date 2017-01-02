@@ -27,7 +27,7 @@ class TestMailMBoxWebEngine : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestMailMBoxWebEngine(QWidget *parent = Q_NULLPTR);
+    explicit TestMailMBoxWebEngine(QWidget *parent = nullptr);
     ~TestMailMBoxWebEngine();
 private:
     KMime::Message::Ptr readAndParseMail(const QString &mailFile);

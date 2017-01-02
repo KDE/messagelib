@@ -120,7 +120,7 @@ CustomTemplates::~CustomTemplates()
     disconnect(mUi->mToEdit, &Akonadi::EmailAddressRequester::textChanged, this, &CustomTemplates::slotTextChanged);
     disconnect(mUi->mCCEdit, &Akonadi::EmailAddressRequester::textChanged, this, &CustomTemplates::slotTextChanged);
     delete mUi;
-    mUi = Q_NULLPTR;
+    mUi = nullptr;
 }
 
 void CustomTemplates::slotNameChanged(const QString &text)
@@ -498,7 +498,7 @@ QWidget *CustomTemplateItemDelegate::createEditor(QWidget *parent,
     if (index.column() == 1) {
         return QStyledItemDelegate::createEditor(parent, option, index);
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 CustomTemplateItem::CustomTemplateItem(QTreeWidget *parent,

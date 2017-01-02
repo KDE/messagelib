@@ -56,10 +56,10 @@ class Q_DECL_HIDDEN View::Private
 {
 public:
     Private(View *owner, Widget *parent)
-        : q(owner), mWidget(parent), mModel(Q_NULLPTR), mDelegate(new Delegate(owner)),
-          mAggregation(Q_NULLPTR), mTheme(Q_NULLPTR), mNeedToApplyThemeColumns(false),
-          mLastCurrentItem(Q_NULLPTR), mFirstShow(true), mSaveThemeColumnStateOnSectionResize(true),
-          mSaveThemeColumnStateTimer(Q_NULLPTR), mApplyThemeColumnsTimer(Q_NULLPTR),
+        : q(owner), mWidget(parent), mModel(nullptr), mDelegate(new Delegate(owner)),
+          mAggregation(nullptr), mTheme(nullptr), mNeedToApplyThemeColumns(false),
+          mLastCurrentItem(nullptr), mFirstShow(true), mSaveThemeColumnStateOnSectionResize(true),
+          mSaveThemeColumnStateTimer(nullptr), mApplyThemeColumnsTimer(nullptr),
           mIgnoreUpdateGeometries(false) { }
 
     void expandFullThread(const QModelIndex &index);
@@ -138,12 +138,12 @@ View::~View()
     delete d->mApplyThemeColumnsTimer;
 
     // Zero out the theme, aggregation and ApplyThemeColumnsTimer so Model will not cause accesses to them in its destruction process
-    d->mApplyThemeColumnsTimer = Q_NULLPTR;
+    d->mApplyThemeColumnsTimer = nullptr;
 
-    d->mTheme = Q_NULLPTR;
-    d->mAggregation = Q_NULLPTR;
+    d->mTheme = nullptr;
+    d->mAggregation = nullptr;
 
-    delete d; d = Q_NULLPTR;
+    delete d; d = nullptr;
 }
 
 Model *View::model() const
@@ -859,7 +859,7 @@ Item *View::currentItem() const
 {
     QModelIndex idx = currentIndex();
     if (!idx.isValid()) {
-        return Q_NULLPTR;
+        return nullptr;
     }
     Item *it = static_cast< Item * >(idx.internalPointer());
     Q_ASSERT(it);
@@ -870,7 +870,7 @@ MessageItem *View::currentMessageItem(bool selectIfNeeded) const
 {
     Item *it = currentItem();
     if (!it || (it->type() != Item::Message)) {
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     if (selectIfNeeded) {
@@ -1135,7 +1135,7 @@ static inline bool message_type_matches(Item *item, MessageTypeFilter messageTyp
 Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeFilter, bool loop)
 {
     if (!storageModel()) {
-        return Q_NULLPTR;    // no folder
+        return nullptr;    // no folder
     }
 
     // find the item to start with
@@ -1168,11 +1168,11 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
                 Q_ASSERT(below);   // must exist (we had a current item)
 
                 if (below == referenceItem) {
-                    return Q_NULLPTR;    // only one item in folder: loop complete
+                    return nullptr;    // only one item in folder: loop complete
                 }
             } else {
                 // looping not requested
-                return Q_NULLPTR;
+                return nullptr;
             }
         }
 
@@ -1181,7 +1181,7 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
         below = d->mModel->rootItem()->itemBelow();
 
         if (!below) {
-            return Q_NULLPTR;    // folder empty
+            return nullptr;    // folder empty
         }
     }
 
@@ -1223,13 +1223,13 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
                 // else mi == 0 and below == 0: we have started from the beginning and reached the end (it will fail the test below and exit)
             } else {
                 // looping not requested: nothing more to do
-                return Q_NULLPTR;
+                return nullptr;
             }
         }
 
         if (below == referenceItem) {
             Q_ASSERT(loop);
-            return Q_NULLPTR; // looped and returned back to the first message
+            return nullptr; // looped and returned back to the first message
         }
 
         parentIndex = d->mModel->index(below->parent(), 0);
@@ -1243,7 +1243,7 @@ Item *View::messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeF
 
 Item *View::firstMessageItem(MessageTypeFilter messageTypeFilter)
 {
-    return messageItemAfter(Q_NULLPTR, messageTypeFilter, false);
+    return messageItemAfter(nullptr, messageTypeFilter, false);
 }
 
 Item *View::nextMessageItem(MessageTypeFilter messageTypeFilter, bool loop)
@@ -1265,7 +1265,7 @@ Item *View::deepestExpandedChild(Item *referenceItem) const
 Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageTypeFilter, bool loop)
 {
     if (!storageModel()) {
-        return Q_NULLPTR;    // no folder
+        return nullptr;    // no folder
     }
 
     // find the item to start with
@@ -1274,7 +1274,7 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
     if (referenceItem) {
         Item *parent = referenceItem->parent();
         Item *siblingAbove = parent ?
-                             parent->itemAboveChild(referenceItem) : Q_NULLPTR;
+                             parent->itemAboveChild(referenceItem) : nullptr;
         // there was a current item: we start just above it
         if ((siblingAbove && siblingAbove != referenceItem && siblingAbove != parent) &&
                 (siblingAbove->childItemCount() > 0) &&
@@ -1300,11 +1300,11 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
                 Q_ASSERT(above != d->mModel->rootItem());
 
                 if (above == referenceItem) {
-                    return Q_NULLPTR;    // only one item in folder: loop complete
+                    return nullptr;    // only one item in folder: loop complete
                 }
             } else {
                 // looping not requested
-                return Q_NULLPTR;
+                return nullptr;
             }
 
         }
@@ -1313,7 +1313,7 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
         above = d->mModel->rootItem()->deepestItem();
 
         if (!above || !above->parent() || (above == d->mModel->rootItem())) {
-            return Q_NULLPTR;    // folder empty
+            return nullptr;    // folder empty
         }
     }
 
@@ -1355,17 +1355,17 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
                 // else mi == 0 and above == 0: we have started from the end and reached the beginning (it will fail the test below and exit)
             } else {
                 // looping not requested: nothing more to do
-                return Q_NULLPTR;
+                return nullptr;
             }
         }
 
         if (above == referenceItem) {
             Q_ASSERT(loop);
-            return Q_NULLPTR; // looped and returned back to the first message
+            return nullptr; // looped and returned back to the first message
         }
 
         if (!above->parent()) {
-            return Q_NULLPTR;
+            return nullptr;
         }
 
         parentIndex = d->mModel->index(above->parent(), 0);
@@ -1379,7 +1379,7 @@ Item *View::messageItemBefore(Item *referenceItem, MessageTypeFilter messageType
 
 Item *View::lastMessageItem(MessageTypeFilter messageTypeFilter)
 {
-    return messageItemBefore(Q_NULLPTR, messageTypeFilter, false);
+    return messageItemBefore(nullptr, messageTypeFilter, false);
 }
 
 Item *View::previousMessageItem(MessageTypeFilter messageTypeFilter, bool loop)
@@ -1793,7 +1793,7 @@ void View::markMessageItemsAsAboutToBeRemoved(QList< MessageItem * > &items, boo
             Item *next = messageItemAfter(aMessage, MessageTypeAny, false);
             if (!next) {
                 // no way
-                aMessage = Q_NULLPTR;
+                aMessage = nullptr;
                 break;
             }
             Q_ASSERT(next->type() == Item::Message);
@@ -1811,7 +1811,7 @@ void View::markMessageItemsAsAboutToBeRemoved(QList< MessageItem * > &items, boo
                 Item *prev = messageItemBefore(aMessage, MessageTypeAny, false);
                 if (!prev) {
                     // no way
-                    aMessage = Q_NULLPTR;
+                    aMessage = nullptr;
                     break;
                 }
                 Q_ASSERT(prev->type() == Item::Message);
@@ -1936,8 +1936,8 @@ void View::slotSelectionChanged(const QItemSelection &, const QItemSelection &)
     QModelIndex current = currentIndex();
 
     if (!current.isValid()) {
-        d->mLastCurrentItem = Q_NULLPTR;
-        d->mWidget->viewMessageSelected(Q_NULLPTR);
+        d->mLastCurrentItem = nullptr;
+        d->mWidget->viewMessageSelected(nullptr);
         d->mWidget->viewSelectionChanged();
         return;
     }
@@ -1971,8 +1971,8 @@ void View::slotSelectionChanged(const QItemSelection &, const QItemSelection &)
     break;
     case Item::GroupHeader:
         if (d->mLastCurrentItem) {
-            d->mWidget->viewMessageSelected(Q_NULLPTR);
-            d->mLastCurrentItem = Q_NULLPTR;
+            d->mWidget->viewMessageSelected(nullptr);
+            d->mLastCurrentItem = nullptr;
         }
         break;
     default:

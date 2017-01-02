@@ -31,7 +31,7 @@ class WEBENGINEVIEWER_EXPORT WebEngineManageScript : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebEngineManageScript(QObject *parent = Q_NULLPTR);
+    explicit WebEngineManageScript(QObject *parent = nullptr);
     ~WebEngineManageScript();
     void addScript(QWebEngineProfile *profile, const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
 

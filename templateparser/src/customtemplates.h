@@ -47,7 +47,7 @@ public:
 
 public:
     explicit CustomTemplates(const QList<KActionCollection *> &actionCollection,
-                             QWidget *parent = Q_NULLPTR);
+                             QWidget *parent = nullptr);
     ~CustomTemplates();
 
     void load();
@@ -71,7 +71,7 @@ private Q_SLOTS:
     void slotDuplicateClicked();
 
 private:
-    bool nameAlreadyExists(const QString &str, QTreeWidgetItem *item = Q_NULLPTR);
+    bool nameAlreadyExists(const QString &str, QTreeWidgetItem *item = nullptr);
     QString indexToType(int index);
     QString createUniqueName(const QString &name) const;
     void iconFromType(CustomTemplates::Type type, CustomTemplateItem *item);
@@ -130,7 +130,7 @@ class CustomTemplateItemDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
-    explicit CustomTemplateItemDelegate(QObject *parent = Q_NULLPTR);
+    explicit CustomTemplateItemDelegate(QObject *parent = nullptr);
     ~CustomTemplateItemDelegate();
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
                           const QModelIndex &index) const Q_DECL_OVERRIDE;

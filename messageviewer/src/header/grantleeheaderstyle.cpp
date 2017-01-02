@@ -29,7 +29,7 @@ class MessageViewer::GrantleeHeaderStylePrivate
 {
 public:
     GrantleeHeaderStylePrivate()
-        : mGrantleeFormatter(Q_NULLPTR),
+        : mGrantleeFormatter(nullptr),
           mShowMailAction(true)
     {
         mGrantleeFormatter = new GrantleeHeaderFormatter;

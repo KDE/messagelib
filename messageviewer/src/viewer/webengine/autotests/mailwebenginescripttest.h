@@ -26,7 +26,7 @@ class MailWebEngineScriptTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit MailWebEngineScriptTest(QObject *parent = Q_NULLPTR);
+    explicit MailWebEngineScriptTest(QObject *parent = nullptr);
     ~MailWebEngineScriptTest();
 private Q_SLOTS:
     void shouldInjectAttachment();

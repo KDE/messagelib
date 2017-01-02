@@ -32,7 +32,7 @@ MailCheckPhishingUrlJob::~MailCheckPhishingUrlJob()
 {
     if (mCheckPhishingJob) {
         disconnect(mCheckPhishingJob.data(), &WebEngineViewer::CheckPhishingUrlJob::result, this, &MailCheckPhishingUrlJob::slotCheckPhishingUrlDone);
-        mCheckPhishingJob = Q_NULLPTR;
+        mCheckPhishingJob = nullptr;
     }
 }
 

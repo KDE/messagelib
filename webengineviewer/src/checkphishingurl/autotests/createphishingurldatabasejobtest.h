@@ -26,7 +26,7 @@ class CreatePhishingUrlDataBaseJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit CreatePhishingUrlDataBaseJobTest(QObject *parent = Q_NULLPTR);
+    explicit CreatePhishingUrlDataBaseJobTest(QObject *parent = nullptr);
     ~CreatePhishingUrlDataBaseJobTest();
 private Q_SLOTS:
     void shouldCreateRequest_data();

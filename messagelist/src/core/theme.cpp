@@ -998,7 +998,7 @@ const QList<Theme::Column *> &Theme::columns() const
 
 Theme::Column *Theme::column(int idx) const
 {
-    return mColumns.count() > idx ? mColumns.at(idx) : Q_NULLPTR;
+    return mColumns.count() > idx ? mColumns.at(idx) : nullptr;
 }
 
 void Theme::removeAllColumns()

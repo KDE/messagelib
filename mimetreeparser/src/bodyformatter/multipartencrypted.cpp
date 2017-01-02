@@ -62,7 +62,7 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
         return MessagePart::Ptr();
     }
 
-    const QGpgME::Protocol *useThisCryptProto = Q_NULLPTR;
+    const QGpgME::Protocol *useThisCryptProto = nullptr;
 
     /*
     ATTENTION: This code is to be replaced by the new 'auto-detect' feature. --------------------------------------

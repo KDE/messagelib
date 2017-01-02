@@ -286,7 +286,7 @@ void DistributionListDialog::slotDelayedUser1(KJob *job)
     }
 
     QPointer<Akonadi::CollectionDialog> dlg =
-        new Akonadi::CollectionDialog(Akonadi::CollectionDialog::KeepTreeExpanded, Q_NULLPTR, this);
+        new Akonadi::CollectionDialog(Akonadi::CollectionDialog::KeepTreeExpanded, nullptr, this);
     dlg->setMimeTypeFilter(QStringList() << KContacts::Addressee::mimeType()
                            << KContacts::ContactGroup::mimeType());
     dlg->setAccessRightsFilter(Akonadi::Collection::CanCreateItem);

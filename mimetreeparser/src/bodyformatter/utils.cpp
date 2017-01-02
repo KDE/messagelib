@@ -47,7 +47,7 @@ KMime::Content *MimeTreeParser::findTypeInDirectChilds(KMime::Content *content, 
             return child;
         }
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 MessagePart::Ptr MimeTreeParser::toplevelTextNode(MessagePart::Ptr messageTree)

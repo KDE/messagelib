@@ -182,8 +182,8 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
                              KActionCollection *actionCollection)
     : QObject(aParent),
       mNodeHelper(new MimeTreeParser::NodeHelper),
-      mViewer(Q_NULLPTR),
-      mFindBar(Q_NULLPTR),
+      mViewer(nullptr),
+      mFindBar(nullptr),
       mAttachmentStrategy(nullptr),
       mUpdateReaderWinTimer(nullptr),
       mResizeTimer(nullptr),
@@ -218,14 +218,14 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
       q(aParent),
       mPreviouslyViewedItem(-1),
       mScamDetectionWarning(nullptr),
-      mOpenAttachmentFolderWidget(Q_NULLPTR),
+      mOpenAttachmentFolderWidget(nullptr),
       mSliderContainer(nullptr),
-      mShareServiceManager(Q_NULLPTR),
-      mHeaderStylePlugin(Q_NULLPTR),
-      mHeaderStyleMenuManager(Q_NULLPTR),
-      mViewerPluginToolManager(Q_NULLPTR),
-      mZoomActionMenu(Q_NULLPTR),
-      mCurrentPrinter(Q_NULLPTR)
+      mShareServiceManager(nullptr),
+      mHeaderStylePlugin(nullptr),
+      mHeaderStyleMenuManager(nullptr),
+      mViewerPluginToolManager(nullptr),
+      mZoomActionMenu(nullptr),
+      mCurrentPrinter(nullptr)
 {
     mMimePartTree = nullptr;
     if (!mainWindow) {
@@ -820,7 +820,7 @@ void ViewerPrivate::displaySplashPage(const QString &templateName, const QVarian
 
     GrantleeTheme::ThemeManager manager(QStringLiteral("splashPage"),
                                         QStringLiteral("splash.theme"),
-                                        Q_NULLPTR,
+                                        nullptr,
                                         QStringLiteral("messageviewer/about/"));
     GrantleeTheme::Theme theme = manager.theme(QStringLiteral("default"));
     if (theme.isValid()) {
@@ -2363,7 +2363,7 @@ void ViewerPrivate::slotHandlePagePrinted(bool result)
 {
     Q_UNUSED(result);
     delete mCurrentPrinter;
-    mCurrentPrinter = Q_NULLPTR;
+    mCurrentPrinter = nullptr;
     Q_EMIT printingFinished();
 }
 

@@ -27,7 +27,7 @@ class ConvertHtmlToPlainTextTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit ConvertHtmlToPlainTextTest(QObject *parent = Q_NULLPTR);
+    explicit ConvertHtmlToPlainTextTest(QObject *parent = nullptr);
     ~ConvertHtmlToPlainTextTest();
 
 private Q_SLOTS:

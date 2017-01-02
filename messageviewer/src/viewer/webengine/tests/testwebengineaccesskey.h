@@ -30,7 +30,7 @@ class TestWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestWidget(QWidget *parent = Q_NULLPTR);
+    explicit TestWidget(QWidget *parent = nullptr);
     ~TestWidget();
 };
 
@@ -38,7 +38,7 @@ class TestWebEngineAccesskey : public QWidget
 {
     Q_OBJECT
 public:
-    explicit TestWebEngineAccesskey(QWidget *parent = Q_NULLPTR);
+    explicit TestWebEngineAccesskey(QWidget *parent = nullptr);
     ~TestWebEngineAccesskey();
 
 private Q_SLOTS:

@@ -26,7 +26,7 @@ class WebHitTestResultTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebHitTestResultTest(QObject *parent = Q_NULLPTR);
+    explicit WebHitTestResultTest(QObject *parent = nullptr);
     ~WebHitTestResultTest();
 private Q_SLOTS:
     void shouldHaveDefaultValues();

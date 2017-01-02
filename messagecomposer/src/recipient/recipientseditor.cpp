@@ -71,8 +71,8 @@ class MessageComposer::RecipientsEditorPrivate
 {
 public:
     RecipientsEditorPrivate()
-        : mRecentAddressConfig(Q_NULLPTR),
-          mSideWidget(Q_NULLPTR),
+        : mRecentAddressConfig(nullptr),
+          mSideWidget(nullptr),
           mSkipTotal(false)
     {
 
@@ -83,7 +83,7 @@ public:
 };
 
 RecipientsEditor::RecipientsEditor(QWidget *parent)
-    : RecipientsEditor(new RecipientLineFactory(Q_NULLPTR), parent)
+    : RecipientsEditor(new RecipientLineFactory(nullptr), parent)
 {
 }
 
@@ -183,7 +183,7 @@ void RecipientsEditor::removeRecipient(const QString &recipient, Recipient::Type
 {
     // search a line which matches recipient and type
     QListIterator<MultiplyingLine *> it(lines());
-    MultiplyingLine *line = Q_NULLPTR;
+    MultiplyingLine *line = nullptr;
     while (it.hasNext()) {
         line = it.next();
         RecipientLineNG *rec = qobject_cast< RecipientLineNG * >(line);

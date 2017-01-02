@@ -51,7 +51,7 @@ int MessageItemSetManager::setCount() const
 
 void MessageItemSetManager::removeSet(MessageItemSetReference ref)
 {
-    QHash< MessageItem *, MessageItem * > *set = mSets->value(static_cast< unsigned long int >(ref), Q_NULLPTR);
+    QHash< MessageItem *, MessageItem * > *set = mSets->value(static_cast< unsigned long int >(ref), nullptr);
     if (!set) {
         return;
     }
@@ -62,7 +62,7 @@ void MessageItemSetManager::removeSet(MessageItemSetReference ref)
 QList< MessageItem * > MessageItemSetManager::messageItems(MessageItemSetReference ref)
 {
     QList< MessageItem * > ret;
-    QHash< MessageItem *, MessageItem * > *set = mSets->value(static_cast< unsigned long int >(ref), Q_NULLPTR);
+    QHash< MessageItem *, MessageItem * > *set = mSets->value(static_cast< unsigned long int >(ref), nullptr);
     if (!set) {
         return ret;
     }
@@ -99,7 +99,7 @@ MessageItemSetReference MessageItemSetManager::createSet()
     static unsigned long int uNextId = 0;
     uNextId++;
 
-    QHash< MessageItem *, MessageItem * > *set = mSets->value(uNextId, Q_NULLPTR);
+    QHash< MessageItem *, MessageItem * > *set = mSets->value(uNextId, nullptr);
 
     // Here we assume that having 2^32 sets is impossible
     // (that would be _at_least_ 2^32 * 8 bytes of allocated memory which is
@@ -107,7 +107,7 @@ MessageItemSetReference MessageItemSetManager::createSet()
 
     while (set) {
         uNextId++;
-        set = mSets->value(uNextId, Q_NULLPTR);
+        set = mSets->value(uNextId, nullptr);
     }
 
     set = new QHash< MessageItem *, MessageItem * >();
@@ -118,7 +118,7 @@ MessageItemSetReference MessageItemSetManager::createSet()
 
 bool MessageItemSetManager::addMessageItem(MessageItemSetReference ref, MessageItem *mi)
 {
-    QHash< MessageItem *, MessageItem * > *set = mSets->value(static_cast< unsigned long int >(ref), Q_NULLPTR);
+    QHash< MessageItem *, MessageItem * > *set = mSets->value(static_cast< unsigned long int >(ref), nullptr);
     if (!set) {
         return false;
     }

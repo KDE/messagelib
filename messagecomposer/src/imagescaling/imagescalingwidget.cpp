@@ -34,8 +34,8 @@ class MessageComposer::ImageScalingWidgetPrivate
 public:
     ImageScalingWidgetPrivate()
         : ui(new Ui::ImageScalingWidget),
-          mSourceFilenameFilterGroup(Q_NULLPTR),
-          mRecipientFilterGroup(Q_NULLPTR),
+          mSourceFilenameFilterGroup(nullptr),
+          mRecipientFilterGroup(nullptr),
           mWasChanged(false)
     {
     }

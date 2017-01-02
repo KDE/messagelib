@@ -49,7 +49,7 @@ class PluginEditorInfo
 public:
     PluginEditorInfo()
         : order(0),
-          plugin(Q_NULLPTR),
+          plugin(nullptr),
           isEnabled(true)
     {
 
@@ -127,7 +127,7 @@ bool PluginEditorManagerPrivate::initializePlugins()
             if (unique.contains(info.metaDataFileNameBaseName)) {
                 continue;
             }
-            info.plugin = Q_NULLPTR;
+            info.plugin = nullptr;
             mPluginList.push_back(info);
             unique.insert(info.metaDataFileNameBaseName);
         } else {

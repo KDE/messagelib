@@ -36,8 +36,8 @@ class MessageViewer::HeaderStyleMenuManagerPrivate
 {
 public:
     HeaderStyleMenuManagerPrivate(HeaderStyleMenuManager *qq)
-        : group(Q_NULLPTR),
-          headerMenu(Q_NULLPTR),
+        : group(nullptr),
+          headerMenu(nullptr),
           q(qq)
     {
     }

@@ -129,7 +129,7 @@ QTEST_MAIN(MessageFactoryTest)
 void MessageFactoryTest::cleanupTestCase()
 {
     delete mIdentMan;
-    mIdentMan = Q_NULLPTR;
+    mIdentMan = nullptr;
     QDir dir(QDir::homePath() + QStringLiteral("/.qttest/"));
     dir.removeRecursively();
 }

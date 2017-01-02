@@ -32,7 +32,7 @@ class RecipientsLineTestFactory : public MessageComposer::RecipientLineFactory
     Q_OBJECT
 
 public:
-    explicit RecipientsLineTestFactory(QObject *parent = Q_NULLPTR)
+    explicit RecipientsLineTestFactory(QObject *parent = nullptr)
         : MessageComposer::RecipientLineFactory(parent)
     {
     }

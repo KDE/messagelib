@@ -32,7 +32,7 @@ class MessageComposer::TransparentJobPrivate : public MessageComposer::ContentJo
 public:
     TransparentJobPrivate(TransparentJob *qq)
         : ContentJobBasePrivate(qq)
-        , content(Q_NULLPTR)
+        , content(nullptr)
     {
     }
 

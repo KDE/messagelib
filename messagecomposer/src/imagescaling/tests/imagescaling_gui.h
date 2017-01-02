@@ -26,7 +26,7 @@ class ImageScalingTestWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ImageScalingTestWidget(QWidget *parent = Q_NULLPTR);
+    explicit ImageScalingTestWidget(QWidget *parent = nullptr);
     ~ImageScalingTestWidget();
 };
 

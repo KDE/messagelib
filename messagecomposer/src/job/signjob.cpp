@@ -44,7 +44,7 @@ class MessageComposer::SignJobPrivate : public ContentJobBasePrivate
 public:
     SignJobPrivate(SignJob *qq)
         : ContentJobBasePrivate(qq)
-        , content(Q_NULLPTR)
+        , content(nullptr)
     {
     }
 
@@ -140,7 +140,7 @@ void SignJob::process()
 
     //d->resultContent = new KMime::Content;
 
-    const QGpgME::Protocol *proto = Q_NULLPTR;
+    const QGpgME::Protocol *proto = nullptr;
     if (d->format & Kleo::AnyOpenPGP) {
         proto = QGpgME::openpgp();
     } else if (d->format & Kleo::AnySMIME) {

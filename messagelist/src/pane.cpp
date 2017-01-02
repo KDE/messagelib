@@ -52,18 +52,18 @@ class Q_DECL_HIDDEN Pane::Private
 public:
     Private(Pane *owner)
         : q(owner),
-          mXmlGuiClient(Q_NULLPTR),
-          mActionMenu(Q_NULLPTR),
-          mModel(Q_NULLPTR),
-          mSelectionModel(Q_NULLPTR),
+          mXmlGuiClient(nullptr),
+          mActionMenu(nullptr),
+          mModel(nullptr),
+          mSelectionModel(nullptr),
           mPreSelectionMode(Core::PreSelectLastSelected),
-          mNewTabButton(Q_NULLPTR),
-          mCloseTabButton(Q_NULLPTR),
-          mCloseTabAction(Q_NULLPTR),
-          mActivateNextTabAction(Q_NULLPTR),
-          mActivatePreviousTabAction(Q_NULLPTR),
-          mMoveTabLeftAction(Q_NULLPTR),
-          mMoveTabRightAction(Q_NULLPTR),
+          mNewTabButton(nullptr),
+          mCloseTabButton(nullptr),
+          mCloseTabAction(nullptr),
+          mActivateNextTabAction(nullptr),
+          mActivatePreviousTabAction(nullptr),
+          mMoveTabLeftAction(nullptr),
+          mMoveTabRightAction(nullptr),
           mPreferEmptyTab(false),
           mMaxTabCreated(0)
     { }
@@ -808,7 +808,7 @@ void Pane::Private::updateTabControls()
         q->setCornerWidget(mCloseTabButton, Qt::TopRightCorner);
         mCloseTabButton->setVisible(true);
     } else {
-        q->setCornerWidget(Q_NULLPTR, Qt::TopRightCorner);
+        q->setCornerWidget(nullptr, Qt::TopRightCorner);
     }
     if (mCloseTabAction) {
         mCloseTabAction->setEnabled(enableAction);
@@ -831,7 +831,7 @@ void Pane::Private::updateTabControls()
         q->setCornerWidget(mNewTabButton, Qt::TopLeftCorner);
         mNewTabButton->setVisible(true);
     } else {
-        q->setCornerWidget(Q_NULLPTR, Qt::TopLeftCorner);
+        q->setCornerWidget(nullptr, Qt::TopLeftCorner);
     }
 
     q->setTabsClosable(true);
@@ -847,7 +847,7 @@ Item Pane::currentItem() const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
 
-    if (w == Q_NULLPTR) {
+    if (w == nullptr) {
         return Item();
     }
 
@@ -858,7 +858,7 @@ KMime::Message::Ptr Pane::currentMessage() const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
 
-    if (w == Q_NULLPTR) {
+    if (w == nullptr) {
         return KMime::Message::Ptr();
     }
 
@@ -868,7 +868,7 @@ KMime::Message::Ptr Pane::currentMessage() const
 QList<KMime::Message::Ptr > Pane::selectionAsMessageList(bool includeCollapsedChildren) const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
-    if (w == Q_NULLPTR) {
+    if (w == nullptr) {
         return QList<KMime::Message::Ptr>();
     }
     return w->selectionAsMessageList(includeCollapsedChildren);
@@ -877,7 +877,7 @@ QList<KMime::Message::Ptr > Pane::selectionAsMessageList(bool includeCollapsedCh
 Akonadi::Item::List Pane::selectionAsMessageItemList(bool includeCollapsedChildren) const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
-    if (w == Q_NULLPTR) {
+    if (w == nullptr) {
         return Akonadi::Item::List();
     }
     return w->selectionAsMessageItemList(includeCollapsedChildren);
@@ -886,7 +886,7 @@ Akonadi::Item::List Pane::selectionAsMessageItemList(bool includeCollapsedChildr
 QList<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedChildren) const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
-    if (w == Q_NULLPTR) {
+    if (w == nullptr) {
         return QList<Akonadi::Item::Id>();
     }
     return w->selectionAsListMessageId(includeCollapsedChildren);
@@ -895,7 +895,7 @@ QList<Akonadi::Item::Id> Pane::selectionAsListMessageId(bool includeCollapsedChi
 QVector<qlonglong> Pane::selectionAsMessageItemListId(bool includeCollapsedChildren) const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
-    if (w == Q_NULLPTR) {
+    if (w == nullptr) {
         return QVector<qlonglong>();
     }
     return w->selectionAsMessageItemListId(includeCollapsedChildren);
@@ -904,7 +904,7 @@ QVector<qlonglong> Pane::selectionAsMessageItemListId(bool includeCollapsedChild
 Akonadi::Item::List Pane::currentThreadAsMessageList() const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
-    if (w == Q_NULLPTR) {
+    if (w == nullptr) {
         return Akonadi::Item::List();
     }
     return w->currentThreadAsMessageList();
@@ -938,7 +938,7 @@ void Pane::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSetR
 QList<Akonadi::MessageStatus> Pane::currentFilterStatus() const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
-    if (w == Q_NULLPTR) {
+    if (w == nullptr) {
         return QList<Akonadi::MessageStatus>();
     }
     return w->currentFilterStatus();
@@ -986,7 +986,7 @@ bool Pane::getSelectionStats(Akonadi::Item::List &selectedItems,
                              bool includeCollapsedChildren) const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
-    if (w == Q_NULLPTR) {
+    if (w == nullptr) {
         return false;
     }
 
@@ -1036,7 +1036,7 @@ QItemSelectionModel *Pane::currentItemSelectionModel()
     if (w) {
         return w->view()->selectionModel();
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 void Pane::resetModelStorage()

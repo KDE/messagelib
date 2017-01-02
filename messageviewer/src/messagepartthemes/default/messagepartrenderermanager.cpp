@@ -81,7 +81,7 @@ Q_GLOBAL_STATIC(MessagePartRendererManagerInstancePrivate, sInstance)
 
 MessagePartRendererManager::MessagePartRendererManager(QObject *parent)
     : QObject(parent),
-      m_engine(Q_NULLPTR)
+      m_engine(nullptr)
 {
     initializeRenderer();
 }

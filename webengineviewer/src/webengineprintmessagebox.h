@@ -28,7 +28,7 @@ class WEBENGINEVIEWER_EXPORT WebEnginePrintMessageBox : public QDialog
 {
     Q_OBJECT
 public:
-    explicit WebEnginePrintMessageBox(QWidget *parent = Q_NULLPTR);
+    explicit WebEnginePrintMessageBox(QWidget *parent = nullptr);
     ~WebEnginePrintMessageBox();
 
 Q_SIGNALS:

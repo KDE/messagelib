@@ -26,7 +26,7 @@ class ManageLocalDataBaseGui : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ManageLocalDataBaseGui(QWidget *parent = Q_NULLPTR);
+    explicit ManageLocalDataBaseGui(QWidget *parent = nullptr);
     ~ManageLocalDataBaseGui();
 private Q_SLOTS:
     void slotDownloadFullDatabase();

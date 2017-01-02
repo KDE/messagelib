@@ -378,7 +378,7 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
         msg += keysAsStrings(rewookies).join(QLatin1Char(','));
     }
 
-    if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg, i18n("Not Fully Trusted Encryption Keys"),
+    if (KMessageBox::warningContinueCancel(nullptr, msg, i18n("Not Fully Trusted Encryption Keys"),
                                            KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
                                            QStringLiteral("not fully trusted encryption key warning"))
             == KMessageBox::Continue) {
@@ -676,7 +676,7 @@ Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryp
 
 Kleo::KeyResolver::~KeyResolver()
 {
-    delete d; d = Q_NULLPTR;
+    delete d; d = nullptr;
 }
 
 Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const char *dontAskAgainName,
@@ -696,7 +696,7 @@ Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const 
         return Kleo::Ok;
     }
     static const double secsPerDay = 24 * 60 * 60;
-    const double secsTillExpiry = ::difftime(subkey.expirationTime(), time(Q_NULLPTR));
+    const double secsTillExpiry = ::difftime(subkey.expirationTime(), time(nullptr));
     if (secsTillExpiry <= 0) {
         const int daysSinceExpiry = 1 + int(-secsTillExpiry / secsPerDay);
         qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.shortKeyID() << " expired less than "
@@ -783,7 +783,7 @@ Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const 
                .subs(QString::fromLatin1(key.issuerSerial()))
                .toString());
         d->alreadyWarnedFingerprints.insert(subkey.fingerprint());
-        if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg,
+        if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                key.protocol() == GpgME::OpenPGP
                                                ? i18n("OpenPGP Key Expired")
                                                : i18n("S/MIME Certificate Expired"),
@@ -889,7 +889,7 @@ Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const 
                    .subs(QString::fromLatin1(key.issuerSerial()))
                    .toString());
             d->alreadyWarnedFingerprints.insert(subkey.fingerprint());
-            if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg,
+            if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                    key.protocol() == GpgME::OpenPGP
                                                    ? i18n("OpenPGP Key Expires Soon")
                                                    : i18n("S/MIME Certificate Expires Soon"),
@@ -938,7 +938,7 @@ Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerpr
                                  "If you choose to continue, and the keys are needed "
                                  "later on, you will be prompted to specify the keys "
                                  "to use.");
-        return KMessageBox::warningContinueCancel(Q_NULLPTR, msg, i18n("Unusable Encryption Keys"),
+        return KMessageBox::warningContinueCancel(nullptr, msg, i18n("Unusable Encryption Keys"),
                 KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
                 QStringLiteral("unusable own encryption key warning"))
                == KMessageBox::Continue ? Kleo::Ok : Kleo::Canceled;
@@ -986,7 +986,7 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
                                  "If you choose to continue, and the keys are needed "
                                  "later on, you will be prompted to specify the keys "
                                  "to use.");
-        return KMessageBox::warningContinueCancel(Q_NULLPTR, msg, i18n("Unusable Signing Keys"),
+        return KMessageBox::warningContinueCancel(nullptr, msg, i18n("Unusable Signing Keys"),
                 KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
                 QStringLiteral("unusable signing key warning"))
                == KMessageBox::Continue ? Kleo::Ok : Kleo::Canceled;
@@ -1105,7 +1105,7 @@ Kleo::Action Kleo::KeyResolver::checkEncryptionPreferences(bool encryptionReques
         // try to minimize crypto ops (including key lookups) by only
         // looking up keys when at least one of the encryption
         // preferences needs it:
-        EncryptionPreferenceCounter count(Q_NULLPTR, UnknownPreference);
+        EncryptionPreferenceCounter count(nullptr, UnknownPreference);
         count.process(d->mPrimaryEncryptionKeys);
         count.process(d->mSecondaryEncryptionKeys);
         if (!count.numAlwaysEncrypt() &&
@@ -1313,7 +1313,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
                                      "You may continue without encrypting to yourself, "
                                      "but be aware that you will not be able to read your "
                                      "own messages if you do so.");
-            if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg,
+            if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                    i18n("Unusable Encryption Keys"),
                                                    KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
                                                    QStringLiteral("encrypt-to-self will fail warning"))
@@ -1341,7 +1341,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
                                      "You may continue without encrypting to yourself, "
                                      "but be aware that you will not be able to read your "
                                      "own messages if you do so.");
-            if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg,
+            if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                    i18n("Unusable Encryption Keys"),
                                                    KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
                                                    QStringLiteral("encrypt-to-self will fail warning"))
@@ -1370,7 +1370,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
                                  "OpenPGP, at least for some recipients;\n"
                                  "however, you have not configured valid "
                                  "OpenPGP signing certificates for this identity.");
-        if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg,
+        if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                i18n("Unusable Signing Keys"),
                                                KGuiItem(i18n("Do Not OpenPGP-Sign")),
                                                KStandardGuiItem::cancel(),
@@ -1388,7 +1388,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
                                  "S/MIME, at least for some recipients;\n"
                                  "however, you have not configured valid "
                                  "S/MIME signing certificates for this identity.");
-        if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg,
+        if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                i18n("Unusable Signing Keys"),
                                                KGuiItem(i18n("Do Not S/MIME-Sign")),
                                                KStandardGuiItem::cancel(),
@@ -1455,7 +1455,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForSigningOnly()
                              "showed no common type of signature matching your "
                              "available signing keys.\n"
                              "Send message without signing?");
-    if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg, i18n("No signing possible"),
+    if (KMessageBox::warningContinueCancel(nullptr, msg, i18n("No signing possible"),
                                            KStandardGuiItem::cont())
             == KMessageBox::Continue) {
         d->mFormatInfoMap[OpenPGPMIMEFormat].splitInfos.push_back(SplitInfo(allRecipients()));
@@ -1639,7 +1639,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
         const QString msg = i18n("You did not select an encryption key for yourself "
                                  "(encrypt to self). You will not be able to decrypt "
                                  "your own message if you encrypt it.");
-        if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg,
+        if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                i18n("Missing Key Warning"),
                                                KGuiItem(i18n("&Encrypt")))
                 == KMessageBox::Cancel) {
@@ -1664,7 +1664,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
                             : i18n("You did not select an encryption key for any of the "
                                    "recipients of this message; therefore, the message "
                                    "will not be encrypted.");
-        if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg,
+        if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                i18n("Missing Key Warning"),
                                                KGuiItem(i18n("Send &Unencrypted")))
                 == KMessageBox::Cancel) {
@@ -1682,7 +1682,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
 #ifndef QT_NO_CURSOR
         KPIM::KCursorSaver idle(KPIM::KBusyPtr::idle());
 #endif
-        if (KMessageBox::warningContinueCancel(Q_NULLPTR, msg,
+        if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                i18n("Missing Key Warning"),
                                                KGuiItem(i18n("&Encrypt")))
                 == KMessageBox::Cancel) {

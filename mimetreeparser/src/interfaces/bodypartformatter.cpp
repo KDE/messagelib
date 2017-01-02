@@ -47,9 +47,9 @@ class MessagePartPrivate
 {
 public:
     MessagePartPrivate(const BodyPart *part)
-        : mHtmlWriter(Q_NULLPTR)
+        : mHtmlWriter(nullptr)
         , mPart(part)
-        , mParentPart(Q_NULLPTR)
+        , mParentPart(nullptr)
         , mCreatedWriter(false)
     {
     }
@@ -80,7 +80,7 @@ public:
 
 MessagePart::MessagePart()
     : QObject()
-    , d(new MessagePartPrivate(Q_NULLPTR))
+    , d(new MessagePartPrivate(nullptr))
 {
 }
 

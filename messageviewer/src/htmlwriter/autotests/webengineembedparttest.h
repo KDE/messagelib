@@ -24,7 +24,7 @@ class WebEngineEmbedPartTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebEngineEmbedPartTest(QObject *parent = Q_NULLPTR);
+    explicit WebEngineEmbedPartTest(QObject *parent = nullptr);
     ~WebEngineEmbedPartTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

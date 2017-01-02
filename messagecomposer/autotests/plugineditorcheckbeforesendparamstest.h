@@ -26,7 +26,7 @@ class PluginEditorCheckBeforeSendParamsTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit PluginEditorCheckBeforeSendParamsTest(QObject *parent = Q_NULLPTR);
+    explicit PluginEditorCheckBeforeSendParamsTest(QObject *parent = nullptr);
     ~PluginEditorCheckBeforeSendParamsTest();
 
 private Q_SLOTS:

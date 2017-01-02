@@ -25,7 +25,7 @@ class TextPartTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TextPartTest(QObject *parent = Q_NULLPTR);
+    explicit TextPartTest(QObject *parent = nullptr);
     ~TextPartTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

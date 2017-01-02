@@ -22,7 +22,7 @@
 using namespace MessageComposer;
 
 ActionType::ActionType()
-    : mAction(Q_NULLPTR),
+    : mAction(nullptr),
       mType(Tools)
 {
 
@@ -48,9 +48,9 @@ class MessageComposer::PluginEditorInterfacePrivate
 {
 public:
     PluginEditorInterfacePrivate()
-        : mParentWidget(Q_NULLPTR),
-          mRichTextEditor(Q_NULLPTR),
-          plugin(Q_NULLPTR)
+        : mParentWidget(nullptr),
+          mRichTextEditor(nullptr),
+          plugin(nullptr)
     {
 
     }

@@ -228,20 +228,20 @@ QList< Item * > *Item::childItems() const
 Item *Item::childItem(int idx) const
 {
     if (idx < 0) {
-        return Q_NULLPTR;
+        return nullptr;
     }
     if (!d_ptr->mChildItems) {
-        return Q_NULLPTR;
+        return nullptr;
     }
     if (d_ptr->mChildItems->count() <= idx) {
-        return Q_NULLPTR;
+        return nullptr;
     }
     return d_ptr->mChildItems->at(idx);
 }
 
 Item *Item::firstChildItem() const
 {
-    return d_ptr->mChildItems ? (d_ptr->mChildItems->count() > 0 ? d_ptr->mChildItems->at(0) : Q_NULLPTR) : Q_NULLPTR;
+    return d_ptr->mChildItems ? (d_ptr->mChildItems->count() > 0 ? d_ptr->mChildItems->at(0) : nullptr) : nullptr;
 }
 
 Item *Item::itemBelowChild(Item *child)
@@ -258,7 +258,7 @@ Item *Item::itemBelowChild(Item *child)
     }
 
     if (!d_ptr->mParent) {
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     return d_ptr->mParent->itemBelowChild(this);
@@ -273,7 +273,7 @@ Item *Item::itemBelow()
     }
 
     if (!d_ptr->mParent) {
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     return d_ptr->mParent->itemBelowChild(this);
@@ -308,7 +308,7 @@ Item *Item::itemAboveChild(Item *child)
 Item *Item::itemAbove()
 {
     if (!d_ptr->mParent) {
-        return Q_NULLPTR;
+        return nullptr;
     }
 
     Item *siblingAbove = d_ptr->mParent->itemAboveChild(this);
@@ -515,7 +515,7 @@ void Item::setViewable(Model *model, bool bViewable)
         if (model) {
             // fake having no children, for a second
             QList< Item * > *tmp = d_ptr->mChildItems;
-            d_ptr->mChildItems = Q_NULLPTR;
+            d_ptr->mChildItems = nullptr;
             //qDebug("BEGIN INSERT ROWS FOR PARENT %x: from %d to %d, (will) have %d children",this,0,tmp->count()-1,tmp->count());
             model->beginInsertRows(model->index(this, 0), 0, tmp->count() - 1);
             d_ptr->mChildItems = tmp;
@@ -542,7 +542,7 @@ void Item::setViewable(Model *model, bool bViewable)
             // fake having no children, for a second
             model->beginRemoveRows(model->index(this, 0), 0, d_ptr->mChildItems->count() - 1);
             QList< Item * > *tmp = d_ptr->mChildItems;
-            d_ptr->mChildItems = Q_NULLPTR;
+            d_ptr->mChildItems = nullptr;
             d_ptr->mIsViewable = false;
             model->endRemoveRows();
             d_ptr->mChildItems = tmp;
@@ -563,7 +563,7 @@ void Item::killAllChildItems()
     }
 
     delete d_ptr->mChildItems;
-    d_ptr->mChildItems = Q_NULLPTR;
+    d_ptr->mChildItems = nullptr;
 }
 
 Item *Item::parent() const
@@ -779,7 +779,7 @@ void Item::takeChildItem(Model *model, Item *child)
             d->mChildItems = 0;
         }
 #endif
-        child->setParent(Q_NULLPTR);
+        child->setParent(nullptr);
         return;
     }
 
@@ -792,7 +792,7 @@ void Item::takeChildItem(Model *model, Item *child)
     if (model) {
         model->beginRemoveRows(model->index(this, 0), idx, idx);
     }
-    child->setParent(Q_NULLPTR);
+    child->setParent(nullptr);
     d_ptr->mChildItems->removeAt(idx);
     if (model) {
         model->endRemoveRows();

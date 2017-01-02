@@ -24,7 +24,7 @@ class SearchLineStatusTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SearchLineStatusTest(QObject *parent = Q_NULLPTR);
+    explicit SearchLineStatusTest(QObject *parent = nullptr);
     ~SearchLineStatusTest();
 
 private Q_SLOTS:
