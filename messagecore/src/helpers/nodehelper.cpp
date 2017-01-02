@@ -26,10 +26,10 @@
 KMime::Content *MessageCore::NodeHelper::nextSibling(const KMime::Content *node)
 {
     if (!node) {
-        return 0;
+        return nullptr;
     }
 
-    KMime::Content *next = 0;
+    KMime::Content *next = nullptr;
     KMime::Content *parent = node->parent();
     if (parent) {
         const auto contents = parent->contents();
@@ -61,16 +61,16 @@ KMime::Content *MessageCore::NodeHelper::next(KMime::Content *node, bool allowCh
         }
     }
 
-    return 0;
+    return nullptr;
 }
 
 KMime::Content *MessageCore::NodeHelper::firstChild(const KMime::Content *node)
 {
     if (!node) {
-        return 0;
+        return nullptr;
     }
 
-    KMime::Content *child = 0;
+    KMime::Content *child = nullptr;
     if (!node->contents().isEmpty()) {
         child = node->contents().at(0);
     }

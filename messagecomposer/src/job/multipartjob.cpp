@@ -62,7 +62,7 @@ void MultipartJob::setMultipartSubtype(const QByteArray &subtype)
 void MultipartJob::process()
 {
     Q_D(MultipartJob);
-    Q_ASSERT(d->resultContent == 0);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
     Q_ASSERT(!d->subtype.isEmpty());
     d->resultContent = new KMime::Content;
     d->resultContent->contentType(true)->setMimeType("multipart/" + d->subtype);

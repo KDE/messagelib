@@ -1030,7 +1030,7 @@ void ModelPrivate::clearUnassignedMessageLists()
     // and this is enforced in the assert below to avoid errors. This basically means
     // that this function should be called only when the storage model changes or
     // when the model is destroyed.
-    Q_ASSERT((mOldestItem == 0) && (mNewestItem == 0));
+    Q_ASSERT((mOldestItem == nullptr) && (mNewestItem == nullptr));
 
     QList< MessageItem * >::ConstIterator it;
 
@@ -2747,7 +2747,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
             mi = new MessageItem();
         } else {
             // a MessageItem discarded by a previous iteration: reuse it.
-            Q_ASSERT(mi->parent() == 0);
+            Q_ASSERT(mi->parent() == nullptr);
         }
 
         if (!mStorageModel->initializeMessageItem(mi, curIndex, bUseReceiver)) {

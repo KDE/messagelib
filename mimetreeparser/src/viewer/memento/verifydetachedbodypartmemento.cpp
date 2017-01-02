@@ -82,7 +82,7 @@ void VerifyDetachedBodyPartMemento::exec()
 #endif
     saveResult(m_job->exec(m_signature, m_plainText));
     m_job->deleteLater(); // exec'ed jobs don't delete themselves
-    m_job = 0;
+    m_job = nullptr;
 #ifdef DEBUG_SIGNATURE
     qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento after execed";
 #endif
@@ -96,7 +96,7 @@ void VerifyDetachedBodyPartMemento::exec()
     if (m_keylistjob) {
         m_keylistjob->deleteLater();    // exec'ed jobs don't delete themselves
     }
-    m_keylistjob = 0;
+    m_keylistjob = nullptr;
     setRunning(false);
 }
 
@@ -131,7 +131,7 @@ void VerifyDetachedBodyPartMemento::slotResult(const VerificationResult &vr)
     qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::slotResult called";
 #endif
     saveResult(vr);
-    m_job = 0;
+    m_job = nullptr;
     if (canStartKeyListJob() && startKeyListJob()) {
 #ifdef DEBUG_SIGNATURE
         qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento: canStartKeyListJob && startKeyListJob";
@@ -141,7 +141,7 @@ void VerifyDetachedBodyPartMemento::slotResult(const VerificationResult &vr)
     if (m_keylistjob) {
         m_keylistjob->deleteLater();
     }
-    m_keylistjob = 0;
+    m_keylistjob = nullptr;
     setRunning(false);
     notify();
 }
@@ -171,7 +171,7 @@ void VerifyDetachedBodyPartMemento::slotKeyListJobDone()
 #ifdef DEBUG_SIGNATURE
     qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento::slotKeyListJobDone called";
 #endif
-    m_keylistjob = 0;
+    m_keylistjob = nullptr;
     setRunning(false);
     notify();
 }

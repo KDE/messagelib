@@ -74,7 +74,7 @@ void AttachmentFromFolderJob::Private::compressFolder()
               QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), fileName + QLatin1Char('/'));
     mZip->close();
 
-    Q_ASSERT(mCompressedFolder == 0);
+    Q_ASSERT(mCompressedFolder == nullptr);
 
     mCompressedFolder = AttachmentPart::Ptr(new AttachmentPart);
     const QString newName = fileName + QLatin1String(".zip");

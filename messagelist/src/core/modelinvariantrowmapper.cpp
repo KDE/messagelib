@@ -344,7 +344,7 @@ int ModelInvariantRowMapper::modelInvariantIndexToModelIndexRow(ModelInvariantIn
 void ModelInvariantRowMapper::createModelInvariantIndex(int modelIndexRow, ModelInvariantIndex *invariantToFill)
 {
     // The user is athemeg for the invariant of the item that is at the CURRENT modelIndexRow.
-    Q_ASSERT(invariantToFill->d->rowMapper() == 0);
+    Q_ASSERT(invariantToFill->d->rowMapper() == nullptr);
 
     // Plain new invariant. Fill it and add to the current hash.
     invariantToFill->d->setModelIndexRowAndRowMapperSerial(modelIndexRow, d->mCurrentShiftSerial);

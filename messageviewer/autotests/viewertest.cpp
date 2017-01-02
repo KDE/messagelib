@@ -27,7 +27,7 @@ ViewerTest::ViewerTest()
 
 void ViewerTest::shouldHaveDefaultValuesOnCreation()
 {
-    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(0, 0, new KActionCollection(this));
+    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
     viewer->show();
     QTest::qWaitForWindowExposed(viewer);
 
@@ -104,7 +104,7 @@ KMime::Message::Ptr createMsg(const char *data)
 
 void ViewerTest::shouldDisplayMessage()
 {
-    MessageViewer::Viewer viewer(0, 0, new KActionCollection(this));
+    MessageViewer::Viewer viewer(nullptr, nullptr, new KActionCollection(this));
     viewer.setMessage(createMsg(s_mail1), MimeTreeParser::Force);
     // not sure what to check, but at least we check it neither crashes nor hangs
     // TODO: retrieve message text and check it
@@ -112,7 +112,7 @@ void ViewerTest::shouldDisplayMessage()
 
 void ViewerTest::shouldSwitchToAnotherMessage()
 {
-    MessageViewer::Viewer viewer(0, 0, new KActionCollection(this));
+    MessageViewer::Viewer viewer(nullptr, nullptr, new KActionCollection(this));
     viewer.setMessage(createMsg(s_mail1), MimeTreeParser::Force);
 
     viewer.setMessage(createMsg(s_mail2), MimeTreeParser::Force);

@@ -46,7 +46,7 @@ FileHtmlWriter::~FileHtmlWriter()
 {
     if (mFile.isOpen()) {
         qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: file still open!";
-        mStream.setDevice(0);
+        mStream.setDevice(nullptr);
         mFile.close();
     }
 }
@@ -62,14 +62,14 @@ void FileHtmlWriter::begin(const QString &css)
 void FileHtmlWriter::end()
 {
     flush();
-    mStream.setDevice(0);
+    mStream.setDevice(nullptr);
     mFile.close();
 }
 
 void FileHtmlWriter::reset()
 {
     if (mFile.isOpen()) {
-        mStream.setDevice(0);
+        mStream.setDevice(nullptr);
         mFile.close();
     }
 }
@@ -95,7 +95,7 @@ void FileHtmlWriter::openOrWarn()
 {
     if (mFile.isOpen()) {
         qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: file still open!";
-        mStream.setDevice(0);
+        mStream.setDevice(nullptr);
         mFile.close();
     }
     if (!mFile.open(QIODevice::WriteOnly)) {

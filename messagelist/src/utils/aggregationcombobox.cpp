@@ -125,7 +125,7 @@ void AggregationComboBoxPrivate::slotLoadAggregations()
 
 void AggregationComboBoxPrivate::setCurrentAggregation(const Aggregation *aggregation)
 {
-    Q_ASSERT(aggregation != 0);
+    Q_ASSERT(aggregation != nullptr);
 
     const QString aggregationID = aggregation->id();
     const int aggregationIndex = q->findData(QVariant(aggregationID));

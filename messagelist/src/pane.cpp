@@ -947,7 +947,7 @@ QList<Akonadi::MessageStatus> Pane::currentFilterStatus() const
 Core::QuickSearchLine::SearchOptions Pane::currentOptions() const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
-    if (w == 0) {
+    if (w == nullptr) {
         return Core::QuickSearchLine::SearchEveryWhere;
     }
     return w->currentOptions();

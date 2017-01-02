@@ -267,7 +267,7 @@ const AttachmentStrategy *AttachmentStrategy::create(Type type)
     }
     qCCritical(MIMETREEPARSER_LOG) << "Unknown attachment startegy ( type =="
                                    << (int)type << ") requested!";
-    return 0; // make compiler happy
+    return nullptr; // make compiler happy
 }
 
 const AttachmentStrategy *AttachmentStrategy::create(const QString &type)
@@ -291,11 +291,11 @@ const AttachmentStrategy *AttachmentStrategy::create(const QString &type)
     return smart();
 }
 
-static const AttachmentStrategy *iconicStrategy = 0;
-static const AttachmentStrategy *smartStrategy = 0;
-static const AttachmentStrategy *inlinedStrategy = 0;
-static const AttachmentStrategy *hiddenStrategy = 0;
-static const AttachmentStrategy *headerOnlyStrategy = 0;
+static const AttachmentStrategy *iconicStrategy = nullptr;
+static const AttachmentStrategy *smartStrategy = nullptr;
+static const AttachmentStrategy *inlinedStrategy = nullptr;
+static const AttachmentStrategy *hiddenStrategy = nullptr;
+static const AttachmentStrategy *headerOnlyStrategy = nullptr;
 
 const AttachmentStrategy *AttachmentStrategy::iconic()
 {

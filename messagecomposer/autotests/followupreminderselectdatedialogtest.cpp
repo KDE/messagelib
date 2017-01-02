@@ -62,7 +62,7 @@ QStandardItemModel *FollowupReminderSelectDateDialogTest::defaultItemModel()
 
 void FollowupReminderSelectDateDialogTest::shouldHaveDefaultValue()
 {
-    MessageComposer::FollowUpReminderSelectDateDialog dlg(0, defaultItemModel());
+    MessageComposer::FollowUpReminderSelectDateDialog dlg(nullptr, defaultItemModel());
     KDateComboBox *datecombobox = dlg.findChild<KDateComboBox *>(QStringLiteral("datecombobox"));
     QVERIFY(datecombobox);
 
@@ -78,7 +78,7 @@ void FollowupReminderSelectDateDialogTest::shouldHaveDefaultValue()
 
 void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfDateIsEmpty()
 {
-    MessageComposer::FollowUpReminderSelectDateDialog dlg(0, defaultItemModel());
+    MessageComposer::FollowUpReminderSelectDateDialog dlg(nullptr, defaultItemModel());
     KDateComboBox *datecombobox = dlg.findChild<KDateComboBox *>(QStringLiteral("datecombobox"));
     QVERIFY(datecombobox);
     QPushButton *okButton = dlg.findChild<QPushButton *>(QStringLiteral("ok_button"));
@@ -89,7 +89,7 @@ void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfDateIsEmpty()
 
 void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfDateIsNotValid()
 {
-    MessageComposer::FollowUpReminderSelectDateDialog dlg(0, defaultItemModel());
+    MessageComposer::FollowUpReminderSelectDateDialog dlg(nullptr, defaultItemModel());
     KDateComboBox *datecombobox = dlg.findChild<KDateComboBox *>(QStringLiteral("datecombobox"));
     QVERIFY(datecombobox);
     datecombobox->lineEdit()->setText(QStringLiteral(" "));
@@ -102,7 +102,7 @@ void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfDateIsNotValid
 
 void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfModelIsEmpty()
 {
-    MessageComposer::FollowUpReminderSelectDateDialog dlg(0, new QStandardItemModel(0));
+    MessageComposer::FollowUpReminderSelectDateDialog dlg(nullptr, new QStandardItemModel(nullptr));
     KDateComboBox *datecombobox = dlg.findChild<KDateComboBox *>(QStringLiteral("datecombobox"));
     QVERIFY(datecombobox);
     QPushButton *okButton = dlg.findChild<QPushButton *>(QStringLiteral("ok_button"));

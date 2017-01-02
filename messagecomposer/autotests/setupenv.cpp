@@ -36,7 +36,7 @@ void MessageComposer::Test::setupEnv()
 
 std::vector< GpgME::Key, std::allocator< GpgME::Key > > MessageComposer::Test::getKeys(bool smime)
 {
-    QGpgME::KeyListJob *job = 0;
+    QGpgME::KeyListJob *job = nullptr;
 
     if (smime) {
         const QGpgME::Protocol *const backend = QGpgME::smime();

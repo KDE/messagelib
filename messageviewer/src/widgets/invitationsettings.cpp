@@ -48,7 +48,7 @@ public:
     ~InvitationSettingsPrivate()
     {
         delete mInvitationUi;
-        mInvitationUi = 0;
+        mInvitationUi = nullptr;
     }
     Ui_InvitationSettings *mInvitationUi;
 };

@@ -167,7 +167,7 @@ KMime::Headers::ContentType *SinglepartJob::contentType()
 void SinglepartJob::process()
 {
     Q_D(SinglepartJob);
-    Q_ASSERT(d->resultContent == 0);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
     d->resultContent = new KMime::Content;
 
     if (!d->chooseCTE()) {

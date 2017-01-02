@@ -57,13 +57,13 @@ void AttachmentFromMimeContentJobTest::testAttachment()
     //qCDebug(MESSAGECORE_LOG) << "Decoded content:" << content->decodedContent();
 
     AttachmentFromMimeContentJob *job = new AttachmentFromMimeContentJob(content, this);
-    QVERIFY(job->uiDelegate() == 0);   // No GUI thankyouverymuch.
+    QVERIFY(job->uiDelegate() == nullptr);   // No GUI thankyouverymuch.
     VERIFYEXEC(job);
     delete content;
-    content = 0;
+    content = nullptr;
     AttachmentPart::Ptr part = job->attachmentPart();
     delete job;
-    job = 0;
+    job = nullptr;
 
     QCOMPARE(part->mimeType(), mimeType);
     QCOMPARE(part->name(), name);

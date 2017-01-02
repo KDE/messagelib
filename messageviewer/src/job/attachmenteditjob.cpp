@@ -32,7 +32,7 @@ using namespace MessageViewer;
 AttachmentEditJob::AttachmentEditJob(QObject *parent)
     : QObject(parent),
       mShowWarning(true),
-      mMainWindow(0)
+      mMainWindow(nullptr)
 {
 
 }

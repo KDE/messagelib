@@ -59,7 +59,7 @@ void AttachmentFromMimeContentJob::setMimeContent(const Content *content)
 void AttachmentFromMimeContentJob::doStart()
 {
     // Create the AttachmentPart.
-    Q_ASSERT(attachmentPart() == 0);
+    Q_ASSERT(attachmentPart() == nullptr);
 
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
     Content *content = const_cast<Content *>(d->mMimeContent);

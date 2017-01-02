@@ -86,7 +86,7 @@ int main(int argc, char **argv)
     }
     msg->parse();
 
-    Viewer *viewer = new Viewer(0, 0, new KActionCollection(&app));
+    Viewer *viewer = new Viewer(nullptr, nullptr, new KActionCollection(&app));
     if (parser.isSet(headerStylePluginOption)) {
         viewer->setPluginName(parser.value(headerStylePluginOption));
     }

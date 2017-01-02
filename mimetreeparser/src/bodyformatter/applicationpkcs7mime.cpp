@@ -84,7 +84,7 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
     // Analyze "signTestNode" node to find/verify a signature.
     // If zero part.objectTreeParser() verification was successfully done after
     // decrypting via recursion by insertAndParseNewChildNode().
-    KMime::Content *signTestNode = isEncrypted ? 0 : node;
+    KMime::Content *signTestNode = isEncrypted ? nullptr : node;
 
     // We try decrypting the content
     // if we either *know* that it is an encrypted message part
@@ -106,14 +106,14 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
         PartMetaData *messagePart(_mp->partMetaData());
         if (!part.source()->decryptMessage()) {
             isEncrypted = true;
-            signTestNode = 0; // PENDING(marc) to be abs. sure, we'd need to have to look at the content
+            signTestNode = nullptr; // PENDING(marc) to be abs. sure, we'd need to have to look at the content
         } else {
             _mp->startDecryption();
             if (messagePart->isDecryptable) {
                 qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  encryption found  -  enveloped (encrypted) data !";
                 isEncrypted = true;
                 part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
-                signTestNode = 0;
+                signTestNode = nullptr;
 
             } else {
                 // decryption failed, which could be because the part was encrypted but
@@ -122,7 +122,7 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
                 // assuming it's signed
                 if (_mp->passphraseError() || (smimeType.isEmpty() && messagePart->isEncrypted)) {
                     isEncrypted = true;
-                    signTestNode = 0;
+                    signTestNode = nullptr;
                 }
 
                 if (isEncrypted) {
@@ -155,7 +155,7 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
         //mp->setDecryptMessage(part.source()->decryptMessage());
         PartMetaData *messagePart(mp->partMetaData());
         if (smimeCrypto) {
-            _mp->startVerificationDetached(signaturetext, 0, QByteArray());
+            _mp->startVerificationDetached(signaturetext, nullptr, QByteArray());
         } else {
             messagePart->auditLogError = GpgME::Error(GPG_ERR_NOT_IMPLEMENTED);
         }

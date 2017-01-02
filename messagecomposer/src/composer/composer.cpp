@@ -140,7 +140,7 @@ void ComposerPrivate::skeletonJobFinished(KJob *job)
     Q_ASSERT(dynamic_cast<SkeletonMessageJob *>(job));
     SkeletonMessageJob *sjob = static_cast<SkeletonMessageJob *>(job);
     // SkeletonMessageJob is a special job creating a Message instead of a Content.
-    Q_ASSERT(skeletonMessage == 0);
+    Q_ASSERT(skeletonMessage == nullptr);
     skeletonMessage = sjob->message();
     Q_ASSERT(skeletonMessage);
     skeletonMessage->assemble();

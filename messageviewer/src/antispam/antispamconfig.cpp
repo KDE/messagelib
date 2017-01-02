@@ -50,7 +50,7 @@ AntiSpamConfig *AntiSpamConfig::instance()
 {
     // better safe than sorry; check whether the global static has already been destroyed
     if (theAntiSpamConfigSingletonProvider.isDestroyed()) {
-        return 0;
+        return nullptr;
     }
     return &theAntiSpamConfigSingletonProvider->instance;
 }

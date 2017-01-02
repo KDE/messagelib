@@ -21,7 +21,7 @@
 
 using namespace MessageCore;
 
-MessageCoreSettings *MessageCoreSettings::mSelf = 0;
+MessageCoreSettings *MessageCoreSettings::mSelf = nullptr;
 
 MessageCoreSettings *MessageCoreSettings::self()
 {

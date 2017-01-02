@@ -134,7 +134,7 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadOnly()
     part->setName(name);
 
     // Show the (read-only) dialog and do some changes.
-    AttachmentPropertiesDialog *dialog = new AttachmentPropertiesDialog(part, true, 0);
+    AttachmentPropertiesDialog *dialog = new AttachmentPropertiesDialog(part, true, nullptr);
     dialog->show();
     // Click on 'OK'.  No changes should have been made.
     dialog->accept();

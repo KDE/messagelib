@@ -82,7 +82,7 @@ void AttachmentCompressJob::Private::doStart()
     mCompressedPartLarger = (array.size() >= decoded.size());
 
     // Create new part.
-    Q_ASSERT(mCompressedPart == 0);
+    Q_ASSERT(mCompressedPart == nullptr);
     mCompressedPart = AttachmentPart::Ptr(new AttachmentPart);
     mCompressedPart->setName(mOriginalPart->name() + QLatin1String(".zip"));     // TODO not sure name should be .zipped too
     mCompressedPart->setFileName(mOriginalPart->fileName() + QLatin1String(".zip"));

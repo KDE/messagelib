@@ -30,7 +30,7 @@ namespace MessageCore
 {
 MessageCore::AttachmentFromUrlBaseJob *AttachmentFromUrlUtils::createAttachmentJob(const QUrl &url, QObject *parent)
 {
-    MessageCore::AttachmentFromUrlBaseJob *ajob = 0;
+    MessageCore::AttachmentFromUrlBaseJob *ajob = nullptr;
     QMimeDatabase db;
     if (db.mimeTypeForUrl(url).name() == QLatin1String("inode/directory")) {
         qCDebug(MESSAGECORE_LOG) << "Creating attachment from folder";

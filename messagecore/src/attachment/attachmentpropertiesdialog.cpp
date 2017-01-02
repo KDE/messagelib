@@ -50,9 +50,9 @@ public:
     Private(AttachmentPropertiesDialog *qq)
         : q(qq),
           mReadOnly(false),
-          ui(0),
-          uiReadOnly(0),
-          mainLayout(0)
+          ui(nullptr),
+          uiReadOnly(nullptr),
+          mainLayout(nullptr)
     {
     }
     ~Private()
@@ -105,7 +105,7 @@ void AttachmentPropertiesDialog::Private::init(const AttachmentPart::Ptr &part, 
 void AttachmentPropertiesDialog::Private::polishUi()
 {
     // Tweak the dialog, depending on whether it is read-only or not.
-    QDialogButtonBox *buttonBox = 0;
+    QDialogButtonBox *buttonBox = nullptr;
 
     if (mReadOnly) {
         buttonBox = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Close);

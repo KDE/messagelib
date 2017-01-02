@@ -179,7 +179,7 @@ void ObjectTreeParserTester::test_inlinePGPSigned()
     otp.parseObjectTree(msg.data());
 
     // This test is only a workaround, till we can set the memento to the propper node of the mail.
-    QVERIFY(nodeHelper.bodyPartMemento(0, "verification"));
+    QVERIFY(nodeHelper.bodyPartMemento(nullptr, "verification"));
 }
 
 void ObjectTreeParserTester::test_HTML()

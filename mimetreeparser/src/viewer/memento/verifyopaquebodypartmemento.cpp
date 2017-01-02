@@ -84,7 +84,7 @@ void VerifyOpaqueBodyPartMemento::exec()
     qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento after execed";
 #endif
     m_job->deleteLater(); // exec'ed jobs don't delete themselves
-    m_job = 0;
+    m_job = nullptr;
     if (canStartKeyListJob()) {
         std::vector<GpgME::Key> keys;
         m_keylistjob->exec(keyListPattern(), /*secretOnly=*/false, keys);
@@ -95,7 +95,7 @@ void VerifyOpaqueBodyPartMemento::exec()
     if (m_keylistjob) {
         m_keylistjob->deleteLater();    // exec'ed jobs don't delete themselves
     }
-    m_keylistjob = 0;
+    m_keylistjob = nullptr;
     setRunning(false);
 }
 
@@ -133,7 +133,7 @@ void VerifyOpaqueBodyPartMemento::slotResult(const VerificationResult &vr,
     qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::slotResult called";
 #endif
     saveResult(vr, plainText);
-    m_job = 0;
+    m_job = nullptr;
     if (canStartKeyListJob() && startKeyListJob()) {
 #ifdef DEBUG_SIGNATURE
         qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento: canStartKeyListJob && startKeyListJob";
@@ -143,7 +143,7 @@ void VerifyOpaqueBodyPartMemento::slotResult(const VerificationResult &vr,
     if (m_keylistjob) {
         m_keylistjob->deleteLater();
     }
-    m_keylistjob = 0;
+    m_keylistjob = nullptr;
     setRunning(false);
     notify();
 }
@@ -173,7 +173,7 @@ void VerifyOpaqueBodyPartMemento::slotKeyListJobDone()
 #ifdef DEBUG_SIGNATURE
     qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::slotKeyListJobDone called";
 #endif
-    m_keylistjob = 0;
+    m_keylistjob = nullptr;
     setRunning(false);
     notify();
 }

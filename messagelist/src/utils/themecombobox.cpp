@@ -120,7 +120,7 @@ void ThemeComboBoxPrivate::slotLoadThemes()
 
 void ThemeComboBoxPrivate::setCurrentTheme(const Theme *theme)
 {
-    Q_ASSERT(theme != 0);
+    Q_ASSERT(theme != nullptr);
 
     const QString themeID = theme->id();
     const int themeIndex = q->findData(QVariant(themeID));

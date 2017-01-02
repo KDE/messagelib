@@ -148,7 +148,7 @@ std::vector<GpgME::Key> SignEncryptJob::encryptionKeys() const
 void SignEncryptJob::process()
 {
     Q_D(SignEncryptJob);
-    Q_ASSERT(d->resultContent == 0);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
 
     // if setContent hasn't been called, we assume that a subjob was added
     // and we want to use that

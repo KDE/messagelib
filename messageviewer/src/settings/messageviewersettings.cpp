@@ -26,7 +26,7 @@
 
 using namespace MessageViewer;
 
-MessageViewerSettings *MessageViewerSettings::mSelf = 0;
+MessageViewerSettings *MessageViewerSettings::mSelf = nullptr;
 
 MessageViewerSettings *MessageViewerSettings::self()
 {

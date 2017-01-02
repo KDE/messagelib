@@ -373,7 +373,7 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
 QString processHtml(const QString &htmlSource, QString &extraHead)
 {
     // Create a DOM Document from the HTML source
-    QWebPage page(0);
+    QWebPage page(nullptr);
     page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
     page.settings()->setAttribute(QWebSettings::JavaEnabled, false);
     page.settings()->setAttribute(QWebSettings::PluginsEnabled, false);

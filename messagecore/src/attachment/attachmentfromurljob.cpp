@@ -88,7 +88,7 @@ void AttachmentFromUrlJob::Private::transferJobResult(KJob *job)
     }
 
     // Create the AttachmentPart.
-    Q_ASSERT(q->attachmentPart() == 0);   // Not created before.
+    Q_ASSERT(q->attachmentPart() == nullptr);   // Not created before.
 
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
     QUrlQuery query(q->url());

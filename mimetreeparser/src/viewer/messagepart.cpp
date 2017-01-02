@@ -720,7 +720,7 @@ SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp,
     , mFromAddress(fromAddress)
     , mNode(node)
 {
-    mMetaData.technicalProblem = (mCryptoProto == 0);
+    mMetaData.technicalProblem = (mCryptoProto == nullptr);
     mMetaData.isSigned = true;
     mMetaData.isGoodSignature = false;
     mMetaData.keyTrust = GpgME::Signature::Unknown;
@@ -749,7 +749,7 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
     Interface::ObjectTreeSource *_source = source();
 
     mMetaData.isSigned = false;
-    mMetaData.technicalProblem = (mCryptoProto == 0);
+    mMetaData.technicalProblem = (mCryptoProto == nullptr);
     mMetaData.keyTrust = GpgME::Signature::Unknown;
     mMetaData.status = i18n("Wrong Crypto Plug-In.");
     mMetaData.status_code = GPGME_SIG_STAT_NONE;
@@ -1047,7 +1047,7 @@ EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp,
     , mNode(node)
     , mDecryptMessage(false)
 {
-    mMetaData.technicalProblem = (mCryptoProto == 0);
+    mMetaData.technicalProblem = (mCryptoProto == nullptr);
     mMetaData.isSigned = false;
     mMetaData.isGoodSignature = false;
     mMetaData.isEncrypted = false;

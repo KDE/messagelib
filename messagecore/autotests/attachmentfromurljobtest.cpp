@@ -63,7 +63,7 @@ void AttachmentFromUrlJobTest::testAttachments()
     VERIFYEXEC(ljob);
     AttachmentPart::Ptr part = ljob->attachmentPart();
     delete ljob;
-    ljob = 0;
+    ljob = nullptr;
 
     QCOMPARE(part->name(), filename);
     QCOMPARE(part->fileName(), filename);
@@ -92,7 +92,7 @@ void AttachmentFromUrlJobTest::testAttachmentCharset()
     VERIFYEXEC(ljob);
     AttachmentPart::Ptr part = ljob->attachmentPart();
     delete ljob;
-    ljob = 0;
+    ljob = nullptr;
 
     QCOMPARE(part->name(), filename);
     QCOMPARE(part->fileName(), filename);

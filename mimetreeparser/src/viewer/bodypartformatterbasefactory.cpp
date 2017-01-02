@@ -43,7 +43,7 @@ using namespace MimeTreeParser;
 
 BodyPartFormatterBaseFactoryPrivate::BodyPartFormatterBaseFactoryPrivate(BodyPartFormatterBaseFactory *factory)
     : q(factory)
-    , all(0)
+    , all(nullptr)
 {
 }
 
@@ -51,7 +51,7 @@ BodyPartFormatterBaseFactoryPrivate::~BodyPartFormatterBaseFactoryPrivate()
 {
     if (all) {
         delete all;
-        all = 0;
+        all = nullptr;
     }
 }
 

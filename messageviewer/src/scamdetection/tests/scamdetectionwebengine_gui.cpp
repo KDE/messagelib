@@ -71,7 +71,7 @@ void ScamDetectionWebEngineTestWidget::slotLoadFinished()
 
 void ScamDetectionWebEngineTestWidget::slotOpenHtml()
 {
-    const QString fileName = QFileDialog::getOpenFileName(0, QString(), QString(), QStringLiteral("*.html"));
+    const QString fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), QStringLiteral("*.html"));
     if (!fileName.isEmpty()) {
         mScamWarningWidget->setVisible(false);
         mWebEngineView->load(QUrl::fromLocalFile(fileName));
@@ -99,7 +99,7 @@ int main(int argc, char **argv)
     if (parser.positionalArguments().count()) {
         fileName = parser.positionalArguments().at(0);
     } else {
-        fileName = QFileDialog::getOpenFileName(0, QString(), QString(), i18n("HTML File (*.html)"));
+        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), i18n("HTML File (*.html)"));
     }
     if (fileName.isEmpty()) {
         return 0;

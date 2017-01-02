@@ -83,7 +83,7 @@ NodeHelper::~NodeHelper()
     if (mAttachmentFilesDir) {
         mAttachmentFilesDir->forceCleanTempFiles();
         delete mAttachmentFilesDir;
-        mAttachmentFilesDir = 0;
+        mAttachmentFilesDir = nullptr;
     }
     clear();
 }
@@ -306,7 +306,7 @@ void NodeHelper::forceCleanTempFiles()
 {
     mAttachmentFilesDir->forceCleanTempFiles();
     delete mAttachmentFilesDir;
-    mAttachmentFilesDir = 0;
+    mAttachmentFilesDir = nullptr;
 }
 
 void NodeHelper::removeTempFiles()
@@ -541,7 +541,7 @@ const QTextCodec *NodeHelper::codec(KMime::Content *node)
         return mLocalCodec;
     }
 
-    const QTextCodec *c = mOverrideCodecs.value(node, 0);
+    const QTextCodec *c = mOverrideCodecs.value(node, nullptr);
     if (!c) {
         // no override-codec set for this message, try the CT charset parameter:
         QByteArray charset = node->contentType()->charset();
@@ -564,7 +564,7 @@ const QTextCodec *NodeHelper::codec(KMime::Content *node)
 const QTextCodec *NodeHelper::codecForName(const QByteArray &_str)
 {
     if (_str.isEmpty()) {
-        return 0;
+        return nullptr;
     }
     QByteArray codec = _str.toLower();
     return KCharsets::charsets()->codecForName(QLatin1String(codec));
@@ -588,11 +588,11 @@ Interface::BodyPartMemento *NodeHelper::bodyPartMemento(KMime::Content *node,
     const QMap< QString, QMap<QByteArray, Interface::BodyPartMemento *> >::const_iterator nit
         = mBodyPartMementoMap.find(persistentIndex(node));
     if (nit == mBodyPartMementoMap.end()) {
-        return 0;
+        return nullptr;
     }
     const QMap<QByteArray, Interface::BodyPartMemento *>::const_iterator it =
         nit->find(which.toLower());
-    return it != nit->end() ? it.value() : 0;
+    return it != nit->end() ? it.value() : nullptr;
 }
 
 //FIXME(Andras) review it (by Marc?) to see if I got it right. This is supposed to be the partNode::internalSetBodyPartMemento replacement
@@ -875,7 +875,7 @@ KMime::Message *NodeHelper::messageWithExtraContent(KMime::Content *topLevelNode
       The reason is that extra nodes are assigned by pointer value to the nodes in the original tree.
     */
     if (!topLevelNode) {
-        return 0;
+        return nullptr;
     }
 
     mergeExtraNodes(topLevelNode);
@@ -901,7 +901,7 @@ KMime::Content *NodeHelper::decryptedNodeForContent(KMime::Content *content) con
             qCWarning(MIMETREEPARSER_LOG) << "WTF, encrypted node has multiple extra contents?";
         }
     }
-    return 0;
+    return nullptr;
 }
 
 bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &resultingData, bool addHeaders,
@@ -910,7 +910,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
     bool returnValue = false;
     if (node) {
         KMime::Content *curNode = node;
-        KMime::Content *decryptedNode = 0;
+        KMime::Content *decryptedNode = nullptr;
         const QByteArray type = node->contentType(false) ? QByteArray(node->contentType()->mediaType()).toLower() : "text";
         const QByteArray subType = node->contentType(false) ? node->contentType()->subType().toLower() : "plain";
         const bool isMultipart = node->contentType(false) && node->contentType()->isMultipart();

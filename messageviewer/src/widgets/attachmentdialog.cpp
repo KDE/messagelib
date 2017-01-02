@@ -79,7 +79,7 @@ int AttachmentDialog::exec()
 
     bool again = false;
     const QDialogButtonBox::StandardButton ret = KMessageBox::createKMessageBox(dialog, mButtonBox, QMessageBox::Question, text, QStringList(),
-            i18n("Do not ask again"), &again, 0);
+            i18n("Do not ask again"), &again, nullptr);
 
     if (ret == QDialogButtonBox::Cancel) {
         return Cancel;

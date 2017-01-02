@@ -184,42 +184,42 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
       mNodeHelper(new MimeTreeParser::NodeHelper),
       mViewer(Q_NULLPTR),
       mFindBar(Q_NULLPTR),
-      mAttachmentStrategy(0),
-      mUpdateReaderWinTimer(0),
-      mResizeTimer(0),
+      mAttachmentStrategy(nullptr),
+      mUpdateReaderWinTimer(nullptr),
+      mResizeTimer(nullptr),
       mOldGlobalOverrideEncoding(QStringLiteral("---")),   // init with dummy value
       mMsgDisplay(true),
-      mCSSHelper(0),
+      mCSSHelper(nullptr),
       mMainWindow(mainWindow),
       mActionCollection(actionCollection),
-      mCopyAction(0),
-      mCopyURLAction(0),
-      mUrlOpenAction(0),
-      mSelectAllAction(0),
-      mScrollUpAction(0),
-      mScrollDownAction(0),
-      mScrollUpMoreAction(0),
-      mScrollDownMoreAction(0),
-      mHeaderOnlyAttachmentsAction(0),
-      mSelectEncodingAction(0),
-      mToggleFixFontAction(0),
-      mToggleDisplayModeAction(0),
-      mToggleMimePartTreeAction(0),
-      mSpeakTextAction(0),
+      mCopyAction(nullptr),
+      mCopyURLAction(nullptr),
+      mUrlOpenAction(nullptr),
+      mSelectAllAction(nullptr),
+      mScrollUpAction(nullptr),
+      mScrollDownAction(nullptr),
+      mScrollUpMoreAction(nullptr),
+      mScrollDownMoreAction(nullptr),
+      mHeaderOnlyAttachmentsAction(nullptr),
+      mSelectEncodingAction(nullptr),
+      mToggleFixFontAction(nullptr),
+      mToggleDisplayModeAction(nullptr),
+      mToggleMimePartTreeAction(nullptr),
+      mSpeakTextAction(nullptr),
       mCanStartDrag(false),
-      mHtmlWriter(0),
+      mHtmlWriter(nullptr),
       mDecrytMessageOverwrite(false),
       mShowSignatureDetails(false),
       mShowAttachmentQuicklist(true),
       mForceEmoticons(true),
       mRecursionCountForDisplayMessage(0),
-      mCurrentContent(0),
-      mMessagePartNode(0),
+      mCurrentContent(nullptr),
+      mMessagePartNode(nullptr),
       q(aParent),
       mPreviouslyViewedItem(-1),
-      mScamDetectionWarning(0),
+      mScamDetectionWarning(nullptr),
       mOpenAttachmentFolderWidget(Q_NULLPTR),
-      mSliderContainer(0),
+      mSliderContainer(nullptr),
       mShareServiceManager(Q_NULLPTR),
       mHeaderStylePlugin(Q_NULLPTR),
       mHeaderStyleMenuManager(Q_NULLPTR),
@@ -227,7 +227,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
       mZoomActionMenu(Q_NULLPTR),
       mCurrentPrinter(Q_NULLPTR)
 {
-    mMimePartTree = 0;
+    mMimePartTree = nullptr;
     if (!mainWindow) {
         mMainWindow = aParent;
     }
@@ -285,8 +285,8 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
 ViewerPrivate::~ViewerPrivate()
 {
     MessageViewer::MessageViewerSettings::self()->save();
-    delete mHtmlWriter; mHtmlWriter = 0;
-    delete mViewer; mViewer = 0;
+    delete mHtmlWriter; mHtmlWriter = nullptr;
+    delete mViewer; mViewer = nullptr;
     delete mCSSHelper;
     mNodeHelper->forceCleanTempFiles();
     qDeleteAll(mListMailSourceViewer);
@@ -700,7 +700,7 @@ KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
 
     if (mimetype.isValid() && mimetype.inherits(KContacts::Addressee::mimeType())) {
         attachmentView(content);
-        return KService::Ptr(0);
+        return KService::Ptr(nullptr);
     }
 
     if (!mimetype.isValid() || mimetype.name() == QLatin1String("application/octet-stream")) {
@@ -739,7 +739,7 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
     const QUrl url = QUrl::fromLocalFile(name);
     lst.append(url);
     if (offer) {
-        if ((!KRun::runService(*offer, lst, 0, true))) {
+        if ((!KRun::runService(*offer, lst, nullptr, true))) {
             QFile::remove(url.toLocalFile());
         }
     } else {
@@ -978,7 +978,7 @@ void ViewerPrivate::postProcessMessage(MimeTreeParser::ObjectTreeParser *otp, Mi
 
 void ViewerPrivate::parseContent(KMime::Content *content)
 {
-    assert(content != 0);
+    assert(content != nullptr);
 
     // Check if any part of this message is a v-card
     // v-cards can be either text/x-vcard or text/directory, so we need to check
@@ -1001,7 +1001,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
 
     KMime::Message *message = dynamic_cast<KMime::Message *>(content);
     if (message) {
-        htmlWriter()->queue(writeMsgHeader(message, hasVCard ? vCardContent : 0, true));
+        htmlWriter()->queue(writeMsgHeader(message, hasVCard ? vCardContent : nullptr, true));
     }
 
     // Pass control to the OTP now, which does the real work
@@ -1077,7 +1077,7 @@ void ViewerPrivate::showVCard(KMime::Content *msgPart)
 void ViewerPrivate::initHtmlWidget()
 {
     if (!htmlWriter()) {
-        mPartHtmlWriter = new WebEnginePartHtmlWriter(mViewer, 0);
+        mPartHtmlWriter = new WebEnginePartHtmlWriter(mViewer, nullptr);
 #ifdef MESSAGEVIEWER_READER_HTML_DEBUG
         mHtmlWriter = new TeeHtmlWriter(new FileHtmlWriter(QString()),
                                         mPartHtmlWriter);
@@ -1259,7 +1259,7 @@ void ViewerPrivate::resetStateForNewMessage()
     enableMessageDisplay(); // just to make sure it's on
     mMessage.reset();
     mNodeHelper->clear();
-    mMessagePartNode = 0;
+    mMessagePartNode = nullptr;
 #ifndef QT_NO_TREEVIEW
     mMimePartTree->clearModel();
 #endif
@@ -1790,7 +1790,7 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
 KToggleAction *ViewerPrivate::actionForAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *as)
 {
     if (!mActionCollection) {
-        return 0;
+        return nullptr;
     }
     QString actionName;
     if (as == MimeTreeParser::AttachmentStrategy::iconic()) {
@@ -1806,7 +1806,7 @@ KToggleAction *ViewerPrivate::actionForAttachmentStrategy(const MimeTreeParser::
     }
 
     if (actionName.isEmpty()) {
-        return 0;
+        return nullptr;
     } else {
         return static_cast<KToggleAction *>(mActionCollection->action(actionName));
     }
@@ -1826,7 +1826,7 @@ void ViewerPrivate::readGlobalOverrideCodec()
 const QTextCodec *ViewerPrivate::overrideCodec() const
 {
     if (mOverrideEncoding.isEmpty() || mOverrideEncoding == QLatin1String("Auto")) { // Auto
-        return 0;
+        return nullptr;
     } else {
         return ViewerPrivate::codecForName(mOverrideEncoding.toLatin1());
     }
@@ -1922,7 +1922,7 @@ KMime::Content *ViewerPrivate::findContentByType(KMime::Content *content, const 
             return c;
         }
     }
-    return 0;
+    return nullptr;
 
 }
 
@@ -1930,7 +1930,7 @@ KMime::Content *ViewerPrivate::findContentByType(KMime::Content *content, const 
 const QTextCodec *ViewerPrivate::codecForName(const QByteArray &_str)
 {
     if (_str.isEmpty()) {
-        return 0;
+        return nullptr;
     }
     QByteArray codec = _str.toLower();
     return KCharsets::charsets()->codecForName(QLatin1String(codec));

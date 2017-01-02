@@ -108,7 +108,7 @@ bool ContentJobBase::addSubjob(KJob *job)
 void ContentJobBase::doStart()
 {
     Q_D(ContentJobBase);
-    Q_ASSERT(d->resultContent == 0 && d->subjobContents.isEmpty());   // Not started.
+    Q_ASSERT(d->resultContent == nullptr && d->subjobContents.isEmpty());   // Not started.
     Q_ASSERT(!error());   // Jobs emitting an error in doStart should not call ContentJobBase::doStart().
     d->doNextSubjob();
 }

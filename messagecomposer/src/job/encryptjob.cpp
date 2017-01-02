@@ -140,7 +140,7 @@ std::vector<GpgME::Key> EncryptJob::encryptionKeys() const
 void EncryptJob::process()
 {
     Q_D(EncryptJob);
-    Q_ASSERT(d->resultContent == 0);   // Not processed before.
+    Q_ASSERT(d->resultContent == nullptr);   // Not processed before.
 
     if (d->keys.size() == 0) {  // should not happen---resolver should have dealt with it earlier
         qCDebug(MESSAGECOMPOSER_LOG) << "HELP! Encrypt job but have no keys to encrypt with.";

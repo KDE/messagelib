@@ -43,9 +43,9 @@ class MessageViewer::HeaderStylePrivate
 {
 public:
     HeaderStylePrivate()
-        : mStrategy(0),
-          mNodeHelper(0),
-          mSourceObject(0),
+        : mStrategy(nullptr),
+          mNodeHelper(nullptr),
+          mSourceObject(nullptr),
           mPrinting(false),
           mTopLevel(true),
           mAllowAsync(false),

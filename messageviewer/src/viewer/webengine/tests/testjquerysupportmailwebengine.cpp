@@ -36,7 +36,7 @@ TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
-    viewer = new MessageViewer::Viewer(0, 0, new KActionCollection(this));
+    viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
     vboxLayout->addWidget(viewer);
     viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")));
     viewer->setPluginName(QStringLiteral("enterprise"));

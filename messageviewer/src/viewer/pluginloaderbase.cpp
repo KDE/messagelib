@@ -30,7 +30,7 @@
 #include <QDir>
 #include <QStringList>
 
-PluginLoaderBase::PluginLoaderBase() : d(0) {}
+PluginLoaderBase::PluginLoaderBase() : d(nullptr) {}
 PluginLoaderBase::~PluginLoaderBase() {}
 
 QStringList PluginLoaderBase::types() const
@@ -46,7 +46,7 @@ QStringList PluginLoaderBase::types() const
 
 const PluginMetaData *PluginLoaderBase::infoForName(const QString &type) const
 {
-    return mPluginMap.contains(type) ? &(const_cast<PluginLoaderBase *>(this)->mPluginMap[type]) : 0;
+    return mPluginMap.contains(type) ? &(const_cast<PluginLoaderBase *>(this)->mPluginMap[type]) : nullptr;
 }
 
 void PluginLoaderBase::doScan(const char *path)
@@ -105,17 +105,17 @@ void PluginLoaderBase::doScanOneFolder(const QString &folder)
 QFunctionPointer PluginLoaderBase::mainFunc(const QString &type, const char *mf_name) const
 {
     if (type.isEmpty() || !mPluginMap.contains(type)) {
-        return 0;
+        return nullptr;
     }
 
     const QString libName = mPluginMap[ type ].library;
     if (libName.isEmpty()) {
-        return 0;
+        return nullptr;
     }
 
     const QLibrary *lib = openLibrary(libName);
     if (!lib) {
-        return 0;
+        return nullptr;
     }
 
     PluginMetaData pmd = mPluginMap.value(type);
@@ -126,7 +126,7 @@ QFunctionPointer PluginLoaderBase::mainFunc(const QString &type, const char *mf_
     auto sym = const_cast<QLibrary *>(lib)->resolve(factory_name.toLatin1().constData());
     if (!sym) {
         qCWarning(MESSAGEVIEWER_LOG) << "No symbol named \"" << factory_name.toLatin1() << "\" (" << factory_name << ") was found in library \"" << libName << "\"";
-        return 0;
+        return nullptr;
     }
 
     return sym;
@@ -138,7 +138,7 @@ const QLibrary *PluginLoaderBase::openLibrary(const QString &libName) const
     if (library->fileName().isEmpty() || !library->load()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Could not load plugin library" << libName << "error:" << library->errorString() << library->fileName();
         delete library;
-        return 0;
+        return nullptr;
     }
 
     return library;

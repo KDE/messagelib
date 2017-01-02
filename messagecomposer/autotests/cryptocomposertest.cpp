@@ -207,9 +207,9 @@ void CryptoComposerTest::testEditEncryptAttachments()
     composer = Q_NULLPTR;
 
     // setup a viewer
-    ComposerViewBase view(this, 0);
+    ComposerViewBase view(this, nullptr);
     AttachmentModel model(this);
-    AttachmentControllerBase controller(&model, 0, 0);
+    AttachmentControllerBase controller(&model, nullptr, nullptr);
     MessageComposer::RichTextComposerNg editor;
     view.setAttachmentModel(&model);
     view.setAttachmentController(&controller);
@@ -273,9 +273,9 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
     composer = Q_NULLPTR;
 
     // setup a viewer
-    ComposerViewBase view(this, 0);
+    ComposerViewBase view(this, nullptr);
     AttachmentModel model(this);
-    AttachmentControllerBase controller(&model, 0, 0);
+    AttachmentControllerBase controller(&model, nullptr, nullptr);
     MessageComposer::RichTextComposerNg editor;
     view.setAttachmentModel(&model);
     view.setAttachmentController(&controller);

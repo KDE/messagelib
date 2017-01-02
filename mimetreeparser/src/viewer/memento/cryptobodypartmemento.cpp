@@ -21,7 +21,7 @@ using namespace GpgME;
 using namespace MimeTreeParser;
 
 CryptoBodyPartMemento::CryptoBodyPartMemento()
-    : QObject(0),
+    : QObject(nullptr),
       Interface::BodyPartMemento(),
       m_running(false)
 {
@@ -51,6 +51,6 @@ void CryptoBodyPartMemento::setRunning(bool running)
 
 void CryptoBodyPartMemento::detach()
 {
-    disconnect(this, SIGNAL(update(MimeTreeParser::UpdateMode)), 0, 0);
+    disconnect(this, SIGNAL(update(MimeTreeParser::UpdateMode)), nullptr, nullptr);
 }
 

@@ -80,7 +80,7 @@ using std::find;
 using namespace MessageViewer;
 using namespace MessageCore;
 
-URLHandlerManager *URLHandlerManager::self = 0;
+URLHandlerManager *URLHandlerManager::self = nullptr;
 
 namespace
 {
@@ -365,7 +365,7 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
     assert(path);
 
     if (!w || url.scheme() != QLatin1String("x-kmail")) {
-        return 0;
+        return nullptr;
     }
     const QString urlPath = url.path();
 
@@ -373,12 +373,12 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
 
     qCDebug(MESSAGEVIEWER_LOG) << "BodyPartURLHandler: urlPath ==" << urlPath;
     if (!urlPath.startsWith(QStringLiteral("/bodypart/"))) {
-        return 0;
+        return nullptr;
     }
 
     const QStringList urlParts = urlPath.mid(10).split(QLatin1Char('/'));
     if (urlParts.size() != 3) {
-        return 0;
+        return nullptr;
     }
     //KMime::ContentIndex index( urlParts[1] );
     *path = QUrl::fromPercentEncoding(urlParts.at(2).toLatin1());
@@ -393,7 +393,7 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url, 
         return false;
     }
 
-    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper());
+    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
     BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
 
     for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
@@ -413,7 +413,7 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleContextMenuRequest(cons
         return false;
     }
 
-    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper());
+    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
     BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
     for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it)
         if ((*it)->handleContextMenuRequest(&part, path, p)) {
@@ -430,7 +430,7 @@ QString URLHandlerManager::BodyPartURLHandlerManager::statusBarMessage(const QUr
         return QString();
     }
 
-    MimeTreeParser::PartNodeBodyPart part(0, 0, w->message().data(), node, w->nodeHelper());
+    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
     BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
     for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
         const QString msg = (*it)->statusBarMessage(&part, path);
@@ -836,7 +836,7 @@ static QString searchFullEmailByUid(const QString &uid)
 
 static void runKAddressBook(const QUrl &url)
 {
-    KPIM::OpenEmailAddressJob *job = new KPIM::OpenEmailAddressJob(url.path(), 0);
+    KPIM::OpenEmailAddressJob *job = new KPIM::OpenEmailAddressJob(url.path(), nullptr);
     job->start();
 }
 
@@ -899,13 +899,13 @@ namespace
 KMime::Content *AttachmentURLHandler::nodeForUrl(const QUrl &url, ViewerPrivate *w) const
 {
     if (!w || !w->mMessage) {
-        return 0;
+        return nullptr;
     }
     if (url.scheme() == QLatin1String("attachment")) {
         KMime::Content *node = w->nodeFromUrl(url);
         return node;
     }
-    return 0;
+    return nullptr;
 }
 
 bool AttachmentURLHandler::attachmentIsInHeader(const QUrl &url) const
@@ -956,7 +956,7 @@ bool AttachmentURLHandler::handleShiftClick(const QUrl &url, ViewerPrivate *wind
 
 bool AttachmentURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window) const
 {
-    return nodeForUrl(url, window) != 0;
+    return nodeForUrl(url, window) != nullptr;
 }
 
 bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
@@ -1117,7 +1117,7 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
                 mime.name() == QLatin1String("application/x-executable") ||
                 mime.name() == QLatin1String("application/x-ms-dos-executable") ||
                 mime.name() == QLatin1String("application/x-shellscript")) {
-            if (KMessageBox::warningYesNo(0, xi18nc("@info", "Do you really want to execute <filename>%1</filename>?",
+            if (KMessageBox::warningYesNo(nullptr, xi18nc("@info", "Do you really want to execute <filename>%1</filename>?",
                                                     url.toDisplayString(QUrl::PreferLocalFile)), QString(), KGuiItem(i18n("Execute")), KStandardGuiItem::cancel()) != KMessageBox::Yes) {
                 return true;
             }

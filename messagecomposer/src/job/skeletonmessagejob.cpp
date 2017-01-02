@@ -63,7 +63,7 @@ void SkeletonMessageJobPrivate::doStart()
     Q_Q(SkeletonMessageJob);
 
     Q_ASSERT(infoPart);
-    Q_ASSERT(message == 0);
+    Q_ASSERT(message == nullptr);
     message = new KMime::Message;
 
     // From:

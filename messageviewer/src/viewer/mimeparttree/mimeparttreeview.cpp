@@ -76,7 +76,7 @@ void MimePartTreeView::slotMimePartDestroyed()
 void MimePartTreeView::clearModel()
 {
     delete mMimePartModel->root();
-    mMimePartModel->setRoot(0);
+    mMimePartModel->setRoot(nullptr);
 }
 
 void MimePartTreeView::setRoot(KMime::Content *root)

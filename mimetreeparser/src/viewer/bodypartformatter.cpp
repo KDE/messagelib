@@ -84,7 +84,7 @@ public:
     }
 };
 
-const AnyTypeBodyPartFormatter *AnyTypeBodyPartFormatter::self = 0;
+const AnyTypeBodyPartFormatter *AnyTypeBodyPartFormatter::self = nullptr;
 
 class ImageTypeBodyPartFormatter
     : public MimeTreeParser::Interface::BodyPartFormatter
@@ -113,7 +113,7 @@ public:
     }
 };
 
-const ImageTypeBodyPartFormatter *ImageTypeBodyPartFormatter::self = 0;
+const ImageTypeBodyPartFormatter *ImageTypeBodyPartFormatter::self = nullptr;
 
 class MessageRfc822BodyPartFormatter
     : public MimeTreeParser::Interface::BodyPartFormatter

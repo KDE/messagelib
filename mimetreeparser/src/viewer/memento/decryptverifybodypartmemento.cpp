@@ -61,7 +61,7 @@ void DecryptVerifyBodyPartMemento::exec()
     const std::pair<DecryptionResult, VerificationResult> p = m_job->exec(m_cipherText, plainText);
     saveResult(p.first, p.second, plainText);
     m_job->deleteLater(); // exec'ed jobs don't delete themselves
-    m_job = 0;
+    m_job = nullptr;
 }
 
 void DecryptVerifyBodyPartMemento::saveResult(const DecryptionResult &dr,
@@ -81,6 +81,6 @@ void DecryptVerifyBodyPartMemento::slotResult(const DecryptionResult &dr,
         const QByteArray &plainText)
 {
     saveResult(dr, vr, plainText);
-    m_job = 0;
+    m_job = nullptr;
     notify();
 }

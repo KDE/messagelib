@@ -48,7 +48,7 @@ EditorWatcher::EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithO
     QObject(parent),
     mUrl(url),
     mMimeType(mimeType),
-    mEditor(0),
+    mEditor(nullptr),
     mParentWidget(parentWidget),
     mInotifyFd(-1),
     mInotifyWatch(-1),
