@@ -1,7 +1,4 @@
-project(messagecomposer)
-
-
-ecm_setup_version(${MESSAGELIB_LIB_VERSION} VARIABLE_PREFIX MESSAGECOMPOSER
+ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECOMPOSER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5MessageComposerConfigVersion.cmake"
     SOVERSION 5
