@@ -37,7 +37,6 @@
 #include "mimetreeparser_export.h"
 #include "mimetreeparser/bodypart.h"
 
-class QTextCodec;
 
 namespace KMime
 {
