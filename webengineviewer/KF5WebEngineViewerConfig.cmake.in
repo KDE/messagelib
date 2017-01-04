@@ -1,4 +1,4 @@
 @PACKAGE_INIT@
-
+include(CMakeFindDependencyMacro)
 find_dependency(Qt5WebEngine "@QT_REQUIRED_VERSION@")
 include("${CMAKE_CURRENT_LIST_DIR}/KF5WebEngineViewerTargets.cmake")
