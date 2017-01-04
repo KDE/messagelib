@@ -1193,7 +1193,7 @@ QString TemplateParser::getHtmlSignature() const
 
     if (!signature.isInlinedHtml()) {
         signature = signature.rawText().toHtmlEscaped();
-        return signature.rawText().replace(QStringLiteral("\n"), QStringLiteral("<br />"));
+        return signature.rawText().replace(QLatin1Char('\n'), QStringLiteral("<br />"));
     }
     return signature.rawText();
 }
@@ -1558,7 +1558,7 @@ QString TemplateParser::htmlMessageText(bool aStripSignature, AllowSelection isS
 
     if (htmlElement.isEmpty()) {   //plain mails only
         QString htmlReplace = mOtp->plainTextContent().toHtmlEscaped();
-        htmlReplace = htmlReplace.replace(QStringLiteral("\n"), QStringLiteral("<br />"));
+        htmlReplace = htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
         htmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
     }
 
@@ -1666,7 +1666,7 @@ QString TemplateParser::plainToHtml(const QString &body) const
 {
     QString str = body;
     str = str.toHtmlEscaped();
-    str.replace(QStringLiteral("\n"), QStringLiteral("<br />\n"));
+    str.replace(QLatin1Char('\n'), QStringLiteral("<br />\n"));
     return str;
 }
 

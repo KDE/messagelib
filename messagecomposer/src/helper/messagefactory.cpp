@@ -873,7 +873,7 @@ bool MessageFactory::MDNConfirmMultipleRecipients(const KMime::Message::Ptr &msg
     // MDN sent) ] if there is more than one distinct address in the
     // Disposition-Notification-To header.
     qCDebug(MESSAGECOMPOSER_LOG) << "KEmailAddress::splitAddressList(receiptTo):"
-                                 << KEmailAddress::splitAddressList(receiptTo).join(QStringLiteral("\n"));
+                                 << KEmailAddress::splitAddressList(receiptTo).join(QLatin1Char('\n'));
 
     return KEmailAddress::splitAddressList(receiptTo).count() > 1;
 }
