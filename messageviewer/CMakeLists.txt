@@ -19,7 +19,7 @@ if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.7.99")
 endif()
 
 
-ecm_configure_package_config_file(
+configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KF5MessageViewerConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF5MessageViewerConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
