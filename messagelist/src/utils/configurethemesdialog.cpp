@@ -344,7 +344,7 @@ QString ConfigureThemesDialog::Private::uniqueNameForTheme(const QString &baseNa
     ThemeListWidgetItem *item = findThemeItemByName(ret, skipTheme);
     while (item) {
         idx++;
-        ret = QStringLiteral("%1 %2").arg(baseName).arg(idx);
+        ret = QStringLiteral("%1 %2").arg(baseName, QString::number(idx));
         item = findThemeItemByName(ret, skipTheme);
     }
     return ret;
