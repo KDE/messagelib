@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2017 Laurent Montel <montel@kde.org>
 
    Code based in v4_rice.cc
 

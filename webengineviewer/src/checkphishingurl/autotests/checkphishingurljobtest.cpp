@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2017 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -93,7 +93,7 @@ void CheckPhishingUrlJobTest::shouldParseResult()
     job.parse(input);
     QCOMPARE(spy1.count(), 1);
     QCOMPARE(spy1.at(0).at(0).value<WebEngineViewer::CheckPhishingUrlUtil::UrlStatus>(), urlStatus);
-    QCOMPARE(spy1.at(0).at(1).value<QUrl>(), checkedUrl);
+    QCOMPARE(spy1.at(0).at(1).toUrl(), checkedUrl);
     QCOMPARE(spy1.at(0).at(2).value<uint>(), verifyCacheAfterThisTime);
 }
 
