@@ -127,7 +127,7 @@
 #include <WebEngineViewer/WebHitTestResult>
 #include "header/headerstylemenumanager.h"
 #include "widgets/submittedformwarningwidget.h"
-#include <WebEngineViewer/CheckPhishingUrlCache>
+#include <WebEngineViewer/LocalDataBaseManager>
 
 #include <MimeTreeParser/BodyPart>
 #include <MimeTreeParser/HtmlWriter>
@@ -234,7 +234,12 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::MessageDisplayFormatAttribute>();
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::ScamAttribute>();
+
+        //Make sure to initialize it once.
+        WebEngineViewer::LocalDataBaseManager::self()->initialize();
     }
+    connect(WebEngineViewer::LocalDataBaseManager::self(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &ViewerPrivate::slotCheckedUrlFinished);
+
     mShareServiceManager = new PimCommon::ShareServiceUrlManager(this);
 
     mDisplayFormatMessageOverwrite = MessageViewer::Viewer::UseGlobalSetting;
@@ -1975,20 +1980,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
 void ViewerPrivate::checkPhishingUrl()
 {
     if (!PimCommon::NetworkUtil::self()->lowBandwidth() && MessageViewer::MessageViewerSettings::self()->checkPhishingUrl() && (mClickedUrl.scheme() != QLatin1String("mailto"))) {
-        WebEngineViewer::CheckPhishingUrlCache::UrlStatus status = WebEngineViewer::CheckPhishingUrlCache::self()->urlStatus(mClickedUrl);
-        if (status == WebEngineViewer::CheckPhishingUrlCache::UrlOk) {
-            executeRunner(mClickedUrl);
-        } else if (status == WebEngineViewer::CheckPhishingUrlCache::MalWare) {
-            if (urlIsAMalwareButContinue()) {
-                executeRunner(mClickedUrl);
-            }
-        } else {
-            MessageViewer::MailCheckPhishingUrlJob *job = new MessageViewer::MailCheckPhishingUrlJob(this);
-            connect(job, &MessageViewer::MailCheckPhishingUrlJob::result, this, &ViewerPrivate::slotCheckUrl);
-            job->setUrl(mClickedUrl);
-            job->setItem(mMessageItem);
-            job->start();
-        }
+        WebEngineViewer::LocalDataBaseManager::self()->checkUrl(mClickedUrl);
     } else {
         executeRunner(mClickedUrl);
     }
@@ -2002,9 +1994,8 @@ void ViewerPrivate::executeRunner(const QUrl &url)
     }
 }
 
-void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url, const Akonadi::Item &item, uint verifyCacheAfterThisTime)
+void ViewerPrivate::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status)
 {
-    Q_UNUSED(item);
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
         KMessageBox::error(mMainWindow, i18n("The network is broken."), i18n("Check Phishing URL"));
@@ -2013,16 +2004,14 @@ void ViewerPrivate::slotCheckUrl(WebEngineViewer::CheckPhishingUrlUtil::UrlStatu
         KMessageBox::error(mMainWindow, i18n("The URL %1 is not valid.", url.toString()), i18n("Check Phishing URL"));
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::Ok:
-        WebEngineViewer::CheckPhishingUrlCache::self()->addCheckingUrlResult(url, true, verifyCacheAfterThisTime);
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
-        WebEngineViewer::CheckPhishingUrlCache::self()->addCheckingUrlResult(url, false, verifyCacheAfterThisTime);
         if (!urlIsAMalwareButContinue()) {
             return;
         }
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
-        qCWarning(MESSAGEVIEWER_LOG) << "WebEngineViewer::CheckPhishingUrlJob unknown error ";
+        qCWarning(MESSAGEVIEWER_LOG) << "WebEngineViewer::slotCheckedUrlFinished unknown error ";
         break;
     }
     executeRunner(url);

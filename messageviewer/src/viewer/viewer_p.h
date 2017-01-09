@@ -474,7 +474,6 @@ private Q_SLOTS:
     void slotHandlePagePrinted(bool result);
     void slotLoadStarted();
     void slotDisableEmoticon();
-    void slotCheckUrl(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url, const Akonadi::Item &item, uint verifyCacheAfterThisTime);
 public Q_SLOTS:
     /** An URL has been activate with a click. */
     void slotUrlOpen(const QUrl &url = QUrl());
@@ -596,6 +595,8 @@ private:
     void replyMessageToAuthor(KMime::Content *atmNode);
     void replyMessageToAll(KMime::Content *atmNode);
     bool urlIsAMalwareButContinue();
+
+    void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 public:
     MimeTreeParser::NodeHelper *mNodeHelper;
     bool mHtmlMailGlobalSetting;
