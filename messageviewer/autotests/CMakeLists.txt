@@ -1,5 +1,5 @@
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
-
+add_definitions( -DGRANTLEETHEME_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
@@ -40,3 +40,7 @@ set(KDEPIMLIBS_RUN_SQLITE_ISOLATED_TESTS TRUE)
 
 add_akonadi_isolated_test_advanced(viewertest.cpp "" "KF5::MessageViewer;KF5::XmlGui")
 
+
+#####
+
+add_akonadi_isolated_test_advanced(viewergrantleethemesupporttest.cpp "" "KF5::MessageViewer;KF5::XmlGui")
