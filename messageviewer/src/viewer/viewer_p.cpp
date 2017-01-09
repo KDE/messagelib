@@ -40,7 +40,6 @@
 #include "job/attachmenteditjob.h"
 #include "job/modifymessagedisplayformatjob.h"
 #include "config-messageviewer.h"
-#include "mailcheckphishingurljob.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <WebEngineViewer/WebEnginePrintMessageBox>
 #include <KContacts/VCardConverter>
