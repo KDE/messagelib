@@ -163,7 +163,7 @@ typedef QList< Pair > OptionList;
 static bool optionListHasOption(const OptionList &optionList, int optionValue,
                                 int defaultOptionValue)
 {
-    foreach (const Pair &pair, optionList) {
+    for (const Pair &pair : optionList) {
         if (pair.second == optionValue) {
             return true;
         }

@@ -156,19 +156,19 @@ void MessageComposer::ComposerViewBase::setMessage(const KMime::Message::Ptr &ms
         // If we are loading from a draft, load unexpanded aliases as well
         if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-To")) {
             const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
-            foreach (const QString &addr, spl) {
+            for (const QString &addr : spl) {
                 m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To);
             }
         }
         if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-CC")) {
             const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
-            foreach (const QString &addr, spl) {
+            for (const QString &addr : spl) {
                 m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc);
             }
         }
         if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
             const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
-            foreach (const QString &addr, spl) {
+            for (const QString &addr : spl) {
                 m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc);
             }
         }
@@ -1096,11 +1096,11 @@ void MessageComposer::ComposerViewBase::cleanupAutoSave()
         autoSaveDir.setNameFilters(autoSaveFilter);
 
         // Return the files to be removed
-        QStringList autoSaveFiles = autoSaveDir.entryList();
+        const QStringList autoSaveFiles = autoSaveDir.entryList();
         qCDebug(MESSAGECOMPOSER_LOG) << "There are" << autoSaveFiles.count() << "to be deleted.";
 
         // Delete each file
-        foreach (const QString &file, autoSaveFiles) {
+        for (const QString &file : autoSaveFiles) {
             autoSaveDir.remove(file);
         }
         m_autoSaveUUID.clear();

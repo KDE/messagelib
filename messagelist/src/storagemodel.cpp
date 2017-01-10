@@ -144,9 +144,9 @@ StorageModel::~StorageModel()
 Collection::List StorageModel::displayedCollections() const
 {
     Collection::List collections;
-    QModelIndexList indexes = d->mSelectionModel->selectedRows();
+    const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
-    foreach (const QModelIndex &index, indexes) {
+    for (const QModelIndex &index : indexes) {
         Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             collections << c;
@@ -159,9 +159,9 @@ Collection::List StorageModel::displayedCollections() const
 QString StorageModel::id() const
 {
     QStringList ids;
-    QModelIndexList indexes = d->mSelectionModel->selectedRows();
+    const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
-    foreach (const QModelIndex &index, indexes) {
+    for (const QModelIndex &index : indexes) {
         Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             ids << QString::number(c.id());
@@ -183,9 +183,9 @@ bool StorageModel::isOutBoundFolder(const Akonadi::Collection &c) const
 
 bool StorageModel::containsOutboundMessages() const
 {
-    QModelIndexList indexes = d->mSelectionModel->selectedRows();
+    const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
-    foreach (const QModelIndex &index, indexes) {
+    for (const QModelIndex &index : indexes) {
         Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             return isOutBoundFolder(c);
@@ -197,11 +197,11 @@ bool StorageModel::containsOutboundMessages() const
 
 int StorageModel::initialUnreadRowCountGuess() const
 {
-    QModelIndexList indexes = d->mSelectionModel->selectedRows();
+    const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
     int unreadCount = 0;
 
-    foreach (const QModelIndex &index, indexes) {
+    for (const QModelIndex &index : indexes) {
         Collection c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             unreadCount += c.statistics().unreadCount();
@@ -409,7 +409,7 @@ QMimeData *StorageModel::mimeData(const QList< MessageList::Core::MessageItem * 
     QMimeData *data = new QMimeData();
     QList<QUrl> urls;
     urls.reserve(items.count());
-    foreach (MessageList::Core::MessageItem *mi, items) {
+    for (MessageList::Core::MessageItem *mi : items) {
         Akonadi::Item item = itemForRow(mi->currentModelIndexRow());
         urls << item.url(Item::UrlWithMimeType);
     }

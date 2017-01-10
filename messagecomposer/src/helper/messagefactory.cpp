@@ -1021,7 +1021,7 @@ void MessageFactory::applyCharset(const KMime::Message::Ptr msg)
 
             QList<QByteArray> chars;
             chars.reserve(charsets.count());
-            foreach (const QString &charset, charsets) {
+            for (const QString &charset : charsets) {
                 chars << charset.toLatin1();
             }
 

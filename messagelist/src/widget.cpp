@@ -118,7 +118,7 @@ bool Widget::canAcceptDrag(const QDropEvent *e)
     }
 
     const QList<QUrl> urls = e->mimeData()->urls();
-    foreach (const QUrl &url, urls) {
+    for (const QUrl &url : urls) {
         const Collection collection = Collection::fromUrl(url);
         if (collection.isValid()) {   // You're not supposed to drop collections here
             return false;

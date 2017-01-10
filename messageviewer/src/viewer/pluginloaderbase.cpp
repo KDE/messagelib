@@ -53,8 +53,8 @@ void PluginLoaderBase::doScan(const char *path)
 {
     mPluginMap.clear();
 
-    const auto list = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QString::fromLatin1(path), QStandardPaths::LocateDirectory);
-    foreach (const auto &folder, list) {
+    const QStringList list = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QString::fromLatin1(path), QStandardPaths::LocateDirectory);
+    for (const QString &folder : list) {
         doScanOneFolder(folder);
     }
 }

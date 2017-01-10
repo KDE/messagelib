@@ -218,7 +218,7 @@ void RecipientsPicker::slotSearchLDAP()
 void RecipientsPicker::ldapSearchResult()
 {
     const KContacts::Addressee::List contacts = mLdapSearchDialog->selectedContacts();
-    foreach (const KContacts::Addressee &contact, contacts) {
+    for (const KContacts::Addressee &contact : contacts) {
         bool tooManyAddress = false;
         Q_EMIT pickedRecipient(Recipient(contact.fullEmail(), Recipient::Undefined), tooManyAddress);
         if (tooManyAddress) {

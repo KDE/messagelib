@@ -89,9 +89,9 @@ KMime::Content::List MimePartTreeView::selectedContents()
 {
     KMime::Content::List contents;
     QItemSelectionModel *selectModel = selectionModel();
-    QModelIndexList selectedRows = selectModel->selectedRows();
+    const QModelIndexList selectedRows = selectModel->selectedRows();
 
-    Q_FOREACH (const QModelIndex &index, selectedRows) {
+    for (const QModelIndex &index : selectedRows) {
         KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
         if (content) {
             contents.append(content);

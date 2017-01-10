@@ -480,7 +480,7 @@ static inline void paint_tag_list(const QList< MessageItem::Tag * > &tagList, QP
                                   int &left, int top, int &right, bool alignOnRight, int iconSize)
 {
     if (alignOnRight) {
-        foreach (const MessageItem::Tag *tag, tagList) {
+        for (const MessageItem::Tag *tag : tagList) {
             right -= iconSize; // this icon is always present
             if (right < 0) {
                 return;
@@ -489,7 +489,7 @@ static inline void paint_tag_list(const QList< MessageItem::Tag * > &tagList, QP
             right -= gHorizontalItemSpacing;
         }
     } else {
-        foreach (const MessageItem::Tag *tag, tagList) {
+        for (const MessageItem::Tag *tag : tagList) {
             if (left > right - iconSize) {
                 return;
             }

@@ -827,8 +827,8 @@ void NodeHelper::mergeExtraNodes(KMime::Content *node)
         return;
     }
 
-    QList<KMime::Content * > extraNodes = extraContents(node);
-    Q_FOREACH (KMime::Content *extra, extraNodes) {
+    const QList<KMime::Content * > extraNodes = extraContents(node);
+    for (KMime::Content *extra : extraNodes) {
         if (node->bodyIsMessage()) {
             qCWarning(MIMETREEPARSER_LOG) << "Asked to attach extra content to a kmime::message, this does not make sense. Attaching to:" << node <<
                                           node->encodedContent() << "\n====== with =======\n" <<  extra << extra->encodedContent();

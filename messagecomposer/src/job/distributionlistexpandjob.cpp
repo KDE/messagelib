@@ -88,7 +88,7 @@ void DistributionListExpandJob::slotExpansionDone(KJob *job)
 
     const KContacts::Addressee::List contacts = expandJob->contacts();
 
-    foreach (const KContacts::Addressee &contact, contacts) {
+    for (const KContacts::Addressee &contact : contacts) {
         mEmailAddresses << contact.fullEmail();
     }
 

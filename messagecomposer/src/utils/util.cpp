@@ -224,7 +224,7 @@ bool MessageComposer::Util::makeMultiMime(Kleo::CryptoMessageFormat format, bool
 
 QByteArray MessageComposer::Util::selectCharset(const QList<QByteArray> &charsets, const QString &text)
 {
-    foreach (const QByteArray &name, charsets) {
+    for (const QByteArray &name : charsets) {
         // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
         // the former knows us-ascii is latin1.
         QTextCodec *codec = KCharsets::charsets()->codecForName(QString::fromLatin1(name));

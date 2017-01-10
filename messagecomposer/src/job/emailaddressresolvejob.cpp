@@ -70,7 +70,7 @@ static inline bool containsAliases(const QString &address)
 
 static bool containsAliases(const QStringList &addresses)
 {
-    foreach (const QString &address, addresses) {
+    for (const QString &address : addresses) {
         if (containsAliases(address)) {
             return true;
         }

@@ -918,10 +918,10 @@ void ViewerPrivate::collectionFetchedForStoringDecryptedMessage(KJob *job)
     if (!col.isValid()) {
         return;
     }
-    Akonadi::AgentInstance::List instances = Akonadi::AgentManager::self()->instances();
+    const Akonadi::AgentInstance::List instances = Akonadi::AgentManager::self()->instances();
     const QString itemResource = col.resource();
     Akonadi::AgentInstance resourceInstance;
-    foreach (const Akonadi::AgentInstance &instance, instances) {
+    for (const Akonadi::AgentInstance &instance : instances) {
         if (instance.identifier() == itemResource) {
             resourceInstance = instance;
             break;

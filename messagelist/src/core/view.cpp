@@ -1441,8 +1441,8 @@ void View::growOrShrinkExistingSelection(const QModelIndex &newSelectedIndex, bo
                 selectionModel()->select(newSelectedIndex, QItemSelectionModel::Rows | QItemSelectionModel::Select);
             } else {
                 // selecting something below the top: shrink selection
-                QModelIndexList selectedIndexes = selection.indexes();
-                foreach (const QModelIndex &idx, selectedIndexes) {
+                const QModelIndexList selectedIndexes = selection.indexes();
+                for (const QModelIndex &idx : selectedIndexes) {
                     if ((idx.column() == 0) && (visualRect(idx).top() > selectedVisualCoordinate)) {
                         selectionModel()->select(idx, QItemSelectionModel::Rows | QItemSelectionModel::Deselect);
                     }
@@ -1454,8 +1454,8 @@ void View::growOrShrinkExistingSelection(const QModelIndex &newSelectedIndex, bo
                 selectionModel()->select(newSelectedIndex, QItemSelectionModel::Rows | QItemSelectionModel::Select);
             } else {
                 // selecting something above bottom: shrink selection
-                QModelIndexList selectedIndexes = selection.indexes();
-                foreach (const QModelIndex &idx, selectedIndexes) {
+                const QModelIndexList selectedIndexes = selection.indexes();
+                for (const QModelIndex &idx : selectedIndexes) {
                     if ((idx.column() == 0) && (visualRect(idx).top() < selectedVisualCoordinate)) {
                         selectionModel()->select(idx, QItemSelectionModel::Rows | QItemSelectionModel::Deselect);
                     }
