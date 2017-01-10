@@ -29,6 +29,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
+#include <QPointer>
 #include <QStandardPaths>
 #include <QDebug>
 #include <QDir>
@@ -66,6 +67,11 @@ public:
     }
     ~LocalDataBaseManagerPrivate()
     {
+        if (downloadLocalDatabaseThread) {
+            downloadLocalDatabaseThread->quit();
+            downloadLocalDatabaseThread->wait();
+            delete downloadLocalDatabaseThread;
+        }
         saveConfig();
     }
 
@@ -77,6 +83,7 @@ public:
     uint mSecondToStartRefreshing;
     bool mDataBaseOk;
     bool mDownloadProgress;
+    QPointer<WebEngineViewer::DownloadLocalDatabaseThread> downloadLocalDatabaseThread;
     LocalDataBaseManager *q;
 };
 
@@ -117,13 +124,13 @@ void LocalDataBaseManagerPrivate::saveConfig()
 void LocalDataBaseManager::downloadDataBase(const QString &clientState)
 {
     setDownloadProgress(true);
-    WebEngineViewer::DownloadLocalDatabaseThread *downloadThread = new WebEngineViewer::DownloadLocalDatabaseThread;
-    downloadThread->setDatabaseFullPath(databaseFullPath());
-    downloadThread->setDataBaseState(clientState);
-    connect(downloadThread, &DownloadLocalDatabaseThread::createDataBaseFailed, this, &LocalDataBaseManager::slotCreateDataBaseFailed);
-    connect(downloadThread, &DownloadLocalDatabaseThread::createDataBaseFinished, this, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
-    connect(downloadThread, &DownloadLocalDatabaseThread::finished, downloadThread, &DownloadLocalDatabaseThread::deleteLater);
-    downloadThread->start();
+    d->downloadLocalDatabaseThread = new WebEngineViewer::DownloadLocalDatabaseThread;
+    d->downloadLocalDatabaseThread->setDatabaseFullPath(databaseFullPath());
+    d->downloadLocalDatabaseThread->setDataBaseState(clientState);
+    connect(d->downloadLocalDatabaseThread, &DownloadLocalDatabaseThread::createDataBaseFailed, this, &LocalDataBaseManager::slotCreateDataBaseFailed);
+    connect(d->downloadLocalDatabaseThread, &DownloadLocalDatabaseThread::createDataBaseFinished, this, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
+    connect(d->downloadLocalDatabaseThread, &DownloadLocalDatabaseThread::finished, d->downloadLocalDatabaseThread, &DownloadLocalDatabaseThread::deleteLater);
+    d->downloadLocalDatabaseThread->start();
 }
 
 void LocalDataBaseManager::slotCreateDataBaseFailed()
