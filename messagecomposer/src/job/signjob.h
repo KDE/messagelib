@@ -49,7 +49,7 @@ class MESSAGECOMPOSER_EXPORT SignJob : public ContentJobBase
     Q_OBJECT
 
 public:
-    explicit SignJob(QObject *parent = Q_NULLPTR);
+    explicit SignJob(QObject *parent = nullptr);
     virtual ~SignJob();
 
     void setContent(KMime::Content *content);

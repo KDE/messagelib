@@ -32,14 +32,14 @@ class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSend : public QObject
 {
     Q_OBJECT
 public:
-    explicit PluginEditorCheckBeforeSend(QObject *parent = Q_NULLPTR);
+    explicit PluginEditorCheckBeforeSend(QObject *parent = nullptr);
     ~PluginEditorCheckBeforeSend();
 
     virtual PluginEditorCheckBeforeSendInterface *createInterface(QObject *parent) = 0;
 
     virtual bool hasConfigureDialog() const;
 
-    virtual void showConfigureDialog(QWidget *parent = Q_NULLPTR);
+    virtual void showConfigureDialog(QWidget *parent = nullptr);
 
     void emitConfigChanged();
 

@@ -31,7 +31,7 @@ class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObje
 {
     Q_OBJECT
 public:
-    explicit NetworkPluginUrlInterceptorInterface(QObject *parent = Q_NULLPTR);
+    explicit NetworkPluginUrlInterceptorInterface(QObject *parent = nullptr);
     ~NetworkPluginUrlInterceptorInterface();
 
     virtual void createActions(KActionCollection *ac);

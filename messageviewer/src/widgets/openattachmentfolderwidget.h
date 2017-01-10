@@ -29,7 +29,7 @@ class OpenAttachmentFolderWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit OpenAttachmentFolderWidget(QWidget *parent = Q_NULLPTR);
+    explicit OpenAttachmentFolderWidget(QWidget *parent = nullptr);
     ~OpenAttachmentFolderWidget();
 
     void setFolder(const QUrl &url);

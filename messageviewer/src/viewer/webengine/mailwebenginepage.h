@@ -28,8 +28,8 @@ class MESSAGEVIEWER_EXPORT MailWebEnginePage : public WebEngineViewer::WebEngine
 {
     Q_OBJECT
 public:
-    explicit MailWebEnginePage(QObject *parent = Q_NULLPTR);
-    explicit MailWebEnginePage(QWebEngineProfile *profile, QObject *parent = Q_NULLPTR);
+    explicit MailWebEnginePage(QObject *parent = nullptr);
+    explicit MailWebEnginePage(QWebEngineProfile *profile, QObject *parent = nullptr);
     ~MailWebEnginePage();
 
     void setPrintElementBackground(bool printElementBackground);

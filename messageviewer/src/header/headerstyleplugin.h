@@ -36,12 +36,12 @@ class MESSAGEVIEWER_EXPORT HeaderStylePlugin : public QObject
 {
     Q_OBJECT
 public:
-    explicit HeaderStylePlugin(QObject *parent = Q_NULLPTR);
+    explicit HeaderStylePlugin(QObject *parent = nullptr);
     ~HeaderStylePlugin();
 
     virtual HeaderStyle *headerStyle() const = 0;
     virtual HeaderStrategy *headerStrategy() const = 0;
-    virtual HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent = Q_NULLPTR) = 0;
+    virtual HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent = nullptr) = 0;
     virtual QString name() const = 0;
     virtual bool hasMargin() const;
     virtual QString alignment() const;

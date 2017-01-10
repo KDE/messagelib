@@ -33,8 +33,8 @@ class ContentJobBasePrivate : public JobBasePrivate
 public:
     explicit ContentJobBasePrivate(ContentJobBase *qq)
         : JobBasePrivate(qq)
-        , resultContent(Q_NULLPTR)
-        , extraContent(Q_NULLPTR)
+        , resultContent(nullptr)
+        , extraContent(nullptr)
     {
     }
 

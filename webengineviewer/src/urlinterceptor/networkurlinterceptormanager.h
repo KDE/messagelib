@@ -36,7 +36,7 @@ class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptorManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit NetworkUrlInterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = Q_NULLPTR);
+    explicit NetworkUrlInterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = nullptr);
     ~NetworkUrlInterceptorManager();
 
     QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;

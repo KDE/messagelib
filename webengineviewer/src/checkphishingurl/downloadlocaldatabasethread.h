@@ -29,7 +29,7 @@ class WEBENGINEVIEWER_EXPORT DownloadLocalDatabaseThread : public QThread
 {
     Q_OBJECT
 public:
-    explicit DownloadLocalDatabaseThread(QObject *parent = Q_NULLPTR);
+    explicit DownloadLocalDatabaseThread(QObject *parent = nullptr);
     ~DownloadLocalDatabaseThread();
 
     void setDataBaseState(const QString &value);

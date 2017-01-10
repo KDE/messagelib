@@ -33,7 +33,7 @@ class MESSAGEVIEWER_EXPORT HeaderStyleMenuManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit HeaderStyleMenuManager(KActionCollection *ac, QObject *parent = Q_NULLPTR);
+    explicit HeaderStyleMenuManager(KActionCollection *ac, QObject *parent = nullptr);
     ~HeaderStyleMenuManager();
 
     KActionMenu *menu() const;

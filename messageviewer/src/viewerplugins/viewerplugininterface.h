@@ -34,7 +34,7 @@ class MESSAGEVIEWER_EXPORT ViewerPluginInterface : public QObject
 {
     Q_OBJECT
 public:
-    explicit ViewerPluginInterface(QObject *parent = Q_NULLPTR);
+    explicit ViewerPluginInterface(QObject *parent = nullptr);
     ~ViewerPluginInterface();
     enum SpecificFeatureType {
         None = 0,

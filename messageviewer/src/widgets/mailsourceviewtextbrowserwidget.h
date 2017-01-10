@@ -69,7 +69,7 @@ class MailSourceViewTextBrowserWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MailSourceViewTextBrowserWidget(QWidget *parent = Q_NULLPTR);
+    explicit MailSourceViewTextBrowserWidget(QWidget *parent = nullptr);
 
     void setText(const QString &text);
     void setPlainText(const QString &text);
@@ -88,7 +88,7 @@ class MailSourceViewTextBrowser: public QPlainTextEdit
 {
     Q_OBJECT
 public:
-    explicit MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent = Q_NULLPTR);
+    explicit MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent = nullptr);
 protected:
     void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;
 Q_SIGNALS:

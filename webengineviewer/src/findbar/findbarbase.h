@@ -36,7 +36,7 @@ class WEBENGINEVIEWER_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT
 public:
-    explicit FindBarBase(QWidget *parent = Q_NULLPTR);
+    explicit FindBarBase(QWidget *parent = nullptr);
     virtual ~FindBarBase();
 
     QString text() const;

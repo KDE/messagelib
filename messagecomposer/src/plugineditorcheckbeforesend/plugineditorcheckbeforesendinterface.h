@@ -32,7 +32,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendInterface : public QObje
 {
     Q_OBJECT
 public:
-    explicit PluginEditorCheckBeforeSendInterface(QObject *parent = Q_NULLPTR);
+    explicit PluginEditorCheckBeforeSendInterface(QObject *parent = nullptr);
     ~PluginEditorCheckBeforeSendInterface();
 
     virtual bool exec(const MessageComposer::PluginEditorCheckBeforeSendParams &params) = 0;

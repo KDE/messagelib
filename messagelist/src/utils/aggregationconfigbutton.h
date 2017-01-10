@@ -45,7 +45,7 @@ public:
     * @param aggregationComboBox Optional AggregationComboBox to be kept in sync
     * with changes made by the configure dialog.
     */
-    explicit AggregationConfigButton(QWidget *parent, const AggregationComboBox *aggregationComboBox = Q_NULLPTR);
+    explicit AggregationConfigButton(QWidget *parent, const AggregationComboBox *aggregationComboBox = nullptr);
     ~AggregationConfigButton();
 
 Q_SIGNALS:

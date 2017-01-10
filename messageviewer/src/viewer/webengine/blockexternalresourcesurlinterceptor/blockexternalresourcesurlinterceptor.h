@@ -27,7 +27,7 @@ class BlockExternalResourcesUrlInterceptor : public WebEngineViewer::NetworkPlug
 {
     Q_OBJECT
 public:
-    explicit BlockExternalResourcesUrlInterceptor(QObject *parent = Q_NULLPTR);
+    explicit BlockExternalResourcesUrlInterceptor(QObject *parent = nullptr);
     ~BlockExternalResourcesUrlInterceptor();
 
     bool interceptRequest(QWebEngineUrlRequestInfo &info) Q_DECL_OVERRIDE;

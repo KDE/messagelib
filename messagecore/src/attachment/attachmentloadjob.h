@@ -44,7 +44,7 @@ public:
      *
      * @param parent The parent object.
      */
-    explicit AttachmentLoadJob(QObject *parent = Q_NULLPTR);
+    explicit AttachmentLoadJob(QObject *parent = nullptr);
 
     /**
      * Destroys the attachment load job.

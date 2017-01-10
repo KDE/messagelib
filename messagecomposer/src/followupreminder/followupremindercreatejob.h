@@ -34,7 +34,7 @@ class MESSAGECOMPOSER_EXPORT FollowupReminderCreateJob : public KJob
 {
     Q_OBJECT
 public:
-    explicit FollowupReminderCreateJob(QObject *parent = Q_NULLPTR);
+    explicit FollowupReminderCreateJob(QObject *parent = nullptr);
     ~FollowupReminderCreateJob();
 
     void setFollowUpReminderDate(const QDate &date);

@@ -61,7 +61,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInterface : public PimCommon::AbstractG
 {
     Q_OBJECT
 public:
-    explicit PluginEditorInterface(QObject *parent = Q_NULLPTR);
+    explicit PluginEditorInterface(QObject *parent = nullptr);
     ~PluginEditorInterface();
 
     void setActionType(ActionType type);

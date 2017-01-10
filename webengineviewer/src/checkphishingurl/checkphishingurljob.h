@@ -34,7 +34,7 @@ class WEBENGINEVIEWER_EXPORT CheckPhishingUrlJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit CheckPhishingUrlJob(QObject *parent = Q_NULLPTR);
+    explicit CheckPhishingUrlJob(QObject *parent = nullptr);
     ~CheckPhishingUrlJob();
 
     void setUrl(const QUrl &url);

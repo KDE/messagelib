@@ -32,12 +32,12 @@ class MESSAGEVIEWER_EXPORT ViewerPlugin : public QObject
 {
     Q_OBJECT
 public:
-    explicit ViewerPlugin(QObject *parent = Q_NULLPTR);
+    explicit ViewerPlugin(QObject *parent = nullptr);
     ~ViewerPlugin();
 
     virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent, KActionCollection *ac) = 0;
     virtual QString viewerPluginName() const = 0;
-    virtual void showConfigureDialog(QWidget *parent = Q_NULLPTR);
+    virtual void showConfigureDialog(QWidget *parent = nullptr);
     virtual bool hasConfigureDialog() const;
 
     void setIsEnabled(bool enabled);

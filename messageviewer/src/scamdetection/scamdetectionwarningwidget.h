@@ -32,7 +32,7 @@ class MESSAGEVIEWER_EXPORT ScamDetectionWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit ScamDetectionWarningWidget(QWidget *parent = Q_NULLPTR);
+    explicit ScamDetectionWarningWidget(QWidget *parent = nullptr);
     ~ScamDetectionWarningWidget();
 
     void setUseInTestApps(bool b);

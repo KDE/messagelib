@@ -51,7 +51,7 @@ public:
         RiceCompression = 1
     };
 
-    explicit CreatePhishingUrlDataBaseJob(QObject *parent = Q_NULLPTR);
+    explicit CreatePhishingUrlDataBaseJob(QObject *parent = nullptr);
     ~CreatePhishingUrlDataBaseJob();
 
     void start();

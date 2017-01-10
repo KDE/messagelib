@@ -47,8 +47,8 @@ namespace MessageViewer
 class TeeHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
-    explicit TeeHtmlWriter(HtmlWriter *writer1 = Q_NULLPTR,
-                           MimeTreeParser::HtmlWriter *writer2 = Q_NULLPTR);
+    explicit TeeHtmlWriter(HtmlWriter *writer1 = nullptr,
+                           MimeTreeParser::HtmlWriter *writer2 = nullptr);
     virtual ~TeeHtmlWriter();
 
     void addHtmlWriter(HtmlWriter *writer);

@@ -35,7 +35,7 @@ class MailSourceWebEngineViewer : public QDialog
 {
     Q_OBJECT
 public:
-    explicit MailSourceWebEngineViewer(QWidget *parent = Q_NULLPTR);
+    explicit MailSourceWebEngineViewer(QWidget *parent = nullptr);
     ~MailSourceWebEngineViewer();
 
     void setRawSource(const QString &source);

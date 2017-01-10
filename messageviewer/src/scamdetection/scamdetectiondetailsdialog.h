@@ -34,7 +34,7 @@ class ScamDetectionDetailsDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit ScamDetectionDetailsDialog(QWidget *parent = Q_NULLPTR);
+    explicit ScamDetectionDetailsDialog(QWidget *parent = nullptr);
     ~ScamDetectionDetailsDialog();
 
     void setDetails(const QString &details);

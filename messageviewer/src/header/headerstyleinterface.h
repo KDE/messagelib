@@ -35,7 +35,7 @@ class MESSAGEVIEWER_EXPORT HeaderStyleInterface : public QObject
 {
     Q_OBJECT
 public:
-    explicit HeaderStyleInterface(MessageViewer::HeaderStylePlugin *, QObject *parent = Q_NULLPTR);
+    explicit HeaderStyleInterface(MessageViewer::HeaderStylePlugin *, QObject *parent = nullptr);
     virtual ~HeaderStyleInterface();
     QList<KToggleAction * > action() const;
     virtual void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) = 0;

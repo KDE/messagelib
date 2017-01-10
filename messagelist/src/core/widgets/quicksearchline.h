@@ -36,7 +36,7 @@ class MESSAGELIST_EXPORT QuickSearchLine : public QWidget
 {
     Q_OBJECT
 public:
-    explicit QuickSearchLine(QWidget *parent = Q_NULLPTR);
+    explicit QuickSearchLine(QWidget *parent = nullptr);
     ~QuickSearchLine();
 
     enum SearchOption {

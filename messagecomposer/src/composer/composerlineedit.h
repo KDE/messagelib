@@ -31,7 +31,7 @@ class MESSAGECOMPOSER_EXPORT ComposerLineEdit : public KPIM::AddresseeLineEdit
     Q_OBJECT
 
 public:
-    explicit ComposerLineEdit(bool useCompletion, QWidget *parent = Q_NULLPTR);
+    explicit ComposerLineEdit(bool useCompletion, QWidget *parent = nullptr);
     ~ComposerLineEdit();
 
 Q_SIGNALS:

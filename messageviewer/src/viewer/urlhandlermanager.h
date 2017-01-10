@@ -77,12 +77,12 @@ public:
     void registerHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
     void unregisterHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
 
-    bool handleClick(const QUrl &url, ViewerPrivate *w = Q_NULLPTR) const;
-    bool handleShiftClick(const QUrl &url, ViewerPrivate *window = Q_NULLPTR) const;
-    bool handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w = Q_NULLPTR) const;
-    bool willHandleDrag(const QUrl &url, ViewerPrivate *window = Q_NULLPTR) const;
-    bool handleDrag(const QUrl &url, ViewerPrivate *window = Q_NULLPTR) const;
-    QString statusBarMessage(const QUrl &url, ViewerPrivate *w = Q_NULLPTR) const;
+    bool handleClick(const QUrl &url, ViewerPrivate *w = nullptr) const;
+    bool handleShiftClick(const QUrl &url, ViewerPrivate *window = nullptr) const;
+    bool handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w = nullptr) const;
+    bool willHandleDrag(const QUrl &url, ViewerPrivate *window = nullptr) const;
+    bool handleDrag(const QUrl &url, ViewerPrivate *window = nullptr) const;
+    QString statusBarMessage(const QUrl &url, ViewerPrivate *w = nullptr) const;
 
 private:
     typedef QVector<const MimeTreeParser::URLHandler *> HandlerList;

@@ -32,7 +32,7 @@ class MESSAGEVIEWER_EXPORT SubmittedFormWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit SubmittedFormWarningWidget(QWidget *parent = Q_NULLPTR);
+    explicit SubmittedFormWarningWidget(QWidget *parent = nullptr);
     ~SubmittedFormWarningWidget();
 
 public Q_SLOTS:

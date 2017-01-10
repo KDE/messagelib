@@ -45,7 +45,7 @@ public:
      * @param part The part of the attachment to compress.
      * @param parent The parent object.
      */
-    explicit AttachmentCompressJob(const AttachmentPart::Ptr &part, QObject *parent = Q_NULLPTR);
+    explicit AttachmentCompressJob(const AttachmentPart::Ptr &part, QObject *parent = nullptr);
 
     /**
      * Destroys the attachment compress job.

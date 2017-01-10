@@ -29,7 +29,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditor : public PimCommon::AbstractGenericPlu
 {
     Q_OBJECT
 public:
-    explicit PluginEditor(QObject *parent = Q_NULLPTR);
+    explicit PluginEditor(QObject *parent = nullptr);
     ~PluginEditor();
     void setOrder(int order);
     int order() const;

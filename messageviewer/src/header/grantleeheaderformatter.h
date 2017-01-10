@@ -38,8 +38,8 @@ public:
     struct GrantleeHeaderFormatterSettings {
         GrantleeHeaderFormatterSettings()
             : isPrinting(false),
-              style(Q_NULLPTR),
-              message(Q_NULLPTR),
+              style(nullptr),
+              message(nullptr),
               showMailAction(true)
         {
 

@@ -49,7 +49,7 @@ class ConfigureAggregationsDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit ConfigureAggregationsDialog(QWidget *parent = Q_NULLPTR);
+    explicit ConfigureAggregationsDialog(QWidget *parent = nullptr);
     ~ConfigureAggregationsDialog();
 
     void selectAggregation(const QString &aggregationId);

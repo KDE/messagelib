@@ -32,7 +32,7 @@ class MESSAGELIST_EXPORT SearchLineStatus : public PimCommon::LineEditWithComple
 {
     Q_OBJECT
 public:
-    explicit SearchLineStatus(QWidget *parent = Q_NULLPTR);
+    explicit SearchLineStatus(QWidget *parent = nullptr);
     ~SearchLineStatus();
 
     void setLocked(bool b);

@@ -105,7 +105,7 @@ public:
     * @param actionCollection the action collection where the widget's actions will belong to
     * @param f window flags
     */
-    explicit Viewer(QWidget *parent, QWidget *widget = Q_NULLPTR, KActionCollection *actionCollection = Q_NULLPTR);
+    explicit Viewer(QWidget *parent, QWidget *widget = nullptr, KActionCollection *actionCollection = nullptr);
     virtual ~Viewer();
 
     /**

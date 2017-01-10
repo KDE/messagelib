@@ -31,12 +31,12 @@ class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptor : public QObject
 {
     Q_OBJECT
 public:
-    explicit NetworkPluginUrlInterceptor(QObject *parent = Q_NULLPTR);
+    explicit NetworkPluginUrlInterceptor(QObject *parent = nullptr);
     ~NetworkPluginUrlInterceptor();
-    virtual NetworkPluginUrlInterceptorInterface *createInterface(QWebEngineView *webEngine, QObject *parent = Q_NULLPTR) = 0;
+    virtual NetworkPluginUrlInterceptorInterface *createInterface(QWebEngineView *webEngine, QObject *parent = nullptr) = 0;
 
     virtual bool hasConfigureDialog() const;
-    virtual void showConfigureDialog(QWidget *parent = Q_NULLPTR);
+    virtual void showConfigureDialog(QWidget *parent = nullptr);
 
     void setIsEnabled(bool enabled);
     bool isEnabled() const;

@@ -35,7 +35,7 @@ class AttachmentEditJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit AttachmentEditJob(QObject *parent = Q_NULLPTR);
+    explicit AttachmentEditJob(QObject *parent = nullptr);
     ~AttachmentEditJob();
 
     void setMainWindow(QWidget *mainWindow);

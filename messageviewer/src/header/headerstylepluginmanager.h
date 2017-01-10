@@ -33,7 +33,7 @@ class MESSAGEVIEWER_EXPORT HeaderStylePluginManager : public QObject
 public:
     static HeaderStylePluginManager *self();
 
-    explicit HeaderStylePluginManager(QObject *parent = Q_NULLPTR);
+    explicit HeaderStylePluginManager(QObject *parent = nullptr);
     ~HeaderStylePluginManager();
 
     QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;

@@ -47,7 +47,7 @@ class MESSAGECOMPOSER_EXPORT SignatureController : public QObject
 {
     Q_OBJECT
 public:
-    explicit SignatureController(QObject *parent = Q_NULLPTR);
+    explicit SignatureController(QObject *parent = nullptr);
     ~SignatureController();
 
     void setEditor(MessageComposer::RichTextComposerNg *editor);

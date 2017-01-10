@@ -33,7 +33,7 @@ class WEBENGINEVIEWER_EXPORT SearchFullHashJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit SearchFullHashJob(QObject *parent = Q_NULLPTR);
+    explicit SearchFullHashJob(QObject *parent = nullptr);
     ~SearchFullHashJob();
 
     void start();

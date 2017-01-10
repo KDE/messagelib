@@ -45,7 +45,7 @@ class StorageModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
-    explicit StorageModel(QObject *parent = Q_NULLPTR);
+    explicit StorageModel(QObject *parent = nullptr);
     ~StorageModel();
 
     /**

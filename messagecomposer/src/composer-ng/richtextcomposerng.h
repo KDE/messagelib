@@ -38,7 +38,7 @@ class MESSAGECOMPOSER_EXPORT RichTextComposerNg : public KPIMTextEdit::RichTextC
 {
     Q_OBJECT
 public:
-    explicit RichTextComposerNg(QWidget *parent = Q_NULLPTR);
+    explicit RichTextComposerNg(QWidget *parent = nullptr);
     ~RichTextComposerNg();
 
     PimCommon::AutoCorrection *autocorrection() const;

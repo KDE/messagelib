@@ -39,7 +39,7 @@ public:
         Unknown = 2
     };
 
-    explicit CheckPhishingUrlCache(QObject *parent = Q_NULLPTR);
+    explicit CheckPhishingUrlCache(QObject *parent = nullptr);
     ~CheckPhishingUrlCache();
 
     /**

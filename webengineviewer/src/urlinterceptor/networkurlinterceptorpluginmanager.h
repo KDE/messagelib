@@ -33,7 +33,7 @@ class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptorPluginManager : public QObject
     Q_OBJECT
 public:
     static NetworkUrlInterceptorPluginManager *self();
-    explicit NetworkUrlInterceptorPluginManager(QObject *parent = Q_NULLPTR);
+    explicit NetworkUrlInterceptorPluginManager(QObject *parent = nullptr);
     ~NetworkUrlInterceptorPluginManager();
 
     QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;

@@ -30,7 +30,7 @@ class FindBarSourceView : public WebEngineViewer::FindBarBase
     Q_OBJECT
 
 public:
-    explicit FindBarSourceView(QPlainTextEdit *view, QWidget *parent = Q_NULLPTR);
+    explicit FindBarSourceView(QPlainTextEdit *view, QWidget *parent = nullptr);
     ~FindBarSourceView();
 
 private:

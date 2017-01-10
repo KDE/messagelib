@@ -31,7 +31,7 @@ class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptor : public QWebEngineUrlRequest
 {
     Q_OBJECT
 public:
-    explicit NetworkUrlInterceptor(QObject *parent = Q_NULLPTR);
+    explicit NetworkUrlInterceptor(QObject *parent = nullptr);
     ~NetworkUrlInterceptor();
 
     void interceptRequest(QWebEngineUrlRequestInfo &info) Q_DECL_OVERRIDE;

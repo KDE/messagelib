@@ -35,7 +35,7 @@ class WEBENGINEVIEWER_EXPORT WebEngineAccessKey : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent = Q_NULLPTR);
+    explicit WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent = nullptr);
     ~WebEngineAccessKey();
 
     void setActionCollection(KActionCollection *ac);

@@ -47,7 +47,7 @@ class MESSAGELIST_EXPORT SearchCollectionIndexingWarning : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit SearchCollectionIndexingWarning(QWidget *parent = Q_NULLPTR);
+    explicit SearchCollectionIndexingWarning(QWidget *parent = nullptr);
     ~SearchCollectionIndexingWarning();
 
     void setCollection(const Akonadi::Collection &collection);

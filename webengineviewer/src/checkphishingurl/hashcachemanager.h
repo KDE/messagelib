@@ -36,7 +36,7 @@ public:
         MalWare = 1,
         Unknown = 2
     };
-    explicit HashCacheManager(QObject *parent = Q_NULLPTR);
+    explicit HashCacheManager(QObject *parent = nullptr);
     ~HashCacheManager();
 
     static HashCacheManager *self();

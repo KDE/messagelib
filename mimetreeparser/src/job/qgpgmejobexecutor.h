@@ -47,7 +47,7 @@ class QGpgMEJobExecutor : public QObject
 {
     Q_OBJECT
 public:
-    explicit QGpgMEJobExecutor(QObject *parent = Q_NULLPTR);
+    explicit QGpgMEJobExecutor(QObject *parent = nullptr);
 
     GpgME::VerificationResult exec(QGpgME::VerifyDetachedJob *job,
                                    const QByteArray &signature,

@@ -40,7 +40,7 @@ public:
     * @param parent The parent object.
     */
 
-    explicit AttachmentFromFolderJob(const QUrl &url = QUrl(), QObject *parent = Q_NULLPTR);
+    explicit AttachmentFromFolderJob(const QUrl &url = QUrl(), QObject *parent = nullptr);
 
     /**
     * Destroys the job.

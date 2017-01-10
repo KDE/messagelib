@@ -29,7 +29,7 @@ class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidget : public
 {
     Q_OBJECT
 public:
-    explicit NetworkPluginUrlInterceptorConfigureWidget(QWidget *parent = Q_NULLPTR);
+    explicit NetworkPluginUrlInterceptorConfigureWidget(QWidget *parent = nullptr);
     ~NetworkPluginUrlInterceptorConfigureWidget();
 
     virtual void loadSettings() = 0;

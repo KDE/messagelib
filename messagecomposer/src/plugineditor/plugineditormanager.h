@@ -32,7 +32,7 @@ class MESSAGECOMPOSER_EXPORT PluginEditorManager : public QObject
     Q_OBJECT
 public:
 
-    explicit PluginEditorManager(QObject *parent = Q_NULLPTR);
+    explicit PluginEditorManager(QObject *parent = nullptr);
     ~PluginEditorManager();
 
     static PluginEditorManager *self();

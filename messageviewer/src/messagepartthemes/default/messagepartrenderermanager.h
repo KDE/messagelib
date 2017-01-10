@@ -36,7 +36,7 @@ class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit MessagePartRendererManager(QObject *parent = Q_NULLPTR);
+    explicit MessagePartRendererManager(QObject *parent = nullptr);
     ~MessagePartRendererManager();
     static MessagePartRendererManager *self();
 

@@ -34,7 +34,7 @@ class WEBENGINEVIEWER_EXPORT InterceptorManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit InterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = Q_NULLPTR);
+    explicit InterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = nullptr);
     ~InterceptorManager();
     void addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;

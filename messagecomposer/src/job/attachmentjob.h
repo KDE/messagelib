@@ -37,7 +37,7 @@ class MESSAGECOMPOSER_EXPORT AttachmentJob : public ContentJobBase
     Q_OBJECT
 
 public:
-    explicit AttachmentJob(MessageCore::AttachmentPart::Ptr part, QObject *parent = Q_NULLPTR);
+    explicit AttachmentJob(MessageCore::AttachmentPart::Ptr part, QObject *parent = nullptr);
     virtual ~AttachmentJob();
 
     MessageCore::AttachmentPart::Ptr attachmentPart() const;

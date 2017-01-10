@@ -32,7 +32,7 @@ class MESSAGEVIEWER_EXPORT ViewerPluginManager : public QObject
     Q_OBJECT
 public:
 
-    explicit ViewerPluginManager(QObject *parent = Q_NULLPTR);
+    explicit ViewerPluginManager(QObject *parent = nullptr);
     ~ViewerPluginManager();
     static ViewerPluginManager *self();
 

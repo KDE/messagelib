@@ -63,12 +63,12 @@ public:
         if (mEnabled) {
             parentId = mParentCache.value(mi->itemId(), -1);
             if (parentId > -1) {
-                return mItemCache.value(parentId, Q_NULLPTR);
+                return mItemCache.value(parentId, nullptr);
             } else {
-                return Q_NULLPTR;
+                return nullptr;
             }
         } else {
-            return Q_NULLPTR;
+            return nullptr;
         }
     }
 

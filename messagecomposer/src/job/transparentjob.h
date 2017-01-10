@@ -38,7 +38,7 @@ class MESSAGECOMPOSER_EXPORT TransparentJob : public MessageComposer::ContentJob
     Q_OBJECT
 
 public:
-    explicit TransparentJob(QObject *parent = Q_NULLPTR);
+    explicit TransparentJob(QObject *parent = nullptr);
     virtual ~TransparentJob();
 
     void setContent(KMime::Content *content);

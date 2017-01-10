@@ -34,7 +34,7 @@ class MESSAGECOMPOSER_EXPORT TextPart : public MessagePart
     Q_OBJECT
 
 public:
-    explicit TextPart(QObject *parent = Q_NULLPTR);
+    explicit TextPart(QObject *parent = nullptr);
     virtual ~TextPart();
 
     // default true

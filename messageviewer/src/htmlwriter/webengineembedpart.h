@@ -26,7 +26,7 @@ class WebEngineEmbedPart : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebEngineEmbedPart(QObject *parent = Q_NULLPTR);
+    explicit WebEngineEmbedPart(QObject *parent = nullptr);
     ~WebEngineEmbedPart();
 
     void clear();

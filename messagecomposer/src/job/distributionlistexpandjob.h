@@ -41,7 +41,7 @@ public:
      * @param name The name of the distribution list to expand.
      * @param parent The parent object.
      */
-    explicit DistributionListExpandJob(const QString &name, QObject *parent = Q_NULLPTR);
+    explicit DistributionListExpandJob(const QString &name, QObject *parent = nullptr);
 
     /**
      * Destroys the distribution list expand job.

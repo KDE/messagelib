@@ -30,7 +30,7 @@ class SaveContactPreferenceJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit SaveContactPreferenceJob(const QString &email, const Kleo::KeyResolver::ContactPreferences &pref, QObject *parent = Q_NULLPTR);
+    explicit SaveContactPreferenceJob(const QString &email, const Kleo::KeyResolver::ContactPreferences &pref, QObject *parent = nullptr);
     ~SaveContactPreferenceJob();
     void start();
 

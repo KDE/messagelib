@@ -36,7 +36,7 @@ class WebEnginePartHtmlWriter : public QObject, public MimeTreeParser::HtmlWrite
 {
     Q_OBJECT
 public:
-    explicit WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent = Q_NULLPTR);
+    explicit WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent = nullptr);
     ~WebEnginePartHtmlWriter();
 
     void begin(const QString &cssDefs) Q_DECL_OVERRIDE;

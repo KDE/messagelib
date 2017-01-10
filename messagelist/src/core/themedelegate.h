@@ -84,7 +84,7 @@ public:
     * Returns a heuristic sizeHint() for the specified item type and column.
     * The hint is based on the contents of the theme (and not of any message or group header).
     */
-    QSize sizeHintForItemTypeAndColumn(Item::Type type, int column, const Item *item = Q_NULLPTR) const;
+    QSize sizeHintForItemTypeAndColumn(Item::Type type, int column, const Item *item = nullptr) const;
 
     /**
     * Performs a hit test on the specified viewport point.

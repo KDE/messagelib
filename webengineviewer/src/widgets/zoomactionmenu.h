@@ -30,7 +30,7 @@ class WEBENGINEVIEWER_EXPORT ZoomActionMenu : public KActionMenu
 {
     Q_OBJECT
 public:
-    explicit ZoomActionMenu(QObject *parent = Q_NULLPTR);
+    explicit ZoomActionMenu(QObject *parent = nullptr);
     ~ZoomActionMenu();
 
     void createZoomActions();

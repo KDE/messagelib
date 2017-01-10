@@ -285,13 +285,13 @@ class MIMETREEPARSER_EXPORT ObjectTreeParser
 
 public:
     explicit ObjectTreeParser(Interface::ObjectTreeSource *source,
-                              NodeHelper *nodeHelper = Q_NULLPTR,
+                              NodeHelper *nodeHelper = nullptr,
                               bool showOneMimePart = false,
-                              const AttachmentStrategy *attachmentStrategy = Q_NULLPTR);
+                              const AttachmentStrategy *attachmentStrategy = nullptr);
 
     explicit ObjectTreeParser(const ObjectTreeParser *topLevelParser,
                               bool showOneMimePart = false,
-                              const AttachmentStrategy *attachmentStrategy = Q_NULLPTR);
+                              const AttachmentStrategy *attachmentStrategy = nullptr);
     virtual ~ObjectTreeParser();
 
     void setAllowAsync(bool allow);

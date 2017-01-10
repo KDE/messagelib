@@ -34,7 +34,7 @@ class MESSAGEVIEWER_EXPORT ViewerPluginToolManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit ViewerPluginToolManager(QWidget *parentWidget, QObject *parent = Q_NULLPTR);
+    explicit ViewerPluginToolManager(QWidget *parentWidget, QObject *parent = nullptr);
     ~ViewerPluginToolManager();
 
     void closeAllTools();

@@ -31,7 +31,7 @@ class MESSAGEVIEWER_EXPORT ScamExpandUrlJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit ScamExpandUrlJob(QObject *parent = Q_NULLPTR);
+    explicit ScamExpandUrlJob(QObject *parent = nullptr);
     ~ScamExpandUrlJob();
 
     void expandedUrl(const QUrl &url);
