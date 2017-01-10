@@ -29,6 +29,7 @@ public:
     ~ViewerGrantleeThemeSupportTest();
 private Q_SLOTS:
     void initTestCase();
+    void shouldUpdateThemeMenu();
 };
 
 #endif // VIEWERGRANTLEETHEMESUPPORTTEST_H

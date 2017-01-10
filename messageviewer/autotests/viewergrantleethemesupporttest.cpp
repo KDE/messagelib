@@ -16,6 +16,9 @@
 */
 
 #include "viewergrantleethemesupporttest.h"
+#include "messageviewer/viewer.h"
+
+#include <KActionCollection>
 #include <QStandardPaths>
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -40,6 +43,13 @@ void ViewerGrantleeThemeSupportTest::initTestCase()
     KConfigGroup cg(KSharedConfig::openConfig(), "Icons");
     cg.writeEntry("Theme", "dummyTheme");
     qputenv("XDG_DATA_DIRS", GRANTLEETHEME_DATA_DIR);
+}
+
+void ViewerGrantleeThemeSupportTest::shouldUpdateThemeMenu()
+{
+    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
+    viewer->show();
+    QTest::qWaitForWindowExposed(viewer);
 }
 
 
