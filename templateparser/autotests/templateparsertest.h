@@ -47,6 +47,9 @@ private Q_SLOTS:
 
     void test_processWithTemplatesForContent();
     void test_processWithTemplatesForContent_data();
+
+    void test_processWithTemplatesForContentOtherTimeZone();
+    void test_processWithTemplatesForContentOtherTimeZone_data();
 };
 
 #endif

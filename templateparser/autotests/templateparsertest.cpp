@@ -46,7 +46,7 @@ void TemplateParserTester::test_convertedHtml_data()
 
 void TemplateParserTester::initTestCase()
 {
-    QLocale::setDefault(QLocale::Ukrainian);
+    //QLocale::setDefault(QLocale::Ukrainian);
 }
 
 void TemplateParserTester::test_convertedHtml()
@@ -186,16 +186,15 @@ void TemplateParserTester::test_processWithTemplatesForContent_data()
     QTest::addColumn<QString>("mailFileName");
     QTest::addColumn<QString>("expectedBody");
     QTest::addColumn<bool>("hasDictionary");
-
-    qDebug() << "QLocale::system() : "<<QLocale::system().nativeCountryName();
+    qputenv("TZ", "Europe/Paris");
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const QString file = QStringLiteral("plain-message.mbox");
     const QString fileName = QString(dir.path() + QLatin1Char('/') +  file);
-    QTest::newRow("%OTIME") << "%OTIME" << fileName << QLocale::system().toString(QTime(11, 30, 27), QLocale::ShortFormat) << false;
-    QTest::newRow("%OTIMELONG") << "%OTIMELONG" << fileName << QLocale::system().toString(QTime(11, 30, 27), QLocale::LongFormat) << false;
-    QTest::newRow("%OTIMELONGEN") << "%OTIMELONGEN" << fileName << QLocale(QLocale::C).toString(QTime(11, 30, 27), QLocale::LongFormat) << false;
-    QTest::newRow("%ODATE") << "%ODATE" << fileName << QLocale::system().toString(QDate(2011, 8, 7), QLocale::LongFormat) << false;
-    QTest::newRow("%ODATESHORT") << "%ODATESHORT" << fileName << QLocale::system().toString(QDate(2011, 8, 7), QLocale::ShortFormat) << false;
+    QTest::newRow("%OTIME") << "%OTIME" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::ShortFormat) << false;
+    QTest::newRow("%OTIMELONG") << "%OTIMELONG" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) << false;
+    QTest::newRow("%OTIMELONGEN") << "%OTIMELONGEN" << fileName << QLocale(QLocale::C).toString(QTime(8, 0, 27), QLocale::LongFormat) << false;
+    QTest::newRow("%ODATE") << "%ODATE" << fileName << QLocale().toString(QDate(2011, 8, 7), QLocale::LongFormat) << false;
+    QTest::newRow("%ODATESHORT") << "%ODATESHORT" << fileName << QLocale().toString(QDate(2011, 8, 7), QLocale::ShortFormat) << false;
     QTest::newRow("%ODATEEN") << "%ODATEEN" << fileName << QLocale::c().toString(QDate(2011, 8, 7), QLocale::LongFormat) << false;
     QTest::newRow("%OFULLSUBJ") << "%OFULLSUBJ" << fileName << "Plain Message Test" << false;
     QTest::newRow("%OFULLSUBJECT") << "%OFULLSUBJECT" << fileName << "Plain Message Test" << false;
@@ -208,13 +207,13 @@ void TemplateParserTester::test_processWithTemplatesForContent_data()
     QTest::newRow("%OTONAME") << "%OTONAME" << fileName << "kde" << false;
     QTest::newRow("%OTOLNAME") << "%OTOLNAME" << fileName << "" << false;
     QTest::newRow("%OTOLIST") << "%OTOLIST" << fileName << "kde <foo@yoohoo.org>" << false;
-    QTest::newRow("%ODOW") << "%ODOW" << fileName << QLocale::system().dayName(7, QLocale::LongFormat) << false;
+    QTest::newRow("%ODOW") << "%ODOW" << fileName << QLocale().dayName(7, QLocale::LongFormat) << false;
     QTest::newRow("%BLANK") << "%BLANK" << fileName << "" << false;
     QTest::newRow("%NOP") << "%NOP" << fileName << "" << false;
     QTest::newRow("%DICTIONARYLANGUAGE=\"en\"") << "%DICTIONARYLANGUAGE=\"en\"" << fileName << "" << true;
     QTest::newRow("%DICTIONARYLANGUAGE=\"\"") << "%DICTIONARYLANGUAGE=\"\"" << fileName << "" << false;
-    QTest::newRow("%OTIMELONG %OFULLSUBJECT") << "%OTIMELONG %OFULLSUBJECT" << fileName << QLocale::system().toString(QTime(11, 30, 27), QLocale::LongFormat) + QStringLiteral(" Plain Message Test") << false;
-    QTest::newRow("%OTIMELONG\n%OFULLSUBJECT") << "%OTIMELONG\n%OFULLSUBJECT" << fileName << QLocale::system().toString(QTime(11, 30, 27), QLocale::LongFormat) + QStringLiteral("\nPlain Message Test") << false;
+    QTest::newRow("%OTIMELONG %OFULLSUBJECT") << "%OTIMELONG %OFULLSUBJECT" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + QStringLiteral(" Plain Message Test") << false;
+    QTest::newRow("%OTIMELONG\n%OFULLSUBJECT") << "%OTIMELONG\n%OFULLSUBJECT" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + QStringLiteral("\nPlain Message Test") << false;
     QTest::newRow("%REM=\"sdfsfsdsdfsdf\"") << "%REM=\"sdfsfsdsdfsdf\"" << fileName << "" << false;
     QTest::newRow("%CLEAR") << "%CLEAR" << fileName << "" << false;
     QTest::newRow("FOO foo") << "FOO foo" << fileName << "FOO foo" << false;
@@ -238,12 +237,51 @@ void TemplateParserTester::test_processWithTemplatesForContent_data()
     //Test bug 308444
     const QString file2 = QStringLiteral("plain-message-timezone.mbox");
     const QString fileName2 = QString(dir.path() + QLatin1Char('/') +  file2);
-    //QTimeZone tz("UTC+01:00");
-    QTest::newRow("bug308444-%OTIMELONG") << "%OTIMELONG" << fileName2 << QLocale::system().toString(QTime(13, 31, 25), QLocale::LongFormat) << false;
-
+    QTest::newRow("bug308444-%OTIMELONG") << "%OTIMELONG" << fileName2 << QLocale::system().toString(QTime(20, 31, 25), QLocale::LongFormat) << false;
 }
 
 void TemplateParserTester::test_processWithTemplatesForContent()
+{
+    QFETCH(QString, command);
+    QFETCH(QString, mailFileName);
+    QFETCH(QString, expectedBody);
+    QFETCH(bool, hasDictionary);
+
+    QFile mailFile(mailFileName);
+    QVERIFY(mailFile.open(QIODevice::ReadOnly));
+    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
+    QVERIFY(!mailData.isEmpty());
+    KMime::Message::Ptr msg(new KMime::Message);
+    msg->setContent(mailData);
+    msg->parse();
+
+    TemplateParser::TemplateParser parser(msg, TemplateParser::TemplateParser::Reply);
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    parser.setIdentityManager(identMan);
+    parser.setAllowDecryption(false);
+    parser.mOrigMsg = msg;
+    parser.processWithTemplate(command);
+    QCOMPARE(msg->hasHeader("X-KMail-Dictionary"), hasDictionary);
+
+    identMan->deleteLater();
+    QCOMPARE(QString::fromUtf8(msg->encodedBody()), expectedBody);
+}
+
+void TemplateParserTester::test_processWithTemplatesForContentOtherTimeZone_data()
+{
+    QTest::addColumn<QString>("command");
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("expectedBody");
+    QTest::addColumn<bool>("hasDictionary");
+    qputenv("TZ", "America/New_York");
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    //Test bug 308444
+    const QString file2 = QStringLiteral("plain-message-timezone.mbox");
+    const QString fileName2 = QString(dir.path() + QLatin1Char('/') +  file2);
+    QTest::newRow("bug308444-%OTIMELONG") << "%OTIMELONG" << fileName2 << QLocale::system().toString(QTime(14, 31, 25), QLocale::LongFormat) << false;
+}
+
+void TemplateParserTester::test_processWithTemplatesForContentOtherTimeZone()
 {
     QFETCH(QString, command);
     QFETCH(QString, mailFileName);
