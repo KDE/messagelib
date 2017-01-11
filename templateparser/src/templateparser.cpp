@@ -294,7 +294,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
     QString plainBody, htmlBody;
 
     bool dnl = false;
-    auto definedLocale = QLocale::system();
+    auto definedLocale = QLocale();
     for (int i = 0; i < tmpl_len; ++i) {
         QChar c = tmpl[i];
         // qCDebug(TEMPLATEPARSER_LOG) << "Next char: " << c;
@@ -983,7 +983,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODATEEN";
                 i += strlen("ODATEEN");
                 if (mOrigMsg) {
-                    const QDateTime date = mOrigMsg->date()->dateTime();
+                    const QDateTime date = mOrigMsg->date()->dateTime().toLocalTime();
                     const QString str = QLocale::c().toString(date.date(), QLocale::LongFormat);
                     plainBody.append(str);
                     const QString body = plainToHtml(str);
@@ -994,7 +994,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODATESHORT";
                 i += strlen("ODATESHORT");
                 if (mOrigMsg) {
-                    const QDateTime date = mOrigMsg->date()->dateTime();
+                    const QDateTime date = mOrigMsg->date()->dateTime().toLocalTime();
                     const QString str = definedLocale.toString(date.date(), QLocale::ShortFormat);
                     plainBody.append(str);
                     const QString body = plainToHtml(str);
@@ -1005,7 +1005,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODATE";
                 i += strlen("ODATE");
                 if (mOrigMsg) {
-                    const QDateTime date = mOrigMsg->date()->dateTime();
+                    const QDateTime date = mOrigMsg->date()->dateTime().toLocalTime();
                     const QString str = definedLocale.toString(date.date(), QLocale::LongFormat);
                     plainBody.append(str);
                     const QString body = plainToHtml(str);
@@ -1016,7 +1016,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODOW";
                 i += strlen("ODOW");
                 if (mOrigMsg) {
-                    const QDateTime date = mOrigMsg->date()->dateTime();
+                    const QDateTime date = mOrigMsg->date()->dateTime().toLocalTime();
                     const QString str = definedLocale.dayName(date.date().dayOfWeek(), QLocale::LongFormat);
                     plainBody.append(str);
                     const QString body = plainToHtml(str);
@@ -1027,7 +1027,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTIMELONGEN";
                 i += strlen("OTIMELONGEN");
                 if (mOrigMsg) {
-                    const QDateTime date = mOrigMsg->date()->dateTime();
+                    const QDateTime date = mOrigMsg->date()->dateTime().toLocalTime();
                     QLocale locale(QLocale::C);
                     const QString str = locale.toString(date.time(), QLocale::LongFormat);
                     plainBody.append(str);
@@ -1038,7 +1038,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTIMELONG";
                 i += strlen("OTIMELONG");
                 if (mOrigMsg) {
-                    const QDateTime date = mOrigMsg->date()->dateTime();
+                    const QDateTime date = mOrigMsg->date()->dateTime().toLocalTime();
                     const QString str = definedLocale.toString(date.time(), QLocale::LongFormat);
                     plainBody.append(str);
                     const QString body = plainToHtml(str);
@@ -1049,7 +1049,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTIME";
                 i += strlen("OTIME");
                 if (mOrigMsg) {
-                    const QDateTime date = mOrigMsg->date()->dateTime();
+                    const QDateTime date = mOrigMsg->date()->dateTime().toLocalTime();
                     const QString str = definedLocale.toString(date.time(), QLocale::ShortFormat);
                     plainBody.append(str);
                     const QString body = plainToHtml(str);
