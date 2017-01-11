@@ -226,6 +226,13 @@ void TemplateParserTester::test_processWithTemplatesForContent_data()
     QTest::newRow("%OHEADER=\"To\"") << "%OHEADER=\"To\"" << fileName << "kde <foo@yoohoo.org>" << false;
     //Unknown command
     QTest::newRow("unknown command") << "%GGGGG" << fileName << "%GGGGG" << false;
+
+
+    //Test bug 308444
+    const QString file2 = QStringLiteral("plain-message-timezone.mbox");
+    const QString fileName2 = QString(dir.path() + QLatin1Char('/') +  file2);
+    QTest::newRow("bug308444-%OTIMELONG") << "%OTIMELONG" << fileName2 << QLocale::system().toString(QTime(13, 31, 25), QLocale::LongFormat) << false;
+
 }
 
 void TemplateParserTester::test_processWithTemplatesForContent()
