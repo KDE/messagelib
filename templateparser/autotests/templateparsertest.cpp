@@ -44,11 +44,6 @@ void TemplateParserTester::test_convertedHtml_data()
     }
 }
 
-void TemplateParserTester::initTestCase()
-{
-    //QLocale::setDefault(QLocale::Ukrainian);
-}
-
 void TemplateParserTester::test_convertedHtml()
 {
     QFETCH(QString, mailFileName);
