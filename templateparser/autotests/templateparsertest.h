@@ -30,6 +30,9 @@ private Q_SLOTS:
     /**
      * checks whether text/plain only mails are converted to a valid HTML
      */
+
+    void initTestCase();
+
     void test_convertedHtml();
     void test_convertedHtml_data();
 

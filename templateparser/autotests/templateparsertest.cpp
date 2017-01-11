@@ -29,6 +29,7 @@
 #include <QTest>
 #include <QDir>
 #include <QLocale>
+#include <QTimeZone>
 
 using namespace MimeTreeParser;
 
@@ -41,6 +42,11 @@ void TemplateParserTester::test_convertedHtml_data()
     foreach (const QString &file, dir.entryList(QStringList(QLatin1String("plain*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
         QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << QString(dir.path() + QLatin1Char('/') + file + QLatin1String(".html"));
     }
+}
+
+void TemplateParserTester::initTestCase()
+{
+    QLocale::setDefault(QLocale::Ukrainian);
 }
 
 void TemplateParserTester::test_convertedHtml()
@@ -181,6 +187,7 @@ void TemplateParserTester::test_processWithTemplatesForContent_data()
     QTest::addColumn<QString>("expectedBody");
     QTest::addColumn<bool>("hasDictionary");
 
+    qDebug() << "QLocale::system() : "<<QLocale::system().nativeCountryName();
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const QString file = QStringLiteral("plain-message.mbox");
     const QString fileName = QString(dir.path() + QLatin1Char('/') +  file);
@@ -231,6 +238,7 @@ void TemplateParserTester::test_processWithTemplatesForContent_data()
     //Test bug 308444
     const QString file2 = QStringLiteral("plain-message-timezone.mbox");
     const QString fileName2 = QString(dir.path() + QLatin1Char('/') +  file2);
+    //QTimeZone tz("UTC+01:00");
     QTest::newRow("bug308444-%OTIMELONG") << "%OTIMELONG" << fileName2 << QLocale::system().toString(QTime(13, 31, 25), QLocale::LongFormat) << false;
 
 }
