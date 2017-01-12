@@ -285,9 +285,9 @@ void TemplatesConfiguration::loadFromFolder(const QString &id, uint identity)
     }
     if (str.isEmpty()) {
         str = TemplateParserSettings::self()->templateNewMessage();
-    }
-    if (str.isEmpty()) {
-        str = DefaultTemplates::defaultNewMessage();
+        if (str.isEmpty()) {
+            str = DefaultTemplates::defaultNewMessage();
+        }
     }
     textEdit_new->setPlainText(str);
 
@@ -297,18 +297,18 @@ void TemplatesConfiguration::loadFromFolder(const QString &id, uint identity)
     }
     if (str.isEmpty()) {
         str = TemplateParserSettings::self()->templateReply();
-    }
-    if (str.isEmpty()) {
-        str = DefaultTemplates::defaultReply();
+        if (str.isEmpty()) {
+            str = DefaultTemplates::defaultReply();
+        }
     }
     textEdit_reply->setPlainText(str);
 
     str = t.templateReplyAll();
     if (str.isEmpty() && tid) {
         str = tid->templateReplyAll();
-    }
-    if (str.isEmpty()) {
-        str = TemplateParserSettings::self()->templateReplyAll();
+        if (str.isEmpty()) {
+            str = TemplateParserSettings::self()->templateReplyAll();
+        }
     }
     if (str.isEmpty()) {
         str = DefaultTemplates::defaultReplyAll();
@@ -318,9 +318,9 @@ void TemplatesConfiguration::loadFromFolder(const QString &id, uint identity)
     str = t.templateForward();
     if (str.isEmpty() && tid) {
         str = tid->templateForward();
-    }
-    if (str.isEmpty()) {
-        str = TemplateParserSettings::self()->templateForward();
+        if (str.isEmpty()) {
+            str = TemplateParserSettings::self()->templateForward();
+        }
     }
     if (str.isEmpty()) {
         str = DefaultTemplates::defaultForward();
@@ -333,9 +333,9 @@ void TemplatesConfiguration::loadFromFolder(const QString &id, uint identity)
     }
     if (str.isEmpty()) {
         str = TemplateParserSettings::self()->quoteString();
-    }
-    if (str.isEmpty()) {
-        str = DefaultTemplates::defaultQuoteString();
+        if (str.isEmpty()) {
+            str = DefaultTemplates::defaultQuoteString();
+        }
     }
     lineEdit_quote->setText(str);
 
