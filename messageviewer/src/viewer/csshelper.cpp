@@ -48,8 +48,6 @@ using namespace MessageViewer;
 CSSHelper::CSSHelper(const QPaintDevice *pd)
     : CSSHelperBase(pd)
 {
-    const KColorScheme scheme(QPalette::Active, KColorScheme::View);
-
     // initialize with defaults - should match the corresponding application defaults
     mForegroundColor = QApplication::palette().color(QPalette::Text);
     mLinkColor = MessageCore::ColorUtil::self()->linkColor();
