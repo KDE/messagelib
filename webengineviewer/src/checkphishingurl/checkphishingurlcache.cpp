@@ -103,14 +103,15 @@ void CheckPhishingUrlCachePrivate::save()
     QList<QUrl> listMalware;
     QList<double> listMalwareCachedTime;
 
-    QMapIterator<QUrl, UrlCacheInfo> i(mCacheCheckedUrl);
-    while (i.hasNext()) {
-        i.next();
+    QMap<QUrl, UrlCacheInfo>::const_iterator i = mCacheCheckedUrl.constBegin();
+    const QMap<QUrl, UrlCacheInfo>::const_iterator end = mCacheCheckedUrl.constEnd();
+    while (i != end) {
         const UrlCacheInfo info = i.value();
         if (info.isMalWare() && WebEngineViewer::CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
             listMalware.append(i.key());
             listMalwareCachedTime.append(info.verifyCacheAfterThisTime);
         }
+        i++;
     }
     grp.writeEntry("Url", listMalware);
     grp.writeEntry("CachedTime", listMalwareCachedTime);
