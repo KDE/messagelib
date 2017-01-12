@@ -39,7 +39,8 @@ TemplatesTextEditor::TemplatesTextEditor(QWidget *parent)
     const QFont f = QFontDatabase::systemFont(QFontDatabase::FixedFont);
     setFont(f);
     QStringList excludeKeyWord;
-    Q_FOREACH (QString str, TemplateParser::Util::keywords()) {
+    const QStringList lst = TemplateParser::Util::keywords();
+    for (QString str : lst) {
         excludeKeyWord << str.remove(QLatin1Char('%'));
         excludeKeyWord << str.replace(QStringLiteral("\\("), QStringLiteral("("));
     }

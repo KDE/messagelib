@@ -37,8 +37,7 @@ void TemplateParser::Util::deleteTemplate(const QString &id)
 
 QStringList TemplateParser::Util::keywordsWithArgs()
 {
-    QStringList keywordsWithArgs;
-    keywordsWithArgs
+    const QStringList keywordsWithArgs = QStringList()
             << QStringLiteral("%REM=\"\"%-")
             << QStringLiteral("%INSERT=\"\"")
             << QStringLiteral("%SYSTEM=\"\"")
@@ -56,8 +55,7 @@ QStringList TemplateParser::Util::keywordsWithArgs()
 
 QStringList TemplateParser::Util::keywordsWithArgsForCompleter()
 {
-    QStringList keywordsWithArgs;
-    keywordsWithArgs
+    const QStringList keywordsWithArgs = QStringList()
             << QStringLiteral("%REM=\".*\"%-")
             << QStringLiteral("%INSERT=\".*\"")
             << QStringLiteral("%SYSTEM=\".*\"")
@@ -75,8 +73,7 @@ QStringList TemplateParser::Util::keywordsWithArgsForCompleter()
 
 QStringList TemplateParser::Util::keywords()
 {
-    QStringList keywords;
-    keywords
+    const QStringList keywords = QStringList()
             << QStringLiteral("%QUOTE")
             << QStringLiteral("%FORCEDPLAIN")
             << QStringLiteral("%FORCEDHTML")

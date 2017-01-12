@@ -49,9 +49,10 @@
 
 namespace TemplateParser
 {
-
-static const int PipeTimeout = 15 * 1000;
-
+Q_DECL_CONSTEXPR inline int pipeTimeout()
+{
+    return (15 * 1000);
+}
 static QTextCodec *selectCharset(const QStringList &charsets, const QString &text)
 {
     for (const QString &name : charsets) {
@@ -1470,16 +1471,16 @@ QString TemplateParser::pipe(const QString &cmd, const QString &buf)
     process.setOutputChannelMode(KProcess::SeparateChannels);
     process.setShellCommand(cmd);
     process.start();
-    if (process.waitForStarted(PipeTimeout)) {
+    if (process.waitForStarted(pipeTimeout())) {
         bool finished = false;
         if (!buf.isEmpty()) {
             process.write(buf.toLatin1());
         }
-        if (buf.isEmpty() || process.waitForBytesWritten(PipeTimeout)) {
+        if (buf.isEmpty() || process.waitForBytesWritten(pipeTimeout())) {
             if (!buf.isEmpty()) {
                 process.closeWriteChannel();
             }
-            if (process.waitForFinished(PipeTimeout)) {
+            if (process.waitForFinished(pipeTimeout())) {
                 success = (process.exitStatus() == QProcess::NormalExit);
                 finished = true;
             } else {
