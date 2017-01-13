@@ -21,7 +21,6 @@
 #define TestJQuerySupportWebEngine_H
 
 #include <QWidget>
-#include <qwebengineview.h>
 namespace WebEngineViewer
 {
 class WebEngineView;

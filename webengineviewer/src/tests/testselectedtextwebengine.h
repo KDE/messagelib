@@ -21,7 +21,6 @@
 #define TESTSELECTEDTEXTWEBENGINE_H
 
 #include <QWidget>
-#include <qwebengineview.h>
 namespace WebEngineViewer
 {
 class WebEnginePage;
