@@ -80,7 +80,7 @@ void LocalDataBaseFilePrivate::close()
 
 bool LocalDataBaseFilePrivate::reload()
 {
-    qCDebug(WEBENGINEVIEWER_LOG) << "Reload File";
+    qCDebug(WEBENGINEVIEWER_LOG) << "Reload File" << mFile.fileName();
     close();
     return load();
 }
