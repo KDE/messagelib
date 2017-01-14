@@ -67,7 +67,7 @@ void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineVi
         break;
     case CreatePhishingUrlDataBaseJob::ValidData:
         qCWarning(WEBENGINEVIEWER_LOG) << "Valid Data.";
-        dataBaseOk= true;
+        dataBaseOk = true;
         break;
     case CreatePhishingUrlDataBaseJob::UnknownError:
         qCWarning(WEBENGINEVIEWER_LOG) << "Unknown data.";

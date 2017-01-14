@@ -182,7 +182,6 @@ void LocalDataBaseManager::slotCheckDataBase()
     }
 }
 
-
 void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
 {
     d->mDataBaseOk = success;
