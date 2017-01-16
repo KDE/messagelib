@@ -21,6 +21,7 @@
 #include "viewerpluginmanager.h"
 #include "viewerplugin.h"
 #include "viewerplugininterface.h"
+#include "utils/helper_p.h"
 
 #include <QVector>
 
@@ -74,7 +75,7 @@ QString ViewerPluginToolManagerPrivate::pluginName() const
 
 void ViewerPluginToolManagerPrivate::refreshActionList()
 {
-    Q_FOREACH (MessageViewer::ViewerPluginInterface *interface, mListInterface) {
+    for (MessageViewer::ViewerPluginInterface *interface : qAsConst(mListInterface)) {
         interface->refreshActionList(mActionCollection);
     }
 }
@@ -94,7 +95,7 @@ void ViewerPluginToolManagerPrivate::createView()
 
 void ViewerPluginToolManagerPrivate::closeAllTools()
 {
-    Q_FOREACH (MessageViewer::ViewerPluginInterface *interface, mListInterface) {
+    for (MessageViewer::ViewerPluginInterface *interface : qAsConst(mListInterface)) {
         interface->closePlugin();
     }
 }
@@ -107,7 +108,7 @@ void ViewerPluginToolManagerPrivate::setActionCollection(KActionCollection *ac)
 QList<QAction *> ViewerPluginToolManagerPrivate::actionList(ViewerPluginInterface::SpecificFeatureTypes features) const
 {
     QList<QAction *> lstAction;
-    Q_FOREACH (MessageViewer::ViewerPluginInterface *interface, mListInterface) {
+    for (MessageViewer::ViewerPluginInterface *interface : qAsConst(mListInterface)) {
         if (features & ViewerPluginInterface::All) {
             lstAction.append(interface->actions());
         } else {
@@ -121,7 +122,7 @@ QList<QAction *> ViewerPluginToolManagerPrivate::actionList(ViewerPluginInterfac
 
 void ViewerPluginToolManagerPrivate::updateActions(const Akonadi::Item &messageItem)
 {
-    Q_FOREACH (MessageViewer::ViewerPluginInterface *interface, mListInterface) {
+    for (MessageViewer::ViewerPluginInterface *interface : qAsConst(mListInterface)) {
         interface->updateAction(messageItem);
     }
 }

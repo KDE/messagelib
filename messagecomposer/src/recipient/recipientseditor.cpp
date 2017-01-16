@@ -130,7 +130,7 @@ void RecipientsEditor::setRecipientString(const QVector< KMime::Types::Mailbox >
 {
     int count = 1;
 
-    foreach (const KMime::Types::Mailbox &mailbox, mailboxes) {
+    for (const KMime::Types::Mailbox &mailbox : mailboxes) {
         if (count++ > MessageComposer::MessageComposerSettings::self()->maximumRecipients()) {
             KMessageBox::sorry(this,
                                i18ncp("@info:status",

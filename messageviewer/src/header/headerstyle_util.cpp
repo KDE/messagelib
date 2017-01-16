@@ -24,6 +24,7 @@
 #include "kxface.h"
 
 #include "header/headerstyle.h"
+#include "utils/helper_p.h"
 #include "utils/iconnamecache.h"
 #include "settings/messageviewersettings.h"
 
@@ -253,8 +254,8 @@ QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentFromList(KMime::Message *m
         const char *end = start + data.length();
         KMime::Types::AddressList addressList;
         KMime::HeaderParsing::parseAddressList(start, end, addressList);
-        foreach (const KMime::Types::Address &addr, addressList) {
-            foreach (const KMime::Types::Mailbox &mbox, addr.mailboxList) {
+        for (const KMime::Types::Address &addr : qAsConst(addressList)) {
+            for (const KMime::Types::Mailbox &mbox : qAsConst(addr.mailboxList)) {
                 resentFrom.append(mbox);
             }
         }
@@ -272,8 +273,8 @@ QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentToList(KMime::Message *mes
         const char *end = start + data.length();
         KMime::Types::AddressList addressList;
         KMime::HeaderParsing::parseAddressList(start, end, addressList);
-        foreach (const KMime::Types::Address &addr, addressList) {
-            foreach (const KMime::Types::Mailbox &mbox, addr.mailboxList) {
+        for (const KMime::Types::Address &addr : qAsConst(addressList)) {
+            for (const KMime::Types::Mailbox &mbox : qAsConst(addr.mailboxList)) {
                 resentTo.append(mbox);
             }
         }

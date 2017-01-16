@@ -908,7 +908,8 @@ void ViewerPrivate::collectionFetchedForStoringDecryptedMessage(KJob *job)
     }
 
     Akonadi::Collection col;
-    Q_FOREACH (const Akonadi::Collection &c, static_cast<Akonadi::CollectionFetchJob *>(job)->collections()) {
+    const Akonadi::Collection::List lstCol = static_cast<Akonadi::CollectionFetchJob *>(job)->collections();
+    for (const Akonadi::Collection &c : lstCol) {
         if (c == mMessageItem.parentCollection()) {
             col = c;
             break;
@@ -1920,8 +1921,8 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
 
 KMime::Content *ViewerPrivate::findContentByType(KMime::Content *content, const QByteArray &type)
 {
-    auto list = content->contents();
-    Q_FOREACH (KMime::Content *c, list) {
+    const auto list = content->contents();
+    for (KMime::Content *c : list) {
         if (c->contentType()->mimeType() ==  type) {
             return c;
         }
@@ -2445,9 +2446,9 @@ void ViewerPrivate::slotAttachmentOpenWith()
 {
 #ifndef QT_NO_TREEVIEW
     QItemSelectionModel *selectionModel = mMimePartTree->selectionModel();
-    QModelIndexList selectedRows = selectionModel->selectedRows();
+    const QModelIndexList selectedRows = selectionModel->selectedRows();
 
-    Q_FOREACH (const QModelIndex &index, selectedRows) {
+    for (const QModelIndex &index : selectedRows) {
         KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
         attachmentOpenWith(content);
     }
@@ -2458,9 +2459,9 @@ void ViewerPrivate::slotAttachmentOpen()
 {
 #ifndef QT_NO_TREEVIEW
     QItemSelectionModel *selectionModel = mMimePartTree->selectionModel();
-    QModelIndexList selectedRows = selectionModel->selectedRows();
+    const QModelIndexList selectedRows = selectionModel->selectedRows();
 
-    Q_FOREACH (const QModelIndex &index, selectedRows) {
+    for (const QModelIndex &index : selectedRows) {
         KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
         attachmentOpen(content);
     }

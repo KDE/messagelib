@@ -79,7 +79,8 @@ void SkeletonMessageJobPrivate::doStart()
     {
         KMime::Headers::To *to = new KMime::Headers::To;
         QByteArray sTo;
-        foreach (const QString &a, infoPart->to()) {
+        const QStringList lstTo = infoPart->to();
+        for (const QString &a : lstTo) {
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
             if (!sTo.isEmpty()) {
@@ -104,7 +105,8 @@ void SkeletonMessageJobPrivate::doStart()
     {
         KMime::Headers::Cc *cc = new KMime::Headers::Cc;
         QByteArray sCc;
-        foreach (const QString &a, infoPart->cc()) {
+        const QStringList lstCc = infoPart->cc();
+        for (const QString &a : lstCc) {
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
             if (!sCc.isEmpty()) {
@@ -120,7 +122,8 @@ void SkeletonMessageJobPrivate::doStart()
     {
         KMime::Headers::Bcc *bcc = new KMime::Headers::Bcc;
         QByteArray sBcc;
-        foreach (const QString &a, infoPart->bcc()) {
+        const QStringList lstBcc = infoPart->bcc();
+        for (const QString &a :lstBcc ) {
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
             if (!sBcc.isEmpty()) {

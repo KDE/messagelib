@@ -141,7 +141,8 @@ static bool flushPart(QString &msg, QStringList &textParts,
     }
 
     QString text;
-    foreach (const QString &line, textParts) {
+
+    for (const QString &line : textParts) {
 
         // An empty line in the input means that an empty line should be in the output as well.
         // Therefore, we write all of our text so far to the msg.
@@ -390,7 +391,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
     bool expandableInserted = false;
     KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
 
-    foreach (const KMime::Types::Mailbox &mailbox, mailboxList) {
+    for (const KMime::Types::Mailbox &mailbox : mailboxList) {
         if (!mailbox.prettyAddress().isEmpty()) {
             numberAddresses++;
             if (expandable == ExpandableAddresses && !expandableInserted && numberAddresses > collapseNumber) {
@@ -503,7 +504,8 @@ QString smartQuote(const QString &msg, int maxLineLength)
     QString oldIndent;
     bool firstPart = true;
     QString result;
-    foreach (QString line, msg.split(QLatin1Char('\n'))) {
+    const QStringList splitMsgList = msg.split(QLatin1Char('\n'));
+    for (QString line : splitMsgList) {
 
         // Split off the indent from the line
         const QString indent = splitLine(line);

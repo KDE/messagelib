@@ -20,6 +20,7 @@
 #include "headerstyle.h"
 #include "headerstyleinterface.h"
 #include "headerstyleplugin.h"
+#include "utils/helper_p.h"
 #include <KActionMenu>
 #include <QAction>
 #include <KToggleAction>
@@ -52,7 +53,7 @@ void HeaderStyleInterface::addHelpTextAction(QAction *act, const QString &text)
 
 void HeaderStyleInterface::addActionToMenu(KActionMenu *menu, QActionGroup *actionGroup)
 {
-    Q_FOREACH (KToggleAction *taction, mAction) {
+    for (KToggleAction *taction : qAsConst(mAction)) {
         menu->addAction(taction);
         actionGroup->addAction(taction);
     }

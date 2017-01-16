@@ -23,6 +23,7 @@
 #include "settings/messageviewersettings.h"
 #include "utils/iconnamecache.h"
 #include "config-messageviewer.h"
+#include "utils/helper_p.h"
 
 #include <MessageCore/StringUtil>
 
@@ -249,7 +250,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
         headerObject.insert(QStringLiteral("photourl"), xface.photoURL);
     }
 
-    Q_FOREACH (QString header, displayExtraHeaders) {
+    for (QString header : qAsConst(displayExtraHeaders)) {
         const QByteArray baHeader = header.toLocal8Bit();
         if (auto hrd = message->headerByType(baHeader.constData())) {
             //Grantlee doesn't support '-' in variable name => remove it.

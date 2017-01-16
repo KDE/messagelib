@@ -43,6 +43,7 @@
 #include "MessageCore/MessageCoreSettings"
 #include "MessageCore/NodeHelper"
 #include "MessageCore/StringUtil"
+#include "utils/helper_p.h"
 
 #include "PimCommon/RenameFileDialog"
 
@@ -171,7 +172,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
     bool globalResult = true;
     int unnamedAtmCount = 0;
     PimCommon::RenameFileDialog::RenameFileDialogResult result = PimCommon::RenameFileDialog::RENAMEFILE_IGNORE;
-    foreach (KMime::Content *content, contents) {
+    for (KMime::Content *content : qAsConst(contents)) {
         QUrl curUrl;
         if (!dirUrl.isEmpty()) {
             curUrl = dirUrl;
@@ -445,7 +446,7 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
             }
             return false;
         }
-        foreach (const Akonadi::Item &item, retrievedMsgs) {
+        for (const Akonadi::Item &item : qAsConst(retrievedMsgs)) {
             if (item.hasPayload<KMime::Message::Ptr>()) {
                 mbox.appendMessage(item.payload<KMime::Message::Ptr>());
             }
