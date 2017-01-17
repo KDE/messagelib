@@ -32,7 +32,7 @@ QByteArray readJsonFile(const QString &jsonFile)
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     const QByteArray data = file.readAll();
-    Q_ASSERT(!data.isEmpty());
+    //Q_ASSERT(!data.isEmpty());
     return data;
 }
 
