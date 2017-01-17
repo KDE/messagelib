@@ -1713,7 +1713,12 @@ void ThemeDelegate::generalFontChanged()
     mCachedMessageItemSizeHint = QSize();
     mCachedGroupHeaderItemSizeHint = QSize();
 
-    QFont font = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+    QFont font;
+    if (MessageCore::MessageCoreSettings::self()->useDefaultFonts()) {
+        font = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
+    } else {
+        font = MessageListSettings::self()->messageListFont();
+    }
     sFontCache[Normal] = font;
     sFontMetricsCache[Normal] = QFontMetrics(font);
     font.setBold(true);
