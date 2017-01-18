@@ -435,7 +435,8 @@ void MessageFactoryTest::testCreateReplyHtml()
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    //We are not in UTC
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time().addSecs( -2 * 60 *60), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> encoded?\n\n")));
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
@@ -469,7 +470,7 @@ void MessageFactoryTest::testCreateReplyUTF16Base64()
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time().addSecs( -10 * 60 *60), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> quote me please.\n\n")));
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: asking for reply"));
