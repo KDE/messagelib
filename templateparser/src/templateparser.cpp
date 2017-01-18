@@ -1266,7 +1266,7 @@ KMime::Content *TemplateParser::createMultipartMixed(const QVector<KMime::Conten
     mixedPart->addContent(textPart);
 
     int attachmentNumber = 1;
-    foreach (KMime::Content *attachment, attachments) {
+    for (KMime::Content *attachment : attachments) {
         mixedPart->addContent(attachment);
         // If the content type has no name or filename parameter, add one, since otherwise the name
         // would be empty in the attachment view of the composer, which looks confusing

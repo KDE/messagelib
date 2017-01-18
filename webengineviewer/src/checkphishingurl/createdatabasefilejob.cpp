@@ -173,7 +173,7 @@ void CreateDatabaseFileJobPrivate::generateFile(bool fullUpdate)
 void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition)
 {
     QList<quint32> indexToRemove;
-    Q_FOREACH (const Removal &removeItem, removalList) {
+    for (const Removal &removeItem : removalList) {
         switch (removeItem.compressionType) {
         case UpdateDataBaseInfo::RawCompression: {
             Q_FOREACH (int id, removeItem.indexes) {

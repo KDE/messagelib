@@ -82,7 +82,9 @@ void TemplatesTextEditor::initCompleter()
 {
     QStringList listWord;
     QStringList excludeKeyWord;
-    Q_FOREACH (QString str, TemplateParser::Util::keywords()) {
+    const QStringList lst = TemplateParser::Util::keywords();
+    excludeKeyWord.reserve(lst.count());
+    for (QString str : lst ) {
         excludeKeyWord << str.replace(QStringLiteral("\\("), QStringLiteral("("));
     }
     listWord << excludeKeyWord;
