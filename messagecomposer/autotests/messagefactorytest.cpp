@@ -382,7 +382,6 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmails()
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
 
-    QString userAgent = reply.msg->userAgent()->asUnicodeString();
     QString replyTo = reply.msg->inReplyTo()->asUnicodeString();
     QString reference = reply.msg->references()->asUnicodeString();
     QString dateStr = reply.msg->date()->asUnicodeString();
