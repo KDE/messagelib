@@ -586,7 +586,7 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
         // here.
         // Do this only when prefering HTML mail, though, since otherwise the attachments are hidden
         // when displaying plain text.
-        if (!dataHtml && mPreferredMode == Util::MultipartHtml) {
+        if (!dataHtml) {
             dataHtml  = findTypeInDirectChilds(mNode, "multipart/mixed");
         }
     }
@@ -964,6 +964,10 @@ void SignedMessagePart::startVerificationDetached(const QByteArray &text, KMime:
     mMetaData.isEncrypted = false;
     mMetaData.isDecryptable = false;
 
+    if (textNode) {
+        parseInternal(textNode, false);
+    }
+
     okVerify(text, signature, textNode);
 
     if (!mMetaData.isSigned) {
@@ -1001,11 +1005,7 @@ void SignedMessagePart::setVerificationResult(const CryptoBodyPartMemento *m, KM
         sigStatusToMetaData();
         if (mNode) {
             mOtp->nodeHelper()->setSignatureState(mNode, KMMsgFullySigned);
-            if (textNode) {
-                if (!mVerifiedText.isEmpty()) {
-                    parseInternal(textNode, false);
-                }
-            } else {
+            if (!textNode) {
                 mOtp->mNodeHelper->setPartMetaData(mNode, mMetaData);
 
                 if (!mVerifiedText.isEmpty()) {

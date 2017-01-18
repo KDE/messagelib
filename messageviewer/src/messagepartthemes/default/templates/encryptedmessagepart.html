@@ -35,7 +35,7 @@
                         <br />
                         <a href="kmail:showCertificate#{{cryptoProto.displayName}} ### {{cryptoProto.name}} ### {{recipient.keyID}}">0x{{recipient.keyID}}</a>
                     {% endfor %}
-                {% else %}
+                {% elif not block.inProgress %}
                     {% i18n "Could not decrypt the data." %}
                 {% endif %}
                 </div>
