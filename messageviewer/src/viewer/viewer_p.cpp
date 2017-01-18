@@ -159,6 +159,7 @@ using namespace MessageViewer;
 using namespace MessageCore;
 
 static QAtomicInt _k_attributeInitialized;
+MESSAGEVIEWER_EXPORT bool messageviewer_initialize_database = true;
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -235,7 +236,9 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::ScamAttribute>();
 
         //Make sure to initialize it once.
-        WebEngineViewer::LocalDataBaseManager::self()->initialize();
+        if (messageviewer_initialize_database) {
+            WebEngineViewer::LocalDataBaseManager::self()->initialize();
+        }
     }
     connect(WebEngineViewer::LocalDataBaseManager::self(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &ViewerPrivate::slotCheckedUrlFinished);
 
