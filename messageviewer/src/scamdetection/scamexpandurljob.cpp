@@ -87,8 +87,9 @@ void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
     if (!jsonDoc.isNull()) {
         const QMap<QString, QVariant> map = jsonDoc.toVariant().toMap();
         QUrl longUrl;
-        if (map.contains(QStringLiteral("long-url"))) {
-            longUrl.setUrl(map.value(QStringLiteral("long-url")).toString());
+        const QVariant longUrlVar = map.value(QStringLiteral("long-url"));
+        if (longUrlVar.isValid()) {
+            longUrl.setUrl(longUrlVar.toString());
         } else {
             deleteLater();
             return;

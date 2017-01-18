@@ -195,9 +195,7 @@ void AttachmentControllerBase::setSelectedParts(const AttachmentPart::List &sele
 
 void AttachmentControllerBase::Private::attachmentRemoved(AttachmentPart::Ptr part)
 {
-    if (uncompressedParts.contains(part)) {
-        uncompressedParts.remove(part);
-    }
+    uncompressedParts.remove(part);
 }
 
 void AttachmentControllerBase::Private::compressJobResult(KJob *job)

@@ -700,7 +700,7 @@ void TagCache::retrieveTags(const Akonadi::Tag::List &tags, MessageItemPrivate *
     }
     Akonadi::Tag::List toFetch;
     Akonadi::Tag::List available;
-    Q_FOREACH (const Akonadi::Tag &tag, tags) {
+    for (const Akonadi::Tag &tag : tags) {
         if (mCache.contains(tag.id())) {
             available << *mCache.object(tag.id());
         } else {
