@@ -195,10 +195,10 @@ void CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished(QNetworkReply *r
 
 RiceDeltaEncoding CreatePhishingUrlDataBaseJobPrivate::parseRiceDeltaEncoding(const QMap<QString, QVariant> &map)
 {
-    QMapIterator<QString, QVariant> riceHashesIt(map);
     RiceDeltaEncoding riceDeltaEncodingTmp;
-    while (riceHashesIt.hasNext()) {
-        riceHashesIt.next();
+    QMap<QString, QVariant>::const_iterator riceHashesIt = map.cbegin();
+    const QMap<QString, QVariant>::const_iterator riceHashesItEnd = map.cend();
+    for (;riceHashesIt != riceHashesItEnd; ++riceHashesIt) {
         const QString key = riceHashesIt.key();
         if (key == QLatin1String("firstValue")) {
             riceDeltaEncodingTmp.firstValue = riceHashesIt.value().toByteArray();

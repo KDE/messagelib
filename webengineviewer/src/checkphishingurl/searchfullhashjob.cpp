@@ -122,10 +122,10 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
 
                 if (threatTypeStr == QStringLiteral("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
-                    QMapIterator<QString, QVariant> urlMapIt(urlMap);
                     QList<QByteArray> hashList;
-                    while (urlMapIt.hasNext()) {
-                        urlMapIt.next();
+                    QMap<QString, QVariant>::const_iterator urlMapIt = urlMap.cbegin();
+                    const QMap<QString, QVariant>::const_iterator urlMapItEnd = urlMap.cend();
+                    for (;urlMapIt != urlMapItEnd; ++urlMapIt) {
                         const QByteArray hashStr = urlMapIt.value().toByteArray();
                         hashList << hashStr;
                     }
