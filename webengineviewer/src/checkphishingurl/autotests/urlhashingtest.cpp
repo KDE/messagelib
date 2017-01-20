@@ -116,6 +116,16 @@ void UrlHashingTest::shouldCanonicalizeUrl()
     QFETCH(QString, input);
     QFETCH(QString, output);
     input = input.trimmed();
+    QEXPECT_FAIL("http://http/%01%C2%80.com/", "Not supported yet", Continue);
+    QEXPECT_FAIL("http://host/%25%32%35", "Not supported yet", Continue);
+    QEXPECT_FAIL("%20leadingspace.com/", "Not supported yet", Continue);
+    QEXPECT_FAIL("http://%20leadingspace.com/", "Not supported yet", Continue);
+    QEXPECT_FAIL("http://http/%01%C2%80.com/", "Not supported yet", Continue);
+    QEXPECT_FAIL("http://www.google.com.../", "Not supported yet", Continue);
+
+    QEXPECT_FAIL("http://http/host%23.com/%7Ea%21b%40c%23d%24e%f%5E00%2611%2A22%2833%2944_55%2B", "Not supported yet", Continue);
+    QEXPECT_FAIL("http://host/%%%25%32%35asd%%", "Not supported yet", Continue);
+    QEXPECT_FAIL("http://host/%25252525252525", "Not supported yet", Continue);
     QCOMPARE(WebEngineViewer::UrlHashing::canonicalizeUrl(QUrl::fromUserInput(input)), output);
 }
 
