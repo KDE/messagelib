@@ -65,7 +65,7 @@ void FindBarBaseTest::shouldClearLineWhenClose()
 {
     WebEngineViewer::FindBarBase bar;
     bar.show();
-    QSignalSpy spy(&bar, SIGNAL(hideFindBar()));
+    QSignalSpy spy(&bar, &WebEngineViewer::FindBarBase::hideFindBar);
     QTest::qWaitForWindowExposed(&bar);
     QVERIFY(bar.isVisible());
     bar.focusAndSetCursor();

@@ -293,7 +293,7 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult()
     QFETCH(WebEngineViewer::UpdateDataBaseInfo, parseInfo);
     const QByteArray ba = readJsonFile(filename);
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
-    QSignalSpy spy1(&job, SIGNAL(finished(WebEngineViewer::UpdateDataBaseInfo,WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)));
+    QSignalSpy spy1(&job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::finished);
     job.parseResult(ba);
     QCOMPARE(spy1.count(), 1);
     QCOMPARE(spy1.at(0).at(1).value<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>(), parseResult);

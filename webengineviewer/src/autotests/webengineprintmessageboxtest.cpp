@@ -44,7 +44,7 @@ void WebEnginePrintMessageBoxTest::shouldHaveDefaultValue()
 void WebEnginePrintMessageBoxTest::shouldEmitOpenInBrowserSignal()
 {
     WebEngineViewer::WebEnginePrintMessageBox box;
-    QSignalSpy spyOpenInPreview(&box, SIGNAL(openInBrowser()));
+    QSignalSpy spyOpenInPreview(&box, &WebEngineViewer::WebEnginePrintMessageBox::openInBrowser);
     QPushButton *openInBrowser = box.findChild<QPushButton *>(QStringLiteral("openinbrowser"));
     QTest::mouseClick(openInBrowser, Qt::LeftButton);
     QCOMPARE(spyOpenInPreview.count(), 1);
