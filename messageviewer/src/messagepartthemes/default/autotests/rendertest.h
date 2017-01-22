@@ -34,6 +34,9 @@ private Q_SLOTS:
     void testRenderSmart_data();
     void testRenderSmart();
 
+    void testRenderSmartAsync_data();
+    void testRenderSmartAsync();
+
     void testRenderSmartDetails_data();
     void testRenderSmartDetails();
 
@@ -48,9 +51,11 @@ private Q_SLOTS:
 
     void testRenderHeaderOnly_data();
     void testRenderHeaderOnly();
+
 private:
     void testRender();
     void testRenderTree(const MimeTreeParser::MessagePart::Ptr &messagePart);
+    void compareFile(const QString &outFile, const QString &referenceFile);
 };
 
 #endif

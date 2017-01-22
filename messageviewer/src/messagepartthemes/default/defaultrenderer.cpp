@@ -929,7 +929,7 @@ public:
                 renderSubParts(mp, _htmlWriter);
             }
             c.insert(QStringLiteral("content"), _htmlWriter->html);
-        } else {
+        } else if (!metaData.inProgress) {
             c.insert(QStringLiteral("content"), render(mp.dynamicCast<MessagePart>()));
         }
 
@@ -975,7 +975,7 @@ public:
                 renderSubParts(mp, _htmlWriter);
             }
             c.insert(QStringLiteral("content"), _htmlWriter->html);
-        } else {
+        } else if (!metaData.inProgress) {
             c.insert(QStringLiteral("content"), render(mp.dynamicCast<MessagePart>()));
         }
 
@@ -1187,7 +1187,7 @@ public:
     {
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         const auto metaData = mp->mMetaData;
-        if (metaData.isSigned) {
+        if (metaData.isSigned || metaData.inProgress) {
             {
                 HTMLBlock::Ptr aBlock;
                 if (mp->isAttachment()) {
@@ -1204,7 +1204,7 @@ public:
             }
             if (mp->hasSubParts()) {
                 renderSubParts(mp, htmlWriter);
-            } else {
+            } else if (!metaData.inProgress) {
                 htmlWriter->queue(render(mp.dynamicCast<MessagePart>()));
             }
         }
@@ -1216,7 +1216,7 @@ public:
         auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         const auto metaData = mp->mMetaData;
 
-        if (metaData.isEncrypted) {
+        if (metaData.isEncrypted || metaData.inProgress) {
             {
                 HTMLBlock::Ptr aBlock;
                 if (mp->isAttachment()) {
@@ -1235,7 +1235,7 @@ public:
 
             if (mp->hasSubParts()) {
                 renderSubParts(mp, htmlWriter);
-            } else {
+            } else if (!metaData.inProgress) {
                 htmlWriter->queue(render(mp.dynamicCast<MessagePart>()));
             }
         }
