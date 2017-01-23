@@ -24,10 +24,11 @@
 #include <KSharedConfig>
 #include <QTest>
 
+extern MESSAGEVIEWER_EXPORT bool messageviewer_initialize_database;
 ViewerGrantleeThemeSupportTest::ViewerGrantleeThemeSupportTest(QObject *parent)
     : QObject(parent)
 {
-
+    messageviewer_initialize_database = false;
 }
 
 ViewerGrantleeThemeSupportTest::~ViewerGrantleeThemeSupportTest()
