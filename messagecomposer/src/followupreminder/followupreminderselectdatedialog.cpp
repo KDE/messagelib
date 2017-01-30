@@ -83,7 +83,6 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     d->mDateComboBox->setObjectName(QStringLiteral("datecombobox"));
 
     QDate currentDate = QDate::currentDate();
-    currentDate = currentDate.addDays(1);
     d->mDateComboBox->setDate(currentDate);
 
     formLayout->addRow(i18n("Date:"), d->mDateComboBox);
