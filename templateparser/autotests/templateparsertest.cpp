@@ -124,9 +124,11 @@ void TemplateParserTester::test_replyPlain()
 //    QVERIFY(parser.mOtp->htmlContent().isEmpty());
 //    QVERIFY(!parser.mOtp->plainTextContent().isEmpty());
 
-    const QString convertedHtmlContent = parser.plainMessageText(false, TemplateParser::TemplateParser::NoSelectionAllowed);
+    QBENCHMARK {
+        const QString convertedHtmlContent = parser.plainMessageText(false, TemplateParser::TemplateParser::NoSelectionAllowed);
 
-    QCOMPARE(convertedHtmlContent, referenceData);
+        QCOMPARE(convertedHtmlContent, referenceData);
+    }
 }
 
 void TemplateParserTester::test_processWithTemplatesForBody_data()

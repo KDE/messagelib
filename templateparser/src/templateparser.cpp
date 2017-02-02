@@ -100,6 +100,12 @@ TemplateParser::TemplateParser(const KMime::Message::Ptr &amsg, const Mode amode
     mOtp->setAllowAsync(false);
 }
 
+TemplateParser::~TemplateParser()
+{
+    delete mEmptySource;
+    delete mOtp;
+}
+
 void TemplateParser::setSelection(const QString &selection)
 {
     mSelection = selection;
@@ -127,24 +133,16 @@ void TemplateParser::setCharsets(const QStringList &charsets)
     m_charsets = charsets;
 }
 
-TemplateParser::~TemplateParser()
-{
-    delete mEmptySource;
-    delete mOtp;
-}
-
 int TemplateParser::parseQuotes(const QString &prefix, const QString &str,
                                 QString &quote) const
 {
     int pos = prefix.length();
     int len;
-    int str_len = str.length();
+    const int str_len = str.length();
 
     // Also allow the german lower double-quote sign as quote separator, not only
     // the standard ASCII quote ("). This fixes bug 166728.
-    QList< QChar > quoteChars;
-    quoteChars.append(QLatin1Char('"'));
-    quoteChars.append(0x201C);
+    const QList< QChar > quoteChars = {QLatin1Char('"'), 0x201C};
 
     QChar prev(QChar::Null);
 
@@ -152,7 +150,7 @@ int TemplateParser::parseQuotes(const QString &prefix, const QString &str,
     len = pos;
 
     while (pos < str_len) {
-        QChar c = str[pos];
+        const QChar c = str[pos];
 
         pos++;
         len++;
@@ -312,7 +310,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 // comments
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: REM=";
                 QString q;
-                int len = parseQuotes(QStringLiteral("REM="), cmd, q);
+                const int len = parseQuotes(QStringLiteral("REM="), cmd, q);
                 i += len;
             } else if (cmd.startsWith(QStringLiteral("LANGUAGE="))) {
                 QString q;
@@ -346,9 +344,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 QString path = KShell::tildeExpand(q);
                 QFileInfo finfo(path);
                 if (finfo.isRelative()) {
-                    path = QDir::homePath();
-                    path += QLatin1Char('/');
-                    path += q;
+                    path = QDir::homePath() + QLatin1Char('/') + q;
                 }
                 QFile file(path);
                 if (file.open(QIODevice::ReadOnly)) {
@@ -368,7 +364,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 // insert content of specified file as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: SYSTEM=";
                 QString q;
-                int len = parseQuotes(QStringLiteral("SYSTEM="), cmd, q);
+                const int len = parseQuotes(QStringLiteral("SYSTEM="), cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 const QString str = pipe(pipe_cmd, QString());
@@ -380,7 +376,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 // pipe message body through command and insert it as quotation
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QUOTEPIPE=";
                 QString q;
-                int len = parseQuotes(QStringLiteral("QUOTEPIPE="), cmd, q);
+                const int len = parseQuotes(QStringLiteral("QUOTEPIPE="), cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 if (mOrigMsg) {
@@ -455,7 +451,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 // pipe message body through command and insert it as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TEXTPIPE=";
                 QString q;
-                int len = parseQuotes(QStringLiteral("TEXTPIPE="), cmd, q);
+                const int len = parseQuotes(QStringLiteral("TEXTPIPE="), cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 if (mOrigMsg) {
@@ -472,7 +468,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 // pipe full message through command and insert result as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: MSGPIPE=";
                 QString q;
-                int len = parseQuotes(QStringLiteral("MSGPIPE="), cmd, q);
+                const int len = parseQuotes(QStringLiteral("MSGPIPE="), cmd, q);
                 i += len;
                 if (mOrigMsg) {
                     QString pipe_cmd = q;
@@ -487,7 +483,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 // pipe message body generated so far through command and insert result as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: BODYPIPE=";
                 QString q;
-                int len = parseQuotes(QStringLiteral("BODYPIPE="), cmd, q);
+                const int len = parseQuotes(QStringLiteral("BODYPIPE="), cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 const QString plainStr = pipe(pipe_cmd, plainBody);
@@ -502,7 +498,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 // insert result as is replacing current body
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CLEARPIPE=";
                 QString q;
-                int len = parseQuotes(QStringLiteral("CLEARPIPE="), cmd, q);
+                const int len = parseQuotes(QStringLiteral("CLEARPIPE="), cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 const QString plainStr = pipe(pipe_cmd, plainBody);
@@ -701,7 +697,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 // insert specified content of header from original message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OHEADER=";
                 QString q;
-                int len = parseQuotes(QStringLiteral("OHEADER="), cmd, q);
+                const int len = parseQuotes(QStringLiteral("OHEADER="), cmd, q);
                 i += len;
                 if (mOrigMsg) {
                     const QString hdr = q;
@@ -718,7 +714,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                 // insert specified content of header from current message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADER=";
                 QString q;
-                int len = parseQuotes(QStringLiteral("HEADER="), cmd, q);
+                const int len = parseQuotes(QStringLiteral("HEADER="), cmd, q);
                 i += len;
                 const QString hdr = q;
                 QString str;
