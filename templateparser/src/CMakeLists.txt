@@ -16,6 +16,8 @@ set(templateparser_LIB_SRCS
     templatestextedit.cpp
     templatestexteditor.cpp
     templatessyntaxhighlighterrules.cpp
+    templatewebengineview.cpp
+    templatewebenginepage.cpp
     )
 
 
@@ -51,6 +53,7 @@ target_link_libraries(KF5TemplateParser
     KF5::Libkleo
     KF5::I18n
     KF5::SonnetUi
+    Qt5::WebEngineWidgets
     )
 set_target_properties(KF5TemplateParser PROPERTIES
     VERSION ${TEMPLATEPARSER_VERSION_STRING}

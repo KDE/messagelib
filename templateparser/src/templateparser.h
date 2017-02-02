@@ -213,30 +213,30 @@ public:
      */
     void setCharsets(const QStringList &charsets);
 
-    virtual void process(const KMime::Message::Ptr &aorig_msg,
+    void process(const KMime::Message::Ptr &aorig_msg,
                          const Akonadi::Collection &afolder = Akonadi::Collection());
-    virtual void process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
+    void process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
                          const Akonadi::Collection &afolder = Akonadi::Collection());
-    virtual void processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg,
+    void processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg,
                                      const Akonadi::Collection &afolder = Akonadi::Collection());
 
-    virtual void processWithTemplate(const QString &tmpl);
+    void processWithTemplate(const QString &tmpl);
 
     /// This finds the template to use. Either the one from the folder, identity or
     /// finally the global template.
     /// This also reads the To and CC address of the template
     /// @return the contents of the template
-    virtual QString findTemplate();
+    QString findTemplate();
 
     /// Finds the template with the given name.
     /// This also reads the To and CC address of the template
     /// @return the contents of the template
-    virtual QString findCustomTemplate(const QString &tmpl);
+    QString findCustomTemplate(const QString &tmpl);
 
-    virtual QString pipe(const QString &cmd, const QString &buf);
+    QString pipe(const QString &cmd, const QString &buf);
 
-    virtual QString getFirstName(const QString &str);
-    virtual QString getLastName(const QString &str);
+    QString getFirstName(const QString &str);
+    QString getLastName(const QString &str);
 
     bool cursorPositionWasSet() const;
 protected:
