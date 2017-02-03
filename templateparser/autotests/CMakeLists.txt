@@ -24,10 +24,11 @@ macro(add_templateparser_unittest _source)
     KF5::XmlGui
     KF5::Completion
     KF5::IconThemes
+    Qt5::WebEngineWidgets
   )
   add_gpg_crypto_test(${_name} templateparser-${_name})
 endmacro()
 
 add_templateparser_unittest(templateparsertest.cpp)
 add_templateparser_unittest(customtemplatesmenutest.cpp)
-
+add_templateparser_unittest(templatewebengineviewtest.cpp)
