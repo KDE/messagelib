@@ -45,6 +45,7 @@
 #include <WebEngineViewer/WebEnginePrintMessageBox>
 #include <KContacts/VCardConverter>
 #include <webengineviewer/config-webengineviewer.h>
+#include "htmlwriter/webengineembedpart.h"
 #ifdef MESSAGEVIEWER_READER_HTML_DEBUG
 #include <MimeMessagePart/FileHtmlWriter>
 #include "htmlwriter/teehtmlwriter.h"
@@ -2725,7 +2726,11 @@ void ViewerPrivate::slotSpeakText()
 void ViewerPrivate::slotCopyImageLocation()
 {
 #ifndef QT_NO_CLIPBOARD
-    QApplication::clipboard()->setText(mImageUrl.url());
+    if (mImageUrl.scheme() == QLatin1String("cid")) {
+        QApplication::clipboard()->setText(MessageViewer::WebEngineEmbedPart::self()->contentUrl(mImageUrl.path()));
+    } else {
+        QApplication::clipboard()->setText(mImageUrl.url());
+    }
 #endif
 }
 
