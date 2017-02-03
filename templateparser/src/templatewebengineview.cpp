@@ -40,8 +40,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 }
 
 TemplateWebEngineView::TemplateWebEngineView(QWidget *parent)
-    : QWebEngineView(parent),
-      mLoadHtmlDone(false)
+    : QWebEngineView(parent)
 {
     mPage = new TemplateWebEnginePage(this);
     setPage(mPage);
@@ -55,7 +54,6 @@ TemplateWebEngineView::~TemplateWebEngineView()
 
 void TemplateWebEngineView::setHtmlContent(const QString &html)
 {
-    mLoadHtmlDone = false;
     setHtml(html);
 }
 
@@ -65,18 +63,14 @@ void TemplateWebEngineView::slotLoadFinished(bool ok)
         mPage->toHtml(invoke(this, &TemplateWebEngineView::setPlainText));
     } else {
         qCWarning(TEMPLATEPARSER_LOG) << "Loading page failed";
+        Q_EMIT loadContentDone(false);
     }
 }
 
 void TemplateWebEngineView::setPlainText(const QString &plainText)
 {
-    mLoadHtmlDone = true;
     mHtml = plainText;
-}
-
-bool TemplateWebEngineView::loadHtmlDone() const
-{
-    return mLoadHtmlDone;
+    Q_EMIT loadContentDone(true);
 }
 
 QString TemplateWebEngineView::html() const

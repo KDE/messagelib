@@ -37,7 +37,8 @@ public:
 
     QString html() const;
 
-    bool loadHtmlDone() const;
+Q_SIGNALS:
+    void loadContentDone(bool success);
 
 private:
     void slotLoadFinished(bool ok);
@@ -45,7 +46,6 @@ private:
 
     QString mHtml;
     TemplateWebEnginePage *mPage;
-    bool mLoadHtmlDone;
 };
 }
 #endif // TEMPLATEWEBENGINEVIEW_H
