@@ -20,6 +20,7 @@
 #include "templatewebengineviewtest.h"
 #include "templatewebengineview.h"
 #include <QTest>
+#include <QSignalSpy>
 
 TemplateWebEngineViewTest::TemplateWebEngineViewTest(QObject *parent)
     : QObject(parent)
@@ -36,6 +37,19 @@ void TemplateWebEngineViewTest::shouldHaveDefaultValue()
 {
     TemplateParser::TemplateWebEngineView w;
     QVERIFY(w.html().isEmpty());
+}
+
+void TemplateWebEngineViewTest::shouldExtractHtml()
+{
+    TemplateParser::TemplateWebEngineView w;
+    QVERIFY(w.html().isEmpty());
+    QSignalSpy spy(&w, &TemplateParser::TemplateWebEngineView::loadContentDone);
+    w.setHtmlContent(QStringLiteral("<html><head></head><body>HTML Text</body></html>"));
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+    const bool result = spy.at(0).at(0).toBool();
+    QVERIFY(result);
+    QCOMPARE(w.html(), QStringLiteral("HTML Text"));
 }
 
 QTEST_MAIN(TemplateWebEngineViewTest)

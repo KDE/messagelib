@@ -60,7 +60,7 @@ void TemplateWebEngineView::setHtmlContent(const QString &html)
 void TemplateWebEngineView::slotLoadFinished(bool ok)
 {
     if (ok) {
-        mPage->toHtml(invoke(this, &TemplateWebEngineView::setPlainText));
+        mPage->toPlainText(invoke(this, &TemplateWebEngineView::setPlainText));
     } else {
         qCWarning(TEMPLATEPARSER_LOG) << "Loading page failed";
         Q_EMIT loadContentDone(false);

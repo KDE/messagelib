@@ -30,6 +30,7 @@ public:
     ~TemplateWebEngineViewTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldExtractHtml();
 };
 
 #endif // TEMPLATEWEBENGINEVIEWTEST_H
