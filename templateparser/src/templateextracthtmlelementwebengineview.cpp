@@ -66,10 +66,21 @@ void TemplateExtractHtmlElementWebEngineView::setHtmlContent(const QString &html
 void TemplateExtractHtmlElementWebEngineView::slotLoadFinished(bool success)
 {
     if (success) {
-
+//#if QT_VERSION >= 0x050700
+//        page->runJavaScript(js,
+//                            WebEngineViewer::WebEngineManageScript::scriptWordId(),
+//                            invoke(this, &WebHitTest::handleHitTest));
+//#else
+//        page->runJavaScript(js, invoke(this, &WebHitTest::handleHitTest));
+//#endif
     } else {
         Q_EMIT loadContentDone(false);
     }
+}
+
+void TemplateExtractHtmlElementWebEngineView::handleHtmlInfo(const QVariant &result)
+{
+
 }
 
 QString TemplateExtractHtmlElementWebEngineView::htmlElement() const

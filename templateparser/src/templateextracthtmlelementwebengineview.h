@@ -46,6 +46,7 @@ Q_SIGNALS:
 private:
     void clear();
     void slotLoadFinished(bool success);
+    void handleHtmlInfo(const QVariant &result);
 
     QString mBodyElement;
     QString mHeaderElement;

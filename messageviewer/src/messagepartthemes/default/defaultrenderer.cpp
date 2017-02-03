@@ -329,12 +329,6 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
                             str.contains(QStringLiteral("<img src=\"/"), Qt::CaseInsensitive))) {
         return true;
     }
-    /*
-    //Laurent: workaround for local ref cid
-    if(str.contains(QStringLiteral("<img src=\"cid:"),Qt::CaseInsensitive)) {
-    return true;
-    }
-    */
     int httpPos = str.indexOf(QLatin1String("\"http:"), Qt::CaseInsensitive);
     int httpsPos = str.indexOf(QLatin1String("\"https:"), Qt::CaseInsensitive);
 
