@@ -32,8 +32,24 @@ public:
     explicit TemplateExtractHtmlElementWebEngineView(QWidget *parent = nullptr);
     ~TemplateExtractHtmlElementWebEngineView();
 
+    QString bodyElement() const;
+
+    QString headerElement() const;
+
+    QString htmlElement() const;
+
+    void setHtmlContent(const QString &html);
+
+Q_SIGNALS:
+    void loadContentDone(bool success);
+
 private:
+    void clear();
     void slotLoadFinished(bool success);
+
+    QString mBodyElement;
+    QString mHeaderElement;
+    QString mHtmlElement;
 
     TemplateWebEnginePage *mPage;
 };

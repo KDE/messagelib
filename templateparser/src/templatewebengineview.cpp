@@ -54,6 +54,7 @@ TemplateWebEngineView::~TemplateWebEngineView()
 
 void TemplateWebEngineView::setHtmlContent(const QString &html)
 {
+    mHtml.clear();
     setHtml(html);
 }
 

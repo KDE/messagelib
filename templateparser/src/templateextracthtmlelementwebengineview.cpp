@@ -20,6 +20,21 @@
 #include "templateextracthtmlelementwebengineview.h"
 #include "templatewebenginepage.h"
 
+template<typename Arg, typename R, typename C>
+struct InvokeWrapper {
+    R *receiver;
+    void (C::*memberFun)(Arg);
+    void operator()(Arg result) {
+        (receiver->*memberFun)(result);
+    }
+};
+
+template<typename Arg, typename R, typename C>
+InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
+{
+    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
+    return wrapper;
+}
 using namespace TemplateParser;
 
 TemplateExtractHtmlElementWebEngineView::TemplateExtractHtmlElementWebEngineView(QWidget *parent)
@@ -35,7 +50,39 @@ TemplateExtractHtmlElementWebEngineView::~TemplateExtractHtmlElementWebEngineVie
 
 }
 
+void TemplateExtractHtmlElementWebEngineView::clear()
+{
+    mBodyElement.clear();
+    mHeaderElement.clear();
+    mHtmlElement.clear();
+}
+
+void TemplateExtractHtmlElementWebEngineView::setHtmlContent(const QString &html)
+{
+    clear();
+    setHtml(html);
+}
+
 void TemplateExtractHtmlElementWebEngineView::slotLoadFinished(bool success)
 {
+    if (success) {
 
+    } else {
+        Q_EMIT loadContentDone(false);
+    }
+}
+
+QString TemplateExtractHtmlElementWebEngineView::htmlElement() const
+{
+    return mHtmlElement;
+}
+
+QString TemplateExtractHtmlElementWebEngineView::headerElement() const
+{
+    return mHeaderElement;
+}
+
+QString TemplateExtractHtmlElementWebEngineView::bodyElement() const
+{
+    return mBodyElement;
 }
