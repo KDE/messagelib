@@ -18,6 +18,7 @@ set(templateparser_LIB_SRCS
     templatessyntaxhighlighterrules.cpp
     templatewebengineview.cpp
     templatewebenginepage.cpp
+    templateextracthtmlelementwebengineview.cpp
     )
 
 
