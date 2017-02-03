@@ -260,6 +260,9 @@ void TemplateParser::process(const KMime::Message::Ptr &aorig_msg,
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
         return;
     }
+    mHtmlToPlainText.clear();
+    mExtractHtmlElement.clear();
+
     mOrigMsg = aorig_msg;
     mFolder = afolder;
     const QString tmpl = findTemplate();
@@ -272,6 +275,8 @@ void TemplateParser::process(const KMime::Message::Ptr &aorig_msg,
 void TemplateParser::process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
                              const Akonadi::Collection &afolder)
 {
+    mHtmlToPlainText.clear();
+    mExtractHtmlElement.clear();
     mForceCursorPosition = false;
     mOrigMsg = aorig_msg;
     mFolder = afolder;
@@ -288,6 +293,8 @@ void TemplateParser::processWithIdentity(uint uoid, const KMime::Message::Ptr &a
 
 void TemplateParser::processWithTemplate(const QString &tmpl)
 {
+    mHtmlToPlainText.clear();
+    mExtractHtmlElement.clear();
     mOtp->parseObjectTree(mOrigMsg.data());
     const int tmpl_len = tmpl.length();
     QString plainBody, htmlBody;
@@ -1543,32 +1550,10 @@ QString TemplateParser::htmlMessageText(bool aStripSignature, AllowSelection isS
         return mSelection;
     }
 
-    QString htmlElement = mOtp->htmlContent();
+    mExtractHtmlElement.extract(mOtp);
+    mHeadElement = mExtractHtmlElement.headerElement();
 
-    if (htmlElement.isEmpty()) {   //plain mails only
-        QString htmlReplace = mOtp->plainTextContent().toHtmlEscaped();
-        htmlReplace = htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
-        htmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
-    }
-
-    QWebPage page;
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
-    page.settings()->setAttribute(QWebSettings::JavaEnabled, false);
-    page.settings()->setAttribute(QWebSettings::PluginsEnabled, false);
-    page.settings()->setAttribute(QWebSettings::AutoLoadImages, false);
-
-    page.currentFrame()->setHtml(htmlElement);
-
-    //TODO to be tested/verified if this is not an issue
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
-    const QString bodyElement = page.currentFrame()->evaluateJavaScript(
-                                    QStringLiteral("document.getElementsByTagName('body')[0].innerHTML")).toString();
-
-    mHeadElement = page.currentFrame()->evaluateJavaScript(
-                       QStringLiteral("document.getElementsByTagName('head')[0].innerHTML")).toString();
-
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
-
+    const QString bodyElement = mExtractHtmlElement.bodyElement();
     if (!bodyElement.isEmpty()) {
         if (aStripSignature) {
             //FIXME strip signature works partially for HTML mails
@@ -1579,9 +1564,9 @@ QString TemplateParser::htmlMessageText(bool aStripSignature, AllowSelection isS
 
     if (aStripSignature) {
         //FIXME strip signature works partially for HTML mails
-        return MessageCore::StringUtil::stripSignature(htmlElement);
+        return MessageCore::StringUtil::stripSignature(mExtractHtmlElement.htmlElement());
     }
-    return htmlElement;
+    return mExtractHtmlElement.htmlElement();
 }
 
 QString TemplateParser::quotedPlainText(const QString &selection) const
@@ -1685,27 +1670,95 @@ bool TemplateParser::cursorPositionWasSet() const
 }
 
 HtmlToPlainText::HtmlToPlainText()
-    : processDone(false)
+    : mProcessDone(false)
 {
 
 }
 
+void HtmlToPlainText::clear()
+{
+    mProcessDone = false;
+    mResult.clear();
+}
+
 QString HtmlToPlainText::extractToPlainText(MimeTreeParser::ObjectTreeParser *parser)
 {
-    if (processDone) {
-        return result;
+    if (mProcessDone) {
+        return mResult;
     }
-    result = parser->plainTextContent();
+    mResult = parser->plainTextContent();
 
-    if (result.isEmpty()) {   //HTML-only mails
+    if (mResult.isEmpty()) {   //HTML-only mails
         // QtWebEngine port TODO: QWebEnginePage::toPlainText() exists but is asynchronous
         // The easiest solution might be to do that -before- calling the TemplateParser.
         QWebPage doc;
         doc.mainFrame()->setHtml(parser->htmlContent());
-        result = doc.mainFrame()->toPlainText();
+        mResult = doc.mainFrame()->toPlainText();
     }
-    processDone = true;
-    return result;
+    mProcessDone = true;
+    return mResult;
+}
+
+ExtractHtmlElement::ExtractHtmlElement()
+    : mProcessDone(false)
+{
+
+}
+
+void ExtractHtmlElement::clear()
+{
+    mProcessDone = false;
+    mHeaderElement.clear();
+    mBodyElement.clear();
+    mHtmlElement.clear();
+}
+
+void ExtractHtmlElement::extract(MimeTreeParser::ObjectTreeParser *parser)
+{
+    if (mProcessDone) {
+        return;
+    }
+    mHtmlElement = parser->htmlContent();
+
+    if (mHtmlElement.isEmpty()) {   //plain mails only
+        QString htmlReplace = parser->plainTextContent().toHtmlEscaped();
+        htmlReplace = htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
+        mHtmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
+    }
+
+    QWebPage page;
+    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
+    page.settings()->setAttribute(QWebSettings::JavaEnabled, false);
+    page.settings()->setAttribute(QWebSettings::PluginsEnabled, false);
+    page.settings()->setAttribute(QWebSettings::AutoLoadImages, false);
+
+    page.currentFrame()->setHtml(mHtmlElement);
+
+    //TODO to be tested/verified if this is not an issue
+    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
+    mBodyElement = page.currentFrame()->evaluateJavaScript(
+                QStringLiteral("document.getElementsByTagName('body')[0].innerHTML")).toString();
+
+    mHeaderElement = page.currentFrame()->evaluateJavaScript(
+                QStringLiteral("document.getElementsByTagName('head')[0].innerHTML")).toString();
+
+    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
+    mProcessDone = true;
+}
+
+QString ExtractHtmlElement::bodyElement() const
+{
+    return mBodyElement;
+}
+
+QString ExtractHtmlElement::headerElement() const
+{
+    return mHeaderElement;
+}
+
+QString ExtractHtmlElement::htmlElement() const
+{
+    return mHtmlElement;
 }
 
 }

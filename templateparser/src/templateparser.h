@@ -54,12 +54,34 @@ class HtmlToPlainText
 {
 public:
     HtmlToPlainText();
+    void clear();
     QString extractToPlainText(MimeTreeParser::ObjectTreeParser *parser);
 
 private:
-    bool processDone;
-    QString result;
+    bool mProcessDone;
+    QString mResult;
 };
+
+class ExtractHtmlElement
+{
+public:
+    ExtractHtmlElement();
+    void clear();
+    void extract(MimeTreeParser::ObjectTreeParser *parser);
+
+    QString bodyElement() const;
+
+    QString headerElement() const;
+
+    QString htmlElement() const;
+
+private:
+    bool mProcessDone;
+    QString mBodyElement;
+    QString mHeaderElement;
+    QString mHtmlElement;
+};
+
 
 /**
  * \brief The TemplateParser transforms a message with a given template.
@@ -252,6 +274,7 @@ public:
     bool cursorPositionWasSet() const;
 protected:
     mutable HtmlToPlainText mHtmlToPlainText;
+    mutable ExtractHtmlElement mExtractHtmlElement;
     Mode mMode;
     Akonadi::Collection mFolder;          //Used to find a template
     uint mIdentity;
