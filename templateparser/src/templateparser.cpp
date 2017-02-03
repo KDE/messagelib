@@ -1516,6 +1516,7 @@ void TemplateParser::setWordWrap(bool wrap, int wrapColWidth)
     mColWrap = wrapColWidth;
 }
 
+
 QString TemplateParser::plainMessageText(bool aStripSignature,
         AllowSelection isSelectionAllowed) const
 {
@@ -1527,16 +1528,7 @@ QString TemplateParser::plainMessageText(bool aStripSignature,
         return QString();
     }
 
-    QString result = mOtp->plainTextContent();
-
-    if (result.isEmpty()) {   //HTML-only mails
-        // QtWebEngine port TODO: QWebEnginePage::toPlainText() exists but is asynchronous
-        // The easiest solution might be to do that -before- calling the TemplateParser.
-        QWebPage doc;
-        doc.mainFrame()->setHtml(mOtp->htmlContent());
-        result = doc.mainFrame()->toPlainText();
-    }
-
+    QString result = mHtmlToPlainText.extractToPlainText(mOtp);
     if (aStripSignature) {
         result = MessageCore::StringUtil::stripSignature(result);
     }
@@ -1690,6 +1682,30 @@ void TemplateParser::makeValidHtml(QString &body)
 bool TemplateParser::cursorPositionWasSet() const
 {
     return mForceCursorPosition;
+}
+
+HtmlToPlainText::HtmlToPlainText()
+    : processDone(false)
+{
+
+}
+
+QString HtmlToPlainText::extractToPlainText(MimeTreeParser::ObjectTreeParser *parser)
+{
+    if (processDone) {
+        return result;
+    }
+    result = parser->plainTextContent();
+
+    if (result.isEmpty()) {   //HTML-only mails
+        // QtWebEngine port TODO: QWebEnginePage::toPlainText() exists but is asynchronous
+        // The easiest solution might be to do that -before- calling the TemplateParser.
+        QWebPage doc;
+        doc.mainFrame()->setHtml(parser->htmlContent());
+        result = doc.mainFrame()->toPlainText();
+    }
+    processDone = true;
+    return result;
 }
 
 }

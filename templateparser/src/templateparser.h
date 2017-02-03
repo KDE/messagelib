@@ -50,6 +50,17 @@ class ImageCollector;
 namespace TemplateParser
 {
 
+class HtmlToPlainText
+{
+public:
+    HtmlToPlainText();
+    QString extractToPlainText(MimeTreeParser::ObjectTreeParser *parser);
+
+private:
+    bool processDone;
+    QString result;
+};
+
 /**
  * \brief The TemplateParser transforms a message with a given template.
  *
@@ -240,6 +251,7 @@ public:
 
     bool cursorPositionWasSet() const;
 protected:
+    mutable HtmlToPlainText mHtmlToPlainText;
     Mode mMode;
     Akonadi::Collection mFolder;          //Used to find a template
     uint mIdentity;
