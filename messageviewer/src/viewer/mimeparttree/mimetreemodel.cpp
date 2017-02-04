@@ -18,6 +18,7 @@
 */
 
 #include "mimetreemodel.h"
+#include "messageviewer_debug.h"
 
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/Util>
@@ -30,6 +31,9 @@
 
 #include <QIcon>
 #include <QMimeDatabase>
+#include <QTemporaryDir>
+#include <QMimeData>
+#include <QUrl>
 
 using namespace MessageViewer;
 
@@ -39,6 +43,17 @@ public:
     Private() :
         root(Q_NULLPTR)
     {}
+    ~Private()
+    {
+        qDeleteAll(tempDirs);
+    }
+
+    void clearTempDir()
+    {
+        qDeleteAll(tempDirs);
+        tempDirs.clear();
+    }
+ 
 
     QString descriptionForContent(KMime::Content *content)
     {
@@ -114,6 +129,7 @@ public:
         }
     }
 
+    QList<QTemporaryDir *> tempDirs;
     KMime::Content *root;
     QMimeDatabase m_mimeDb;
 };
@@ -131,8 +147,11 @@ MimeTreeModel::~MimeTreeModel()
 
 void MimeTreeModel::setRoot(KMime::Content *root)
 {
-    d->root = root;
-    reset();
+    if (d->root != root) {
+        d->clearTempDir();
+        d->root = root;
+        reset();
+    }
 }
 
 KMime::Content *MimeTreeModel::root()
@@ -267,3 +286,59 @@ QVariant MimeTreeModel::headerData(int section, Qt::Orientation orientation, int
     return QAbstractItemModel::headerData(section, orientation, role);
 }
 
+QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
+{
+    QList<QUrl> urls;
+    for (const QModelIndex &index : indexes) {
+        //create dnd for one item not for all three columns.
+        if (index.column() != 0) {
+            continue;
+        }
+        KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
+        if (!content) {
+            continue;
+        }
+        const QByteArray data = content->decodedContent();
+        if (data.isEmpty()) {
+            continue;
+        }
+
+        QTemporaryDir *tempDir = new QTemporaryDir; // Will remove the directory on destruction.
+        d->tempDirs.append(tempDir);
+        const QString fileName = tempDir->path() + QLatin1Char('/') + d->descriptionForContent(content);
+        QFile f(fileName);
+        if (!f.open(QIODevice::WriteOnly)) {
+            qCWarning(MESSAGEVIEWER_LOG) << "Cannot write attachment:" << f.errorString();
+            continue;
+        }
+        if (f.write(data) != data.length()) {
+            qCWarning(MESSAGEVIEWER_LOG) << "Failed to write all data to file!";
+            continue;
+        }
+        f.setPermissions(f.permissions() | QFileDevice::ReadUser | QFileDevice::WriteUser);
+        f.close();
+
+        QUrl url;
+        url.setScheme(QStringLiteral("file"));
+        url.setPath(fileName);
+        qCDebug(MESSAGEVIEWER_LOG) << " temporary file " << url;
+        urls.append(url);
+    }
+
+    QMimeData *mimeData = new QMimeData;
+    mimeData->setUrls(urls);
+    return mimeData;
+}
+
+
+Qt::ItemFlags MimeTreeModel::flags(const QModelIndex &index) const
+{
+    Qt::ItemFlags defaultFlags = QAbstractItemModel::flags(index);
+    return Qt::ItemIsDragEnabled | defaultFlags;
+}
+
+QStringList MimeTreeModel::mimeTypes() const
+{
+    const QStringList types = {QStringLiteral("text/uri-list")};
+    return types;
+}

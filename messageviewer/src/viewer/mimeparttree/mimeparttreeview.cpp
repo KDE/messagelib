@@ -42,6 +42,7 @@ MimePartTreeView::MimePartTreeView(QWidget *parent)
     header()->setResizeMode(QHeaderView::ResizeToContents);
     connect(mMimePartModel, &MimeTreeModel::modelReset, this, &MimePartTreeView::expandAll);
     restoreMimePartTreeConfig();
+    setDragEnabled(true);
 }
 
 MimePartTreeView::~MimePartTreeView()
