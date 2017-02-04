@@ -465,7 +465,7 @@ QUrl Viewer::urlClicked() const
 QUrl Viewer::imageUrlClicked() const
 {
     Q_D(const Viewer);
-    return d->mImageUrl;
+    return d->imageUrl();
 }
 
 void Viewer::update(MimeTreeParser::UpdateMode updateMode)

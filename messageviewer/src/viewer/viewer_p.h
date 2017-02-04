@@ -428,6 +428,7 @@ public:
     bool showEmoticons() const;
     void checkPhishingUrl();
     void executeRunner(const QUrl &url);
+    QUrl imageUrl() const;
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);

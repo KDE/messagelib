@@ -2715,14 +2715,21 @@ void ViewerPrivate::slotSpeakText()
     }
 }
 
+QUrl ViewerPrivate::imageUrl() const
+{
+    QUrl url;
+    if (mImageUrl.scheme() == QLatin1String("cid")) {
+        url = QUrl(MessageViewer::WebEngineEmbedPart::self()->contentUrl(mImageUrl.path()));
+    } else {
+        url = mImageUrl;
+    }
+    return url;
+}
+
 void ViewerPrivate::slotCopyImageLocation()
 {
 #ifndef QT_NO_CLIPBOARD
-    if (mImageUrl.scheme() == QLatin1String("cid")) {
-        QApplication::clipboard()->setText(MessageViewer::WebEngineEmbedPart::self()->contentUrl(mImageUrl.path()));
-    } else {
-        QApplication::clipboard()->setText(mImageUrl.url());
-    }
+    QApplication::clipboard()->setText(imageUrl().url());
 #endif
 }
 
