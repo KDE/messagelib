@@ -59,7 +59,9 @@ public:
     int columnCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-
+    QMimeData *mimeData(const QModelIndexList &indexes) const Q_DECL_OVERRIDE;
+    Qt::ItemFlags flags(const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QStringList mimeTypes() const Q_DECL_OVERRIDE;
 private:
     class Private;
     Private *const d;
