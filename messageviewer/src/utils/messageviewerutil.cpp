@@ -383,10 +383,6 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
         file.close();
     }
 
-#if 0
-    mNodeHelper->removeTempFiles();
-    delete mNodeHelper;
-#endif
     return true;
 }
 
