@@ -63,16 +63,23 @@ void TemplateExtractHtmlElementWebEngineView::setHtmlContent(const QString &html
     setHtml(html);
 }
 
+
+QString extractHeaderBodyScript()
+{
+    //TODO
+    return {};
+}
+
 void TemplateExtractHtmlElementWebEngineView::slotLoadFinished(bool success)
 {
     if (success) {
-//#if QT_VERSION >= 0x050700
-//        page->runJavaScript(js,
-//                            WebEngineViewer::WebEngineManageScript::scriptWordId(),
-//                            invoke(this, &WebHitTest::handleHitTest));
-//#else
-//        page->runJavaScript(js, invoke(this, &WebHitTest::handleHitTest));
-//#endif
+#if QT_VERSION >= 0x050700
+//        page->runJavaScript(extractHeaderBodyScript(),
+//                            (QWebEngineScript::UserWorld + 2),
+//                            invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
+#else
+//        page->runJavaScript(extractHeaderBodyScript(), invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
+#endif
     } else {
         Q_EMIT loadContentDone(false);
     }
