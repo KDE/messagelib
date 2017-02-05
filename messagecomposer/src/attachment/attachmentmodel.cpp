@@ -175,9 +175,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
         f.setPermissions(f.permissions() | QFileDevice::ReadUser | QFileDevice::WriteUser);
         f.close();
 
-        QUrl url;
-        url.setScheme(QStringLiteral("file"));
-        url.setPath(fileName);
+        const QUrl url = QUrl::fromLocalFile(fileName);
         qCDebug(MESSAGECOMPOSER_LOG) << " temporary file " << url;
         urls.append(url);
     }
@@ -189,8 +187,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
 
 QStringList AttachmentModel::mimeTypes() const
 {
-    QStringList types;
-    types << QStringLiteral("text/uri-list");
+    const QStringList types = {QStringLiteral("text/uri-list")};
     return types;
 }
 
