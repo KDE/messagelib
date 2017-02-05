@@ -150,7 +150,9 @@ void MimeTreeModel::setRoot(KMime::Content *root)
     if (d->root != root) {
         d->clearTempDir();
         d->root = root;
+        beginResetModel();
         reset();
+        endResetModel();
     }
 }
 
@@ -315,12 +317,9 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
             qCWarning(MESSAGEVIEWER_LOG) << "Failed to write all data to file!";
             continue;
         }
-        f.setPermissions(f.permissions() | QFileDevice::ReadUser | QFileDevice::WriteUser);
         f.close();
 
-        QUrl url;
-        url.setScheme(QStringLiteral("file"));
-        url.setPath(fileName);
+        const QUrl url = QUrl::fromLocalFile(fileName);
         qCDebug(MESSAGEVIEWER_LOG) << " temporary file " << url;
         urls.append(url);
     }
