@@ -294,6 +294,29 @@ public:
     }
 };
 
+class EmbeddedImageURLHandler : public MimeTreeParser::URLHandler
+{
+public:
+    EmbeddedImageURLHandler() : MimeTreeParser::URLHandler()
+    {}
+    ~EmbeddedImageURLHandler()
+    {}
+    bool handleDrag(const QUrl &url, ViewerPrivate *window) const Q_DECL_OVERRIDE;
+    bool willHandleDrag(const QUrl &url, ViewerPrivate *window) const Q_DECL_OVERRIDE;
+    bool handleClick(const QUrl &, ViewerPrivate *) const Q_DECL_OVERRIDE
+    {
+        return false;
+    }
+    bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const Q_DECL_OVERRIDE
+    {
+        return false;
+    }
+    QString statusBarMessage(const QUrl &url, ViewerPrivate *) const Q_DECL_OVERRIDE
+    {
+        return QString();
+    }
+};
+
 class KRunURLHandler : public MimeTreeParser::URLHandler
 {
 public:
@@ -461,6 +484,7 @@ URLHandlerManager::URLHandlerManager()
     registerHandler(new InternalImageURLHandler);
     registerHandler(new KRunURLHandler());
     registerHandler(new KMailActionURLHandler());
+    //registerHandler(new EmbeddedImageURLHandler());
 }
 
 URLHandlerManager::~URLHandlerManager()
@@ -1128,4 +1152,17 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         return false;
     }
 }
+}
+
+bool EmbeddedImageURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
+{
+    Q_UNUSED(url);
+    Q_UNUSED(window);
+    return false;
+}
+
+bool EmbeddedImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window) const
+{
+    Q_UNUSED(window);
+    return url.scheme() == QLatin1String("cid");
 }
