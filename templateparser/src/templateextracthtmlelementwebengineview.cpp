@@ -66,6 +66,13 @@ void TemplateExtractHtmlElementWebEngineView::setHtmlContent(const QString &html
 
 QString extractHeaderBodyScript()
 {
+#if 0
+    mBodyElement = page.currentFrame()->evaluateJavaScript(
+                QStringLiteral("document.getElementsByTagName('body')[0].innerHTML")).toString();
+
+    mHeaderElement = page.currentFrame()->evaluateJavaScript(
+                QStringLiteral("document.getElementsByTagName('head')[0].innerHTML")).toString();
+#endif
     //TODO
     return {};
 }
