@@ -36,20 +36,31 @@ void TemplateExtractHtmlElementWebEngineViewTest::shouldHaveDefaultValue()
     QVERIFY(w.htmlElement().isEmpty());
 }
 
+void TemplateExtractHtmlElementWebEngineViewTest::shouldExtractHtml_data()
+{
+    QTest::addColumn<QString>("html");
+    QTest::addColumn<QString>("body");
+    QTest::addColumn<QString>("header");
+    QTest::newRow("test1") << QStringLiteral("<html><head></head><body>HTML Text</body></html>") << QStringLiteral("HTML Text") << QString();
+    QTest::newRow("empty") << QString() << QString() << QString();
+}
+
 void TemplateExtractHtmlElementWebEngineViewTest::shouldExtractHtml()
 {
+    QFETCH(QString, html);
+    QFETCH(QString, body);
+    QFETCH(QString, header);
     TemplateParser::TemplateExtractHtmlElementWebEngineView w;
     QVERIFY(w.htmlElement().isEmpty());
     QSignalSpy spy(&w, &TemplateParser::TemplateExtractHtmlElementWebEngineView::loadContentDone);
-    const QString htmlStr = QStringLiteral("<html><head></head><body>HTML Text</body></html>");
-    w.setHtmlContent(htmlStr);
+    w.setHtmlContent(html);
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
     const bool result = spy.at(0).at(0).toBool();
     QVERIFY(result);
-    QCOMPARE(w.htmlElement(), htmlStr);
-    QCOMPARE(w.headerElement(), QString());
-    QCOMPARE(w.bodyElement(), QStringLiteral("HTML Text"));
+    QCOMPARE(w.htmlElement(), html);
+    QCOMPARE(w.headerElement(), header);
+    QCOMPARE(w.bodyElement(), body);
 }
 
 

@@ -30,6 +30,7 @@ public:
     ~TemplateExtractHtmlElementWebEngineViewTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldExtractHtml_data();
     void shouldExtractHtml();
 };
 
