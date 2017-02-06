@@ -18,12 +18,21 @@
 */
 
 #include "templateextracthtmlelementwebengineviewtest.h"
+#include "templateextracthtmlelementwebengineview.h"
 #include <QTest>
 
 TemplateExtractHtmlElementWebEngineViewTest::TemplateExtractHtmlElementWebEngineViewTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void TemplateExtractHtmlElementWebEngineViewTest::shouldHaveDefaultValue()
+{
+    TemplateParser::TemplateExtractHtmlElementWebEngineView w;
+    QVERIFY(w.bodyElement().isEmpty());
+    QVERIFY(w.headerElement().isEmpty());
+    QVERIFY(w.htmlElement().isEmpty());
 }
 
 QTEST_MAIN(TemplateExtractHtmlElementWebEngineViewTest)

@@ -28,6 +28,8 @@ class TemplateExtractHtmlElementWebEngineViewTest : public QObject
 public:
     explicit TemplateExtractHtmlElementWebEngineViewTest(QObject *parent = nullptr);
     ~TemplateExtractHtmlElementWebEngineViewTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEWTEST_H

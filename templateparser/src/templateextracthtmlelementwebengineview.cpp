@@ -18,7 +18,9 @@
 */
 
 #include "templateextracthtmlelementwebengineview.h"
+#include "templateparser_debug.h"
 #include "templatewebenginepage.h"
+#include <QWebEngineScript>
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -66,26 +68,25 @@ void TemplateExtractHtmlElementWebEngineView::setHtmlContent(const QString &html
 
 QString extractHeaderBodyScript()
 {
-#if 0
-    mBodyElement = page.currentFrame()->evaluateJavaScript(
-                       QStringLiteral("document.getElementsByTagName('body')[0].innerHTML")).toString();
-
-    mHeaderElement = page.currentFrame()->evaluateJavaScript(
-                         QStringLiteral("document.getElementsByTagName('head')[0].innerHTML")).toString();
-#endif
-    //TODO
-    return {};
+    const QString source = QStringLiteral("(function() {"
+                                          "var res = {"
+                                          "    body: document.getElementsByTagName('body')[0].innerHTML,"
+                                          "    header: document.getElementsByTagName('head')[0].innerHTML"
+                                          "};"
+                                          "return res;"
+                                          "})()");
+    return source;
 }
 
 void TemplateExtractHtmlElementWebEngineView::slotLoadFinished(bool success)
 {
     if (success) {
 #if QT_VERSION >= 0x050700
-//        page->runJavaScript(extractHeaderBodyScript(),
-//                            (QWebEngineScript::UserWorld + 2),
-//                            invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
+        mPage->runJavaScript(extractHeaderBodyScript(),
+                            (QWebEngineScript::UserWorld + 2),
+                            invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
 #else
-//        page->runJavaScript(extractHeaderBodyScript(), invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
+        mPage->runJavaScript(extractHeaderBodyScript(), invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
 #endif
     } else {
         Q_EMIT loadContentDone(false);
@@ -94,7 +95,11 @@ void TemplateExtractHtmlElementWebEngineView::slotLoadFinished(bool success)
 
 void TemplateExtractHtmlElementWebEngineView::handleHtmlInfo(const QVariant &result)
 {
-
+    if (result.isValid()) {
+        qDebug() << " void TemplateExtractHtmlElementWebEngineView::handleHtmlInfo(const QVariant &result)"<<result;
+    } else {
+        qCWarning(TEMPLATEPARSER_LOG) << "Impossible to get value";
+    }
 }
 
 QString TemplateExtractHtmlElementWebEngineView::htmlElement() const
