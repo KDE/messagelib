@@ -20,6 +20,7 @@
 #include "templateextracthtmlelementwebengineviewtest.h"
 #include "templateextracthtmlelementwebengineview.h"
 #include <QTest>
+#include <QSignalSpy>
 
 TemplateExtractHtmlElementWebEngineViewTest::TemplateExtractHtmlElementWebEngineViewTest(QObject *parent)
     : QObject(parent)
@@ -34,5 +35,22 @@ void TemplateExtractHtmlElementWebEngineViewTest::shouldHaveDefaultValue()
     QVERIFY(w.headerElement().isEmpty());
     QVERIFY(w.htmlElement().isEmpty());
 }
+
+void TemplateExtractHtmlElementWebEngineViewTest::shouldExtractHtml()
+{
+    TemplateParser::TemplateExtractHtmlElementWebEngineView w;
+    QVERIFY(w.htmlElement().isEmpty());
+    QSignalSpy spy(&w, &TemplateParser::TemplateExtractHtmlElementWebEngineView::loadContentDone);
+    const QString htmlStr = QStringLiteral("<html><head></head><body>HTML Text</body></html>");
+    w.setHtmlContent(htmlStr);
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+    const bool result = spy.at(0).at(0).toBool();
+    QVERIFY(result);
+    QCOMPARE(w.htmlElement(), htmlStr);
+    QCOMPARE(w.headerElement(), QString());
+    QCOMPARE(w.bodyElement(), QStringLiteral("HTML Text"));
+}
+
 
 QTEST_MAIN(TemplateExtractHtmlElementWebEngineViewTest)

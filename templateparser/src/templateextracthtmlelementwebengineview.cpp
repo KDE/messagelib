@@ -21,6 +21,7 @@
 #include "templateparser_debug.h"
 #include "templatewebenginepage.h"
 #include <QWebEngineScript>
+#include <QMap>
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -63,6 +64,7 @@ void TemplateExtractHtmlElementWebEngineView::clear()
 void TemplateExtractHtmlElementWebEngineView::setHtmlContent(const QString &html)
 {
     clear();
+    mHtmlElement = html;
     setHtml(html);
 }
 
@@ -97,8 +99,13 @@ void TemplateExtractHtmlElementWebEngineView::handleHtmlInfo(const QVariant &res
 {
     if (result.isValid()) {
         qDebug() << " void TemplateExtractHtmlElementWebEngineView::handleHtmlInfo(const QVariant &result)"<<result;
+        const QVariantMap map = result.toMap();
+        mBodyElement = map.value(QStringLiteral("body")).toString();
+        mHeaderElement = map.value(QStringLiteral("header")).toString();
+        Q_EMIT loadContentDone(true);
     } else {
         qCWarning(TEMPLATEPARSER_LOG) << "Impossible to get value";
+        Q_EMIT loadContentDone(false);
     }
 }
 
