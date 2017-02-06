@@ -122,6 +122,7 @@ MailWebEngineView::~MailWebEngineView()
 
 void MailWebEngineView::setLinkHovered(const QUrl &url)
 {
+    //TODO we need to detect image url too.
     d->mHoveredUrl = url;
 }
 
