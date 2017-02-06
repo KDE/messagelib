@@ -325,7 +325,7 @@ void RenderTest::testRender()
     compareFile(outFileName, referenceFileName);
 }
 
-void RenderTest::compareFile(const QString& outFile, const QString& referenceFile)
+void RenderTest::compareFile(const QString &outFile, const QString &referenceFile)
 {
     QVERIFY(QFile::exists(outFile));
 
@@ -381,6 +381,5 @@ void RenderTest::compareFile(const QString& outFile, const QString& referenceFil
 
     QCOMPARE(proc.exitCode(), 0);
 }
-
 
 QTEST_MAIN(RenderTest)

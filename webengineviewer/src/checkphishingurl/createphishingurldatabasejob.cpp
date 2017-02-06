@@ -198,7 +198,7 @@ RiceDeltaEncoding CreatePhishingUrlDataBaseJobPrivate::parseRiceDeltaEncoding(co
     RiceDeltaEncoding riceDeltaEncodingTmp;
     QMap<QString, QVariant>::const_iterator riceHashesIt = map.cbegin();
     const QMap<QString, QVariant>::const_iterator riceHashesItEnd = map.cend();
-    for (;riceHashesIt != riceHashesItEnd; ++riceHashesIt) {
+    for (; riceHashesIt != riceHashesItEnd; ++riceHashesIt) {
         const QString key = riceHashesIt.key();
         if (key == QLatin1String("firstValue")) {
             riceDeltaEncodingTmp.firstValue = riceHashesIt.value().toByteArray();

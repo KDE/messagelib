@@ -230,7 +230,6 @@ void TemplateParserTester::test_processWithTemplatesForContent_data()
     //Unknown command
     QTest::newRow("unknown command") << "%GGGGG" << fileName << "%GGGGG" << false;
 
-
     //Test bug 308444
     const QString file2 = QStringLiteral("plain-message-timezone.mbox");
     const QString fileName2 = QString(dir.path() + QLatin1Char('/') +  file2);

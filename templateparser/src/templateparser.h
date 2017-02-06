@@ -82,7 +82,6 @@ private:
     QString mHtmlElement;
 };
 
-
 /**
  * \brief The TemplateParser transforms a message with a given template.
  *
@@ -247,11 +246,11 @@ public:
     void setCharsets(const QStringList &charsets);
 
     void process(const KMime::Message::Ptr &aorig_msg,
-                         const Akonadi::Collection &afolder = Akonadi::Collection());
+                 const Akonadi::Collection &afolder = Akonadi::Collection());
     void process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
-                         const Akonadi::Collection &afolder = Akonadi::Collection());
+                 const Akonadi::Collection &afolder = Akonadi::Collection());
     void processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg,
-                                     const Akonadi::Collection &afolder = Akonadi::Collection());
+                             const Akonadi::Collection &afolder = Akonadi::Collection());
 
     void processWithTemplate(const QString &tmpl);
 

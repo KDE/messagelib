@@ -2624,7 +2624,7 @@ void ViewerPrivate::slotAttachmentEdit()
     job->setMessage(mMessage);
 
     bool showWarning = true;
-    for  (KMime::Content *content : contents) {
+    for (KMime::Content *content : contents) {
         if (!job->addAttachment(content, showWarning)) {
             break;
         }

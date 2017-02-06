@@ -123,7 +123,7 @@ void SkeletonMessageJobPrivate::doStart()
         KMime::Headers::Bcc *bcc = new KMime::Headers::Bcc;
         QByteArray sBcc;
         const QStringList lstBcc = infoPart->bcc();
-        for (const QString &a :lstBcc ) {
+        for (const QString &a : lstBcc) {
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
             if (!sBcc.isEmpty()) {

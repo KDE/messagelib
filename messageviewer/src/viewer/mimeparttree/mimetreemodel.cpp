@@ -53,7 +53,6 @@ public:
         qDeleteAll(tempDirs);
         tempDirs.clear();
     }
- 
 
     QString descriptionForContent(KMime::Content *content)
     {
@@ -328,7 +327,6 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
     mimeData->setUrls(urls);
     return mimeData;
 }
-
 
 Qt::ItemFlags MimeTreeModel::flags(const QModelIndex &index) const
 {

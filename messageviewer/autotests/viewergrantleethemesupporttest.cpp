@@ -53,5 +53,4 @@ void ViewerGrantleeThemeSupportTest::shouldUpdateThemeMenu()
     QTest::qWaitForWindowExposed(viewer);
 }
 
-
 QTEST_MAIN(ViewerGrantleeThemeSupportTest)

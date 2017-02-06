@@ -166,18 +166,18 @@ void SignJobTest::testMixedContent()
     QString data = QString::fromUtf8("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
 
     MessageComposer::Composer *composer = new MessageComposer::Composer;
-    MessageComposer::SignJob* sJob = new MessageComposer::SignJob(composer);
+    MessageComposer::SignJob *sJob = new MessageComposer::SignJob(composer);
 
     QVERIFY(composer);
     QVERIFY(sJob);
 
-    KMime::Content* content = new KMime::Content;
+    KMime::Content *content = new KMime::Content;
     content->contentType()->setMimeType(QByteArray("multipart/mixed"));
-    content->contentType()->setBoundary( KMime::multiPartBoundary() );
-    KMime::Content* subcontent = new KMime::Content;
+    content->contentType()->setBoundary(KMime::multiPartBoundary());
+    KMime::Content *subcontent = new KMime::Content;
     subcontent->contentType()->setMimeType(QByteArray("text/plain"));
-    subcontent->setBody( data.toUtf8() );
-    KMime::Content* attachment = new KMime::Content;
+    subcontent->setBody(data.toUtf8());
+    KMime::Content *attachment = new KMime::Content;
     attachment->contentType()->setMimeType(QByteArray("text/plain"));
     QByteArray attachmentData("an attachment");
     attachment->setBody(attachmentData);
@@ -196,7 +196,7 @@ void SignJobTest::testMixedContent()
     result->assemble();
     qDebug() << result->encodedContent();
 
-    KMime::Content* firstChild = MessageCore::NodeHelper::firstChild(result);
+    KMime::Content *firstChild = MessageCore::NodeHelper::firstChild(result);
     QCOMPARE(result->contents().count(), 2);
     QCOMPARE(firstChild->contents().count(), 2);
     QCOMPARE(firstChild->body(), QByteArray());

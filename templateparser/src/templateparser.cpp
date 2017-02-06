@@ -1523,7 +1523,6 @@ void TemplateParser::setWordWrap(bool wrap, int wrapColWidth)
     mColWrap = wrapColWidth;
 }
 
-
 QString TemplateParser::plainMessageText(bool aStripSignature,
         AllowSelection isSelectionAllowed) const
 {
@@ -1737,10 +1736,10 @@ void ExtractHtmlElement::extract(MimeTreeParser::ObjectTreeParser *parser)
     //TODO to be tested/verified if this is not an issue
     page.settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
     mBodyElement = page.currentFrame()->evaluateJavaScript(
-                QStringLiteral("document.getElementsByTagName('body')[0].innerHTML")).toString();
+                       QStringLiteral("document.getElementsByTagName('body')[0].innerHTML")).toString();
 
     mHeaderElement = page.currentFrame()->evaluateJavaScript(
-                QStringLiteral("document.getElementsByTagName('head')[0].innerHTML")).toString();
+                         QStringLiteral("document.getElementsByTagName('head')[0].innerHTML")).toString();
 
     page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
     mProcessDone = true;
