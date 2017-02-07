@@ -31,3 +31,8 @@ TemplateParserJob::~TemplateParserJob()
 {
 
 }
+
+void TemplateParserJob::start()
+{
+
+}

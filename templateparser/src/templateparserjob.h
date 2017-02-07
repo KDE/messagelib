@@ -31,6 +31,11 @@ class TEMPLATEPARSER_EXPORT TemplateParserJob : public QObject
 public:
     explicit TemplateParserJob(QObject *parent = nullptr);
      ~TemplateParserJob();
+
+    void start();
+
+Q_SIGNALS:
+    void parsingDone();
 };
 }
 
