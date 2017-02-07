@@ -22,8 +22,6 @@
 
 #include "templateparser_export.h"
 #include <QObject>
-namespace TemplateParser
-{
 struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult
 {
     void clear();
@@ -32,6 +30,5 @@ struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult
     QString mHtmlElement;
     QString mPlainText;
 };
-}
-Q_DECLARE_METATYPE(TemplateParser::TemplateParserExtractHtmlInfoResult)
+Q_DECLARE_METATYPE(TemplateParserExtractHtmlInfoResult)
 #endif // TEMPLATEPARSEREXTRACTHTMLINFORESULT_H

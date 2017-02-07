@@ -19,8 +19,6 @@
 
 #include "templateparserextracthtmlinforesult.h"
 
-using namespace TemplateParser;
-
 void TemplateParserExtractHtmlInfoResult::clear()
 {
     mPlainText.clear();

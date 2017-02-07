@@ -30,15 +30,15 @@ TemplateParserExtractHtmlInfoTest::TemplateParserExtractHtmlInfoTest(QObject *pa
 
 void TemplateParserExtractHtmlInfoTest::initTestcase()
 {
-    qRegisterMetaType<TemplateParser::TemplateParserExtractHtmlInfoResult>();
+    qRegisterMetaType<TemplateParserExtractHtmlInfoResult>();
 }
 
 void TemplateParserExtractHtmlInfoTest::shouldReturnNullResult()
 {
-    TemplateParser::TemplateParserExtractHtmlInfo info;
-    QSignalSpy spy(&info, &TemplateParser::TemplateParserExtractHtmlInfo::finished);
-    info.start();
-    QVERIFY(spy.wait());
+    TemplateParser::TemplateParserExtractHtmlInfo *info = new TemplateParser::TemplateParserExtractHtmlInfo;
+    QSignalSpy spy(info, &TemplateParser::TemplateParserExtractHtmlInfo::finished);
+    info->start();
+    QCOMPARE(spy.count(), 1);
 }
 
 QTEST_MAIN(TemplateParserExtractHtmlInfoTest)
