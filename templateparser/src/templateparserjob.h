@@ -434,7 +434,6 @@ private:
     QString mHeadElement;
     Quotes mQuotes;
     bool mForceCursorPosition;
-
 };
 
 }

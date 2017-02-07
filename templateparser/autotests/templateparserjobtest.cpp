@@ -31,6 +31,7 @@
 #include <QDir>
 #include <QLocale>
 #include <QTimeZone>
+#include <QSignalSpy>
 
 using namespace MimeTreeParser;
 
@@ -179,10 +180,12 @@ void TemplateParserJobTest::test_processWithTemplatesForBody()
     parser.setAllowDecryption(true);
     parser.mOrigMsg = msg;
 
+    QSignalSpy spy(&parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser.processWithTemplate(command);
 
     identMan->deleteLater();
     QCOMPARE(QString::fromLatin1(msg->encodedBody()), expected);
+    QCOMPARE(spy.count(), 1);
 }
 
 void TemplateParserJobTest::test_processWithTemplatesForContent_data()
@@ -264,11 +267,13 @@ void TemplateParserJobTest::test_processWithTemplatesForContent()
     parser.setIdentityManager(identMan);
     parser.setAllowDecryption(false);
     parser.mOrigMsg = msg;
+    QSignalSpy spy(&parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser.processWithTemplate(command);
     QCOMPARE(msg->hasHeader("X-KMail-Dictionary"), hasDictionary);
 
     identMan->deleteLater();
     QCOMPARE(QString::fromUtf8(msg->encodedBody()), expectedBody);
+    QCOMPARE(spy.count(), 1);
 }
 
 void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone_data()
@@ -305,11 +310,13 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone()
     parser.setIdentityManager(identMan);
     parser.setAllowDecryption(false);
     parser.mOrigMsg = msg;
+    QSignalSpy spy(&parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser.processWithTemplate(command);
     QCOMPARE(msg->hasHeader("X-KMail-Dictionary"), hasDictionary);
 
     identMan->deleteLater();
     QCOMPARE(QString::fromUtf8(msg->encodedBody()), expectedBody);
+    QCOMPARE(spy.count(), 1);
 }
 
 QTEST_MAIN(TemplateParserJobTest)

@@ -18,6 +18,7 @@
 */
 
 #include "templateparserjob.h"
+#include "templateparserextracthtmlinfo.h"
 #include "globalsettings_templateparser.h"
 #include "customtemplates_kfg.h"
 #include "templatesconfiguration_kfg.h"
@@ -47,7 +48,7 @@
 #include <QTextDocument>
 #include <QLocale>
 
-namespace TemplateParser
+namespace
 {
 Q_DECL_CONSTEXPR inline int pipeTimeout()
 {
@@ -81,6 +82,8 @@ static QTextCodec *selectCharset(const QStringList &charsets, const QString &tex
     qCDebug(TEMPLATEPARSER_LOG) << "No appropriate charset found.";
     return KCharsets::charsets()->codecForName(QStringLiteral("utf-8"));
 }
+}
+using namespace TemplateParser;
 
 TemplateParserJob::TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode) :
     mMode(amode), mIdentity(0),
@@ -258,6 +261,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
 {
     if (aorig_msg == nullptr) {
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
+        Q_EMIT parsingDone();
         return;
     }
 
@@ -265,6 +269,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
     mFolder = afolder;
     const QString tmpl = findTemplate();
     if (tmpl.isEmpty()) {
+        Q_EMIT parsingDone();
         return;
     }
     processWithTemplate(tmpl);
@@ -1156,6 +1161,7 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
         makeValidHtml(htmlBody);
     }
     addProcessedBodyToMessage(plainBody, htmlBody);
+    Q_EMIT parsingDone();
 }
 
 QString TemplateParserJob::getPlainSignature() const
@@ -1755,6 +1761,3 @@ QString ExtractHtmlElementJob::htmlElement() const
 {
     return mHtmlElement;
 }
-
-}
-

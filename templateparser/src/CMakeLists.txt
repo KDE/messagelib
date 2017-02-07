@@ -20,6 +20,7 @@ set(templateparser_LIB_SRCS
     templatewebengineview.cpp
     templatewebenginepage.cpp
     templateextracthtmlelementwebengineview.cpp
+    templateparserextracthtmlinfo.cpp
     )
 
 
