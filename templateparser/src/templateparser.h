@@ -254,6 +254,9 @@ public:
 
     void processWithTemplate(const QString &tmpl);
 
+    bool cursorPositionWasSet() const;
+
+private:
     /// This finds the template to use. Either the one from the folder, identity or
     /// finally the global template.
     /// This also reads the To and CC address of the template
@@ -269,30 +272,6 @@ public:
 
     QString getFirstName(const QString &str);
     QString getLastName(const QString &str);
-
-    bool cursorPositionWasSet() const;
-protected:
-    mutable HtmlToPlainText mHtmlToPlainText;
-    mutable ExtractHtmlElement mExtractHtmlElement;
-    Mode mMode;
-    Akonadi::Collection mFolder;          //Used to find a template
-    uint mIdentity;
-    KMime::Message::Ptr mMsg;             // Msg to write to
-    KMime::Message::Ptr mOrigMsg;         // Msg to read from
-    QString mSelection;
-    bool mAllowDecryption;
-    bool mDebug;
-    QString mQuoteString;
-    QString mTo, mCC;
-    KIdentityManagement::IdentityManager *m_identityManager;
-    bool mWrap;
-    int mColWrap;
-    QStringList m_charsets;
-    MimeTreeParser::ObjectTreeParser *mOtp;
-    MessageViewer::EmptySource *mEmptySource;
-    QString mHeadElement;
-    Quotes mQuotes;
-    bool mForceCursorPosition;
 
     /**
      * Called by processWithTemplate(). This adds the completely processed body to
@@ -315,9 +294,8 @@ protected:
      */
     bool shouldStripSignature() const;
 
-    int parseQuotes(const QString &prefix, const QString &str, QString &quote) const;
+    static int parseQuotes(const QString &prefix, const QString &str, QString &quote);
 
-private:
     /**
      * Return the text signature used the by current identity.
      */
@@ -433,6 +411,29 @@ private:
     void makeValidHtml(QString &body);
 
     friend class ::TemplateParserTester;
+
+    mutable HtmlToPlainText mHtmlToPlainText;
+    mutable ExtractHtmlElement mExtractHtmlElement;
+    Mode mMode;
+    Akonadi::Collection mFolder;          //Used to find a template
+    uint mIdentity;
+    KMime::Message::Ptr mMsg;             // Msg to write to
+    KMime::Message::Ptr mOrigMsg;         // Msg to read from
+    QString mSelection;
+    bool mAllowDecryption;
+    bool mDebug;
+    QString mQuoteString;
+    QString mTo, mCC;
+    KIdentityManagement::IdentityManager *m_identityManager;
+    bool mWrap;
+    int mColWrap;
+    QStringList m_charsets;
+    MimeTreeParser::ObjectTreeParser *mOtp;
+    MessageViewer::EmptySource *mEmptySource;
+    QString mHeadElement;
+    Quotes mQuotes;
+    bool mForceCursorPosition;
+
 };
 
 }

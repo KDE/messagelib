@@ -135,7 +135,7 @@ void TemplateParser::setCharsets(const QStringList &charsets)
 }
 
 int TemplateParser::parseQuotes(const QString &prefix, const QString &str,
-                                QString &quote) const
+                                QString &quote)
 {
     int pos = prefix.length();
     int len;
@@ -554,7 +554,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                     const QString to = mOrigMsg->to()->asUnicodeString();
                     const QString cc = mOrigMsg->cc()->asUnicodeString();
                     if (!to.isEmpty()) {
-                        QString toLine =  i18nc("@item:intext email To", "To:") + QLatin1Char(' ') + to;
+                        const QString toLine =  i18nc("@item:intext email To", "To:") + QLatin1Char(' ') + to;
                         plainBody.append(toLine);
                         const QString body = plainToHtml(toLine);
                         htmlBody.append(body);
@@ -565,7 +565,7 @@ void TemplateParser::processWithTemplate(const QString &tmpl)
                         htmlBody.append(str);
                     }
                     if (!cc.isEmpty()) {
-                        QString ccLine = i18nc("@item:intext email CC", "CC:") + QLatin1Char(' ') +  cc;
+                        const QString ccLine = i18nc("@item:intext email CC", "CC:") + QLatin1Char(' ') +  cc;
                         plainBody.append(ccLine);
                         const QString str = plainToHtml(ccLine);
                         htmlBody.append(str);
