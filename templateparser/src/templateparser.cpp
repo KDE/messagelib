@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2006 Dmitry Morozhnikov <dmiceman@mail.ru>
  * Copyright (C) 2011 Sudhendu Kumar <sudhendu.kumar.roy@gmail.com>
+ * Copyright (C) 2017 Laurent Montel <montel@kde.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -260,8 +261,6 @@ void TemplateParser::process(const KMime::Message::Ptr &aorig_msg,
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
         return;
     }
-    mHtmlToPlainText.clear();
-    mExtractHtmlElement.clear();
 
     mOrigMsg = aorig_msg;
     mFolder = afolder;
@@ -275,8 +274,6 @@ void TemplateParser::process(const KMime::Message::Ptr &aorig_msg,
 void TemplateParser::process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
                              const Akonadi::Collection &afolder)
 {
-    mHtmlToPlainText.clear();
-    mExtractHtmlElement.clear();
     mForceCursorPosition = false;
     mOrigMsg = aorig_msg;
     mFolder = afolder;
