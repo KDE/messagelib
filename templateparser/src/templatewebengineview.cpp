@@ -55,7 +55,7 @@ TemplateWebEngineView::~TemplateWebEngineView()
 
 void TemplateWebEngineView::setHtmlContent(const QString &html)
 {
-    mHtml.clear();
+    mExtractedPlainText.clear();
     setHtml(html);
 }
 
@@ -71,11 +71,11 @@ void TemplateWebEngineView::slotLoadFinished(bool ok)
 
 void TemplateWebEngineView::setPlainText(const QString &plainText)
 {
-    mHtml = plainText;
+    mExtractedPlainText = plainText;
     Q_EMIT loadContentDone(true);
 }
 
-QString TemplateWebEngineView::html() const
+QString TemplateWebEngineView::plainText() const
 {
-    return mHtml;
+    return mExtractedPlainText;
 }

@@ -36,20 +36,20 @@ TemplateWebEngineViewTest::~TemplateWebEngineViewTest()
 void TemplateWebEngineViewTest::shouldHaveDefaultValue()
 {
     TemplateParser::TemplateWebEngineView w;
-    QVERIFY(w.html().isEmpty());
+    QVERIFY(w.plainText().isEmpty());
 }
 
 void TemplateWebEngineViewTest::shouldExtractHtml()
 {
     TemplateParser::TemplateWebEngineView w;
-    QVERIFY(w.html().isEmpty());
+    QVERIFY(w.plainText().isEmpty());
     QSignalSpy spy(&w, &TemplateParser::TemplateWebEngineView::loadContentDone);
     w.setHtmlContent(QStringLiteral("<html><head></head><body>HTML Text</body></html>"));
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
     const bool result = spy.at(0).at(0).toBool();
     QVERIFY(result);
-    QCOMPARE(w.html(), QStringLiteral("HTML Text"));
+    QCOMPARE(w.plainText(), QStringLiteral("HTML Text"));
 }
 
 QTEST_MAIN(TemplateWebEngineViewTest)

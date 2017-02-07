@@ -35,7 +35,7 @@ public:
 
     void setHtmlContent(const QString &html);
 
-    QString html() const;
+    QString plainText() const;
 
 Q_SIGNALS:
     void loadContentDone(bool success);
@@ -44,7 +44,7 @@ private:
     void slotLoadFinished(bool ok);
     void setPlainText(const QString &plainText);
 
-    QString mHtml;
+    QString mExtractedPlainText;
     TemplateWebEnginePage *mPage;
 };
 }
