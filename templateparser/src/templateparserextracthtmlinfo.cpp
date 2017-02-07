@@ -38,27 +38,55 @@ TemplateParserExtractHtmlInfo::~TemplateParserExtractHtmlInfo()
     delete mExtractHtmlElementWebEngineView;
 }
 
+void TemplateParserExtractHtmlInfo::setHtmlForExtractingTextPlain(const QString &html)
+{
+    mHtmlForExtractingTextPlain = html;
+}
+
+void TemplateParserExtractHtmlInfo::setHtmlForExtractionHeaderAndBody(const QString &html)
+{
+    mHtmlForExtractionHeaderAndBody = html;
+}
+
 void TemplateParserExtractHtmlInfo::start()
 {
-    mTemplateWebEngineView = new TemplateWebEngineView;
-    connect(mTemplateWebEngineView, &TemplateWebEngineView::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished);
-    mTemplateWebEngineView->setHtmlContent(QString());
+    mResult.clear();
+    if (!mHtmlForExtractingTextPlain.isEmpty()) {
+        mTemplateWebEngineView = new TemplateWebEngineView;
+        connect(mTemplateWebEngineView, &TemplateWebEngineView::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished);
+        mTemplateWebEngineView->setHtmlContent(mHtmlForExtractingTextPlain);
+    } else {
+        qCWarning(TEMPLATEPARSER_LOG) << "html string is empty for extracting to plainText";
+        slotExtractToPlainTextFinished(false);
+    }
 }
 
 void TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished(bool success)
 {
     if (!success) {
         qCWarning(TEMPLATEPARSER_LOG) << "Impossible to extract plaintext";
+    } else {
+        mResult.mPlainText = mTemplateWebEngineView->plainText();
     }
-    mExtractHtmlElementWebEngineView = new TemplateExtractHtmlElementWebEngineView;
-    connect(mExtractHtmlElementWebEngineView, &TemplateExtractHtmlElementWebEngineView::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished);
+    if (!mHtmlForExtractionHeaderAndBody.isEmpty()) {
+        mExtractHtmlElementWebEngineView = new TemplateExtractHtmlElementWebEngineView;
+        connect(mExtractHtmlElementWebEngineView, &TemplateExtractHtmlElementWebEngineView::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished);
+        mExtractHtmlElementWebEngineView->setHtmlContent(mHtmlForExtractionHeaderAndBody);
+    } else {
+        qCWarning(TEMPLATEPARSER_LOG) << "html string is empty for extracting to header and body";
+        slotExtractHtmlElementFinished(false);
+    }
 }
 
 void TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished(bool success)
 {
     if (!success) {
         qCWarning(TEMPLATEPARSER_LOG) << "Impossible to extract html element";
+    } else {
+        mResult.mBodyElement = mExtractHtmlElementWebEngineView->bodyElement();
+        mResult.mHeaderElement = mExtractHtmlElementWebEngineView->headerElement();
+        mResult.mHtmlElement = mExtractHtmlElementWebEngineView->htmlElement();
     }
-    Q_EMIT finished();
+    Q_EMIT finished(mResult);
     deleteLater();
 }

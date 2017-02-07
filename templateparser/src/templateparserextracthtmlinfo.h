@@ -22,10 +22,13 @@
 
 #include <QObject>
 #include "templateparser_export.h"
+#include "templateparserextracthtmlinforesult.h"
+
 namespace TemplateParser
 {
 class TemplateWebEngineView;
 class TemplateExtractHtmlElementWebEngineView;
+
 class TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfo : public QObject
 {
     Q_OBJECT
@@ -33,14 +36,21 @@ public:
     explicit TemplateParserExtractHtmlInfo(QObject *parent = nullptr);
     ~TemplateParserExtractHtmlInfo();
 
+    void setHtmlForExtractingTextPlain(const QString &html);
+    void setHtmlForExtractionHeaderAndBody(const QString &html);
     void start();
 
 Q_SIGNALS:
-    void finished();
+    void finished(const TemplateParserExtractHtmlInfoResult &result);
 
 private:
     void slotExtractHtmlElementFinished(bool success);
     void slotExtractToPlainTextFinished(bool success);
+
+    TemplateParserExtractHtmlInfoResult mResult;
+
+    QString mHtmlForExtractingTextPlain;
+    QString mHtmlForExtractionHeaderAndBody;
 
     TemplateWebEngineView *mTemplateWebEngineView;
     TemplateExtractHtmlElementWebEngineView *mExtractHtmlElementWebEngineView;

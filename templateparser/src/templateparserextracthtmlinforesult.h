@@ -17,28 +17,21 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "templateparserextracthtmlinfotest.h"
-#include "templateparserextracthtmlinfo.h"
+#ifndef TEMPLATEPARSEREXTRACTHTMLINFORESULT_H
+#define TEMPLATEPARSEREXTRACTHTMLINFORESULT_H
 
-#include <QTest>
-#include <QSignalSpy>
-
-TemplateParserExtractHtmlInfoTest::TemplateParserExtractHtmlInfoTest(QObject *parent)
-    : QObject(parent)
+#include "templateparser_export.h"
+#include <QObject>
+namespace TemplateParser
 {
-}
-
-void TemplateParserExtractHtmlInfoTest::initTestcase()
+struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult
 {
-    qRegisterMetaType<TemplateParser::TemplateParserExtractHtmlInfoResult>();
+    void clear();
+    QString mBodyElement;
+    QString mHeaderElement;
+    QString mHtmlElement;
+    QString mPlainText;
+};
 }
-
-void TemplateParserExtractHtmlInfoTest::shouldReturnNullResult()
-{
-    TemplateParser::TemplateParserExtractHtmlInfo info;
-    QSignalSpy spy(&info, &TemplateParser::TemplateParserExtractHtmlInfo::finished);
-    info.start();
-    QVERIFY(spy.wait());
-}
-
-QTEST_MAIN(TemplateParserExtractHtmlInfoTest)
+Q_DECLARE_METATYPE(TemplateParser::TemplateParserExtractHtmlInfoResult)
+#endif // TEMPLATEPARSEREXTRACTHTMLINFORESULT_H

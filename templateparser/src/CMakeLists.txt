@@ -21,6 +21,7 @@ set(templateparser_LIB_SRCS
     templatewebenginepage.cpp
     templateextracthtmlelementwebengineview.cpp
     templateparserextracthtmlinfo.cpp
+    templateparserextracthtmlinforesult.cpp
     )
 
 
