@@ -6,6 +6,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser\")
 
 
 set(templateparser_LIB_SRCS
+    templateparserjob.cpp
     templateparser.cpp
     defaulttemplates.cpp
     templatesutil.cpp
@@ -81,6 +82,7 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     TemplatesTextEdit
     TemplatesUtil
     TemplatesInsertCommand
+    TemplateParserJob
     REQUIRED_HEADERS TemplateParser_HEADERS
     PREFIX TemplateParser
     )
