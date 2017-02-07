@@ -21,6 +21,7 @@
  */
 
 #include "aliasesexpandjob.h"
+#include "helper/helper_p.h"
 #include "distributionlistexpandjob.h"
 
 #include <Akonadi/Contact/ContactSearchJob>
@@ -48,7 +49,7 @@ void AliasesExpandJob::start()
 {
     // At first we try to expand the recipient to a distribution list
     // or nick name and save the results in a map for later lookup
-    foreach (const QString &recipient, mRecipients) {
+    for (const QString &recipient : qAsConst(mRecipients)) {
 
         // speedup: assume aliases and list names don't contain '@'
         if (recipient.isEmpty() || recipient.contains(QLatin1Char('@'))) {
@@ -123,7 +124,7 @@ void AliasesExpandJob::slotNicknameExpansionDone(KJob *job)
     const KContacts::Addressee::List contacts = searchJob->contacts();
     const QString recipient = searchJob->property("recipient").toString();
 
-    foreach (const KContacts::Addressee &contact, contacts) {
+    for (const KContacts::Addressee &contact : contacts) {
         if (contact.nickName().toLower() == recipient.toLower()) {
             mNicknameExpansionResults.insert(recipient, contact.fullEmail());
             break;
@@ -138,7 +139,7 @@ void AliasesExpandJob::slotNicknameExpansionDone(KJob *job)
 
 void AliasesExpandJob::finishExpansion()
 {
-    foreach (const QString &recipient, mRecipients) {
+    for (const QString &recipient : qAsConst(mRecipients)) {
         if (recipient.isEmpty()) {
             continue;
         }

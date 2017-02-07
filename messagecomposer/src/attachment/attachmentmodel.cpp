@@ -142,7 +142,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
 {
     qCDebug(MESSAGECOMPOSER_LOG);
     QList<QUrl> urls;
-    foreach (const QModelIndex &index, indexes) {
+    for (const QModelIndex &index : indexes) {
         if (index.column() != 0) {
             // Avoid processing the same attachment more than once, since the entire
             // row is selected.

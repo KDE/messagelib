@@ -166,7 +166,7 @@ void RecipientsPicker::pick(Recipient::Type type)
     }
 
     bool tooManyAddress = false;
-    foreach (const Akonadi::EmailAddressSelection &selection, selections) {
+    for (const Akonadi::EmailAddressSelection &selection : selections) {
         Recipient recipient;
         recipient.setType(type);
         recipient.setEmail(selection.quotedEmail());

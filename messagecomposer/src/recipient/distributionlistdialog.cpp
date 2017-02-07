@@ -20,7 +20,7 @@
 */
 
 #include "distributionlistdialog.h"
-
+#include "helper/helper_p.h"
 #include <AkonadiWidgets/collectiondialog.h>
 #include <Akonadi/Contact/ContactGroupSearchJob>
 #include <Akonadi/Contact/ContactSearchJob>
@@ -208,7 +208,7 @@ void DistributionListDialog::slotDelayedSetRecipients(KJob *job)
         item->setCheckState(0, Qt::Checked);
     } else {
         bool isFirst = true;
-        foreach (const Akonadi::Item &akItem, akItems) {
+        for (const Akonadi::Item &akItem : qAsConst(akItems)) {
             if (akItem.hasPayload<KContacts::Addressee>()) {
                 const KContacts::Addressee contact = akItem.payload<KContacts::Addressee>();
 

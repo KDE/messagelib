@@ -90,7 +90,7 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
         message->removeHeader<KMime::Headers::Bcc>();
     } else {
         const auto mailboxes = KMime::Types::Mailbox::listFromUnicodeString(ident.bcc());
-        foreach (const KMime::Types::Mailbox &mailbox, mailboxes) {
+        for (const KMime::Types::Mailbox &mailbox : mailboxes) {
             message->bcc()->addAddress(mailbox);
         }
     }
@@ -99,7 +99,7 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
         message->removeHeader<KMime::Headers::Cc>();
     } else {
         const auto mailboxes = KMime::Types::Mailbox::listFromUnicodeString(ident.cc());
-        foreach (const KMime::Types::Mailbox &mailbox, mailboxes) {
+        for (const KMime::Types::Mailbox &mailbox : mailboxes) {
             message->cc()->addAddress(mailbox);
         }
     }
