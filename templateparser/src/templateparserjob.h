@@ -48,7 +48,7 @@ class ImageCollector;
 
 namespace TemplateParser
 {
-
+#if 0
 class HtmlToPlainTextJob
 {
 public:
@@ -80,6 +80,7 @@ private:
     QString mHeaderElement;
     QString mHtmlElement;
 };
+#endif
 
 /**
  * \brief The TemplateParser transforms a message with a given template.
@@ -415,8 +416,8 @@ private:
 
     friend class ::TemplateParserTester;
 
-    mutable HtmlToPlainTextJob mHtmlToPlainText;
-    mutable ExtractHtmlElementJob mExtractHtmlElement;
+    //mutable HtmlToPlainTextJob mHtmlToPlainText;
+    //mutable ExtractHtmlElementJob mExtractHtmlElement;
     Mode mMode;
     Akonadi::Collection mFolder;          //Used to find a template
     uint mIdentity;

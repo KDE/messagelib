@@ -294,8 +294,8 @@ void TemplateParserJob::processWithIdentity(uint uoid, const KMime::Message::Ptr
 
 void TemplateParserJob::processWithTemplate(const QString &tmpl)
 {
-    mHtmlToPlainText.clear();
-    mExtractHtmlElement.clear();
+    //mHtmlToPlainText.clear();
+    //mExtractHtmlElement.clear();
     mOtp->parseObjectTree(mOrigMsg.data());
 
     TemplateParserExtractHtmlInfo *job = new TemplateParserExtractHtmlInfo(this);
@@ -1587,11 +1587,15 @@ QString TemplateParserJob::htmlMessageText(bool aStripSignature, AllowSelection 
         //TODO implement mSelection for HTML
         return mSelection;
     }
-
+#if 0
     mExtractHtmlElement.extract(mOtp);
     mHeadElement = mExtractHtmlElement.headerElement();
 
     const QString bodyElement = mExtractHtmlElement.bodyElement();
+#else
+    mHeadElement = mExtractHtmlInfoResult.mHeaderElement;
+    const QString bodyElement = mExtractHtmlInfoResult.mBodyElement;
+#endif
     if (!bodyElement.isEmpty()) {
         if (aStripSignature) {
             //FIXME strip signature works partially for HTML mails
@@ -1602,9 +1606,17 @@ QString TemplateParserJob::htmlMessageText(bool aStripSignature, AllowSelection 
 
     if (aStripSignature) {
         //FIXME strip signature works partially for HTML mails
+#if 0
         return MessageCore::StringUtil::stripSignature(mExtractHtmlElement.htmlElement());
+#else
+        return MessageCore::StringUtil::stripSignature(mExtractHtmlInfoResult.mHtmlElement);
+#endif
     }
+#if 0
     return mExtractHtmlElement.htmlElement();
+#else
+    return mExtractHtmlInfoResult.mHtmlElement;
+#endif
 }
 
 QString TemplateParserJob::quotedPlainText(const QString &selection) const
@@ -1706,7 +1718,7 @@ bool TemplateParserJob::cursorPositionWasSet() const
 {
     return mForceCursorPosition;
 }
-
+#if 0
 HtmlToPlainTextJob::HtmlToPlainTextJob()
     : mProcessDone(false)
 {
@@ -1798,3 +1810,4 @@ QString ExtractHtmlElementJob::htmlElement() const
 {
     return mHtmlElement;
 }
+#endif
