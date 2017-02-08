@@ -1637,7 +1637,7 @@ bool TemplateParserJob::isHtmlSignature() const
     return signature.isInlinedHtml();
 }
 
-QString TemplateParserJob::plainToHtml(const QString &body) const
+QString TemplateParserJob::plainToHtml(const QString &body)
 {
     QString str = body;
     str = str.toHtmlEscaped();
