@@ -21,6 +21,7 @@
 #define TEMPLATEPARSERJOB_H
 
 #include "templateparser_export.h"
+#include "templateparserextracthtmlinforesult.h"
 #include <MessageViewer/ObjectTreeEmptySource>
 
 #include <AkonadiCore/Collection>
@@ -258,6 +259,7 @@ Q_SIGNALS:
     void parsingDone();
 
 private:
+    void slotExtractInfoDone(const TemplateParserExtractHtmlInfoResult &result);
     /// This finds the template to use. Either the one from the folder, identity or
     /// finally the global template.
     /// This also reads the To and CC address of the template

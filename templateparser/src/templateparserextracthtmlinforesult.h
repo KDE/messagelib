@@ -29,6 +29,7 @@ struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult
     QString mHeaderElement;
     QString mHtmlElement;
     QString mPlainText;
+    QString mTemplate;
 };
 Q_DECLARE_METATYPE(TemplateParserExtractHtmlInfoResult)
 #endif // TEMPLATEPARSEREXTRACTHTMLINFORESULT_H

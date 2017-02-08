@@ -173,15 +173,16 @@ void TemplateParserJobTest::test_processWithTemplatesForBody()
     KMime::Message::Ptr msg(new KMime::Message());
     msg->setBody(text.toLocal8Bit());
     msg->parse();
-    TemplateParser::TemplateParserJob parser(msg, TemplateParser::TemplateParserJob::Reply);
-    parser.setSelection(selection);
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
+    parser->setSelection(selection);
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    parser.setIdentityManager(identMan);
-    parser.setAllowDecryption(true);
-    parser.mOrigMsg = msg;
+    parser->setIdentityManager(identMan);
+    parser->setAllowDecryption(true);
+    parser->mOrigMsg = msg;
 
-    QSignalSpy spy(&parser, &TemplateParser::TemplateParserJob::parsingDone);
-    parser.processWithTemplate(command);
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(command);
+    //QVERIFY(spy.wait());
 
     identMan->deleteLater();
     QCOMPARE(QString::fromLatin1(msg->encodedBody()), expected);

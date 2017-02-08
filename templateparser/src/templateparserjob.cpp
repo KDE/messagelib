@@ -297,9 +297,36 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
     mHtmlToPlainText.clear();
     mExtractHtmlElement.clear();
     mOtp->parseObjectTree(mOrigMsg.data());
+
+    TemplateParserExtractHtmlInfoResult result;
+    result.mTemplate = tmpl;
+#if 1
+    slotExtractInfoDone(result);
+#else
+    TemplateParserExtractHtmlInfo *job = new TemplateParserExtractHtmlInfo(this);
+    connect(job, &TemplateParserExtractHtmlInfo::finished, this, &TemplateParserJob::slotExtractInfoDone);
+    job->setHtmlForExtractingTextPlain(mOtp->htmlContent());
+
+    QString mHtmlElement = mOtp->htmlContent();
+
+    if (mHtmlElement.isEmpty()) {   //plain mails only
+        QString htmlReplace = mOtp->plainTextContent().toHtmlEscaped();
+        htmlReplace = htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
+        mHtmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
+    }
+
+    job->setHtmlForExtractionHeaderAndBody(mHtmlElement);
+    job->start();
+#endif
+}
+
+void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoResult &result)
+{
+    QString tmpl = result.mTemplate;
     const int tmpl_len = tmpl.length();
     QString plainBody, htmlBody;
 
+    qDebug()<<" void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoResult &result)"<<result.mTemplate;
     bool dnl = false;
     auto definedLocale = QLocale();
     for (int i = 0; i < tmpl_len; ++i) {
@@ -1162,6 +1189,7 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
     }
     addProcessedBodyToMessage(plainBody, htmlBody);
     Q_EMIT parsingDone();
+    qDebug() << " PARSING DONE";
 }
 
 QString TemplateParserJob::getPlainSignature() const

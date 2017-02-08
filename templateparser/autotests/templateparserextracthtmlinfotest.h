@@ -31,6 +31,7 @@ public:
 private Q_SLOTS:
     void initTestcase();
     void shouldReturnNullResult();
+    void shouldReturnNullButWithTemplate();
 };
 
 #endif // TEMPLATEPARSEREXTRACTHTMLINFOTEST_H

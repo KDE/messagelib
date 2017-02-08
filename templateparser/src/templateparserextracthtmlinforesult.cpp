@@ -25,4 +25,5 @@ void TemplateParserExtractHtmlInfoResult::clear()
     mBodyElement.clear();
     mHeaderElement.clear();
     mHtmlElement.clear();
+    mTemplate.clear();
 }

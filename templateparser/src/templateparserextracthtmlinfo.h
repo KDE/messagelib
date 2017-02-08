@@ -38,6 +38,7 @@ public:
 
     void setHtmlForExtractingTextPlain(const QString &html);
     void setHtmlForExtractionHeaderAndBody(const QString &html);
+    void setTemplate(const QString &str);
     void start();
 
 Q_SIGNALS:
@@ -51,6 +52,8 @@ private:
 
     QString mHtmlForExtractingTextPlain;
     QString mHtmlForExtractionHeaderAndBody;
+
+    QString mTemplateStr;
 
     TemplateWebEngineView *mTemplateWebEngineView;
     TemplateExtractHtmlElementWebEngineView *mExtractHtmlElementWebEngineView;

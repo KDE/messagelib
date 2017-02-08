@@ -48,9 +48,15 @@ void TemplateParserExtractHtmlInfo::setHtmlForExtractionHeaderAndBody(const QStr
     mHtmlForExtractionHeaderAndBody = html;
 }
 
+void TemplateParserExtractHtmlInfo::setTemplate(const QString &str)
+{
+    mTemplateStr = str;
+}
+
 void TemplateParserExtractHtmlInfo::start()
 {
     mResult.clear();
+    mResult.mTemplate = mTemplateStr;
     if (!mHtmlForExtractingTextPlain.isEmpty()) {
         mTemplateWebEngineView = new TemplateWebEngineView;
         connect(mTemplateWebEngineView, &TemplateWebEngineView::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished);
