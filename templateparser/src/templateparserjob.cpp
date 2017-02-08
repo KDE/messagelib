@@ -294,8 +294,6 @@ void TemplateParserJob::processWithIdentity(uint uoid, const KMime::Message::Ptr
 
 void TemplateParserJob::processWithTemplate(const QString &tmpl)
 {
-    //mHtmlToPlainText.clear();
-    //mExtractHtmlElement.clear();
     mOtp->parseObjectTree(mOrigMsg.data());
 
     TemplateParserExtractHtmlInfo *job = new TemplateParserExtractHtmlInfo(this);
@@ -1564,16 +1562,10 @@ QString TemplateParserJob::plainMessageText(bool aStripSignature,
     if (!mOrigMsg) {
         return QString();
     }
-#if 1
     QString result = mOtp->plainTextContent();
-    //qDebug() << " result "<<result;
     if (result.isEmpty()) {
         result = mExtractHtmlInfoResult.mPlainText;
     }
-    //qDebug() << "AFTER result "<<result;
-#else
-    QString result = mHtmlToPlainText.extractToPlainText(mOtp);
-#endif
     if (aStripSignature) {
         result = MessageCore::StringUtil::stripSignature(result);
     }
@@ -1587,15 +1579,8 @@ QString TemplateParserJob::htmlMessageText(bool aStripSignature, AllowSelection 
         //TODO implement mSelection for HTML
         return mSelection;
     }
-#if 0
-    mExtractHtmlElement.extract(mOtp);
-    mHeadElement = mExtractHtmlElement.headerElement();
-
-    const QString bodyElement = mExtractHtmlElement.bodyElement();
-#else
     mHeadElement = mExtractHtmlInfoResult.mHeaderElement;
     const QString bodyElement = mExtractHtmlInfoResult.mBodyElement;
-#endif
     if (!bodyElement.isEmpty()) {
         if (aStripSignature) {
             //FIXME strip signature works partially for HTML mails
@@ -1606,17 +1591,9 @@ QString TemplateParserJob::htmlMessageText(bool aStripSignature, AllowSelection 
 
     if (aStripSignature) {
         //FIXME strip signature works partially for HTML mails
-#if 0
-        return MessageCore::StringUtil::stripSignature(mExtractHtmlElement.htmlElement());
-#else
         return MessageCore::StringUtil::stripSignature(mExtractHtmlInfoResult.mHtmlElement);
-#endif
     }
-#if 0
-    return mExtractHtmlElement.htmlElement();
-#else
     return mExtractHtmlInfoResult.mHtmlElement;
-#endif
 }
 
 QString TemplateParserJob::quotedPlainText(const QString &selection) const
@@ -1718,96 +1695,3 @@ bool TemplateParserJob::cursorPositionWasSet() const
 {
     return mForceCursorPosition;
 }
-#if 0
-HtmlToPlainTextJob::HtmlToPlainTextJob()
-    : mProcessDone(false)
-{
-
-}
-
-void HtmlToPlainTextJob::clear()
-{
-    mProcessDone = false;
-    mResult.clear();
-}
-
-QString HtmlToPlainTextJob::extractToPlainText(MimeTreeParser::ObjectTreeParser *parser)
-{
-    if (mProcessDone) {
-        return mResult;
-    }
-    mResult = parser->plainTextContent();
-
-    if (mResult.isEmpty()) {   //HTML-only mails
-        // QtWebEngine port TODO: QWebEnginePage::toPlainText() exists but is asynchronous
-        // The easiest solution might be to do that -before- calling the TemplateParserJob.
-        QWebPage doc;
-        doc.mainFrame()->setHtml(parser->htmlContent());
-        mResult = doc.mainFrame()->toPlainText();
-    }
-    mProcessDone = true;
-    return mResult;
-}
-
-ExtractHtmlElementJob::ExtractHtmlElementJob()
-    : mProcessDone(false)
-{
-
-}
-
-void ExtractHtmlElementJob::clear()
-{
-    mProcessDone = false;
-    mHeaderElement.clear();
-    mBodyElement.clear();
-    mHtmlElement.clear();
-}
-
-void ExtractHtmlElementJob::extract(MimeTreeParser::ObjectTreeParser *parser)
-{
-    if (mProcessDone) {
-        return;
-    }
-    mHtmlElement = parser->htmlContent();
-
-    if (mHtmlElement.isEmpty()) {   //plain mails only
-        QString htmlReplace = parser->plainTextContent().toHtmlEscaped();
-        htmlReplace = htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
-        mHtmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
-    }
-
-    QWebPage page;
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
-    page.settings()->setAttribute(QWebSettings::JavaEnabled, false);
-    page.settings()->setAttribute(QWebSettings::PluginsEnabled, false);
-    page.settings()->setAttribute(QWebSettings::AutoLoadImages, false);
-
-    page.currentFrame()->setHtml(mHtmlElement);
-
-    //TODO to be tested/verified if this is not an issue
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
-    mBodyElement = page.currentFrame()->evaluateJavaScript(
-                       QStringLiteral("document.getElementsByTagName('body')[0].innerHTML")).toString();
-
-    mHeaderElement = page.currentFrame()->evaluateJavaScript(
-                         QStringLiteral("document.getElementsByTagName('head')[0].innerHTML")).toString();
-
-    page.settings()->setAttribute(QWebSettings::JavascriptEnabled, false);
-    mProcessDone = true;
-}
-
-QString ExtractHtmlElementJob::bodyElement() const
-{
-    return mBodyElement;
-}
-
-QString ExtractHtmlElementJob::headerElement() const
-{
-    return mHeaderElement;
-}
-
-QString ExtractHtmlElementJob::htmlElement() const
-{
-    return mHtmlElement;
-}
-#endif
