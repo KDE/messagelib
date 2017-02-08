@@ -21,6 +21,7 @@
 
 #include "settings/messagecomposersettings.h"
 #include "MessageComposer/Util"
+#include "helper/helper_p.h"
 
 #include <AkonadiCore/item.h>
 #ifndef QT_NO_CURSOR
@@ -185,7 +186,7 @@ MessageFactory::MessageReply MessageFactory::createReply()
             recipients = replyToList;
 
             // strip all possible mailing list addresses from the list of Reply-To addresses
-            foreach (const KMime::Types::Mailbox &mailbox, m_mailingListAddresses) {
+            for (const KMime::Types::Mailbox &mailbox : qAsConst(m_mailingListAddresses)) {
                 foreach (const KMime::Types::Mailbox &recipient, recipients) {
                     if (mailbox == recipient) {
                         recipients.removeAll(recipient);
@@ -239,7 +240,7 @@ MessageFactory::MessageReply MessageFactory::createReply()
                 list += m_origMsg->cc()->mailboxes();
             }
 
-            foreach (const KMime::Types::Mailbox &mailbox, list) {
+            for (const KMime::Types::Mailbox &mailbox : qAsConst(list)) {
                 if (!recipients.contains(mailbox) &&
                         !ccRecipients.contains(mailbox)) {
                     ccRecipients += mailbox;
@@ -278,7 +279,7 @@ MessageFactory::MessageReply MessageFactory::createReply()
 
             // strip the mailing list post address from the list of Reply-To
             // addresses since we want to reply in private
-            foreach (const KMime::Types::Mailbox &mailbox, m_mailingListAddresses) {
+            for (const KMime::Types::Mailbox &mailbox : qAsConst(m_mailingListAddresses)) {
                 foreach (const KMime::Types::Mailbox &recipient, recipients) {
                     if (mailbox == recipient) {
                         recipients.removeAll(recipient);
@@ -770,7 +771,7 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactory::createForwardDige
     digest->fromUnicodeString(mainPartText);
 
     int id = 0;
-    foreach (const Akonadi::Item &item, items) {
+    for (const Akonadi::Item &item : qAsConst(items)) {
         KMime::Message::Ptr fMsg = MessageCore::Util::message(item);
         if (id == 0) {
             if (auto hrd = fMsg->headerByType("X-KMail-Identity")) {
