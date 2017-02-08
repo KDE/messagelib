@@ -41,6 +41,7 @@ TemplateParserJobTest::TemplateParserJobTest(QObject *parent)
 
 }
 
+#if 0
 void TemplateParserJobTest::test_convertedHtml_data()
 {
     QTest::addColumn<QString>("mailFileName");
@@ -139,6 +140,7 @@ void TemplateParserJobTest::test_replyPlain()
         QCOMPARE(convertedHtmlContent, referenceData);
     }
 }
+#endif
 
 void TemplateParserJobTest::test_processWithTemplatesForBody_data()
 {

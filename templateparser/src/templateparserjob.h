@@ -435,6 +435,7 @@ private:
     MessageViewer::EmptySource *mEmptySource;
     QString mHeadElement;
     Quotes mQuotes;
+    TemplateParserExtractHtmlInfoResult mExtractHtmlInfoResult;
     bool mForceCursorPosition;
 };
 

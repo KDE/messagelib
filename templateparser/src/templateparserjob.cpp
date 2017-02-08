@@ -300,7 +300,14 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
 
     TemplateParserExtractHtmlInfo *job = new TemplateParserExtractHtmlInfo(this);
     connect(job, &TemplateParserExtractHtmlInfo::finished, this, &TemplateParserJob::slotExtractInfoDone);
-    job->setHtmlForExtractingTextPlain(mOtp->htmlContent());
+
+
+    QString plainText = mOtp->plainTextContent();
+    if (plainText.isEmpty()) {   //HTML-only mails
+        plainText = mOtp->htmlContent();
+    }
+
+    job->setHtmlForExtractingTextPlain(plainText);
     job->setTemplate(tmpl);
 
     QString mHtmlElement = mOtp->htmlContent();
@@ -317,7 +324,8 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
 
 void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoResult &result)
 {
-    QString tmpl = result.mTemplate;
+    mExtractHtmlInfoResult = result;
+    const QString tmpl = mExtractHtmlInfoResult.mTemplate;
     const int tmpl_len = tmpl.length();
     QString plainBody, htmlBody;
 
@@ -1183,7 +1191,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     }
     addProcessedBodyToMessage(plainBody, htmlBody);
     Q_EMIT parsingDone();
-    qDebug() << " PARSING DONE";
 }
 
 QString TemplateParserJob::getPlainSignature() const
@@ -1557,8 +1564,16 @@ QString TemplateParserJob::plainMessageText(bool aStripSignature,
     if (!mOrigMsg) {
         return QString();
     }
-
+#if 1
+    QString result = mOtp->plainTextContent();
+    //qDebug() << " result "<<result;
+    if (result.isEmpty()) {
+        result = mExtractHtmlInfoResult.mPlainText;
+    }
+    //qDebug() << "AFTER result "<<result;
+#else
     QString result = mHtmlToPlainText.extractToPlainText(mOtp);
+#endif
     if (aStripSignature) {
         result = MessageCore::StringUtil::stripSignature(result);
     }
