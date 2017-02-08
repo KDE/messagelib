@@ -21,7 +21,6 @@
 #include "templateextracthtmlelementwebengineview.h"
 #include "templatewebengineview.h"
 #include "templateparser_debug.h"
-#include <QTimer>
 
 using namespace TemplateParser;
 
