@@ -261,7 +261,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
 {
     if (aorig_msg == nullptr) {
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
-        Q_EMIT parsingDone();
+        Q_EMIT parsingDone(mForceCursorPosition);
         return;
     }
 
@@ -269,7 +269,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
     mFolder = afolder;
     const QString tmpl = findTemplate();
     if (tmpl.isEmpty()) {
-        Q_EMIT parsingDone();
+        Q_EMIT parsingDone(mForceCursorPosition);
         return;
     }
     processWithTemplate(tmpl);
@@ -1188,7 +1188,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
         makeValidHtml(htmlBody);
     }
     addProcessedBodyToMessage(plainBody, htmlBody);
-    Q_EMIT parsingDone();
+    Q_EMIT parsingDone(mForceCursorPosition);
 }
 
 QString TemplateParserJob::getPlainSignature() const

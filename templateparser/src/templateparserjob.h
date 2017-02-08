@@ -224,7 +224,7 @@ public:
     bool cursorPositionWasSet() const;
 
 Q_SIGNALS:
-    void parsingDone();
+    void parsingDone(bool cursorPositionWasSet);
 
 private:
     void slotExtractInfoDone(const TemplateParserExtractHtmlInfoResult &result);
