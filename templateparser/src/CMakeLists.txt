@@ -85,6 +85,7 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     TemplatesUtil
     TemplatesInsertCommand
     TemplateParserJob
+    TemplateParserExtractHtmlInfoResult
     REQUIRED_HEADERS TemplateParser_HEADERS
     PREFIX TemplateParser
     )
