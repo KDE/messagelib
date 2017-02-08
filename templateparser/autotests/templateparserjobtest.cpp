@@ -182,7 +182,7 @@ void TemplateParserJobTest::test_processWithTemplatesForBody()
 
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(command);
-    //QVERIFY(spy.wait());
+    QVERIFY(spy.wait());
 
     identMan->deleteLater();
     QCOMPARE(QString::fromLatin1(msg->encodedBody()), expected);
@@ -263,13 +263,14 @@ void TemplateParserJobTest::test_processWithTemplatesForContent()
     msg->setContent(mailData);
     msg->parse();
 
-    TemplateParser::TemplateParserJob parser(msg, TemplateParser::TemplateParserJob::Reply);
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    parser.setIdentityManager(identMan);
-    parser.setAllowDecryption(false);
-    parser.mOrigMsg = msg;
-    QSignalSpy spy(&parser, &TemplateParser::TemplateParserJob::parsingDone);
-    parser.processWithTemplate(command);
+    parser->setIdentityManager(identMan);
+    parser->setAllowDecryption(false);
+    parser->mOrigMsg = msg;
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(command);
+    QVERIFY(spy.wait());
     QCOMPARE(msg->hasHeader("X-KMail-Dictionary"), hasDictionary);
 
     identMan->deleteLater();
@@ -306,13 +307,14 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone()
     msg->setContent(mailData);
     msg->parse();
 
-    TemplateParser::TemplateParserJob parser(msg, TemplateParser::TemplateParserJob::Reply);
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    parser.setIdentityManager(identMan);
-    parser.setAllowDecryption(false);
-    parser.mOrigMsg = msg;
-    QSignalSpy spy(&parser, &TemplateParser::TemplateParserJob::parsingDone);
-    parser.processWithTemplate(command);
+    parser->setIdentityManager(identMan);
+    parser->setAllowDecryption(false);
+    parser->mOrigMsg = msg;
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(command);
+    QVERIFY(spy.wait());
     QCOMPARE(msg->hasHeader("X-KMail-Dictionary"), hasDictionary);
 
     identMan->deleteLater();

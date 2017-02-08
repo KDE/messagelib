@@ -298,14 +298,10 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
     mExtractHtmlElement.clear();
     mOtp->parseObjectTree(mOrigMsg.data());
 
-    TemplateParserExtractHtmlInfoResult result;
-    result.mTemplate = tmpl;
-#if 1
-    slotExtractInfoDone(result);
-#else
     TemplateParserExtractHtmlInfo *job = new TemplateParserExtractHtmlInfo(this);
     connect(job, &TemplateParserExtractHtmlInfo::finished, this, &TemplateParserJob::slotExtractInfoDone);
     job->setHtmlForExtractingTextPlain(mOtp->htmlContent());
+    job->setTemplate(tmpl);
 
     QString mHtmlElement = mOtp->htmlContent();
 
@@ -317,7 +313,6 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
 
     job->setHtmlForExtractionHeaderAndBody(mHtmlElement);
     job->start();
-#endif
 }
 
 void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoResult &result)
@@ -326,7 +321,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     const int tmpl_len = tmpl.length();
     QString plainBody, htmlBody;
 
-    qDebug()<<" void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoResult &result)"<<result.mTemplate;
     bool dnl = false;
     auto definedLocale = QLocale();
     for (int i = 0; i < tmpl_len; ++i) {
