@@ -1,6 +1,7 @@
 /*
   Copyright (C) 2010 Klaralvdalens Datakonsult AB, a KDAB Group company, info@kdab.com
   Copyright (c) 2010 Leo Franchi <lfranchi@kde.org>
+  Copyright (c) 2017 Laurent Montel <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -18,7 +19,7 @@
   02110-1301, USA.
 */
 
-#include "messagefactorytest.h"
+#include "messagefactoryngtest.h"
 
 #include "cryptofunctions.h"
 
@@ -26,7 +27,7 @@
 #include <MessageCore/NodeHelper>
 
 #include "MessageComposer/Composer"
-#include "MessageComposer/MessageFactory"
+#include "MessageComposer/MessageFactoryNG"
 #include "MessageComposer/GlobalPart"
 #include "MessageComposer/MessageComposerSettings"
 #include "MessageComposer/Util"
@@ -180,11 +181,11 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCC()
     i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
     mIdentMan->commit();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setReplyStrategy(ReplyAll);
     factory.setIdentityManager(mIdentMan);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
     //qDebug() << reply.msg->body();
 
@@ -222,11 +223,11 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSender()
     i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
     mIdentMan->commit();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setReplyStrategy(ReplyAll);
     factory.setIdentityManager(mIdentMan);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
     //qDebug() << reply.msg->body();
 
@@ -264,11 +265,11 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentities()
     i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
     mIdentMan->commit();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setReplyStrategy(ReplyAll);
     factory.setIdentityManager(mIdentMan);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
     //qDebug() << reply.msg->body();
 
@@ -299,11 +300,11 @@ void MessageFactoryTest::testCreateReplyToList()
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/list_message.mbox"));
     KMime::Message::Ptr msg = loadMessage(filename);
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
     factory.setReplyStrategy(ReplyList);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
 
     QDateTime date = msg->date()->dateTime();
@@ -330,11 +331,11 @@ void MessageFactoryTest::testCreateReplyToAuthor()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
     factory.setReplyStrategy(ReplyAuthor);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
     //qDebug() << reply.msg->body();
 
@@ -368,11 +369,11 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmails()
 {
     KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
     factory.setReplyStrategy(ReplyAll);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
     //qDebug() << reply.msg->body();
 
@@ -403,10 +404,10 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmails()
 void MessageFactoryTest::testCreateReplyAll()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
     //qDebug() << reply.msg->body();
 
@@ -424,11 +425,11 @@ void MessageFactoryTest::testCreateReplyHtml()
 
     //qDebug() << "html message:" << msg->encodedContent();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
     TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
     //qDebug() << "html reply" << reply.msg->encodedContent();
 
@@ -460,10 +461,10 @@ void MessageFactoryTest::testCreateReplyUTF16Base64()
     TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
 //   qDebug() << "plain base64 msg message:" << msg->encodedContent();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
 //   qDebug() << "html reply" << reply.msg->encodedContent();
 
@@ -480,7 +481,7 @@ void MessageFactoryTest::testCreateForwardMultiEmails()
 {
     KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
     KMime::Message::Ptr fw =  factory.createForward();
@@ -520,7 +521,7 @@ void MessageFactoryTest::testCreateForward()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
     KMime::Message::Ptr fw =  factory.createForward();
@@ -561,7 +562,7 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
     QString redirectTo = QStringLiteral("redir@redir.com");
@@ -618,7 +619,7 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
     QString redirectTo = QStringLiteral("redir@redir.com");
@@ -673,7 +674,7 @@ void MessageFactoryTest::testCreateRedirect()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
     QString redirectTo = QStringLiteral("redir@redir.com");
@@ -726,7 +727,7 @@ void MessageFactoryTest::testCreateResend()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
     KMime::Message::Ptr rdir =  factory.createResend();
@@ -773,7 +774,7 @@ void MessageFactoryTest::testCreateMDN()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
 
-    MessageFactory factory(msg, 0);
+    MessageFactoryNG factory(msg, 0);
 
     factory.setIdentityManager(mIdentMan);
 
@@ -893,7 +894,7 @@ void MessageFactoryTest::test_multipartAlternative()
 
     KMime::Message::Ptr origMsg = loadMessage(mailFileName);
 
-    MessageFactory factory(origMsg, 0);
+    MessageFactoryNG factory(origMsg, 0);
     factory.setIdentityManager(mIdentMan);
     factory.setSelection(selection);
     factory.setQuote(true);
@@ -904,7 +905,7 @@ void MessageFactoryTest::test_multipartAlternative()
     str = TemplateParser::TemplateParserSettings::self()->templateReplyAll();
     factory.setTemplate(str);
 
-    MessageFactory::MessageReply reply =  factory.createReply();
+    MessageFactoryNG::MessageReply reply =  factory.createReply();
     reply.replyAll = true;
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));

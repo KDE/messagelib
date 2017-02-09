@@ -40,6 +40,7 @@ endmacro()
 # Utility stuff.
 add_messagecomposer_test( utiltest.cpp )
 add_messagecomposer_test( messagefactorytest.cpp )
+add_messagecomposer_test( messagefactoryngtest.cpp )
 add_messagecomposer_test( plugineditorcheckbeforesendparamstest.cpp )
 
 # Non-content jobs.
