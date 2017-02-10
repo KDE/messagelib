@@ -48,6 +48,8 @@ public:
 
     void setReplyAll(bool replyAll);
 
+    void setCollection(const Akonadi::Collection &collection);
+
 Q_SIGNALS:
     void replyDone(const KMime::Message::Ptr &msg, bool replyAll);
 

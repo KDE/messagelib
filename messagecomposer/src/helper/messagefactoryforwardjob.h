@@ -47,6 +47,8 @@ public:
 
     void setIdentityManager(KIdentityManagement::IdentityManager *identityManager);
 
+    void setCollection(const Akonadi::Collection &collection);
+
 Q_SIGNALS:
     void forwardDone(const KMime::Message::Ptr &msg);
 

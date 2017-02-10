@@ -91,6 +91,11 @@ void MessageFactoryReplyJob::slotReplyDone()
     deleteLater();
 }
 
+void MessageFactoryReplyJob::setCollection(const Akonadi::Collection &collection)
+{
+    mCollection = collection;
+}
+
 void MessageFactoryReplyJob::setReplyAll(bool replyAll)
 {
     mReplyAll = replyAll;

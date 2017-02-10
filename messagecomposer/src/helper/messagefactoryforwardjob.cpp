@@ -76,6 +76,11 @@ void MessageFactoryForwardJob::slotParsingDone()
     deleteLater();
 }
 
+void MessageFactoryForwardJob::setCollection(const Akonadi::Collection &collection)
+{
+    mCollection = collection;
+}
+
 void MessageFactoryForwardJob::setMsg(const KMime::Message::Ptr &msg)
 {
     mMsg = msg;

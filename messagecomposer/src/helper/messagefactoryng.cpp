@@ -21,6 +21,8 @@
 #include "messagefactoryng.h"
 
 #include "settings/messagecomposersettings.h"
+#include "messagefactoryforwardjob.h"
+#include "messagefactoryreplyjob.h"
 #include "MessageComposer/Util"
 #include "helper/helper_p.h"
 
@@ -450,6 +452,16 @@ KMime::Message::Ptr MessageFactoryNG::createForward()
     }
 
     msg->subject()->fromUnicodeString(MessageHelper::forwardSubject(m_origMsg), "utf-8");
+
+    MessageFactoryForwardJob *job = new MessageFactoryForwardJob;
+    connect(job, &MessageFactoryForwardJob::forwardDone, this, &MessageFactoryNG::slotCreateForwardDone);
+    job->setIdentityManager(m_identityManager);
+    job->setMsg(msg);
+    job->setSelection(m_selection);
+    job->setTemplate(m_template);
+    job->setOrigMsg(m_origMsg);
+    job->setCollection(m_collection);
+    job->start();
 
     TemplateParser::TemplateParser parser(msg, TemplateParser::TemplateParser::Forward);
     parser.setIdentityManager(m_identityManager);
