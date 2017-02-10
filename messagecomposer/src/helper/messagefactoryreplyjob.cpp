@@ -63,7 +63,6 @@ void MessageFactoryReplyJob::start()
     } else {
         parser->process(mOrigMsg, mCollection);
     }
-    slotReplyDone();
 #else
     TemplateParser::TemplateParser parser(mMsg, (mReplyAll ? TemplateParser::TemplateParser::ReplyAll : TemplateParser::TemplateParser::Reply));
     parser.setIdentityManager(mIdentityManager);

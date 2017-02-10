@@ -22,7 +22,7 @@
 #define MESSAGECOMPOSER_MESSAGE_FACTORYNG_H
 
 #include "messagecomposer_export.h"
-
+#include "messagefactory.h"
 #include <kmime/kmime_message.h>
 #include <kmime/kmime_mdn.h>
 
@@ -38,6 +38,7 @@ class IdentityManager;
 
 namespace MessageComposer
 {
+#if 0 //TODO readd it when we we remove messagefactory.cpp/.h
 /**
    * Enumeration that defines the available reply "modes"
    */
@@ -54,7 +55,7 @@ enum MDNAdvice {
     MDNSendDenied,
     MDNSend
 };
-
+#endif
 /**
  * Contains various factory methods for creating new messages such as replies, MDNs, forwards, etc.
  */
@@ -229,6 +230,7 @@ public:
     static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
 
     void createForwardAsync();
+    void createReplyAsync();
 private:
     /** @return the UOID of the identity for this message.
       Searches the "x-kmail-identity" header and if that fails,
@@ -264,7 +266,7 @@ private:
     Akonadi::Item::Id m_id;
 
 Q_SIGNALS:
-    void createReplyDone(const MessageFactoryNG::MessageReply &reply);
+    void createReplyDone(const MessageComposer::MessageFactoryNG::MessageReply &reply);
     void createForwardDone(const KMime::Message::Ptr &msg);
 
 private Q_SLOTS:
@@ -274,6 +276,8 @@ private Q_SLOTS:
 
 }
 
-Q_DECLARE_METATYPE(MessageComposer::ReplyStrategy)
+//Readd it when we will remove messagefactory.cpp/.h
+//Q_DECLARE_METATYPE(MessageComposer::ReplyStrategy)
+Q_DECLARE_METATYPE(MessageComposer::MessageFactoryNG::MessageReply)
 
 #endif

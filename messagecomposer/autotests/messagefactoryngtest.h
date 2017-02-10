@@ -35,6 +35,8 @@ private Q_SLOTS:
     void initTestCase();
 
     void testCreateReplyAll();
+    void testCreateReplyAllAsync();
+
     void testCreateReplyHtml();
     void testCreateReplyUTF16Base64();
     void testCreateForward();
