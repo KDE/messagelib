@@ -46,7 +46,7 @@ MessageFactoryForwardJob::~MessageFactoryForwardJob()
 void MessageFactoryForwardJob::start()
 {
 #ifdef KDEPIM_TEMPLATEPARSER_ASYNC_BUILD
-    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(mMsg, TemplateParser::TemplateParser::Forward);
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(mMsg, TemplateParser::TemplateParserJob::Forward);
     connect(parser, &TemplateParser::TemplateParserJob::parsingDone, this, &MessageFactoryForwardJob::slotParsingDone);
     parser->setIdentityManager(mIdentityManager);
     parser->setCharsets(MessageComposerSettings::self()->preferredCharsets());

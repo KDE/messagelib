@@ -47,7 +47,7 @@ MessageFactoryReplyJob::~MessageFactoryReplyJob()
 void MessageFactoryReplyJob::start()
 {
 #ifdef KDEPIM_TEMPLATEPARSER_ASYNC_BUILD
-    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(mMsg, (mReplyAll ? TemplateParser::TemplateParser::ReplyAll : TemplateParser::TemplateParser::Reply));
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(mMsg, (mReplyAll ? TemplateParser::TemplateParserJob::ReplyAll : TemplateParser::TemplateParserJob::Reply));
     connect(parser, &TemplateParser::TemplateParserJob::parsingDone, this, &MessageFactoryReplyJob::slotReplyDone);
     parser->setIdentityManager(mIdentityManager);
     parser->setCharsets(MessageComposerSettings::self()->preferredCharsets());
