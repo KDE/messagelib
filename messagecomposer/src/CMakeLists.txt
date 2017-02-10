@@ -1,4 +1,5 @@
 
+configure_file(config-messagecomposer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messagecomposer.h)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecomposer\")
 
