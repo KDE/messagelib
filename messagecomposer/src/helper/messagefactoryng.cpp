@@ -351,6 +351,18 @@ MessageFactoryNG::MessageReply MessageFactoryNG::createReply()
 
     // If the reply shouldn't be blank, apply the template to the message
     if (m_quote) {
+#if 0
+        MessageFactoryReplyJob *job = new MessageFactoryReplyJob;
+        connect(job, &MessageFactoryReplyJob::replyDone, this, &MessageFactoryNG::slotCreateReplyDone);
+        job->setMsg(msg);
+        job->setReplyAll(replyAll);
+        job->setIdentityManager(m_identityManager);
+        job->setSelection(m_selection);
+        job->setTemplate(m_template);
+        job->setOrigMsg(m_origMsg);
+        job->setCollection(m_collection);
+        job->start();
+#endif
         TemplateParser::TemplateParser parser(msg, (replyAll ? TemplateParser::TemplateParser::ReplyAll : TemplateParser::TemplateParser::Reply));
         parser.setIdentityManager(m_identityManager);
         parser.setCharsets(MessageComposerSettings::self()->preferredCharsets());
@@ -366,6 +378,10 @@ MessageFactoryNG::MessageReply MessageFactoryNG::createReply()
         } else {
             parser.process(m_origMsg, m_collection);
         }
+    } else {
+#if 0
+        slotCreateReplyDone(msg, replyAll);
+#endif
     }
     applyCharset(msg);
 
@@ -452,7 +468,7 @@ KMime::Message::Ptr MessageFactoryNG::createForward()
     }
 
     msg->subject()->fromUnicodeString(MessageHelper::forwardSubject(m_origMsg), "utf-8");
-
+#if 0
     MessageFactoryForwardJob *job = new MessageFactoryForwardJob;
     connect(job, &MessageFactoryForwardJob::forwardDone, this, &MessageFactoryNG::slotCreateForwardDone);
     job->setIdentityManager(m_identityManager);
@@ -462,6 +478,7 @@ KMime::Message::Ptr MessageFactoryNG::createForward()
     job->setOrigMsg(m_origMsg);
     job->setCollection(m_collection);
     job->start();
+#endif
 
     TemplateParser::TemplateParser parser(msg, TemplateParser::TemplateParser::Forward);
     parser.setIdentityManager(m_identityManager);
