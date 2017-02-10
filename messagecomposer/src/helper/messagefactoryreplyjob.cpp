@@ -87,7 +87,7 @@ void MessageFactoryReplyJob::start()
 
 void MessageFactoryReplyJob::slotReplyDone()
 {
-    Q_EMIT replyDone(mMsg);
+    Q_EMIT replyDone(mMsg, mReplyAll);
     deleteLater();
 }
 

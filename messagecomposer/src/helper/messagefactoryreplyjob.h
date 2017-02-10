@@ -49,7 +49,7 @@ public:
     void setReplyAll(bool replyAll);
 
 Q_SIGNALS:
-    void replyDone(const KMime::Message::Ptr &msg);
+    void replyDone(const KMime::Message::Ptr &msg, bool replyAll);
 
 private:
     void slotReplyDone();

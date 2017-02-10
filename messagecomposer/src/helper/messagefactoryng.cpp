@@ -76,8 +76,9 @@ static KMime::Types::Mailbox::List stripMyAddressesFromAddressList(const KMime::
     return addresses;
 }
 
-MessageFactoryNG::MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col)
-    : m_identityManager(nullptr)
+MessageFactoryNG::MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col, QObject *parent)
+    : QObject(parent)
+    , m_identityManager(nullptr)
     , m_origMsg(origMsg)
     , m_folderId(0)
     , m_parentFolderId(0)
@@ -91,6 +92,32 @@ MessageFactoryNG::MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::
 
 MessageFactoryNG::~MessageFactoryNG()
 {
+}
+
+void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll)
+{
+    applyCharset(msg);
+
+    MessageCore::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusReplied());
+    if (m_parentFolderId > 0) {
+        KMime::Headers::Generic *header = new KMime::Headers::Generic("X-KMail-Fcc");
+        header->fromUnicodeString(QString::number(m_parentFolderId), "utf-8");
+        msg->setHeader(header);
+    }
+
+    if (auto hrd = m_origMsg->headerByType("X-KMail-EncryptActionEnabled")) {
+        if (hrd->as7BitString(false).contains("true")) {
+            auto header = new KMime::Headers::Generic("X-KMail-EncryptActionEnabled");
+            header->fromUnicodeString(QStringLiteral("true"), "utf-8");
+            msg->setHeader(header);
+        }
+    }
+    msg->assemble();
+
+    MessageReply reply;
+    reply.msg = msg;
+    reply.replyAll = replyAll;
+    Q_EMIT createReplyDone(reply);
 }
 
 MessageFactoryNG::MessageReply MessageFactoryNG::createReply()
@@ -360,6 +387,16 @@ MessageFactoryNG::MessageReply MessageFactoryNG::createReply()
     reply.msg = msg;
     reply.replyAll = replyAll;
     return reply;
+}
+
+
+void MessageFactoryNG::slotCreateForwardDone(const KMime::Message::Ptr &msg)
+{
+    applyCharset(msg);
+
+    MessageCore::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusForwarded());
+    msg->assemble();
+    Q_EMIT createForwardDone(msg);
 }
 
 KMime::Message::Ptr MessageFactoryNG::createForward()

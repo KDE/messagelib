@@ -58,8 +58,9 @@ enum MDNAdvice {
 /**
  * Contains various factory methods for creating new messages such as replies, MDNs, forwards, etc.
  */
-class MESSAGECOMPOSER_EXPORT MessageFactoryNG
+class MESSAGECOMPOSER_EXPORT MessageFactoryNG : public QObject
 {
+    Q_OBJECT
 public:
 
     /// Small helper structure which encapsulates the KMime::Message created when creating a reply, and
@@ -70,7 +71,7 @@ public:
         ///  template
     };
 
-    explicit MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col = Akonadi::Collection());
+    explicit MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col = Akonadi::Collection(), QObject *parent = nullptr);
     virtual ~MessageFactoryNG();
 
     /**
@@ -261,6 +262,13 @@ private:
     KMime::Types::Mailbox::List m_mailingListAddresses;
     Akonadi::Item::Id m_id;
 
+Q_SIGNALS:
+    void createReplyDone(const MessageFactoryNG::MessageReply &reply);
+    void createForwardDone(const KMime::Message::Ptr &msg);
+
+private Q_SLOTS:
+    void slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll);
+    void slotCreateForwardDone(const KMime::Message::Ptr &msg);
 };
 
 }
