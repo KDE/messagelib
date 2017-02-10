@@ -50,6 +50,7 @@ private Q_SLOTS:
     void test_multipartAlternative_data();
     void test_multipartAlternative();
 
+    void testCreateForwardMultiEmailsAsync();
     void testCreateForwardMultiEmails();
     void testCreateReplyToAuthor();
     void testCreateReplyAllWithMultiEmails();

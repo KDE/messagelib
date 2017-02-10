@@ -518,6 +518,50 @@ void MessageFactoryTest::testCreateForwardMultiEmails()
     QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toLatin1());
 }
 
+void MessageFactoryTest::testCreateForwardMultiEmailsAsync()
+{
+    KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
+
+    MessageFactoryNG factory(msg, 0);
+    factory.setIdentityManager(mIdentMan);
+    QSignalSpy spy(&factory, &MessageFactoryNG::createForwardDone);
+    factory.createForwardAsync();
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+
+    KMime::Message::Ptr fw = spy.at(0).at(0).value<KMime::Message::Ptr>();
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(", ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+
+    QString fwdMsg = QString::fromLatin1(
+                         "From: another <another@another.com>\n"
+                         "Date: %2\n"
+                         "X-KMail-Transport: 0\n"
+                         "MIME-Version: 1.0\n"
+                         "Subject: Fwd: Test Email Subject\n"
+                         "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                         "Content-Transfer-Encoding: 8Bit\n"
+                         "X-KMail-Link-Message: 0\n"
+                         "X-KMail-Link-Type: forward\n"
+                         "\n"
+                         "----------  Forwarded Message  ----------\n"
+                         "\n"
+                         "Subject: Test Email Subject\n"
+                         "Date: %1\n"
+                         "From: me@me.me\n"
+                         "To: you@you.you, you2@you.you\n"
+                         "CC: cc@cc.cc, cc2@cc.cc\n"
+                         "\n"
+                         "All happy families are alike; each unhappy family is unhappy in its own way.\n"
+                         "-----------------------------------------");
+    fwdMsg = fwdMsg.arg(datetime).arg(fw->date()->asUnicodeString());
+
+//   qDebug() << "got:" << fw->encodedContent() << "against" << fwdMsg.toLatin1();
+    QCOMPARE(fw->subject()->asUnicodeString(), QStringLiteral("Fwd: Test Email Subject"));
+    QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toLatin1());
+}
+
 void MessageFactoryTest::testCreateForwardAsync()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
