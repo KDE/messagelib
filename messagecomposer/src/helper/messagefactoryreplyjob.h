@@ -21,6 +21,10 @@
 #define MESSAGEFACTORYREPLYJOB_H
 
 #include <QObject>
+#include <KMime/Message>
+#include <KIdentityManagement/IdentityManager>
+#include <AkonadiCore/Collection>
+
 namespace MessageComposer
 {
 class MessageFactoryReplyJob : public QObject
@@ -31,6 +35,27 @@ public:
     ~MessageFactoryReplyJob();
 
     void start();
+
+    void setMsg(const KMime::Message::Ptr &msg);
+
+    void setTemplate(const QString &tmpl);
+
+    void setSelection(const QString &selection);
+
+    void setOrigMsg(const KMime::Message::Ptr &origMsg);
+
+    void setIdentityManager(KIdentityManagement::IdentityManager *identityManager);
+
+Q_SIGNALS:
+    void replyDone(const KMime::Message::Ptr &msg);
+
+private:
+    QString mSelection;
+    QString mTemplate;
+    KMime::Message::Ptr mMsg;
+    KMime::Message::Ptr mOrigMsg;
+    Akonadi::Collection mCollection;
+    KIdentityManagement::IdentityManager *mIdentityManager;
 };
 
 }

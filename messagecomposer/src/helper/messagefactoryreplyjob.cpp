@@ -18,11 +18,22 @@
 */
 
 #include "messagefactoryreplyjob.h"
+#include "config-messagecomposer.h"
+#include "settings/messagecomposersettings.h"
+//#ifdef KDEPIM_TEMPLATEPARSER_ASYNC_BUILD
+//#include <TemplateParser/TemplateParserJob>
+//#else
+#include <TemplateParser/TemplateParser>
+//#endif
+#include <KIdentityManagement/IdentityManager>
 
 using namespace MessageComposer;
 
 MessageFactoryReplyJob::MessageFactoryReplyJob(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mMsg(nullptr),
+      mOrigMsg(nullptr),
+      mIdentityManager(nullptr)
 {
 
 }
@@ -34,5 +45,48 @@ MessageFactoryReplyJob::~MessageFactoryReplyJob()
 
 void MessageFactoryReplyJob::start()
 {
+#if 0
+    TemplateParser::TemplateParser parser(mMsg, (replyAll ? TemplateParser::TemplateParser::ReplyAll : TemplateParser::TemplateParser::Reply));
+    parser.setIdentityManager(mIdentityManager);
+    parser.setCharsets(MessageComposerSettings::self()->preferredCharsets());
+    parser.setWordWrap(MessageComposerSettings::wordWrap(), MessageComposerSettings::lineWrapWidth());
+#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 1)
+    if (MessageComposer::MessageComposerSettings::quoteSelectionOnly()) {
+        parser.setSelection(mSelection);
+    }
+#endif
+    parser.setAllowDecryption(true);
+    if (!mTemplate.isEmpty()) {
+        parser.process(mTemplate, mOrigMsg);
+    } else {
+        parser.process(mOrigMsg, mCollection);
+    }
+#endif
+    Q_EMIT replyDone(mMsg);
+    deleteLater();
+}
 
+void MessageFactoryReplyJob::setMsg(const KMime::Message::Ptr &msg)
+{
+    mMsg = msg;
+}
+
+void MessageFactoryReplyJob::setTemplate(const QString &tmpl)
+{
+    mTemplate = tmpl;
+}
+
+void MessageFactoryReplyJob::setSelection(const QString &selection)
+{
+    mSelection = selection;
+}
+
+void MessageFactoryReplyJob::setOrigMsg(const KMime::Message::Ptr &origMsg)
+{
+    mOrigMsg = origMsg;
+}
+
+void MessageFactoryReplyJob::setIdentityManager(KIdentityManagement::IdentityManager *identityManager)
+{
+    mIdentityManager = identityManager;
 }
