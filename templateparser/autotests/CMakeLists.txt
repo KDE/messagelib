@@ -29,7 +29,6 @@ macro(add_templateparser_unittest _source)
   add_gpg_crypto_test(${_name} templateparser-${_name})
 endmacro()
 
-add_templateparser_unittest(templateparsertest.cpp)
 add_templateparser_unittest(customtemplatesmenutest.cpp)
 add_templateparser_unittest(templatewebengineviewtest.cpp)
 add_templateparser_unittest(templateextracthtmlelementwebengineviewtest.cpp)

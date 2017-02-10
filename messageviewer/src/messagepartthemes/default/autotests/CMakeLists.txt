@@ -25,7 +25,7 @@ add_messageviewer_crypto_unittest(unencryptedmessagetest.cpp)
 ecm_add_test(quotehtmltest.cpp setupenv.cpp ../defaultrenderer.cpp ../htmlblock.cpp ../converthtmltoplaintext.cpp ../../../messageviewer_debug.cpp
     TEST_NAME quotehtmltest
     NAME_PREFIX "messageviewer-messageparttheme-"
-    LINK_LIBRARIES Qt5::Test KF5::GrantleeTheme KF5::MessageViewer KF5::MimeTreeParser Qt5::WebKitWidgets KF5::MessageCore KF5::IconThemes KF5::Codecs KF5::I18n Grantlee5::TextDocument Grantlee5::Templates
+    LINK_LIBRARIES Qt5::Test KF5::GrantleeTheme KF5::MessageViewer KF5::MimeTreeParser KF5::MessageCore KF5::IconThemes KF5::Codecs KF5::I18n Grantlee5::TextDocument Grantlee5::Templates
 )
 
 ecm_add_test(converthtmltoplaintexttest.cpp ../converthtmltoplaintext.cpp

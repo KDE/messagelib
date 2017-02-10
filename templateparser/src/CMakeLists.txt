@@ -8,7 +8,6 @@ configure_file(config-templateparser.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-
 
 set(templateparser_LIB_SRCS
     templateparserjob.cpp
-    templateparser.cpp
     defaulttemplates.cpp
     templatesutil.cpp
     customtemplates.cpp
@@ -51,7 +50,6 @@ target_link_libraries(KF5TemplateParser
     KF5::MessageViewer
     KF5::IdentityManagement
     KF5::MessageCore
-    Qt5::WebKitWidgets
     KF5::XmlGui
     KF5::IconThemes
     KF5::Completion
@@ -80,7 +78,6 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     CustomTemplates
     CustomTemplatesMenu
     DefaultTemplates
-    TemplateParser
     TemplatesConfiguration
     TemplatesTextEdit
     TemplatesUtil

@@ -34,14 +34,10 @@ class MessageFactoryTest : public QObject
 private Q_SLOTS:
     void initTestCase();
 
-    void testCreateReplyAll();
     void testCreateReplyAllAsync();
 
-    void testCreateReplyHtml();
     void testCreateReplyHtmlAsync();
-    void testCreateReplyUTF16Base64();
     void testCreateReplyUTF16Base64Async();
-    void testCreateForward();
     void testCreateForwardAsync();
 
     void testCreateRedirect();
@@ -55,18 +51,11 @@ private Q_SLOTS:
     void test_multipartAlternative();
 
     void testCreateForwardMultiEmailsAsync();
-    void testCreateForwardMultiEmails();
-    void testCreateReplyToAuthor();
     void testCreateReplyToAuthorAsync();
-    void testCreateReplyAllWithMultiEmails();
     void testCreateReplyAllWithMultiEmailsAsync();
-    void testCreateReplyToList();
     void testCreateReplyToListAsync();
-    void testCreateReplyToAllWithUseSender();
     void testCreateReplyToAllWithUseSenderAsync();
-    void testCreateReplyToAllWithUseSenderByNoSameIdentities();
     void testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsync();
-    void testCreateReplyToAllWithUseSenderAndIdentityInCC();
     void testCreateReplyToAllWithUseSenderAndIdentityInCCAsync();
 
     void cleanupTestCase();

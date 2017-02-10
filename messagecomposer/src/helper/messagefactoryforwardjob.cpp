@@ -18,13 +18,8 @@
 */
 
 #include "messagefactoryforwardjob.h"
-#include "config-messagecomposer.h"
 #include "settings/messagecomposersettings.h"
-#ifdef KDEPIM_TEMPLATEPARSER_ASYNC_BUILD
 #include <TemplateParser/TemplateParserJob>
-#else
-#include <TemplateParser/TemplateParser>
-#endif
 #include <KIdentityManagement/IdentityManager>
 
 using namespace MessageComposer;
@@ -45,7 +40,6 @@ MessageFactoryForwardJob::~MessageFactoryForwardJob()
 
 void MessageFactoryForwardJob::start()
 {
-#ifdef KDEPIM_TEMPLATEPARSER_ASYNC_BUILD
     TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(mMsg, TemplateParser::TemplateParserJob::Forward);
     connect(parser, &TemplateParser::TemplateParserJob::parsingDone, this, &MessageFactoryForwardJob::slotParsingDone);
     parser->setIdentityManager(mIdentityManager);
@@ -56,18 +50,6 @@ void MessageFactoryForwardJob::start()
     } else {
         parser->process(mOrigMsg, mCollection);
     }
-#else
-    TemplateParser::TemplateParser parser(mMsg, TemplateParser::TemplateParser::Forward);
-    parser.setIdentityManager(mIdentityManager);
-    parser.setCharsets(MessageComposerSettings::self()->preferredCharsets());
-    parser.setSelection(mSelection);
-    if (!mTemplate.isEmpty()) {
-        parser.process(mTemplate, mOrigMsg);
-    } else {
-        parser.process(mOrigMsg, mCollection);
-    }
-    slotParsingDone();
-#endif
 }
 
 void MessageFactoryForwardJob::slotParsingDone()

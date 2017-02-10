@@ -43,8 +43,6 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QTextCodec>
-#include <QWebFrame>
-#include <QWebPage>
 #include <QTextDocument>
 #include <QLocale>
 

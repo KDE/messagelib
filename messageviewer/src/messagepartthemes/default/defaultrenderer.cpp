@@ -48,9 +48,6 @@
 #include <QStandardPaths>
 #include <QTextCodec>
 #include <QUrl>
-#include <QWebPage>
-#include <QWebElement>
-#include <QWebFrame>
 
 #include <grantlee/context.h>
 #include <grantlee/engine.h>
@@ -363,7 +360,7 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
     }
     return false;
 }
-
+#if 0 //FIXME
 QString processHtml(const QString &htmlSource, QString &extraHead)
 {
     // Create a DOM Document from the HTML source
@@ -383,7 +380,7 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
     extraHead = header.toInnerXml();
     return body.toInnerXml();
 }
-
+#endif
 class CacheHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
@@ -871,7 +868,8 @@ public:
         block.setProperty("isPrinting", isPrinting);
         {
             QString extraHead;
-            QString bodyText = processHtml(mp->mBodyHTML, extraHead);
+            //laurent: FIXME port to async method webengine
+            QString bodyText = mp->mBodyHTML;//processHtml(mp->mBodyHTML, extraHead);
 
             if (isHtmlPreferred) {
                 mp->mOtp->nodeHelper()->setNodeDisplayedEmbedded(mp->mNode, true);

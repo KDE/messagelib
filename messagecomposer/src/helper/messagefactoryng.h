@@ -72,19 +72,20 @@ public:
     explicit MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col = Akonadi::Collection(), QObject *parent = nullptr);
     virtual ~MessageFactoryNG();
 
+
+
     /**
     * Create a new message that is a reply to this message, filling all
     * required header fields with the proper values. The returned message
     * is not stored in any folder. Marks this message as replied.
     *
-    * @return the reply created, including the reply mode
     */
-    MessageReply createReply();
+    void createReplyAsync();
 
     /** Create a new message that is a forward of this message, filling all
     required header fields with the proper values. The returned message
     is not stored in any folder. Marks this message as forwarded. */
-    KMime::Message::Ptr createForward();
+    void createForwardAsync();
 
     /**
     * Create a forward from the given list of messages, attaching each
@@ -226,8 +227,6 @@ public:
     */
     static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
 
-    void createForwardAsync();
-    void createReplyAsync();
 private:
     /** @return the UOID of the identity for this message.
       Searches the "x-kmail-identity" header and if that fails,

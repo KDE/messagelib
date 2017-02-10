@@ -216,7 +216,6 @@ target_link_libraries(KF5MessageViewer
     KF5::SyntaxHighlighting
     KF5::ItemViews
     Qt5::Network
-    Qt5::WebKitWidgets
     KF5::WebEngineViewer
     KF5::Libkdepim
     KF5::GrantleeTheme
