@@ -38,6 +38,8 @@ private Q_SLOTS:
     void testCreateReplyHtml();
     void testCreateReplyUTF16Base64();
     void testCreateForward();
+    void testCreateForwardAsync();
+
     void testCreateRedirect();
     void testCreateResend();
     void testCreateMDN();

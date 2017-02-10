@@ -228,6 +228,7 @@ public:
     */
     static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
 
+    void createForwardAsync();
 private:
     /** @return the UOID of the identity for this message.
       Searches the "x-kmail-identity" header and if that fails,

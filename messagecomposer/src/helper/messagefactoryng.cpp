@@ -417,6 +417,69 @@ void MessageFactoryNG::slotCreateForwardDone(const KMime::Message::Ptr &msg)
     Q_EMIT createForwardDone(msg);
 }
 
+void MessageFactoryNG::createForwardAsync()
+{
+    KMime::Message::Ptr msg(new KMime::Message);
+
+    // This is a non-multipart, non-text mail (e.g. text/calendar). Construct
+    // a multipart/mixed mail and add the original body as an attachment.
+    if (!m_origMsg->contentType()->isMultipart() &&
+            (!m_origMsg->contentType()->isText() ||
+             (m_origMsg->contentType()->isText() && m_origMsg->contentType()->subType() != "html"
+              && m_origMsg->contentType()->subType() != "plain"))) {
+        const uint originalIdentity = identityUoid(m_origMsg);
+        MessageHelper::initFromMessage(msg, m_origMsg, m_identityManager, originalIdentity);
+        msg->removeHeader<KMime::Headers::ContentType>();
+        msg->removeHeader<KMime::Headers::ContentTransferEncoding>();
+
+        msg->contentType()->setMimeType("multipart/mixed");
+
+        //TODO: Andras: somebody should check if this is correct. :)
+        // empty text part
+        KMime::Content *msgPart = new KMime::Content;
+        msgPart->contentType()->setMimeType("text/plain");
+        msg->addContent(msgPart);
+
+        // the old contents of the mail
+        KMime::Content *secondPart = new KMime::Content;
+        secondPart->contentType()->setMimeType(m_origMsg->contentType()->mimeType());
+        secondPart->setBody(m_origMsg->body());
+        // use the headers of the original mail
+        secondPart->setHead(m_origMsg->head());
+        msg->addContent(secondPart);
+        msg->assemble();
+    }
+
+    // Normal message (multipart or text/plain|html)
+    // Just copy the message, the template parser will do the hard work of
+    // replacing the body text in TemplateParser::addProcessedBodyToMessage()
+    else {
+        //TODO Check if this is ok
+        msg->setHead(m_origMsg->head());
+        msg->setBody(m_origMsg->body());
+        QString oldContentType = msg->contentType()->asUnicodeString();
+        const uint originalIdentity = identityUoid(m_origMsg);
+        MessageHelper::initFromMessage(msg, m_origMsg, m_identityManager, originalIdentity);
+
+        // restore the content type, MessageHelper::initFromMessage() sets the contents type to
+        // text/plain, via initHeader(), for unclear reasons
+        msg->contentType()->fromUnicodeString(oldContentType, "utf-8");
+        msg->assemble();
+    }
+
+    msg->subject()->fromUnicodeString(MessageHelper::forwardSubject(m_origMsg), "utf-8");
+    MessageFactoryForwardJob *job = new MessageFactoryForwardJob;
+    connect(job, &MessageFactoryForwardJob::forwardDone, this, &MessageFactoryNG::slotCreateForwardDone);
+    job->setIdentityManager(m_identityManager);
+    job->setMsg(msg);
+    job->setSelection(m_selection);
+    job->setTemplate(m_template);
+    job->setOrigMsg(m_origMsg);
+    job->setCollection(m_collection);
+    job->start();
+}
+
+
 KMime::Message::Ptr MessageFactoryNG::createForward()
 {
     KMime::Message::Ptr msg(new KMime::Message);
