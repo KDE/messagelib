@@ -213,6 +213,55 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCC()
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
+void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
+{
+    const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message_and_identity_in_cc.mbox"));
+    KMime::Message::Ptr msg = loadMessage(filename);
+    KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
+    i1.setFullName(QStringLiteral("foo1"));
+    i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
+    KIdentityManagement::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
+    i2.setFullName(QStringLiteral("foo2"));
+    i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
+    mIdentMan->commit();
+
+    MessageFactoryNG factory(msg, 0);
+    factory.setReplyStrategy(ReplyAll);
+    factory.setIdentityManager(mIdentMan);
+
+    QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
+
+    factory.createReplyAsync();
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+
+    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+
+    reply.replyAll = true;
+    //qDebug() << reply.msg->body();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
+    QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
+                                     "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>, Bla <identity1@bla.com>\n"
+                                     "To: Bla <identity1@bla.com>\n"
+                                     "Subject: Re: Plain Message Test\n"
+                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n"
+                                     "%2")
+                 .arg(dateStr).arg(replyStr);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+}
+
 void MessageFactoryTest::testCreateReplyToAllWithUseSender()
 {
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message.mbox"));
@@ -230,6 +279,55 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSender()
     factory.setIdentityManager(mIdentMan);
 
     MessageFactoryNG::MessageReply reply =  factory.createReply();
+    reply.replyAll = true;
+    //qDebug() << reply.msg->body();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
+    QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
+                                     "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>\n"
+                                     "To: Bla <identity1@bla.com>\n"
+                                     "Subject: Re: Plain Message Test\n"
+                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n"
+                                     "%2")
+                 .arg(dateStr).arg(replyStr);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+}
+
+void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
+{
+    const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_with_identity_message.mbox"));
+    KMime::Message::Ptr msg = loadMessage(filename);
+    KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
+    i1.setFullName(QStringLiteral("foo1"));
+    i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
+    KIdentityManagement::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
+    i2.setFullName(QStringLiteral("foo2"));
+    i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
+    mIdentMan->commit();
+
+    MessageFactoryNG factory(msg, 0);
+    factory.setReplyStrategy(ReplyAll);
+    factory.setIdentityManager(mIdentMan);
+
+
+    QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
+
+    factory.createReplyAsync();
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+
+    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
     //qDebug() << reply.msg->body();
 
@@ -297,6 +395,54 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentities()
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
+void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsync()
+{
+    const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/replyall_without_identity_message.mbox"));
+    KMime::Message::Ptr msg = loadMessage(filename);
+    KIdentityManagement::Identity &i1 = mIdentMan->modifyIdentityForName(QStringLiteral("test1"));
+    i1.setFullName(QStringLiteral("foo1"));
+    i1.setPrimaryEmailAddress(QStringLiteral("identity1@bla.com"));
+    KIdentityManagement::Identity &i2 = mIdentMan->modifyIdentityForName(QStringLiteral("test2"));
+    i2.setFullName(QStringLiteral("foo2"));
+    i2.setPrimaryEmailAddress(QStringLiteral("identity2@bla.com"));
+    mIdentMan->commit();
+
+    MessageFactoryNG factory(msg, 0);
+    factory.setReplyStrategy(ReplyAll);
+    factory.setIdentityManager(mIdentMan);
+
+    QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
+
+    factory.createReplyAsync();
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+
+    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    reply.replyAll = true;
+    //qDebug() << reply.msg->body();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
+    QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
+                                     "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>\n"
+                                     "To: Bla <bloblo@bla.com>\n"
+                                     "Subject: Re: Plain Message Test\n"
+                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n"
+                                     "%2")
+                 .arg(dateStr).arg(replyStr);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+}
+
 void MessageFactoryTest::testCreateReplyToList()
 {
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/list_message.mbox"));
@@ -329,7 +475,89 @@ void MessageFactoryTest::testCreateReplyToList()
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
+void MessageFactoryTest::testCreateReplyToListAsync()
+{
+    const QString filename(QStringLiteral(MAIL_DATA_DIR) + QStringLiteral("/list_message.mbox"));
+    KMime::Message::Ptr msg = loadMessage(filename);
+
+    MessageFactoryNG factory(msg, 0);
+    factory.setIdentityManager(mIdentMan);
+    factory.setReplyStrategy(ReplyList);
+
+    QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
+
+    factory.createReplyAsync();
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+
+    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    reply.replyAll = true;
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QString::fromLatin1(QByteArray("> This is a mail from ML"));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
+    QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
+                                     "To: list@list.org\n"
+                                     "Subject: Re: Plain Message Test\n"
+                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n"
+                                     "%2")
+                 .arg(dateStr).arg(replyStr);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+}
+
 void MessageFactoryTest::testCreateReplyToAuthor()
+{
+    KMime::Message::Ptr msg = createPlainTestMessage();
+
+    MessageFactoryNG factory(msg, 0);
+    factory.setIdentityManager(mIdentMan);
+    factory.setReplyStrategy(ReplyAuthor);
+
+    QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
+
+    factory.createReplyAsync();
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+
+    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    reply.replyAll = true;
+    //qDebug() << reply.msg->body();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
+    QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
+    QString replyTo = reply.msg->inReplyTo()->asUnicodeString();
+    QString reference = reply.msg->references()->asUnicodeString();
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
+                                     "X-KMail-Transport: 0\n"
+                                     "To: me@me.me\n"
+                                     "References: %3\n"
+                                     "In-Reply-To: %2\n"
+                                     "Subject: Re: Test Email Subject\n"
+                                     "X-KMail-CursorPos: 134\n"
+                                     "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n"
+                                     "%4")
+                 .arg(dateStr).arg(replyTo).arg(reference).arg(replyStr);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+}
+
+void MessageFactoryTest::testCreateReplyToAuthorAsync()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
 
@@ -403,6 +631,48 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmails()
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
+void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
+{
+    KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
+
+    MessageFactoryNG factory(msg, 0);
+    factory.setIdentityManager(mIdentMan);
+    factory.setReplyStrategy(ReplyAll);
+
+    QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
+
+    factory.createReplyAsync();
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+
+    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    reply.replyAll = true;
+    //qDebug() << reply.msg->body();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
+
+    QString replyTo = reply.msg->inReplyTo()->asUnicodeString();
+    QString reference = reply.msg->references()->asUnicodeString();
+    QString dateStr = reply.msg->date()->asUnicodeString();
+    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
+                                     "Date: %1\n"
+                                     "X-KMail-Transport: 0\n"
+                                     "Cc: you@you.you, you2@you.you, cc@cc.cc, cc2@cc.cc\n"
+                                     "To: me@me.me\n"
+                                     "References: %3\n"
+                                     "In-Reply-To: %2\n"
+                                     "Subject: Re: Test Email Subject\nContent-Type: text/plain; charset=\"US-ASCII\"\n"
+                                     "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
+                                     "X-KMail-Link-Message: 0\n"
+                                     "X-KMail-Link-Type: reply\n\n> All happy families are alike; each unhappy family is unhappy in its own way.")
+                 .arg(dateStr).arg(replyTo).arg(reference);
+    QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
+}
+
 void MessageFactoryTest::testCreateReplyAll()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
@@ -443,6 +713,47 @@ void MessageFactoryTest::testCreateReplyAllAsync()
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
 }
 
+void MessageFactoryTest::testCreateReplyHtmlAsync()
+{
+    KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("html_utf8_encoded.mbox"));
+
+    //qDebug() << "html message:" << msg->encodedContent();
+
+    MessageFactoryNG factory(msg, 0);
+    factory.setIdentityManager(mIdentMan);
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
+
+    QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
+    factory.setIdentityManager(mIdentMan);
+
+    factory.createReplyAsync();
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    reply.replyAll = true;
+    //qDebug() << "html reply" << reply.msg->encodedContent();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    //We are not in UTC
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time().addSecs(-2 * 60 * 60), QLocale::LongFormat);
+    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> encoded?\n\n")));
+    QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
+    QCOMPARE(reply.msg->contents().count(), 2);
+    QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
+
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(false);
+    reply =  factory.createReply();
+    reply.replyAll = true;
+    datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("text/plain"));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
+    QCOMPARE(reply.msg->contents().count(), 0);
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
+}
+
 void MessageFactoryTest::testCreateReplyHtml()
 {
     KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("html_utf8_encoded.mbox"));
@@ -478,6 +789,7 @@ void MessageFactoryTest::testCreateReplyHtml()
     TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
 }
 
+
 void MessageFactoryTest::testCreateReplyUTF16Base64()
 {
     KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("plain_utf16.mbox"));
@@ -489,6 +801,35 @@ void MessageFactoryTest::testCreateReplyUTF16Base64()
     factory.setIdentityManager(mIdentMan);
 
     MessageFactoryNG::MessageReply reply =  factory.createReply();
+    reply.replyAll = true;
+//   qDebug() << "html reply" << reply.msg->encodedContent();
+
+    QDateTime date = msg->date()->dateTime();
+    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1String(" ") + QLocale::system().toString(date.time().addSecs(4 * 60 * 60), QLocale::LongFormat);
+    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> quote me please.\n\n")));
+    QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
+    QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: asking for reply"));
+    QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toLatin1());
+}
+
+void MessageFactoryTest::testCreateReplyUTF16Base64Async()
+{
+    KMime::Message::Ptr msg = loadMessageFromFile(QStringLiteral("plain_utf16.mbox"));
+
+    TemplateParser::TemplateParserSettings::self()->setReplyUsingHtml(true);
+//   qDebug() << "plain base64 msg message:" << msg->encodedContent();
+
+    MessageFactoryNG factory(msg, 0);
+    factory.setIdentityManager(mIdentMan);
+
+    QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
+    factory.setIdentityManager(mIdentMan);
+
+    factory.createReplyAsync();
+    QVERIFY(spy.wait());
+    QCOMPARE(spy.count(), 1);
+    MessageFactoryNG::MessageReply reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
     reply.replyAll = true;
 //   qDebug() << "html reply" << reply.msg->encodedContent();
 
