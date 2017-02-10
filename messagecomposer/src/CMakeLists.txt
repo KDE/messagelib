@@ -74,7 +74,6 @@ set( messagecomposer_attachment_src
 
 set( messagecomposer_helper_src
     helper/messagehelper.cpp
-    helper/messagefactory.cpp
     helper/messagefactoryng.cpp
     helper/messagefactoryforwardjob.cpp
     helper/messagefactoryreplyjob.cpp
@@ -262,7 +261,6 @@ ecm_generate_headers(MessageComposer_Camelcaseutils_HEADERS
 
 ecm_generate_headers(MessageComposer_Camelcasehelper_HEADERS
     HEADER_NAMES
-    MessageFactory
     MessageHelper
     MessageFactoryNG
     REQUIRED_HEADERS MessageComposer_helper_HEADERS

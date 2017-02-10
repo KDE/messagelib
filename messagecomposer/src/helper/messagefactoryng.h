@@ -22,7 +22,6 @@
 #define MESSAGECOMPOSER_MESSAGE_FACTORYNG_H
 
 #include "messagecomposer_export.h"
-#include "messagefactory.h"
 #include <kmime/kmime_message.h>
 #include <kmime/kmime_mdn.h>
 
@@ -38,7 +37,6 @@ class IdentityManager;
 
 namespace MessageComposer
 {
-#if 0 //TODO readd it when we we remove messagefactory.cpp/.h
 /**
    * Enumeration that defines the available reply "modes"
    */
@@ -55,7 +53,6 @@ enum MDNAdvice {
     MDNSendDenied,
     MDNSend
 };
-#endif
 /**
  * Contains various factory methods for creating new messages such as replies, MDNs, forwards, etc.
  */
@@ -276,8 +273,7 @@ private Q_SLOTS:
 
 }
 
-//Readd it when we will remove messagefactory.cpp/.h
-//Q_DECLARE_METATYPE(MessageComposer::ReplyStrategy)
+Q_DECLARE_METATYPE(MessageComposer::ReplyStrategy)
 Q_DECLARE_METATYPE(MessageComposer::MessageFactoryNG::MessageReply)
 
 #endif
