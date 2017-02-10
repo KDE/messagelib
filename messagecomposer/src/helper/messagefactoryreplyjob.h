@@ -46,15 +46,19 @@ public:
 
     void setIdentityManager(KIdentityManagement::IdentityManager *identityManager);
 
+    void setReplyAll(bool replyAll);
+
 Q_SIGNALS:
     void replyDone(const KMime::Message::Ptr &msg);
 
 private:
+    void slotReplyDone();
     QString mSelection;
     QString mTemplate;
     KMime::Message::Ptr mMsg;
     KMime::Message::Ptr mOrigMsg;
     Akonadi::Collection mCollection;
+    bool mReplyAll;
     KIdentityManagement::IdentityManager *mIdentityManager;
 };
 
