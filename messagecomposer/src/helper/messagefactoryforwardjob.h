@@ -49,7 +49,10 @@ public:
 
 Q_SIGNALS:
     void forwardDone(const KMime::Message::Ptr &msg);
+
 private:
+    void slotParsingDone();
+
     QString mSelection;
     QString mTemplate;
     KMime::Message::Ptr mMsg;
