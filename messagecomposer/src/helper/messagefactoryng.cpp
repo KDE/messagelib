@@ -333,7 +333,10 @@ void MessageFactoryNG::createReplyAsync()
     case MessageComposer::ReplyNone:
         // the addressees will be set by the caller
         break;
+    default:
+        Q_UNREACHABLE();
     }
+
 
     foreach (const KMime::Types::Mailbox &mailbox, toList) {
         msg->to()->addAddress(mailbox);
