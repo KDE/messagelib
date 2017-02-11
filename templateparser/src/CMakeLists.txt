@@ -3,7 +3,6 @@ add_definitions( -DQT_NO_CAST_TO_ASCII )
 
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser\")
-configure_file(config-templateparser.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-templateparser.h)
 
 
 set(templateparser_LIB_SRCS
