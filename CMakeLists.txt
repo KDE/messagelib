@@ -66,7 +66,7 @@ find_package(KF5Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
 find_package(QGpgme ${GPGME_LIB_VERSION} CONFIG REQUIRED)
 
 if (NOT ${MIMETREEPARSER_ONLY_BUILD})
-   find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network PrintSupport WebEngine WebEngineWidgets WebKitWidgets)
+   find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network PrintSupport WebEngine WebEngineWidgets)
    find_package(KF5Archive ${KF5_VERSION} CONFIG REQUIRED)
    find_package(KF5Completion ${KF5_VERSION} CONFIG REQUIRED)
    find_package(KF5Config ${KF5_VERSION} CONFIG REQUIRED)
