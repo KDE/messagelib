@@ -53,7 +53,6 @@ void TemplateParserJobTest::test_convertedHtml_data()
     }
 }
 
-
 void TemplateParserJobTest::test_convertedHtml()
 {
     QFETCH(QString, mailFileName);

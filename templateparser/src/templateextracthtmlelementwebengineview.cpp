@@ -85,8 +85,8 @@ void TemplateExtractHtmlElementWebEngineView::slotLoadFinished(bool success)
     if (success) {
 #if QT_VERSION >= 0x050700
         mPage->runJavaScript(extractHeaderBodyScript(),
-                            (QWebEngineScript::UserWorld + 2),
-                            invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
+                             (QWebEngineScript::UserWorld + 2),
+                             invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
 #else
         mPage->runJavaScript(extractHeaderBodyScript(), invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
 #endif

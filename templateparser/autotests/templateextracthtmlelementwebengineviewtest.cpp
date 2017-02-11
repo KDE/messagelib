@@ -63,5 +63,4 @@ void TemplateExtractHtmlElementWebEngineViewTest::shouldExtractHtml()
     QCOMPARE(w.bodyElement(), body);
 }
 
-
 QTEST_MAIN(TemplateExtractHtmlElementWebEngineViewTest)

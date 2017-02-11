@@ -135,7 +135,7 @@ void TemplateParserJob::setCharsets(const QStringList &charsets)
 }
 
 int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str,
-                                QString &quote)
+                                   QString &quote)
 {
     int pos = prefix.length();
     int len;
@@ -255,7 +255,7 @@ QString TemplateParserJob::getLastName(const QString &str)
 }
 
 void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
-                             const Akonadi::Collection &afolder)
+                                const Akonadi::Collection &afolder)
 {
     if (aorig_msg == nullptr) {
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
@@ -274,7 +274,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
 }
 
 void TemplateParserJob::process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
-                             const Akonadi::Collection &afolder)
+                                const Akonadi::Collection &afolder)
 {
     mForceCursorPosition = false;
     mOrigMsg = aorig_msg;
@@ -296,7 +296,6 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
 
     TemplateParserExtractHtmlInfo *job = new TemplateParserExtractHtmlInfo(this);
     connect(job, &TemplateParserExtractHtmlInfo::finished, this, &TemplateParserJob::slotExtractInfoDone);
-
 
     QString plainText = mOtp->plainTextContent();
     if (plainText.isEmpty()) {   //HTML-only mails

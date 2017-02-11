@@ -22,8 +22,7 @@
 
 #include "templateparser_export.h"
 #include <QObject>
-struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult
-{
+struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult {
     void clear();
     QString mBodyElement;
     QString mHeaderElement;
