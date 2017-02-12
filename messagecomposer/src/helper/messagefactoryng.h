@@ -227,6 +227,14 @@ public:
     */
     static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
 
+Q_SIGNALS:
+    void createReplyDone(const MessageComposer::MessageFactoryNG::MessageReply &reply);
+    void createForwardDone(const KMime::Message::Ptr &msg);
+
+private Q_SLOTS:
+    void slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll);
+    void slotCreateForwardDone(const KMime::Message::Ptr &msg);
+
 private:
     /** @return the UOID of the identity for this message.
       Searches the "x-kmail-identity" header and if that fails,
@@ -261,13 +269,6 @@ private:
     KMime::Types::Mailbox::List m_mailingListAddresses;
     Akonadi::Item::Id m_id;
 
-Q_SIGNALS:
-    void createReplyDone(const MessageComposer::MessageFactoryNG::MessageReply &reply);
-    void createForwardDone(const KMime::Message::Ptr &msg);
-
-private Q_SLOTS:
-    void slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll);
-    void slotCreateForwardDone(const KMime::Message::Ptr &msg);
 };
 
 }
