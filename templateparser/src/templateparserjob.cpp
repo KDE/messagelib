@@ -1687,8 +1687,3 @@ void TemplateParserJob::makeValidHtml(QString &body)
         body = QLatin1String("<html>") + body + QLatin1String("</html>");
     }
 }
-
-bool TemplateParserJob::cursorPositionWasSet() const
-{
-    return mForceCursorPosition;
-}

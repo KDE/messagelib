@@ -221,8 +221,6 @@ public:
 
     void processWithTemplate(const QString &tmpl);
 
-    bool cursorPositionWasSet() const;
-
 Q_SIGNALS:
     void parsingDone(bool cursorPositionWasSet);
 
