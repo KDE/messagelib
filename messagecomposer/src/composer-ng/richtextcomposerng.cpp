@@ -268,13 +268,15 @@ static void insertSignatureHelper(const QString &signature,
         QTextCursor oldCursor = cursor;
         cursor.beginEditBlock();
 
-        if (placement == KIdentityManagement::Signature::End) {
+        switch(placement) {
+        case KIdentityManagement::Signature::End:
             cursor.movePosition(QTextCursor::End);
-        } else if (placement == KIdentityManagement::Signature::Start) {
+        case KIdentityManagement::Signature::Start:
             cursor.movePosition(QTextCursor::Start);
-        } else if (placement == KIdentityManagement::Signature::AtCursor) {
+        case KIdentityManagement::Signature::AtCursor:
             cursor.movePosition(QTextCursor::StartOfLine);
         }
+
         textEdit->setTextCursor(cursor);
 
         QString lineSep;
@@ -409,6 +411,5 @@ void RichTextComposerNg::forceAutoCorrection(bool selectedText)
             cur.setPosition(initialPosition);
             setTextCursor(cur);
         }
-
     }
 }

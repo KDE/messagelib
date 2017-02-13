@@ -186,10 +186,10 @@ void MessageComposer::ComposerViewBase::setMessage(const KMime::Message::Ptr &ms
     otp.parseObjectTree(msgContent);
 
     // Load the attachments
-    foreach (auto att, otp.nodeHelper()->attachmentsOfExtraContents()) {
+    foreach (const auto &att, otp.nodeHelper()->attachmentsOfExtraContents()) {
         addAttachmentPart(att);
     }
-    foreach (auto att, msgContent->attachments()) {
+    foreach (const auto &att, msgContent->attachments()) {
         addAttachmentPart(att);
     }
 
