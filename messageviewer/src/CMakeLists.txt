@@ -201,7 +201,6 @@ generate_export_header(KF5MessageViewer BASE_NAME messageviewer)
 add_library(KF5::MessageViewer ALIAS KF5MessageViewer)
 
 target_include_directories(KF5MessageViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messageviewer>")
-target_include_directories(KF5MessageViewer PUBLIC "$<BUILD_INTERFACE:${MessageViewer_SOURCE_DIR}/src;${MessageViewer_BINARY_DIR}/src;>")
 
 target_link_libraries(KF5MessageViewer
     PUBLIC

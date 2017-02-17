@@ -64,7 +64,6 @@ set_target_properties(KF5TemplateParser PROPERTIES
     )
 
 target_include_directories(KF5TemplateParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/TemplateParser/;${KDE_INSTALL_INCLUDEDIR_KF5}/templateparser>")
-target_include_directories(KF5TemplateParser PUBLIC "$<BUILD_INTERFACE:${TemplateParser_SOURCE_DIR}/src;${TemplateParser_BINARY_DIR}/src>")
 
 install(FILES
     settings/customtemplates_kfg.kcfg

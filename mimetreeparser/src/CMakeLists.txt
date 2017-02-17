@@ -174,4 +174,4 @@ set_target_properties(KF5MimeTreeParser PROPERTIES
     )
 
 target_include_directories(KF5MimeTreeParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser/;${KDE_INSTALL_INCLUDEDIR_KF5}/mimetreeparser>")
-target_include_directories(KF5MimeTreeParser PUBLIC "$<BUILD_INTERFACE:${MimeTreeParser_SOURCE_DIR}/src;${MimeTreeParser_BINARY_DIR}/src;>")
+

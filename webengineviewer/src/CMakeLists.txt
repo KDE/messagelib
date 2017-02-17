@@ -92,7 +92,6 @@ generate_export_header(KF5WebEngineViewer BASE_NAME webengineviewer)
 add_library(KF5::WebEngineViewer ALIAS KF5WebEngineViewer)
 
 target_include_directories(KF5WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer/;${KDE_INSTALL_INCLUDEDIR_KF5}/webengineviewer>")
-target_include_directories(KF5WebEngineViewer PUBLIC "$<BUILD_INTERFACE:${WebEngineViewer_SOURCE_DIR}/src;${WebEngineViewer_BINARY_DIR}/src;>")
 
 target_link_libraries(KF5WebEngineViewer
     PUBLIC
