@@ -178,15 +178,3 @@ void SignatureController::applySignature(const KIdentityManagement::Signature &s
         }
     }
 }
-
-void SignatureController::applyCurrentSignature()
-{
-    if (!d->m_identityCombo) {
-        return;
-    }
-    KIdentityManagement::Identity &ident = const_cast<KIdentityManagement::Identity &>(
-            d->m_identityCombo->identityManager()->identityForUoidOrDefault(
-                d->m_identityCombo->currentIdentity()));
-    applySignature(ident.signature());
-}
-

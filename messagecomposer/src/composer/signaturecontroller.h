@@ -62,9 +62,6 @@ public:
     */
     void applySignature(const KIdentityManagement::Signature &signature);
 
-    /** Applys the currently selected signature according to user preferences. */
-    void applyCurrentSignature();
-
 public Q_SLOTS:
     /**
      * Append signature to the end of the text in the editor.
