@@ -268,15 +268,13 @@ static void insertSignatureHelper(const QString &signature,
         QTextCursor oldCursor = cursor;
         cursor.beginEditBlock();
 
-        switch(placement) {
-        case KIdentityManagement::Signature::End:
+        if (placement == KIdentityManagement::Signature::End) {
             cursor.movePosition(QTextCursor::End);
-        case KIdentityManagement::Signature::Start:
+        } else if (placement == KIdentityManagement::Signature::Start) {
             cursor.movePosition(QTextCursor::Start);
-        case KIdentityManagement::Signature::AtCursor:
+        } else if (placement == KIdentityManagement::Signature::AtCursor) {
             cursor.movePosition(QTextCursor::StartOfLine);
         }
-
         textEdit->setTextCursor(cursor);
 
         QString lineSep;
