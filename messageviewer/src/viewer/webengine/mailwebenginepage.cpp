@@ -53,11 +53,11 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, false);
     settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, false);
     settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, false);
     settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, false);
     settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, false);
     settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, false);
     settings()->setAttribute(QWebEngineSettings::HyperlinkAuditingEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, false);
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
     settings()->setAttribute(QWebEngineSettings::AutoLoadIconsForPage, false);
