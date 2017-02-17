@@ -98,7 +98,6 @@ void TemplateExtractHtmlElementWebEngineView::slotLoadFinished(bool success)
 void TemplateExtractHtmlElementWebEngineView::handleHtmlInfo(const QVariant &result)
 {
     if (result.isValid()) {
-        //qDebug() << " void TemplateExtractHtmlElementWebEngineView::handleHtmlInfo(const QVariant &result)"<<result;
         const QVariantMap map = result.toMap();
         mBodyElement = map.value(QStringLiteral("body")).toString();
         mHeaderElement = map.value(QStringLiteral("header")).toString();
