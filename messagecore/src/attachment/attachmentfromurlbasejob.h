@@ -16,8 +16,8 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef MESSAGECORE_ATTACHMENTFROMURLBASE_H
-#define MESSAGECORE_ATTACHMENTFROMURLBASE_H
+#ifndef MESSAGECORE_ATTACHMENTFROMURLBASEJOB_H
+#define MESSAGECORE_ATTACHMENTFROMURLBASEJOB_H
 
 #include "messagecore_export.h"
 
@@ -57,7 +57,7 @@ public:
     void setMaximumAllowedSize(qint64 size);
 
 protected Q_SLOTS:
-    virtual void doStart() = 0;
+    virtual void doStart() Q_DECL_OVERRIDE = 0;
 
 private:
     //@cond PRIVATE
