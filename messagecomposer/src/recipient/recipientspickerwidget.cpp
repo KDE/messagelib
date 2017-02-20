@@ -18,7 +18,7 @@
 */
 
 #include "recipientspickerwidget.h"
-
+#include "recipientseditormanager.h"
 #include <QHBoxLayout>
 #include <QAbstractItemView>
 #include <QTreeView>
@@ -32,8 +32,7 @@ RecipientsPickerWidget::RecipientsPickerWidget(QWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setMargin(0);
 
-    Akonadi::EmailAddressSelectionModel *model = new Akonadi::EmailAddressSelectionModel(this);
-    mView = new Akonadi::EmailAddressSelectionWidget(model->model(), this);
+    mView = new Akonadi::EmailAddressSelectionWidget(MessageComposer::RecipientsEditorManager::self()->model()->model(), this);
     layout->addWidget(mView);
     mView->view()->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mView->view()->setAlternatingRowColors(true);
