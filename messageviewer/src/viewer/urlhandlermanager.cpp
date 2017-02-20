@@ -313,6 +313,7 @@ public:
     }
     QString statusBarMessage(const QUrl &url, ViewerPrivate *) const Q_DECL_OVERRIDE
     {
+        Q_UNUSED(url);
         return QString();
     }
 };
