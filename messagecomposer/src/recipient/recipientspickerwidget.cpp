@@ -23,7 +23,8 @@
 #include <QAbstractItemView>
 #include <QTreeView>
 #include <Akonadi/Contact/EmailAddressSelectionWidget>
-
+#include <Akonadi/Contact/EmailAddressSelectionModel>
+#include <Akonadi/Contact/ContactsTreeModel>
 using namespace MessageComposer;
 RecipientsPickerWidget::RecipientsPickerWidget(QWidget *parent)
     : QWidget(parent)
@@ -31,7 +32,8 @@ RecipientsPickerWidget::RecipientsPickerWidget(QWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setMargin(0);
 
-    mView = new Akonadi::EmailAddressSelectionWidget(this);
+    Akonadi::EmailAddressSelectionModel *model = new Akonadi::EmailAddressSelectionModel(this);
+    mView = new Akonadi::EmailAddressSelectionWidget(model->model(), this);
     layout->addWidget(mView);
     mView->view()->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mView->view()->setAlternatingRowColors(true);
