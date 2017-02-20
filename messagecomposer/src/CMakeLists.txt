@@ -49,6 +49,7 @@ set( messagecomposer_recipient_src
     recipient/recipientseditorsidewidget.cpp
     recipient/kwindowpositioner.cpp
     recipient/distributionlistdialog.cpp
+    recipient/recipientseditormanager.cpp
     )
 
 set( messagecomposer_imagescaling_src
