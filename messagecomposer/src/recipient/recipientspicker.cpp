@@ -20,6 +20,7 @@
 */
 
 #include "recipientspicker.h"
+#include "recipientspickerwidget.h"
 #include "settings/messagecomposersettings.h"
 
 #include <Akonadi/Contact/EmailAddressSelectionWidget>
@@ -51,12 +52,8 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    mView = new Akonadi::EmailAddressSelectionWidget(this);
+    mView = new RecipientsPickerWidget(this);
     mainLayout->addWidget(mView);
-    mView->view()->setSelectionMode(QAbstractItemView::ExtendedSelection);
-    mView->view()->setAlternatingRowColors(true);
-    mView->view()->setSortingEnabled(true);
-    mView->view()->sortByColumn(0, Qt::AscendingOrder);
     mainLayout->setStretchFactor(mView, 1);
 
     connect(mView->view()->selectionModel(), &QItemSelectionModel::selectionChanged,
@@ -91,7 +88,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     connect(mUser2Button, &QPushButton::clicked, this, &RecipientsPicker::slotCcClicked);
     connect(mUser3Button, &QPushButton::clicked, this, &RecipientsPicker::slotToClicked);
 
-    mView->searchLineEdit()->setFocus();
+    mView->emailAddressSelectionWidget()->searchLineEdit()->setFocus();
 
     readConfig();
 
@@ -105,7 +102,7 @@ RecipientsPicker::~RecipientsPicker()
 
 void RecipientsPicker::slotSelectionChanged()
 {
-    const bool hasSelection = !mView->selectedAddresses().isEmpty();
+    const bool hasSelection = !mView->emailAddressSelectionWidget()->selectedAddresses().isEmpty();
     mUser1Button->setEnabled(hasSelection);
     mUser2Button->setEnabled(hasSelection);
     mUser3Button->setEnabled(hasSelection);
@@ -148,7 +145,7 @@ void RecipientsPicker::pick(Recipient::Type type)
 {
     qCDebug(MESSAGECOMPOSER_LOG) << int(type);
 
-    const Akonadi::EmailAddressSelection::List selections = mView->selectedAddresses();
+    const Akonadi::EmailAddressSelection::List selections = mView->emailAddressSelectionWidget()->selectedAddresses();
 
     const int count = selections.count();
     if (count == 0) {
@@ -211,7 +208,7 @@ void RecipientsPicker::slotSearchLDAP()
         connect(mLdapSearchDialog, &KLDAP::LdapSearchDialog::contactsAdded, this, &RecipientsPicker::ldapSearchResult);
     }
 
-    mLdapSearchDialog->setSearchText(mView->searchLineEdit()->text());
+    mLdapSearchDialog->setSearchText(mView->emailAddressSelectionWidget()->searchLineEdit()->text());
     mLdapSearchDialog->show();
 }
 

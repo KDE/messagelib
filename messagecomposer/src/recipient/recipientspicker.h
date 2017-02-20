@@ -39,7 +39,7 @@ class LdapSearchDialog;
 
 namespace MessageComposer
 {
-
+class RecipientsPickerWidget;
 class RecipientsPicker : public QDialog
 {
     Q_OBJECT
@@ -73,7 +73,7 @@ protected Q_SLOTS:
     void slotSelectionChanged();
 
 private:
-    Akonadi::EmailAddressSelectionWidget *mView;
+    MessageComposer::RecipientsPickerWidget *mView;
 
     KLDAP::LdapSearchDialog *mLdapSearchDialog;
 
