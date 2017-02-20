@@ -24,6 +24,11 @@
 #include <QObject>
 #include "messagecomposer_export.h"
 
+namespace Akonadi
+{
+class EmailAddressSelectionModel;
+}
+
 namespace MessageComposer
 {
 class MESSAGECOMPOSER_EXPORT RecipientsEditorManager : public QObject
@@ -34,6 +39,10 @@ public:
     ~RecipientsEditorManager();
 
     static RecipientsEditorManager *self();
+    Akonadi::EmailAddressSelectionModel *model();
+
+private:
+    Akonadi::EmailAddressSelectionModel *mModel;
 };
 }
 

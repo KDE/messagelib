@@ -18,6 +18,8 @@
 */
 
 #include "recipientseditormanager.h"
+#include <Akonadi/Contact/EmailAddressSelectionModel>
+#include <Akonadi/Contact/ContactsTreeModel>
 
 using namespace MessageComposer;
 
@@ -35,7 +37,8 @@ public:
 Q_GLOBAL_STATIC(RecipientsEditorManagerPrivate, sInstance)
 
 RecipientsEditorManager::RecipientsEditorManager(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mModel(nullptr)
 {
 
 }
@@ -47,4 +50,12 @@ RecipientsEditorManager::~RecipientsEditorManager()
 RecipientsEditorManager *RecipientsEditorManager::self()
 {
     return sInstance->manager;
+}
+
+Akonadi::EmailAddressSelectionModel *RecipientsEditorManager::model()
+{
+    if (!mModel) {
+        mModel = new Akonadi::EmailAddressSelectionModel(this);
+    }
+    return mModel;
 }
