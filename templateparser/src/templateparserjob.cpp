@@ -1320,7 +1320,7 @@ KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::Ima
     relatedPart->contentType()->setBoundary(boundary);
     relatedPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     relatedPart->addContent(mainTextPart);
-    foreach (KMime::Content *image, ic.images()) {
+    for (KMime::Content *image : ic.images()) {
         qCWarning(TEMPLATEPARSER_LOG) << "Adding" << image->contentID() << "as an embedded image";
         relatedPart->addContent(image);
     }

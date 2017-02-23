@@ -22,6 +22,7 @@
 #include "globalsettings_templateparser.h"
 #include "ui_customtemplates_base.h"
 #include "kpimtextedit/plaintexteditor.h"
+#include "helper_p.h"
 
 #include <KIconLoader>
 #include <KLocalizedString>
@@ -215,7 +216,7 @@ void CustomTemplates::save()
     // Before saving the new templates, delete the old ones. That needs to be done before
     // saving, since otherwise a new template with the new name wouldn't get saved.
     KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("customtemplatesrc"), KConfig::NoGlobals);
-    foreach (const QString &item, mItemsToDelete) {
+    for (const QString &item : qAsConst(mItemsToDelete)) {
         CTemplates t(item);
         const QString configGroup = t.currentGroup();
         config->deleteGroup(configGroup);
