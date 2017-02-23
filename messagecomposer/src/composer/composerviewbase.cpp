@@ -89,7 +89,7 @@ static QStringList encodeIdn(const QStringList &emails)
 {
     QStringList encoded;
     encoded.reserve(emails.count());
-    foreach (const QString &email, emails) {
+    for (const QString &email : emails) {
         encoded << KEmailAddress::normalizeAddressesAndEncodeIdn(email);
     }
 
@@ -1637,7 +1637,7 @@ QStringList MessageComposer::ComposerViewBase::cleanEmailList(const QStringList 
 {
     QStringList clean;
     clean.reserve(emails.count());
-    foreach (const QString &email, emails) {
+    for (const QString &email : emails) {
         clean << KEmailAddress::extractEmailAddress(email);
     }
     return clean;

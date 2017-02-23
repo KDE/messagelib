@@ -18,7 +18,7 @@
  */
 
 #include "attachmentmodel.h"
-
+#include "helper/helper_p.h"
 #include <QMimeData>
 #include <QUrl>
 
@@ -118,11 +118,11 @@ bool AttachmentModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
         //  return false;
     }
     // The dropped data is a list of URLs.
-    QList<QUrl> urls = data->urls();
+    const QList<QUrl> urls = data->urls();
     if (!urls.isEmpty()) {
         Akonadi::Item::List items;
-        foreach (const QUrl &url, urls) {
-            Akonadi::Item item = Akonadi::Item::fromUrl(url);
+        for (const QUrl &url : urls) {
+            const Akonadi::Item item = Akonadi::Item::fromUrl(url);
             if (item.isValid()) {
                 items << item;
             }
@@ -247,7 +247,7 @@ bool AttachmentModel::isEncryptSelected() const
 void AttachmentModel::setEncryptSelected(bool selected)
 {
     d->encryptSelected = selected;
-    foreach (AttachmentPart::Ptr part, d->parts) {
+    for (AttachmentPart::Ptr part : qAsConst(d->parts)) {
         part->setEncrypted(selected);
     }
     Q_EMIT dataChanged(index(0, EncryptColumn), index(rowCount() - 1, EncryptColumn));
@@ -261,7 +261,7 @@ bool AttachmentModel::isSignSelected() const
 void AttachmentModel::setSignSelected(bool selected)
 {
     d->signSelected = selected;
-    foreach (AttachmentPart::Ptr part, d->parts) {
+    for (AttachmentPart::Ptr part : qAsConst(d->parts)) {
         part->setSigned(selected);
     }
     Q_EMIT dataChanged(index(0, SignColumn), index(rowCount() - 1, SignColumn));

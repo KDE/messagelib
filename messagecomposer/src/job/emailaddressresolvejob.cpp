@@ -22,7 +22,7 @@
  */
 
 #include "job/emailaddressresolvejob.h"
-
+#include "helper/helper_p.h"
 #include "aliasesexpandjob.h"
 #include "settings/messagecomposersettings.h"
 
@@ -120,7 +120,7 @@ void EmailAddressResolveJob::start()
     if (d->mJobCount == 0) {
         emitResult();
     } else {
-        foreach (AliasesExpandJob *job, jobs) {
+        for (AliasesExpandJob *job : qAsConst(jobs)) {
             job->start();
         }
     }

@@ -216,7 +216,7 @@ void MessageFactoryNG::createReplyAsync()
 
             // strip all possible mailing list addresses from the list of Reply-To addresses
             for (const KMime::Types::Mailbox &mailbox : qAsConst(m_mailingListAddresses)) {
-                foreach (const KMime::Types::Mailbox &recipient, recipients) {
+                foreach (const KMime::Types::Mailbox &recipient, recipients) { //Don't use for(...:...)
                     if (mailbox == recipient) {
                         recipients.removeAll(recipient);
                     }
@@ -309,7 +309,7 @@ void MessageFactoryNG::createReplyAsync()
             // strip the mailing list post address from the list of Reply-To
             // addresses since we want to reply in private
             for (const KMime::Types::Mailbox &mailbox : qAsConst(m_mailingListAddresses)) {
-                foreach (const KMime::Types::Mailbox &recipient, recipients) {
+                foreach (const KMime::Types::Mailbox &recipient, recipients) { //Don't use for(...:...)
                     if (mailbox == recipient) {
                         recipients.removeAll(recipient);
                     }

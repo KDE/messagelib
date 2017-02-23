@@ -22,6 +22,8 @@
 
 #include "attachmentcontrollerbase.h"
 
+#include "helper/helper_p.h"
+
 #include <MessageComposer/AttachmentModel>
 #include "MessageComposer/AttachmentJob"
 #include "MessageComposer/AttachmentFromPublicKeyJob"
@@ -249,7 +251,7 @@ void AttachmentControllerBase::Private::loadJobResult(KJob *job)
 void AttachmentControllerBase::Private::openSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
-    foreach (AttachmentPart::Ptr part, selectedParts) {
+    for (const AttachmentPart::Ptr &part : qAsConst(selectedParts)) {
         q->openAttachment(part);
     }
 }
@@ -257,7 +259,7 @@ void AttachmentControllerBase::Private::openSelectedAttachments()
 void AttachmentControllerBase::Private::viewSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
-    foreach (AttachmentPart::Ptr part, selectedParts) {
+    for (const AttachmentPart::Ptr &part : qAsConst(selectedParts)) {
         q->viewAttachment(part);
     }
 }
@@ -277,7 +279,7 @@ void AttachmentControllerBase::Private::editSelectedAttachmentWith()
 void AttachmentControllerBase::Private::removeSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
-    foreach (AttachmentPart::Ptr part, selectedParts) {
+    for (const AttachmentPart::Ptr &part : qAsConst(selectedParts)) {
         model->removeAttachment(part);
     }
 }

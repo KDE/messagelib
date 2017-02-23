@@ -161,8 +161,8 @@ void ComposerPrivate::composeStep2()
         if (encrypt) {
             //TODO: fix Inline PGP with encrypted attachments
 
-            QList<ContentJobBase *> jobs = createEncryptJobs(mainTextJob, sign);
-            foreach (ContentJobBase *subJob, jobs) {
+            const QList<ContentJobBase *> jobs = createEncryptJobs(mainTextJob, sign);
+            for (ContentJobBase *subJob : jobs) {
                 if (attachmentParts.isEmpty()) {
                     // We have no attachments.  Use the content given by the MainTextJob.
                     mainJob = subJob;
@@ -170,7 +170,7 @@ void ComposerPrivate::composeStep2()
                     MultipartJob *multipartJob = new MultipartJob(q);
                     multipartJob->setMultipartSubtype("mixed");
                     multipartJob->appendSubjob(subJob);
-                    foreach (AttachmentPart::Ptr part, attachmentParts) {
+                    foreach (const AttachmentPart::Ptr &part, attachmentParts) {
                         multipartJob->appendSubjob(new AttachmentJob(part));
                     }
                     mainJob = multipartJob;
@@ -524,7 +524,7 @@ void Composer::addAttachmentPart(AttachmentPart::Ptr part, bool autoresizeImage)
 
 void Composer::addAttachmentParts(const AttachmentPart::List &parts, bool autoresizeImage)
 {
-    foreach (const AttachmentPart::Ptr &part, parts) {
+    for (const AttachmentPart::Ptr &part : parts) {
         addAttachmentPart(part, autoresizeImage);
     }
 }

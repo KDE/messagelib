@@ -22,6 +22,7 @@
 */
 
 #include "utils/util.h"
+#include "helper/helper_p.h"
 
 #include "composer/composer.h"
 #include "job/singlepartjob.h"
@@ -267,7 +268,7 @@ void MessageComposer::Util::addSendReplyForwardAction(const KMime::Message::Ptr 
     QList<Akonadi::Item::Id> originalMessageId;
     QList<Akonadi::MessageStatus> linkStatus;
     if (MessageCore::Util::getLinkInformation(message, originalMessageId, linkStatus)) {
-        Q_FOREACH (Akonadi::Item::Id id, originalMessageId) {
+        for (Akonadi::Item::Id id : qAsConst(originalMessageId)) {
             if (linkStatus.first() == Akonadi::MessageStatus::statusReplied()) {
                 qjob->sentActionAttribute().addAction(MailTransport::SentActionAttribute::Action::MarkAsReplied, QVariant(id));
             } else if (linkStatus.first() == Akonadi::MessageStatus::statusForwarded()) {
