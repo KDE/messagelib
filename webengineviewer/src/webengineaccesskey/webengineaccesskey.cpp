@@ -21,6 +21,7 @@
 #include "webengineaccesskeyanchor.h"
 #include "webengineaccesskeyutils.h"
 #include "webenginemanagescript.h"
+#include "helper_p.h"
 
 #include <KActionCollection>
 #include <QKeyEvent>
@@ -279,12 +280,12 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
         unusedKeys << QLatin1Char(c);
     }
     if (d->mActionCollection) {
-        Q_FOREACH (QAction *act, d->mActionCollection->actions()) {
+        for (QAction *act : d->mActionCollection->actions()) {
             QAction *a = qobject_cast<QAction *>(act);
             if (a) {
                 const QKeySequence shortCut = a->shortcut();
                 if (!shortCut.isEmpty()) {
-                    Q_FOREACH (QChar c, unusedKeys) {
+                    Q_FOREACH (QChar c, unusedKeys) { //Don't use for(..:..)
                         if (shortCut.matches(QKeySequence(c)) != QKeySequence::NoMatch) {
                             unusedKeys.removeOne(c);
                         }
@@ -295,7 +296,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
     }
     QVector<WebEngineViewer::WebEngineAccessKeyAnchor> unLabeledElements;
     QRect viewport = d->mWebEngine->rect();
-    Q_FOREACH (const WebEngineViewer::WebEngineAccessKeyAnchor &element, anchorList) {
+    for (const WebEngineViewer::WebEngineAccessKeyAnchor &element : qAsConst(anchorList)) {
         const QRect geometry = element.boundingRect();
         if (geometry.size().isEmpty() || !viewport.contains(geometry.topLeft())) {
             continue;
@@ -330,7 +331,7 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 
     // Pick an access key first from the letters in the text and then from the
     // list of unused access keys
-    Q_FOREACH (const WebEngineViewer::WebEngineAccessKeyAnchor &element, unLabeledElements) {
+    for (const WebEngineViewer::WebEngineAccessKeyAnchor &element : qAsConst(unLabeledElements)) {
         const QRect geometry = element.boundingRect();
         if (unusedKeys.isEmpty()
                 || geometry.size().isEmpty()

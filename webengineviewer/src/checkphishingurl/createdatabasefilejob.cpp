@@ -22,6 +22,7 @@
 #include "webengineviewer_debug.h"
 #include "localdatabasefile.h"
 #include "riceencodingdecoder.h"
+#include "helper_p.h"
 #include <QFileInfo>
 #include <QCryptographicHash>
 
@@ -100,14 +101,14 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
 
     quint64 tmpPos = hashStartPosition;
 
-    Q_FOREACH (const Addition &add, itemToStore) {
+    for (const Addition &add : qAsConst(itemToStore)) {
         mFile.write(reinterpret_cast<const char *>(&tmpPos), sizeof(tmpPos));
         tmpPos += add.prefixSize + 1; //We add +1 as we store '\0'
     }
 
     //4 add items
     QByteArray newSsha256;
-    Q_FOREACH (const Addition &add, itemToStore) {
+    for (const Addition &add : qAsConst(itemToStore)) {
         const QByteArray storedBa = add.hashString + '\0';
         mFile.write(reinterpret_cast<const char *>(storedBa.constData()), storedBa.size());
         newSsha256 += add.hashString;
@@ -176,7 +177,7 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Remov
     for (const Removal &removeItem : removalList) {
         switch (removeItem.compressionType) {
         case UpdateDataBaseInfo::RawCompression: {
-            Q_FOREACH (int id, removeItem.indexes) {
+            for (int id : qAsConst(removeItem.indexes)) {
                 indexToRemove << id;
             }
             break;
