@@ -16,6 +16,7 @@
 */
 
 #include "searchlinestatus.h"
+#include "helper_p.h"
 #include <KLocalizedString>
 #include <QAction>
 #include <QStandardPaths>
@@ -101,7 +102,7 @@ void SearchLineStatus::updateFilters()
 {
     QList<Akonadi::MessageStatus> lstStatus;
 
-    Q_FOREACH (QAction *act, mFilterListActions) {
+    for (QAction *act : qAsConst(mFilterListActions)) {
         if (act->isChecked()) {
             Akonadi::MessageStatus status;
             status.fromQInt32(static_cast< qint32 >(act->data().toInt()));
@@ -122,7 +123,7 @@ void SearchLineStatus::showMenu()
 
 void SearchLineStatus::clearFilterAction()
 {
-    Q_FOREACH (QAction *act, mFilterListActions) {
+    for (QAction *act : qAsConst(mFilterListActions)) {
         act->setChecked(false);
     }
     mHasFilter = false;

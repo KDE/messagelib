@@ -1404,7 +1404,7 @@ void View::growOrShrinkExistingSelection(const QModelIndex &newSelectedIndex, bo
     // find out the actual selection range
     const QItemSelection selection = selectionModel()->selection();
 
-    foreach (const QItemSelectionRange &range, selection) {
+    for (const QItemSelectionRange &range : selection) {
         // We're asking the model for the index as range.topLeft() and range.bottomRight()
         // can return indexes in invisible columns which have a null visualRect().
         // Column 0, instead, is always visible.
@@ -1749,14 +1749,14 @@ void View::markMessageItemsAsAboutToBeRemoved(QList< MessageItem * > &items, boo
 
     bool clearingEntireSelection = true;
 
-    QModelIndexList selectedIndexes = selectionModel()->selectedRows(0);
+    const QModelIndexList selectedIndexes = selectionModel()->selectedRows(0);
 
     if (selectedIndexes.count() > items.count()) {
         // the selection is bigger: we can't clear it completely
         clearingEntireSelection = false;
     } else {
         // the selection has same size or is smaller: we can clear it completely with our removal
-        foreach (const QModelIndex &selectedIndex, selectedIndexes) {
+        for (const QModelIndex &selectedIndex : selectedIndexes) {
             Q_ASSERT(selectedIndex.isValid());
             Q_ASSERT(selectedIndex.column() == 0);
 

@@ -20,6 +20,7 @@
 
 #include "utils/themecombobox.h"
 #include "utils/themecombobox_p.h"
+#include "helper_p.h"
 #include "storagemodel.h"
 #include "core/manager.h"
 #include "core/theme.h"
@@ -113,7 +114,7 @@ void ThemeComboBoxPrivate::slotLoadThemes()
     QList< Theme * > themes = Manager::instance()->themes().values();
     qSort(themes.begin(), themes.end(), MessageList::Core::Theme::compareName);
 
-    foreach (const Theme *theme, themes) {
+    for (const Theme *theme : qAsConst(themes)) {
         q->addItem(theme->name(), QVariant(theme->id()));
     }
 }

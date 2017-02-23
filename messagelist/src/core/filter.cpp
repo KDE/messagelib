@@ -20,6 +20,7 @@
 
 #include "core/filter.h"
 #include "core/messageitem.h"
+#include "helper_p.h"
 
 #include <AkonadiSearch/PIM/emailquery.h>
 #include <AkonadiSearch/PIM/resultiterator.h>
@@ -34,7 +35,7 @@ Filter::Filter(QObject *parent)
 bool Filter::containString(const QString &searchInString) const
 {
     bool found = false;
-    Q_FOREACH (const QString &str, mSearchList) {
+    for (const QString &str : qAsConst(mSearchList)) {
         if (searchInString.contains(str, Qt::CaseInsensitive)) {
             found = true;
         } else {
@@ -48,7 +49,7 @@ bool Filter::containString(const QString &searchInString) const
 bool Filter::match(const MessageItem *item) const
 {
     if (!mStatus.isEmpty()) {
-        Q_FOREACH (Akonadi::MessageStatus status, mStatus) {
+        for (Akonadi::MessageStatus status : qAsConst(mStatus)) {
             if (!(status & item->status())) {
                 return false;
             }

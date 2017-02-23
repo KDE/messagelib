@@ -19,6 +19,7 @@
 
 #include "searchcollectionindexingwarning.h"
 #include "messagelist_debug.h"
+#include "helper_p.h"
 
 #include <AkonadiCore/persistentsearchattribute.h>
 #include <AkonadiCore/collectionfetchjob.h>
@@ -128,7 +129,7 @@ void SearchCollectionIndexingWarning::queryCollectionFetchFinished(KJob *job)
 void SearchCollectionIndexingWarning::queryIndexerStatus()
 {
     bool allFullyIndexed = true;
-    Q_FOREACH (const Akonadi::Collection &col, mCollections) {
+    for (const Akonadi::Collection &col : mCollections) {
         if (col.hasAttribute<Akonadi::EntityHiddenAttribute>()) {
             continue;
         }

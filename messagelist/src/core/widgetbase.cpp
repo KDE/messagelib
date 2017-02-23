@@ -686,7 +686,7 @@ void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSort
 
         // First try with a well defined message sorting.
 
-        foreach (const Theme::Column *column, columns) {
+        for (const Theme::Column *column : columns) {
             if (!mView->header()->isSectionHidden(idx)) {
                 if (column->messageSorting() == messageSorting) {
                     // found a visible column with this message sorting

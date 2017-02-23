@@ -17,6 +17,7 @@
 */
 
 #include "pane.h"
+#include "helper_p.h"
 
 #include <KActionCollection>
 #include <KActionMenu>
@@ -780,7 +781,7 @@ QItemSelection Pane::Private::mapSelectionToSource(const QItemSelection &selecti
 {
     QItemSelection result = selection;
 
-    foreach (const QAbstractProxyModel *proxy, mProxyStack) {
+    for (const QAbstractProxyModel *proxy : qAsConst(mProxyStack)) {
         result = proxy->mapSelectionToSource(result);
     }
 

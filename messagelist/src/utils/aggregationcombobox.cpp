@@ -18,6 +18,7 @@
 */
 #include "aggregationcombobox.h"
 #include "aggregationcombobox_p.h"
+#include "helper_p.h"
 
 #include "core/aggregation.h"
 #include "core/manager.h"
@@ -118,7 +119,7 @@ void AggregationComboBoxPrivate::slotLoadAggregations()
     QList< Aggregation * > aggregations = Manager::instance()->aggregations().values();
     qSort(aggregations.begin(), aggregations.end(), MessageList::Core::Aggregation::compareName);
 
-    foreach (const Aggregation *aggregation, aggregations) {
+    for (const Aggregation *aggregation : qAsConst(aggregations)) {
         q->addItem(aggregation->name(), QVariant(aggregation->id()));
     }
 }
