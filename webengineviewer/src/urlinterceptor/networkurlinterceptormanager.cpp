@@ -20,6 +20,7 @@
 #include "networkpluginurlinterceptorinterface.h"
 #include "networkurlinterceptormanager.h"
 #include "networkurlinterceptorpluginmanager.h"
+#include "helper_p.h"
 
 #include <WebEngineViewer/WebHitTestResult>
 
@@ -44,7 +45,7 @@ private:
 QList<QAction *> NetworkUrlInterceptorManagerPrivate::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     QList<QAction *> lstActions;
-    Q_FOREACH (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface, mListInterface) {
+    for (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface : qAsConst(mListInterface)) {
         lstActions.append(interface->interceptorUrlActions(result));
     }
     return lstActions;
@@ -52,7 +53,7 @@ QList<QAction *> NetworkUrlInterceptorManagerPrivate::interceptorUrlActions(cons
 
 void NetworkUrlInterceptorManagerPrivate::createInterfaces(QWebEngineView *webEngine, KActionCollection *ac)
 {
-    Q_FOREACH (NetworkPluginUrlInterceptor *plugin, NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
+    for (NetworkPluginUrlInterceptor *plugin : NetworkUrlInterceptorPluginManager::self()->pluginsList()) {
         if (plugin->isEnabled()) {
             WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface = plugin->createInterface(webEngine, q);
             interface->createActions(ac);

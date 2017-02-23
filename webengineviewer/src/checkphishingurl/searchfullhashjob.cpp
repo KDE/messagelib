@@ -18,6 +18,7 @@
 */
 
 #include "searchfullhashjob.h"
+#include "helper_p.h"
 
 #include "checkphishingurlutil.h"
 #include <QNetworkAccessManager>
@@ -206,7 +207,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 
     //clientStates We can support multi database.
     QVariantList clientStatesList;
-    Q_FOREACH (const QString &str, d->mDatabaseHashes) {
+    for (const QString &str : qAsConst(d->mDatabaseHashes)) {
         if (!str.isEmpty()) {
             clientStatesList.append(str);
         }

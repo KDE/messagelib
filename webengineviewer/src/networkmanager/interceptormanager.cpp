@@ -46,7 +46,7 @@ InterceptorManager::InterceptorManager(QWebEngineView *webEngine, KActionCollect
 
     // Add interceptor.
     d->mNetworkUrlInterceptor = new WebEngineViewer::NetworkUrlInterceptor(this);
-    Q_FOREACH (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
+    for (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface : d->mManager->interfaceList()) {
         d->mNetworkUrlInterceptor->addInterceptor(interface);
     }
     webEngine->page()->profile()->setRequestInterceptor(d->mNetworkUrlInterceptor);
@@ -65,7 +65,7 @@ void InterceptorManager::addInterceptor(WebEngineViewer::NetworkPluginUrlInterce
 QList<QAction *> InterceptorManager::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     QList<QAction *> actions;
-    Q_FOREACH (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface, d->mManager->interfaceList()) {
+    for (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface : d->mManager->interfaceList()) {
         actions.append(interface->interceptorUrlActions(result));
     }
     return actions;
