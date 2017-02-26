@@ -207,8 +207,9 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
 
     QString dateStr = reply.msg->date()->asUnicodeString();
-    QString ba = QString::fromLatin1("From: another <another@another.com>\n"
-                                     "Date: %1\n"
+    QString ba = QString::fromLatin1("From: foo1 <identity1@bla.com>\n"
+                                     "X-KMail-Identity: %1\n"
+                                     "Date: %2\n"
                                      "Cc: blo <blo@blo.org>, bli <bli@bli.org>, blu <blu@blu.org>, bly <bly@bly.org>, Bla <identity1@bla.com>\n"
                                      "To: Bla <identity1@bla.com>\n"
                                      "Subject: Re: Plain Message Test\n"
@@ -216,8 +217,8 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
                                      "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
                                      "X-KMail-Link-Message: 0\n"
                                      "X-KMail-Link-Type: reply\n\n"
-                                     "%2")
-                 .arg(dateStr).arg(replyStr);
+                                     "%3")
+                 .arg(i1.uoid()).arg(dateStr).arg(replyStr);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
