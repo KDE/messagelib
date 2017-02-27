@@ -20,6 +20,7 @@
 */
 
 #include "composer.h"
+#include "helper_p.h"
 
 #include "job/attachmentjob.h"
 #include "part/globalpart.h"
@@ -170,7 +171,7 @@ void ComposerPrivate::composeStep2()
                     MultipartJob *multipartJob = new MultipartJob(q);
                     multipartJob->setMultipartSubtype("mixed");
                     multipartJob->appendSubjob(subJob);
-                    foreach (const AttachmentPart::Ptr &part, attachmentParts) {
+                    for (const AttachmentPart::Ptr &part : qAsConst(attachmentParts)) {
                         multipartJob->appendSubjob(new AttachmentJob(part));
                     }
                     mainJob = multipartJob;
@@ -192,7 +193,7 @@ void ComposerPrivate::composeStep2()
                 MultipartJob *multipartJob = new MultipartJob(q);
                 multipartJob->setMultipartSubtype("mixed");
                 multipartJob->appendSubjob(subJob);
-                foreach (AttachmentPart::Ptr part, attachmentParts) {
+                for (const AttachmentPart::Ptr &part : qAsConst(attachmentParts)) {
                     multipartJob->appendSubjob(new AttachmentJob(part));
                 }
                 mainJob = multipartJob;
@@ -223,7 +224,7 @@ void ComposerPrivate::composeStep2()
         MultipartJob *multipartJob = new MultipartJob(q);
         multipartJob->setMultipartSubtype("mixed");
         multipartJob->appendSubjob(mainTextJob);
-        foreach (AttachmentPart::Ptr part, attachmentParts) {
+        for (const AttachmentPart::Ptr &part : qAsConst(attachmentParts)) {
             multipartJob->appendSubjob(new AttachmentJob(part));
         }
         mainJob = multipartJob;
@@ -378,7 +379,7 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime:
     qCDebug(MESSAGECOMPOSER_LOG) << "attachment encr key size:" << keys.size() << recipients;
 
     // operate correctly on each attachment that has a different crypto policy than body.
-    foreach (const AttachmentPart::Ptr &attachment, parts) {
+    for (const AttachmentPart::Ptr &attachment : qAsConst(parts)) {
         AttachmentJob *attachJob = new AttachmentJob(attachment, q);
 
         qCDebug(MESSAGECOMPOSER_LOG) << "got a late attachment";

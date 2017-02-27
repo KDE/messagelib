@@ -88,7 +88,7 @@ void QueueHtmlWriter::flush()
 
 void QueueHtmlWriter::replay()
 {
-    foreach (auto entry, mQueue) {
+    foreach (const auto &entry, mQueue) {
         switch (entry.type) {
         case Command::Begin:
             mBase->begin(entry.s);

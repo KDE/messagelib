@@ -194,7 +194,7 @@ void MessageItemPrivate::fillTagList(const Akonadi::Tag::List &taglist)
 
     //Priority sort this and make bestTag more efficient
 
-    foreach (const Akonadi::Tag &tag, taglist) {
+    for (const Akonadi::Tag &tag : taglist) {
         QString symbol = QStringLiteral("mail-tagged");
         Akonadi::TagAttribute *attr = tag.attribute<Akonadi::TagAttribute>();
         if (attr) {

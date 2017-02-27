@@ -480,7 +480,7 @@ void Pane::Private::onSelectionChanged(const QItemSelection &selected, const QIt
     QString label;
     QIcon icon;
     QString toolTip;
-    foreach (const QModelIndex &index, s->selectedRows()) {
+    for (const QModelIndex &index : s->selectedRows()) {
         label += index.data(Qt::DisplayRole).toString() + QLatin1String(", ");
     }
     label.chop(2);

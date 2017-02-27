@@ -263,7 +263,7 @@ void TextMessagePart::parseContent()
         bool fullySignedOrEncrypted = true;
         bool fullySignedOrEncryptedTmp = true;
 
-        Q_FOREACH (const auto &block, blocks) {
+        for (const auto &block : blocks) {
 
             if (!fullySignedOrEncryptedTmp) {
                 fullySignedOrEncrypted = false;
