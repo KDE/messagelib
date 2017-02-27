@@ -29,7 +29,6 @@
 class QPushButton;
 namespace Akonadi
 {
-class EmailAddressSelectionWidget;
 }
 
 namespace KLDAP
