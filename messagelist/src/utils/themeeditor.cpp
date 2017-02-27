@@ -67,7 +67,6 @@ static const char gThemeContentItemTypeDndMimeDataFormat[] = "application/x-kmai
 ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme::Column *column, const QString &title)
     : QDialog(parent), mColumn(column)
 {
-    //setAttribute( Qt::WA_DeleteOnClose );
     setWindowModality(Qt::ApplicationModal);   // FIXME: Sure ?
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);

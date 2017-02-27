@@ -586,8 +586,6 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                        "  padding: 0px ! important;\n"
                        "  font-size:0.8em ! important;\n"
                        "  border:1px solid %6 ! important;\n"
-                       // FIXME: InfoBackground crashes KHTML
-                       //"  background-color:InfoBackground ! important;\n"
                        "  background-color:%5 ! important;\n"
                        "}\n\n"
 

@@ -63,8 +63,6 @@ public:
        message on success, so DO NOT DELETE OR MODIFY the message
        further.
 
-       FIXME: what about send() == false?
-
        @return true on success.
     */
     bool send(const KMime::Message::Ptr &msg, SendMethod method = SendDefault)
