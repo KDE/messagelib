@@ -601,7 +601,7 @@ QAction *Viewer::resetMessageDisplayFormatAction() const
     return d->mResetMessageDisplayFormat;
 }
 
-QAction *Viewer::disableEmoticonAction() const
+KToggleAction *Viewer::disableEmoticonAction() const
 {
     Q_D(const Viewer);
     return d->mDisableEmoticonAction;

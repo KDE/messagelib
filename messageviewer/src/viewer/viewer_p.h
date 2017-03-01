@@ -643,7 +643,7 @@ public:
     QAction *mFindInMessageAction;
     QAction *mSaveMessageDisplayFormat;
     QAction *mResetMessageDisplayFormat;
-    QAction *mDisableEmoticonAction;
+    KToggleAction *mDisableEmoticonAction;
     KToggleAction *mHeaderOnlyAttachmentsAction;
     KSelectAction *mSelectEncodingAction;
     KToggleAction *mToggleFixFontAction;

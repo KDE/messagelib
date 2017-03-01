@@ -1254,7 +1254,6 @@ void ViewerPrivate::printPreviewMessage(const Akonadi::Item &message)
 
 void ViewerPrivate::resetStateForNewMessage()
 {
-    mForceEmoticons = true;
     mClickedUrl.clear();
     mImageUrl.clear();
     enableMessageDisplay(); // just to make sure it's on
@@ -1719,7 +1718,7 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("shareservice_menu"), mShareServiceUrlMenu);
     connect(mShareServiceManager, &PimCommon::ShareServiceUrlManager::serviceUrlSelected, this, &ViewerPrivate::slotServiceUrlSelected);
 
-    mDisableEmoticonAction = new QAction(i18n("Disable Emoticon"), this);
+    mDisableEmoticonAction = new KToggleAction(i18n("Disable Emoticon"), this);
     ac->addAction(QStringLiteral("disable_emoticon"), mDisableEmoticonAction);
     connect(mDisableEmoticonAction, &QAction::triggered, this, &ViewerPrivate::slotDisableEmoticon);
     ac->setDefaultShortcut(mFindInMessageAction, KStandardShortcut::find().first());
@@ -3140,8 +3139,6 @@ void ViewerPrivate::setPrintElementBackground(bool printElementBackground)
 
 void ViewerPrivate::slotDisableEmoticon()
 {
-    if (mForceEmoticons) {
-        mForceEmoticons = false;
-        update(MimeTreeParser::Force);
-    }
+     mForceEmoticons = !mForceEmoticons;
+     update(MimeTreeParser::Force);
 }

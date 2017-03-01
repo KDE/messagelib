@@ -278,7 +278,7 @@ public:
     QAction *saveAsAction() const;
     QAction *saveMessageDisplayFormatAction() const;
     QAction *resetMessageDisplayFormatAction() const;
-    QAction *disableEmoticonAction() const;
+    KToggleAction *disableEmoticonAction() const;
     KActionMenu *shareServiceUrlMenu() const;
     HeaderStylePlugin *headerStylePlugin() const;
     void setPluginName(const QString &pluginName);
