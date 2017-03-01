@@ -474,7 +474,7 @@ private Q_SLOTS:
     void slotExportHtmlPageSuccess(const QString &filename);
     void slotHandlePagePrinted(bool result);
     void slotLoadStarted();
-    void slotDisableEmoticon();
+    void slotToggleEmoticons();
 public Q_SLOTS:
     /** An URL has been activate with a click. */
     void slotUrlOpen(const QUrl &url = QUrl());

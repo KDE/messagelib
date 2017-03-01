@@ -1728,7 +1728,7 @@ void ViewerPrivate::createActions()
 
     mDisableEmoticonAction = new KToggleAction(i18n("Disable Emoticon"), this);
     ac->addAction(QStringLiteral("disable_emoticon"), mDisableEmoticonAction);
-    connect(mDisableEmoticonAction, &QAction::triggered, this, &ViewerPrivate::slotDisableEmoticon);
+    connect(mDisableEmoticonAction, &QAction::triggered, this, &ViewerPrivate::slotToggleEmoticons);
     ac->setDefaultShortcut(mFindInMessageAction, KStandardShortcut::find().first());
 }
 
@@ -3129,7 +3129,7 @@ void ViewerPrivate::setPrintElementBackground(bool printElementBackground)
     mViewer->setPrintElementBackground(printElementBackground);
 }
 
-void ViewerPrivate::slotDisableEmoticon()
+void ViewerPrivate::slotToggleEmoticons()
 {
      mForceEmoticons = !mForceEmoticons;
      update(MimeTreeParser::Force);
