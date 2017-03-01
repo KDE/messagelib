@@ -474,7 +474,7 @@ private Q_SLOTS:
     void slotExportHtmlPageSuccess(const QString &filename);
     void slotHandlePagePrinted(bool result);
     void slotLoadStarted();
-    void slotDisableEmoticon();
+    void slotToggleEmoticons();
     void slotCheckUrl(WebEngineViewer::CheckPhishingUrlJob::UrlStatus status, const QUrl &url, const Akonadi::Item &item);
 public Q_SLOTS:
     /** An URL has been activate with a click. */
