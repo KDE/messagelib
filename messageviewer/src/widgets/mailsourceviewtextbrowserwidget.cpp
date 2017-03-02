@@ -60,7 +60,7 @@
 #include <QPushButton>
 
 using namespace MessageViewer;
-MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(QWidget *parent)
+MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
@@ -77,7 +77,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(QWidget *parent
     mTextBrowser->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
 
     KSyntaxHighlighting::Definition def;
-    def = mRepo.definitionForName(QStringLiteral("Email"));
+    def =  mRepo.definitionForName(syntax);
 
     KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(mTextBrowser->document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128)

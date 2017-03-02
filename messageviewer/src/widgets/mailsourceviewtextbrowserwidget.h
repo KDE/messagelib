@@ -60,7 +60,7 @@ class MailSourceViewTextBrowserWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit MailSourceViewTextBrowserWidget(QWidget *parent = nullptr);
+    explicit MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent = nullptr);
 
     void setText(const QString &text);
     void setPlainText(const QString &text);

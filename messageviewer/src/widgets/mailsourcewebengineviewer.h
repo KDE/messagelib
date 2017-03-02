@@ -22,7 +22,6 @@
 
 #include <QDialog>
 #include "config-messageviewer.h"
-#include <KSyntaxHighlighting/Repository>
 class QTabWidget;
 class QWebEnginePage;
 
@@ -42,7 +41,6 @@ public:
     void setDisplayedSource(QWebEnginePage *page);
     void setFixedFont();
 private:
-    KSyntaxHighlighting::Repository mRepo;
     MailSourceViewTextBrowserWidget *mRawBrowser;
     FindBarSourceView *mFindBar;
 #ifndef NDEBUG

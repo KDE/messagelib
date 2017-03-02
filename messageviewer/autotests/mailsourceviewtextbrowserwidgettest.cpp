@@ -34,7 +34,7 @@ MailSourceViewTextBrowserWidgetTest::~MailSourceViewTextBrowserWidgetTest()
 
 void MailSourceViewTextBrowserWidgetTest::shouldHaveDefaultValue()
 {
-    MessageViewer::MailSourceViewTextBrowserWidget widget;
+    MessageViewer::MailSourceViewTextBrowserWidget widget(QStringLiteral("Email"));
 
     MessageViewer::MailSourceViewTextBrowser *textbrowser = widget.findChild<MessageViewer::MailSourceViewTextBrowser *>(QStringLiteral("textbrowser"));
     QVERIFY(textbrowser);

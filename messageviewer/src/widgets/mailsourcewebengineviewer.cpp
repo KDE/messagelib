@@ -53,8 +53,7 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-
-    mRawBrowser = new MailSourceViewTextBrowserWidget(this);
+    mRawBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("Email"), this);
 
 #ifndef NDEBUG
     mTabWidget = new QTabWidget(this);
@@ -63,17 +62,9 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     mTabWidget->addTab(mRawBrowser, i18nc("Unchanged mail message", "Raw Source"));
     mTabWidget->setTabToolTip(0, i18n("Raw, unmodified mail as it is stored on the filesystem or on the server"));
 
-    mHtmlBrowser = new MailSourceViewTextBrowserWidget(this);
+    mHtmlBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("HTML"), this);
     mTabWidget->addTab(mHtmlBrowser, i18nc("Mail message as shown, in HTML format", "HTML Source"));
     mTabWidget->setTabToolTip(1, i18n("HTML code for displaying the message to the user"));
-    KSyntaxHighlighting::Definition def;
-    def = mRepo.definitionForName(QStringLiteral("HTML"));
-
-    KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(mHtmlBrowser->textBrowser()->document());
-    hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
-                 ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-                 : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
-    hl->setDefinition(def);
 
     mTabWidget->setCurrentIndex(0);
 #else
