@@ -93,7 +93,6 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
                                     IconSize(KIconLoader::Desktop)),
                             qApp->windowIcon().pixmap(IconSize(KIconLoader::Small),
                                     IconSize(KIconLoader::Small)));
-    new MailSourceHighlighter(mRawBrowser->textBrowser()->document());
     mRawBrowser->textBrowser()->setFocus();
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &MailSourceWebEngineViewer::reject);

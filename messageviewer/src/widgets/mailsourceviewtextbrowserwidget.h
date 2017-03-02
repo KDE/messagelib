@@ -34,6 +34,7 @@
 
 #include <QSyntaxHighlighter>
 #include <QPlainTextEdit>
+#include <KSyntaxHighlighting/Repository>
 namespace KPIMTextEdit
 {
 class SlideContainer;
@@ -54,16 +55,6 @@ class FindBarSourceView;
  * @author Carsten Pfeiffer <pfeiffer@kde.org>
  */
 class MailSourceViewTextBrowser;
-class MailSourceHighlighter : public QSyntaxHighlighter
-{
-    Q_OBJECT
-public:
-    explicit MailSourceHighlighter(QTextDocument *textdocument)
-        : QSyntaxHighlighter(textdocument)
-    {}
-protected:
-    void highlightBlock(const QString &text) Q_DECL_OVERRIDE;
-};
 
 class MailSourceViewTextBrowserWidget : public QWidget
 {
@@ -77,11 +68,11 @@ public:
     MessageViewer::MailSourceViewTextBrowser *textBrowser() const;
 private:
     void slotFind();
+    KSyntaxHighlighting::Repository mRepo;
     MailSourceViewTextBrowser *mTextBrowser;
     FindBarSourceView *mFindBar;
     KPIMTextEdit::SlideContainer *mSliderContainer;
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget;
-
 };
 
 class MailSourceViewTextBrowser: public QPlainTextEdit

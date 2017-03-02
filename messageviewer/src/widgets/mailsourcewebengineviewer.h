@@ -22,10 +22,10 @@
 
 #include <QDialog>
 #include "config-messageviewer.h"
+#include <KSyntaxHighlighting/Repository>
 class QTabWidget;
 class QWebEnginePage;
 
-#include <KSyntaxHighlighting/Repository>
 
 namespace MessageViewer
 {

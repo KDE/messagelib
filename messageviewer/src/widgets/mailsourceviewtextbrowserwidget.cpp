@@ -38,6 +38,11 @@
 #include "kpimtextedit/texttospeechwidget.h"
 #include "kpimtextedit/texttospeechinterface.h"
 
+
+#include <KSyntaxHighlighting/SyntaxHighlighter>
+#include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/Theme>
+
 #include <KLocalizedString>
 #include <KStandardAction>
 #include <kwindowsystem.h>
@@ -70,6 +75,16 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(QWidget *parent
     mTextBrowser->setObjectName(QStringLiteral("textbrowser"));
     mTextBrowser->setLineWrapMode(QPlainTextEdit::NoWrap);
     mTextBrowser->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
+
+    KSyntaxHighlighting::Definition def;
+    def = mRepo.definitionForName(QStringLiteral("Email"));
+
+    KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(mTextBrowser->document());
+    hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
+                 ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                 : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    hl->setDefinition(def);
+
     connect(mTextBrowser, &MailSourceViewTextBrowser::findText, this, &MailSourceViewTextBrowserWidget::slotFind);
     lay->addWidget(mTextBrowser);
     mSliderContainer = new KPIMTextEdit::SlideContainer(this);
@@ -156,34 +171,5 @@ void MailSourceViewTextBrowser::slotSpeakText()
         text = toPlainText();
     }
     mTextToSpeechInterface->say(text);
-}
-
-void MailSourceHighlighter::highlightBlock(const QString &text)
-{
-    // all visible ascii except space and :
-    const QRegExp regexp(QStringLiteral("^([\\x21-9;-\\x7E]+:\\s)"));
-
-    // keep the previous state
-    setCurrentBlockState(previousBlockState());
-    // If a header is found
-    if (regexp.indexIn(text) != -1) {
-        const int headersState = -1; // Also the initial State
-        // Content- header starts a new mime part, and therefore new headers
-        // If a Content-* header is found, change State to headers until a blank line is found.
-        if (text.startsWith(QStringLiteral("Content-"))) {
-            setCurrentBlockState(headersState);
-        }
-        // highligth it if in headers state
-        if ((currentBlockState() == headersState)) {
-            QFont font = document()->defaultFont();
-            font.setBold(true);
-            setFormat(0, regexp.matchedLength(), font);
-        }
-    }
-    // Change to body state
-    else if (text.isEmpty()) {
-        const int bodyState = 0;
-        setCurrentBlockState(bodyState);
-    }
 }
 
