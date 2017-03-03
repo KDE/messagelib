@@ -23,7 +23,7 @@
 
 #include "messageitem.h"
 #include "item_p.h"
-#include "PimCommon/AnnotationDialog"
+#include "PimCommonAkonadi/AnnotationDialog"
 #include <Item>
 #include <Monitor>
 #include <Tag>

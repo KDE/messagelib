@@ -20,7 +20,7 @@
 #include "plugineditor.h"
 #include "messagecomposer_debug.h"
 #include "plugineditormanager.h"
-#include <PimCommon/PluginUtil>
+#include <PimCommonAkonadi/PluginUtil>
 
 #include <QFileInfo>
 #include <QSet>

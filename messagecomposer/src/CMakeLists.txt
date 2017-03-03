@@ -151,7 +151,7 @@ target_link_libraries(KF5MessageComposer
     PUBLIC
     KF5::Mime
     KF5::MessageCore
-    KF5::PimCommon
+    KF5::PimCommonAkonadi
     KF5::AkonadiCore
     KF5::IdentityManagement
     KF5::AkonadiMime

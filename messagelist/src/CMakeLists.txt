@@ -69,7 +69,7 @@ target_link_libraries(KF5MessageList
     PRIVATE
     KF5::KIOCore
     KF5::MessageCore
-    KF5::PimCommon
+    KF5::PimCommonAkonadi
     KF5::AkonadiSearchPIM
     KF5::XmlGui
     KF5::IconThemes

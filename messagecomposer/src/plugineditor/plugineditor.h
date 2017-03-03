@@ -21,7 +21,7 @@
 #define PLUGINEDITOR_H
 #include <QObject>
 #include "messagecomposer_export.h"
-#include <PimCommon/AbstractGenericPlugin>
+#include <PimCommonAkonadi/AbstractGenericPlugin>
 namespace MessageComposer
 {
 class PluginEditorPrivate;
