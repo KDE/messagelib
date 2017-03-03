@@ -56,6 +56,8 @@ target_link_libraries(KF5TemplateParser
     KF5::I18n
     KF5::SonnetUi
     Qt5::WebEngineWidgets
+    KF5::AkonadiWidgets
+    KF5::AkonadiContact
     )
 set_target_properties(KF5TemplateParser PROPERTIES
     VERSION ${TEMPLATEPARSER_VERSION_STRING}
