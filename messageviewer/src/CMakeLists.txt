@@ -216,7 +216,7 @@ target_link_libraries(KF5MessageViewer
     KF5::ItemViews
     Qt5::Network
     KF5::WebEngineViewer
-    KF5::Libkdepim
+    KF5::LibkdepimAkonadi
     KF5::GrantleeTheme
     KF5::KaddressbookGrantlee
     Grantlee5::Templates

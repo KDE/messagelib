@@ -28,7 +28,7 @@ using KContacts::Addressee;
 
 #include <KLocalizedString>
 
-#include <Libkdepim/AddContactJob>
+#include <LibkdepimAkonadi/AddContactJob>
 #include <QDialogButtonBox>
 #include <KConfigGroup>
 #include <QPushButton>

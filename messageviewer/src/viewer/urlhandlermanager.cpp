@@ -46,7 +46,7 @@
 
 #include <MessageCore/StringUtil>
 #include <Libkdepim/BroadcastStatus>
-#include <Libkdepim/OpenEmailAddressJob>
+#include <LibkdepimAkonadi/OpenEmailAddressJob>
 
 #include <Akonadi/Contact/ContactSearchJob>
 
