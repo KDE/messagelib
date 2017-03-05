@@ -162,7 +162,7 @@ target_link_libraries(KF5MessageComposer
     KF5::TemplateParser
     KF5::MessageViewer
     KF5::AkonadiWidgets
-    KF5::Libkdepim
+    KF5::LibkdepimAkonadi
     KF5::CalendarCore
     KF5::KIOCore
     Grantlee5::TextDocument

@@ -23,7 +23,7 @@
 #define MESSAGECOMPOSER_COMPOSERLINEEDIT_H
 
 #include "messagecomposer_export.h"
-#include <Libkdepim/AddresseeLineEdit>
+#include <LibkdepimAkonadi/AddresseeLineEdit>
 namespace MessageComposer
 {
 class MESSAGECOMPOSER_EXPORT ComposerLineEdit : public KPIM::AddresseeLineEdit
