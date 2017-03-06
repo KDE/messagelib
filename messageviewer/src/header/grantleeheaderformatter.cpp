@@ -161,7 +161,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("fromStr"), message->from()->asUnicodeString());
 
     //Sender
-    headerObject.insert(QStringLiteral("sender"), message->sender()->asUnicodeString());
+    headerObject.insert(QStringLiteral("sender"), d->headerStyleUtil.strToHtml(message->sender()->asUnicodeString()));
     headerObject.insert(QStringLiteral("senderi18n"), i18n("Sender:"));
     headerObject.insert(QStringLiteral("listidi18n"), i18n("List-Id:"));
 
