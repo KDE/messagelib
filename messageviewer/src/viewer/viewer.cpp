@@ -41,7 +41,7 @@
 #include <AkonadiCore/itemfetchscope.h>
 #include <QUrl>
 
-#include <MailTransport/mailtransport/errorattribute.h>
+#include <mailtransportakonadi/errorattribute.h>
 
 #include <KLocalizedString>
 

@@ -28,10 +28,10 @@
 #include <kmime/kmime_message.h>
 #include <libkdepim/progressmanager.h>
 
-#include <MailTransport/mailtransport/dispatcherinterface.h>
-#include <MailTransport/mailtransport/messagequeuejob.h>
-#include <MailTransport/mailtransport/transport.h>
-#include <MailTransport/mailtransport/transportmanager.h>
+#include <mailtransportakonadi/dispatcherinterface.h>
+#include <mailtransportakonadi/messagequeuejob.h>
+#include <mailtransport/transport.h>
+#include <mailtransport/transportmanager.h>
 #include <MessageCore/StringUtil>
 #include <messagecore/messagehelpers.h>
 

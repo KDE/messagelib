@@ -220,7 +220,7 @@ target_link_libraries(KF5MessageViewer
     KF5::GrantleeTheme
     KF5::KaddressbookGrantlee
     Grantlee5::Templates
-    KF5::MailTransport
+    KF5::MailTransportAkonadi
     KF5::Mime
     KF5::Mbox
     KF5::PimTextEdit

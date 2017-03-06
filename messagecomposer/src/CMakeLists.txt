@@ -157,7 +157,7 @@ target_link_libraries(KF5MessageComposer
     KF5::AkonadiMime
     KF5::Libkleo
     PRIVATE
-    KF5::MailTransport
+    KF5::MailTransportAkonadi
     KF5::PimTextEdit
     KF5::TemplateParser
     KF5::MessageViewer

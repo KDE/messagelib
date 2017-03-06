@@ -37,7 +37,7 @@
 
 #include <kmime/kmime_content.h>
 #include <kmime/kmime_headers.h>
-#include <MailTransport/mailtransport/messagequeuejob.h>
+#include <mailtransportakonadi/messagequeuejob.h>
 #include <AkonadiCore/item.h>
 #include <Akonadi/KMime/MessageStatus>
 #include <AkonadiCore/agentinstance.h>

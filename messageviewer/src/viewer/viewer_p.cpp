@@ -78,7 +78,7 @@
 #include <AkonadiCore/ItemModifyJob>
 #include <AkonadiCore/ItemCreateJob>
 
-#include <MailTransport/mailtransport/errorattribute.h>
+#include <mailtransportakonadi/errorattribute.h>
 
 //Qt includes
 #include <QClipboard>

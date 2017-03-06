@@ -58,9 +58,9 @@
 #include <MessageCore/StringUtil>
 #include <MessageCore/NodeHelper>
 
-#include <MailTransport/mailtransport/transportcombobox.h>
-#include <MailTransport/mailtransport/messagequeuejob.h>
-#include <MailTransport/mailtransport/transportmanager.h>
+#include <mailtransport/transportcombobox.h>
+#include <mailtransportakonadi/messagequeuejob.h>
+#include <mailtransport/transportmanager.h>
 
 #include <Akonadi/KMime/SpecialMailCollections>
 #include <AkonadiCore/itemcreatejob.h>
