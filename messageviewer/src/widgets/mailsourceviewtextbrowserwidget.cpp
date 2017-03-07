@@ -45,7 +45,6 @@
 
 #include <KLocalizedString>
 #include <KStandardAction>
-#include <kwindowsystem.h>
 #include <QAction>
 #include <QIcon>
 #include <KIconTheme>
