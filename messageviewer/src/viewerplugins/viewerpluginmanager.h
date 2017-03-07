@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
-#include <PimCommonAkonadi/PluginUtil>
+#include <PimCommon/PluginUtil>
 namespace MessageViewer
 {
 class ViewerPluginManagerPrivate;

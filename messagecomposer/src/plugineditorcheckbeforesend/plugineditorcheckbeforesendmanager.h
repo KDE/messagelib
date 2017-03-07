@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
-#include <PimCommonAkonadi/PluginUtil>
+#include <PimCommon/PluginUtil>
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendManagerPrivate;

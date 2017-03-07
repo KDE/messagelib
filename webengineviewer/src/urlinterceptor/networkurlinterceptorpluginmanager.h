@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include <QVector>
-#include <PimCommonAkonadi/PluginUtil>
+#include <PimCommon/PluginUtil>
 #include "webengineviewer_export.h"
 namespace WebEngineViewer
 {
