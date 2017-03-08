@@ -21,7 +21,7 @@
 #define PLUGINEDITORINTERFACE_H
 
 #include <QObject>
-#include <PimCommonAkonadi/AbstractGenericPluginInterface>
+#include <PimCommon/AbstractGenericPluginInterface>
 #include "messagecomposer_export.h"
 class QAction;
 
