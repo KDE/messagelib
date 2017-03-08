@@ -32,6 +32,7 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::Completion
         KF5::MailTransport
         KF5::Ldap
+	KF5::Contacts
     )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
 endmacro()
@@ -73,4 +74,4 @@ set(KDEPIMLIBS_RUN_SQLITE_ISOLATED_TESTS TRUE)
 
 add_akonadi_isolated_test_advanced( followupreminderselectdatedialogtest.cpp  "../src/followupreminder/followupreminderselectdatedialog.cpp" "KF5::CalendarCore;KF5::AkonadiCore;KF5::AkonadiWidgets;KF5::MessageComposer")
 
-add_akonadi_isolated_test_advanced( attachmentvcardfromaddressbookjobtest.cpp "../src/job/attachmentvcardfromaddressbookjob.cpp" "KF5::CalendarCore;KF5::AkonadiCore;KF5::AkonadiWidgets;KF5::MessageComposer")
+add_akonadi_isolated_test_advanced( attachmentvcardfromaddressbookjobtest.cpp "../src/job/attachmentvcardfromaddressbookjob.cpp" "KF5::CalendarCore;KF5::AkonadiCore;KF5::AkonadiWidgets;KF5::MessageComposer;KF5::Contacts;KF5::AkonadiContact")

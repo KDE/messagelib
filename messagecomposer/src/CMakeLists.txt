@@ -151,7 +151,7 @@ target_link_libraries(KF5MessageComposer
     PUBLIC
     KF5::Mime
     KF5::MessageCore
-    KF5::PimCommonAkonadi
+    KF5::PimCommon
     KF5::AkonadiCore
     KF5::IdentityManagement
     KF5::AkonadiMime
@@ -169,7 +169,7 @@ target_link_libraries(KF5MessageComposer
     KF5::SendLater
     KF5::FollowupReminder
     KF5::Archive
-    KF5::Ldap
+    KF5::Contacts
     )
 
 target_include_directories(KF5MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messagecomposer>")
