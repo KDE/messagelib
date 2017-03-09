@@ -30,6 +30,11 @@ QTEST_MAIN(AttachmentFromUrlJobTest)
 
 #define PATH_ATTACHMENTS QLatin1String( KDESRCDIR "/attachments/" )
 
+void AttachmentFromUrlJobTest::initTestCase()
+{
+    qputenv("KDE_FORK_SLAVES", "yes"); // To avoid a runtime dependency on klauncher
+}
+
 void AttachmentFromUrlJobTest::testAttachments_data()
 {
     QTest::addColumn<QUrl>("url");
