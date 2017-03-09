@@ -115,7 +115,7 @@ QStringList UrlHashing::generateHostsToCheck(const QString &str)
     }
     const int strLenght(str.length());
     bool lastElement = true;
-    for (int i = strLenght; i > 0; --i) {
+    for (int i = (strLenght - 1); i > 0; --i) {
         //We need to check just 5 element => 4 splits hosts + current host
         if (hostToCheck.count() == 4) {
             break;
