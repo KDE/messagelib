@@ -20,7 +20,7 @@
 #ifndef LOCALDATABASEFILE_H
 #define LOCALDATABASEFILE_H
 
-#include "webengineviewer_export.h"
+#include "webengineviewer_private_export.h"
 #include <QString>
 #include <QDateTime>
 
@@ -28,7 +28,7 @@ namespace WebEngineViewer
 {
 class LocalDataBaseFilePrivate;
 class Addition;
-class WEBENGINEVIEWER_EXPORT LocalDataBaseFile
+class WEBENGINEVIEWER_TESTS_EXPORT LocalDataBaseFile
 {
 public:
     /*

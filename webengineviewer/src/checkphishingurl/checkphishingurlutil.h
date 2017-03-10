@@ -22,7 +22,7 @@
 
 #include <QString>
 #include <QObject>
-#include "webengineviewer_export.h"
+#include "webengineviewer_private_export.h"
 namespace WebEngineViewer
 {
 namespace CheckPhishingUrlUtil
@@ -38,13 +38,13 @@ enum UrlStatus {
 QString apiKey();
 QString versionApps();
 QString databaseFileName();
-QString configFileName();
-WEBENGINEVIEWER_EXPORT quint16 minorVersion();
-WEBENGINEVIEWER_EXPORT quint16 majorVersion();
-WEBENGINEVIEWER_EXPORT double convertToSecond(const QString &str);
-WEBENGINEVIEWER_EXPORT uint refreshingCacheAfterThisTime(double seconds);
-WEBENGINEVIEWER_EXPORT bool cachedValueStillValid(uint seconds);
-WEBENGINEVIEWER_EXPORT int generateRandomSecondValue(int numberOfFailed);
+WEBENGINEVIEWER_TESTS_EXPORT QString configFileName();
+WEBENGINEVIEWER_TESTS_EXPORT quint16 minorVersion();
+WEBENGINEVIEWER_TESTS_EXPORT quint16 majorVersion();
+WEBENGINEVIEWER_TESTS_EXPORT double convertToSecond(const QString &str);
+WEBENGINEVIEWER_TESTS_EXPORT uint refreshingCacheAfterThisTime(double seconds);
+WEBENGINEVIEWER_TESTS_EXPORT bool cachedValueStillValid(uint seconds);
+WEBENGINEVIEWER_TESTS_EXPORT int generateRandomSecondValue(int numberOfFailed);
 }
 }
 Q_DECLARE_METATYPE(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus)

@@ -20,7 +20,7 @@
 #ifndef RICEENCODINGDECODER_H
 #define RICEENCODINGDECODER_H
 
-#include "webengineviewer_export.h"
+#include "webengineviewer_private_export.h"
 #include "updatedatabaseinfo.h"
 namespace WebEngineViewer
 {
@@ -56,7 +56,7 @@ private:
 
 };
 
-class WEBENGINEVIEWER_EXPORT RiceEncodingDecoder
+class WEBENGINEVIEWER_TESTS_EXPORT RiceEncodingDecoder
 {
 public:
     RiceEncodingDecoder();

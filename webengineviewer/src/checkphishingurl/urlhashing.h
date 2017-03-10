@@ -20,14 +20,14 @@
 #ifndef URLHASHING_H
 #define URLHASHING_H
 
-#include "webengineviewer_export.h"
+#include "webengineviewer_private_export.h"
 #include <QUrl>
 #include <QString>
 
 namespace WebEngineViewer
 {
 //https://developers.google.com/safe-browsing/v4/urls-hashing
-class WEBENGINEVIEWER_EXPORT UrlHashing
+class WEBENGINEVIEWER_TESTS_EXPORT UrlHashing
 {
 public:
     UrlHashing(const QUrl &url);

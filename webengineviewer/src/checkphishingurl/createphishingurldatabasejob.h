@@ -24,13 +24,13 @@
 #include <QSslError>
 #include <QNetworkReply>
 
-#include "webengineviewer_export.h"
+#include "webengineviewer_private_export.h"
 namespace WebEngineViewer
 {
 struct UpdateDataBaseInfo;
 class CreatePhishingUrlDataBaseJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
-class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
+class WEBENGINEVIEWER_TESTS_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
     Q_OBJECT
 public:

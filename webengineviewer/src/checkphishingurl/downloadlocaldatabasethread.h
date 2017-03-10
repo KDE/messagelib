@@ -21,11 +21,11 @@
 #define DOWNLOADLOCALDATABASETHREAD_H
 
 #include <QThread>
-#include "webengineviewer_export.h"
+#include "webengineviewer_private_export.h"
 #include <WebEngineViewer/CreatePhishingUrlDataBaseJob>
 namespace WebEngineViewer
 {
-class WEBENGINEVIEWER_EXPORT DownloadLocalDatabaseThread : public QThread
+class WEBENGINEVIEWER_TESTS_EXPORT DownloadLocalDatabaseThread : public QThread
 {
     Q_OBJECT
 public:
