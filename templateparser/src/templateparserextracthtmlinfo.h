@@ -21,7 +21,7 @@
 #define TEMPLATEPARSEREXTRACTHTMLINFO_H
 
 #include <QObject>
-#include "templateparser_export.h"
+#include "templateparser_private_export.h"
 #include "templateparserextracthtmlinforesult.h"
 
 namespace TemplateParser
@@ -29,7 +29,7 @@ namespace TemplateParser
 class TemplateWebEngineView;
 class TemplateExtractHtmlElementWebEngineView;
 
-class TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfo : public QObject
+class TEMPLATEPARSER_TESTS_EXPORT TemplateParserExtractHtmlInfo : public QObject
 {
     Q_OBJECT
 public:
