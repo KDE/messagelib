@@ -15,17 +15,21 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef TEMPLATEPARSER_TEMPLATESUTIL_H
-#define TEMPLATEPARSER_TEMPLATESUTIL_H
+#ifndef TEMPLATEPARSER_TEMPLATESUTIL_P_H
+#define TEMPLATEPARSER_TEMPLATESUTIL_P_H
 
 #include "templateparser_export.h"
 
 class QString;
+class QStringList;
 namespace TemplateParser
 {
+
 namespace Util
 {
-TEMPLATEPARSER_EXPORT void deleteTemplate(const QString &id);
+QStringList keywords();
+QStringList keywordsWithArgs();
+QStringList keywordsWithArgsForCompleter();
 }
 }
 

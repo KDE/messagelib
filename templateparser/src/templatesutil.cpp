@@ -16,6 +16,7 @@
 */
 
 #include "templatesutil.h"
+#include "templatesutil_p.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>

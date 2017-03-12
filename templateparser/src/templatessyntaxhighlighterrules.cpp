@@ -18,7 +18,7 @@
 #include "templatessyntaxhighlighterrules.h"
 
 #include <QTextListFormat>
-#include "templatesutil.h"
+#include "templatesutil_p.h"
 #include <QPalette>
 #include <KPIMTextEdit/SyntaxHighlighterBase>
 using namespace TemplateParser;

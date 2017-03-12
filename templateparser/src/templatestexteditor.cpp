@@ -16,7 +16,7 @@
 */
 
 #include "templatestexteditor.h"
-#include "templatesutil.h"
+#include "templatesutil_p.h"
 #include "templatessyntaxhighlighterrules.h"
 #include <KPIMTextEdit/TextEditorCompleter>
 #include <KPIMTextEdit/SyntaxHighlighterBase>
