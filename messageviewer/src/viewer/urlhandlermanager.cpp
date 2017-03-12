@@ -39,6 +39,7 @@
 #include "utils/mimetype.h"
 #include "viewer/viewer_p.h"
 #include "messageviewer/messageviewerutil.h"
+#include "../utils/messageviewerutil_p.h"
 #include "stl_util.h"
 
 #include <MimeTreeParser/NodeHelper>

@@ -118,6 +118,7 @@
 #include <MimeTreeParser/ObjectTreeParser>
 #include "viewer/urlhandlermanager.h"
 #include "messageviewer/messageviewerutil.h"
+#include "utils/messageviewerutil_p.h"
 #include "widgets/vcardviewer.h"
 
 #include <WebEngineViewer/FindBarWebEngineView>

@@ -35,22 +35,12 @@
 **   your version.
 **
 *******************************************************************************/
-#ifndef MAILVIEWERUTIL_H
-#define MAILVIEWERUTIL_H
+#ifndef MAILVIEWERUTIL_P_H
+#define MAILVIEWERUTIL_P_H
 
-#include "messageviewer_export.h"
 #include <KMime/Content>
-#include <KService>
-#include <AkonadiCore/Item>
 class QUrl;
 class QWidget;
-class QActionGroup;
-class QAction;
-
-namespace KMime
-{
-class Message;
-}
 
 namespace MessageViewer
 {
@@ -61,16 +51,13 @@ namespace MessageViewer
  */
 namespace Util
 {
+bool handleUrlWithQDesktopServices(const QUrl &url);
 
-// return true if we should proceed, false if we should abort
-bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
-MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
+KMime::Content::List allContents(const KMime::Content *message);
 
-MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QUrl &currentFolder);
-
-MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
+bool saveContents(QWidget *parent, const KMime::Content::List &contents, QUrl &currentFolder);
+bool saveContent(QWidget *parent, KMime::Content *content, const QUrl &url);
 }
 
 }
-Q_DECLARE_METATYPE(KService::Ptr)
 #endif

@@ -37,6 +37,7 @@
 *******************************************************************************/
 
 #include "messageviewer/messageviewerutil.h"
+#include "messageviewerutil_p.h"
 #include "kpimtextedit/texttospeech.h"
 #include <MimeTreeParser/NodeHelper>
 #include "messageviewer_debug.h"
