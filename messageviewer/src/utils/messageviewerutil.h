@@ -78,9 +78,9 @@ KMime::Content::List allContents(const KMime::Content *message);
 bool saveContents(QWidget *parent, const KMime::Content::List &contents, QUrl &currentFolder);
 bool saveContent(QWidget *parent, KMime::Content *content, const QUrl &url);
 
-bool MESSAGEVIEWER_EXPORT saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
+MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
 
-bool MESSAGEVIEWER_EXPORT saveAttachments(const KMime::Content::List &contents, QWidget *parent, QUrl &currentFolder);
+MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QUrl &currentFolder);
 
 MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
 }
