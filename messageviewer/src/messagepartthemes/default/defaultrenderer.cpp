@@ -864,7 +864,7 @@ public:
             ConvertHtmlToPlainText convert;
             convert.setHtmlString(mp->mBodyHTML);
             QString plaintext = convert.generatePlainText();
-            plaintext.replace(QLatin1String("\n"), QStringLiteral("<br>"));
+            plaintext.replace(QLatin1Char('\n'), QStringLiteral("<br>"));
             c.insert(QStringLiteral("plaintext"), plaintext);
         }
         mp->source()->setHtmlMode(Util::Html, QList<Util::HtmlMode>() << Util::Html);
