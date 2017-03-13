@@ -22,7 +22,7 @@
 
 #include <KMessageWidget>
 #include <AkonadiCore/Collection>
-#include "messagelist_export.h"
+#include "messagelist_private_export.h"
 class KJob;
 
 namespace Akonadi
@@ -43,7 +43,7 @@ namespace MessageList
 {
 namespace Core
 {
-class MESSAGELIST_EXPORT SearchCollectionIndexingWarning : public KMessageWidget
+class MESSAGELIST_TESTS_EXPORT SearchCollectionIndexingWarning : public KMessageWidget
 {
     Q_OBJECT
 public:

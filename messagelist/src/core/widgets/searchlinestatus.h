@@ -20,7 +20,7 @@
 
 #include <PimCommon/LineEditWithCompleter>
 #include <Akonadi/KMime/MessageStatus>
-#include "messagelist_export.h"
+#include "messagelist_private_export.h"
 #include "quicksearchline.h"
 #include <QIcon>
 class QAction;
@@ -28,7 +28,7 @@ namespace MessageList
 {
 namespace Core
 {
-class MESSAGELIST_EXPORT SearchLineStatus : public PimCommon::LineEditWithCompleter
+class MESSAGELIST_TESTS_EXPORT SearchLineStatus : public PimCommon::LineEditWithCompleter
 {
     Q_OBJECT
 public:
