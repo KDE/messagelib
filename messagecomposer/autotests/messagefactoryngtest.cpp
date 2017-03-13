@@ -201,7 +201,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
@@ -251,7 +251,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
@@ -299,7 +299,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsyn
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QStringLiteral("> This is a mail for testing replyall and sender");
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
@@ -339,7 +339,7 @@ void MessageFactoryTest::testCreateReplyToListAsync()
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray("> This is a mail from ML"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
@@ -377,7 +377,7 @@ void MessageFactoryTest::testCreateReplyToAuthorAsync()
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
@@ -421,7 +421,7 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
 
@@ -459,7 +459,7 @@ void MessageFactoryTest::testCreateReplyAllAsync()
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
@@ -488,7 +488,7 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     //We are not in UTC
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time().addSecs(-2 * 60 * 60), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time().addSecs(-2 * 60 * 60), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> encoded?\n\n")));
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
@@ -503,7 +503,7 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
 
     reply.replyAll = true;
     datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("text/plain"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
     QCOMPARE(reply.msg->contents().count(), 0);
@@ -532,7 +532,7 @@ void MessageFactoryTest::testCreateReplyUTF16Base64Async()
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1String(" ") + QLocale::system().toString(date.time().addSecs(4 * 60 * 60), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time().addSecs(4 * 60 * 60), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> quote me please.\n\n")));
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: asking for reply"));

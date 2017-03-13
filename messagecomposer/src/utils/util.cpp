@@ -259,7 +259,7 @@ QString MessageComposer::Util::cleanedUpHeaderString(const QString &s)
     // remove invalid characters from the header strings
     QString res(s);
     res.remove(QChar::fromLatin1('\r'));
-    res.replace(QChar::fromLatin1('\n'), QLatin1String(" "));
+    res.replace(QChar::fromLatin1('\n'), QLatin1Char(' '));
     return res.trimmed();
 }
 

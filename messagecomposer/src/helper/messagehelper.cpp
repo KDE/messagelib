@@ -218,7 +218,7 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps,
         if (rx.indexIn(tmp) == 0) {
             recognized = true;
             if (replace) {
-                return tmp.replace(0, rx.matchedLength(), newPrefix + QLatin1String(" "));
+                return tmp.replace(0, rx.matchedLength(), newPrefix + QLatin1Char(' '));
             }
         }
     } else {
@@ -230,7 +230,7 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps,
     }
 
     if (!recognized) {
-        return newPrefix + QLatin1String(" ") + str;
+        return newPrefix + QLatin1Char(' ') + str;
     } else {
         return str;
     }
