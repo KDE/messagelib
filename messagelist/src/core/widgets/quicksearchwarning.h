@@ -19,12 +19,12 @@
 #define QUICKSEARCHWARNING_H
 
 #include <KMessageWidget>
-#include "messagelist_export.h"
+#include "messagelist_private_export.h"
 namespace MessageList
 {
 namespace Core
 {
-class MESSAGELIST_EXPORT QuickSearchWarning : public KMessageWidget
+class MESSAGELIST_TESTS_EXPORT QuickSearchWarning : public KMessageWidget
 {
     Q_OBJECT
 public:
