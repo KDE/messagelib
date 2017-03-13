@@ -31,6 +31,7 @@
 #include "core/storagemodelbase.h"
 #include "core/widgetbase.h"
 #include "messagelistutil.h"
+#include "messagelistutil_p.h"
 
 #include "MessageCore/StringUtil"
 

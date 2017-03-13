@@ -20,6 +20,7 @@
 #include "core/sortorder.h"
 
 #include "messagelistutil.h"
+#include "messagelistutil_p.h"
 
 #include <KLocalizedString>
 

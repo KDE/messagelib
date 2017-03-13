@@ -19,7 +19,7 @@
  *******************************************************************************/
 
 #include "core/storagemodelbase.h"
-
+#include "messagelistutil_p.h"
 #include "messagelistsettings.h"
 
 using namespace MessageList::Core;

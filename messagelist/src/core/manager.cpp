@@ -37,6 +37,7 @@
 #include "MessageCore/MessageCoreSettings"
 
 #include "messagelistutil.h"
+#include "messagelistutil_p.h"
 
 #include <QPixmap>
 #include <kmime/kmime_dateformatter.h> // kdepimlibs

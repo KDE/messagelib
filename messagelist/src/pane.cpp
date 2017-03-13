@@ -44,6 +44,7 @@
 #include "core/manager.h"
 #include <Akonadi/KMime/MessageStatus>
 #include "core/model.h"
+#include "messagelistutil_p.h"
 
 namespace MessageList
 {

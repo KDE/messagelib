@@ -16,28 +16,33 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef MESSAGELISTUTIL_H
-#define MESSAGELISTUTIL_H
+#ifndef MESSAGELISTUTIL_P_H
+#define MESSAGELISTUTIL_P_H
 
-#include <messagelist_export.h>
 #include <QObject>
 #include <QString>
-#include <QColor>
 
 namespace Akonadi
 {
 class Item;
 }
+class QMenu;
+
 namespace MessageList
 {
 namespace Util
 {
-MESSAGELIST_EXPORT void deleteConfig(const QString &collectionId);
-MESSAGELIST_EXPORT QColor unreadDefaultMessageColor();
-MESSAGELIST_EXPORT QColor importantDefaultMessageColor();
-MESSAGELIST_EXPORT QColor todoDefaultMessageColor();
-/// Returns the first few lines of the actual email text if available.
-MESSAGELIST_EXPORT QString contentSummary(const Akonadi::Item &item);
+QString messageSortingConfigName();
+QString messageSortDirectionConfigName();
+QString groupSortingConfigName();
+QString groupSortDirectionConfigName();
+QString messageUniqueIdConfigName();
+QString storageModelSortOrderGroup();
+QString storageModelThemesGroup();
+QString storageModelAggregationsGroup();
+QString setForStorageModelConfigName();
+QString storageModelSelectedMessageGroup();
+void fillViewMenu(QMenu *menu, QObject *receiver);
 }
 }
 
