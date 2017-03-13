@@ -44,14 +44,6 @@ struct DeleteAndSetToZero {
     }
 };
 
-template <typename T>
-static inline void deleteAll(T &c)
-{
-    for (typename T::iterator it = c.begin(); it != c.end(); ++it) {
-        delete *it; *it = 0;
-    }
-}
-
 }
 
 #endif // __KDEPIM__MESSAGEVIEWER__STL_UTIL_H__

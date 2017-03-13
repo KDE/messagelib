@@ -21,7 +21,7 @@
 #include "job/signjob.h"
 
 #include "contentjobbase_p.h"
-#include "utils/util.h"
+#include "utils/util_p.h"
 
 #include <Libkleo/Enum>
 #include <QGpgME/Protocol>

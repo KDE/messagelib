@@ -24,6 +24,7 @@
 #include "helper/messagehelper.h"
 #include "settings/messagecomposersettings.h"
 #include "MessageComposer/Util"
+#include "utils/util_p.h"
 
 #include <kmime/kmime_message.h>
 #include <libkdepim/progressmanager.h>

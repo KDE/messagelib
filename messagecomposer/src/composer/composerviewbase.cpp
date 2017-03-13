@@ -34,6 +34,7 @@
 #include "part/infopart.h"
 #include "composer.h"
 #include "utils/util.h"
+#include "utils/util_p.h"
 #include "imagescaling/imagescalingutils.h"
 
 #include "SendLater/SendLaterInfo"
