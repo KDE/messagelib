@@ -112,7 +112,7 @@ public:
     {
         auto main_func = mainFunc(type, T_config::mainfunc);
         if (!main_func) {
-            return 0;
+            return nullptr;
         }
 
         // cast to a pointer to a function returning T*, call it and

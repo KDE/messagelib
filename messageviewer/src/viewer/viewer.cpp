@@ -502,7 +502,7 @@ QAbstractItemModel *Viewer::messageTreeModel() const
 #ifndef QT_NO_TREEVIEW
     return d_func()->mMimePartTree->mimePartModel();
 #else
-    return 0;
+    return nullptr;
 #endif
 }
 
