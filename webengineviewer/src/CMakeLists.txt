@@ -194,7 +194,7 @@ ecm_generate_headers(WebEngineViewer_Camelcasewidgets_HEADERS
 
 ecm_generate_pri_file(BASE_NAME WebEngineViewer
     LIB_NAME KF5WebEngineViewer
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
+    DEPS "WebEngineWidgets PimCommon" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/WebEngineViewer
     )
 
 
