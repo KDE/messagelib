@@ -117,7 +117,7 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
     i.toBack();
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QSet<QString> unique;
-    QList<int> listOrder;
+    QVector<int> listOrder;
     while (i.hasPrevious()) {
         HeaderStylePluginInfo info;
 
