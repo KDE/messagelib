@@ -160,9 +160,15 @@ target_link_libraries(KF5MessageComposer
     KF5::MessageViewer
     KF5::AkonadiWidgets
     KF5::Libkdepim
-    KF5::CalendarCore
     KF5::KIOCore
+    KF5::I18n
+    KF5::Completion     # for KComboBox
+    KF5::KIOWidgets     # for KIO::JobUiDelegate
+    KF5::KIOFileWidgets # for KEncodingDialog
+    KF5::XmlGui         # for KActionCollection
+    KF5::SonnetUi
     Grantlee5::TextDocument
+    KF5::CalendarCore   # for KCalCore/Todo
     KF5::SendLater
     KF5::FollowupReminder
     KF5::Archive
