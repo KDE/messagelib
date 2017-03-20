@@ -39,14 +39,11 @@
 #include "messagelistutil.h"
 #include "messagelistutil_p.h"
 
-#include <QPixmap>
 #include <kmime/kmime_dateformatter.h> // kdepimlibs
 
 #include <KConfig>
 #include "messagelist_debug.h"
 #include <KLocalizedString>
-
-#include <QStandardPaths>
 
 using namespace MessageList::Core;
 
@@ -58,41 +55,6 @@ Manager::Manager()
     mInstance = this;
 
     mDateFormatter = new KMime::DateFormatter();
-
-    mPixmapMessageNew = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-unread-new")).pixmap(64, 64));
-    mPixmapMessageUnread = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-unread")).pixmap(64, 64));
-    mPixmapMessageRead = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-read")).pixmap(64, 64));
-    mPixmapMessageDeleted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-deleted")).pixmap(64, 64));
-    mPixmapMessageReplied = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-replied")).pixmap(64, 64));
-    mPixmapMessageRepliedAndForwarded = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded-replied")).pixmap(64, 64));
-    mPixmapMessageQueued = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-queued")).pixmap(64, 64));       // mail-queue ?
-    mPixmapMessageActionItem = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-task")).pixmap(64, 64));
-    mPixmapMessageSent = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(64, 64));
-    mPixmapMessageForwarded = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(64, 64));
-    mPixmapMessageImportant = new QPixmap(QIcon::fromTheme(QStringLiteral("emblem-important")).pixmap(64, 64));       // "flag"
-    mPixmapMessageWatched = new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-watch.png")).pixmap(64, 64));
-    mPixmapMessageIgnored = new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-ignored.png")).pixmap(64, 64));
-    mPixmapMessageSpam = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-junk")).pixmap(64, 64));
-    mPixmapMessageHam = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")).pixmap(64, 64));
-    mPixmapMessageFullySigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-verified")).pixmap(64, 64));
-    mPixmapMessagePartiallySigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-part")).pixmap(64, 64));
-    mPixmapMessageUndefinedSigned = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed")).pixmap(64, 64));
-    mPixmapMessageNotSigned = new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(64, 64));
-    mPixmapMessageFullyEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-full")).pixmap(64, 64));
-    mPixmapMessagePartiallyEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-part")).pixmap(64, 64));
-    mPixmapMessageUndefinedEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted")).pixmap(64, 64));
-    mPixmapMessageNotEncrypted = new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(64, 64));
-    mPixmapMessageAttachment = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-attachment")).pixmap(64, 64));
-    mPixmapMessageAnnotation = new QPixmap(QIcon::fromTheme(QStringLiteral("view-pim-notes")).pixmap(64, 64));
-    mPixmapMessageInvitation = new QPixmap(QIcon::fromTheme(QStringLiteral("mail-invitation")).pixmap(64, 64));
-    if (QApplication::isRightToLeft()) {
-        mPixmapShowMore = new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-left")).pixmap(64, 64));
-    } else {
-        mPixmapShowMore = new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-right")).pixmap(64, 64));
-    }
-    mPixmapShowLess = new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-down")).pixmap(64, 64));
-    mPixmapVerticalLine = new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-vertical-separator-line.png")));
-    mPixmapHorizontalSpacer = new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-horizontal-space.png")));
 
     mCachedLocalizedUnknownText = i18nc("Unknown date", "Unknown");
 
@@ -106,37 +68,6 @@ Manager::~Manager()
     saveConfiguration();
     removeAllAggregations();
     removeAllThemes();
-
-    delete mPixmapMessageNew;
-    delete mPixmapMessageUnread;
-    delete mPixmapMessageRead;
-    delete mPixmapMessageDeleted;
-    delete mPixmapMessageReplied;
-    delete mPixmapMessageRepliedAndForwarded;
-    delete mPixmapMessageQueued;
-    delete mPixmapMessageActionItem;
-    delete mPixmapMessageSent;
-    delete mPixmapMessageForwarded;
-    delete mPixmapMessageImportant; // "flag"
-    delete mPixmapMessageWatched;
-    delete mPixmapMessageIgnored;
-    delete mPixmapMessageSpam;
-    delete mPixmapMessageHam;
-    delete mPixmapMessageFullySigned;
-    delete mPixmapMessagePartiallySigned;
-    delete mPixmapMessageUndefinedSigned;
-    delete mPixmapMessageNotSigned;
-    delete mPixmapMessageFullyEncrypted;
-    delete mPixmapMessagePartiallyEncrypted;
-    delete mPixmapMessageUndefinedEncrypted;
-    delete mPixmapMessageNotEncrypted;
-    delete mPixmapMessageAttachment;
-    delete mPixmapMessageAnnotation;
-    delete mPixmapMessageInvitation;
-    delete mPixmapShowMore;
-    delete mPixmapShowLess;
-    delete mPixmapVerticalLine;
-    delete mPixmapHorizontalSpacer;
 
     delete mDateFormatter;
 

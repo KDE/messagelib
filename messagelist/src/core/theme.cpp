@@ -21,6 +21,10 @@
 #include "core/theme.h"
 
 #include <QDataStream>
+#include <QPixmap>
+#include <QIcon>
+#include <QStandardPaths>
+#include <QApplication>
 
 #include <KLocalizedString>
 #include "messagelist_debug.h"
@@ -1108,9 +1112,13 @@ int Theme::iconSize() const
 
 void Theme::setIconSize(int iconSize)
 {
-    mIconSize = iconSize;
-    if ((mIconSize < 8) || (mIconSize > 64)) {
-        mIconSize = gThemeDefaultIconSize;
+    if (mIconSize != iconSize) {
+        clearPixmapCache();
+
+        mIconSize = iconSize;
+        if ((mIconSize < 8) || (mIconSize > 64)) {
+            mIconSize = gThemeDefaultIconSize;
+        }
     }
 }
 
@@ -1230,3 +1238,49 @@ void Theme::save(QDataStream &stream) const
     }
 }
 
+void Theme::clearPixmapCache() const
+{
+    qDeleteAll(mPixmaps);
+    mPixmaps.clear();
+}
+
+void Theme::populatePixmapCache() const
+{
+    clearPixmapCache();
+
+    mPixmaps.reserve(_IconCount);
+    // WARNING: The order of those icons must be in sync with order of the
+    // corresponding enum values in ThemeIcon!
+    mPixmaps << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-unread-new")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-unread")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-read")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-deleted")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-replied")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded-replied")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-queued")).pixmap(mIconSize, mIconSize))       // mail-queue ?
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-task")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("emblem-important")).pixmap(mIconSize, mIconSize))       // "flag"
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-watch.png")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-ignored.png")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-junk")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-verified")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-part")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-full")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-part")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-attachment")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("view-pim-notes")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-invitation")).pixmap(mIconSize, mIconSize))
+        << ((QApplication::isRightToLeft())
+            ? new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-left")).pixmap(mIconSize, mIconSize))
+            : new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-right")).pixmap(mIconSize, mIconSize)))
+        << new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-down")).pixmap(mIconSize, mIconSize))
+        << new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-vertical-separator-line.png")))
+        << new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-horizontal-space.png")));
+}
