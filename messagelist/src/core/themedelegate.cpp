@@ -217,57 +217,57 @@ static inline void compute_bounding_rect_for_left_aligned_elided_text(const QStr
     }
 }
 
-static inline const QPixmap *get_read_state_icon(Item *item)
+static inline const QPixmap *get_read_state_icon(const Theme *theme, Item *item)
 {
     if (item->status().isQueued()) {
-        return Manager::instance()->pixmapMessageQueued();
+        return theme->pixmap(Theme::IconQueued);
     } else if (item->status().isSent()) {
-        return Manager::instance()->pixmapMessageSent();
+        return theme->pixmap(Theme::IconSent);
     } else if (item->status().isRead()) {
-        return Manager::instance()->pixmapMessageRead();
+        return theme->pixmap(Theme::IconRead);
     } else if (!item->status().isRead()) {
-        return Manager::instance()->pixmapMessageUnread();
+        return theme->pixmap(Theme::IconUnread);
     } else if (item->status().isDeleted()) {
-        return Manager::instance()->pixmapMessageDeleted();
+        return theme->pixmap(Theme::IconDeleted);
     }
 
     // Uhm... should never happen.. but fallback to "read"...
-    return Manager::instance()->pixmapMessageRead();
+    return theme->pixmap(Theme::IconRead);
 }
 
-static inline const QPixmap *get_combined_read_replied_state_icon(MessageItem *messageItem)
+static inline const QPixmap *get_combined_read_replied_state_icon(const Theme *theme, MessageItem *messageItem)
 {
     if (messageItem->status().isReplied()) {
         if (messageItem->status().isForwarded()) {
-            return Manager::instance()->pixmapMessageRepliedAndForwarded();
+            return theme->pixmap(Theme::IconRepliedAndForwarded);
         }
-        return Manager::instance()->pixmapMessageReplied();
+        return theme->pixmap(Theme::IconReplied);
     }
     if (messageItem->status().isForwarded()) {
-        return Manager::instance()->pixmapMessageForwarded();
+        return theme->pixmap(Theme::IconForwarded);
     }
 
-    return get_read_state_icon(messageItem);
+    return get_read_state_icon(theme, messageItem);
 }
 
-static inline const QPixmap *get_encryption_state_icon(MessageItem *messageItem, bool *treatAsEnabled)
+static inline const QPixmap *get_encryption_state_icon(const Theme *theme, MessageItem *messageItem, bool *treatAsEnabled)
 {
     switch (messageItem->encryptionState()) {
     case MessageItem::FullyEncrypted:
         *treatAsEnabled = true;
-        return Manager::instance()->pixmapMessageFullyEncrypted();
+        return theme->pixmap(Theme::IconFullyEncrypted);
         break;
     case MessageItem::PartiallyEncrypted:
         *treatAsEnabled = true;
-        return Manager::instance()->pixmapMessagePartiallyEncrypted();
+        return theme->pixmap(Theme::IconPartiallyEncrypted);
         break;
     case MessageItem::EncryptionStateUnknown:
         *treatAsEnabled = false;
-        return Manager::instance()->pixmapMessageUndefinedEncrypted();
+        return theme->pixmap(Theme::IconUndefinedEncrypted);
         break;
     case MessageItem::NotEncrypted:
         *treatAsEnabled = false;
-        return Manager::instance()->pixmapMessageNotEncrypted();
+        return theme->pixmap(Theme::IconNotEncrypted);
         break;
     default:
         // should never happen
@@ -276,27 +276,27 @@ static inline const QPixmap *get_encryption_state_icon(MessageItem *messageItem,
     }
 
     *treatAsEnabled = false;
-    return Manager::instance()->pixmapMessageUndefinedEncrypted();
+    return theme->pixmap(Theme::IconUndefinedEncrypted);
 }
 
-static inline const QPixmap *get_signature_state_icon(MessageItem *messageItem, bool *treatAsEnabled)
+static inline const QPixmap *get_signature_state_icon(const Theme *theme, MessageItem *messageItem, bool *treatAsEnabled)
 {
     switch (messageItem->signatureState()) {
     case MessageItem::FullySigned:
         *treatAsEnabled = true;
-        return Manager::instance()->pixmapMessageFullySigned();
+        return theme->pixmap(Theme::IconFullySigned);
         break;
     case MessageItem::PartiallySigned:
         *treatAsEnabled = true;
-        return Manager::instance()->pixmapMessagePartiallySigned();
+        return theme->pixmap(Theme::IconPartiallySigned);
         break;
     case MessageItem::SignatureStateUnknown:
         *treatAsEnabled = false;
-        return Manager::instance()->pixmapMessageUndefinedSigned();
+        return theme->pixmap(Theme::IconUndefinedSigned);
         break;
     case MessageItem::NotSigned:
         *treatAsEnabled = false;
-        return Manager::instance()->pixmapMessageNotSigned();
+        return theme->pixmap(Theme::IconNotSigned);
         break;
     default:
         // should never happen
@@ -305,40 +305,40 @@ static inline const QPixmap *get_signature_state_icon(MessageItem *messageItem, 
     }
 
     *treatAsEnabled = false;
-    return Manager::instance()->pixmapMessageUndefinedSigned();
+    return theme->pixmap(Theme::IconUndefinedSigned);
 }
 
-static inline const QPixmap *get_replied_state_icon(MessageItem *messageItem)
+static inline const QPixmap *get_replied_state_icon(const Theme *theme, MessageItem *messageItem)
 {
     if (messageItem->status().isReplied()) {
         if (messageItem->status().isForwarded()) {
-            return Manager::instance()->pixmapMessageRepliedAndForwarded();
+            return theme->pixmap(Theme::IconRepliedAndForwarded);
         }
-        return Manager::instance()->pixmapMessageReplied();
+        return theme->pixmap(Theme::IconReplied);
     }
     if (messageItem->status().isForwarded()) {
-        return Manager::instance()->pixmapMessageForwarded();
+        return theme->pixmap(Theme::IconForwarded);
     }
 
     return nullptr;
 }
 
-static inline const QPixmap *get_spam_ham_state_icon(MessageItem *messageItem)
+static inline const QPixmap *get_spam_ham_state_icon(const Theme *theme, MessageItem *messageItem)
 {
     if (messageItem->status().isSpam()) {
-        return Manager::instance()->pixmapMessageSpam();
+        return theme->pixmap(Theme::IconSpam);
     } else if (messageItem->status().isHam()) {
-        return Manager::instance()->pixmapMessageHam();
+        return theme->pixmap(Theme::IconHam);
     }
     return nullptr;
 }
 
-static inline const QPixmap *get_watched_ignored_state_icon(MessageItem *messageItem)
+static inline const QPixmap *get_watched_ignored_state_icon(const Theme *theme, MessageItem *messageItem)
 {
     if (messageItem->status().isIgnored()) {
-        return Manager::instance()->pixmapMessageIgnored();
+        return theme->pixmap(Theme::IconIgnored);
     } else if (messageItem->status().isWatched()) {
-        return Manager::instance()->pixmapMessageWatched();
+        return theme->pixmap(Theme::IconWatched);
     }
     return nullptr;
 }
@@ -897,32 +897,32 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 }
                 break;
             case Theme::ContentItem::ReadStateIcon:
-                paint_permanent_icon(get_read_state_icon(item), ci, painter, l, top, r,
+                paint_permanent_icon(get_read_state_icon(mTheme, item), ci, painter, l, top, r,
                                      layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::CombinedReadRepliedStateIcon:
                 if (messageItem)
-                    paint_permanent_icon(get_combined_read_replied_state_icon(messageItem), ci, painter,
+                    paint_permanent_icon(get_combined_read_replied_state_icon(mTheme, messageItem), ci, painter,
                                          l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ExpandedStateIcon: {
-                const QPixmap *pix = item->childItemCount() > 0 ? ((option.state & QStyle::State_Open) ? Manager::instance()->pixmapShowLess() : Manager::instance()->pixmapShowMore()) : nullptr;
-                paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapShowMore(),
+                const QPixmap *pix = item->childItemCount() > 0 ? mTheme->pixmap((option.state & QStyle::State_Open) ? Theme::IconShowLess : Theme::IconShowMore) : nullptr;
+                paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconShowMore),
                                          ci, painter, l, top, r, layoutDir == Qt::LeftToRight,
                                          mTheme->iconSize());
             }
             break;
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_replied_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageReplied(),
+                    const QPixmap *pix = get_replied_state_icon(mTheme, messageItem);
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconReplied),
                                              ci, painter, l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
                 if (messageItem) {
                     bool enabled;
-                    const QPixmap *pix = get_encryption_state_icon(messageItem, &enabled);
+                    const QPixmap *pix = get_encryption_state_icon(mTheme, messageItem, &enabled);
                     paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r,
                                              layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
@@ -930,23 +930,23 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             case Theme::ContentItem::SignatureStateIcon:
                 if (messageItem) {
                     bool enabled;
-                    const QPixmap *pix = get_signature_state_icon(messageItem, &enabled);
+                    const QPixmap *pix = get_signature_state_icon(mTheme, messageItem, &enabled);
                     paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r,
                                              layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_spam_ham_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageSpam(),
+                    const QPixmap *pix = get_spam_ham_state_icon(mTheme, messageItem);
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconSpam),
                                              ci, painter, l, top, r, layoutDir == Qt::LeftToRight,
                                              mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_watched_ignored_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageWatched(),
+                    const QPixmap *pix = get_watched_ignored_state_icon(mTheme, messageItem);
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconWatched),
                                              ci, painter, l, top, r, layoutDir == Qt::LeftToRight,
                                              mTheme->iconSize());
                 }
@@ -954,31 +954,31 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             case Theme::ContentItem::AttachmentStateIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->status().hasAttachment(),
-                                             Manager::instance()->pixmapMessageAttachment(), ci, painter,
+                                             mTheme->pixmap(Theme::IconAttachment), ci, painter,
                                              l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::AnnotationIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->hasAnnotation(),
-                                             Manager::instance()->pixmapMessageAnnotation(), ci, painter,
+                                             mTheme->pixmap(Theme::IconAnnotation), ci, painter,
                                              l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::InvitationIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->status().hasInvitation(),
-                                             Manager::instance()->pixmapMessageInvitation(), ci, painter,
+                                             mTheme->pixmap(Theme::IconInvitation), ci, painter,
                                              l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ActionItemStateIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->status().isToAct(),
-                                             Manager::instance()->pixmapMessageActionItem(), ci, painter,
+                                             mTheme->pixmap(Theme::IconActionItem), ci, painter,
                                              l, top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ImportantStateIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->status().isImportant(),
-                                             Manager::instance()->pixmapMessageImportant(), ci, painter, l,
+                                             mTheme->pixmap(Theme::IconImportant), ci, painter, l,
                                              top, r, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::VerticalLine:
@@ -1056,31 +1056,31 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 }
                 break;
             case Theme::ContentItem::ReadStateIcon:
-                paint_permanent_icon(get_read_state_icon(item), ci, painter, l, top, r,
+                paint_permanent_icon(get_read_state_icon(mTheme, item), ci, painter, l, top, r,
                                      layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::CombinedReadRepliedStateIcon:
                 if (messageItem)
-                    paint_permanent_icon(get_combined_read_replied_state_icon(messageItem), ci, painter,
+                    paint_permanent_icon(get_combined_read_replied_state_icon(mTheme, messageItem), ci, painter,
                                          l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ExpandedStateIcon: {
-                const QPixmap *pix = item->childItemCount() > 0 ? ((option.state & QStyle::State_Open) ? Manager::instance()->pixmapShowLess() : Manager::instance()->pixmapShowMore()) : nullptr;
-                paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapShowMore(),
+                const QPixmap *pix = item->childItemCount() > 0 ? mTheme->pixmap((option.state & QStyle::State_Open) ? Theme::IconShowLess : Theme::IconShowMore) : nullptr;
+                paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconShowMore),
                                          ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
             }
             break;
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_replied_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageReplied(),
+                    const QPixmap *pix = get_replied_state_icon(mTheme, messageItem);
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconReplied),
                                              ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
                 if (messageItem) {
                     bool enabled;
-                    const QPixmap *pix = get_encryption_state_icon(messageItem, &enabled);
+                    const QPixmap *pix = get_encryption_state_icon(mTheme, messageItem, &enabled);
                     paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r,
                                              layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
@@ -1088,53 +1088,53 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
             case Theme::ContentItem::SignatureStateIcon:
                 if (messageItem) {
                     bool enabled;
-                    const QPixmap *pix = get_signature_state_icon(messageItem, &enabled);
+                    const QPixmap *pix = get_signature_state_icon(mTheme, messageItem, &enabled);
                     paint_boolean_state_icon(enabled, pix, ci, painter, l, top, r,
                                              layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_spam_ham_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageSpam(),
+                    const QPixmap *pix = get_spam_ham_state_icon(mTheme, messageItem);
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconSpam),
                                              ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_watched_ignored_state_icon(messageItem);
-                    paint_boolean_state_icon(pix != nullptr, pix ? pix : Manager::instance()->pixmapMessageWatched(),
+                    const QPixmap *pix = get_watched_ignored_state_icon(mTheme, messageItem);
+                    paint_boolean_state_icon(pix != nullptr, pix ? pix : mTheme->pixmap(Theme::IconWatched),
                                              ci, painter, l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::AttachmentStateIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->status().hasAttachment(),
-                                             Manager::instance()->pixmapMessageAttachment(), ci, painter,
+                                             mTheme->pixmap(Theme::IconAttachment), ci, painter,
                                              l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::AnnotationIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->hasAnnotation(),
-                                             Manager::instance()->pixmapMessageAnnotation(), ci, painter,
+                                             mTheme->pixmap(Theme::IconAnnotation), ci, painter,
                                              l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::InvitationIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->status().hasInvitation(),
-                                             Manager::instance()->pixmapMessageInvitation(), ci, painter,
+                                             mTheme->pixmap(Theme::IconInvitation), ci, painter,
                                              l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ActionItemStateIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->status().isToAct(),
-                                             Manager::instance()->pixmapMessageActionItem(), ci, painter,
+                                             mTheme->pixmap(Theme::IconActionItem), ci, painter,
                                              l, top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::ImportantStateIcon:
                 if (messageItem)
                     paint_boolean_state_icon(messageItem->status().isImportant(),
-                                             Manager::instance()->pixmapMessageImportant(), ci, painter, l,
+                                             mTheme->pixmap(Theme::IconImportant), ci, painter, l,
                                              top, r, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 break;
             case Theme::ContentItem::VerticalLine:
@@ -1318,33 +1318,33 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                 break;
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_replied_state_icon(messageItem);
+                    const QPixmap *pix = get_replied_state_icon(mTheme, messageItem);
                     compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
                 if (messageItem) {
                     bool enabled;
-                    get_encryption_state_icon(messageItem, &enabled);
+                    get_encryption_state_icon(mTheme, messageItem, &enabled);
                     compute_bounding_rect_for_boolean_state_icon(enabled, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SignatureStateIcon:
                 if (messageItem) {
                     bool enabled;
-                    get_signature_state_icon(messageItem, &enabled);
+                    get_signature_state_icon(mTheme, messageItem, &enabled);
                     compute_bounding_rect_for_boolean_state_icon(enabled, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_spam_ham_state_icon(messageItem);
+                    const QPixmap *pix = get_spam_ham_state_icon(mTheme, messageItem);
                     compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_watched_ignored_state_icon(messageItem);
+                    const QPixmap *pix = get_watched_ignored_state_icon(mTheme, messageItem);
                     compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir == Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
@@ -1464,33 +1464,33 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                 break;
             case Theme::ContentItem::RepliedStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_replied_state_icon(messageItem);
+                    const QPixmap *pix = get_replied_state_icon(mTheme, messageItem);
                     compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::EncryptionStateIcon:
                 if (messageItem) {
                     bool enabled;
-                    get_encryption_state_icon(messageItem, &enabled);
+                    get_encryption_state_icon(mTheme, messageItem, &enabled);
                     compute_bounding_rect_for_boolean_state_icon(enabled, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SignatureStateIcon:
                 if (messageItem) {
                     bool enabled;
-                    get_signature_state_icon(messageItem, &enabled);
+                    get_signature_state_icon(mTheme, messageItem, &enabled);
                     compute_bounding_rect_for_boolean_state_icon(enabled, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::SpamHamStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_spam_ham_state_icon(messageItem);
+                    const QPixmap *pix = get_spam_ham_state_icon(mTheme, messageItem);
                     compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;
             case Theme::ContentItem::WatchedIgnoredStateIcon:
                 if (messageItem) {
-                    const QPixmap *pix = get_watched_ignored_state_icon(messageItem);
+                    const QPixmap *pix = get_watched_ignored_state_icon(mTheme, messageItem);
                     compute_bounding_rect_for_boolean_state_icon(pix != nullptr, ci, l, top, r, mHitContentItemRect, layoutDir != Qt::LeftToRight, mTheme->iconSize());
                 }
                 break;

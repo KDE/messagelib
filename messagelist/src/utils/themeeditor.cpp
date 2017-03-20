@@ -1334,6 +1334,8 @@ ThemeEditor::ThemeEditor(QWidget *parent)
 
     QGridLayout *gblayout = new QGridLayout(gb);
 
+    Theme dummyTheme;
+
     ThemeContentItemSourceLabel *cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::Subject);
     cil->setText(Theme::ContentItem::description(cil->type()));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
@@ -1375,77 +1377,77 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     gblayout->addWidget(cil, 1, 2);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::CombinedReadRepliedStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageRepliedAndForwarded()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconRepliedAndForwarded));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 0, 3);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::ReadStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageNew()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconNew));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 1, 3);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::RepliedStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageReplied()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconReplied));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 2, 3);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::AttachmentStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageAttachment()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconAttachment));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 0, 4);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::EncryptionStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageFullyEncrypted()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconFullyEncrypted));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 1, 4);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::SignatureStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageFullySigned()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconFullySigned));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 2, 4);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::ActionItemStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageActionItem()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconActionItem));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 0, 5);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::AnnotationIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageAnnotation()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconAnnotation));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 1, 5);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::InvitationIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageInvitation()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconInvitation));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 2, 5);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::ImportantStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageImportant()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconImportant));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 0, 6);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::SpamHamStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageSpam()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconSpam));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 1, 6);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::WatchedIgnoredStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapMessageWatched()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconWatched));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 2, 6);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::ExpandedStateIcon);
-    cil->setPixmap(*(Manager::instance()->pixmapShowMore()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconShowMore));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 0, 7);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::VerticalLine);
-    cil->setPixmap(*(Manager::instance()->pixmapVerticalLine()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconVerticalLine));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 1, 7);
 
     cil = new ThemeContentItemSourceLabel(gb, Theme::ContentItem::HorizontalSpacer);
-    cil->setPixmap(*(Manager::instance()->pixmapHorizontalSpacer()));
+    cil->setPixmap(*dummyTheme.pixmap(Theme::IconHorizontalSpacer));
     cil->setToolTip(Theme::ContentItem::description(cil->type()));
     gblayout->addWidget(cil, 2, 7);
 

@@ -26,9 +26,12 @@
 #include <QString>
 #include <QFont>
 #include <QColor>
+#include <QVector>
 
 #include <core/optionset.h>
 #include <core/sortorder.h>
+
+class QPixmap;
 
 namespace MessageList
 {
@@ -833,8 +836,46 @@ public:
         //ShowWhenMoreThanOneColumn,  ///< This doesn't work at the moment (since without header we don't have means for showing columns back)
     };
 
+    enum ThemeIcon {
+        IconNew,
+        IconUnread,
+        IconRead,
+        IconDeleted,
+        IconReplied,
+        IconRepliedAndForwarded,
+        IconQueued,
+        IconActionItem,
+        IconSent,
+        IconForwarded,
+        IconImportant,
+        IconWatched,
+        IconIgnored,
+        IconSpam,
+        IconHam,
+        IconFullySigned,
+        IconPartiallySigned,
+        IconUndefinedSigned,
+        IconNotSigned,
+        IconFullyEncrypted,
+        IconPartiallyEncrypted,
+        IconUndefinedEncrypted,
+        IconNotEncrypted,
+        IconAttachment,
+        IconAnnotation,
+        IconInvitation,
+        IconShowMore,
+        IconShowLess,
+        IconVerticalLine,
+        IconHorizontalSpacer,
+
+        _IconCount
+    };
+
 private:
     QList< Column * > mColumns;                             ///< The list of columns available in this theme
+
+    // pixmaps cache. Mutable, so it can be lazily populated from const methods
+    mutable QVector<QPixmap*> mPixmaps;
 
     GroupHeaderBackgroundMode mGroupHeaderBackgroundMode;   ///< How do we paint group header background ?
     QColor mGroupHeaderBackgroundColor;                     ///< The background color of the message group, used only if CustomColor
@@ -962,6 +1003,14 @@ public:
     */
     static QList< QPair< QString, int > > enumerateViewHeaderPolicyOptions();
 
+    inline const QPixmap *pixmap(ThemeIcon icon) const
+    {
+        if (Q_UNLIKELY(mPixmaps.isEmpty())) {
+            populatePixmapCache();
+        }
+        return mPixmaps[icon];
+    }
+
 protected:
     /**
     * Pure virtual reimplemented from OptionSet.
@@ -973,6 +1022,8 @@ protected:
     */
     bool load(QDataStream &stream) Q_DECL_OVERRIDE;
 
+    void clearPixmapCache() const;
+    void populatePixmapCache() const;
 };
 
 } // namespace Core
