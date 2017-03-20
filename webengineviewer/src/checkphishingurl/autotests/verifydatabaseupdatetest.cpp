@@ -94,7 +94,7 @@ void VerifyDataBaseUpdateTest::shouldVerifyCheckSums_data()
 
 void VerifyDataBaseUpdateTest::shouldVerifyCheckSums()
 {
-    QFETCH(QList<WebEngineViewer::Addition>, additionList);
+    QFETCH(const QList<WebEngineViewer::Addition>, additionList);
     QFETCH(int, numberOfItems);
     QFETCH(QByteArray, calculateCheckSums);
 
@@ -107,7 +107,7 @@ void VerifyDataBaseUpdateTest::shouldVerifyCheckSums()
     // "x\x18\xbdn]\xa5\xa8R\xf7\xab\xcf\xc1\xa3\xa3\xc5Z,\xa6o"
 
     QList<WebEngineViewer::Addition> itemToStore;
-    Q_FOREACH (const WebEngineViewer::Addition &add, additionList) {
+    for (const WebEngineViewer::Addition &add : additionList) {
         const QByteArray uncompressed = add.hashString;
         for (int i = 0; i < uncompressed.size();) {
             const QByteArray m = uncompressed.mid(i, add.prefixSize);

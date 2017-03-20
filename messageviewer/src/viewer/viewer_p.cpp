@@ -22,6 +22,7 @@
 //#define MESSAGEVIEWER_READER_HTML_DEBUG 1
 #include "viewer_p.h"
 #include "viewer.h"
+#include "helper_p.h"
 #include "messageviewer_debug.h"
 #include "utils/mimetype.h"
 #include "viewer/objecttreeemptysource.h"
@@ -2985,7 +2986,7 @@ void ViewerPrivate::slotMessageRendered()
 
     mPreviouslyViewedItem = mMessageItem.id();
 
-    foreach (AbstractMessageLoadedHandler *handler, mMessageLoadedHandlers) {
+    for (AbstractMessageLoadedHandler *handler : qAsConst(mMessageLoadedHandlers)) {
         handler->setItem(mMessageItem);
     }
 }
