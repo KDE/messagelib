@@ -963,7 +963,7 @@ void AttachmentControllerBase::addAttachment(const QUrl &url)
 
 void AttachmentControllerBase::addAttachments(const QList<QUrl> &urls)
 {
-    foreach (const QUrl &url, urls) {
+    for (const QUrl &url : urls) {
         addAttachment(url);
     }
 }
