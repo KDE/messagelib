@@ -94,7 +94,7 @@ void VerifyDataBaseUpdateTest::shouldVerifyCheckSums_data()
 
 void VerifyDataBaseUpdateTest::shouldVerifyCheckSums()
 {
-    QFETCH(const QList<WebEngineViewer::Addition>, additionList);
+    QFETCH(QList<WebEngineViewer::Addition>, additionList);
     QFETCH(int, numberOfItems);
     QFETCH(QByteArray, calculateCheckSums);
 
