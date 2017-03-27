@@ -1,0 +1,14 @@
+maintainer: mlaurent
+description: MessageViewer Library 
+tier: 3
+type: functional
+platforms:
+    - name: All
+portingAid: false
+deprecated: false
+release: false
+libraries:
+ - qmake: MessageViewer
+   cmake: "KF5::MessageViewer"
+   cmakename: KF5MessageViewer
+
