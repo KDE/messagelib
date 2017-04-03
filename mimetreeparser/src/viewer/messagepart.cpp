@@ -869,7 +869,7 @@ void SignedMessagePart::sigStatusToMetaData()
         mMetaData.sigSummary = signature.summary();
 
         if (mMetaData.isGoodSignature && !key.keyID()) {
-            // Search for the key by it's fingerprint so that we can check for
+            // Search for the key by its fingerprint so that we can check for
             // trust etc.
             QGpgME::KeyListJob *job = mCryptoProto->keyListJob(false);    // local, no sigs
             if (!job) {
@@ -891,6 +891,7 @@ void SignedMessagePart::sigStatusToMetaData()
                 } else {
                     key = found_keys[0];
                 }
+                delete job;
             }
         }
 
