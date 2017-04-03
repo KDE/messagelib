@@ -757,8 +757,9 @@ QString NodeHelper::fixEncoding(const QString &encoding)
     QString returnEncoding = encoding;
     // According to http://www.iana.org/assignments/character-sets, uppercase is
     // preferred in MIME headers
-    if (returnEncoding.toUpper().contains(QStringLiteral("ISO "))) {
-        returnEncoding = returnEncoding.toUpper();
+    const QString returnEncodingToUpper = returnEncoding.toUpper();
+    if (returnEncodingToUpper.contains(QStringLiteral("ISO "))) {
+        returnEncoding = returnEncodingToUpper;
         returnEncoding.replace(QLatin1String("ISO "), QStringLiteral("ISO-"));
     }
     return returnEncoding;
