@@ -65,9 +65,10 @@ NodeHelper::NodeHelper() :
     // is the standard for Internet, and Shift-JIS is the encoding
     // for Windows and Macintosh.
     if (mLocalCodec) {
-        if (mLocalCodec->name().toLower() == "eucjp"
+        const QByteArray codecNameLower = mLocalCodec->name().toLower();
+        if (codecNameLower == "eucjp"
 #if defined Q_OS_WIN || defined Q_OS_MACX
-                || mLocalCodec->name().toLower() == "shift-jis" // OK?
+                || codecNameLower == "shift-jis" // OK?
 #endif
            ) {
             mLocalCodec = QTextCodec::codecForName("jis7");
@@ -602,10 +603,11 @@ void NodeHelper::setBodyPartMemento(KMime::Content *node, const QByteArray &whic
     QMap<QByteArray, Interface::BodyPartMemento *> &mementos
         = mBodyPartMementoMap[persistentIndex(node)];
 
+    const QByteArray whichLower = which.toLower();
     const QMap<QByteArray, Interface::BodyPartMemento *>::iterator it =
-        mementos.lowerBound(which.toLower());
+        mementos.lowerBound(whichLower);
 
-    if (it != mementos.end() && it.key() == which.toLower()) {
+    if (it != mementos.end() && it.key() == whichLower) {
         delete it.value();
         if (memento) {
             it.value() = memento;
@@ -613,7 +615,7 @@ void NodeHelper::setBodyPartMemento(KMime::Content *node, const QByteArray &whic
             mementos.erase(it);
         }
     } else {
-        mementos.insert(which.toLower(), memento);
+        mementos.insert(whichLower, memento);
     }
 }
 
