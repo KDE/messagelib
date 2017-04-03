@@ -12,7 +12,7 @@
                         {{block.errorText|safe}}
                     {% elif block.showKeyInfos %}
                         {% if block.cannotCheckSignature %}
-                            {% i18n "Not enough information to check signature. %1" keyWithWithoutURL %}
+                            {% i18n "Not enough information to check signature. %1" block.keyWithWithoutURL %}
                         {% else %}
                             {% if not block.keyId %}
                                 {% if block.signer and block.onlyShowKeyURL %}
@@ -32,7 +32,7 @@
                                         {% endif %}
                                     {% else %}
                                         {% if block.onlyShowKeyURL %}
-                                            {% i18n_var "Message was signed with key %1." keyWithWithoutURL as signed %}
+                                            {% i18n_var "Message was signed with key %1." block.keyWithWithoutURL as signed %}
                                             {{signed|safe}}
                                         {% else %}
                                             {% i18n_var "Message was signed on %1 with key %2." block.creationTime block.keyWithWithoutURL as signed %}
