@@ -31,13 +31,14 @@ using namespace MimeTreeParser::Util;
 
 bool MimeTreeParser::Util::isTypeBlacklisted(KMime::Content *node)
 {
-    bool typeBlacklisted = node->contentType()->mediaType().toLower() == "multipart";
+    const QByteArray mediaTypeLower = node->contentType()->mediaType().toLower();
+    bool typeBlacklisted = mediaTypeLower == "multipart";
     if (!typeBlacklisted) {
         typeBlacklisted = KMime::isCryptoPart(node);
     }
     typeBlacklisted = typeBlacklisted || node == node->topLevel();
     const bool firstTextChildOfEncapsulatedMsg =
-        node->contentType()->mediaType().toLower() == "text" &&
+        mediaTypeLower == "text" &&
         node->contentType()->subType().toLower() == "plain" &&
         node->parent() && node->parent()->contentType()->mediaType().toLower() == "message";
     return  typeBlacklisted || firstTextChildOfEncapsulatedMsg;
