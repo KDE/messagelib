@@ -10,16 +10,16 @@
     <br/>
     &nbsp;<br/>
     {% if block.nImp %}
-        {% i18np "1 new certificate was imported." "%1 new certificates were imported." nImp %}
+        {% i18np "1 new certificate was imported." "%1 new certificates were imported." block.nImp %}
     {% endif %}
     {% if block.nUnc %}
-        {% i18np "1 certificate was unchanged." "%1 certificates were unchanged." nUnc %}
+        {% i18np "1 certificate was unchanged." "%1 certificates were unchanged." block.nUnc %}
     {% endif %}
     {% if block.nSKImp %}
-        {% i18np "1 new secret key was imported." "%1 new secret keys were imported." nSKImp %}
+        {% i18np "1 new secret key was imported." "%1 new secret keys were imported." block.nSKImp %}
     {% endif %}
     {% if block.nSKUnc %}
-        {% i18np "1 secret key was unchanged." "%1 secret keys were unchanged." nSKUnc %}
+        {% i18np "1 secret key was unchanged." "%1 secret keys were unchanged." block.nSKUnc %}
     {% endif %}
     <br/>
     &nbsp;<br/>
