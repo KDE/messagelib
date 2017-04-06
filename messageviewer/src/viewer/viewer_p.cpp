@@ -1872,7 +1872,8 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
                 margin = QStringLiteral("padding:2px; margin:2px; ");
             }
             QString align = headerStylePlugin()->alignment();
-            const bool result = (node->contentType()->mediaType().toLower() == "message" || node->contentType()->mediaType().toLower() == "multipart" || node == mMessage.data());
+            const QByteArray mediaTypeLower = node->contentType()->mediaType().toLower();
+            const bool result = (mediaTypeLower == "message" || mediaTypeLower == "multipart" || node == mMessage.data());
             if (result)
                 html += QStringLiteral("<div id=\"attachmentid\" style=\"background:%1; %2"
                                        "vertical-align:middle; float:%3; %4\">").arg(bgColor.name()).arg(margin).arg(align).arg(visibility);
