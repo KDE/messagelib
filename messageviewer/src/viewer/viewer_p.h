@@ -599,8 +599,9 @@ private:
     bool urlIsAMalwareButContinue();
 
     void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
-public:
+
     MimeTreeParser::NodeHelper *mNodeHelper;
+public:
     bool mHtmlMailGlobalSetting;
     bool mHtmlLoadExternalGlobalSetting;
     bool mHtmlLoadExtOverride;
