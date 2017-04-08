@@ -28,7 +28,7 @@ TemplateParserExtractHtmlInfoTest::TemplateParserExtractHtmlInfoTest(QObject *pa
 {
 }
 
-void TemplateParserExtractHtmlInfoTest::initTestcase()
+void TemplateParserExtractHtmlInfoTest::initTestCase()
 {
     qRegisterMetaType<TemplateParserExtractHtmlInfoResult>();
 }

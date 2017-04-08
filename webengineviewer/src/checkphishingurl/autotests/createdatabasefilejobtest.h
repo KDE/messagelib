@@ -29,7 +29,7 @@ public:
     explicit CreateDatabaseFileJobTest(QObject *parent = nullptr);
     ~CreateDatabaseFileJobTest();
 private Q_SLOTS:
-    void initTestcase();
+    void initTestCase();
     void shouldHaveDefaultValue();
 
     void shouldCreateFile();

@@ -49,7 +49,7 @@ CreateDatabaseFileJobTest::~CreateDatabaseFileJobTest()
 
 }
 
-void CreateDatabaseFileJobTest::initTestcase()
+void CreateDatabaseFileJobTest::initTestCase()
 {
     qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>();
     qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType>();
