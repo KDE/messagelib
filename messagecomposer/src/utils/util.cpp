@@ -141,19 +141,19 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
     case Kleo::InlineOpenPGPFormat:
     case Kleo::OpenPGPMIMEFormat:
         if (sign) {
-            content->contentType()->setMimeType(QByteArray("multipart/signed"));
+            content->contentType()->setMimeType(QByteArrayLiteral("multipart/signed"));
             content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromAscii("application/pgp-signature"));
-            content->contentType()->setParameter(QStringLiteral("micalg"), QString::fromAscii(QByteArray(QByteArray("pgp-") + hashAlgo)).toLower());
+            content->contentType()->setParameter(QStringLiteral("micalg"), QString::fromAscii(QByteArray(QByteArrayLiteral("pgp-") + hashAlgo)).toLower());
 
         } else {
-            content->contentType()->setMimeType(QByteArray("multipart/encrypted"));
+            content->contentType()->setMimeType(QByteArrayLiteral("multipart/encrypted"));
             content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromAscii("application/pgp-encrypted"));
         }
         return;
     case Kleo::SMIMEFormat:
         if (sign) {
             qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME";
-            content->contentType()->setMimeType(QByteArray("multipart/signed"));
+            content->contentType()->setMimeType(QByteArrayLiteral("multipart/signed"));
             content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromAscii("application/pkcs7-signature"));
             content->contentType()->setParameter(QStringLiteral("micalg"), QString::fromAscii(hashAlgo).toLower());
             return;
@@ -164,7 +164,7 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
     case Kleo::SMIMEOpaqueFormat:
 
         qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME/opaque";
-        content->contentType()->setMimeType(QByteArray("application/pkcs7-mime"));
+        content->contentType()->setMimeType(QByteArrayLiteral("application/pkcs7-mime"));
 
         if (sign) {
             content->contentType()->setParameter(QStringLiteral("smime-type"), QString::fromAscii("signed-data"));
@@ -180,16 +180,16 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
     switch (format) {
     case Kleo::OpenPGPMIMEFormat:
         if (sign) {
-            content->contentType()->setMimeType(QByteArray("application/pgp-signature"));
+            content->contentType()->setMimeType(QByteArrayLiteral("application/pgp-signature"));
             content->contentType()->setParameter(QStringLiteral("name"), QString::fromAscii("signature.asc"));
             content->contentDescription()->from7BitString("This is a digitally signed message part.");
         } else {
-            content->contentType()->setMimeType(QByteArray("application/octet-stream"));
+            content->contentType()->setMimeType(QByteArrayLiteral("application/octet-stream"));
         }
         return;
     case Kleo::SMIMEFormat:
         if (sign) {
-            content->contentType()->setMimeType(QByteArray("application/pkcs7-signature"));
+            content->contentType()->setMimeType(QByteArrayLiteral("application/pkcs7-signature"));
             content->contentType()->setParameter(QStringLiteral("name"), QString::fromAscii("smime.p7s"));
             return;
         }

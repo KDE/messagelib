@@ -991,7 +991,7 @@ public:
                          cryptoProto->name(),
                          QString::fromLatin1(metaData.keyId));
 
-                keyWithWithoutURL = QStringLiteral("%1%2</a>").arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArray("0x") + metaData.keyId)));
+                keyWithWithoutURL = QStringLiteral("%1%2</a>").arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArrayLiteral("0x") + metaData.keyId)));
             } else {
                 keyWithWithoutURL = QStringLiteral("0x") + QString::fromUtf8(metaData.keyId);
             }

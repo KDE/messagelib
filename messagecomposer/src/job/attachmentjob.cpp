@@ -64,7 +64,7 @@ QByteArray AttachmentJobPrivate::detectCharset(const QByteArray &data)
         return detectedEncoding;
     } else {
         qCWarning(MESSAGECOMPOSER_LOG) << "Could not autodetect charset; using UTF-8.";
-        return QByteArray("utf-8");
+        return QByteArrayLiteral("utf-8");
     }
 }
 #endif

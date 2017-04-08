@@ -36,7 +36,7 @@ void UtilTest::testSelectCharset()
         charsets << "iso-8859-1";
         charsets << "iso-8859-2"; // This one works.
         QByteArray choice = Util::selectCharset(charsets, text);
-        QCOMPARE(choice, QByteArray("iso-8859-2"));
+        QCOMPARE(choice, QByteArrayLiteral("iso-8859-2"));
     }
 
     // Pick as simple a charset as possible.
@@ -47,7 +47,7 @@ void UtilTest::testSelectCharset()
         charsets << "iso-8859-1";
         charsets << "utf-8";
         QByteArray choice = Util::selectCharset(charsets, text);
-        QCOMPARE(choice, QByteArray("us-ascii"));
+        QCOMPARE(choice, QByteArrayLiteral("us-ascii"));
     }
 
     // Return empty charset if none works.
