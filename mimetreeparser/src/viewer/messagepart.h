@@ -343,7 +343,7 @@ public:
     bool passphraseError() const;
 
     void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
-    void startDecryption(KMime::Content *data = 0);
+    void startDecryption(KMime::Content *data = nullptr);
 
     QByteArray mDecryptedData;
 

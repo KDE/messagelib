@@ -172,13 +172,13 @@ void SignJobTest::testMixedContent()
     QVERIFY(sJob);
 
     KMime::Content *content = new KMime::Content;
-    content->contentType()->setMimeType(QByteArray("multipart/mixed"));
+    content->contentType()->setMimeType(QByteArrayLiteral("multipart/mixed"));
     content->contentType()->setBoundary(KMime::multiPartBoundary());
     KMime::Content *subcontent = new KMime::Content;
-    subcontent->contentType()->setMimeType(QByteArray("text/plain"));
+    subcontent->contentType()->setMimeType(QByteArrayLiteral("text/plain"));
     subcontent->setBody(data.toUtf8());
     KMime::Content *attachment = new KMime::Content;
-    attachment->contentType()->setMimeType(QByteArray("text/plain"));
+    attachment->contentType()->setMimeType(QByteArrayLiteral("text/plain"));
     QByteArray attachmentData("an attachment");
     attachment->setBody(attachmentData);
 
@@ -200,7 +200,7 @@ void SignJobTest::testMixedContent()
     QCOMPARE(result->contents().count(), 2);
     QCOMPARE(firstChild->contents().count(), 2);
     QCOMPARE(firstChild->body(), QByteArray());
-    QCOMPARE(firstChild->contentType()->mimeType(), QByteArray("multipart/mixed"));
+    QCOMPARE(firstChild->contentType()->mimeType(), QByteArrayLiteral("multipart/mixed"));
     QCOMPARE(firstChild->contents()[0]->body(), data.toUtf8());
     QCOMPARE(firstChild->contents()[1]->body(), attachmentData);
 

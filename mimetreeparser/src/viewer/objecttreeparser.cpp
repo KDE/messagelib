@@ -344,7 +344,7 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
     Interface::MessagePart::Ptr mp;
     ProcessResult processResult(mNodeHelper);
 
-    if (node->contentType()->mimeType() == QByteArray("application/octet-stream") &&
+    if (node->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream") &&
             (node->contentType()->name().endsWith(QLatin1String("p7m")) ||
              node->contentType()->name().endsWith(QLatin1String("p7s")) ||
              node->contentType()->name().endsWith(QLatin1String("p7c"))

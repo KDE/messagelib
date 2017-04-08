@@ -395,7 +395,7 @@ IconType AttachmentMessagePart::asIcon() const
         mediaType = mNode->contentType()->mediaType();
         subType = mNode->contentType()->subType();
     }
-    const bool isTextPart = (mediaType == QByteArray("text"));
+    const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
 
     bool defaultAsIcon = true;
     if (!neverDisplayInline()) {
@@ -452,7 +452,7 @@ bool AttachmentMessagePart::isHidden() const
         mediaType = mNode->contentType()->mediaType();
         subType = mNode->contentType()->subType();
     }
-    const bool isTextPart = (mediaType == QByteArray("text"));
+    const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
 
     bool defaultAsIcon = true;
     if (!neverDisplayInline()) {

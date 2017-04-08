@@ -64,7 +64,7 @@ void AttachmentCompressJobTest::testCompress()
     QCOMPARE(zipPart->name(), QString(name + QString::fromLatin1(".zip")));
     QCOMPARE(zipPart->fileName(), QString(fileName + QString::fromLatin1(".zip")));
     QCOMPARE(zipPart->description(), description);
-    QCOMPARE(zipPart->mimeType(), QByteArray("application/zip"));
+    QCOMPARE(zipPart->mimeType(), QByteArrayLiteral("application/zip"));
 
     // Uncompress the data and verify it.
     // (Stuff below is stolen from KMail code.)
