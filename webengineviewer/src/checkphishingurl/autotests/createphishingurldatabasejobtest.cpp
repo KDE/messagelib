@@ -53,7 +53,7 @@ CreatePhishingUrlDataBaseJobTest::~CreatePhishingUrlDataBaseJobTest()
 
 }
 
-void CreatePhishingUrlDataBaseJobTest::initTestcase()
+void CreatePhishingUrlDataBaseJobTest::initTestCase()
 {
     qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>();
     qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType>();

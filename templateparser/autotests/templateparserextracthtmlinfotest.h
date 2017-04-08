@@ -29,7 +29,7 @@ public:
     explicit TemplateParserExtractHtmlInfoTest(QObject *parent = nullptr);
     ~TemplateParserExtractHtmlInfoTest() = default;
 private Q_SLOTS:
-    void initTestcase();
+    void initTestCase();
     void shouldReturnNullResult();
     void shouldReturnNullButWithTemplate();
 };

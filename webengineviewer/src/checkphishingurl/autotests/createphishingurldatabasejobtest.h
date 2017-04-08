@@ -40,7 +40,7 @@ private Q_SLOTS:
 
     void shouldParseResult_data();
     void shouldParseResult();
-    void initTestcase();
+    void initTestCase();
 
     void shouldClearUpdateDataBaseInfo();
 
