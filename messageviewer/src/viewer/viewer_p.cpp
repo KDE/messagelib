@@ -272,6 +272,9 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
     connect(&mUpdateReaderWinTimer, &QTimer::timeout,
             this, &ViewerPrivate::updateReaderWin);
 
+    connect(mNodeHelper, &MimeTreeParser::NodeHelper::update,
+            this, &ViewerPrivate::update);
+
     connect(mColorBar, &HtmlStatusBar::clicked,
             this, &ViewerPrivate::slotToggleHtmlMode);
 
