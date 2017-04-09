@@ -55,7 +55,6 @@ public:
     void scrollToAnchor(const QString &anchor);
     void scrollPageDown(int percent);
     void scrollPageUp(int percent);
-    void injectAttachments(const boost::function<QString()> &delayedHtml);
 
     void scrollToRelativePosition(qreal pos);
 
