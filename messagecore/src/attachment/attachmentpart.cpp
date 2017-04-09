@@ -228,7 +228,7 @@ qint64 AttachmentPart::size() const
 
 bool AttachmentPart::isMessageOrMessageCollection() const
 {
-    return (mimeType() == "message/rfc822") || (mimeType() == "multipart/digest");
+    return (mimeType() == QByteArrayLiteral("message/rfc822")) || (mimeType() == QByteArrayLiteral("multipart/digest"));
 }
 
 void AttachmentPart::setUrl(const QUrl &url)
