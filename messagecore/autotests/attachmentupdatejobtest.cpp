@@ -76,10 +76,12 @@ void AttachmentUpdateJobTest::shouldHaveSameNameDescriptionAfterUpdate()
     QByteArray data("This is short enough that compressing it is not efficient.");
     const QString name = QString::fromLatin1("name.txt");
     const QString description = QString::fromLatin1("description");
+    const QString filename = QString::fromLatin1("filename");
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
     origPart->setName(name);
+    origPart->setFileName(filename);
     origPart->setDescription(description);
     origPart->setMimeType("text/plain");
     origPart->setEncoding(KMime::Headers::CE7Bit);
@@ -91,6 +93,7 @@ void AttachmentUpdateJobTest::shouldHaveSameNameDescriptionAfterUpdate()
     VERIFYEXEC(job);
     QCOMPARE(origPart->name(), job->updatedPart()->name());
     QCOMPARE(origPart->description(), job->updatedPart()->description());
+    QCOMPARE(origPart->fileName(), job->updatedPart()->fileName());
 
 }
 

@@ -301,8 +301,9 @@ void AttachmentPropertiesDialog::Private::saveToPart()
         return;
     }
     mPart->setMimeType(ui->mimeType->currentText().toLatin1());
-    mPart->setName(removeNewlines(ui->name->text()));
-    // TODO what about fileName? Extra field??
+    const QString name = removeNewlines(ui->name->text());
+    mPart->setName(name);
+    mPart->setFileName(name);
     mPart->setDescription(removeNewlines(ui->description->text()));
     mPart->setInline(ui->autoDisplay->isChecked());
     mPart->setSigned(ui->sign->isChecked());

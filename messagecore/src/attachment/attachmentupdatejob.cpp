@@ -75,6 +75,7 @@ void AttachmentUpdateJob::Private::loadJobResult(KJob *job)
     AttachmentLoadJob *ajob = static_cast<AttachmentLoadJob *>(job);
     mUpdatedPart = ajob->attachmentPart();
     mUpdatedPart->setName(q->originalPart()->name());
+    mUpdatedPart->setFileName(q->originalPart()->fileName());
     mUpdatedPart->setDescription(q->originalPart()->description());
     mUpdatedPart->setSigned(q->originalPart()->isSigned());
     mUpdatedPart->setEncrypted(q->originalPart()->isEncrypted());
