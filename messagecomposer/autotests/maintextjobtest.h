@@ -26,6 +26,7 @@ class MainTextJobTest : public QObject
 {
     Q_OBJECT
 private Q_SLOTS:
+    void initTestCase();
     // "text/plain" tests:
     void testPlainText();
     void testWrappingErrors();
