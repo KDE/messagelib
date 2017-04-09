@@ -156,7 +156,7 @@ void LocalDataBaseManager::initialize()
     }
     if (!d->mDataBaseOk) {
         qCDebug(WEBENGINEVIEWER_LOG) << "Start to create database";
-        if (!QFile(databaseFullPath()).exists()) {
+        if (!QFileInfo::exists(databaseFullPath())) {
             downloadFullDataBase();
         } else {
             const uint now = QDateTime::currentDateTime().toTime_t();
