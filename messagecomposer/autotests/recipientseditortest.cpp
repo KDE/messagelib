@@ -60,6 +60,7 @@ void RecipientsEditorTest::test_addLineOnCommaPress()
 {
     MessageComposer::RecipientsEditor editor(new RecipientsLineTestFactory());
     editor.show();
+    QApplication::setActiveWindow(&editor);
     QTest::qWaitForWindowActive(&editor);
 
     QCOMPARE(editor.recipients().size(), 0);
