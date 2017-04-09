@@ -309,7 +309,9 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
 
     if (mHtmlElement.isEmpty()) {   //plain mails only
         QString htmlReplace = mOtp->plainTextContent().toHtmlEscaped();
+        qDebug() << "htmlReplace (before) =" << htmlReplace;
         htmlReplace = htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
+        qDebug() << "htmlReplace (after) =" << htmlReplace;
         mHtmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
     }
 
@@ -384,6 +386,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString str = QString::fromLocal8Bit(content.constData(), content.size());
                     plainBody.append(str);
                     const QString body = plainToHtml(str);
+                    qDebug() << body;
                     htmlBody.append(body);
                 } else if (mDebug) {
                     KMessageBox::error(
@@ -435,10 +438,12 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     if (plainQuote.endsWith(QLatin1Char('\n'))) {
                         plainQuote.chop(1);
                     }
+                    qDebug() << "plainQuote=" << plainQuote;
                     plainBody.append(plainQuote);
 
                     const QString htmlQuote =
                         quotedHtmlText(htmlMessageText(shouldStripSignature(), SelectionAllowed));
+                    qDebug() << "htmlQuote=" << htmlQuote;
                     htmlBody.append(htmlQuote);
                 }
 
@@ -551,6 +556,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     plainBody.append(plainStr);
 
                     const QString htmlStr = htmlMessageText(shouldStripSignature(), NoSelectionAllowed);
+                    qDebug() << htmlStr;
                     htmlBody.append(htmlStr);
                 }
 
@@ -1183,6 +1189,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
         htmlBody.clear();
     } else {
         makeValidHtml(htmlBody);
+        qDebug() << "AFTER makeValidHtml:" << htmlBody;
     }
     addProcessedBodyToMessage(plainBody, htmlBody);
     Q_EMIT parsingDone(mForceCursorPosition);
@@ -1231,6 +1238,8 @@ QString TemplateParserJob::getHtmlSignature() const
 void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody,
         const QString &htmlBody) const
 {
+
+    qDebug() << "htmlBody=" << htmlBody;
     MessageCore::ImageCollector ic;
     ic.collectImagesFrom(mOrigMsg.data());
 
@@ -1277,6 +1286,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody,
         }
     }
 
+    qDebug() << mainPart->encodedBody();
     mMsg->setBody(mainPart->encodedBody());
     mMsg->setHeader(mainPart->contentType());
     mMsg->setHeader(mainPart->contentTransferEncoding());
