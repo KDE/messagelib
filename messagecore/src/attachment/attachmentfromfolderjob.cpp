@@ -68,8 +68,9 @@ void AttachmentFromFolderJob::Private::compressFolder()
         return;
     }
     mZip->setCompression(mCompression);
-    mZip->writeDir(q->url().fileName(), QString(), QString(), 040755, mArchiveTime, mArchiveTime, mArchiveTime);
-    qCDebug(MESSAGECORE_LOG) << "writing root directory : " << q->url().fileName();
+    const QString filename = q->url().fileName();
+    mZip->writeDir(filename, QString(), QString(), 040755, mArchiveTime, mArchiveTime, mArchiveTime);
+    qCDebug(MESSAGECORE_LOG) << "writing root directory : " << filename;
     addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot |
               QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), fileName + QLatin1Char('/'));
     mZip->close();
@@ -105,26 +106,29 @@ void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const Q
             return;
         }
 
+        const QString infoFileName = info.fileName();
         if (info.isDir()) {
-            qCDebug(MESSAGECORE_LOG) << "adding directory " << info.fileName() << "to zip";
-            if (!mZip->writeDir(path + info.fileName(), QString(), QString(), 040755, mArchiveTime, mArchiveTime, mArchiveTime)) {
+            qCDebug(MESSAGECORE_LOG) << "adding directory " << infoFileName << "to zip";
+            if (!mZip->writeDir(path + infoFileName, QString(), QString(), 040755, mArchiveTime, mArchiveTime, mArchiveTime)) {
                 q->setError(KJob::UserDefinedError);
-                q->setErrorText(i18n("Could not add %1 to the archive", info.fileName()));
+                q->setErrorText(i18n("Could not add %1 to the archive", infoFileName));
                 q->emitResult();
+                return;
             }
             addEntity(QDir(info.filePath()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot |
-                      QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), path + info.fileName() + QLatin1Char('/'));
+                      QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), path + infoFileName + QLatin1Char('/'));
         }
 
         if (info.isFile()) {
-            qCDebug(MESSAGECORE_LOG) << "Adding file " << path + info.fileName() << "to zip";
+            qCDebug(MESSAGECORE_LOG) << "Adding file " << path + infoFileName << "to zip";
             QFile file(info.filePath());
             if (!file.open(QIODevice::ReadOnly)) {
                 q->setError(KJob::UserDefinedError);
                 q->setErrorText(i18n("Could not open %1 for reading.", file.fileName()));
                 q->emitResult();
+                return;
             }
-            if (!mZip->writeFile(path + info.fileName(), file.readAll(), archivePerms,
+            if (!mZip->writeFile(path + infoFileName, file.readAll(), archivePerms,
                                  QString(), QString(), mArchiveTime, mArchiveTime, mArchiveTime)) {
                 q->setError(KJob::UserDefinedError);
                 q->setErrorText(i18n("Could not add %1 to the archive", file.fileName()));
