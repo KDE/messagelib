@@ -41,6 +41,12 @@ TemplateParserJobTest::TemplateParserJobTest(QObject *parent)
 
 }
 
+TemplateParserJobTest::~TemplateParserJobTest()
+{
+    // Workaround QTestLib not flushing deleteLater()s on exit, which leads to WebEngine asserts (view not deleted)
+    QCoreApplication::sendPostedEvents(0, QEvent::DeferredDelete);
+}
+
 #if 0
 void TemplateParserJobTest::test_convertedHtml_data()
 {
