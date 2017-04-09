@@ -25,7 +25,7 @@
 AttachmentUpdateJobTest::AttachmentUpdateJobTest(QObject *parent)
     : QObject(parent)
 {
-
+    qputenv("KDE_FORK_SLAVES", "yes"); // To avoid a runtime dependency on klauncher
 }
 
 AttachmentUpdateJobTest::~AttachmentUpdateJobTest()
