@@ -85,7 +85,7 @@ private:
 public:
     virtual ~PluginLoader()
     {
-        mSelf = 0;
+        mSelf = nullptr;
     }
 
     /** Returns the single instance of this loader. */

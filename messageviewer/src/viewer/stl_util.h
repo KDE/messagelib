@@ -40,7 +40,7 @@ struct DeleteAndSetToZero {
     void operator()(const T *&t)
     {
         delete t;
-        t = 0;
+        t = nullptr;
     }
 };
 
