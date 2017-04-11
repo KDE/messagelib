@@ -225,7 +225,7 @@ QString sigStatusToString(const QGpgME::Protocol *cryptProto,
             QString result2;
             if (summary & GpgME::Signature::KeyExpired) {
                 // still is green!
-                result2 += i18n("One key has expired.");
+                result2 = i18n("One key has expired.");
             }
             if (summary & GpgME::Signature::SigExpired) {
                 // and still is green!
