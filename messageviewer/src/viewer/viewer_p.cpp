@@ -41,6 +41,7 @@
 #include "job/attachmenteditjob.h"
 #include "job/modifymessagedisplayformatjob.h"
 #include "config-messageviewer.h"
+#include "webengine/mailwebenginescript.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <WebEngineViewer/WebEnginePrintMessageBox>
 #include <KContacts/VCardConverter>
@@ -900,6 +901,11 @@ void ViewerPrivate::displayMessage()
     connect(mViewer, &MailWebEngineView::loadStarted, this, &ViewerPrivate::slotLoadStarted, Qt::UniqueConnection);
     connect(mViewer, &MailWebEngineView::loadFinished, this, &ViewerPrivate::executeCustomScriptsAfterLoading, Qt::UniqueConnection);
     connect(mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotMessageRendered, Qt::UniqueConnection);
+
+    const QString html = attachmentInjectionHtml();
+    const QString js = html.isEmpty() ? QString() : MessageViewer::MailWebEngineScript::injectAttachments(html, QStringLiteral("attachmentInjectionPoint"));
+    mViewer->addScript(js, QStringLiteral("attachment_injection"), QWebEngineScript::DocumentReady);
+
     htmlWriter()->flush();
 }
 
@@ -1862,11 +1868,6 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
     if (child) {
         QString subHtml = renderAttachments(child, nextColor(bgColor));
         if (!subHtml.isEmpty()) {
-            QString visibility;
-            if (!mShowAttachmentQuicklist) {
-                visibility = QStringLiteral("display:none;");
-            }
-
             QString margin;
             if (node != mMessage.data() || headerStylePlugin()->hasMargin()) {
                 margin = QStringLiteral("padding:2px; margin:2px; ");
@@ -1875,8 +1876,8 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             const QByteArray mediaTypeLower = node->contentType()->mediaType().toLower();
             const bool result = (mediaTypeLower == "message" || mediaTypeLower == "multipart" || node == mMessage.data());
             if (result)
-                html += QStringLiteral("<div id=\"attachmentid\" style=\"background:%1; %2"
-                                       "vertical-align:middle; float:%3; %4\">").arg(bgColor.name()).arg(margin).arg(align).arg(visibility);
+                html += QStringLiteral("<div style=\"background:%1; %2"
+                                       "vertical-align:middle; float:%3;\">").arg(bgColor.name()).arg(margin).arg(align);
             html += subHtml;
             if (result) {
                 html += QLatin1String("</div>");
@@ -2388,6 +2389,9 @@ QString ViewerPrivate::attachmentInjectionHtml()
         return QString();
     }
 
+    const QString listVisibility = !mShowAttachmentQuicklist ? QStringLiteral("style=\"display:none;\"") : QString();
+    html = QStringLiteral("<div id=\"attachmentlist\" %1>").arg(listVisibility) + html + QStringLiteral("</div>");
+
     const QString urlHandleShow = QStringLiteral("kmail:showAttachmentQuicklist");
     const QString imgSrcShow = QStringLiteral("quicklistClosed.png");
     const QString urlHandleHide = QStringLiteral("kmail:hideAttachmentQuicklist");
@@ -2426,7 +2430,6 @@ void ViewerPrivate::executeCustomScriptsAfterLoading()
     // inject attachments in header view
     // we have to do that after the otp has run so we also see encrypted parts
 
-    mViewer->injectAttachments(bind(&ViewerPrivate::attachmentInjectionHtml, this));
     toggleFullAddressList();
     mViewer->scrollToRelativePosition(mViewer->relativePosition());
     mViewer->clearRelativePosition();

@@ -98,7 +98,7 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type
 void WebEngineViewer::WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID)
 {
     Q_UNUSED(level);
-    Q_UNUSED(lineNumber);
     Q_UNUSED(sourceID);
+    qDebug() << lineNumber << ":" << message;
     Q_EMIT showConsoleMessage(message);
 }

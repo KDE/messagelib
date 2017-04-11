@@ -1,10 +1,10 @@
 qt.jQuery('#kmailshowattachment').click(function(){ 
 qt.jQuery('#kmailshowattachment').hide();  
 qt.jQuery("#kmailhideattachment").show(); 
-qt.jQuery("#attachmentid").hide()}
+qt.jQuery("#attachmentlist").hide()}
 );
 qt.jQuery('#kmailhideattachment').click(function(){
 qt.jQuery("#kmailhideattachment").hide(); 
 qt.jQuery("#kmailshowattachment").show(); 
-qt.jQuery("#attachmentid").show()}
+qt.jQuery("#attachmentlist").show()}
 );

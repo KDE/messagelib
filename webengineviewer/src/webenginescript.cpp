@@ -179,13 +179,9 @@ QString WebEngineScript::scrollToRelativePosition(qreal pos)
 QString WebEngineScript::isScrolledToBottom()
 {
     return QString::fromLatin1("(function() { "
-                               "var isAtBottom = 0;"
-                               "if (qt.jQuery(window).scrollTop() + qt.jQuery(window).height() == qt.jQuery(document).height())"
-                               "{ "
-                               "  isAtBottom = 1;"
-                               "} else {"
-                               "  isAtBottom = 0;"
-                               "}"
+                               "var docElement = document.documentElement;"
+                               "var viewportHeight = docElement.clientHeight;"
+                               "var isAtBottom = document.body.scrollTop + viewportHeight >= document.body.scrollHeight;"
                                "return Boolean(isAtBottom); "
                                "}());");
 }

@@ -373,15 +373,6 @@ void MailWebEngineView::executeHideShowAttachmentsScripts(bool hide)
     runJavaScriptInWordId(source);
 }
 
-void MailWebEngineView::injectAttachments(const boost::function<QString()> &delayedHtml)
-{
-    const QString html = delayedHtml();
-    if (html.isEmpty()) {
-        return;
-    }
-    runJavaScriptInWordId(MessageViewer::MailWebEngineScript::injectAttachments(html, QStringLiteral("attachmentInjectionPoint")));
-}
-
 void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml)
 {
     const QString html = delayedHtml();
