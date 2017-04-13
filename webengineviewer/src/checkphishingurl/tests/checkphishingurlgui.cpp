@@ -81,7 +81,7 @@ void CheckPhishingUrlGui::slotJSonDebug(const QByteArray &debug)
     mJson->setPlainText(QString::fromLatin1(debug));
 }
 
-void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result, const QUrl &url, double cacheDuration)
+void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus result, const QUrl &url, uint verifyCacheAfterThisTime)
 {
     QString resultStr;
     switch (result) {
@@ -101,7 +101,7 @@ void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::U
         resultStr = QStringLiteral("Invalid Url");
         break;
     }
-    const QString str = QStringLiteral("\nurl: %1, duration: %2").arg(url.toDisplayString()).arg(cacheDuration);
+    const QString str = QStringLiteral("\nurl: %1, verifyCacheAfterThisTime: %2").arg(url.toDisplayString()).arg(verifyCacheAfterThisTime);
     mResult->setPlainText(resultStr + str);
 }
 
