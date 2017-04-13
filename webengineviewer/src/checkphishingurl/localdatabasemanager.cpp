@@ -159,7 +159,7 @@ void LocalDataBaseManager::initialize()
         if (!QFileInfo::exists(databaseFullPath())) {
             downloadFullDataBase();
         } else {
-            const uint now = QDateTime::currentDateTime().toTime_t();
+            const uint now = QDateTime::currentDateTimeUtc().toTime_t();
             //qDebug() << " now "<< now << " d->mSecondToStartRefreshing "<<d->mSecondToStartRefreshing << " now > d->mSecondToStartRefreshing" << (now > d->mSecondToStartRefreshing);
             if ((d->mSecondToStartRefreshing != 0) && (d->mSecondToStartRefreshing > now)) {
                 qCWarning(WEBENGINEVIEWER_LOG) << " It's not necessary to check database now";
@@ -176,7 +176,7 @@ void LocalDataBaseManager::initialize()
 
 void LocalDataBaseManager::slotCheckDataBase()
 {
-    const uint now = QDateTime::currentDateTime().toTime_t();
+    const uint now = QDateTime::currentDateTimeUtc().toTime_t();
     if (d->mDataBaseOk && !d->mDownloadProgress && (d->mSecondToStartRefreshing < now)) {
         downloadPartialDataBase();
     }

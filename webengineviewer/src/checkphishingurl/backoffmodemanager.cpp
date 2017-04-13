@@ -96,7 +96,7 @@ void BackOffModeManagerPrivate::load()
     isInOffMode = grp.readEntry("Enabled", false);
     if (isInOffMode) {
         const uint delay = grp.readEntry("Delay", 0);
-        const uint now = QDateTime::currentDateTime().toTime_t();
+        const uint now = QDateTime::currentDateTimeUtc().toTime_t();
         if (delay > now) {
             const int diff = (delay - now);
             updateTimer(diff);

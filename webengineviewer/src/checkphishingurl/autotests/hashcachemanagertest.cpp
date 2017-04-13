@@ -43,9 +43,9 @@ void HashCacheManagerTest::shouldBeUnknowByDefault()
 void HashCacheManagerTest::shouldAddValue_data()
 {
     QTest::addColumn<QByteArray>("hash");
-    QTest::addColumn<double>("seconds");
+    QTest::addColumn<uint>("seconds");
     QTest::addColumn<WebEngineViewer::HashCacheManager::UrlStatus>("status");
-    double currentValue = QDateTime::currentDateTime().toTime_t();
+    uint currentValue = QDateTime::currentDateTimeUtc().toTime_t();
     QTest::newRow("valid") << QByteArrayLiteral("foo") << (currentValue + 2000) << WebEngineViewer::HashCacheManager::UrlOk;
     QTest::newRow("malware1validcache") << QByteArrayLiteral("bla") << (currentValue + 2000) << WebEngineViewer::HashCacheManager::MalWare;
     QTest::newRow("malware1invalidcache") << QByteArrayLiteral("blu") << (currentValue - 2000) << WebEngineViewer::HashCacheManager::Unknown;
@@ -54,7 +54,7 @@ void HashCacheManagerTest::shouldAddValue_data()
 void HashCacheManagerTest::shouldAddValue()
 {
     QFETCH(QByteArray, hash);
-    QFETCH(double, seconds);
+    QFETCH(uint, seconds);
     QFETCH(WebEngineViewer::HashCacheManager::UrlStatus, status);
 
     WebEngineViewer::HashCacheManager cache;

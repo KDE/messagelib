@@ -46,9 +46,9 @@ void CheckPhishingUrlCacheTest::shouldAddValue_data()
 {
     QTest::addColumn<QUrl>("url");
     QTest::addColumn<bool>("validurl");
-    QTest::addColumn<double>("seconds");
+    QTest::addColumn<uint>("seconds");
     QTest::addColumn<WebEngineViewer::CheckPhishingUrlCache::UrlStatus>("status");
-    double currentValue = QDateTime::currentDateTime().toTime_t();
+    uint currentValue = QDateTime::currentDateTimeUtc().toTime_t();
     QTest::newRow("valid") << QUrl(QStringLiteral("http://www.kde.org")) << true << currentValue << WebEngineViewer::CheckPhishingUrlCache::UrlOk;
     QTest::newRow("malware1validcache") << QUrl(QStringLiteral("http://www.kde.org")) << false << (currentValue + 2000) << WebEngineViewer::CheckPhishingUrlCache::MalWare;
     QTest::newRow("malware1invalidcache") << QUrl(QStringLiteral("http://www.kde.org")) << false << (currentValue - 2000) << WebEngineViewer::CheckPhishingUrlCache::Unknown;
@@ -58,7 +58,7 @@ void CheckPhishingUrlCacheTest::shouldAddValue()
 {
     QFETCH(QUrl, url);
     QFETCH(bool, validurl);
-    QFETCH(double, seconds);
+    QFETCH(uint, seconds);
     QFETCH(WebEngineViewer::CheckPhishingUrlCache::UrlStatus, status);
 
     WebEngineViewer::CheckPhishingUrlCache cache;
@@ -72,7 +72,7 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
     WebEngineViewer::CheckPhishingUrlCache cache;
     QUrl url = QUrl(QStringLiteral("http://www.kde.org"));
 
-    double currentValue = QDateTime::currentDateTime().toTime_t();
+    uint currentValue = QDateTime::currentDateTimeUtc().toTime_t();
     cache.addCheckingUrlResult(url, false, currentValue + 2000);
 
     //Add malware
