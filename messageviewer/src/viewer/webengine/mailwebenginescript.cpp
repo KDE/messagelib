@@ -24,7 +24,7 @@ using namespace MessageViewer;
 
 static QString checkJQuery(const char *scriptName)
 {
-    return QStringLiteral("if (!qt) { console.warn(\"%1 executed too early, 'qt' variable unknown\"); };").arg(QString::fromLatin1(scriptName));
+    return QStringLiteral("if (!qt) { console.warn(\"%1 executed too early, 'qt' variable unknown\"); };\n").arg(QString::fromLatin1(scriptName));
 }
 
 QString MailWebEngineScript::createShowHideAddressScript(const QString &field, bool hide)
@@ -72,7 +72,7 @@ QString MailWebEngineScript::manageShowHideAttachments(bool hide)
 QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
 {
     const QString source = checkJQuery("injectAttachments") + QString::fromLatin1(
-            "if (!document.getElementById('%1')) { console.warn('NOT FOUND: %1'); };"
+            "if (!document.getElementById('%1')) { console.warn('NOT FOUND: %1'); };\n"
             "qt.jQuery('#%1').append('%2')").arg(elementStr, delayedHtml);
     return source;
 }
