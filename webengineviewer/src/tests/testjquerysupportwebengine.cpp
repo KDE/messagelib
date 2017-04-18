@@ -90,12 +90,8 @@ void TestJQuerySupportWebEngine::slotExecuteQuery()
 {
     const QString code = mEditor->toPlainText();
     if (!code.isEmpty()) {
-#if QT_VERSION >= 0x050700
         pageView->page()->runJavaScript(code, WebEngineViewer::WebEngineManageScript::scriptWordId(),
                                         invoke(this, &TestJQuerySupportWebEngine::handleResultScript));
-#else
-        pageView->page()->runJavaScript(code);
-#endif
     }
 }
 

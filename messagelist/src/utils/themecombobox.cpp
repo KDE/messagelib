@@ -20,7 +20,7 @@
 
 #include "utils/themecombobox.h"
 #include "utils/themecombobox_p.h"
-#include "helper_p.h"
+
 #include "storagemodel.h"
 #include "core/manager.h"
 #include "core/theme.h"

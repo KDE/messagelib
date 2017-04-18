@@ -21,7 +21,7 @@
 #include "viewerpluginmanager.h"
 #include "viewerplugin.h"
 #include "viewerplugininterface.h"
-#include "utils/helper_p.h"
+
 
 #include <QVector>
 

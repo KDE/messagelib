@@ -20,7 +20,7 @@
 */
 
 #include "distributionlistdialog.h"
-#include "helper/helper_p.h"
+
 #include <AkonadiWidgets/collectiondialog.h>
 #include <Akonadi/Contact/ContactGroupSearchJob>
 #include <Akonadi/Contact/ContactSearchJob>

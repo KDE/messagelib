@@ -20,7 +20,7 @@
 #include "headerstyle.h"
 #include "headerstyleinterface.h"
 #include "headerstyleplugin.h"
-#include "utils/helper_p.h"
+
 #include <KActionMenu>
 #include <QAction>
 #include <KToggleAction>

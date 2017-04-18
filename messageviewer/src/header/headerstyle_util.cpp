@@ -24,7 +24,7 @@
 #include "kxface.h"
 
 #include "header/headerstyle.h"
-#include "utils/helper_p.h"
+
 #include "utils/iconnamecache.h"
 #include "settings/messageviewersettings.h"
 

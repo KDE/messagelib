@@ -17,7 +17,7 @@
 */
 
 #include "pane.h"
-#include "helper_p.h"
+
 
 #include <KActionCollection>
 #include <KActionMenu>

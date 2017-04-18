@@ -20,7 +20,7 @@
 */
 
 #include "composer.h"
-#include "helper_p.h"
+
 
 #include "job/attachmentjob.h"
 #include "part/globalpart.h"

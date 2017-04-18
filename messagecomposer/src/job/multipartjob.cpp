@@ -19,7 +19,7 @@
 
 #include "job/multipartjob.h"
 #include "contentjobbase_p.h"
-#include "helper/helper_p.h"
+
 
 #include "messagecomposer_debug.h"
 

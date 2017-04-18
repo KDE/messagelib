@@ -21,7 +21,7 @@
  */
 
 #include "aliasesexpandjob.h"
-#include "helper/helper_p.h"
+
 #include "distributionlistexpandjob.h"
 
 #include <Akonadi/Contact/ContactSearchJob>

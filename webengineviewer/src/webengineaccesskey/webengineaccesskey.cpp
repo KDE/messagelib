@@ -21,7 +21,7 @@
 #include "webengineaccesskeyanchor.h"
 #include "webengineaccesskeyutils.h"
 #include "webenginemanagescript.h"
-#include "helper_p.h"
+
 
 #include <KActionCollection>
 #include <QKeyEvent>
@@ -363,12 +363,8 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
 void WebEngineAccessKey::showAccessKeys()
 {
     d->mAccessKeyActivated = WebEngineAccessKeyPrivate::Activated;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     d->mWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineAccessKeyUtils::script(),
                                          WebEngineManageScript::scriptWordId(),
                                          invoke(this, &WebEngineAccessKey::handleSearchAccessKey));
-#else
-    d->mWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineAccessKeyUtils::script(), invoke(this, &WebEngineAccessKey::handleSearchAccessKey));
-#endif
 }
 

@@ -48,8 +48,6 @@ public:
     void embedPart(const QByteArray &contentId, const QString &url) Q_DECL_OVERRIDE;
     void extraHead(const QString &str) Q_DECL_OVERRIDE;
 
-    static QString removeJscripts(QString str);
-
 Q_SIGNALS:
     void finished();
 

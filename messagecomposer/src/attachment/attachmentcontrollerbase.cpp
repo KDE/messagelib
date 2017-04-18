@@ -22,7 +22,7 @@
 
 #include "attachmentcontrollerbase.h"
 
-#include "helper/helper_p.h"
+
 
 #include <MessageComposer/AttachmentModel>
 #include "MessageComposer/AttachmentJob"

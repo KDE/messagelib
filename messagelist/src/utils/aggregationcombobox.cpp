@@ -18,7 +18,7 @@
 */
 #include "aggregationcombobox.h"
 #include "aggregationcombobox_p.h"
-#include "helper_p.h"
+
 
 #include "core/aggregation.h"
 #include "core/manager.h"

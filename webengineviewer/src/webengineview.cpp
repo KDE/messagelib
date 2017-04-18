@@ -198,9 +198,7 @@ void WebEngineView::clearRelativePosition()
 
 void WebEngineView::saveRelativePosition()
 {
-#if QT_VERSION >= 0x050700
     d->mSavedRelativePosition = page()->scrollPosition().toPoint().y();
-#endif
 }
 
 qreal WebEngineView::relativePosition() const

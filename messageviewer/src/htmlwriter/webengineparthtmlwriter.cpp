@@ -61,9 +61,6 @@ void WebEnginePartHtmlWriter::end()
         insertExtraHead();
         mExtraHead.clear();
     }
-#if QT_VERSION < QT_VERSION_CHECK(5, 7, 0)
-    mHtml = removeJscripts(mHtml);
-#endif
     mHtmlView->setHtml(mHtml, QUrl(QStringLiteral("file:///")));
     mHtmlView->show();
     mHtml.clear();
@@ -72,35 +69,6 @@ void WebEnginePartHtmlWriter::end()
     mHtmlView->update();
     mState = Ended;
     Q_EMIT finished();
-}
-
-QString WebEnginePartHtmlWriter::removeJscripts(QString str)
-{
-    //Remove regular <script>...</script>
-    const QRegularExpression regScript(QStringLiteral("<script[^>]*>.*?</script\\s*>"), QRegularExpression::CaseInsensitiveOption);
-    str.remove(regScript);
-    //Remove string as <script src=http://.../>
-    const QRegularExpression regScript2(QStringLiteral("<script[^>]*/>"), QRegularExpression::CaseInsensitiveOption);
-    str.remove(regScript2);
-    //Multiline script
-    const QRegularExpression regScriptStart(QStringLiteral("<script[^>]*>"), QRegularExpression::CaseInsensitiveOption);
-    const QRegularExpression regScriptEnd(QStringLiteral("</script\\s*>"), QRegularExpression::CaseInsensitiveOption);
-    int indexStartScriptFound = -1;
-    int indexEndScriptFound = -1;
-    int scriptIndexPos = 0;
-    QRegularExpressionMatch matchScriptStart;
-    QRegularExpressionMatch matchScriptEnd;
-    while ((indexStartScriptFound = str.indexOf(regScriptStart, scriptIndexPos, &matchScriptStart)) != -1) {
-        indexEndScriptFound = str.indexOf(regScriptEnd, indexStartScriptFound + matchScriptStart.capturedLength(), &matchScriptEnd);
-        if (indexEndScriptFound != -1) {
-            str.remove(indexStartScriptFound, (indexEndScriptFound + matchScriptEnd.capturedLength() - indexStartScriptFound));
-        } else {
-            qCWarning(MESSAGEVIEWER_LOG) << "no end script tag";
-            break;
-        }
-        scriptIndexPos = indexStartScriptFound;
-    }
-    return str;
 }
 
 void WebEnginePartHtmlWriter::reset()

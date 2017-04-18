@@ -76,20 +76,12 @@ void TestMailWebEngine::slotOpenUrl(const QUrl &url)
 
 void TestMailWebEngine::slotScrollDown()
 {
-#if QT_VERSION >= 0x050700
     mTestWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollDown(10), WebEngineViewer::WebEngineManageScript::scriptWordId());
-#else
-    mTestWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollDown(10));
-#endif
 }
 
 void TestMailWebEngine::slotScrollUp()
 {
-#if QT_VERSION >= 0x050700
     mTestWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollUp(10), WebEngineViewer::WebEngineManageScript::scriptWordId());
-#else
-    mTestWebEngine->page()->runJavaScript(WebEngineViewer::WebEngineScript::scrollUp(10));
-#endif
 }
 
 void TestMailWebEngine::slotZoomDown()

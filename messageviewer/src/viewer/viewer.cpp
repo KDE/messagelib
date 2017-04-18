@@ -653,11 +653,7 @@ QList<QAction *> Viewer::interceptorUrlActions(const WebEngineViewer::WebHitTest
 void Viewer::runJavaScript(const QString &code)
 {
     Q_D(Viewer);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     d->mViewer->page()->runJavaScript(code, WebEngineViewer::WebEngineManageScript::scriptWordId());
-#else
-    d->mViewer->page()->runJavaScript(code);
-#endif
 }
 
 void Viewer::setPrintElementBackground(bool printElementBackground)

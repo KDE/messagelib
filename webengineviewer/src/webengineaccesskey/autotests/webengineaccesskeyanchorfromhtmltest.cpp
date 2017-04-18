@@ -75,13 +75,9 @@ void TestWebEngineAccessKey::handleSearchAccessKey(const QVariant &var)
 void TestWebEngineAccessKey::loadFinished(bool b)
 {
     Q_UNUSED(b);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     mEngineView->page()->runJavaScript(WebEngineViewer::WebEngineAccessKeyUtils::script(),
                                        WebEngineViewer::WebEngineManageScript::scriptWordId(),
                                        invoke(this, &TestWebEngineAccessKey::handleSearchAccessKey));
-#else
-    mEngineView->page()->runJavaScript(WebEngineViewer::WebEngineAccessKeyUtils::script(), invoke(this, &TestWebEngineAccessKey::handleSearchAccessKey));
-#endif
 }
 
 Q_DECLARE_METATYPE(QVector<WebEngineViewer::WebEngineAccessKeyAnchor>)

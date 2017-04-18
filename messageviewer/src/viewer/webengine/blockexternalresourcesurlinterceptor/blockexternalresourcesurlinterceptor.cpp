@@ -48,10 +48,8 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeSharedWorker ||
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeWorker ||
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeSubResource ||
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
             resourceType == QWebEngineUrlRequestInfo::ResourceTypePluginResource ||
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeCspReport ||
-#endif
             resourceType == QWebEngineUrlRequestInfo::ResourceTypeUnknown) {
         return true;
     } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeFormSubmitted) {

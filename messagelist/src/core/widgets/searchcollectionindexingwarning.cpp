@@ -19,7 +19,7 @@
 
 #include "searchcollectionindexingwarning.h"
 #include "messagelist_debug.h"
-#include "helper_p.h"
+
 
 #include <AkonadiCore/persistentsearchattribute.h>
 #include <AkonadiCore/collectionfetchjob.h>

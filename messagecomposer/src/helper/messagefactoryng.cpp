@@ -24,7 +24,7 @@
 #include "messagefactoryforwardjob.h"
 #include "messagefactoryreplyjob.h"
 #include "MessageComposer/Util"
-#include "helper/helper_p.h"
+
 
 #include <AkonadiCore/item.h>
 #ifndef QT_NO_CURSOR

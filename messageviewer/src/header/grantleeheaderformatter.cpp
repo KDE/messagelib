@@ -23,7 +23,7 @@
 #include "settings/messageviewersettings.h"
 #include "utils/iconnamecache.h"
 #include "config-messageviewer.h"
-#include "utils/helper_p.h"
+
 
 #include <MessageCore/StringUtil>
 

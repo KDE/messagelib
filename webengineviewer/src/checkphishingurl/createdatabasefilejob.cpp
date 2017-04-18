@@ -22,7 +22,7 @@
 #include "webengineviewer_debug.h"
 #include "localdatabasefile.h"
 #include "riceencodingdecoder.h"
-#include "helper_p.h"
+
 #include <QFileInfo>
 #include <QCryptographicHash>
 

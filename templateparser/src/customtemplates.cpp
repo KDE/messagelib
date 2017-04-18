@@ -22,7 +22,7 @@
 #include "globalsettings_templateparser.h"
 #include "ui_customtemplates_base.h"
 #include "kpimtextedit/plaintexteditor.h"
-#include "helper_p.h"
+
 
 #include <KIconLoader>
 #include <KLocalizedString>

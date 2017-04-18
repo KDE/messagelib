@@ -16,7 +16,7 @@
 */
 
 #include "searchlinestatus.h"
-#include "helper_p.h"
+
 #include <KLocalizedString>
 #include <QAction>
 #include <QStandardPaths>

@@ -20,7 +20,7 @@
 
 #include "core/filter.h"
 #include "core/messageitem.h"
-#include "helper_p.h"
+
 
 #include <AkonadiSearch/PIM/emailquery.h>
 #include <AkonadiSearch/PIM/resultiterator.h>

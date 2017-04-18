@@ -22,7 +22,7 @@
  */
 
 #include "job/emailaddressresolvejob.h"
-#include "helper/helper_p.h"
+
 #include "aliasesexpandjob.h"
 #include "settings/messagecomposersettings.h"
 

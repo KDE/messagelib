@@ -114,13 +114,9 @@ WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
 
     const QString &js = source.arg(pos.x()).arg(pos.y());
     d->m_pageUrl = page->url();
-#if QT_VERSION >= 0x050700
     page->runJavaScript(js,
                         WebEngineViewer::WebEngineManageScript::scriptWordId(),
                         invoke(this, &WebHitTest::handleHitTest));
-#else
-    page->runJavaScript(js, invoke(this, &WebHitTest::handleHitTest));
-#endif
 }
 
 WebHitTest::~WebHitTest()

@@ -23,7 +23,7 @@
 
 #include "utils/util.h"
 #include "util_p.h"
-#include "helper/helper_p.h"
+
 
 #include "composer/composer.h"
 #include "job/singlepartjob.h"

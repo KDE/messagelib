@@ -62,9 +62,7 @@ WebEnginePage::~WebEnginePage()
 
 void WebEnginePage::init()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     connect(profile(), &QWebEngineProfile::downloadRequested, this, &WebEnginePage::saveHtml);
-#endif
 }
 
 WebEngineViewer::WebHitTest *WebEnginePage::hitTestContent(const QPoint &pos)
@@ -74,16 +72,12 @@ WebEngineViewer::WebHitTest *WebEnginePage::hitTestContent(const QPoint &pos)
 
 void WebEnginePage::saveHtml(QWebEngineDownloadItem *download)
 {
-#if QT_VERSION >= 0x050700
     const QString fileName = QFileDialog::getSaveFileName(view(), i18n("Save HTML Page"));
     if (!fileName.isEmpty()) {
         download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
         download->setPath(fileName);
         download->accept();
     }
-#else
-    Q_UNUSED(download);
-#endif
 }
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)

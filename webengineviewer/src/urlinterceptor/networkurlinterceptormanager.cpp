@@ -20,7 +20,7 @@
 #include "networkpluginurlinterceptorinterface.h"
 #include "networkurlinterceptormanager.h"
 #include "networkurlinterceptorpluginmanager.h"
-#include "helper_p.h"
+
 
 #include <WebEngineViewer/WebHitTestResult>
 

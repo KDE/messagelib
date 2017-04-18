@@ -109,9 +109,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mNetworkAccessManager->addInterceptor(blockExternalUrl);
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
-#if QT_VERSION >= 0x050700
     connect(page(), &QWebEnginePage::scrollPositionChanged, d->mWebViewAccessKey, &WebEngineViewer::WebEngineAccessKey::hideAccessKeys);
-#endif
     initializeScripts();
 }
 
@@ -289,13 +287,9 @@ void MailWebEngineView::hideAccessKeys()
 
 void MailWebEngineView::isScrolledToBottom()
 {
-#if QT_VERSION >= 0x050700
     page()->runJavaScript(WebEngineViewer::WebEngineScript::isScrolledToBottom(),
                           WebEngineViewer::WebEngineManageScript::scriptWordId(),
                           invoke(this, &MailWebEngineView::handleIsScrolledToBottom));
-#else
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::isScrolledToBottom(), invoke(this, &MailWebEngineView::handleIsScrolledToBottom));
-#endif
 }
 
 void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)

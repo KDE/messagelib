@@ -46,11 +46,9 @@ void MessageFactoryReplyJob::start()
     parser->setIdentityManager(mIdentityManager);
     parser->setCharsets(MessageComposerSettings::self()->preferredCharsets());
     parser->setWordWrap(MessageComposerSettings::wordWrap(), MessageComposerSettings::lineWrapWidth());
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 1)
     if (MessageComposer::MessageComposerSettings::quoteSelectionOnly()) {
         parser->setSelection(mSelection);
     }
-#endif
     parser->setAllowDecryption(true);
     if (!mTemplate.isEmpty()) {
         parser->process(mTemplate, mOrigMsg);

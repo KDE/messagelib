@@ -18,7 +18,7 @@
 */
 
 #include "searchfullhashjob.h"
-#include "helper_p.h"
+
 
 #include "checkphishingurlutil.h"
 #include <QNetworkAccessManager>

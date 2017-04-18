@@ -20,7 +20,7 @@
 #include "networkpluginurlinterceptorinterface.h"
 #include "networkurlinterceptor.h"
 #include "webengineviewer_debug.h"
-#include "helper_p.h"
+
 
 #include <QVector>
 

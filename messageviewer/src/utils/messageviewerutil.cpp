@@ -44,7 +44,7 @@
 #include "MessageCore/MessageCoreSettings"
 #include "MessageCore/NodeHelper"
 #include "MessageCore/StringUtil"
-#include "utils/helper_p.h"
+
 
 #include "PimCommon/RenameFileDialog"
 
