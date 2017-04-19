@@ -126,11 +126,7 @@ void MailWebEngineView::setLinkHovered(const QUrl &url)
 
 void MailWebEngineView::runJavaScriptInWordId(const QString &script)
 {
-#if QT_VERSION >= 0x050700
     page()->runJavaScript(script, WebEngineViewer::WebEngineManageScript::scriptWordId());
-#else
-    page()->runJavaScript(script);
-#endif
 }
 
 void MailWebEngineView::setViewer(MessageViewer::ViewerPrivate *viewer)
