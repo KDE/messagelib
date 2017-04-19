@@ -70,6 +70,7 @@
 #include <QWidget>
 #include <QDBusConnectionInterface>
 #include <QActionGroup>
+#include <QDesktopServices>
 
 using namespace MessageViewer;
 
@@ -96,9 +97,6 @@ bool Util::checkOverwrite(const QUrl &url, QWidget *w)
     return true;
 }
 
-#if defined Q_OS_WIN || defined Q_OS_MACX
-#include <QDesktopServices>
-#endif
 
 bool Util::handleUrlWithQDesktopServices(const QUrl &url)
 {
@@ -106,7 +104,11 @@ bool Util::handleUrlWithQDesktopServices(const QUrl &url)
     QDesktopServices::openUrl(url);
     return true;
 #else
-    Q_UNUSED(url);
+    // Always handle help through khelpcenter or browser
+    if (url.scheme() == QLatin1String("help")) {
+        QDesktopServices::openUrl(url);
+        return true;
+    }
     return false;
 #endif
 }
