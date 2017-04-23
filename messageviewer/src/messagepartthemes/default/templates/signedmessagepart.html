@@ -12,7 +12,8 @@
                         {{block.errorText|safe}}
                     {% elif block.showKeyInfos %}
                         {% if block.cannotCheckSignature %}
-                            {% i18n "Not enough information to check signature. " %} {{block.keyWithWithoutURL|safe}}
+                            {% i18n_var "Not enough information to check signature. %1" block.keyWithWithoutURL as signed %}
+                            {{signed|safe}}
                         {% else %}
                             {% if not block.keyId %}
                                 {% if block.signer and block.onlyShowKeyURL %}
