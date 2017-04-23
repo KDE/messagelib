@@ -407,7 +407,7 @@ void Widget::viewDropEvent(QDropEvent *e)
         return;
     }
 
-    QList<QUrl> urls = e->mimeData()->urls();
+    const QList<QUrl> urls = e->mimeData()->urls();
     if (urls.isEmpty()) {
         qCWarning(MESSAGELIST_LOG) << "Could not decode drag data!";
         e->ignore();
@@ -453,7 +453,7 @@ void Widget::viewDropEvent(QDropEvent *e)
     Collection target = collections.at(0);
     Item::List items;
     items.reserve(urls.count());
-    foreach (const QUrl &url, urls) {
+    for (const QUrl &url : qAsConst(urls)) {
         items << Item::fromUrl(url);
     }
 
@@ -479,7 +479,7 @@ void Widget::viewStartDragRequest()
 
     bool readOnly = false;
 
-    foreach (const Collection &c, collections) {
+    for (const Collection &c : qAsConst(collections)) {
         // We won't be able to remove items from this collection
         if ((c.rights() & Collection::CanDeleteItem) == 0) {
             // So the drag will be read-only
@@ -527,10 +527,10 @@ void Widget::viewStartDragRequest()
 Item::List Widget::Private::selectionAsItems() const
 {
     Item::List res;
-    QList<Core::MessageItem *> selection = q->view()->selectionAsMessageItemList();
+    const QList<Core::MessageItem *> selection = q->view()->selectionAsMessageItemList();
     res.reserve(selection.count());
 
-    foreach (Core::MessageItem *mi, selection) {
+    for (Core::MessageItem *mi : qAsConst(selection)) {
         Item i = itemForRow(mi->currentModelIndexRow());
         Q_ASSERT(i.isValid());
         res << i;
@@ -574,12 +574,12 @@ KMime::Message::Ptr Widget::currentMessage() const
 QList<KMime::Message::Ptr > Widget::selectionAsMessageList(bool includeCollapsedChildren) const
 {
     QList<KMime::Message::Ptr> lstMiPtr;
-    QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    foreach (Core::MessageItem *it, lstMi) {
+    for (Core::MessageItem *it : qAsConst(lstMi)) {
         lstMiPtr.append(d->messageForRow(it->currentModelIndexRow()));
     }
     return lstMiPtr;
@@ -588,12 +588,12 @@ QList<KMime::Message::Ptr > Widget::selectionAsMessageList(bool includeCollapsed
 Akonadi::Item::List Widget::selectionAsMessageItemList(bool includeCollapsedChildren) const
 {
     Akonadi::Item::List lstMiPtr;
-    QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    foreach (Core::MessageItem *it, lstMi) {
+    for (Core::MessageItem *it : qAsConst(lstMi)) {
         lstMiPtr.append(d->itemForRow(it->currentModelIndexRow()));
     }
     return lstMiPtr;
@@ -602,12 +602,12 @@ Akonadi::Item::List Widget::selectionAsMessageItemList(bool includeCollapsedChil
 QVector<qlonglong> Widget::selectionAsMessageItemListId(bool includeCollapsedChildren) const
 {
     QVector<qlonglong> lstMiPtr;
-    QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    foreach (Core::MessageItem *it, lstMi) {
+    for (Core::MessageItem *it : qAsConst(lstMi)) {
         lstMiPtr.append(d->itemForRow(it->currentModelIndexRow()).id());
     }
     return lstMiPtr;
@@ -616,12 +616,12 @@ QVector<qlonglong> Widget::selectionAsMessageItemListId(bool includeCollapsedChi
 QList<Akonadi::Item::Id> Widget::selectionAsListMessageId(bool includeCollapsedChildren) const
 {
     QList<qlonglong> lstMiPtr;
-    QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    foreach (Core::MessageItem *it, lstMi) {
+    for (Core::MessageItem *it : qAsConst(lstMi)) {
         lstMiPtr.append(d->itemForRow(it->currentModelIndexRow()).id());
     }
     return lstMiPtr;
@@ -630,12 +630,12 @@ QList<Akonadi::Item::Id> Widget::selectionAsListMessageId(bool includeCollapsedC
 Akonadi::Item::List Widget::currentThreadAsMessageList() const
 {
     Akonadi::Item::List lstMiPtr;
-    QList<Core::MessageItem *> lstMi = view()->currentThreadAsMessageItemList();
+    const QList<Core::MessageItem *> lstMi = view()->currentThreadAsMessageItemList();
     if (lstMi.isEmpty()) {
         return lstMiPtr;
     }
     lstMiPtr.reserve(lstMi.count());
-    foreach (Core::MessageItem *it, lstMi) {
+    for (Core::MessageItem *it : qAsConst(lstMi)) {
         lstMiPtr.append(d->itemForRow(it->currentModelIndexRow()));
     }
     return lstMiPtr;
@@ -679,13 +679,13 @@ bool Widget::getSelectionStats(
     selectedItems.clear();
     selectedVisibleItems.clear();
 
-    QList< Core::MessageItem * > selected = view()->selectionAsMessageItemList(includeCollapsedChildren);
+    const QList< Core::MessageItem * > selected = view()->selectionAsMessageItemList(includeCollapsedChildren);
 
     Core::MessageItem *topmost = nullptr;
 
     *allSelectedBelongToSameThread = true;
 
-    foreach (Core::MessageItem *it, selected) {
+    for (Core::MessageItem *it : qAsConst(selected)) {
         const Item item = d->itemForRow(it->currentModelIndexRow());
         selectedItems.append(item);
         if (view()->isDisplayedWithParentsExpanded(it)) {
@@ -718,10 +718,10 @@ void Widget::markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSe
 Akonadi::Item::List Widget::itemListFromPersistentSet(MessageList::Core::MessageItemSetReference ref)
 {
     Akonadi::Item::List lstItem;
-    QList< Core::MessageItem * > refList = view()->persistentSetCurrentMessageItemList(ref);
+    const QList< Core::MessageItem * > refList = view()->persistentSetCurrentMessageItemList(ref);
     if (!refList.isEmpty()) {
         lstItem.reserve(refList.count());
-        foreach (Core::MessageItem *it, refList) {
+        for (Core::MessageItem *it : qAsConst(refList)) {
             lstItem.append(d->itemForRow(it->currentModelIndexRow()));
         }
     }

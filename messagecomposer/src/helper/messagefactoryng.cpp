@@ -291,7 +291,7 @@ void MessageFactoryNG::createReplyAsync()
                 ccRecipients.pop_front();
             }
 
-            foreach (const KMime::Types::Mailbox &mailbox, ccRecipients) {
+            for (const KMime::Types::Mailbox &mailbox : qAsConst(ccRecipients)) {
                 msg->cc()->addAddress(mailbox);
             }
         }
@@ -338,7 +338,7 @@ void MessageFactoryNG::createReplyAsync()
     }
 
 
-    foreach (const KMime::Types::Mailbox &mailbox, toList) {
+    for (const KMime::Types::Mailbox &mailbox : qAsConst(toList)) {
         msg->to()->addAddress(mailbox);
     }
 
@@ -472,7 +472,7 @@ QPair< KMime::Message::Ptr, QList< KMime::Content * > > MessageFactoryNG::create
     } else {
         // iterate through all the messages to be forwarded
         attachments.reserve(items.count());
-        foreach (const Akonadi::Item &item, items) {
+        for (const Akonadi::Item &item : qAsConst(items)) {
             attachments << createForwardAttachmentMessage(MessageCore::Util::message(item));
             MessageCore::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
         }

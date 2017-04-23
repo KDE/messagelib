@@ -572,7 +572,7 @@ QString MessageItem::accessibleText(const Theme *theme, int columnIndex)
         QStringList rightStrings;
         const QList<Theme::ContentItem *> leftItems = row->leftItems();
         leftStrings.reserve(leftItems.count());
-        Q_FOREACH (Theme::ContentItem *contentItem, leftItems) {
+        for (Theme::ContentItem *contentItem : qAsConst(leftItems)) {
             leftStrings.append(accessibleTextForField(contentItem->type()));
         }
 

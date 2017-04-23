@@ -4499,7 +4499,7 @@ Qt::ItemFlags Model::flags(const QModelIndex &index) const
 QMimeData *MessageList::Core::Model::mimeData(const QModelIndexList &indexes) const
 {
     QList< MessageItem * > msgs;
-    foreach (const QModelIndex &idx, indexes) {
+    for (const QModelIndex &idx : qAsConst(indexes)) {
         if (idx.isValid()) {
             Item *item = static_cast< Item * >(idx.internalPointer());
             if (item->type() == MessageList::Core::Item::Message) {

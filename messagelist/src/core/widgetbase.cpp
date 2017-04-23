@@ -700,7 +700,7 @@ void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSort
         // if still not found, try again with a wider range
         if (logicalHeaderColumnIndex == -1) {
             idx = 0;
-            foreach (const Theme::Column *column, columns) {
+            for (const Theme::Column *column : qAsConst(columns)) {
                 if (!mView->header()->isSectionHidden(idx)) {
                     if (
                         (
