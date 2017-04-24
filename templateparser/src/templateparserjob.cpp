@@ -1379,19 +1379,6 @@ QString TemplateParserJob::findTemplate()
 
     QString tmpl;
 
-#if 0
-    if (!mFolder.isValid()) {   // find folder message belongs to
-        mFolder = mMsg->parentCollection();
-        if (!mFolder.isValid()) {
-            if (mOrigMsg) {
-                mFolder = mOrigMsg->parentCollection();
-            }
-            if (!mFolder.isValid()) {
-                qCDebug(TEMPLATEPARSER_LOG) << "Oops! No folder for message";
-            }
-        }
-    }
-#else
     qCDebug(TEMPLATEPARSER_LOG) << "AKONADI PORT: Disabled code in  " << Q_FUNC_INFO;
     qCDebug(TEMPLATEPARSER_LOG) << "Folder found:" << mFolder;
     if (mFolder.isValid()) {   // only if a folder was found
@@ -1468,7 +1455,6 @@ QString TemplateParserJob::findTemplate()
             return tmpl;  // use identity-specific template
         }
     }
-#endif
 
     switch (mMode) {  // use the global template
     case NewMessage:
