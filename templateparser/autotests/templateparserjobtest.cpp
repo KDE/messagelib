@@ -32,13 +32,14 @@
 #include <QLocale>
 #include <QTimeZone>
 #include <QSignalSpy>
+#include <QStandardPaths>
 
 using namespace MimeTreeParser;
 
 TemplateParserJobTest::TemplateParserJobTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 TemplateParserJobTest::~TemplateParserJobTest()
@@ -47,7 +48,7 @@ TemplateParserJobTest::~TemplateParserJobTest()
     QCoreApplication::sendPostedEvents(0, QEvent::DeferredDelete);
 }
 
-#if 0
+
 void TemplateParserJobTest::test_convertedHtml_data()
 {
     QTest::addColumn<QString>("mailFileName");
@@ -83,12 +84,18 @@ void TemplateParserJobTest::test_convertedHtml()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "Plain Message Test");
     QCOMPARE(msg->contents().size(), 0);
 
-    TemplateParser::TemplateParserJob parser(msg, TemplateParser::TemplateParserJob::NewMessage);
-    parser.mOtp->parseObjectTree(msg.data());
-    QVERIFY(parser.mOtp->htmlContent().isEmpty());
-    QVERIFY(!parser.mOtp->plainTextContent().isEmpty());
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    parser->setIdentityManager(identMan);
+    parser->mOtp->parseObjectTree(msg.data());
+    QVERIFY(parser->mOtp->htmlContent().isEmpty());
+    QVERIFY(!parser->mOtp->plainTextContent().isEmpty());
 
-    const QString convertedHtmlContent = parser.htmlMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(QString());
+    QVERIFY(spy.wait());
+
+    const QString convertedHtmlContent = parser->htmlMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
     QVERIFY(!convertedHtmlContent.isEmpty());
 
     QCOMPARE(convertedHtmlContent, referenceData);
@@ -133,19 +140,26 @@ void TemplateParserJobTest::test_replyPlain()
 //    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Plain Message Test");
 //   QCOMPARE(msg->contents().size(), 0);
 
-    TemplateParser::TemplateParserJob parser(msg, TemplateParser::TemplateParserJob::Reply);
-    parser.mOtp->parseObjectTree(msg.data());
-    parser.mOrigMsg = msg;
-//    QVERIFY(parser.mOtp->htmlContent().isEmpty());
-//    QVERIFY(!parser.mOtp->plainTextContent().isEmpty());
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
+    //KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    //parser->setIdentityManager(identMan);
 
-    QBENCHMARK {
-        const QString convertedHtmlContent = parser.plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
+    parser->mOtp->parseObjectTree(msg.data());
+    parser->mOrigMsg = msg;
+    //QVERIFY(parser->mOtp->htmlContent().isEmpty());
+    //QVERIFY(!parser->mOtp->plainTextContent().isEmpty());
 
-        QCOMPARE(convertedHtmlContent, referenceData);
-    }
+//    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+//    parser->processWithTemplate(QString());
+//    QVERIFY(spy.wait());
+
+
+//    QBENCHMARK {
+//        const QString convertedHtmlContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
+
+//        QCOMPARE(convertedHtmlContent, referenceData);
+//    }
 }
-#endif
 
 void TemplateParserJobTest::test_processWithTemplatesForBody_data()
 {
