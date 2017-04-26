@@ -109,6 +109,8 @@ QString PluginEditorInterface::actionXmlExtension(ActionType::Type type)
         return QStringLiteral("_toolbar_actions");
     case MessageComposer::ActionType::Options:
         return QStringLiteral("_plugins_options");
+    case MessageComposer::ActionType::None:
+        return QString();
     }
     return {};
 }

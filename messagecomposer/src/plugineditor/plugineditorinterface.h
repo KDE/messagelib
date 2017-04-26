@@ -42,7 +42,8 @@ public:
         Action = 3,
         PopupMenu = 4,
         ToolBar = 5,
-        Options = 6
+        Options = 6,
+        None = 7
     };
     ActionType();
 
