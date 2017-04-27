@@ -25,7 +25,7 @@
 
 namespace KPIMTextEdit
 {
-class RichTextEditor;
+class RichTextComposer;
 }
 
 namespace MessageComposer
@@ -44,8 +44,8 @@ public:
     void setParentWidget(QWidget *parent);
     QWidget *parentWidget() const;
 
-    KPIMTextEdit::RichTextEditor *richTextEditor() const;
-    void setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor);
+    KPIMTextEdit::RichTextComposer *richTextEditor() const;
+    void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
 
 public Q_SLOTS:

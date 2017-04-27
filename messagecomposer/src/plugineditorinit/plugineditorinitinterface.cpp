@@ -31,7 +31,7 @@ public:
 
     }
     QWidget *mParentWidget;
-    KPIMTextEdit::RichTextEditor *mEditor;
+    KPIMTextEdit::RichTextComposer *mEditor;
 };
 
 PluginEditorInitInterface::PluginEditorInitInterface(QObject *parent)
@@ -56,12 +56,12 @@ QWidget *PluginEditorInitInterface::parentWidget() const
     return d->mParentWidget;
 }
 
-KPIMTextEdit::RichTextEditor *PluginEditorInitInterface::richTextEditor() const
+KPIMTextEdit::RichTextComposer *PluginEditorInitInterface::richTextEditor() const
 {
     return d->mEditor;
 }
 
-void PluginEditorInitInterface::setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor)
+void PluginEditorInitInterface::setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor)
 {
     d->mEditor = richTextEditor;
 }
