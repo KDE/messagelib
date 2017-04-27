@@ -107,7 +107,13 @@ set(messagecomposer_plugineditorcheckbeforesend_SRCS
    plugineditorcheckbeforesend/plugineditorcheckbeforesendparams.cpp
    )
 
+set(messagecomposer_plugineditorinit_SRCS
+   plugineditorinit/plugineditorinitconfigurewidget.cpp
+   )
+
+
 set( messagecomposer_src
+    ${messagecomposer_plugineditorinit_SRCS}
     ${messagecomposer_plugineditor_SRCS}
     ${messagecomposer_richtextcomposerng_SRCS}
     ${messagecomposer_part_src}
@@ -200,6 +206,14 @@ ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
     REQUIRED_HEADERS MessageComposer_plugineditor_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditor
+    )
+
+ecm_generate_headers(MessageComposer_Camelplugineditorinit_HEADERS
+    HEADER_NAMES
+    PluginEditorInitConfigureWidget
+    REQUIRED_HEADERS MessageComposer_plugineditorinit_HEADERS
+    PREFIX MessageComposer
+    RELATIVE plugineditorinit
     )
 
 ecm_generate_headers(MessageComposer_Camelplugineditorcheckbeforesend_HEADERS
@@ -344,6 +358,7 @@ ecm_generate_pri_file(BASE_NAME MessageComposer
 
 
 install(FILES
+    ${MessageComposer_Camelplugineditorinit_HEADERS}
     ${MessageComposer_Camelplugineditorcheckbeforesend_HEADERS}
     ${MessageComposer_Camelcasecomposer_HEADERS}
     ${MessageComposer_Camelcasecomposerng_HEADERS}
@@ -364,6 +379,7 @@ install(FILES
 
 install(FILES
     ${MessageComposer_HEADERS}
+    ${MessageComposer_plugineditorinit_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposersettings_base.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_debug.h
