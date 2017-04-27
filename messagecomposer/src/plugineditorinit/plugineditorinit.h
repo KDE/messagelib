@@ -17,33 +17,42 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PLUGINEDITORINITMANAGER_H
-#define PLUGINEDITORINITMANAGER_H
+#ifndef PLUGINEDITORINIT_H
+#define PLUGINEDITORINIT_H
 
 #include <QObject>
 #include "messagecomposer_export.h"
-#include <PimCommon/PluginUtil>
+
 namespace MessageComposer
 {
-class PluginEditorInitManagerPrivate;
-class PluginEditorInit;
-class MESSAGECOMPOSER_EXPORT PluginEditorInitManager : public QObject
+class PluginEditorInitPrivate;
+class PluginEditorInitInterface;
+
+class MESSAGECOMPOSER_EXPORT PluginEditorInit : public QObject
 {
     Q_OBJECT
 public:
-    explicit PluginEditorInitManager(QObject *parent = nullptr);
-    ~PluginEditorInitManager();
+    explicit PluginEditorInit(QObject *parent = nullptr);
+    ~PluginEditorInit();
 
-    static PluginEditorInitManager *self();
+    virtual PluginEditorInitInterface *createInterface(QObject *parent) = 0;
 
-    QVector<PluginEditorInit *> pluginsList() const;
+    virtual bool hasConfigureDialog() const;
 
-    QString configGroupName() const;
-    QString configPrefixSettingKey() const;
-    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
-    PluginEditorInit *pluginFromIdentifier(const QString &id);
+    virtual void showConfigureDialog(QWidget *parent = nullptr);
+
+    void emitConfigChanged();
+
+    virtual QString description() const;
+
+    void setIsEnabled(bool enabled);
+    bool isEnabled() const;
+
+Q_SIGNALS:
+    void configChanged();
+
 private:
-    PluginEditorInitManagerPrivate *const d;
+    PluginEditorInitPrivate *const d;
 };
 }
-#endif // PLUGINEDITORINITMANAGER_H
+#endif // PLUGINEDITORINIT_H
