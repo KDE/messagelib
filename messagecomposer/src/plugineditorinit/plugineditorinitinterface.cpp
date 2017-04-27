@@ -25,11 +25,13 @@ class MessageComposer::PluginEditorInitInterfacePrivate
 {
 public:
     PluginEditorInitInterfacePrivate()
-        : mParentWidget(nullptr)
+        : mParentWidget(nullptr),
+          mEditor(nullptr)
     {
 
     }
     QWidget *mParentWidget;
+    KPIMTextEdit::RichTextEditor *mEditor;
 };
 
 PluginEditorInitInterface::PluginEditorInitInterface(QObject *parent)
@@ -52,6 +54,16 @@ void PluginEditorInitInterface::setParentWidget(QWidget *parent)
 QWidget *PluginEditorInitInterface::parentWidget() const
 {
     return d->mParentWidget;
+}
+
+KPIMTextEdit::RichTextEditor *PluginEditorInitInterface::richTextEditor() const
+{
+    return d->mEditor;
+}
+
+void PluginEditorInitInterface::setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor)
+{
+    d->mEditor = richTextEditor;
 }
 
 void PluginEditorInitInterface::reloadConfig()
