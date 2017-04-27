@@ -111,6 +111,7 @@ set(messagecomposer_plugineditorinit_SRCS
    plugineditorinit/plugineditorinitconfigurewidget.cpp
    plugineditorinit/plugineditorinit.cpp
    plugineditorinit/plugineditorinitmanager.cpp
+   plugineditorinit/plugineditorinitinterface.cpp
    )
 
 
@@ -215,6 +216,7 @@ ecm_generate_headers(MessageComposer_Camelplugineditorinit_HEADERS
     PluginEditorInitConfigureWidget
     PluginEditorInit
     PluginEditorInitManager
+    PluginEditorInitInterface
     REQUIRED_HEADERS MessageComposer_plugineditorinit_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorinit
