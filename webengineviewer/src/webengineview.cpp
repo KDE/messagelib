@@ -21,6 +21,7 @@
 #include "webenginenavigationrequestinterceptor.h"
 #include "webenginemanagescript.h"
 #include "webengineviewer_debug.h"
+#include "checkphishingurl/localdatabasemanager.h"
 #include "../config-webengineviewer.h"
 #include <QEvent>
 #include <QKeyEvent>
@@ -36,7 +37,8 @@ public:
         : mSavedRelativePosition(-1),
           mCurrentWidget(nullptr),
           mWebEngineNavigatorInterceptor(nullptr),
-          mWebEngineNavigatorInterceptorView(nullptr)
+          mWebEngineNavigatorInterceptorView(nullptr),
+          mPhishingDatabase(nullptr)
 
     {
 
@@ -54,6 +56,7 @@ public:
     WebEngineManageScript *mManagerScript;
     WebEngineNavigationRequestInterceptor *mWebEngineNavigatorInterceptor;
     WebEngineView *mWebEngineNavigatorInterceptorView;
+    LocalDataBaseManager *mPhishingDatabase;
 };
 
 WebEngineView::WebEngineView(QWidget *parent)
@@ -205,4 +208,13 @@ qreal WebEngineView::relativePosition() const
 {
     qCDebug(WEBENGINEVIEWER_LOG) << "Relative Position" << d->mSavedRelativePosition;
     return d->mSavedRelativePosition;
+}
+
+LocalDataBaseManager * WebEngineView::phishingDatabase() const
+{
+    if (!d->mPhishingDatabase) {
+        d->mPhishingDatabase = new LocalDataBaseManager(const_cast<WebEngineView*>(this));
+        d->mPhishingDatabase->initialize();
+    }
+    return d->mPhishingDatabase;
 }

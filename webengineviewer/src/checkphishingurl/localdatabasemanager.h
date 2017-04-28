@@ -27,6 +27,7 @@
 #include <QUrl>
 namespace WebEngineViewer
 {
+class WebEngineView;
 class LocalDataBaseManagerPrivate;
 class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
 {
@@ -35,27 +36,16 @@ public:
     explicit LocalDataBaseManager(QObject *parent = nullptr);
     ~LocalDataBaseManager();
 
-    static LocalDataBaseManager *self();
-
     void checkUrl(const QUrl &url);
 
     void initialize();
-
-    void slotCreateDataBaseFileNameFinished(bool finished, const QString &newClientState, const QString &minimumWaitDurationStr);
 
 Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
 protected:
-    void setDownloadProgress(bool downloadProgress);
-    virtual void downloadFullDataBase();
-    virtual void downloadPartialDataBase();
-
-private:
-    void slotSearchOnServerResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url);
-    void slotCheckDataBase();
-    void downloadDataBase(const QString &clientState);
-    void slotCreateDataBaseFailed();
+    explicit LocalDataBaseManager(LocalDataBaseManagerPrivate *impl,
+                                  QObject *parent = nullptr);
 
     LocalDataBaseManagerPrivate *const d;
 };

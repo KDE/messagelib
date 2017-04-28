@@ -79,6 +79,7 @@ namespace WebEngineViewer
 class WebHitTestResult;
 class FindBarWebEngineView;
 class ZoomActionMenu;
+class LocalDataBaseManager;
 }
 namespace MessageViewer
 {
@@ -694,6 +695,7 @@ public:
     WebEngineViewer::ZoomActionMenu *mZoomActionMenu;
     QPrinter *mCurrentPrinter;
     QList<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
+    WebEngineViewer::LocalDataBaseManager *mPhishingDatabase;
 };
 
 }

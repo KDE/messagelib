@@ -27,6 +27,8 @@ namespace WebEngineViewer
 {
 class WebEngineViewPrivate;
 class WebEngineManageScript;
+class LocalDataBaseManager;
+
 class WEBENGINEVIEWER_EXPORT WebEngineView : public QWebEngineView
 {
     Q_OBJECT
@@ -43,6 +45,8 @@ public:
 
     WebEngineManageScript *webEngineManagerScript() const;
     void setLinkHovered(const QUrl &url);
+
+    WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;

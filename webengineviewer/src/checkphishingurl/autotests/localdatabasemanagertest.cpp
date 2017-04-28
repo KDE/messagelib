@@ -19,16 +19,37 @@
 
 #include "localdatabasemanagertest.h"
 #include "../localdatabasemanager.h"
+#include "../localdatabasemanager_p.h"
 
 #include <QTest>
+
+class TestLocalDatabaseManagerPrivate : public WebEngineViewer::LocalDataBaseManagerPrivate
+{
+public:
+    TestLocalDatabaseManagerPrivate()
+        : WebEngineViewer::LocalDataBaseManagerPrivate()
+    {
+    }
+
+protected:
+    void downloadDataBase(const QString &clientState) Q_DECL_OVERRIDE
+    {
+        // don't actually download anything
+    }
+};
 
 class TestLocalDataBaseManager : public WebEngineViewer::LocalDataBaseManager
 {
 public:
     TestLocalDataBaseManager(QObject *parent)
-        : WebEngineViewer::LocalDataBaseManager(parent)
+        : WebEngineViewer::LocalDataBaseManager(new TestLocalDatabaseManagerPrivate, parent)
     {
 
+    }
+
+    ~TestLocalDataBaseManager()
+    {
+        delete d;
     }
 
     void setDownloadInfoSendByServer(const QString &data)
@@ -36,21 +57,10 @@ public:
         mDownloadInfoSendByServer = data;
     }
 
-    // LocalDataBaseManager interface
-protected:
-    void downloadFullDataBase() Q_DECL_OVERRIDE;
-    void downloadPartialDataBase() Q_DECL_OVERRIDE;
 private:
     QString mDownloadInfoSendByServer;
 };
 
-void TestLocalDataBaseManager::downloadFullDataBase()
-{
-}
-
-void TestLocalDataBaseManager::downloadPartialDataBase()
-{
-}
 
 LocalDataBaseManagerTest::LocalDataBaseManagerTest(QObject *parent)
     : QObject(parent)

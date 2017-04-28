@@ -35,9 +35,9 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     QStandardPaths::setTestModeEnabled(true);
-    WebEngineViewer::LocalDataBaseManager::self()->initialize();
-    connect(WebEngineViewer::LocalDataBaseManager::self(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished);
     pageView = new WebEngineViewer::WebEngineView(this);
+    connect(pageView->phishingDatabase(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished,
+            this, &WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished);
     layout->addWidget(pageView);
     WebEngineViewer::WebEnginePage *mEnginePage = new WebEngineViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
@@ -60,7 +60,7 @@ WebEngineViewWithSafeBrowsingSupport::~WebEngineViewWithSafeBrowsingSupport()
 void WebEngineViewWithSafeBrowsingSupport::slotUrlClicked(const QUrl &url)
 {
     qDebug() << " url clicked " << url;
-    WebEngineViewer::LocalDataBaseManager::self()->checkUrl(url);
+    pageView->phishingDatabase()->checkUrl(url);
 }
 
 void WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status)

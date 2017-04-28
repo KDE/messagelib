@@ -21,10 +21,8 @@
 #include <qtestmouse.h>
 #include <KActionCollection>
 
-extern MESSAGEVIEWER_EXPORT bool messageviewer_initialize_database;
 ViewerTest::ViewerTest()
 {
-    messageviewer_initialize_database = false;
 }
 
 void ViewerTest::shouldHaveDefaultValuesOnCreation()

@@ -22,6 +22,10 @@
 
 #include <QWidget>
 class QPlainTextEdit;
+namespace WebEngineViewer {
+class LocalDataBaseManager;
+}
+
 class ManageLocalDataBaseGui : public QWidget
 {
     Q_OBJECT
@@ -32,6 +36,7 @@ private Q_SLOTS:
     void slotDownloadFullDatabase();
 private:
     QPlainTextEdit *mResult;
+    WebEngineViewer::LocalDataBaseManager *mDbManager;
 };
 
 #endif // MANAGELOCALDATABASEGUI_H

@@ -163,7 +163,6 @@ using namespace MessageViewer;
 using namespace MessageCore;
 
 static QAtomicInt _k_attributeInitialized;
-MESSAGEVIEWER_EXPORT bool messageviewer_initialize_database = true;
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
@@ -229,7 +228,8 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
       mHeaderStyleMenuManager(nullptr),
       mViewerPluginToolManager(nullptr),
       mZoomActionMenu(nullptr),
-      mCurrentPrinter(nullptr)
+      mCurrentPrinter(nullptr),
+      mPhishingDatabase(nullptr)
 {
     mMimePartTree = nullptr;
     if (!mainWindow) {
@@ -238,13 +238,11 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::MessageDisplayFormatAttribute>();
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::ScamAttribute>();
-
-        //Make sure to initialize it once.
-        if (messageviewer_initialize_database) {
-            WebEngineViewer::LocalDataBaseManager::self()->initialize();
-        }
     }
-    connect(WebEngineViewer::LocalDataBaseManager::self(), &WebEngineViewer::LocalDataBaseManager::checkUrlFinished, this, &ViewerPrivate::slotCheckedUrlFinished);
+    mPhishingDatabase = new WebEngineViewer::LocalDataBaseManager(this);
+    mPhishingDatabase->initialize();
+    connect(mPhishingDatabase , &WebEngineViewer::LocalDataBaseManager::checkUrlFinished,
+            this, &ViewerPrivate::slotCheckedUrlFinished);
 
     mShareServiceManager = new PimCommon::ShareServiceUrlManager(this);
 
@@ -1987,7 +1985,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
 void ViewerPrivate::checkPhishingUrl()
 {
     if (!PimCommon::NetworkUtil::self()->lowBandwidth() && MessageViewer::MessageViewerSettings::self()->checkPhishingUrl() && (mClickedUrl.scheme() != QLatin1String("mailto"))) {
-        WebEngineViewer::LocalDataBaseManager::self()->checkUrl(mClickedUrl);
+        mPhishingDatabase->checkUrl(mClickedUrl);
     } else {
         executeRunner(mClickedUrl);
     }

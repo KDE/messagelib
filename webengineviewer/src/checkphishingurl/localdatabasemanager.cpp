@@ -17,194 +17,48 @@
    Boston, MA 02110-1301, USA.
 */
 #include "localdatabasemanager.h"
+#include "localdatabasemanager_p.h"
 #include "webengineviewer_debug.h"
 #include "createphishingurldatabasejob.h"
 #include "createdatabasefilejob.h"
 #include "checkphishingurlutil.h"
-#include "localdatabasefile.h"
-#include "downloadlocaldatabasethread.h"
 #include "urlhashing.h"
 #include "backoffmodemanager.h"
 
 #include <KConfigGroup>
 #include <KSharedConfig>
 
-#include <QPointer>
-#include <QStandardPaths>
-#include <QDebug>
-#include <QDir>
 #include <QTimer>
 #include <QCryptographicHash>
 
 using namespace WebEngineViewer;
 
-Q_GLOBAL_STATIC(LocalDataBaseManager, s_localDataBaseManager)
+Q_GLOBAL_STATIC(LocalDataBaseManagerPrivate, s_localDataBaseManager)
 
-namespace
-{
-inline QString localDataBasePath()
-{
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl/");
-}
-inline QString databaseFullPath()
-{
-    return localDataBasePath() + QLatin1Char('/') + WebEngineViewer::CheckPhishingUrlUtil::databaseFileName();
-}
-}
-
-class WebEngineViewer::LocalDataBaseManagerPrivate
-{
-public:
-    LocalDataBaseManagerPrivate(LocalDataBaseManager *qq)
-        : mFile(databaseFullPath()),
-          mSecondToStartRefreshing(0),
-          mDataBaseOk(false),
-          mDownloadProgress(false),
-          q(qq)
-    {
-        QDir().mkpath(localDataBasePath());
-        readConfig();
-    }
-    ~LocalDataBaseManagerPrivate()
-    {
-        if (downloadLocalDatabaseThread) {
-            downloadLocalDatabaseThread->quit();
-            downloadLocalDatabaseThread->wait();
-            delete downloadLocalDatabaseThread;
-        }
-        saveConfig();
-    }
-
-    void readConfig();
-    void saveConfig();
-    LocalDataBaseFile mFile;
-    QString mNewClientState;
-    QString mMinimumWaitDuration;
-    uint mSecondToStartRefreshing;
-    bool mDataBaseOk;
-    bool mDownloadProgress;
-    QPointer<WebEngineViewer::DownloadLocalDatabaseThread> downloadLocalDatabaseThread;
-    LocalDataBaseManager *q;
-};
-
-LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
+LocalDataBaseManager::LocalDataBaseManager(LocalDataBaseManagerPrivate *impl, QObject *parent)
     : QObject(parent),
-      d(new LocalDataBaseManagerPrivate(this))
-
+      d(impl)
 {
     qRegisterMetaType<WebEngineViewer::UpdateDataBaseInfo>();
     qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>();
     qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType>();
 }
 
+LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
+    : LocalDataBaseManager(s_localDataBaseManager, parent)
+{
+}
+
+
 LocalDataBaseManager::~LocalDataBaseManager()
 {
-    delete d;
-}
-
-void LocalDataBaseManagerPrivate::readConfig()
-{
-    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
-    mNewClientState = grp.readEntry(QStringLiteral("DataBaseState"));
-    mMinimumWaitDuration = grp.readEntry(QStringLiteral("RefreshDataBase"));
-    if (!mMinimumWaitDuration.isEmpty()) {
-        mSecondToStartRefreshing = WebEngineViewer::CheckPhishingUrlUtil::refreshingCacheAfterThisTime(WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(mMinimumWaitDuration));
-    }
-}
-
-void LocalDataBaseManagerPrivate::saveConfig()
-{
-    KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
-    grp.writeEntry(QStringLiteral("DataBaseState"), mNewClientState);
-    grp.writeEntry(QStringLiteral("RefreshDataBase"), mMinimumWaitDuration);
-}
-
-void LocalDataBaseManager::downloadDataBase(const QString &clientState)
-{
-    setDownloadProgress(true);
-    d->downloadLocalDatabaseThread = new WebEngineViewer::DownloadLocalDatabaseThread;
-    d->downloadLocalDatabaseThread->setDatabaseFullPath(databaseFullPath());
-    d->downloadLocalDatabaseThread->setDataBaseState(clientState);
-    connect(d->downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::createDataBaseFailed, this, &LocalDataBaseManager::slotCreateDataBaseFailed);
-    connect(d->downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::createDataBaseFinished, this, &LocalDataBaseManager::slotCreateDataBaseFileNameFinished);
-    connect(d->downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::finished, d->downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::deleteLater);
-    d->downloadLocalDatabaseThread->start();
-}
-
-void LocalDataBaseManager::slotCreateDataBaseFailed()
-{
-    d->mDataBaseOk = false;
-    d->mDownloadProgress = false;
-}
-
-void LocalDataBaseManager::downloadPartialDataBase()
-{
-    downloadDataBase(d->mNewClientState);
-}
-
-void LocalDataBaseManager::downloadFullDataBase()
-{
-    downloadDataBase(QString());
 }
 
 void LocalDataBaseManager::initialize()
 {
-    if (d->mDownloadProgress) {
-        return;
-    }
-    if (!d->mDataBaseOk) {
-        qCDebug(WEBENGINEVIEWER_LOG) << "Start to create database";
-        if (!QFileInfo::exists(databaseFullPath())) {
-            downloadFullDataBase();
-        } else {
-            const uint now = QDateTime::currentDateTimeUtc().toTime_t();
-            //qDebug() << " now "<< now << " d->mSecondToStartRefreshing "<<d->mSecondToStartRefreshing << " now > d->mSecondToStartRefreshing" << (now > d->mSecondToStartRefreshing);
-            if ((d->mSecondToStartRefreshing != 0) && (d->mSecondToStartRefreshing > now)) {
-                qCWarning(WEBENGINEVIEWER_LOG) << " It's not necessary to check database now";
-                d->mDataBaseOk = true;
-            } else {
-                //Perhaps don't download for each start of kmail
-                downloadPartialDataBase();
-            }
-        }
-    } else {
-        qCWarning(WEBENGINEVIEWER_LOG) << "Database already initialized. It's a bug in code if you call it twice.";
-    }
+    d->initialize();
 }
 
-void LocalDataBaseManager::slotCheckDataBase()
-{
-    const uint now = QDateTime::currentDateTimeUtc().toTime_t();
-    if (d->mDataBaseOk && !d->mDownloadProgress && (d->mSecondToStartRefreshing < now)) {
-        downloadPartialDataBase();
-    }
-}
-
-void LocalDataBaseManager::slotCreateDataBaseFileNameFinished(bool success, const QString &newClientState, const QString &minimumWaitDurationStr)
-{
-    d->mDataBaseOk = success;
-    d->mDownloadProgress = false;
-    d->mNewClientState = success ? newClientState : QString();
-    d->mMinimumWaitDuration = minimumWaitDurationStr;
-    d->saveConfig();
-    //if !success => redownload full!
-    if (!success) {
-        qCWarning(WEBENGINEVIEWER_LOG) << "We need to redownload full database";
-        downloadFullDataBase();
-    }
-}
-
-LocalDataBaseManager *LocalDataBaseManager::self()
-{
-    return s_localDataBaseManager;
-}
-
-void LocalDataBaseManager::setDownloadProgress(bool downloadProgress)
-{
-    d->mDownloadProgress = downloadProgress;
-}
 
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
@@ -235,7 +89,10 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
                 job->setDatabaseState(QStringList() << d->mNewClientState);
                 job->setSearchHashs(conflictHashs);
                 job->setSearchFullHashForUrl(url);
-                connect(job, &SearchFullHashJob::result, this, &LocalDataBaseManager::slotSearchOnServerResult);
+                connect(job, &SearchFullHashJob::result,
+                        this, [this](CheckPhishingUrlUtil::UrlStatus status, const QUrl &url) {
+                            Q_EMIT checkUrlFinished(url, status);
+                        });
                 job->start();
             }
         }
@@ -246,10 +103,4 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
     if (d->mFile.checkFileChanged()) {
         d->mFile.reload();
     }
-}
-
-void LocalDataBaseManager::slotSearchOnServerResult(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url)
-{
-    qCWarning(WEBENGINEVIEWER_LOG) << " Url " << url << " status " << status;
-    Q_EMIT checkUrlFinished(url, status);
 }

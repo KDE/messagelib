@@ -31,6 +31,7 @@
 
 ManageLocalDataBaseGui::ManageLocalDataBaseGui(QWidget *parent)
     : QWidget(parent)
+    , mDbManager(new WebEngineViewer::LocalDataBaseManager(this))
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
 
@@ -45,12 +46,11 @@ ManageLocalDataBaseGui::ManageLocalDataBaseGui(QWidget *parent)
 
 ManageLocalDataBaseGui::~ManageLocalDataBaseGui()
 {
-
 }
 
 void ManageLocalDataBaseGui::slotDownloadFullDatabase()
 {
-    WebEngineViewer::LocalDataBaseManager::self()->initialize();
+    mDbManager->initialize();
 }
 
 int main(int argc, char **argv)
