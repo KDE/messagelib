@@ -40,6 +40,7 @@ public:
     {
         delete pluginManager;
     }
+
     PluginEditorInitManager *pluginManager;
 };
 
@@ -47,11 +48,11 @@ class PluginEditorInitInfo
 {
 public:
     PluginEditorInitInfo()
-        : plugin(nullptr),
-          isEnabled(true)
+        : plugin(nullptr)
+        , isEnabled(true)
     {
-
     }
+
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
@@ -61,8 +62,7 @@ public:
 
 Q_GLOBAL_STATIC(PluginEditorInitManagerInstancePrivate, sInstance)
 
-namespace
-{
+namespace {
 QString pluginVersion()
 {
     return QStringLiteral("1.0");
@@ -77,6 +77,7 @@ public:
     {
         initializePlugins();
     }
+
     void loadPlugin(PluginEditorInitInfo *item);
     QVector<PluginEditorInit *> pluginsList() const;
     bool initializePlugins();
@@ -107,7 +108,7 @@ QVector<PimCommon::PluginUtilData> PluginEditorInitManagerPrivate::pluginsDataLi
 
 bool PluginEditorInitManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData & md) {
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
         return md.serviceTypes().contains(QStringLiteral("KMailEditor/PluginEditorInit"));
     });
 
@@ -181,8 +182,8 @@ PluginEditorInit *PluginEditorInitManagerPrivate::pluginFromIdentifier(const QSt
 }
 
 PluginEditorInitManager::PluginEditorInitManager(QObject *parent)
-    : QObject(parent),
-      d(new MessageComposer::PluginEditorInitManagerPrivate(this))
+    : QObject(parent)
+    , d(new MessageComposer::PluginEditorInitManagerPrivate(this))
 {
 }
 

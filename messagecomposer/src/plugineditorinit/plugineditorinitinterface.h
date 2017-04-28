@@ -23,13 +23,11 @@
 #include <QObject>
 #include "messagecomposer_export.h"
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextComposer;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class PluginEditorInitInterfacePrivate;
 class PluginEditorInitParams;
 class MESSAGECOMPOSER_EXPORT PluginEditorInitInterface : public QObject
@@ -46,7 +44,6 @@ public:
 
     KPIMTextEdit::RichTextComposer *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
-
 
 public Q_SLOTS:
     virtual void reloadConfig();

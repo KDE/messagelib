@@ -25,20 +25,19 @@ class MessageComposer::PluginEditorInitInterfacePrivate
 {
 public:
     PluginEditorInitInterfacePrivate()
-        : mParentWidget(nullptr),
-          mEditor(nullptr)
+        : mParentWidget(nullptr)
+        , mEditor(nullptr)
     {
-
     }
+
     QWidget *mParentWidget;
     KPIMTextEdit::RichTextComposer *mEditor;
 };
 
 PluginEditorInitInterface::PluginEditorInitInterface(QObject *parent)
-    : QObject(parent),
-      d(new MessageComposer::PluginEditorInitInterfacePrivate)
+    : QObject(parent)
+    , d(new MessageComposer::PluginEditorInitInterfacePrivate)
 {
-
 }
 
 PluginEditorInitInterface::~PluginEditorInitInterface()

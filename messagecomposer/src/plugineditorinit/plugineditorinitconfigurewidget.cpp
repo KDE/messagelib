@@ -24,12 +24,10 @@ using namespace MessageComposer;
 PluginEditorInitConfigureWidget::PluginEditorInitConfigureWidget(QWidget *parent)
     : QWidget(parent)
 {
-
 }
 
 PluginEditorInitConfigureWidget::~PluginEditorInitConfigureWidget()
 {
-
 }
 
 QString PluginEditorInitConfigureWidget::helpAnchor() const

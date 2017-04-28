@@ -27,16 +27,15 @@ public:
     PluginEditorInitPrivate()
         : mIsEnabled(false)
     {
-
     }
+
     bool mIsEnabled;
 };
 
 PluginEditorInit::PluginEditorInit(QObject *parent)
-    : QObject(parent),
-      d(new MessageComposer::PluginEditorInitPrivate)
+    : QObject(parent)
+    , d(new MessageComposer::PluginEditorInitPrivate)
 {
-
 }
 
 PluginEditorInit::~PluginEditorInit()

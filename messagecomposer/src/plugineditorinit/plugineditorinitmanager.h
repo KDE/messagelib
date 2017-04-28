@@ -23,8 +23,7 @@
 #include <QObject>
 #include "messagecomposer_export.h"
 #include <PimCommon/PluginUtil>
-namespace MessageComposer
-{
+namespace MessageComposer {
 class PluginEditorInitManagerPrivate;
 class PluginEditorInit;
 class MESSAGECOMPOSER_EXPORT PluginEditorInitManager : public QObject
