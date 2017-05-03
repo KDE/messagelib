@@ -404,7 +404,7 @@ void Widget::themeMenuAboutToShow(QMenu *menu)
 
     QAction *act;
 
-    qSort(sortedThemes.begin(), sortedThemes.end(), MessageList::Core::Theme::compareName);
+    std::sort(sortedThemes.begin(), sortedThemes.end(), MessageList::Core::Theme::compareName);
 
     QList< Theme * >::ConstIterator endTheme(sortedThemes.constEnd());
     for (QList< Theme * >::ConstIterator it = sortedThemes.constBegin(); it != endTheme; ++it) {
@@ -499,7 +499,7 @@ void Widget::aggregationMenuAboutToShow(QMenu *menu)
 
     QAction *act;
 
-    qSort(sortedAggregations.begin(), sortedAggregations.end(), MessageList::Core::Aggregation::compareName);
+    std::sort(sortedAggregations.begin(), sortedAggregations.end(), MessageList::Core::Aggregation::compareName);
 
     QList<Aggregation * >::ConstIterator endagg(sortedAggregations.constEnd());
 

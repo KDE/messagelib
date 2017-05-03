@@ -117,7 +117,7 @@ QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncodin
 
     // Flipping the bytes, as done above, destroys the sort order. Sort the
     // values back.
-    qSort(list);
+    std::sort(list.begin(), list.end());
 
     // This flipping is done so that when the vector is interpreted as a string,
     // the bytes are in the correct order.

@@ -193,7 +193,7 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Remov
         }
     }
 
-    qSort(indexToRemove);
+    std::sort(indexToRemove.begin(), indexToRemove.end());
     for (int i = (indexToRemove.count() - 1); i >= 0; --i) {
         oldDataBaseAddition.remove(indexToRemove.at(i));
     }

@@ -117,7 +117,7 @@ void AggregationComboBoxPrivate::slotLoadAggregations()
 
     // Get all message list aggregations and sort them into alphabetical order.
     QList< Aggregation * > aggregations = Manager::instance()->aggregations().values();
-    qSort(aggregations.begin(), aggregations.end(), MessageList::Core::Aggregation::compareName);
+    std::sort(aggregations.begin(), aggregations.end(), MessageList::Core::Aggregation::compareName);
 
     for (const Aggregation *aggregation : qAsConst(aggregations)) {
         q->addItem(aggregation->name(), QVariant(aggregation->id()));

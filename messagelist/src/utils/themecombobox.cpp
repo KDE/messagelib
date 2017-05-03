@@ -112,7 +112,7 @@ void ThemeComboBoxPrivate::slotLoadThemes()
 
     // Get all message list themes and sort them into alphabetical order.
     QList< Theme * > themes = Manager::instance()->themes().values();
-    qSort(themes.begin(), themes.end(), MessageList::Core::Theme::compareName);
+    std::sort(themes.begin(), themes.end(), MessageList::Core::Theme::compareName);
 
     for (const Theme *theme : qAsConst(themes)) {
         q->addItem(theme->name(), QVariant(theme->id()));
