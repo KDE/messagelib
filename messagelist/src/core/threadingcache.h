@@ -44,41 +44,13 @@ public:
     void load(const QString &id, const Aggregation *aggregation);
     void save();
 
-    void addItemToCache(MessageItem *mi)
-    {
-        if (mEnabled) {
-            mItemCache.insert(mi->itemId(), mi);
-        }
-    }
+    void addItemToCache(MessageItem *mi);
 
-    void updateParent(MessageItem *mi, MessageItem *parent)
-    {
-        if (mEnabled) {
-            mParentCache.insert(mi->itemId(), parent ? parent->itemId() : 0);
-        }
-    }
+    void updateParent(MessageItem *mi, MessageItem *parent);
 
-    MessageItem *parentForItem(MessageItem *mi, qint64 &parentId) const
-    {
-        if (mEnabled) {
-            parentId = mParentCache.value(mi->itemId(), -1);
-            if (parentId > -1) {
-                return mItemCache.value(parentId, nullptr);
-            } else {
-                return nullptr;
-            }
-        } else {
-            return nullptr;
-        }
-    }
+    MessageItem *parentForItem(MessageItem *mi, qint64 &parentId) const;
 
-    void expireParent(MessageItem *item)
-    {
-        if (mEnabled) {
-            mParentCache.remove(item->itemId());
-            mItemCache.remove(item->itemId());
-        }
-    }
+    void expireParent(MessageItem *item);
 
 private:
     QString cacheFilePath(const QString &id) const;

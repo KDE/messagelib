@@ -188,3 +188,39 @@ void ThreadingCache::save()
     }
     qCDebug(MESSAGELIST_LOG) << "Saved" << mParentCache.count() << "cache entries";
 }
+
+void ThreadingCache::addItemToCache(MessageItem *mi)
+{
+    if (mEnabled) {
+        mItemCache.insert(mi->itemId(), mi);
+    }
+}
+
+void ThreadingCache::updateParent(MessageItem *mi, MessageItem *parent)
+{
+    if (mEnabled) {
+        mParentCache.insert(mi->itemId(), parent ? parent->itemId() : 0);
+    }
+}
+
+MessageItem *ThreadingCache::parentForItem(MessageItem *mi, qint64 &parentId) const
+{
+    if (mEnabled) {
+        parentId = mParentCache.value(mi->itemId(), -1);
+        if (parentId > -1) {
+            return mItemCache.value(parentId, nullptr);
+        } else {
+            return nullptr;
+        }
+    } else {
+        return nullptr;
+    }
+}
+
+void ThreadingCache::expireParent(MessageItem *item)
+{
+    if (mEnabled) {
+        mParentCache.remove(item->itemId());
+        mItemCache.remove(item->itemId());
+    }
+}
