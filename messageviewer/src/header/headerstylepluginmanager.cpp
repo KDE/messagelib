@@ -169,8 +169,8 @@ QVector<MessageViewer::HeaderStylePlugin *> HeaderStylePluginManagerPrivate::plu
     QVector<MessageViewer::HeaderStylePlugin *> lst;
     QVector<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
     for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
-        if ((*it).plugin) {
-            lst << (*it).plugin;
+        if (auto plugin = (*it).plugin) {
+            lst << plugin;
         }
     }
     return lst;

@@ -162,8 +162,8 @@ QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManagerPrivate
     QVector<PluginEditorCheckBeforeSend *> lst;
     QVector<PluginEditorCheckBeforeSendInfo>::ConstIterator end(mPluginList.constEnd());
     for (QVector<PluginEditorCheckBeforeSendInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
-        if ((*it).plugin) {
-            lst << (*it).plugin;
+        if (auto plugin = (*it).plugin) {
+            lst << plugin;
         }
     }
     return lst;

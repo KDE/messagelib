@@ -179,8 +179,8 @@ QVector<ViewerPlugin *> ViewerPluginManagerPrivate::pluginsList() const
     QVector<MessageViewer::ViewerPlugin *> lst;
     QVector<ViewerPluginInfo>::ConstIterator end(mPluginList.constEnd());
     for (QVector<ViewerPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
-        if ((*it).plugin) {
-            lst << (*it).plugin;
+        if (auto plugin = (*it).plugin) {
+            lst << plugin;
         }
     }
     return lst;

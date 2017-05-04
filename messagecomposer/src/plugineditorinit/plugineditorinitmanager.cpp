@@ -163,8 +163,8 @@ QVector<PluginEditorInit *> PluginEditorInitManagerPrivate::pluginsList() const
     QVector<PluginEditorInit *> lst;
     QVector<PluginEditorInitInfo>::ConstIterator end(mPluginList.constEnd());
     for (QVector<PluginEditorInitInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
-        if ((*it).plugin) {
-            lst << (*it).plugin;
+        if (auto plugin = (*it).plugin) {
+            lst << plugin;
         }
     }
     return lst;
