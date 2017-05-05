@@ -59,9 +59,9 @@ public:
     Private(View *owner, Widget *parent)
         : q(owner), mWidget(parent), mModel(nullptr), mDelegate(new Delegate(owner)),
           mAggregation(nullptr), mTheme(nullptr), mNeedToApplyThemeColumns(false),
-          mLastCurrentItem(nullptr), mFirstShow(true), mSaveThemeColumnStateOnSectionResize(true),
+          mLastCurrentItem(nullptr), mSaveThemeColumnStateOnSectionResize(true),
           mSaveThemeColumnStateTimer(nullptr), mApplyThemeColumnsTimer(nullptr),
-          mIgnoreUpdateGeometries(false) { }
+          mLastViewportWidth(-1), mIgnoreUpdateGeometries(false) { }
 
     void expandFullThread(const QModelIndex &index);
 
@@ -76,10 +76,10 @@ public:
     bool mNeedToApplyThemeColumns;            ///< Flag signaling a pending application of theme columns
     Item *mLastCurrentItem;
     QPoint mMousePressPosition;
-    bool mFirstShow;
     bool mSaveThemeColumnStateOnSectionResize;      ///< This is used to filter out programmatic column resizes in slotSectionResized().
     QTimer *mSaveThemeColumnStateTimer;             ///< Used to trigger a delayed "save theme state"
     QTimer *mApplyThemeColumnsTimer;                ///< Used to trigger a delayed "apply theme columns"
+    int mLastViewportWidth;
     bool mIgnoreUpdateGeometries;                   ///< Shall we ignore the "update geometries" calls ?
 };
 
@@ -290,9 +290,6 @@ void View::modelJobBatchTerminated()
 void View::modelHasBeenReset()
 {
     // This is called by Model when it has been reset.
-    if (d && d->mNeedToApplyThemeColumns) {
-        applyThemeColumns();
-    }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -316,8 +313,8 @@ void View::modelHasBeenReset()
 //
 // - Display the column state context popup menu and handle its actions
 //
-// - Apply the theme columns when the theme changes, when the model changes or in certain
-//   ugly corner cases when the widget is resized or shown.
+// - Apply the theme columns when the theme changes, when the model changes or when
+//   the widget is resized.
 //
 // - Avoid saving a corrupted column state in that QHeaderView can be found *very* frequently.
 //
@@ -351,6 +348,7 @@ void View::applyThemeColumns()
     if (viewport()->width() < 1) {
         return;    // insane width
     }
+    d->mLastViewportWidth = viewport()->width();
 
     // Now we want to distribute the available width on all the visible columns.
     //
@@ -658,7 +656,7 @@ void View::resizeEvent(QResizeEvent *e)
         return;    // don't play with
     }
 
-    if ((!d->mFirstShow) && d->mNeedToApplyThemeColumns) {
+    if (d->mLastViewportWidth != viewport()->width()) {
         triggerDelayedApplyThemeColumns();
     }
 
@@ -731,16 +729,6 @@ int View::sizeHintForColumn(int logicalColumnIndex) const
 void View::showEvent(QShowEvent *e)
 {
     QTreeView::showEvent(e);
-    if (d->mFirstShow) {
-        // If we're shown for the first time and the theme has been already set
-        // then we need to reapply the theme column widths since the previous
-        // application probably used invalid widths.
-        //
-        if (d->mTheme) {
-            triggerDelayedApplyThemeColumns();
-        }
-        d->mFirstShow = false;
-    }
 }
 
 void View::slotHeaderContextMenuRequested(const QPoint &pnt)
