@@ -46,6 +46,25 @@ static qint64 sizeWithEncoding(const QByteArray &data,
     return size;
 }
 
+static KMime::Headers::contentEncoding bestEncodingForTypeAndData(const QByteArray &mimeType,
+                                                                  const QByteArray &data)
+{
+    // Choose the best encoding for text/* and message/* attachments, but
+    // always use base64 for anything else to prevent CRLF/LF conversions
+    // etc. from corrupting the binary data
+    if (mimeType.isEmpty() || mimeType.startsWith("text/") || mimeType.startsWith("message/")) {
+        auto possibleEncodings = KMime::encodingsForData(data);
+        possibleEncodings.removeAll(KMime::Headers::CE8Bit);
+        if (!possibleEncodings.isEmpty()) {
+            return possibleEncodings.first();
+        } else {
+            return KMime::Headers::CEquPr; // TODO: maybe some other default?
+        }
+    } else {
+        return KMime::Headers::CEbase64;
+    }
+}
+
 class Q_DECL_HIDDEN MessageCore::AttachmentPart::Private
 {
 public:
@@ -135,7 +154,7 @@ void AttachmentPart::setAutoEncoding(bool enabled)
     d->mAutoEncoding = enabled;
 
     if (enabled) {
-        d->mEncoding = KMime::encodingsForData(d->mData).at(0);
+        d->mEncoding = bestEncodingForTypeAndData(d->mMimeType, d->mData);
     }
 
     d->mSize = sizeWithEncoding(d->mData, d->mEncoding);
@@ -213,9 +232,7 @@ void AttachmentPart::setData(const QByteArray &data)
     d->mData = data;
 
     if (d->mAutoEncoding) {
-        auto possibleEncodings = KMime::encodingsForData(data);
-        possibleEncodings.removeAll(KMime::Headers::CE8Bit);
-        d->mEncoding = possibleEncodings.first();
+        d->mEncoding = bestEncodingForTypeAndData(d->mMimeType, d->mData);
     }
 
     d->mSize = sizeWithEncoding(d->mData, d->mEncoding);
