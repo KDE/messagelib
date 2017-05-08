@@ -348,7 +348,8 @@ void View::applyThemeColumns()
     if (viewport()->width() < 1) {
         return;    // insane width
     }
-    d->mLastViewportWidth = viewport()->width();
+    const int viewportWidth = viewport()->width();
+    d->mLastViewportWidth = viewportWidth;
 
     // Now we want to distribute the available width on all the visible columns.
     //
@@ -408,19 +409,19 @@ void View::applyThemeColumns()
     // Now compute somewhat "proportional" widths.
     idx = 0;
 
-    QList< int > lColumnWidths;
+    QList< double > lColumnWidths;
     lColumnWidths.reserve(columns.count());
     int totalVisibleWidth = 0;
     end = columns.constEnd();
     for (it = columns.constBegin(); it != end; ++it) {
-        int savedWidth = (*it)->currentWidth();
-        int hintWidth = savedWidth > 0 ? savedWidth : lColumnSizeHints[ idx ];
-        int realWidth;
+        double savedWidth = (*it)->currentWidth();
+        double hintWidth = savedWidth > 0 ? savedWidth : lColumnSizeHints.at(idx);
+        double realWidth;
 
         if ((*it)->currentlyVisible() || (idx == 0)) {
             if ((*it)->containsTextItems()) {
                 // the column contains text items, it should get more space (if possible)
-                realWidth = ((hintWidth * viewport()->width()) / totalVisibleWidthHint);
+                realWidth = ((hintWidth * viewportWidth) / totalVisibleWidthHint);
             } else {
                 // the column contains no text items, it should get exactly its hint/saved width.
                 realWidth = hintWidth;
@@ -455,61 +456,56 @@ void View::applyThemeColumns()
 
     idx = 0;
 
-    if (totalVisibleWidth != viewport()->width()) {
+    if (totalVisibleWidth != viewportWidth) {
         // The estimated widths were not using exactly the available space.
-        if (totalVisibleWidth < viewport()->width()) {
+        if (totalVisibleWidth < viewportWidth) {
             // We were using less space than available.
 
             // Give the additional space to the text columns
             // also give more space to the first ones and less space to the last ones
-            int available = viewport()->width() - totalVisibleWidth;
+            qreal available = viewportWidth - totalVisibleWidth;
 
-            end = columns.end();
-            for (it = columns.begin(); it != end; ++it) {
-                if (((*it)->currentlyVisible() || (idx == 0)) && (*it)->containsTextItems()) {
+            for (int idx = 0; idx < columns.count(); ++idx) {
+                Theme::Column *column = columns.at(idx);
+                if ((column->currentlyVisible() || (idx == 0)) && column->containsTextItems()) {
                     // give more space to this column
-                    available >>= 1; // eat half of the available space
+                    available /= 2; // eat half of the available space
                     lColumnWidths[ idx ] += available; // and give it to this column
                     if (available < 1) {
                         break;    // no more space to give away
                     }
                 }
-
-                idx++;
             }
 
             // if any space is still available, give it to the first column
-            if (available) {
+            if (available >= 1) {
                 lColumnWidths[ 0 ] += available;
             }
         } else {
             // We were using more space than available
 
-            // If the columns span just a little bit more than the view then
+            // If the columns span more than the view then
             // try to squeeze them in order to make them fit
-            if (totalVisibleWidth < (viewport()->width() + 100)) {
-                int missing = totalVisibleWidth - viewport()->width();
-                int count = lColumnWidths.count();
+            double missing = totalVisibleWidth - viewportWidth;
+            if (missing > 0) {
+                const int count = lColumnWidths.count();
+                idx = count - 1;
 
-                if (missing > 0) {
-                    idx = count - 1;
-
-                    while (idx >= 0) {
-                        if (columns.at(idx)->currentlyVisible() || (idx == 0)) {
-                            int chop = lColumnWidths[ idx ] - lColumnSizeHints[ idx ];
-                            if (chop > 0) {
-                                if (chop > missing) {
-                                    chop = missing;
-                                }
-                                lColumnWidths[ idx ] -= chop;
-                                missing -= chop;
-                                if (missing < 1) {
-                                    break;    // no more space to recover
-                                }
+                while (idx >= 0) {
+                    if (columns.at(idx)->currentlyVisible() || (idx == 0)) {
+                        double chop = lColumnWidths.at(idx) - lColumnSizeHints.at(idx);
+                        if (chop > 0) {
+                            if (chop > missing) {
+                                chop = missing;
                             }
-                        } // else it's invisible
-                        idx--;
-                    }
+                            lColumnWidths[ idx ] -= chop;
+                            missing -= chop;
+                            if (missing < 1) {
+                                break;    // no more space to recover
+                            }
+                        }
+                    } // else it's invisible
+                    idx--;
                 }
             }
         }
@@ -529,8 +525,6 @@ void View::applyThemeColumns()
 
     idx = 0;
 
-    //qCDebug(MESSAGELIST_LOG) << "Entering column show/hide loop";
-
     end = columns.constEnd();
     for (it = columns.constBegin(); it != end; ++it) {
         bool visible = (idx == 0) || (*it)->currentlyVisible();
@@ -549,12 +543,11 @@ void View::applyThemeColumns()
     end = columns.constEnd();
     for (it = columns.constBegin(); it != end; ++it) {
         if ((*it)->currentlyVisible()) {
-            //qCDebug(MESSAGELIST_LOG) << "Resize section " << idx << " to " << lColumnWidths[ idx ];
-            const int columnWidth(lColumnWidths[ idx ]);
+            const double columnWidth(lColumnWidths.at(idx));
             (*it)->setCurrentWidth(columnWidth);
             //Laurent Bug 358855 - message list column widths lost when program closed
             // I need to investigate if this code is still necessary (all method)
-            header()->resizeSection(idx, columnWidth);
+            header()->resizeSection(idx, static_cast<int>(columnWidth));
         } else {
             (*it)->setCurrentWidth(-1);
         }

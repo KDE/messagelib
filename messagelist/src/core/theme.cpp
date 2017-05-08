@@ -555,7 +555,7 @@ bool Theme::Row::load(QDataStream &stream, int themeVersion)
     return true;
 }
 
-Theme::Column::SharedRuntimeData::SharedRuntimeData(bool currentlyVisible, int currentWidth)
+Theme::Column::SharedRuntimeData::SharedRuntimeData(bool currentlyVisible, double currentWidth)
     : mReferences(0), mCurrentlyVisible(currentlyVisible), mCurrentWidth(currentWidth)
 {
 }
@@ -591,12 +591,12 @@ void Theme::Column::SharedRuntimeData::setCurrentlyVisible(bool visible)
     mCurrentlyVisible = visible;
 }
 
-int Theme::Column::SharedRuntimeData::currentWidth() const
+double Theme::Column::SharedRuntimeData::currentWidth() const
 {
     return mCurrentWidth;
 }
 
-void Theme::Column::SharedRuntimeData::setCurrentWidth(int currentWidth)
+void Theme::Column::SharedRuntimeData::setCurrentWidth(double currentWidth)
 {
     mCurrentWidth = currentWidth;
 }
@@ -729,12 +729,12 @@ void Theme::Column::setCurrentlyVisible(bool currentlyVisible)
     mSharedRuntimeData->setCurrentlyVisible(currentlyVisible);
 }
 
-int Theme::Column::currentWidth() const
+double Theme::Column::currentWidth() const
 {
     return mSharedRuntimeData->currentWidth();
 }
 
-void Theme::Column::setCurrentWidth(int currentWidth)
+void Theme::Column::setCurrentWidth(double currentWidth)
 {
     mSharedRuntimeData->setCurrentWidth(currentWidth);
 }

@@ -528,12 +528,12 @@ public:
             int mReferences;          ///< The number of external references to this shared data object
 
             int mCurrentlyVisible;    ///< Is this column currently visible ? always valid (eventually set from default)
-            int mCurrentWidth;        ///< The current width of this column, -1 if not valid (never set)
+            double mCurrentWidth;     ///< The current width of this column, -1 if not valid (never set)
         public:
             /**
             * Create a shared runtime data object
             */
-            explicit SharedRuntimeData(bool currentlyVisible, int currentWidth);
+            explicit SharedRuntimeData(bool currentlyVisible, double currentWidth);
 
             /**
             * Destroy a shared runtime data object
@@ -570,12 +570,12 @@ public:
             /**
             * Returns the current width or -1 if the width is unspecified/invalid
             */
-            int currentWidth() const;
+            double currentWidth() const;
 
             /**
             * Sets the current width of the column
             */
-            void setCurrentWidth(int currentWidth);
+            void setCurrentWidth(double currentWidth);
 
             /**
             * Saves this runtime data to the specified stream
@@ -694,13 +694,13 @@ public:
         * or -1 if the width is not specified and should be auto-determined.
         * This state is shared between all the instances of this theme.
         */
-        int currentWidth() const;
+        double currentWidth() const;
 
         /**
         * Sets the current shared width setting for this column.
         * This state is shared between all the instances of this theme.
         */
-        void setCurrentWidth(int currentWidth);
+        void setCurrentWidth(double currentWidth);
 
         /**
         * Returns the list of rows visible in this column for a MessageItem
