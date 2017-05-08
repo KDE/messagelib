@@ -8,8 +8,6 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGEVIEWER
 ########### Targets ###########
 
 add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
-#verify
-remove_definitions("-DQT_NO_URL_CAST_FROM_STRING")
 
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5MessageViewer")
