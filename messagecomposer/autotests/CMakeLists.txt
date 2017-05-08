@@ -32,9 +32,10 @@ macro( add_messagecomposer_cryptotest _source )
         KF5::Completion
         KF5::MailTransport
         KF5::Ldap
-	KF5::Contacts
+        KF5::Contacts
     )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
+    set_tests_properties(messagecomposer-${_name} PROPERTIES RUN_SERIAL TRUE) # can't be parallelized due to gpg-agent
 endmacro()
 
 
