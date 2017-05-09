@@ -52,3 +52,15 @@ add_executable(testdndwebenginetest ${testdndwebengine_test_SRCS})
 target_link_libraries(testdndwebenginetest
     Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets
     )
+
+#####
+
+set(testselectionchangedwebengine_test_SRCS
+    testselectionchangedwebengine.cpp
+    )
+add_executable(testselectionchangedwebengine ${testselectionchangedwebengine_test_SRCS})
+
+target_link_libraries(testselectionchangedwebengine
+    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
+    )
+
