@@ -731,18 +731,24 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
     QString name = mNodeHelper->writeNodeToTempFile(node);
 
     // Make sure that it will not deleted when we switch from message.
-    QTemporaryFile *tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX/"));
-    tempFile->open();
-    const QString tmpFileName = tempFile->fileName();
-    delete tempFile;
+    QTemporaryDir *tmpDir = new QTemporaryDir(QDir::tempPath() + QLatin1String("/messageviewer_attachment_XXXXXX"));
+    if (tmpDir->isValid()) {
+        tmpDir->setAutoRemove(false);
+        const QString path = tmpDir->path();
+        delete tmpDir;
+        QFile f(name);
+        const QUrl tmpFileName = QUrl::fromLocalFile(name);
+        const QString newPath = path + QLatin1Char('/') + tmpFileName.fileName();
 
-    QFile f(name);
-    if (!f.copy(tmpFileName)) {
-        qCDebug(MESSAGEVIEWER_LOG) << " File was not able to copy: filename: " << name << " to " << tmpFileName;
+        if (!f.copy(newPath)) {
+            qDebug(MESSAGEVIEWER_LOG) << " File was not able to copy: filename: " << name << " to " << path;
+        } else {
+            name = newPath;
+        }
+        f.close();
     } else {
-        name = tmpFileName;
+        delete tmpDir;
     }
-    f.close();
 
     QList<QUrl> lst;
     const QFileDevice::Permissions perms = QFile::permissions(name);
