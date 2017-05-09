@@ -731,7 +731,7 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
     QString name = mNodeHelper->writeNodeToTempFile(node);
 
     // Make sure that it will not deleted when we switch from message.
-    QTemporaryFile *tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX"));
+    QTemporaryFile *tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1String("/messageviewer_XXXXXX/"));
     tempFile->open();
     const QString tmpFileName = tempFile->fileName();
     delete tempFile;
