@@ -320,8 +320,10 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
         }
         if (node->contentType()->mimeType() == "message/external-body") {
             if (node->contentType()->hasParameter(QStringLiteral("url"))) {
+                KRun::RunFlags flags;
+                flags |= KRun::RunExecutables;
                 const QString url = node->contentType()->parameter(QStringLiteral("url"));
-                KRun::runUrl(QUrl(url), QStringLiteral("text/html"), q);
+                KRun::runUrl(QUrl(url), QStringLiteral("text/html"), q, flags);
                 return;
             }
         }
@@ -2317,7 +2319,10 @@ void ViewerPrivate::slotOpenInBrowser()
 void ViewerPrivate::slotExportHtmlPageSuccess(const QString &filename)
 {
     const QUrl url(QUrl::fromLocalFile(filename));
-    KRun::runUrl(url, QStringLiteral("text/html"), q, true);
+    KRun::RunFlags flags;
+    flags |= KRun::DeleteTemporaryFiles;
+
+    KRun::runUrl(url, QStringLiteral("text/html"), q, flags);
     Q_EMIT printingFinished();
 }
 
