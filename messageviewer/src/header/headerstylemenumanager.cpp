@@ -108,6 +108,7 @@ void HeaderStyleMenuManagerPrivate::readSettings()
         } else {
             qCDebug(MESSAGEVIEWER_LOG) << "unknown style : headerstyle " << headerStyle << " headerstrategy :" << headerSetDisplayed;
         }
+        MessageViewer::MessageViewerSettings::self()->setHeaderPluginStyleName(headerStyleName);
     }
     //Fallback
     if (headerStyleName.isEmpty()) {
