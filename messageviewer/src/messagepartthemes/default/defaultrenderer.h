@@ -38,7 +38,6 @@ namespace MessageViewer
 {
 
 class CSSHelperBase;
-class DefaultRendererPrivate;
 
 class DefaultRenderer : public MimeTreeParser::Interface::MessagePartRenderer
 {
