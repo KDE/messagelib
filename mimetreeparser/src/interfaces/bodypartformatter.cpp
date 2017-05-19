@@ -138,6 +138,13 @@ void MessagePart::setHtmlWriter(MimeTreeParser::HtmlWriter *htmlWriter) const
     }
 }
 
+BodyPartFormatter::Result BodyPartFormatter::format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const
+{
+    Q_UNUSED(part);
+    Q_UNUSED(writer);
+    return Failed;
+}
+
 MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) const
 {
     auto mp = MessagePart::Ptr(new MessagePart(part));

@@ -97,21 +97,12 @@ public:
     Format body part \a part by generating some HTML and writing
     that to \a writer.
 
+    If you a async process and need to send an update information you can use
+    MimeTreeParser::NodeHelper::Update signal with the corresponding instance of BodyPart::nodeHelper()
+
     @return the result code (see above)
     */
-    virtual Result format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const = 0;
-
-    /**
-      Variant of format that allows implementors to hook notifications up to
-      a listener interested in the result, for async operations.
-
-      @return the result code (see above)
-    */
-    virtual Result format(BodyPart *part, MimeTreeParser::HtmlWriter *writer, QObject *asyncResultObserver) const
-    {
-        Q_UNUSED(asyncResultObserver);
-        return format(part, writer);
-    }
+    virtual Result format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const;
 
     virtual void adaptProcessResult(ProcessResult &result) const
     {
