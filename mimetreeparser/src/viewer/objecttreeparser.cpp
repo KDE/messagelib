@@ -231,8 +231,7 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
             bRendered = true;
             break;
         } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
-            QObject *asyncResultObserver = allowAsync() ? mSource->sourceObject() : nullptr;
-            const auto r = formatter->format(&part, result->htmlWriter(), asyncResultObserver);
+            const auto r = formatter->format(&part, result->htmlWriter());
             if (r == Interface::BodyPartFormatter::AsIcon) {
                 processResult.setNeverDisplayInline(true);
                 formatter->adaptProcessResult(processResult);

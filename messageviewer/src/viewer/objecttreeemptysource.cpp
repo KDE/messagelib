@@ -104,11 +104,6 @@ QString EmptySource::createMessageHeader(KMime::Message *message)
     return QString(); //do nothing
 }
 
-QObject *EmptySource::sourceObject()
-{
-    return nullptr;
-}
-
 const MimeTreeParser::AttachmentStrategy *EmptySource::attachmentStrategy()
 {
     return MimeTreeParser::AttachmentStrategy::smart();

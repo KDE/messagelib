@@ -47,7 +47,6 @@ public:
     const MimeTreeParser::AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE;
     MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE;
     virtual CSSHelperBase *cssHelper();
-    QObject *sourceObject() Q_DECL_OVERRIDE;
 
     bool autoImportKeys() const Q_DECL_OVERRIDE;
     bool showEmoticons() const Q_DECL_OVERRIDE;

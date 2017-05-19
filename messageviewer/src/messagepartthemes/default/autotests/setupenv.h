@@ -166,10 +166,6 @@ public:
         return QString(); //do nothing
     }
 
-    QObject *sourceObject() Q_DECL_OVERRIDE {
-        return nullptr;
-    }
-
 private:
     MimeTreeParser::HtmlWriter *mWriter;
     MessageViewer::CSSHelperBase *mCSSHelper;

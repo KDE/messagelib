@@ -92,11 +92,6 @@ QString MailViewerSource::createMessageHeader(KMime::Message *message)
     return mViewer->writeMsgHeader(message);
 }
 
-QObject *MailViewerSource::sourceObject()
-{
-    return mViewer;
-}
-
 const MimeTreeParser::AttachmentStrategy *MailViewerSource::attachmentStrategy()
 {
     return mViewer->attachmentStrategy();

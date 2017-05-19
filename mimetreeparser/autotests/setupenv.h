@@ -146,10 +146,6 @@ public:
         return QString(); //do nothing
     }
 
-    QObject *sourceObject() Q_DECL_OVERRIDE {
-        return nullptr;
-    }
-
     Interface::MessagePartRenderer::Ptr messagePartTheme(Interface::MessagePart::Ptr msgPart) Q_DECL_OVERRIDE {
         Q_UNUSED(msgPart);
         return  Interface::MessagePartRenderer::Ptr();
