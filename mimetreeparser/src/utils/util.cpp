@@ -90,6 +90,8 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType,
         tMimeType = QStringLiteral("application/x-vnd.akonadi.note");
     } else if (mimeType == QLatin1String("image/jpg")) {
         tMimeType = QStringLiteral("image/jpeg");
+    } else if (mimeType == QLatin1String("application/x-pkcs7-signature")) {
+        tMimeType = QStringLiteral("application/pkcs7-signature");
     }
     QMimeDatabase mimeDb;
     auto mime = mimeDb.mimeTypeForName(tMimeType);
