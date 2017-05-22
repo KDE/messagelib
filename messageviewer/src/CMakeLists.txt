@@ -162,6 +162,7 @@ set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/partrendered.cpp
     messagepartthemes/default/rendererpluginfactorysingleton.cpp
     messagepartthemes/default/plugins/messagepartrenderer.cpp
+    messagepartthemes/default/plugins/textmessagepartrenderer.cpp
     messagepartthemes/default/plugins/plugins.cpp
     messagepartthemes/default/plugins/quotehtml.cpp
     messagepartthemes/default/messagepartrenderbase.cpp

@@ -29,6 +29,8 @@ namespace MimeTreeParser
 {
     class MessagePart;
     typedef QSharedPointer<MessagePart> MessagePartPtr;
+    class TextMessagePart;
+    typedef QSharedPointer<TextMessagePart> TextMessagePartPtr;
     class DefaultRendererPrivate;
 }
 
@@ -85,6 +87,23 @@ protected:
 
 private:
     QString mHtml;
+    bool mShowAttachmentBlock;
+    KMime::Content *mAttachmentNode;
+};
+
+class TextPartRendered : public PartRendered
+{
+public:
+    TextPartRendered(MimeTreeParser::TextMessagePartPtr part);
+    virtual ~TextPartRendered();
+
+    QString html() Q_DECL_OVERRIDE;
+    QMap<QByteArray, QString> embededParts() Q_DECL_OVERRIDE;
+    QString extraHeader() Q_DECL_OVERRIDE;
+
+private:
+    QString mHtml;
+    QVector<QSharedPointer<PartRendered>> mSubList;
     bool mShowAttachmentBlock;
     KMime::Content *mAttachmentNode;
 };

@@ -17,15 +17,25 @@
    02110-1301, USA.
 */
 
-#include "messagepartrenderer.h"
 #include "textmessagepartrenderer.h"
 
-#include "../messagepartrendererfactorybase_p.h"
+#include "quotehtml.h"
 
-using namespace MessageViewer;
+#include "../partrendered.h"
+#include "../defaultrenderer_p.h"
 
-void MessagePartRendererFactoryBasePrivate::initalize_builtin_renderers()
+TextMessagePartRenderer::TextMessagePartRenderer()
 {
-    insert(QStringLiteral("MimeTreeParser::MessagePart"), new MessagePartRenderer());
-    insert(QStringLiteral("MimeTreeParser::TextMessagePart"), new TextMessagePartRenderer());
+}
+TextMessagePartRenderer::~TextMessagePartRenderer()
+{
+}
+
+QSharedPointer<PartRendered> TextMessagePartRenderer::render(DefaultRendererPrivate *drp, const MimeTreeParser::Interface::MessagePartPtr &msgPart) const
+{
+    auto mp = msgPart.dynamicCast<TextMessagePart>();
+    if (mp) {
+        return QSharedPointer<PartRendered>(new TextPartRendered(mp));
+    }
+    return QSharedPointer<PartRendered>();
 }

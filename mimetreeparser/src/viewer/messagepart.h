@@ -36,6 +36,8 @@
 
 class QTextCodec;
 class PartPrivate;
+class TextPartRendered;
+class AttachmentMessagePartRenderer;
 
 namespace GpgME
 {
@@ -193,6 +195,8 @@ private:
     bool mDecryptMessage;
     bool mIsHidden;
 
+    friend class ::TextPartRendered;
+    friend class ::AttachmentMessagePartRenderer;
     friend class DefaultRendererPrivate;
     friend class ObjectTreeParser;
     friend class ::PartPrivate;

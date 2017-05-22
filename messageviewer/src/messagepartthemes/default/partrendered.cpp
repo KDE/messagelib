@@ -150,3 +150,79 @@ QString HtmlOnlyPartRendered::html()
 
     return ret;
 }
+
+TextPartRendered::TextPartRendered(MimeTreeParser::TextMessagePart::Ptr mp)
+    : mShowAttachmentBlock(false)
+    , mAttachmentNode(nullptr)
+{
+
+    auto node = mp->mNode;
+    auto nodeHelper = mp->mOtp->nodeHelper();
+
+    if (mp->isHidden()) {
+        return;
+    }
+
+    Grantlee::Template t;
+    Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
+    QObject block;
+    c.insert(QStringLiteral("block"), &block);
+
+    block.setProperty("showTextFrame", mp->showTextFrame());
+    block.setProperty("label", MessageCore::StringUtil::quoteHtmlChars(MimeTreeParser::NodeHelper::fileName(node), true));
+    block.setProperty("comment", MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->asUnicodeString(), true));
+    block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
+    block.setProperty("showLink", mp->showLink());
+    block.setProperty("dir", alignText());
+
+    t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/textmessagepart.html"));
+    mSubList = renderSubParts(mp);
+    QString content;
+    foreach(auto part, mSubList) {
+        content += part->html();
+    }
+    qDebug() << "content" << content;
+    c.insert(QStringLiteral("content"), content);
+
+    mShowAttachmentBlock = mp->isAttachment();
+    mHtml = t->render(&c);
+    mAttachmentNode = mp->attachmentNode();
+}
+
+TextPartRendered::~TextPartRendered()
+{
+}
+
+
+QMap<QByteArray, QString> TextPartRendered::embededParts()
+{
+    QMap<QByteArray, QString> ret;
+    foreach(auto part, mSubList) {
+        //ret += part->embededParts();
+    }
+    return ret;
+}
+
+QString TextPartRendered::extraHeader()
+{
+    QString ret;
+    foreach(auto part, mSubList) {
+        ret += part->extraHeader();
+    }
+    return ret;
+}
+
+QString TextPartRendered::html()
+{
+    MimeTreeParser::AttachmentMarkBlock block(nullptr, mAttachmentNode);
+
+    QString ret;
+    if (mShowAttachmentBlock) {
+        ret += block.enter();
+    }
+
+    ret += mHtml;
+    ret += block.exit();
+
+    return ret;
+}
