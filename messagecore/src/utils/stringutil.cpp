@@ -504,9 +504,25 @@ QString smartQuote(const QString &msg, int maxLineLength)
     QString oldIndent;
     bool firstPart = true;
     QString result;
-    const QStringList splitMsgList = msg.split(QLatin1Char('\n'));
-    for (QString line : splitMsgList) {
 
+    int lineStart = 0;
+    int lineEnd = msg.indexOf(QLatin1Char('\n'));
+    bool needToContinue = true;
+    for (;needToContinue; lineStart = lineEnd + 1, lineEnd = msg.indexOf(QLatin1Char('\n'), lineStart)) {
+        QString line;
+        if (lineEnd == -1) {
+            if (lineStart == 0) {
+                line = msg;
+                needToContinue = false;
+            } else if (lineStart != 0 && lineStart != msg.length()) {
+                line = msg.mid(lineStart, msg.length() - lineStart);
+                needToContinue = false;
+            } else {
+                needToContinue = false;
+            }
+        } else {
+            line = msg.mid(lineStart, lineEnd - lineStart);
+        }
         // Split off the indent from the line
         const QString indent = splitLine(line);
 

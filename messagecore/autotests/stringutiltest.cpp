@@ -47,6 +47,9 @@ void StringUtilTest::test_SmartQuote_data()
     QTest::addColumn<QString>("originalString");
     QTest::addColumn<QString>("quotedString");
 
+    QTest::newRow("") << ""
+                       << "";
+
     QTest::newRow("1") << "Some short text"
                        << "Some short text";
 
