@@ -17,13 +17,19 @@
    02110-1301, USA.
 */
 
-#include "messagepartrenderer.h"
+#ifndef __MESSAGEVIEWER_DEFAULTRENDERER_MESSAGEPARTRENDERER_H__
+#define __MESSAGEVIEWER_DEFAULTRENDERER_MESSAGEPARTRENDERER_H__
 
-#include "../messagepartrendererfactorybase_p.h"
+#include "../messagepartrendererbase.h"
 
-using namespace MessageViewer;
+#include <QSharedPointer>
 
-void MessagePartRendererFactoryBasePrivate::initalize_builtin_renderers()
+class MessagePartRenderer : public MessagePartRendererBase
 {
-    insert(QStringLiteral("MimeTreeParser::MessagePart"), new MessagePartRenderer());
-}
+public:
+    MessagePartRenderer();
+    virtual ~MessagePartRenderer();
+    QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *drp, const MimeTreeParser::Interface::MessagePartPtr &msgPart) const Q_DECL_OVERRIDE;
+};
+
+#endif

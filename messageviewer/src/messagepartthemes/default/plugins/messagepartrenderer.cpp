@@ -19,11 +19,24 @@
 
 #include "messagepartrenderer.h"
 
-#include "../messagepartrendererfactorybase_p.h"
+#include "quotehtml.h"
 
-using namespace MessageViewer;
+#include "../partrendered.h"
+#include "../defaultrenderer_p.h"
 
-void MessagePartRendererFactoryBasePrivate::initalize_builtin_renderers()
+MessagePartRenderer::MessagePartRenderer()
 {
-    insert(QStringLiteral("MimeTreeParser::MessagePart"), new MessagePartRenderer());
+}
+
+MessagePartRenderer::~MessagePartRenderer()
+{
+}
+
+QSharedPointer<PartRendered> MessagePartRenderer::render(MimeTreeParser::DefaultRendererPrivate *drp, const MimeTreeParser::Interface::MessagePartPtr &msgPart) const
+{
+    auto mp = msgPart.dynamicCast<MimeTreeParser::MessagePart>();
+    if (mp) {
+        return QSharedPointer<PartRendered>(new HtmlOnlyPartRendered(mp, quotedHTML(mp->text(), mp->source(), drp->cssHelper())));
+    }
+    return QSharedPointer<PartRendered>();
 }

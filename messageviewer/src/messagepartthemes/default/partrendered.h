@@ -69,4 +69,24 @@ private:
     QString mHead;
     QMap<QByteArray, QString> mEmbeded;
 };
+
+class HtmlOnlyPartRendered : public PartRendered
+{
+public:
+    HtmlOnlyPartRendered(MimeTreeParser::MessagePartPtr part, const QString &html);
+    virtual ~HtmlOnlyPartRendered();
+
+    QString html() Q_DECL_OVERRIDE;
+    QMap<QByteArray, QString> embededParts() Q_DECL_OVERRIDE;
+    QString extraHeader() Q_DECL_OVERRIDE;
+
+protected:
+    void setHtml(const QString &html);
+
+private:
+    QString mHtml;
+    bool mShowAttachmentBlock;
+    KMime::Content *mAttachmentNode;
+};
+
 #endif

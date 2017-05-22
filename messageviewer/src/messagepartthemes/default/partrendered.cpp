@@ -114,3 +114,39 @@ QMap<QByteArray, QString> WrapperPartRendered::embededParts()
 {
     return mEmbeded;
 }
+
+HtmlOnlyPartRendered::HtmlOnlyPartRendered(MimeTreeParser::MessagePart::Ptr mp, const QString &html)
+    : mHtml(html)
+{
+    mShowAttachmentBlock = mp->isAttachment();
+    mAttachmentNode = mp->attachmentNode();
+}
+
+HtmlOnlyPartRendered::~HtmlOnlyPartRendered()
+{
+}
+
+QMap<QByteArray, QString> HtmlOnlyPartRendered::embededParts()
+{
+    return QMap<QByteArray, QString>();
+}
+
+QString HtmlOnlyPartRendered::extraHeader()
+{
+    return QString();
+}
+
+QString HtmlOnlyPartRendered::html()
+{
+    MimeTreeParser::AttachmentMarkBlock block(nullptr, mAttachmentNode);
+
+    QString ret;
+    if (mShowAttachmentBlock) {
+        ret += block.enter();
+    }
+
+    ret += mHtml;
+    ret += block.exit();
+
+    return ret;
+}

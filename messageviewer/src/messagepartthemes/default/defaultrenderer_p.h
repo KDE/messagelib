@@ -56,7 +56,6 @@ public:
     QString render(const EncapsulatedRfc822MessagePart::Ptr &mp);
     QString render(const AttachmentMessagePart::Ptr &mp);
     QString render(const TextMessagePart::Ptr &mp);
-    QString render(const MessagePart::Ptr mp);
     QString render(const HtmlMessagePart::Ptr &mp);
     QString renderEncrypted(const EncryptedMessagePart::Ptr &mp);
     QString renderSigned(const SignedMessagePart::Ptr &mp);

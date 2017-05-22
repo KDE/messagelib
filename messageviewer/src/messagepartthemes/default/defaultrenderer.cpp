@@ -547,21 +547,6 @@ public:
         return htmlWriter->html;
     }
 
-    QString DefaultRendererPrivate::render(const MessagePart::Ptr mp)
-    {
-
-        auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-        {
-            HTMLBlock::Ptr aBlock;
-            if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
-            }
-
-            htmlWriter->queue(quotedHTML(mp->text()));
-        }
-        return htmlWriter->html;
-    }
-
     QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
     {
         Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/htmlmessagepart.html"));
@@ -632,7 +617,12 @@ public:
             }
             c.insert(QStringLiteral("content"), _htmlWriter->html);
         } else if (!metaData.inProgress) {
-            c.insert(QStringLiteral("content"), render(mp.dynamicCast<MessagePart>()));
+            auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
+            if (part) {
+                c.insert(QStringLiteral("content"), part->html());
+            } else {
+                c.insert(QStringLiteral("content"), QStringLiteral());
+            }
         }
 
         c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(mp->mCryptoProto));
@@ -678,7 +668,12 @@ public:
             }
             c.insert(QStringLiteral("content"), _htmlWriter->html);
         } else if (!metaData.inProgress) {
-            c.insert(QStringLiteral("content"), render(mp.dynamicCast<MessagePart>()));
+            auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
+            if (part) {
+                c.insert(QStringLiteral("content"), part->html());
+            } else {
+                c.insert(QStringLiteral("content"), QStringLiteral());
+            }
         }
 
         c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(cryptoProto));
@@ -907,7 +902,10 @@ public:
             if (mp->hasSubParts()) {
                 renderSubParts(mp, htmlWriter);
             } else if (!metaData.inProgress) {
-                htmlWriter->queue(render(mp.dynamicCast<MessagePart>()));
+                auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
+                if (part) {
+                    htmlWriter->queue(part->html());
+                }
             }
         }
         return htmlWriter->html;
@@ -938,7 +936,10 @@ public:
             if (mp->hasSubParts()) {
                 renderSubParts(mp, htmlWriter);
             } else if (!metaData.inProgress) {
-                htmlWriter->queue(render(mp.dynamicCast<MessagePart>()));
+                auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
+                if (part) {
+                    htmlWriter->queue(part->html());
+                }
             }
         }
         return htmlWriter->html;
@@ -1090,11 +1091,6 @@ public:
             }
         } else if (className == QStringLiteral("MimeTreeParser::CertMessagePart")) {
             auto mp = msgPart.dynamicCast<CertMessagePart>();
-            if (mp) {
-                return render(mp);
-            }
-        } else if (className == QStringLiteral("MimeTreeParser::MessagePart")) {
-            auto mp = msgPart.dynamicCast<MessagePart>();
             if (mp) {
                 return render(mp);
             }
