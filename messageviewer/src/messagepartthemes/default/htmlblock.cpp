@@ -28,6 +28,11 @@
 
 using namespace MimeTreeParser;
 
+HTMLBlock::HTMLBlock()
+    : entered(false)
+{
+}
+
 HTMLBlock::~HTMLBlock()
 {
 }
@@ -35,6 +40,24 @@ HTMLBlock::~HTMLBlock()
 QString HTMLBlock::dir() const
 {
     return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+}
+
+QString HTMLBlock::enter()
+{
+    if(!entered) {
+        entered = true;
+        return enterString();
+    }
+    return QString();
+}
+
+QString HTMLBlock::exit()
+{
+    if (entered) {
+        entered = false;
+        return exitString();
+    }
+    return QString();
 }
 
 AttachmentMarkBlock::AttachmentMarkBlock(MimeTreeParser::HtmlWriter *writer, KMime::Content *node)
@@ -51,22 +74,28 @@ AttachmentMarkBlock::~AttachmentMarkBlock()
 
 void AttachmentMarkBlock::internalEnter()
 {
-    if (mWriter && !entered) {
-        const QString index = mNode->index().toString();
-        mWriter->queue(QStringLiteral("<a name=\"att%1\"></a>").arg(index));
-        mWriter->queue(QStringLiteral("<div id=\"attachmentDiv%1\">\n").arg(index));
-        entered = true;
+    if (mWriter) {
+        mWriter->queue(enter());
     }
 }
 
 void AttachmentMarkBlock::internalExit()
 {
-    if (!entered) {
-        return;
+    if (mWriter) {
+        mWriter->queue(exit());
     }
+}
 
-    mWriter->queue(QStringLiteral("</div>"));
-    entered = false;
+QString AttachmentMarkBlock::enterString() const
+{
+    const QString index = mNode->index().toString();
+    return QStringLiteral("<a name=\"att%1\"></a>").arg(index)
+           + QStringLiteral("<div id=\"attachmentDiv%1\">\n").arg(index);
+}
+
+QString AttachmentMarkBlock::exitString() const
+{
+    return QStringLiteral("</div>");
 }
 
 RootBlock::RootBlock(HtmlWriter *writer)
@@ -83,21 +112,24 @@ RootBlock::~RootBlock()
 
 void RootBlock::internalEnter()
 {
-    if (!mWriter || entered) {
-        return;
+    if (mWriter) {
+        mWriter->queue(enter());
     }
-    entered = true;
-
-    mWriter->queue(QStringLiteral("<div style=\"position: relative; word-wrap: break-word\">\n"));
 }
 
 void RootBlock::internalExit()
 {
-    if (!entered) {
-        return;
+    if (mWriter) {
+        mWriter->queue(exit());
     }
+}
 
-    entered = false;
+QString RootBlock::enterString() const
+{
+    return QStringLiteral("<div style=\"position: relative; word-wrap: break-word\">\n");
+}
 
-    mWriter->queue(QStringLiteral("</div>\n"));
+QString RootBlock::exitString() const
+{
+    return QStringLiteral("</div>\n");
 }

@@ -38,14 +38,18 @@ class HTMLBlock
 public:
     typedef QSharedPointer<HTMLBlock> Ptr;
 
-    HTMLBlock()
-        : entered(false)
-    { }
+    HTMLBlock();
 
     virtual ~HTMLBlock();
 
+    QString enter();
+    QString exit();
 protected:
     QString dir() const;
+    virtual QString enterString() const = 0;
+    virtual QString exitString() const = 0;
+
+private:
     bool entered;
 };
 
@@ -57,6 +61,10 @@ class AttachmentMarkBlock : public HTMLBlock
 public:
     AttachmentMarkBlock(MimeTreeParser::HtmlWriter *writer, KMime::Content *node);
     virtual ~AttachmentMarkBlock();
+
+protected:
+    QString enterString() const Q_DECL_OVERRIDE;
+    QString exitString() const Q_DECL_OVERRIDE;
 
 private:
     void internalEnter();
@@ -74,6 +82,10 @@ class RootBlock : public HTMLBlock
 public:
     RootBlock(MimeTreeParser::HtmlWriter *writer);
     virtual ~RootBlock();
+
+protected:
+    QString enterString() const Q_DECL_OVERRIDE;
+    QString exitString() const Q_DECL_OVERRIDE;
 
 private:
     void internalEnter();
