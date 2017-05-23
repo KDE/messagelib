@@ -26,7 +26,6 @@ using namespace TemplateParser;
 TemplateWebEnginePage::TemplateWebEnginePage(QObject *parent)
     : QWebEnginePage(parent)
 {
-    profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
     settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
@@ -49,6 +48,7 @@ TemplateWebEnginePage::TemplateWebEnginePage(QObject *parent)
     settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, false);
 #endif
     profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
+    profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
 }
 
 TemplateWebEnginePage::~TemplateWebEnginePage()
