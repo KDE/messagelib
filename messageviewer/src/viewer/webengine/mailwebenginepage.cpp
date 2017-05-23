@@ -42,7 +42,6 @@ MailWebEnginePage::~MailWebEnginePage()
 
 void MailWebEnginePage::initialize()
 {
-    profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
     settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
     settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
@@ -64,6 +63,7 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, false);
 #endif
     profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
+    profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
 
     const QFontInfo font(QFontDatabase().systemFont(QFontDatabase::GeneralFont));
     settings()->setFontFamily(QWebEngineSettings::StandardFont, font.family());
