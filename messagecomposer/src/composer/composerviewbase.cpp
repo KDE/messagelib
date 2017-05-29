@@ -86,6 +86,8 @@
 #include <QStandardPaths>
 #include <followupreminder/followupremindercreatejob.h>
 
+using namespace MessageComposer;
+
 static QStringList encodeIdn(const QStringList &emails)
 {
     QStringList encoded;
@@ -97,7 +99,7 @@ static QStringList encodeIdn(const QStringList &emails)
     return encoded;
 }
 
-MessageComposer::ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
+ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
     : QObject(parent)
     , m_msg(KMime::Message::Ptr(new KMime::Message))
     , m_attachmentController(nullptr)
@@ -129,17 +131,17 @@ MessageComposer::ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *pa
 
 }
 
-MessageComposer::ComposerViewBase::~ComposerViewBase()
+ComposerViewBase::~ComposerViewBase()
 {
     delete mSendLaterInfo;
 }
 
-bool MessageComposer::ComposerViewBase::isComposing() const
+bool ComposerViewBase::isComposing() const
 {
     return !m_composers.isEmpty();
 }
 
-void MessageComposer::ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecryption)
+void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecryption)
 {
     if (m_attachmentModel)  {
         foreach (MessageCore::AttachmentPart::Ptr attachment, m_attachmentModel->attachments()) {
@@ -224,7 +226,7 @@ void MessageComposer::ComposerViewBase::setMessage(const KMime::Message::Ptr &ms
     delete msgContent;
 }
 
-void MessageComposer::ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
+void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
 {
     // First, we copy the message and then parse it to the object tree parser.
     // The otp gets the message text out of it, in textualContent(), and also decrypts
@@ -250,7 +252,7 @@ void MessageComposer::ComposerViewBase::updateTemplate(const KMime::Message::Ptr
     delete msgContent;
 }
 
-void MessageComposer::ComposerViewBase::saveMailSettings()
+void ComposerViewBase::saveMailSettings()
 {
     const KIdentityManagement::Identity identity = identityManager()->identityForUoid(m_identityCombo->currentIdentity());
     auto header = new KMime::Headers::Generic("X-KMail-Transport");
@@ -289,13 +291,13 @@ void MessageComposer::ComposerViewBase::saveMailSettings()
 
 }
 
-void MessageComposer::ComposerViewBase::clearFollowUp()
+void ComposerViewBase::clearFollowUp()
 {
     mFollowUpDate = QDate();
     mFollowUpCollection = Akonadi::Collection();
 }
 
-void MessageComposer::ComposerViewBase::send(MessageComposer::MessageSender::SendMethod method, MessageComposer::MessageSender::SaveIn saveIn, bool checkMailDispatcher)
+void ComposerViewBase::send(MessageComposer::MessageSender::SendMethod method, MessageComposer::MessageSender::SaveIn saveIn, bool checkMailDispatcher)
 {
     mSendMethod = method;
     mSaveIn = saveIn;
@@ -363,12 +365,12 @@ void MessageComposer::ComposerViewBase::send(MessageComposer::MessageSender::Sen
     readyForSending();
 }
 
-void MessageComposer::ComposerViewBase::setCustomHeader(const QMap<QByteArray, QString> &customHeader)
+void ComposerViewBase::setCustomHeader(const QMap<QByteArray, QString> &customHeader)
 {
     m_customHeader = customHeader;
 }
 
-void MessageComposer::ComposerViewBase::readyForSending()
+void ComposerViewBase::readyForSending()
 {
     qCDebug(MESSAGECOMPOSER_LOG) << "Entering readyForSending";
     if (!m_msg) {
@@ -396,7 +398,7 @@ void MessageComposer::ComposerViewBase::readyForSending()
     job->start();
 }
 
-void MessageComposer::ComposerViewBase::slotEmailAddressResolved(KJob *job)
+void ComposerViewBase::slotEmailAddressResolved(KJob *job)
 {
     if (job->error()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "An error occurred while resolving the email addresses:" << job->errorString();
@@ -596,7 +598,7 @@ inline bool showKeyApprovalDialog()
 
 } // nameless namespace
 
-QList< MessageComposer::Composer * > MessageComposer::ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
+QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
 {
     const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
 
@@ -769,14 +771,14 @@ QList< MessageComposer::Composer * > MessageComposer::ComposerViewBase::generate
     return composers;
 }
 
-void MessageComposer::ComposerViewBase::fillGlobalPart(MessageComposer::GlobalPart *globalPart)
+void ComposerViewBase::fillGlobalPart(MessageComposer::GlobalPart *globalPart)
 {
     globalPart->setParentWidgetForGui(m_parentWidget);
     globalPart->setCharsets(m_charsets);
     globalPart->setMDNRequested(m_mdnRequested);
 }
 
-void MessageComposer::ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, MessageComposer::ComposerViewBase::RecipientExpansion expansion)
+void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, ComposerViewBase::RecipientExpansion expansion)
 {
     // TODO splitAddressList and expandAliases ugliness should be handled by a
     // special AddressListEdit widget... (later: see RecipientsEditor)
@@ -870,7 +872,7 @@ void MessageComposer::ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *
     infoPart->setExtraHeaders(extras);
 }
 
-void MessageComposer::ComposerViewBase::slotSendComposeResult(KJob *job)
+void ComposerViewBase::slotSendComposeResult(KJob *job)
 {
     qCDebug(MESSAGECOMPOSER_LOG) << "compose job might have error error" << job->error() << "errorString" << job->errorString();
     Q_ASSERT(dynamic_cast< MessageComposer::Composer * >(job));
@@ -908,7 +910,7 @@ void MessageComposer::ComposerViewBase::slotSendComposeResult(KJob *job)
     m_composers.removeAll(composer);
 }
 
-void MessageComposer::ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
+void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 {
     foreach (const QByteArray &address, msg->to()->addresses()) {
         KPIM::RecentAddresses::self(MessageComposer::MessageComposerSettings::self()->config())->add(QLatin1String(address));
@@ -921,7 +923,7 @@ void MessageComposer::ComposerViewBase::saveRecentAddresses(const KMime::Message
     }
 }
 
-void MessageComposer::ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer)
+void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer)
 {
     const MessageComposer::InfoPart *infoPart = composer->infoPart();
     MailTransport::MessageQueueJob *qjob = new MailTransport::MessageQueueJob(this);
@@ -963,7 +965,7 @@ void MessageComposer::ComposerViewBase::queueMessage(const KMime::Message::Ptr &
     qCDebug(MESSAGECOMPOSER_LOG) << "Queued a message.";
 }
 
-void MessageComposer::ComposerViewBase::slotQueueResult(KJob *job)
+void ComposerViewBase::slotQueueResult(KJob *job)
 {
     m_pendingQueueJobs--;
     MailTransport::MessageQueueJob *qjob = static_cast<MailTransport::MessageQueueJob * >(job);
@@ -990,7 +992,7 @@ void MessageComposer::ComposerViewBase::slotQueueResult(KJob *job)
     }
 }
 
-void MessageComposer::ComposerViewBase::fillQueueJobHeaders(MailTransport::MessageQueueJob *qjob, KMime::Message::Ptr message, const MessageComposer::InfoPart *infoPart)
+void ComposerViewBase::fillQueueJobHeaders(MailTransport::MessageQueueJob *qjob, KMime::Message::Ptr message, const MessageComposer::InfoPart *infoPart)
 {
     MailTransport::Transport *transport = MailTransport::TransportManager::self()->transportById(infoPart->transportId());
     if (transport && transport->specifySenderOverwriteAddress()) {
@@ -1012,7 +1014,7 @@ void MessageComposer::ComposerViewBase::fillQueueJobHeaders(MailTransport::Messa
     }
 }
 
-void MessageComposer::ComposerViewBase::initAutoSave()
+void ComposerViewBase::initAutoSave()
 {
     qCDebug(MESSAGECOMPOSER_LOG) << "initalising autosave";
 
@@ -1030,37 +1032,37 @@ void MessageComposer::ComposerViewBase::initAutoSave()
 
     updateAutoSave();
 }
-Akonadi::Collection MessageComposer::ComposerViewBase::followUpCollection() const
+Akonadi::Collection ComposerViewBase::followUpCollection() const
 {
     return mFollowUpCollection;
 }
 
-void MessageComposer::ComposerViewBase::setFollowUpCollection(const Akonadi::Collection &followUpCollection)
+void ComposerViewBase::setFollowUpCollection(const Akonadi::Collection &followUpCollection)
 {
     mFollowUpCollection = followUpCollection;
 }
 
-QDate MessageComposer::ComposerViewBase::followUpDate() const
+QDate ComposerViewBase::followUpDate() const
 {
     return mFollowUpDate;
 }
 
-void MessageComposer::ComposerViewBase::setFollowUpDate(const QDate &followUpDate)
+void ComposerViewBase::setFollowUpDate(const QDate &followUpDate)
 {
     mFollowUpDate = followUpDate;
 }
 
-Sonnet::DictionaryComboBox *MessageComposer::ComposerViewBase::dictionary() const
+Sonnet::DictionaryComboBox *ComposerViewBase::dictionary() const
 {
     return m_dictionary;
 }
 
-void MessageComposer::ComposerViewBase::setDictionary(Sonnet::DictionaryComboBox *dictionary)
+void ComposerViewBase::setDictionary(Sonnet::DictionaryComboBox *dictionary)
 {
     m_dictionary = dictionary;
 }
 
-void MessageComposer::ComposerViewBase::updateAutoSave()
+void ComposerViewBase::updateAutoSave()
 {
     if (m_autoSaveInterval == 0) {
         delete m_autoSaveTimer;
@@ -1080,7 +1082,7 @@ void MessageComposer::ComposerViewBase::updateAutoSave()
     }
 }
 
-void MessageComposer::ComposerViewBase::cleanupAutoSave()
+void ComposerViewBase::cleanupAutoSave()
 {
     delete m_autoSaveTimer;
     m_autoSaveTimer = nullptr;
@@ -1109,7 +1111,7 @@ void MessageComposer::ComposerViewBase::cleanupAutoSave()
 }
 
 //-----------------------------------------------------------------------------
-void MessageComposer::ComposerViewBase::autoSaveMessage()
+void ComposerViewBase::autoSaveMessage()
 {
     qCDebug(MESSAGECOMPOSER_LOG) << "Autosaving message";
 
@@ -1130,14 +1132,14 @@ void MessageComposer::ComposerViewBase::autoSaveMessage()
     composer->start();
 }
 
-void MessageComposer::ComposerViewBase::setAutoSaveFileName(const QString &fileName)
+void ComposerViewBase::setAutoSaveFileName(const QString &fileName)
 {
     m_autoSaveUUID = fileName;
 
     Q_EMIT modified(true);
 }
 
-void MessageComposer::ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
+void ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
 {
     using MessageComposer::Composer;
 
@@ -1169,7 +1171,7 @@ void MessageComposer::ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
     m_composers.removeAll(composer);
 }
 
-void MessageComposer::ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
+void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
 {
     const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/autosave/");
     QDir().mkpath(autosavePath);
@@ -1214,7 +1216,7 @@ void MessageComposer::ComposerViewBase::writeAutoSaveToDisk(const KMime::Message
     file.commit();
 }
 
-void MessageComposer::ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn)
+void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn)
 {
     Akonadi::Collection target;
     const KIdentityManagement::Identity identity = identityManager()->identityForUoid(m_identityCombo->currentIdentity());
@@ -1252,7 +1254,7 @@ void MessageComposer::ComposerViewBase::saveMessage(const KMime::Message::Ptr &m
     }
 }
 
-void MessageComposer::ComposerViewBase::slotSaveMessage(KJob *job)
+void ComposerViewBase::slotSaveMessage(KJob *job)
 {
     Akonadi::Collection target;
     Akonadi::Item item = job->property("Akonadi::Item").value<Akonadi::Item>();
@@ -1271,7 +1273,7 @@ void MessageComposer::ComposerViewBase::slotSaveMessage(KJob *job)
     ++m_pendingQueueJobs;
 }
 
-Akonadi::Collection MessageComposer::ComposerViewBase::defaultSpecialTarget() const
+Akonadi::Collection ComposerViewBase::defaultSpecialTarget() const
 {
     Akonadi::Collection target;
     if (mSaveIn == MessageComposer::MessageSender::SaveInTemplates) {
@@ -1282,7 +1284,7 @@ Akonadi::Collection MessageComposer::ComposerViewBase::defaultSpecialTarget() co
     return target;
 }
 
-void MessageComposer::ComposerViewBase::slotCreateItemResult(KJob *job)
+void ComposerViewBase::slotCreateItemResult(KJob *job)
 {
     --m_pendingQueueJobs;
     qCDebug(MESSAGECOMPOSER_LOG) << "mPendingCreateItemJobs" << m_pendingQueueJobs;
@@ -1310,7 +1312,7 @@ void MessageComposer::ComposerViewBase::slotCreateItemResult(KJob *job)
     }
 }
 
-void MessageComposer::ComposerViewBase::addAttachment(const QUrl &url, const QString &comment, bool sync)
+void ComposerViewBase::addAttachment(const QUrl &url, const QString &comment, bool sync)
 {
     Q_UNUSED(comment);
     qCDebug(MESSAGECOMPOSER_LOG) << "adding attachment with url:" << url;
@@ -1321,7 +1323,7 @@ void MessageComposer::ComposerViewBase::addAttachment(const QUrl &url, const QSt
     }
 }
 
-void MessageComposer::ComposerViewBase::addAttachment(const QString &name, const QString &filename, const QString &charset, const QByteArray &data, const QByteArray &mimeType)
+void ComposerViewBase::addAttachment(const QString &name, const QString &filename, const QString &charset, const QByteArray &data, const QByteArray &mimeType)
 {
     MessageCore::AttachmentPart::Ptr attachment = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart());
     if (!data.isEmpty()) {
@@ -1336,7 +1338,7 @@ void MessageComposer::ComposerViewBase::addAttachment(const QString &name, const
     }
 }
 
-void MessageComposer::ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
+void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
 {
     MessageCore::AttachmentPart::Ptr part(new MessageCore::AttachmentPart);
     if (partToAttach->contentType()->mimeType() == "multipart/digest" ||
@@ -1369,7 +1371,7 @@ void MessageComposer::ComposerViewBase::addAttachmentPart(KMime::Content *partTo
     m_attachmentController->addAttachment(part);
 }
 
-MessageComposer::Composer *MessageComposer::ComposerViewBase::createSimpleComposer()
+MessageComposer::Composer *ComposerViewBase::createSimpleComposer()
 {
     MessageComposer::Composer *composer = new MessageComposer::Composer;
     fillGlobalPart(composer->globalPart());
@@ -1382,94 +1384,94 @@ MessageComposer::Composer *MessageComposer::ComposerViewBase::createSimpleCompos
 }
 
 //-----------------------------------------------------------------------------
-QString MessageComposer::ComposerViewBase::to() const
+QString ComposerViewBase::to() const
 {
     return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::To));
 }
 
 //-----------------------------------------------------------------------------
-QString MessageComposer::ComposerViewBase::cc() const
+QString ComposerViewBase::cc() const
 {
     return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Cc));
 }
 
 //-----------------------------------------------------------------------------
-QString MessageComposer::ComposerViewBase::bcc() const
+QString ComposerViewBase::bcc() const
 {
     return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Bcc));
 }
 
-QString MessageComposer::ComposerViewBase::from() const
+QString ComposerViewBase::from() const
 {
     return MessageComposer::Util::cleanedUpHeaderString(m_from);
 }
 
-QString MessageComposer::ComposerViewBase::replyTo() const
+QString ComposerViewBase::replyTo() const
 {
     return MessageComposer::Util::cleanedUpHeaderString(m_replyTo);
 }
 
-QString MessageComposer::ComposerViewBase::subject() const
+QString ComposerViewBase::subject() const
 {
     return MessageComposer::Util::cleanedUpHeaderString(m_subject);
 }
 
-void MessageComposer::ComposerViewBase::setParentWidgetForGui(QWidget *w)
+void ComposerViewBase::setParentWidgetForGui(QWidget *w)
 {
     m_parentWidget = w;
 }
 
-void MessageComposer::ComposerViewBase::setAttachmentController(MessageComposer::AttachmentControllerBase *controller)
+void ComposerViewBase::setAttachmentController(MessageComposer::AttachmentControllerBase *controller)
 {
     m_attachmentController = controller;
 }
 
-MessageComposer::AttachmentControllerBase *MessageComposer::ComposerViewBase::attachmentController()
+MessageComposer::AttachmentControllerBase *ComposerViewBase::attachmentController()
 {
     return m_attachmentController;
 }
 
-void MessageComposer::ComposerViewBase::setAttachmentModel(MessageComposer::AttachmentModel *model)
+void ComposerViewBase::setAttachmentModel(MessageComposer::AttachmentModel *model)
 {
     m_attachmentModel = model;
 }
 
-MessageComposer::AttachmentModel *MessageComposer::ComposerViewBase::attachmentModel()
+MessageComposer::AttachmentModel *ComposerViewBase::attachmentModel()
 {
     return m_attachmentModel;
 }
 
-void MessageComposer::ComposerViewBase::setRecipientsEditor(MessageComposer::RecipientsEditor *recEditor)
+void ComposerViewBase::setRecipientsEditor(MessageComposer::RecipientsEditor *recEditor)
 {
     m_recipientsEditor = recEditor;
 }
 
-MessageComposer::RecipientsEditor *MessageComposer::ComposerViewBase::recipientsEditor()
+MessageComposer::RecipientsEditor *ComposerViewBase::recipientsEditor()
 {
     return m_recipientsEditor;
 }
 
-void MessageComposer::ComposerViewBase::setSignatureController(MessageComposer::SignatureController *sigController)
+void ComposerViewBase::setSignatureController(MessageComposer::SignatureController *sigController)
 {
     m_signatureController = sigController;
 }
 
-MessageComposer::SignatureController *MessageComposer::ComposerViewBase::signatureController()
+MessageComposer::SignatureController *ComposerViewBase::signatureController()
 {
     return m_signatureController;
 }
 
-void MessageComposer::ComposerViewBase::setIdentityCombo(KIdentityManagement::IdentityCombo *identCombo)
+void ComposerViewBase::setIdentityCombo(KIdentityManagement::IdentityCombo *identCombo)
 {
     m_identityCombo = identCombo;
 }
 
-KIdentityManagement::IdentityCombo *MessageComposer::ComposerViewBase::identityCombo()
+KIdentityManagement::IdentityCombo *ComposerViewBase::identityCombo()
 {
     return m_identityCombo;
 }
 
-void MessageComposer::ComposerViewBase::updateRecipients(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, MessageComposer::Recipient::Type type)
+void ComposerViewBase::updateRecipients(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, MessageComposer::Recipient::Type type)
 {
     QString oldIdentList;
     QString newIdentList;
@@ -1498,7 +1500,7 @@ void MessageComposer::ComposerViewBase::updateRecipients(const KIdentityManageme
     }
 }
 
-void MessageComposer::ComposerViewBase::identityChanged(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, bool msgCleared)
+void ComposerViewBase::identityChanged(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, bool msgCleared)
 {
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::Bcc);
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::Cc);
@@ -1521,38 +1523,38 @@ void MessageComposer::ComposerViewBase::identityChanged(const KIdentityManagemen
 
 }
 
-void MessageComposer::ComposerViewBase::setEditor(MessageComposer::RichTextComposerNg *editor)
+void ComposerViewBase::setEditor(MessageComposer::RichTextComposerNg *editor)
 {
     m_editor = editor;
     m_editor->document()->setModified(false);
 }
 
-MessageComposer::RichTextComposerNg *MessageComposer::ComposerViewBase::editor() const
+MessageComposer::RichTextComposerNg *ComposerViewBase::editor() const
 {
     return m_editor;
 }
 
-void MessageComposer::ComposerViewBase::setTransportCombo(MailTransport::TransportComboBox *transpCombo)
+void ComposerViewBase::setTransportCombo(MailTransport::TransportComboBox *transpCombo)
 {
     m_transport = transpCombo;
 }
 
-MailTransport::TransportComboBox *MessageComposer::ComposerViewBase::transportComboBox() const
+MailTransport::TransportComboBox *ComposerViewBase::transportComboBox() const
 {
     return m_transport;
 }
 
-void MessageComposer::ComposerViewBase::setIdentityManager(KIdentityManagement::IdentityManager *identMan)
+void ComposerViewBase::setIdentityManager(KIdentityManagement::IdentityManager *identMan)
 {
     m_identMan = identMan;
 }
 
-KIdentityManagement::IdentityManager *MessageComposer::ComposerViewBase::identityManager()
+KIdentityManagement::IdentityManager *ComposerViewBase::identityManager()
 {
     return m_identMan;
 }
 
-void MessageComposer::ComposerViewBase::setFcc(const Akonadi::Collection &fccCollection)
+void ComposerViewBase::setFcc(const Akonadi::Collection &fccCollection)
 {
     if (m_fccCombo) {
         m_fccCombo->setDefaultCollection(fccCollection);
@@ -1564,7 +1566,7 @@ void MessageComposer::ComposerViewBase::setFcc(const Akonadi::Collection &fccCol
     connect(checkFccCollectionJob, &KJob::result, this, &ComposerViewBase::slotFccCollectionCheckResult);
 }
 
-void MessageComposer::ComposerViewBase::slotFccCollectionCheckResult(KJob *job)
+void ComposerViewBase::slotFccCollectionCheckResult(KJob *job)
 {
     if (job->error()) {
         const Akonadi::Collection sentMailCol =
@@ -1577,27 +1579,27 @@ void MessageComposer::ComposerViewBase::slotFccCollectionCheckResult(KJob *job)
     }
 }
 
-void MessageComposer::ComposerViewBase::setFccCombo(Akonadi::CollectionComboBox *fcc)
+void ComposerViewBase::setFccCombo(Akonadi::CollectionComboBox *fcc)
 {
     m_fccCombo = fcc;
 }
 
-Akonadi::CollectionComboBox *MessageComposer::ComposerViewBase::fccCombo() const
+Akonadi::CollectionComboBox *ComposerViewBase::fccCombo() const
 {
     return m_fccCombo;
 }
 
-void MessageComposer::ComposerViewBase::setFrom(const QString &from)
+void ComposerViewBase::setFrom(const QString &from)
 {
     m_from = from;
 }
 
-void MessageComposer::ComposerViewBase::setReplyTo(const QString &replyTo)
+void ComposerViewBase::setReplyTo(const QString &replyTo)
 {
     m_replyTo = replyTo;
 }
 
-void MessageComposer::ComposerViewBase::setSubject(const QString &subject)
+void ComposerViewBase::setSubject(const QString &subject)
 {
     m_subject = subject;
     if (mSendLaterInfo) {
@@ -1606,12 +1608,12 @@ void MessageComposer::ComposerViewBase::setSubject(const QString &subject)
     }
 }
 
-void MessageComposer::ComposerViewBase::setAutoSaveInterval(int interval)
+void ComposerViewBase::setAutoSaveInterval(int interval)
 {
     m_autoSaveInterval = interval;
 }
 
-void MessageComposer::ComposerViewBase::setCryptoOptions(bool sign, bool encrypt, Kleo::CryptoMessageFormat format, bool neverEncryptDrafts)
+void ComposerViewBase::setCryptoOptions(bool sign, bool encrypt, Kleo::CryptoMessageFormat format, bool neverEncryptDrafts)
 {
     m_sign = sign;
     m_encrypt = encrypt;
@@ -1619,22 +1621,22 @@ void MessageComposer::ComposerViewBase::setCryptoOptions(bool sign, bool encrypt
     m_neverEncrypt = neverEncryptDrafts;
 }
 
-void MessageComposer::ComposerViewBase::setCharsets(const QList< QByteArray > &charsets)
+void ComposerViewBase::setCharsets(const QList< QByteArray > &charsets)
 {
     m_charsets = charsets;
 }
 
-void MessageComposer::ComposerViewBase::setMDNRequested(bool mdnRequested)
+void ComposerViewBase::setMDNRequested(bool mdnRequested)
 {
     m_mdnRequested = mdnRequested;
 }
 
-void MessageComposer::ComposerViewBase::setUrgent(bool urgent)
+void ComposerViewBase::setUrgent(bool urgent)
 {
     m_urgent = urgent;
 }
 
-QStringList MessageComposer::ComposerViewBase::cleanEmailList(const QStringList &emails)
+QStringList ComposerViewBase::cleanEmailList(const QStringList &emails)
 {
     QStringList clean;
     clean.reserve(emails.count());
@@ -1644,13 +1646,13 @@ QStringList MessageComposer::ComposerViewBase::cleanEmailList(const QStringList 
     return clean;
 }
 
-int MessageComposer::ComposerViewBase::autoSaveInterval() const
+int ComposerViewBase::autoSaveInterval() const
 {
     return m_autoSaveInterval;
 }
 
 //-----------------------------------------------------------------------------
-void MessageComposer::ComposerViewBase::collectImages(KMime::Content *root)
+void ComposerViewBase::collectImages(KMime::Content *root)
 {
     if (KMime::Content *n = Util::findTypeInMessage(root, "multipart", "alternative")) {
         KMime::Content *parentnode = n->parent();
@@ -1673,7 +1675,7 @@ void MessageComposer::ComposerViewBase::collectImages(KMime::Content *root)
 }
 
 //-----------------------------------------------------------------------------
-bool MessageComposer::ComposerViewBase::inlineSigningEncryptionSelected()
+bool ComposerViewBase::inlineSigningEncryptionSelected()
 {
     if (!m_sign && !m_encrypt) {
         return false;
@@ -1681,7 +1683,7 @@ bool MessageComposer::ComposerViewBase::inlineSigningEncryptionSelected()
     return m_cryptoMessageFormat == Kleo::InlineOpenPGPFormat;
 }
 
-bool MessageComposer::ComposerViewBase::hasMissingAttachments(const QStringList &attachmentKeywords)
+bool ComposerViewBase::hasMissingAttachments(const QStringList &attachmentKeywords)
 {
     if (attachmentKeywords.isEmpty()) {
         return false;
@@ -1724,7 +1726,7 @@ bool MessageComposer::ComposerViewBase::hasMissingAttachments(const QStringList 
     return true;
 }
 
-MessageComposer::ComposerViewBase::MissingAttachment MessageComposer::ComposerViewBase::checkForMissingAttachments(const QStringList &attachmentKeywords)
+ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments(const QStringList &attachmentKeywords)
 {
     if (!hasMissingAttachments(attachmentKeywords)) {
         return NoMissingAttachmentFound;
@@ -1747,7 +1749,7 @@ MessageComposer::ComposerViewBase::MissingAttachment MessageComposer::ComposerVi
     return FoundMissingAttachmentAndSending;
 }
 
-void MessageComposer::ComposerViewBase::markAllAttachmentsForSigning(bool sign)
+void ComposerViewBase::markAllAttachmentsForSigning(bool sign)
 {
     if (m_attachmentModel) {
         foreach (MessageCore::AttachmentPart::Ptr attachment, m_attachmentModel->attachments()) {
@@ -1756,7 +1758,7 @@ void MessageComposer::ComposerViewBase::markAllAttachmentsForSigning(bool sign)
     }
 }
 
-void MessageComposer::ComposerViewBase::markAllAttachmentsForEncryption(bool encrypt)
+void ComposerViewBase::markAllAttachmentsForEncryption(bool encrypt)
 {
     if (m_attachmentModel) {
         foreach (MessageCore::AttachmentPart::Ptr attachment, m_attachmentModel->attachments()) {
@@ -1765,7 +1767,7 @@ void MessageComposer::ComposerViewBase::markAllAttachmentsForEncryption(bool enc
     }
 }
 
-bool MessageComposer::ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyResolver *keyResolver, bool signSomething, bool &result, bool &canceled)
+bool ComposerViewBase::determineWhetherToSign(bool doSignCompletely, Kleo::KeyResolver *keyResolver, bool signSomething, bool &result, bool &canceled)
 {
     bool sign = false;
     switch (keyResolver->checkSigningPreferences(signSomething)) {
@@ -1894,7 +1896,7 @@ bool MessageComposer::ComposerViewBase::determineWhetherToSign(bool doSignComple
     return sign || doSignCompletely;
 }
 
-bool MessageComposer::ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely, Kleo::KeyResolver *keyResolver, bool encryptSomething, bool signSomething, bool &result, bool &canceled)
+bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely, Kleo::KeyResolver *keyResolver, bool encryptSomething, bool signSomething, bool &result, bool &canceled)
 {
     bool encrypt = false;
     bool opportunistic = false;
@@ -2038,18 +2040,18 @@ bool MessageComposer::ComposerViewBase::determineWhetherToEncrypt(bool doEncrypt
     return encrypt || doEncryptCompletely;
 }
 
-void MessageComposer::ComposerViewBase::setSendLaterInfo(SendLater::SendLaterInfo *info)
+void ComposerViewBase::setSendLaterInfo(SendLater::SendLaterInfo *info)
 {
     delete mSendLaterInfo;
     mSendLaterInfo = info;
 }
 
-SendLater::SendLaterInfo *MessageComposer::ComposerViewBase::sendLaterInfo() const
+SendLater::SendLaterInfo *ComposerViewBase::sendLaterInfo() const
 {
     return mSendLaterInfo;
 }
 
-void MessageComposer::ComposerViewBase::addFollowupReminder(const QString &messageId)
+void ComposerViewBase::addFollowupReminder(const QString &messageId)
 {
     if (!messageId.isEmpty()) {
         if (mFollowUpDate.isValid()) {
