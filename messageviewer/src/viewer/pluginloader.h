@@ -122,7 +122,7 @@ public:
 };
 
 template< typename T, typename T_config >
-PluginLoader<T, T_config> *PluginLoader<T, T_config>::mSelf = 0;
+PluginLoader<T, T_config> *PluginLoader<T, T_config>::mSelf = nullptr;
 
 #define DEFINE_PLUGIN_LOADER( pl, t, mf, p ) \
     namespace { /* don't pollute namespaces */ \
