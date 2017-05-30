@@ -144,7 +144,7 @@ bool ComposerViewBase::isComposing() const
 void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecryption)
 {
     if (m_attachmentModel)  {
-        foreach (MessageCore::AttachmentPart::Ptr attachment, m_attachmentModel->attachments()) {
+        foreach (const MessageCore::AttachmentPart::Ptr &attachment, m_attachmentModel->attachments()) {
             m_attachmentModel->removeAttachment(attachment);
         }
     }
