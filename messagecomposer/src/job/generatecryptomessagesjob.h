@@ -29,6 +29,8 @@ class GenerateCryptoMessagesJob : public QObject
 public:
     explicit GenerateCryptoMessagesJob(QObject *parent = nullptr);
     ~GenerateCryptoMessagesJob();
+private:
+
 };
 }
 
