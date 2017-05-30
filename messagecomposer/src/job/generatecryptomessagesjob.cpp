@@ -22,6 +22,8 @@
 #include "composer/keyresolver.h"
 #include <KLocalizedString>
 
+
+
 using namespace MessageComposer;
 
 namespace
@@ -103,7 +105,9 @@ inline bool showKeyApprovalDialog()
 
 
 GenerateCryptoMessagesJob::GenerateCryptoMessagesJob(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      mSign(false),
+      mEncrypt(false)
 {
 
 }
@@ -113,9 +117,33 @@ GenerateCryptoMessagesJob::~GenerateCryptoMessagesJob()
 
 }
 
-#if 0
-QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
+void GenerateCryptoMessagesJob::setIdentity(const KIdentityManagement::Identity &id)
 {
+    mId = id;
+}
+
+void GenerateCryptoMessagesJob::setAttachmentList(const MessageCore::AttachmentPart::List &attachmentList)
+{
+    mAttachmentList = attachmentList;
+}
+
+void GenerateCryptoMessagesJob::setSign(bool sign)
+{
+    mSign = sign;
+}
+
+void GenerateCryptoMessagesJob::setEncrypt(bool encrypt)
+{
+    mEncrypt = encrypt;
+}
+
+QList<MessageComposer::Composer *> GenerateCryptoMessagesJob::generateCryptoMessages(bool &wasCanceled)
+{
+    if (mId.isNull()) {
+        //Signal it.
+        return {};
+    }
+#if 0
     const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
 
     qCDebug(MESSAGECOMPOSER_LOG) << "filling crypto info";
@@ -285,5 +313,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
     }
 
     return composers;
-}
+#else
+    return {};
 #endif
+}

@@ -20,6 +20,9 @@
 #define GENERATECRYPTOMESSAGESJOB_H
 
 #include <QObject>
+#include <KIdentityManagement/Identity>
+#include <MessageCore/AttachmentPart>
+#include <MessageComposer/Composer>
 
 namespace MessageComposer
 {
@@ -30,8 +33,23 @@ public:
     explicit GenerateCryptoMessagesJob(QObject *parent = nullptr);
     ~GenerateCryptoMessagesJob();
 
+    QList<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
+
+    void setIdentity(const KIdentityManagement::Identity &id);
+    void setAttachmentList(const MessageCore::AttachmentPart::List &attachmentList);
+
+    void setSign(bool sign);
+
+    void setEncrypt(bool encrypt);
+
 Q_SIGNALS:
     void failed(const QString &msg);
+
+private:
+    KIdentityManagement::Identity mId;
+    MessageCore::AttachmentPart::List mAttachmentList;
+    bool mSign;
+    bool mEncrypt;
 };
 }
 
