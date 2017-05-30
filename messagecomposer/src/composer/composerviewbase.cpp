@@ -759,7 +759,7 @@ QList< MessageComposer::Composer * > MessageComposer::ComposerViewBase::generate
         composers.append(composer);
         //If we canceled sign or encrypt be sure to change status in attachment.
         markAllAttachmentsForSigning(false);
-        markAllAttachmentsForSigning(false);
+        markAllAttachmentsForEncryption(false);
     }
 
     if (composers.isEmpty() && (signSomething || encryptSomething)) {
