@@ -29,8 +29,9 @@ class GenerateCryptoMessagesJob : public QObject
 public:
     explicit GenerateCryptoMessagesJob(QObject *parent = nullptr);
     ~GenerateCryptoMessagesJob();
-private:
 
+Q_SIGNALS:
+    void failed(const QString &msg);
 };
 }
 
