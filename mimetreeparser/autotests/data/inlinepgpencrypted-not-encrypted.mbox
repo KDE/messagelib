@@ -1,0 +1,23 @@
+From test@kolab.org Wed, 25 May 2011 23:49:40 +0100
+From: OpenPGP Test <test@kolab.org>
+To: test@kolab.org
+Subject: inlinepgpencrypted - no seckey
+Date: Wed, 25 May 2011 23:49:40 +0100
+Message-ID: <1786696.yKXrOjjflF@herrwackelpudding.localhost>
+X-KMail-Transport: GMX
+X-KMail-Fcc: 28
+X-KMail-Drafts: 7
+X-KMail-Templates: 9
+User-Agent: KMail/4.6 beta5 (Linux/2.6.34.7-0.7-desktop; KDE/4.6.41; x86_64; git-0269848; 2011-04-19)
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="us-ascii"
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2
+
+asdf
+asdf
+asdf
+
+-----END PGP MESSAGE-----
