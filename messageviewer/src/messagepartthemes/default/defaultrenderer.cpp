@@ -659,10 +659,10 @@ public:
         bool curHidden = false; // no hide any block
 
         QString collapseIconPath;
-        QString mExpandIconPath;
+        QString expandIconPath;
         if (source()->showExpandQuotesMark()) {
             collapseIconPath = IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quotecollapse.png"));
-            mExpandIconPath = IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quoteexpand.png"));
+            expandIconPath = IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quoteexpand.png"));
         }
 
         int previousQuoteDepth = -1;
@@ -739,7 +739,7 @@ public:
                                 htmlStr += QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
                                                           "<img src=\"%2\"/></a>")
                                            .arg(-1)
-                                           .arg(mExpandIconPath);
+                                           .arg(expandIconPath);
                                 htmlStr += QLatin1String("</div><br/>");
                             }
                         } else {
