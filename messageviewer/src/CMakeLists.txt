@@ -159,6 +159,12 @@ set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/defaultrenderer.cpp
     messagepartthemes/default/htmlblock.cpp
     messagepartthemes/default/messagepartrenderermanager.cpp
+    messagepartthemes/default/partrendered.cpp
+    messagepartthemes/default/rendererpluginfactorysingleton.cpp
+    messagepartthemes/default/plugins/messagepartrenderer.cpp
+    messagepartthemes/default/plugins/plugins.cpp
+    messagepartthemes/default/messagepartrenderbase.cpp
+    messagepartthemes/default/messagepartrendererfactorybase.cpp
     )
 
 set(libmessageviewer_SRCS

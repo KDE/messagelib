@@ -31,6 +31,7 @@ class PartRendered;
 
 namespace MessageViewer
 {
+class MessagePartRendererFactoryBase;
 class CSSHelperBase;
 }
 
@@ -40,7 +41,7 @@ namespace MimeTreeParser
 class DefaultRendererPrivate
 {
 public:
-    DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper);
+    DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactoryBase *rendererFactory);
     ~DefaultRendererPrivate();
 
     inline QString alignText();

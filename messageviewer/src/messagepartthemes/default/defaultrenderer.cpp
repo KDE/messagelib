@@ -23,8 +23,13 @@
 
 #include "messageviewer_debug.h"
 
+#include "rendererpluginfactorysingleton.h"
 #include "converthtmltoplaintext.h"
+#include "messagepartrendererbase.h"
+#include "messagepartrendererfactorybase.h"
 #include "htmlblock.h"
+#include "partrendered.h"
+
 #include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
 #include "viewer/csshelperbase.h"
@@ -46,9 +51,6 @@
 #include <KTextToHTML>
 
 #include <QApplication>
-#include <QFile>
-#include <QStandardPaths>
-#include <QTextCodec>
 #include <QUrl>
 
 #include <grantlee/context.h>
@@ -388,10 +390,11 @@ public:
     MimeTreeParser::HtmlWriter *mBaseWriter;
 };
 
-    DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
+    DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactoryBase *rendererFactory)
         : mMsgPart(msgPart)
         , mOldWriter(msgPart->htmlWriter())
         , mCSSHelper(cssHelper)
+        , mRendererFactory(rendererFactory)
     {
         mHtml = renderFactory(mMsgPart, QSharedPointer<CacheHtmlWriter>());
     }
@@ -1280,9 +1283,38 @@ public:
         return htmlWriter->html;
     }
 
+    QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className, const Interface::MessagePart::Ptr &msgPart)
+    {
+        if (mRendererFactory) {
+            const auto registry = mRendererFactory->typeRegistry(className);
+
+            if (registry.size() > 0) {
+                const auto plugin = registry.at(0);
+                return plugin->render(this, msgPart);
+            }
+        }
+
+        return QSharedPointer<PartRendered>();
+    }
+
     QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
     {
         const QString className = QString::fromUtf8(msgPart->metaObject()->className());
+
+        const auto rendered = renderWithFactory(className, msgPart);
+        if (rendered) {
+            const auto parts = rendered->embededParts();
+            foreach(auto key, parts.keys()) {
+                htmlWriter->embedPart(key, parts.value(key));
+            }
+
+            foreach(auto entry, rendered->extraHeader()) {
+                htmlWriter->extraHead(entry);
+            }
+
+            return rendered->html();
+        }
+
 
         if (className == QStringLiteral("MimeTreeParser::MessagePartList")) {
             auto mp = msgPart.dynamicCast<MessagePartList>();
@@ -1358,7 +1390,7 @@ public:
     }
 
 DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
-    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper))
+    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper,  rendererPluginFactoryInstance()))
 {
 }
 
