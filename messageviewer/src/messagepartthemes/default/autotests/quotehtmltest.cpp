@@ -17,7 +17,7 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "quotehtmltest.h"
-#include "../defaultrenderer.h"
+#include "../plugins/quotehtml.h"
 #include "util.h"
 #include "setupenv.h"
 
@@ -119,10 +119,5 @@ void QuoteHtmlTest::testQuoteHtml()
     emptySource.setShowExpandQuotesMark(showExpandQuotesMark);
     emptySource.setLevelQuote(quotelevel);
 
-    MimeTreeParser::ObjectTreeParser otp(&emptySource);
-    MimeTreeParser::MessagePart::Ptr part(new MimeTreeParser::MessagePart(&otp, data));
-
-    DefaultRenderer renderer(part, &testCSSHelper);
-    //qDebug()<<"renderer.html() "<<renderer.html();
-    QCOMPARE(renderer.html(), result);
+    QCOMPARE(quotedHTML(data, &emptySource, &testCSSHelper), result);
 }

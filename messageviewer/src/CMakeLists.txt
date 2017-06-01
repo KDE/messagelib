@@ -163,6 +163,7 @@ set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/rendererpluginfactorysingleton.cpp
     messagepartthemes/default/plugins/messagepartrenderer.cpp
     messagepartthemes/default/plugins/plugins.cpp
+    messagepartthemes/default/plugins/quotehtml.cpp
     messagepartthemes/default/messagepartrenderbase.cpp
     messagepartthemes/default/messagepartrendererfactorybase.cpp
     )
