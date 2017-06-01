@@ -131,7 +131,7 @@ if(BUILD_TESTING)
    add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
-add_definitions( -DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT )
+add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
 add_subdirectory(mimetreeparser)
 if (NOT ${MIMETREEPARSER_ONLY_BUILD})
    add_subdirectory(messageviewer)
