@@ -437,78 +437,6 @@ public:
         return htmlWriter->html;
     }
 
-    QString DefaultRendererPrivate::render(const AttachmentMessagePart::Ptr &mp)
-    {
-        KMime::Content *node = mp->mNode;
-        NodeHelper *nodeHelper = mp->mOtp->nodeHelper();
-
-        if (mp->isHidden()) {
-            return QString();
-        }
-
-        const auto tmpAsIcon = mp->asIcon();
-        Grantlee::Template t;
-        Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-        QObject block;
-        c.insert(QStringLiteral("block"), &block);
-
-        block.setProperty("showTextFrame", mp->showTextFrame());
-        block.setProperty("label", MessageCore::StringUtil::quoteHtmlChars(NodeHelper::fileName(node), true));
-        block.setProperty("comment", MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->asUnicodeString(), true));
-        block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
-        block.setProperty("showLink", mp->showLink());
-        block.setProperty("dir", alignText());
-
-        if (tmpAsIcon != MimeTreeParser::NoIcon) {
-            t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/asiconpart.html"));
-            block.setProperty("iconSize", MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
-            block.setProperty("inline", (tmpAsIcon == MimeTreeParser::IconInline));
-
-            QString iconPath;
-            if (tmpAsIcon == MimeTreeParser::IconInline) {
-                iconPath = nodeHelper->writeNodeToTempFile(node);
-            } else {
-                iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
-                if (iconPath.right(14) == QLatin1String("mime_empty.png")) {
-                    nodeHelper->magicSetType(node);
-                    iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
-                }
-            }
-            block.setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
-
-            const QString name = node->contentType()->name();
-            QString label = name.isEmpty() ? NodeHelper::fileName(node) : name;
-            QString comment = node->contentDescription()->asUnicodeString();
-
-            if (label.isEmpty()) {
-                label = i18nc("display name for an unnamed attachment", "Unnamed");
-            }
-            label = MessageCore::StringUtil::quoteHtmlChars(label, true);
-
-            comment = MessageCore::StringUtil::quoteHtmlChars(comment, true);
-            if (label == comment) {
-                comment.clear();
-            }
-
-            block.setProperty("label", label);
-            block.setProperty("comment", comment);
-
-            auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-            {
-                HTMLBlock::Ptr aBlock;
-                if (mp->isAttachment()) {
-                    aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
-                }
-                const auto html = t->render(&c);
-                htmlWriter->queue(html);
-            }
-            return htmlWriter->html;
-
-        } else {
-            return render(mp.dynamicCast<TextMessagePart>());
-        }
-    }
-
     QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
     {
         Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/htmlmessagepart.html"));
@@ -1018,11 +946,6 @@ public:
             }
         } else if (className == QStringLiteral("MimeTreeParser::EncapsulatedRfc822MessagePart")) {
             auto mp = msgPart.dynamicCast<EncapsulatedRfc822MessagePart>();
-            if (mp) {
-                return render(mp);
-            }
-        } else if (className == QStringLiteral("MimeTreeParser::AttachmentMessagePart")) {
-            auto mp = msgPart.dynamicCast<AttachmentMessagePart>();
             if (mp) {
                 return render(mp);
             }

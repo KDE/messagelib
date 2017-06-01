@@ -88,6 +88,29 @@ QVector<QSharedPointer<PartRendered>> PartRendered::renderSubParts(MimeTreeParse
     return ret;
 }
 
+EmptyPartRendered::EmptyPartRendered()
+{
+}
+
+EmptyPartRendered::~EmptyPartRendered()
+{
+}
+
+QString EmptyPartRendered::extraHeader()
+{
+    return QString();
+}
+
+QString EmptyPartRendered::html()
+{
+    return QString();
+}
+
+QMap<QByteArray, QString> EmptyPartRendered::embededParts()
+{
+    return QMap<QByteArray, QString>();
+}
+
 WrapperPartRendered::WrapperPartRendered(CacheHtmlWriter *htmlWriter)
     : PartRendered()
 {

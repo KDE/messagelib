@@ -55,6 +55,16 @@ public:
 protected:
     QVector<QSharedPointer<PartRendered>> renderSubParts(MimeTreeParser::MessagePartPtr mp);
 };
+class EmptyPartRendered : public PartRendered
+{
+public:
+    EmptyPartRendered();
+    virtual ~EmptyPartRendered();
+
+    QString html() Q_DECL_OVERRIDE;
+    QMap<QByteArray, QString> embededParts() Q_DECL_OVERRIDE;
+    QString extraHeader() Q_DECL_OVERRIDE;
+};
 
 class WrapperPartRendered : public PartRendered
 {
