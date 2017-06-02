@@ -470,7 +470,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
     // if so, we create a composer per format
     // if we aren't signing or encrypting, this just returns a single empty message
     bool wasCanceled = false;
-    if (m_neverEncrypt && mSaveIn != MessageComposer::MessageSender::SaveInNone) {
+    if (m_neverEncrypt && mSaveIn != MessageComposer::MessageSender::SaveInNone && !mSendLaterInfo) {
         MessageComposer::Composer *composer = new MessageComposer::Composer;
         composer->setNoCrypto(true);
         m_composers.append(composer);
