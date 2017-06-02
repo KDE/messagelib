@@ -204,7 +204,6 @@ TextPartRendered::TextPartRendered(MimeTreeParser::TextMessagePart::Ptr mp)
     foreach(auto part, mSubList) {
         content += part->html();
     }
-    qDebug() << "content" << content;
     c.insert(QStringLiteral("content"), content);
 
     mShowAttachmentBlock = mp->isAttachment();
