@@ -324,10 +324,11 @@ DefaultRendererPrivate::~DefaultRendererPrivate()
 {
 }
 
-inline QString DefaultRendererPrivate::alignText()
+QString DefaultRendererPrivate::alignText()
 {
     return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
 }
+
 CSSHelperBase *DefaultRendererPrivate::cssHelper() const
 {
     auto mp = mMsgPart.dynamicCast<MessagePart>();
