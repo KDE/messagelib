@@ -57,10 +57,10 @@ public:
     {
     }
 
-    MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
+    MimeTreeParser::HtmlWriter *htmlWriter() override {
         return mWriter;
     }
-    MessageViewer::CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
+    MessageViewer::CSSHelperBase *cssHelper() override {
         return mCSSHelper;
     }
 

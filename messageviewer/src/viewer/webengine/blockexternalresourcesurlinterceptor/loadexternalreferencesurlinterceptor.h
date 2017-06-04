@@ -31,7 +31,7 @@ public:
     explicit LoadExternalReferencesUrlInterceptor(QObject *parent = nullptr);
     ~LoadExternalReferencesUrlInterceptor();
 
-    bool interceptRequest(QWebEngineUrlRequestInfo &info) Q_DECL_OVERRIDE;
+    bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
     void setAllowExternalContent(bool b);
     bool allowExternalContent() const;
 private:

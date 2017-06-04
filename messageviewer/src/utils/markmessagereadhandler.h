@@ -54,7 +54,7 @@ public:
     /**
      * @copydoc AbstractMessageLoadedHandler::setItem()
      */
-    void setItem(const Akonadi::Item &item) Q_DECL_OVERRIDE;
+    void setItem(const Akonadi::Item &item) override;
 
 private:
     //@cond PRIVATE

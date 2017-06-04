@@ -49,8 +49,8 @@ public:
                                 const QByteArray &signature);
     ~VerifyOpaqueBodyPartMemento();
 
-    bool start() Q_DECL_OVERRIDE;
-    void exec() Q_DECL_OVERRIDE;
+    bool start() override;
+    void exec() override;
 
     const QByteArray &plainText() const
     {

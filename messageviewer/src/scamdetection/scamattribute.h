@@ -32,10 +32,10 @@ public:
     explicit ScamAttribute();
     ~ScamAttribute();
 
-    ScamAttribute *clone() const Q_DECL_OVERRIDE;
-    QByteArray type() const Q_DECL_OVERRIDE;
-    QByteArray serialized() const Q_DECL_OVERRIDE;
-    void deserialize(const QByteArray &data) Q_DECL_OVERRIDE;
+    ScamAttribute *clone() const override;
+    QByteArray type() const override;
+    QByteArray serialized() const override;
+    void deserialize(const QByteArray &data) override;
 
     bool isAScam() const;
     void setIsAScam(bool b);

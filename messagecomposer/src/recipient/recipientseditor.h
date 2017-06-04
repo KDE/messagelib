@@ -45,8 +45,8 @@ class MESSAGECOMPOSER_EXPORT RecipientLineFactory : public KPIM::MultiplyingLine
     Q_OBJECT
 public:
     explicit RecipientLineFactory(QObject *parent);
-    KPIM::MultiplyingLine *newLine(QWidget *parent) Q_DECL_OVERRIDE;
-    int maximumRecipients() Q_DECL_OVERRIDE;
+    KPIM::MultiplyingLine *newLine(QWidget *parent) override;
+    int maximumRecipients() override;
 };
 
 class RecipientsPicker;
@@ -97,8 +97,8 @@ protected Q_SLOTS:
     void addRecipient(RecipientLineNG *, const QString &);
 
 protected:
-    bool eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
-    RecipientLineNG *activeLine() const Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *object, QEvent *event) override;
+    RecipientLineNG *activeLine() const override;
 
 private:
     RecipientsEditorPrivate *const d;

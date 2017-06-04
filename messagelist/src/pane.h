@@ -459,7 +459,7 @@ private:
     Q_PRIVATE_SLOT(d, void changeQuicksearchVisibility(bool))
     Q_PRIVATE_SLOT(d, void slotTabCloseRequested(int index))
 
-    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *event) override;
 
     class Private;
     Private *const d;

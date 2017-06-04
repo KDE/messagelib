@@ -75,16 +75,16 @@ public Q_SLOTS:
     void slotShowDetails();
 
 protected:
-    void forwardWheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
-    void forwardKeyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    void forwardKeyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-    void forwardMousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void forwardMouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void forwardMouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void forwardWheelEvent(QWheelEvent *event) override;
+    void forwardKeyPressEvent(QKeyEvent *event) override;
+    void forwardKeyReleaseEvent(QKeyEvent *event) override;
+    void forwardMousePressEvent(QMouseEvent *event) override;
+    void forwardMouseMoveEvent(QMouseEvent *event) override;
+    void forwardMouseReleaseEvent(QMouseEvent *event) override;
 
-    void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *e) override;
 
-    void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
+    void contextMenuEvent(QContextMenuEvent *e) override;
 Q_SIGNALS:
     void wheelZoomChanged(int numSteps);
     void openUrl(const QUrl &url);

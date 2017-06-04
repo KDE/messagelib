@@ -33,7 +33,7 @@ public:
     AttachmentUpdateJob(const AttachmentPart::Ptr &part, QObject *parent = nullptr);
     ~AttachmentUpdateJob();
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
     AttachmentPart::Ptr originalPart() const;
     AttachmentPart::Ptr updatedPart() const;
 private:

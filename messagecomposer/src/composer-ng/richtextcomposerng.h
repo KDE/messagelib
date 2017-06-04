@@ -51,9 +51,9 @@ public:
     void insertSignature(const KIdentityManagement::Signature &signature, KIdentityManagement::Signature::Placement placement, KIdentityManagement::Signature::AddedText addedText);
     QString toCleanHtml() const;
 
-    void forceAutoCorrection(bool selectedText = false) Q_DECL_OVERRIDE;
+    void forceAutoCorrection(bool selectedText = false) override;
 private:
-    bool processAutoCorrection(QKeyEvent *event) Q_DECL_OVERRIDE;
+    bool processAutoCorrection(QKeyEvent *event) override;
     RichTextComposerNgPrivate *const d;
 };
 }

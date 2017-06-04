@@ -32,9 +32,9 @@ public:
     ~PlainHeaderStyle();
 
 public:
-    const char *name() const Q_DECL_OVERRIDE;
+    const char *name() const override;
 
-    QString format(KMime::Message *message) const Q_DECL_OVERRIDE;
+    QString format(KMime::Message *message) const override;
 
 private:
     PlainHeaderStylePrivate *const d;

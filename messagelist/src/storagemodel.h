@@ -59,27 +59,27 @@ public:
 
     Akonadi::Collection::List displayedCollections() const;
 
-    QString id() const Q_DECL_OVERRIDE;
-    bool containsOutboundMessages() const Q_DECL_OVERRIDE;
+    QString id() const override;
+    bool containsOutboundMessages() const override;
 
     virtual bool isOutBoundFolder(const Akonadi::Collection &c) const;
 
-    int initialUnreadRowCountGuess() const Q_DECL_OVERRIDE;
-    bool initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const Q_DECL_OVERRIDE;
-    void fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const Q_DECL_OVERRIDE;
-    void updateMessageItemData(MessageList::Core::MessageItem *mi, int row) const Q_DECL_OVERRIDE;
-    void setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status) Q_DECL_OVERRIDE;
+    int initialUnreadRowCountGuess() const override;
+    bool initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const override;
+    void fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const override;
+    void updateMessageItemData(MessageList::Core::MessageItem *mi, int row) const override;
+    void setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status) override;
 
-    int columnCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-    QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    QModelIndex parent(const QModelIndex &index) const Q_DECL_OVERRIDE;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
+    QModelIndex parent(const QModelIndex &index) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    QMimeData *mimeData(const QList< MessageList::Core::MessageItem * > &) const Q_DECL_OVERRIDE;
+    QMimeData *mimeData(const QList< MessageList::Core::MessageItem * > &) const override;
     using MessageList::Core::StorageModel::mimeData;
 
-    void prepareForScan() Q_DECL_OVERRIDE;
+    void prepareForScan() override;
 
     Akonadi::Item itemForRow(int row) const;
     Akonadi::Collection parentCollectionForRow(int row) const;

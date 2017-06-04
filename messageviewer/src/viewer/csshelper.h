@@ -47,7 +47,7 @@ public:
 
     /** @return HTML head including style sheet definitions and the
     &gt;body&lt; tag */
-    QString htmlHead(bool fixedFont = false) const Q_DECL_OVERRIDE;
+    QString htmlHead(bool fixedFont = false) const override;
 };
 
 }

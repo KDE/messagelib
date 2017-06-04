@@ -379,64 +379,64 @@ protected:
     /**
     * Reimplemented in order to catch QHelpEvent
     */
-    bool event(QEvent *e) Q_DECL_OVERRIDE;
+    bool event(QEvent *e) override;
 
     /**
     * Reimplemented in order to catch palette, font and style changes
     */
-    void changeEvent(QEvent *e) Q_DECL_OVERRIDE;
+    void changeEvent(QEvent *e) override;
 
     /**
     * Reimplemented in order to apply theme column widths on the first show
     */
-    void showEvent(QShowEvent *e) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *e) override;
 
     /**
     * Reimplemented in order to handle clicks with sub-item precision.
     */
-    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *e) override;
 
     /**
     * Reimplemented in order to handle double clicks with sub-item precision.
     */
-    void mouseDoubleClickEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    void mouseDoubleClickEvent(QMouseEvent *e) override;
 
     /**
     * Reimplemented in order to handle DnD
     */
-    void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    void mouseMoveEvent(QMouseEvent *e) override;
 
     /**
     * Reimplemented in order to handle message DnD
     */
-    void dragEnterEvent(QDragEnterEvent *e) Q_DECL_OVERRIDE;
+    void dragEnterEvent(QDragEnterEvent *e) override;
 
     /**
     * Reimplemented in order to handle message DnD
     */
-    void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
+    void dragMoveEvent(QDragMoveEvent *e) override;
 
     /**
     * Reimplemented in order to handle message DnD
     */
-    void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
+    void dropEvent(QDropEvent *e) override;
 
     /**
     * Reimplemented in order to resize columns when header is not visible
     */
-    void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *e) override;
 
     /**
     * Reimplemented in order to kill the QTreeView column auto-resizing
     */
-    int sizeHintForColumn(int logicalColumnIndex) const Q_DECL_OVERRIDE;
+    int sizeHintForColumn(int logicalColumnIndex) const override;
 
     /**
     * Reimplemented in order to disable update of the geometries
     * while a job step is running (as it takes a very long time and it's called for every item insertion...)
     * TODO: not true anymore, it's called after a delay.
     */
-    void updateGeometries() Q_DECL_OVERRIDE;
+    void updateGeometries() override;
 
     /**
     * Returns true if the vertical scrollbar should keep to the top or bottom

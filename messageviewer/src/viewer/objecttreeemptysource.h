@@ -35,25 +35,25 @@ class MESSAGEVIEWER_EXPORT EmptySource : public MimeTreeParser::Interface::Objec
 public:
     EmptySource();
     ~EmptySource();
-    bool decryptMessage() const Q_DECL_OVERRIDE;
-    bool htmlLoadExternal() const Q_DECL_OVERRIDE;
-    bool showSignatureDetails() const Q_DECL_OVERRIDE;
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) Q_DECL_OVERRIDE;
-    MimeTreeParser::Util::HtmlMode preferredMode() const Q_DECL_OVERRIDE;
+    bool decryptMessage() const override;
+    bool htmlLoadExternal() const override;
+    bool showSignatureDetails() const override;
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
+    MimeTreeParser::Util::HtmlMode preferredMode() const override;
     void setAllowDecryption(bool allowDecryption);
-    int levelQuote() const Q_DECL_OVERRIDE;
-    const QTextCodec *overrideCodec() Q_DECL_OVERRIDE;
-    QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE;
-    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE;
-    MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE;
+    int levelQuote() const override;
+    const QTextCodec *overrideCodec() override;
+    QString createMessageHeader(KMime::Message *message) override;
+    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() override;
+    MimeTreeParser::HtmlWriter *htmlWriter() override;
     virtual CSSHelperBase *cssHelper();
 
-    bool autoImportKeys() const Q_DECL_OVERRIDE;
-    bool showEmoticons() const Q_DECL_OVERRIDE;
-    bool showExpandQuotesMark() const Q_DECL_OVERRIDE;
-    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE;
-    MimeTreeParser::Interface::MessagePartRendererPtr messagePartTheme(MimeTreeParser::Interface::MessagePartPtr msgPart) Q_DECL_OVERRIDE;
-    bool isPrinting() const Q_DECL_OVERRIDE;
+    bool autoImportKeys() const override;
+    bool showEmoticons() const override;
+    bool showExpandQuotesMark() const override;
+    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override;
+    MimeTreeParser::Interface::MessagePartRendererPtr messagePartTheme(MimeTreeParser::Interface::MessagePartPtr msgPart) override;
+    bool isPrinting() const override;
 private:
     EmptySourcePrivate *const d;
 };

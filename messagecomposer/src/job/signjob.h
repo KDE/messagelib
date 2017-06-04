@@ -59,7 +59,7 @@ public:
     KMime::Content *origContent();
 
 protected Q_SLOTS:
-    void process() Q_DECL_OVERRIDE;
+    void process() override;
 
 private:
     Q_DECLARE_PRIVATE(SignJob)

@@ -26,16 +26,16 @@ public:
     explicit TestHtmlWriter() {}
     virtual ~TestHtmlWriter() {}
 
-    void begin(const QString &) Q_DECL_OVERRIDE {}
-    void write(const QString &) Q_DECL_OVERRIDE {}
-    void end() Q_DECL_OVERRIDE {}
-    void reset() Q_DECL_OVERRIDE {}
-    void queue(const QString &str) Q_DECL_OVERRIDE {
+    void begin(const QString &) override {}
+    void write(const QString &) override {}
+    void end() override {}
+    void reset() override {}
+    void queue(const QString &str) override {
         html.append(str);
     }
-    void flush() Q_DECL_OVERRIDE {}
-    void embedPart(const QByteArray &, const QString &) Q_DECL_OVERRIDE {}
-    void extraHead(const QString &) Q_DECL_OVERRIDE {}
+    void flush() override {}
+    void embedPart(const QByteArray &, const QString &) override {}
+    void extraHead(const QString &) override {}
 
     QString html;
 };

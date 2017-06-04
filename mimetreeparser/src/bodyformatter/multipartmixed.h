@@ -30,8 +30,8 @@ class MultiPartMixedBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const MultiPartMixedBodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const Q_DECL_OVERRIDE;
-    Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE;
+    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override;
+    Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const override;
     using Interface::BodyPartFormatter::format;
     static const Interface::BodyPartFormatter *create();
 };

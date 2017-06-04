@@ -78,10 +78,10 @@ public:
     bool finished() const;
 
 public Q_SLOTS:
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 protected Q_SLOTS:
-    void slotResult(KJob *job) Q_DECL_OVERRIDE;
+    void slotResult(KJob *job) override;
 
 private:
     Q_DECLARE_PRIVATE(Composer)

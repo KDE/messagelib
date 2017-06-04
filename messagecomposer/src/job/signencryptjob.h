@@ -58,16 +58,16 @@ public:
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
     void setSigningKeys(std::vector<GpgME::Key> &signers);
 
-    void setEncryptionKeys(const std::vector<GpgME::Key> &keys) Q_DECL_OVERRIDE;
-    void setRecipients(const QStringList &rec) Q_DECL_OVERRIDE;
+    void setEncryptionKeys(const std::vector<GpgME::Key> &keys) override;
+    void setRecipients(const QStringList &rec) override;
 
-    std::vector<GpgME::Key> encryptionKeys() const Q_DECL_OVERRIDE;
-    QStringList recipients() const Q_DECL_OVERRIDE;
+    std::vector<GpgME::Key> encryptionKeys() const override;
+    QStringList recipients() const override;
 
     KMime::Content *origContent();
 
 protected Q_SLOTS:
-    void process() Q_DECL_OVERRIDE;
+    void process() override;
 
 private:
     Q_DECLARE_PRIVATE(SignEncryptJob)

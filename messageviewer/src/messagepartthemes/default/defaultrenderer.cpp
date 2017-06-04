@@ -294,18 +294,18 @@ public:
     {}
     virtual ~CacheHtmlWriter() {}
 
-    void begin(const QString &text) Q_DECL_OVERRIDE {mBaseWriter->begin(text);}
-    void write(const QString &str) Q_DECL_OVERRIDE {
+    void begin(const QString &text) override {mBaseWriter->begin(text);}
+    void write(const QString &str) override {
         html.append(str);
     }
-    void end() Q_DECL_OVERRIDE {mBaseWriter->end();}
-    void reset() Q_DECL_OVERRIDE {mBaseWriter->reset();}
-    void queue(const QString &str) Q_DECL_OVERRIDE {
+    void end() override {mBaseWriter->end();}
+    void reset() override {mBaseWriter->reset();}
+    void queue(const QString &str) override {
         html.append(str);
     }
-    void flush() Q_DECL_OVERRIDE {mBaseWriter->flush();}
-    void embedPart(const QByteArray &contentId, const QString &url) Q_DECL_OVERRIDE {mBaseWriter->embedPart(contentId, url);}
-    void extraHead(const QString &extra) Q_DECL_OVERRIDE {mBaseWriter->extraHead(extra);}
+    void flush() override {mBaseWriter->flush();}
+    void embedPart(const QByteArray &contentId, const QString &url) override {mBaseWriter->embedPart(contentId, url);}
+    void extraHead(const QString &extra) override {mBaseWriter->extraHead(extra);}
 
     QString html;
     MimeTreeParser::HtmlWriter *mBaseWriter;

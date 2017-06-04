@@ -297,12 +297,12 @@ public:
     /**
     * Pure virtual reimplemented from OptionSet.
     */
-    void save(QDataStream &stream) const Q_DECL_OVERRIDE;
+    void save(QDataStream &stream) const override;
 
     /**
     * Pure virtual reimplemented from OptionSet.
     */
-    bool load(QDataStream &stream) Q_DECL_OVERRIDE;
+    bool load(QDataStream &stream) override;
 };
 
 } // namespace Core

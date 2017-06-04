@@ -53,7 +53,7 @@ public:
 
     bool finished() const;
 
-    void detach() Q_DECL_OVERRIDE;
+    void detach() override;
 
     QPixmap gravatarPixmap() const;
 

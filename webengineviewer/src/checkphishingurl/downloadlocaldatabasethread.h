@@ -41,7 +41,7 @@ Q_SIGNALS:
     void createDataBaseFailed();
 
 protected:
-    void run() Q_DECL_OVERRIDE;
+    void run() override;
 
 private:
     void installNewDataBase(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase);

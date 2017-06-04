@@ -51,7 +51,7 @@ public:
         return m_auditLogError;
     }
 
-    void detach() Q_DECL_OVERRIDE;
+    void detach() override;
 
 Q_SIGNALS:
     void update(MimeTreeParser::UpdateMode);

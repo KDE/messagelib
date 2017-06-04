@@ -32,7 +32,7 @@ class TestCSSHelper : public MessageViewer::CSSHelperBase
 public:
     explicit TestCSSHelper(const QPaintDevice *pd);
     virtual ~TestCSSHelper();
-    QString htmlHead(bool fixed) const Q_DECL_OVERRIDE;
+    QString htmlHead(bool fixed) const override;
 };
 }
 

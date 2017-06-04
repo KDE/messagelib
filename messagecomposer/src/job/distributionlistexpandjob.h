@@ -51,7 +51,7 @@ public:
     /**
      * Starts the job.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     /**
      * Returns the email addresses of the list members.

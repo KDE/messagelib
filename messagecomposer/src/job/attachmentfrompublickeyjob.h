@@ -43,7 +43,7 @@ public:
     void setFingerprint(const QString &fingerprint);
 
 protected Q_SLOTS:
-    void doStart() Q_DECL_OVERRIDE;
+    void doStart() override;
 
 private:
     class Private;

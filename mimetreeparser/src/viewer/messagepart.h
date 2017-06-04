@@ -81,7 +81,7 @@ public:
 
     virtual ~MessagePart();
 
-    virtual QString text() const Q_DECL_OVERRIDE;
+    virtual QString text() const override;
     void setText(const QString &text);
     void setAttachmentFlag(KMime::Content *node);
     bool isAttachment() const;
@@ -102,8 +102,8 @@ public:
     const QVector<Interface::MessagePart::Ptr> &subParts() const;
     bool hasSubParts() const;
 
-    HtmlWriter *htmlWriter() const Q_DECL_OVERRIDE;
-    void setHtmlWriter(HtmlWriter *htmlWriter) const Q_DECL_OVERRIDE;
+    HtmlWriter *htmlWriter() const override;
+    void setHtmlWriter(HtmlWriter *htmlWriter) const override;
 
     Interface::ObjectTreeSource *source() const;
     KMime::Content *attachmentNode() const;
@@ -131,10 +131,10 @@ public:
     MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart);
     virtual ~MimeMessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
+    QString text() const override;
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
+    QString plaintextContent() const override;
+    QString htmlContent() const override;
 private:
     KMime::Content *mNode;
     bool mOnlyOneMimePart;
@@ -151,10 +151,10 @@ public:
     MessagePartList(MimeTreeParser::ObjectTreeParser *otp);
     virtual ~MessagePartList();
 
-    QString text() const Q_DECL_OVERRIDE;
+    QString text() const override;
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
+    QString plaintextContent() const override;
+    QString htmlContent() const override;
 private:
 };
 
@@ -177,7 +177,7 @@ public:
 
     bool decryptMessage() const;
 
-    bool isHidden() const Q_DECL_OVERRIDE;
+    bool isHidden() const override;
 
     bool showLink() const;
     bool showTextFrame() const;
@@ -216,7 +216,7 @@ public:
     bool isImage() const;
     void setIsImage(bool image);
 
-    bool isHidden() const Q_DECL_OVERRIDE;
+    bool isHidden() const override;
 
 private:
     bool mIsImage;
@@ -231,10 +231,10 @@ public:
     HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, MimeTreeParser::Interface::ObjectTreeSource *source);
     virtual ~HtmlMessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
+    QString text() const override;
 
-    void fix() const Q_DECL_OVERRIDE;
-    bool isHtml() const Q_DECL_OVERRIDE;
+    void fix() const override;
+    bool isHtml() const override;
 
 private:
     KMime::Content *mNode;
@@ -254,19 +254,19 @@ public:
     AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, Util::HtmlMode preferredMode);
     virtual ~AlternativeMessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
+    QString text() const override;
 
     Util::HtmlMode preferredMode() const;
 
-    bool isHtml() const Q_DECL_OVERRIDE;
+    bool isHtml() const override;
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
+    QString plaintextContent() const override;
+    QString htmlContent() const override;
 
     QList<Util::HtmlMode> availableModes();
 
-    void fix() const Q_DECL_OVERRIDE;
-    void copyContentFrom() const Q_DECL_OVERRIDE;
+    void fix() const override;
+    void copyContentFrom() const override;
 private:
     KMime::Content *mNode;
 
@@ -289,7 +289,7 @@ public:
     CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const QGpgME::Protocol *cryptoProto, bool autoImport);
     virtual ~CertMessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
+    QString text() const override;
 
 private:
     KMime::Content *mNode;
@@ -307,10 +307,10 @@ public:
     EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
     virtual ~EncapsulatedRfc822MessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
+    QString text() const override;
 
-    void copyContentFrom() const Q_DECL_OVERRIDE;
-    void fix() const Q_DECL_OVERRIDE;
+    void copyContentFrom() const override;
+    void fix() const override;
 private:
     const KMime::Message::Ptr mMessage;
     KMime::Content *mNode;
@@ -334,7 +334,7 @@ public:
 
     virtual ~EncryptedMessagePart();
 
-    QString text() const Q_DECL_OVERRIDE;
+    QString text() const override;
 
     void setDecryptMessage(bool decrypt);
     bool decryptMessage() const;
@@ -351,8 +351,8 @@ public:
 
     QByteArray mDecryptedData;
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
+    QString plaintextContent() const override;
+    QString htmlContent() const override;
 
 private:
     /** Handles the dectyptioon of a given content
@@ -398,8 +398,8 @@ public:
     QByteArray mDecryptedData;
     std::vector<GpgME::Signature> mSignatures;
 
-    QString plaintextContent() const Q_DECL_OVERRIDE;
-    QString htmlContent() const Q_DECL_OVERRIDE;
+    QString plaintextContent() const override;
+    QString htmlContent() const override;
 
 private:
     /** Handles the verification of data

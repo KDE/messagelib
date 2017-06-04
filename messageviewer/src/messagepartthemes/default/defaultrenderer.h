@@ -45,7 +45,7 @@ public:
     DefaultRenderer(const MimeTreeParser::Interface::MessagePartPtr &msgPart, CSSHelperBase *cssHelder);
     ~DefaultRenderer();
 
-    QString html() const Q_DECL_OVERRIDE;
+    QString html() const override;
 
 private:
     MimeTreeParser::DefaultRendererPrivate *d;

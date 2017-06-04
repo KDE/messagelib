@@ -38,7 +38,7 @@ public:
 
     QDate selectedDate() const;
 
-    void accept() Q_DECL_OVERRIDE;
+    void accept() override;
 
     Akonadi::Collection collection() const;
 private Q_SLOTS:

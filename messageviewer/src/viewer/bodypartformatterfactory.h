@@ -48,7 +48,7 @@ public:
     virtual ~BodyPartFormatterFactory();
 
 protected:
-    void loadPlugins() Q_DECL_OVERRIDE;
+    void loadPlugins() override;
 };
 
 }

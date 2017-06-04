@@ -44,8 +44,8 @@ public:
     void setAttachmentPart(MessageCore::AttachmentPart::Ptr part);
 
 protected Q_SLOTS:
-    void doStart() Q_DECL_OVERRIDE;
-    void process() Q_DECL_OVERRIDE;
+    void doStart() override;
+    void process() override;
 
 private:
     Q_DECLARE_PRIVATE(AttachmentJob)

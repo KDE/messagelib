@@ -82,16 +82,16 @@ protected:
     virtual ~IconicAttachmentStrategy() {}
 
 public:
-    const char *name() const Q_DECL_OVERRIDE
+    const char *name() const override
     {
         return "iconic";
     }
 
-    bool inlineNestedMessages() const Q_DECL_OVERRIDE
+    bool inlineNestedMessages() const override
     {
         return false;
     }
-    Display defaultDisplay(KMime::Content *node) const Q_DECL_OVERRIDE
+    Display defaultDisplay(KMime::Content *node) const override
     {
         if (node->contentType()->isText() &&
                 node->contentDisposition()->filename().trimmed().isEmpty() &&
@@ -119,16 +119,16 @@ protected:
     virtual ~SmartAttachmentStrategy() {}
 
 public:
-    const char *name() const Q_DECL_OVERRIDE
+    const char *name() const override
     {
         return "smart";
     }
 
-    bool inlineNestedMessages() const Q_DECL_OVERRIDE
+    bool inlineNestedMessages() const override
     {
         return true;
     }
-    Display defaultDisplay(KMime::Content *node) const Q_DECL_OVERRIDE
+    Display defaultDisplay(KMime::Content *node) const override
     {
         return smartDisplay(node);
     }
@@ -147,16 +147,16 @@ protected:
     virtual ~InlinedAttachmentStrategy() {}
 
 public:
-    const char *name() const Q_DECL_OVERRIDE
+    const char *name() const override
     {
         return "inlined";
     }
 
-    bool inlineNestedMessages() const Q_DECL_OVERRIDE
+    bool inlineNestedMessages() const override
     {
         return true;
     }
-    Display defaultDisplay(KMime::Content *) const Q_DECL_OVERRIDE
+    Display defaultDisplay(KMime::Content *) const override
     {
         return Inline;
     }
@@ -175,16 +175,16 @@ protected:
     virtual ~HiddenAttachmentStrategy() {}
 
 public:
-    const char *name() const Q_DECL_OVERRIDE
+    const char *name() const override
     {
         return "hidden";
     }
 
-    bool inlineNestedMessages() const Q_DECL_OVERRIDE
+    bool inlineNestedMessages() const override
     {
         return false;
     }
-    Display defaultDisplay(KMime::Content *node) const Q_DECL_OVERRIDE
+    Display defaultDisplay(KMime::Content *node) const override
     {
         if (node->contentType()->isText() &&
                 node->contentDisposition()->filename().trimmed().isEmpty() &&
@@ -214,17 +214,17 @@ protected:
     virtual ~HeaderOnlyAttachmentStrategy() {}
 
 public:
-    const char *name() const Q_DECL_OVERRIDE
+    const char *name() const override
     {
         return "headerOnly";
     }
 
-    bool inlineNestedMessages() const Q_DECL_OVERRIDE
+    bool inlineNestedMessages() const override
     {
         return true;
     }
 
-    Display defaultDisplay(KMime::Content *node) const Q_DECL_OVERRIDE
+    Display defaultDisplay(KMime::Content *node) const override
     {
         if (NodeHelper::isInEncapsulatedMessage(node)) {
             return smartDisplay(node);
@@ -236,7 +236,7 @@ public:
         return smartDisplay(node);
     }
 
-    bool requiresAttachmentListInHeader() const Q_DECL_OVERRIDE
+    bool requiresAttachmentListInHeader() const override
     {
         return true;
     }

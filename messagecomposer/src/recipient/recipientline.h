@@ -43,7 +43,7 @@ Q_SIGNALS:
     void rightPressed();
 
 protected:
-    void keyPressEvent(QKeyEvent *ev) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *ev) override;
 };
 
 class MESSAGECOMPOSER_EXPORT RecipientLineEdit : public MessageComposer::ComposerLineEdit
@@ -58,7 +58,7 @@ Q_SIGNALS:
     void rightPressed();
 
 protected:
-    void keyPressEvent(QKeyEvent *ev) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *ev) override;
 };
 
 class MESSAGECOMPOSER_EXPORT RecipientLineNG : public KPIM::MultiplyingLine
@@ -68,25 +68,25 @@ public:
     explicit RecipientLineNG(QWidget *parent);
     virtual ~RecipientLineNG() {}
 
-    void activate() Q_DECL_OVERRIDE;
-    bool isActive() const Q_DECL_OVERRIDE;
+    void activate() override;
+    bool isActive() const override;
 
-    bool isEmpty() const Q_DECL_OVERRIDE;
-    void clear() Q_DECL_OVERRIDE;
-    bool canDeleteLineEdit() const Q_DECL_OVERRIDE;
+    bool isEmpty() const override;
+    void clear() override;
+    bool canDeleteLineEdit() const override;
 
-    bool isModified() const Q_DECL_OVERRIDE;
-    void clearModified() Q_DECL_OVERRIDE;
+    bool isModified() const override;
+    void clearModified() override;
 
-    KPIM::MultiplyingLineData::Ptr data() const Q_DECL_OVERRIDE;
-    void setData(const KPIM::MultiplyingLineData::Ptr &data) Q_DECL_OVERRIDE;
+    KPIM::MultiplyingLineData::Ptr data() const override;
+    void setData(const KPIM::MultiplyingLineData::Ptr &data) override;
 
-    void fixTabOrder(QWidget *previous) Q_DECL_OVERRIDE;
-    QWidget *tabOut() const Q_DECL_OVERRIDE;
+    void fixTabOrder(QWidget *previous) override;
+    QWidget *tabOut() const override;
 
-    void setCompletionMode(KCompletion::CompletionMode mode) Q_DECL_OVERRIDE;
+    void setCompletionMode(KCompletion::CompletionMode mode) override;
 
-    int setColumnWidth(int w) Q_DECL_OVERRIDE;
+    int setColumnWidth(int w) override;
 
     // recipient specific methods
     int recipientsCount() const;
@@ -123,7 +123,7 @@ protected Q_SLOTS:
     void analyzeLine(const QString &);
 
 protected:
-    bool eventFilter(QObject *watched, QEvent *event) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
     void dataFromFields();

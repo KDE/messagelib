@@ -32,7 +32,7 @@ public:
     }
 
 protected:
-    void downloadDataBase(const QString &clientState) Q_DECL_OVERRIDE
+    void downloadDataBase(const QString &clientState) override
     {
         // don't actually download anything
     }

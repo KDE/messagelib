@@ -59,7 +59,7 @@ public:
     /**
      * Starts the job.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     /**
      * Sets the from address to expand.

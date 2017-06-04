@@ -906,7 +906,7 @@ void SignedMessagePart::sigStatusToMetaData()
             // won't trust implicitely the plugin that gave us these data.
             if (key.userID(iMail).email()) {
                 QString email = QString::fromUtf8(key.userID(iMail).email());
-                // ### work around gpgme 0.3.QString text() const Q_DECL_OVERRIDE;x / cryptplug bug where the
+                // ### work around gpgme 0.3.QString text() const override;x / cryptplug bug where the
                 // ### email addresses are specified as angle-addr, not addr-spec:
                 if (email.startsWith(QLatin1Char('<')) && email.endsWith(QLatin1Char('>'))) {
                     email = email.mid(1, email.length() - 2);

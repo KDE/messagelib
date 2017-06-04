@@ -61,7 +61,7 @@ public:
     KMime::Headers::ContentType *contentType();
 
 protected Q_SLOTS:
-    void process() Q_DECL_OVERRIDE;
+    void process() override;
 
 private:
     Q_DECLARE_PRIVATE(SinglepartJob)

@@ -62,7 +62,7 @@ class AnyTypeBodyPartFormatter
 {
     static const AnyTypeBodyPartFormatter *self;
 public:
-    Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE
+    Result format(Interface::BodyPart *, HtmlWriter *) const override
     {
         qCDebug(MIMETREEPARSER_LOG) << "Acting as a Interface::BodyPartFormatter!";
         return AsIcon;
@@ -71,7 +71,7 @@ public:
     // unhide the overload with three arguments
     using MimeTreeParser::Interface::BodyPartFormatter::format;
 
-    void adaptProcessResult(ProcessResult &result) const Q_DECL_OVERRIDE
+    void adaptProcessResult(ProcessResult &result) const override
     {
         result.setNeverDisplayInline(true);
     }
@@ -91,7 +91,7 @@ class ImageTypeBodyPartFormatter
 {
     static const ImageTypeBodyPartFormatter *self;
 public:
-    Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE
+    Result format(Interface::BodyPart *, HtmlWriter *) const override
     {
         return AsIcon;
     }
@@ -99,7 +99,7 @@ public:
     // unhide the overload with three arguments
     using MimeTreeParser::Interface::BodyPartFormatter::format;
 
-    void adaptProcessResult(ProcessResult &result) const Q_DECL_OVERRIDE
+    void adaptProcessResult(ProcessResult &result) const override
     {
         result.setNeverDisplayInline(false);
         result.setIsImage(true);
@@ -120,8 +120,8 @@ class MessageRfc822BodyPartFormatter
 {
     static const MessageRfc822BodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &) const Q_DECL_OVERRIDE;
-    MimeTreeParser::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const Q_DECL_OVERRIDE;
+    Interface::MessagePart::Ptr process(Interface::BodyPart &) const override;
+    MimeTreeParser::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const override;
     using MimeTreeParser::Interface::BodyPartFormatter::format;
     static const MimeTreeParser::Interface::BodyPartFormatter *create();
 };

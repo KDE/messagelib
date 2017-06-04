@@ -61,15 +61,15 @@ public:
     {
     }
 
-    MimeTreeParser::HtmlWriter *htmlWriter() Q_DECL_OVERRIDE {
+    MimeTreeParser::HtmlWriter *htmlWriter() override {
         return mWriter;
     }
 
-    CSSHelperBase *cssHelper() Q_DECL_OVERRIDE {
+    CSSHelperBase *cssHelper() override {
         return mCSSHelper;
     }
 
-    bool htmlLoadExternal() const Q_DECL_OVERRIDE
+    bool htmlLoadExternal() const override
     {
         return mHtmlLoadExternal;
     }
@@ -84,16 +84,16 @@ public:
         mAttachmentStrategy = strategy;
     }
 
-    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() Q_DECL_OVERRIDE {
+    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() override {
         return  MimeTreeParser::AttachmentStrategy::create(mAttachmentStrategy);
     }
 
-    bool autoImportKeys() const Q_DECL_OVERRIDE
+    bool autoImportKeys() const override
     {
         return true;
     }
 
-    bool showEmoticons() const Q_DECL_OVERRIDE
+    bool showEmoticons() const override
     {
         return false;
     }
@@ -103,16 +103,16 @@ public:
         mShowExpandQuotesMark = b;
     }
 
-    bool showExpandQuotesMark() const Q_DECL_OVERRIDE
+    bool showExpandQuotesMark() const override
     {
         return mShowExpandQuotesMark;
     }
 
-    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() Q_DECL_OVERRIDE {
+    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override {
         return &mBodyPartFormatterBaseFactory;
     }
 
-    bool decryptMessage() const Q_DECL_OVERRIDE
+    bool decryptMessage() const override
     {
         return mDecryptMessage;
     }
@@ -127,17 +127,17 @@ public:
         mShowSignatureDetails = showSignatureDetails;
     }
 
-    bool showSignatureDetails() const Q_DECL_OVERRIDE
+    bool showSignatureDetails() const override
     {
         return mShowSignatureDetails;
     }
 
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) Q_DECL_OVERRIDE {
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override {
         Q_UNUSED(mode);
         Q_UNUSED(availableModes);
     }
 
-    MimeTreeParser::Util::HtmlMode preferredMode() const Q_DECL_OVERRIDE
+    MimeTreeParser::Util::HtmlMode preferredMode() const override
     {
         return mPreferredMode;
     }
@@ -147,7 +147,7 @@ public:
         mPreferredMode = mode;
     }
 
-    int levelQuote() const Q_DECL_OVERRIDE
+    int levelQuote() const override
     {
         return mQuoteLevel;
     }
@@ -157,11 +157,11 @@ public:
         mQuoteLevel = level;
     }
 
-    const QTextCodec *overrideCodec() Q_DECL_OVERRIDE {
+    const QTextCodec *overrideCodec() override {
         return nullptr;
     }
 
-    QString createMessageHeader(KMime::Message *message) Q_DECL_OVERRIDE {
+    QString createMessageHeader(KMime::Message *message) override {
         Q_UNUSED(message);
         return QString(); //do nothing
     }

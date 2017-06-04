@@ -30,7 +30,7 @@ public:
     explicit BlockExternalResourcesUrlInterceptor(QObject *parent = nullptr);
     ~BlockExternalResourcesUrlInterceptor();
 
-    bool interceptRequest(QWebEngineUrlRequestInfo &info) Q_DECL_OVERRIDE;
+    bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
     void setAllowExternalContent(bool b);
     bool allowExternalContent() const;
 Q_SIGNALS:

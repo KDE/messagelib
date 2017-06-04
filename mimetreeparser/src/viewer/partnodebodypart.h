@@ -59,42 +59,42 @@ public:
     explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content,
                               NodeHelper *nodeHelper);
 
-    QString makeLink(const QString &path) const Q_DECL_OVERRIDE;
-    QString asText() const Q_DECL_OVERRIDE;
-    QByteArray asBinary() const Q_DECL_OVERRIDE;
-    QString contentTypeParameter(const char *param) const Q_DECL_OVERRIDE;
-    QString contentDescription() const Q_DECL_OVERRIDE;
-    QString contentDispositionParameter(const char *param) const Q_DECL_OVERRIDE;
-    bool hasCompleteBody() const Q_DECL_OVERRIDE;
+    QString makeLink(const QString &path) const override;
+    QString asText() const override;
+    QByteArray asBinary() const override;
+    QString contentTypeParameter(const char *param) const override;
+    QString contentDescription() const override;
+    QString contentDispositionParameter(const char *param) const override;
+    bool hasCompleteBody() const override;
 
-    Interface::BodyPartMemento *memento() const Q_DECL_OVERRIDE;
-    void setBodyPartMemento(Interface::BodyPartMemento *memento) Q_DECL_OVERRIDE;
-    BodyPart::Display defaultDisplay() const Q_DECL_OVERRIDE;
+    Interface::BodyPartMemento *memento() const override;
+    void setBodyPartMemento(Interface::BodyPartMemento *memento) override;
+    BodyPart::Display defaultDisplay() const override;
     void setDefaultDisplay(BodyPart::Display);
-    KMime::Content *content() const Q_DECL_OVERRIDE
+    KMime::Content *content() const override
     {
         return mContent;
     }
-    KMime::Content *topLevelContent() const Q_DECL_OVERRIDE
+    KMime::Content *topLevelContent() const override
     {
         return mTopLevelContent;
     }
-    NodeHelper *nodeHelper() const Q_DECL_OVERRIDE
+    NodeHelper *nodeHelper() const override
     {
         return mNodeHelper;
     }
 
-    ObjectTreeParser *objectTreeParser() const Q_DECL_OVERRIDE
+    ObjectTreeParser *objectTreeParser() const override
     {
         return mObjectTreeParser;
     }
 
-    ProcessResult *processResult() const Q_DECL_OVERRIDE
+    ProcessResult *processResult() const override
     {
         return mProcessResult;
     }
 
-    Interface::ObjectTreeSource *source() const Q_DECL_OVERRIDE;
+    Interface::ObjectTreeSource *source() const override;
 private:
     KMime::Content *mTopLevelContent;
     KMime::Content *mContent;

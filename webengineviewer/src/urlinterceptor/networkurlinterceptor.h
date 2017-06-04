@@ -34,7 +34,7 @@ public:
     explicit NetworkUrlInterceptor(QObject *parent = nullptr);
     ~NetworkUrlInterceptor();
 
-    void interceptRequest(QWebEngineUrlRequestInfo &info) Q_DECL_OVERRIDE;
+    void interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
     void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
 private:

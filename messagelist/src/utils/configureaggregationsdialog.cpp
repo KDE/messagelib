@@ -76,7 +76,7 @@ public:
 /**
  * The widget that lists the available Aggregations.
  *
- * At the moment of writing, derived from QListWidget only to Q_DECL_OVERRIDE sizeHint().
+ * At the moment of writing, derived from QListWidget only to override sizeHint().
  */
 class AggregationListWidget : public QListWidget
 {
@@ -88,7 +88,7 @@ public:
 public:
 
     // need a larger but shorter QListWidget
-    QSize sizeHint() const Q_DECL_OVERRIDE
+    QSize sizeHint() const override
     {
         return QSize(450, 128);
     }

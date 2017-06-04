@@ -35,9 +35,9 @@ public:
     ~FindBarWebEngineView();
 
 private:
-    void clearSelections() Q_DECL_OVERRIDE;
-    void searchText(bool backward, bool isAutoSearch) Q_DECL_OVERRIDE;
-    void updateSensitivity(bool sensitivity) Q_DECL_OVERRIDE;
+    void clearSelections() override;
+    void searchText(bool backward, bool isAutoSearch) override;
+    void updateSensitivity(bool sensitivity) override;
 
 private:
     FindBarWebEngineViewPrivate *const d;

@@ -33,8 +33,8 @@ public:
     explicit DefaultGrantleeHeaderStyleInterface(HeaderStylePlugin *plugin, QObject *parent = nullptr);
     ~DefaultGrantleeHeaderStyleInterface();
 
-    void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) Q_DECL_OVERRIDE;
-    void activateAction() Q_DECL_OVERRIDE;
+    void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) override;
+    void activateAction() override;
 private:
     void slotDefaultGrantleeHeaders();
     GrantleeTheme::Theme mDefaultTheme;

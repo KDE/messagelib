@@ -49,7 +49,7 @@ public:
     explicit TestWebEngineScriptPage(QObject *parent = nullptr);
 
 protected:
-    void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) Q_DECL_OVERRIDE;
+    void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) override;
 
 Q_SIGNALS:
     void showConsoleMessage(const QString &msg);

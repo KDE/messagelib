@@ -75,7 +75,7 @@ Q_SIGNALS:
     void statusButtonsClicked();
 
 protected:
-    bool eventFilter(QObject *object, QEvent *e) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *object, QEvent *e) override;
 private Q_SLOTS:
     void slotSearchEditTextEdited(const QString &text);
     void slotClearButtonClicked();

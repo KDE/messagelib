@@ -34,12 +34,12 @@ public:
 
 protected:
     void initCompleter();
-    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *e) override;
 
-    void updateHighLighter() Q_DECL_OVERRIDE;
+    void updateHighLighter() override;
 
-    void clearDecorator() Q_DECL_OVERRIDE;
-    void createHighlighter() Q_DECL_OVERRIDE;
+    void clearDecorator() override;
+    void createHighlighter() override;
 private:
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
 };

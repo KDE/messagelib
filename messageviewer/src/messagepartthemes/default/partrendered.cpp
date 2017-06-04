@@ -47,14 +47,14 @@ public:
     explicit CacheHtmlWriter() {}
     virtual ~CacheHtmlWriter() {}
 
-    void begin(const QString &text) Q_DECL_OVERRIDE {}
-    void write(const QString &str) Q_DECL_OVERRIDE {html.append(str);}
-    void end() Q_DECL_OVERRIDE {}
-    void reset() Q_DECL_OVERRIDE {}
-    void queue(const QString &str) Q_DECL_OVERRIDE {html.append(str);}
-    void flush() Q_DECL_OVERRIDE {}
-    void embedPart(const QByteArray &contentId, const QString &url) Q_DECL_OVERRIDE {embedParts.insert(contentId, url);}
-    void extraHead(const QString &extra) Q_DECL_OVERRIDE {head.append(extra);}
+    void begin(const QString &text) override {}
+    void write(const QString &str) override {html.append(str);}
+    void end() override {}
+    void reset() override {}
+    void queue(const QString &str) override {html.append(str);}
+    void flush() override {}
+    void embedPart(const QByteArray &contentId, const QString &url) override {embedParts.insert(contentId, url);}
+    void extraHead(const QString &extra) override {head.append(extra);}
 
     QString html;
     QString head;

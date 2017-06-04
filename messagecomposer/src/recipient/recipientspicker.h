@@ -60,7 +60,7 @@ protected:
 
     void pick(Recipient::Type);
 
-    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *) override;
 
 protected Q_SLOTS:
     void slotToClicked();

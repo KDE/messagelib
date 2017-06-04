@@ -80,7 +80,7 @@ public:
     {}
 public:
     // need a larger but shorter QListWidget
-    QSize sizeHint() const Q_DECL_OVERRIDE
+    QSize sizeHint() const override
     {
         return QSize(450, 128);
     }

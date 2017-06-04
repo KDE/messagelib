@@ -30,7 +30,7 @@ class ApplicationPkcs7MimeBodyPartFormatter : public Interface::BodyPartFormatte
 {
     static const ApplicationPkcs7MimeBodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const Q_DECL_OVERRIDE;
+    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override;
     using Interface::BodyPartFormatter::format;
     static const Interface::BodyPartFormatter *create();
 };

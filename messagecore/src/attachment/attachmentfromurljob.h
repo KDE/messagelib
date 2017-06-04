@@ -51,7 +51,7 @@ public:
     ~AttachmentFromUrlJob();
 
 protected Q_SLOTS:
-    void doStart() Q_DECL_OVERRIDE;
+    void doStart() override;
 
 private:
     //@cond PRIVATE

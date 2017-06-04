@@ -83,7 +83,7 @@ private:
     Core::FakeItem *mSampleMessageItem;
     Core::ModelInvariantRowMapper *mRowMapper;  // needed for the MessageItem above to be valid
 public:
-    Core::Item *itemFromIndex(const QModelIndex &index) const Q_DECL_OVERRIDE;
+    Core::Item *itemFromIndex(const QModelIndex &index) const override;
 };
 
 class ThemePreviewWidget : public QTreeWidget
@@ -133,18 +133,18 @@ private:
     bool mFirstShow;
     bool mReadOnly;
 public:
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const override;
     void setTheme(Core::Theme *theme);
 
 protected:
-    void dragMoveEvent(QDragMoveEvent *e) Q_DECL_OVERRIDE;
-    void dragEnterEvent(QDragEnterEvent *e) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent *e) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-    void paintEvent(QPaintEvent *e) Q_DECL_OVERRIDE;
-    void showEvent(QShowEvent *e) Q_DECL_OVERRIDE;
-    void changeEvent(QEvent *event) Q_DECL_OVERRIDE;
+    void dragMoveEvent(QDragMoveEvent *e) override;
+    void dragEnterEvent(QDragEnterEvent *e) override;
+    void dropEvent(QDropEvent *e) override;
+    void mouseMoveEvent(QMouseEvent *e) override;
+    void mousePressEvent(QMouseEvent *e) override;
+    void paintEvent(QPaintEvent *e) override;
+    void showEvent(QShowEvent *e) override;
+    void changeEvent(QEvent *event) override;
 
 private:
     void internalHandleDragMoveEvent(QDragMoveEvent *e);
@@ -188,8 +188,8 @@ public:
     void startDrag();
 
 protected:
-    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *e) override;
+    void mouseMoveEvent(QMouseEvent *e) override;
 
 private:
     QPoint mMousePressPoint;
@@ -221,7 +221,7 @@ private:
     void fillViewHeaderPolicyCombo();
 
 protected Q_SLOTS:
-    void slotNameEditTextEdited(const QString &newName) Q_DECL_OVERRIDE;
+    void slotNameEditTextEdited(const QString &newName) override;
     void slotIconSizeSpinBoxValueChanged(int val);
 
 private:

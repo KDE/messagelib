@@ -37,7 +37,7 @@ public:
     {
     }
 
-    KPIM::MultiplyingLine *newLine(QWidget *parent) Q_DECL_OVERRIDE {
+    KPIM::MultiplyingLine *newLine(QWidget *parent) override {
         auto line = qobject_cast<MessageComposer::RecipientLineNG *>(
             MessageComposer::RecipientLineFactory::newLine(parent));
         line->setEnableAkonadiSearch(false);

@@ -63,8 +63,8 @@ public:
     virtual ~AttachmentMarkBlock();
 
 protected:
-    QString enterString() const Q_DECL_OVERRIDE;
-    QString exitString() const Q_DECL_OVERRIDE;
+    QString enterString() const override;
+    QString exitString() const override;
 
 private:
     void internalEnter();
@@ -84,8 +84,8 @@ public:
     virtual ~RootBlock();
 
 protected:
-    QString enterString() const Q_DECL_OVERRIDE;
-    QString exitString() const Q_DECL_OVERRIDE;
+    QString enterString() const override;
+    QString exitString() const override;
 
 private:
     void internalEnter();

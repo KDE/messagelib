@@ -110,7 +110,7 @@ private Q_SLOTS:
 
     void groupingComboActivated(int idx);
     void threadingComboActivated(int idx);
-    void slotNameEditTextEdited(const QString &newName) Q_DECL_OVERRIDE;
+    void slotNameEditTextEdited(const QString &newName) override;
 
 };
 

@@ -49,8 +49,8 @@ public:
     WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;
 
 protected:
-    bool eventFilter(QObject *obj, QEvent *event) Q_DECL_OVERRIDE;
-    QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *obj, QEvent *event) override;
+    QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) override;
 
     virtual void forwardWheelEvent(QWheelEvent *event);
     virtual void forwardKeyPressEvent(QKeyEvent *event);

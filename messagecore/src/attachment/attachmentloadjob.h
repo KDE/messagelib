@@ -54,7 +54,7 @@ public:
     /**
      * Starts the attachment load job.
      */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     /**
      * Returns the loaded attachment.

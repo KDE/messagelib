@@ -45,8 +45,8 @@ Q_SIGNALS:
     void showConsoleMessage(const QString &message);
 
 protected:
-    bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) Q_DECL_OVERRIDE;
-    void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) Q_DECL_OVERRIDE;
+    bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) override;
+    void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) override;
 
 private:
     void init();

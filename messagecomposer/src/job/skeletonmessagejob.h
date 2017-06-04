@@ -54,7 +54,7 @@ public:
 
     KMime::Message *message() const;
 
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
 private:
     Q_DECLARE_PRIVATE(SkeletonMessageJob)

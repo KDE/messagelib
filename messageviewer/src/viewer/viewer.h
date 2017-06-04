@@ -401,11 +401,11 @@ public Q_SLOTS:
     void slotChangeDisplayMail(Viewer::DisplayFormatMessage, bool);
 protected:
     /** Some necessary event handling. */
-    void closeEvent(QCloseEvent *) Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
+    void closeEvent(QCloseEvent *) override;
+    void resizeEvent(QResizeEvent *) override;
     /** Watch for palette changes */
-    bool event(QEvent *e) Q_DECL_OVERRIDE;
-    void changeEvent(QEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *e) override;
+    void changeEvent(QEvent *event) override;
 
     ViewerPrivate *const d_ptr;
 };

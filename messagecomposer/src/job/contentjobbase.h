@@ -49,7 +49,7 @@ public:
       Emits finished() after all processing is done, and the
       content is reachable through content().
     */
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
 
     /**
       Get the resulting KMime::Content that the ContentJobBase has generated.
@@ -80,7 +80,7 @@ protected:
     ContentJobBase(ContentJobBasePrivate &dd, QObject *parent);
 
     /** Use appendSubjob() instead. */
-    bool addSubjob(KJob *job) Q_DECL_OVERRIDE;
+    bool addSubjob(KJob *job) override;
 
 protected Q_SLOTS:
     /**
@@ -97,7 +97,7 @@ protected Q_SLOTS:
     */
     virtual void process() = 0;
 
-    void slotResult(KJob *job) Q_DECL_OVERRIDE;
+    void slotResult(KJob *job) override;
 
 private:
     Q_DECLARE_PRIVATE(ContentJobBase)

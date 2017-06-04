@@ -38,10 +38,10 @@ private:
     {
         Q_UNUSED(parent);
     }
-    void clearSelections() Q_DECL_OVERRIDE;
-    void searchText(bool backward, bool isAutoSearch) Q_DECL_OVERRIDE;
-    void updateHighLight(bool) Q_DECL_OVERRIDE;
-    void updateSensitivity(bool) Q_DECL_OVERRIDE;
+    void clearSelections() override;
+    void searchText(bool backward, bool isAutoSearch) override;
+    void updateHighLight(bool) override;
+    void updateSensitivity(bool) override;
 
 private:
     QPlainTextEdit *mView;

@@ -57,16 +57,16 @@ public:
     ~RichHeaderStrategy();
 
 public:
-    const char *name() const Q_DECL_OVERRIDE
+    const char *name() const override
     {
         return "rich";
     }
 
-    QStringList headersToDisplay() const Q_DECL_OVERRIDE
+    QStringList headersToDisplay() const override
     {
         return mHeadersToDisplay;
     }
-    DefaultPolicy defaultPolicy() const Q_DECL_OVERRIDE
+    DefaultPolicy defaultPolicy() const override
     {
         return Hide;
     }

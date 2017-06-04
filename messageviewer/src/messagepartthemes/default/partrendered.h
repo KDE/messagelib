@@ -61,9 +61,9 @@ public:
     EmptyPartRendered();
     virtual ~EmptyPartRendered();
 
-    QString html() Q_DECL_OVERRIDE;
-    QMap<QByteArray, QString> embededParts() Q_DECL_OVERRIDE;
-    QString extraHeader() Q_DECL_OVERRIDE;
+    QString html() override;
+    QMap<QByteArray, QString> embededParts() override;
+    QString extraHeader() override;
 };
 
 class WrapperPartRendered : public PartRendered
@@ -72,9 +72,9 @@ public:
     WrapperPartRendered(CacheHtmlWriter *);
     virtual ~WrapperPartRendered();
 
-    QString html() Q_DECL_OVERRIDE;
-    QMap<QByteArray, QString> embededParts() Q_DECL_OVERRIDE;
-    QString extraHeader() Q_DECL_OVERRIDE;
+    QString html() override;
+    QMap<QByteArray, QString> embededParts() override;
+    QString extraHeader() override;
 
 private:
     QString mHtml;
@@ -88,9 +88,9 @@ public:
     HtmlOnlyPartRendered(MimeTreeParser::MessagePartPtr part, const QString &html);
     virtual ~HtmlOnlyPartRendered();
 
-    QString html() Q_DECL_OVERRIDE;
-    QMap<QByteArray, QString> embededParts() Q_DECL_OVERRIDE;
-    QString extraHeader() Q_DECL_OVERRIDE;
+    QString html() override;
+    QMap<QByteArray, QString> embededParts() override;
+    QString extraHeader() override;
 
 protected:
     void setHtml(const QString &html);
@@ -107,9 +107,9 @@ public:
     TextPartRendered(MimeTreeParser::TextMessagePartPtr part);
     virtual ~TextPartRendered();
 
-    QString html() Q_DECL_OVERRIDE;
-    QMap<QByteArray, QString> embededParts() Q_DECL_OVERRIDE;
-    QString extraHeader() Q_DECL_OVERRIDE;
+    QString html() override;
+    QMap<QByteArray, QString> embededParts() override;
+    QString extraHeader() override;
 
 private:
     QString mHtml;

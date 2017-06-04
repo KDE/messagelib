@@ -55,14 +55,14 @@ public:
 
     void setBase(HtmlWriter *base);
 
-    void begin(const QString &cssDefs) Q_DECL_OVERRIDE;
-    void end() Q_DECL_OVERRIDE;
-    void reset() Q_DECL_OVERRIDE;
-    void write(const QString &str) Q_DECL_OVERRIDE;
-    void queue(const QString &str) Q_DECL_OVERRIDE;
-    void flush() Q_DECL_OVERRIDE;
-    void embedPart(const QByteArray &contentId, const QString &url) Q_DECL_OVERRIDE;
-    void extraHead(const QString &str) Q_DECL_OVERRIDE;
+    void begin(const QString &cssDefs) override;
+    void end() override;
+    void reset() override;
+    void write(const QString &str) override;
+    void queue(const QString &str) override;
+    void flush() override;
+    void embedPart(const QByteArray &contentId, const QString &url) override;
+    void extraHead(const QString &str) override;
 
     void replay();
 
