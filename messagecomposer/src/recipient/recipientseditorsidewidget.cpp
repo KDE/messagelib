@@ -97,10 +97,11 @@ void RecipientsEditorSideWidget::setTotal(int recipients, int lines)
                                                , "No recipients");
     else labelText = i18ncp("@info:status Number of recipients selected"
                                 , "1 recipient", "%1 recipients", recipients);
-    mTotalLabel->setText(labelText);
 
     if (lines > 3) {
+        mTotalLabel->setText(labelText);
         mTotalLabel->show();
+        updateTotalToolTip();
     } else {
         mTotalLabel->hide();
     }
@@ -111,7 +112,6 @@ void RecipientsEditorSideWidget::setTotal(int recipients, int lines)
         mDistributionListButton->hide();
     }
 
-    updateTotalToolTip();
 }
 
 void RecipientsEditorSideWidget::updateTotalToolTip()
