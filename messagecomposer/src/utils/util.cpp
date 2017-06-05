@@ -161,6 +161,9 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
     // fall through (for encryption, there's no difference between
     // SMIME and SMIMEOpaque, since there is no mp/encrypted for
     // S/MIME)
+#if QT_VERSION >= QT_VERSION_CHECK(5,8,0)
+        Q_FALLTHROUGH();
+#endif
     case Kleo::SMIMEOpaqueFormat:
 
         qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME/opaque";
@@ -193,6 +196,9 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
             content->contentType()->setParameter(QStringLiteral("name"), QString::fromAscii("smime.p7s"));
             return;
         }
+#if QT_VERSION >= QT_VERSION_CHECK(5,8,0)
+        Q_FALLTHROUGH();
+#endif
     // fall through:
     default:
     case Kleo::InlineOpenPGPFormat:
