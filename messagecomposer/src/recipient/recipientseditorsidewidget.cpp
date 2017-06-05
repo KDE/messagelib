@@ -46,6 +46,7 @@ RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, Q
 
     mTotalLabel = new QLabel(this);
     mTotalLabel->setAlignment(Qt::AlignCenter);
+    mTotalLabel->setTextFormat(Qt::PlainText);
     topLayout->addWidget(mTotalLabel);
     mTotalLabel->hide();
 

@@ -96,6 +96,7 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     mStatus = new QLabel;
     mStatus->setObjectName(QStringLiteral("status"));
+    mStatus->setTextFormat(Qt::PlainText);
     QFontMetrics fm(mStatus->font());
     mNotFoundString = i18n("Phrase not found");
     mStatus->setFixedWidth(fm.width(mNotFoundString));
