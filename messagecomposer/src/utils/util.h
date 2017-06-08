@@ -25,6 +25,8 @@
 #include "messagecomposer_export.h"
 #include "Libkleo/Enum"
 #include <KMime/Message>
+#include <AkonadiCore/Item>
+#include <Akonadi/KMime/MessageStatus>
 
 namespace KMime
 {
@@ -54,6 +56,26 @@ MESSAGECOMPOSER_EXPORT void removeNotNecessaryHeaders(const KMime::Message::Ptr 
  * find mimetype in message
  */
 MESSAGECOMPOSER_EXPORT KMime::Content *findTypeInMessage(KMime::Content *data, const QByteArray &mimeType, const QByteArray &subType);
+
+/**
+   * Adds private headers to the given @p message that links it to the original message.
+   *
+   * @param message The message to add the link information to.
+   * @param id The item id of the original message.
+   * @param status The status (replied or forwarded) that links the message to the original message.
+   */
+MESSAGECOMPOSER_EXPORT void addLinkInformation(const KMime::Message::Ptr &message, Akonadi::Item::Id item, Akonadi::MessageStatus status);
+
+/**
+   * Reads the private headers of the given @p message to extract link information to its original message.
+   *
+   * @param message The message to read the link information from.
+   * @param id Will contain the item id of the original message.
+   * @param status Will contain the status (replied or forwarded) that linked the message to the original message.
+   * @returns Whether the mail contains valid link information or not.
+   */
+MESSAGECOMPOSER_EXPORT bool getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status);
+
 }
 
 }

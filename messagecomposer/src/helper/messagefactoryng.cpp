@@ -99,7 +99,7 @@ void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool 
 {
     applyCharset(msg);
 
-    MessageCore::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusReplied());
+    MessageComposer::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusReplied());
     if (m_parentFolderId > 0) {
         KMime::Headers::Generic *header = new KMime::Headers::Generic("X-KMail-Fcc");
         header->fromUnicodeString(QString::number(m_parentFolderId), "utf-8");
@@ -374,7 +374,7 @@ void MessageFactoryNG::slotCreateForwardDone(const KMime::Message::Ptr &msg)
 {
     applyCharset(msg);
 
-    MessageCore::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusForwarded());
+    MessageComposer::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusForwarded());
     msg->assemble();
     Q_EMIT createForwardDone(msg);
 }
@@ -468,13 +468,13 @@ QPair< KMime::Message::Ptr, QList< KMime::Content * > > MessageFactoryNG::create
 #endif
     if (numberOfItems == 0) {
         attachments << createForwardAttachmentMessage(m_origMsg);
-        MessageCore::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusForwarded());
+        MessageComposer::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusForwarded());
     } else {
         // iterate through all the messages to be forwarded
         attachments.reserve(items.count());
         for (const Akonadi::Item &item : qAsConst(items)) {
             attachments << createForwardAttachmentMessage(MessageCore::Util::message(item));
-            MessageCore::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
+            MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
         }
     }
 
@@ -500,7 +500,7 @@ KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Me
     msgPart->setBody(fwdMsg->encodedContent());
     msgPart->assemble();
 
-    MessageCore::Util::addLinkInformation(fwdMsg, 0, Akonadi::MessageStatus::statusForwarded());
+    MessageComposer::Util::addLinkInformation(fwdMsg, 0, Akonadi::MessageStatus::statusForwarded());
     return msgPart;
 }
 
@@ -633,7 +633,7 @@ KMime::Message::Ptr MessageFactoryNG::createRedirect(const QString &toStr, const
 
     msg->assemble();
 
-    MessageCore::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusForwarded());
+    MessageComposer::Util::addLinkInformation(msg, m_id, Akonadi::MessageStatus::statusForwarded());
     return msg;
 }
 
@@ -803,7 +803,7 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDi
         part->contentDisposition()->setParameter(QStringLiteral("name"), i18n("forwarded message"));
         part->fromUnicodeString(QString::fromLatin1(fMsg->encodedContent()));
         part->assemble();
-        MessageCore::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
+        MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
         digest->addContent(part);
     }
     digest->assemble();
