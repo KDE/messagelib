@@ -85,6 +85,13 @@ MESSAGECOMPOSER_EXPORT bool getLinkInformation(const KMime::Message::Ptr &msg, Q
    */
 MESSAGECOMPOSER_EXPORT bool isStandaloneMessage(const Akonadi::Item &item);
 
+/**
+   * Retrieve the KMime::Message from the item, if there is one.
+   * @returns A valid message pointer, or 0, is the item does not contain
+   * a valid message.
+   */
+MESSAGECOMPOSER_EXPORT KMime::Message::Ptr message(const Akonadi::Item &item);
+
 }
 
 }

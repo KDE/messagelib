@@ -25,7 +25,6 @@ set(messagecore_misc_LIB_SRCS
 
 
 set(messagecore_helper_LIB_SRCS
-    helpers/messagehelpers.cpp
     helpers/nodehelper.cpp
     )
 
@@ -142,7 +141,6 @@ ecm_generate_headers(MessageCore_Camelcaseattachment_HEADERS
 ecm_generate_headers(MessageCore_Camelcasehelpers_HEADERS
     HEADER_NAMES
     NodeHelper
-    MessageHelpers
     REQUIRED_HEADERS MessageCore_helpers_HEADERS
     PREFIX MessageCore
     RELATIVE helpers

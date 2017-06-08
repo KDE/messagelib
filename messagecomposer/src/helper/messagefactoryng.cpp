@@ -37,7 +37,6 @@
 #include <kmime/kmime_dateformatter.h>
 #include <KEmailAddress>
 #include <MessageCore/MailingList>
-#include <messagecore/messagehelpers.h>
 #include <MessageCore/StringUtil>
 #include "helper/messagehelper.h"
 #include <KLocalizedString>
@@ -456,7 +455,7 @@ QPair< KMime::Message::Ptr, QList< KMime::Content * > > MessageFactoryNG::create
         // the selected mails
         MessageHelper::initHeader(msg, m_identityManager, 0);
     } else if (numberOfItems == 1) {
-        KMime::Message::Ptr firstMsg = MessageCore::Util::message(items.first());
+        KMime::Message::Ptr firstMsg = MessageComposer::Util::message(items.first());
         const uint originalIdentity = identityUoid(firstMsg);
         MessageHelper::initFromMessage(msg, firstMsg, m_identityManager, originalIdentity);
         msg->subject()->fromUnicodeString(MessageHelper::forwardSubject(firstMsg), "utf-8");
@@ -473,7 +472,7 @@ QPair< KMime::Message::Ptr, QList< KMime::Content * > > MessageFactoryNG::create
         // iterate through all the messages to be forwarded
         attachments.reserve(items.count());
         for (const Akonadi::Item &item : qAsConst(items)) {
-            attachments << createForwardAttachmentMessage(MessageCore::Util::message(item));
+            attachments << createForwardAttachmentMessage(MessageComposer::Util::message(item));
             MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
         }
     }
@@ -784,7 +783,7 @@ QPair< KMime::Message::Ptr, KMime::Content * > MessageFactoryNG::createForwardDi
 
     int id = 0;
     for (const Akonadi::Item &item : qAsConst(items)) {
-        KMime::Message::Ptr fMsg = MessageCore::Util::message(item);
+        KMime::Message::Ptr fMsg = MessageComposer::Util::message(item);
         if (id == 0) {
             if (auto hrd = fMsg->headerByType("X-KMail-Identity")) {
                 id = hrd->asUnicodeString().toInt();

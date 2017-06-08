@@ -41,7 +41,6 @@
 #include <AkonadiCore/agentinstance.h>
 #include <AkonadiCore/agentinstancecreatejob.h>
 #include <AkonadiCore/agentmanager.h>
-#include <messagecore/messagehelpers.h>
 
 KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {
@@ -411,5 +410,15 @@ bool MessageComposer::Util::isStandaloneMessage(const Akonadi::Item &item)
 {
     // standalone message have a valid payload, but are not, themselves valid items
     return item.hasPayload<KMime::Message::Ptr>() && !item.isValid();
+}
+
+KMime::Message::Ptr MessageComposer::Util::message(const Akonadi::Item &item)
+{
+    if (!item.hasPayload<KMime::Message::Ptr>()) {
+        qCWarning(MESSAGECOMPOSER_LOG) << "Payload is not a MessagePtr!";
+        return KMime::Message::Ptr();
+    }
+
+    return item.payload<KMime::Message::Ptr>();
 }
 
