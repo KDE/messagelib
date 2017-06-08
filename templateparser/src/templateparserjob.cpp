@@ -1379,7 +1379,6 @@ QString TemplateParserJob::findTemplate()
 
     QString tmpl;
 
-    qCDebug(TEMPLATEPARSER_LOG) << "AKONADI PORT: Disabled code in  " << Q_FUNC_INFO;
     qCDebug(TEMPLATEPARSER_LOG) << "Folder found:" << mFolder;
     if (mFolder.isValid()) {   // only if a folder was found
         QString fid = QString::number(mFolder.id());
@@ -1410,11 +1409,8 @@ QString TemplateParserJob::findTemplate()
     }
 
     if (!mIdentity) {   // find identity message belongs to
-        qCDebug(TEMPLATEPARSER_LOG) << "AKONADI PORT: verify Akonadi::Item() here  " << Q_FUNC_INFO;
-
         mIdentity = identityUoid(mMsg);
         if (!mIdentity && mOrigMsg) {
-            qCDebug(TEMPLATEPARSER_LOG) << "AKONADI PORT: verify Akonadi::Item() here  " << Q_FUNC_INFO;
             mIdentity = identityUoid(mOrigMsg);
         }
         mIdentity = m_identityManager->identityForUoidOrDefault(mIdentity).uoid();
