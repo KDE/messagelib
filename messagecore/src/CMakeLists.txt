@@ -58,9 +58,7 @@ target_link_libraries(KF5MessageCore
     PRIVATE
     KF5::KIOCore
     KF5::Codecs
-    KF5::AkonadiCore
     KF5::PimTextEdit
-    KF5::AkonadiMime
     KF5::Archive
     KF5::ConfigWidgets
     KF5::IconThemes
