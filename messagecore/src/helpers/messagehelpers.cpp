@@ -32,9 +32,3 @@ KMime::Message::Ptr MessageCore::Util::message(const Akonadi::Item &item)
     return item.payload<KMime::Message::Ptr>();
 }
 
-bool MessageCore::Util::isStandaloneMessage(const Akonadi::Item &item)
-{
-    // standalone message have a valid payload, but are not, themselves valid items
-    return item.hasPayload<KMime::Message::Ptr>() && !item.isValid();
-}
-

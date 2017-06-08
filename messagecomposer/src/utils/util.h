@@ -76,6 +76,15 @@ MESSAGECOMPOSER_EXPORT void addLinkInformation(const KMime::Message::Ptr &messag
    */
 MESSAGECOMPOSER_EXPORT bool getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status);
 
+/**
+   * Returns whether the item represents a valid KMime::Message that is not
+   * in the Akonadi store (yet). This happens when operating on messages
+   * attached to other mails, for example. Such items are not "valid", in
+   * the akonadi sense, since jobs cannot sensibly use them, but they do
+   * contain a valid message pointer.
+   */
+MESSAGECOMPOSER_EXPORT bool isStandaloneMessage(const Akonadi::Item &item);
+
 }
 
 }

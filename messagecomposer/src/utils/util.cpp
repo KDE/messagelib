@@ -406,3 +406,10 @@ bool MessageComposer::Util::getLinkInformation(const KMime::Message::Ptr &msg, Q
     }
     return true;
 }
+
+bool MessageComposer::Util::isStandaloneMessage(const Akonadi::Item &item)
+{
+    // standalone message have a valid payload, but are not, themselves valid items
+    return item.hasPayload<KMime::Message::Ptr>() && !item.isValid();
+}
+
