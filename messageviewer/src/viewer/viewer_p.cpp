@@ -53,7 +53,6 @@
 #endif
 #include <PimCommon/NetworkUtil>
 #include <unistd.h> // link()
-#include <errno.h>
 //KDE includes
 #include <QHBoxLayout>
 #include <QVBoxLayout>
