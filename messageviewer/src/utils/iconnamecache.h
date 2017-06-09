@@ -23,9 +23,7 @@
 #include <QString>
 #include "messageviewer_export.h"
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 /**
  * This class is a replacement for KIconLoader::iconPath(), because the iconPath()
  * function can be slow for non-existing icons or icons that fall back to a generic icon.
@@ -50,12 +48,11 @@ private:
         QString fileName;
         int size;
 
-        bool operator < (const Entry &other) const;
+        bool operator <(const Entry &other) const;
     };
 
     mutable QMap<Entry, QString> mCachedEntries;
     mutable QString mPicsPath;
 };
-
 }
 #endif

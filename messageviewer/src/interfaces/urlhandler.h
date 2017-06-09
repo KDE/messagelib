@@ -37,14 +37,11 @@
 class QString;
 class QPoint;
 
-namespace MessasgeViewer
-{
+namespace MessasgeViewer {
 class ViewerPrivate;
 }
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 /**
   * @short An interface to reader link handlers
   * @author Marc Mutz <mutz@kde.org>
@@ -53,7 +50,9 @@ namespace MimeTreeParser
 class URLHandler
 {
 public:
-    virtual ~URLHandler() {}
+    virtual ~URLHandler()
+    {
+    }
 
     /**
       * Called when LMB-clicking on a link in the reader. Should start
@@ -72,7 +71,8 @@ public:
       * @return true if the right-click was handled by this
       * URLHandler, false otherwise.
       */
-    virtual bool handleContextMenuRequest(const QUrl &url, const QPoint &p, MessageViewer::ViewerPrivate *w) const = 0;
+    virtual bool handleContextMenuRequest(const QUrl &url, const QPoint &p,
+                                          MessageViewer::ViewerPrivate *w) const = 0;
 
     /**
       * Called when hovering over a link.
@@ -115,8 +115,6 @@ public:
         return false;
     }
 };
-
 }
 
 #endif // __KMAIL_INTERFACES_URLHANDLER_H__
-

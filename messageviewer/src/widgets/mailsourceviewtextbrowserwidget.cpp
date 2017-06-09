@@ -38,7 +38,6 @@
 #include "kpimtextedit/texttospeechwidget.h"
 #include "kpimtextedit/texttospeechinterface.h"
 
-
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Theme>
@@ -59,7 +58,8 @@
 #include <QPushButton>
 
 using namespace MessageViewer;
-MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
+MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax,
+                                                                 QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
@@ -68,7 +68,8 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeech"));
     lay->addWidget(mTextToSpeechWidget);
 
-    KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface = new KPIMTextEdit::TextToSpeechInterface(mTextToSpeechWidget, this);
+    KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface
+        = new KPIMTextEdit::TextToSpeechInterface(mTextToSpeechWidget, this);
 
     mTextBrowser = new MailSourceViewTextBrowser(textToSpeechInterface);
     mTextBrowser->setObjectName(QStringLiteral("textbrowser"));
@@ -76,21 +77,24 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     mTextBrowser->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
 
     KSyntaxHighlighting::Definition def;
-    def =  mRepo.definitionForName(syntax);
+    def = mRepo.definitionForName(syntax);
 
-    KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(mTextBrowser->document());
+    KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(
+        mTextBrowser->document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
                  ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                  : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
 
-    connect(mTextBrowser, &MailSourceViewTextBrowser::findText, this, &MailSourceViewTextBrowserWidget::slotFind);
+    connect(mTextBrowser, &MailSourceViewTextBrowser::findText, this,
+            &MailSourceViewTextBrowserWidget::slotFind);
     lay->addWidget(mTextBrowser);
     mSliderContainer = new KPIMTextEdit::SlideContainer(this);
 
     mFindBar = new FindBarSourceView(mTextBrowser, this);
     mFindBar->setObjectName(QStringLiteral("findbar"));
-    connect(mFindBar, &FindBarSourceView::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
+    connect(mFindBar, &FindBarSourceView::hideFindBar, mSliderContainer,
+            &KPIMTextEdit::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
 
     lay->addWidget(mSliderContainer);
@@ -128,9 +132,10 @@ MessageViewer::MailSourceViewTextBrowser *MailSourceViewTextBrowserWidget::textB
     return mTextBrowser;
 }
 
-MailSourceViewTextBrowser::MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent)
-    : QPlainTextEdit(parent),
-      mTextToSpeechInterface(textToSpeechInterface)
+MailSourceViewTextBrowser::MailSourceViewTextBrowser(
+    KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent)
+    : QPlainTextEdit(parent)
+    , mTextToSpeechInterface(textToSpeechInterface)
 {
 }
 
@@ -146,10 +151,13 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
                                              popup->actions());
         if (mTextToSpeechInterface->isReady()) {
             popup->addSeparator();
-            popup->addAction(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")), i18n("Speak Text"), this, &MailSourceViewTextBrowser::slotSpeakText);
+            popup->addAction(QIcon::fromTheme(QStringLiteral(
+                                                  "preferences-desktop-text-to-speech")), i18n(
+                                 "Speak Text"), this, &MailSourceViewTextBrowser::slotSpeakText);
         }
         popup->addSeparator();
-        popup->addAction(KStandardAction::saveAs(this, &MailSourceViewTextBrowser::slotSaveAs, this));
+        popup->addAction(KStandardAction::saveAs(this, &MailSourceViewTextBrowser::slotSaveAs,
+                                                 this));
 
         popup->exec(event->globalPos());
         delete popup;
@@ -171,4 +179,3 @@ void MailSourceViewTextBrowser::slotSpeakText()
     }
     mTextToSpeechInterface->say(text);
 }
-

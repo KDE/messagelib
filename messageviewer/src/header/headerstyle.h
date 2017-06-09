@@ -43,19 +43,15 @@
 
 class QString;
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class NodeHelper;
 }
 
-namespace GrantleeTheme
-{
+namespace GrantleeTheme {
 class Theme;
 }
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class HeaderStrategy;
 
 /** This class encapsulates the visual appearance of message
@@ -68,7 +64,7 @@ class HeaderStrategy;
     @see HeaderStrategy
 **/
 class HeaderStylePrivate;
-class MESSAGEVIEWER_EXPORT  HeaderStyle
+class MESSAGEVIEWER_EXPORT HeaderStyle
 {
 protected:
     HeaderStyle();

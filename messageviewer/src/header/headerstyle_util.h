@@ -31,16 +31,15 @@
 #include "messageviewer/headerstyle.h"
 #include "messageviewer/viewer.h"
 #include "messageviewer_export.h"
-namespace MessageViewer
-{
+namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT HeaderStyleUtil
 {
 public:
     HeaderStyleUtil();
     struct xfaceSettings {
         xfaceSettings()
-            : photoWidth(60),
-              photoHeight(60)
+            : photoWidth(60)
+            , photoHeight(60)
         {
         }
 
@@ -62,11 +61,14 @@ public:
 
     QString directionOf(const QString &str) const;
 
-    QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
+    QString strToHtml(const QString &str,
+                      KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
-    QString dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const;
+    QString dateString(KMime::Message *message, bool printing,
+                       HeaderStyleUtilDateFormat dateFormat) const;
 
-    QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
+    QString subjectString(KMime::Message *message,
+                          KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
     QString subjectDirectionString(KMime::Message *message) const;
 

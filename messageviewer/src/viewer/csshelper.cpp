@@ -54,16 +54,16 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     mBackgroundColor = QApplication::palette().color(QPalette::Base);
     cHtmlWarning = QColor(0xFF, 0x40, 0x40);   // warning frame color: light red
 
-    cPgpEncrH  = MessageCore::ColorUtil::self()->pgpEncryptedMessageColor();
+    cPgpEncrH = MessageCore::ColorUtil::self()->pgpEncryptedMessageColor();
     cPgpEncrHT = MessageCore::ColorUtil::self()->pgpEncryptedTextColor();
-    cPgpOk1H   = MessageCore::ColorUtil::self()->pgpSignedTrustedMessageColor();
-    cPgpOk1HT  = MessageCore::ColorUtil::self()->pgpSignedTrustedTextColor();
-    cPgpOk0H   = MessageCore::ColorUtil::self()->pgpSignedUntrustedMessageColor();
-    cPgpOk0HT  = MessageCore::ColorUtil::self()->pgpSignedUntrustedTextColor();
-    cPgpWarnH  = MessageCore::ColorUtil::self()->pgpSignedUntrustedMessageColor();
+    cPgpOk1H = MessageCore::ColorUtil::self()->pgpSignedTrustedMessageColor();
+    cPgpOk1HT = MessageCore::ColorUtil::self()->pgpSignedTrustedTextColor();
+    cPgpOk0H = MessageCore::ColorUtil::self()->pgpSignedUntrustedMessageColor();
+    cPgpOk0HT = MessageCore::ColorUtil::self()->pgpSignedUntrustedTextColor();
+    cPgpWarnH = MessageCore::ColorUtil::self()->pgpSignedUntrustedMessageColor();
     cPgpWarnHT = MessageCore::ColorUtil::self()->pgpSignedUntrustedTextColor();
-    cPgpErrH   = MessageCore::ColorUtil::self()->pgpSignedBadMessageColor();
-    cPgpErrHT  = MessageCore::ColorUtil::self()->pgpSignedBadTextColor();
+    cPgpErrH = MessageCore::ColorUtil::self()->pgpSignedBadMessageColor();
+    cPgpErrHT = MessageCore::ColorUtil::self()->pgpSignedBadTextColor();
 
     if (MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
         mQuoteColor[0] = MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor();
@@ -79,8 +79,14 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
 
     QFont defaultFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     QFont defaultFixedFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
-    mBodyFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer::MessageViewerSettings::self()->bodyFont();
-    mPrintFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer::MessageViewerSettings::self()->printFont();
+    mBodyFont
+        = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer
+          ::
+          MessageViewerSettings::self()->bodyFont();
+    mPrintFont
+        = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer
+          ::
+          MessageViewerSettings::self()->printFont();
     mFixedFont = mFixedPrintFont = defaultFixedFont;
     defaultFont.setItalic(true);
     mQuoteFont = defaultFont;
@@ -94,18 +100,18 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
 
     mForegroundColor = KColorScheme(QPalette::Active).foreground().color();
     if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
-        mLinkColor =
-            reader.readEntry("LinkColor", mLinkColor);
-        cPgpEncrH =
-            reader.readEntry("PGPMessageEncr", cPgpEncrH);
-        cPgpOk1H  =
-            reader.readEntry("PGPMessageOkKeyOk", cPgpOk1H);
-        cPgpOk0H  =
-            reader.readEntry("PGPMessageOkKeyBad", cPgpOk0H);
-        cPgpWarnH =
-            reader.readEntry("PGPMessageWarn", cPgpWarnH);
-        cPgpErrH  =
-            reader.readEntry("PGPMessageErr", cPgpErrH);
+        mLinkColor
+            = reader.readEntry("LinkColor", mLinkColor);
+        cPgpEncrH
+            = reader.readEntry("PGPMessageEncr", cPgpEncrH);
+        cPgpOk1H
+            = reader.readEntry("PGPMessageOkKeyOk", cPgpOk1H);
+        cPgpOk0H
+            = reader.readEntry("PGPMessageOkKeyBad", cPgpOk0H);
+        cPgpWarnH
+            = reader.readEntry("PGPMessageWarn", cPgpWarnH);
+        cPgpErrH
+            = reader.readEntry("PGPMessageErr", cPgpErrH);
         for (int i = 0; i < 3; ++i) {
             const QString key = QLatin1String("QuotedText") + QString::number(i + 1);
             mQuoteColor[i] = reader.readEntry(key, mQuoteColor[i]);
@@ -113,7 +119,7 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     }
 
     if (!MessageCore::MessageCoreSettings::self()->useDefaultFonts()) {
-        mBodyFont = fonts.readEntry("body-font",  mBodyFont);
+        mBodyFont = fonts.readEntry("body-font", mBodyFont);
         mPrintFont = fonts.readEntry("print-font", mPrintFont);
         mFixedFont = fonts.readEntry("fixed-font", mFixedFont);
         mFixedPrintFont = mFixedFont; // FIXME when we have a separate fixed print font
@@ -133,7 +139,7 @@ QString CSSHelper::htmlHead(bool fixed) const
     return
         QLatin1String("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n"
                       "<html><head><title></title><style>\n")
-        + cssDefinitions(fixed) +
-        QLatin1String("</style></head>\n"
-                      "<body>\n");
+        + cssDefinitions(fixed)
+        +QLatin1String("</style></head>\n"
+                       "<body>\n");
 }

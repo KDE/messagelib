@@ -63,7 +63,8 @@ QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flag
 }
 
 // Prepare the date string (when printing always use the localized date)
-QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const
+QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing,
+                                    HeaderStyleUtilDateFormat dateFormat) const
 {
     const QDateTime dateTime = message->date()->dateTime();
     const time_t unixTime = dateTime.toTime_t();
@@ -123,18 +124,23 @@ QString HeaderStyleUtil::spamStatus(KMime::Message *message) const
     QString spamHTML;
     const SpamScores scores = SpamHeaderAnalyzer::getSpamScores(message);
 
-    for (SpamScores::const_iterator it = scores.constBegin(), end = scores.constEnd(); it != end; ++it)
-        spamHTML += (*it).agent() + QLatin1Char(' ') +
-                    drawSpamMeter((*it).error(), (*it).score(), (*it).confidence(), (*it).spamHeader(), (*it).confidenceHeader());
+    for (SpamScores::const_iterator it = scores.constBegin(), end = scores.constEnd(); it != end;
+         ++it) {
+        spamHTML += (*it).agent() + QLatin1Char(' ')
+                    +drawSpamMeter((*it).error(), (*it).score(),
+                                   (*it).confidence(), (*it).spamHeader(),
+                                   (*it).confidenceHeader());
+    }
     return spamHTML;
 }
 
 QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confidence,
-                                       const QString &filterHeader, const QString &confidenceHeader) const
+                                       const QString &filterHeader,
+                                       const QString &confidenceHeader) const
 {
     static const int meterWidth = 20;
     static const int meterHeight = 5;
-    QImage meterBar(meterWidth, 1, QImage::Format_Indexed8/*QImage::Format_RGB32*/);
+    QImage meterBar(meterWidth, 1, QImage::Format_Indexed8 /*QImage::Format_RGB32*/);
     meterBar.setNumColors(24);
 
     meterBar.setColor(meterWidth + 1, qRgb(255, 255, 255));
@@ -143,26 +149,26 @@ QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, doub
         meterBar.fill(meterWidth + 2);
     } else {
         static const unsigned short gradient[meterWidth][3] = {
-            {   0, 255,   0 },
-            {  27, 254,   0 },
-            {  54, 252,   0 },
-            {  80, 250,   0 },
-            { 107, 249,   0 },
-            { 135, 247,   0 },
-            { 161, 246,   0 },
-            { 187, 244,   0 },
-            { 214, 242,   0 },
-            { 241, 241,   0 },
-            { 255, 228,   0 },
-            { 255, 202,   0 },
-            { 255, 177,   0 },
-            { 255, 151,   0 },
-            { 255, 126,   0 },
-            { 255, 101,   0 },
-            { 255,  76,   0 },
-            { 255,  51,   0 },
-            { 255,  25,   0 },
-            { 255,   0,   0 }
+            {   0, 255, 0 },
+            {  27, 254, 0 },
+            {  54, 252, 0 },
+            {  80, 250, 0 },
+            { 107, 249, 0 },
+            { 135, 247, 0 },
+            { 161, 246, 0 },
+            { 187, 244, 0 },
+            { 214, 242, 0 },
+            { 241, 241, 0 },
+            { 255, 228, 0 },
+            { 255, 202, 0 },
+            { 255, 177, 0 },
+            { 255, 151, 0 },
+            { 255, 126, 0 },
+            { 255, 101, 0 },
+            { 255, 76, 0 },
+            { 255, 51, 0 },
+            { 255, 25, 0 },
+            { 255, 0, 0 }
         };
 
         meterBar.fill(meterWidth + 1);
@@ -181,7 +187,8 @@ QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, doub
             confidenceString = QString::number(confidence) + QLatin1String("% &nbsp;");
             titleText = i18n("%1% probability of being spam with confidence %3%.\n\n"
                              "Full report:\nProbability=%2\nConfidence=%4",
-                             QString::number(percent, 'f', 2), filterHeader, confidence, confidenceHeader);
+                             QString::number(percent, 'f',
+                                             2), filterHeader, confidence, confidenceHeader);
         } else { // do not show negative confidence
             confidenceString = QString() + QLatin1String("&nbsp;");
             titleText = i18n("%1% probability of being spam.\n\n"
@@ -215,7 +222,8 @@ QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, doub
                          "Full report:\n%2",
                          errorMsg, filterHeader);
     }
-    return QStringLiteral("<img src=\"%1\" width=\"%2\" height=\"%3\" style=\"border: 1px solid black;\" title=\"%4\"> &nbsp;")
+    return QStringLiteral(
+        "<img src=\"%1\" width=\"%2\" height=\"%3\" style=\"border: 1px solid black;\" title=\"%4\"> &nbsp;")
            .arg(imgToDataUrl(meterBar), QString::number(meterWidth),
                 QString::number(meterHeight), titleText) + confidenceString;
 }
@@ -226,16 +234,17 @@ QString HeaderStyleUtil::imgToDataUrl(const QImage &image) const
     QBuffer buffer(&ba);
     buffer.open(QIODevice::WriteOnly);
     image.save(&buffer, "PNG");
-    return QStringLiteral("data:image/%1;base64,%2").arg(QStringLiteral("PNG"), QString::fromLatin1(ba.toBase64()));
+    return QStringLiteral("data:image/%1;base64,%2").arg(QStringLiteral("PNG"),
+                                                         QString::fromLatin1(ba.toBase64()));
 }
 
 QString HeaderStyleUtil::dateStr(const QDateTime &dateTime) const
 {
     const time_t unixTime = dateTime.toTime_t();
     return KMime::DateFormatter::formatDate(
-               static_cast<KMime::DateFormatter::FormatType>(
-                   MessageCore::MessageCoreSettings::self()->dateFormat()),
-               unixTime, MessageCore::MessageCoreSettings::self()->customDateFormat());
+        static_cast<KMime::DateFormatter::FormatType>(
+            MessageCore::MessageCoreSettings::self()->dateFormat()),
+        unixTime, MessageCore::MessageCoreSettings::self()->customDateFormat());
 }
 
 QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime) const
@@ -292,38 +301,42 @@ void HeaderStyleUtil::updateXFaceSettings(QImage photo, xfaceSettings &settings)
             double ratio = (double)settings.photoHeight / (double)settings.photoWidth;
             settings.photoHeight = 60;
             settings.photoWidth = (int)(60 / ratio);
-            photo = photo.scaled(settings.photoWidth, settings.photoHeight, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            photo = photo.scaled(settings.photoWidth, settings.photoHeight, Qt::IgnoreAspectRatio,
+                                 Qt::SmoothTransformation);
         }
         settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(photo);
     }
 }
 
-HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::HeaderStyle *style, KMime::Message *message) const
+HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::HeaderStyle *style,
+                                                      KMime::Message *message) const
 {
-
     xfaceSettings settings;
     bool useOtherPhotoSources = false;
 
     if (style->allowAsync()) {
-
         Q_ASSERT(style->nodeHelper());
         Q_ASSERT(style->sourceObject());
 
-        ContactDisplayMessageMemento *photoMemento =
-            dynamic_cast<ContactDisplayMessageMemento *>(style->nodeHelper()->bodyPartMemento(message, "contactphoto"));
+        ContactDisplayMessageMemento *photoMemento
+            = dynamic_cast<ContactDisplayMessageMemento *>(style->nodeHelper()->bodyPartMemento(
+                                                               message, "contactphoto"));
         if (!photoMemento) {
-            const QString email = QString::fromLatin1(KEmailAddress::firstEmailAddress(message->from()->as7BitString(false)));
+            const QString email
+                = QString::fromLatin1(KEmailAddress::firstEmailAddress(message->from()->as7BitString(
+                                                                           false)));
             photoMemento = new ContactDisplayMessageMemento(email);
             style->nodeHelper()->setBodyPartMemento(message, "contactphoto", photoMemento);
             QObject::connect(photoMemento, SIGNAL(update(MimeTreeParser::UpdateMode)),
                              style->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));
 
-            QObject::connect(photoMemento, SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)),
-                             style->sourceObject(), SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)));
+            QObject::connect(photoMemento,
+                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)),
+                             style->sourceObject(),
+                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)));
         }
 
         if (photoMemento->finished()) {
-
             useOtherPhotoSources = true;
             if (photoMemento->photo().isIntern()) {
                 // get photo data and convert to data: url
@@ -353,7 +366,6 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
             // no photo, look for a Face header
             const QString faceheader = hrd->asUnicodeString();
             if (!faceheader.isEmpty()) {
-
                 qCDebug(MESSAGEVIEWER_LOG) << "Found Face: header";
 
                 const QByteArray facestring = faceheader.toUtf8();
@@ -366,15 +378,18 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
                     if (faceimage.loadFromData(facearray, "png")) {
                         // Spec says image must be 48x48 pixels
                         if ((48 == faceimage.width()) && (48 == faceimage.height())) {
-                            settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(faceimage);
+                            settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(
+                                faceimage);
                             settings.photoWidth = 48;
                             settings.photoHeight = 48;
                         } else {
-                            qCDebug(MESSAGEVIEWER_LOG) << "Face: header image is" << faceimage.width() << "by"
+                            qCDebug(MESSAGEVIEWER_LOG) << "Face: header image is"
+                                                       << faceimage.width() << "by"
                                                        << faceimage.height() << "not 48x48 Pixels";
                         }
                     } else {
-                        qCDebug(MESSAGEVIEWER_LOG) << "Failed to load decoded png from Face: header";
+                        qCDebug(MESSAGEVIEWER_LOG)
+                            << "Failed to load decoded png from Face: header";
                     }
                 } else {
                     qCDebug(MESSAGEVIEWER_LOG) << "Face: header too long at" << facestring.length();
@@ -389,7 +404,8 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
             const QString xfhead = hrd->asUnicodeString();
             if (!xfhead.isEmpty()) {
                 MessageViewer::KXFace xf;
-                settings.photoURL = MessageViewer::HeaderStyleUtil::imgToDataUrl(xf.toImage(xfhead));
+                settings.photoURL
+                    = MessageViewer::HeaderStyleUtil::imgToDataUrl(xf.toImage(xfhead));
                 settings.photoWidth = 48;
                 settings.photoHeight = 48;
             }
@@ -407,46 +423,94 @@ void HeaderStyleUtil::addMailAction(QVariantHash &headerObject)
     headerObject.insert(QStringLiteral("forwardaction"), mailAction(Viewer::Forward));
     headerObject.insert(QStringLiteral("newmessageaction"), mailAction(Viewer::NewMessage));
     headerObject.insert(QStringLiteral("printmessageaction"), mailAction(Viewer::Print));
-    headerObject.insert(QStringLiteral("printpreviewmessageaction"), mailAction(Viewer::PrintPreview));
+    headerObject.insert(QStringLiteral("printpreviewmessageaction"), mailAction(
+                            Viewer::PrintPreview));
 }
 
 QString HeaderStyleUtil::mailAction(Viewer::MailAction action) const
 {
     QString html;
     switch (action) {
-    case Viewer::Trash: {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("user-trash"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:trash\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Move to Trash"), QString::number(mIconSize));
+    case Viewer::Trash:
+    {
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "user-trash"),
+                                                                 KIconLoader::Toolbar);
+        html = QStringLiteral(
+            "<a href=\"kmailaction:trash\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>")
+               .arg(QUrl::fromLocalFile(iconPath).url(), i18n("Move to Trash"),
+                    QString::number(mIconSize));
         break;
     }
-    case Viewer::Reply: {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-sender"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:reply\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Reply"), QString::number(mIconSize));
+    case Viewer::Reply:
+    {
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "mail-reply-sender"),
+                                                                 KIconLoader::Toolbar);
+        html = QStringLiteral(
+            "<a href=\"kmailaction:reply\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>")
+               .arg(QUrl::fromLocalFile(iconPath).url(), i18n("Reply"), QString::number(mIconSize));
         break;
     }
-    case Viewer::ReplyToAll: {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-reply-all"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:replyToAll\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Reply to All"), QString::number(mIconSize));
+    case Viewer::ReplyToAll:
+    {
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "mail-reply-all"),
+                                                                 KIconLoader::Toolbar);
+        html = QStringLiteral(
+            "<a href=\"kmailaction:replyToAll\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>")
+               .arg(QUrl::fromLocalFile(iconPath).url(), i18n("Reply to All"),
+                    QString::number(mIconSize));
         break;
     }
-    case Viewer::Forward: {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-forward"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:forward\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Forward"), QString::number(mIconSize));
+    case Viewer::Forward:
+    {
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "mail-forward"),
+                                                                 KIconLoader::Toolbar);
+        html = QStringLiteral(
+            "<a href=\"kmailaction:forward\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>")
+               .arg(QUrl::fromLocalFile(iconPath).url(), i18n("Forward"),
+                    QString::number(mIconSize));
         break;
     }
-    case Viewer::NewMessage: {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-message-new"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:newMessage\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("New Message"), QString::number(mIconSize));
+    case Viewer::NewMessage:
+    {
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "mail-message-new"),
+                                                                 KIconLoader::Toolbar);
+        html = QStringLiteral(
+            "<a href=\"kmailaction:newMessage\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>")
+               .arg(QUrl::fromLocalFile(iconPath).url(), i18n("New Message"), QString::number(
+                        mIconSize));
         break;
     }
-    case Viewer::Print: {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("document-print"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:print\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Print"), QString::number(mIconSize));
+    case Viewer::Print:
+    {
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "document-print"),
+                                                                 KIconLoader::Toolbar);
+        html = QStringLiteral(
+            "<a href=\"kmailaction:print\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>")
+               .arg(QUrl::fromLocalFile(iconPath).url(), i18n("Print"), QString::number(mIconSize));
         break;
     }
-    case Viewer::PrintPreview: {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("document-print-preview"), KIconLoader::Toolbar);
-        html = QStringLiteral("<a href=\"kmailaction:printpreview\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), i18n("Print Preview"), QString::number(mIconSize));
+    case Viewer::PrintPreview:
+    {
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "document-print-preview"),
+                                                                 KIconLoader::Toolbar);
+        html = QStringLiteral(
+            "<a href=\"kmailaction:printpreview\"><img title=\"%2\" height=\"%3\" width=\"%3\" src=\"%1\"></a>")
+               .arg(QUrl::fromLocalFile(iconPath).url(), i18n("Print Preview"),
+                    QString::number(mIconSize));
         break;
     }
     }

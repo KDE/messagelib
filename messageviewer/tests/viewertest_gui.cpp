@@ -38,18 +38,24 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
 
-    KAboutData aboutData(QStringLiteral("viewertest_gui"), i18n("Viewertest_Gui"), QStringLiteral("1.0"));
+    KAboutData aboutData(QStringLiteral("viewertest_gui"), i18n("Viewertest_Gui"), QStringLiteral(
+                             "1.0"));
     aboutData.setShortDescription(i18n("Test for MessageViewer"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"), i18n("File containing an email")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"),
+        i18n("File containing an email")));
 
-    QCommandLineOption headerStylePluginOption(QStringList() << QStringLiteral("headerstyleplugin"), i18n("Header Style Plugin"), QStringLiteral("headerstyleplugin"));
+    QCommandLineOption headerStylePluginOption(QStringList() << QStringLiteral(
+                                                   "headerstyleplugin"), i18n(
+                                                   "Header Style Plugin"), QStringLiteral(
+                                                   "headerstyleplugin"));
     parser.addOption(headerStylePluginOption);
 
-    QCommandLineOption listOption(QStringList() << QStringLiteral("list"), QStringLiteral("Show list of plugins installed."));
+    QCommandLineOption listOption(QStringList() << QStringLiteral("list"), QStringLiteral(
+                                      "Show list of plugins installed."));
     parser.addOption(listOption);
 
     aboutData.setupCommandLine(&parser);
@@ -57,7 +63,8 @@ int main(int argc, char **argv)
     aboutData.processCommandLine(&parser);
 
     if (parser.isSet(listOption)) {
-        qDebug() << "List of Plugin :" << MessageViewer::HeaderStylePluginManager::self()->pluginListName();
+        qDebug() << "List of Plugin :"
+                 << MessageViewer::HeaderStylePluginManager::self()->pluginListName();
         return 0;
     }
 

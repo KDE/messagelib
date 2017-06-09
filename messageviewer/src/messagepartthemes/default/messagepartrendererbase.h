@@ -1,4 +1,3 @@
-
 /*
     Copyright (c) 2017 Sandro Knauß <sknauss@kde.org>
 
@@ -40,11 +39,9 @@
 #include <QString>
 #include <QSharedPointer>
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class DefaultRendererPrivate;
-namespace Interface
-{
+namespace Interface {
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
@@ -52,10 +49,13 @@ typedef QSharedPointer<MessagePart> MessagePartPtr;
 
 class PartRendered;
 
-class MessagePartRendererBase {
+class MessagePartRendererBase
+{
 public:
     MessagePartRendererBase();
     virtual ~MessagePartRendererBase();
-    virtual QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *, const MimeTreeParser::Interface::MessagePartPtr &) const = 0;
+    virtual QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *,
+                                                const MimeTreeParser::Interface::MessagePartPtr &)
+    const = 0;
 };
 #endif

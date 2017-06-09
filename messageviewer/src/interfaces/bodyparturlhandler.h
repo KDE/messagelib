@@ -36,24 +36,18 @@
 class QString;
 class QPoint;
 
-namespace MimeTreeParser
-{
-namespace Interface
-{
+namespace MimeTreeParser {
+namespace Interface {
 class BodyPart;
 }
 }
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class Viewer;
 }
 
-namespace MimeTreeParser
-{
-namespace Interface
-{
-
+namespace MimeTreeParser {
+namespace Interface {
 /**
   * @short An interface to body part reader link handlers
   * @author Marc Mutz <mutz@kde.org>
@@ -81,7 +75,9 @@ namespace Interface
 class BodyPartURLHandler
 {
 public:
-    virtual ~BodyPartURLHandler() {}
+    virtual ~BodyPartURLHandler()
+    {
+    }
 
     /** Called when LMB-clicking on a link in the reader. Should
     start processing equivalent to "opening" the link.
@@ -89,7 +85,9 @@ public:
     @return true if the click was handled by this handler, false
     otherwise.
     */
-    virtual bool handleClick(MessageViewer::Viewer *viewerInstance, MimeTreeParser::Interface::BodyPart *part, const QString &path) const = 0;
+    virtual bool handleClick(MessageViewer::Viewer *viewerInstance,
+                             MimeTreeParser::Interface::BodyPart *part,
+                             const QString &path) const = 0;
 
     /** Called when RMB-clicking on a link in the reader. Should
     show a context menu at the specified point with the
@@ -98,7 +96,8 @@ public:
     @return true if the right-click was handled by this handler,
     false otherwise.
     */
-    virtual bool handleContextMenuRequest(MimeTreeParser::Interface::BodyPart *part, const QString &path, const QPoint &p) const = 0;
+    virtual bool handleContextMenuRequest(MimeTreeParser::Interface::BodyPart *part,
+                                          const QString &path, const QPoint &p) const = 0;
 
     /** Called when hovering over a link.
 
@@ -106,12 +105,10 @@ public:
     hovering over this link or QString() if the link was not
     handled by this handler.
     */
-    virtual QString statusBarMessage(MimeTreeParser::Interface::BodyPart *part, const QString &path) const = 0;
+    virtual QString statusBarMessage(MimeTreeParser::Interface::BodyPart *part,
+                                     const QString &path) const = 0;
 };
-
 } // namespace Interface
-
 }
 
 #endif // __KMAIL_INTERFACES_BODYPARTURLHANDLER_H__
-

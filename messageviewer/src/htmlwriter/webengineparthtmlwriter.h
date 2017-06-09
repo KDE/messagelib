@@ -24,14 +24,11 @@
 #include <QByteArray>
 #include <QMap>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class MailWebEngineView;
 }
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class WebEnginePartHtmlWriter : public QObject, public MimeTreeParser::HtmlWriter
 {
     Q_OBJECT
@@ -64,6 +61,5 @@ private:
         Ended
     } mState;
 };
-
 }
 #endif // WEBENGINEPARTHTMLWRITER_H

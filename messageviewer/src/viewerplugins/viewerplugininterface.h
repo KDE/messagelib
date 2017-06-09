@@ -27,8 +27,7 @@
 
 class QAction;
 class KActionCollection;
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ViewerPluginInterfacePrivate;
 class MESSAGEVIEWER_EXPORT ViewerPluginInterface : public QObject
 {

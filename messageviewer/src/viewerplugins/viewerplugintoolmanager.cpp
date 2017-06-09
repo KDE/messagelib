@@ -22,7 +22,6 @@
 #include "viewerplugin.h"
 #include "viewerplugininterface.h"
 
-
 #include <QVector>
 
 using namespace MessageViewer;
@@ -31,12 +30,12 @@ class MessageViewer::ViewerPluginToolManagerPrivate
 {
 public:
     ViewerPluginToolManagerPrivate(ViewerPluginToolManager *qq, QWidget *parentWidget)
-        : mActionCollection(nullptr),
-          mParentWidget(parentWidget),
-          q(qq)
+        : mActionCollection(nullptr)
+        , mParentWidget(parentWidget)
+        , q(qq)
     {
-
     }
+
     void setServiceTypeName(const QString &serviceName);
     QString serviceTypeName() const;
     void setPluginName(const QString &pluginName);
@@ -82,12 +81,16 @@ void ViewerPluginToolManagerPrivate::refreshActionList()
 
 void ViewerPluginToolManagerPrivate::createView()
 {
-    const QVector<MessageViewer::ViewerPlugin *> listPlugin = MessageViewer::ViewerPluginManager::self()->pluginsList();
+    const QVector<MessageViewer::ViewerPlugin *> listPlugin
+        = MessageViewer::ViewerPluginManager::self()->pluginsList();
     for (MessageViewer::ViewerPlugin *plugin : listPlugin) {
         if (plugin->isEnabled()) {
-            MessageViewer::ViewerPluginInterface *interface = plugin->createView(mParentWidget, mActionCollection);
-            q->connect(interface, &MessageViewer::ViewerPluginInterface::activatePlugin, q, &ViewerPluginToolManager::activatePlugin);
-            q->connect(plugin, &ViewerPlugin::configChanged, q, &ViewerPluginToolManager::refreshActionList);
+            MessageViewer::ViewerPluginInterface *interface = plugin->createView(mParentWidget,
+                                                                                 mActionCollection);
+            q->connect(interface, &MessageViewer::ViewerPluginInterface::activatePlugin, q,
+                       &ViewerPluginToolManager::activatePlugin);
+            q->connect(plugin, &ViewerPlugin::configChanged, q,
+                       &ViewerPluginToolManager::refreshActionList);
             mListInterface.append(interface);
         }
     }
@@ -105,7 +108,8 @@ void ViewerPluginToolManagerPrivate::setActionCollection(KActionCollection *ac)
     mActionCollection = ac;
 }
 
-QList<QAction *> ViewerPluginToolManagerPrivate::actionList(ViewerPluginInterface::SpecificFeatureTypes features) const
+QList<QAction *> ViewerPluginToolManagerPrivate::actionList(
+    ViewerPluginInterface::SpecificFeatureTypes features) const
 {
     QList<QAction *> lstAction;
     for (MessageViewer::ViewerPluginInterface *interface : qAsConst(mListInterface)) {
@@ -128,8 +132,8 @@ void ViewerPluginToolManagerPrivate::updateActions(const Akonadi::Item &messageI
 }
 
 ViewerPluginToolManager::ViewerPluginToolManager(QWidget *parentWidget, QObject *parent)
-    : QObject(parent),
-      d(new MessageViewer::ViewerPluginToolManagerPrivate(this, parentWidget))
+    : QObject(parent)
+    , d(new MessageViewer::ViewerPluginToolManagerPrivate(this, parentWidget))
 {
 }
 
@@ -183,7 +187,8 @@ bool ViewerPluginToolManager::initializePluginList()
     return MessageViewer::ViewerPluginManager::self()->initializePluginList();
 }
 
-QList<QAction *> ViewerPluginToolManager::viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const
+QList<QAction *> ViewerPluginToolManager::viewerPluginActionList(
+    ViewerPluginInterface::SpecificFeatureTypes features) const
 {
     return d->actionList(features);
 }

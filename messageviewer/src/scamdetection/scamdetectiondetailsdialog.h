@@ -23,13 +23,11 @@
 
 #include <QDialog>
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextEditorWidget;
 }
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ScamDetectionDetailsDialog : public QDialog
 {
     Q_OBJECT

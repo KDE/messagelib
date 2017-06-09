@@ -22,27 +22,24 @@
 
 #include <MimeTreeParser/MessagePartRenderer>
 
-#include<QSharedPointer>
+#include <QSharedPointer>
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class DefaultRendererPrivate;
-namespace Interface
-{
+namespace Interface {
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
 }
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class CSSHelperBase;
 
 class DefaultRenderer : public MimeTreeParser::Interface::MessagePartRenderer
 {
 public:
-    DefaultRenderer(const MimeTreeParser::Interface::MessagePartPtr &msgPart, CSSHelperBase *cssHelder);
+    DefaultRenderer(const MimeTreeParser::Interface::MessagePartPtr &msgPart,
+                    CSSHelperBase *cssHelder);
     ~DefaultRenderer();
 
     QString html() const override;

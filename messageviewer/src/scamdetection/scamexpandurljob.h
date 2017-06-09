@@ -24,8 +24,7 @@
 #include <QObject>
 #include <QNetworkReply>
 #include "messageviewer_export.h"
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ScamExpandUrlJobPrivate;
 class MESSAGEVIEWER_EXPORT ScamExpandUrlJob : public QObject
 {

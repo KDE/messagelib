@@ -24,8 +24,7 @@
 #include "messageviewer_export.h"
 class QString;
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class CSSHelperBase;
 
 /** An ObjectTreeSource that does not work on anything */
@@ -38,7 +37,8 @@ public:
     bool decryptMessage() const override;
     bool htmlLoadExternal() const override;
     bool showSignatureDetails() const override;
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode,
+                     const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
     MimeTreeParser::Util::HtmlMode preferredMode() const override;
     void setAllowDecryption(bool allowDecryption);
     int levelQuote() const override;
@@ -52,13 +52,12 @@ public:
     bool showEmoticons() const override;
     bool showExpandQuotesMark() const override;
     const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override;
-    MimeTreeParser::Interface::MessagePartRendererPtr messagePartTheme(MimeTreeParser::Interface::MessagePartPtr msgPart) override;
+    MimeTreeParser::Interface::MessagePartRendererPtr messagePartTheme(
+        MimeTreeParser::Interface::MessagePartPtr msgPart) override;
     bool isPrinting() const override;
 private:
     EmptySourcePrivate *const d;
 };
-
 }
 
 #endif
-

@@ -44,15 +44,17 @@
 using namespace MessageViewer;
 
 HtmlStatusBar::HtmlStatusBar(QWidget *parent)
-    : QLabel(parent),
-      mMode(MimeTreeParser::Util::Normal)
+    : QLabel(parent)
+    , mMode(MimeTreeParser::Util::Normal)
 {
     setAlignment(Qt::AlignHCenter | Qt::AlignTop);
     setAutoFillBackground(true);
     update();
 }
 
-HtmlStatusBar::~HtmlStatusBar() {}
+HtmlStatusBar::~HtmlStatusBar()
+{
+}
 
 MimeTreeParser::Util::HtmlMode HtmlStatusBar::mode() const
 {
@@ -232,4 +234,3 @@ QColor HtmlStatusBar::bgColor() const
         return Qt::white;
     }
 }
-

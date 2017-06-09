@@ -31,14 +31,12 @@
 
 #include <QWidget>
 
-namespace Akonadi
-{
+namespace Akonadi {
 class Item;
 class ItemFetchJob;
 }
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class AttachmentStrategy;
 }
 
@@ -52,13 +50,11 @@ class QCloseEvent;
 class QEvent;
 class QResizeEvent;
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebHitTestResult;
 }
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class WebHitTestResult;
 
 class HeaderStylePlugin;
@@ -73,7 +69,9 @@ class AbstractMessageLoadedHandler
 {
 public:
 
-    virtual ~AbstractMessageLoadedHandler() {}
+    virtual ~AbstractMessageLoadedHandler()
+    {
+    }
 
     /**
      * This method is called whenever a message item has been loaded
@@ -91,7 +89,7 @@ public:
  * See the documentation of ViewerPrivate for implementation details.
  * See Mainpage.dox for an overview of the classes in the messageviewer library.
  */
-class MESSAGEVIEWER_EXPORT Viewer: public QWidget
+class MESSAGEVIEWER_EXPORT Viewer : public QWidget
 {
     Q_OBJECT
 
@@ -105,7 +103,8 @@ public:
     * @param actionCollection the action collection where the widget's actions will belong to
     * @param f window flags
     */
-    explicit Viewer(QWidget *parent, QWidget *widget = nullptr, KActionCollection *actionCollection = nullptr);
+    explicit Viewer(QWidget *parent, QWidget *widget = nullptr,
+                    KActionCollection *actionCollection = nullptr);
     virtual ~Viewer();
 
     /**
@@ -160,7 +159,8 @@ public:
     * @param msg - the message to be shown. If 0, an empty page is displayed.
     * @param updateMode - update the display immediately or not. See UpdateMode.
     */
-    void setMessage(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
+    void setMessage(const KMime::Message::Ptr &message,
+                    MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /**
     * Set the Akonadi item that will be displayed.
@@ -168,7 +168,8 @@ public:
     *               an empty page is shown.
     * @param updateMode - update the display immediately or not. See UpdateMode.
     */
-    void setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
+    void setMessageItem(const Akonadi::Item &item,
+                        MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /**
     * The path to the message in terms of Akonadi collection hierarchy.
@@ -230,7 +231,8 @@ public:
     * @param templateName - the template to be loaded
     * @param data - data for the template
     */
-    void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
+    void displaySplashPage(const QString &templateName, const QVariantHash &data,
+                           const QByteArray &domain = QByteArray());
 
     /** Enable the displaying of messages again after an splash (or other) page was displayed */
     void enableMessageDisplay();
@@ -321,7 +323,8 @@ public:
     bool mimePartTreeIsEmpty() const;
 
     void showOpenAttachmentFolderWidget(const QUrl &url);
-    QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
+    QList<QAction *> viewerPluginActionList(
+        MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void runJavaScript(const QString &code);
@@ -347,8 +350,10 @@ Q_SIGNALS:
     void replaceMsgByUnencryptedVersion();
 
     /** The user presses the right mouse button. 'url' may be 0. */
-    void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
-    void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result, const QPoint &mousePos);
+    void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl,
+                   const QPoint &mousePos);
+    void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result,
+                          const QPoint &mousePos);
     /**
     * The message viewer handles some types of urls itself, most notably http(s)
     * and ftp(s). When it can't handle the url it will Q_EMIT this signal.
@@ -409,8 +414,6 @@ protected:
 
     ViewerPrivate *const d_ptr;
 };
-
 }
 
 #endif
-

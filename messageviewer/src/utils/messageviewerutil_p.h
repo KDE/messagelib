@@ -42,15 +42,12 @@
 class QUrl;
 class QWidget;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
-namespace Util
-{
+namespace Util {
 bool handleUrlWithQDesktopServices(const QUrl &url);
 
 KMime::Content::List allContents(const KMime::Content *message);
@@ -58,6 +55,5 @@ KMime::Content::List allContents(const KMime::Content *message);
 bool saveContents(QWidget *parent, const KMime::Content::List &contents, QUrl &currentFolder);
 bool saveContent(QWidget *parent, KMime::Content *content, const QUrl &url);
 }
-
 }
 #endif

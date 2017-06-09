@@ -24,7 +24,9 @@ using namespace MessageViewer;
 
 static QString checkJQuery(const char *scriptName)
 {
-    return QStringLiteral("if (!qt) { console.warn(\"%1 executed too early, 'qt' variable unknown\"); };\n").arg(QString::fromLatin1(scriptName));
+    return QStringLiteral(
+        "if (!qt) { console.warn(\"%1 executed too early, 'qt' variable unknown\"); };\n").arg(QString::fromLatin1(
+                                                                                                   scriptName));
 }
 
 QString MailWebEngineScript::createShowHideAddressScript(const QString &field, bool hide)
@@ -32,14 +34,14 @@ QString MailWebEngineScript::createShowHideAddressScript(const QString &field, b
     QString source = checkJQuery("createShowHideAddressScript");
     if (hide) {
         source += QString::fromLatin1("qt.jQuery(\"#kmail%1show\").hide();"
-                                     "qt.jQuery(\"#kmail%1hide\").show();"
-                                     "qt.jQuery(\"#dotsFull%1AddressList\").hide();"
-                                     "qt.jQuery(\"#hiddenFull%1AddressList\").show();").arg(field);
+                                      "qt.jQuery(\"#kmail%1hide\").show();"
+                                      "qt.jQuery(\"#dotsFull%1AddressList\").hide();"
+                                      "qt.jQuery(\"#hiddenFull%1AddressList\").show();").arg(field);
     } else {
         source += QString::fromLatin1("qt.jQuery(\"#kmail%1hide\").hide();"
-                                     "qt.jQuery(\"#kmail%1show\").show();"
-                                     "qt.jQuery(\"#dotsFull%1AddressList\").show();"
-                                     "qt.jQuery(\"#hiddenFull%1AddressList\").hide();").arg(field);
+                                      "qt.jQuery(\"#kmail%1show\").show();"
+                                      "qt.jQuery(\"#dotsFull%1AddressList\").show();"
+                                      "qt.jQuery(\"#hiddenFull%1AddressList\").hide();").arg(field);
     }
     return source;
 }
@@ -59,28 +61,30 @@ QString MailWebEngineScript::manageShowHideAttachments(bool hide)
     QString source = checkJQuery("manageShowHideAttachments");
     if (hide) {
         source += QString::fromLatin1("qt.jQuery(\"#kmailhideattachment\").hide();"
-                                     "qt.jQuery(\"#kmailshowattachment\").show();"
-                                     "if (!qt.jQuery(\"#attachmentlist\")) { console.warn('attachmentlist not found'); } else { qt.jQuery(\"#attachmentlist\").show(); }");
+                                      "qt.jQuery(\"#kmailshowattachment\").show();"
+                                      "if (!qt.jQuery(\"#attachmentlist\")) { console.warn('attachmentlist not found'); } else { qt.jQuery(\"#attachmentlist\").show(); }");
     } else {
         source += QString::fromLatin1("qt.jQuery('#kmailshowattachment').hide();"
-                                     "qt.jQuery(\"#kmailhideattachment\").show();"
-                                     "if (!qt.jQuery(\"#attachmentlist\")) { console.warn('attachmentlist not found'); } else { qt.jQuery(\"#attachmentlist\").hide(); }");
+                                      "qt.jQuery(\"#kmailhideattachment\").show();"
+                                      "if (!qt.jQuery(\"#attachmentlist\")) { console.warn('attachmentlist not found'); } else { qt.jQuery(\"#attachmentlist\").hide(); }");
     }
     return source;
 }
 
-QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
+QString MailWebEngineScript::injectAttachments(const QString &delayedHtml,
+                                               const QString &elementStr)
 {
     const QString source = checkJQuery("injectAttachments") + QString::fromLatin1(
-            "if (!document.getElementById('%1')) { console.warn('NOT FOUND: %1'); };\n"
-            "qt.jQuery('#%1').append('%2')").arg(elementStr, delayedHtml);
+        "if (!document.getElementById('%1')) { console.warn('NOT FOUND: %1'); };\n"
+        "qt.jQuery('#%1').append('%2')").arg(elementStr, delayedHtml);
     return source;
 }
 
 QString MailWebEngineScript::replaceInnerHtml(const QString &field, const QString &html)
 {
-    const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String("AddressList");
-    const QString source = checkJQuery("replaceInnerHtml") + QString::fromLatin1("qt.jQuery('#%1').append('%2')").arg(replaceInnerHtmlStr, html);
+    const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String(
+        "AddressList");
+    const QString source = checkJQuery("replaceInnerHtml") + QString::fromLatin1(
+        "qt.jQuery('#%1').append('%2')").arg(replaceInnerHtmlStr, html);
     return source;
 }
-

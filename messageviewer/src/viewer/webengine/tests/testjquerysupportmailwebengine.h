@@ -22,8 +22,7 @@
 
 #include <QWidget>
 #include <KMime/Message>
-namespace MessageViewer
-{
+namespace MessageViewer {
 class Viewer;
 }
 

@@ -44,7 +44,7 @@ QString HTMLBlock::dir() const
 
 QString HTMLBlock::enter()
 {
-    if(!entered) {
+    if (!entered) {
         entered = true;
         return enterString();
     }

@@ -32,6 +32,7 @@ public:
         : isAScam(false)
     {
     }
+
     bool isAScam;
 };
 
@@ -86,5 +87,5 @@ void ScamAttribute::setIsAScam(bool b)
 
 bool ScamAttribute::operator==(const ScamAttribute &other) const
 {
-    return (d->isAScam == other.isAScam());
+    return d->isAScam == other.isAScam();
 }

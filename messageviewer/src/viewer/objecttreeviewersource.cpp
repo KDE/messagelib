@@ -30,8 +30,9 @@
 
 using namespace MessageViewer;
 
-MailViewerSource::MailViewerSource(ViewerPrivate *viewer) :
-    MimeTreeParser::Interface::ObjectTreeSource(), mViewer(viewer)
+MailViewerSource::MailViewerSource(ViewerPrivate *viewer)
+    : MimeTreeParser::Interface::ObjectTreeSource()
+    , mViewer(viewer)
 {
 }
 
@@ -54,7 +55,8 @@ bool MailViewerSource::showSignatureDetails() const
     return mViewer->mShowSignatureDetails;
 }
 
-void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
+void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode,
+                                   const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
     mViewer->mColorBar->setAvailableModes(availableModes);
     mViewer->mColorBar->setMode(mode);
@@ -65,7 +67,8 @@ MimeTreeParser::Util::HtmlMode MailViewerSource::preferredMode() const
     switch (mViewer->displayFormatMessageOverwrite()) {
     case MessageViewer::Viewer::UseGlobalSetting:
     case MessageViewer::Viewer::Unknown:
-        return mViewer->htmlMailGlobalSetting() ? MimeTreeParser::Util::Html : MimeTreeParser::Util::Normal;
+        return mViewer->htmlMailGlobalSetting() ? MimeTreeParser::Util::Html : MimeTreeParser::Util
+               ::Normal;
     case MessageViewer::Viewer::Html:
         return MimeTreeParser::Util::MultipartHtml;
     case MessageViewer::Viewer::Text:
@@ -127,7 +130,10 @@ bool MailViewerSource::isPrinting() const
     return mViewer->mPrinting;
 }
 
-MimeTreeParser::Interface::MessagePartRendererPtr MailViewerSource::messagePartTheme(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
+MimeTreeParser::Interface::MessagePartRendererPtr MailViewerSource::messagePartTheme(
+    MimeTreeParser::Interface::MessagePart::Ptr msgPart)
 {
-    return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart, mViewer->cssHelper()));
+    return MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart,
+                                                                                   mViewer->
+                                                                                   cssHelper()));
 }

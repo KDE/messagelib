@@ -23,8 +23,7 @@
 #include <QObject>
 #include <QWidget>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ScamDetectionWebEngine;
 }
 class QWebEngineView;

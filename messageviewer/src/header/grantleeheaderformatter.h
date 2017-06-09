@@ -24,26 +24,24 @@
 #include <grantlee/templateloader.h>
 #include <GrantleeTheme/GrantleeTheme>
 #include "messageviewer_export.h"
-namespace KMime
-{
+namespace KMime {
 class Message;
 }
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class HeaderStyle;
 class MESSAGEVIEWER_EXPORT GrantleeHeaderFormatter
 {
 public:
     struct GrantleeHeaderFormatterSettings {
         GrantleeHeaderFormatterSettings()
-            : isPrinting(false),
-              style(nullptr),
-              message(nullptr),
-              showMailAction(true)
+            : isPrinting(false)
+            , style(nullptr)
+            , message(nullptr)
+            , showMailAction(true)
         {
-
         }
+
         GrantleeTheme::Theme theme;
         bool isPrinting;
         mutable const MessageViewer::HeaderStyle *style;
@@ -56,9 +54,14 @@ public:
 
     QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
 
-    QString toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const;
+    QString toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath,
+                   const QString &filename, const MessageViewer::HeaderStyle *style,
+                   KMime::Message *message, bool isPrinting) const;
 private:
-    QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showMailAction = true) const;
+    QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate,
+                   const QStringList &displayExtraHeaders, bool isPrinting,
+                   const MessageViewer::HeaderStyle *style, KMime::Message *message,
+                   bool showMailAction = true) const;
     class Private;
     Private *const d;
 };

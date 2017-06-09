@@ -23,8 +23,7 @@
 #include <QObject>
 #include "messageviewer_export.h"
 #include <PimCommon/PluginUtil>
-namespace MessageViewer
-{
+namespace MessageViewer {
 class HeaderStylePlugin;
 class HeaderStylePluginManagerPrivate;
 class MESSAGEVIEWER_EXPORT HeaderStylePluginManager : public QObject

@@ -38,8 +38,8 @@ using KContacts::Addressee;
 using namespace MessageViewer;
 
 VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
-    : QDialog(parent),
-      mAddresseeListIndex(0)
+    : QDialog(parent)
+    , mAddresseeListIndex(0)
 {
     setWindowTitle(i18n("vCard Viewer"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
@@ -134,4 +134,3 @@ void VCardViewer::slotUser3()
     }
     mUser2Button->setEnabled(true);
 }
-

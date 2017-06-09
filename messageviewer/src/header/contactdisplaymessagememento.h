@@ -29,19 +29,16 @@
 #include <QPointer>
 
 class KJob;
-namespace Gravatar
-{
+namespace Gravatar {
 class GravatarResolvUrlJob;
 }
 
-namespace Akonadi
-{
+namespace Akonadi {
 class ContactSearchJob;
 }
-namespace MessageViewer
-{
-
-class ContactDisplayMessageMemento : public QObject, public MimeTreeParser::Interface::BodyPartMemento
+namespace MessageViewer {
+class ContactDisplayMessageMemento : public QObject,
+    public MimeTreeParser::Interface::BodyPartMemento
 {
     Q_OBJECT
 public:
@@ -79,8 +76,6 @@ private:
     bool mMailAllowToRemoteContent;
     QPointer<Akonadi::ContactSearchJob> mSearchJob;
 };
-
 }
 
 #endif /* CONTACTDISPLAYMESSAGE_H */
-

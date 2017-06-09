@@ -39,9 +39,7 @@
 #include <QString>
 #include <QVector>
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 enum SpamError {
     noError,
     uninitializedStructUsed,
@@ -72,40 +70,48 @@ class SpamScore
 public:
 
     SpamScore()
-        : mError(noError), mScore(-2.0), mConfidence(-2.0)
+        : mError(noError)
+        , mScore(-2.0)
+        , mConfidence(-2.0)
     {
     }
 
     SpamScore(const QString &agent, SpamError error, float score, float confidence,
               const QString &header, const QString &cheader)
-        : mAgent(agent),
-          mError(error),
-          mScore(score),
-          mConfidence(confidence),
-          mHeader(header),
-          mConfidenceHeader(cheader)
+        : mAgent(agent)
+        , mError(error)
+        , mScore(score)
+        , mConfidence(confidence)
+        , mHeader(header)
+        , mConfidenceHeader(cheader)
     {
     }
+
     QString agent() const
     {
         return mAgent;
     }
+
     float score() const
     {
         return mScore;
     }
+
     float confidence() const
     {
         return mConfidence;
     }
+
     SpamError error() const
     {
         return mError;
     }
+
     QString spamHeader() const
     {
         return mHeader;
     }
+
     QString confidenceHeader() const
     {
         return mConfidenceHeader;
@@ -135,7 +141,6 @@ public:
     */
     static SpamScores getSpamScores(KMime::Message *message);
 };
-
 }
 
 #endif // __SPAMHEADERANALYZER_H__

@@ -25,12 +25,10 @@
 using namespace MimeTreeParser;
 ConvertHtmlToPlainText::ConvertHtmlToPlainText()
 {
-
 }
 
 ConvertHtmlToPlainText::~ConvertHtmlToPlainText()
 {
-
 }
 
 void ConvertHtmlToPlainText::setHtmlString(const QString &htmlString)

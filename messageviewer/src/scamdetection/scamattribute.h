@@ -22,8 +22,7 @@
 #define SCAMATTRIBUTE_H
 
 #include <AkonadiCore/attribute.h>
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ScamAttributePrivate;
 
 class ScamAttribute : public Akonadi::Attribute

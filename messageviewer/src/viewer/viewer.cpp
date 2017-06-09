@@ -47,11 +47,10 @@
 
 #include <QAction>
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 Viewer::Viewer(QWidget *aParent, QWidget *mainWindow, KActionCollection *actionCollection)
-    : QWidget(aParent), d_ptr(new ViewerPrivate(this, mainWindow, actionCollection))
+    : QWidget(aParent)
+    , d_ptr(new ViewerPrivate(this, mainWindow, actionCollection))
 {
     initialize();
 }
@@ -118,7 +117,7 @@ void Viewer::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMod
         d->setMessageItem(item, updateMode);
     } else {
         Akonadi::ItemFetchJob *job = createFetchJob(item);
-        connect(job, SIGNAL(result(KJob*)), d, SLOT(itemFetchResult(KJob*)));
+        connect(job, SIGNAL(result(KJob *)), d, SLOT(itemFetchResult(KJob *)));
         d->displaySplashPage(i18n("Loading message..."));
     }
 }
@@ -135,7 +134,8 @@ void Viewer::setMessagePath(const QString &path)
     d->mMessagePath = path;
 }
 
-void Viewer::displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain)
+void Viewer::displaySplashPage(const QString &templateName, const QVariantHash &data,
+                               const QByteArray &domain)
 {
     Q_D(Viewer);
     d->displaySplashPage(templateName, data, domain);
@@ -290,8 +290,8 @@ bool Viewer::isFixedFont() const
 {
     Q_D(const Viewer);
     return d->mUseFixedFont;
-
 }
+
 void Viewer::setUseFixedFont(bool useFixedFont)
 {
     Q_D(Viewer);
@@ -363,7 +363,6 @@ void Viewer::setOverrideEncoding(const QString &encoding)
 {
     Q_D(Viewer);
     d->setOverrideEncoding(encoding);
-
 }
 
 CSSHelper *Viewer::cssHelper() const
@@ -644,7 +643,8 @@ QList<QAction *> Viewer::viewerPluginActionList(ViewerPluginInterface::SpecificF
     return d->viewerPluginActionList(features);
 }
 
-QList<QAction *> Viewer::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
+QList<QAction *> Viewer::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result)
+const
 {
     Q_D(const Viewer);
     return d->interceptorUrlActions(result);
@@ -662,4 +662,3 @@ void Viewer::setPrintElementBackground(bool printElementBackground)
     d->mViewer->setPrintElementBackground(printElementBackground);
 }
 }
-

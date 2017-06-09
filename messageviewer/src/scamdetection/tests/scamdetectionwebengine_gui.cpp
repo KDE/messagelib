@@ -34,7 +34,8 @@
 #include <QCommandLineOption>
 #include <QWebEngineView>
 
-ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString &filename, QWidget *parent)
+ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString &filename,
+                                                                   QWidget *parent)
     : QWidget(parent)
 {
     mScamDetection = new MessageViewer::ScamDetectionWebEngine(this);
@@ -45,11 +46,14 @@ ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString
     lay->addWidget(mScamWarningWidget);
 
     mWebEngineView = new QWebEngineView;
-    connect(mWebEngineView, &QWebEngineView::loadFinished, this, &ScamDetectionWebEngineTestWidget::slotLoadFinished);
+    connect(mWebEngineView, &QWebEngineView::loadFinished, this,
+            &ScamDetectionWebEngineTestWidget::slotLoadFinished);
     lay->addWidget(mWebEngineView);
 
-    connect(mScamDetection, &MessageViewer::ScamDetectionWebEngine::messageMayBeAScam, mScamWarningWidget, &MessageViewer::ScamDetectionWarningWidget::slotShowWarning);
-    connect(mScamWarningWidget, &MessageViewer::ScamDetectionWarningWidget::showDetails, mScamDetection, &MessageViewer::ScamDetectionWebEngine::showDetails);
+    connect(mScamDetection, &MessageViewer::ScamDetectionWebEngine::messageMayBeAScam,
+            mScamWarningWidget, &MessageViewer::ScamDetectionWarningWidget::slotShowWarning);
+    connect(mScamWarningWidget, &MessageViewer::ScamDetectionWarningWidget::showDetails,
+            mScamDetection, &MessageViewer::ScamDetectionWebEngine::showDetails);
 
     mWebEngineView->load(QUrl::fromLocalFile(filename));
 
@@ -71,7 +75,8 @@ void ScamDetectionWebEngineTestWidget::slotLoadFinished()
 
 void ScamDetectionWebEngineTestWidget::slotOpenHtml()
 {
-    const QString fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), QStringLiteral("*.html"));
+    const QString fileName = QFileDialog::getOpenFileName(nullptr, QString(),
+                                                          QString(), QStringLiteral("*.html"));
     if (!fileName.isEmpty()) {
         mScamWarningWidget->setVisible(false);
         mWebEngineView->load(QUrl::fromLocalFile(fileName));
@@ -83,13 +88,15 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
 
-    KAboutData aboutData(QStringLiteral("scamdetection_gui"), i18n("ScamDetectionTest_Gui"), QStringLiteral("1.0"));
+    KAboutData aboutData(QStringLiteral("scamdetection_gui"), i18n(
+                             "ScamDetectionTest_Gui"), QStringLiteral("1.0"));
     aboutData.setShortDescription(i18n("Test for scamdetection widget"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), i18n("URL of an html file to be opened")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"),
+        i18n("URL of an html file to be opened")));
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);
@@ -99,7 +106,9 @@ int main(int argc, char **argv)
     if (parser.positionalArguments().count()) {
         fileName = parser.positionalArguments().at(0);
     } else {
-        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), i18n("HTML File (*.html)"));
+        fileName
+            = QFileDialog::getOpenFileName(nullptr, QString(), QString(),
+                                           i18n("HTML File (*.html)"));
     }
     if (fileName.isEmpty()) {
         return 0;
@@ -112,4 +121,3 @@ int main(int argc, char **argv)
     delete w;
     return 0;
 }
-

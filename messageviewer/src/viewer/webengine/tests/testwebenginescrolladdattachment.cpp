@@ -56,8 +56,8 @@ TestWebEngineScrollAddAttachment::TestWebEngineScrollAddAttachment(QWidget *pare
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
     QPushButton *scrollToButton = new QPushButton(QStringLiteral("Scroll to Attachment"), this);
     vboxLayout->addWidget(scrollToButton);
-    connect(scrollToButton, &QPushButton::clicked, this, &TestWebEngineScrollAddAttachment::slotScrollToAttachment);
-
+    connect(scrollToButton, &QPushButton::clicked, this,
+            &TestWebEngineScrollAddAttachment::slotScrollToAttachment);
 }
 
 void TestWebEngineScrollAddAttachment::slotScrollToAttachment()

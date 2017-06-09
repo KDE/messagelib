@@ -24,7 +24,6 @@
 #include "utils/iconnamecache.h"
 #include "config-messageviewer.h"
 
-
 #include <MessageCore/StringUtil>
 
 #include <kmime/kmime_message.h>
@@ -48,9 +47,11 @@ public:
     {
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
         engine = new Grantlee::Engine;
-        templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new Grantlee::FileSystemTemplateLoader);
+        templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(
+            new Grantlee::FileSystemTemplateLoader);
         engine->addTemplateLoader(templateLoader);
     }
+
     ~Private()
     {
         delete engine;
@@ -72,7 +73,8 @@ GrantleeHeaderFormatter::~GrantleeHeaderFormatter()
     delete d;
 }
 
-QString GrantleeHeaderFormatter::toHtml(const GrantleeHeaderFormatter::GrantleeHeaderFormatterSettings &settings) const
+QString GrantleeHeaderFormatter::toHtml(
+    const GrantleeHeaderFormatter::GrantleeHeaderFormatterSettings &settings) const
 {
     QString errorMessage;
     if (!settings.theme.isValid()) {
@@ -85,10 +87,16 @@ QString GrantleeHeaderFormatter::toHtml(const GrantleeHeaderFormatter::GrantleeH
         errorMessage = headerTemplate->errorString();
         return errorMessage;
     }
-    return format(settings.theme.absolutePath(), headerTemplate, settings.theme.displayExtraVariables(), settings.isPrinting, settings.style, settings.message, settings.showMailAction);
+    return format(
+        settings.theme.absolutePath(), headerTemplate,
+        settings.theme.displayExtraVariables(), settings.isPrinting, settings.style, settings.message,
+        settings.showMailAction);
 }
 
-QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const
+QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders,
+                                        const QString &absolutPath, const QString &filename,
+                                        const MessageViewer::HeaderStyle *style,
+                                        KMime::Message *message, bool isPrinting) const
 {
     d->templateLoader->setTemplateDirs(QStringList() << absolutPath);
     Grantlee::Template headerTemplate = d->engine->loadByName(filename);
@@ -98,7 +106,11 @@ QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, 
     return format(absolutPath, headerTemplate, displayExtraHeaders, isPrinting, style, message);
 }
 
-QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showMailAction) const
+QString GrantleeHeaderFormatter::format(const QString &absolutePath,
+                                        const Grantlee::Template &headerTemplate,
+                                        const QStringList &displayExtraHeaders, bool isPrinting,
+                                        const MessageViewer::HeaderStyle *style,
+                                        KMime::Message *message, bool showMailAction) const
 {
     QVariantHash headerObject;
 
@@ -110,58 +122,85 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     const QString absoluteThemePath = QUrl::fromLocalFile(absolutePath + QLatin1Char('/')).url();
     headerObject.insert(QStringLiteral("absoluteThemePath"), absoluteThemePath);
     headerObject.insert(QStringLiteral("showMailAction"), showMailAction);
-    headerObject.insert(QStringLiteral("applicationDir"), QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
-    headerObject.insert(QStringLiteral("subjectDir"), d->headerStyleUtil.subjectDirectionString(message));
+    headerObject.insert(QStringLiteral("applicationDir"),
+                        QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral(
+                            "ltr"));
+    headerObject.insert(QStringLiteral("subjectDir"),
+                        d->headerStyleUtil.subjectDirectionString(message));
 
     headerObject.insert(QStringLiteral("subjecti18n"), i18n("Subject:"));
     const KTextToHTML::Options flags = KTextToHTML::PreserveSpaces | KTextToHTML::ReplaceSmileys;
 
-    headerObject.insert(QStringLiteral("subject"), d->headerStyleUtil.subjectString(message, flags));
+    headerObject.insert(QStringLiteral("subject"),
+                        d->headerStyleUtil.subjectString(message, flags));
 
     if (message->to(false)) {
         headerObject.insert(QStringLiteral("toi18n"), i18n("To:"));
-        headerObject.insert(QStringLiteral("to"), StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayFullAddress));
-        headerObject.insert(QStringLiteral("toNameOnly"), StringUtil::emailAddrAsAnchor(message->to(), StringUtil::DisplayNameOnly));
+        headerObject.insert(QStringLiteral("to"),
+                            StringUtil::emailAddrAsAnchor(message->to(),
+                                                          StringUtil::DisplayFullAddress));
+        headerObject.insert(QStringLiteral("toNameOnly"),
+                            StringUtil::emailAddrAsAnchor(
+                                message->to(), StringUtil::DisplayNameOnly));
         headerObject.insert(QStringLiteral("toStr"), message->to()->asUnicodeString());
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->to(), MessageCore::StringUtil::DisplayFullAddress,
-                            QString(), MessageCore::StringUtil::ShowLink,
-                            MessageCore::StringUtil::ExpandableAddresses, QStringLiteral("FullToAddressList"));
+        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
+            message->to(), MessageCore::StringUtil::DisplayFullAddress,
+            QString(), MessageCore::StringUtil::ShowLink,
+            MessageCore::StringUtil::ExpandableAddresses,
+            QStringLiteral("FullToAddressList"));
         headerObject.insert(QStringLiteral("toExpandable"), val);
         headerObject.insert(QStringLiteral("toMailbox"), QVariant::fromValue(message->to()));
     }
 
     if (message->replyTo(false)) {
         headerObject.insert(QStringLiteral("replyToi18n"), i18n("Reply to:"));
-        headerObject.insert(QStringLiteral("replyTo"), StringUtil::emailAddrAsAnchor(message->replyTo(), StringUtil::DisplayFullAddress));
+        headerObject.insert(QStringLiteral("replyTo"),
+                            StringUtil::emailAddrAsAnchor(message->replyTo(),
+                                                          StringUtil::DisplayFullAddress));
         headerObject.insert(QStringLiteral("replyToStr"), message->replyTo()->asUnicodeString());
-        headerObject.insert(QStringLiteral("replyToNameOnly"), StringUtil::emailAddrAsAnchor(message->replyTo(), StringUtil::DisplayNameOnly));
+        headerObject.insert(QStringLiteral("replyToNameOnly"),
+                            StringUtil::emailAddrAsAnchor(message->replyTo(),
+                                                          StringUtil::DisplayNameOnly));
     }
 
     if (message->cc(false)) {
         headerObject.insert(QStringLiteral("cci18n"), i18n("CC:"));
-        headerObject.insert(QStringLiteral("cc"), StringUtil::emailAddrAsAnchor(message->cc(), StringUtil::DisplayFullAddress));
+        headerObject.insert(QStringLiteral("cc"),
+                            StringUtil::emailAddrAsAnchor(message->cc(),
+                                                          StringUtil::DisplayFullAddress));
         headerObject.insert(QStringLiteral("ccStr"), message->cc()->asUnicodeString());
-        headerObject.insert(QStringLiteral("ccNameOnly"), StringUtil::emailAddrAsAnchor(message->cc(), StringUtil::DisplayNameOnly));
+        headerObject.insert(QStringLiteral("ccNameOnly"),
+                            StringUtil::emailAddrAsAnchor(
+                                message->cc(), StringUtil::DisplayNameOnly));
         headerObject.insert(QStringLiteral("ccMailbox"), QVariant::fromValue(message->cc()));
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(message->cc(), MessageCore::StringUtil::DisplayFullAddress,
-                            QString(), MessageCore::StringUtil::ShowLink,
-                            MessageCore::StringUtil::ExpandableAddresses, QStringLiteral("FullCcAddressList"));
+        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
+            message->cc(), MessageCore::StringUtil::DisplayFullAddress,
+            QString(), MessageCore::StringUtil::ShowLink,
+            MessageCore::StringUtil::ExpandableAddresses,
+            QStringLiteral("FullCcAddressList"));
         headerObject.insert(QStringLiteral("ccExpandable"), val);
     }
 
     if (message->bcc(false)) {
         headerObject.insert(QStringLiteral("bcci18n"), i18n("BCC:"));
-        headerObject.insert(QStringLiteral("bcc"), StringUtil::emailAddrAsAnchor(message->bcc(), StringUtil::DisplayFullAddress));
-        headerObject.insert(QStringLiteral("bccNameOnly"), StringUtil::emailAddrAsAnchor(message->bcc(), StringUtil::DisplayNameOnly));
+        headerObject.insert(QStringLiteral("bcc"),
+                            StringUtil::emailAddrAsAnchor(message->bcc(),
+                                                          StringUtil::DisplayFullAddress));
+        headerObject.insert(QStringLiteral("bccNameOnly"),
+                            StringUtil::emailAddrAsAnchor(message->bcc(),
+                                                          StringUtil::DisplayNameOnly));
         headerObject.insert(QStringLiteral("bccStr"), message->bcc()->asUnicodeString());
         headerObject.insert(QStringLiteral("bccMailbox"), QVariant::fromValue(message->bcc()));
     }
     headerObject.insert(QStringLiteral("fromi18n"), i18n("From:"));
-    headerObject.insert(QStringLiteral("from"),  StringUtil::emailAddrAsAnchor(message->from(), StringUtil::DisplayFullAddress));
+    headerObject.insert(QStringLiteral("from"),
+                        StringUtil::emailAddrAsAnchor(message->from(),
+                                                      StringUtil::DisplayFullAddress));
     headerObject.insert(QStringLiteral("fromStr"), message->from()->asUnicodeString());
 
     //Sender
-    headerObject.insert(QStringLiteral("sender"), d->headerStyleUtil.strToHtml(message->sender()->asUnicodeString()));
+    headerObject.insert(QStringLiteral("sender"),
+                        d->headerStyleUtil.strToHtml(message->sender()->asUnicodeString()));
     headerObject.insert(QStringLiteral("senderi18n"), i18n("Sender:"));
     headerObject.insert(QStringLiteral("listidi18n"), i18n("List-Id:"));
 
@@ -176,37 +215,72 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     }
     headerObject.insert(QStringLiteral("datei18n"), i18n("Date:"));
 
-    headerObject.insert(QStringLiteral("dateshort"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::ShortDate)));
-    headerObject.insert(QStringLiteral("datelong"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::CustomDate)));
-    headerObject.insert(QStringLiteral("date"), d->headerStyleUtil.dateStr(message->date()->dateTime()));
-    headerObject.insert(QStringLiteral("datefancylong"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::FancyLongDate)));
-    headerObject.insert(QStringLiteral("datefancyshort"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::FancyShortDate)));
-    headerObject.insert(QStringLiteral("datelocalelong"), d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message, isPrinting, MessageViewer::HeaderStyleUtil::LongDate)));
+    headerObject.insert(QStringLiteral("dateshort"),
+                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
+                                                                                   isPrinting,
+                                                                                   MessageViewer::
+                                                                                   HeaderStyleUtil::
+                                                                                   ShortDate)));
+    headerObject.insert(QStringLiteral("datelong"),
+                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
+                                                                                   isPrinting,
+                                                                                   MessageViewer::
+                                                                                   HeaderStyleUtil::
+                                                                                   CustomDate)));
+    headerObject.insert(QStringLiteral("date"),
+                        d->headerStyleUtil.dateStr(message->date()->dateTime()));
+    headerObject.insert(QStringLiteral("datefancylong"),
+                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
+                                                                                   isPrinting,
+                                                                                   MessageViewer::
+                                                                                   HeaderStyleUtil::
+                                                                                   FancyLongDate)));
+    headerObject.insert(QStringLiteral("datefancyshort"),
+                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
+                                                                                   isPrinting,
+                                                                                   MessageViewer::
+                                                                                   HeaderStyleUtil::
+                                                                                   FancyShortDate)));
+    headerObject.insert(QStringLiteral("datelocalelong"),
+                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
+                                                                                   isPrinting,
+                                                                                   MessageViewer::
+                                                                                   HeaderStyleUtil::
+                                                                                   LongDate)));
 
     if (MessageViewer::MessageViewerSettings::self()->showUserAgent()) {
         if (auto hdr = message->userAgent(false)) {
-            headerObject.insert(QStringLiteral("useragent"), d->headerStyleUtil.strToHtml(hdr->asUnicodeString()));
+            headerObject.insert(QStringLiteral("useragent"),
+                                d->headerStyleUtil.strToHtml(hdr->asUnicodeString()));
         }
 
         if (auto hrd = message->headerByType("X-Mailer")) {
-            headerObject.insert(QStringLiteral("xmailer"), d->headerStyleUtil.strToHtml(hrd->asUnicodeString()));
+            headerObject.insert(QStringLiteral("xmailer"),
+                                d->headerStyleUtil.strToHtml(hrd->asUnicodeString()));
         }
     }
 
     if (message->hasHeader("Resent-From")) {
         headerObject.insert(QStringLiteral("resentfromi18n"), i18n("resent from"));
-        const QVector<KMime::Types::Mailbox> resentFrom = d->headerStyleUtil.resentFromList(message);
-        headerObject.insert(QStringLiteral("resentfrom"), StringUtil::emailAddrAsAnchor(resentFrom, StringUtil::DisplayFullAddress));
+        const QVector<KMime::Types::Mailbox> resentFrom
+            = d->headerStyleUtil.resentFromList(message);
+        headerObject.insert(QStringLiteral("resentfrom"),
+                            StringUtil::emailAddrAsAnchor(resentFrom,
+                                                          StringUtil::DisplayFullAddress));
     }
 
     if (message->hasHeader("Resent-To")) {
         const QVector<KMime::Types::Mailbox> resentTo = d->headerStyleUtil.resentToList(message);
-        headerObject.insert(QStringLiteral("resenttoi18n"), i18np("receiver was", "receivers were", resentTo.count()));
-        headerObject.insert(QStringLiteral("resentto"), StringUtil::emailAddrAsAnchor(resentTo, StringUtil::DisplayFullAddress));
+        headerObject.insert(QStringLiteral("resenttoi18n"),
+                            i18np("receiver was", "receivers were", resentTo.count()));
+        headerObject.insert(QStringLiteral("resentto"),
+                            StringUtil::emailAddrAsAnchor(resentTo,
+                                                          StringUtil::DisplayFullAddress));
     }
 
     if (auto organization = message->organization(false)) {
-        headerObject.insert(QStringLiteral("organization"), d->headerStyleUtil.strToHtml(organization->asUnicodeString()));
+        headerObject.insert(QStringLiteral("organization"),
+                            d->headerStyleUtil.strToHtml(organization->asUnicodeString()));
     }
 
     if (!style->vCardName().isEmpty()) {
@@ -229,7 +303,8 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     // colors depend on if it is encapsulated or not
     QColor fontColor(Qt::white);
     QString linkColor = QStringLiteral("white");
-    const QColor activeColor = KColorScheme(QPalette::Active, KColorScheme::Selection).background().color();
+    const QColor activeColor
+        = KColorScheme(QPalette::Active, KColorScheme::Selection).background().color();
     QColor activeColorDark = activeColor.dark(130);
     // reverse colors for encapsulated
     if (!style->isTopLevel()) {
@@ -266,8 +341,15 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
 
     if (messageHasAttachment) {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "mail-attachment"),
+                                                                 KIconLoader::Toolbar);
+        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(
+                                                                                                       iconPath).url(),
+                                                                                                   QString::number(
+                                                                                                       d
+        ->iconSize));
         headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }
 

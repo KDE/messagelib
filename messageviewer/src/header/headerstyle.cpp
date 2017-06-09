@@ -43,16 +43,16 @@ class MessageViewer::HeaderStylePrivate
 {
 public:
     HeaderStylePrivate()
-        : mStrategy(nullptr),
-          mNodeHelper(nullptr),
-          mSourceObject(nullptr),
-          mPrinting(false),
-          mTopLevel(true),
-          mAllowAsync(false),
-          mReadOnlyMessage(false)
+        : mStrategy(nullptr)
+        , mNodeHelper(nullptr)
+        , mSourceObject(nullptr)
+        , mPrinting(false)
+        , mTopLevel(true)
+        , mAllowAsync(false)
+        , mReadOnlyMessage(false)
     {
-
     }
+
     GrantleeTheme::Theme mTheme;
     QString mMessagePath;
     const HeaderStrategy *mStrategy;
@@ -201,4 +201,3 @@ void HeaderStyle::setReadOnlyMessage(bool readOnlyMessage)
 {
     d->mReadOnlyMessage = readOnlyMessage;
 }
-

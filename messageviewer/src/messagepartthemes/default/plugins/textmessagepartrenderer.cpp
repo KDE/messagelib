@@ -27,11 +27,14 @@
 TextMessagePartRenderer::TextMessagePartRenderer()
 {
 }
+
 TextMessagePartRenderer::~TextMessagePartRenderer()
 {
 }
 
-QSharedPointer<PartRendered> TextMessagePartRenderer::render(DefaultRendererPrivate *drp, const MimeTreeParser::Interface::MessagePartPtr &msgPart) const
+QSharedPointer<PartRendered> TextMessagePartRenderer::render(DefaultRendererPrivate *drp,
+                                                             const MimeTreeParser::Interface::MessagePartPtr &msgPart)
+const
 {
     auto mp = msgPart.dynamicCast<TextMessagePart>();
     if (mp) {

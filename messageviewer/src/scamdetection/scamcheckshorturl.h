@@ -27,8 +27,7 @@
 #include <QUrl>
 #include <QStringList>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT ScamCheckShortUrl : public QObject
 {
     Q_OBJECT

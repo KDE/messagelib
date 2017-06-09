@@ -32,18 +32,15 @@
 #ifndef __KDEPIM__MESSAGEVIEWER__STL_UTIL_H__
 #define __KDEPIM__MESSAGEVIEWER__STL_UTIL_H__
 
-namespace MessageViewer
-{
-
-template <typename T>
+namespace MessageViewer {
+template<typename T>
 struct DeleteAndSetToZero {
-    void operator()(const T *&t)
+    void operator()(const T * &t)
     {
         delete t;
         t = nullptr;
     }
 };
-
 }
 
 #endif // __KDEPIM__MESSAGEVIEWER__STL_UTIL_H__

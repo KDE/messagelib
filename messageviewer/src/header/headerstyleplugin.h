@@ -26,8 +26,7 @@
 class KActionCollection;
 class QActionGroup;
 class KActionMenu;
-namespace MessageViewer
-{
+namespace MessageViewer {
 class HeaderStyle;
 class HeaderStrategy;
 class HeaderStylePluginPrivate;
@@ -41,7 +40,8 @@ public:
 
     virtual HeaderStyle *headerStyle() const = 0;
     virtual HeaderStrategy *headerStrategy() const = 0;
-    virtual HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent = nullptr) = 0;
+    virtual HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup,
+                                             KActionCollection *ac, QObject *parent = nullptr) = 0;
     virtual QString name() const = 0;
     virtual bool hasMargin() const;
     virtual QString alignment() const;

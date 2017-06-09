@@ -37,7 +37,6 @@ MailWebEnginePage::MailWebEnginePage(QWebEngineProfile *profile, QObject *parent
 
 MailWebEnginePage::~MailWebEnginePage()
 {
-
 }
 
 void MailWebEnginePage::initialize()
@@ -70,7 +69,6 @@ void MailWebEnginePage::initialize()
     settings()->setFontSize(QWebEngineSettings::DefaultFontSize, font.pixelSize());
     connect(this, &QWebEnginePage::featurePermissionRequested,
             this, &MailWebEnginePage::slotFeaturePermissionRequested);
-
 }
 
 void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
@@ -82,7 +80,8 @@ void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
 #endif
 }
 
-void MailWebEnginePage::slotFeaturePermissionRequested(const QUrl &url, QWebEnginePage::Feature feature)
+void MailWebEnginePage::slotFeaturePermissionRequested(const QUrl &url,
+                                                       QWebEnginePage::Feature feature)
 {
     //Denied all permissions.
     setFeaturePermission(url, feature, QWebEnginePage::PermissionDeniedByUser);

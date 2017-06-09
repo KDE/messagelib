@@ -40,9 +40,11 @@ using namespace MessageViewer;
 class Q_DECL_HIDDEN MimeTreeModel::Private
 {
 public:
-    Private() :
-        root(nullptr)
-    {}
+    Private()
+        : root(nullptr)
+    {
+    }
+
     ~Private()
     {
         qDeleteAll(tempDirs);
@@ -106,10 +108,14 @@ public:
     QIcon iconForContent(KMime::Content *content)
     {
         if (content->contentType(false)) {
-            auto iconName = MimeTreeParser::Util::iconNameForMimetype(QLatin1String(content->contentType()->mimeType()));
+            auto iconName
+                = MimeTreeParser::Util::iconNameForMimetype(QLatin1String(content->contentType()->
+                                                                          mimeType()));
 
-            auto mimeType = m_mimeDb.mimeTypeForName(QString::fromLatin1(content->contentType()->mimeType()));
-            if (!mimeType.isValid() || mimeType.name() == QLatin1String("application/octet-stream")) {
+            auto mimeType
+                = m_mimeDb.mimeTypeForName(QString::fromLatin1(content->contentType()->mimeType()));
+            if (!mimeType.isValid()
+                || mimeType.name() == QLatin1String("application/octet-stream")) {
                 const QString name = descriptionForContent(content);
                 mimeType = MimeTreeParser::Util::mimetype(name);
             }
@@ -133,9 +139,9 @@ public:
     QMimeDatabase m_mimeDb;
 };
 
-MimeTreeModel::MimeTreeModel(QObject *parent) :
-    QAbstractItemModel(parent),
-    d(new Private)
+MimeTreeModel::MimeTreeModel(QObject *parent)
+    : QAbstractItemModel(parent)
+    , d(new Private)
 {
 }
 
@@ -306,7 +312,8 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
 
         QTemporaryDir *tempDir = new QTemporaryDir; // Will remove the directory on destruction.
         d->tempDirs.append(tempDir);
-        const QString fileName = tempDir->path() + QLatin1Char('/') + d->descriptionForContent(content);
+        const QString fileName = tempDir->path() + QLatin1Char('/') + d->descriptionForContent(
+            content);
         QFile f(fileName);
         if (!f.open(QIODevice::WriteOnly)) {
             qCWarning(MESSAGEVIEWER_LOG) << "Cannot write attachment:" << f.errorString();

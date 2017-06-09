@@ -44,7 +44,6 @@ TestWidget::TestWidget(QWidget *parent)
 
 TestWidget::~TestWidget()
 {
-
 }
 
 TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
@@ -60,12 +59,12 @@ TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
     mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
     QPushButton *searchAccessKey = new QPushButton(QStringLiteral("AccessKey"), this);
     vboxLayout->addWidget(searchAccessKey);
-    connect(searchAccessKey, &QPushButton::clicked, this, &TestWebEngineAccesskey::slotShowAccessKey);
+    connect(searchAccessKey, &QPushButton::clicked, this,
+            &TestWebEngineAccesskey::slotShowAccessKey);
 }
 
 TestWebEngineAccesskey::~TestWebEngineAccesskey()
 {
-
 }
 
 void TestWebEngineAccesskey::slotShowAccessKey()
@@ -83,4 +82,3 @@ int main(int argc, char *argv[])
     const int ret = app.exec();
     return ret;
 }
-

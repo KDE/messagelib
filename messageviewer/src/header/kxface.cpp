@@ -102,23 +102,47 @@ QString KXFace::fromImage(const QImage &image)
     int len = tmp.length();
     for (int i = 0; i < len; ++i) {
         switch (tmp[i].toLatin1()) {
-        case '1': tmp[i] = '8'; break;
-        case '2': tmp[i] = '4'; break;
-        case '3': tmp[i] = 'c'; break;
-        case '4': tmp[i] = '2'; break;
-        case '5': tmp[i] = 'a'; break;
-        case '7': tmp[i] = 'e'; break;
-        case '8': tmp[i] = '1'; break;
+        case '1':
+            tmp[i] = '8';
+            break;
+        case '2':
+            tmp[i] = '4';
+            break;
+        case '3':
+            tmp[i] = 'c';
+            break;
+        case '4':
+            tmp[i] = '2';
+            break;
+        case '5':
+            tmp[i] = 'a';
+            break;
+        case '7':
+            tmp[i] = 'e';
+            break;
+        case '8':
+            tmp[i] = '1';
+            break;
         case 'A':
-        case 'a': tmp[i] = '5'; break;
+        case 'a':
+            tmp[i] = '5';
+            break;
         case 'B':
-        case 'b': tmp[i] = 'd'; break;
+        case 'b':
+            tmp[i] = 'd';
+            break;
         case 'C':
-        case 'c': tmp[i] = '3'; break;
+        case 'c':
+            tmp[i] = '3';
+            break;
         case 'D':
-        case 'd': tmp[i] = 'b'; break;
+        case 'd':
+            tmp[i] = 'b';
+            break;
         case 'E':
-        case 'e': tmp[i] = '7'; break;
+        case 'e':
+            tmp[i] = '7';
+            break;
         }
         if (i % 2) {
             QChar t = tmp[i];
@@ -173,7 +197,7 @@ void KXFace::RevPush(const Prob *p)
     if (NumProbs >= PIXELS * 2 - 1) {
         longjmp(comp_env, ERR_INTERNAL);
     }
-    ProbBuf[NumProbs++] = (Prob *) p;
+    ProbBuf[NumProbs++] = (Prob *)p;
 }
 
 void KXFace::BigPush(Prob *p)
@@ -231,7 +255,7 @@ void KXFace::BigDiv(unsigned char a, unsigned char *r)
     c = 0;
     while (i--) {
         c <<= BITSPERWORD;
-        c += (COMP) * --w;
+        c += (COMP)*--w;
         d = c / (COMP)a;
         c = c % (COMP)a;
         *w = (unsigned char)(d & WORDMASK);
@@ -271,7 +295,7 @@ void KXFace::BigMul(unsigned char a)
     w = B.b_word;
     c = 0;
     while (i--) {
-        c += (COMP) * w * (COMP)a;
+        c += (COMP)*w * (COMP)a;
         *(w++) = (unsigned char)(c & WORDMASK);
         c >>= BITSPERWORD;
     }
@@ -299,7 +323,7 @@ void KXFace::BigAdd(unsigned char a)
     w = B.b_word;
     c = a;
     while ((i < B.b_words) && c) {
-        c += (COMP) * w;
+        c += (COMP)*w;
         *w++ = (unsigned char)(c & WORDMASK);
         c >>= BITSPERWORD;
         ++i;
@@ -323,7 +347,8 @@ QByteArray KXFace::WriteFace()
     int i, j, bits, digits, words;
     //int digsperword = DIGSPERWORD;
     //int wordsperline = WORDSPERLINE;
-    QByteArray t("#define noname_width 48\n#define noname_height 48\nstatic char noname_bits[] = {\n ");
+    QByteArray t(
+        "#define noname_width 48\n#define noname_height 48\nstatic char noname_bits[] = {\n ");
     j = t.length() - 1;
 
     s = F;
@@ -388,12 +413,12 @@ void KXFace::UnCompAll(char *fbuf)
 void KXFace::UnCompress(char *f, int wid, int hei, int lev)
 {
     switch (BigPop(&levels[lev][0])) {
-    case WHITE :
+    case WHITE:
         return;
-    case BLACK :
+    case BLACK:
         PopGreys(f, wid, hei);
         return;
-    default :
+    default:
         wid /= 2;
         hei /= 2;
         lev++;
@@ -456,7 +481,7 @@ void KXFace::ReadFace(char *fbuf)
 
     t = s = fbuf;
     for (i = strlen(s); i > 0; --i) {
-        c = (int) * (s++);
+        c = (int)*(s++);
         if ((c >= '0') && (c <= '9')) {
             if (t >= fbuf + DIGITS) {
                 status = ERR_EXCESS;
@@ -520,11 +545,11 @@ void KXFace::Gen(char *f)
 {
     int m, l, k, j, i, h;
 
-    for (j = 0; j < HEIGHT;  ++j) {
-        for (i = 0; i < WIDTH;  ++i) {
+    for (j = 0; j < HEIGHT; ++j) {
+        for (i = 0; i < WIDTH; ++i) {
             h = i + j * WIDTH;
             k = 0;
-            for (l = i - 2; l <= i + 2; ++l)
+            for (l = i - 2; l <= i + 2; ++l) {
                 for (m = j - 2; m <= j; ++m) {
                     if ((l >= i) && (m == j)) {
                         continue;
@@ -533,26 +558,36 @@ void KXFace::Gen(char *f)
                         k = *(f + l + m * WIDTH) ? k * 2 + 1 : k * 2;
                     }
                 }
+            }
             switch (i) {
-            case 1 :
+            case 1:
                 switch (j) {
-                case 1 : GEN(g_22);
-                case 2 : GEN(g_21);
-                default : GEN(g_20);
+                case 1:
+                    GEN(g_22);
+                case 2:
+                    GEN(g_21);
+                default:
+                    GEN(g_20);
                 }
                 break;
-            case 2 :
+            case 2:
                 switch (j) {
-                case 1 : GEN(g_12);
-                case 2 : GEN(g_11);
-                default : GEN(g_10);
+                case 1:
+                    GEN(g_12);
+                case 2:
+                    GEN(g_11);
+                default:
+                    GEN(g_10);
                 }
                 break;
-            case WIDTH - 1 :
+            case WIDTH - 1:
                 switch (j) {
-                case 1 : GEN(g_42);
-                case 2 : GEN(g_41);
-                default : GEN(g_40);
+                case 1:
+                    GEN(g_42);
+                case 2:
+                    GEN(g_41);
+                default:
+                    GEN(g_40);
                 }
                 break;
             /* i runs from 0 to WIDTH-1, so case can never occur. I leave the code in
@@ -566,11 +601,14 @@ void KXFace::Gen(char *f)
             }
             break;
             */
-            default :
+            default:
                 switch (j) {
-                case 1 : GEN(g_02);
-                case 2 : GEN(g_01);
-                default : GEN(g_00);
+                case 1:
+                    GEN(g_02);
+                case 2:
+                    GEN(g_01);
+                default:
+                    GEN(g_00);
                 }
                 break;
             }
@@ -645,7 +683,7 @@ void KXFace::Compress(char *f, int wid, int hei, int lev)
 
 int KXFace::AllWhite(char *f, int wid, int hei)
 {
-    return ((*f == 0) && Same(f, wid, hei));
+    return (*f == 0) && Same(f, wid, hei);
 }
 
 int KXFace::AllBlack(char *f, int wid, int hei)
@@ -653,11 +691,11 @@ int KXFace::AllBlack(char *f, int wid, int hei)
     if (wid > 3) {
         wid /= 2;
         hei /= 2;
-        return (AllBlack(f, wid, hei) && AllBlack(f + wid, wid, hei) &&
-                AllBlack(f + WIDTH * hei, wid, hei) &&
-                AllBlack(f + WIDTH * hei + wid, wid, hei));
+        return AllBlack(f, wid, hei) && AllBlack(f + wid, wid, hei)
+               && AllBlack(f + WIDTH * hei, wid, hei)
+               && AllBlack(f + WIDTH * hei + wid, wid, hei);
     } else {
-        return (*f || *(f + 1) || *(f + WIDTH) || *(f + WIDTH + 1));
+        return *f || *(f + 1) || *(f + WIDTH) || *(f + WIDTH + 1);
     }
 }
 
@@ -670,10 +708,11 @@ int KXFace::Same(char *f, int wid, int hei)
     while (hei--) {
         row = f;
         x = wid;
-        while (x--)
+        while (x--) {
             if (*(row++) != val) {
-                return (0);
+                return 0;
             }
+        }
         f += WIDTH;
     }
     return 1;
@@ -688,8 +727,8 @@ void KXFace::PushGreys(char *f, int wid, int hei)
         PushGreys(f + wid, wid, hei);
         PushGreys(f + WIDTH * hei, wid, hei);
         PushGreys(f + WIDTH * hei + wid, wid, hei);
-    } else
-        RevPush(freqs + *f + 2 * *(f + 1) + 4 * *(f + WIDTH) +
-                8 * *(f + WIDTH + 1));
+    } else {
+        RevPush(freqs + *f + 2 * *(f + 1) + 4 * *(f + WIDTH)
+                +8 * *(f + WIDTH + 1));
+    }
 }
-

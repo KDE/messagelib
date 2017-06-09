@@ -31,7 +31,6 @@ ViewerGrantleeThemeSupportTest::ViewerGrantleeThemeSupportTest(QObject *parent)
 
 ViewerGrantleeThemeSupportTest::~ViewerGrantleeThemeSupportTest()
 {
-
 }
 
 void ViewerGrantleeThemeSupportTest::initTestCase()
@@ -46,7 +45,8 @@ void ViewerGrantleeThemeSupportTest::initTestCase()
 
 void ViewerGrantleeThemeSupportTest::shouldUpdateThemeMenu()
 {
-    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
+    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
+                                                                  this));
     viewer->show();
     QTest::qWaitForWindowExposed(viewer);
 }

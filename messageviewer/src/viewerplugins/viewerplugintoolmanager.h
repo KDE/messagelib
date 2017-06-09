@@ -26,8 +26,7 @@
 #include "viewerplugininterface.h"
 class KActionCollection;
 class QAction;
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ViewerPluginToolManagerPrivate;
 class ViewerPluginInterface;
 class MESSAGEVIEWER_EXPORT ViewerPluginToolManager : public QObject
@@ -48,7 +47,8 @@ public:
     void setPluginName(const QString &pluginName);
     QString pluginName() const;
     bool initializePluginList();
-    QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
+    QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features)
+    const;
 
     void updateActions(const Akonadi::Item &messageItem);
 

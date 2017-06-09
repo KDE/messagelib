@@ -21,9 +21,9 @@
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 
-namespace MessageViewer
-{
-class BlockExternalResourcesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
+namespace MessageViewer {
+class BlockExternalResourcesUrlInterceptor : public WebEngineViewer::
+    NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:

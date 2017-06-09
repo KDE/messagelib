@@ -60,4 +60,3 @@ void MessageViewerSettings::slotSyncNow()
 MessageViewerSettings::~MessageViewerSettings()
 {
 }
-

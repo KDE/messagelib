@@ -36,13 +36,11 @@
 using namespace MessageViewer;
 
 RichHeaderStrategy::RichHeaderStrategy()
-    : HeaderStrategy(),
-      mHeadersToDisplay(stringList(richHeaders, numRichHeaders))
+    : HeaderStrategy()
+    , mHeadersToDisplay(stringList(richHeaders, numRichHeaders))
 {
-
 }
 
 RichHeaderStrategy::~RichHeaderStrategy()
 {
-
 }

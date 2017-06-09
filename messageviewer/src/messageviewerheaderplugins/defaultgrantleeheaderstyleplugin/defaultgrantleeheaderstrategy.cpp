@@ -23,10 +23,8 @@ using namespace MessageViewer;
 
 DefaultGrantleeHeaderStrategy::DefaultGrantleeHeaderStrategy()
 {
-
 }
 
 DefaultGrantleeHeaderStrategy::~DefaultGrantleeHeaderStrategy()
 {
-
 }

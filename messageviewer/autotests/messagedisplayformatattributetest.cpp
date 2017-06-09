@@ -25,12 +25,10 @@
 MessageDisplayFormatAttributeTest::MessageDisplayFormatAttributeTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 MessageDisplayFormatAttributeTest::~MessageDisplayFormatAttributeTest()
 {
-
 }
 
 void MessageDisplayFormatAttributeTest::shouldHaveDefaultValue()
@@ -61,7 +59,6 @@ void MessageDisplayFormatAttributeTest::shouldChangeMessageFormat()
     format = MessageViewer::Viewer::UseGlobalSetting;
     attr.setMessageFormat(format);
     QCOMPARE(attr.messageFormat(), format);
-
 }
 
 void MessageDisplayFormatAttributeTest::shouldDeserializeValue()

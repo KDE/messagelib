@@ -59,7 +59,8 @@ void MarkMessageReadHandler::Private::handleMessages()
 }
 
 MarkMessageReadHandler::MarkMessageReadHandler(QObject *parent)
-    : QObject(parent), d(new Private(this))
+    : QObject(parent)
+    , d(new Private(this))
 {
     d->mTimer.setSingleShot(true);
     connect(&d->mTimer, SIGNAL(timeout()), this, SLOT(handleMessages()));
@@ -75,7 +76,8 @@ MarkMessageReadHandler::~MarkMessageReadHandler()
 
 void MarkMessageReadHandler::setItem(const Akonadi::Item &item)
 {
-    if (sListItem->contains(item) || d->mItemQueue == item || item.hasFlag(Akonadi::MessageFlags::Queued)) {
+    if (sListItem->contains(item) || d->mItemQueue == item
+        || item.hasFlag(Akonadi::MessageFlags::Queued)) {
         return;
     }
     d->mTimer.stop();

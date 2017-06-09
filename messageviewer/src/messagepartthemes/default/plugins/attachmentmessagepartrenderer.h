@@ -29,7 +29,9 @@ class AttachmentMessagePartRenderer : public MessagePartRendererBase
 public:
     AttachmentMessagePartRenderer();
     virtual ~AttachmentMessagePartRenderer();
-    QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *drp, const MimeTreeParser::Interface::MessagePartPtr &msgPart) const override;
+    QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *drp,
+                                        const MimeTreeParser::Interface::MessagePartPtr &msgPart)
+    const override;
 };
 
 #endif

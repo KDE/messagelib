@@ -25,12 +25,16 @@
 #include <kpluginfactory.h>
 using namespace MessageViewer;
 
-K_PLUGIN_FACTORY_WITH_JSON(MessageViewerDefaultGrantleeHeaderStylePluginFactory, "messageviewer_defaultgrantleeheaderstyleplugin.json", registerPlugin<DefaultGrantleeHeaderStylePlugin>();)
+K_PLUGIN_FACTORY_WITH_JSON(MessageViewerDefaultGrantleeHeaderStylePluginFactory,
+                           "messageviewer_defaultgrantleeheaderstyleplugin.json",
+                           registerPlugin<DefaultGrantleeHeaderStylePlugin>();
+                           )
 
-DefaultGrantleeHeaderStylePlugin::DefaultGrantleeHeaderStylePlugin(QObject *parent, const QList<QVariant> &)
-    : MessageViewer::HeaderStylePlugin(parent),
-      mHeaderStyle(new GrantleeHeaderStyle),
-      mHeaderStrategy(new DefaultGrantleeHeaderStrategy)
+DefaultGrantleeHeaderStylePlugin::DefaultGrantleeHeaderStylePlugin(QObject *parent,
+                                                                   const QList<QVariant> &)
+    : MessageViewer::HeaderStylePlugin(parent)
+    , mHeaderStyle(new GrantleeHeaderStyle)
+    , mHeaderStrategy(new DefaultGrantleeHeaderStrategy)
 {
     initializePlugin();
 }
@@ -43,7 +47,8 @@ DefaultGrantleeHeaderStylePlugin::~DefaultGrantleeHeaderStylePlugin()
 
 void DefaultGrantleeHeaderStylePlugin::initializePlugin()
 {
-    mHeaderStyle->setShowMailAction(DefaultGrantleeHeaderStylePluginSettings::self()->showActionMail());
+    mHeaderStyle->setShowMailAction(
+        DefaultGrantleeHeaderStylePluginSettings::self()->showActionMail());
 }
 
 HeaderStyle *DefaultGrantleeHeaderStylePlugin::headerStyle() const
@@ -56,9 +61,13 @@ HeaderStrategy *DefaultGrantleeHeaderStylePlugin::headerStrategy() const
     return mHeaderStrategy;
 }
 
-HeaderStyleInterface *DefaultGrantleeHeaderStylePlugin::createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent)
+HeaderStyleInterface *DefaultGrantleeHeaderStylePlugin::createView(KActionMenu *menu,
+                                                                   QActionGroup *actionGroup,
+                                                                   KActionCollection *ac,
+                                                                   QObject *parent)
 {
-    MessageViewer::HeaderStyleInterface *view = new MessageViewer::DefaultGrantleeHeaderStyleInterface(this, parent);
+    MessageViewer::HeaderStyleInterface *view
+        = new MessageViewer::DefaultGrantleeHeaderStyleInterface(this, parent);
     if (ac) {
         view->createAction(menu, actionGroup, ac);
     }

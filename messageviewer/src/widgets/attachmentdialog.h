@@ -24,9 +24,7 @@
 
 class QDialog;
 class QDialogButtonBox;
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 /**
  * A class which handles the dialog used to present the user a choice what to do
  * with an attachment.
@@ -46,8 +44,8 @@ public:
 
     // if @application is non-empty, the "open with <application>" button will also be shown,
     // otherwise only save, open with, cancel
-    explicit AttachmentDialog(QWidget *parent, const QString &filenameText, const QString &application,
-                              const QString &dontAskAgainName);
+    explicit AttachmentDialog(QWidget *parent, const QString &filenameText,
+                              const QString &application, const QString &dontAskAgainName);
 
     // executes the modal dialog
     int exec();
@@ -60,7 +58,6 @@ private:
     QDialog *dialog;
     QDialogButtonBox *mButtonBox;
 };
-
 }
 
 #endif

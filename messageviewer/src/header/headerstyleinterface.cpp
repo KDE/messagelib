@@ -26,11 +26,11 @@
 #include <KToggleAction>
 using namespace MessageViewer;
 
-HeaderStyleInterface::HeaderStyleInterface(MessageViewer::HeaderStylePlugin *headerStylePlugin, QObject *parent)
-    : QObject(parent),
-      mHeaderStylePlugin(headerStylePlugin)
+HeaderStyleInterface::HeaderStyleInterface(MessageViewer::HeaderStylePlugin *headerStylePlugin,
+                                           QObject *parent)
+    : QObject(parent)
+    , mHeaderStylePlugin(headerStylePlugin)
 {
-
 }
 
 HeaderStyleInterface::~HeaderStyleInterface()

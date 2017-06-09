@@ -40,8 +40,7 @@
 #include <QObject>
 #include <QTimer>
 
-namespace KIO
-{
+namespace KIO {
 class Job;
 }
 
@@ -57,32 +56,27 @@ class QSplitter;
 class QModelIndex;
 class QPrinter;
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class SlideContainer;
 class TextToSpeechWidget;
 }
-namespace PimCommon
-{
+namespace PimCommon {
 class ShareServiceUrlManager;
 }
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class AttachmentStrategy;
 class HtmlWriter;
 class ObjectTreeParser;
 }
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebHitTestResult;
 class FindBarWebEngineView;
 class ZoomActionMenu;
 class LocalDataBaseManager;
 }
-namespace MessageViewer
-{
+namespace MessageViewer {
 class HeaderStylePlugin;
 class CSSHelper;
 class MailWebEngineView;
@@ -234,7 +228,8 @@ public:
     */
     void prepareHandleAttachment(KMime::Content *node);
 
-    void postProcessMessage(MimeTreeParser::ObjectTreeParser *otp, MimeTreeParser::KMMsgEncryptionState encryptionState);
+    void postProcessMessage(MimeTreeParser::ObjectTreeParser *otp,
+                            MimeTreeParser::KMMsgEncryptionState encryptionState);
 
     QString createAtmFileLink(const QString &atmFileName) const;
     KService::Ptr getServiceOffer(KMime::Content *content);
@@ -261,7 +256,8 @@ public:
     bool decryptMessage() const;
 
     /** Display a generic HTML splash page instead of a message. */
-    void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
+    void displaySplashPage(const QString &templateName, const QVariantHash &data,
+                           const QByteArray &domain = QByteArray());
 
     void displaySplashPage(const QString &message);
 
@@ -320,20 +316,23 @@ public:
 
     void resetStateForNewMessage();
 
-    void setMessageInternal(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode);
+    void setMessageInternal(const KMime::Message::Ptr &message,
+                            MimeTreeParser::UpdateMode updateMode);
 
     /** Set the Akonadi item that will be displayed.
     *  @param item - the Akonadi item to be displayed. If it doesn't hold a mail (KMime::Message::Ptr as payload data),
     *                an empty page is shown.
     *  @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
     */
-    void setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
+    void setMessageItem(const Akonadi::Item &item,
+                        MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /** Set the message that shall be shown.
     * @param msg - the message to be shown. If 0, an empty page is displayed.
     * @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
     */
-    void setMessage(const KMime::Message::Ptr &msg, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
+    void setMessage(const KMime::Message::Ptr &msg,
+                    MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /** Instead of settings a message to be shown sets a message part
       to be shown */
@@ -422,7 +421,8 @@ public:
 
     void setPluginName(const QString &pluginName);
 
-    QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
+    QList<QAction *> viewerPluginActionList(
+        MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
     void setPrintElementBackground(bool printElementBackground);
@@ -445,7 +445,8 @@ private Q_SLOTS:
     void itemFetchResult(KJob *job);
 
     void slotItemChanged(const Akonadi::Item &item, const QSet<QByteArray> &partIdentifiers);
-    void slotItemMoved(const Akonadi::Item &, const Akonadi::Collection &, const Akonadi::Collection &);
+    void slotItemMoved(const Akonadi::Item &, const Akonadi::Collection &,
+                       const Akonadi::Collection &);
 
     void itemModifiedResult(KJob *job);
 
@@ -570,8 +571,10 @@ public Q_SLOTS:
 Q_SIGNALS:
     void showStatusBarMessage(const QString &message);
     void replaceMsgByUnencryptedVersion();
-    void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
-    void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result, const QPoint &mousePos);
+    void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl,
+                   const QPoint &mousePos);
+    void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result,
+                          const QPoint &mousePos);
 
     void urlClicked(const Akonadi::Item &msg, const QUrl &url);
     void requestConfigSync();
@@ -598,7 +601,8 @@ private:
     void replyMessageToAll(KMime::Content *atmNode);
     bool urlIsAMalwareButContinue();
 
-    void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
+    void slotCheckedUrlFinished(const QUrl &url,
+                                WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
     MimeTreeParser::NodeHelper *mNodeHelper;
 public:
@@ -698,7 +702,6 @@ public:
     QList<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase;
 };
-
 }
 
 #endif

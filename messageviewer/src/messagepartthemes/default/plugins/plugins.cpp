@@ -29,5 +29,6 @@ void MessagePartRendererFactoryBasePrivate::initalize_builtin_renderers()
 {
     insert(QStringLiteral("MimeTreeParser::MessagePart"), new MessagePartRenderer());
     insert(QStringLiteral("MimeTreeParser::TextMessagePart"), new TextMessagePartRenderer());
-    insert(QStringLiteral("MimeTreeParser::AttachmentMessagePart"), new AttachmentMessagePartRenderer());
+    insert(QStringLiteral(
+               "MimeTreeParser::AttachmentMessagePart"), new AttachmentMessagePartRenderer());
 }

@@ -23,8 +23,7 @@
 #include <KMessageWidget>
 #include <QUrl>
 class QTimer;
-namespace MessageViewer
-{
+namespace MessageViewer {
 class OpenAttachmentFolderWidget : public KMessageWidget
 {
     Q_OBJECT

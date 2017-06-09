@@ -26,15 +26,13 @@ class MessageViewer::ViewerPluginInterfacePrivate
 public:
     ViewerPluginInterfacePrivate()
     {
-
     }
 };
 
 ViewerPluginInterface::ViewerPluginInterface(QObject *parent)
-    : QObject(parent),
-      d(new MessageViewer::ViewerPluginInterfacePrivate)
+    : QObject(parent)
+    , d(new MessageViewer::ViewerPluginInterfacePrivate)
 {
-
 }
 
 ViewerPluginInterface::~ViewerPluginInterface()

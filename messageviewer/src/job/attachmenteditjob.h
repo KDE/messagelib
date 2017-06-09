@@ -24,12 +24,10 @@
 #include <AkonadiCore/Item>
 #include <QHash>
 #include <kmime/kmime_message.h>
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
-namespace MessageViewer
-{
+namespace MessageViewer {
 class EditorWatcher;
 class AttachmentEditJob : public QObject
 {

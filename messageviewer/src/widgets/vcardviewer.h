@@ -23,14 +23,11 @@
 #include <QDialog>
 #include <kcontacts/addressee.h>
 
-namespace KAddressBookGrantlee
-{
+namespace KAddressBookGrantlee {
 class GrantleeContactViewer;
 }
 class QPushButton;
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class VCardViewer : public QDialog
 {
     Q_OBJECT
@@ -51,8 +48,6 @@ private:
     QPushButton *mUser2Button;
     QPushButton *mUser3Button;
 };
-
 }
 
 #endif // VCARDVIEWER_H
-

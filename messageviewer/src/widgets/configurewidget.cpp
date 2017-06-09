@@ -36,7 +36,6 @@ public:
     ConfigureWidgetPrivate()
         : mSettingsUi(nullptr)
     {
-
     }
 
     ~ConfigureWidgetPrivate()
@@ -49,8 +48,8 @@ public:
 };
 
 ConfigureWidget::ConfigureWidget(QWidget *parent)
-    : QWidget(parent),
-      d(new MessageViewer::ConfigureWidgetPrivate)
+    : QWidget(parent)
+    , d(new MessageViewer::ConfigureWidgetPrivate)
 {
     d->mSettingsUi = new Ui_Settings;
     d->mSettingsUi->setupUi(this);
@@ -68,7 +67,10 @@ ConfigureWidget::ConfigureWidget(QWidget *parent)
     d->mSettingsUi->kcfg_ShowExpandQuotesMark->setWhatsThis(
         MessageViewer::MessageViewerSettings::self()->showExpandQuotesMarkItem()->whatsThis());
 
-    connect(d->mSettingsUi->overrideCharacterEncoding, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &ConfigureWidget::settingsChanged);
+    connect(d->mSettingsUi->overrideCharacterEncoding,
+            static_cast<void (KComboBox::*)(
+                            int)>(&KComboBox::currentIndexChanged), this,
+            &ConfigureWidget::settingsChanged);
 }
 
 ConfigureWidget::~ConfigureWidget()
@@ -86,14 +88,16 @@ void ConfigureWidget::readConfig()
 void ConfigureWidget::writeConfig()
 {
     MessageCore::MessageCoreSettings::self()->setOverrideCharacterEncoding(
-        d->mSettingsUi->overrideCharacterEncoding->currentIndex() == 0 ?
-        QString() :
-        MimeTreeParser::NodeHelper::encodingForName(d->mSettingsUi->overrideCharacterEncoding->currentText()));
+        d->mSettingsUi->overrideCharacterEncoding->currentIndex() == 0
+        ? QString()
+        : MimeTreeParser::NodeHelper::encodingForName(d->mSettingsUi->overrideCharacterEncoding->
+                                                      currentText()));
 }
 
 void ConfigureWidget::readCurrentOverrideCodec()
 {
-    const QString &currentOverrideEncoding = MessageCore::MessageCoreSettings::self()->overrideCharacterEncoding();
+    const QString &currentOverrideEncoding
+        = MessageCore::MessageCoreSettings::self()->overrideCharacterEncoding();
     if (currentOverrideEncoding.isEmpty()) {
         d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
         return;
@@ -112,10 +116,10 @@ void ConfigureWidget::readCurrentOverrideCodec()
     }
     if (i == encodings.size()) {
         // the current value of overrideCharacterEncoding is an unknown encoding => reset to Auto
-        qCWarning(MESSAGEVIEWER_LOG) << "Unknown override character encoding" << currentOverrideEncoding
+        qCWarning(MESSAGEVIEWER_LOG) << "Unknown override character encoding"
+                                     << currentOverrideEncoding
                                      << ". Resetting to Auto.";
         d->mSettingsUi->overrideCharacterEncoding->setCurrentIndex(0);
         MessageCore::MessageCoreSettings::self()->setOverrideCharacterEncoding(QString());
     }
 }
-

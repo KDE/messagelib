@@ -36,11 +36,10 @@
 
 class MessagePartRendererBase;
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class MessagePartRendererFactoryBase;
 
-typedef QMap<QString, std::vector<MessagePartRendererBase*>> TypeRegistry;
+typedef QMap<QString, std::vector<MessagePartRendererBase *> > TypeRegistry;
 
 class MessagePartRendererFactoryBasePrivate
 {
@@ -55,7 +54,6 @@ public:
     MessagePartRendererFactoryBase *q;
     std::unique_ptr<TypeRegistry> mAll;
 };
-
 }
 
 #endif

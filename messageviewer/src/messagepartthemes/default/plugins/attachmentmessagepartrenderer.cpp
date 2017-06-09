@@ -40,7 +40,9 @@ AttachmentMessagePartRenderer::~AttachmentMessagePartRenderer()
 {
 }
 
-QSharedPointer<PartRendered> AttachmentMessagePartRenderer::render(DefaultRendererPrivate *drp, const MimeTreeParser::Interface::MessagePartPtr &msgPart) const
+QSharedPointer<PartRendered> AttachmentMessagePartRenderer::render(DefaultRendererPrivate *drp,
+                                                                   const MimeTreeParser::Interface::MessagePartPtr &msgPart)
+const
 {
     auto mp = msgPart.dynamicCast<AttachmentMessagePart>();
     if (!mp) {
@@ -60,18 +62,23 @@ QSharedPointer<PartRendered> AttachmentMessagePartRenderer::render(DefaultRender
         return drp->renderWithFactory(QStringLiteral("MimeTreeParser::TextMessagePart"), mp);
     }
 
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/asiconpart.html"));
+    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
+                                                                                             ":/asiconpart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
     c.insert(QStringLiteral("block"), &block);
 
     block.setProperty("showTextFrame", mp->showTextFrame());
-    block.setProperty("label", MessageCore::StringUtil::quoteHtmlChars(NodeHelper::fileName(node), true));
-    block.setProperty("comment", MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->asUnicodeString(), true));
+    block.setProperty("label",
+                      MessageCore::StringUtil::quoteHtmlChars(NodeHelper::fileName(node), true));
+    block.setProperty("comment",
+                      MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->
+                                                              asUnicodeString(), true));
     block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
     block.setProperty("showLink", mp->showLink());
     block.setProperty("dir", drp->alignText());
-    block.setProperty("iconSize", MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
+    block.setProperty("iconSize",
+                      MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
     block.setProperty("inline", (tmpAsIcon == MimeTreeParser::IconInline));
 
     QString iconPath;

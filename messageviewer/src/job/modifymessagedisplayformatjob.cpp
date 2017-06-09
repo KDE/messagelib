@@ -26,17 +26,15 @@
 
 using namespace MessageViewer;
 ModifyMessageDisplayFormatJob::ModifyMessageDisplayFormatJob(QObject *parent)
-    : QObject(parent),
-      mMessageFormat(Viewer::UseGlobalSetting),
-      mRemoteContent(false),
-      mResetFormat(false)
+    : QObject(parent)
+    , mMessageFormat(Viewer::UseGlobalSetting)
+    , mRemoteContent(false)
+    , mResetFormat(false)
 {
-
 }
 
 ModifyMessageDisplayFormatJob::~ModifyMessageDisplayFormatJob()
 {
-
 }
 
 void ModifyMessageDisplayFormatJob::setRemoteContent(bool remote)
@@ -57,7 +55,7 @@ void ModifyMessageDisplayFormatJob::setResetFormat(bool resetFormat)
 void ModifyMessageDisplayFormatJob::start()
 {
     if (mMessageItem.isValid()) {
-        if (mResetFormat)  {
+        if (mResetFormat) {
             resetDisplayFormat();
         } else {
             modifyDisplayFormat();
@@ -84,7 +82,9 @@ void ModifyMessageDisplayFormatJob::resetDisplayFormat()
 
 void ModifyMessageDisplayFormatJob::modifyDisplayFormat()
 {
-    MessageViewer::MessageDisplayFormatAttribute *attr  = mMessageItem.attribute<MessageViewer::MessageDisplayFormatAttribute>(Akonadi::Item::AddIfMissing);
+    MessageViewer::MessageDisplayFormatAttribute *attr
+        = mMessageItem.attribute<MessageViewer::MessageDisplayFormatAttribute>(
+        Akonadi::Item::AddIfMissing);
     attr->setRemoteContent(mRemoteContent);
     attr->setMessageFormat(mMessageFormat);
     Akonadi::ItemModifyJob *modify = new Akonadi::ItemModifyJob(mMessageItem);

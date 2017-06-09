@@ -27,7 +27,6 @@ using namespace MessageViewer;
 CidReferencesUrlInterceptor::CidReferencesUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
-
 }
 
 CidReferencesUrlInterceptor::~CidReferencesUrlInterceptor()
@@ -38,7 +37,8 @@ bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
 {
     const QUrl urlRequestUrl(info.requestUrl());
     if (urlRequestUrl.scheme() == QLatin1String("cid")) {
-        const QString newUrl = MessageViewer::WebEngineEmbedPart::self()->contentUrl(urlRequestUrl.path());
+        const QString newUrl = MessageViewer::WebEngineEmbedPart::self()->contentUrl(
+            urlRequestUrl.path());
         if (!newUrl.isEmpty()) {
             info.redirect(QUrl(newUrl));
         }

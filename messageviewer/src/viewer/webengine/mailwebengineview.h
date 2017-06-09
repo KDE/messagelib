@@ -23,12 +23,10 @@
 #include <WebEngineViewer/WebEngineView>
 #include <boost/function.hpp>
 class KActionCollection;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebHitTestResult;
 }
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ViewerPrivate;
 class MailWebEngineViewPrivate;
 class MESSAGEVIEWER_EXPORT MailWebEngineView : public WebEngineViewer::WebEngineView

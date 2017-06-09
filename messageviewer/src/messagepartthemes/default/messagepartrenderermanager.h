@@ -24,14 +24,11 @@
 #include "messageviewer_export.h"
 #include <grantlee/template.h>
 
-namespace GrantleeTheme
-{
+namespace GrantleeTheme {
 class Engine;
 }
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
 {
     Q_OBJECT

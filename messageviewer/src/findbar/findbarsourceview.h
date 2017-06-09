@@ -23,8 +23,7 @@
 
 class QPlainTextEdit;
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class FindBarSourceView : public WebEngineViewer::FindBarBase
 {
     Q_OBJECT
@@ -38,6 +37,7 @@ private:
     {
         Q_UNUSED(parent);
     }
+
     void clearSelections() override;
     void searchText(bool backward, bool isAutoSearch) override;
     void updateHighLight(bool) override;
@@ -49,4 +49,3 @@ private:
 }
 
 #endif /* FINDBARSOURCEVIEW_H */
-

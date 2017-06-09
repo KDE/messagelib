@@ -30,8 +30,7 @@
 #ifndef __MESSAGEVIEWER_DEFAULTRRENDERER_RENDERERRPLUGINFACTORYSIGNLETON_P_H__
 #define __MESSAGEVIEWER_DEFAULTRRENDERER_RENDERERRPLUGINFACTORYSIGNLETON_P_H__
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class MessagePartRendererFactoryBase;
 }
 

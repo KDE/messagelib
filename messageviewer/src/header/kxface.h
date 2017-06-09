@@ -491,17 +491,17 @@ typedef struct prob {
 } Prob;
 
 static const Prob levels[4][3] = {
-    {{1, 255},  {251, 0}, {4, 251}},        /* Top of tree almost always grey */
-    {{1, 255},  {200, 0}, {55, 200}},
+    {{1, 255}, {251, 0}, {4, 251}},         /* Top of tree almost always grey */
+    {{1, 255}, {200, 0}, {55, 200}},
     {{33, 223}, {159, 0}, {64, 159}},
-    {{131, 0},  {0, 0},   {125, 131}}        /* Grey disallowed at bottom */
+    {{131, 0}, {0, 0}, {125, 131}}           /* Grey disallowed at bottom */
 };
 
 static const Prob freqs[16] = {
-    {0, 0},    {38, 0},   {38, 38},  {13, 152},
-    {38, 76},  {13, 165}, {13, 178}, {6, 230},
+    {0, 0}, {38, 0}, {38, 38}, {13, 152},
+    {38, 76}, {13, 165}, {13, 178}, {6, 230},
     {38, 114}, {13, 191}, {13, 204}, {6, 236},
-    {13, 217}, {6, 242},  {5, 248},  {3, 253}
+    {13, 217}, {6, 242}, {5, 248}, {3, 253}
 };
 
 static const char HexDigits[] = "0123456789ABCDEF";
@@ -509,9 +509,7 @@ static const char HexDigits[] = "0123456789ABCDEF";
 class QImage;
 class QString;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT KXFace : public QObject
 {
     Q_OBJECT
@@ -577,7 +575,6 @@ private:
     int  AllBlack(char *f, int wid, int hei);
     int  Same(register char *f, register int wid, register int hei);
     void PushGreys(char *f, int wid, int hei);
-
 };
 }
 #endif

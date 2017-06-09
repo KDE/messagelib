@@ -29,8 +29,10 @@
 using namespace MessageViewer;
 
 WebEnginePartHtmlWriter::WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent)
-    : QObject(parent), MimeTreeParser::HtmlWriter(),
-      mHtmlView(view), mState(Ended)
+    : QObject(parent)
+    , MimeTreeParser::HtmlWriter()
+    , mHtmlView(view)
+    , mState(Ended)
 {
     assert(view);
 }
@@ -100,8 +102,7 @@ void WebEnginePartHtmlWriter::flush()
     end();
 }
 
-void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId,
-                                        const QString &contentURL)
+void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId, const QString &contentURL)
 {
     MessageViewer::WebEngineEmbedPart::self()->addEmbedPart(contentId, contentURL);
 }

@@ -79,13 +79,13 @@ void AntiSpamConfig::readConfig()
     for (unsigned int i = 1; i <= totalTools; ++i) {
         KConfigGroup tool(&config, QStringLiteral("Spamtool #%1").arg(i));
         if (tool.hasKey("ScoreHeader")) {
-            const QString name        = tool.readEntry("ScoreName");
-            const QByteArray header   = tool.readEntry("ScoreHeader").toLatin1();
-            const QByteArray cheader  = tool.readEntry("ConfidenceHeader").toLatin1();
-            const QByteArray type     = tool.readEntry("ScoreType").toLatin1();
-            const QString score       = tool.readEntryUntranslated("ScoreValueRegexp");
-            const QString threshold   = tool.readEntryUntranslated("ScoreThresholdRegexp");
-            const QString confidence  = tool.readEntryUntranslated("ScoreConfidenceRegexp");
+            const QString name = tool.readEntry("ScoreName");
+            const QByteArray header = tool.readEntry("ScoreHeader").toLatin1();
+            const QByteArray cheader = tool.readEntry("ConfidenceHeader").toLatin1();
+            const QByteArray type = tool.readEntry("ScoreType").toLatin1();
+            const QString score = tool.readEntryUntranslated("ScoreValueRegexp");
+            const QString threshold = tool.readEntryUntranslated("ScoreThresholdRegexp");
+            const QString confidence = tool.readEntryUntranslated("ScoreConfidenceRegexp");
             SpamAgentTypes typeE = SpamAgentNone;
             if (qstricmp(type.data(), "bool") == 0) {
                 typeE = SpamAgentBool;

@@ -27,16 +27,15 @@ public:
     ViewerPluginPrivate()
         : mEnabled(false)
     {
-
     }
+
     bool mEnabled;
 };
 
 ViewerPlugin::ViewerPlugin(QObject *parent)
-    : QObject(parent),
-      d(new MessageViewer::ViewerPluginPrivate)
+    : QObject(parent)
+    , d(new MessageViewer::ViewerPluginPrivate)
 {
-
 }
 
 ViewerPlugin::~ViewerPlugin()
@@ -63,4 +62,3 @@ bool ViewerPlugin::isEnabled() const
 {
     return d->mEnabled;
 }
-

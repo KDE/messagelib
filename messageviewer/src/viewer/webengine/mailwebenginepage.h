@@ -22,8 +22,7 @@
 #include "messageviewer_export.h"
 #include <WebEngineViewer/WebEnginePage>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT MailWebEnginePage : public WebEngineViewer::WebEnginePage
 {
     Q_OBJECT

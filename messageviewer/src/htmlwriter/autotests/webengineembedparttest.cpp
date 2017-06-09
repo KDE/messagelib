@@ -22,12 +22,10 @@
 WebEngineEmbedPartTest::WebEngineEmbedPartTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 WebEngineEmbedPartTest::~WebEngineEmbedPartTest()
 {
-
 }
 
 void WebEngineEmbedPartTest::shouldHaveDefaultValue()

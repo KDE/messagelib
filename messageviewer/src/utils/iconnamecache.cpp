@@ -31,7 +31,7 @@ IconNameCache *IconNameCache::instance()
     return s_iconNameCache;
 }
 
-bool IconNameCache::Entry::operator < (const Entry &other) const
+bool IconNameCache::Entry::operator <(const Entry &other) const
 {
     const int fileNameCompare = fileName.compare(other.fileName);
     if (fileNameCompare != 0) {
@@ -76,7 +76,10 @@ QString IconNameCache::iconPathFromLocal(const QString &name) const
 QString IconNameCache::picsPath() const
 {
     if (mPicsPath.isEmpty()) {
-        mPicsPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("libmessageviewer/pics/"), QStandardPaths::LocateDirectory);
+        mPicsPath
+            = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral(
+                                         "libmessageviewer/pics/"),
+                                     QStandardPaths::LocateDirectory);
     }
     return mPicsPath;
 }

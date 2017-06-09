@@ -29,16 +29,15 @@ public:
     LoadExternalReferencesUrlInterceptorPrivate()
         : mAllowLoadExternalReference(false)
     {
-
     }
+
     bool mAllowLoadExternalReference;
 };
 
 LoadExternalReferencesUrlInterceptor::LoadExternalReferencesUrlInterceptor(QObject *parent)
-    : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent),
-      d(new LoadExternalReferencesUrlInterceptorPrivate)
+    : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
+    , d(new LoadExternalReferencesUrlInterceptorPrivate)
 {
-
 }
 
 LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
@@ -52,8 +51,8 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
         return false;
     } else {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage
-                && !info.requestUrl().isLocalFile()
-                && (info.requestUrl().scheme() != QLatin1String("cid"))) {
+            && !info.requestUrl().isLocalFile()
+            && (info.requestUrl().scheme() != QLatin1String("cid"))) {
             return true;
         } else if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeMedia) {
             return true;

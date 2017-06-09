@@ -35,11 +35,8 @@
 #include <QPaintDevice>
 #include <QPalette>
 
-namespace MessageViewer
-{
-
-namespace
-{
+namespace MessageViewer {
+namespace {
 // some QColor manipulators that hide the ugly QColor API w.r.t. HSV:
 inline QColor darker(const QColor &c)
 {
@@ -81,7 +78,6 @@ CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
 
 CSSHelperBase::~CSSHelperBase()
 {
-
 }
 
 void CSSHelperBase::recalculatePGPColors()
@@ -212,8 +208,7 @@ int CSSHelperBase::fontSize(bool fixed, bool print) const
     return bodyFont(fixed, print).pointSize();
 }
 
-namespace
-{
+namespace {
 int pointsToPixel(const QPaintDevice *pd, int pointSize)
 {
     return (pointSize * pd->logicalDpiY() + 36) / 72;
@@ -225,7 +220,7 @@ static const char *const quoteFontSizes[] = { "85", "80", "75" };
 QString CSSHelperBase::printCssDefinitions(bool fixed) const
 {
     const QString headerFont = QStringLiteral("  font-family: \"%1\" ! important;\n"
-                               "  font-size: %2pt ! important;\n")
+                                              "  font-size: %2pt ! important;\n")
                                .arg(mPrintFont.family())
                                .arg(mPrintFont.pointSize());
     const QPalette &pal = QApplication::palette();
@@ -308,7 +303,7 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                        "div.noprint {\n"
                        "  display:none ! important;\n"
                        "}\n\n"
-                      )
+                       )
         .arg(headerFont,
              pal.color(QPalette::Background).name(),
              pal.color(QPalette::Foreground).name())
@@ -346,11 +341,12 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
     const QString bgColor = mBackgroundColor.name();
     const QString linkColor = mLinkColor.name();
     const QString headerFont = QStringLiteral("  font-family: \"%1\" ! important;\n"
-                               "  font-size: %2px ! important;\n")
+                                              "  font-size: %2px ! important;\n")
                                .arg(mBodyFont.family())
                                .arg(pointsToPixel(helper->mPaintDevice, mBodyFont.pointSize()));
-    const QString background =  QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
-    const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(fixed))) + QLatin1String("px");
+    const QString background = QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
+    const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(
+                                                                   fixed))) + QLatin1String("px");
     const QPalette &pal = QApplication::palette();
 
     QString quoteCSS;
@@ -375,9 +371,10 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
         if (mQuoteFont.bold()) {
             quoteCSS += QLatin1String("  font-weight: bold ! important;\n");
         }
-        if (mShrinkQuotes)
+        if (mShrinkQuotes) {
             quoteCSS += QLatin1String("  font-size: ") + QString::fromLatin1(quoteFontSizes[i])
                         + QLatin1String("% ! important;\n");
+        }
         quoteCSS += QLatin1String("}\n\n");
     }
 
@@ -592,7 +589,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                        "div.senderstatus{\n"
                        "  text-align:center ! important;\n"
                        "}\n\n"
-                      )
+                       )
 
         .arg(headerFont)
         .arg(pal.color(QPalette::Highlight).name(),
@@ -607,7 +604,7 @@ QString CSSHelperBase::commonCssDefinitions() const
 {
     const QPalette &pal = QApplication::palette();
     const QString headerFont = QStringLiteral("font-family: \"%1\" ! important;\n"
-                               "  font-size: %2px ! important;\n")
+                                              "  font-size: %2px ! important;\n")
                                .arg(mBodyFont.family())
                                .arg(pointsToPixel(this->mPaintDevice, mBodyFont.pointSize()));
 
@@ -723,8 +720,10 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "div.quotelevelmark {\n"
                        "  position: absolute;\n"
                        "  margin-left:-10px;\n"
-                       "}\n\n").arg(pal.color(QPalette::Background).name()).arg(pal.color(QPalette::Foreground).name()).arg(headerFont)
-        ;
+                       "}\n\n").arg(pal.color(QPalette::Background).name()).arg(pal.color(QPalette::
+                                                                                          Foreground).name())
+        .arg(headerFont)
+    ;
 }
 
 void CSSHelperBase::setBodyFont(const QFont &font)
@@ -752,5 +751,4 @@ QColor CSSHelperBase::pgpWarnColor() const
 {
     return cPgpWarnH;
 }
-
 }

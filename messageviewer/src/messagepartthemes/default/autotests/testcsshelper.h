@@ -22,11 +22,8 @@
 
 #include <MessageViewer/CSSHelperBase>
 
-namespace MessageViewer
-{
-namespace Test
-{
-
+namespace MessageViewer {
+namespace Test {
 class TestCSSHelper : public MessageViewer::CSSHelperBase
 {
 public:
@@ -35,7 +32,6 @@ public:
     QString htmlHead(bool fixed) const override;
 };
 }
-
 }
 
 #endif // __MESSSAGEVIEWER_TESTCSSHELPER_H__

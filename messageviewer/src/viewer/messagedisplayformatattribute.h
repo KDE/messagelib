@@ -24,8 +24,7 @@
 #include <AkonadiCore/attribute.h>
 #include "messageviewer_export.h"
 #include "messageviewer/viewer.h"
-namespace MessageViewer
-{
+namespace MessageViewer {
 class MessageDisplayFormatAttributePrivate;
 
 class MESSAGEVIEWER_EXPORT MessageDisplayFormatAttribute : public Akonadi::Attribute

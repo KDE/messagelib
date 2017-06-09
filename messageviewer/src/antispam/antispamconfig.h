@@ -40,9 +40,7 @@
 
 class QString;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 /// Valid types of SpamAgent
 enum SpamAgentTypes {
     SpamAgentNone,          //!< Invalid SpamAgent, skip this agent
@@ -55,36 +53,53 @@ enum SpamAgentTypes {
 class SpamAgent
 {
 public:
-    SpamAgent() : mType(SpamAgentNone) {}
-    SpamAgent(const QString &name, SpamAgentTypes type, const QByteArray &field, const QByteArray &cfield,
-              const QRegExp &score, const QRegExp &threshold, const QRegExp &confidence)
-        : mName(name), mType(type), mField(field), mConfidenceField(cfield),
-          mScore(score), mThreshold(threshold), mConfidence(confidence) {}
+    SpamAgent() : mType(SpamAgentNone)
+    {
+    }
+
+    SpamAgent(const QString &name, SpamAgentTypes type, const QByteArray &field,
+              const QByteArray &cfield, const QRegExp &score, const QRegExp &threshold,
+              const QRegExp &confidence)
+        : mName(name)
+        , mType(type)
+        , mField(field)
+        , mConfidenceField(cfield)
+        , mScore(score)
+        , mThreshold(threshold)
+        , mConfidence(confidence)
+    {
+    }
 
     QString name() const
     {
         return mName;
     }
+
     SpamAgentTypes scoreType() const
     {
         return mType;
     }
+
     QByteArray header() const
     {
         return mField;
     }
+
     QByteArray confidenceHeader() const
     {
         return mConfidenceField;
     }
+
     QRegExp scorePattern() const
     {
         return mScore;
     }
+
     QRegExp thresholdPattern() const
     {
         return mThreshold;
     }
+
     QRegExp confidencePattern() const
     {
         return mConfidence;
@@ -141,7 +156,6 @@ private:
 
     void readConfig();
 };
-
 }
 
 #endif // __MESSAGEVIEWER_ANTISPAMCONFIG_H__

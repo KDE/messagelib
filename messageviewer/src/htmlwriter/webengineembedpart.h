@@ -20,8 +20,7 @@
 
 #include <QObject>
 #include <QMap>
-namespace MessageViewer
-{
+namespace MessageViewer {
 class WebEngineEmbedPart : public QObject
 {
     Q_OBJECT

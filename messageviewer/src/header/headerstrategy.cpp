@@ -39,12 +39,10 @@
 using namespace MessageViewer;
 HeaderStrategy::HeaderStrategy()
 {
-
 }
 
 HeaderStrategy::~HeaderStrategy()
 {
-
 }
 
 QStringList HeaderStrategy::headersToDisplay() const

@@ -30,11 +30,10 @@
 using namespace MessageViewer;
 
 AttachmentEditJob::AttachmentEditJob(QObject *parent)
-    : QObject(parent),
-      mShowWarning(true),
-      mMainWindow(nullptr)
+    : QObject(parent)
+    , mShowWarning(true)
+    , mMainWindow(nullptr)
 {
-
 }
 
 AttachmentEditJob::~AttachmentEditJob()
@@ -45,10 +44,16 @@ AttachmentEditJob::~AttachmentEditJob()
 bool AttachmentEditJob::addAttachment(KMime::Content *node, bool showWarning)
 {
     if (showWarning && KMessageBox::warningContinueCancel(mMainWindow,
-            i18n("Modifying an attachment might invalidate any digital signature on this message."),
-            i18n("Edit Attachment"), KGuiItem(i18n("Edit"), QStringLiteral("document-properties")), KStandardGuiItem::cancel(),
-            QStringLiteral("EditAttachmentSignatureWarning"))
-            != KMessageBox::Continue) {
+                                                          i18n(
+                                                              "Modifying an attachment might invalidate any digital signature on this message."),
+                                                          i18n("Edit Attachment"),
+                                                          KGuiItem(i18n("Edit"),
+                                                                   QStringLiteral(
+                                                                       "document-properties")),
+    KStandardGuiItem::cancel(),
+                                                          QStringLiteral(
+                                                              "EditAttachmentSignatureWarning"))
+        != KMessageBox::Continue) {
         return false;
     }
 
@@ -61,9 +66,10 @@ bool AttachmentEditJob::addAttachment(KMime::Content *node, bool showWarning)
     file.write(node->decodedContent());
     file.flush();
 
-    EditorWatcher *watcher =
-        new EditorWatcher(QUrl::fromLocalFile(file.fileName()), QLatin1String(node->contentType()->mimeType()),
-                          MessageViewer::EditorWatcher::NoOpenWithDialog, this, mMainWindow);
+    EditorWatcher *watcher
+        = new EditorWatcher(QUrl::fromLocalFile(file.fileName()),
+                            QLatin1String(node->contentType()->mimeType()),
+                            MessageViewer::EditorWatcher::NoOpenWithDialog, this, mMainWindow);
     mEditorWatchers[ watcher ] = node;
 
     connect(watcher, &EditorWatcher::editDone, this, &AttachmentEditJob::slotAttachmentEditDone);
@@ -123,7 +129,8 @@ void AttachmentEditJob::canDeleteJob()
     }
 }
 
-void AttachmentEditJob::removeEditorWatcher(MessageViewer::EditorWatcher *editorWatcher, const QString &name)
+void AttachmentEditJob::removeEditorWatcher(MessageViewer::EditorWatcher *editorWatcher,
+                                            const QString &name)
 {
     mEditorWatchers.remove(editorWatcher);
     QFile::remove(name);
@@ -133,4 +140,3 @@ void AttachmentEditJob::setMessage(const KMime::Message::Ptr &message)
 {
     mMessage = message;
 }
-

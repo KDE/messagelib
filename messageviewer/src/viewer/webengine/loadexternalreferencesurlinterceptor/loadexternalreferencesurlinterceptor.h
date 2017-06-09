@@ -21,10 +21,10 @@
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class LoadExternalReferencesUrlInterceptorPrivate;
-class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
+class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::
+    NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:

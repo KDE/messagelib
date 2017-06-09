@@ -22,8 +22,7 @@
 
 #include "messageviewer/headerstyle.h"
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class GrantleeHeaderStylePrivate;
 class MESSAGEVIEWER_EXPORT GrantleeHeaderStyle : public HeaderStyle
 {

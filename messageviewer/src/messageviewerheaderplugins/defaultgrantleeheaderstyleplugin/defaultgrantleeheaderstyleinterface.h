@@ -23,14 +23,13 @@
 #include <messageviewer/headerstyleinterface.h>
 #include <grantleetheme/grantleetheme.h>
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class DefaultGrantleeHeaderStyleInterface : public MessageViewer::HeaderStyleInterface
 {
     Q_OBJECT
 public:
-    explicit DefaultGrantleeHeaderStyleInterface(HeaderStylePlugin *plugin, QObject *parent = nullptr);
+    explicit DefaultGrantleeHeaderStyleInterface(HeaderStylePlugin *plugin,
+                                                 QObject *parent = nullptr);
     ~DefaultGrantleeHeaderStyleInterface();
 
     void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) override;
@@ -39,7 +38,6 @@ private:
     void slotDefaultGrantleeHeaders();
     GrantleeTheme::Theme mDefaultTheme;
 };
-
 }
 
 #endif // DEFAULTGRANTLEEHEADERSTYLEINTERFACE_H

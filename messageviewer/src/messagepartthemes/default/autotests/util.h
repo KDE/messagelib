@@ -25,28 +25,51 @@
 
 #include <KMime/Message>
 
-namespace MessageViewer
-{
-
-namespace Test
-{
-
+namespace MessageViewer {
+namespace Test {
 class HtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
-    explicit HtmlWriter() {}
-    virtual ~HtmlWriter() {}
+    explicit HtmlWriter()
+    {
+    }
 
-    void begin(const QString &) override {}
-    void write(const QString &) override {}
-    void end() override {}
-    void reset() override {}
-    void queue(const QString &str) override {
+    virtual ~HtmlWriter()
+    {
+    }
+
+    void begin(const QString &) override
+    {
+    }
+
+    void write(const QString &) override
+    {
+    }
+
+    void end() override
+    {
+    }
+
+    void reset() override
+    {
+    }
+
+    void queue(const QString &str) override
+    {
         html.append(str);
     }
-    void flush() override {}
-    void embedPart(const QByteArray &, const QString &) override {}
-    void extraHead(const QString &) override {}
+
+    void flush() override
+    {
+    }
+
+    void embedPart(const QByteArray &, const QString &) override
+    {
+    }
+
+    void extraHead(const QString &) override
+    {
+    }
 
     QString html;
 };
@@ -60,7 +83,10 @@ public:
             mQuoteColor[i] = QColor(0x00, 0x80 - i * 0x10, 0x00);
         }
     }
-    virtual ~CSSHelper() {}
+
+    virtual ~CSSHelper()
+    {
+    }
 
     QString nonQuotedFontTag() const
     {
@@ -74,7 +100,6 @@ public:
 };
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile);
-
 }
 }
 

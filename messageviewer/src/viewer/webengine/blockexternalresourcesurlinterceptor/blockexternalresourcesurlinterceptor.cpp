@@ -26,7 +26,6 @@ using namespace MessageViewer;
 BlockExternalResourcesUrlInterceptor::BlockExternalResourcesUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
-
 }
 
 BlockExternalResourcesUrlInterceptor::~BlockExternalResourcesUrlInterceptor()
@@ -37,28 +36,28 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
 {
     const QWebEngineUrlRequestInfo::ResourceType resourceType = info.resourceType();
     const QWebEngineUrlRequestInfo::NavigationType navigationType = info.navigationType();
-    if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeMedia ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypePing ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypePrefetch ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeFavicon ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeXhr ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeObject ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeScript ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeServiceWorker ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeSharedWorker ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeWorker ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeSubResource ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypePluginResource ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeCspReport ||
-            resourceType == QWebEngineUrlRequestInfo::ResourceTypeUnknown) {
+    if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeMedia
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypePing
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypePrefetch
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeFavicon
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeXhr
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeObject
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeScript
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeServiceWorker
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeSharedWorker
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeWorker
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeSubResource
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypePluginResource
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeCspReport
+        || resourceType == QWebEngineUrlRequestInfo::ResourceTypeUnknown) {
         return true;
     } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeFormSubmitted) {
         Q_EMIT formSubmittedForbidden();
         return true;
-    } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeReload ||
-               navigationType == QWebEngineUrlRequestInfo::NavigationTypeTyped ||
-               navigationType == QWebEngineUrlRequestInfo::NavigationTypeBackForward ||
-               navigationType == QWebEngineUrlRequestInfo::NavigationTypeOther) {
+    } else if (navigationType == QWebEngineUrlRequestInfo::NavigationTypeReload
+               || navigationType == QWebEngineUrlRequestInfo::NavigationTypeTyped
+               || navigationType == QWebEngineUrlRequestInfo::NavigationTypeBackForward
+               || navigationType == QWebEngineUrlRequestInfo::NavigationTypeOther) {
         return true;
     }
     return false;

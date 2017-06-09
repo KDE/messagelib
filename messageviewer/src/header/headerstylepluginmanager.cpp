@@ -50,10 +50,9 @@ class HeaderStylePluginInfo
 {
 public:
     HeaderStylePluginInfo()
-        : plugin(nullptr),
-          isEnabled(false)
+        : plugin(nullptr)
+        , isEnabled(false)
     {
-
     }
 
     QString metaDataFileNameBaseName;
@@ -69,8 +68,8 @@ public:
     HeaderStylePluginManagerPrivate(HeaderStylePluginManager *qq)
         : q(qq)
     {
-
     }
+
     QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;
     QVector<PimCommon::PluginUtilData> pluginDataList() const;
     void initializePluginList();
@@ -84,8 +83,7 @@ private:
     HeaderStylePluginManager *q;
 };
 
-namespace
-{
+namespace {
 QString pluginVersion()
 {
     return QStringLiteral("1.0");
@@ -109,13 +107,16 @@ QString HeaderStylePluginManagerPrivate::configPrefixSettingKey() const
 
 void HeaderStylePluginManagerPrivate::initializePluginList()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](const KPluginMetaData & md) {
+    const QVector<KPluginMetaData> plugins
+        = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](
+                                         const KPluginMetaData &md) {
         return md.serviceTypes().contains(QStringLiteral("MessageViewerHeaderStyle/Plugin"));
     });
 
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(
+        configGroupName(), configPrefixSettingKey());
     QSet<QString> unique;
     QVector<int> listOrder;
     while (i.hasPrevious()) {
@@ -126,18 +127,21 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
         //1) get plugin data => name/description etc.
         info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
         //2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first,
+                                                                                pair.second,
+                                                                                info.pluginData.mEnableByDefault,
+                                                                                info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         const QString version = data.version();
         if (pluginVersion() == version) {
-
             // only load plugins once, even if found multiple times!
             if (unique.contains(info.metaDataFileNameBaseName)) {
                 continue;
             }
-            const QVariant p = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Header-Order")).toVariant();
+            const QVariant p
+                = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Header-Order")).toVariant();
             int order = -1;
             if (p.isValid()) {
                 order = p.toInt();
@@ -155,7 +159,9 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
             mPluginList.insert(pos, info);
             unique.insert(info.metaDataFileNameBaseName);
         } else {
-            qCWarning(MESSAGEVIEWER_LOG) << "Plugin " << data.name() << " doesn't have correction plugin version. It will not be loaded.";
+            qCWarning(MESSAGEVIEWER_LOG) << "Plugin " << data.name()
+                                         <<
+            " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<HeaderStylePluginInfo>::iterator end(mPluginList.end());
@@ -168,7 +174,8 @@ QVector<MessageViewer::HeaderStylePlugin *> HeaderStylePluginManagerPrivate::plu
 {
     QVector<MessageViewer::HeaderStylePlugin *> lst;
     QVector<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end;
+         ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
         }
@@ -180,17 +187,21 @@ void HeaderStylePluginManagerPrivate::loadPlugin(HeaderStylePluginInfo *item)
 {
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<MessageViewer::HeaderStylePlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
+        item->plugin = pluginLoader.factory()->create<MessageViewer::HeaderStylePlugin>(q,
+                                                                                        QVariantList()
+        << item->metaDataFileNameBaseName);
         item->plugin->setIsEnabled(item->isEnabled);
         item->pluginData.mHasConfigureDialog = false;
         mPluginDataList.append(item->pluginData);
     }
 }
 
-MessageViewer::HeaderStylePlugin *HeaderStylePluginManagerPrivate::pluginFromIdentifier(const QString &id)
+MessageViewer::HeaderStylePlugin *HeaderStylePluginManagerPrivate::pluginFromIdentifier(
+    const QString &id)
 {
     QVector<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+    for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end;
+         ++it) {
         if ((*it).pluginData.mIdentifier == id) {
             return (*it).plugin;
         }
@@ -204,8 +215,8 @@ HeaderStylePluginManager *HeaderStylePluginManager::self()
 }
 
 HeaderStylePluginManager::HeaderStylePluginManager(QObject *parent)
-    : QObject(parent),
-      d(new MessageViewer::HeaderStylePluginManagerPrivate(this))
+    : QObject(parent)
+    , d(new MessageViewer::HeaderStylePluginManagerPrivate(this))
 {
     d->initializePluginList();
 }

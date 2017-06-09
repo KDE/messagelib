@@ -29,11 +29,12 @@ class MessageViewer::GrantleeHeaderStylePrivate
 {
 public:
     GrantleeHeaderStylePrivate()
-        : mGrantleeFormatter(nullptr),
-          mShowMailAction(true)
+        : mGrantleeFormatter(nullptr)
+        , mShowMailAction(true)
     {
         mGrantleeFormatter = new GrantleeHeaderFormatter;
     }
+
     ~GrantleeHeaderStylePrivate()
     {
         delete mGrantleeFormatter;
@@ -44,8 +45,8 @@ public:
 };
 
 GrantleeHeaderStyle::GrantleeHeaderStyle()
-    : HeaderStyle(),
-      d(new MessageViewer::GrantleeHeaderStylePrivate)
+    : HeaderStyle()
+    , d(new MessageViewer::GrantleeHeaderStylePrivate)
 {
 }
 

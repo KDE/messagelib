@@ -42,9 +42,7 @@
 
 class MessagePartRendererBase;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class MessagePartRendererFactoryBasePrivate;
 
 class MESSAGEVIEWER_EXPORT MessagePartRendererFactoryBase
@@ -69,7 +67,6 @@ private:
     const MessagePartRendererFactoryBase &operator=(const MessagePartRendererFactoryBase &);
     MessagePartRendererFactoryBase(const MessagePartRendererFactoryBase &);
 };
-
 }
 
 #endif

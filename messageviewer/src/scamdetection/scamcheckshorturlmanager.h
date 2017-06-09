@@ -23,8 +23,7 @@
 
 #include <QObject>
 #include "messageviewer_export.h"
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ScamCheckShortUrl;
 class ScamCheckShortUrlManagerPrivate;
 class MESSAGEVIEWER_EXPORT ScamCheckShortUrlManager : public QObject

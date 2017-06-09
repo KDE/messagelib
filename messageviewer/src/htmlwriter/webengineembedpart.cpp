@@ -40,12 +40,10 @@ Q_GLOBAL_STATIC(WebEngineEmbedPartInstancePrivate, sInstance)
 WebEngineEmbedPart::WebEngineEmbedPart(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 WebEngineEmbedPart::~WebEngineEmbedPart()
 {
-
 }
 
 WebEngineEmbedPart *WebEngineEmbedPart::self()

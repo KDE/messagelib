@@ -25,8 +25,7 @@
 #include <QObject>
 class KActionMenu;
 class KActionCollection;
-namespace MessageViewer
-{
+namespace MessageViewer {
 class HeaderStylePlugin;
 class HeaderStyleMenuManagerPrivate;
 class MESSAGEVIEWER_EXPORT HeaderStyleMenuManager : public QObject

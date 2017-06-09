@@ -29,8 +29,8 @@ public:
     PrintingSettingsPrivate()
         : mPrintingUi(new Ui_PrintingSettings)
     {
-
     }
+
     ~PrintingSettingsPrivate()
     {
         delete mPrintingUi;
@@ -40,12 +40,16 @@ public:
 };
 
 PrintingSettings::PrintingSettings(QWidget *parent)
-    : QWidget(parent), d(new MessageViewer::PrintingSettingsPrivate)
+    : QWidget(parent)
+    , d(new MessageViewer::PrintingSettingsPrivate)
 {
     d->mPrintingUi->setupUi(this);
-    connect(d->mPrintingUi->mPrintEmptySelectedText, &QCheckBox::toggled, this, &PrintingSettings::changed);
-    connect(d->mPrintingUi->respectExpandCollapseSettings, &QCheckBox::toggled, this, &PrintingSettings::changed);
-    connect(d->mPrintingUi->printBackgroundColorAndImages, &QCheckBox::toggled, this, &PrintingSettings::changed);
+    connect(d->mPrintingUi->mPrintEmptySelectedText, &QCheckBox::toggled, this,
+            &PrintingSettings::changed);
+    connect(d->mPrintingUi->respectExpandCollapseSettings, &QCheckBox::toggled, this,
+            &PrintingSettings::changed);
+    connect(d->mPrintingUi->printBackgroundColorAndImages, &QCheckBox::toggled, this,
+            &PrintingSettings::changed);
 }
 
 PrintingSettings::~PrintingSettings()
@@ -55,24 +59,32 @@ PrintingSettings::~PrintingSettings()
 
 void PrintingSettings::save()
 {
-    saveCheckBox(d->mPrintingUi->mPrintEmptySelectedText, MessageViewer::MessageViewerSettings::self()->printSelectedTextItem());
-    saveCheckBox(d->mPrintingUi->respectExpandCollapseSettings, MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
-    saveCheckBox(d->mPrintingUi->printBackgroundColorAndImages, MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
+    saveCheckBox(d->mPrintingUi->mPrintEmptySelectedText,
+                 MessageViewer::MessageViewerSettings::self()->printSelectedTextItem());
+    saveCheckBox(d->mPrintingUi->respectExpandCollapseSettings,
+                 MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
+    saveCheckBox(d->mPrintingUi->printBackgroundColorAndImages,
+                 MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
 }
 
 void PrintingSettings::doLoadFromGlobalSettings()
 {
-    loadWidget(d->mPrintingUi->mPrintEmptySelectedText, MessageViewer::MessageViewerSettings::self()->printSelectedTextItem());
-    loadWidget(d->mPrintingUi->respectExpandCollapseSettings, MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
-    loadWidget(d->mPrintingUi->printBackgroundColorAndImages, MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
+    loadWidget(d->mPrintingUi->mPrintEmptySelectedText,
+               MessageViewer::MessageViewerSettings::self()->printSelectedTextItem());
+    loadWidget(d->mPrintingUi->respectExpandCollapseSettings,
+               MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
+    loadWidget(d->mPrintingUi->printBackgroundColorAndImages,
+               MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
 }
 
 void PrintingSettings::doResetToDefaultsOther()
 {
     const bool bUseDefaults = MessageViewer::MessageViewerSettings::self()->useDefaults(true);
-    loadWidget(d->mPrintingUi->mPrintEmptySelectedText, MessageViewer::MessageViewerSettings::self()->printSelectedTextItem());
-    loadWidget(d->mPrintingUi->respectExpandCollapseSettings, MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
-    loadWidget(d->mPrintingUi->printBackgroundColorAndImages, MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
+    loadWidget(d->mPrintingUi->mPrintEmptySelectedText,
+               MessageViewer::MessageViewerSettings::self()->printSelectedTextItem());
+    loadWidget(d->mPrintingUi->respectExpandCollapseSettings,
+               MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
+    loadWidget(d->mPrintingUi->printBackgroundColorAndImages,
+               MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
     MessageViewer::MessageViewerSettings::self()->useDefaults(bUseDefaults);
 }
-

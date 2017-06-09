@@ -47,30 +47,27 @@ class QWidget;
 class QActionGroup;
 class QAction;
 
-namespace KMime
-{
+namespace KMime {
 class Message;
 }
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
-namespace Util
-{
-
+namespace Util {
 // return true if we should proceed, false if we should abort
 bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
-MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
+MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs,
+                                            QWidget *parent, bool appendMessages = false);
 
-MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QUrl &currentFolder);
+MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent,
+                                          QUrl &currentFolder);
 
-MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
+MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer,
+                                              QActionGroup *actionGroup, QObject *parent);
 }
-
 }
 Q_DECLARE_METATYPE(KService::Ptr)
 #endif

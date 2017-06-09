@@ -45,7 +45,6 @@
 #include "MessageCore/NodeHelper"
 #include "MessageCore/StringUtil"
 
-
 #include "PimCommon/RenameFileDialog"
 
 #include <AkonadiCore/item.h>
@@ -86,17 +85,16 @@ bool Util::checkOverwrite(const QUrl &url, QWidget *w)
     }
     if (fileExists) {
         if (KMessageBox::Cancel == KMessageBox::warningContinueCancel(
-                    w,
-                    i18n("A file named \"%1\" already exists. "
-                         "Are you sure you want to overwrite it?", url.toDisplayString()),
-                    i18n("Overwrite File?"),
-                    KStandardGuiItem::overwrite())) {
+                w,
+                i18n("A file named \"%1\" already exists. "
+                     "Are you sure you want to overwrite it?", url.toDisplayString()),
+                i18n("Overwrite File?"),
+                KStandardGuiItem::overwrite())) {
             return false;
         }
     }
     return true;
 }
-
 
 bool Util::handleUrlWithQDesktopServices(const QUrl &url)
 {
@@ -137,7 +135,11 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
     const bool multiple = (contents.count() > 1);
     if (multiple) {
         // get the dir
-        dirUrl = QFileDialog::getExistingDirectoryUrl(parent, i18n("Save Attachments To"), KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass));
+        dirUrl = QFileDialog::getExistingDirectoryUrl(parent, i18n(
+                                                          "Save Attachments To"),
+                                                      KFileWidget::getStartUrl(QUrl(QStringLiteral(
+                                                                                        "kfiledialog:///attachmentDir")),
+                                                                               recentDirClass));
         if (!dirUrl.isValid()) {
             return false;
         }
@@ -156,10 +158,13 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
             fileName = i18nc("filename for an unnamed attachment", "attachment.1");
         }
 
-        QUrl localUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass);
+        QUrl localUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral(
+                                                          "kfiledialog:///attachmentDir")),
+                                                 recentDirClass);
         localUrl.setPath(localUrl.path() + QLatin1Char('/') + fileName);
         QFileDialog::Options options = QFileDialog::DontConfirmOverwrite;
-        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl, QString(), nullptr, options);
+        url = QFileDialog::getSaveFileUrl(parent, i18n("Save Attachment"), localUrl,
+                                          QString(), nullptr, options);
         if (url.isEmpty()) {
             return false;
         }
@@ -174,7 +179,8 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
 
     bool globalResult = true;
     int unnamedAtmCount = 0;
-    PimCommon::RenameFileDialog::RenameFileDialogResult result = PimCommon::RenameFileDialog::RENAMEFILE_IGNORE;
+    PimCommon::RenameFileDialog::RenameFileDialogResult result
+        = PimCommon::RenameFileDialog::RENAMEFILE_IGNORE;
     for (KMime::Content *content : qAsConst(contents)) {
         QUrl curUrl;
         if (!dirUrl.isEmpty()) {
@@ -207,7 +213,8 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                 file = origFile;
                 int num = renameNumbering[file] + 1;
                 int dotIdx = file.lastIndexOf(QLatin1Char('.'));
-                file = file.insert((dotIdx >= 0) ? dotIdx : file.length(), QLatin1Char('_') + QString::number(num));
+                file = file.insert((dotIdx >= 0) ? dotIdx : file.length(), QLatin1Char(
+                                       '_') + QString::number(num));
             }
             curUrl = curUrl.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash);
             curUrl.setPath(curUrl.path() + QLatin1Char('/') + file);
@@ -227,8 +234,8 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                 }
             }
 
-            if (!(result == PimCommon::RenameFileDialog::RENAMEFILE_OVERWRITEALL ||
-                    result == PimCommon::RenameFileDialog::RENAMEFILE_IGNOREALL)) {
+            if (!(result == PimCommon::RenameFileDialog::RENAMEFILE_OVERWRITEALL
+                  || result == PimCommon::RenameFileDialog::RENAMEFILE_IGNOREALL)) {
                 bool fileExists = false;
                 if (curUrl.isLocalFile()) {
                     fileExists = QFile::exists(curUrl.toLocalFile());
@@ -238,10 +245,13 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                     fileExists = job->exec();
                 }
                 if (fileExists) {
-                    PimCommon::RenameFileDialog *dlg = new PimCommon::RenameFileDialog(curUrl, multiple, parent);
-                    result = static_cast<PimCommon::RenameFileDialog::RenameFileDialogResult>(dlg->exec());
-                    if (result == PimCommon::RenameFileDialog::RENAMEFILE_IGNORE ||
-                            result == PimCommon::RenameFileDialog::RENAMEFILE_IGNOREALL) {
+                    PimCommon::RenameFileDialog *dlg = new PimCommon::RenameFileDialog(curUrl,
+                                                                                       multiple,
+                                                                                       parent);
+                    result
+                        = static_cast<PimCommon::RenameFileDialog::RenameFileDialogResult>(dlg->exec());
+                    if (result == PimCommon::RenameFileDialog::RENAMEFILE_IGNORE
+                        || result == PimCommon::RenameFileDialog::RENAMEFILE_IGNOREALL) {
                         delete dlg;
                         continue;
                     } else if (result == PimCommon::RenameFileDialog::RENAMEFILE_RENAME) {
@@ -272,28 +282,35 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
     //        parsed the message, or creating an OTP here (which would have the downside that the
     //        password dialog for decrypting messages is shown twice)
 #if 0 // totally broken
-    KMime::Content *topContent  = content->topLevel();
+    KMime::Content *topContent = content->topLevel();
     MimeTreeParser::NodeHelper *mNodeHelper = new MimeTreeParser::NodeHelper;
     bool bSaveEncrypted = false;
-    bool bEncryptedParts = mNodeHelper->encryptionState(content) != MimeTreeParser::KMMsgNotEncrypted;
-    if (bEncryptedParts)
+    bool bEncryptedParts = mNodeHelper->encryptionState(content)
+                           != MimeTreeParser::KMMsgNotEncrypted;
+    if (bEncryptedParts) {
         if (KMessageBox::questionYesNo(parent,
-                                       i18n("The part %1 of the message is encrypted. Do you want to keep the encryption when saving?",
-                                            url.fileName()),
-                                       i18n("KMail Question"), KGuiItem(i18n("Keep Encryption")), KGuiItem(i18n("Do Not Keep"))) ==
-                KMessageBox::Yes) {
+                                       i18n(
+                                           "The part %1 of the message is encrypted. Do you want to keep the encryption when saving?",
+                                           url.fileName()),
+                                       i18n("KMail Question"), KGuiItem(i18n("Keep Encryption")),
+                                       KGuiItem(i18n("Do Not Keep")))
+            == KMessageBox::Yes) {
             bSaveEncrypted = true;
         }
+    }
 
     bool bSaveWithSig = true;
-    if (mNodeHelper->signatureState(content) != MessageViewer::MimeTreeParser::KMMsgNotSigned)
+    if (mNodeHelper->signatureState(content) != MessageViewer::MimeTreeParser::KMMsgNotSigned) {
         if (KMessageBox::questionYesNo(parent,
-                                       i18n("The part %1 of the message is signed. Do you want to keep the signature when saving?",
-                                            url.fileName()),
-                                       i18n("KMail Question"), KGuiItem(i18n("Keep Signature")), KGuiItem(i18n("Do Not Keep"))) !=
-                KMessageBox::Yes) {
+                                       i18n(
+                                           "The part %1 of the message is signed. Do you want to keep the signature when saving?",
+                                           url.fileName()),
+                                       i18n("KMail Question"), KGuiItem(i18n("Keep Signature")),
+                                       KGuiItem(i18n("Do Not Keep")))
+            != KMessageBox::Yes) {
             bSaveWithSig = false;
         }
+    }
 
     QByteArray data;
     if (bSaveEncrypted || !bEncryptedParts) {
@@ -301,14 +318,26 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
         QByteArray rawDecryptedBody;
         bool gotRawDecryptedBody = false;
         if (!bSaveWithSig) {
-            if (topContent->contentType()->mimeType() == "multipart/signed")  {
+            if (topContent->contentType()->mimeType() == "multipart/signed") {
                 // carefully look for the part that is *not* the signature part:
-                if (MimeTreeParser::ObjectTreeParser::findType(topContent, "application/pgp-signature", true, false)) {
-                    dataNode = MimeTreeParser::ObjectTreeParser ::findTypeNot(topContent, "application", "pgp-signature", true, false);
-                } else if (MimeTreeParser::ObjectTreeParser::findType(topContent, "application/pkcs7-mime", true, false)) {
-                    dataNode = MimeTreeParser::ObjectTreeParser ::findTypeNot(topContent, "application", "pkcs7-mime", true, false);
+                if (MimeTreeParser::ObjectTreeParser::findType(topContent,
+                                                               "application/pgp-signature", true,
+                                                               false)) {
+                    dataNode = MimeTreeParser::ObjectTreeParser ::findTypeNot(topContent,
+                                                                              "application",
+                                                                              "pgp-signature", true,
+                                                                              false);
+                } else if (MimeTreeParser::ObjectTreeParser::findType(topContent,
+                                                                      "application/pkcs7-mime",
+                                                                      true, false)) {
+                    dataNode = MimeTreeParser::ObjectTreeParser ::findTypeNot(topContent,
+                                                                              "application",
+                                                                              "pkcs7-mime", true,
+                                                                              false);
                 } else {
-                    dataNode = MimeTreeParser::ObjectTreeParser ::findTypeNot(topContent, "multipart", "", true, false);
+                    dataNode = MimeTreeParser::ObjectTreeParser ::findTypeNot(topContent,
+                                                                              "multipart", "", true,
+                                                                              false);
                 }
             } else {
                 EmptySource emptySource;
@@ -329,7 +358,8 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
     }
 #else
     const QByteArray data = content->decodedContent();
-    qCWarning(MESSAGEVIEWER_LOG) << "Port the encryption/signature handling when saving a KMime::Content.";
+    qCWarning(MESSAGEVIEWER_LOG)
+        << "Port the encryption/signature handling when saving a KMime::Content.";
 #endif
     QDataStream ds;
     QFile file;
@@ -389,7 +419,8 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
     return true;
 }
 
-bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent, QUrl &currentFolder)
+bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent,
+                           QUrl &currentFolder)
 {
     if (contents.isEmpty()) {
         KMessageBox::information(parent, i18n("Found no attachments to save."));
@@ -399,9 +430,9 @@ bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent
     return Util::saveContents(parent, contents, currentFolder);
 }
 
-bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)
+bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent,
+                             bool appendMessages)
 {
-
     QString fileName;
     if (retrievedMsgs.isEmpty()) {
         return true;
@@ -409,7 +440,11 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
     const Akonadi::Item msgBase = retrievedMsgs.first();
 
     if (msgBase.hasPayload<KMime::Message::Ptr>()) {
-        fileName = MessageCore::StringUtil::cleanFileName(MimeTreeParser::NodeHelper::cleanSubject(msgBase.payload<KMime::Message::Ptr>().data()).trimmed());
+        fileName
+            = MessageCore::StringUtil::cleanFileName(MimeTreeParser::NodeHelper::cleanSubject(
+                                                         msgBase.
+                                                         payload
+                                                         <KMime::Message::Ptr>().data()).trimmed());
         fileName.remove(QLatin1Char('\"'));
     } else {
         fileName = i18n("message");
@@ -422,13 +457,19 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
     const QString filter = i18n("email messages (*.mbox);;all files (*)");
 
     QString fileClass;
-    const QUrl startUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///savemessage")), fileClass);
+    const QUrl startUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral(
+                                                            "kfiledialog:///savemessage")),
+                                                   fileClass);
     QFileDialog::Options opt;
     if (appendMessages) {
         opt |= QFileDialog::DontConfirmOverwrite;
     }
     QString localFile = startUrl.toLocalFile() + QLatin1Char('/') + fileName;
-    QString saveFileName = QFileDialog::getSaveFileName(parent, i18np("Save Message", "Save Messages", retrievedMsgs.count()), localFile, filter, nullptr, opt);
+    QString saveFileName
+        = QFileDialog::getSaveFileName(parent,
+                                       i18np("Save Message", "Save Messages",
+                                             retrievedMsgs.count()), localFile, filter, nullptr,
+                                       opt);
 
     if (!saveFileName.isEmpty()) {
         const QString localFileName = saveFileName;
@@ -439,9 +480,11 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
         KMBox::MBox mbox;
         if (!mbox.load(localFileName)) {
             if (appendMessages) {
-                KMessageBox::error(parent, i18n("File %1 could not be loaded.", localFileName), i18n("Error loading message"));
+                KMessageBox::error(parent, i18n("File %1 could not be loaded.",
+                                                localFileName), i18n("Error loading message"));
             } else {
-                KMessageBox::error(parent, i18n("File %1 could not be created.", localFileName), i18n("Error saving message"));
+                KMessageBox::error(parent, i18n("File %1 could not be created.",
+                                                localFileName), i18n("Error saving message"));
             }
             return false;
         }
@@ -452,18 +495,21 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
         }
 
         if (!mbox.save()) {
-            KMessageBox::error(parent, i18n("We cannot save message."), i18n("Error saving message"));
+            KMessageBox::error(parent, i18n("We cannot save message."),
+                               i18n("Error saving message"));
             return false;
         }
         QUrl url = QUrl::fromLocalFile(saveFileName);
         if (url.isLocalFile()) {
-            KRecentDirs::add(fileClass, url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).path());
+            KRecentDirs::add(fileClass, url.adjusted(
+                                 QUrl::RemoveFilename | QUrl::StripTrailingSlash).path());
         }
     }
     return true;
 }
 
-QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent)
+QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer,
+                               QActionGroup *actionGroup, QObject *parent)
 {
     QString actionName(service->name().replace(QLatin1Char('&'), QStringLiteral("&&")));
     if (singleOffer) {

@@ -44,19 +44,20 @@
 using namespace MessageViewer;
 
 EditorWatcher::EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option,
-                             QObject *parent, QWidget *parentWidget) :
-    QObject(parent),
-    mUrl(url),
-    mMimeType(mimeType),
-    mEditor(nullptr),
-    mParentWidget(parentWidget),
-    mInotifyFd(-1),
-    mInotifyWatch(-1),
-    mOpenWithOption(option),
-    mHaveInotify(false),
-    mFileOpen(false),
-    mEditorRunning(false),
-    mFileModified(true),   // assume the worst unless we know better
+                             QObject *parent, QWidget *parentWidget)
+    : QObject(parent)
+    , mUrl(url)
+    , mMimeType(mimeType)
+    , mEditor(nullptr)
+    , mParentWidget(parentWidget)
+    , mInotifyFd(-1)
+    , mInotifyWatch(-1)
+    , mOpenWithOption(option)
+    , mHaveInotify(false)
+    , mFileOpen(false)
+    , mEditorRunning(false)
+    , mFileModified(true)
+    ,                      // assume the worst unless we know better
     mDone(false)
 {
     assert(mUrl.isLocalFile());
@@ -76,10 +77,11 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     // find an editor
     QList<QUrl> list;
     list.append(mUrl);
-    KService::Ptr offer = KMimeTypeTrader::self()->preferredService(mMimeType, QStringLiteral("Application"));
+    KService::Ptr offer
+        = KMimeTypeTrader::self()->preferredService(mMimeType, QStringLiteral("Application"));
     if ((mOpenWithOption == OpenWithDialog) || !offer) {
         std::unique_ptr<KOpenWithDialog> dlg(new KOpenWithDialog(list, i18n("Edit with:"),
-                                             QString(), mParentWidget));
+                                                                 QString(), mParentWidget));
         const int dlgrc = dlg->exec();
         if (dlgrc && dlg) {
             offer = dlg->service();
@@ -97,7 +99,9 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     mInotifyFd = inotify_init();
     if (mInotifyFd > 0) {
         (void)fcntl(mInotifyFd, F_SETFD, FD_CLOEXEC);
-        mInotifyWatch = inotify_add_watch(mInotifyFd, mUrl.path().toLatin1().constData(), IN_CLOSE | IN_OPEN | IN_MODIFY | IN_ATTRIB);
+        mInotifyWatch = inotify_add_watch(mInotifyFd,
+                                          mUrl.path().toLatin1().constData(),
+                                          IN_CLOSE | IN_OPEN | IN_MODIFY | IN_ATTRIB);
         if (mInotifyWatch >= 0) {
             QSocketNotifier *sn = new QSocketNotifier(mInotifyFd, QSocketNotifier::Read, this);
             connect(sn, &QSocketNotifier::activated, this, &EditorWatcher::inotifyEvent);
@@ -115,7 +119,9 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     const QStringList params = parser.resultingArguments();
     mEditor = new KProcess(this);
     mEditor->setProgram(params);
-    connect(mEditor, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), this, &EditorWatcher::editorExited);
+    connect(mEditor, static_cast<void (KProcess::*)(int,
+                                                    QProcess::ExitStatus)>(&KProcess::finished),
+            this, &EditorWatcher::editorExited);
     mEditor->start();
     if (!mEditor->waitForStarted()) {
         return CannotStart;
@@ -148,7 +154,6 @@ void EditorWatcher::inotifyEvent()
     ioctl(mInotifyFd, FIONREAD, &pending);
 
     while (pending > 0) {
-
         const int bytesToRead = qMin(pending, (int)sizeof(buf) - offsetStartRead);
 
         int bytesAvailable = read(mInotifyFd, &buf[offsetStartRead], bytesToRead);
@@ -158,7 +163,7 @@ void EditorWatcher::inotifyEvent()
 
         int offsetCurrent = 0;
         while (bytesAvailable >= (int)sizeof(struct inotify_event)) {
-            const struct inotify_event *const event = (struct inotify_event *) &buf[offsetCurrent];
+            const struct inotify_event *const event = (struct inotify_event *)&buf[offsetCurrent];
             const int eventSize = sizeof(struct inotify_event) + event->len;
             if (bytesAvailable < eventSize) {
                 break;
@@ -175,7 +180,6 @@ void EditorWatcher::inotifyEvent()
             if (event->mask & (IN_MODIFY | IN_ATTRIB)) {
                 mFileModified = true;
             }
-
         }
         if (bytesAvailable > 0) {
             // copy partial event to beginning of buffer
@@ -185,7 +189,6 @@ void EditorWatcher::inotifyEvent()
     }
 #endif
     mTimer.start(500);
-
 }
 
 void EditorWatcher::editorExited()
@@ -211,8 +214,8 @@ void EditorWatcher::checkEditDone()
     mDone = true;
 
     // check if it's a mime type that's mostly handled read-only
-    const bool isReadOnlyMimeType = (readOnlyMimeTypes.contains(mMimeType) ||
-                                     mMimeType.startsWith(QStringLiteral("image/")));
+    const bool isReadOnlyMimeType = (readOnlyMimeTypes.contains(mMimeType)
+                                     || mMimeType.startsWith(QStringLiteral("image/")));
 
     // nobody can edit that fast, we seem to be unable to detect
     // when the editor will be closed

@@ -38,9 +38,7 @@
 
 class QString;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 /** @short A HtmlWriter that dispatches all calls to a list of other HtmlWriters
       @author Marc Mutz <mutz@kde.org>
   **/
@@ -69,7 +67,6 @@ private:
     /** We own the HtmlWriters added to us! */
     QList<HtmlWriter *> mWriters;
 };
-
 } // namespace MessageViewer
 
 #endif // __MESSAGEVIEWER_TEEHTMLWRITER_H__

@@ -32,10 +32,9 @@
 
 #include <QWidget>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class InvitationSettingsPrivate;
-class  MESSAGEVIEWER_EXPORT InvitationSettings : public QWidget
+class MESSAGEVIEWER_EXPORT InvitationSettings : public QWidget
 {
     Q_OBJECT
 public:
@@ -53,7 +52,6 @@ private:
     void slotLegacyBodyInvitesToggled(bool on);
     InvitationSettingsPrivate *const d;
 };
-
 }
 
 #endif // MESSAGEVIEWER_INVITATIONSETTINGS_H

@@ -37,8 +37,7 @@
 #include "messageviewer_export.h"
 #include <QStringList>
 //
-namespace MessageViewer
-{
+namespace MessageViewer {
 //
 // RichHeaderStrategy:
 //   Date, Subject, From, To, CC, ### what exactly?
@@ -48,7 +47,7 @@ static const char *const richHeaders[] = {
     "organization", "organisation", "reply-to",
     "user-agent", "x-mailer", "x-bugzilla-url", "disposition-notification-to"
 };
-static const int numRichHeaders = sizeof richHeaders / sizeof * richHeaders;
+static const int numRichHeaders = sizeof richHeaders / sizeof *richHeaders;
 
 class MESSAGEVIEWER_EXPORT RichHeaderStrategy : public HeaderStrategy
 {
@@ -66,6 +65,7 @@ public:
     {
         return mHeadersToDisplay;
     }
+
     DefaultPolicy defaultPolicy() const override
     {
         return Hide;
@@ -74,7 +74,6 @@ public:
 private:
     const QStringList mHeadersToDisplay;
 };
-
 }
 
 #endif

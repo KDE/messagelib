@@ -24,7 +24,8 @@
 using namespace MessageViewer;
 
 FindBarSourceView::FindBarSourceView(QPlainTextEdit *view, QWidget *parent)
-    : WebEngineViewer::FindBarBase(parent), mView(view)
+    : WebEngineViewer::FindBarBase(parent)
+    , mView(view)
 {
 }
 
@@ -80,4 +81,3 @@ void FindBarSourceView::updateSensitivity(bool)
     const bool found = mView->find(mLastSearchStr, searchOptions);
     setFoundMatch(found);
 }
-

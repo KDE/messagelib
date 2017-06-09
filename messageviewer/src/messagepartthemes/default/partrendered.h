@@ -25,18 +25,16 @@
 #include <QSharedPointer>
 #include <QVector>
 
-namespace MimeTreeParser
-{
-    class MessagePart;
-    typedef QSharedPointer<MessagePart> MessagePartPtr;
-    class TextMessagePart;
-    typedef QSharedPointer<TextMessagePart> TextMessagePartPtr;
-    class DefaultRendererPrivate;
+namespace MimeTreeParser {
+class MessagePart;
+typedef QSharedPointer<MessagePart> MessagePartPtr;
+class TextMessagePart;
+typedef QSharedPointer<TextMessagePart> TextMessagePartPtr;
+class DefaultRendererPrivate;
 }
 
-namespace KMime
-{
-    class Content;
+namespace KMime {
+class Content;
 }
 
 class CacheHtmlWriter;
@@ -53,7 +51,7 @@ public:
     virtual QString extraHeader() = 0;
 
 protected:
-    QVector<QSharedPointer<PartRendered>> renderSubParts(MimeTreeParser::MessagePartPtr mp);
+    QVector<QSharedPointer<PartRendered> > renderSubParts(MimeTreeParser::MessagePartPtr mp);
 };
 class EmptyPartRendered : public PartRendered
 {
@@ -113,7 +111,7 @@ public:
 
 private:
     QString mHtml;
-    QVector<QSharedPointer<PartRendered>> mSubList;
+    QVector<QSharedPointer<PartRendered> > mSubList;
     bool mShowAttachmentBlock;
     KMime::Content *mAttachmentNode;
 };

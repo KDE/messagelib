@@ -39,16 +39,15 @@ Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const QGpgME::Protocol *)
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
 GRANTLEE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
-if (property == QStringLiteral("keyID"))
-{
+if (property == QStringLiteral("keyID")) {
     return QString::fromLatin1(object.keyID());
 }
 GRANTLEE_END_LOOKUP
 // Read-only introspection of QGpgME::Protocol object.
-namespace Grantlee
-{
+namespace Grantlee {
 template<>
-inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object, const QString &property)
+inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object,
+                                                               const QString &property)
 {
     if (property == QStringLiteral("name")) {
         return object->name();
@@ -80,8 +79,8 @@ public:
 Q_GLOBAL_STATIC(MessagePartRendererManagerInstancePrivate, sInstance)
 
 MessagePartRendererManager::MessagePartRendererManager(QObject *parent)
-    : QObject(parent),
-      m_engine(nullptr)
+    : QObject(parent)
+    , m_engine(nullptr)
 {
     initializeRenderer();
 }
@@ -103,7 +102,8 @@ void MessagePartRendererManager::initializeRenderer()
     m_engine = new GrantleeTheme::Engine;
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
 
-    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(new GrantleeTheme::QtResourceTemplateLoader());
+    auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(
+        new GrantleeTheme::QtResourceTemplateLoader());
     m_engine->addTemplateLoader(loader);
 
     mCurrentIconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
@@ -113,7 +113,11 @@ Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
 {
     Grantlee::Template t = m_engine->loadByName(name);
     if (t->error()) {
-        qCWarning(MESSAGEVIEWER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations" << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+        qCWarning(MESSAGEVIEWER_LOG) << t->errorString()
+                                     <<
+        ". Searched in subdir mimetreeparser/themes/default in these locations"
+                                     << QStandardPaths::standardLocations(
+            QStandardPaths::GenericDataLocation);
     }
     return t;
 }

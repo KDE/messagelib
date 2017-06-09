@@ -39,7 +39,8 @@ static QSharedPointer<MessagePartRendererFactoryBase> singeltonRendererFactory;
 const MessagePartRendererFactoryBase *rendererPluginFactoryInstance()
 {
     if (!singeltonRendererFactory) {
-        singeltonRendererFactory = QSharedPointer<MessagePartRendererFactoryBase>(new MessagePartRendererFactoryBase());
+        singeltonRendererFactory = QSharedPointer<MessagePartRendererFactoryBase>(
+            new MessagePartRendererFactoryBase());
     }
 
     return singeltonRendererFactory.data();

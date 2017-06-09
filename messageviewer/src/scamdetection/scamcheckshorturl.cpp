@@ -48,16 +48,19 @@ void ScamCheckShortUrl::expandedUrl(const QUrl &url)
 
 bool ScamCheckShortUrl::isShortUrl(const QUrl &url)
 {
-    if (!url.path().isEmpty() && QString::compare(url.path(), QStringLiteral("/")) && sSupportedServices.contains(url.host())) {
+    if (!url.path().isEmpty()
+        && QString::compare(url.path(),
+                            QStringLiteral("/")) && sSupportedServices.contains(url.host())) {
         return true;
-    } else  {
+    } else {
         return false;
     }
 }
 
 void ScamCheckShortUrl::loadLongUrlServices()
 {
-    QFile servicesFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/longurlServices.json")));
+    QFile servicesFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral(
+                                                  "messageviewer/longurlServices.json")));
     if (servicesFile.open(QIODevice::ReadOnly)) {
         QJsonParseError error;
         const QJsonDocument json = QJsonDocument::fromJson(servicesFile.readAll(), &error);

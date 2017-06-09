@@ -24,9 +24,7 @@
 
 class QString;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class ViewerPrivate;
 
 /** An ObjectTreeParser source working on a MailViewer object */
@@ -38,7 +36,8 @@ public:
     bool decryptMessage() const override;
     bool htmlLoadExternal() const override;
     bool showSignatureDetails() const override;
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode,
+                     const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
     MimeTreeParser::Util::HtmlMode preferredMode() const override;
     int levelQuote() const override;
     const QTextCodec *overrideCodec() override;
@@ -50,13 +49,12 @@ public:
     bool showEmoticons() const override;
     bool showExpandQuotesMark() const override;
     const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override;
-    MimeTreeParser::Interface::MessagePartRendererPtr messagePartTheme(MimeTreeParser::Interface::MessagePartPtr msgPart) override;
-    bool isPrinting() const  override;
+    MimeTreeParser::Interface::MessagePartRendererPtr messagePartTheme(
+        MimeTreeParser::Interface::MessagePartPtr msgPart) override;
+    bool isPrinting() const override;
 private:
     ViewerPrivate *mViewer;
 };
-
 }
 
 #endif
-

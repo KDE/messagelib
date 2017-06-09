@@ -106,7 +106,8 @@ bool looksLikeParaBreak(const QString &s, unsigned int newLinePos)
     return prevLineLength + wordLength + 1 < WRAP_COL;
 }
 
-QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource *source, MessageViewer::CSSHelperBase *cssHelper)
+QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource *source,
+                   MessageViewer::CSSHelperBase *cssHelper)
 {
     Q_ASSERT(cssHelper);
 
@@ -131,8 +132,8 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
     unsigned int pos, beg;
 
     // skip leading empty lines
-    for (pos = 0; pos < length && s[pos] <= QLatin1Char(' '); ++pos)
-        ;
+    for (pos = 0; pos < length && s[pos] <= QLatin1Char(' '); ++pos) {
+    }
     while (pos > 0 && (s[pos - 1] == QLatin1Char(' ') || s[pos - 1] == QLatin1Char('\t'))) {
         pos--;
     }
@@ -144,8 +145,11 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
     QString collapseIconPath;
     QString expandIconPath;
     if (source->showExpandQuotesMark()) {
-        collapseIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quotecollapse.png"));
-        expandIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quoteexpand.png"));
+        collapseIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(QStringLiteral(
+                                                                                           "quotecollapse.png"));
+        expandIconPath
+            = MessageViewer::IconNameCache::instance()->iconPathFromLocal(QStringLiteral(
+                                                                              "quoteexpand.png"));
     }
 
     int previousQuoteDepth = -1;
@@ -189,7 +193,7 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
 
         // This quoted line needs be hidden
         if (source->showExpandQuotesMark() && source->levelQuote() >= 0
-                && source->levelQuote() <= actQuoteLevel) {
+            && source->levelQuote() <= actQuoteLevel) {
             actHidden = true;
         }
 
@@ -212,7 +216,8 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
                 if (source->showExpandQuotesMark()) {
                     // Add blockquote
                     if (previousQuoteDepth < actQuoteLevel) {
-                        htmlStr += cssHelper->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
+                        htmlStr
+                            += cssHelper->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
                     }
                     if (actHidden) {
                         //only show the QuoteMark when is the first line of the level hidden
@@ -220,17 +225,17 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
                             //Expand all quotes
                             htmlStr += QLatin1String("<div class=\"quotelevelmark\" >");
                             htmlStr += QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
-                                                        "<img src=\"%2\"/></a>")
-                                        .arg(-1)
-                                        .arg(expandIconPath);
+                                                      "<img src=\"%2\"/></a>")
+                                       .arg(-1)
+                                       .arg(expandIconPath);
                             htmlStr += QLatin1String("</div><br/>");
                         }
                     } else {
                         htmlStr += QLatin1String("<div class=\"quotelevelmark\" >");
                         htmlStr += QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
-                                                    "<img src=\"%2\"/></a>")
-                                    .arg(actQuoteLevel)
-                                    .arg(collapseIconPath);
+                                                  "<img src=\"%2\"/></a>")
+                                   .arg(actQuoteLevel)
+                                   .arg(collapseIconPath);
                         htmlStr += QLatin1String("</div>");
                         if (actQuoteLevel < 3) {
                             htmlStr += quoteFontTag[actQuoteLevel];
@@ -241,7 +246,8 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
                 } else {
                     // Add blockquote
                     if (previousQuoteDepth < actQuoteLevel) {
-                        htmlStr += cssHelper->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
+                        htmlStr
+                            += cssHelper->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
                     }
 
                     if (actQuoteLevel < 3) {
@@ -262,16 +268,25 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
                 if (startNewPara) {
                     paraIsRTL = line.isRightToLeft();
                 }
-                htmlStr += QStringLiteral("<div dir=\"%1\">").arg(paraIsRTL ? QStringLiteral("rtl") : QStringLiteral("ltr"));
+                htmlStr += QStringLiteral("<div dir=\"%1\">").arg(paraIsRTL ? QStringLiteral(
+                                                                      "rtl") : QStringLiteral("ltr"));
                 // if quoteLengh == 0 && foundQuote => a simple quote
                 if (foundQuote) {
                     quoteLength++;
                     const int rightString = (line.length()) - quoteLength;
                     if (rightString > 0) {
-                        htmlStr += QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(quoteLength));
-                        htmlStr += QStringLiteral("<font color=\"%1\">").arg(cssHelper->quoteColorName(actQuoteLevel)) + KTextToHTML::convertToHtml(line.right(rightString), convertFlags) + QStringLiteral("</font>");
+                        htmlStr += QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(
+                                                                                                  quoteLength));
+                        htmlStr += QStringLiteral("<font color=\"%1\">").arg(cssHelper->quoteColorName(
+                                                                                 actQuoteLevel))
+                                   + KTextToHTML::convertToHtml(line.right(
+                                                                    rightString),
+                                                                convertFlags) + QStringLiteral(
+                            "</font>");
                     } else {
-                        htmlStr += QStringLiteral("<span class=\"quotemarksemptyline\">%1</span>").arg(line.left(quoteLength));
+                        htmlStr
+                            += QStringLiteral("<span class=\"quotemarksemptyline\">%1</span>").arg(line.left(
+                                                                                                       quoteLength));
                     }
                 } else {
                     htmlStr += KTextToHTML::convertToHtml(line, convertFlags);

@@ -54,7 +54,6 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
         mButtonBox->addButton(user2Button, QDialogButtonBox::ActionRole);
         user2Button->setText(i18n("&Open with '%1'", application));
         connect(user2Button, &QPushButton::clicked, this, &AttachmentDialog::openClicked);
-
     }
 
     QPushButton *user3Button = new QPushButton;
@@ -78,8 +77,12 @@ int AttachmentDialog::exec()
     }
 
     bool again = false;
-    const QDialogButtonBox::StandardButton ret = KMessageBox::createKMessageBox(dialog, mButtonBox, QMessageBox::Question, text, QStringList(),
-            i18n("Do not ask again"), &again, nullptr);
+    const QDialogButtonBox::StandardButton ret = KMessageBox::createKMessageBox(dialog, mButtonBox,
+                                                                                QMessageBox::Question, text,
+                                                                                QStringList(),
+                                                                                i18n(
+                                                                                    "Do not ask again"), &again,
+                                                                                nullptr);
 
     if (ret == QDialogButtonBox::Cancel) {
         return Cancel;
@@ -116,4 +119,3 @@ void AttachmentDialog::openWithClicked()
 }
 
 //---------------------------------------------------------------------
-

@@ -32,8 +32,8 @@ public:
     GrantleeHeaderTestStylePrivate()
         : mGrantleeFormatter(new GrantleeHeaderFormatter)
     {
-
     }
+
     ~GrantleeHeaderTestStylePrivate()
     {
         delete mGrantleeFormatter;
@@ -46,8 +46,8 @@ public:
 };
 
 GrantleeHeaderTestStyle::GrantleeHeaderTestStyle()
-    : HeaderStyle(),
-      d(new MessageViewer::GrantleeHeaderTestStylePrivate)
+    : HeaderStyle()
+    , d(new MessageViewer::GrantleeHeaderTestStylePrivate)
 {
 }
 
@@ -66,7 +66,8 @@ QString GrantleeHeaderTestStyle::format(KMime::Message *message) const
     if (!message) {
         return QString();
     }
-    return d->mGrantleeFormatter->toHtml(d->mExtraDisplay, d->mAbsolutePath, d->mMainFilename, this, message, isPrinting());
+    return d->mGrantleeFormatter->toHtml(d->mExtraDisplay, d->mAbsolutePath, d->mMainFilename, this,
+                                         message, isPrinting());
 }
 
 void GrantleeHeaderTestStyle::setAbsolutePath(const QString &path)

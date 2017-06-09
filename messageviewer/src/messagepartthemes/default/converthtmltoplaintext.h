@@ -22,8 +22,7 @@
 #define __MIMETREEPARSER_CONVERTHTMLTOPLAINTEXT_H__
 
 #include <QString>
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class ConvertHtmlToPlainText
 {
 public:

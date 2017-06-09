@@ -26,16 +26,15 @@ public:
     HeaderStylePluginPrivate()
         : mIsEnabled(false)
     {
-
     }
+
     bool mIsEnabled;
 };
 
 HeaderStylePlugin::HeaderStylePlugin(QObject *parent)
-    : QObject(parent),
-      d(new MessageViewer::HeaderStylePluginPrivate)
+    : QObject(parent)
+    , d(new MessageViewer::HeaderStylePluginPrivate)
 {
-
 }
 
 HeaderStylePlugin::~HeaderStylePlugin()

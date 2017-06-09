@@ -22,8 +22,7 @@
 
 #include "messageviewer/headerstyle.h"
 #include "messageviewer_export.h"
-namespace MessageViewer
-{
+namespace MessageViewer {
 class PlainHeaderStylePrivate;
 class MESSAGEVIEWER_EXPORT PlainHeaderStyle : public HeaderStyle
 {

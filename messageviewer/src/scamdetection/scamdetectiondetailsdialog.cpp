@@ -86,7 +86,9 @@ void ScamDetectionDetailsDialog::slotSaveAs()
             QTextStream ts(&file);
             ts.setCodec("UTF-8");
             QString htmlStr = mDetails->toHtml();
-            htmlStr.replace(QStringLiteral("meta name=\"qrichtext\" content=\"1\""), QStringLiteral("meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\""));
+            htmlStr.replace(QStringLiteral("meta name=\"qrichtext\" content=\"1\""),
+                            QStringLiteral(
+                                "meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\""));
             ts <<  htmlStr;
             file.close();
         }
@@ -100,7 +102,8 @@ void ScamDetectionDetailsDialog::setDetails(const QString &details)
 
 void ScamDetectionDetailsDialog::readConfig()
 {
-    KConfigGroup group(MessageViewer::MessageViewerSettings::self()->config(), "ScamDetectionDetailsDialog");
+    KConfigGroup group(
+        MessageViewer::MessageViewerSettings::self()->config(), "ScamDetectionDetailsDialog");
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -109,8 +112,8 @@ void ScamDetectionDetailsDialog::readConfig()
 
 void ScamDetectionDetailsDialog::writeConfig()
 {
-    KConfigGroup group(MessageViewer::MessageViewerSettings::self()->config(), "ScamDetectionDetailsDialog");
+    KConfigGroup group(
+        MessageViewer::MessageViewerSettings::self()->config(), "ScamDetectionDetailsDialog");
     group.writeEntry("Size", size());
     group.sync();
 }
-

@@ -38,10 +38,9 @@
 
 #include <MimeTreeParser/BodyPartFormatterBaseFactory>
 
-namespace MessageViewer
-{
-
-class MESSAGEVIEWER_EXPORT BodyPartFormatterFactory : public MimeTreeParser::BodyPartFormatterBaseFactory
+namespace MessageViewer {
+class MESSAGEVIEWER_EXPORT BodyPartFormatterFactory : public MimeTreeParser::
+    BodyPartFormatterBaseFactory
 {
 public:
     BodyPartFormatterFactory();
@@ -50,7 +49,6 @@ public:
 protected:
     void loadPlugins() override;
 };
-
 }
 
 #endif // __MESSAGEVIEWER_BODYPARTFORMATTERFACTORY_H__

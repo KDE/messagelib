@@ -36,9 +36,7 @@
 
 #include "messageviewer_export.h"
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT CSSHelper : public CSSHelperBase
 {
 public:
@@ -49,7 +47,6 @@ public:
     &gt;body&lt; tag */
     QString htmlHead(bool fixedFont = false) const override;
 };
-
 }
 
 #endif // __MESSAGEVIEWER_CSSHELPER_H__

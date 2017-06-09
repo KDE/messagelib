@@ -25,8 +25,7 @@
 
 #include <KMessageWidget>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class SubmittedFormWarningWidgetPrivate;
 class MESSAGEVIEWER_EXPORT SubmittedFormWarningWidget : public KMessageWidget
 {

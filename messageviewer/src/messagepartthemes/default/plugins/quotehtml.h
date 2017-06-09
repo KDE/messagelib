@@ -22,19 +22,17 @@
 
 #include <QString>
 
-namespace MimeTreeParser
-{
-namespace Interface
-{
+namespace MimeTreeParser {
+namespace Interface {
 class ObjectTreeSource;
 }
 }
 
-namespace MessageViewer
-{
-    class CSSHelperBase;
+namespace MessageViewer {
+class CSSHelperBase;
 }
 
-QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource *source, MessageViewer::CSSHelperBase *cssHelper);
+QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource *source,
+                   MessageViewer::CSSHelperBase *cssHelper);
 
 #endif

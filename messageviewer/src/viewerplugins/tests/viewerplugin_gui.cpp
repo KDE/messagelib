@@ -48,8 +48,10 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     vbox->setMargin(0);
     vbox->setSpacing(0);
     toolManagerWidget->setLayout(vbox);
-    MessageViewer::ViewerPluginToolManager *toolManager = new MessageViewer::ViewerPluginToolManager(toolManagerWidget, this);
-    connect(toolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this, &ViewerPluginTest::slotActivatePlugin);
+    MessageViewer::ViewerPluginToolManager *toolManager
+        = new MessageViewer::ViewerPluginToolManager(toolManagerWidget, this);
+    connect(toolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this,
+            &ViewerPluginTest::slotActivatePlugin);
 
     toolManager->setPluginName(QStringLiteral("messageviewer"));
     toolManager->setServiceTypeName(QStringLiteral("MessageViewer/ViewerPlugin"));
@@ -65,12 +67,14 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
 
     menu = new QMenu(this);
     menu->setTitle(QStringLiteral("selected tools"));
-    menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::NeedSelection));
+    menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::
+                                                         NeedSelection));
     menuBar->addMenu(menu);
 
     menu = new QMenu(this);
     menu->setTitle(QStringLiteral("message tools"));
-    menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::NeedMessage));
+    menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::
+                                                         NeedMessage));
     menuBar->addMenu(menu);
 
     menu = new QMenu(this);
@@ -85,7 +89,6 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
 
 ViewerPluginTest::~ViewerPluginTest()
 {
-
 }
 
 void ViewerPluginTest::slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface)
@@ -97,7 +100,8 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    KAboutData aboutData(QStringLiteral("viewerplugin_gui"), i18n("viewerplugin_Gui"), QStringLiteral("1.0"));
+    KAboutData aboutData(QStringLiteral("viewerplugin_gui"), i18n(
+                             "viewerplugin_Gui"), QStringLiteral("1.0"));
     aboutData.setShortDescription(i18n("Test for viewerplugin"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
@@ -114,4 +118,3 @@ int main(int argc, char **argv)
     delete w;
     return 0;
 }
-

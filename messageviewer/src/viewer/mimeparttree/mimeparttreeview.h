@@ -23,8 +23,7 @@
 #include <QTreeView>
 #include <KMime/Message>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class MimeTreeModel;
 class MimePartTreeView : public QTreeView
 {

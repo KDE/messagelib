@@ -44,17 +44,49 @@ using namespace MessageViewer;
 class CacheHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
-    explicit CacheHtmlWriter() {}
-    virtual ~CacheHtmlWriter() {}
+    explicit CacheHtmlWriter()
+    {
+    }
 
-    void begin(const QString &text) override {}
-    void write(const QString &str) override {html.append(str);}
-    void end() override {}
-    void reset() override {}
-    void queue(const QString &str) override {html.append(str);}
-    void flush() override {}
-    void embedPart(const QByteArray &contentId, const QString &url) override {embedParts.insert(contentId, url);}
-    void extraHead(const QString &extra) override {head.append(extra);}
+    virtual ~CacheHtmlWriter()
+    {
+    }
+
+    void begin(const QString &text) override
+    {
+    }
+
+    void write(const QString &str) override
+    {
+        html.append(str);
+    }
+
+    void end() override
+    {
+    }
+
+    void reset() override
+    {
+    }
+
+    void queue(const QString &str) override
+    {
+        html.append(str);
+    }
+
+    void flush() override
+    {
+    }
+
+    void embedPart(const QByteArray &contentId, const QString &url) override
+    {
+        embedParts.insert(contentId, url);
+    }
+
+    void extraHead(const QString &extra) override
+    {
+        head.append(extra);
+    }
 
     QString html;
     QString head;
@@ -74,11 +106,12 @@ inline QString PartRendered::alignText()
     return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
 }
 
-QVector<QSharedPointer<PartRendered>> PartRendered::renderSubParts(MimeTreeParser::MessagePart::Ptr mp)
+QVector<QSharedPointer<PartRendered> > PartRendered::renderSubParts(
+    MimeTreeParser::MessagePart::Ptr mp)
 {
     Test::CSSHelper testCSSHelper;
 
-    QVector<QSharedPointer<PartRendered>> ret;
+    QVector<QSharedPointer<PartRendered> > ret;
     foreach (const auto &_m, mp->subParts()) {
         CacheHtmlWriter cacheWriter;
         DefaultRenderer::Ptr renderer = mp->source()->messagePartTheme(_m);
@@ -178,7 +211,6 @@ TextPartRendered::TextPartRendered(MimeTreeParser::TextMessagePart::Ptr mp)
     : mShowAttachmentBlock(false)
     , mAttachmentNode(nullptr)
 {
-
     auto node = mp->mNode;
     auto nodeHelper = mp->mOtp->nodeHelper();
 
@@ -192,16 +224,22 @@ TextPartRendered::TextPartRendered(MimeTreeParser::TextMessagePart::Ptr mp)
     c.insert(QStringLiteral("block"), &block);
 
     block.setProperty("showTextFrame", mp->showTextFrame());
-    block.setProperty("label", MessageCore::StringUtil::quoteHtmlChars(MimeTreeParser::NodeHelper::fileName(node), true));
-    block.setProperty("comment", MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->asUnicodeString(), true));
+    block.setProperty("label",
+                      MessageCore::StringUtil::quoteHtmlChars(MimeTreeParser::NodeHelper::fileName(
+                                                                  node), true));
+    block.setProperty("comment",
+                      MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->
+                                                              asUnicodeString(), true));
     block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
     block.setProperty("showLink", mp->showLink());
     block.setProperty("dir", alignText());
 
-    t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/textmessagepart.html"));
+    t
+        = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
+                                                                            ":/textmessagepart.html"));
     mSubList = renderSubParts(mp);
     QString content;
-    foreach(auto part, mSubList) {
+    foreach (auto part, mSubList) {
         content += part->html();
     }
     c.insert(QStringLiteral("content"), content);
@@ -215,11 +253,10 @@ TextPartRendered::~TextPartRendered()
 {
 }
 
-
 QMap<QByteArray, QString> TextPartRendered::embededParts()
 {
     QMap<QByteArray, QString> ret;
-    foreach(auto part, mSubList) {
+    foreach (auto part, mSubList) {
         //ret += part->embededParts();
     }
     return ret;
@@ -228,7 +265,7 @@ QMap<QByteArray, QString> TextPartRendered::embededParts()
 QString TextPartRendered::extraHeader()
 {
     QString ret;
-    foreach(auto part, mSubList) {
+    foreach (auto part, mSubList) {
         ret += part->extraHeader();
     }
     return ret;

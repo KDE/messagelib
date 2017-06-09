@@ -34,15 +34,15 @@ TestMailDndAttachment::TestMailDndAttachment(QWidget *parent)
 {
     QVBoxLayout *vbox = new QVBoxLayout;
     setLayout(vbox);
-    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
+    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
+                                                                  this));
     vbox->addWidget(viewer);
-    viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"))/*KMime::Message::Ptr(msg)*/);
+    viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")) /*KMime::Message::Ptr(msg)*/);
     viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));
 }
 
 TestMailDndAttachment::~TestMailDndAttachment()
 {
-
 }
 
 KMime::Message::Ptr TestMailDndAttachment::readAndParseMail(const QString &mailFile)

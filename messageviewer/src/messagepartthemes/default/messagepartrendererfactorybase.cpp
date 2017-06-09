@@ -37,7 +37,8 @@
 
 using namespace MessageViewer;
 
-MessagePartRendererFactoryBasePrivate::MessagePartRendererFactoryBasePrivate(MessagePartRendererFactoryBase *factory)
+MessagePartRendererFactoryBasePrivate::MessagePartRendererFactoryBasePrivate(
+    MessagePartRendererFactoryBase *factory)
     : q(factory)
     , mAll(std::unique_ptr<TypeRegistry>(new TypeRegistry()))
 {
@@ -55,7 +56,8 @@ void MessagePartRendererFactoryBasePrivate::setup()
     }
 }
 
-void MessagePartRendererFactoryBasePrivate::insert(const QString &type, MessagePartRendererBase *formatter)
+void MessagePartRendererFactoryBasePrivate::insert(const QString &type,
+                                                   MessagePartRendererBase *formatter)
 {
     if (type.isEmpty() || !formatter) {
         return;
@@ -65,7 +67,9 @@ void MessagePartRendererFactoryBasePrivate::insert(const QString &type, MessageP
 }
 
 MessagePartRendererFactoryBase::MessagePartRendererFactoryBase()
-    : d(std::unique_ptr<MessagePartRendererFactoryBasePrivate>(new MessagePartRendererFactoryBasePrivate(this)))
+    : d(std::unique_ptr<MessagePartRendererFactoryBasePrivate>(new
+                                                               MessagePartRendererFactoryBasePrivate(
+                                                                   this)))
 {
 }
 
@@ -78,7 +82,8 @@ void MessagePartRendererFactoryBase::insert(const QString &type, MessagePartRend
     d->insert(type, formatter);
 }
 
-std::vector<MessagePartRendererBase *> MessagePartRendererFactoryBase::typeRegistry(const QString &type) const
+std::vector<MessagePartRendererBase *> MessagePartRendererFactoryBase::typeRegistry(
+    const QString &type) const
 {
     d->setup();
     Q_ASSERT(!d->mAll->isEmpty());
@@ -89,4 +94,3 @@ void MessagePartRendererFactoryBase::loadPlugins()
 {
     qCDebug(MESSAGEVIEWER_LOG) << "plugin loading is not enabled in libmimetreeparser";
 }
-

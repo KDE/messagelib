@@ -30,25 +30,22 @@
 
 using namespace MessageViewer;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class EmptySourcePrivate
 {
 public:
     EmptySourcePrivate()
         : mAllowDecryption(false)
     {
-
     }
+
     bool mAllowDecryption;
 };
-
 }
 
 EmptySource::EmptySource()
-    : MimeTreeParser::Interface::ObjectTreeSource(),
-      d(new MessageViewer::EmptySourcePrivate)
+    : MimeTreeParser::Interface::ObjectTreeSource()
+    , d(new MessageViewer::EmptySourcePrivate)
 {
 }
 
@@ -72,7 +69,8 @@ bool EmptySource::showSignatureDetails() const
     return false;
 }
 
-void EmptySource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
+void EmptySource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode,
+                              const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
     Q_UNUSED(mode);
     Q_UNUSED(availableModes);
@@ -144,8 +142,9 @@ bool EmptySource::isPrinting() const
     return false;
 }
 
-MimeTreeParser::Interface::MessagePartRendererPtr EmptySource::messagePartTheme(MimeTreeParser::Interface::MessagePart::Ptr msgPart)
+MimeTreeParser::Interface::MessagePartRendererPtr EmptySource::messagePartTheme(
+    MimeTreeParser::Interface::MessagePart::Ptr msgPart)
 {
-    return  MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart, cssHelper()));
+    return MimeTreeParser::Interface::MessagePartRenderer::Ptr(new DefaultRenderer(msgPart,
+                                                                                   cssHelper()));
 }
-

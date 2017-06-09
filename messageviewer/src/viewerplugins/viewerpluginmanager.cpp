@@ -53,10 +53,9 @@ class ViewerPluginInfo
 {
 public:
     ViewerPluginInfo()
-        : plugin(nullptr),
-          isEnabled(false)
+        : plugin(nullptr)
+        , isEnabled(false)
     {
-
     }
 
     QString metaDataFileNameBaseName;
@@ -72,8 +71,8 @@ public:
     ViewerPluginManagerPrivate(ViewerPluginManager *qq)
         : q(qq)
     {
-
     }
+
     bool initializePluginList();
     void loadPlugin(ViewerPluginInfo *item);
     QVector<MessageViewer::ViewerPlugin *> pluginsList() const;
@@ -90,8 +89,7 @@ private:
     ViewerPluginManager *q;
 };
 
-namespace
-{
+namespace {
 QString pluginVersion()
 {
     return QStringLiteral("2.0");
@@ -118,16 +116,20 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     }
 
     static const QString s_serviceTypeName = serviceTypeName;
-    QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(pluginName, [](const KPluginMetaData & md) {
+    QVector<KPluginMetaData> plugins
+        = KPluginLoader::findPlugins(pluginName, [](const KPluginMetaData &md) {
         return md.serviceTypes().contains(s_serviceTypeName);
     });
 
     // We need common plugin to avoid to duplicate code between akregator/kmail
-    plugins += KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](const KPluginMetaData & md) {
+    plugins
+        += KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](
+                                          const KPluginMetaData &md) {
         return md.serviceTypes().contains(QStringLiteral("MessageViewer/ViewerCommonPlugin"));
     });
 
-    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(
+        configGroupName(), configPrefixSettingKey());
     QVectorIterator<KPluginMetaData> i(plugins);
     i.toBack();
     QSet<QString> unique;
@@ -139,7 +141,10 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         //1) get plugin data => name/description etc.
         info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
         //2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first,
+                                                                                pair.second,
+                                                                                info.pluginData.mEnableByDefault,
+                                                                                info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -153,7 +158,8 @@ bool ViewerPluginManagerPrivate::initializePluginList()
             mPluginList.push_back(info);
             unique.insert(info.metaDataFileNameBaseName);
         } else {
-            qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << data.name() << " doesn't have correct plugin version. Please update it";
+            qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << data.name()
+                                         << " doesn't have correct plugin version. Please update it";
         }
     }
     QVector<ViewerPluginInfo>::iterator end(mPluginList.end());
@@ -167,7 +173,9 @@ void ViewerPluginManagerPrivate::loadPlugin(ViewerPluginInfo *item)
 {
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<MessageViewer::ViewerPlugin>(q, QVariantList() << item->metaDataFileNameBaseName);
+        item->plugin = pluginLoader.factory()->create<MessageViewer::ViewerPlugin>(q,
+                                                                                   QVariantList()
+        << item->metaDataFileNameBaseName);
         item->plugin->setIsEnabled(item->isEnabled);
         item->pluginData.mHasConfigureDialog = item->plugin->hasConfigureDialog();
         mPluginDataList.append(item->pluginData);
@@ -203,8 +211,8 @@ ViewerPlugin *ViewerPluginManagerPrivate::pluginFromIdentifier(const QString &id
 }
 
 ViewerPluginManager::ViewerPluginManager(QObject *parent)
-    : QObject(parent),
-      d(new MessageViewer::ViewerPluginManagerPrivate(this))
+    : QObject(parent)
+    , d(new MessageViewer::ViewerPluginManagerPrivate(this))
 {
 }
 
@@ -267,4 +275,3 @@ MessageViewer::ViewerPlugin *ViewerPluginManager::pluginFromIdentifier(const QSt
 {
     return d->pluginFromIdentifier(id);
 }
-

@@ -29,17 +29,20 @@
 using namespace MessageViewer;
 
 ContactDisplayMessageMemento::ContactDisplayMessageMemento(const QString &emailAddress)
-    : QObject(nullptr),
-      mForceDisplayTo(Viewer::UseGlobalSetting),
-      mEmailAddress(emailAddress),
-      mFinished(false),
-      mMailAllowToRemoteContent(false),
-      mSearchJob(nullptr)
+    : QObject(nullptr)
+    , mForceDisplayTo(Viewer::UseGlobalSetting)
+    , mEmailAddress(emailAddress)
+    , mFinished(false)
+    , mMailAllowToRemoteContent(false)
+    , mSearchJob(nullptr)
 {
     if (!emailAddress.isEmpty()) {
         mSearchJob = new Akonadi::ContactSearchJob();
-        mSearchJob->setQuery(Akonadi::ContactSearchJob::Email, emailAddress.toLower(), Akonadi::ContactSearchJob::ExactMatch);
-        connect(mSearchJob.data(), &Akonadi::ContactSearchJob::result, this, &ContactDisplayMessageMemento::slotSearchJobFinished);
+        mSearchJob->setQuery(Akonadi::ContactSearchJob::Email,
+                             emailAddress.toLower(), Akonadi::ContactSearchJob::ExactMatch);
+        connect(
+            mSearchJob.data(), &Akonadi::ContactSearchJob::result, this,
+            &ContactDisplayMessageMemento::slotSearchJobFinished);
     } else {
         mFinished = true;
     }
@@ -48,7 +51,9 @@ ContactDisplayMessageMemento::ContactDisplayMessageMemento(const QString &emailA
 ContactDisplayMessageMemento::~ContactDisplayMessageMemento()
 {
     if (mSearchJob) {
-        disconnect(mSearchJob.data(), &Akonadi::ContactSearchJob::result, this, &ContactDisplayMessageMemento::slotSearchJobFinished);
+        disconnect(
+            mSearchJob.data(), &Akonadi::ContactSearchJob::result, this,
+            &ContactDisplayMessageMemento::slotSearchJobFinished);
         mSearchJob->kill();
     }
 }
@@ -89,7 +94,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
                     QByteArray imageData;
                     KIO::TransferJob *job = KIO::get(url, KIO::NoReload);
                     QObject::connect(job, &KIO::TransferJob::data,
-                    [&imageData](KIO::Job *, const QByteArray & data) {
+                                     [&imageData](KIO::Job *, const QByteArray &data) {
                         imageData.append(data);
                     });
                     if (job->exec()) {
@@ -111,12 +116,14 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
             if (Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
                 Gravatar::GravatarResolvUrlJob *job = new Gravatar::GravatarResolvUrlJob(this);
                 job->setEmail(mEmailAddress);
-                job->setUseDefaultPixmap(Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
+                job->setUseDefaultPixmap(
+                    Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
                 job->setUseLibravatar(Gravatar::GravatarSettings::self()->libravatarSupportEnabled());
                 job->setFallbackGravatar(Gravatar::GravatarSettings::self()->fallbackToGravatar());
                 job->setUseHttps(true);
                 if (job->canStart()) {
-                    connect(job, &Gravatar::GravatarResolvUrlJob::finished, this, &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
+                    connect(job, &Gravatar::GravatarResolvUrlJob::finished, this,
+                            &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
                     job->start();
                 } else {
                     job->deleteLater();
@@ -134,7 +141,8 @@ bool ContactDisplayMessageMemento::finished() const
 void ContactDisplayMessageMemento::detach()
 {
     disconnect(this, SIGNAL(update(MimeTreeParser::UpdateMode)), nullptr, nullptr);
-    disconnect(this, SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)), nullptr, nullptr);
+    disconnect(this, SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)), nullptr,
+               nullptr);
 }
 
 bool ContactDisplayMessageMemento::allowToRemoteContent() const
@@ -170,7 +178,9 @@ void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &ad
     const QStringList customs = addressee.customs();
     for (const QString &custom : customs) {
         if (custom.contains(QStringLiteral("MailPreferedFormatting"))) {
-            const QString value = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("MailPreferedFormatting"));
+            const QString value
+                = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral(
+                                       "MailPreferedFormatting"));
             if (value == QLatin1String("TEXT")) {
                 mForceDisplayTo = Viewer::Text;
             } else if (value == QLatin1String("HTML")) {
@@ -179,7 +189,9 @@ void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &ad
                 mForceDisplayTo = Viewer::UseGlobalSetting;
             }
         } else if (custom.contains(QStringLiteral("MailAllowToRemoteContent"))) {
-            const QString value = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("MailAllowToRemoteContent"));
+            const QString value
+                = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral(
+                                       "MailAllowToRemoteContent"));
             mMailAllowToRemoteContent = (value == QLatin1String("TRUE"));
         }
     }

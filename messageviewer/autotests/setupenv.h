@@ -25,21 +25,15 @@
 #include <viewer/objecttreeemptysource.h>
 #include <viewer/attachmentstrategy.h>
 
-namespace MessageViewer
-{
-
-namespace Test
-{
-
+namespace MessageViewer {
+namespace Test {
 /**
 * setup a environment variables for tests:
 * * set LC_ALL to C
 * * set KDEHOME
 */
 void setupEnv();
-
 }
-
 }
 
 #endif

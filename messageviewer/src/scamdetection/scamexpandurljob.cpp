@@ -38,8 +38,8 @@ public:
     ScamExpandUrlJobPrivate()
         : mNetworkAccessManager(nullptr)
     {
-
     }
+
     ~ScamExpandUrlJobPrivate()
     {
     }
@@ -48,12 +48,13 @@ public:
 };
 
 ScamExpandUrlJob::ScamExpandUrlJob(QObject *parent)
-    : QObject(parent),
-      d(new ScamExpandUrlJobPrivate)
+    : QObject(parent)
+    , d(new ScamExpandUrlJobPrivate)
 {
     d->mNetworkAccessManager = new QNetworkAccessManager(this);
 
-    connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &ScamExpandUrlJob::slotExpandFinished);
+    connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this,
+            &ScamExpandUrlJob::slotExpandFinished);
 }
 
 ScamExpandUrlJob::~ScamExpandUrlJob()
@@ -64,16 +65,21 @@ ScamExpandUrlJob::~ScamExpandUrlJob()
 void ScamExpandUrlJob::expandedUrl(const QUrl &url)
 {
     if (!PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline()) {
-        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("No network connection detected, we cannot expand url."));
+        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n(
+                                                            "No network connection detected, we cannot expand url."));
         deleteLater();
         return;
     }
-    const QUrl newUrl(QStringLiteral("http://api.longurl.org/v2/expand?url=%1&format=json").arg(url.url()));
+    const QUrl newUrl(QStringLiteral("http://api.longurl.org/v2/expand?url=%1&format=json").arg(
+                          url.url()));
 
     qCDebug(MESSAGEVIEWER_LOG) << " newUrl " << newUrl;
     QNetworkReply *reply = d->mNetworkAccessManager->get(QNetworkRequest(newUrl));
     reply->setProperty("shortUrl", url.url());
-    connect(reply, static_cast<void (QNetworkReply::*)(QNetworkReply::NetworkError)>(&QNetworkReply::error), this, &ScamExpandUrlJob::slotError);
+    connect(reply,
+            static_cast<void (QNetworkReply::*)(
+                            QNetworkReply::NetworkError)>(&QNetworkReply::error), this,
+            &ScamExpandUrlJob::slotError);
 }
 
 void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
@@ -94,7 +100,9 @@ void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
             deleteLater();
             return;
         }
-        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Short url \'%1\' redirects to \'%2\'.", shortUrl.url(), longUrl.toDisplayString()));
+        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Short url \'%1\' redirects to \'%2\'.",
+                                                             shortUrl.url(),
+                                                             longUrl.toDisplayString()));
     }
     deleteLater();
 }

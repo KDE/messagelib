@@ -21,8 +21,7 @@
 #define TEST_VIEWVERPLUGIN_GUI_H
 
 #include <QWidget>
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ViewerPluginInterface;
 }
 

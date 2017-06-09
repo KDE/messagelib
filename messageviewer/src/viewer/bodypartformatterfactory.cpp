@@ -40,14 +40,11 @@
 
 using namespace MessageViewer;
 
-namespace
-{
-
+namespace {
 DEFINE_PLUGIN_LOADER(BodyPartFormatterPluginLoader,
                      MimeTreeParser::Interface::BodyPartFormatterPlugin,
                      "create_bodypart_formatter_plugin",
                      "messageviewer/plugins/bodypartformatter/")
-
 }
 
 BodyPartFormatterFactory::BodyPartFormatterFactory()
@@ -63,7 +60,8 @@ void BodyPartFormatterFactory::loadPlugins()
 {
     const BodyPartFormatterPluginLoader *pl = BodyPartFormatterPluginLoader::instance();
     if (!pl) {
-        qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: cannot instantiate plugin loader!";
+        qCWarning(MESSAGEVIEWER_LOG)
+        << "BodyPartFormatterFactory: cannot instantiate plugin loader!";
         return;
     }
     const QStringList types = pl->types();
@@ -71,7 +69,8 @@ void BodyPartFormatterFactory::loadPlugins()
     for (QStringList::const_iterator it = types.begin(); it != types.end(); ++it) {
         const MimeTreeParser::Interface::BodyPartFormatterPlugin *plugin = pl->createForName(*it);
         if (!plugin) {
-            qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << *it << "is not valid!";
+            qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << *it
+                                         << "is not valid!";
             continue;
         }
         const MimeTreeParser::Interface::BodyPartFormatter *bfp;

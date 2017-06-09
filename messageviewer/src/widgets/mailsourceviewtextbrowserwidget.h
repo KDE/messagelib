@@ -35,15 +35,13 @@
 #include <QSyntaxHighlighter>
 #include <QPlainTextEdit>
 #include <KSyntaxHighlighting/Repository>
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class SlideContainer;
 class TextToSpeechWidget;
 class TextToSpeechInterface;
 }
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class FindBarSourceView;
 
 /**
@@ -75,11 +73,12 @@ private:
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget;
 };
 
-class MailSourceViewTextBrowser: public QPlainTextEdit
+class MailSourceViewTextBrowser : public QPlainTextEdit
 {
     Q_OBJECT
 public:
-    explicit MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent = nullptr);
+    explicit MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface,
+                                       QWidget *parent = nullptr);
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 Q_SIGNALS:
@@ -89,7 +88,5 @@ private:
     void slotSaveAs();
     KPIMTextEdit::TextToSpeechInterface *mTextToSpeechInterface;
 };
-
 }
 #endif // MAILSOURCEVIEWTEXTBROWSERWIDGET_H
-

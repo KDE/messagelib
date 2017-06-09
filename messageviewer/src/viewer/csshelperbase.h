@@ -40,9 +40,7 @@
 class QString;
 class QPaintDevice;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT CSSHelperBase
 {
 public:
@@ -133,9 +131,7 @@ private:
 
 private:
     const QPaintDevice *mPaintDevice;
-
 };
-
 }
 
 #endif

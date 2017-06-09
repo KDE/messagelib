@@ -47,14 +47,14 @@ public:
     ScamCheckShortUrlManagerPrivate()
         : mCheckShortUrl(nullptr)
     {
-
     }
+
     ScamCheckShortUrl *mCheckShortUrl;
 };
 
 ScamCheckShortUrlManager::ScamCheckShortUrlManager(QObject *parent)
-    : QObject(parent),
-      d(new ScamCheckShortUrlManagerPrivate)
+    : QObject(parent)
+    , d(new ScamCheckShortUrlManagerPrivate)
 {
     d->mCheckShortUrl = new ScamCheckShortUrl(this);
 }

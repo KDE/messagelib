@@ -38,9 +38,7 @@
 #include <QLabel>
 class QMouseEvent;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 /**
   * @short The HTML statusbar widget for use with the reader.
   *
@@ -114,7 +112,6 @@ private:
     MimeTreeParser::Util::HtmlMode mMode;
     QList<MimeTreeParser::Util::HtmlMode> mAvailableModes;
 };
-
 }
 
 #endif // _KMAIL_HTMLSTATUSBAR_H_

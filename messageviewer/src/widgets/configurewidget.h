@@ -26,9 +26,7 @@
 
 class KConfigDialogManager;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 /**
  * Configure widget that can be used in a KConfigDialog.
  *
@@ -66,7 +64,6 @@ private:
     void readCurrentOverrideCodec();
     ConfigureWidgetPrivate *const d;
 };
-
 }
 
 #endif

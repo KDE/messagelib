@@ -31,9 +31,7 @@
 
 #include "teehtmlwriter.h"
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 TeeHtmlWriter::TeeHtmlWriter(HtmlWriter *writer1, MimeTreeParser::HtmlWriter *writer2)
     : MimeTreeParser::HtmlWriter()
 {
@@ -114,5 +112,8 @@ void TeeHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
         (*it)->embedPart(contentId, url);
     }
 }
-void TeeHtmlWriter::extraHead(const QString &) {}
+
+void TeeHtmlWriter::extraHead(const QString &)
+{
+}
 } //

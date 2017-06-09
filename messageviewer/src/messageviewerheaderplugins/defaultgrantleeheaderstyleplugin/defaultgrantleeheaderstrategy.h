@@ -22,8 +22,7 @@
 
 #include <messageviewer/headerstrategy.h>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class DefaultGrantleeHeaderStrategy : public HeaderStrategy
 {
 public:
@@ -35,6 +34,7 @@ public:
     {
         return "defaultgrantlee";
     }
+
     DefaultPolicy defaultPolicy() const override
     {
         return Hide;

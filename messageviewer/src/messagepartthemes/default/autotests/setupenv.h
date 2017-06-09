@@ -29,12 +29,8 @@
 
 #include <MessageViewer/ObjectTreeEmptySource>
 
-namespace MessageViewer
-{
-
-namespace Test
-{
-
+namespace MessageViewer {
+namespace Test {
 /**
 * setup a environment variables for tests:
 * * set LC_ALL to C
@@ -47,8 +43,7 @@ void setupEnv();
 class ObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
-    ObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
-                     MessageViewer::CSSHelperBase *cssHelper)
+    ObjectTreeSource(MimeTreeParser::HtmlWriter *writer, MessageViewer::CSSHelperBase *cssHelper)
         : mWriter(writer)
         , mCSSHelper(cssHelper)
         , mAttachmentStrategy(QStringLiteral("smart"))
@@ -61,11 +56,13 @@ public:
     {
     }
 
-    MimeTreeParser::HtmlWriter *htmlWriter() override {
+    MimeTreeParser::HtmlWriter *htmlWriter() override
+    {
         return mWriter;
     }
 
-    CSSHelperBase *cssHelper() override {
+    CSSHelperBase *cssHelper() override
+    {
         return mCSSHelper;
     }
 
@@ -84,8 +81,9 @@ public:
         mAttachmentStrategy = strategy;
     }
 
-    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() override {
-        return  MimeTreeParser::AttachmentStrategy::create(mAttachmentStrategy);
+    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() override
+    {
+        return MimeTreeParser::AttachmentStrategy::create(mAttachmentStrategy);
     }
 
     bool autoImportKeys() const override
@@ -108,7 +106,8 @@ public:
         return mShowExpandQuotesMark;
     }
 
-    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override {
+    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override
+    {
         return &mBodyPartFormatterBaseFactory;
     }
 
@@ -132,7 +131,9 @@ public:
         return mShowSignatureDetails;
     }
 
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override {
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode,
+                     const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override
+    {
         Q_UNUSED(mode);
         Q_UNUSED(availableModes);
     }
@@ -157,11 +158,13 @@ public:
         mQuoteLevel = level;
     }
 
-    const QTextCodec *overrideCodec() override {
+    const QTextCodec *overrideCodec() override
+    {
         return nullptr;
     }
 
-    QString createMessageHeader(KMime::Message *message) override {
+    QString createMessageHeader(KMime::Message *message) override
+    {
         Q_UNUSED(message);
         return QString(); //do nothing
     }
@@ -178,10 +181,7 @@ private:
     MimeTreeParser::Util::HtmlMode mPreferredMode;
     int mQuoteLevel;
 };
-
 }
-
 }
 
 #endif //__MESSAGEVIEWER_TESTS_SETUPENV_H__
-

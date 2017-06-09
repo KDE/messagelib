@@ -27,7 +27,8 @@ ViewerTest::ViewerTest()
 
 void ViewerTest::shouldHaveDefaultValuesOnCreation()
 {
-    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
+    MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
+                                                                  this));
     viewer->show();
     QTest::qWaitForWindowExposed(viewer);
 
@@ -42,11 +43,13 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     QWidget *colorBar = viewer->findChild<QWidget *>(QStringLiteral("mColorBar"));
     QVERIFY(colorBar);
 
-    QWidget *scandetectionWidget = viewer->findChild<QWidget *>(QStringLiteral("scandetectionwarning"));
+    QWidget *scandetectionWidget
+        = viewer->findChild<QWidget *>(QStringLiteral("scandetectionwarning"));
     QVERIFY(scandetectionWidget);
     QCOMPARE(scandetectionWidget->isVisible(), false);
 
-    QWidget *openattachementfolderwidget = viewer->findChild<QWidget *>(QStringLiteral("openattachementfolderwidget"));
+    QWidget *openattachementfolderwidget
+        = viewer->findChild<QWidget *>(QStringLiteral("openattachementfolderwidget"));
     QVERIFY(openattachementfolderwidget);
     QCOMPARE(openattachementfolderwidget->isVisible(), false);
 
@@ -70,29 +73,29 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     delete viewer;
 }
 
-static const char s_mail1[] =
-    "From: Konqui <konqui@kde.org>\n"
-    "To: Friends <friends@kde.org>\n"
-    "Date: Sun, 21 Mar 1993 23:56:48 -0800 (PST)\n"
-    "Subject: Sample message\n"
-    "MIME-Version: 1.0\n"
-    "Content-type: text/plain; charset=us-ascii\n"
-    "\n"
-    "\n"
-    "This is a test message.\n"
-    "\n";
+static const char s_mail1[]
+    = "From: Konqui <konqui@kde.org>\n"
+      "To: Friends <friends@kde.org>\n"
+      "Date: Sun, 21 Mar 1993 23:56:48 -0800 (PST)\n"
+      "Subject: Sample message\n"
+      "MIME-Version: 1.0\n"
+      "Content-type: text/plain; charset=us-ascii\n"
+      "\n"
+      "\n"
+      "This is a test message.\n"
+      "\n";
 
-static const char s_mail2[] =
-    "From: David Faure <dfaure@example.com>\n"
-    "To: Friends <friends@example.com>\n"
-    "Date: Sun, 31 Aug 2016 23:56:48 +0200 (CEST)\n"
-    "Subject: Second mail\n"
-    "MIME-Version: 1.0\n"
-    "Content-type: text/plain; charset=\"us-ascii\"\n"
-    "\n"
-    "\n"
-    "This is the second message.\n"
-    "\n";
+static const char s_mail2[]
+    = "From: David Faure <dfaure@example.com>\n"
+      "To: Friends <friends@example.com>\n"
+      "Date: Sun, 31 Aug 2016 23:56:48 +0200 (CEST)\n"
+      "Subject: Second mail\n"
+      "MIME-Version: 1.0\n"
+      "Content-type: text/plain; charset=\"us-ascii\"\n"
+      "\n"
+      "\n"
+      "This is the second message.\n"
+      "\n";
 
 KMime::Message::Ptr createMsg(const char *data)
 {

@@ -68,11 +68,8 @@ static const int SIG_FRAME_COL_UNDEF = 99;
 #define SIG_FRAME_COL_RED    -1
 #define SIG_FRAME_COL_YELLOW  0
 #define SIG_FRAME_COL_GREEN   1
-QString sigStatusToString(const QGpgME::Protocol *cryptProto,
-                          int status_code,
-                          GpgME::Signature::Summary summary,
-                          int &frameColor,
-                          bool &showKeyInfos)
+QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code,
+                          GpgME::Signature::Summary summary, int &frameColor, bool &showKeyInfos)
 {
     // note: At the moment frameColor and showKeyInfos are
     //       used for CMS only but not for PGP signatures
@@ -193,7 +190,7 @@ QString sigStatusToString(const QGpgME::Protocol *cryptProto,
                 frameColor = SIG_FRAME_COL_RED;
             }
             if (summary & GpgME::Signature::Red) {
-                if (result2.isEmpty())
+                if (result2.isEmpty()) {
                     // Note:
                     // Here we are work differently than KMail did before!
                     //
@@ -206,7 +203,6 @@ QString sigStatusToString(const QGpgME::Protocol *cryptProto,
                     // in the body NOT the signature - so we don't show
                     // any key/signature information at all!
                     //         (khz, according to LinuxTag 2002 meeting)
-                {
                     showKeyInfos = false;
                 }
                 frameColor = SIG_FRAME_COL_RED;
@@ -246,9 +242,10 @@ QString sigStatusToString(const QGpgME::Protocol *cryptProto,
 
 bool containsExternalReferences(const QString &str, const QString &extraHead)
 {
-    const bool hasBaseInHeader = extraHead.contains(QStringLiteral("<base href=\""), Qt::CaseInsensitive);
-    if (hasBaseInHeader && (str.contains(QStringLiteral("href=\"/"), Qt::CaseInsensitive) ||
-                            str.contains(QStringLiteral("<img src=\"/"), Qt::CaseInsensitive))) {
+    const bool hasBaseInHeader = extraHead.contains(QStringLiteral(
+                                                        "<base href=\""), Qt::CaseInsensitive);
+    if (hasBaseInHeader && (str.contains(QStringLiteral("href=\"/"), Qt::CaseInsensitive)
+                            || str.contains(QStringLiteral("<img src=\"/"), Qt::CaseInsensitive))) {
         return true;
     }
     int httpPos = str.indexOf(QLatin1String("\"http:"), Qt::CaseInsensitive);
@@ -266,11 +263,11 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
             // is larger than 7 (7 is the distance in 'href = "http[s]:') then
             // we assume that we have found an external reference
             if ((hrefPos == -1) || (pos - hrefPos > 7)) {
-
                 // HTML messages created by KMail itself for now contain the following:
                 // <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
                 // Make sure not to show an external references warning for this string
-                int dtdPos = str.indexOf(QLatin1String("http://www.w3.org/TR/html4/loose.dtd"), pos + 1);
+                int dtdPos = str.indexOf(QLatin1String(
+                                             "http://www.w3.org/TR/html4/loose.dtd"), pos + 1);
                 if (dtdPos != (pos + 1)) {
                     return true;
                 }
@@ -291,27 +288,60 @@ class CacheHtmlWriter : public MimeTreeParser::HtmlWriter
 public:
     explicit CacheHtmlWriter(MimeTreeParser::HtmlWriter *baseWriter)
         : mBaseWriter(baseWriter)
-    {}
-    virtual ~CacheHtmlWriter() {}
+    {
+    }
 
-    void begin(const QString &text) override {mBaseWriter->begin(text);}
-    void write(const QString &str) override {
+    virtual ~CacheHtmlWriter()
+    {
+    }
+
+    void begin(const QString &text) override
+    {
+        mBaseWriter->begin(text);
+    }
+
+    void write(const QString &str) override
+    {
         html.append(str);
     }
-    void end() override {mBaseWriter->end();}
-    void reset() override {mBaseWriter->reset();}
-    void queue(const QString &str) override {
+
+    void end() override
+    {
+        mBaseWriter->end();
+    }
+
+    void reset() override
+    {
+        mBaseWriter->reset();
+    }
+
+    void queue(const QString &str) override
+    {
         html.append(str);
     }
-    void flush() override {mBaseWriter->flush();}
-    void embedPart(const QByteArray &contentId, const QString &url) override {mBaseWriter->embedPart(contentId, url);}
-    void extraHead(const QString &extra) override {mBaseWriter->extraHead(extra);}
+
+    void flush() override
+    {
+        mBaseWriter->flush();
+    }
+
+    void embedPart(const QByteArray &contentId, const QString &url) override
+    {
+        mBaseWriter->embedPart(contentId, url);
+    }
+
+    void extraHead(const QString &extra) override
+    {
+        mBaseWriter->extraHead(extra);
+    }
 
     QString html;
     MimeTreeParser::HtmlWriter *mBaseWriter;
 };
 
-DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactoryBase *rendererFactory)
+DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart,
+                                               CSSHelperBase *cssHelper,
+                                               const MessagePartRendererFactoryBase *rendererFactory)
     : mMsgPart(msgPart)
     , mOldWriter(msgPart->htmlWriter())
     , mCSSHelper(cssHelper)
@@ -347,7 +377,8 @@ Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
     return nullptr;
 }
 
-void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart,
+                                            const QSharedPointer<CacheHtmlWriter> &htmlWriter)
 {
     foreach (const auto &_m, msgPart->subParts()) {
         const auto m = _m.dynamicCast<MessagePart>();
@@ -375,7 +406,8 @@ QString DefaultRendererPrivate::render(const MessagePartList::Ptr &mp)
         }
 
         if (mp->isAttachment()) {
-            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+            aBlock
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
         }
 
         mp->setHtmlWriter(htmlWriter.data());
@@ -393,7 +425,8 @@ QString DefaultRendererPrivate::render(const MimeMessagePart::Ptr &mp)
         HTMLBlock::Ptr aBlock;
         HTMLBlock::Ptr rBlock;
         if (mp->isAttachment()) {
-            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+            aBlock
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
         }
 
         if (mp->isRoot()) {
@@ -411,13 +444,15 @@ QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr 
     if (!mp->hasSubParts()) {
         return QString();
     }
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/encapsulatedrfc822messagepart.html"));
+    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
+                                                                                             ":/encapsulatedrfc822messagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
     c.insert(QStringLiteral("block"), &block);
     block.setProperty("dir", alignText());
-    block.setProperty("link", mp->mOtp->nodeHelper()->asHREF(mp->mMessage.data(), QStringLiteral("body")));
+    block.setProperty("link",
+                      mp->mOtp->nodeHelper()->asHREF(mp->mMessage.data(), QStringLiteral("body")));
 
     c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->mMessage.data()));
     {
@@ -430,7 +465,8 @@ QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr 
     {
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
-            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+            aBlock
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
         }
         const auto html = t->render(&c);
         htmlWriter->queue(html);
@@ -440,7 +476,8 @@ QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr 
 
 QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
 {
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/htmlmessagepart.html"));
+    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
+                                                                                             ":/htmlmessagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
@@ -462,7 +499,8 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
             mOldWriter->extraHead(extraHead);
         }
 
-        block.setProperty("containsExternalReferences", containsExternalReferences(bodyText, extraHead));
+        block.setProperty("containsExternalReferences",
+                          containsExternalReferences(bodyText, extraHead));
         c.insert(QStringLiteral("content"), bodyText);
     }
 
@@ -479,13 +517,13 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
     {
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
-            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+            aBlock
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
         }
         const auto html = t->render(&c);
         htmlWriter->queue(html);
     }
     return htmlWriter->html;
-
 }
 
 QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp)
@@ -493,7 +531,8 @@ QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr 
     KMime::Content *node = mp->mNode;
     const auto metaData = mp->mMetaData;
 
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/encryptedmessagepart.html"));
+    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
+                                                                                             ":/encryptedmessagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
@@ -518,7 +557,8 @@ QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr 
 
     c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(mp->mCryptoProto));
     if (mp->mDecryptRecipients.size() > 0) {
-        c.insert(QStringLiteral("decryptedRecipients"), QVariant::fromValue(mp->mDecryptRecipients));
+        c.insert(QStringLiteral("decryptedRecipients"),
+                 QVariant::fromValue(mp->mDecryptRecipients));
     }
     c.insert(QStringLiteral("block"), &block);
 
@@ -526,10 +566,14 @@ QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr 
     block.setProperty("inProgress", metaData.inProgress);
     block.setProperty("isDecrypted", mp->decryptMessage());
     block.setProperty("isDecryptable", metaData.isDecryptable);
-    block.setProperty("decryptIcon", QUrl::fromLocalFile(IconNameCache::instance()->iconPath(QStringLiteral("document-decrypt"), KIconLoader::Small)).url());
+    block.setProperty("decryptIcon",
+                      QUrl::fromLocalFile(IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                                  "document-decrypt"),
+                                                                              KIconLoader::Small)).url());
     block.setProperty("errorText", metaData.errorText);
     block.setProperty("noSecKey", mp->mNoSecKey);
-    block.setProperty("iconSize", MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
+    block.setProperty("iconSize",
+                      MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
 
     const auto html = t->render(&c);
 
@@ -544,7 +588,8 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
 
     const bool isSMIME = cryptoProto && (cryptoProto == QGpgME::smime());
 
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/signedmessagepart.html"));
+    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
+                                                                                             ":/signedmessagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
@@ -580,7 +625,8 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
     block.setProperty("technicalProblem", metaData.technicalProblem);
     block.setProperty("keyId", metaData.keyId);
     if (metaData.creationTime.isValid()) {      //should be handled inside grantlee but currently not possible see: https://bugs.kde.org/363475
-        block.setProperty("creationTime", QLocale().toString(metaData.creationTime, QLocale::ShortFormat));
+        block.setProperty("creationTime",
+                          QLocale().toString(metaData.creationTime, QLocale::ShortFormat));
     }
     block.setProperty("isGoodSignature", metaData.isGoodSignature);
     block.setProperty("isSMIME", isSMIME);
@@ -601,13 +647,17 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
     {
         QString keyWithWithoutURL;
         if (cryptoProto) {
-            startKeyHREF =
-                QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">")
-                .arg(cryptoProto->displayName(),
-                     cryptoProto->name(),
-                     QString::fromLatin1(metaData.keyId));
+            startKeyHREF
+                = QStringLiteral("<a href=\"kmail:showCertificate#%1 ### %2 ### %3\">")
+                  .arg(cryptoProto->displayName(),
+                       cryptoProto->name(),
+                       QString::fromLatin1(metaData.keyId));
 
-            keyWithWithoutURL = QStringLiteral("%1%2</a>").arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArrayLiteral("0x") + metaData.keyId)));
+            keyWithWithoutURL
+                = QStringLiteral("%1%2</a>").arg(startKeyHREF,
+                                                 QString::fromLatin1(QByteArray(QByteArrayLiteral(
+                                                                                    "0x")
+                                                                                + metaData.keyId)));
         } else {
             keyWithWithoutURL = QStringLiteral("0x") + QString::fromUtf8(metaData.keyId);
         }
@@ -660,7 +710,6 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
         showKeyInfos = true;
 
         if (isSMIME && (SIG_FRAME_COL_UNDEF != frameColor)) {
-
             switch (frameColor) {
             case SIG_FRAME_COL_RED:
                 mClass = QStringLiteral("signErr");
@@ -687,17 +736,18 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
 
                 if (!blockAddrs.empty()) {
                     if (!blockAddrs.contains(msgFrom, Qt::CaseInsensitive)) {
-                        greenCaseWarning =
-                            QStringLiteral("<u>") +
-                            i18nc("Start of warning message.", "Warning:") +
-                            QStringLiteral("</u> ") +
-                            i18n("Sender's mail address is not stored in the %1 used for signing.",
-                                 certificate) +
-                            QStringLiteral("<br />") +
-                            i18n("sender: ") +
-                            msgFrom +
-                            QStringLiteral("<br />") +
-                            i18n("stored: ");
+                        greenCaseWarning
+                            = QStringLiteral("<u>")
+                              +i18nc("Start of warning message.", "Warning:")
+                              +QStringLiteral("</u> ")
+                              +i18n(
+                            "Sender's mail address is not stored in the %1 used for signing.",
+                            certificate)
+                              +QStringLiteral("<br />")
+                              +i18n("sender: ")
+                              +msgFrom
+                              +QStringLiteral("<br />")
+                              +i18n("stored: ");
                         // We cannot use Qt's join() function here but
                         // have to join the addresses manually to
                         // extract the mail addresses (without '<''>')
@@ -705,7 +755,7 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
                         bool bStart = true;
                         QStringList::ConstIterator end(blockAddrs.constEnd());
                         for (QStringList::ConstIterator it = blockAddrs.constBegin();
-                                it != end; ++it) {
+                             it != end; ++it) {
                             if (!bStart) {
                                 greenCaseWarning.append(QStringLiteral(", <br />&nbsp; &nbsp;"));
                             }
@@ -715,14 +765,14 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
                         }
                     }
                 } else {
-                    greenCaseWarning =
-                        QStringLiteral("<u>") +
-                        i18nc("Start of warning message.", "Warning:") +
-                        QStringLiteral("</u> ") +
-                        i18n("No mail address is stored in the %1 used for signing, "
-                             "so we cannot compare it to the sender's address %2.",
-                             certificate,
-                             msgFrom);
+                    greenCaseWarning
+                        = QStringLiteral("<u>")
+                          +i18nc("Start of warning message.", "Warning:")
+                          +QStringLiteral("</u> ")
+                          +i18n("No mail address is stored in the %1 used for signing, "
+                                "so we cannot compare it to the sender's address %2.",
+                                certificate,
+                                msgFrom);
                 }
                 break;
             }
@@ -733,7 +783,13 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
                 } else {
                     if (!blockAddrs.empty()) {
                         const QUrl address = KEmailAddress::encodeMailtoUrl(blockAddrs.first());
-                        signer = QStringLiteral("<a href=\"mailto:%1\">%2</a>").arg(QLatin1String(QUrl::toPercentEncoding(address.path())), signer);
+                        signer
+                            = QStringLiteral("<a href=\"mailto:%1\">%2</a>").arg(QLatin1String(QUrl
+                                                                                               ::
+                                                                                               toPercentEncoding(
+                                                                                                   address
+                                                                                                   .
+                        path())), signer);
                     }
                 }
             }
@@ -779,7 +835,9 @@ QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                aBlock
+                    = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(),
+                                                             mp->attachmentNode()));
             }
             htmlWriter->queue(renderSigned(mp));
         }
@@ -788,7 +846,8 @@ QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
     {
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
-            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+            aBlock
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
         }
         if (mp->hasSubParts()) {
             renderSubParts(mp, htmlWriter);
@@ -811,7 +870,9 @@ QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
         {
             HTMLBlock::Ptr aBlock;
             if (mp->isAttachment()) {
-                aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                aBlock
+                    = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(),
+                                                             mp->attachmentNode()));
             }
             htmlWriter->queue(renderEncrypted(mp));
         }
@@ -821,7 +882,8 @@ QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
     {
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
-            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+            aBlock
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
         }
 
         if (mp->hasSubParts()) {
@@ -842,7 +904,8 @@ QString DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp)
     {
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
-            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+            aBlock
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
         }
 
         auto mode = mp->preferredMode();
@@ -867,7 +930,8 @@ QString DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp)
 QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
 {
     const GpgME::ImportResult &importResult(mp->mImportResult);
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(":/certmessagepart.html"));
+    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
+                                                                                             ":/certmessagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
@@ -894,7 +958,8 @@ QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
     {
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
-            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+            aBlock
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
         }
         const auto html = t->render(&c);
         htmlWriter->queue(html);
@@ -902,7 +967,8 @@ QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
     return htmlWriter->html;
 }
 
-QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className, const Interface::MessagePart::Ptr &msgPart)
+QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className,
+                                                                       const Interface::MessagePart::Ptr &msgPart)
 {
     if (mRendererFactory) {
         const auto registry = mRendererFactory->typeRegistry(className);
@@ -916,24 +982,24 @@ QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString c
     return QSharedPointer<PartRendered>();
 }
 
-QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr &msgPart,
+                                              const QSharedPointer<CacheHtmlWriter> &htmlWriter)
 {
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
     const auto rendered = renderWithFactory(className, msgPart);
     if (rendered) {
         const auto parts = rendered->embededParts();
-        foreach(auto key, parts.keys()) {
+        foreach (auto key, parts.keys()) {
             htmlWriter->embedPart(key, parts.value(key));
         }
 
-        foreach(auto entry, rendered->extraHeader()) {
+        foreach (auto entry, rendered->extraHeader()) {
             htmlWriter->extraHead(entry);
         }
 
         return rendered->html();
     }
-
 
     if (className == QStringLiteral("MimeTreeParser::MessagePartList")) {
         auto mp = msgPart.dynamicCast<MessagePartList>();
@@ -977,7 +1043,8 @@ QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr 
         }
     }
 
-    qCDebug(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for " << className;
+    qCDebug(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
+                               << className;
 
     auto _htmlWriter = htmlWriter;
     if (!_htmlWriter) {
@@ -993,8 +1060,10 @@ QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr 
     return QString();
 }
 
-DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
-    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper,  rendererPluginFactoryInstance()))
+DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart,
+                                 CSSHelperBase *cssHelper)
+    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper,
+                                                   rendererPluginFactoryInstance()))
 {
 }
 

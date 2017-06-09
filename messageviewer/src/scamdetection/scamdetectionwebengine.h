@@ -25,8 +25,7 @@
 #include <QVariant>
 #include "messageviewer_export.h"
 class QWebEnginePage;
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ScamDetectionWebEnginePrivate;
 class MESSAGEVIEWER_EXPORT ScamDetectionWebEngine : public QObject
 {

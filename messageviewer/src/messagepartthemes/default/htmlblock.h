@@ -24,13 +24,11 @@
 #include <QSharedPointer>
 #include <QVector>
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class HtmlWriter;
 
 class HTMLBlock
@@ -93,6 +91,5 @@ private:
 
     HtmlWriter *mWriter;
 };
-
 }
 #endif //__MIMETREEPARSER_HTMLBLOCK_H__

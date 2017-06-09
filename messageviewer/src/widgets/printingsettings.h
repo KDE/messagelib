@@ -21,8 +21,7 @@
 #include "messageviewer_export.h"
 #include <QWidget>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class PrintingSettingsPrivate;
 class MESSAGEVIEWER_EXPORT PrintingSettings : public QWidget
 {

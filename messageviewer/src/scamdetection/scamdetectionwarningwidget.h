@@ -25,8 +25,7 @@
 
 #include <KMessageWidget>
 
-namespace MessageViewer
-{
+namespace MessageViewer {
 class ScamDetectionWarningWidgetPrivate;
 class MESSAGEVIEWER_EXPORT ScamDetectionWarningWidget : public KMessageWidget
 {

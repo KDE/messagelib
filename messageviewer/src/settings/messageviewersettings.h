@@ -28,9 +28,7 @@
 
 class QTimer;
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 class MESSAGEVIEWER_EXPORT MessageViewerSettings : public MessageViewer::MessageViewerSettingsBase
 {
     Q_OBJECT
@@ -53,9 +51,7 @@ private:
     static MessageViewerSettings *mSelf;
 
     QTimer *mConfigSyncTimer;
-
 };
-
 }
 
 #endif

@@ -48,8 +48,8 @@ using namespace MessageViewer;
 using namespace MessageViewer;
 
 MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
-    : QDialog(parent),
-      mFindBar(nullptr)
+    : QDialog(parent)
+    , mFindBar(nullptr)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -60,7 +60,9 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     mainLayout->addWidget(mTabWidget);
 
     mTabWidget->addTab(mRawBrowser, i18nc("Unchanged mail message", "Raw Source"));
-    mTabWidget->setTabToolTip(0, i18n("Raw, unmodified mail as it is stored on the filesystem or on the server"));
+    mTabWidget->setTabToolTip(0,
+                              i18n(
+                                  "Raw, unmodified mail as it is stored on the filesystem or on the server"));
 
     mHtmlBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("HTML"), this);
     mTabWidget->addTab(mHtmlBrowser, i18nc("Mail message as shown, in HTML format", "HTML Source"));
@@ -81,13 +83,15 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
 
     KWindowSystem::setIcons(winId(),
                             qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop),
-                                    IconSize(KIconLoader::Desktop)),
+                                                      IconSize(KIconLoader::Desktop)),
                             qApp->windowIcon().pixmap(IconSize(KIconLoader::Small),
-                                    IconSize(KIconLoader::Small)));
+                                                      IconSize(KIconLoader::Small)));
     mRawBrowser->textBrowser()->setFocus();
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &MailSourceWebEngineViewer::reject);
-    connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &MailSourceWebEngineViewer::close);
+    connect(buttonBox->button(
+                QDialogButtonBox::Close), &QPushButton::clicked, this,
+            &MailSourceWebEngineViewer::close);
 
     mainLayout->addWidget(buttonBox);
 }
@@ -106,7 +110,7 @@ void MailSourceWebEngineViewer::setDisplayedSource(QWebEnginePage *page)
 #ifndef NDEBUG
     if (page) {
         MailSourceViewTextBrowserWidget *browser = mHtmlBrowser;
-        page->toHtml([browser](const QString & result) {
+        page->toHtml([browser](const QString &result) {
             browser->setPlainText(result);
         });
     }
@@ -122,4 +126,3 @@ void MailSourceWebEngineViewer::setFixedFont()
     mHtmlBrowser->setFixedFont();
 #endif
 }
-

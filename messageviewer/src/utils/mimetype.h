@@ -24,21 +24,16 @@
 
 #include <QString>
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MessageViewer
-{
-
+namespace MessageViewer {
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
-namespace Util
-{
-
+namespace Util {
 /**
      * Finds the filename of an icon based on the given mimetype or filenames.
      *
@@ -56,8 +51,8 @@ namespace Util
      * @return the full file name of the icon file
      */
 QString MESSAGEVIEWER_EXPORT iconPathForMimetype(const QString &mimeType, int iconSize,
-        const QString &fallbackFileName1 = QString(),
-        const QString &fallbackFileName2 = QString());
+                                                 const QString &fallbackFileName1 = QString(),
+                                                 const QString &fallbackFileName2 = QString());
 
 QString MESSAGEVIEWER_EXPORT iconPathForContent(KMime::Content *node, int iconSize);
 
@@ -68,7 +63,6 @@ struct AttachmentDisplayInfo {
 };
 
 AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
-
 }
 }
 #endif

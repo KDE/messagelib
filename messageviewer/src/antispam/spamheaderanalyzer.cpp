@@ -170,7 +170,7 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
             KMime::Headers::Base *cHeader = message->headerByType(confidenceHeaderName.constData());
             if (cHeader) {
                 mCField = cHeader->asUnicodeString();
-                if (! mCField.isEmpty()) {
+                if (!mCField.isEmpty()) {
                     // Can we extract the confidence?
                     QRegExp cScorePattern = (*it).confidencePattern();
                     if (cScorePattern.indexIn(mCField) != -1) {
@@ -179,7 +179,8 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
                     confidence = confidenceString.toFloat(&confidenceValid);
                     if (!confidenceValid) {
                         spamError = couldNotConvertConfidenceToFloat;
-                        qCDebug(MESSAGEVIEWER_LOG) << "Unable to convert confidence to float:" << confidenceString;
+                        qCDebug(MESSAGEVIEWER_LOG) << "Unable to convert confidence to float:"
+                                                   << confidenceString;
                     }
                 }
             }

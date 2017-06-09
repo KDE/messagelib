@@ -69,14 +69,14 @@ void ObjectTreeParserTester::test_parsePlainMessage()
 
     // Test that the charset of messages without an explicit charset declaration
     // is correct
-    content =
-        "From: Thomas McGuire <dontspamme@gmx.net>\n"
-        "Subject: Plain Message Test\n"
-        "Date: Wed, 5 Aug 2009 10:58:27 +0200\n"
-        "MIME-Version: 1.0\n"
-        "Content-Type: text/plain;\n"
-        "\n"
-        "This is the message text.\n";
+    content
+        = "From: Thomas McGuire <dontspamme@gmx.net>\n"
+          "Subject: Plain Message Test\n"
+          "Date: Wed, 5 Aug 2009 10:58:27 +0200\n"
+          "MIME-Version: 1.0\n"
+          "Content-Type: text/plain;\n"
+          "\n"
+          "This is the message text.\n";
     msg->setContent(content);
     msg->parse();
     ObjectTreeParser otp2(&emptySource);
@@ -86,7 +86,8 @@ void ObjectTreeParserTester::test_parsePlainMessage()
 
 void ObjectTreeParserTester::test_parseEncapsulatedMessage()
 {
-    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
+    KMime::Message::Ptr msg
+        = Test::readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "Fwd: Test with attachment");
     QCOMPARE(msg->contents().size(), 2);
 
@@ -123,7 +124,8 @@ void ObjectTreeParserTester::test_parseEncapsulatedMessage()
 void ObjectTreeParserTester::test_missingContentTypeHeader()
 {
     KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("no-content-type.mbox"));
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Simple Mail Without Content-Type Header");
+    QCOMPARE(msg->subject()->as7BitString(
+                 false).constData(), "Simple Mail Without Content-Type Header");
     QCOMPARE(msg->contents().size(), 0);
 
     Test::HtmlWriter testWriter;
@@ -195,7 +197,8 @@ void ObjectTreeParserTester::test_HTML()
     otp.parseObjectTree(msg.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "Some HTML text");
-    QVERIFY(otp.htmlContent().contains(QStringLiteral("Some <span style=\" font-weight:600;\">HTML</span> text")));
+    QVERIFY(otp.htmlContent().contains(QStringLiteral(
+                                           "Some <span style=\" font-weight:600;\">HTML</span> text")));
     QCOMPARE(otp.htmlContentCharset().data(), "windows-1252");
 }
 
@@ -252,7 +255,8 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
 
     QVERIFY(otp.plainTextContent().isEmpty());
     QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
-    QVERIFY(testWriter.html.contains(QStringLiteral("This is an HTML message. For security reasons, only the raw HTML code is shown.")));
+    QVERIFY(testWriter.html.contains(QStringLiteral(
+                                         "This is an HTML message. For security reasons, only the raw HTML code is shown.")));
     QVERIFY(testWriter.html.contains(QStringLiteral("*SOME* HTML text. <br>")));
 }
 
@@ -274,7 +278,8 @@ void ObjectTreeParserTester::test_HTMLExternal()
         QVERIFY(otp.plainTextContent().isEmpty());
         QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
         QVERIFY(testWriter.html.contains(QStringLiteral("<b>SOME</b> HTML text.")));
-        QVERIFY(testWriter.html.contains(QStringLiteral("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
+        QVERIFY(testWriter.html.contains(QStringLiteral(
+                                             "This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
     }
     {
         Test::HtmlWriter testWriter;
@@ -287,7 +292,8 @@ void ObjectTreeParserTester::test_HTMLExternal()
 
         QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
         QVERIFY(testWriter.html.contains(QStringLiteral("<b>SOME</b> HTML text.")));
-        QVERIFY(!testWriter.html.contains(QStringLiteral("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
+        QVERIFY(!testWriter.html.contains(QStringLiteral(
+                                              "This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
     }
 }
 
@@ -305,8 +311,10 @@ void ObjectTreeParserTester::test_Alternative()
         otp.parseObjectTree(msg.data());
 
         QVERIFY(otp.htmlContent().isEmpty());
-        QVERIFY(otp.plainTextContent().contains(QStringLiteral("If you can see this text it means that your email client couldn't display our newsletter properly.")));
-        QVERIFY(testWriter.html.contains(QStringLiteral("If you can see this text it means that your email client couldn't display our newsletter properly.")));
+        QVERIFY(otp.plainTextContent().contains(QStringLiteral(
+                                                    "If you can see this text it means that your email client couldn't display our newsletter properly.")));
+        QVERIFY(testWriter.html.contains(QStringLiteral(
+                                             "If you can see this text it means that your email client couldn't display our newsletter properly.")));
     }
 
     {
@@ -318,9 +326,12 @@ void ObjectTreeParserTester::test_Alternative()
         emptySource.setPreferredMode(MimeTreeParser::Util::MultipartHtml);
         otp.parseObjectTree(msg.data());
 
-        QVERIFY(otp.plainTextContent().contains(QStringLiteral("If you can see this text it means that your email client couldn't display our newsletter properly.")));
-        QVERIFY(otp.htmlContent().contains(QStringLiteral("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
-        QVERIFY(testWriter.html.contains(QStringLiteral("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(otp.plainTextContent().contains(QStringLiteral(
+                                                    "If you can see this text it means that your email client couldn't display our newsletter properly.")));
+        QVERIFY(otp.htmlContent().contains(QStringLiteral(
+                                               "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(testWriter.html.contains(QStringLiteral(
+                                             "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
     }
 
     msg = Test::readAndParseMail(QStringLiteral("alternative-notext.mbox"));
@@ -349,7 +360,9 @@ void ObjectTreeParserTester::test_Alternative()
         otp.parseObjectTree(msg.data());
 
         QVERIFY(otp.plainTextContent().isEmpty());
-        QVERIFY(otp.htmlContent().contains(QStringLiteral("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
-        QVERIFY(testWriter.html.contains(QStringLiteral("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(otp.htmlContent().contains(QStringLiteral(
+                                               "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(testWriter.html.contains(QStringLiteral(
+                                             "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
     }
 }

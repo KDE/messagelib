@@ -21,8 +21,7 @@
 
 #include <QWebEngineView>
 #include <QWidget>
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class MailWebEngineView;
 }
 

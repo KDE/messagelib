@@ -77,7 +77,9 @@ template< typename T, typename T_config >
 class PluginLoader : public PluginLoaderBase
 {
 protected:
-    PluginLoader() : PluginLoaderBase() {}
+    PluginLoader() : PluginLoaderBase()
+    {
+    }
 
 private:
     static PluginLoader<T, T_config> *mSelf;
@@ -101,7 +103,8 @@ public:
     /** Rescans the plugin directory to find any newly installed
         plugins.
     **/
-    void scan() override {
+    void scan() override
+    {
         doScan(T_config::path);
     }
 
@@ -124,15 +127,15 @@ public:
 template< typename T, typename T_config >
 PluginLoader<T, T_config> *PluginLoader<T, T_config>::mSelf = nullptr;
 
-#define DEFINE_PLUGIN_LOADER( pl, t, mf, p ) \
+#define DEFINE_PLUGIN_LOADER(pl, t, mf, p) \
     namespace { /* don't pollute namespaces */ \
-    struct Q_DECL_EXPORT pl##Config { \
-        static const char * const mainfunc; \
-        static const char * const path; \
+    struct Q_DECL_EXPORT pl ## Config { \
+        static const char *const mainfunc; \
+        static const char *const path; \
     }; \
-    const char * const pl##Config::mainfunc = mf; \
-    const char * const pl##Config::path = p; \
+    const char *const pl ## Config::mainfunc = mf; \
+    const char *const pl ## Config::path = p; \
     } \
-    typedef PluginLoader< t, pl##Config > pl; \
+    typedef PluginLoader< t, pl ## Config > pl; \
 
 #endif // PLUGINLOADER_H
