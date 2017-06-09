@@ -53,6 +53,7 @@ public:
     virtual bool hasConfigureDialog() const;
 
     virtual void showConfigureDialog(QWidget *parent);
+
 private:
     HeaderStylePluginPrivate *const d;
 };

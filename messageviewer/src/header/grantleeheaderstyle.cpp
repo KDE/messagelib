@@ -72,6 +72,7 @@ QString GrantleeHeaderStyle::format(KMime::Message *message) const
     settings.style = this;
     settings.message = message;
     settings.showMailAction = d->mShowMailAction;
+    settings.showEmoticons = showEmoticons();
     return d->mGrantleeFormatter->toHtml(settings);
 }
 

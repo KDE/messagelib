@@ -50,6 +50,7 @@ public:
         , mTopLevel(true)
         , mAllowAsync(false)
         , mReadOnlyMessage(false)
+        , mShowEmoticons(true)
     {
     }
 
@@ -65,6 +66,7 @@ public:
     bool mTopLevel;
     bool mAllowAsync;
     bool mReadOnlyMessage;
+    bool mShowEmoticons;
 };
 
 HeaderStyle::HeaderStyle()
@@ -200,4 +202,14 @@ bool HeaderStyle::readOnlyMessage() const
 void HeaderStyle::setReadOnlyMessage(bool readOnlyMessage)
 {
     d->mReadOnlyMessage = readOnlyMessage;
+}
+
+bool HeaderStyle::showEmoticons() const
+{
+    return d->mShowEmoticons;
+}
+
+void HeaderStyle::setShowEmoticons(bool b)
+{
+    d->mShowEmoticons = b;
 }

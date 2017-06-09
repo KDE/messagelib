@@ -119,6 +119,9 @@ public:
     bool readOnlyMessage() const;
     void setReadOnlyMessage(bool readOnlyMessage);
 
+    bool showEmoticons() const;
+    void setShowEmoticons(bool b);
+
 private:
     HeaderStylePrivate *const d;
 };

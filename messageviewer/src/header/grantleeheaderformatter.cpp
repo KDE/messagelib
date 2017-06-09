@@ -90,7 +90,7 @@ QString GrantleeHeaderFormatter::toHtml(
     return format(
         settings.theme.absolutePath(), headerTemplate,
         settings.theme.displayExtraVariables(), settings.isPrinting, settings.style, settings.message,
-        settings.showMailAction);
+        settings.showMailAction, settings.showEmoticons);
 }
 
 QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders,
@@ -110,7 +110,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
                                         const Grantlee::Template &headerTemplate,
                                         const QStringList &displayExtraHeaders, bool isPrinting,
                                         const MessageViewer::HeaderStyle *style,
-                                        KMime::Message *message, bool showMailAction) const
+                                        KMime::Message *message, bool showMailAction, bool showEmoticons) const
 {
     QVariantHash headerObject;
 
@@ -129,7 +129,10 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
                         d->headerStyleUtil.subjectDirectionString(message));
 
     headerObject.insert(QStringLiteral("subjecti18n"), i18n("Subject:"));
-    const KTextToHTML::Options flags = KTextToHTML::PreserveSpaces | KTextToHTML::ReplaceSmileys;
+    KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
+    if (showEmoticons) {
+        flags |= KTextToHTML::ReplaceSmileys;
+    }
 
     headerObject.insert(QStringLiteral("subject"),
                         d->headerStyleUtil.subjectString(message, flags));

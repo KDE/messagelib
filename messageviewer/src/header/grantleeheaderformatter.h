@@ -39,6 +39,7 @@ public:
             , style(nullptr)
             , message(nullptr)
             , showMailAction(true)
+            , showEmoticons(true)
         {
         }
 
@@ -47,6 +48,7 @@ public:
         mutable const MessageViewer::HeaderStyle *style;
         KMime::Message *message;
         bool showMailAction;
+        bool showEmoticons;
     };
 
     explicit GrantleeHeaderFormatter();
@@ -61,7 +63,7 @@ private:
     QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate,
                    const QStringList &displayExtraHeaders, bool isPrinting,
                    const MessageViewer::HeaderStyle *style, KMime::Message *message,
-                   bool showMailAction = true) const;
+                   bool showMailAction = true, bool showEmoticons = true) const;
     class Private;
     Private *const d;
 };
