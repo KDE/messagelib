@@ -11,7 +11,7 @@ option(MIMETREEPARSER_ONLY_BUILD "Build only mimetreeparser" FALSE)
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
 
-set(KF5_VERSION "5.34.0")
+set(KF5_VERSION "5.35.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
