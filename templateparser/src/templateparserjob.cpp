@@ -1380,7 +1380,7 @@ QString TemplateParserJob::findTemplate()
     QString tmpl;
 
     qCDebug(TEMPLATEPARSER_LOG) << "Folder found:" << mFolder;
-    if (mFolder != -1) {   // only if a folder was found
+    if (mFolder >= 0) {   // only if a folder was found
         QString fid = QString::number(mFolder);
         Templates fconf(fid);
         if (fconf.useCustomTemplates()) {     // does folder use custom templates?
