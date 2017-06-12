@@ -37,6 +37,7 @@
 #include <KIdentityManagement/Identity>
 #include <QHostInfo>
 #include <QRegExp>
+#include <QRegularExpression>
 #include <QStringList>
 #include <QUrlQuery>
 #include <kpimtextedit/textutils.h>
@@ -205,9 +206,9 @@ QString stripSignature(const QString &msg)
 {
     // Following RFC 3676, only > before --
     // I prefer to not delete a SB instead of delete good mail content.
-    const QRegExp sbDelimiterSearch = QRegExp(QLatin1String("(^|\n)[> ]*-- \n"));
+    const QRegularExpression sbDelimiterSearch(QStringLiteral("(^|\n)[> ]*-- \n"));
     // The regular expression to look for prefix change
-    const QRegExp commonReplySearch = QRegExp(QLatin1String("^[ ]*>"));
+    const QRegularExpression commonReplySearch(QStringLiteral("^[ ]*>"));
 
     QString res = msg;
     int posDeletingStart = 1; // to start looking at 0
