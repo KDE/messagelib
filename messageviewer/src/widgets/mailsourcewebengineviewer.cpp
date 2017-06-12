@@ -37,7 +37,6 @@ using namespace MessageViewer;
 #include <QTabWidget>
 #include <QApplication>
 
-#include <QRegExp>
 #include <QShortcut>
 #include <QVBoxLayout>
 
