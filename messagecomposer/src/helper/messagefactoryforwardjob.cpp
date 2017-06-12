@@ -48,7 +48,7 @@ void MessageFactoryForwardJob::start()
     if (!mTemplate.isEmpty()) {
         parser->process(mTemplate, mOrigMsg);
     } else {
-        parser->process(mOrigMsg, mCollection);
+        parser->process(mOrigMsg, mCollection.id());
     }
 }
 

@@ -255,7 +255,7 @@ QString TemplateParserJob::getLastName(const QString &str)
 }
 
 void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
-                                const Akonadi::Collection &afolder)
+                                qint64 afolder)
 {
     if (aorig_msg == nullptr) {
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
@@ -264,7 +264,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
     }
 
     mOrigMsg = aorig_msg;
-    mFolder = afolder.isValid() ? afolder.id() : -1;
+    mFolder = afolder;
     const QString tmpl = findTemplate();
     if (tmpl.isEmpty()) {
         Q_EMIT parsingDone(mForceCursorPosition);
@@ -274,17 +274,17 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
 }
 
 void TemplateParserJob::process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
-                                const Akonadi::Collection &afolder)
+                                qint64 afolder)
 {
     mForceCursorPosition = false;
     mOrigMsg = aorig_msg;
-    mFolder = afolder.isValid() ? afolder.id() : -1;
+    mFolder = afolder;
     const QString tmpl = findCustomTemplate(tmplName);
     processWithTemplate(tmpl);
 }
 
 void TemplateParserJob::processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg,
-        const Akonadi::Collection &afolder)
+        qint64 afolder)
 {
     mIdentity = uoid;
     process(aorig_msg, afolder);
@@ -1379,7 +1379,7 @@ QString TemplateParserJob::findTemplate()
 
     QString tmpl;
 
-    qCDebug(TEMPLATEPARSER_LOG) << "Folder found:" << mFolder;
+    qCDebug(TEMPLATEPARSER_LOG) << "Folder identify found:" << mFolder;
     if (mFolder >= 0) {   // only if a folder was found
         QString fid = QString::number(mFolder);
         Templates fconf(fid);

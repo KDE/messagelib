@@ -19,7 +19,6 @@ macro(add_templateparser_unittest _source)
     Qt5::Test
     KF5::KIOCore
     KF5::Mime
-    KF5::AkonadiCore
     KF5::IdentityManagement
     KF5::XmlGui
     KF5::Completion

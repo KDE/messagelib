@@ -21,6 +21,7 @@ set(templateparser_LIB_SRCS
     templateextracthtmlelementwebengineview.cpp
     templateparserextracthtmlinfo.cpp
     templateparserextracthtmlinforesult.cpp
+    templateparseremailaddressrequesterbase.cpp
     )
 
 
@@ -84,6 +85,7 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     TemplatesInsertCommand
     TemplateParserJob
     TemplateParserExtractHtmlInfoResult
+    TemplateParserEmailAddressRequesterBase
     REQUIRED_HEADERS TemplateParser_HEADERS
     PREFIX TemplateParser
     )

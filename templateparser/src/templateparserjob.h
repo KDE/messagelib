@@ -24,7 +24,6 @@
 #include "templateparserextracthtmlinforesult.h"
 #include <MessageViewer/ObjectTreeEmptySource>
 
-#include <AkonadiCore/Collection>
 #include <KMime/KMimeMessage>
 
 #include <QObject>
@@ -213,11 +212,11 @@ public:
     void setCharsets(const QStringList &charsets);
 
     void process(const KMime::Message::Ptr &aorig_msg,
-                 const Akonadi::Collection &afolder = Akonadi::Collection());
+                 qint64 afolder = -1);
     void process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
-                 const Akonadi::Collection &afolder = Akonadi::Collection());
+                 qint64 afolder = -1);
     void processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg,
-                             const Akonadi::Collection &afolder = Akonadi::Collection());
+                            qint64 afolder = -1);
 
     void processWithTemplate(const QString &tmpl);
 
