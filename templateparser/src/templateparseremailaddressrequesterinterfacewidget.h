@@ -21,10 +21,11 @@
 #define TEMPLATEPARSEREMAILADDRESSREQUESTERINTERFACEWIDGET_H
 
 #include <QWidget>
+#include "templateparser_private_export.h"
 namespace TemplateParser
 {
 class TemplateParserEmailAddressRequesterBase;
-class TemplateParserEmailAddressRequesterInterfaceWidget : public QWidget
+class TEMPLATEPARSER_TESTS_EXPORT TemplateParserEmailAddressRequesterInterfaceWidget : public QWidget
 {
     Q_OBJECT
 public:
