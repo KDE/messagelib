@@ -17,25 +17,29 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
-#define TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
+#include "templateparseremailaddressrequesterlineedittest.h"
+#include "templateparseremailaddressrequesterlineedit.h"
+#include <QTest>
+#include <QHBoxLayout>
+#include <QLineEdit>
 
-#include <TemplateParser/TemplateParserEmailAddressRequesterBase>
-#include "templateparser_private_export.h"
-class QLineEdit;
-namespace TemplateParser {
-class TEMPLATEPARSER_TESTS_EXPORT TemplateParserEmailAddressRequesterLineEdit : public TemplateParser::TemplateParserEmailAddressRequesterBase
+TemplateParserEmailAddressRequesterLineEditTest::TemplateParserEmailAddressRequesterLineEditTest(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
-public:
-    explicit TemplateParserEmailAddressRequesterLineEdit(QWidget *parent = nullptr);
-    ~TemplateParserEmailAddressRequesterLineEdit();
 
-    QString text() const override;
-    void setText(const QString &str) override;
-    void clear() override;
-private:
-    QLineEdit *mLineEdit;
-};
 }
-#endif // TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
+
+void TemplateParserEmailAddressRequesterLineEditTest::shouldHaveDefaultValue()
+{
+    TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
+
+    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->margin(), 0);
+
+    QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    QVERIFY(mLineEdit);
+    QVERIFY(mLineEdit->text().isEmpty());
+}
+
+QTEST_MAIN(TemplateParserEmailAddressRequesterLineEditTest)

@@ -17,25 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
-#define TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
+#ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDITTEST_H
+#define TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDITTEST_H
 
-#include <TemplateParser/TemplateParserEmailAddressRequesterBase>
-#include "templateparser_private_export.h"
-class QLineEdit;
-namespace TemplateParser {
-class TEMPLATEPARSER_TESTS_EXPORT TemplateParserEmailAddressRequesterLineEdit : public TemplateParser::TemplateParserEmailAddressRequesterBase
+#include <QObject>
+
+class TemplateParserEmailAddressRequesterLineEditTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TemplateParserEmailAddressRequesterLineEdit(QWidget *parent = nullptr);
-    ~TemplateParserEmailAddressRequesterLineEdit();
-
-    QString text() const override;
-    void setText(const QString &str) override;
-    void clear() override;
-private:
-    QLineEdit *mLineEdit;
+    explicit TemplateParserEmailAddressRequesterLineEditTest(QObject *parent = nullptr);
+    ~TemplateParserEmailAddressRequesterLineEditTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
-}
-#endif // TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H
+
+#endif // TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDITTEST_H
