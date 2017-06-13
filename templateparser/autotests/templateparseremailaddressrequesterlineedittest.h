@@ -32,6 +32,7 @@ private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldAssignValue();
     void shouldClearValue();
+    void shouldEmitSignal();
 };
 
 #endif // TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDITTEST_H

@@ -22,9 +22,10 @@
 #define TEMPLATEPARSEREMAILADDRESSREQUESTERBASE_H
 
 #include <QWidget>
+#include "templateparser_export.h"
 namespace TemplateParser
 {
-class TemplateParserEmailAddressRequesterBase : public QWidget
+class TEMPLATEPARSER_EXPORT TemplateParserEmailAddressRequesterBase : public QWidget
 {
     Q_OBJECT
 public:
