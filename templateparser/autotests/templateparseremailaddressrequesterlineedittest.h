@@ -30,6 +30,8 @@ public:
     ~TemplateParserEmailAddressRequesterLineEditTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldAssignValue();
+    void shouldClearValue();
 };
 
 #endif // TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDITTEST_H
