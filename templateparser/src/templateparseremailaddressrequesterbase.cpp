@@ -30,3 +30,18 @@ TemplateParserEmailAddressRequesterBase::~TemplateParserEmailAddressRequesterBas
 {
 
 }
+
+QString TemplateParserEmailAddressRequesterBase::text() const
+{
+    return {};
+}
+
+void TemplateParserEmailAddressRequesterBase::setText(const QString &str)
+{
+    Q_UNUSED(str);
+}
+
+void TemplateParserEmailAddressRequesterBase::clear()
+{
+
+}

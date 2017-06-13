@@ -30,6 +30,12 @@ class TemplateParserEmailAddressRequesterBase : public QWidget
 public:
     explicit TemplateParserEmailAddressRequesterBase(QWidget *parent = nullptr);
     ~TemplateParserEmailAddressRequesterBase();
+
+    virtual QString text() const;
+    virtual void setText(const QString &str);
+    virtual void clear();
+Q_SIGNALS:
+    void textChanged(const QString &str);
 };
 }
 
