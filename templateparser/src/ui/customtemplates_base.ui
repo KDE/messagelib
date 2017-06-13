@@ -196,7 +196,7 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
-            <widget class="Akonadi::EmailAddressRequester" name="mToEdit" native="true">
+            <widget class="TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget" name="mToEdit" native="true">
              <property name="sizePolicy">
               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                <horstretch>0</horstretch>
@@ -212,7 +212,7 @@
             </widget>
            </item>
            <item>
-            <widget class="Akonadi::EmailAddressRequester" name="mCCEdit" native="true">
+            <widget class="TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget" name="mCCEdit" native="true">
              <property name="sizePolicy">
               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
                <horstretch>0</horstretch>
@@ -363,9 +363,9 @@
    <header>templatesinsertcommand.h</header>
   </customwidget>
   <customwidget>
-   <class>Akonadi::EmailAddressRequester</class>
+   <class>TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget</class>
    <extends>QWidget</extends>
-   <header>Akonadi/Contact/EmailAddressRequester</header>
+   <header>templateparseremailaddressrequesterinterfacewidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
