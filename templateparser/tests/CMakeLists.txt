@@ -21,3 +21,13 @@ target_link_libraries(templateconfigurewidget_gui
   KF5::PimTextEdit
   KF5::MessageViewer
 )
+
+set(templateparseremailrequester_gui_SRCS templateparseremailrequester.cpp)
+add_executable(templateparseremailrequester_gui ${templateparseremailrequester_gui_SRCS})
+target_link_libraries(templateparseremailrequester_gui
+  KF5::TemplateParser
+  KF5::I18n
+  KF5::MessageViewer
+  KF5::PimTextEdit
+)
+

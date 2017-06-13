@@ -34,6 +34,7 @@ TemplateParserEmailAddressRequesterInterfaceWidget::TemplateParserEmailAddressRe
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setMargin(0);
     initializeEmailWidget();
+    mainLayout->addWidget(mTemplateParserEmailBase);
 }
 
 void TemplateParserEmailAddressRequesterInterfaceWidget::initializeEmailWidget()
