@@ -23,6 +23,7 @@ set(templateparser_LIB_SRCS
     templateparserextracthtmlinforesult.cpp
     templateparseremailaddressrequesterbase.cpp
     templateparseremailaddressrequesterlineedit.cpp
+    templateparseremailaddressrequesterinterfacewidget.cpp
     )
 
 
