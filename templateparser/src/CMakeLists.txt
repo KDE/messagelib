@@ -48,7 +48,6 @@ add_library(KF5::TemplateParser ALIAS KF5TemplateParser)
 target_link_libraries(KF5TemplateParser
     PRIVATE
     KF5::Mime
-    KF5::AkonadiCore
     KF5::MessageViewer
     KF5::IdentityManagement
     KF5::MessageCore
@@ -59,8 +58,6 @@ target_link_libraries(KF5TemplateParser
     KF5::I18n
     KF5::SonnetUi
     Qt5::WebEngineWidgets
-    KF5::AkonadiWidgets
-    KF5::AkonadiContact
     )
 set_target_properties(KF5TemplateParser PROPERTIES
     VERSION ${TEMPLATEPARSER_VERSION_STRING}
