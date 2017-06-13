@@ -36,7 +36,7 @@ public:
     virtual void setText(const QString &str);
     virtual void clear();
 Q_SIGNALS:
-    void textChanged(const QString &str);
+    void textChanged();
 };
 }
 
