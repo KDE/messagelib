@@ -40,7 +40,7 @@
 #include "SendLater/SendLaterInfo"
 #include "SendLater/SendLaterUtil"
 
-#include <libkdepimakonadi/recentaddresses.h>
+#include <libkdepim/recentaddresses.h>
 #include "helper/messagehelper.h"
 
 #include <MessageComposer/RecipientsEditor>
