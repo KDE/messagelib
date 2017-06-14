@@ -233,6 +233,7 @@ QWidget *RecipientLineNG::tabOut() const
 
 void RecipientLineNG::clear()
 {
+    mRecipientsCount = 0;
     mEdit->clear();
 }
 
