@@ -22,10 +22,6 @@
 #include <QObject>
 #include <QString>
 
-namespace Akonadi
-{
-class Item;
-}
 class QMenu;
 
 namespace MessageList
