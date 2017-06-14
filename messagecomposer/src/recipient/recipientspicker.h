@@ -27,9 +27,6 @@
 #include <QDialog>
 
 class QPushButton;
-namespace Akonadi
-{
-}
 
 namespace KLDAP
 {
