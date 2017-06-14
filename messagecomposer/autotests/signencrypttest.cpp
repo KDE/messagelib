@@ -25,8 +25,6 @@
 #include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
 
-#include <AkonadiCore/item.h>
-
 #include <kmime/kmime_content.h>
 
 #include <Libkleo/Enum>
