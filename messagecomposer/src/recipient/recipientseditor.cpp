@@ -320,15 +320,13 @@ bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
 
 void RecipientsEditor::slotCalculateTotal()
 {
-    int count = 0;
-    int empty = 0;
 
     // Prevent endless recursion when splitting recipient
     if (d->mSkipTotal) {
         return;
     }
-
-    MultiplyingLine *line;
+    int empty = 0;
+    MultiplyingLine *line = nullptr;
     foreach (line, lines()) {
         RecipientLineNG *rec = qobject_cast< RecipientLineNG * >(line);
         if (rec) {
@@ -349,7 +347,6 @@ void RecipientsEditor::slotCalculateTotal()
                     setFocusBottom(); // focus next empty entry
                     d->mSkipTotal = false;
                 }
-                count += recipientsCount;
             }
         }
     }
@@ -357,6 +354,15 @@ void RecipientsEditor::slotCalculateTotal()
     // We always want at least one empty line
     if (empty == 0) {
         addData();
+    }
+    int count = 0;
+    foreach (line, lines()) {
+        RecipientLineNG *rec = qobject_cast< RecipientLineNG * >(line);
+        if (rec) {
+            if (!rec->isEmpty()) {
+                count++;
+            }
+        }
     }
 
     // update the side widget
