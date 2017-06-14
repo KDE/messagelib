@@ -46,6 +46,7 @@ void TemplateParserEmailAddressRequesterInterfaceWidget::initializeEmailWidget()
     } else {
         mTemplateParserEmailBase = new TemplateParser::TemplateParserEmailAddressRequesterLineEdit(this);
     }
+    mTemplateParserEmailBase->setObjectName(QStringLiteral("templateparseremailbase"));
     connect(mTemplateParserEmailBase, &TemplateParserEmailAddressRequesterBase::textChanged,
             this, &TemplateParserEmailAddressRequesterInterfaceWidget::textChanged);
 }
