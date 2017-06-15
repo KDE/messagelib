@@ -428,7 +428,7 @@ void AttachmentControllerBase::Private::attachVcardFromAddressBook(KJob *job)
     q->addAttachment(part);
 }
 
-static QTemporaryFile *dumpAttachmentToTempFile(const AttachmentPart::Ptr part)   // local
+static QTemporaryFile *dumpAttachmentToTempFile(const AttachmentPart::Ptr &part)   // local
 {
     QTemporaryFile *file = new QTemporaryFile;
     if (!file->open()) {
@@ -789,6 +789,9 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
     }
     case MessageViewer::EditorWatcher::CannotStart:
         qCWarning(MESSAGECOMPOSER_LOG) << "Could not start EditorWatcher.";
+#if QT_VERSION >= QT_VERSION_CHECK(5,8,0)
+        Q_FALLTHROUGH();
+#endif
     case MessageViewer::EditorWatcher::Unknown:
     case MessageViewer::EditorWatcher::Canceled:
     case MessageViewer::EditorWatcher::NoServiceFound: {
