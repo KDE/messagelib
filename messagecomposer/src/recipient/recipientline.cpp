@@ -167,11 +167,12 @@ void RecipientLineNG::dataFromFields()
     if (!mData) {
         return;
     }
+    const QString editStr(mEdit->text());
     QString displayName, addrSpec, comment;
-    if (KEmailAddress::splitAddress(mEdit->text(), displayName, addrSpec, comment) == KEmailAddress::AddressOk) {
+    if (KEmailAddress::splitAddress(editStr, displayName, addrSpec, comment) == KEmailAddress::AddressOk) {
         mData->setName(displayName);
     }
-    mData->setEmail(mEdit->text());
+    mData->setEmail(editStr);
     mData->setType(Recipient::idToType(mCombo->currentIndex()));
     mModified = false;
 }
