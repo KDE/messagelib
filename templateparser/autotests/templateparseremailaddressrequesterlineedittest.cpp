@@ -70,11 +70,11 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldEmitSignal()
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
     QSignalSpy spy(&w, &TemplateParser::TemplateParserEmailAddressRequesterBase::textChanged);
     w.setText(QStringLiteral("foo"));
-    QCOMPARE(spy.at(0).count(), 1);
+    QCOMPARE(spy.count(), 1);
     w.clear();
-    QCOMPARE(spy.at(1).count(), 1);
+    QCOMPARE(spy.count(), 2);
     w.setText(QStringLiteral("foo"));
-    QCOMPARE(spy.at(2).count(), 1);
+    QCOMPARE(spy.count(), 3);
 }
 
 QTEST_MAIN(TemplateParserEmailAddressRequesterLineEditTest)
