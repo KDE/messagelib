@@ -288,6 +288,14 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
         default:
             return QVariant();
         }
+    } else if( role == Qt::ToolTipRole ) {
+        return QVariant::fromValue(
+            i18nc("@info:tooltip",
+                  "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4",
+                  part->name().isEmpty() ? part->fileName() : part->name(),
+                  KFormat().formatByteSize(part->size()),
+                  KMime::nameForEncoding(part->encoding()),
+                  QString::fromAscii(part->mimeType().data())));
     } else if (role == Qt::CheckStateRole) {
         switch (index.column()) {
         case CompressColumn:
@@ -505,4 +513,3 @@ int AttachmentModel::columnCount(const QModelIndex &parent) const
     Q_UNUSED(parent);
     return LastColumn;
 }
-
