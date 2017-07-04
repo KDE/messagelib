@@ -75,6 +75,12 @@ void ViewerPluginInterface::setMessageItem(const Akonadi::Item &item)
     // Reimplement in subclass
 }
 
+void ViewerPluginInterface::setCurrentCollection(const Akonadi::Collection &col)
+{
+    Q_UNUSED(col);
+    // Reimplement in subclass
+}
+
 void ViewerPluginInterface::closePlugin()
 {
     // Reimplement in subclass

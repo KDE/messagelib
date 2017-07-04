@@ -52,6 +52,7 @@ public:
     virtual void setUrl(const QUrl &url);
     virtual void setMessage(const KMime::Message::Ptr &value);
     virtual void setMessageItem(const Akonadi::Item &item);
+    virtual void setCurrentCollection(const Akonadi::Collection &col);
     virtual void closePlugin();
     virtual ViewerPluginInterface::SpecificFeatureTypes featureTypes() const = 0;
     virtual void updateAction(const Akonadi::Item &item);
