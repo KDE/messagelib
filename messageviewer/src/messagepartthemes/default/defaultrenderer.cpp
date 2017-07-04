@@ -551,7 +551,7 @@ QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr 
         if (part) {
             c.insert(QStringLiteral("content"), part->html());
         } else {
-            c.insert(QStringLiteral("content"), QStringLiteral());
+            c.insert(QStringLiteral("content"), QString());
         }
     }
 
@@ -608,7 +608,7 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
         if (part) {
             c.insert(QStringLiteral("content"), part->html());
         } else {
-            c.insert(QStringLiteral("content"), QStringLiteral());
+            c.insert(QStringLiteral("content"), QString());
         }
     }
 
