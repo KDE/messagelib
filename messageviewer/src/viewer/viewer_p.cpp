@@ -2675,6 +2675,7 @@ void ViewerPrivate::slotActivatePlugin(ViewerPluginInterface *interface)
     interface->setMessage(mMessage);
     interface->setMessageItem(mMessageItem);
     interface->setUrl(mClickedUrl);
+    interface->setCurrentCollection(mMessageItem.parentCollection());
     const QString text = mViewer->selectedText();
     if (!text.isEmpty()) {
         interface->setText(text);
