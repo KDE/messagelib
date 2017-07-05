@@ -55,6 +55,9 @@ PartNodeBodyPart::PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result,
 QString PartNodeBodyPart::makeLink(const QString &path) const
 {
     // FIXME: use a PRNG for the first arg, instead of a serial number
+    if (path.isEmpty()) {
+        return {};
+    }
     return QStringLiteral("x-kmail:/bodypart/%1/%2/%3")
            .arg(serial++).arg(mContent->index().toString())
            .arg(QString::fromLatin1(QUrl::toPercentEncoding(path, "/")));
