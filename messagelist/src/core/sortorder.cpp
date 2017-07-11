@@ -76,29 +76,29 @@ void SortOrder::setMessageSortDirection(SortOrder::SortDirection messageSortDire
     mMessageSortDirection = messageSortDirection;
 }
 
-QList< QPair< QString, int > > SortOrder::enumerateMessageSortingOptions(Aggregation::Threading t)
+QList<QPair<QString, int>> SortOrder::enumerateMessageSortingOptions(Aggregation::Threading t)
 {
-    QList< QPair< QString, int > > ret;
-    ret.append(QPair< QString, int >(i18n("None (Storage Order)"), SortOrder::NoMessageSorting));
-    ret.append(QPair< QString, int >(i18n("By Date/Time"), SortOrder::SortMessagesByDateTime));
+    QList<QPair<QString, int>> ret;
+    ret.append({ i18n("None (Storage Order)"), SortOrder::NoMessageSorting });
+    ret.append({ i18n("By Date/Time"), SortOrder::SortMessagesByDateTime });
     if (t != Aggregation::NoThreading) {
-        ret.append(QPair< QString, int >(i18n("By Date/Time of Most Recent in Subtree"), SortOrder::SortMessagesByDateTimeOfMostRecent));
+        ret.append({ i18n("By Date/Time of Most Recent in Subtree"), SortOrder::SortMessagesByDateTimeOfMostRecent });
     }
-    ret.append(QPair< QString, int >(i18n("By Sender"), SortOrder::SortMessagesBySender));
-    ret.append(QPair< QString, int >(i18n("By Receiver"), SortOrder::SortMessagesByReceiver));
-    ret.append(QPair< QString, int >(i18n("By Smart Sender/Receiver"), SortOrder::SortMessagesBySenderOrReceiver));
-    ret.append(QPair< QString, int >(i18n("By Subject"), SortOrder::SortMessagesBySubject));
-    ret.append(QPair< QString, int >(i18n("By Size"), SortOrder::SortMessagesBySize));
-    ret.append(QPair< QString, int >(i18n("By Action Item Status"), SortOrder::SortMessagesByActionItemStatus));
-    ret.append(QPair< QString, int >(i18n("By Unread Status"), SortOrder::SortMessagesByUnreadStatus));
-    ret.append(QPair< QString, int >(i18n("By Important Status"), SortOrder::SortMessagesByImportantStatus));
-    ret.append(QPair< QString, int >(i18n("By Attachment Status"), SortOrder::SortMessagesByAttachmentStatus));
+    ret.append({ i18n("By Sender"), SortOrder::SortMessagesBySender });
+    ret.append({ i18n("By Receiver"), SortOrder::SortMessagesByReceiver });
+    ret.append({ i18n("By Smart Sender/Receiver"), SortOrder::SortMessagesBySenderOrReceiver });
+    ret.append({ i18n("By Subject"), SortOrder::SortMessagesBySubject });
+    ret.append({ i18n("By Size"), SortOrder::SortMessagesBySize });
+    ret.append({ i18n("By Action Item Status"), SortOrder::SortMessagesByActionItemStatus });
+    ret.append({ i18n("By Unread Status"), SortOrder::SortMessagesByUnreadStatus });
+    ret.append({ i18n("By Important Status"), SortOrder::SortMessagesByImportantStatus });
+    ret.append({ i18n("By Attachment Status"), SortOrder::SortMessagesByAttachmentStatus });
     return ret;
 }
 
-QList< QPair< QString, int > > SortOrder::enumerateMessageSortDirectionOptions(MessageSorting ms)
+QList<QPair<QString, int>> SortOrder::enumerateMessageSortDirectionOptions(MessageSorting ms)
 {
-    QList< QPair< QString, int > > ret;
+    QList<QPair<QString, int>> ret;
     if (ms == SortOrder::NoMessageSorting) {
         return ret;
     }
@@ -107,64 +107,63 @@ QList< QPair< QString, int > > SortOrder::enumerateMessageSortDirectionOptions(M
         (ms == SortOrder::SortMessagesByDateTime) ||
         (ms == SortOrder::SortMessagesByDateTimeOfMostRecent)
     ) {
-        ret.append(QPair< QString, int >(i18n("Least Recent on Top"), SortOrder::Ascending));
-        ret.append(QPair< QString, int >(i18n("Most Recent on Top"), SortOrder::Descending));
+        ret.append({ i18n("Least Recent on Top"), SortOrder::Ascending });
+        ret.append({ i18n("Most Recent on Top"), SortOrder::Descending });
         return ret;
     }
 
-    ret.append(QPair< QString, int >(i18nc("Sort order for messages", "Ascending"), SortOrder::Ascending));
-    ret.append(QPair< QString, int >(i18nc("Sort order for messages", "Descending"), SortOrder::Descending));
+    ret.append({ i18nc("Sort order for messages", "Ascending"), SortOrder::Ascending });
+    ret.append({ i18nc("Sort order for messages", "Descending"), SortOrder::Descending });
     return ret;
 }
 
-QList< QPair< QString, int > > SortOrder::enumerateGroupSortingOptions(Aggregation::Grouping g)
+QList<QPair<QString, int>> SortOrder::enumerateGroupSortingOptions(Aggregation::Grouping g)
 {
-    QList< QPair< QString, int > > ret;
+    QList<QPair< QString, int>> ret;
     if (g == Aggregation::NoGrouping) {
         return ret;
     }
     if ((g == Aggregation::GroupByDate) || (g == Aggregation::GroupByDateRange)) {
-        ret.append(QPair< QString, int >(i18n("by Date/Time"), SortOrder::SortGroupsByDateTime));
+        ret.append({ i18n("by Date/Time"), SortOrder::SortGroupsByDateTime });
     } else {
-        ret.append(QPair< QString, int >(i18n("None (Storage Order)"), SortOrder::NoGroupSorting));
-        ret.append(QPair< QString, int >(i18n("by Date/Time of Most Recent Message in Group"), SortOrder::SortGroupsByDateTimeOfMostRecent));
+        ret.append({ i18n("None (Storage Order)"), SortOrder::NoGroupSorting });
+        ret.append({ i18n("by Date/Time of Most Recent Message in Group"), SortOrder::SortGroupsByDateTimeOfMostRecent });
     }
 
     if (g == Aggregation::GroupBySenderOrReceiver) {
-        ret.append(QPair< QString, int >(i18n("by Sender/Receiver"), SortOrder::SortGroupsBySenderOrReceiver));
+        ret.append({ i18n("by Sender/Receiver"), SortOrder::SortGroupsBySenderOrReceiver });
     } else if (g == Aggregation::GroupBySender) {
-        ret.append(QPair< QString, int >(i18n("by Sender"), SortOrder::SortGroupsBySender));
+        ret.append({ i18n("by Sender"), SortOrder::SortGroupsBySender });
     } else if (g == Aggregation::GroupByReceiver) {
-        ret.append(QPair< QString, int >(i18n("by Receiver"), SortOrder::SortGroupsByReceiver));
+        ret.append({ i18n("by Receiver"), SortOrder::SortGroupsByReceiver });
     }
 
     return ret;
 }
 
-QList< QPair< QString, int > > SortOrder::enumerateGroupSortDirectionOptions(Aggregation::Grouping g,
+QList<QPair<QString, int>> SortOrder::enumerateGroupSortDirectionOptions(Aggregation::Grouping g,
         GroupSorting gs)
 {
-    QList< QPair< QString, int > > ret;
+    QList<QPair<QString, int>> ret;
     if (g == Aggregation::NoGrouping || gs == SortOrder::NoGroupSorting) {
         return ret;
     }
 
     if (gs == SortOrder::SortGroupsByDateTimeOfMostRecent) {
-        ret.append(QPair< QString, int >(i18n("Least Recent on Top"), SortOrder::Ascending));
-        ret.append(QPair< QString, int >(i18n("Most Recent on Top"), SortOrder::Descending));
+        ret.append({ i18n("Least Recent on Top"), SortOrder::Ascending });
+        ret.append({ i18n("Most Recent on Top"), SortOrder::Descending });
         return ret;
     }
-    ret.append(QPair< QString, int >(i18nc("Sort order for mail groups", "Ascending"), SortOrder::Ascending));
-    ret.append(QPair< QString, int >(i18nc("Sort order for mail groups", "Descending"), SortOrder::Descending));
+    ret.append({ i18nc("Sort order for mail groups", "Ascending"), SortOrder::Ascending });
+    ret.append({ i18nc("Sort order for mail groups", "Descending"), SortOrder::Descending });
     return ret;
 }
 
-typedef QPair< QString, int > Pair;
-typedef QList< Pair > OptionList;
+typedef QList<QPair<QString,int>> OptionList;
 static bool optionListHasOption(const OptionList &optionList, int optionValue,
                                 int defaultOptionValue)
 {
-    for (const Pair &pair : optionList) {
+    for (const auto &pair : optionList) {
         if (pair.second == optionValue) {
             return true;
         }

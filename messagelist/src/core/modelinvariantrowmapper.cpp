@@ -48,9 +48,8 @@ public:
 
     ~RowShift()
     {
-        QHash< int, ModelInvariantIndex * >::ConstIterator end(mInvariantHash->constEnd());
-        for (QHash< int, ModelInvariantIndex * >::ConstIterator it = mInvariantHash->constBegin(); it != end; ++it) {
-            (*it)->d->setRowMapper(nullptr);
+        for (const auto idx : qAsConst(*mInvariantHash)) {
+            idx->d->setRowMapper(nullptr);
         }
         delete mInvariantHash;
     }
@@ -84,9 +83,8 @@ ModelInvariantRowMapper::~ModelInvariantRowMapper()
     }
 
     // FIXME: optimize this (it CAN be optimized)
-    QHash< int, ModelInvariantIndex * >::ConstIterator end(d->mCurrentInvariantHash->constEnd());
-    for (QHash< int, ModelInvariantIndex * >::ConstIterator it = d->mCurrentInvariantHash->constBegin(); it != end; ++it) {
-        (*it)->d->setRowMapper(nullptr);
+    for (const auto idx : qAsConst(*d->mCurrentInvariantHash)) {
+        idx->d->setRowMapper(nullptr);
     }
     delete d->mCurrentInvariantHash;
 
@@ -371,7 +369,7 @@ QList< ModelInvariantIndex * > *ModelInvariantRowMapper::modelIndexRowRangeToMod
     // Find the invariants in range.
     // It's somewhat impossible to split this in chunks.
 
-    QList< ModelInvariantIndex * > *invariantList = new QList< ModelInvariantIndex * >();
+    auto invariantList = new QList< ModelInvariantIndex * >();
 
     const int end = startIndexRow + count;
     for (int idx = startIndexRow; idx < end; idx++) {
@@ -498,7 +496,7 @@ QList< ModelInvariantIndex * > *ModelInvariantRowMapper::modelRowsRemoved(int mo
     // In most cases it's a relatively small sweep (and it's done once).
     // It's somewhat impossible to split this in chunks.
 
-    QList< ModelInvariantIndex * > *deadInvariants = new QList< ModelInvariantIndex * >();
+    auto deadInvariants = new QList< ModelInvariantIndex * >();
 
     const int end = modelIndexRowPosition + count;
     for (int idx = modelIndexRowPosition; idx < end; idx++) {
@@ -569,8 +567,8 @@ void ModelInvariantRowMapper::modelReset()
     // FIXME: optimize this (it probably can be optimized by providing a more complex user interface)
     QHash< int, ModelInvariantIndex * >::ConstIterator end(d->mCurrentInvariantHash->constEnd());
 
-    for (QHash< int, ModelInvariantIndex * >::ConstIterator it = d->mCurrentInvariantHash->constBegin(); it != end; ++it) {
-        (*it)->d->setRowMapper(nullptr);
+    for (const auto idx : qAsConst(*d->mCurrentInvariantHash)) {
+        idx->d->setRowMapper(nullptr);
     }
     d->mCurrentInvariantHash->clear();
 
@@ -614,8 +612,8 @@ void ModelInvariantRowMapperPrivate::slotPerformLazyUpdate()
         RowShift *shift = mRowShiftList->at(0);
 
         // and update the invariants that belong to it
-        QHash< int, ModelInvariantIndex * >::Iterator it = shift->mInvariantHash->begin();
-        QHash< int, ModelInvariantIndex * >::Iterator end = shift->mInvariantHash->end();
+        auto it = shift->mInvariantHash->begin();
+        auto end = shift->mInvariantHash->end();
 
         while (it != end) {
             ModelInvariantIndex *invariant = *it;

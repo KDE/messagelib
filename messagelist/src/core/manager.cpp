@@ -59,8 +59,10 @@ Manager::Manager()
     mCachedLocalizedUnknownText = i18nc("Unknown date", "Unknown");
 
     loadConfiguration();
-    connect(MessageListSettings::self(), &MessageListSettings::configChanged, this, &Manager::reloadGlobalConfiguration);
-    connect(MessageCore::MessageCoreSettings::self(), &MessageCore::MessageCoreSettings::configChanged, this, &Manager::reloadGlobalConfiguration);
+    connect(MessageListSettings::self(), &MessageListSettings::configChanged,
+            this, &Manager::reloadGlobalConfiguration);
+    connect(MessageCore::MessageCoreSettings::self(), &MessageCore::MessageCoreSettings::configChanged,
+            this, &Manager::reloadGlobalConfiguration);
 }
 
 Manager::~Manager()

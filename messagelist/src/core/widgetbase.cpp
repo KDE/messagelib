@@ -406,13 +406,12 @@ void Widget::themeMenuAboutToShow(QMenu *menu)
 
     std::sort(sortedThemes.begin(), sortedThemes.end(), MessageList::Core::Theme::compareName);
 
-    QList< Theme * >::ConstIterator endTheme(sortedThemes.constEnd());
-    for (QList< Theme * >::ConstIterator it = sortedThemes.constBegin(); it != endTheme; ++it) {
-        act = menu->addAction((*it)->name());
+    for (const auto theme : qAsConst(sortedThemes)) {
+        act = menu->addAction(theme->name());
         act->setCheckable(true);
         grp->addAction(act);
-        act->setChecked(d->mLastThemeId == (*it)->id());
-        act->setData(QVariant((*it)->id()));
+        act->setChecked(d->mLastThemeId == theme->id());
+        act->setData(QVariant(theme->id()));
         connect(act, &QAction::triggered,
                 this, &Widget::themeSelected);
     }
@@ -501,14 +500,12 @@ void Widget::aggregationMenuAboutToShow(QMenu *menu)
 
     std::sort(sortedAggregations.begin(), sortedAggregations.end(), MessageList::Core::Aggregation::compareName);
 
-    QList<Aggregation * >::ConstIterator endagg(sortedAggregations.constEnd());
-
-    for (QList< Aggregation * >::ConstIterator it = sortedAggregations.constBegin(); it != endagg; ++it) {
-        act = menu->addAction((*it)->name());
+    for (const auto agg : qAsConst(sortedAggregations)) {
+        act = menu->addAction(agg->name());
         act->setCheckable(true);
         grp->addAction(act);
-        act->setChecked(d->mLastAggregationId == (*it)->id());
-        act->setData(QVariant((*it)->id()));
+        act->setChecked(d->mLastAggregationId == agg->id());
+        act->setData(QVariant(agg->id()));
         connect(act, &QAction::triggered,
                 this, &Widget::aggregationSelected);
     }
@@ -589,13 +586,12 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
     grp = new QActionGroup(menu);
 
     options = SortOrder::enumerateMessageSortingOptions(d->mAggregation->threading());
-    QList< QPair< QString, int > >::ConstIterator end(options.constEnd());
-    for (it = options.constBegin(); it != end; ++it) {
-        act = menu->addAction((*it).first);
+    for (const auto opt : qAsConst(options)) {
+        act = menu->addAction(opt.first);
         act->setCheckable(true);
         grp->addAction(act);
-        act->setChecked(d->mSortOrder.messageSorting() == (*it).second);
-        act->setData(QVariant((*it).second));
+        act->setChecked(d->mSortOrder.messageSorting() == opt.second);
+        act->setData(QVariant(opt.second));
     }
 
     connect(grp, &QActionGroup::triggered,
@@ -607,13 +603,12 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
         menu->addSection(i18n("Message Sort Direction"));
 
         grp = new QActionGroup(menu);
-        end = options.constEnd();
-        for (it = options.constBegin(); it != end; ++it) {
-            act = menu->addAction((*it).first);
+        for (const auto opt : qAsConst(options)) {
+            act = menu->addAction(opt.first);
             act->setCheckable(true);
             grp->addAction(act);
-            act->setChecked(d->mSortOrder.messageSortDirection() == (*it).second);
-            act->setData(QVariant((*it).second));
+            act->setChecked(d->mSortOrder.messageSortDirection() == opt.second);
+            act->setData(QVariant(opt.second));
         }
 
         connect(grp, &QActionGroup::triggered,
@@ -626,14 +621,12 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
         menu->addSection(i18n("Group Sort Order"));
 
         grp = new QActionGroup(menu);
-
-        end = options.constEnd();
-        for (it = options.constBegin(); it != end; ++it) {
-            act = menu->addAction((*it).first);
+        for (const auto opt : qAsConst(options)) {
+            act = menu->addAction(opt.first);
             act->setCheckable(true);
             grp->addAction(act);
-            act->setChecked(d->mSortOrder.groupSorting() == (*it).second);
-            act->setData(QVariant((*it).second));
+            act->setChecked(d->mSortOrder.groupSorting() == opt.second);
+            act->setData(QVariant(opt.second));
         }
 
         connect(grp, &QActionGroup::triggered,
@@ -647,13 +640,12 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
         menu->addSection(i18n("Group Sort Direction"));
 
         grp = new QActionGroup(menu);
-        end = options.constEnd();
-        for (it = options.constBegin(); it != end; ++it) {
-            act = menu->addAction((*it).first);
+        for (const auto opt : qAsConst(options)) {
+            act = menu->addAction(opt.first);
             act->setCheckable(true);
             grp->addAction(act);
-            act->setChecked(d->mSortOrder.groupSortDirection() == (*it).second);
-            act->setData(QVariant((*it).second));
+            act->setChecked(d->mSortOrder.groupSortDirection() == opt.second);
+            act->setData(QVariant(opt.second));
         }
 
         connect(grp, &QActionGroup::triggered,
@@ -681,12 +673,12 @@ void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSort
 
     if (logicalHeaderColumnIndex == -1) {
         // try to find the specified message sorting in the theme columns
-        const QList< Theme::Column * > &columns = mTheme->columns();
+        const auto columns = mTheme->columns();
         int idx = 0;
 
         // First try with a well defined message sorting.
 
-        for (const Theme::Column *column : columns) {
+        for (const auto column : qAsConst(columns)) {
             if (!mView->header()->isSectionHidden(idx)) {
                 if (column->messageSorting() == messageSorting) {
                     // found a visible column with this message sorting
@@ -700,7 +692,7 @@ void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSort
         // if still not found, try again with a wider range
         if (logicalHeaderColumnIndex == -1) {
             idx = 0;
-            for (const Theme::Column *column : qAsConst(columns)) {
+            for (const auto column : qAsConst(columns)) {
                 if (!mView->header()->isSectionHidden(idx)) {
                     if (
                         (
@@ -753,7 +745,7 @@ void Widget::messageSortingSelected(QAction *action)
     }
 
     bool ok;
-    SortOrder::MessageSorting ord = static_cast< SortOrder::MessageSorting >(action->data().toInt(&ok));
+    auto ord = static_cast< SortOrder::MessageSorting >(action->data().toInt(&ok));
 
     if (!ok) {
         return;
@@ -780,7 +772,7 @@ void Widget::messageSortDirectionSelected(QAction *action)
     }
 
     bool ok;
-    SortOrder::SortDirection ord = static_cast< SortOrder::SortDirection >(action->data().toInt(&ok));
+    auto ord = static_cast< SortOrder::SortDirection >(action->data().toInt(&ok));
 
     if (!ok) {
         return;
@@ -808,7 +800,7 @@ void Widget::groupSortingSelected(QAction *action)
     }
 
     bool ok;
-    SortOrder::GroupSorting ord = static_cast< SortOrder::GroupSorting >(action->data().toInt(&ok));
+    auto ord = static_cast< SortOrder::GroupSorting >(action->data().toInt(&ok));
 
     if (!ok) {
         return;
@@ -835,7 +827,7 @@ void Widget::groupSortDirectionSelected(QAction *action)
     }
 
     bool ok;
-    SortOrder::SortDirection ord = static_cast< SortOrder::SortDirection >(action->data().toInt(&ok));
+    auto ord = static_cast< SortOrder::SortDirection >(action->data().toInt(&ok));
 
     if (!ok) {
         return;
@@ -876,7 +868,7 @@ void Widget::slotViewHeaderSectionClicked(int logicalIndex)
         return;
     }
 
-    const Theme::Column *column = d->mTheme->column(logicalIndex);
+    auto column = d->mTheme->column(logicalIndex);
     if (!column) {
         return;    // should never happen...
     }
@@ -982,7 +974,7 @@ void Widget::slotStatusButtonsClicked()
         d->mFilter->setTagId(QString());
     }
 
-    QList<Akonadi::MessageStatus> lst = d->quickSearchLine->status();
+    auto lst = d->quickSearchLine->status();
     if (lst.isEmpty()) {
         if (d->mFilter) {
             d->mFilter->setStatus(lst);

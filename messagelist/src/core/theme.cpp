@@ -359,14 +359,12 @@ Theme::Row::Row()
 
 Theme::Row::Row(const Row &src)
 {
-    QList< ContentItem * >::ConstIterator end(src.mLeftItems.constEnd());
-    for (QList< ContentItem * >::ConstIterator it = src.mLeftItems.constBegin(); it != end; ++it) {
-        addLeftItem(new ContentItem(*(*it)));
+    for (const auto ci : qAsConst(src.mLeftItems)) {
+        addLeftItem(new ContentItem(*ci));
     }
 
-    end =  src.mRightItems.constEnd();
-    for (QList< ContentItem * >::ConstIterator it = src.mRightItems.constBegin(); it != end; ++it) {
-        addRightItem(new ContentItem(*(*it)));
+    for (const auto ci : qAsConst(src.mRightItems)) {
+        addRightItem(new ContentItem(*ci));
     }
 }
 
@@ -435,15 +433,13 @@ void Theme::Row::removeRightItem(Theme::ContentItem *item)
 
 bool Theme::Row::containsTextItems() const
 {
-    QList< ContentItem * >::ConstIterator end(mLeftItems.constEnd());
-    for (QList< ContentItem * >::ConstIterator it = mLeftItems.constBegin(); it != end; ++it) {
-        if ((*it)->displaysText()) {
+    for (const auto ci : qAsConst(mLeftItems)) {
+        if (ci->displaysText()) {
             return true;
         }
     }
-    end = mRightItems.constEnd();
-    for (QList< ContentItem * >::ConstIterator it = mRightItems.constBegin(); it != end; ++it) {
-        if ((*it)->displaysText()) {
+    for (const auto ci : qAsConst(mRightItems)) {
+        if (ci->displaysText()) {
             return true;
         }
     }
@@ -637,14 +633,12 @@ Theme::Column::Column(const Column &src)
 
     mSharedRuntimeData = src.mSharedRuntimeData;
     mSharedRuntimeData->addReference();
-    QList< Row * >::ConstIterator end(src.mMessageRows.constEnd());
-    for (QList< Row * >::ConstIterator it = src.mMessageRows.constBegin(); it != end; ++it) {
-        addMessageRow(new Row(*(*it)));
+    for (const auto row : qAsConst(src.mMessageRows)) {
+        addMessageRow(new Row(*row));
     }
 
-    end = src.mGroupHeaderRows.constEnd();
-    for (QList< Row * >::ConstIterator it = src.mGroupHeaderRows.constBegin(); it != end; ++it) {
-        addGroupHeaderRow(new Row(*(*it)));
+    for (const auto row : qAsConst(src.mGroupHeaderRows)) {
+        addGroupHeaderRow(new Row(*row));
     }
 }
 
@@ -803,15 +797,13 @@ void Theme::Column::removeGroupHeaderRow(Theme::Row *row)
 
 bool Theme::Column::containsTextItems() const
 {
-    QList< Row * >::ConstIterator end(mMessageRows.constEnd());
-    for (QList< Row * >::ConstIterator it = mMessageRows.constBegin(); it != end; ++it) {
-        if ((*it)->containsTextItems()) {
+    for (const auto row : qAsConst(mMessageRows)) {
+        if (row->containsTextItems()) {
             return true;
         }
     }
-    end = mGroupHeaderRows.constEnd();
-    for (QList< Row * >::ConstIterator it = mGroupHeaderRows.constBegin(); it != end; ++it) {
-        if ((*it)->containsTextItems()) {
+    for (const auto row : qAsConst(mGroupHeaderRows)) {
+        if (row->containsTextItems()) {
             return true;
         }
     }
@@ -959,9 +951,8 @@ Theme::Theme(const Theme &src)
     mGroupHeaderBackgroundStyle = src.mGroupHeaderBackgroundStyle;
     mViewHeaderPolicy = src.mViewHeaderPolicy;
     mIconSize = src.mIconSize;
-    QList< Column * >::ConstIterator end(src.mColumns.constEnd());
-    for (QList< Column * >::ConstIterator it = src.mColumns.constBegin(); it != end; ++it) {
-        addColumn(new Column(*(*it)));
+    for (const auto col : qAsConst(src.mColumns)) {
+        addColumn(new Column(*col));
     }
 }
 
@@ -972,26 +963,23 @@ Theme::~Theme()
 
 void Theme::detach()
 {
-    QList< Column * >::ConstIterator end(mColumns.constEnd());
-    for (QList< Column * >::ConstIterator it = mColumns.constBegin(); it != end; ++it) {
-        (*it)->detach();
+    for (const auto col : qAsConst(mColumns)) {
+        col->detach();
     }
 }
 
 void Theme::resetColumnState()
 {
-    QList< Column * >::ConstIterator end(mColumns.constEnd());
-    for (QList< Column * >::ConstIterator it = mColumns.constBegin(); it != end; ++it) {
-        (*it)->setCurrentlyVisible((*it)->visibleByDefault());
-        (*it)->setCurrentWidth(-1);
+    for (const auto col : qAsConst(mColumns)) {
+        col->setCurrentlyVisible(col->visibleByDefault());
+        col->setCurrentWidth(-1);
     }
 }
 
 void Theme::resetColumnSizes()
 {
-    QList< Column * >::ConstIterator end(mColumns.constEnd());
-    for (QList< Column * >::ConstIterator it = mColumns.constBegin(); it != end; ++it) {
-        (*it)->setCurrentWidth(-1);
+    for (const auto col : qAsConst(mColumns)) {
+        col->setCurrentWidth(-1);
     }
 }
 
@@ -1072,27 +1060,22 @@ void Theme::setGroupHeaderBackgroundStyle(Theme::GroupHeaderBackgroundStyle grou
     mGroupHeaderBackgroundStyle = groupHeaderBackgroundStyle;
 }
 
-QList< QPair< QString, int > > Theme::enumerateViewHeaderPolicyOptions()
+QList<QPair<QString, int>> Theme::enumerateViewHeaderPolicyOptions()
 {
-    QList< QPair< QString, int > > ret;
-    ret.append(QPair< QString, int >(i18n("Never Show"), NeverShowHeader));
-    ret.append(QPair< QString, int >(i18n("Always Show"), ShowHeaderAlways));
-    return ret;
+    return { { i18n("Never Show"), NeverShowHeader },
+             { i18n("Always Show"), ShowHeaderAlways } };
 }
 
-QList< QPair< QString, int > > Theme::enumerateGroupHeaderBackgroundStyles()
+QList<QPair<QString, int>> Theme::enumerateGroupHeaderBackgroundStyles()
 {
-    QList< QPair< QString, int > > ret;
-    ret.append(QPair< QString, int >(i18n("Plain Rectangles"), PlainRect));
-    ret.append(QPair< QString, int >(i18n("Plain Joined Rectangle"), PlainJoinedRect));
-    ret.append(QPair< QString, int >(i18n("Rounded Rectangles"), RoundedRect));
-    ret.append(QPair< QString, int >(i18n("Rounded Joined Rectangle"), RoundedJoinedRect));
-    ret.append(QPair< QString, int >(i18n("Gradient Rectangles"), GradientRect));
-    ret.append(QPair< QString, int >(i18n("Gradient Joined Rectangle"), GradientJoinedRect));
-    ret.append(QPair< QString, int >(i18n("Styled Rectangles"), StyledRect));
-    ret.append(QPair< QString, int >(i18n("Styled Joined Rectangles"), StyledJoinedRect));
-
-    return ret;
+    return  { { i18n("Plain Rectangles"), PlainRect },
+              { i18n("Plain Joined Rectangle"), PlainJoinedRect },
+              { i18n("Rounded Rectangles"), RoundedRect },
+              { i18n("Rounded Joined Rectangle"), RoundedJoinedRect },
+              { i18n("Gradient Rectangles"), GradientRect },
+              { i18n("Gradient Joined Rectangle"), GradientJoinedRect },
+              { i18n("Styled Rectangles"), StyledRect },
+              { i18n("Styled Joined Rectangles"), StyledJoinedRect } };
 }
 
 Theme::ViewHeaderPolicy Theme::viewHeaderPolicy() const

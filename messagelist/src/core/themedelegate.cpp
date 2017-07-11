@@ -554,18 +554,15 @@ static inline QSize compute_size_hint_for_row(const Theme::Row *r, int iconSize,
     int totalw = 0;
 
     // right aligned stuff first
-    const QList< Theme::ContentItem * > *items = &(r->rightItems());
-    QList< Theme::ContentItem * >::ConstIterator itemit, endItemIt;
-
-    for (itemit = items->begin(), endItemIt = items->end(); itemit != endItemIt; ++itemit) {
-        compute_size_hint_for_item(const_cast< Theme::ContentItem * >(*itemit), maxh, totalw, iconSize, item);
+    auto items = r->rightItems();
+    for (const auto it : qAsConst(items)) {
+        compute_size_hint_for_item(const_cast<Theme::ContentItem*>(it), maxh, totalw, iconSize, item);
     }
 
     // then left aligned stuff
-    items = &(r->leftItems());
-
-    for (itemit = items->begin(), endItemIt = items->end(); itemit != endItemIt; ++itemit) {
-        compute_size_hint_for_item(const_cast< Theme::ContentItem * >(*itemit), maxh, totalw, iconSize, item);
+    items = r->leftItems();
+    for (const auto it : qAsConst(items)) {
+        compute_size_hint_for_item(const_cast<Theme::ContentItem*>(it), maxh, totalw, iconSize, item);
     }
 
     return QSize(totalw, maxh);
@@ -607,7 +604,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         return;    // bleah
     }
 
-    const QList< Theme::Row * > *rows;  // I'd like to have it as reference, but gcc complains...
+    const QList<MessageList::Core::Theme::Row*> *rows;
 
     MessageItem *messageItem = nullptr;
     GroupHeaderItem *groupHeaderItem = nullptr;
@@ -835,20 +832,16 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
 
     Qt::LayoutDirection layoutDir = mItemView->layoutDirection();
 
-    QList< Theme::Row * >::ConstIterator end(rows->constEnd());
-    for (QList< Theme::Row * >::ConstIterator rowit = rows->constBegin(); rowit != end; ++rowit) {
-        QSize rowSizeHint = compute_size_hint_for_row((*rowit), mTheme->iconSize(), item);
+    for (const auto row : qAsConst(*rows)) {
+        QSize rowSizeHint = compute_size_hint_for_row(row, mTheme->iconSize(), item);
 
         int bottom = top + rowSizeHint.height();
 
         // paint right aligned stuff first
-        const QList< Theme::ContentItem * > *items = &((*rowit)->rightItems());
-
         int r = right;
         int l = left;
-        QList< Theme::ContentItem * >::ConstIterator endit(items->constEnd());
-        for (QList< Theme::ContentItem * >::ConstIterator itemit = items->constBegin(); itemit != endit; ++itemit) {
-            Theme::ContentItem *ci = const_cast< Theme::ContentItem * >(*itemit);
+        for (const auto itemit : qAsConst(row->rightItems())) {
+            auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             if (ci->canUseCustomColor()) {
                 if (ci->useCustomColor() && (!(opt.state & QStyle::State_Selected))) {
@@ -1003,11 +996,8 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         }
 
         // then paint left aligned stuff
-        items = &((*rowit)->leftItems());
-
-        QList< Theme::ContentItem * >::ConstIterator endItem(items->constEnd());
-        for (QList< Theme::ContentItem * >::ConstIterator itemit = items->constBegin(); itemit != endItem; ++itemit) {
-            Theme::ContentItem *ci = const_cast< Theme::ContentItem * >(*itemit);
+        for (const auto itemit : qAsConst(row->leftItems())) {
+            auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             if (ci->canUseCustomColor()) {
                 if (ci->useCustomColor() && (!(opt.state & QStyle::State_Selected))) {
@@ -1241,9 +1231,8 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
 
     Qt::LayoutDirection layoutDir = mItemView->layoutDirection();
 
-    QList< Theme::Row * >::ConstIterator end(rows->constEnd());
-    for (QList< Theme::Row * >::ConstIterator rowit = rows->constBegin(); rowit != end; ++rowit) {
-        QSize rowSizeHint = compute_size_hint_for_row((*rowit), mTheme->iconSize(), mHitItem);
+    for (const auto row : qAsConst(*rows)) {
+        QSize rowSizeHint = compute_size_hint_for_row(row, mTheme->iconSize(), mHitItem);
 
         if ((viewportPoint.y() < top) && (rowIdx > 0)) {
             break;    // not this row (tough we should have already found it... probably clicked upper margin)
@@ -1262,22 +1251,17 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
         bestInexactContentItem = nullptr;
 
         // this row!
-        mHitRow = *rowit;
+        mHitRow = row;
         mHitRowIndex = rowIdx;
         mHitRowRect = QRect(left, top, right - left, bottom - top);
 
         // check right aligned stuff first
-        const QList< Theme::ContentItem * > *items = &(mHitRow->rightItems());
-        QList< Theme::ContentItem * >::ConstIterator itemit;
-
         mHitContentItemRight = true;
 
         int r = right;
         int l = left;
-        QList< Theme::ContentItem * >::ConstIterator itemEnd(items->end());
-
-        for (itemit = items->begin(); itemit != itemEnd; ++itemit) {
-            Theme::ContentItem *ci = const_cast< Theme::ContentItem * >(*itemit);
+        for (const auto itemit : qAsConst(mHitRow->rightItems())) {
+            auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             mHitContentItemRect = QRect();
 
@@ -1418,12 +1402,10 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
         }
 
         // then check left aligned stuff
-        items = &(mHitRow->leftItems());
-
         mHitContentItemRight = false;
 
-        for (itemit = items->constBegin(); itemit != items->constEnd(); ++itemit) {
-            Theme::ContentItem *ci = const_cast< Theme::ContentItem * >(*itemit);
+        for (const auto itemit : qAsConst(mHitRow->leftItems())) {
+            auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             mHitContentItemRect = QRect();
 

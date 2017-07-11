@@ -375,7 +375,6 @@ void View::applyThemeColumns()
     //   available space.
     // - When all the columns have well defined saved widths
 
-    QList< Theme::Column * >::ConstIterator it;
     int idx = 0;
 
     // Gather total size "hint" for visible sections: if the widths of the columns wers
@@ -383,13 +382,11 @@ void View::applyThemeColumns()
 
     int totalVisibleWidthHint = 0;
     QList< int > lColumnSizeHints;
-    QList< Theme::Column * >::ConstIterator end(columns.end());
-
-    for (it = columns.constBegin(); it != end; ++it) {
-        if ((*it)->currentlyVisible() || (idx == 0)) {
+    for (const auto col : qAsConst(columns)) {
+        if (col->currentlyVisible() || (idx == 0)) {
             //qCDebug(MESSAGELIST_LOG) << "Column " << idx << " will be visible";
             // Column visible
-            const int savedWidth = (*it)->currentWidth();
+            const int savedWidth = col->currentWidth();
             const int hintWidth = d->mDelegate->sizeHintForItemTypeAndColumn(Item::Message, idx).width();
             totalVisibleWidthHint += savedWidth > 0 ? savedWidth : hintWidth;
             lColumnSizeHints.append(hintWidth);
@@ -412,14 +409,13 @@ void View::applyThemeColumns()
     QList< double > lColumnWidths;
     lColumnWidths.reserve(columns.count());
     int totalVisibleWidth = 0;
-    end = columns.constEnd();
-    for (it = columns.constBegin(); it != end; ++it) {
-        double savedWidth = (*it)->currentWidth();
+    for (const auto col : qAsConst(columns)) {
+        double savedWidth = col->currentWidth();
         double hintWidth = savedWidth > 0 ? savedWidth : lColumnSizeHints.at(idx);
         double realWidth;
 
-        if ((*it)->currentlyVisible() || (idx == 0)) {
-            if ((*it)->containsTextItems()) {
+        if (col->currentlyVisible() || (idx == 0)) {
+            if (col->containsTextItems()) {
                 // the column contains text items, it should get more space (if possible)
                 realWidth = ((hintWidth * viewportWidth) / totalVisibleWidthHint);
             } else {
@@ -525,11 +521,10 @@ void View::applyThemeColumns()
 
     idx = 0;
 
-    end = columns.constEnd();
-    for (it = columns.constBegin(); it != end; ++it) {
-        bool visible = (idx == 0) || (*it)->currentlyVisible();
+    for (const auto col : qAsConst(columns)) {
+        bool visible = (idx == 0) || col->currentlyVisible();
         //qCDebug(MESSAGELIST_LOG) << "Column " << idx << " visible " << visible;
-        (*it)->setCurrentlyVisible(visible);
+        col->setCurrentlyVisible(visible);
         header()->setSectionHidden(idx, !visible);
         idx++;
     }
@@ -540,16 +535,15 @@ void View::applyThemeColumns()
 
     idx = 0;
 
-    end = columns.constEnd();
-    for (it = columns.constBegin(); it != end; ++it) {
-        if ((*it)->currentlyVisible()) {
+    for (const auto col : qAsConst(columns)) {
+        if (col->currentlyVisible()) {
             const double columnWidth(lColumnWidths.at(idx));
-            (*it)->setCurrentWidth(columnWidth);
+            col->setCurrentWidth(columnWidth);
             //Laurent Bug 358855 - message list column widths lost when program closed
             // I need to investigate if this code is still necessary (all method)
             header()->resizeSection(idx, static_cast<int>(columnWidth));
         } else {
-            (*it)->setCurrentWidth(-1);
+            col->setCurrentWidth(-1);
         }
         idx++;
     }
@@ -557,10 +551,9 @@ void View::applyThemeColumns()
     idx = 0;
 
     bool bTriggeredQtBug = false;
-    end = columns.constEnd();
-    for (it = columns.constBegin(); it != end; ++it) {
+    for (const auto col : qAsConst(columns)) {
         if (!header()->isSectionHidden(idx)) {
-            if (!(*it)->currentlyVisible()) {
+            if (!col->currentlyVisible()) {
                 bTriggeredQtBug = true;
             }
         }
@@ -607,7 +600,7 @@ void View::saveThemeColumnState()
 
     //qCDebug(MESSAGELIST_LOG) << "Save theme column state";
 
-    const QList< Theme::Column * > &columns = d->mTheme->columns();
+    const auto columns = d->mTheme->columns();
 
     if (columns.isEmpty()) {
         return;    // bad theme
@@ -615,16 +608,15 @@ void View::saveThemeColumnState()
 
     int idx = 0;
 
-    QList< Theme::Column * >::ConstIterator end(columns.constEnd());
-    for (QList< Theme::Column * >::ConstIterator it = columns.constBegin(); it != end; ++it) {
+    for (const auto col : qAsConst(columns)) {
         if (header()->isSectionHidden(idx)) {
             //qCDebug(MESSAGELIST_LOG) << "Section " << idx << " is hidden";
-            (*it)->setCurrentlyVisible(false);
-            (*it)->setCurrentWidth(-1);     // reset (hmmm... we could use the "don't touch" policy here too...)
+            col->setCurrentlyVisible(false);
+            col->setCurrentWidth(-1);     // reset (hmmm... we could use the "don't touch" policy here too...)
         } else {
             //qCDebug(MESSAGELIST_LOG) << "Section " << idx << " is visible and has size " << header()->sectionSize( idx );
-            (*it)->setCurrentlyVisible(true);
-            (*it)->setCurrentWidth(header()->sectionSize(idx));
+            col->setCurrentlyVisible(true);
+            col->setCurrentWidth(header()->sectionSize(idx));
         }
         idx++;
     }
@@ -730,7 +722,7 @@ void View::slotHeaderContextMenuRequested(const QPoint &pnt)
         return;
     }
 
-    const QList< Theme::Column * > &columns = d->mTheme->columns();
+    const auto columns = d->mTheme->columns();
 
     if (columns.isEmpty()) {
         return;    // bad theme
@@ -741,9 +733,8 @@ void View::slotHeaderContextMenuRequested(const QPoint &pnt)
 
     QSignalMapper *showColumnSignalMapper = new QSignalMapper(&menu);
     int idx = 0;
-    QList< Theme::Column * >::ConstIterator end(columns.end());
-    for (QList< Theme::Column * >::ConstIterator it = columns.begin(); it != end; ++it) {
-        QAction *act = menu.addAction((*it)->label());
+    for (const auto col : qAsConst(columns)) {
+        QAction *act = menu.addAction(col->label());
         act->setCheckable(true);
         act->setChecked(!header()->isSectionHidden(idx));
         if (idx == 0) {
@@ -895,8 +886,7 @@ QList< MessageItem * > View::selectionAsMessageItemList(bool includeCollapsedChi
     if (lSelected.isEmpty()) {
         return selectedMessages;
     }
-    QModelIndexList::ConstIterator end(lSelected.constEnd());
-    for (QModelIndexList::ConstIterator it = lSelected.constBegin(); it != end; ++it) {
+    for (const auto idx : qAsConst(lSelected)) {
         // The asserts below are theoretically valid but at the time
         // of writing they fail because of a bug in QItemSelectionModel::selectedRows()
         // which returns also non-selectable items.
@@ -904,36 +894,36 @@ QList< MessageItem * > View::selectionAsMessageItemList(bool includeCollapsedChi
         //Q_ASSERT( selectedItem->type() == Item::Message );
         //Q_ASSERT( ( *it ).isValid() );
 
-        if (!(*it).isValid()) {
+        if (!idx.isValid()) {
             continue;
         }
 
-        Item *selectedItem = static_cast< Item * >((*it).internalPointer());
+        Item *selectedItem = static_cast<Item *>(idx.internalPointer());
         Q_ASSERT(selectedItem);
 
         if (selectedItem->type() != Item::Message) {
             continue;
         }
 
-        if (!static_cast< MessageItem * >(selectedItem)->isValid()) {
+        if (!static_cast<MessageItem *>(selectedItem)->isValid()) {
             continue;
         }
 
-        Q_ASSERT(!selectedMessages.contains(static_cast< MessageItem * >(selectedItem)));
+        Q_ASSERT(!selectedMessages.contains(static_cast<MessageItem *>(selectedItem)));
 
-        if (includeCollapsedChildren && (selectedItem->childItemCount() > 0) && (!isExpanded(*it))) {
-            static_cast< MessageItem * >(selectedItem)->subTreeToList(selectedMessages);
+        if (includeCollapsedChildren && (selectedItem->childItemCount() > 0) && (!isExpanded(idx))) {
+            static_cast<MessageItem *>(selectedItem)->subTreeToList(selectedMessages);
         } else {
-            selectedMessages.append(static_cast< MessageItem * >(selectedItem));
+            selectedMessages.append(static_cast<MessageItem *>(selectedItem));
         }
     }
 
     return selectedMessages;
 }
 
-QList< MessageItem * > View::currentThreadAsMessageItemList() const
+QList<MessageItem *> View::currentThreadAsMessageItemList() const
 {
-    QList< MessageItem * > currentThread;
+    QList<MessageItem *> currentThread;
 
     MessageItem *msg = currentMessageItem();
     if (!msg) {
@@ -955,25 +945,24 @@ QList< MessageItem * > View::currentThreadAsMessageItemList() const
 void View::setChildrenExpanded(const Item *root, bool expand)
 {
     Q_ASSERT(root);
-    QList< Item * > *childList = root->childItems();
+    auto childList = root->childItems();
     if (!childList) {
         return;
     }
-    QList< Item * >::ConstIterator end(childList->constEnd());
-    for (QList< Item * >::ConstIterator it = childList->constBegin(); it != end; ++it) {
-        QModelIndex idx = d->mModel->index(*it, 0);
+    for (const auto child : qAsConst(*childList)) {
+        QModelIndex idx = d->mModel->index(child, 0);
         Q_ASSERT(idx.isValid());
-        Q_ASSERT(static_cast< Item * >(idx.internalPointer()) == (*it));
+        Q_ASSERT(static_cast<Item *>(idx.internalPointer()) == child);
 
         if (expand) {
             setExpanded(idx, true);
 
-            if ((*it)->childItemCount() > 0) {
-                setChildrenExpanded(*it, true);
+            if (child->childItemCount() > 0) {
+                setChildrenExpanded(child, true);
             }
         } else {
-            if ((*it)->childItemCount() > 0) {
-                setChildrenExpanded(*it, false);
+            if (child->childItemCount() > 0) {
+                setChildrenExpanded(child, false);
             }
 
             setExpanded(idx, false);
@@ -1036,12 +1025,12 @@ void View::setAllThreadsExpanded(bool expand)
 
     // grouping is in effect: must expand/unexpand one level lower
 
-    QList< Item * > *childList = d->mModel->rootItem()->childItems();
+    auto childList = d->mModel->rootItem()->childItems();
     if (!childList) {
         return;
     }
 
-    foreach (Item *item, *childList) {
+    for (const auto item : qAsConst(*childList)) {
         setChildrenExpanded(item, expand);
     }
 }
@@ -1054,12 +1043,12 @@ void View::setAllGroupsExpanded(bool expand)
 
     Item *item = d->mModel->rootItem();
 
-    QList< Item * > *childList = item->childItems();
+    auto childList = item->childItems();
     if (!childList) {
         return;
     }
 
-    foreach (Item *item, *childList) {
+    for (const auto item : qAsConst(*childList)) {
         Q_ASSERT(item->type() == Item::GroupHeader);
         QModelIndex idx = d->mModel->index(item, 0);
         Q_ASSERT(idx.isValid());
@@ -1079,16 +1068,15 @@ void View::setAllGroupsExpanded(bool expand)
 void View::selectMessageItems(const QList< MessageItem * > &list)
 {
     QItemSelection selection;
-    QList< MessageItem * >::ConstIterator end(list.constEnd());
-    for (QList< MessageItem * >::ConstIterator it = list.constBegin(); it != end; ++it) {
-        Q_ASSERT(*it);
-        QModelIndex idx = d->mModel->index(*it, 0);
+    for (const auto mi : qAsConst(list)) {
+        Q_ASSERT(mi);
+        QModelIndex idx = d->mModel->index(mi, 0);
         Q_ASSERT(idx.isValid());
-        Q_ASSERT(static_cast< MessageItem * >(idx.internalPointer()) == (*it));
+        Q_ASSERT(static_cast<MessageItem *>(idx.internalPointer()) == mi);
         if (!selectionModel()->isSelected(idx)) {
             selection.append(QItemSelectionRange(idx));
         }
-        ensureDisplayedWithParentsExpanded(*it);
+        ensureDisplayedWithParentsExpanded(mi);
     }
     if (!selection.isEmpty()) {
         selectionModel()->select(selection, QItemSelectionModel::Select | QItemSelectionModel::Rows);
@@ -1679,13 +1667,12 @@ void View::deletePersistentSet(MessageItemSetReference ref)
     d->mModel->deletePersistentSet(ref);
 }
 
-void View::markMessageItemsAsAboutToBeRemoved(QList< MessageItem * > &items, bool bMark)
+void View::markMessageItemsAsAboutToBeRemoved(QList<MessageItem *> &items, bool bMark)
 {
     if (!bMark) {
-        QList< MessageItem * >::ConstIterator end(items.constEnd());
-        for (QList< MessageItem * >::ConstIterator it = items.constBegin(); it != end; ++it) {
-            if ((*it)->isValid()) {   // hasn't been removed in the meantime
-                (*it)->setAboutToBeRemoved(false);
+        for (const auto mi : qAsConst(items)) {
+            if (mi->isValid()) {   // hasn't been removed in the meantime
+                mi->setAboutToBeRemoved(false);
             }
         }
 
@@ -1814,12 +1801,11 @@ void View::markMessageItemsAsAboutToBeRemoved(QList< MessageItem * > &items, boo
 
     // Now mark messages as about to be removed.
 
-    QList< MessageItem * >::ConstIterator end(items.constEnd());
-    for (QList< MessageItem * >::ConstIterator it = items.constBegin(); it != end; ++it) {
-        (*it)->setAboutToBeRemoved(true);
-        QModelIndex idx = d->mModel->index(*it, 0);
+    for (const auto mi : qAsConst(items)) {
+        mi->setAboutToBeRemoved(true);
+        QModelIndex idx = d->mModel->index(mi, 0);
         Q_ASSERT(idx.isValid());
-        Q_ASSERT(static_cast< MessageItem * >(idx.internalPointer()) == *it);
+        Q_ASSERT(static_cast< MessageItem * >(idx.internalPointer()) == mi);
         if (selectionModel()->isSelected(idx)) {
             selectionModel()->select(idx, QItemSelectionModel::Deselect | QItemSelectionModel::Rows);
         }

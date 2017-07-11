@@ -196,14 +196,13 @@ void MessageItemPrivate::fillTagList(const Akonadi::Tag::List &taglist)
 
     for (const Akonadi::Tag &tag : taglist) {
         QString symbol = QStringLiteral("mail-tagged");
-        Akonadi::TagAttribute *attr = tag.attribute<Akonadi::TagAttribute>();
+        auto attr = tag.attribute<Akonadi::TagAttribute>();
         if (attr) {
             if (!attr->iconName().isEmpty()) {
                 symbol = attr->iconName();
             }
         }
-        MessageItem::Tag *messageListTag =
-            new MessageItem::Tag(SmallIcon(symbol), tag.name(), tag.url().url());
+        auto messageListTag = new MessageItem::Tag(SmallIcon(symbol), tag.name(), tag.url().url());
 
         if (attr) {
             messageListTag->setTextColor(attr->textColor());
@@ -271,8 +270,8 @@ QString MessageItem::annotation() const
 {
     Q_D(const MessageItem);
     if (d->mAkonadiItem.hasAttribute<Akonadi::EntityAnnotationsAttribute>()) {
-        Akonadi::EntityAnnotationsAttribute *attr = d->mAkonadiItem.attribute<Akonadi::EntityAnnotationsAttribute>();
-        const QMap<QByteArray, QByteArray> annotations = attr->annotations();
+        auto attr = d->mAkonadiItem.attribute<Akonadi::EntityAnnotationsAttribute>();
+        const auto annotations = attr->annotations();
         QByteArray annot = annotations.value("/private/comment");
         if (!annot.isEmpty()) {
             return QString::fromLatin1(annot);
@@ -570,7 +569,7 @@ QString MessageItem::accessibleText(const Theme *theme, int columnIndex)
     for (Theme::Row *row : rows) {
         QStringList leftStrings;
         QStringList rightStrings;
-        const QList<Theme::ContentItem *> leftItems = row->leftItems();
+        const auto leftItems = row->leftItems();
         leftStrings.reserve(leftItems.count());
         for (Theme::ContentItem *contentItem : qAsConst(leftItems)) {
             leftStrings.append(accessibleTextForField(contentItem->type()));
@@ -589,14 +588,13 @@ QString MessageItem::accessibleText(const Theme *theme, int columnIndex)
 void MessageItem::subTreeToList(QList< MessageItem * > &list)
 {
     list.append(this);
-    QList< Item * > *childList = childItems();
+    const auto childList = childItems();
     if (!childList) {
         return;
     }
-    QList< Item * >::ConstIterator end(childList->constEnd());
-    for (QList< Item * >::ConstIterator it = childList->constBegin(); it != end; ++it) {
-        Q_ASSERT((*it)->type() == Item::Message);
-        static_cast< MessageItem * >(*it)->subTreeToList(list);
+    for (const auto child : *childList) {
+        Q_ASSERT(child->type() == Item::Message);
+        static_cast<MessageItem *>(child)->subTreeToList(list);
     }
 }
 
@@ -709,7 +707,7 @@ void TagCache::retrieveTags(const Akonadi::Tag::List &tags, MessageItemPrivate *
     }
     //Because fillTagList expects to be called once we either fetch all or none
     if (!toFetch.isEmpty()) {
-        Akonadi::TagFetchJob *tagFetchJob = new Akonadi::TagFetchJob(tags, this);
+        auto tagFetchJob = new Akonadi::TagFetchJob(tags, this);
         tagFetchJob->fetchScope().fetchAttribute<Akonadi::TagAttribute>();
         connect(tagFetchJob, &Akonadi::TagFetchJob::result, this, &TagCache::onTagsFetched);
         mRequests.insert(tagFetchJob, m);
@@ -732,12 +730,11 @@ void TagCache::onTagsFetched(KJob *job)
         qCWarning(MESSAGELIST_LOG) << "Failed to fetch tags: " << job->errorString();
         return;
     }
-    Akonadi::TagFetchJob *fetchJob = static_cast<Akonadi::TagFetchJob *>(job);
+    auto fetchJob = static_cast<Akonadi::TagFetchJob *>(job);
     Q_FOREACH (const Akonadi::Tag &tag, fetchJob->tags()) {
         mCache.insert(tag.id(), new Akonadi::Tag(tag));
     }
-    MessageItemPrivate *m = mRequests.take(fetchJob);
-    if (m) {
+    if (auto m = mRequests.take(fetchJob)) {
         m->fillTagList(fetchJob->tags());
     }
 }

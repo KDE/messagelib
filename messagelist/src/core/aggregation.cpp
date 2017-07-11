@@ -202,14 +202,12 @@ void Aggregation::save(QDataStream &stream) const
 
 QList< QPair< QString, int > > Aggregation::enumerateGroupingOptions()
 {
-    QList< QPair< QString, int > > ret;
-    ret.append(QPair< QString, int >(i18nc("No grouping of messages", "None"), NoGrouping));
-    ret.append(QPair< QString, int >(i18n("By Exact Date (of Thread Leaders)"), GroupByDate));
-    ret.append(QPair< QString, int >(i18n("By Smart Date Ranges (of Thread Leaders)"), GroupByDateRange));
-    ret.append(QPair< QString, int >(i18n("By Smart Sender/Receiver"), GroupBySenderOrReceiver));
-    ret.append(QPair< QString, int >(i18n("By Sender"), GroupBySender));
-    ret.append(QPair< QString, int >(i18n("By Receiver"), GroupByReceiver));
-    return ret;
+    return { { i18nc("No grouping of messages", "None"), NoGrouping },
+             { i18n("By Exact Date (of Thread Leaders)"), GroupByDate },
+             { i18n("By Smart Date Ranges (of Thread Leaders)"), GroupByDateRange },
+             { i18n("By Smart Sender/Receiver"), GroupBySenderOrReceiver },
+             { i18n("By Sender"), GroupBySender },
+             { i18n("By Receiver"), GroupByReceiver } };
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateGroupExpandPolicyOptions(Grouping g)
@@ -218,22 +216,21 @@ QList< QPair< QString, int > > Aggregation::enumerateGroupExpandPolicyOptions(Gr
     if (g == NoGrouping) {
         return ret;
     }
-    ret.append(QPair< QString, int >(i18n("Never Expand Groups"), NeverExpandGroups));
+    ret.append({ i18n("Never Expand Groups"), NeverExpandGroups });
     if ((g == GroupByDate) || (g == GroupByDateRange)) {
-        ret.append(QPair< QString, int >(i18n("Expand Recent Groups"), ExpandRecentGroups));
+        ret.append({ i18n("Expand Recent Groups"), ExpandRecentGroups });
     }
-    ret.append(QPair< QString, int >(i18n("Always Expand Groups"), AlwaysExpandGroups));
+    ret.append({ i18n("Always Expand Groups"), AlwaysExpandGroups });
     return ret;
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateThreadingOptions()
 {
-    QList< QPair< QString, int > > ret;
-    ret.append(QPair< QString, int >(i18nc("No threading of messages", "None"), NoThreading));
-    ret.append(QPair< QString, int >(i18n("Perfect Only"), PerfectOnly));
-    ret.append(QPair< QString, int >(i18n("Perfect and by References"), PerfectAndReferences));
-    ret.append(QPair< QString, int >(i18n("Perfect, by References and by Subject"), PerfectReferencesAndSubject));
-    return ret;
+    return { { i18nc("No threading of messages", "None"), NoThreading },
+             { i18n("Perfect Only"), PerfectOnly },
+             { i18n("Perfect and by References"), PerfectAndReferences },
+             { i18n("Perfect, by References and by Subject"), PerfectReferencesAndSubject } };
+
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateThreadLeaderOptions(Grouping g, Threading t)
@@ -242,33 +239,31 @@ QList< QPair< QString, int > > Aggregation::enumerateThreadLeaderOptions(Groupin
     if (t == NoThreading) {
         return ret;
     }
-    ret.append(QPair< QString, int >(i18n("Topmost Message"), TopmostMessage));
+    ret.append({ i18n("Topmost Message"), TopmostMessage });
     if ((g != GroupByDate) && (g != GroupByDateRange)) {
         return ret;
     }
-    ret.append(QPair< QString, int >(i18n("Most Recent Message"), MostRecentMessage));
+    ret.append({ i18n("Most Recent Message"), MostRecentMessage });
     return ret;
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateThreadExpandPolicyOptions(Threading t)
 {
-    QList< QPair< QString, int > > ret;
     if (t == NoThreading) {
-        return ret;
+        return {};
     }
-    ret.append(QPair< QString, int >(i18n("Never Expand Threads"), NeverExpandThreads));
-    ret.append(QPair< QString, int >(i18n("Expand Threads With Unread Messages"), ExpandThreadsWithUnreadMessages));
-    ret.append(QPair< QString, int >(i18n("Expand Threads With Unread or Important Messages"), ExpandThreadsWithUnreadOrImportantMessages));
-    ret.append(QPair< QString, int >(i18n("Always Expand Threads"), AlwaysExpandThreads));
-    return ret;
+
+    return { { i18n("Never Expand Threads"), NeverExpandThreads },
+             { i18n("Expand Threads With Unread Messages"), ExpandThreadsWithUnreadMessages },
+             { i18n("Expand Threads With Unread or Important Messages"), ExpandThreadsWithUnreadOrImportantMessages },
+             { i18n("Always Expand Threads"), AlwaysExpandThreads } };
+
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateFillViewStrategyOptions()
 {
-    QList< QPair< QString, int > > ret;
-    ret.append(QPair< QString, int >(i18n("Favor Interactivity"), FavorInteractivity));
-    ret.append(QPair< QString, int >(i18n("Favor Speed"), FavorSpeed));
-    ret.append(QPair< QString, int >(i18n("Batch Job (No Interactivity)"), BatchNoInteractivity));
-    return ret;
+    return { { i18n("Favor Interactivity"), FavorInteractivity },
+             { i18n("Favor Speed"), FavorSpeed },
+             { i18n("Batch Job (No Interactivity)"), BatchNoInteractivity } };
 }
 
