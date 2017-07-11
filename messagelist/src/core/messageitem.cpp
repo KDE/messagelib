@@ -592,7 +592,7 @@ void MessageItem::subTreeToList(QList< MessageItem * > &list)
     if (!childList) {
         return;
     }
-    for (const auto child : *childList) {
+    for (const auto child : qAsConst(*childList)) {
         Q_ASSERT(child->type() == Item::Message);
         static_cast<MessageItem *>(child)->subTreeToList(list);
     }
