@@ -339,7 +339,39 @@ int Item::indexOfChildItem(Item *child) const
         return idx;    // good guess
     }
 
-    idx = d_ptr->mChildItems->indexOf(child);
+    // We had a guess but it's out-of-date. Let's use the old guess as our
+    // starting point and search in both directions from it. It's more likely we
+    // will find the new position by going from the old guess rather than scanning
+    // the list from the beginning. The worst case scenario is equal to not having
+    // any guess at all.
+    // TODO: Should we just start from mChildItems->count() / 2.0 if idx == 0?
+    if (idx > 0) {
+        const auto begin = d_ptr->mChildItems->cbegin();
+        const auto end = d_ptr->mChildItems->cend();
+        auto fwdIt = begin + idx;
+        auto bwdIt = begin + idx;
+
+        idx = -1; // invalidate idx so it's -1 in case we fail to find the item
+        while (fwdIt != end || bwdIt != end) {
+            if (++fwdIt != end && (*fwdIt) == child) {
+                idx = std::distance(begin, fwdIt);
+                break;
+            }
+            if (bwdIt != end) { // sic!
+                if ((*--bwdIt) == child) {
+                    idx = std::distance(begin, bwdIt);
+                    break;
+                }
+                if (bwdIt == begin) {
+                    // invalidate the iterator if we just checked the first item
+                    bwdIt = end;
+                }
+            }
+        }
+    } else {
+        idx = d_ptr->mChildItems->indexOf(child);
+    }
+
     if (idx >= 0) {
         child->d_ptr->mThisItemIndexGuess = idx;
     }
