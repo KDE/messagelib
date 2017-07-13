@@ -809,8 +809,6 @@ void MessageFactoryTest::testCreateResend()
 
 //   qDebug() << msg->encodedContent();
 
-    QString msgId = MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), QString());
-
     QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
     rx.indexIn(QString::fromLatin1(rdir->head()));
 
