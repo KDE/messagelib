@@ -26,18 +26,20 @@
 #include <QKeyEvent>
 #include <QMouseEvent>
 #include <QWheelEvent>
+#include <QTimer>
 
 using namespace WebEngineViewer;
 
 class WebEngineViewer::WebEngineViewPrivate
 {
 public:
-    WebEngineViewPrivate()
+    WebEngineViewPrivate(WebEngineView *q)
         : mSavedRelativePosition(-1),
           mCurrentWidget(nullptr),
           mWebEngineNavigatorInterceptor(nullptr),
-          mWebEngineNavigatorInterceptorView(nullptr)
-
+          mWebEngineNavigatorInterceptorView(nullptr),
+          mCrashCount(0),
+          q(q)
     {
 
     }
@@ -49,19 +51,61 @@ public:
         mWebEngineNavigatorInterceptorView = nullptr;
     }
 
+    void renderProcessTerminated(QWebEnginePage::RenderProcessTerminationStatus status)
+    {
+        switch (status) {
+            case QWebEnginePage::NormalTerminationStatus:
+                return;
+
+            case QWebEnginePage::AbnormalTerminationStatus:
+                qCInfo(WEBENGINEVIEWER_LOG) << "WebEngine render process terminated abnormally";
+                break;
+            case QWebEnginePage::CrashedTerminationStatus:
+                qCInfo(WEBENGINEVIEWER_LOG) << "WebEngine render process crashed";
+                break;
+            case QWebEnginePage::KilledTerminationStatus:
+                qCInfo(WEBENGINEVIEWER_LOG) << "WebEngine render process killed";
+                break;
+        }
+
+        // don't get stuck in a loop if the renderer keeps crashing. Five restarts
+        // is an arbitrary constant.
+        if (++mCrashCount < 6) {
+            QTimer::singleShot(0, q, &QWebEngineView::reload);
+        } else {
+            // TODO: try to show a sadface page
+        }
+    }
+
     qreal mSavedRelativePosition;
     QWidget *mCurrentWidget;
     WebEngineManageScript *mManagerScript;
     WebEngineNavigationRequestInterceptor *mWebEngineNavigatorInterceptor;
     WebEngineView *mWebEngineNavigatorInterceptorView;
+    int mCrashCount;
+
+private:
+    WebEngineView * const q;
 };
 
 WebEngineView::WebEngineView(QWidget *parent)
     : QWebEngineView(parent),
-      d(new WebEngineViewer::WebEngineViewPrivate)
+      d(new WebEngineViewer::WebEngineViewPrivate(this))
 {
     installEventFilter(this);
     d->mManagerScript = new WebEngineManageScript(this);
+
+    connect(this, &QWebEngineView::renderProcessTerminated,
+            this, [this](QWebEnginePage::RenderProcessTerminationStatus status) {
+                d->renderProcessTerminated(status);
+            });
+    connect(this, &QWebEngineView::loadFinished,
+            this, [this]() {
+                // Reset the crash counter if we manage to actually load a page.
+                // This does not perfectly correspond to "we managed to render
+                // a page", but it's the best we have
+                d->mCrashCount = 0;
+            });
 }
 
 WebEngineView::~WebEngineView()
