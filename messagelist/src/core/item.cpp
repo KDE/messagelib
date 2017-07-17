@@ -353,11 +353,14 @@ int Item::indexOfChildItem(Item *child) const
 
         idx = -1; // invalidate idx so it's -1 in case we fail to find the item
         while (fwdIt != end || bwdIt != end) {
-            if (++fwdIt != end && (*fwdIt) == child) {
-                idx = std::distance(begin, fwdIt);
-                break;
+            if (fwdIt != end) {
+                if (++fwdIt != end && (*fwdIt) == child) {
+                    idx = std::distance(begin, fwdIt);
+                    break;
+                }
             }
             if (bwdIt != end) { // sic!
+                Q_ASSERT(bwdIt != begin);
                 if ((*--bwdIt) == child) {
                     idx = std::distance(begin, bwdIt);
                     break;
@@ -373,6 +376,7 @@ int Item::indexOfChildItem(Item *child) const
     }
 
     if (idx >= 0) {
+        Q_ASSERT(d_ptr->mChildItems->at(idx) == child); // make sure the above algorithm works
         child->d_ptr->mThisItemIndexGuess = idx;
     }
     return idx;
