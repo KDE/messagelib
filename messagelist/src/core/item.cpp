@@ -344,11 +344,10 @@ int Item::indexOfChildItem(Item *child) const
     // will find the new position by going from the old guess rather than scanning
     // the list from the beginning. The worst case scenario is equal to not having
     // any guess at all.
-    // TODO: Should we just start from mChildItems->count() / 2.0 if idx == 0?
-    if (idx > 0) {
+    if (idx > 0 && idx < d_ptr->mChildItems->count()) {
         const auto begin = d_ptr->mChildItems->cbegin();
         const auto end = d_ptr->mChildItems->cend();
-        auto fwdIt = begin + qMin(idx, d_ptr->mChildItems->count() - 1);
+        auto fwdIt = begin + idx;
         auto bwdIt = fwdIt;
 
         idx = -1; // invalidate idx so it's -1 in case we fail to find the item
