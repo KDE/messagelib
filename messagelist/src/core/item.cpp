@@ -348,8 +348,8 @@ int Item::indexOfChildItem(Item *child) const
     if (idx > 0) {
         const auto begin = d_ptr->mChildItems->cbegin();
         const auto end = d_ptr->mChildItems->cend();
-        auto fwdIt = begin + idx;
-        auto bwdIt = begin + idx;
+        auto fwdIt = begin + qMin(idx, d_ptr->mChildItems->count() - 1);
+        auto bwdIt = fwdIt;
 
         idx = -1; // invalidate idx so it's -1 in case we fail to find the item
         while (fwdIt != end || bwdIt != end) {
