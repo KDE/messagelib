@@ -1691,38 +1691,7 @@ bool ComposerViewBase::hasMissingAttachments(const QStringList &attachmentKeywor
         return false;
     }
 
-    QStringList attachWordsList = attachmentKeywords;
-
-    QRegExp rx(QLatin1String("\\b") +
-               attachWordsList.join(QStringLiteral("\\b|\\b")) +
-               QLatin1String("\\b"));
-    rx.setCaseSensitivity(Qt::CaseInsensitive);
-
-    // check whether the subject contains one of the attachment key words
-    // unless the message is a reply or a forwarded message
-    const QString subj = subject();
-    bool gotMatch = (MessageHelper::stripOffPrefixes(subj) == subj) && (rx.indexIn(subj) >= 0);
-
-    if (!gotMatch) {
-        // check whether the non-quoted text contains one of the attachment key
-        // words
-        QRegExp quotationRx(QStringLiteral("^([ \\t]*([|>:}#]|[A-Za-z]+>))+"));
-        QTextDocument *doc = m_editor->document();
-        QTextBlock end(doc->end());
-        for (QTextBlock it = doc->begin(); it != end; it = it.next()) {
-            const QString line = it.text();
-            gotMatch = (quotationRx.indexIn(line) < 0) &&
-                       (rx.indexIn(line) >= 0);
-            if (gotMatch) {
-                break;
-            }
-        }
-    }
-
-    if (!gotMatch) {
-        return false;
-    }
-    return true;
+    return MessageComposer::Util::hasMissingAttachments(attachmentKeywords, m_editor->document(), subject());
 }
 
 ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments(const QStringList &attachmentKeywords)

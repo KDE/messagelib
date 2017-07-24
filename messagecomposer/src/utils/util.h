@@ -28,6 +28,8 @@
 #include <AkonadiCore/Item>
 #include <Akonadi/KMime/MessageStatus>
 
+class QTextDocument;
+
 namespace KMime
 {
 class Content;
@@ -91,6 +93,8 @@ MESSAGECOMPOSER_EXPORT bool isStandaloneMessage(const Akonadi::Item &item);
    * a valid message.
    */
 MESSAGECOMPOSER_EXPORT KMime::Message::Ptr message(const Akonadi::Item &item);
+
+MESSAGECOMPOSER_EXPORT bool hasMissingAttachments(const QStringList &attachmentKeywords, QTextDocument *doc, const QString &subj);
 
 }
 

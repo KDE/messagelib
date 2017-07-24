@@ -29,6 +29,8 @@
 #include "job/singlepartjob.h"
 
 #include <QTextCodec>
+#include <QTextDocument>
+#include <QTextBlock>
 
 #include <KCharsets>
 #include "messagecomposer_debug.h"
@@ -41,6 +43,7 @@
 #include <AkonadiCore/agentinstance.h>
 #include <AkonadiCore/agentinstancecreatejob.h>
 #include <AkonadiCore/agentmanager.h>
+#include <MessageComposer/MessageHelper>
 
 KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {
@@ -422,3 +425,40 @@ KMime::Message::Ptr MessageComposer::Util::message(const Akonadi::Item &item)
     return item.payload<KMime::Message::Ptr>();
 }
 
+
+bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentKeywords, QTextDocument *doc, const QString &subj)
+{
+    if (!doc) {
+        return false;
+    }
+    QStringList attachWordsList = attachmentKeywords;
+
+    QRegExp rx(QLatin1String("\\b") +
+               attachWordsList.join(QStringLiteral("\\b|\\b")) +
+               QLatin1String("\\b"));
+    rx.setCaseSensitivity(Qt::CaseInsensitive);
+
+    // check whether the subject contains one of the attachment key words
+    // unless the message is a reply or a forwarded message
+    bool gotMatch = (MessageHelper::stripOffPrefixes(subj) == subj) && (rx.indexIn(subj) >= 0);
+
+    if (!gotMatch) {
+        // check whether the non-quoted text contains one of the attachment key
+        // words
+        QRegExp quotationRx(QStringLiteral("^([ \\t]*([|>:}#]|[A-Za-z]+>))+"));
+        QTextBlock end(doc->end());
+        for (QTextBlock it = doc->begin(); it != end; it = it.next()) {
+            const QString line = it.text();
+            gotMatch = (quotationRx.indexIn(line) < 0) &&
+                       (rx.indexIn(line) >= 0);
+            if (gotMatch) {
+                break;
+            }
+        }
+    }
+
+    if (!gotMatch) {
+        return false;
+    }
+    return true;
+}
