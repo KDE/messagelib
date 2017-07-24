@@ -1,5 +1,6 @@
 /*
   Copyright (c) 2009 Constantin Berzan <exit3219@gmail.com>
+  Copyright (c) 2017 Laurent Montel <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -25,8 +26,12 @@
 class UtilTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit UtilTest(QObject *parent = nullptr);
 private Q_SLOTS:
     void testSelectCharset();
+    void shouldTestHasMissingAttachment();
+    void shouldTestHasMissingAttachment_data();
 };
 
 #endif

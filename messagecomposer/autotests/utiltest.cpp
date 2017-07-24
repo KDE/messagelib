@@ -1,5 +1,6 @@
 /*
   Copyright (c) 2009 Constantin Berzan <exit3219@gmail.com>
+  Copyright (c) 2017 Laurent Montel <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -19,12 +20,20 @@
 
 #include "utiltest.h"
 
+#include <QTextDocument>
 #include <qtest.h>
+#include <QStandardPaths>
 
 #include <MessageComposer/Util>
 using namespace MessageComposer;
 
 QTEST_APPLESS_MAIN(UtilTest)
+
+UtilTest::UtilTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 void UtilTest::testSelectCharset()
 {
@@ -63,4 +72,28 @@ void UtilTest::testSelectCharset()
     }
 
 }
+
+void UtilTest::shouldTestHasMissingAttachment_data()
+{
+    QTest::addColumn<QStringList>("attachmentKeywords");
+    QTest::addColumn<QString>("subject");
+    QTest::addColumn<QString>("body");
+    QTest::addColumn<bool>("hasMissingAttachment");
+
+    QStringList lstDefaultAttachement{QStringLiteral("attachment"), QStringLiteral("att:")};
+    QTest::newRow("emptybody") << lstDefaultAttachement << QStringLiteral("foo") << QString() << false;
+    QTest::newRow("emptybodyandsubject") << lstDefaultAttachement << QString() << QString() << false;
+}
+
+void UtilTest::shouldTestHasMissingAttachment()
+{
+    QFETCH(QStringList, attachmentKeywords);
+    QFETCH(QString, subject);
+    QFETCH(QString, body);
+    QFETCH(bool, hasMissingAttachment);
+
+    QTextDocument doc(body);
+    QCOMPARE(Util::hasMissingAttachments(attachmentKeywords, &doc, subject), hasMissingAttachment);
+}
+
 
