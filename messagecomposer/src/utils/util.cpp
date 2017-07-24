@@ -25,6 +25,7 @@
 #include "util_p.h"
 
 
+#include <QRegularExpression>
 #include "composer/composer.h"
 #include "job/singlepartjob.h"
 
@@ -433,24 +434,23 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
     }
     QStringList attachWordsList = attachmentKeywords;
 
-    QRegExp rx(QLatin1String("\\b") +
+    QRegularExpression rx(QLatin1String("\\b") +
                attachWordsList.join(QStringLiteral("\\b|\\b")) +
-               QLatin1String("\\b"));
-    rx.setCaseSensitivity(Qt::CaseInsensitive);
+               QLatin1String("\\b"), QRegularExpression::CaseInsensitiveOption);
 
     // check whether the subject contains one of the attachment key words
     // unless the message is a reply or a forwarded message
-    bool gotMatch = (MessageHelper::stripOffPrefixes(subj) == subj) && (rx.indexIn(subj) >= 0);
+    bool gotMatch = (MessageHelper::stripOffPrefixes(subj) == subj) && (rx.match(subj).hasMatch());
 
     if (!gotMatch) {
         // check whether the non-quoted text contains one of the attachment key
         // words
-        QRegExp quotationRx(QStringLiteral("^([ \\t]*([|>:}#]|[A-Za-z]+>))+"));
+        QRegularExpression quotationRx(QStringLiteral("^([ \\t]*([|>:}#]|[A-Za-z]+>))+"));
         QTextBlock end(doc->end());
         for (QTextBlock it = doc->begin(); it != end; it = it.next()) {
             const QString line = it.text();
-            gotMatch = (quotationRx.indexIn(line) < 0) &&
-                       (rx.indexIn(line) >= 0);
+            gotMatch = (!quotationRx.match(line).hasMatch()) &&
+                       (rx.match(line).hasMatch());
             if (gotMatch) {
                 break;
             }
