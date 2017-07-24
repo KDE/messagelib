@@ -842,7 +842,7 @@ void AttachmentControllerBase::slotPutResult(KJob *job)
                 byteArrayToRemoteFile(_job->data(), _job->url(), true);
             }
         } else {
-            KJobUiDelegate *ui = static_cast<KIO::Job *>(job)->ui();
+            KJobUiDelegate *ui = static_cast<KIO::Job *>(job)->uiDelegate();
             ui->showErrorMessage();
         }
     }
