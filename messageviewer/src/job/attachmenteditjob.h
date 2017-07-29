@@ -27,13 +27,16 @@
 namespace KMime {
 class Content;
 }
+namespace Akonadi {
+class Session;
+}
 namespace MessageViewer {
 class EditorWatcher;
 class AttachmentEditJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit AttachmentEditJob(QObject *parent = nullptr);
+    explicit AttachmentEditJob(Akonadi::Session *session, QObject *parent = nullptr);
     ~AttachmentEditJob();
 
     void setMainWindow(QWidget *mainWindow);
@@ -57,6 +60,7 @@ private:
     KMime::Message::Ptr mMessage;
     bool mShowWarning;
     QWidget *mMainWindow;
+    Akonadi::Session *mSession;
 };
 }
 

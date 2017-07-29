@@ -30,6 +30,7 @@
 
 #include <AkonadiCore/item.h>
 #include <AkonadiCore/monitor.h>
+#include <AkonadiCore/session.h>
 #include <kio/job.h>
 #include <KMime/Message>
 #include <kservice.h>
@@ -682,6 +683,7 @@ public:
     QColor mBackgroundError;
 
     Viewer *const q;
+    Akonadi::Session *mSession;
     Akonadi::Monitor mMonitor;
     QSet<AbstractMessageLoadedHandler *> mMessageLoadedHandlers;
     Akonadi::Item::Id mPreviouslyViewedItem;

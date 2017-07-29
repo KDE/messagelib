@@ -48,6 +48,35 @@
 #include <QAction>
 
 namespace MessageViewer {
+
+class AbstractMessageLoadedHandler::Private
+{
+public:
+    Akonadi::Session *mSession = nullptr;
+};
+
+AbstractMessageLoadedHandler::AbstractMessageLoadedHandler()
+    : d(new Private)
+{
+}
+
+AbstractMessageLoadedHandler::~AbstractMessageLoadedHandler()
+{
+    delete d;
+}
+
+void AbstractMessageLoadedHandler::setSession(Akonadi::Session *session)
+{
+    d->mSession = session;
+}
+
+Akonadi::Session *AbstractMessageLoadedHandler::session() const
+{
+    return d->mSession;
+}
+
+    
+
 Viewer::Viewer(QWidget *aParent, QWidget *mainWindow, KActionCollection *actionCollection)
     : QWidget(aParent)
     , d_ptr(new ViewerPrivate(this, mainWindow, actionCollection))
@@ -507,7 +536,8 @@ QAbstractItemModel *Viewer::messageTreeModel() const
 
 Akonadi::ItemFetchJob *Viewer::createFetchJob(const Akonadi::Item &item)
 {
-    Akonadi::ItemFetchJob *job = new Akonadi::ItemFetchJob(item);
+    Q_D(Viewer);
+    Akonadi::ItemFetchJob *job = new Akonadi::ItemFetchJob(item, d->mSession);
     job->fetchScope().fetchAllAttributes();
     job->fetchScope().setAncestorRetrieval(Akonadi::ItemFetchScope::Parent);
     job->fetchScope().fetchFullPayload(true);
@@ -524,6 +554,7 @@ void Viewer::addMessageLoadedHandler(AbstractMessageLoadedHandler *handler)
         return;
     }
 
+    handler->setSession(d->mSession);
     d->mMessageLoadedHandlers.insert(handler);
 }
 

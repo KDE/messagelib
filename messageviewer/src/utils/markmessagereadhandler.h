@@ -58,6 +58,7 @@ public:
 private:
     //@cond PRIVATE
     class Private;
+    friend class Private;
     Private *const d;
 
     Q_PRIVATE_SLOT(d, void handleMessages())

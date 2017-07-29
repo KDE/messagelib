@@ -219,6 +219,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
     , mCurrentContent(nullptr)
     , mMessagePartNode(nullptr)
     , q(aParent)
+    , mSession(new Akonadi::Session("MessageViewer-" + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
     , mPreviouslyViewedItem(-1)
     , mScamDetectionWarning(nullptr)
     , mOpenAttachmentFolderWidget(nullptr)
@@ -280,6 +281,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
 
     // FIXME: Don't use the full payload here when attachment loading on demand is used, just
     //        like in KMMainWidget::slotMessageActivated().
+    mMonitor.setSession(mSession);
     Akonadi::ItemFetchScope fs;
     fs.fetchFullPayload();
     fs.fetchAttribute<MailTransport::ErrorAttribute>();
@@ -464,7 +466,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
     mMimePartTree->mimePartModel()->setRoot(modifiedMessage);
 #endif
     mMessageItem.setPayloadFromData(modifiedMessage->encodedContent());
-    Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(mMessageItem);
+    Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
     job->disableRevisionCheck();
     connect(job, &KJob::result, this, &ViewerPrivate::itemModifiedResult);
     return true;
@@ -481,7 +483,7 @@ void ViewerPrivate::itemModifiedResult(KJob *job)
 
 void ViewerPrivate::editAttachment(KMime::Content *node, bool showWarning)
 {
-    MessageViewer::AttachmentEditJob *job = new MessageViewer::AttachmentEditJob(this);
+    MessageViewer::AttachmentEditJob *job = new MessageViewer::AttachmentEditJob(mSession, this);
     connect(job, &AttachmentEditJob::refreshMessage, this, &ViewerPrivate::slotRefreshMessage);
     job->setMainWindow(mMainWindow);
     job->setMessageItem(mMessageItem);
@@ -1006,7 +1008,7 @@ void ViewerPrivate::collectionFetchedForStoringDecryptedMessage(KJob *job)
         KMime::Message::Ptr unencryptedMessage = mNodeHelper->unencryptedMessage(mMessage);
         if (unencryptedMessage) {
             mMessageItem.setPayload<KMime::Message::Ptr>(unencryptedMessage);
-            Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(mMessageItem);
+            Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
             connect(job, &KJob::result, this, &ViewerPrivate::itemModifiedResult);
         }
     }
@@ -1044,7 +1046,8 @@ void ViewerPrivate::postProcessMessage(MimeTreeParser::ObjectTreeParser *otp,
             //       on the wrong item!
             Akonadi::CollectionFetchJob *job = new Akonadi::CollectionFetchJob(
                 Akonadi::Collection::root(),
-                Akonadi::CollectionFetchJob::Recursive);
+                Akonadi::CollectionFetchJob::Recursive,
+                mSession);
             connect(job, &KJob::result,
                     this, &ViewerPrivate::collectionFetchedForStoringDecryptedMessage);
         }
@@ -2788,7 +2791,7 @@ void ViewerPrivate::slotAttachmentEdit()
         return;
     }
 
-    MessageViewer::AttachmentEditJob *job = new MessageViewer::AttachmentEditJob(this);
+    MessageViewer::AttachmentEditJob *job = new MessageViewer::AttachmentEditJob(mSession, this);
     connect(job, &AttachmentEditJob::refreshMessage, this, &ViewerPrivate::slotRefreshMessage);
     job->setMainWindow(mMainWindow);
     job->setMessageItem(mMessageItem);
@@ -3198,7 +3201,7 @@ void ViewerPrivate::slotSaveMessageDisplayFormat()
 {
     if (mMessageItem.isValid()) {
         MessageViewer::ModifyMessageDisplayFormatJob *job
-            = new MessageViewer::ModifyMessageDisplayFormatJob(this);
+            = new MessageViewer::ModifyMessageDisplayFormatJob(mSession, this);
         job->setMessageFormat(displayFormatMessageOverwrite());
         job->setMessageItem(mMessageItem);
         job->setRemoteContent(htmlLoadExtOverride());
@@ -3211,7 +3214,7 @@ void ViewerPrivate::slotResetMessageDisplayFormat()
     if (mMessageItem.isValid()) {
         if (mMessageItem.hasAttribute<MessageViewer::MessageDisplayFormatAttribute>()) {
             MessageViewer::ModifyMessageDisplayFormatJob *job
-                = new MessageViewer::ModifyMessageDisplayFormatJob(this);
+                = new MessageViewer::ModifyMessageDisplayFormatJob(mSession, this);
             job->setMessageItem(mMessageItem);
             job->setResetFormat(true);
             job->start();
@@ -3250,7 +3253,7 @@ void ViewerPrivate::slotMessageIsNotAScam()
         MessageViewer::ScamAttribute *attr = mMessageItem.attribute<MessageViewer::ScamAttribute>(
             Akonadi::Item::AddIfMissing);
         attr->setIsAScam(false);
-        Akonadi::ItemModifyJob *modify = new Akonadi::ItemModifyJob(mMessageItem);
+        Akonadi::ItemModifyJob *modify = new Akonadi::ItemModifyJob(mMessageItem, mSession);
         modify->setIgnorePayload(true);
         modify->disableRevisionCheck();
         connect(modify, &KJob::result, this, &ViewerPrivate::slotModifyItemDone);

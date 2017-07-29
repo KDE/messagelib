@@ -25,14 +25,16 @@
 #include <QTemporaryFile>
 #include <QUrl>
 #include <AkonadiCore/ItemModifyJob>
+#include <AkonadiCore/Session>
 #include <KMime/Content>
 
 using namespace MessageViewer;
 
-AttachmentEditJob::AttachmentEditJob(QObject *parent)
+AttachmentEditJob::AttachmentEditJob(Akonadi::Session *session, QObject *parent)
     : QObject(parent)
     , mShowWarning(true)
     , mMainWindow(nullptr)
+    , mSession(session)
 {
 }
 
@@ -97,7 +99,7 @@ void AttachmentEditJob::slotAttachmentEditDone(MessageViewer::EditorWatcher *edi
             file.close();
 
             mMessageItem.setPayloadFromData(mMessage->encodedContent());
-            Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(mMessageItem);
+            Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
             connect(job, &KJob::result, this, &AttachmentEditJob::slotItemModifiedResult);
             removeEditorWatcher(editorWatcher, name);
         }

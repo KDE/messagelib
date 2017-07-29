@@ -22,12 +22,15 @@
 
 #include <QObject>
 #include "viewer/viewer_p.h"
+namespace Akonadi {
+class Session;
+}
 namespace MessageViewer {
 class ModifyMessageDisplayFormatJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit ModifyMessageDisplayFormatJob(QObject *parent = nullptr);
+    explicit ModifyMessageDisplayFormatJob(Akonadi::Session *session, QObject *parent = nullptr);
     ~ModifyMessageDisplayFormatJob();
 
     void setRemoteContent(bool remote);
@@ -41,6 +44,7 @@ private:
     void slotModifyItemDone(KJob *job);
     void resetDisplayFormat();
     void modifyDisplayFormat();
+    Akonadi::Session *mSession;
     Akonadi::Item mMessageItem;
     Viewer::DisplayFormatMessage mMessageFormat;
     bool mRemoteContent;

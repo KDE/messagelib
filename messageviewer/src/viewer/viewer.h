@@ -65,13 +65,12 @@ class ViewerPrivate;
  * An interface to plug in a handler that is called when
  * an message item has been loaded into the view.
  */
+class Viewer;
 class AbstractMessageLoadedHandler
 {
 public:
-
-    virtual ~AbstractMessageLoadedHandler()
-    {
-    }
+    AbstractMessageLoadedHandler();
+    virtual ~AbstractMessageLoadedHandler();
 
     /**
      * This method is called whenever a message item has been loaded
@@ -80,6 +79,16 @@ public:
      * @param item The message item that has been loaded.
      */
     virtual void setItem(const Akonadi::Item &item) = 0;
+
+protected:
+    Akonadi::Session *session() const;
+
+private:
+    void setSession(Akonadi::Session *session);
+
+    friend class Viewer;
+    class Private;
+    Private * const d;
 };
 
 //TODO(Andras) once only those methods are public that really need to be public, probably export the whole class instead of just some methods
@@ -301,7 +310,7 @@ public:
     * It will set the correct fetch scope.
     * You still need to connect to the job's result signal.
     */
-    static Akonadi::ItemFetchJob *createFetchJob(const Akonadi::Item &item);
+    Akonadi::ItemFetchJob *createFetchJob(const Akonadi::Item &item);
 
     /**
     * Adds a @p handler for actions that will be executed when the message
