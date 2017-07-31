@@ -78,7 +78,7 @@ public:
                 const uint now = QDateTime::currentDateTimeUtc().toTime_t();
                 //qDebug() << " now "<< now << " d->mSecondToStartRefreshing "<<d->mSecondToStartRefreshing << " now > d->mSecondToStartRefreshing" << (now > d->mSecondToStartRefreshing);
                 if ((mSecondToStartRefreshing != 0) && (mSecondToStartRefreshing > now)) {
-                    qCWarning(WEBENGINEVIEWER_LOG) << " It's not necessary to check database now";
+                    qCDebug(WEBENGINEVIEWER_LOG) << " It's not necessary to check database now";
                     mDataBaseOk = true;
                 } else {
                     //Perhaps don't download for each start of kmail
