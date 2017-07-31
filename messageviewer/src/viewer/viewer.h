@@ -66,7 +66,7 @@ class ViewerPrivate;
  * an message item has been loaded into the view.
  */
 class Viewer;
-class AbstractMessageLoadedHandler
+class MESSAGEVIEWER_EXPORT AbstractMessageLoadedHandler
 {
 public:
     AbstractMessageLoadedHandler();
