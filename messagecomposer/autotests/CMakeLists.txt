@@ -3,6 +3,8 @@ add_definitions( -DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
 include( ${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake )
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src/part)
+
 # Convenience macro to add messagecomposer unit tests.
 macro( add_messagecomposer_test _source )
     ecm_add_test(${_source}

@@ -11,6 +11,7 @@ if(BUILD_TESTING)
     add_subdirectory( composer-ng/autotests )
 endif()
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
 
 set( messagecomposer_job_src
     job/jobbase.cpp
@@ -340,6 +341,9 @@ ecm_generate_headers(MessageComposer_Camelcaseimagescaling_HEADERS
 
 ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     HEADER_NAMES
+    JobBase
+    AbstractEncryptJob
+    ContentJobBase
     InsertTextFileJob
     AttachmentJob
     SinglepartJob
