@@ -56,7 +56,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     mSearchEdit->setClearButtonEnabled(true);
 
     connect(mSearchEdit, &QLineEdit::textChanged, this, &QuickSearchLine::slotSearchEditTextEdited);
-    //connect(mSearchEdit, &QLineEdit::clearButtonClicked, this, &QuickSearchLine::slotClearButtonClicked);
+    connect(mSearchEdit, &SearchLineStatus::clearButtonClicked, this, &QuickSearchLine::slotClearButtonClicked);
 
     hbox->addWidget(mSearchEdit);
 
