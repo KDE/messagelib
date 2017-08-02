@@ -29,6 +29,8 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldAddCompletionItem();
+    void shouldClearCompleter();
 };
 
 #endif // SEARCHLINESTATUSTEST_H

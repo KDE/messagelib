@@ -67,6 +67,7 @@ public:
     void setContainsOutboundMessages(bool containsOutboundMessages);
 
     void changeQuicksearchVisibility(bool show);
+    void addCompletionItem(const QString &str);
 
 Q_SIGNALS:
     void clearButtonClicked();

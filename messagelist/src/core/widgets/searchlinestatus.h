@@ -18,17 +18,18 @@
 #ifndef SEARCHLINESTATUS_H
 #define SEARCHLINESTATUS_H
 
-#include <PimCommon/LineEditWithCompleter>
+#include <QLineEdit>
 #include <Akonadi/KMime/MessageStatus>
 #include "messagelist_private_export.h"
 #include "quicksearchline.h"
 #include <QIcon>
+class QStringListModel;
 class QAction;
 namespace MessageList
 {
 namespace Core
 {
-class MESSAGELIST_TESTS_EXPORT SearchLineStatus : public PimCommon::LineEditWithCompleter
+class MESSAGELIST_TESTS_EXPORT SearchLineStatus : public QLineEdit
 {
     Q_OBJECT
 public:
@@ -43,9 +44,15 @@ public:
     void setContainsOutboundMessages(bool containsOutboundMessages);
     bool containsOutboundMessages() const;
     QuickSearchLine::SearchOptions searchOptions() const;
+    void addCompletionItem(const QString &str);
+    void slotClearHistory();
 Q_SIGNALS:
     void filterActionChanged(const QList<Akonadi::MessageStatus> &lst);
     void searchOptionChanged();
+    void clearButtonClicked();
+
+protected:
+    void contextMenuEvent(QContextMenuEvent *e) override;
 
 private Q_SLOTS:
     void slotToggledLockAction();
@@ -77,6 +84,9 @@ private:
     QAction *mSearchAgainstSubjectAction;
     QAction *mSearchAgainstFromOrToAction;
     QAction *mSearchAgainstBccAction;
+    QCompleter *mCompleter;
+    QStringListModel *mCompleterListModel;
+    QStringList mListCompetion;
     bool mContainsOutboundMessages;
 };
 
