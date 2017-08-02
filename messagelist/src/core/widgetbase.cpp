@@ -178,7 +178,7 @@ Widget::~Widget()
 
 void Widget::changeQuicksearchVisibility(bool show)
 {
-    KLineEdit *const lineEdit = d->quickSearchLine->searchEdit();
+    QLineEdit *const lineEdit = d->quickSearchLine->searchEdit();
     if (!show) {
         //if we hide it we do not want to apply the filter,
         //otherwise someone is maybe stuck with x new emails
@@ -369,7 +369,7 @@ StorageModel *Widget::storageModel() const
     return d->mStorageModel;
 }
 
-KLineEdit *Widget::quickSearch() const
+QLineEdit *Widget::quickSearch() const
 {
     return d->quickSearchLine->searchEdit();
 }
@@ -1010,8 +1010,7 @@ void Widget::searchTimerFired()
     const QString text = d->quickSearchLine->searchEdit()->text();
 
     if (!text.isEmpty()) {
-        KCompletion *comp = d->quickSearchLine->searchEdit()->completionObject();
-        comp->addItem(text);
+        d->quickSearchLine->addCompletionItem(text);
     }
 
     d->mFilter->setCurrentFolder(d->mCurrentFolder);

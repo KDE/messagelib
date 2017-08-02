@@ -53,10 +53,10 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     connect(mSearchEdit, &SearchLineStatus::searchOptionChanged, this, &QuickSearchLine::searchOptionChanged);
     mSearchEdit->setPlaceholderText(i18nc("Search for messages.", "Search"));
     mSearchEdit->setObjectName(QStringLiteral("quicksearch"));
-    mSearchEdit->setClearButtonShown(true);
+    mSearchEdit->setClearButtonEnabled(true);
 
-    connect(mSearchEdit, &KLineEdit::textChanged, this, &QuickSearchLine::slotSearchEditTextEdited);
-    connect(mSearchEdit, &KLineEdit::clearButtonClicked, this, &QuickSearchLine::slotClearButtonClicked);
+    connect(mSearchEdit, &QLineEdit::textChanged, this, &QuickSearchLine::slotSearchEditTextEdited);
+    //connect(mSearchEdit, &QLineEdit::clearButtonClicked, this, &QuickSearchLine::slotClearButtonClicked);
 
     hbox->addWidget(mSearchEdit);
 
@@ -176,4 +176,9 @@ void QuickSearchLine::changeQuicksearchVisibility(bool show)
 {
     mSearchEdit->setVisible(show);
     mTagFilterCombo->setVisible(show && mTagFilterCombo->count());
+}
+
+void QuickSearchLine::addCompletionItem(const QString &str)
+{
+    mSearchEdit->addCompletionItem(str);
 }

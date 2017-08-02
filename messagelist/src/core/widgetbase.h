@@ -29,7 +29,7 @@
 #include <core/sortorder.h>
 #include <core/widgets/quicksearchline.h>
 
-class KLineEdit;
+class QLineEdit;
 class QActionGroup;
 class KComboBox;
 class QMenu;
@@ -81,7 +81,7 @@ public:
     * Returns the search line of this widget. Can be 0 if the quick search
     * is disabled in the global configuration.
     */
-    KLineEdit *quickSearch() const;
+    QLineEdit *quickSearch() const;
 
     /**
     * Returns the View attached to this Widget. Never 0.

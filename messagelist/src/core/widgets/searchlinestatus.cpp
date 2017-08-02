@@ -16,6 +16,7 @@
 */
 
 #include "searchlinestatus.h"
+#include "messagelist_debug.h"
 
 #include <KLocalizedString>
 #include <QAction>
@@ -25,10 +26,14 @@
 #include <KIconLoader>
 #include <QWidgetAction>
 #include <QPushButton>
+#include <QCompleter>
+#include <QContextMenuEvent>
+#include <QStringListModel>
 
+static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
 using namespace MessageList::Core;
 SearchLineStatus::SearchLineStatus(QWidget *parent)
-    : PimCommon::LineEditWithCompleter(parent),
+    : QLineEdit(parent),
       mLocked(false),
       mHasFilter(false),
       mLockAction(nullptr),
@@ -36,10 +41,20 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
       mFilterMenu(nullptr),
       mContainsOutboundMessages(false)
 {
+    mCompleter = new QCompleter(this);
+    mCompleterListModel = new QStringListModel(this);
+    mCompleter->setModel(mCompleterListModel);
+    setCompleter(mCompleter);
+
     setClearButtonEnabled(true);
-    setClearButtonShown(false);
     initializeActions();
     createMenuSearch();
+    QAction *act = findChild<QAction *>(QLatin1String(qLineEditclearButtonActionNameC));
+    if (act) {
+        connect(act, &QAction::triggered, this, &SearchLineStatus::clearButtonClicked);
+    } else {
+        qCWarning(MESSAGELIST_LOG) << "Clear button name was changed ! Please verify qt code";
+    }
 }
 
 SearchLineStatus::~SearchLineStatus()
@@ -303,4 +318,31 @@ void SearchLineStatus::slotFilterActionClicked(QAction *act)
 {
     Q_UNUSED(act);
     slotSearchOptionChanged();
+}
+
+void SearchLineStatus::addCompletionItem(const QString &str)
+{
+    mListCompetion.removeAll(str);
+    mListCompetion.prepend(str);
+    while (mListCompetion.size() > 20) {
+        mListCompetion.removeLast();
+    }
+    mCompleterListModel->setStringList(mListCompetion);
+}
+
+void SearchLineStatus::contextMenuEvent(QContextMenuEvent *e)
+{
+    QMenu *popup = QLineEdit::createStandardContextMenu();
+    if (popup) {
+        popup->addSeparator();
+        popup->addAction(QIcon::fromTheme(QStringLiteral("edit-clear-locationbar-rtl")), i18n("Clear History"), this, &SearchLineStatus::slotClearHistory);
+        popup->exec(e->globalPos());
+        delete popup;
+    }
+}
+
+void SearchLineStatus::slotClearHistory()
+{
+    mListCompetion.clear();
+    mCompleterListModel->setStringList(mListCompetion);
 }

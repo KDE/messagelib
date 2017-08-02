@@ -19,6 +19,7 @@
 #include "../src/core/widgets/searchlinestatus.h"
 #include <QMenu>
 #include <QTest>
+#include <QCompleter>
 
 SearchLineStatusTest::SearchLineStatusTest(QObject *parent)
     : QObject(parent)
@@ -40,6 +41,38 @@ void SearchLineStatusTest::shouldHaveDefaultValue()
     QVERIFY(filterMenu);
     QVERIFY(!filterMenu->actions().isEmpty());
 
+    QVERIFY(w.completer());
+    QVERIFY(w.completer()->model());
+    QCOMPARE(w.completer()->model()->rowCount(), 0);
+
+    //Verify if qt qlineedit name changed
+    QAction *act = w.findChild<QAction *>(QLatin1String("_q_qlineeditclearaction"));
+    QVERIFY(act);
+}
+
+void SearchLineStatusTest::shouldAddCompletionItem()
+{
+    MessageList::Core::SearchLineStatus w;
+    w.addCompletionItem(QStringLiteral("ff"));
+    QCOMPARE(w.completer()->model()->rowCount(), 1);
+
+    //Don't add same element
+    w.addCompletionItem(QStringLiteral("ff"));
+    QCOMPARE(w.completer()->model()->rowCount(), 1);
+
+    w.addCompletionItem(QStringLiteral("ffss"));
+    QCOMPARE(w.completer()->model()->rowCount(), 2);
+}
+
+void SearchLineStatusTest::shouldClearCompleter()
+{
+    MessageList::Core::SearchLineStatus w;
+    for (int i = 0; i < 10 ;++i) {
+        w.addCompletionItem(QStringLiteral("ff%1").arg(i));
+    }
+    QCOMPARE(w.completer()->model()->rowCount(), 10);
+    w.slotClearHistory();
+    QCOMPARE(w.completer()->model()->rowCount(), 0);
 }
 
 QTEST_MAIN(SearchLineStatusTest)
