@@ -31,6 +31,7 @@
 #include <QStringListModel>
 
 static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
+#define MAX_COMPLETION_ITEMS 20
 using namespace MessageList::Core;
 SearchLineStatus::SearchLineStatus(QWidget *parent)
     : QLineEdit(parent),
@@ -324,7 +325,7 @@ void SearchLineStatus::addCompletionItem(const QString &str)
 {
     mListCompetion.removeAll(str);
     mListCompetion.prepend(str);
-    while (mListCompetion.size() > 20) {
+    while (mListCompetion.size() > MAX_COMPLETION_ITEMS) {
         mListCompetion.removeLast();
     }
     mCompleterListModel->setStringList(mListCompetion);
