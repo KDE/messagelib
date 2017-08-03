@@ -57,7 +57,6 @@ protected:
 private Q_SLOTS:
     void slotToggledLockAction();
     void showMenu();
-    void slotSearchOptionChanged();
     void slotFilterActionClicked(QAction *act);
 private:
     void clearFilterAction();
