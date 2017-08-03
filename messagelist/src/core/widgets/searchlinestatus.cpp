@@ -170,7 +170,6 @@ void SearchLineStatus::clearFilterButtonClicked()
     clearFilterAction();
     clearFilterByAction();
     updateFilters();
-    slotSearchOptionChanged();
 }
 
 void SearchLineStatus::createMenuSearch()
@@ -265,7 +264,6 @@ void SearchLineStatus::createFilterByAction()
 
 void SearchLineStatus::clearFilterByAction()
 {
-    //qDebug() << " void SearchLineStatus::clearFilterByAction()";
     mSearchEveryWhereAction->setChecked(true);
 }
 
@@ -316,15 +314,10 @@ QuickSearchLine::SearchOptions SearchLineStatus::searchOptions() const
     return searchOptions;
 }
 
-void SearchLineStatus::slotSearchOptionChanged()
-{
-    Q_EMIT searchOptionChanged();
-}
-
 void SearchLineStatus::slotFilterActionClicked(QAction *act)
 {
     Q_UNUSED(act);
-    slotSearchOptionChanged();
+    Q_EMIT searchOptionChanged();
 }
 
 void SearchLineStatus::addCompletionItem(const QString &str)
