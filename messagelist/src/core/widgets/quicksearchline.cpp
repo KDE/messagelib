@@ -100,7 +100,7 @@ void QuickSearchLine::slotClearButtonClicked()
     if (mTagFilterCombo->isVisible()) {
         mTagFilterCombo->setCurrentIndex(0);
     }
-    mSearchEdit->clearFilterAction();
+    mSearchEdit->clearFilterButtonClicked();
     Q_EMIT clearButtonClicked();
 }
 
@@ -132,7 +132,7 @@ void QuickSearchLine::resetFilter()
     if (mTagFilterCombo->isVisible()) {
         mTagFilterCombo->setCurrentIndex(0);
     }
-    mSearchEdit->clearFilterAction();
+    mSearchEdit->clearFilterButtonClicked();
     mSearchEdit->setLocked(false);
 }
 

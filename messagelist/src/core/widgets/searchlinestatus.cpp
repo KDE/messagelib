@@ -52,7 +52,7 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     createMenuSearch();
     QAction *act = findChild<QAction *>(QLatin1String(qLineEditclearButtonActionNameC));
     if (act) {
-        connect(act, &QAction::triggered, this, &SearchLineStatus::clearButtonClicked);
+        connect(act, &QAction::triggered, this, &SearchLineStatus::slotClear);
     } else {
         qCWarning(MESSAGELIST_LOG) << "Clear button name was changed ! Please verify qt code";
     }
@@ -61,6 +61,11 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
 SearchLineStatus::~SearchLineStatus()
 {
 
+}
+
+void SearchLineStatus::slotClear()
+{
+    Q_EMIT clearButtonClicked();
 }
 
 void SearchLineStatus::updateLockAction()
@@ -260,6 +265,7 @@ void SearchLineStatus::createFilterByAction()
 
 void SearchLineStatus::clearFilterByAction()
 {
+    //qDebug() << " void SearchLineStatus::clearFilterByAction()";
     mSearchEveryWhereAction->setChecked(true);
 }
 
