@@ -425,11 +425,6 @@ QMimeData *StorageModel::mimeData(const QList< MessageList::Core::MessageItem * 
     return data;
 }
 
-void StorageModel::prepareForScan()
-{
-
-}
-
 void StorageModel::Private::onSourceDataChanged(const QModelIndex &topLeft, const QModelIndex &bottomRight)
 {
     Q_EMIT q->dataChanged(q->index(topLeft.row(), 0),

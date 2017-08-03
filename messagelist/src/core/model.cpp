@@ -753,9 +753,6 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
         return;    // no folder: nothing to fill
     }
 
-    // Sometimes the folders need to be resurrected...
-    d->mStorageModel->prepareForScan();
-
     // Save threading cache of the previous folder, but only if the cache was
     // enabled and a different folder is being loaded - reload of the same folder
     // means change in aggregation in which case we will have to re-build the

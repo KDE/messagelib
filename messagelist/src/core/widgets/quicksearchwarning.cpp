@@ -56,7 +56,6 @@ void QuickSearchWarning::setSearchText(const QString &text)
         } else {
             animatedHide();
         }
-
     }
 }
 
