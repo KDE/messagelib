@@ -39,13 +39,13 @@ public:
     void setLocked(bool b);
     bool locked() const;
 
-    void clearFilterAction();
 
     void setContainsOutboundMessages(bool containsOutboundMessages);
     bool containsOutboundMessages() const;
     QuickSearchLine::SearchOptions searchOptions() const;
     void addCompletionItem(const QString &str);
     void slotClearHistory();
+    void clearFilterButtonClicked();
 Q_SIGNALS:
     void filterActionChanged(const QList<Akonadi::MessageStatus> &lst);
     void searchOptionChanged();
@@ -57,10 +57,10 @@ protected:
 private Q_SLOTS:
     void slotToggledLockAction();
     void showMenu();
-    void clearFilterButtonClicked();
     void slotSearchOptionChanged();
     void slotFilterActionClicked(QAction *act);
 private:
+    void clearFilterAction();
     void createFilterAction(const QIcon &icon, const QString &text, int value);
     void createMenuSearch();
     void updateLockAction();
@@ -70,6 +70,7 @@ private:
     void createFilterByAction();
     void clearFilterByAction();
     void changeSearchAgainstFromOrToText();
+    void slotClear();
 
     bool mLocked;
     bool mHasFilter;
