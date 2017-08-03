@@ -60,12 +60,13 @@ bool Filter::match(const MessageItem *item) const
         if (mMatchingItemIds.contains(item->itemId())) {
             return true;
         }
+
         bool searchMatches = false;
-        if (containString(item->subject())) {
+        if (containString(item->subject()) && ((mOptions & QuickSearchLine::SearchAgainstSubject) || (mOptions & QuickSearchLine::SearchEveryWhere))) {
             searchMatches = true;
-        } else if (containString(item->sender())) {
+        } else if (containString(item->sender()) && ((mOptions & QuickSearchLine::SearchAgainstFrom)|| (mOptions & QuickSearchLine::SearchEveryWhere))) {
             searchMatches = true;
-        } else if (containString(item->receiver())) {
+        } else if (containString(item->receiver()) && ((mOptions & QuickSearchLine::SearchAgainstTo) || (mOptions & QuickSearchLine::SearchEveryWhere))) {
             searchMatches = true;
         }
         if (!searchMatches) {
