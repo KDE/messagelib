@@ -275,15 +275,6 @@ void View::setStorageModel(StorageModel *storageModel, PreSelectionMode preSelec
     d->mSaveThemeColumnStateOnSectionResize = true;
 }
 
-void View::modelJobBatchStarted()
-{
-}
-
-void View::modelHasBeenReset()
-{
-    // This is called by Model when it has been reset.
-}
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 // Theme column state machinery
 //

@@ -449,13 +449,6 @@ protected:
     */
     void ignoreUpdateGeometries(bool ignore);
 
-    /**
-    * This is called by the model from inside setFolder().
-    * It's called just after the model has been reset but before
-    * any row has been inserted. This allows us to call updateThemeColumns() as needed.
-    */
-    void modelHasBeenReset();
-
     void modelAboutToEmitLayoutChanged();
     void modelEmittedLayoutChanged();
 
@@ -548,13 +541,6 @@ protected:
     * Returns nullptr if the view is empty.
     */
     Item *lastMessageItem(MessageTypeFilter messageTypeFilter);
-
-    /**
-    * This is called by Model to signal a start of a lengthy job batch.
-    * Note that this is NOT called for jobs that can be completed in a single step.
-    */
-    void modelJobBatchStarted();
-
 
     /**
     * This is called by Model to signal that the initial loading stage of a newly

@@ -724,7 +724,6 @@ void ModelPrivate::clear()
     q->reset();
     //Q_EMIT headerDataChanged();
 
-    mView->modelHasBeenReset();
     mView->selectionModel()->clearSelection();
 }
 
@@ -3905,7 +3904,6 @@ void ModelPrivate::viewItemJobStep()
         // Operation timed out, need to resume in a while
         if (!mInLengthyJobBatch) {
             mInLengthyJobBatch = true;
-            mView->modelJobBatchStarted();
         }
         mFillStepTimer.start(mViewItemJobStepIdleInterval);   // this is a single shot timer connected to viewItemJobStep()
         // and go dealing with current/selection out of the switch.
