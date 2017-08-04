@@ -555,11 +555,6 @@ protected:
     */
     void modelJobBatchStarted();
 
-    /**
-    * This is called by Model to signal the end of a lengthy job batch.
-    * Note that this is NOT called for jobs that can be completed in a single step.
-    */
-    void modelJobBatchTerminated();
 
     /**
     * This is called by Model to signal that the initial loading stage of a newly

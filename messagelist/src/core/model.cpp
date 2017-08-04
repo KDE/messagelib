@@ -1145,7 +1145,6 @@ void ModelPrivate::clearJobList()
 
     if (mInLengthyJobBatch) {
         mInLengthyJobBatch = false;
-        mView->modelJobBatchTerminated();
     }
 
     qDeleteAll(mViewItemJobs);
@@ -3919,7 +3918,6 @@ void ModelPrivate::viewItemJobStep()
         // Ask the view to remove the eventual busy indications
         if (mInLengthyJobBatch) {
             mInLengthyJobBatch = false;
-            mView->modelJobBatchTerminated();
         }
 
         if (mLoading) {

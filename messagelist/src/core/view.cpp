@@ -277,14 +277,6 @@ void View::setStorageModel(StorageModel *storageModel, PreSelectionMode preSelec
 
 void View::modelJobBatchStarted()
 {
-    // This is called by the model when the first job of a batch starts
-    d->mWidget->viewJobBatchStarted();
-}
-
-void View::modelJobBatchTerminated()
-{
-    // This is called by the model when all the pending jobs have been processed
-    d->mWidget->viewJobBatchTerminated();
 }
 
 void View::modelHasBeenReset()

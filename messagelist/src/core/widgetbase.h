@@ -221,15 +221,6 @@ protected:
     */
     virtual void viewMessageStatusChangeRequest(MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear);
 
-    /**
-    * This is called by View to signal a start of a (possibly lengthy) job batch.
-    */
-    virtual void viewJobBatchStarted();
-
-    /**
-    * This is called by View to signal the end of a (possibly lengthy) job batch.
-    */
-    virtual void viewJobBatchTerminated();
 
     void tagIdSelected(const QVariant &data);
 
