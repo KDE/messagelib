@@ -60,6 +60,7 @@
 #include <KActionCollection>
 #include <KActionMenu>
 #include <KCharsets>
+#include <QPrintPreviewDialog>
 
 #include <QMenu>
 #include <KMessageBox>
@@ -775,7 +776,7 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
         const QString newPath = path + QLatin1Char('/') + tmpFileName.fileName();
 
         if (!f.copy(newPath)) {
-            qDebug(MESSAGEVIEWER_LOG) << " File was not able to copy: filename: " << name
+            qCDebug(MESSAGEVIEWER_LOG) << " File was not able to copy: filename: " << name
                                       << " to " << path;
         } else {
             name = newPath;
@@ -2442,6 +2443,7 @@ void ViewerPrivate::slotPrintPreview()
     if (!mMessage) {
         return;
     }
+#ifndef WEBENGINEVIEWER_PRINT_SUPPORT
     QPointer<WebEngineViewer::WebEnginePrintMessageBox> dialog
         = new WebEngineViewer::WebEnginePrintMessageBox(q);
     connect(
@@ -2451,6 +2453,26 @@ void ViewerPrivate::slotPrintPreview()
         Q_EMIT printingFinished();
     }
     delete dialog;
+#else
+    //Need to delay
+    QTimer::singleShot(1 * 1000, this, &ViewerPrivate::slotDelayPrintPreview);
+#endif
+}
+
+void ViewerPrivate::slotDelayPrintPreview()
+{
+    QPrintPreviewDialog* dialog = new QPrintPreviewDialog(q);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
+    dialog->resize(800, 750);
+
+    connect(dialog, &QPrintPreviewDialog::paintRequested, this, [=](QPrinter *printing) {
+        QApplication::setOverrideCursor(Qt::WaitCursor);
+
+        mViewer->execPrintPreviewPage(printing, 10*1000);
+        QApplication::restoreOverrideCursor();
+    });
+
+    dialog->open(this, SIGNAL(printingFinished()));
 }
 
 void ViewerPrivate::slotOpenInBrowser()

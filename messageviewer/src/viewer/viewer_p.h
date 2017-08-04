@@ -606,6 +606,7 @@ private:
                                 WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
     MimeTreeParser::NodeHelper *mNodeHelper;
+    void slotDelayPrintPreview();
 public:
     bool mHtmlMailGlobalSetting;
     bool mHtmlLoadExternalGlobalSetting;

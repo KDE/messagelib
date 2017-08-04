@@ -37,6 +37,9 @@
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
 #include <QDebug>
+#include <QEventLoop>
+#include <QPointer>
+#include <QTimer>
 
 #include <WebEngineViewer/WebHitTestResult>
 
@@ -411,4 +414,9 @@ void MailWebEngineView::slotLoadFinished()
 void MailWebEngineView::setPrintElementBackground(bool printElementBackground)
 {
     d->mPageEngine->setPrintElementBackground(printElementBackground);
+}
+
+bool MailWebEngineView::execPrintPreviewPage(QPrinter *printer, int timeout)
+{
+    return d->mPageEngine->execPrintPreviewPage(printer, timeout);
 }
