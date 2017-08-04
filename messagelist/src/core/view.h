@@ -545,7 +545,7 @@ protected:
     * messageTypeFilter can be used to limit the selection to
     * a certain category of messages.
     *
-    * Returns 0 if the view is empty.
+    * Returns nullptr if the view is empty.
     */
     Item *lastMessageItem(MessageTypeFilter messageTypeFilter);
 
