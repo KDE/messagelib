@@ -96,3 +96,22 @@ void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMe
     qDebug() << lineNumber << ":" << message;
     Q_EMIT showConsoleMessage(message);
 }
+
+bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
+{
+    QPointer<QEventLoop> loop = new QEventLoop;
+    bool result = false;
+    QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
+
+    print(printer, [loop, &result](bool res) {
+        if (loop && loop->isRunning()) {
+            result = res;
+            loop->quit();
+        }
+    });
+
+    loop->exec();
+    delete loop;
+
+    return result;
+}

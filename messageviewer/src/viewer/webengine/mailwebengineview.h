@@ -68,6 +68,7 @@ public:
     void executeHideShowCcAddressScripts(bool hide);
     void setLinkHovered(const QUrl &url);
     void setViewer(MessageViewer::ViewerPrivate *viewer);
+    bool execPrintPreviewPage(QPrinter *printer, int timeout);
 public Q_SLOTS:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();
