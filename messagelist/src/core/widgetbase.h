@@ -73,24 +73,24 @@ public:
     void setStorageModel(StorageModel *storageModel, PreSelectionMode preSelectionMode = PreSelectLastSelected);
 
     /**
-    * Returns the StorageModel currently set. May be 0.
+    * Returns the StorageModel currently set. May be nullptr.
     */
     StorageModel *storageModel() const;
 
     /**
-    * Returns the search line of this widget. Can be 0 if the quick search
+    * Returns the search line of this widget. Can be nullptr if the quick search
     * is disabled in the global configuration.
     */
     QLineEdit *quickSearch() const;
 
     /**
-    * Returns the View attached to this Widget. Never 0.
+    * Returns the View attached to this Widget. Never nullptr.
     */
     View *view() const;
 
     /**
     * Returns the current MessageItem in the current folder.
-    * May return 0 if there is no current message or no current folder.
+    * May return nullptr if there is no current message or no current folder.
     */
     Core::MessageItem *currentMessageItem() const;
 
