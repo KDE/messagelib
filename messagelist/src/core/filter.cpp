@@ -62,11 +62,12 @@ bool Filter::match(const MessageItem *item) const
         }
 
         bool searchMatches = false;
-        if (containString(item->subject()) && ((mOptions & QuickSearchLine::SearchAgainstSubject) || (mOptions & QuickSearchLine::SearchEveryWhere))) {
+        bool searchEveryWhere = (mOptions & QuickSearchLine::SearchEveryWhere);
+        if (containString(item->subject()) && ((mOptions & QuickSearchLine::SearchAgainstSubject) || searchEveryWhere)) {
             searchMatches = true;
-        } else if (containString(item->sender()) && ((mOptions & QuickSearchLine::SearchAgainstFrom)|| (mOptions & QuickSearchLine::SearchEveryWhere))) {
+        } else if (containString(item->sender()) && ((mOptions & QuickSearchLine::SearchAgainstFrom)|| searchEveryWhere)) {
             searchMatches = true;
-        } else if (containString(item->receiver()) && ((mOptions & QuickSearchLine::SearchAgainstTo) || (mOptions & QuickSearchLine::SearchEveryWhere))) {
+        } else if (containString(item->receiver()) && ((mOptions & QuickSearchLine::SearchAgainstTo) || searchEveryWhere)) {
             searchMatches = true;
         }
         if (!searchMatches) {
