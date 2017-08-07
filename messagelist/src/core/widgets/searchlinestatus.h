@@ -84,7 +84,6 @@ private:
     QAction *mSearchAgainstSubjectAction;
     QAction *mSearchAgainstFromOrToAction;
     QAction *mSearchAgainstBccAction;
-    QCompleter *mCompleter;
     QStringListModel *mCompleterListModel;
     QStringList mListCompetion;
     bool mContainsOutboundMessages;

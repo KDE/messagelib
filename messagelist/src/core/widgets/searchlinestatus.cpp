@@ -42,10 +42,10 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
       mFilterMenu(nullptr),
       mContainsOutboundMessages(false)
 {
-    mCompleter = new QCompleter(this);
+    QCompleter *completer = new QCompleter(this);
     mCompleterListModel = new QStringListModel(this);
-    mCompleter->setModel(mCompleterListModel);
-    setCompleter(mCompleter);
+    completer->setModel(mCompleterListModel);
+    setCompleter(completer);
 
     setClearButtonEnabled(true);
     initializeActions();
