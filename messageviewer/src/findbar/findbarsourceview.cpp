@@ -16,7 +16,7 @@
  * Boston, MA 02110-1301, USA.
  */
 #include "findbarsourceview.h"
-#include "PimCommon/LineEditWithCompleter"
+#include <PimCommon/LineEditWithCompleterNg>
 
 #include <QPlainTextEdit>
 #include <QAction>

@@ -28,7 +28,7 @@ class QMenu;
 class QLabel;
 namespace PimCommon
 {
-class LineEditWithCompleter;
+class LineEditWithCompleterNg;
 }
 namespace WebEngineViewer
 {
@@ -73,7 +73,7 @@ protected:
     QString mPositiveBackground;
     QString mNegativeBackground;
     QString mLastSearchStr;
-    PimCommon::LineEditWithCompleter *mSearch;
+    PimCommon::LineEditWithCompleterNg *mSearch;
     QAction *mCaseSensitiveAct;
 
     QPushButton *mFindPrevBtn;

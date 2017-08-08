@@ -18,7 +18,7 @@
  */
 
 #include "findbarbase.h"
-#include "PimCommon/LineEditWithCompleter"
+#include <PimCommon/LineEditWithCompleterNg>
 
 #include <qicon.h>
 #include <KLocalizedString>
@@ -58,10 +58,10 @@ FindBarBase::FindBarBase(QWidget *parent)
     QLabel *label = new QLabel(i18nc("Find text", "F&ind:"), this);
     lay->addWidget(label);
 
-    mSearch = new PimCommon::LineEditWithCompleter(this);
+    mSearch = new PimCommon::LineEditWithCompleterNg(this);
     mSearch->setObjectName(QStringLiteral("searchline"));
     mSearch->setToolTip(i18n("Text to search for"));
-    mSearch->setClearButtonShown(true);
+    mSearch->setClearButtonEnabled(true);
     label->setBuddy(mSearch);
     lay->addWidget(mSearch);
 
@@ -91,8 +91,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     connect(mFindNextBtn, &QPushButton::clicked, this, &FindBarBase::findNext);
     connect(mFindPrevBtn, &QPushButton::clicked, this, &FindBarBase::findPrev);
     connect(mCaseSensitiveAct, &QAction::toggled, this, &FindBarBase::caseSensitivityChanged);
-    connect(mSearch, &KLineEdit::textChanged, this, &FindBarBase::autoSearch);
-    connect(mSearch, &KLineEdit::clearButtonClicked, this, &FindBarBase::slotClearSearch);
+    connect(mSearch, &QLineEdit::textChanged, this, &FindBarBase::autoSearch);
 
     mStatus = new QLabel;
     mStatus->setObjectName(QStringLiteral("status"));
@@ -189,8 +188,7 @@ void FindBarBase::searchText(bool backward, bool isAutoSearch)
 
 void FindBarBase::addToCompletion(const QString &text)
 {
-    KCompletion *comp = mSearch->completionObject();
-    comp->addItem(text);
+    mSearch->addCompletionItem(text);
 }
 
 void FindBarBase::findNext()
