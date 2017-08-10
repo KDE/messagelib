@@ -18,8 +18,8 @@ set(testmailwebengine_test_SRCS
 add_executable(testmailwebengine ${testmailwebengine_test_SRCS})
 
 target_link_libraries(testmailwebengine
-    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer
-    )
+    Qt5::Widgets KF5::WebEngineViewer Qt5::WebEngine Qt5::WebEngineWidgets KF5::XmlGui KF5::IconThemes KF5::MessageViewer Qt5::PrintSupport
+)
 
 #####
 #set(testwebengineaccesskey_test_SRCS
