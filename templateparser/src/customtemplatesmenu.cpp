@@ -88,16 +88,13 @@ CustomTemplatesMenu::CustomTemplatesMenu(QWidget *owner, KActionCollection *ac)
     d->mOwnerActionCollection->addAction(QStringLiteral("custom_reply_all"), d->mCustomReplyAllActionMenu);
 
     d->mCustomForwardMapper = new QSignalMapper(this);
-    connect(d->mCustomForwardMapper, static_cast<void (QSignalMapper::*)(int)>(&QSignalMapper::mapped),
-            this, &CustomTemplatesMenu::slotForwardSelected);
+    connect(d->mCustomForwardMapper, QOverload<int>::of(&QSignalMapper::mapped), this, &CustomTemplatesMenu::slotForwardSelected);
 
     d->mCustomReplyMapper = new QSignalMapper(this);
-    connect(d->mCustomReplyMapper, static_cast<void (QSignalMapper::*)(int)>(&QSignalMapper::mapped),
-            this, &CustomTemplatesMenu::slotReplySelected);
+    connect(d->mCustomReplyMapper, QOverload<int>::of(&QSignalMapper::mapped), this, &CustomTemplatesMenu::slotReplySelected);
 
     d->mCustomReplyAllMapper = new QSignalMapper(this);
-    connect(d->mCustomReplyAllMapper, static_cast<void (QSignalMapper::*)(int)>(&QSignalMapper::mapped),
-            this, &CustomTemplatesMenu::slotReplyAllSelected);
+    connect(d->mCustomReplyAllMapper, QOverload<int>::of(&QSignalMapper::mapped), this, &CustomTemplatesMenu::slotReplyAllSelected);
 
     update();
 }

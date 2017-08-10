@@ -89,9 +89,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
                 job->setDatabaseState(QStringList() << d->mNewClientState);
                 job->setSearchHashs(conflictHashs);
                 job->setSearchFullHashForUrl(url);
-                connect(job, &SearchFullHashJob::result,
-                        this, [this](CheckPhishingUrlUtil::UrlStatus status, const QUrl &url) {
-                            Q_EMIT checkUrlFinished(url, status);
+                connect(job, &SearchFullHashJob::result, this, [this](CheckPhishingUrlUtil::UrlStatus status, const QUrl &url) { Q_EMIT checkUrlFinished(url, status);
                         });
                 job->start();
             }
