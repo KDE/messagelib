@@ -28,24 +28,6 @@
 
 using namespace MessageViewer;
 
-class HeaderStylePluginManagerInstancePrivate
-{
-public:
-    HeaderStylePluginManagerInstancePrivate()
-        : headerStylePluginManager(new HeaderStylePluginManager)
-    {
-    }
-
-    ~HeaderStylePluginManagerInstancePrivate()
-    {
-        delete headerStylePluginManager;
-    }
-
-    HeaderStylePluginManager *headerStylePluginManager;
-};
-
-Q_GLOBAL_STATIC(HeaderStylePluginManagerInstancePrivate, sInstance)
-
 class HeaderStylePluginInfo
 {
 public:
@@ -211,7 +193,8 @@ MessageViewer::HeaderStylePlugin *HeaderStylePluginManagerPrivate::pluginFromIde
 
 HeaderStylePluginManager *HeaderStylePluginManager::self()
 {
-    return sInstance->headerStylePluginManager;
+    static HeaderStylePluginManager s_self;
+    return &s_self;
 }
 
 HeaderStylePluginManager::HeaderStylePluginManager(QObject *parent)

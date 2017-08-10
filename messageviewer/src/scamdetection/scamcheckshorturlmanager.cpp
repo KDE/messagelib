@@ -23,24 +23,6 @@
 
 using namespace MessageViewer;
 
-class ScamCheckShortUrlManagerInstancePrivate
-{
-public:
-    ScamCheckShortUrlManagerInstancePrivate()
-        : scamCheckShortUrlManager(new ScamCheckShortUrlManager)
-    {
-    }
-
-    ~ScamCheckShortUrlManagerInstancePrivate()
-    {
-        delete scamCheckShortUrlManager;
-    }
-
-    ScamCheckShortUrlManager *scamCheckShortUrlManager;
-};
-
-Q_GLOBAL_STATIC(ScamCheckShortUrlManagerInstancePrivate, sInstance)
-
 class MessageViewer::ScamCheckShortUrlManagerPrivate
 {
 public:
@@ -66,7 +48,8 @@ ScamCheckShortUrlManager::~ScamCheckShortUrlManager()
 
 ScamCheckShortUrlManager *ScamCheckShortUrlManager::self()
 {
-    return sInstance->scamCheckShortUrlManager;
+    static ScamCheckShortUrlManager s_self;
+    return &s_self;
 }
 
 ScamCheckShortUrl *ScamCheckShortUrlManager::scamCheckShortUrl() const

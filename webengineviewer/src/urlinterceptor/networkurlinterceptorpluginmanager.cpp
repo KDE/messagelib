@@ -30,24 +30,6 @@
 
 using namespace WebEngineViewer;
 
-class MailNetworkUrlInterceptorPluginManagerInstancePrivate
-{
-public:
-    MailNetworkUrlInterceptorPluginManagerInstancePrivate()
-        : mailNetworkUrlInterceptorPluginManager(new NetworkUrlInterceptorPluginManager)
-    {
-    }
-
-    ~MailNetworkUrlInterceptorPluginManagerInstancePrivate()
-    {
-        delete mailNetworkUrlInterceptorPluginManager;
-    }
-
-    NetworkUrlInterceptorPluginManager *mailNetworkUrlInterceptorPluginManager;
-};
-
-Q_GLOBAL_STATIC(MailNetworkUrlInterceptorPluginManagerInstancePrivate, sInstance)
-
 class MailNetworkUrlInterceptorPluginInfo
 {
 public:
@@ -187,7 +169,8 @@ WebEngineViewer::NetworkPluginUrlInterceptor *NetworkUrlInterceptorPluginManager
 
 NetworkUrlInterceptorPluginManager *NetworkUrlInterceptorPluginManager::self()
 {
-    return sInstance->mailNetworkUrlInterceptorPluginManager;
+    static NetworkUrlInterceptorPluginManager s_self;
+    return &s_self;
 }
 
 NetworkUrlInterceptorPluginManager::NetworkUrlInterceptorPluginManager(QObject *parent)

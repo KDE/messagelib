@@ -25,8 +25,6 @@
 
 using namespace WebEngineViewer;
 
-Q_GLOBAL_STATIC(HashCacheManager, s_hashCacheManager)
-
 struct HashCacheInfo {
     HashCacheInfo()
         : status(HashCacheManager::Unknown),
@@ -187,7 +185,8 @@ void HashCacheManagerPrivate::addHashStatus(const QByteArray &hash, HashCacheMan
 
 HashCacheManager *HashCacheManager::self()
 {
-    return s_hashCacheManager;
+    static HashCacheManager s_self;
+    return &s_self;
 }
 
 HashCacheManager::HashCacheManager(QObject *parent)

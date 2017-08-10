@@ -60,24 +60,6 @@ inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Pro
 
 using namespace MessageViewer;
 
-class MessagePartRendererManagerInstancePrivate
-{
-public:
-    MessagePartRendererManagerInstancePrivate()
-        : manager(new MessagePartRendererManager)
-    {
-    }
-
-    ~MessagePartRendererManagerInstancePrivate()
-    {
-        delete manager;
-    }
-
-    MessagePartRendererManager *manager;
-};
-
-Q_GLOBAL_STATIC(MessagePartRendererManagerInstancePrivate, sInstance)
-
 MessagePartRendererManager::MessagePartRendererManager(QObject *parent)
     : QObject(parent)
     , m_engine(nullptr)
@@ -90,9 +72,10 @@ MessagePartRendererManager::~MessagePartRendererManager()
     delete m_engine;
 }
 
-MessageViewer::MessagePartRendererManager *MessagePartRendererManager::self()
+MessagePartRendererManager *MessagePartRendererManager::self()
 {
-    return sInstance->manager;
+    static MessagePartRendererManager s_self;
+    return &s_self;
 }
 
 void MessagePartRendererManager::initializeRenderer()

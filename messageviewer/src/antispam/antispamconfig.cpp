@@ -38,21 +38,10 @@
 
 using namespace MessageViewer;
 
-class MessageViewer::AntiSpamConfigSingletonProvider
-{
-public:
-    AntiSpamConfig instance;
-};
-
-Q_GLOBAL_STATIC(MessageViewer::AntiSpamConfigSingletonProvider, theAntiSpamConfigSingletonProvider)
-
 AntiSpamConfig *AntiSpamConfig::instance()
 {
-    // better safe than sorry; check whether the global static has already been destroyed
-    if (theAntiSpamConfigSingletonProvider.isDestroyed()) {
-        return nullptr;
-    }
-    return &theAntiSpamConfigSingletonProvider->instance;
+    static AntiSpamConfig s_self;
+    return &s_self;
 }
 
 const SpamAgents AntiSpamConfig::agents() const

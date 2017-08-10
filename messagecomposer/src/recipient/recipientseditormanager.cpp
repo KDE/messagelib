@@ -23,19 +23,6 @@
 
 using namespace MessageComposer;
 
-class RecipientsEditorManagerPrivate
-{
-public:
-    RecipientsEditorManagerPrivate()
-        : manager(new RecipientsEditorManager)
-    {
-
-    }
-    RecipientsEditorManager *manager;
-};
-
-Q_GLOBAL_STATIC(RecipientsEditorManagerPrivate, sInstance)
-
 RecipientsEditorManager::RecipientsEditorManager(QObject *parent)
     : QObject(parent),
       mModel(nullptr)
@@ -49,7 +36,8 @@ RecipientsEditorManager::~RecipientsEditorManager()
 
 RecipientsEditorManager *RecipientsEditorManager::self()
 {
-    return sInstance->manager;
+    static RecipientsEditorManager s_self;
+    return &s_self;
 }
 
 Akonadi::EmailAddressSelectionModel *RecipientsEditorManager::model()

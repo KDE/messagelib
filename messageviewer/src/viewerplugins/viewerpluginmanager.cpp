@@ -31,24 +31,6 @@
 
 using namespace MessageViewer;
 
-class ViewerPluginManagerPrivateInstancePrivate
-{
-public:
-    ViewerPluginManagerPrivateInstancePrivate()
-        : viewerPluginManager(new ViewerPluginManager)
-    {
-    }
-
-    ~ViewerPluginManagerPrivateInstancePrivate()
-    {
-        delete viewerPluginManager;
-    }
-
-    ViewerPluginManager *viewerPluginManager;
-};
-
-Q_GLOBAL_STATIC(ViewerPluginManagerPrivateInstancePrivate, sInstance)
-
 class ViewerPluginInfo
 {
 public:
@@ -228,7 +210,8 @@ bool ViewerPluginManager::initializePluginList()
 
 ViewerPluginManager *ViewerPluginManager::self()
 {
-    return sInstance->viewerPluginManager;
+    static ViewerPluginManager s_self;
+    return &s_self;
 }
 
 QVector<MessageViewer::ViewerPlugin *> ViewerPluginManager::pluginsList() const

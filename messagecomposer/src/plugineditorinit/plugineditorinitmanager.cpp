@@ -28,21 +28,7 @@
 
 using namespace MessageComposer;
 
-class PluginEditorInitManagerInstancePrivate
-{
-public:
-    PluginEditorInitManagerInstancePrivate()
-        : pluginManager(new PluginEditorInitManager)
-    {
-    }
 
-    ~PluginEditorInitManagerInstancePrivate()
-    {
-        delete pluginManager;
-    }
-
-    PluginEditorInitManager *pluginManager;
-};
 
 class PluginEditorInitInfo
 {
@@ -59,8 +45,6 @@ public:
     PluginEditorInit *plugin;
     bool isEnabled;
 };
-
-Q_GLOBAL_STATIC(PluginEditorInitManagerInstancePrivate, sInstance)
 
 namespace {
 QString pluginVersion()
@@ -194,7 +178,8 @@ PluginEditorInitManager::~PluginEditorInitManager()
 
 PluginEditorInitManager *PluginEditorInitManager::self()
 {
-    return sInstance->pluginManager;
+    static PluginEditorInitManager s_self;
+    return &s_self;
 }
 
 QVector<PluginEditorInit *> PluginEditorInitManager::pluginsList() const

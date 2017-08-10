@@ -28,21 +28,6 @@
 
 using namespace MessageComposer;
 
-class PluginEditorCheckBeforeSendManagerInstancePrivate
-{
-public:
-    PluginEditorCheckBeforeSendManagerInstancePrivate()
-        : pluginManager(new PluginEditorCheckBeforeSendManager)
-    {
-    }
-
-    ~PluginEditorCheckBeforeSendManagerInstancePrivate()
-    {
-        delete pluginManager;
-    }
-    PluginEditorCheckBeforeSendManager *pluginManager;
-};
-
 class PluginEditorCheckBeforeSendInfo
 {
 public:
@@ -58,8 +43,6 @@ public:
     PluginEditorCheckBeforeSend *plugin;
     bool isEnabled;
 };
-
-Q_GLOBAL_STATIC(PluginEditorCheckBeforeSendManagerInstancePrivate, sInstance)
 
 namespace
 {
@@ -193,7 +176,8 @@ PluginEditorCheckBeforeSendManager::~PluginEditorCheckBeforeSendManager()
 
 PluginEditorCheckBeforeSendManager *PluginEditorCheckBeforeSendManager::self()
 {
-    return sInstance->pluginManager;
+    static PluginEditorCheckBeforeSendManager s_self;
+    return &s_self;
 }
 
 QVector<PluginEditorCheckBeforeSend *> PluginEditorCheckBeforeSendManager::pluginsList() const

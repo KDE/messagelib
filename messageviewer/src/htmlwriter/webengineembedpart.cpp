@@ -19,24 +19,6 @@
 
 using namespace MessageViewer;
 
-class WebEngineEmbedPartInstancePrivate
-{
-public:
-    WebEngineEmbedPartInstancePrivate()
-        : webEngineEmbedPart(new WebEngineEmbedPart)
-    {
-    }
-
-    ~WebEngineEmbedPartInstancePrivate()
-    {
-        delete webEngineEmbedPart;
-    }
-
-    WebEngineEmbedPart *webEngineEmbedPart;
-};
-
-Q_GLOBAL_STATIC(WebEngineEmbedPartInstancePrivate, sInstance)
-
 WebEngineEmbedPart::WebEngineEmbedPart(QObject *parent)
     : QObject(parent)
 {
@@ -48,7 +30,8 @@ WebEngineEmbedPart::~WebEngineEmbedPart()
 
 WebEngineEmbedPart *WebEngineEmbedPart::self()
 {
-    return sInstance->webEngineEmbedPart;
+    static WebEngineEmbedPart s_self;
+    return &s_self;
 }
 
 QString WebEngineEmbedPart::contentUrl(const QString &contentId) const
