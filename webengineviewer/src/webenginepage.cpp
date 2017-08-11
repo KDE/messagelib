@@ -29,7 +29,7 @@
 #include <QTimer>
 #include <QFileDialog>
 #include <QWebEngineProfile>
-
+#include <QPrinter>
 using namespace WebEngineViewer;
 
 class WebEngineViewer::WebEnginePagePrivate
