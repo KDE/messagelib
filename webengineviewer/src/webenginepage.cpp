@@ -20,6 +20,7 @@
 #include "webenginepage.h"
 #include "webhittest.h"
 #include "webhittestresult.h"
+#include "config-webengineviewer.h"
 
 #include <KLocalizedString>
 
@@ -99,7 +100,7 @@ void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMe
 
 bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
 {
-#ifndef WEBENGINEVIEWER_PRINT_SUPPORT
+#ifdef WEBENGINEVIEWER_PRINT_SUPPORT
     QPointer<QEventLoop> loop = new QEventLoop;
     bool result = false;
     QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
@@ -116,6 +117,8 @@ bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
 
     return result;
 #else
+    Q_UNUSED(printer);
+    Q_UNUSED(timeout);
     return false;
 #endif
 }
