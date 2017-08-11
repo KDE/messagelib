@@ -40,6 +40,7 @@
 #include <QEventLoop>
 #include <QPointer>
 #include <QTimer>
+#include <QPrinter>
 
 #include <WebEngineViewer/WebHitTestResult>
 
