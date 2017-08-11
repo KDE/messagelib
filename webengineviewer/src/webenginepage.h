@@ -25,6 +25,7 @@
 #include <QVariant>
 class QWebEngineProfile;
 class QWebEngineDownloadItem;
+class QPrinter;
 namespace WebEngineViewer
 {
 class WebHitTest;
