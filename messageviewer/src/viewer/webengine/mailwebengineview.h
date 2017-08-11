@@ -22,6 +22,7 @@
 #include "messageviewer_export.h"
 #include <WebEngineViewer/WebEngineView>
 #include <boost/function.hpp>
+class QPrinter;
 class KActionCollection;
 namespace WebEngineViewer {
 class WebHitTestResult;
