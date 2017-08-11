@@ -104,6 +104,7 @@ target_link_libraries(KF5WebEngineViewer
     KF5::I18n
     KF5::WidgetsAddons
     KF5::ConfigCore
+    Qt5::PrintSupport
     )
 
 set_target_properties(KF5WebEngineViewer PROPERTIES
