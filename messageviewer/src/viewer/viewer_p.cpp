@@ -191,8 +191,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
     , mUpdateReaderWinTimer(nullptr)
     , mResizeTimer(nullptr)
     , mOldGlobalOverrideEncoding(QStringLiteral("---"))
-    ,                                                      // init with dummy value
-    mMsgDisplay(true)
+    , mMsgDisplay(true) // init with dummy value
     , mCSSHelper(nullptr)
     , mMainWindow(mainWindow)
     , mActionCollection(actionCollection)
@@ -949,8 +948,6 @@ void ViewerPrivate::displayMessage()
     mColorBar->update();
 
     htmlWriter()->queue(QStringLiteral("</body></html>"));
-    connect(mViewer, &MailWebEngineView::loadStarted, this, &ViewerPrivate::slotLoadStarted,
-            Qt::UniqueConnection);
     connect(mViewer, &MailWebEngineView::loadFinished, this,
             &ViewerPrivate::executeCustomScriptsAfterLoading, Qt::UniqueConnection);
     connect(
@@ -964,10 +961,6 @@ void ViewerPrivate::displayMessage()
     mViewer->addScript(js, QStringLiteral("attachment_injection"), QWebEngineScript::DocumentReady);
 
     htmlWriter()->flush();
-}
-
-void ViewerPrivate::slotLoadStarted()
-{
 }
 
 void ViewerPrivate::collectionFetchedForStoringDecryptedMessage(KJob *job)
