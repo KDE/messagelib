@@ -714,11 +714,12 @@ void AttachmentControllerBase::openAttachment(AttachmentPart::Ptr part)
         return;
     }
     tempFile->setPermissions(QFile::ReadUser);
+    KRun::RunFlags flags;
+    flags |= KRun::DeleteTemporaryFiles;
     bool success = KRun::runUrl(QUrl::fromLocalFile(tempFile->fileName()),
                                 QString::fromLatin1(part->mimeType()),
                                 d->wParent,
-                                true /*tempFile*/,
-                                false /*runExecutables*/);
+                                flags);
     if (!success) {
         if (!KMimeTypeTrader::self()->preferredService(QString::fromLatin1(part->mimeType())).data()) {
             // KRun showed an Open-With dialog, and it was canceled.
