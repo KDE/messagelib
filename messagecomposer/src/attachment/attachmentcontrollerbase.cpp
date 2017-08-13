@@ -87,7 +87,7 @@ public:
     Private(AttachmentControllerBase *qq);
     ~Private();
 
-    void attachmentRemoved(AttachmentPart::Ptr part);   // slot
+    void attachmentRemoved(const AttachmentPart::Ptr &part);   // slot
     void compressJobResult(KJob *job);   // slot
     void loadJobResult(KJob *job);   // slot
     void openSelectedAttachments(); // slot
@@ -195,7 +195,7 @@ void AttachmentControllerBase::setSelectedParts(const AttachmentPart::List &sele
     d->propertiesContextAction->setEnabled(selectedCount == 1);
 }
 
-void AttachmentControllerBase::Private::attachmentRemoved(AttachmentPart::Ptr part)
+void AttachmentControllerBase::Private::attachmentRemoved(const AttachmentPart::Ptr &part)
 {
     uncompressedParts.remove(part);
 }
@@ -579,7 +579,7 @@ void AttachmentControllerBase::setSignEnabled(bool enabled)
     d->signEnabled = enabled;
 }
 
-void AttachmentControllerBase::compressAttachment(AttachmentPart::Ptr part, bool compress)
+void AttachmentControllerBase::compressAttachment(const AttachmentPart::Ptr &part, bool compress)
 {
     if (compress) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Compressing part.";
@@ -704,7 +704,7 @@ void AttachmentControllerBase::openWith(const KService::Ptr &offer)
     }
 }
 
-void AttachmentControllerBase::openAttachment(AttachmentPart::Ptr part)
+void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
 {
     QTemporaryFile *tempFile = dumpAttachmentToTempFile(part);
     if (!tempFile) {
@@ -738,7 +738,7 @@ void AttachmentControllerBase::openAttachment(AttachmentPart::Ptr part)
     }
 }
 
-void AttachmentControllerBase::viewAttachment(AttachmentPart::Ptr part)
+void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
 {
     MessageComposer::Composer *composer = new MessageComposer::Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
@@ -803,12 +803,12 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
     }
 }
 
-void AttachmentControllerBase::editAttachmentWith(AttachmentPart::Ptr part)
+void AttachmentControllerBase::editAttachmentWith(const AttachmentPart::Ptr &part)
 {
     editAttachment(part, MessageViewer::EditorWatcher::OpenWithDialog);
 }
 
-void AttachmentControllerBase::saveAttachmentAs(AttachmentPart::Ptr part)
+void AttachmentControllerBase::saveAttachmentAs(const AttachmentPart::Ptr &part)
 {
     QString pname = part->name();
     if (pname.isEmpty()) {
@@ -849,7 +849,7 @@ void AttachmentControllerBase::slotPutResult(KJob *job)
     }
 }
 
-void AttachmentControllerBase::attachmentProperties(AttachmentPart::Ptr part)
+void AttachmentControllerBase::attachmentProperties(const AttachmentPart::Ptr &part)
 {
     QPointer<AttachmentPropertiesDialog> dialog = new AttachmentPropertiesDialog(
         part, false, d->wParent);
@@ -936,7 +936,7 @@ void AttachmentControllerBase::showAddAttachmentFileDialog()
     }
 }
 
-void AttachmentControllerBase::addAttachment(AttachmentPart::Ptr part)
+void AttachmentControllerBase::addAttachment(const AttachmentPart::Ptr &part)
 {
     part->setEncrypted(d->model->isEncryptSelected());
     part->setSigned(d->model->isSignSelected());

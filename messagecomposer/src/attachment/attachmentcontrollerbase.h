@@ -62,18 +62,18 @@ public Q_SLOTS:
     void setEncryptEnabled(bool enabled);
     void setSignEnabled(bool enabled);
     /// compression is async...
-    void compressAttachment(MessageCore::AttachmentPart::Ptr part, bool compress);
+    void compressAttachment(const MessageCore::AttachmentPart::Ptr &part, bool compress);
     void showContextMenu();
-    void openAttachment(MessageCore::AttachmentPart::Ptr part);
-    void viewAttachment(MessageCore::AttachmentPart::Ptr part);
+    void openAttachment(const MessageCore::AttachmentPart::Ptr &part);
+    void viewAttachment(const MessageCore::AttachmentPart::Ptr &part);
     void editAttachment(MessageCore::AttachmentPart::Ptr part, MessageViewer::EditorWatcher::OpenWithOption option = MessageViewer::EditorWatcher::NoOpenWithDialog);
-    void editAttachmentWith(MessageCore::AttachmentPart::Ptr part);
-    void saveAttachmentAs(MessageCore::AttachmentPart::Ptr part);
-    void attachmentProperties(MessageCore::AttachmentPart::Ptr part);
+    void editAttachmentWith(const MessageCore::AttachmentPart::Ptr &part);
+    void saveAttachmentAs(const MessageCore::AttachmentPart::Ptr &part);
+    void attachmentProperties(const MessageCore::AttachmentPart::Ptr &part);
     void showAddAttachmentFileDialog();
     void showAddAttachmentCompressedDirectoryDialog();
     /// sets sign, encrypt, shows properties dialog if so configured
-    void addAttachment(MessageCore::AttachmentPart::Ptr part);
+    void addAttachment(const MessageCore::AttachmentPart::Ptr &part);
     void addAttachment(const QUrl &url);
     void addAttachmentUrlSync(const QUrl &url);
     void addAttachments(const QList<QUrl> &urls);
@@ -109,7 +109,7 @@ private:
     class Private;
     Private *const d;
 
-    Q_PRIVATE_SLOT(d, void attachmentRemoved(MessageCore::AttachmentPart::Ptr))
+    Q_PRIVATE_SLOT(d, void attachmentRemoved(const MessageCore::AttachmentPart::Ptr&))
     Q_PRIVATE_SLOT(d, void compressJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void loadJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void openSelectedAttachments())
