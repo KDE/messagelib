@@ -22,7 +22,7 @@
 #include <QWidget>
 #include "messagecomposer_export.h"
 
-class KComboBox;
+class QComboBox;
 namespace Ui
 {
 class ImageScalingWidget;
@@ -53,7 +53,7 @@ private Q_SLOTS:
 
 private:
     void updateFilterSourceTypeSettings();
-    void initComboBox(KComboBox *combo);
+    void initComboBox(QComboBox *combo);
     void initWriteImageFormat();
     void updateEmailsFilterTypeSettings();
     void updateSettings();

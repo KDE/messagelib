@@ -52,7 +52,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KComboBox" name="WriteToImageFormat"/>
+          <widget class="QComboBox" name="WriteToImageFormat"/>
          </item>
         </layout>
        </item>
@@ -122,10 +122,10 @@
          <item row="0" column="1">
           <layout class="QGridLayout" name="gridLayout_2">
            <item row="0" column="0">
-            <widget class="KComboBox" name="CBMaximumWidth"/>
+            <widget class="QComboBox" name="CBMaximumWidth"/>
            </item>
            <item row="2" column="0">
-            <widget class="KComboBox" name="CBMaximumHeight"/>
+            <widget class="QComboBox" name="CBMaximumHeight"/>
            </item>
            <item row="0" column="1">
             <widget class="QSpinBox" name="customMaximumWidth">
@@ -187,10 +187,10 @@
          <item row="0" column="1">
           <layout class="QGridLayout" name="gridLayout_3">
            <item row="0" column="0">
-            <widget class="KComboBox" name="CBMinimumWidth"/>
+            <widget class="QComboBox" name="CBMinimumWidth"/>
            </item>
            <item row="2" column="0">
-            <widget class="KComboBox" name="CBMinimumHeight"/>
+            <widget class="QComboBox" name="CBMinimumHeight"/>
            </item>
            <item row="0" column="1">
             <widget class="QSpinBox" name="customMinimumWidth">
@@ -479,12 +479,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>

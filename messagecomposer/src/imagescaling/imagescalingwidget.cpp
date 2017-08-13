@@ -21,7 +21,7 @@
 #include "ui_imagescalingwidget.h"
 #include "settings/messagecomposersettings.h"
 
-#include <KComboBox>
+#include <QComboBox>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -73,11 +73,11 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
     connect(d->ui->skipImageSizeLower, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->imageSize, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
     connect(d->ui->pattern, &KLineEdit::textChanged, this, &ImageScalingWidget::changed);
-    connect(d->ui->CBMaximumWidth, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
-    connect(d->ui->CBMaximumHeight, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
-    connect(d->ui->CBMinimumWidth, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
-    connect(d->ui->CBMinimumHeight, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
-    connect(d->ui->WriteToImageFormat, static_cast<void (KComboBox::*)(int)>(&KComboBox::activated), this, &ImageScalingWidget::changed);
+    connect(d->ui->CBMaximumWidth, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+    connect(d->ui->CBMaximumHeight, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+    connect(d->ui->CBMinimumWidth, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+    connect(d->ui->CBMinimumHeight, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+    connect(d->ui->WriteToImageFormat, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated), this, &ImageScalingWidget::changed);
     connect(d->ui->renameResizedImage, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
     connect(d->ui->renameResizedImage, &QCheckBox::clicked, d->ui->renameResizedImagePattern, &KLineEdit::setEnabled);
     connect(d->ui->renameResizedImagePattern, &KLineEdit::textChanged, this, &ImageScalingWidget::changed);
@@ -151,7 +151,7 @@ void ImageScalingWidget::slotRecipientFilterClicked(int button)
 
 void ImageScalingWidget::slotComboboxChanged(int index)
 {
-    KComboBox *combo = qobject_cast< KComboBox * >(sender());
+    QComboBox *combo = qobject_cast< QComboBox * >(sender());
     if (combo) {
         const bool isCustom = combo->itemData(index) == -1;
         if (combo == d->ui->CBMaximumWidth) {
@@ -167,7 +167,7 @@ void ImageScalingWidget::slotComboboxChanged(int index)
     }
 }
 
-void ImageScalingWidget::initComboBox(KComboBox *combo)
+void ImageScalingWidget::initComboBox(QComboBox *combo)
 {
     const QList<int> size = { 240, 320, 512, 640, 800, 1024, 1600, 2048 };
     for (int val : size) {
