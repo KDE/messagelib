@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-set(PIM_VERSION "5.6.43")
+set(PIM_VERSION "5.6.44")
 
 if (POLICY CMP0053)
     cmake_policy(SET CMP0053 NEW)
@@ -144,13 +144,3 @@ endif()
 
 install( FILES messagelib.renamecategories messagelib.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
-if (NOT ${MIMETREEPARSER_ONLY_BUILD})
-    if (${Qt5WebEngine_VERSION} GREATER "5.7.99")
-        MESSAGE(STATUS "QtWebEngine greater or equal 5.8.0 provides printing support and dnd fix. It's a good idea to use it")
-    else()
-        if (${Qt5WebEngine_VERSION} GREATER "5.6.99")
-            MESSAGE(STATUS "QtWebEngine 5.7.0 doesn't provide printing support. It has a lot of regression. Better to upgrade QtWebEngine to 5.8.0")
-        endif()
-    endif()
-endif()

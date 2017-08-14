@@ -299,18 +299,14 @@ void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *
         mi->setSubjectIsPrefixed(subject != strippedSubject);
         // fall through
     }
-#if QT_VERSION >= QT_VERSION_CHECK(5,8,0)
         Q_FALLTHROUGH();
-#endif
     case PerfectThreadingPlusReferences: {
         const auto refs = mail->references()->identifiers();
         if (!refs.isEmpty()) {
             mi->setReferencesIdMD5(md5Encode(refs.last()));
         }
     }
-#if QT_VERSION >= QT_VERSION_CHECK(5,8,0)
         Q_FALLTHROUGH();
-#endif
     // fall through
     case PerfectThreadingOnly: {
         mi->setMessageIdMD5(md5Encode(mail->messageID()->identifier()));

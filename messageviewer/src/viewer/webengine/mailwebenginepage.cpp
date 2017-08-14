@@ -57,10 +57,8 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
     settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
     settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, false);
     settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, false);
-#endif
     profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
 
@@ -73,11 +71,7 @@ void MailWebEnginePage::initialize()
 
 void MailWebEnginePage::setPrintElementBackground(bool printElementBackground)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
     settings()->setAttribute(QWebEngineSettings::PrintElementBackgrounds, printElementBackground);
-#else
-    Q_UNUSED(printElementBackground);
-#endif
 }
 
 void MailWebEnginePage::slotFeaturePermissionRequested(const QUrl &url,

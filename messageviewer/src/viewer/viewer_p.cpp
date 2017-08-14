@@ -43,7 +43,6 @@
 #include "config-messageviewer.h"
 #include "webengine/mailwebenginescript.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
-#include <WebEngineViewer/WebEnginePrintMessageBox>
 #include <KContacts/VCardConverter>
 #include <webengineviewer/config-webengineviewer.h>
 #include "htmlwriter/webengineembedpart.h"
@@ -2436,20 +2435,8 @@ void ViewerPrivate::slotPrintPreview()
     if (!mMessage) {
         return;
     }
-#ifndef WEBENGINEVIEWER_PRINT_SUPPORT
-    QPointer<WebEngineViewer::WebEnginePrintMessageBox> dialog
-        = new WebEngineViewer::WebEnginePrintMessageBox(q);
-    connect(
-        dialog.data(), &WebEngineViewer::WebEnginePrintMessageBox::openInBrowser, this,
-        &ViewerPrivate::slotOpenInBrowser);
-    if (!dialog->exec()) {
-        Q_EMIT printingFinished();
-    }
-    delete dialog;
-#else
     //Need to delay
     QTimer::singleShot(1 * 1000, this, &ViewerPrivate::slotDelayPrintPreview);
-#endif
 }
 
 void ViewerPrivate::slotDelayPrintPreview()
@@ -2505,7 +2492,6 @@ void ViewerPrivate::slotPrintMessage()
     if (!mMessage) {
         return;
     }
-#ifdef WEBENGINEVIEWER_PRINT_SUPPORT
     if (mCurrentPrinter) {
         return;
     }
@@ -2519,9 +2505,6 @@ void ViewerPrivate::slotPrintMessage()
     }
     delete dialog;
     mViewer->page()->print(mCurrentPrinter, invoke(this, &ViewerPrivate::slotHandlePagePrinted));
-#else
-    slotPrintPreview();
-#endif
 }
 
 void ViewerPrivate::slotHandlePagePrinted(bool result)

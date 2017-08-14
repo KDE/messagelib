@@ -1882,9 +1882,7 @@ bool ComposerViewBase::determineWhetherToEncrypt(bool doEncryptCompletely, Kleo:
     case Kleo::AskOpportunistic:
         opportunistic = true;
     // fall through...
-#if QT_VERSION >= QT_VERSION_CHECK(5,8,0)
         Q_FALLTHROUGH();
-#endif
     case Kleo::Ask: {
         // the user wants to be asked or has to be asked
 #ifndef QT_NO_CURSOR

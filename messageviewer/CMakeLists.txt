@@ -12,10 +12,6 @@ add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5MessageViewer")
 
-if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.7.99")
-    set(WEBENGINEVIEWER_PRINT_SUPPORT true)
-endif()
-
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KF5MessageViewerConfig.cmake.in"

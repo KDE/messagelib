@@ -720,9 +720,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                     );
                 }
                 // fall through anyway
-#if QT_VERSION >= QT_VERSION_CHECK(5,8,0)
-        Q_FALLTHROUGH();
-#endif
+                Q_FALLTHROUGH();
             }
             case Theme::RoundedRect: {
                 painter->setPen(Qt::NoPen);
@@ -768,9 +766,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                     );
                 }
                 // fall through anyway
-#if QT_VERSION >= QT_VERSION_CHECK(5,8,0)
-        Q_FALLTHROUGH();
-#endif
+                Q_FALLTHROUGH();
             }
             case Theme::GradientRect: {
                 // FIXME: Could cache this brush

@@ -42,7 +42,6 @@ using namespace WebEngineViewer;
 class WebEngineViewer::WebHitTestResultPrivate
 {
 public:
-#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
     WebHitTestResultPrivate(const QWebEngineContextMenuData &data, const QPoint &pos = QPoint(), const QUrl &url = QUrl())
         : mIsNull(true),
           mIsContentEditable(false),
@@ -54,7 +53,6 @@ public:
     {
         init(data);
     }
-#endif
     WebHitTestResultPrivate(const QPoint &pos = QPoint(), const QUrl &url = QUrl(), const QVariant &result = QVariant())
         : mIsNull(true),
           mIsContentEditable(false),
@@ -67,9 +65,7 @@ public:
         init(result.toMap());
     }
     void init(const QVariantMap &map);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
     void init(const QWebEngineContextMenuData &data);
-#endif
 
     bool mIsNull;
     QString mAlternateText;
@@ -87,14 +83,12 @@ public:
     QUrl mPageUrl;
 };
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
 void WebHitTestResultPrivate::init(const QWebEngineContextMenuData &data)
 {
     if (data.isValid()) {
         //TODO
     }
 }
-#endif
 
 void WebHitTestResultPrivate::init(const QVariantMap &map)
 {
@@ -147,13 +141,11 @@ WebHitTestResult::WebHitTestResult(const WebHitTestResult &other)
     (*this) = other;
 }
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
 WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QWebEngineContextMenuData &data)
     : d(new WebHitTestResultPrivate(data, pos, pageUrl))
 {
 
 }
-#endif
 
 WebHitTestResult::~WebHitTestResult()
 {

@@ -2245,9 +2245,7 @@ void View::changeEvent(QEvent *e)
     switch (e->type()) {
     case QEvent::FontChange:
         d->mDelegate->generalFontChanged();
-#if QT_VERSION >= QT_VERSION_CHECK(5,8,0)
         Q_FALLTHROUGH();
-#endif
     case QEvent::PaletteChange:
     case QEvent::StyleChange:
     case QEvent::LayoutDirectionChange:

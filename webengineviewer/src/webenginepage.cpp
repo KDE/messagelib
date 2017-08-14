@@ -100,7 +100,6 @@ void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMe
 
 bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
 {
-#ifdef WEBENGINEVIEWER_PRINT_SUPPORT
     QPointer<QEventLoop> loop = new QEventLoop;
     bool result = false;
     QTimer::singleShot(timeout, loop.data(), &QEventLoop::quit);
@@ -116,9 +115,4 @@ bool WebEnginePage::execPrintPreviewPage(QPrinter *printer, int timeout)
     delete loop;
 
     return result;
-#else
-    Q_UNUSED(printer);
-    Q_UNUSED(timeout);
-    return false;
-#endif
 }

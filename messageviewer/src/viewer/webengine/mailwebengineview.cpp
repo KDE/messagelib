@@ -320,14 +320,9 @@ void MailWebEngineView::markAttachment(const QString &id, const QString &style)
 
 void MailWebEngineView::scrollToAnchor(const QString &anchor)
 {
-#if QT_VERSION >= 0x050700
     page()->runJavaScript(WebEngineViewer::WebEngineScript::searchElementPosition(anchor),
                           WebEngineViewer::WebEngineManageScript::scriptWordId(),
                           invoke(this, &MailWebEngineView::handleScrollToAnchor));
-#else
-    page()->runJavaScript(WebEngineViewer::WebEngineScript::searchElementPosition(anchor),
-                          invoke(this, &MailWebEngineView::handleScrollToAnchor));
-#endif
 }
 
 void MailWebEngineView::handleIsScrolledToBottom(const QVariant &result)
