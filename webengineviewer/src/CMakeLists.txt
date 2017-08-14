@@ -11,10 +11,6 @@ if(BUILD_TESTING)
     add_subdirectory(checkphishingurl/tests/)
 endif()
 
-if (Qt5WebEngineWidgets_VERSION VERSION_GREATER "5.7.99")
-    set(WEBENGINEVIEWER_PRINT_SUPPORT true)
-endif()
-
 
 configure_file(../config-webengineviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/../config-webengineviewer.h )
 
@@ -26,7 +22,6 @@ set(libwebengineviewer_webengine_SRCS
     webenginescript.cpp
     webengineview.cpp
     webenginemanagescript.cpp
-    webengineprintmessagebox.cpp
     webengineexporthtmlpagejob.cpp
     webenginenavigationrequestinterceptor.cpp
     )
@@ -176,7 +171,6 @@ ecm_generate_headers(WebEngineViewer_Camelcasewebengine_misc_HEADERS
     WebHitTest
     WebEngineScript
     WebEngineManageScript
-    WebEnginePrintMessageBox
     WebEngineExportHtmlPageJob
     REQUIRED_HEADERS WebEngineViewer_webengine_misc_HEADERS
     PREFIX WebEngineViewer
