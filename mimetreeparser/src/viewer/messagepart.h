@@ -81,7 +81,7 @@ public:
 
     virtual ~MessagePart();
 
-    virtual QString text() const override;
+    QString text() const override;
     void setText(const QString &text);
     void setAttachmentFlag(KMime::Content *node);
     bool isAttachment() const;
