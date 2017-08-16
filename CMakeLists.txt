@@ -12,6 +12,15 @@ option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branc
 
 
 set(KF5_VERSION "5.37.0")
+option(RUN_UNINSTALL "test run uninstalled apps (experimental)" FALSE)
+
+set(ECM_VERSION ${KF5_VERSION})
+# ECM setup
+if (RUN_UNINSTALL)
+   set(ECM_VERSION "5.38.0")
+endif()
+
+find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
@@ -36,12 +45,14 @@ set(PIMCOMMON_LIB_VERSION "5.6.41")
 set(GPGME_LIB_VERSION "1.8.0")
 set(AKONADI_CONTACT_VERSION "5.6.40")
 
+
+
 if (${MIMETREEPARSER_ONLY_BUILD})
-   set(KF5_VERSION "5.26.0")
+   set(ECM_VERSION "5.26.0")
    set(KMIME_LIB_VERSION "5.1.40")
 endif()
 
-find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
+find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${Messagelib_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH})
 set(LIBRARY_NAMELINK)
 include(GenerateExportHeader)
