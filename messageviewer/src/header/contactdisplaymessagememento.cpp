@@ -120,7 +120,6 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
                     Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
                 job->setUseLibravatar(Gravatar::GravatarSettings::self()->libravatarSupportEnabled());
                 job->setFallbackGravatar(Gravatar::GravatarSettings::self()->fallbackToGravatar());
-                job->setUseHttps(true);
                 if (job->canStart()) {
                     connect(job, &Gravatar::GravatarResolvUrlJob::finished, this,
                             &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
