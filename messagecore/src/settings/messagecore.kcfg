@@ -3,15 +3,15 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
 
-  <kcfgfile name="messagecorerc" />
   <include>qtextcodec.h</include>
   <include>QFontDatabase</include>
-  
+  <kcfgfile name="messagecorerc" />
+
   <group name="General">
     <entry name="dateFormat" type="Int">
       <default code="true">int( KMime::DateFormatter::Fancy )</default>
     </entry>
-    <entry name="customDateFormat" type="string">
+    <entry name="customDateFormat" type="String">
     </entry>
   </group>
 
@@ -25,8 +25,7 @@
     <entry name="UseDefaultColors" type="Bool" key="defaultColors">
       <default>true</default>
     </entry>
-    <entry name="OverrideCharacterEncoding" type="String"
-    key="encoding">
+    <entry name="OverrideCharacterEncoding" type="String" key="encoding">
       <default></default>
       <whatsthis>Changing this from its default 'Auto' will force the use of the specified encoding for all emails, regardless of what they specify themselves.</whatsthis>
     </entry>
