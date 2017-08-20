@@ -911,14 +911,15 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
 
 void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 {
+    KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
     foreach (const QByteArray &address, msg->to()->addresses()) {
-        KPIM::RecentAddresses::self(MessageComposer::MessageComposerSettings::self()->config())->add(QLatin1String(address));
+        KPIM::RecentAddresses::self(config)->add(QLatin1String(address));
     }
     foreach (const QByteArray &address, msg->cc()->addresses()) {
-        KPIM::RecentAddresses::self(MessageComposer::MessageComposerSettings::self()->config())->add(QLatin1String(address));
+        KPIM::RecentAddresses::self(config)->add(QLatin1String(address));
     }
     foreach (const QByteArray &address, msg->bcc()->addresses()) {
-        KPIM::RecentAddresses::self(MessageComposer::MessageComposerSettings::self()->config())->add(QLatin1String(address));
+        KPIM::RecentAddresses::self(config)->add(QLatin1String(address));
     }
 }
 
