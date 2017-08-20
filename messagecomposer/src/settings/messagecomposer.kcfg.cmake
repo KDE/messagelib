@@ -28,7 +28,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default></default>
     </entry>
 
-    <entry name="UseCustomMessageIdSuffix" type="bool" key="useCustomMessageIdSuffix">
+    <entry name="UseCustomMessageIdSuffix" type="Bool" key="useCustomMessageIdSuffix">
       <default>false</default>
     </entry>
 
@@ -213,29 +213,29 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     <entry name="EnlargeImageToMinimum" type="Bool" key="enlarge-image-to-minimum">
       <default>false</default>
     </entry>
-    <entry name="CustomMinimumHeight" type="int" key="custom-minimum-height">
+    <entry name="CustomMinimumHeight" type="Int" key="custom-minimum-height">
       <default>520</default>
     </entry>
-    <entry name="CustomMinimumWidth" type="int" key="custom-minimum-width">
+    <entry name="CustomMinimumWidth" type="Int" key="custom-minimum-width">
       <default>520</default>
     </entry>
-    <entry name="CustomMaximumHeight" type="int" key="custom-maximum-height">
+    <entry name="CustomMaximumHeight" type="Int" key="custom-maximum-height">
       <default>520</default>
     </entry>
-    <entry name="CustomMaximumWidth" type="int" key="custom-maximum-width">
+    <entry name="CustomMaximumWidth" type="Int" key="custom-maximum-width">
       <default>520</default>
     </entry>
 
-    <entry name="MaximumHeight" type="int" key="maximum-height">
+    <entry name="MaximumHeight" type="Int" key="maximum-height">
       <default>0</default>
     </entry>
-    <entry name="MaximumWidth" type="int" key="maximum-width">
+    <entry name="MaximumWidth" type="Int" key="maximum-width">
       <default>0</default>
     </entry>
-    <entry name="MinimumHeight" type="int" key="minimum-height">
+    <entry name="MinimumHeight" type="Int" key="minimum-height">
       <default>0</default>
     </entry>
-    <entry name="MinimumWidth" type="int" key="minimum-width">
+    <entry name="MinimumWidth" type="Int" key="minimum-width">
       <default>0</default>
     </entry>
     <entry name="WriteFormat" type="String" key="write-format">
@@ -244,7 +244,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     <entry name="SkipImageLowerSizeEnabled" type="Bool" key="skip-image-lower-size-enabled">
       <default>false</default>
     </entry>
-    <entry name="SkipImageLowerSize" type="int" key="skip-image-lower-size">
+    <entry name="SkipImageLowerSize" type="Int" key="skip-image-lower-size">
       <default>220</default>
     </entry>
 
