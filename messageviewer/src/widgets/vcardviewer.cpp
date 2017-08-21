@@ -26,6 +26,7 @@
 using KContacts::VCardConverter;
 using KContacts::Addressee;
 
+#include <ContactDefaultActions>
 #include <KLocalizedString>
 
 #include <LibkdepimAkonadi/AddContactJob>
@@ -34,6 +35,7 @@ using KContacts::Addressee;
 #include <QPushButton>
 #include <KGuiItem>
 #include <QVBoxLayout>
+#include <QDesktopServices>
 
 using namespace MessageViewer;
 
@@ -60,6 +62,9 @@ VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     KGuiItem::assign(mUser3Button, KGuiItem(i18n("&Previous Card")));
 
     mContactViewer = new KAddressBookGrantlee::GrantleeContactViewer(this);
+    Akonadi::ContactDefaultActions *actions = new Akonadi::ContactDefaultActions( this );
+    actions->connectToView(mContactViewer);
+
     mContactViewer->setForceDisableQRCode(true);
     mainLayout->addWidget(mContactViewer);
     mainLayout->addWidget(buttonBox);
