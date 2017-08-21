@@ -1678,7 +1678,7 @@ MessageItem *ModelPrivate::guessMessageParent(MessageItem *mi)
         auto messagesWithTheSameStrippedSubject = mThreadingCacheMessageSubjectMD5ToMessageItem.value(md5, nullptr);
 
         if (messagesWithTheSameStrippedSubject) {
-            Q_ASSERT(messagesWithTheSameStrippedSubject->count() > 0);
+            Q_ASSERT(!messagesWithTheSameStrippedSubject->isEmpty());
 
             // Need to find the message with the maximum date lower than the one of this message
 
@@ -2797,7 +2797,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                 // current parent rebuild the hierarchy on the fly.
                 bool needsImmediateReAttach = false;
 
-                if (mThreadingCacheMessageInReplyToIdMD5ToMessageItem.count() > 0) { // unlikely
+                if (!mThreadingCacheMessageInReplyToIdMD5ToMessageItem.isEmpty()) { // unlikely
                     const auto lImperfectlyThreaded = mThreadingCacheMessageInReplyToIdMD5ToMessageItem.values(mi->messageIdMD5());
                     for (const auto it : lImperfectlyThreaded) {
                         Q_ASSERT(it->parent());
