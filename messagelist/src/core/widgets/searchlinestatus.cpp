@@ -29,6 +29,7 @@
 #include <QCompleter>
 #include <QContextMenuEvent>
 #include <QStringListModel>
+#include <KColorScheme>
 
 static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
 #define MAX_COMPLETION_ITEMS 20
@@ -163,6 +164,12 @@ void SearchLineStatus::createFilterAction(const QIcon &icon, const QString &text
 void SearchLineStatus::updateFilterActionIcon()
 {
     mFiltersAction->setIcon(mHasFilter ? mWithFilter : mWithoutFilter);
+    if (mColorName.isEmpty()) {
+        const KColorScheme::BackgroundRole bgColorScheme(KColorScheme::PositiveBackground);
+        KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
+        mColorName = bgBrush.brush(this).color().name();
+    }
+    setStyleSheet(mHasFilter ? QStringLiteral("QLineEdit{ background-color:%1 }").arg(mColorName) : QString());
 }
 
 void SearchLineStatus::clearFilterButtonClicked()

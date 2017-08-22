@@ -86,6 +86,7 @@ private:
     QAction *mSearchAgainstBccAction;
     QStringListModel *mCompleterListModel;
     QStringList mListCompetion;
+    QString mColorName;
     bool mContainsOutboundMessages;
 };
 
