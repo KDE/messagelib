@@ -457,7 +457,7 @@ void URLHandlerManager::BodyPartURLHandlerManager::unregisterHandler(
 
 static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, QString *path)
 {
-    assert(path);
+    Q_ASSERT(path);
 
     if (!w || url.scheme() != QLatin1String("x-kmail")) {
         return nullptr;
@@ -1138,7 +1138,7 @@ static QString extractAuditLog(const QUrl &url)
         return QString();
     }
     QUrlQuery query(url);
-    assert(!query.queryItemValue(QStringLiteral("log")).isEmpty());
+    Q_ASSERT(!query.queryItemValue(QStringLiteral("log")).isEmpty());
     return query.queryItemValue(QStringLiteral("log"));
 }
 
