@@ -62,7 +62,7 @@ VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     KGuiItem::assign(mUser3Button, KGuiItem(i18n("&Previous Card")));
 
     mContactViewer = new KAddressBookGrantlee::GrantleeContactViewer(this);
-    Akonadi::ContactDefaultActions *actions = new Akonadi::ContactDefaultActions( this );
+    Akonadi::ContactDefaultActions *actions = new Akonadi::ContactDefaultActions(this);
     actions->connectToView(mContactViewer);
 
     mContactViewer->setForceDisableQRCode(true);
