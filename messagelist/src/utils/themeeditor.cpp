@@ -1111,7 +1111,7 @@ void ThemePreviewWidget::slotGroupHeaderBackgroundModeMenuTriggered(QAction *act
     case Theme::CustomColor: {
         QColor clr;
         clr = QColorDialog::getColor(mTheme->groupHeaderBackgroundColor(), this);
-        if (clr.isValid()) {
+        if (!clr.isValid()) {
             return;
         }
 
