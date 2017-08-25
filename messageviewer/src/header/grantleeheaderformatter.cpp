@@ -90,7 +90,7 @@ QString GrantleeHeaderFormatter::toHtml(
     return format(
         settings.theme.absolutePath(), headerTemplate,
         settings.theme.displayExtraVariables(), settings.isPrinting, settings.style, settings.message,
-        settings.showMailAction, settings.showEmoticons);
+        settings.showEmoticons);
 }
 
 QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders,
@@ -110,7 +110,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
                                         const Grantlee::Template &headerTemplate,
                                         const QStringList &displayExtraHeaders, bool isPrinting,
                                         const MessageViewer::HeaderStyle *style,
-                                        KMime::Message *message, bool showMailAction, bool showEmoticons) const
+                                        KMime::Message *message, bool showEmoticons) const
 {
     QVariantHash headerObject;
 
@@ -121,7 +121,6 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     // direction.
     const QString absoluteThemePath = QUrl::fromLocalFile(absolutePath + QLatin1Char('/')).url();
     headerObject.insert(QStringLiteral("absoluteThemePath"), absoluteThemePath);
-    headerObject.insert(QStringLiteral("showMailAction"), showMailAction);
     headerObject.insert(QStringLiteral("applicationDir"),
                         QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral(
                             "ltr"));

@@ -47,8 +47,6 @@ DefaultGrantleeHeaderStylePlugin::~DefaultGrantleeHeaderStylePlugin()
 
 void DefaultGrantleeHeaderStylePlugin::initializePlugin()
 {
-    mHeaderStyle->setShowMailAction(
-        DefaultGrantleeHeaderStylePluginSettings::self()->showActionMail());
 }
 
 HeaderStyle *DefaultGrantleeHeaderStylePlugin::headerStyle() const

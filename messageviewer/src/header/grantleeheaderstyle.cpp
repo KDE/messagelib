@@ -71,7 +71,6 @@ QString GrantleeHeaderStyle::format(KMime::Message *message) const
     settings.theme = theme();
     settings.style = this;
     settings.message = message;
-    settings.showMailAction = d->mShowMailAction;
     settings.showEmoticons = showEmoticons();
     return d->mGrantleeFormatter->toHtml(settings);
 }
@@ -84,9 +83,4 @@ bool GrantleeHeaderStyle::hasAttachmentQuickList() const
 bool GrantleeHeaderStyle::showMailAction() const
 {
     return d->mShowMailAction;
-}
-
-void GrantleeHeaderStyle::setShowMailAction(bool showAction)
-{
-    d->mShowMailAction = showAction;
 }
