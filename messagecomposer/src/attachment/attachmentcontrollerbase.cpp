@@ -108,35 +108,35 @@ public:
     void updateJobResult(KJob *);
 
     AttachmentControllerBase *const q;
-    bool encryptEnabled;
-    bool signEnabled;
-    MessageComposer::AttachmentModel *model;
-    QWidget *wParent;
+    bool encryptEnabled = false;
+    bool signEnabled = false;
+    MessageComposer::AttachmentModel *model = nullptr;
+    QWidget *wParent = nullptr;
     QHash<MessageViewer::EditorWatcher *, AttachmentPart::Ptr> editorPart;
     QHash<MessageViewer::EditorWatcher *, QTemporaryFile *> editorTempFile;
 
     AttachmentPart::List selectedParts;
-    KActionCollection *mActionCollection;
-    QAction *attachPublicKeyAction;
-    QAction *attachMyPublicKeyAction;
-    QAction *openContextAction;
-    QAction *viewContextAction;
-    QAction *editContextAction;
-    QAction *editWithContextAction;
-    QAction *removeAction;
-    QAction *removeContextAction;
-    QAction *saveAsAction;
-    QAction *saveAsContextAction;
-    QAction *propertiesAction;
-    QAction *propertiesContextAction;
-    QAction *addAttachmentFileAction;
-    QAction *addAttachmentDirectoryAction;
-    QAction *addContextAction;
-    QAction *selectAllAction;
-    KActionMenu *attachmentMenu;
-    QAction *addOwnVcardAction;
-    QAction *reloadAttachmentAction;
-    QAction *attachVCardsAction;
+    KActionCollection *mActionCollection = nullptr;
+    QAction *attachPublicKeyAction = nullptr;
+    QAction *attachMyPublicKeyAction = nullptr;
+    QAction *openContextAction = nullptr;
+    QAction *viewContextAction = nullptr;
+    QAction *editContextAction = nullptr;
+    QAction *editWithContextAction = nullptr;
+    QAction *removeAction = nullptr;
+    QAction *removeContextAction = nullptr;
+    QAction *saveAsAction = nullptr;
+    QAction *saveAsContextAction = nullptr;
+    QAction *propertiesAction = nullptr;
+    QAction *propertiesContextAction = nullptr;
+    QAction *addAttachmentFileAction = nullptr;
+    QAction *addAttachmentDirectoryAction = nullptr;
+    QAction *addContextAction = nullptr;
+    QAction *selectAllAction = nullptr;
+    KActionMenu *attachmentMenu = nullptr;
+    QAction *addOwnVcardAction = nullptr;
+    QAction *reloadAttachmentAction = nullptr;
+    QAction *attachVCardsAction = nullptr;
 
     // If part p is compressed, uncompressedParts[p] is the uncompressed part.
     QHash<AttachmentPart::Ptr, AttachmentPart::Ptr> uncompressedParts;
@@ -144,31 +144,6 @@ public:
 
 AttachmentControllerBase::Private::Private(AttachmentControllerBase *qq)
     : q(qq)
-    , encryptEnabled(false)
-    , signEnabled(false)
-    , model(nullptr)
-    , wParent(nullptr)
-    , mActionCollection(nullptr)
-    , attachPublicKeyAction(nullptr)
-    , attachMyPublicKeyAction(nullptr)
-    , openContextAction(nullptr)
-    , viewContextAction(nullptr)
-    , editContextAction(nullptr)
-    , editWithContextAction(nullptr)
-    , removeAction(nullptr)
-    , removeContextAction(nullptr)
-    , saveAsAction(nullptr)
-    , saveAsContextAction(nullptr)
-    , propertiesAction(nullptr)
-    , propertiesContextAction(nullptr)
-    , addAttachmentFileAction(nullptr)
-    , addAttachmentDirectoryAction(nullptr)
-    , addContextAction(nullptr)
-    , selectAllAction(nullptr)
-    , attachmentMenu(nullptr)
-    , addOwnVcardAction(nullptr)
-    , reloadAttachmentAction(nullptr)
-    , attachVCardsAction(nullptr)
 {
 }
 

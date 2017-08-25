@@ -322,18 +322,18 @@ private:
     void addFollowupReminder(const QString &messageId);
 
     KMime::Message::Ptr m_msg;
-    MessageComposer::AttachmentControllerBase *m_attachmentController;
-    MessageComposer::AttachmentModel *m_attachmentModel;
-    MessageComposer::SignatureController *m_signatureController;
-    MessageComposer::RecipientsEditor *m_recipientsEditor;
-    KIdentityManagement::IdentityCombo *m_identityCombo;
-    KIdentityManagement::IdentityManager *m_identMan;
-    MessageComposer::RichTextComposerNg *m_editor;
-    MailTransport::TransportComboBox *m_transport;
-    Sonnet::DictionaryComboBox *m_dictionary;
-    Akonadi::CollectionComboBox *m_fccCombo;
+    MessageComposer::AttachmentControllerBase *m_attachmentController = nullptr;
+    MessageComposer::AttachmentModel *m_attachmentModel = nullptr;
+    MessageComposer::SignatureController *m_signatureController = nullptr;
+    MessageComposer::RecipientsEditor *m_recipientsEditor = nullptr;
+    KIdentityManagement::IdentityCombo *m_identityCombo = nullptr;
+    KIdentityManagement::IdentityManager *m_identMan = nullptr;
+    MessageComposer::RichTextComposerNg *m_editor = nullptr;
+    MailTransport::TransportComboBox *m_transport = nullptr;
+    Sonnet::DictionaryComboBox *m_dictionary = nullptr;
+    Akonadi::CollectionComboBox *m_fccCombo = nullptr;
     Akonadi::Collection m_fccCollection;
-    QWidget *m_parentWidget;
+    QWidget *m_parentWidget = nullptr;
 
     // List of active composer jobs. For example, saving as draft, autosaving and printing
     // all create a composer, which is added to this list as long as it is active.
@@ -349,7 +349,7 @@ private:
 
     int m_pendingQueueJobs;
 
-    QTimer *m_autoSaveTimer;
+    QTimer *m_autoSaveTimer = nullptr;
     QString m_autoSaveUUID;
     bool m_autoSaveErrorShown; // Stops an error message being shown every time autosave is executed.
     int m_autoSaveInterval;
@@ -360,7 +360,7 @@ private:
     QDate mFollowUpDate;
     Akonadi::Collection mFollowUpCollection;
 
-    SendLater::SendLaterInfo *mSendLaterInfo;
+    SendLater::SendLaterInfo *mSendLaterInfo = nullptr;
 };
 
 } // namespace

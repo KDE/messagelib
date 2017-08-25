@@ -44,8 +44,8 @@ public:
 
     void fixHtmlFontSize(QString &cleanHtml);
     QString toCleanHtml() const;
-    PimCommon::AutoCorrection *autoCorrection;
-    RichTextComposerNg *richtextComposer;
+    PimCommon::AutoCorrection *autoCorrection = nullptr;
+    RichTextComposerNg *richtextComposer = nullptr;
     MessageComposer::RichTextComposerSignatures *richTextComposerSignatures;
 };
 

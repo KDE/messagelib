@@ -53,23 +53,17 @@ public:
 
     AttachmentModel *const q;
     AttachmentPart::List parts;
-    bool modified;
-    bool encryptEnabled;
-    bool signEnabled;
-    bool encryptSelected;
-    bool signSelected;
-    bool autoDisplayEnabled;
+    bool modified = false;
+    bool encryptEnabled = false;
+    bool signEnabled = false;
+    bool encryptSelected = false;
+    bool signSelected = false;
+    bool autoDisplayEnabled = false;
     QList<QTemporaryDir *> tempDirs;
 };
 
 AttachmentModel::Private::Private(AttachmentModel *qq)
     : q(qq)
-    , modified(false)
-    , encryptEnabled(false)
-    , signEnabled(false)
-    , encryptSelected(false)
-    , signSelected(false)
-    , autoDisplayEnabled(false)
 {
 }
 

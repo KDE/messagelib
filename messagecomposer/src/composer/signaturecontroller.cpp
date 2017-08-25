@@ -37,15 +37,12 @@ class MessageComposer::SignatureControllerPrivate
 {
 public:
     SignatureControllerPrivate()
-        : m_editor(nullptr),
-          m_identityCombo(nullptr),
-          m_currentIdentityId(0)
     {
     }
 
-    MessageComposer::RichTextComposerNg *m_editor;
-    KIdentityManagement::IdentityCombo *m_identityCombo;
-    uint m_currentIdentityId;
+    MessageComposer::RichTextComposerNg *m_editor = nullptr;
+    KIdentityManagement::IdentityCombo *m_identityCombo = nullptr;
+    uint m_currentIdentityId = 0;
 };
 
 SignatureController::SignatureController(QObject *parent) :
