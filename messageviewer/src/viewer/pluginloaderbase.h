@@ -82,9 +82,6 @@ private:
     void doScanOneFolder(const QString &folder);
     const QLibrary *openLibrary(const QString &libName) const;
     mutable QMap< QString, PluginMetaData > mPluginMap;
-
-    class Private;
-    Private *d;
 };
 
 #endif // PLUGINLOADERBASE_H

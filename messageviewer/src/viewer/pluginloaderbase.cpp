@@ -30,7 +30,7 @@
 #include <QDir>
 #include <QStringList>
 
-PluginLoaderBase::PluginLoaderBase() : d(nullptr)
+PluginLoaderBase::PluginLoaderBase()
 {
 }
 
