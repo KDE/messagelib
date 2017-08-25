@@ -73,13 +73,13 @@ protected:
     QString mPositiveBackground;
     QString mNegativeBackground;
     QString mLastSearchStr;
-    PimCommon::LineEditWithCompleterNg *mSearch;
-    QAction *mCaseSensitiveAct;
+    PimCommon::LineEditWithCompleterNg *mSearch = nullptr;
+    QAction *mCaseSensitiveAct = nullptr;
 
-    QPushButton *mFindPrevBtn;
-    QPushButton *mFindNextBtn;
-    QMenu *mOptionsMenu;
-    QLabel *mStatus;
+    QPushButton *mFindPrevBtn = nullptr;
+    QPushButton *mFindNextBtn = nullptr;
+    QMenu *mOptionsMenu = nullptr;
+    QLabel *mStatus = nullptr;
     void addToCompletion(const QString &text);
 };
 

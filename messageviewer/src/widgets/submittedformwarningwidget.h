@@ -35,7 +35,7 @@ public:
     ~SubmittedFormWarningWidget();
 
 public Q_SLOTS:
-    void slotShowWarning();
+    void showWarning();
 };
 }
 

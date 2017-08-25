@@ -42,7 +42,7 @@ public:
     bool isEnabled() const;
 
 private:
-    bool mIsEnabled;
+    bool mIsEnabled = false;
 };
 }
 

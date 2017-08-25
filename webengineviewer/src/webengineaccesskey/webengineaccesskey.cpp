@@ -71,10 +71,10 @@ public:
     QList<QLabel *> mAccessKeyLabels;
     QHash<QChar, WebEngineViewer::WebEngineAccessKeyAnchor> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
-    QWebEngineView *mWebEngine;
+    QWebEngineView *mWebEngine = nullptr;
     AccessKeyState mAccessKeyActivated;
-    KActionCollection *mActionCollection;
-    WebEngineAccessKey *q;
+    KActionCollection *mActionCollection = nullptr;
+    WebEngineAccessKey *q = nullptr;
 };
 
 static QString linkElementKey(const WebEngineViewer::WebEngineAccessKeyAnchor &element, const QUrl &baseUrl)

@@ -55,8 +55,8 @@ private:
     void openClicked();
     void openWithClicked();
     QString text, dontAskName;
-    QDialog *dialog;
-    QDialogButtonBox *mButtonBox;
+    QDialog *dialog = nullptr;
+    QDialogButtonBox *mButtonBox = nullptr;
 };
 }
 

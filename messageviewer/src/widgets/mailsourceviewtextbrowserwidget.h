@@ -67,10 +67,10 @@ public:
 private:
     void slotFind();
     KSyntaxHighlighting::Repository mRepo;
-    MailSourceViewTextBrowser *mTextBrowser;
-    FindBarSourceView *mFindBar;
-    KPIMTextEdit::SlideContainer *mSliderContainer;
-    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget;
+    MailSourceViewTextBrowser *mTextBrowser = nullptr;
+    FindBarSourceView *mFindBar = nullptr;
+    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
 };
 
 class MailSourceViewTextBrowser : public QPlainTextEdit
@@ -86,7 +86,7 @@ Q_SIGNALS:
 private:
     void slotSpeakText();
     void slotSaveAs();
-    KPIMTextEdit::TextToSpeechInterface *mTextToSpeechInterface;
+    KPIMTextEdit::TextToSpeechInterface *mTextToSpeechInterface = nullptr;
 };
 }
 #endif // MAILSOURCEVIEWTEXTBROWSERWIDGET_H

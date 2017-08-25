@@ -31,7 +31,7 @@ using KMime::Content;
 class Q_DECL_HIDDEN MessageCore::AttachmentFromMimeContentJob::Private
 {
 public:
-    const Content *mMimeContent;
+    const Content *mMimeContent = nullptr;
 };
 
 AttachmentFromMimeContentJob::AttachmentFromMimeContentJob(const Content *content, QObject *parent)

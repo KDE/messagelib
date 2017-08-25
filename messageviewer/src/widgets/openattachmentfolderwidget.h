@@ -42,7 +42,7 @@ private:
     void slotTimeOut();
     void slotExplicitlyClosed();
     QUrl mUrl;
-    QTimer *mTimer;
+    QTimer *mTimer = nullptr;
 };
 }
 

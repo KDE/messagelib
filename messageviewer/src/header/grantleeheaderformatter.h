@@ -35,18 +35,14 @@ class MESSAGEVIEWER_EXPORT GrantleeHeaderFormatter
 public:
     struct GrantleeHeaderFormatterSettings {
         GrantleeHeaderFormatterSettings()
-            : isPrinting(false)
-            , style(nullptr)
-            , message(nullptr)
-            , showEmoticons(true)
         {
         }
 
         GrantleeTheme::Theme theme;
-        bool isPrinting;
-        mutable const MessageViewer::HeaderStyle *style;
-        KMime::Message *message;
-        bool showEmoticons;
+        bool isPrinting = false;
+        mutable const MessageViewer::HeaderStyle *style = nullptr;
+        KMime::Message *message = nullptr;
+        bool showEmoticons = true;
     };
 
     explicit GrantleeHeaderFormatter();

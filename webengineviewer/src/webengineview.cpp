@@ -80,11 +80,11 @@ public:
     }
 
     qreal mSavedRelativePosition;
-    QWidget *mCurrentWidget;
-    WebEngineManageScript *mManagerScript;
-    WebEngineNavigationRequestInterceptor *mWebEngineNavigatorInterceptor;
-    WebEngineView *mWebEngineNavigatorInterceptorView;
-    LocalDataBaseManager *mPhishingDatabase;
+    QWidget *mCurrentWidget = nullptr;
+    WebEngineManageScript *mManagerScript = nullptr;
+    WebEngineNavigationRequestInterceptor *mWebEngineNavigatorInterceptor = nullptr;
+    WebEngineView *mWebEngineNavigatorInterceptorView = nullptr;
+    LocalDataBaseManager *mPhishingDatabase = nullptr;
     int mCrashCount;
 
 private:

@@ -34,22 +34,17 @@ class WebEngineViewer::ZoomActionMenuPrivate
 {
 public:
     ZoomActionMenuPrivate(KActionMenu *qq)
-        : mZoomFactor(100),
-          mZoomInAction(nullptr),
-          mZoomOutAction(nullptr),
-          mZoomResetAction(nullptr),
-          mActionCollection(nullptr),
-          q(qq)
+        : q(qq)
     {
 
     }
     void createMenu();
-    qreal mZoomFactor;
-    QAction *mZoomInAction;
-    QAction *mZoomOutAction;
-    QAction *mZoomResetAction;
-    KActionCollection *mActionCollection;
-    KActionMenu *q;
+    qreal mZoomFactor = 100;
+    QAction *mZoomInAction = nullptr;
+    QAction *mZoomOutAction = nullptr;
+    QAction *mZoomResetAction = nullptr;
+    KActionCollection *mActionCollection = nullptr;
+    KActionMenu *q = nullptr;
 };
 
 ZoomActionMenu::ZoomActionMenu(QObject *parent)

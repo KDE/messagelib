@@ -44,7 +44,7 @@ private:
     void updateSensitivity(bool) override;
 
 private:
-    QPlainTextEdit *mView;
+    QPlainTextEdit *mView = nullptr;
 };
 }
 

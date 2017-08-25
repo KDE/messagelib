@@ -39,7 +39,7 @@ SubmittedFormWarningWidget::~SubmittedFormWarningWidget()
 {
 }
 
-void SubmittedFormWarningWidget::slotShowWarning()
+void SubmittedFormWarningWidget::showWarning()
 {
     animatedShow();
 }

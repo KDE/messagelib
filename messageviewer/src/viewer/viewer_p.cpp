@@ -3292,7 +3292,7 @@ void ViewerPrivate::slotAddToWhiteList()
 
 void ViewerPrivate::slotFormSubmittedForbidden()
 {
-    mSubmittedFormWarning->slotShowWarning();
+    mSubmittedFormWarning->showWarning();
 }
 
 void ViewerPrivate::addHelpTextAction(QAction *act, const QString &text)

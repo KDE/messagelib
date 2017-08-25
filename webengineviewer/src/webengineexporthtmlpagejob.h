@@ -45,7 +45,7 @@ private Q_SLOTS:
     void slotSaveHtmlToPage(const QString &text);
 
 private:
-    QWebEngineView *mEngineView;
+    QWebEngineView *mEngineView = nullptr;
 };
 }
 

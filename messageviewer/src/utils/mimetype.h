@@ -59,7 +59,7 @@ QString MESSAGEVIEWER_EXPORT iconPathForContent(KMime::Content *node, int iconSi
 struct AttachmentDisplayInfo {
     QString label;
     QString icon;
-    bool displayInHeader;
+    bool displayInHeader = false;
 };
 
 AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
