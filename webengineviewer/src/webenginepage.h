@@ -29,7 +29,6 @@ class QPrinter;
 namespace WebEngineViewer
 {
 class WebHitTest;
-class WebEnginePagePrivate;
 class WEBENGINEVIEWER_EXPORT WebEnginePage : public QWebEnginePage
 {
     Q_OBJECT
@@ -53,7 +52,6 @@ protected:
 
 private:
     void init();
-    WebEnginePagePrivate *const d;
 };
 }
 

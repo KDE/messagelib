@@ -33,32 +33,20 @@
 #include <QPrinter>
 using namespace WebEngineViewer;
 
-class WebEngineViewer::WebEnginePagePrivate
-{
-public:
-    WebEnginePagePrivate()
-    {
-
-    }
-};
-
 WebEnginePage::WebEnginePage(QObject *parent)
-    : QWebEnginePage(parent),
-      d(new WebEnginePagePrivate)
+    : QWebEnginePage(parent)
 {
     init();
 }
 
 WebEnginePage::WebEnginePage(QWebEngineProfile *profile, QObject *parent)
-    : QWebEnginePage(profile, parent),
-      d(new WebEnginePagePrivate)
+    : QWebEnginePage(profile, parent)
 {
     init();
 }
 
 WebEnginePage::~WebEnginePage()
 {
-    delete d;
 }
 
 void WebEnginePage::init()
