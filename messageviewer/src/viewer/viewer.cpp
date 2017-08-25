@@ -111,7 +111,6 @@ void Viewer::initialize()
             this, &Viewer::itemRemoved);
     connect(d_ptr, &ViewerPrivate::changeDisplayMail, this, &Viewer::slotChangeDisplayMail);
     connect(d_ptr, &ViewerPrivate::moveMessageToTrash, this, &Viewer::moveMessageToTrash);
-    connect(d_ptr, &ViewerPrivate::executeMailAction, this, &Viewer::executeMailAction);
     connect(d_ptr, &ViewerPrivate::pageIsScrolledToBottom, this, &Viewer::pageIsScrolledToBottom);
     connect(d_ptr, &ViewerPrivate::printingFinished, this, &Viewer::printingFinished);
 

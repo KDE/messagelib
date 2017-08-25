@@ -3270,11 +3270,6 @@ void ViewerPrivate::saveMainFrameScreenshotInFile(const QString &filename)
     mViewer->saveMainFrameScreenshotInFile(filename);
 }
 
-void ViewerPrivate::setMailAction(MessageViewer::Viewer::MailAction type)
-{
-    Q_EMIT executeMailAction(type);
-}
-
 void ViewerPrivate::slotAddToWhiteList()
 {
     if (mMessageItem.isValid()) {

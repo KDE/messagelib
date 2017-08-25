@@ -72,7 +72,6 @@ public:
 
     QString subjectDirectionString(KMime::Message *message) const;
 
-    QString mailAction(MessageViewer::Viewer::MailAction action) const;
 
     QString spamStatus(KMime::Message *message) const;
 
@@ -84,7 +83,6 @@ public:
     QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message) const;
 
     xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
-    void addMailAction(QVariantHash &headerObject);
 private:
     void updateXFaceSettings(QImage photo, xfaceSettings &settings) const;
     QString drawSpamMeter(SpamError spamError, double percent, double confidence,

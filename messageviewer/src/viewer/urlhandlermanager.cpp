@@ -83,80 +83,6 @@ using namespace MessageCore;
 URLHandlerManager *URLHandlerManager::self = nullptr;
 
 namespace {
-class KMailActionURLHandler : public MimeTreeParser::URLHandler
-{
-public:
-    KMailActionURLHandler() : MimeTreeParser::URLHandler()
-    {
-    }
-
-    ~KMailActionURLHandler()
-    {
-    }
-
-    bool handleClick(const QUrl &url, ViewerPrivate *viewer) const override
-    {
-        if (url.scheme() == QLatin1String("kmailaction")) {
-            const QString urlPath(url.path());
-            if (urlPath == QStringLiteral("trash")) {
-                viewer->setMailAction(MessageViewer::Viewer::Trash);
-                return true;
-            } else if (urlPath == QStringLiteral("reply")) {
-                viewer->setMailAction(MessageViewer::Viewer::Reply);
-                return true;
-            } else if (urlPath == QStringLiteral("replyToAll")) {
-                viewer->setMailAction(MessageViewer::Viewer::ReplyToAll);
-                return true;
-            } else if (urlPath == QStringLiteral("forward")) {
-                viewer->setMailAction(MessageViewer::Viewer::Forward);
-                return true;
-            } else if (urlPath == QStringLiteral("newMessage")) {
-                viewer->setMailAction(MessageViewer::Viewer::NewMessage);
-                return true;
-            } else if (urlPath == QStringLiteral("print")) {
-                viewer->setMailAction(MessageViewer::Viewer::Print);
-                return true;
-            } else if (urlPath == QStringLiteral("printpreview")) {
-                viewer->setMailAction(MessageViewer::Viewer::PrintPreview);
-                return true;
-            } else {
-                qCDebug(MESSAGEVIEWER_LOG) << "Unknown urlPath " << urlPath;
-            }
-        }
-        return false;
-    }
-
-    bool handleContextMenuRequest(const QUrl &url, const QPoint &, ViewerPrivate *) const override
-    {
-        return url.scheme() == QLatin1String("kmailaction");
-    }
-
-    QString statusBarMessage(const QUrl &url, ViewerPrivate *) const override
-    {
-        if (url.scheme() == QLatin1String("kmailaction")) {
-            const QString urlPath(url.path());
-            if (urlPath == QStringLiteral("trash")) {
-                return i18n("Move To Trash");
-            } else if (urlPath == QStringLiteral("reply")) {
-                return i18n("Reply");
-            } else if (urlPath == QStringLiteral("replyToAll")) {
-                return i18n("Reply To All");
-            } else if (urlPath == QStringLiteral("forward")) {
-                return i18n("Forward");
-            } else if (urlPath == QStringLiteral("newMessage")) {
-                return i18n("New Message");
-            } else if (urlPath == QStringLiteral("print")) {
-                return i18n("Print Message");
-            } else if (urlPath == QStringLiteral("printpreview")) {
-                return i18n("Print Preview Message");
-            } else {
-                qCDebug(MESSAGEVIEWER_LOG) << "Unknown urlPath " << urlPath;
-            }
-        }
-        return QString();
-    }
-};
-
 class KMailProtocolURLHandler : public MimeTreeParser::URLHandler
 {
 public:
@@ -563,7 +489,6 @@ URLHandlerManager::URLHandlerManager()
     registerHandler(new ShowAuditLogURLHandler());
     registerHandler(new InternalImageURLHandler);
     registerHandler(new KRunURLHandler());
-    registerHandler(new KMailActionURLHandler());
     //registerHandler(new EmbeddedImageURLHandler());
 }
 

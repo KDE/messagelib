@@ -282,8 +282,6 @@ public:
 
     void saveMainFrameScreenshotInFile(const QString &filename);
 
-    void setMailAction(MessageViewer::Viewer::MailAction type);
-
 private:
     /** HTML initialization. */
     void initHtmlWidget();
@@ -586,7 +584,6 @@ Q_SIGNALS:
 
     void changeDisplayMail(Viewer::DisplayFormatMessage, bool);
     void moveMessageToTrash();
-    void executeMailAction(MessageViewer::Viewer::MailAction type);
     void pageIsScrolledToBottom(bool);
     void printingFinished();
 private:

@@ -356,8 +356,6 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
         headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }
 
-    //Action
-    d->headerStyleUtil.addMailAction(headerObject);
     QVariantHash mapping;
     mapping.insert(QStringLiteral("header"), headerObject);
     Grantlee::Context context(mapping);

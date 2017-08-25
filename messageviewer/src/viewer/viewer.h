@@ -148,16 +148,6 @@ public:
         ReplyMessageToAll = 11
     };
 
-    enum MailAction {
-        Trash = 0,
-        Reply,
-        ReplyToAll,
-        Forward,
-        NewMessage,
-        Print,
-        PrintPreview
-    };
-
     enum ResourceOnlineMode {
         AllResources = 0,
         SelectedResource = 1
@@ -344,7 +334,6 @@ public:
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
-    void executeMailAction(MessageViewer::Viewer::MailAction type);
 
     /**
     * Emitted when a status bar message is shown. Note that the status bar message is also set to
