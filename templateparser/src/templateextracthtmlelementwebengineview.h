@@ -52,7 +52,7 @@ private:
     QString mHeaderElement;
     QString mHtmlElement;
 
-    TemplateWebEnginePage *mPage;
+    TemplateWebEnginePage *mPage = nullptr;
 };
 }
 #endif // TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEW_H

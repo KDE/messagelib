@@ -54,9 +54,9 @@ private:
     void writeConfig();
 
 private:
-    QLineEdit *mTitleEdit;
-    QTreeWidget *mRecipientsList;
-    QPushButton *mUser1Button;
+    QLineEdit *mTitleEdit = nullptr;
+    QTreeWidget *mRecipientsList = nullptr;
+    QPushButton *mUser1Button = nullptr;
 };
 
 }

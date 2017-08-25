@@ -30,8 +30,8 @@ public:
     {
     }
 
-    QWidget *mParentWidget;
-    KPIMTextEdit::RichTextComposer *mEditor;
+    QWidget *mParentWidget = nullptr;
+    KPIMTextEdit::RichTextComposer *mEditor = nullptr;
 };
 
 PluginEditorInitInterface::PluginEditorInitInterface(QObject *parent)

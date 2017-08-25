@@ -41,7 +41,7 @@ Q_SIGNALS:
 
 private:
     void initializeEmailWidget();
-    TemplateParser::TemplateParserEmailAddressRequesterBase *mTemplateParserEmailBase;
+    TemplateParser::TemplateParserEmailAddressRequesterBase *mTemplateParserEmailBase = nullptr;
 };
 }
 #endif // TEMPLATEPARSEREMAILADDRESSREQUESTERINTERFACEWIDGET_H

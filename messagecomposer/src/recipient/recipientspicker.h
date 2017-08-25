@@ -69,14 +69,14 @@ protected Q_SLOTS:
     void slotSelectionChanged();
 
 private:
-    MessageComposer::RecipientsPickerWidget *mView;
+    MessageComposer::RecipientsPickerWidget *mView = nullptr;
 
-    KLDAP::LdapSearchDialog *mLdapSearchDialog;
+    KLDAP::LdapSearchDialog *mLdapSearchDialog = nullptr;
 
     Recipient::Type mDefaultType;
-    QPushButton *mUser3Button;
-    QPushButton *mUser2Button;
-    QPushButton *mUser1Button;
+    QPushButton *mUser3Button = nullptr;
+    QPushButton *mUser2Button = nullptr;
+    QPushButton *mUser1Button = nullptr;
 
 };
 

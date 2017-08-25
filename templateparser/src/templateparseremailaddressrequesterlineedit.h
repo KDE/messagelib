@@ -35,7 +35,7 @@ public:
     void setText(const QString &str) override;
     void clear() override;
 private:
-    QLineEdit *mLineEdit;
+    QLineEdit *mLineEdit = nullptr;
 };
 }
 #endif // TEMPLATEPARSEREMAILADDRESSREQUESTERLINEEDIT_H

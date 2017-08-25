@@ -25,11 +25,10 @@ class MessageComposer::PluginEditorInitPrivate
 {
 public:
     PluginEditorInitPrivate()
-        : mIsEnabled(false)
     {
     }
 
-    bool mIsEnabled;
+    bool mIsEnabled = false;
 };
 
 PluginEditorInit::PluginEditorInit(QObject *parent)

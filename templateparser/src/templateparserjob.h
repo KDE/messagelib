@@ -390,12 +390,12 @@ private:
     bool mDebug;
     QString mQuoteString;
     QString mTo, mCC;
-    KIdentityManagement::IdentityManager *m_identityManager;
+    KIdentityManagement::IdentityManager *m_identityManager = nullptr;
     bool mWrap;
     int mColWrap;
     QStringList m_charsets;
-    MimeTreeParser::ObjectTreeParser *mOtp;
-    MessageViewer::EmptySource *mEmptySource;
+    MimeTreeParser::ObjectTreeParser *mOtp = nullptr;
+    MessageViewer::EmptySource *mEmptySource = nullptr;
     QString mHeadElement;
     Quotes mQuotes;
     TemplateParserExtractHtmlInfoResult mExtractHtmlInfoResult;

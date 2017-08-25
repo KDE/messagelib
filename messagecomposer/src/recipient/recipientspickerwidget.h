@@ -39,7 +39,7 @@ public:
 
     Akonadi::EmailAddressSelectionWidget *emailAddressSelectionWidget() const;
 private:
-    Akonadi::EmailAddressSelectionWidget *mView;
+    Akonadi::EmailAddressSelectionWidget *mView = nullptr;
 };
 }
 

@@ -25,11 +25,10 @@ class MessageComposer::PluginEditorPrivate
 {
 public:
     PluginEditorPrivate()
-        : order(0)
     {
 
     }
-    int order;
+    int order = 0;
 };
 
 PluginEditor::PluginEditor(QObject *parent)

@@ -41,7 +41,7 @@ protected:
     void clearDecorator() override;
     void createHighlighter() override;
 private:
-    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
+    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
 };
 }
 #endif // TEMPLATESTEXTEDITOR_H

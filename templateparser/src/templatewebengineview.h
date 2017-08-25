@@ -45,7 +45,7 @@ private:
     void setPlainText(const QString &plainText);
 
     QString mExtractedPlainText;
-    TemplateWebEnginePage *mPage;
+    TemplateWebEnginePage *mPage = nullptr;
 };
 }
 #endif // TEMPLATEWEBENGINEVIEW_H

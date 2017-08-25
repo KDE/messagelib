@@ -55,8 +55,8 @@ private:
 
     QString mTemplateStr;
 
-    TemplateWebEngineView *mTemplateWebEngineView;
-    TemplateExtractHtmlElementWebEngineView *mExtractHtmlElementWebEngineView;
+    TemplateWebEngineView *mTemplateWebEngineView = nullptr;
+    TemplateExtractHtmlElementWebEngineView *mExtractHtmlElementWebEngineView = nullptr;
 };
 }
 #endif // TEMPLATEPARSEREXTRACTHTMLINFO_H

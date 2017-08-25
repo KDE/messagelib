@@ -116,7 +116,7 @@ public Q_SLOTS:
     void slotMapped(int cmd);
 
 protected:
-    KActionMenu *mMenu;
+    KActionMenu *mMenu = nullptr;
 };
 
 }

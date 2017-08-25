@@ -32,16 +32,14 @@ class PluginEditorCheckBeforeSendInfo
 {
 public:
     PluginEditorCheckBeforeSendInfo()
-        : plugin(nullptr),
-          isEnabled(true)
     {
 
     }
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
-    PluginEditorCheckBeforeSend *plugin;
-    bool isEnabled;
+    PluginEditorCheckBeforeSend *plugin = nullptr;
+    bool isEnabled = true;
 };
 
 namespace

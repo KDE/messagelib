@@ -56,15 +56,15 @@ Q_SIGNALS:
     void saveDistributionList();
 
 private:
-    RecipientsEditor *mEditor;
-    QLabel *mTotalLabel;
-    QPushButton *mDistributionListButton;
-    QPushButton *mSelectButton;
+    RecipientsEditor *mEditor = nullptr;
+    QLabel *mTotalLabel = nullptr;
+    QPushButton *mDistributionListButton = nullptr;
+    QPushButton *mSelectButton = nullptr;
     /** The RecipientsPicker is lazy loaded, never access it directly,
       only through picker() */
-    mutable MessageComposer::RecipientsPicker *mRecipientPicker;
+    mutable MessageComposer::RecipientsPicker *mRecipientPicker = nullptr;
     /** lazy loaded, don't access directly, unless you've called picker() */
-    mutable MessageComposer::KWindowPositioner *mPickerPositioner;
+    mutable MessageComposer::KWindowPositioner *mPickerPositioner = nullptr;
 };
 }
 

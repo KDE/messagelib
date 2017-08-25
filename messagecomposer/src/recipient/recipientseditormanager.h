@@ -42,7 +42,7 @@ public:
     Akonadi::EmailAddressSelectionModel *model();
 
 private:
-    Akonadi::EmailAddressSelectionModel *mModel;
+    Akonadi::EmailAddressSelectionModel *mModel = nullptr;
 };
 }
 

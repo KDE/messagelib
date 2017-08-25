@@ -128,8 +128,8 @@ protected:
 private:
     void dataFromFields();
     void fieldsFromData();
-    RecipientComboBox *mCombo;
-    RecipientLineEdit *mEdit;
+    RecipientComboBox *mCombo = nullptr;
+    RecipientLineEdit *mEdit = nullptr;
     int mRecipientsCount;
     bool mModified;
     QSharedPointer<Recipient> mData;
