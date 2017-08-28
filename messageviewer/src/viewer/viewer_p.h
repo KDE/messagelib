@@ -568,7 +568,6 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void showStatusBarMessage(const QString &message);
-    void replaceMsgByUnencryptedVersion();
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl,
                    const QPoint &mousePos);
     void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result,

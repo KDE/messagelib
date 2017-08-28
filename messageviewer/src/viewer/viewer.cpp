@@ -91,8 +91,6 @@ Viewer::~Viewer()
 
 void Viewer::initialize()
 {
-    connect(d_ptr, &ViewerPrivate::replaceMsgByUnencryptedVersion,
-            this, &Viewer::replaceMsgByUnencryptedVersion);
     connect(d_ptr, &ViewerPrivate::displayPopupMenu,
             this, &Viewer::displayPopupMenu);
     connect(d_ptr, &ViewerPrivate::popupMenu,

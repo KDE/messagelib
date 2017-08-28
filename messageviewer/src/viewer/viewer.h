@@ -341,12 +341,6 @@ Q_SIGNALS:
     */
     void showStatusBarMessage(const QString &message);
 
-    /**
-    * Emitted after parsing of a message to have it stored
-    * in unencrypted state in it's folder.
-    */
-    void replaceMsgByUnencryptedVersion();
-
     /** The user presses the right mouse button. 'url' may be 0. */
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl,
                    const QPoint &mousePos);
