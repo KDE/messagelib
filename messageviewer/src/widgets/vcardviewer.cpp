@@ -98,7 +98,7 @@ VCardViewer::~VCardViewer()
 
 void VCardViewer::readConfig()
 {
-    KConfigGroup group(MessageViewer::MessageViewerSettings::self()->config(), "VCardViewer");
+    KConfigGroup group(KSharedConfig::openConfig(), "VCardViewer");
     const QSize size = group.readEntry("Size", QSize(300, 400));
     if (size.isValid()) {
         resize(size);
@@ -107,7 +107,7 @@ void VCardViewer::readConfig()
 
 void VCardViewer::writeConfig()
 {
-    KConfigGroup group(MessageViewer::MessageViewerSettings::self()->config(), "VCardViewer");
+    KConfigGroup group(KSharedConfig::openConfig(), "VCardViewer");
     group.writeEntry("Size", size());
     group.sync();
 }

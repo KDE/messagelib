@@ -103,7 +103,7 @@ void ScamDetectionDetailsDialog::setDetails(const QString &details)
 void ScamDetectionDetailsDialog::readConfig()
 {
     KConfigGroup group(
-        MessageViewer::MessageViewerSettings::self()->config(), "ScamDetectionDetailsDialog");
+        KSharedConfig::openConfig(), "ScamDetectionDetailsDialog");
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
@@ -113,7 +113,7 @@ void ScamDetectionDetailsDialog::readConfig()
 void ScamDetectionDetailsDialog::writeConfig()
 {
     KConfigGroup group(
-        MessageViewer::MessageViewerSettings::self()->config(), "ScamDetectionDetailsDialog");
+        KSharedConfig::openConfig(), "ScamDetectionDetailsDialog");
     group.writeEntry("Size", size());
     group.sync();
 }

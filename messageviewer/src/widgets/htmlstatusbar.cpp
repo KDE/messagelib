@@ -182,7 +182,7 @@ QString HtmlStatusBar::toolTip() const
 
 QColor HtmlStatusBar::fgColor() const
 {
-    KConfigGroup conf(MessageViewer::MessageViewerSettings::self()->config(), "Reader");
+    KConfigGroup conf(KSharedConfig::openConfig(), "Reader");
     QColor defaultColor, color;
     switch (mode()) {
     case MimeTreeParser::Util::Html:
@@ -209,7 +209,7 @@ QColor HtmlStatusBar::fgColor() const
 
 QColor HtmlStatusBar::bgColor() const
 {
-    KConfigGroup conf(MessageViewer::MessageViewerSettings::self()->config(), "Reader");
+    KConfigGroup conf(KSharedConfig::openConfig(), "Reader");
 
     QColor defaultColor, color;
     switch (mode()) {
