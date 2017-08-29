@@ -284,18 +284,15 @@ QString MessageItem::annotation() const
     return QString();
 }
 
-void MessageItem::editAnnotation()
+void MessageItem::editAnnotation(QWidget *parent)
 {
     Q_D(MessageItem);
-    if (d->mAnnotationDialog.data()) {
-        return;
-    }
-    d->mAnnotationDialog = new PimCommon::AnnotationEditDialog(d->mAkonadiItem);
-    d->mAnnotationDialog.data()->setAttribute(Qt::WA_DeleteOnClose);
+    QPointer<PimCommon::AnnotationEditDialog> mAnnotationDialog = new PimCommon::AnnotationEditDialog(d->mAkonadiItem, parent);
     //FIXME make async
-    if (d->mAnnotationDialog.data()->exec()) {
+    if (mAnnotationDialog->exec()) {
         // invalidate the cached mHasAnnotation value
     }
+    delete mAnnotationDialog;
 }
 
 const MessageItem::Tag *MessageItemPrivate::findTagInternal(const QString &szTagId) const
