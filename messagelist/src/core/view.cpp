@@ -2074,7 +2074,7 @@ void View::mousePressEvent(QMouseEvent *e)
 
                 switch (d->mDelegate->hitContentItem()->type()) {
                 case Theme::ContentItem::AnnotationIcon:
-                    static_cast< MessageItem * >(it)->editAnnotation();
+                    static_cast< MessageItem * >(it)->editAnnotation(this);
                     return; // don't select the item
                     break;
                 case Theme::ContentItem::ActionItemStateIcon:

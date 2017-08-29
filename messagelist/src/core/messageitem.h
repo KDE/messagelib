@@ -106,7 +106,7 @@ public:
     QString annotation() const;
 
     /// Shows a dialog to edit or delete the annotation
-    void editAnnotation();
+    void editAnnotation(QWidget *parent);
 
     /**
     * Returns Tag associated to this message that has the specified id or 0

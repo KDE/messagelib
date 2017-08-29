@@ -28,7 +28,7 @@
 #include <Monitor>
 #include <Tag>
 #include <KJob>
-#include <QWeakPointer>
+#include <QPointer>
 #include <QCache>
 
 namespace MessageList
@@ -72,7 +72,6 @@ public:
     QByteArray mReferencesIdMD5;         ///< set only if we're doing threading
     QByteArray mStrippedSubjectMD5;      ///< set only if we're doing threading
     Akonadi::Item mAkonadiItem;
-    QWeakPointer<PimCommon::AnnotationEditDialog> mAnnotationDialog;
     MessageItem::ThreadingStatus mThreadingStatus : 4;
     MessageItem::EncryptionState mEncryptionState : 4;
     MessageItem::SignatureState mSignatureState : 4;
