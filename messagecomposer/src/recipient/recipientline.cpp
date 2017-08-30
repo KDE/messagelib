@@ -149,7 +149,6 @@ void RecipientLineNG::setData(const MultiplyingLineData::Ptr &data)
     if (!rec) {
         return;
     }
-    //TODO laurent: mem leak ????? mData(new Recipient) in constructor, never deleted.
     mData = rec;
     fieldsFromData();
 }
