@@ -44,10 +44,12 @@
 				{% endif %}
 			</div>
 		</div>
+                {% if header.to %}
 		<div class="row">
 			<div class="headerleft">{{ header.toi18n }}</div>
 			<div class="headerright">{{ header.toExpandable|safe }}</div>
 		</div>
+                {% endif %}
 		{% if header.cc %}
 		<div class="row">
 			<div class="headerleft">{{ header.cci18n }}</div>
