@@ -40,7 +40,6 @@ namespace Core
 
 typedef long int MessageItemSetReference;
 
-class ViewItemJob;
 class Filter;
 class GroupHeaderItem;
 class Item;
@@ -48,8 +47,6 @@ class Manager;
 class MessageItem;
 class Theme;
 class StorageModel;
-class ModelInvariantRowMapper;
-class MessageItemSetManager;
 class View;
 class ModelPrivate;
 

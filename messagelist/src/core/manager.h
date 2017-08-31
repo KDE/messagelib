@@ -27,7 +27,6 @@
 #include <QObject>
 
 #include <collection.h>
-class QPixmap;
 
 namespace KMime
 {

@@ -27,13 +27,14 @@
 #include <QTimer>
 
 class QElapsedTimer;
-
 namespace MessageList
 {
 
 namespace Core
 {
-
+class ViewItemJob;
+class ModelInvariantRowMapper;
+class MessageItemSetManager;
 class ModelPrivate
 {
 public:
