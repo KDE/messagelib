@@ -79,7 +79,7 @@ QString MessageList::Util::storageModelSelectedMessageGroup()
 
 void MessageList::Util::deleteConfig(const QString &collectionId)
 {
-    KConfigGroup confselectedMessage(MessageList::MessageListSettings::self()->config(),
+    KConfigGroup confselectedMessage(MessageListSettings::self()->config(),
                                      MessageList::Util::storageModelSelectedMessageGroup());
     confselectedMessage.deleteEntry(MessageList::Util::messageUniqueIdConfigName().arg(collectionId));
 
