@@ -108,7 +108,7 @@ int main(int argc, char **argv)
     } else {
         fileName
             = QFileDialog::getOpenFileName(nullptr, QString(), QString(),
-                                           i18n("HTML File (*.html)"));
+                                           QStringLiteral("HTML File (*.html)"));
     }
     if (fileName.isEmpty()) {
         return 0;
