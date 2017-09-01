@@ -1093,6 +1093,12 @@ bool Widget::selectionEmpty() const
     return d->mView->selectionEmpty();
 }
 
+
+Akonadi::Collection Widget::currentFolder() const
+{
+    return d->mCurrentFolder;
+}
+
 void Widget::setCurrentFolder(const Akonadi::Collection &collection)
 {
     d->mCurrentFolder = collection;

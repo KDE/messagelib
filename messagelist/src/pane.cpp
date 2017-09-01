@@ -713,6 +713,15 @@ MessageList::StorageModel *Pane::createStorageModel(QAbstractItemModel *model, Q
     return new MessageList::StorageModel(model, selectionModel, parent);
 }
 
+Akonadi::Collection Pane::currentFolder() const
+{
+    Widget *w = static_cast<Widget *>(currentWidget());
+    if (w) {
+        return w->currentCollection();
+    }
+    return {};
+}
+
 void Pane::setCurrentFolder(const Akonadi::Collection &collection, bool, Core::PreSelectionMode preSelectionMode, const QString &overrideLabel)
 {
     d->mPreSelectionMode = preSelectionMode;

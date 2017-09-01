@@ -382,6 +382,9 @@ public:
     void populateStatusFilterCombo();
 
     Core::QuickSearchLine::SearchOptions currentOptions() const;
+
+    Akonadi::Collection currentFolder() const;
+
 public Q_SLOTS:
     /**
     * Selects all the items in the current folder.

@@ -128,6 +128,7 @@ public:
     * Sets the current folder.
     */
     void setCurrentFolder(const Akonadi::Collection &collection);
+    Akonadi::Collection currentFolder() const;
 
     void saveCurrentSelection();
 
