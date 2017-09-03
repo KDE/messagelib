@@ -15,7 +15,6 @@ set(templateparser_LIB_SRCS
     templatesinsertcommand.cpp
     templatestextedit.cpp
     templatestexteditor.cpp
-    templatessyntaxhighlighterrules.cpp
     templatewebengineview.cpp
     templatewebenginepage.cpp
     templateextracthtmlelementwebengineview.cpp
@@ -57,6 +56,7 @@ target_link_libraries(KF5TemplateParser
     KF5::Libkleo
     KF5::I18n
     KF5::SonnetUi
+    KF5::SyntaxHighlighting
     Qt5::WebEngineWidgets
     )
 set_target_properties(KF5TemplateParser PROPERTIES
@@ -120,4 +120,4 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
-
+install(FILES syntax/kmail-template.xml DESTINATION ${KDE_INSTALL_DATADIR}/org.kde.syntax-highlighting/syntax)

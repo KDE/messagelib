@@ -17,9 +17,12 @@
 
 #include "templatestexteditor.h"
 #include "templatesutil_p.h"
-#include "templatessyntaxhighlighterrules.h"
+
 #include <KPIMTextEdit/TextEditorCompleter>
-#include <KPIMTextEdit/SyntaxHighlighterBase>
+#include <KPIMTextEdit/PlainTextSyntaxSpellCheckingHighlighter>
+
+#include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/Theme>
 
 #include <QCompleter>
 #include <QKeyEvent>
@@ -27,8 +30,6 @@
 #include <QStringListModel>
 #include <QAbstractItemView>
 #include <QFontDatabase>
-
-#include <kpimtextedit/plaintextsyntaxspellcheckinghighlighter.h>
 
 using namespace TemplateParser;
 
@@ -73,8 +74,10 @@ void TemplatesTextEditor::createHighlighter()
     KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *highlighter = new KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter(this);
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     highlighter->setCurrentLanguage(spellCheckingLanguage());
-    TemplatesSyntaxHighlighterRules rules;
-    highlighter->setSyntaxHighlighterRules(rules.rules());
+    highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("KMail Template")));
+    highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128)
+        ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+        : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     setHighlighter(highlighter);
 }
 

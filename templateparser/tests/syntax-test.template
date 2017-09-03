@@ -1,0 +1,31 @@
+%REM="Default new message template"%-
+%BLANK
+
+%REM="Default reply template"%-
+On %ODATE %OTIMELONG you wrote:
+%QUOTE
+%CURSOR
+
+%REM="Default reply all template"%-
+On %ODATE %OTIMELONG %OFROMNAME wrote:
+%QUOTE
+%CURSOR
+
+%REM="Default forward template"%-
+
+----------  Forwarded Message  ----------
+
+Subject: %OFULLSUBJECT
+Date: %ODATE, %OTIMELONG
+From: %OFROMADDR
+%OADDRESSEESADDR
+
+%TEXT "quoted" speling error
+-----------------------------------------
+
+%REM="Comment with alert TODO and speling error"%-
+
+%MSGPIPE="argument \
+    continued"
+
+%OHEADER="X-KMail"

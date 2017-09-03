@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language
+    name="KMail Template"
+    version="1"
+    kateversion="5.0"
+    section="Other"
+    extensions=""
+    author="Volker Krause (vkrause@kde.org)"
+    license="MIT"
+    hidden="true">
+    <highlighting>
+        <list name="keyword-list">
+            <item>%QUOTE</item>
+            <item>%FORCEDPLAIN</item>
+            <item>%FORCEDHTML</item>
+            <item>%QHEADERS</item>
+            <item>%HEADERS</item>
+            <item>%TEXT</item>
+            <item>%OTEXTSIZE</item>
+            <item>%OTEXT</item>
+            <item>%OADDRESSEESADDR</item>
+            <item>%CCADDR</item>
+            <item>%CCNAME</item>
+            <item>%CCFNAME</item>
+            <item>%CCLNAME</item>
+            <item>%TOADDR</item>
+            <item>%TONAME</item>
+            <item>%TOFNAME</item>
+            <item>%TOLNAME</item>
+            <item>%TOLIST</item>
+            <item>%FROMADDR</item>
+            <item>%FROMNAME</item>
+            <item>%FROMFNAME</item>
+            <item>%FROMLNAME</item>
+            <item>%FULLSUBJECT</item>
+            <item>%MSGID</item>
+            <item>%HEADER\\( </item>
+            <item>%OCCADDR</item>
+            <item>%OCCNAME</item>
+            <item>%OCCFNAME</item>
+            <item>%OCCLNAME</item>
+            <item>%OTOADDR</item>
+            <item>%OTONAME</item>
+            <item>%OTOFNAME</item>
+            <item>%OTOLNAME</item>
+            <item>%OTOLIST</item>
+            <item>%OTO</item>
+            <item>%OFROMADDR</item>
+            <item>%OFROMNAME</item>
+            <item>%OFROMFNAME</item>
+            <item>%OFROMLNAME</item>
+            <item>%OFULLSUBJECT</item>
+            <item>%OFULLSUBJ</item>
+            <item>%OMSGID</item>
+            <item>%DATEEN</item>
+            <item>%DATESHORT</item>
+            <item>%DATE</item>
+            <item>%DOW</item>
+            <item>%TIMELONGEN</item>
+            <item>%TIMELONG</item>
+            <item>%TIME</item>
+            <item>%ODATEEN</item>
+            <item>%ODATESHORT</item>
+            <item>%ODATE</item>
+            <item>%ODOW</item>
+            <item>%OTIMELONGEN</item>
+            <item>%OTIMELONG</item>
+            <item>%OTIME</item>
+            <item>%BLANK</item>
+            <item>%NOP</item>
+            <item>%CLEAR</item>
+            <item>%DEBUGOFF</item>
+            <item>%DEBUG</item>
+            <item>%CURSOR</item>
+            <item>%SIGNATURE</item>
+        </list>
+        <list name="function-list">
+            <item>%INSERT=</item>
+            <item>%SYSTEM=</item>
+            <item>%QUOTEPIPE=</item>
+            <item>%MSGPIPE=</item>
+            <item>%BODYPIPE=</item>
+            <item>%CLEARPIPE=</item>
+            <item>%TEXTPIPE=</item>
+            <item>%OHEADER=</item>
+            <item>%HEADER=</item>
+            <item>%DICTIONARYLANGUAGE=</item>
+            <item>%LANGUAGE=</item>;
+        </list>
+
+        <contexts>
+            <context name="normal-context" attribute="Normal Text" lineEndContext="#stay">
+                <StringDetect String="%REM=&quot;" context="comment-context" attribute="Comment"/>
+                <keyword attribute="Keyword" context="#stay" String="keyword-list"/>
+                <keyword attribute="Function" context="argument-context1" String="function-list"/>
+            </context>
+
+            <context name="argument-context1" attribute="Function" lineEndContext="#pop" fallThroughContext="#pop">
+                <DetectChar char="&quot;" context="argument-context2" attribute="String"/>
+            </context>
+            <context name="argument-context2" attribute="String" lineEndContext="#pop">
+                <HlCStringChar attribute="Special Character" context="#stay"/>
+                <DetectChar attribute="String" context="#pop" char="&quot;"/>
+                <LineContinue attribute="String" context="#stay"/>
+            </context>
+
+            <context name="comment-context" lineEndContext="#stay" attribute="Comment">
+                <StringDetect String="&quot;%-" attribute="Comment" context="#pop"/>
+                <IncludeRules context="##Alerts"/>
+            </context>
+        </contexts>
+
+        <itemDatas>
+            <itemData name="Normal Text" defStyleNum="dsNormal"/>
+            <itemData name="Keyword" defStyleNum="dsVariable" spellChecking="false"/>
+            <itemData name="String" defStyleNum="dsString"/>
+            <itemData name="Special Character" defStyleNum="dsChar" spellChecking="false"/>
+            <itemData name="Comment" defStyleNum="dsComment"/>
+            <itemData name="Function" defStyleNum="dsFunction" spellChecking="false"/>
+        </itemDatas>
+    </highlighting>
+
+    <general>
+        <comments>
+            <comment name="singleLine" start="#"/>
+        </comments>
+        <keywords casesensitive="1" weakDeliminator="%=" additionalDeliminator="&quot;"/>
+    </general>
+</language>

@@ -29,7 +29,6 @@ namespace Util
 {
 QStringList keywords();
 QStringList keywordsWithArgs();
-QStringList keywordsWithArgsForCompleter();
 }
 }
 

@@ -54,24 +54,6 @@ QStringList TemplateParser::Util::keywordsWithArgs()
     return keywordsWithArgs;
 }
 
-QStringList TemplateParser::Util::keywordsWithArgsForCompleter()
-{
-    const QStringList keywordsWithArgs = QStringList()
-                                         << QStringLiteral("%REM=\".*\"%-")
-                                         << QStringLiteral("%INSERT=\".*\"")
-                                         << QStringLiteral("%SYSTEM=\".*\"")
-                                         << QStringLiteral("%QUOTEPIPE=\".*\"")
-                                         << QStringLiteral("%MSGPIPE=\".*\"")
-                                         << QStringLiteral("%BODYPIPE=\".*\"")
-                                         << QStringLiteral("%CLEARPIPE=\".*\"")
-                                         << QStringLiteral("%TEXTPIPE=\".*\"")
-                                         << QStringLiteral("%OHEADER=\".*\"")
-                                         << QStringLiteral("%HEADER=\".*\"")
-                                         << QStringLiteral("%DICTIONARYLANGUAGE=\".*\"")
-                                         << QStringLiteral("%LANGUAGE=\".*\"");
-    return keywordsWithArgs;
-}
-
 QStringList TemplateParser::Util::keywords()
 {
     const QStringList keywords = QStringList()

@@ -17,7 +17,11 @@
 
 #ifndef TEMPLATESTEXTEDITOR_H
 #define TEMPLATESTEXTEDITOR_H
+
 #include "kpimtextedit/plaintexteditor.h"
+
+#include <KSyntaxHighlighting/Repository>
+
 class QKeyEvent;
 namespace KPIMTextEdit
 {
@@ -42,6 +46,7 @@ protected:
     void createHighlighter() override;
 private:
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
+    KSyntaxHighlighting::Repository mSyntaxRepo;
 };
 }
 #endif // TEMPLATESTEXTEDITOR_H
