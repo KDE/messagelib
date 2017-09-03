@@ -42,7 +42,7 @@ public:
     int iconCurrentSize() const;
 private:
     void initializeRenderer();
-    GrantleeTheme::Engine *m_engine;
+    GrantleeTheme::Engine *m_engine = nullptr;
     int mCurrentIconSize;
 };
 }

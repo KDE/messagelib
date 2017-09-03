@@ -49,7 +49,7 @@ namespace Utils
 class AggregationListWidgetItem : public QListWidgetItem
 {
 private:
-    Core::Aggregation *mAggregation;
+    Core::Aggregation *mAggregation = nullptr;
 
 public:
     AggregationListWidgetItem(QListWidget *par, const Core::Aggregation &set)

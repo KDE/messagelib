@@ -51,16 +51,16 @@ public:
     ~AggregationEditor();
 
 private:
-    Core::Aggregation *mCurrentAggregation;  // shallow, may be null!
+    Core::Aggregation *mCurrentAggregation = nullptr;  // shallow, may be null!
 
     // Grouping, Threading and Sorting tab
-    KComboBox *mGroupingCombo;
-    KComboBox *mGroupExpandPolicyCombo;
-    KComboBox *mThreadingCombo;
-    KComboBox *mThreadLeaderCombo;
-    KComboBox *mThreadExpandPolicyCombo;
+    KComboBox *mGroupingCombo = nullptr;
+    KComboBox *mGroupExpandPolicyCombo = nullptr;
+    KComboBox *mThreadingCombo = nullptr;
+    KComboBox *mThreadLeaderCombo = nullptr;
+    KComboBox *mThreadExpandPolicyCombo = nullptr;
     // Advanced tab
-    KComboBox *mFillViewStrategyCombo;
+    KComboBox *mFillViewStrategyCombo = nullptr;
 
 public:
     /**

@@ -53,7 +53,7 @@ public:
 
     int mNumberOfHttpFailed;
     bool isInOffMode;
-    QTimer *mTimer;
+    QTimer *mTimer = nullptr;
     BackOffModeManager *q;
 };
 

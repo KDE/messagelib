@@ -47,7 +47,7 @@ public:
     QString mDataBaseState;
     CreatePhishingUrlDataBaseJob::ContraintsCompressionType mContraintsCompressionType;
     CreatePhishingUrlDataBaseJob::DataBaseDownloadType mDataBaseDownloadNeeded;
-    QNetworkAccessManager *mNetworkAccessManager;
+    QNetworkAccessManager *mNetworkAccessManager = nullptr;
 };
 
 CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)

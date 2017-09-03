@@ -71,15 +71,12 @@ class MessageComposer::RecipientsEditorPrivate
 {
 public:
     RecipientsEditorPrivate()
-        : mRecentAddressConfig(nullptr),
-          mSideWidget(nullptr),
-          mSkipTotal(false)
     {
 
     }
-    KConfig *mRecentAddressConfig;
-    RecipientsEditorSideWidget *mSideWidget;
-    bool mSkipTotal;
+    KConfig *mRecentAddressConfig = nullptr;
+    RecipientsEditorSideWidget *mSideWidget = nullptr;
+    bool mSkipTotal = false;
 };
 
 RecipientsEditor::RecipientsEditor(QWidget *parent)

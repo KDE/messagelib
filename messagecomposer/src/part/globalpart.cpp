@@ -25,20 +25,15 @@ class Q_DECL_HIDDEN GlobalPart::Private
 {
 public:
     Private()
-        : guiEnabled(true),
-          parentWidgetForGui(nullptr),
-          fallbackCharsetEnabled(false),
-          allow8Bit(false),
-          MDNRequested(false)
     {
     }
 
-    bool guiEnabled;
-    QWidget *parentWidgetForGui;
-    bool fallbackCharsetEnabled;
+    bool guiEnabled = true;
+    QWidget *parentWidgetForGui = nullptr;
+    bool fallbackCharsetEnabled = false;
     QList<QByteArray> charsets;
-    bool allow8Bit;
-    bool MDNRequested;
+    bool allow8Bit = false;
+    bool MDNRequested = false;
 };
 
 GlobalPart::GlobalPart(QObject *parent)

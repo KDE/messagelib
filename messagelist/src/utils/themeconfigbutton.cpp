@@ -37,7 +37,7 @@ public:
 
     ThemeConfigButton *const q;
 
-    const ThemeComboBox *mThemeComboBox;
+    const ThemeComboBox *mThemeComboBox = nullptr;
 
     void slotConfigureThemes();
 };

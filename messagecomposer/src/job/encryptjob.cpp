@@ -45,11 +45,10 @@ class MessageComposer::EncryptJobPrivate : public ContentJobBasePrivate
 public:
     EncryptJobPrivate(EncryptJob *qq)
         : ContentJobBasePrivate(qq)
-        , content(nullptr)
     {
     }
 
-    KMime::Content *content;
+    KMime::Content *content = nullptr;
     std::vector<GpgME::Key> keys;
     Kleo::CryptoMessageFormat format;
     QStringList recipients;

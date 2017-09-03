@@ -53,7 +53,7 @@ private:
     virtual ~MessageComposerSettings();
     static MessageComposerSettings *mSelf;
 
-    QTimer *mConfigSyncTimer;
+    QTimer *mConfigSyncTimer = nullptr;
 
 };
 

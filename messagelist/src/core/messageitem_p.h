@@ -113,7 +113,7 @@ private Q_SLOTS:
 private:
     QHash<KJob *, MessageItemPrivate *> mRequests;
     QCache<Akonadi::Tag::Id, Akonadi::Tag> mCache;
-    Akonadi::Monitor *mMonitor;
+    Akonadi::Monitor *mMonitor = nullptr;
 };
 
 }

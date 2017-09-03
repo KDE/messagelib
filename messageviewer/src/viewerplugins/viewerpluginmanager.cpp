@@ -35,16 +35,14 @@ class ViewerPluginInfo
 {
 public:
     ViewerPluginInfo()
-        : plugin(nullptr)
-        , isEnabled(false)
     {
     }
 
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
-    MessageViewer::ViewerPlugin *plugin;
-    bool isEnabled;
+    MessageViewer::ViewerPlugin *plugin = nullptr;
+    bool isEnabled = false;
 };
 
 class MessageViewer::ViewerPluginManagerPrivate

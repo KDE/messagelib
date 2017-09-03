@@ -27,11 +27,10 @@ class WebEngineViewer::FindBarWebEngineViewPrivate
 {
 public:
     FindBarWebEngineViewPrivate()
-        : mView(nullptr)
     {
 
     }
-    QWebEngineView *mView;
+    QWebEngineView *mView = nullptr;
 };
 
 FindBarWebEngineView::FindBarWebEngineView(QWebEngineView *view, QWidget *parent)

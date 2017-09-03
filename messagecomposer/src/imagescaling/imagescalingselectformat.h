@@ -46,7 +46,7 @@ private:
     };
     void initialize();
     void addImageFormat(const QString &format, const QString &mimetype);
-    QListWidget *mListWidget;
+    QListWidget *mListWidget = nullptr;
 };
 
 class ImageScalingSelectFormat : public QWidget
@@ -66,8 +66,8 @@ private Q_SLOTS:
     void slotSelectFormat();
 
 private:
-    QLineEdit *mFormat;
-    QPushButton *mSelectFormat;
+    QLineEdit *mFormat = nullptr;
+    QPushButton *mSelectFormat = nullptr;
 };
 }
 

@@ -42,7 +42,7 @@ public:
     QStringList mExtraDisplay;
     QString mAbsolutePath;
     QString mMainFilename;
-    GrantleeHeaderFormatter *mGrantleeFormatter;
+    GrantleeHeaderFormatter *mGrantleeFormatter = nullptr;
 };
 
 GrantleeHeaderTestStyle::GrantleeHeaderTestStyle()

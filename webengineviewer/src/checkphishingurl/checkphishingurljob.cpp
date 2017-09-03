@@ -38,7 +38,7 @@ public:
 
     }
     QUrl mUrl;
-    QNetworkAccessManager *mNetworkAccessManager;
+    QNetworkAccessManager *mNetworkAccessManager = nullptr;
 };
 
 CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)

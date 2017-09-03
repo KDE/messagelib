@@ -60,7 +60,7 @@ public:
     MessageViewer::HeaderStyleUtil headerStyleUtil;
     QSharedPointer<Grantlee::FileSystemTemplateLoader> templateLoader;
     int iconSize;
-    Grantlee::Engine *engine;
+    Grantlee::Engine *engine = nullptr;
 };
 
 GrantleeHeaderFormatter::GrantleeHeaderFormatter()

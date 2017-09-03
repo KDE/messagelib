@@ -615,7 +615,7 @@ public:
         QList< Row * > mGroupHeaderRows;                  ///< The list of rows we display in this column for a GroupHeaderItem
         QList< Row * > mMessageRows;                      ///< The list of rows we display in this column for a MessageItem
 
-        SharedRuntimeData *mSharedRuntimeData;            ///< A pointer to the shared runtime data: shared between all instances of a theme with the same id
+        SharedRuntimeData *mSharedRuntimeData = nullptr;            ///< A pointer to the shared runtime data: shared between all instances of a theme with the same id
     public:
         /**
         * Returns the label set for this column

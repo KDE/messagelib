@@ -62,7 +62,7 @@ private:
 
     Akonadi::Collection mCollection;
     Akonadi::Collection::List mCollections;
-    Akonadi::Search::PIM::IndexedItems *mIndexedItems;
+    Akonadi::Search::PIM::IndexedItems *mIndexedItems = nullptr;
 };
 }
 }

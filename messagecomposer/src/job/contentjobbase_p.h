@@ -33,17 +33,15 @@ class ContentJobBasePrivate : public JobBasePrivate
 public:
     explicit ContentJobBasePrivate(ContentJobBase *qq)
         : JobBasePrivate(qq)
-        , resultContent(nullptr)
-        , extraContent(nullptr)
     {
     }
 
     void init(QObject *parent);
     void doNextSubjob();
 
-    KMime::Content *resultContent;
     KMime::Content::List subjobContents;
-    KMime::Content *extraContent;
+    KMime::Content *resultContent = nullptr;
+    KMime::Content *extraContent = nullptr;
 
     Q_DECLARE_PUBLIC(ContentJobBase)
 };

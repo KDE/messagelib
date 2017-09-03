@@ -75,13 +75,13 @@ public:
 
     ConfigureAggregationsDialog *const q;
 
-    AggregationListWidget *mAggregationList;
-    AggregationEditor *mEditor;
-    QPushButton *mNewAggregationButton;
-    QPushButton *mCloneAggregationButton;
-    QPushButton *mDeleteAggregationButton;
-    QPushButton *mExportAggregationButton;
-    QPushButton *mImportAggregationButton;
+    AggregationListWidget *mAggregationList = nullptr;
+    AggregationEditor *mEditor = nullptr;
+    QPushButton *mNewAggregationButton = nullptr;
+    QPushButton *mCloneAggregationButton = nullptr;
+    QPushButton *mDeleteAggregationButton = nullptr;
+    QPushButton *mExportAggregationButton = nullptr;
+    QPushButton *mImportAggregationButton = nullptr;
 };
 
 } // namespace Utils

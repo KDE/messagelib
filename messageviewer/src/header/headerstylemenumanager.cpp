@@ -36,9 +36,7 @@ class MessageViewer::HeaderStyleMenuManagerPrivate
 {
 public:
     HeaderStyleMenuManagerPrivate(HeaderStyleMenuManager *qq)
-        : group(nullptr)
-        , headerMenu(nullptr)
-        , q(qq)
+        : q(qq)
     {
     }
 
@@ -48,9 +46,9 @@ public:
     void addHelpTextAction(QAction *act, const QString &text);
     void setPluginName(const QString &pluginName);
     QHash<QString, MessageViewer::HeaderStyleInterface *> lstInterface;
-    QActionGroup *group;
-    KActionMenu *headerMenu;
-    HeaderStyleMenuManager *q;
+    QActionGroup *group = nullptr;
+    KActionMenu *headerMenu = nullptr;
+    HeaderStyleMenuManager *q = nullptr;
 };
 
 void HeaderStyleMenuManagerPrivate::addHelpTextAction(QAction *act, const QString &text)

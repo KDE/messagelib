@@ -42,15 +42,12 @@ class MessageComposer::FollowUpReminderSelectDateDialogPrivate
 {
 public:
     FollowUpReminderSelectDateDialogPrivate()
-        : mDateComboBox(nullptr),
-          mCollectionCombobox(nullptr),
-          mOkButton(nullptr)
     {
 
     }
-    KDateComboBox *mDateComboBox;
-    Akonadi::CollectionComboBox *mCollectionCombobox;
-    QPushButton *mOkButton;
+    KDateComboBox *mDateComboBox = nullptr;
+    Akonadi::CollectionComboBox *mCollectionCombobox = nullptr;
+    QPushButton *mOkButton = nullptr;
 };
 
 FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *parent, QAbstractItemModel *model)

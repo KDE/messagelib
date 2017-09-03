@@ -88,17 +88,17 @@ public:
     QList<KMime::Message::Ptr> resultMessages;
 
     // Stuff that the application plays with.
-    GlobalPart *globalPart;
-    InfoPart *infoPart;
-    TextPart *textPart;
+    GlobalPart *globalPart = nullptr;
+    InfoPart *infoPart = nullptr;
+    TextPart *textPart = nullptr;
     AttachmentPart::List attachmentParts;
     // attachments with different sign/encrypt settings from
     // main message body. added at the end of the process
     AttachmentPart::List lateAttachmentParts;
 
     // Stuff that we play with.
-    KMime::Message *skeletonMessage;
-    KMime::Content *resultContent;
+    KMime::Message *skeletonMessage = nullptr;
+    KMime::Content *resultContent = nullptr;
 
     Q_DECLARE_PUBLIC(Composer)
 };
@@ -311,8 +311,8 @@ void ComposerPrivate::contentJobFinished(KJob *job)
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "composing final message";
 
-    KMime::Message *headers;
-    KMime::Content *resultContent;
+    KMime::Message *headers = nullptr;
+    KMime::Content *resultContent = nullptr;
     std::vector<GpgME::Key> keys;
     QStringList recipients;
 

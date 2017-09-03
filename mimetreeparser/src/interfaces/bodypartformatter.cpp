@@ -69,9 +69,9 @@ public:
         return mHtmlWriter;
     }
 
-    MimeTreeParser::HtmlWriter *mHtmlWriter;
-    const BodyPart *mPart;
-    MessagePart *mParentPart;
+    MimeTreeParser::HtmlWriter *mHtmlWriter = nullptr;
+    const BodyPart *mPart = nullptr;
+    MessagePart *mParentPart = nullptr;
     bool mCreatedWriter;
 
 };

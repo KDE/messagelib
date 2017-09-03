@@ -40,7 +40,7 @@ Q_SIGNALS:
     void accessKeySearchFinished(const QVector<WebEngineViewer::WebEngineAccessKeyAnchor> &var);
 
 private:
-    QWebEngineView *mEngineView;
+    QWebEngineView *mEngineView = nullptr;
 };
 
 class WebEngineAccessKeyAnchorFromHtmlTest : public QObject

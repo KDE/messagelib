@@ -48,7 +48,7 @@ public:
     {
     }
 
-    KMime::Content *content;
+    KMime::Content *content = nullptr;
     std::vector<GpgME::Key> signers;
     Kleo::CryptoMessageFormat format;
 

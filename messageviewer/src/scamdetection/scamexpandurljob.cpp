@@ -36,7 +36,6 @@ class MessageViewer::ScamExpandUrlJobPrivate
 {
 public:
     ScamExpandUrlJobPrivate()
-        : mNetworkAccessManager(nullptr)
     {
     }
 
@@ -44,7 +43,7 @@ public:
     {
     }
 
-    QNetworkAccessManager *mNetworkAccessManager;
+    QNetworkAccessManager *mNetworkAccessManager = nullptr;
 };
 
 ScamExpandUrlJob::ScamExpandUrlJob(QObject *parent)

@@ -130,7 +130,7 @@ private:
     QString commonCssDefinitions() const;
 
 private:
-    const QPaintDevice *mPaintDevice;
+    const QPaintDevice *mPaintDevice = nullptr;
 };
 }
 

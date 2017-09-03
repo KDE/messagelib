@@ -65,8 +65,8 @@ public:
     }
 
 private:
-    MimeTreeParser::HtmlWriter *mWriter;
-    MessageViewer::CSSHelperBase *mCSSHelper;
+    MimeTreeParser::HtmlWriter *mWriter = nullptr;
+    MessageViewer::CSSHelperBase *mCSSHelper = nullptr;
 };
 
 }

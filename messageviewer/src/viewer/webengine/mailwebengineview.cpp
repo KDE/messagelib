@@ -67,25 +67,18 @@ class MessageViewer::MailWebEngineViewPrivate
 {
 public:
     MailWebEngineViewPrivate()
-        : mScamDetection(nullptr)
-        , mWebViewAccessKey(nullptr)
-        , mExternalReference(nullptr)
-        , mPageEngine(nullptr)
-        , mNetworkAccessManager(nullptr)
-        , mViewer(nullptr)
-        , mCanStartDrag(false)
     {
     }
 
     QUrl mHoveredUrl;
     QPoint mLastClickPosition;
-    ScamDetectionWebEngine *mScamDetection;
-    WebEngineViewer::WebEngineAccessKey *mWebViewAccessKey;
-    MessageViewer::LoadExternalReferencesUrlInterceptor *mExternalReference;
-    MailWebEnginePage *mPageEngine;
-    WebEngineViewer::InterceptorManager *mNetworkAccessManager;
-    MessageViewer::ViewerPrivate *mViewer;
-    bool mCanStartDrag;
+    ScamDetectionWebEngine *mScamDetection = nullptr;
+    WebEngineViewer::WebEngineAccessKey *mWebViewAccessKey = nullptr;
+    MessageViewer::LoadExternalReferencesUrlInterceptor *mExternalReference = nullptr;
+    MailWebEnginePage *mPageEngine = nullptr;
+    WebEngineViewer::InterceptorManager *mNetworkAccessManager = nullptr;
+    MessageViewer::ViewerPrivate *mViewer = nullptr;
+    bool mCanStartDrag = false;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)

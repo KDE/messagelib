@@ -48,16 +48,13 @@ class MessageComposer::PluginEditorInterfacePrivate
 {
 public:
     PluginEditorInterfacePrivate()
-        : mParentWidget(nullptr),
-          mRichTextEditor(nullptr),
-          plugin(nullptr)
     {
 
     }
     ActionType mActionType;
-    QWidget *mParentWidget;
-    KPIMTextEdit::RichTextEditor *mRichTextEditor;
-    PluginEditor *plugin;
+    QWidget *mParentWidget = nullptr;
+    KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
+    PluginEditor *plugin = nullptr;
 };
 
 PluginEditorInterface::PluginEditorInterface(QObject *parent)

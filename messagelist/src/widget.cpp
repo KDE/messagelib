@@ -68,9 +68,9 @@ public:
     Widget *const q;
 
     int mLastSelectedMessage;
-    KXMLGUIClient *mXmlGuiClient;
+    KXMLGUIClient *mXmlGuiClient = nullptr;
     QModelIndex mGroupHeaderItemIndex;
-    Akonadi::Monitor *mMonitor;
+    Akonadi::Monitor *mMonitor = nullptr;
 };
 
 } // namespace MessageList
@@ -348,7 +348,7 @@ void Widget::viewGroupHeaderContextPopupRequest(MessageList::Core::GroupHeaderIt
 
     QMenu menu(this);
 
-    QAction *act;
+    QAction *act = nullptr;
 
     QModelIndex index = view()->model()->index(ghi, 0);
     d->mGroupHeaderItemIndex = index;

@@ -40,7 +40,7 @@ public:
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
-    MessageViewer::HeaderStylePlugin *plugin;
+    MessageViewer::HeaderStylePlugin *plugin = nullptr;
     bool isEnabled;
 };
 

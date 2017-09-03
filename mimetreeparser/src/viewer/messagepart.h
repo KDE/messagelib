@@ -113,13 +113,13 @@ protected:
     QString renderInternalText() const;
 
     QString mText;
-    ObjectTreeParser *mOtp;
+    ObjectTreeParser *mOtp = nullptr;
     PartMetaData mMetaData;
 
 private:
     QVector<Interface::MessagePart::Ptr> mBlocks;
 
-    KMime::Content *mAttachmentNode;
+    KMime::Content *mAttachmentNode = nullptr;
     bool mRoot;
 };
 
@@ -183,7 +183,7 @@ public:
     bool showTextFrame() const;
 
 protected:
-    KMime::Content *mNode;
+    KMime::Content *mNode = nullptr;
 
 private:
     void parseContent();
@@ -366,7 +366,7 @@ protected:
     bool mNoSecKey;
     const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
-    KMime::Content *mNode;
+    KMime::Content *mNode = nullptr;
     bool mDecryptMessage;
     QByteArray mVerifiedText;
     std::vector<GpgME::DecryptionResult::Recipient> mDecryptRecipients;
@@ -415,7 +415,7 @@ private:
 protected:
     const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
-    KMime::Content *mNode;
+    KMime::Content *mNode = nullptr;
     QByteArray mVerifiedText;
 
     friend EncryptedMessagePart;

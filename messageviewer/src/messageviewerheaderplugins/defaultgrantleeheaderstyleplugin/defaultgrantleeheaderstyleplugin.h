@@ -41,8 +41,8 @@ public:
     QString name() const override;
 private:
     void initializePlugin();
-    GrantleeHeaderStyle *mHeaderStyle;
-    HeaderStrategy *mHeaderStrategy;
+    GrantleeHeaderStyle *mHeaderStyle = nullptr;
+    HeaderStrategy *mHeaderStrategy = nullptr;
 };
 }
 #endif // DEFAULTGRANTLEEHEADERSTYLEPLUGIN_H

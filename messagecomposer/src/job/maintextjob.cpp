@@ -54,7 +54,7 @@ public:
     SinglepartJob *createHtmlJob();
     SinglepartJob *createImageJob(const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image);
 
-    TextPart *textPart;
+    TextPart *textPart = nullptr;
     QByteArray chosenCharset;
     QString sourcePlainText;
     QByteArray encodedPlainText;

@@ -58,7 +58,7 @@ static QTextCodec *selectCharset(const QStringList &charsets, const QString &tex
         // We use KCharsets::codecForName() instead of QTextCodec::codecForName() here, because
         // the former knows us-ascii is latin1.
         bool ok = true;
-        QTextCodec *codec;
+        QTextCodec *codec = nullptr;
         if (name == QLatin1String("locale")) {
             codec = QTextCodec::codecForLocale();
         } else {

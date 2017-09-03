@@ -92,23 +92,23 @@ public:
 
     Pane *const q;
 
-    KXMLGUIClient *mXmlGuiClient;
-    KActionMenu *mActionMenu;
+    KXMLGUIClient *mXmlGuiClient = nullptr;
+    KActionMenu *mActionMenu = nullptr;
 
-    QAbstractItemModel *mModel;
-    QItemSelectionModel *mSelectionModel;
+    QAbstractItemModel *mModel = nullptr;
+    QItemSelectionModel *mSelectionModel = nullptr;
     Core::PreSelectionMode mPreSelectionMode;
 
     QHash<Widget *, QItemSelectionModel *> mWidgetSelectionHash;
     QVector<const QAbstractProxyModel *> mProxyStack;
 
-    QToolButton *mNewTabButton;
-    QToolButton *mCloseTabButton;
-    QAction *mCloseTabAction;
-    QAction *mActivateNextTabAction;
-    QAction *mActivatePreviousTabAction;
-    QAction *mMoveTabLeftAction;
-    QAction *mMoveTabRightAction;
+    QToolButton *mNewTabButton = nullptr;
+    QToolButton *mCloseTabButton = nullptr;
+    QAction *mCloseTabAction = nullptr;
+    QAction *mActivateNextTabAction = nullptr;
+    QAction *mActivatePreviousTabAction = nullptr;
+    QAction *mMoveTabLeftAction = nullptr;
+    QAction *mMoveTabRightAction = nullptr;
     bool mPreferEmptyTab;
     int mMaxTabCreated;
 };

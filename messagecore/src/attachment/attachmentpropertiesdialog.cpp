@@ -74,9 +74,9 @@ public:
     bool mReadOnly;
     AttachmentPart::Ptr mPart;
 
-    Ui::AttachmentPropertiesDialog *ui;
-    Ui::AttachmentPropertiesDialogReadOnly *uiReadOnly;
-    QVBoxLayout *mainLayout;
+    Ui::AttachmentPropertiesDialog *ui = nullptr;
+    Ui::AttachmentPropertiesDialogReadOnly *uiReadOnly = nullptr;
+    QVBoxLayout *mainLayout = nullptr;
 };
 
 void AttachmentPropertiesDialog::Private::init(const AttachmentPart::Ptr &part, bool readOnly)

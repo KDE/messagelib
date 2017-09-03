@@ -48,11 +48,11 @@ public:
     bool chooseCTE();
 
     QByteArray data;
-    KMime::Headers::ContentDescription *contentDescription;
-    KMime::Headers::ContentDisposition *contentDisposition;
-    KMime::Headers::ContentID *contentID;
-    KMime::Headers::ContentTransferEncoding *contentTransferEncoding;
-    KMime::Headers::ContentType *contentType;
+    KMime::Headers::ContentDescription *contentDescription = nullptr;
+    KMime::Headers::ContentDisposition *contentDisposition = nullptr;
+    KMime::Headers::ContentID *contentID = nullptr;
+    KMime::Headers::ContentTransferEncoding *contentTransferEncoding = nullptr;
+    KMime::Headers::ContentType *contentType = nullptr;
 
     Q_DECLARE_PUBLIC(SinglepartJob)
 };

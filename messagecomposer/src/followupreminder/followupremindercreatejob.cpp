@@ -39,7 +39,7 @@ public:
     }
 
     Akonadi::Collection mCollection;
-    FollowUpReminder::FollowUpReminderInfo *mInfo;
+    FollowUpReminder::FollowUpReminderInfo *mInfo = nullptr;
 };
 
 FollowupReminderCreateJob::FollowupReminderCreateJob(QObject *parent)

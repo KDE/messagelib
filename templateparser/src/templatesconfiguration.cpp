@@ -356,7 +356,7 @@ void TemplatesConfiguration::saveToFolder(const QString &id)
 
 QPlainTextEdit *TemplatesConfiguration::currentTextEdit() const
 {
-    QPlainTextEdit *edit;
+    QPlainTextEdit *edit = nullptr;
 
     const int toolboxCurrentIndex(toolBox1->currentIndex());
     if (toolBox1->widget(toolboxCurrentIndex) == page_new) {

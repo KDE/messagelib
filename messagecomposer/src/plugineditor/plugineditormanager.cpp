@@ -33,18 +33,15 @@ class PluginEditorInfo
 {
 public:
     PluginEditorInfo()
-        : order(0),
-          plugin(nullptr),
-          isEnabled(true)
     {
 
     }
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
-    int order;
-    PluginEditor *plugin;
-    bool isEnabled;
+    int order = 0;
+    PluginEditor *plugin = nullptr;
+    bool isEnabled = true;
 };
 
 namespace

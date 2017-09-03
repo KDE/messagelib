@@ -27,11 +27,10 @@ class MessageViewer::ScamCheckShortUrlManagerPrivate
 {
 public:
     ScamCheckShortUrlManagerPrivate()
-        : mCheckShortUrl(nullptr)
     {
     }
 
-    ScamCheckShortUrl *mCheckShortUrl;
+    ScamCheckShortUrl *mCheckShortUrl = nullptr;
 };
 
 ScamCheckShortUrlManager::ScamCheckShortUrlManager(QObject *parent)

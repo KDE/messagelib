@@ -277,12 +277,12 @@ private:
     QMap<const KMime::Content *, KMMsgSignatureState> mSignatureState;
     QSet<KMime::Content *> mDisplayEmbeddedNodes;
     QSet<KMime::Content *> mDisplayHiddenNodes;
-    QTextCodec *mLocalCodec;
+    QTextCodec *mLocalCodec = nullptr;
     QMap<KMime::Content *, const QTextCodec *> mOverrideCodecs;
     QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *> > mBodyPartMementoMap;
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
     QMap<KMime::Message::Content *, QList<KMime::Content *> > mExtraContents;
-    AttachmentTemporaryFilesDirs *mAttachmentFilesDir;
+    AttachmentTemporaryFilesDirs *mAttachmentFilesDir = nullptr;
 
     friend class NodeHelperTest;
 };

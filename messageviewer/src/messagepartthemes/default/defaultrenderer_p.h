@@ -67,10 +67,10 @@ public:
 
     QString mHtml;
     Interface::MessagePart::Ptr mMsgPart;
-    HtmlWriter *mOldWriter;
+    HtmlWriter *mOldWriter = nullptr;
 
-    CSSHelperBase *mCSSHelper;
-    const MessageViewer::MessagePartRendererFactoryBase *mRendererFactory;
+    CSSHelperBase *mCSSHelper = nullptr;
+    const MessageViewer::MessagePartRendererFactoryBase *mRendererFactory = nullptr;
 };
 }
 #endif

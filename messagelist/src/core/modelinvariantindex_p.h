@@ -34,7 +34,7 @@ class ModelInvariantIndex::Private
 public:
     int mModelIndexRow;                   ///< The row that this index referenced at the time it was emitted
     uint mRowMapperSerial;                ///< The serial that was current in the RowMapper at the time the invariant index was emitted
-    ModelInvariantRowMapper *mRowMapper;  ///< The mapper that this invariant index is attached to
+    ModelInvariantRowMapper *mRowMapper = nullptr;  ///< The mapper that this invariant index is attached to
 
     int modelIndexRow() const
     {

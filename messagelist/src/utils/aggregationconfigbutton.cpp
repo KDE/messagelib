@@ -36,7 +36,7 @@ public:
 
     AggregationConfigButton *const q;
 
-    const AggregationComboBox *mAggregationComboBox;
+    const AggregationComboBox *mAggregationComboBox = nullptr;
 
     void slotConfigureAggregations();
 };

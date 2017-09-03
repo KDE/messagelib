@@ -39,8 +39,8 @@ private Q_SLOTS:
 
 private:
     KMime::Message::Ptr readAndParseMail(const QString &mailFile);
-    MessageViewer::Viewer *viewer;
-    QTextEdit *mEditor;
+    MessageViewer::Viewer *viewer = nullptr;
+    QTextEdit *mEditor = nullptr;
 };
 
 #endif

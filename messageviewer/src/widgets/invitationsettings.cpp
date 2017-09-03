@@ -50,7 +50,7 @@ public:
         mInvitationUi = nullptr;
     }
 
-    Ui_InvitationSettings *mInvitationUi;
+    Ui_InvitationSettings *mInvitationUi = nullptr;
 };
 
 InvitationSettings::InvitationSettings(QWidget *parent)

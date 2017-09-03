@@ -52,7 +52,7 @@ private:
     void insertExtraHead();
 
 private:
-    MailWebEngineView *mHtmlView;
+    MailWebEngineView *mHtmlView = nullptr;
     QString mHtml;
     QString mExtraHead;
     enum State {

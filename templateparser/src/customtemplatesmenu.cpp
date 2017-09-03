@@ -54,20 +54,20 @@ public:
         delete mCustomReplyAllMapper;
         delete mCustomForwardMapper;
     }
-    KActionCollection *mOwnerActionCollection;
+    KActionCollection *mOwnerActionCollection = nullptr;
 
     QStringList mCustomTemplates;
     QList<QAction *> mCustomTemplateActions;
 
     // Custom template actions menu
-    KActionMenu *mCustomReplyActionMenu;
-    KActionMenu *mCustomReplyAllActionMenu;
-    KActionMenu *mCustomForwardActionMenu;
+    KActionMenu *mCustomReplyActionMenu = nullptr;
+    KActionMenu *mCustomReplyAllActionMenu = nullptr;
+    KActionMenu *mCustomForwardActionMenu = nullptr;
 
     // Signal mappers for custom template actions
-    QSignalMapper *mCustomReplyMapper;
-    QSignalMapper *mCustomReplyAllMapper;
-    QSignalMapper *mCustomForwardMapper;
+    QSignalMapper *mCustomReplyMapper = nullptr;
+    QSignalMapper *mCustomReplyAllMapper = nullptr;
+    QSignalMapper *mCustomForwardMapper = nullptr;
 };
 
 CustomTemplatesMenu::CustomTemplatesMenu(QWidget *owner, KActionCollection *ac)

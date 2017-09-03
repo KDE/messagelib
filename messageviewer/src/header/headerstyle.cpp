@@ -56,11 +56,11 @@ public:
 
     GrantleeTheme::Theme mTheme;
     QString mMessagePath;
-    const HeaderStrategy *mStrategy;
+    const HeaderStrategy *mStrategy = nullptr;
     QString mVCardName;
     QString mCollectionName;
-    MimeTreeParser::NodeHelper *mNodeHelper;
-    QObject *mSourceObject;
+    MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
+    QObject *mSourceObject = nullptr;
     Akonadi::MessageStatus mMessageStatus;
     bool mPrinting;
     bool mTopLevel;

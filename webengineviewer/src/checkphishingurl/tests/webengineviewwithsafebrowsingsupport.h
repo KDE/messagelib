@@ -40,8 +40,8 @@ private Q_SLOTS:
     void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
 private:
-    QPlainTextEdit *mDebug;
-    WebEngineViewer::WebEngineView *pageView;
+    QPlainTextEdit *mDebug = nullptr;
+    WebEngineViewer::WebEngineView *pageView = nullptr;
 };
 
 #endif // CHECKPHISHINGURLGUI_H

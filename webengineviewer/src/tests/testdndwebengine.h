@@ -47,8 +47,8 @@ public:
     explicit TestDndWebEngine(QWidget *parent = nullptr);
     ~TestDndWebEngine();
 private:
-    WebEngineViewer::WebEngineView *pageView;
-    WebEngineViewBase *webEngineView;
+    WebEngineViewer::WebEngineView *pageView = nullptr;
+    WebEngineViewBase *webEngineView = nullptr;
 };
 
 #endif // TestDndWebEngine_H

@@ -73,7 +73,7 @@ void BodyPartFormatterFactory::loadPlugins()
                                          << "is not valid!";
             continue;
         }
-        const MimeTreeParser::Interface::BodyPartFormatter *bfp;
+        const MimeTreeParser::Interface::BodyPartFormatter *bfp = nullptr;
         for (int i = 0; (bfp = plugin->bodyPartFormatter(i)); ++i) {
             const char *type = plugin->type(i);
             if (!type || !*type) {
@@ -92,7 +92,7 @@ void BodyPartFormatterFactory::loadPlugins()
             qCDebug(MESSAGEVIEWER_LOG) << "plugin for " << type << subtype;
             insert(type, subtype, bfp);
         }
-        const MimeTreeParser::Interface::BodyPartURLHandler *handler;
+        const MimeTreeParser::Interface::BodyPartURLHandler *handler = nullptr;
         for (int i = 0; (handler = plugin->urlHandler(i)); ++i) {
             URLHandlerManager::instance()->registerHandler(handler);
         }

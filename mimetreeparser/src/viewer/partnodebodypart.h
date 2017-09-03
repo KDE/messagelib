@@ -96,12 +96,12 @@ public:
 
     Interface::ObjectTreeSource *source() const override;
 private:
-    KMime::Content *mTopLevelContent;
-    KMime::Content *mContent;
+    KMime::Content *mTopLevelContent = nullptr;
+    KMime::Content *mContent = nullptr;
     BodyPart::Display mDefaultDisplay;
-    NodeHelper *mNodeHelper;
-    ObjectTreeParser *mObjectTreeParser;
-    ProcessResult *mProcessResult;
+    NodeHelper *mNodeHelper = nullptr;
+    ObjectTreeParser *mObjectTreeParser = nullptr;
+    ProcessResult *mProcessResult = nullptr;
 };
 
 }

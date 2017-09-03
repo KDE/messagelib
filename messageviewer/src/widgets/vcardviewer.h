@@ -41,12 +41,12 @@ private:
     void slotUser3();
     void readConfig();
     void writeConfig();
-    KAddressBookGrantlee::GrantleeContactViewer *mContactViewer;
 
     KContacts::Addressee::List mAddresseeList;
     int mAddresseeListIndex;
-    QPushButton *mUser2Button;
-    QPushButton *mUser3Button;
+    KAddressBookGrantlee::GrantleeContactViewer *mContactViewer = nullptr;
+    QPushButton *mUser2Button = nullptr;
+    QPushButton *mUser3Button = nullptr;
 };
 }
 

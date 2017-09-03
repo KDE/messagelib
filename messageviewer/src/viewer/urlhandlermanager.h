@@ -84,7 +84,7 @@ private:
     typedef QVector<const MimeTreeParser::URLHandler *> HandlerList;
     HandlerList mHandlers;
     class BodyPartURLHandlerManager;
-    BodyPartURLHandlerManager *mBodyPartURLHandlerManager;
+    BodyPartURLHandlerManager *mBodyPartURLHandlerManager = nullptr;
 };
 }
 

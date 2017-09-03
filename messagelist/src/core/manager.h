@@ -68,7 +68,7 @@ private:
     QList< Widget * > mWidgetList;
     QHash< QString, Aggregation * > mAggregations;
     QHash< QString, Theme * > mThemes;
-    KMime::DateFormatter *mDateFormatter;
+    KMime::DateFormatter *mDateFormatter = nullptr;
     QString mCachedLocalizedUnknownText;
 
 public:

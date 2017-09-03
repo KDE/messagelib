@@ -254,7 +254,7 @@ private:
     QByteArray getRefStr(const KMime::Message::Ptr &msg);
     KMime::Content *createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg);
 
-    KIdentityManagement::IdentityManager *m_identityManager;
+    KIdentityManagement::IdentityManager *m_identityManager = nullptr;
     // Required parts to create messages
     KMime::Message::Ptr m_origMsg;
     Akonadi::Item::Id m_folderId;
@@ -265,7 +265,7 @@ private:
     // Optional settings the calling class may set
     MessageComposer::ReplyStrategy m_replyStrategy;
     QString m_selection, m_template;
-    bool m_quote;
+    bool m_quote = false;
     KMime::Types::Mailbox::List m_mailingListAddresses;
     Akonadi::Item::Id m_id;
 

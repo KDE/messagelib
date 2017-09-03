@@ -64,13 +64,13 @@ public:
 
     ConfigureThemesDialog *const q;
 
-    ThemeListWidget *mThemeList;
-    ThemeEditor *mEditor;
-    QPushButton *mNewThemeButton;
-    QPushButton *mCloneThemeButton;
-    QPushButton *mDeleteThemeButton;
-    QPushButton *mExportThemeButton;
-    QPushButton *mImportThemeButton;
+    ThemeListWidget *mThemeList = nullptr;
+    ThemeEditor *mEditor = nullptr;
+    QPushButton *mNewThemeButton = nullptr;
+    QPushButton *mCloneThemeButton = nullptr;
+    QPushButton *mDeleteThemeButton = nullptr;
+    QPushButton *mExportThemeButton = nullptr;
+    QPushButton *mImportThemeButton = nullptr;
 
 };
 

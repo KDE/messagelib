@@ -34,8 +34,8 @@ public:
     {
 
     }
-    WebEngineViewer::NetworkUrlInterceptorManager *mManager;
-    WebEngineViewer::NetworkUrlInterceptor *mNetworkUrlInterceptor;
+    WebEngineViewer::NetworkUrlInterceptorManager *mManager = nullptr;
+    WebEngineViewer::NetworkUrlInterceptor *mNetworkUrlInterceptor = nullptr;
 };
 
 InterceptorManager::InterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent)

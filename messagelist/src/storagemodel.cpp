@@ -58,15 +58,12 @@ public:
 
     StorageModel *const q;
 
-    QAbstractItemModel *mModel;
-    QAbstractItemModel *mChildrenFilterModel;
-    QItemSelectionModel *mSelectionModel;
+    QAbstractItemModel *mModel = nullptr;
+    QAbstractItemModel *mChildrenFilterModel = nullptr;
+    QItemSelectionModel *mSelectionModel = nullptr;
 
     Private(StorageModel *owner)
-        : q(owner),
-          mModel(nullptr),
-          mChildrenFilterModel(nullptr),
-          mSelectionModel(nullptr)
+        : q(owner)
     {}
 };
 

@@ -33,10 +33,7 @@ class MessageComposer::ImageScalingWidgetPrivate
 {
 public:
     ImageScalingWidgetPrivate()
-        : ui(new Ui::ImageScalingWidget),
-          mSourceFilenameFilterGroup(nullptr),
-          mRecipientFilterGroup(nullptr),
-          mWasChanged(false)
+        : ui(new Ui::ImageScalingWidget)
     {
     }
     ~ImageScalingWidgetPrivate()
@@ -44,10 +41,10 @@ public:
         delete ui;
     }
 
-    Ui::ImageScalingWidget *ui;
-    QButtonGroup *mSourceFilenameFilterGroup;
-    QButtonGroup *mRecipientFilterGroup;
-    bool mWasChanged;
+    Ui::ImageScalingWidget *ui = nullptr;
+    QButtonGroup *mSourceFilenameFilterGroup = nullptr;
+    QButtonGroup *mRecipientFilterGroup = nullptr;
+    bool mWasChanged = false;
 };
 
 ImageScalingWidget::ImageScalingWidget(QWidget *parent)

@@ -68,8 +68,8 @@ private:
     void internalEnter();
     void internalExit();
 
-    KMime::Content *mNode;
-    HtmlWriter *mWriter;
+    KMime::Content *mNode = nullptr;
+    HtmlWriter *mWriter = nullptr;
 };
 
 // Make sure the whole content is relative, so that nothing is painted over the header
@@ -89,7 +89,7 @@ private:
     void internalEnter();
     void internalExit();
 
-    HtmlWriter *mWriter;
+    HtmlWriter *mWriter = nullptr;
 };
 }
 #endif //__MIMETREEPARSER_HTMLBLOCK_H__

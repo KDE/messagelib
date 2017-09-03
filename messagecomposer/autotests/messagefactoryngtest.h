@@ -64,7 +64,7 @@ private:
     KMime::Message::Ptr loadMessageFromFile(const QString &filename);
     KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
     KMime::Message::Ptr loadMessage(const QString &filename);
-    KIdentityManagement::IdentityManager *mIdentMan;
+    KIdentityManagement::IdentityManager *mIdentMan = nullptr;
 };
 
 #endif

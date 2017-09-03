@@ -43,17 +43,14 @@ class MessageComposer::SkeletonMessageJobPrivate : public JobBasePrivate
 public:
     SkeletonMessageJobPrivate(SkeletonMessageJob *qq)
         : JobBasePrivate(qq)
-        , infoPart(nullptr)
-        , globalPart(nullptr)
-        , message(nullptr)
     {
     }
 
     void doStart(); // slot
 
-    InfoPart *infoPart;
-    GlobalPart *globalPart;
-    KMime::Message *message;
+    InfoPart *infoPart = nullptr;
+    GlobalPart *globalPart = nullptr;
+    KMime::Message *message = nullptr;
 
     Q_DECLARE_PUBLIC(SkeletonMessageJob)
 };

@@ -60,7 +60,7 @@ private:
     KMime::Message::Ptr mMsg;
     KMime::Message::Ptr mOrigMsg;
     Akonadi::Collection mCollection;
-    KIdentityManagement::IdentityManager *mIdentityManager;
+    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
 }
 

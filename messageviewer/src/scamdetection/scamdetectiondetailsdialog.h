@@ -41,7 +41,7 @@ private:
     void slotSaveAs();
     void writeConfig();
     void readConfig();
-    KPIMTextEdit::RichTextEditorWidget *mDetails;
+    KPIMTextEdit::RichTextEditorWidget *mDetails = nullptr;
 };
 }
 

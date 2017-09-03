@@ -69,7 +69,7 @@ public:
         mTheme = nullptr;
     }
 private:
-    Core::Theme *mTheme;
+    Core::Theme *mTheme = nullptr;
 };
 
 class ThemeListWidget : public QListWidget

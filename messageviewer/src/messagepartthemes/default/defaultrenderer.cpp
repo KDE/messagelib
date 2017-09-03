@@ -336,7 +336,7 @@ public:
     }
 
     QString html;
-    MimeTreeParser::HtmlWriter *mBaseWriter;
+    MimeTreeParser::HtmlWriter *mBaseWriter = nullptr;
 };
 
 DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart,

@@ -41,7 +41,7 @@ public Q_SLOTS:
     void slotClose();
 
 private:
-    MessageComposer::RecipientsEditor *mRecipients;
+    MessageComposer::RecipientsEditor *mRecipients = nullptr;
 };
 
 #endif

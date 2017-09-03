@@ -46,7 +46,7 @@ public:
     QString toCleanHtml() const;
     PimCommon::AutoCorrection *autoCorrection = nullptr;
     RichTextComposerNg *richtextComposer = nullptr;
-    MessageComposer::RichTextComposerSignatures *richTextComposerSignatures;
+    MessageComposer::RichTextComposerSignatures *richTextComposerSignatures = nullptr;
 };
 
 RichTextComposerNg::RichTextComposerNg(QWidget *parent)

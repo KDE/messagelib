@@ -61,11 +61,11 @@ public:
     explicit ThemeColumnPropertiesDialog(QWidget *parent, Core::Theme::Column *column, const QString &title);
 
 protected:
-    Core::Theme::Column *mColumn;
-    KLineEdit *mNameEdit;
-    QCheckBox *mVisibleByDefaultCheck;
-    QCheckBox *mIsSenderOrReceiverCheck;
-    KComboBox *mMessageSortingCombo;
+    Core::Theme::Column *mColumn = nullptr;
+    KLineEdit *mNameEdit = nullptr;
+    QCheckBox *mVisibleByDefaultCheck = nullptr;
+    QCheckBox *mIsSenderOrReceiverCheck = nullptr;
+    KComboBox *mMessageSortingCombo = nullptr;
 
 protected Q_SLOTS:
     void slotOkButtonClicked();
@@ -79,9 +79,9 @@ public:
     ~ThemePreviewDelegate();
 
 private:
-    Core::GroupHeaderItem *mSampleGroupHeaderItem;
-    Core::FakeItem *mSampleMessageItem;
-    Core::ModelInvariantRowMapper *mRowMapper;  // needed for the MessageItem above to be valid
+    Core::GroupHeaderItem *mSampleGroupHeaderItem = nullptr;
+    Core::FakeItem *mSampleMessageItem = nullptr;
+    Core::ModelInvariantRowMapper *mRowMapper = nullptr;  // needed for the MessageItem above to be valid
 public:
     Core::Item *itemFromIndex(const QModelIndex &index) const override;
 };
@@ -119,11 +119,11 @@ private:
     };
 
 private:
-    ThemePreviewDelegate *mDelegate;
-    QTreeWidgetItem *mGroupHeaderSampleItem;
+    ThemePreviewDelegate *mDelegate = nullptr;
+    QTreeWidgetItem *mGroupHeaderSampleItem = nullptr;
     QRect mThemeSelectedContentItemRect;
-    Core::Theme::ContentItem *mSelectedThemeContentItem;
-    Core::Theme::Column *mSelectedThemeColumn;
+    Core::Theme::ContentItem *mSelectedThemeContentItem = nullptr;
+    Core::Theme::Column *mSelectedThemeColumn = nullptr;
     QPoint mMouseDownPoint;
     Core::Theme *mTheme;
     RowInsertPosition mRowInsertPosition;
@@ -227,14 +227,14 @@ protected Q_SLOTS:
 private:
     void setReadOnly(bool readOnly);
 
-    Core::Theme *mCurrentTheme;  // shallow, may be null!
+    Core::Theme *mCurrentTheme = nullptr;  // shallow, may be null!
 
     // Appearance tab
-    ThemePreviewWidget *mPreviewWidget;
+    ThemePreviewWidget *mPreviewWidget = nullptr;
 
     // Advanced tab
-    KComboBox *mViewHeaderPolicyCombo;
-    KPluralHandlingSpinBox *mIconSizeSpinBox;
+    KComboBox *mViewHeaderPolicyCombo = nullptr;
+    KPluralHandlingSpinBox *mIconSizeSpinBox = nullptr;
 };
 
 } // namespace Utils

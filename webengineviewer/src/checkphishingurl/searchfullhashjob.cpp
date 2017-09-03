@@ -43,7 +43,7 @@ public:
     QHash<QByteArray, QByteArray> mHashs;
     QUrl mUrl;
     QStringList mDatabaseHashes;
-    QNetworkAccessManager *mNetworkAccessManager;
+    QNetworkAccessManager *mNetworkAccessManager = nullptr;
 };
 
 SearchFullHashJob::SearchFullHashJob(QObject *parent)

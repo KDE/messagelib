@@ -82,9 +82,7 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
 
     QGridLayout *g = new QGridLayout(base);
 
-    QLabel *l;
-
-    l = new QLabel(i18nc("@label:textbox Property name", "Name:"), base);
+    QLabel *l = new QLabel(i18nc("@label:textbox Property name", "Name:"), base);
     g->addWidget(l, 0, 0);
 
     mNameEdit = new KLineEdit(base);
@@ -876,8 +874,7 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
             menu.addSection(Theme::ContentItem::description(mSelectedThemeContentItem->type()));
 
             if (mSelectedThemeContentItem->displaysText()) {
-                QAction *act;
-                act = menu.addAction(i18nc("@action:inmenu soften the text color", "Soften"));
+                QAction *act = menu.addAction(i18nc("@action:inmenu soften the text color", "Soften"));
                 act->setCheckable(true);
                 act->setChecked(mSelectedThemeContentItem->softenByBlending());
                 connect(act, &QAction::triggered, this, &ThemePreviewWidget::slotSoftenActionTriggered);
@@ -903,8 +900,7 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
 
                 QActionGroup *grp = new QActionGroup(childmenu);
 
-                QAction *act;
-                act = childmenu->addAction(i18nc("@action:inmenu Foreground color setting", "Default"));
+                QAction *act = childmenu->addAction(i18nc("@action:inmenu Foreground color setting", "Default"));
                 act->setData(QVariant(static_cast< int >(0)));
                 act->setCheckable(true);
                 act->setChecked(!mSelectedThemeContentItem->useCustomColor());
@@ -925,8 +921,7 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
 
                 QActionGroup *grp = new QActionGroup(childmenu);
 
-                QAction *act;
-                act = childmenu->addAction(i18nc("Hide a mark if the mail does not have the attribute, e.g. Important mark on a non important mail", "Hide"));
+                QAction *act = childmenu->addAction(i18nc("Hide a mark if the mail does not have the attribute, e.g. Important mark on a non important mail", "Hide"));
                 act->setData(QVariant(static_cast< int >(Theme::ContentItem::HideWhenDisabled)));
                 act->setCheckable(true);
                 act->setChecked(mSelectedThemeContentItem->hideWhenDisabled());
@@ -958,8 +953,7 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
 
                 QActionGroup *grp = new QActionGroup(childmenu);
 
-                QAction *act;
-                act = childmenu->addAction(i18nc("@action:inmenu Group header background color setting", "None"));
+                QAction *act = childmenu->addAction(i18nc("@action:inmenu Group header background color setting", "None"));
                 act->setData(QVariant(static_cast< int >(Theme::Transparent)));
                 act->setCheckable(true);
                 act->setChecked(mTheme->groupHeaderBackgroundMode() == Theme::Transparent);
@@ -1188,9 +1182,7 @@ void ThemePreviewWidget::slotHeaderContextMenuRequested(const QPoint &pos)
 
     menu.setTitle(mSelectedThemeColumn->label());
 
-    QAction *act;
-
-    act = menu.addAction(i18n("Column Properties..."));
+    QAction *act = menu.addAction(i18n("Column Properties..."));
     connect(act, &QAction::triggered, this, &ThemePreviewWidget::slotColumnProperties);
 
     act = menu.addAction(i18n("Add Column..."));

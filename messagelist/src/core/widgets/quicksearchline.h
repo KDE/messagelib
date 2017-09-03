@@ -82,8 +82,8 @@ private Q_SLOTS:
     void slotClearButtonClicked();
     void slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst);
 private:
-    SearchLineStatus *mSearchEdit;
-    KComboBox *mTagFilterCombo;
+    SearchLineStatus *mSearchEdit = nullptr;
+    KComboBox *mTagFilterCombo = nullptr;
     QList<Akonadi::MessageStatus> mLstStatus;
 };
 }

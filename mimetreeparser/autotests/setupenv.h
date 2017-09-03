@@ -155,13 +155,13 @@ public:
         return false;
     }
 private:
-    MimeTreeParser::HtmlWriter *mWriter;
+    MimeTreeParser::HtmlWriter *mWriter = nullptr;
     QString mAttachmentStrategy;
     BodyPartFormatterBaseFactory mBodyPartFormatterBaseFactory;
     MimeTreeParser::Util::HtmlMode mPreferredMode;
-    bool mHtmlLoadExternal;
-    bool mDecryptMessage;
-    bool mShowSignatureDetails;
+    bool mHtmlLoadExternal = false;
+    bool mDecryptMessage = false;
+    bool mShowSignatureDetails = false;
 };
 
 }

@@ -58,9 +58,9 @@ private:
     QHash<EditorWatcher *, KMime::Content *> mEditorWatchers;
     Akonadi::Item mMessageItem;
     KMime::Message::Ptr mMessage;
-    bool mShowWarning;
-    QWidget *mMainWindow;
-    Akonadi::Session *mSession;
+    bool mShowWarning = false;
+    QWidget *mMainWindow = nullptr;
+    Akonadi::Session *mSession = nullptr;
 };
 }
 

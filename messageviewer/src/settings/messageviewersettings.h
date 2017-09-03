@@ -50,7 +50,7 @@ private:
     virtual ~MessageViewerSettings();
     static MessageViewerSettings *mSelf;
 
-    QTimer *mConfigSyncTimer;
+    QTimer *mConfigSyncTimer = nullptr;
 };
 }
 

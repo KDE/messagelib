@@ -76,8 +76,8 @@ private:
     QTimer mTimer;
     QTime mEditTime;
 
-    KProcess *mEditor;
-    QWidget *mParentWidget;
+    KProcess *mEditor = nullptr;
+    QWidget *mParentWidget = nullptr;
 
     int mInotifyFd;
     int mInotifyWatch;

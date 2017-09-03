@@ -600,7 +600,7 @@ private:
     void slotCheckedUrlFinished(const QUrl &url,
                                 WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
-    MimeTreeParser::NodeHelper *mNodeHelper;
+    MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     void slotDelayPrintPreview();
 public:
     bool mHtmlMailGlobalSetting;
@@ -609,16 +609,16 @@ public:
     KMime::Message::Ptr mMessage; //the current message, if it was set manually
     Akonadi::Item mMessageItem; //the message item from Akonadi
     // widgets:
-    QSplitter *mSplitter;
-    QWidget *mBox;
-    HtmlStatusBar *mColorBar;
+    QSplitter *mSplitter = nullptr;
+    QWidget *mBox = nullptr;
+    HtmlStatusBar *mColorBar = nullptr;
 #ifndef QT_NO_TREEVIEW
-    MimePartTreeView *mMimePartTree;
+    MimePartTreeView *mMimePartTree = nullptr;
 #endif
-    MailWebEngineView *mViewer;
-    WebEngineViewer::FindBarWebEngineView *mFindBar;
+    MailWebEngineView *mViewer = nullptr;
+    WebEngineViewer::FindBarWebEngineView *mFindBar = nullptr;
 
-    const MimeTreeParser::AttachmentStrategy *mAttachmentStrategy;
+    const MimeTreeParser::AttachmentStrategy *mAttachmentStrategy = nullptr;
     QTimer mUpdateReaderWinTimer;
     QTimer mResizeTimer;
     QString mOverrideEncoding;
@@ -629,32 +629,32 @@ public:
     /// the splash/busy page is displayed.
     bool mMsgDisplay;
 
-    CSSHelper *mCSSHelper;
+    CSSHelper *mCSSHelper = nullptr;
     bool mUseFixedFont;
     bool mPrinting;
-    QWidget *mMainWindow;
-    KActionCollection *mActionCollection;
-    QAction *mCopyAction;
-    QAction *mCopyURLAction;
-    QAction *mUrlOpenAction;
-    QAction *mSelectAllAction;
-    QAction *mScrollUpAction;
-    QAction *mScrollDownAction;
-    QAction *mScrollUpMoreAction;
-    QAction *mScrollDownMoreAction;
-    QAction *mViewSourceAction;
-    QAction *mSaveMessageAction;
-    QAction *mFindInMessageAction;
-    QAction *mSaveMessageDisplayFormat;
-    QAction *mResetMessageDisplayFormat;
-    KToggleAction *mDisableEmoticonAction;
-    KToggleAction *mHeaderOnlyAttachmentsAction;
-    KSelectAction *mSelectEncodingAction;
-    KToggleAction *mToggleFixFontAction;
-    KToggleAction *mToggleDisplayModeAction;
-    KToggleAction *mToggleMimePartTreeAction;
-    QAction *mSpeakTextAction;
-    QAction *mCopyImageLocation;
+    QWidget *mMainWindow = nullptr;
+    KActionCollection *mActionCollection = nullptr;
+    QAction *mCopyAction = nullptr;
+    QAction *mCopyURLAction = nullptr;
+    QAction *mUrlOpenAction = nullptr;
+    QAction *mSelectAllAction = nullptr;
+    QAction *mScrollUpAction = nullptr;
+    QAction *mScrollDownAction = nullptr;
+    QAction *mScrollUpMoreAction = nullptr;
+    QAction *mScrollDownMoreAction = nullptr;
+    QAction *mViewSourceAction = nullptr;
+    QAction *mSaveMessageAction = nullptr;
+    QAction *mFindInMessageAction = nullptr;
+    QAction *mSaveMessageDisplayFormat = nullptr;
+    QAction *mResetMessageDisplayFormat = nullptr;
+    KToggleAction *mDisableEmoticonAction = nullptr;
+    KToggleAction *mHeaderOnlyAttachmentsAction = nullptr;
+    KSelectAction *mSelectEncodingAction = nullptr;
+    KToggleAction *mToggleFixFontAction = nullptr;
+    KToggleAction *mToggleDisplayModeAction = nullptr;
+    KToggleAction *mToggleMimePartTreeAction = nullptr;
+    QAction *mSpeakTextAction = nullptr;
+    QAction *mCopyImageLocation = nullptr;
     QUrl mHoveredUrl;
     QUrl mClickedUrl;
     QUrl mImageUrl;
@@ -671,34 +671,34 @@ public:
     bool mShowAttachmentQuicklist;
     bool mForceEmoticons;
     int mRecursionCountForDisplayMessage;
-    KMime::Content *mCurrentContent;
-    KMime::Content *mMessagePartNode;
+    KMime::Content *mCurrentContent = nullptr;
+    KMime::Content *mMessagePartNode = nullptr;
     QString mMessagePath;
 
     QColor mForegroundError;
     QColor mBackgroundError;
 
     Viewer *const q;
-    Akonadi::Session *mSession;
+    Akonadi::Session *mSession = nullptr;
     Akonadi::Monitor mMonitor;
     QSet<AbstractMessageLoadedHandler *> mMessageLoadedHandlers;
     Akonadi::Item::Id mPreviouslyViewedItem;
 
-    MessageViewer::ScamDetectionWarningWidget *mScamDetectionWarning;
-    MessageViewer::OpenAttachmentFolderWidget *mOpenAttachmentFolderWidget;
-    MessageViewer::SubmittedFormWarningWidget *mSubmittedFormWarning;
-    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget;
+    MessageViewer::ScamDetectionWarningWidget *mScamDetectionWarning = nullptr;
+    MessageViewer::OpenAttachmentFolderWidget *mOpenAttachmentFolderWidget = nullptr;
+    MessageViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
+    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
     Viewer::DisplayFormatMessage mDisplayFormatMessageOverwrite;
-    KPIMTextEdit::SlideContainer *mSliderContainer;
-    PimCommon::ShareServiceUrlManager *mShareServiceManager;
-    KActionMenu *mShareServiceUrlMenu;
-    MessageViewer::HeaderStylePlugin *mHeaderStylePlugin;
-    MessageViewer::HeaderStyleMenuManager *mHeaderStyleMenuManager;
-    MessageViewer::ViewerPluginToolManager *mViewerPluginToolManager;
-    WebEngineViewer::ZoomActionMenu *mZoomActionMenu;
-    QPrinter *mCurrentPrinter;
+    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    PimCommon::ShareServiceUrlManager *mShareServiceManager = nullptr;
+    KActionMenu *mShareServiceUrlMenu = nullptr;
+    MessageViewer::HeaderStylePlugin *mHeaderStylePlugin = nullptr;
+    MessageViewer::HeaderStyleMenuManager *mHeaderStyleMenuManager = nullptr;
+    MessageViewer::ViewerPluginToolManager *mViewerPluginToolManager = nullptr;
+    WebEngineViewer::ZoomActionMenu *mZoomActionMenu = nullptr;
+    QPrinter *mCurrentPrinter = nullptr;
     QList<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
-    WebEngineViewer::LocalDataBaseManager *mPhishingDatabase;
+    WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
 };
 }
 

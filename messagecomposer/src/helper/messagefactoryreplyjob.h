@@ -60,8 +60,8 @@ private:
     KMime::Message::Ptr mMsg;
     KMime::Message::Ptr mOrigMsg;
     Akonadi::Collection mCollection;
-    bool mReplyAll;
-    KIdentityManagement::IdentityManager *mIdentityManager;
+    bool mReplyAll = false;
+    KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
 
 }

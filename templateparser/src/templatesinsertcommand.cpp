@@ -416,7 +416,7 @@ TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &n
     setObjectName(name);
     setText(i18n("&Insert Command"));
 
-    KActionMenu *menu;
+    KActionMenu *menu = nullptr;
     QMap< QString, Command > commandMap;
 
     QSignalMapper *mapper = new QSignalMapper(this);

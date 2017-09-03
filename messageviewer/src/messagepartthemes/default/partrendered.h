@@ -96,7 +96,7 @@ protected:
 private:
     QString mHtml;
     bool mShowAttachmentBlock;
-    KMime::Content *mAttachmentNode;
+    KMime::Content *mAttachmentNode = nullptr;
 };
 
 class TextPartRendered : public PartRendered
@@ -113,7 +113,7 @@ private:
     QString mHtml;
     QVector<QSharedPointer<PartRendered> > mSubList;
     bool mShowAttachmentBlock;
-    KMime::Content *mAttachmentNode;
+    KMime::Content *mAttachmentNode = nullptr;
 };
 
 #endif

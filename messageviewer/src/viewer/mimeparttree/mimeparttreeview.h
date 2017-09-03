@@ -43,7 +43,7 @@ private:
     void slotMimePartDestroyed();
     void saveMimePartTreeConfig();
     void restoreMimePartTreeConfig();
-    MimeTreeModel *mMimePartModel;
+    MimeTreeModel *mMimePartModel = nullptr;
 };
 }
 

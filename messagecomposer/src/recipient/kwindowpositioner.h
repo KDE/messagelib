@@ -36,10 +36,10 @@ public:
     void reposition();
 
 private:
-    QWidget *mMaster;
-    QWidget *mSlave;
+    QWidget *mMaster = nullptr;
+    QWidget *mSlave = nullptr;
 
-    Mode mMode;
+    Mode mMode = Bottom;
 };
 }
 

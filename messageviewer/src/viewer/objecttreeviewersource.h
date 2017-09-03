@@ -53,7 +53,7 @@ public:
         MimeTreeParser::Interface::MessagePartPtr msgPart) override;
     bool isPrinting() const override;
 private:
-    ViewerPrivate *mViewer;
+    ViewerPrivate *mViewer = nullptr;
 };
 }
 

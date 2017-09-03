@@ -34,16 +34,14 @@ class PluginEditorInitInfo
 {
 public:
     PluginEditorInitInfo()
-        : plugin(nullptr)
-        , isEnabled(true)
     {
     }
 
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
-    PluginEditorInit *plugin;
-    bool isEnabled;
+    PluginEditorInit *plugin = nullptr;
+    bool isEnabled = true;
 };
 
 namespace {

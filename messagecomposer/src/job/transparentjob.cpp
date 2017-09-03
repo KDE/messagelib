@@ -32,11 +32,10 @@ class MessageComposer::TransparentJobPrivate : public MessageComposer::ContentJo
 public:
     TransparentJobPrivate(TransparentJob *qq)
         : ContentJobBasePrivate(qq)
-        , content(nullptr)
     {
     }
 
-    KMime::Content *content;
+    KMime::Content *content = nullptr;
 
     Q_DECLARE_PUBLIC(TransparentJob)
 };

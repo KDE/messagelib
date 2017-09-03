@@ -52,7 +52,7 @@ public:
     Type type() const;
 
 private:
-    QAction *mAction;
+    QAction *mAction = nullptr;
     Type mType;
 };
 

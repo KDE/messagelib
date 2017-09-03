@@ -35,7 +35,7 @@ public:
     }
     void cleanWhitespaceHelper(const QRegExp &regExp, const QString &newText, const KIdentityManagement::Signature &sig);
     QList<QPair<int, int> > signaturePositions(const KIdentityManagement::Signature &sig) const;
-    RichTextComposerNg *richTextComposer;
+    RichTextComposerNg *richTextComposer = nullptr;
 };
 
 RichTextComposerSignatures::RichTextComposerSignatures(MessageComposer::RichTextComposerNg *composer, QObject *parent)

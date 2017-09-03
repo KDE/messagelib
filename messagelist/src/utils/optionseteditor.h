@@ -73,8 +73,8 @@ protected Q_SLOTS:
     virtual void slotNameEditTextEdited(const QString &newName) = 0;
 
 private:
-    KLineEdit *mNameEdit;                        ///< The editor for the OptionSet name
-    KTextEdit *mDescriptionEdit;                 ///< The editor for the OptionSet description
+    KLineEdit *mNameEdit = nullptr;                        ///< The editor for the OptionSet name
+    KTextEdit *mDescriptionEdit = nullptr;                 ///< The editor for the OptionSet description
 
 };
 

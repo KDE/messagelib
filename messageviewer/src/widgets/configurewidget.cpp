@@ -34,7 +34,6 @@ class MessageViewer::ConfigureWidgetPrivate
 {
 public:
     ConfigureWidgetPrivate()
-        : mSettingsUi(nullptr)
     {
     }
 
@@ -44,7 +43,7 @@ public:
         mSettingsUi = nullptr;
     }
 
-    Ui_Settings *mSettingsUi;
+    Ui_Settings *mSettingsUi = nullptr;
 };
 
 ConfigureWidget::ConfigureWidget(QWidget *parent)

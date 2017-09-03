@@ -71,7 +71,7 @@ public:
     uint mRemovedShiftCount;              ///< The number of shifts that we have completely processed
     int mLazyUpdateChunkInterval;         ///< Msecs: how much time we spend inside a lazy update chunk
     int mLazyUpdateIdleInterval;          ///< Msecs: how much time we idle between lazy update chunks
-    QTimer *mUpdateTimer;                 ///< Background lazy update timer
+    QTimer *mUpdateTimer = nullptr;                 ///< Background lazy update timer
 };
 
 } // Core

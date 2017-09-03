@@ -47,9 +47,9 @@ public:
     void updateActions(const Akonadi::Item &messageItem);
     QList<QAction *> actionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
     QList<MessageViewer::ViewerPluginInterface *> mListInterface;
-    KActionCollection *mActionCollection;
-    QWidget *mParentWidget;
-    ViewerPluginToolManager *q;
+    KActionCollection *mActionCollection = nullptr;
+    QWidget *mParentWidget = nullptr;
+    ViewerPluginToolManager *q = nullptr;
 };
 
 void ViewerPluginToolManagerPrivate::setServiceTypeName(const QString &serviceName)

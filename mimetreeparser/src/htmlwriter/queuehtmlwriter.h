@@ -67,7 +67,7 @@ public:
     void replay();
 
 private:
-    HtmlWriter *mBase;
+    HtmlWriter *mBase = nullptr;
     QVector<Command> mQueue;
 };
 

@@ -238,7 +238,7 @@ public:
     Item *const q;
 
     QList< Item * > *mChildItems;               ///< List of children, may be 0
-    Item *mParent;                              ///< The parent view item
+    Item *mParent = nullptr;                              ///< The parent view item
     time_t mMaxDate;                            ///< The maximum date in the subtree
     time_t mDate;                               ///< The date of the message (or group date)
     size_t mSize;                               ///< The size of the message in bytes

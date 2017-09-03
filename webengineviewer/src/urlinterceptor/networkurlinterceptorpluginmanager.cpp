@@ -42,7 +42,7 @@ public:
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
-    WebEngineViewer::NetworkPluginUrlInterceptor *plugin;
+    WebEngineViewer::NetworkPluginUrlInterceptor *plugin = nullptr;
     bool isEnabled;
 };
 

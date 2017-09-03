@@ -72,7 +72,7 @@ MessageCore::ImageCollector::~ImageCollector()
 
 void MessageCore::ImageCollector::collectImagesFrom(KMime::Content *node)
 {
-    KMime::Content *parent;
+    KMime::Content *parent = nullptr;
 
     while (node) {
         parent = node->parent();
