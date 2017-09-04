@@ -280,6 +280,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
 
     // FIXME: Don't use the full payload here when attachment loading on demand is used, just
     //        like in KMMainWidget::slotMessageActivated().
+    mMonitor.setObjectName(QStringLiteral("MessageViewerMonitor"));
     mMonitor.setSession(mSession);
     Akonadi::ItemFetchScope fs;
     fs.fetchFullPayload();

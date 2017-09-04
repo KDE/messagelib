@@ -94,6 +94,7 @@ ecm_generate_headers(MessageList_Camelcasecore_HEADERS
     View
     Enums
     StorageModelBase
+    WidgetBase
     REQUIRED_HEADERS MessageList_core_HEADERS
     RELATIVE core
     PREFIX MessageList

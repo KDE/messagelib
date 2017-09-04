@@ -665,6 +665,7 @@ TagCache::TagCache()
       mMonitor(new Akonadi::Monitor(this))
 {
     mCache.setMaxCost(100);
+    mMonitor->setObjectName(QStringLiteral("MessageListTagCacheMonitor"));
     mMonitor->setTypeMonitored(Akonadi::Monitor::Tags);
     mMonitor->tagFetchScope().fetchAttribute<Akonadi::TagAttribute>();
     connect(mMonitor, &Akonadi::Monitor::tagAdded, this, &TagCache::onTagAdded);
