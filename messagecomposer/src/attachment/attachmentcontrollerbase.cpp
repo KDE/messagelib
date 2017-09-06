@@ -957,7 +957,7 @@ void AttachmentControllerBase::showAttachPublicKeyDialog()
         false /* no remember choice box */,
         d->wParent);
 
-    if (dialog->exec() == QDialog::Accepted && dialog) {
+    if (dialog->exec() == QDialog::Accepted) {
         exportPublicKey(dialog->fingerprint());
     }
     delete dialog;
