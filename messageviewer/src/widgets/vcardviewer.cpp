@@ -44,9 +44,8 @@ VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     , mAddresseeListIndex(0)
 {
     setWindowTitle(i18n("vCard Viewer"));
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     QPushButton *user1Button = new QPushButton;
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     mUser2Button = new QPushButton;

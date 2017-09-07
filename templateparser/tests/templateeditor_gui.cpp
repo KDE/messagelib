@@ -29,9 +29,8 @@
 TemplateEditorTestWidget::TemplateEditorTestWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout;
-    lay->addWidget(new TemplateParser::TemplatesTextEdit);
-    setLayout(lay);
+    QHBoxLayout *lay = new QHBoxLayout(this);
+    lay->addWidget(new TemplateParser::TemplatesTextEdit(this));
 }
 
 TemplateEditorTestWidget::~TemplateEditorTestWidget()

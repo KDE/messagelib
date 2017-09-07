@@ -32,8 +32,7 @@
 TestMailDndAttachment::TestMailDndAttachment(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *vbox = new QVBoxLayout;
-    setLayout(vbox);
+    QVBoxLayout *vbox = new QVBoxLayout(this);
     MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
                                                                   this));
     vbox->addWidget(viewer);

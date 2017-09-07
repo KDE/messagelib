@@ -36,13 +36,12 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     : QWidget(parent)
 {
     QMenuBar *menuBar = new QMenuBar(this);
-    QVBoxLayout *vbox = new QVBoxLayout;
-    setLayout(vbox);
+    QVBoxLayout *vbox = new QVBoxLayout(this);
     vbox->addWidget(menuBar);
-    QTextEdit *textEdit = new QTextEdit;
+    QTextEdit *textEdit = new QTextEdit(this);
     vbox->addWidget(textEdit);
 
-    QWidget *toolManagerWidget = new QWidget;
+    QWidget *toolManagerWidget = new QWidget(this);
     vbox->addWidget(toolManagerWidget);
     vbox = new QVBoxLayout;
     vbox->setMargin(0);

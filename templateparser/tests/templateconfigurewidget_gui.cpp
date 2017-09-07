@@ -27,9 +27,8 @@
 TemplateConfigureTestWidget::TemplateConfigureTestWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout;
-    lay->addWidget(new TemplateParser::TemplatesConfiguration());
-    setLayout(lay);
+    QHBoxLayout *lay = new QHBoxLayout(this);
+    lay->addWidget(new TemplateParser::TemplatesConfiguration(this));
 }
 
 TemplateConfigureTestWidget::~TemplateConfigureTestWidget()
