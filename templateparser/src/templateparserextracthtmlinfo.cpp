@@ -62,7 +62,7 @@ void TemplateParserExtractHtmlInfo::start()
         connect(mTemplateWebEngineView, &TemplateWebEngineView::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished);
         mTemplateWebEngineView->setHtmlContent(mHtmlForExtractingTextPlain);
     } else {
-        qCWarning(TEMPLATEPARSER_LOG) << "html string is empty for extracting to plainText";
+        qCDebug(TEMPLATEPARSER_LOG) << "html string is empty for extracting to plainText";
         slotExtractToPlainTextFinished(false);
     }
 }
@@ -70,7 +70,7 @@ void TemplateParserExtractHtmlInfo::start()
 void TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished(bool success)
 {
     if (!success) {
-        qCWarning(TEMPLATEPARSER_LOG) << "Impossible to extract plaintext";
+        qCDebug(TEMPLATEPARSER_LOG) << "Impossible to extract plaintext";
     } else {
         mResult.mPlainText = mTemplateWebEngineView->plainText();
     }
@@ -79,7 +79,7 @@ void TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished(bool success)
         connect(mExtractHtmlElementWebEngineView, &TemplateExtractHtmlElementWebEngineView::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished);
         mExtractHtmlElementWebEngineView->setHtmlContent(mHtmlForExtractionHeaderAndBody);
     } else {
-        qCWarning(TEMPLATEPARSER_LOG) << "html string is empty for extracting to header and body";
+        qCDebug(TEMPLATEPARSER_LOG) << "html string is empty for extracting to header and body";
         slotExtractHtmlElementFinished(false);
     }
 }
@@ -87,7 +87,7 @@ void TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished(bool success)
 void TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished(bool success)
 {
     if (!success) {
-        qCWarning(TEMPLATEPARSER_LOG) << "Impossible to extract html element";
+        qCDebug(TEMPLATEPARSER_LOG) << "Impossible to extract html element";
     } else {
         mResult.mBodyElement = mExtractHtmlElementWebEngineView->bodyElement();
         mResult.mHeaderElement = mExtractHtmlElementWebEngineView->headerElement();
