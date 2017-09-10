@@ -28,14 +28,11 @@
 
 class QTextEdit;
 
-namespace KIO
-{
+namespace KIO {
 class Job;
 }
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 /**
  * A job that downloads a given URL, interprets the result as a text file with the
  * given encoding and then inserts the text into the editor.
@@ -61,7 +58,6 @@ private Q_SLOTS:
 private:
     InsertTextFileJobPrivate *const d;
 };
-
 }
 
 #endif

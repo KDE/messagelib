@@ -27,32 +27,25 @@
 
 class QUrl;
 
-namespace KMime
-{
-namespace Types
-{
+namespace KMime {
+namespace Types {
 struct Address;
 typedef QVector<Address> AddressList;
 class Mailbox;
 }
-namespace Headers
-{
-namespace Generics
-{
+namespace Headers {
+namespace Generics {
 class MailboxList;
 class AddressList;
 }
 }
 }
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 /**
  * This namespace contain helper functions for string manipulation
  */
-namespace StringUtil
-{
+namespace StringUtil {
 /**
    * Parses a mailto: url and extracts the information in the QMap (field name as key).
    */
@@ -83,8 +76,7 @@ MESSAGECORE_EXPORT QString generateMessageId(const QString &address, const QStri
    * @p removeLineBreaks is false. If @p removeLineBreaks is true, then
    * '\\n' is removed. Last but not least '\\r' is removed.
    */
-MESSAGECORE_EXPORT QString quoteHtmlChars(const QString &text,
-        bool removeLineBreaks = false);
+MESSAGECORE_EXPORT QString quoteHtmlChars(const QString &text, bool removeLineBreaks = false);
 
 /**
    * Removes all private header fields (e.g. *Status: and X-KMail-*) from the given @p message.
@@ -138,41 +130,28 @@ enum AddressMode {
    * @p The number of addresses to show before collapsing the rest, if expandable is set to
    * ExpandableAddresses.
    */
-MESSAGECORE_EXPORT QString emailAddrAsAnchor(KMime::Headers::Generics::MailboxList *mailboxList,
-        Display display = DisplayNameOnly,
-        const QString &cssStyle = QString(),
-        Link link = ShowLink,
-        AddressMode expandable = FullAddresses,
-        const QString &fieldName = QString(),
-        int collapseNumber = 4);
+MESSAGECORE_EXPORT QString emailAddrAsAnchor(KMime::Headers::Generics::MailboxList *mailboxList, Display display = DisplayNameOnly,
+                                             const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
+                                             const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Same as above method, only for AddressList headers.
    */
-MESSAGECORE_EXPORT QString emailAddrAsAnchor(KMime::Headers::Generics::AddressList *addressList,
-        Display display = DisplayNameOnly,
-        const QString &cssStyle = QString(),
-        Link link = ShowLink,
-        AddressMode expandable = FullAddresses,
-        const QString &fieldName = QString(),
-        int collapseNumber = 4);
+MESSAGECORE_EXPORT QString emailAddrAsAnchor(KMime::Headers::Generics::AddressList *addressList, Display display = DisplayNameOnly,
+                                             const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
+                                             const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Same as the above, only for Mailbox::List types.
    */
-MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QVector<KMime::Types::Mailbox> &mailboxList,
-        Display display = DisplayNameOnly,
-        const QString &cssStyle = QString(),
-        Link link = ShowLink,
-        AddressMode expandable = FullAddresses,
-        const QString &fieldName = QString(),
-        int collapseNumber = 4);
+MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QVector<KMime::Types::Mailbox> &mailboxList, Display display = DisplayNameOnly,
+                                             const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
+                                             const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Returns true if the given address is contained in the given address list.
    */
-MESSAGECORE_EXPORT bool addressIsInAddressList(const QString &address,
-        const QStringList &addresses);
+MESSAGECORE_EXPORT bool addressIsInAddressList(const QString &address, const QStringList &addresses);
 
 /**
    * Uses the hostname as domain part and tries to determine the real name
@@ -218,9 +197,7 @@ MESSAGECORE_EXPORT QString cleanFileName(const QString &fileName);
 MESSAGECORE_EXPORT QString stripOffPrefixes(const QString &subject);
 
 MESSAGECORE_EXPORT void setEncodingFile(QUrl &url, const QString &encoding);
-
 }
-
 }
 
 #endif

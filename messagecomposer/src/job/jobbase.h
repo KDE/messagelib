@@ -26,9 +26,7 @@
 
 #include <KCompositeJob>
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class GlobalPart;
 class JobBasePrivate;
 
@@ -63,7 +61,6 @@ protected:
 private:
     Q_DECLARE_PRIVATE(JobBase)
 };
-
 } // namespace MessageComposer
 
 #endif

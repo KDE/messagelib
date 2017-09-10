@@ -39,11 +39,8 @@
 #include <map>
 #include <QByteArray>
 
-namespace MimeTreeParser
-{
-
-namespace Interface
-{
+namespace MimeTreeParser {
+namespace Interface {
 class BodyPartFormatter;
 }
 
@@ -81,7 +78,6 @@ private:
     const BodyPartFormatterBaseFactory &operator=(const BodyPartFormatterBaseFactory &);
     BodyPartFormatterBaseFactory(const BodyPartFormatterBaseFactory &);
 };
-
 }
 
 #endif // __MIMETREEPARSER_BODYPARTFORMATTERFACTORY_H__

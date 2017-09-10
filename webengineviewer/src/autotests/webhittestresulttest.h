@@ -33,7 +33,6 @@ private Q_SLOTS:
     void shouldAssignPosAndUrl();
     void shouldAssignFromQVariant();
     void shouldCopyWebHitTestResult();
-
 };
 
 #endif // WEBHITTESTRESULTTEST_H

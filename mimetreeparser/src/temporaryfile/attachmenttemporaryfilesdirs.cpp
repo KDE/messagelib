@@ -32,18 +32,17 @@ public:
     AttachmentTemporaryFilesDirsPrivate()
         : mDelayRemoveAll(10000)
     {
-
     }
+
     QStringList mTempFiles;
     QStringList mTempDirs;
     int mDelayRemoveAll;
 };
 
 AttachmentTemporaryFilesDirs::AttachmentTemporaryFilesDirs(QObject *parent)
-    : QObject(parent),
-      d(new AttachmentTemporaryFilesDirsPrivate)
+    : QObject(parent)
+    , d(new AttachmentTemporaryFilesDirsPrivate)
 {
-
 }
 
 AttachmentTemporaryFilesDirs::~AttachmentTemporaryFilesDirs()
@@ -105,4 +104,3 @@ QStringList AttachmentTemporaryFilesDirs::temporaryDirs() const
 {
     return d->mTempDirs;
 }
-

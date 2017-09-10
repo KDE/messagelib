@@ -23,10 +23,8 @@
 #include <QPoint>
 #include "webengineviewer_export.h"
 
-namespace WebEngineViewer
-{
-namespace WebEngineScript
-{
+namespace WebEngineViewer {
+namespace WebEngineScript {
 WEBENGINEVIEWER_EXPORT QString findAllImages();
 WEBENGINEVIEWER_EXPORT QString findAllScripts();
 WEBENGINEVIEWER_EXPORT QString findAllAnchors();

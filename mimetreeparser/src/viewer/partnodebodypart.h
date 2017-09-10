@@ -37,27 +37,22 @@
 #include "mimetreeparser_export.h"
 #include "mimetreeparser/bodypart.h"
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class NodeHelper;
 }
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 /**
     @short an implementation of the BodyPart interface using KMime::Content's
 */
 class MIMETREEPARSER_EXPORT PartNodeBodyPart : public Interface::BodyPart
 {
 public:
-    explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content,
-                              NodeHelper *nodeHelper);
+    explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content, NodeHelper *nodeHelper);
 
     QString makeLink(const QString &path) const override;
     QString asText() const override;
@@ -75,10 +70,12 @@ public:
     {
         return mContent;
     }
+
     KMime::Content *topLevelContent() const override
     {
         return mTopLevelContent;
     }
+
     NodeHelper *nodeHelper() const override
     {
         return mNodeHelper;
@@ -103,7 +100,6 @@ private:
     ObjectTreeParser *mObjectTreeParser = nullptr;
     ProcessResult *mProcessResult = nullptr;
 };
-
 }
 
 #endif // __MIMETREEPARSER_PARTNODEBODYPART_H__

@@ -24,8 +24,7 @@
 #include "templateparser_private_export.h"
 #include "templateparserextracthtmlinforesult.h"
 
-namespace TemplateParser
-{
+namespace TemplateParser {
 class TemplateWebEngineView;
 class TemplateExtractHtmlElementWebEngineView;
 

@@ -26,16 +26,15 @@ class MessageComposer::PluginEditorCheckBeforeSendPrivate
 public:
     PluginEditorCheckBeforeSendPrivate()
     {
-
     }
+
     bool mIsEnabled = false;
 };
 
 PluginEditorCheckBeforeSend::PluginEditorCheckBeforeSend(QObject *parent)
-    : QObject(parent),
-      d(new MessageComposer::PluginEditorCheckBeforeSendPrivate)
+    : QObject(parent)
+    , d(new MessageComposer::PluginEditorCheckBeforeSendPrivate)
 {
-
 }
 
 PluginEditorCheckBeforeSend::~PluginEditorCheckBeforeSend()

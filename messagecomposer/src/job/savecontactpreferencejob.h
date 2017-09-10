@@ -24,8 +24,7 @@
 #include <KContacts/Addressee>
 #include "composer/keyresolver.h"
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class SaveContactPreferenceJob : public QObject
 {
     Q_OBJECT

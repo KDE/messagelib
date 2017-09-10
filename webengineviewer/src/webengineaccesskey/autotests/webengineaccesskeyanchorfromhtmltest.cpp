@@ -53,7 +53,6 @@ TestWebEngineAccessKey::TestWebEngineAccessKey(QWidget *parent)
 
 TestWebEngineAccessKey::~TestWebEngineAccessKey()
 {
-
 }
 
 void TestWebEngineAccessKey::setHtml(const QString &html)

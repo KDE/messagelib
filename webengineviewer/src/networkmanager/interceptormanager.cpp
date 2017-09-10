@@ -29,18 +29,18 @@ class WebEngineViewer::NetworkAccessManagerWebEnginePrivate
 {
 public:
     NetworkAccessManagerWebEnginePrivate()
-        : mManager(nullptr),
-          mNetworkUrlInterceptor(nullptr)
+        : mManager(nullptr)
+        , mNetworkUrlInterceptor(nullptr)
     {
-
     }
+
     WebEngineViewer::NetworkUrlInterceptorManager *mManager = nullptr;
     WebEngineViewer::NetworkUrlInterceptor *mNetworkUrlInterceptor = nullptr;
 };
 
 InterceptorManager::InterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent)
-    : QObject(parent),
-      d(new NetworkAccessManagerWebEnginePrivate)
+    : QObject(parent)
+    , d(new NetworkAccessManagerWebEnginePrivate)
 {
     d->mManager = new WebEngineViewer::NetworkUrlInterceptorManager(webEngine, ac, this);
 

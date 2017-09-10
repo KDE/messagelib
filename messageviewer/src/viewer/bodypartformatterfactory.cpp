@@ -61,7 +61,7 @@ void BodyPartFormatterFactory::loadPlugins()
     const BodyPartFormatterPluginLoader *pl = BodyPartFormatterPluginLoader::instance();
     if (!pl) {
         qCWarning(MESSAGEVIEWER_LOG)
-        << "BodyPartFormatterFactory: cannot instantiate plugin loader!";
+            << "BodyPartFormatterFactory: cannot instantiate plugin loader!";
         return;
     }
     const QStringList types = pl->types();

@@ -115,7 +115,6 @@ KMime::Content *SignEncryptJob::origContent()
     Q_D(SignEncryptJob);
 
     return d->content;
-
 }
 
 void SignEncryptJob::setEncryptionKeys(const std::vector<GpgME::Key> &keys)
@@ -179,7 +178,7 @@ void SignEncryptJob::process()
     QByteArray content;
     if (d->format & Kleo::InlineOpenPGPFormat) {
         content = d->content->body();
-    } else if (!(d->format & Kleo::SMIMEOpaqueFormat))  {
+    } else if (!(d->format & Kleo::SMIMEOpaqueFormat)) {
         content = KMime::LFtoCRLF(d->content->encodedContent());
     } else {                    // SMimeOpaque doesn't need LFtoCRLF, else it gets munged
         content = d->content->encodedContent();
@@ -187,9 +186,9 @@ void SignEncryptJob::process()
 
     // FIXME: Make this async
     const std::pair<GpgME::SigningResult, GpgME::EncryptionResult> res = job->exec(d->signers, d->encKeys,
-            content,
-            false,
-            encBody);
+                                                                                   content,
+                                                                                   false,
+                                                                                   encBody);
 
     // exec'ed jobs don't delete themselves
     job->deleteLater();
@@ -209,10 +208,9 @@ void SignEncryptJob::process()
         return;
     }
 
-    QByteArray signatureHashAlgo =  res.first.createdSignature(0).hashAlgorithmAsString();
+    QByteArray signatureHashAlgo = res.first.createdSignature(0).hashAlgorithmAsString();
 
     d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, encBody, d->format, true, signatureHashAlgo);
 
     emitResult();
 }
-

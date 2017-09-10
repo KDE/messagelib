@@ -44,7 +44,6 @@ public:
     TestLocalDataBaseManager(QObject *parent)
         : WebEngineViewer::LocalDataBaseManager(new TestLocalDatabaseManagerPrivate, parent)
     {
-
     }
 
     ~TestLocalDataBaseManager()
@@ -61,16 +60,13 @@ private:
     QString mDownloadInfoSendByServer;
 };
 
-
 LocalDataBaseManagerTest::LocalDataBaseManagerTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 LocalDataBaseManagerTest::~LocalDataBaseManagerTest()
 {
-
 }
 
 QTEST_MAIN(LocalDataBaseManagerTest)

@@ -24,7 +24,6 @@
 #include "utils/util.h"
 #include "util_p.h"
 
-
 #include <QRegularExpression>
 #include "composer/composer.h"
 #include "job/singlepartjob.h"
@@ -75,7 +74,6 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
         makeToplevelContentType(result, format, sign, hashAlgo);
 
         if (makeMultiMime(format, sign)) {      // sign/enc PGPMime, sign SMIME
-
             const QByteArray boundary = KMime::multiPartBoundary();
             result->contentType()->setBoundary(boundary);
 
@@ -145,7 +143,6 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
             content->contentType()->setMimeType(QByteArrayLiteral("multipart/signed"));
             content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromAscii("application/pgp-signature"));
             content->contentType()->setParameter(QStringLiteral("micalg"), QString::fromAscii(QByteArray(QByteArrayLiteral("pgp-") + hashAlgo)).toLower());
-
         } else {
             content->contentType()->setMimeType(QByteArrayLiteral("multipart/encrypted"));
             content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromAscii("application/pgp-encrypted"));
@@ -159,9 +156,9 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
             content->contentType()->setParameter(QStringLiteral("micalg"), QString::fromAscii(hashAlgo).toLower());
             return;
         }
-    // fall through (for encryption, there's no difference between
-    // SMIME and SMIMEOpaque, since there is no mp/encrypted for
-    // S/MIME)
+        // fall through (for encryption, there's no difference between
+        // SMIME and SMIMEOpaque, since there is no mp/encrypted for
+        // S/MIME)
         Q_FALLTHROUGH();
     case Kleo::SMIMEOpaqueFormat:
 
@@ -220,9 +217,12 @@ bool MessageComposer::Util::makeMultiMime(Kleo::CryptoMessageFormat format, bool
     switch (format) {
     default:
     case Kleo::InlineOpenPGPFormat:
-    case Kleo::SMIMEOpaqueFormat:   return false;
-    case Kleo::OpenPGPMIMEFormat:   return true;
-    case Kleo::SMIMEFormat:         return sign; // only on sign - there's no mp/encrypted for S/MIME
+    case Kleo::SMIMEOpaqueFormat:
+        return false;
+    case Kleo::OpenPGPMIMEFormat:
+        return true;
+    case Kleo::SMIMEFormat:
+        return sign;                             // only on sign - there's no mp/encrypted for S/MIME
     }
 }
 
@@ -252,9 +252,9 @@ QByteArray MessageComposer::Util::selectCharset(const QList<QByteArray> &charset
 QStringList MessageComposer::Util::AttachmentKeywords()
 {
     return i18nc(
-               "comma-separated list of keywords that are used to detect whether "
-               "the user forgot to attach his attachment. Do not add space between words.",
-               "attachment,attached").split(QLatin1Char(','));
+        "comma-separated list of keywords that are used to detect whether "
+        "the user forgot to attach his attachment. Do not add space between words.",
+        "attachment,attached").split(QLatin1Char(','));
 }
 
 QString MessageComposer::Util::cleanedUpHeaderString(const QString &s)
@@ -286,7 +286,7 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
     Akonadi::AgentInstance instance = Akonadi::AgentManager::self()->instance(QStringLiteral("akonadi_maildispatcher_agent"));
     if (!instance.isValid()) {
         const int rc = KMessageBox::warningYesNo(parent, i18n("The mail dispatcher is not set up, so mails cannot be sent. Do you want to create a mail dispatcher?"),
-                       i18n("No mail dispatcher."), KStandardGuiItem::yes(), KStandardGuiItem::no(), QStringLiteral("no_maildispatcher"));
+                                                 i18n("No mail dispatcher."), KStandardGuiItem::yes(), KStandardGuiItem::no(), QStringLiteral("no_maildispatcher"));
         if (rc == KMessageBox::Yes) {
             const Akonadi::AgentType type = Akonadi::AgentManager::self()->type(QStringLiteral("akonadi_maildispatcher_agent"));
             Q_ASSERT(type.isValid());
@@ -299,7 +299,7 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
         return true;
     } else {
         const int rc = KMessageBox::warningYesNo(parent, i18n("The mail dispatcher is offline, so mails cannot be sent. Do you want to make it online?"),
-                       i18n("Mail dispatcher offline."), KStandardGuiItem::yes(), KStandardGuiItem::no(), QStringLiteral("maildispatcher_put_online"));
+                                                 i18n("Mail dispatcher offline."), KStandardGuiItem::yes(), KStandardGuiItem::no(), QStringLiteral("maildispatcher_put_online"));
         if (rc == KMessageBox::Yes) {
             instance.setIsOnline(true);
             return true;
@@ -322,15 +322,15 @@ KMime::Content *MessageComposer::Util::findTypeInMessage(KMime::Content *data, c
             return data;
         }
         if ((mimeType == data->contentType()->mediaType())
-                && (subType == data->contentType()->subType())) {
+            && (subType == data->contentType()->subType())) {
             return data;
         }
     }
 
     foreach (auto child, data->contents()) {
         if ((!child->contentType()->isEmpty())
-                && (mimeType == child->contentType()->mimeType())
-                && (subType == child->contentType()->subType())) {
+            && (mimeType == child->contentType()->mimeType())
+            && (subType == child->contentType()->subType())) {
             return child;
         }
         auto ret = findTypeInMessage(child, mimeType, subType);
@@ -422,7 +422,6 @@ KMime::Message::Ptr MessageComposer::Util::message(const Akonadi::Item &item)
     return item.payload<KMime::Message::Ptr>();
 }
 
-
 bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentKeywords, QTextDocument *doc, const QString &subj)
 {
     if (!doc) {
@@ -430,9 +429,9 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
     }
     QStringList attachWordsList = attachmentKeywords;
 
-    QRegularExpression rx(QLatin1String("\\b") +
-               attachWordsList.join(QStringLiteral("\\b|\\b")) +
-               QLatin1String("\\b"), QRegularExpression::CaseInsensitiveOption);
+    QRegularExpression rx(QLatin1String("\\b")
+                          +attachWordsList.join(QStringLiteral("\\b|\\b"))
+                          +QLatin1String("\\b"), QRegularExpression::CaseInsensitiveOption);
 
     // check whether the subject contains one of the attachment key words
     // unless the message is a reply or a forwarded message
@@ -445,8 +444,8 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
         QTextBlock end(doc->end());
         for (QTextBlock it = doc->begin(); it != end; it = it.next()) {
             const QString line = it.text();
-            gotMatch = (!quotationRx.match(line).hasMatch()) &&
-                       (rx.match(line).hasMatch());
+            gotMatch = (!quotationRx.match(line).hasMatch())
+                       && (rx.match(line).hasMatch());
             if (gotMatch) {
                 break;
             }

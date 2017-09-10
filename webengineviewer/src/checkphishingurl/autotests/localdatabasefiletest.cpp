@@ -33,7 +33,6 @@ LocalDataBaseFileTest::LocalDataBaseFileTest(QObject *parent)
 
 LocalDataBaseFileTest::~LocalDataBaseFileTest()
 {
-
 }
 
 void LocalDataBaseFileTest::shouldBeInvalidWithUnExistingFile()

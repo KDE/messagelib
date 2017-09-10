@@ -34,9 +34,7 @@
 #include <vector>
 #include <gpgme++/key.h>
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class ComposerPrivate;
 class GlobalPart;
 class InfoPart;
@@ -91,7 +89,6 @@ private:
     Q_PRIVATE_SLOT(d_func(), void contentJobFinished(KJob *))
     Q_PRIVATE_SLOT(d_func(), void attachmentsFinished(KJob *))
 };
-
 }
 
 #endif

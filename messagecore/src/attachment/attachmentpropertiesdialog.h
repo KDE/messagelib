@@ -28,15 +28,13 @@
 
 #include <QDialog>
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 /**
  * @short A dialog for editing attachment properties.
  *
  * @author Constantin Berzan <exit3219@gmail.com>
  */
-class MESSAGECORE_EXPORT AttachmentPropertiesDialog: public QDialog
+class MESSAGECORE_EXPORT AttachmentPropertiesDialog : public QDialog
 {
     Q_OBJECT
 
@@ -48,8 +46,7 @@ public:
      * @param readOnly Whether the dialog should be in read-only mode.
      * @param parent The parent object.
      */
-    explicit AttachmentPropertiesDialog(const AttachmentPart::Ptr &part,
-                                        bool readOnly = false, QWidget *parent = nullptr);
+    explicit AttachmentPropertiesDialog(const AttachmentPart::Ptr &part, bool readOnly = false, QWidget *parent = nullptr);
 
     /**
      * Creates a new attachment properties dialog.
@@ -105,7 +102,6 @@ private:
     Q_PRIVATE_SLOT(d, void mimeTypeChanged(const QString &))
     //@endcond
 };
-
 }
 
 #endif

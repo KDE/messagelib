@@ -38,6 +38,7 @@ const Interface::BodyPartFormatter *TextHtmlBodyPartFormatter::create()
     }
     return self;
 }
+
 Interface::BodyPartFormatter::Result TextHtmlBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
 {
     Q_UNUSED(writer)

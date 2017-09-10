@@ -34,16 +34,16 @@ class TemplateParser::CustomTemplatesMenuPrivate
 {
 public:
     CustomTemplatesMenuPrivate()
-        : mOwnerActionCollection(nullptr),
-          mCustomReplyActionMenu(nullptr),
-          mCustomReplyAllActionMenu(nullptr),
-          mCustomForwardActionMenu(nullptr),
-          mCustomReplyMapper(nullptr),
-          mCustomReplyAllMapper(nullptr),
-          mCustomForwardMapper(nullptr)
+        : mOwnerActionCollection(nullptr)
+        , mCustomReplyActionMenu(nullptr)
+        , mCustomReplyAllActionMenu(nullptr)
+        , mCustomForwardActionMenu(nullptr)
+        , mCustomReplyMapper(nullptr)
+        , mCustomReplyAllMapper(nullptr)
+        , mCustomForwardMapper(nullptr)
     {
-
     }
+
     ~CustomTemplatesMenuPrivate()
     {
         delete mCustomReplyActionMenu;
@@ -54,6 +54,7 @@ public:
         delete mCustomReplyAllMapper;
         delete mCustomForwardMapper;
     }
+
     KActionCollection *mOwnerActionCollection = nullptr;
 
     QStringList mCustomTemplates;
@@ -76,15 +77,15 @@ CustomTemplatesMenu::CustomTemplatesMenu(QWidget *owner, KActionCollection *ac)
     d->mOwnerActionCollection = ac;
 
     d->mCustomForwardActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-forward-custom")),
-            i18n("With Custom Template"), owner);
+                                                  i18n("With Custom Template"), owner);
     d->mOwnerActionCollection->addAction(QStringLiteral("custom_forward"), d->mCustomForwardActionMenu);
 
     d->mCustomReplyActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-reply-custom")),
-            i18n("Reply With Custom Template"), owner);
+                                                i18n("Reply With Custom Template"), owner);
     d->mOwnerActionCollection->addAction(QStringLiteral("custom_reply"), d->mCustomReplyActionMenu);
 
     d->mCustomReplyAllActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-reply-all-custom")),
-            i18n("Reply to All With Custom Template"), owner);
+                                                   i18n("Reply to All With Custom Template"), owner);
     d->mOwnerActionCollection->addAction(QStringLiteral("custom_reply_all"), d->mCustomReplyAllActionMenu);
 
     d->mCustomForwardMapper = new QSignalMapper(this);
@@ -220,20 +221,20 @@ void CustomTemplatesMenu::update()
     }
 
     if (!replyc) {
-        QAction *noAction =
-            d->mCustomReplyActionMenu->menu()->addAction(i18n("(no custom templates)"));
+        QAction *noAction
+            = d->mCustomReplyActionMenu->menu()->addAction(i18n("(no custom templates)"));
         noAction->setEnabled(false);
         d->mCustomReplyActionMenu->setEnabled(false);
     }
     if (!replyallc) {
-        QAction *noAction =
-            d->mCustomReplyAllActionMenu->menu()->addAction(i18n("(no custom templates)"));
+        QAction *noAction
+            = d->mCustomReplyAllActionMenu->menu()->addAction(i18n("(no custom templates)"));
         noAction->setEnabled(false);
         d->mCustomReplyAllActionMenu->setEnabled(false);
     }
     if (!forwardc) {
-        QAction *noAction =
-            d->mCustomForwardActionMenu->menu()->addAction(i18n("(no custom templates)"));
+        QAction *noAction
+            = d->mCustomForwardActionMenu->menu()->addAction(i18n("(no custom templates)"));
         noAction->setEnabled(false);
         d->mCustomForwardActionMenu->setEnabled(false);
     }
@@ -253,4 +254,3 @@ void CustomTemplatesMenu::slotForwardSelected(int idx)
 {
     Q_EMIT forwardTemplateSelected(d->mCustomTemplates.at(idx));
 }
-

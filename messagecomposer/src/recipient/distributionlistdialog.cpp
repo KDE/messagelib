@@ -46,8 +46,7 @@
 
 using namespace MessageComposer;
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class DistributionListItem : public QTreeWidgetItem
 {
 public:
@@ -142,8 +141,8 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     mRecipientsList = new QTreeWidget(topFrame);
     mRecipientsList->setHeaderLabels(
         QStringList() << i18nc("@title:column Name of the recipient", "Name")
-        << i18nc("@title:column Email of the recipient", "Email")
-    );
+                      << i18nc("@title:column Email of the recipient", "Email")
+        );
     mRecipientsList->setRootIsDecorated(false);
     mRecipientsList->header()->setMovable(false);
     topLayout->addWidget(mRecipientsList);
@@ -241,7 +240,7 @@ void DistributionListDialog::slotUser1()
     const int numberOfTopLevel(mRecipientsList->topLevelItemCount());
     for (int i = 0; i < numberOfTopLevel; ++i) {
         DistributionListItem *item = static_cast<DistributionListItem *>(
-                                         mRecipientsList->topLevelItem(i));
+            mRecipientsList->topLevelItem(i));
         if (item && item->checkState(0) == Qt::Checked) {
             isEmpty = false;
             break;
@@ -251,8 +250,8 @@ void DistributionListDialog::slotUser1()
     if (isEmpty) {
         KMessageBox::information(this,
                                  i18nc("@info", "There are no recipients in your list. "
-                                       "First select some recipients, "
-                                       "then try again."));
+                                                "First select some recipients, "
+                                                "then try again."));
         return;
     }
 
@@ -281,14 +280,14 @@ void DistributionListDialog::slotDelayedUser1(KJob *job)
     if (!searchJob->contactGroups().isEmpty()) {
         KMessageBox::information(this,
                                  xi18nc("@info", "<para>Distribution list with the given name <resource>%1</resource> "
-                                        "already exists. Please select a different name.</para>", name));
+                                                 "already exists. Please select a different name.</para>", name));
         return;
     }
 
-    QPointer<Akonadi::CollectionDialog> dlg =
-        new Akonadi::CollectionDialog(Akonadi::CollectionDialog::KeepTreeExpanded, nullptr, this);
+    QPointer<Akonadi::CollectionDialog> dlg
+        = new Akonadi::CollectionDialog(Akonadi::CollectionDialog::KeepTreeExpanded, nullptr, this);
     dlg->setMimeTypeFilter(QStringList() << KContacts::Addressee::mimeType()
-                           << KContacts::ContactGroup::mimeType());
+                                         << KContacts::ContactGroup::mimeType());
     dlg->setAccessRightsFilter(Akonadi::Collection::CanCreateItem);
     dlg->setWindowTitle(i18nc("@title:window", "Select Address Book"));
     dlg->setDescription(i18n("Select the address book folder to store the contact group in:"));
@@ -357,4 +356,3 @@ void DistributionListDialog::writeConfig()
     group.writeEntry("Size", size());
     group.writeEntry("Header", mRecipientsList->header()->saveState());
 }
-

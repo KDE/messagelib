@@ -33,9 +33,9 @@ class MessageComposer::RecipientPrivate
 {
 public:
     RecipientPrivate(const QString &email, Recipient::Type type)
-        : mEmail(email),
-          mEncryptionAction(Kleo::Impossible),
-          mType(type)
+        : mEmail(email)
+        , mEncryptionAction(Kleo::Impossible)
+        , mType(type)
     {
     }
 

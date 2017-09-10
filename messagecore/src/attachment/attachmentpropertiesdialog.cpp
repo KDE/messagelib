@@ -48,13 +48,14 @@ class Q_DECL_HIDDEN MessageCore::AttachmentPropertiesDialog::Private
 {
 public:
     Private(AttachmentPropertiesDialog *qq)
-        : q(qq),
-          mReadOnly(false),
-          ui(nullptr),
-          uiReadOnly(nullptr),
-          mainLayout(nullptr)
+        : q(qq)
+        , mReadOnly(false)
+        , ui(nullptr)
+        , uiReadOnly(nullptr)
+        , mainLayout(nullptr)
     {
     }
+
     ~Private()
     {
         delete ui;
@@ -120,7 +121,6 @@ void AttachmentPropertiesDialog::Private::polishUi()
         QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setDefault(true);
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-
     }
     q->connect(buttonBox->button(QDialogButtonBox::Help), &QAbstractButton::clicked, q, &AttachmentPropertiesDialog::slotHelp);
     q->connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
@@ -215,7 +215,6 @@ void AttachmentPropertiesDialog::Private::populateWhatsThis()
         ui->encoding->setWhatsThis(msgEncoding);
         ui->description->setWhatsThis(msgDescription);
     }
-
 }
 
 void AttachmentPropertiesDialog::Private::populateEncodings()
@@ -310,9 +309,9 @@ void AttachmentPropertiesDialog::Private::saveToPart()
     mPart->setEncrypted(ui->encrypt->isChecked());
     mPart->setInline(ui->autoDisplay->isChecked());
 
-    if (ui->mimeType->currentText().startsWith(QStringLiteral("message")) &&
-            ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE7Bit &&
-            ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE8Bit) {
+    if (ui->mimeType->currentText().startsWith(QStringLiteral("message"))
+        && ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE7Bit
+        && ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE8Bit) {
         qCWarning(MESSAGECORE_LOG) << "Encoding on message/rfc822 must be \"7bit\" or \"8bit\".";
     }
 
@@ -320,19 +319,17 @@ void AttachmentPropertiesDialog::Private::saveToPart()
                            ui->encoding->itemData(ui->encoding->currentIndex()).toInt()));
 }
 
-AttachmentPropertiesDialog::AttachmentPropertiesDialog(const AttachmentPart::Ptr &part,
-        bool readOnly, QWidget *parent)
-    : QDialog(parent),
-      d(new Private(this))
+AttachmentPropertiesDialog::AttachmentPropertiesDialog(const AttachmentPart::Ptr &part, bool readOnly, QWidget *parent)
+    : QDialog(parent)
+    , d(new Private(this))
 {
     d->init(part, readOnly);
     setWindowTitle(i18n("Attachment Properties"));
 }
 
-AttachmentPropertiesDialog::AttachmentPropertiesDialog(const KMime::Content *content,
-        QWidget *parent)
-    : QDialog(parent),
-      d(new Private(this))
+AttachmentPropertiesDialog::AttachmentPropertiesDialog(const KMime::Content *content, QWidget *parent)
+    : QDialog(parent)
+    , d(new Private(this))
 {
     AttachmentFromMimeContentJob *job = new AttachmentFromMimeContentJob(content, this);
     job->exec();

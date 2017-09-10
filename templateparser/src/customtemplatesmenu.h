@@ -28,8 +28,7 @@
 class KActionCollection;
 class KActionMenu;
 
-namespace TemplateParser
-{
+namespace TemplateParser {
 class CustomTemplatesMenuPrivate;
 class TEMPLATEPARSER_EXPORT CustomTemplatesMenu : public QObject
 {
@@ -60,7 +59,6 @@ private:
     void clear();
     CustomTemplatesMenuPrivate *const d;
 };
-
 }
 
 #endif

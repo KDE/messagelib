@@ -23,12 +23,9 @@
 
 #include <KZip>
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 class AttachmentFromFolderJob : public AttachmentFromUrlBaseJob
 {
-
     Q_OBJECT
 
 public:
@@ -66,6 +63,5 @@ private:
     class Private;
     Private *const d;
 };
-
 }
 #endif // ATTACHMENTFROMFOLDER_H

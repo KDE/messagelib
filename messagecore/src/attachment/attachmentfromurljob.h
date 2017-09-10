@@ -24,9 +24,7 @@
 
 #include "MessageCore/AttachmentFromUrlBaseJob"
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 /**
  * @short A job to load an attachment from an url.
  *
@@ -62,7 +60,6 @@ private:
     Q_PRIVATE_SLOT(d, void transferJobResult(KJob *))
     //@endcond
 };
-
 }
 
 #endif

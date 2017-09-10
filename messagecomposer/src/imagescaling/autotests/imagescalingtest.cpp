@@ -26,12 +26,10 @@
 ImageScalingTest::ImageScalingTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 ImageScalingTest::~ImageScalingTest()
 {
-
 }
 
 void ImageScalingTest::initTestCase()

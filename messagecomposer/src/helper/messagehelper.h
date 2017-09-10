@@ -1,4 +1,3 @@
-
 /*
   Copyright (C) 2009 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
   Copyright (c) 2009 Andras Mantia <andras@kdab.net>
@@ -27,13 +26,11 @@
 #include <kmime/kmime_message.h>
 #include <item.h>
 
-namespace KIdentityManagement
-{
+namespace KIdentityManagement {
 class IdentityManager;
 }
 
-namespace KMime
-{
+namespace KMime {
 class Message;
 }
 
@@ -41,9 +38,7 @@ class Message;
  * Contains random helper methods when dealing with messages.
  * TODO: cleanup and organize, along with similar methods in messageviewer.
  */
-namespace MessageHelper
-{
-
+namespace MessageHelper {
 /** Initialize header fields. Should be called on new messages
     if they are not set manually. E.g. before composing. Calling
     of setAutomaticFields(), see below, is still required. */
@@ -51,12 +46,11 @@ void MESSAGECOMPOSER_EXPORT initHeader(const KMime::Message::Ptr &message, const
 
 /** Set the from, to, cc, bcc, encrytion etc headers as specified in the
   * given identity. */
-void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan,  uint id);
+void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement::IdentityManager *identMan, uint id);
 
 /** Initialize headers fields according to the identity and the transport
    header of the given original message */
-void initFromMessage(const KMime::Message::Ptr &msg, const KMime::Message::Ptr &orgiMsg, KIdentityManagement::IdentityManager *,
-                     uint id, bool idHeaders = true);
+void initFromMessage(const KMime::Message::Ptr &msg, const KMime::Message::Ptr &orgiMsg, KIdentityManagement::IdentityManager *, uint id, bool idHeaders = true);
 
 KMime::Types::AddrSpecList MESSAGECOMPOSER_EXPORT extractAddrSpecs(const KMime::Message::Ptr &msg, const QByteArray &header);
 
@@ -66,8 +60,7 @@ KMime::Types::AddrSpecList MESSAGECOMPOSER_EXPORT extractAddrSpecs(const KMime::
       sequence of whitespace-delimited prefixes at the beginning of
       #subject() is replaced by @p newPrefix
   **/
-QString cleanSubject(const KMime::Message::Ptr &msg, const QStringList &prefixRegExps, bool replace,
-                     const QString &newPrefix);
+QString cleanSubject(const KMime::Message::Ptr &msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
 
 /** Return this mails subject, with all "forward" and "reply"
       prefixes removed */
@@ -84,10 +77,7 @@ QString replySubject(const KMime::Message::Ptr &msg);
       sequence of whitespace-delimited prefixes at the beginning of
       @p str is replaced by @p newPrefix.
   **/
-QString replacePrefixes(const QString &str,
-                        const QStringList &prefixRegExps,
-                        bool replace,
-                        const QString &newPrefix);
+QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
 
 /** Set fields that are either automatically set (Message-id)
     or that do not change from one message to another (MIME-Version).
@@ -99,7 +89,6 @@ void setAutomaticFields(const KMime::Message::Ptr &msg, bool isMultipart = false
 /** Returns @p str with all "forward" and "reply" prefixes stripped off.
   **/
 QString stripOffPrefixes(const QString &str);
-
 }
 
 #endif

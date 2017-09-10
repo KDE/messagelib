@@ -21,9 +21,7 @@
 #include <QByteArray>
 #include <QList>
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 enum PGPBlockType {
     UnknownBlock = -1,        // BEGIN PGP ???
     NoPgpBlock = 0,
@@ -54,7 +52,6 @@ public:
     Non-OpenPGP blocks.
 */
 QList<Block> prepareMessageForDecryption(const QByteArray &msg);
-
 } // namespace MimeTreeParser
 
 Q_DECLARE_TYPEINFO(MimeTreeParser::Block, Q_MOVABLE_TYPE);

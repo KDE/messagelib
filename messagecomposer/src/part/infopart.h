@@ -26,9 +26,7 @@
 
 #include <kmime/kmime_message.h>
 #include <kmime/kmime_headers.h>
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT InfoPart : public MessageComposer::MessagePart
 {
     Q_OBJECT
@@ -77,7 +75,6 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace MessageComposer
 
 #endif // MESSAGECOMPOSER_INFOPART_H

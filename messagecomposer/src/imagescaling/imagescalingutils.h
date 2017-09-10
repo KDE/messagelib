@@ -21,8 +21,7 @@
 #define AUTORESIZEIMAGEUTIL_H
 #include <MessageCore/AttachmentPart>
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class Utils
 {
 public:
@@ -32,7 +31,6 @@ public:
     bool filterRecipients(const QStringList &recipients);
     bool hasImage(const QByteArray &mimetype);
 };
-
 }
 
 #endif // AUTORESIZEIMAGEUTIL_H

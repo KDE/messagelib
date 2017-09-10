@@ -25,9 +25,7 @@
 
 #include <kmime/kmime_content.h>
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class ContentJobBasePrivate : public JobBasePrivate
 {
 public:
@@ -45,7 +43,6 @@ public:
 
     Q_DECLARE_PUBLIC(ContentJobBase)
 };
-
 }
 
 #endif

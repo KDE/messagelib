@@ -24,8 +24,7 @@
 #include <QString>
 #include <QDateTime>
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class LocalDataBaseFilePrivate;
 class Addition;
 class WEBENGINEVIEWER_TESTS_EXPORT LocalDataBaseFile

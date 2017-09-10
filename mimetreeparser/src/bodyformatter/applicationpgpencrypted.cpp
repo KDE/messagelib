@@ -63,8 +63,8 @@ Interface::MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(In
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
 
     EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(part.objectTreeParser(),
-                                 data->decodedText(), QGpgME::openpgp(),
-                                 part.nodeHelper()->fromAsString(data), node));
+                                                          data->decodedText(), QGpgME::openpgp(),
+                                                          part.nodeHelper()->fromAsString(data), node));
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(part.source()->decryptMessage());
     PartMetaData *messagePart(mp->partMetaData());

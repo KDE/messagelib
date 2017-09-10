@@ -23,8 +23,7 @@
 
 #include "kpimtextedit/plaintexteditorwidget.h"
 
-namespace TemplateParser
-{
+namespace TemplateParser {
 class TEMPLATEPARSER_EXPORT TemplatesTextEdit : public KPIMTextEdit::PlainTextEditorWidget
 {
     Q_OBJECT
@@ -32,8 +31,6 @@ public:
     explicit TemplatesTextEdit(QWidget *parent = nullptr);
     ~TemplatesTextEdit();
 };
-
 }
 
 #endif
-

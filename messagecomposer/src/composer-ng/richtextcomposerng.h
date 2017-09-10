@@ -24,13 +24,11 @@
 #include <kpimtextedit/richtextcomposer.h>
 #include <KIdentityManagement/Signature>
 
-namespace PimCommon
-{
+namespace PimCommon {
 class AutoCorrection;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class TextPart;
 class RichTextComposerSignatures;
 class RichTextComposerNgPrivate;

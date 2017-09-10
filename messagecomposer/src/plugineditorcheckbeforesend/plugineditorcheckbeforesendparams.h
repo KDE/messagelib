@@ -23,8 +23,7 @@
 #include "messagecomposer_export.h"
 #include <QString>
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class PluginEditorCheckBeforeSendParamsPrivate;
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendParams
 {

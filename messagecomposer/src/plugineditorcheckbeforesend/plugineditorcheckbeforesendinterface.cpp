@@ -26,17 +26,16 @@ class MessageComposer::PluginEditorCheckBeforeSendInterfacePrivate
 public:
     PluginEditorCheckBeforeSendInterfacePrivate()
     {
-
     }
+
     MessageComposer::PluginEditorCheckBeforeSendParams parameters;
     QWidget *mParentWidget = nullptr;
 };
 
 PluginEditorCheckBeforeSendInterface::PluginEditorCheckBeforeSendInterface(QObject *parent)
-    : QObject(parent),
-      d(new MessageComposer::PluginEditorCheckBeforeSendInterfacePrivate)
+    : QObject(parent)
+    , d(new MessageComposer::PluginEditorCheckBeforeSendInterfacePrivate)
 {
-
 }
 
 PluginEditorCheckBeforeSendInterface::~PluginEditorCheckBeforeSendInterface()

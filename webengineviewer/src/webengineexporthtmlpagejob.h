@@ -23,8 +23,7 @@
 #include <QObject>
 #include "webengineviewer_export.h"
 class QWebEngineView;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WEBENGINEVIEWER_EXPORT WebEngineExportHtmlPageJob : public QObject
 {
     Q_OBJECT

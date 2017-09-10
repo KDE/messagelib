@@ -37,4 +37,3 @@ MimeTreeParser::Interface::HtmlWriter::~HtmlWriter()
 MimeTreeParser::HtmlWriter::~HtmlWriter()
 {
 }
-

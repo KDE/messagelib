@@ -31,13 +31,11 @@ using namespace QGpgME;
 using namespace GpgME;
 using namespace MimeTreeParser;
 
-VerifyOpaqueBodyPartMemento::VerifyOpaqueBodyPartMemento(VerifyOpaqueJob *job,
-        KeyListJob   *klj,
-        const QByteArray &signature)
-    : CryptoBodyPartMemento(),
-      m_signature(signature),
-      m_job(job),
-      m_keylistjob(klj)
+VerifyOpaqueBodyPartMemento::VerifyOpaqueBodyPartMemento(VerifyOpaqueJob *job, KeyListJob *klj, const QByteArray &signature)
+    : CryptoBodyPartMemento()
+    , m_signature(signature)
+    , m_job(job)
+    , m_keylistjob(klj)
 {
     assert(m_job);
 }
@@ -87,7 +85,7 @@ void VerifyOpaqueBodyPartMemento::exec()
     m_job = nullptr;
     if (canStartKeyListJob()) {
         std::vector<GpgME::Key> keys;
-        m_keylistjob->exec(keyListPattern(), /*secretOnly=*/false, keys);
+        m_keylistjob->exec(keyListPattern(), /*secretOnly=*/ false, keys);
         if (!keys.empty()) {
             m_key = keys.back();
         }
@@ -114,8 +112,7 @@ QStringList VerifyOpaqueBodyPartMemento::keyListPattern() const
     return QStringList(QString::fromLatin1(m_vr.signature(0).fingerprint()));
 }
 
-void VerifyOpaqueBodyPartMemento::saveResult(const VerificationResult &vr,
-        const QByteArray &plainText)
+void VerifyOpaqueBodyPartMemento::saveResult(const VerificationResult &vr, const QByteArray &plainText)
 {
     assert(m_job);
 #ifdef DEBUG_SIGNATURE
@@ -126,8 +123,7 @@ void VerifyOpaqueBodyPartMemento::saveResult(const VerificationResult &vr,
     setAuditLog(m_job->auditLogError(), m_job->auditLogAsHtml());
 }
 
-void VerifyOpaqueBodyPartMemento::slotResult(const VerificationResult &vr,
-        const QByteArray &plainText)
+void VerifyOpaqueBodyPartMemento::slotResult(const VerificationResult &vr, const QByteArray &plainText)
 {
 #ifdef DEBUG_SIGNATURE
     qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyOpaqueBodyPartMemento::slotResult called";

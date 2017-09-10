@@ -39,6 +39,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
     InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;
 }
+
 using namespace TemplateParser;
 
 TemplateExtractHtmlElementWebEngineView::TemplateExtractHtmlElementWebEngineView(QWidget *parent)
@@ -51,7 +52,6 @@ TemplateExtractHtmlElementWebEngineView::TemplateExtractHtmlElementWebEngineView
 
 TemplateExtractHtmlElementWebEngineView::~TemplateExtractHtmlElementWebEngineView()
 {
-
 }
 
 void TemplateExtractHtmlElementWebEngineView::clear()

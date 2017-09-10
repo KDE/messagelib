@@ -33,8 +33,7 @@ uint MessageCore::qHash(const MessageCore::AttachmentPart::Ptr &ptr)
 }
 
 // TODO move to kmime_util?
-static qint64 sizeWithEncoding(const QByteArray &data,
-                               KMime::Headers::contentEncoding encoding)  // local
+static qint64 sizeWithEncoding(const QByteArray &data, KMime::Headers::contentEncoding encoding)  // local
 {
     KMime::Content *content = new KMime::Content;
     content->setBody(data);
@@ -46,8 +45,7 @@ static qint64 sizeWithEncoding(const QByteArray &data,
     return size;
 }
 
-static KMime::Headers::contentEncoding bestEncodingForTypeAndData(const QByteArray &mimeType,
-                                                                  const QByteArray &data)
+static KMime::Headers::contentEncoding bestEncodingForTypeAndData(const QByteArray &mimeType, const QByteArray &data)
 {
     // Choose the best encoding for text/* and message/* attachments, but
     // always use base64 for anything else to prevent CRLF/LF conversions
@@ -69,15 +67,16 @@ class Q_DECL_HIDDEN MessageCore::AttachmentPart::Private
 {
 public:
     Private()
-        : mEncoding(KMime::Headers::CE7Bit),
-          mSize(-1),
-          mIsInline(false),
-          mAutoEncoding(true),
-          mCompressed(false),
-          mToEncrypt(false),
-          mToSign(false)
+        : mEncoding(KMime::Headers::CE7Bit)
+        , mSize(-1)
+        , mIsInline(false)
+        , mAutoEncoding(true)
+        , mCompressed(false)
+        , mToEncrypt(false)
+        , mToSign(false)
     {
     }
+
     QUrl mUrl;
     QString mName;
     QString mFileName;

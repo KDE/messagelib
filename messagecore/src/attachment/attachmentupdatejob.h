@@ -24,8 +24,7 @@
 #include <KJob>
 #include "attachmentpart.h"
 
-namespace MessageCore
-{
+namespace MessageCore {
 class MESSAGECORE_EXPORT AttachmentUpdateJob : public KJob
 {
     Q_OBJECT
@@ -46,4 +45,3 @@ private:
 }
 
 #endif // ATTACHMENTUPDATEJOB_H
-

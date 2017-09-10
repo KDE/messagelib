@@ -36,8 +36,7 @@
 class KActionCollection;
 class QAction;
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class AttachmentModel;
 class MESSAGECOMPOSER_EXPORT AttachmentControllerBase : public QObject
 {
@@ -109,7 +108,7 @@ private:
     class Private;
     Private *const d;
 
-    Q_PRIVATE_SLOT(d, void attachmentRemoved(const MessageCore::AttachmentPart::Ptr&))
+    Q_PRIVATE_SLOT(d, void attachmentRemoved(const MessageCore::AttachmentPart::Ptr &))
     Q_PRIVATE_SLOT(d, void compressJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void loadJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void openSelectedAttachments())
@@ -126,7 +125,6 @@ private:
     Q_PRIVATE_SLOT(d, void updateJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void attachVcardFromAddressBook(KJob *))
 };
-
 } //
 
 #endif // KMAIL_ATTACHMENTCONTROLLERBASE_H

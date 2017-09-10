@@ -42,7 +42,6 @@ RecipientsPickerWidget::RecipientsPickerWidget(QWidget *parent)
 
 RecipientsPickerWidget::~RecipientsPickerWidget()
 {
-
 }
 
 QTreeView *RecipientsPickerWidget::view() const

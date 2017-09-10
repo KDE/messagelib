@@ -24,12 +24,10 @@
 RiceEncodingDecoderTest::RiceEncodingDecoderTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 RiceEncodingDecoderTest::~RiceEncodingDecoderTest()
 {
-
 }
 
 void RiceEncodingDecoderTest::shouldDecodeRiceIndices_data()

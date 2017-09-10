@@ -77,15 +77,15 @@ public:
     AkonadiSenderPrivate()
         : mCustomTransportId(-1)
     {
-
     }
+
     QSet<KJob *> mPendingJobs;
     int mCustomTransportId;
 };
 
 AkonadiSender::AkonadiSender(QObject *parent)
-    : QObject(parent),
-      d(new MessageComposer::AkonadiSenderPrivate)
+    : QObject(parent)
+    , d(new MessageComposer::AkonadiSenderPrivate)
 {
 }
 
@@ -209,4 +209,3 @@ void AkonadiSender::queueJobResult(KJob *job)
         qCDebug(MESSAGECOMPOSER_LOG) << "QueueJob success.";
     }
 }
-

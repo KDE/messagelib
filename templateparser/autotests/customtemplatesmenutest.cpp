@@ -23,12 +23,10 @@
 CustomTemplatesMenuTest::CustomTemplatesMenuTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 CustomTemplatesMenuTest::~CustomTemplatesMenuTest()
 {
-
 }
 
 void CustomTemplatesMenuTest::shouldHaveDefaultValue()

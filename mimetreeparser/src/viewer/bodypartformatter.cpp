@@ -55,10 +55,8 @@
 
 using namespace MimeTreeParser;
 
-namespace
-{
-class AnyTypeBodyPartFormatter
-    : public MimeTreeParser::Interface::BodyPartFormatter
+namespace {
+class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
     static const AnyTypeBodyPartFormatter *self;
 public:
@@ -75,6 +73,7 @@ public:
     {
         result.setNeverDisplayInline(true);
     }
+
     static const MimeTreeParser::Interface::BodyPartFormatter *create()
     {
         if (!self) {
@@ -86,8 +85,7 @@ public:
 
 const AnyTypeBodyPartFormatter *AnyTypeBodyPartFormatter::self = nullptr;
 
-class ImageTypeBodyPartFormatter
-    : public MimeTreeParser::Interface::BodyPartFormatter
+class ImageTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
     static const ImageTypeBodyPartFormatter *self;
 public:
@@ -104,6 +102,7 @@ public:
         result.setNeverDisplayInline(false);
         result.setIsImage(true);
     }
+
     static const MimeTreeParser::Interface::BodyPartFormatter *create()
     {
         if (!self) {
@@ -115,8 +114,7 @@ public:
 
 const ImageTypeBodyPartFormatter *ImageTypeBodyPartFormatter::self = nullptr;
 
-class MessageRfc822BodyPartFormatter
-    : public MimeTreeParser::Interface::BodyPartFormatter
+class MessageRfc822BodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
     static const MessageRfc822BodyPartFormatter *self;
 public:
@@ -147,7 +145,7 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
     Q_UNUSED(writer)
     const ObjectTreeParser *otp = part->objectTreeParser();
     const auto p = process(*part);
-    const auto mp =  static_cast<MessagePart *>(p.data());
+    const auto mp = static_cast<MessagePart *>(p.data());
     if (mp) {
         if (!otp->attachmentStrategy()->inlineNestedMessages() && !otp->showOnlyOneMimePart()) {
             return Failed;
@@ -161,7 +159,6 @@ Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Inte
 }
 
 typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
-
 } // anon namespace
 
 void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()

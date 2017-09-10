@@ -22,7 +22,6 @@ using namespace MessageCore;
 
 class Q_DECL_HIDDEN AttachmentFromUrlBaseJob::Private
 {
-
 public:
     Private(const QUrl &url, AttachmentFromUrlBaseJob *qq);
 
@@ -31,16 +30,16 @@ public:
     QUrl mUrl;
 };
 
-AttachmentFromUrlBaseJob::Private::Private(const QUrl &url, AttachmentFromUrlBaseJob *qq):
-    q(qq),
-    mMaxSize(-1),
-    mUrl(url)
+AttachmentFromUrlBaseJob::Private::Private(const QUrl &url, AttachmentFromUrlBaseJob *qq)
+    : q(qq)
+    , mMaxSize(-1)
+    , mUrl(url)
 {
 }
 
-AttachmentFromUrlBaseJob::AttachmentFromUrlBaseJob(const QUrl &url, QObject *parent):
-    AttachmentLoadJob(parent),
-    d(new Private(url, this))
+AttachmentFromUrlBaseJob::AttachmentFromUrlBaseJob(const QUrl &url, QObject *parent)
+    : AttachmentLoadJob(parent)
+    , d(new Private(url, this))
 {
 }
 
@@ -68,4 +67,3 @@ QUrl AttachmentFromUrlBaseJob::url() const
 {
     return d->mUrl;
 }
-

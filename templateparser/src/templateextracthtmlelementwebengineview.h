@@ -22,8 +22,7 @@
 
 #include <QWebEngineView>
 #include "templateparser_private_export.h"
-namespace TemplateParser
-{
+namespace TemplateParser {
 class TemplateWebEnginePage;
 class TEMPLATEPARSER_TESTS_EXPORT TemplateExtractHtmlElementWebEngineView : public QWebEngineView
 {

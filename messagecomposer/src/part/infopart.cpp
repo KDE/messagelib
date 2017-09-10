@@ -25,10 +25,9 @@ class Q_DECL_HIDDEN InfoPart::Private
 {
 public:
     Private()
-        : transportId(0),
-          urgent(false)
+        : transportId(0)
+        , urgent(false)
     {
-
     }
 
     QString from;
@@ -186,4 +185,3 @@ void InfoPart::setUserAgent(const QString &userAgent)
 {
     d->userAgent = userAgent;
 }
-

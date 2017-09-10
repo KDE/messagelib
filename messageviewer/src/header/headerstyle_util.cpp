@@ -414,4 +414,3 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
 
     return settings;
 }
-

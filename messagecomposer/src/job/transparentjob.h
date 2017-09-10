@@ -24,9 +24,7 @@
 #include "contentjobbase.h"
 #include "messagecomposer_export.h"
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class TransparentJobPrivate;
 
 /**
@@ -47,7 +45,6 @@ public:
 private:
     Q_DECLARE_PRIVATE(TransparentJob)
 };
-
 }
 
 #endif

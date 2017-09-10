@@ -88,7 +88,7 @@ private:
 
     friend class Viewer;
     class Private;
-    Private * const d;
+    Private *const d;
 };
 
 //TODO(Andras) once only those methods are public that really need to be public, probably export the whole class instead of just some methods

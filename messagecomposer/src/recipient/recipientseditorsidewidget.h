@@ -30,8 +30,7 @@
 class QLabel;
 class QPushButton;
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class KWindowPositioner;
 
 class RecipientsPicker;

@@ -68,12 +68,12 @@ bool SinglepartJobPrivate::chooseCTE()
     }
 
 #if 0 //TODO signing
-    // In the following cases only QP and Base64 are allowed:
-    // - the buffer will be OpenPGP/MIME signed and it contains trailing
-    //   whitespace (cf. RFC 3156)
-    // - a line starts with "From "
-    if ((willBeSigned && cf.hasTrailingWhitespace()) ||
-            cf.hasLeadingFrom()) {
+      // In the following cases only QP and Base64 are allowed:
+      // - the buffer will be OpenPGP/MIME signed and it contains trailing
+      //   whitespace (cf. RFC 3156)
+      // - a line starts with "From "
+    if ((willBeSigned && cf.hasTrailingWhitespace())
+        || cf.hasLeadingFrom()) {
         ret.removeAll(DwMime::kCte8bit);
         ret.removeAll(DwMime::kCte7bit);
     }
@@ -199,4 +199,3 @@ void SinglepartJob::process()
 
     emitResult();
 }
-

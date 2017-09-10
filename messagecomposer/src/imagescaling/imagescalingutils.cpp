@@ -176,9 +176,9 @@ bool Utils::filterRecipients(const QStringList &recipients)
 
 bool Utils::hasImage(const QByteArray &mimetype)
 {
-    if (mimetype == "image/gif" ||
-            mimetype == "image/jpeg" ||
-            mimetype == "image/png") {
+    if (mimetype == "image/gif"
+        || mimetype == "image/jpeg"
+        || mimetype == "image/png") {
         return true;
     }
     return false;

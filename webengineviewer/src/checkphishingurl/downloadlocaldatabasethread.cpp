@@ -56,8 +56,7 @@ void DownloadLocalDatabaseThread::run()
     exec();
 }
 
-void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase,
-        WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
+void DownloadLocalDatabaseThread::slotDownloadDataBaseFinished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status)
 {
     bool dataBaseOk = false;
     switch (status) {

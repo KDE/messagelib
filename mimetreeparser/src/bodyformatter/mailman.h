@@ -23,9 +23,7 @@
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 class MailmanBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const MailmanBodyPartFormatter *self;
@@ -37,7 +35,6 @@ public:
 private:
     bool isMailmanMessage(KMime::Content *curNode) const;
 };
-
 }
 
 #endif

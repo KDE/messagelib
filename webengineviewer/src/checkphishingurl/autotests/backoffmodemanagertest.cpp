@@ -29,7 +29,6 @@ BackOffModeManagerTest::BackOffModeManagerTest(QObject *parent)
 
 BackOffModeManagerTest::~BackOffModeManagerTest()
 {
-
 }
 
 void BackOffModeManagerTest::shouldHaveDefaultValue()

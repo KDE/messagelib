@@ -28,7 +28,9 @@
 using namespace MessageComposer;
 
 DistributionListExpandJob::DistributionListExpandJob(const QString &name, QObject *parent)
-    : KJob(parent), mListName(name), mIsEmpty(false)
+    : KJob(parent)
+    , mListName(name)
+    , mIsEmpty(false)
 {
 }
 
@@ -96,4 +98,3 @@ void DistributionListExpandJob::slotExpansionDone(KJob *job)
 
     emitResult();
 }
-

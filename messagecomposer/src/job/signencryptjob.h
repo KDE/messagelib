@@ -31,15 +31,11 @@
 #include <gpgme++/key.h>
 #include <vector>
 
-namespace KMime
-{
+namespace KMime {
 class Content;
-
 }
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class SignEncryptJobPrivate;
 
 /**
@@ -72,7 +68,6 @@ protected Q_SLOTS:
 private:
     Q_DECLARE_PRIVATE(SignEncryptJob)
 };
-
 }
 
 #endif

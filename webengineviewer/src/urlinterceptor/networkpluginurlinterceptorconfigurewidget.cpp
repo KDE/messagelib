@@ -24,12 +24,10 @@ using namespace WebEngineViewer;
 NetworkPluginUrlInterceptorConfigureWidget::NetworkPluginUrlInterceptorConfigureWidget(QWidget *parent)
     : QWidget(parent)
 {
-
 }
 
 NetworkPluginUrlInterceptorConfigureWidget::~NetworkPluginUrlInterceptorConfigureWidget()
 {
-
 }
 
 QString NetworkPluginUrlInterceptorConfigureWidget::helpAnchor() const

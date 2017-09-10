@@ -53,7 +53,6 @@ TemplatesTextEditor::TemplatesTextEditor(QWidget *parent)
 
 TemplatesTextEditor::~TemplatesTextEditor()
 {
-
 }
 
 void TemplatesTextEditor::updateHighLighter()
@@ -76,8 +75,8 @@ void TemplatesTextEditor::createHighlighter()
     highlighter->setCurrentLanguage(spellCheckingLanguage());
     highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("KMail Template")));
     highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128)
-        ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-        : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+                          ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                          : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     setHighlighter(highlighter);
 }
 

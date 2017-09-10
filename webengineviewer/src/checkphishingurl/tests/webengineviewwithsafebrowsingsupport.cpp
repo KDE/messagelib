@@ -54,7 +54,6 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
 
 WebEngineViewWithSafeBrowsingSupport::~WebEngineViewWithSafeBrowsingSupport()
 {
-
 }
 
 void WebEngineViewWithSafeBrowsingSupport::slotUrlClicked(const QUrl &url)

@@ -21,10 +21,8 @@
 
 #include <QString>
 
-namespace WebEngineViewer
-{
-namespace WebEngineAccessKeyUtils
-{
+namespace WebEngineViewer {
+namespace WebEngineAccessKeyUtils {
 QString script();
 }
 }

@@ -23,13 +23,11 @@
 #include <QObject>
 #include <KMime/Message>
 #include <AkonadiCore/Collection>
-namespace KIdentityManagement
-{
+namespace KIdentityManagement {
 class IdentityManager;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class MessageFactoryForwardJob : public QObject
 {
     Q_OBJECT

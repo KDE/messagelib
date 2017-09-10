@@ -98,7 +98,7 @@ Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
     if (t->error()) {
         qCWarning(MESSAGEVIEWER_LOG) << t->errorString()
                                      <<
-        ". Searched in subdir mimetreeparser/themes/default in these locations"
+            ". Searched in subdir mimetreeparser/themes/default in these locations"
                                      << QStandardPaths::standardLocations(
             QStandardPaths::GenericDataLocation);
     }

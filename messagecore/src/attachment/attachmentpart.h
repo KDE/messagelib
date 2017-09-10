@@ -29,9 +29,7 @@
 #include <QSharedPointer>
 
 class QUrl;
-namespace MessageCore
-{
-
+namespace MessageCore {
 /**
  * @short A class that encapsulates an attachment.
  *
@@ -211,7 +209,6 @@ private:
 
 // FIXME I don't understand why this doesn't work if I put it outside namespace KPIM.
 MESSAGECORE_EXPORT uint qHash(const QSharedPointer<MessageCore::AttachmentPart> &);
-
 }
 
 Q_DECLARE_METATYPE(MessageCore::AttachmentPart::Ptr)

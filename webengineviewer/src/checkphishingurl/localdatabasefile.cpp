@@ -33,12 +33,13 @@ class WebEngineViewer::LocalDataBaseFilePrivate
 {
 public:
     LocalDataBaseFilePrivate(const QString &filename, LocalDataBaseFile *qq)
-        : mFile(filename),
-          mData(nullptr),
-          q(qq),
-          mValid(false)
+        : mFile(filename)
+        , mData(nullptr)
+        , q(qq)
+        , mValid(false)
     {
     }
+
     bool load();
     bool reload();
     void close();
@@ -62,8 +63,8 @@ bool LocalDataBaseFilePrivate::load()
         const int minor = q->getUint16(2);
 
         //Check version in binary file. => version value == 1.0 for the moment see CheckPhishingUrlUtil
-        mValid = (major == WebEngineViewer::CheckPhishingUrlUtil::majorVersion() &&
-                  minor == WebEngineViewer::CheckPhishingUrlUtil::minorVersion());
+        mValid = (major == WebEngineViewer::CheckPhishingUrlUtil::majorVersion()
+                  && minor == WebEngineViewer::CheckPhishingUrlUtil::minorVersion());
     }
     mMtime = QFileInfo(mFile).lastModified();
     return mValid;

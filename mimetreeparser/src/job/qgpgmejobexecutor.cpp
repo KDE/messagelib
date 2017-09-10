@@ -38,9 +38,7 @@ QGpgMEJobExecutor::QGpgMEJobExecutor(QObject *parent) : QObject(parent)
 }
 
 GpgME::VerificationResult QGpgMEJobExecutor::exec(
-    QGpgME::VerifyDetachedJob *job,
-    const QByteArray &signature,
-    const QByteArray &signedData)
+    QGpgME::VerifyDetachedJob *job, const QByteArray &signature, const QByteArray &signedData)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Starting detached verification job";
     connect(job, SIGNAL(result(GpgME::VerificationResult)), SLOT(verificationResult(GpgME::VerificationResult)));
@@ -53,9 +51,7 @@ GpgME::VerificationResult QGpgMEJobExecutor::exec(
 }
 
 GpgME::VerificationResult QGpgMEJobExecutor::exec(
-    QGpgME::VerifyOpaqueJob *job,
-    const QByteArray &signedData,
-    QByteArray &plainText)
+    QGpgME::VerifyOpaqueJob *job, const QByteArray &signedData, QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Starting opaque verification job";
     connect(job, SIGNAL(result(GpgME::VerificationResult,QByteArray)), SLOT(verificationResult(GpgME::VerificationResult,QByteArray)));
@@ -70,9 +66,7 @@ GpgME::VerificationResult QGpgMEJobExecutor::exec(
 }
 
 std::pair< GpgME::DecryptionResult, GpgME::VerificationResult > QGpgMEJobExecutor::exec(
-    QGpgME::DecryptVerifyJob *job,
-    const QByteArray &cipherText,
-    QByteArray &plainText)
+    QGpgME::DecryptVerifyJob *job, const QByteArray &cipherText, QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Starting decryption job";
     connect(job, &QGpgME::DecryptVerifyJob::result, this, &QGpgMEJobExecutor::decryptResult);
@@ -126,9 +120,7 @@ void QGpgMEJobExecutor::verificationResult(const GpgME::VerificationResult &resu
 }
 
 void QGpgMEJobExecutor::decryptResult(
-    const GpgME::DecryptionResult &decryptionresult,
-    const GpgME::VerificationResult &verificationresult,
-    const QByteArray &plainText)
+    const GpgME::DecryptionResult &decryptionresult, const GpgME::VerificationResult &verificationresult, const QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Decryption job finished";
     QGpgME::Job *job = qobject_cast<QGpgME::Job *>(sender());
@@ -155,4 +147,3 @@ QString QGpgMEJobExecutor::auditLogAsHtml() const
 {
     return mAuditLog;
 }
-

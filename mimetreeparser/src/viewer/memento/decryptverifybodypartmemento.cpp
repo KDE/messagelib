@@ -26,9 +26,9 @@ using namespace GpgME;
 using namespace MimeTreeParser;
 
 DecryptVerifyBodyPartMemento::DecryptVerifyBodyPartMemento(DecryptVerifyJob *job, const QByteArray &cipherText)
-    : CryptoBodyPartMemento(),
-      m_cipherText(cipherText),
-      m_job(job)
+    : CryptoBodyPartMemento()
+    , m_cipherText(cipherText)
+    , m_job(job)
 {
     Q_ASSERT(m_job);
 }
@@ -64,9 +64,7 @@ void DecryptVerifyBodyPartMemento::exec()
     m_job = nullptr;
 }
 
-void DecryptVerifyBodyPartMemento::saveResult(const DecryptionResult &dr,
-        const VerificationResult &vr,
-        const QByteArray &plainText)
+void DecryptVerifyBodyPartMemento::saveResult(const DecryptionResult &dr, const VerificationResult &vr, const QByteArray &plainText)
 {
     Q_ASSERT(m_job);
     setRunning(false);
@@ -76,9 +74,7 @@ void DecryptVerifyBodyPartMemento::saveResult(const DecryptionResult &dr,
     setAuditLog(m_job->auditLogError(), m_job->auditLogAsHtml());
 }
 
-void DecryptVerifyBodyPartMemento::slotResult(const DecryptionResult &dr,
-        const VerificationResult &vr,
-        const QByteArray &plainText)
+void DecryptVerifyBodyPartMemento::slotResult(const DecryptionResult &dr, const VerificationResult &vr, const QByteArray &plainText)
 {
     saveResult(dr, vr, plainText);
     m_job = nullptr;

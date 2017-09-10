@@ -26,9 +26,7 @@
 #include "messagepart.h"
 #include "KPIMTextEdit/RichTextComposerImages"
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT TextPart : public MessagePart
 {
     Q_OBJECT
@@ -61,7 +59,6 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace MessageComposer
 
 #endif // MESSAGECOMPOSER_TEXTPART_H

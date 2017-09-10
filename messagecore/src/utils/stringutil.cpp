@@ -46,12 +46,8 @@ using namespace KMime;
 using namespace KMime::Types;
 using namespace KMime::HeaderParsing;
 
-namespace MessageCore
-{
-
-namespace StringUtil
-{
-
+namespace MessageCore {
+namespace StringUtil {
 // Removes trailing spaces and tabs at the end of the line
 static void removeTrailingSpace(QString &line)
 {
@@ -78,8 +74,8 @@ static QString splitLine(QString &line)
     const int lineLength(line.length());
     while (i < lineLength) {
         const QChar c = line[i];
-        const bool isAllowedQuoteChar = (c == QLatin1Char('>')) || (c == QLatin1Char(':')) || (c == QLatin1Char('|')) ||
-                                        (c == QLatin1Char(' ')) || (c == QLatin1Char('\t'));
+        const bool isAllowedQuoteChar = (c == QLatin1Char('>')) || (c == QLatin1Char(':')) || (c == QLatin1Char('|'))
+                                        || (c == QLatin1Char(' ')) || (c == QLatin1Char('\t'));
         if (isAllowedQuoteChar) {
             startOfActualText = i + 1;
         } else {
@@ -129,8 +125,7 @@ static QString splitLine(QString &line)
 // together with a previously broken line.
 //
 // "textParts" is cleared upon return.
-static bool flushPart(QString &msg, QStringList &textParts,
-                      const QString &indent, int maxLength)
+static bool flushPart(QString &msg, QStringList &textParts, const QString &indent, int maxLength)
 {
     if (maxLength < 20) {
         maxLength = 20;
@@ -144,7 +139,6 @@ static bool flushPart(QString &msg, QStringList &textParts,
     QString text;
 
     for (const QString &line : textParts) {
-
         // An empty line in the input means that an empty line should be in the output as well.
         // Therefore, we write all of our text so far to the msg.
         if (line.isEmpty()) {
@@ -243,9 +237,9 @@ QString stripSignature(const QString &msg)
             // check when the SB ends:
             // * does not starts with prefix or
             // * starts with prefix+(any substring of prefix)
-            if ((prefix.isEmpty() && line.indexOf(commonReplySearch) < 0) ||
-                    (!prefix.isEmpty() && line.startsWith(prefix) &&
-                     line.mid(prefix.size()).indexOf(commonReplySearch) < 0)) {
+            if ((prefix.isEmpty() && line.indexOf(commonReplySearch) < 0)
+                || (!prefix.isEmpty() && line.startsWith(prefix)
+                    && line.mid(prefix.size()).indexOf(commonReplySearch) < 0)) {
                 posNewLine = res.indexOf(QLatin1Char('\n'), posNewLine) + 1;
             } else {
                 break;    // end of the SB
@@ -382,10 +376,7 @@ QByteArray headerAsSendableString(const KMime::Message::Ptr &originalMessage)
     return message->head();
 }
 
-QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
-                          Display display, const QString &cssStyle,
-                          Link link, AddressMode expandable, const QString &fieldName,
-                          int collapseNumber)
+QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
 {
     QString result;
     int numberAddresses = 0;
@@ -436,26 +427,19 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
     return result;
 }
 
-QString emailAddrAsAnchor(KMime::Headers::Generics::MailboxList *mailboxList,
-                          Display display, const QString &cssStyle,
-                          Link link, AddressMode expandable, const QString &fieldName,
-                          int collapseNumber)
+QString emailAddrAsAnchor(KMime::Headers::Generics::MailboxList *mailboxList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
 {
     Q_ASSERT(mailboxList);
     return emailAddrAsAnchor(mailboxList->mailboxes(), display, cssStyle, link, expandable, fieldName, collapseNumber);
 }
 
-QString emailAddrAsAnchor(KMime::Headers::Generics::AddressList *addressList,
-                          Display display, const QString &cssStyle,
-                          Link link, AddressMode expandable, const QString &fieldName,
-                          int collapseNumber)
+QString emailAddrAsAnchor(KMime::Headers::Generics::AddressList *addressList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
 {
     Q_ASSERT(addressList);
     return emailAddrAsAnchor(addressList->mailboxes(), display, cssStyle, link, expandable, fieldName, collapseNumber);
 }
 
-bool addressIsInAddressList(const QString &address,
-                            const QStringList &addresses)
+bool addressIsInAddressList(const QString &address, const QStringList &addresses)
 {
     const QString addrSpec = KEmailAddress::extractEmailAddress(address);
 
@@ -509,7 +493,7 @@ QString smartQuote(const QString &msg, int maxLineLength)
     int lineStart = 0;
     int lineEnd = msg.indexOf(QLatin1Char('\n'));
     bool needToContinue = true;
-    for (;needToContinue; lineStart = lineEnd + 1, lineEnd = msg.indexOf(QLatin1Char('\n'), lineStart)) {
+    for (; needToContinue; lineStart = lineEnd + 1, lineEnd = msg.indexOf(QLatin1Char('\n'), lineStart)) {
         QString line;
         if (lineEnd == -1) {
             if (lineStart == 0) {
@@ -542,7 +526,6 @@ QString smartQuote(const QString &msg, int maxLineLength)
         // The indent changed, that means we have to write everything contained in textParts to the
         // result, which we do by calling flushPart().
         if (oldIndent != indent) {
-
             // Check if the last non-blank line is a "From" line. A from line is the line containing the
             // attribution to a quote, e.g. "Yesterday, you wrote:". We'll just check for the last colon
             // here, to simply things.
@@ -551,7 +534,6 @@ QString smartQuote(const QString &msg, int maxLineLength)
             QString fromLine;
             if (!textParts.isEmpty()) {
                 for (int i = textParts.count() - 1; i >= 0; i--) {
-
                     // Check if we have found the From line
                     const QString textPartElement(textParts[i]);
                     if (textPartElement.endsWith(QLatin1Char(':'))) {
@@ -612,17 +594,18 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
         if (ch == QLatin1Char('%') && i < strLength) {
             ch = wildString[i++];
             switch (ch.toLatin1()) {
-            case 'f': { // sender's initals
+            case 'f':
+            {           // sender's initals
                 if (fromDisplayString.isEmpty()) {
                     break;
                 }
 
                 uint j = 0;
                 const unsigned int strLength(fromDisplayString.length());
-                for (; j < strLength && fromDisplayString[j] > QLatin1Char(' '); ++j)
-                    ;
-                for (; j < strLength && fromDisplayString[j] <= QLatin1Char(' '); ++j)
-                    ;
+                for (; j < strLength && fromDisplayString[j] > QLatin1Char(' '); ++j) {
+                }
+                for (; j < strLength && fromDisplayString[j] <= QLatin1Char(' '); ++j) {
+                }
                 result += fromDisplayString[0];
                 if (j < strLength && fromDisplayString[j] > QLatin1Char(' ')) {
                     result += fromDisplayString[j];
@@ -631,8 +614,8 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
                         result += fromDisplayString[1];
                     }
                 }
+                break;
             }
-            break;
             case '_':
                 result += QLatin1Char(' ');
                 break;
@@ -690,11 +673,11 @@ QString cleanFileName(const QString &name)
 QString stripOffPrefixes(const QString &subject)
 {
     static QStringList defaultReplyPrefixes = QStringList() << QStringLiteral("Re\\s*:")
-            << QStringLiteral("Re\\[\\d+\\]:")
-            << QStringLiteral("Re\\d+:");
+                                                            << QStringLiteral("Re\\[\\d+\\]:")
+                                                            << QStringLiteral("Re\\d+:");
 
     static QStringList defaultForwardPrefixes = QStringList() << QStringLiteral("Fwd:")
-            << QStringLiteral("FW:");
+                                                              << QStringLiteral("FW:");
 
     QStringList replyPrefixes = MessageCoreSettings::self()->replyPrefixes();
     if (replyPrefixes.isEmpty()) {
@@ -741,8 +724,5 @@ void setEncodingFile(QUrl &url, const QString &encoding)
 {
     url.addQueryItem(QStringLiteral("charset"), encoding);
 }
-
 }
-
 }
-

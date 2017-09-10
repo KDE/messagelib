@@ -31,7 +31,6 @@ HashCacheManagerTest::HashCacheManagerTest(QObject *parent)
 
 HashCacheManagerTest::~HashCacheManagerTest()
 {
-
 }
 
 void HashCacheManagerTest::shouldBeUnknowByDefault()

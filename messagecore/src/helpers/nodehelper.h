@@ -23,21 +23,16 @@
 
 #include "messagecore_export.h"
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 class Message;
 }
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 /**
  * @short Contains some static functions for nagivating in KMime::Node trees.
  */
-namespace NodeHelper
-{
-
+namespace NodeHelper {
 /**
    * Returns the next sibling node of the given @p node.
    * If there is no sibling node @c 0 is returned.
@@ -57,9 +52,7 @@ MESSAGECORE_EXPORT KMime::Content *next(KMime::Content *node, bool allowChildren
    * If there is no child node @c 0 is returned.
    */
 MESSAGECORE_EXPORT KMime::Content *firstChild(const KMime::Content *node);
-
 }
-
 }
 
 #endif

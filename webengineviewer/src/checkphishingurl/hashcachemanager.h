@@ -23,8 +23,7 @@
 #include <QObject>
 #include "webengineviewer_export.h"
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class HashCacheManagerPrivate;
 //https://developers.google.com/safe-browsing/v4/caching
 class WEBENGINEVIEWER_EXPORT HashCacheManager : public QObject

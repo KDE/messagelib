@@ -34,22 +34,18 @@
 class QUrl;
 class QTextCodec;
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class AttachmentTemporaryFilesDirs;
-namespace Interface
-{
+namespace Interface {
 class BodyPartMemento;
 }
 }
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 /**
  * @author Andras Mantia <andras@kdab.net>
  */
-class MIMETREEPARSER_EXPORT NodeHelper: public QObject
+class MIMETREEPARSER_EXPORT NodeHelper : public QObject
 {
     Q_OBJECT
 public:
@@ -107,8 +103,7 @@ public:
 
     Interface::BodyPartMemento *bodyPartMemento(KMime::Content *node, const QByteArray &which) const;
 
-    void setBodyPartMemento(KMime::Content *node, const QByteArray &which,
-                            Interface::BodyPartMemento *memento);
+    void setBodyPartMemento(KMime::Content *node, const QByteArray &which, Interface::BodyPartMemento *memento);
 
     // A flag to remember if the node was embedded. This is useful for attachment nodes, the reader
     // needs to know if they were displayed inline or not.
@@ -171,10 +166,7 @@ public:
      * sequence of whitespace-delimited prefixes at the beginning of
      * @p str is replaced by @p newPrefix.
      */
-    static QString replacePrefixes(const QString &str,
-                                   const QStringList &prefixRegExps,
-                                   bool replace,
-                                   const QString &newPrefix);
+    static QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
 
     /**
      * Return a QTextCodec for the specified charset.
@@ -242,8 +234,7 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(NodeHelper)
-    bool unencryptedMessage_helper(KMime::Content *node, QByteArray &resultingData, bool addHeaders,
-                                   int recursionLevel = 1);
+    bool unencryptedMessage_helper(KMime::Content *node, QByteArray &resultingData, bool addHeaders, int recursionLevel = 1);
 
     /** Check for prefixes @p prefixRegExps in #subject(). If none
         is found, @p newPrefix + ' ' is prepended to the subject and the
@@ -251,8 +242,7 @@ private:
         sequence of whitespace-delimited prefixes at the beginning of
         #subject() is replaced by @p newPrefix
     **/
-    static QString cleanSubject(KMime::Message *message, const QStringList &prefixRegExps,
-                                bool replace, const QString &newPrefix);
+    static QString cleanSubject(KMime::Message *message, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
 
     void mergeExtraNodes(KMime::Content *node);
     void cleanFromExtraNodes(KMime::Content *node);
@@ -286,7 +276,6 @@ private:
 
     friend class NodeHelperTest;
 };
-
 }
 
 #endif

@@ -25,8 +25,7 @@
 
 #include <KMime/Content>
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 /**
   1. Create a new partNode using 'content' data and Content-Description
      found in 'cntDesc'.

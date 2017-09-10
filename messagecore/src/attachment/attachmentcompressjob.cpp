@@ -47,8 +47,8 @@ public:
 };
 
 AttachmentCompressJob::Private::Private(AttachmentCompressJob *qq)
-    : q(qq),
-      mCompressedPartLarger(false)
+    : q(qq)
+    , mCompressedPartLarger(false)
 {
 }
 
@@ -99,8 +99,8 @@ void AttachmentCompressJob::Private::doStart()
 }
 
 AttachmentCompressJob::AttachmentCompressJob(const AttachmentPart::Ptr &part, QObject *parent)
-    : KJob(parent),
-      d(new Private(this))
+    : KJob(parent)
+    , d(new Private(this))
 {
     d->mOriginalPart = part;
 }

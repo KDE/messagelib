@@ -43,16 +43,16 @@ class MessageComposer::FollowUpReminderSelectDateDialogPrivate
 public:
     FollowUpReminderSelectDateDialogPrivate()
     {
-
     }
+
     KDateComboBox *mDateComboBox = nullptr;
     Akonadi::CollectionComboBox *mCollectionCombobox = nullptr;
     QPushButton *mOkButton = nullptr;
 };
 
 FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *parent, QAbstractItemModel *model)
-    : QDialog(parent),
-      d(new MessageComposer::FollowUpReminderSelectDateDialogPrivate)
+    : QDialog(parent)
+    , d(new MessageComposer::FollowUpReminderSelectDateDialogPrivate)
 {
     setWindowTitle(i18n("Select Date"));
     QVBoxLayout *topLayout = new QVBoxLayout(this);
@@ -138,4 +138,3 @@ void FollowUpReminderSelectDateDialog::accept()
     }
     QDialog::accept();
 }
-

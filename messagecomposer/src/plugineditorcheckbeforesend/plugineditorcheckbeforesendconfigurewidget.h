@@ -23,8 +23,7 @@
 #include "messagecomposer_export.h"
 #include <QWidget>
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendConfigureWidget : public QWidget
 {
     Q_OBJECT

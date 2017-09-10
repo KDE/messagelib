@@ -23,10 +23,8 @@
 #include <QString>
 #include <QObject>
 #include "webengineviewer_export.h"
-namespace WebEngineViewer
-{
-namespace CheckPhishingUrlUtil
-{
+namespace WebEngineViewer {
+namespace CheckPhishingUrlUtil {
 enum UrlStatus {
     Ok = 0,
     MalWare = 1,

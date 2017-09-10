@@ -25,12 +25,10 @@
 TemplateWebEngineViewTest::TemplateWebEngineViewTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 TemplateWebEngineViewTest::~TemplateWebEngineViewTest()
 {
-
 }
 
 void TemplateWebEngineViewTest::shouldHaveDefaultValue()

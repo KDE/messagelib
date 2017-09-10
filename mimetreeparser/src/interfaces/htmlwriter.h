@@ -38,15 +38,13 @@
 class QByteArray;
 class QString;
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 /**
   * @short An interface for HTML sinks.
   * @author Marc Mutz <mutz@kde.org>
   *
   */
-namespace Interface
-{
+namespace Interface {
 class MIMETREEPARSER_EXPORT HtmlWriter
 {
 public:
@@ -120,8 +118,6 @@ public:
 
     virtual void extraHead(const QString &str) = 0;
 };
-
 }
 
 #endif // __MIMETREEPARSER_INTERFACES_HTMLWRITER_H__
-

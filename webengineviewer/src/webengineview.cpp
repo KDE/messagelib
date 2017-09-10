@@ -35,16 +35,16 @@ class WebEngineViewer::WebEngineViewPrivate
 {
 public:
     WebEngineViewPrivate(WebEngineView *q)
-        : mSavedRelativePosition(-1),
-          mCurrentWidget(nullptr),
-          mWebEngineNavigatorInterceptor(nullptr),
-          mWebEngineNavigatorInterceptorView(nullptr),
-          mPhishingDatabase(nullptr),
-          mCrashCount(0),
-          q(q)
+        : mSavedRelativePosition(-1)
+        , mCurrentWidget(nullptr)
+        , mWebEngineNavigatorInterceptor(nullptr)
+        , mWebEngineNavigatorInterceptorView(nullptr)
+        , mPhishingDatabase(nullptr)
+        , mCrashCount(0)
+        , q(q)
     {
-
     }
+
     ~WebEngineViewPrivate()
     {
         delete mWebEngineNavigatorInterceptor;
@@ -56,18 +56,18 @@ public:
     void renderProcessTerminated(QWebEnginePage::RenderProcessTerminationStatus status)
     {
         switch (status) {
-            case QWebEnginePage::NormalTerminationStatus:
-                return;
+        case QWebEnginePage::NormalTerminationStatus:
+            return;
 
-            case QWebEnginePage::AbnormalTerminationStatus:
-                qCInfo(WEBENGINEVIEWER_LOG) << "WebEngine render process terminated abnormally";
-                break;
-            case QWebEnginePage::CrashedTerminationStatus:
-                qCInfo(WEBENGINEVIEWER_LOG) << "WebEngine render process crashed";
-                break;
-            case QWebEnginePage::KilledTerminationStatus:
-                qCInfo(WEBENGINEVIEWER_LOG) << "WebEngine render process killed";
-                break;
+        case QWebEnginePage::AbnormalTerminationStatus:
+            qCInfo(WEBENGINEVIEWER_LOG) << "WebEngine render process terminated abnormally";
+            break;
+        case QWebEnginePage::CrashedTerminationStatus:
+            qCInfo(WEBENGINEVIEWER_LOG) << "WebEngine render process crashed";
+            break;
+        case QWebEnginePage::KilledTerminationStatus:
+            qCInfo(WEBENGINEVIEWER_LOG) << "WebEngine render process killed";
+            break;
         }
 
         // don't get stuck in a loop if the renderer keeps crashing. Five restarts
@@ -88,27 +88,27 @@ public:
     int mCrashCount;
 
 private:
-    WebEngineView * const q;
+    WebEngineView *const q;
 };
 
 WebEngineView::WebEngineView(QWidget *parent)
-    : QWebEngineView(parent),
-      d(new WebEngineViewer::WebEngineViewPrivate(this))
+    : QWebEngineView(parent)
+    , d(new WebEngineViewer::WebEngineViewPrivate(this))
 {
     installEventFilter(this);
     d->mManagerScript = new WebEngineManageScript(this);
 
     connect(this, &QWebEngineView::renderProcessTerminated,
             this, [this](QWebEnginePage::RenderProcessTerminationStatus status) {
-                d->renderProcessTerminated(status);
-            });
+        d->renderProcessTerminated(status);
+    });
     connect(this, &QWebEngineView::loadFinished,
             this, [this]() {
-                // Reset the crash counter if we manage to actually load a page.
-                // This does not perfectly correspond to "we managed to render
-                // a page", but it's the best we have
-                d->mCrashCount = 0;
-            });
+        // Reset the crash counter if we manage to actually load a page.
+        // This does not perfectly correspond to "we managed to render
+        // a page", but it's the best we have
+        d->mCrashCount = 0;
+    });
 }
 
 WebEngineView::~WebEngineView()
@@ -128,7 +128,6 @@ void WebEngineView::initializeJQueryScript()
     QString jquery = QString::fromUtf8(file.readAll());
     jquery.append(QStringLiteral("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
     d->mManagerScript->addScript(page()->profile(), jquery, QStringLiteral("jquery"), QWebEngineScript::DocumentCreation);
-
 }
 
 void WebEngineView::addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint)
@@ -183,7 +182,7 @@ bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
     { \
         bool wasAccepted = event->isAccepted(); \
         event->setAccepted(false); \
-        f(static_cast<t*>(event)); \
+        f(static_cast<t *>(event)); \
         bool ret = event->isAccepted(); \
         event->setAccepted(wasAccepted); \
         return ret; \
@@ -256,10 +255,10 @@ qreal WebEngineView::relativePosition() const
     return d->mSavedRelativePosition;
 }
 
-LocalDataBaseManager * WebEngineView::phishingDatabase() const
+LocalDataBaseManager *WebEngineView::phishingDatabase() const
 {
     if (!d->mPhishingDatabase) {
-        d->mPhishingDatabase = new LocalDataBaseManager(const_cast<WebEngineView*>(this));
+        d->mPhishingDatabase = new LocalDataBaseManager(const_cast<WebEngineView *>(this));
         d->mPhishingDatabase->initialize();
     }
     return d->mPhishingDatabase;

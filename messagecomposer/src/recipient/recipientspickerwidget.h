@@ -22,13 +22,11 @@
 
 #include <QWidget>
 class QTreeView;
-namespace Akonadi
-{
+namespace Akonadi {
 class EmailAddressSelectionWidget;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class RecipientsPickerWidget : public QWidget
 {
     Q_OBJECT

@@ -30,13 +30,11 @@
 
 #include <Akonadi/KMime/MessageStatus>
 
-namespace KIdentityManagement
-{
+namespace KIdentityManagement {
 class IdentityManager;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 /**
    * Enumeration that defines the available reply "modes"
    */
@@ -72,8 +70,6 @@ public:
     explicit MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col = Akonadi::Collection(), QObject *parent = nullptr);
     virtual ~MessageFactoryNG();
 
-
-
     /**
     * Create a new message that is a reply to this message, filling all
     * required header fields with the proper values. The returned message
@@ -103,7 +99,8 @@ public:
     user, mail is not changed and the reply-to field is set to
     the email address of the original sender.
     */
-    KMime::Message::Ptr createRedirect(const QString &toStr, const QString &ccStr = QString(), const QString &bccStr = QString(), int transportId = -1, const QString &fcc = QString(), int identity = -1);
+    KMime::Message::Ptr createRedirect(const QString &toStr, const QString &ccStr = QString(), const QString &bccStr = QString(), int transportId = -1,
+                                       const QString &fcc = QString(), int identity = -1);
 
     KMime::Message::Ptr createResend();
 
@@ -124,10 +121,7 @@ public:
 
       @return The notification message or 0, if none should be sent, as well as the state of the MDN operation.
     **/
-    KMime::Message::Ptr createMDN(KMime::MDN::ActionMode a,
-                                  KMime::MDN::DispositionType d,
-                                  KMime::MDN::SendingMode s,
-                                  int mdnQuoteOriginal = 0,
+    KMime::Message::Ptr createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal = 0,
                                   const QVector<KMime::MDN::DispositionModifier> &m = QVector<KMime::MDN::DispositionModifier>());
 
     /**
@@ -268,9 +262,7 @@ private:
     bool m_quote = false;
     KMime::Types::Mailbox::List m_mailingListAddresses;
     Akonadi::Item::Id m_id;
-
 };
-
 }
 
 Q_DECLARE_METATYPE(MessageComposer::ReplyStrategy)

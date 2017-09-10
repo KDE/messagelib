@@ -28,8 +28,7 @@
 #include <WebEngineViewer/WebHitTestResult>
 class KActionCollection;
 class QWebEngineView;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebHitTestResult;
 class NetworkUrlInterceptorManagerPrivate;
 class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptorManager : public QObject

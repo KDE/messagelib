@@ -27,7 +27,7 @@ Interface::ObjectTreeSource::~ObjectTreeSource()
 {
 }
 
-QObject* Interface::ObjectTreeSource::sourceObject()
+QObject *Interface::ObjectTreeSource::sourceObject()
 {
     return nullptr;
 }

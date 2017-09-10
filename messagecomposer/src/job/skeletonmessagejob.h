@@ -23,14 +23,11 @@
 #include "jobbase.h"
 #include "messagecomposer_export.h"
 
-namespace KMime
-{
+namespace KMime {
 class Message;
 }
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class SkeletonMessageJobPrivate;
 class InfoPart;
 class GlobalPart;
@@ -61,7 +58,6 @@ private:
 
     Q_PRIVATE_SLOT(d_func(), void doStart())
 };
-
 } // namespace MessageComposer
 
 #endif

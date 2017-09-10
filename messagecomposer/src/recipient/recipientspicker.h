@@ -28,13 +28,11 @@
 
 class QPushButton;
 
-namespace KLDAP
-{
+namespace KLDAP {
 class LdapSearchDialog;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class RecipientsPickerWidget;
 class RecipientsPicker : public QDialog
 {
@@ -77,9 +75,7 @@ private:
     QPushButton *mUser3Button = nullptr;
     QPushButton *mUser2Button = nullptr;
     QPushButton *mUser1Button = nullptr;
-
 };
-
 }
 
 #endif

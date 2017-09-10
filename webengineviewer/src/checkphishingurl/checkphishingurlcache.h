@@ -24,10 +24,9 @@
 #include <QObject>
 #include <QUrl>
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class CheckPhishingUrlCachePrivate;
-class WEBENGINEVIEWER_EXPORT CheckPhishingUrlCache: public QObject
+class WEBENGINEVIEWER_EXPORT CheckPhishingUrlCache : public QObject
 {
     Q_OBJECT
 public:

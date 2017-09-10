@@ -38,11 +38,8 @@
 
 using namespace MimeTreeParser::Interface;
 
-namespace MimeTreeParser
-{
-namespace Interface
-{
-
+namespace MimeTreeParser {
+namespace Interface {
 class MessagePartPrivate
 {
 public:
@@ -73,7 +70,6 @@ public:
     const BodyPart *mPart = nullptr;
     MessagePart *mParentPart = nullptr;
     bool mCreatedWriter;
-
 };
 }
 }

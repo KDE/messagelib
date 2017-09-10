@@ -34,15 +34,14 @@ class TemplateParser::TemplatesConfigurationPrivate
 public:
     TemplatesConfigurationPrivate()
     {
-
     }
 
     QString mHelpString;
 };
 
 TemplatesConfiguration::TemplatesConfiguration(QWidget *parent, const QString &name)
-    : QWidget(parent),
-      d(new TemplateParser::TemplatesConfigurationPrivate)
+    : QWidget(parent)
+    , d(new TemplateParser::TemplatesConfigurationPrivate)
 {
     setupUi(this);
     setObjectName(name);
@@ -64,28 +63,28 @@ TemplatesConfiguration::TemplatesConfiguration(QWidget *parent, const QString &n
     connect(mInsertCommand, SIGNAL(insertCommand(QString,int)),
             this, SLOT(slotInsertCommand(QString,int)));
 
-    d->mHelpString =
-        i18n("<p>Here you can create and manage templates to use when "
-             "composing new messages, replies or forwarded messages.</p>"
-             "<p>The message templates support substitution commands, "
-             "either simply type them or select them from "
-             "the <i>Insert command</i> menu.</p>");
+    d->mHelpString
+        = i18n("<p>Here you can create and manage templates to use when "
+               "composing new messages, replies or forwarded messages.</p>"
+               "<p>The message templates support substitution commands, "
+               "either simply type them or select them from "
+               "the <i>Insert command</i> menu.</p>");
     const QString templateConfigurationName(name);
     if (templateConfigurationName == QLatin1String("folder-templates")) {
-        d->mHelpString +=
-            i18n("<p>Templates specified here are folder-specific. "
-                 "They override both global templates and per-identity "
-                 "templates.</p>");
+        d->mHelpString
+            += i18n("<p>Templates specified here are folder-specific. "
+                    "They override both global templates and per-identity "
+                    "templates.</p>");
     } else if (templateConfigurationName == QLatin1String("identity-templates")) {
-        d->mHelpString +=
-            i18n("<p>Templates specified here are identity-specific. "
-                 "They override global templates, but can be overridden by "
-                 "per-folder templates if they are specified.</p>");
+        d->mHelpString
+            += i18n("<p>Templates specified here are identity-specific. "
+                    "They override global templates, but can be overridden by "
+                    "per-folder templates if they are specified.</p>");
     } else {
-        d->mHelpString +=
-            i18n("<p>These are global (default) templates. They can be overridden "
-                 "by per-identity templates or per-folder templates "
-                 "if they are specified.</p>");
+        d->mHelpString
+            += i18n("<p>These are global (default) templates. They can be overridden "
+                    "by per-identity templates or per-folder templates "
+                    "if they are specified.</p>");
     }
 
     mHelp->setText(i18n("<a href=\"whatsthis\">How does this work?</a>"));
@@ -122,14 +121,14 @@ void TemplatesConfiguration::slotTextChanged()
 
 void TemplatesConfiguration::resetToDefault()
 {
-    const int choice =
-        KMessageBox::questionYesNoCancel(
-            nullptr,
-            i18n("Do you want to reset current template or all templates to default?"),
-            i18n("Reset to default"),
-            KGuiItem(i18n("Reset Current Template")),
-            KGuiItem(i18n("Reset All Templates")),
-            KStandardGuiItem::cancel());
+    const int choice
+        = KMessageBox::questionYesNoCancel(
+        nullptr,
+        i18n("Do you want to reset current template or all templates to default?"),
+        i18n("Reset to default"),
+        KGuiItem(i18n("Reset Current Template")),
+        KGuiItem(i18n("Reset All Templates")),
+        KStandardGuiItem::cancel());
 
     if (choice == KMessageBox::Cancel) {
         return;
@@ -383,8 +382,8 @@ void TemplatesConfiguration::slotInsertCommand(const QString &cmd, int adjustCur
 
     // qCDebug(TEMPLATEPARSER_LOG) << "Insert command:" << cmd;
     const QString editText(edit->toPlainText());
-    if ((editText.contains(QStringLiteral("%FORCEDPLAIN")) && (cmd == QLatin1String("%FORCEDHTML"))) ||
-            (editText.contains(QStringLiteral("%FORCEDHTML")) && (cmd == QLatin1String("%FORCEDPLAIN")))) {
+    if ((editText.contains(QStringLiteral("%FORCEDPLAIN")) && (cmd == QLatin1String("%FORCEDHTML")))
+        || (editText.contains(QStringLiteral("%FORCEDHTML")) && (cmd == QLatin1String("%FORCEDPLAIN")))) {
         KMessageBox::error(
             this,
             i18n("Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs"
@@ -413,4 +412,3 @@ QString TemplatesConfiguration::configIdString(uint id)
 {
     return QStringLiteral("IDENTITY_%1").arg(id);
 }
-

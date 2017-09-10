@@ -23,14 +23,13 @@
 #include "mimetreeparser_export.h"
 #include "mimetreeparser/htmlwriter.h"
 
-#include<QVector>
-#include<QVariant>
+#include <QVector>
+#include <QVariant>
 
 class QString;
 class QByteArray;
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 /**
 \brief Cache HTML output and not write them directy.
 
@@ -42,7 +41,9 @@ move ObjectTreeParser to a process fist / render later.
 
 */
 struct Command {
-    enum { Begin, End, Reset, Write, Queue, Flush, EmbedPart, ExtraHead } type;
+    enum {
+        Begin, End, Reset, Write, Queue, Flush, EmbedPart, ExtraHead
+    } type;
     QString s;
     QByteArray b;
 };
@@ -70,7 +71,6 @@ private:
     HtmlWriter *mBase = nullptr;
     QVector<Command> mQueue;
 };
-
 } // namespace MimeTreeParser
 
 #endif // __MIMETREEPARSER_QUEUEHTMLWRITER_H__

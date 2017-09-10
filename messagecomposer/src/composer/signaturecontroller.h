@@ -29,13 +29,11 @@
 #include <QObject>
 #include <KIdentityManagement/kidentitymanagement/signature.h>
 
-namespace KIdentityManagement
-{
+namespace KIdentityManagement {
 class IdentityCombo;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class RichTextComposerNg;
 
 /** Controls signature (the footer thing, not the crypto thing) operations
@@ -101,7 +99,6 @@ private Q_SLOTS:
 private:
     SignatureControllerPrivate *const d;
 };
-
 }
 
 #endif

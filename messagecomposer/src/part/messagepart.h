@@ -26,9 +26,7 @@
 
 #include <kmime/kmime_headers.h>
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class MessagePartPrivate;
 
 /**
@@ -45,7 +43,6 @@ private:
     class Private;
     Private *const d;
 };
-
 }
 
 #endif

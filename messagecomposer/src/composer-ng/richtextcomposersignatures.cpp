@@ -31,17 +31,17 @@ public:
     RichTextComposerSignaturesPrivate(RichTextComposerNg *composer)
         : richTextComposer(composer)
     {
-
     }
+
     void cleanWhitespaceHelper(const QRegExp &regExp, const QString &newText, const KIdentityManagement::Signature &sig);
     QList<QPair<int, int> > signaturePositions(const KIdentityManagement::Signature &sig) const;
     RichTextComposerNg *richTextComposer = nullptr;
 };
 
 RichTextComposerSignatures::RichTextComposerSignatures(MessageComposer::RichTextComposerNg *composer, QObject *parent)
-    : QObject(parent), d(new RichTextComposerSignaturesPrivate(composer))
+    : QObject(parent)
+    , d(new RichTextComposerSignaturesPrivate(composer))
 {
-
 }
 
 RichTextComposerSignatures::~RichTextComposerSignatures()
@@ -49,14 +49,11 @@ RichTextComposerSignatures::~RichTextComposerSignatures()
     delete d;
 }
 
-void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitespaceHelper(const QRegExp &regExp,
-        const QString &newText,
-        const KIdentityManagement::Signature &sig)
+void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitespaceHelper(const QRegExp &regExp, const QString &newText, const KIdentityManagement::Signature &sig)
 {
     int currentSearchPosition = 0;
 
     forever {
-
         // Find the text
         QString text = richTextComposer->document()->toPlainText();
         int currentMatch = regExp.indexIn(text, currentSearchPosition);
@@ -79,8 +76,8 @@ void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitesp
         bool insideSignature = false;
         const QList< QPair<int, int> > sigPositions = signaturePositions(sig);
         for (const QPair<int, int> &position : sigPositions) {
-            if (cursor.position() >= position.first &&
-                    cursor.position() <= position.second) {
+            if (cursor.position() >= position.first
+                && cursor.position() <= position.second) {
                 insideSignature = true;
             }
         }
@@ -125,12 +122,10 @@ RichTextComposerSignatures::RichTextComposerSignaturesPrivate::signaturePosition
 {
     QList< QPair<int, int> > signaturePositions;
     if (!sig.rawText().isEmpty()) {
-
         QString sigText = sig.toPlainText();
 
         int currentSearchPosition = 0;
         forever {
-
             // Find the next occurrence of the signature text
             const QString text = richTextComposer->document()->toPlainText();
             const int currentMatch = text.indexOf(sigText, currentSearchPosition);
@@ -140,14 +135,13 @@ RichTextComposerSignatures::RichTextComposerSignaturesPrivate::signaturePosition
             }
 
             signaturePositions.append(QPair<int, int>(currentMatch,
-                                      currentMatch + sigText.length()));
+                                                      currentMatch + sigText.length()));
         }
     }
     return signaturePositions;
 }
 
-bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Signature &oldSig,
-        const KIdentityManagement::Signature &newSig)
+bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig)
 {
     bool found = false;
     if (oldSig == newSig) {
@@ -161,7 +155,6 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
     cursor.beginEditBlock();
     int currentSearchPosition = 0;
     forever {
-
         // Find the next occurrence of the signature text
         const QString text = d->richTextComposer->document()->toPlainText();
         int currentMatch = text.indexOf(oldSigText, currentSearchPosition);
@@ -177,13 +170,13 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Sig
         // If the new signature is completely empty, we also want to remove the
         // signature separator, so include it in the selection
         int additionalMove = 0;
-        if (newSig.rawText().isEmpty() &&
-                text.mid(currentMatch - 4, 4) == QLatin1String("-- \n")) {
+        if (newSig.rawText().isEmpty()
+            && text.mid(currentMatch - 4, 4) == QLatin1String("-- \n")) {
             cursor.movePosition(QTextCursor::PreviousCharacter,
                                 QTextCursor::MoveAnchor, 4);
             additionalMove = 4;
-        } else if (newSig.rawText().isEmpty() &&
-                   text.mid(currentMatch - 1, 1) == QLatin1String("\n")) {
+        } else if (newSig.rawText().isEmpty()
+                   && text.mid(currentMatch - 1, 1) == QLatin1String("\n")) {
             cursor.movePosition(QTextCursor::PreviousCharacter,
                                 QTextCursor::MoveAnchor, 1);
             additionalMove = 1;

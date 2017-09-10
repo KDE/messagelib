@@ -23,12 +23,10 @@
 #include <KSyntaxHighlighting/Repository>
 
 class QKeyEvent;
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class TextEditorCompleter;
 }
-namespace TemplateParser
-{
+namespace TemplateParser {
 class TemplatesTextEditor : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT

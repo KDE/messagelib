@@ -24,8 +24,7 @@
 
 #include <QColor>
 
-namespace MessageCore
-{
+namespace MessageCore {
 class MESSAGECORE_EXPORT ColorUtil
 {
 public:

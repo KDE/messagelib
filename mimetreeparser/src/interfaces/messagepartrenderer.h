@@ -23,10 +23,8 @@
 
 #include <QSharedPointer>
 
-namespace MimeTreeParser
-{
-namespace Interface
-{
+namespace MimeTreeParser {
+namespace Interface {
 /**
 * Interface for rendering messageparts to html.
 * @author Andras Mantia <sknauss@kde.org>

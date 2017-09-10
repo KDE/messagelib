@@ -25,17 +25,15 @@
 using namespace MessageComposer;
 
 MessageFactoryForwardJob::MessageFactoryForwardJob(QObject *parent)
-    : QObject(parent),
-      mMsg(nullptr),
-      mOrigMsg(nullptr),
-      mIdentityManager(nullptr)
+    : QObject(parent)
+    , mMsg(nullptr)
+    , mOrigMsg(nullptr)
+    , mIdentityManager(nullptr)
 {
-
 }
 
 MessageFactoryForwardJob::~MessageFactoryForwardJob()
 {
-
 }
 
 void MessageFactoryForwardJob::start()

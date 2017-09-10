@@ -46,7 +46,7 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.addHelpOption();
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"),
-        i18n("File containing an email")));
+                                        i18n("File containing an email")));
 
     QCommandLineOption headerStylePluginOption(QStringList() << QStringLiteral(
                                                    "headerstyleplugin"), i18n(

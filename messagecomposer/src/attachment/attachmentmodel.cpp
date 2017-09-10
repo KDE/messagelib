@@ -95,8 +95,7 @@ AttachmentModel::~AttachmentModel()
     delete d;
 }
 
-bool AttachmentModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
-                                   int row, int column, const QModelIndex &parent)
+bool AttachmentModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
 {
     Q_UNUSED(row);
     Q_UNUSED(column);
@@ -282,7 +281,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
         default:
             return QVariant();
         }
-    } else if( role == Qt::ToolTipRole ) {
+    } else if (role == Qt::ToolTipRole) {
         return QVariant::fromValue(
             i18nc("@info:tooltip",
                   "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4",
@@ -338,7 +337,8 @@ bool AttachmentModel::setData(const QModelIndex &index, const QVariant &value, i
 
     if (role == Qt::CheckStateRole) {
         switch (index.column()) {
-        case CompressColumn: {
+        case CompressColumn:
+        {
             bool toZip = value.toBool();
             if (toZip != part->isCompressed()) {
                 Q_EMIT attachmentCompressRequested(part, toZip);
@@ -357,7 +357,7 @@ bool AttachmentModel::setData(const QModelIndex &index, const QVariant &value, i
             break;
         default:
             break; // Do nothing.
-        };
+        }
     } else {
         return false;
     }
@@ -433,10 +433,10 @@ Qt::ItemFlags AttachmentModel::flags(const QModelIndex &index) const
         return Qt::ItemIsDropEnabled | defaultFlags;
     }
 
-    if (index.column() == CompressColumn ||
-            index.column() == EncryptColumn ||
-            index.column() == SignColumn ||
-            index.column() == AutoDisplayColumn) {
+    if (index.column() == CompressColumn
+        || index.column() == EncryptColumn
+        || index.column() == SignColumn
+        || index.column() == AutoDisplayColumn) {
         return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsUserCheckable | defaultFlags;
     } else {
         return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | defaultFlags;
@@ -469,7 +469,7 @@ QVariant AttachmentModel::headerData(int section, Qt::Orientation orientation, i
     default:
         qCWarning(MESSAGECOMPOSER_LOG) << "Bad column" << section;
         return QVariant();
-    };
+    }
 }
 
 QModelIndex AttachmentModel::index(int row, int column, const QModelIndex &parent) const

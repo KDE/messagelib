@@ -104,8 +104,8 @@ void AttachmentFromUrlJob::Private::transferJobResult(KJob *job)
 }
 
 AttachmentFromUrlJob::AttachmentFromUrlJob(const QUrl &url, QObject *parent)
-    : AttachmentFromUrlBaseJob(url, parent),
-      d(new Private(this))
+    : AttachmentFromUrlBaseJob(url, parent)
+    , d(new Private(this))
 {
 }
 

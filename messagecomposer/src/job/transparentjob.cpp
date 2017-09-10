@@ -62,4 +62,3 @@ void TransparentJob::process()
     d->resultContent = d->content;
     emitResult();
 }
-

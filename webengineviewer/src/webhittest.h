@@ -24,8 +24,7 @@
 #include "webengineviewer_export.h"
 #include <QPoint>
 class QWebEnginePage;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebHitTestResult;
 class WebHitTestPrivate;
 class WEBENGINEVIEWER_EXPORT WebHitTest : public QObject

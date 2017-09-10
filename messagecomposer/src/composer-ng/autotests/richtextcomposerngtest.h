@@ -52,7 +52,6 @@ private Q_SLOTS:
 
     void shouldLoadSignatureFromCommand_data();
     void shouldLoadSignatureFromCommand();
-
 };
 
 #endif // RICHTEXTCOMPOSERNGTEST_H

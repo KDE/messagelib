@@ -37,11 +37,11 @@ bool MimeTreeParser::Util::isTypeBlacklisted(KMime::Content *node)
         typeBlacklisted = KMime::isCryptoPart(node);
     }
     typeBlacklisted = typeBlacklisted || node == node->topLevel();
-    const bool firstTextChildOfEncapsulatedMsg =
-        mediaTypeLower == "text" &&
-        node->contentType()->subType().toLower() == "plain" &&
-        node->parent() && node->parent()->contentType()->mediaType().toLower() == "message";
-    return  typeBlacklisted || firstTextChildOfEncapsulatedMsg;
+    const bool firstTextChildOfEncapsulatedMsg
+        = mediaTypeLower == "text"
+          && node->contentType()->subType().toLower() == "plain"
+          && node->parent() && node->parent()->contentType()->mediaType().toLower() == "message";
+    return typeBlacklisted || firstTextChildOfEncapsulatedMsg;
 }
 
 QString MimeTreeParser::Util::labelForContent(KMime::Content *node)
@@ -70,9 +70,7 @@ QMimeType MimeTreeParser::Util::mimetype(const QString &name)
     return db.mimeTypeForFile(name);
 }
 
-QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType,
-        const QString &fallbackFileName1,
-        const QString &fallbackFileName2)
+QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const QString &fallbackFileName1, const QString &fallbackFileName2)
 {
     QString fileName;
     QString tMimeType = mimeType;

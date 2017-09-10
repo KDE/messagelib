@@ -22,15 +22,13 @@
 using namespace WebEngineViewer;
 
 WebEngineNavigationRequestInterceptor::WebEngineNavigationRequestInterceptor(QWebEnginePage *page)
-    : QWebEnginePage(page),
-      mTargetPage(page)
+    : QWebEnginePage(page)
+    , mTargetPage(page)
 {
-
 }
 
 WebEngineNavigationRequestInterceptor::~WebEngineNavigationRequestInterceptor()
 {
-
 }
 
 bool WebEngineNavigationRequestInterceptor::acceptNavigationRequest(const QUrl &url, QWebEnginePage::NavigationType type, bool isMainFrame)
@@ -43,4 +41,3 @@ bool WebEngineNavigationRequestInterceptor::acceptNavigationRequest(const QUrl &
     }
     return false;
 }
-

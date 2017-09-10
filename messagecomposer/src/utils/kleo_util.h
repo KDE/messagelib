@@ -41,7 +41,7 @@ static const Kleo::CryptoMessageFormat cryptoMessageFormats[] = {
     Kleo::SMIMEFormat,
     Kleo::SMIMEOpaqueFormat
 };
-static const int numCryptoMessageFormats = sizeof cryptoMessageFormats / sizeof * cryptoMessageFormats;
+static const int numCryptoMessageFormats = sizeof cryptoMessageFormats / sizeof *cryptoMessageFormats;
 
 static const Kleo::CryptoMessageFormat concreteCryptoMessageFormats[] = {
     Kleo::OpenPGPMIMEFormat,
@@ -50,7 +50,7 @@ static const Kleo::CryptoMessageFormat concreteCryptoMessageFormats[] = {
     Kleo::InlineOpenPGPFormat
 };
 static const unsigned int numConcreteCryptoMessageFormats
-    = sizeof concreteCryptoMessageFormats / sizeof * concreteCryptoMessageFormats;
+    = sizeof concreteCryptoMessageFormats / sizeof *concreteCryptoMessageFormats;
 
 static inline Kleo::CryptoMessageFormat cb2format(int idx)
 {
@@ -59,10 +59,11 @@ static inline Kleo::CryptoMessageFormat cb2format(int idx)
 
 static inline int format2cb(Kleo::CryptoMessageFormat f)
 {
-    for (int i = 0; i < numCryptoMessageFormats; ++i)
+    for (int i = 0; i < numCryptoMessageFormats; ++i) {
         if (f == cryptoMessageFormats[i]) {
             return i;
         }
+    }
     return 0;
 }
 
@@ -73,7 +74,7 @@ static inline int format2cb(Kleo::CryptoMessageFormat f)
 
 static inline bool isSMIME(Kleo::CryptoMessageFormat f)
 {
-    return f ==  Kleo::SMIMEFormat || f == Kleo::SMIMEOpaqueFormat;
+    return f == Kleo::SMIMEFormat || f == Kleo::SMIMEOpaqueFormat;
 }
 
 static inline bool isOpenPGP(Kleo::CryptoMessageFormat f)

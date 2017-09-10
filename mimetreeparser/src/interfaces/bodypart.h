@@ -39,20 +39,16 @@
 #include <QByteArray>
 #include <QString>
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class NodeHelper;
 class ObjectTreeParser;
 class ProcessResult;
 
-namespace Interface
-{
-
+namespace Interface {
 class ObjectTreeSource;
 
 /*FIXME(Andras) review, port
@@ -170,7 +166,9 @@ public:
     */
     virtual void setBodyPartMemento(BodyPartMemento *) = 0;
 
-    enum Display { None, AsIcon, Inline };
+    enum Display {
+        None, AsIcon, Inline
+    };
     /**
       @return whether this body part should be displayed iconic or inline
       */
@@ -203,9 +201,7 @@ public:
     virtual MimeTreeParser::Interface::ObjectTreeSource *source() const = 0;
     virtual MimeTreeParser::ProcessResult *processResult() const = 0;
 };
-
 } // namespace Interface
-
 }
 
 #endif // __MIMETREEPARSER_INTERFACES_BODYPART_H__

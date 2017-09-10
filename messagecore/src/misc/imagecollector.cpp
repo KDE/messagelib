@@ -87,8 +87,8 @@ void MessageCore::ImageCollector::collectImagesFrom(KMime::Content *node)
             continue;
         }
 
-        if (parent && parent->contentType()->isMultipart() &&
-                parent->contentType()->subType() == "related") {
+        if (parent && parent->contentType()->isMultipart()
+            && parent->contentType()->subType() == "related") {
             qCWarning(MESSAGECORE_LOG) << "Adding image" << node->contentID();
             d->mImages.push_back(node);
             node = MessageCore::NodeHelper::next(node);    // skip embedded images

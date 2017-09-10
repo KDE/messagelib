@@ -23,9 +23,7 @@
 #include "contentjobbase.h"
 #include "messagecomposer_export.h"
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class MainTextJobPrivate;
 class TextPart;
 
@@ -47,7 +45,6 @@ protected Q_SLOTS:
 private:
     Q_DECLARE_PRIVATE(MainTextJob)
 };
-
 } // namespace MessageComposer
 
 #endif

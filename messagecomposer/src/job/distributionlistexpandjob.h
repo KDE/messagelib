@@ -25,8 +25,7 @@
 
 #include <kjob.h>
 #include <QStringList>
-namespace MessageComposer
-{
+namespace MessageComposer {
 /**
  * @short A job to expand a distribution list to its member email addresses.
  */

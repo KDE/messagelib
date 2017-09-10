@@ -26,12 +26,10 @@ class QAction;
 class QPushButton;
 class QMenu;
 class QLabel;
-namespace PimCommon
-{
+namespace PimCommon {
 class LineEditWithCompleterNg;
 }
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WEBENGINEVIEWER_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT
@@ -82,8 +80,6 @@ protected:
     QLabel *mStatus = nullptr;
     void addToCompletion(const QString &text);
 };
-
 }
 
 #endif /* FINDBARBASE_H */
-

@@ -35,8 +35,8 @@ public:
 };
 
 AttachmentFromMimeContentJob::AttachmentFromMimeContentJob(const Content *content, QObject *parent)
-    : AttachmentLoadJob(parent),
-      d(new Private)
+    : AttachmentLoadJob(parent)
+    , d(new Private)
 {
     d->mMimeContent = content;
 }
@@ -87,4 +87,3 @@ void AttachmentFromMimeContentJob::doStart()
     setAttachmentPart(part);
     emitResult(); // Success.
 }
-

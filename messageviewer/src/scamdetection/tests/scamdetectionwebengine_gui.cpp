@@ -96,7 +96,7 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.addHelpOption();
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"),
-        i18n("URL of an html file to be opened")));
+                                        i18n("URL of an html file to be opened")));
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);

@@ -25,8 +25,7 @@
 #include <QNetworkReply>
 #include "webengineviewer_export.h"
 #include "checkphishingurlutil.h"
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class SearchFullHashJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
 class WEBENGINEVIEWER_EXPORT SearchFullHashJob : public QObject

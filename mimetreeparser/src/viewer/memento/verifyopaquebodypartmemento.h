@@ -28,25 +28,19 @@
 
 #include "interfaces/bodypart.h"
 
-namespace QGpgME
-{
+namespace QGpgME {
 class VerifyOpaqueJob;
 class KeyListJob;
 }
 
 class QStringList;
 
-namespace MimeTreeParser
-{
-
-class VerifyOpaqueBodyPartMemento
-    : public CryptoBodyPartMemento
+namespace MimeTreeParser {
+class VerifyOpaqueBodyPartMemento : public CryptoBodyPartMemento
 {
     Q_OBJECT
 public:
-    VerifyOpaqueBodyPartMemento(QGpgME::VerifyOpaqueJob *job,
-                                QGpgME::KeyListJob *klj,
-                                const QByteArray &signature);
+    VerifyOpaqueBodyPartMemento(QGpgME::VerifyOpaqueJob *job, QGpgME::KeyListJob *klj, const QByteArray &signature);
     ~VerifyOpaqueBodyPartMemento();
 
     bool start() override;
@@ -56,24 +50,24 @@ public:
     {
         return m_plainText;
     }
+
     const GpgME::VerificationResult &verifyResult() const
     {
         return m_vr;
     }
+
     const GpgME::Key &signingKey() const
     {
         return m_key;
     }
 
 private Q_SLOTS:
-    void slotResult(const GpgME::VerificationResult &vr,
-                    const QByteArray &plainText);
+    void slotResult(const GpgME::VerificationResult &vr, const QByteArray &plainText);
     void slotKeyListJobDone();
     void slotNextKey(const GpgME::Key &);
 
 private:
-    void saveResult(const GpgME::VerificationResult &,
-                    const QByteArray &);
+    void saveResult(const GpgME::VerificationResult &, const QByteArray &);
     bool canStartKeyListJob() const;
     QStringList keyListPattern() const;
     bool startKeyListJob();
@@ -87,7 +81,6 @@ private:
     QByteArray m_plainText;
     GpgME::Key m_key;
 };
-
 }
 
 #endif // __MIMETREEPARSER_VERIFYOPAQUEBODYPARTMEMENTO_H__

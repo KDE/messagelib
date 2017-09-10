@@ -44,8 +44,8 @@ ComposerLineEdit::~ComposerLineEdit()
 //-----------------------------------------------------------------------------
 void ComposerLineEdit::keyPressEvent(QKeyEvent *e)
 {
-    if ((e->key() == Qt::Key_Enter || e->key() == Qt::Key_Return) &&
-            !completionBox()->isVisible()) {
+    if ((e->key() == Qt::Key_Enter || e->key() == Qt::Key_Return)
+        && !completionBox()->isVisible()) {
         Q_EMIT focusDown();
         AddresseeLineEdit::keyPressEvent(e);
         return;
@@ -58,4 +58,3 @@ void ComposerLineEdit::keyPressEvent(QKeyEvent *e)
     }
     AddresseeLineEdit::keyPressEvent(e);
 }
-

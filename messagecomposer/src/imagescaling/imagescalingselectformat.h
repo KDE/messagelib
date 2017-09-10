@@ -1,4 +1,3 @@
-
 /*
    Copyright (C) 2013-2017 Montel Laurent <montel@kde.org>
 
@@ -27,9 +26,7 @@ class QLineEdit;
 class QPushButton;
 class QListWidget;
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class ImageScalingSelectFormatDialog : public QDialog
 {
     Q_OBJECT

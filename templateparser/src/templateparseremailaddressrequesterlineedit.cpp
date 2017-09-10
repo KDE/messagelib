@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "templateparseremailaddressrequesterlineedit.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -39,7 +38,6 @@ TemplateParserEmailAddressRequesterLineEdit::~TemplateParserEmailAddressRequeste
 {
     disconnect(mLineEdit, &QLineEdit::textChanged, this, &TemplateParserEmailAddressRequesterLineEdit::textChanged);
 }
-
 
 QString TemplateParserEmailAddressRequesterLineEdit::text() const
 {

@@ -46,7 +46,6 @@ CreateDatabaseFileJobTest::CreateDatabaseFileJobTest(QObject *parent)
 
 CreateDatabaseFileJobTest::~CreateDatabaseFileJobTest()
 {
-
 }
 
 void CreateDatabaseFileJobTest::initTestCase()
@@ -307,7 +306,6 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     QCOMPARE(spy3.count(), 1);
     successCreateDataBase = spy3.at(0).at(0).toBool();
     QCOMPARE(successCreateDataBase, success);
-
 }
 
 void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()

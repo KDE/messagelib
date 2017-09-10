@@ -789,7 +789,8 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
                                                                                                toPercentEncoding(
                                                                                                    address
                                                                                                    .
-                        path())), signer);
+                                                                                                   path())),
+                                                                                 signer);
                     }
                 }
             }

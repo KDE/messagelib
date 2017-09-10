@@ -111,4 +111,3 @@ void GlobalPart::setMDNRequested(bool requestMDN)
 {
     d->MDNRequested = requestMDN;
 }
-

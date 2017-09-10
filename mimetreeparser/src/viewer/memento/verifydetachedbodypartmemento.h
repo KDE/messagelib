@@ -27,26 +27,19 @@
 
 #include "interfaces/bodypart.h"
 
-namespace QGpgME
-{
+namespace QGpgME {
 class VerifyDetachedJob;
 class KeyListJob;
 }
 
 class QStringList;
 
-namespace MimeTreeParser
-{
-
-class VerifyDetachedBodyPartMemento
-    : public CryptoBodyPartMemento
+namespace MimeTreeParser {
+class VerifyDetachedBodyPartMemento : public CryptoBodyPartMemento
 {
     Q_OBJECT
 public:
-    VerifyDetachedBodyPartMemento(QGpgME::VerifyDetachedJob *job,
-                                  QGpgME::KeyListJob *klj,
-                                  const QByteArray &signature,
-                                  const QByteArray &plainText);
+    VerifyDetachedBodyPartMemento(QGpgME::VerifyDetachedJob *job, QGpgME::KeyListJob *klj, const QByteArray &signature, const QByteArray &plainText);
     ~VerifyDetachedBodyPartMemento();
 
     bool start() override;
@@ -56,6 +49,7 @@ public:
     {
         return m_vr;
     }
+
     const GpgME::Key &signingKey() const
     {
         return m_key;
@@ -81,7 +75,6 @@ private:
     GpgME::VerificationResult m_vr;
     GpgME::Key m_key;
 };
-
 }
 
 #endif // __MIMETREEPARSER_VERIFYDETACHEDBODYPARTMEMENTO_H__

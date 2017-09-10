@@ -67,6 +67,7 @@ QByteArray AttachmentJobPrivate::detectCharset(const QByteArray &data)
         return QByteArrayLiteral("utf-8");
     }
 }
+
 #endif
 
 AttachmentJob::AttachmentJob(AttachmentPart::Ptr part, QObject *parent)
@@ -97,8 +98,8 @@ void AttachmentJob::doStart()
     Q_D(AttachmentJob);
     Q_ASSERT(d->part);
 
-    if (d->part->mimeType() == "multipart/digest" ||
-            d->part->mimeType() == "message/rfc822") {
+    if (d->part->mimeType() == "multipart/digest"
+        || d->part->mimeType() == "message/rfc822") {
         // this is actually a digest, so we don't want any additional headers
         // the attachment is really a complete multipart/digest subtype
         // and us adding our own headers would break it. so copy over the content
@@ -166,4 +167,3 @@ void AttachmentJob::process()
     d->resultContent = d->subjobContents.first();
     emitResult();
 }
-

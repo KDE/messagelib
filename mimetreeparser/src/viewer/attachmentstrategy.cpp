@@ -48,22 +48,19 @@ static AttachmentStrategy::Display smartDisplay(KMime::Content *node)
 {
     const auto cd = node->contentDisposition(false);
 
-    if (cd && cd->disposition() == KMime::Headers::CDinline)
+    if (cd && cd->disposition() == KMime::Headers::CDinline) {
         // explict "inline" disposition:
-    {
         return AttachmentStrategy::Inline;
     }
-    if (cd && cd->disposition() == KMime::Headers::CDattachment)
+    if (cd && cd->disposition() == KMime::Headers::CDattachment) {
         // explicit "attachment" disposition:
-    {
         return AttachmentStrategy::AsIcon;
     }
 
     const auto ct = node->contentType(false);
-    if (ct && ct->isText() && ct->name().trimmed().isEmpty() &&
-            (!cd || cd->filename().trimmed().isEmpty()))
+    if (ct && ct->isText() && ct->name().trimmed().isEmpty()
+        && (!cd || cd->filename().trimmed().isEmpty())) {
         // text/* w/o filename parameter:
-    {
         return AttachmentStrategy::Inline;
     }
     return AttachmentStrategy::AsIcon;
@@ -78,8 +75,13 @@ class IconicAttachmentStrategy : public AttachmentStrategy
 {
     friend class AttachmentStrategy;
 protected:
-    IconicAttachmentStrategy() : AttachmentStrategy() {}
-    virtual ~IconicAttachmentStrategy() {}
+    IconicAttachmentStrategy() : AttachmentStrategy()
+    {
+    }
+
+    virtual ~IconicAttachmentStrategy()
+    {
+    }
 
 public:
     const char *name() const override
@@ -91,13 +93,13 @@ public:
     {
         return false;
     }
+
     Display defaultDisplay(KMime::Content *node) const override
     {
-        if (node->contentType()->isText() &&
-                node->contentDisposition()->filename().trimmed().isEmpty() &&
-                node->contentType()->name().trimmed().isEmpty())
+        if (node->contentType()->isText()
+            && node->contentDisposition()->filename().trimmed().isEmpty()
+            && node->contentType()->name().trimmed().isEmpty()) {
             // text/* w/o filename parameter:
-        {
             return Inline;
         }
         return AsIcon;
@@ -115,8 +117,13 @@ class SmartAttachmentStrategy : public AttachmentStrategy
 {
     friend class AttachmentStrategy;
 protected:
-    SmartAttachmentStrategy() : AttachmentStrategy() {}
-    virtual ~SmartAttachmentStrategy() {}
+    SmartAttachmentStrategy() : AttachmentStrategy()
+    {
+    }
+
+    virtual ~SmartAttachmentStrategy()
+    {
+    }
 
 public:
     const char *name() const override
@@ -128,6 +135,7 @@ public:
     {
         return true;
     }
+
     Display defaultDisplay(KMime::Content *node) const override
     {
         return smartDisplay(node);
@@ -143,8 +151,13 @@ class InlinedAttachmentStrategy : public AttachmentStrategy
 {
     friend class AttachmentStrategy;
 protected:
-    InlinedAttachmentStrategy() : AttachmentStrategy() {}
-    virtual ~InlinedAttachmentStrategy() {}
+    InlinedAttachmentStrategy() : AttachmentStrategy()
+    {
+    }
+
+    virtual ~InlinedAttachmentStrategy()
+    {
+    }
 
 public:
     const char *name() const override
@@ -156,6 +169,7 @@ public:
     {
         return true;
     }
+
     Display defaultDisplay(KMime::Content *) const override
     {
         return Inline;
@@ -171,8 +185,13 @@ class HiddenAttachmentStrategy : public AttachmentStrategy
 {
     friend class AttachmentStrategy;
 protected:
-    HiddenAttachmentStrategy() : AttachmentStrategy() {}
-    virtual ~HiddenAttachmentStrategy() {}
+    HiddenAttachmentStrategy() : AttachmentStrategy()
+    {
+    }
+
+    virtual ~HiddenAttachmentStrategy()
+    {
+    }
 
 public:
     const char *name() const override
@@ -184,21 +203,21 @@ public:
     {
         return false;
     }
+
     Display defaultDisplay(KMime::Content *node) const override
     {
-        if (node->contentType()->isText() &&
-                node->contentDisposition()->filename().trimmed().isEmpty() &&
-                node->contentType()->name().trimmed().isEmpty())
+        if (node->contentType()->isText()
+            && node->contentDisposition()->filename().trimmed().isEmpty()
+            && node->contentType()->name().trimmed().isEmpty()) {
             // text/* w/o filename parameter:
-        {
             return Inline;
         }
         if (!node->parent()) {
             return Inline;
         }
 
-        if (node->parent() && node->parent()->contentType()->isMultipart() &&
-                node->parent()->contentType()->subType() == "related") {
+        if (node->parent() && node->parent()->contentType()->isMultipart()
+            && node->parent()->contentType()->subType() == "related") {
             return Inline;
         }
 
@@ -210,8 +229,13 @@ class HeaderOnlyAttachmentStrategy : public AttachmentStrategy
 {
     friend class AttachmentStrategy;
 protected:
-    HeaderOnlyAttachmentStrategy() : AttachmentStrategy() {}
-    virtual ~HeaderOnlyAttachmentStrategy() {}
+    HeaderOnlyAttachmentStrategy() : AttachmentStrategy()
+    {
+    }
+
+    virtual ~HeaderOnlyAttachmentStrategy()
+    {
+    }
 
 public:
     const char *name() const override
@@ -230,7 +254,7 @@ public:
             return smartDisplay(node);
         }
 
-        if (!Util::labelForContent(node).isEmpty() && QIcon::hasThemeIcon(Util::iconNameForContent(node)) && ! Util::isTypeBlacklisted(node)) {
+        if (!Util::labelForContent(node).isEmpty() && QIcon::hasThemeIcon(Util::iconNameForContent(node)) && !Util::isTypeBlacklisted(node)) {
             return None;
         }
         return smartDisplay(node);
@@ -248,22 +272,25 @@ public:
 
 AttachmentStrategy::AttachmentStrategy()
 {
-
 }
 
 AttachmentStrategy::~AttachmentStrategy()
 {
-
 }
 
 const AttachmentStrategy *AttachmentStrategy::create(Type type)
 {
     switch (type) {
-    case Iconic:     return iconic();
-    case Smart:      return smart();
-    case Inlined:    return inlined();
-    case Hidden:     return hidden();
-    case HeaderOnly: return headerOnly();
+    case Iconic:
+        return iconic();
+    case Smart:
+        return smart();
+    case Inlined:
+        return inlined();
+    case Hidden:
+        return hidden();
+    case HeaderOnly:
+        return headerOnly();
     }
     qCCritical(MIMETREEPARSER_LOG) << "Unknown attachment startegy ( type =="
                                    << (int)type << ") requested!";

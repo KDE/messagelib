@@ -68,7 +68,6 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
 
 CreatePhisingUrlDataBaseGui::~CreatePhisingUrlDataBaseGui()
 {
-
 }
 
 void CreatePhisingUrlDataBaseGui::clear()

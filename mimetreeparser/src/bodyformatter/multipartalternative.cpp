@@ -67,8 +67,8 @@ Interface::MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Inter
             part.nodeHelper()->setNodeProcessed(dataPlain, false);
         }
         preferredMode = Util::MultipartIcal;
-    } else if ((dataHtml && (preferredMode == Util::MultipartHtml || preferredMode == Util::Html)) ||
-               (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
+    } else if ((dataHtml && (preferredMode == Util::MultipartHtml || preferredMode == Util::Html))
+               || (dataHtml && dataPlain && dataPlain->body().isEmpty())) {
         if (dataPlain) {
             part.nodeHelper()->setNodeProcessed(dataPlain, false);
         }

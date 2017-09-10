@@ -22,8 +22,7 @@
 
 #include <QWidget>
 #include <qwebengineview.h>
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebEnginePage;
 class WebHitTestResult;
 }

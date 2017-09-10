@@ -48,15 +48,15 @@ public:
     WebHitTestPrivate(const QPoint &pos)
         : m_pos(pos)
     {
-
     }
+
     QPoint m_pos;
     QUrl m_pageUrl;
 };
 
 WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
-    : QObject(parent),
-      d(new WebHitTestPrivate(pos))
+    : QObject(parent)
+    , d(new WebHitTestPrivate(pos))
 {
     QString source = QStringLiteral("(function() {"
                                     "var e = document.elementFromPoint(%1, %2);"

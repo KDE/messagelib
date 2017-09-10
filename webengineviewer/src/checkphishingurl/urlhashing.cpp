@@ -26,12 +26,10 @@ using namespace WebEngineViewer;
 UrlHashing::UrlHashing(const QUrl &url)
     : mUrl(url)
 {
-
 }
 
 UrlHashing::~UrlHashing()
 {
-
 }
 
 QString UrlHashing::canonicalizeUrl(QUrl url)
@@ -154,4 +152,3 @@ QHash<QByteArray, QByteArray> UrlHashing::hashList() const
     }
     return lst;
 }
-

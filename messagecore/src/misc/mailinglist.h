@@ -1,4 +1,3 @@
-
 #ifndef MESSAGECORE_MAILINGLIST_H
 #define MESSAGECORE_MAILINGLIST_H
 
@@ -13,9 +12,7 @@
 
 class KConfigGroup;
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 /**
  * @short A class to extract information about mailing lists from emails.
  *
@@ -41,15 +38,15 @@ public:
      * Defines the features a mailinglist can suppport.
      */
     enum Feature {
-        None         = 0 << 0, ///< No mailing list fields exist.
-        Post         = 1 << 0, ///< List-Post header exists.
-        Subscribe    = 1 << 1, ///< List-Subscribe header exists.
-        Unsubscribe  = 1 << 2, ///< List-Unsubscribe header exists.
-        Help         = 1 << 3, ///< List-Help header exists.
-        Archive      = 1 << 4, ///< List-Archive header exists.
-        Id           = 1 << 5, ///< List-ID header exists.
-        Owner        = 1 << 6, ///< List-Owner header exists.
-        ArchivedAt   = 1 << 7  ///< Archive-At header exists.
+        None = 0 << 0,         ///< No mailing list fields exist.
+        Post = 1 << 0,         ///< List-Post header exists.
+        Subscribe = 1 << 1,    ///< List-Subscribe header exists.
+        Unsubscribe = 1 << 2,  ///< List-Unsubscribe header exists.
+        Help = 1 << 3,         ///< List-Help header exists.
+        Archive = 1 << 4,      ///< List-Archive header exists.
+        Id = 1 << 5,           ///< List-ID header exists.
+        Owner = 1 << 6,        ///< List-Owner header exists.
+        ArchivedAt = 1 << 7    ///< Archive-At header exists.
     };
     Q_DECLARE_FLAGS(Features, Feature)
 
@@ -59,8 +56,7 @@ public:
      */
     static MailingList detect(const KMime::Message::Ptr &message);
 
-    static QString name(const KMime::Message::Ptr &message, QByteArray &headerName,
-                        QString &headerValue);
+    static QString name(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue);
 
 public:
     /**
@@ -193,7 +189,6 @@ private:
     class Private;
     QSharedDataPointer<Private> d;
 };
-
 }
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(MessageCore::MailingList::Features)

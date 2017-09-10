@@ -38,14 +38,11 @@
 #include <vector>
 #include <QObject>
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 /**
    * @short A helper class to collect the embedded images of a email.
    *
@@ -86,7 +83,6 @@ private:
     Q_DISABLE_COPY(ImageCollector)
     //@endcond
 };
-
 }
 
 #endif

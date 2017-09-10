@@ -25,9 +25,7 @@
 
 #include <MessageCore/AttachmentPart>
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class AttachmentJobPrivate;
 
 /**
@@ -50,7 +48,6 @@ protected Q_SLOTS:
 private:
     Q_DECLARE_PRIVATE(AttachmentJob)
 };
-
 }
 
 #endif

@@ -24,12 +24,10 @@
 WebHitTestResultTest::WebHitTestResultTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 WebHitTestResultTest::~WebHitTestResultTest()
 {
-
 }
 
 void WebHitTestResultTest::shouldHaveDefaultValues()
@@ -170,7 +168,6 @@ void WebHitTestResultTest::shouldCopyWebHitTestResult()
     QCOMPARE(result.pos(), pos);
     QCOMPARE(result.tagName(), tagName);
     QCOMPARE(result.pageUrl(), pageUrl);
-
 }
 
 QTEST_MAIN(WebHitTestResultTest)

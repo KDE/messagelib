@@ -25,7 +25,6 @@
 #include "messagefactoryreplyjob.h"
 #include "MessageComposer/Util"
 
-
 #include <AkonadiCore/item.h>
 #ifndef QT_NO_CURSOR
 #include <Libkdepim/KCursorSaver>
@@ -47,13 +46,11 @@
 
 using namespace MessageComposer;
 
-namespace KMime
-{
-namespace Types
-{
+namespace KMime {
+namespace Types {
 static bool operator==(const KMime::Types::Mailbox &left, const KMime::Types::Mailbox &right)
 {
-    return (left.addrSpec().asString() == right.addrSpec().asString());
+    return left.addrSpec().asString() == right.addrSpec().asString();
 }
 }
 }
@@ -87,7 +84,6 @@ MessageFactoryNG::MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::
     , m_quote(true)
     , m_id(id)
 {
-
 }
 
 MessageFactoryNG::~MessageFactoryNG()
@@ -147,7 +143,8 @@ void MessageFactoryNG::createReplyAsync()
     }
 
     switch (m_replyStrategy) {
-    case MessageComposer::ReplySmart: {
+    case MessageComposer::ReplySmart:
+    {
         if (auto hdr = m_origMsg->headerByType("Mail-Followup-To")) {
             toList << KMime::Types::Mailbox::listFrom7BitString(hdr->as7BitString(false));
         } else if (!replyToList.isEmpty()) {
@@ -159,7 +156,6 @@ void MessageFactoryNG::createReplyAsync()
         } else if (!m_mailingListAddresses.isEmpty()) {
             toList = (KMime::Types::Mailbox::List() << m_mailingListAddresses.at(0));
         } else {
-
             // doesn't seem to be a mailing list, reply to From: address
             toList = m_origMsg->from()->mailboxes();
 
@@ -181,9 +177,10 @@ void MessageFactoryNG::createReplyAsync()
         if (toList.isEmpty() && !recipients.isEmpty()) {
             toList << recipients.first();
         }
+        break;
     }
-    break;
-    case MessageComposer::ReplyList: {
+    case MessageComposer::ReplyList:
+    {
         if (auto hdr = m_origMsg->headerByType("Mail-Followup-To")) {
             KMime::Types::Mailbox mailbox;
             mailbox.from7BitString(hdr->as7BitString(false));
@@ -199,9 +196,10 @@ void MessageFactoryNG::createReplyAsync()
         const KMime::Types::Mailbox::List recipients = toList;
 
         toList = stripMyAddressesFromAddressList(recipients, m_identityManager);
+        break;
     }
-    break;
-    case MessageComposer::ReplyAll: {
+    case MessageComposer::ReplyAll:
+    {
         KMime::Types::Mailbox::List recipients;
         KMime::Types::Mailbox::List ccRecipients;
 
@@ -269,8 +267,8 @@ void MessageFactoryNG::createReplyAsync()
             }
 
             for (const KMime::Types::Mailbox &mailbox : qAsConst(list)) {
-                if (!recipients.contains(mailbox) &&
-                        !ccRecipients.contains(mailbox)) {
+                if (!recipients.contains(mailbox)
+                    && !ccRecipients.contains(mailbox)) {
                     ccRecipients += mailbox;
                     qCDebug(MESSAGECOMPOSER_LOG) << "Added" << mailbox.prettyAddress() << "to the list of CC recipients";
                 }
@@ -299,9 +297,9 @@ void MessageFactoryNG::createReplyAsync()
             // reply to self without other recipients
             toList << recipients.at(0);
         }
+        break;
     }
-    break;
-    case MessageComposer::ReplyAuthor: {
+    case MessageComposer::ReplyAuthor:
         if (!replyToList.isEmpty()) {
             KMime::Types::Mailbox::List recipients = replyToList;
 
@@ -327,15 +325,13 @@ void MessageFactoryNG::createReplyAsync()
         }
 
         replyAll = false;
-    }
-    break;
+        break;
     case MessageComposer::ReplyNone:
         // the addressees will be set by the caller
         break;
     default:
         Q_UNREACHABLE();
     }
-
 
     for (const KMime::Types::Mailbox &mailbox : qAsConst(toList)) {
         msg->to()->addAddress(mailbox);
@@ -367,8 +363,6 @@ void MessageFactoryNG::createReplyAsync()
     }
 }
 
-
-
 void MessageFactoryNG::slotCreateForwardDone(const KMime::Message::Ptr &msg)
 {
     applyCharset(msg);
@@ -384,10 +378,10 @@ void MessageFactoryNG::createForwardAsync()
 
     // This is a non-multipart, non-text mail (e.g. text/calendar). Construct
     // a multipart/mixed mail and add the original body as an attachment.
-    if (!m_origMsg->contentType()->isMultipart() &&
-            (!m_origMsg->contentType()->isText() ||
-             (m_origMsg->contentType()->isText() && m_origMsg->contentType()->subType() != "html"
-              && m_origMsg->contentType()->subType() != "plain"))) {
+    if (!m_origMsg->contentType()->isMultipart()
+        && (!m_origMsg->contentType()->isText()
+            || (m_origMsg->contentType()->isText() && m_origMsg->contentType()->subType() != "html"
+                && m_origMsg->contentType()->subType() != "plain"))) {
         const uint originalIdentity = identityUoid(m_origMsg);
         MessageHelper::initFromMessage(msg, m_origMsg, m_identityManager, originalIdentity);
         msg->removeHeader<KMime::Headers::ContentType>();
@@ -410,7 +404,6 @@ void MessageFactoryNG::createForwardAsync()
         msg->addContent(secondPart);
         msg->assemble();
     }
-
     // Normal message (multipart or text/plain|html)
     // Just copy the message, the template parser will do the hard work of
     // replacing the body text in TemplateParser::addProcessedBodyToMessage()
@@ -440,10 +433,8 @@ void MessageFactoryNG::createForwardAsync()
     job->start();
 }
 
-
 QPair< KMime::Message::Ptr, QList< KMime::Content * > > MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
 {
-
     // create forwarded message with original message as attachment
     // remove headers that shouldn't be forwarded
     KMime::Message::Ptr msg(new KMime::Message);
@@ -541,8 +532,8 @@ KMime::Message::Ptr MessageFactoryNG::createRedirect(const QString &toStr, const
             }
         }
     }
-    const KIdentityManagement::Identity &ident =
-        m_identityManager->identityForUoidOrDefault(id);
+    const KIdentityManagement::Identity &ident
+        = m_identityManager->identityForUoidOrDefault(id);
 
     // X-KMail-Redirect-From: content
     const QString strByWayOf = QString::fromLocal8Bit("%1 (by way of %2 <%3>)")
@@ -557,8 +548,8 @@ KMime::Message::Ptr MessageFactoryNG::createRedirect(const QString &toStr, const
     // in unit-tests. Unfortunatelly RFC2822Date is not enough for us, we need the
     // composition hack below
     const QDateTime dt = QDateTime::currentDateTime();
-    const QString newDate = QLocale::c().toString(dt, QStringLiteral("ddd, ")) +
-                            dt.toString(Qt::RFC2822Date);
+    const QString newDate = QLocale::c().toString(dt, QStringLiteral("ddd, "))
+                            +dt.toString(Qt::RFC2822Date);
 
     // Clean up any resent headers
     msg->removeHeader("Resent-Cc");
@@ -643,7 +634,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
         receiptTo = hrd->asUnicodeString();
     }
     if (receiptTo.trimmed().isEmpty()) {
-        return  KMime::Message::Ptr();
+        return KMime::Message::Ptr();
     }
     receiptTo.remove(QChar::fromLatin1('\n'));
 
@@ -653,7 +644,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     receipt->to()->fromUnicodeString(receiptTo, QStringLiteral("utf-8").toLatin1());
     receipt->subject()->fromUnicodeString(i18n("Receipt: ") + m_origMsg->subject()->asUnicodeString(), "utf-8");
 
-    QString str  = QStringLiteral("Your message was successfully delivered.");
+    QString str = QStringLiteral("Your message was successfully delivered.");
     str += QLatin1String("\n\n---------- Message header follows ----------\n");
     str += QString::fromLatin1(m_origMsg->head());
     str += QLatin1String("--------------------------------------------\n");
@@ -666,11 +657,8 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     return receipt;
 }
 
-KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
-        KMime::MDN::DispositionType d,
-        KMime::MDN::SendingMode s,
-        int mdnQuoteOriginal,
-        const QVector<KMime::MDN::DispositionModifier> &m)
+KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal,
+                                                const QVector<KMime::MDN::DispositionModifier> &m)
 {
     // extract where to send to:
     QString receiptTo;
@@ -748,7 +736,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     default:
         delete thirdMsgPart;
         break;
-    };
+    }
 
     receipt->to()->fromUnicodeString(receiptTo, "utf-8");
     //Laurent: We don't translate subject ?
@@ -914,7 +902,7 @@ bool MessageFactoryNG::MDNReturnPathEmpty(const KMime::Message::Ptr &msg)
     return returnPath.isEmpty();
 }
 
-bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const  KMime::Message::Ptr &msg)
+bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &msg)
 {
     // extract where to send to:
     QString receiptTo;
@@ -940,7 +928,6 @@ bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const  KMime::Message::Ptr &m
 
 bool MessageFactoryNG::MDNMDNUnknownOption(const KMime::Message::Ptr &msg)
 {
-
     // RFC 2298: An importance of "required" indicates that
     // interpretation of the parameter is necessary for proper
     // generation of an MDN in response to this request.  If a UA does
@@ -989,9 +976,9 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
     Q_ASSERT(rxDate.isValid());
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating mdn date:" << msg->date()->dateTime().toTime_t() << KMime::DateFormatter::formatDate(
-                                     KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t());
+        KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t());
     QString sDate = KMime::DateFormatter::formatDate(
-                        KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t());
+        KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t());
 
     int idx = 0;
     if ((idx = rxDate.indexIn(result, idx)) != -1) {

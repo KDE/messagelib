@@ -21,8 +21,7 @@
 #include "MessageCore/AttachmentLoadJob"
 #include <AkonadiCore/Item>
 #include "messagecomposer_export.h"
-namespace MessageComposer
-{
+namespace MessageComposer {
 class AttachmentVcardFromAddressBookJobPrivate;
 class MESSAGECOMPOSER_EXPORT AttachmentVcardFromAddressBookJob : public MessageCore::AttachmentLoadJob
 {

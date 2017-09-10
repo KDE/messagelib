@@ -30,8 +30,8 @@ public:
 };
 
 AttachmentLoadJob::AttachmentLoadJob(QObject *parent)
-    : KJob(parent),
-      d(new Private)
+    : KJob(parent)
+    , d(new Private)
 {
 }
 
@@ -54,4 +54,3 @@ void AttachmentLoadJob::setAttachmentPart(const AttachmentPart::Ptr &part)
 {
     d->mPart = part;
 }
-

@@ -31,15 +31,11 @@
 #include <gpgme++/key.h>
 #include <vector>
 
-namespace KMime
-{
+namespace KMime {
 class Content;
-
 }
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class EncryptJobPrivate;
 
 /**
@@ -68,7 +64,6 @@ protected Q_SLOTS:
 private:
     Q_DECLARE_PRIVATE(EncryptJob)
 };
-
 }
 
 #endif

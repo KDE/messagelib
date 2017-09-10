@@ -26,12 +26,8 @@
 #include "interfaces/bodypart.h"
 #include "viewer/enums.h"
 
-namespace MimeTreeParser
-{
-
-class CryptoBodyPartMemento
-    : public QObject,
-      public Interface::BodyPartMemento
+namespace MimeTreeParser {
+class CryptoBodyPartMemento : public QObject, public Interface::BodyPartMemento
 {
     Q_OBJECT
 public:
@@ -46,6 +42,7 @@ public:
     {
         return m_auditLog;
     }
+
     GpgME::Error auditLogError() const
     {
         return m_auditLogError;

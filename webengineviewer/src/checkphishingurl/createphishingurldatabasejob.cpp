@@ -34,12 +34,12 @@ class WebEngineViewer::CreatePhishingUrlDataBaseJobPrivate
 {
 public:
     CreatePhishingUrlDataBaseJobPrivate()
-        : mContraintsCompressionType(CreatePhishingUrlDataBaseJob::RawCompression),
-          mDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::FullDataBase),
-          mNetworkAccessManager(nullptr)
+        : mContraintsCompressionType(CreatePhishingUrlDataBaseJob::RawCompression)
+        , mDataBaseDownloadNeeded(CreatePhishingUrlDataBaseJob::FullDataBase)
+        , mNetworkAccessManager(nullptr)
     {
-
     }
+
     UpdateDataBaseInfo::CompressionType parseCompressionType(const QString &str);
     RiceDeltaEncoding parseRiceDeltaEncoding(const QMap<QString, QVariant> &map);
     QVector<Removal> parseRemovals(const QVariantList &lst);
@@ -51,8 +51,8 @@ public:
 };
 
 CreatePhishingUrlDataBaseJob::CreatePhishingUrlDataBaseJob(QObject *parent)
-    : QObject(parent),
-      d(new CreatePhishingUrlDataBaseJobPrivate)
+    : QObject(parent)
+    , d(new CreatePhishingUrlDataBaseJobPrivate)
 {
     d->mNetworkAccessManager = new QNetworkAccessManager(this);
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CreatePhishingUrlDataBaseJob::slotDownloadDataBaseFinished);
@@ -108,22 +108,22 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
 {
 #if 0
     {
-    "client": {
-        "clientId":       "yourcompanyname",
-        "clientVersion":  "1.5.2"
+        "client" : {
+            "clientId" :       "yourcompanyname",
+            "clientVersion" :  "1.5.2"
         },
-    "listUpdateRequests": [{
-        "threatType":      "MALWARE",
-        "platformType":    "WINDOWS",
-        "threatEntryType": "URL",
-        "state":           "Gg4IBBADIgYQgBAiAQEoAQ==",
-        "constraints": {
-                "maxUpdateEntries":      2048,
-                "maxDatabaseEntries":    4096,
-            "region":                "US",
-            "supportedCompressions": ["RAW"]
-            }
-        }]
+        "listUpdateRequests" : [{
+                                    "threatType" :      "MALWARE",
+                                    "platformType" :    "WINDOWS",
+                                    "threatEntryType" : "URL",
+                                    "state" :           "Gg4IBBADIgYQgBAiAQEoAQ==",
+                                    "constraints" : {
+                                        "maxUpdateEntries" :      2048,
+                                        "maxDatabaseEntries" :    4096,
+                                        "region" :                "US",
+                                        "supportedCompressions" : ["RAW"]
+                                    }
+                                }]
     }
 #endif
     QVariantMap clientMap;
@@ -406,4 +406,3 @@ void CreatePhishingUrlDataBaseJob::setContraintsCompressionType(CreatePhishingUr
 {
     d->mContraintsCompressionType = type;
 }
-

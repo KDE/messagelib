@@ -25,21 +25,16 @@
 
 class QMimeType;
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
-namespace Util
-{
-
+namespace Util {
 /**
       * Describes the type of the displayed message. This depends on the MIME structure
       * of the mail and on whether HTML mode is enabled (which is decided by htmlMail())
@@ -58,9 +53,7 @@ QString MIMETREEPARSER_EXPORT labelForContent(KMime::Content *node);
 
 QMimeType MIMETREEPARSER_EXPORT mimetype(const QString &name);
 
-QString MIMETREEPARSER_EXPORT iconNameForMimetype(const QString &mimeType,
-        const QString &fallbackFileName1 = QString(),
-        const QString &fallbackFileName2 = QString());
+QString MIMETREEPARSER_EXPORT iconNameForMimetype(const QString &mimeType, const QString &fallbackFileName1 = QString(), const QString &fallbackFileName2 = QString());
 
 QString MIMETREEPARSER_EXPORT iconNameForContent(KMime::Content *node);
 }

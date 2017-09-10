@@ -48,7 +48,6 @@
 #include <QAction>
 
 namespace MessageViewer {
-
 class AbstractMessageLoadedHandler::Private
 {
 public:
@@ -74,8 +73,6 @@ Akonadi::Session *AbstractMessageLoadedHandler::session() const
 {
     return d->mSession;
 }
-
-    
 
 Viewer::Viewer(QWidget *aParent, QWidget *mainWindow, KActionCollection *actionCollection)
     : QWidget(aParent)
@@ -143,7 +140,7 @@ void Viewer::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMod
         d->setMessageItem(item, updateMode);
     } else {
         Akonadi::ItemFetchJob *job = createFetchJob(item);
-        connect(job, SIGNAL(result(KJob *)), d, SLOT(itemFetchResult(KJob *)));
+        connect(job, SIGNAL(result(KJob*)), d, SLOT(itemFetchResult(KJob*)));
         d->displaySplashPage(i18n("Loading message..."));
     }
 }

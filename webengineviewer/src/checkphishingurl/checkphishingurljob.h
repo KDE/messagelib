@@ -25,8 +25,7 @@
 #include <QNetworkReply>
 #include "webengineviewer_export.h"
 #include "checkphishingurlutil.h"
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class CheckPhishingUrlJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/lookup-api */
 /* example http://malware.testing.google.test/testing/malware/ */

@@ -32,7 +32,6 @@ using namespace MessageCore;
 
 class Q_DECL_HIDDEN AttachmentFromFolderJob::Private
 {
-
 public:
     Private(AttachmentFromFolderJob *qq);
 
@@ -46,11 +45,11 @@ public:
     QDateTime mArchiveTime;
 };
 
-AttachmentFromFolderJob::Private::Private(AttachmentFromFolderJob *qq) :
-    q(qq),
-    mCompression(KZip::DeflateCompression),
-    mZip(nullptr),
-    mArchiveTime(QDateTime::currentDateTime())
+AttachmentFromFolderJob::Private::Private(AttachmentFromFolderJob *qq)
+    : q(qq)
+    , mCompression(KZip::DeflateCompression)
+    , mZip(nullptr)
+    , mArchiveTime(QDateTime::currentDateTime())
 {
 }
 
@@ -71,8 +70,8 @@ void AttachmentFromFolderJob::Private::compressFolder()
     const QString filename = q->url().fileName();
     mZip->writeDir(filename, QString(), QString(), 040755, mArchiveTime, mArchiveTime, mArchiveTime);
     qCDebug(MESSAGECORE_LOG) << "writing root directory : " << filename;
-    addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot |
-              QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), fileName + QLatin1Char('/'));
+    addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot
+                                                  |QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), fileName + QLatin1Char('/'));
     mZip->close();
 
     Q_ASSERT(mCompressedFolder == nullptr);
@@ -101,7 +100,7 @@ void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const Q
         if (q->maximumAllowedSize() != -1 && mZip->device()->size() > q->maximumAllowedSize()) {
             q->setError(KJob::UserDefinedError);
             q->setErrorText(i18n
-                            ("The resulting attachment would be larger than the maximum allowed size, aborting."));
+                                ("The resulting attachment would be larger than the maximum allowed size, aborting."));
             q->emitResult();
             return;
         }
@@ -115,8 +114,8 @@ void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const Q
                 q->emitResult();
                 return;
             }
-            addEntity(QDir(info.filePath()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot |
-                      QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), path + infoFileName + QLatin1Char('/'));
+            addEntity(QDir(info.filePath()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot
+                                                          |QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), path + infoFileName + QLatin1Char('/'));
         }
 
         if (info.isFile()) {
@@ -139,9 +138,9 @@ void AttachmentFromFolderJob::Private::addEntity(const QFileInfoList &f, const Q
     }
 }
 
-AttachmentFromFolderJob::AttachmentFromFolderJob(const QUrl &url, QObject *parent) :
-    AttachmentFromUrlBaseJob(url, parent),
-    d(new Private(this))
+AttachmentFromFolderJob::AttachmentFromFolderJob(const QUrl &url, QObject *parent)
+    : AttachmentFromUrlBaseJob(url, parent)
+    , d(new Private(this))
 {
 }
 
@@ -164,4 +163,3 @@ void AttachmentFromFolderJob::doStart()
 {
     d->compressFolder();
 }
-

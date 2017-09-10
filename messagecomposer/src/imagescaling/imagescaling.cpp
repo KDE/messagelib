@@ -27,7 +27,6 @@ class MessageComposer::ImageScalingPrivate
 public:
     ImageScalingPrivate()
     {
-
     }
 
     QImage mImage;
@@ -64,7 +63,6 @@ bool ImageScaling::resizeImage()
     int newWidth = -1;
     int newHeight = -1;
     if (MessageComposer::MessageComposerSettings::self()->reduceImageToMaximum()) {
-
         int maximumWidth = MessageComposer::MessageComposerSettings::self()->maximumWidth();
         if (maximumWidth == -1) {
             maximumWidth = MessageComposer::MessageComposerSettings::self()->customMaximumWidth();
@@ -88,7 +86,6 @@ bool ImageScaling::resizeImage()
         newWidth = width;
     }
     if (MessageComposer::MessageComposerSettings::self()->enlargeImageToMinimum()) {
-
         int minimumWidth = MessageComposer::MessageComposerSettings::self()->minimumWidth();
         if (minimumWidth == -1) {
             minimumWidth = MessageComposer::MessageComposerSettings::self()->customMinimumWidth();
@@ -127,7 +124,6 @@ bool ImageScaling::resizeImage()
         return false;
     }
     return true;
-
 }
 
 QByteArray ImageScaling::mimetype() const

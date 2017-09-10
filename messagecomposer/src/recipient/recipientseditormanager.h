@@ -17,20 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef RECIPIENTSEDITORMANAGER_H
 #define RECIPIENTSEDITORMANAGER_H
 
 #include <QObject>
 #include "messagecomposer_export.h"
 
-namespace Akonadi
-{
+namespace Akonadi {
 class EmailAddressSelectionModel;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT RecipientsEditorManager : public QObject
 {
     Q_OBJECT

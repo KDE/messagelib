@@ -24,8 +24,8 @@ class MessageViewer::HeaderStylePluginPrivate
 {
 public:
     HeaderStylePluginPrivate()
-        : mIsEnabled(false),
-          mShowEmoticons(true)
+        : mIsEnabled(false)
+        , mShowEmoticons(true)
     {
     }
 
@@ -79,4 +79,3 @@ void HeaderStylePlugin::showConfigureDialog(QWidget *parent)
     Q_UNUSED(parent);
     //Reimplement
 }
-

@@ -29,7 +29,7 @@
 #undef I18N_NOOP
 #define I18N_NOOP(t) 0, t
 #undef I18N_NOOP2
-#define I18N_NOOP2(c,t) c, t
+#define I18N_NOOP2(c, t) c, t
 
 using namespace TemplateParser;
 
@@ -190,8 +190,8 @@ static const InsertCommand originalCommands[] = {
         TemplatesInsertCommand::CQuoteHtml
     }
 };
-static const int originalCommandsCount =
-    sizeof(originalCommands) / sizeof(*originalCommands);
+static const int originalCommandsCount
+    = sizeof(originalCommands) / sizeof(*originalCommands);
 
 static const InsertCommand currentCommands[] = {
     {
@@ -327,8 +327,8 @@ static const InsertCommand extCommands[] = {
     }
 };
 
-static const int extCommandsCount =
-    sizeof(extCommands) / sizeof(*extCommands);
+static const int extCommandsCount
+    = sizeof(extCommands) / sizeof(*extCommands);
 
 static const InsertCommand miscCommands[] = {
     {
@@ -343,8 +343,8 @@ static const InsertCommand miscCommands[] = {
 
     {
         I18N_NOOP2("All characters, up to and including the next newline, "
-        "are discarded without performing any macro expansion",
-        "Discard to Next Line"),
+                   "are discarded without performing any macro expansion",
+                   "Discard to Next Line"),
         TemplatesInsertCommand::CDnl
     },
 
@@ -391,12 +391,10 @@ static const InsertCommand miscCommands[] = {
         I18N_NOOP("Language"),
         TemplatesInsertCommand::CLanguage
     },
-
 };
 static const int miscCommandsCount = sizeof(miscCommands) / sizeof(*miscCommands);
 
-static void fillMenuFromActionMap(const QMap< QString, TemplatesInsertCommand::Command > &map,
-                                  KActionMenu *menu, QSignalMapper *mapper)
+static void fillMenuFromActionMap(const QMap< QString, TemplatesInsertCommand::Command > &map, KActionMenu *menu, QSignalMapper *mapper)
 {
     QMap< QString, TemplatesInsertCommand::Command >::const_iterator it = map.constBegin();
     QMap< QString, TemplatesInsertCommand::Command >::const_iterator end = map.constEnd();
@@ -701,4 +699,3 @@ void TemplatesInsertCommand::slotMapped(int cmd)
         break;
     }
 }
-

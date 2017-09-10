@@ -30,24 +30,19 @@
 
 class TemplateParserTester;
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class ObjectTreeParser;
 }
 
-namespace KIdentityManagement
-{
+namespace KIdentityManagement {
 class IdentityManager;
 }
 
-namespace MessageCore
-{
+namespace MessageCore {
 class ImageCollector;
 }
 
-namespace TemplateParser
-{
-
+namespace TemplateParser {
 /**
  * \brief The TemplateParser transforms a message with a given template.
  *
@@ -211,12 +206,9 @@ public:
      */
     void setCharsets(const QStringList &charsets);
 
-    void process(const KMime::Message::Ptr &aorig_msg,
-                 qint64 afolder = -1);
-    void process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
-                 qint64 afolder = -1);
-    void processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg,
-                            qint64 afolder = -1);
+    void process(const KMime::Message::Ptr &aorig_msg, qint64 afolder = -1);
+    void process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg, qint64 afolder = -1);
+    void processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg, qint64 afolder = -1);
 
     void processWithTemplate(const QString &tmpl);
 
@@ -338,8 +330,7 @@ private:
      * after setting the mime type, charset and CTE of its respective text/plain
      * part and text/html part.
      */
-    KMime::Content *createMultipartAlternativeContent(const QString &plainBody,
-            const QString &htmlBody) const;
+    KMime::Content *createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const;
 
     /**
      * Returns a multipart/mixed KMime::Content that has textPart and all
@@ -348,8 +339,7 @@ private:
      * @param textPart a KMime::Content that is to be added as a child.
      * @since 4.8
      */
-    KMime::Content *createMultipartMixed(const QVector<KMime::Content *> &attachments,
-                                         KMime::Content *textPart) const;
+    KMime::Content *createMultipartMixed(const QVector<KMime::Content *> &attachments, KMime::Content *textPart) const;
 
     /**
      * Returnsa multipart/related KMime::Content that has mainTextPart and all
@@ -359,8 +349,7 @@ private:
      * @param mainTextPart a KMime::Content that is to be added as a child.
      * @since 4.8
      */
-    KMime::Content *createMultipartRelated(const MessageCore::ImageCollector &ic,
-                                           KMime::Content *mainTextPart) const;
+    KMime::Content *createMultipartRelated(const MessageCore::ImageCollector &ic, KMime::Content *mainTextPart) const;
 
     /**
      * Checks if the signature is HTML or not.
@@ -401,7 +390,6 @@ private:
     TemplateParserExtractHtmlInfoResult mExtractHtmlInfoResult;
     bool mForceCursorPosition;
 };
-
 }
 
 #endif // TEMPLATEPARSERJOB_H

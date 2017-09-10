@@ -23,13 +23,11 @@
 #include "messagecomposer_export.h"
 
 class QComboBox;
-namespace Ui
-{
+namespace Ui {
 class ImageScalingWidget;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class ImageScalingWidgetPrivate;
 class MESSAGECOMPOSER_EXPORT ImageScalingWidget : public QWidget
 {

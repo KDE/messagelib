@@ -23,10 +23,8 @@
 #include "contentjobbase.h"
 #include "messagecomposer_export.h"
 
-namespace KMime
-{
-namespace Headers
-{
+namespace KMime {
+namespace Headers {
 class ContentDescription;
 class ContentDisposition;
 class ContentID;
@@ -35,9 +33,7 @@ class ContentType;
 }
 }
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class SinglepartJobPrivate;
 
 /**
@@ -66,7 +62,6 @@ protected Q_SLOTS:
 private:
     Q_DECLARE_PRIVATE(SinglepartJob)
 };
-
 }
 
 #endif

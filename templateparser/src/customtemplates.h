@@ -30,8 +30,7 @@ class KActionCollection;
 
 class Ui_CustomTemplatesBase;
 
-namespace TemplateParser
-{
+namespace TemplateParser {
 class CustomTemplateItem;
 
 class TEMPLATEPARSER_EXPORT CustomTemplates : public QWidget
@@ -46,8 +45,7 @@ public:
     };
 
 public:
-    explicit CustomTemplates(const QList<KActionCollection *> &actionCollection,
-                             QWidget *parent = nullptr);
+    explicit CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent = nullptr);
     ~CustomTemplates();
 
     void load();
@@ -93,13 +91,7 @@ private:
 class CustomTemplateItem : public QTreeWidgetItem
 {
 public:
-    explicit CustomTemplateItem(QTreeWidget *parent,
-                                const QString &name,
-                                const QString &content,
-                                const QKeySequence &shortcut,
-                                CustomTemplates::Type type,
-                                const QString &to,
-                                const QString &cc);
+    explicit CustomTemplateItem(QTreeWidget *parent, const QString &name, const QString &content, const QKeySequence &shortcut, CustomTemplates::Type type, const QString &to, const QString &cc);
     ~CustomTemplateItem();
     void setCustomType(CustomTemplates::Type type);
     CustomTemplates::Type customType() const;
@@ -132,14 +124,10 @@ class CustomTemplateItemDelegate : public QStyledItemDelegate
 public:
     explicit CustomTemplateItemDelegate(QObject *parent = nullptr);
     ~CustomTemplateItemDelegate();
-    QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option,
-                          const QModelIndex &index) const override;
+    QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
-    void setModelData(QWidget *editor, QAbstractItemModel *model,
-                      const QModelIndex &index) const override;
-
+    void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override;
 };
-
 }
 
 #endif

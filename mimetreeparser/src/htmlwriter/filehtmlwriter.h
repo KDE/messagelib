@@ -40,9 +40,7 @@
 
 class QString;
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 class MIMETREEPARSER_EXPORT FileHtmlWriter : public HtmlWriter
 {
 public:
@@ -64,7 +62,6 @@ private:
     QFile mFile;
     QTextStream mStream;
 };
-
 } // namespace MimeTreeParser
 
 #endif // __MIMETREEPARSER_FILEHTMLWRITER_H__

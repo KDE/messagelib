@@ -21,7 +21,6 @@
 #include "networkurlinterceptormanager.h"
 #include "networkurlinterceptorpluginmanager.h"
 
-
 #include <WebEngineViewer/WebHitTestResult>
 
 using namespace WebEngineViewer;
@@ -63,10 +62,9 @@ void NetworkUrlInterceptorManagerPrivate::createInterfaces(QWebEngineView *webEn
 }
 
 NetworkUrlInterceptorManager::NetworkUrlInterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent)
-    : QObject(parent),
-      d(new NetworkUrlInterceptorManagerPrivate(webEngine, ac, this))
+    : QObject(parent)
+    , d(new NetworkUrlInterceptorManagerPrivate(webEngine, ac, this))
 {
-
 }
 
 NetworkUrlInterceptorManager::~NetworkUrlInterceptorManager()

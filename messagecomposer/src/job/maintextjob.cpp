@@ -69,16 +69,16 @@ bool MainTextJobPrivate::chooseSourcePlainText()
     Q_ASSERT(textPart);
     if (textPart->isWordWrappingEnabled()) {
         sourcePlainText = textPart->wrappedPlainText();
-        if (sourcePlainText.isEmpty() &&
-                !textPart->cleanPlainText().isEmpty()) {
+        if (sourcePlainText.isEmpty()
+            && !textPart->cleanPlainText().isEmpty()) {
             q->setError(JobBase::BugError);
             q->setErrorText(i18n("Asked to use word wrapping, but not given wrapped plain text."));
             return false;
         }
     } else {
         sourcePlainText = textPart->cleanPlainText();
-        if (sourcePlainText.isEmpty() &&
-                !textPart->wrappedPlainText().isEmpty()) {
+        if (sourcePlainText.isEmpty()
+            && !textPart->wrappedPlainText().isEmpty()) {
             q->setError(JobBase::BugError);
             q->setErrorText(i18n("Asked not to use word wrapping, but not given clean plain text."));
             return false;
@@ -112,13 +112,13 @@ bool MainTextJobPrivate::chooseCharsetAndEncode()
         if (q->globalPart()->isGuiEnabled() && textPart->warnBadCharset()) {
             // Warn the user and give them a chance to go back.
             int result = KMessageBox::warningYesNo(
-                             q->globalPart()->parentWidgetForGui(),
-                             i18n("Encoding the message with %1 will lose some characters.\n"
-                                  "Do you want to continue?", QString::fromLatin1(charsets.first())),
-                             i18n("Some Characters Will Be Lost"),
-                             KGuiItem(i18n("Lose Characters")),
-                             KGuiItem(i18n("Change Encoding"))
-                         );
+                q->globalPart()->parentWidgetForGui(),
+                i18n("Encoding the message with %1 will lose some characters.\n"
+                     "Do you want to continue?", QString::fromLatin1(charsets.first())),
+                i18n("Some Characters Will Be Lost"),
+                KGuiItem(i18n("Lose Characters")),
+                KGuiItem(i18n("Change Encoding"))
+                );
             if (result == KMessageBox::No) {
                 q->setError(JobBase::UserCancelledError);
                 q->setErrorText(i18n("User decided to change the encoding."));
@@ -184,7 +184,7 @@ SinglepartJob *MainTextJobPrivate::createHtmlJob()
     cjob->contentType()->setMimeType("text/html");
     cjob->contentType()->setCharset(chosenCharset);
     const QByteArray data = KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(encodedHtml,
-                            textPart->embeddedImages());
+                                                                                         textPart->embeddedImages());
     cjob->setData(data);
     // TODO standard recommends Content-ID.
     return cjob;
@@ -290,4 +290,3 @@ void MainTextJob::process()
     d->resultContent = d->subjobContents.first();
     emitResult();
 }
-

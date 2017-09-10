@@ -24,8 +24,7 @@
 #include <QVector>
 #include <PimCommon/PluginUtil>
 #include "webengineviewer_export.h"
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class NetworkUrlInterceptorPluginManagerPrivate;
 class NetworkPluginUrlInterceptor;
 class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptorPluginManager : public QObject

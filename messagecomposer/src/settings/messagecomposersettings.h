@@ -29,9 +29,7 @@
 
 class QTimer;
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT MessageComposerSettings : public MessageComposer::MessageComposerSettingsBase
 {
     Q_OBJECT
@@ -54,9 +52,7 @@ private:
     static MessageComposerSettings *mSelf;
 
     QTimer *mConfigSyncTimer = nullptr;
-
 };
-
 }
 
 #endif /* MESSAGECOMPOSER_GLOBALSETTINGS_H */

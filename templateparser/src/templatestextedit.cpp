@@ -29,4 +29,3 @@ TemplatesTextEdit::TemplatesTextEdit(QWidget *parent)
 TemplatesTextEdit::~TemplatesTextEdit()
 {
 }
-

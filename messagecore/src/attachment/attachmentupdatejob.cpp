@@ -86,8 +86,8 @@ void AttachmentUpdateJob::Private::loadJobResult(KJob *job)
 }
 
 AttachmentUpdateJob::AttachmentUpdateJob(const AttachmentPart::Ptr &part, QObject *parent)
-    : KJob(parent),
-      d(new Private(this))
+    : KJob(parent)
+    , d(new Private(this))
 {
     d->mOriginalPart = part;
 }

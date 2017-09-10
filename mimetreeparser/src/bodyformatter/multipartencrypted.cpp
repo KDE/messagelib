@@ -41,6 +41,7 @@ const Interface::BodyPartFormatter *MultiPartEncryptedBodyPartFormatter::create(
     }
     return self;
 }
+
 Interface::BodyPartFormatter::Result MultiPartEncryptedBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
 {
     Q_UNUSED(writer)
@@ -88,8 +89,8 @@ Interface::MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interfa
     part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
 
     EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(part.objectTreeParser(),
-                                 data->decodedText(), useThisCryptProto,
-                                 part.nodeHelper()->fromAsString(data), node));
+                                                          data->decodedText(), useThisCryptProto,
+                                                          part.nodeHelper()->fromAsString(data), node));
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(part.source()->decryptMessage());
     PartMetaData *messagePart(mp->partMetaData());

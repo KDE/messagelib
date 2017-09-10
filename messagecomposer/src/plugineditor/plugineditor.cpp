@@ -26,16 +26,15 @@ class MessageComposer::PluginEditorPrivate
 public:
     PluginEditorPrivate()
     {
-
     }
+
     int order = 0;
 };
 
 PluginEditor::PluginEditor(QObject *parent)
-    : PimCommon::AbstractGenericPlugin(parent),
-      d(new PluginEditorPrivate)
+    : PimCommon::AbstractGenericPlugin(parent)
+    , d(new PluginEditorPrivate)
 {
-
 }
 
 PluginEditor::~PluginEditor()

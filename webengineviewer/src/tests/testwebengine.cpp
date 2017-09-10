@@ -41,7 +41,6 @@ TestWebEngine::TestWebEngine(QWidget *parent)
 
 TestWebEngine::~TestWebEngine()
 {
-
 }
 
 TestWebEngineView::TestWebEngineView(QWidget *parent)
@@ -65,7 +64,6 @@ void TestWebEngineView::slotHitTestFinished(const WebEngineViewer::WebHitTestRes
     qDebug() << " mediaMuted" << result.mediaMuted();
     qDebug() << " pos" << result.pos();
     qDebug() << " tagName" << result.tagName();
-
 }
 
 void TestWebEngineView::contextMenuEvent(QContextMenuEvent *e)

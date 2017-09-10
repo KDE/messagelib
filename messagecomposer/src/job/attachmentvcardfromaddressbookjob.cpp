@@ -30,16 +30,15 @@ public:
     AttachmentVcardFromAddressBookJobPrivate(const Akonadi::Item &item)
         : mItem(item)
     {
-
     }
+
     Akonadi::Item mItem;
 };
 
 AttachmentVcardFromAddressBookJob::AttachmentVcardFromAddressBookJob(const Akonadi::Item &item, QObject *parent)
-    : MessageCore::AttachmentLoadJob(parent),
-      d(new MessageComposer::AttachmentVcardFromAddressBookJobPrivate(item))
+    : MessageCore::AttachmentLoadJob(parent)
+    , d(new MessageComposer::AttachmentVcardFromAddressBookJobPrivate(item))
 {
-
 }
 
 AttachmentVcardFromAddressBookJob::~AttachmentVcardFromAddressBookJob()

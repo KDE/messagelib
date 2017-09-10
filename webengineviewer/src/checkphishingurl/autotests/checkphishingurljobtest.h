@@ -35,7 +35,6 @@ private Q_SLOTS:
 
     void shouldParseResult_data();
     void shouldParseResult();
-
 };
 
 #endif // CHECKPHISHINGURLJOBTEST_H

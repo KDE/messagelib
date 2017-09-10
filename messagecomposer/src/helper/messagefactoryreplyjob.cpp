@@ -25,18 +25,16 @@
 using namespace MessageComposer;
 
 MessageFactoryReplyJob::MessageFactoryReplyJob(QObject *parent)
-    : QObject(parent),
-      mMsg(nullptr),
-      mOrigMsg(nullptr),
-      mReplyAll(false),
-      mIdentityManager(nullptr)
+    : QObject(parent)
+    , mMsg(nullptr)
+    , mOrigMsg(nullptr)
+    , mReplyAll(false)
+    , mIdentityManager(nullptr)
 {
-
 }
 
 MessageFactoryReplyJob::~MessageFactoryReplyJob()
 {
-
 }
 
 void MessageFactoryReplyJob::start()

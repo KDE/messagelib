@@ -26,19 +26,17 @@
 CheckPhishingUrlUtilTest::CheckPhishingUrlUtilTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 CheckPhishingUrlUtilTest::~CheckPhishingUrlUtilTest()
 {
-
 }
 
 void CheckPhishingUrlUtilTest::shouldConvertToSecond_data()
 {
     QTest::addColumn<QString>("value");
     QTest::addColumn<double>("result");
-    QTest::newRow("empty") << QString() << (double) - 1;
+    QTest::newRow("empty") << QString() << (double)-1;
     QTest::newRow("test1") << QStringLiteral("459.123s") << 459.123;
     QTest::newRow("test2") << QStringLiteral("459s") << 459.;
 }

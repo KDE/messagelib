@@ -44,8 +44,7 @@
 #include <QVariant>
 #include <QWebEngineContextMenuData>
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebHitTestResultPrivate;
 class WEBENGINEVIEWER_EXPORT WebHitTestResult
 {

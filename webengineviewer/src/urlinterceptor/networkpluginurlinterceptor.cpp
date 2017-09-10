@@ -22,15 +22,13 @@
 using namespace WebEngineViewer;
 
 NetworkPluginUrlInterceptor::NetworkPluginUrlInterceptor(QObject *parent)
-    : QObject(parent),
-      mIsEnabled(false)
+    : QObject(parent)
+    , mIsEnabled(false)
 {
-
 }
 
 NetworkPluginUrlInterceptor::~NetworkPluginUrlInterceptor()
 {
-
 }
 
 bool NetworkPluginUrlInterceptor::hasConfigureDialog() const

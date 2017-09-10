@@ -25,9 +25,7 @@
 
 #include "messagecomposer_export.h"
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 /**
 */
 // TODO I have no idea how to test this.  Have a fake keyring???
@@ -52,7 +50,6 @@ private:
 
     Q_PRIVATE_SLOT(d, void exportResult(GpgME::Error, QByteArray))
 };
-
 } //
 
 #endif

@@ -60,4 +60,3 @@ void MessageComposerSettings::slotSyncNow()
 MessageComposerSettings::~MessageComposerSettings()
 {
 }
-

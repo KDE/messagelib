@@ -182,9 +182,9 @@ void EncryptJob::process()
 
     // FIXME: Make async!
     const GpgME::EncryptionResult res = seJob->exec(d->keys,
-                                        content,
-                                        true, // 'alwaysTrust' provided keys
-                                        encryptedBody);
+                                                    content,
+                                                    true, // 'alwaysTrust' provided keys
+                                                    encryptedBody);
 
     // exec'ed jobs don't delete themselves
     seJob->deleteLater();
@@ -198,7 +198,4 @@ void EncryptJob::process()
     d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, encryptedBody, d->format, false);
 
     emitResult();
-    return;
-
 }
-

@@ -25,8 +25,7 @@
 #include <QImage>
 #include <QBuffer>
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class ImageScalingPrivate;
 class MESSAGECOMPOSER_EXPORT ImageScaling
 {

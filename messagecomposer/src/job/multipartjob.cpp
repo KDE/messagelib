@@ -20,7 +20,6 @@
 #include "job/multipartjob.h"
 #include "contentjobbase_p.h"
 
-
 #include "messagecomposer_debug.h"
 
 #include <kmime/kmime_content.h>
@@ -36,7 +35,6 @@ public:
     }
 
     QByteArray subtype;
-
 };
 
 MultipartJob::MultipartJob(QObject *parent)
@@ -81,4 +79,3 @@ void MultipartJob::process()
                                  << d->resultContent->contents().count() << "subjobContents.";
     emitResult();
 }
-

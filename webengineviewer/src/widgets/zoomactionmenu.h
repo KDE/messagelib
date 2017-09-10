@@ -23,8 +23,7 @@
 #include <KActionMenu>
 #include "webengineviewer_export.h"
 class KActionCollection;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class ZoomActionMenuPrivate;
 class WEBENGINEVIEWER_EXPORT ZoomActionMenu : public KActionMenu
 {

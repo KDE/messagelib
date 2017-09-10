@@ -30,12 +30,13 @@
   * Simple interface that both EncryptJob and SignEncryptJob implement
   * so the composer can extract some encryption-specific job info from them
   */
-namespace MessageComposer
-{
+namespace MessageComposer {
 class AbstractEncryptJob
 {
 public:
-    virtual ~AbstractEncryptJob() {}
+    virtual ~AbstractEncryptJob()
+    {
+    }
 
     /**
      * Set the list of encryption keys that should be used.

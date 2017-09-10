@@ -24,9 +24,7 @@
 
 #include "globalsettings_messagecore.h"
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 class MESSAGECORE_EXPORT MessageCoreSettings : public MessageCore::MessageCoreSettingsBase
 {
     Q_OBJECT
@@ -39,7 +37,6 @@ private:
     virtual ~MessageCoreSettings();
     static MessageCoreSettings *mSelf;
 };
-
 }
 
 #endif

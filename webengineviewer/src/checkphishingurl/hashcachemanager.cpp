@@ -27,11 +27,11 @@ using namespace WebEngineViewer;
 
 struct HashCacheInfo {
     HashCacheInfo()
-        : status(HashCacheManager::Unknown),
-          verifyCacheAfterThisTime(0)
+        : status(HashCacheManager::Unknown)
+        , verifyCacheAfterThisTime(0)
     {
-
     }
+
     bool isValid() const;
     HashCacheManager::UrlStatus status;
     uint verifyCacheAfterThisTime;
@@ -39,7 +39,7 @@ struct HashCacheInfo {
 
 bool HashCacheInfo::isValid() const
 {
-    return (status != HashCacheManager::Unknown);
+    return status != HashCacheManager::Unknown;
 }
 
 class WebEngineViewer::HashCacheManagerPrivate
@@ -49,6 +49,7 @@ public:
     {
         load();
     }
+
     void clearCache();
     void save();
     void load();
@@ -86,16 +87,14 @@ void HashCacheManagerPrivate::save()
     while (i.hasNext()) {
         i.next();
         switch (i.value().status) {
-        case HashCacheManager::UrlOk: {
+        case HashCacheManager::UrlOk:
             lstOk << i.key();
             lstOkDuration << i.value().verifyCacheAfterThisTime;
             break;
-        }
-        case HashCacheManager::MalWare: {
+        case HashCacheManager::MalWare:
             lstMalware << i.key();
             lstMalwareDuration << i.value().verifyCacheAfterThisTime;
             break;
-        }
         case HashCacheManager::Unknown:
             break;
         }
@@ -168,14 +167,12 @@ void HashCacheManagerPrivate::addHashStatus(const QByteArray &hash, HashCacheMan
     info.status = status;
     info.verifyCacheAfterThisTime = cacheDuration;
     switch (status) {
-    case HashCacheManager::UrlOk: {
+    case HashCacheManager::UrlOk:
         mHashList.insert(hash, info);
         break;
-    }
-    case HashCacheManager::MalWare: {
+    case HashCacheManager::MalWare:
         mHashList.insert(hash, info);
         break;
-    }
     case HashCacheManager::Unknown:
         qCWarning(WEBENGINEVIEWER_LOG()) << "HashCacheManagerPrivate::addHashStatus unknow status detected!";
         return;
@@ -190,10 +187,9 @@ HashCacheManager *HashCacheManager::self()
 }
 
 HashCacheManager::HashCacheManager(QObject *parent)
-    : QObject(parent),
-      d(new HashCacheManagerPrivate)
+    : QObject(parent)
+    , d(new HashCacheManagerPrivate)
 {
-
 }
 
 HashCacheManager::~HashCacheManager()

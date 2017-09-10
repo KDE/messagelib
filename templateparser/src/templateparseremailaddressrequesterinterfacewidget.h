@@ -22,8 +22,7 @@
 
 #include <QWidget>
 #include "templateparser_private_export.h"
-namespace TemplateParser
-{
+namespace TemplateParser {
 class TemplateParserEmailAddressRequesterBase;
 class TEMPLATEPARSER_TESTS_EXPORT TemplateParserEmailAddressRequesterInterfaceWidget : public QWidget
 {

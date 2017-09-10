@@ -35,15 +35,15 @@ public:
     CheckPhishingUrlJobPrivate()
         : mNetworkAccessManager(nullptr)
     {
-
     }
+
     QUrl mUrl;
     QNetworkAccessManager *mNetworkAccessManager = nullptr;
 };
 
 CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
-    : QObject(parent),
-      d(new WebEngineViewer::CheckPhishingUrlJobPrivate)
+    : QObject(parent)
+    , d(new WebEngineViewer::CheckPhishingUrlJobPrivate)
 {
     d->mNetworkAccessManager = new QNetworkAccessManager(this);
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CheckPhishingUrlJob::slotCheckUrlFinished);

@@ -21,8 +21,7 @@
 #define TestJQuerySupportWebEngine_H
 
 #include <QWidget>
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebEngineView;
 }
 class QTextEdit;

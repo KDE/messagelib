@@ -41,6 +41,7 @@ const Interface::BodyPartFormatter *MultiPartSignedBodyPartFormatter::create()
     }
     return self;
 }
+
 Interface::BodyPartFormatter::Result MultiPartSignedBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
 {
     Q_UNUSED(writer)
@@ -66,7 +67,7 @@ Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface:
         }
     }
 
-    KMime::Content *signedData =  node->contents().at(0);
+    KMime::Content *signedData = node->contents().at(0);
     KMime::Content *signature = node->contents().at(1);
     Q_ASSERT(signedData);
     Q_ASSERT(signature);
@@ -75,16 +76,16 @@ Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface:
     const QString signatureContentType = QLatin1String(signature->contentType()->mimeType().toLower());
     if (protocolContentType.isEmpty()) {
         qCWarning(MIMETREEPARSER_LOG) << "Message doesn't set the protocol for the multipart/signed content-type, "
-                                      "using content-type of the signature:" << signatureContentType;
+                                         "using content-type of the signature:" << signatureContentType;
         protocolContentType = signatureContentType;
     }
 
     const QGpgME::Protocol *protocol = nullptr;
-    if (protocolContentType == QLatin1String("application/pkcs7-signature") ||
-            protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
+    if (protocolContentType == QLatin1String("application/pkcs7-signature")
+        || protocolContentType == QLatin1String("application/x-pkcs7-signature")) {
         protocol = QGpgME::smime();
-    } else if (protocolContentType == QLatin1String("application/pgp-signature") ||
-               protocolContentType == QLatin1String("application/x-pgp-signature")) {
+    } else if (protocolContentType == QLatin1String("application/pgp-signature")
+               || protocolContentType == QLatin1String("application/x-pgp-signature")) {
         protocol = QGpgME::openpgp();
     }
 
@@ -100,8 +101,8 @@ Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface:
     const QTextCodec *aCodec(part.objectTreeParser()->codecFor(signedData));
 
     SignedMessagePart::Ptr mp(new SignedMessagePart(part.objectTreeParser(),
-                              aCodec->toUnicode(cleartext), protocol,
-                              part.nodeHelper()->fromAsString(node), signature));
+                                                    aCodec->toUnicode(cleartext), protocol,
+                                                    part.nodeHelper()->fromAsString(node), signature));
     PartMetaData *messagePart(mp->partMetaData());
 
     if (protocol) {

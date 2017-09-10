@@ -24,8 +24,7 @@
 
 #include <netinet/in.h>
 
-namespace
-{
+namespace {
 const int kBitsPerByte = 8;
 const unsigned int kMaxBitIndex = kBitsPerByte * sizeof(uint32_t);
 }
@@ -33,12 +32,10 @@ const unsigned int kMaxBitIndex = kBitsPerByte * sizeof(uint32_t);
 using namespace WebEngineViewer;
 RiceEncodingDecoder::RiceEncodingDecoder()
 {
-
 }
 
 RiceEncodingDecoder::~RiceEncodingDecoder()
 {
-
 }
 
 QList<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncoding &riceDeltaEncoding)
@@ -131,10 +128,10 @@ QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncodin
 }
 
 RiceDecoder::RiceDecoder(int riceParameter, int numberEntries, const QByteArray &encodingData)
-    : mEncodingData(encodingData),
-      mRiceParameter(riceParameter),
-      mNumberEntries(numberEntries),
-      mCurrentWord(0)
+    : mEncodingData(encodingData)
+    , mRiceParameter(riceParameter)
+    , mNumberEntries(numberEntries)
+    , mCurrentWord(0)
 {
     mDataByteIndex = 0;
     mCurrentWordBitIndex = kMaxBitIndex;
@@ -142,12 +139,11 @@ RiceDecoder::RiceDecoder(int riceParameter, int numberEntries, const QByteArray 
 
 RiceDecoder::~RiceDecoder()
 {
-
 }
 
 bool RiceDecoder::hasOtherEntries() const
 {
-    return (mNumberEntries > 0);
+    return mNumberEntries > 0;
 }
 
 bool RiceDecoder::nextValue(uint32_t *value)
@@ -198,8 +194,8 @@ bool RiceDecoder::nextBits(unsigned int numRequestedBits, uint32_t *x)
         // |mCurrentWord|.
         uint32_t lower = bitsFromCurrentWord(num_bits_left_in_current_word);
 
-        unsigned int num_bits_from_next_word =
-            numRequestedBits - num_bits_left_in_current_word;
+        unsigned int num_bits_from_next_word
+            = numRequestedBits - num_bits_left_in_current_word;
         uint32_t upper;
         bool result = nextBits(num_bits_from_next_word, &upper);
         if (!result) {
@@ -246,4 +242,3 @@ uint32_t RiceDecoder::bitsFromCurrentWord(unsigned int numRequestedBits)
     mCurrentWordBitIndex += numRequestedBits;
     return x;
 }
-

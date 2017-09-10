@@ -23,8 +23,7 @@
 #include <QWidget>
 #include "webengineviewer_export.h"
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidget : public QWidget
 {
     Q_OBJECT

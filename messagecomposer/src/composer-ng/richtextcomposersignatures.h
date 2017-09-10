@@ -22,13 +22,11 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
-namespace KIdentityManagement
-{
+namespace KIdentityManagement {
 class Signature;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class RichTextComposerNg;
 class MESSAGECOMPOSER_EXPORT RichTextComposerSignatures : public QObject
 {

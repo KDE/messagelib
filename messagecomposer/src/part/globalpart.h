@@ -25,9 +25,7 @@
 #include <QByteArray>
 #include <QList>
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT GlobalPart : public MessageComposer::MessagePart
 {
     Q_OBJECT
@@ -58,7 +56,6 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace MessageComposer
 
 #endif

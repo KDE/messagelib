@@ -33,15 +33,14 @@
 using namespace MessageComposer;
 
 SaveContactPreferenceJob::SaveContactPreferenceJob(const QString &email, const Kleo::KeyResolver::ContactPreferences &pref, QObject *parent)
-    : QObject(parent),
-      mEmail(email),
-      mPref(pref)
+    : QObject(parent)
+    , mEmail(email)
+    , mPref(pref)
 {
 }
 
 SaveContactPreferenceJob::~SaveContactPreferenceJob()
 {
-
 }
 
 void SaveContactPreferenceJob::start()
@@ -61,14 +60,15 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
 
     if (items.isEmpty()) {
         bool ok = true;
-        const QString fullName = QInputDialog::getText(nullptr, i18n("Name Selection"), i18n("Which name shall the contact '%1' have in your address book?", mEmail), QLineEdit::Normal, QString(), &ok);
+        const QString fullName
+            = QInputDialog::getText(nullptr, i18n("Name Selection"), i18n("Which name shall the contact '%1' have in your address book?", mEmail), QLineEdit::Normal, QString(), &ok);
         if (!ok) {
             deleteLater();
             return;
         }
 
-        QPointer<Akonadi::CollectionDialog> dlg =
-            new Akonadi::CollectionDialog(Akonadi::CollectionDialog::KeepTreeExpanded);
+        QPointer<Akonadi::CollectionDialog> dlg
+            = new Akonadi::CollectionDialog(Akonadi::CollectionDialog::KeepTreeExpanded);
         dlg->setMimeTypeFilter(QStringList() << KContacts::Addressee::mimeType());
         dlg->setAccessRightsFilter(Akonadi::Collection::CanCreateItem);
         dlg->setDescription(i18n("Select the address book folder to store the new contact in:"));

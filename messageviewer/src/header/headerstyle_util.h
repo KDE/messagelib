@@ -72,7 +72,6 @@ public:
 
     QString subjectDirectionString(KMime::Message *message) const;
 
-
     QString spamStatus(KMime::Message *message) const;
 
     QString dateStr(const QDateTime &dateTime) const;

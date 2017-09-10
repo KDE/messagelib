@@ -57,11 +57,11 @@ void RecipientLineEdit::keyPressEvent(QKeyEvent *ev)
     ev->accept();
     Q_EMIT deleteMe();
     } else */
-    if (ev->key() == Qt::Key_Left && cursorPosition() == 0 &&
-            !ev->modifiers().testFlag(Qt::ShiftModifier)) {     // Shift would be pressed during selection
+    if (ev->key() == Qt::Key_Left && cursorPosition() == 0
+        && !ev->modifiers().testFlag(Qt::ShiftModifier)) {      // Shift would be pressed during selection
         Q_EMIT leftPressed();
-    } else if (ev->key() == Qt::Key_Right && cursorPosition() == (int)text().length() &&
-               !ev->modifiers().testFlag(Qt::ShiftModifier)) {     // Shift would be pressed during selection
+    } else if (ev->key() == Qt::Key_Right && cursorPosition() == (int)text().length()
+               && !ev->modifiers().testFlag(Qt::ShiftModifier)) {  // Shift would be pressed during selection
         Q_EMIT rightPressed();
     } else {
         MessageComposer::ComposerLineEdit::keyPressEvent(ev);
@@ -69,7 +69,10 @@ void RecipientLineEdit::keyPressEvent(QKeyEvent *ev)
 }
 
 RecipientLineNG::RecipientLineNG(QWidget *parent)
-    : MultiplyingLine(parent), mRecipientsCount(0), mModified(false), mData(new Recipient)
+    : MultiplyingLine(parent)
+    , mRecipientsCount(0)
+    , mModified(false)
+    , mData(new Recipient)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 

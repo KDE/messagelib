@@ -40,4 +40,3 @@ MessageCoreSettings::MessageCoreSettings()
 MessageCoreSettings::~MessageCoreSettings()
 {
 }
-

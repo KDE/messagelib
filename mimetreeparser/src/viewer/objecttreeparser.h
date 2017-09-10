@@ -43,16 +43,12 @@
 
 class QString;
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MimeTreeParser
-{
-
-namespace Interface
-{
+namespace MimeTreeParser {
+namespace Interface {
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
@@ -71,15 +67,15 @@ typedef QSharedPointer<MimeMessagePart> MimeMessagePartPtr;
 class MIMETREEPARSER_EXPORT ProcessResult
 {
 public:
-    explicit ProcessResult(NodeHelper *nodeHelper, KMMsgSignatureState  inlineSignatureState  = KMMsgNotSigned,
-                           KMMsgEncryptionState inlineEncryptionState = KMMsgNotEncrypted,
-                           bool neverDisplayInline = false,
-                           bool isImage = false)
-        : mInlineSignatureState(inlineSignatureState),
-          mInlineEncryptionState(inlineEncryptionState),
-          mNeverDisplayInline(neverDisplayInline),
-          mIsImage(isImage),
-          mNodeHelper(nodeHelper) {}
+    explicit ProcessResult(NodeHelper *nodeHelper, KMMsgSignatureState inlineSignatureState = KMMsgNotSigned, KMMsgEncryptionState inlineEncryptionState = KMMsgNotEncrypted,
+                           bool neverDisplayInline = false, bool isImage = false)
+        : mInlineSignatureState(inlineSignatureState)
+        , mInlineEncryptionState(inlineEncryptionState)
+        , mNeverDisplayInline(neverDisplayInline)
+        , mIsImage(isImage)
+        , mNodeHelper(nodeHelper)
+    {
+    }
 
     KMMsgSignatureState inlineSignatureState() const;
     void setInlineSignatureState(KMMsgSignatureState state);
@@ -284,14 +280,9 @@ class MIMETREEPARSER_EXPORT ObjectTreeParser
     ObjectTreeParser(const ObjectTreeParser &other);
 
 public:
-    explicit ObjectTreeParser(Interface::ObjectTreeSource *source,
-                              NodeHelper *nodeHelper = nullptr,
-                              bool showOneMimePart = false,
-                              const AttachmentStrategy *attachmentStrategy = nullptr);
+    explicit ObjectTreeParser(Interface::ObjectTreeSource *source, NodeHelper *nodeHelper = nullptr, bool showOneMimePart = false, const AttachmentStrategy *attachmentStrategy = nullptr);
 
-    explicit ObjectTreeParser(const ObjectTreeParser *topLevelParser,
-                              bool showOneMimePart = false,
-                              const AttachmentStrategy *attachmentStrategy = nullptr);
+    explicit ObjectTreeParser(const ObjectTreeParser *topLevelParser, bool showOneMimePart = false, const AttachmentStrategy *attachmentStrategy = nullptr);
     virtual ~ObjectTreeParser();
 
     void setAllowAsync(bool allow);
@@ -346,7 +337,8 @@ private:
     * top-level content.
     */
     MessagePartPtr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
-    bool processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet, bool onlyOneMimePart);
+    bool processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet,
+                     bool onlyOneMimePart);
 
     Interface::MessagePartPtr defaultHandling(KMime::Content *node, MimeTreeParser::ProcessResult &result, bool onlyOneMimePart);
 
@@ -401,8 +393,6 @@ private:
     friend class MultiPartSignedBodyPartFormatter;
     friend class ApplicationPkcs7MimeBodyPartFormatter;
 };
-
 }
 
 #endif // __MIMETREEPARSER_OBJECTTREEPARSER_H__
-

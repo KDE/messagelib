@@ -43,7 +43,7 @@ KMime::Content *MimeTreeParser::findTypeInDirectChilds(KMime::Content *content, 
 
     foreach (auto child, content->contents()) {
         if ((!child->contentType()->isEmpty())
-                && (mimeType == child->contentType()->mimeType())) {
+            && (mimeType == child->contentType()->mimeType())) {
             return child;
         }
     }

@@ -22,8 +22,7 @@
 
 #include <QObject>
 #include "webengineviewer_export.h"
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class BackOffModeManagerPrivate;
 //https://developers.google.com/safe-browsing/v4/request-frequency
 class WEBENGINEVIEWER_EXPORT BackOffModeManager : public QObject

@@ -24,8 +24,7 @@
 #include "messagecomposer_export.h"
 #include "plugineditorcheckbeforesendparams.h"
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class PluginEditorCheckBeforeSendInterfacePrivate;
 class PluginEditorCheckBeforeSendParams;
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendInterface : public QObject

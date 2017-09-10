@@ -35,8 +35,7 @@
 #include <QString>
 
 #include <kmime/kmime_message.h>
-namespace MessageComposer
-{
+namespace MessageComposer {
 class MessageSender
 {
 protected:
@@ -90,8 +89,9 @@ protected:
     virtual bool doSendQueued(int transportId) = 0;
 };
 
-inline MessageSender::~MessageSender() {}
+inline MessageSender::~MessageSender()
+{
+}
 }
 
 #endif /* __KMAIL_MESSAGESENDER_H__ */
-

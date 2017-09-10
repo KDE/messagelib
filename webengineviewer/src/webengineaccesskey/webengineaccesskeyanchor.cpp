@@ -28,7 +28,6 @@ WebEngineAccessKeyAnchor::WebEngineAccessKeyAnchor(const QVariant &result)
 
 WebEngineAccessKeyAnchor::WebEngineAccessKeyAnchor()
 {
-
 }
 
 void WebEngineAccessKeyAnchor::initialize(const QVariant &result)

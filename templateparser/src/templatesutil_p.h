@@ -22,11 +22,8 @@
 
 class QString;
 class QStringList;
-namespace TemplateParser
-{
-
-namespace Util
-{
+namespace TemplateParser {
+namespace Util {
 QStringList keywords();
 QStringList keywordsWithArgs();
 }

@@ -25,8 +25,7 @@
 #include "createphishingurldatabasejob.h"
 #include "searchfullhashjob.h"
 #include <QUrl>
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebEngineView;
 class LocalDataBaseManagerPrivate;
 class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
@@ -44,8 +43,7 @@ Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
 protected:
-    explicit LocalDataBaseManager(LocalDataBaseManagerPrivate *impl,
-                                  QObject *parent = nullptr);
+    explicit LocalDataBaseManager(LocalDataBaseManagerPrivate *impl, QObject *parent = nullptr);
 
     LocalDataBaseManagerPrivate *const d;
 };

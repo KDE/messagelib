@@ -25,12 +25,10 @@
 WebEngineExportHtmlPageJobTest::WebEngineExportHtmlPageJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 WebEngineExportHtmlPageJobTest::~WebEngineExportHtmlPageJobTest()
 {
-
 }
 
 void WebEngineExportHtmlPageJobTest::shouldHaveDefaultValue()

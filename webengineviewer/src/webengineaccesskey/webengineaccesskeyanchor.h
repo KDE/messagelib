@@ -23,8 +23,7 @@
 #include <QVariant>
 #include <QRect>
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebEngineAccessKeyAnchor
 {
 public:

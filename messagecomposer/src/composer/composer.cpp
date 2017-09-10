@@ -21,7 +21,6 @@
 
 #include "composer.h"
 
-
 #include "job/attachmentjob.h"
 #include "part/globalpart.h"
 #include "part/infopart.h"
@@ -244,14 +243,12 @@ void ComposerPrivate::composeStep2()
             q->addSubjob(eJob);
             mainJob = eJob;         //start only last EncryptJob
         }
-
     } else {
         QObject::connect(mainJob, SIGNAL(finished(KJob*)), q, SLOT(contentJobFinished(KJob*)));
         q->addSubjob(mainJob);
     }
 
     mainJob->start();
-
 }
 
 QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *contentJob, bool sign)
@@ -338,7 +335,7 @@ void ComposerPrivate::contentJobFinished(KJob *job)
         headers->setHeader(skeletonMessage->messageID());
 
         KMime::Headers::Generic *realTo = new KMime::Headers::Generic("X-KMail-EncBccRecipients");
-        realTo->fromUnicodeString(eJob->recipients().join(QLatin1Char('%')),  "utf-8");
+        realTo->fromUnicodeString(eJob->recipients().join(QLatin1Char('%')), "utf-8");
 
         qCDebug(MESSAGECOMPOSER_LOG) << "got one of multiple messages sending to:" << realTo->asUnicodeString();
         qCDebug(MESSAGECOMPOSER_LOG) << "sending to recipients:" << recipients;
@@ -360,10 +357,10 @@ void ComposerPrivate::contentJobFinished(KJob *job)
     } else {
         composeWithLateAttachments(headers, resultContent, lateAttachmentParts, keys, recipients);
     }
-
 }
 
-void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime::Content *content, const AttachmentPart::List &parts, const std::vector<GpgME::Key> &keys, const QStringList &recipients)
+void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime::Content *content, const AttachmentPart::List &parts, const std::vector<GpgME::Key> &keys,
+                                                 const QStringList &recipients)
 {
     Q_Q(Composer);
 
@@ -441,7 +438,6 @@ void ComposerPrivate::attachmentsFinished(KJob *job)
     KMime::Content *headers = contentJob->extraContent();
 
     composeFinalStep(headers, content);
-
 }
 
 void ComposerPrivate::composeFinalStep(KMime::Content *headers, KMime::Content *content)
@@ -535,7 +531,7 @@ void Composer::removeAttachmentPart(AttachmentPart::Ptr part)
     Q_D(Composer);
     Q_ASSERT(!d->started);
     const int numberOfElements = d->attachmentParts.removeAll(part);
-    if (numberOfElements  <= 0) {
+    if (numberOfElements <= 0) {
         qCCritical(MESSAGECOMPOSER_LOG) << "Unknown attachment part" << part.data();
         Q_ASSERT(false);
         return;

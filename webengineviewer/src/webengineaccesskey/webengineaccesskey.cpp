@@ -22,7 +22,6 @@
 #include "webengineaccesskeyutils.h"
 #include "webenginemanagescript.h"
 
-
 #include <KActionCollection>
 #include <QKeyEvent>
 #include <QLabel>
@@ -59,13 +58,13 @@ public:
     };
 
     WebEngineAccessKeyPrivate(WebEngineAccessKey *qq, QWebEngineView *webEngine)
-        : mWebEngine(webEngine),
-          mAccessKeyActivated(NotActivated),
-          mActionCollection(nullptr),
-          q(qq)
+        : mWebEngine(webEngine)
+        , mAccessKeyActivated(NotActivated)
+        , mActionCollection(nullptr)
+        , q(qq)
     {
-
     }
+
     void makeAccessKeyLabel(QChar accessKey, const WebEngineViewer::WebEngineAccessKeyAnchor &element);
     bool checkForAccessKey(QKeyEvent *event);
     QList<QLabel *> mAccessKeyLabels;
@@ -113,7 +112,7 @@ static void handleDuplicateLinkElements(const WebEngineViewer::WebEngineAccessKe
 static bool isHiddenElement(const WebEngineViewer::WebEngineAccessKeyAnchor &element)
 {
     // width or height property set to less than zero
-    if (element.boundingRect().width() < 1 || element.boundingRect().height()  < 1) {
+    if (element.boundingRect().width() < 1 || element.boundingRect().height() < 1) {
         return true;
     }
 #if 0
@@ -179,8 +178,8 @@ void WebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const WebEng
 }
 
 WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)
-    : QObject(parent),
-      d(new WebEngineViewer::WebEngineAccessKeyPrivate(this, webEngine))
+    : QObject(parent)
+    , d(new WebEngineViewer::WebEngineAccessKeyPrivate(this, webEngine))
 {
     //qDebug() << " WebEngineAccessKey::WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent)";
 }
@@ -224,7 +223,7 @@ void WebEngineAccessKey::keyPressEvent(QKeyEvent *e)
 #if 0 //FIXME
                    && !isEditableElement(d->mWebView->page())
 #endif
-                  ) {
+                   ) {
             d->mAccessKeyActivated = WebEngineAccessKeyPrivate::PreActivated; // Only preactive here, it will be actually activated in key release.
         }
     }
@@ -237,7 +236,6 @@ void WebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
         // Activate only when the CTRL key is pressed and released by itself.
         if (e->key() == Qt::Key_Control && e->modifiers() == Qt::NoModifier) {
             showAccessKeys();
-
         } else {
             d->mAccessKeyActivated = WebEngineAccessKeyPrivate::NotActivated;
         }
@@ -334,8 +332,8 @@ void WebEngineAccessKey::handleSearchAccessKey(const QVariant &res)
     for (const WebEngineViewer::WebEngineAccessKeyAnchor &element : qAsConst(unLabeledElements)) {
         const QRect geometry = element.boundingRect();
         if (unusedKeys.isEmpty()
-                || geometry.size().isEmpty()
-                || !viewport.contains(geometry.topLeft())) {
+            || geometry.size().isEmpty()
+            || !viewport.contains(geometry.topLeft())) {
             continue;
         }
         QChar accessKey;
@@ -367,4 +365,3 @@ void WebEngineAccessKey::showAccessKeys()
                                          WebEngineManageScript::scriptWordId(),
                                          invoke(this, &WebEngineAccessKey::handleSearchAccessKey));
 }
-

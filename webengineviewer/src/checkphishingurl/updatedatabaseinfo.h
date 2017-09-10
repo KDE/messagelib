@@ -24,8 +24,7 @@
 #include <QList>
 #include <QVector>
 #include <QObject>
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 struct Addition;
 struct Removal;
 struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {

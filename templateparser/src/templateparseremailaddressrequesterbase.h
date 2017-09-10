@@ -17,14 +17,12 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef TEMPLATEPARSEREMAILADDRESSREQUESTERBASE_H
 #define TEMPLATEPARSEREMAILADDRESSREQUESTERBASE_H
 
 #include <QWidget>
 #include "templateparser_export.h"
-namespace TemplateParser
-{
+namespace TemplateParser {
 class TEMPLATEPARSER_EXPORT TemplateParserEmailAddressRequesterBase : public QWidget
 {
     Q_OBJECT

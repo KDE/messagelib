@@ -25,8 +25,7 @@
 #include <QNetworkReply>
 
 #include "webengineviewer_export.h"
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 struct UpdateDataBaseInfo;
 class CreatePhishingUrlDataBaseJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */

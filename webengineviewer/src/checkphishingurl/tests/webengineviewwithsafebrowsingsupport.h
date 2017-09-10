@@ -24,8 +24,7 @@
 #include "../searchfullhashjob.h"
 #include <WebEngineViewer/LocalDataBaseManager>
 class QPlainTextEdit;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebEngineView;
 }
 class WebEngineViewWithSafeBrowsingSupport : public QWidget

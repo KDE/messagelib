@@ -50,7 +50,6 @@ TemplateWebEngineView::TemplateWebEngineView(QWidget *parent)
 
 TemplateWebEngineView::~TemplateWebEngineView()
 {
-
 }
 
 void TemplateWebEngineView::setHtmlContent(const QString &html)

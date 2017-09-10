@@ -25,9 +25,7 @@
 
 #include <QUrl>
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 class MESSAGECORE_EXPORT AttachmentFromUrlBaseJob : public AttachmentLoadJob
 {
     Q_OBJECT

@@ -23,12 +23,10 @@ using namespace TemplateParser;
 TemplateParserEmailAddressRequesterBase::TemplateParserEmailAddressRequesterBase(QWidget *parent)
     : QWidget(parent)
 {
-
 }
 
 TemplateParserEmailAddressRequesterBase::~TemplateParserEmailAddressRequesterBase()
 {
-
 }
 
 QString TemplateParserEmailAddressRequesterBase::text() const
@@ -43,5 +41,4 @@ void TemplateParserEmailAddressRequesterBase::setText(const QString &str)
 
 void TemplateParserEmailAddressRequesterBase::clear()
 {
-
 }

@@ -37,6 +37,7 @@ const Interface::BodyPartFormatter *MultiPartMixedBodyPartFormatter::create()
     }
     return self;
 }
+
 Interface::BodyPartFormatter::Result MultiPartMixedBodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
 {
     Q_UNUSED(writer)

@@ -34,8 +34,8 @@ public:
     CreateDatabaseFileJobPrivate(CreateDatabaseFileJob *qq)
         : q(qq)
     {
-
     }
+
     void createFileFromFullUpdate(const QVector<Addition> &additionList);
     void removeElementFromDataBase(const QVector<Removal> &removalList, QVector<Addition> &oldDataBaseAddition);
     void createBinaryFile();
@@ -59,7 +59,8 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
     QList<Addition> itemToStore;
     for (const Addition &add : additionList) {
         switch (add.compressionType) {
-        case UpdateDataBaseInfo::RawCompression: {
+        case UpdateDataBaseInfo::RawCompression:
+        {
             //qCWarning(WEBENGINEVIEWER_LOG) << " add.size" << add.prefixSize;
             const QByteArray uncompressed = add.hashString;
             for (int i = 0; i < uncompressed.size();) {
@@ -79,7 +80,8 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
             }
             break;
         }
-        case UpdateDataBaseInfo::RiceCompression: {
+        case UpdateDataBaseInfo::RiceCompression:
+        {
             //TODO
             qCWarning(WEBENGINEVIEWER_LOG) << "Rice compression still not implemented";
             const QList<quint32> listRice = WebEngineViewer::RiceEncodingDecoder::decodeRiceHashesDelta(add.riceDeltaEncoding);
@@ -89,7 +91,6 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
         case UpdateDataBaseInfo::UnknownCompression:
             qCWarning(WEBENGINEVIEWER_LOG) << "Unknow compression type in addition element";
             break;
-
         }
     }
     const quint64 numberOfElement = itemToStore.count();
@@ -176,20 +177,17 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QVector<Remov
     QList<quint32> indexToRemove;
     for (const Removal &removeItem : removalList) {
         switch (removeItem.compressionType) {
-        case UpdateDataBaseInfo::RawCompression: {
+        case UpdateDataBaseInfo::RawCompression:
             for (int id : qAsConst(removeItem.indexes)) {
                 indexToRemove << id;
             }
             break;
-        }
-        case UpdateDataBaseInfo::RiceCompression: {
+        case UpdateDataBaseInfo::RiceCompression:
             indexToRemove = WebEngineViewer::RiceEncodingDecoder::decodeRiceIndiceDelta(removeItem.riceDeltaEncoding);
             break;
-        }
-        case UpdateDataBaseInfo::UnknownCompression: {
+        case UpdateDataBaseInfo::UnknownCompression:
             qCWarning(WEBENGINEVIEWER_LOG) << " Unknown compression type defined in removal elements. It's a bug!";
             break;
-        }
         }
     }
 
@@ -214,10 +212,9 @@ void CreateDatabaseFileJobPrivate::createBinaryFile()
 }
 
 CreateDatabaseFileJob::CreateDatabaseFileJob(QObject *parent)
-    : QObject(parent),
-      d(new WebEngineViewer::CreateDatabaseFileJobPrivate(this))
+    : QObject(parent)
+    , d(new WebEngineViewer::CreateDatabaseFileJobPrivate(this))
 {
-
 }
 
 CreateDatabaseFileJob::~CreateDatabaseFileJob()
@@ -249,4 +246,3 @@ void CreateDatabaseFileJob::setFileName(const QString &filename)
 {
     d->mFileName = filename;
 }
-

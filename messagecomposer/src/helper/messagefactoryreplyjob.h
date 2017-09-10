@@ -25,8 +25,7 @@
 #include <KIdentityManagement/IdentityManager>
 #include <AkonadiCore/Collection>
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class MessageFactoryReplyJob : public QObject
 {
     Q_OBJECT
@@ -63,6 +62,5 @@ private:
     bool mReplyAll = false;
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;
 };
-
 }
 #endif // MESSAGEFACTORYREPLYJOB_H

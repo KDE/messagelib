@@ -60,7 +60,8 @@ TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
     pageView->initializeJQueryScript();
     mEditor = new QTextEdit(this);
     mEditor->setAcceptRichText(false);
-    mEditor->setPlainText(QStringLiteral("qt.jQuery('img').each( function () { qt.jQuery(this).css('-webkit-transition', '-webkit-transform 2s'); qt.jQuery(this).css('-webkit-transform', 'rotate(180deg)') } ); undefined"));
+    mEditor->setPlainText(QStringLiteral(
+                              "qt.jQuery('img').each( function () { qt.jQuery(this).css('-webkit-transition', '-webkit-transform 2s'); qt.jQuery(this).css('-webkit-transform', 'rotate(180deg)') } ); undefined"));
     vboxLayout->addWidget(mEditor);
     connect(page, &WebEngineViewer::WebEnginePage::showConsoleMessage, this, &TestJQuerySupportWebEngine::slotShowConsoleMessage);
 
@@ -73,7 +74,6 @@ TestJQuerySupportWebEngine::TestJQuerySupportWebEngine(QWidget *parent)
 
 TestJQuerySupportWebEngine::~TestJQuerySupportWebEngine()
 {
-
 }
 
 void TestJQuerySupportWebEngine::slotShowConsoleMessage(const QString &message)

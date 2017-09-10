@@ -42,7 +42,6 @@ TestSelectionChangedEngine::TestSelectionChangedEngine(QWidget *parent)
 
 TestSelectionChangedEngine::~TestSelectionChangedEngine()
 {
-
 }
 
 void TestSelectionChangedEngine::slotSelectionChanged()

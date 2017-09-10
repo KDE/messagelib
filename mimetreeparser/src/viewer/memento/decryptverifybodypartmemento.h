@@ -27,16 +27,12 @@
 
 #include "interfaces/bodypart.h"
 
-namespace QGpgME
-{
+namespace QGpgME {
 class DecryptVerifyJob;
 }
 
-namespace MimeTreeParser
-{
-
-class DecryptVerifyBodyPartMemento
-    : public CryptoBodyPartMemento
+namespace MimeTreeParser {
+class DecryptVerifyBodyPartMemento : public CryptoBodyPartMemento
 {
     Q_OBJECT
 public:
@@ -50,24 +46,22 @@ public:
     {
         return m_plainText;
     }
+
     const GpgME::DecryptionResult &decryptResult() const
     {
         return m_dr;
     }
+
     const GpgME::VerificationResult &verifyResult() const
     {
         return m_vr;
     }
 
 private Q_SLOTS:
-    void slotResult(const GpgME::DecryptionResult &dr,
-                    const GpgME::VerificationResult &vr,
-                    const QByteArray &plainText);
+    void slotResult(const GpgME::DecryptionResult &dr, const GpgME::VerificationResult &vr, const QByteArray &plainText);
 
 private:
-    void saveResult(const GpgME::DecryptionResult &,
-                    const GpgME::VerificationResult &,
-                    const QByteArray &);
+    void saveResult(const GpgME::DecryptionResult &, const GpgME::VerificationResult &, const QByteArray &);
 private:
     // input:
     const QByteArray m_cipherText;

@@ -36,8 +36,8 @@ using namespace WebEngineViewer;
 Q_GLOBAL_STATIC(LocalDataBaseManagerPrivate, s_localDataBaseManager)
 
 LocalDataBaseManager::LocalDataBaseManager(LocalDataBaseManagerPrivate *impl, QObject *parent)
-    : QObject(parent),
-      d(impl)
+    : QObject(parent)
+    , d(impl)
 {
     qRegisterMetaType<WebEngineViewer::UpdateDataBaseInfo>();
     qRegisterMetaType<WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult>();
@@ -49,7 +49,6 @@ LocalDataBaseManager::LocalDataBaseManager(QObject *parent)
 {
 }
 
-
 LocalDataBaseManager::~LocalDataBaseManager()
 {
 }
@@ -58,7 +57,6 @@ void LocalDataBaseManager::initialize()
 {
     d->initialize();
 }
-
 
 void LocalDataBaseManager::checkUrl(const QUrl &url)
 {
@@ -89,8 +87,9 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
                 job->setDatabaseState(QStringList() << d->mNewClientState);
                 job->setSearchHashs(conflictHashs);
                 job->setSearchFullHashForUrl(url);
-                connect(job, &SearchFullHashJob::result, this, [this](CheckPhishingUrlUtil::UrlStatus status, const QUrl &url) { Q_EMIT checkUrlFinished(url, status);
-                        });
+                connect(job, &SearchFullHashJob::result, this, [this](CheckPhishingUrlUtil::UrlStatus status, const QUrl &url) {
+                    Q_EMIT checkUrlFinished(url, status);
+                });
                 job->start();
             }
         }

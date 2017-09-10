@@ -41,13 +41,10 @@
 
 #include "mimetreeparser/objecttreeparser.h"
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class HtmlWriter;
 
-namespace Interface
-{
-
+namespace Interface {
 class BodyPartURLHandler;
 class BodyPart;
 class MessagePartPrivate;
@@ -83,7 +80,9 @@ private:
 class MIMETREEPARSER_EXPORT BodyPartFormatter
 {
 public:
-    virtual ~BodyPartFormatter() {}
+    virtual ~BodyPartFormatter()
+    {
+    }
 
     /**
     @li Ok returned when format() generated some HTML
@@ -91,7 +90,9 @@ public:
     @li AsIcon returned when the part should be shown iconified
     @li Failed returned when formatting failed. Currently equivalent to Ok
     */
-    enum Result { Ok, NeedContent, AsIcon, Failed };
+    enum Result {
+        Ok, NeedContent, AsIcon, Failed
+    };
 
     /**
     Format body part \a part by generating some HTML and writing
@@ -108,6 +109,7 @@ public:
     {
         Q_UNUSED(result);
     }
+
     virtual MessagePart::Ptr process(BodyPart &part) const;
 };
 
@@ -127,7 +129,9 @@ public:
 class BodyPartFormatterPlugin
 {
 public:
-    virtual ~BodyPartFormatterPlugin() {}
+    virtual ~BodyPartFormatterPlugin()
+    {
+    }
 
     virtual const BodyPartFormatter *bodyPartFormatter(int idx) const = 0;
     virtual const char *type(int idx) const = 0;
@@ -135,8 +139,6 @@ public:
 
     virtual const BodyPartURLHandler *urlHandler(int idx) const = 0;
 };
-
 } // namespace Interface
-
 }
 #endif // __MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H__

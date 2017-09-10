@@ -50,7 +50,6 @@ private Q_SLOTS:
 
     void test_processWithTemplatesForContentOtherTimeZone();
     void test_processWithTemplatesForContentOtherTimeZone_data();
-
 };
 
 #endif // TEMPLATEPARSERJOBTEST_H

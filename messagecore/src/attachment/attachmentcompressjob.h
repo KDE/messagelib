@@ -26,9 +26,7 @@
 
 #include <KJob>
 
-namespace MessageCore
-{
-
+namespace MessageCore {
 /**
  * @short A job to compress the attachment of an email.
  *
@@ -87,7 +85,6 @@ private:
     Q_PRIVATE_SLOT(d, void doStart())
     //@endcond
 };
-
 }
 
 #endif

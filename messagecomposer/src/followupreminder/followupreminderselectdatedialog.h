@@ -26,8 +26,7 @@
 #include "messagecomposer_export.h"
 class QAbstractItemModel;
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class FollowUpReminderSelectDateDialogPrivate;
 class MESSAGECOMPOSER_EXPORT FollowUpReminderSelectDateDialog : public QDialog
 {

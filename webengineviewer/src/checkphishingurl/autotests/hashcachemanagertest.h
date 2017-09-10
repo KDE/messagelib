@@ -33,7 +33,6 @@ private Q_SLOTS:
 
     void shouldAddValue_data();
     void shouldAddValue();
-
 };
 
 #endif // HASHCACHEMANAGERTEST_H

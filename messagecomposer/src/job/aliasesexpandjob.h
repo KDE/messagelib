@@ -30,9 +30,7 @@
 #include <QMap>
 #include <QStringList>
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 /**
  * @short A job to expand aliases to email addresses.
  *
@@ -100,7 +98,6 @@ private:
     QMap<QString, DistributionListExpansionResult> mDistListExpansionResults;
     QMap<QString, QString> mNicknameExpansionResults;
 };
-
 }
 
 #endif

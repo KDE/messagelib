@@ -33,8 +33,8 @@ class PluginEditorCheckBeforeSendInfo
 public:
     PluginEditorCheckBeforeSendInfo()
     {
-
     }
+
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
@@ -42,8 +42,7 @@ public:
     bool isEnabled = true;
 };
 
-namespace
-{
+namespace {
 QString pluginVersion()
 {
     return QStringLiteral("1.0");
@@ -58,6 +57,7 @@ public:
     {
         initializePlugins();
     }
+
     void loadPlugin(PluginEditorCheckBeforeSendInfo *item);
     QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
     bool initializePlugins();
@@ -88,7 +88,7 @@ QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pl
 
 bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData & md) {
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
         return md.serviceTypes().contains(QStringLiteral("KMailEditor/PluginCheckBeforeSend"));
     });
 
@@ -162,8 +162,8 @@ PluginEditorCheckBeforeSend *PluginEditorCheckBeforeSendManagerPrivate::pluginFr
 }
 
 PluginEditorCheckBeforeSendManager::PluginEditorCheckBeforeSendManager(QObject *parent)
-    : QObject(parent),
-      d(new MessageComposer::PluginEditorCheckBeforeSendManagerPrivate(this))
+    : QObject(parent)
+    , d(new MessageComposer::PluginEditorCheckBeforeSendManagerPrivate(this))
 {
 }
 

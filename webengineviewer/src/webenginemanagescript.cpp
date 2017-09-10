@@ -29,12 +29,10 @@ using namespace WebEngineViewer;
 WebEngineManageScript::WebEngineManageScript(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 WebEngineManageScript::~WebEngineManageScript()
 {
-
 }
 
 void WebEngineManageScript::addScript(QWebEngineProfile *profile, const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint)

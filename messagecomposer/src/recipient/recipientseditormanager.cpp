@@ -24,10 +24,9 @@
 using namespace MessageComposer;
 
 RecipientsEditorManager::RecipientsEditorManager(QObject *parent)
-    : QObject(parent),
-      mModel(nullptr)
+    : QObject(parent)
+    , mModel(nullptr)
 {
-
 }
 
 RecipientsEditorManager::~RecipientsEditorManager()

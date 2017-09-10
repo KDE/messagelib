@@ -22,15 +22,14 @@
 using namespace MessageComposer;
 
 ActionType::ActionType()
-    : mAction(nullptr),
-      mType(Tools)
+    : mAction(nullptr)
+    , mType(Tools)
 {
-
 }
 
 ActionType::ActionType(QAction *action, ActionType::Type type)
-    : mAction(action),
-      mType(type)
+    : mAction(action)
+    , mType(type)
 {
 }
 
@@ -49,8 +48,8 @@ class MessageComposer::PluginEditorInterfacePrivate
 public:
     PluginEditorInterfacePrivate()
     {
-
     }
+
     ActionType mActionType;
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
@@ -58,10 +57,9 @@ public:
 };
 
 PluginEditorInterface::PluginEditorInterface(QObject *parent)
-    : PimCommon::AbstractGenericPluginInterface(parent),
-      d(new MessageComposer::PluginEditorInterfacePrivate)
+    : PimCommon::AbstractGenericPluginInterface(parent)
+    , d(new MessageComposer::PluginEditorInterfacePrivate)
 {
-
 }
 
 PluginEditorInterface::~PluginEditorInterface()
@@ -111,4 +109,3 @@ QString PluginEditorInterface::actionXmlExtension(ActionType::Type type)
     }
     return {};
 }
-

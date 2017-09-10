@@ -29,12 +29,10 @@ using namespace MimeTreeParser;
 AttachmentTemporaryFilesDirsTest::AttachmentTemporaryFilesDirsTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 AttachmentTemporaryFilesDirsTest::~AttachmentTemporaryFilesDirsTest()
 {
-
 }
 
 void AttachmentTemporaryFilesDirsTest::shouldHaveDefaultValue()

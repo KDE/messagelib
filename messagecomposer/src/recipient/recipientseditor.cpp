@@ -48,7 +48,6 @@ using namespace KPIM;
 RecipientLineFactory::RecipientLineFactory(QObject *parent)
     : KPIM::MultiplyingLineFactory(parent)
 {
-
 }
 
 KPIM::MultiplyingLine *RecipientLineFactory::newLine(QWidget *p)
@@ -72,8 +71,8 @@ class MessageComposer::RecipientsEditorPrivate
 public:
     RecipientsEditorPrivate()
     {
-
     }
+
     KConfig *mRecentAddressConfig = nullptr;
     RecipientsEditorSideWidget *mSideWidget = nullptr;
     bool mSkipTotal = false;
@@ -85,8 +84,8 @@ RecipientsEditor::RecipientsEditor(QWidget *parent)
 }
 
 RecipientsEditor::RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *parent)
-    : MultiplyingLineEditor(lineFactory, parent),
-      d(new MessageComposer::RecipientsEditorPrivate)
+    : MultiplyingLineEditor(lineFactory, parent)
+    , d(new MessageComposer::RecipientsEditorPrivate)
 {
     factory()->setParent(this);   // HACK: can't use 'this' above since it's not yet constructed at that point
     d->mSideWidget = new RecipientsEditorSideWidget(this, this);
@@ -185,8 +184,8 @@ void RecipientsEditor::removeRecipient(const QString &recipient, Recipient::Type
         line = it.next();
         RecipientLineNG *rec = qobject_cast< RecipientLineNG * >(line);
         if (rec) {
-            if ((rec->recipient()->email() == recipient) &&
-                    (rec->recipientType() == type)) {
+            if ((rec->recipient()->email() == recipient)
+                && (rec->recipientType() == type)) {
                 break;
             }
         }
@@ -301,7 +300,7 @@ bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
         // to a new line, basically preventing user from inputting more than one
         // email address per line, which breaks our opportunistic crypto in composer
         if (ke->key() == Qt::Key_Comma || (
-                    ke->key() == Qt::Key_Semicolon && MessageComposerSettings::self()->allowSemicolonAsAddressSeparator())) {
+                ke->key() == Qt::Key_Semicolon && MessageComposerSettings::self()->allowSemicolonAsAddressSeparator())) {
             auto line = qobject_cast<RecipientLineNG *>(object->parent());
             const auto split = KEmailAddress::splitAddressList(line->rawData() + QLatin1String(", "));
             if (split.size() > 1) {
@@ -317,7 +316,6 @@ bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
 
 void RecipientsEditor::slotCalculateTotal()
 {
-
     // Prevent endless recursion when splitting recipient
     if (d->mSkipTotal) {
         return;
@@ -371,4 +369,3 @@ RecipientLineNG *RecipientsEditor::activeLine() const
     MultiplyingLine *line = MultiplyingLineEditor::activeLine();
     return qobject_cast< RecipientLineNG * >(line);
 }
-

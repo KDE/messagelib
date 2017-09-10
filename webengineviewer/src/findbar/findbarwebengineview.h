@@ -24,8 +24,7 @@
 
 class QWebEngineView;
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class FindBarWebEngineViewPrivate;
 class WEBENGINEVIEWER_EXPORT FindBarWebEngineView : public FindBarBase
 {
@@ -42,7 +41,6 @@ private:
 private:
     FindBarWebEngineViewPrivate *const d;
 };
-
 }
 
 #endif

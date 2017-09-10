@@ -36,41 +36,34 @@ class QTimer;
 class KJob;
 class QWidget;
 
-namespace Sonnet
-{
+namespace Sonnet {
 class DictionaryComboBox;
 }
 
-namespace SendLater
-{
+namespace SendLater {
 class SendLaterInfo;
 }
 
-namespace Akonadi
-{
+namespace Akonadi {
 class CollectionComboBox;
 }
 
-namespace MailTransport
-{
+namespace MailTransport {
 class TransportComboBox;
 class MessageQueueJob;
 }
 
-namespace KIdentityManagement
-{
+namespace KIdentityManagement {
 class IdentityCombo;
 class Identity;
 class IdentityManager;
 }
 
-namespace Kleo
-{
+namespace Kleo {
 class KeyResolver;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class RecipientsEditor;
 class RichTextComposerNg;
 class InfoPart;
@@ -89,10 +82,16 @@ public:
     explicit ComposerViewBase(QObject *parent = nullptr, QWidget *widget = nullptr);
     virtual ~ComposerViewBase();
 
-    enum Confirmation { LetUserConfirm, NoConfirmationNeeded };
-    enum MissingAttachment { NoMissingAttachmentFound, FoundMissingAttachmentAndSending, FoundMissingAttachmentAndAddedAttachment, FoundMissingAttachmentAndCancel };
+    enum Confirmation {
+        LetUserConfirm, NoConfirmationNeeded
+    };
+    enum MissingAttachment {
+        NoMissingAttachmentFound, FoundMissingAttachmentAndSending, FoundMissingAttachmentAndAddedAttachment, FoundMissingAttachmentAndCancel
+    };
 
-    enum FailedType { Sending, AutoSave };
+    enum FailedType {
+        Sending, AutoSave
+    };
 
     /**
     * Set the message to be opened in the composer window, and set the internal data structures to
@@ -287,7 +286,9 @@ private:
     */
     void readyForSending();
 
-    enum RecipientExpansion { UseExpandedRecipients, UseUnExpandedRecipients };
+    enum RecipientExpansion {
+        UseExpandedRecipients, UseUnExpandedRecipients
+    };
     QList< MessageComposer::Composer * > generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
@@ -362,7 +363,6 @@ private:
 
     SendLater::SendLaterInfo *mSendLaterInfo = nullptr;
 };
-
 } // namespace
 
 #endif

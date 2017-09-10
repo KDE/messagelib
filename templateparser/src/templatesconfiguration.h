@@ -22,8 +22,7 @@
 #include "templateparser_export.h"
 #include "ui_templatesconfiguration_base.h"
 class QPlainTextEdit;
-namespace TemplateParser
-{
+namespace TemplateParser {
 class TemplatesConfigurationPrivate;
 class TEMPLATEPARSER_EXPORT TemplatesConfiguration : public QWidget, Ui::TemplatesConfigurationBase
 {
@@ -64,7 +63,6 @@ private:
     QString strOrBlank(const QString &str);
     TemplatesConfigurationPrivate *const d;
 };
-
 }
 
 #endif

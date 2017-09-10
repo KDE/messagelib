@@ -26,8 +26,7 @@
 class QWebEngineProfile;
 class QWebEngineDownloadItem;
 class QPrinter;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebHitTest;
 class WEBENGINEVIEWER_EXPORT WebEnginePage : public QWebEnginePage
 {

@@ -123,7 +123,6 @@ KMime::Content *SignJob::origContent()
     Q_D(SignJob);
 
     return d->content;
-
 }
 
 void SignJob::process()
@@ -162,7 +161,6 @@ void SignJob::process()
     if (d->format & Kleo::InlineOpenPGPFormat) {
         content = d->content->body();
     } else if (!(d->format & Kleo::SMIMEOpaqueFormat)) {
-
         // replace "From " and "--" at the beginning of lines
         // with encoded versions according to RfC 3156, 3
         // Note: If any line begins with the string "From ", it is strongly
@@ -170,15 +168,15 @@ void SignJob::process()
         //   be applied.
         const auto encoding = d->content->contentTransferEncoding()->encoding();
         if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit)
-                && !d->content->contentType(false)) {
+            && !d->content->contentType(false)) {
             QByteArray body = d->content->encodedBody();
             bool changed = false;
             QList<QByteArray> search;
             QList<QByteArray> replacements;
 
-            search       << "From "
-                         << "from "
-                         << "-";
+            search << "From "
+                   << "from "
+                   << "-";
             replacements << "From=20"
                          << "from=20"
                          << "=2D";
@@ -233,10 +231,9 @@ void SignJob::process()
         setError(res.error().code());
         setErrorText(QString::fromLocal8Bit(res.error().asString()));
     } else {
-        QByteArray signatureHashAlgo =  res.createdSignature(0).hashAlgorithmAsString();
+        QByteArray signatureHashAlgo = res.createdSignature(0).hashAlgorithmAsString();
         d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, signature, d->format, true, signatureHashAlgo);
     }
 
     emitResult();
 }
-

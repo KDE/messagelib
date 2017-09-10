@@ -28,33 +28,32 @@
 #include <QStandardPaths>
 #include <QPointer>
 
-namespace
-{
+namespace {
 inline QString localDataBasePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl/");
 }
+
 inline QString databaseFullPath()
 {
     return localDataBasePath() + QLatin1Char('/') + WebEngineViewer::CheckPhishingUrlUtil::databaseFileName();
 }
 }
 
-namespace WebEngineViewer
-{
-
+namespace WebEngineViewer {
 class LocalDataBaseManagerPrivate
 {
 public:
     LocalDataBaseManagerPrivate()
-        : mFile(databaseFullPath()),
-          mSecondToStartRefreshing(0),
-          mDataBaseOk(false),
-          mDownloadProgress(false)
+        : mFile(databaseFullPath())
+        , mSecondToStartRefreshing(0)
+        , mDataBaseOk(false)
+        , mDownloadProgress(false)
     {
         QDir().mkpath(localDataBasePath());
         readConfig();
     }
+
     virtual ~LocalDataBaseManagerPrivate()
     {
         if (downloadLocalDatabaseThread) {
@@ -96,22 +95,22 @@ public:
         downloadLocalDatabaseThread->setDataBaseState(clientState);
         QObject::connect(downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::createDataBaseFailed,
                          [this]() {
-                            mDataBaseOk = false;
-                            mDownloadProgress = false; 
-                         });
+                mDataBaseOk = false;
+                mDownloadProgress = false;
+            });
         QObject::connect(downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::createDataBaseFinished,
                          [this](bool success, const QString &newClientState, const QString &minWaitDurationStr) {
-                            mDataBaseOk = success;
-                            mDownloadProgress = false;
-                            mNewClientState = success ? newClientState : QString();
-                            mMinimumWaitDuration = minWaitDurationStr;
-                            saveConfig();
-                            //if !success => redownload full!
-                            if (!success) {
-                                qCWarning(WEBENGINEVIEWER_LOG) << "We need to redownload full database";
-                                downloadDataBase(QString()); // download full database
-                            }
-                         });
+                mDataBaseOk = success;
+                mDownloadProgress = false;
+                mNewClientState = success ? newClientState : QString();
+                mMinimumWaitDuration = minWaitDurationStr;
+                saveConfig();
+                //if !success => redownload full!
+                if (!success) {
+                    qCWarning(WEBENGINEVIEWER_LOG) << "We need to redownload full database";
+                    downloadDataBase(QString());             // download full database
+                }
+            });
         QObject::connect(downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::finished,
                          downloadLocalDatabaseThread.data(), &DownloadLocalDatabaseThread::deleteLater);
         downloadLocalDatabaseThread->start();
@@ -144,5 +143,4 @@ public:
     bool mDownloadProgress;
     QPointer<WebEngineViewer::DownloadLocalDatabaseThread> downloadLocalDatabaseThread;
 };
-
 }

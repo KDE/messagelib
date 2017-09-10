@@ -37,7 +37,10 @@
 using namespace MessageComposer;
 
 RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, QWidget *parent)
-    : QWidget(parent), mEditor(view), mRecipientPicker(nullptr), mPickerPositioner(nullptr)
+    : QWidget(parent)
+    , mEditor(view)
+    , mRecipientPicker(nullptr)
+    , mPickerPositioner(nullptr)
 {
     QBoxLayout *topLayout = new QVBoxLayout(this);
 
@@ -94,10 +97,13 @@ void RecipientsEditorSideWidget::setFocus()
 void RecipientsEditorSideWidget::setTotal(int recipients, int lines)
 {
     QString labelText;
-    if (recipients == 0) labelText = i18nc("@info:status No recipients selected"
-                                               , "No recipients");
-    else labelText = i18ncp("@info:status Number of recipients selected"
-                                , "1 recipient", "%1 recipients", recipients);
+    if (recipients == 0) {
+        labelText = i18nc("@info:status No recipients selected",
+                          "No recipients");
+    } else {
+        labelText = i18ncp("@info:status Number of recipients selected",
+                           "1 recipient", "%1 recipients", recipients);
+    }
 
     if (lines > 3) {
         mTotalLabel->setText(labelText);
@@ -112,7 +118,6 @@ void RecipientsEditorSideWidget::setTotal(int recipients, int lines)
     } else {
         mDistributionListButton->hide();
     }
-
 }
 
 void RecipientsEditorSideWidget::updateTotalToolTip()
@@ -166,4 +171,3 @@ void RecipientsEditorSideWidget::pickRecipient()
         p->show();
     }
 }
-

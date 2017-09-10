@@ -23,9 +23,7 @@
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 class MultiPartSignedBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const MultiPartSignedBodyPartFormatter *self;
@@ -35,7 +33,6 @@ public:
     using Interface::BodyPartFormatter::format;
     static const Interface::BodyPartFormatter *create();
 };
-
 }
 
 #endif

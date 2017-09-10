@@ -28,13 +28,11 @@
 #include <QSharedPointer>
 class QTextCodec;
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class HtmlWriter;
 class AttachmentStrategy;
 class BodyPartFormatterBaseFactory;
-namespace Interface
-{
+namespace Interface {
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 class MessagePartRenderer;
@@ -42,18 +40,14 @@ typedef QSharedPointer<MessagePartRenderer> MessagePartRendererPtr;
 }
 }
 
-namespace MimeTreeParser
-{
-namespace Interface
-{
-
+namespace MimeTreeParser {
+namespace Interface {
 /**
  * Interface for object tree sources.
  * @author Andras Mantia <amantia@kdab.net>
  */
 class MIMETREEPARSER_EXPORT ObjectTreeSource
 {
-
 public:
     virtual ~ObjectTreeSource();
 

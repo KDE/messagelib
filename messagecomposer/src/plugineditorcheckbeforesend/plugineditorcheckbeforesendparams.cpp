@@ -27,13 +27,13 @@ class MessageComposer::PluginEditorCheckBeforeSendParamsPrivate
 {
 public:
     PluginEditorCheckBeforeSendParamsPrivate()
-        : identity(-1),
-          transportId(-1),
-          isHtml(false),
-          hasAttachment(false)
+        : identity(-1)
+        , transportId(-1)
+        , isHtml(false)
+        , hasAttachment(false)
     {
-
     }
+
     QString ccAddresses;
     QString bccAddresses;
     QString toAddresses;
@@ -49,7 +49,6 @@ public:
 PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams()
     : d(new MessageComposer::PluginEditorCheckBeforeSendParamsPrivate)
 {
-
 }
 
 PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams(const PluginEditorCheckBeforeSendParams &other)
@@ -82,16 +81,16 @@ PluginEditorCheckBeforeSendParams &PluginEditorCheckBeforeSendParams::operator=(
 
 bool PluginEditorCheckBeforeSendParams::operator ==(const PluginEditorCheckBeforeSendParams &other) const
 {
-    return (d->subject == other.subject()) &&
-           (d->identity == other.identity()) &&
-           (d->isHtml == other.isHtmlMail()) &&
-           (d->plainText == other.plainText()) &&
-           (d->defaultDomain == other.defaultDomain()) &&
-           (d->hasAttachment == other.hasAttachment()) &&
-           (d->transportId == other.transportId()) &&
-           (d->bccAddresses == other.bccAddresses()) &&
-           (d->ccAddresses == other.ccAddresses()) &&
-           (d->toAddresses == other.toAddresses());
+    return (d->subject == other.subject())
+           && (d->identity == other.identity())
+           && (d->isHtml == other.isHtmlMail())
+           && (d->plainText == other.plainText())
+           && (d->defaultDomain == other.defaultDomain())
+           && (d->hasAttachment == other.hasAttachment())
+           && (d->transportId == other.transportId())
+           && (d->bccAddresses == other.bccAddresses())
+           && (d->ccAddresses == other.ccAddresses())
+           && (d->toAddresses == other.toAddresses());
 }
 
 void PluginEditorCheckBeforeSendParams::setSubject(const QString &subject)

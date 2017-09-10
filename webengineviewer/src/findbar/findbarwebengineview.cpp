@@ -28,14 +28,14 @@ class WebEngineViewer::FindBarWebEngineViewPrivate
 public:
     FindBarWebEngineViewPrivate()
     {
-
     }
+
     QWebEngineView *mView = nullptr;
 };
 
 FindBarWebEngineView::FindBarWebEngineView(QWebEngineView *view, QWidget *parent)
-    : FindBarBase(parent),
-      d(new WebEngineViewer::FindBarWebEngineViewPrivate)
+    : FindBarBase(parent)
+    , d(new WebEngineViewer::FindBarWebEngineViewPrivate)
 {
     d->mView = view;
 }
@@ -84,4 +84,3 @@ void FindBarWebEngineView::clearSelections()
     mLastSearchStr.clear();
     FindBarBase::clearSelections();
 }
-

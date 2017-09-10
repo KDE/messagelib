@@ -24,12 +24,10 @@ using namespace WebEngineViewer;
 NetworkPluginUrlInterceptorInterface::NetworkPluginUrlInterceptorInterface(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 NetworkPluginUrlInterceptorInterface::~NetworkPluginUrlInterceptorInterface()
 {
-
 }
 
 void NetworkPluginUrlInterceptorInterface::createActions(KActionCollection *ac)

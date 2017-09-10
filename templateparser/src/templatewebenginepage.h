@@ -21,8 +21,7 @@
 #define TEMPLATEWEBENGINEPAGE_H
 
 #include <QWebEnginePage>
-namespace TemplateParser
-{
+namespace TemplateParser {
 class TemplateWebEnginePage : public QWebEnginePage
 {
     Q_OBJECT

@@ -25,7 +25,6 @@
 TemplateExtractHtmlElementWebEngineViewTest::TemplateExtractHtmlElementWebEngineViewTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void TemplateExtractHtmlElementWebEngineViewTest::shouldHaveDefaultValue()

@@ -27,8 +27,7 @@
 #include "FollowupReminder/FollowUpReminderInfo"
 #include <KJob>
 #include "messagecomposer_export.h"
-namespace MessageComposer
-{
+namespace MessageComposer {
 class FollowupReminderCreateJobPrivate;
 class MESSAGECOMPOSER_EXPORT FollowupReminderCreateJob : public KJob
 {
@@ -60,4 +59,3 @@ private:
 }
 
 #endif // FOLLOWUPREMINDERCREATEJOB_H
-

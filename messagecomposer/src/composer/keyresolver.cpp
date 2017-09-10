@@ -73,17 +73,17 @@
 
 // this should go into stl_util.h, which has since moved into messageviewer.
 // for lack of a better place put it in here for now.
-namespace kdtools
-{
-template <typename Iterator, typename UnaryPredicate>
+namespace kdtools {
+template<typename Iterator, typename UnaryPredicate>
 bool any(Iterator first, Iterator last, UnaryPredicate p)
 {
-    while (first != last)
+    while (first != last) {
         if (p(*first)) {
             return true;
         } else {
             ++first;
         }
+    }
     return false;
 }
 } // namespace kdtools
@@ -108,8 +108,7 @@ static inline bool ApprovalNeeded(const Kleo::KeyResolver::Item &item)
 }
 
 static inline Kleo::KeyResolver::Item
-CopyKeysAndEncryptionPreferences(const Kleo::KeyResolver::Item &oldItem,
-                                 const Kleo::KeyApprovalDialog::Item &newItem)
+CopyKeysAndEncryptionPreferences(const Kleo::KeyResolver::Item &oldItem, const Kleo::KeyApprovalDialog::Item &newItem)
 {
     return Kleo::KeyResolver::Item(oldItem.address, newItem.keys, newItem.pref, oldItem.signPref, oldItem.format);
 }
@@ -267,13 +266,13 @@ static inline bool NotValidSMIMESigningKey(const GpgME::Key &key)
     return !ValidSMIMESigningKey(key);
 }
 
-namespace
-{
+namespace {
 struct ByTrustScore {
     static int score(const GpgME::UserID &uid)
     {
         return uid.isRevoked() || uid.isInvalid() ? -1 : uid.validity();
     }
+
     bool operator()(const GpgME::UserID &lhs, const GpgME::UserID &rhs) const
     {
         return score(lhs) < score(rhs);
@@ -290,12 +289,14 @@ static std::vector<GpgME::UserID> matchingUIDs(const std::vector<GpgME::UserID> 
     std::vector<GpgME::UserID> result;
     result.reserve(uids.size());
 
-    for (std::vector<GpgME::UserID>::const_iterator it = uids.begin(), end = uids.end(); it != end; ++it)
+    for (std::vector<GpgME::UserID>::const_iterator it = uids.begin(), end = uids.end(); it != end; ++it) {
         // PENDING(marc) check DN for an EMAIL, too, in case of X.509 certs... :/
-        if (const char *email = it->email())
+        if (const char *email = it->email()) {
             if (*email && QString::fromUtf8(email).simplified().toLower() == address) {
                 result.push_back(*it);
             }
+        }
+    }
     return result;
 }
 
@@ -343,10 +344,10 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
         if (uid.isRevoked()) {
             rewookies.push_back(key);
         }
-        if (!uid.isRevoked()  && uid.validity() == GpgME::UserID::Marginal) {
+        if (!uid.isRevoked() && uid.validity() == GpgME::UserID::Marginal) {
             fishies.push_back(key);
         }
-        if (!uid.isRevoked()  && uid.validity() < GpgME::UserID::Never) {
+        if (!uid.isRevoked() && uid.validity() < GpgME::UserID::Never) {
             ickies.push_back(key);
         }
     }
@@ -381,7 +382,7 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
     if (KMessageBox::warningContinueCancel(nullptr, msg, i18n("Not Fully Trusted Encryption Keys"),
                                            KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
                                            QStringLiteral("not fully trusted encryption key warning"))
-            == KMessageBox::Continue) {
+        == KMessageBox::Continue) {
         return keys;
     } else {
         canceled = true;
@@ -389,16 +390,17 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
     return std::vector<GpgME::Key>();
 }
 
-namespace
-{
+namespace {
 struct IsNotForFormat : public std::unary_function<GpgME::Key, bool> {
-    IsNotForFormat(Kleo::CryptoMessageFormat f) : format(f) {}
+    IsNotForFormat(Kleo::CryptoMessageFormat f) : format(f)
+    {
+    }
 
     bool operator()(const GpgME::Key &key) const
     {
         return
-            (isOpenPGP(format) && key.protocol() != GpgME::OpenPGP) ||
-            (isSMIME(format)   && key.protocol() != GpgME::CMS);
+            (isOpenPGP(format) && key.protocol() != GpgME::OpenPGP)
+            || (isSMIME(format) && key.protocol() != GpgME::CMS);
     }
 
     const Kleo::CryptoMessageFormat format;
@@ -406,9 +408,11 @@ struct IsNotForFormat : public std::unary_function<GpgME::Key, bool> {
 
 struct IsForFormat : std::unary_function<GpgME::Key, bool> {
     explicit IsForFormat(Kleo::CryptoMessageFormat f)
-        : protocol(isOpenPGP(f) ? GpgME::OpenPGP :
-                   isSMIME(f)   ? GpgME::CMS :
-                   GpgME::UnknownProtocol) {}
+        : protocol(isOpenPGP(f) ? GpgME::OpenPGP
+                   : isSMIME(f) ? GpgME::CMS
+                   : GpgME::UnknownProtocol)
+    {
+    }
 
     bool operator()(const GpgME::Key &key) const
     {
@@ -417,25 +421,24 @@ struct IsForFormat : std::unary_function<GpgME::Key, bool> {
 
     const GpgME::Protocol protocol;
 };
-
 }
 
 class Kleo::KeyResolver::SigningPreferenceCounter : public std::unary_function<Kleo::KeyResolver::Item, void>
 {
 public:
     SigningPreferenceCounter()
-        : mTotal(0),
-          mUnknownSigningPreference(0),
-          mNeverSign(0),
-          mAlwaysSign(0),
-          mAlwaysSignIfPossible(0),
-          mAlwaysAskForSigning(0),
-          mAskSigningWheneverPossible(0)
+        : mTotal(0)
+        , mUnknownSigningPreference(0)
+        , mNeverSign(0)
+        , mAlwaysSign(0)
+        , mAlwaysSignIfPossible(0)
+        , mAlwaysAskForSigning(0)
+        , mAskSigningWheneverPossible(0)
     {
-
     }
+
     void operator()(const Kleo::KeyResolver::Item &item);
-#define make_int_accessor(x) unsigned int num##x() const { return m##x; }
+#define make_int_accessor(x) unsigned int num ## x() const { return m ## x; }
     make_int_accessor(UnknownSigningPreference)
     make_int_accessor(NeverSign)
     make_int_accessor(AlwaysSign)
@@ -447,13 +450,14 @@ public:
 private:
     unsigned int mTotal;
     unsigned int mUnknownSigningPreference, mNeverSign, mAlwaysSign,
-             mAlwaysSignIfPossible, mAlwaysAskForSigning, mAskSigningWheneverPossible;
+                 mAlwaysSignIfPossible, mAlwaysAskForSigning, mAskSigningWheneverPossible;
 };
 
 void Kleo::KeyResolver::SigningPreferenceCounter::operator()(const Kleo::KeyResolver::Item &item)
 {
     switch (item.signPref) {
-#define CASE(x) case x: ++m##x; break
+#define CASE(x) case x: \
+    ++m ## x; break
         CASE(UnknownSigningPreference);
         CASE(NeverSign);
         CASE(AlwaysSign);
@@ -470,28 +474,28 @@ class Kleo::KeyResolver::EncryptionPreferenceCounter : public std::unary_functio
     const Kleo::KeyResolver *_this;
 public:
     EncryptionPreferenceCounter(const Kleo::KeyResolver *kr, EncryptionPreference defaultPreference)
-        : _this(kr),
-          mDefaultPreference(defaultPreference),
-          mTotal(0),
-          mNoKey(0),
-          mNeverEncrypt(0),
-          mUnknownPreference(0),
-          mAlwaysEncrypt(0),
-          mAlwaysEncryptIfPossible(0),
-          mAlwaysAskForEncryption(0),
-          mAskWheneverPossible(0)
+        : _this(kr)
+        , mDefaultPreference(defaultPreference)
+        , mTotal(0)
+        , mNoKey(0)
+        , mNeverEncrypt(0)
+        , mUnknownPreference(0)
+        , mAlwaysEncrypt(0)
+        , mAlwaysEncryptIfPossible(0)
+        , mAlwaysAskForEncryption(0)
+        , mAskWheneverPossible(0)
     {
-
     }
+
     void operator()(Item &item);
 
-    template <typename Container>
+    template<typename Container>
     void process(Container &c)
     {
         *this = std::for_each(c.begin(), c.end(), *this);
     }
 
-#define make_int_accessor(x) unsigned int num##x() const { return m##x; }
+#define make_int_accessor(x) unsigned int num ## x() const { return m ## x; }
     make_int_accessor(NoKey)
     make_int_accessor(NeverEncrypt)
     make_int_accessor(UnknownPreference)
@@ -506,7 +510,7 @@ private:
     unsigned int mTotal;
     unsigned int mNoKey;
     unsigned int mNeverEncrypt, mUnknownPreference, mAlwaysEncrypt,
-             mAlwaysEncryptIfPossible, mAlwaysAskForEncryption, mAskWheneverPossible;
+                 mAlwaysEncryptIfPossible, mAlwaysAskForEncryption, mAskWheneverPossible;
 };
 
 void Kleo::KeyResolver::EncryptionPreferenceCounter::operator()(Item &item)
@@ -521,7 +525,8 @@ void Kleo::KeyResolver::EncryptionPreferenceCounter::operator()(Item &item)
         }
     }
     switch (!item.pref ? mDefaultPreference : item.pref) {
-#define CASE(x) case Kleo::x: ++m##x; break
+#define CASE(x) case Kleo::x: \
+    ++m ## x; break
         CASE(NeverEncrypt);
         CASE(UnknownPreference);
         CASE(AlwaysEncrypt);
@@ -533,23 +538,21 @@ void Kleo::KeyResolver::EncryptionPreferenceCounter::operator()(Item &item)
     ++mTotal;
 }
 
-namespace
-{
-
+namespace {
 class FormatPreferenceCounterBase : public std::unary_function<Kleo::KeyResolver::Item, void>
 {
 public:
     FormatPreferenceCounterBase()
-        : mTotal(0),
-          mInlineOpenPGP(0),
-          mOpenPGPMIME(0),
-          mSMIME(0),
-          mSMIMEOpaque(0)
+        : mTotal(0)
+        , mInlineOpenPGP(0)
+        , mOpenPGPMIME(0)
+        , mSMIME(0)
+        , mSMIMEOpaque(0)
     {
-
     }
 
-#define make_int_accessor(x) unsigned int num##x() const { return m##x; }
+#define make_int_accessor(x) unsigned int num ## x() const { return m ## x; \
+}
     make_int_accessor(Total)
     make_int_accessor(InlineOpenPGP)
     make_int_accessor(OpenPGPMIME)
@@ -560,13 +563,15 @@ public:
     unsigned int numOf(Kleo::CryptoMessageFormat f) const
     {
         switch (f) {
-#define CASE(x) case Kleo::x##Format: return m##x
+#define CASE(x) case Kleo::x ## Format: \
+    return m ## x
             CASE(InlineOpenPGP);
             CASE(OpenPGPMIME);
             CASE(SMIME);
             CASE(SMIMEOpaque);
 #undef CASE
-        default: return 0;
+        default:
+            return 0;
         }
     }
 
@@ -578,29 +583,35 @@ protected:
 class EncryptionFormatPreferenceCounter : public FormatPreferenceCounterBase
 {
 public:
-    EncryptionFormatPreferenceCounter() : FormatPreferenceCounterBase() {}
+    EncryptionFormatPreferenceCounter() : FormatPreferenceCounterBase()
+    {
+    }
+
     void operator()(const Kleo::KeyResolver::Item &item);
 };
 
 class SigningFormatPreferenceCounter : public FormatPreferenceCounterBase
 {
 public:
-    SigningFormatPreferenceCounter() : FormatPreferenceCounterBase() {}
+    SigningFormatPreferenceCounter() : FormatPreferenceCounterBase()
+    {
+    }
+
     void operator()(const Kleo::KeyResolver::Item &item);
 };
 
-#define CASE(x) if ( item.format & Kleo::x##Format ) ++m##x;
+#define CASE(x) if (item.format & Kleo::x ## Format) {++m ## x;}
 void EncryptionFormatPreferenceCounter::operator()(const Kleo::KeyResolver::Item &item)
 {
-    if (item.format & (Kleo::InlineOpenPGPFormat | Kleo::OpenPGPMIMEFormat) &&
-            std::find_if(item.keys.begin(), item.keys.end(),
-                         ValidTrustedOpenPGPEncryptionKey) != item.keys.end()) {    // -= trusted?
+    if (item.format & (Kleo::InlineOpenPGPFormat | Kleo::OpenPGPMIMEFormat)
+        && std::find_if(item.keys.begin(), item.keys.end(),
+                        ValidTrustedOpenPGPEncryptionKey) != item.keys.end()) {     // -= trusted?
         CASE(OpenPGPMIME);
         CASE(InlineOpenPGP);
     }
-    if (item.format & (Kleo::SMIMEFormat | Kleo::SMIMEOpaqueFormat) &&
-            std::find_if(item.keys.begin(), item.keys.end(),
-                         ValidTrustedSMIMEEncryptionKey) != item.keys.end()) {      // -= trusted?
+    if (item.format & (Kleo::SMIMEFormat | Kleo::SMIMEOpaqueFormat)
+        && std::find_if(item.keys.begin(), item.keys.end(),
+                        ValidTrustedSMIMEEncryptionKey) != item.keys.end()) {       // -= trusted?
         CASE(SMIME);
         CASE(SMIMEOpaque);
     }
@@ -615,8 +626,8 @@ void SigningFormatPreferenceCounter::operator()(const Kleo::KeyResolver::Item &i
     CASE(SMIMEOpaque);
     ++mTotal;
 }
-#undef CASE
 
+#undef CASE
 } // anon namespace
 
 static QString canonicalAddress(const QString &_address)
@@ -655,33 +666,29 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::Private {
     ContactPreferencesMap mContactPreferencesMap;
 };
 
-Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption,
-                               unsigned int f,
-                               int encrWarnThresholdKey, int signWarnThresholdKey,
-                               int encrWarnThresholdRootCert, int signWarnThresholdRootCert,
-                               int encrWarnThresholdChainCert, int signWarnThresholdChainCert)
-    : mEncryptToSelf(encToSelf),
-      mShowApprovalDialog(showApproval),
-      mOpportunisticEncyption(oppEncryption),
-      mCryptoMessageFormats(f),
-      mEncryptKeyNearExpiryWarningThreshold(encrWarnThresholdKey),
-      mSigningKeyNearExpiryWarningThreshold(signWarnThresholdKey),
-      mEncryptRootCertNearExpiryWarningThreshold(encrWarnThresholdRootCert),
-      mSigningRootCertNearExpiryWarningThreshold(signWarnThresholdRootCert),
-      mEncryptChainCertNearExpiryWarningThreshold(encrWarnThresholdChainCert),
-      mSigningChainCertNearExpiryWarningThreshold(signWarnThresholdChainCert)
+Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int f, int encrWarnThresholdKey, int signWarnThresholdKey, int encrWarnThresholdRootCert,
+                               int signWarnThresholdRootCert, int encrWarnThresholdChainCert, int signWarnThresholdChainCert)
+    : mEncryptToSelf(encToSelf)
+    , mShowApprovalDialog(showApproval)
+    , mOpportunisticEncyption(oppEncryption)
+    , mCryptoMessageFormats(f)
+    , mEncryptKeyNearExpiryWarningThreshold(encrWarnThresholdKey)
+    , mSigningKeyNearExpiryWarningThreshold(signWarnThresholdKey)
+    , mEncryptRootCertNearExpiryWarningThreshold(encrWarnThresholdRootCert)
+    , mSigningRootCertNearExpiryWarningThreshold(signWarnThresholdRootCert)
+    , mEncryptChainCertNearExpiryWarningThreshold(encrWarnThresholdChainCert)
+    , mSigningChainCertNearExpiryWarningThreshold(signWarnThresholdChainCert)
 {
     d = new Private();
 }
 
 Kleo::KeyResolver::~KeyResolver()
 {
-    delete d; d = nullptr;
+    delete d;
+    d = nullptr;
 }
 
-Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const char *dontAskAgainName,
-        bool mine, bool sign, bool ca,
-        int recur_limit, const GpgME::Key &orig) const
+Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const char *dontAskAgainName, bool mine, bool sign, bool ca, int recur_limit, const GpgME::Key &orig) const
 {
     if (recur_limit <= 0) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Key chain too long (>100 certs)";
@@ -701,87 +708,87 @@ Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const 
         const int daysSinceExpiry = 1 + int(-secsTillExpiry / secsPerDay);
         qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.shortKeyID() << " expired less than "
                                      << daysSinceExpiry << " days ago";
-        const QString msg =
-            key.protocol() == GpgME::OpenPGP
-            ? (mine ? sign
-               ? ki18np("<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                        "<p>expired less than a day ago.</p>",
-                        "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                        "<p>expired %1 days ago.</p>")
-               : ki18np("<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                        "<p>expired less than a day ago.</p>",
-                        "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                        "<p>expired %1 days ago.</p>")
-               : ki18np("<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                        "<p>expired less than a day ago.</p>",
-                        "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
-                        "<p>expired %1 days ago.</p>"))
-            .subs(daysSinceExpiry)
-            .subs(QString::fromUtf8(key.userID(0).id()))
-            .subs(QString::fromLatin1(key.shortKeyID()))
-            .toString()
-            : (ca
-               ? (key.isRoot()
-                  ? (mine ? sign
-                     ? ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired less than a day ago.</p>",
-                              "<p>The root certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired %1 days ago.</p>")
-                     : ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired less than a day ago.</p>",
-                              "<p>The root certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired %1 days ago.</p>")
-                     : ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired less than a day ago.</p>",
-                              "<p>The root certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired %1 days ago.</p>"))
-                  : (mine ? sign
-                     ? ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired less than a day ago.</p>",
-                              "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired %1 days ago.</p>")
-                     : ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired less than a day ago.</p>",
-                              "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired %1 days ago.</p>")
-                     : ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired less than a day ago.</p>",
-                              "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
-                              "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                              "<p>expired %1 days ago.</p>")))
-               .subs(daysSinceExpiry)
-               .subs(Kleo::DN(orig.userID(0).id()).prettyDN())
-               .subs(QString::fromLatin1(orig.issuerSerial()))
-               .subs(Kleo::DN(key.userID(0).id()).prettyDN())
-               .toString()
-               : (mine ? sign
-                  ? ki18np("<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                           "<p>expired less than a day ago.</p>",
-                           "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                           "<p>expired %1 days ago.</p>")
-                  : ki18np("<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                           "<p>expired less than a day ago.</p>",
-                           "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
-                           "<p>expired %1 days ago.</p>")
-                  : ki18np("<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number %3)</p>"
-                           "<p>expired less than a day ago.</p>",
-                           "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number %3)</p>"
-                           "<p>expired %1 days ago.</p>"))
-               .subs(daysSinceExpiry)
-               .subs(Kleo::DN(key.userID(0).id()).prettyDN())
-               .subs(QString::fromLatin1(key.issuerSerial()))
-               .toString());
+        const QString msg
+            = key.protocol() == GpgME::OpenPGP
+              ? (mine ? sign
+                 ? ki18np("<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
+                          "<p>expired less than a day ago.</p>",
+                          "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
+                          "<p>expired %1 days ago.</p>")
+                 : ki18np("<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
+                          "<p>expired less than a day ago.</p>",
+                          "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
+                          "<p>expired %1 days ago.</p>")
+                 : ki18np("<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
+                          "<p>expired less than a day ago.</p>",
+                          "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</p>"
+                          "<p>expired %1 days ago.</p>"))
+              .subs(daysSinceExpiry)
+              .subs(QString::fromUtf8(key.userID(0).id()))
+              .subs(QString::fromLatin1(key.shortKeyID()))
+              .toString()
+              : (ca
+                 ? (key.isRoot()
+                    ? (mine ? sign
+                       ? ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired less than a day ago.</p>",
+                                "<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired %1 days ago.</p>")
+                       : ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired less than a day ago.</p>",
+                                "<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired %1 days ago.</p>")
+                       : ki18np("<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired less than a day ago.</p>",
+                                "<p>The root certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired %1 days ago.</p>"))
+                    : (mine ? sign
+                       ? ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired less than a day ago.</p>",
+                                "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired %1 days ago.</p>")
+                       : ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired less than a day ago.</p>",
+                                "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired %1 days ago.</p>")
+                       : ki18np("<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired less than a day ago.</p>",
+                                "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p>"
+                                "<p>for S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                                "<p>expired %1 days ago.</p>")))
+                 .subs(daysSinceExpiry)
+                 .subs(Kleo::DN(orig.userID(0).id()).prettyDN())
+                 .subs(QString::fromLatin1(orig.issuerSerial()))
+                 .subs(Kleo::DN(key.userID(0).id()).prettyDN())
+                 .toString()
+                 : (mine ? sign
+                    ? ki18np("<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                             "<p>expired less than a day ago.</p>",
+                             "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                             "<p>expired %1 days ago.</p>")
+                    : ki18np("<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                             "<p>expired less than a day ago.</p>",
+                             "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial number %3)</p>"
+                             "<p>expired %1 days ago.</p>")
+                    : ki18np("<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number %3)</p>"
+                             "<p>expired less than a day ago.</p>",
+                             "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number %3)</p>"
+                             "<p>expired %1 days ago.</p>"))
+                 .subs(daysSinceExpiry)
+                 .subs(Kleo::DN(key.userID(0).id()).prettyDN())
+                 .subs(QString::fromLatin1(key.issuerSerial()))
+                 .toString());
         d->alreadyWarnedFingerprints.insert(subkey.fingerprint());
         if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                key.protocol() == GpgME::OpenPGP
@@ -794,100 +801,100 @@ Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const 
         const int daysTillExpiry = 1 + int(secsTillExpiry / secsPerDay);
         qCDebug(MESSAGECOMPOSER_LOG) << "Key 0x" << key.shortKeyID() << "expires in less than"
                                      << daysTillExpiry << "days";
-        const int threshold =
-            ca
-            ? (key.isRoot()
-               ? (sign
-                  ? signingRootCertNearExpiryWarningThresholdInDays()
-                  : encryptRootCertNearExpiryWarningThresholdInDays())
-               : (sign
-                  ? signingChainCertNearExpiryWarningThresholdInDays()
-                  : encryptChainCertNearExpiryWarningThresholdInDays()))
-            : (sign
-               ? signingKeyNearExpiryWarningThresholdInDays()
-               : encryptKeyNearExpiryWarningThresholdInDays());
+        const int threshold
+            = ca
+              ? (key.isRoot()
+                 ? (sign
+                    ? signingRootCertNearExpiryWarningThresholdInDays()
+                    : encryptRootCertNearExpiryWarningThresholdInDays())
+                 : (sign
+                    ? signingChainCertNearExpiryWarningThresholdInDays()
+                    : encryptChainCertNearExpiryWarningThresholdInDays()))
+              : (sign
+                 ? signingKeyNearExpiryWarningThresholdInDays()
+                 : encryptKeyNearExpiryWarningThresholdInDays());
         if (threshold > -1 && daysTillExpiry <= threshold) {
-            const QString msg =
-                key.protocol() == GpgME::OpenPGP
-                ? (mine ? sign
-                   ? ki18np("<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                            "<p>expires in less than a day.</p>",
-                            "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                            "<p>expires in less than %1 days.</p>")
-                   : ki18np("<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                            "<p>expires in less than a day.</p>",
-                            "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                            "<p>expires in less than %1 days.</p>")
-                   : ki18np("<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                            "<p>expires in less than a day.</p>",
-                            "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
-                            "<p>expires in less than %1 days.</p>"))
-                .subs(daysTillExpiry)
-                .subs(QString::fromUtf8(key.userID(0).id()))
-                .subs(QString::fromLatin1(key.shortKeyID()))
-                .toString()
-                : (ca
-                   ? (key.isRoot()
-                      ? (mine ? sign
-                         ? ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than a day.</p>",
-                                  "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than %1 days.</p>")
-                         : ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than a day.</p>",
-                                  "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than %1 days.</p>")
-                         : ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than a day.</p>",
-                                  "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than %1 days.</p>"))
-                      : (mine ? sign
-                         ? ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than a day.</p>",
-                                  "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than %1 days.</p>")
-                         : ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than a day.</p>",
-                                  "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than %1 days.</p>")
-                         : ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than a day.</p>",
-                                  "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
-                                  "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                                  "<p>expires in less than %1 days.</p>")))
-                   .subs(daysTillExpiry)
-                   .subs(Kleo::DN(orig.userID(0).id()).prettyDN())
-                   .subs(QString::fromLatin1(orig.issuerSerial()))
-                   .subs(Kleo::DN(key.userID(0).id()).prettyDN())
-                   .toString()
-                   : (mine ? sign
-                      ? ki18np("<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                               "<p>expires in less than a day.</p>",
-                               "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                               "<p>expires in less than %1 days.</p>")
-                      : ki18np("<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                               "<p>expires in less than a day.</p>",
-                               "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                               "<p>expires in less than %1 days.</p>")
-                      : ki18np("<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                               "<p>expires in less than a day.</p>",
-                               "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
-                               "<p>expires in less than %1 days.</p>"))
-                   .subs(daysTillExpiry)
-                   .subs(Kleo::DN(key.userID(0).id()).prettyDN())
-                   .subs(QString::fromLatin1(key.issuerSerial()))
-                   .toString());
+            const QString msg
+                = key.protocol() == GpgME::OpenPGP
+                  ? (mine ? sign
+                     ? ki18np("<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+                              "<p>expires in less than a day.</p>",
+                              "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+                              "<p>expires in less than %1 days.</p>")
+                     : ki18np("<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+                              "<p>expires in less than a day.</p>",
+                              "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+                              "<p>expires in less than %1 days.</p>")
+                     : ki18np("<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+                              "<p>expires in less than a day.</p>",
+                              "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</p>"
+                              "<p>expires in less than %1 days.</p>"))
+                  .subs(daysTillExpiry)
+                  .subs(QString::fromUtf8(key.userID(0).id()))
+                  .subs(QString::fromLatin1(key.shortKeyID()))
+                  .toString()
+                  : (ca
+                     ? (key.isRoot()
+                        ? (mine ? sign
+                           ? ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than a day.</p>",
+                                    "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than %1 days.</p>")
+                           : ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than a day.</p>",
+                                    "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than %1 days.</p>")
+                           : ki18np("<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than a day.</p>",
+                                    "<p>The root certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than %1 days.</p>"))
+                        : (mine ? sign
+                           ? ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than a day.</p>",
+                                    "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than %1 days.</p>")
+                           : ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than a day.</p>",
+                                    "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than %1 days.</p>")
+                           : ki18np("<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than a day.</p>",
+                                    "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></p>"
+                                    "<p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                    "<p>expires in less than %1 days.</p>")))
+                     .subs(daysTillExpiry)
+                     .subs(Kleo::DN(orig.userID(0).id()).prettyDN())
+                     .subs(QString::fromLatin1(orig.issuerSerial()))
+                     .subs(Kleo::DN(key.userID(0).id()).prettyDN())
+                     .toString()
+                     : (mine ? sign
+                        ? ki18np("<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                 "<p>expires in less than a day.</p>",
+                                 "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                 "<p>expires in less than %1 days.</p>")
+                        : ki18np("<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                 "<p>expires in less than a day.</p>",
+                                 "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                 "<p>expires in less than %1 days.</p>")
+                        : ki18np("<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                 "<p>expires in less than a day.</p>",
+                                 "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial number %3)</p>"
+                                 "<p>expires in less than %1 days.</p>"))
+                     .subs(daysTillExpiry)
+                     .subs(Kleo::DN(key.userID(0).id()).prettyDN())
+                     .subs(QString::fromLatin1(key.issuerSerial()))
+                     .toString());
             d->alreadyWarnedFingerprints.insert(subkey.fingerprint());
             if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                    key.protocol() == GpgME::OpenPGP
@@ -895,7 +902,7 @@ Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const 
                                                    : i18n("S/MIME Certificate Expires Soon"),
                                                    KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
                                                    QLatin1String(dontAskAgainName))
-                    == KMessageBox::Cancel) {
+                == KMessageBox::Cancel) {
                 return Kleo::Canceled;
             }
         }
@@ -906,9 +913,10 @@ Kleo::Result Kleo::KeyResolver::checkKeyNearExpiry(const GpgME::Key &key, const 
         const std::vector<GpgME::Key> issuer = lookup(QStringList(QLatin1String(chain_id)), false);
         if (issuer.empty()) {
             return Kleo::Ok;
-        } else
+        } else {
             return checkKeyNearExpiry(issuer.front(), dontAskAgainName, mine, sign,
                                       true, recur_limit - 1, ca ? orig : key);
+        }
     }
     return Kleo::Ok;
 }
@@ -928,7 +936,7 @@ Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerpr
                         NotValidTrustedSMIMEEncryptionKey);    // -= trusted?
 
     if (d->mOpenPGPEncryptToSelfKeys.size() + d->mSMIMEEncryptToSelfKeys.size()
-            < keys.size()) {
+        < keys.size()) {
         // too few keys remain...
         const QString msg = i18n("One or more of your configured OpenPGP encryption "
                                  "keys or S/MIME certificates is not usable for "
@@ -939,8 +947,8 @@ Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerpr
                                  "later on, you will be prompted to specify the keys "
                                  "to use.");
         return KMessageBox::warningContinueCancel(nullptr, msg, i18n("Unusable Encryption Keys"),
-                KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
-                QStringLiteral("unusable own encryption key warning"))
+                                                  KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
+                                                  QStringLiteral("unusable own encryption key warning"))
                == KMessageBox::Continue ? Kleo::Ok : Kleo::Canceled;
     }
 
@@ -949,7 +957,7 @@ Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerpr
 
     for (std::vector<GpgME::Key>::const_iterator it = d->mOpenPGPEncryptToSelfKeys.begin(); it != end; ++it) {
         const Kleo::Result r = checkKeyNearExpiry(*it, "own encryption key expires soon warning",
-                               true, false);
+                                                  true, false);
         if (r != Kleo::Ok) {
             return r;
         }
@@ -957,7 +965,7 @@ Kleo::Result Kleo::KeyResolver::setEncryptToSelfKeys(const QStringList &fingerpr
     std::vector<GpgME::Key>::const_iterator end2(d->mSMIMEEncryptToSelfKeys.end());
     for (std::vector<GpgME::Key>::const_iterator it = d->mSMIMEEncryptToSelfKeys.begin(); it != end2; ++it) {
         const Kleo::Result r = checkKeyNearExpiry(*it, "own encryption key expires soon warning",
-                               true, false);
+                                                  true, false);
         if (r != Kleo::Ok) {
             return r;
         }
@@ -987,8 +995,8 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
                                  "later on, you will be prompted to specify the keys "
                                  "to use.");
         return KMessageBox::warningContinueCancel(nullptr, msg, i18n("Unusable Signing Keys"),
-                KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
-                QStringLiteral("unusable signing key warning"))
+                                                  KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
+                                                  QStringLiteral("unusable signing key warning"))
                == KMessageBox::Continue ? Kleo::Ok : Kleo::Canceled;
     }
 
@@ -996,7 +1004,7 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
 
     for (std::vector<GpgME::Key>::const_iterator it = d->mOpenPGPSigningKeys.begin(); it != d->mOpenPGPSigningKeys.end(); ++it) {
         const Kleo::Result r = checkKeyNearExpiry(*it, "signing key expires soon warning",
-                               true, true);
+                                                  true, true);
         if (r != Kleo::Ok) {
             return r;
         }
@@ -1004,7 +1012,7 @@ Kleo::Result Kleo::KeyResolver::setSigningKeys(const QStringList &fingerprints)
 
     for (std::vector<GpgME::Key>::const_iterator it = d->mSMIMESigningKeys.begin(); it != d->mSMIMESigningKeys.end(); ++it) {
         const Kleo::Result r = checkKeyNearExpiry(*it, "signing key expires soon warning",
-                               true, true);
+                                                  true, true);
         if (r != Kleo::Ok) {
             return r;
         }
@@ -1062,7 +1070,6 @@ static Kleo::Action action(bool doit, bool ask, bool donot, bool requested)
 
 Kleo::Action Kleo::KeyResolver::checkSigningPreferences(bool signingRequested) const
 {
-
     if (signingRequested && d->mOpenPGPSigningKeys.empty() && d->mSMIMESigningKeys.empty()) {
         return Impossible;
     }
@@ -1091,13 +1098,12 @@ bool Kleo::KeyResolver::signingPossible() const
 
 Kleo::Action Kleo::KeyResolver::checkEncryptionPreferences(bool encryptionRequested) const
 {
-
     if (d->mPrimaryEncryptionKeys.empty() && d->mSecondaryEncryptionKeys.empty()) {
         return DontDoIt;
     }
 
-    if (encryptionRequested && encryptToSelf() &&
-            d->mOpenPGPEncryptToSelfKeys.empty() && d->mSMIMEEncryptToSelfKeys.empty()) {
+    if (encryptionRequested && encryptToSelf()
+        && d->mOpenPGPEncryptToSelfKeys.empty() && d->mSMIMEEncryptToSelfKeys.empty()) {
         return Impossible;
     }
 
@@ -1108,10 +1114,10 @@ Kleo::Action Kleo::KeyResolver::checkEncryptionPreferences(bool encryptionReques
         EncryptionPreferenceCounter count(nullptr, UnknownPreference);
         count.process(d->mPrimaryEncryptionKeys);
         count.process(d->mSecondaryEncryptionKeys);
-        if (!count.numAlwaysEncrypt() &&
-                !count.numAlwaysAskForEncryption() && // this guy might not need a lookup, when declined, but it's too complex to implement that here
-                !count.numAlwaysEncryptIfPossible() &&
-                !count.numAskWheneverPossible()) {
+        if (!count.numAlwaysEncrypt()
+            && !count.numAlwaysAskForEncryption()     // this guy might not need a lookup, when declined, but it's too complex to implement that here
+            && !count.numAlwaysEncryptIfPossible()
+            && !count.numAskWheneverPossible()) {
             return DontDoIt;
         }
     }
@@ -1131,10 +1137,10 @@ Kleo::Action Kleo::KeyResolver::checkEncryptionPreferences(bool encryptionReques
     }
 
     const Action act = action(encrypt, ask, dontEncrypt, encryptionRequested);
-    if (act != Ask ||
-            std::for_each(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(),
-                          std::for_each(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(),
-                                        EncryptionPreferenceCounter(this, UnknownPreference))).numAlwaysAskForEncryption()) {
+    if (act != Ask
+        || std::for_each(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(),
+                         std::for_each(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(),
+                                       EncryptionPreferenceCounter(this, UnknownPreference))).numAlwaysAskForEncryption()) {
         return act;
     } else {
         return AskOpportunistic;
@@ -1145,8 +1151,8 @@ bool Kleo::KeyResolver::encryptionPossible() const
 {
     return std::find_if(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(),
                         EmptyKeyList) == d->mPrimaryEncryptionKeys.end()
-           &&   std::find_if(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(),
-                             EmptyKeyList) == d->mSecondaryEncryptionKeys.end();
+           && std::find_if(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(),
+                           EmptyKeyList) == d->mSecondaryEncryptionKeys.end();
 }
 
 Kleo::Result Kleo::KeyResolver::resolveAllKeys(bool &signingRequested, bool &encryptionRequested)
@@ -1271,8 +1277,8 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
         = std::for_each(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(),
                         EncryptionFormatPreferenceCounter());
 
-    if (commonFormat != AutoFormat &&
-            secondaryCount.numOf(commonFormat) == secondaryCount.numTotal()) {
+    if (commonFormat != AutoFormat
+        && secondaryCount.numOf(commonFormat) == secondaryCount.numTotal()) {
         addKeys(d->mSecondaryEncryptionKeys, commonFormat);
     } else {
         addKeys(d->mSecondaryEncryptionKeys);
@@ -1282,14 +1288,15 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
 
     for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
         const std::vector<SplitInfo> si_list = encryptionItems(concreteCryptoMessageFormats[i]);
-        for (std::vector<SplitInfo>::const_iterator sit = si_list.begin(); sit != si_list.end(); ++sit)
+        for (std::vector<SplitInfo>::const_iterator sit = si_list.begin(); sit != si_list.end(); ++sit) {
             for (std::vector<GpgME::Key>::const_iterator kit = sit->keys.begin(); kit != sit->keys.end(); ++kit) {
                 const Kleo::Result r = checkKeyNearExpiry(*kit, "other encryption key near expiry warning",
-                                       false, false);
+                                                          false, false);
                 if (r != Kleo::Ok) {
                     return r;
                 }
             }
+        }
     }
 
     // 4. Check that we have the right keys for encryptToSelf()
@@ -1300,9 +1307,10 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
 
     // 4a. Check for OpenPGP keys
 
-    qCDebug(MESSAGECOMPOSER_LOG) << "sizes of encryption items:" << encryptionItems(InlineOpenPGPFormat).size() << encryptionItems(OpenPGPMIMEFormat).size() << encryptionItems(SMIMEFormat).size() << encryptionItems(SMIMEOpaqueFormat).size();
-    if (!encryptionItems(InlineOpenPGPFormat).empty() ||
-            !encryptionItems(OpenPGPMIMEFormat).empty()) {
+    qCDebug(MESSAGECOMPOSER_LOG) << "sizes of encryption items:" << encryptionItems(InlineOpenPGPFormat).size() << encryptionItems(OpenPGPMIMEFormat).size() << encryptionItems(SMIMEFormat).size()
+                                 << encryptionItems(SMIMEOpaqueFormat).size();
+    if (!encryptionItems(InlineOpenPGPFormat).empty()
+        || !encryptionItems(OpenPGPMIMEFormat).empty()) {
         // need them
         if (d->mOpenPGPEncryptToSelfKeys.empty()) {
             const QString msg = i18n("Examination of recipient's encryption preferences "
@@ -1317,7 +1325,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
                                                    i18n("Unusable Encryption Keys"),
                                                    KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
                                                    QStringLiteral("encrypt-to-self will fail warning"))
-                    == KMessageBox::Cancel) {
+                == KMessageBox::Cancel) {
                 return Kleo::Canceled;
             }
             // FIXME: Allow selection
@@ -1328,8 +1336,8 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
 
     // 4b. Check for S/MIME certs:
 
-    if (!encryptionItems(SMIMEFormat).empty() ||
-            !encryptionItems(SMIMEOpaqueFormat).empty()) {
+    if (!encryptionItems(SMIMEFormat).empty()
+        || !encryptionItems(SMIMEOpaqueFormat).empty()) {
         // need them
         if (d->mSMIMEEncryptToSelfKeys.empty()) {
             // don't have one
@@ -1345,7 +1353,7 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
                                                    i18n("Unusable Encryption Keys"),
                                                    KStandardGuiItem::cont(), KStandardGuiItem::cancel(),
                                                    QStringLiteral("encrypt-to-self will fail warning"))
-                    == KMessageBox::Cancel) {
+                == KMessageBox::Cancel) {
                 return Kleo::Canceled;
             }
             // FIXME: Allow selection
@@ -1362,9 +1370,9 @@ Kleo::Result Kleo::KeyResolver::resolveEncryptionKeys(bool signingRequested, boo
 
 Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
 {
-    if ((!encryptionItems(InlineOpenPGPFormat).empty() ||
-            !encryptionItems(OpenPGPMIMEFormat).empty())
-            && d->mOpenPGPSigningKeys.empty()) {
+    if ((!encryptionItems(InlineOpenPGPFormat).empty()
+         || !encryptionItems(OpenPGPMIMEFormat).empty())
+        && d->mOpenPGPSigningKeys.empty()) {
         const QString msg = i18n("Examination of recipient's signing preferences "
                                  "yielded that the message should be signed using "
                                  "OpenPGP, at least for some recipients;\n"
@@ -1375,14 +1383,14 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
                                                KGuiItem(i18n("Do Not OpenPGP-Sign")),
                                                KStandardGuiItem::cancel(),
                                                QStringLiteral("signing will fail warning"))
-                == KMessageBox::Cancel) {
+            == KMessageBox::Cancel) {
             return Kleo::Canceled;
         }
         // FIXME: Allow selection
     }
-    if ((!encryptionItems(SMIMEFormat).empty() ||
-            !encryptionItems(SMIMEOpaqueFormat).empty())
-            && d->mSMIMESigningKeys.empty()) {
+    if ((!encryptionItems(SMIMEFormat).empty()
+         || !encryptionItems(SMIMEOpaqueFormat).empty())
+        && d->mSMIMESigningKeys.empty()) {
         const QString msg = i18n("Examination of recipient's signing preferences "
                                  "yielded that the message should be signed using "
                                  "S/MIME, at least for some recipients;\n"
@@ -1393,7 +1401,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
                                                KGuiItem(i18n("Do Not S/MIME-Sign")),
                                                KStandardGuiItem::cancel(),
                                                QStringLiteral("signing will fail warning"))
-                == KMessageBox::Cancel) {
+            == KMessageBox::Cancel) {
             return Kleo::Canceled;
         }
         // FIXME: Allow selection
@@ -1402,12 +1410,13 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForEncryption()
     // FIXME: Present another message if _both_ OpenPGP and S/MIME keys
     // are missing.
 
-    for (std::map<CryptoMessageFormat, FormatInfo>::iterator it = d->mFormatInfoMap.begin(); it != d->mFormatInfoMap.end(); ++it)
+    for (std::map<CryptoMessageFormat, FormatInfo>::iterator it = d->mFormatInfoMap.begin(); it != d->mFormatInfoMap.end(); ++it) {
         if (!it->second.splitInfos.empty()) {
             dump();
             it->second.signKeys = signingKeysFor(it->first);
             dump();
         }
+    }
 
     return Kleo::Ok;
 }
@@ -1457,7 +1466,7 @@ Kleo::Result Kleo::KeyResolver::resolveSigningKeysForSigningOnly()
                              "Send message without signing?");
     if (KMessageBox::warningContinueCancel(nullptr, msg, i18n("No signing possible"),
                                            KStandardGuiItem::cont())
-            == KMessageBox::Continue) {
+        == KMessageBox::Continue) {
         d->mFormatInfoMap[OpenPGPMIMEFormat].splitInfos.push_back(SplitInfo(allRecipients()));
         return Kleo::Failure; // means "Ok, but without signing"
     }
@@ -1500,8 +1509,8 @@ void Kleo::KeyResolver::collapseAllSplitInfos()
 {
     dump();
     for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
-        std::map<CryptoMessageFormat, FormatInfo>::iterator pos =
-            d->mFormatInfoMap.find(concreteCryptoMessageFormats[i]);
+        std::map<CryptoMessageFormat, FormatInfo>::iterator pos
+            = d->mFormatInfoMap.find(concreteCryptoMessageFormats[i]);
         if (pos == d->mFormatInfoMap.end()) {
             continue;
         }
@@ -1529,8 +1538,8 @@ void Kleo::KeyResolver::addToAllSplitInfos(const std::vector<GpgME::Key> &keys, 
         if (!(f & concreteCryptoMessageFormats[i])) {
             continue;
         }
-        std::map<CryptoMessageFormat, FormatInfo>::iterator pos =
-            d->mFormatInfoMap.find(concreteCryptoMessageFormats[i]);
+        std::map<CryptoMessageFormat, FormatInfo>::iterator pos
+            = d->mFormatInfoMap.find(concreteCryptoMessageFormats[i]);
         if (pos == d->mFormatInfoMap.end()) {
             continue;
         }
@@ -1571,25 +1580,25 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
 {
     const bool showKeysForApproval = showApprovalDialog()
                                      || std::find_if(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(),
-                                             ApprovalNeeded) != d->mPrimaryEncryptionKeys.end()
+                                                     ApprovalNeeded) != d->mPrimaryEncryptionKeys.end()
                                      || std::find_if(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(),
-                                             ApprovalNeeded) != d->mSecondaryEncryptionKeys.end();
+                                                     ApprovalNeeded) != d->mSecondaryEncryptionKeys.end();
 
     if (!showKeysForApproval) {
         return Kleo::Ok;
     }
 
     std::vector<Kleo::KeyApprovalDialog::Item> items;
-    items.reserve(d->mPrimaryEncryptionKeys.size() +
-                  d->mSecondaryEncryptionKeys.size());
+    items.reserve(d->mPrimaryEncryptionKeys.size()
+                  +d->mSecondaryEncryptionKeys.size());
     std::copy(d->mPrimaryEncryptionKeys.begin(), d->mPrimaryEncryptionKeys.end(),
               std::back_inserter(items));
     std::copy(d->mSecondaryEncryptionKeys.begin(), d->mSecondaryEncryptionKeys.end(),
               std::back_inserter(items));
 
     std::vector<GpgME::Key> senderKeys;
-    senderKeys.reserve(d->mOpenPGPEncryptToSelfKeys.size() +
-                       d->mSMIMEEncryptToSelfKeys.size());
+    senderKeys.reserve(d->mOpenPGPEncryptToSelfKeys.size()
+                       +d->mSMIMEEncryptToSelfKeys.size());
     std::copy(d->mOpenPGPEncryptToSelfKeys.begin(), d->mOpenPGPEncryptToSelfKeys.end(),
               std::back_inserter(senderKeys));
     std::copy(d->mSMIMEEncryptToSelfKeys.begin(), d->mSMIMEEncryptToSelfKeys.end(),
@@ -1642,7 +1651,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
         if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                i18n("Missing Key Warning"),
                                                KGuiItem(i18n("&Encrypt")))
-                == KMessageBox::Cancel) {
+            == KMessageBox::Cancel) {
             return Kleo::Canceled;
         } else {
             mEncryptToSelf = false;
@@ -1650,14 +1659,14 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
     }
 
     // count empty key ID lists
-    const unsigned int emptyListCount =
-        std::count_if(items.begin(), items.end(), EmptyKeyList);
+    const unsigned int emptyListCount
+        = std::count_if(items.begin(), items.end(), EmptyKeyList);
 
     // show a warning if the user didn't select an encryption key for
     // some of the recipients
     if (items.size() == emptyListCount) {
-        const QString msg = (d->mPrimaryEncryptionKeys.size() +
-                             d->mSecondaryEncryptionKeys.size() == 1)
+        const QString msg = (d->mPrimaryEncryptionKeys.size()
+                             +d->mSecondaryEncryptionKeys.size() == 1)
                             ? i18n("You did not select an encryption key for the "
                                    "recipient of this message; therefore, the message "
                                    "will not be encrypted.")
@@ -1667,7 +1676,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
         if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                i18n("Missing Key Warning"),
                                                KGuiItem(i18n("Send &Unencrypted")))
-                == KMessageBox::Cancel) {
+            == KMessageBox::Cancel) {
             return Kleo::Canceled;
         }
         finalySendUnencrypted = true;
@@ -1685,7 +1694,7 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
         if (KMessageBox::warningContinueCancel(nullptr, msg,
                                                i18n("Missing Key Warning"),
                                                KGuiItem(i18n("&Encrypt")))
-                == KMessageBox::Cancel) {
+            == KMessageBox::Cancel) {
             return Kleo::Canceled;
         }
     }
@@ -1715,16 +1724,16 @@ Kleo::Result Kleo::KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypte
 std::vector<Kleo::KeyResolver::SplitInfo> Kleo::KeyResolver::encryptionItems(Kleo::CryptoMessageFormat f) const
 {
     dump();
-    std::map<CryptoMessageFormat, FormatInfo>::const_iterator it =
-        d->mFormatInfoMap.find(f);
+    std::map<CryptoMessageFormat, FormatInfo>::const_iterator it
+        = d->mFormatInfoMap.find(f);
     return it != d->mFormatInfoMap.end() ? it->second.splitInfos : std::vector<SplitInfo>();
 }
 
 std::vector<GpgME::Key> Kleo::KeyResolver::signingKeys(CryptoMessageFormat f) const
 {
     dump();
-    std::map<CryptoMessageFormat, FormatInfo>::const_iterator it =
-        d->mFormatInfoMap.find(f);
+    std::map<CryptoMessageFormat, FormatInfo>::const_iterator it
+        = d->mFormatInfoMap.find(f);
     return it != d->mFormatInfoMap.end() ? it->second.signKeys : std::vector<GpgME::Key>();
 }
 
@@ -1740,8 +1749,8 @@ std::vector<GpgME::Key> Kleo::KeyResolver::selectKeys(
     const bool opgp = containsOpenPGP(mCryptoMessageFormats);
     const bool x509 = containsSMIME(mCryptoMessageFormats);
 
-    QPointer<Kleo::KeySelectionDialog> dlg =
-        new Kleo::KeySelectionDialog(
+    QPointer<Kleo::KeySelectionDialog> dlg
+        = new Kleo::KeySelectionDialog(
         i18n("Encryption Key Selection"),
         msg, KEmailAddress::extractEmailAddress(person), selectedKeys,
         Kleo::KeySelectionDialog::ValidEncryptionKeys
@@ -1768,7 +1777,6 @@ std::vector<GpgME::Key> Kleo::KeyResolver::selectKeys(
 
 std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &person, bool quiet) const
 {
-
     const QString address = canonicalAddress(person).toLower();
 
     // First look for this person's address in the address->key dictionary
@@ -1861,7 +1869,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, b
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "( \"" << patterns.join(QStringLiteral("\", \"")) << "\"," << secret << ")";
     std::vector<GpgME::Key> result;
-    if (mCryptoMessageFormats & (InlineOpenPGPFormat | OpenPGPMIMEFormat))
+    if (mCryptoMessageFormats & (InlineOpenPGPFormat | OpenPGPMIMEFormat)) {
         if (const QGpgME::Protocol *p = QGpgME::openpgp()) {
             std::unique_ptr<QGpgME::KeyListJob> job(p->keyListJob(false, false, true));     // use validating keylisting
             if (job.get()) {
@@ -1870,7 +1878,8 @@ std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, b
                 result.insert(result.end(), keys.begin(), keys.end());
             }
         }
-    if (mCryptoMessageFormats & (SMIMEFormat | SMIMEOpaqueFormat))
+    }
+    if (mCryptoMessageFormats & (SMIMEFormat | SMIMEOpaqueFormat)) {
         if (const QGpgME::Protocol *p = QGpgME::smime()) {
             std::unique_ptr<QGpgME::KeyListJob> job(p->keyListJob(false, false, true));     // use validating keylisting
             if (job.get()) {
@@ -1879,6 +1888,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, b
                 result.insert(result.end(), keys.begin(), keys.end());
             }
         }
+    }
     qCDebug(MESSAGECOMPOSER_LOG) << " returned" << result.size() << "keys";
     return result;
 }
@@ -1891,11 +1901,12 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items, CryptoMessageFor
         std::remove_copy_if(it->keys.begin(), it->keys.end(),
                             std::back_inserter(si.keys), IsNotForFormat(f));
         dump();
-        if (si.keys.empty())
+        if (si.keys.empty()) {
             qCWarning(MESSAGECOMPOSER_LOG)
-                    << "Kleo::KeyResolver::addKeys(): Fix EncryptionFormatPreferenceCounter."
-                    << "It detected a common format, but the list of such keys for recipient \""
-                    << it->address << "\" is empty!";
+                << "Kleo::KeyResolver::addKeys(): Fix EncryptionFormatPreferenceCounter."
+                << "It detected a common format, but the list of such keys for recipient \""
+                << it->address << "\" is empty!";
+        }
         d->mFormatInfoMap[ f ].splitInfos.push_back(si);
     }
     dump();
@@ -1909,18 +1920,19 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items)
         CryptoMessageFormat f = AutoFormat;
         for (unsigned int i = 0; i < numConcreteCryptoMessageFormats; ++i) {
             const CryptoMessageFormat fmt = concreteCryptoMessageFormats[i];
-            if ((fmt & it->format) &&
-                    kdtools::any(it->keys.begin(), it->keys.end(), IsForFormat(fmt))) {
+            if ((fmt & it->format)
+                && kdtools::any(it->keys.begin(), it->keys.end(), IsForFormat(fmt))) {
                 f = fmt;
                 break;
             }
         }
-        if (f == AutoFormat)
+        if (f == AutoFormat) {
             qCWarning(MESSAGECOMPOSER_LOG) << "Something went wrong. Didn't find a format for \""
                                            << it->address << "\"";
-        else
+        } else {
             std::remove_copy_if(it->keys.begin(), it->keys.end(),
                                 std::back_inserter(si.keys), IsNotForFormat(f));
+        }
         d->mFormatInfoMap[ f ].splitInfos.push_back(si);
     }
     dump();
@@ -1928,8 +1940,8 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items)
 
 Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreferences(const QString &address) const
 {
-    const Private::ContactPreferencesMap::iterator it =
-        d->mContactPreferencesMap.find(address);
+    const Private::ContactPreferencesMap::iterator it
+        = d->mContactPreferencesMap.find(address);
     if (it != d->mContactPreferencesMap.end()) {
         return it->second;
     }
@@ -1965,9 +1977,9 @@ void Kleo::KeyResolver::saveContactPreference(const QString &email, const Contac
 }
 
 Kleo::KeyResolver::ContactPreferences::ContactPreferences()
-    : encryptionPreference(UnknownPreference),
-      signingPreference(UnknownSigningPreference),
-      cryptoMessageFormat(AutoFormat)
+    : encryptionPreference(UnknownPreference)
+    , signingPreference(UnknownSigningPreference)
+    , cryptoMessageFormat(AutoFormat)
 {
 }
 

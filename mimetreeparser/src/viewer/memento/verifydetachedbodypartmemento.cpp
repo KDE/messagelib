@@ -31,15 +31,12 @@ using namespace QGpgME;
 using namespace GpgME;
 using namespace MimeTreeParser;
 
-VerifyDetachedBodyPartMemento::VerifyDetachedBodyPartMemento(VerifyDetachedJob *job,
-        KeyListJob *klj,
-        const QByteArray &signature,
-        const QByteArray &plainText)
-    : CryptoBodyPartMemento(),
-      m_signature(signature),
-      m_plainText(plainText),
-      m_job(job),
-      m_keylistjob(klj)
+VerifyDetachedBodyPartMemento::VerifyDetachedBodyPartMemento(VerifyDetachedJob *job, KeyListJob *klj, const QByteArray &signature, const QByteArray &plainText)
+    : CryptoBodyPartMemento()
+    , m_signature(signature)
+    , m_plainText(plainText)
+    , m_job(job)
+    , m_keylistjob(klj)
 {
     assert(m_job);
 }
@@ -88,7 +85,7 @@ void VerifyDetachedBodyPartMemento::exec()
 #endif
     if (canStartKeyListJob()) {
         std::vector<GpgME::Key> keys;
-        m_keylistjob->exec(keyListPattern(), /*secretOnly=*/false, keys);
+        m_keylistjob->exec(keyListPattern(), /*secretOnly=*/ false, keys);
         if (!keys.empty()) {
             m_key = keys.back();
         }

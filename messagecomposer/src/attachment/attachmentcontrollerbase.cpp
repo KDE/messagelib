@@ -22,8 +22,6 @@
 
 #include "attachmentcontrollerbase.h"
 
-
-
 #include <MessageComposer/AttachmentModel>
 #include "MessageComposer/AttachmentJob"
 #include "MessageComposer/AttachmentFromPublicKeyJob"
@@ -155,8 +153,8 @@ void AttachmentControllerBase::setSelectedParts(const AttachmentPart::List &sele
 {
     d->selectedParts = selectedParts;
     const int selectedCount = selectedParts.count();
-    const bool enableEditAction = (selectedCount == 1) &&
-                                  (!selectedParts.first()->isMessageOrMessageCollection());
+    const bool enableEditAction = (selectedCount == 1)
+                                  && (!selectedParts.first()->isMessageOrMessageCollection());
 
     d->openContextAction->setEnabled(selectedCount > 0);
     d->viewContextAction->setEnabled(selectedCount > 0);
@@ -190,11 +188,11 @@ void AttachmentControllerBase::Private::compressJobResult(KJob *job)
 
     if (ajob->isCompressedPartLarger()) {
         const int result = KMessageBox::questionYesNo(wParent,
-                           i18n("The compressed attachment is larger than the original. "
-                                "Do you want to keep the original one?"),
-                           QString(/*caption*/),
-                           KGuiItem(i18nc("Do not compress", "Keep")),
-                           KGuiItem(i18n("Compress")));
+                                                      i18n("The compressed attachment is larger than the original. "
+                                                           "Do you want to keep the original one?"),
+                                                      QString(/*caption*/),
+                                                      KGuiItem(i18nc("Do not compress", "Keep")),
+                                                      KGuiItem(i18n("Compress")));
         if (result == KMessageBox::Yes) {
             // The user has chosen to keep the uncompressed file.
             return;
@@ -339,8 +337,8 @@ void AttachmentControllerBase::Private::createOpenWithMenu(QMenu *topMenu, Attac
         KService::List::ConstIterator end = offers.constEnd();
         for (; it != end; ++it) {
             QAction *act = MessageViewer::Util::createAppAction(*it,
-                           // no submenu -> prefix single offer
-                           menu == topMenu, actionGroup, menu);
+                                                                // no submenu -> prefix single offer
+                                                                menu == topMenu, actionGroup, menu);
             menu->addAction(act);
         }
 
@@ -582,8 +580,8 @@ void AttachmentControllerBase::showContextMenu()
     const int numberOfParts(d->selectedParts.count());
     QMenu *menu = new QMenu;
 
-    const bool enableEditAction = (numberOfParts == 1) &&
-                                  (!d->selectedParts.first()->isMessageOrMessageCollection());
+    const bool enableEditAction = (numberOfParts == 1)
+                                  && (!d->selectedParts.first()->isMessageOrMessageCollection());
 
     if (numberOfParts > 0) {
         if (numberOfParts == 1) {
@@ -594,13 +592,13 @@ void AttachmentControllerBase::showContextMenu()
             if (mime.isValid()) {
                 parentMimeType = mime.allAncestors();
             }
-            if ((mimetype == QLatin1String("text/plain")) ||
-                    (mimetype == QLatin1String("image/png")) ||
-                    (mimetype == QLatin1String("image/jpeg")) ||
-                    parentMimeType.contains(QStringLiteral("text/plain")) ||
-                    parentMimeType.contains(QStringLiteral("image/png")) ||
-                    parentMimeType.contains(QStringLiteral("image/jpeg"))
-               ) {
+            if ((mimetype == QLatin1String("text/plain"))
+                || (mimetype == QLatin1String("image/png"))
+                || (mimetype == QLatin1String("image/jpeg"))
+                || parentMimeType.contains(QStringLiteral("text/plain"))
+                || parentMimeType.contains(QStringLiteral("image/png"))
+                || parentMimeType.contains(QStringLiteral("image/jpeg"))
+                ) {
                 menu->addAction(d->viewContextAction);
             }
             d->createOpenWithMenu(menu, d->selectedParts.first());
@@ -753,7 +751,7 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
             this, SLOT(editDone(MessageViewer::EditorWatcher*)));
 
     switch (watcher->start()) {
-    case MessageViewer::EditorWatcher::NoError: {
+    case MessageViewer::EditorWatcher::NoError:
         // The attachment is being edited.
         // We will clean things up in editDone().
         d->editorPart[ watcher ] = part;
@@ -762,17 +760,15 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
         // Delete the temp file if the composer is closed (and this object is destroyed).
         tempFile->setParent(this);   // Manages lifetime.
         break;
-    }
     case MessageViewer::EditorWatcher::CannotStart:
         qCWarning(MESSAGECOMPOSER_LOG) << "Could not start EditorWatcher.";
         Q_FALLTHROUGH();
     case MessageViewer::EditorWatcher::Unknown:
     case MessageViewer::EditorWatcher::Canceled:
-    case MessageViewer::EditorWatcher::NoServiceFound: {
+    case MessageViewer::EditorWatcher::NoServiceFound:
         delete watcher;
         delete tempFile;
         break;
-    }
     }
 }
 
@@ -812,7 +808,7 @@ void AttachmentControllerBase::slotPutResult(KJob *job)
         if (job->error() == KIO::ERR_FILE_ALREADY_EXIST) {
             if (KMessageBox::warningContinueCancel(nullptr,
                                                    i18n("File %1 exists.\nDo you want to replace it?", _job->url().toLocalFile()), i18n("Save to File"), KGuiItem(i18n("&Replace")))
-                    == KMessageBox::Continue) {
+                == KMessageBox::Continue) {
                 byteArrayToRemoteFile(_job->data(), _job->url(), true);
             }
         } else {
@@ -839,7 +835,7 @@ void AttachmentControllerBase::attachmentProperties(const AttachmentPart::Ptr &p
 void AttachmentControllerBase::attachDirectory(const QUrl &url)
 {
     const int rc = KMessageBox::warningYesNo(d->wParent, i18n("Do you really want to attach this directory \"%1\"?", url.toLocalFile()),
-                   i18nc("@title:window", "Attach directory"));
+                                             i18nc("@title:window", "Attach directory"));
     if (rc == KMessageBox::Yes) {
         addAttachment(url);
     }
@@ -883,10 +879,10 @@ void AttachmentControllerBase::showAddAttachmentCompressedDirectoryDialog()
 void AttachmentControllerBase::showAddAttachmentFileDialog()
 {
     KEncodingFileDialog::Result result = KEncodingFileDialog::getOpenUrlsAndEncoding(QString(),
-                                         QUrl(),
-                                         QString(),
-                                         d->wParent,
-                                         i18nc("@title:window", "Attach File"));
+                                                                                     QUrl(),
+                                                                                     QString(),
+                                                                                     d->wParent,
+                                                                                     i18nc("@title:window", "Attach File"));
     if (!result.URLs.isEmpty()) {
         const QString encoding = MimeTreeParser::NodeHelper::fixEncoding(result.encoding);
         const int numberOfFiles(result.URLs.count());
@@ -898,7 +894,7 @@ void AttachmentControllerBase::showAddAttachmentFileDialog()
             auto mimeType = mimeDb.mimeTypeForUrl(urlWithEncoding);
             if (mimeType.name() == QLatin1String("inode/directory")) {
                 const int rc = KMessageBox::warningYesNo(d->wParent, i18n("Do you really want to attach this directory \"%1\"?", url.toLocalFile()),
-                               i18nc("@title:window", "Attach directory"));
+                                                         i18nc("@title:window", "Attach directory"));
                 if (rc == KMessageBox::Yes) {
                     addAttachment(urlWithEncoding);
                 }
@@ -965,7 +961,6 @@ void AttachmentControllerBase::showAttachPublicKeyDialog()
 
 void AttachmentControllerBase::attachMyPublicKey()
 {
-
 }
 
 void AttachmentControllerBase::enableAttachPublicKey(bool enable)
@@ -985,7 +980,7 @@ void AttachmentControllerBase::setAttachOwnVcard(bool attachVcard)
 
 bool AttachmentControllerBase::attachOwnVcard() const
 {
-    return  d->addOwnVcardAction->isChecked();
+    return d->addOwnVcardAction->isChecked();
 }
 
 void AttachmentControllerBase::setIdentityHasOwnVcard(bool state)

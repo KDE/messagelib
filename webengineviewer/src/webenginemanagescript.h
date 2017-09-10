@@ -25,8 +25,7 @@
 #include "webengineviewer_export.h"
 
 class QWebEngineProfile;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WEBENGINEVIEWER_EXPORT WebEngineManageScript : public QObject
 {
     Q_OBJECT
@@ -37,7 +36,7 @@ public:
 
     static qint32 scriptWordId()
     {
-        return (QWebEngineScript::UserWorld + 1);
+        return QWebEngineScript::UserWorld + 1;
     }
 };
 }

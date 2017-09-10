@@ -23,8 +23,7 @@
 #include <QWebEngineUrlRequestInterceptor>
 #include "webengineviewer_export.h"
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class NetworkUrlInterceptorPrivate;
 class NetworkPluginUrlInterceptorInterface;
 class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptor : public QWebEngineUrlRequestInterceptor

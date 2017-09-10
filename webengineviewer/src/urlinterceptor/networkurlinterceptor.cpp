@@ -21,7 +21,6 @@
 #include "networkurlinterceptor.h"
 #include "webengineviewer_debug.h"
 
-
 #include <QVector>
 
 using namespace WebEngineViewer;
@@ -31,8 +30,8 @@ class WebEngineViewer::NetworkUrlInterceptorPrivate
 public:
     NetworkUrlInterceptorPrivate()
     {
-
     }
+
     void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
     void interceptRequest(QWebEngineUrlRequestInfo &info);
     QVector<NetworkPluginUrlInterceptorInterface *> listInterceptor;
@@ -58,10 +57,9 @@ void NetworkUrlInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &in
 }
 
 NetworkUrlInterceptor::NetworkUrlInterceptor(QObject *parent)
-    : QWebEngineUrlRequestInterceptor(parent),
-      d(new NetworkUrlInterceptorPrivate)
+    : QWebEngineUrlRequestInterceptor(parent)
+    , d(new NetworkUrlInterceptorPrivate)
 {
-
 }
 
 NetworkUrlInterceptor::~NetworkUrlInterceptor()
@@ -78,4 +76,3 @@ void NetworkUrlInterceptor::addInterceptor(NetworkPluginUrlInterceptorInterface 
 {
     d->addInterceptor(interceptor);
 }
-

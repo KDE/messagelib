@@ -42,7 +42,6 @@ TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
 
 TestSelectedTextWebEngine::~TestSelectedTextWebEngine()
 {
-
 }
 
 void TestSelectedTextWebEngine::slotSlowSelectedText()

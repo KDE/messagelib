@@ -26,8 +26,7 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 
-namespace MessageCore
-{
+namespace MessageCore {
 MessageCore::AttachmentFromUrlBaseJob *AttachmentFromUrlUtils::createAttachmentJob(const QUrl &url, QObject *parent)
 {
     MessageCore::AttachmentFromUrlBaseJob *ajob = nullptr;
@@ -45,4 +44,3 @@ MessageCore::AttachmentFromUrlBaseJob *AttachmentFromUrlUtils::createAttachmentJ
     return ajob;
 }
 }
-

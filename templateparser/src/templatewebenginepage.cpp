@@ -51,5 +51,4 @@ TemplateWebEnginePage::TemplateWebEnginePage(QObject *parent)
 
 TemplateWebEnginePage::~TemplateWebEnginePage()
 {
-
 }

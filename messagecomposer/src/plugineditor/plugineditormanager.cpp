@@ -34,8 +34,8 @@ class PluginEditorInfo
 public:
     PluginEditorInfo()
     {
-
     }
+
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
@@ -44,8 +44,7 @@ public:
     bool isEnabled = true;
 };
 
-namespace
-{
+namespace {
 QString pluginVersion()
 {
     return QStringLiteral("1.0");
@@ -60,6 +59,7 @@ public:
     {
         initializePlugins();
     }
+
     void loadPlugin(PluginEditorInfo *item);
     QVector<PluginEditor *> pluginsList() const;
     QVector<PimCommon::PluginUtilData> pluginDataList() const;
@@ -76,7 +76,7 @@ private:
 
 bool PluginEditorManagerPrivate::initializePlugins()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData & md) {
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
         return md.serviceTypes().contains(QStringLiteral("KMailEditor/Plugin"));
     });
 
@@ -172,8 +172,8 @@ PluginEditor *PluginEditorManagerPrivate::pluginFromIdentifier(const QString &id
 }
 
 PluginEditorManager::PluginEditorManager(QObject *parent)
-    : QObject(parent),
-      d(new MessageComposer::PluginEditorManagerPrivate(this))
+    : QObject(parent)
+    , d(new MessageComposer::PluginEditorManagerPrivate(this))
 {
 }
 
@@ -212,4 +212,3 @@ PluginEditor *PluginEditorManager::pluginFromIdentifier(const QString &id)
 {
     return d->pluginFromIdentifier(id);
 }
-

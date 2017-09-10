@@ -24,8 +24,7 @@
 
 #include "messagecomposer_export.h"
 #include <LibkdepimAkonadi/AddresseeLineEdit>
-namespace MessageComposer
-{
+namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT ComposerLineEdit : public KPIM::AddresseeLineEdit
 {
     Q_OBJECT
@@ -42,7 +41,6 @@ protected:
 
     void keyPressEvent(QKeyEvent *) override;
 };
-
 }
 
 #endif

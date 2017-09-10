@@ -37,14 +37,11 @@
 #include "mimetreeparser_export.h"
 
 class QString;
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 class MIMETREEPARSER_EXPORT AttachmentStrategy
 {
 protected:
@@ -55,7 +52,9 @@ public:
     //
     // Factory methods:
     //
-    enum Type { Iconic, Smart, Inlined, Hidden, HeaderOnly };
+    enum Type {
+        Iconic, Smart, Inlined, Hidden, HeaderOnly
+    };
 
     static const AttachmentStrategy *create(Type type);
     static const AttachmentStrategy *create(const QString &type);
@@ -76,13 +75,14 @@ public:
     // Bahavioural:
     //
 
-    enum Display { None, AsIcon, Inline };
+    enum Display {
+        None, AsIcon, Inline
+    };
 
     virtual bool inlineNestedMessages() const = 0;
     virtual Display defaultDisplay(KMime::Content *node) const = 0;
     virtual bool requiresAttachmentListInHeader() const;
 };
-
 }
 
 #endif // __MIMETREEPARSER_ATTACHMENTSTRATEGY_H__

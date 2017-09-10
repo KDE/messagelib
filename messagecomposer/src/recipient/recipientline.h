@@ -30,9 +30,7 @@
 
 #include <KComboBox>
 
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class RecipientComboBox : public KComboBox
 {
     Q_OBJECT
@@ -66,7 +64,9 @@ class MESSAGECOMPOSER_EXPORT RecipientLineNG : public KPIM::MultiplyingLine
     Q_OBJECT
 public:
     explicit RecipientLineNG(QWidget *parent);
-    virtual ~RecipientLineNG() {}
+    virtual ~RecipientLineNG()
+    {
+    }
 
     void activate() override;
     bool isActive() const override;
@@ -137,7 +137,6 @@ private:
 private Q_SLOTS:
     void slotAddRecipient(const QString &);
 };
-
 }
 
 #endif // RECIPIENTLINE_H

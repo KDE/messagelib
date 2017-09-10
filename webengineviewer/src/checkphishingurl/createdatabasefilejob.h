@@ -24,8 +24,7 @@
 #include "webengineviewer_export.h"
 #include "updatedatabaseinfo.h"
 
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class CreateDatabaseFileJobPrivate;
 class WEBENGINEVIEWER_EXPORT CreateDatabaseFileJob : public QObject
 {

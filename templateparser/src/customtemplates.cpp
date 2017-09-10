@@ -24,7 +24,6 @@
 #include "kpimtextedit/plaintexteditor.h"
 #include "templateparseremailaddressrequesterinterfacewidget.h"
 
-
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -34,10 +33,9 @@
 
 using namespace TemplateParser;
 
-CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollection,
-                                 QWidget *parent)
-    : QWidget(parent),
-      mBlockChangeSignal(false)
+CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent)
+    : QWidget(parent)
+    , mBlockChangeSignal(false)
 {
     mUi = new Ui_CustomTemplatesBase;
     mUi->setupUi(this);
@@ -96,21 +94,21 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
 
 void CustomTemplates::slotHelpLinkClicked(const QString &)
 {
-    const QString help =
-        i18n("<qt>"
-             "<p>Here you can add, edit, and delete custom message "
-             "templates to use when you compose a reply or forwarding message. "
-             "Create the custom template by typing the name into the input box "
-             "and press the '+' button. Also, you can bind a keyboard "
-             "combination to the template for faster operations.</p>"
-             "<p>Message templates support substitution commands, "
-             "by simply typing them or selecting them from the "
-             "<i>Insert command</i> menu.</p>"
-             "<p>There are four types of custom templates: used to "
-             "<i>Reply</i>, <i>Reply to All</i>, <i>Forward</i>, and "
-             "<i>Universal</i> which can be used for all kinds of operations. "
-             "You cannot bind a keyboard shortcut to <i>Universal</i> templates.</p>"
-             "</qt>");
+    const QString help
+        = i18n("<qt>"
+               "<p>Here you can add, edit, and delete custom message "
+               "templates to use when you compose a reply or forwarding message. "
+               "Create the custom template by typing the name into the input box "
+               "and press the '+' button. Also, you can bind a keyboard "
+               "combination to the template for faster operations.</p>"
+               "<p>Message templates support substitution commands, "
+               "by simply typing them or selecting them from the "
+               "<i>Insert command</i> menu.</p>"
+               "<p>There are four types of custom templates: used to "
+               "<i>Reply</i>, <i>Reply to All</i>, <i>Forward</i>, and "
+               "<i>Universal</i> which can be used for all kinds of operations. "
+               "You cannot bind a keyboard shortcut to <i>Universal</i> templates.</p>"
+               "</qt>");
 
     QWhatsThis::showText(QCursor::pos(), help);
 }
@@ -188,8 +186,7 @@ void CustomTemplates::iconFromType(CustomTemplates::Type type, CustomTemplateIte
     default:
         item->setIcon(0, QPixmap());
         break;
-    };
-
+    }
 }
 
 void CustomTemplates::load()
@@ -202,7 +199,7 @@ void CustomTemplates::load()
         QKeySequence shortcut(t.shortcut());
         CustomTemplates::Type type = static_cast<Type>(t.type());
         CustomTemplateItem *item = new CustomTemplateItem(mUi->mList, *it, t.content(),
-                shortcut, type, t.to(), t.cC());
+                                                          shortcut, type, t.to(), t.cC());
         item->setText(1, *it);
         item->setText(0, indexToType(type));
         iconFromType(type, item);
@@ -286,9 +283,9 @@ void CustomTemplates::slotAddClicked()
         }
 
         QKeySequence nullShortcut;
-        CustomTemplateItem *item =
-            new CustomTemplateItem(mUi->mList, str, QString(), nullShortcut, TUniversal,
-                                   QString(), QString());
+        CustomTemplateItem *item
+            = new CustomTemplateItem(mUi->mList, str, QString(), nullShortcut, TUniversal,
+                                     QString(), QString());
         item->setText(0, indexToType(TUniversal));
         item->setText(1, str);
         mUi->mList->setCurrentItem(item);
@@ -338,10 +335,10 @@ void CustomTemplates::slotDuplicateClicked()
     CustomTemplateItem *origItem = static_cast<CustomTemplateItem *>(currentItem);
     const QString templateName = createUniqueName(origItem->text(1));
     QKeySequence nullShortcut;
-    CustomTemplates::Type type =  origItem->customType();
-    CustomTemplateItem *item =
-        new CustomTemplateItem(mUi->mList, templateName, origItem->content(), nullShortcut, type,
-                               origItem->to(), origItem->cc());
+    CustomTemplates::Type type = origItem->customType();
+    CustomTemplateItem *item
+        = new CustomTemplateItem(mUi->mList, templateName, origItem->content(), nullShortcut, type,
+                                 origItem->to(), origItem->cc());
     item->setText(0, indexToType(type));
     item->setText(1, templateName);
     iconFromType(type, item);
@@ -365,11 +362,11 @@ void CustomTemplates::slotRemoveClicked()
     const QString templateName = item->text(1);
 
     if (KMessageBox::warningContinueCancel(
-                this,
-                i18nc("@info", "Do you really want to remove template \"%1\"?", templateName),
-                i18nc("@title:window", "Remove Template?"),
-                KStandardGuiItem::remove(),
-                KStandardGuiItem::cancel()) == KMessageBox::Continue) {
+            this,
+            i18nc("@info", "Do you really want to remove template \"%1\"?", templateName),
+            i18nc("@title:window", "Remove Template?"),
+            KStandardGuiItem::remove(),
+            KStandardGuiItem::cancel()) == KMessageBox::Continue) {
         mItemsToDelete.append(templateName);
         delete mUi->mList->takeTopLevelItem(mUi->mList->indexOfTopLevelItem(item));
         mUi->mRemove->setEnabled(mUi->mList->topLevelItemCount() > 0);
@@ -392,7 +389,7 @@ void CustomTemplates::slotListSelectionChanged()
         mUi->mEdit->setPlainText(vitem->content());
         mUi->mKeySequenceWidget->setKeySequence(vitem->shortcut(),
                                                 KKeySequenceWidget::NoValidate);
-        CustomTemplates::Type type =  vitem->customType();
+        CustomTemplates::Type type = vitem->customType();
 
         mUi->mType->setCurrentIndex(mUi->mType->findText(indexToType(type)));
         mUi->mToEdit->setText(vitem->to());
@@ -483,8 +480,7 @@ CustomTemplateItemDelegate::~CustomTemplateItemDelegate()
 {
 }
 
-void CustomTemplateItemDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
-        const QModelIndex &index) const
+void CustomTemplateItemDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
 {
     KLineEdit *lineEdit = static_cast<KLineEdit *>(editor);
     const QString text = lineEdit->text();
@@ -493,9 +489,7 @@ void CustomTemplateItemDelegate::setModelData(QWidget *editor, QAbstractItemMode
     }
 }
 
-QWidget *CustomTemplateItemDelegate::createEditor(QWidget *parent,
-        const QStyleOptionViewItem &option,
-        const QModelIndex &index) const
+QWidget *CustomTemplateItemDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     if (index.column() == 1) {
         return QStyledItemDelegate::createEditor(parent, option, index);
@@ -503,20 +497,14 @@ QWidget *CustomTemplateItemDelegate::createEditor(QWidget *parent,
     return nullptr;
 }
 
-CustomTemplateItem::CustomTemplateItem(QTreeWidget *parent,
-                                       const QString &name,
-                                       const QString &content,
-                                       const QKeySequence &shortcut,
-                                       CustomTemplates::Type type,
-                                       const QString &to,
-                                       const QString &cc)
-    : QTreeWidgetItem(parent),
-      mName(name),
-      mContent(content),
-      mShortcut(shortcut),
-      mType(type),
-      mTo(to),
-      mCC(cc)
+CustomTemplateItem::CustomTemplateItem(QTreeWidget *parent, const QString &name, const QString &content, const QKeySequence &shortcut, CustomTemplates::Type type, const QString &to, const QString &cc)
+    : QTreeWidgetItem(parent)
+    , mName(name)
+    , mContent(content)
+    , mShortcut(shortcut)
+    , mType(type)
+    , mTo(to)
+    , mCC(cc)
 {
     setFlags(flags() | Qt::ItemIsEditable);
 }
@@ -584,4 +572,3 @@ void CustomTemplateItem::setOldName(const QString &name)
 {
     mName = name;
 }
-

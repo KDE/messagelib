@@ -25,12 +25,10 @@
 DownloadLocalDatabaseThreadTest::DownloadLocalDatabaseThreadTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DownloadLocalDatabaseThreadTest::~DownloadLocalDatabaseThreadTest()
 {
-
 }
 
 QTEST_MAIN(DownloadLocalDatabaseThreadTest)

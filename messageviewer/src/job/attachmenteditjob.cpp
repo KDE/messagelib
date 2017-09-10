@@ -52,7 +52,7 @@ bool AttachmentEditJob::addAttachment(KMime::Content *node, bool showWarning)
                                                           KGuiItem(i18n("Edit"),
                                                                    QStringLiteral(
                                                                        "document-properties")),
-    KStandardGuiItem::cancel(),
+                                                          KStandardGuiItem::cancel(),
                                                           QStringLiteral(
                                                               "EditAttachmentSignatureWarning"))
         != KMessageBox::Continue) {

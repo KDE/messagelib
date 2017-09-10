@@ -45,9 +45,9 @@ public:
     uint m_currentIdentityId = 0;
 };
 
-SignatureController::SignatureController(QObject *parent) :
-    QObject(parent),
-    d(new MessageComposer::SignatureControllerPrivate)
+SignatureController::SignatureController(QObject *parent)
+    : QObject(parent)
+    , d(new MessageComposer::SignatureControllerPrivate)
 {
 }
 
@@ -138,12 +138,12 @@ void SignatureController::insertSignatureHelper(KIdentityManagement::Signature::
     // Identity::signature() is not const, although it should be, therefore the
     // const_cast.
     KIdentityManagement::Identity &ident = const_cast<KIdentityManagement::Identity &>(
-            d->m_identityCombo->identityManager()->identityForUoidOrDefault(
-                d->m_identityCombo->currentIdentity()));
+        d->m_identityCombo->identityManager()->identityForUoidOrDefault(
+            d->m_identityCombo->currentIdentity()));
     const KIdentityManagement::Signature signature = ident.signature();
 
-    if (signature.isInlinedHtml() &&
-            signature.type() == KIdentityManagement::Signature::Inlined) {
+    if (signature.isInlinedHtml()
+        && signature.type() == KIdentityManagement::Signature::Inlined) {
         Q_EMIT enableHtml();
     }
 

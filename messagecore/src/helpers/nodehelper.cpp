@@ -35,7 +35,7 @@ KMime::Content *MessageCore::NodeHelper::nextSibling(const KMime::Content *node)
         const auto contents = parent->contents();
         const int index = contents.indexOf(const_cast<KMime::Content *>(node)) + 1;
         if (index < contents.size()) { //next on the same level
-            next =  contents.at(index);
+            next = contents.at(index);
         }
     }
 
@@ -55,7 +55,7 @@ KMime::Content *MessageCore::NodeHelper::next(KMime::Content *node, bool allowCh
     }
 
     for (KMime::Content *parent = node->parent(); parent;
-            parent = parent->parent()) {
+         parent = parent->parent()) {
         if (KMime::Content *sibling = nextSibling(parent)) {
             return sibling;
         }

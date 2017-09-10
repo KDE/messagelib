@@ -62,33 +62,28 @@
 
 using namespace MimeTreeParser;
 
-ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser,
-                                   bool showOnlyOneMimePart,
-                                   const AttachmentStrategy *strategy)
-    : mSource(topLevelParser->mSource),
-      mNodeHelper(topLevelParser->mNodeHelper),
-      mHtmlWriter(topLevelParser->mHtmlWriter),
-      mTopLevelContent(topLevelParser->mTopLevelContent),
-      mShowOnlyOneMimePart(showOnlyOneMimePart),
-      mHasPendingAsyncJobs(false),
-      mAllowAsync(topLevelParser->mAllowAsync),
-      mAttachmentStrategy(strategy)
+ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser, bool showOnlyOneMimePart, const AttachmentStrategy *strategy)
+    : mSource(topLevelParser->mSource)
+    , mNodeHelper(topLevelParser->mNodeHelper)
+    , mHtmlWriter(topLevelParser->mHtmlWriter)
+    , mTopLevelContent(topLevelParser->mTopLevelContent)
+    , mShowOnlyOneMimePart(showOnlyOneMimePart)
+    , mHasPendingAsyncJobs(false)
+    , mAllowAsync(topLevelParser->mAllowAsync)
+    , mAttachmentStrategy(strategy)
 {
     init();
 }
 
-ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source,
-                                   MimeTreeParser::NodeHelper *nodeHelper,
-                                   bool showOnlyOneMimePart,
-                                   const AttachmentStrategy *strategy)
-    : mSource(source),
-      mNodeHelper(nodeHelper),
-      mHtmlWriter(nullptr),
-      mTopLevelContent(nullptr),
-      mShowOnlyOneMimePart(showOnlyOneMimePart),
-      mHasPendingAsyncJobs(false),
-      mAllowAsync(false),
-      mAttachmentStrategy(strategy)
+ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTreeParser::NodeHelper *nodeHelper, bool showOnlyOneMimePart, const AttachmentStrategy *strategy)
+    : mSource(source)
+    , mNodeHelper(nodeHelper)
+    , mHtmlWriter(nullptr)
+    , mTopLevelContent(nullptr)
+    , mShowOnlyOneMimePart(showOnlyOneMimePart)
+    , mHasPendingAsyncJobs(false)
+    , mAllowAsync(false)
+    , mAttachmentStrategy(strategy)
 {
     init();
 }
@@ -109,17 +104,17 @@ void ObjectTreeParser::init()
 }
 
 ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser &other)
-    : mSource(other.mSource),
-      mNodeHelper(other.nodeHelper()),   //TODO(Andras) hm, review what happens if mDeleteNodeHelper was true in the source
-      mHtmlWriter(other.mHtmlWriter),
-      mTopLevelContent(other.mTopLevelContent),
-      mShowOnlyOneMimePart(other.showOnlyOneMimePart()),
-      mHasPendingAsyncJobs(other.hasPendingAsyncJobs()),
-      mAllowAsync(other.allowAsync()),
-      mAttachmentStrategy(other.attachmentStrategy()),
-      mDeleteNodeHelper(false)
+    : mSource(other.mSource)
+    , mNodeHelper(other.nodeHelper())
+    ,                                    //TODO(Andras) hm, review what happens if mDeleteNodeHelper was true in the source
+    mHtmlWriter(other.mHtmlWriter)
+    , mTopLevelContent(other.mTopLevelContent)
+    , mShowOnlyOneMimePart(other.showOnlyOneMimePart())
+    , mHasPendingAsyncJobs(other.hasPendingAsyncJobs())
+    , mAllowAsync(other.allowAsync())
+    , mAttachmentStrategy(other.attachmentStrategy())
+    , mDeleteNodeHelper(false)
 {
-
 }
 
 ObjectTreeParser::~ObjectTreeParser()
@@ -207,7 +202,7 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
 {
     bool bRendered = false;
     const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType.constData());
-    auto range =  sub.equal_range(subType.constData());
+    auto range = sub.equal_range(subType.constData());
     for (auto it = range.first; it != range.second; ++it) {
         const auto formatter = (*it).second;
         if (!formatter) {
@@ -216,7 +211,7 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
         PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper);
         // Set the default display strategy for this body part relying on the
         // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
-        part.setDefaultDisplay((Interface::BodyPart::Display) attachmentStrategy()->defaultDisplay(node));
+        part.setDefaultDisplay((Interface::BodyPart::Display)attachmentStrategy()->defaultDisplay(node));
 
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
 
@@ -300,8 +295,8 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
 
         QByteArray mediaType("text");
         QByteArray subType("plain");
-        if (node->contentType(false) && !node->contentType()->mediaType().isEmpty() &&
-                !node->contentType()->subType().isEmpty()) {
+        if (node->contentType(false) && !node->contentType()->mediaType().isEmpty()
+            && !node->contentType()->subType().isEmpty()) {
             mediaType = node->contentType()->mediaType();
             subType = node->contentType()->subType();
         }
@@ -343,12 +338,12 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
     Interface::MessagePart::Ptr mp;
     ProcessResult processResult(mNodeHelper);
 
-    if (node->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream") &&
-            (node->contentType()->name().endsWith(QLatin1String("p7m")) ||
-             node->contentType()->name().endsWith(QLatin1String("p7s")) ||
-             node->contentType()->name().endsWith(QLatin1String("p7c"))
-            ) &&
-            processType(node, processResult, "application", "pkcs7-mime", mp, onlyOneMimePart)) {
+    if (node->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream")
+        && (node->contentType()->name().endsWith(QLatin1String("p7m"))
+            || node->contentType()->name().endsWith(QLatin1String("p7s"))
+            || node->contentType()->name().endsWith(QLatin1String("p7c"))
+            )
+        && processType(node, processResult, "application", "pkcs7-mime", mp, onlyOneMimePart)) {
         return mp;
     }
 
@@ -362,8 +357,8 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
     // always show images in multipart/related when showing in html, not with an additional icon
     auto preferredMode = mSource->preferredMode();
     bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
-    if (result.isImage() && node->parent() &&
-            node->parent()->contentType()->subType() == "related" && isHtmlPreferred && !onlyOneMimePart) {
+    if (result.isImage() && node->parent()
+        && node->parent()->contentType()->subType() == "related" && isHtmlPreferred && !onlyOneMimePart) {
         QString fileName = mNodeHelper->writeNodeToTempFile(node);
         QString href = QUrl::fromLocalFile(fileName).url();
         QByteArray cid = node->contentID()->identifier();
@@ -426,8 +421,8 @@ void ProcessResult::setIsImage(bool image)
 
 void ProcessResult::adjustCryptoStatesOfNode(const KMime::Content *node) const
 {
-    if ((inlineSignatureState()  != KMMsgNotSigned) ||
-            (inlineEncryptionState() != KMMsgNotEncrypted)) {
+    if ((inlineSignatureState() != KMMsgNotSigned)
+        || (inlineEncryptionState() != KMMsgNotEncrypted)) {
         mNodeHelper->setSignatureState(node, inlineSignatureState());
         mNodeHelper->setEncryptionState(node, inlineEncryptionState());
     }

@@ -39,4 +39,3 @@ MessagePart::~MessagePart()
 {
     delete d;
 }
-

@@ -19,7 +19,6 @@
 
 #include "searchfullhashjob.h"
 
-
 #include "checkphishingurlutil.h"
 #include <QNetworkAccessManager>
 #include <QNetworkConfigurationManager>
@@ -37,8 +36,8 @@ public:
     SearchFullHashJobPrivate()
         : mNetworkAccessManager(nullptr)
     {
-
     }
+
     bool foundExactHash(const QList<QByteArray> &listLongHash);
     QHash<QByteArray, QByteArray> mHashs;
     QUrl mUrl;
@@ -47,8 +46,8 @@ public:
 };
 
 SearchFullHashJob::SearchFullHashJob(QObject *parent)
-    : QObject(parent),
-      d(new SearchFullHashJobPrivate)
+    : QObject(parent)
+    , d(new SearchFullHashJobPrivate)
 {
     d->mNetworkAccessManager = new QNetworkAccessManager(this);
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &SearchFullHashJob::slotCheckUrlFinished);

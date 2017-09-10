@@ -25,13 +25,11 @@
 #include "messagecomposer_export.h"
 class QAction;
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextEditor;
 }
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT ActionType
 {
 public:

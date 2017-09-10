@@ -33,7 +33,6 @@ CheckPhishingUrlCacheTest::CheckPhishingUrlCacheTest(QObject *parent)
 
 CheckPhishingUrlCacheTest::~CheckPhishingUrlCacheTest()
 {
-
 }
 
 void CheckPhishingUrlCacheTest::shouldNotBeAMalware()

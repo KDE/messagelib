@@ -24,12 +24,10 @@
 WebEngineAccessKeyAnchorTest::WebEngineAccessKeyAnchorTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 WebEngineAccessKeyAnchorTest::~WebEngineAccessKeyAnchorTest()
 {
-
 }
 
 void WebEngineAccessKeyAnchorTest::shouldReturnEmptyAccessKeyAnchor()

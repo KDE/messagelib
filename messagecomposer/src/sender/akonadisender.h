@@ -30,10 +30,9 @@
 
 class KJob;
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class AkonadiSenderPrivate;
-class MESSAGECOMPOSER_EXPORT AkonadiSender: public QObject, public MessageSender
+class MESSAGECOMPOSER_EXPORT AkonadiSender : public QObject, public MessageSender
 {
     Q_OBJECT
 

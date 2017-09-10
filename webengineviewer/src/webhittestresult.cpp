@@ -43,27 +43,29 @@ class WebEngineViewer::WebHitTestResultPrivate
 {
 public:
     WebHitTestResultPrivate(const QWebEngineContextMenuData &data, const QPoint &pos = QPoint(), const QUrl &url = QUrl())
-        : mIsNull(true),
-          mIsContentEditable(false),
-          mIsContentSelected(false),
-          mMediaPaused(false),
-          mMediaMuted(false),
-          mPos(pos),
-          mPageUrl(url)
+        : mIsNull(true)
+        , mIsContentEditable(false)
+        , mIsContentSelected(false)
+        , mMediaPaused(false)
+        , mMediaMuted(false)
+        , mPos(pos)
+        , mPageUrl(url)
     {
         init(data);
     }
+
     WebHitTestResultPrivate(const QPoint &pos = QPoint(), const QUrl &url = QUrl(), const QVariant &result = QVariant())
-        : mIsNull(true),
-          mIsContentEditable(false),
-          mIsContentSelected(false),
-          mMediaPaused(false),
-          mMediaMuted(false),
-          mPos(pos),
-          mPageUrl(url)
+        : mIsNull(true)
+        , mIsContentEditable(false)
+        , mIsContentSelected(false)
+        , mMediaPaused(false)
+        , mMediaMuted(false)
+        , mPos(pos)
+        , mPageUrl(url)
     {
         init(result.toMap());
     }
+
     void init(const QVariantMap &map);
     void init(const QWebEngineContextMenuData &data);
 
@@ -127,7 +129,6 @@ void WebHitTestResultPrivate::init(const QVariantMap &map)
 WebHitTestResult::WebHitTestResult()
     : d(new WebHitTestResultPrivate)
 {
-
 }
 
 WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QVariant &result)
@@ -144,7 +145,6 @@ WebHitTestResult::WebHitTestResult(const WebHitTestResult &other)
 WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QWebEngineContextMenuData &data)
     : d(new WebHitTestResultPrivate(data, pos, pageUrl))
 {
-
 }
 
 WebHitTestResult::~WebHitTestResult()

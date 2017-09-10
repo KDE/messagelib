@@ -30,23 +30,17 @@
 
 class QTextDocument;
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MailTransport
-{
+namespace MailTransport {
 class MessageQueueJob;
 }
 
-namespace MessageComposer
-{
-
-namespace Util
-{
-MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QList<QByteArray> &charsets,
-        const QString &text);
+namespace MessageComposer {
+namespace Util {
+MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QList<QByteArray> &charsets, const QString &text);
 
 MESSAGECOMPOSER_EXPORT QStringList AttachmentKeywords();
 MESSAGECOMPOSER_EXPORT QString cleanedUpHeaderString(const QString &s);
@@ -95,9 +89,7 @@ MESSAGECOMPOSER_EXPORT bool isStandaloneMessage(const Akonadi::Item &item);
 MESSAGECOMPOSER_EXPORT KMime::Message::Ptr message(const Akonadi::Item &item);
 
 MESSAGECOMPOSER_EXPORT bool hasMissingAttachments(const QStringList &attachmentKeywords, QTextDocument *doc, const QString &subj);
-
 }
-
 }
 
 #endif

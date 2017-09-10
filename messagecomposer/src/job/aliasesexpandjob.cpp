@@ -33,11 +33,11 @@
 using namespace MessageComposer;
 
 AliasesExpandJob::AliasesExpandJob(const QString &recipients, const QString &defaultDomain, QObject *parent)
-    : KJob(parent),
-      mRecipients(KEmailAddress::splitAddressList(recipients)),
-      mDefaultDomain(defaultDomain),
-      mDistributionListExpansionJobs(0),
-      mNicknameExpansionJobs(0)
+    : KJob(parent)
+    , mRecipients(KEmailAddress::splitAddressList(recipients))
+    , mDefaultDomain(defaultDomain)
+    , mDistributionListExpansionJobs(0)
+    , mNicknameExpansionJobs(0)
 {
 }
 
@@ -50,7 +50,6 @@ void AliasesExpandJob::start()
     // At first we try to expand the recipient to a distribution list
     // or nick name and save the results in a map for later lookup
     for (const QString &recipient : qAsConst(mRecipients)) {
-
         // speedup: assume aliases and list names don't contain '@'
         if (recipient.isEmpty() || recipient.contains(QLatin1Char('@'))) {
             continue;
@@ -182,10 +181,10 @@ void AliasesExpandJob::finishExpansion()
         // check whether the address is missing the domain part
         KEmailAddress::splitAddress(receiver, displayName, addrSpec, comment);
         if (!addrSpec.contains(QLatin1Char('@'))) {
-            if (!mDefaultDomain.isEmpty())
-                mEmailAddresses += KEmailAddress::normalizedAddress(displayName, addrSpec + QLatin1Char('@') +
-                                   mDefaultDomain, comment);
-            else {
+            if (!mDefaultDomain.isEmpty()) {
+                mEmailAddresses += KEmailAddress::normalizedAddress(displayName, addrSpec + QLatin1Char('@')
+                                                                    +mDefaultDomain, comment);
+            } else {
                 mEmailAddresses += MessageCore::StringUtil::guessEmailAddressFromLoginName(addrSpec);
             }
         } else {

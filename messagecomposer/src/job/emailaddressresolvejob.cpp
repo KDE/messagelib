@@ -39,7 +39,6 @@ public:
     EmailAddressResolveJobPrivate()
         : mJobCount(0)
     {
-
     }
 
     int mJobCount;
@@ -52,8 +51,8 @@ public:
 };
 
 EmailAddressResolveJob::EmailAddressResolveJob(QObject *parent)
-    : KJob(parent),
-      d(new MessageComposer::EmailAddressResolveJobPrivate)
+    : KJob(parent)
+    , d(new MessageComposer::EmailAddressResolveJobPrivate)
 {
 }
 
@@ -181,11 +180,9 @@ QStringList EmailAddressResolveJob::expandedTo() const
 QStringList EmailAddressResolveJob::expandedCc() const
 {
     return KEmailAddress::splitAddressList(d->mResultMap.value(QStringLiteral("infoPartCc")).toString());
-
 }
 
 QStringList EmailAddressResolveJob::expandedBcc() const
 {
     return KEmailAddress::splitAddressList(d->mResultMap.value(QStringLiteral("infoPartBcc")).toString());
 }
-

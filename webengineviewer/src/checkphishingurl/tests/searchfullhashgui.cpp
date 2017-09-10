@@ -65,7 +65,6 @@ SearchFullHashGui::SearchFullHashGui(QWidget *parent)
 
 SearchFullHashGui::~SearchFullHashGui()
 {
-
 }
 
 void SearchFullHashGui::slotCheckUrl()

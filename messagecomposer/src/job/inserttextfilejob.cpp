@@ -31,10 +31,11 @@ class MessageComposer::InsertTextFileJobPrivate
 {
 public:
     InsertTextFileJobPrivate(QTextEdit *editor, const QUrl &url)
-        : mEditor(editor), mUrl(url)
+        : mEditor(editor)
+        , mUrl(url)
     {
-
     }
+
     QPointer<QTextEdit> mEditor;
     QUrl mUrl;
     QString mEncoding;
@@ -42,7 +43,8 @@ public:
 };
 
 InsertTextFileJob::InsertTextFileJob(QTextEdit *editor, const QUrl &url)
-    : KJob(editor), d(new MessageComposer::InsertTextFileJobPrivate(editor, url))
+    : KJob(editor)
+    , d(new MessageComposer::InsertTextFileJobPrivate(editor, url))
 {
 }
 
@@ -95,4 +97,3 @@ void InsertTextFileJob::start()
     connect(job, &KIO::TransferJob::data, this, &InsertTextFileJob::slotFileData);
     job->start();
 }
-

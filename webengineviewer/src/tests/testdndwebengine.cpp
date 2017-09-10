@@ -45,7 +45,6 @@ TestDndWebEngine::TestDndWebEngine(QWidget *parent)
 
 TestDndWebEngine::~TestDndWebEngine()
 {
-
 }
 
 int main(int argc, char *argv[])

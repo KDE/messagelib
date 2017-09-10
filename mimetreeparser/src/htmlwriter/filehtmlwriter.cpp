@@ -33,12 +33,10 @@
 
 #include "mimetreeparser_debug.h"
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 FileHtmlWriter::FileHtmlWriter(const QString &filename)
-    : HtmlWriter(),
-      mFile(filename.isEmpty() ? QStringLiteral("filehtmlwriter.out") : filename)
+    : HtmlWriter()
+    , mFile(filename.isEmpty() ? QStringLiteral("filehtmlwriter.out") : filename)
 {
 }
 
@@ -111,9 +109,8 @@ void FileHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
     mStream << "<!-- embedPart(contentID=" << contentId << ", url=" << url << ") -->" << endl;
     flush();
 }
+
 void FileHtmlWriter::extraHead(const QString &)
 {
-
 }
-
 } //

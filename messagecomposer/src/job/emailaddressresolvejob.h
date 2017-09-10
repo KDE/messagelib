@@ -31,8 +31,7 @@
 #include <QStringList>
 #include <QVariant>
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class Composer;
 
 /**
@@ -108,7 +107,6 @@ private Q_SLOTS:
 private:
     EmailAddressResolveJobPrivate *const d;
 };
-
 }
 
 #endif

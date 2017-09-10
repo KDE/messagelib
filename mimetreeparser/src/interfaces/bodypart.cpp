@@ -38,4 +38,3 @@ MimeTreeParser::Interface::BodyPartMemento::~BodyPartMemento()
 MimeTreeParser::Interface::BodyPart::~BodyPart()
 {
 }
-

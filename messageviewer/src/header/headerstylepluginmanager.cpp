@@ -143,7 +143,7 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << "Plugin " << data.name()
                                          <<
-            " doesn't have correction plugin version. It will not be loaded.";
+                " doesn't have correction plugin version. It will not be loaded.";
         }
     }
     QVector<HeaderStylePluginInfo>::iterator end(mPluginList.end());
@@ -171,7 +171,7 @@ void HeaderStylePluginManagerPrivate::loadPlugin(HeaderStylePluginInfo *item)
     if (pluginLoader.factory()) {
         item->plugin = pluginLoader.factory()->create<MessageViewer::HeaderStylePlugin>(q,
                                                                                         QVariantList()
-        << item->metaDataFileNameBaseName);
+                                                                                        << item->metaDataFileNameBaseName);
         item->plugin->setIsEnabled(item->isEnabled);
         item->pluginData.mHasConfigureDialog = false;
         mPluginDataList.append(item->pluginData);

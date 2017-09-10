@@ -21,11 +21,9 @@
 #define ATTACHMENTFROMURLUTILS_H
 #include <QObject>
 #include "messagecore_export.h"
-namespace MessageCore
-{
+namespace MessageCore {
 class AttachmentFromUrlBaseJob;
-namespace AttachmentFromUrlUtils
-{
+namespace AttachmentFromUrlUtils {
 MESSAGECORE_EXPORT MessageCore::AttachmentFromUrlBaseJob *createAttachmentJob(const QUrl &url, QObject *parent);
 }
 }

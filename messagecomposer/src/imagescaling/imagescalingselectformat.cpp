@@ -134,4 +134,3 @@ QString ImageScalingSelectFormat::format() const
 {
     return mFormat->text();
 }
-

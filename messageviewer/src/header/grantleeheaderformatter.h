@@ -56,7 +56,8 @@ public:
 private:
     QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate,
                    const QStringList &displayExtraHeaders, bool isPrinting,
-                   const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons = true) const;
+                   const MessageViewer::HeaderStyle *style, KMime::Message *message,
+                   bool showEmoticons = true) const;
     class Private;
     Private *const d;
 };

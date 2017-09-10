@@ -44,8 +44,8 @@
 using namespace MessageComposer;
 
 RecipientsPicker::RecipientsPicker(QWidget *parent)
-    : QDialog(parent),
-      mLdapSearchDialog(nullptr)
+    : QDialog(parent)
+    , mLdapSearchDialog(nullptr)
 {
     setObjectName(QStringLiteral("RecipientsPicker"));
     setWindowTitle(i18n("Select Recipient"));
@@ -223,4 +223,3 @@ void RecipientsPicker::ldapSearchResult()
         }
     }
 }
-

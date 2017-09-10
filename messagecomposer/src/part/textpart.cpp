@@ -25,10 +25,9 @@ class Q_DECL_HIDDEN TextPart::Private
 {
 public:
     Private()
-        : wordWrappingEnabled(true),
-          warnBadCharset(true)
+        : wordWrappingEnabled(true)
+        , warnBadCharset(true)
     {
-
     }
 
     bool wordWrappingEnabled;
@@ -119,4 +118,3 @@ void TextPart::setEmbeddedImages(const KPIMTextEdit::ImageList &images)
 {
     d->embeddedImages = images;
 }
-

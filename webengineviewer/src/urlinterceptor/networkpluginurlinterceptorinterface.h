@@ -24,8 +24,7 @@
 class QWebEngineUrlRequestInfo;
 class KActionCollection;
 class QAction;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebHitTestResult;
 class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObject
 {

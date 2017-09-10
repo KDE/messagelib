@@ -28,11 +28,11 @@ using namespace WebEngineViewer;
 
 struct UrlCacheInfo {
     UrlCacheInfo()
-        : status(CheckPhishingUrlCache::Unknown),
-          verifyCacheAfterThisTime(0)
+        : status(CheckPhishingUrlCache::Unknown)
+        , verifyCacheAfterThisTime(0)
     {
-
     }
+
     bool isMalWare() const;
     bool isValid() const;
     CheckPhishingUrlCache::UrlStatus status;
@@ -41,12 +41,12 @@ struct UrlCacheInfo {
 
 bool UrlCacheInfo::isMalWare() const
 {
-    return (status == CheckPhishingUrlCache::MalWare);
+    return status == CheckPhishingUrlCache::MalWare;
 }
 
 bool UrlCacheInfo::isValid() const
 {
-    return (status != CheckPhishingUrlCache::Unknown);
+    return status != CheckPhishingUrlCache::Unknown;
 }
 
 class WebEngineViewer::CheckPhishingUrlCachePrivate
@@ -56,6 +56,7 @@ public:
     {
         load();
     }
+
     CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
     void addCheckPhishingUrlResult(const QUrl &url, bool correctUrl, uint verifyCacheAfterThisTime);
     void clearCache();
@@ -146,10 +147,9 @@ void CheckPhishingUrlCachePrivate::addCheckPhishingUrlResult(const QUrl &url, bo
 }
 
 CheckPhishingUrlCache::CheckPhishingUrlCache(QObject *parent)
-    : QObject(parent),
-      d(new CheckPhishingUrlCachePrivate)
+    : QObject(parent)
+    , d(new CheckPhishingUrlCachePrivate)
 {
-
 }
 
 CheckPhishingUrlCache::~CheckPhishingUrlCache()
@@ -177,4 +177,3 @@ CheckPhishingUrlCache *CheckPhishingUrlCache::self()
     static CheckPhishingUrlCache s_self;
     return &s_self;
 }
-

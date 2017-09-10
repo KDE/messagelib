@@ -23,9 +23,7 @@
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 class ApplicationPGPEncryptedBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const ApplicationPGPEncryptedBodyPartFormatter *self;
@@ -34,7 +32,6 @@ public:
     using Interface::BodyPartFormatter::format;
     static const Interface::BodyPartFormatter *create();
 };
-
 }
 
 #endif

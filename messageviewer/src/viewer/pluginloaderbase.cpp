@@ -52,8 +52,8 @@ QStringList PluginLoaderBase::types() const
 
 const PluginMetaData *PluginLoaderBase::infoForName(const QString &type) const
 {
-    return mPluginMap.contains(type) ? &(const_cast<PluginLoaderBase *>(this)->mPluginMap[type]) :
-           nullptr;
+    return mPluginMap.contains(type) ? &(const_cast<PluginLoaderBase *>(this)->mPluginMap[type])
+           : nullptr;
 }
 
 void PluginLoaderBase::doScan(const char *path)

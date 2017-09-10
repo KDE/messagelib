@@ -28,8 +28,6 @@
 
 using namespace MessageComposer;
 
-
-
 class PluginEditorInitInfo
 {
 public:

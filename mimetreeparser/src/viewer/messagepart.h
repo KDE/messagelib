@@ -39,31 +39,26 @@ class PartPrivate;
 class TextPartRendered;
 class AttachmentMessagePartRenderer;
 
-namespace GpgME
-{
+namespace GpgME {
 class ImportResult;
 }
 
-namespace QGpgME
-{
+namespace QGpgME {
 class Protocol;
 }
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class ObjectTreeParser;
 class HtmlWriter;
 class HTMLBlock;
 typedef QSharedPointer<HTMLBlock> HTMLBlockPtr;
 class CryptoBodyPartMemento;
 class MultiPartAlternativeBodyPartFormatter;
-namespace Interface
-{
+namespace Interface {
 class ObjectTreeSource;
 }
 
@@ -76,8 +71,7 @@ class MIMETREEPARSER_EXPORT MessagePart : public Interface::MessagePart
     Q_PROPERTY(bool isHidden READ isHidden)
 public:
     typedef QSharedPointer<MessagePart> Ptr;
-    MessagePart(ObjectTreeParser *otp,
-                const QString &text);
+    MessagePart(ObjectTreeParser *otp, const QString &text);
 
     virtual ~MessagePart();
 
@@ -326,11 +320,7 @@ class MIMETREEPARSER_EXPORT EncryptedMessagePart : public MessagePart
     Q_PROPERTY(bool passphraseError READ passphraseError)
 public:
     typedef QSharedPointer<EncryptedMessagePart> Ptr;
-    EncryptedMessagePart(ObjectTreeParser *otp,
-                         const QString &text,
-                         const QGpgME::Protocol *cryptoProto,
-                         const QString &fromAddress,
-                         KMime::Content *node);
+    EncryptedMessagePart(ObjectTreeParser *otp, const QString &text, const QGpgME::Protocol *cryptoProto, const QString &fromAddress, KMime::Content *node);
 
     virtual ~EncryptedMessagePart();
 
@@ -381,11 +371,7 @@ class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
     Q_PROPERTY(bool isSigned READ isSigned)
 public:
     typedef QSharedPointer<SignedMessagePart> Ptr;
-    SignedMessagePart(ObjectTreeParser *otp,
-                      const QString &text,
-                      const QGpgME::Protocol *cryptoProto,
-                      const QString &fromAddress,
-                      KMime::Content *node);
+    SignedMessagePart(ObjectTreeParser *otp, const QString &text, const QGpgME::Protocol *cryptoProto, const QString &fromAddress, KMime::Content *node);
 
     virtual ~SignedMessagePart();
 
@@ -422,7 +408,6 @@ protected:
     friend class DefaultRendererPrivate;
     friend class ::PartPrivate;
 };
-
 }
 
 #endif //__MIMETREEPARSER_MESSAGEPART_H__

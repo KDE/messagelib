@@ -23,8 +23,7 @@
 #include <QWebEngineView>
 #include <QWebEngineScript>
 #include "webengineviewer_export.h"
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebEngineViewPrivate;
 class WebEngineManageScript;
 class LocalDataBaseManager;

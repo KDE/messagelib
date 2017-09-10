@@ -46,12 +46,12 @@
 #include <QTextDocument>
 #include <QLocale>
 
-namespace
-{
+namespace {
 Q_DECL_CONSTEXPR inline int pipeTimeout()
 {
-    return (15 * 1000);
+    return 15 * 1000;
 }
+
 static QTextCodec *selectCharset(const QStringList &charsets, const QString &text)
 {
     for (const QString &name : charsets) {
@@ -83,14 +83,17 @@ static QTextCodec *selectCharset(const QStringList &charsets, const QString &tex
 }
 using namespace TemplateParser;
 
-TemplateParserJob::TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode) :
-    mMode(amode), mIdentity(0),
-    mAllowDecryption(true),
-    mDebug(false), mQuoteString(QStringLiteral("> ")), m_identityManager(nullptr),
-    mWrap(true),
-    mColWrap(80),
-    mQuotes(ReplyAsOriginalMessage),
-    mForceCursorPosition(false)
+TemplateParserJob::TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode)
+    : mMode(amode)
+    , mIdentity(0)
+    , mAllowDecryption(true)
+    , mDebug(false)
+    , mQuoteString(QStringLiteral("> "))
+    , m_identityManager(nullptr)
+    , mWrap(true)
+    , mColWrap(80)
+    , mQuotes(ReplyAsOriginalMessage)
+    , mForceCursorPosition(false)
 {
     mMsg = amsg;
 
@@ -134,8 +137,7 @@ void TemplateParserJob::setCharsets(const QStringList &charsets)
     m_charsets = charsets;
 }
 
-int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str,
-                                   QString &quote)
+int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str, QString &quote)
 {
     int pos = prefix.length();
     int len;
@@ -254,8 +256,7 @@ QString TemplateParserJob::getLastName(const QString &str)
     return res;
 }
 
-void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
-                                qint64 afolder)
+void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg, qint64 afolder)
 {
     if (aorig_msg == nullptr) {
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
@@ -273,8 +274,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg,
     processWithTemplate(tmpl);
 }
 
-void TemplateParserJob::process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg,
-                                qint64 afolder)
+void TemplateParserJob::process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg, qint64 afolder)
 {
     mForceCursorPosition = false;
     mOrigMsg = aorig_msg;
@@ -283,8 +283,7 @@ void TemplateParserJob::process(const QString &tmplName, const KMime::Message::P
     processWithTemplate(tmpl);
 }
 
-void TemplateParserJob::processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg,
-        qint64 afolder)
+void TemplateParserJob::processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg, qint64 afolder)
 {
     mIdentity = uoid;
     process(aorig_msg, afolder);
@@ -337,7 +336,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: -";
                 dnl = true;
                 i += 1;
-
             } else if (cmd.startsWith(QStringLiteral("REM="))) {
                 // comments
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: REM=";
@@ -391,7 +389,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                         i18nc("@info",
                               "Cannot insert content from file %1: %2", path, file.errorString()));
                 }
-
             } else if (cmd.startsWith(QStringLiteral("SYSTEM="))) {
                 // insert content of specified file as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: SYSTEM=";
@@ -403,7 +400,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("QUOTEPIPE="))) {
                 // pipe message body through command and insert it as quotation
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QUOTEPIPE=";
@@ -412,63 +408,58 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += len;
                 const QString pipe_cmd = q;
                 if (mOrigMsg) {
-                    const QString plainStr =
-                        pipe(pipe_cmd, plainMessageText(shouldStripSignature(), NoSelectionAllowed));
+                    const QString plainStr
+                        = pipe(pipe_cmd, plainMessageText(shouldStripSignature(), NoSelectionAllowed));
                     QString plainQuote = quotedPlainText(plainStr);
                     if (plainQuote.endsWith(QLatin1Char('\n'))) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
 
-                    const QString htmlStr =
-                        pipe(pipe_cmd, htmlMessageText(shouldStripSignature(), NoSelectionAllowed));
+                    const QString htmlStr
+                        = pipe(pipe_cmd, htmlMessageText(shouldStripSignature(), NoSelectionAllowed));
                     const QString htmlQuote = quotedHtmlText(htmlStr);
                     htmlBody.append(htmlQuote);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("QUOTE"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QUOTE";
                 i += strlen("QUOTE");
                 if (mOrigMsg) {
-                    QString plainQuote =
-                        quotedPlainText(plainMessageText(shouldStripSignature(), SelectionAllowed));
+                    QString plainQuote
+                        = quotedPlainText(plainMessageText(shouldStripSignature(), SelectionAllowed));
                     if (plainQuote.endsWith(QLatin1Char('\n'))) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
 
-                    const QString htmlQuote =
-                        quotedHtmlText(htmlMessageText(shouldStripSignature(), SelectionAllowed));
+                    const QString htmlQuote
+                        = quotedHtmlText(htmlMessageText(shouldStripSignature(), SelectionAllowed));
                     htmlBody.append(htmlQuote);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("FORCEDPLAIN"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FORCEDPLAIN";
                 mQuotes = ReplyAsPlain;
                 i += strlen("FORCEDPLAIN");
-
             } else if (cmd.startsWith(QStringLiteral("FORCEDHTML"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FORCEDHTML";
                 mQuotes = ReplyAsHtml;
                 i += strlen("FORCEDHTML");
-
             } else if (cmd.startsWith(QStringLiteral("QHEADERS"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QHEADERS";
                 i += strlen("QHEADERS");
                 if (mOrigMsg) {
-                    QString plainQuote =
-                        quotedPlainText(QString::fromLatin1(MessageCore::StringUtil::headerAsSendableString(mOrigMsg)));
+                    QString plainQuote
+                        = quotedPlainText(QString::fromLatin1(MessageCore::StringUtil::headerAsSendableString(mOrigMsg)));
                     if (plainQuote.endsWith(QLatin1Char('\n'))) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
 
-                    const QString htmlQuote =
-                        quotedHtmlText(QString::fromLatin1(MessageCore::StringUtil::headerAsSendableString(mOrigMsg)));
+                    const QString htmlQuote
+                        = quotedHtmlText(QString::fromLatin1(MessageCore::StringUtil::headerAsSendableString(mOrigMsg)));
                     const QString str = plainToHtml(htmlQuote);
                     htmlBody.append(str);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("HEADERS"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADERS";
                 i += strlen("HEADERS");
@@ -478,7 +469,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("TEXTPIPE="))) {
                 // pipe message body through command and insert it as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TEXTPIPE=";
@@ -487,15 +477,14 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += len;
                 const QString pipe_cmd = q;
                 if (mOrigMsg) {
-                    const QString plainStr =
-                        pipe(pipe_cmd, plainMessageText(shouldStripSignature(), NoSelectionAllowed));
+                    const QString plainStr
+                        = pipe(pipe_cmd, plainMessageText(shouldStripSignature(), NoSelectionAllowed));
                     plainBody.append(plainStr);
 
-                    const QString htmlStr =
-                        pipe(pipe_cmd, htmlMessageText(shouldStripSignature(), NoSelectionAllowed));
+                    const QString htmlStr
+                        = pipe(pipe_cmd, htmlMessageText(shouldStripSignature(), NoSelectionAllowed));
                     htmlBody.append(htmlStr);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("MSGPIPE="))) {
                 // pipe full message through command and insert result as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: MSGPIPE=";
@@ -510,7 +499,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("BODYPIPE="))) {
                 // pipe message body generated so far through command and insert result as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: BODYPIPE=";
@@ -524,7 +512,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const QString htmlStr = pipe(pipe_cmd, htmlBody);
                 const QString body = plainToHtml(htmlStr);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("CLEARPIPE="))) {
                 // pipe message body generated so far through command and
                 // insert result as is replacing current body
@@ -542,7 +529,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 KMime::Headers::Generic *header = new KMime::Headers::Generic("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(0), "utf-8");
                 mMsg->setHeader(header);
-
             } else if (cmd.startsWith(QStringLiteral("TEXT"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TEXT";
                 i += strlen("TEXT");
@@ -553,7 +539,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString htmlStr = htmlMessageText(shouldStripSignature(), NoSelectionAllowed);
                     htmlBody.append(htmlStr);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTEXTSIZE"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTEXTSIZE";
                 i += strlen("OTEXTSIZE");
@@ -563,7 +548,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTEXT"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTEXT";
                 i += strlen("OTEXT");
@@ -574,7 +558,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString htmlStr = htmlMessageText(shouldStripSignature(), NoSelectionAllowed);
                     htmlBody.append(htmlStr);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OADDRESSEESADDR"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OADDRESSEESADDR";
                 i += strlen("OADDRESSEESADDR");
@@ -582,7 +565,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString to = mOrigMsg->to()->asUnicodeString();
                     const QString cc = mOrigMsg->cc()->asUnicodeString();
                     if (!to.isEmpty()) {
-                        const QString toLine =  i18nc("@item:intext email To", "To:") + QLatin1Char(' ') + to;
+                        const QString toLine = i18nc("@item:intext email To", "To:") + QLatin1Char(' ') + to;
                         plainBody.append(toLine);
                         const QString body = plainToHtml(toLine);
                         htmlBody.append(body);
@@ -599,7 +582,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                         htmlBody.append(str);
                     }
                 }
-
             } else if (cmd.startsWith(QStringLiteral("CCADDR"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCADDR";
                 i += strlen("CCADDR");
@@ -607,7 +589,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("CCNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCNAME";
                 i += strlen("CCNAME");
@@ -615,7 +596,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("CCFNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCFNAME";
                 i += strlen("CCFNAME");
@@ -623,7 +603,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(getFirstName(str));
                 const QString body = plainToHtml(getFirstName(str));
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("CCLNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCLNAME";
                 i += strlen("CCLNAME");
@@ -631,7 +610,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(getLastName(str));
                 const QString body = plainToHtml(getLastName(str));
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("TOADDR"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOADDR";
                 i += strlen("TOADDR");
@@ -639,7 +617,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("TONAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TONAME";
                 i += strlen("TONAME");
@@ -647,7 +624,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("TOFNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOFNAME";
                 i += strlen("TOFNAME");
@@ -655,7 +631,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(getFirstName(str));
                 const QString body = plainToHtml(getFirstName(str));
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("TOLNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOLNAME";
                 i += strlen("TOLNAME");
@@ -663,7 +638,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(getLastName(str));
                 const QString body = plainToHtml(getLastName(str));
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("TOLIST"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOLIST";
                 i += strlen("TOLIST");
@@ -671,7 +645,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("FROMADDR"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMADDR";
                 i += strlen("FROMADDR");
@@ -679,7 +652,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("FROMNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMNAME";
                 i += strlen("FROMNAME");
@@ -687,7 +659,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("FROMFNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMFNAME";
                 i += strlen("FROMFNAME");
@@ -695,7 +666,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(getFirstName(str));
                 const QString body = plainToHtml(getFirstName(str));
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("FROMLNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMLNAME";
                 i += strlen("FROMLNAME");
@@ -703,7 +673,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(getLastName(str));
                 const QString body = plainToHtml(getLastName(str));
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("FULLSUBJECT")) || cmd.startsWith(QStringLiteral("FULLSUBJ"))) {
                 if (cmd.startsWith(QStringLiteral("FULLSUBJ"))) {
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: FULLSUBJ";
@@ -716,7 +685,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("MSGID"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: MSGID";
                 i += strlen("MSGID");
@@ -724,7 +692,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("OHEADER="))) {
                 // insert specified content of header from original message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OHEADER=";
@@ -741,7 +708,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("HEADER="))) {
                 // insert specified content of header from current message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADER=";
@@ -756,7 +722,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("HEADER( "))) {
                 // insert specified content of header from current message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADER(";
@@ -777,7 +742,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OCCADDR"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OCCADDR";
                 i += strlen("OCCADDR");
@@ -787,7 +751,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OCCNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OCCNAME";
                 i += strlen("OCCNAME");
@@ -797,7 +760,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OCCFNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OCCFNAME";
                 i += strlen("OCCFNAME");
@@ -807,7 +769,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(getFirstName(str));
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OCCLNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OCCLNAME";
                 i += strlen("OCCLNAME");
@@ -817,7 +778,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(getLastName(str));
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTOADDR"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTOADDR";
                 i += strlen("OTOADDR");
@@ -827,7 +787,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTONAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTONAME";
                 i += strlen("OTONAME");
@@ -837,7 +796,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTOFNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTOFNAME";
                 i += strlen("OTOFNAME");
@@ -847,7 +805,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(getFirstName(str));
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTOLNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTOLNAME";
                 i += strlen("OTOLNAME");
@@ -857,7 +814,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(getLastName(str));
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTOLIST"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTOLIST";
                 i += strlen("OTOLIST");
@@ -867,7 +823,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTO"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTO";
                 i += strlen("OTO");
@@ -877,7 +832,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OFROMADDR"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OFROMADDR";
                 i += strlen("OFROMADDR");
@@ -887,7 +841,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OFROMNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OFROMNAME";
                 i += strlen("OFROMNAME");
@@ -897,7 +850,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OFROMFNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OFROMFNAME";
                 i += strlen("OFROMFNAME");
@@ -907,7 +859,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(getFirstName(str));
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OFROMLNAME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OFROMLNAME";
                 i += strlen("OFROMLNAME");
@@ -917,7 +868,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(getLastName(str));
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OFULLSUBJECT")) || cmd.startsWith(QStringLiteral("OFULLSUBJ"))) {
                 if (cmd.startsWith(QStringLiteral("OFULLSUBJECT"))) {
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: OFULLSUBJECT";
@@ -932,7 +882,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OMSGID"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OMSGID";
                 i += strlen("OMSGID");
@@ -942,7 +891,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("DATEEN"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DATEEN";
                 i += strlen("DATEEN");
@@ -952,7 +900,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("DATESHORT"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DATESHORT";
                 i += strlen("DATESHORT");
@@ -961,7 +908,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("DATE"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DATE";
                 i += strlen("DATE");
@@ -970,7 +916,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("DOW"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DOW";
                 i += strlen("DOW");
@@ -979,7 +924,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("TIMELONGEN"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TIMELONGEN";
                 i += strlen("TIMELONGEN");
@@ -989,7 +933,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("TIMELONG"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TIMELONG";
                 i += strlen("TIMELONG");
@@ -998,7 +941,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("TIME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TIME";
                 i += strlen("TIME");
@@ -1007,7 +949,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainToHtml(str);
                 htmlBody.append(body);
-
             } else if (cmd.startsWith(QStringLiteral("ODATEEN"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODATEEN";
                 i += strlen("ODATEEN");
@@ -1018,7 +959,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("ODATESHORT"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODATESHORT";
                 i += strlen("ODATESHORT");
@@ -1029,7 +969,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("ODATE"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODATE";
                 i += strlen("ODATE");
@@ -1040,7 +979,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("ODOW"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODOW";
                 i += strlen("ODOW");
@@ -1051,7 +989,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTIMELONGEN"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTIMELONGEN";
                 i += strlen("OTIMELONGEN");
@@ -1073,7 +1010,6 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("OTIME"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTIME";
                 i += strlen("OTIME");
@@ -1084,17 +1020,14 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainToHtml(str);
                     htmlBody.append(body);
                 }
-
             } else if (cmd.startsWith(QStringLiteral("BLANK"))) {
                 // do nothing
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: BLANK";
                 i += strlen("BLANK");
-
             } else if (cmd.startsWith(QStringLiteral("NOP"))) {
                 // do nothing
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: NOP";
                 i += strlen("NOP");
-
             } else if (cmd.startsWith(QStringLiteral("CLEAR"))) {
                 // clear body buffer; not too useful yet
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CLEAR";
@@ -1109,13 +1042,11 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DEBUGOFF";
                 i += strlen("DEBUGOFF");
                 mDebug = false;
-
             } else if (cmd.startsWith(QStringLiteral("DEBUG"))) {
                 // turn on debug
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DEBUG";
                 i += strlen("DEBUG");
                 mDebug = true;
-
             } else if (cmd.startsWith(QStringLiteral("CURSOR"))) {
                 // turn on debug
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CURSOR";
@@ -1140,18 +1071,16 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("SIGNATURE");
                 plainBody.append(getPlainSignature());
                 htmlBody.append(getHtmlSignature());
-
             } else {
                 // wrong command, do nothing
                 plainBody.append(c);
                 htmlBody.append(c);
             }
-
         } else if (dnl && (c == QLatin1Char('\n') || c == QLatin1Char('\r'))) {
             // skip
-            if ((tmpl.size() > i + 1) &&
-                    ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r')) ||
-                     (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
+            if ((tmpl.size() > i + 1)
+                && ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r'))
+                    || (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
                 // skip one more
                 i += 1;
             }
@@ -1161,9 +1090,9 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
             if (c == QLatin1Char('\n') || c == QLatin1Char('\r')) {
                 htmlBody.append(QStringLiteral("<br />"));
                 htmlBody.append(c);
-                if (tmpl.size() > i + 1 &&
-                        ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r')) ||
-                         (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
+                if (tmpl.size() > i + 1
+                    && ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r'))
+                        || (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
                     htmlBody.append(tmpl[i + 1]);
                     plainBody.append(tmpl[i + 1]);
                     i += 1;
@@ -1177,9 +1106,9 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     // there is no use of FORCED command but a configure setting has ReplyUsingHtml disabled,
     // OR the original mail has no HTML part.
     const KMime::Content *content = mOrigMsg->mainBodyPart("text/html");
-    if (mQuotes == ReplyAsPlain ||
-            (mQuotes != ReplyAsHtml && !TemplateParserSettings::self()->replyUsingHtml()) ||
-            (!content || !content->hasContent())) {
+    if (mQuotes == ReplyAsPlain
+        || (mQuotes != ReplyAsHtml && !TemplateParserSettings::self()->replyUsingHtml())
+        || (!content || !content->hasContent())) {
         htmlBody.clear();
     } else {
         makeValidHtml(htmlBody);
@@ -1190,36 +1119,37 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
 
 QString TemplateParserJob::getPlainSignature() const
 {
-    const KIdentityManagement::Identity &identity =
-        m_identityManager->identityForUoid(mIdentity);
+    const KIdentityManagement::Identity &identity
+        = m_identityManager->identityForUoid(mIdentity);
 
     if (identity.isNull()) {
         return QString();
     }
 
-    KIdentityManagement::Signature signature =
-        const_cast<KIdentityManagement::Identity &>(identity).signature();
+    KIdentityManagement::Signature signature
+        = const_cast<KIdentityManagement::Identity &>(identity).signature();
 
-    if (signature.type() == KIdentityManagement::Signature::Inlined &&
-            signature.isInlinedHtml()) {
+    if (signature.type() == KIdentityManagement::Signature::Inlined
+        && signature.isInlinedHtml()) {
         return signature.toPlainText();
     } else {
         return signature.rawText();
     }
 }
+
 // TODO If %SIGNATURE command is on, then override it with signature from
 // "KMail configure->General->identity->signature".
 // There should be no two signatures.
 QString TemplateParserJob::getHtmlSignature() const
 {
-    const KIdentityManagement::Identity &identity =
-        m_identityManager->identityForUoid(mIdentity);
+    const KIdentityManagement::Identity &identity
+        = m_identityManager->identityForUoid(mIdentity);
     if (identity.isNull()) {
         return QString();
     }
 
-    KIdentityManagement::Signature signature =
-        const_cast<KIdentityManagement::Identity &>(identity).signature();
+    KIdentityManagement::Signature signature
+        = const_cast<KIdentityManagement::Identity &>(identity).signature();
 
     if (!signature.isInlinedHtml()) {
         signature = signature.rawText().toHtmlEscaped();
@@ -1228,8 +1158,7 @@ QString TemplateParserJob::getHtmlSignature() const
     return signature.rawText();
 }
 
-void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody,
-        const QString &htmlBody) const
+void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, const QString &htmlBody) const
 {
     MessageCore::ImageCollector ic;
     ic.collectImagesFrom(mOrigMsg.data());
@@ -1238,7 +1167,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody,
     // is either only the new text or the new text with some attachments.
     const auto parts = mMsg->contents();
     for (KMime::Content *content : parts) {
-        mMsg->removeContent(content, true/*delete*/);
+        mMsg->removeContent(content, true /*delete*/);
     }
 
     // Set To and CC from the template
@@ -1253,10 +1182,10 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody,
     mMsg->contentType()->clear(); // to get rid of old boundary
 
     //const QByteArray boundary = KMime::multiPartBoundary();
-    KMime::Content *const mainTextPart =
-        htmlBody.isEmpty() ?
-        createPlainPartContent(plainBody) :
-        createMultipartAlternativeContent(plainBody, htmlBody);
+    KMime::Content *const mainTextPart
+        = htmlBody.isEmpty()
+          ? createPlainPartContent(plainBody)
+          : createMultipartAlternativeContent(plainBody, htmlBody);
     mainTextPart->assemble();
 
     KMime::Content *textPart = mainTextPart;
@@ -1284,8 +1213,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody,
     mMsg->parse();
 }
 
-KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Content *> &attachments,
-        KMime::Content *textPart) const
+KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Content *> &attachments, KMime::Content *textPart) const
 {
     KMime::Content *mixedPart = new KMime::Content(mMsg.data());
     const QByteArray boundary = KMime::multiPartBoundary();
@@ -1300,8 +1228,8 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Con
         // If the content type has no name or filename parameter, add one, since otherwise the name
         // would be empty in the attachment view of the composer, which looks confusing
         if (attachment->contentType(false)) {
-            if (!attachment->contentType()->hasParameter(QStringLiteral("name")) &&
-                    !attachment->contentType()->hasParameter(QStringLiteral("filename"))) {
+            if (!attachment->contentType()->hasParameter(QStringLiteral("name"))
+                && !attachment->contentType()->hasParameter(QStringLiteral("filename"))) {
                 attachment->contentType()->setParameter(
                     QStringLiteral("name"), i18nc("@item:intext", "Attachment %1", attachmentNumber));
             }
@@ -1311,8 +1239,7 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Con
     return mixedPart;
 }
 
-KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::ImageCollector &ic,
-        KMime::Content *mainTextPart) const
+KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::ImageCollector &ic, KMime::Content *mainTextPart) const
 {
     KMime::Content *relatedPart = new KMime::Content(mMsg.data());
     const QByteArray boundary = KMime::multiPartBoundary();
@@ -1338,8 +1265,7 @@ KMime::Content *TemplateParserJob::createPlainPartContent(const QString &plainBo
     return textPart;
 }
 
-KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QString &plainBody,
-        const QString &htmlBody) const
+KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const
 {
     KMime::Content *multipartAlternative = new KMime::Content(mMsg.data());
     multipartAlternative->contentType()->setMimeType("multipart/alternative");
@@ -1531,8 +1457,7 @@ void TemplateParserJob::setWordWrap(bool wrap, int wrapColWidth)
     mColWrap = wrapColWidth;
 }
 
-QString TemplateParserJob::plainMessageText(bool aStripSignature,
-        AllowSelection isSelectionAllowed) const
+QString TemplateParserJob::plainMessageText(bool aStripSignature, AllowSelection isSelectionAllowed) const
 {
     if (!mSelection.isEmpty() && (isSelectionAllowed == SelectionAllowed)) {
         return mSelection;
@@ -1585,8 +1510,8 @@ QString TemplateParserJob::quotedPlainText(const QString &selection) const
         content.remove(0, static_cast<unsigned int>(lineStart));
     }
 
-    const QString indentStr =
-        MessageCore::StringUtil::formatQuotePrefix(mQuoteString, mOrigMsg->from()->displayString());
+    const QString indentStr
+        = MessageCore::StringUtil::formatQuotePrefix(mQuoteString, mOrigMsg->from()->displayString());
     if (TemplateParserSettings::self()->smartQuote() && mWrap) {
         content = MessageCore::StringUtil::smartQuote(content, mColWrap - indentStr.length());
     }
@@ -1621,7 +1546,7 @@ uint TemplateParserJob::identityUoid(const KMime::Message::Ptr &msg) const
 
     if (!ok || id == 0) {
         id = m_identityManager->identityForAddress(
-                 msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString()).uoid();
+            msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString()).uoid();
     }
 
     return id;
@@ -1629,15 +1554,15 @@ uint TemplateParserJob::identityUoid(const KMime::Message::Ptr &msg) const
 
 bool TemplateParserJob::isHtmlSignature() const
 {
-    const KIdentityManagement::Identity &identity =
-        m_identityManager->identityForUoid(mIdentity);
+    const KIdentityManagement::Identity &identity
+        = m_identityManager->identityForUoid(mIdentity);
 
     if (identity.isNull()) {
         return false;
     }
 
-    const KIdentityManagement::Signature signature =
-        const_cast<KIdentityManagement::Identity &>(identity).signature();
+    const KIdentityManagement::Signature signature
+        = const_cast<KIdentityManagement::Identity &>(identity).signature();
 
     return signature.isInlinedHtml();
 }

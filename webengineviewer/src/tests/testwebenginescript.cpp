@@ -167,14 +167,14 @@ void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
     scriptCombo->addItem(QStringLiteral("scroll percentage"), WebEngineViewer::WebEngineScript::scrollPercentage(0));
     scriptCombo->addItem(QStringLiteral("Test is bottom"), WebEngineViewer::WebEngineScript::isScrolledToBottom());
 #if 0
-    WebEngineViewer::WebEngineScript::setElementByIdVisible(const QString & elementStr, bool visibility);
-    WebEngineViewer::WebEngineScript::setStyleToElement(const QString & elementStr, const QString & style);
+    WebEngineViewer::WebEngineScript::setElementByIdVisible(const QString &elementStr, bool visibility);
+    WebEngineViewer::WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style);
     WebEngineViewer::WebEngineScript::scrollToRelativePosition(int pos);
-    WebEngineViewer::WebEngineScript::removeStyleToElement(const QString & element);
-    WebEngineViewer::WebEngineScript::injectAttachments(const QString & delayedHtml, const QString & element);
-    WebEngineViewer::WebEngineScript::toggleFullAddressList(const QString & field, const QString & html, bool doShow);
-    WebEngineViewer::WebEngineScript::replaceInnerHtml(const QString & field, const QString & html, bool doShow);
-    WebEngineViewer::WebEngineScript::updateToggleFullAddressList(const QString & field, bool doShow);
+    WebEngineViewer::WebEngineScript::removeStyleToElement(const QString &element);
+    WebEngineViewer::WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &element);
+    WebEngineViewer::WebEngineScript::toggleFullAddressList(const QString &field, const QString &html, bool doShow);
+    WebEngineViewer::WebEngineScript::replaceInnerHtml(const QString &field, const QString &html, bool doShow);
+    WebEngineViewer::WebEngineScript::updateToggleFullAddressList(const QString &field, bool doShow);
 #endif
     //TODO
 }

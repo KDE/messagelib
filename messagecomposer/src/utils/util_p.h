@@ -25,27 +25,21 @@
 #include "Libkleo/Enum"
 #include <KMime/Message>
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace MailTransport
-{
+namespace MailTransport {
 class MessageQueueJob;
 }
 
-namespace MessageComposer
-{
-
-namespace Util
-{
-
+namespace MessageComposer {
+namespace Util {
 /**
       * Sets the proper structural information such as content-type, cte, and charset on the encoded body content. Depending on the crypto options,
       *  original content may be needed to determine some of the values
       */
-KMime::Content *composeHeadersAndBody(KMime::Content *orig, QByteArray encodedBody,  Kleo::CryptoMessageFormat format, bool sign, const QByteArray &hashAlgo = "pgp-sha1");
+KMime::Content *composeHeadersAndBody(KMime::Content *orig, QByteArray encodedBody, Kleo::CryptoMessageFormat format, bool sign, const QByteArray &hashAlgo = "pgp-sha1");
 
 /**
       * Sets the content-type for the top level of the mime content, based on the crypto format and if a signature is used.
@@ -69,7 +63,6 @@ void setNestedContentDisposition(KMime::Content *content, Kleo::CryptoMessageFor
 bool makeMultiMime(Kleo::CryptoMessageFormat f, bool sign);
 void addSendReplyForwardAction(const KMime::Message::Ptr &message, MailTransport::MessageQueueJob *qjob);
 }
-
 }
 
 #endif

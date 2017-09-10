@@ -190,8 +190,9 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
     , mUpdateReaderWinTimer(nullptr)
     , mResizeTimer(nullptr)
     , mOldGlobalOverrideEncoding(QStringLiteral("---"))
-    , mMsgDisplay(true) // init with dummy value
-    , mCSSHelper(nullptr)
+    , mMsgDisplay(true)
+    ,                   // init with dummy value
+    mCSSHelper(nullptr)
     , mMainWindow(mainWindow)
     , mActionCollection(actionCollection)
     , mCopyAction(nullptr)
@@ -218,7 +219,8 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
     , mCurrentContent(nullptr)
     , mMessagePartNode(nullptr)
     , q(aParent)
-    , mSession(new Akonadi::Session("MessageViewer-" + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
+    , mSession(new Akonadi::Session("MessageViewer-"
+                                    + QByteArray::number(reinterpret_cast<quintptr>(this)), this))
     , mPreviouslyViewedItem(-1)
     , mScamDetectionWarning(nullptr)
     , mOpenAttachmentFolderWidget(nullptr)
@@ -374,8 +376,10 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
 
     const QString filenameText = MimeTreeParser::NodeHelper::fileName(node);
 
-    QPointer<AttachmentDialog> dialog = new AttachmentDialog(mMainWindow, filenameText, offer ? offer->name() : QString(),
-                            QLatin1String("askSave_") + mimetype.name());
+    QPointer<AttachmentDialog> dialog = new AttachmentDialog(mMainWindow, filenameText,
+                                                             offer ? offer->name() : QString(),
+                                                             QLatin1String(
+                                                                 "askSave_") + mimetype.name());
     const int choice = dialog->exec();
     delete dialog;
     if (choice == AttachmentDialog::Save) {
@@ -776,7 +780,7 @@ void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr
 
         if (!f.copy(newPath)) {
             qCDebug(MESSAGEVIEWER_LOG) << " File was not able to copy: filename: " << name
-                                      << " to " << path;
+                                       << " to " << path;
         } else {
             name = newPath;
         }
@@ -2442,7 +2446,7 @@ void ViewerPrivate::slotPrintPreview()
 
 void ViewerPrivate::slotDelayPrintPreview()
 {
-    QPrintPreviewDialog* dialog = new QPrintPreviewDialog(q);
+    QPrintPreviewDialog *dialog = new QPrintPreviewDialog(q);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->resize(800, 750);
 
@@ -2833,7 +2837,7 @@ void ViewerPrivate::slotHandleAttachment(int choice)
     {
         QUrl currentUrl;
         if (Util::saveContents(mMainWindow, KMime::Content::List() << mCurrentContent,
-            currentUrl)) {
+                               currentUrl)) {
             showOpenAttachmentFolderWidget(currentUrl);
         }
         break;
@@ -3096,7 +3100,8 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(const QString &field)
                                                                                     IconNameCache::
                                                                                     instance()->
                                                                                     iconPathFromLocal(
-    imgSrcShow)).url(), /*altTextShow*/ QString())
+                                                                                        imgSrcShow)).url(),
+                                                                /*altTextShow*/ QString())
            +QStringLiteral("</a>")
            +QStringLiteral("<a id=\"kmail%2hide\" href=\"%1\" %3>").arg(urlHandleHide).arg(field).
            arg(visibility)
@@ -3104,7 +3109,8 @@ QString ViewerPrivate::recipientsQuickListLinkHtml(const QString &field)
                                                                                     IconNameCache::
                                                                                     instance()->
                                                                                     iconPathFromLocal(
-    imgSrcHide)).url(), /*altTextHide*/ QString())
+                                                                                        imgSrcHide)).url(),
+                                                                /*altTextHide*/ QString())
            +QStringLiteral("</a>")
            +QStringLiteral("</span>");
 }

@@ -245,9 +245,10 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                     fileExists = job->exec();
                 }
                 if (fileExists) {
-                    QPointer<PimCommon::RenameFileDialog> dlg = new PimCommon::RenameFileDialog(curUrl,
-                                                                                       multiple,
-                                                                                       parent);
+                    QPointer<PimCommon::RenameFileDialog> dlg = new PimCommon::RenameFileDialog(
+                        curUrl,
+                        multiple,
+                        parent);
                     result
                         = static_cast<PimCommon::RenameFileDialog::RenameFileDialogResult>(dlg->exec());
                     if (result == PimCommon::RenameFileDialog::RENAMEFILE_IGNORE

@@ -177,7 +177,6 @@ void FindBarBase::setFoundMatch(bool match)
     }
     mSearch->setStyleSheet(styleSheet);
 #endif
-
 }
 
 void FindBarBase::searchText(bool backward, bool isAutoSearch)
@@ -252,8 +251,8 @@ bool FindBarBase::event(QEvent *e)
             e->accept();
             closeBar();
             return true;
-        } else if (kev->key() == Qt::Key_Enter ||
-                   kev->key() == Qt::Key_Return) {
+        } else if (kev->key() == Qt::Key_Enter
+                   || kev->key() == Qt::Key_Return) {
             e->accept();
             if (shortCutOverride) {
                 return true;
@@ -271,4 +270,3 @@ bool FindBarBase::event(QEvent *e)
     }
     return QWidget::event(e);
 }
-

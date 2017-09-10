@@ -21,10 +21,8 @@
 #include "templateparser_export.h"
 
 class QString;
-namespace TemplateParser
-{
-namespace Util
-{
+namespace TemplateParser {
+namespace Util {
 TEMPLATEPARSER_EXPORT void deleteTemplate(const QString &id);
 }
 }

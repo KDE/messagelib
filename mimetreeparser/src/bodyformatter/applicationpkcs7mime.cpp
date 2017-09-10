@@ -67,8 +67,8 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
         return mp;
     }
 
-    bool isSigned      = (smimeType == QLatin1String("signed-data"));
-    bool isEncrypted   = (smimeType == QLatin1String("enveloped-data"));
+    bool isSigned = (smimeType == QLatin1String("signed-data"));
+    bool isEncrypted = (smimeType == QLatin1String("enveloped-data"));
 
     // Analyze "signTestNode" node to find/verify a signature.
     // If zero part.objectTreeParser() verification was successfully done after
@@ -87,8 +87,8 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
         }
 
         auto _mp = EncryptedMessagePart::Ptr(new EncryptedMessagePart(part.objectTreeParser(),
-                                             node->decodedText(), smimeCrypto,
-                                             part.nodeHelper()->fromAsString(node), node));
+                                                                      node->decodedText(), smimeCrypto,
+                                                                      part.nodeHelper()->fromAsString(node), node));
         mp = _mp;
         _mp->setIsEncrypted(true);
         _mp->setDecryptMessage(part.source()->decryptMessage());
@@ -103,7 +103,6 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
                 isEncrypted = true;
                 part.nodeHelper()->setEncryptionState(node, KMMsgFullyEncrypted);
                 signTestNode = nullptr;
-
             } else {
                 // decryption failed, which could be because the part was encrypted but
                 // decryption failed, or because we didn't know if it was encrypted, tried,
@@ -138,8 +137,8 @@ Interface::MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Inter
         const QTextCodec *aCodec(part.objectTreeParser()->codecFor(signTestNode));
         const QByteArray signaturetext = signTestNode->decodedContent();
         auto _mp = SignedMessagePart::Ptr(new SignedMessagePart(part.objectTreeParser(),
-                                          aCodec->toUnicode(signaturetext), smimeCrypto,
-                                          part.nodeHelper()->fromAsString(node), signTestNode));
+                                                                aCodec->toUnicode(signaturetext), smimeCrypto,
+                                                                part.nodeHelper()->fromAsString(node), signTestNode));
         mp = _mp;
         //mp->setDecryptMessage(part.source()->decryptMessage());
         PartMetaData *messagePart(mp->partMetaData());

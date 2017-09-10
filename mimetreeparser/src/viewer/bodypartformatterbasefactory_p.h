@@ -34,8 +34,7 @@
 #ifndef __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_P_H__
 #define __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_P_H__
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class BodyPartFormatterBaseFactory;
 
 class BodyPartFormatterBaseFactoryPrivate
@@ -51,7 +50,6 @@ public:
     BodyPartFormatterBaseFactory *q;
     TypeRegistry *all;
 };
-
 }
 
 #endif // __MIMETREEPARSER_BODYPARTFORMATTERFACTORY_P_H__

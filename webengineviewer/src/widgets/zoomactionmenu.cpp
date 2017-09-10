@@ -22,8 +22,7 @@
 #include <KActionCollection>
 
 using namespace WebEngineViewer;
-namespace
-{
+namespace {
 qreal zoomBy()
 {
     return 20;
@@ -36,8 +35,8 @@ public:
     ZoomActionMenuPrivate(KActionMenu *qq)
         : q(qq)
     {
-
     }
+
     void createMenu();
     qreal mZoomFactor = 100;
     QAction *mZoomInAction = nullptr;
@@ -48,8 +47,8 @@ public:
 };
 
 ZoomActionMenu::ZoomActionMenu(QObject *parent)
-    : KActionMenu(parent),
-      d(new WebEngineViewer::ZoomActionMenuPrivate(this))
+    : KActionMenu(parent)
+    , d(new WebEngineViewer::ZoomActionMenuPrivate(this))
 {
 }
 

@@ -22,8 +22,7 @@
 
 #include "webengineviewer_private_export.h"
 #include "updatedatabaseinfo.h"
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 //https://developers.google.com/safe-browsing/v4/compression
 class RiceDecoder
 {
@@ -53,7 +52,6 @@ private:
     // The 32-bit value read from |data_|. All bit reading operations operate on
     // |mCurrentWord|.
     uint32_t mCurrentWord;
-
 };
 
 class WEBENGINEVIEWER_TESTS_EXPORT RiceEncodingDecoder

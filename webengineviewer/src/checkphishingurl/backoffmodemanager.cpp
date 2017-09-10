@@ -34,15 +34,16 @@ class WebEngineViewer::BackOffModeManagerPrivate
 {
 public:
     BackOffModeManagerPrivate(BackOffModeManager *qq)
-        : mNumberOfHttpFailed(0),
-          isInOffMode(false),
-          q(qq)
+        : mNumberOfHttpFailed(0)
+        , isInOffMode(false)
+        , q(qq)
     {
         mTimer = new QTimer(q);
         mTimer->setSingleShot(true);
         q->connect(mTimer, &QTimer::timeout, q, &BackOffModeManager::slotTimerFinished);
         load();
     }
+
     void save();
     void load();
     int calculateBackModeTime() const;
@@ -131,10 +132,9 @@ void BackOffModeManagerPrivate::exitBackOffMode()
 }
 
 BackOffModeManager::BackOffModeManager(QObject *parent)
-    : QObject(parent),
-      d(new BackOffModeManagerPrivate(this))
+    : QObject(parent)
+    , d(new BackOffModeManagerPrivate(this))
 {
-
 }
 
 BackOffModeManager::~BackOffModeManager()

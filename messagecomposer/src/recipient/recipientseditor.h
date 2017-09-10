@@ -30,16 +30,12 @@
 
 #include <Libkdepim/MultiplyingLineEditor>
 
-namespace KMime
-{
-namespace Types
-{
+namespace KMime {
+namespace Types {
 class Mailbox;
 }
 }
-namespace MessageComposer
-{
-
+namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT RecipientLineFactory : public KPIM::MultiplyingLineFactory
 {
     Q_OBJECT
@@ -103,7 +99,6 @@ protected:
 private:
     RecipientsEditorPrivate *const d;
 };
-
 }
 
 #endif //MESSAGECOMPOSER_RECIPIENTSEDITORNG_H

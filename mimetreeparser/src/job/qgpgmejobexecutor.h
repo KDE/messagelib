@@ -29,17 +29,14 @@
 
 class QEventLoop;
 
-namespace QGpgME
-{
+namespace QGpgME {
 class DecryptVerifyJob;
 class ImportJob;
 class VerifyDetachedJob;
 class VerifyOpaqueJob;
 }
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 /**
   Helper class for synchronous execution of Kleo crypto jobs.
 */
@@ -49,15 +46,9 @@ class QGpgMEJobExecutor : public QObject
 public:
     explicit QGpgMEJobExecutor(QObject *parent = nullptr);
 
-    GpgME::VerificationResult exec(QGpgME::VerifyDetachedJob *job,
-                                   const QByteArray &signature,
-                                   const QByteArray &signedData);
-    GpgME::VerificationResult exec(QGpgME::VerifyOpaqueJob *job,
-                                   const QByteArray &signedData,
-                                   QByteArray &plainText);
-    std::pair<GpgME::DecryptionResult, GpgME::VerificationResult> exec(QGpgME::DecryptVerifyJob *job,
-            const QByteArray &cipherText,
-            QByteArray &plainText);
+    GpgME::VerificationResult exec(QGpgME::VerifyDetachedJob *job, const QByteArray &signature, const QByteArray &signedData);
+    GpgME::VerificationResult exec(QGpgME::VerifyOpaqueJob *job, const QByteArray &signedData, QByteArray &plainText);
+    std::pair<GpgME::DecryptionResult, GpgME::VerificationResult> exec(QGpgME::DecryptVerifyJob *job, const QByteArray &cipherText, QByteArray &plainText);
     GpgME::ImportResult exec(QGpgME::ImportJob *job, const QByteArray &certData);
 
     GpgME::Error auditLogError() const;
@@ -66,9 +57,7 @@ public:
 private Q_SLOTS:
     void verificationResult(const GpgME::VerificationResult &result);
     void verificationResult(const GpgME::VerificationResult &result, const QByteArray &plainText);
-    void decryptResult(const GpgME::DecryptionResult &decryptionresult,
-                       const GpgME::VerificationResult &verificationresult,
-                       const QByteArray &plainText);
+    void decryptResult(const GpgME::DecryptionResult &decryptionresult, const GpgME::VerificationResult &verificationresult, const QByteArray &plainText);
     void importResult(const GpgME::ImportResult &result);
 
 private:
@@ -80,7 +69,6 @@ private:
     GpgME::Error mAuditLogError;
     QString mAuditLog;
 };
-
 }
 
 #endif

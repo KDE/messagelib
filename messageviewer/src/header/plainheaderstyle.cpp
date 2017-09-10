@@ -127,7 +127,9 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
                                                                                         /* short = */
                                                                                         MessageViewer
                                                                                         ::
-        HeaderStyleUtil::CustomDate)) + QLatin1String("<br/>\n"));
+                                                                                        HeaderStyleUtil
+                                                                                        ::CustomDate))
+                         + QLatin1String("<br/>\n"));
     }
 
     if (strategy->showHeader(QStringLiteral("from"))) {

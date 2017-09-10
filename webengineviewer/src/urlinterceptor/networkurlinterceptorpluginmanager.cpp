@@ -36,7 +36,6 @@ public:
     MailNetworkUrlInterceptorPluginInfo()
         : plugin(nullptr)
     {
-
     }
 
     QString metaDataFileNameBaseName;
@@ -46,8 +45,7 @@ public:
     bool isEnabled;
 };
 
-namespace
-{
+namespace {
 QString pluginVersion()
 {
     return QStringLiteral("1.0");
@@ -60,8 +58,8 @@ public:
     NetworkUrlInterceptorPluginManagerPrivate(NetworkUrlInterceptorPluginManager *qq)
         : q(qq)
     {
-
     }
+
     void initializePluginList();
 
     void loadPlugin(MailNetworkUrlInterceptorPluginInfo *item);
@@ -93,7 +91,7 @@ QVector<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pl
 
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
-    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("webengineviewer"), [](const KPluginMetaData & md) {
+    const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("webengineviewer"), [](const KPluginMetaData &md) {
         return md.serviceTypes().contains(QStringLiteral("WebEngineViewer/UrlInterceptor"));
     });
 
@@ -174,8 +172,8 @@ NetworkUrlInterceptorPluginManager *NetworkUrlInterceptorPluginManager::self()
 }
 
 NetworkUrlInterceptorPluginManager::NetworkUrlInterceptorPluginManager(QObject *parent)
-    : QObject(parent),
-      d(new NetworkUrlInterceptorPluginManagerPrivate(this))
+    : QObject(parent)
+    , d(new NetworkUrlInterceptorPluginManagerPrivate(this))
 {
     d->initializePluginList();
 }

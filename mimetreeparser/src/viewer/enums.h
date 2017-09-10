@@ -19,9 +19,7 @@
 #ifndef __MIMETREEPARSER_ENUMS_H__
 #define __MIMETREEPARSER_ENUMS_H__
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 /**
  * The display update mode: Force updates the display immediately, Delayed updates
  * after some time (150ms by default)
@@ -48,7 +46,6 @@ typedef enum {
     KMMsgFullySigned = 'F',
     KMMsgSignatureProblematic = 'X'
 } KMMsgSignatureState;
-
 }
 
 #endif

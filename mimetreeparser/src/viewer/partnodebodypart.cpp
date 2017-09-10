@@ -44,13 +44,16 @@ using namespace MimeTreeParser;
 
 static int serial = 0;
 
-PartNodeBodyPart::PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content,
-                                   NodeHelper *nodeHelper)
-    : Interface::BodyPart(), mTopLevelContent(topLevelContent), mContent(content),
-      mDefaultDisplay(Interface::BodyPart::None), mNodeHelper(nodeHelper)
+PartNodeBodyPart::PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content, NodeHelper *nodeHelper)
+    : Interface::BodyPart()
+    , mTopLevelContent(topLevelContent)
+    , mContent(content)
+    , mDefaultDisplay(Interface::BodyPart::None)
+    , mNodeHelper(nodeHelper)
     , mObjectTreeParser(otp)
     , mProcessResult(result)
-{}
+{
+}
 
 QString PartNodeBodyPart::makeLink(const QString &path) const
 {

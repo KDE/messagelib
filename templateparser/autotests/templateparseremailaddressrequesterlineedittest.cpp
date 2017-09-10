@@ -27,7 +27,6 @@
 TemplateParserEmailAddressRequesterLineEditTest::TemplateParserEmailAddressRequesterLineEditTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void TemplateParserEmailAddressRequesterLineEditTest::shouldHaveDefaultValue()
@@ -47,7 +46,9 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldAssignValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
     QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
-    const QString str{QStringLiteral("foo")};
+    const QString str{
+        QStringLiteral("foo")
+    };
     w.setText(str);
     QCOMPARE(w.text(), str);
     QCOMPARE(mLineEdit->text(), str);
@@ -57,7 +58,9 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldClearValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
     QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
-    const QString str{QStringLiteral("foo")};
+    const QString str{
+        QStringLiteral("foo")
+    };
     w.setText(str);
     QCOMPARE(w.text(), str);
     w.clear();

@@ -31,8 +31,8 @@ public:
     FollowupReminderCreateJobPrivate()
         : mInfo(new FollowUpReminder::FollowUpReminderInfo)
     {
-
     }
+
     ~FollowupReminderCreateJobPrivate()
     {
         delete mInfo;
@@ -43,10 +43,9 @@ public:
 };
 
 FollowupReminderCreateJob::FollowupReminderCreateJob(QObject *parent)
-    : KJob(parent),
-      d(new MessageComposer::FollowupReminderCreateJobPrivate)
+    : KJob(parent)
+    , d(new MessageComposer::FollowupReminderCreateJobPrivate)
 {
-
 }
 
 FollowupReminderCreateJob::~FollowupReminderCreateJob()

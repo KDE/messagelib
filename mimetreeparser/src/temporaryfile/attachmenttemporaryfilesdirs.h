@@ -25,8 +25,7 @@
 #include <QStringList>
 #include "mimetreeparser_export.h"
 
-namespace MimeTreeParser
-{
+namespace MimeTreeParser {
 class AttachmentTemporaryFilesDirsPrivate;
 
 class MIMETREEPARSER_EXPORT AttachmentTemporaryFilesDirs : public QObject
@@ -52,7 +51,6 @@ private Q_SLOTS:
 private:
     AttachmentTemporaryFilesDirsPrivate *const d;
 };
-
 }
 
 #endif // ATTACHMENTTEMPORARYFILESDIRS_H

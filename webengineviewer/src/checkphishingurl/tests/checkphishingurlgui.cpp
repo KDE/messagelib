@@ -53,12 +53,10 @@ CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
     mJson = new QPlainTextEdit(this);
     mJson->setReadOnly(true);
     layout->addWidget(mJson);
-
 }
 
 CheckPhishingUrlGui::~CheckPhishingUrlGui()
 {
-
 }
 
 void CheckPhishingUrlGui::slotCheckUrl()

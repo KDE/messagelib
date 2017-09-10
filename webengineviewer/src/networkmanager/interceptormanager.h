@@ -25,8 +25,7 @@
 class KActionCollection;
 class QWebEngineView;
 class QAction;
-namespace WebEngineViewer
-{
+namespace WebEngineViewer {
 class WebHitTestResult;
 class NetworkPluginUrlInterceptorInterface;
 class NetworkAccessManagerWebEnginePrivate;

@@ -34,7 +34,6 @@ private Q_SLOTS:
     void shouldClearLineWhenClose();
     void shouldEnableDisableNextPreviousButton();
     void shouldClearAllWhenShowBar();
-
 };
 
 #endif // FINDBARBASETEST_H

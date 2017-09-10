@@ -21,8 +21,8 @@
 
 #include "mimetreeparser_debug.h"
 
-#include<QByteArray>
-#include<QString>
+#include <QByteArray>
+#include <QString>
 
 using namespace MimeTreeParser;
 
@@ -126,6 +126,7 @@ void QueueHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
     cmd.b = contentId;
     mQueue.append(cmd);
 }
+
 void QueueHtmlWriter::extraHead(const QString &extra)
 {
     Command cmd;
@@ -133,4 +134,3 @@ void QueueHtmlWriter::extraHead(const QString &extra)
     cmd.s = extra;
     mQueue.append(cmd);
 }
-
