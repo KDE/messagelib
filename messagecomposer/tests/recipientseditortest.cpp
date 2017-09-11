@@ -26,10 +26,8 @@
 #include <MessageComposer/RecipientsEditor>
 
 #include <qdebug.h>
-#include <KLocalizedString>
 
 #include <kmessagebox.h>
-#include <KAboutData>
 
 #include <QPushButton>
 #include <QLabel>
@@ -92,16 +90,11 @@ void Composer::slotClose()
 
 int main(int argc, char **argv)
 {
-    KAboutData aboutData(QStringLiteral("testrecipienteditor"),
-                         i18n("Test Recipient Editor"), QStringLiteral("0.1"));
     QApplication app(argc, argv);
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     QObject::connect(&app, &QApplication::lastWindowClosed, &app, &QApplication::quit);
 

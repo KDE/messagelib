@@ -18,11 +18,9 @@
 #include "templateeditor_gui.h"
 #include "templateparser/templatestextedit.h"
 
-#include <KLocalizedString>
 
 #include <QHBoxLayout>
 #include <QApplication>
-#include <KAboutData>
 #include <QCommandLineParser>
 #include <QStandardPaths>
 
@@ -42,15 +40,10 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
 
-    KAboutData aboutData(QStringLiteral("templateeditortest_gui"), i18n("TemplateEditorTest_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(i18n("Test for template editor widget"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     TemplateEditorTestWidget *w = new TemplateEditorTestWidget();
     w->resize(800, 600);

@@ -19,8 +19,6 @@
 
 #include "messageviewer/viewer.h"
 #include "messageviewer/headerstylepluginmanager.h"
-#include <KAboutData>
-#include <KLocalizedString>
 #include <KActionCollection>
 
 #include <QApplication>
@@ -37,19 +35,14 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-
-    KAboutData aboutData(QStringLiteral("viewertest_gui"), i18n("Viewertest_Gui"), QStringLiteral(
-                             "1.0"));
-    aboutData.setShortDescription(i18n("Test for MessageViewer"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"),
-                                        i18n("File containing an email")));
+                                        QStringLiteral("File containing an email")));
 
     QCommandLineOption headerStylePluginOption(QStringList() << QStringLiteral(
-                                                   "headerstyleplugin"), i18n(
+                                                   "headerstyleplugin"), QStringLiteral(
                                                    "Header Style Plugin"), QStringLiteral(
                                                    "headerstyleplugin"));
     parser.addOption(headerStylePluginOption);
@@ -58,9 +51,7 @@ int main(int argc, char **argv)
                                       "Show list of plugins installed."));
     parser.addOption(listOption);
 
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     if (parser.isSet(listOption)) {
         qDebug() << "List of Plugin :"

@@ -21,11 +21,9 @@
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <QStandardPaths>
 #include <KActionCollection>
-#include <KLocalizedString>
 
 #include <QApplication>
 #include <QTextEdit>
-#include <KAboutData>
 #include <QCommandLineParser>
 #include <QVBoxLayout>
 #include <QMenuBar>
@@ -99,16 +97,10 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    KAboutData aboutData(QStringLiteral("viewerplugin_gui"), i18n(
-                             "viewerplugin_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(i18n("Test for viewerplugin"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     ViewerPluginTest *w = new ViewerPluginTest();
     w->resize(800, 200);

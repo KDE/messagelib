@@ -21,7 +21,6 @@
 #include "scamdetection/scamdetectionwarningwidget.h"
 #include "scamdetection/scamdetectionwebengine.h"
 
-#include <KLocalizedString>
 
 #include <QUrl>
 #include <QStandardPaths>
@@ -29,7 +28,6 @@
 #include <QPushButton>
 #include <QFileDialog>
 #include <QApplication>
-#include <KAboutData>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QWebEngineView>
@@ -58,7 +56,7 @@ ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString
     mWebEngineView->load(QUrl::fromLocalFile(filename));
 
     QHBoxLayout *hbox = new QHBoxLayout;
-    QPushButton *openFile = new QPushButton(i18n("Open html..."));
+    QPushButton *openFile = new QPushButton(QStringLiteral("Open html..."));
     connect(openFile, &QPushButton::clicked, this, &ScamDetectionWebEngineTestWidget::slotOpenHtml);
     hbox->addWidget(openFile);
     lay->addLayout(hbox);
@@ -88,19 +86,12 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
 
-    KAboutData aboutData(QStringLiteral("scamdetection_gui"), i18n(
-                             "ScamDetectionTest_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(i18n("Test for scamdetection widget"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
     parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"),
-                                        i18n("URL of an html file to be opened")));
-
-    aboutData.setupCommandLine(&parser);
+                                        QStringLiteral("URL of an html file to be opened")));
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     QString fileName;
     if (parser.positionalArguments().count()) {

@@ -19,11 +19,8 @@
 #include "templateparser/templatestextedit.h"
 #include "templateparseremailaddressrequesterinterfacewidget.h"
 
-#include <KLocalizedString>
-
 #include <QHBoxLayout>
 #include <QApplication>
-#include <KAboutData>
 #include <QCommandLineParser>
 #include <QStandardPaths>
 
@@ -44,15 +41,10 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
 
-    KAboutData aboutData(QStringLiteral("templateparseremailrequestertest_gui"), i18n("TemplateParserEmailRequesterTest_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(QStringLiteral("Test for template editor widget"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     TemplateParserEmailRequesterTestWidget *w = new TemplateParserEmailRequesterTestWidget();
     w->resize(800, 600);
