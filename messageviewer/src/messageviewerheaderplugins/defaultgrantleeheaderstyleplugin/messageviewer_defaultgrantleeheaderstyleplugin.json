@@ -23,6 +23,7 @@
         "Description[tr]": "Bu eklenti, varsayılan bir Grantlee posta başlığı sağlar.",
         "Description[uk]": "Цей додаток визначає типовий заголовок повідомлення Grantlee.",
         "Description[x-test]": "xxThis plugin provides a default Grantlee mail header.xx",
+        "Description[zh_CN]": "此插件提供默认 Grantlee 邮件头。",
         "EnabledByDefault": "true",
         "Name": "Default Grantlee Header Style",
         "Name[ca@valencia]": "Estil de capçalera «Grantlee» predeterminat",
