@@ -11,16 +11,9 @@ option(MIMETREEPARSER_ONLY_BUILD "Build only mimetreeparser" FALSE)
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
 
-set(KF5_VERSION "5.37.0")
-option(RUN_UNINSTALL "test run uninstalled apps (experimental)" FALSE)
+set(KF5_VERSION "5.38.0")
 
-set(ECM_VERSION ${KF5_VERSION})
-# ECM setup
-if (RUN_UNINSTALL)
-   set(ECM_VERSION "5.38.0")
-endif()
-
-find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
+find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
