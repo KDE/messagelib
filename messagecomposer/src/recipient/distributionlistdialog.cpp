@@ -144,7 +144,7 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
                       << i18nc("@title:column Email of the recipient", "Email")
         );
     mRecipientsList->setRootIsDecorated(false);
-    mRecipientsList->header()->setMovable(false);
+    mRecipientsList->header()->setSectionsMovable(false);
     topLayout->addWidget(mRecipientsList);
     connect(mUser1Button, &QPushButton::clicked, this, &DistributionListDialog::slotUser1);
     connect(mTitleEdit, &QLineEdit::textChanged, this, &DistributionListDialog::slotTitleChanged);
