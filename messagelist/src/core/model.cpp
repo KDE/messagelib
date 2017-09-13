@@ -686,6 +686,7 @@ StorageModel *Model::storageModel() const
 
 void ModelPrivate::clear()
 {
+    q->beginResetModel();
     if (mFillStepTimer.isActive()) {
         mFillStepTimer.stop();
     }
@@ -721,7 +722,7 @@ void ModelPrivate::clear()
 
     mRootItem->killAllChildItems();
 
-    q->reset();
+    q->endResetModel();
     //Q_EMIT headerDataChanged();
 
     mView->selectionModel()->clearSelection();

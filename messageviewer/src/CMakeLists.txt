@@ -24,7 +24,11 @@ include(CheckIncludeFiles)
 find_package(Inotify)
 set_package_properties(Inotify PROPERTIES
                        PURPOSE "Filesystem alteration notifications using inotify")
-macro_bool_to_01(Inotify_FOUND HAVE_SYS_INOTIFY_H)
+if(Inotify_FOUND)
+    set(HAVE_SYS_INOTIFY_H 1)
+else()
+    set(HAVE_SYS_INOTIFY_H 0)
+endif()
 configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h)
 
 # target_include_directories does not handle empty include paths

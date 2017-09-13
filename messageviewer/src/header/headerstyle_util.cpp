@@ -141,7 +141,7 @@ QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, doub
     static const int meterWidth = 20;
     static const int meterHeight = 5;
     QImage meterBar(meterWidth, 1, QImage::Format_Indexed8 /*QImage::Format_RGB32*/);
-    meterBar.setNumColors(24);
+    meterBar.setColorCount(24);
 
     meterBar.setColor(meterWidth + 1, qRgb(255, 255, 255));
     meterBar.setColor(meterWidth + 2, qRgb(170, 170, 170));

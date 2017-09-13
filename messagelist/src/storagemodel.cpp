@@ -489,7 +489,8 @@ Collection StorageModel::parentCollectionForRow(int row) const
 
 void StorageModel::resetModelStorage()
 {
-    reset();
+    beginResetModel();
+    endResetModel();
 }
 
 #include "moc_storagemodel.cpp"

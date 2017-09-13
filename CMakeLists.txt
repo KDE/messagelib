@@ -86,6 +86,7 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
    find_package(KF5WindowSystem ${KF5_VERSION} CONFIG REQUIRED)
    find_package(KF5XmlGui ${KF5_VERSION} CONFIG REQUIRED)
    find_package(KF5SyntaxHighlighting ${KF5_VERSION} CONFIG REQUIRED)
+   find_package(KF5DBusAddons ${KF5_VERSION} CONFIG REQUIRED)
 
    find_package(Grantlee5 "5.1" CONFIG REQUIRED)
 
@@ -130,6 +131,7 @@ if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
 endif ()
 
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x000000)
 
 if(BUILD_TESTING)
    add_definitions(-DBUILD_TESTING)

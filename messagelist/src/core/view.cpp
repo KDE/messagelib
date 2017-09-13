@@ -106,8 +106,8 @@ View::View(Widget *pParent)
     connect(header(), &QHeaderView::sectionResized,
             this, &View::slotHeaderSectionResized);
 
-    header()->setClickable(true);
-    header()->setResizeMode(QHeaderView::Interactive);
+    header()->setSectionsClickable(true);
+    header()->setSectionResizeMode(QHeaderView::Interactive);
     header()->setMinimumSectionSize(2);   // QTreeView overrides our sections sizes if we set them smaller than this value
     header()->setDefaultSectionSize(2);   // QTreeView overrides our sections sizes if we set them smaller than this value
 

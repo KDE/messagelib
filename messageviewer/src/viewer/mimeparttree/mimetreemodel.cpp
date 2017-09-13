@@ -153,10 +153,9 @@ MimeTreeModel::~MimeTreeModel()
 void MimeTreeModel::setRoot(KMime::Content *root)
 {
     if (d->root != root) {
+        beginResetModel();
         d->clearTempDir();
         d->root = root;
-        beginResetModel();
-        reset();
         endResetModel();
     }
 }

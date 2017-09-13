@@ -274,7 +274,7 @@ ThemePreviewWidget::ThemePreviewWidget(QWidget *parent)
     m->setText(0, QString());
 
     mGroupHeaderSampleItem->setExpanded(true);
-    header()->setMovable(false);
+    header()->setSectionsMovable(false);
 }
 
 void ThemePreviewWidget::changeEvent(QEvent *event)

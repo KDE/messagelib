@@ -39,7 +39,7 @@ MimePartTreeView::MimePartTreeView(QWidget *parent)
     setSelectionBehavior(QAbstractItemView::SelectRows);
     connect(this, &MimePartTreeView::destroyed, this, &MimePartTreeView::slotMimePartDestroyed);
     setContextMenuPolicy(Qt::CustomContextMenu);
-    header()->setResizeMode(QHeaderView::ResizeToContents);
+    header()->setSectionResizeMode(QHeaderView::ResizeToContents);
     connect(mMimePartModel, &MimeTreeModel::modelReset, this, &MimePartTreeView::expandAll);
     restoreMimePartTreeConfig();
     setDragEnabled(true);
