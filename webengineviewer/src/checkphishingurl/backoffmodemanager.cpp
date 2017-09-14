@@ -65,7 +65,7 @@ void BackOffModeManagerPrivate::save()
     grp.writeEntry("Enabled", isInOffMode);
     if (isInOffMode) {
         int calculateTimeInSeconds = calculateBackModeTime();
-        uint delay = QDateTime::currentDateTime().addSecs(calculateTimeInSeconds).toTime_t();
+        uint delay = QDateTime::currentDateTime().addSecs(calculateTimeInSeconds).toSecsSinceEpoch();
         grp.writeEntry("Delay", delay);
         updateTimer(calculateTimeInSeconds);
     } else {
@@ -97,7 +97,7 @@ void BackOffModeManagerPrivate::load()
     isInOffMode = grp.readEntry("Enabled", false);
     if (isInOffMode) {
         const uint delay = grp.readEntry("Delay", 0);
-        const uint now = QDateTime::currentDateTimeUtc().toTime_t();
+        const uint now = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
         if (delay > now) {
             const int diff = (delay - now);
             updateTimer(diff);

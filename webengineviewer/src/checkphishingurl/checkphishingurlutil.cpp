@@ -74,7 +74,7 @@ double CheckPhishingUrlUtil::convertToSecond(const QString &str)
 uint CheckPhishingUrlUtil::refreshingCacheAfterThisTime(double seconds)
 {
     if (seconds > 0) {
-        return QDateTime::currentDateTime().addMSecs(seconds * 1000).toTime_t();
+        return QDateTime::currentDateTime().addMSecs(seconds * 1000).toSecsSinceEpoch();
     } else {
         return 0;
     }
@@ -82,7 +82,7 @@ uint CheckPhishingUrlUtil::refreshingCacheAfterThisTime(double seconds)
 
 bool CheckPhishingUrlUtil::cachedValueStillValid(uint seconds)
 {
-    return QDateTime::currentDateTimeUtc().toTime_t() < seconds;
+    return QDateTime::currentDateTimeUtc().toSecsSinceEpoch() < seconds;
 }
 
 int CheckPhishingUrlUtil::generateRandomSecondValue(int numberOfFailed)

@@ -74,7 +74,7 @@ public:
             if (!QFileInfo::exists(databaseFullPath())) {
                 downloadDataBase(QString());
             } else {
-                const uint now = QDateTime::currentDateTimeUtc().toTime_t();
+                const uint now = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
                 //qDebug() << " now "<< now << " d->mSecondToStartRefreshing "<<d->mSecondToStartRefreshing << " now > d->mSecondToStartRefreshing" << (now > d->mSecondToStartRefreshing);
                 if ((mSecondToStartRefreshing != 0) && (mSecondToStartRefreshing > now)) {
                     qCDebug(WEBENGINEVIEWER_LOG) << " It's not necessary to check database now";
