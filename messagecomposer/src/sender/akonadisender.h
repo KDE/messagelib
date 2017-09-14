@@ -23,8 +23,6 @@
 #include "messagecomposer_export.h"
 
 #include <QObject>
-#include <QString>
-#include <QSet>
 
 #include <kmime/kmime_message.h>
 

@@ -24,7 +24,6 @@
 #include <KJob>
 #include <QUrl>
 
-#include <QPointer>
 
 class QTextEdit;
 

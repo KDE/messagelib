@@ -22,7 +22,6 @@
 
 #include <QString>
 #include <QByteArray>
-#include <QMap>
 
 namespace MessageViewer {
 class MailWebEngineView;

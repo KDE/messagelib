@@ -21,9 +21,7 @@
 #include "recipientline.h"
 
 #include <KEmailAddress>
-#include <QDialog>
 #include <KLocalizedString>
-#include <KCompletionBox>
 
 #include <QKeyEvent>
 #include <QHBoxLayout>

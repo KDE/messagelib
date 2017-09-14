@@ -22,7 +22,6 @@
 
 #include "qtest_messagecomposer.h"
 
-#include <QDebug>
 #include <qtest.h>
 
 #include <kmime/kmime_headers.h>

@@ -24,13 +24,10 @@
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Theme>
 
-#include <QCompleter>
 #include <QKeyEvent>
-#include <QScrollBar>
-#include <QStringListModel>
 #include <QAbstractItemView>
 #include <QFontDatabase>
-
+#include <QCompleter>
 using namespace TemplateParser;
 
 TemplatesTextEditor::TemplatesTextEditor(QWidget *parent)

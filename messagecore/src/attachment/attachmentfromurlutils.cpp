@@ -24,7 +24,6 @@
 #include "messagecore_debug.h"
 
 #include <QMimeDatabase>
-#include <QMimeType>
 
 namespace MessageCore {
 MessageCore::AttachmentFromUrlBaseJob *AttachmentFromUrlUtils::createAttachmentJob(const QUrl &url, QObject *parent)

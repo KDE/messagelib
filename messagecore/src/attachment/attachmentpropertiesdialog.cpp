@@ -37,7 +37,6 @@
 #include <KFormat>
 #include <QMimeDatabase>
 #include <QMimeType>
-#include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>

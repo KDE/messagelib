@@ -25,7 +25,6 @@
 
 #include <KMime/Types>
 #include <QClipboard>
-#include <QSignalSpy>
 
 class RecipientsLineTestFactory : public MessageComposer::RecipientLineFactory
 {

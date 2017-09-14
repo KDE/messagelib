@@ -27,7 +27,6 @@
 #include "recipientspicker.h"
 #include "kwindowpositioner.h"
 
-#include <QDialog>
 #include <KLocalizedString>
 #include <QPushButton>
 

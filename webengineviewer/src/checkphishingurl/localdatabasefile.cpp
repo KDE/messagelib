@@ -23,7 +23,7 @@
 #include "webengineviewer_debug.h"
 #include <QElapsedTimer>
 #include <QFileInfo>
-#include <QDebug>
+#include <QDateTime>
 
 using namespace WebEngineViewer;
 

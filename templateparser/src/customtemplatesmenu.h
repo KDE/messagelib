@@ -21,9 +21,7 @@
 
 #include "templateparser_export.h"
 
-#include <QList>
 #include <QObject>
-#include <QStringList>
 
 class KActionCollection;
 class KActionMenu;

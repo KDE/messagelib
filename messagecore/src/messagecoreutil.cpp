@@ -21,7 +21,6 @@
 
 #include <KColorScheme>
 #include <QApplication>
-#include <QDebug>
 
 using namespace MessageCore;
 

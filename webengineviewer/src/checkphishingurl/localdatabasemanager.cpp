@@ -25,10 +25,8 @@
 #include "urlhashing.h"
 #include "backoffmodemanager.h"
 
-#include <KConfigGroup>
 #include <KSharedConfig>
 
-#include <QTimer>
 #include <QCryptographicHash>
 
 using namespace WebEngineViewer;

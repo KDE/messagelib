@@ -21,7 +21,6 @@
 #include "templateparser_debug.h"
 #include "templatewebenginepage.h"
 #include <QWebEngineScript>
-#include <QMap>
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {

@@ -29,7 +29,6 @@
 #include <kjob.h>
 
 #include <QStringList>
-#include <QVariant>
 
 namespace MessageComposer {
 class Composer;

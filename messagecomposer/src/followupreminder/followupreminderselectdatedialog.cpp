@@ -21,7 +21,6 @@
 
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <KDatePicker>
 #include <KMessageBox>
 #include <KDateComboBox>
 
@@ -30,11 +29,9 @@
 #include <KCalCore/Todo>
 
 #include <QVBoxLayout>
-#include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QFormLayout>
-#include <QLabel>
 #include <QLineEdit>
 #include <kdatecombobox.h>
 using namespace MessageComposer;

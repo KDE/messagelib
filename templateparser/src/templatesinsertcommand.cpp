@@ -22,7 +22,6 @@
 #include <KActionMenu>
 #include "templateparser_debug.h"
 #include <KLocalizedString>
-#include <QMenu>
 
 #include <QSignalMapper>
 

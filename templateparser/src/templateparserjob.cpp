@@ -43,7 +43,6 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QTextCodec>
-#include <QTextDocument>
 #include <QLocale>
 
 namespace {

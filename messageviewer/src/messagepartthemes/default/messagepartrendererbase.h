@@ -35,8 +35,6 @@
 #include <memory>
 #include <map>
 
-#include <QMap>
-#include <QString>
 #include <QSharedPointer>
 
 namespace MimeTreeParser {

@@ -20,7 +20,6 @@
 #include "findbarbasetest.h"
 #include "../findbarbase.h"
 
-#include <KLineEdit>
 #include <QLabel>
 #include <QPushButton>
 #include <QToolButton>

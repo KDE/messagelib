@@ -20,11 +20,10 @@
 #include "checkphishingurljob.h"
 #include "checkphishingurlutil.h"
 #include <QNetworkAccessManager>
-#include <QNetworkConfigurationManager>
 #include <PimCommon/NetworkManager>
 #include <QJsonDocument>
 #include <webengineviewer_debug.h>
-
+#include <QNetworkConfigurationManager>
 using namespace WebEngineViewer;
 
 WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson = true;

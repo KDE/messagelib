@@ -19,18 +19,16 @@
 
 #include "testjquerysupportmailwebengine.h"
 #include <KActionCollection>
-#include <QHBoxLayout>
 #include <QApplication>
-#include <QWebEngineView>
 #include <WebEngineViewer/WebEnginePage>
 #include <QDebug>
 #include <webengineview.h>
 #include <QPushButton>
-#include <QMessageBox>
 #include <QTextEdit>
 #include <QFile>
 #include <MessageViewer/Viewer>
 #include <MimeTreeParser/AttachmentStrategy>
+#include <QVBoxLayout>
 
 TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
     : QWidget(parent)

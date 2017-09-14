@@ -32,7 +32,6 @@
 
 #ifndef __KMAIL_MESSAGESENDER_H__
 #define __KMAIL_MESSAGESENDER_H__
-#include <QString>
 
 #include <kmime/kmime_message.h>
 namespace MessageComposer {

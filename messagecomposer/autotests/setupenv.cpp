@@ -26,7 +26,6 @@
 
 #include <QFile>
 #include <QDir>
-#include <QTest>
 
 void MessageComposer::Test::setupEnv()
 {

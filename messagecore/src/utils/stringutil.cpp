@@ -29,7 +29,6 @@
 #include <KEmailAddress>
 #include <KLocalizedString>
 
-#include <KConfigGroup>
 #include "messagecore_debug.h"
 #include <KUser>
 

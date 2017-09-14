@@ -19,7 +19,6 @@
 
 #include "plugineditorcheckbeforesendparams.h"
 
-#include <QStringList>
 
 using namespace MessageComposer;
 

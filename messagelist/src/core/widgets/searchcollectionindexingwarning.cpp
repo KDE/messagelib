@@ -30,7 +30,6 @@
 
 #include <PimCommon/PimUtil>
 
-#include <QDBusInterface>
 
 #include <KLocalizedString>
 

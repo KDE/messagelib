@@ -34,12 +34,7 @@
 #include <QContextMenuEvent>
 #include <WebEngineViewer/WebHitTest>
 
-#include <QWebEngineSettings>
 #include <QWebEngineProfile>
-#include <QDebug>
-#include <QEventLoop>
-#include <QPointer>
-#include <QTimer>
 #include <QPrinter>
 
 #include <WebEngineViewer/WebHitTestResult>

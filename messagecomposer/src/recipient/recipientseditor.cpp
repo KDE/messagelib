@@ -40,7 +40,6 @@
 
 #include <QLayout>
 #include <QKeyEvent>
-#include <QRegularExpression>
 
 using namespace MessageComposer;
 using namespace KPIM;

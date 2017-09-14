@@ -23,7 +23,6 @@
 #include "localdatabasefile.h"
 #include "riceencodingdecoder.h"
 
-#include <QFileInfo>
 #include <QCryptographicHash>
 
 using namespace WebEngineViewer;

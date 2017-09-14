@@ -29,7 +29,6 @@
 
 #include <QFileInfo>
 #include <QMimeDatabase>
-#include <QMimeType>
 #include <QUrlQuery>
 
 using namespace MessageCore;

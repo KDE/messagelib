@@ -24,7 +24,6 @@
 #include "mimetreeparser/htmlwriter.h"
 
 #include <QVector>
-#include <QVariant>
 
 class QString;
 class QByteArray;

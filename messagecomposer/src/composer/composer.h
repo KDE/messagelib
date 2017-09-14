@@ -24,7 +24,6 @@
 #include "Libkleo/Enum"
 
 #include "messagecomposer_export.h"
-#include <QByteArray>
 #include <QStringList>
 
 #include <kmime/kmime_message.h>

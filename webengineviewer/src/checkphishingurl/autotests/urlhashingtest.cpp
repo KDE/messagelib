@@ -21,7 +21,6 @@
 #include "../urlhashing.h"
 #include <QUrl>
 #include <QTest>
-#include <QList>
 
 UrlHashingTest::UrlHashingTest(QObject *parent)
     : QObject(parent)

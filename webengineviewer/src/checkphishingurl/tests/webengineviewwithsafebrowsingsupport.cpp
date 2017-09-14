@@ -22,10 +22,8 @@
 
 #include <QApplication>
 #include <QStandardPaths>
-#include <QLineEdit>
 #include <QPushButton>
 #include <QPlainTextEdit>
-#include <QLabel>
 #include <QVBoxLayout>
 #include <webenginepage.h>
 #include <webengineview.h>

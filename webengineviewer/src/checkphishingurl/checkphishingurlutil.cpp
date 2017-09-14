@@ -21,7 +21,6 @@
 #include "webengineviewer_version.h"
 #include <QDateTime>
 #include <QtMath>
-#include <QDebug>
 
 using namespace WebEngineViewer;
 QString CheckPhishingUrlUtil::apiKey()

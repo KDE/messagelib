@@ -27,7 +27,6 @@
 #include <KPluginFactory>
 #include <QFileInfo>
 #include <QSet>
-#include <KConfigGroup>
 
 using namespace MessageViewer;
 

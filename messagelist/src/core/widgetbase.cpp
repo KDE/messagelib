@@ -45,7 +45,6 @@
 #include <QAction>
 #include <KComboBox>
 #include "messagelist_debug.h"
-#include <KLineEdit>
 #include <KLocalizedString>
 #include <QMenu>
 

@@ -27,7 +27,6 @@
 #include <KIconLoader>
 #include <KMime/Content>
 
-#include <QMimeDatabase>
 
 QString MessageViewer::Util::iconPathForMimetype(const QString &mimeType, int iconSize,
                                                  const QString &fallbackFileName1,

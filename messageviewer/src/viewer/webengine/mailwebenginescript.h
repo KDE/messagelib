@@ -21,7 +21,6 @@
 
 #include "messageviewer_export.h"
 #include <QString>
-#include <QPoint>
 
 namespace MessageViewer {
 namespace MailWebEngineScript {

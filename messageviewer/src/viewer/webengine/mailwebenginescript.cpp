@@ -19,7 +19,6 @@
 
 #include "mailwebenginescript.h"
 #include "webengineviewer/webenginescript.h"
-#include <QDebug>
 using namespace MessageViewer;
 
 static QString checkJQuery(const char *scriptName)

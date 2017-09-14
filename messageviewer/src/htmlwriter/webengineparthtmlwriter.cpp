@@ -24,7 +24,6 @@
 
 #include <cassert>
 #include <QByteArray>
-#include <QRegularExpression>
 
 using namespace MessageViewer;
 

@@ -37,7 +37,6 @@
 #include "mimetreeparser_debug.h"
 #include <KMime/Content>
 
-#include <QTextCodec>
 #include <QUrl>
 
 using namespace MimeTreeParser;

@@ -27,7 +27,7 @@
 #include <QPixmap>
 #include <QString>
 #include <QColor>
-
+#include <QFont>
 #include <messagelist_export.h>
 #include "theme.h"
 

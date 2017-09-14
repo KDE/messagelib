@@ -22,7 +22,6 @@
 
 #include <QWebEnginePage>
 #include "webengineviewer_export.h"
-#include <QVariant>
 class QWebEngineProfile;
 class QWebEngineDownloadItem;
 class QPrinter;

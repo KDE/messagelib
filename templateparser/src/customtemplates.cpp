@@ -24,7 +24,6 @@
 #include "kpimtextedit/plaintexteditor.h"
 #include "templateparseremailaddressrequesterinterfacewidget.h"
 
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QIcon>

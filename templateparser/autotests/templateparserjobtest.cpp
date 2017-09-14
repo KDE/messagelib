@@ -30,7 +30,6 @@
 #include <QTest>
 #include <QDir>
 #include <QLocale>
-#include <QTimeZone>
 #include <QSignalSpy>
 #include <QStandardPaths>
 

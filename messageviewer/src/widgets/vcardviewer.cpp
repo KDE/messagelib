@@ -35,7 +35,6 @@ using KContacts::Addressee;
 #include <QPushButton>
 #include <KGuiItem>
 #include <QVBoxLayout>
-#include <QDesktopServices>
 
 using namespace MessageViewer;
 

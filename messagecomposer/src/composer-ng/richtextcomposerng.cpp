@@ -23,7 +23,6 @@
 #include "richtextcomposersignatures.h"
 #include <pimcommon/autocorrection.h>
 
-#include <QTextBlock>
 
 #include <part/textpart.h>
 #include "settings/messagecomposersettings.h"

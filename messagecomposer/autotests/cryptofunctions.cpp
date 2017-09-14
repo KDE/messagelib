@@ -35,7 +35,6 @@
 
 #include <MessageCore/NodeHelper>
 
-#include <QDebug>
 #include <QtTest>
 #include <stdlib.h>
 #include <gpgme++/keylistresult.h>

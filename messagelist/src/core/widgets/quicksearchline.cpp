@@ -25,7 +25,6 @@
 
 #include "searchlinestatus.h"
 #include <KLocalizedString>
-#include <KLineEdit>
 #include <KComboBox>
 
 #include <QPushButton>

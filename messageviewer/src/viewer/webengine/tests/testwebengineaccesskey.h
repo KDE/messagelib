@@ -19,7 +19,6 @@
 #ifndef TESTWEBENGINEACCESSKEY_H
 #define TESTWEBENGINEACCESSKEY_H
 
-#include <QWebEngineView>
 #include <QWidget>
 namespace WebEngineViewer {
 class MailWebEngineView;

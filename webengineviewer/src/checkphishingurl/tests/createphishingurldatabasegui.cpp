@@ -21,10 +21,8 @@
 
 #include <QApplication>
 #include <QStandardPaths>
-#include <QLineEdit>
 #include <QPushButton>
 #include <QPlainTextEdit>
-#include <QLabel>
 #include <QVBoxLayout>
 #include <QInputDialog>
 #include <QComboBox>

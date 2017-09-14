@@ -22,7 +22,6 @@
 
 #include "webengineviewer_private_export.h"
 #include <QString>
-#include <QDateTime>
 
 namespace WebEngineViewer {
 class LocalDataBaseFilePrivate;

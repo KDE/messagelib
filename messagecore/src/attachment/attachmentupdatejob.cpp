@@ -21,7 +21,6 @@
 #include "MessageCore/AttachmentFromUrlBaseJob"
 #include "attachmentfromurljob.h"
 #include "attachmentupdatejob.h"
-#include <QUrl>
 #include "attachmentfromurlutils.h"
 #include "messagecore_debug.h"
 #include <QTimer>

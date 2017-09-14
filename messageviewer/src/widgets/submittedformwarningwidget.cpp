@@ -21,7 +21,6 @@
 #include "submittedformwarningwidget.h"
 
 #include <KLocalizedString>
-#include <QAction>
 
 using namespace MessageViewer;
 

@@ -24,7 +24,6 @@
 #include <QList>
 #include <QPair>
 #include <QString>
-#include <QFont>
 #include <QColor>
 #include <QVector>
 

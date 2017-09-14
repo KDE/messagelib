@@ -25,6 +25,7 @@
 #include <KIO/Job>
 
 #include <QTextCodec>
+#include <QPointer>
 
 using namespace MessageComposer;
 class MessageComposer::InsertTextFileJobPrivate

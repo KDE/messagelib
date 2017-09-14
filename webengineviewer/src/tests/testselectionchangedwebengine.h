@@ -20,7 +20,6 @@
 #ifndef TestSelectionChangedEngine_H
 #define TestSelectionChangedEngine_H
 
-#include <QWebEngineView>
 #include <QWidget>
 
 namespace WebEngineViewer {

@@ -75,13 +75,11 @@
 #include <QSaveFile>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <QTextBlock>
 #include "messagecomposer_debug.h"
 
 #include <QDir>
 #include <QTimer>
 #include <QUuid>
-#include <QTextCodec>
 #include <QStandardPaths>
 #include <followupreminder/followupremindercreatejob.h>
 

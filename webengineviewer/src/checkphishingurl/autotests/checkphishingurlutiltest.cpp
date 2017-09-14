@@ -21,7 +21,6 @@
 #include "../checkphishingurlutil.h"
 
 #include <QTest>
-#include <QDebug>
 
 CheckPhishingUrlUtilTest::CheckPhishingUrlUtilTest(QObject *parent)
     : QObject(parent)
