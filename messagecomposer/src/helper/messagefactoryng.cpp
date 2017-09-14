@@ -975,10 +975,9 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
     QRegExp rxDate(QStringLiteral("\\$\\{date\\}"));
     Q_ASSERT(rxDate.isValid());
 
-    qCDebug(MESSAGECOMPOSER_LOG) << "creating mdn date:" << msg->date()->dateTime().toTime_t() << KMime::DateFormatter::formatDate(
-        KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t());
-    QString sDate = KMime::DateFormatter::formatDate(
-        KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t());
+    const QString sDate = KMime::DateFormatter::formatDate(
+                KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t());
+    qCDebug(MESSAGECOMPOSER_LOG) << "creating mdn date:" << msg->date()->dateTime().toTime_t() << sDate;
 
     int idx = 0;
     if ((idx = rxDate.indexIn(result, idx)) != -1) {
