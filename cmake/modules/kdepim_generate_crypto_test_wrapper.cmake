@@ -14,15 +14,23 @@ file(WRITE "${_filename}"
 # don't mess with a gpg-agent already running on the system
 unset GPG_AGENT_INFO
 
-${_library_path_variable}=${_ld_library_path}\${${_library_path_variable}:+:\$${_library_path_variable}} GNUPGHOME=${_gnupghome} gpg-agent --daemon \"${_executable}\" \"$@\"
+# _gnupghome will contain a socket, and the path to that has a length limit of 108 chars
+# which that is easily reached. Therefore shorten this by copying this to a temporary dir.
+# This has the convenient side-effect that modifications to the content are not propagated
+# to other tests.
+tmp_dir=`mktemp -d -t messagelib-test-gnupg-home.XXXXXXXX` || exit 1
+cp -rf ${_gnupghome}/* $tmp_dir
+
+${_library_path_variable}=${_ld_library_path}\${${_library_path_variable}:+:\$${_library_path_variable}} GNUPGHOME=$tmp_dir gpg-agent --daemon \"${_executable}\" \"$@\"
 _result=$?
-_pid=`echo GETINFO pid | GNUPGHOME=${_gnupghome} gpg-connect-agent | grep 'D' | cut -d' ' -f2`
+_pid=`echo GETINFO pid | GNUPGHOME=$tmp_dir gpg-connect-agent | grep 'D' | cut -d' ' -f2`
 if [ ! -z \"\$_pid\" ]; then
     echo \"Waiting for gpg-agent to terminate (PID: $_pid)...\"
     while kill -0 \"\$_pid\"; do
         sleep 1
     done
 fi
+rm -rf $tmp_dir
 exit \$_result
 ")
 
