@@ -4,7 +4,6 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set( GNUPGHOME ${CMAKE_BINARY_DIR}/messagecore/autotests/gnupg_home )
-add_definitions( -DGNUPGHOME="\\"${GNUPGHOME}\\"" )
 
 macro (ADD_GPG_CRYPTO_TEST _target _testname)
    if (UNIX)
