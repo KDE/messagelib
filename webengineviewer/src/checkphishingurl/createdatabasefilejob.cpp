@@ -24,6 +24,7 @@
 #include "riceencodingdecoder.h"
 
 #include <QCryptographicHash>
+#include <QFile>
 
 using namespace WebEngineViewer;
 
