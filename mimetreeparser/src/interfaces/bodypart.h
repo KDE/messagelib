@@ -51,10 +51,6 @@ class ProcessResult;
 namespace Interface {
 class ObjectTreeSource;
 
-/*FIXME(Andras) review, port
-  class Observer;
-  class Observable;
-*/
 /**
     @short interface of classes that implement status for BodyPartFormatters.
 */
@@ -64,24 +60,6 @@ public:
     virtual ~BodyPartMemento();
 
     virtual void detach() = 0;
-#if 0
-//FIXME(Andras) review, port
-    /** If your BodyPartMemento implementation also implements the
-    Observer interface, simply implement these as
-    <code>return this;</code>, else as <code>return
-    0;</code>. This is needed to avoid forcing a dependency of
-    plugins on internal KMail classes.
-    */
-    virtual Observer *asObserver() = 0;
-
-    /** If your BodyPartMemento implementation also implements the
-    Observable interface, simply implement these as
-    <code>return this;</code>, else as <code>return
-    0;</code>. This is needed to avoid forcing a dependency of
-    plugins on internal KMail classes.
-    */
-    virtual Observable *asObservable() = 0;
-#endif
 };
 
 /**
