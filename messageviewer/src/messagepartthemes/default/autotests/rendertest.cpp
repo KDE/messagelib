@@ -385,6 +385,7 @@ void RenderTest::compareFile(const QString &outFile, const QString &referenceFil
         content.replace(QRegExp(QStringLiteral("([\n\t ])\\1+")), QStringLiteral("\\1"));
         content.replace(QRegExp(QStringLiteral(">\n+[\t ]*")), QStringLiteral(">"));
         content.replace(QRegExp(QStringLiteral("[\t ]*\n+[\t ]*<")), QStringLiteral("<"));
+        content.replace(QLatin1String("&nbsp;"), QLatin1String("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(content.toUtf8());
         f.close();
@@ -410,6 +411,7 @@ void RenderTest::compareFile(const QString &outFile, const QString &referenceFil
         content.replace(QRegExp(QStringLiteral(
                                     "\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")),
                         QStringLiteral("\"file:\\1\""));
+        content.replace(QLatin1String("NBSP_ENTITY_PLACEHOLDER"), QLatin1String("&nbsp;")); // undo above transformation for xmllint
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(content.toUtf8());
         f.close();
