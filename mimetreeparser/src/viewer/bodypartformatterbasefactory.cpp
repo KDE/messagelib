@@ -115,50 +115,6 @@ const SubtypeRegistry &BodyPartFormatterBaseFactory::subtypeRegistry(const char 
     return subtype_reg;
 }
 
-SubtypeRegistry::const_iterator BodyPartFormatterBaseFactory::createForIterator(const char *type, const char *subtype) const
-{
-    if (!type || !*type) {
-        type = "*";    //krazy:exclude=doublequote_chars
-    }
-    if (!subtype || !*subtype) {
-        subtype = "*";    //krazy:exclude=doublequote_chars
-    }
-
-    d->setup();
-    if (d->all.empty()) {
-        return SubtypeRegistry::const_iterator();
-    }
-
-    TypeRegistry::const_iterator type_it = d->all.find(type);
-    if (type_it == d->all.end()) {
-        type_it = d->all.find("*");
-    }
-    if (type_it == d->all.end()) {
-        return SubtypeRegistry::const_iterator();
-    }
-
-    const SubtypeRegistry &subtype_reg = type_it->second;
-    if (subtype_reg.empty()) {
-        return SubtypeRegistry::const_iterator();
-    }
-
-    SubtypeRegistry::const_iterator subtype_it = subtype_reg.find(subtype);
-    qCWarning(MIMETREEPARSER_LOG) << type << subtype << subtype_reg.size();
-    if (subtype_it == subtype_reg.end()) {
-        subtype_it = subtype_reg.find("*");
-    }
-    if (subtype_it == subtype_reg.end()) {
-        return SubtypeRegistry::const_iterator();
-    }
-
-    if (!(*subtype_it).second) {
-        qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterBaseFactory: a null bodypart formatter sneaked in for \""
-                                      << type << "/" << subtype << "\"!";
-    }
-
-    return subtype_it;
-}
-
 void BodyPartFormatterBaseFactory::loadPlugins()
 {
     qCDebug(MIMETREEPARSER_LOG) << "plugin loading is not enabled in libmimetreeparser";

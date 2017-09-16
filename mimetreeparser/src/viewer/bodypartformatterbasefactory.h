@@ -62,7 +62,6 @@ public:
     BodyPartFormatterBaseFactory();
     virtual ~BodyPartFormatterBaseFactory();
 
-    SubtypeRegistry::const_iterator createForIterator(const char *type, const char *subtype) const;
     const SubtypeRegistry &subtypeRegistry(const char *type) const;
 
 protected:
