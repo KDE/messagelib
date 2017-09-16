@@ -41,14 +41,14 @@ class BodyPartFormatterBaseFactoryPrivate
 {
 public:
     BodyPartFormatterBaseFactoryPrivate(BodyPartFormatterBaseFactory *factory);
-    ~BodyPartFormatterBaseFactoryPrivate();
+    ~BodyPartFormatterBaseFactoryPrivate() = default;
 
     void setup();
     void messageviewer_create_builtin_bodypart_formatters();        //defined in bodypartformatter.cpp
     void insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
 
     BodyPartFormatterBaseFactory *q;
-    TypeRegistry *all;
+    TypeRegistry all;
 };
 }
 

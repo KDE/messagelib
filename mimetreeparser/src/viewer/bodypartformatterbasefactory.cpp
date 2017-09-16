@@ -43,22 +43,12 @@ using namespace MimeTreeParser;
 
 BodyPartFormatterBaseFactoryPrivate::BodyPartFormatterBaseFactoryPrivate(BodyPartFormatterBaseFactory *factory)
     : q(factory)
-    , all(nullptr)
 {
-}
-
-BodyPartFormatterBaseFactoryPrivate::~BodyPartFormatterBaseFactoryPrivate()
-{
-    if (all) {
-        delete all;
-        all = nullptr;
-    }
 }
 
 void BodyPartFormatterBaseFactoryPrivate::setup()
 {
-    if (!all) {
-        all = new TypeRegistry();
+    if (all.empty()) {
         messageviewer_create_builtin_bodypart_formatters();
         q->loadPlugins();
     }
@@ -66,16 +56,16 @@ void BodyPartFormatterBaseFactoryPrivate::setup()
 
 void BodyPartFormatterBaseFactoryPrivate::insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter)
 {
-    if (!type || !*type || !subtype || !*subtype || !formatter || !all) {
+    if (!type || !*type || !subtype || !*subtype || !formatter) {
         return;
     }
 
-    TypeRegistry::iterator type_it = all->find(type);
-    if (type_it == all->end()) {
+    TypeRegistry::iterator type_it = all.find(type);
+    if (type_it == all.end()) {
         qCDebug(MIMETREEPARSER_LOG) << "BodyPartFormatterBaseFactory: instantiating new Subtype Registry for \""
                                     << type << "\"";
-        type_it = all->insert(std::make_pair(type, SubtypeRegistry())).first;
-        assert(type_it != all->end());
+        type_it = all.insert(std::make_pair(type, SubtypeRegistry())).first;
+        assert(type_it != all.end());
     }
 
     SubtypeRegistry &subtype_reg = type_it->second;
@@ -105,18 +95,16 @@ const SubtypeRegistry &BodyPartFormatterBaseFactory::subtypeRegistry(const char 
     }
 
     d->setup();
-    assert(d->all);
-
     static SubtypeRegistry emptyRegistry;
-    if (d->all->empty()) {
+    if (d->all.empty()) {
         return emptyRegistry;
     }
 
-    TypeRegistry::const_iterator type_it = d->all->find(type);
-    if (type_it == d->all->end()) {
-        type_it = d->all->find("*");
+    TypeRegistry::const_iterator type_it = d->all.find(type);
+    if (type_it == d->all.end()) {
+        type_it = d->all.find("*");
     }
-    if (type_it == d->all->end()) {
+    if (type_it == d->all.end()) {
         return emptyRegistry;
     }
 
@@ -137,17 +125,15 @@ SubtypeRegistry::const_iterator BodyPartFormatterBaseFactory::createForIterator(
     }
 
     d->setup();
-    assert(d->all);
-
-    if (d->all->empty()) {
+    if (d->all.empty()) {
         return SubtypeRegistry::const_iterator();
     }
 
-    TypeRegistry::const_iterator type_it = d->all->find(type);
-    if (type_it == d->all->end()) {
-        type_it = d->all->find("*");
+    TypeRegistry::const_iterator type_it = d->all.find(type);
+    if (type_it == d->all.end()) {
+        type_it = d->all.find("*");
     }
-    if (type_it == d->all->end()) {
+    if (type_it == d->all.end()) {
         return SubtypeRegistry::const_iterator();
     }
 
