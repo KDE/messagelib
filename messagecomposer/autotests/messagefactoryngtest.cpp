@@ -61,6 +61,7 @@ using namespace MessageComposer;
 void initLocale()
 {
     setenv("LC_ALL", "en_US.utf-8", 1);
+    setenv("TZ", "UTC", 1);
 }
 Q_CONSTRUCTOR_FUNCTION(initLocale)
 #endif
@@ -485,10 +486,9 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
     reply.replyAll = true;
     //qDebug() << "html reply" << reply.msg->encodedContent();
 
-    QDateTime date = msg->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    //We are not in UTC
-    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time().addSecs(-2 * 60 * 60), QLocale::LongFormat);
+    QDateTime date = msg->date()->dateTime().toLocalTime();
+    QString datetime = QLocale().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> encoded?\n\n")));
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: reply to please"));
@@ -530,9 +530,9 @@ void MessageFactoryTest::testCreateReplyUTF16Base64Async()
     reply.replyAll = true;
 //   qDebug() << "html reply" << reply.msg->encodedContent();
 
-    QDateTime date = msg->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime += QLatin1Char(' ') + QLocale::system().toString(date.time().addSecs(4 * 60 * 60), QLocale::LongFormat);
+    QDateTime date = msg->date()->dateTime().toLocalTime();
+    QString datetime = QLocale().toString(date.date(), QLocale::LongFormat);
+    datetime += QLatin1Char(' ') + QLocale().toString(date.time(), QLocale::LongFormat);
     QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> quote me please.\n\n")));
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: asking for reply"));
