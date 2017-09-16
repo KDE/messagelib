@@ -392,13 +392,13 @@ void MessageFactoryTest::testCreateReplyToAuthorAsync()
                                      "References: %3\n"
                                      "In-Reply-To: %2\n"
                                      "Subject: Re: Test Email Subject\n"
-                                     "X-KMail-CursorPos: 134\n"
+                                     "X-KMail-CursorPos: %5\n"
                                      "Content-Type: text/plain; charset=\"US-ASCII\"\n"
                                      "Content-Transfer-Encoding: 8Bit\nMIME-Version: 1.0\n"
                                      "X-KMail-Link-Message: 0\n"
                                      "X-KMail-Link-Type: reply\n\n"
                                      "%4")
-                 .arg(dateStr).arg(replyTo).arg(reference).arg(replyStr);
+                 .arg(dateStr).arg(replyTo).arg(reference).arg(replyStr).arg(replyStr.length() - 1);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toLatin1());
 }
 
