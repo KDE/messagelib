@@ -499,7 +499,7 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
     factory.createReplyAsync();
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 2);
-    reply = spy.at(0).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
+    reply = spy.at(1).at(0).value<MessageComposer::MessageFactoryNG::MessageReply>();
 
     reply.replyAll = true;
     datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
