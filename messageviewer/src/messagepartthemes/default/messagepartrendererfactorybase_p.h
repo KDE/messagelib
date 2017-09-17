@@ -52,7 +52,7 @@ public:
     void insert(const QString &type, MessagePartRendererBase *formatter);
 
     MessagePartRendererFactoryBase *q;
-    std::unique_ptr<TypeRegistry> mAll;
+    TypeRegistry mAll;
 };
 }
 

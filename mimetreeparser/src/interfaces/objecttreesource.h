@@ -49,6 +49,7 @@ namespace Interface {
 class MIMETREEPARSER_EXPORT ObjectTreeSource
 {
 public:
+    ObjectTreeSource();
     virtual ~ObjectTreeSource();
 
     /**
@@ -83,17 +84,6 @@ public:
     /** Return the html write object */
     virtual HtmlWriter *htmlWriter() = 0;
 
-    /** The source object behind the interface.
-
-        The usage of this method to make it possible that parser plugins can trigger render updates,
-        if the parser updates asyncly. Nowadays this update should be triggerd of MimeTreeParser::NodeHelper.
-
-        because deletion triggers an API change kube build would break so keep it for a release.
-        TODO: delete with 17.12.0
-      */
-
-    MIMETREEPARSER_DEPRECATED virtual QObject *sourceObject();
-
     /** should keys be imported automatically **/
     virtual bool autoImportKeys() const = 0;
 
@@ -106,6 +96,9 @@ public:
     virtual MessagePartRendererPtr messagePartTheme(MessagePartPtr msgPart) = 0;
 
     virtual bool isPrinting() const = 0;
+
+private:
+    Q_DISABLE_COPY(ObjectTreeSource)
 };
 }
 }

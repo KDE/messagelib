@@ -35,8 +35,6 @@
 #include "bodypartformatterbasefactory_p.h"
 #include "mimetreeparser_debug.h"
 
-// Qt
-
 #include <assert.h>
 
 using namespace MimeTreeParser;

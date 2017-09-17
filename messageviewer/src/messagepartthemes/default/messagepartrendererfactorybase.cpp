@@ -40,7 +40,6 @@ using namespace MessageViewer;
 MessagePartRendererFactoryBasePrivate::MessagePartRendererFactoryBasePrivate(
     MessagePartRendererFactoryBase *factory)
     : q(factory)
-    , mAll(std::unique_ptr<TypeRegistry>(new TypeRegistry()))
 {
 }
 
@@ -50,7 +49,7 @@ MessagePartRendererFactoryBasePrivate::~MessagePartRendererFactoryBasePrivate()
 
 void MessagePartRendererFactoryBasePrivate::setup()
 {
-    if (mAll->isEmpty()) {
+    if (mAll.isEmpty()) {
         initalize_builtin_renderers();
         q->loadPlugins();
     }
@@ -63,13 +62,12 @@ void MessagePartRendererFactoryBasePrivate::insert(const QString &type,
         return;
     }
 
-    (*mAll)[type].insert((*mAll)[type].begin(), formatter);
+    mAll[type].insert(mAll[type].begin(), formatter);
 }
 
 MessagePartRendererFactoryBase::MessagePartRendererFactoryBase()
-    : d(std::unique_ptr<MessagePartRendererFactoryBasePrivate>(new
-                                                               MessagePartRendererFactoryBasePrivate(
-                                                                   this)))
+    : d(std::unique_ptr<MessagePartRendererFactoryBasePrivate>(
+        new MessagePartRendererFactoryBasePrivate(this)))
 {
 }
 
@@ -86,8 +84,8 @@ std::vector<MessagePartRendererBase *> MessagePartRendererFactoryBase::typeRegis
     const QString &type) const
 {
     d->setup();
-    Q_ASSERT(!d->mAll->isEmpty());
-    return d->mAll->value(type);
+    Q_ASSERT(!d->mAll.isEmpty());
+    return d->mAll.value(type);
 }
 
 void MessagePartRendererFactoryBase::loadPlugins()

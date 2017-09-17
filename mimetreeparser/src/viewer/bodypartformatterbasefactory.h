@@ -52,7 +52,6 @@ struct ltstr {
 };
 
 typedef std::multimap<const char *, const Interface::BodyPartFormatter *, ltstr> SubtypeRegistry;
-typedef std::map<const char *, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
 
 class BodyPartFormatterBaseFactoryPrivate;
 
@@ -67,15 +66,11 @@ public:
 protected:
     void insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
     virtual void loadPlugins();
-private:
-    static BodyPartFormatterBaseFactory *mSelf;
 
+private:
+    Q_DISABLE_COPY(BodyPartFormatterBaseFactory)
     BodyPartFormatterBaseFactoryPrivate *d;
     friend class BodyPartFormatterBaseFactoryPrivate;
-private:
-    // disabled
-    const BodyPartFormatterBaseFactory &operator=(const BodyPartFormatterBaseFactory &);
-    BodyPartFormatterBaseFactory(const BodyPartFormatterBaseFactory &);
 };
 }
 

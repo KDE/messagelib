@@ -36,6 +36,7 @@
 
 namespace MimeTreeParser {
 class BodyPartFormatterBaseFactory;
+typedef std::map<const char *, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
 
 class BodyPartFormatterBaseFactoryPrivate
 {

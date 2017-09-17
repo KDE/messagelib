@@ -57,14 +57,9 @@ protected:
     virtual void loadPlugins();
 
 private:
-    static MessagePartRendererFactoryBase *mSelf;
-
+    Q_DISABLE_COPY(MessagePartRendererFactoryBase)
     std::unique_ptr<MessagePartRendererFactoryBasePrivate> d;
     friend class MessagePartRendererFactoryBasePrivate;
-private:
-    // disabled
-    const MessagePartRendererFactoryBase &operator=(const MessagePartRendererFactoryBase &);
-    MessagePartRendererFactoryBase(const MessagePartRendererFactoryBase &);
 };
 }
 

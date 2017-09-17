@@ -23,11 +23,10 @@
 
 using namespace MimeTreeParser;
 
-Interface::ObjectTreeSource::~ObjectTreeSource()
+Interface::ObjectTreeSource::ObjectTreeSource()
 {
 }
 
-QObject *Interface::ObjectTreeSource::sourceObject()
+Interface::ObjectTreeSource::~ObjectTreeSource()
 {
-    return nullptr;
 }

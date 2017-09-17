@@ -44,7 +44,7 @@ class MESSAGEVIEWER_EXPORT BodyPartFormatterFactory : public MimeTreeParser::
 {
 public:
     BodyPartFormatterFactory();
-    virtual ~BodyPartFormatterFactory();
+    ~BodyPartFormatterFactory();
 
 protected:
     void loadPlugins() override;
