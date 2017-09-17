@@ -23,7 +23,6 @@
 #include <QStandardPaths>
 
 #include <QDebug>
-#include <KIconLoader>
 #include <qtest.h>
 
 #include <kmime/kmime_content.h>
@@ -223,14 +222,22 @@ void MainTextJobTest::testHtmlWithImages()
     MessageComposer::RichTextComposerNg editor;
     editor.createActions(new KActionCollection(this));
 
-    QString image1 = KIconLoader::global()->iconPath(QStringLiteral("folder-new"), KIconLoader::Small, false);
-    QString image2 = KIconLoader::global()->iconPath(QStringLiteral("message"), KIconLoader::Small, false);
+    QImage image1(16, 16, QImage::Format_ARGB32_Premultiplied);
+    image1.fill(Qt::red);
+    const QString image1Path = QCoreApplication::applicationDirPath() + QLatin1String("/image1.png");
+    image1.save(image1Path);
+
+    QImage image2(16, 16, QImage::Format_ARGB32_Premultiplied);
+    image2.fill(Qt::blue);
+    const QString image2Path = QCoreApplication::applicationDirPath() + QLatin1String("/image2.png");
+    image2.save(image2Path);
+
     QString data = QStringLiteral("dust in the wind");
     editor.setTextOrHtml(data);
-    editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1));
-    editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1));
-    editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2));
-    editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2));
+    editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
+    editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
+    editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2Path));
+    editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2Path));
     KPIMTextEdit::ImageList images = editor.composerControler()->composerImages()->embeddedImages();
     QCOMPARE(images.count(), 2);
     QString cid1 = images[0]->contentID;
