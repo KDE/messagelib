@@ -283,6 +283,33 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
     return false;
 }
 
+// FIXME this used to go through the full webkit parser to extract the body and head blocks
+// until we have that back, at least attempt to fix some of the damage
+// yes, "parsing" HTML with regexps is very very wrong, but it's still better than not filtering
+// this at all...
+QString processHtml(const QString &htmlSource, QString &extraHead)
+{
+    auto s = htmlSource.trimmed();
+    s = s.replace(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive), QString()).trimmed();
+    s = s.replace(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive), QString()).trimmed();
+
+    // head
+    s = s.replace(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive), QString()).trimmed();
+    if (s.startsWith(QLatin1String("<head>", Qt::CaseInsensitive))) {
+        const auto idx = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
+        if (idx < 0)
+            return htmlSource;
+        extraHead = s.mid(6, idx - 6);
+        s = s.mid(idx + 7).trimmed();
+    }
+
+    // body
+    s = s.replace(QRegExp(QStringLiteral("<body[^>]*>"), Qt::CaseInsensitive), QString()).trimmed();
+    s = s.replace(QRegExp(QStringLiteral("</html>$"), Qt::CaseInsensitive), QString()).trimmed();
+    s = s.replace(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive), QString()).trimmed();
+    return s;
+}
+
 class CacheHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
@@ -492,7 +519,7 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
     {
         QString extraHead;
         //laurent: FIXME port to async method webengine
-        QString bodyText = mp->mBodyHTML;//processHtml(mp->mBodyHTML, extraHead);
+        QString bodyText = processHtml(mp->mBodyHTML, extraHead);
 
         if (isHtmlPreferred) {
             mp->mOtp->nodeHelper()->setNodeDisplayedEmbedded(mp->mNode, true);
