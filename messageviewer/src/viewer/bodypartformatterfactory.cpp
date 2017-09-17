@@ -32,20 +32,14 @@
 */
 
 #include "bodypartformatterfactory.h"
-#include "pluginloader.h"
 #include "urlhandlermanager.h"
 #include "messageviewer_debug.h"
 
 #include <MimeTreeParser/BodyPartFormatter>
 
-using namespace MessageViewer;
+#include <KPluginLoader>
 
-namespace {
-DEFINE_PLUGIN_LOADER(BodyPartFormatterPluginLoader,
-                     MimeTreeParser::Interface::BodyPartFormatterPlugin,
-                     "create_bodypart_formatter_plugin",
-                     "messageviewer/plugins/bodypartformatter/")
-}
+using namespace MessageViewer;
 
 BodyPartFormatterFactory::BodyPartFormatterFactory()
     : MimeTreeParser::BodyPartFormatterBaseFactory()
@@ -58,33 +52,27 @@ BodyPartFormatterFactory::~BodyPartFormatterFactory()
 
 void BodyPartFormatterFactory::loadPlugins()
 {
-    const BodyPartFormatterPluginLoader *pl = BodyPartFormatterPluginLoader::instance();
-    if (!pl) {
-        qCWarning(MESSAGEVIEWER_LOG)
-            << "BodyPartFormatterFactory: cannot instantiate plugin loader!";
-        return;
-    }
-    const QStringList types = pl->types();
-    qCDebug(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: found" << types.size() << "plugins.";
-    for (QStringList::const_iterator it = types.begin(); it != types.end(); ++it) {
-        const MimeTreeParser::Interface::BodyPartFormatterPlugin *plugin = pl->createForName(*it);
+    KPluginLoader::forEachPlugin(QStringLiteral("messageviewer/bodypartformatter"), [this](const QString &path) {
+        QPluginLoader loader(path);
+        auto plugin = qobject_cast<MimeTreeParser::Interface::BodyPartFormatterPlugin*>(loader.instance());
         if (!plugin) {
-            qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << *it
+            qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << path
                                          << "is not valid!";
-            continue;
+            return;
         }
+
         const MimeTreeParser::Interface::BodyPartFormatter *bfp = nullptr;
         for (int i = 0; (bfp = plugin->bodyPartFormatter(i)); ++i) {
             const char *type = plugin->type(i);
             if (!type || !*type) {
-                qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << *it
+                qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << path
                                              << "returned empty type specification for index"
                                              << i;
                 break;
             }
             const char *subtype = plugin->subtype(i);
             if (!subtype || !*subtype) {
-                qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << *it
+                qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << path
                                              << "returned empty subtype specification for index"
                                              << i;
                 break;
@@ -96,5 +84,5 @@ void BodyPartFormatterFactory::loadPlugins()
         for (int i = 0; (handler = plugin->urlHandler(i)); ++i) {
             URLHandlerManager::instance()->registerHandler(handler);
         }
-    }
+    });
 }

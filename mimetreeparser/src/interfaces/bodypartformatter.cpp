@@ -148,3 +148,13 @@ MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) const
     mp->d->mCreatedWriter = true;
     return mp;
 }
+
+BodyPartFormatterPlugin::~BodyPartFormatterPlugin()
+{
+}
+
+const BodyPartURLHandler* BodyPartFormatterPlugin::urlHandler(int idx) const
+{
+    Q_UNUSED(idx);
+    return nullptr;
+}

@@ -68,7 +68,6 @@ set(libmessageviewer_viewer_SRCS
     viewer/editorwatcher.cpp
     viewer/objecttreeemptysource.cpp
     viewer/objecttreeviewersource.cpp
-    viewer/pluginloaderbase.cpp
     viewer/viewer.cpp
     viewer/viewer_p.cpp
     viewer/messagedisplayformatattribute.cpp

@@ -126,19 +126,20 @@ public:
     mimetype such as text/plain. type=* is only allowed when
     subtype=*, too.
 */
-class BodyPartFormatterPlugin
+class MIMETREEPARSER_EXPORT BodyPartFormatterPlugin
 {
 public:
-    virtual ~BodyPartFormatterPlugin()
-    {
-    }
+    virtual ~BodyPartFormatterPlugin();
 
     virtual const BodyPartFormatter *bodyPartFormatter(int idx) const = 0;
     virtual const char *type(int idx) const = 0;
     virtual const char *subtype(int idx) const = 0;
 
-    virtual const BodyPartURLHandler *urlHandler(int idx) const = 0;
+    virtual const BodyPartURLHandler *urlHandler(int idx) const;
 };
 } // namespace Interface
 }
+
+Q_DECLARE_INTERFACE(MimeTreeParser::Interface::BodyPartFormatterPlugin, "org.kde.messageviewer.bodypartformatter/1.0")
+
 #endif // __MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H__
