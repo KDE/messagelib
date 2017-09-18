@@ -23,12 +23,8 @@
 
 #include "core/modelinvariantindex.h"
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class ModelInvariantIndex::Private
 {
 public:
@@ -40,27 +36,29 @@ public:
     {
         return mModelIndexRow;
     }
+
     uint rowMapperSerial() const
     {
         return mRowMapperSerial;
     }
+
     void setModelIndexRowAndRowMapperSerial(int modelIndexRow, uint rowMapperSerial)
     {
         mModelIndexRow = modelIndexRow;
         mRowMapperSerial = rowMapperSerial;
     }
+
     ModelInvariantRowMapper *rowMapper() const
     {
         return mRowMapper;
     }
+
     void setRowMapper(ModelInvariantRowMapper *mapper)
     {
         mRowMapper = mapper;
     }
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_MODELINVARIANTINDEX_P_H__

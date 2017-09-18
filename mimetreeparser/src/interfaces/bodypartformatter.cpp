@@ -153,7 +153,7 @@ BodyPartFormatterPlugin::~BodyPartFormatterPlugin()
 {
 }
 
-const BodyPartURLHandler* BodyPartFormatterPlugin::urlHandler(int idx) const
+const BodyPartURLHandler *BodyPartFormatterPlugin::urlHandler(int idx) const
 {
     Q_UNUSED(idx);
     return nullptr;

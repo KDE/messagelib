@@ -28,7 +28,7 @@ using namespace MessageCore;
 
 QTEST_MAIN(AttachmentFromUrlJobTest)
 
-#define PATH_ATTACHMENTS QLatin1String( KDESRCDIR "/attachments/" )
+#define PATH_ATTACHMENTS QLatin1String(KDESRCDIR "/attachments/")
 
 void AttachmentFromUrlJobTest::initTestCase()
 {
@@ -103,4 +103,3 @@ void AttachmentFromUrlJobTest::testAttachmentCharset()
     QCOMPARE(part->fileName(), filename);
     QCOMPARE(part->charset(), charset);
 }
-

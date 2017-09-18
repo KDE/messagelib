@@ -23,12 +23,10 @@
 InfoPartTest::InfoPartTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 InfoPartTest::~InfoPartTest()
 {
-
 }
 
 void InfoPartTest::shouldHaveDefaultValue()

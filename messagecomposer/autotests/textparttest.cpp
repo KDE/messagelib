@@ -23,12 +23,10 @@
 TextPartTest::TextPartTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 TextPartTest::~TextPartTest()
 {
-
 }
 
 void TextPartTest::shouldHaveDefaultValue()

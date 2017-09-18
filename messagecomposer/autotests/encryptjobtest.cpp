@@ -53,7 +53,6 @@ void EncryptJobTest::initTestCase()
 
 void EncryptJobTest::testContentDirect()
 {
-
     MessageComposer::Composer *composer = new MessageComposer::Composer;
     QList<QByteArray> charsets;
     charsets << "us-ascii";
@@ -84,7 +83,6 @@ void EncryptJobTest::testContentDirect()
     eJob->setEncryptionKeys(keys);
 
     checkEncryption(eJob);
-
 }
 
 void EncryptJobTest::testContentChained()
@@ -117,7 +115,6 @@ void EncryptJobTest::testContentChained()
     eJob->setContent(mainTextJob->content());
 
     checkEncryption(eJob);
-
 }
 
 void EncryptJobTest::testHeaders()
@@ -160,7 +157,6 @@ void EncryptJobTest::testHeaders()
 
 void EncryptJobTest::checkEncryption(MessageComposer::EncryptJob *eJob)
 {
-
     VERIFYEXEC(eJob);
 
     KMime::Content *result = eJob->content();
@@ -168,6 +164,4 @@ void EncryptJobTest::checkEncryption(MessageComposer::EncryptJob *eJob)
     result->assemble();
 
     ComposerTestUtil::verifyEncryption(result, QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8(), Kleo::OpenPGPMIMEFormat);
-
 }
-

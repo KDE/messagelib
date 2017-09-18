@@ -77,8 +77,7 @@ class MailSourceViewTextBrowser : public QPlainTextEdit
 {
     Q_OBJECT
 public:
-    explicit MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface,
-                                       QWidget *parent = nullptr);
+    explicit MailSourceViewTextBrowser(KPIMTextEdit::TextToSpeechInterface *textToSpeechInterface, QWidget *parent = nullptr);
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 Q_SIGNALS:

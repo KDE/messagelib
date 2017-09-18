@@ -31,4 +31,3 @@ void MimeTreeParser::Test::setupEnv()
     setenv("KDEHOME", QFile::encodeName(QDir::homePath() + QString::fromLatin1("/.qttest")).constData(), 1);
     QStandardPaths::setTestModeEnabled(true);
 }
-

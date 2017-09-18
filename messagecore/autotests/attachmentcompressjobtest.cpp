@@ -102,4 +102,3 @@ void AttachmentCompressJobTest::testCompressedSizeLarger()
     VERIFYEXEC(cjob);
     QVERIFY(cjob->isCompressedPartLarger());
 }
-

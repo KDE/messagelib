@@ -32,8 +32,7 @@ namespace MessageViewer {
 /**
  * @short A viewer handler to mark viewed messages as read.
  */
-class MESSAGEVIEWER_EXPORT MarkMessageReadHandler : public QObject,
-    public AbstractMessageLoadedHandler
+class MESSAGEVIEWER_EXPORT MarkMessageReadHandler : public QObject, public AbstractMessageLoadedHandler
 {
     Q_OBJECT
 

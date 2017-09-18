@@ -26,19 +26,12 @@
 class KLineEdit;
 class KTextEdit;
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class OptionSet;
-
 } // namespace Core
 
-namespace Utils
-{
-
+namespace Utils {
 /**
  * The base class for the OptionSet editors. Provides common functionality.
  */
@@ -75,11 +68,8 @@ protected Q_SLOTS:
 private:
     KLineEdit *mNameEdit = nullptr;                        ///< The editor for the OptionSet name
     KTextEdit *mDescriptionEdit = nullptr;                 ///< The editor for the OptionSet description
-
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_OPTIONSETEDITOR_H__

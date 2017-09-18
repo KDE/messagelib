@@ -233,7 +233,7 @@ void Manager::createDefaultAggregations()
                  "Messages are threaded. " \
                  "So for example, in \"Today\" you will find all the messages arrived today " \
                  "and all the threads that have been active today."
-                ),
+                 ),
             Aggregation::GroupByDateRange,
             Aggregation::ExpandRecentGroups,
             Aggregation::PerfectReferencesAndSubject,
@@ -241,8 +241,8 @@ void Manager::createDefaultAggregations()
             Aggregation::ExpandThreadsWithUnreadOrImportantMessages,
             Aggregation::FavorInteractivity,
             true
-        )
-    );
+            )
+        );
 
     addAggregation(
         new Aggregation(
@@ -250,7 +250,7 @@ void Manager::createDefaultAggregations()
             i18n("This view uses smart date range groups. " \
                  "Messages are not threaded. " \
                  "So for example, in \"Today\" you will simply find all the messages arrived today."
-                ),
+                 ),
             Aggregation::GroupByDateRange,
             Aggregation::ExpandRecentGroups,
             Aggregation::NoThreading,
@@ -258,8 +258,8 @@ void Manager::createDefaultAggregations()
             Aggregation::NeverExpandThreads,
             Aggregation::FavorInteractivity,
             true
-        )
-    );
+            )
+        );
 
     addAggregation(
         new Aggregation(
@@ -268,7 +268,7 @@ void Manager::createDefaultAggregations()
                  "Messages are threaded. " \
                  "So for example, in \"Today\" you will find all the messages arrived today " \
                  "and all the threads that have been active today."
-                ),
+                 ),
             Aggregation::GroupByDate,
             Aggregation::ExpandRecentGroups,
             Aggregation::PerfectReferencesAndSubject,
@@ -276,8 +276,8 @@ void Manager::createDefaultAggregations()
             Aggregation::ExpandThreadsWithUnreadOrImportantMessages,
             Aggregation::FavorInteractivity,
             true
-        )
-    );
+            )
+        );
 
     addAggregation(
         new Aggregation(
@@ -285,7 +285,7 @@ void Manager::createDefaultAggregations()
             i18n("This view uses day-by-day groups. " \
                  "Messages are not threaded. " \
                  "So for example, in \"Today\" you will simply find all the messages arrived today."
-                ),
+                 ),
             Aggregation::GroupByDate,
             Aggregation::ExpandRecentGroups,
             Aggregation::NoThreading,
@@ -293,8 +293,8 @@ void Manager::createDefaultAggregations()
             Aggregation::NeverExpandThreads,
             Aggregation::FavorInteractivity,
             true
-        )
-    );
+            )
+        );
 
     addAggregation(
         new Aggregation(
@@ -307,14 +307,14 @@ void Manager::createDefaultAggregations()
             Aggregation::ExpandThreadsWithUnreadOrImportantMessages,
             Aggregation::FavorInteractivity,
             true
-        )
-    );
+            )
+        );
 
     addAggregation(
         new Aggregation(
             i18n("Flat Date View"),
             i18n("This is a plain and old list of messages sorted by date: no groups and no threading." \
-                ),
+                 ),
             Aggregation::NoGrouping,
             Aggregation::NeverExpandGroups,
             Aggregation::NoThreading,
@@ -323,8 +323,8 @@ void Manager::createDefaultAggregations()
             Aggregation::FavorInteractivity,
             true
 
-        )
-    );
+            )
+        );
 
     addAggregation(
         new Aggregation(
@@ -332,7 +332,7 @@ void Manager::createDefaultAggregations()
             i18n("This view groups the messages by senders or receivers (depending on the folder " \
                  "type). " \
                  "Messages are not threaded."
-                ),
+                 ),
             Aggregation::GroupBySenderOrReceiver,
             Aggregation::NeverExpandGroups,
             Aggregation::NoThreading,
@@ -340,8 +340,8 @@ void Manager::createDefaultAggregations()
             Aggregation::NeverExpandThreads,
             Aggregation::FavorSpeed,
             true
-        )
-    );
+            )
+        );
 
     addAggregation(
         new Aggregation(
@@ -354,8 +354,8 @@ void Manager::createDefaultAggregations()
             Aggregation::NeverExpandThreads,
             Aggregation::FavorSpeed,
             true
-        )
-    );
+            )
+        );
 
     /*
     FIX THIS
@@ -415,8 +415,7 @@ const SortOrder Manager::sortOrderForStorageModel(const StorageModel *storageMod
     return ret;
 }
 
-void Manager::saveSortOrderForStorageModel(const StorageModel *storageModel,
-        const SortOrder &order, bool storageUsesPrivateSortOrder)
+void Manager::saveSortOrderForStorageModel(const StorageModel *storageModel, const SortOrder &order, bool storageUsesPrivateSortOrder)
 {
     KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelSortOrderGroup());
     order.writeConfig(conf, storageModel->id(), storageUsesPrivateSortOrder);
@@ -489,7 +488,7 @@ void Manager::saveThemeForStorageModel(const QString &storageModelIndex, const Q
     }
 }
 
-const Theme *Manager::themeForStorageModel(const Akonadi::Collection &col,  bool *storageUsesPrivateTheme)
+const Theme *Manager::themeForStorageModel(const Akonadi::Collection &col, bool *storageUsesPrivateTheme)
 {
     Q_ASSERT(storageUsesPrivateTheme);
 
@@ -499,12 +498,10 @@ const Theme *Manager::themeForStorageModel(const Akonadi::Collection &col,  bool
         return defaultTheme();
     }
     return Manager::themeForStorageModel(QString::number(col.id()), storageUsesPrivateTheme);
-
 }
 
 const Theme *Manager::themeForStorageModel(const StorageModel *storageModel, bool *storageUsesPrivateTheme)
 {
-
     Q_ASSERT(storageUsesPrivateTheme);
 
     *storageUsesPrivateTheme = false; // this is by default
@@ -547,7 +544,8 @@ void Manager::addTheme(Theme *set)
     mThemes.insert(set->id(), set);
 }
 
-static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting, bool alignRight, bool addGroupHeaderItem)
+static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting, bool alignRight,
+                                                   bool addGroupHeaderItem)
 {
     Theme::Column *c = new Theme::Column();
     c->setLabel(name);
@@ -585,7 +583,8 @@ static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name
     return c;
 }
 
-static Theme::Column *add_theme_simple_icon_column(Theme *s, const QString &name, const QString &pixmapName, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting)
+static Theme::Column *add_theme_simple_icon_column(Theme *s, const QString &name, const QString &pixmapName, Theme::ContentItem::Type type, bool visibleByDefault,
+                                                   SortOrder::MessageSorting messageSorting)
 {
     Theme::Column *c = new Theme::Column();
     c->setLabel(name);
@@ -619,7 +618,7 @@ void Manager::createDefaultThemes()
     s = new Theme(
         i18nc("Default theme name", "Classic"),
         i18n("A simple, backward compatible, single row theme"), true   /*readOnly*/
-    );
+        );
 
     c = new Theme::Column();
     c->setLabel(i18nc("@title:column Subject of messages", "Subject"));
@@ -664,10 +663,12 @@ void Manager::createDefaultThemes()
     add_theme_simple_text_column(s, i18nc("Date of a message", "Date"), Theme::ContentItem::Date, true, SortOrder::SortMessagesByDateTime, false, false);
     add_theme_simple_text_column(s, i18n("Most Recent Date"), Theme::ContentItem::MostRecentDate, false, SortOrder::SortMessagesByDateTimeOfMostRecent, false, true);
     add_theme_simple_text_column(s, i18nc("Size of a message", "Size"), Theme::ContentItem::Size, false, SortOrder::SortMessagesBySize, false, false);
-    add_theme_simple_icon_column(s, i18nc("Attachement indication", "Attachment"), QStringLiteral("mail-attachment"), Theme::ContentItem::AttachmentStateIcon, false, SortOrder::SortMessagesByAttachmentStatus);
+    add_theme_simple_icon_column(s, i18nc("Attachement indication", "Attachment"), QStringLiteral(
+                                     "mail-attachment"), Theme::ContentItem::AttachmentStateIcon, false, SortOrder::SortMessagesByAttachmentStatus);
     add_theme_simple_icon_column(s, i18n("Read/Unread"), QStringLiteral("mail-mark-unread-new"), Theme::ContentItem::ReadStateIcon, false, SortOrder::SortMessagesByUnreadStatus);
     add_theme_simple_icon_column(s, i18n("Replied"), QStringLiteral("mail-replied"), Theme::ContentItem::RepliedStateIcon, false, SortOrder::NoMessageSorting);
-    add_theme_simple_icon_column(s, i18nc("Message importance indication", "Important"), QStringLiteral("emblem-important"), Theme::ContentItem::ImportantStateIcon, false, SortOrder::SortMessagesByImportantStatus);
+    add_theme_simple_icon_column(s, i18nc("Message importance indication", "Important"), QStringLiteral(
+                                     "emblem-important"), Theme::ContentItem::ImportantStateIcon, false, SortOrder::SortMessagesByImportantStatus);
     add_theme_simple_icon_column(s, i18n("Action Item"), QStringLiteral("mail-task"), Theme::ContentItem::ActionItemStateIcon, false, SortOrder::SortMessagesByActionItemStatus);
     add_theme_simple_icon_column(s, i18n("Spam/Ham"), QStringLiteral("mail-mark-junk"), Theme::ContentItem::SpamHamStateIcon, false, SortOrder::NoMessageSorting);
     add_theme_simple_icon_column(s, i18n("Watched/Ignored"), QStringLiteral("mail-thread-watch"), Theme::ContentItem::WatchedIgnoredStateIcon, false, SortOrder::NoMessageSorting);
@@ -684,7 +685,7 @@ void Manager::createDefaultThemes()
     s = new Theme(
         i18n("Smart"),
         i18n("A smart multiline and multi item theme"), true   /*readOnly*/
-    );
+        );
 
     c = new Theme::Column();
     c->setLabel(i18n("Message"));
@@ -828,7 +829,6 @@ void Manager::themesConfigurationCompleted()
 
 void Manager::reloadAllWidgets()
 {
-
     QList< Widget * >::ConstIterator end(mWidgetList.constEnd());
     for (QList< Widget * >::ConstIterator it = mWidgetList.constBegin(); it != end; ++it) {
         if ((*it)->view()) {
@@ -846,9 +846,9 @@ void Manager::reloadGlobalConfiguration()
     loadGlobalConfiguration();
 
     if (
-        (oldDateFormat != (int)mDateFormatter->format()) ||
-        (oldDateCustomFormat != mDateFormatter->customFormat())
-    ) {
+        (oldDateFormat != (int)mDateFormatter->format())
+        || (oldDateCustomFormat != mDateFormatter->customFormat())
+        ) {
         reloadAllWidgets();
     }
 }
@@ -857,7 +857,7 @@ void Manager::loadGlobalConfiguration()
 {
     // Load the date format
     const KMime::DateFormatter::FormatType type = static_cast<KMime::DateFormatter::FormatType>(
-                MessageCore::MessageCoreSettings::self()->dateFormat());
+        MessageCore::MessageCoreSettings::self()->dateFormat());
     mDateFormatter->setCustomFormat(MessageCore::MessageCoreSettings::self()->customDateFormat());
     mDateFormatter->setFormat(type);
 }
@@ -930,7 +930,6 @@ void Manager::loadConfiguration()
             createDefaultThemes();
         }
     }
-
 }
 
 void Manager::saveGlobalConfiguration()
@@ -976,4 +975,3 @@ void Manager::saveConfiguration()
 
     MessageListSettings::self()->config()->sync();
 }
-

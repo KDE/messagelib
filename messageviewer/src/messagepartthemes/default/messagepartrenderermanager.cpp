@@ -46,8 +46,7 @@ GRANTLEE_END_LOOKUP
 // Read-only introspection of QGpgME::Protocol object.
 namespace Grantlee {
 template<>
-inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object,
-                                                               const QString &property)
+inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object, const QString &property)
 {
     if (property == QStringLiteral("name")) {
         return object->name();

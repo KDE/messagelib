@@ -65,7 +65,8 @@ using namespace MessageList::Core;
 static const char gThemeContentItemTypeDndMimeDataFormat[] = "application/x-kmail-messagelistview-theme-contentitem-type";
 
 ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme::Column *column, const QString &title)
-    : QDialog(parent), mColumn(column)
+    : QDialog(parent)
+    , mColumn(column)
 {
     setWindowModality(Qt::ApplicationModal);   // FIXME: Sure ?
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -115,7 +116,6 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
     mIsSenderOrReceiverCheck->setChecked(mColumn->isSenderOrReceiver());
     ComboBoxUtils::fillIntegerOptionCombo(mMessageSortingCombo, SortOrder::enumerateMessageSortingOptions(Aggregation::PerfectReferencesAndSubject));
     ComboBoxUtils::setIntegerOptionComboValue(mMessageSortingCombo, mColumn->messageSorting());
-
 }
 
 void ThemeColumnPropertiesDialog::slotOkButtonClicked()
@@ -130,14 +130,15 @@ void ThemeColumnPropertiesDialog::slotOkButtonClicked()
     mColumn->setMessageSorting(
         static_cast< SortOrder::MessageSorting >(
             ComboBoxUtils::getIntegerOptionComboValue(mMessageSortingCombo, SortOrder::NoMessageSorting)
-        )
-    );
+            )
+        );
 
     accept();
 }
 
 ThemeContentItemSourceLabel::ThemeContentItemSourceLabel(QWidget *parent, Theme::ContentItem::Type type)
-    : QLabel(parent), mType(type)
+    : QLabel(parent)
+    , mType(type)
 {
     setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 }
@@ -177,7 +178,7 @@ void ThemeContentItemSourceLabel::startDrag()
     QMimeData *data = new QMimeData();
     QByteArray arry;
     arry.resize(sizeof(Theme::ContentItem::Type));
-    *((Theme::ContentItem::Type *) arry.data()) = mType;
+    *((Theme::ContentItem::Type *)arry.data()) = mType;
     data->setData(QLatin1String(gThemeContentItemTypeDndMimeDataFormat), arry);
     QDrag *drag = new QDrag(this);
     drag->setMimeData(data);
@@ -249,8 +250,8 @@ Item *ThemePreviewDelegate::itemFromIndex(const QModelIndex &index) const
 }
 
 ThemePreviewWidget::ThemePreviewWidget(QWidget *parent)
-    : QTreeWidget(parent),
-      mTheme(nullptr)
+    : QTreeWidget(parent)
+    , mTheme(nullptr)
 {
     mSelectedThemeContentItem = nullptr;
     mSelectedThemeColumn = nullptr;
@@ -501,7 +502,7 @@ void ThemePreviewWidget::internalHandleDragMoveEvent(QDragMoveEvent *e)
         return;    // ugh
     }
 
-    Theme::ContentItem::Type type = *((Theme::ContentItem::Type *) arry.data());
+    Theme::ContentItem::Type type = *((Theme::ContentItem::Type *)arry.data());
 
     if (!computeContentItemInsertPosition(e->pos(), type)) {
         return;
@@ -547,7 +548,7 @@ void ThemePreviewWidget::dropEvent(QDropEvent *e)
         return;    // ugh
     }
 
-    Theme::ContentItem::Type type = *((Theme::ContentItem::Type *) arry.data());
+    Theme::ContentItem::Type type = *((Theme::ContentItem::Type *)arry.data());
 
     if (!computeContentItemInsertPosition(e->pos(), type)) {
         viewport()->update();
@@ -600,9 +601,9 @@ void ThemePreviewWidget::dropEvent(QDropEvent *e)
             delete ci;
             return;
         }
-        idx = mDelegate->hitContentItemRight() ? \
-              row->rightItems().indexOf(const_cast< Theme::ContentItem * >(mDelegate->hitContentItem())) : \
-              row->leftItems().indexOf(const_cast< Theme::ContentItem * >(mDelegate->hitContentItem()));
+        idx = mDelegate->hitContentItemRight()   \
+              ? row->rightItems().indexOf(const_cast< Theme::ContentItem * >(mDelegate->hitContentItem()))   \
+              : row->leftItems().indexOf(const_cast< Theme::ContentItem * >(mDelegate->hitContentItem()));
         if (idx < 0) {
             // bleah
             delete ci;
@@ -620,9 +621,9 @@ void ThemePreviewWidget::dropEvent(QDropEvent *e)
             delete ci;
             return;
         }
-        idx = mDelegate->hitContentItemRight() ? \
-              row->rightItems().indexOf(const_cast< Theme::ContentItem * >(mDelegate->hitContentItem())) : \
-              row->leftItems().indexOf(const_cast< Theme::ContentItem * >(mDelegate->hitContentItem()));
+        idx = mDelegate->hitContentItemRight()   \
+              ? row->rightItems().indexOf(const_cast< Theme::ContentItem * >(mDelegate->hitContentItem()))   \
+              : row->leftItems().indexOf(const_cast< Theme::ContentItem * >(mDelegate->hitContentItem()));
         if (idx < 0) {
             // bleah
             delete ci;
@@ -717,11 +718,11 @@ bool ThemePreviewWidget::computeContentItemInsertPosition(const QPoint &pos, The
     if (!mDelegate->hitContentItem()) {
         // didn't hit anything... probably no items in the row
         if (pos.x() < (rowRect.left() + (rowRect.width() / 2))) {
-            mItemInsertPosition =  AsLastLeftItem;
+            mItemInsertPosition = AsLastLeftItem;
             mDropIndicatorPoint1 = QPoint(rowRect.left(), rowRect.top());
             mDropIndicatorPoint2 = QPoint(rowRect.left(), rowRect.bottom());
         } else {
-            mItemInsertPosition =  AsLastRightItem;
+            mItemInsertPosition = AsLastRightItem;
             mDropIndicatorPoint1 = QPoint(rowRect.right(), rowRect.top());
             mDropIndicatorPoint2 = QPoint(rowRect.right(), rowRect.bottom());
         }
@@ -808,7 +809,7 @@ void ThemePreviewWidget::mouseMoveEvent(QMouseEvent *e)
     QMimeData *data = new QMimeData();
     QByteArray arry;
     arry.resize(sizeof(Theme::ContentItem::Type));
-    *((Theme::ContentItem::Type *) arry.data()) = mSelectedThemeContentItem->type();
+    *((Theme::ContentItem::Type *)arry.data()) = mSelectedThemeContentItem->type();
     data->setData(QLatin1String(gThemeContentItemTypeDndMimeDataFormat), arry);
     QDrag *drag = new QDrag(this);
     drag->setMimeData(data);
@@ -870,7 +871,6 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
         QMenu menu;
 
         if (mSelectedThemeContentItem) {
-
             menu.addSection(Theme::ContentItem::description(mSelectedThemeContentItem->type()));
 
             if (mSelectedThemeContentItem->displaysText()) {
@@ -941,7 +941,6 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
 
                 menu.addMenu(childmenu)->setText(i18n("When Disabled"));
             }
-
         }
 
         if (mDelegate->hitItem()) {
@@ -995,7 +994,6 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
                 if (mTheme->groupHeaderBackgroundMode() == Theme::Transparent) {
                     act->setEnabled(false);
                 }
-
             }
         }
 
@@ -1004,7 +1002,6 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
         }
 
         menu.exec(viewport()->mapToGlobal(e->pos()));
-
     }
 }
 
@@ -1102,7 +1099,8 @@ void ThemePreviewWidget::slotGroupHeaderBackgroundModeMenuTriggered(QAction *act
     case Theme::AutoColor:
         mTheme->setGroupHeaderBackgroundMode(Theme::AutoColor);
         break;
-    case Theme::CustomColor: {
+    case Theme::CustomColor:
+    {
         QColor clr;
         clr = QColorDialog::getColor(mTheme->groupHeaderBackgroundColor(), this);
         if (!clr.isValid()) {
@@ -1111,8 +1109,8 @@ void ThemePreviewWidget::slotGroupHeaderBackgroundModeMenuTriggered(QAction *act
 
         mTheme->setGroupHeaderBackgroundMode(Theme::CustomColor);
         mTheme->setGroupHeaderBackgroundColor(clr);
+        break;
     }
-    break;
     }
 
     setTheme(mTheme);   // this will reset theme cache and trigger a global update
@@ -1136,9 +1134,9 @@ void ThemePreviewWidget::paintEvent(QPaintEvent *e)
     QTreeWidget::paintEvent(e);
 
     if (
-        mThemeSelectedContentItemRect.isValid() ||
-        (mDropIndicatorPoint1 != mDropIndicatorPoint2)
-    ) {
+        mThemeSelectedContentItemRect.isValid()
+        || (mDropIndicatorPoint1 != mDropIndicatorPoint2)
+        ) {
         QPainter painter(viewport());
 
         if (mThemeSelectedContentItemRect.isValid()) {
@@ -1247,8 +1245,8 @@ void ThemePreviewWidget::slotAddColumn()
     mSelectedThemeColumn->addMessageRow(new Theme::Row());
     mSelectedThemeColumn->addGroupHeaderRow(new Theme::Row());
 
-    ThemeColumnPropertiesDialog *dlg =
-        new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Add New Column"));
+    ThemeColumnPropertiesDialog *dlg
+        = new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Add New Column"));
 
     if (dlg->exec() == QDialog::Accepted) {
         mTheme->insertColumn(newColumnIndex, mSelectedThemeColumn);
@@ -1258,9 +1256,7 @@ void ThemePreviewWidget::slotAddColumn()
         mDropIndicatorPoint1 = mDropIndicatorPoint2;
 
         setTheme(mTheme);   // this will reset theme cache and trigger a global update
-
     } else {
-
         delete mSelectedThemeColumn;
         mSelectedThemeColumn = nullptr;
     }
@@ -1274,8 +1270,8 @@ void ThemePreviewWidget::slotColumnProperties()
         return;
     }
 
-    ThemeColumnPropertiesDialog *dlg =
-        new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Column Properties"));
+    ThemeColumnPropertiesDialog *dlg
+        = new ThemeColumnPropertiesDialog(this, mSelectedThemeColumn, i18n("Column Properties"));
 
     if (dlg->exec() == QDialog::Accepted) {
         mSelectedThemeContentItem = nullptr;
@@ -1447,7 +1443,8 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     tabg->addWidget(mPreviewWidget, 1, 0);
 
     QLabel *l = new QLabel(tab);
-    l->setText(i18n("Right click on the header to add or modify columns. Drag the content items and drop them on the columns in order to compose your theme. Right click on the items inside the view for more options."));
+    l->setText(i18n(
+                   "Right click on the header to add or modify columns. Drag the content items and drop them on the columns in order to compose your theme. Right click on the items inside the view for more options."));
     l->setWordWrap(true);
     l->setAlignment(Qt::AlignCenter);
     tabg->addWidget(l, 2, 0);
@@ -1481,7 +1478,6 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     tabg->setColumnStretch(1, 1);
     tabg->setRowStretch(2, 1);
     fillViewHeaderPolicyCombo();
-
 }
 
 ThemeEditor::~ThemeEditor()
@@ -1527,7 +1523,7 @@ void ThemeEditor::commit()
 
     mCurrentTheme->setViewHeaderPolicy(
         (Theme::ViewHeaderPolicy)ComboBoxUtils::getIntegerOptionComboValue(mViewHeaderPolicyCombo, 0)
-    );
+        );
     mCurrentTheme->setIconSize(mIconSizeSpinBox->value());
     // other settings are already committed to this theme
 }
@@ -1537,7 +1533,7 @@ void ThemeEditor::fillViewHeaderPolicyCombo()
     ComboBoxUtils::fillIntegerOptionCombo(
         mViewHeaderPolicyCombo,
         Theme::enumerateViewHeaderPolicyOptions()
-    );
+        );
 }
 
 void ThemeEditor::slotNameEditTextEdited(const QString &newName)
@@ -1563,4 +1559,3 @@ MessageList::Core::Theme *ThemeEditor::editedTheme() const
 {
     return mCurrentTheme;
 }
-

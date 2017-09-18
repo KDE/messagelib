@@ -58,7 +58,6 @@ OptionSetEditor::OptionSetEditor(QWidget *parent)
 
     tabg->setColumnStretch(1, 1);
     tabg->setRowStretch(2, 1);
-
 }
 
 OptionSetEditor::~OptionSetEditor()
@@ -80,4 +79,3 @@ KLineEdit *OptionSetEditor::nameEdit() const
 {
     return mNameEdit;
 }
-

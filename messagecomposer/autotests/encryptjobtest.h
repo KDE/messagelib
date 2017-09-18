@@ -26,8 +26,7 @@
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class EncryptJob;
 }
 
@@ -45,7 +44,6 @@ private Q_SLOTS:
 
 private:
     void checkEncryption(MessageComposer::EncryptJob *eJob);
-
 };
 
 #endif

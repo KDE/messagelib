@@ -57,8 +57,7 @@
 #include <QPushButton>
 
 using namespace MessageViewer;
-MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax,
-                                                                 QWidget *parent)
+MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);

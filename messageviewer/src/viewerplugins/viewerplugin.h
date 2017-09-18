@@ -34,8 +34,7 @@ public:
     explicit ViewerPlugin(QObject *parent = nullptr);
     ~ViewerPlugin();
 
-    virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent,
-                                                             KActionCollection *ac) = 0;
+    virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent, KActionCollection *ac) = 0;
     virtual QString viewerPluginName() const = 0;
     virtual void showConfigureDialog(QWidget *parent = nullptr);
     virtual bool hasConfigureDialog() const;

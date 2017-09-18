@@ -22,12 +22,8 @@
 #include <messagelist_export.h>
 #include <QPushButton>
 
-namespace MessageList
-{
-
-namespace Utils
-{
-
+namespace MessageList {
+namespace Utils {
 class ThemeComboBox;
 class ThemeConfigButtonPrivate;
 
@@ -59,9 +55,7 @@ private:
 
     ThemeConfigButtonPrivate *const d;
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_THEMECONFIGBUTTON_H__

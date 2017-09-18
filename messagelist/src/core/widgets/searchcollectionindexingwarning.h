@@ -25,24 +25,18 @@
 #include "messagelist_private_export.h"
 class KJob;
 
-namespace Akonadi
-{
-namespace Search
-{
-namespace PIM
-{
+namespace Akonadi {
+namespace Search {
+namespace PIM {
 class IndexedItems;
 }
 }
 }
-namespace Akonadi
-{
+namespace Akonadi {
 class CollectionFetchJob;
 }
-namespace MessageList
-{
-namespace Core
-{
+namespace MessageList {
+namespace Core {
 class MESSAGELIST_TESTS_EXPORT SearchCollectionIndexingWarning : public KMessageWidget
 {
     Q_OBJECT

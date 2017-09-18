@@ -30,8 +30,7 @@ K_PLUGIN_FACTORY_WITH_JSON(MessageViewerDefaultGrantleeHeaderStylePluginFactory,
                            registerPlugin<DefaultGrantleeHeaderStylePlugin>();
                            )
 
-DefaultGrantleeHeaderStylePlugin::DefaultGrantleeHeaderStylePlugin(QObject *parent,
-                                                                   const QList<QVariant> &)
+DefaultGrantleeHeaderStylePlugin::DefaultGrantleeHeaderStylePlugin(QObject *parent, const QList<QVariant> &)
     : MessageViewer::HeaderStylePlugin(parent)
     , mHeaderStyle(new GrantleeHeaderStyle)
     , mHeaderStrategy(new DefaultGrantleeHeaderStrategy)
@@ -59,10 +58,7 @@ HeaderStrategy *DefaultGrantleeHeaderStylePlugin::headerStrategy() const
     return mHeaderStrategy;
 }
 
-HeaderStyleInterface *DefaultGrantleeHeaderStylePlugin::createView(KActionMenu *menu,
-                                                                   QActionGroup *actionGroup,
-                                                                   KActionCollection *ac,
-                                                                   QObject *parent)
+HeaderStyleInterface *DefaultGrantleeHeaderStylePlugin::createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent)
 {
     MessageViewer::HeaderStyleInterface *view
         = new MessageViewer::DefaultGrantleeHeaderStyleInterface(this, parent);

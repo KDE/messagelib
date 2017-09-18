@@ -51,7 +51,6 @@ void SignEncryptTest::initTestCase()
 
 void SignEncryptTest::testContent()
 {
-
     std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
 
     MessageComposer::Composer *composer = new MessageComposer::Composer;
@@ -147,4 +146,3 @@ void SignEncryptTest::testHeaders()
     QCOMPARE(result->contentType()->parameter(QString::fromLocal8Bit("protocol")), QString::fromLocal8Bit("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 }
-

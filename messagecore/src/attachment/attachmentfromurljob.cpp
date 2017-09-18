@@ -137,10 +137,10 @@ void AttachmentFromUrlJob::doStart()
 
     KIO::TransferJob *job = KIO::get(url(), KIO::NoReload,
                                      (uiDelegate() ? KIO::DefaultFlags : KIO::HideProgressInfo));
-    QObject::connect(job, SIGNAL(result(KJob*)),
-                     this, SLOT(transferJobResult(KJob*)));
-    QObject::connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
-                     this, SLOT(transferJobData(KIO::Job*,QByteArray)));
+    QObject::connect(job, SIGNAL(result(KJob *)),
+                     this, SLOT(transferJobResult(KJob *)));
+    QObject::connect(job, SIGNAL(data(KIO::Job *,QByteArray)),
+                     this, SLOT(transferJobData(KIO::Job *,QByteArray)));
 }
 
 #include "moc_attachmentfromurljob.cpp"

@@ -38,12 +38,17 @@ OptionSet::OptionSet()
 }
 
 OptionSet::OptionSet(const OptionSet &set)
-    : mId(set.mId), mName(set.mName), mDescription(set.mDescription), mReadOnly(set.mReadOnly)
+    : mId(set.mId)
+    , mName(set.mName)
+    , mDescription(set.mDescription)
+    , mReadOnly(set.mReadOnly)
 {
 }
 
 OptionSet::OptionSet(const QString &name, const QString &description, bool readOnly)
-    : mName(name), mDescription(description), mReadOnly(readOnly)
+    : mName(name)
+    , mDescription(description)
+    , mReadOnly(readOnly)
 {
     generateUniqueId();
 }
@@ -135,4 +140,3 @@ bool OptionSet::loadFromString(const QString &data)
 
     return true;
 }
-

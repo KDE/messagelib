@@ -26,12 +26,10 @@
 AttachmentVcardFromAddressBookJobTest::AttachmentVcardFromAddressBookJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 AttachmentVcardFromAddressBookJobTest::~AttachmentVcardFromAddressBookJobTest()
 {
-
 }
 
 void AttachmentVcardFromAddressBookJobTest::testAttachmentVCardWithInvalidItem()

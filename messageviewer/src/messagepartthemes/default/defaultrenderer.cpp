@@ -68,8 +68,7 @@ static const int SIG_FRAME_COL_UNDEF = 99;
 #define SIG_FRAME_COL_RED    -1
 #define SIG_FRAME_COL_YELLOW  0
 #define SIG_FRAME_COL_GREEN   1
-QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code,
-                          GpgME::Signature::Summary summary, int &frameColor, bool &showKeyInfos)
+QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code, GpgME::Signature::Summary summary, int &frameColor, bool &showKeyInfos)
 {
     // note: At the moment frameColor and showKeyInfos are
     //       used for CMS only but not for PGP signatures
@@ -297,8 +296,9 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
     s = s.replace(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive), QString()).trimmed();
     if (s.startsWith(QLatin1String("<head>", Qt::CaseInsensitive))) {
         const auto idx = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
-        if (idx < 0)
+        if (idx < 0) {
             return htmlSource;
+        }
         extraHead = s.mid(6, idx - 6);
         s = s.mid(idx + 7).trimmed();
     }
@@ -366,9 +366,7 @@ public:
     MimeTreeParser::HtmlWriter *mBaseWriter = nullptr;
 };
 
-DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart,
-                                               CSSHelperBase *cssHelper,
-                                               const MessagePartRendererFactoryBase *rendererFactory)
+DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactoryBase *rendererFactory)
     : mMsgPart(msgPart)
     , mOldWriter(msgPart->htmlWriter())
     , mCSSHelper(cssHelper)
@@ -404,8 +402,7 @@ Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
     return nullptr;
 }
 
-void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart,
-                                            const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
 {
     foreach (const auto &_m, msgPart->subParts()) {
         const auto m = _m.dynamicCast<MessagePart>();
@@ -995,8 +992,7 @@ QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
     return htmlWriter->html;
 }
 
-QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className,
-                                                                       const Interface::MessagePart::Ptr &msgPart)
+QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className, const Interface::MessagePart::Ptr &msgPart)
 {
     if (mRendererFactory) {
         const auto registry = mRendererFactory->typeRegistry(className);
@@ -1010,8 +1006,7 @@ QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString c
     return QSharedPointer<PartRendered>();
 }
 
-QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr &msgPart,
-                                              const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
 {
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
@@ -1088,8 +1083,7 @@ QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr 
     return QString();
 }
 
-DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart,
-                                 CSSHelperBase *cssHelper)
+DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
     : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper,
                                                    rendererPluginFactoryInstance()))
 {

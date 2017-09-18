@@ -69,8 +69,7 @@ bool EmptySource::showSignatureDetails() const
     return false;
 }
 
-void EmptySource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode,
-                              const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
+void EmptySource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
     Q_UNUSED(mode);
     Q_UNUSED(availableModes);

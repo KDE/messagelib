@@ -32,26 +32,25 @@
 #define GCC_DONT_INLINE_THIS
 #endif
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class ItemPrivate
 {
 public:
     explicit ItemPrivate(Item *owner)
-        : q(owner),
-          mChildItems(nullptr),
-          mParent(nullptr),
-          mThisItemIndexGuess(0),
-          mInitialExpandStatus(Item::NoExpandNeeded),
-          mIsViewable(false),
-          mUseReceiver(false)
+        : q(owner)
+        , mChildItems(nullptr)
+        , mParent(nullptr)
+        , mThisItemIndexGuess(0)
+        , mInitialExpandStatus(Item::NoExpandNeeded)
+        , mIsViewable(false)
+        , mUseReceiver(false)
     {
     }
-    virtual ~ItemPrivate() {}
+
+    virtual ~ItemPrivate()
+    {
+    }
 
     /**
      * Implements "in the middle" insertions of child items.
@@ -133,12 +132,10 @@ public:
                 }
             }
         } else {
-
             pivot = mChildItems->at(0);
             if (ItemComparator::firstGreaterOrEqual(child, pivot)) {   // gcc: <-- inline this instead, thnx
                 idx = 0;    // this is very likely in date based comparisons (FIXME: not in other ones)
             } else {
-
                 // Binary search based insertion
                 int l = 0;
                 int h = cnt - 1;
@@ -354,7 +351,7 @@ public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
         const int ret = first->displaySender().compare(
-                            second->displaySender(), Qt::CaseInsensitive);
+            second->displaySender(), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
@@ -376,7 +373,7 @@ public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
         const int ret = first->displayReceiver().compare(
-                            second->displayReceiver(), Qt::CaseInsensitive);
+            second->displayReceiver(), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
@@ -398,7 +395,7 @@ public:
     static inline bool firstGreaterOrEqual(Item *first, Item *second)
     {
         const int ret = first->displaySenderOrReceiver().compare(
-                            second->displaySenderOrReceiver(), Qt::CaseInsensitive);
+            second->displaySenderOrReceiver(), Qt::CaseInsensitive);
         if (ret < 0) {
             return false;
         }
@@ -506,9 +503,7 @@ public:
         return first->date() >= second->date();
     }
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_ITEM_P_H__

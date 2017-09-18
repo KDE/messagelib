@@ -30,14 +30,12 @@ class DefaultGrantleeHeaderStylePlugin : public MessageViewer::HeaderStylePlugin
 {
     Q_OBJECT
 public:
-    explicit DefaultGrantleeHeaderStylePlugin(QObject *parent = nullptr,
-                                              const QList<QVariant> & = QList<QVariant>());
+    explicit DefaultGrantleeHeaderStylePlugin(QObject *parent = nullptr, const QList<QVariant> & = QList<QVariant>());
     ~DefaultGrantleeHeaderStylePlugin();
 
     HeaderStyle *headerStyle() const override;
     HeaderStrategy *headerStrategy() const override;
-    HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup,
-                                     KActionCollection *ac, QObject *parent = nullptr) override;
+    HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent = nullptr) override;
     QString name() const override;
 private:
     void initializePlugin();

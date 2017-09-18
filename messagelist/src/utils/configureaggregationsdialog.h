@@ -25,19 +25,12 @@
 
 #include <QListWidget>
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Manager;
-
 } // namespace Core
 
-namespace Utils
-{
-
+namespace Utils {
 /**
  * The dialog used for configuring MessageList::Aggregation sets.
  *
@@ -70,9 +63,7 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H__

@@ -57,9 +57,7 @@ public:
     {
     }
 
-    SpamAgent(const QString &name, SpamAgentTypes type, const QByteArray &field,
-              const QByteArray &cfield, const QRegExp &score, const QRegExp &threshold,
-              const QRegExp &confidence)
+    SpamAgent(const QString &name, SpamAgentTypes type, const QByteArray &field, const QByteArray &cfield, const QRegExp &score, const QRegExp &threshold, const QRegExp &confidence)
         : mName(name)
         , mType(type)
         , mField(field)

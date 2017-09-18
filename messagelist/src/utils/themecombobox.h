@@ -22,20 +22,13 @@
 #include <messagelist_export.h>
 #include <KComboBox>
 #include <collection.h>
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class StorageModel;
 class Theme;
-
 } // namespace Core
 
-namespace Utils
-{
-
+namespace Utils {
 class ThemeComboBoxPrivate;
 
 /**
@@ -54,7 +47,7 @@ public:
     void writeDefaultConfig() const;
 
     void writeStorageModelConfig(MessageList::Core::StorageModel *storageModel, bool isPrivateSetting) const;
-    void writeStorageModelConfig(const QString &id, bool isPrivateSetting)const;
+    void writeStorageModelConfig(const QString &id, bool isPrivateSetting) const;
 
     void readStorageModelConfig(const Akonadi::Collection &col, bool &isPrivateSetting);
     void readStorageModelConfig(MessageList::Core::StorageModel *storageModel, bool &isPrivateSetting);
@@ -66,9 +59,7 @@ private:
     Q_PRIVATE_SLOT(d, void slotLoadThemes())
     ThemeComboBoxPrivate *const d;
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_THEMECOMBOBOX_H__

@@ -29,10 +29,10 @@
 using namespace MessageList::Core;
 
 SortOrder::SortOrder()
-    : mMessageSorting(SortMessagesByDateTime),
-      mMessageSortDirection(Descending),
-      mGroupSorting(NoGroupSorting),
-      mGroupSortDirection(Ascending)
+    : mMessageSorting(SortMessagesByDateTime)
+    , mMessageSortDirection(Descending)
+    , mGroupSorting(NoGroupSorting)
+    , mGroupSortDirection(Ascending)
 {
 }
 
@@ -76,9 +76,9 @@ void SortOrder::setMessageSortDirection(SortOrder::SortDirection messageSortDire
     mMessageSortDirection = messageSortDirection;
 }
 
-QList<QPair<QString, int>> SortOrder::enumerateMessageSortingOptions(Aggregation::Threading t)
+QList<QPair<QString, int> > SortOrder::enumerateMessageSortingOptions(Aggregation::Threading t)
 {
-    QList<QPair<QString, int>> ret;
+    QList<QPair<QString, int> > ret;
     ret.append({ i18n("None (Storage Order)"), SortOrder::NoMessageSorting });
     ret.append({ i18n("By Date/Time"), SortOrder::SortMessagesByDateTime });
     if (t != Aggregation::NoThreading) {
@@ -96,17 +96,17 @@ QList<QPair<QString, int>> SortOrder::enumerateMessageSortingOptions(Aggregation
     return ret;
 }
 
-QList<QPair<QString, int>> SortOrder::enumerateMessageSortDirectionOptions(MessageSorting ms)
+QList<QPair<QString, int> > SortOrder::enumerateMessageSortDirectionOptions(MessageSorting ms)
 {
-    QList<QPair<QString, int>> ret;
+    QList<QPair<QString, int> > ret;
     if (ms == SortOrder::NoMessageSorting) {
         return ret;
     }
 
     if (
-        (ms == SortOrder::SortMessagesByDateTime) ||
-        (ms == SortOrder::SortMessagesByDateTimeOfMostRecent)
-    ) {
+        (ms == SortOrder::SortMessagesByDateTime)
+        || (ms == SortOrder::SortMessagesByDateTimeOfMostRecent)
+        ) {
         ret.append({ i18n("Least Recent on Top"), SortOrder::Ascending });
         ret.append({ i18n("Most Recent on Top"), SortOrder::Descending });
         return ret;
@@ -117,9 +117,9 @@ QList<QPair<QString, int>> SortOrder::enumerateMessageSortDirectionOptions(Messa
     return ret;
 }
 
-QList<QPair<QString, int>> SortOrder::enumerateGroupSortingOptions(Aggregation::Grouping g)
+QList<QPair<QString, int> > SortOrder::enumerateGroupSortingOptions(Aggregation::Grouping g)
 {
-    QList<QPair< QString, int>> ret;
+    QList<QPair< QString, int> > ret;
     if (g == Aggregation::NoGrouping) {
         return ret;
     }
@@ -141,10 +141,9 @@ QList<QPair<QString, int>> SortOrder::enumerateGroupSortingOptions(Aggregation::
     return ret;
 }
 
-QList<QPair<QString, int>> SortOrder::enumerateGroupSortDirectionOptions(Aggregation::Grouping g,
-        GroupSorting gs)
+QList<QPair<QString, int> > SortOrder::enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting gs)
 {
-    QList<QPair<QString, int>> ret;
+    QList<QPair<QString, int> > ret;
     if (g == Aggregation::NoGrouping || gs == SortOrder::NoGroupSorting) {
         return ret;
     }
@@ -159,9 +158,8 @@ QList<QPair<QString, int>> SortOrder::enumerateGroupSortDirectionOptions(Aggrega
     return ret;
 }
 
-typedef QList<QPair<QString,int>> OptionList;
-static bool optionListHasOption(const OptionList &optionList, int optionValue,
-                                int defaultOptionValue)
+typedef QList<QPair<QString, int> > OptionList;
+static bool optionListHasOption(const OptionList &optionList, int optionValue, int defaultOptionValue)
 {
     for (const auto &pair : optionList) {
         if (pair.second == optionValue) {
@@ -181,23 +179,22 @@ bool SortOrder::validForAggregation(const Aggregation *aggregation) const
     OptionList messageSortDirections = enumerateMessageSortDirectionOptions(mMessageSorting);
     OptionList groupSortings = enumerateGroupSortingOptions(aggregation->grouping());
     OptionList groupSortDirections = enumerateGroupSortDirectionOptions(aggregation->grouping(),
-                                     mGroupSorting);
+                                                                        mGroupSorting);
     SortOrder defaultSortOrder = defaultForAggregation(aggregation, SortOrder());
     bool messageSortingOk = optionListHasOption(messageSortings,
-                            mMessageSorting, defaultSortOrder.messageSorting());
+                                                mMessageSorting, defaultSortOrder.messageSorting());
     bool messageSortDirectionOk = optionListHasOption(messageSortDirections, mMessageSortDirection,
-                                  defaultSortOrder.messageSortDirection());
+                                                      defaultSortOrder.messageSortDirection());
 
     bool groupSortingOk = optionListHasOption(groupSortings, mGroupSorting,
-                          defaultSortOrder.groupSorting());
+                                              defaultSortOrder.groupSorting());
     bool groupSortDirectionOk = optionListHasOption(groupSortDirections, mGroupSortDirection,
-                                defaultSortOrder.groupSortDirection());
-    return messageSortingOk && messageSortDirectionOk &&
-           groupSortingOk && groupSortDirectionOk;
+                                                    defaultSortOrder.groupSortDirection());
+    return messageSortingOk && messageSortDirectionOk
+           && groupSortingOk && groupSortDirectionOk;
 }
 
-SortOrder SortOrder::defaultForAggregation(const Aggregation *aggregation,
-        const SortOrder &oldSortOrder)
+SortOrder SortOrder::defaultForAggregation(const Aggregation *aggregation, const SortOrder &oldSortOrder)
 {
     SortOrder newSortOrder;
 
@@ -208,14 +205,14 @@ SortOrder SortOrder::defaultForAggregation(const Aggregation *aggregation,
     //
     OptionList messageSortings = enumerateMessageSortingOptions(aggregation->threading());
     bool messageSortingOk = optionListHasOption(messageSortings,
-                            oldSortOrder.messageSorting(),
-                            SortOrder().messageSorting());
+                                                oldSortOrder.messageSorting(),
+                                                SortOrder().messageSorting());
     bool messageSortDirectionOk = false;
     if (messageSortingOk) {
         OptionList messageSortDirections = enumerateMessageSortDirectionOptions(
-                                               oldSortOrder.messageSorting());
+            oldSortOrder.messageSorting());
         messageSortDirectionOk = optionListHasOption(messageSortDirections, oldSortOrder.messageSortDirection(),
-                                 SortOrder().messageSortDirection());
+                                                     SortOrder().messageSortDirection());
     }
 
     //
@@ -236,22 +233,25 @@ SortOrder SortOrder::defaultForAggregation(const Aggregation *aggregation,
     // Now set the group sorting and group sort direction, depending on the aggregation.
     //
     Aggregation::Grouping grouping = aggregation->grouping();
-    if (grouping == Aggregation::GroupByDate ||
-            grouping == Aggregation::GroupByDateRange) {
+    if (grouping == Aggregation::GroupByDate
+        || grouping == Aggregation::GroupByDateRange) {
         newSortOrder.setGroupSortDirection(Descending);
         newSortOrder.setGroupSorting(SortGroupsByDateTime);
-
-    } else if (grouping == Aggregation::GroupByReceiver || grouping == Aggregation::GroupBySender ||
-               grouping == Aggregation::GroupBySenderOrReceiver) {
+    } else if (grouping == Aggregation::GroupByReceiver || grouping == Aggregation::GroupBySender
+               || grouping == Aggregation::GroupBySenderOrReceiver) {
         newSortOrder.setGroupSortDirection(Descending);
         switch (grouping) {
         case Aggregation::GroupByReceiver:
-            newSortOrder.setGroupSorting(SortGroupsByReceiver); break;
+            newSortOrder.setGroupSorting(SortGroupsByReceiver);
+            break;
         case Aggregation::GroupBySender:
-            newSortOrder.setGroupSorting(SortGroupsBySender); break;
+            newSortOrder.setGroupSorting(SortGroupsBySender);
+            break;
         case Aggregation::GroupBySenderOrReceiver:
-            newSortOrder.setGroupSorting(SortGroupsBySenderOrReceiver); break;
-        default: break;
+            newSortOrder.setGroupSorting(SortGroupsBySenderOrReceiver);
+            break;
+        default:
+            break;
         }
     }
 
@@ -264,18 +264,17 @@ bool SortOrder::readConfigHelper(KConfigGroup &conf, const QString &id)
         return false;
     }
     mMessageSorting = messageSortingForName(
-                          conf.readEntry(id + MessageList::Util::messageSortingConfigName()));
+        conf.readEntry(id + MessageList::Util::messageSortingConfigName()));
     mMessageSortDirection = sortDirectionForName(
-                                conf.readEntry(id + MessageList::Util::messageSortDirectionConfigName()));
+        conf.readEntry(id + MessageList::Util::messageSortDirectionConfigName()));
     mGroupSorting = groupSortingForName(
-                        conf.readEntry(id + MessageList::Util::groupSortingConfigName()));
+        conf.readEntry(id + MessageList::Util::groupSortingConfigName()));
     mGroupSortDirection = sortDirectionForName(
-                              conf.readEntry(id + MessageList::Util::groupSortDirectionConfigName()));
+        conf.readEntry(id + MessageList::Util::groupSortDirectionConfigName()));
     return true;
 }
 
-void SortOrder::readConfig(KConfigGroup &conf, const QString &storageId,
-                           bool *storageUsesPrivateSortOrder)
+void SortOrder::readConfig(KConfigGroup &conf, const QString &storageId, bool *storageUsesPrivateSortOrder)
 {
     SortOrder privateSortOrder, globalSortOrder;
     globalSortOrder.readConfigHelper(conf, QStringLiteral("GlobalSortOrder"));
@@ -285,11 +284,9 @@ void SortOrder::readConfig(KConfigGroup &conf, const QString &storageId,
     } else {
         *this = globalSortOrder;
     }
-
 }
 
-void SortOrder::writeConfig(KConfigGroup &conf, const QString &storageId,
-                            bool storageUsesPrivateSortOrder) const
+void SortOrder::writeConfig(KConfigGroup &conf, const QString &storageId, bool storageUsesPrivateSortOrder) const
 {
     QString id = storageId;
     if (!storageUsesPrivateSortOrder) {
@@ -308,7 +305,6 @@ void SortOrder::writeConfig(KConfigGroup &conf, const QString &storageId,
                     nameForGroupSorting(mGroupSorting));
     conf.writeEntry(id + MessageList::Util::groupSortDirectionConfigName(),
                     nameForSortDirection(mGroupSortDirection));
-
 }
 
 bool SortOrder::isValidMessageSorting(SortOrder::MessageSorting ms)

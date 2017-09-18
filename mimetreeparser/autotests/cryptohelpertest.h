@@ -21,9 +21,7 @@
 
 #include <QObject>
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 class CryptoHelperTest : public QObject
 {
     Q_OBJECT
@@ -37,6 +35,5 @@ private Q_SLOTS:
     void testClearSignedMessage();
     void testMultipleBlockMessage();
 };
-
 }
 #endif

@@ -37,8 +37,7 @@ public:
     explicit HeaderStyleInterface(MessageViewer::HeaderStylePlugin *, QObject *parent = nullptr);
     virtual ~HeaderStyleInterface();
     QList<KToggleAction * > action() const;
-    virtual void createAction(KActionMenu *menu, QActionGroup *actionGroup,
-                              KActionCollection *ac) = 0;
+    virtual void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) = 0;
     virtual void activateAction() = 0;
     HeaderStylePlugin *headerStylePlugin() const;
 

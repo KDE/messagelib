@@ -74,8 +74,7 @@ public:
 
     bool handleClick(const QUrl &url, ViewerPrivate *w = nullptr) const;
     bool handleShiftClick(const QUrl &url, ViewerPrivate *window = nullptr) const;
-    bool handleContextMenuRequest(const QUrl &url, const QPoint &p,
-                                  ViewerPrivate *w = nullptr) const;
+    bool handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w = nullptr) const;
     bool willHandleDrag(const QUrl &url, ViewerPrivate *window = nullptr) const;
     bool handleDrag(const QUrl &url, ViewerPrivate *window = nullptr) const;
     QString statusBarMessage(const QUrl &url, ViewerPrivate *w = nullptr) const;

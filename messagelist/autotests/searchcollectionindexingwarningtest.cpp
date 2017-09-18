@@ -25,12 +25,10 @@
 SearchCollectionIndexingWarningTest::SearchCollectionIndexingWarningTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SearchCollectionIndexingWarningTest::~SearchCollectionIndexingWarningTest()
 {
-
 }
 
 void SearchCollectionIndexingWarningTest::shouldHaveDefaultValue()

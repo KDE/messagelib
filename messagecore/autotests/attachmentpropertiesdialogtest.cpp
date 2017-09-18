@@ -39,7 +39,6 @@ QTEST_MAIN(AttachmentPropertiesDialogTest)
 AttachmentPropertiesDialogTest::AttachmentPropertiesDialogTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
@@ -185,4 +184,3 @@ void AttachmentPropertiesDialogTest::testMimeContentReadOnly()
     delete dialog;
     QCOMPARE(content->contentType()->name(), name);   // No change.
 }
-

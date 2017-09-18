@@ -74,4 +74,3 @@ void AttachmentFromMimeContentJobTest::testAttachment()
     QVERIFY(part->isInline());
     QCOMPARE(part->data(), data);
 }
-

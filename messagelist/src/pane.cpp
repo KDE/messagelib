@@ -18,7 +18,6 @@
 
 #include "pane.h"
 
-
 #include <KActionCollection>
 #include <KActionMenu>
 #include <QIcon>
@@ -46,29 +45,28 @@
 #include "core/model.h"
 #include "messagelistutil_p.h"
 
-namespace MessageList
-{
-
+namespace MessageList {
 class Q_DECL_HIDDEN Pane::Private
 {
 public:
     Private(Pane *owner)
-        : q(owner),
-          mXmlGuiClient(nullptr),
-          mActionMenu(nullptr),
-          mModel(nullptr),
-          mSelectionModel(nullptr),
-          mPreSelectionMode(Core::PreSelectLastSelected),
-          mNewTabButton(nullptr),
-          mCloseTabButton(nullptr),
-          mCloseTabAction(nullptr),
-          mActivateNextTabAction(nullptr),
-          mActivatePreviousTabAction(nullptr),
-          mMoveTabLeftAction(nullptr),
-          mMoveTabRightAction(nullptr),
-          mPreferEmptyTab(false),
-          mMaxTabCreated(0)
-    { }
+        : q(owner)
+        , mXmlGuiClient(nullptr)
+        , mActionMenu(nullptr)
+        , mModel(nullptr)
+        , mSelectionModel(nullptr)
+        , mPreSelectionMode(Core::PreSelectLastSelected)
+        , mNewTabButton(nullptr)
+        , mCloseTabButton(nullptr)
+        , mCloseTabAction(nullptr)
+        , mActivateNextTabAction(nullptr)
+        , mActivatePreviousTabAction(nullptr)
+        , mMoveTabLeftAction(nullptr)
+        , mMoveTabRightAction(nullptr)
+        , mPreferEmptyTab(false)
+        , mMaxTabCreated(0)
+    {
+    }
 
     void onSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
     void onNewTabClicked();
@@ -112,14 +110,14 @@ public:
     bool mPreferEmptyTab;
     int mMaxTabCreated;
 };
-
 } // namespace MessageList
 
 using namespace Akonadi;
 using namespace MessageList;
 
 Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *selectionModel, QWidget *parent)
-    : QTabWidget(parent), d(new Private(this))
+    : QTabWidget(parent)
+    , d(new Private(this))
 {
     setDocumentMode(true);
     d->mModel = model;
@@ -281,10 +279,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
     }
 }
 
-bool Pane::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                                 MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                                 bool centerItem,
-                                 bool loop)
+bool Pane::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
 {
     Widget *w = static_cast<Widget *>(currentWidget());
 
@@ -299,10 +294,7 @@ bool Pane::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTyp
     }
 }
 
-bool Pane::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                                     MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                                     bool centerItem,
-                                     bool loop)
+bool Pane::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
 {
     Widget *w = static_cast<Widget *>(currentWidget());
 
@@ -514,7 +506,6 @@ void Pane::Private::onSelectionChanged(const QItemSelection &selected, const QIt
 
         connect(mSelectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
                 q, SLOT(onSelectionChanged(QItemSelection,QItemSelection)));
-
     }
 }
 
@@ -534,7 +525,6 @@ void Pane::Private::moveTabRight()
     } else {
         moveTabBackward();
     }
-
 }
 
 void Pane::Private::moveTabLeft()
@@ -548,7 +538,6 @@ void Pane::Private::moveTabLeft()
     } else {
         moveTabForward();
     }
-
 }
 
 void Pane::Private::moveTabForward()
@@ -991,10 +980,7 @@ bool Pane::selectionEmpty() const
     return false;
 }
 
-bool Pane::getSelectionStats(Akonadi::Item::List &selectedItems,
-                             Akonadi::Item::List &selectedVisibleItems,
-                             bool *allSelectedBelongToSameThread,
-                             bool includeCollapsedChildren) const
+bool Pane::getSelectionStats(Akonadi::Item::List &selectedItems, Akonadi::Item::List &selectedVisibleItems, bool *allSelectedBelongToSameThread, bool includeCollapsedChildren) const
 {
     Widget *w = static_cast<Widget *>(currentWidget());
     if (w == nullptr) {
@@ -1002,9 +988,9 @@ bool Pane::getSelectionStats(Akonadi::Item::List &selectedItems,
     }
 
     return w->getSelectionStats(
-               selectedItems, selectedVisibleItems,
-               allSelectedBelongToSameThread, includeCollapsedChildren
-           );
+        selectedItems, selectedVisibleItems,
+        allSelectedBelongToSameThread, includeCollapsedChildren
+        );
 }
 
 MessageList::Core::MessageItemSetReference Pane::selectionAsPersistentSet(bool includeCollapsedChildren) const

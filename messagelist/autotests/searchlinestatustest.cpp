@@ -24,12 +24,10 @@
 SearchLineStatusTest::SearchLineStatusTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SearchLineStatusTest::~SearchLineStatusTest()
 {
-
 }
 
 void SearchLineStatusTest::shouldHaveDefaultValue()
@@ -67,7 +65,7 @@ void SearchLineStatusTest::shouldAddCompletionItem()
 void SearchLineStatusTest::shouldClearCompleter()
 {
     MessageList::Core::SearchLineStatus w;
-    for (int i = 0; i < 10 ;++i) {
+    for (int i = 0; i < 10; ++i) {
         w.addCompletionItem(QStringLiteral("ff%1").arg(i));
     }
     QCOMPARE(w.completer()->model()->rowCount(), 10);

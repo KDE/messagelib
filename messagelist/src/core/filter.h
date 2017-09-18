@@ -29,12 +29,8 @@
 #include <Collection>
 #include "widgets/quicksearchline.h"
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class MessageItem;
 
 /**
@@ -58,7 +54,7 @@ public:
     /**
     * Returns the currently set status mask
     */
-    QList<Akonadi::MessageStatus>  status() const
+    QList<Akonadi::MessageStatus> status() const
     {
         return mStatus;
     }
@@ -130,9 +126,7 @@ private:
     QuickSearchLine::SearchOptions mOptions;
     QStringList mSearchList;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_FILTER_H__

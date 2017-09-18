@@ -37,7 +37,6 @@ QuickSearchWarning::QuickSearchWarning(QWidget *parent)
 
 QuickSearchWarning::~QuickSearchWarning()
 {
-
 }
 
 void QuickSearchWarning::setSearchText(const QString &text)

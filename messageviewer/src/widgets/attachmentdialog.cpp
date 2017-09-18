@@ -31,8 +31,7 @@ using namespace MessageViewer;
 
 //---------------------------------------------------------------------
 
-AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
-                                   const QString &application, const QString &dontAskAgainName)
+AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText, const QString &application, const QString &dontAskAgainName)
     : dontAskName(dontAskAgainName)
 {
     text = i18n("Open attachment '%1'?\n"

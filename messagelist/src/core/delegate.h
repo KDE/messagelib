@@ -23,12 +23,8 @@
 
 #include <core/themedelegate.h>
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class View;
 
 class Delegate : public ThemeDelegate
@@ -44,9 +40,7 @@ protected:
     */
     Item *itemFromIndex(const QModelIndex &index) const override;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_DELEGATE_H__

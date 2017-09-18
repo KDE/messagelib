@@ -44,8 +44,7 @@ public:
 
     // if @application is non-empty, the "open with <application>" button will also be shown,
     // otherwise only save, open with, cancel
-    explicit AttachmentDialog(QWidget *parent, const QString &filenameText,
-                              const QString &application, const QString &dontAskAgainName);
+    explicit AttachmentDialog(QWidget *parent, const QString &filenameText, const QString &application, const QString &dontAskAgainName);
 
     // executes the modal dialog
     int exec();

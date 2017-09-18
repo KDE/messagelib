@@ -43,8 +43,7 @@
 
 using namespace MessageViewer;
 
-EditorWatcher::EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option,
-                             QObject *parent, QWidget *parentWidget)
+EditorWatcher::EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option, QObject *parent, QWidget *parentWidget)
     : QObject(parent)
     , mUrl(url)
     , mMimeType(mimeType)

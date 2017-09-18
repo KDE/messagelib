@@ -48,7 +48,7 @@ void StringUtilTest::test_SmartQuote_data()
     QTest::addColumn<QString>("quotedString");
 
     QTest::newRow("") << ""
-                       << "";
+                      << "";
 
     QTest::newRow("1") << "Some short text"
                        << "Some short text";
@@ -70,17 +70,17 @@ void StringUtilTest::test_SmartQuote_data()
                        << " Space at start and end.";
 
     QTest::newRow("6") << "Space at end of pre-broken line. \n"
-                       "Yet another line of text."
+                          "Yet another line of text."
                        << "Space at end of pre-broken line.\n"
-                       "Yet another line of text.";
+        "Yet another line of text.";
 
     //                                                               40
     //                                                               ↓
     QTest::newRow("7") << "Long long line, followed by another line starting with a space.\n"
-                       " Starts with a space."
+                          " Starts with a space."
                        << "Long long line, followed by another line\n"
-                       "starting with a space. Starts with a\n"
-                       "space.";
+        "starting with a space. Starts with a\n"
+        "space.";
 
     //                                                               40
     //                                                               ↓
@@ -90,87 +90,87 @@ void StringUtilTest::test_SmartQuote_data()
     //                                                               40
     //                                                               ↓
     QTest::newRow("9") << "Many lines.\n"
-                       "Only one needs to be broken.\n"
-                       "This is the very much too long line that needs to be broken.\n"
-                       "This line is ok again."
+                          "Only one needs to be broken.\n"
+                          "This is the very much too long line that needs to be broken.\n"
+                          "This line is ok again."
                        << "Many lines.\n"
-                       "Only one needs to be broken.\n"
-                       "This is the very much too long line that\n"
-                       "needs to be broken. This line is ok\n"
-                       "again.";
+        "Only one needs to be broken.\n"
+        "This is the very much too long line that\n"
+        "needs to be broken. This line is ok\n"
+        "again.";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("10") << "> >Very long quoted line, that is very very long"
                         << "> >Very long quoted line, that is very\n"
-                        "> >very long";
+        "> >very long";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("11") << "> > Very long quoted line, that is very very long"
                         << "> > Very long quoted line, that is very\n"
-                        "> > very long";
+        "> > very long";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("12") << "> > Very long quoted line, that is very very long. \n"
-                        "> > Another line here."
+                           "> > Another line here."
                         << "> > Very long quoted line, that is very\n"
-                        "> > very long. Another line here.";
+        "> > very long. Another line here.";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("13") << "> > Very long quoted line, that is very very long. \n"
-                        "Unquoted line, for a change.\n"
-                        "> > Another line here."
+                           "Unquoted line, for a change.\n"
+                           "> > Another line here."
                         << "> > Very long quoted line, that is very\n"
-                        "> > very long.\n"
-                        "Unquoted line, for a change.\n"
-                        "\n"
-                        "> > Another line here.";
+        "> > very long.\n"
+        "Unquoted line, for a change.\n"
+        "\n"
+        "> > Another line here.";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("14") << "> Quote level 1 with long long long long text, that is long.\n"
-                        "> Quote level 1 still.\n"
-                        "> > Quote level 2 now, also with a long long long long text.\n"
-                        "> > Quote level 2 still.\n"
-                        "No quotes."
+                           "> Quote level 1 still.\n"
+                           "> > Quote level 2 now, also with a long long long long text.\n"
+                           "> > Quote level 2 still.\n"
+                           "No quotes."
                         << "> Quote level 1 with long long long long\n"
-                        "> text, that is long. Quote level 1\n"
-                        "> still.\n"
-                        "> \n"
-                        "> > Quote level 2 now, also with a long\n"
-                        "> > long long long text. Quote level 2\n"
-                        "> > still.\n"
-                        "\n"
-                        "No quotes.";
+        "> text, that is long. Quote level 1\n"
+        "> still.\n"
+        "> \n"
+        "> > Quote level 2 now, also with a long\n"
+        "> > long long long text. Quote level 2\n"
+        "> > still.\n"
+        "\n"
+        "No quotes.";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("15") << "Some much longer text that exceeds our limit by far.\n"
-                        "\n"
-                        "Line after an empty one."
+                           "\n"
+                           "Line after an empty one."
                         << "Some much longer text that exceeds our\n"
-                        "limit by far.\n"
-                        "\n"
-                        "Line after an empty one.";
+        "limit by far.\n"
+        "\n"
+        "Line after an empty one.";
 
     // Make sure the "You wrote:" line is not broken, that would look strange
     //                                                                40
     //                                                                ↓
     QTest::newRow("16") << "Yesterday, Hans Martin Ulrich Franz August wrote:\n"
-                        "> Bla Bla Bla Bla..."
+                           "> Bla Bla Bla Bla..."
                         << "Yesterday, Hans Martin Ulrich Franz August wrote:\n"
-                        "> Bla Bla Bla Bla...";
+        "> Bla Bla Bla Bla...";
 
     //                                                                40
     //                                                                ↓
     QTest::newRow("17") << "Yesterday, Hans Martin Ulrich Franz August wrote:\n"
-                        "\n"
-                        "> Bla Bla Bla Bla..."
+                           "\n"
+                           "> Bla Bla Bla Bla..."
                         << "Yesterday, Hans Martin Ulrich Franz August wrote:\n"
-                        "> Bla Bla Bla Bla...";
+        "> Bla Bla Bla Bla...";
 
     // This test shows a fundamental flaw when breaking lines: The table header gets broken,
     // which is ok. However, the following line is appended to the table header, which leads
@@ -189,149 +189,149 @@ void StringUtilTest::test_SmartQuote_data()
     //                                                                           40
     //                                                                            ↓
     QTest::newRow("hard linebreak") << "==== Date ======== Amount ======= Type ======\n"
-                                    "   12.12.09          5            Car        \n"
+                                       "   12.12.09          5            Car        \n"
                                     << "==== Date ======== Amount ======= Type\n"
-                                    "======\n"
-                                    "   12.12.09          5            Car        \n";
+        "======\n"
+        "   12.12.09          5            Car        \n";
 }
 
 void StringUtilTest::test_signatureStripping()
 {
     //QStringList tests;
     const QString test1 = QStringLiteral(
-                              "text1\n"
-                              "-- \n"
-                              "Signature Block1\n"
-                              "Signature Block1\n\n"
-                              "> text2\n"
-                              "> -- \n"
-                              "> Signature Block 2\n"
-                              "> Signature Block 2\n"
-                              ">> text3 -- not a signature block\n"
-                              ">> text3\n"
-                              ">>> text4\n"
-                              "> -- \n"
-                              "> Signature Block 4\n"
-                              "> Signature Block 4\n"
-                              ">>-------------\n"
-                              ">>-- text5 --\n"
-                              ">>-------------------\n"
-                              ">>-- \n"
-                              ">>\n"
-                              ">> Signature Block 5\n"
-                              "text6\n"
-                              "-- \n"
-                              "Signature Block 6\n");
+        "text1\n"
+        "-- \n"
+        "Signature Block1\n"
+        "Signature Block1\n\n"
+        "> text2\n"
+        "> -- \n"
+        "> Signature Block 2\n"
+        "> Signature Block 2\n"
+        ">> text3 -- not a signature block\n"
+        ">> text3\n"
+        ">>> text4\n"
+        "> -- \n"
+        "> Signature Block 4\n"
+        "> Signature Block 4\n"
+        ">>-------------\n"
+        ">>-- text5 --\n"
+        ">>-------------------\n"
+        ">>-- \n"
+        ">>\n"
+        ">> Signature Block 5\n"
+        "text6\n"
+        "-- \n"
+        "Signature Block 6\n");
 
     const QString test1Result = QStringLiteral(
-                                    "text1\n"
-                                    "> text2\n"
-                                    ">> text3 -- not a signature block\n"
-                                    ">> text3\n"
-                                    ">>> text4\n"
-                                    ">>-------------\n"
-                                    ">>-- text5 --\n"
-                                    ">>-------------------\n"
-                                    "text6\n");
+        "text1\n"
+        "> text2\n"
+        ">> text3 -- not a signature block\n"
+        ">> text3\n"
+        ">>> text4\n"
+        ">>-------------\n"
+        ">>-- text5 --\n"
+        ">>-------------------\n"
+        "text6\n");
 
     QCOMPARE(StringUtil::stripSignature(test1), test1Result);
 
     const QString test2 = QStringLiteral(
-                              "text1\n"
-                              "> text2\n"
-                              ">> text3 -- not a signature block\n"
-                              ">> text3\n"
-                              ">>> text4\n"
-                              ">>-------------\n"
-                              ">>-- text5 --\n"
-                              ">>-------------------\n"
-                              "text6\n");
+        "text1\n"
+        "> text2\n"
+        ">> text3 -- not a signature block\n"
+        ">> text3\n"
+        ">>> text4\n"
+        ">>-------------\n"
+        ">>-- text5 --\n"
+        ">>-------------------\n"
+        "text6\n");
 
     // No actual signature - should stay the same
     QCOMPARE(StringUtil::stripSignature(test2), test2);
 
     const QString test3 = QStringLiteral(
-                              "text1\n"
-                              "-- \n"
-                              "Signature Block1\n"
-                              "Signature Block1\n\n"
-                              ">text2\n"
-                              ">-- \n"
-                              ">Signature Block 2\n"
-                              ">Signature Block 2\n"
-                              "> >text3\n"
-                              "> >text3\n"
-                              "> >-- \n"
-                              ">>Not Signature Block 3\n"
-                              "> > Not Signature Block 3\n"
-                              ">text4\n"
-                              ">-- \n"
-                              ">Signature Block 4\n"
-                              ">Signature Block 4\n"
-                              "text5\n"
-                              "-- \n"
-                              "Signature Block 5");
+        "text1\n"
+        "-- \n"
+        "Signature Block1\n"
+        "Signature Block1\n\n"
+        ">text2\n"
+        ">-- \n"
+        ">Signature Block 2\n"
+        ">Signature Block 2\n"
+        "> >text3\n"
+        "> >text3\n"
+        "> >-- \n"
+        ">>Not Signature Block 3\n"
+        "> > Not Signature Block 3\n"
+        ">text4\n"
+        ">-- \n"
+        ">Signature Block 4\n"
+        ">Signature Block 4\n"
+        "text5\n"
+        "-- \n"
+        "Signature Block 5");
 
     const QString test3Result = QStringLiteral(
-                                    "text1\n"
-                                    ">text2\n"
-                                    "> >text3\n"
-                                    "> >text3\n"
-                                    ">>Not Signature Block 3\n"
-                                    "> > Not Signature Block 3\n"
-                                    ">text4\n"
-                                    "text5\n");
+        "text1\n"
+        ">text2\n"
+        "> >text3\n"
+        "> >text3\n"
+        ">>Not Signature Block 3\n"
+        "> > Not Signature Block 3\n"
+        ">text4\n"
+        "text5\n");
 
     QCOMPARE(StringUtil::stripSignature(test3), test3Result);
 
     const QString test4 = QStringLiteral(
-                              "Text 1\n"
-                              "-- \n"
-                              "First sign\n\n\n"
-                              "> From: bla\n"
-                              "> Texto 2\n\n"
-                              "> Aqui algo de texto.\n\n"
-                              ">> --\n"
-                              ">> Not Signature Block 2\n\n"
-                              "> Adios\n\n"
-                              ">> Texto 3\n\n"
-                              ">> --\n"
-                              ">> Not Signature block 3\n");
+        "Text 1\n"
+        "-- \n"
+        "First sign\n\n\n"
+        "> From: bla\n"
+        "> Texto 2\n\n"
+        "> Aqui algo de texto.\n\n"
+        ">> --\n"
+        ">> Not Signature Block 2\n\n"
+        "> Adios\n\n"
+        ">> Texto 3\n\n"
+        ">> --\n"
+        ">> Not Signature block 3\n");
 
     const QString test4Result = QStringLiteral(
-                                    "Text 1\n"
-                                    "> From: bla\n"
-                                    "> Texto 2\n\n"
-                                    "> Aqui algo de texto.\n\n"
-                                    ">> --\n"
-                                    ">> Not Signature Block 2\n\n"
-                                    "> Adios\n\n"
-                                    ">> Texto 3\n\n"
-                                    ">> --\n"
-                                    ">> Not Signature block 3\n");
+        "Text 1\n"
+        "> From: bla\n"
+        "> Texto 2\n\n"
+        "> Aqui algo de texto.\n\n"
+        ">> --\n"
+        ">> Not Signature Block 2\n\n"
+        "> Adios\n\n"
+        ">> Texto 3\n\n"
+        ">> --\n"
+        ">> Not Signature block 3\n");
 
     QCOMPARE(StringUtil::stripSignature(test4), test4Result);
 
     const QString test5 = QStringLiteral(
-                              "-- \n"
-                              "-- ACME, Inc\n"
-                              "-- Joe User\n"
-                              "-- PHB\n"
-                              "-- Tel.: 555 1234\n"
-                              "--");
+        "-- \n"
+        "-- ACME, Inc\n"
+        "-- Joe User\n"
+        "-- PHB\n"
+        "-- Tel.: 555 1234\n"
+        "--");
 
     QCOMPARE(StringUtil::stripSignature(test5), QString());
 
     const QString test6 = QStringLiteral(
-                              "Text 1\n\n\n\n"
-                              "> From: bla\n"
-                              "> Texto 2\n\n"
-                              "> Aqui algo de texto.\n\n"
-                              ">> Not Signature Block 2\n\n"
-                              "> Adios\n\n"
-                              ">> Texto 3\n\n"
-                              ">> --\n"
-                              ">> Not Signature block 3\n");
+        "Text 1\n\n\n\n"
+        "> From: bla\n"
+        "> Texto 2\n\n"
+        "> Aqui algo de texto.\n\n"
+        ">> Not Signature Block 2\n\n"
+        "> Adios\n\n"
+        ">> Texto 3\n\n"
+        ">> --\n"
+        ">> Not Signature block 3\n");
 
     // Again, no actual signature in here
     QCOMPARE(StringUtil::stripSignature(test6), test6);
@@ -367,7 +367,6 @@ void StringUtilTest::test_parseMailtoUrl()
     QUrl url(mailToUrl);
     QCOMPARE(!StringUtil::parseMailtoUrl(url).value(QStringLiteral("to")).isEmpty(), toIsNotEmpty);
     QCOMPARE(StringUtil::parseMailtoUrl(url).value(QStringLiteral("to")).split(QLatin1String(", "), QString::SkipEmptyParts).count(), numberOfTo);
-
 }
 
 void StringUtilTest::test_parseMailtoUrlExtra()
@@ -395,13 +394,16 @@ void StringUtilTest::test_parseMailToBug366981()
 
 void StringUtilTest::test_parseMailToBug832795()
 {
-    const QString ba(QStringLiteral("mailto:832795@bugs.debian.org?In-Reply-To=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3E&subject=Re%3A%20kmail%3A%20unescaping%20mailto%3A%20links%20broken&body=On%20Thu%2C%2028%20Jul%202016References=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3Ebody=On%20Thu%2C%2028%20Jul%202016%2023%3A39%3A03%20%2B0200%20Dominik%20George%20%3Cnik%40naturalnet.de%3E%20wrote%3A%0A%3E%20Package%3A%20kmail%0A%3E%20Version%3A%204%3A16.04.3-1%0A"));
+    const QString ba(QStringLiteral(
+                         "mailto:832795@bugs.debian.org?In-Reply-To=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3E&subject=Re%3A%20kmail%3A%20unescaping%20mailto%3A%20links%20broken&body=On%20Thu%2C%2028%20Jul%202016References=%3C146974194340.26747.4814466130640572267.reportbug%40portux.lan.naturalnet.de%3Ebody=On%20Thu%2C%2028%20Jul%202016%2023%3A39%3A03%20%2B0200%20Dominik%20George%20%3Cnik%40naturalnet.de%3E%20wrote%3A%0A%3E%20Package%3A%20kmail%0A%3E%20Version%3A%204%3A16.04.3-1%0A"));
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
     QMap<QString, QString> data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 4);
     QCOMPARE(data.value(QLatin1String("to")), QLatin1String("832795@bugs.debian.org"));
     QCOMPARE(data.value(QLatin1String("subject")), QLatin1String("Re: kmail: unescaping mailto: links broken"));
-    QCOMPARE(data.value(QLatin1String("body")), QLatin1String("On Thu, 28 Jul 2016References=<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>body=On Thu, 28 Jul 2016 23:39:03 +0200 Dominik George <nik@naturalnet.de> wrote:\n> Package: kmail\n> Version: 4:16.04.3-1\n"));
+    QCOMPARE(data.value(QLatin1String("body")),
+             QLatin1String(
+                 "On Thu, 28 Jul 2016References=<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>body=On Thu, 28 Jul 2016 23:39:03 +0200 Dominik George <nik@naturalnet.de> wrote:\n> Package: kmail\n> Version: 4:16.04.3-1\n"));
 }
 
 void StringUtilTest::test_stripOffMessagePrefix_data()

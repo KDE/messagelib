@@ -976,7 +976,7 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
     Q_ASSERT(rxDate.isValid());
 
     const QString sDate = KMime::DateFormatter::formatDate(
-                KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t());
+        KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t());
     qCDebug(MESSAGECOMPOSER_LOG) << "creating mdn date:" << msg->date()->dateTime().toTime_t() << sDate;
 
     int idx = 0;

@@ -24,12 +24,8 @@
 #include <QHash>
 #include <QList>
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class MessageItem;
 
 typedef long int MessageItemSetReference;
@@ -63,9 +59,7 @@ public:
     MessageItemSetReference createSet();
     bool addMessageItem(MessageItemSetReference ref, MessageItem *mi);
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H__

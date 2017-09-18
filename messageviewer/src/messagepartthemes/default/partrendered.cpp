@@ -37,7 +37,6 @@
 
 #include <QApplication>
 
-
 using namespace MessageViewer;
 
 class CacheHtmlWriter : public MimeTreeParser::HtmlWriter

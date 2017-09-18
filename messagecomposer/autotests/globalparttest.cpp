@@ -23,12 +23,10 @@
 GlobalPartTest::GlobalPartTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 GlobalPartTest::~GlobalPartTest()
 {
-
 }
 
 void GlobalPartTest::shouldHaveDefaultValue()

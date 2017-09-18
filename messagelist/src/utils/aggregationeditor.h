@@ -25,19 +25,12 @@
 
 class KComboBox;
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Aggregation;
-
 } // namespace Core
 
-namespace Utils
-{
-
+namespace Utils {
 /**
  * A widget that allows editing a single MessageList::Aggregation.
  *
@@ -111,11 +104,8 @@ private Q_SLOTS:
     void groupingComboActivated(int idx);
     void threadingComboActivated(int idx);
     void slotNameEditTextEdited(const QString &newName) override;
-
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_AGGREGATIONEDITOR_H__

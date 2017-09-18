@@ -97,7 +97,6 @@ void MessageList::Util::deleteConfig(const QString &collectionId)
     KConfigGroup storageModelAggregation(MessageListSettings::self()->config(),
                                          MessageList::Util::storageModelAggregationsGroup());
     storageModelAggregation.deleteEntry(collectionId + setForStorageModelConfigName());
-
 }
 
 QColor MessageList::Util::unreadDefaultMessageColor()
@@ -168,4 +167,3 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
     }
     return ret.toHtmlEscaped();
 }
-

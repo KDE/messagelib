@@ -29,12 +29,8 @@ class QDataStream;
 
 #include <core/optionset.h>
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 /**
  * A set of aggregation options that can be applied to the MessageList::Model in a single shot.
  * The set defines the behaviours related to the population of the model, threading
@@ -135,18 +131,11 @@ public:
     explicit Aggregation();
     explicit Aggregation(const Aggregation &opt);
     explicit Aggregation(
-        const QString &name,
-        const QString &description,
-        Grouping grouping,
-        GroupExpandPolicy groupExpandPolicy,
-        Threading threading,
-        ThreadLeader threadLeader,
-        ThreadExpandPolicy threadExpandPolicy,
-        FillViewStrategy fillViewStrategy,
-        bool readOnly);
+        const QString &name, const QString &description, Grouping grouping, GroupExpandPolicy groupExpandPolicy, Threading threading, ThreadLeader threadLeader, ThreadExpandPolicy threadExpandPolicy,
+        FillViewStrategy fillViewStrategy, bool readOnly);
     static bool compareName(Aggregation *agg1, Aggregation *agg2)
     {
-        return (agg1->name() < agg2->name());
+        return agg1->name() < agg2->name();
     }
 
 public:
@@ -304,9 +293,7 @@ public:
     */
     bool load(QDataStream &stream) override;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_AGGREGATION_H__

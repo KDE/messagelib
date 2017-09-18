@@ -32,7 +32,6 @@ namespace MessageViewer {
 class CSSHelperBase;
 }
 
-QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource *source,
-                   MessageViewer::CSSHelperBase *cssHelper);
+QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource *source, MessageViewer::CSSHelperBase *cssHelper);
 
 #endif

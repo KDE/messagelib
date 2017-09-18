@@ -34,18 +34,13 @@ class QActionGroup;
 class KComboBox;
 class QMenu;
 
-namespace Akonadi
-{
+namespace Akonadi {
 class Collection;
 class MessageStatus;
 }
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class GroupHeaderItem;
 class MessageItem;
 class StorageModel;
@@ -222,7 +217,6 @@ protected:
     */
     virtual void viewMessageStatusChangeRequest(MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear);
 
-
     void tagIdSelected(const QVariant &data);
 
 Q_SIGNALS:
@@ -270,10 +264,7 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_WIDGET_H__
-

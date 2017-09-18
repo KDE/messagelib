@@ -77,8 +77,8 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
 
 QuickSearchLine::~QuickSearchLine()
 {
-
 }
+
 void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
 {
     int minimumStringLength = 3;

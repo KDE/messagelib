@@ -50,9 +50,7 @@ namespace Util {
      *                              Example: "test.zip"
      * @return the full file name of the icon file
      */
-QString MESSAGEVIEWER_EXPORT iconPathForMimetype(const QString &mimeType, int iconSize,
-                                                 const QString &fallbackFileName1 = QString(),
-                                                 const QString &fallbackFileName2 = QString());
+QString MESSAGEVIEWER_EXPORT iconPathForMimetype(const QString &mimeType, int iconSize, const QString &fallbackFileName1 = QString(), const QString &fallbackFileName2 = QString());
 
 QString MESSAGEVIEWER_EXPORT iconPathForContent(KMime::Content *node, int iconSize);
 

@@ -30,7 +30,8 @@ using namespace MessageList::Core;
 using namespace MessageList::Utils;
 
 ThemeComboBox::ThemeComboBox(QWidget *parent)
-    : KComboBox(parent), d(new ThemeComboBoxPrivate(this))
+    : KComboBox(parent)
+    , d(new ThemeComboBoxPrivate(this))
 {
     if (Manager::instance()) {
         d->slotLoadThemes();
@@ -65,7 +66,7 @@ void ThemeComboBox::writeStorageModelConfig(MessageList::Core::StorageModel *sto
     writeStorageModelConfig(storageModel->id(), isPrivateSetting);
 }
 
-void ThemeComboBox::writeStorageModelConfig(const QString &id, bool isPrivateSetting)const
+void ThemeComboBox::writeStorageModelConfig(const QString &id, bool isPrivateSetting) const
 {
     if (Manager::instance()) {
         QString themeID;

@@ -24,8 +24,7 @@
 
 #include <QObject>
 #include <kmime/kmime_message.h>
-namespace KIdentityManagement
-{
+namespace KIdentityManagement {
 class IdentityManager;
 }
 class MessageFactoryTest : public QObject

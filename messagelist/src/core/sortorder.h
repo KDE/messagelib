@@ -24,12 +24,8 @@
 
 #include <KConfigGroup>
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 /**
  * A class which holds information about sorting, e.g. the sorting and sort direction
  * of messages and groups.
@@ -164,8 +160,7 @@ public:
     * of the option value and the second item is the integer option value itself.
     * If the returned list is empty then the value of the option is meaningless in the current context.
     */
-    static QList< QPair< QString, int > > enumerateGroupSortDirectionOptions(Aggregation::Grouping g,
-            GroupSorting groupSorting);
+    static QList< QPair< QString, int > > enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting groupSorting);
 
     /**
      * Checks if this sort order can be used in combination with the given aggregation.
@@ -180,8 +175,7 @@ public:
      *                     will be based on that old sort order, i.e. the message sorting and
      *                     message sort direction is adopted.
      */
-    static SortOrder defaultForAggregation(const Aggregation *aggregation,
-                                           const SortOrder &oldSortOrder);
+    static SortOrder defaultForAggregation(const Aggregation *aggregation, const SortOrder &oldSortOrder);
 
     /**
     * Returns true if the ms parameter specifies a valid MessageSorting option.
@@ -196,8 +190,7 @@ public:
      *                                    is private for that folder, and false if the
      *                                    sort order is the global sort order.
      */
-    void readConfig(KConfigGroup &conf, const QString &storageId,
-                    bool *storageUsesPrivateSortOrder);
+    void readConfig(KConfigGroup &conf, const QString &storageId, bool *storageUsesPrivateSortOrder);
 
     /**
      * Writes the sort order to a config group.
@@ -205,8 +198,7 @@ public:
      *                                    global sort order.
      * @sa readConfig
      */
-    void writeConfig(KConfigGroup &conf, const QString &storageId,
-                     bool storageUsesPrivateSortOrder) const;
+    void writeConfig(KConfigGroup &conf, const QString &storageId, bool storageUsesPrivateSortOrder) const;
 
 private:
 
@@ -225,9 +217,7 @@ private:
     GroupSorting mGroupSorting;
     SortDirection mGroupSortDirection;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif // __MESSAGELIST_CORE_SORTORDER_H__

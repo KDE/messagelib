@@ -213,4 +213,3 @@ void SkeletonMessageJobTest::testMessageID()
     delete sjob;
     delete composer;
 }
-

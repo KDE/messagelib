@@ -32,12 +32,8 @@
 
 #include <time.h> // time_t
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 typedef long int MessageItemSetReference;
 
 class Filter;
@@ -223,9 +219,7 @@ private:
     friend class ModelPrivate;
     ModelPrivate *const d;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_MODEL_H__

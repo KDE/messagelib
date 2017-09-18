@@ -40,12 +40,8 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
-namespace MessageList
-{
-
-namespace Utils
-{
-
+namespace MessageList {
+namespace Utils {
 class AggregationListWidgetItem : public QListWidgetItem
 {
 private:
@@ -57,6 +53,7 @@ public:
     {
         mAggregation = new Core::Aggregation(set);
     }
+
     ~AggregationListWidgetItem()
     {
         delete mAggregation;
@@ -67,6 +64,7 @@ public:
     {
         return mAggregation;
     }
+
     void forgetAggregation()
     {
         mAggregation = nullptr;
@@ -85,6 +83,7 @@ public:
         : QListWidget(parent)
     {
     }
+
 public:
 
     // need a larger but shorter QListWidget
@@ -93,16 +92,15 @@ public:
         return QSize(450, 128);
     }
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 using namespace MessageList::Core;
 using namespace MessageList::Utils;
 
 ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
-    : QDialog(parent), d(new Private(this))
+    : QDialog(parent)
+    , d(new Private(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowModality(Qt::ApplicationModal);   // FIXME: Sure ?
@@ -126,8 +124,8 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     d->mAggregationList->setSortingEnabled(true);
     g->addWidget(d->mAggregationList, 0, 0, 7, 1);
 
-    connect(d->mAggregationList, SIGNAL(itemClicked(QListWidgetItem*)),
-            SLOT(aggregationListItemClicked(QListWidgetItem*)));
+    connect(d->mAggregationList, SIGNAL(itemClicked(QListWidgetItem *)),
+            SLOT(aggregationListItemClicked(QListWidgetItem *)));
 
     d->mNewAggregationButton = new QPushButton(i18n("New Aggregation"), base);
     d->mNewAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));

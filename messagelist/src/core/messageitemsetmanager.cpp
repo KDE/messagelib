@@ -116,4 +116,3 @@ bool MessageItemSetManager::addMessageItem(MessageItemSetReference ref, MessageI
 
     return true;
 }
-

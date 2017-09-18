@@ -27,18 +27,17 @@
 #include <QTimer>
 
 class QElapsedTimer;
-namespace MessageList
-{
-
-namespace Core
-{
+namespace MessageList {
+namespace Core {
 class ViewItemJob;
 class ModelInvariantRowMapper;
 class MessageItemSetManager;
 class ModelPrivate
 {
 public:
-    ModelPrivate(Model *owner) : q(owner) { }
+    ModelPrivate(Model *owner) : q(owner)
+    {
+    }
 
     void fillView();
 
@@ -449,9 +448,7 @@ public:
      */
     ThreadingCache mThreadingCache;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_MODEL_P_H__

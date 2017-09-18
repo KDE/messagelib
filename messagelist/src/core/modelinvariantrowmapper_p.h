@@ -26,16 +26,14 @@
 #include <QTimer>
 #include <QTime>
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class ModelInvariantRowMapperPrivate
 {
 public:
-    explicit ModelInvariantRowMapperPrivate(ModelInvariantRowMapper *owner) : q(owner) { }
+    explicit ModelInvariantRowMapperPrivate(ModelInvariantRowMapper *owner) : q(owner)
+    {
+    }
 
     /**
      * Internal. Don't look a this :)
@@ -73,10 +71,7 @@ public:
     int mLazyUpdateIdleInterval;          ///< Msecs: how much time we idle between lazy update chunks
     QTimer *mUpdateTimer = nullptr;                 ///< Background lazy update timer
 };
-
 } // Core
-
 } // MessageList
 
 #endif //!__MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H__
-

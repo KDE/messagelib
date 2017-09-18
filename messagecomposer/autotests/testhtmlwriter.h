@@ -28,18 +28,45 @@
 class TestHtmlWriter : public MimeTreeParser::HtmlWriter
 {
 public:
-    explicit TestHtmlWriter() {}
-    virtual ~TestHtmlWriter() {}
+    explicit TestHtmlWriter()
+    {
+    }
 
-    void begin(const QString &) override {}
-    void write(const QString &) override {}
-    void end() override {}
-    void reset() override {}
-    void queue(const QString &) override {}
-    void flush() override {}
-    void embedPart(const QByteArray &, const QString &) override {}
-    void extraHead(const QString &) override {}
+    virtual ~TestHtmlWriter()
+    {
+    }
 
+    void begin(const QString &) override
+    {
+    }
+
+    void write(const QString &) override
+    {
+    }
+
+    void end() override
+    {
+    }
+
+    void reset() override
+    {
+    }
+
+    void queue(const QString &) override
+    {
+    }
+
+    void flush() override
+    {
+    }
+
+    void embedPart(const QByteArray &, const QString &) override
+    {
+    }
+
+    void extraHead(const QString &) override
+    {
+    }
 };
 
 #endif

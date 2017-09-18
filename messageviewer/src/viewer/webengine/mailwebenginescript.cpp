@@ -70,8 +70,7 @@ QString MailWebEngineScript::manageShowHideAttachments(bool hide)
     return source;
 }
 
-QString MailWebEngineScript::injectAttachments(const QString &delayedHtml,
-                                               const QString &elementStr)
+QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
 {
     const QString source = checkJQuery("injectAttachments") + QString::fromLatin1(
         "if (!document.getElementById('%1')) { console.warn('NOT FOUND: %1'); };\n"

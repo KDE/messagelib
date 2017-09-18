@@ -37,8 +37,7 @@ public:
     bool decryptMessage() const override;
     bool htmlLoadExternal() const override;
     bool showSignatureDetails() const override;
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode,
-                     const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
     MimeTreeParser::Util::HtmlMode preferredMode() const override;
     void setAllowDecryption(bool allowDecryption);
     int levelQuote() const override;

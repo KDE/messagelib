@@ -23,7 +23,6 @@
 #include "richtextcomposersignatures.h"
 #include <pimcommon/autocorrection.h>
 
-
 #include <part/textpart.h>
 #include "settings/messagecomposersettings.h"
 #include <grantlee/markupdirector.h>

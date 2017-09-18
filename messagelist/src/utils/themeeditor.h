@@ -37,23 +37,16 @@ class KComboBox;
 class KPluralHandlingSpinBox;
 class KLineEdit;
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Item;
 class GroupHeaderItem;
 class MessageItem;
 class FakeItem;
 class ModelInvariantRowMapper;
-
 } // namespace Core
 
-namespace Utils
-{
-
+namespace Utils {
 class ThemeColumnPropertiesDialog : public QDialog
 {
     Q_OBJECT
@@ -173,7 +166,6 @@ protected Q_SLOTS:
     void slotGroupHeaderBackgroundStyleMenuTriggered(QAction *act);
     void slotMoveColumnToLeft();
     void slotMoveColumnToRight();
-
 };
 
 class ThemeContentItemSourceLabel : public QLabel
@@ -236,9 +228,7 @@ private:
     KComboBox *mViewHeaderPolicyCombo = nullptr;
     KPluralHandlingSpinBox *mIconSizeSpinBox = nullptr;
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_SKINEDITOR_H__

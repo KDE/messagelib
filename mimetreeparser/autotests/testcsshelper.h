@@ -34,9 +34,7 @@
 
 #include "viewer/csshelperbase.h"
 
-namespace MimeTreeParser
-{
-
+namespace MimeTreeParser {
 class TestCSSHelper : public CSSHelperBase
 {
 public:
@@ -44,7 +42,6 @@ public:
     virtual ~TestCSSHelper();
     QString htmlHead(bool fixed) const override;
 };
-
 }
 
 #endif // __MIMETREEPARSER_TESTCSSHELPER_H__

@@ -46,9 +46,7 @@
 #include <QCryptographicHash>
 #include <QFontDatabase>
 
-namespace MessageList
-{
-
+namespace MessageList {
 class Q_DECL_HIDDEN StorageModel::Private
 {
 public:
@@ -64,17 +62,15 @@ public:
 
     Private(StorageModel *owner)
         : q(owner)
-    {}
+    {
+    }
 };
-
 } // namespace MessageList
 
 using namespace Akonadi;
 using namespace MessageList;
 
-namespace
-{
-
+namespace {
 KMime::Message::Ptr messageForItem(const Akonadi::Item &item)
 {
     if (!item.hasPayload<KMime::Message::Ptr>()) {
@@ -83,13 +79,13 @@ KMime::Message::Ptr messageForItem(const Akonadi::Item &item)
     }
     return item.payload<KMime::Message::Ptr>();
 }
-
 }
 
 static QAtomicInt _k_attributeInitialized;
 
 StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent)
-    : Core::StorageModel(parent), d(new Private(this))
+    : Core::StorageModel(parent)
+    , d(new Private(this))
 {
     d->mSelectionModel = selectionModel;
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
@@ -172,7 +168,7 @@ QString StorageModel::id() const
 bool StorageModel::isOutBoundFolder(const Akonadi::Collection &c) const
 {
     if (c.hasAttribute<MessageFolderAttribute>()
-            && c.attribute<MessageFolderAttribute>()->isOutboundFolder()) {
+        && c.attribute<MessageFolderAttribute>()->isOutboundFolder()) {
         return true;
     }
     return false;
@@ -208,8 +204,7 @@ int StorageModel::initialUnreadRowCountGuess() const
     return unreadCount;
 }
 
-bool StorageModel::initializeMessageItem(MessageList::Core::MessageItem *mi,
-        int row, bool bUseReceiver) const
+bool StorageModel::initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const
 {
     const Item item = itemForRow(row);
     const KMime::Message::Ptr mail = messageForItem(item);
@@ -282,14 +277,14 @@ static QByteArray md5Encode(const QString &str)
     return c.result();
 }
 
-void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *mi,
-        int row, ThreadingDataSubset subset) const
+void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const
 {
     const KMime::Message::Ptr mail = messageForRow(row);
     Q_ASSERT(mail);   // We ASSUME that initializeMessageItem has been called successfully...
 
     switch (subset) {
-    case PerfectThreadingReferencesAndSubject: {
+    case PerfectThreadingReferencesAndSubject:
+    {
         const QString subject = mail->subject()->asUnicodeString();
         const QString strippedSubject = MessageCore::StringUtil::stripOffPrefixes(subject);
         mi->setStrippedSubjectMD5(md5Encode(strippedSubject));
@@ -297,7 +292,8 @@ void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *
         // fall through
     }
         Q_FALLTHROUGH();
-    case PerfectThreadingPlusReferences: {
+    case PerfectThreadingPlusReferences:
+    {
         const auto refs = mail->references()->identifiers();
         if (!refs.isEmpty()) {
             mi->setReferencesIdMD5(md5Encode(refs.last()));
@@ -305,7 +301,8 @@ void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *
     }
         Q_FALLTHROUGH();
     // fall through
-    case PerfectThreadingOnly: {
+    case PerfectThreadingOnly:
+    {
         mi->setMessageIdMD5(md5Encode(mail->messageID()->identifier()));
         const auto inReplyTos = mail->inReplyTo()->identifiers();
         if (!inReplyTos.isEmpty()) {
@@ -319,8 +316,7 @@ void StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *
     }
 }
 
-void StorageModel::updateMessageItemData(MessageList::Core::MessageItem *mi,
-        int row) const
+void StorageModel::updateMessageItemData(MessageList::Core::MessageItem *mi, int row) const
 {
     const Item item = itemForRow(row);
 
@@ -346,8 +342,7 @@ void StorageModel::updateMessageItemData(MessageList::Core::MessageItem *mi,
     mi->invalidateAnnotationCache();
 }
 
-void StorageModel::setMessageItemStatus(MessageList::Core::MessageItem *mi,
-                                        int row, Akonadi::MessageStatus status)
+void StorageModel::setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status)
 {
     Q_UNUSED(mi);
     Item item = itemForRow(row);

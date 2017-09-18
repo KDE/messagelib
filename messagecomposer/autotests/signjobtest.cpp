@@ -48,7 +48,6 @@ void SignJobTest::initTestCase()
 
 void SignJobTest::testContentDirect()
 {
-
     std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
 
     MessageComposer::Composer *composer = new MessageComposer::Composer;
@@ -76,7 +75,7 @@ void SignJobTest::testContentChained()
     KMime::Content *content = new KMime::Content;
     content->setBody(data);
 
-    MessageComposer::TransparentJob *tJob =  new MessageComposer::TransparentJob;
+    MessageComposer::TransparentJob *tJob = new MessageComposer::TransparentJob;
     tJob->setContent(content);
 
     MessageComposer::Composer *composer = new MessageComposer::Composer;
@@ -210,7 +209,6 @@ void SignJobTest::testMixedContent()
 
 void SignJobTest::checkSignJob(MessageComposer::SignJob *sJob)
 {
-
     VERIFYEXEC(sJob);
 
     KMime::Content *result = sJob->content();
@@ -219,4 +217,3 @@ void SignJobTest::checkSignJob(MessageComposer::SignJob *sJob)
 
     ComposerTestUtil::verifySignature(result, QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8(), Kleo::OpenPGPMIMEFormat, KMime::Headers::CE7Bit);
 }
-

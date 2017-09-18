@@ -30,17 +30,12 @@
 
 class QMenu;
 
-namespace Akonadi
-{
+namespace Akonadi {
 class MessageStatus;
 }
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 typedef long int MessageItemSetReference;
 
 class Aggregation;
@@ -267,11 +262,7 @@ public:
     * \sa MessageList::Core::ExistingSelectionBehaviour
     */
     bool selectNextMessageItem(
-        MessageTypeFilter messageTypeFilter,
-        ExistingSelectionBehaviour existingSelectionBehaviour,
-        bool centerItem,
-        bool loop
-    );
+        MessageTypeFilter messageTypeFilter, ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
 
     /**
     * Selects the previous message item in the view.
@@ -291,11 +282,7 @@ public:
     * \sa MessageList::Core::ExistingSelectionBehaviour
     */
     bool selectPreviousMessageItem(
-        MessageTypeFilter messageTypeFilter,
-        ExistingSelectionBehaviour existingSelectionBehaviour,
-        bool centerItem,
-        bool loop
-    );
+        MessageTypeFilter messageTypeFilter, ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
 
     /**
     * Focuses the next message item in the view without actually selecting it.
@@ -659,10 +646,7 @@ private:
     class Private;
     Private *d;
 }; // class View
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_VIEW_H__
-

@@ -21,7 +21,6 @@
 #include "scamdetection/scamdetectionwarningwidget.h"
 #include "scamdetection/scamdetectionwebengine.h"
 
-
 #include <QUrl>
 #include <QStandardPaths>
 #include <QVBoxLayout>
@@ -32,8 +31,7 @@
 #include <QCommandLineOption>
 #include <QWebEngineView>
 
-ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString &filename,
-                                                                   QWidget *parent)
+ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString &filename, QWidget *parent)
     : QWidget(parent)
 {
     mScamDetection = new MessageViewer::ScamDetectionWebEngine(this);

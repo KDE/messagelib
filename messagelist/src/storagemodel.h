@@ -30,16 +30,12 @@
 class QAbstractItemModel;
 class QItemSelectionModel;
 
-namespace Akonadi
-{
+namespace Akonadi {
 class Item;
 }
 
-namespace MessageList
-{
-
-namespace Core
-{
+namespace MessageList {
+namespace Core {
 class MessageItem;
 }
 
@@ -93,7 +89,6 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_STORAGEMODEL_H__

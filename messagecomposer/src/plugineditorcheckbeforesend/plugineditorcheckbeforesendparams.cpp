@@ -19,7 +19,6 @@
 
 #include "plugineditorcheckbeforesendparams.h"
 
-
 using namespace MessageComposer;
 
 class MessageComposer::PluginEditorCheckBeforeSendParamsPrivate

@@ -22,12 +22,8 @@
 #include <messagelist_export.h>
 #include <QPushButton>
 
-namespace MessageList
-{
-
-namespace Utils
-{
-
+namespace MessageList {
+namespace Utils {
 class AggregationComboBox;
 class AggregationConfigButtonPrivate;
 
@@ -59,10 +55,7 @@ private:
 
     AggregationConfigButtonPrivate *const d;
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_AGGREGATIONCONFIGBUTTON_H__
-

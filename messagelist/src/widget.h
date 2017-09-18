@@ -33,9 +33,7 @@
 class KXMLGUIClient;
 class QWidget;
 
-namespace MessageList
-{
-
+namespace MessageList {
 /**
  * The Akonadi specific implementation of the Core::Widget.
  *
@@ -95,10 +93,7 @@ public:
     * If loop is true then the "next" algorithm will restart from the beginning
     * of the list if the end is reached, otherwise it will just stop returning false.
     */
-    bool selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                               MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                               bool centerItem,
-                               bool loop);
+    bool selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
 
     /**
     * Selects the previous message item in the view.
@@ -113,10 +108,7 @@ public:
     * If loop is true then the "previous" algorithm will restart from the end
     * of the list if the beginning is reached, otherwise it will just stop returning false.
     */
-    bool selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                                   MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                                   bool centerItem,
-                                   bool loop);
+    bool selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
 
     /**
     * Focuses the next message item in the view without actually selecting it.
@@ -289,10 +281,7 @@ public:
     * collapsed items are also included in the stats
     */
 
-    bool getSelectionStats(Akonadi::Item::List &selectedSernums,
-                           Akonadi::Item::List &selectedVisibleSernums,
-                           bool *allSelectedBelongToSameThread,
-                           bool includeCollapsedChildren = true) const;
+    bool getSelectionStats(Akonadi::Item::List &selectedSernums, Akonadi::Item::List &selectedVisibleSernums, bool *allSelectedBelongToSameThread, bool includeCollapsedChildren = true) const;
     /**
     * Deletes the persistent set pointed by the specified reference.
     * If the set does not exist anymore, nothing happens.
@@ -419,7 +408,6 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_WIDGET_H__

@@ -22,20 +22,13 @@
 #include <messagelist_export.h>
 #include <KComboBox>
 #include <collection.h>
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Aggregation;
 class StorageModel;
-
 }
 
-namespace Utils
-{
-
+namespace Utils {
 class AggregationComboBoxPrivate;
 /**
  * A specialized KComboBox that lists all message list aggregations.
@@ -67,10 +60,7 @@ private:
 
     AggregationComboBoxPrivate *const d;
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_AGGREGATIONCOMBOBOX_H__
-

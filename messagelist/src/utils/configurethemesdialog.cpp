@@ -41,12 +41,8 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
-namespace MessageList
-{
-
-namespace Utils
-{
-
+namespace MessageList {
+namespace Utils {
 class ThemeListWidgetItem : public QListWidgetItem
 {
 public:
@@ -55,6 +51,7 @@ public:
     {
         mTheme = new Core::Theme(set);
     }
+
     ~ThemeListWidgetItem()
     {
         delete mTheme;
@@ -64,10 +61,12 @@ public:
     {
         return mTheme;
     }
+
     void forgetTheme()
     {
         mTheme = nullptr;
     }
+
 private:
     Core::Theme *mTheme = nullptr;
 };
@@ -77,7 +76,9 @@ class ThemeListWidget : public QListWidget
 public:
     ThemeListWidget(QWidget *parent)
         : QListWidget(parent)
-    {}
+    {
+    }
+
 public:
     // need a larger but shorter QListWidget
     QSize sizeHint() const override
@@ -85,16 +86,15 @@ public:
         return QSize(450, 128);
     }
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 using namespace MessageList::Core;
 using namespace MessageList::Utils;
 
 ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
-    : QDialog(parent), d(new Private(this))
+    : QDialog(parent)
+    , d(new Private(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowModality(Qt::ApplicationModal);   // FIXME: Sure ?
@@ -118,8 +118,8 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     d->mThemeList->setSortingEnabled(true);
     g->addWidget(d->mThemeList, 0, 0, 7, 1);
 
-    connect(d->mThemeList, SIGNAL(itemClicked(QListWidgetItem*)),
-            SLOT(themeListItemClicked(QListWidgetItem*)));
+    connect(d->mThemeList, SIGNAL(itemClicked(QListWidgetItem *)),
+            SLOT(themeListItemClicked(QListWidgetItem *)));
 
     d->mNewThemeButton = new QPushButton(i18n("New Theme"), base);
     d->mNewThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
@@ -402,7 +402,7 @@ void ConfigureThemesDialog::Private::deleteThemeButtonClicked()
         return;
     }
     if (KMessageBox::Yes == KMessageBox::questionYesNo(q, list.count() > 1 ? i18n("Do you want to delete selected themes?")
-            : i18n("Do you want to delete \"%1\"?", list.first()->text()), i18nc("@title:window", "Delete Theme"))) {
+                                                       : i18n("Do you want to delete \"%1\"?", list.first()->text()), i18nc("@title:window", "Delete Theme"))) {
         mEditor->editTheme(nullptr);   // forget it
         for (QListWidgetItem *it : list) {
             ThemeListWidgetItem *item = dynamic_cast< ThemeListWidgetItem * >(it);

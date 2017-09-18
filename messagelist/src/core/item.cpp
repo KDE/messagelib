@@ -51,7 +51,9 @@ QString stripEmailAddr(const QString &aStr)
     QString name;
     QString comment;
     QString angleAddress;
-    enum { TopLevel, InComment, InAngleAddress } context = TopLevel;
+    enum {
+        TopLevel, InComment, InAngleAddress
+    } context = TopLevel;
     bool inQuotedString = false;
     int commentLevel = 0;
 
@@ -60,30 +62,34 @@ QString stripEmailAddr(const QString &aStr)
     for (int index = 0; index < strLength; ++index) {
         ch = aStr[index];
         switch (context) {
-        case TopLevel : {
+        case TopLevel:
             switch (ch.toLatin1()) {
-            case '"' : inQuotedString = !inQuotedString;
+            case '"':
+                inQuotedString = !inQuotedString;
                 break;
-            case '(' : if (!inQuotedString) {
+            case '(':
+                if (!inQuotedString) {
                     context = InComment;
                     commentLevel = 1;
                 } else {
                     name += ch;
                 }
                 break;
-            case '<' : if (!inQuotedString) {
+            case '<':
+                if (!inQuotedString) {
                     context = InAngleAddress;
                 } else {
                     name += ch;
                 }
                 break;
-            case '\\' : // quoted character
+            case '\\':  // quoted character
                 ++index; // skip the '\'
                 if (index < aStr.length()) {
                     name += aStr[index];
                 }
                 break;
-            case ',' : if (!inQuotedString) {
+            case ',':
+                if (!inQuotedString) {
                     // next email address
                     if (!result.isEmpty()) {
                         result += QLatin1String(", ");
@@ -109,16 +115,18 @@ QString stripEmailAddr(const QString &aStr)
                     name += ch;
                 }
                 break;
-            default :  name += ch;
+            default:
+                name += ch;
             }
             break;
-        }
-        case InComment : {
+        case InComment:
             switch (ch.toLatin1()) {
-            case '(' : ++commentLevel;
+            case '(':
+                ++commentLevel;
                 comment += ch;
                 break;
-            case ')' : --commentLevel;
+            case ')':
+                --commentLevel;
                 if (commentLevel == 0) {
                     context = TopLevel;
                     comment += QLatin1Char(' '); // separate the text of several comments
@@ -126,37 +134,39 @@ QString stripEmailAddr(const QString &aStr)
                     comment += ch;
                 }
                 break;
-            case '\\' : // quoted character
+            case '\\':  // quoted character
                 ++index; // skip the '\'
                 if (index < aStr.length()) {
                     comment += aStr[index];
                 }
                 break;
-            default :  comment += ch;
+            default:
+                comment += ch;
             }
             break;
-        }
-        case InAngleAddress : {
+        case InAngleAddress:
             switch (ch.toLatin1()) {
-            case '"' : inQuotedString = !inQuotedString;
+            case '"':
+                inQuotedString = !inQuotedString;
                 angleAddress += ch;
                 break;
-            case '>' : if (!inQuotedString) {
+            case '>':
+                if (!inQuotedString) {
                     context = TopLevel;
                 } else {
                     angleAddress += ch;
                 }
                 break;
-            case '\\' : // quoted character
+            case '\\':  // quoted character
                 ++index; // skip the '\'
                 if (index < aStr.length()) {
                     angleAddress += aStr[index];
                 }
                 break;
-            default :  angleAddress += ch;
+            default:
+                angleAddress += ch;
             }
             break;
-        }
         } // switch ( context )
     }
     if (!result.isEmpty()) {
@@ -311,8 +321,8 @@ Item *Item::itemAbove()
     }
 
     Item *siblingAbove = d_ptr->mParent->itemAboveChild(this);
-    if (siblingAbove && siblingAbove != this && siblingAbove != d_ptr->mParent &&
-            siblingAbove->childItemCount() > 0) {
+    if (siblingAbove && siblingAbove != this && siblingAbove != d_ptr->mParent
+        && siblingAbove->childItemCount() > 0) {
         return siblingAbove->deepestItem();
     }
 
@@ -463,7 +473,7 @@ QString Item::statusDescription() const
 
 QString Item::formattedSize() const
 {
-    return KIO::convertSize((KIO::filesize_t) size());
+    return KIO::convertSize((KIO::filesize_t)size());
 }
 
 QString Item::formattedDate() const
@@ -702,10 +712,7 @@ void Item::setSubject(const QString &subject)
     d_ptr->mSubject = subject;
 }
 
-void MessageList::Core::Item::initialSetup(time_t date, size_t size,
-        const QString &sender,
-        const QString &receiver,
-        bool useReceiver)
+void MessageList::Core::Item::initialSetup(time_t date, size_t size, const QString &sender, const QString &receiver, bool useReceiver)
 {
     d_ptr->mDate = date;
     d_ptr->mMaxDate = date;
@@ -735,8 +742,7 @@ qint64 Item::parentCollectionId() const
     return d_ptr->mParentCollectionId;
 }
 
-void MessageList::Core::Item::setSubjectAndStatus(const QString &subject,
-        Akonadi::MessageStatus status)
+void MessageList::Core::Item::setSubjectAndStatus(const QString &subject, Akonadi::MessageStatus status)
 {
     d_ptr->mSubject = subject;
     d_ptr->mStatus = status;

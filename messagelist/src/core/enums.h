@@ -21,12 +21,8 @@
 #ifndef __MESSAGELIST_CORE_ENUMS_H__
 #define __MESSAGELIST_CORE_ENUMS_H__
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 /**
  * Pre-selection is the action of automatically selecting a message just after the folder
  * has finished loading. We may want to select the message that was selected the last
@@ -64,9 +60,7 @@ enum ExistingSelectionBehaviour {
     ExpandExistingSelection,           //< Preserve the existing selection (grow only)
     GrowOrShrinkExistingSelection      //< Grow or shrink the existing selection depending on what item is actually being selected
 };
-
 }
-
 }
 
 #endif //!__MESSAGELIST_CORE_ENUMS_H__

@@ -27,12 +27,8 @@
 
 #include <core/modelinvariantindex.h>
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class ModelInvariantRowMapper;
 class ModelInvariantRowMapperPrivate;
 
@@ -189,9 +185,7 @@ private:
 
     ModelInvariantRowMapperPrivate *const d;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H__

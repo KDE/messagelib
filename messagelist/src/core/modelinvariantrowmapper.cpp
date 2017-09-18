@@ -27,12 +27,8 @@
 
 #include "messagelist_debug.h"
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class RowShift
 {
 public:
@@ -42,7 +38,9 @@ public:
 
 public:
     RowShift(int minRowIndex, int shift, QHash< int, ModelInvariantIndex * > *invariantHash)
-        : mMinimumRowIndex(minRowIndex), mShift(shift), mInvariantHash(invariantHash)
+        : mMinimumRowIndex(minRowIndex)
+        , mShift(shift)
+        , mInvariantHash(invariantHash)
     {
     }
 
@@ -54,9 +52,7 @@ public:
         delete mInvariantHash;
     }
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 using namespace MessageList::Core;
@@ -442,7 +438,6 @@ void ModelInvariantRowMapper::modelRowsInserted(int modelIndexRowPosition, int c
         }
 
         d->slotPerformLazyUpdate();
-
     } else {
         // Make sure we'll get a lazy update somewhere in the future
         if (!d->mUpdateTimer->isActive()) {
@@ -545,7 +540,6 @@ QList< ModelInvariantIndex * > *ModelInvariantRowMapper::modelRowsRemoved(int mo
         }
 
         d->slotPerformLazyUpdate();
-
     } else {
         // Make sure we'll get a lazy update somewhere in the future
         if (!d->mUpdateTimer->isActive()) {

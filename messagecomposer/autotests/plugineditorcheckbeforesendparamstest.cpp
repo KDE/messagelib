@@ -24,12 +24,10 @@
 PluginEditorCheckBeforeSendParamsTest::PluginEditorCheckBeforeSendParamsTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 PluginEditorCheckBeforeSendParamsTest::~PluginEditorCheckBeforeSendParamsTest()
 {
-
 }
 
 void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
@@ -117,7 +115,6 @@ void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
     QCOMPARE(params1.bccAddresses(), bcc);
     QCOMPARE(params1.ccAddresses(), cc);
     QCOMPARE(params1.toAddresses(), to);
-
 }
 
 QTEST_MAIN(PluginEditorCheckBeforeSendParamsTest)

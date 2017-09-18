@@ -28,17 +28,12 @@
 
 #include <collection.h>
 
-namespace KMime
-{
+namespace KMime {
 class DateFormatter;
 }
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Aggregation;
 class Theme;
 class StorageModel;
@@ -120,13 +115,12 @@ public:
 
     // sort order management
     const SortOrder sortOrderForStorageModel(const StorageModel *storageModel, bool *storageUsesPrivateSortOrder);
-    void saveSortOrderForStorageModel(const StorageModel *storageModel,
-                                      const SortOrder &order, bool storageUsesPrivateSortOrder);
+    void saveSortOrderForStorageModel(const StorageModel *storageModel, const SortOrder &order, bool storageUsesPrivateSortOrder);
 
     // theme sets management
-    const Theme *themeForStorageModel(const Akonadi::Collection &col,  bool *storageUsesPrivateTheme);
+    const Theme *themeForStorageModel(const Akonadi::Collection &col, bool *storageUsesPrivateTheme);
     const Theme *themeForStorageModel(const StorageModel *storageModel, bool *storageUsesPrivateTheme);
-    const Theme *themeForStorageModel(const QString &id,  bool *storageUsesPrivateTheme);
+    const Theme *themeForStorageModel(const QString &id, bool *storageUsesPrivateTheme);
 
     void saveThemeForStorageModel(const StorageModel *storageModel, const QString &id, bool storageUsesPrivateTheme);
     void saveThemeForStorageModel(int index, const QString &id, bool storageUsesPrivateTheme);
@@ -177,9 +171,7 @@ private:
     void createDefaultAggregations();
     void createDefaultThemes();
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_MANAGER_H__

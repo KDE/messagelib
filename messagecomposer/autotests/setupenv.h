@@ -25,12 +25,8 @@
 #include <MessageViewer/ObjectTreeEmptySource>
 #include <MessageViewer/CSSHelperBase>
 
-namespace MessageComposer
-{
-
-namespace Test
-{
-
+namespace MessageComposer {
+namespace Test {
 /**
 * setup a environment variables for tests:
 * * set LC_ALL to C
@@ -51,16 +47,19 @@ std::vector<GpgME::Key> getKeys(bool smime = false);
 class TestObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
-    TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer,
-                         MessageViewer::CSSHelperBase *cssHelper)
-        : mWriter(writer), mCSSHelper(cssHelper)
+    TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer, MessageViewer::CSSHelperBase *cssHelper)
+        : mWriter(writer)
+        , mCSSHelper(cssHelper)
     {
     }
 
-    MimeTreeParser::HtmlWriter *htmlWriter() override {
+    MimeTreeParser::HtmlWriter *htmlWriter() override
+    {
         return mWriter;
     }
-    MessageViewer::CSSHelperBase *cssHelper() override {
+
+    MessageViewer::CSSHelperBase *cssHelper() override
+    {
         return mCSSHelper;
     }
 
@@ -68,9 +67,7 @@ private:
     MimeTreeParser::HtmlWriter *mWriter = nullptr;
     MessageViewer::CSSHelperBase *mCSSHelper = nullptr;
 };
-
 }
-
 }
 
 #endif

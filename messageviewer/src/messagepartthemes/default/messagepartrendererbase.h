@@ -52,8 +52,7 @@ class MessagePartRendererBase
 public:
     MessagePartRendererBase();
     virtual ~MessagePartRendererBase();
-    virtual QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *,
-                                                const MimeTreeParser::Interface::MessagePartPtr &)
+    virtual QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *, const MimeTreeParser::Interface::MessagePartPtr &)
     const = 0;
 };
 #endif

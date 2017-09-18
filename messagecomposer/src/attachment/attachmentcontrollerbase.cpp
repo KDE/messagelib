@@ -273,7 +273,7 @@ void AttachmentControllerBase::Private::reloadAttachment()
 {
     Q_ASSERT(selectedParts.count() == 1);
     AttachmentUpdateJob *ajob = new AttachmentUpdateJob(selectedParts.first(), q);
-    connect(ajob, SIGNAL(result(KJob*)), q, SLOT(updateJobResult(KJob*)));
+    connect(ajob, SIGNAL(result(KJob *)), q, SLOT(updateJobResult(KJob *)));
     ajob->start();
 }
 
@@ -369,7 +369,7 @@ void AttachmentControllerBase::exportPublicKey(const QString &fingerprint)
     }
 
     MessageComposer::AttachmentFromPublicKeyJob *ajob = new MessageComposer::AttachmentFromPublicKeyJob(fingerprint, this);
-    connect(ajob, SIGNAL(result(KJob*)), this, SLOT(attachPublicKeyJobResult(KJob*)));
+    connect(ajob, SIGNAL(result(KJob *)), this, SLOT(attachPublicKeyJobResult(KJob *)));
     ajob->start();
 }
 
@@ -558,7 +558,7 @@ void AttachmentControllerBase::compressAttachment(const AttachmentPart::Ptr &par
         qCDebug(MESSAGECOMPOSER_LOG) << "Compressing part.";
 
         AttachmentCompressJob *ajob = new AttachmentCompressJob(part, this);
-        connect(ajob, SIGNAL(result(KJob*)), this, SLOT(compressJobResult(KJob*)));
+        connect(ajob, SIGNAL(result(KJob *)), this, SLOT(compressJobResult(KJob *)));
         ajob->start();
     } else {
         qCDebug(MESSAGECOMPOSER_LOG) << "Uncompressing part.";
@@ -716,8 +716,8 @@ void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
     MessageComposer::Composer *composer = new MessageComposer::Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
     MessageComposer::AttachmentJob *attachmentJob = new MessageComposer::AttachmentJob(part, composer);
-    connect(attachmentJob, SIGNAL(result(KJob*)),
-            this, SLOT(slotAttachmentContentCreated(KJob*)));
+    connect(attachmentJob, SIGNAL(result(KJob *)),
+            this, SLOT(slotAttachmentContentCreated(KJob *)));
     attachmentJob->start();
 }
 
@@ -747,8 +747,8 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
         QUrl::fromLocalFile(tempFile->fileName()),
         QString::fromLatin1(part->mimeType()), openWithOption,
         this, d->wParent);
-    connect(watcher, SIGNAL(editDone(MessageViewer::EditorWatcher*)),
-            this, SLOT(editDone(MessageViewer::EditorWatcher*)));
+    connect(watcher, SIGNAL(editDone(MessageViewer::EditorWatcher *)),
+            this, SLOT(editDone(MessageViewer::EditorWatcher *)));
 
     switch (watcher->start()) {
     case MessageViewer::EditorWatcher::NoError:
@@ -861,7 +861,7 @@ void AttachmentControllerBase::showAttachVcard()
         const Akonadi::EmailAddressSelection::List selectedEmail = dlg->selectedAddresses();
         for (const Akonadi::EmailAddressSelection &selected : selectedEmail) {
             MessageComposer::AttachmentVcardFromAddressBookJob *ajob = new MessageComposer::AttachmentVcardFromAddressBookJob(selected.item(), this);
-            connect(ajob, SIGNAL(result(KJob*)), this, SLOT(attachVcardFromAddressBook(KJob*)));
+            connect(ajob, SIGNAL(result(KJob *)), this, SLOT(attachVcardFromAddressBook(KJob *)));
             ajob->start();
         }
     }
@@ -930,7 +930,7 @@ void AttachmentControllerBase::addAttachmentUrlSync(const QUrl &url)
 void AttachmentControllerBase::addAttachment(const QUrl &url)
 {
     MessageCore::AttachmentFromUrlBaseJob *ajob = MessageCore::AttachmentFromUrlUtils::createAttachmentJob(url, this);
-    connect(ajob, SIGNAL(result(KJob*)), this, SLOT(loadJobResult(KJob*)));
+    connect(ajob, SIGNAL(result(KJob *)), this, SLOT(loadJobResult(KJob *)));
     ajob->start();
 }
 

@@ -63,19 +63,19 @@ void initLocale()
     setenv("LC_ALL", "en_US.utf-8", 1);
     setenv("TZ", "UTC", 1);
 }
+
 Q_CONSTRUCTOR_FUNCTION(initLocale)
 #endif
 
-namespace
-{
-template <typename String>
+namespace {
+template<typename String>
 String very_simplistic_diff(const String &a, const String &b)
 {
     const QList<String> al = a.split('\n');
     const QList<String> bl = b.split('\n');
     String result;
     int ai = 0, bi = 0;
-    while (ai < al.size() && bi < bl.size())
+    while (ai < al.size() && bi < bl.size()) {
         if (al[ai] == bl[bi]) {
             //qDebug( "found   equal line a@%d x b@%d", ai, bi );
             result += "  " + al[ai] + '\n';
@@ -88,15 +88,16 @@ String very_simplistic_diff(const String &a, const String &b)
             //qDebug( "   b_in_a == %d", b_in_a );
             //qDebug( "   a_in_b == %d", a_in_b );
             if (b_in_a == -1) {
-                if (a_in_b == -1)
+                if (a_in_b == -1) {
                     // (at least) one line changed:
                     result += "- " + al[ai++] + '\n'
                               +  "+ " + bl[bi++] + '\n';
-                else
+                } else {
                     // some lines added:
                     while (bi < a_in_b) {
                         result += "+ " + bl[bi++] + '\n';
                     }
+                }
             } else {
                 // some lines removed:
                 while (ai < b_in_a) {
@@ -109,6 +110,7 @@ String very_simplistic_diff(const String &a, const String &b)
             }
             //qDebug( "result ( a@%d b@%d ):\n%s\n--end", ai, bi, result.constData() );
         }
+    }
 
     const int sizeal(al.size());
     for (int i = ai; i < sizeal; ++i) {
@@ -122,10 +124,10 @@ String very_simplistic_diff(const String &a, const String &b)
 }
 }
 
-#define QCOMPARE_OR_DIFF( a, b )                                        \
-    if ( a != b )                                                       \
-        qDebug( "diff:\n--begin--\n%s\n--end--", very_simplistic_diff( a, b ).constData() ); \
-    QVERIFY( a == b )
+#define QCOMPARE_OR_DIFF(a, b)                                        \
+    if (a != b) {                                                       \
+        qDebug("diff:\n--begin--\n%s\n--end--", very_simplistic_diff(a, b).constData());} \
+    QVERIFY(a == b)
 
 QTEST_MAIN(MessageFactoryTest)
 
@@ -171,7 +173,6 @@ KMime::Message::Ptr MessageFactoryTest::loadMessage(const QString &filename)
     origMsg->parse();
     return origMsg;
 }
-
 
 void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
 {
@@ -238,7 +239,6 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
     MessageFactoryNG factory(msg, 0);
     factory.setReplyStrategy(ReplyAll);
     factory.setIdentityManager(mIdentMan);
-
 
     QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
 
@@ -379,7 +379,8 @@ void MessageFactoryTest::testCreateReplyToAuthorAsync()
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
-    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
+    QString replyStr
+        = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
     QString replyTo = reply.msg->inReplyTo()->asUnicodeString();
@@ -423,7 +424,8 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
-    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
+    QString replyStr
+        = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
 
     QString replyTo = reply.msg->inReplyTo()->asUnicodeString();
@@ -461,7 +463,8 @@ void MessageFactoryTest::testCreateReplyAllAsync()
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     datetime += QLatin1Char(' ') + QLocale::system().toString(date.time(), QLocale::LongFormat);
-    QString replyStr = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
+    QString replyStr
+        = QString::fromLatin1(QByteArray(QByteArray("On ") + datetime.toLatin1() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toLatin1());
 }
@@ -556,26 +559,26 @@ void MessageFactoryTest::testCreateForwardMultiEmailsAsync()
     datetime += QLatin1String(", ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
 
     QString fwdMsg = QString::fromLatin1(
-                         "From: another <another@another.com>\n"
-                         "Date: %2\n"
-                         "X-KMail-Transport: 0\n"
-                         "MIME-Version: 1.0\n"
-                         "Subject: Fwd: Test Email Subject\n"
-                         "Content-Type: text/plain; charset=\"US-ASCII\"\n"
-                         "Content-Transfer-Encoding: 8Bit\n"
-                         "X-KMail-Link-Message: 0\n"
-                         "X-KMail-Link-Type: forward\n"
-                         "\n"
-                         "----------  Forwarded Message  ----------\n"
-                         "\n"
-                         "Subject: Test Email Subject\n"
-                         "Date: %1\n"
-                         "From: me@me.me\n"
-                         "To: you@you.you, you2@you.you\n"
-                         "CC: cc@cc.cc, cc2@cc.cc\n"
-                         "\n"
-                         "All happy families are alike; each unhappy family is unhappy in its own way.\n"
-                         "-----------------------------------------");
+        "From: another <another@another.com>\n"
+        "Date: %2\n"
+        "X-KMail-Transport: 0\n"
+        "MIME-Version: 1.0\n"
+        "Subject: Fwd: Test Email Subject\n"
+        "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+        "Content-Transfer-Encoding: 8Bit\n"
+        "X-KMail-Link-Message: 0\n"
+        "X-KMail-Link-Type: forward\n"
+        "\n"
+        "----------  Forwarded Message  ----------\n"
+        "\n"
+        "Subject: Test Email Subject\n"
+        "Date: %1\n"
+        "From: me@me.me\n"
+        "To: you@you.you, you2@you.you\n"
+        "CC: cc@cc.cc, cc2@cc.cc\n"
+        "\n"
+        "All happy families are alike; each unhappy family is unhappy in its own way.\n"
+        "-----------------------------------------");
     fwdMsg = fwdMsg.arg(datetime).arg(fw->date()->asUnicodeString());
 
 //   qDebug() << "got:" << fw->encodedContent() << "against" << fwdMsg.toLatin1();
@@ -587,48 +590,47 @@ void MessageFactoryTest::testCreateForwardAsync()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
 
-    MessageFactoryNG factory (msg, 0);
+    MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
     QSignalSpy spy(&factory, &MessageFactoryNG::createForwardDone);
     factory.createForwardAsync();
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-
-    KMime::Message::Ptr fw =  spy.at(0).at(0).value<KMime::Message::Ptr>();
+    KMime::Message::Ptr fw = spy.at(0).at(0).value<KMime::Message::Ptr>();
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     datetime += QLatin1String(", ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
 
     QString fwdMsg = QString::fromLatin1(
-                         "From: another <another@another.com>\n"
-                         "Date: %2\n"
-                         "X-KMail-Transport: 0\n"
-                         "MIME-Version: 1.0\n"
-                         "Subject: Fwd: Test Email Subject\n"
-                         "Content-Type: text/plain; charset=\"US-ASCII\"\n"
-                         "Content-Transfer-Encoding: 8Bit\n"
-                         "X-KMail-Link-Message: 0\n"
-                         "X-KMail-Link-Type: forward\n"
-                         "\n"
-                         "----------  Forwarded Message  ----------\n"
-                         "\n"
-                         "Subject: Test Email Subject\n"
-                         "Date: %1\n"
-                         "From: me@me.me\n"
-                         "To: you@you.you\n"
-                         "CC: cc@cc.cc\n"
-                         "\n"
-                         "All happy families are alike; each unhappy family is unhappy in its own way.\n"
-                         "-----------------------------------------");
+        "From: another <another@another.com>\n"
+        "Date: %2\n"
+        "X-KMail-Transport: 0\n"
+        "MIME-Version: 1.0\n"
+        "Subject: Fwd: Test Email Subject\n"
+        "Content-Type: text/plain; charset=\"US-ASCII\"\n"
+        "Content-Transfer-Encoding: 8Bit\n"
+        "X-KMail-Link-Message: 0\n"
+        "X-KMail-Link-Type: forward\n"
+        "\n"
+        "----------  Forwarded Message  ----------\n"
+        "\n"
+        "Subject: Test Email Subject\n"
+        "Date: %1\n"
+        "From: me@me.me\n"
+        "To: you@you.you\n"
+        "CC: cc@cc.cc\n"
+        "\n"
+        "All happy families are alike; each unhappy family is unhappy in its own way.\n"
+        "-----------------------------------------");
     fwdMsg = fwdMsg.arg(datetime).arg(fw->date()->asUnicodeString());
 
 //   qDebug() << "got:" << fw->encodedContent() << "against" << fwdMsg.toLatin1();
     QCOMPARE(fw->subject()->asUnicodeString(), QStringLiteral("Fwd: Test Email Subject"));
     QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toLatin1());
-
 }
+
 void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 {
     KMime::Message::Ptr msg = createPlainTestMessage();
@@ -639,7 +641,7 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
     QString redirectTo = QStringLiteral("redir@redir.com");
     QString redirectCc = QStringLiteral("redircc@redircc.com, redircc2@redircc.com");
     QString redirectBcc = QStringLiteral("redirbcc@redirbcc.com, redirbcc2@redirbcc.com");
-    KMime::Message::Ptr rdir =  factory.createRedirect(redirectTo, redirectCc, redirectBcc);
+    KMime::Message::Ptr rdir = factory.createRedirect(redirectTo, redirectCc, redirectBcc);
 
     QDateTime date = rdir->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
@@ -695,7 +697,7 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
 
     QString redirectTo = QStringLiteral("redir@redir.com");
     QString redirectCc = QStringLiteral("redircc@redircc.com, redircc2@redircc.com");
-    KMime::Message::Ptr rdir =  factory.createRedirect(redirectTo, redirectCc);
+    KMime::Message::Ptr rdir = factory.createRedirect(redirectTo, redirectCc);
 
     QDateTime date = rdir->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
@@ -749,7 +751,7 @@ void MessageFactoryTest::testCreateRedirect()
     factory.setIdentityManager(mIdentMan);
 
     QString redirectTo = QStringLiteral("redir@redir.com");
-    KMime::Message::Ptr rdir =  factory.createRedirect(redirectTo);
+    KMime::Message::Ptr rdir = factory.createRedirect(redirectTo);
 
     QDateTime date = rdir->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
@@ -801,7 +803,7 @@ void MessageFactoryTest::testCreateResend()
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
-    KMime::Message::Ptr rdir =  factory.createResend();
+    KMime::Message::Ptr rdir = factory.createResend();
 
     QDateTime date = rdir->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
@@ -861,7 +863,7 @@ void MessageFactoryTest::testCreateMDN()
       MimeTreeParser::ProcessResult pResult( nh ); */
 
     QString mdnContent = QString::fromLatin1("The message sent on %1 to %2 with subject \"%3\" has been displayed. "
-                         "This is no guarantee that the message has been read or understood.");
+                                             "This is no guarantee that the message has been read or understood.");
     mdnContent = mdnContent.arg(KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, msg->date()->dateTime().toTime_t()))
                  .arg(msg->to()->asUnicodeString()).arg(msg->subject()->asUnicodeString());
 
@@ -936,21 +938,21 @@ void MessageFactoryTest::test_multipartAlternative_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     foreach (const QString &file, dir.entryList(QStringList(QLatin1String("plain_message.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 0 << "" <<
-                "> This *is* the *message* text *from* Sudhendu Kumar<dontspamme@yoohoo.com>\n"
-                "> \n"
-                "> --\n"
-                "> Thanks & Regards\n"
-                "> Sudhendu Kumar";
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 0 << ""
+                                                   <<"> This *is* the *message* text *from* Sudhendu Kumar<dontspamme@yoohoo.com>\n"
+            "> \n"
+            "> --\n"
+            "> Thanks & Regards\n"
+            "> Sudhendu Kumar";
         QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 1 << "" << "<html><head></head><body>"
-                "<blockquote>This <i>is</i> the <b>message</b> text <u>from</u> Sudhendu Kumar&lt;dontspamme@yoohoo.com&gt;<br>"
-                "<br>-- <br>Thanks &amp; Regards<br>Sudhendu Kumar<br>\n</blockquote><br/></body></html>";
+                                                                                                                  "<blockquote>This <i>is</i> the <b>message</b> text <u>from</u> Sudhendu Kumar&lt;dontspamme@yoohoo.com&gt;<br>"
+                                                                                                                  "<br>-- <br>Thanks &amp; Regards<br>Sudhendu Kumar<br>\n</blockquote><br/></body></html>";
 
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 0 << "This *is* the *message* text *from*" <<
-                "> This *is* the *message* text *from*";
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 0 << "This *is* the *message* text *from*"
+                                                   <<"> This *is* the *message* text *from*";
 
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 1 << "This *is* the *message* text *from*" <<
-                "<html><head></head><body><blockquote>This *is* the *message* text *from*</blockquote><br/></body></html>";
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 1 << "This *is* the *message* text *from*"
+                                                   <<"<html><head></head><body><blockquote>This *is* the *message* text *from*</blockquote><br/></body></html>";
     }
 }
 
@@ -985,4 +987,3 @@ void MessageFactoryTest::test_multipartAlternative()
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1String("Re: Plain Message Test"));
     QCOMPARE(reply.msg->contents().at(contentAt)->encodedBody().data(), expected.toLatin1().data());
 }
-

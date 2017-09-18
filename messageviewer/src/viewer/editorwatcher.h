@@ -57,8 +57,7 @@ public:
      * @param parentWidget the parent widget of this EditorWatcher, which will be used as the parent
      *                     widget for message dialogs.
      */
-    EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option, QObject *parent,
-                  QWidget *parentWidget);
+    EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option, QObject *parent, QWidget *parentWidget);
 
     ~EditorWatcher();
     ErrorEditorWatcher start();

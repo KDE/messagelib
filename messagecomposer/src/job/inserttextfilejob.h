@@ -24,7 +24,6 @@
 #include <KJob>
 #include <QUrl>
 
-
 class QTextEdit;
 
 namespace KIO {

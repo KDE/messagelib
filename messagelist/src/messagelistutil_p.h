@@ -24,10 +24,8 @@
 
 class QMenu;
 
-namespace MessageList
-{
-namespace Util
-{
+namespace MessageList {
+namespace Util {
 QString messageSortingConfigName();
 QString messageSortDirectionConfigName();
 QString groupSortingConfigName();
@@ -43,4 +41,3 @@ void fillViewMenu(QMenu *menu, QObject *receiver);
 }
 
 #endif /* MESSAGELISTUTIL_H */
-

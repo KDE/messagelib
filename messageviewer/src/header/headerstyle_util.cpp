@@ -63,8 +63,7 @@ QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flag
 }
 
 // Prepare the date string (when printing always use the localized date)
-QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing,
-                                    HeaderStyleUtilDateFormat dateFormat) const
+QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const
 {
     const QDateTime dateTime = message->date()->dateTime();
     const time_t unixTime = dateTime.toTime_t();
@@ -134,9 +133,7 @@ QString HeaderStyleUtil::spamStatus(KMime::Message *message) const
     return spamHTML;
 }
 
-QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confidence,
-                                       const QString &filterHeader,
-                                       const QString &confidenceHeader) const
+QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confidence, const QString &filterHeader, const QString &confidenceHeader) const
 {
     static const int meterWidth = 20;
     static const int meterHeight = 5;
@@ -308,8 +305,7 @@ void HeaderStyleUtil::updateXFaceSettings(QImage photo, xfaceSettings &settings)
     }
 }
 
-HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::HeaderStyle *style,
-                                                      KMime::Message *message) const
+HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::HeaderStyle *style, KMime::Message *message) const
 {
     xfaceSettings settings;
     bool useOtherPhotoSources = false;

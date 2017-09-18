@@ -27,7 +27,7 @@
  * Similar to QVERIFY( job->exec() ) but includes the job error message
  * in the output in case of a failure.
  */
-#define VERIFYEXEC( job ) \
-    QVERIFY2( job->exec(), job->errorString().toUtf8().constData() )
+#define VERIFYEXEC(job) \
+    QVERIFY2(job->exec(), job->errorString().toUtf8().constData())
 
 #endif

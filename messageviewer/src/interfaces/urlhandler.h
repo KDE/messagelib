@@ -71,8 +71,7 @@ public:
       * @return true if the right-click was handled by this
       * URLHandler, false otherwise.
       */
-    virtual bool handleContextMenuRequest(const QUrl &url, const QPoint &p,
-                                          MessageViewer::ViewerPrivate *w) const = 0;
+    virtual bool handleContextMenuRequest(const QUrl &url, const QPoint &p, MessageViewer::ViewerPrivate *w) const = 0;
 
     /**
       * Called when hovering over a link.

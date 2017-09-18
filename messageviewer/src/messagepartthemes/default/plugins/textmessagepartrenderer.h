@@ -29,8 +29,7 @@ class TextMessagePartRenderer : public MessagePartRendererBase
 public:
     TextMessagePartRenderer();
     virtual ~TextMessagePartRenderer();
-    QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *drp,
-                                        const MimeTreeParser::Interface::MessagePartPtr &msgPart)
+    QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *drp, const MimeTreeParser::Interface::MessagePartPtr &msgPart)
     const override;
 };
 

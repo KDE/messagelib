@@ -28,12 +28,8 @@
 #include <MimeTreeParser/MessagePartRenderer>
 #include <MimeTreeParser/ObjectTreeSource>
 
-namespace MimeTreeParser
-{
-
-namespace Test
-{
-
+namespace MimeTreeParser {
+namespace Test {
 /**
 * setup a environment variables for tests:
 * * set LC_ALL to C
@@ -55,7 +51,8 @@ public:
     {
     }
 
-    MimeTreeParser::HtmlWriter *htmlWriter() override {
+    MimeTreeParser::HtmlWriter *htmlWriter() override
+    {
         return mWriter;
     }
 
@@ -74,8 +71,9 @@ public:
         mAttachmentStrategy = strategy;
     }
 
-    const AttachmentStrategy *attachmentStrategy() override {
-        return  AttachmentStrategy::create(mAttachmentStrategy);
+    const AttachmentStrategy *attachmentStrategy() override
+    {
+        return AttachmentStrategy::create(mAttachmentStrategy);
     }
 
     bool autoImportKeys() const override
@@ -93,7 +91,8 @@ public:
         return false;
     }
 
-    const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override {
+    const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override
+    {
         return &mBodyPartFormatterBaseFactory;
     }
 
@@ -117,7 +116,8 @@ public:
         return mShowSignatureDetails;
     }
 
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override {
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override
+    {
         Q_UNUSED(mode);
         Q_UNUSED(availableModes);
     }
@@ -137,23 +137,28 @@ public:
         return 1;
     }
 
-    const QTextCodec *overrideCodec() override {
+    const QTextCodec *overrideCodec() override
+    {
         return nullptr;
     }
 
-    QString createMessageHeader(KMime::Message *message) override {
+    QString createMessageHeader(KMime::Message *message) override
+    {
         Q_UNUSED(message);
         return QString(); //do nothing
     }
 
-    Interface::MessagePartRenderer::Ptr messagePartTheme(Interface::MessagePart::Ptr msgPart) override {
+    Interface::MessagePartRenderer::Ptr messagePartTheme(Interface::MessagePart::Ptr msgPart) override
+    {
         Q_UNUSED(msgPart);
-        return  Interface::MessagePartRenderer::Ptr();
+        return Interface::MessagePartRenderer::Ptr();
     }
+
     bool isPrinting() const override
     {
         return false;
     }
+
 private:
     MimeTreeParser::HtmlWriter *mWriter = nullptr;
     QString mAttachmentStrategy;
@@ -163,9 +168,7 @@ private:
     bool mDecryptMessage = false;
     bool mShowSignatureDetails = false;
 };
-
 }
-
 }
 
 #endif

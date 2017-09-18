@@ -31,11 +31,8 @@
 #include <QPointer>
 #include <QCache>
 
-namespace MessageList
-{
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class MessageItemPrivate : public ItemPrivate
 {
 public:
@@ -115,9 +112,7 @@ private:
     QCache<Akonadi::Tag::Id, Akonadi::Tag> mCache;
     Akonadi::Monitor *mMonitor = nullptr;
 };
-
 }
-
 }
 
 #endif

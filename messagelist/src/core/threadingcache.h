@@ -24,12 +24,8 @@
 #include <QHash>
 #include "messageitem.h"
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Aggregation;
 
 class ThreadingCache
@@ -64,7 +60,6 @@ private:
     Aggregation::ThreadLeader mThreadLeader;
     bool mEnabled;
 };
-
 } // namespace Core
 } // namespace MessageList
 

@@ -61,14 +61,11 @@ public:
 
     QString directionOf(const QString &str) const;
 
-    QString strToHtml(const QString &str,
-                      KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
+    QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
-    QString dateString(KMime::Message *message, bool printing,
-                       HeaderStyleUtilDateFormat dateFormat) const;
+    QString dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const;
 
-    QString subjectString(KMime::Message *message,
-                          KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
+    QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
     QString subjectDirectionString(KMime::Message *message) const;
 
@@ -84,8 +81,7 @@ public:
     xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 private:
     void updateXFaceSettings(QImage photo, xfaceSettings &settings) const;
-    QString drawSpamMeter(SpamError spamError, double percent, double confidence,
-                          const QString &filterHeader, const QString &confidenceHeader) const;
+    QString drawSpamMeter(SpamError spamError, double percent, double confidence, const QString &filterHeader, const QString &confidenceHeader) const;
     QString imgToDataUrl(const QImage &image) const;
     int mIconSize;
 };

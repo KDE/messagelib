@@ -25,12 +25,8 @@
 
 #include <core/item.h>
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class GroupHeaderItem : public Item
 {
 public:
@@ -43,9 +39,7 @@ public:
 private:
     QString mLabel;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_GROUPHEADERITEM_H__

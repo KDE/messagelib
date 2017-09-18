@@ -167,4 +167,3 @@ void SinglepartJobTest::testContentTransferEncoding()
         QCOMPARE(result->body(), data);
     }
 }
-

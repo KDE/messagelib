@@ -31,17 +31,12 @@
 #include <messagelist_export.h>
 #include "theme.h"
 
-namespace Akonadi
-{
+namespace Akonadi {
 class Item;
 }
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class MessageItemPrivate;
 
 class MESSAGELIST_EXPORT MessageItem : public Item, public ModelInvariantIndex
@@ -234,9 +229,7 @@ public:
 private:
     Q_DECLARE_PRIVATE(FakeItem)
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_MESSAGEITEM_H__

@@ -27,10 +27,8 @@
 
 class KComboBox;
 class QToolButton;
-namespace MessageList
-{
-namespace Core
-{
+namespace MessageList {
+namespace Core {
 class SearchLineStatus;
 class MESSAGELIST_EXPORT QuickSearchLine : public QWidget
 {

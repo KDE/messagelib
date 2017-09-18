@@ -101,4 +101,3 @@ void MultipartJobTest::test8BitPropagation()
     QVERIFY(content->contentTransferEncoding(false));
     QCOMPARE(content->contentTransferEncoding()->encoding(), Headers::CE8Bit);
 }
-

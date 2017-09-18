@@ -23,17 +23,12 @@
 
 #include <QAbstractItemModel>
 
-namespace Akonadi
-{
+namespace Akonadi {
 class MessageStatus;
 }
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class MessageItem;
 
 /**
@@ -101,7 +96,7 @@ public:
     * threading data for the specified MessageItem from the underlying storage slot at
     * the specified row index.
     */
-    virtual void fillMessageItemThreadingData(MessageItem *mi, int row, ThreadingDataSubset subset) const  = 0;
+    virtual void fillMessageItemThreadingData(MessageItem *mi, int row, ThreadingDataSubset subset) const = 0;
 
     /**
     * This method should use the inner model implementation to re-fill the date, the status,
@@ -124,9 +119,7 @@ public:
     virtual QMimeData *mimeData(const QList< MessageItem * > &) const = 0;
     using QAbstractItemModel::mimeData;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_STORAGEMODEL_H__

@@ -83,7 +83,6 @@ void CryptoHelperTest::testDeterminePGPBlockType()
     for (int i = 1; i <= PrivateKeyBlock; ++i) {
         QString name;
         switch (i) {
-
         case PgpMessageBlock:
             name = QStringLiteral("MESSAGE");
             break;
@@ -132,7 +131,8 @@ void CryptoHelperTest::testClearSignedMessage()
 
 void CryptoHelperTest::testMultipleBlockMessage()
 {
-    const QByteArray text = QByteArray("before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\nafter\n-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n");
+    const QByteArray text = QByteArray(
+        "before\n-----BEGIN PGP SIGNED MESSAGE-----\nsigned content\n-----BEGIN PGP SIGNATURE-----\nfancy signature\n-----END PGP SIGNATURE-----\nafter\n-----BEGIN PGP MESSAGE-----\ncrypted - you see :)\n-----END PGP MESSAGE-----\n");
     const QList<Block> blocks = prepareMessageForDecryption(text);
     QCOMPARE(blocks.count(), 4);
     QCOMPARE(blocks[0].text(), QByteArray("before\n"));

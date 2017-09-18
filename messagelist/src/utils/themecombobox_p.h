@@ -19,25 +19,21 @@
 #ifndef __MESSAGELIST_UTILS_THEMECOMBOBOX_P_H__
 #define __MESSAGELIST_UTILS_THEMECOMBOBOX_P_H__
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Theme;
-
 } // namespace Core
 
-namespace Utils
-{
+namespace Utils {
 class ThemeComboBox;
 
 class ThemeComboBoxPrivate
 {
 public:
     explicit ThemeComboBoxPrivate(ThemeComboBox *owner)
-        : q(owner) { }
+        : q(owner)
+    {
+    }
 
     ThemeComboBox *const q;
 
@@ -48,9 +44,7 @@ public:
 
     void setCurrentTheme(const Core::Theme *theme);
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_THEMECOMBOBOX_P_H__

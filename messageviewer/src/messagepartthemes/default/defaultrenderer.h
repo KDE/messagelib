@@ -38,8 +38,7 @@ class CSSHelperBase;
 class DefaultRenderer : public MimeTreeParser::Interface::MessagePartRenderer
 {
 public:
-    DefaultRenderer(const MimeTreeParser::Interface::MessagePartPtr &msgPart,
-                    CSSHelperBase *cssHelder);
+    DefaultRenderer(const MimeTreeParser::Interface::MessagePartPtr &msgPart, CSSHelperBase *cssHelder);
     ~DefaultRenderer();
 
     QString html() const override;

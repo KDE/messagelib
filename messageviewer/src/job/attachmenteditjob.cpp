@@ -131,8 +131,7 @@ void AttachmentEditJob::canDeleteJob()
     }
 }
 
-void AttachmentEditJob::removeEditorWatcher(MessageViewer::EditorWatcher *editorWatcher,
-                                            const QString &name)
+void AttachmentEditJob::removeEditorWatcher(MessageViewer::EditorWatcher *editorWatcher, const QString &name)
 {
     mEditorWatchers.remove(editorWatcher);
     QFile::remove(name);

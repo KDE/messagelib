@@ -31,7 +31,6 @@
 #include <KCharsets>
 #include "messagecomposer_debug.h"
 
-
 #include <kmime/kmime_message.h>
 #include <KEmailAddress>
 

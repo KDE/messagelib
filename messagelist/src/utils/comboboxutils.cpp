@@ -86,4 +86,3 @@ int ComboBoxUtils::getIntegerOptionComboValue(KComboBox *combo, int defaultValue
     }
     return val;
 }
-

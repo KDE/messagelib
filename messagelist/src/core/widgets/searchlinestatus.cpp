@@ -35,13 +35,13 @@ static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
 #define MAX_COMPLETION_ITEMS 20
 using namespace MessageList::Core;
 SearchLineStatus::SearchLineStatus(QWidget *parent)
-    : QLineEdit(parent),
-      mLocked(false),
-      mHasFilter(false),
-      mLockAction(nullptr),
-      mFiltersAction(nullptr),
-      mFilterMenu(nullptr),
-      mContainsOutboundMessages(false)
+    : QLineEdit(parent)
+    , mLocked(false)
+    , mHasFilter(false)
+    , mLockAction(nullptr)
+    , mFiltersAction(nullptr)
+    , mFilterMenu(nullptr)
+    , mContainsOutboundMessages(false)
 {
     QCompleter *completer = new QCompleter(this);
     mCompleterListModel = new QStringListModel(this);
@@ -61,7 +61,6 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
 
 SearchLineStatus::~SearchLineStatus()
 {
-
 }
 
 void SearchLineStatus::slotClear()

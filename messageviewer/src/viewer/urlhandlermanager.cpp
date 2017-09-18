@@ -406,8 +406,7 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
     return w->nodeFromUrl(QUrl(urlParts.at(1)));
 }
 
-bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url,
-                                                               ViewerPrivate *w) const
+bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
     QString path;
     KMime::Content *node = partNodeFromXKMailUrl(url, w, &path);
@@ -428,9 +427,7 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url,
     return false;
 }
 
-bool URLHandlerManager::BodyPartURLHandlerManager::handleContextMenuRequest(const QUrl &url,
-                                                                            const QPoint &p,
-                                                                            ViewerPrivate *w) const
+bool URLHandlerManager::BodyPartURLHandlerManager::handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w) const
 {
     QString path;
     KMime::Content *node = partNodeFromXKMailUrl(url, w, &path);
@@ -449,8 +446,7 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleContextMenuRequest(cons
     return false;
 }
 
-QString URLHandlerManager::BodyPartURLHandlerManager::statusBarMessage(const QUrl &url,
-                                                                       ViewerPrivate *w) const
+QString URLHandlerManager::BodyPartURLHandlerManager::statusBarMessage(const QUrl &url, ViewerPrivate *w) const
 {
     QString path;
     KMime::Content *node = partNodeFromXKMailUrl(url, w, &path);
@@ -581,8 +577,7 @@ bool URLHandlerManager::handleDrag(const QUrl &url, ViewerPrivate *window) const
     return false;
 }
 
-bool URLHandlerManager::handleContextMenuRequest(const QUrl &url, const QPoint &p,
-                                                 ViewerPrivate *w) const
+bool URLHandlerManager::handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w) const
 {
     HandlerList::const_iterator end(mHandlers.constEnd());
     for (HandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
@@ -876,8 +871,7 @@ bool ContactUidURLHandler::handleClick(const QUrl &url, ViewerPrivate *) const
     }
 }
 
-bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &p,
-                                                    ViewerPrivate *) const
+bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *) const
 {
     if (url.scheme() != QLatin1String("uid") || url.path().isEmpty()) {
         return false;
@@ -1022,8 +1016,7 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
     return false;
 }
 
-bool AttachmentURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &p,
-                                                    ViewerPrivate *w) const
+bool AttachmentURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w) const
 {
     KMime::Content *node = nodeForUrl(url, w);
     if (!node) {
@@ -1077,8 +1070,7 @@ bool ShowAuditLogURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) cons
     return true;
 }
 
-bool ShowAuditLogURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &,
-                                                      ViewerPrivate *w) const
+bool ShowAuditLogURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &, ViewerPrivate *w) const
 {
     Q_UNUSED(w);
     // disable RMB for my own links:

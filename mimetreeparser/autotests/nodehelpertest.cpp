@@ -27,7 +27,6 @@ using namespace MimeTreeParser;
 NodeHelperTest::NodeHelperTest()
     : QObject()
 {
-
 }
 
 void NodeHelperTest::testPersistentIndex()
@@ -272,4 +271,3 @@ void NodeHelperTest::testFromAsString()
 }
 
 QTEST_GUILESS_MAIN(NodeHelperTest)
-

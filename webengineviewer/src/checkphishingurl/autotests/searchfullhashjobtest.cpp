@@ -58,12 +58,12 @@ void SearchFullHashJobTest::shouldCreateRequest_data()
         }
                                             << QStringLiteral(
         "{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"clientStates\":[\"boo\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
-    .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps())
+        .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps())
                                             << QUrl(QStringLiteral("http://www.kde.org")) << true;
     QTest::newRow("multi database hash and hash") << hashs << (QStringList() << QStringLiteral("boo") << QStringLiteral("bli"))
                                                   << QStringLiteral(
         "{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"clientStates\":[\"boo\",\"bli\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
-    .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps())
+        .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps())
                                                   << QUrl(QStringLiteral("http://www.kde.org")) << true;
 }
 

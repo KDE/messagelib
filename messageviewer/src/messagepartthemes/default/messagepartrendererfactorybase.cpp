@@ -55,8 +55,7 @@ void MessagePartRendererFactoryBasePrivate::setup()
     }
 }
 
-void MessagePartRendererFactoryBasePrivate::insert(const QString &type,
-                                                   MessagePartRendererBase *formatter)
+void MessagePartRendererFactoryBasePrivate::insert(const QString &type, MessagePartRendererBase *formatter)
 {
     if (type.isEmpty() || !formatter) {
         return;
@@ -67,7 +66,7 @@ void MessagePartRendererFactoryBasePrivate::insert(const QString &type,
 
 MessagePartRendererFactoryBase::MessagePartRendererFactoryBase()
     : d(std::unique_ptr<MessagePartRendererFactoryBasePrivate>(
-        new MessagePartRendererFactoryBasePrivate(this)))
+            new MessagePartRendererFactoryBasePrivate(this)))
 {
 }
 

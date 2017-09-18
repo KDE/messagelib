@@ -20,7 +20,6 @@
 #include "searchcollectionindexingwarning.h"
 #include "messagelist_debug.h"
 
-
 #include <AkonadiCore/persistentsearchattribute.h>
 #include <AkonadiCore/collectionfetchjob.h>
 #include <AkonadiCore/collectionfetchscope.h>
@@ -30,7 +29,6 @@
 
 #include <PimCommon/PimUtil>
 
-
 #include <KLocalizedString>
 
 #include <AkonadiSearch/PIM/indexeditems.h>
@@ -38,8 +36,8 @@
 using namespace MessageList::Core;
 
 SearchCollectionIndexingWarning::SearchCollectionIndexingWarning(QWidget *parent)
-    : KMessageWidget(parent),
-      mIndexedItems(new Akonadi::Search::PIM::IndexedItems(this))
+    : KMessageWidget(parent)
+    , mIndexedItems(new Akonadi::Search::PIM::IndexedItems(this))
 {
     setVisible(false);
     setWordWrap(true);
@@ -59,7 +57,7 @@ Akonadi::CollectionFetchJob *SearchCollectionIndexingWarning::fetchCollections(c
     Akonadi::CollectionFetchJob *fetch = new Akonadi::CollectionFetchJob(cols, type, this);
     fetch->fetchScope().setAncestorRetrieval(Akonadi::CollectionFetchScope::None);
     fetch->fetchScope().setContentMimeTypes(QStringList() << Akonadi::Collection::mimeType()
-                                            << QStringLiteral("message/rfc822"));
+                                                          << QStringLiteral("message/rfc822"));
     fetch->fetchScope().setIncludeStatistics(true);
     return fetch;
 }
@@ -92,7 +90,7 @@ void SearchCollectionIndexingWarning::setCollection(const Akonadi::Collection &c
     // First retrieve the top-level collections
     Akonadi::CollectionFetchJob *fetch = fetchCollections(cols, false);
     fetch->setProperty("recursiveQuery", attr->isRecursive());
-    connect(fetch, SIGNAL(finished(KJob*)), this, SLOT(queryRootCollectionFetchFinished(KJob*)));
+    connect(fetch, SIGNAL(finished(KJob *)), this, SLOT(queryRootCollectionFetchFinished(KJob *)));
 }
 
 void SearchCollectionIndexingWarning::queryRootCollectionFetchFinished(KJob *job)

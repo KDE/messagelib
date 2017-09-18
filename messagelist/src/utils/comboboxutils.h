@@ -26,17 +26,12 @@
 
 class KComboBox;
 
-namespace MessageList
-{
-
-namespace Utils
-{
-
+namespace MessageList {
+namespace Utils {
 /**
  * Namespace containing some helper functions for KComboBox widgets.
  */
-namespace ComboBoxUtils
-{
+namespace ComboBoxUtils {
 /**
    * Fills the specified KComboBox with the options available in optionDescriptors.
    * Each option descriptor contains a description string and a distinct integer (possibly enum)
@@ -55,11 +50,8 @@ int getIntegerOptionComboValue(KComboBox *combo, int defaultValue);
    * Sets the currently selected option in the specified combo.
    */
 void setIntegerOptionComboValue(KComboBox *combo, int value);
-
 } // namespace ComboBoxUtils
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_COMBOBOXUTILS_H__

@@ -179,8 +179,7 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
     return wrapper;
 }
 
-ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow,
-                             KActionCollection *actionCollection)
+ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollection *actionCollection)
     : QObject(aParent)
     , mNodeHelper(new MimeTreeParser::NodeHelper)
     , mViewer(nullptr)
@@ -500,8 +499,7 @@ void ViewerPrivate::scrollToAnchor(const QString &anchor)
     mViewer->scrollToAnchor(anchor);
 }
 
-void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr,
-                                       bool fromCurrentContent)
+void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr, bool fromCurrentContent)
 {
     const KService::List offers = KFileItemActions::associatedApplications(
         QStringList() << contentTypeStr, QString());
@@ -597,8 +595,7 @@ void ViewerPrivate::slotOpenWithAction(QAction *act)
     }
 }
 
-void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &name,
-                                        const QPoint &globalPos)
+void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &name, const QPoint &globalPos)
 {
     Q_UNUSED(name);
     prepareHandleAttachment(node);
@@ -868,8 +865,7 @@ void ViewerPrivate::displaySplashPage(const QString &message)
     });
 }
 
-void ViewerPrivate::displaySplashPage(const QString &templateName, const QVariantHash &data,
-                                      const QByteArray &domain)
+void ViewerPrivate::displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain)
 {
     mMsgDisplay = false;
     adjustLayout();
@@ -1011,8 +1007,7 @@ void ViewerPrivate::collectionFetchedForStoringDecryptedMessage(KJob *job)
     }
 }
 
-void ViewerPrivate::postProcessMessage(MimeTreeParser::ObjectTreeParser *otp,
-                                       MimeTreeParser::KMMsgEncryptionState encryptionState)
+void ViewerPrivate::postProcessMessage(MimeTreeParser::ObjectTreeParser *otp, MimeTreeParser::KMMsgEncryptionState encryptionState)
 {
     if (MessageViewer::MessageViewerSettings::self()->storeDisplayedMessagesUnencrypted()) {
         // Hack to make sure the S/MIME CryptPlugs follows the strict requirement
@@ -1110,8 +1105,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     showHideMimeTree();
 }
 
-QString ViewerPrivate::writeMsgHeader(KMime::Message *aMsg, KMime::Content *vCardNode,
-                                      bool topLevel)
+QString ViewerPrivate::writeMsgHeader(KMime::Message *aMsg, KMime::Content *vCardNode, bool topLevel)
 {
     if (!headerStylePlugin()) {
         qCCritical(MESSAGEVIEWER_LOG) << "trying to writeMsgHeader() without a header style set!";
@@ -1394,8 +1388,7 @@ void ViewerPrivate::resetStateForNewMessage()
     }
 }
 
-void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message,
-                                       MimeTreeParser::UpdateMode updateMode)
+void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode)
 {
     mViewerPluginToolManager->updateActions(mMessageItem);
     mMessage = message;
@@ -1432,8 +1425,7 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
     setMessageInternal(mMessageItem.payload<KMime::Message::Ptr>(), updateMode);
 }
 
-void ViewerPrivate::setMessage(const KMime::Message::Ptr &aMsg,
-                               MimeTreeParser::UpdateMode updateMode)
+void ViewerPrivate::setMessage(const KMime::Message::Ptr &aMsg, MimeTreeParser::UpdateMode updateMode)
 {
     resetStateForNewMessage();
 
@@ -2131,8 +2123,7 @@ void ViewerPrivate::executeRunner(const QUrl &url)
     }
 }
 
-void ViewerPrivate::slotCheckedUrlFinished(const QUrl &url,
-                                           WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status)
+void ViewerPrivate::slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status)
 {
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
@@ -3149,8 +3140,7 @@ void ViewerPrivate::slotItemChanged(const Akonadi::Item &item, const QSet<QByteA
     }
 }
 
-void ViewerPrivate::slotItemMoved(const Akonadi::Item &item, const Akonadi::Collection &,
-                                  const Akonadi::Collection &)
+void ViewerPrivate::slotItemMoved(const Akonadi::Item &item, const Akonadi::Collection &, const Akonadi::Collection &)
 {
     // clear the view after the current item has been moved somewhere else (e.g. to trash)
     if (item.id() == messageItem().id()) {

@@ -21,7 +21,6 @@
 #include "core/filter.h"
 #include "core/messageitem.h"
 
-
 #include <AkonadiSearch/PIM/emailquery.h>
 #include <AkonadiSearch/PIM/resultiterator.h>
 
@@ -63,11 +62,11 @@ bool Filter::match(const MessageItem *item) const
 
         bool searchMatches = false;
         bool searchEveryWhere = (mOptions & QuickSearchLine::SearchEveryWhere);
-        if (containString(item->subject()) && ((mOptions & QuickSearchLine::SearchAgainstSubject) || searchEveryWhere)) {
+        if (containString(item->subject()) && ((mOptions &QuickSearchLine::SearchAgainstSubject) || searchEveryWhere)) {
             searchMatches = true;
-        } else if (containString(item->sender()) && ((mOptions & QuickSearchLine::SearchAgainstFrom)|| searchEveryWhere)) {
+        } else if (containString(item->sender()) && ((mOptions &QuickSearchLine::SearchAgainstFrom) || searchEveryWhere)) {
             searchMatches = true;
-        } else if (containString(item->receiver()) && ((mOptions & QuickSearchLine::SearchAgainstTo) || searchEveryWhere)) {
+        } else if (containString(item->receiver()) && ((mOptions &QuickSearchLine::SearchAgainstTo) || searchEveryWhere)) {
             searchMatches = true;
         }
         if (!searchMatches) {
@@ -185,4 +184,3 @@ void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptio
     }
     Q_EMIT finished();
 }
-

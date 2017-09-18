@@ -33,7 +33,10 @@ class MessageList::Utils::ThemeConfigButtonPrivate
 {
 public:
     ThemeConfigButtonPrivate(ThemeConfigButton *owner)
-        : q(owner), mThemeComboBox(nullptr)  { }
+        : q(owner)
+        , mThemeComboBox(nullptr)
+    {
+    }
 
     ThemeConfigButton *const q;
 
@@ -58,16 +61,18 @@ void ThemeConfigButtonPrivate::slotConfigureThemes()
 }
 
 ThemeConfigButton::ThemeConfigButton(QWidget *parent, const ThemeComboBox *themeComboBox)
-    : QPushButton(i18n("Configure..."), parent), d(new ThemeConfigButtonPrivate(this))
+    : QPushButton(i18n("Configure..."), parent)
+    , d(new ThemeConfigButtonPrivate(this))
 {
     d->mThemeComboBox = themeComboBox;
     connect(this, SIGNAL(pressed()),
             this, SLOT(slotConfigureThemes()));
 
     //Keep theme combo up-to-date with any changes made in the configure dialog.
-    if (d->mThemeComboBox != nullptr)
+    if (d->mThemeComboBox != nullptr) {
         connect(this, SIGNAL(configureDialogCompleted()),
                 d->mThemeComboBox, SLOT(slotLoadThemes()));
+    }
     setEnabled(Manager::instance());
 }
 

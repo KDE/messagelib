@@ -26,8 +26,7 @@
 
 #include <QWidget>
 
-namespace MessageComposer
-{
+namespace MessageComposer {
 class RecipientsEditor;
 }
 

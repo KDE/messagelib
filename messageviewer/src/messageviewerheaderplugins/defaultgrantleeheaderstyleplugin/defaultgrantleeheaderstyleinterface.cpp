@@ -37,8 +37,7 @@ DefaultGrantleeHeaderStyleInterface::~DefaultGrantleeHeaderStyleInterface()
 {
 }
 
-void DefaultGrantleeHeaderStyleInterface::createAction(KActionMenu *menu, QActionGroup *actionGroup,
-                                                       KActionCollection *ac)
+void DefaultGrantleeHeaderStyleInterface::createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac)
 {
     const QStringList defaultThemePath = QStandardPaths::locateAll(
         QStandardPaths::GenericDataLocation, QStringLiteral(

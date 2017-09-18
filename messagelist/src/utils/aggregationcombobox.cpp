@@ -19,7 +19,6 @@
 #include "aggregationcombobox.h"
 #include "aggregationcombobox_p.h"
 
-
 #include "core/aggregation.h"
 #include "core/manager.h"
 #include "messagelistsettings.h"
@@ -29,7 +28,8 @@ using namespace MessageList::Core;
 using namespace MessageList::Utils;
 
 AggregationComboBox::AggregationComboBox(QWidget *parent)
-    : KComboBox(parent), d(new AggregationComboBoxPrivate(this))
+    : KComboBox(parent)
+    , d(new AggregationComboBoxPrivate(this))
 {
     if (Manager::instance()) {
         d->slotLoadAggregations();

@@ -55,8 +55,7 @@ bool MailViewerSource::showSignatureDetails() const
     return mViewer->mShowSignatureDetails;
 }
 
-void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode,
-                                   const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
+void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
     mViewer->mColorBar->setAvailableModes(availableModes);
     mViewer->mColorBar->setMode(mode);

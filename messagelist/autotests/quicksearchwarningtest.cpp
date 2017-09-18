@@ -22,12 +22,10 @@
 QuickSearchWarningTest::QuickSearchWarningTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 QuickSearchWarningTest::~QuickSearchWarningTest()
 {
-
 }
 
 void QuickSearchWarningTest::shouldHaveDefaultValue()

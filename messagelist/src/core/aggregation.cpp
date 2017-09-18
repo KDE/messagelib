@@ -29,22 +29,15 @@ using namespace MessageList::Core;
 static const int gAggregationCurrentVersion = 0x1009; // increase if you add new fields of change the meaning of some
 
 Aggregation::Aggregation(
-    const QString &name,
-    const QString &description,
-    Grouping grouping,
-    GroupExpandPolicy groupExpandPolicy,
-    Threading threading,
-    ThreadLeader threadLeader,
-    ThreadExpandPolicy threadExpandPolicy,
-    FillViewStrategy fillViewStrategy, bool readOnly
-)
-    : OptionSet(name, description, readOnly),
-      mGrouping(grouping),
-      mGroupExpandPolicy(groupExpandPolicy),
-      mThreading(threading),
-      mThreadLeader(threadLeader),
-      mThreadExpandPolicy(threadExpandPolicy),
-      mFillViewStrategy(fillViewStrategy)
+    const QString &name, const QString &description, Grouping grouping, GroupExpandPolicy groupExpandPolicy, Threading threading, ThreadLeader threadLeader, ThreadExpandPolicy threadExpandPolicy,
+    FillViewStrategy fillViewStrategy, bool readOnly)
+    : OptionSet(name, description, readOnly)
+    , mGrouping(grouping)
+    , mGroupExpandPolicy(groupExpandPolicy)
+    , mThreading(threading)
+    , mThreadLeader(threadLeader)
+    , mThreadExpandPolicy(threadExpandPolicy)
+    , mFillViewStrategy(fillViewStrategy)
 {
 }
 
@@ -54,26 +47,25 @@ Aggregation::Grouping Aggregation::grouping() const
 }
 
 Aggregation::Aggregation(
-    const Aggregation &opt
-)
-    : OptionSet(opt),
-      mGrouping(opt.mGrouping),
-      mGroupExpandPolicy(opt.mGroupExpandPolicy),
-      mThreading(opt.mThreading),
-      mThreadLeader(opt.mThreadLeader),
-      mThreadExpandPolicy(opt.mThreadExpandPolicy),
-      mFillViewStrategy(opt.mFillViewStrategy)
+    const Aggregation &opt)
+    : OptionSet(opt)
+    , mGrouping(opt.mGrouping)
+    , mGroupExpandPolicy(opt.mGroupExpandPolicy)
+    , mThreading(opt.mThreading)
+    , mThreadLeader(opt.mThreadLeader)
+    , mThreadExpandPolicy(opt.mThreadExpandPolicy)
+    , mFillViewStrategy(opt.mFillViewStrategy)
 {
 }
 
 Aggregation::Aggregation()
-    : OptionSet(),
-      mGrouping(NoGrouping),
-      mGroupExpandPolicy(NeverExpandGroups),
-      mThreading(NoThreading),
-      mThreadLeader(TopmostMessage),
-      mThreadExpandPolicy(NeverExpandThreads),
-      mFillViewStrategy(FavorInteractivity)
+    : OptionSet()
+    , mGrouping(NoGrouping)
+    , mGroupExpandPolicy(NeverExpandGroups)
+    , mThreading(NoThreading)
+    , mThreadLeader(TopmostMessage)
+    , mThreadExpandPolicy(NeverExpandThreads)
+    , mFillViewStrategy(FavorInteractivity)
 {
 }
 
@@ -202,12 +194,24 @@ void Aggregation::save(QDataStream &stream) const
 
 QList< QPair< QString, int > > Aggregation::enumerateGroupingOptions()
 {
-    return { { i18nc("No grouping of messages", "None"), NoGrouping },
-             { i18n("By Exact Date (of Thread Leaders)"), GroupByDate },
-             { i18n("By Smart Date Ranges (of Thread Leaders)"), GroupByDateRange },
-             { i18n("By Smart Sender/Receiver"), GroupBySenderOrReceiver },
-             { i18n("By Sender"), GroupBySender },
-             { i18n("By Receiver"), GroupByReceiver } };
+    return { {
+                 i18nc("No grouping of messages", "None"), NoGrouping
+             },
+             {
+                 i18n("By Exact Date (of Thread Leaders)"), GroupByDate
+             },
+             {
+                 i18n("By Smart Date Ranges (of Thread Leaders)"), GroupByDateRange
+             },
+             {
+                 i18n("By Smart Sender/Receiver"), GroupBySenderOrReceiver
+             },
+             {
+                 i18n("By Sender"), GroupBySender
+             },
+             {
+                 i18n("By Receiver"), GroupByReceiver
+             } };
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateGroupExpandPolicyOptions(Grouping g)
@@ -226,11 +230,18 @@ QList< QPair< QString, int > > Aggregation::enumerateGroupExpandPolicyOptions(Gr
 
 QList< QPair< QString, int > > Aggregation::enumerateThreadingOptions()
 {
-    return { { i18nc("No threading of messages", "None"), NoThreading },
-             { i18n("Perfect Only"), PerfectOnly },
-             { i18n("Perfect and by References"), PerfectAndReferences },
-             { i18n("Perfect, by References and by Subject"), PerfectReferencesAndSubject } };
-
+    return { {
+                 i18nc("No threading of messages", "None"), NoThreading
+             },
+             {
+                 i18n("Perfect Only"), PerfectOnly
+             },
+             {
+                 i18n("Perfect and by References"), PerfectAndReferences
+             },
+             {
+                 i18n("Perfect, by References and by Subject"), PerfectReferencesAndSubject
+             } };
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateThreadLeaderOptions(Grouping g, Threading t)
@@ -253,17 +264,29 @@ QList< QPair< QString, int > > Aggregation::enumerateThreadExpandPolicyOptions(T
         return {};
     }
 
-    return { { i18n("Never Expand Threads"), NeverExpandThreads },
-             { i18n("Expand Threads With Unread Messages"), ExpandThreadsWithUnreadMessages },
-             { i18n("Expand Threads With Unread or Important Messages"), ExpandThreadsWithUnreadOrImportantMessages },
-             { i18n("Always Expand Threads"), AlwaysExpandThreads } };
-
+    return { {
+                 i18n("Never Expand Threads"), NeverExpandThreads
+             },
+             {
+                 i18n("Expand Threads With Unread Messages"), ExpandThreadsWithUnreadMessages
+             },
+             {
+                 i18n("Expand Threads With Unread or Important Messages"), ExpandThreadsWithUnreadOrImportantMessages
+             },
+             {
+                 i18n("Always Expand Threads"), AlwaysExpandThreads
+             } };
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateFillViewStrategyOptions()
 {
-    return { { i18n("Favor Interactivity"), FavorInteractivity },
-             { i18n("Favor Speed"), FavorSpeed },
-             { i18n("Batch Job (No Interactivity)"), BatchNoInteractivity } };
+    return { {
+                 i18n("Favor Interactivity"), FavorInteractivity
+             },
+             {
+                 i18n("Favor Speed"), FavorSpeed
+             },
+             {
+                 i18n("Batch Job (No Interactivity)"), BatchNoInteractivity
+             } };
 }
-

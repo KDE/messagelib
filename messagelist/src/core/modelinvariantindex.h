@@ -23,12 +23,8 @@
 
 #include <qglobal.h> // defines uint, at least.
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class ModelInvariantRowMapper;
 class ModelInvariantRowMapperPrivate;
 class RowShift;
@@ -72,9 +68,7 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_MODELINVARIANTINDEX_H__

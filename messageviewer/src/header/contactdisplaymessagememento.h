@@ -37,8 +37,7 @@ namespace Akonadi {
 class ContactSearchJob;
 }
 namespace MessageViewer {
-class ContactDisplayMessageMemento : public QObject,
-    public MimeTreeParser::Interface::BodyPartMemento
+class ContactDisplayMessageMemento : public QObject, public MimeTreeParser::Interface::BodyPartMemento
 {
     Q_OBJECT
 public:

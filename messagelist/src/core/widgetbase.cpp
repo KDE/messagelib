@@ -59,28 +59,29 @@ class Widget::Private
 {
 public:
     Private(Widget *owner)
-        : q(owner),
-          quickSearchWarning(nullptr),
-          searchCollectionIndexingWarning(nullptr),
-          quickSearchLine(nullptr),
-          mView(nullptr),
-          mSearchTimer(nullptr),
-          mStorageModel(nullptr), mAggregation(nullptr),
-          mTheme(nullptr), mFilter(nullptr),
-          mStorageUsesPrivateTheme(false),
-          mStorageUsesPrivateAggregation(false),
-          mStorageUsesPrivateSortOrder(false),
-          mStatusFilterComboPopulationInProgress(false)
-    { }
+        : q(owner)
+        , quickSearchWarning(nullptr)
+        , searchCollectionIndexingWarning(nullptr)
+        , quickSearchLine(nullptr)
+        , mView(nullptr)
+        , mSearchTimer(nullptr)
+        , mStorageModel(nullptr)
+        , mAggregation(nullptr)
+        , mTheme(nullptr)
+        , mFilter(nullptr)
+        , mStorageUsesPrivateTheme(false)
+        , mStorageUsesPrivateAggregation(false)
+        , mStorageUsesPrivateSortOrder(false)
+        , mStatusFilterComboPopulationInProgress(false)
+    {
+    }
 
     /**
     * Small helper for switching SortOrder::MessageSorting and SortOrder::SortDirection
     * on the fly.
     * After doing this, the sort indicator in the header is updated.
     */
-    void switchMessageSorting(SortOrder::MessageSorting messageSorting,
-                              SortOrder::SortDirection sortDirection,
-                              int logicalHeaderColumnIndex);
+    void switchMessageSorting(SortOrder::MessageSorting messageSorting, SortOrder::SortDirection sortDirection, int logicalHeaderColumnIndex);
 
     /**
     * Check if our sort order can still be used with this aggregation.
@@ -121,7 +122,8 @@ public:
 };
 
 Widget::Widget(QWidget *pParent)
-    : QWidget(pParent), d(new Private(this))
+    : QWidget(pParent)
+    , d(new Private(this))
 {
     Manager::registerWidget(this);
     connect(Manager::instance(), &Manager::aggregationsChanged,
@@ -204,7 +206,7 @@ void Widget::populateStatusFilterCombo()
     }
     d->mStatusFilterComboPopulationInProgress = true;
     KComboBox *tagFilterComboBox = d->quickSearchLine->tagFilterComboBox();
-    d->mCurrentStatusFilterIndex = (tagFilterComboBox->currentIndex() != -1) ?  tagFilterComboBox->currentIndex() : 0;
+    d->mCurrentStatusFilterIndex = (tagFilterComboBox->currentIndex() != -1) ? tagFilterComboBox->currentIndex() : 0;
     disconnect(tagFilterComboBox, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &Widget::statusSelected);
 
     tagFilterComboBox->clear();
@@ -302,11 +304,10 @@ void Widget::Private::checkSortOrder(const StorageModel *storageModel)
         }
         if (mStorageModel) {
             Manager::instance()->saveSortOrderForStorageModel(storageModel, mSortOrder,
-                    mStorageUsesPrivateSortOrder);
+                                                              mStorageUsesPrivateSortOrder);
         }
         switchMessageSorting(mSortOrder.messageSorting(), mSortOrder.messageSortDirection(), -1);
     }
-
 }
 
 void Widget::Private::setDefaultSortOrderForStorageModel(const StorageModel *storageModel)
@@ -431,7 +432,7 @@ void Widget::setPrivateSortOrderForStorage()
     d->mStorageUsesPrivateSortOrder = !d->mStorageUsesPrivateSortOrder;
 
     Manager::instance()->saveSortOrderForStorageModel(d->mStorageModel, d->mSortOrder,
-            d->mStorageUsesPrivateSortOrder);
+                                                      d->mStorageUsesPrivateSortOrder);
 }
 
 void Widget::configureThemes()
@@ -473,7 +474,6 @@ void Widget::themeSelected(bool)
     Manager::instance()->saveThemeForStorageModel(d->mStorageModel, opt->id(), d->mStorageUsesPrivateTheme);
 
     d->mView->reload();
-
 }
 
 void Widget::aggregationMenuAboutToShow()
@@ -555,7 +555,6 @@ void Widget::aggregationSelected(bool)
     d->checkSortOrder(d->mStorageModel);
 
     d->mView->reload();
-
 }
 
 void Widget::sortOrderMenuAboutToShow()
@@ -633,7 +632,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
     }
 
     options = SortOrder::enumerateGroupSortDirectionOptions(d->mAggregation->grouping(),
-              d->mSortOrder.groupSorting());
+                                                            d->mSortOrder.groupSorting());
 
     if (options.size() >= 2) {
         menu->addSection(i18n("Group Sort Direction"));
@@ -659,9 +658,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
             this, &Widget::setPrivateSortOrderForStorage);
 }
 
-void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSorting,
-        SortOrder::SortDirection sortDirection,
-        int logicalHeaderColumnIndex)
+void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSorting, SortOrder::SortDirection sortDirection, int logicalHeaderColumnIndex)
 {
     mSortOrder.setMessageSorting(messageSorting);
     mSortOrder.setMessageSortDirection(sortDirection);
@@ -695,16 +692,16 @@ void Widget::Private::switchMessageSorting(SortOrder::MessageSorting messageSort
                 if (!mView->header()->isSectionHidden(idx)) {
                     if (
                         (
-                            (column->messageSorting() == SortOrder::SortMessagesBySenderOrReceiver) ||
-                            (column->messageSorting() == SortOrder::SortMessagesByReceiver) ||
-                            (column->messageSorting() == SortOrder::SortMessagesBySender)
-                        ) &&
-                        (
-                            (messageSorting == SortOrder::SortMessagesBySenderOrReceiver) ||
-                            (messageSorting == SortOrder::SortMessagesByReceiver) ||
-                            (messageSorting == SortOrder::SortMessagesBySender)
+                            (column->messageSorting() == SortOrder::SortMessagesBySenderOrReceiver)
+                            || (column->messageSorting() == SortOrder::SortMessagesByReceiver)
+                            || (column->messageSorting() == SortOrder::SortMessagesBySender)
                         )
-                    ) {
+                        && (
+                            (messageSorting == SortOrder::SortMessagesBySenderOrReceiver)
+                            || (messageSorting == SortOrder::SortMessagesByReceiver)
+                            || (messageSorting == SortOrder::SortMessagesBySender)
+                            )
+                        ) {
                         // found a visible column with this message sorting
                         logicalHeaderColumnIndex = idx;
                         break;
@@ -752,10 +749,9 @@ void Widget::messageSortingSelected(QAction *action)
 
     d->switchMessageSorting(ord, d->mSortOrder.messageSortDirection(), -1);
     Manager::instance()->saveSortOrderForStorageModel(d->mStorageModel, d->mSortOrder,
-            d->mStorageUsesPrivateSortOrder);
+                                                      d->mStorageUsesPrivateSortOrder);
 
     d->mView->reload();
-
 }
 
 void Widget::messageSortDirectionSelected(QAction *action)
@@ -779,10 +775,9 @@ void Widget::messageSortDirectionSelected(QAction *action)
 
     d->switchMessageSorting(d->mSortOrder.messageSorting(), ord, -1);
     Manager::instance()->saveSortOrderForStorageModel(d->mStorageModel, d->mSortOrder,
-            d->mStorageUsesPrivateSortOrder);
+                                                      d->mStorageUsesPrivateSortOrder);
 
     d->mView->reload();
-
 }
 
 void Widget::groupSortingSelected(QAction *action)
@@ -807,10 +802,9 @@ void Widget::groupSortingSelected(QAction *action)
 
     d->mSortOrder.setGroupSorting(ord);
     Manager::instance()->saveSortOrderForStorageModel(d->mStorageModel, d->mSortOrder,
-            d->mStorageUsesPrivateSortOrder);
+                                                      d->mStorageUsesPrivateSortOrder);
 
     d->mView->reload();
-
 }
 
 void Widget::groupSortDirectionSelected(QAction *action)
@@ -834,10 +828,9 @@ void Widget::groupSortDirectionSelected(QAction *action)
 
     d->mSortOrder.setGroupSortDirection(ord);
     Manager::instance()->saveSortOrderForStorageModel(d->mStorageModel, d->mSortOrder,
-            d->mStorageUsesPrivateSortOrder);
+                                                      d->mStorageUsesPrivateSortOrder);
 
     d->mView->reload();
-
 }
 
 void Widget::resetFilter()
@@ -888,10 +881,9 @@ void Widget::slotViewHeaderSectionClicked(int logicalIndex)
         d->switchMessageSorting(column->messageSorting(), d->mSortOrder.messageSortDirection(), logicalIndex);
     }
     Manager::instance()->saveSortOrderForStorageModel(d->mStorageModel, d->mSortOrder,
-            d->mStorageUsesPrivateSortOrder);
+                                                      d->mStorageUsesPrivateSortOrder);
 
     d->mView->reload();
-
 }
 
 void Widget::themesChanged()
@@ -1091,7 +1083,6 @@ bool Widget::selectionEmpty() const
 {
     return d->mView->selectionEmpty();
 }
-
 
 Akonadi::Collection Widget::currentFolder() const
 {

@@ -63,14 +63,15 @@ static const int gThemeMinimumVersionWithInvitationIcon = 0x1019;
 static const int gThemeDefaultIconSize = 16;
 
 Theme::ContentItem::ContentItem(Type type)
-    : mType(type), mFlags(0)
+    : mType(type)
+    , mFlags(0)
 {
 }
 
 Theme::ContentItem::ContentItem(const ContentItem &src)
-    : mType(src.mType),
-      mFlags(src.mFlags),
-      mCustomColor(src.mCustomColor)
+    : mType(src.mType)
+    , mFlags(src.mFlags)
+    , mCustomColor(src.mCustomColor)
 {
 }
 
@@ -289,12 +290,12 @@ void Theme::ContentItem::setCustomColor(const QColor &clr)
 
 bool Theme::ContentItem::applicableToMessageItems(Type type)
 {
-    return (static_cast< int >(type) & ApplicableToMessageItems);
+    return static_cast< int >(type) & ApplicableToMessageItems;
 }
 
 bool Theme::ContentItem::applicableToGroupHeaderItems(Type type)
 {
-    return (static_cast< int >(type) & ApplicableToGroupHeaderItems);
+    return static_cast< int >(type) & ApplicableToGroupHeaderItems;
 }
 
 void Theme::ContentItem::save(QDataStream &stream) const
@@ -491,9 +492,9 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
         // Add the annotation item next to the attachment icon, so that users upgrading from old
         // versions don't manually need to set this.
         // Don't do this for the stand-alone attchment column.
-        if (ci->type() == ContentItem::AttachmentStateIcon &&
-                themeVersion < gThemeMinimumVersionWithAnnotationIcon &&
-                val > 1) {
+        if (ci->type() == ContentItem::AttachmentStateIcon
+            && themeVersion < gThemeMinimumVersionWithAnnotationIcon
+            && val > 1) {
             qCDebug(MESSAGELIST_LOG) << "Old theme version detected, adding annotation item next to attachment icon.";
             ContentItem *annotationItem = new ContentItem(ContentItem::AnnotationIcon);
             annotationItem->setHideWhenDisabled(true);
@@ -505,9 +506,9 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
         }
 
         // Same as above, for the invitation icon
-        if (ci->type() == ContentItem::AttachmentStateIcon &&
-                themeVersion < gThemeMinimumVersionWithInvitationIcon &&
-                val > 1) {
+        if (ci->type() == ContentItem::AttachmentStateIcon
+            && themeVersion < gThemeMinimumVersionWithInvitationIcon
+            && val > 1) {
             qCDebug(MESSAGELIST_LOG) << "Old theme version detected, adding invitation item next to attachment icon.";
             ContentItem *invitationItem = new ContentItem(ContentItem::InvitationIcon);
             invitationItem->setHideWhenDisabled(true);
@@ -552,7 +553,9 @@ bool Theme::Row::load(QDataStream &stream, int themeVersion)
 }
 
 Theme::Column::SharedRuntimeData::SharedRuntimeData(bool currentlyVisible, double currentWidth)
-    : mReferences(0), mCurrentlyVisible(currentlyVisible), mCurrentWidth(currentWidth)
+    : mReferences(0)
+    , mCurrentlyVisible(currentlyVisible)
+    , mCurrentWidth(currentWidth)
 {
 }
 
@@ -611,13 +614,13 @@ bool Theme::Column::SharedRuntimeData::load(QDataStream &stream, int /* themeVer
         qCDebug(MESSAGELIST_LOG) << "Theme has insane column width " << mCurrentWidth << " chopping to 100";
         mCurrentWidth = 100; // avoid really insane values
     }
-    return (mCurrentWidth >= -1);
+    return mCurrentWidth >= -1;
 }
 
 Theme::Column::Column()
-    : mVisibleByDefault(true),
-      mIsSenderOrReceiver(false),
-      mMessageSorting(SortOrder::NoMessageSorting)
+    : mVisibleByDefault(true)
+    , mIsSenderOrReceiver(false)
+    , mMessageSorting(SortOrder::NoMessageSorting)
 {
     mSharedRuntimeData = new SharedRuntimeData(true, -1);
     mSharedRuntimeData->addReference();
@@ -700,7 +703,6 @@ void Theme::Column::detach()
 
     mSharedRuntimeData = new SharedRuntimeData(mVisibleByDefault, -1);
     mSharedRuntimeData->addReference();
-
 }
 
 SortOrder::MessageSorting Theme::Column::messageSorting() const
@@ -837,7 +839,6 @@ void Theme::Column::save(QDataStream &stream) const
 
     // added in version 0x1014
     mSharedRuntimeData->save(stream);
-
 }
 
 bool Theme::Column::load(QDataStream &stream, int themeVersion)
@@ -1060,22 +1061,42 @@ void Theme::setGroupHeaderBackgroundStyle(Theme::GroupHeaderBackgroundStyle grou
     mGroupHeaderBackgroundStyle = groupHeaderBackgroundStyle;
 }
 
-QList<QPair<QString, int>> Theme::enumerateViewHeaderPolicyOptions()
+QList<QPair<QString, int> > Theme::enumerateViewHeaderPolicyOptions()
 {
-    return { { i18n("Never Show"), NeverShowHeader },
-             { i18n("Always Show"), ShowHeaderAlways } };
+    return { {
+                 i18n("Never Show"), NeverShowHeader
+             },
+             {
+                 i18n("Always Show"), ShowHeaderAlways
+             } };
 }
 
-QList<QPair<QString, int>> Theme::enumerateGroupHeaderBackgroundStyles()
+QList<QPair<QString, int> > Theme::enumerateGroupHeaderBackgroundStyles()
 {
-    return  { { i18n("Plain Rectangles"), PlainRect },
-              { i18n("Plain Joined Rectangle"), PlainJoinedRect },
-              { i18n("Rounded Rectangles"), RoundedRect },
-              { i18n("Rounded Joined Rectangle"), RoundedJoinedRect },
-              { i18n("Gradient Rectangles"), GradientRect },
-              { i18n("Gradient Joined Rectangle"), GradientJoinedRect },
-              { i18n("Styled Rectangles"), StyledRect },
-              { i18n("Styled Joined Rectangles"), StyledJoinedRect } };
+    return { {
+                 i18n("Plain Rectangles"), PlainRect
+             },
+             {
+                 i18n("Plain Joined Rectangle"), PlainJoinedRect
+             },
+             {
+                 i18n("Rounded Rectangles"), RoundedRect
+             },
+             {
+                 i18n("Rounded Joined Rectangle"), RoundedJoinedRect
+             },
+             {
+                 i18n("Gradient Rectangles"), GradientRect
+             },
+             {
+                 i18n("Gradient Joined Rectangle"), GradientJoinedRect
+             },
+             {
+                 i18n("Styled Rectangles"), StyledRect
+             },
+             {
+                 i18n("Styled Joined Rectangles"), StyledJoinedRect
+             } };
 }
 
 Theme::ViewHeaderPolicy Theme::viewHeaderPolicy() const
@@ -1116,9 +1137,9 @@ bool Theme::load(QDataStream &stream)
     // We support themes starting at version gThemeMinimumSupportedVersion (0x1013 actually)
 
     if (
-        (themeVersion > gThemeCurrentVersion) ||
-        (themeVersion < gThemeMinimumSupportedVersion)
-    ) {
+        (themeVersion > gThemeCurrentVersion)
+        || (themeVersion < gThemeMinimumSupportedVersion)
+        ) {
         qCDebug(MESSAGELIST_LOG) << "Invalid theme version";
         return false; // b0rken (invalid version)
     }
@@ -1235,35 +1256,35 @@ void Theme::populatePixmapCache() const
     // WARNING: The order of those icons must be in sync with order of the
     // corresponding enum values in ThemeIcon!
     mPixmaps << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-unread-new")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-unread")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-read")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-deleted")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-replied")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded-replied")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-queued")).pixmap(mIconSize, mIconSize))       // mail-queue ?
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-task")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("emblem-important")).pixmap(mIconSize, mIconSize))       // "flag"
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-watch.png")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-ignored.png")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-junk")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-verified")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-part")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-full")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-part")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-attachment")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("view-pim-notes")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-invitation")).pixmap(mIconSize, mIconSize))
-        << ((QApplication::isRightToLeft())
-            ? new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-left")).pixmap(mIconSize, mIconSize))
-            : new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-right")).pixmap(mIconSize, mIconSize)))
-        << new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-down")).pixmap(mIconSize, mIconSize))
-        << new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-vertical-separator-line.png")))
-        << new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-horizontal-space.png")));
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-unread")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-read")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-deleted")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-replied")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded-replied")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-queued")).pixmap(mIconSize, mIconSize))  // mail-queue ?
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-task")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-sent")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-forwarded")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("emblem-important")).pixmap(mIconSize, mIconSize))  // "flag"
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-watch.png")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("messagelist/pics/mail-thread-ignored.png")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-junk")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-verified")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed-part")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-signed")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-full")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted-part")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-encrypted")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("text-plain")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-attachment")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("view-pim-notes")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("mail-invitation")).pixmap(mIconSize, mIconSize))
+             << ((QApplication::isRightToLeft())
+        ? new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-left")).pixmap(mIconSize, mIconSize))
+        : new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-right")).pixmap(mIconSize, mIconSize)))
+             << new QPixmap(QIcon::fromTheme(QStringLiteral("arrow-down")).pixmap(mIconSize, mIconSize))
+             << new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-vertical-separator-line.png")))
+             << new QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messagelist/pics/mail-horizontal-space.png")));
 }

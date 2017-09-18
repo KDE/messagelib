@@ -25,12 +25,8 @@
 
 #include <QListWidget>
 
-namespace MessageList
-{
-
-namespace Utils
-{
-
+namespace MessageList {
+namespace Utils {
 class ConfigureThemesDialog : public QDialog
 {
     Q_OBJECT
@@ -57,9 +53,7 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_CONFIGURESKINSDIALOG_H__

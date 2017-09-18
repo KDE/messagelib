@@ -25,14 +25,11 @@
 #include <kmime/kmime_headers.h>
 #include <QByteArray>
 
-namespace KMime
-{
+namespace KMime {
 class Content;
 }
 
-namespace ComposerTestUtil
-{
-
+namespace ComposerTestUtil {
 /**
  * gate function to run verifySignature, verifyEncryption or verifySignatureAndEncryption.
  */
@@ -53,7 +50,6 @@ void verifyEncryption(KMime::Content *content, const QByteArray &encrContent, Kl
  * Verifies that the given MIME content is signed and then encrypted, and the original text is as specified
  */
 void verifySignatureAndEncryption(KMime::Content *content, const QByteArray &origContent, Kleo::CryptoMessageFormat f, bool withAttachment = false);
-
 }
 
 #endif

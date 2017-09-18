@@ -22,12 +22,10 @@
 ComposerViewBaseTest::ComposerViewBaseTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 ComposerViewBaseTest::~ComposerViewBaseTest()
 {
-
 }
 
 void ComposerViewBaseTest::shouldHaveDefaultValue()

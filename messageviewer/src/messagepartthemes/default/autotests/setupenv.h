@@ -131,8 +131,7 @@ public:
         return mShowSignatureDetails;
     }
 
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode,
-                     const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override
+    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override
     {
         Q_UNUSED(mode);
         Q_UNUSED(availableModes);

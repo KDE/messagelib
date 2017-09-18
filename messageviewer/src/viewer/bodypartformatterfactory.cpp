@@ -54,7 +54,7 @@ void BodyPartFormatterFactory::loadPlugins()
 {
     KPluginLoader::forEachPlugin(QStringLiteral("messageviewer/bodypartformatter"), [this](const QString &path) {
         QPluginLoader loader(path);
-        auto plugin = qobject_cast<MimeTreeParser::Interface::BodyPartFormatterPlugin*>(loader.instance());
+        auto plugin = qobject_cast<MimeTreeParser::Interface::BodyPartFormatterPlugin *>(loader.instance());
         if (!plugin) {
             qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << path
                                          << "is not valid!";

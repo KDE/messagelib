@@ -1,4 +1,3 @@
-
 /******************************************************************************
  *
  *  Copyright 2008 Szymon Tomasz Stefanek <pragma@kvirc.net>
@@ -44,14 +43,14 @@ public:
     Private()
         : mPriority(0)  //Initialize it
     {
-
     }
+
     QPixmap mPixmap;
     QString mName;
     QString mId;             ///< The unique id of this tag
     QColor mTextColor;
     QColor mBackgroundColor;
-    QFont  mFont;
+    QFont mFont;
     int mPriority;
 };
 
@@ -138,19 +137,18 @@ public:
     // const reference to them
     QColor mColor;
     QColor mBackgroundColor;
-
 };
 
 Q_GLOBAL_STATIC(MessageItemPrivateSettings, s_settings)
 
 MessageItemPrivate::MessageItemPrivate(MessageItem *qq)
-    : ItemPrivate(qq),
-      mThreadingStatus(MessageItem::ParentMissing),
-      mEncryptionState(MessageItem::NotEncrypted),
-      mSignatureState(MessageItem::NotSigned),
-      mAboutToBeRemoved(false),
-      mSubjectIsPrefixed(false),
-      mTagList(nullptr)
+    : ItemPrivate(qq)
+    , mThreadingStatus(MessageItem::ParentMissing)
+    , mEncryptionState(MessageItem::NotEncrypted)
+    , mSignatureState(MessageItem::NotSigned)
+    , mAboutToBeRemoved(false)
+    , mSubjectIsPrefixed(false)
+    , mTagList(nullptr)
 {
 }
 
@@ -240,12 +238,14 @@ bool MessageItemPrivate::tagListInitialized() const
 }
 
 MessageItem::MessageItem()
-    : Item(Message, new MessageItemPrivate(this)), ModelInvariantIndex()
+    : Item(Message, new MessageItemPrivate(this))
+    , ModelInvariantIndex()
 {
 }
 
 MessageItem::MessageItem(MessageItemPrivate *dd)
-    : Item(Message, dd), ModelInvariantIndex()
+    : Item(Message, dd)
+    , ModelInvariantIndex()
 {
 }
 
@@ -661,8 +661,8 @@ bool FakeItem::hasAnnotation() const
 }
 
 TagCache::TagCache()
-    : QObject(),
-      mMonitor(new Akonadi::Monitor(this))
+    : QObject()
+    , mMonitor(new Akonadi::Monitor(this))
 {
     mCache.setMaxCost(100);
     mMonitor->setObjectName(QStringLiteral("MessageListTagCacheMonitor"));

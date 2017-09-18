@@ -23,19 +23,12 @@
 
 #include "utils/configurethemesdialog.h"
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Theme;
-
 }
 
-namespace Utils
-{
-
+namespace Utils {
 class ThemeEditor;
 class ThemeListWidget;
 class ThemeListWidgetItem;
@@ -44,7 +37,9 @@ class Q_DECL_HIDDEN ConfigureThemesDialog::Private
 {
 public:
     Private(ConfigureThemesDialog *owner)
-        : q(owner) { }
+        : q(owner)
+    {
+    }
 
     void fillThemeList();
     QString uniqueNameForTheme(const QString &baseName, Core::Theme *skipTheme = nullptr);
@@ -71,11 +66,8 @@ public:
     QPushButton *mDeleteThemeButton = nullptr;
     QPushButton *mExportThemeButton = nullptr;
     QPushButton *mImportThemeButton = nullptr;
-
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_CONFIGURESKINSDIALOG_P_H__

@@ -52,14 +52,17 @@
 #include <TagFetchScope>
 #include <TagAttribute>
 
-namespace MessageList
-{
-
+namespace MessageList {
 class Q_DECL_HIDDEN Widget::Private
 {
 public:
     Private(Widget *owner)
-        : q(owner), mLastSelectedMessage(-1), mXmlGuiClient(nullptr), mMonitor(nullptr) { }
+        : q(owner)
+        , mLastSelectedMessage(-1)
+        , mXmlGuiClient(nullptr)
+        , mMonitor(nullptr)
+    {
+    }
 
     Akonadi::Item::List selectionAsItems() const;
     Akonadi::Item itemForRow(int row) const;
@@ -72,14 +75,14 @@ public:
     QModelIndex mGroupHeaderItemIndex;
     Akonadi::Monitor *mMonitor = nullptr;
 };
-
 } // namespace MessageList
 
 using namespace MessageList;
 using namespace Akonadi;
 
 Widget::Widget(QWidget *parent)
-    : Core::Widget(parent), d(new Private(this))
+    : Core::Widget(parent)
+    , d(new Private(this))
 {
     populateStatusFilterCombo();
 
@@ -134,18 +137,12 @@ bool Widget::canAcceptDrag(const QDropEvent *e)
     return true;
 }
 
-bool Widget::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                                   MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                                   bool centerItem,
-                                   bool loop)
+bool Widget::selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
 {
     return view()->selectNextMessageItem(messageTypeFilter, existingSelectionBehaviour, centerItem, loop);
 }
 
-bool Widget::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                                       MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                                       bool centerItem,
-                                       bool loop)
+bool Widget::selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop)
 {
     return view()->selectPreviousMessageItem(messageTypeFilter, existingSelectionBehaviour, centerItem, loop);
 }
@@ -308,8 +305,7 @@ void Widget::viewSelectionChanged()
     }
 }
 
-void Widget::viewMessageListContextPopupRequest(const QList< MessageList::Core::MessageItem * > &selectedItems,
-        const QPoint &globalPos)
+void Widget::viewMessageListContextPopupRequest(const QList< MessageList::Core::MessageItem * > &selectedItems, const QPoint &globalPos)
 {
     Q_UNUSED(selectedItems);
 
@@ -425,10 +421,8 @@ void Widget::viewDropEvent(QDropEvent *e)
         int keybstate = QApplication::keyboardModifiers();
         if (keybstate & Qt::CTRL) {
             action = DragCopy;
-
         } else if (keybstate & Qt::SHIFT) {
             action = DragMove;
-
         } else {
             QMenu menu;
             QAction *moveAction = menu.addAction(QIcon::fromTheme(QStringLiteral("go-jump")), i18n("&Move Here"));
@@ -668,10 +662,7 @@ bool Widget::selectionEmpty() const
 }
 
 bool Widget::getSelectionStats(
-    Akonadi::Item::List &selectedItems,
-    Akonadi::Item::List &selectedVisibleItems,
-    bool *allSelectedBelongToSameThread,
-    bool includeCollapsedChildren) const
+    Akonadi::Item::List &selectedItems, Akonadi::Item::List &selectedVisibleItems, bool *allSelectedBelongToSameThread, bool includeCollapsedChildren) const
 {
     if (!storageModel()) {
         return false;
@@ -765,4 +756,3 @@ void Widget::slotExpandItem()
 {
     view()->setExpandItem(d->mGroupHeaderItemIndex);
 }
-

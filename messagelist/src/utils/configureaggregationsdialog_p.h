@@ -23,19 +23,12 @@
 
 #include "utils/configureaggregationsdialog.h"
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Aggregation;
-
 } // namespace Core
 
-namespace Utils
-{
-
+namespace Utils {
 class AggregationEditor;
 class AggregationListWidget;
 class AggregationListWidgetItem;
@@ -50,7 +43,9 @@ class Q_DECL_HIDDEN ConfigureAggregationsDialog::Private
 {
 public:
     Private(ConfigureAggregationsDialog *owner)
-        : q(owner) { }
+        : q(owner)
+    {
+    }
 
     // Private implementation
 
@@ -83,9 +78,7 @@ public:
     QPushButton *mExportAggregationButton = nullptr;
     QPushButton *mImportAggregationButton = nullptr;
 };
-
 } // namespace Utils
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_P_H__

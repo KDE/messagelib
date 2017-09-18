@@ -106,8 +106,7 @@ bool looksLikeParaBreak(const QString &s, unsigned int newLinePos)
     return prevLineLength + wordLength + 1 < WRAP_COL;
 }
 
-QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource *source,
-                   MessageViewer::CSSHelperBase *cssHelper)
+QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource *source, MessageViewer::CSSHelperBase *cssHelper)
 {
     Q_ASSERT(cssHelper);
 

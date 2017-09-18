@@ -76,8 +76,7 @@ public:
     {
     }
 
-    SpamScore(const QString &agent, SpamError error, float score, float confidence,
-              const QString &header, const QString &cheader)
+    SpamScore(const QString &agent, SpamError error, float score, float confidence, const QString &header, const QString &cheader)
         : mAgent(agent)
         , mError(error)
         , mScore(score)

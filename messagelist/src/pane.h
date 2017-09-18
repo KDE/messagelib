@@ -34,14 +34,11 @@ class QAbstractItemModel;
 class QItemSelectionModel;
 class QItemSelection;
 
-namespace KPIM
-{
+namespace KPIM {
 class MessageStatus;
 }
 
-namespace MessageList
-{
-
+namespace MessageList {
 class Widget;
 class StorageModel;
 
@@ -158,10 +155,7 @@ public:
     * If loop is true then the "next" algorithm will restart from the beginning
     * of the list if the end is reached, otherwise it will just stop returning false.
     */
-    bool selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                               MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                               bool centerItem,
-                               bool loop);
+    bool selectNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
 
     /**
     * Selects the previous message item in the view.
@@ -176,10 +170,7 @@ public:
     * If loop is true then the "previous" algorithm will restart from the end
     * of the list if the beginning is reached, otherwise it will just stop returning false.
     */
-    bool selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter,
-                                   MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour,
-                                   bool centerItem,
-                                   bool loop);
+    bool selectPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, MessageList::Core::ExistingSelectionBehaviour existingSelectionBehaviour, bool centerItem, bool loop);
 
     /**
     * Focuses the next message item in the view without actually selecting it.
@@ -293,10 +284,7 @@ public:
     * If includeCollapsedChildren is true then the children of the selected but
     * collapsed items are also included in the stats
     */
-    bool getSelectionStats(Akonadi::Item::List &selectedItems,
-                           Akonadi::Item::List &selectedVisibleItems,
-                           bool *allSelectedBelongToSameThread,
-                           bool includeCollapsedChildren = true) const;
+    bool getSelectionStats(Akonadi::Item::List &selectedItems, Akonadi::Item::List &selectedVisibleItems, bool *allSelectedBelongToSameThread, bool includeCollapsedChildren = true) const;
     /**
     * Deletes the persistent set pointed by the specified reference.
     * If the set does not exist anymore, nothing happens.
@@ -359,11 +347,8 @@ public:
     * like "loading..."
     */
     void setCurrentFolder(
-        const Akonadi::Collection &fld,
-        bool preferEmptyTab = false,
-        MessageList::Core::PreSelectionMode preSelectionMode = MessageList::Core::PreSelectLastSelected,
-        const QString &overrideLabel = QString()
-    );
+        const Akonadi::Collection &fld, bool preferEmptyTab = false, MessageList::Core::PreSelectionMode preSelectionMode = MessageList::Core::PreSelectLastSelected,
+        const QString &overrideLabel = QString());
 
     void resetModelStorage();
 
@@ -467,7 +452,6 @@ private:
     class Private;
     Private *const d;
 };
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_PANE_H__

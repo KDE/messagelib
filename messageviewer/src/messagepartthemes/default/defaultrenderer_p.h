@@ -38,8 +38,7 @@ namespace MimeTreeParser {
 class DefaultRendererPrivate
 {
 public:
-    DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper,
-                           const MessagePartRendererFactoryBase *rendererFactory);
+    DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactoryBase *rendererFactory);
     ~DefaultRendererPrivate();
 
     QString alignText();
@@ -47,8 +46,7 @@ public:
 
     Interface::ObjectTreeSource *source() const;
 
-    void renderSubParts(const MessagePart::Ptr &msgPart,
-                        const QSharedPointer<CacheHtmlWriter> &htmlWriter);
+    void renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter);
 
     QString render(const MessagePartList::Ptr &mp);
     QString render(const MimeMessagePart::Ptr &mp);
@@ -60,10 +58,8 @@ public:
     QString render(const EncryptedMessagePart::Ptr &mp);
     QString render(const AlternativeMessagePart::Ptr &mp);
     QString render(const CertMessagePart::Ptr &mp);
-    QSharedPointer<PartRendered> renderWithFactory(QString className,
-                                                   const Interface::MessagePart::Ptr &msgPart);
-    QString renderFactory(const Interface::MessagePart::Ptr &msgPart,
-                          const QSharedPointer<CacheHtmlWriter> &htmlWriter);
+    QSharedPointer<PartRendered> renderWithFactory(QString className, const Interface::MessagePart::Ptr &msgPart);
+    QString renderFactory(const Interface::MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter);
 
     QString mHtml;
     Interface::MessagePart::Ptr mMsgPart;

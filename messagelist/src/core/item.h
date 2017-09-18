@@ -33,12 +33,8 @@
 #include <core/model.h>
 #include <messagelist_export.h>
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class ItemPrivate;
 
 /**
@@ -191,8 +187,10 @@ public:
         unsigned int mUnreadChildCount;  // unread only
     public:
         ChildItemStats()
-            : mTotalChildCount(0), mUnreadChildCount(0)
-        {}
+            : mTotalChildCount(0)
+            , mUnreadChildCount(0)
+        {
+        }
     };
 
     /**
@@ -366,10 +364,7 @@ public:
     * It sets up several items at once (so even if not inlined it's still a single call)
     * and it skips some calls that can be avoided at constructor time.
     */
-    void initialSetup(time_t date, size_t size,
-                      const QString &sender,
-                      const QString &receiver,
-                      bool useReceiver);
+    void initialSetup(time_t date, size_t size, const QString &sender, const QString &receiver, bool useReceiver);
 
     void setItemId(qint64 id);
     qint64 itemId() const;
@@ -381,8 +376,7 @@ public:
     * This is meant to be called right after the constructor for MessageItem objects.
     * It sets up several items at once (so even if not inlined it's still a single call).
     */
-    void setSubjectAndStatus(const QString &subject,
-                             Akonadi::MessageStatus status);
+    void setSubjectAndStatus(const QString &subject, Akonadi::MessageStatus status);
 
     /**
     * Appends an Item to this item's child list.
@@ -413,9 +407,7 @@ protected:
     ItemPrivate *const d_ptr;
     Q_DECLARE_PRIVATE(Item)
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_ITEM_H__

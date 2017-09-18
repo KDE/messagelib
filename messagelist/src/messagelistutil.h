@@ -23,14 +23,11 @@
 #include <QString>
 #include <QColor>
 
-namespace Akonadi
-{
+namespace Akonadi {
 class Item;
 }
-namespace MessageList
-{
-namespace Util
-{
+namespace MessageList {
+namespace Util {
 MESSAGELIST_EXPORT void deleteConfig(const QString &collectionId);
 MESSAGELIST_EXPORT QColor unreadDefaultMessageColor();
 MESSAGELIST_EXPORT QColor importantDefaultMessageColor();
@@ -41,4 +38,3 @@ MESSAGELIST_EXPORT QString contentSummary(const Akonadi::Item &item);
 }
 
 #endif /* MESSAGELISTUTIL_H */
-

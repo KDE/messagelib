@@ -422,8 +422,7 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
     return true;
 }
 
-bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent,
-                           QUrl &currentFolder)
+bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent, QUrl &currentFolder)
 {
     if (contents.isEmpty()) {
         KMessageBox::information(parent, i18n("Found no attachments to save."));
@@ -433,8 +432,7 @@ bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent
     return Util::saveContents(parent, contents, currentFolder);
 }
 
-bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent,
-                             bool appendMessages)
+bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)
 {
     QString fileName;
     if (retrievedMsgs.isEmpty()) {
@@ -511,8 +509,7 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
     return true;
 }
 
-QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer,
-                               QActionGroup *actionGroup, QObject *parent)
+QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent)
 {
     QString actionName(service->name().replace(QLatin1Char('&'), QStringLiteral("&&")));
     if (singleOffer) {

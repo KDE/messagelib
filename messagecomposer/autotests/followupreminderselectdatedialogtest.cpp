@@ -32,12 +32,10 @@
 FollowupReminderSelectDateDialogTest::FollowupReminderSelectDateDialogTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 FollowupReminderSelectDateDialogTest::~FollowupReminderSelectDateDialogTest()
 {
-
 }
 
 QStandardItemModel *FollowupReminderSelectDateDialogTest::defaultItemModel()

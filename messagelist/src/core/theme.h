@@ -32,12 +32,8 @@
 
 class QPixmap;
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 /**
  * The Theme class defines the visual appearance of the MessageList.
  *
@@ -79,19 +75,19 @@ public:
             /**
             * Item can use the custom color property
             */
-            CanUseCustomColor            = (1 << 16),
+            CanUseCustomColor = (1 << 16),
             /**
             * Item can be in a disabled state (for example the attachment icon when there is no attachment)
             */
-            CanBeDisabled                = (1 << 17),
+            CanBeDisabled = (1 << 17),
             /**
             * Item displays some sort of text
             */
-            DisplaysText                 = (1 << 18),
+            DisplaysText = (1 << 18),
             /**
             * Item makes sense (and can be applied) for messages
             */
-            ApplicableToMessageItems     = (1 << 19),
+            ApplicableToMessageItems = (1 << 19),
             /**
             * Item makes sense (and can be applied) for group headers
             */
@@ -99,19 +95,19 @@ public:
             /**
             * The item takes more horizontal space than the other text items (at the time of writing it's only the subject)
             */
-            LongText                     = (1 << 21),
+            LongText = (1 << 21),
             /**
             * The item displays an icon
             */
-            IsIcon                       = (1 << 22),
+            IsIcon = (1 << 22),
             /**
             * The item is a small spacer
             */
-            IsSpacer                     = (1 << 23),
+            IsSpacer = (1 << 23),
             /**
             * The item is clickable
             */
-            IsClickable                  = (1 << 24)
+            IsClickable = (1 << 24)
         };
 
     public:
@@ -123,83 +119,83 @@ public:
             /**
             * Display the subject of the message item. This is a long text.
             */
-            Subject                      = 1 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems | LongText,
+            Subject = 1 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems | LongText,
             /**
             * Formatted date time of the message/group
             */
-            Date                         = 2 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems | ApplicableToGroupHeaderItems,
+            Date = 2 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems | ApplicableToGroupHeaderItems,
             /**
             * From: or To: strip, depending on the folder settings
             */
-            SenderOrReceiver             = 3 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems,
+            SenderOrReceiver = 3 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems,
             /**
             * From: strip, always
             */
-            Sender                       = 4 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems,
+            Sender = 4 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems,
             /**
             * To: strip, always
             */
-            Receiver                     = 5 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems,
+            Receiver = 5 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems,
             /**
             * Formatted size of the message
             */
-            Size                         = 6 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems,
+            Size = 6 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems,
             /**
             * The icon that displays the unread/read state (never disabled)
             */
-            ReadStateIcon                = 7 | ApplicableToMessageItems | IsIcon,
+            ReadStateIcon = 7 | ApplicableToMessageItems | IsIcon,
             /**
             * The icon that displays the atachment state (may be disabled)
             */
-            AttachmentStateIcon          = 8 | CanBeDisabled | ApplicableToMessageItems | IsIcon,
+            AttachmentStateIcon = 8 | CanBeDisabled | ApplicableToMessageItems | IsIcon,
             /**
             * The icon that displays the replied/forwarded state (may be disabled)
             */
-            RepliedStateIcon             = 9 | CanBeDisabled | ApplicableToMessageItems | IsIcon,
+            RepliedStateIcon = 9 | CanBeDisabled | ApplicableToMessageItems | IsIcon,
             /**
             * The group header label
             */
-            GroupHeaderLabel             = 10 | DisplaysText | CanUseCustomColor | ApplicableToGroupHeaderItems,
+            GroupHeaderLabel = 10 | DisplaysText | CanUseCustomColor | ApplicableToGroupHeaderItems,
             /**
             * The ActionItem state icon. May be disabled. Clickable (cycles todo->nothing)
             */
-            ActionItemStateIcon          = 11 | CanBeDisabled | ApplicableToMessageItems | IsIcon | IsClickable,
+            ActionItemStateIcon = 11 | CanBeDisabled | ApplicableToMessageItems | IsIcon | IsClickable,
             /**
             * The Important tag icon. May be disabled. Clickable (cycles important->nothing)
             */
-            ImportantStateIcon           = 12 | CanBeDisabled | ApplicableToMessageItems | IsIcon | IsClickable,
+            ImportantStateIcon = 12 | CanBeDisabled | ApplicableToMessageItems | IsIcon | IsClickable,
             /**
             * The Spam/Ham state icon. May be disabled. Clickable (cycles spam->ham->nothing)
             */
-            SpamHamStateIcon             = 13 | CanBeDisabled | ApplicableToMessageItems | IsIcon | IsClickable,
+            SpamHamStateIcon = 13 | CanBeDisabled | ApplicableToMessageItems | IsIcon | IsClickable,
             /**
             * The Watched/Ignored state icon. May be disabled. Clickable (cycles watched->ignored->nothing)
             */
-            WatchedIgnoredStateIcon      = 14 | CanBeDisabled | ApplicableToMessageItems | IsIcon | IsClickable,
+            WatchedIgnoredStateIcon = 14 | CanBeDisabled | ApplicableToMessageItems | IsIcon | IsClickable,
             /**
             * The Expanded state icon for group headers. May be disabled. Clickable (expands/collapses the group)
             */
-            ExpandedStateIcon            = 15 | CanBeDisabled | ApplicableToGroupHeaderItems | IsIcon | IsClickable,
+            ExpandedStateIcon = 15 | CanBeDisabled | ApplicableToGroupHeaderItems | IsIcon | IsClickable,
             /**
             * The Encryption state icon for messages. May be disabled (no encryption).
             */
-            EncryptionStateIcon          = 16 | CanBeDisabled | ApplicableToMessageItems | IsIcon,
+            EncryptionStateIcon = 16 | CanBeDisabled | ApplicableToMessageItems | IsIcon,
             /**
             * The Signature state icon for messages. May be disabled (no signature)
             */
-            SignatureStateIcon           = 17 | CanBeDisabled | ApplicableToMessageItems | IsIcon,
+            SignatureStateIcon = 17 | CanBeDisabled | ApplicableToMessageItems | IsIcon,
             /**
             * A vertical separation line.
             */
-            VerticalLine                 = 18 | CanUseCustomColor | ApplicableToMessageItems | ApplicableToGroupHeaderItems | IsSpacer,
+            VerticalLine = 18 | CanUseCustomColor | ApplicableToMessageItems | ApplicableToGroupHeaderItems | IsSpacer,
             /**
             * A small empty spacer usable as separator.
             */
-            HorizontalSpacer             = 19 | ApplicableToMessageItems | ApplicableToGroupHeaderItems | IsSpacer,
+            HorizontalSpacer = 19 | ApplicableToMessageItems | ApplicableToGroupHeaderItems | IsSpacer,
             /**
             * The date of the most recent message in subtree
             */
-            MostRecentDate               = 20 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems | ApplicableToGroupHeaderItems,
+            MostRecentDate = 20 | DisplaysText | CanUseCustomColor | ApplicableToMessageItems | ApplicableToGroupHeaderItems,
             /**
             * The combined icon that displays the unread/read/replied/forwarded state (never disabled)
             */
@@ -207,20 +203,20 @@ public:
             /**
             * The list of MessageItem::Tag entries
             */
-            TagList                      = 22 | ApplicableToMessageItems | IsIcon,
+            TagList = 22 | ApplicableToMessageItems | IsIcon,
             /**
             * Whether the message has a annotation/note
             */
-            AnnotationIcon               = 23 | ApplicableToMessageItems | IsIcon | CanBeDisabled | IsClickable,
+            AnnotationIcon = 23 | ApplicableToMessageItems | IsIcon | CanBeDisabled | IsClickable,
 
             /**
             * Whether the message is an invitation
             */
-            InvitationIcon               = 24 | ApplicableToMessageItems | IsIcon
+            InvitationIcon = 24 | ApplicableToMessageItems | IsIcon
 #if 0
-                                           TotalMessageCount
-                                           UnreadMessageCount
-                                           NewMessageCount
+                             TotalMessageCount
+                             UnreadMessageCount
+                             NewMessageCount
 #endif
         };
 
@@ -507,7 +503,6 @@ public:
         * Handles row loading (used by Theme::Column::load())
         */
         bool load(QDataStream &stream, int themeVersion);
-
     };
 
     /**
@@ -771,7 +766,6 @@ public:
         * Handles column loading (used by Theme::load())
         */
         bool load(QDataStream &stream, int themeVersion);
-
     };
 
 public:
@@ -799,7 +793,7 @@ public:
 
     static bool compareName(Theme *theme1, Theme *theme2)
     {
-        return (theme1->name() < theme2->name());
+        return theme1->name() < theme2->name();
     }
 
 public:
@@ -874,7 +868,7 @@ private:
     QList< Column * > mColumns;                             ///< The list of columns available in this theme
 
     // pixmaps cache. Mutable, so it can be lazily populated from const methods
-    mutable QVector<QPixmap*> mPixmaps;
+    mutable QVector<QPixmap *> mPixmaps;
 
     GroupHeaderBackgroundMode mGroupHeaderBackgroundMode;   ///< How do we paint group header background ?
     QColor mGroupHeaderBackgroundColor;                     ///< The background color of the message group, used only if CustomColor
@@ -1024,9 +1018,7 @@ protected:
     void clearPixmapCache() const;
     void populatePixmapCache() const;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_SKIN_H__

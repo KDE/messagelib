@@ -30,12 +30,8 @@
 
 class QAbstractItemView;
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 class Item;
 
 /**
@@ -203,11 +199,8 @@ protected:
     * Reimplemented from QStyledItemDelegate
     */
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
-
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_SKINDELEGATE_H__

@@ -27,10 +27,7 @@
 #include <KIconLoader>
 #include <KMime/Content>
 
-
-QString MessageViewer::Util::iconPathForMimetype(const QString &mimeType, int iconSize,
-                                                 const QString &fallbackFileName1,
-                                                 const QString &fallbackFileName2)
+QString MessageViewer::Util::iconPathForMimetype(const QString &mimeType, int iconSize, const QString &fallbackFileName1, const QString &fallbackFileName2)
 {
     return IconNameCache::instance()->iconPath(MimeTreeParser::Util::iconNameForMimetype(mimeType,
                                                                                          fallbackFileName1,

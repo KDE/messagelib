@@ -18,7 +18,6 @@
 #include "templateeditor_gui.h"
 #include "templateparser/templatestextedit.h"
 
-
 #include <QHBoxLayout>
 #include <QApplication>
 #include <QCommandLineParser>

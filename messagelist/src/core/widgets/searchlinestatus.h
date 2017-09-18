@@ -25,10 +25,8 @@
 #include <QIcon>
 class QStringListModel;
 class QAction;
-namespace MessageList
-{
-namespace Core
-{
+namespace MessageList {
+namespace Core {
 class MESSAGELIST_TESTS_EXPORT SearchLineStatus : public QLineEdit
 {
     Q_OBJECT
@@ -38,7 +36,6 @@ public:
 
     void setLocked(bool b);
     bool locked() const;
-
 
     void setContainsOutboundMessages(bool containsOutboundMessages);
     bool containsOutboundMessages() const;
@@ -89,7 +86,6 @@ private:
     QString mColorName;
     bool mContainsOutboundMessages;
 };
-
 }
 }
 

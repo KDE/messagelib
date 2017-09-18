@@ -25,12 +25,8 @@
 
 class QDataStream;
 
-namespace MessageList
-{
-
-namespace Core
-{
-
+namespace MessageList {
+namespace Core {
 /**
  * A set of options that can be applied to the MessageList in one shot.
  * In the sources and in the user interface you can find this set of options
@@ -129,6 +125,7 @@ public:
     {
         return mReadOnly;
     }
+
     void setReadOnly(bool b)
     {
         mReadOnly = b;
@@ -148,9 +145,7 @@ protected:
     */
     virtual bool load(QDataStream &s) = 0;
 };
-
 } // namespace Core
-
 } // namespace MessageList
 
 #endif //!__MESSAGELIST_CORE_OPTIONSET_H__

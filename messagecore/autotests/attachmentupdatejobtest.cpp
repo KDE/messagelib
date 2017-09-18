@@ -20,7 +20,7 @@
 #include <qtest.h>
 #include "qtest_messagecore.h"
 
-#define PATH_ATTACHMENTS QLatin1String( KDESRCDIR "/attachments/" )
+#define PATH_ATTACHMENTS QLatin1String(KDESRCDIR "/attachments/")
 
 AttachmentUpdateJobTest::AttachmentUpdateJobTest(QObject *parent)
     : QObject(parent)
@@ -30,7 +30,6 @@ AttachmentUpdateJobTest::AttachmentUpdateJobTest(QObject *parent)
 
 AttachmentUpdateJobTest::~AttachmentUpdateJobTest()
 {
-
 }
 
 void AttachmentUpdateJobTest::shouldHaveDefaultValue()
@@ -94,7 +93,6 @@ void AttachmentUpdateJobTest::shouldHaveSameNameDescriptionAfterUpdate()
     QCOMPARE(origPart->name(), job->updatedPart()->name());
     QCOMPARE(origPart->description(), job->updatedPart()->description());
     QCOMPARE(origPart->fileName(), job->updatedPart()->fileName());
-
 }
 
 void AttachmentUpdateJobTest::shouldHaveSameCryptoSignStatusAfterUpdate()
@@ -174,7 +172,6 @@ void AttachmentUpdateJobTest::shouldHaveSameMimetypeAfterUpdate()
 
     VERIFYEXEC(job);
     QCOMPARE(origPart->mimeType(), job->updatedPart()->mimeType());
-
 }
 
 void AttachmentUpdateJobTest::shouldNotUpdateWhenUrlIsEmpty()
@@ -221,7 +218,6 @@ void AttachmentUpdateJobTest::shouldHaveSameInlineStatus()
 
     VERIFYEXEC(job);
     QCOMPARE(origPart->isInline(), job->updatedPart()->isInline());
-
 }
 
 QTEST_MAIN(AttachmentUpdateJobTest)

@@ -70,7 +70,6 @@ void UtilTest::testSelectCharset()
         choice = Util::selectCharset(charsets, text);
         QVERIFY(choice.isEmpty());
     }
-
 }
 
 void UtilTest::shouldTestHasMissingAttachment_data()
@@ -80,7 +79,9 @@ void UtilTest::shouldTestHasMissingAttachment_data()
     QTest::addColumn<QString>("body");
     QTest::addColumn<bool>("hasMissingAttachment");
 
-    QStringList lstDefaultAttachement{QStringLiteral("attachment"), QStringLiteral("att2")};
+    QStringList lstDefaultAttachement{
+        QStringLiteral("attachment"), QStringLiteral("att2")
+    };
     QTest::newRow("emptybody") << lstDefaultAttachement << QStringLiteral("foo") << QString() << false;
     QTest::newRow("emptybodyandsubject") << lstDefaultAttachement << QString() << QString() << false;
     QTest::newRow("subjectwithattachmentkeyword") << lstDefaultAttachement << QStringLiteral("attachment foo") << QString() << true;
@@ -105,5 +106,3 @@ void UtilTest::shouldTestHasMissingAttachment()
     QTextDocument doc(body);
     QCOMPARE(Util::hasMissingAttachments(attachmentKeywords, &doc, subject), hasMissingAttachment);
 }
-
-

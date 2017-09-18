@@ -36,27 +36,25 @@
 #include <QPalette>
 #include <QApplication>
 
-namespace MimeTreeParser
-{
-
-TestCSSHelper::TestCSSHelper(const QPaintDevice *pd) :
-    CSSHelperBase(pd)
+namespace MimeTreeParser {
+TestCSSHelper::TestCSSHelper(const QPaintDevice *pd)
+    : CSSHelperBase(pd)
 {
     mRecycleQuoteColors = false;
     mBackgroundColor = QColor(0xff, 0xff, 0xff);
     mForegroundColor = QColor(0x1f, 0x1c, 0x1b);
     mLinkColor = QColor(0x00, 0x57, 0xae);
     cPgpEncrH = QColor(0x00, 0x80, 0xff);
-    cPgpOk1H  = QColor(0x40, 0xff, 0x40);
-    cPgpOk0H  = QColor(0xff, 0xff, 0x40);
+    cPgpOk1H = QColor(0x40, 0xff, 0x40);
+    cPgpOk0H = QColor(0xff, 0xff, 0x40);
     cPgpWarnH = QColor(0xff, 0xff, 0x40);
-    cPgpErrH  = QColor(0xff, 0x00, 0x00);
+    cPgpErrH = QColor(0xff, 0x00, 0x00);
 
     cPgpEncrHT = QColor(0xff, 0xff, 0xff);
-    cPgpOk1HT  = QColor(0x27, 0xae, 0x60);
-    cPgpOk0HT  = QColor(0xf6, 0x74, 0x00);
+    cPgpOk1HT = QColor(0x27, 0xae, 0x60);
+    cPgpOk0HT = QColor(0xf6, 0x74, 0x00);
     cPgpWarnHT = QColor(0xf6, 0x74, 0x00);
-    cPgpErrHT  = QColor(0xda, 0x44, 0x53);
+    cPgpErrHT = QColor(0xda, 0x44, 0x53);
 
     cHtmlWarning = QColor(0xff, 0x40, 0x40);
     for (int i = 0; i < 3; ++i) {
@@ -90,7 +88,6 @@ TestCSSHelper::TestCSSHelper(const QPaintDevice *pd) :
 
 TestCSSHelper::~TestCSSHelper()
 {
-
 }
 
 QString TestCSSHelper::htmlHead(bool fixed) const
@@ -101,6 +98,4 @@ QString TestCSSHelper::htmlHead(bool fixed) const
                        "<html>\n"
                        "<body>\n");
 }
-
 }
-
