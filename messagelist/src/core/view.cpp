@@ -127,8 +127,6 @@ View::View(Widget *pParent)
     connect(d->mModel, &Model::statusMessage,
             pParent, &Widget::statusMessage);
 
-    //connect( selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)),
-    //         this, SLOT(slotCurrentIndexChanged(QModelIndex,QModelIndex)) );
     connect(selectionModel(), &QItemSelectionModel::selectionChanged,
             this, &View::slotSelectionChanged,
             Qt::UniqueConnection);

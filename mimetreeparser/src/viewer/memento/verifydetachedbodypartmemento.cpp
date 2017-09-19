@@ -57,8 +57,8 @@ bool VerifyDetachedBodyPartMemento::start()
 #ifdef DEBUG_SIGNATURE
     qCDebug(MIMETREEPARSER_LOG) << "tokoe: VerifyDetachedBodyPartMemento started";
 #endif
-    connect(m_job, SIGNAL(result(GpgME::VerificationResult)),
-            this, SLOT(slotResult(GpgME::VerificationResult)));
+    connect(m_job.data(), &VerifyDetachedJob::result,
+            this, &VerifyDetachedBodyPartMemento::slotResult);
     if (const Error err = m_job->start(m_signature, m_plainText)) {
         m_vr = VerificationResult(err);
 #ifdef DEBUG_SIGNATURE

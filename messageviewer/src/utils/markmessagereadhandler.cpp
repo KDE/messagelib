@@ -64,7 +64,7 @@ MarkMessageReadHandler::MarkMessageReadHandler(QObject *parent)
     , d(new Private(this))
 {
     d->mTimer.setSingleShot(true);
-    connect(&d->mTimer, SIGNAL(timeout()), this, SLOT(handleMessages()));
+    connect(&d->mTimer, &QTimer::timeout, this, [this]() { d->handleMessages();});
 }
 
 MarkMessageReadHandler::~MarkMessageReadHandler()
