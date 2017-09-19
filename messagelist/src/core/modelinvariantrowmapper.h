@@ -181,8 +181,6 @@ public:
     void modelReset();
 
 private:
-    Q_PRIVATE_SLOT(d, void slotPerformLazyUpdate())
-
     ModelInvariantRowMapperPrivate *const d;
 };
 } // namespace Core

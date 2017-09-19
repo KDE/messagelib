@@ -68,8 +68,7 @@ ModelInvariantRowMapper::ModelInvariantRowMapper()
     d->mLazyUpdateChunkInterval = 50;
     d->mLazyUpdateIdleInterval = 50;
 
-    connect(d->mUpdateTimer, SIGNAL(timeout()),
-            SLOT(slotPerformLazyUpdate()));
+    connect(d->mUpdateTimer, &QTimer::timeout, this, [this]() { d->slotPerformLazyUpdate(); });
 }
 
 ModelInvariantRowMapper::~ModelInvariantRowMapper()
