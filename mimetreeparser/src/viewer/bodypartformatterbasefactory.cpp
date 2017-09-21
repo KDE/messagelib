@@ -52,9 +52,9 @@ void BodyPartFormatterBaseFactoryPrivate::setup()
     }
 }
 
-void BodyPartFormatterBaseFactoryPrivate::insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter)
+void BodyPartFormatterBaseFactoryPrivate::insert(const QByteArray &type, const QByteArray &subtype, const Interface::BodyPartFormatter *formatter)
 {
-    if (!type || !*type || !subtype || !*subtype || !formatter) {
+    if (type.isEmpty() || subtype.isEmpty() || !formatter) {
         return;
     }
 
@@ -81,14 +81,15 @@ BodyPartFormatterBaseFactory::~BodyPartFormatterBaseFactory()
     delete d;
 }
 
-void BodyPartFormatterBaseFactory::insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter)
+void BodyPartFormatterBaseFactory::insert(const QByteArray &type, const QByteArray &subtype, const Interface::BodyPartFormatter *formatter)
 {
     d->insert(type, subtype, formatter);
 }
 
-const SubtypeRegistry &BodyPartFormatterBaseFactory::subtypeRegistry(const char *type) const
+const SubtypeRegistry &BodyPartFormatterBaseFactory::subtypeRegistry(const QByteArray &_type) const
 {
-    if (!type || !*type) {
+    auto type = _type;
+    if (type.isEmpty()) {
         type = "*";    //krazy:exclude=doublequote_chars
     }
 

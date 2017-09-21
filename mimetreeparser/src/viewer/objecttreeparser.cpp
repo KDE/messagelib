@@ -201,8 +201,8 @@ MessagePartPtr ObjectTreeParser::parsedPart() const
 bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet, bool onlyOneMimePart)
 {
     bool bRendered = false;
-    const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType.constData());
-    auto range = sub.equal_range(subType.constData());
+    const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType);
+    auto range = sub.equal_range(subType);
     for (auto it = range.first; it != range.second; ++it) {
         const auto formatter = (*it).second;
         if (!formatter) {

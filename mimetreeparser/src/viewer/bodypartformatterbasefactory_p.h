@@ -36,7 +36,7 @@
 
 namespace MimeTreeParser {
 class BodyPartFormatterBaseFactory;
-typedef std::map<const char *, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
+typedef std::map<QByteArray, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
 
 class BodyPartFormatterBaseFactoryPrivate
 {
@@ -46,7 +46,7 @@ public:
 
     void setup();
     void messageviewer_create_builtin_bodypart_formatters();        //defined in bodypartformatter.cpp
-    void insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
+    void insert(const QByteArray &type, const QByteArray &subType, const Interface::BodyPartFormatter *formatter);
 
     BodyPartFormatterBaseFactory *q;
     TypeRegistry all;

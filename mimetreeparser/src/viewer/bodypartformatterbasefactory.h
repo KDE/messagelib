@@ -45,13 +45,13 @@ class BodyPartFormatter;
 }
 
 struct ltstr {
-    bool operator()(const char *s1, const char *s2) const
+    bool operator()(const QByteArray &s1, const QByteArray &s2) const
     {
-        return qstricmp(s1, s2) < 0;
+        return qstricmp(s1.constData(), s2.constData()) < 0;
     }
 };
 
-typedef std::multimap<const char *, const Interface::BodyPartFormatter *, ltstr> SubtypeRegistry;
+typedef std::multimap<QByteArray, const Interface::BodyPartFormatter*, ltstr> SubtypeRegistry;
 
 class BodyPartFormatterBaseFactoryPrivate;
 
@@ -61,10 +61,10 @@ public:
     BodyPartFormatterBaseFactory();
     virtual ~BodyPartFormatterBaseFactory();
 
-    const SubtypeRegistry &subtypeRegistry(const char *type) const;
+    const SubtypeRegistry &subtypeRegistry(const QByteArray &type) const;
 
 protected:
-    void insert(const char *type, const char *subtype, const Interface::BodyPartFormatter *formatter);
+    void insert(const QByteArray &type, const QByteArray &subType, const Interface::BodyPartFormatter *formatter);
     virtual void loadPlugins();
 
 private:
