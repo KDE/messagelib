@@ -47,8 +47,6 @@ private:
     class Private;
     friend class Private;
     Private *const d;
-
-    Q_PRIVATE_SLOT(d, void exportResult(GpgME::Error, QByteArray))
 };
 } //
 

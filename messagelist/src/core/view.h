@@ -640,9 +640,6 @@ protected Q_SLOTS:
     void applyThemeColumns();
 
 private:
-    /// expand the whole thread (including all child messages)
-    Q_PRIVATE_SLOT(d, void expandFullThread(const QModelIndex &))
-
     class Private;
     Private *d;
 }; // class View

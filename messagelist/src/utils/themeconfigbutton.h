@@ -49,10 +49,7 @@ Q_SIGNALS:
     * A signal emitted when configure dialog has been successfully completed.
     */
     void configureDialogCompleted();
-
 private:
-    Q_PRIVATE_SLOT(d, void slotConfigureThemes())
-
     ThemeConfigButtonPrivate *const d;
 };
 } // namespace Utils

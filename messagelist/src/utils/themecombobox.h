@@ -56,7 +56,6 @@ public Q_SLOTS:
     void selectDefault();
 
 private:
-    Q_PRIVATE_SLOT(d, void slotLoadThemes())
     ThemeComboBoxPrivate *const d;
 };
 } // namespace Utils

@@ -108,8 +108,7 @@ void AttachmentFromPublicKeyJob::doStart()
 {
     QGpgME::ExportJob *job = QGpgME::openpgp()->publicKeyExportJob(true);
     Q_ASSERT(job);
-    QObject::connect(job, SIGNAL(result(GpgME::Error,QByteArray)),
-                     this, SLOT(exportResult(GpgME::Error,QByteArray)));
+    connect(job, &QGpgME::ExportJob::result, this, [this](const GpgME::Error &error, const QByteArray &ba) {d->exportResult(error,ba); });
 
     const GpgME::Error error = job->start(QStringList(d->fingerprint));
     if (error) {
