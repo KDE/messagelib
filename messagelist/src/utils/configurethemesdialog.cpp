@@ -126,8 +126,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     d->mNewThemeButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mNewThemeButton, 0, 1);
 
-    connect(d->mNewThemeButton, SIGNAL(clicked()),
-            SLOT(newThemeButtonClicked()));
+    connect(d->mNewThemeButton, &QPushButton::clicked, this, [this]() {d->newThemeButtonClicked(); });
 
     d->mCloneThemeButton = new QPushButton(i18n("Clone Theme"), base);
     d->mCloneThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));

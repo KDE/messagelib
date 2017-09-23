@@ -222,8 +222,8 @@ void Widget::addMessageTagItem(const QPixmap &icon, const QString &text, const Q
 void Widget::setCurrentStatusFilterItem()
 {
     d->quickSearchLine->updateComboboxVisibility();
-    connect(d->quickSearchLine->tagFilterComboBox(), SIGNAL(currentIndexChanged(int)),
-            this, SLOT(statusSelected(int)));
+    connect(d->quickSearchLine->tagFilterComboBox(), QOverload<int>::of(&KComboBox::currentIndexChanged),
+            this, &Widget::statusSelected);
     d->quickSearchLine->tagFilterComboBox()->setCurrentIndex(d->mCurrentStatusFilterIndex >= d->quickSearchLine->tagFilterComboBox()->count() ? 0 : d->mCurrentStatusFilterIndex);
     d->mStatusFilterComboPopulationInProgress = false;
 }

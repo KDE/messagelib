@@ -144,7 +144,7 @@ void FindBarBase::autoSearch(const QString &str)
     mFindPrevBtn->setEnabled(isNotEmpty);
     mFindNextBtn->setEnabled(isNotEmpty);
     if (isNotEmpty) {
-        QTimer::singleShot(0, this, SLOT(slotSearchText()));
+        QTimer::singleShot(0, this, [this]() { slotSearchText(); });
     } else {
         clearSelections();
     }

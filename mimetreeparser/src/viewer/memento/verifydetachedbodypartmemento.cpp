@@ -149,9 +149,9 @@ bool VerifyDetachedBodyPartMemento::startKeyListJob()
     if (const GpgME::Error err = m_keylistjob->start(keyListPattern())) {
         return false;
     }
-    connect(m_keylistjob, SIGNAL(done()), this, SLOT(slotKeyListJobDone()));
-    connect(m_keylistjob, SIGNAL(nextKey(GpgME::Key)),
-            this, SLOT(slotNextKey(GpgME::Key)));
+    connect(m_keylistjob.data(), &Job::done, this, &VerifyDetachedBodyPartMemento::slotKeyListJobDone);
+    connect(m_keylistjob.data(), &KeyListJob::nextKey,
+            this, &VerifyDetachedBodyPartMemento::slotNextKey);
     return true;
 }
 

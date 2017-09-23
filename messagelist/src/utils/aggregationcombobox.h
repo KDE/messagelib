@@ -56,8 +56,6 @@ public Q_SLOTS:
     void selectDefault();
 
 private:
-    Q_PRIVATE_SLOT(d, void slotLoadAggregations())
-
     AggregationComboBoxPrivate *const d;
 };
 } // namespace Utils
