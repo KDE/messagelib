@@ -289,7 +289,6 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
         ProcessResult processResult(mNodeHelper);
 
         QByteArray mimeType("text/plain");
-        QByteArray subType("plain");
         if (node->contentType(false) && !node->contentType()->mimeType().isEmpty()) {
             mimeType = node->contentType()->mimeType();
         }
