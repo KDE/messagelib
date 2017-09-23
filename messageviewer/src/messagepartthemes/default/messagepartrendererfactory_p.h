@@ -1,5 +1,4 @@
 /*
-    This file is part of KMail, the KDE mail client.
     Copyright (c) 2017 Sandro Knauß <sknauss@kde.org>
 
     KMail is free software; you can redistribute it and/or modify it
@@ -28,38 +27,26 @@
     your version.
 */
 
-#ifndef __MIMETREEPARSER_MESSAGEPARTRENDERERBASEFACTORY_H__
-#define __MIMETREEPARSER_MESSAGEPARTRENDERERBASEFACTORY_H__
+#ifndef __MESSAGEVIEWER_MESSAGEPARTRENDERERBASEFACTORY_P_H__
+#define __MESSAGEVIEWER_MESSAGEPARTRENDERERBASEFACTORY_P_H__
 
-#include "messageviewer_export.h"
-
-#include <memory>
-#include <map>
-
-#include <QString>
-#include <QSharedPointer>
+#include <QMap>
 
 class MessagePartRendererBase;
 
 namespace MessageViewer {
-class MessagePartRendererFactoryBasePrivate;
 
-class MESSAGEVIEWER_EXPORT MessagePartRendererFactoryBase
+typedef QMap<QString, std::vector<MessagePartRendererBase *> > TypeRegistry;
+
+class MessagePartRendererFactoryPrivate
 {
 public:
-    MessagePartRendererFactoryBase();
-    virtual ~MessagePartRendererFactoryBase();
-
-    std::vector<MessagePartRendererBase *> typeRegistry(const QString &type) const;
-
-protected:
+    void setup();
+    void loadPlugins();
+    void initalize_builtin_renderers();        //defined in pugins/plugins.cpp
     void insert(const QString &type, MessagePartRendererBase *formatter);
-    virtual void loadPlugins();
 
-private:
-    Q_DISABLE_COPY(MessagePartRendererFactoryBase)
-    std::unique_ptr<MessagePartRendererFactoryBasePrivate> d;
-    friend class MessagePartRendererFactoryBasePrivate;
+    TypeRegistry mAll;
 };
 }
 

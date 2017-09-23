@@ -28,34 +28,39 @@
     your version.
 */
 
-#include "messagepartrendererfactorybase.h"
-#include "messagepartrendererfactorybase_p.h"
+#include "messagepartrendererfactory.h"
+#include "messagepartrendererfactory_p.h"
 
 #include "messagepartrendererbase.h"
-
 #include "messageviewer_debug.h"
+
+#include "plugins/attachmentmessagepartrenderer.h"
+#include "plugins/messagepartrenderer.h"
+#include "plugins/textmessagepartrenderer.h"
 
 using namespace MessageViewer;
 
-MessagePartRendererFactoryBasePrivate::MessagePartRendererFactoryBasePrivate(
-    MessagePartRendererFactoryBase *factory)
-    : q(factory)
-{
-}
-
-MessagePartRendererFactoryBasePrivate::~MessagePartRendererFactoryBasePrivate()
-{
-}
-
-void MessagePartRendererFactoryBasePrivate::setup()
+void MessagePartRendererFactoryPrivate::setup()
 {
     if (mAll.isEmpty()) {
         initalize_builtin_renderers();
-        q->loadPlugins();
+        loadPlugins();
     }
 }
 
-void MessagePartRendererFactoryBasePrivate::insert(const QString &type, MessagePartRendererBase *formatter)
+void MessagePartRendererFactoryPrivate::loadPlugins()
+{
+    qCDebug(MESSAGEVIEWER_LOG) << "plugin loading is not enabled in libmimetreeparser";
+}
+
+void MessagePartRendererFactoryPrivate::initalize_builtin_renderers()
+{
+    insert(QStringLiteral("MimeTreeParser::MessagePart"), new MessagePartRenderer());
+    insert(QStringLiteral("MimeTreeParser::TextMessagePart"), new TextMessagePartRenderer());
+    insert(QStringLiteral("MimeTreeParser::AttachmentMessagePart"), new AttachmentMessagePartRenderer());
+}
+
+void MessagePartRendererFactoryPrivate::insert(const QString &type, MessagePartRendererBase *formatter)
 {
     if (type.isEmpty() || !formatter) {
         return;
@@ -64,30 +69,25 @@ void MessagePartRendererFactoryBasePrivate::insert(const QString &type, MessageP
     mAll[type].insert(mAll[type].begin(), formatter);
 }
 
-MessagePartRendererFactoryBase::MessagePartRendererFactoryBase()
-    : d(std::unique_ptr<MessagePartRendererFactoryBasePrivate>(
-            new MessagePartRendererFactoryBasePrivate(this)))
+MessagePartRendererFactory::MessagePartRendererFactory()
+    : d(new MessagePartRendererFactoryPrivate)
 {
 }
 
-MessagePartRendererFactoryBase::~MessagePartRendererFactoryBase()
+MessagePartRendererFactory::~MessagePartRendererFactory()
 {
 }
 
-void MessagePartRendererFactoryBase::insert(const QString &type, MessagePartRendererBase *formatter)
+MessagePartRendererFactory* MessagePartRendererFactory::instance()
 {
-    d->insert(type, formatter);
+    static std::unique_ptr<MessagePartRendererFactory> singeltonRendererFactory(new MessagePartRendererFactory);
+    return singeltonRendererFactory.get();
 }
 
-std::vector<MessagePartRendererBase *> MessagePartRendererFactoryBase::typeRegistry(
+std::vector<MessagePartRendererBase *> MessagePartRendererFactory::typeRegistry(
     const QString &type) const
 {
     d->setup();
     Q_ASSERT(!d->mAll.isEmpty());
     return d->mAll.value(type);
-}
-
-void MessagePartRendererFactoryBase::loadPlugins()
-{
-    qCDebug(MESSAGEVIEWER_LOG) << "plugin loading is not enabled in libmimetreeparser";
 }

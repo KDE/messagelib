@@ -165,14 +165,12 @@ set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/htmlblock.cpp
     messagepartthemes/default/messagepartrenderermanager.cpp
     messagepartthemes/default/partrendered.cpp
-    messagepartthemes/default/rendererpluginfactorysingleton.cpp
     messagepartthemes/default/plugins/attachmentmessagepartrenderer.cpp
     messagepartthemes/default/plugins/messagepartrenderer.cpp
     messagepartthemes/default/plugins/textmessagepartrenderer.cpp
-    messagepartthemes/default/plugins/plugins.cpp
     messagepartthemes/default/plugins/quotehtml.cpp
     messagepartthemes/default/messagepartrenderbase.cpp
-    messagepartthemes/default/messagepartrendererfactorybase.cpp
+    messagepartthemes/default/messagepartrendererfactory.cpp
     )
 
 set(libmessageviewer_SRCS

@@ -30,7 +30,7 @@ class CacheHtmlWriter;
 class PartRendered;
 
 namespace MessageViewer {
-class MessagePartRendererFactoryBase;
+class MessagePartRendererFactory;
 class CSSHelperBase;
 }
 
@@ -38,7 +38,7 @@ namespace MimeTreeParser {
 class DefaultRendererPrivate
 {
 public:
-    DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactoryBase *rendererFactory);
+    DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory);
     ~DefaultRendererPrivate();
 
     QString alignText();
@@ -66,7 +66,7 @@ public:
     HtmlWriter *mOldWriter = nullptr;
 
     CSSHelperBase *mCSSHelper = nullptr;
-    const MessageViewer::MessagePartRendererFactoryBase *mRendererFactory = nullptr;
+    const MessageViewer::MessagePartRendererFactory *mRendererFactory = nullptr;
 };
 }
 #endif

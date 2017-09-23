@@ -1,5 +1,6 @@
 /*
-    Copyright (c) 2016 Sandro Knauß <sknauss@kde.org>
+    This file is part of KMail, the KDE mail client.
+    Copyright (c) 2017 Sandro Knauß <sknauss@kde.org>
 
     KMail is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by
@@ -27,21 +28,36 @@
     your version.
 */
 
-#include "rendererpluginfactorysingleton.h"
-#include "messagepartrendererfactorybase.h"
+#ifndef MESSAGEVIEWER_MESSAGEPARTRENDERERFACTORY_H
+#define MESSAGEVIEWER_MESSAGEPARTRENDERERFACTORY_H
 
-#include <QSharedPointer>
+#include "messageviewer_export.h"
 
-using namespace MessageViewer;
+#include <qglobal.h>
 
-static QSharedPointer<MessagePartRendererFactoryBase> singeltonRendererFactory;
+#include <memory>
+#include <vector>
 
-const MessagePartRendererFactoryBase *rendererPluginFactoryInstance()
+class QString;
+class MessagePartRendererBase;
+
+namespace MessageViewer {
+class MessagePartRendererFactoryPrivate;
+
+class MESSAGEVIEWER_EXPORT MessagePartRendererFactory
 {
-    if (!singeltonRendererFactory) {
-        singeltonRendererFactory = QSharedPointer<MessagePartRendererFactoryBase>(
-            new MessagePartRendererFactoryBase());
-    }
+public:
+    MessagePartRendererFactory();
+    ~MessagePartRendererFactory();
 
-    return singeltonRendererFactory.data();
+    static MessagePartRendererFactory* instance();
+
+    std::vector<MessagePartRendererBase *> typeRegistry(const QString &type) const;
+
+private:
+    Q_DISABLE_COPY(MessagePartRendererFactory)
+    std::unique_ptr<MessagePartRendererFactoryPrivate> d;
+};
 }
+
+#endif

@@ -23,10 +23,9 @@
 
 #include "messageviewer_debug.h"
 
-#include "rendererpluginfactorysingleton.h"
 #include "converthtmltoplaintext.h"
 #include "messagepartrendererbase.h"
-#include "messagepartrendererfactorybase.h"
+#include "messagepartrendererfactory.h"
 #include "htmlblock.h"
 #include "partrendered.h"
 
@@ -366,7 +365,7 @@ public:
     MimeTreeParser::HtmlWriter *mBaseWriter = nullptr;
 };
 
-DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactoryBase *rendererFactory)
+DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory)
     : mMsgPart(msgPart)
     , mOldWriter(msgPart->htmlWriter())
     , mCSSHelper(cssHelper)
@@ -1084,8 +1083,7 @@ QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr 
 }
 
 DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
-    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper,
-                                                   rendererPluginFactoryInstance()))
+    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper, MessagePartRendererFactory::instance()))
 {
 }
 
