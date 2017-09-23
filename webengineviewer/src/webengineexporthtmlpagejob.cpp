@@ -18,7 +18,6 @@
 */
 
 #include "webengineexporthtmlpagejob.h"
-#include "webengineviewer/config-webengineviewer.h"
 #include <QTemporaryFile>
 #include <QWebEngineView>
 

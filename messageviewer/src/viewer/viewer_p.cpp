@@ -44,7 +44,6 @@
 #include "webengine/mailwebenginescript.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KContacts/VCardConverter>
-#include <webengineviewer/config-webengineviewer.h>
 #include "htmlwriter/webengineembedpart.h"
 #ifdef MESSAGEVIEWER_READER_HTML_DEBUG
 #include <MimeMessagePart/FileHtmlWriter>

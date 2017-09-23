@@ -20,7 +20,6 @@
 #include "webenginepage.h"
 #include "webhittest.h"
 #include "webhittestresult.h"
-#include "config-webengineviewer.h"
 
 #include <KLocalizedString>
 

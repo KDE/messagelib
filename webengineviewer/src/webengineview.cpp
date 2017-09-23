@@ -22,7 +22,6 @@
 #include "webenginemanagescript.h"
 #include "webengineviewer_debug.h"
 #include "checkphishingurl/localdatabasemanager.h"
-#include "../config-webengineviewer.h"
 #include <QEvent>
 #include <QKeyEvent>
 #include <QMouseEvent>
