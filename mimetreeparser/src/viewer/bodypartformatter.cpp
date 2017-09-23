@@ -163,28 +163,27 @@ typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
 
 void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
 {
-    insert("application", "octet-stream", AnyTypeBodyPartFormatter::create());
-    insert("application", "pgp", ApplicationPgpBodyPartFormatter::create());
-    insert("application", "pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
-    insert("application", "x-pkcs7-mime", ApplicationPkcs7MimeBodyPartFormatter::create());
-    insert("application", "pgp-encrypted", ApplicationPGPEncryptedBodyPartFormatter::create());
-    insert("application", "*", AnyTypeBodyPartFormatter::create());
+    insert(QStringLiteral("application/octet-stream"), AnyTypeBodyPartFormatter::create());
+    insert(QStringLiteral("application/pkcs7-mime"), ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert(QStringLiteral("application/x-pkcs7-mime"), ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert(QStringLiteral("application/pgp-encrypted"), ApplicationPGPEncryptedBodyPartFormatter::create());
 
-    insert("text", "html", TextHtmlBodyPartFormatter::create());
-    insert("text", "rtf", AnyTypeBodyPartFormatter::create());
-    insert("text", "plain", MailmanBodyPartFormatter::create());
-    insert("text", "plain", TextPlainBodyPartFormatter::create());
-    insert("text", "*", MailmanBodyPartFormatter::create());
-    insert("text", "*", TextPlainBodyPartFormatter::create());
+    insert(QStringLiteral("text/html"), TextHtmlBodyPartFormatter::create());
+    insert(QStringLiteral("text/rtf"), AnyTypeBodyPartFormatter::create());
+    insert(QStringLiteral("text/plain"), MailmanBodyPartFormatter::create());
+    insert(QStringLiteral("text/plain"), TextPlainBodyPartFormatter::create());
 
-    insert("image", "*", ImageTypeBodyPartFormatter::create());
+    insert(QStringLiteral("image/png"), ImageTypeBodyPartFormatter::create());
+    insert(QStringLiteral("image/jpeg"), ImageTypeBodyPartFormatter::create());
+    insert(QStringLiteral("image/gif"), ImageTypeBodyPartFormatter::create());
+    insert(QStringLiteral("image/svg+xml"), ImageTypeBodyPartFormatter::create());
+    insert(QStringLiteral("image/bmp"), ImageTypeBodyPartFormatter::create());
+    insert(QStringLiteral("image/vnd.microsoft.icon"), ImageTypeBodyPartFormatter::create());
 
-    insert("message", "rfc822", MessageRfc822BodyPartFormatter::create());
-    insert("message", "*", AnyTypeBodyPartFormatter::create());
+    insert(QStringLiteral("message/rfc822"), MessageRfc822BodyPartFormatter::create());
 
-    insert("multipart", "alternative", MultiPartAlternativeBodyPartFormatter::create());
-    insert("multipart", "encrypted", MultiPartEncryptedBodyPartFormatter::create());
-    insert("multipart", "signed", MultiPartSignedBodyPartFormatter::create());
-    insert("multipart", "*", MultiPartMixedBodyPartFormatter::create());
-    insert("*", "*", AnyTypeBodyPartFormatter::create());
+    insert(QStringLiteral("multipart/alternative"), MultiPartAlternativeBodyPartFormatter::create());
+    insert(QStringLiteral("multipart/encrypted"), MultiPartEncryptedBodyPartFormatter::create());
+    insert(QStringLiteral("multipart/signed"), MultiPartSignedBodyPartFormatter::create());
+    insert(QStringLiteral("multipart/mixed"), MultiPartMixedBodyPartFormatter::create());
 }

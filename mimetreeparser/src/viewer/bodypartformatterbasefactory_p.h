@@ -34,20 +34,11 @@
 #ifndef __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_P_H__
 #define __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_P_H__
 
-#include <map>
+#include <QHash>
+#include <vector>
 
 namespace MimeTreeParser {
 class BodyPartFormatterBaseFactory;
-
-struct ltstr {
-    bool operator()(const QByteArray &s1, const QByteArray &s2) const
-    {
-        return qstricmp(s1.constData(), s2.constData()) < 0;
-    }
-};
-
-typedef std::multimap<QByteArray, const Interface::BodyPartFormatter*, ltstr> SubtypeRegistry;
-typedef std::map<QByteArray, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
 
 class BodyPartFormatterBaseFactoryPrivate
 {
@@ -57,10 +48,15 @@ public:
 
     void setup();
     void messageviewer_create_builtin_bodypart_formatters();        //defined in bodypartformatter.cpp
-    void insert(const QByteArray &type, const QByteArray &subType, const Interface::BodyPartFormatter *formatter);
+    void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority = 0);
+    void appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter*> &formatters);
 
     BodyPartFormatterBaseFactory *q;
-    TypeRegistry all;
+    struct FormatterInfo {
+        const Interface::BodyPartFormatter* formatter = nullptr;
+        int priority = 0;
+    };
+    QHash<QString, std::vector<FormatterInfo>> registry;
 };
 }
 

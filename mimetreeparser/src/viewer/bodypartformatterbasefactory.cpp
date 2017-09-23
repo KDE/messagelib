@@ -35,6 +35,9 @@
 #include "bodypartformatterbasefactory_p.h"
 #include "mimetreeparser_debug.h"
 
+#include <QMimeDatabase>
+#include <QMimeType>
+
 #include <assert.h>
 
 using namespace MimeTreeParser;
@@ -46,30 +49,38 @@ BodyPartFormatterBaseFactoryPrivate::BodyPartFormatterBaseFactoryPrivate(BodyPar
 
 void BodyPartFormatterBaseFactoryPrivate::setup()
 {
-    if (all.empty()) {
+    if (registry.empty()) {
         messageviewer_create_builtin_bodypart_formatters();
         q->loadPlugins();
     }
-    assert(!all.empty());
+    assert(!registry.empty());
 }
 
-void BodyPartFormatterBaseFactoryPrivate::insert(const QByteArray &type, const QByteArray &subtype, const Interface::BodyPartFormatter *formatter)
+void BodyPartFormatterBaseFactoryPrivate::insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority)
 {
-    if (type.isEmpty() || subtype.isEmpty() || !formatter) {
+    if (mimeType.isEmpty() || !formatter)
         return;
-    }
 
-    TypeRegistry::iterator type_it = all.find(type);
-    if (type_it == all.end()) {
-        qCDebug(MIMETREEPARSER_LOG) << "BodyPartFormatterBaseFactory: instantiating new Subtype Registry for \""
-                                    << type << "\"";
-        type_it = all.insert(std::make_pair(type, SubtypeRegistry())).first;
-        assert(type_it != all.end());
-    }
+    QMimeDatabase db;
+    const auto mt = db.mimeTypeForName(mimeType);
+    FormatterInfo info;
+    info.formatter = formatter;
+    info.priority = priority;
 
-    SubtypeRegistry &subtype_reg = type_it->second;
+    auto &v = registry[mt.isValid() ? mt.name() : mimeType];
+    v.push_back(info);
+    std::stable_sort(v.begin(), v.end(), [](const FormatterInfo &lhs, const FormatterInfo &rhs) {
+        return lhs.priority > rhs.priority;
+    });
+}
 
-    subtype_reg.insert(std::make_pair(subtype, formatter));
+void BodyPartFormatterBaseFactoryPrivate::appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter*> &formatters)
+{
+    const auto it = registry.constFind(mimeType);
+    if (it == registry.constEnd())
+        return;
+    for (const auto &f : it.value())
+        formatters.push_back(f.formatter);
 }
 
 BodyPartFormatterBaseFactory::BodyPartFormatterBaseFactory()
@@ -82,35 +93,44 @@ BodyPartFormatterBaseFactory::~BodyPartFormatterBaseFactory()
     delete d;
 }
 
-void BodyPartFormatterBaseFactory::insert(const QByteArray &type, const QByteArray &subtype, const Interface::BodyPartFormatter *formatter)
+void BodyPartFormatterBaseFactory::insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority)
 {
-    d->insert(type, subtype, formatter);
+    d->insert(mimeType.toLower(), formatter, priority);
 }
 
-QVector<const Interface::BodyPartFormatter*> BodyPartFormatterBaseFactory::formattersForType(const QByteArray &type, const QByteArray &subtype) const
+QVector<const Interface::BodyPartFormatter*> BodyPartFormatterBaseFactory::formattersForType(const QString &mimeType) const
 {
     QVector<const Interface::BodyPartFormatter*> r;
     d->setup();
 
-    auto type_it = d->all.find(type);
-    if (type_it == d->all.end()) {
-        type_it = d->all.find("*");
+    QMimeDatabase db;
+    std::vector<QString> processedTypes;
+    processedTypes.push_back(mimeType.toLower());
+
+    // add all formatters we have along the mimetype hierarchy
+    for (std::size_t i = 0; i < processedTypes.size(); ++i) {
+        const auto mt = db.mimeTypeForName(processedTypes[i]);
+        if (mt.isValid())
+            processedTypes[i] = mt.name(); // resolve alias if necessary
+        if (processedTypes[i] == QLatin1String("application/octet-stream")) // we'll deal with that later
+            continue;
+        d->appendFormattersForType(processedTypes[i], r);
+
+        const auto parentTypes = mt.parentMimeTypes();
+        for (const auto &parentType : parentTypes) {
+            if (std::find(processedTypes.begin(), processedTypes.end(), parentType) != processedTypes.end())
+                continue;
+            processedTypes.push_back(parentType);
+        }
     }
-    assert(type_it != d->all.end()); // cannot happen, */* always exists
 
-    const auto &subtype_reg = type_it->second;
-    assert(!subtype_reg.empty()); // same
-
-    // exact match
-    auto range = subtype_reg.equal_range(subtype);
-    for (auto it = range.first; it != range.second; ++it)
-        r.push_back((*it).second);
-
-    // wildcard match
-    range = subtype_reg.equal_range("*");
-    for (auto it = range.first; it != range.second; ++it)
-        r.push_back((*it).second);
-
+    // make sure we always have a suitable fallback formatter
+    if (mimeType.startsWith(QLatin1String("multipart/"))) {
+        if (mimeType != QLatin1String("multipart/mixed"))
+            d->appendFormattersForType(QStringLiteral("multipart/mixed"), r);
+    } else {
+        d->appendFormattersForType(QStringLiteral("application/octet-stream"), r);
+    }
     assert(!r.empty());
     return r;
 }

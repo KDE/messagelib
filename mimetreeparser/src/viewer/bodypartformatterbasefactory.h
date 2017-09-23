@@ -58,10 +58,10 @@ public:
      *  The candidates are ordered by priority, with the catch-call
      *  formatter coming last.
      */
-    QVector<const Interface::BodyPartFormatter*> formattersForType(const QByteArray &type, const QByteArray &subtype) const;
+    QVector<const Interface::BodyPartFormatter*> formattersForType(const QString &mimeType) const;
 
 protected:
-    void insert(const QByteArray &type, const QByteArray &subType, const Interface::BodyPartFormatter *formatter);
+    void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority);
     virtual void loadPlugins();
 
 private:

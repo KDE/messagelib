@@ -73,22 +73,17 @@ void BodyPartFormatterFactory::loadPlugins()
         const MimeTreeParser::Interface::BodyPartFormatter *bfp = nullptr;
         for (int i = 0; (bfp = plugin->bodyPartFormatter(i)) && i < formatterData.size(); ++i) {
             const auto metaData = formatterData.at(i).toObject();
-            const auto type = metaData.value(QLatin1String("type")).toString().toUtf8();
-            if (type.isEmpty()) {
+            const auto mimetype = metaData.value(QLatin1String("mimetype")).toString();
+            if (mimetype.isEmpty()) {
                 qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << path
-                                             << "returned empty type specification for index"
+                                             << "returned empty mimetype specification for index"
                                              << i;
                 break;
             }
-            const auto subtype = metaData.value(QLatin1String("subtype")).toString().toUtf8();
-            if (subtype.isEmpty()) {
-                qCWarning(MESSAGEVIEWER_LOG) << "BodyPartFormatterFactory: plugin" << path
-                                             << "returned empty subtype specification for index"
-                                             << i;
-                break;
-            }
-            qCDebug(MESSAGEVIEWER_LOG) << "plugin for " << type << subtype;
-            insert(type, subtype, bfp);
+            // priority should always be higher than the built-in ones, otherwise what's the point?
+            const auto priority = metaData.value(QLatin1String("priority")).toInt() + 100;
+            qCDebug(MESSAGEVIEWER_LOG) << "plugin for " << mimetype << priority;
+            insert(mimetype, bfp, priority);
         }
 
         const MimeTreeParser::Interface::BodyPartURLHandler *handler = nullptr;

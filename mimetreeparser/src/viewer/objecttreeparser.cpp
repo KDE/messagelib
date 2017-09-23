@@ -198,10 +198,10 @@ MessagePartPtr ObjectTreeParser::parsedPart() const
     return mParsedPart;
 }
 
-bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet, bool onlyOneMimePart)
+bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mimeType, Interface::MessagePartPtr &mpRet, bool onlyOneMimePart)
 {
     bool bRendered = false;
-    const auto formatters = mSource->bodyPartFormatterFactory()->formattersForType(mediaType, subType);
+    const auto formatters = mSource->bodyPartFormatterFactory()->formattersForType(QString::fromUtf8(mimeType));
     for (auto formatter : formatters) {
         PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper);
         // Set the default display strategy for this body part relying on the
@@ -288,21 +288,19 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
 
         ProcessResult processResult(mNodeHelper);
 
-        QByteArray mediaType("text");
+        QByteArray mimeType("text/plain");
         QByteArray subType("plain");
-        if (node->contentType(false) && !node->contentType()->mediaType().isEmpty()
-            && !node->contentType()->subType().isEmpty()) {
-            mediaType = node->contentType()->mediaType();
-            subType = node->contentType()->subType();
+        if (node->contentType(false) && !node->contentType()->mimeType().isEmpty()) {
+            mimeType = node->contentType()->mimeType();
         }
 
         Interface::MessagePartPtr mp;
-        if (processType(node, processResult, mediaType, subType, mp, onlyOneMimePart)) {
+        if (processType(node, processResult, mimeType, mp, onlyOneMimePart)) {
             if (mp) {
                 parsedPart->appendSubPart(mp);
             }
         } else {
-            qCWarning(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mediaType << '/' << subType;
+            qCWarning(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mimeType;
             const auto mp = defaultHandling(node, processResult, onlyOneMimePart);
             if (mp) {
                 if (auto _mp = mp.dynamicCast<MessagePart>()) {
@@ -334,7 +332,7 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
             || node->contentType()->name().endsWith(QLatin1String("p7s"))
             || node->contentType()->name().endsWith(QLatin1String("p7c"))
             )
-        && processType(node, processResult, "application", "pkcs7-mime", mp, onlyOneMimePart)) {
+        && processType(node, processResult, "application/pkcs7-mime", mp, onlyOneMimePart)) {
         return mp;
     }
 
