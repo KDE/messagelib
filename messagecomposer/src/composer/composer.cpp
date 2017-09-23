@@ -126,7 +126,7 @@ void ComposerPrivate::composeStep1()
 
     // Create skeleton message (containing headers only; no content).
     SkeletonMessageJob *skeletonJob = new SkeletonMessageJob(infoPart, globalPart, q);
-    QObject::connect(skeletonJob, SIGNAL(finished(KJob *)), q, SLOT(skeletonJobFinished(KJob *)));
+    QObject::connect(skeletonJob, SIGNAL(finished(KJob*)), q, SLOT(skeletonJobFinished(KJob*)));
     q->addSubjob(skeletonJob);
     skeletonJob->start();
 }
@@ -176,7 +176,7 @@ void ComposerPrivate::composeStep2()
                     mainJob = multipartJob;
                 }
 
-                QObject::connect(mainJob, SIGNAL(finished(KJob *)), q, SLOT(contentJobFinished(KJob *)));
+                QObject::connect(mainJob, SIGNAL(finished(KJob*)), q, SLOT(contentJobFinished(KJob*)));
                 q->addSubjob(mainJob);
             }
         } else {
@@ -197,7 +197,7 @@ void ComposerPrivate::composeStep2()
                 }
                 mainJob = multipartJob;
             }
-            QObject::connect(mainJob, SIGNAL(finished(KJob *)), q, SLOT(contentJobFinished(KJob *)));
+            QObject::connect(mainJob, SIGNAL(finished(KJob*)), q, SLOT(contentJobFinished(KJob*)));
             q->addSubjob(mainJob);
         }
 
@@ -239,12 +239,12 @@ void ComposerPrivate::composeStep2()
 
     if (encrypt) {
         foreach (ContentJobBase *eJob, createEncryptJobs(mainJob, false)) {
-            QObject::connect(eJob, SIGNAL(finished(KJob *)), q, SLOT(contentJobFinished(KJob *)));
+            QObject::connect(eJob, SIGNAL(finished(KJob*)), q, SLOT(contentJobFinished(KJob*)));
             q->addSubjob(eJob);
             mainJob = eJob;         //start only last EncryptJob
         }
     } else {
-        QObject::connect(mainJob, SIGNAL(finished(KJob *)), q, SLOT(contentJobFinished(KJob *)));
+        QObject::connect(mainJob, SIGNAL(finished(KJob*)), q, SLOT(contentJobFinished(KJob*)));
         q->addSubjob(mainJob);
     }
 
@@ -418,7 +418,7 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime:
         }
     }
 
-    QObject::connect(multiJob, SIGNAL(finished(KJob *)), q, SLOT(attachmentsFinished(KJob *)));
+    QObject::connect(multiJob, SIGNAL(finished(KJob*)), q, SLOT(attachmentsFinished(KJob*)));
 
     q->addSubjob(multiJob);
     multiJob->start();

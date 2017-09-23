@@ -140,7 +140,7 @@ void Viewer::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMod
         d->setMessageItem(item, updateMode);
     } else {
         Akonadi::ItemFetchJob *job = createFetchJob(item);
-        connect(job, SIGNAL(result(KJob *)), d, SLOT(itemFetchResult(KJob *)));
+        connect(job, SIGNAL(result(KJob*)), d, SLOT(itemFetchResult(KJob*)));
         d->displaySplashPage(i18n("Loading message..."));
     }
 }
