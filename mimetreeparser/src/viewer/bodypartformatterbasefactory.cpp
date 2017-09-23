@@ -50,6 +50,7 @@ void BodyPartFormatterBaseFactoryPrivate::setup()
         messageviewer_create_builtin_bodypart_formatters();
         q->loadPlugins();
     }
+    assert(!all.empty());
 }
 
 void BodyPartFormatterBaseFactoryPrivate::insert(const QByteArray &type, const QByteArray &subtype, const Interface::BodyPartFormatter *formatter)
@@ -86,32 +87,32 @@ void BodyPartFormatterBaseFactory::insert(const QByteArray &type, const QByteArr
     d->insert(type, subtype, formatter);
 }
 
-const SubtypeRegistry &BodyPartFormatterBaseFactory::subtypeRegistry(const QByteArray &_type) const
+QVector<const Interface::BodyPartFormatter*> BodyPartFormatterBaseFactory::formattersForType(const QByteArray &type, const QByteArray &subtype) const
 {
-    auto type = _type;
-    if (type.isEmpty()) {
-        type = "*";    //krazy:exclude=doublequote_chars
-    }
-
+    QVector<const Interface::BodyPartFormatter*> r;
     d->setup();
-    static SubtypeRegistry emptyRegistry;
-    if (d->all.empty()) {
-        return emptyRegistry;
-    }
 
-    TypeRegistry::const_iterator type_it = d->all.find(type);
+    auto type_it = d->all.find(type);
     if (type_it == d->all.end()) {
         type_it = d->all.find("*");
     }
-    if (type_it == d->all.end()) {
-        return emptyRegistry;
-    }
+    assert(type_it != d->all.end()); // cannot happen, */* always exists
 
-    const SubtypeRegistry &subtype_reg = type_it->second;
-    if (subtype_reg.empty()) {
-        return emptyRegistry;
-    }
-    return subtype_reg;
+    const auto &subtype_reg = type_it->second;
+    assert(!subtype_reg.empty()); // same
+
+    // exact match
+    auto range = subtype_reg.equal_range(subtype);
+    for (auto it = range.first; it != range.second; ++it)
+        r.push_back((*it).second);
+
+    // wildcard match
+    range = subtype_reg.equal_range("*");
+    for (auto it = range.first; it != range.second; ++it)
+        r.push_back((*it).second);
+
+    assert(!r.empty());
+    return r;
 }
 
 void BodyPartFormatterBaseFactory::loadPlugins()

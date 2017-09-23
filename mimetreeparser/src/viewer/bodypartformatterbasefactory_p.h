@@ -34,8 +34,19 @@
 #ifndef __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_P_H__
 #define __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_P_H__
 
+#include <map>
+
 namespace MimeTreeParser {
 class BodyPartFormatterBaseFactory;
+
+struct ltstr {
+    bool operator()(const QByteArray &s1, const QByteArray &s2) const
+    {
+        return qstricmp(s1.constData(), s2.constData()) < 0;
+    }
+};
+
+typedef std::multimap<QByteArray, const Interface::BodyPartFormatter*, ltstr> SubtypeRegistry;
 typedef std::map<QByteArray, MimeTreeParser::SubtypeRegistry, MimeTreeParser::ltstr> TypeRegistry;
 
 class BodyPartFormatterBaseFactoryPrivate

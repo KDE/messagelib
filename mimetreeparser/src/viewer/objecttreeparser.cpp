@@ -201,13 +201,8 @@ MessagePartPtr ObjectTreeParser::parsedPart() const
 bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mediaType, const QByteArray &subType, Interface::MessagePartPtr &mpRet, bool onlyOneMimePart)
 {
     bool bRendered = false;
-    const auto sub = mSource->bodyPartFormatterFactory()->subtypeRegistry(mediaType);
-    auto range = sub.equal_range(subType);
-    for (auto it = range.first; it != range.second; ++it) {
-        const auto formatter = (*it).second;
-        if (!formatter) {
-            continue;
-        }
+    const auto formatters = mSource->bodyPartFormatterFactory()->formattersForType(mediaType, subType);
+    for (auto formatter : formatters) {
         PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper);
         // Set the default display strategy for this body part relying on the
         // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
@@ -303,10 +298,6 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
 
         Interface::MessagePartPtr mp;
         if (processType(node, processResult, mediaType, subType, mp, onlyOneMimePart)) {
-            if (mp) {
-                parsedPart->appendSubPart(mp);
-            }
-        } else if (processType(node, processResult, mediaType, "*", mp, onlyOneMimePart)) {
             if (mp) {
                 parsedPart->appendSubPart(mp);
             }

@@ -36,32 +36,29 @@
 
 #include "mimetreeparser_export.h"
 
-#include <map>
 #include <QByteArray>
+#include <QVector>
 
 namespace MimeTreeParser {
 namespace Interface {
 class BodyPartFormatter;
 }
 
-struct ltstr {
-    bool operator()(const QByteArray &s1, const QByteArray &s2) const
-    {
-        return qstricmp(s1.constData(), s2.constData()) < 0;
-    }
-};
-
-typedef std::multimap<QByteArray, const Interface::BodyPartFormatter*, ltstr> SubtypeRegistry;
-
 class BodyPartFormatterBaseFactoryPrivate;
 
+/** The place to obtain BodyPartFormatter candidates for a given mime type. */
 class MIMETREEPARSER_EXPORT BodyPartFormatterBaseFactory
 {
 public:
     BodyPartFormatterBaseFactory();
     virtual ~BodyPartFormatterBaseFactory();
 
-    const SubtypeRegistry &subtypeRegistry(const QByteArray &type) const;
+    /**
+     *  Returns all suitable formatters for the given mimetype.
+     *  The candidates are ordered by priority, with the catch-call
+     *  formatter coming last.
+     */
+    QVector<const Interface::BodyPartFormatter*> formattersForType(const QByteArray &type, const QByteArray &subtype) const;
 
 protected:
     void insert(const QByteArray &type, const QByteArray &subType, const Interface::BodyPartFormatter *formatter);
