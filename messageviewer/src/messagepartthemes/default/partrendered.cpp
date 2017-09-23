@@ -22,8 +22,6 @@
 #include "defaultrenderer.h"
 #include "defaultrenderer_p.h"
 #include "htmlblock.h"
-#include "autotests/util.h"
-#include "autotests/setupenv.h"
 
 #include "messagepartrenderermanager.h"
 
@@ -107,8 +105,6 @@ inline QString PartRendered::alignText()
 QVector<QSharedPointer<PartRendered> > PartRendered::renderSubParts(
     MimeTreeParser::MessagePart::Ptr mp)
 {
-    Test::CSSHelper testCSSHelper;
-
     QVector<QSharedPointer<PartRendered> > ret;
     foreach (const auto &_m, mp->subParts()) {
         CacheHtmlWriter cacheWriter;
