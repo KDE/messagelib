@@ -43,6 +43,7 @@
 
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
+#include "interfaces/htmlwriter.h"
 
 #include "viewer/bodypartformatterbasefactory.h"
 #include "viewer/bodypartformatterbasefactory_p.h"
@@ -52,6 +53,8 @@
 #include "viewer/messagepart.h"
 
 #include <KMime/Content>
+
+#include <QUrl>
 
 using namespace MimeTreeParser;
 
@@ -94,21 +97,43 @@ public:
         return AsIcon;
     }
 
-    // unhide the overload with three arguments
-    using MimeTreeParser::Interface::BodyPartFormatter::format;
-
-    void adaptProcessResult(ProcessResult &result) const override
-    {
-        result.setNeverDisplayInline(false);
-        result.setIsImage(true);
-    }
-
     static const MimeTreeParser::Interface::BodyPartFormatter *create()
     {
         if (!self) {
             self = new ImageTypeBodyPartFormatter();
         }
         return self;
+    }
+
+    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override
+    {
+        KMime::Content *node = part.content();
+        auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, true, part.source()->decryptMessage()));
+        mp->setIsImage(true);
+        part.processResult()->setInlineSignatureState(mp->signatureState());
+        part.processResult()->setInlineEncryptionState(mp->encryptionState());
+
+        auto preferredMode = part.source()->preferredMode();
+        bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
+        if (node->parent() && node->parent()->contentType()->subType() == "related" && isHtmlPreferred && !part.objectTreeParser()->showOnlyOneMimePart()) {
+            QString fileName = part.nodeHelper()->writeNodeToTempFile(node);
+            QString href = QUrl::fromLocalFile(fileName).url();
+            QByteArray cid = node->contentID()->identifier();
+            if (part.objectTreeParser()->htmlWriter()) {
+                part.objectTreeParser()->htmlWriter()->embedPart(cid, href);
+            }
+            part.nodeHelper()->setNodeDisplayedEmbedded(node, true);
+            part.nodeHelper()->setNodeDisplayedHidden(node, true);
+            return mp;
+        }
+
+        // Show it inline if showOnlyOneMimePart(), which means the user clicked the image
+        // in the message structure viewer manually, and therefore wants to see the full image
+        if (part.objectTreeParser()->showOnlyOneMimePart() && !part.processResult()->neverDisplayInline()) {
+            part.nodeHelper()->setNodeDisplayedEmbedded(node, true);
+        }
+
+        return mp;
     }
 };
 

@@ -341,29 +341,6 @@ Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *no
     _mp->setNeverDisplayInline(result.neverDisplayInline());
     _mp->setIsImage(result.isImage());
     mp = _mp;
-
-    // always show images in multipart/related when showing in html, not with an additional icon
-    auto preferredMode = mSource->preferredMode();
-    bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
-    if (result.isImage() && node->parent()
-        && node->parent()->contentType()->subType() == "related" && isHtmlPreferred && !onlyOneMimePart) {
-        QString fileName = mNodeHelper->writeNodeToTempFile(node);
-        QString href = QUrl::fromLocalFile(fileName).url();
-        QByteArray cid = node->contentID()->identifier();
-        if (htmlWriter()) {
-            htmlWriter()->embedPart(cid, href);
-        }
-        nodeHelper()->setNodeDisplayedEmbedded(node, true);
-        mNodeHelper->setNodeDisplayedHidden(node, true);
-        return mp;
-    }
-
-    // Show it inline if showOnlyOneMimePart(), which means the user clicked the image
-    // in the message structure viewer manually, and therefore wants to see the full image
-    if (result.isImage() && onlyOneMimePart && !result.neverDisplayInline()) {
-        mNodeHelper->setNodeDisplayedEmbedded(node, true);
-    }
-
     return mp;
 }
 
