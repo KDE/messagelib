@@ -90,7 +90,7 @@ void SearchCollectionIndexingWarning::setCollection(const Akonadi::Collection &c
     // First retrieve the top-level collections
     Akonadi::CollectionFetchJob *fetch = fetchCollections(cols, false);
     fetch->setProperty("recursiveQuery", attr->isRecursive());
-    connect(fetch, SIGNAL(finished(KJob*)), this, SLOT(queryRootCollectionFetchFinished(KJob*)));
+    connect(fetch, &Akonadi::CollectionFetchJob::finished, this, &SearchCollectionIndexingWarning::queryRootCollectionFetchFinished);
 }
 
 void SearchCollectionIndexingWarning::queryRootCollectionFetchFinished(KJob *job)
