@@ -50,53 +50,53 @@ private Q_SLOTS:
     {
         TestFactory fac;
         auto l = fac.formattersForType(QStringLiteral("application/octet-stream"));
-        QCOMPARE(l.size(), 1);
-        const auto application_octet_stream_f = l.at(0);
+        QCOMPARE(l.size(), 2);
+        const auto application_octet_stream_f = l.at(1);
         QVERIFY(application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("application/pgp-encrypted"));
-        QCOMPARE(l.size(), 4);
+        QCOMPARE(l.size(), 5);
         QVERIFY(l.at(0) != application_octet_stream_f);
-        QCOMPARE(l.at(3), application_octet_stream_f);
+        QCOMPARE(l.at(4), application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("application/unknown"));
-        QCOMPARE(l.size(), 1);
-        QCOMPARE(l.at(0), application_octet_stream_f);
+        QCOMPARE(l.size(), 2);
+        QCOMPARE(l.at(1), application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("text/plain"));
-        QCOMPARE(l.size(), 3);
+        QCOMPARE(l.size(), 4);
         const auto text_plain_f1 = l.at(0);
         const auto text_plain_f2 = l.at(1);
         QVERIFY(text_plain_f1);
         QVERIFY(text_plain_f2);
         QVERIFY(text_plain_f1 != text_plain_f2);
-        QCOMPARE(l.at(2), application_octet_stream_f);
+        QCOMPARE(l.at(3), application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("text/calendar"));
-        QCOMPARE(l.size(), 4);
+        QCOMPARE(l.size(), 5);
         QVERIFY(fac.textCalFormatter);
         QCOMPARE(l.at(0), fac.textCalFormatter);
         QCOMPARE(l.at(1), text_plain_f1);
         QCOMPARE(l.at(2), text_plain_f2);
-        QCOMPARE(l.at(3), application_octet_stream_f);
+        QCOMPARE(l.at(4), application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("text/x-vcalendar"));
-        QCOMPARE(l.size(), 4);
+        QCOMPARE(l.size(), 5);
         QCOMPARE(l.at(0), fac.textCalFormatter);
         l = fac.formattersForType(QStringLiteral("TEXT/X-VCALENDAR"));
-        QCOMPARE(l.size(), 4);
+        QCOMPARE(l.size(), 5);
         QCOMPARE(l.at(0), fac.textCalFormatter);
 
         l = fac.formattersForType(QStringLiteral("text/html"));
-        QCOMPARE(l.size(), 4);
+        QCOMPARE(l.size(), 5);
         QCOMPARE(l.at(1), text_plain_f1);
         QCOMPARE(l.at(2), text_plain_f2);
-        QCOMPARE(l.at(3), application_octet_stream_f);
+        QCOMPARE(l.at(4), application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("text/rtf"));
-        QCOMPARE(l.size(), 4);
+        QCOMPARE(l.size(), 5);
         QCOMPARE(l.at(0), application_octet_stream_f);
-        QCOMPARE(l.at(3), application_octet_stream_f);
+        QCOMPARE(l.at(4), application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("multipart/mixed"));
         QCOMPARE(l.size(), 1);
@@ -113,19 +113,19 @@ private Q_SLOTS:
         QCOMPARE(l.at(1), multipart_mixed_f);
 
         l = fac.formattersForType(QStringLiteral("image/png"));
+        QCOMPARE(l.size(), 3);
+        QCOMPARE(l.at(2), application_octet_stream_f);
+
+        l = fac.formattersForType(QStringLiteral("vendor/random"));
         QCOMPARE(l.size(), 2);
         QCOMPARE(l.at(1), application_octet_stream_f);
 
-        l = fac.formattersForType(QStringLiteral("vendor/random"));
-        QCOMPARE(l.size(), 1);
-        QCOMPARE(l.at(0), application_octet_stream_f);
-
         l = fac.formattersForType(QStringLiteral("message/rfc822"));
-        QCOMPARE(l.size(), 4);
-        QCOMPARE(l.at(3), application_octet_stream_f);
+        QCOMPARE(l.size(), 5);
+        QCOMPARE(l.at(4), application_octet_stream_f);
 
         l = fac.formattersForType(QStringLiteral("message/news"));
-        QCOMPARE(l.size(), 3); // ### news does not inherit rfc822
+        QCOMPARE(l.size(), 4); // ### news does not inherit rfc822
     }
 };
 

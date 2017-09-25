@@ -188,10 +188,12 @@ typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
 
 void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
 {
-    insert(QStringLiteral("application/octet-stream"), AnyTypeBodyPartFormatter::create());
     insert(QStringLiteral("application/pkcs7-mime"), ApplicationPkcs7MimeBodyPartFormatter::create());
     insert(QStringLiteral("application/x-pkcs7-mime"), ApplicationPkcs7MimeBodyPartFormatter::create());
     insert(QStringLiteral("application/pgp-encrypted"), ApplicationPGPEncryptedBodyPartFormatter::create());
+
+    insert(QStringLiteral("application/octet-stream"), ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert(QStringLiteral("application/octet-stream"), AnyTypeBodyPartFormatter::create());
 
     insert(QStringLiteral("text/html"), TextHtmlBodyPartFormatter::create());
     insert(QStringLiteral("text/rtf"), AnyTypeBodyPartFormatter::create());

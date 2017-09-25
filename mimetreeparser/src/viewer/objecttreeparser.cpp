@@ -323,25 +323,12 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
 
 Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result, bool onlyOneMimePart)
 {
-    Interface::MessagePart::Ptr mp;
-    ProcessResult processResult(mNodeHelper);
-
-    if (node->contentType()->mimeType() == QByteArrayLiteral("application/octet-stream")
-        && (node->contentType()->name().endsWith(QLatin1String("p7m"))
-            || node->contentType()->name().endsWith(QLatin1String("p7s"))
-            || node->contentType()->name().endsWith(QLatin1String("p7c"))
-            )
-        && processType(node, processResult, "application/pkcs7-mime", mp, onlyOneMimePart)) {
-        return mp;
-    }
-
     const auto _mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(this, node, false, true, mSource->decryptMessage()));
     result.setInlineSignatureState(_mp->signatureState());
     result.setInlineEncryptionState(_mp->encryptionState());
     _mp->setNeverDisplayInline(result.neverDisplayInline());
     _mp->setIsImage(result.isImage());
-    mp = _mp;
-    return mp;
+    return _mp;
 }
 
 KMMsgSignatureState ProcessResult::inlineSignatureState() const
