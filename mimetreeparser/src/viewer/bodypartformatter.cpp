@@ -69,12 +69,16 @@ public:
         return AsIcon;
     }
 
-    // unhide the overload with three arguments
-    using MimeTreeParser::Interface::BodyPartFormatter::format;
-
-    void adaptProcessResult(ProcessResult &result) const override
+    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
-        result.setNeverDisplayInline(true);
+        KMime::Content *node = part.content();
+        const auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, true, part.source()->decryptMessage()));
+        part.processResult()->setInlineSignatureState(mp->signatureState());
+        part.processResult()->setInlineEncryptionState(mp->encryptionState());
+        part.processResult()->setNeverDisplayInline(true);
+        mp->setNeverDisplayInline(true);
+        mp->setIsImage(false);
+        return mp;
     }
 
     static const MimeTreeParser::Interface::BodyPartFormatter *create()

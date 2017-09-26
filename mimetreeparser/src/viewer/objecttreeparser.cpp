@@ -221,12 +221,14 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
             bRendered = true;
             break;
         } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
+            Q_ASSERT(mimeType != "application/octet-stream"); // can't happen, the above branch will be taken for that
             const auto r = formatter->format(&part, result->htmlWriter());
             if (r == Interface::BodyPartFormatter::AsIcon) {
                 processResult.setNeverDisplayInline(true);
                 formatter->adaptProcessResult(processResult);
                 mNodeHelper->setNodeDisplayedEmbedded(node, false);
-                const Interface::MessagePart::Ptr mp = defaultHandling(node, processResult, onlyOneMimePart);
+                Interface::MessagePart::Ptr mp;
+                processType(node, processResult, QByteArrayLiteral("application/octet-stream"), mp, onlyOneMimePart);
                 if (mp) {
                     if (auto _mp = mp.dynamicCast<MessagePart>()) {
                         _mp->setAttachmentFlag(node);
