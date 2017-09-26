@@ -220,7 +220,7 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
             mpRet = result;
             bRendered = true;
             break;
-        } else if (dynamic_cast<MimeTreeParser::Interface::MessagePart *>(result.data())) {
+        } else {
             Q_ASSERT(mimeType != "application/octet-stream"); // can't happen, the above branch will be taken for that
             const auto r = formatter->format(&part, result->htmlWriter());
             if (r == Interface::BodyPartFormatter::AsIcon) {
@@ -242,8 +242,6 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
                 bRendered = true;
                 break;
             }
-            continue;
-        } else {
             continue;
         }
     }
