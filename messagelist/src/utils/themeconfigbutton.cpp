@@ -69,8 +69,8 @@ ThemeConfigButton::ThemeConfigButton(QWidget *parent, const ThemeComboBox *theme
 
     //Keep theme combo up-to-date with any changes made in the configure dialog.
     if (d->mThemeComboBox != nullptr) {
-        connect(this, SIGNAL(configureDialogCompleted()),
-                d->mThemeComboBox, SLOT(slotLoadThemes()));
+        connect(this, &ThemeConfigButton::configureDialogCompleted,
+                d->mThemeComboBox, &ThemeComboBox::slotLoadThemes);
     }
     setEnabled(Manager::instance());
 }

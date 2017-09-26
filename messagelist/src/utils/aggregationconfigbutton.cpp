@@ -54,8 +54,8 @@ AggregationConfigButton::AggregationConfigButton(QWidget *parent, const Aggregat
 
     // Keep aggregation combo up-to-date with any changes made in the configure dialog.
     if (d->mAggregationComboBox != nullptr) {
-        connect(this, SIGNAL(configureDialogCompleted()),
-                d->mAggregationComboBox, SLOT(slotLoadAggregations()));
+        connect(this, &AggregationConfigButton::configureDialogCompleted,
+                d->mAggregationComboBox, &AggregationComboBox::slotLoadAggregations);
     }
     setEnabled(Manager::instance());
 }

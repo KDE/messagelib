@@ -54,6 +54,7 @@ public:
 
 public Q_SLOTS:
     void selectDefault();
+    void slotLoadAggregations();
 
 private:
     AggregationComboBoxPrivate *const d;

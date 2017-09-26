@@ -104,6 +104,11 @@ void ThemeComboBox::selectDefault()
     }
 }
 
+void ThemeComboBox::slotLoadThemes()
+{
+    d->slotLoadThemes();
+}
+
 void ThemeComboBoxPrivate::slotLoadThemes()
 {
     if (!Manager::instance()) {

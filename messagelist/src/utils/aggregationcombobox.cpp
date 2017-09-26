@@ -108,6 +108,11 @@ void AggregationComboBox::selectDefault()
     }
 }
 
+void AggregationComboBox::slotLoadAggregations()
+{
+    d->slotLoadAggregations();
+}
+
 void AggregationComboBoxPrivate::slotLoadAggregations()
 {
     if (!Manager::instance()) {

@@ -53,6 +53,7 @@ public:
     void readStorageModelConfig(MessageList::Core::StorageModel *storageModel, bool &isPrivateSetting);
 
 public Q_SLOTS:
+    void slotLoadThemes();
     void selectDefault();
 
 private:
