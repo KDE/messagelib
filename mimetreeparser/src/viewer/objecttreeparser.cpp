@@ -198,10 +198,10 @@ MessagePartPtr ObjectTreeParser::parsedPart() const
     return mParsedPart;
 }
 
-bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mimeType, Interface::MessagePartPtr &mpRet, bool onlyOneMimePart)
+Interface::MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mimeType, bool onlyOneMimePart)
 {
-    bool bRendered = false;
     const auto formatters = mSource->bodyPartFormatterFactory()->formattersForType(QString::fromUtf8(mimeType));
+    Q_ASSERT(!formatters.empty());
     for (auto formatter : formatters) {
         PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper);
         // Set the default display strategy for this body part relying on the
@@ -217,35 +217,29 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
 
         if (const auto mp = result.dynamicCast<MessagePart>()) {
             mp->setAttachmentFlag(node);
-            mpRet = result;
-            bRendered = true;
-            break;
+            return result;
         } else {
             Q_ASSERT(mimeType != "application/octet-stream"); // can't happen, the above branch will be taken for that
             const auto r = formatter->format(&part, result->htmlWriter());
             if (r == Interface::BodyPartFormatter::AsIcon) {
                 processResult.setNeverDisplayInline(true);
                 mNodeHelper->setNodeDisplayedEmbedded(node, false);
-                Interface::MessagePart::Ptr mp;
-                processType(node, processResult, QByteArrayLiteral("application/octet-stream"), mp, onlyOneMimePart);
+                auto mp = processType(node, processResult, QByteArrayLiteral("application/octet-stream"), onlyOneMimePart);
                 if (mp) {
                     if (auto _mp = mp.dynamicCast<MessagePart>()) {
                         _mp->setAttachmentFlag(node);
                     }
-                    mpRet = mp;
                 }
-                bRendered = true;
-                break;
+                return mp;
             } else if (r == Interface::BodyPartFormatter::Ok) {
                 processResult.setNeverDisplayInline(true);
-                mpRet = result;
-                bRendered = true;
-                break;
+                return result;
             }
-            continue;
         }
     }
-    return bRendered;
+
+    Q_UNREACHABLE();
+    return {};
 }
 
 MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node, bool onlyOneMimePart)
@@ -291,21 +285,9 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
             mimeType = node->contentType()->mimeType();
         }
 
-        Interface::MessagePartPtr mp;
-        if (processType(node, processResult, mimeType, mp, onlyOneMimePart)) {
-            if (mp) {
-                parsedPart->appendSubPart(mp);
-            }
-        } else {
-            qCWarning(MIMETREEPARSER_LOG) << "THIS SHOULD NO LONGER HAPPEN:" << mimeType;
-            const auto mp = defaultHandling(node, processResult, onlyOneMimePart);
-            if (mp) {
-                if (auto _mp = mp.dynamicCast<MessagePart>()) {
-                    _mp->setAttachmentFlag(node);
-                }
-                parsedPart->appendSubPart(mp);
-            }
-        }
+        const auto mp = processType(node, processResult, mimeType, onlyOneMimePart);
+        Q_ASSERT(mp);
+        parsedPart->appendSubPart(mp);
         mNodeHelper->setNodeProcessed(node, false);
 
         // adjust signed/encrypted flags if inline PGP was found
@@ -317,16 +299,6 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
     }
 
     return parsedPart;
-}
-
-Interface::MessagePart::Ptr ObjectTreeParser::defaultHandling(KMime::Content *node, ProcessResult &result, bool onlyOneMimePart)
-{
-    const auto _mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(this, node, false, true, mSource->decryptMessage()));
-    result.setInlineSignatureState(_mp->signatureState());
-    result.setInlineEncryptionState(_mp->encryptionState());
-    _mp->setNeverDisplayInline(result.neverDisplayInline());
-    _mp->setIsImage(result.isImage());
-    return _mp;
 }
 
 KMMsgSignatureState ProcessResult::inlineSignatureState() const

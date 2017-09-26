@@ -337,10 +337,7 @@ private:
     * top-level content.
     */
     MessagePartPtr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
-    bool processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mimeType, Interface::MessagePartPtr &mpRet,
-                     bool onlyOneMimePart);
-
-    Interface::MessagePartPtr defaultHandling(KMime::Content *node, MimeTreeParser::ProcessResult &result, bool onlyOneMimePart);
+    Interface::MessagePartPtr processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mimeType, bool onlyOneMimePart);
 
 private:
 
