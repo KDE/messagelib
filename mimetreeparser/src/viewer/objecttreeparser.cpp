@@ -225,7 +225,6 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
             const auto r = formatter->format(&part, result->htmlWriter());
             if (r == Interface::BodyPartFormatter::AsIcon) {
                 processResult.setNeverDisplayInline(true);
-                formatter->adaptProcessResult(processResult);
                 mNodeHelper->setNodeDisplayedEmbedded(node, false);
                 Interface::MessagePart::Ptr mp;
                 processType(node, processResult, QByteArrayLiteral("application/octet-stream"), mp, onlyOneMimePart);
@@ -239,7 +238,6 @@ bool ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processR
                 break;
             } else if (r == Interface::BodyPartFormatter::Ok) {
                 processResult.setNeverDisplayInline(true);
-                formatter->adaptProcessResult(processResult);
                 mpRet = result;
                 bRendered = true;
                 break;

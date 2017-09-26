@@ -105,11 +105,6 @@ public:
     */
     virtual Result format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const;
 
-    virtual void adaptProcessResult(ProcessResult &result) const
-    {
-        Q_UNUSED(result);
-    }
-
     virtual MessagePart::Ptr process(BodyPart &part) const;
 };
 
