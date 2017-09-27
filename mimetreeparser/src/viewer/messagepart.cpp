@@ -432,9 +432,11 @@ IconType AttachmentMessagePart::asIcon() const
 
 bool AttachmentMessagePart::isHidden() const
 {
+    if (mOtp->showOnlyOneMimePart())
+        return false; // never hide when only showing one part, otherwise you'll see nothing
+
     const AttachmentStrategy *const as = mOtp->attachmentStrategy();
     const bool defaultHidden(as && as->defaultDisplay(mNode) == AttachmentStrategy::None);
-    const bool showOnlyOneMimePart(mOtp->showOnlyOneMimePart());
     auto preferredMode = source()->preferredMode();
     bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
 
@@ -453,9 +455,6 @@ bool AttachmentMessagePart::isHidden() const
             defaultAsIcon = as->defaultDisplay(mNode) == AttachmentStrategy::AsIcon;
         }
     }
-    if (isImage() && showOnlyOneMimePart && !neverDisplayInline()) {
-        defaultAsIcon = false;
-    }
 
     // neither image nor text -> show as icon
     if (!isImage() && !isTextPart) {
@@ -464,14 +463,14 @@ bool AttachmentMessagePart::isHidden() const
 
     bool hidden(false);
     if (isTextPart) {
-        hidden = defaultHidden && !showOnlyOneMimePart;
+        hidden = defaultHidden;
     } else {
         if (isImage() && isHtmlPreferred
             && mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
             hidden = true;
         } else {
-            hidden = defaultHidden && !showOnlyOneMimePart && mNode->parent();
-            hidden |= defaultAsIcon && (defaultHidden || showOnlyOneMimePart);
+            hidden = defaultHidden && mNode->parent();
+            hidden |= defaultAsIcon && defaultHidden;
         }
     }
     mOtp->nodeHelper()->setNodeDisplayedHidden(mNode, hidden);
