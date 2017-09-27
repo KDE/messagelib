@@ -372,11 +372,9 @@ IconType AttachmentMessagePart::asIcon() const
     bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
 
     QByteArray mediaType("text");
-    QByteArray subType("plain");
     if (mNode->contentType(false) && !mNode->contentType()->mediaType().isEmpty()
         && !mNode->contentType()->subType().isEmpty()) {
         mediaType = mNode->contentType()->mediaType();
-        subType = mNode->contentType()->subType();
     }
     const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
 
@@ -431,11 +429,9 @@ bool AttachmentMessagePart::isHidden() const
     bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
 
     QByteArray mediaType("text");
-    QByteArray subType("plain");
     if (mNode->contentType(false) && !mNode->contentType()->mediaType().isEmpty()
         && !mNode->contentType()->subType().isEmpty()) {
         mediaType = mNode->contentType()->mediaType();
-        subType = mNode->contentType()->subType();
     }
     const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
 
