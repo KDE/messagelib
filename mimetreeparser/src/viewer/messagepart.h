@@ -90,7 +90,6 @@ public:
 
     /* only a function that should be removed if the refactoring is over */
     virtual void fix() const;
-    virtual void copyContentFrom() const;
 
     void appendSubPart(const Interface::MessagePart::Ptr &messagePart);
     const QVector<Interface::MessagePart::Ptr> &subParts() const;
@@ -260,7 +259,6 @@ public:
     QList<Util::HtmlMode> availableModes();
 
     void fix() const override;
-    void copyContentFrom() const override;
 private:
     KMime::Content *mNode;
 
@@ -303,7 +301,6 @@ public:
 
     QString text() const override;
 
-    void copyContentFrom() const override;
     void fix() const override;
 private:
     const KMime::Message::Ptr mMessage;

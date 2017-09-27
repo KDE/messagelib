@@ -148,16 +148,6 @@ QString MessagePart::renderInternalText() const
     return text;
 }
 
-void MessagePart::copyContentFrom() const
-{
-    foreach (const auto &mp, subParts()) {
-        const auto m = mp.dynamicCast<MessagePart>();
-        if (m) {
-            m->copyContentFrom();
-        }
-    }
-}
-
 void MessagePart::fix() const
 {
     foreach (const auto &mp, subParts()) {
@@ -631,18 +621,6 @@ void AlternativeMessagePart::fix() const
     const auto mode = preferredMode();
     if (mode != Util::MultipartPlain && mChildParts.contains(mode)) {
         mChildParts[mode]->fix();
-    }
-}
-
-void AlternativeMessagePart::copyContentFrom() const
-{
-    if (mChildParts.contains(Util::MultipartPlain)) {
-        mChildParts[Util::MultipartPlain]->copyContentFrom();
-    }
-
-    const auto mode = preferredMode();
-    if (mode != Util::MultipartPlain && mChildParts.contains(mode)) {
-        mChildParts[mode]->copyContentFrom();
     }
 }
 
@@ -1311,10 +1289,6 @@ EncapsulatedRfc822MessagePart::~EncapsulatedRfc822MessagePart()
 QString EncapsulatedRfc822MessagePart::text() const
 {
     return renderInternalText();
-}
-
-void EncapsulatedRfc822MessagePart::copyContentFrom() const
-{
 }
 
 void EncapsulatedRfc822MessagePart::fix() const
