@@ -29,8 +29,6 @@ class TextHtmlBodyPartFormatter : public Interface::BodyPartFormatter
     static const TextHtmlBodyPartFormatter *self;
 public:
     Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override;
-    Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const override;
-    using Interface::BodyPartFormatter::format;
     static const Interface::BodyPartFormatter *create();
 };
 }

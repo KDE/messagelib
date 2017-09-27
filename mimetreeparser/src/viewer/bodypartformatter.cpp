@@ -63,12 +63,6 @@ class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartForma
 {
     static const AnyTypeBodyPartFormatter *self;
 public:
-    Result format(Interface::BodyPart *, HtmlWriter *) const override
-    {
-        qCDebug(MIMETREEPARSER_LOG) << "Acting as a Interface::BodyPartFormatter!";
-        return AsIcon;
-    }
-
     Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
         KMime::Content *node = part.content();
@@ -96,11 +90,6 @@ class ImageTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFor
 {
     static const ImageTypeBodyPartFormatter *self;
 public:
-    Result format(Interface::BodyPart *, HtmlWriter *) const override
-    {
-        return AsIcon;
-    }
-
     static const MimeTreeParser::Interface::BodyPartFormatter *create()
     {
         if (!self) {
@@ -148,8 +137,6 @@ class MessageRfc822BodyPartFormatter : public MimeTreeParser::Interface::BodyPar
     static const MessageRfc822BodyPartFormatter *self;
 public:
     Interface::MessagePart::Ptr process(Interface::BodyPart &) const override;
-    MimeTreeParser::Interface::BodyPartFormatter::Result format(Interface::BodyPart *, HtmlWriter *) const override;
-    using MimeTreeParser::Interface::BodyPartFormatter::format;
     static const MimeTreeParser::Interface::BodyPartFormatter *create();
 };
 
@@ -169,25 +156,6 @@ Interface::MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::B
     return MessagePart::Ptr(new EncapsulatedRfc822MessagePart(part.objectTreeParser(), part.content(), message));
 }
 
-Interface::BodyPartFormatter::Result MessageRfc822BodyPartFormatter::format(Interface::BodyPart *part, HtmlWriter *writer) const
-{
-    Q_UNUSED(writer)
-    const ObjectTreeParser *otp = part->objectTreeParser();
-    const auto p = process(*part);
-    const auto mp = static_cast<MessagePart *>(p.data());
-    if (mp) {
-        if (!otp->attachmentStrategy()->inlineNestedMessages() && !otp->showOnlyOneMimePart()) {
-            return Failed;
-        } else {
-            mp->html(true);
-            return Ok;
-        }
-    } else {
-        return Failed;
-    }
-}
-
-typedef TextPlainBodyPartFormatter ApplicationPgpBodyPartFormatter;
 } // anon namespace
 
 void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()

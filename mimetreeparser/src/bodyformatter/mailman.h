@@ -29,7 +29,6 @@ class MailmanBodyPartFormatter : public Interface::BodyPartFormatter
     static const MailmanBodyPartFormatter *self;
 public:
     Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override;
-    using Interface::BodyPartFormatter::format;
     static const Interface::BodyPartFormatter *create();
 
 private:
