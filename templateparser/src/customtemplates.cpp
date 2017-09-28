@@ -18,6 +18,7 @@
  */
 
 #include "customtemplates.h"
+#include "templateparser/templatesinsertcommand.h"
 #include "customtemplates_kfg.h"
 #include "globalsettings_templateparser.h"
 #include "ui_customtemplates_base.h"
@@ -60,7 +61,7 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
 
     connect(mUi->mName, &KLineEdit::returnPressed, this, &CustomTemplates::slotAddClicked);
 
-    connect(mUi->mInsertCommand, SIGNAL(insertCommand(QString,int)), this, SLOT(slotInsertCommand(QString,int)));
+    connect(mUi->mInsertCommand, QOverload<const QString &,int>::of(&TemplateParser::TemplatesInsertCommand::insertCommand), this, &CustomTemplates::slotInsertCommand);
 
     connect(mUi->mAdd, &QPushButton::clicked, this, &CustomTemplates::slotAddClicked);
     connect(mUi->mRemove, &QPushButton::clicked, this, &CustomTemplates::slotRemoveClicked);

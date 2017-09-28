@@ -57,7 +57,7 @@ void AttachmentUpdateJob::Private::doStart()
         return;
     }
     MessageCore::AttachmentFromUrlBaseJob *job = MessageCore::AttachmentFromUrlUtils::createAttachmentJob(mOriginalPart->url(), q);
-    connect(job, SIGNAL(result(KJob*)), q, SLOT(loadJobResult(KJob*)));
+    connect(job, &AttachmentFromUrlBaseJob::result, q, [this](KJob *job) { loadJobResult(job); });
     job->start();
 }
 
