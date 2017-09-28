@@ -128,14 +128,13 @@ protected:
 private:
     void dataFromFields();
     void fieldsFromData();
+    void slotAddRecipient(const QString &);
     RecipientComboBox *mCombo = nullptr;
     RecipientLineEdit *mEdit = nullptr;
     int mRecipientsCount;
     bool mModified;
     QSharedPointer<Recipient> mData;
 
-private Q_SLOTS:
-    void slotAddRecipient(const QString &);
 };
 }
 

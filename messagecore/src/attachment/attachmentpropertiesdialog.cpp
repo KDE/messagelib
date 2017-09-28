@@ -122,7 +122,7 @@ void AttachmentPropertiesDialog::Private::polishUi()
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     }
     q->connect(buttonBox->button(QDialogButtonBox::Help), &QAbstractButton::clicked, q, &AttachmentPropertiesDialog::slotHelp);
-    q->connect(buttonBox, SIGNAL(accepted()), q, SLOT(accept()));
+    q->connect(buttonBox, &QDialogButtonBox::accepted, q, &QDialog::accept);
     q->connect(buttonBox, &QDialogButtonBox::rejected, q, &QDialog::reject);
     mainLayout->addWidget(buttonBox);
     populateWhatsThis();
