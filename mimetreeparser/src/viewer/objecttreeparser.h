@@ -383,10 +383,8 @@ private:
     friend class MessagePart;
     friend class EncryptedMessagePart;
     friend class SignedMessagePart;
-    friend class EncapsulatedRfc822MessagePart;
     friend class TextMessagePart;
     friend class HtmlMessagePart;
-    friend class TextPlainBodyPartFormatter;
     friend class MultiPartSignedBodyPartFormatter;
     friend class ApplicationPkcs7MimeBodyPartFormatter;
 };

@@ -975,7 +975,7 @@ void SignedMessagePart::setVerificationResult(const CryptoBodyPartMemento *m, KM
         if (mNode) {
             mOtp->nodeHelper()->setSignatureState(mNode, KMMsgFullySigned);
             if (!textNode) {
-                mOtp->mNodeHelper->setPartMetaData(mNode, mMetaData);
+                mOtp->nodeHelper()->setPartMetaData(mNode, mMetaData);
 
                 if (!mVerifiedText.isEmpty()) {
                     auto tempNode = new KMime::Content();
@@ -985,7 +985,7 @@ void SignedMessagePart::setVerificationResult(const CryptoBodyPartMemento *m, KM
                     if (!tempNode->head().isEmpty()) {
                         tempNode->contentDescription()->from7BitString("signed data");
                     }
-                    mOtp->mNodeHelper->attachExtraContent(mNode, tempNode);
+                    mOtp->nodeHelper()->attachExtraContent(mNode, tempNode);
 
                     parseInternal(tempNode, false);
                 }
@@ -1229,7 +1229,7 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
     }
 
     if (mNode && !mMetaData.isSigned) {
-        mOtp->mNodeHelper->setPartMetaData(mNode, mMetaData);
+        mOtp->nodeHelper()->setPartMetaData(mNode, mMetaData);
 
         if (decryptMessage()) {
             auto tempNode = new KMime::Content();
@@ -1239,7 +1239,7 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
             if (!tempNode->head().isEmpty()) {
                 tempNode->contentDescription()->from7BitString("encrypted data");
             }
-            mOtp->mNodeHelper->attachExtraContent(mNode, tempNode);
+            mOtp->nodeHelper()->attachExtraContent(mNode, tempNode);
 
             parseInternal(tempNode, false);
         }
