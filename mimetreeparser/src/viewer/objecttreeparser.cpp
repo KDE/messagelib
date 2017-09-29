@@ -186,7 +186,7 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
         if (htmlWriter()) {
             const auto renderer = mSource->messagePartTheme(mParsedPart);
             if (renderer) {
-                mHtmlWriter->queue(renderer->html());
+                htmlWriter()->queue(renderer->html());
             }
         }
     }
