@@ -19,7 +19,7 @@ find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
 set(AKONADIMIME_LIB_VERSION "5.6.40")
 
-set(QT_REQUIRED_VERSION "5.7.0")
+set(QT_REQUIRED_VERSION "5.8.0")
 
 set(AKONADI_VERSION "5.6.40")
 set(GRANTLEETHEME_LIB_VERSION "5.6.40")
@@ -37,7 +37,6 @@ set(LIBKLEO_LIB_VERSION "5.6.40")
 set(PIMCOMMON_LIB_VERSION "5.6.41")
 set(GPGME_LIB_VERSION "1.8.0")
 set(AKONADI_CONTACT_VERSION "5.6.40")
-
 
 
 if (${MIMETREEPARSER_ONLY_BUILD})
@@ -108,7 +107,11 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
    find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
    find_package(KF5SendLater ${KDEPIM_APPS_LIB_VERSION} CONFIG REQUIRED)
 
+<<<<<<< HEAD
    find_package(KF5AkonadiSearch "5.6.40" CONFIG REQUIRED)
+=======
+   find_package(KF5AkonadiSearch "5.6.2" CONFIG REQUIRED)
+>>>>>>> origin/Applications/17.08
    set_package_properties(KF5AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "http://www.kde.org" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
 
 endif()
