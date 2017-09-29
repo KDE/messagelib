@@ -119,17 +119,6 @@ Interface::ObjectTreeSource *MessagePart::source() const
     return mOtp->mSource;
 }
 
-HtmlWriter *MessagePart::htmlWriter() const
-{
-    Q_ASSERT(mOtp);
-    return mOtp->htmlWriter();
-}
-
-void MessagePart::setHtmlWriter(HtmlWriter *htmlWriter) const
-{
-    mOtp->mHtmlWriter = htmlWriter;
-}
-
 void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     auto subMessagePart = mOtp->parseObjectTreeInternal(node, onlyOneMimePart);
@@ -172,6 +161,41 @@ const QVector<Interface::MessagePart::Ptr> &MessagePart::subParts() const
 bool MessagePart::hasSubParts() const
 {
     return !mBlocks.isEmpty();
+}
+
+//-----LegacyMessagePart--------------------
+class LegacyHtmlWriter : public HtmlWriter
+{
+public:
+    void begin(const QString&) override {}
+    void end() override {}
+    void extraHead(const QString&) override {}
+    void embedPart(const QByteArray&, const QString&) override {}
+    void flush() override {}
+    void queue(const QString &str) override { text += str; }
+    void write(const QString &html) override { text += html; }
+    void reset() override {}
+
+    QString text;
+};
+
+LegacyPluginMessagePart::LegacyPluginMessagePart()
+    : m_htmlWriter(new LegacyHtmlWriter)
+{
+}
+
+LegacyPluginMessagePart::~LegacyPluginMessagePart()
+{
+}
+
+HtmlWriter* LegacyPluginMessagePart::htmlWriter() const
+{
+    return m_htmlWriter.get();
+}
+
+QString LegacyPluginMessagePart::formatOutput() const
+{
+    return static_cast<LegacyHtmlWriter*>(m_htmlWriter.get())->text;
 }
 
 //-----MessagePartList----------------------

@@ -33,7 +33,7 @@
 #include "bodypartformatter.h"
 
 #include "bodypart.h"
-#include "htmlwriter/queuehtmlwriter.h"
+#include "viewer/messagepart.h"
 #include "viewer/objecttreeparser.h"
 
 using namespace MimeTreeParser::Interface;
@@ -43,58 +43,20 @@ namespace Interface {
 class MessagePartPrivate
 {
 public:
-    MessagePartPrivate(const BodyPart *part)
-        : mHtmlWriter(nullptr)
-        , mPart(part)
-        , mParentPart(nullptr)
-        , mCreatedWriter(false)
-    {
-    }
-
-    ~MessagePartPrivate()
-    {
-        if (mCreatedWriter) {
-            delete mHtmlWriter;
-        }
-    }
-
-    MimeTreeParser::HtmlWriter *htmlWriter()
-    {
-        if (!mHtmlWriter && mPart) {
-            mHtmlWriter = mPart->objectTreeParser()->htmlWriter();
-        }
-        return mHtmlWriter;
-    }
-
-    MimeTreeParser::HtmlWriter *mHtmlWriter = nullptr;
-    const BodyPart *mPart = nullptr;
     MessagePart *mParentPart = nullptr;
-    bool mCreatedWriter;
 };
 }
 }
 
 MessagePart::MessagePart()
     : QObject()
-    , d(new MessagePartPrivate(nullptr))
-{
-}
-
-MessagePart::MessagePart(const BodyPart &part)
-    : QObject()
-    , d(new MessagePartPrivate(&part))
+    , d(new MessagePartPrivate)
 {
 }
 
 MessagePart::~MessagePart()
 {
     delete d;
-}
-
-void MessagePart::html(bool decorate)
-{
-    Q_UNUSED(decorate);
-    static_cast<QueueHtmlWriter *>(d->mHtmlWriter)->replay();
 }
 
 QString MessagePart::text() const
@@ -122,18 +84,6 @@ QString MessagePart::plaintextContent() const
     return text();
 }
 
-MimeTreeParser::HtmlWriter *MessagePart::htmlWriter() const
-{
-    return d->htmlWriter();
-}
-
-void MessagePart::setHtmlWriter(MimeTreeParser::HtmlWriter *htmlWriter) const
-{
-    if (d->mHtmlWriter) {
-        d->mHtmlWriter = htmlWriter;
-    }
-}
-
 BodyPartFormatter::Result BodyPartFormatter::format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const
 {
     Q_UNUSED(part);
@@ -141,11 +91,9 @@ BodyPartFormatter::Result BodyPartFormatter::format(BodyPart *part, MimeTreePars
     return Failed;
 }
 
-MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) const
+MessagePart::Ptr BodyPartFormatter::process(BodyPart&) const
 {
-    auto mp = MessagePart::Ptr(new MessagePart(part));
-    mp->setHtmlWriter(new QueueHtmlWriter(mp->htmlWriter()));
-    mp->d->mCreatedWriter = true;
+    auto mp = MessagePart::Ptr(new LegacyPluginMessagePart);
     return mp;
 }
 

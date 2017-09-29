@@ -34,6 +34,8 @@
 #include <QString>
 #include <QSharedPointer>
 
+#include <memory>
+
 class QTextCodec;
 class PartPrivate;
 class TextPartRendered;
@@ -95,9 +97,6 @@ public:
     const QVector<Interface::MessagePart::Ptr> &subParts() const;
     bool hasSubParts() const;
 
-    HtmlWriter *htmlWriter() const override;
-    void setHtmlWriter(HtmlWriter *htmlWriter) const override;
-
     Interface::ObjectTreeSource *source() const;
     KMime::Content *attachmentNode() const;
 
@@ -114,6 +113,21 @@ private:
 
     KMime::Content *mAttachmentNode = nullptr;
     bool mRoot;
+};
+
+// TODO remove once all plugins are ported away from BPF::format()
+class MIMETREEPARSER_DEPRECATED_EXPORT LegacyPluginMessagePart : public Interface::MessagePart
+{
+    Q_OBJECT
+public:
+    LegacyPluginMessagePart();
+    ~LegacyPluginMessagePart();
+
+    HtmlWriter *htmlWriter() const;
+    QString formatOutput() const;
+
+private:
+    std::unique_ptr<HtmlWriter> m_htmlWriter;
 };
 
 class MIMETREEPARSER_EXPORT MimeMessagePart : public MessagePart

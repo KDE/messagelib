@@ -35,7 +35,6 @@
 #include "messagepartrenderermanager.h"
 
 #include <MimeTreeParser/HtmlWriter>
-#include <MimeTreeParser/QueueHtmlWriter>
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <GrantleeTheme/QtResourceTemplateLoader>
@@ -403,18 +402,8 @@ Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
 
 void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
 {
-    foreach (const auto &_m, msgPart->subParts()) {
-        const auto m = _m.dynamicCast<MessagePart>();
-        if (m) {
-            htmlWriter->queue(renderFactory(m, htmlWriter));
-        } else {
-            auto hw = dynamic_cast<MimeTreeParser::QueueHtmlWriter *>(_m->htmlWriter());
-            if (hw) {
-                hw->setBase(htmlWriter.data());
-                _m->html(false);
-            }
-        }
-    }
+    foreach (const auto &m, msgPart->subParts())
+        htmlWriter->queue(renderFactory(m, htmlWriter));
 }
 
 QString DefaultRendererPrivate::render(const MessagePartList::Ptr &mp)
@@ -433,9 +422,7 @@ QString DefaultRendererPrivate::render(const MessagePartList::Ptr &mp)
                 = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
         }
 
-        mp->setHtmlWriter(htmlWriter.data());
         renderSubParts(mp, htmlWriter);
-        mp->setHtmlWriter(mOldWriter);
     }
 
     return htmlWriter->html;
@@ -1063,22 +1050,12 @@ QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr 
         if (mp) {
             return render(mp);
         }
+    } else if (auto mp = msgPart.dynamicCast<LegacyPluginMessagePart>()) {
+        return mp->formatOutput();
     }
 
-    qCDebug(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
+    qCWarning(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
                                << className;
-
-    auto _htmlWriter = htmlWriter;
-    if (!_htmlWriter) {
-        _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-    }
-    msgPart->setHtmlWriter(_htmlWriter.data());
-    msgPart->html(false);
-    msgPart->setHtmlWriter(mOldWriter);
-    if (!htmlWriter) {
-        return _htmlWriter->html;
-    }
-
     return QString();
 }
 

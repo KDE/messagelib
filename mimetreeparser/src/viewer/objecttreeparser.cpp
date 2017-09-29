@@ -214,12 +214,9 @@ Interface::MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, Pr
             continue;
         }
 
-        if (const auto mp = result.dynamicCast<MessagePart>()) {
-            mp->setAttachmentFlag(node);
-            return result;
-        } else {
-            Q_ASSERT(mimeType != "application/octet-stream"); // can't happen, the above branch will be taken for that
-            const auto r = formatter->format(&part, result->htmlWriter());
+        // ### legacy BFP::format() handling, can be removed once all plugins are ported away from that
+        if (const auto legacyPart = result.dynamicCast<LegacyPluginMessagePart>()) {
+            const auto r = formatter->format(&part, legacyPart->htmlWriter());
             if (r == Interface::BodyPartFormatter::AsIcon) {
                 processResult.setNeverDisplayInline(true);
                 mNodeHelper->setNodeDisplayedEmbedded(node, false);
@@ -234,6 +231,10 @@ Interface::MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, Pr
                 processResult.setNeverDisplayInline(true);
                 return result;
             }
+        } else {
+            if (auto mp = result.dynamicCast<MessagePart>())
+                mp->setAttachmentFlag(node);
+            return result;
         }
     }
 
