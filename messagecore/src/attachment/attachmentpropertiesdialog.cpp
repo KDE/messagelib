@@ -108,7 +108,7 @@ void AttachmentPropertiesDialog::Private::polishUi()
     QDialogButtonBox *buttonBox = nullptr;
 
     if (mReadOnly) {
-        buttonBox = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Close);
+        buttonBox = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Close, q);
     } else {
         // Update the icon when the selected mime type changes.
 
@@ -116,7 +116,7 @@ void AttachmentPropertiesDialog::Private::polishUi()
                 q, SLOT(mimeTypeChanged(QString)));
         populateMimeTypes();
         populateEncodings();
-        buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help);
+        buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help, q);
         QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setDefault(true);
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
