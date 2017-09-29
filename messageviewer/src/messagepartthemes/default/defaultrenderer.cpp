@@ -365,9 +365,9 @@ public:
     MimeTreeParser::HtmlWriter *mBaseWriter = nullptr;
 };
 
-DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory)
+DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory)
     : mMsgPart(msgPart)
-    , mOldWriter(msgPart->htmlWriter())
+    , mOldWriter(writer)
     , mCSSHelper(cssHelper)
     , mRendererFactory(rendererFactory)
 {
@@ -1082,8 +1082,8 @@ QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr 
     return QString();
 }
 
-DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper)
-    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper, MessagePartRendererFactory::instance()))
+DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, MimeTreeParser::HtmlWriter *writer)
+    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper, writer, MessagePartRendererFactory::instance()))
 {
 }
 
