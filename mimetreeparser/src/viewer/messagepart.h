@@ -117,7 +117,7 @@ private:
 };
 
 // TODO remove once all plugins are ported away from BPF::format()
-class MIMETREEPARSER_DEPRECATED_EXPORT LegacyPluginMessagePart : public Interface::MessagePart
+class MIMETREEPARSER_DEPRECATED_EXPORT LegacyPluginMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
