@@ -40,10 +40,8 @@ WebEnginePartHtmlWriter::~WebEnginePartHtmlWriter()
 {
 }
 
-void WebEnginePartHtmlWriter::begin(const QString &css)
+void WebEnginePartHtmlWriter::begin()
 {
-    // The stylesheet is now included CSSHelper::htmlHead()
-    Q_UNUSED(css);
     if (mState != Ended) {
         qCWarning(MESSAGEVIEWER_LOG) << "begin() called on non-ended session!";
         reset();
@@ -88,17 +86,6 @@ void WebEnginePartHtmlWriter::write(const QString &str)
         qCWarning(MESSAGEVIEWER_LOG) << "Called in Ended or Queued state!";
     }
     mHtml.append(str);
-}
-
-void WebEnginePartHtmlWriter::queue(const QString &str)
-{
-    write(str);
-}
-
-void WebEnginePartHtmlWriter::flush()
-{
-    mState = Begun; // don't run into end()'s warning
-    end();
 }
 
 void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId, const QString &contentURL)

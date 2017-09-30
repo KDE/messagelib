@@ -320,9 +320,9 @@ public:
     {
     }
 
-    void begin(const QString &text) override
+    void begin() override
     {
-        mBaseWriter->begin(text);
+        mBaseWriter->begin();
     }
 
     void write(const QString &str) override
@@ -338,16 +338,6 @@ public:
     void reset() override
     {
         mBaseWriter->reset();
-    }
-
-    void queue(const QString &str) override
-    {
-        html.append(str);
-    }
-
-    void flush() override
-    {
-        mBaseWriter->flush();
     }
 
     void embedPart(const QByteArray &contentId, const QString &url) override
@@ -395,7 +385,7 @@ Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
 void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
 {
     foreach (const auto &m, msgPart->subParts())
-        htmlWriter->queue(renderFactory(m, htmlWriter));
+        htmlWriter->write(renderFactory(m, htmlWriter));
 }
 
 QString DefaultRendererPrivate::render(const MessagePartList::Ptr &mp)
@@ -471,7 +461,7 @@ QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr 
                 = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
         const auto html = t->render(&c);
-        htmlWriter->queue(html);
+        htmlWriter->write(html);
     }
     return htmlWriter->html;
 }
@@ -523,7 +513,7 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
                 = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
         const auto html = t->render(&c);
-        htmlWriter->queue(html);
+        htmlWriter->write(html);
     }
     return htmlWriter->html;
 }
@@ -842,7 +832,7 @@ QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
                     = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(),
                                                              mp->attachmentContent()));
             }
-            htmlWriter->queue(renderSigned(mp));
+            htmlWriter->write(renderSigned(mp));
         }
         return htmlWriter->html;
     }
@@ -857,7 +847,7 @@ QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
         } else if (!metaData.inProgress) {
             auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
             if (part) {
-                htmlWriter->queue(part->html());
+                htmlWriter->write(part->html());
             }
         }
     }
@@ -877,7 +867,7 @@ QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
                     = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(),
                                                              mp->attachmentContent()));
             }
-            htmlWriter->queue(renderEncrypted(mp));
+            htmlWriter->write(renderEncrypted(mp));
         }
         return htmlWriter->html;
     }
@@ -894,7 +884,7 @@ QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
         } else if (!metaData.inProgress) {
             auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
             if (part) {
-                htmlWriter->queue(part->html());
+                htmlWriter->write(part->html());
             }
         }
     }
@@ -925,7 +915,7 @@ QString DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp)
             part = mp->mChildParts[mode];
         }
 
-        htmlWriter->queue(render(part));
+        htmlWriter->write(render(part));
     }
     return htmlWriter->html;
 }
@@ -965,7 +955,7 @@ QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
                 = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
         const auto html = t->render(&c);
-        htmlWriter->queue(html);
+        htmlWriter->write(html);
     }
     return htmlWriter->html;
 }

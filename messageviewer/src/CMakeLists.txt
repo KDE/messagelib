@@ -138,10 +138,6 @@ set(libmessageviewer_htmlwriter_webengine_SRCS
     htmlwriter/webengineembedpart.cpp
     )
 
-set(libmessageviewer_htmlwriter_SRCS
-    htmlwriter/teehtmlwriter.cpp
-    )
-
 set(libmessageviewer_antispam_SRCS
     antispam/spamheaderanalyzer.cpp
     antispam/antispamconfig.cpp
@@ -185,7 +181,6 @@ set(libmessageviewer_SRCS
     ${libmessageviewer_scamdetection_SRCS}
     ${libmessageviewer_findbar_SRCS}
     ${libmessageviewer_utils_SRCS}
-    ${libmessageviewer_htmlwriter_SRCS}
     ${libmessageviewer_antispam_SRCS}
     ${libmessageviewer_job_SRCS}
     ${libmessageviewer_viewerplugins_SRCS}

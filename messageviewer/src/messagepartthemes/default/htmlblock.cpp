@@ -75,14 +75,14 @@ AttachmentMarkBlock::~AttachmentMarkBlock()
 void AttachmentMarkBlock::internalEnter()
 {
     if (mWriter) {
-        mWriter->queue(enter());
+        mWriter->write(enter());
     }
 }
 
 void AttachmentMarkBlock::internalExit()
 {
     if (mWriter) {
-        mWriter->queue(exit());
+        mWriter->write(exit());
     }
 }
 
@@ -113,14 +113,14 @@ RootBlock::~RootBlock()
 void RootBlock::internalEnter()
 {
     if (mWriter) {
-        mWriter->queue(enter());
+        mWriter->write(enter());
     }
 }
 
 void RootBlock::internalExit()
 {
     if (mWriter) {
-        mWriter->queue(exit());
+        mWriter->write(exit());
     }
 }
 

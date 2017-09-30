@@ -19,7 +19,6 @@
   with this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
-//#define MESSAGEVIEWER_READER_HTML_DEBUG 1
 #include "viewer_p.h"
 #include "viewer.h"
 
@@ -45,10 +44,6 @@
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KContacts/VCardConverter>
 #include "htmlwriter/webengineembedpart.h"
-#ifdef MESSAGEVIEWER_READER_HTML_DEBUG
-#include <MimeMessagePart/FileHtmlWriter>
-#include "htmlwriter/teehtmlwriter.h"
-#endif
 #include <PimCommon/NetworkUtil>
 #include <unistd.h> // link()
 //KDE includes
@@ -905,8 +900,8 @@ void ViewerPrivate::displayMessage()
         setDisplayFormatMessageOverwrite(attr->messageFormat());
     }
 
-    htmlWriter()->begin(QString());
-    htmlWriter()->queue(mCSSHelper->htmlHead(mUseFixedFont));
+    htmlWriter()->begin();
+    htmlWriter()->write(mCSSHelper->htmlHead(mUseFixedFont));
 
     if (!mMainWindow) {
         q->setWindowTitle(mMessage->subject()->asUnicodeString());
@@ -926,7 +921,7 @@ void ViewerPrivate::displayMessage()
             mBackgroundError = scheme.background(KColorScheme::NegativeBackground).color();
         }
 
-        htmlWriter()->queue(QStringLiteral(
+        htmlWriter()->write(QStringLiteral(
                                 "<div style=\"background:%1;color:%2;border:1px solid %3\">%4</div>").arg(
                                 mBackgroundError.
                                 name(),
@@ -936,7 +931,7 @@ void ViewerPrivate::displayMessage()
                                 mForegroundError
                                 .
                                 name(), attr->message().toHtmlEscaped()));
-        htmlWriter()->queue(QStringLiteral("<p></p>"));
+        htmlWriter()->write(QStringLiteral("<p></p>"));
     }
 
     parseContent(mMessage.data());
@@ -945,7 +940,7 @@ void ViewerPrivate::displayMessage()
 #endif
     mColorBar->update();
 
-    htmlWriter()->queue(QStringLiteral("</body></html>"));
+    htmlWriter()->write(QStringLiteral("</body></html>"));
     connect(mViewer, &MailWebEngineView::loadFinished, this,
             &ViewerPrivate::executeCustomScriptsAfterLoading, Qt::UniqueConnection);
     connect(
@@ -958,7 +953,7 @@ void ViewerPrivate::displayMessage()
                                                                                                  "attachmentInjectionPoint"));
     mViewer->addScript(js, QStringLiteral("attachment_injection"), QWebEngineScript::DocumentReady);
 
-    htmlWriter()->flush();
+    htmlWriter()->end();
 }
 
 void ViewerPrivate::collectionFetchedForStoringDecryptedMessage(KJob *job)
@@ -1070,7 +1065,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
 
     KMime::Message *message = dynamic_cast<KMime::Message *>(content);
     if (message) {
-        htmlWriter()->queue(writeMsgHeader(message, hasVCard ? vCardContent : nullptr, true));
+        htmlWriter()->write(writeMsgHeader(message, hasVCard ? vCardContent : nullptr, true));
     }
 
     // Pass control to the OTP now, which does the real work
@@ -1150,12 +1145,7 @@ void ViewerPrivate::initHtmlWidget()
 {
     if (!htmlWriter()) {
         mPartHtmlWriter = new WebEnginePartHtmlWriter(mViewer, nullptr);
-#ifdef MESSAGEVIEWER_READER_HTML_DEBUG
-        mHtmlWriter = new TeeHtmlWriter(new FileHtmlWriter(QString()),
-                                        mPartHtmlWriter);
-#else
         mHtmlWriter = mPartHtmlWriter;
-#endif
     }
     connect(mViewer->page(), &QWebEnginePage::linkHovered,
             this, &ViewerPrivate::slotUrlOn);
@@ -1458,13 +1448,13 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
             }
         }
 
-        htmlWriter()->begin(QString());
-        htmlWriter()->queue(mCSSHelper->htmlHead(mUseFixedFont));
+        htmlWriter()->begin();
+        htmlWriter()->write(mCSSHelper->htmlHead(mUseFixedFont));
 
         parseContent(node);
 
-        htmlWriter()->queue(QStringLiteral("</body></html>"));
-        htmlWriter()->flush();
+        htmlWriter()->write(QStringLiteral("</body></html>"));
+        htmlWriter()->end();
     }
 }
 
@@ -2354,7 +2344,7 @@ void ViewerPrivate::updateReaderWin()
 #ifndef QT_NO_TREEVIEW
         mMimePartTree->hide();
 #endif
-        htmlWriter()->begin(QString());
+        htmlWriter()->begin();
         htmlWriter()->write(mCSSHelper->htmlHead(mUseFixedFont) + QLatin1String("</body></html>"));
         htmlWriter()->end();
     }

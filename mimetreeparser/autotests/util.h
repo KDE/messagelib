@@ -31,28 +31,16 @@ public:
     {
     }
 
-    void begin(const QString &) override
+    void begin() override
     {
     }
 
-    void write(const QString &) override
+    void write(const QString &str) override
     {
+        html += str;
     }
 
     void end() override
-    {
-    }
-
-    void reset() override
-    {
-    }
-
-    void queue(const QString &str) override
-    {
-        html.append(str);
-    }
-
-    void flush() override
     {
     }
 

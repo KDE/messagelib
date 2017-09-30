@@ -36,7 +36,7 @@ public:
     {
     }
 
-    void begin(const QString &) override
+    void begin() override
     {
     }
 
@@ -45,18 +45,6 @@ public:
     }
 
     void end() override
-    {
-    }
-
-    void reset() override
-    {
-    }
-
-    void queue(const QString &) override
-    {
-    }
-
-    void flush() override
     {
     }
 

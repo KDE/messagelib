@@ -47,15 +47,14 @@ public:
     explicit FileHtmlWriter(const QString &filename);
     virtual ~FileHtmlWriter();
 
-    void begin(const QString &cssDefs) override;
+    void begin() override;
     void end() override;
     void reset() override;
     void write(const QString &str) override;
-    void queue(const QString &str) override;
-    void flush() override;
     void embedPart(const QByteArray &contentId, const QString &url) override;
     void extraHead(const QString &str) override;
 private:
+    void flush();
     void openOrWarn();
 
 private:

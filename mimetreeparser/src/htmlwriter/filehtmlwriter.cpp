@@ -49,12 +49,9 @@ FileHtmlWriter::~FileHtmlWriter()
     }
 }
 
-void FileHtmlWriter::begin(const QString &css)
+void FileHtmlWriter::begin()
 {
     openOrWarn();
-    if (!css.isEmpty()) {
-        write(QLatin1String("<!-- CSS Definitions \n") + css + QLatin1String("-->\n"));
-    }
 }
 
 void FileHtmlWriter::end()
@@ -75,12 +72,6 @@ void FileHtmlWriter::reset()
 void FileHtmlWriter::write(const QString &str)
 {
     mStream << str;
-    flush();
-}
-
-void FileHtmlWriter::queue(const QString &str)
-{
-    write(str);
 }
 
 void FileHtmlWriter::flush()

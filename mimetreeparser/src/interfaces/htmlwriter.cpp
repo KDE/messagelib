@@ -30,10 +30,10 @@
 
 #include "htmlwriter.h"
 
-MimeTreeParser::Interface::HtmlWriter::~HtmlWriter()
+MimeTreeParser::HtmlWriter::~HtmlWriter()
 {
 }
 
-MimeTreeParser::HtmlWriter::~HtmlWriter()
+void MimeTreeParser::HtmlWriter::reset()
 {
 }

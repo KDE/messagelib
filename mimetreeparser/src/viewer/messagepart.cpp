@@ -208,14 +208,11 @@ bool MessagePart::hasSubParts() const
 class LegacyHtmlWriter : public HtmlWriter
 {
 public:
-    void begin(const QString&) override {}
+    void begin() override {}
     void end() override {}
     void extraHead(const QString&) override {}
     void embedPart(const QByteArray&, const QString&) override {}
-    void flush() override {}
-    void queue(const QString &str) override { text += str; }
     void write(const QString &html) override { text += html; }
-    void reset() override {}
 
     QString text;
 };

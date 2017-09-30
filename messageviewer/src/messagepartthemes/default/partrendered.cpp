@@ -48,7 +48,7 @@ public:
     {
     }
 
-    void begin(const QString &text) override
+    void begin() override
     {
     }
 
@@ -58,19 +58,6 @@ public:
     }
 
     void end() override
-    {
-    }
-
-    void reset() override
-    {
-    }
-
-    void queue(const QString &str) override
-    {
-        html.append(str);
-    }
-
-    void flush() override
     {
     }
 
@@ -109,7 +96,7 @@ QVector<QSharedPointer<PartRendered> > PartRendered::renderSubParts(
     foreach (const auto &_m, mp->subParts()) {
         CacheHtmlWriter cacheWriter;
         DefaultRenderer::Ptr renderer = mp->source()->messagePartTheme(_m);
-        cacheWriter.queue(renderer->html());
+        cacheWriter.write(renderer->html());
         ret.append(QSharedPointer<WrapperPartRendered>(new WrapperPartRendered(&cacheWriter)));
     }
     return ret;
