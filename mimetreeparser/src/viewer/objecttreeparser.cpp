@@ -268,7 +268,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
     if (contents.isEmpty()) {
         contents.append(node);
     }
-    int i = contents.indexOf(const_cast<KMime::Content *>(node));
+    int i = contents.indexOf(node);
     for (; i < contents.size(); ++i) {
         node = contents.at(i);
         if (mNodeHelper->nodeProcessed(node)) {
