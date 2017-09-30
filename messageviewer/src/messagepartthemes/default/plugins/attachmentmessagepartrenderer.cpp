@@ -48,7 +48,7 @@ const
         return QSharedPointer<PartRendered>();
     }
 
-    KMime::Content *node = mp->mNode;
+    KMime::Content *node = mp->content();
     NodeHelper *nodeHelper = mp->mOtp->nodeHelper();
 
     if (mp->isHidden()) {

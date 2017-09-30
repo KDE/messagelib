@@ -57,6 +57,7 @@ class MessagePartPrivate
 public:
     MessagePart *mParentPart = nullptr;
     QVector<MessagePart::Ptr> mBlocks;
+    KMime::Content *mNode = nullptr;
     KMime::Content *mAttachmentNode = nullptr;
     QString mText;
     PartMetaData mMetaData;
@@ -98,17 +99,27 @@ PartMetaData *MessagePart::partMetaData() const
     return &d->mMetaData;
 }
 
-void MessagePart::setAttachmentFlag(KMime::Content *node)
+KMime::Content *MessagePart::content() const
+{
+    return d->mNode;
+}
+
+void MessagePart::setContent(KMime::Content *node)
+{
+    d->mNode = node;
+}
+
+KMime::Content* MessagePart::attachmentContent() const
+{
+    return d->mAttachmentNode;
+}
+
+void MessagePart::setAttachmentContent(KMime::Content *node)
 {
     d->mAttachmentNode = node;
 }
 
 bool MessagePart::isAttachment() const
-{
-    return d->mAttachmentNode;
-}
-
-KMime::Content *MessagePart::attachmentNode() const
 {
     return d->mAttachmentNode;
 }
@@ -258,18 +269,18 @@ QString MessagePartList::htmlContent() const
 
 TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage)
     : MessagePartList(otp)
-    , mNode(node)
     , mDrawFrame(drawFrame)
     , mShowLink(showLink)
     , mDecryptMessage(decryptMessage)
     , mIsHidden(false)
 {
-    if (!mNode) {
+    if (!node) {
         qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
     }
 
-    mIsHidden = mOtp->nodeHelper()->isNodeDisplayedHidden(mNode);
+    setContent(node);
+    mIsHidden = mOtp->nodeHelper()->isNodeDisplayedHidden(node);
 
     parseContent();
 }
@@ -285,11 +296,11 @@ bool TextMessagePart::decryptMessage() const
 
 void TextMessagePart::parseContent()
 {
-    const auto aCodec = mOtp->codecFor(mNode);
-    const QString &fromAddress = mOtp->nodeHelper()->fromAsString(mNode);
+    const auto aCodec = mOtp->codecFor(content());
+    const QString &fromAddress = mOtp->nodeHelper()->fromAsString(content());
     mSignatureState = KMMsgNotSigned;
     mEncryptionState = KMMsgNotEncrypted;
-    const auto blocks = prepareMessageForDecryption(mNode->decodedContent());
+    const auto blocks = prepareMessageForDecryption(content()->decodedContent());
 
     const auto cryptProto = QGpgME::openpgp();
 
@@ -421,22 +432,22 @@ void AttachmentMessagePart::setIsImage(bool image)
 IconType AttachmentMessagePart::asIcon() const
 {
     const AttachmentStrategy *const as = mOtp->attachmentStrategy();
-    const bool defaultHidden(as && as->defaultDisplay(mNode) == AttachmentStrategy::None);
+    const bool defaultHidden(as && as->defaultDisplay(content()) == AttachmentStrategy::None);
     const bool showOnlyOneMimePart(mOtp->showOnlyOneMimePart());
     auto preferredMode = source()->preferredMode();
     bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
 
     QByteArray mediaType("text");
-    if (mNode->contentType(false) && !mNode->contentType()->mediaType().isEmpty()
-        && !mNode->contentType()->subType().isEmpty()) {
-        mediaType = mNode->contentType()->mediaType();
+    if (content()->contentType(false) && !content()->contentType()->mediaType().isEmpty()
+        && !content()->contentType()->subType().isEmpty()) {
+        mediaType = content()->contentType()->mediaType();
     }
     const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
 
     bool defaultAsIcon = true;
     if (!neverDisplayInline()) {
         if (as) {
-            defaultAsIcon = as->defaultDisplay(mNode) == AttachmentStrategy::AsIcon;
+            defaultAsIcon = as->defaultDisplay(content()) == AttachmentStrategy::AsIcon;
         }
     }
     if (isImage() && showOnlyOneMimePart && !neverDisplayInline()) {
@@ -449,17 +460,17 @@ IconType AttachmentMessagePart::asIcon() const
     }
 
     if (isTextPart) {
-        if (as && as->defaultDisplay(mNode) != AttachmentStrategy::Inline) {
+        if (as && as->defaultDisplay(content()) != AttachmentStrategy::Inline) {
             return MimeTreeParser::IconExternal;
         }
         return MimeTreeParser::NoIcon;
     } else {
         if (isImage() && isHtmlPreferred
-            && mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
+            && content()->parent() && content()->parent()->contentType()->subType() == "related") {
             return MimeTreeParser::IconInline;
         }
 
-        if (defaultHidden && !showOnlyOneMimePart && mNode->parent()) {
+        if (defaultHidden && !showOnlyOneMimePart && content()->parent()) {
             return MimeTreeParser::IconInline;
         }
 
@@ -479,21 +490,21 @@ bool AttachmentMessagePart::isHidden() const
         return false; // never hide when only showing one part, otherwise you'll see nothing
 
     const AttachmentStrategy *const as = mOtp->attachmentStrategy();
-    const bool defaultHidden(as && as->defaultDisplay(mNode) == AttachmentStrategy::None);
+    const bool defaultHidden(as && as->defaultDisplay(content()) == AttachmentStrategy::None);
     auto preferredMode = source()->preferredMode();
     bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
 
     QByteArray mediaType("text");
-    if (mNode->contentType(false) && !mNode->contentType()->mediaType().isEmpty()
-        && !mNode->contentType()->subType().isEmpty()) {
-        mediaType = mNode->contentType()->mediaType();
+    if (content()->contentType(false) && !content()->contentType()->mediaType().isEmpty()
+        && !content()->contentType()->subType().isEmpty()) {
+        mediaType = content()->contentType()->mediaType();
     }
     const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
 
     bool defaultAsIcon = true;
     if (!neverDisplayInline()) {
         if (as) {
-            defaultAsIcon = as->defaultDisplay(mNode) == AttachmentStrategy::AsIcon;
+            defaultAsIcon = as->defaultDisplay(content()) == AttachmentStrategy::AsIcon;
         }
     }
 
@@ -507,14 +518,14 @@ bool AttachmentMessagePart::isHidden() const
         hidden = defaultHidden;
     } else {
         if (isImage() && isHtmlPreferred
-            && mNode->parent() && mNode->parent()->contentType()->subType() == "related") {
+            && content()->parent() && content()->parent()->contentType()->subType() == "related") {
             hidden = true;
         } else {
-            hidden = defaultHidden && mNode->parent();
+            hidden = defaultHidden && content()->parent();
             hidden |= defaultAsIcon && defaultHidden;
         }
     }
-    mOtp->nodeHelper()->setNodeDisplayedHidden(mNode, hidden);
+    mOtp->nodeHelper()->setNodeDisplayedHidden(content(), hidden);
     return hidden;
 }
 
@@ -522,17 +533,17 @@ bool AttachmentMessagePart::isHidden() const
 
 HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node, Interface::ObjectTreeSource *source)
     : MessagePart(otp, QString())
-    , mNode(node)
     , mSource(source)
 {
-    if (!mNode) {
+    if (!node) {
         qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
     }
+    setContent(node);
 
-    const QByteArray partBody(mNode->decodedContent());
-    mBodyHTML = mOtp->codecFor(mNode)->toUnicode(partBody);
-    mCharset = NodeHelper::charset(mNode);
+    const QByteArray partBody(node->decodedContent());
+    mBodyHTML = mOtp->codecFor(node)->toUnicode(partBody);
+    mCharset = NodeHelper::charset(node);
 }
 
 HtmlMessagePart::~HtmlMessagePart()
@@ -559,15 +570,15 @@ bool HtmlMessagePart::isHtml() const
 
 MimeMessagePart::MimeMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart)
     : MessagePart(otp, QString())
-    , mNode(node)
     , mOnlyOneMimePart(onlyOneMimePart)
 {
-    if (!mNode) {
+    if (!node) {
         qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
     }
+    setContent(node);
 
-    parseInternal(mNode, mOnlyOneMimePart);
+    parseInternal(node, mOnlyOneMimePart);
 }
 
 MimeMessagePart::~MimeMessagePart()
@@ -593,19 +604,19 @@ QString MimeMessagePart::htmlContent() const
 
 AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Content *node, Util::HtmlMode preferredMode)
     : MessagePart(otp, QString())
-    , mNode(node)
     , mPreferredMode(preferredMode)
 {
-    KMime::Content *dataIcal = findTypeInDirectChilds(mNode, "text/calendar");
-    KMime::Content *dataHtml = findTypeInDirectChilds(mNode, "text/html");
-    KMime::Content *dataText = findTypeInDirectChilds(mNode, "text/plain");
+    setContent(node);
+    KMime::Content *dataIcal = findTypeInDirectChilds(node, "text/calendar");
+    KMime::Content *dataHtml = findTypeInDirectChilds(node, "text/html");
+    KMime::Content *dataText = findTypeInDirectChilds(node, "text/plain");
 
     if (!dataHtml) {
         // If we didn't find the HTML part as the first child of the multipart/alternative, it might
         // be that this is a HTML message with images, and text/plain and multipart/related are the
         // immediate children of this multipart/alternative node.
         // In this case, the HTML node is a child of multipart/related.
-        dataHtml = findTypeInDirectChilds(mNode, "multipart/related");
+        dataHtml = findTypeInDirectChilds(node, "multipart/related");
 
         // Still not found? Stupid apple mail actually puts the attachments inside of the
         // multipart/alternative, which is wrong. Therefore we also have to look for multipart/mixed
@@ -613,7 +624,7 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
         // Do this only when prefering HTML mail, though, since otherwise the attachments are hidden
         // when displaying plain text.
         if (!dataHtml) {
-            dataHtml = findTypeInDirectChilds(mNode, "multipart/mixed");
+            dataHtml = findTypeInDirectChilds(node, "multipart/mixed");
         }
     }
 
@@ -698,14 +709,14 @@ QString AlternativeMessagePart::htmlContent() const
 
 CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, const QGpgME::Protocol *cryptoProto, bool autoImport)
     : MessagePart(otp, QString())
-    , mNode(node)
     , mAutoImport(autoImport)
     , mCryptoProto(cryptoProto)
 {
-    if (!mNode) {
+    if (!node) {
         qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
         return;
     }
+    setContent(node);
 
     if (!mAutoImport) {
         return;
@@ -732,8 +743,8 @@ SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp, const QString &text,
     : MessagePart(otp, text)
     , mCryptoProto(cryptoProto)
     , mFromAddress(fromAddress)
-    , mNode(node)
 {
+    setContent(node);
     partMetaData()->technicalProblem = (mCryptoProto == nullptr);
     partMetaData()->isSigned = true;
     partMetaData()->isGoodSignature = false;
@@ -768,7 +779,7 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
 
     const QByteArray mementoName = "verification";
 
-    CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(mNode, mementoName));
+    CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(content(), mementoName));
     Q_ASSERT(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completely wrong
 
     if (!m && mCryptoProto) {
@@ -794,7 +805,7 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
             } else {
                 m->exec();
             }
-            nodeHelper->setBodyPartMemento(mNode, mementoName, m);
+            nodeHelper->setBodyPartMemento(content(), mementoName, m);
         }
     } else if (m->isRunning()) {
         partMetaData()->inProgress = true;
@@ -954,7 +965,7 @@ void SignedMessagePart::startVerification(const QByteArray &text, const QTextCod
 {
     startVerificationDetached(text, nullptr, QByteArray());
 
-    if (!mNode && partMetaData()->isSigned) {
+    if (!content() && partMetaData()->isSigned) {
         setText(aCodec->toUnicode(mVerifiedText));
     }
 }
@@ -1003,10 +1014,10 @@ void SignedMessagePart::setVerificationResult(const CryptoBodyPartMemento *m, KM
 
     if (partMetaData()->isSigned) {
         sigStatusToMetaData();
-        if (mNode) {
-            mOtp->nodeHelper()->setSignatureState(mNode, KMMsgFullySigned);
+        if (content()) {
+            mOtp->nodeHelper()->setSignatureState(content(), KMMsgFullySigned);
             if (!textNode) {
-                mOtp->nodeHelper()->setPartMetaData(mNode, *partMetaData());
+                mOtp->nodeHelper()->setPartMetaData(content(), *partMetaData());
 
                 if (!mVerifiedText.isEmpty()) {
                     auto tempNode = new KMime::Content();
@@ -1016,7 +1027,7 @@ void SignedMessagePart::setVerificationResult(const CryptoBodyPartMemento *m, KM
                     if (!tempNode->head().isEmpty()) {
                         tempNode->contentDescription()->from7BitString("signed data");
                     }
-                    mOtp->nodeHelper()->attachExtraContent(mNode, tempNode);
+                    mOtp->nodeHelper()->attachExtraContent(content(), tempNode);
 
                     parseInternal(tempNode, false);
                 }
@@ -1027,7 +1038,7 @@ void SignedMessagePart::setVerificationResult(const CryptoBodyPartMemento *m, KM
 
 QString SignedMessagePart::plaintextContent() const
 {
-    if (!mNode) {
+    if (!content()) {
         return MessagePart::text();
     } else {
         return QString();
@@ -1036,7 +1047,7 @@ QString SignedMessagePart::plaintextContent() const
 
 QString SignedMessagePart::htmlContent() const
 {
-    if (!mNode) {
+    if (!content()) {
         return MessagePart::text();
     } else {
         return QString();
@@ -1050,9 +1061,9 @@ EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp, const QString 
     , mNoSecKey(false)
     , mCryptoProto(cryptoProto)
     , mFromAddress(fromAddress)
-    , mNode(node)
     , mDecryptMessage(false)
 {
+    setContent(node);
     partMetaData()->technicalProblem = (mCryptoProto == nullptr);
     partMetaData()->isSigned = false;
     partMetaData()->isGoodSignature = false;
@@ -1174,7 +1185,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         partMetaData()->isSigned = verifyResult.signatures().size() > 0;
 
         if (verifyResult.signatures().size() > 0) {
-            auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, MessagePart::text(), mCryptoProto, mFromAddress, mNode));
+            auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, MessagePart::text(), mCryptoProto, mFromAddress, content()));
             subPart->setVerificationResult(m, nullptr);
             appendSubPart(subPart);
         }
@@ -1234,12 +1245,12 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
 
 void EncryptedMessagePart::startDecryption(KMime::Content *data)
 {
-    if (!mNode && !data) {
+    if (!content() && !data) {
         return;
     }
 
     if (!data) {
-        data = mNode;
+        data = content();
     }
 
     partMetaData()->isEncrypted = true;
@@ -1259,8 +1270,8 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
         partMetaData()->isDecryptable = true;
     }
 
-    if (mNode && !partMetaData()->isSigned) {
-        mOtp->nodeHelper()->setPartMetaData(mNode, *partMetaData());
+    if (content() && !partMetaData()->isSigned) {
+        mOtp->nodeHelper()->setPartMetaData(content(), *partMetaData());
 
         if (decryptMessage()) {
             auto tempNode = new KMime::Content();
@@ -1270,7 +1281,7 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
             if (!tempNode->head().isEmpty()) {
                 tempNode->contentDescription()->from7BitString("encrypted data");
             }
-            mOtp->nodeHelper()->attachExtraContent(mNode, tempNode);
+            mOtp->nodeHelper()->attachExtraContent(content(), tempNode);
 
             parseInternal(tempNode, false);
         }
@@ -1279,7 +1290,7 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
 
 QString EncryptedMessagePart::plaintextContent() const
 {
-    if (!mNode) {
+    if (!content()) {
         return MessagePart::text();
     } else {
         return QString();
@@ -1288,7 +1299,7 @@ QString EncryptedMessagePart::plaintextContent() const
 
 QString EncryptedMessagePart::htmlContent() const
 {
-    if (!mNode) {
+    if (!content()) {
         return MessagePart::text();
     } else {
         return QString();
@@ -1312,14 +1323,14 @@ QString EncryptedMessagePart::text() const
 EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message)
     : MessagePart(otp, QString())
     , mMessage(message)
-    , mNode(node)
 {
+    setContent(node);
     partMetaData()->isEncrypted = false;
     partMetaData()->isSigned = false;
     partMetaData()->isEncapsulatedRfc822Message = true;
 
-    mOtp->nodeHelper()->setNodeDisplayedEmbedded(mNode, true);
-    mOtp->nodeHelper()->setPartMetaData(mNode, *partMetaData());
+    mOtp->nodeHelper()->setNodeDisplayedEmbedded(node, true);
+    mOtp->nodeHelper()->setPartMetaData(node, *partMetaData());
 
     if (!mMessage) {
         qCWarning(MIMETREEPARSER_LOG) << "Node is of type message/rfc822 but doesn't have a message!";

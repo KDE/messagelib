@@ -411,7 +411,7 @@ QString DefaultRendererPrivate::render(const MessagePartList::Ptr &mp)
 
         if (mp->isAttachment()) {
             aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
 
         renderSubParts(mp, htmlWriter);
@@ -428,7 +428,7 @@ QString DefaultRendererPrivate::render(const MimeMessagePart::Ptr &mp)
         HTMLBlock::Ptr rBlock;
         if (mp->isAttachment()) {
             aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
 
         if (mp->isRoot()) {
@@ -468,7 +468,7 @@ QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr 
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
             aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
         const auto html = t->render(&c);
         htmlWriter->queue(html);
@@ -497,7 +497,7 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
         QString bodyText = processHtml(mp->mBodyHTML, extraHead);
 
         if (isHtmlPreferred) {
-            mp->mOtp->nodeHelper()->setNodeDisplayedEmbedded(mp->mNode, true);
+            mp->mOtp->nodeHelper()->setNodeDisplayedEmbedded(mp->content(), true);
             mOldWriter->extraHead(extraHead);
         }
 
@@ -520,7 +520,7 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
             aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
         const auto html = t->render(&c);
         htmlWriter->queue(html);
@@ -530,7 +530,7 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
 
 QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp)
 {
-    KMime::Content *node = mp->mNode;
+    KMime::Content *node = mp->content();
     const auto metaData = *mp->partMetaData();
 
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
@@ -584,7 +584,7 @@ QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr 
 
 QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
 {
-    KMime::Content *node = mp->mNode;
+    KMime::Content *node = mp->content();
     const auto metaData = *mp->partMetaData();
     auto cryptoProto = mp->mCryptoProto;
 
@@ -840,7 +840,7 @@ QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
             if (mp->isAttachment()) {
                 aBlock
                     = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(),
-                                                             mp->attachmentNode()));
+                                                             mp->attachmentContent()));
             }
             htmlWriter->queue(renderSigned(mp));
         }
@@ -850,7 +850,7 @@ QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
             aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
         if (mp->hasSubParts()) {
             renderSubParts(mp, htmlWriter);
@@ -875,7 +875,7 @@ QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
             if (mp->isAttachment()) {
                 aBlock
                     = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(),
-                                                             mp->attachmentNode()));
+                                                             mp->attachmentContent()));
             }
             htmlWriter->queue(renderEncrypted(mp));
         }
@@ -886,7 +886,7 @@ QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
             aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
 
         if (mp->hasSubParts()) {
@@ -908,7 +908,7 @@ QString DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp)
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
             aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
 
         auto mode = mp->preferredMode();
@@ -962,7 +962,7 @@ QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
             aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentNode()));
+                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
         const auto html = t->render(&c);
         htmlWriter->queue(html);

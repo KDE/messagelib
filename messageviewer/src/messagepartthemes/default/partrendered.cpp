@@ -169,7 +169,7 @@ HtmlOnlyPartRendered::HtmlOnlyPartRendered(MimeTreeParser::MessagePart::Ptr mp, 
     : mHtml(html)
 {
     mShowAttachmentBlock = mp->isAttachment();
-    mAttachmentNode = mp->attachmentNode();
+    mAttachmentNode = mp->attachmentContent();
 }
 
 HtmlOnlyPartRendered::~HtmlOnlyPartRendered()
@@ -205,7 +205,7 @@ TextPartRendered::TextPartRendered(MimeTreeParser::TextMessagePart::Ptr mp)
     : mShowAttachmentBlock(false)
     , mAttachmentNode(nullptr)
 {
-    auto node = mp->mNode;
+    auto node = mp->content();
     auto nodeHelper = mp->mOtp->nodeHelper();
 
     if (mp->isHidden()) {
@@ -240,7 +240,7 @@ TextPartRendered::TextPartRendered(MimeTreeParser::TextMessagePart::Ptr mp)
 
     mShowAttachmentBlock = mp->isAttachment();
     mHtml = t->render(&c);
-    mAttachmentNode = mp->attachmentNode();
+    mAttachmentNode = mp->attachmentContent();
 }
 
 TextPartRendered::~TextPartRendered()

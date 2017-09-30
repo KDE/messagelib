@@ -174,7 +174,7 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
         mParsedPart->fix();
         if (auto mp = toplevelTextNode(mParsedPart)) {
             if (auto _mp = mp.dynamicCast<TextMessagePart>()) {
-                extractNodeInfos(_mp->mNode, true);
+                extractNodeInfos(_mp->content(), true);
             } else if (auto _mp = mp.dynamicCast<AlternativeMessagePart>()) {
                 if (_mp->mChildNodes.contains(Util::MultipartPlain)) {
                     extractNodeInfos(_mp->mChildNodes[Util::MultipartPlain], true);
@@ -221,16 +221,14 @@ MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult
                 processResult.setNeverDisplayInline(true);
                 mNodeHelper->setNodeDisplayedEmbedded(node, false);
                 auto mp = processType(node, processResult, QByteArrayLiteral("application/octet-stream"), onlyOneMimePart);
-                if (mp) {
-                    mp->setAttachmentFlag(node);
-                }
+                mp->setAttachmentContent(node);
                 return mp;
             } else if (r == Interface::BodyPartFormatter::Ok) {
                 processResult.setNeverDisplayInline(true);
                 return result;
             }
         } else {
-            result->setAttachmentFlag(node);
+            result->setAttachmentContent(node);
             return result;
         }
     }

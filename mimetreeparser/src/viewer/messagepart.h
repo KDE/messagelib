@@ -85,7 +85,18 @@ public:
     virtual QString plaintextContent() const;
     virtual QString htmlContent() const;
 
-    void setAttachmentFlag(KMime::Content *node);
+    /** The KMime::Content* node that's represented by this part.
+     *  Can be @c nullptr, e.g. for sub-parts of an inline signed body part.
+     */
+    KMime::Content *content() const;
+    void setContent(KMime::Content *node);
+
+    /** The KMime::Content* node that's the source of this part.
+     *  This is not necessarily the same as content(), for example for
+     *  broken-up multipart nodes.
+     */
+    KMime::Content *attachmentContent() const;
+    void setAttachmentContent(KMime::Content *node);
     bool isAttachment() const;
 
     void setIsRoot(bool root);
@@ -104,7 +115,6 @@ public:
     bool hasSubParts() const;
 
     Interface::ObjectTreeSource *source() const;
-    KMime::Content *attachmentNode() const;
 
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
@@ -144,7 +154,6 @@ public:
     QString plaintextContent() const override;
     QString htmlContent() const override;
 private:
-    KMime::Content *mNode;
     bool mOnlyOneMimePart;
 
     friend class AlternativeMessagePart;
@@ -187,9 +196,6 @@ public:
 
     bool showLink() const;
     bool showTextFrame() const;
-
-protected:
-    KMime::Content *mNode = nullptr;
 
 private:
     void parseContent();
@@ -241,7 +247,6 @@ public:
     bool isHtml() const override;
 
 private:
-    KMime::Content *mNode;
     Interface::ObjectTreeSource *mSource;
     QString mBodyHTML;
     QByteArray mCharset;
@@ -270,8 +275,6 @@ public:
 
     void fix() const override;
 private:
-    KMime::Content *mNode;
-
     Util::HtmlMode mPreferredMode;
 
     QMap<Util::HtmlMode, KMime::Content *> mChildNodes;
@@ -293,7 +296,6 @@ public:
     QString text() const override;
 
 private:
-    KMime::Content *mNode;
     bool mAutoImport;
     GpgME::ImportResult mImportResult;
     const QGpgME::Protocol *mCryptoProto;
@@ -313,7 +315,6 @@ public:
     void fix() const override;
 private:
     const KMime::Message::Ptr mMessage;
-    KMime::Content *mNode;
 
     friend class DefaultRendererPrivate;
 };
@@ -362,7 +363,6 @@ protected:
     bool mNoSecKey;
     const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
-    KMime::Content *mNode = nullptr;
     bool mDecryptMessage;
     QByteArray mVerifiedText;
     std::vector<GpgME::DecryptionResult::Recipient> mDecryptRecipients;
@@ -406,7 +406,6 @@ private:
 protected:
     const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
-    KMime::Content *mNode = nullptr;
     QByteArray mVerifiedText;
 
     friend EncryptedMessagePart;
