@@ -28,7 +28,7 @@ class MultiPartEncryptedBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const MultiPartEncryptedBodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override;
+    MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();
 };
 }

@@ -28,7 +28,7 @@ class MultiPartSignedBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const MultiPartSignedBodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override;
+    MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();
 };
 }

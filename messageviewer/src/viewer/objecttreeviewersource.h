@@ -49,7 +49,7 @@ public:
     bool showExpandQuotesMark() const override;
     const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override;
     MimeTreeParser::Interface::MessagePartRendererPtr messagePartTheme(
-        MimeTreeParser::Interface::MessagePartPtr msgPart) override;
+        MimeTreeParser::MessagePartPtr msgPart) override;
     bool isPrinting() const override;
 private:
     ViewerPrivate *mViewer = nullptr;

@@ -63,7 +63,7 @@ class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartForma
 {
     static const AnyTypeBodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override
+    MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
         KMime::Content *node = part.content();
         const auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, true, part.source()->decryptMessage()));
@@ -98,7 +98,7 @@ public:
         return self;
     }
 
-    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override
+    MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
         KMime::Content *node = part.content();
         auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, true, part.source()->decryptMessage()));
@@ -136,7 +136,7 @@ class MessageRfc822BodyPartFormatter : public MimeTreeParser::Interface::BodyPar
 {
     static const MessageRfc822BodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &) const override;
+    MessagePart::Ptr process(Interface::BodyPart &) const override;
     static const MimeTreeParser::Interface::BodyPartFormatter *create();
 };
 
@@ -150,7 +150,7 @@ const MimeTreeParser::Interface::BodyPartFormatter *MessageRfc822BodyPartFormatt
     return self;
 }
 
-Interface::MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::BodyPart &part) const
+MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::BodyPart &part) const
 {
     const KMime::Message::Ptr message = part.content()->bodyAsMessage();
     return MessagePart::Ptr(new EncapsulatedRfc822MessagePart(part.objectTreeParser(), part.content(), message));

@@ -37,7 +37,6 @@
 #include <memory>
 
 class QTextCodec;
-class PartPrivate;
 class TextPartRendered;
 class AttachmentMessagePartRenderer;
 
@@ -56,17 +55,18 @@ class Content;
 namespace MimeTreeParser {
 class ObjectTreeParser;
 class HtmlWriter;
-class HTMLBlock;
-typedef QSharedPointer<HTMLBlock> HTMLBlockPtr;
 class CryptoBodyPartMemento;
+class MessagePartPrivate;
 class MultiPartAlternativeBodyPartFormatter;
 namespace Interface {
 class ObjectTreeSource;
 }
 
-class MIMETREEPARSER_EXPORT MessagePart : public Interface::MessagePart
+class MIMETREEPARSER_EXPORT MessagePart : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString plaintextContent READ plaintextContent)
+    Q_PROPERTY(QString htmlContent READ htmlContent)
     Q_PROPERTY(bool attachment READ isAttachment)
     Q_PROPERTY(bool root READ isRoot)
     Q_PROPERTY(bool isHtml READ isHtml)
@@ -74,11 +74,17 @@ class MIMETREEPARSER_EXPORT MessagePart : public Interface::MessagePart
 public:
     typedef QSharedPointer<MessagePart> Ptr;
     MessagePart(ObjectTreeParser *otp, const QString &text);
+    ~MessagePart();
 
-    virtual ~MessagePart();
+    void setParentPart(MessagePart *parentPart);
+    MessagePart *parentPart() const;
 
-    QString text() const override;
+    virtual QString text() const;
     void setText(const QString &text);
+
+    virtual QString plaintextContent() const;
+    virtual QString htmlContent() const;
+
     void setAttachmentFlag(KMime::Content *node);
     bool isAttachment() const;
 
@@ -88,13 +94,13 @@ public:
     virtual bool isHtml() const;
     virtual bool isHidden() const;
 
-    PartMetaData *partMetaData();
+    PartMetaData *partMetaData() const;
 
     /* only a function that should be removed if the refactoring is over */
     virtual void fix() const;
 
-    void appendSubPart(const Interface::MessagePart::Ptr &messagePart);
-    const QVector<Interface::MessagePart::Ptr> &subParts() const;
+    void appendSubPart(const MessagePart::Ptr &messagePart);
+    const QVector<MessagePart::Ptr> &subParts() const;
     bool hasSubParts() const;
 
     Interface::ObjectTreeSource *source() const;
@@ -104,15 +110,10 @@ protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
     QString renderInternalText() const;
 
-    QString mText;
     ObjectTreeParser *mOtp = nullptr;
-    PartMetaData mMetaData;
 
 private:
-    QVector<Interface::MessagePart::Ptr> mBlocks;
-
-    KMime::Content *mAttachmentNode = nullptr;
-    bool mRoot;
+    std::unique_ptr<MessagePartPrivate> d;
 };
 
 // TODO remove once all plugins are ported away from BPF::format()
@@ -120,7 +121,7 @@ class MIMETREEPARSER_DEPRECATED_EXPORT LegacyPluginMessagePart : public Interfac
 {
     Q_OBJECT
 public:
-    LegacyPluginMessagePart();
+    LegacyPluginMessagePart(MimeTreeParser::ObjectTreeParser *otp);
     ~LegacyPluginMessagePart();
 
     HtmlWriter *htmlWriter() const;
@@ -147,7 +148,6 @@ private:
     bool mOnlyOneMimePart;
 
     friend class AlternativeMessagePart;
-    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT MessagePartList : public MessagePart
@@ -162,7 +162,6 @@ public:
 
     QString plaintextContent() const override;
     QString htmlContent() const override;
-private:
 };
 
 enum IconType {
@@ -204,9 +203,7 @@ private:
 
     friend class ::TextPartRendered;
     friend class ::AttachmentMessagePartRenderer;
-    friend class DefaultRendererPrivate;
     friend class ObjectTreeParser;
-    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
@@ -250,7 +247,6 @@ private:
     QByteArray mCharset;
 
     friend class DefaultRendererPrivate;
-    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
@@ -284,7 +280,6 @@ private:
     friend class DefaultRendererPrivate;
     friend class ObjectTreeParser;
     friend class MultiPartAlternativeBodyPartFormatter;
-    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart
@@ -373,7 +368,6 @@ protected:
     std::vector<GpgME::DecryptionResult::Recipient> mDecryptRecipients;
 
     friend class DefaultRendererPrivate;
-    friend class ::PartPrivate;
 };
 
 class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
@@ -417,7 +411,6 @@ protected:
 
     friend EncryptedMessagePart;
     friend class DefaultRendererPrivate;
-    friend class ::PartPrivate;
 };
 }
 

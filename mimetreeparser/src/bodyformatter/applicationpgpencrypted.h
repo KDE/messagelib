@@ -28,7 +28,7 @@ class ApplicationPGPEncryptedBodyPartFormatter : public Interface::BodyPartForma
 {
     static const ApplicationPGPEncryptedBodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override;
+    MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();
 };
 }

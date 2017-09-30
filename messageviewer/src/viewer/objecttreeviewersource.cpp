@@ -130,7 +130,7 @@ bool MailViewerSource::isPrinting() const
 }
 
 MimeTreeParser::Interface::MessagePartRendererPtr MailViewerSource::messagePartTheme(
-    MimeTreeParser::Interface::MessagePart::Ptr msgPart)
+    MimeTreeParser::MessagePartPtr msgPart)
 {
     return MimeTreeParser::Interface::MessagePartRenderer::Ptr(
         new DefaultRenderer(msgPart, mViewer->cssHelper(), mViewer->htmlWriter()));

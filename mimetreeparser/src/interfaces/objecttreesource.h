@@ -32,9 +32,9 @@ namespace MimeTreeParser {
 class HtmlWriter;
 class AttachmentStrategy;
 class BodyPartFormatterBaseFactory;
-namespace Interface {
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
+namespace Interface {
 class MessagePartRenderer;
 typedef QSharedPointer<MessagePartRenderer> MessagePartRendererPtr;
 }

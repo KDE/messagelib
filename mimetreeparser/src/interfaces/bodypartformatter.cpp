@@ -38,52 +38,6 @@
 
 using namespace MimeTreeParser::Interface;
 
-namespace MimeTreeParser {
-namespace Interface {
-class MessagePartPrivate
-{
-public:
-    MessagePart *mParentPart = nullptr;
-};
-}
-}
-
-MessagePart::MessagePart()
-    : QObject()
-    , d(new MessagePartPrivate)
-{
-}
-
-MessagePart::~MessagePart()
-{
-    delete d;
-}
-
-QString MessagePart::text() const
-{
-    return QString();
-}
-
-MessagePart *MessagePart::parentPart() const
-{
-    return d->mParentPart;
-}
-
-void MessagePart::setParentPart(MessagePart *parentPart)
-{
-    d->mParentPart = parentPart;
-}
-
-QString MessagePart::htmlContent() const
-{
-    return text();
-}
-
-QString MessagePart::plaintextContent() const
-{
-    return text();
-}
-
 BodyPartFormatter::Result BodyPartFormatter::format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const
 {
     Q_UNUSED(part);
@@ -91,9 +45,9 @@ BodyPartFormatter::Result BodyPartFormatter::format(BodyPart *part, MimeTreePars
     return Failed;
 }
 
-MessagePart::Ptr BodyPartFormatter::process(BodyPart&) const
+MimeTreeParser::MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) const
 {
-    auto mp = MessagePart::Ptr(new LegacyPluginMessagePart);
+    auto mp = MimeTreeParser::MessagePart::Ptr(new LegacyPluginMessagePart(part.objectTreeParser()));
     return mp;
 }
 

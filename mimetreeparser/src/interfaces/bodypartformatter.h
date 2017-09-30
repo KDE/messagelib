@@ -43,33 +43,12 @@
 
 namespace MimeTreeParser {
 class HtmlWriter;
+class MessagePart;
+typedef QSharedPointer<MessagePart> MessagePartPtr;
 
 namespace Interface {
 class BodyPartURLHandler;
 class BodyPart;
-class MessagePartPrivate;
-
-class MIMETREEPARSER_EXPORT MessagePart : public QObject
-{
-    Q_OBJECT
-    Q_PROPERTY(QString plaintextContent READ plaintextContent)
-    Q_PROPERTY(QString htmlContent READ htmlContent)
-public:
-    typedef QSharedPointer<MessagePart> Ptr;
-    MessagePart();
-    virtual ~MessagePart();
-
-    virtual QString text() const;
-
-    void setParentPart(MessagePart *parentPart);
-    MessagePart *parentPart() const;
-
-    virtual QString plaintextContent() const;
-    virtual QString htmlContent() const;
-
-private:
-    MessagePartPrivate *d;
-};
 
 class MIMETREEPARSER_EXPORT BodyPartFormatter
 {
@@ -99,7 +78,7 @@ public:
     */
     virtual Result format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const;
 
-    virtual MessagePart::Ptr process(BodyPart &part) const;
+    virtual MimeTreeParser::MessagePartPtr process(BodyPart &part) const;
 };
 
 /**

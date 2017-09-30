@@ -39,10 +39,8 @@
 
 namespace MimeTreeParser {
 class DefaultRendererPrivate;
-namespace Interface {
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
-}
 }
 
 class PartRendered;
@@ -52,7 +50,7 @@ class MessagePartRendererBase
 public:
     MessagePartRendererBase();
     virtual ~MessagePartRendererBase();
-    virtual QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *, const MimeTreeParser::Interface::MessagePartPtr &)
+    virtual QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *, const MimeTreeParser::MessagePartPtr &)
     const = 0;
 };
 #endif

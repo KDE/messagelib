@@ -25,6 +25,7 @@
 #include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BodyPartFormatter>
 #include <MimeTreeParser/BodyPartFormatterBaseFactory>
+#include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/MessagePartRenderer>
 #include <MimeTreeParser/ObjectTreeSource>
 
@@ -148,7 +149,7 @@ public:
         return QString(); //do nothing
     }
 
-    Interface::MessagePartRenderer::Ptr messagePartTheme(Interface::MessagePart::Ptr msgPart) override
+    Interface::MessagePartRenderer::Ptr messagePartTheme(MessagePart::Ptr msgPart) override
     {
         Q_UNUSED(msgPart);
         return Interface::MessagePartRenderer::Ptr();

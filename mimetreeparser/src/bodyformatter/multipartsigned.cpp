@@ -42,7 +42,7 @@ const Interface::BodyPartFormatter *MultiPartSignedBodyPartFormatter::create()
     return self;
 }
 
-Interface::MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &part) const
+MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();
     if (node->contents().size() != 2) {

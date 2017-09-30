@@ -51,56 +51,86 @@
 using namespace MimeTreeParser;
 
 //------MessagePart-----------------------
+namespace MimeTreeParser {
+class MessagePartPrivate
+{
+public:
+    MessagePart *mParentPart = nullptr;
+    QVector<MessagePart::Ptr> mBlocks;
+    KMime::Content *mAttachmentNode = nullptr;
+    QString mText;
+    PartMetaData mMetaData;
+    bool mRoot = false;
+};
+}
+
 MessagePart::MessagePart(ObjectTreeParser *otp, const QString &text)
-    : mText(text)
-    , mOtp(otp)
-    , mAttachmentNode(nullptr)
-    , mRoot(false)
+    : mOtp(otp)
+    , d(new MessagePartPrivate)
 {
+    d->mText = text;
 }
 
-MessagePart::~MessagePart()
+MessagePart::~MessagePart() = default;
+
+MessagePart *MessagePart::parentPart() const
 {
+    return d->mParentPart;
 }
 
-PartMetaData *MessagePart::partMetaData()
+void MessagePart::setParentPart(MessagePart *parentPart)
 {
-    return &mMetaData;
+    d->mParentPart = parentPart;
+}
+
+QString MessagePart::htmlContent() const
+{
+    return text();
+}
+
+QString MessagePart::plaintextContent() const
+{
+    return text();
+}
+
+PartMetaData *MessagePart::partMetaData() const
+{
+    return &d->mMetaData;
 }
 
 void MessagePart::setAttachmentFlag(KMime::Content *node)
 {
-    mAttachmentNode = node;
+    d->mAttachmentNode = node;
 }
 
 bool MessagePart::isAttachment() const
 {
-    return mAttachmentNode;
+    return d->mAttachmentNode;
 }
 
 KMime::Content *MessagePart::attachmentNode() const
 {
-    return mAttachmentNode;
+    return d->mAttachmentNode;
 }
 
 void MessagePart::setIsRoot(bool root)
 {
-    mRoot = root;
+    d->mRoot = root;
 }
 
 bool MessagePart::isRoot() const
 {
-    return mRoot;
+    return d->mRoot;
 }
 
 QString MessagePart::text() const
 {
-    return mText;
+    return d->mText;
 }
 
 void MessagePart::setText(const QString &text)
 {
-    mText = text;
+    d->mText = text;
 }
 
 bool MessagePart::isHtml() const
@@ -122,7 +152,7 @@ Interface::ObjectTreeSource *MessagePart::source() const
 void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     auto subMessagePart = mOtp->parseObjectTreeInternal(node, onlyOneMimePart);
-    mRoot = subMessagePart->isRoot();
+    d->mRoot = subMessagePart->isRoot();
     foreach (const auto &part, subMessagePart->subParts()) {
         appendSubPart(part);
     }
@@ -147,20 +177,20 @@ void MessagePart::fix() const
     }
 }
 
-void MessagePart::appendSubPart(const Interface::MessagePart::Ptr &messagePart)
+void MessagePart::appendSubPart(const MessagePart::Ptr &messagePart)
 {
     messagePart->setParentPart(this);
-    mBlocks.append(messagePart);
+    d->mBlocks.append(messagePart);
 }
 
-const QVector<Interface::MessagePart::Ptr> &MessagePart::subParts() const
+const QVector<MessagePart::Ptr> &MessagePart::subParts() const
 {
-    return mBlocks;
+    return d->mBlocks;
 }
 
 bool MessagePart::hasSubParts() const
 {
-    return !mBlocks.isEmpty();
+    return !d->mBlocks.isEmpty();
 }
 
 //-----LegacyMessagePart--------------------
@@ -179,8 +209,9 @@ public:
     QString text;
 };
 
-LegacyPluginMessagePart::LegacyPluginMessagePart()
-    : m_htmlWriter(new LegacyHtmlWriter)
+LegacyPluginMessagePart::LegacyPluginMessagePart(ObjectTreeParser *otp)
+    : MessagePart(otp, QString())
+    , m_htmlWriter(new LegacyHtmlWriter)
 {
 }
 
@@ -703,12 +734,12 @@ SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp, const QString &text,
     , mFromAddress(fromAddress)
     , mNode(node)
 {
-    mMetaData.technicalProblem = (mCryptoProto == nullptr);
-    mMetaData.isSigned = true;
-    mMetaData.isGoodSignature = false;
-    mMetaData.keyTrust = GpgME::Signature::Unknown;
-    mMetaData.status = i18n("Wrong Crypto Plug-In.");
-    mMetaData.status_code = GPGME_SIG_STAT_NONE;
+    partMetaData()->technicalProblem = (mCryptoProto == nullptr);
+    partMetaData()->isSigned = true;
+    partMetaData()->isGoodSignature = false;
+    partMetaData()->keyTrust = GpgME::Signature::Unknown;
+    partMetaData()->status = i18n("Wrong Crypto Plug-In.");
+    partMetaData()->status_code = GPGME_SIG_STAT_NONE;
 }
 
 SignedMessagePart::~SignedMessagePart()
@@ -717,23 +748,23 @@ SignedMessagePart::~SignedMessagePart()
 
 void SignedMessagePart::setIsSigned(bool isSigned)
 {
-    mMetaData.isSigned = isSigned;
+    partMetaData()->isSigned = isSigned;
 }
 
 bool SignedMessagePart::isSigned() const
 {
-    return mMetaData.isSigned;
+    return partMetaData()->isSigned;
 }
 
 bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode)
 {
     NodeHelper *nodeHelper = mOtp->nodeHelper();
 
-    mMetaData.isSigned = false;
-    mMetaData.technicalProblem = (mCryptoProto == nullptr);
-    mMetaData.keyTrust = GpgME::Signature::Unknown;
-    mMetaData.status = i18n("Wrong Crypto Plug-In.");
-    mMetaData.status_code = GPGME_SIG_STAT_NONE;
+    partMetaData()->isSigned = false;
+    partMetaData()->technicalProblem = (mCryptoProto == nullptr);
+    partMetaData()->keyTrust = GpgME::Signature::Unknown;
+    partMetaData()->status = i18n("Wrong Crypto Plug-In.");
+    partMetaData()->status_code = GPGME_SIG_STAT_NONE;
 
     const QByteArray mementoName = "verification";
 
@@ -757,7 +788,7 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
                 QObject::connect(m, &CryptoBodyPartMemento::update,
                                  nodeHelper, &NodeHelper::update);
                 if (m->start()) {
-                    mMetaData.inProgress = true;
+                    partMetaData()->inProgress = true;
                     mOtp->mHasPendingAsyncJobs = true;
                 }
             } else {
@@ -766,21 +797,21 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
             nodeHelper->setBodyPartMemento(mNode, mementoName, m);
         }
     } else if (m->isRunning()) {
-        mMetaData.inProgress = true;
+        partMetaData()->inProgress = true;
         mOtp->mHasPendingAsyncJobs = true;
     } else {
-        mMetaData.inProgress = false;
+        partMetaData()->inProgress = false;
         mOtp->mHasPendingAsyncJobs = false;
     }
 
-    if (m && !mMetaData.inProgress) {
+    if (m && !partMetaData()->inProgress) {
         if (!signature.isEmpty()) {
             mVerifiedText = data;
         }
         setVerificationResult(m, textNode);
     }
 
-    if (!m && !mMetaData.inProgress) {
+    if (!m && !partMetaData()->inProgress) {
         QString errorMsg;
         QString cryptPlugLibName;
         QString cryptPlugDisplayName;
@@ -801,14 +832,14 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
             errorMsg = i18n("Crypto plug-in \"%1\" cannot verify signatures.",
                             cryptPlugLibName);
         }
-        mMetaData.errorText = i18n("The message is signed, but the "
+        partMetaData()->errorText = i18n("The message is signed, but the "
                                    "validity of the signature cannot be "
                                    "verified.<br />"
                                    "Reason: %1",
                                    errorMsg);
     }
 
-    return mMetaData.isSigned;
+    return partMetaData()->isSigned;
 }
 
 static int signatureToStatus(const GpgME::Signature &sig)
@@ -839,14 +870,14 @@ QString prettifyDN(const char *uid)
 void SignedMessagePart::sigStatusToMetaData()
 {
     GpgME::Key key;
-    if (mMetaData.isSigned) {
+    if (partMetaData()->isSigned) {
         GpgME::Signature signature = mSignatures.front();
-        mMetaData.status_code = signatureToStatus(signature);
-        mMetaData.isGoodSignature = mMetaData.status_code & GPGME_SIG_STAT_GOOD;
+        partMetaData()->status_code = signatureToStatus(signature);
+        partMetaData()->isGoodSignature = partMetaData()->status_code & GPGME_SIG_STAT_GOOD;
         // save extended signature status flags
-        mMetaData.sigSummary = signature.summary();
+        partMetaData()->sigSummary = signature.summary();
 
-        if (mMetaData.isGoodSignature && !key.keyID()) {
+        if (partMetaData()->isGoodSignature && !key.keyID()) {
             // Search for the key by its fingerprint so that we can check for
             // trust etc.
             QGpgME::KeyListJob *job = mCryptoProto->keyListJob(false);    // local, no sigs
@@ -874,14 +905,14 @@ void SignedMessagePart::sigStatusToMetaData()
         }
 
         if (key.keyID()) {
-            mMetaData.keyId = key.keyID();
+            partMetaData()->keyId = key.keyID();
         }
-        if (mMetaData.keyId.isEmpty()) {
-            mMetaData.keyId = signature.fingerprint();
+        if (partMetaData()->keyId.isEmpty()) {
+            partMetaData()->keyId = signature.fingerprint();
         }
-        mMetaData.keyTrust = signature.validity();
+        partMetaData()->keyTrust = signature.validity();
         if (key.numUserIDs() > 0 && key.userID(0).id()) {
-            mMetaData.signer = prettifyDN(key.userID(0).id());
+            partMetaData()->signer = prettifyDN(key.userID(0).id());
         }
         for (uint iMail = 0; iMail < key.numUserIDs(); ++iMail) {
             // The following if /should/ always result in TRUE but we
@@ -894,25 +925,25 @@ void SignedMessagePart::sigStatusToMetaData()
                     email = email.mid(1, email.length() - 2);
                 }
                 if (!email.isEmpty()) {
-                    mMetaData.signerMailAddresses.append(email);
+                    partMetaData()->signerMailAddresses.append(email);
                 }
             }
         }
 
         if (signature.creationTime()) {
-            mMetaData.creationTime.setTime_t(signature.creationTime());
+            partMetaData()->creationTime.setTime_t(signature.creationTime());
         } else {
-            mMetaData.creationTime = QDateTime();
+            partMetaData()->creationTime = QDateTime();
         }
-        if (mMetaData.signer.isEmpty()) {
+        if (partMetaData()->signer.isEmpty()) {
             if (key.numUserIDs() > 0 && key.userID(0).name()) {
-                mMetaData.signer = prettifyDN(key.userID(0).name());
+                partMetaData()->signer = prettifyDN(key.userID(0).name());
             }
-            if (!mMetaData.signerMailAddresses.empty()) {
-                if (mMetaData.signer.isEmpty()) {
-                    mMetaData.signer = mMetaData.signerMailAddresses.front();
+            if (!partMetaData()->signerMailAddresses.empty()) {
+                if (partMetaData()->signer.isEmpty()) {
+                    partMetaData()->signer = partMetaData()->signerMailAddresses.front();
                 } else {
-                    mMetaData.signer += QLatin1String(" <") + mMetaData.signerMailAddresses.front() + QLatin1Char('>');
+                    partMetaData()->signer += QLatin1String(" <") + partMetaData()->signerMailAddresses.front() + QLatin1Char('>');
                 }
             }
         }
@@ -923,15 +954,15 @@ void SignedMessagePart::startVerification(const QByteArray &text, const QTextCod
 {
     startVerificationDetached(text, nullptr, QByteArray());
 
-    if (!mNode && mMetaData.isSigned) {
+    if (!mNode && partMetaData()->isSigned) {
         setText(aCodec->toUnicode(mVerifiedText));
     }
 }
 
 void SignedMessagePart::startVerificationDetached(const QByteArray &text, KMime::Content *textNode, const QByteArray &signature)
 {
-    mMetaData.isEncrypted = false;
-    mMetaData.isDecryptable = false;
+    partMetaData()->isEncrypted = false;
+    partMetaData()->isDecryptable = false;
 
     if (textNode) {
         parseInternal(textNode, false);
@@ -939,8 +970,8 @@ void SignedMessagePart::startVerificationDetached(const QByteArray &text, KMime:
 
     okVerify(text, signature, textNode);
 
-    if (!mMetaData.isSigned) {
-        mMetaData.creationTime = QDateTime();
+    if (!partMetaData()->isSigned) {
+        partMetaData()->creationTime = QDateTime();
     }
 }
 
@@ -966,16 +997,16 @@ void SignedMessagePart::setVerificationResult(const CryptoBodyPartMemento *m, KM
             mSignatures = vm->verifyResult().signatures();
         }
     }
-    mMetaData.auditLogError = m->auditLogError();
-    mMetaData.auditLog = m->auditLogAsHtml();
-    mMetaData.isSigned = !mSignatures.empty();
+    partMetaData()->auditLogError = m->auditLogError();
+    partMetaData()->auditLog = m->auditLogAsHtml();
+    partMetaData()->isSigned = !mSignatures.empty();
 
-    if (mMetaData.isSigned) {
+    if (partMetaData()->isSigned) {
         sigStatusToMetaData();
         if (mNode) {
             mOtp->nodeHelper()->setSignatureState(mNode, KMMsgFullySigned);
             if (!textNode) {
-                mOtp->nodeHelper()->setPartMetaData(mNode, mMetaData);
+                mOtp->nodeHelper()->setPartMetaData(mNode, *partMetaData());
 
                 if (!mVerifiedText.isEmpty()) {
                     auto tempNode = new KMime::Content();
@@ -1022,14 +1053,14 @@ EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp, const QString 
     , mNode(node)
     , mDecryptMessage(false)
 {
-    mMetaData.technicalProblem = (mCryptoProto == nullptr);
-    mMetaData.isSigned = false;
-    mMetaData.isGoodSignature = false;
-    mMetaData.isEncrypted = false;
-    mMetaData.isDecryptable = false;
-    mMetaData.keyTrust = GpgME::Signature::Unknown;
-    mMetaData.status = i18n("Wrong Crypto Plug-In.");
-    mMetaData.status_code = GPGME_SIG_STAT_NONE;
+    partMetaData()->technicalProblem = (mCryptoProto == nullptr);
+    partMetaData()->isSigned = false;
+    partMetaData()->isGoodSignature = false;
+    partMetaData()->isEncrypted = false;
+    partMetaData()->isDecryptable = false;
+    partMetaData()->keyTrust = GpgME::Signature::Unknown;
+    partMetaData()->status = i18n("Wrong Crypto Plug-In.");
+    partMetaData()->status_code = GPGME_SIG_STAT_NONE;
 }
 
 EncryptedMessagePart::~EncryptedMessagePart()
@@ -1048,17 +1079,17 @@ bool EncryptedMessagePart::decryptMessage() const
 
 void EncryptedMessagePart::setIsEncrypted(bool encrypted)
 {
-    mMetaData.isEncrypted = encrypted;
+    partMetaData()->isEncrypted = encrypted;
 }
 
 bool EncryptedMessagePart::isEncrypted() const
 {
-    return mMetaData.isEncrypted;
+    return partMetaData()->isEncrypted;
 }
 
 bool EncryptedMessagePart::isDecryptable() const
 {
-    return mMetaData.isDecryptable;
+    return partMetaData()->isDecryptable;
 }
 
 bool EncryptedMessagePart::passphraseError() const
@@ -1074,7 +1105,7 @@ void EncryptedMessagePart::startDecryption(const QByteArray &text, const QTextCo
 
     startDecryption(content);
 
-    if (!mMetaData.inProgress && mMetaData.isDecryptable) {
+    if (!partMetaData()->inProgress && partMetaData()->isDecryptable) {
         if (hasSubParts()) {
             auto _mp = (subParts()[0]).dynamicCast<SignedMessagePart>();
             if (_mp) {
@@ -1091,10 +1122,10 @@ void EncryptedMessagePart::startDecryption(const QByteArray &text, const QTextCo
 bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
 {
     mPassphraseError = false;
-    mMetaData.inProgress = false;
-    mMetaData.errorText.clear();
-    mMetaData.auditLogError = GpgME::Error();
-    mMetaData.auditLog.clear();
+    partMetaData()->inProgress = false;
+    partMetaData()->errorText.clear();
+    partMetaData()->auditLogError = GpgME::Error();
+    partMetaData()->auditLog.clear();
     bool bDecryptionOk = false;
     bool cannotDecrypt = false;
     NodeHelper *nodeHelper = mOtp->nodeHelper();
@@ -1119,7 +1150,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
                 QObject::connect(newM, &CryptoBodyPartMemento::update,
                                  nodeHelper, &NodeHelper::update);
                 if (newM->start()) {
-                    mMetaData.inProgress = true;
+                    partMetaData()->inProgress = true;
                     mOtp->mHasPendingAsyncJobs = true;
                 } else {
                     m = newM;
@@ -1131,7 +1162,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             nodeHelper->setBodyPartMemento(&data, "decryptverify", newM);
         }
     } else if (m->isRunning()) {
-        mMetaData.inProgress = true;
+        partMetaData()->inProgress = true;
         mOtp->mHasPendingAsyncJobs = true;
         m = nullptr;
     }
@@ -1140,7 +1171,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         const QByteArray &plainText = m->plainText();
         const GpgME::DecryptionResult &decryptResult = m->decryptResult();
         const GpgME::VerificationResult &verifyResult = m->verifyResult();
-        mMetaData.isSigned = verifyResult.signatures().size() > 0;
+        partMetaData()->isSigned = verifyResult.signatures().size() > 0;
 
         if (verifyResult.signatures().size() > 0) {
             auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, MessagePart::text(), mCryptoProto, mFromAddress, mNode));
@@ -1154,17 +1185,17 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
 //        ss << decryptResult << '\n' << verifyResult;
 //        qCDebug(MIMETREEPARSER_LOG) << ss.str().c_str();
 
-        if (!bDecryptionOk && mMetaData.isSigned) {
+        if (!bDecryptionOk && partMetaData()->isSigned) {
             //Only a signed part
-            mMetaData.isEncrypted = false;
+            partMetaData()->isEncrypted = false;
             bDecryptionOk = true;
             mDecryptedData = plainText;
         } else {
             mPassphraseError = decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_NO_SECKEY;
-            mMetaData.isEncrypted = decryptResult.error().code() != GPG_ERR_NO_DATA;
-            mMetaData.errorText = QString::fromLocal8Bit(decryptResult.error().asString());
-            if (mMetaData.isEncrypted && decryptResult.numRecipients() > 0) {
-                mMetaData.keyId = decryptResult.recipient(0).keyID();
+            partMetaData()->isEncrypted = decryptResult.error().code() != GPG_ERR_NO_DATA;
+            partMetaData()->errorText = QString::fromLocal8Bit(decryptResult.error().asString());
+            if (partMetaData()->isEncrypted && decryptResult.numRecipients() > 0) {
+                partMetaData()->keyId = decryptResult.recipient(0).keyID();
             }
 
             if (bDecryptionOk) {
@@ -1188,14 +1219,14 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         }
 
         if (!mCryptoProto) {
-            mMetaData.errorText = i18n("No appropriate crypto plug-in was found.");
+            partMetaData()->errorText = i18n("No appropriate crypto plug-in was found.");
         } else if (cannotDecrypt) {
-            mMetaData.errorText = i18n("Crypto plug-in \"%1\" cannot decrypt messages.",
+            partMetaData()->errorText = i18n("Crypto plug-in \"%1\" cannot decrypt messages.",
                                        cryptPlugLibName);
         } else if (!passphraseError()) {
-            mMetaData.errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName)
+            partMetaData()->errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName)
                                   + QLatin1String("<br />")
-                                  + i18n("Error: %1", mMetaData.errorText);
+                                  + i18n("Error: %1", partMetaData()->errorText);
         }
     }
     return bDecryptionOk;
@@ -1211,25 +1242,25 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
         data = mNode;
     }
 
-    mMetaData.isEncrypted = true;
+    partMetaData()->isEncrypted = true;
 
     bool bOkDecrypt = okDecryptMIME(*data);
 
-    if (mMetaData.inProgress) {
+    if (partMetaData()->inProgress) {
         return;
     }
-    mMetaData.isDecryptable = bOkDecrypt;
+    partMetaData()->isDecryptable = bOkDecrypt;
 
-    if (!mMetaData.isDecryptable) {
+    if (!partMetaData()->isDecryptable) {
         setText(QString::fromUtf8(mDecryptedData.constData()));
     }
 
-    if (mMetaData.isEncrypted && !decryptMessage()) {
-        mMetaData.isDecryptable = true;
+    if (partMetaData()->isEncrypted && !decryptMessage()) {
+        partMetaData()->isDecryptable = true;
     }
 
-    if (mNode && !mMetaData.isSigned) {
-        mOtp->nodeHelper()->setPartMetaData(mNode, mMetaData);
+    if (mNode && !partMetaData()->isSigned) {
+        mOtp->nodeHelper()->setPartMetaData(mNode, *partMetaData());
 
         if (decryptMessage()) {
             auto tempNode = new KMime::Content();
@@ -1283,12 +1314,12 @@ EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *o
     , mMessage(message)
     , mNode(node)
 {
-    mMetaData.isEncrypted = false;
-    mMetaData.isSigned = false;
-    mMetaData.isEncapsulatedRfc822Message = true;
+    partMetaData()->isEncrypted = false;
+    partMetaData()->isSigned = false;
+    partMetaData()->isEncapsulatedRfc822Message = true;
 
     mOtp->nodeHelper()->setNodeDisplayedEmbedded(mNode, true);
-    mOtp->nodeHelper()->setPartMetaData(mNode, mMetaData);
+    mOtp->nodeHelper()->setPartMetaData(mNode, *partMetaData());
 
     if (!mMessage) {
         qCWarning(MIMETREEPARSER_LOG) << "Node is of type message/rfc822 but doesn't have a message!";

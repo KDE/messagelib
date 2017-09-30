@@ -38,7 +38,7 @@ const Interface::BodyPartFormatter *MultiPartMixedBodyPartFormatter::create()
     return self;
 }
 
-Interface::MessagePart::Ptr MultiPartMixedBodyPartFormatter::process(Interface::BodyPart &part) const
+MessagePart::Ptr MultiPartMixedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     if (part.content()->contents().isEmpty()) {
         return MessagePart::Ptr();

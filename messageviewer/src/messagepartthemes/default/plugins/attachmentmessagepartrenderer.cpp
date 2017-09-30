@@ -40,7 +40,7 @@ AttachmentMessagePartRenderer::~AttachmentMessagePartRenderer()
 {
 }
 
-QSharedPointer<PartRendered> AttachmentMessagePartRenderer::render(DefaultRendererPrivate *drp, const MimeTreeParser::Interface::MessagePartPtr &msgPart)
+QSharedPointer<PartRendered> AttachmentMessagePartRenderer::render(DefaultRendererPrivate *drp, const MimeTreeParser::MessagePartPtr &msgPart)
 const
 {
     auto mp = msgPart.dynamicCast<AttachmentMessagePart>();

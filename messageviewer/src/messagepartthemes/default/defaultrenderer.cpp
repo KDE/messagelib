@@ -364,7 +364,7 @@ public:
     MimeTreeParser::HtmlWriter *mBaseWriter = nullptr;
 };
 
-DefaultRendererPrivate::DefaultRendererPrivate(const Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory)
+DefaultRendererPrivate::DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory)
     : mMsgPart(msgPart)
     , mOldWriter(writer)
     , mCSSHelper(cssHelper)
@@ -384,20 +384,12 @@ QString DefaultRendererPrivate::alignText()
 
 CSSHelperBase *DefaultRendererPrivate::cssHelper() const
 {
-    auto mp = mMsgPart.dynamicCast<MessagePart>();
-    if (mp) {
-        return mCSSHelper;
-    }
-    return nullptr;
+    return mCSSHelper;
 }
 
 Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
 {
-    auto mp = mMsgPart.dynamicCast<MessagePart>();
-    if (mp) {
-        return mp->source();
-    }
-    return nullptr;
+    return mMsgPart->source();
 }
 
 void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
@@ -539,7 +531,7 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
 QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp)
 {
     KMime::Content *node = mp->mNode;
-    const auto metaData = mp->mMetaData;
+    const auto metaData = *mp->partMetaData();
 
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
                                                                                              ":/encryptedmessagepart.html"));
@@ -593,7 +585,7 @@ QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr 
 QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
 {
     KMime::Content *node = mp->mNode;
-    const auto metaData = mp->mMetaData;
+    const auto metaData = *mp->partMetaData();
     auto cryptoProto = mp->mCryptoProto;
 
     const bool isSMIME = cryptoProto && (cryptoProto == QGpgME::smime());
@@ -841,7 +833,7 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
 QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
 {
     auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-    const auto metaData = mp->mMetaData;
+    const auto metaData = *mp->partMetaData();
     if (metaData.isSigned || metaData.inProgress) {
         {
             HTMLBlock::Ptr aBlock;
@@ -875,7 +867,7 @@ QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
 QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
 {
     auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-    const auto metaData = mp->mMetaData;
+    const auto metaData = *mp->partMetaData();
 
     if (metaData.isEncrypted || metaData.inProgress) {
         {
@@ -978,7 +970,7 @@ QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
     return htmlWriter->html;
 }
 
-QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className, const Interface::MessagePart::Ptr &msgPart)
+QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className, const MessagePart::Ptr &msgPart)
 {
     if (mRendererFactory) {
         const auto registry = mRendererFactory->typeRegistry(className);
@@ -992,7 +984,7 @@ QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString c
     return QSharedPointer<PartRendered>();
 }
 
-QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+QString DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
 {
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
@@ -1059,7 +1051,7 @@ QString DefaultRendererPrivate::renderFactory(const Interface::MessagePart::Ptr 
     return QString();
 }
 
-DefaultRenderer::DefaultRenderer(const MimeTreeParser::Interface::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, MimeTreeParser::HtmlWriter *writer)
+DefaultRenderer::DefaultRenderer(const MimeTreeParser::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, MimeTreeParser::HtmlWriter *writer)
     : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper, writer, MessagePartRendererFactory::instance()))
 {
 }

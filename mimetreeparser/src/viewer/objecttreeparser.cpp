@@ -197,7 +197,7 @@ MessagePartPtr ObjectTreeParser::parsedPart() const
     return mParsedPart;
 }
 
-Interface::MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mimeType, bool onlyOneMimePart)
+MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mimeType, bool onlyOneMimePart)
 {
     const auto formatters = mSource->bodyPartFormatterFactory()->formattersForType(QString::fromUtf8(mimeType));
     Q_ASSERT(!formatters.empty());
@@ -209,7 +209,7 @@ Interface::MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, Pr
 
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
 
-        const Interface::MessagePart::Ptr result = formatter->process(part);
+        const MessagePart::Ptr result = formatter->process(part);
         if (!result) {
             continue;
         }
@@ -222,9 +222,7 @@ Interface::MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, Pr
                 mNodeHelper->setNodeDisplayedEmbedded(node, false);
                 auto mp = processType(node, processResult, QByteArrayLiteral("application/octet-stream"), onlyOneMimePart);
                 if (mp) {
-                    if (auto _mp = mp.dynamicCast<MessagePart>()) {
-                        _mp->setAttachmentFlag(node);
-                    }
+                    mp->setAttachmentFlag(node);
                 }
                 return mp;
             } else if (r == Interface::BodyPartFormatter::Ok) {
@@ -232,8 +230,7 @@ Interface::MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, Pr
                 return result;
             }
         } else {
-            if (auto mp = result.dynamicCast<MessagePart>())
-                mp->setAttachmentFlag(node);
+            result->setAttachmentFlag(node);
             return result;
         }
     }

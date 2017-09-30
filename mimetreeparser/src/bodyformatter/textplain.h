@@ -28,7 +28,7 @@ class TextPlainBodyPartFormatter : public Interface::BodyPartFormatter
 {
     static const TextPlainBodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override;
+    MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();
 };
 }

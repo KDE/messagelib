@@ -59,8 +59,8 @@ MessagePart::Ptr MimeTreeParser::toplevelTextNode(MessagePart::Ptr messageTree)
             return text;
         } else if (const auto alternative = mp.dynamicCast<AlternativeMessagePart>()) {
             return alternative;
-        } else if (const auto m = mp.dynamicCast<MessagePart>()) {
-            auto ret = toplevelTextNode(m);
+        } else {
+            auto ret = toplevelTextNode(mp);
             if (ret) {
                 return ret;
             }

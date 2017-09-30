@@ -28,7 +28,7 @@ class MultiPartAlternativeBodyPartFormatter : public Interface::BodyPartFormatte
 {
     static const MultiPartAlternativeBodyPartFormatter *self;
 public:
-    Interface::MessagePart::Ptr process(Interface::BodyPart &part) const override;
+    MessagePartPtr process(Interface::BodyPart &part) const override;
     static const Interface::BodyPartFormatter *create();
 };
 }

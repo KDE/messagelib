@@ -48,10 +48,6 @@ class Content;
 }
 
 namespace MimeTreeParser {
-namespace Interface {
-class MessagePart;
-typedef QSharedPointer<MessagePart> MessagePartPtr;
-}
 
 class PartMetaData;
 class ViewerPrivate;
@@ -337,7 +333,7 @@ private:
     * top-level content.
     */
     MessagePartPtr parseObjectTreeInternal(KMime::Content *node, bool mOnlyOneMimePart);
-    Interface::MessagePartPtr processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mimeType, bool onlyOneMimePart);
+    MessagePartPtr processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mimeType, bool onlyOneMimePart);
 
 private:
 
