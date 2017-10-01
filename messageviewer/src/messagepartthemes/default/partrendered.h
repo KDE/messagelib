@@ -37,7 +37,7 @@ namespace KMime {
 class Content;
 }
 
-class CacheHtmlWriter;
+class CacheHtmlWriter2;
 
 class PartRendered
 {
@@ -67,7 +67,7 @@ public:
 class WrapperPartRendered : public PartRendered
 {
 public:
-    WrapperPartRendered(CacheHtmlWriter *);
+    WrapperPartRendered(CacheHtmlWriter2 *);
     virtual ~WrapperPartRendered();
 
     QString html() override;

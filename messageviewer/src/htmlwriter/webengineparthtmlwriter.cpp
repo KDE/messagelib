@@ -29,7 +29,6 @@ using namespace MessageViewer;
 
 WebEnginePartHtmlWriter::WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent)
     : QObject(parent)
-    , MimeTreeParser::HtmlWriter()
     , mHtmlView(view)
     , mState(Ended)
 {
@@ -47,12 +46,14 @@ void WebEnginePartHtmlWriter::begin()
         reset();
     }
 
+    BufferedHtmlWriter::begin();
     MessageViewer::WebEngineEmbedPart::self()->clear();
     mState = Begun;
 }
 
 void WebEnginePartHtmlWriter::end()
 {
+    BufferedHtmlWriter::end();
     if (mState != Begun) {
         qCWarning(MESSAGEVIEWER_LOG) << "Called on non-begun or queued session!";
     }
@@ -60,9 +61,10 @@ void WebEnginePartHtmlWriter::end()
         insertExtraHead();
         mExtraHead.clear();
     }
-    mHtmlView->setHtml(mHtml, QUrl(QStringLiteral("file:///")));
+    // see QWebEnginePage::setHtml()
+    mHtmlView->setContent(data(), QStringLiteral("text/html;charset=UTF-8"), QUrl(QStringLiteral("file:///")));
     mHtmlView->show();
-    mHtml.clear();
+    clear();
 
     mHtmlView->setUpdatesEnabled(true);
     mHtmlView->update();
@@ -72,20 +74,12 @@ void WebEnginePartHtmlWriter::end()
 
 void WebEnginePartHtmlWriter::reset()
 {
+    BufferedHtmlWriter::reset();
     if (mState != Ended) {
-        mHtml.clear();
         mState = Begun; // don't run into end()'s warning
         end();
         mState = Ended;
     }
-}
-
-void WebEnginePartHtmlWriter::write(const QString &str)
-{
-    if (mState != Begun) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Called in Ended or Queued state!";
-    }
-    mHtml.append(str);
 }
 
 void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId, const QString &contentURL)
@@ -95,10 +89,10 @@ void WebEnginePartHtmlWriter::embedPart(const QByteArray &contentId, const QStri
 
 void WebEnginePartHtmlWriter::insertExtraHead()
 {
-    const QString headTag(QStringLiteral("<head>"));
-    const int index = mHtml.indexOf(headTag);
+    const auto headTag(QByteArrayLiteral("<head>"));
+    const int index = m_data.indexOf(headTag);
     if (index != -1) {
-        mHtml.insert(index + headTag.length(), mExtraHead);
+        m_data.insert(index + headTag.length(), mExtraHead.toUtf8());
     }
 }
 

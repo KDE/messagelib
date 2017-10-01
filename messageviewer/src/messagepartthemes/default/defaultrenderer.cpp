@@ -34,7 +34,7 @@
 #include "viewer/csshelperbase.h"
 #include "messagepartrenderermanager.h"
 
-#include <MimeTreeParser/HtmlWriter>
+#include <MimeTreeParser/BufferedHtmlWriter>
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <GrantleeTheme/QtResourceTemplateLoader>
@@ -308,26 +308,19 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
     return s;
 }
 
-class CacheHtmlWriter : public MimeTreeParser::HtmlWriter
+class CacheHtmlWriter : public MimeTreeParser::BufferedHtmlWriter
 {
 public:
     explicit CacheHtmlWriter(MimeTreeParser::HtmlWriter *baseWriter)
         : mBaseWriter(baseWriter)
     {
+        BufferedHtmlWriter::begin();
     }
 
-    virtual ~CacheHtmlWriter()
-    {
-    }
-
+    ~CacheHtmlWriter() = default;
     void begin() override
     {
         mBaseWriter->begin();
-    }
-
-    void write(const QString &str) override
-    {
-        html.append(str);
     }
 
     void end() override
@@ -350,7 +343,12 @@ public:
         mBaseWriter->extraHead(extra);
     }
 
-    QString html;
+    QString html()
+    {
+        BufferedHtmlWriter::end();
+        return QString::fromUtf8(data());
+    }
+
     MimeTreeParser::HtmlWriter *mBaseWriter = nullptr;
 };
 
@@ -407,7 +405,7 @@ QString DefaultRendererPrivate::render(const MessagePartList::Ptr &mp)
         renderSubParts(mp, htmlWriter);
     }
 
-    return htmlWriter->html;
+    return htmlWriter->html();
 }
 
 QString DefaultRendererPrivate::render(const MimeMessagePart::Ptr &mp)
@@ -428,7 +426,7 @@ QString DefaultRendererPrivate::render(const MimeMessagePart::Ptr &mp)
         renderSubParts(mp, htmlWriter);
     }
 
-    return htmlWriter->html;
+    return htmlWriter->html();
 }
 
 QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp)
@@ -450,7 +448,7 @@ QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr 
     {
         auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
         renderSubParts(mp, _htmlWriter);
-        c.insert(QStringLiteral("content"), _htmlWriter->html);
+        c.insert(QStringLiteral("content"), _htmlWriter->html());
     }
 
     auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
@@ -460,10 +458,10 @@ QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr 
             aBlock
                 = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
-        const auto html = t->render(&c);
-        htmlWriter->write(html);
+        Grantlee::OutputStream s(htmlWriter->stream());
+        t->render(&s, &c);
     }
-    return htmlWriter->html;
+    return htmlWriter->html();
 }
 
 QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
@@ -512,10 +510,10 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
             aBlock
                 = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
-        const auto html = t->render(&c);
-        htmlWriter->write(html);
+        Grantlee::OutputStream s(htmlWriter->stream());
+        t->render(&s, &c);
     }
-    return htmlWriter->html;
+    return htmlWriter->html();
 }
 
 QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp)
@@ -537,7 +535,7 @@ QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr 
             }
             renderSubParts(mp, _htmlWriter);
         }
-        c.insert(QStringLiteral("content"), _htmlWriter->html);
+        c.insert(QStringLiteral("content"), _htmlWriter->html());
     } else if (!metaData.inProgress) {
         auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
         if (part) {
@@ -594,7 +592,7 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
             }
             renderSubParts(mp, _htmlWriter);
         }
-        c.insert(QStringLiteral("content"), _htmlWriter->html);
+        c.insert(QStringLiteral("content"), _htmlWriter->html());
     } else if (!metaData.inProgress) {
         auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
         if (part) {
@@ -834,7 +832,7 @@ QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
             }
             htmlWriter->write(renderSigned(mp));
         }
-        return htmlWriter->html;
+        return htmlWriter->html();
     }
     {
         HTMLBlock::Ptr aBlock;
@@ -851,7 +849,7 @@ QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
             }
         }
     }
-    return htmlWriter->html;
+    return htmlWriter->html();
 }
 
 QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
@@ -869,7 +867,7 @@ QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
             }
             htmlWriter->write(renderEncrypted(mp));
         }
-        return htmlWriter->html;
+        return htmlWriter->html();
     }
 
     {
@@ -888,7 +886,7 @@ QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
             }
         }
     }
-    return htmlWriter->html;
+    return htmlWriter->html();
 }
 
 QString DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp)
@@ -917,7 +915,7 @@ QString DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp)
 
         htmlWriter->write(render(part));
     }
-    return htmlWriter->html;
+    return htmlWriter->html();
 }
 
 QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
@@ -954,10 +952,10 @@ QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
             aBlock
                 = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
         }
-        const auto html = t->render(&c);
-        htmlWriter->write(html);
+        Grantlee::OutputStream s(htmlWriter->stream());
+        t->render(&s, &c);
     }
-    return htmlWriter->html;
+    return htmlWriter->html();
 }
 
 QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className, const MessagePart::Ptr &msgPart)

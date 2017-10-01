@@ -42,6 +42,7 @@ set(libmimetreeparser_main_SRCS
 
 set(libmimetreeparser_extra_SRCS
     #HTML Writer
+    htmlwriter/bufferedhtmlwriter.cpp
     htmlwriter/filehtmlwriter.cpp
     )
 
@@ -86,6 +87,7 @@ ecm_generate_headers(MimeTreeParser_Camelcaseinterfaces_HEADERS
 
 ecm_generate_headers(MimeTreeParser_Camelcasehtmlwriter_HEADERS
     HEADER_NAMES
+    BufferedHtmlWriter
     FileHtmlWriter
     REQUIRED_HEADERS MimeTreeParser_htmlwriter_HEADERS
     PREFIX MimeTreeParser

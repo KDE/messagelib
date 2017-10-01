@@ -17,7 +17,7 @@
 #ifndef WEBENGINEPARTHTMLWRITER_H
 #define WEBENGINEPARTHTMLWRITER_H
 
-#include <MimeTreeParser/HtmlWriter>
+#include <MimeTreeParser/BufferedHtmlWriter>
 #include <QObject>
 
 #include <QString>
@@ -28,7 +28,7 @@ class MailWebEngineView;
 }
 
 namespace MessageViewer {
-class WebEnginePartHtmlWriter : public QObject, public MimeTreeParser::HtmlWriter
+class WebEnginePartHtmlWriter : public QObject, public MimeTreeParser::BufferedHtmlWriter
 {
     Q_OBJECT
 public:
@@ -38,7 +38,6 @@ public:
     void begin() override;
     void end() override;
     void reset() override;
-    void write(const QString &str) override;
     void embedPart(const QByteArray &contentId, const QString &url) override;
     void extraHead(const QString &str) override;
 
@@ -50,7 +49,6 @@ private:
 
 private:
     MailWebEngineView *mHtmlView = nullptr;
-    QString mHtml;
     QString mExtraHead;
     enum State {
         Begun,

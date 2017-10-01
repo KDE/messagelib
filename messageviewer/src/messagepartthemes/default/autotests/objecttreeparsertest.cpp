@@ -21,7 +21,7 @@
 #include "setupenv.h"
 
 #include <MimeTreeParser/ObjectTreeParser>
-#include <MimeTreeParser/HtmlWriter>
+#include <MimeTreeParser/BufferedHtmlWriter>
 #include <MessageViewer/CSSHelperBase>
 
 #include <QTest>
@@ -92,12 +92,14 @@ void ObjectTreeParserTester::test_parseEncapsulatedMessage()
     QCOMPARE(msg->contents().size(), 2);
 
     // Parse the message
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(msg.data());
+    testWriter.end();
 
     // Check that the OTP didn't modify the message in weird ways
     QCOMPARE(msg->contents().size(), 2);
@@ -128,12 +130,14 @@ void ObjectTreeParserTester::test_missingContentTypeHeader()
                  false).constData(), "Simple Mail Without Content-Type Header");
     QCOMPARE(msg->contents().size(), 0);
 
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(msg.data());
+    testWriter.end();
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "asdfasdf");
     QVERIFY(otp.htmlContent().isEmpty());
@@ -146,7 +150,8 @@ void ObjectTreeParserTester::test_inlinePGPDecryption()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "inlinepgpencrypted");
     QCOMPARE(msg->contents().size(), 0);
 
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -154,6 +159,7 @@ void ObjectTreeParserTester::test_inlinePGPDecryption()
 
     emptySource.setAllowDecryption(true);
     otp.parseObjectTree(msg.data());
+    testWriter.end();
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "some random text");
 
@@ -171,7 +177,8 @@ void ObjectTreeParserTester::test_inlinePGPSigned()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "test");
     QCOMPARE(msg->contents().size(), 0);
 
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -179,6 +186,7 @@ void ObjectTreeParserTester::test_inlinePGPSigned()
 
     emptySource.setAllowDecryption(true);
     otp.parseObjectTree(msg.data());
+    testWriter.end();
 
     // This test is only a workaround, till we can set the memento to the propper node of the mail.
     QVERIFY(nodeHelper.bodyPartMemento(nullptr, "verification"));
@@ -209,12 +217,14 @@ void ObjectTreeParserTester::test_HTMLasText()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
 
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
     emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
     otp.parseObjectTree(msg.data());
+    testWriter.end();
 
     QCOMPARE(otp.htmlContent().toLatin1().constData(), "");
     QCOMPARE(otp.htmlContentCharset().constData(), "");
@@ -245,19 +255,20 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     ObjectTreeParser otp(&emptySource);
 
     emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
     otp.parseObjectTree(msg.data());
+    testWriter.end();
 
     QVERIFY(otp.plainTextContent().isEmpty());
     QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
-    QVERIFY(testWriter.html.contains(QStringLiteral(
-                                         "This is an HTML message. For security reasons, only the raw HTML code is shown.")));
-    QVERIFY(testWriter.html.contains(QStringLiteral("*SOME* HTML text. <br>")));
+    QVERIFY(testWriter.data().contains("This is an HTML message. For security reasons, only the raw HTML code is shown."));
+    QVERIFY(testWriter.data().contains("SOME* HTML text. <br>"));
 }
 
 void ObjectTreeParserTester::test_HTMLExternal()
@@ -268,32 +279,34 @@ void ObjectTreeParserTester::test_HTMLExternal()
     QCOMPARE(msg->contents().size(), 0);
 
     {
-        Test::HtmlWriter testWriter;
+        MimeTreeParser::BufferedHtmlWriter testWriter;
+        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         otp.parseObjectTree(msg.data());
+        testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
         QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
-        QVERIFY(testWriter.html.contains(QStringLiteral("<b>SOME</b> HTML text.")));
-        QVERIFY(testWriter.html.contains(QStringLiteral(
-                                             "This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
+        QVERIFY(testWriter.data().contains("<b>SOME</b> HTML text."));
+        QVERIFY(testWriter.data().contains("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
     }
     {
-        Test::HtmlWriter testWriter;
+        MimeTreeParser::BufferedHtmlWriter testWriter;
+        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setHtmlLoadExternal(true);
         otp.parseObjectTree(msg.data());
+        testWriter.end();
 
         QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
-        QVERIFY(testWriter.html.contains(QStringLiteral("<b>SOME</b> HTML text.")));
-        QVERIFY(!testWriter.html.contains(QStringLiteral(
-                                              "This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded.")));
+        QVERIFY(testWriter.data().contains("<b>SOME</b> HTML text."));
+        QVERIFY(!testWriter.data().contains("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
     }
 }
 
@@ -302,67 +315,72 @@ void ObjectTreeParserTester::test_Alternative()
     KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("alternative.mbox"));
     QCOMPARE(msg->contents().size(), 2);
     {
-        Test::HtmlWriter testWriter;
+        MimeTreeParser::BufferedHtmlWriter testWriter;
+        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
         otp.parseObjectTree(msg.data());
+        testWriter.end();
 
         QVERIFY(otp.htmlContent().isEmpty());
         QVERIFY(otp.plainTextContent().contains(QStringLiteral(
                                                     "If you can see this text it means that your email client couldn't display our newsletter properly.")));
-        QVERIFY(testWriter.html.contains(QStringLiteral(
-                                             "If you can see this text it means that your email client couldn't display our newsletter properly.")));
+        QVERIFY(testWriter.data().contains("If you can see this text it means that your email client couldn't display our newsletter properly."));
     }
 
     {
-        Test::HtmlWriter testWriter;
+        MimeTreeParser::BufferedHtmlWriter testWriter;
+        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setPreferredMode(MimeTreeParser::Util::MultipartHtml);
         otp.parseObjectTree(msg.data());
+        testWriter.end();
 
         QVERIFY(otp.plainTextContent().contains(QStringLiteral(
                                                     "If you can see this text it means that your email client couldn't display our newsletter properly.")));
         QVERIFY(otp.htmlContent().contains(QStringLiteral(
                                                "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
-        QVERIFY(testWriter.html.contains(QStringLiteral(
-                                             "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }
 
     msg = Test::readAndParseMail(QStringLiteral("alternative-notext.mbox"));
     QCOMPARE(msg->contents().size(), 1);
     {
-        Test::HtmlWriter testWriter;
+        MimeTreeParser::BufferedHtmlWriter testWriter;
+        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
         otp.parseObjectTree(msg.data());
+        testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
         QVERIFY(otp.htmlContent().isEmpty());
-        QVERIFY(testWriter.html.contains(QStringLiteral("Some *HTML* text")));
+        QVERIFY(testWriter.data().contains("Some *HTML* text"));
     }
 
     {
-        Test::HtmlWriter testWriter;
+        MimeTreeParser::BufferedHtmlWriter testWriter;
+        testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
         ObjectTreeParser otp(&emptySource);
 
         emptySource.setPreferredMode(MimeTreeParser::Util::MultipartHtml);
         otp.parseObjectTree(msg.data());
+        testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
         QVERIFY(otp.htmlContent().contains(QStringLiteral(
                                                "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
-        QVERIFY(testWriter.html.contains(QStringLiteral(
-                                             "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }
 }

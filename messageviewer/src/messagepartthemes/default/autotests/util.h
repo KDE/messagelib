@@ -27,41 +27,6 @@
 
 namespace MessageViewer {
 namespace Test {
-class HtmlWriter : public MimeTreeParser::HtmlWriter
-{
-public:
-    explicit HtmlWriter()
-    {
-    }
-
-    virtual ~HtmlWriter()
-    {
-    }
-
-    void begin() override
-    {
-    }
-
-    void write(const QString &str) override
-    {
-        html += str;
-    }
-
-    void end() override
-    {
-    }
-
-    void embedPart(const QByteArray &, const QString &) override
-    {
-    }
-
-    void extraHead(const QString &) override
-    {
-    }
-
-    QString html;
-};
-
 class CSSHelper : public MessageViewer::CSSHelperBase
 {
 public:

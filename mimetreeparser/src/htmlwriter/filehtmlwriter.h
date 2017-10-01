@@ -36,30 +36,23 @@
 #include "mimetreeparser/htmlwriter.h"
 
 #include <QFile>
-#include <QTextStream>
-
-class QString;
 
 namespace MimeTreeParser {
 class MIMETREEPARSER_EXPORT FileHtmlWriter : public HtmlWriter
 {
 public:
     explicit FileHtmlWriter(const QString &filename);
-    virtual ~FileHtmlWriter();
+    ~FileHtmlWriter();
 
     void begin() override;
     void end() override;
     void reset() override;
-    void write(const QString &str) override;
+    QIODevice* device() const override;
     void embedPart(const QByteArray &contentId, const QString &url) override;
     void extraHead(const QString &str) override;
-private:
-    void flush();
-    void openOrWarn();
 
 private:
     QFile mFile;
-    QTextStream mStream;
 };
 } // namespace MimeTreeParser
 

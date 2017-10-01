@@ -35,10 +35,10 @@
 #include "MessageComposer/InfoPart"
 #include "MessageComposer/TextPart"
 
-#include "testhtmlwriter.h"
 #include "testcsshelper.h"
 #include <setupenv.h>
 
+#include <MimeTreeParser/BufferedHtmlWriter>
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
 

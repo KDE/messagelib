@@ -30,13 +30,14 @@
 */
 
 #include "filehtmlwriter.h"
-
 #include "mimetreeparser_debug.h"
 
-namespace MimeTreeParser {
+#include <QTextStream>
+
+using namespace MimeTreeParser;
+
 FileHtmlWriter::FileHtmlWriter(const QString &filename)
-    : HtmlWriter()
-    , mFile(filename.isEmpty() ? QStringLiteral("filehtmlwriter.out") : filename)
+    : mFile(filename.isEmpty() ? QStringLiteral("filehtmlwriter.out") : filename)
 {
 }
 
@@ -44,64 +45,47 @@ FileHtmlWriter::~FileHtmlWriter()
 {
     if (mFile.isOpen()) {
         qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: file still open!";
-        mStream.setDevice(nullptr);
+        HtmlWriter::end();
         mFile.close();
     }
 }
 
 void FileHtmlWriter::begin()
 {
-    openOrWarn();
+    if (mFile.isOpen()) {
+        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: file still open!";
+        mFile.close();
+    }
+    if (!mFile.open(QIODevice::WriteOnly)) {
+        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: Cannot open file" << mFile.fileName();
+    }
+    HtmlWriter::begin();
 }
 
 void FileHtmlWriter::end()
 {
-    flush();
-    mStream.setDevice(nullptr);
+    HtmlWriter::end();
     mFile.close();
 }
 
 void FileHtmlWriter::reset()
 {
+    HtmlWriter::reset();
     if (mFile.isOpen()) {
-        mStream.setDevice(nullptr);
         mFile.close();
     }
 }
 
-void FileHtmlWriter::write(const QString &str)
+QIODevice* FileHtmlWriter::device() const
 {
-    mStream << str;
-}
-
-void FileHtmlWriter::flush()
-{
-    mStream.flush();
-    mFile.flush();
-}
-
-void FileHtmlWriter::openOrWarn()
-{
-    if (mFile.isOpen()) {
-        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: file still open!";
-        mStream.setDevice(nullptr);
-        mFile.close();
-    }
-    if (!mFile.open(QIODevice::WriteOnly)) {
-        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: Cannot open file" << mFile.fileName();
-    } else {
-        mStream.setDevice(&mFile);
-        mStream.setCodec("UTF-8");
-    }
+    return const_cast<QFile*>(&mFile);
 }
 
 void FileHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
 {
-    mStream << "<!-- embedPart(contentID=" << contentId << ", url=" << url << ") -->" << endl;
-    flush();
+    *stream() << "<!-- embedPart(contentID=" << contentId << ", url=" << url << ") -->" << endl;
 }
 
 void FileHtmlWriter::extraHead(const QString &)
 {
 }
-} //

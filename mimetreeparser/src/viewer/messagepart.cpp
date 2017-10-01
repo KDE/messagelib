@@ -22,7 +22,7 @@
 #include "attachmentstrategy.h"
 #include "cryptohelper.h"
 #include "objecttreeparser.h"
-#include "interfaces/htmlwriter.h"
+#include "htmlwriter/bufferedhtmlwriter.h"
 #include "job/qgpgmejobexecutor.h"
 #include "memento/cryptobodypartmemento.h"
 #include "memento/decryptverifybodypartmemento.h"
@@ -205,22 +205,11 @@ bool MessagePart::hasSubParts() const
 }
 
 //-----LegacyMessagePart--------------------
-class LegacyHtmlWriter : public HtmlWriter
-{
-public:
-    void begin() override {}
-    void end() override {}
-    void extraHead(const QString&) override {}
-    void embedPart(const QByteArray&, const QString&) override {}
-    void write(const QString &html) override { text += html; }
-
-    QString text;
-};
-
 LegacyPluginMessagePart::LegacyPluginMessagePart(ObjectTreeParser *otp)
     : MessagePart(otp, QString())
-    , m_htmlWriter(new LegacyHtmlWriter)
+    , m_htmlWriter(new BufferedHtmlWriter)
 {
+    m_htmlWriter->begin();
 }
 
 LegacyPluginMessagePart::~LegacyPluginMessagePart()
@@ -234,7 +223,8 @@ HtmlWriter* LegacyPluginMessagePart::htmlWriter() const
 
 QString LegacyPluginMessagePart::formatOutput() const
 {
-    return static_cast<LegacyHtmlWriter*>(m_htmlWriter.get())->text;
+    m_htmlWriter->end();
+    return QString::fromUtf8(static_cast<BufferedHtmlWriter*>(m_htmlWriter.get())->data());
 }
 
 //-----MessagePartList----------------------

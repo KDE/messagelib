@@ -17,47 +17,62 @@
    02110-1301, USA.
 */
 
-#include "htmlwriter.h"
+#include "bufferedhtmlwriter.h"
 
 #include <QTextStream>
 
 using namespace MimeTreeParser;
 
-HtmlWriter::HtmlWriter() = default;
-HtmlWriter::~HtmlWriter() = default;
-
-void HtmlWriter::begin()
+BufferedHtmlWriter::BufferedHtmlWriter()
+    : m_buffer(&m_data)
 {
-    if (!m_stream)
-        m_stream.reset(new QTextStream());
-    m_stream->setDevice(device());
-    m_stream->setCodec("UTF-8");
 }
 
-void HtmlWriter::write(const QString& html)
+BufferedHtmlWriter::~BufferedHtmlWriter()
 {
-    Q_ASSERT(m_stream);
-    if (!m_stream)
-        return;
-    *stream() << html;
+    HtmlWriter::end();
 }
 
-void HtmlWriter::end()
+void BufferedHtmlWriter::begin()
 {
-    if (!m_stream)
-        return;
-    m_stream->flush();
-    m_stream->setDevice(nullptr);
+    m_buffer.open(QBuffer::WriteOnly);
+    HtmlWriter::begin();
 }
 
-void HtmlWriter::reset()
+void BufferedHtmlWriter::end()
 {
-    if (!m_stream)
-        return;
-    m_stream->setDevice(nullptr);
+    HtmlWriter::end();
+    m_buffer.close();
 }
 
-QTextStream* HtmlWriter::stream() const
+void BufferedHtmlWriter::reset()
 {
-    return m_stream.get();
+    HtmlWriter::reset();
+    m_buffer.close();
+    clear();
+}
+
+QIODevice* BufferedHtmlWriter::device() const
+{
+    return const_cast<QBuffer*>(&m_buffer);
+}
+
+void BufferedHtmlWriter::extraHead(const QString& str)
+{
+}
+
+void BufferedHtmlWriter::embedPart(const QByteArray& contentId, const QString& url)
+{
+    Q_UNUSED(contentId);
+    Q_UNUSED(url);
+}
+
+QByteArray BufferedHtmlWriter::data() const
+{
+    return m_data;
+}
+
+void BufferedHtmlWriter::clear()
+{
+    m_data.clear();
 }

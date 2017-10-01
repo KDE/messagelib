@@ -24,6 +24,7 @@
 
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/BufferedHtmlWriter>
 
 #include <QTest>
 
@@ -53,11 +54,13 @@ void UnencryptedMessageTest::testSignedForwardedOpenPGPSignedEncrypted()
         = Test::readAndParseMail(QStringLiteral("signed-forward-openpgp-signed-encrypted.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
+    testWriter.end();
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "bla bla bla");   // The textual content doesn't include the encrypted encapsulated message by design
     QCOMPARE(nodeHelper.overallEncryptionState(
@@ -75,12 +78,14 @@ void UnencryptedMessageTest::testForwardedOpenPGPSignedEncrypted()
         = Test::readAndParseMail(QStringLiteral("forward-openpgp-signed-encrypted.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     emptySource.setAllowDecryption(true);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
+    testWriter.end();
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "bla bla bla");   // The textual content doesn't include the encrypted encapsulated message by design
     QCOMPARE(nodeHelper.overallEncryptionState(
@@ -308,20 +313,21 @@ void UnencryptedMessageTest::testNotDecrypted()
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(mailFileName);
 
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     emptySource.setAllowDecryption(false);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
+    testWriter.end();
 
     if (decryptMessage) {
         QCOMPARE(otp.plainTextContent().toLatin1().data(), "");
     } else {
         QVERIFY(otp.plainTextContent().toLatin1().data());
     }
-    QCOMPARE(testWriter.html.contains(QStringLiteral(
-                                          "<a href=\"kmail:decryptMessage\">")), decryptMessage);
+    QCOMPARE(testWriter.data().contains("<a href=\"kmail:decryptMessage\">"), decryptMessage);
 
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QCOMPARE((bool)unencryptedMessage, false);
@@ -332,12 +338,14 @@ void UnencryptedMessageTest::testSMimeAutoCertImport()
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(QStringLiteral("smime-cert.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    Test::HtmlWriter testWriter;
+    MimeTreeParser::BufferedHtmlWriter testWriter;
+    testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
     otp.parseObjectTree(originalMessage.data());
+    testWriter.end();
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "");
-    QVERIFY(testWriter.html.contains(QStringLiteral("Sorry, certificate could not be imported.")));
+    QVERIFY(testWriter.data().contains("Sorry, certificate could not be imported."));
 }
