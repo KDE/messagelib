@@ -23,6 +23,7 @@
 
 #include "messageviewer_debug.h"
 
+#include "cachehtmlwriter.h"
 #include "converthtmltoplaintext.h"
 #include "messagepartrendererbase.h"
 #include "messagepartrendererfactory.h"
@@ -307,50 +308,6 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
     s = s.replace(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive), QString()).trimmed();
     return s;
 }
-
-class CacheHtmlWriter : public MimeTreeParser::BufferedHtmlWriter
-{
-public:
-    explicit CacheHtmlWriter(MimeTreeParser::HtmlWriter *baseWriter)
-        : mBaseWriter(baseWriter)
-    {
-        BufferedHtmlWriter::begin();
-    }
-
-    ~CacheHtmlWriter() = default;
-    void begin() override
-    {
-        mBaseWriter->begin();
-    }
-
-    void end() override
-    {
-        mBaseWriter->end();
-    }
-
-    void reset() override
-    {
-        mBaseWriter->reset();
-    }
-
-    void embedPart(const QByteArray &contentId, const QString &url) override
-    {
-        mBaseWriter->embedPart(contentId, url);
-    }
-
-    void extraHead(const QString &extra) override
-    {
-        mBaseWriter->extraHead(extra);
-    }
-
-    QString html()
-    {
-        BufferedHtmlWriter::end();
-        return QString::fromUtf8(data());
-    }
-
-    MimeTreeParser::HtmlWriter *mBaseWriter = nullptr;
-};
 
 DefaultRendererPrivate::DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory)
     : mMsgPart(msgPart)

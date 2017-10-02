@@ -37,35 +37,6 @@
 
 using namespace MessageViewer;
 
-class CacheHtmlWriter2 : public MimeTreeParser::BufferedHtmlWriter
-{
-public:
-    CacheHtmlWriter2()
-    {
-        begin();
-    }
-    ~CacheHtmlWriter2() = default;
-
-    void embedPart(const QByteArray &contentId, const QString &url) override
-    {
-        embedParts.insert(contentId, url);
-    }
-
-    void extraHead(const QString &extra) override
-    {
-        head.append(extra);
-    }
-
-    QString html()
-    {
-        end();
-        return QString::fromUtf8(data());
-    }
-
-    QString head;
-    QMap<QByteArray, QString> embedParts;
-};
-
 PartRendered::PartRendered()
 {
 }
@@ -84,7 +55,7 @@ QVector<QSharedPointer<PartRendered> > PartRendered::renderSubParts(
 {
     QVector<QSharedPointer<PartRendered> > ret;
     foreach (const auto &_m, mp->subParts()) {
-        CacheHtmlWriter2 cacheWriter;
+        CacheHtmlWriter cacheWriter;
         DefaultRenderer::Ptr renderer = mp->source()->messagePartTheme(_m);
         cacheWriter.write(renderer->html());
         ret.append(QSharedPointer<WrapperPartRendered>(new WrapperPartRendered(&cacheWriter)));
@@ -115,7 +86,7 @@ QMap<QByteArray, QString> EmptyPartRendered::embededParts()
     return QMap<QByteArray, QString>();
 }
 
-WrapperPartRendered::WrapperPartRendered(CacheHtmlWriter2 *htmlWriter)
+WrapperPartRendered::WrapperPartRendered(CacheHtmlWriter *htmlWriter)
     : PartRendered()
 {
     mHtml = htmlWriter->html();

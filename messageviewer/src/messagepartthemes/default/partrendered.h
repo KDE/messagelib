@@ -20,6 +20,8 @@
 #ifndef __MESSAGEVIEWER_PARTRENDERED_H__
 #define __MESSAGEVIEWER_PARTRENDERED_H__
 
+#include "cachehtmlwriter.h"
+
 #include <QMap>
 #include <QString>
 #include <QSharedPointer>
@@ -36,8 +38,6 @@ class DefaultRendererPrivate;
 namespace KMime {
 class Content;
 }
-
-class CacheHtmlWriter2;
 
 class PartRendered
 {
@@ -67,7 +67,7 @@ public:
 class WrapperPartRendered : public PartRendered
 {
 public:
-    WrapperPartRendered(CacheHtmlWriter2 *);
+    WrapperPartRendered(MessageViewer::CacheHtmlWriter*);
     virtual ~WrapperPartRendered();
 
     QString html() override;

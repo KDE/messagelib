@@ -26,7 +26,6 @@
 using namespace MimeTreeParser;
 using namespace MessageViewer;
 
-class CacheHtmlWriter;
 class PartRendered;
 
 namespace MessageViewer {
