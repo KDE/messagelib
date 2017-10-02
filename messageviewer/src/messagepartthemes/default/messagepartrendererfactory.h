@@ -39,9 +39,9 @@
 #include <vector>
 
 class QString;
-class MessagePartRendererBase;
 
 namespace MessageViewer {
+class MessagePartRendererBase;
 class MessagePartRendererFactoryPrivate;
 
 class MESSAGEVIEWER_EXPORT MessagePartRendererFactory

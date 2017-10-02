@@ -31,7 +31,7 @@
 #include <grantlee/context.h>
 #include <grantlee/template.h>
 
-#include <QApplication>
+using namespace MessageViewer;
 
 TextMessagePartRenderer::TextMessagePartRenderer()
 {
@@ -41,13 +41,9 @@ TextMessagePartRenderer::~TextMessagePartRenderer()
 {
 }
 
-static QString alignText()
+bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr& msgPart, MimeTreeParser::HtmlWriter* htmlWriter, RenderContext *context) const
 {
-    return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
-}
-
-bool TextMessagePartRenderer::render(MimeTreeParser::DefaultRendererPrivate* drp, const MimeTreeParser::MessagePartPtr& msgPart, MimeTreeParser::HtmlWriter* htmlWriter) const
-{
+    Q_UNUSED(context);
     auto mp = msgPart.dynamicCast<TextMessagePart>();
     if (!mp)
         return false;

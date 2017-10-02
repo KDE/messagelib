@@ -38,18 +38,33 @@
 #include <QSharedPointer>
 
 namespace MimeTreeParser {
-class DefaultRendererPrivate;
 class HtmlWriter;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
+
+namespace MessageViewer {
+
+class CSSHelperBase;
+
+class RenderContext
+{
+public:
+    virtual ~RenderContext();
+
+    virtual CSSHelperBase* cssHelper() const = 0;
+    virtual bool renderWithFactory(const QString &className, const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *writer) = 0;
+};
 
 class MessagePartRendererBase
 {
 public:
     MessagePartRendererBase();
     virtual ~MessagePartRendererBase();
-    virtual bool render(MimeTreeParser::DefaultRendererPrivate *, const MimeTreeParser::MessagePartPtr &, MimeTreeParser::HtmlWriter *htmlWriter)
+    virtual bool render(const MimeTreeParser::MessagePartPtr &, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context)
     const = 0;
+
+    QString alignText() const;
 };
+}
 #endif

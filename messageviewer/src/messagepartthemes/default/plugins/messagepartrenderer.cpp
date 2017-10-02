@@ -26,6 +26,8 @@
 
 #include <MimeTreeParser/HtmlWriter>
 
+using namespace MessageViewer;
+
 MessagePartRenderer::MessagePartRenderer()
 {
 }
@@ -34,14 +36,14 @@ MessagePartRenderer::~MessagePartRenderer()
 {
 }
 
-bool MessagePartRenderer::render(MimeTreeParser::DefaultRendererPrivate *drp, const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) const
+bool MessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const
 {
     MimeTreeParser::AttachmentMarkBlock block(nullptr, msgPart->attachmentContent());
     if (msgPart->isAttachment()) {
         htmlWriter->write(block.enter());
     }
 
-    htmlWriter->write(quotedHTML(msgPart->text(), msgPart->source(), drp->cssHelper()));
+    htmlWriter->write(quotedHTML(msgPart->text(), msgPart->source(), context->cssHelper()));
     htmlWriter->write(block.exit());
     return true;
 }

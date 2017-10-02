@@ -33,6 +33,8 @@
 #include <KLocalizedString>
 #include <QUrl>
 
+using namespace MessageViewer;
+
 AttachmentMessagePartRenderer::AttachmentMessagePartRenderer()
 {
 }
@@ -41,7 +43,7 @@ AttachmentMessagePartRenderer::~AttachmentMessagePartRenderer()
 {
 }
 
-bool AttachmentMessagePartRenderer::render(MimeTreeParser::DefaultRendererPrivate* drp, const MimeTreeParser::MessagePartPtr& msgPart, MimeTreeParser::HtmlWriter* htmlWriter) const
+bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr& msgPart, MimeTreeParser::HtmlWriter* htmlWriter, RenderContext *context) const
 {
     auto mp = msgPart.dynamicCast<AttachmentMessagePart>();
     if (!mp) {
@@ -58,7 +60,7 @@ bool AttachmentMessagePartRenderer::render(MimeTreeParser::DefaultRendererPrivat
     const auto tmpAsIcon = mp->asIcon();
 
     if (tmpAsIcon == MimeTreeParser::NoIcon) {
-        return drp->renderWithFactory(QStringLiteral("MimeTreeParser::TextMessagePart"), mp, htmlWriter);
+        return context->renderWithFactory(QStringLiteral("MimeTreeParser::TextMessagePart"), mp, htmlWriter);
     }
 
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
@@ -75,7 +77,7 @@ bool AttachmentMessagePartRenderer::render(MimeTreeParser::DefaultRendererPrivat
                                                               asUnicodeString(), true));
     block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
     block.setProperty("showLink", mp->showLink());
-    block.setProperty("dir", drp->alignText());
+    block.setProperty("dir", alignText());
     block.setProperty("iconSize",
                       MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
     block.setProperty("inline", (tmpAsIcon == MimeTreeParser::IconInline));

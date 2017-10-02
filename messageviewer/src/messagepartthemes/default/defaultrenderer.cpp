@@ -866,7 +866,7 @@ bool DefaultRendererPrivate::renderWithFactory(const QString &className, const M
         return false;
 
     const auto plugin = registry.at(0);
-    return plugin->render(this, msgPart, htmlWriter);
+    return plugin->render(msgPart, htmlWriter, this);
 }
 
 QString DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *_htmlWriter)

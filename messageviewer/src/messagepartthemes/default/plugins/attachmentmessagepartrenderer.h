@@ -22,14 +22,16 @@
 
 #include "../messagepartrendererbase.h"
 
-#include <QSharedPointer>
+namespace MessageViewer {
 
 class AttachmentMessagePartRenderer : public MessagePartRendererBase
 {
 public:
     AttachmentMessagePartRenderer();
     virtual ~AttachmentMessagePartRenderer();
-    bool render(MimeTreeParser::DefaultRendererPrivate *drp, const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) const override;
+    bool render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const override;
 };
+
+}
 
 #endif

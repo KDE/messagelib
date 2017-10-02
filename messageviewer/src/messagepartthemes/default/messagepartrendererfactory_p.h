@@ -32,10 +32,10 @@
 
 #include <QMap>
 
-class MessagePartRendererBase;
 
 namespace MessageViewer {
 
+class MessagePartRendererBase;
 typedef QMap<QString, std::vector<MessagePartRendererBase *> > TypeRegistry;
 
 class MessagePartRendererFactoryPrivate

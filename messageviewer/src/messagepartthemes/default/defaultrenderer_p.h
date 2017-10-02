@@ -20,6 +20,7 @@
 #define __MESSAGEVIEWER_DEFAULTRENDERER_P_H__
 
 #include "defaultrenderer.h"
+#include "messagepartrendererbase.h"
 
 #include <MimeTreeParser/MessagePart>
 
@@ -35,14 +36,14 @@ class HtmlWriter;
 }
 
 namespace MimeTreeParser {
-class DefaultRendererPrivate
+class DefaultRendererPrivate : public MessageViewer::RenderContext
 {
 public:
     DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory);
     ~DefaultRendererPrivate();
 
     QString alignText();
-    CSSHelperBase *cssHelper() const;
+    CSSHelperBase *cssHelper() const override;
 
     Interface::ObjectTreeSource *source() const;
 
@@ -58,7 +59,7 @@ public:
     void render(const EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    bool renderWithFactory(const QString &className, const MessagePart::Ptr &msgPart, HtmlWriter *writer);
+    bool renderWithFactory(const QString &className, const MessagePart::Ptr &msgPart, HtmlWriter *writer) override;
     QString renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
     QString mHtml;
