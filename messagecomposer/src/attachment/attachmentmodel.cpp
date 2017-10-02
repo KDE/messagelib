@@ -324,7 +324,19 @@ bool AttachmentModel::setData(const QModelIndex &index, const QVariant &value, i
     bool emitDataChanged = true;
     AttachmentPart::Ptr part = d->parts[ index.row() ];
 
-    if (role == Qt::CheckStateRole) {
+    if (role == Qt::DisplayRole) {
+        switch (index.column()) {
+        case NameColumn:
+            if (!value.toString().isEmpty()) {
+                part->setName(value.toString());
+            } else {
+                return false;
+            }
+            break;
+        default:
+            return false;
+        }
+    } else if (role == Qt::CheckStateRole) {
         switch (index.column()) {
         case CompressColumn:
         {
