@@ -37,7 +37,7 @@
 #include <memory>
 
 class QTextCodec;
-class TextPartRendered;
+class TextMessagePartRenderer;
 class AttachmentMessagePartRenderer;
 
 namespace GpgME {
@@ -207,7 +207,7 @@ private:
     bool mDecryptMessage;
     bool mIsHidden;
 
-    friend class ::TextPartRendered;
+    friend class ::TextMessagePartRenderer;
     friend class ::AttachmentMessagePartRenderer;
     friend class ObjectTreeParser;
 };

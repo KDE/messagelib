@@ -58,7 +58,7 @@ public:
     void render(const EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    QSharedPointer<PartRendered> renderWithFactory(QString className, const MessagePart::Ptr &msgPart);
+    bool renderWithFactory(const QString &className, const MessagePart::Ptr &msgPart, HtmlWriter *writer);
     QString renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
     QString mHtml;

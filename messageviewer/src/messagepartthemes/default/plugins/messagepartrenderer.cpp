@@ -21,8 +21,10 @@
 
 #include "quotehtml.h"
 
-#include "../partrendered.h"
+#include "../htmlblock.h"
 #include "../defaultrenderer_p.h"
+
+#include <MimeTreeParser/HtmlWriter>
 
 MessagePartRenderer::MessagePartRenderer()
 {
@@ -32,10 +34,14 @@ MessagePartRenderer::~MessagePartRenderer()
 {
 }
 
-QSharedPointer<PartRendered> MessagePartRenderer::render(
-    MimeTreeParser::DefaultRendererPrivate *drp, const MimeTreeParser::MessagePartPtr &msgPart) const
+bool MessagePartRenderer::render(MimeTreeParser::DefaultRendererPrivate *drp, const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) const
 {
-    return QSharedPointer<PartRendered>(new HtmlOnlyPartRendered(msgPart, quotedHTML(msgPart->text(),
-                                                                                msgPart->source(),
-                                                                                drp->cssHelper())));
+    MimeTreeParser::AttachmentMarkBlock block(nullptr, msgPart->attachmentContent());
+    if (msgPart->isAttachment()) {
+        htmlWriter->write(block.enter());
+    }
+
+    htmlWriter->write(quotedHTML(msgPart->text(), msgPart->source(), drp->cssHelper()));
+    htmlWriter->write(block.exit());
+    return true;
 }

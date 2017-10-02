@@ -39,18 +39,17 @@
 
 namespace MimeTreeParser {
 class DefaultRendererPrivate;
+class HtmlWriter;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
-
-class PartRendered;
 
 class MessagePartRendererBase
 {
 public:
     MessagePartRendererBase();
     virtual ~MessagePartRendererBase();
-    virtual QSharedPointer<PartRendered> render(MimeTreeParser::DefaultRendererPrivate *, const MimeTreeParser::MessagePartPtr &)
+    virtual bool render(MimeTreeParser::DefaultRendererPrivate *, const MimeTreeParser::MessagePartPtr &, MimeTreeParser::HtmlWriter *htmlWriter)
     const = 0;
 };
 #endif

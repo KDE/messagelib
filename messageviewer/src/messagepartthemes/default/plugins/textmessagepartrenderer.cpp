@@ -21,8 +21,17 @@
 
 #include "quotehtml.h"
 
-#include "../partrendered.h"
 #include "../defaultrenderer_p.h"
+#include "../htmlblock.h"
+#include "../messagepartrenderermanager.h"
+
+#include <MessageCore/StringUtil>
+#include <MimeTreeParser/HtmlWriter>
+
+#include <grantlee/context.h>
+#include <grantlee/template.h>
+
+#include <QApplication>
 
 TextMessagePartRenderer::TextMessagePartRenderer()
 {
@@ -32,12 +41,55 @@ TextMessagePartRenderer::~TextMessagePartRenderer()
 {
 }
 
-QSharedPointer<PartRendered> TextMessagePartRenderer::render(DefaultRendererPrivate *drp, const MimeTreeParser::MessagePartPtr &msgPart)
-const
+static QString alignText()
+{
+    return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+}
+
+bool TextMessagePartRenderer::render(MimeTreeParser::DefaultRendererPrivate* drp, const MimeTreeParser::MessagePartPtr& msgPart, MimeTreeParser::HtmlWriter* htmlWriter) const
 {
     auto mp = msgPart.dynamicCast<TextMessagePart>();
-    if (mp) {
-        return QSharedPointer<PartRendered>(new TextPartRendered(mp));
+    if (!mp)
+        return false;
+
+    auto node = mp->content();
+    auto nodeHelper = mp->mOtp->nodeHelper();
+    if (mp->isHidden()) {
+        return true;
     }
-    return QSharedPointer<PartRendered>();
+
+    Grantlee::Template t;
+    Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
+    QObject block;
+    c.insert(QStringLiteral("block"), &block);
+
+    block.setProperty("showTextFrame", mp->showTextFrame());
+    block.setProperty("label",
+                      MessageCore::StringUtil::quoteHtmlChars(MimeTreeParser::NodeHelper::fileName(
+                                                                  node), true));
+    block.setProperty("comment",
+                      MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->
+                                                              asUnicodeString(), true));
+    block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
+    block.setProperty("showLink", mp->showLink());
+    block.setProperty("dir", alignText());
+
+    t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
+                                                                            ":/textmessagepart.html"));
+
+    QString content;
+    foreach (const auto &_m, mp->subParts()) {
+        DefaultRenderer::Ptr renderer = mp->source()->messagePartTheme(_m);
+        content += renderer->html();
+    }
+    c.insert(QStringLiteral("content"), content);
+
+    MimeTreeParser::AttachmentMarkBlock attBlock(nullptr, mp->attachmentContent());
+    if (mp->isAttachment())
+        htmlWriter->write(attBlock.enter());
+
+    Grantlee::OutputStream s(htmlWriter->stream());
+    t->render(&s, &c);
+    htmlWriter->write(attBlock.exit());
+    return true;
 }

@@ -22,11 +22,12 @@
 #include "quotehtml.h"
 
 #include "utils/mimetype.h"
-#include "../partrendered.h"
+#include "../htmlblock.h"
 #include "../defaultrenderer_p.h"
 #include "../messagepartrenderermanager.h"
 
 #include <MessageCore/StringUtil>
+#include <MimeTreeParser/HtmlWriter>
 
 #include <KIconLoader>
 #include <KLocalizedString>
@@ -40,25 +41,24 @@ AttachmentMessagePartRenderer::~AttachmentMessagePartRenderer()
 {
 }
 
-QSharedPointer<PartRendered> AttachmentMessagePartRenderer::render(DefaultRendererPrivate *drp, const MimeTreeParser::MessagePartPtr &msgPart)
-const
+bool AttachmentMessagePartRenderer::render(MimeTreeParser::DefaultRendererPrivate* drp, const MimeTreeParser::MessagePartPtr& msgPart, MimeTreeParser::HtmlWriter* htmlWriter) const
 {
     auto mp = msgPart.dynamicCast<AttachmentMessagePart>();
     if (!mp) {
-        return QSharedPointer<PartRendered>();
+        return false;
     }
 
     KMime::Content *node = mp->content();
     NodeHelper *nodeHelper = mp->mOtp->nodeHelper();
 
     if (mp->isHidden()) {
-        return QSharedPointer<PartRendered>(new EmptyPartRendered());
+        return true;
     }
 
     const auto tmpAsIcon = mp->asIcon();
 
     if (tmpAsIcon == MimeTreeParser::NoIcon) {
-        return drp->renderWithFactory(QStringLiteral("MimeTreeParser::TextMessagePart"), mp);
+        return drp->renderWithFactory(QStringLiteral("MimeTreeParser::TextMessagePart"), mp, htmlWriter);
     }
 
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
@@ -109,6 +109,13 @@ const
     block.setProperty("label", label);
     block.setProperty("comment", comment);
 
-    const auto html = t->render(&c);
-    return QSharedPointer<PartRendered>(new HtmlOnlyPartRendered(mp, html));
+    MimeTreeParser::AttachmentMarkBlock attBlock(nullptr, mp->attachmentContent());
+    if (mp->isAttachment())
+        htmlWriter->write(attBlock.enter());
+
+    Grantlee::OutputStream s(htmlWriter->stream());
+    t->render(&s, &c);
+    htmlWriter->write(attBlock.exit());
+
+    return true;
 }

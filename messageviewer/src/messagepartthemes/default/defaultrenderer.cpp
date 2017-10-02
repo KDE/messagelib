@@ -28,7 +28,6 @@
 #include "messagepartrendererbase.h"
 #include "messagepartrendererfactory.h"
 #include "htmlblock.h"
-#include "partrendered.h"
 
 #include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
@@ -472,9 +471,9 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
         }
         c.insert(QStringLiteral("content"), _htmlWriter->html());
     } else if (!metaData.inProgress) {
-        auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
-        if (part) {
-            c.insert(QStringLiteral("content"), part->html());
+        CacheHtmlWriter nestedWriter(htmlWriter);
+        if (renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, &nestedWriter)) {
+            c.insert(QStringLiteral("content"), nestedWriter.html());
         } else {
             c.insert(QStringLiteral("content"), QString());
         }
@@ -528,9 +527,9 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
         }
         c.insert(QStringLiteral("content"), _htmlWriter->html());
     } else if (!metaData.inProgress) {
-        auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
-        if (part) {
-            c.insert(QStringLiteral("content"), part->html());
+        CacheHtmlWriter nestedWriter(htmlWriter);
+        if (renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, &nestedWriter)) {
+            c.insert(QStringLiteral("content"), nestedWriter.html());
         } else {
             c.insert(QStringLiteral("content"), QString());
         }
@@ -770,10 +769,7 @@ void DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp, HtmlWriter
     if (mp->hasSubParts()) {
         renderSubParts(mp, htmlWriter);
     } else if (!metaData.inProgress) {
-        auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
-        if (part) {
-            htmlWriter->write(part->html());
-        }
+        renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
     }
 }
 
@@ -798,10 +794,7 @@ void DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp, HtmlWri
     if (mp->hasSubParts()) {
         renderSubParts(mp, htmlWriter);
     } else if (!metaData.inProgress) {
-        auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
-        if (part) {
-            htmlWriter->write(part->html());
-        }
+        renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
     }
 }
 
@@ -864,39 +857,26 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
     t->render(&s, &c);
 }
 
-QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className, const MessagePart::Ptr &msgPart)
+bool DefaultRendererPrivate::renderWithFactory(const QString &className, const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
 {
-    if (mRendererFactory) {
-        const auto registry = mRendererFactory->typeRegistry(className);
+    if (!mRendererFactory)
+        return false;
+    const auto registry = mRendererFactory->typeRegistry(className);
+    if (registry.empty())
+        return false;
 
-        if (registry.size() > 0) {
-            const auto plugin = registry.at(0);
-            return plugin->render(this, msgPart);
-        }
-    }
-
-    return QSharedPointer<PartRendered>();
+    const auto plugin = registry.at(0);
+    return plugin->render(this, msgPart, htmlWriter);
 }
 
 QString DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *_htmlWriter)
 {
+    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
-    const auto rendered = renderWithFactory(className, msgPart);
-    if (rendered) {
-        const auto parts = rendered->embededParts();
-        foreach (auto key, parts.keys()) {
-            _htmlWriter->embedPart(key, parts.value(key));
-        }
+    if (renderWithFactory(className, msgPart, htmlWriter.data()))
+        return htmlWriter->html();
 
-        foreach (auto entry, rendered->extraHeader()) {
-            _htmlWriter->extraHead(entry);
-        }
-
-        return rendered->html();
-    }
-
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
     if (className == QStringLiteral("MimeTreeParser::MessagePartList")) {
         auto mp = msgPart.dynamicCast<MessagePartList>();
         if (mp) {
