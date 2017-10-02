@@ -324,7 +324,7 @@ bool AttachmentModel::setData(const QModelIndex &index, const QVariant &value, i
     bool emitDataChanged = true;
     AttachmentPart::Ptr part = d->parts[ index.row() ];
 
-    if (role == Qt::DisplayRole) {
+    if (role == Qt::EditRole) {
         switch (index.column()) {
         case NameColumn:
             if (!value.toString().isEmpty()) {
@@ -434,11 +434,14 @@ Qt::ItemFlags AttachmentModel::flags(const QModelIndex &index) const
         return Qt::ItemIsDropEnabled | defaultFlags;
     }
 
+
     if (index.column() == CompressColumn
         || index.column() == EncryptColumn
         || index.column() == SignColumn
         || index.column() == AutoDisplayColumn) {
         return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsUserCheckable | defaultFlags;
+    } else if (index.column() == NameColumn) {
+        return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | Qt::ItemIsEditable | defaultFlags;
     } else {
         return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | defaultFlags;
     }
