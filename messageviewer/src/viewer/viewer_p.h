@@ -393,6 +393,9 @@ public:
     /* show or hide the list that points to the attachments */
     void setShowAttachmentQuicklist(bool showAttachmentQuicklist = true);
 
+    /* show or hide encryption details */
+    void setHideEncryptionDetails(bool encDetails = true);
+
     void scrollToAttachment(KMime::Content *node);
     void setUseFixedFont(bool useFixedFont);
 

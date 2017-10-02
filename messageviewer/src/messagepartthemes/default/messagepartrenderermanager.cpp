@@ -27,6 +27,7 @@
 
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
+#include <gpgme++/key.h>
 
 #include <QGpgME/Protocol>
 
@@ -39,6 +40,8 @@
 
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const QGpgME::Protocol *)
+Q_DECLARE_METATYPE(GpgME::Key)
+
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
 GRANTLEE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
 if (property == QStringLiteral("keyID")) {
@@ -54,6 +57,24 @@ inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Pro
         return object->name();
     } else if (property == QStringLiteral("displayName")) {
         return object->displayName();
+    }
+    return QVariant();
+}
+}
+
+// Read-only introspection of std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> object.
+namespace Grantlee {
+template<>
+inline QVariant TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>&>::lookUp(std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> const &object, const QString &property)
+{
+    if (property == QStringLiteral("keyID")) {
+        return QString::fromLatin1(object.first.keyID());
+    }
+    if (property == QStringLiteral("id")) {
+        return QString::fromLatin1(object.second.userID(0).id());
+    }
+    if (property == QStringLiteral("mainID")) {
+        return QString::fromLatin1(object.second.keyID());
     }
     return QVariant();
 }
@@ -107,6 +128,7 @@ void MessagePartRendererManager::initializeRenderer()
 {
     Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
     Grantlee::registerMetaType<const QGpgME::Protocol *>();
+    Grantlee::registerMetaType<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>>();
     m_engine = new GrantleeTheme::Engine;
     foreach (const auto &p, QCoreApplication::libraryPaths()) {
         m_engine->addPluginPath(p + QStringLiteral("/messageviewer"));

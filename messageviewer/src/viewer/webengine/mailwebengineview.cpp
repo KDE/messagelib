@@ -349,6 +349,12 @@ void MailWebEngineView::executeHideShowToAddressScripts(bool hide)
     runJavaScriptInWordId(source);
 }
 
+void MailWebEngineView::executeHideShowEncryptionDetails(bool hide)
+{
+    const QString source = MessageViewer::MailWebEngineScript::manageShowHideEncryptionDetails(hide);
+    runJavaScriptInWordId(source);
+}
+
 void MailWebEngineView::executeHideShowCcAddressScripts(bool hide)
 {
     const QString source = MessageViewer::MailWebEngineScript::manageShowHideCcAddress(hide);

@@ -30,6 +30,7 @@
 #include <gpgme++/verificationresult.h>
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/importresult.h>
+#include <gpgme++/key.h>
 
 #include <QString>
 #include <QSharedPointer>
@@ -371,7 +372,7 @@ protected:
     QString mFromAddress;
     bool mDecryptMessage;
     QByteArray mVerifiedText;
-    std::vector<GpgME::DecryptionResult::Recipient> mDecryptRecipients;
+    std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> mDecryptRecipients;
 
     friend class DefaultRendererPrivate;
 };

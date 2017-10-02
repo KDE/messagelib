@@ -67,6 +67,7 @@ public:
     void executeHideShowAttachmentsScripts(bool hide);
     void executeHideShowToAddressScripts(bool hide);
     void executeHideShowCcAddressScripts(bool hide);
+    void executeHideShowEncryptionDetails(bool hide);
     void setLinkHovered(const QUrl &url);
     void setViewer(MessageViewer::ViewerPrivate *viewer);
     bool execPrintPreviewPage(QPrinter *printer, int timeout);

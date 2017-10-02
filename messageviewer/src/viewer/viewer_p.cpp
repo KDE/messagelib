@@ -3025,6 +3025,11 @@ void ViewerPrivate::setShowAttachmentQuicklist(bool showAttachmentQuicklist)
     mViewer->executeHideShowAttachmentsScripts(mShowAttachmentQuicklist);
 }
 
+void ViewerPrivate::setHideEncryptionDetails(bool encDetails)
+{
+    mViewer->executeHideShowEncryptionDetails(encDetails);
+}
+
 void ViewerPrivate::scrollToAttachment(KMime::Content *node)
 {
     const QString indexStr = node->index().toString();

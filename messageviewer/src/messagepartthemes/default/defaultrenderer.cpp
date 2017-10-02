@@ -59,6 +59,7 @@ using namespace MimeTreeParser;
 using namespace MessageViewer;
 
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
+Q_DECLARE_METATYPE(GpgME::Key)
 Q_DECLARE_METATYPE(const QGpgME::Protocol *)
 
 static const int SIG_FRAME_COL_UNDEF = 99;
@@ -465,7 +466,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     }
 
     c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(mp->mCryptoProto));
-    if (mp->mDecryptRecipients.size() > 0) {
+    if (!mp->mDecryptRecipients.empty()) {
         c.insert(QStringLiteral("decryptedRecipients"),
                  QVariant::fromValue(mp->mDecryptRecipients));
     }

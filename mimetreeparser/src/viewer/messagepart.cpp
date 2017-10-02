@@ -921,7 +921,7 @@ void SignedMessagePart::sigStatusToMetaData()
         if (partMetaData()->isGoodSignature && !key.keyID()) {
             // Search for the key by its fingerprint so that we can check for
             // trust etc.
-            QGpgME::KeyListJob *job = mCryptoProto->keyListJob(false);    // local, no sigs
+            QGpgME::KeyListJob *job = mCryptoProto->keyListJob(false, false, false);    // local, no sigs
             if (!job) {
                 qCDebug(MIMETREEPARSER_LOG) << "The Crypto backend does not support listing keys. ";
             } else {
@@ -1220,7 +1220,32 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             appendSubPart(subPart);
         }
 
-        mDecryptRecipients = decryptResult.recipients();
+        mDecryptRecipients.clear();
+        for (const auto &recipient : decryptResult.recipients()) {
+            GpgME::Key key;
+            QGpgME::KeyListJob *job = mCryptoProto->keyListJob(false, false, false);    // local, no sigs
+            if (!job) {
+                qCDebug(MIMETREEPARSER_LOG) << "The Crypto backend does not support listing keys. ";
+            } else {
+                std::vector<GpgME::Key> found_keys;
+                // As we are local it is ok to make this synchronous
+                GpgME::KeyListResult res = job->exec(QStringList(QLatin1String(recipient.keyID())), false, found_keys);
+                if (res.error()) {
+                    qCDebug(MIMETREEPARSER_LOG) << "Error while searching key for Fingerprint: " << recipient.keyID();
+                }
+                if (found_keys.size() > 1) {
+                    // Should not Happen
+                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found more then one Key for Fingerprint: " << recipient.keyID();
+                }
+                if (found_keys.size() != 1) {
+                    // Should not Happen at this point
+                    qCDebug(MIMETREEPARSER_LOG) << "Oops: Found no Key for Fingerprint: " << recipient.keyID();
+                } else {
+                    key = found_keys[0];
+                }
+            }
+            mDecryptRecipients.push_back(std::make_pair(recipient, key));
+        }
         bDecryptionOk = !decryptResult.error();
 //        std::stringstream ss;
 //        ss << decryptResult << '\n' << verifyResult;

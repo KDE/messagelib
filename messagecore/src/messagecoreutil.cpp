@@ -61,8 +61,13 @@ void ColorUtil::initializeColors()
         mQuoteLevel3DefaultTextColor = base.lighter(140);
     }
 
-    mPgpEncryptedMessageColor = QColor(0x00, 0x80, 0xFF);
-    mPgpEncryptedTextColor = QColor(0xFF, 0xFF, 0xFF); // white
+    if (isLightTheme()) {
+        mPgpEncryptedMessageColor = QColor(0x00, 0x80, 0xFF).lighter(180);
+        mPgpEncryptedTextColor = QColor(0x00, 0x80, 0xFF).darker(200);
+    } else {
+        mPgpEncryptedMessageColor = QColor(0x00, 0x80, 0xFF).darker(300);
+        mPgpEncryptedTextColor = QColor(0x00, 0x80, 0xFF).lighter(170);
+    }
     mPgpSignedTrustedMessageColor = scheme.background(KColorScheme::PositiveBackground).color();
     mPgpSignedTrustedTextColor = scheme.foreground(KColorScheme::PositiveText).color();
     mPgpSignedUntrustedMessageColor = scheme.background(KColorScheme::NeutralBackground).color();

@@ -29,6 +29,7 @@ MESSAGEVIEWER_EXPORT QString replaceInnerHtml(const QString &field, const QStrin
 MESSAGEVIEWER_EXPORT QString manageShowHideAttachments(bool hide);
 MESSAGEVIEWER_EXPORT QString manageShowHideToAddress(bool hide);
 MESSAGEVIEWER_EXPORT QString manageShowHideCcAddress(bool hide);
+MESSAGEVIEWER_EXPORT QString manageShowHideEncryptionDetails(bool hide);
 MESSAGEVIEWER_EXPORT QString createShowHideAddressScript(const QString &field, bool hide);
 }
 }

@@ -675,6 +675,12 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
             w->setShowSignatureDetails(false);
             w->update(MimeTreeParser::Force);
             return true;
+        } else if (urlPath == QLatin1String("showEncryptionDetails")) {
+            w->setHideEncryptionDetails(false);
+            return true;
+        } else if (urlPath == QLatin1String("hideEncryptionDetails")) {
+            w->setHideEncryptionDetails(true);
+            return true;
         } else if (urlPath == QLatin1String("showAttachmentQuicklist")) {
             w->setShowAttachmentQuicklist(false);
             return true;
@@ -716,6 +722,10 @@ QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate
             return i18n("Show signature details.");
         } else if (urlPath == QLatin1String("hideSignatureDetails")) {
             return i18n("Hide signature details.");
+        } else if (urlPath == QLatin1String("showEncryptionDetails")) {
+            return i18n("Show encryption details.");
+        } else if (urlPath == QLatin1String("hideEncryptionDetails")) {
+            return i18n("Hide encryption details.");
         } else if (urlPath == QLatin1String("showAttachmentQuicklist")) {
             return i18n("Hide attachment list.");
         } else if (urlPath == QLatin1String("hideAttachmentQuicklist")) {
