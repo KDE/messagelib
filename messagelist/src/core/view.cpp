@@ -76,18 +76,18 @@ public:
 
     View *const q;
 
-    Widget *mWidget;
-    Model *mModel;
-    Delegate *mDelegate;
+    Widget *mWidget = nullptr;
+    Model *mModel = nullptr;
+    Delegate *mDelegate = nullptr;
 
-    const Aggregation *mAggregation;          ///< The Aggregation we're using now, shallow pointer
-    Theme *mTheme;                            ///< The Theme we're using now, shallow pointer
+    const Aggregation *mAggregation = nullptr;          ///< The Aggregation we're using now, shallow pointer
+    Theme *mTheme = nullptr;                            ///< The Theme we're using now, shallow pointer
     bool mNeedToApplyThemeColumns;            ///< Flag signaling a pending application of theme columns
-    Item *mLastCurrentItem;
+    Item *mLastCurrentItem = nullptr;
     QPoint mMousePressPosition;
     bool mSaveThemeColumnStateOnSectionResize;      ///< This is used to filter out programmatic column resizes in slotSectionResized().
-    QTimer *mSaveThemeColumnStateTimer;             ///< Used to trigger a delayed "save theme state"
-    QTimer *mApplyThemeColumnsTimer;                ///< Used to trigger a delayed "apply theme columns"
+    QTimer *mSaveThemeColumnStateTimer = nullptr;             ///< Used to trigger a delayed "save theme state"
+    QTimer *mApplyThemeColumnsTimer = nullptr;                ///< Used to trigger a delayed "apply theme columns"
     int mLastViewportWidth;
     bool mIgnoreUpdateGeometries;                   ///< Shall we ignore the "update geometries" calls ?
 };
