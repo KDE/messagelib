@@ -150,8 +150,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     d->mNewTabButton->setAccessibleName(i18n("New tab"));
 #endif
     setCornerWidget(d->mNewTabButton, Qt::TopLeftCorner);
-    connect(d->mNewTabButton, SIGNAL(clicked()),
-            SLOT(onNewTabClicked()));
+    connect(d->mNewTabButton, &QToolButton::clicked, this, [this]() { d->onNewTabClicked(); });
 
     d->mCloseTabButton = new QToolButton(this);
     d->mCloseTabButton->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
@@ -242,7 +241,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         QAction *action = new QAction(i18n("Create New Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("create_new_tab"), action);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_O));
-        connect(action, SIGNAL(triggered(bool)), SLOT(onNewTabClicked()));
+        connect(action, &QAction::triggered, this, [this]() { d->onNewTabClicked(); });
         d->mActionMenu->addAction(action);
 
         d->mMaxTabCreated = count();

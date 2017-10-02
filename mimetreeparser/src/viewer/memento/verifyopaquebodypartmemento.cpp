@@ -63,8 +63,8 @@ bool VerifyOpaqueBodyPartMemento::start()
 #endif
         return false;
     }
-    connect(m_job, SIGNAL(result(GpgME::VerificationResult,QByteArray)),
-            this, SLOT(slotResult(GpgME::VerificationResult,QByteArray)));
+    connect(m_job.data(), &VerifyOpaqueJob::result,
+            this, &VerifyOpaqueBodyPartMemento::slotResult);
     setRunning(true);
     return true;
 }
