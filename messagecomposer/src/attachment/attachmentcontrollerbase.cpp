@@ -101,7 +101,7 @@ public:
     void addAttachmentPart(AttachmentPart::Ptr part);
     void attachVcardFromAddressBook(KJob *job);   //slot
     void selectedAllAttachment();
-    void createOpenWithMenu(QMenu *topMenu, AttachmentPart::Ptr part);
+    void createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part);
     void reloadAttachment();
     void updateJobResult(KJob *);
 
@@ -317,7 +317,7 @@ void AttachmentControllerBase::Private::editDone(MessageViewer::EditorWatcher *w
     // The watcher deletes itself.
 }
 
-void AttachmentControllerBase::Private::createOpenWithMenu(QMenu *topMenu, AttachmentPart::Ptr part)
+void AttachmentControllerBase::Private::createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part)
 {
     const QString contentTypeStr = QString::fromLatin1(part->mimeType());
     const KService::List offers = KFileItemActions::associatedApplications(QStringList() << contentTypeStr, QString());

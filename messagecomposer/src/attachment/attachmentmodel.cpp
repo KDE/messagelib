@@ -77,17 +77,6 @@ AttachmentModel::AttachmentModel(QObject *parent)
     : QAbstractItemModel(parent)
     , d(new Private(this))
 {
-    QHash<int, QByteArray> names = roleNames();
-    names.insert(NameRole, "attachmentName");
-    names.insert(SizeRole, "attachmentSize");
-    names.insert(EncodingRole, "attachmentEncoding");
-    names.insert(MimeTypeRole, "attachmentMimeType");
-    names.insert(CompressRole, "attachmentIsCompressed");
-    names.insert(EncryptRole, "attachmentIsEncrypted");
-    names.insert(SignRole, "attachmentIsSigned");
-    names.insert(AutoDisplayRole, "attachmentIsAutoDiplayed");
-
-    setRoleNames(names);
 }
 
 AttachmentModel::~AttachmentModel()
