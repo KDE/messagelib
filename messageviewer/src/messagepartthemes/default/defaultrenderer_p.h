@@ -47,20 +47,20 @@ public:
 
     Interface::ObjectTreeSource *source() const;
 
-    void renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter);
+    void renderSubParts(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
-    QString render(const MessagePartList::Ptr &mp);
-    QString render(const MimeMessagePart::Ptr &mp);
-    QString render(const EncapsulatedRfc822MessagePart::Ptr &mp);
-    QString render(const HtmlMessagePart::Ptr &mp);
-    QString renderEncrypted(const EncryptedMessagePart::Ptr &mp);
-    QString renderSigned(const SignedMessagePart::Ptr &mp);
-    QString render(const SignedMessagePart::Ptr &mp);
-    QString render(const EncryptedMessagePart::Ptr &mp);
-    QString render(const AlternativeMessagePart::Ptr &mp);
-    QString render(const CertMessagePart::Ptr &mp);
+    void render(const MessagePartList::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const MimeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const EncapsulatedRfc822MessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const HtmlMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void renderEncrypted(const EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void renderSigned(const SignedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const SignedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     QSharedPointer<PartRendered> renderWithFactory(QString className, const MessagePart::Ptr &msgPart);
-    QString renderFactory(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter);
+    QString renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
     QString mHtml;
     MessagePart::Ptr mMsgPart;

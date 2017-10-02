@@ -358,7 +358,7 @@ DefaultRendererPrivate::DefaultRendererPrivate(const MessagePart::Ptr &msgPart, 
     , mCSSHelper(cssHelper)
     , mRendererFactory(rendererFactory)
 {
-    mHtml = renderFactory(mMsgPart, QSharedPointer<CacheHtmlWriter>());
+    mHtml = renderFactory(mMsgPart, nullptr);
 }
 
 DefaultRendererPrivate::~DefaultRendererPrivate()
@@ -380,59 +380,47 @@ Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
     return mMsgPart->source();
 }
 
-void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
 {
     foreach (const auto &m, msgPart->subParts())
         htmlWriter->write(renderFactory(m, htmlWriter));
 }
 
-QString DefaultRendererPrivate::render(const MessagePartList::Ptr &mp)
+void DefaultRendererPrivate::render(const MessagePartList::Ptr &mp, HtmlWriter *htmlWriter)
 {
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-    {
-        HTMLBlock::Ptr rBlock;
-        HTMLBlock::Ptr aBlock;
+    HTMLBlock::Ptr rBlock;
+    HTMLBlock::Ptr aBlock;
 
-        if (mp->isRoot()) {
-            rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter.data()));
-        }
-
-        if (mp->isAttachment()) {
-            aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
-        }
-
-        renderSubParts(mp, htmlWriter);
+    if (mp->isRoot()) {
+        rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
     }
 
-    return htmlWriter->html();
-}
-
-QString DefaultRendererPrivate::render(const MimeMessagePart::Ptr &mp)
-{
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-    {
-        HTMLBlock::Ptr aBlock;
-        HTMLBlock::Ptr rBlock;
-        if (mp->isAttachment()) {
-            aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
-        }
-
-        if (mp->isRoot()) {
-            rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter.data()));
-        }
-
-        renderSubParts(mp, htmlWriter);
+    if (mp->isAttachment()) {
+        aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
     }
 
-    return htmlWriter->html();
+    renderSubParts(mp, htmlWriter);
 }
 
-QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp)
+void DefaultRendererPrivate::render(const MimeMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
+{
+    HTMLBlock::Ptr aBlock;
+    HTMLBlock::Ptr rBlock;
+    if (mp->isAttachment()) {
+        aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
+    }
+
+    if (mp->isRoot()) {
+        rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
+    }
+
+    renderSubParts(mp, htmlWriter);
+}
+
+void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
     if (!mp->hasSubParts()) {
-        return QString();
+        return;
     }
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
                                                                                              ":/encapsulatedrfc822messagepart.html"));
@@ -446,25 +434,20 @@ QString DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr 
 
     c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->mMessage.data()));
     {
-        auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-        renderSubParts(mp, _htmlWriter);
+        auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(htmlWriter));
+        renderSubParts(mp, _htmlWriter.data());
         c.insert(QStringLiteral("content"), _htmlWriter->html());
     }
 
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-    {
-        HTMLBlock::Ptr aBlock;
-        if (mp->isAttachment()) {
-            aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
-        }
-        Grantlee::OutputStream s(htmlWriter->stream());
-        t->render(&s, &c);
+    HTMLBlock::Ptr aBlock;
+    if (mp->isAttachment()) {
+        aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
     }
-    return htmlWriter->html();
+    Grantlee::OutputStream s(htmlWriter->stream());
+    t->render(&s, &c);
 }
 
-QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
+void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
                                                                                              ":/htmlmessagepart.html"));
@@ -486,7 +469,7 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
 
         if (isHtmlPreferred) {
             mp->mOtp->nodeHelper()->setNodeDisplayedEmbedded(mp->content(), true);
-            mOldWriter->extraHead(extraHead);
+            htmlWriter->extraHead(extraHead);
         }
 
         block.setProperty("containsExternalReferences",
@@ -503,20 +486,15 @@ QString DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp)
     }
     mp->source()->setHtmlMode(Util::Html, QList<Util::HtmlMode>() << Util::Html);
 
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-    {
-        HTMLBlock::Ptr aBlock;
-        if (mp->isAttachment()) {
-            aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
-        }
-        Grantlee::OutputStream s(htmlWriter->stream());
-        t->render(&s, &c);
+    HTMLBlock::Ptr aBlock;
+    if (mp->isAttachment()) {
+        aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
     }
-    return htmlWriter->html();
+    Grantlee::OutputStream s(htmlWriter->stream());
+    t->render(&s, &c);
 }
 
-QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp)
+void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
     KMime::Content *node = mp->content();
     const auto metaData = *mp->partMetaData();
@@ -533,7 +511,7 @@ QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr 
             if (node && mp->isRoot()) {
                 rBlock = HTMLBlock::Ptr(new RootBlock(_htmlWriter.data()));
             }
-            renderSubParts(mp, _htmlWriter);
+            renderSubParts(mp, _htmlWriter.data());
         }
         c.insert(QStringLiteral("content"), _htmlWriter->html());
     } else if (!metaData.inProgress) {
@@ -565,12 +543,11 @@ QString DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr 
     block.setProperty("iconSize",
                       MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
 
-    const auto html = t->render(&c);
-
-    return html;
+    Grantlee::OutputStream s(htmlWriter->stream());
+    t->render(&s, &c);
 }
 
-QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
+void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
     KMime::Content *node = mp->content();
     const auto metaData = *mp->partMetaData();
@@ -584,13 +561,13 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
     QObject block;
 
     if (node) {
-        auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
+        auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(htmlWriter));
         {
             HTMLBlock::Ptr rBlock;
             if (mp->isRoot()) {
                 rBlock = HTMLBlock::Ptr(new RootBlock(_htmlWriter.data()));
             }
-            renderSubParts(mp, _htmlWriter);
+            renderSubParts(mp, _htmlWriter.data());
         }
         c.insert(QStringLiteral("content"), _htmlWriter->html());
     } else if (!metaData.inProgress) {
@@ -813,112 +790,89 @@ QString DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp)
     block.setProperty("signClass", mClass);
     block.setProperty("greenCaseWarning", greenCaseWarning);
 
-    const auto html = t->render(&c);
-
-    return html;
+    Grantlee::OutputStream s(htmlWriter->stream());
+    t->render(&s, &c);
 }
 
-QString DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp)
+void DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
     const auto metaData = *mp->partMetaData();
     if (metaData.isSigned || metaData.inProgress) {
-        {
-            HTMLBlock::Ptr aBlock;
-            if (mp->isAttachment()) {
-                aBlock
-                    = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(),
-                                                             mp->attachmentContent()));
-            }
-            htmlWriter->write(renderSigned(mp));
-        }
-        return htmlWriter->html();
-    }
-    {
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
-            aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
+            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
         }
-        if (mp->hasSubParts()) {
-            renderSubParts(mp, htmlWriter);
-        } else if (!metaData.inProgress) {
-            auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
-            if (part) {
-                htmlWriter->write(part->html());
-            }
+        renderSigned(mp, htmlWriter);
+        return;
+    }
+
+    HTMLBlock::Ptr aBlock;
+    if (mp->isAttachment()) {
+        aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
+    }
+    if (mp->hasSubParts()) {
+        renderSubParts(mp, htmlWriter);
+    } else if (!metaData.inProgress) {
+        auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
+        if (part) {
+            htmlWriter->write(part->html());
         }
     }
-    return htmlWriter->html();
 }
 
-QString DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp)
+void DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
     const auto metaData = *mp->partMetaData();
 
     if (metaData.isEncrypted || metaData.inProgress) {
-        {
-            HTMLBlock::Ptr aBlock;
-            if (mp->isAttachment()) {
-                aBlock
-                    = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(),
-                                                             mp->attachmentContent()));
-            }
-            htmlWriter->write(renderEncrypted(mp));
-        }
-        return htmlWriter->html();
-    }
-
-    {
         HTMLBlock::Ptr aBlock;
         if (mp->isAttachment()) {
-            aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
+            aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
         }
+        renderEncrypted(mp, htmlWriter);
+        return;
+    }
 
-        if (mp->hasSubParts()) {
-            renderSubParts(mp, htmlWriter);
-        } else if (!metaData.inProgress) {
-            auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
-            if (part) {
-                htmlWriter->write(part->html());
-            }
+    HTMLBlock::Ptr aBlock;
+    if (mp->isAttachment()) {
+        aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
+    }
+
+    if (mp->hasSubParts()) {
+        renderSubParts(mp, htmlWriter);
+    } else if (!metaData.inProgress) {
+        auto part = renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp);
+        if (part) {
+            htmlWriter->write(part->html());
         }
     }
-    return htmlWriter->html();
 }
 
-QString DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp)
+void DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-    {
-        HTMLBlock::Ptr aBlock;
-        if (mp->isAttachment()) {
-            aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
-        }
+    HTMLBlock::Ptr aBlock;
+    if (mp->isAttachment()) {
+        aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
+    }
 
-        auto mode = mp->preferredMode();
-        if (mode == MimeTreeParser::Util::MultipartPlain && mp->text().trimmed().isEmpty()) {
-            foreach (const auto m, mp->availableModes()) {
-                if (m != MimeTreeParser::Util::MultipartPlain) {
-                    mode = m;
-                    break;
-                }
+    auto mode = mp->preferredMode();
+    if (mode == MimeTreeParser::Util::MultipartPlain && mp->text().trimmed().isEmpty()) {
+        foreach (const auto m, mp->availableModes()) {
+            if (m != MimeTreeParser::Util::MultipartPlain) {
+                mode = m;
+                break;
             }
         }
-        MimeMessagePart::Ptr part(mp->mChildParts.first());
-        if (mp->mChildParts.contains(mode)) {
-            part = mp->mChildParts[mode];
-        }
-
-        htmlWriter->write(render(part));
     }
-    return htmlWriter->html();
+    MimeMessagePart::Ptr part(mp->mChildParts.first());
+    if (mp->mChildParts.contains(mode)) {
+        part = mp->mChildParts[mode];
+    }
+
+    render(part, htmlWriter);
 }
 
-QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
+void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
     const GpgME::ImportResult &importResult(mp->mImportResult);
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
@@ -945,17 +899,12 @@ QString DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp)
         keylist << QVariant::fromValue(key);
     }
 
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-    {
-        HTMLBlock::Ptr aBlock;
-        if (mp->isAttachment()) {
-            aBlock
-                = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter.data(), mp->attachmentContent()));
-        }
-        Grantlee::OutputStream s(htmlWriter->stream());
-        t->render(&s, &c);
+    HTMLBlock::Ptr aBlock;
+    if (mp->isAttachment()) {
+        aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
     }
-    return htmlWriter->html();
+    Grantlee::OutputStream s(htmlWriter->stream());
+    t->render(&s, &c);
 }
 
 QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString className, const MessagePart::Ptr &msgPart)
@@ -972,7 +921,7 @@ QSharedPointer<PartRendered> DefaultRendererPrivate::renderWithFactory(QString c
     return QSharedPointer<PartRendered>();
 }
 
-QString DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, const QSharedPointer<CacheHtmlWriter> &htmlWriter)
+QString DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *_htmlWriter)
 {
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
@@ -980,63 +929,64 @@ QString DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, c
     if (rendered) {
         const auto parts = rendered->embededParts();
         foreach (auto key, parts.keys()) {
-            htmlWriter->embedPart(key, parts.value(key));
+            _htmlWriter->embedPart(key, parts.value(key));
         }
 
         foreach (auto entry, rendered->extraHeader()) {
-            htmlWriter->extraHead(entry);
+            _htmlWriter->extraHead(entry);
         }
 
         return rendered->html();
     }
 
+    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
     if (className == QStringLiteral("MimeTreeParser::MessagePartList")) {
         auto mp = msgPart.dynamicCast<MessagePartList>();
         if (mp) {
-            return render(mp);
+            render(mp, htmlWriter.data());
         }
     } else if (className == QStringLiteral("MimeTreeParser::MimeMessagePart")) {
         auto mp = msgPart.dynamicCast<MimeMessagePart>();
         if (mp) {
-            return render(mp);
+            render(mp, htmlWriter.data());
         }
     } else if (className == QStringLiteral("MimeTreeParser::EncapsulatedRfc822MessagePart")) {
         auto mp = msgPart.dynamicCast<EncapsulatedRfc822MessagePart>();
         if (mp) {
-            return render(mp);
+            render(mp, htmlWriter.data());
         }
     } else if (className == QStringLiteral("MimeTreeParser::HtmlMessagePart")) {
         auto mp = msgPart.dynamicCast<HtmlMessagePart>();
         if (mp) {
-            return render(mp);
+            render(mp, htmlWriter.data());
         }
     } else if (className == QStringLiteral("MimeTreeParser::SignedMessagePart")) {
         auto mp = msgPart.dynamicCast<SignedMessagePart>();
         if (mp) {
-            return render(mp);
+            render(mp, htmlWriter.data());
         }
     } else if (className == QStringLiteral("MimeTreeParser::EncryptedMessagePart")) {
         auto mp = msgPart.dynamicCast<EncryptedMessagePart>();
         if (mp) {
-            return render(mp);
+            render(mp, htmlWriter.data());
         }
     } else if (className == QStringLiteral("MimeTreeParser::AlternativeMessagePart")) {
         auto mp = msgPart.dynamicCast<AlternativeMessagePart>();
         if (mp) {
-            return render(mp);
+            render(mp, htmlWriter.data());
         }
     } else if (className == QStringLiteral("MimeTreeParser::CertMessagePart")) {
         auto mp = msgPart.dynamicCast<CertMessagePart>();
         if (mp) {
-            return render(mp);
+            render(mp, htmlWriter.data());
         }
     } else if (auto mp = msgPart.dynamicCast<LegacyPluginMessagePart>()) {
         return mp->formatOutput();
-    }
-
-    qCWarning(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
+    } else {
+        qCWarning(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
                                << className;
-    return QString();
+    }
+    return htmlWriter->html();
 }
 
 DefaultRenderer::DefaultRenderer(const MimeTreeParser::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, MimeTreeParser::HtmlWriter *writer)
