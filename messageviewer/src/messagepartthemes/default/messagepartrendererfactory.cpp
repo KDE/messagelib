@@ -30,6 +30,7 @@
 
 #include "messagepartrendererfactory.h"
 #include "messagepartrendererfactory_p.h"
+#include "messagepartrenderplugin.h"
 
 #include "messagepartrendererbase.h"
 #include "messageviewer_debug.h"
@@ -37,6 +38,11 @@
 #include "plugins/attachmentmessagepartrenderer.h"
 #include "plugins/messagepartrenderer.h"
 #include "plugins/textmessagepartrenderer.h"
+
+#include <KPluginLoader>
+
+#include <QJsonArray>
+#include <QJsonObject>
 
 using namespace MessageViewer;
 
@@ -50,7 +56,33 @@ void MessagePartRendererFactoryPrivate::setup()
 
 void MessagePartRendererFactoryPrivate::loadPlugins()
 {
-    qCDebug(MESSAGEVIEWER_LOG) << "plugin loading is not enabled in libmimetreeparser";
+    KPluginLoader::forEachPlugin(QStringLiteral("messageviewer/bodypartformatter"), [this](const QString &path) {
+        QPluginLoader loader(path);
+        const auto pluginData = loader.metaData().value(QLatin1String("MetaData")).toObject().value(QLatin1String("renderer")).toArray();
+        if (pluginData.isEmpty()) {
+            qCWarning(MESSAGEVIEWER_LOG) << "Plugin" << path << "has no meta data.";
+            return;
+        }
+
+        auto plugin = qobject_cast<MessagePartRenderPlugin*>(loader.instance());
+        if (!plugin) {
+            qCWarning(MESSAGEVIEWER_LOG) << path << "is not a MessagePartRendererPlugin";
+            return;
+        }
+
+        MessagePartRendererBase *renderer = nullptr;
+        for (int i = 0; (renderer = plugin->renderer(i)) && i < pluginData.size(); ++i) {
+            const auto metaData = pluginData.at(i).toObject();
+            const auto type = metaData.value(QLatin1String("type")).toString();
+            if (type.isEmpty()) {
+                qCWarning(MESSAGEVIEWER_LOG) << path << "returned empty type specification for index" << i;
+                break;
+            }
+            // TODO add plugin priority like we have for BPFs
+            qCDebug(MESSAGEVIEWER_LOG) << "renderer plugin for " << type;
+            insert(type, renderer/*, priority*/);
+        }
+    });
 }
 
 void MessagePartRendererFactoryPrivate::initalize_builtin_renderers()

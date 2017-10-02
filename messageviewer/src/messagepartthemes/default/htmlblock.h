@@ -20,6 +20,8 @@
 #ifndef __MIMETREEPARSER_HTMLBLOCK_H__
 #define __MIMETREEPARSER_HTMLBLOCK_H__
 
+#include "messageviewer_export.h"
+
 #include <QString>
 #include <QSharedPointer>
 
@@ -30,7 +32,7 @@ class Content;
 namespace MimeTreeParser {
 class HtmlWriter;
 
-class HTMLBlock
+class MESSAGEVIEWER_EXPORT HTMLBlock
 {
 public:
     typedef QSharedPointer<HTMLBlock> Ptr;
@@ -53,7 +55,7 @@ private:
 // The attachment mark is a div that is placed around the attchment. It is used for drawing
 // a yellow border around the attachment when scrolling to it. When scrolling to it, the border
 // color of the div is changed, see KMReaderWin::scrollToAttachment().
-class AttachmentMarkBlock : public HTMLBlock
+class MESSAGEVIEWER_EXPORT AttachmentMarkBlock : public HTMLBlock
 {
 public:
     AttachmentMarkBlock(MimeTreeParser::HtmlWriter *writer, KMime::Content *node);

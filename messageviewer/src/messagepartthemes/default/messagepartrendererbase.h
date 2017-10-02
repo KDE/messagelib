@@ -47,7 +47,7 @@ namespace MessageViewer {
 
 class CSSHelperBase;
 
-class RenderContext
+class MESSAGEVIEWER_EXPORT RenderContext
 {
 public:
     virtual ~RenderContext();
@@ -56,7 +56,7 @@ public:
     virtual bool renderWithFactory(const QString &className, const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *writer) = 0;
 };
 
-class MessagePartRendererBase
+class MESSAGEVIEWER_EXPORT MessagePartRendererBase
 {
 public:
     MessagePartRendererBase();

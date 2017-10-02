@@ -861,12 +861,11 @@ bool DefaultRendererPrivate::renderWithFactory(const QString &className, const M
 {
     if (!mRendererFactory)
         return false;
-    const auto registry = mRendererFactory->typeRegistry(className);
-    if (registry.empty())
-        return false;
-
-    const auto plugin = registry.at(0);
-    return plugin->render(msgPart, htmlWriter, this);
+    for (auto r : mRendererFactory->typeRegistry(className)) {
+        if (r->render(msgPart, htmlWriter, this))
+            return true;
+    }
+    return false;
 }
 
 QString DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *_htmlWriter)
