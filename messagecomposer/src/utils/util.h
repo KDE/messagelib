@@ -34,10 +34,6 @@ namespace KMime {
 class Content;
 }
 
-namespace MailTransport {
-class MessageQueueJob;
-}
-
 namespace MessageComposer {
 namespace Util {
 MESSAGECOMPOSER_EXPORT QByteArray selectCharset(const QList<QByteArray> &charsets, const QString &text);

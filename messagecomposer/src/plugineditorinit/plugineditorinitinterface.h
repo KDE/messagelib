@@ -29,7 +29,6 @@ class RichTextComposer;
 
 namespace MessageComposer {
 class PluginEditorInitInterfacePrivate;
-class PluginEditorInitParams;
 class MESSAGECOMPOSER_EXPORT PluginEditorInitInterface : public QObject
 {
     Q_OBJECT
