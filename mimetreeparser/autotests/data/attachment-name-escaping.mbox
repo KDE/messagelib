@@ -1,0 +1,44 @@
+From: Volker Krause <vkrause@kde.org>
+To: vkrause@kde.org
+Subject: text attachments trying to mess up escaping
+Date: Tue, 03 Oct 2017 12:21:24 +0200
+Message-ID: <1807613.y0QX81sLpY@vkpc5>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="nextPart2107984.jr9reY14Qx"
+Content-Transfer-Encoding: 7Bit
+
+This is a multi-part message in MIME format.
+
+--nextPart2107984.jr9reY14Qx
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="us-ascii"
+
+hello, this is the body
+--nextPart2107984.jr9reY14Qx
+Content-Disposition: inline; filename="M<i>essag</i>es.sh"
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="utf-8"; name="M<i>essag</i>es.sh"
+
+#! /bin/sh
+$XGETTEXT `find . -name '*.cpp' -o -name '*.h' | grep -v '/tests/' | grep -v '/autotests/'` -o $podir/libmimetreeparser.pot
+--nextPart2107984.jr9reY14Qx
+Content-Description: A long description with\n <br/> various attempts of <b>breaking</b> stuff.
+Content-Disposition: inline; filename="metainfo.yaml"
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="utf-8"; name="metainfo.yaml"
+
+maintainer:
+description: MimeTreeParser Library 
+tier: 3
+type: functional
+platforms:
+    - name: All
+portingAid: false
+deprecated: false
+release: false
+libraries:
+ - qmake: MimeTreeParser
+   cmake: "KF5::MimeTreeParser"
+   cmakename: KF5MimeTreeParser
+
+--nextPart2107984.jr9reY14Qx--

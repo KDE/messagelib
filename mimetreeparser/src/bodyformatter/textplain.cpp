@@ -53,9 +53,9 @@ MessagePart::Ptr TextPlainBodyPartFormatter::process(Interface::BodyPart &part) 
 
     TextMessagePart::Ptr mp;
     if (isFirstTextPart) {
-        mp = TextMessagePart::Ptr(new TextMessagePart(part.objectTreeParser(), node, bDrawFrame, fileName.isEmpty(), part.source()->decryptMessage()));
+        mp = TextMessagePart::Ptr(new TextMessagePart(part.objectTreeParser(), node, bDrawFrame, !fileName.isEmpty(), part.source()->decryptMessage()));
     } else {
-        mp = TextMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, bDrawFrame, fileName.isEmpty(), part.source()->decryptMessage()));
+        mp = TextMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, bDrawFrame, !fileName.isEmpty(), part.source()->decryptMessage()));
     }
 
     part.processResult()->setInlineSignatureState(mp->signatureState());

@@ -66,18 +66,10 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr&
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
                                                                                              ":/asiconpart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-    QObject block;
-    c.insert(QStringLiteral("block"), &block);
+    c.insert(QStringLiteral("block"), msgPart.data());
 
-    block.setProperty("showTextFrame", mp->showTextFrame());
-    block.setProperty("label",
-                      MessageCore::StringUtil::quoteHtmlChars(NodeHelper::fileName(node), true));
-    block.setProperty("comment",
-                      MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->
-                                                              asUnicodeString(), true));
-    block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
-    block.setProperty("showLink", mp->showLink());
-    block.setProperty("inline", (tmpAsIcon == MimeTreeParser::IconInline));
+    msgPart->setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
+    msgPart->setProperty("inline", (tmpAsIcon == MimeTreeParser::IconInline));
 
     QString iconPath;
     if (tmpAsIcon == MimeTreeParser::IconInline) {
@@ -89,24 +81,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr&
             iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
         }
     }
-    block.setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
-
-    const QString name = node->contentType()->name();
-    QString label = name.isEmpty() ? NodeHelper::fileName(node) : name;
-    QString comment = node->contentDescription()->asUnicodeString();
-
-    if (label.isEmpty()) {
-        label = i18nc("display name for an unnamed attachment", "Unnamed");
-    }
-    label = MessageCore::StringUtil::quoteHtmlChars(label, true);
-
-    comment = MessageCore::StringUtil::quoteHtmlChars(comment, true);
-    if (label == comment) {
-        comment.clear();
-    }
-
-    block.setProperty("label", label);
-    block.setProperty("comment", comment);
+    msgPart->setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
 
     MimeTreeParser::AttachmentMarkBlock attBlock(nullptr, mp->attachmentContent());
     if (mp->isAttachment())

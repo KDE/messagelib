@@ -383,6 +383,24 @@ bool TextMessagePart::showTextFrame() const
     return mDrawFrame;
 }
 
+QString TextMessagePart::label() const
+{
+    const QString name = content()->contentType()->name();
+    QString label = name.isEmpty() ? NodeHelper::fileName(content()) : name;
+    if (label.isEmpty()) {
+        label = i18nc("display name for an unnamed attachment", "Unnamed");
+    }
+    return label;
+}
+
+QString TextMessagePart::comment() const
+{
+    const QString comment = content()->contentDescription()->asUnicodeString();
+    if (comment == label())
+        return {};
+    return comment;
+}
+
 //-----AttachmentMessageBlock----------------------
 
 AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage)

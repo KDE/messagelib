@@ -56,18 +56,8 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr& msgPa
 
     Grantlee::Template t;
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-    QObject block;
-    c.insert(QStringLiteral("block"), &block);
-
-    block.setProperty("showTextFrame", mp->showTextFrame());
-    block.setProperty("label",
-                      MessageCore::StringUtil::quoteHtmlChars(MimeTreeParser::NodeHelper::fileName(
-                                                                  node), true));
-    block.setProperty("comment",
-                      MessageCore::StringUtil::quoteHtmlChars(node->contentDescription()->
-                                                              asUnicodeString(), true));
-    block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
-    block.setProperty("showLink", mp->showLink());
+    c.insert(QStringLiteral("block"), msgPart.data());
+    msgPart->setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
 
     t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
                                                                             ":/textmessagepart.html"));

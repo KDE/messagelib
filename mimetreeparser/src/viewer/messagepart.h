@@ -184,6 +184,10 @@ enum IconType {
 class MIMETREEPARSER_EXPORT TextMessagePart : public MessagePartList
 {
     Q_OBJECT
+    Q_PROPERTY(bool showTextFrame READ showTextFrame CONSTANT)
+    Q_PROPERTY(bool showLink READ showLink CONSTANT)
+    Q_PROPERTY(QString label READ label CONSTANT)
+    Q_PROPERTY(QString comment READ comment CONSTANT)
 public:
     typedef QSharedPointer<TextMessagePart> Ptr;
     TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage);
@@ -198,6 +202,11 @@ public:
 
     bool showLink() const;
     bool showTextFrame() const;
+
+    /** The attachment filename, or the closest approximation thereof we have. */
+    QString label() const;
+    /** A description of this attachment, if provided. */
+    QString comment() const;
 
 private:
     void parseContent();
