@@ -46,7 +46,7 @@ public:
 
     Interface::ObjectTreeSource *source() const;
 
-    void renderSubParts(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
+    void renderSubParts(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) override;
 
     void render(const MessagePartList::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const MimeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
@@ -59,12 +59,9 @@ public:
     void render(const AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     bool renderWithFactory(const QString &className, const MessagePart::Ptr &msgPart, HtmlWriter *writer) override;
-    QString renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
+    void renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
-    QString mHtml;
     MessagePart::Ptr mMsgPart;
-    HtmlWriter *mOldWriter = nullptr;
-
     CSSHelperBase *mCSSHelper = nullptr;
     const MessageViewer::MessagePartRendererFactory *mRendererFactory = nullptr;
 };

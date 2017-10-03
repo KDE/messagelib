@@ -141,9 +141,7 @@ bool EmptySource::isPrinting() const
     return false;
 }
 
-MimeTreeParser::Interface::MessagePartRendererPtr EmptySource::messagePartTheme(
-    MimeTreeParser::MessagePartPtr msgPart)
+void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter)
 {
-    return MimeTreeParser::Interface::MessagePartRenderer::Ptr(
-        new DefaultRenderer(msgPart, cssHelper(), htmlWriter()));
+    DefaultRenderer(msgPart, cssHelper(), htmlWriter);
 }

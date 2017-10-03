@@ -23,7 +23,6 @@
 
 #include "messageviewer_debug.h"
 
-#include "cachehtmlwriter.h"
 #include "converthtmltoplaintext.h"
 #include "messagepartrendererbase.h"
 #include "messagepartrendererfactory.h"
@@ -56,13 +55,8 @@
 #include <grantlee/templateloader.h>
 #include <grantlee/template.h>
 
-#include <functional>
-
 using namespace MimeTreeParser;
 using namespace MessageViewer;
-
-typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
-Q_DECLARE_METATYPE(GrantleeCallback)
 
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const QGpgME::Protocol *)
@@ -315,11 +309,10 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
 
 DefaultRendererPrivate::DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory)
     : mMsgPart(msgPart)
-    , mOldWriter(writer)
     , mCSSHelper(cssHelper)
     , mRendererFactory(rendererFactory)
 {
-    mHtml = renderFactory(mMsgPart, nullptr);
+    renderFactory(mMsgPart, writer);
 }
 
 DefaultRendererPrivate::~DefaultRendererPrivate()
@@ -339,7 +332,7 @@ Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
 void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
 {
     foreach (const auto &m, msgPart->subParts())
-        htmlWriter->write(renderFactory(m, htmlWriter));
+        renderFactory(m, htmlWriter);
 }
 
 void DefaultRendererPrivate::render(const MessagePartList::Ptr &mp, HtmlWriter *htmlWriter)
@@ -850,61 +843,59 @@ bool DefaultRendererPrivate::renderWithFactory(const QString &className, const M
     return false;
 }
 
-QString DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *_htmlWriter)
+void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
 {
-    auto htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
-    if (renderWithFactory(className, msgPart, htmlWriter.data()))
-        return htmlWriter->html();
+    if (renderWithFactory(className, msgPart, htmlWriter))
+        return;
 
     if (className == QStringLiteral("MimeTreeParser::MessagePartList")) {
         auto mp = msgPart.dynamicCast<MessagePartList>();
         if (mp) {
-            render(mp, htmlWriter.data());
+            render(mp, htmlWriter);
         }
     } else if (className == QStringLiteral("MimeTreeParser::MimeMessagePart")) {
         auto mp = msgPart.dynamicCast<MimeMessagePart>();
         if (mp) {
-            render(mp, htmlWriter.data());
+            render(mp, htmlWriter);
         }
     } else if (className == QStringLiteral("MimeTreeParser::EncapsulatedRfc822MessagePart")) {
         auto mp = msgPart.dynamicCast<EncapsulatedRfc822MessagePart>();
         if (mp) {
-            render(mp, htmlWriter.data());
+            render(mp, htmlWriter);
         }
     } else if (className == QStringLiteral("MimeTreeParser::HtmlMessagePart")) {
         auto mp = msgPart.dynamicCast<HtmlMessagePart>();
         if (mp) {
-            render(mp, htmlWriter.data());
+            render(mp, htmlWriter);
         }
     } else if (className == QStringLiteral("MimeTreeParser::SignedMessagePart")) {
         auto mp = msgPart.dynamicCast<SignedMessagePart>();
         if (mp) {
-            render(mp, htmlWriter.data());
+            render(mp, htmlWriter);
         }
     } else if (className == QStringLiteral("MimeTreeParser::EncryptedMessagePart")) {
         auto mp = msgPart.dynamicCast<EncryptedMessagePart>();
         if (mp) {
-            render(mp, htmlWriter.data());
+            render(mp, htmlWriter);
         }
     } else if (className == QStringLiteral("MimeTreeParser::AlternativeMessagePart")) {
         auto mp = msgPart.dynamicCast<AlternativeMessagePart>();
         if (mp) {
-            render(mp, htmlWriter.data());
+            render(mp, htmlWriter);
         }
     } else if (className == QStringLiteral("MimeTreeParser::CertMessagePart")) {
         auto mp = msgPart.dynamicCast<CertMessagePart>();
         if (mp) {
-            render(mp, htmlWriter.data());
+            render(mp, htmlWriter);
         }
     } else if (auto mp = msgPart.dynamicCast<LegacyPluginMessagePart>()) {
-        return mp->formatOutput();
+        htmlWriter->write(mp->formatOutput());
     } else {
         qCWarning(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
                                << className;
     }
-    return htmlWriter->html();
 }
 
 DefaultRenderer::DefaultRenderer(const MimeTreeParser::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, MimeTreeParser::HtmlWriter *writer)
@@ -915,9 +906,4 @@ DefaultRenderer::DefaultRenderer(const MimeTreeParser::MessagePart::Ptr &msgPart
 DefaultRenderer::~DefaultRenderer()
 {
     delete d;
-}
-
-QString DefaultRenderer::html() const
-{
-    return d->mHtml;
 }

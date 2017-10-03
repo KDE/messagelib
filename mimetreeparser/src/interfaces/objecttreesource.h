@@ -34,10 +34,6 @@ class AttachmentStrategy;
 class BodyPartFormatterBaseFactory;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
-namespace Interface {
-class MessagePartRenderer;
-typedef QSharedPointer<MessagePartRenderer> MessagePartRendererPtr;
-}
 }
 
 namespace MimeTreeParser {
@@ -93,7 +89,7 @@ public:
 
     virtual const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() = 0;
 
-    virtual MessagePartRendererPtr messagePartTheme(MessagePartPtr msgPart) = 0;
+    virtual void render(const MessagePartPtr &msgPart, HtmlWriter *htmlWriter) = 0;
 
     virtual bool isPrinting() const = 0;
 

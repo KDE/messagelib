@@ -23,7 +23,6 @@ set(libmimetreeparser_main_SRCS
     interfaces/objecttreesource.cpp
     interfaces/bodypart.cpp
     interfaces/htmlwriter.cpp
-    interfaces/messagepartrenderer.cpp
     job/qgpgmejobexecutor.cpp
     utils/util.cpp
     viewer/attachmentstrategy.cpp
@@ -78,7 +77,6 @@ ecm_generate_headers(MimeTreeParser_Camelcaseinterfaces_HEADERS
     BodyPartFormatter
     BodyPart
     HtmlWriter
-    MessagePartRenderer
     ObjectTreeSource
     REQUIRED_HEADERS MimeTreeParser_interfaces_HEADERS
     PREFIX MimeTreeParser

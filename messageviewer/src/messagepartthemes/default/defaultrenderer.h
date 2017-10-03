@@ -20,8 +20,6 @@
 #ifndef __MESSAGEVIEWER_DEFAULTRENDERER_H__
 #define __MESSAGEVIEWER_DEFAULTRENDERER_H__
 
-#include <MimeTreeParser/MessagePartRenderer>
-
 #include <QSharedPointer>
 
 namespace MimeTreeParser {
@@ -34,13 +32,11 @@ typedef QSharedPointer<MessagePart> MessagePartPtr;
 namespace MessageViewer {
 class CSSHelperBase;
 
-class DefaultRenderer : public MimeTreeParser::Interface::MessagePartRenderer
+class DefaultRenderer
 {
 public:
     DefaultRenderer(const MimeTreeParser::MessagePartPtr &msgPart, CSSHelperBase *cssHelder, MimeTreeParser::HtmlWriter *writer);
     ~DefaultRenderer();
-
-    QString html() const override;
 
 private:
     MimeTreeParser::DefaultRendererPrivate *d;

@@ -24,12 +24,7 @@
 
 #include <QDebug>
 
-#include <functional>
-
 using namespace MessageViewer;
-
-typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
-Q_DECLARE_METATYPE(GrantleeCallback)
 
 CallbackTag::CallbackTag(const QString &name, QObject* parent)
     : Grantlee::Node(parent)

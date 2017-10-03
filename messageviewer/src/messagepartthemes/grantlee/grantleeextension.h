@@ -25,7 +25,11 @@
 
 #include <QObject>
 
+#include <functional>
+
 namespace MessageViewer {
+
+typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
 
 class CallbackTag : public Grantlee::Node
 {
@@ -56,5 +60,7 @@ public:
 };
 
 }
+
+Q_DECLARE_METATYPE(MessageViewer::GrantleeCallback)
 
 #endif // MESSAGEVIEWER_GRANTLEEEXTENSION_H

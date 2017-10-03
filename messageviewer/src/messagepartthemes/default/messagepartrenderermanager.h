@@ -20,9 +20,14 @@
 #ifndef MESSAGEPARTRENDERERMANAGER_H
 #define MESSAGEPARTRENDERERMANAGER_H
 
-#include <QObject>
 #include "messageviewer_export.h"
+
 #include <grantlee/template.h>
+
+#include <QMetaType>
+#include <QObject>
+
+#include <functional>
 
 namespace GrantleeTheme {
 class Engine;
@@ -30,6 +35,8 @@ class Engine;
 
 namespace MessageViewer {
 class GlobalContext;
+
+typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
 
 class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
 {
@@ -47,5 +54,7 @@ private:
     GlobalContext *m_globalContext;
 };
 }
+
+Q_DECLARE_METATYPE(MessageViewer::GrantleeCallback)
 
 #endif // MESSAGEPARTRENDERERMANAGER_H

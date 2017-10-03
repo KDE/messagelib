@@ -19,12 +19,12 @@
         </tr>
         <tr class="textAtmB">
             <td>
-                {{content|safe}}
+                {% callback content %}
             </td>
         </tr>
     </table>
 {% else %}
-    {{content|safe}}
+    {% callback content %}
 {% endif %}
 {% if block.isAttachment %}
 </div>

@@ -54,15 +54,10 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr& msgPa
     Grantlee::Template t;
     Grantlee::Context c = MessagePartRendererManager::self()->createContext();
     c.insert(QStringLiteral("block"), msgPart.data());
-
+    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([mp, htmlWriter, context](Grantlee::OutputStream*) {
+        context->renderSubParts(mp, htmlWriter);
+    }));
     t = MessagePartRendererManager::self()->loadByName(QStringLiteral(":/textmessagepart.html"));
-
-    QString content;
-    foreach (const auto &_m, mp->subParts()) {
-        DefaultRenderer::Ptr renderer = mp->source()->messagePartTheme(_m);
-        content += renderer->html();
-    }
-    c.insert(QStringLiteral("content"), content);
 
     Grantlee::OutputStream s(htmlWriter->stream());
     t->render(&s, &c);

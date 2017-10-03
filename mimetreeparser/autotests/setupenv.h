@@ -26,7 +26,6 @@
 #include <MimeTreeParser/BodyPartFormatter>
 #include <MimeTreeParser/BodyPartFormatterBaseFactory>
 #include <MimeTreeParser/MessagePart>
-#include <MimeTreeParser/MessagePartRenderer>
 #include <MimeTreeParser/ObjectTreeSource>
 
 namespace MimeTreeParser {
@@ -149,10 +148,10 @@ public:
         return QString(); //do nothing
     }
 
-    Interface::MessagePartRenderer::Ptr messagePartTheme(MessagePart::Ptr msgPart) override
+    void render(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) override
     {
         Q_UNUSED(msgPart);
-        return Interface::MessagePartRenderer::Ptr();
+        Q_UNUSED(htmlWriter);
     }
 
     bool isPrinting() const override

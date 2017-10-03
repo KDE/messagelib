@@ -48,8 +48,7 @@ public:
     bool showEmoticons() const override;
     bool showExpandQuotesMark() const override;
     const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override;
-    MimeTreeParser::Interface::MessagePartRendererPtr messagePartTheme(
-        MimeTreeParser::MessagePartPtr msgPart) override;
+    void render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) override;
     bool isPrinting() const override;
 private:
     ViewerPrivate *mViewer = nullptr;

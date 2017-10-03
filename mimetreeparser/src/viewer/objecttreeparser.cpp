@@ -47,7 +47,6 @@
 #include "bodyformatter/utils.h"
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/htmlwriter.h"
-#include "interfaces/messagepartrenderer.h"
 #include "utils/util.h"
 
 #include <KMime/Headers>
@@ -184,10 +183,7 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
         }
 
         if (htmlWriter()) {
-            const auto renderer = mSource->messagePartTheme(mParsedPart);
-            if (renderer) {
-                htmlWriter()->write(renderer->html());
-            }
+            mSource->render(mParsedPart, htmlWriter());
         }
     }
 }
