@@ -22,7 +22,6 @@
 #include "quotehtml.h"
 
 #include "../defaultrenderer_p.h"
-#include "../htmlblock.h"
 #include "../messagepartrenderermanager.h"
 
 #include <MessageCore/StringUtil>
@@ -69,12 +68,7 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr& msgPa
     }
     c.insert(QStringLiteral("content"), content);
 
-    MimeTreeParser::AttachmentMarkBlock attBlock(nullptr, mp->attachmentContent());
-    if (mp->isAttachment())
-        htmlWriter->write(attBlock.enter());
-
     Grantlee::OutputStream s(htmlWriter->stream());
     t->render(&s, &c);
-    htmlWriter->write(attBlock.exit());
     return true;
 }

@@ -1,3 +1,7 @@
+{% if block.isAttachment %}
+<a name="att{{block.attachmentIndex}}"></a>
+<div id="attachmentDiv{{block.attachmentIndex}}">
+{% endif %}
 {% if block.showTextFrame %}
     <table cellspacing="1" class="textAtm">
         <tr class="textAtmH">
@@ -21,4 +25,7 @@
     </table>
 {% else %}
     {{content|safe}}
+{% endif %}
+{% if block.isAttachment %}
+</div>
 {% endif %}

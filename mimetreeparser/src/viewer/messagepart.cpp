@@ -124,6 +124,11 @@ bool MessagePart::isAttachment() const
     return d->mAttachmentNode;
 }
 
+QString MessagePart::attachmentIndex() const
+{
+    return attachmentContent()->index().toString();
+}
+
 void MessagePart::setIsRoot(bool root)
 {
     d->mRoot = root;

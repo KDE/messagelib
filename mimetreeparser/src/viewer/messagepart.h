@@ -69,10 +69,11 @@ class MIMETREEPARSER_EXPORT MessagePart : public QObject
     Q_OBJECT
     Q_PROPERTY(QString plaintextContent READ plaintextContent)
     Q_PROPERTY(QString htmlContent READ htmlContent)
-    Q_PROPERTY(bool attachment READ isAttachment)
+    Q_PROPERTY(bool isAttachment READ isAttachment)
     Q_PROPERTY(bool root READ isRoot)
     Q_PROPERTY(bool isHtml READ isHtml)
     Q_PROPERTY(bool isHidden READ isHidden)
+    Q_PROPERTY(QString attachmentIndex READ attachmentIndex CONSTANT)
 public:
     typedef QSharedPointer<MessagePart> Ptr;
     MessagePart(ObjectTreeParser *otp, const QString &text);
@@ -100,6 +101,8 @@ public:
     KMime::Content *attachmentContent() const;
     void setAttachmentContent(KMime::Content *node);
     bool isAttachment() const;
+    /** @see KMime::Content::index() */
+    QString attachmentIndex() const;
 
     void setIsRoot(bool root);
     bool isRoot() const;

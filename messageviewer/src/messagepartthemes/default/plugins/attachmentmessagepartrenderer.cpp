@@ -22,7 +22,6 @@
 #include "quotehtml.h"
 
 #include "utils/mimetype.h"
-#include "../htmlblock.h"
 #include "../defaultrenderer_p.h"
 #include "../messagepartrenderermanager.h"
 
@@ -83,13 +82,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr&
     }
     msgPart->setProperty("iconPath", QUrl::fromLocalFile(iconPath).url());
 
-    MimeTreeParser::AttachmentMarkBlock attBlock(nullptr, mp->attachmentContent());
-    if (mp->isAttachment())
-        htmlWriter->write(attBlock.enter());
-
     Grantlee::OutputStream s(htmlWriter->stream());
     t->render(&s, &c);
-    htmlWriter->write(attBlock.exit());
-
     return true;
 }

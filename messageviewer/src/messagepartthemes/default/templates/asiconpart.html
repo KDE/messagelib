@@ -1,3 +1,7 @@
+{% if block.isAttachment %}
+<a name="att{{block.attachmentIndex}}"></a>
+<div id="attachmentDiv{{block.attachmentIndex}}">
+{% endif %}
 <hr/>
 {% if block.inline %}
      <div>
@@ -12,3 +16,6 @@
     </div>
 {% endif %}
 <div>{{block.comment}}</div>
+{% if block.isAttachment %}
+</div>
+{% endif %}
