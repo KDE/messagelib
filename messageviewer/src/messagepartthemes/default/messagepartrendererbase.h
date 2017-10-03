@@ -63,8 +63,6 @@ public:
     virtual ~MessagePartRendererBase();
     virtual bool render(const MimeTreeParser::MessagePartPtr &, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context)
     const = 0;
-
-    QString alignText() const;
 };
 }
 #endif

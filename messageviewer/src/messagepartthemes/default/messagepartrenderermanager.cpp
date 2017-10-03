@@ -35,6 +35,8 @@
 #include <grantlee/metatype.h>
 #include <grantlee/templateloader.h>
 
+#include <QGuiApplication>
+
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const QGpgME::Protocol *)
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
@@ -57,11 +59,32 @@ inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Pro
 }
 }
 
+namespace MessageViewer {
+class GlobalContext : public QObject
+{
+    Q_OBJECT
+    Q_PROPERTY(QString dir READ layoutDirection CONSTANT)
+    Q_PROPERTY(int iconSize READ iconSize CONSTANT)
+public:
+    explicit GlobalContext(QObject *parent) : QObject(parent) {}
+    QString layoutDirection() const
+    {
+         return QGuiApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+    }
+
+    int iconSize() const
+    {
+        return KIconLoader::global()->currentSize(KIconLoader::Desktop);
+    }
+};
+}
+
 using namespace MessageViewer;
 
 MessagePartRendererManager::MessagePartRendererManager(QObject *parent)
     : QObject(parent)
     , m_engine(nullptr)
+    , m_globalContext(new GlobalContext(this))
 {
     initializeRenderer();
 }
@@ -87,8 +110,6 @@ void MessagePartRendererManager::initializeRenderer()
     auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(
         new GrantleeTheme::QtResourceTemplateLoader());
     m_engine->addTemplateLoader(loader);
-
-    mCurrentIconSize = KIconLoader::global()->currentSize(KIconLoader::Desktop);
 }
 
 Grantlee::Template MessagePartRendererManager::loadByName(const QString &name)
@@ -110,10 +131,8 @@ Grantlee::Context MessagePartRendererManager::createContext()
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
 
     c.setLocalizer(m_engine->localizer());
+    c.insert(QStringLiteral("global"), m_globalContext);
     return c;
 }
 
-int MessagePartRendererManager::iconCurrentSize() const
-{
-    return mCurrentIconSize;
-}
+#include "messagepartrenderermanager.moc"

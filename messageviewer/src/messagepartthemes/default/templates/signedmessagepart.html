@@ -1,6 +1,6 @@
 <table cellspacing="1" cellpadding="1" class="{{block.signClass}}">
     <tr class="{{block.signClass}}H">
-        <td dir="{{block.dir}}">
+        <td dir="{{global.dir}}">
         {% if block.inProgress %}
             {% i18n "Please wait while the signature is being verified..." %}
         {% else %}
@@ -163,6 +163,6 @@
         <td>{{content|safe}}</td>
     </tr>
     <tr class="{{block.signClass}}H">
-        <td dir="{{block.dir}}">{% i18n "End of signed message" %}</td>
+        <td dir="{{global.dir}}">{% i18n "End of signed message" %}</td>
     </tr>
 </table>

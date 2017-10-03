@@ -42,7 +42,6 @@ public:
     DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory);
     ~DefaultRendererPrivate();
 
-    QString alignText();
     CSSHelperBase *cssHelper() const override;
 
     Interface::ObjectTreeSource *source() const;

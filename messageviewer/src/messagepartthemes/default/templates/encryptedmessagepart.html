@@ -4,12 +4,12 @@
     </div>
     <div style="text-align:center; padding-bottom:20pt;">
 
-        <a href="kmail:decryptMessage"> <img src="{{block.decryptIcon}}" height="{{block.iconSize}}" width="{{block.iconSize}}"/> {% i18n "Decrypt Message" %} </a>
+        <a href="kmail:decryptMessage"> <img src="{{block.decryptIcon}}" height="{{global.iconSize}}" width="{{global.iconSize}}"/> {% i18n "Decrypt Message" %} </a>
     </div>
 {% else %}
     <table cellspacing="1" cellpadding="1" class="encr">
         <tr class="encrH">
-            <td dir="{{block.dir}}">
+            <td dir="{{global.dir}}">
             {% if block.inProgress %}
                 {% i18n "Please wait while the message is being decrypted..." %}
             {% elif block.isDecryptable %}
@@ -43,7 +43,7 @@
             </td>
         </tr>
         <tr class="encrH">
-            <td dir="{{block.dir}}">{% i18n "End of encrypted message" %}</td>
+            <td dir="{{global.dir}}">{% i18n "End of encrypted message" %}</td>
         </tr>
     </table>
 {% endif %}

@@ -77,9 +77,6 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr&
                                                               asUnicodeString(), true));
     block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
     block.setProperty("showLink", mp->showLink());
-    block.setProperty("dir", alignText());
-    block.setProperty("iconSize",
-                      MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
     block.setProperty("inline", (tmpAsIcon == MimeTreeParser::IconInline));
 
     QString iconPath;

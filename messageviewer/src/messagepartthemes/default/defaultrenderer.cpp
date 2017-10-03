@@ -321,11 +321,6 @@ DefaultRendererPrivate::~DefaultRendererPrivate()
 {
 }
 
-QString DefaultRendererPrivate::alignText()
-{
-    return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
-}
-
 CSSHelperBase *DefaultRendererPrivate::cssHelper() const
 {
     return mCSSHelper;
@@ -384,7 +379,6 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
     QObject block;
 
     c.insert(QStringLiteral("block"), &block);
-    block.setProperty("dir", alignText());
     block.setProperty("link",
                       mp->mOtp->nodeHelper()->asHREF(mp->mMessage.data(), QStringLiteral("body")));
 
@@ -486,7 +480,6 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     }
     c.insert(QStringLiteral("block"), &block);
 
-    block.setProperty("dir", alignText());
     block.setProperty("inProgress", metaData.inProgress);
     block.setProperty("isDecrypted", mp->decryptMessage());
     block.setProperty("isDecryptable", metaData.isDecryptable);
@@ -496,8 +489,6 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
                                                                               KIconLoader::Small)).url());
     block.setProperty("errorText", metaData.errorText);
     block.setProperty("noSecKey", mp->mNoSecKey);
-    block.setProperty("iconSize",
-                      MessageViewer::MessagePartRendererManager::self()->iconCurrentSize());
 
     Grantlee::OutputStream s(htmlWriter->stream());
     t->render(&s, &c);
@@ -538,7 +529,6 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(cryptoProto));
     c.insert(QStringLiteral("block"), &block);
 
-    block.setProperty("dir", alignText());
     block.setProperty("inProgress", metaData.inProgress);
     block.setProperty("errorText", metaData.errorText);
 

@@ -29,6 +29,8 @@ class Engine;
 }
 
 namespace MessageViewer {
+class GlobalContext;
+
 class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
 {
     Q_OBJECT
@@ -39,11 +41,10 @@ public:
 
     Grantlee::Template loadByName(const QString &name);
     Grantlee::Context createContext();
-    int iconCurrentSize() const;
 private:
     void initializeRenderer();
     GrantleeTheme::Engine *m_engine = nullptr;
-    int mCurrentIconSize;
+    GlobalContext *m_globalContext;
 };
 }
 

@@ -68,7 +68,6 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr& msgPa
                                                               asUnicodeString(), true));
     block.setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
     block.setProperty("showLink", mp->showLink());
-    block.setProperty("dir", alignText());
 
     t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
                                                                             ":/textmessagepart.html"));

@@ -42,8 +42,3 @@ MessagePartRendererBase::MessagePartRendererBase()
 MessagePartRendererBase::~MessagePartRendererBase()
 {
 }
-
-QString MessagePartRendererBase::alignText() const
-{
-    return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
-}

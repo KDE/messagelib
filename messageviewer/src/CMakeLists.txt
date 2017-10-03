@@ -371,6 +371,7 @@ ecm_generate_headers(MessageViewer_Camelcaserenderer_HEADERS
     HEADER_NAMES
     HtmlBlock
     MessagePartRendererBase
+    MessagePartRendererManager
     MessagePartRenderPlugin
     REQUIRED_HEADERS MessageViewer_renderer_HEADERS
     PREFIX MessageViewer
