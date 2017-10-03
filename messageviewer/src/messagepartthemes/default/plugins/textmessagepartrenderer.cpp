@@ -47,19 +47,15 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr& msgPa
     if (!mp)
         return false;
 
-    auto node = mp->content();
-    auto nodeHelper = mp->mOtp->nodeHelper();
     if (mp->isHidden()) {
         return true;
     }
 
     Grantlee::Template t;
-    Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
+    Grantlee::Context c = MessagePartRendererManager::self()->createContext();
     c.insert(QStringLiteral("block"), msgPart.data());
-    msgPart->setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
 
-    t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
-                                                                            ":/textmessagepart.html"));
+    t = MessagePartRendererManager::self()->loadByName(QStringLiteral(":/textmessagepart.html"));
 
     QString content;
     foreach (const auto &_m, mp->subParts()) {

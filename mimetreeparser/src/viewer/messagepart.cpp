@@ -129,6 +129,11 @@ QString MessagePart::attachmentIndex() const
     return attachmentContent()->index().toString();
 }
 
+QString MessagePart::attachmentLink() const
+{
+    return mOtp->nodeHelper()->asHREF(content(), QStringLiteral("body"));
+}
+
 void MessagePart::setIsRoot(bool root)
 {
     d->mRoot = root;

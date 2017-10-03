@@ -38,7 +38,6 @@
 
 class QTextCodec;
 namespace MessageViewer {
-class TextMessagePartRenderer;
 class AttachmentMessagePartRenderer;
 }
 
@@ -74,6 +73,7 @@ class MIMETREEPARSER_EXPORT MessagePart : public QObject
     Q_PROPERTY(bool isHtml READ isHtml)
     Q_PROPERTY(bool isHidden READ isHidden)
     Q_PROPERTY(QString attachmentIndex READ attachmentIndex CONSTANT)
+    Q_PROPERTY(QString link READ attachmentLink CONSTANT)
 public:
     typedef QSharedPointer<MessagePart> Ptr;
     MessagePart(ObjectTreeParser *otp, const QString &text);
@@ -103,6 +103,8 @@ public:
     bool isAttachment() const;
     /** @see KMime::Content::index() */
     QString attachmentIndex() const;
+    /** @see NodeHelper::asHREF */
+    QString attachmentLink() const;
 
     void setIsRoot(bool root);
     bool isRoot() const;
@@ -221,7 +223,6 @@ private:
     bool mDecryptMessage;
     bool mIsHidden;
 
-    friend class MessageViewer::TextMessagePartRenderer;
     friend class MessageViewer::AttachmentMessagePartRenderer;
     friend class ObjectTreeParser;
 };

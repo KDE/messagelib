@@ -67,7 +67,6 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr&
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     c.insert(QStringLiteral("block"), msgPart.data());
 
-    msgPart->setProperty("link", nodeHelper->asHREF(node, QStringLiteral("body")));
     msgPart->setProperty("inline", (tmpAsIcon == MimeTreeParser::IconInline));
 
     QString iconPath;
