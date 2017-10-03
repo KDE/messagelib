@@ -1,10 +1,8 @@
-
-
 add_definitions( -DQT_NO_CAST_FROM_ASCII )
 add_definitions( -DQT_NO_CAST_TO_ASCII )
-
-
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessageviewer\")
+
+add_subdirectory(messagepartthemes/grantlee)
 
 # KCFG files:
 # The main messageviewer.kcfg is configured by CMake and put in the build directory.

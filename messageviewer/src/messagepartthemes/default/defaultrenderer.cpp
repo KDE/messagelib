@@ -56,8 +56,13 @@
 #include <grantlee/templateloader.h>
 #include <grantlee/template.h>
 
+#include <functional>
+
 using namespace MimeTreeParser;
 using namespace MessageViewer;
+
+typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
+Q_DECLARE_METATYPE(GrantleeCallback)
 
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const QGpgME::Protocol *)
@@ -373,9 +378,8 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
     if (!mp->hasSubParts()) {
         return;
     }
-    Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
-                                                                                             ":/encapsulatedrfc822messagepart.html"));
-    Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
+    Grantlee::Template t = MessagePartRendererManager::self()->loadByName(QStringLiteral(":/encapsulatedrfc822messagepart.html"));
+    Grantlee::Context c = MessagePartRendererManager::self()->createContext();
     QObject block;
 
     c.insert(QStringLiteral("block"), &block);
@@ -383,11 +387,9 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
                       mp->mOtp->nodeHelper()->asHREF(mp->mMessage.data(), QStringLiteral("body")));
 
     c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->mMessage.data()));
-    {
-        auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(htmlWriter));
-        renderSubParts(mp, _htmlWriter.data());
-        c.insert(QStringLiteral("content"), _htmlWriter->html());
-    }
+    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
+        renderSubParts(mp, htmlWriter);
+    }));
 
     HTMLBlock::Ptr aBlock;
     if (mp->isAttachment()) {
@@ -455,22 +457,17 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     QObject block;
 
     if (node || mp->hasSubParts()) {
-        auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(mOldWriter));
-        {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
             HTMLBlock::Ptr rBlock;
-            if (node && mp->isRoot()) {
-                rBlock = HTMLBlock::Ptr(new RootBlock(_htmlWriter.data()));
+            if (mp->content() && mp->isRoot()) {
+                rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
             }
-            renderSubParts(mp, _htmlWriter.data());
-        }
-        c.insert(QStringLiteral("content"), _htmlWriter->html());
+            renderSubParts(mp, htmlWriter);
+        }));
     } else if (!metaData.inProgress) {
-        CacheHtmlWriter nestedWriter(htmlWriter);
-        if (renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, &nestedWriter)) {
-            c.insert(QStringLiteral("content"), nestedWriter.html());
-        } else {
-            c.insert(QStringLiteral("content"), QString());
-        }
+        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
+            renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
+        }));
     }
 
     c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(mp->mCryptoProto));
@@ -508,22 +505,17 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     QObject block;
 
     if (node) {
-        auto _htmlWriter = QSharedPointer<CacheHtmlWriter>(new CacheHtmlWriter(htmlWriter));
-        {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
             HTMLBlock::Ptr rBlock;
             if (mp->isRoot()) {
-                rBlock = HTMLBlock::Ptr(new RootBlock(_htmlWriter.data()));
+                rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
             }
-            renderSubParts(mp, _htmlWriter.data());
-        }
-        c.insert(QStringLiteral("content"), _htmlWriter->html());
+            renderSubParts(mp, htmlWriter);
+        }));
     } else if (!metaData.inProgress) {
-        CacheHtmlWriter nestedWriter(htmlWriter);
-        if (renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, &nestedWriter)) {
-            c.insert(QStringLiteral("content"), nestedWriter.html());
-        } else {
-            c.insert(QStringLiteral("content"), QString());
-        }
+        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
+            renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
+        }));
     }
 
     c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(cryptoProto));

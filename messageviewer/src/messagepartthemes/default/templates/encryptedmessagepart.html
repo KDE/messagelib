@@ -26,7 +26,7 @@
        <tr class="encrB">
             <td>
             {% if block.isDecryptable %}
-                {{content|safe}}
+                {% callback content %}
             {% else %}
                 <div style="font-size:x-large; text-align:center; padding:20pt;">
                 {% if block.noSecKey %}

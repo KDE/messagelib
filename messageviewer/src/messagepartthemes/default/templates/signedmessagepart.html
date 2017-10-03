@@ -160,7 +160,7 @@
         </td>
     </tr>
     <tr class="{{block.signClass}}B">
-        <td>{{content|safe}}</td>
+        <td>{% callback content %}</td>
     </tr>
     <tr class="{{block.signClass}}H">
         <td dir="{{global.dir}}">{% i18n "End of signed message" %}</td>
