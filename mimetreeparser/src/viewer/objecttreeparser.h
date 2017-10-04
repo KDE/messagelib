@@ -63,11 +63,10 @@ class MIMETREEPARSER_EXPORT ProcessResult
 {
 public:
     explicit ProcessResult(NodeHelper *nodeHelper, KMMsgSignatureState inlineSignatureState = KMMsgNotSigned, KMMsgEncryptionState inlineEncryptionState = KMMsgNotEncrypted,
-                           bool neverDisplayInline = false, bool isImage = false)
+                           bool neverDisplayInline = false)
         : mInlineSignatureState(inlineSignatureState)
         , mInlineEncryptionState(inlineEncryptionState)
         , mNeverDisplayInline(neverDisplayInline)
-        , mIsImage(isImage)
         , mNodeHelper(nodeHelper)
     {
     }
@@ -81,16 +80,12 @@ public:
     bool neverDisplayInline() const;
     void setNeverDisplayInline(bool display);
 
-    bool isImage() const;
-    void setIsImage(bool image);
-
     void adjustCryptoStatesOfNode(const KMime::Content *node) const;
 
 private:
     KMMsgSignatureState mInlineSignatureState;
     KMMsgEncryptionState mInlineEncryptionState;
     bool mNeverDisplayInline : 1;
-    bool mIsImage : 1;
     NodeHelper *mNodeHelper;
 };
 

@@ -322,16 +322,6 @@ void ProcessResult::setNeverDisplayInline(bool display)
     mNeverDisplayInline = display;
 }
 
-bool ProcessResult::isImage() const
-{
-    return mIsImage;
-}
-
-void ProcessResult::setIsImage(bool image)
-{
-    mIsImage = image;
-}
-
 void ProcessResult::adjustCryptoStatesOfNode(const KMime::Content *node) const
 {
     if ((inlineSignatureState() != KMMsgNotSigned)
