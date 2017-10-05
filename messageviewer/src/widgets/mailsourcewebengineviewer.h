@@ -41,10 +41,9 @@ public:
 private:
     MailSourceViewTextBrowserWidget *mRawBrowser = nullptr;
     FindBarSourceView *mFindBar = nullptr;
-#ifndef NDEBUG
     QTabWidget *mTabWidget = nullptr;
     MailSourceViewTextBrowserWidget *mHtmlBrowser = nullptr;
-#endif
+    bool mShowHtmlSource = false;
 };
 }
 #endif // MAILSOURCEWEBENGINEVIEWER_H
