@@ -121,8 +121,8 @@ StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selec
     connect(d->mModel, &QAbstractItemModel::rowsAboutToBeRemoved, this, &StorageModel::rowsAboutToBeRemoved);
     connect(d->mModel, &QAbstractItemModel::rowsRemoved, this, &StorageModel::rowsRemoved);
 
-    connect(d->mSelectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-            this, SLOT(onSelectionChanged()));
+    connect(d->mSelectionModel, &QItemSelectionModel::selectionChanged,
+            this, [this]() { d->onSelectionChanged(); });
 
     d->loadSettings();
     connect(MessageListSettings::self(), SIGNAL(configChanged()),

@@ -124,8 +124,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     d->mAggregationList->setSortingEnabled(true);
     g->addWidget(d->mAggregationList, 0, 0, 7, 1);
 
-    connect(d->mAggregationList, SIGNAL(itemClicked(QListWidgetItem*)),
-            SLOT(aggregationListItemClicked(QListWidgetItem*)));
+    connect(d->mAggregationList, &AggregationListWidget::itemClicked, this, [this](QListWidgetItem *item) { d->aggregationListItemClicked(item); });
 
     d->mNewAggregationButton = new QPushButton(i18n("New Aggregation"), base);
     d->mNewAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
