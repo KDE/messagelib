@@ -52,16 +52,16 @@ void BufferedHtmlWriter::reset()
     clear();
 }
 
-QIODevice* BufferedHtmlWriter::device() const
+QIODevice *BufferedHtmlWriter::device() const
 {
-    return const_cast<QBuffer*>(&m_buffer);
+    return const_cast<QBuffer *>(&m_buffer);
 }
 
-void BufferedHtmlWriter::extraHead(const QString& str)
+void BufferedHtmlWriter::extraHead(const QString &str)
 {
 }
 
-void BufferedHtmlWriter::embedPart(const QByteArray& contentId, const QString& url)
+void BufferedHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
 {
     Q_UNUSED(contentId);
     Q_UNUSED(url);

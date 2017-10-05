@@ -331,8 +331,9 @@ Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
 
 void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
 {
-    foreach (const auto &m, msgPart->subParts())
+    foreach (const auto &m, msgPart->subParts()) {
         renderFactory(m, htmlWriter);
+    }
 }
 
 void DefaultRendererPrivate::render(const MessagePartList::Ptr &mp, HtmlWriter *htmlWriter)
@@ -380,7 +381,7 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
                       mp->mOtp->nodeHelper()->asHREF(mp->mMessage.data(), QStringLiteral("body")));
 
     c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->mMessage.data()));
-    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
+    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
         renderSubParts(mp, htmlWriter);
     }));
 
@@ -450,7 +451,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     QObject block;
 
     if (node || mp->hasSubParts()) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
             HTMLBlock::Ptr rBlock;
             if (mp->content() && mp->isRoot()) {
                 rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
@@ -458,7 +459,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
             renderSubParts(mp, htmlWriter);
         }));
     } else if (!metaData.inProgress) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
             renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
         }));
     }
@@ -498,7 +499,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     QObject block;
 
     if (node) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
             HTMLBlock::Ptr rBlock;
             if (mp->isRoot()) {
                 rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
@@ -506,7 +507,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
             renderSubParts(mp, htmlWriter);
         }));
     } else if (!metaData.inProgress) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream*) {
+        c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
             renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
         }));
     }
@@ -834,11 +835,13 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
 
 bool DefaultRendererPrivate::renderWithFactory(const QString &className, const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
 {
-    if (!mRendererFactory)
+    if (!mRendererFactory) {
         return false;
+    }
     for (auto r : mRendererFactory->typeRegistry(className)) {
-        if (r->render(msgPart, htmlWriter, this))
+        if (r->render(msgPart, htmlWriter, this)) {
             return true;
+        }
     }
     return false;
 }
@@ -847,8 +850,9 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
 {
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
-    if (renderWithFactory(className, msgPart, htmlWriter))
+    if (renderWithFactory(className, msgPart, htmlWriter)) {
         return;
+    }
 
     if (className == QStringLiteral("MimeTreeParser::MessagePartList")) {
         auto mp = msgPart.dynamicCast<MessagePartList>();
@@ -894,7 +898,7 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
         htmlWriter->write(mp->formatOutput());
     } else {
         qCWarning(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
-                               << className;
+                                     << className;
     }
 }
 

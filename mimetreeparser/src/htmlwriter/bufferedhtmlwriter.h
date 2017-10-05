@@ -27,7 +27,6 @@
 #include <QByteArray>
 
 namespace MimeTreeParser {
-
 /**
  * QBuffer-backed HtmlWriter
  */
@@ -40,13 +39,13 @@ public:
     void begin() override;
     void end() override;
     void reset() override;
-    QIODevice* device() const override;
+    QIODevice *device() const override;
 
     QByteArray data() const;
     void clear();
 
-    void extraHead(const QString& str) override;
-    void embedPart(const QByteArray& contentId, const QString& url) override;
+    void extraHead(const QString &str) override;
+    void embedPart(const QByteArray &contentId, const QString &url) override;
 
 protected:
     QByteArray m_data;
@@ -54,7 +53,6 @@ protected:
 private:
     QBuffer m_buffer;
 };
-
 }
 
 #endif // MIMETREEPARSER_BUFFEREDHTMLWRITER_H

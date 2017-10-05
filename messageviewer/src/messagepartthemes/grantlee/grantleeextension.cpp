@@ -26,7 +26,7 @@
 
 using namespace MessageViewer;
 
-CallbackTag::CallbackTag(const QString &name, QObject* parent)
+CallbackTag::CallbackTag(const QString &name, QObject *parent)
     : Grantlee::Node(parent)
     , m_name(name)
 {
@@ -35,11 +35,12 @@ CallbackTag::CallbackTag(const QString &name, QObject* parent)
 void CallbackTag::render(Grantlee::OutputStream *stream, Grantlee::Context *context) const
 {
     auto cb = context->lookup(m_name).value<GrantleeCallback>();
-    if (cb)
+    if (cb) {
         cb(stream);
+    }
 }
 
-Grantlee::Node* CallbackTagFactory::getNode(const QString &tagContent, Grantlee::Parser *parser) const
+Grantlee::Node *CallbackTagFactory::getNode(const QString &tagContent, Grantlee::Parser *parser) const
 {
     auto expr = tagContent.split(QLatin1Char(' '), QString::SkipEmptyParts);
     if (expr.size() != 2) {
@@ -49,15 +50,15 @@ Grantlee::Node* CallbackTagFactory::getNode(const QString &tagContent, Grantlee:
     return new CallbackTag(expr.at(1), parser);
 }
 
-GrantleeTagLibrary::GrantleeTagLibrary(QObject* parent)
+GrantleeTagLibrary::GrantleeTagLibrary(QObject *parent)
     : QObject(parent)
 {
 }
 
-QHash<QString, Grantlee::AbstractNodeFactory*> GrantleeTagLibrary::nodeFactories(const QString &name)
+QHash<QString, Grantlee::AbstractNodeFactory *> GrantleeTagLibrary::nodeFactories(const QString &name)
 {
     Q_UNUSED(name);
-    QHash<QString, Grantlee::AbstractNodeFactory*> nodeFactories;
+    QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories;
     nodeFactories.insert(QStringLiteral("callback"), new CallbackTagFactory());
     return nodeFactories;
 }

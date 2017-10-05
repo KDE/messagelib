@@ -50,7 +50,7 @@ public:
     MessagePartRendererFactory();
     ~MessagePartRendererFactory();
 
-    static MessagePartRendererFactory* instance();
+    static MessagePartRendererFactory *instance();
 
     std::vector<MessagePartRendererBase *> typeRegistry(const QString &type) const;
 

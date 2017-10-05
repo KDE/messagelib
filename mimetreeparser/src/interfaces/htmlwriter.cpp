@@ -28,36 +28,40 @@ HtmlWriter::~HtmlWriter() = default;
 
 void HtmlWriter::begin()
 {
-    if (!m_stream)
+    if (!m_stream) {
         m_stream.reset(new QTextStream());
+    }
     m_stream->setDevice(device());
     m_stream->setCodec("UTF-8");
 }
 
-void HtmlWriter::write(const QString& html)
+void HtmlWriter::write(const QString &html)
 {
     Q_ASSERT(m_stream);
-    if (!m_stream)
+    if (!m_stream) {
         return;
+    }
     *stream() << html;
 }
 
 void HtmlWriter::end()
 {
-    if (!m_stream)
+    if (!m_stream) {
         return;
+    }
     m_stream->flush();
     m_stream->setDevice(nullptr);
 }
 
 void HtmlWriter::reset()
 {
-    if (!m_stream)
+    if (!m_stream) {
         return;
+    }
     m_stream->setDevice(nullptr);
 }
 
-QTextStream* HtmlWriter::stream() const
+QTextStream *HtmlWriter::stream() const
 {
     return m_stream.get();
 }

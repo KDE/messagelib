@@ -155,7 +155,6 @@ MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::BodyPart &pa
     const KMime::Message::Ptr message = part.content()->bodyAsMessage();
     return MessagePart::Ptr(new EncapsulatedRfc822MessagePart(part.objectTreeParser(), part.content(), message));
 }
-
 } // anon namespace
 
 void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()

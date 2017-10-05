@@ -57,7 +57,9 @@ void AttachmentUpdateJob::Private::doStart()
         return;
     }
     MessageCore::AttachmentFromUrlBaseJob *job = MessageCore::AttachmentFromUrlUtils::createAttachmentJob(mOriginalPart->url(), q);
-    connect(job, &AttachmentFromUrlBaseJob::result, q, [this](KJob *job) { loadJobResult(job); });
+    connect(job, &AttachmentFromUrlBaseJob::result, q, [this](KJob *job) {
+        loadJobResult(job);
+    });
     job->start();
 }
 
@@ -98,7 +100,9 @@ AttachmentUpdateJob::~AttachmentUpdateJob()
 
 void AttachmentUpdateJob::start()
 {
-    QTimer::singleShot(0, this, [this]() { d->doStart(); });
+    QTimer::singleShot(0, this, [this]() {
+        d->doStart();
+    });
 }
 
 AttachmentPart::Ptr AttachmentUpdateJob::originalPart() const

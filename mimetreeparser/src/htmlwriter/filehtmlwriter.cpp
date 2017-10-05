@@ -76,9 +76,9 @@ void FileHtmlWriter::reset()
     }
 }
 
-QIODevice* FileHtmlWriter::device() const
+QIODevice *FileHtmlWriter::device() const
 {
-    return const_cast<QFile*>(&mFile);
+    return const_cast<QFile *>(&mFile);
 }
 
 void FileHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)

@@ -434,7 +434,6 @@ Qt::ItemFlags AttachmentModel::flags(const QModelIndex &index) const
         return Qt::ItemIsDropEnabled | defaultFlags;
     }
 
-
     if (index.column() == CompressColumn
         || index.column() == EncryptColumn
         || index.column() == SignColumn

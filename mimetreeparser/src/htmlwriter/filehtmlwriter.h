@@ -47,7 +47,7 @@ public:
     void begin() override;
     void end() override;
     void reset() override;
-    QIODevice* device() const override;
+    QIODevice *device() const override;
     void embedPart(const QByteArray &contentId, const QString &url) override;
     void extraHead(const QString &str) override;
 

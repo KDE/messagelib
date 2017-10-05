@@ -64,7 +64,7 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
             return;
         }
 
-        auto plugin = qobject_cast<MessagePartRenderPlugin*>(loader.instance());
+        auto plugin = qobject_cast<MessagePartRenderPlugin *>(loader.instance());
         if (!plugin) {
             qCWarning(MESSAGEVIEWER_LOG) << path << "is not a MessagePartRendererPlugin";
             return;
@@ -80,7 +80,7 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
             }
             // TODO add plugin priority like we have for BPFs
             qCDebug(MESSAGEVIEWER_LOG) << "renderer plugin for " << type;
-            insert(type, renderer/*, priority*/);
+            insert(type, renderer /*, priority*/);
         }
     });
 }
@@ -110,7 +110,7 @@ MessagePartRendererFactory::~MessagePartRendererFactory()
 {
 }
 
-MessagePartRendererFactory* MessagePartRendererFactory::instance()
+MessagePartRendererFactory *MessagePartRendererFactory::instance()
 {
     static std::unique_ptr<MessagePartRendererFactory> singeltonRendererFactory(new MessagePartRendererFactory);
     return singeltonRendererFactory.get();

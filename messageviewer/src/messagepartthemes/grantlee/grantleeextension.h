@@ -28,8 +28,7 @@
 #include <functional>
 
 namespace MessageViewer {
-
-typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
+typedef std::function<void (Grantlee::OutputStream *stream)> GrantleeCallback;
 
 class CallbackTag : public Grantlee::Node
 {
@@ -56,9 +55,8 @@ class GrantleeTagLibrary : public QObject, public Grantlee::TagLibraryInterface
     Q_PLUGIN_METADATA(IID "org.grantlee.TagLibraryInterface")
 public:
     explicit GrantleeTagLibrary(QObject *parent = nullptr);
-    QHash<QString, Grantlee::AbstractNodeFactory*> nodeFactories(const QString &name) override;
+    QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories(const QString &name) override;
 };
-
 }
 
 Q_DECLARE_METATYPE(MessageViewer::GrantleeCallback)

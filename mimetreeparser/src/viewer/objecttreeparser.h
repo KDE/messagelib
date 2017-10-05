@@ -48,7 +48,6 @@ class Content;
 }
 
 namespace MimeTreeParser {
-
 class PartMetaData;
 class ViewerPrivate;
 class HtmlWriter;

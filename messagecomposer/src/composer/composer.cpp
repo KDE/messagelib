@@ -126,7 +126,9 @@ void ComposerPrivate::composeStep1()
 
     // Create skeleton message (containing headers only; no content).
     SkeletonMessageJob *skeletonJob = new SkeletonMessageJob(infoPart, globalPart, q);
-    QObject::connect(skeletonJob, &SkeletonMessageJob::finished, q, [this](KJob *job) { skeletonJobFinished(job); });
+    QObject::connect(skeletonJob, &SkeletonMessageJob::finished, q, [this](KJob *job) {
+        skeletonJobFinished(job);
+    });
     q->addSubjob(skeletonJob);
     skeletonJob->start();
 }

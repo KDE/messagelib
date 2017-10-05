@@ -66,10 +66,13 @@ class GlobalContext : public QObject
     Q_PROPERTY(QString dir READ layoutDirection CONSTANT)
     Q_PROPERTY(int iconSize READ iconSize CONSTANT)
 public:
-    explicit GlobalContext(QObject *parent) : QObject(parent) {}
+    explicit GlobalContext(QObject *parent) : QObject(parent)
+    {
+    }
+
     QString layoutDirection() const
     {
-         return QGuiApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+        return QGuiApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
     }
 
     int iconSize() const
@@ -105,8 +108,9 @@ void MessagePartRendererManager::initializeRenderer()
     Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
     Grantlee::registerMetaType<const QGpgME::Protocol *>();
     m_engine = new GrantleeTheme::Engine;
-    foreach (const auto &p, QCoreApplication::libraryPaths())
+    foreach (const auto &p, QCoreApplication::libraryPaths()) {
         m_engine->addPluginPath(p + QStringLiteral("/messageviewer"));
+    }
     m_engine->addDefaultLibrary(QStringLiteral("messageviewer_grantlee_extension"));
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
 

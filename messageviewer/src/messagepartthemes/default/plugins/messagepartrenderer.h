@@ -25,7 +25,6 @@
 #include <QSharedPointer>
 
 namespace MessageViewer {
-
 class MessagePartRenderer : public MessagePartRendererBase
 {
 public:
@@ -33,7 +32,6 @@ public:
     virtual ~MessagePartRenderer();
     bool render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const override;
 };
-
 }
 
 #endif

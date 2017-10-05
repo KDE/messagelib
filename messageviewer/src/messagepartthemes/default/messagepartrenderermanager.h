@@ -36,7 +36,7 @@ class Engine;
 namespace MessageViewer {
 class GlobalContext;
 
-typedef std::function<void(Grantlee::OutputStream *stream)> GrantleeCallback;
+typedef std::function<void (Grantlee::OutputStream *stream)> GrantleeCallback;
 
 class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
 {

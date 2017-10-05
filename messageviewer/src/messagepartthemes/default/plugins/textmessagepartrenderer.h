@@ -23,15 +23,13 @@
 #include "../messagepartrendererbase.h"
 
 namespace MessageViewer {
-
 class TextMessagePartRenderer : public MessagePartRendererBase
 {
 public:
     TextMessagePartRenderer();
     virtual ~TextMessagePartRenderer();
-    bool render(const MimeTreeParser::MessagePartPtr& msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const override;
+    bool render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const override;
 };
-
 }
 
 #endif

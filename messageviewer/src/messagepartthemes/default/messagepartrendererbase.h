@@ -44,7 +44,6 @@ typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
 
 namespace MessageViewer {
-
 class CSSHelperBase;
 
 class MESSAGEVIEWER_EXPORT RenderContext
@@ -52,7 +51,7 @@ class MESSAGEVIEWER_EXPORT RenderContext
 public:
     virtual ~RenderContext();
 
-    virtual CSSHelperBase* cssHelper() const = 0;
+    virtual CSSHelperBase *cssHelper() const = 0;
     virtual bool renderWithFactory(const QString &className, const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *writer) = 0;
     virtual void renderSubParts(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) = 0;
 };

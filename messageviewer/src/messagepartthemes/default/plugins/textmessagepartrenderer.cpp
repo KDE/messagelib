@@ -40,12 +40,13 @@ TextMessagePartRenderer::~TextMessagePartRenderer()
 {
 }
 
-bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr& msgPart, MimeTreeParser::HtmlWriter* htmlWriter, RenderContext *context) const
+bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const
 {
     Q_UNUSED(context);
     auto mp = msgPart.dynamicCast<TextMessagePart>();
-    if (!mp)
+    if (!mp) {
         return false;
+    }
 
     if (mp->isHidden()) {
         return true;
@@ -54,7 +55,7 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr& msgPa
     Grantlee::Template t;
     Grantlee::Context c = MessagePartRendererManager::self()->createContext();
     c.insert(QStringLiteral("block"), msgPart.data());
-    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([mp, htmlWriter, context](Grantlee::OutputStream*) {
+    c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([mp, htmlWriter, context](Grantlee::OutputStream *) {
         context->renderSubParts(mp, htmlWriter);
     }));
     t = MessagePartRendererManager::self()->loadByName(QStringLiteral(":/textmessagepart.html"));

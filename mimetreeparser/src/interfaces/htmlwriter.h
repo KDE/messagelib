@@ -81,13 +81,13 @@ public:
     /** Returns the QIODevice backing this HtmlWriter instance.
      *  Before writing to this directly, make sure to flush stream().
      */
-    virtual QIODevice* device() const = 0;
+    virtual QIODevice *device() const = 0;
 
     /** Returns a QTextStream on device().
      *  Use this for writing QString data, rather than local string
      *  concatenations.
      */
-    QTextStream* stream() const;
+    QTextStream *stream() const;
 
     /**
       * Embed a part with Content-ID @p contentId, using url @p url.

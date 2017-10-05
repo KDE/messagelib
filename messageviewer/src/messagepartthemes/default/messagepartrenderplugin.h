@@ -25,7 +25,6 @@
 #include <QtPlugin>
 
 namespace MessageViewer {
-
 class MessagePartRendererBase;
 
 /**
@@ -35,9 +34,8 @@ class MESSAGEVIEWER_EXPORT MessagePartRenderPlugin
 {
 public:
     virtual ~MessagePartRenderPlugin();
-    virtual MessagePartRendererBase* renderer(int index) = 0;
+    virtual MessagePartRendererBase *renderer(int index) = 0;
 };
-
 }
 
 Q_DECLARE_INTERFACE(MessageViewer::MessagePartRenderPlugin, "org.kde.messageviewer.messagepartrenderer/1.0")

@@ -58,8 +58,9 @@ void BodyPartFormatterBaseFactoryPrivate::setup()
 
 void BodyPartFormatterBaseFactoryPrivate::insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority)
 {
-    if (mimeType.isEmpty() || !formatter)
+    if (mimeType.isEmpty() || !formatter) {
         return;
+    }
 
     QMimeDatabase db;
     const auto mt = db.mimeTypeForName(mimeType);
@@ -74,13 +75,15 @@ void BodyPartFormatterBaseFactoryPrivate::insert(const QString &mimeType, const 
     });
 }
 
-void BodyPartFormatterBaseFactoryPrivate::appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter*> &formatters)
+void BodyPartFormatterBaseFactoryPrivate::appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter *> &formatters)
 {
     const auto it = registry.constFind(mimeType);
-    if (it == registry.constEnd())
+    if (it == registry.constEnd()) {
         return;
-    for (const auto &f : it.value())
+    }
+    for (const auto &f : it.value()) {
         formatters.push_back(f.formatter);
+    }
 }
 
 BodyPartFormatterBaseFactory::BodyPartFormatterBaseFactory()
@@ -98,9 +101,9 @@ void BodyPartFormatterBaseFactory::insert(const QString &mimeType, const Interfa
     d->insert(mimeType.toLower(), formatter, priority);
 }
 
-QVector<const Interface::BodyPartFormatter*> BodyPartFormatterBaseFactory::formattersForType(const QString &mimeType) const
+QVector<const Interface::BodyPartFormatter *> BodyPartFormatterBaseFactory::formattersForType(const QString &mimeType) const
 {
-    QVector<const Interface::BodyPartFormatter*> r;
+    QVector<const Interface::BodyPartFormatter *> r;
     d->setup();
 
     QMimeDatabase db;
@@ -110,24 +113,28 @@ QVector<const Interface::BodyPartFormatter*> BodyPartFormatterBaseFactory::forma
     // add all formatters we have along the mimetype hierarchy
     for (std::size_t i = 0; i < processedTypes.size(); ++i) {
         const auto mt = db.mimeTypeForName(processedTypes[i]);
-        if (mt.isValid())
+        if (mt.isValid()) {
             processedTypes[i] = mt.name(); // resolve alias if necessary
-        if (processedTypes[i] == QLatin1String("application/octet-stream")) // we'll deal with that later
+        }
+        if (processedTypes[i] == QLatin1String("application/octet-stream")) { // we'll deal with that later
             continue;
+        }
         d->appendFormattersForType(processedTypes[i], r);
 
         const auto parentTypes = mt.parentMimeTypes();
         for (const auto &parentType : parentTypes) {
-            if (std::find(processedTypes.begin(), processedTypes.end(), parentType) != processedTypes.end())
+            if (std::find(processedTypes.begin(), processedTypes.end(), parentType) != processedTypes.end()) {
                 continue;
+            }
             processedTypes.push_back(parentType);
         }
     }
 
     // make sure we always have a suitable fallback formatter
     if (mimeType.startsWith(QLatin1String("multipart/"))) {
-        if (mimeType != QLatin1String("multipart/mixed"))
+        if (mimeType != QLatin1String("multipart/mixed")) {
             d->appendFormattersForType(QStringLiteral("multipart/mixed"), r);
+        }
     } else {
         d->appendFormattersForType(QStringLiteral("application/octet-stream"), r);
     }

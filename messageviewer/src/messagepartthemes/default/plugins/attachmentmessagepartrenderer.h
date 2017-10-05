@@ -23,7 +23,6 @@
 #include "../messagepartrendererbase.h"
 
 namespace MessageViewer {
-
 class AttachmentMessagePartRenderer : public MessagePartRendererBase
 {
 public:
@@ -31,7 +30,6 @@ public:
     virtual ~AttachmentMessagePartRenderer();
     bool render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const override;
 };
-
 }
 
 #endif

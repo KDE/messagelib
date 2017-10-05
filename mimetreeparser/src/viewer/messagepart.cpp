@@ -109,7 +109,7 @@ void MessagePart::setContent(KMime::Content *node)
     d->mNode = node;
 }
 
-KMime::Content* MessagePart::attachmentContent() const
+KMime::Content *MessagePart::attachmentContent() const
 {
     return d->mAttachmentNode;
 }
@@ -226,7 +226,7 @@ LegacyPluginMessagePart::~LegacyPluginMessagePart()
 {
 }
 
-HtmlWriter* LegacyPluginMessagePart::htmlWriter() const
+HtmlWriter *LegacyPluginMessagePart::htmlWriter() const
 {
     return m_htmlWriter.get();
 }
@@ -234,7 +234,7 @@ HtmlWriter* LegacyPluginMessagePart::htmlWriter() const
 QString LegacyPluginMessagePart::formatOutput() const
 {
     m_htmlWriter->end();
-    return QString::fromUtf8(static_cast<BufferedHtmlWriter*>(m_htmlWriter.get())->data());
+    return QString::fromUtf8(static_cast<BufferedHtmlWriter *>(m_htmlWriter.get())->data());
 }
 
 //-----MessagePartList----------------------
@@ -406,8 +406,9 @@ QString TextMessagePart::label() const
 QString TextMessagePart::comment() const
 {
     const QString comment = content()->contentDescription()->asUnicodeString();
-    if (comment == label())
+    if (comment == label()) {
         return {};
+    }
     return comment;
 }
 
@@ -501,9 +502,9 @@ IconType AttachmentMessagePart::asIcon() const
 
 bool AttachmentMessagePart::isHidden() const
 {
-    if (mOtp->showOnlyOneMimePart())
+    if (mOtp->showOnlyOneMimePart()) {
         return false; // never hide when only showing one part, otherwise you'll see nothing
-
+    }
     const AttachmentStrategy *const as = mOtp->attachmentStrategy();
     const bool defaultHidden(as && as->defaultDisplay(content()) == AttachmentStrategy::None);
     auto preferredMode = source()->preferredMode();
@@ -859,10 +860,10 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
                             cryptPlugLibName);
         }
         partMetaData()->errorText = i18n("The message is signed, but the "
-                                   "validity of the signature cannot be "
-                                   "verified.<br />"
-                                   "Reason: %1",
-                                   errorMsg);
+                                         "validity of the signature cannot be "
+                                         "verified.<br />"
+                                         "Reason: %1",
+                                         errorMsg);
     }
 
     return partMetaData()->isSigned;
@@ -1248,11 +1249,11 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             partMetaData()->errorText = i18n("No appropriate crypto plug-in was found.");
         } else if (cannotDecrypt) {
             partMetaData()->errorText = i18n("Crypto plug-in \"%1\" cannot decrypt messages.",
-                                       cryptPlugLibName);
+                                             cryptPlugLibName);
         } else if (!passphraseError()) {
             partMetaData()->errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName)
-                                  + QLatin1String("<br />")
-                                  + i18n("Error: %1", partMetaData()->errorText);
+                                        + QLatin1String("<br />")
+                                        + i18n("Error: %1", partMetaData()->errorText);
         }
     }
     return bDecryptionOk;

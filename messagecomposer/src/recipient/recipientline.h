@@ -134,7 +134,6 @@ private:
     int mRecipientsCount;
     bool mModified;
     QSharedPointer<Recipient> mData;
-
 };
 }
 
