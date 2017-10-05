@@ -39,12 +39,11 @@ public:
     void setDisplayedSource(QWebEnginePage *page);
     void setFixedFont();
 private:
-    MailSourceViewTextBrowserWidget *mRawBrowser;
-    FindBarSourceView *mFindBar;
-#ifndef NDEBUG
-    QTabWidget *mTabWidget;
-    MailSourceViewTextBrowserWidget *mHtmlBrowser;
-#endif
+    MailSourceViewTextBrowserWidget *mRawBrowser = nullptr;
+    FindBarSourceView *mFindBar = nullptr;
+    QTabWidget *mTabWidget = nullptr;
+    MailSourceViewTextBrowserWidget *mHtmlBrowser = nullptr;
+    bool mShowHtmlSource = false;
 };
 }
 #endif // MAILSOURCEWEBENGINEVIEWER_H

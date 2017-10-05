@@ -53,24 +53,27 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     setAttribute(Qt::WA_DeleteOnClose);
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mRawBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("Email"), this);
-
 #ifndef NDEBUG
-    mTabWidget = new QTabWidget(this);
-    mainLayout->addWidget(mTabWidget);
-
-    mTabWidget->addTab(mRawBrowser, i18nc("Unchanged mail message", "Raw Source"));
-    mTabWidget->setTabToolTip(0,
-                              i18n(
-                                  "Raw, unmodified mail as it is stored on the filesystem or on the server"));
-
-    mHtmlBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("HTML"), this);
-    mTabWidget->addTab(mHtmlBrowser, i18nc("Mail message as shown, in HTML format", "HTML Source"));
-    mTabWidget->setTabToolTip(1, i18n("HTML code for displaying the message to the user"));
-
-    mTabWidget->setCurrentIndex(0);
-#else
-    mainLayout->addWidget(mRawBrowser);
+    mShowHtmlSource = true;
 #endif
+    mShowHtmlSource = mShowHtmlSource || !qEnvironmentVariableIsEmpty("MESSAGEVIEWER_HTML_SOURCE_DEBUG");
+    if (mShowHtmlSource) {
+        mTabWidget = new QTabWidget(this);
+        mainLayout->addWidget(mTabWidget);
+
+        mTabWidget->addTab(mRawBrowser, i18nc("Unchanged mail message", "Raw Source"));
+        mTabWidget->setTabToolTip(0,
+                                  i18n(
+                                      "Raw, unmodified mail as it is stored on the filesystem or on the server"));
+
+        mHtmlBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("HTML"), this);
+        mTabWidget->addTab(mHtmlBrowser, i18nc("Mail message as shown, in HTML format", "HTML Source"));
+        mTabWidget->setTabToolTip(1, i18n("HTML code for displaying the message to the user"));
+
+        mTabWidget->setCurrentIndex(0);
+    } else {
+        mainLayout->addWidget(mRawBrowser);
+    }
 
     // combining the shortcuts in one qkeysequence() did not work...
     QShortcut *shortcut = new QShortcut(this);
@@ -106,22 +109,20 @@ void MailSourceWebEngineViewer::setRawSource(const QString &source)
 
 void MailSourceWebEngineViewer::setDisplayedSource(QWebEnginePage *page)
 {
-#ifndef NDEBUG
-    if (page) {
-        MailSourceViewTextBrowserWidget *browser = mHtmlBrowser;
-        page->toHtml([browser](const QString &result) {
-            browser->setPlainText(result);
-        });
+    if (mShowHtmlSource) {
+        if (page) {
+            MailSourceViewTextBrowserWidget *browser = mHtmlBrowser;
+            page->toHtml([browser](const QString &result) {
+                browser->setPlainText(result);
+            });
+        }
     }
-#else
-    Q_UNUSED(page);
-#endif
 }
 
 void MailSourceWebEngineViewer::setFixedFont()
 {
     mRawBrowser->setFixedFont();
-#ifndef NDEBUG
-    mHtmlBrowser->setFixedFont();
-#endif
+    if (mShowHtmlSource) {
+        mHtmlBrowser->setFixedFont();
+    }
 }
