@@ -413,7 +413,6 @@ TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &n
     setObjectName(name);
     setText(i18n("&Insert Command"));
 
-    KActionMenu *menu = nullptr;
     QMap< QString, Command > commandMap;
 
     QSignalMapper *mapper = new QSignalMapper(this);
@@ -431,7 +430,7 @@ TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &n
               "so you want to move your cursor to the desired insertion point first."));
 
     // ******************************************************
-    menu = new KActionMenu(i18n("Original Message"), mMenu);
+    KActionMenu *menu = new KActionMenu(i18n("Original Message"), mMenu);
     mMenu->addAction(menu);
 
     // Map sorts commands

@@ -138,8 +138,6 @@ QByteArray ImageScaling::mimetype() const
         const QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
         if (type == QLatin1String("JPG")) {
             return "image/jpeg";
-        } else if (type == QLatin1String("PNG")) {
-            return "image/png";
         } else {
             return "image/png";
         }

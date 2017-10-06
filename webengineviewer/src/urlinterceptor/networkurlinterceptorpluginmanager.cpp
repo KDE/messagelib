@@ -34,7 +34,6 @@ class MailNetworkUrlInterceptorPluginInfo
 {
 public:
     MailNetworkUrlInterceptorPluginInfo()
-        : plugin(nullptr)
     {
     }
 
@@ -42,7 +41,7 @@ public:
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
     WebEngineViewer::NetworkPluginUrlInterceptor *plugin = nullptr;
-    bool isEnabled;
+    bool isEnabled = false;
 };
 
 namespace {

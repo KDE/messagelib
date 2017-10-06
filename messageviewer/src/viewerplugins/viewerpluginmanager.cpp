@@ -47,7 +47,7 @@ public:
 class MessageViewer::ViewerPluginManagerPrivate
 {
 public:
-    ViewerPluginManagerPrivate(ViewerPluginManager *qq)
+    explicit ViewerPluginManagerPrivate(ViewerPluginManager *qq)
         : q(qq)
     {
     }

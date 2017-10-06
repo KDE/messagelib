@@ -39,7 +39,7 @@ public:
      *
      * value
      */
-    LocalDataBaseFile(const QString &filename);
+    explicit LocalDataBaseFile(const QString &filename);
     ~LocalDataBaseFile();
 
     void close();

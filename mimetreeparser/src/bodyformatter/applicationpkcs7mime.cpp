@@ -162,7 +162,6 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
         if (_mp->isSigned()) {
             if (!isSigned) {
                 qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime  -  signature found  -  opaque signed data !";
-                isSigned = true;
             }
 
             if (signTestNode != node) {

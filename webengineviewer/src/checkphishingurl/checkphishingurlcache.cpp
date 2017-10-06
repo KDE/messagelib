@@ -110,7 +110,7 @@ void CheckPhishingUrlCachePrivate::save()
             listMalware.append(i.key());
             listMalwareCachedTime.append(info.verifyCacheAfterThisTime);
         }
-        i++;
+        ++i;
     }
     grp.writeEntry("Url", listMalware);
     grp.writeEntry("CachedTime", listMalwareCachedTime);

@@ -27,7 +27,7 @@ using namespace MessageComposer;
 class MessageComposer::AttachmentVcardFromAddressBookJobPrivate
 {
 public:
-    AttachmentVcardFromAddressBookJobPrivate(const Akonadi::Item &item)
+    explicit AttachmentVcardFromAddressBookJobPrivate(const Akonadi::Item &item)
         : mItem(item)
     {
     }

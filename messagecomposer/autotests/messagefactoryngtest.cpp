@@ -643,13 +643,10 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
     QString redirectBcc = QStringLiteral("redirbcc@redirbcc.com, redirbcc2@redirbcc.com");
     KMime::Message::Ptr rdir = factory.createRedirect(redirectTo, redirectCc, redirectBcc);
 
-    QDateTime date = rdir->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime = rdir->date()->asUnicodeString();
+    QString datetime = rdir->date()->asUnicodeString();
 
 //   qDebug() << rdir->encodedContent();
 
-    QString msgId = MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), QString());
 
     QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
     rx.indexIn(QString::fromLatin1(rdir->head()));
@@ -699,9 +696,7 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
     QString redirectCc = QStringLiteral("redircc@redircc.com, redircc2@redircc.com");
     KMime::Message::Ptr rdir = factory.createRedirect(redirectTo, redirectCc);
 
-    QDateTime date = rdir->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime = rdir->date()->asUnicodeString();
+    QString datetime = rdir->date()->asUnicodeString();
 
 //   qDebug() << rdir->encodedContent();
 
@@ -753,13 +748,9 @@ void MessageFactoryTest::testCreateRedirect()
     QString redirectTo = QStringLiteral("redir@redir.com");
     KMime::Message::Ptr rdir = factory.createRedirect(redirectTo);
 
-    QDateTime date = rdir->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime = rdir->date()->asUnicodeString();
+    QString datetime = rdir->date()->asUnicodeString();
 
 //   qDebug() << rdir->encodedContent();
-
-    QString msgId = MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), QString());
 
     QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
     rx.indexIn(QString::fromLatin1(rdir->head()));
@@ -805,9 +796,7 @@ void MessageFactoryTest::testCreateResend()
 
     KMime::Message::Ptr rdir = factory.createResend();
 
-    QDateTime date = rdir->date()->dateTime();
-    QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
-    datetime = rdir->date()->asUnicodeString();
+    QString datetime = rdir->date()->asUnicodeString();
 
 //   qDebug() << msg->encodedContent();
 

@@ -58,10 +58,9 @@ QList<quint32> RiceEncodingDecoder::decodeRiceIndiceDelta(const RiceDeltaEncodin
 
     RiceDecoder decoder(riceDeltaEncoding.riceParameter, riceDeltaEncoding.numberEntries, riceDeltaEncoding.encodingData);
     int lastValue(firstValue);
-    bool result = false;
     while (decoder.hasOtherEntries()) {
         quint32 offset;
-        result = decoder.nextValue(&offset);
+        bool result = decoder.nextValue(&offset);
         if (!result) {
             return QList<quint32>();
         }
