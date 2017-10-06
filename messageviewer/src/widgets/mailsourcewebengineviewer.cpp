@@ -56,7 +56,7 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
 #ifndef NDEBUG
     mShowHtmlSource = true;
 #endif
-    mShowHtmlSource = mShowHtmlSource || !qEnvironmentVariableIsEmpty("MESSAGEVIEWER_HTML_SOURCE_DEBUG");
+    mShowHtmlSource = mShowHtmlSource || !qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING");
     if (mShowHtmlSource) {
         mTabWidget = new QTabWidget(this);
         mainLayout->addWidget(mTabWidget);
