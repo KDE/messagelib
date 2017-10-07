@@ -21,6 +21,7 @@
 #define MESSAGEVIEWERT_ATTACHMENTDIALOG_H
 
 #include <QObject>
+#include <KService>
 
 class QDialog;
 class QDialogButtonBox;
@@ -42,9 +43,10 @@ public:
         Cancel
     };
 
-    // if @application is non-empty, the "open with <application>" button will also be shown,
+    // if @offer is non-null, the "open with <application>" button will also be shown,
     // otherwise only save, open with, cancel
-    explicit AttachmentDialog(QWidget *parent, const QString &filenameText, const QString &application, const QString &dontAskAgainName);
+    explicit AttachmentDialog(QWidget *parent, const QString &filenameText,
+                              const KService::Ptr &offer, const QString &dontAskAgainName);
 
     // executes the modal dialog
     int exec();
