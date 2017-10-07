@@ -122,6 +122,7 @@ public:
     bool hasSubParts() const;
 
     Interface::ObjectTreeSource *source() const;
+    NodeHelper* nodeHelper() const;
 
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
@@ -195,7 +196,7 @@ class MIMETREEPARSER_EXPORT TextMessagePart : public MessagePartList
     Q_PROPERTY(QString comment READ comment CONSTANT)
 public:
     typedef QSharedPointer<TextMessagePart> Ptr;
-    TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage);
+    TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage);
     virtual ~TextMessagePart();
 
     KMMsgSignatureState signatureState() const;
@@ -207,11 +208,14 @@ public:
 
     bool showLink() const;
     bool showTextFrame() const;
+    void setShowTextFrame(bool showFrame);
 
     /** The attachment filename, or the closest approximation thereof we have. */
     QString label() const;
     /** A description of this attachment, if provided. */
     QString comment() const;
+    /** Temporary file containing the part content. */
+    QString temporaryFilePath() const;
 
 private:
     void parseContent();
@@ -219,11 +223,9 @@ private:
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;
     bool mDrawFrame;
-    bool mShowLink;
     bool mDecryptMessage;
     bool mIsHidden;
 
-    friend class MessageViewer::AttachmentMessagePartRenderer;
     friend class ObjectTreeParser;
 };
 
@@ -232,7 +234,7 @@ class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
     Q_OBJECT
 public:
     typedef QSharedPointer<AttachmentMessagePart> Ptr;
-    AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage);
+    AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage);
     virtual ~AttachmentMessagePart();
 
     IconType asIcon() const;

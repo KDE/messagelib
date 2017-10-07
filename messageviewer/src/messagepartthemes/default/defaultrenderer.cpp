@@ -378,7 +378,7 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
 
     c.insert(QStringLiteral("block"), &block);
     block.setProperty("link",
-                      mp->mOtp->nodeHelper()->asHREF(mp->mMessage.data(), QStringLiteral("body")));
+                      mp->nodeHelper()->asHREF(mp->mMessage.data(), QStringLiteral("body")));
 
     c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->mMessage.data()));
     c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
@@ -414,7 +414,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
         QString bodyText = processHtml(mp->mBodyHTML, extraHead);
 
         if (isHtmlPreferred) {
-            mp->mOtp->nodeHelper()->setNodeDisplayedEmbedded(mp->content(), true);
+            mp->nodeHelper()->setNodeDisplayedEmbedded(mp->content(), true);
             htmlWriter->extraHead(extraHead);
         }
 

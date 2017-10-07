@@ -50,8 +50,6 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
     }
 
     KMime::Content *node = mp->content();
-    NodeHelper *nodeHelper = mp->mOtp->nodeHelper();
-
     if (mp->isHidden()) {
         return true;
     }
@@ -71,11 +69,11 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
 
     QString iconPath;
     if (tmpAsIcon == MimeTreeParser::IconInline) {
-        iconPath = nodeHelper->writeNodeToTempFile(node);
+        iconPath = mp->temporaryFilePath();
     } else {
         iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
         if (iconPath.right(14) == QLatin1String("mime_empty.png")) {
-            nodeHelper->magicSetType(node);
+            NodeHelper::magicSetType(node);
             iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
         }
     }

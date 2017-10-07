@@ -49,13 +49,12 @@ MessagePart::Ptr TextPlainBodyPartFormatter::process(Interface::BodyPart &part) 
     const bool bDrawFrame = !isFirstTextPart
                             && !part.objectTreeParser()->showOnlyOneMimePart()
                             && !label.isEmpty();
-    const QString fileName = part.nodeHelper()->writeNodeToTempFile(node);
 
     TextMessagePart::Ptr mp;
     if (isFirstTextPart) {
-        mp = TextMessagePart::Ptr(new TextMessagePart(part.objectTreeParser(), node, bDrawFrame, !fileName.isEmpty(), part.source()->decryptMessage()));
+        mp = TextMessagePart::Ptr(new TextMessagePart(part.objectTreeParser(), node, bDrawFrame, part.source()->decryptMessage()));
     } else {
-        mp = TextMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, bDrawFrame, !fileName.isEmpty(), part.source()->decryptMessage()));
+        mp = TextMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, bDrawFrame, part.source()->decryptMessage()));
     }
 
     part.processResult()->setInlineSignatureState(mp->signatureState());

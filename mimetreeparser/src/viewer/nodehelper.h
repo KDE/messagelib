@@ -76,7 +76,7 @@ public:
      *  If autoDecode is true the decoded body will be used for mime type
      *  determination (this does not change the body itself).
      */
-    void magicSetType(KMime::Content *node, bool autoDecode = true);
+    static void magicSetType(KMime::Content *node, bool autoDecode = true);
 
     /**
      *  Return this mails subject, with all "forward" and "reply"

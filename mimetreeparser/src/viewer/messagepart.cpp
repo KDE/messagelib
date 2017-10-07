@@ -170,6 +170,12 @@ Interface::ObjectTreeSource *MessagePart::source() const
     return mOtp->mSource;
 }
 
+NodeHelper* MessagePart::nodeHelper() const
+{
+    Q_ASSERT(mOtp);
+    return mOtp->nodeHelper();
+}
+
 void MessagePart::parseInternal(KMime::Content *node, bool onlyOneMimePart)
 {
     auto subMessagePart = mOtp->parseObjectTreeInternal(node, onlyOneMimePart);
@@ -264,10 +270,9 @@ QString MessagePartList::htmlContent() const
 
 //-----TextMessageBlock----------------------
 
-TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage)
+TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage)
     : MessagePartList(otp)
     , mDrawFrame(drawFrame)
-    , mShowLink(showLink)
     , mDecryptMessage(decryptMessage)
     , mIsHidden(false)
 {
@@ -385,12 +390,17 @@ bool TextMessagePart::isHidden() const
 
 bool TextMessagePart::showLink() const
 {
-    return mShowLink;
+    return !temporaryFilePath().isEmpty();
 }
 
 bool TextMessagePart::showTextFrame() const
 {
     return mDrawFrame;
+}
+
+void TextMessagePart::setShowTextFrame(bool showFrame)
+{
+    mDrawFrame = showFrame;
 }
 
 QString TextMessagePart::label() const
@@ -412,10 +422,15 @@ QString TextMessagePart::comment() const
     return comment;
 }
 
+QString TextMessagePart::temporaryFilePath() const
+{
+    return nodeHelper()->writeNodeToTempFile(content());
+}
+
 //-----AttachmentMessageBlock----------------------
 
-AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool showLink, bool decryptMessage)
-    : TextMessagePart(otp, node, drawFrame, showLink, decryptMessage)
+AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage)
+    : TextMessagePart(otp, node, drawFrame, decryptMessage)
     , mIsImage(false)
     , mNeverDisplayInline(false)
 {

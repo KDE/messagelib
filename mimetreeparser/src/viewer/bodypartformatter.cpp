@@ -66,7 +66,7 @@ public:
     MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
         KMime::Content *node = part.content();
-        const auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, true, part.source()->decryptMessage()));
+        const auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, part.source()->decryptMessage()));
         part.processResult()->setInlineSignatureState(mp->signatureState());
         part.processResult()->setInlineEncryptionState(mp->encryptionState());
         part.processResult()->setNeverDisplayInline(true);
@@ -101,7 +101,7 @@ public:
     MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
         KMime::Content *node = part.content();
-        auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, true, part.source()->decryptMessage()));
+        auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, part.source()->decryptMessage()));
         mp->setIsImage(true);
         part.processResult()->setInlineSignatureState(mp->signatureState());
         part.processResult()->setInlineEncryptionState(mp->encryptionState());
@@ -109,7 +109,7 @@ public:
         auto preferredMode = part.source()->preferredMode();
         bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
         if (node->parent() && node->parent()->contentType()->subType() == "related" && isHtmlPreferred && !part.objectTreeParser()->showOnlyOneMimePart()) {
-            QString fileName = part.nodeHelper()->writeNodeToTempFile(node);
+            QString fileName = mp->temporaryFilePath();
             QString href = QUrl::fromLocalFile(fileName).url();
             QByteArray cid = node->contentID()->identifier();
             if (part.objectTreeParser()->htmlWriter()) {
