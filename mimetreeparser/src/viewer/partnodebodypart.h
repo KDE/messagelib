@@ -54,7 +54,7 @@ class MIMETREEPARSER_EXPORT PartNodeBodyPart : public Interface::BodyPart
 public:
     explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content, NodeHelper *nodeHelper);
 
-    QString makeLink(const QString &path) const override;
+    MIMETREEPARSER_DEPRECATED QString makeLink(const QString &path) const override;
     QString asText() const override;
     QByteArray asBinary() const override;
     QString contentTypeParameter(const char *param) const override;

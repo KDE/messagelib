@@ -47,6 +47,7 @@
 #include <KLocalizedString>
 
 #include <QTextCodec>
+#include <QUrl>
 
 using namespace MimeTreeParser;
 
@@ -99,6 +100,16 @@ PartMetaData *MessagePart::partMetaData() const
     return &d->mMetaData;
 }
 
+Interface::BodyPartMemento* MessagePart::memento() const
+{
+    return nodeHelper()->bodyPartMemento(content(), "__plugin__");
+}
+
+void MessagePart::setMemento(Interface::BodyPartMemento *memento)
+{
+    nodeHelper()->setBodyPartMemento(content(), "__plugin__", memento);
+}
+
 KMime::Content *MessagePart::content() const
 {
     return d->mNode;
@@ -132,6 +143,18 @@ QString MessagePart::attachmentIndex() const
 QString MessagePart::attachmentLink() const
 {
     return mOtp->nodeHelper()->asHREF(content(), QStringLiteral("body"));
+}
+
+QString MessagePart::makeLink(const QString &path) const
+{
+    // FIXME: use a PRNG for the first arg, instead of a serial number
+    static int serial = 0;
+    if (path.isEmpty()) {
+        return {};
+    }
+    return QStringLiteral("x-kmail:/bodypart/%1/%2/%3")
+           .arg(serial++).arg(content()->index().toString())
+           .arg(QString::fromLatin1(QUrl::toPercentEncoding(path, "/")));
 }
 
 void MessagePart::setIsRoot(bool root)

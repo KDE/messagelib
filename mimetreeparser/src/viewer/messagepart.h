@@ -106,6 +106,11 @@ public:
     /** @see NodeHelper::asHREF */
     QString attachmentLink() const;
 
+    /** Returns a string respresentation of an URL that can be used
+     *  to invoke a BodyPartURLHandler for this body part.
+     */
+    QString makeLink(const QString &path) const;
+
     void setIsRoot(bool root);
     bool isRoot() const;
 
@@ -113,6 +118,9 @@ public:
     virtual bool isHidden() const;
 
     PartMetaData *partMetaData() const;
+
+    Interface::BodyPartMemento *memento() const;
+    void setMemento(Interface::BodyPartMemento *memento);
 
     /* only a function that should be removed if the refactoring is over */
     virtual void fix() const;
