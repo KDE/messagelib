@@ -50,7 +50,7 @@ public:
     bool autoImportKeys() const override;
     bool showEmoticons() const override;
     bool showExpandQuotesMark() const override;
-    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override;
+    const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;
     void render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) override;
     bool isPrinting() const override;
 private:

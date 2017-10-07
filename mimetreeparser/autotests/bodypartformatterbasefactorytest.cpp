@@ -17,7 +17,7 @@
   02110-1301, USA.
 */
 
-#include "viewer/bodypartformatterbasefactory.h"
+#include "viewer/bodypartformatterfactory.h"
 #include "interfaces/bodypartformatter.h"
 
 #include <qtest.h>
@@ -28,7 +28,7 @@ class DummyFormatter : public Interface::BodyPartFormatter
 {
 };
 
-class TestFactory : public BodyPartFormatterBaseFactory
+class TestFactory : public BodyPartFormatterFactory
 {
 public:
     void loadPlugins() override

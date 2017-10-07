@@ -27,7 +27,7 @@ set(libmimetreeparser_main_SRCS
     utils/util.cpp
     viewer/attachmentstrategy.cpp
     viewer/bodypartformatter.cpp
-    viewer/bodypartformatterbasefactory.cpp
+    viewer/bodypartformatterfactory.cpp
     viewer/cryptohelper.cpp
     viewer/nodehelper.cpp
     viewer/objecttreeparser.cpp
@@ -52,7 +52,7 @@ set(mimetreeparser_temporaryfile_SRCS
 ecm_generate_headers(MimeTreeParser_Camelcaseviewer_HEADERS
     HEADER_NAMES
     AttachmentStrategy
-    BodyPartFormatterBaseFactory
+    BodyPartFormatterFactory
     Enums
     MessagePart
     NodeHelper
@@ -156,6 +156,7 @@ target_link_libraries(KF5MimeTreeParser
     QGpgme
     KF5::Codecs
     KF5::I18n
+    KF5::CoreAddons
     KF5::Mime
     Qt5::Gui
     )

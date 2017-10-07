@@ -1,4 +1,4 @@
-/*
+/*  -*- mode: C++; c-file-style: "gnu" -*-
     bodypartformatterfactory.h
 
     This file is part of KMail, the KDE mail client.
@@ -31,44 +31,33 @@
     your version.
 */
 
-#ifndef __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_H__
-#define __MIMETREEPARSER_BODYPARTFORMATTERBASEFACTORY_H__
+#ifndef __MIMETREEPARSER_BODYPARTFORMATTERFACTORY_P_H__
+#define __MIMETREEPARSER_BODYPARTFORMATTERFACTORY_P_H__
 
-#include "mimetreeparser_export.h"
-
-#include <QByteArray>
-#include <QVector>
+#include <QHash>
+#include <vector>
 
 namespace MimeTreeParser {
-namespace Interface {
-class BodyPartFormatter;
-}
+class BodyPartFormatterFactory;
 
-class BodyPartFormatterBaseFactoryPrivate;
-
-/** The place to obtain BodyPartFormatter candidates for a given mime type. */
-class MIMETREEPARSER_EXPORT BodyPartFormatterBaseFactory
+class BodyPartFormatterFactoryPrivate
 {
 public:
-    BodyPartFormatterBaseFactory();
-    virtual ~BodyPartFormatterBaseFactory();
+    BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory);
+    ~BodyPartFormatterFactoryPrivate() = default;
 
-    /**
-     *  Returns all suitable formatters for the given mimetype.
-     *  The candidates are ordered by priority, with the catch-call
-     *  formatter coming last.
-     */
-    QVector<const Interface::BodyPartFormatter *> formattersForType(const QString &mimeType) const;
+    void setup();
+    void messageviewer_create_builtin_bodypart_formatters();        //defined in bodypartformatter.cpp
+    void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority = 0);
+    void appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter *> &formatters);
 
-protected:
-    void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority);
-    virtual void loadPlugins();
-
-private:
-    Q_DISABLE_COPY(BodyPartFormatterBaseFactory)
-    BodyPartFormatterBaseFactoryPrivate *d;
-    friend class BodyPartFormatterBaseFactoryPrivate;
+    BodyPartFormatterFactory *q;
+    struct FormatterInfo {
+        const Interface::BodyPartFormatter *formatter = nullptr;
+        int priority = 0;
+    };
+    QHash<QString, std::vector<FormatterInfo> > registry;
 };
 }
 
-#endif // __MIMETREEPARSER_BODYPARTFORMATTERFACTORY_H__
+#endif // __MIMETREEPARSER_BODYPARTFORMATTERFACTORY_P_H__

@@ -54,9 +54,3 @@ MimeTreeParser::MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) cons
 BodyPartFormatterPlugin::~BodyPartFormatterPlugin()
 {
 }
-
-const BodyPartURLHandler *BodyPartFormatterPlugin::urlHandler(int idx) const
-{
-    Q_UNUSED(idx);
-    return nullptr;
-}

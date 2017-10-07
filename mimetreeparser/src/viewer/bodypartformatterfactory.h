@@ -1,5 +1,9 @@
 /*
-    Copyright (c) 2016 Sandro Knauß <sknauss@kde.org>
+    bodypartformatterfactory.h
+
+    This file is part of KMail, the KDE mail client.
+    Copyright (c) 2004 Marc Mutz <mutz@kde.org>,
+                       Ingo Kloecker <kloecker@kde.org>
 
     KMail is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by
@@ -27,14 +31,46 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_BODYPARTFORMATTERFACTORYSIGNLETON_P_H__
-#define __MESSAGEVIEWER_BODYPARTFORMATTERFACTORYSIGNLETON_P_H__
+#ifndef __MIMETREEPARSER_BODYPARTFORMATTERFACTORY_H__
+#define __MIMETREEPARSER_BODYPARTFORMATTERFACTORY_H__
+
+#include "mimetreeparser_export.h"
+
+#include <QByteArray>
+#include <QVector>
 
 namespace MimeTreeParser {
-class BodyPartFormatterBaseFactory;
+namespace Interface {
+class BodyPartFormatter;
 }
 
-namespace MessageViewer {
-const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterBaseFactoryInstance();
+class BodyPartFormatterFactoryPrivate;
+
+/** The place to obtain BodyPartFormatter candidates for a given mime type. */
+class MIMETREEPARSER_EXPORT BodyPartFormatterFactory
+{
+public:
+    BodyPartFormatterFactory();
+    virtual ~BodyPartFormatterFactory();
+
+    static BodyPartFormatterFactory* instance();
+
+    /**
+     *  Returns all suitable formatters for the given mimetype.
+     *  The candidates are ordered by priority, with the catch-call
+     *  formatter coming last.
+     */
+    QVector<const Interface::BodyPartFormatter *> formattersForType(const QString &mimeType) const;
+
+protected:
+    void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority);
+    virtual void loadPlugins();
+
+private:
+    Q_DISABLE_COPY(BodyPartFormatterFactory)
+    BodyPartFormatterFactoryPrivate *d;
+    friend class BodyPartFormatterFactoryPrivate;
+};
 }
-#endif
+
+#endif // __MIMETREEPARSER_BODYPARTFORMATTERFACTORY_H__

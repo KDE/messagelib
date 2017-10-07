@@ -350,22 +350,22 @@ public:
     bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const override;
     QString statusBarMessage(const QUrl &, ViewerPrivate *) const override;
 
-    void registerHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
-    void unregisterHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
+    void registerHandler(const Interface::BodyPartURLHandler *handler);
+    void unregisterHandler(const Interface::BodyPartURLHandler *handler);
 
 private:
-    typedef QVector<const MimeTreeParser::Interface::BodyPartURLHandler *> BodyPartHandlerList;
+    typedef QVector<const Interface::BodyPartURLHandler *> BodyPartHandlerList;
     BodyPartHandlerList mHandlers;
 };
 
 URLHandlerManager::BodyPartURLHandlerManager::~BodyPartURLHandlerManager()
 {
     for_each(mHandlers.begin(), mHandlers.end(),
-             DeleteAndSetToZero<MimeTreeParser::Interface::BodyPartURLHandler>());
+             DeleteAndSetToZero<Interface::BodyPartURLHandler>());
 }
 
 void URLHandlerManager::BodyPartURLHandlerManager::registerHandler(
-    const MimeTreeParser::Interface::BodyPartURLHandler *handler)
+    const Interface::BodyPartURLHandler *handler)
 {
     if (!handler) {
         return;
@@ -375,7 +375,7 @@ void URLHandlerManager::BodyPartURLHandlerManager::registerHandler(
 }
 
 void URLHandlerManager::BodyPartURLHandlerManager::unregisterHandler(
-    const MimeTreeParser::Interface::BodyPartURLHandler *handler)
+    const Interface::BodyPartURLHandler *handler)
 {
     // don't delete them, only remove them from the list!
     mHandlers.erase(remove(mHandlers.begin(), mHandlers.end(), handler), mHandlers.end());
@@ -517,15 +517,14 @@ void URLHandlerManager::unregisterHandler(const MimeTreeParser::URLHandler *hand
     mHandlers.erase(remove(mHandlers.begin(), mHandlers.end(), handler), mHandlers.end());
 }
 
-void URLHandlerManager::registerHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler)
+void URLHandlerManager::registerHandler(const Interface::BodyPartURLHandler *handler)
 {
     if (mBodyPartURLHandlerManager) {
         mBodyPartURLHandlerManager->registerHandler(handler);
     }
 }
 
-void URLHandlerManager::unregisterHandler(
-    const MimeTreeParser::Interface::BodyPartURLHandler *handler)
+void URLHandlerManager::unregisterHandler(const Interface::BodyPartURLHandler *handler)
 {
     if (mBodyPartURLHandlerManager) {
         mBodyPartURLHandlerManager->unregisterHandler(handler);

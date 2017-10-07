@@ -100,7 +100,6 @@ public:
     virtual ~BodyPartFormatterPlugin();
 
     virtual const BodyPartFormatter *bodyPartFormatter(int idx) const = 0;
-    virtual const BodyPartURLHandler *urlHandler(int idx) const;
 };
 } // namespace Interface
 }

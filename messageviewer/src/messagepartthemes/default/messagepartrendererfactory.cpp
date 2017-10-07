@@ -31,6 +31,7 @@
 #include "messagepartrendererfactory.h"
 #include "messagepartrendererfactory_p.h"
 #include "messagepartrenderplugin.h"
+#include "viewer/urlhandlermanager.h"
 
 #include "messagepartrendererbase.h"
 #include "messageviewer_debug.h"
@@ -81,6 +82,11 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
             // TODO add plugin priority like we have for BPFs
             qCDebug(MESSAGEVIEWER_LOG) << "renderer plugin for " << type;
             insert(type, renderer /*, priority*/);
+        }
+
+        const Interface::BodyPartURLHandler *handler = nullptr;
+        for (int i = 0; (handler = plugin->urlHandler(i)); ++i) {
+            URLHandlerManager::instance()->registerHandler(handler);
         }
     });
 }

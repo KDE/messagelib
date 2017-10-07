@@ -24,7 +24,7 @@
 #include <gpgme++/key.h>
 
 #include <MimeTreeParser/AttachmentStrategy>
-#include <MimeTreeParser/BodyPartFormatterBaseFactory>
+#include <MimeTreeParser/BodyPartFormatterFactory>
 #include <MimeTreeParser/ObjectTreeSource>
 
 #include <MessageViewer/ObjectTreeEmptySource>
@@ -106,9 +106,9 @@ public:
         return mShowExpandQuotesMark;
     }
 
-    const MimeTreeParser::BodyPartFormatterBaseFactory *bodyPartFormatterFactory() override
+    const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override
     {
-        return &mBodyPartFormatterBaseFactory;
+        return &mBodyPartFormatterFactory;
     }
 
     bool decryptMessage() const override
@@ -172,7 +172,7 @@ private:
     MimeTreeParser::HtmlWriter *mWriter;
     MessageViewer::CSSHelperBase *mCSSHelper;
     QString mAttachmentStrategy;
-    MimeTreeParser::BodyPartFormatterBaseFactory mBodyPartFormatterBaseFactory;
+    MimeTreeParser::BodyPartFormatterFactory mBodyPartFormatterFactory;
     bool mHtmlLoadExternal;
     bool mDecryptMessage;
     bool mShowSignatureDetails;

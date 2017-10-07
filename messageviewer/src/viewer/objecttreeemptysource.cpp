@@ -23,10 +23,9 @@
 
 #include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BodyPartFormatter>
+#include <MimeTreeParser/BodyPartFormatterFactory>
 
 #include "messagepartthemes/default/defaultrenderer.h"
-
-#include "bodypartformatterfactorysingleton.h"
 
 using namespace MessageViewer;
 
@@ -131,9 +130,9 @@ bool EmptySource::showExpandQuotesMark() const
     return false;
 }
 
-const MimeTreeParser::BodyPartFormatterBaseFactory *EmptySource::bodyPartFormatterFactory()
+const MimeTreeParser::BodyPartFormatterFactory *EmptySource::bodyPartFormatterFactory()
 {
-    return bodyPartFormatterBaseFactoryInstance();
+    return MimeTreeParser::BodyPartFormatterFactory::instance();
 }
 
 bool EmptySource::isPrinting() const

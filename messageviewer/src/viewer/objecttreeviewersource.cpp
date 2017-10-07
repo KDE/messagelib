@@ -19,7 +19,7 @@
 
 #include "objecttreeviewersource.h"
 #include "csshelper.h"
-#include "bodypartformatterfactorysingleton.h"
+#include <MimeTreeParser/BodyPartFormatterFactory>
 
 #include <MimeTreeParser/BodyPartFormatter>
 #include "messagepartthemes/default/defaultrenderer.h"
@@ -119,9 +119,9 @@ bool MailViewerSource::showExpandQuotesMark() const
     return MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark();
 }
 
-const MimeTreeParser::BodyPartFormatterBaseFactory *MailViewerSource::bodyPartFormatterFactory()
+const MimeTreeParser::BodyPartFormatterFactory *MailViewerSource::bodyPartFormatterFactory()
 {
-    return bodyPartFormatterBaseFactoryInstance();
+    return MimeTreeParser::BodyPartFormatterFactory::instance();
 }
 
 bool MailViewerSource::isPrinting() const

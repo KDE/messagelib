@@ -31,10 +31,15 @@
     your version.
 */
 
-#include "bodypartformatterbasefactory.h"
-#include "bodypartformatterbasefactory_p.h"
+#include "bodypartformatterfactory.h"
+#include "bodypartformatterfactory_p.h"
+#include "interfaces/bodypartformatter.h"
 #include "mimetreeparser_debug.h"
 
+#include <KPluginLoader>
+
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QMimeDatabase>
 #include <QMimeType>
 
@@ -42,12 +47,12 @@
 
 using namespace MimeTreeParser;
 
-BodyPartFormatterBaseFactoryPrivate::BodyPartFormatterBaseFactoryPrivate(BodyPartFormatterBaseFactory *factory)
+BodyPartFormatterFactoryPrivate::BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory)
     : q(factory)
 {
 }
 
-void BodyPartFormatterBaseFactoryPrivate::setup()
+void BodyPartFormatterFactoryPrivate::setup()
 {
     if (registry.empty()) {
         messageviewer_create_builtin_bodypart_formatters();
@@ -56,7 +61,7 @@ void BodyPartFormatterBaseFactoryPrivate::setup()
     assert(!registry.empty());
 }
 
-void BodyPartFormatterBaseFactoryPrivate::insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority)
+void BodyPartFormatterFactoryPrivate::insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority)
 {
     if (mimeType.isEmpty() || !formatter) {
         return;
@@ -75,7 +80,7 @@ void BodyPartFormatterBaseFactoryPrivate::insert(const QString &mimeType, const 
     });
 }
 
-void BodyPartFormatterBaseFactoryPrivate::appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter *> &formatters)
+void BodyPartFormatterFactoryPrivate::appendFormattersForType(const QString &mimeType, QVector<const Interface::BodyPartFormatter *> &formatters)
 {
     const auto it = registry.constFind(mimeType);
     if (it == registry.constEnd()) {
@@ -86,22 +91,28 @@ void BodyPartFormatterBaseFactoryPrivate::appendFormattersForType(const QString 
     }
 }
 
-BodyPartFormatterBaseFactory::BodyPartFormatterBaseFactory()
-    : d(new BodyPartFormatterBaseFactoryPrivate(this))
+BodyPartFormatterFactory::BodyPartFormatterFactory()
+    : d(new BodyPartFormatterFactoryPrivate(this))
 {
 }
 
-BodyPartFormatterBaseFactory::~BodyPartFormatterBaseFactory()
+BodyPartFormatterFactory::~BodyPartFormatterFactory()
 {
     delete d;
 }
 
-void BodyPartFormatterBaseFactory::insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority)
+BodyPartFormatterFactory* BodyPartFormatterFactory::instance()
+{
+    static BodyPartFormatterFactory s_instance;
+    return &s_instance;
+}
+
+void BodyPartFormatterFactory::insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority)
 {
     d->insert(mimeType.toLower(), formatter, priority);
 }
 
-QVector<const Interface::BodyPartFormatter *> BodyPartFormatterBaseFactory::formattersForType(const QString &mimeType) const
+QVector<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formattersForType(const QString &mimeType) const
 {
     QVector<const Interface::BodyPartFormatter *> r;
     d->setup();
@@ -142,7 +153,37 @@ QVector<const Interface::BodyPartFormatter *> BodyPartFormatterBaseFactory::form
     return r;
 }
 
-void BodyPartFormatterBaseFactory::loadPlugins()
+void BodyPartFormatterFactory::loadPlugins()
 {
-    qCDebug(MIMETREEPARSER_LOG) << "plugin loading is not enabled in libmimetreeparser";
+    KPluginLoader::forEachPlugin(QStringLiteral("messageviewer/bodypartformatter"), [this](const QString &path) {
+        QPluginLoader loader(path);
+        const auto formatterData = loader.metaData().value(QLatin1String("MetaData")).toObject().value(QLatin1String("formatter")).toArray();
+        if (formatterData.isEmpty()) {
+            qCWarning(MIMETREEPARSER_LOG) << "Plugin" << path << "has no meta data.";
+            return;
+        }
+
+        auto plugin = qobject_cast<MimeTreeParser::Interface::BodyPartFormatterPlugin*>(loader.instance());
+        if (!plugin) {
+            qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterFactory: plugin" << path
+                                         << "is not valid!";
+            return;
+        }
+
+        const MimeTreeParser::Interface::BodyPartFormatter *bfp = nullptr;
+        for (int i = 0; (bfp = plugin->bodyPartFormatter(i)) && i < formatterData.size(); ++i) {
+            const auto metaData = formatterData.at(i).toObject();
+            const auto mimetype = metaData.value(QLatin1String("mimetype")).toString();
+            if (mimetype.isEmpty()) {
+                qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterFactory: plugin" << path
+                                             << "returned empty mimetype specification for index"
+                                             << i;
+                break;
+            }
+            // priority should always be higher than the built-in ones, otherwise what's the point?
+            const auto priority = metaData.value(QLatin1String("priority")).toInt() + 100;
+            qCDebug(MIMETREEPARSER_LOG) << "plugin for " << mimetype << priority;
+            insert(mimetype, bfp, priority);
+        }
+    });
 }

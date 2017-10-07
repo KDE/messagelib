@@ -40,18 +40,16 @@ class QUrl;
 class QString;
 class QPoint;
 
-namespace MessageViewer {
-class ViewerPrivate;
-}
-
 namespace MimeTreeParser {
-namespace Interface {
-class BodyPartURLHandler;
-}
 class URLHandler;
 }
 
 namespace MessageViewer {
+namespace Interface {
+class BodyPartURLHandler;
+}
+class ViewerPrivate;
+
 /**
   * @short Singleton to manage the list of URLHandlers
   * @author Marc Mutz <mutz@kde.org>
@@ -69,8 +67,8 @@ public:
     void registerHandler(const MimeTreeParser::URLHandler *handler);
     void unregisterHandler(const MimeTreeParser::URLHandler *handler);
 
-    void registerHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
-    void unregisterHandler(const MimeTreeParser::Interface::BodyPartURLHandler *handler);
+    void registerHandler(const Interface::BodyPartURLHandler *handler);
+    void unregisterHandler(const Interface::BodyPartURLHandler *handler);
 
     bool handleClick(const QUrl &url, ViewerPrivate *w = nullptr) const;
     bool handleShiftClick(const QUrl &url, ViewerPrivate *window = nullptr) const;

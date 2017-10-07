@@ -31,7 +31,7 @@ class QTextCodec;
 namespace MimeTreeParser {
 class HtmlWriter;
 class AttachmentStrategy;
-class BodyPartFormatterBaseFactory;
+class BodyPartFormatterFactory;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
@@ -87,7 +87,7 @@ public:
 
     virtual bool showExpandQuotesMark() const = 0;
 
-    virtual const BodyPartFormatterBaseFactory *bodyPartFormatterFactory() = 0;
+    virtual const BodyPartFormatterFactory *bodyPartFormatterFactory() = 0;
 
     virtual void render(const MessagePartPtr &msgPart, HtmlWriter *htmlWriter) = 0;
 

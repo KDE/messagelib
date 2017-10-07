@@ -59,8 +59,6 @@ set(libmessageviewer_mailviewer_SRCS
     )
 
 set(libmessageviewer_viewer_SRCS
-    viewer/bodypartformatterfactory.cpp
-    viewer/bodypartformatterfactorysingleton.cpp
     viewer/csshelper.cpp
     viewer/csshelperbase.cpp
     viewer/editorwatcher.cpp
@@ -282,7 +280,6 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     ObjectTreeEmptySource
     EditorWatcher
     Stl_Util
-    BodyPartFormatterFactory
     REQUIRED_HEADERS MessageViewer_viewer_HEADERS
     PREFIX MessageViewer
     RELATIVE viewer

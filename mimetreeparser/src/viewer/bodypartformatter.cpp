@@ -45,8 +45,8 @@
 #include "interfaces/bodypart.h"
 #include "interfaces/htmlwriter.h"
 
-#include "viewer/bodypartformatterbasefactory.h"
-#include "viewer/bodypartformatterbasefactory_p.h"
+#include "viewer/bodypartformatterfactory.h"
+#include "viewer/bodypartformatterfactory_p.h"
 
 #include "viewer/attachmentstrategy.h"
 #include "viewer/objecttreeparser.h"
@@ -157,7 +157,7 @@ MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::BodyPart &pa
 }
 } // anon namespace
 
-void BodyPartFormatterBaseFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
+void BodyPartFormatterFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
 {
     insert(QStringLiteral("application/pkcs7-mime"), ApplicationPkcs7MimeBodyPartFormatter::create());
     insert(QStringLiteral("application/x-pkcs7-mime"), ApplicationPkcs7MimeBodyPartFormatter::create());

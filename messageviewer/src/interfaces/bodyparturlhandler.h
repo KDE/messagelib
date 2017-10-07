@@ -46,7 +46,7 @@ namespace MessageViewer {
 class Viewer;
 }
 
-namespace MimeTreeParser {
+namespace MessageViewer {
 namespace Interface {
 /**
   * @short An interface to body part reader link handlers
