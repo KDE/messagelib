@@ -27,7 +27,6 @@
 using namespace MimeTreeParser;
 using namespace MessageViewer;
 
-
 namespace MessageViewer {
 class MessagePartRendererFactory;
 class CSSHelperBase;

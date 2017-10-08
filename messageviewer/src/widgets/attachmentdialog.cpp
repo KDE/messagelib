@@ -31,13 +31,12 @@ using namespace MessageViewer;
 
 //---------------------------------------------------------------------
 
-AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
-                                   const KService::Ptr &offer, const QString &dontAskAgainName)
+AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText, const KService::Ptr &offer, const QString &dontAskAgainName)
     : dontAskName(dontAskAgainName)
 {
     text = xi18nc("@info", "Open attachment <filename>%1</filename>?<nl/>"
-                  "Note that opening an attachment may compromise "
-                  "your system's security.",
+                           "Note that opening an attachment may compromise "
+                           "your system's security.",
                   filenameText);
 
     dialog = new QDialog(parent);
