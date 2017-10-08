@@ -460,7 +460,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
         }));
     } else if (!metaData.inProgress) {
         c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
-            renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
+            renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
         }));
     }
 
@@ -508,7 +508,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
         }));
     } else if (!metaData.inProgress) {
         c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
-            renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
+            renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
         }));
     }
 
@@ -745,7 +745,7 @@ void DefaultRendererPrivate::render(const SignedMessagePart::Ptr &mp, HtmlWriter
     if (mp->hasSubParts()) {
         renderSubParts(mp, htmlWriter);
     } else if (!metaData.inProgress) {
-        renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
+        renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
     }
 }
 
@@ -770,7 +770,7 @@ void DefaultRendererPrivate::render(const EncryptedMessagePart::Ptr &mp, HtmlWri
     if (mp->hasSubParts()) {
         renderSubParts(mp, htmlWriter);
     } else if (!metaData.inProgress) {
-        renderWithFactory(QStringLiteral("MimeTreeParser::MessagePart"), mp, htmlWriter);
+        renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
     }
 }
 
@@ -833,12 +833,12 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
     t->render(&s, &c);
 }
 
-bool DefaultRendererPrivate::renderWithFactory(const QString &className, const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
+bool DefaultRendererPrivate::renderWithFactory(const QMetaObject *mo, const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
 {
     if (!mRendererFactory) {
         return false;
     }
-    for (auto r : mRendererFactory->typeRegistry(className)) {
+    for (auto r : mRendererFactory->renderersForPart(mo, msgPart)) {
         if (r->render(msgPart, htmlWriter, this)) {
             return true;
         }
@@ -850,7 +850,7 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
 {
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
-    if (renderWithFactory(className, msgPart, htmlWriter)) {
+    if (renderWithFactory(msgPart, htmlWriter)) {
         return;
     }
 

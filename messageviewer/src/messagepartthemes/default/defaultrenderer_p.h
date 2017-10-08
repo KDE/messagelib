@@ -56,7 +56,8 @@ public:
     void render(const EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
     void render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    bool renderWithFactory(const QString &className, const MessagePart::Ptr &msgPart, HtmlWriter *writer) override;
+    bool renderWithFactory(const QMetaObject *mo, const MessagePart::Ptr &msgPart, HtmlWriter *writer) override;
+    using RenderContext::renderWithFactory;
     void renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
     MessagePart::Ptr mMsgPart;

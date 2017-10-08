@@ -33,12 +33,11 @@
 
 #include "messageviewer_export.h"
 
-#include <qglobal.h>
+#include <MimeTreeParser/MessagePart>
+
+#include <QVector>
 
 #include <memory>
-#include <vector>
-
-class QString;
 
 namespace MessageViewer {
 class MessagePartRendererBase;
@@ -52,7 +51,7 @@ public:
 
     static MessagePartRendererFactory *instance();
 
-    std::vector<MessagePartRendererBase *> typeRegistry(const QString &type) const;
+    QVector<MessagePartRendererBase*> renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &mp) const;
 
 private:
     Q_DISABLE_COPY(MessagePartRendererFactory)

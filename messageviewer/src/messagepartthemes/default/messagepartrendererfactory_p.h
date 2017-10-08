@@ -30,21 +30,30 @@
 #ifndef __MESSAGEVIEWER_MESSAGEPARTRENDERERBASEFACTORY_P_H__
 #define __MESSAGEVIEWER_MESSAGEPARTRENDERERBASEFACTORY_P_H__
 
-#include <QMap>
+#include <QByteArray>
+#include <QHash>
+#include <QString>
+
+#include <vector>
 
 namespace MessageViewer {
 class MessagePartRendererBase;
-typedef QMap<QString, std::vector<MessagePartRendererBase *> > TypeRegistry;
+
+struct RendererInfo {
+    MessagePartRendererBase *renderer;
+    QString mimeType;
+    int priority;
+};
 
 class MessagePartRendererFactoryPrivate
 {
 public:
     void setup();
     void loadPlugins();
-    void initalize_builtin_renderers();        //defined in pugins/plugins.cpp
-    void insert(const QString &type, MessagePartRendererBase *formatter);
+    void initalize_builtin_renderers();
+    void insert(const QByteArray &type, MessagePartRendererBase *formatter, const QString &mimeType = QString(), int priority = 0);
 
-    TypeRegistry mAll;
+    QHash<QByteArray, std::vector<RendererInfo>> m_renderers;
 };
 }
 

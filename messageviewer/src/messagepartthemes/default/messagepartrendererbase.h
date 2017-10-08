@@ -32,6 +32,8 @@
 
 #include "messageviewer_export.h"
 
+#include <MimeTreeParser/MessagePart>
+
 #include <memory>
 #include <map>
 
@@ -39,8 +41,6 @@
 
 namespace MimeTreeParser {
 class HtmlWriter;
-class MessagePart;
-typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
 
 namespace MessageViewer {
@@ -52,8 +52,19 @@ public:
     virtual ~RenderContext();
 
     virtual CSSHelperBase *cssHelper() const = 0;
-    virtual bool renderWithFactory(const QString &className, const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *writer) = 0;
-    virtual void renderSubParts(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) = 0;
+    template <typename T>
+    inline bool renderWithFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer)
+    {
+        return renderWithFactory(&T::staticMetaObject, msgPart, writer);
+    }
+    inline bool renderWithFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer)
+    {
+        return renderWithFactory(msgPart->metaObject(), msgPart, writer);
+    }
+    virtual void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) = 0;
+
+protected:
+    virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer) = 0;
 };
 
 class MESSAGEVIEWER_EXPORT MessagePartRendererBase
@@ -61,7 +72,7 @@ class MESSAGEVIEWER_EXPORT MessagePartRendererBase
 public:
     MessagePartRendererBase();
     virtual ~MessagePartRendererBase();
-    virtual bool render(const MimeTreeParser::MessagePartPtr &, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context)
+    virtual bool render(const MimeTreeParser::MessagePart::Ptr &, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context)
     const = 0;
 };
 }

@@ -57,7 +57,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
     const auto tmpAsIcon = mp->asIcon();
 
     if (tmpAsIcon == MimeTreeParser::NoIcon) {
-        return context->renderWithFactory(QStringLiteral("MimeTreeParser::TextMessagePart"), mp, htmlWriter);
+        return context->renderWithFactory<MimeTreeParser::TextMessagePart>(mp, htmlWriter);
     }
 
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(

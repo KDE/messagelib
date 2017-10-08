@@ -37,9 +37,6 @@
 #include <memory>
 
 class QTextCodec;
-namespace MessageViewer {
-class AttachmentMessagePartRenderer;
-}
 
 namespace GpgME {
 class ImportResult;
