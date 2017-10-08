@@ -32,25 +32,7 @@
 
 #include "bodypartformatter.h"
 
-#include "bodypart.h"
-#include "viewer/messagepart.h"
-#include "viewer/objecttreeparser.h"
-
 using namespace MimeTreeParser::Interface;
 
-BodyPartFormatter::Result BodyPartFormatter::format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const
-{
-    Q_UNUSED(part);
-    Q_UNUSED(writer);
-    return Failed;
-}
-
-MimeTreeParser::MessagePart::Ptr BodyPartFormatter::process(BodyPart &part) const
-{
-    auto mp = MimeTreeParser::MessagePart::Ptr(new LegacyPluginMessagePart(part.objectTreeParser()));
-    return mp;
-}
-
-BodyPartFormatterPlugin::~BodyPartFormatterPlugin()
-{
-}
+BodyPartFormatter::~BodyPartFormatter() = default;
+BodyPartFormatterPlugin::~BodyPartFormatterPlugin() = default;

@@ -43,6 +43,6 @@ public:
 };
 }
 
-Q_DECLARE_INTERFACE(MessageViewer::MessagePartRenderPlugin, "org.kde.messageviewer.messagepartrenderer/1.0")
+Q_DECLARE_INTERFACE(MessageViewer::MessagePartRenderPlugin, "org.kde.messageviewer.messagepartrenderer/1.1")
 
 #endif // MESSAGEVIEWER_MESSAGEPARTRENDERPLUGIN_H

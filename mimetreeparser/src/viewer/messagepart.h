@@ -55,7 +55,6 @@ class Content;
 
 namespace MimeTreeParser {
 class ObjectTreeParser;
-class HtmlWriter;
 class CryptoBodyPartMemento;
 class MessagePartPrivate;
 class MultiPartAlternativeBodyPartFormatter;
@@ -140,21 +139,6 @@ protected:
 
 private:
     std::unique_ptr<MessagePartPrivate> d;
-};
-
-// TODO remove once all plugins are ported away from BPF::format()
-class MIMETREEPARSER_DEPRECATED_EXPORT LegacyPluginMessagePart : public MessagePart
-{
-    Q_OBJECT
-public:
-    LegacyPluginMessagePart(MimeTreeParser::ObjectTreeParser *otp);
-    ~LegacyPluginMessagePart();
-
-    HtmlWriter *htmlWriter() const;
-    QString formatOutput() const;
-
-private:
-    std::unique_ptr<HtmlWriter> m_htmlWriter;
 };
 
 class MIMETREEPARSER_EXPORT MimeMessagePart : public MessagePart

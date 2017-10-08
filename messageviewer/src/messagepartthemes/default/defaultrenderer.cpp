@@ -894,8 +894,6 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (auto mp = msgPart.dynamicCast<LegacyPluginMessagePart>()) {
-        htmlWriter->write(mp->formatOutput());
     } else {
         qCWarning(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
                                      << className;

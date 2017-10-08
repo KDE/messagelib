@@ -42,43 +42,18 @@
 #include "mimetreeparser/objecttreeparser.h"
 
 namespace MimeTreeParser {
-class HtmlWriter;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 
 namespace Interface {
-class BodyPartURLHandler;
 class BodyPart;
 
 class MIMETREEPARSER_EXPORT BodyPartFormatter
 {
 public:
-    virtual ~BodyPartFormatter()
-    {
-    }
+    virtual ~BodyPartFormatter();
 
-    /**
-    @li Ok returned when format() generated some HTML
-    @li NeedContent returned when format() needs the body of the part
-    @li AsIcon returned when the part should be shown iconified
-    @li Failed returned when formatting failed. Currently equivalent to Ok
-    */
-    enum Result {
-        Ok, NeedContent, AsIcon, Failed
-    };
-
-    /**
-    Format body part \a part by generating some HTML and writing
-    that to \a writer.
-
-    If you a async process and need to send an update information you can use
-    MimeTreeParser::NodeHelper::Update signal with the corresponding instance of BodyPart::nodeHelper()
-
-    @return the result code (see above)
-    */
-    virtual Result format(BodyPart *part, MimeTreeParser::HtmlWriter *writer) const;
-
-    virtual MimeTreeParser::MessagePartPtr process(BodyPart &part) const;
+    virtual MimeTreeParser::MessagePartPtr process(BodyPart &part) const = 0;
 };
 
 /**
@@ -104,6 +79,6 @@ public:
 } // namespace Interface
 }
 
-Q_DECLARE_INTERFACE(MimeTreeParser::Interface::BodyPartFormatterPlugin, "org.kde.messageviewer.bodypartformatter/1.0")
+Q_DECLARE_INTERFACE(MimeTreeParser::Interface::BodyPartFormatterPlugin, "org.kde.messageviewer.bodypartformatter/1.1")
 
 #endif // __MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H__

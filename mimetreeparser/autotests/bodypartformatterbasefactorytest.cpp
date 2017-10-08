@@ -26,6 +26,10 @@ using namespace MimeTreeParser;
 
 class DummyFormatter : public Interface::BodyPartFormatter
 {
+    MessagePartPtr process(Interface::BodyPart&) const override
+    {
+        return {};
+    }
 };
 
 class TestFactory : public BodyPartFormatterFactory

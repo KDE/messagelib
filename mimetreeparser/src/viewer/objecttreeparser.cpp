@@ -210,23 +210,8 @@ MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult
             continue;
         }
 
-        // ### legacy BFP::format() handling, can be removed once all plugins are ported away from that
-        if (const auto legacyPart = result.dynamicCast<LegacyPluginMessagePart>()) {
-            const auto r = formatter->format(&part, legacyPart->htmlWriter());
-            if (r == Interface::BodyPartFormatter::AsIcon) {
-                processResult.setNeverDisplayInline(true);
-                mNodeHelper->setNodeDisplayedEmbedded(node, false);
-                auto mp = processType(node, processResult, QByteArrayLiteral("application/octet-stream"), onlyOneMimePart);
-                mp->setAttachmentContent(node);
-                return mp;
-            } else if (r == Interface::BodyPartFormatter::Ok) {
-                processResult.setNeverDisplayInline(true);
-                return result;
-            }
-        } else {
-            result->setAttachmentContent(node);
-            return result;
-        }
+        result->setAttachmentContent(node);
+        return result;
     }
 
     Q_UNREACHABLE();

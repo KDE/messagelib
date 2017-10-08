@@ -22,7 +22,6 @@
 #include "attachmentstrategy.h"
 #include "cryptohelper.h"
 #include "objecttreeparser.h"
-#include "htmlwriter/bufferedhtmlwriter.h"
 #include "job/qgpgmejobexecutor.h"
 #include "memento/cryptobodypartmemento.h"
 #include "memento/decryptverifybodypartmemento.h"
@@ -241,29 +240,6 @@ const QVector<MessagePart::Ptr> &MessagePart::subParts() const
 bool MessagePart::hasSubParts() const
 {
     return !d->mBlocks.isEmpty();
-}
-
-//-----LegacyMessagePart--------------------
-LegacyPluginMessagePart::LegacyPluginMessagePart(ObjectTreeParser *otp)
-    : MessagePart(otp, QString())
-    , m_htmlWriter(new BufferedHtmlWriter)
-{
-    m_htmlWriter->begin();
-}
-
-LegacyPluginMessagePart::~LegacyPluginMessagePart()
-{
-}
-
-HtmlWriter *LegacyPluginMessagePart::htmlWriter() const
-{
-    return m_htmlWriter.get();
-}
-
-QString LegacyPluginMessagePart::formatOutput() const
-{
-    m_htmlWriter->end();
-    return QString::fromUtf8(static_cast<BufferedHtmlWriter *>(m_htmlWriter.get())->data());
 }
 
 //-----MessagePartList----------------------
