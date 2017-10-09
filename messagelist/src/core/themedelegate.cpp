@@ -649,7 +649,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         rows = &(skcolumn->groupHeaderRows());
         groupHeaderItem = static_cast< GroupHeaderItem * >(item);
 
-        QPalette::ColorGroup cg = opt.state & QStyle::State_Enabled ? QPalette::Normal : QPalette::Disabled;
+        QPalette::ColorGroup cg = (opt.state & QStyle::State_Enabled) ? QPalette::Normal : QPalette::Disabled;
 
         if (cg == QPalette::Normal && !(opt.state & QStyle::State_Active)) {
             cg = QPalette::Inactive;

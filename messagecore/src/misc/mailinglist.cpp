@@ -236,13 +236,13 @@ static QStringList headerToAddress(const QString &header)
 {
     QStringList addresses;
     int start = 0;
-    int end = 0;
 
     if (header.isEmpty()) {
         return addresses;
     }
 
     while ((start = header.indexOf(QLatin1Char('<'), start)) != -1) {
+        int end = 0;
         if ((end = header.indexOf(QLatin1Char('>'), ++start)) == -1) {
             qCWarning(MESSAGECORE_LOG) << "Serious mailing list header parsing error!";
             return addresses;
