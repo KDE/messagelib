@@ -234,13 +234,13 @@ static const int num_detectors = sizeof(magic_detector) / sizeof(magic_detector[
 
 static QStringList headerToAddress(const QString &header)
 {
-    QStringList addresses;
-    int start = 0;
 
+    QStringList addresses;
     if (header.isEmpty()) {
         return addresses;
     }
 
+    int start = 0;
     while ((start = header.indexOf(QLatin1Char('<'), start)) != -1) {
         int end = 0;
         if ((end = header.indexOf(QLatin1Char('>'), ++start)) == -1) {
