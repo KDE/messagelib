@@ -1564,9 +1564,9 @@ void Kleo::KeyResolver::dump() const
             qCDebug(MESSAGECOMPOSER_LOG) << "  " << sit->shortKeyID() << " ";
         }
         unsigned int i = 0;
-        for (std::vector<SplitInfo>::const_iterator sit = it->second.splitInfos.begin(); sit != it->second.splitInfos.end(); ++sit, ++i) {
+        for (std::vector<SplitInfo>::const_iterator sit = it->second.splitInfos.begin(), sitEnd = it->second.splitInfos.end(); sit != sitEnd; ++sit, ++i) {
             qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " encryption keys: ";
-            for (std::vector<GpgME::Key>::const_iterator kit = sit->keys.begin(); kit != sit->keys.end(); ++kit) {
+            for (std::vector<GpgME::Key>::const_iterator kit = sit->keys.begin(), sitEnd = sit->keys.end(); kit != sitEnd; ++kit) {
                 qCDebug(MESSAGECOMPOSER_LOG) << "  " << kit->shortKeyID();
             }
             qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " recipients: "
