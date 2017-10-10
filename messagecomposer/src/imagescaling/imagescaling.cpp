@@ -142,7 +142,6 @@ QByteArray ImageScaling::mimetype() const
             return "image/png";
         }
     }
-    return QByteArray();
 }
 
 void ImageScaling::setMimetype(const QByteArray &mimetype)

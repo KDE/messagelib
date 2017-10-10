@@ -117,7 +117,7 @@ public:
     bool mStorageUsesPrivateSortOrder;     ///< true if the current folder does not use the global sort order
     QUrl mCurrentFolderUrl;                ///< The Akonadi URL of the current folder
     Akonadi::Collection mCurrentFolder;    ///< The current folder
-    int mCurrentStatusFilterIndex;
+    int mCurrentStatusFilterIndex = 0;
     bool mStatusFilterComboPopulationInProgress;
 };
 

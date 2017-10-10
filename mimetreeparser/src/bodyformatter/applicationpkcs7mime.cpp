@@ -151,13 +151,7 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
                                                                 aCodec->toUnicode(signaturetext), smimeCrypto,
                                                                 part.nodeHelper()->fromAsString(node), signTestNode));
         mp = _mp;
-        //mp->setDecryptMessage(part.source()->decryptMessage());
-        PartMetaData *messagePart(mp->partMetaData());
-        if (smimeCrypto) {
-            _mp->startVerificationDetached(signaturetext, nullptr, QByteArray());
-        } else {
-            messagePart->auditLogError = GpgME::Error(GPG_ERR_NOT_IMPLEMENTED);
-        }
+        _mp->startVerificationDetached(signaturetext, nullptr, QByteArray());
 
         if (_mp->isSigned()) {
             if (!isSigned) {

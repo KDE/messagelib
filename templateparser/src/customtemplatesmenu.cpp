@@ -158,7 +158,7 @@ void CustomTemplatesMenu::update()
 
         const QString nameActionName = nameAction.replace(QLatin1Char(' '), QLatin1Char('_'));
 
-        QAction *action;
+        QAction *action = nullptr;
         switch (t.type()) {
         case CustomTemplates::TReply:
             action = new QAction(nameAction, d->mOwnerActionCollection);   //krazy:exclude=tipsandthis

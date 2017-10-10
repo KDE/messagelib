@@ -98,7 +98,7 @@ public:
 private:
     KContacts::Addressee mAddressee;
     QString mEmail;
-    Akonadi::Item::Id mId;
+    Akonadi::Item::Id mId = -1;
 };
 }
 

@@ -203,7 +203,11 @@ void ComposerPrivate::composeStep2()
             q->addSubjob(mainJob);
         }
 
-        mainJob->start();
+        if (mainJob) {
+            mainJob->start();
+        } else {
+            qCDebug(MESSAGECOMPOSER_LOG) << "main job is null";
+        }
         return;
     }
 

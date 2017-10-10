@@ -370,7 +370,7 @@ private:
     friend class ::TemplateParserTester;
 
     Mode mMode;
-    qint64 mFolder;          //Used to find a template
+    qint64 mFolder = -1;          //Used to find a template
     uint mIdentity;
     KMime::Message::Ptr mMsg;             // Msg to write to
     KMime::Message::Ptr mOrigMsg;         // Msg to read from

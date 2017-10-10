@@ -363,11 +363,18 @@ void ConfigureThemesDialog::Private::newThemeButtonClicked()
     ThemeListWidgetItem *item = new ThemeListWidgetItem(mThemeList, emptyTheme);
 
     mThemeList->setCurrentItem(item);
-    mEditor->editTheme(item->theme());
+    Core::Theme *theme = item->theme();
+    if (theme) {
+        mEditor->editTheme(theme);
 
-    mDeleteThemeButton->setEnabled(!item->theme()->readOnly());
-    mExportThemeButton->setEnabled(item);
-    mCloneThemeButton->setEnabled(numberOfSelectedItem == 1);
+        mDeleteThemeButton->setEnabled(!theme->readOnly());
+        mExportThemeButton->setEnabled(item);
+        mCloneThemeButton->setEnabled(numberOfSelectedItem == 1);
+    } else {
+        mDeleteThemeButton->setEnabled(false);
+        mExportThemeButton->setEnabled(false);
+        mCloneThemeButton->setEnabled(false);
+    }
 }
 
 void ConfigureThemesDialog::Private::cloneThemeButtonClicked()

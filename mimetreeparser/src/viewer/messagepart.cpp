@@ -823,7 +823,7 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
             }
             nodeHelper->setBodyPartMemento(content(), mementoName, m);
         }
-    } else if (m->isRunning()) {
+    } else if (m && m->isRunning()) {
         partMetaData()->inProgress = true;
         mOtp->mHasPendingAsyncJobs = true;
     } else {
@@ -1188,7 +1188,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             }
             nodeHelper->setBodyPartMemento(&data, "decryptverify", newM);
         }
-    } else if (m->isRunning()) {
+    } else if (m && m->isRunning()) {
         partMetaData()->inProgress = true;
         mOtp->mHasPendingAsyncJobs = true;
         m = nullptr;

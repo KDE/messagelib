@@ -726,7 +726,9 @@ void AttachmentControllerBase::Private::slotAttachmentContentCreated(KJob *job)
     if (!job->error()) {
         const MessageComposer::AttachmentJob *const attachmentJob = dynamic_cast<MessageComposer::AttachmentJob *>(job);
         Q_ASSERT(attachmentJob);
-        Q_EMIT q->showAttachment(attachmentJob->content(), QByteArray());
+        if (attachmentJob) {
+            Q_EMIT q->showAttachment(attachmentJob->content(), QByteArray());
+        }
     } else {
         // TODO: show warning to the user
         qCWarning(MESSAGECOMPOSER_LOG) << "Error creating KMime::Content for attachment:" << job->errorText();

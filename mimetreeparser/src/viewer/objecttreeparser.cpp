@@ -263,32 +263,35 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
         contents.append(node);
     }
     int i = contents.indexOf(node);
-    for (; i < contents.size(); ++i) {
-        node = contents.at(i);
-        if (mNodeHelper->nodeProcessed(node)) {
-            continue;
-        }
+    if (i < 0) {
+        return parsedPart;
+    } else {
+        for (; i < contents.size(); ++i) {
+            node = contents.at(i);
+            if (mNodeHelper->nodeProcessed(node)) {
+                continue;
+            }
 
-        ProcessResult processResult(mNodeHelper);
+            ProcessResult processResult(mNodeHelper);
 
-        QByteArray mimeType("text/plain");
-        if (node->contentType(false) && !node->contentType()->mimeType().isEmpty()) {
-            mimeType = node->contentType()->mimeType();
-        }
+            QByteArray mimeType("text/plain");
+            if (node->contentType(false) && !node->contentType()->mimeType().isEmpty()) {
+                mimeType = node->contentType()->mimeType();
+            }
 
-        const auto mp = processType(node, processResult, mimeType, onlyOneMimePart);
-        Q_ASSERT(mp);
-        parsedPart->appendSubPart(mp);
-        mNodeHelper->setNodeProcessed(node, false);
+            const auto mp = processType(node, processResult, mimeType, onlyOneMimePart);
+            Q_ASSERT(mp);
+            parsedPart->appendSubPart(mp);
+            mNodeHelper->setNodeProcessed(node, false);
 
-        // adjust signed/encrypted flags if inline PGP was found
-        processResult.adjustCryptoStatesOfNode(node);
+            // adjust signed/encrypted flags if inline PGP was found
+            processResult.adjustCryptoStatesOfNode(node);
 
-        if (onlyOneMimePart) {
-            break;
+            if (onlyOneMimePart) {
+                break;
+            }
         }
     }
-
     return parsedPart;
 }
 

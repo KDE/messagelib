@@ -357,6 +357,9 @@ KMMsgEncryptionState NodeHelper::overallEncryptionState(KMime::Content *node) co
         contents.append(node);
     }
     int i = contents.indexOf(const_cast<KMime::Content *>(node));
+    if (i < 0) {
+        return myState;
+    }
     for (; i < contents.size(); ++i) {
         auto next = contents.at(i);
         KMMsgEncryptionState otherState = encryptionState(next);
