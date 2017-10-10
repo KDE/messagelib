@@ -180,7 +180,7 @@ QMap<QString, QString> parseMailtoUrl(const QUrl &url)
     }
     QUrlQuery query(url);
     Q_FOREACH (const auto &queryItem, query.queryItems(QUrl::FullyDecoded)) {
-        values.insert(queryItem.first, queryItem.second);
+        values.insertMulti(queryItem.first, queryItem.second);
     }
 
     QStringList to;
