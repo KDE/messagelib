@@ -39,6 +39,7 @@ private Q_SLOTS:
     void test_formatQuotePrefix_data();
     void test_formatQuotePrefix();
     void test_parseMailToBug366981();
+    void test_parseDuplicateQueryItems();
 };
 
 #endif

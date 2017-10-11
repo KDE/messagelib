@@ -392,6 +392,29 @@ void StringUtilTest::test_parseMailToBug366981()
     QCOMPARE(data.value(QLatin1String("body")), QLatin1String("line1\r\nline2"));
 }
 
+void StringUtilTest::test_parseDuplicateQueryItems()
+{
+    const QString ba(QStringLiteral("mailto:test@test.com?subject=test&body=line1%0D%0Aline2&cc=someone_else@example.com&cc=someone_else2@example.com"));
+    QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
+    QMap<QString, QString> values = StringUtil::parseMailtoUrl(urlDecoded);
+    QCOMPARE(values.size(), 5);
+    for (auto it = values.cbegin(), end = values.cend(); it != end; ++it) {
+        if (it.key() == QLatin1Literal("to")) {
+            QCOMPARE(it.value(), QLatin1String("test@test.com"));
+        } else if (it.key() == QLatin1Literal("subject")) {
+            QCOMPARE(it.value(), QLatin1String("test"));
+        } else if (it.key() == QLatin1Literal("body")) {
+            QCOMPARE(it.value(), QLatin1String("line1\r\nline2"));
+        } else if (it.key() == QLatin1Literal("cc")) {
+            const QString ccVal = it.value();
+            if ((ccVal != QLatin1String("someone_else@example.com")) && (ccVal != QLatin1String("someone_else2@example.com"))) {
+                QVERIFY(false);
+            }
+        }
+    }
+    QCOMPARE(values.values(QStringLiteral("cc")).size(), 2);
+}
+
 void StringUtilTest::test_parseMailToBug832795()
 {
     const QString ba(QStringLiteral(
