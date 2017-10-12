@@ -61,7 +61,7 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
 
     KGuiItem::assign(user3Button, KStandardGuiItem::saveAs());
     user1Button->setText(i18n("&Open With..."));
-    user1Button->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
+    user1Button->setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
     user3Button->setDefault(true);
 
     connect(user3Button, &QPushButton::clicked, this, &AttachmentDialog::saveClicked);

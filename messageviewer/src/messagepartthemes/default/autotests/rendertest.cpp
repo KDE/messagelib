@@ -81,7 +81,7 @@ void RenderTest::testRenderSmartAsync_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
 
     foreach (const QString &file,
-             dir.entryList(QStringList(QLatin1String("*.mbox")),
+             dir.entryList(QStringList(QStringLiteral("*.mbox")),
                            QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
         if (!QFile::exists(dir.path() + QLatin1Char('/') + file
                            + QStringLiteral(".inProgress.html"))) {

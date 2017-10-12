@@ -99,13 +99,13 @@ QString WebEngineScript::findAllAnchorsAndForms()
 QString WebEngineScript::setElementByIdVisible(const QString &elementStr, bool visibility)
 {
     if (visibility) {
-        const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+        const QString source = QStringLiteral("var element = document.getElementById('%1'); "
                                                    "if (element) { "
                                                    "    element.style.removeProperty( 'display' );"
                                                    "}").arg(elementStr);
         return source;
     } else {
-        const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+        const QString source = QStringLiteral("var element = document.getElementById('%1'); "
                                                    "if (element) { "
                                                    "    element.style.display = \"none\";"
                                                    "}").arg(elementStr);
@@ -115,7 +115,7 @@ QString WebEngineScript::setElementByIdVisible(const QString &elementStr, bool v
 
 QString WebEngineScript::searchElementPosition(const QString &elementStr)
 {
-    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+    const QString source = QStringLiteral("var element = document.getElementById('%1'); "
                                                "if (element) { "
                                                "    var geometry = element.getBoundingClientRect(); "
                                                "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
@@ -125,7 +125,7 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
 
 QString WebEngineScript::scrollPercentage(int percent)
 {
-    const QString source = QString::fromLatin1("var current = document.body.scrollTop;"
+    const QString source = QStringLiteral("var current = document.body.scrollTop;"
                                                "var docElement = document.documentElement;"
                                                "var height = docElement.clientHeight;"
                                                "var newPosition = current + height * %1 /100;"
@@ -141,19 +141,19 @@ QString WebEngineScript::scrollUp(int pixel)
 
 QString WebEngineScript::scrollDown(int pixel)
 {
-    const QString source = QString::fromLatin1("window.scrollBy(0, %1);").arg(pixel);
+    const QString source = QStringLiteral("window.scrollBy(0, %1);").arg(pixel);
     return source;
 }
 
 QString WebEngineScript::scrollToPosition(const QPoint &pos)
 {
-    const QString source = QString::fromLatin1("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x(), pos.y());
+    const QString source = QStringLiteral("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x(), pos.y());
     return source;
 }
 
 QString WebEngineScript::removeStyleToElement(const QString &elementStr)
 {
-    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+    const QString source = QStringLiteral("var element = document.getElementById('%1'); "
                                                "if (element) { "
                                                "    element.removeAttribute(\"style\");"
                                                "}").arg(elementStr);
@@ -162,7 +162,7 @@ QString WebEngineScript::removeStyleToElement(const QString &elementStr)
 
 QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style)
 {
-    const QString source = QString::fromLatin1("var element = document.getElementById('%1'); "
+    const QString source = QStringLiteral("var element = document.getElementById('%1'); "
                                                "if (element) { "
                                                "    element.style = '%2';"
                                                "}").arg(elementStr, style);
@@ -171,13 +171,13 @@ QString WebEngineScript::setStyleToElement(const QString &elementStr, const QStr
 
 QString WebEngineScript::scrollToRelativePosition(qreal pos)
 {
-    const QString source = QString::fromLatin1("window.scrollTo(window.scrollX, %1); [window.scrollX, window.scrollY];").arg(pos);
+    const QString source = QStringLiteral("window.scrollTo(window.scrollX, %1); [window.scrollX, window.scrollY];").arg(pos);
     return source;
 }
 
 QString WebEngineScript::isScrolledToBottom()
 {
-    return QString::fromLatin1("(function() { "
+    return QStringLiteral("(function() { "
                                "var docElement = document.documentElement;"
                                "var viewportHeight = docElement.clientHeight;"
                                "var isAtBottom = document.body.scrollTop + viewportHeight >= document.body.scrollHeight;"

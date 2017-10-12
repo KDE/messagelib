@@ -105,7 +105,7 @@ void TemplateParserJobTest::test_replyPlain_data()
     QTest::addColumn<QString>("referenceFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    foreach (const QString &file, dir.entryList(QStringList(QLatin1String("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
+    foreach (const QString &file, dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
         const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".plain.reply");
         if (!QFile::exists(expectedFile)) {
             continue;

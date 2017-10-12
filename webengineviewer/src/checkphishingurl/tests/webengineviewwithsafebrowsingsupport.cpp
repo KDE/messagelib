@@ -82,7 +82,7 @@ void WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished(const QUrl &ur
     }
 
     qDebug() << " checked url: " << url << " result : " << statusStr;
-    mDebug->setPlainText(QStringLiteral("Url: %1 , Status %2").arg(url.toDisplayString()).arg(statusStr));
+    mDebug->setPlainText(QStringLiteral("Url: %1 , Status %2").arg(url.toDisplayString(), statusStr));
     if (status != WebEngineViewer::CheckPhishingUrlUtil::MalWare) {
         pageView->load(url);
     }

@@ -25,7 +25,7 @@
 
 namespace WebEngineViewer {
 class LocalDataBaseFilePrivate;
-class Addition;
+struct Addition;
 class WEBENGINEVIEWER_TESTS_EXPORT LocalDataBaseFile
 {
 public:

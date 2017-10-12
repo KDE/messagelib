@@ -579,12 +579,11 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
     QActionGroup *grp;
     QAction *act;
     QList< QPair< QString, int > > options;
-    QList< QPair< QString, int > >::ConstIterator it;
 
     grp = new QActionGroup(menu);
 
     options = SortOrder::enumerateMessageSortingOptions(d->mAggregation->threading());
-    for (const auto opt : qAsConst(options)) {
+    for (const auto &opt : qAsConst(options)) {
         act = menu->addAction(opt.first);
         act->setCheckable(true);
         grp->addAction(act);
@@ -601,7 +600,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
         menu->addSection(i18n("Message Sort Direction"));
 
         grp = new QActionGroup(menu);
-        for (const auto opt : qAsConst(options)) {
+        for (const auto &opt : qAsConst(options)) {
             act = menu->addAction(opt.first);
             act->setCheckable(true);
             grp->addAction(act);
@@ -619,7 +618,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
         menu->addSection(i18n("Group Sort Order"));
 
         grp = new QActionGroup(menu);
-        for (const auto opt : qAsConst(options)) {
+        for (const auto &opt : qAsConst(options)) {
             act = menu->addAction(opt.first);
             act->setCheckable(true);
             grp->addAction(act);
@@ -638,7 +637,7 @@ void Widget::sortOrderMenuAboutToShow(QMenu *menu)
         menu->addSection(i18n("Group Sort Direction"));
 
         grp = new QActionGroup(menu);
-        for (const auto opt : qAsConst(options)) {
+        for (const auto &opt : qAsConst(options)) {
             act = menu->addAction(opt.first);
             act->setCheckable(true);
             grp->addAction(act);
