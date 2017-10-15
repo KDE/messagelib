@@ -159,14 +159,11 @@ void BodyPartFormatterFactory::loadPlugins()
         QPluginLoader loader(path);
         const auto formatterData = loader.metaData().value(QLatin1String("MetaData")).toObject().value(QLatin1String("formatter")).toArray();
         if (formatterData.isEmpty()) {
-            qCWarning(MIMETREEPARSER_LOG) << "Plugin" << path << "has no meta data.";
             return;
         }
 
         auto plugin = qobject_cast<MimeTreeParser::Interface::BodyPartFormatterPlugin*>(loader.instance());
         if (!plugin) {
-            qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterFactory: plugin" << path
-                                         << "is not valid!";
             return;
         }
 
