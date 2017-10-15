@@ -62,7 +62,10 @@ void MessagePartRendererFactoryPrivate::setup()
 
 void MessagePartRendererFactoryPrivate::loadPlugins()
 {
-    KPluginLoader::forEachPlugin(QStringLiteral("messageviewer/bodypartformatter"), [this](const QString &path) {
+    if (m_pluginSubdir.isEmpty())
+        return;
+
+    KPluginLoader::forEachPlugin(m_pluginSubdir, [this](const QString &path) {
         QPluginLoader loader(path);
         const auto pluginData = loader.metaData().value(QLatin1String("MetaData")).toObject().value(QLatin1String("renderer")).toArray();
         if (pluginData.isEmpty()) {
@@ -128,8 +131,11 @@ MessagePartRendererFactory::MessagePartRendererFactory()
 {
 }
 
-MessagePartRendererFactory::~MessagePartRendererFactory()
+MessagePartRendererFactory::~MessagePartRendererFactory() = default;
+
+void MessagePartRendererFactory::setPluginPath(const QString& subdir)
 {
+    d->m_pluginSubdir = subdir;
 }
 
 MessagePartRendererFactory *MessagePartRendererFactory::instance()

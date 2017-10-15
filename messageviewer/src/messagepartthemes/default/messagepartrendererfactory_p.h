@@ -54,6 +54,7 @@ public:
     void insert(const QByteArray &type, MessagePartRendererBase *formatter, const QString &mimeType = QString(), int priority = 0);
 
     QHash<QByteArray, std::vector<RendererInfo>> m_renderers;
+    QString m_pluginSubdir = QStringLiteral("messageviewer/bodypartformatter");
 };
 }
 

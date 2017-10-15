@@ -49,6 +49,13 @@ public:
     MessagePartRendererFactory();
     ~MessagePartRendererFactory();
 
+    /** Customize where to look for render plugins.
+     *  This is the sub directory appended to the Qt plugin search paths.
+     *  An empty string disables plugin loading.
+     *  This only has any effect before the first call to renderersForPart().
+     */
+    void setPluginPath(const QString &subdir);
+
     static MessagePartRendererFactory *instance();
 
     QVector<MessagePartRendererBase*> renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &mp) const;
