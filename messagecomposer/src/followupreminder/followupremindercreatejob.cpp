@@ -100,7 +100,7 @@ void FollowupReminderCreateJob::start()
         }
     } else {
         qCDebug(MESSAGECOMPOSER_LOG) << "FollowupReminderCreateJob info not valid ";
-        Q_EMIT emitResult();
+        emitResult();
         return;
     }
 }
@@ -119,5 +119,5 @@ void FollowupReminderCreateJob::slotCreateNewTodo(KJob *job)
 void FollowupReminderCreateJob::writeFollowupReminderInfo()
 {
     FollowUpReminder::FollowUpReminderUtil::writeFollowupReminderInfo(FollowUpReminder::FollowUpReminderUtil::defaultConfig(), d->mInfo, true);
-    Q_EMIT emitResult();
+    emitResult();
 }
