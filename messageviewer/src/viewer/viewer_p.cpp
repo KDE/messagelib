@@ -1699,6 +1699,7 @@ void ViewerPrivate::createActions()
     // copy selected text to clipboard
     mCopyAction = ac->addAction(KStandardAction::Copy, QStringLiteral("kmail_copy"), this,
                                 SLOT(slotCopySelectedText()));
+    mCopyAction->setText(i18n("Copy Text"));
     connect(mViewer, &MailWebEngineView::selectionChanged,
             this, &ViewerPrivate::viewerSelectionChanged);
     viewerSelectionChanged();
