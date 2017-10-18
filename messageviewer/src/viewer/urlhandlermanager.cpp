@@ -350,35 +350,53 @@ public:
     bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const override;
     QString statusBarMessage(const QUrl &, ViewerPrivate *) const override;
 
-    void registerHandler(const Interface::BodyPartURLHandler *handler);
+    void registerHandler(const Interface::BodyPartURLHandler *handler, const QString &mimeType);
     void unregisterHandler(const Interface::BodyPartURLHandler *handler);
 
 private:
-    typedef QVector<const Interface::BodyPartURLHandler *> BodyPartHandlerList;
+    QVector<const Interface::BodyPartURLHandler *> handlersForPart(KMime::Content *node) const;
+
+    typedef QHash<QByteArray, QVector<const Interface::BodyPartURLHandler *>> BodyPartHandlerList;
     BodyPartHandlerList mHandlers;
 };
 
 URLHandlerManager::BodyPartURLHandlerManager::~BodyPartURLHandlerManager()
 {
     for_each(mHandlers.begin(), mHandlers.end(),
-             DeleteAndSetToZero<Interface::BodyPartURLHandler>());
+             [](QVector<const Interface::BodyPartURLHandler *> &handlers) {
+                 for_each(handlers.begin(), handlers.end(),
+                          DeleteAndSetToZero<Interface::BodyPartURLHandler>());
+             });
 }
 
 void URLHandlerManager::BodyPartURLHandlerManager::registerHandler(
-    const Interface::BodyPartURLHandler *handler)
+    const Interface::BodyPartURLHandler *handler, const QString &mimeType)
 {
     if (!handler) {
         return;
     }
     unregisterHandler(handler);   // don't produce duplicates
-    mHandlers.push_back(handler);
+    const auto mt = mimeType.toLatin1();
+    auto it = mHandlers.find(mt);
+    if (it == mHandlers.end()) {
+        it = mHandlers.insert(mt, {});
+    }
+    it->push_back(handler);
 }
 
 void URLHandlerManager::BodyPartURLHandlerManager::unregisterHandler(
     const Interface::BodyPartURLHandler *handler)
 {
     // don't delete them, only remove them from the list!
-    mHandlers.erase(remove(mHandlers.begin(), mHandlers.end(), handler), mHandlers.end());
+    auto it = mHandlers.begin();
+    while (it != mHandlers.end()) {
+        it->erase(remove(it->begin(), it->end(), handler), it->end());
+        if (it->isEmpty()) {
+            it = mHandlers.erase(it);
+        } else {
+            ++it;
+        }
+    }
 }
 
 static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, QString *path)
@@ -406,6 +424,19 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
     return w->nodeFromUrl(QUrl(urlParts.at(1)));
 }
 
+QVector<const Interface::BodyPartURLHandler *> URLHandlerManager::BodyPartURLHandlerManager::handlersForPart(KMime::Content *node) const
+{
+    if (auto ct = node->contentType(false)) {
+        const auto mimeType = ct->mimeType();
+        if (!mimeType.isEmpty()) {
+            return mHandlers.value(mimeType);
+        }
+    }
+
+    return {};
+}
+
+
 bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
     QString path;
@@ -416,11 +447,12 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url, 
 
     MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr,
                                           w->message().data(), node, w->nodeHelper());
-    BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
 
-    for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
-        if ((*it)->handleClick(w->viewer(), &part, path)) {
-            return true;
+    for (const auto &handlers : { handlersForPart(node), mHandlers.value({}) }) {
+        for (auto it = handlers.cbegin(), end = handlers.cend(); it != end; ++it) {
+            if ((*it)->handleClick(w->viewer(), &part, path)) {
+                return true;
+            }
         }
     }
 
@@ -437,10 +469,12 @@ bool URLHandlerManager::BodyPartURLHandlerManager::handleContextMenuRequest(cons
 
     MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr,
                                           w->message().data(), node, w->nodeHelper());
-    BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
-    for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
-        if ((*it)->handleContextMenuRequest(&part, path, p)) {
-            return true;
+
+    for (const auto &handlers : { handlersForPart(node), mHandlers.value({}) }) {
+        for (auto it = handlers.cbegin(), end = handlers.cend(); it != end; ++it) {
+            if ((*it)->handleContextMenuRequest(&part, path, p)) {
+                return true;
+            }
         }
     }
     return false;
@@ -456,11 +490,13 @@ QString URLHandlerManager::BodyPartURLHandlerManager::statusBarMessage(const QUr
 
     MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr,
                                           w->message().data(), node, w->nodeHelper());
-    BodyPartHandlerList::const_iterator end(mHandlers.constEnd());
-    for (BodyPartHandlerList::const_iterator it = mHandlers.constBegin(); it != end; ++it) {
-        const QString msg = (*it)->statusBarMessage(&part, path);
-        if (!msg.isEmpty()) {
-            return msg;
+
+    for (const auto &handlers : { handlersForPart(node), mHandlers.value({}) }) {
+        for (auto it = handlers.cbegin(), end = handlers.cend(); it != end; ++it) {
+            const QString msg = (*it)->statusBarMessage(&part, path);
+            if (!msg.isEmpty()) {
+                return msg;
+            }
         }
     }
     return QString();
@@ -517,10 +553,10 @@ void URLHandlerManager::unregisterHandler(const MimeTreeParser::URLHandler *hand
     mHandlers.erase(remove(mHandlers.begin(), mHandlers.end(), handler), mHandlers.end());
 }
 
-void URLHandlerManager::registerHandler(const Interface::BodyPartURLHandler *handler)
+void URLHandlerManager::registerHandler(const Interface::BodyPartURLHandler *handler, const QString &mimeType)
 {
     if (mBodyPartURLHandlerManager) {
-        mBodyPartURLHandlerManager->registerHandler(handler);
+        mBodyPartURLHandlerManager->registerHandler(handler, mimeType);
     }
 }
 

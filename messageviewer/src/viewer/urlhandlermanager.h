@@ -67,7 +67,7 @@ public:
     void registerHandler(const MimeTreeParser::URLHandler *handler);
     void unregisterHandler(const MimeTreeParser::URLHandler *handler);
 
-    void registerHandler(const Interface::BodyPartURLHandler *handler);
+    void registerHandler(const Interface::BodyPartURLHandler *handler, const QString &mimeType);
     void unregisterHandler(const Interface::BodyPartURLHandler *handler);
 
     bool handleClick(const QUrl &url, ViewerPrivate *w = nullptr) const;

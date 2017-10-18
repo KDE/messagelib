@@ -96,7 +96,9 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
 
         const Interface::BodyPartURLHandler *handler = nullptr;
         for (int i = 0; (handler = plugin->urlHandler(i)); ++i) {
-            URLHandlerManager::instance()->registerHandler(handler);
+            const auto metaData = pluginData.at(i).toObject();
+            const auto mimeType = metaData.value(QLatin1String("mimetype")).toString().toLower();
+            URLHandlerManager::instance()->registerHandler(handler, mimeType);
         }
     });
 }
