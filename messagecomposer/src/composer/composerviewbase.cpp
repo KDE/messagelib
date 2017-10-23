@@ -1233,7 +1233,7 @@ void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageCo
             if (!identity.templates().isEmpty()) {   // the user has specified a custom templates collection
                 target = Akonadi::Collection(identity.templates().toLongLong());
             }
-        } else {
+        } else { //Draft
             if (!identity.drafts().isEmpty()) {   // the user has specified a custom drafts collection
                 target = Akonadi::Collection(identity.drafts().toLongLong());
             }
@@ -1245,7 +1245,7 @@ void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageCo
         // preinitialize with the default collections
         if (saveIn == MessageComposer::MessageSender::SaveInTemplates) {
             target = Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Templates);
-        } else {
+        } else { //Draft
             target = Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::Drafts);
         }
         Akonadi::ItemCreateJob *create = new Akonadi::ItemCreateJob(item, target, this);
