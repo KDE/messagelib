@@ -132,22 +132,6 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
         message->setHeader(header);
     }
 
-    if (ident.drafts().isEmpty()) {
-        message->removeHeader("X-KMail-Drafts");
-    } else {
-        KMime::Headers::Generic *header = new KMime::Headers::Generic("X-KMail-Drafts");
-        header->fromUnicodeString(ident.drafts(), "utf-8");
-        message->setHeader(header);
-    }
-
-    if (ident.templates().isEmpty()) {
-        message->removeHeader("X-KMail-Templates");
-    } else {
-        KMime::Headers::Generic *header = new KMime::Headers::Generic("X-KMail-Templates");
-        header->fromUnicodeString(ident.templates(), "utf-8");
-        message->setHeader(header);
-    }
-
     if (ident.disabledFcc()) {
         KMime::Headers::Generic *header = new KMime::Headers::Generic("X-KMail-FccDisabled");
         header->fromUnicodeString(QStringLiteral("true"), "utf-8");
