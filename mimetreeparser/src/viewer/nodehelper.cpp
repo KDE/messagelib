@@ -1038,7 +1038,7 @@ KMime::Message::Ptr NodeHelper::unencryptedMessage(const KMime::Message::Ptr &or
 QVector<KMime::Content *> NodeHelper::attachmentsOfExtraContents() const
 {
     QVector<KMime::Content *> result;
-    for (auto it = mExtraContents.begin(); it != mExtraContents.end(); ++it) {
+    for (auto it = mExtraContents.begin(), end = mExtraContents.end(); it != end; ++it) {
         foreach (auto content, it.value()) {
             if (KMime::isAttachment(content)) {
                 result.push_back(content);

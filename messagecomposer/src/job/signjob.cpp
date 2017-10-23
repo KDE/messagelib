@@ -182,7 +182,7 @@ void SignJob::process()
                          << "=2D";
 
             if (d->content->contentTransferEncoding()->encoding() == KMime::Headers::CE7Bit) {
-                for (int i = 0; i < search.size(); ++i) {
+                for (int i = 0, total = search.size(); i < total; ++i) {
                     const auto pos = body.indexOf(search[i]);
                     if (pos == 0 || (pos > 0 && body.at(pos - 1) == '\n')) {
                         changed = true;
