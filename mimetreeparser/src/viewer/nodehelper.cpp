@@ -418,6 +418,9 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
         contents.append(node);
     }
     int i = contents.indexOf(const_cast<KMime::Content *>(node));
+    if (i < 0) { //Be safe
+        return myState;
+    }
     for (; i < contents.size(); ++i) {
         auto next = contents.at(i);
         KMMsgSignatureState otherState = signatureState(next);
