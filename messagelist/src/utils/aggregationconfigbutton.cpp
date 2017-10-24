@@ -49,8 +49,7 @@ AggregationConfigButton::AggregationConfigButton(QWidget *parent, const Aggregat
     , d(new AggregationConfigButtonPrivate(this))
 {
     d->mAggregationComboBox = aggregationComboBox;
-    connect(this, SIGNAL(pressed()),
-            this, SLOT(slotConfigureAggregations()));
+    connect(this, &AggregationConfigButton::pressed, this, [this]() { d->slotConfigureAggregations(); });
 
     // Keep aggregation combo up-to-date with any changes made in the configure dialog.
     if (d->mAggregationComboBox != nullptr) {
