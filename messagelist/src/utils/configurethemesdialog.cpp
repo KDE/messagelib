@@ -99,7 +99,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowModality(Qt::ApplicationModal);   // FIXME: Sure ?
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);

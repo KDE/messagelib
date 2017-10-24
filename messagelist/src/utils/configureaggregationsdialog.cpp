@@ -104,7 +104,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowModality(Qt::ApplicationModal);   // FIXME: Sure ?
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
