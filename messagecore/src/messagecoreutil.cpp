@@ -54,7 +54,7 @@ void ColorUtil::initializeColors()
     if (isLightTheme()) {
         mQuoteLevel1DefaultTextColor = base.darker(120);
         mQuoteLevel2DefaultTextColor = base.darker(150);
-        mQuoteLevel3DefaultTextColor = base.dark(200);
+        mQuoteLevel3DefaultTextColor = base.darker(200);
     } else {
         mQuoteLevel1DefaultTextColor = base.lighter(200);
         mQuoteLevel2DefaultTextColor = base.lighter(170);

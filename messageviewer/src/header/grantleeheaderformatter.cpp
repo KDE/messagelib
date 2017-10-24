@@ -302,10 +302,10 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     QString linkColor = QStringLiteral("white");
     const QColor activeColor
         = KColorScheme(QPalette::Active, KColorScheme::Selection).background().color();
-    QColor activeColorDark = activeColor.dark(130);
+    QColor activeColorDark = activeColor.darker(130);
     // reverse colors for encapsulated
     if (!style->isTopLevel()) {
-        activeColorDark = activeColor.dark(50);
+        activeColorDark = activeColor.darker(50);
         fontColor = QColor(Qt::black);
         linkColor = QStringLiteral("black");
     }
