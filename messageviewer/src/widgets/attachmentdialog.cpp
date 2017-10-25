@@ -51,7 +51,7 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
     if (offer) {
         QPushButton *user2Button = new QPushButton;
         mButtonBox->addButton(user2Button, QDialogButtonBox::ActionRole);
-        user2Button->setText(i18n("&Open with '%1'", offer->name()));
+        user2Button->setText(i18n("&Open With '%1'", offer->name()));
         user2Button->setIcon(QIcon::fromTheme(offer->icon()));
         connect(user2Button, &QPushButton::clicked, this, &AttachmentDialog::openClicked);
     }
