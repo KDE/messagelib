@@ -17,7 +17,7 @@
   02110-1301, USA.
 */
 
-#include "viewer/bodypartformatterfactory.h"
+#include "bodypartformatterfactory.h"
 #include "interfaces/bodypartformatter.h"
 
 #include <qtest.h>

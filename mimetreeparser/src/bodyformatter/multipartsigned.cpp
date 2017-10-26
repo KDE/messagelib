@@ -19,8 +19,8 @@
 
 #include "multipartsigned.h"
 
-#include "viewer/objecttreeparser.h"
-#include "viewer/messagepart.h"
+#include "objecttreeparser.h"
+#include "messagepart.h"
 
 #include <KMime/Content>
 

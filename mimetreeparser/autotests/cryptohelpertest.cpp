@@ -18,7 +18,7 @@
 */
 #include "cryptohelpertest.h"
 
-#include "viewer/cryptohelper.h"
+#include "cryptohelper.h"
 
 #include <QTest>
 

@@ -18,7 +18,7 @@
 */
 #include "nodehelpertest.h"
 
-#include "viewer/nodehelper.h"
+#include "nodehelper.h"
 
 #include <qtest.h>
 

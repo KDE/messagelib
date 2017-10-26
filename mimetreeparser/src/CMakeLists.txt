@@ -25,18 +25,18 @@ set(libmimetreeparser_main_SRCS
     interfaces/htmlwriter.cpp
     job/qgpgmejobexecutor.cpp
     utils/util.cpp
-    viewer/attachmentstrategy.cpp
-    viewer/bodypartformatter.cpp
-    viewer/bodypartformatterfactory.cpp
-    viewer/cryptohelper.cpp
-    viewer/nodehelper.cpp
-    viewer/objecttreeparser.cpp
-    viewer/messagepart.cpp
-    viewer/partnodebodypart.cpp
-    viewer/memento/cryptobodypartmemento.cpp
-    viewer/memento/decryptverifybodypartmemento.cpp
-    viewer/memento/verifydetachedbodypartmemento.cpp
-    viewer/memento/verifyopaquebodypartmemento.cpp
+    attachmentstrategy.cpp
+    bodypartformatter.cpp
+    bodypartformatterfactory.cpp
+    cryptohelper.cpp
+    nodehelper.cpp
+    objecttreeparser.cpp
+    messagepart.cpp
+    partnodebodypart.cpp
+    memento/cryptobodypartmemento.cpp
+    memento/decryptverifybodypartmemento.cpp
+    memento/verifydetachedbodypartmemento.cpp
+    memento/verifyopaquebodypartmemento.cpp
     )
 
 set(libmimetreeparser_extra_SRCS
@@ -49,7 +49,7 @@ set(mimetreeparser_temporaryfile_SRCS
     temporaryfile/attachmenttemporaryfilesdirs.cpp
     )
 
-ecm_generate_headers(MimeTreeParser_Camelcaseviewer_HEADERS
+ecm_generate_headers(MimeTreeParser_Camelcasemain_HEADERS
     HEADER_NAMES
     AttachmentStrategy
     BodyPartFormatterFactory
@@ -59,9 +59,8 @@ ecm_generate_headers(MimeTreeParser_Camelcaseviewer_HEADERS
     ObjectTreeParser
     PartMetaData
     PartNodeBodyPart
-    REQUIRED_HEADERS MimeTreeParser_viewer_HEADERS
+    REQUIRED_HEADERS MimeTreeParser_main_HEADERS
     PREFIX MimeTreeParser
-    RELATIVE viewer
     )
 
 ecm_generate_headers(MimeTreeParser_Camelcaseutils_HEADERS
@@ -104,7 +103,7 @@ install(FILES
     ${MimeTreeParser_Camelcasehtmlwriter_HEADERS}
     ${MimeTreeParser_Camelcaseutils_HEADERS}
     ${MimeTreeParser_Camelcaseinterfaces_HEADERS}
-    ${MimeTreeParser_Camelcaseviewer_HEADERS}
+    ${MimeTreeParser_Camelcasemain_HEADERS}
     ${MimeTreeParser_Camelcasetemporaryfile_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MimeTreeParser
     COMPONENT Devel
@@ -114,7 +113,7 @@ install(FILES
     ${MimeTreeParser_htmlwriter_HEADERS}
     ${MimeTreeParser_utils_HEADERS}
     ${MimeTreeParser_interfaces_HEADERS}
-    ${MimeTreeParser_viewer_HEADERS}
+    ${MimeTreeParser_main_HEADERS}
     ${MimeTreeParser_temporaryfile_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_debug.h

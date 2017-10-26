@@ -21,7 +21,7 @@
 #define __MIMETREEPARSER_BODYFORAMATTER_UTILS_H__
 
 #include "interfaces/bodypart.h"
-#include "viewer/messagepart.h"
+#include "messagepart.h"
 
 #include <KMime/Content>
 

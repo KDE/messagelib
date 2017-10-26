@@ -24,7 +24,7 @@
 #include <QString>
 
 #include "interfaces/bodypart.h"
-#include "viewer/enums.h"
+#include "enums.h"
 
 namespace MimeTreeParser {
 class CryptoBodyPartMemento : public QObject, public Interface::BodyPartMemento

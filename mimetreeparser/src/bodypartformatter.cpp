@@ -45,12 +45,12 @@
 #include "interfaces/bodypart.h"
 #include "interfaces/htmlwriter.h"
 
-#include "viewer/bodypartformatterfactory.h"
-#include "viewer/bodypartformatterfactory_p.h"
+#include "bodypartformatterfactory.h"
+#include "bodypartformatterfactory_p.h"
 
-#include "viewer/attachmentstrategy.h"
-#include "viewer/objecttreeparser.h"
-#include "viewer/messagepart.h"
+#include "attachmentstrategy.h"
+#include "objecttreeparser.h"
+#include "messagepart.h"
 
 #include <KMime/Content>
 

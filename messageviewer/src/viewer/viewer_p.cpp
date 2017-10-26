@@ -103,13 +103,10 @@
 
 //own includes
 #include "widgets/attachmentdialog.h"
-#include "viewer/attachmentstrategy.h"
 #include "csshelper.h"
 #include "settings/messageviewersettings.h"
 #include "widgets/htmlstatusbar.h"
 #include "viewer/mimeparttree/mimetreemodel.h"
-#include <MimeTreeParser/NodeHelper>
-#include <MimeTreeParser/ObjectTreeParser>
 #include "viewer/urlhandlermanager.h"
 #include "messageviewer/messageviewerutil.h"
 #include "utils/messageviewerutil_p.h"
@@ -124,13 +121,17 @@
 #include "widgets/submittedformwarningwidget.h"
 #include <WebEngineViewer/LocalDataBaseManager>
 
+#include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BodyPart>
 #include <MimeTreeParser/HtmlWriter>
+#include <MimeTreeParser/NodeHelper>
+#include <MimeTreeParser/ObjectTreeParser>
 
 #include <MessageCore/StringUtil>
 
 #include <MessageCore/NodeHelper>
-#include "MessageCore/MessageCoreSettings"
+#include <MessageCore/MessageCoreSettings>
+
 #include <AkonadiCore/agentinstance.h>
 #include <AkonadiCore/agentmanager.h>
 #include <AkonadiCore/CollectionFetchJob>

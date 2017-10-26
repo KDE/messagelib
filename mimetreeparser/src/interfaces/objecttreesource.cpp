@@ -19,7 +19,7 @@
 
 #include "objecttreesource.h"
 #include "bodypartformatter.h"
-#include "viewer/messagepart.h"
+#include "messagepart.h"
 
 using namespace MimeTreeParser;
 

@@ -19,9 +19,9 @@
 
 #include "texthtml.h"
 
-#include "viewer/attachmentstrategy.h"
-#include "viewer/objecttreeparser.h"
-#include "viewer/messagepart.h"
+#include "attachmentstrategy.h"
+#include "objecttreeparser.h"
+#include "messagepart.h"
 
 #include <KMime/Content>
 

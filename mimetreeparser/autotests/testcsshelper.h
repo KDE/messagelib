@@ -32,7 +32,7 @@
 #ifndef __MIMETREEPARSER_TESTCSSHELPER_H__
 #define __MIMETREEPARSER_TESTCSSHELPER_H__
 
-#include "viewer/csshelperbase.h"
+#include "csshelperbase.h"
 
 namespace MimeTreeParser {
 class TestCSSHelper : public CSSHelperBase
