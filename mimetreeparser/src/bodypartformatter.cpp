@@ -33,6 +33,7 @@
 
 #include "bodyformatter/applicationpgpencrypted.h"
 #include "bodyformatter/applicationpkcs7mime.h"
+#include "bodyformatter/encrypted.h"
 #include "bodyformatter/mailman.h"
 #include "bodyformatter/multipartalternative.h"
 #include "bodyformatter/multipartmixed.h"
@@ -166,6 +167,7 @@ void BodyPartFormatterFactoryPrivate::messageviewer_create_builtin_bodypart_form
     insert(QStringLiteral("application/octet-stream"), ApplicationPkcs7MimeBodyPartFormatter::create());
     insert(QStringLiteral("application/octet-stream"), AnyTypeBodyPartFormatter::create());
 
+    insert(QStringLiteral("text/pgp"), EncryptedBodyPartFormatter::create());
     insert(QStringLiteral("text/html"), TextHtmlBodyPartFormatter::create());
     insert(QStringLiteral("text/rtf"), AnyTypeBodyPartFormatter::create());
     insert(QStringLiteral("text/plain"), MailmanBodyPartFormatter::create());

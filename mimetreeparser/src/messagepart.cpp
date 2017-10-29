@@ -242,6 +242,11 @@ bool MessagePart::hasSubParts() const
     return !d->mBlocks.isEmpty();
 }
 
+void MessagePart::clearSubParts()
+{
+    d->mBlocks.clear();
+}
+
 //-----MessagePartList----------------------
 MessagePartList::MessagePartList(ObjectTreeParser *otp)
     : MessagePart(otp, QString())
@@ -1221,7 +1226,16 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         }
 
         mDecryptRecipients.clear();
+        bDecryptionOk = !decryptResult.error();
+
+//         std::stringstream ss;
+//         ss << decryptResult << '\n' << verifyResult;
+//         qCDebug(MIMETREEPARSER_LOG) << ss.str().c_str();
+
         for (const auto &recipient : decryptResult.recipients()) {
+            if (!recipient.status()) {
+                bDecryptionOk = true;
+            }
             GpgME::Key key;
             QGpgME::KeyListJob *job = mCryptoProto->keyListJob(false, false, false);    // local, no sigs
             if (!job) {
@@ -1246,10 +1260,6 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             }
             mDecryptRecipients.push_back(std::make_pair(recipient, key));
         }
-        bDecryptionOk = !decryptResult.error();
-//        std::stringstream ss;
-//        ss << decryptResult << '\n' << verifyResult;
-//        qCDebug(MIMETREEPARSER_LOG) << ss.str().c_str();
 
         if (!bDecryptionOk && partMetaData()->isSigned) {
             //Only a signed part
@@ -1258,7 +1268,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
             mDecryptedData = plainText;
         } else {
             mPassphraseError = decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_NO_SECKEY;
-            partMetaData()->isEncrypted = decryptResult.error().code() != GPG_ERR_NO_DATA;
+            partMetaData()->isEncrypted = bDecryptionOk || decryptResult.error().code() != GPG_ERR_NO_DATA;
             partMetaData()->errorText = QString::fromLocal8Bit(decryptResult.error().asString());
             if (partMetaData()->isEncrypted && decryptResult.numRecipients() > 0) {
                 partMetaData()->keyId = decryptResult.recipient(0).keyID();

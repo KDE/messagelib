@@ -1,0 +1,26 @@
+From unknown@example.org Tue Oct 03 10:05:19 2017
+Return-Path: <unknown@example.org>
+To: konqi@example.org
+Subject: only an encrypted attachment
+X-PHP-Originating-Script: 1008:rcube.php
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="=_XXXXXXXXXXXXXX"
+Date: Tue, 03 Oct 2017 12:13:14 +0000
+From: unknown@example.org
+Message-ID: <XXXXXXXXXXXXXX12345@example.org>
+X-Sender: unknown@example.org
+User-Agent: Roundcube Webmail/1.1.9
+
+ 
+--=_XXXXXXXXXXXXXX
+Content-Transfer-Encoding: 7bit
+Content-Type: text/PGP;
+ name=encrypted.txt.pgp
+Content-Disposition: attachment;
+ filename=encrypted.txt.pgp;
+ size=1402
+
+nothing is encrypted here.
+--=_XXXXXXXXXXXXXX--
+

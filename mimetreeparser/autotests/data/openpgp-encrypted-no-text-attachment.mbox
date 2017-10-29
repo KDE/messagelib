@@ -1,0 +1,32 @@
+From unknown@example.org Tue Oct 03 10:05:19 2017
+Return-Path: <unknown@example.org>
+To: konqi@example.org
+Subject: only an encrypted attachment
+X-PHP-Originating-Script: 1008:rcube.php
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="=_XXXXXXXXXXXXXX"
+Date: Tue, 03 Oct 2017 12:13:14 +0000
+From: unknown@example.org
+Message-ID: <XXXXXXXXXXXXXX12345@example.org>
+X-Sender: unknown@example.org
+User-Agent: Roundcube Webmail/1.1.9
+
+ 
+--=_XXXXXXXXXXXXXX
+Content-Transfer-Encoding: base64
+Content-Type: text/PGP;
+ name=Brotzeiten.txt.pgp
+Content-Disposition: attachment;
+ filename=encrypted.txt.pgp;
+ size=1402
+
+hQEMAwzOQ1qnzNo7AQf/Z3qYebORMk5Z4R+Pmb6gBLA20G3yLRFyd0z+ygcEp+rc1jYE1ZqK1pFz
+Z6WLgPdMcyrKBLrDeDfsQRbKvimR7NaXLSuNkRHFtgqCmaFDyIUMcf9DobAoKvGvmBJhgMW7WPCA
+RUDaiJyqBp29nCQuOIqAiT5fm5LyyUmhRxUb9/CnulcxzW85EiITm0wMos30j1dU++3KDp5R6gcc
+9uUVbdCWdiF4j3ilE8flCWg9tARTRGinu4ENc9eIjcn1hCotFS+4ccWYIwf6ZkVDS4wNfU7dDg+9
+ZwNb+RkXuYXT/tFdir+ewV0Njaj0ZWTUrqZSk2ArmdGo9ou7xl/2mrK6YNJIAUKgVsQlWZ1Kx4PI
+0k0+TsJBgRzVNpIBHpmu0MI4CE03XHUslFhzdrjOG2Ts26U3EJw+jjssu0W4MVzYc20u3BgRnzHn
+/SFA
+--=_XXXXXXXXXXXXXX--
+

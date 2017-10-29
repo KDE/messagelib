@@ -815,6 +815,12 @@ void NodeHelper::attachExtraContent(KMime::Content *topLevelNode, KMime::Content
     mExtraContents[topLevelNode].append(content);
 }
 
+void NodeHelper::cleanExtraContent(KMime::Content *topLevelNode)
+{
+    qCDebug(MIMETREEPARSER_LOG) << "remove all extraContents for" << topLevelNode;
+    mExtraContents[topLevelNode].clear();
+}
+
 QList< KMime::Content * > NodeHelper::extraContents(KMime::Content *topLevelnode) const
 {
     return mExtraContents.value(topLevelnode);

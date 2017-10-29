@@ -87,6 +87,8 @@ public:
     /** Attach an extra node to an existing node */
     void attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content);
 
+    void cleanExtraContent(KMime::Content *topLevelNode);
+
     /** Get the extra nodes attached to the @param topLevelNode and all sub-nodes of @param topLevelNode */
     QList<KMime::Content *> extraContents(KMime::Content *topLevelNode) const;
 

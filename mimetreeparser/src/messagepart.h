@@ -125,6 +125,7 @@ public:
     void appendSubPart(const MessagePart::Ptr &messagePart);
     const QVector<MessagePart::Ptr> &subParts() const;
     bool hasSubParts() const;
+    void clearSubParts();
 
     Interface::ObjectTreeSource *source() const;
     NodeHelper* nodeHelper() const;
@@ -375,6 +376,7 @@ protected:
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> mDecryptRecipients;
 
     friend class DefaultRendererPrivate;
+    friend class EncryptedBodyPartFormatter;
 };
 
 class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
