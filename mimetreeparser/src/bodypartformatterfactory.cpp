@@ -38,10 +38,8 @@
 
 #include <KPluginLoader>
 
-#include <QJsonArray>
-#include <QJsonObject>
 #include <QMimeDatabase>
-#include <QMimeType>
+#include <QJsonArray>
 
 #include <assert.h>
 

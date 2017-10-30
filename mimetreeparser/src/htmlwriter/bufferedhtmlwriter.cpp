@@ -19,7 +19,6 @@
 
 #include "bufferedhtmlwriter.h"
 
-#include <QTextStream>
 
 using namespace MimeTreeParser;
 

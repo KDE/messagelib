@@ -36,8 +36,6 @@
 
 #include "mimetreeparser_export.h"
 
-#include <QByteArray>
-#include <QString>
 
 namespace KMime {
 class Content;

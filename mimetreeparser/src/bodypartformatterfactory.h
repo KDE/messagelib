@@ -36,7 +36,6 @@
 
 #include "mimetreeparser_export.h"
 
-#include <QByteArray>
 #include <QVector>
 
 namespace MimeTreeParser {

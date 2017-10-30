@@ -32,7 +32,6 @@
 #include "filehtmlwriter.h"
 #include "mimetreeparser_debug.h"
 
-#include <QTextStream>
 
 using namespace MimeTreeParser;
 

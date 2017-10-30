@@ -36,7 +36,6 @@
 
 #include "mimetreeparser_export.h"
 
-#include <QObject>
 #include <QSharedPointer>
 
 #include "mimetreeparser/objecttreeparser.h"

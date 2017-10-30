@@ -57,7 +57,6 @@
 // Qt includes
 #include <QByteArray>
 #include <QTextCodec>
-#include <QUrl>
 
 using namespace MimeTreeParser;
 
