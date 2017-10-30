@@ -989,10 +989,10 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     mNodeHelper->removeTempFiles();
     mNodeHelper->setNodeUnprocessed(mMessage.data(), true);
     MailViewerSource otpSource(this);
-    MimeTreeParser::ObjectTreeParser otp(&otpSource, mNodeHelper,
-                                         mMessage.data() != content /* show only single node */);
+    MimeTreeParser::ObjectTreeParser otp(&otpSource, mNodeHelper);
+                                         //TODO: needs to end up in renderer: mMessage.data() != content /* show only single node */);
     otp.setAllowAsync(!mPrinting);
-    otp.parseObjectTree(content);
+    otp.parseObjectTree(content, mMessage.data() != content /* parse/show only single node */);
 
     // TODO: Setting the signature state to nodehelper is not enough, it should actually
     // be added to the store, so that the message list correctly displays the signature state

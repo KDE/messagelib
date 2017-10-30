@@ -181,11 +181,6 @@ bool MessagePart::isHtml() const
     return false;
 }
 
-bool MessagePart::isHidden() const
-{
-    return false;
-}
-
 Interface::ObjectTreeSource *MessagePart::source() const
 {
     Q_ASSERT(mOtp);
@@ -278,7 +273,6 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
     : MessagePartList(otp)
     , mDrawFrame(drawFrame)
     , mDecryptMessage(decryptMessage)
-    , mIsHidden(false)
 {
     if (!node) {
         qCWarning(MIMETREEPARSER_LOG) << "not a valid node";
@@ -286,7 +280,6 @@ TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bo
     }
 
     setContent(node);
-    mIsHidden = mOtp->nodeHelper()->isNodeDisplayedHidden(node);
 
     parseContent();
 }
@@ -385,11 +378,6 @@ KMMsgEncryptionState TextMessagePart::encryptionState() const
 KMMsgSignatureState TextMessagePart::signatureState() const
 {
     return mSignatureState;
-}
-
-bool TextMessagePart::isHidden() const
-{
-    return mIsHidden;
 }
 
 bool TextMessagePart::showLink() const

@@ -270,9 +270,9 @@ class MIMETREEPARSER_EXPORT ObjectTreeParser
     ObjectTreeParser(const ObjectTreeParser &other);
 
 public:
-    explicit ObjectTreeParser(Interface::ObjectTreeSource *source, NodeHelper *nodeHelper = nullptr, bool showOneMimePart = false);
+    explicit ObjectTreeParser(Interface::ObjectTreeSource *source, NodeHelper *nodeHelper = nullptr);
 
-    explicit ObjectTreeParser(const ObjectTreeParser *topLevelParser, bool showOneMimePart = false);
+    explicit ObjectTreeParser(const ObjectTreeParser *topLevelParser);
     virtual ~ObjectTreeParser();
 
     void setAllowAsync(bool allow);
@@ -304,16 +304,13 @@ public:
     QByteArray plainTextContentCharset() const;
     QByteArray htmlContentCharset() const;
 
-    bool showOnlyOneMimePart() const;
-    void setShowOnlyOneMimePart(bool show);
-
     HtmlWriter *htmlWriter() const;
 
     NodeHelper *nodeHelper() const;
 
     /** Parse beginning at a given node and recursively parsing
       the children of that node and it's next sibling. */
-    void parseObjectTree(KMime::Content *node);
+    void parseObjectTree(KMime::Content *node, bool parseOnlySingleNode=false);
     MessagePartPtr parsedPart() const;
 
 private:

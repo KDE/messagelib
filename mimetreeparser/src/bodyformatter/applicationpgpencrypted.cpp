@@ -72,7 +72,7 @@ MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(Interface::Bo
         part.nodeHelper()->setNodeProcessed(data, false);  // Set the data node to done to prevent it from being processed
     } else if (KMime::Content *newNode = part.nodeHelper()->decryptedNodeForContent(data)) {
         // if we already have a decrypted node for this encrypted node, don't do the decryption again
-        return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, part.objectTreeParser()->showOnlyOneMimePart()));
+        return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, false));
     } else {
         mp->startDecryption(data);
         if (!messagePart->inProgress) {

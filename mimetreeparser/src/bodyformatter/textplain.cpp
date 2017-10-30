@@ -47,7 +47,6 @@ MessagePart::Ptr TextPlainBodyPartFormatter::process(Interface::BodyPart &part) 
     QString label = NodeHelper::fileName(node);
 
     const bool bDrawFrame = !isFirstTextPart
-                            && !part.objectTreeParser()->showOnlyOneMimePart()
                             && !label.isEmpty();
 
     TextMessagePart::Ptr mp;

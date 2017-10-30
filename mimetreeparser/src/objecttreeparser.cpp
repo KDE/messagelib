@@ -60,24 +60,22 @@
 
 using namespace MimeTreeParser;
 
-ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser, bool showOnlyOneMimePart)
+ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser)
     : mSource(topLevelParser->mSource)
     , mNodeHelper(topLevelParser->mNodeHelper)
     , mHtmlWriter(topLevelParser->mHtmlWriter)
     , mTopLevelContent(topLevelParser->mTopLevelContent)
-    , mShowOnlyOneMimePart(showOnlyOneMimePart)
     , mHasPendingAsyncJobs(false)
     , mAllowAsync(topLevelParser->mAllowAsync)
 {
     init();
 }
 
-ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTreeParser::NodeHelper *nodeHelper, bool showOnlyOneMimePart)
+ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTreeParser::NodeHelper *nodeHelper)
     : mSource(source)
     , mNodeHelper(nodeHelper)
     , mHtmlWriter(nullptr)
     , mTopLevelContent(nullptr)
-    , mShowOnlyOneMimePart(showOnlyOneMimePart)
     , mHasPendingAsyncJobs(false)
     , mAllowAsync(false)
 {
@@ -102,7 +100,6 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser &other)
     ,                                    //TODO(Andras) hm, review what happens if mDeleteNodeHelper was true in the source
     mHtmlWriter(other.mHtmlWriter)
     , mTopLevelContent(other.mTopLevelContent)
-    , mShowOnlyOneMimePart(other.showOnlyOneMimePart())
     , mHasPendingAsyncJobs(other.hasPendingAsyncJobs())
     , mAllowAsync(other.allowAsync())
     , mDeleteNodeHelper(false)
@@ -157,10 +154,10 @@ void ObjectTreeParser::copyContentFrom(const ObjectTreeParser *other)
 
 //-----------------------------------------------------------------------------
 
-void ObjectTreeParser::parseObjectTree(KMime::Content *node)
+void ObjectTreeParser::parseObjectTree(KMime::Content *node, bool parseOnlySingleNode)
 {
     mTopLevelContent = node;
-    mParsedPart = parseObjectTreeInternal(node, showOnlyOneMimePart());
+    mParsedPart = parseObjectTreeInternal(node, parseOnlySingleNode);
 
     if (mParsedPart) {
         mParsedPart->fix();
@@ -176,7 +173,7 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node)
         }
 
         if (htmlWriter()) {
-            mSource->render(mParsedPart, htmlWriter());
+            mSource->render(mParsedPart, htmlWriter(), parseOnlySingleNode);
         }
     }
 }
@@ -344,16 +341,6 @@ QByteArray ObjectTreeParser::plainTextContentCharset() const
 QByteArray ObjectTreeParser::htmlContentCharset() const
 {
     return mHtmlContentCharset;
-}
-
-bool ObjectTreeParser::showOnlyOneMimePart() const
-{
-    return mShowOnlyOneMimePart;
-}
-
-void ObjectTreeParser::setShowOnlyOneMimePart(bool show)
-{
-    mShowOnlyOneMimePart = show;
 }
 
 HtmlWriter *ObjectTreeParser::htmlWriter() const

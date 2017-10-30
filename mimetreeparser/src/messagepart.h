@@ -68,7 +68,6 @@ class MIMETREEPARSER_EXPORT MessagePart : public QObject
     Q_PROPERTY(bool isAttachment READ isAttachment)
     Q_PROPERTY(bool root READ isRoot)
     Q_PROPERTY(bool isHtml READ isHtml)
-    Q_PROPERTY(bool isHidden READ isHidden)
     Q_PROPERTY(QString attachmentIndex READ attachmentIndex CONSTANT)
     Q_PROPERTY(QString link READ attachmentLink CONSTANT)
 public:
@@ -112,7 +111,6 @@ public:
     bool isRoot() const;
 
     virtual bool isHtml() const;
-    virtual bool isHidden() const;
 
     PartMetaData *partMetaData() const;
 
@@ -195,8 +193,6 @@ public:
 
     bool decryptMessage() const;
 
-    bool isHidden() const override;
-
     bool showLink() const;
     bool showTextFrame() const;
     void setShowTextFrame(bool showFrame);
@@ -215,7 +211,6 @@ private:
     KMMsgEncryptionState mEncryptionState;
     bool mDrawFrame;
     bool mDecryptMessage;
-    bool mIsHidden;
 
     friend class ObjectTreeParser;
 };
@@ -228,13 +223,10 @@ public:
     AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage);
     virtual ~AttachmentMessagePart();
 
-    //IconType asIcon() const;
     bool neverDisplayInline() const;
     void setNeverDisplayInline(bool displayInline);
     bool isImage() const;
     void setIsImage(bool image);
-
-    //bool isHidden() const override;
 
 private:
     bool mIsImage;
