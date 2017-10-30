@@ -55,8 +55,6 @@ public:
     explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content, NodeHelper *nodeHelper);
 
     Interface::BodyPartMemento *memento() const override;
-    BodyPart::Display defaultDisplay() const override;
-    void setDefaultDisplay(BodyPart::Display);
     KMime::Content *content() const override
     {
         return mContent;
@@ -86,7 +84,6 @@ public:
 private:
     KMime::Content *mTopLevelContent = nullptr;
     KMime::Content *mContent = nullptr;
-    BodyPart::Display mDefaultDisplay;
     NodeHelper *mNodeHelper = nullptr;
     ObjectTreeParser *mObjectTreeParser = nullptr;
     ProcessResult *mProcessResult = nullptr;

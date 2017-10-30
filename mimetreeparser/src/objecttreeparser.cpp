@@ -198,10 +198,6 @@ MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult
     Q_ASSERT(!formatters.empty());
     for (auto formatter : formatters) {
         PartNodeBodyPart part(this, &processResult, mTopLevelContent, node, mNodeHelper);
-        // Set the default display strategy for this body part relying on the
-        // identity of Interface::BodyPart::Display and AttachmentStrategy::Display
-        part.setDefaultDisplay((Interface::BodyPart::Display)attachmentStrategy()->defaultDisplay(node));
-
         mNodeHelper->setNodeDisplayedEmbedded(node, true);
 
         const MessagePart::Ptr result = formatter->process(part);

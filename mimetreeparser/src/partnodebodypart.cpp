@@ -43,7 +43,6 @@ PartNodeBodyPart::PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result,
     : Interface::BodyPart()
     , mTopLevelContent(topLevelContent)
     , mContent(content)
-    , mDefaultDisplay(Interface::BodyPart::None)
     , mNodeHelper(nodeHelper)
     , mObjectTreeParser(otp)
     , mProcessResult(result)
@@ -58,15 +57,7 @@ Interface::BodyPartMemento *PartNodeBodyPart::memento() const
     return mNodeHelper->bodyPartMemento(mContent, "__plugin__");
 }
 
-Interface::BodyPart::Display PartNodeBodyPart::defaultDisplay() const
-{
-    return mDefaultDisplay;
-}
 
-void PartNodeBodyPart::setDefaultDisplay(Interface::BodyPart::Display d)
-{
-    mDefaultDisplay = d;
-}
 
 Interface::ObjectTreeSource *PartNodeBodyPart::source() const
 {
