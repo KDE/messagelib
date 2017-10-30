@@ -270,9 +270,9 @@ class MIMETREEPARSER_EXPORT ObjectTreeParser
     ObjectTreeParser(const ObjectTreeParser &other);
 
 public:
-    explicit ObjectTreeParser(Interface::ObjectTreeSource *source, NodeHelper *nodeHelper = nullptr, bool showOneMimePart = false, const AttachmentStrategy *attachmentStrategy = nullptr);
+    explicit ObjectTreeParser(Interface::ObjectTreeSource *source, NodeHelper *nodeHelper = nullptr, bool showOneMimePart = false);
 
-    explicit ObjectTreeParser(const ObjectTreeParser *topLevelParser, bool showOneMimePart = false, const AttachmentStrategy *attachmentStrategy = nullptr);
+    explicit ObjectTreeParser(const ObjectTreeParser *topLevelParser, bool showOneMimePart = false);
     virtual ~ObjectTreeParser();
 
     void setAllowAsync(bool allow);
@@ -306,8 +306,6 @@ public:
 
     bool showOnlyOneMimePart() const;
     void setShowOnlyOneMimePart(bool show);
-
-    const AttachmentStrategy *attachmentStrategy() const;
 
     HtmlWriter *htmlWriter() const;
 

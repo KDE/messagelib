@@ -60,7 +60,7 @@
 
 using namespace MimeTreeParser;
 
-ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser, bool showOnlyOneMimePart, const AttachmentStrategy *strategy)
+ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser, bool showOnlyOneMimePart)
     : mSource(topLevelParser->mSource)
     , mNodeHelper(topLevelParser->mNodeHelper)
     , mHtmlWriter(topLevelParser->mHtmlWriter)
@@ -68,12 +68,11 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser, bool 
     , mShowOnlyOneMimePart(showOnlyOneMimePart)
     , mHasPendingAsyncJobs(false)
     , mAllowAsync(topLevelParser->mAllowAsync)
-    , mAttachmentStrategy(strategy)
 {
     init();
 }
 
-ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTreeParser::NodeHelper *nodeHelper, bool showOnlyOneMimePart, const AttachmentStrategy *strategy)
+ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTreeParser::NodeHelper *nodeHelper, bool showOnlyOneMimePart)
     : mSource(source)
     , mNodeHelper(nodeHelper)
     , mHtmlWriter(nullptr)
@@ -81,7 +80,6 @@ ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTree
     , mShowOnlyOneMimePart(showOnlyOneMimePart)
     , mHasPendingAsyncJobs(false)
     , mAllowAsync(false)
-    , mAttachmentStrategy(strategy)
 {
     init();
 }
@@ -89,9 +87,6 @@ ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTree
 void ObjectTreeParser::init()
 {
     Q_ASSERT(mSource);
-    if (!attachmentStrategy()) {
-        mAttachmentStrategy = mSource->attachmentStrategy();
-    }
 
     if (!mNodeHelper) {
         mNodeHelper = new NodeHelper();
@@ -110,7 +105,6 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser &other)
     , mShowOnlyOneMimePart(other.showOnlyOneMimePart())
     , mHasPendingAsyncJobs(other.hasPendingAsyncJobs())
     , mAllowAsync(other.allowAsync())
-    , mAttachmentStrategy(other.attachmentStrategy())
     , mDeleteNodeHelper(false)
 {
 }
@@ -360,11 +354,6 @@ bool ObjectTreeParser::showOnlyOneMimePart() const
 void ObjectTreeParser::setShowOnlyOneMimePart(bool show)
 {
     mShowOnlyOneMimePart = show;
-}
-
-const AttachmentStrategy *ObjectTreeParser::attachmentStrategy() const
-{
-    return mAttachmentStrategy;
 }
 
 HtmlWriter *ObjectTreeParser::htmlWriter() const
