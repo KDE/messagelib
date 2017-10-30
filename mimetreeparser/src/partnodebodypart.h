@@ -55,31 +55,12 @@ public:
     explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content, NodeHelper *nodeHelper);
 
     Interface::BodyPartMemento *memento() const override;
-    KMime::Content *content() const override
-    {
-        return mContent;
-    }
+    KMime::Content *content() const override;
+    KMime::Content *topLevelContent() const override;
+    ProcessResult *processResult() const override;
 
-    KMime::Content *topLevelContent() const override
-    {
-        return mTopLevelContent;
-    }
-
-    NodeHelper *nodeHelper() const override
-    {
-        return mNodeHelper;
-    }
-
-    ObjectTreeParser *objectTreeParser() const override
-    {
-        return mObjectTreeParser;
-    }
-
-    ProcessResult *processResult() const override
-    {
-        return mProcessResult;
-    }
-
+    NodeHelper *nodeHelper() const override;
+    ObjectTreeParser *objectTreeParser() const override;
     Interface::ObjectTreeSource *source() const override;
 private:
     KMime::Content *mTopLevelContent = nullptr;

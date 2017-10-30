@@ -57,9 +57,32 @@ Interface::BodyPartMemento *PartNodeBodyPart::memento() const
     return mNodeHelper->bodyPartMemento(mContent, "__plugin__");
 }
 
-
-
 Interface::ObjectTreeSource *PartNodeBodyPart::source() const
 {
     return mObjectTreeParser->mSource;
+}
+
+KMime::Content *PartNodeBodyPart::content() const
+{
+    return mContent;
+}
+
+KMime::Content *PartNodeBodyPart::topLevelContent() const
+{
+    return mTopLevelContent;
+}
+
+NodeHelper *PartNodeBodyPart::nodeHelper() const
+{
+    return mNodeHelper;
+}
+
+ObjectTreeParser *PartNodeBodyPart::objectTreeParser() const
+{
+    return mObjectTreeParser;
+}
+
+ProcessResult *PartNodeBodyPart::processResult() const
+{
+    return mProcessResult;
 }
