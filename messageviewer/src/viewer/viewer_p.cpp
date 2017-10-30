@@ -106,6 +106,7 @@
 #include "csshelper.h"
 #include "settings/messageviewersettings.h"
 #include "widgets/htmlstatusbar.h"
+#include "viewer/attachmentstrategy.h"
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/urlhandlermanager.h"
 #include "messageviewer/messageviewerutil.h"
@@ -121,7 +122,6 @@
 #include "widgets/submittedformwarningwidget.h"
 #include <WebEngineViewer/LocalDataBaseManager>
 
-#include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BodyPart>
 #include <MimeTreeParser/HtmlWriter>
 #include <MimeTreeParser/NodeHelper>
@@ -1116,7 +1116,7 @@ void ViewerPrivate::readConfig()
         mHeaderStyleMenuManager->readConfig();
     }
 
-    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::create(MessageViewer::
+    setAttachmentStrategy(AttachmentStrategy::create(MessageViewer::
                                                                      MessageViewerSettings::self()->
                                                                      attachmentStrategy()));
     KToggleAction *raction = actionForAttachmentStrategy(attachmentStrategy());
@@ -1169,17 +1169,17 @@ void ViewerPrivate::writeConfig(bool sync)
     }
 }
 
-const MimeTreeParser::AttachmentStrategy *ViewerPrivate::attachmentStrategy() const
+const AttachmentStrategy *ViewerPrivate::attachmentStrategy() const
 {
     return mAttachmentStrategy;
 }
 
-void ViewerPrivate::setAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *strategy)
+void ViewerPrivate::setAttachmentStrategy(const AttachmentStrategy *strategy)
 {
     if (mAttachmentStrategy == strategy) {
         return;
     }
-    mAttachmentStrategy = strategy ? strategy : MimeTreeParser::AttachmentStrategy::smart();
+    mAttachmentStrategy = strategy ? strategy : AttachmentStrategy::smart();
     update(MimeTreeParser::Force);
 }
 
@@ -1823,21 +1823,21 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
 }
 
 KToggleAction *ViewerPrivate::actionForAttachmentStrategy(
-    const MimeTreeParser::AttachmentStrategy *as)
+    const AttachmentStrategy *as)
 {
     if (!mActionCollection) {
         return nullptr;
     }
     QString actionName;
-    if (as == MimeTreeParser::AttachmentStrategy::iconic()) {
+    if (as == AttachmentStrategy::iconic()) {
         actionName = QStringLiteral("view_attachments_as_icons");
-    } else if (as == MimeTreeParser::AttachmentStrategy::smart()) {
+    } else if (as == AttachmentStrategy::smart()) {
         actionName = QStringLiteral("view_attachments_smart");
-    } else if (as == MimeTreeParser::AttachmentStrategy::inlined()) {
+    } else if (as == AttachmentStrategy::inlined()) {
         actionName = QStringLiteral("view_attachments_inline");
-    } else if (as == MimeTreeParser::AttachmentStrategy::hidden()) {
+    } else if (as == AttachmentStrategy::hidden()) {
         actionName = QStringLiteral("view_attachments_hide");
-    } else if (as == MimeTreeParser::AttachmentStrategy::headerOnly()) {
+    } else if (as == AttachmentStrategy::headerOnly()) {
         actionName = QStringLiteral("view_attachments_headeronly");
     }
 
@@ -2284,27 +2284,27 @@ void ViewerPrivate::slotMimePartSelected(const QModelIndex &index)
 
 void ViewerPrivate::slotIconicAttachments()
 {
-    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::iconic());
+    setAttachmentStrategy(AttachmentStrategy::iconic());
 }
 
 void ViewerPrivate::slotSmartAttachments()
 {
-    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::smart());
+    setAttachmentStrategy(AttachmentStrategy::smart());
 }
 
 void ViewerPrivate::slotInlineAttachments()
 {
-    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::inlined());
+    setAttachmentStrategy(AttachmentStrategy::inlined());
 }
 
 void ViewerPrivate::slotHideAttachments()
 {
-    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::hidden());
+    setAttachmentStrategy(AttachmentStrategy::hidden());
 }
 
 void ViewerPrivate::slotHeaderOnlyAttachments()
 {
-    setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::headerOnly());
+    setAttachmentStrategy(AttachmentStrategy::headerOnly());
 }
 
 void ViewerPrivate::attachmentView(KMime::Content *atmNode)

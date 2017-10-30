@@ -36,7 +36,6 @@
 
 #include "objecttreeparser.h"
 
-#include "attachmentstrategy.h"
 #include "bodypartformatterfactory.h"
 #include "nodehelper.h"
 #include "messagepart.h"

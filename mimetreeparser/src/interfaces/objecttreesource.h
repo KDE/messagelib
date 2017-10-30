@@ -30,7 +30,6 @@ class QTextCodec;
 
 namespace MimeTreeParser {
 class HtmlWriter;
-class AttachmentStrategy;
 class BodyPartFormatterFactory;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
@@ -73,9 +72,6 @@ public:
     virtual const QTextCodec *overrideCodec() = 0;
 
     virtual QString createMessageHeader(KMime::Message *message) = 0;
-
-    /** Return the wanted attachment startegy */
-    virtual const AttachmentStrategy *attachmentStrategy() = 0;
 
     /** Return the html write object */
     virtual HtmlWriter *htmlWriter() = 0;

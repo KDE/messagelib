@@ -26,7 +26,6 @@ set(libmimetreeparser_main_SRCS
     interfaces/htmlwriter.cpp
     job/qgpgmejobexecutor.cpp
     utils/util.cpp
-    attachmentstrategy.cpp
     bodypartformatter.cpp
     bodypartformatterfactory.cpp
     cryptohelper.cpp
@@ -52,7 +51,6 @@ set(mimetreeparser_temporaryfile_SRCS
 
 ecm_generate_headers(MimeTreeParser_Camelcasemain_HEADERS
     HEADER_NAMES
-    AttachmentStrategy
     BodyPartFormatterFactory
     Enums
     MessagePart

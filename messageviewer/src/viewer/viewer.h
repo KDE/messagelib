@@ -36,10 +36,6 @@ class Item;
 class ItemFetchJob;
 }
 
-namespace MimeTreeParser {
-class AttachmentStrategy;
-}
-
 class KActionCollection;
 class QAction;
 class KToggleAction;
@@ -57,6 +53,7 @@ class WebHitTestResult;
 namespace MessageViewer {
 class WebHitTestResult;
 
+class AttachmentStrategy;
 class HeaderStylePlugin;
 class CSSHelper;
 class ViewerPrivate;
@@ -247,8 +244,8 @@ public:
     * Initiates a delete, by sending a signal to delete the message item */
     void deleteMessage();
 
-    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() const;
-    void setAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *strategy);
+    const AttachmentStrategy *attachmentStrategy() const;
+    void setAttachmentStrategy(const AttachmentStrategy *strategy);
 
     QString overrideEncoding() const;
     void setOverrideEncoding(const QString &encoding);

@@ -363,13 +363,13 @@ void Viewer::slotFind()
     d->slotFind();
 }
 
-const MimeTreeParser::AttachmentStrategy *Viewer::attachmentStrategy() const
+const AttachmentStrategy *Viewer::attachmentStrategy() const
 {
     Q_D(const Viewer);
     return d->attachmentStrategy();
 }
 
-void Viewer::setAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *strategy)
+void Viewer::setAttachmentStrategy(const AttachmentStrategy *strategy)
 {
     Q_D(Viewer);
     d->setAttachmentStrategy(strategy);

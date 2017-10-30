@@ -22,7 +22,6 @@
 #define MESSAGECORE_TESTS_UTIL_H
 
 #include <gpgme++/key.h>
-#include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BodyPartFormatter>
 #include <MimeTreeParser/BodyPartFormatterFactory>
 #include <MimeTreeParser/MessagePart>
@@ -64,16 +63,6 @@ public:
     void setHtmlLoadExternal(bool loadExternal)
     {
         mHtmlLoadExternal = loadExternal;
-    }
-
-    void setAttachmentStrategy(QString strategy)
-    {
-        mAttachmentStrategy = strategy;
-    }
-
-    const AttachmentStrategy *attachmentStrategy() override
-    {
-        return AttachmentStrategy::create(mAttachmentStrategy);
     }
 
     bool autoImportKeys() const override

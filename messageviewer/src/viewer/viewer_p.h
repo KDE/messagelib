@@ -66,7 +66,6 @@ class ShareServiceUrlManager;
 }
 
 namespace MimeTreeParser {
-class AttachmentStrategy;
 class HtmlWriter;
 class ObjectTreeParser;
 }
@@ -78,6 +77,7 @@ class ZoomActionMenu;
 class LocalDataBaseManager;
 }
 namespace MessageViewer {
+class AttachmentStrategy;
 class HeaderStylePlugin;
 class CSSHelper;
 class MailWebEngineView;
@@ -289,8 +289,8 @@ public:
     void writeConfig(bool withSync = true);
 
     /** Get/set the message attachment strategy. */
-    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() const;
-    void setAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *strategy);
+    const AttachmentStrategy *attachmentStrategy() const;
+    void setAttachmentStrategy(const AttachmentStrategy *strategy);
 
     /** Get selected override character encoding.
       @return The encoding selected by the user or an empty string if auto-detection
@@ -342,7 +342,7 @@ public:
 
     void showContextMenu(KMime::Content *content, const QPoint &point);
 
-    KToggleAction *actionForAttachmentStrategy(const MimeTreeParser::AttachmentStrategy *);
+    KToggleAction *actionForAttachmentStrategy(const AttachmentStrategy *);
     /** Read override codec from configuration */
     void readGlobalOverrideCodec();
 
@@ -607,7 +607,7 @@ public:
     MailWebEngineView *mViewer = nullptr;
     WebEngineViewer::FindBarWebEngineView *mFindBar = nullptr;
 
-    const MimeTreeParser::AttachmentStrategy *mAttachmentStrategy = nullptr;
+    const AttachmentStrategy *mAttachmentStrategy = nullptr;
     QTimer mUpdateReaderWinTimer;
     QTimer mResizeTimer;
     QString mOverrideEncoding;

@@ -31,18 +31,18 @@
     your version.
 */
 
-#ifndef __MIMETREEPARSER_ATTACHMENTSTRATEGY_H__
-#define __MIMETREEPARSER_ATTACHMENTSTRATEGY_H__
+#ifndef __MESSAGEVIEWER_ATTACHMENTSTRATEGY_H__
+#define __MESSAGEVIEWER_ATTACHMENTSTRATEGY_H__
 
-#include "mimetreeparser_export.h"
+#include "messageviewer_export.h"
 
 class QString;
 namespace KMime {
 class Content;
 }
 
-namespace MimeTreeParser {
-class MIMETREEPARSER_EXPORT AttachmentStrategy
+namespace MessageViewer {
+class MESSAGEVIEWER_EXPORT AttachmentStrategy
 {
 protected:
     AttachmentStrategy();

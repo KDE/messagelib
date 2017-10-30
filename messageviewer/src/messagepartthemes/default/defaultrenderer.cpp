@@ -30,10 +30,10 @@
 
 #include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
+#include "viewer/attachmentstrategy.h"
 #include "viewer/csshelperbase.h"
 #include "messagepartrenderermanager.h"
 
-#include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BufferedHtmlWriter>
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
@@ -309,13 +309,10 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
     return s;
 }
 
-DefaultRendererPrivate::DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory, bool showOnlyOneMimePart)
-    : mMsgPart(msgPart)
-    , mCSSHelper(cssHelper)
+DefaultRendererPrivate::DefaultRendererPrivate(CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory)
+    : mCSSHelper(cssHelper)
     , mRendererFactory(rendererFactory)
-    , mShowOnlyOneMimePart(showOnlyOneMimePart)
 {
-    renderFactory(mMsgPart, writer);
 }
 
 DefaultRendererPrivate::~DefaultRendererPrivate()
@@ -921,7 +918,7 @@ bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr
         return false;
     }
 
-    const AttachmentStrategy *const as = msgPart->source()->attachmentStrategy();
+    const AttachmentStrategy *const as = mAttachmentStrategy;
     const bool defaultHidden(as && as->defaultDisplay(content) == AttachmentStrategy::None);
     auto preferredMode = source()->preferredMode();
     bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
@@ -968,7 +965,7 @@ MimeTreeParser::IconType MimeTreeParser::DefaultRendererPrivate::displayHint(con
     if (!mp) {
         return MimeTreeParser::IconType::NoIcon;
     }
-    const AttachmentStrategy *const as = msgPart->source()->attachmentStrategy();
+    const AttachmentStrategy *const as = mAttachmentStrategy;
     const bool defaultHidden(as && as->defaultDisplay(content) == AttachmentStrategy::None);
     const bool showOnlyOneMimePart(mShowOnlyOneMimePart);
     auto preferredMode = source()->preferredMode();
@@ -1021,12 +1018,28 @@ MimeTreeParser::IconType MimeTreeParser::DefaultRendererPrivate::displayHint(con
     return MimeTreeParser::NoIcon;
 }
 
-DefaultRenderer::DefaultRenderer(const MimeTreeParser::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, MimeTreeParser::HtmlWriter *writer, bool showOnlyOneMimePart)
-    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper, writer, MessagePartRendererFactory::instance(), showOnlyOneMimePart))
+DefaultRenderer::DefaultRenderer(CSSHelperBase *cssHelper)
+    : d(new MimeTreeParser::DefaultRendererPrivate(cssHelper, MessagePartRendererFactory::instance()))
 {
 }
 
 DefaultRenderer::~DefaultRenderer()
 {
     delete d;
+}
+
+void DefaultRenderer::setShowOnlyOneMimePart(bool onlyOneMimePart)
+{
+    d->mShowOnlyOneMimePart = onlyOneMimePart;
+}
+
+void DefaultRenderer::setAttachmentStrategy(const AttachmentStrategy *strategy)
+{
+    d->mAttachmentStrategy = strategy;
+}
+
+void DefaultRenderer::render(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer)
+{
+    d->mMsgPart = msgPart;
+    d->renderFactory(d->mMsgPart, writer);
 }

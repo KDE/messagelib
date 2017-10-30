@@ -18,10 +18,10 @@
 */
 
 #include "objecttreeemptysource.h"
+#include "viewer/attachmentstrategy.h"
 #include "viewer/viewer_p.h"
 #include "viewer/csshelperbase.h"
 
-#include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BodyPartFormatter>
 #include <MimeTreeParser/BodyPartFormatterFactory>
 
@@ -100,9 +100,9 @@ QString EmptySource::createMessageHeader(KMime::Message *message)
     return QString(); //do nothing
 }
 
-const MimeTreeParser::AttachmentStrategy *EmptySource::attachmentStrategy()
+const AttachmentStrategy *EmptySource::attachmentStrategy()
 {
-    return MimeTreeParser::AttachmentStrategy::smart();
+    return AttachmentStrategy::smart();
 }
 
 MimeTreeParser::HtmlWriter *EmptySource::htmlWriter()
@@ -142,5 +142,8 @@ bool EmptySource::isPrinting() const
 
 void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, bool showOnlyOneMimePart)
 {
-    DefaultRenderer(msgPart, cssHelper(), htmlWriter, showOnlyOneMimePart);
+    auto renderer = DefaultRenderer(cssHelper());
+    renderer.setShowOnlyOneMimePart(showOnlyOneMimePart);
+    renderer.setAttachmentStrategy(attachmentStrategy());
+    renderer.render(msgPart, htmlWriter);
 }

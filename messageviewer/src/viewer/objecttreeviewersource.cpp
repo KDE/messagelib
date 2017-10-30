@@ -94,7 +94,7 @@ QString MailViewerSource::createMessageHeader(KMime::Message *message)
     return mViewer->writeMsgHeader(message);
 }
 
-const MimeTreeParser::AttachmentStrategy *MailViewerSource::attachmentStrategy()
+const AttachmentStrategy *MailViewerSource::attachmentStrategy()
 {
     return mViewer->attachmentStrategy();
 }
@@ -131,5 +131,8 @@ bool MailViewerSource::isPrinting() const
 
 void MailViewerSource::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, bool showOnlyOneMimePart)
 {
-    DefaultRenderer(msgPart, mViewer->cssHelper(), htmlWriter, showOnlyOneMimePart);
+    auto renderer = DefaultRenderer(mViewer->cssHelper());
+    renderer.setShowOnlyOneMimePart(showOnlyOneMimePart);
+    renderer.setAttachmentStrategy(attachmentStrategy());
+    renderer.render(msgPart, htmlWriter);
 }

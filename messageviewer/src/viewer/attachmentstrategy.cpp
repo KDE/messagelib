@@ -33,16 +33,16 @@
 
 #include "attachmentstrategy.h"
 
-#include "nodehelper.h"
-#include "utils/util.h"
+#include <MimeTreeParser/NodeHelper>
+#include <MimeTreeParser/Util>
 
 #include <KMime/Content>
 
 #include <QIcon>
 
-#include "mimetreeparser_debug.h"
+#include "messageviewer_debug.h"
 
-using namespace MimeTreeParser;
+using namespace MessageViewer;
 
 static AttachmentStrategy::Display smartDisplay(KMime::Content *node)
 {
@@ -250,11 +250,11 @@ public:
 
     Display defaultDisplay(KMime::Content *node) const override
     {
-        if (NodeHelper::isInEncapsulatedMessage(node)) {
+        if (MimeTreeParser::NodeHelper::isInEncapsulatedMessage(node)) {
             return smartDisplay(node);
         }
 
-        if (!Util::labelForContent(node).isEmpty() && QIcon::hasThemeIcon(Util::iconNameForContent(node)) && !Util::isTypeBlacklisted(node)) {
+        if (!MimeTreeParser::Util::labelForContent(node).isEmpty() && QIcon::hasThemeIcon(MimeTreeParser::Util::iconNameForContent(node)) && !MimeTreeParser::Util::isTypeBlacklisted(node)) {
             return None;
         }
         return smartDisplay(node);
@@ -292,7 +292,7 @@ const AttachmentStrategy *AttachmentStrategy::create(Type type)
     case HeaderOnly:
         return headerOnly();
     }
-    qCCritical(MIMETREEPARSER_LOG) << "Unknown attachment startegy ( type =="
+    qCCritical(MESSAGEVIEWER_LOG) << "Unknown attachment startegy ( type =="
                                    << (int)type << ") requested!";
     return nullptr; // make compiler happy
 }

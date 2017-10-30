@@ -27,7 +27,7 @@
 #include <QTextEdit>
 #include <QFile>
 #include <MessageViewer/Viewer>
-#include <MimeTreeParser/AttachmentStrategy>
+#include <MessageViewer/AttachmentStrategy>
 #include <QVBoxLayout>
 
 TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
@@ -38,7 +38,7 @@ TestJQuerySupportMailWebEngine::TestJQuerySupportMailWebEngine(QWidget *parent)
     vboxLayout->addWidget(viewer);
     viewer->setMessage(readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")));
     viewer->setPluginName(QStringLiteral("enterprise"));
-    viewer->setAttachmentStrategy(MimeTreeParser::AttachmentStrategy::headerOnly());
+    viewer->setAttachmentStrategy(MessageViewer::AttachmentStrategy::headerOnly());
 
     mEditor = new QTextEdit(this);
     mEditor->setAcceptRichText(false);

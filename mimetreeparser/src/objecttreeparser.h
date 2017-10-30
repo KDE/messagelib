@@ -51,7 +51,6 @@ namespace MimeTreeParser {
 class PartMetaData;
 class ViewerPrivate;
 class HtmlWriter;
-class AttachmentStrategy;
 class NodeHelper;
 class MessagePart;
 class MimeMessagePart;
@@ -358,7 +357,6 @@ private:
 
     bool mHasPendingAsyncJobs;
     bool mAllowAsync;
-    const AttachmentStrategy *mAttachmentStrategy;
     // DataUrl Icons cache
     QString mCollapseIcon;
     QString mExpandIcon;

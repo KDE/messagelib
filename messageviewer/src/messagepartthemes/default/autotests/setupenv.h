@@ -23,10 +23,10 @@
 
 #include <gpgme++/key.h>
 
-#include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BodyPartFormatterFactory>
 #include <MimeTreeParser/ObjectTreeSource>
 
+#include <MessageViewer/AttachmentStrategy>
 #include <MessageViewer/ObjectTreeEmptySource>
 
 namespace MessageViewer {
@@ -81,9 +81,9 @@ public:
         mAttachmentStrategy = strategy;
     }
 
-    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() override
+    const AttachmentStrategy *attachmentStrategy() override
     {
-        return MimeTreeParser::AttachmentStrategy::create(mAttachmentStrategy);
+        return AttachmentStrategy::create(mAttachmentStrategy);
     }
 
     bool autoImportKeys() const override

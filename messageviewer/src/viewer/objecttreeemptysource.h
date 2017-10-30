@@ -25,6 +25,7 @@
 class QString;
 
 namespace MessageViewer {
+class AttachmentStrategy;
 class CSSHelperBase;
 
 /** An ObjectTreeSource that does not work on anything */
@@ -43,7 +44,7 @@ public:
     int levelQuote() const override;
     const QTextCodec *overrideCodec() override;
     QString createMessageHeader(KMime::Message *message) override;
-    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() override;
+    virtual const AttachmentStrategy *attachmentStrategy();
     MimeTreeParser::HtmlWriter *htmlWriter() override;
     virtual CSSHelperBase *cssHelper();
 

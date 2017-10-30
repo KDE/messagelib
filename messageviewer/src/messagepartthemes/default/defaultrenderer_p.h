@@ -28,6 +28,7 @@ using namespace MimeTreeParser;
 using namespace MessageViewer;
 
 namespace MessageViewer {
+class AttachmentStrategy;
 class MessagePartRendererFactory;
 class CSSHelperBase;
 class HtmlWriter;
@@ -37,7 +38,7 @@ namespace MimeTreeParser {
 class DefaultRendererPrivate : public MessageViewer::RenderContext
 {
 public:
-    DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory, bool showOnlyOneMimePart);
+    DefaultRendererPrivate(CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory);
     ~DefaultRendererPrivate();
 
     CSSHelperBase *cssHelper() const override;
@@ -63,10 +64,11 @@ public:
     bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
     MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
 
-    bool mShowOnlyOneMimePart;
+    bool mShowOnlyOneMimePart = false;
     MessagePart::Ptr mMsgPart;
     CSSHelperBase *mCSSHelper = nullptr;
     const MessageViewer::MessagePartRendererFactory *mRendererFactory = nullptr;
+    const MessageViewer::AttachmentStrategy *mAttachmentStrategy = nullptr;
 };
 }
 #endif

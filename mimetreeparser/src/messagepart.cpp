@@ -19,7 +19,6 @@
 
 #include "messagepart.h"
 #include "mimetreeparser_debug.h"
-#include "attachmentstrategy.h"
 #include "cryptohelper.h"
 #include "objecttreeparser.h"
 #include "job/qgpgmejobexecutor.h"

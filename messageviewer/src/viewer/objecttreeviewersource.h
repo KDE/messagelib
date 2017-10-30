@@ -25,6 +25,7 @@
 class QString;
 
 namespace MessageViewer {
+class AttachmentStrategy;
 class ViewerPrivate;
 
 /** An ObjectTreeParser source working on a MailViewer object */
@@ -41,7 +42,7 @@ public:
     int levelQuote() const override;
     const QTextCodec *overrideCodec() override;
     QString createMessageHeader(KMime::Message *message) override;
-    const MimeTreeParser::AttachmentStrategy *attachmentStrategy() override;
+    const AttachmentStrategy *attachmentStrategy();
     MimeTreeParser::HtmlWriter *htmlWriter() override;
 
     bool autoImportKeys() const override;
