@@ -1,0 +1,57 @@
+From you@you.com Mon Oct 30 10:00:46 2017
+From: YOU <you@you.com>
+To: test@kolab.org
+Reply-To: you@you.com
+Subject: inline test with attachment
+Date: Mon, 30 Oct 2017 10:00:46 +0000
+Message-ID: <4843823.hcbsSplVWp@baedc5b0dfed>
+X-KMail-Identity: 989793700
+X-KMail-Transport: -1
+X-KMail-Fcc: 6
+X-KMail-Dictionary: en_US
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="nextPart2479832.kuY37TRtyA"
+Content-Transfer-Encoding: 7Bit
+
+This is a multi-part message in MIME format.
+
+--nextPart2479832.kuY37TRtyA
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="us-ascii"
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2
+
+hQEMAwzOQ1qnzNo7AQf/fx2+ysb3BJ34Ag5CJI4phka7Tq1StwKwAjmBy76evLlZ
+8nf0YYiLKz5aeqse/FnwKqd2LZFSI58Od5P4QwsNIpO0NMt0ThBv3wupRtOs2FFk
+AQhCrvMog9K+OblKyQ2xKpLLFwv5iNKY2g3zMxZQgYu5spPquPh97RlRl24RZ1qQ
+Tg3uz6BvgPGY3jZ7PumpjsqpDcIBr3WaAVzby3VFJ/o+c8uRW94GyGfIjBps5xfU
+sBPDsasRtpQYDl/pgiU7MK4mmy/YZwQzuJlgr4wmfzf4qVF+JTHQgkHm/hx/1DZ2
+ikFwkaUSzhAhbC6mtVSO4eFRzkUaIwyYLYb+/I1/e9LAwwH0ibtRV/veyuOdXwMs
+4KwXjZhazuXmYz3u7c9HJ9NW17wiiRzueveOOHo1JM5M9pLBiw+7O8Yo7nM03kEE
+vM2zitQ2iSt5TBUV9UjFC5OX+LYPx8A4IxuKewjJyTYBf/SrB8ProkOw7gpBQXuV
+FRrpVSWZk1FZAPr306si4yc89+TGFjkhi8mP2OjICuJ1bm9msPIRmYtGBDtV7AZ9
+Wuem2cwn9gkGwNiN/UJIjqy8YQoWcC7UuSM9oPRw/gZThI5Y5Seqo/2tIatgFENx
+tz0VfRFUpex1j40MEzolMSGtsb2MXdavhXCcYC/Dh7Qgophn3g2gDpzYJnhPqaph
+BY9PbjIgiuBTyLNer/LMHzvCaR+yW/+PLoTLOmygjNWQuMFGFRcJJVxhbXAgbM5Q
+HKn9G83DuMB85gMLhVfH3cS+0zTxnTmTQUk1tXkWx7UjdLEChva5emBjyP+cAmYR
+6JsUrSFhN0inqn8wEXNTjA1syINGFY3pmCoqfdaP8wFMwtqzXQ==
+=JJFP
+-----END PGP MESSAGE-----
+
+--nextPart2479832.kuY37TRtyA
+Content-Disposition: attachment; filename="attachment.asc"
+Content-Transfer-Encoding: base64
+Content-Type: application/octet-stream; name="attachment.asc"
+
+hQEMAwzOQ1qnzNo7AQf/Z3qYebORMk5Z4R+Pmb6gBLA20G3yLRFyd0z+ygcEp+rc1jYE1ZqK1pFz
+Z6WLgPdMcyrKBLrDeDfsQRbKvimR7NaXLSuNkRHFtgqCmaFDyIUMcf9DobAoKvGvmBJhgMW7WPCA
+RUDaiJyqBp29nCQuOIqAiT5fm5LyyUmhRxUb9/CnulcxzW85EiITm0wMos30j1dU++3KDp5R6gcc
+9uUVbdCWdiF4j3ilE8flCWg9tARTRGinu4ENc9eIjcn1hCotFS+4ccWYIwf6ZkVDS4wNfU7dDg+9
+ZwNb+RkXuYXT/tFdir+ewV0Njaj0ZWTUrqZSk2ArmdGo9ou7xl/2mrK6YNJIAUKgVsQlWZ1Kx4PI
+0k0+TsJBgRzVNpIBHpmu0MI4CE03XHUslFhzdrjOG2Ts26U3EJw+jjssu0W4MVzYc20u3BgRnzHn
+/SFA
+
+
+--nextPart2479832.kuY37TRtyA--
+

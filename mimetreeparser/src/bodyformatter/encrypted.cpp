@@ -27,6 +27,8 @@
 #include <KMime/Content>
 
 #include <QGpgME/Protocol>
+#include <QGpgME/DataProvider>
+#include <gpgme++/data.h>
 
 #include <QTextCodec>
 
@@ -51,6 +53,13 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
     if (!node->contents().isEmpty()) {
         Q_ASSERT(false);
         return MessagePart::Ptr();
+    }
+
+    QGpgME::QByteArrayDataProvider dp(node->decodedContent());
+    GpgME::Data data(&dp);
+
+    if (data.type() == GpgME::Data::Unknown) {
+        return nullptr;
     }
 
     const QGpgME::Protocol *useThisCryptProto = nullptr;
@@ -83,14 +92,23 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
                 return nullptr;
             }
             auto tempNode = new KMime::Content();
-            qDebug() << part.nodeHelper()->codec(node)->name();
             tempNode->contentType()->setCharset("utf-8");
             tempNode->setBody(KMime::CRLFtoLF(part.nodeHelper()->codec(node)->fromUnicode(mp->text())));
             tempNode->parse();
+            NodeHelper::magicSetType(tempNode);
+            if (node->topLevel()->textContent() != node && node->contentDisposition(false) && !tempNode->contentDisposition(false)) {
+                tempNode->contentDisposition()->setDisposition(node->contentDisposition()->disposition());
+                const auto fname = node->contentDisposition()->filename();
+                if (!fname.isEmpty()) {
+                    tempNode->contentDisposition()->setFilename(fname);
+                }
+            }
 
             if (!tempNode->head().isEmpty()) {
-                tempNode->contentDescription()->from7BitString("encrypted data");
+                tempNode->contentDescription()->from7BitString("decrypted data");
             }
+            tempNode->assemble();
+
             part.nodeHelper()->cleanExtraContent(node);
             mp->clearSubParts();
 

@@ -151,6 +151,7 @@ void BodyPartFormatterFactoryPrivate::messageviewer_create_builtin_bodypart_form
     insert(QStringLiteral("application/pgp-encrypted"), ApplicationPGPEncryptedBodyPartFormatter::create());
 
     insert(QStringLiteral("application/octet-stream"), ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert(QStringLiteral("application/octet-stream"), EncryptedBodyPartFormatter::create());
     insert(QStringLiteral("application/octet-stream"), AnyTypeBodyPartFormatter::create());
 
     insert(QStringLiteral("text/pgp"), EncryptedBodyPartFormatter::create());
