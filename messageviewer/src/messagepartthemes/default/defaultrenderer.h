@@ -35,7 +35,7 @@ class CSSHelperBase;
 class DefaultRenderer
 {
 public:
-    DefaultRenderer(const MimeTreeParser::MessagePartPtr &msgPart, CSSHelperBase *cssHelder, MimeTreeParser::HtmlWriter *writer);
+    DefaultRenderer(const MimeTreeParser::MessagePartPtr &msgPart, CSSHelperBase *cssHelder, MimeTreeParser::HtmlWriter *writer, bool showOnlyOneMimePart);
     ~DefaultRenderer();
 
 private:

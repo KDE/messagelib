@@ -89,7 +89,7 @@ public:
 
     virtual const BodyPartFormatterFactory *bodyPartFormatterFactory() = 0;
 
-    virtual void render(const MessagePartPtr &msgPart, HtmlWriter *htmlWriter) = 0;
+    virtual void render(const MessagePartPtr &msgPart, HtmlWriter *htmlWriter, bool showOnlyOneMimePart) = 0;
 
     virtual bool isPrinting() const = 0;
 

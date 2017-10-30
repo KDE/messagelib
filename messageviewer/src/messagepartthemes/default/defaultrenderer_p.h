@@ -37,7 +37,7 @@ namespace MimeTreeParser {
 class DefaultRendererPrivate : public MessageViewer::RenderContext
 {
 public:
-    DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory);
+    DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory, bool showOnlyOneMimePart);
     ~DefaultRendererPrivate();
 
     CSSHelperBase *cssHelper() const override;
@@ -60,6 +60,10 @@ public:
     using RenderContext::renderWithFactory;
     void renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
+    bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
+    MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
+
+    bool mShowOnlyOneMimePart;
     MessagePart::Ptr mMsgPart;
     CSSHelperBase *mCSSHelper = nullptr;
     const MessageViewer::MessagePartRendererFactory *mRendererFactory = nullptr;

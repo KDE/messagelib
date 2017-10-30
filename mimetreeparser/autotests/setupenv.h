@@ -148,10 +148,11 @@ public:
         return QString(); //do nothing
     }
 
-    void render(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) override
+    void render(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter, bool showOnlyOneMimePart) override
     {
         Q_UNUSED(msgPart);
         Q_UNUSED(htmlWriter);
+        Q_UNUSED(showOnlyOneMimePart);
     }
 
     bool isPrinting() const override

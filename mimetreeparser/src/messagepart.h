@@ -228,13 +228,13 @@ public:
     AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage);
     virtual ~AttachmentMessagePart();
 
-    IconType asIcon() const;
+    //IconType asIcon() const;
     bool neverDisplayInline() const;
     void setNeverDisplayInline(bool displayInline);
     bool isImage() const;
     void setIsImage(bool image);
 
-    bool isHidden() const override;
+    //bool isHidden() const override;
 
 private:
     bool mIsImage;

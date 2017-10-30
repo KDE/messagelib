@@ -51,7 +51,7 @@ public:
     bool showEmoticons() const override;
     bool showExpandQuotesMark() const override;
     const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;
-    void render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) override;
+    void render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, bool showOnlyOneMimePart) override;
     bool isPrinting() const override;
 private:
     EmptySourcePrivate *const d;

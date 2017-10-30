@@ -50,11 +50,11 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
     }
 
     KMime::Content *node = mp->content();
-    if (mp->isHidden()) {
+    if (context->isHiddenHint(msgPart)) {
         return true;
     }
 
-    const auto tmpAsIcon = mp->asIcon();
+    const auto tmpAsIcon = context->displayHint(msgPart);
 
     if (tmpAsIcon == MimeTreeParser::NoIcon) {
         return context->renderWithFactory<MimeTreeParser::TextMessagePart>(mp, htmlWriter);

@@ -65,6 +65,9 @@ public:
 
     virtual void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) = 0;
 
+    virtual bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
+    virtual MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
+
 protected:
     virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer) = 0;
 };

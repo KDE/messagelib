@@ -140,7 +140,7 @@ bool EmptySource::isPrinting() const
     return false;
 }
 
-void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter)
+void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, bool showOnlyOneMimePart)
 {
-    DefaultRenderer(msgPart, cssHelper(), htmlWriter);
+    DefaultRenderer(msgPart, cssHelper(), htmlWriter, showOnlyOneMimePart);
 }

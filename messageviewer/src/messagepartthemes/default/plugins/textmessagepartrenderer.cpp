@@ -48,7 +48,7 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
         return false;
     }
 
-    if (mp->isHidden()) {
+    if (context->isHiddenHint(msgPart)) {
         return true;
     }
 

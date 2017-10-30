@@ -129,7 +129,7 @@ bool MailViewerSource::isPrinting() const
     return mViewer->mPrinting;
 }
 
-void MailViewerSource::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter)
+void MailViewerSource::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, bool showOnlyOneMimePart)
 {
-    DefaultRenderer(msgPart, mViewer->cssHelper(), htmlWriter);
+    DefaultRenderer(msgPart, mViewer->cssHelper(), htmlWriter, showOnlyOneMimePart);
 }

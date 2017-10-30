@@ -33,6 +33,7 @@
 #include "viewer/csshelperbase.h"
 #include "messagepartrenderermanager.h"
 
+#include <MimeTreeParser/AttachmentStrategy>
 #include <MimeTreeParser/BufferedHtmlWriter>
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
@@ -308,10 +309,11 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
     return s;
 }
 
-DefaultRendererPrivate::DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory)
+DefaultRendererPrivate::DefaultRendererPrivate(const MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, HtmlWriter *writer, const MessagePartRendererFactory *rendererFactory, bool showOnlyOneMimePart)
     : mMsgPart(msgPart)
     , mCSSHelper(cssHelper)
     , mRendererFactory(rendererFactory)
+    , mShowOnlyOneMimePart(showOnlyOneMimePart)
 {
     renderFactory(mMsgPart, writer);
 }
@@ -901,8 +903,126 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
     }
 }
 
-DefaultRenderer::DefaultRenderer(const MimeTreeParser::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, MimeTreeParser::HtmlWriter *writer)
-    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper, writer, MessagePartRendererFactory::instance()))
+bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart)
+{
+    auto mp = msgPart.dynamicCast<MimeTreeParser::AttachmentMessagePart>();
+    auto content = msgPart->content();
+
+    if (!mp) {
+        auto _mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
+        if (_mp) {
+            return msgPart->nodeHelper()->isNodeDisplayedHidden(content);
+        } else {
+            return false;
+        }
+    }
+
+    if (mShowOnlyOneMimePart) {
+        return false;
+    }
+
+    const AttachmentStrategy *const as = msgPart->source()->attachmentStrategy();
+    const bool defaultHidden(as && as->defaultDisplay(content) == AttachmentStrategy::None);
+    auto preferredMode = source()->preferredMode();
+    bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
+
+    QByteArray mediaType("text");
+    if (content->contentType(false) && !content->contentType()->mediaType().isEmpty()
+        && !content->contentType()->subType().isEmpty()) {
+        mediaType = content->contentType()->mediaType();
+    }
+    const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
+
+    bool defaultAsIcon = true;
+    if (!mp->neverDisplayInline()) {
+        if (as) {
+            defaultAsIcon = as->defaultDisplay(content) == AttachmentStrategy::AsIcon;
+        }
+    }
+
+    // neither image nor text -> show as icon
+    if (!mp->isImage() && !isTextPart) {
+        defaultAsIcon = true;
+    }
+
+    bool hidden(false);
+    if (isTextPart) {
+        hidden = defaultHidden;
+    } else {
+        if (mp->isImage() && isHtmlPreferred
+            && content->parent() && content->parent()->contentType(false)->subType() == "related") {
+            hidden = true;
+        } else {
+            hidden = defaultHidden && content->parent();
+            hidden |= defaultAsIcon && defaultHidden;
+        }
+    }
+    msgPart->nodeHelper()->setNodeDisplayedHidden(content, hidden);
+    return hidden;
+}
+
+MimeTreeParser::IconType MimeTreeParser::DefaultRendererPrivate::displayHint(const MimeTreeParser::MessagePart::Ptr& msgPart)
+{
+    auto mp = msgPart.dynamicCast<MimeTreeParser::AttachmentMessagePart>();
+    auto content = msgPart->content();
+    if (!mp) {
+        return MimeTreeParser::IconType::NoIcon;
+    }
+    const AttachmentStrategy *const as = msgPart->source()->attachmentStrategy();
+    const bool defaultHidden(as && as->defaultDisplay(content) == AttachmentStrategy::None);
+    const bool showOnlyOneMimePart(mShowOnlyOneMimePart);
+    auto preferredMode = source()->preferredMode();
+    bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
+
+    QByteArray mediaType("text");
+    if (content->contentType(false) && !content->contentType()->mediaType().isEmpty()
+        && !content->contentType()->subType().isEmpty()) {
+        mediaType = content->contentType()->mediaType();
+    }
+    const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
+
+    bool defaultAsIcon = true;
+    if (!mp->neverDisplayInline()) {
+        if (as) {
+            defaultAsIcon = as->defaultDisplay(content) == AttachmentStrategy::AsIcon;
+        }
+    }
+    if (mp->isImage() && showOnlyOneMimePart && !mp->neverDisplayInline()) {
+        defaultAsIcon = false;
+    }
+
+    // neither image nor text -> show as icon
+    if (!mp->isImage() && !isTextPart) {
+        defaultAsIcon = true;
+    }
+
+    if (isTextPart) {
+        if (as && as->defaultDisplay(content) != AttachmentStrategy::Inline) {
+            return MimeTreeParser::IconExternal;
+        }
+        return MimeTreeParser::NoIcon;
+    } else {
+        if (mp->isImage() && isHtmlPreferred
+            && content->parent() && content->parent()->contentType(false)->subType() == "related") {
+            return MimeTreeParser::IconInline;
+        }
+
+        if (defaultHidden && !showOnlyOneMimePart && content->parent()) {
+            return MimeTreeParser::IconInline;
+        }
+
+        if (defaultAsIcon) {
+            return MimeTreeParser::IconExternal;
+        } else if (mp->isImage()) {
+            return MimeTreeParser::IconInline;
+        }
+    }
+
+    return MimeTreeParser::NoIcon;
+}
+
+DefaultRenderer::DefaultRenderer(const MimeTreeParser::MessagePart::Ptr &msgPart, CSSHelperBase *cssHelper, MimeTreeParser::HtmlWriter *writer, bool showOnlyOneMimePart)
+    : d(new MimeTreeParser::DefaultRendererPrivate(msgPart, cssHelper, writer, MessagePartRendererFactory::instance(), showOnlyOneMimePart))
 {
 }
 
