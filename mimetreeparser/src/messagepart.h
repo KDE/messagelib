@@ -246,12 +246,12 @@ public:
     void fix() const override;
     bool isHtml() const override;
 
+    QString bodyHtml() const;
+
 private:
     Interface::ObjectTreeSource *mSource;
     QString mBodyHTML;
     QByteArray mCharset;
-
-    friend class DefaultRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
@@ -274,13 +274,15 @@ public:
     QList<Util::HtmlMode> availableModes();
 
     void fix() const override;
+
+    const QMap<Util::HtmlMode, MimeMessagePart::Ptr> &childParts() const;
+
 private:
     Util::HtmlMode mPreferredMode;
 
     QMap<Util::HtmlMode, KMime::Content *> mChildNodes;
     QMap<Util::HtmlMode, MimeMessagePart::Ptr> mChildParts;
 
-    friend class DefaultRendererPrivate;
     friend class ObjectTreeParser;
     friend class MultiPartAlternativeBodyPartFormatter;
 };
@@ -295,11 +297,12 @@ public:
 
     QString text() const override;
 
+    const GpgME::ImportResult &importResult() const;
+
 private:
     bool mAutoImport;
     GpgME::ImportResult mImportResult;
     const QGpgME::Protocol *mCryptoProto;
-    friend class DefaultRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
@@ -313,10 +316,11 @@ public:
     QString text() const override;
 
     void fix() const override;
+
+    const KMime::Message::Ptr message() const;
+
 private:
     const KMime::Message::Ptr mMessage;
-
-    friend class DefaultRendererPrivate;
 };
 
 class MIMETREEPARSER_EXPORT EncryptedMessagePart : public MessagePart
@@ -324,6 +328,7 @@ class MIMETREEPARSER_EXPORT EncryptedMessagePart : public MessagePart
     Q_OBJECT
     Q_PROPERTY(bool decryptMessage READ decryptMessage WRITE setDecryptMessage)
     Q_PROPERTY(bool isEncrypted READ isEncrypted)
+    Q_PROPERTY(bool isNoSecKey READ isNoSecKey)
     Q_PROPERTY(bool passphraseError READ passphraseError)
 public:
     typedef QSharedPointer<EncryptedMessagePart> Ptr;
@@ -341,6 +346,7 @@ public:
 
     bool isDecryptable() const;
 
+    bool isNoSecKey() const;
     bool passphraseError() const;
 
     void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
@@ -350,6 +356,11 @@ public:
 
     QString plaintextContent() const override;
     QString htmlContent() const override;
+
+    const QGpgME::Protocol *cryptoProto() const;
+    QString fromAddress() const;
+
+    const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &decryptRecipients() const;
 
 private:
     /** Handles the dectyptioon of a given content
@@ -367,7 +378,6 @@ protected:
     QByteArray mVerifiedText;
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > mDecryptRecipients;
 
-    friend class DefaultRendererPrivate;
     friend class EncryptedBodyPartFormatter;
 };
 
@@ -393,6 +403,9 @@ public:
     QString plaintextContent() const override;
     QString htmlContent() const override;
 
+    const QGpgME::Protocol *cryptoProto() const;
+    QString fromAddress() const;
+
 private:
     /** Handles the verification of data
      * If signature is empty it is handled as inline signature otherwise as detached signature mode.
@@ -410,7 +423,6 @@ protected:
     QByteArray mVerifiedText;
 
     friend EncryptedMessagePart;
-    friend class DefaultRendererPrivate;
 };
 }
 

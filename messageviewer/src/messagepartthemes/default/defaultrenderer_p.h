@@ -24,19 +24,13 @@
 
 #include <MimeTreeParser/MessagePart>
 
-using namespace MimeTreeParser;
-using namespace MessageViewer;
-
 namespace MessageViewer {
 class AttachmentStrategy;
 class MessagePartRendererFactory;
 class CSSHelperBase;
 class HtmlWriter;
-}
 
-namespace MimeTreeParser {
-
-class DefaultRendererPrivate : public MessageViewer::RenderContext
+class DefaultRendererPrivate : public RenderContext
 {
 public:
     DefaultRendererPrivate(CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory);
@@ -44,32 +38,32 @@ public:
 
     CSSHelperBase *cssHelper() const override;
 
-    Interface::ObjectTreeSource *source() const;
+    MimeTreeParser::Interface::ObjectTreeSource *source() const;
 
-    void renderSubParts(const MessagePart::Ptr &msgPart, MessageViewer::HtmlWriter *htmlWriter) override;
+    void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) override;
 
-    void render(const MessagePartList::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    void render(const MimeMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    void render(const EncapsulatedRfc822MessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    void render(const HtmlMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    void renderEncrypted(const EncryptedMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    void renderSigned(const SignedMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    void render(const SignedMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    void render(const EncryptedMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    void render(const AlternativeMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    void render(const CertMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
-    bool renderWithFactory(const QMetaObject *mo, const MessagePart::Ptr &msgPart, MessageViewer::HtmlWriter *writer) override;
+    void render(const MimeTreeParser::MessagePartList::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const MimeTreeParser::MimeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const MimeTreeParser::EncapsulatedRfc822MessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const MimeTreeParser::HtmlMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void renderEncrypted(const MimeTreeParser::EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void renderSigned(const MimeTreeParser::SignedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const MimeTreeParser::SignedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const MimeTreeParser::EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const MimeTreeParser::AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    void render(const MimeTreeParser::CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
+    bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) override;
     using RenderContext::renderWithFactory;
-    void renderFactory(const MessagePart::Ptr &msgPart, MessageViewer::HtmlWriter *htmlWriter);
+    void renderFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
 
     bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
     MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
 
     bool mShowOnlyOneMimePart = false;
-    MessagePart::Ptr mMsgPart;
+    MimeTreeParser::MessagePart::Ptr mMsgPart;
     CSSHelperBase *mCSSHelper = nullptr;
-    const MessageViewer::MessagePartRendererFactory *mRendererFactory = nullptr;
-    const MessageViewer::AttachmentStrategy *mAttachmentStrategy = nullptr;
+    const MessagePartRendererFactory *mRendererFactory = nullptr;
+    const AttachmentStrategy *mAttachmentStrategy = nullptr;
 };
 }
 #endif

@@ -22,7 +22,6 @@
 #include "quotehtml.h"
 
 #include "utils/mimetype.h"
-#include "../defaultrenderer_p.h"
 #include "../messagepartrenderermanager.h"
 
 #include <MessageCore/StringUtil>
@@ -44,7 +43,7 @@ AttachmentMessagePartRenderer::~AttachmentMessagePartRenderer()
 
 bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const
 {
-    auto mp = msgPart.dynamicCast<AttachmentMessagePart>();
+    auto mp = msgPart.dynamicCast<MimeTreeParser::AttachmentMessagePart>();
     if (!mp) {
         return false;
     }
@@ -73,7 +72,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
     } else {
         iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
         if (iconPath.right(14) == QLatin1String("mime_empty.png")) {
-            NodeHelper::magicSetType(node);
+            MimeTreeParser::NodeHelper::magicSetType(node);
             iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
         }
     }

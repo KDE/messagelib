@@ -488,6 +488,11 @@ bool HtmlMessagePart::isHtml() const
     return true;
 }
 
+QString HtmlMessagePart::bodyHtml() const
+{
+    return mBodyHTML;
+}
+
 //-----MimeMessageBlock----------------------
 
 MimeMessagePart::MimeMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart)
@@ -608,6 +613,11 @@ void AlternativeMessagePart::fix() const
     }
 }
 
+const QMap<Util::HtmlMode, MimeMessagePart::Ptr> &AlternativeMessagePart::childParts() const
+{
+    return mChildParts;
+}
+
 bool AlternativeMessagePart::isHtml() const
 {
     return mChildParts.contains(Util::MultipartHtml);
@@ -658,6 +668,11 @@ CertMessagePart::~CertMessagePart()
 QString CertMessagePart::text() const
 {
     return QString();
+}
+
+const GpgME::ImportResult &CertMessagePart::importResult() const
+{
+    return mImportResult;
 }
 
 //-----SignedMessageBlock---------------------
@@ -976,6 +991,16 @@ QString SignedMessagePart::htmlContent() const
     }
 }
 
+const QGpgME::Protocol *SignedMessagePart::cryptoProto() const
+{
+    return mCryptoProto;
+}
+
+QString SignedMessagePart::fromAddress() const
+{
+    return mFromAddress;
+}
+
 //-----CryptMessageBlock---------------------
 EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp, const QString &text, const QGpgME::Protocol *cryptoProto, const QString &fromAddress, KMime::Content *node)
     : MessagePart(otp, text)
@@ -1023,6 +1048,11 @@ bool EncryptedMessagePart::isEncrypted() const
 bool EncryptedMessagePart::isDecryptable() const
 {
     return partMetaData()->isDecryptable;
+}
+
+bool EncryptedMessagePart::isNoSecKey() const
+{
+    return mNoSecKey;
 }
 
 bool EncryptedMessagePart::passphraseError() const
@@ -1272,6 +1302,21 @@ QString EncryptedMessagePart::text() const
     }
 }
 
+const QGpgME::Protocol *EncryptedMessagePart::cryptoProto() const
+{
+    return mCryptoProto;
+}
+
+QString EncryptedMessagePart::fromAddress() const
+{
+    return mFromAddress;
+}
+
+const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &EncryptedMessagePart::decryptRecipients() const
+{
+    return mDecryptRecipients;
+}
+
 EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message)
     : MessagePart(otp, QString())
     , mMessage(message)
@@ -1307,4 +1352,9 @@ QString EncapsulatedRfc822MessagePart::text() const
 
 void EncapsulatedRfc822MessagePart::fix() const
 {
+}
+
+const KMime::Message::Ptr EncapsulatedRfc822MessagePart::message() const
+{
+    return mMessage;
 }

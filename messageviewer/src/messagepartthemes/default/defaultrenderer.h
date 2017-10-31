@@ -23,12 +23,12 @@
 #include <QSharedPointer>
 
 namespace MimeTreeParser {
-class DefaultRendererPrivate;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 }
 
 namespace MessageViewer {
+class DefaultRendererPrivate;
 class HtmlWriter;
 class AttachmentStrategy;
 class CSSHelperBase;
@@ -43,7 +43,7 @@ public:
     void setAttachmentStrategy(const AttachmentStrategy *strategy);
     void render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *writer);
 private:
-    MimeTreeParser::DefaultRendererPrivate *d;
+    DefaultRendererPrivate *d;
 };
 }
-#endif //__MIMETREEPARSER_MAILRENDERER_H__
+#endif //__MESSAGEVIEWER_MAILRENDERER_H__

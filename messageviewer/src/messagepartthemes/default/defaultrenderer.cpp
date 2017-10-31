@@ -378,9 +378,9 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
 
     c.insert(QStringLiteral("block"), &block);
     block.setProperty("link",
-                      mp->nodeHelper()->asHREF(mp->mMessage.data(), QStringLiteral("body")));
+                      mp->nodeHelper()->asHREF(mp->message().data(), QStringLiteral("body")));
 
-    c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->mMessage.data()));
+    c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->message().data()));
     c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
         renderSubParts(mp, htmlWriter);
     }));
@@ -403,7 +403,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
     c.insert(QStringLiteral("block"), &block);
 
     auto preferredMode = mp->source()->preferredMode();
-    bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
+    bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
     const bool isPrinting = mp->source()->isPrinting();
     block.setProperty("htmlMail", isHtmlPreferred);
     block.setProperty("loadExternal", mp->source()->htmlLoadExternal());
@@ -411,7 +411,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
     {
         QString extraHead;
         //laurent: FIXME port to async method webengine
-        QString bodyText = processHtml(mp->mBodyHTML, extraHead);
+        QString bodyText = processHtml(mp->bodyHtml(), extraHead);
 
         if (isHtmlPreferred) {
             mp->nodeHelper()->setNodeDisplayedEmbedded(mp->content(), true);
@@ -425,12 +425,12 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
 
     {
         ConvertHtmlToPlainText convert;
-        convert.setHtmlString(mp->mBodyHTML);
+        convert.setHtmlString(mp->bodyHtml());
         QString plaintext = convert.generatePlainText();
         plaintext.replace(QLatin1Char('\n'), QStringLiteral("<br>"));
         c.insert(QStringLiteral("plaintext"), plaintext);
     }
-    mp->source()->setHtmlMode(Util::Html, QList<Util::HtmlMode>() << Util::Html);
+    mp->source()->setHtmlMode(MimeTreeParser::Util::Html, QList<MimeTreeParser::Util::HtmlMode>() << MimeTreeParser::Util::Html);
 
     HTMLBlock::Ptr aBlock;
     if (mp->isAttachment()) {
@@ -464,10 +464,10 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
         }));
     }
 
-    c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(mp->mCryptoProto));
-    if (!mp->mDecryptRecipients.empty()) {
+    c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(mp->cryptoProto()));
+    if (!mp->decryptRecipients().empty()) {
         c.insert(QStringLiteral("decryptedRecipients"),
-                 QVariant::fromValue(mp->mDecryptRecipients));
+                 QVariant::fromValue(mp->decryptRecipients()));
     }
     c.insert(QStringLiteral("block"), &block);
 
@@ -479,7 +479,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
                                                                                   "document-decrypt"),
                                                                               KIconLoader::Small)).url());
     block.setProperty("errorText", metaData.errorText);
-    block.setProperty("noSecKey", mp->mNoSecKey);
+    block.setProperty("noSecKey", mp->isNoSecKey());
 
     Grantlee::OutputStream s(htmlWriter->stream());
     t->render(&s, &c);
@@ -489,7 +489,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
 {
     KMime::Content *node = mp->content();
     const auto metaData = *mp->partMetaData();
-    auto cryptoProto = mp->mCryptoProto;
+    auto cryptoProto = mp->cryptoProto();
 
     const bool isSMIME = cryptoProto && (cryptoProto == QGpgME::smime());
 
@@ -625,7 +625,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                 mClass = QStringLiteral("signOkKeyOk");
                 // extra hint for green case
                 // that email addresses in DN do not match fromAddress
-                QString msgFrom(KEmailAddress::extractEmailAddress(mp->mFromAddress));
+                QString msgFrom(KEmailAddress::extractEmailAddress(mp->fromAddress()));
                 QString certificate;
                 if (metaData.keyId.isEmpty()) {
                     certificate = i18n("certificate");
@@ -790,9 +790,9 @@ void DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp, HtmlW
             }
         }
     }
-    MimeMessagePart::Ptr part(mp->mChildParts.first());
-    if (mp->mChildParts.contains(mode)) {
-        part = mp->mChildParts[mode];
+    MimeMessagePart::Ptr part(mp->childParts().first());
+    if (mp->childParts().contains(mode)) {
+        part = mp->childParts()[mode];
     }
 
     render(part, htmlWriter);
@@ -800,7 +800,7 @@ void DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp, HtmlW
 
 void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
-    const GpgME::ImportResult &importResult(mp->mImportResult);
+    const GpgME::ImportResult &importResult(mp->importResult());
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
                                                                                              ":/certmessagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
@@ -921,7 +921,7 @@ bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr
     const AttachmentStrategy *const as = mAttachmentStrategy;
     const bool defaultHidden(as && as->defaultDisplay(content) == AttachmentStrategy::None);
     auto preferredMode = source()->preferredMode();
-    bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
+    bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
 
     QByteArray mediaType("text");
     if (content->contentType(false) && !content->contentType()->mediaType().isEmpty()
@@ -958,7 +958,7 @@ bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr
     return hidden;
 }
 
-MimeTreeParser::IconType MimeTreeParser::DefaultRendererPrivate::displayHint(const MimeTreeParser::MessagePart::Ptr& msgPart)
+MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParser::MessagePart::Ptr& msgPart)
 {
     auto mp = msgPart.dynamicCast<MimeTreeParser::AttachmentMessagePart>();
     auto content = msgPart->content();
@@ -969,7 +969,7 @@ MimeTreeParser::IconType MimeTreeParser::DefaultRendererPrivate::displayHint(con
     const bool defaultHidden(as && as->defaultDisplay(content) == AttachmentStrategy::None);
     const bool showOnlyOneMimePart(mShowOnlyOneMimePart);
     auto preferredMode = source()->preferredMode();
-    bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
+    bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
 
     QByteArray mediaType("text");
     if (content->contentType(false) && !content->contentType()->mediaType().isEmpty()
@@ -1019,7 +1019,7 @@ MimeTreeParser::IconType MimeTreeParser::DefaultRendererPrivate::displayHint(con
 }
 
 DefaultRenderer::DefaultRenderer(CSSHelperBase *cssHelper)
-    : d(new MimeTreeParser::DefaultRendererPrivate(cssHelper, MessagePartRendererFactory::instance()))
+    : d(new DefaultRendererPrivate(cssHelper, MessagePartRendererFactory::instance()))
 {
 }
 
