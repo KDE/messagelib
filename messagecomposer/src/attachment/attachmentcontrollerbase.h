@@ -108,7 +108,6 @@ private:
     class Private;
     Private *const d;
 
-    Q_PRIVATE_SLOT(d, void attachmentRemoved(const MessageCore::AttachmentPart::Ptr &))
     Q_PRIVATE_SLOT(d, void compressJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void loadJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void openSelectedAttachments())
@@ -119,7 +118,6 @@ private:
     Q_PRIVATE_SLOT(d, void saveSelectedAttachmentAs())
     Q_PRIVATE_SLOT(d, void selectedAttachmentProperties())
     Q_PRIVATE_SLOT(d, void editDone(MessageViewer::EditorWatcher *))
-    Q_PRIVATE_SLOT(d, void attachPublicKeyJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void slotAttachmentContentCreated(KJob *))
     Q_PRIVATE_SLOT(d, void reloadAttachment())
     Q_PRIVATE_SLOT(d, void updateJobResult(KJob *))

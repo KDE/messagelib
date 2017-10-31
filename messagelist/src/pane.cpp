@@ -160,8 +160,8 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     d->mCloseTabButton->setAccessibleName(i18n("Close tab"));
 #endif
     setCornerWidget(d->mCloseTabButton, Qt::TopRightCorner);
-    connect(d->mCloseTabButton, SIGNAL(clicked()),
-            SLOT(onCloseTabClicked()));
+    connect(d->mCloseTabButton, &QToolButton::clicked,
+            this, [this]() {d->onCloseTabClicked(); });
 
     setTabsClosable(true);
     connect(this, SIGNAL(tabCloseRequested(int)), this, SLOT(slotTabCloseRequested(int)));

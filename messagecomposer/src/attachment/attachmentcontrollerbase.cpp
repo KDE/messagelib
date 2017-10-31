@@ -369,7 +369,7 @@ void AttachmentControllerBase::exportPublicKey(const QString &fingerprint)
     }
 
     MessageComposer::AttachmentFromPublicKeyJob *ajob = new MessageComposer::AttachmentFromPublicKeyJob(fingerprint, this);
-    connect(ajob, SIGNAL(result(KJob*)), this, SLOT(attachPublicKeyJobResult(KJob*)));
+    connect(ajob, &AttachmentFromPublicKeyJob::result, this, [this](KJob *job) {d->attachPublicKeyJobResult(job); });
     ajob->start();
 }
 
@@ -424,8 +424,8 @@ AttachmentControllerBase::AttachmentControllerBase(MessageComposer::AttachmentMo
 {
     d->model = model;
     connect(model, &MessageComposer::AttachmentModel::attachUrlsRequested, this, &AttachmentControllerBase::addAttachments);
-    connect(model, SIGNAL(attachmentRemoved(MessageCore::AttachmentPart::Ptr)),
-            this, SLOT(attachmentRemoved(MessageCore::AttachmentPart::Ptr)));
+    connect(model, &MessageComposer::AttachmentModel::attachmentRemoved,
+            this, [this](const MessageCore::AttachmentPart::Ptr &attr) { d->attachmentRemoved(attr); });
     connect(model, &AttachmentModel::attachmentCompressRequested,
             this, &AttachmentControllerBase::compressAttachment);
     connect(model, &MessageComposer::AttachmentModel::encryptEnabled, this, &AttachmentControllerBase::setEncryptEnabled);
@@ -484,8 +484,8 @@ void AttachmentControllerBase::createActions()
 
     d->removeAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("&Remove Attachment"), this);
     d->removeContextAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this);     // FIXME need two texts. is there a better way?
-    connect(d->removeAction, SIGNAL(triggered(bool)), this, SLOT(removeSelectedAttachments()));
-    connect(d->removeContextAction, SIGNAL(triggered(bool)), this, SLOT(removeSelectedAttachments()));
+    connect(d->removeAction, &QAction::triggered, this, [this]() { d->removeSelectedAttachments(); });
+    connect(d->removeContextAction, &QAction::triggered, this, [this]() { d->removeSelectedAttachments(); });
 
     d->openContextAction = new QAction(i18nc("to open", "Open"), this);
     connect(d->openContextAction, SIGNAL(triggered(bool)), this, SLOT(openSelectedAttachments()));
@@ -863,7 +863,7 @@ void AttachmentControllerBase::showAttachVcard()
         const Akonadi::EmailAddressSelection::List selectedEmail = dlg->selectedAddresses();
         for (const Akonadi::EmailAddressSelection &selected : selectedEmail) {
             MessageComposer::AttachmentVcardFromAddressBookJob *ajob = new MessageComposer::AttachmentVcardFromAddressBookJob(selected.item(), this);
-            connect(ajob, SIGNAL(result(KJob*)), this, SLOT(attachVcardFromAddressBook(KJob*)));
+            connect(ajob, &AttachmentVcardFromAddressBookJob::result, this, [this](KJob *job) {d->attachVcardFromAddressBook(job);});
             ajob->start();
         }
     }
