@@ -123,7 +123,7 @@
 #include <WebEngineViewer/LocalDataBaseManager>
 
 #include <MimeTreeParser/BodyPart>
-#include <MimeTreeParser/HtmlWriter>
+#include "interfaces/htmlwriter.h"
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
 
@@ -811,7 +811,7 @@ bool ViewerPrivate::showEmoticons() const
     return mForceEmoticons;
 }
 
-MimeTreeParser::HtmlWriter *ViewerPrivate::htmlWriter() const
+HtmlWriter *ViewerPrivate::htmlWriter() const
 {
     return mHtmlWriter;
 }

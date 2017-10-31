@@ -47,15 +47,14 @@ std::vector<GpgME::Key> getKeys(bool smime = false);
 class TestObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
-    TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer, MessageViewer::CSSHelperBase *cssHelper)
-        : mWriter(writer)
-        , mCSSHelper(cssHelper)
+    TestObjectTreeSource(MessageViewer::CSSHelperBase *cssHelper)
+        : mCSSHelper(cssHelper)
     {
     }
 
-    MimeTreeParser::HtmlWriter *htmlWriter() override
+    MessageViewer::HtmlWriter *htmlWriter() override
     {
-        return mWriter;
+        return nullptr;
     }
 
     MessageViewer::CSSHelperBase *cssHelper() override
@@ -64,7 +63,6 @@ public:
     }
 
 private:
-    MimeTreeParser::HtmlWriter *mWriter = nullptr;
     MessageViewer::CSSHelperBase *mCSSHelper = nullptr;
 };
 }

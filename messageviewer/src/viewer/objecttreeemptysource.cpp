@@ -27,6 +27,8 @@
 
 #include "messagepartthemes/default/defaultrenderer.h"
 
+#include "messageviewer_debug.h"
+
 using namespace MessageViewer;
 
 namespace MessageViewer {
@@ -105,7 +107,7 @@ const AttachmentStrategy *EmptySource::attachmentStrategy()
     return AttachmentStrategy::smart();
 }
 
-MimeTreeParser::HtmlWriter *EmptySource::htmlWriter()
+HtmlWriter *EmptySource::htmlWriter()
 {
     return nullptr;
 }
@@ -140,10 +142,14 @@ bool EmptySource::isPrinting() const
     return false;
 }
 
-void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, bool showOnlyOneMimePart)
+void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart)
 {
+    if (!htmlWriter()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "no htmlWriter - skipping rendering.";
+        return;
+    }
     auto renderer = DefaultRenderer(cssHelper());
     renderer.setShowOnlyOneMimePart(showOnlyOneMimePart);
     renderer.setAttachmentStrategy(attachmentStrategy());
-    renderer.render(msgPart, htmlWriter);
+    renderer.render(msgPart, htmlWriter());
 }

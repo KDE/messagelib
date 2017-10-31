@@ -27,6 +27,7 @@ class QString;
 namespace MessageViewer {
 class AttachmentStrategy;
 class CSSHelperBase;
+class HtmlWriter;
 
 /** An ObjectTreeSource that does not work on anything */
 class EmptySourcePrivate;
@@ -45,14 +46,14 @@ public:
     const QTextCodec *overrideCodec() override;
     QString createMessageHeader(KMime::Message *message) override;
     virtual const AttachmentStrategy *attachmentStrategy();
-    MimeTreeParser::HtmlWriter *htmlWriter() override;
+    virtual HtmlWriter *htmlWriter();
     virtual CSSHelperBase *cssHelper();
 
     bool autoImportKeys() const override;
     bool showEmoticons() const override;
     bool showExpandQuotesMark() const override;
     const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;
-    void render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, bool showOnlyOneMimePart) override;
+    void render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart) override;
     bool isPrinting() const override;
 private:
     EmptySourcePrivate *const d;

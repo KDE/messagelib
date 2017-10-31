@@ -44,7 +44,6 @@
 
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"
-#include "interfaces/htmlwriter.h"
 
 #include "bodypartformatterfactory.h"
 #include "bodypartformatterfactory_p.h"
@@ -112,9 +111,9 @@ public:
             QString fileName = mp->temporaryFilePath();
             QString href = QUrl::fromLocalFile(fileName).url();
             QByteArray cid = node->contentID()->identifier();
-            if (part.objectTreeParser()->htmlWriter()) {
-                part.objectTreeParser()->htmlWriter()->embedPart(cid, href);
-            }
+            //if (part.objectTreeParser()->htmlWriter()) {
+            //    part.objectTreeParser()->htmlWriter()->embedPart(cid, href);
+            //}
             part.nodeHelper()->setNodeDisplayedEmbedded(node, true);
             part.nodeHelper()->setNodeDisplayedHidden(node, true);
             return mp;

@@ -23,7 +23,7 @@
 #include "testcsshelper.h"
 #include "util.h"
 
-#include <MimeTreeParser/FileHtmlWriter>
+#include <MessageViewer/FileHtmlWriter>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/MessagePart>
 
@@ -311,7 +311,7 @@ void RenderTest::testRender()
     const KMime::Message::Ptr msg(Test::readAndParseMail(mailFileName));
 
     // render the mail
-    MimeTreeParser::FileHtmlWriter fileWriter(outFileName);
+    FileHtmlWriter fileWriter(outFileName);
     QImage paintDevice;
     Test::TestCSSHelper cssHelper(&paintDevice);
     MimeTreeParser::NodeHelper nodeHelper;

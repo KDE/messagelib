@@ -135,6 +135,12 @@ set(libmessageviewer_htmlwriter_webengine_SRCS
     htmlwriter/webengineembedpart.cpp
     )
 
+set(libmessageviewer_htmlwriter_SRCS
+    ${libmessageviewer_htmlwriter_webengine_SRCS}
+    htmlwriter/bufferedhtmlwriter.cpp
+    htmlwriter/filehtmlwriter.cpp
+    )
+
 set(libmessageviewer_antispam_SRCS
     antispam/spamheaderanalyzer.cpp
     antispam/antispamconfig.cpp
@@ -166,9 +172,13 @@ set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/messagepartrendererfactory.cpp
     )
 
+set(libmessageviewer_interfaces_SRCS
+    interfaces/htmlwriter.cpp
+    )
+
 set(libmessageviewer_SRCS
     ${libmessageviewer_messagepartthemes_default_SRCS}
-    ${libmessageviewer_htmlwriter_webengine_SRCS}
+    ${libmessageviewer_htmlwriter_SRCS}
     ${libmessageviewer_messagepartthemes_SRCS}
     ${libmessageviewer_scamdetection_webengine_SRCS}
     ${libmessageviewer_widgets_webengine_SRCS}
@@ -183,6 +193,7 @@ set(libmessageviewer_SRCS
     ${libmessageviewer_viewerplugins_SRCS}
     settings/messageviewersettings.cpp
     ${libmessageviewer_mailviewer_SRCS}
+    ${libmessageviewer_interfaces_SRCS}
     )
 
 qt5_add_resources(libmessageviewer_SRCS messagepartthemes.qrc)
@@ -318,11 +329,21 @@ ecm_generate_headers(MessageViewer_Camelcaseantispam_HEADERS
 
 ecm_generate_headers(MessageViewer_Camelcaseinterfaces_HEADERS
     HEADER_NAMES
+    HtmlWriter
     BodyPartURLHandler
     URLHandler
     REQUIRED_HEADERS MessageViewer_interfaces_HEADERS
     PREFIX MessageViewer
     RELATIVE interfaces
+    )
+
+ecm_generate_headers(MessageViewer_Camelcasehtmlwriter_HEADERS
+    HEADER_NAMES
+    BufferedHtmlWriter
+    FileHtmlWriter
+    REQUIRED_HEADERS MessageViewer_htmlwriter_HEADERS
+    PREFIX MessageViewer
+    RELATIVE htmlwriter
     )
 
 ecm_generate_headers(MessageViewer_Camelcasesettings_HEADERS
@@ -388,6 +409,7 @@ install(FILES
     ${MessageViewer_Camelcasesettings_HEADERS}
     ${MessageViewer_Camelcaseutils_HEADERS}
     ${MessageViewer_Camelcaseinterfaces_HEADERS}
+    ${MessageViewer_Camelcasehtmlwriter_HEADERS}
     ${MessageViewer_Camelcaseviewer_HEADERS}
     ${MessageViewer_Camelcasewidgets_HEADERS}
     ${MessageViewer_Camelcaseantispam_HEADERS}
@@ -406,6 +428,7 @@ install(FILES
     ${MessageViewer_header_HEADERS}
     ${MessageViewer_utils_HEADERS}
     ${MessageViewer_interfaces_HEADERS}
+    ${MessageViewer_htmlwriter_HEADERS}
     ${MessageViewer_HEADERS}
     ${MessageViewer_viewer_HEADERS}
     ${MessageViewer_widgets_HEADERS}

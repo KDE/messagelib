@@ -19,7 +19,7 @@
 
 #include "bufferedhtmlwriter.h"
 
-using namespace MimeTreeParser;
+using namespace MessageViewer;
 
 BufferedHtmlWriter::BufferedHtmlWriter()
     : m_buffer(&m_data)

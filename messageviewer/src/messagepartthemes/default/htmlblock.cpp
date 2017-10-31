@@ -26,7 +26,7 @@
 
 #include <QApplication>
 
-using namespace MimeTreeParser;
+using namespace MessageViewer;
 
 HTMLBlock::HTMLBlock()
     : entered(false)
@@ -60,7 +60,7 @@ QString HTMLBlock::exit()
     return QString();
 }
 
-AttachmentMarkBlock::AttachmentMarkBlock(MimeTreeParser::HtmlWriter *writer, KMime::Content *node)
+AttachmentMarkBlock::AttachmentMarkBlock(HtmlWriter *writer, KMime::Content *node)
     : mNode(node)
     , mWriter(writer)
 {

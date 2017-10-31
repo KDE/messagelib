@@ -30,10 +30,10 @@
     your version.
 */
 
-#ifndef __MIMETREEPARSER_INTERFACES_HTMLWRITER_H__
-#define __MIMETREEPARSER_INTERFACES_HTMLWRITER_H__
+#ifndef __MESSAGEVIEWER_INTERFACES_HTMLWRITER_H__
+#define __MESSAGEVIEWER_INTERFACES_HTMLWRITER_H__
 
-#include "mimetreeparser_export.h"
+#include "messageviewer_export.h"
 
 #include <qglobal.h>
 #include <memory>
@@ -43,13 +43,13 @@ class QIODevice;
 class QString;
 class QTextStream;
 
-namespace MimeTreeParser {
+namespace MessageViewer {
 /**
   * @short An interface for HTML sinks.
   * @author Marc Mutz <mutz@kde.org>
   *
   */
-class MIMETREEPARSER_EXPORT HtmlWriter
+class MESSAGEVIEWER_EXPORT HtmlWriter
 {
 public:
     HtmlWriter();
@@ -102,4 +102,4 @@ private:
 };
 }
 
-#endif // __MIMETREEPARSER_INTERFACES_HTMLWRITER_H__
+#endif // __MESSAGEVIEWER_INTERFACES_HTMLWRITER_H__

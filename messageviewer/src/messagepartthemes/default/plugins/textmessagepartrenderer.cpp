@@ -25,7 +25,7 @@
 #include "../messagepartrenderermanager.h"
 
 #include <MessageCore/StringUtil>
-#include <MimeTreeParser/HtmlWriter>
+#include "interfaces/htmlwriter.h"
 
 #include <grantlee/context.h>
 #include <grantlee/template.h>
@@ -40,7 +40,7 @@ TextMessagePartRenderer::~TextMessagePartRenderer()
 {
 }
 
-bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const
+bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const
 {
     Q_UNUSED(context);
     auto mp = msgPart.dynamicCast<TextMessagePart>();

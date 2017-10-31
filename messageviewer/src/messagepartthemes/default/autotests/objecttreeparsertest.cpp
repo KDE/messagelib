@@ -21,7 +21,7 @@
 #include "setupenv.h"
 
 #include <MimeTreeParser/ObjectTreeParser>
-#include <MimeTreeParser/BufferedHtmlWriter>
+#include <MessageViewer/BufferedHtmlWriter>
 #include <MessageViewer/CSSHelperBase>
 
 #include <QTest>
@@ -92,7 +92,7 @@ void ObjectTreeParserTester::test_parseEncapsulatedMessage()
     QCOMPARE(msg->contents().size(), 2);
 
     // Parse the message
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
@@ -130,7 +130,7 @@ void ObjectTreeParserTester::test_missingContentTypeHeader()
                  false).constData(), "Simple Mail Without Content-Type Header");
     QCOMPARE(msg->contents().size(), 0);
 
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
@@ -150,7 +150,7 @@ void ObjectTreeParserTester::test_inlinePGPDecryption()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "inlinepgpencrypted");
     QCOMPARE(msg->contents().size(), 0);
 
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
@@ -177,7 +177,7 @@ void ObjectTreeParserTester::test_inlinePGPSigned()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "test");
     QCOMPARE(msg->contents().size(), 0);
 
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     NodeHelper nodeHelper;
@@ -217,7 +217,7 @@ void ObjectTreeParserTester::test_HTMLasText()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
 
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -255,7 +255,7 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -279,7 +279,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
     QCOMPARE(msg->contents().size(), 0);
 
     {
-        MimeTreeParser::BufferedHtmlWriter testWriter;
+        BufferedHtmlWriter testWriter;
         testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -294,7 +294,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
         QVERIFY(testWriter.data().contains("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
     }
     {
-        MimeTreeParser::BufferedHtmlWriter testWriter;
+        BufferedHtmlWriter testWriter;
         testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -315,7 +315,7 @@ void ObjectTreeParserTester::test_Alternative()
     KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("alternative.mbox"));
     QCOMPARE(msg->contents().size(), 2);
     {
-        MimeTreeParser::BufferedHtmlWriter testWriter;
+        BufferedHtmlWriter testWriter;
         testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -332,7 +332,7 @@ void ObjectTreeParserTester::test_Alternative()
     }
 
     {
-        MimeTreeParser::BufferedHtmlWriter testWriter;
+        BufferedHtmlWriter testWriter;
         testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -352,7 +352,7 @@ void ObjectTreeParserTester::test_Alternative()
     msg = Test::readAndParseMail(QStringLiteral("alternative-notext.mbox"));
     QCOMPARE(msg->contents().size(), 1);
     {
-        MimeTreeParser::BufferedHtmlWriter testWriter;
+        BufferedHtmlWriter testWriter;
         testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -368,7 +368,7 @@ void ObjectTreeParserTester::test_Alternative()
     }
 
     {
-        MimeTreeParser::BufferedHtmlWriter testWriter;
+        BufferedHtmlWriter testWriter;
         testWriter.begin();
         Test::CSSHelper testCSSHelper;
         Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);

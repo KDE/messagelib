@@ -24,7 +24,7 @@
 
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
-#include <MimeTreeParser/BufferedHtmlWriter>
+#include <MessageViewer/BufferedHtmlWriter>
 
 #include <QTest>
 
@@ -54,7 +54,7 @@ void UnencryptedMessageTest::testSignedForwardedOpenPGPSignedEncrypted()
         = Test::readAndParseMail(QStringLiteral("signed-forward-openpgp-signed-encrypted.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -78,7 +78,7 @@ void UnencryptedMessageTest::testForwardedOpenPGPSignedEncrypted()
         = Test::readAndParseMail(QStringLiteral("forward-openpgp-signed-encrypted.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -313,7 +313,7 @@ void UnencryptedMessageTest::testNotDecrypted()
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(mailFileName);
 
     MimeTreeParser::NodeHelper nodeHelper;
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
@@ -338,7 +338,7 @@ void UnencryptedMessageTest::testSMimeAutoCertImport()
     KMime::Message::Ptr originalMessage = Test::readAndParseMail(QStringLiteral("smime-cert.mbox"));
 
     MimeTreeParser::NodeHelper nodeHelper;
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     testWriter.begin();
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);

@@ -41,18 +41,11 @@ void setupEnv();
 class TestObjectTreeSource : public MimeTreeParser::Interface::ObjectTreeSource
 {
 public:
-    TestObjectTreeSource(MimeTreeParser::HtmlWriter *writer)
-        : mWriter(writer)
-        , mAttachmentStrategy(QStringLiteral("smart"))
-        , mPreferredMode(Util::Html)
+    TestObjectTreeSource()
+        : mPreferredMode(Util::Html)
         , mHtmlLoadExternal(false)
         , mDecryptMessage(false)
     {
-    }
-
-    MimeTreeParser::HtmlWriter *htmlWriter() override
-    {
-        return mWriter;
     }
 
     bool htmlLoadExternal() const override
@@ -137,10 +130,9 @@ public:
         return QString(); //do nothing
     }
 
-    void render(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter, bool showOnlyOneMimePart) override
+    void render(const MessagePart::Ptr &msgPart, bool showOnlyOneMimePart) override
     {
         Q_UNUSED(msgPart);
-        Q_UNUSED(htmlWriter);
         Q_UNUSED(showOnlyOneMimePart);
     }
 
@@ -150,8 +142,6 @@ public:
     }
 
 private:
-    MimeTreeParser::HtmlWriter *mWriter = nullptr;
-    QString mAttachmentStrategy;
     BodyPartFormatterFactory mBodyPartFormatterFactory;
     MimeTreeParser::Util::HtmlMode mPreferredMode;
     bool mHtmlLoadExternal = false;

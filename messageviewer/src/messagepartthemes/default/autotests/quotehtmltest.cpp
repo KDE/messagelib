@@ -22,7 +22,7 @@
 #include "setupenv.h"
 
 #include <MimeTreeParser/ObjectTreeParser>
-#include <MimeTreeParser/BufferedHtmlWriter>
+#include <MessageViewer/BufferedHtmlWriter>
 #include <MessageViewer/CSSHelperBase>
 #include <MimeTreeParser/MessagePart>
 #include <MessageViewer/IconNameCache>
@@ -138,7 +138,7 @@ void QuoteHtmlTest::testQuoteHtml()
     QFETCH(QString, result);
     QFETCH(bool, showExpandQuotesMark);
     QFETCH(int, quotelevel);
-    MimeTreeParser::BufferedHtmlWriter testWriter;
+    BufferedHtmlWriter testWriter;
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     emptySource.setShowExpandQuotesMark(showExpandQuotesMark);

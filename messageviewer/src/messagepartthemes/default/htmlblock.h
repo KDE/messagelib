@@ -29,7 +29,7 @@ namespace KMime {
 class Content;
 }
 
-namespace MimeTreeParser {
+namespace MessageViewer {
 class HtmlWriter;
 
 class MESSAGEVIEWER_EXPORT HTMLBlock
@@ -58,7 +58,7 @@ private:
 class MESSAGEVIEWER_EXPORT AttachmentMarkBlock : public HTMLBlock
 {
 public:
-    AttachmentMarkBlock(MimeTreeParser::HtmlWriter *writer, KMime::Content *node);
+    AttachmentMarkBlock(HtmlWriter *writer, KMime::Content *node);
     virtual ~AttachmentMarkBlock();
 
 protected:
@@ -79,7 +79,7 @@ private:
 class RootBlock : public HTMLBlock
 {
 public:
-    RootBlock(MimeTreeParser::HtmlWriter *writer);
+    RootBlock(HtmlWriter *writer);
     virtual ~RootBlock();
 
 protected:

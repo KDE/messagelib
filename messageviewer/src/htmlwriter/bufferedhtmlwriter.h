@@ -17,20 +17,20 @@
    02110-1301, USA.
 */
 
-#ifndef MIMETREEPARSER_BUFFEREDHTMLWRITER_H
-#define MIMETREEPARSER_BUFFEREDHTMLWRITER_H
+#ifndef MESSAGEVIEWER_BUFFEREDHTMLWRITER_H
+#define MESSAGEVIEWER_BUFFEREDHTMLWRITER_H
 
-#include "mimetreeparser_export.h"
-#include <mimetreeparser/htmlwriter.h>
+#include "messageviewer_export.h"
+#include <MessageViewer/HtmlWriter>
 
 #include <QBuffer>
 #include <QByteArray>
 
-namespace MimeTreeParser {
+namespace MessageViewer {
 /**
  * QBuffer-backed HtmlWriter
  */
-class MIMETREEPARSER_EXPORT BufferedHtmlWriter : public HtmlWriter
+class MESSAGEVIEWER_EXPORT BufferedHtmlWriter : public HtmlWriter
 {
 public:
     BufferedHtmlWriter();
@@ -55,4 +55,4 @@ private:
 };
 }
 
-#endif // MIMETREEPARSER_BUFFEREDHTMLWRITER_H
+#endif // MESSAGEVIEWER_BUFFEREDHTMLWRITER_H

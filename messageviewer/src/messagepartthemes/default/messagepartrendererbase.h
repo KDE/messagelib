@@ -39,12 +39,9 @@
 
 #include <QSharedPointer>
 
-namespace MimeTreeParser {
-class HtmlWriter;
-}
-
 namespace MessageViewer {
 class CSSHelperBase;
+class HtmlWriter;
 
 class MESSAGEVIEWER_EXPORT RenderContext
 {
@@ -53,23 +50,23 @@ public:
 
     virtual CSSHelperBase *cssHelper() const = 0;
     template<typename T>
-    inline bool renderWithFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer)
+    inline bool renderWithFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer)
     {
         return renderWithFactory(&T::staticMetaObject, msgPart, writer);
     }
 
-    inline bool renderWithFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer)
+    inline bool renderWithFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer)
     {
         return renderWithFactory(msgPart->metaObject(), msgPart, writer);
     }
 
-    virtual void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) = 0;
+    virtual void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) = 0;
 
     virtual bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
     virtual MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
 
 protected:
-    virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer) = 0;
+    virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) = 0;
 };
 
 class MESSAGEVIEWER_EXPORT MessagePartRendererBase
@@ -77,7 +74,7 @@ class MESSAGEVIEWER_EXPORT MessagePartRendererBase
 public:
     MessagePartRendererBase();
     virtual ~MessagePartRendererBase();
-    virtual bool render(const MimeTreeParser::MessagePart::Ptr &, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context)
+    virtual bool render(const MimeTreeParser::MessagePart::Ptr &, HtmlWriter *htmlWriter, RenderContext *context)
     const = 0;
 };
 }

@@ -24,7 +24,7 @@
 #include "../htmlblock.h"
 #include "../defaultrenderer_p.h"
 
-#include <MimeTreeParser/HtmlWriter>
+#include "interfaces/htmlwriter.h"
 
 using namespace MessageViewer;
 
@@ -36,9 +36,9 @@ MessagePartRenderer::~MessagePartRenderer()
 {
 }
 
-bool MessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const
+bool MessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const
 {
-    MimeTreeParser::AttachmentMarkBlock block(nullptr, msgPart->attachmentContent());
+    AttachmentMarkBlock block(nullptr, msgPart->attachmentContent());
     if (msgPart->isAttachment()) {
         htmlWriter->write(block.enter());
     }

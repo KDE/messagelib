@@ -45,7 +45,6 @@
 
 #include "bodyformatter/utils.h"
 #include "interfaces/bodypartformatter.h"
-#include "interfaces/htmlwriter.h"
 #include "utils/util.h"
 
 #include <KMime/Headers>
@@ -62,7 +61,6 @@ using namespace MimeTreeParser;
 ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser)
     : mSource(topLevelParser->mSource)
     , mNodeHelper(topLevelParser->mNodeHelper)
-    , mHtmlWriter(topLevelParser->mHtmlWriter)
     , mTopLevelContent(topLevelParser->mTopLevelContent)
     , mHasPendingAsyncJobs(false)
     , mAllowAsync(topLevelParser->mAllowAsync)
@@ -73,7 +71,6 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser)
 ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTreeParser::NodeHelper *nodeHelper)
     : mSource(source)
     , mNodeHelper(nodeHelper)
-    , mHtmlWriter(nullptr)
     , mTopLevelContent(nullptr)
     , mHasPendingAsyncJobs(false)
     , mAllowAsync(false)
@@ -96,8 +93,6 @@ void ObjectTreeParser::init()
 ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser &other)
     : mSource(other.mSource)
     , mNodeHelper(other.nodeHelper())
-    ,                                    //TODO(Andras) hm, review what happens if mDeleteNodeHelper was true in the source
-    mHtmlWriter(other.mHtmlWriter)
     , mTopLevelContent(other.mTopLevelContent)
     , mHasPendingAsyncJobs(other.hasPendingAsyncJobs())
     , mAllowAsync(other.allowAsync())
@@ -171,9 +166,7 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node, bool parseOnlySingl
             setPlainTextContent(mp->text());
         }
 
-        if (htmlWriter()) {
-            mSource->render(mParsedPart, htmlWriter(), parseOnlySingleNode);
-        }
+        mSource->render(mParsedPart, parseOnlySingleNode);
     }
 }
 
@@ -340,14 +333,6 @@ QByteArray ObjectTreeParser::plainTextContentCharset() const
 QByteArray ObjectTreeParser::htmlContentCharset() const
 {
     return mHtmlContentCharset;
-}
-
-HtmlWriter *ObjectTreeParser::htmlWriter() const
-{
-    if (mHtmlWriter) {
-        return mHtmlWriter;
-    }
-    return mSource->htmlWriter();
 }
 
 MimeTreeParser::NodeHelper *ObjectTreeParser::nodeHelper() const

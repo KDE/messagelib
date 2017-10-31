@@ -35,6 +35,7 @@ class HtmlWriter;
 }
 
 namespace MimeTreeParser {
+
 class DefaultRendererPrivate : public MessageViewer::RenderContext
 {
 public:
@@ -45,21 +46,21 @@ public:
 
     Interface::ObjectTreeSource *source() const;
 
-    void renderSubParts(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) override;
+    void renderSubParts(const MessagePart::Ptr &msgPart, MessageViewer::HtmlWriter *htmlWriter) override;
 
-    void render(const MessagePartList::Ptr &mp, HtmlWriter *htmlWriter);
-    void render(const MimeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    void render(const EncapsulatedRfc822MessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    void render(const HtmlMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    void renderEncrypted(const EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    void renderSigned(const SignedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    void render(const SignedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    void render(const EncryptedMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    void render(const AlternativeMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    void render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter);
-    bool renderWithFactory(const QMetaObject *mo, const MessagePart::Ptr &msgPart, HtmlWriter *writer) override;
+    void render(const MessagePartList::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    void render(const MimeMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    void render(const EncapsulatedRfc822MessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    void render(const HtmlMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    void renderEncrypted(const EncryptedMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    void renderSigned(const SignedMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    void render(const SignedMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    void render(const EncryptedMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    void render(const AlternativeMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    void render(const CertMessagePart::Ptr &mp, MessageViewer::HtmlWriter *htmlWriter);
+    bool renderWithFactory(const QMetaObject *mo, const MessagePart::Ptr &msgPart, MessageViewer::HtmlWriter *writer) override;
     using RenderContext::renderWithFactory;
-    void renderFactory(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter);
+    void renderFactory(const MessagePart::Ptr &msgPart, MessageViewer::HtmlWriter *htmlWriter);
 
     bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
     MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;

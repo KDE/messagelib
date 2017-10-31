@@ -17,7 +17,7 @@
 #ifndef WEBENGINEPARTHTMLWRITER_H
 #define WEBENGINEPARTHTMLWRITER_H
 
-#include <MimeTreeParser/BufferedHtmlWriter>
+#include "bufferedhtmlwriter.h"
 #include <QObject>
 
 #include <QString>
@@ -28,7 +28,7 @@ class MailWebEngineView;
 }
 
 namespace MessageViewer {
-class WebEnginePartHtmlWriter : public QObject, public MimeTreeParser::BufferedHtmlWriter
+class WebEnginePartHtmlWriter : public QObject, public BufferedHtmlWriter
 {
     Q_OBJECT
 public:

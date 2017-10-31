@@ -30,7 +30,7 @@ class MessagePartRenderer : public MessagePartRendererBase
 public:
     MessagePartRenderer();
     virtual ~MessagePartRenderer();
-    bool render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const override;
+    bool render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const override;
 };
 }
 

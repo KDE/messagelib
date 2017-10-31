@@ -99,7 +99,7 @@ const AttachmentStrategy *MailViewerSource::attachmentStrategy()
     return mViewer->attachmentStrategy();
 }
 
-MimeTreeParser::HtmlWriter *MailViewerSource::htmlWriter()
+HtmlWriter *MailViewerSource::htmlWriter()
 {
     return mViewer->htmlWriter();
 }
@@ -129,10 +129,10 @@ bool MailViewerSource::isPrinting() const
     return mViewer->mPrinting;
 }
 
-void MailViewerSource::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, bool showOnlyOneMimePart)
+void MailViewerSource::render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart)
 {
     auto renderer = DefaultRenderer(mViewer->cssHelper());
     renderer.setShowOnlyOneMimePart(showOnlyOneMimePart);
     renderer.setAttachmentStrategy(attachmentStrategy());
-    renderer.render(msgPart, htmlWriter);
+    renderer.render(msgPart, htmlWriter());
 }

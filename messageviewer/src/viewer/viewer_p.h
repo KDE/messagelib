@@ -66,7 +66,6 @@ class ShareServiceUrlManager;
 }
 
 namespace MimeTreeParser {
-class HtmlWriter;
 class ObjectTreeParser;
 }
 
@@ -79,6 +78,7 @@ class LocalDataBaseManager;
 namespace MessageViewer {
 class AttachmentStrategy;
 class HeaderStylePlugin;
+class HtmlWriter;
 class CSSHelper;
 class MailWebEngineView;
 class WebEnginePartHtmlWriter;
@@ -119,7 +119,7 @@ update() is just a thin wrapper that calls updateReaderWin(). The only differenc
 has a timer that prevents too many slow calls to updateReaderWin() in a short time frame.
 updateReaderWin() again is only a thin wrapper that resets some state and then calls
 displayMessage().
-displayMessage() itself is again a thin wrapper, which starts the MimeTreeParser::HtmlWriter and then calls
+displayMessage() itself is again a thin wrapper, which starts the HtmlWriter and then calls
 parseMsg().
 Finally, parseMsg() does the real work. It uses MimeTreeParser::ObjectTreeParser ::parseObjectTree() to let the
 MimeTreeParser::ObjectTreeParser parse the message and generate the HTML code for it.
@@ -183,7 +183,7 @@ which is used for the colored frame are both created by the MimeTreeParser::Obje
 \par Misc
 
 ViewerPrivate holds the MimeTreeParser::NodeHelper, which is passed on to the MimeTreeParser::ObjectTreeParser when it needs it.
-It also holds the HeaderStyle, HeaderStrategy, MimeTreeParser::AttachmentStrategy, CSSHelper, MimeTreeParser::HtmlWriter and more,
+It also holds the HeaderStyle, HeaderStrategy, MimeTreeParser::AttachmentStrategy, CSSHelper, HtmlWriter and more,
 some of them again passed to the MimeTreeParser::ObjectTreeParser when it needs it.
 
 @author andras@kdab.net
@@ -235,8 +235,8 @@ public:
     void attachmentOpenWith(KMime::Content *node, const KService::Ptr &offer = KService::Ptr());
     void attachmentOpen(KMime::Content *node);
 
-    /** Return the MimeTreeParser::HtmlWriter connected to the MailWebView we use */
-    MimeTreeParser::HtmlWriter *htmlWriter() const;
+    /** Return the HtmlWriter connected to the MailWebView we use */
+    HtmlWriter *htmlWriter() const;
 
     HeaderStylePlugin *headerStylePlugin() const;
 
@@ -649,7 +649,7 @@ public:
     QUrl mImageUrl;
     QPoint mLastClickPosition;
     bool mCanStartDrag;
-    MimeTreeParser::HtmlWriter *mHtmlWriter;
+    HtmlWriter *mHtmlWriter;
     /** Used only to be able to connect and disconnect finished() signal
       in printMsg() and slotPrintMsg() since mHtmlWriter points only to abstract non-QObject class. */
     QPointer<WebEnginePartHtmlWriter> mPartHtmlWriter;

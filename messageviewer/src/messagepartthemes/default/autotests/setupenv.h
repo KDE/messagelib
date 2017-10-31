@@ -43,7 +43,7 @@ void setupEnv();
 class ObjectTreeSource : public MessageViewer::EmptySource
 {
 public:
-    ObjectTreeSource(MimeTreeParser::HtmlWriter *writer, MessageViewer::CSSHelperBase *cssHelper)
+    ObjectTreeSource(HtmlWriter *writer, MessageViewer::CSSHelperBase *cssHelper)
         : mWriter(writer)
         , mCSSHelper(cssHelper)
         , mAttachmentStrategy(QStringLiteral("smart"))
@@ -56,7 +56,7 @@ public:
     {
     }
 
-    MimeTreeParser::HtmlWriter *htmlWriter() override
+    HtmlWriter *htmlWriter() override
     {
         return mWriter;
     }
@@ -169,7 +169,7 @@ public:
     }
 
 private:
-    MimeTreeParser::HtmlWriter *mWriter;
+    HtmlWriter *mWriter;
     MessageViewer::CSSHelperBase *mCSSHelper;
     QString mAttachmentStrategy;
     MimeTreeParser::BodyPartFormatterFactory mBodyPartFormatterFactory;

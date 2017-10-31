@@ -26,7 +26,7 @@
 #include "../messagepartrenderermanager.h"
 
 #include <MessageCore/StringUtil>
-#include <MimeTreeParser/HtmlWriter>
+#include "interfaces/htmlwriter.h"
 
 #include <KIconLoader>
 #include <KLocalizedString>
@@ -42,7 +42,7 @@ AttachmentMessagePartRenderer::~AttachmentMessagePartRenderer()
 {
 }
 
-bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter, RenderContext *context) const
+bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const
 {
     auto mp = msgPart.dynamicCast<AttachmentMessagePart>();
     if (!mp) {

@@ -34,7 +34,7 @@
 #include "viewer/csshelperbase.h"
 #include "messagepartrenderermanager.h"
 
-#include <MimeTreeParser/BufferedHtmlWriter>
+#include "htmlwriter/bufferedhtmlwriter.h"
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <GrantleeTheme/QtResourceTemplateLoader>
@@ -1038,7 +1038,7 @@ void DefaultRenderer::setAttachmentStrategy(const AttachmentStrategy *strategy)
     d->mAttachmentStrategy = strategy;
 }
 
-void DefaultRenderer::render(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer)
+void DefaultRenderer::render(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer)
 {
     d->mMsgPart = msgPart;
     d->renderFactory(d->mMsgPart, writer);

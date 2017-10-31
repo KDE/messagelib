@@ -21,7 +21,7 @@
 
 #include <QTextStream>
 
-using namespace MimeTreeParser;
+using namespace MessageViewer;
 
 HtmlWriter::HtmlWriter() = default;
 HtmlWriter::~HtmlWriter() = default;

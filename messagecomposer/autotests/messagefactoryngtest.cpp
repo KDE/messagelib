@@ -38,7 +38,6 @@
 #include "testcsshelper.h"
 #include <setupenv.h>
 
-#include <MimeTreeParser/BufferedHtmlWriter>
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
 

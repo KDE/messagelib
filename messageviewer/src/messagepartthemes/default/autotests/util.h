@@ -20,7 +20,7 @@
 #ifndef __MESSAGEVIEWER_TESTS_UTIL_H__
 #define __MESSAGEVIEWER_TESTS_UTIL_H__
 
-#include <MimeTreeParser/HtmlWriter>
+#include "interfaces/htmlwriter.h"
 #include <MessageViewer/CSSHelperBase>
 
 #include <KMime/Message>

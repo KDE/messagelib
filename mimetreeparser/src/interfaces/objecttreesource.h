@@ -29,7 +29,6 @@
 class QTextCodec;
 
 namespace MimeTreeParser {
-class HtmlWriter;
 class BodyPartFormatterFactory;
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
@@ -73,9 +72,6 @@ public:
 
     virtual QString createMessageHeader(KMime::Message *message) = 0;
 
-    /** Return the html write object */
-    virtual HtmlWriter *htmlWriter() = 0;
-
     /** should keys be imported automatically **/
     virtual bool autoImportKeys() const = 0;
 
@@ -85,7 +81,7 @@ public:
 
     virtual const BodyPartFormatterFactory *bodyPartFormatterFactory() = 0;
 
-    virtual void render(const MessagePartPtr &msgPart, HtmlWriter *htmlWriter, bool showOnlyOneMimePart) = 0;
+    virtual void render(const MessagePartPtr &msgPart, bool showOnlyOneMimePart) = 0;
 
     virtual bool isPrinting() const = 0;
 

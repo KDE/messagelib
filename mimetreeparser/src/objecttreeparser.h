@@ -50,7 +50,6 @@ class Content;
 namespace MimeTreeParser {
 class PartMetaData;
 class ViewerPrivate;
-class HtmlWriter;
 class NodeHelper;
 class MessagePart;
 class MimeMessagePart;
@@ -246,7 +245,7 @@ yet happened at the time of writing. Therefore the code can seem a bit chaotic.
 
 External plugins are loaded with loadPlugins() in bodypartformatterfactory.cpp. External plugins
 can only use the classes in the interfaces/ directory, they include BodyPart, BodyPartMemento,
-BodyPartFormatterPlugin, BodyPartFormatter, BodyPartURLHandler, HtmlWriter and URLHandler. Therefore
+BodyPartFormatterPlugin, BodyPartFormatter, BodyPartURLHandler and URLHandler. Therefore
 external plugins have powerful capabilities, which are needed for example in the iCal formatter or
 in the vCard formatter.
 
@@ -303,8 +302,6 @@ public:
     QByteArray plainTextContentCharset() const;
     QByteArray htmlContentCharset() const;
 
-    HtmlWriter *htmlWriter() const;
-
     NodeHelper *nodeHelper() const;
 
     /** Parse beginning at a given node and recursively parsing
@@ -335,7 +332,6 @@ private:
 private:
     Interface::ObjectTreeSource *mSource;
     NodeHelper *mNodeHelper;
-    HtmlWriter *mHtmlWriter;
     QByteArray mPlainTextContentCharset;
     QByteArray mHtmlContentCharset;
     QString mPlainTextContent;

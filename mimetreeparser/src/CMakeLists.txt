@@ -23,7 +23,6 @@ set(libmimetreeparser_main_SRCS
     interfaces/bodypartformatter.cpp
     interfaces/objecttreesource.cpp
     interfaces/bodypart.cpp
-    interfaces/htmlwriter.cpp
     job/qgpgmejobexecutor.cpp
     utils/util.cpp
     bodypartformatter.cpp
@@ -37,12 +36,6 @@ set(libmimetreeparser_main_SRCS
     memento/decryptverifybodypartmemento.cpp
     memento/verifydetachedbodypartmemento.cpp
     memento/verifyopaquebodypartmemento.cpp
-    )
-
-set(libmimetreeparser_extra_SRCS
-    #HTML Writer
-    htmlwriter/bufferedhtmlwriter.cpp
-    htmlwriter/filehtmlwriter.cpp
     )
 
 set(mimetreeparser_temporaryfile_SRCS
@@ -74,20 +67,10 @@ ecm_generate_headers(MimeTreeParser_Camelcaseinterfaces_HEADERS
     HEADER_NAMES
     BodyPartFormatter
     BodyPart
-    HtmlWriter
     ObjectTreeSource
     REQUIRED_HEADERS MimeTreeParser_interfaces_HEADERS
     PREFIX MimeTreeParser
     RELATIVE interfaces
-    )
-
-ecm_generate_headers(MimeTreeParser_Camelcasehtmlwriter_HEADERS
-    HEADER_NAMES
-    BufferedHtmlWriter
-    FileHtmlWriter
-    REQUIRED_HEADERS MimeTreeParser_htmlwriter_HEADERS
-    PREFIX MimeTreeParser
-    RELATIVE htmlwriter
     )
 
 ecm_generate_headers(MimeTreeParser_Camelcasetemporaryfile_HEADERS
@@ -99,7 +82,6 @@ ecm_generate_headers(MimeTreeParser_Camelcasetemporaryfile_HEADERS
     )
 
 install(FILES
-    ${MimeTreeParser_Camelcasehtmlwriter_HEADERS}
     ${MimeTreeParser_Camelcaseutils_HEADERS}
     ${MimeTreeParser_Camelcaseinterfaces_HEADERS}
     ${MimeTreeParser_Camelcasemain_HEADERS}
@@ -109,7 +91,6 @@ install(FILES
     )
 
 install(FILES
-    ${MimeTreeParser_htmlwriter_HEADERS}
     ${MimeTreeParser_utils_HEADERS}
     ${MimeTreeParser_interfaces_HEADERS}
     ${MimeTreeParser_main_HEADERS}

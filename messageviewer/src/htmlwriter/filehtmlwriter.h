@@ -1,5 +1,5 @@
 /*  -*- c++ -*-
-    filehtmlwriter.cpp
+    filehtmlwriter.h
 
     This file is part of KMail, the KDE mail client.
     Copyright (c) 2003 Marc Mutz <mutz@kde.org>
@@ -29,61 +29,31 @@
     your version.
 */
 
-#include "filehtmlwriter.h"
-#include "mimetreeparser_debug.h"
+#ifndef __MESSAGEVIEWER_FILEHTMLWRITER_H__
+#define __MESSAGEVIEWER_FILEHTMLWRITER_H__
 
-using namespace MimeTreeParser;
+#include "messageviewer_export.h"
+#include <MessageViewer/HtmlWriter>
 
-FileHtmlWriter::FileHtmlWriter(const QString &filename)
-    : mFile(filename.isEmpty() ? QStringLiteral("filehtmlwriter.out") : filename)
+#include <QFile>
+
+namespace MessageViewer {
+class MESSAGEVIEWER_EXPORT FileHtmlWriter : public HtmlWriter
 {
-}
+public:
+    explicit FileHtmlWriter(const QString &filename);
+    ~FileHtmlWriter();
 
-FileHtmlWriter::~FileHtmlWriter()
-{
-    if (mFile.isOpen()) {
-        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: file still open!";
-        HtmlWriter::end();
-        mFile.close();
-    }
-}
+    void begin() override;
+    void end() override;
+    void reset() override;
+    QIODevice *device() const override;
+    void embedPart(const QByteArray &contentId, const QString &url) override;
+    void extraHead(const QString &str) override;
 
-void FileHtmlWriter::begin()
-{
-    if (mFile.isOpen()) {
-        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: file still open!";
-        mFile.close();
-    }
-    if (!mFile.open(QIODevice::WriteOnly)) {
-        qCWarning(MIMETREEPARSER_LOG) << "FileHtmlWriter: Cannot open file" << mFile.fileName();
-    }
-    HtmlWriter::begin();
-}
+private:
+    QFile mFile;
+};
+} // namespace MessageViewer
 
-void FileHtmlWriter::end()
-{
-    HtmlWriter::end();
-    mFile.close();
-}
-
-void FileHtmlWriter::reset()
-{
-    HtmlWriter::reset();
-    if (mFile.isOpen()) {
-        mFile.close();
-    }
-}
-
-QIODevice *FileHtmlWriter::device() const
-{
-    return const_cast<QFile *>(&mFile);
-}
-
-void FileHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
-{
-    *stream() << "<!-- embedPart(contentID=" << contentId << ", url=" << url << ") -->" << endl;
-}
-
-void FileHtmlWriter::extraHead(const QString &)
-{
-}
+#endif // __MESSAGEVIEWER_FILEHTMLWRITER_H__

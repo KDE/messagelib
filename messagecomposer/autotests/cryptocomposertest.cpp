@@ -49,7 +49,6 @@ using namespace MessageComposer;
 #include <setupenv.h>
 
 #include <MimeTreeParser/ObjectTreeParser>
-#include <MimeTreeParser/BufferedHtmlWriter>
 
 using MessageCore::AttachmentPart;
 
@@ -153,17 +152,14 @@ void CryptoComposerTest::testEncryptSameAttachments()
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
 
-    MimeTreeParser::BufferedHtmlWriter testWriter;
-    testWriter.begin();
     TestCSSHelper testCSSHelper;
-    MessageComposer::Test::TestObjectTreeSource testSource(&testWriter, &testCSSHelper);
+    MessageComposer::Test::TestObjectTreeSource testSource(&testCSSHelper);
     testSource.setAllowDecryption(true);
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
     MimeTreeParser::ProcessResult pResult(nh);
 
     otp.parseObjectTree(message.data());
-    testWriter.end();
     KMime::Message::Ptr unencrypted = nh->unencryptedMessage(message);
 
     KMime::Content *testAttachment = Util::findTypeInMessage(unencrypted.data(), "x-some", "x-type");

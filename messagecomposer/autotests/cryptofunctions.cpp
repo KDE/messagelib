@@ -31,7 +31,6 @@
 #include <MessageViewer/CSSHelper>
 #include <MessageViewer/ObjectTreeEmptySource>
 #include <MimeTreeParser/ObjectTreeParser>
-#include <MimeTreeParser/BufferedHtmlWriter>
 
 #include <MessageCore/NodeHelper>
 
@@ -61,10 +60,8 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
-    MimeTreeParser::BufferedHtmlWriter testWriter;
-    testWriter.begin();
     TestCSSHelper testCSSHelper;
-    MessageComposer::Test::TestObjectTreeSource testSource(&testWriter, &testCSSHelper);
+    MessageComposer::Test::TestObjectTreeSource testSource(&testCSSHelper);
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
     MimeTreeParser::ProcessResult pResult(nh);
@@ -134,10 +131,8 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
-    MimeTreeParser::BufferedHtmlWriter testWriter;
-    testWriter.begin();
     TestCSSHelper testCSSHelper;
-    MessageComposer::Test::TestObjectTreeSource testSource(&testWriter, &testCSSHelper);
+    MessageComposer::Test::TestObjectTreeSource testSource(&testCSSHelper);
     testSource.setAllowDecryption(true);
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
@@ -190,10 +185,8 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
-    MimeTreeParser::BufferedHtmlWriter testWriter;
-    testWriter.begin();
     TestCSSHelper testCSSHelper;
-    MessageComposer::Test::TestObjectTreeSource testSource(&testWriter, &testCSSHelper);
+    MessageComposer::Test::TestObjectTreeSource testSource(&testCSSHelper);
     testSource.setAllowDecryption(true);
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
