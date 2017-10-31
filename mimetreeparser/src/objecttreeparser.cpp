@@ -192,7 +192,7 @@ MessagePartPtr ObjectTreeParser::parsedPart() const
     return mParsedPart;
 }
 
-MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mimeType, bool onlyOneMimePart)
+MessagePartPtr ObjectTreeParser::processType(KMime::Content *node, ProcessResult &processResult, const QByteArray &mimeType)
 {
     const auto formatters = mSource->bodyPartFormatterFactory()->formattersForType(QString::fromUtf8(mimeType));
     Q_ASSERT(!formatters.empty());
@@ -263,7 +263,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
                 mimeType = node->contentType()->mimeType();
             }
 
-            const auto mp = processType(node, processResult, mimeType, onlyOneMimePart);
+            const auto mp = processType(node, processResult, mimeType);
             Q_ASSERT(mp);
             parsedPart->appendSubPart(mp);
             mNodeHelper->setNodeProcessed(node, false);
