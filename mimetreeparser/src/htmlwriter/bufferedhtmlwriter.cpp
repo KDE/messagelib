@@ -58,6 +58,7 @@ QIODevice *BufferedHtmlWriter::device() const
 
 void BufferedHtmlWriter::extraHead(const QString &str)
 {
+    Q_UNUSED(str);
 }
 
 void BufferedHtmlWriter::embedPart(const QByteArray &contentId, const QString &url)
