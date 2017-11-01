@@ -68,10 +68,10 @@ void TemplateParserExtractHtmlInfo::start()
 
 void TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished(bool success)
 {
-    if (!success) {
-        qCDebug(TEMPLATEPARSER_LOG) << "Impossible to extract plaintext";
-    } else {
+    if (success) {
         mResult.mPlainText = mTemplateWebEngineView->plainText();
+    } else {
+        qCDebug(TEMPLATEPARSER_LOG) << "Impossible to extract plaintext";
     }
     if (!mHtmlForExtractionHeaderAndBody.isEmpty()) {
         mExtractHtmlElementWebEngineView = new TemplateExtractHtmlElementWebEngineView;
@@ -85,12 +85,12 @@ void TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished(bool success)
 
 void TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished(bool success)
 {
-    if (!success) {
-        qCDebug(TEMPLATEPARSER_LOG) << "Impossible to extract html element";
-    } else {
+    if (success) {
         mResult.mBodyElement = mExtractHtmlElementWebEngineView->bodyElement();
         mResult.mHeaderElement = mExtractHtmlElementWebEngineView->headerElement();
         mResult.mHtmlElement = mExtractHtmlElementWebEngineView->htmlElement();
+    } else {
+        qCDebug(TEMPLATEPARSER_LOG) << "Impossible to extract html element";
     }
     Q_EMIT finished(mResult);
     deleteLater();
