@@ -61,6 +61,8 @@ public:
     QString mText;
     PartMetaData mMetaData;
     bool mRoot = false;
+    bool mIsImage = false;
+    bool mNeverDisplayInline = false;
 };
 }
 
@@ -239,6 +241,26 @@ bool MessagePart::hasSubParts() const
 void MessagePart::clearSubParts()
 {
     d->mBlocks.clear();
+}
+
+bool MessagePart::neverDisplayInline() const
+{
+    return d->mNeverDisplayInline;
+}
+
+void MessagePart::setNeverDisplayInline(bool displayInline)
+{
+    d->mNeverDisplayInline = displayInline;
+}
+
+bool MessagePart::isImage() const
+{
+    return d->mIsImage;
+}
+
+void MessagePart::setIsImage(bool image)
+{
+    d->mIsImage = image;
 }
 
 //-----MessagePartList----------------------
@@ -421,33 +443,11 @@ QString TextMessagePart::temporaryFilePath() const
 
 AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage)
     : TextMessagePart(otp, node, decryptMessage)
-    , mIsImage(false)
-    , mNeverDisplayInline(false)
 {
 }
 
 AttachmentMessagePart::~AttachmentMessagePart()
 {
-}
-
-bool AttachmentMessagePart::neverDisplayInline() const
-{
-    return mNeverDisplayInline;
-}
-
-void AttachmentMessagePart::setNeverDisplayInline(bool displayInline)
-{
-    mNeverDisplayInline = displayInline;
-}
-
-bool AttachmentMessagePart::isImage() const
-{
-    return mIsImage;
-}
-
-void AttachmentMessagePart::setIsImage(bool image)
-{
-    mIsImage = image;
 }
 
 //-----HtmlMessageBlock----------------------

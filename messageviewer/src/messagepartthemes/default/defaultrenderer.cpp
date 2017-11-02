@@ -912,20 +912,21 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
 
 bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart)
 {
-    auto mp = msgPart.dynamicCast<MimeTreeParser::AttachmentMessagePart>();
+    auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
     auto content = msgPart->content();
 
     if (!mp) {
-        auto _mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
-        if (_mp) {
-            return msgPart->nodeHelper()->isNodeDisplayedHidden(content);
-        } else {
+        return false;
+    }
+
+    if (mShowOnlyOneMimePart && mMsgPart.data() == msgPart->parentPart()) {
+        if (mMsgPart->subParts().at(0) == msgPart.data()) {
             return false;
         }
     }
 
-    if (mShowOnlyOneMimePart) {
-        return false;
+    if (msgPart->nodeHelper()->isNodeDisplayedHidden(content)) {
+        return true;
     }
 
     const AttachmentStrategy *const as = mAttachmentStrategy;
@@ -970,7 +971,7 @@ bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr
 
 MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParser::MessagePart::Ptr& msgPart)
 {
-    auto mp = msgPart.dynamicCast<MimeTreeParser::AttachmentMessagePart>();
+    auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
     auto content = msgPart->content();
     if (!mp) {
         return MimeTreeParser::IconType::NoIcon;

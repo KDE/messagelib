@@ -68,6 +68,8 @@ class MIMETREEPARSER_EXPORT MessagePart : public QObject
     Q_PROPERTY(bool isAttachment READ isAttachment)
     Q_PROPERTY(bool root READ isRoot)
     Q_PROPERTY(bool isHtml READ isHtml)
+    Q_PROPERTY(bool isImage READ isImage CONSTANT)
+    Q_PROPERTY(bool neverDisplayInline READ neverDisplayInline CONSTANT)
     Q_PROPERTY(QString attachmentIndex READ attachmentIndex CONSTANT)
     Q_PROPERTY(QString link READ attachmentLink CONSTANT)
 public:
@@ -112,6 +114,11 @@ public:
 
     virtual bool isHtml() const;
 
+    bool neverDisplayInline() const;
+    void setNeverDisplayInline(bool displayInline);
+    bool isImage() const;
+    void setIsImage(bool image);
+    
     PartMetaData *partMetaData() const;
 
     Interface::BodyPartMemento *memento() const;
@@ -211,8 +218,6 @@ private:
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;
     bool mDecryptMessage;
-
-    friend class ObjectTreeParser;
 };
 
 class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
@@ -222,15 +227,6 @@ public:
     typedef QSharedPointer<AttachmentMessagePart> Ptr;
     AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage);
     virtual ~AttachmentMessagePart();
-
-    bool neverDisplayInline() const;
-    void setNeverDisplayInline(bool displayInline);
-    bool isImage() const;
-    void setIsImage(bool image);
-
-private:
-    bool mIsImage;
-    bool mNeverDisplayInline;
 };
 
 class MIMETREEPARSER_EXPORT HtmlMessagePart : public MessagePart
