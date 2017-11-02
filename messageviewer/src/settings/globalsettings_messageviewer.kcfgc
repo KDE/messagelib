@@ -8,3 +8,4 @@ ItemAccessors=true
 SetUserTexts=true
 IncludeFiles=qapplication.h,messageviewer_export.h,MimeTreeParser/Enums,messageviewer_debug.h
 CategoryLoggingName=MESSAGEVIEWER_LOG
+TranslationSystem=kde
