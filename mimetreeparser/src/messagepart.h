@@ -52,10 +52,8 @@ class Content;
 }
 
 namespace MimeTreeParser {
-class ObjectTreeParser;
 class CryptoBodyPartMemento;
 class MessagePartPrivate;
-class MultiPartAlternativeBodyPartFormatter;
 namespace Interface {
 class ObjectTreeSource;
 }
@@ -159,8 +157,6 @@ public:
     QString htmlContent() const override;
 private:
     bool mOnlyOneMimePart;
-
-    friend class AlternativeMessagePart;
 };
 
 class MIMETREEPARSER_EXPORT MessagePartList : public MessagePart
@@ -261,6 +257,7 @@ public:
     QString text() const override;
 
     Util::HtmlMode preferredMode() const;
+    void setPreferredMode(Util::HtmlMode preferredMode);
 
     bool isHtml() const override;
 
@@ -278,9 +275,6 @@ private:
 
     QMap<Util::HtmlMode, KMime::Content *> mChildNodes;
     QMap<Util::HtmlMode, MimeMessagePart::Ptr> mChildParts;
-
-    friend class ObjectTreeParser;
-    friend class MultiPartAlternativeBodyPartFormatter;
 };
 
 class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart

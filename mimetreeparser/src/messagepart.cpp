@@ -587,6 +587,11 @@ Util::HtmlMode AlternativeMessagePart::preferredMode() const
     return mPreferredMode;
 }
 
+void AlternativeMessagePart::setPreferredMode(Util::HtmlMode preferredMode)
+{
+    mPreferredMode = preferredMode;
+}
+
 QList<Util::HtmlMode> AlternativeMessagePart::availableModes()
 {
     return mChildParts.keys();

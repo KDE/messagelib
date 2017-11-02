@@ -49,14 +49,14 @@ MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyP
 
     auto preferredMode = part.source()->preferredMode();
     AlternativeMessagePart::Ptr mp(new AlternativeMessagePart(part.objectTreeParser(), node, preferredMode));
-    if (mp->mChildNodes.isEmpty()) {
+    if (mp->childParts().isEmpty()) {
         MimeMessagePart::Ptr _mp(new MimeMessagePart(part.objectTreeParser(), node->contents().at(0), false));
         return _mp;
     }
 
-    KMime::Content *dataIcal = mp->mChildNodes.contains(Util::MultipartIcal) ? mp->mChildNodes[Util::MultipartIcal] : nullptr;
-    KMime::Content *dataHtml = mp->mChildNodes.contains(Util::MultipartHtml) ? mp->mChildNodes[Util::MultipartHtml] : nullptr;
-    KMime::Content *dataPlain = mp->mChildNodes.contains(Util::MultipartPlain) ? mp->mChildNodes[Util::MultipartPlain] : nullptr;
+    KMime::Content *dataIcal = mp->childParts().contains(Util::MultipartIcal) ? mp->childParts()[Util::MultipartIcal]->content() : nullptr;
+    KMime::Content *dataHtml = mp->childParts().contains(Util::MultipartHtml) ? mp->childParts()[Util::MultipartHtml]->content() : nullptr;
+    KMime::Content *dataPlain = mp->childParts().contains(Util::MultipartPlain) ? mp->childParts()[Util::MultipartPlain]->content() : nullptr;
 
     // Make sure that in default ical is prefered over html and plain text
     if (dataIcal && ((preferredMode != Util::MultipartHtml && preferredMode != Util::MultipartPlain))) {
@@ -78,6 +78,6 @@ MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyP
         preferredMode = Util::MultipartPlain;
     }
     part.source()->setHtmlMode(preferredMode, mp->availableModes());
-    mp->mPreferredMode = preferredMode;
+    mp->setPreferredMode(preferredMode);
     return mp;
 }

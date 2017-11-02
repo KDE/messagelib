@@ -159,8 +159,8 @@ void ObjectTreeParser::parseObjectTree(KMime::Content *node, bool parseOnlySingl
             if (auto _mp = mp.dynamicCast<TextMessagePart>()) {
                 extractNodeInfos(_mp->content(), true);
             } else if (auto _mp = mp.dynamicCast<AlternativeMessagePart>()) {
-                if (_mp->mChildNodes.contains(Util::MultipartPlain)) {
-                    extractNodeInfos(_mp->mChildNodes[Util::MultipartPlain], true);
+                if (_mp->childParts().contains(Util::MultipartPlain)) {
+                    extractNodeInfos(_mp->childParts()[Util::MultipartPlain]->content(), true);
                 }
             }
             setPlainTextContent(mp->text());
