@@ -77,6 +77,9 @@ void MessageViewer::Test::compareFile(const QString &outFile, const QString &ref
         content.replace(QRegExp(QStringLiteral(
                                     "\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")),
                         QStringLiteral("\"file:\\1\""));
+        content.replace(QRegExp(QStringLiteral(
+                                    "(file:///tmp/messageviewer)(_[^\"]+)(\\.index\\.[^\"]*)")),
+                        QStringLiteral("\\1\\3"));
         content.replace(QLatin1String("NBSP_ENTITY_PLACEHOLDER"), QLatin1String("&nbsp;")); // undo above transformation for xmllint
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(content.toUtf8());
