@@ -912,10 +912,10 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
 
 bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart)
 {
-    auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
+    auto mp = msgPart.dynamicCast<MimeTreeParser::MessagePart>();
     auto content = msgPart->content();
 
-    if (!mp) {
+    if (!mp || !content) {
         return false;
     }
 
@@ -973,11 +973,15 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
 {
     auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
     auto content = msgPart->content();
-    if (!mp) {
+
+    if (!content) {
         return MimeTreeParser::IconType::NoIcon;
     }
+
     const AttachmentStrategy *const as = mAttachmentStrategy;
-    const bool defaultHidden(as && as->defaultDisplay(content) == AttachmentStrategy::None);
+    const bool defaultDisplayHidden(as && as->defaultDisplay(content) == AttachmentStrategy::None);
+    const bool defaultDisplayInline(as && as->defaultDisplay(content) == AttachmentStrategy::Inline);
+    const bool defaultDisplayAsIcon(as && as->defaultDisplay(content) == AttachmentStrategy::AsIcon);
     const bool showOnlyOneMimePart(mShowOnlyOneMimePart);
     auto preferredMode = source()->preferredMode();
     bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
@@ -992,7 +996,7 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
     bool defaultAsIcon = true;
     if (!mp->neverDisplayInline()) {
         if (as) {
-            defaultAsIcon = as->defaultDisplay(content) == AttachmentStrategy::AsIcon;
+            defaultAsIcon = defaultDisplayAsIcon;
         }
     }
     if (mp->isImage() && showOnlyOneMimePart && !mp->neverDisplayInline()) {
@@ -1005,7 +1009,7 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
     }
 
     if (isTextPart) {
-        if (as && as->defaultDisplay(content) != AttachmentStrategy::Inline) {
+        if (as && !defaultDisplayInline) {
             return MimeTreeParser::IconExternal;
         }
         return MimeTreeParser::NoIcon;
@@ -1015,7 +1019,7 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
             return MimeTreeParser::IconInline;
         }
 
-        if (defaultHidden && !showOnlyOneMimePart && content->parent()) {
+        if (defaultDisplayHidden && !showOnlyOneMimePart && content->parent()) {
             return MimeTreeParser::IconInline;
         }
 

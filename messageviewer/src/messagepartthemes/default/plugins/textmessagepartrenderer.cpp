@@ -51,6 +51,11 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
         return true;
     }
 
+    const auto tmpAsIcon = context->displayHint(msgPart);
+    if (tmpAsIcon != MimeTreeParser::NoIcon) {
+        return context->renderWithFactory<MimeTreeParser::AttachmentMessagePart>(mp, htmlWriter);
+    }
+
     Grantlee::Template t;
     Grantlee::Context c = MessagePartRendererManager::self()->createContext();
     c.insert(QStringLiteral("block"), msgPart.data());

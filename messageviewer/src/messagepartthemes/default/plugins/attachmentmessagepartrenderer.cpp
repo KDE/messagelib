@@ -43,7 +43,7 @@ AttachmentMessagePartRenderer::~AttachmentMessagePartRenderer()
 
 bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const
 {
-    auto mp = msgPart.dynamicCast<MimeTreeParser::AttachmentMessagePart>();
+    auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
     if (!mp) {
         return false;
     }
