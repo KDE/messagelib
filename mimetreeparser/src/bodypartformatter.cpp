@@ -108,21 +108,9 @@ public:
         auto preferredMode = part.source()->preferredMode();
         bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
         if (node->parent() && node->parent()->contentType()->subType() == "related" && isHtmlPreferred) {
-            QString fileName = mp->temporaryFilePath();
-            QString href = QUrl::fromLocalFile(fileName).url();
-            QByteArray cid = node->contentID()->identifier();
-            //if (part.objectTreeParser()->htmlWriter()) {
-            //    part.objectTreeParser()->htmlWriter()->embedPart(cid, href);
-            //}
             part.nodeHelper()->setNodeDisplayedEmbedded(node, true);
             part.nodeHelper()->setNodeDisplayedHidden(node, true);
             return mp;
-        }
-
-        // Show it inline if showOnlyOneMimePart(), which means the user clicked the image
-        // in the message structure viewer manually, and therefore wants to see the full image
-        if (false && !part.processResult()->neverDisplayInline()) {
-            part.nodeHelper()->setNodeDisplayedEmbedded(node, true);
         }
 
         return mp;

@@ -850,6 +850,16 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
 {
     const QString className = QString::fromUtf8(msgPart->metaObject()->className());
 
+    if (isHiddenHint(msgPart)) {
+        QByteArray cid = msgPart->content()->contentID()->identifier();
+        if (!cid.isEmpty()) {
+            auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
+            QString fileName = mp->temporaryFilePath();
+            QString href = QUrl::fromLocalFile(fileName).url();
+            htmlWriter->embedPart(cid, href);
+        }
+    }
+
     if (renderWithFactory(msgPart, htmlWriter)) {
         return;
     }
