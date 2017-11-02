@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <body>
+    <a name="att2"/>
+    <div id="attachmentDiv2">
+      <table cellspacing="1" class="textAtm">
+        <tr class="textAtmH">
+          <td dir="ltr">
+            <a href="attachment:2?place=body">messages.sh</a>
+          </td>
+        </tr>
+        <tr class="textAtmB">
+          <td>
+            <div class="noquote">
+              <div dir="ltr">#! /bin/sh</div>
+              <div dir="ltr">$XGETTEXT `find . -name '*.cpp' -o -name '*.h' | grep -v '/tests/' | grep -v '/autotests/'` -o $podir/libmimetreeparser.pot</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <a name="att3"/>
+    <div id="attachmentDiv3">
+      <div class="noquote">
+        <div dir="ltr">maintainer:</div>
+        <div dir="ltr">description: MimeTreeParser Library&nbsp;</div>
+        <div dir="ltr">tier: 3</div>
+        <div dir="ltr">type: functional</div>
+        <div dir="ltr">platforms:</div>
+        <div dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;- name: All</div>
+        <div dir="ltr">portingAid: false</div>
+        <div dir="ltr">deprecated: false</div>
+        <div dir="ltr">release: false</div>
+        <div dir="ltr">libraries:</div>
+        <div dir="ltr">&nbsp;- qmake: MimeTreeParser</div>
+        <div dir="ltr">&nbsp;&nbsp;&nbsp;cmake: "KF5::MimeTreeParser"</div>
+        <div dir="ltr">&nbsp;&nbsp;&nbsp;cmakename: KF5MimeTreeParser</div>
+      </div>
+    </div>
+  </body>
+</html>

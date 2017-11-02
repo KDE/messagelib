@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <body>
+    <a name="att2"/>
+    <div id="attachmentDiv2">
+      <hr/>
+      <div>
+        <a href="attachment:2?place=body">
+          <img align="center" src="file:image.png" border="0" style="max-width: 100%"/>
+        </a>
+      </div>
+      <div>
+        <a href="attachment:2?place=body">image.png</a>
+      </div>
+      <div/>
+    </div>
+  </body>
+</html>

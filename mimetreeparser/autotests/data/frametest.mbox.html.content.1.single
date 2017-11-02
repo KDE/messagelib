@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <body>
+    <a name="att2"/>
+    <div id="attachmentDiv2">
+      <div class="noquote">
+        <div dir="ltr">#! /bin/sh</div>
+        <div dir="ltr">$XGETTEXT `find . -name '*.cpp' -o -name '*.h' | grep -v '/tests/' | grep -v '/autotests/'` -o $podir/libmimetreeparser.pot</div>
+      </div>
+    </div>
+  </body>
+</html>

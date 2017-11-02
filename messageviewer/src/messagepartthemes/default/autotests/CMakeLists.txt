@@ -28,6 +28,12 @@ ecm_add_test(quotehtmltest.cpp setupenv.cpp ../plugins/quotehtml.cpp
     LINK_LIBRARIES Qt5::Test KF5::MessageViewer KF5::IconThemes KF5::Mime
 )
 
+ecm_add_test(showonlymimeparttest.cpp setupenv.cpp util.cpp testcsshelper.cpp
+    TEST_NAME showonlymimeparttest
+    NAME_PREFIX "messageviewer-messageparttheme-"
+    LINK_LIBRARIES Qt5::Test KF5::MessageViewer KF5::IconThemes KF5::Mime KF5::GrantleeTheme
+)
+
 ecm_add_test(converthtmltoplaintexttest.cpp ../converthtmltoplaintext.cpp
     TEST_NAME converthtmltoplaintexttest
     NAME_PREFIX "messageviewer-messageparttheme-"
