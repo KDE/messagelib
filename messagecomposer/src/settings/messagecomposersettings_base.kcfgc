@@ -8,3 +8,4 @@ ItemAccessors=true
 SetUserTexts=true
 IncludeFiles=qapplication.h,messagecomposer_export.h,messagecomposer_debug.h
 CategoryLoggingName=MESSAGECOMPOSER_LOG
+TranslationSystem=kde
