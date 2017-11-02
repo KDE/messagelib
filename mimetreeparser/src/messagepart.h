@@ -179,13 +179,14 @@ enum IconType {
 class MIMETREEPARSER_EXPORT TextMessagePart : public MessagePartList
 {
     Q_OBJECT
-    Q_PROPERTY(bool showTextFrame READ showTextFrame CONSTANT)
     Q_PROPERTY(bool showLink READ showLink CONSTANT)
+    Q_PROPERTY(bool isFirstTextPart READ isFirstTextPart CONSTANT)
+    Q_PROPERTY(bool hasLabel READ hasLabel CONSTANT)
     Q_PROPERTY(QString label READ label CONSTANT)
     Q_PROPERTY(QString comment READ comment CONSTANT)
 public:
     typedef QSharedPointer<TextMessagePart> Ptr;
-    TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage);
+    TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage);
     virtual ~TextMessagePart();
 
     KMMsgSignatureState signatureState() const;
@@ -194,8 +195,8 @@ public:
     bool decryptMessage() const;
 
     bool showLink() const;
-    bool showTextFrame() const;
-    void setShowTextFrame(bool showFrame);
+    bool isFirstTextPart() const;
+    bool hasLabel() const;
 
     /** The attachment filename, or the closest approximation thereof we have. */
     QString label() const;
@@ -209,7 +210,6 @@ private:
 
     KMMsgSignatureState mSignatureState;
     KMMsgEncryptionState mEncryptionState;
-    bool mDrawFrame;
     bool mDecryptMessage;
 
     friend class ObjectTreeParser;
@@ -220,7 +220,7 @@ class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
     Q_OBJECT
 public:
     typedef QSharedPointer<AttachmentMessagePart> Ptr;
-    AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage);
+    AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage);
     virtual ~AttachmentMessagePart();
 
     bool neverDisplayInline() const;

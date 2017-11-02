@@ -43,16 +43,11 @@ MessagePart::Ptr TextPlainBodyPartFormatter::process(Interface::BodyPart &part) 
     KMime::Content *node = part.content();
     const bool isFirstTextPart = (node->topLevel()->textContent() == node);
 
-    QString label = NodeHelper::fileName(node);
-
-    const bool bDrawFrame = !isFirstTextPart
-                            && !label.isEmpty();
-
     TextMessagePart::Ptr mp;
     if (isFirstTextPart) {
-        mp = TextMessagePart::Ptr(new TextMessagePart(part.objectTreeParser(), node, bDrawFrame, part.source()->decryptMessage()));
+        mp = TextMessagePart::Ptr(new TextMessagePart(part.objectTreeParser(), node, part.source()->decryptMessage()));
     } else {
-        mp = TextMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, bDrawFrame, part.source()->decryptMessage()));
+        mp = TextMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, part.source()->decryptMessage()));
     }
 
     part.processResult()->setInlineSignatureState(mp->signatureState());

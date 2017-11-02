@@ -1018,6 +1018,11 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
     return MimeTreeParser::NoIcon;
 }
 
+bool DefaultRendererPrivate::showOnlyOneMimePart() const
+{
+    return mShowOnlyOneMimePart;
+}
+
 DefaultRenderer::DefaultRenderer(CSSHelperBase *cssHelper)
     : d(new DefaultRendererPrivate(cssHelper, MessagePartRendererFactory::instance()))
 {

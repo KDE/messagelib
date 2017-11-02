@@ -2,7 +2,7 @@
 <a name="att{{block.attachmentIndex}}"></a>
 <div id="attachmentDiv{{block.attachmentIndex}}">
 {% endif %}
-{% if block.showTextFrame %}
+{% if not showOnlyOneMimePart and not block.isFirstTextPart and block.hasLabel %}
     <table cellspacing="1" class="textAtm">
         <tr class="textAtmH">
             <td dir="{{global.dir}}">

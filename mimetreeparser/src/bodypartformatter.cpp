@@ -65,7 +65,7 @@ public:
     MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
         KMime::Content *node = part.content();
-        const auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, part.source()->decryptMessage()));
+        const auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, part.source()->decryptMessage()));
         part.processResult()->setInlineSignatureState(mp->signatureState());
         part.processResult()->setInlineEncryptionState(mp->encryptionState());
         part.processResult()->setNeverDisplayInline(true);
@@ -100,7 +100,7 @@ public:
     MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
         KMime::Content *node = part.content();
-        auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, false, part.source()->decryptMessage()));
+        auto mp = AttachmentMessagePart::Ptr(new AttachmentMessagePart(part.objectTreeParser(), node, part.source()->decryptMessage()));
         mp->setIsImage(true);
         part.processResult()->setInlineSignatureState(mp->signatureState());
         part.processResult()->setInlineEncryptionState(mp->encryptionState());

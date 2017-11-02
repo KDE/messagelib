@@ -58,6 +58,7 @@ public:
 
     bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
     MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
+    bool showOnlyOneMimePart() const override;
 
     bool mShowOnlyOneMimePart = false;
     MimeTreeParser::MessagePart::Ptr mMsgPart;

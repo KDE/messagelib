@@ -24,9 +24,9 @@
 #include "setupenv.h"
 #include "testcsshelper.h"
 
-#include <MimeTreeParser/FileHtmlWriter>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/MessagePart>
+#include <MessageViewer/FileHtmlWriter>
 
 #include <QString>
 #include <QTest>
@@ -66,20 +66,20 @@ void ShowOnlyMimePartTest::testDrawFrame()
     const KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("frametest.mbox")));
 
     // render the mail
-    MimeTreeParser::FileHtmlWriter fileWriter(outFileName);
+    FileHtmlWriter fileWriter(outFileName);
     QImage paintDevice;
     Test::TestCSSHelper cssHelper(&paintDevice);
     MimeTreeParser::NodeHelper nodeHelper;
     Test::ObjectTreeSource testSource(&fileWriter, &cssHelper);
 
-    MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper, showOnlyMimePart);
+    MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
 
     fileWriter.begin();
     fileWriter.write(cssHelper.htmlHead(false));
 
     QVERIFY(msg->contents().size() > content);
 
-    otp.parseObjectTree(msg->contents().at(content));
+    otp.parseObjectTree(msg->contents().at(content), showOnlyMimePart);
 
     fileWriter.write(QStringLiteral("</body></html>"));
     fileWriter.end();
@@ -113,20 +113,20 @@ void ShowOnlyMimePartTest::testRelated()
     const KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("html-multipart-related.mbox")));
 
     // render the mail
-    MimeTreeParser::FileHtmlWriter fileWriter(outFileName);
+    FileHtmlWriter fileWriter(outFileName);
     QImage paintDevice;
     Test::TestCSSHelper cssHelper(&paintDevice);
     MimeTreeParser::NodeHelper nodeHelper;
     Test::ObjectTreeSource testSource(&fileWriter, &cssHelper);
 
-    MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper, showOnlyMimePart);
+    MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
 
     fileWriter.begin();
     fileWriter.write(cssHelper.htmlHead(false));
 
     QVERIFY(msg->contents().size() > content);
 
-    otp.parseObjectTree(msg->contents().at(content));
+    otp.parseObjectTree(msg->contents().at(content), showOnlyMimePart);
 
     fileWriter.write(QStringLiteral("</body></html>"));
     fileWriter.end();

@@ -268,9 +268,8 @@ QString MessagePartList::htmlContent() const
 
 //-----TextMessageBlock----------------------
 
-TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage)
+TextMessagePart::TextMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage)
     : MessagePartList(otp)
-    , mDrawFrame(drawFrame)
     , mDecryptMessage(decryptMessage)
 {
     if (!node) {
@@ -384,14 +383,14 @@ bool TextMessagePart::showLink() const
     return !temporaryFilePath().isEmpty();
 }
 
-bool TextMessagePart::showTextFrame() const
+bool TextMessagePart::isFirstTextPart() const
 {
-    return mDrawFrame;
+    return content()->topLevel()->textContent() == content();
 }
 
-void TextMessagePart::setShowTextFrame(bool showFrame)
+bool TextMessagePart::hasLabel() const
 {
-    mDrawFrame = showFrame;
+    return !NodeHelper::fileName(content()).isEmpty();
 }
 
 QString TextMessagePart::label() const
@@ -420,8 +419,8 @@ QString TextMessagePart::temporaryFilePath() const
 
 //-----AttachmentMessageBlock----------------------
 
-AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool drawFrame, bool decryptMessage)
-    : TextMessagePart(otp, node, drawFrame, decryptMessage)
+AttachmentMessagePart::AttachmentMessagePart(ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage)
+    : TextMessagePart(otp, node, decryptMessage)
     , mIsImage(false)
     , mNeverDisplayInline(false)
 {

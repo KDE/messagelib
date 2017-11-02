@@ -54,6 +54,7 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
     Grantlee::Template t;
     Grantlee::Context c = MessagePartRendererManager::self()->createContext();
     c.insert(QStringLiteral("block"), msgPart.data());
+    c.insert(QStringLiteral("showOnlyOneMimePart"), context->showOnlyOneMimePart());
     c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([mp, htmlWriter, context](Grantlee::OutputStream *) {
         context->renderSubParts(mp, htmlWriter);
     }));
