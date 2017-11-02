@@ -55,7 +55,6 @@ private Q_SLOTS:
 private:
     void testRender();
     void testRenderTree(const MimeTreeParser::MessagePart::Ptr &messagePart);
-    void compareFile(const QString &outFile, const QString &referenceFile);
 };
 
 #endif
