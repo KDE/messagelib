@@ -1735,7 +1735,7 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("toggle_mimeparttree"), mToggleMimePartTreeAction);
     connect(mToggleMimePartTreeAction, &QAction::toggled,
             this, &ViewerPrivate::slotToggleMimePartTree);
-    ac->setDefaultShortcut(mToggleMimePartTreeAction, QKeySequence(Qt::Key_T + Qt::CTRL + Qt::ALT));
+    ac->setDefaultShortcut(mToggleMimePartTreeAction, QKeySequence(Qt::Key_D + Qt::CTRL + Qt::ALT));
 
     mViewSourceAction = new QAction(i18n("&View Source"), this);
     ac->addAction(QStringLiteral("view_source"), mViewSourceAction);
