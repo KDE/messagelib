@@ -85,7 +85,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default>false</default>
       <label>Always decrypt messages when viewing or ask before decrypting</label>
     </entry>
-    <entry name="MimeTreeMode" type="Enum">
+    <entry name="MimeTreeMode2" type="Enum">
       <label>Message Structure Viewer</label>
       <choices>
         <choice name="Never">

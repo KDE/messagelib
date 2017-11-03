@@ -1467,8 +1467,8 @@ void ViewerPrivate::showHideMimeTree()
         return;
     }
     bool showMimeTree = false;
-    if (MessageViewer::MessageViewerSettings::self()->mimeTreeMode()
-        == MessageViewer::MessageViewerSettings::EnumMimeTreeMode::Always) {
+    if (MessageViewer::MessageViewerSettings::self()->mimeTreeMode2()
+        == MessageViewer::MessageViewerSettings::EnumMimeTreeMode2::Always) {
         mMimePartTree->show();
         showMimeTree = true;
     } else {
@@ -1500,8 +1500,8 @@ void ViewerPrivate::adjustLayout()
     mSplitter->addWidget(mMimePartTree);
     mSplitter->setSizes(splitterSizes);
 
-    if (MessageViewer::MessageViewerSettings::self()->mimeTreeMode()
-        == MessageViewer::MessageViewerSettings::EnumMimeTreeMode::Always
+    if (MessageViewer::MessageViewerSettings::self()->mimeTreeMode2()
+        == MessageViewer::MessageViewerSettings::EnumMimeTreeMode2::Always
         && mMsgDisplay) {
         mMimePartTree->show();
     } else {
@@ -1735,6 +1735,7 @@ void ViewerPrivate::createActions()
     ac->addAction(QStringLiteral("toggle_mimeparttree"), mToggleMimePartTreeAction);
     connect(mToggleMimePartTreeAction, &QAction::toggled,
             this, &ViewerPrivate::slotToggleMimePartTree);
+    ac->setDefaultShortcut(mToggleMimePartTreeAction, QKeySequence(Qt::Key_T + Qt::CTRL + Qt::ALT));
 
     mViewSourceAction = new QAction(i18n("&View Source"), this);
     ac->addAction(QStringLiteral("view_source"), mViewSourceAction);
@@ -2267,11 +2268,11 @@ void ViewerPrivate::slotToggleFixedFont()
 void ViewerPrivate::slotToggleMimePartTree()
 {
     if (mToggleMimePartTreeAction->isChecked()) {
-        MessageViewer::MessageViewerSettings::self()->setMimeTreeMode(
-            MessageViewer::MessageViewerSettings::EnumMimeTreeMode::Always);
+        MessageViewer::MessageViewerSettings::self()->setMimeTreeMode2(
+            MessageViewer::MessageViewerSettings::EnumMimeTreeMode2::Always);
     } else {
-        MessageViewer::MessageViewerSettings::self()->setMimeTreeMode(
-            MessageViewer::MessageViewerSettings::EnumMimeTreeMode::Never);
+        MessageViewer::MessageViewerSettings::self()->setMimeTreeMode2(
+            MessageViewer::MessageViewerSettings::EnumMimeTreeMode2::Never);
     }
     showHideMimeTree();
 }
