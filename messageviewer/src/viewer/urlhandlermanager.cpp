@@ -356,7 +356,7 @@ public:
 private:
     QVector<const Interface::BodyPartURLHandler *> handlersForPart(KMime::Content *node) const;
 
-    typedef QHash<QByteArray, QVector<const Interface::BodyPartURLHandler *>> BodyPartHandlerList;
+    typedef QHash<QByteArray, QVector<const Interface::BodyPartURLHandler *> > BodyPartHandlerList;
     BodyPartHandlerList mHandlers;
 };
 
@@ -364,9 +364,9 @@ URLHandlerManager::BodyPartURLHandlerManager::~BodyPartURLHandlerManager()
 {
     for_each(mHandlers.begin(), mHandlers.end(),
              [](QVector<const Interface::BodyPartURLHandler *> &handlers) {
-                 for_each(handlers.begin(), handlers.end(),
-                          DeleteAndSetToZero<Interface::BodyPartURLHandler>());
-             });
+        for_each(handlers.begin(), handlers.end(),
+                 DeleteAndSetToZero<Interface::BodyPartURLHandler>());
+    });
 }
 
 void URLHandlerManager::BodyPartURLHandlerManager::registerHandler(
@@ -435,7 +435,6 @@ QVector<const Interface::BodyPartURLHandler *> URLHandlerManager::BodyPartURLHan
 
     return {};
 }
-
 
 bool URLHandlerManager::BodyPartURLHandlerManager::handleClick(const QUrl &url, ViewerPrivate *w) const
 {

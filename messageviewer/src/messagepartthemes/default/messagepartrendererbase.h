@@ -52,15 +52,17 @@ public:
     virtual ~RenderContext();
 
     virtual CSSHelperBase *cssHelper() const = 0;
-    template <typename T>
+    template<typename T>
     inline bool renderWithFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer)
     {
         return renderWithFactory(&T::staticMetaObject, msgPart, writer);
     }
+
     inline bool renderWithFactory(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *writer)
     {
         return renderWithFactory(msgPart->metaObject(), msgPart, writer);
     }
+
     virtual void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, MimeTreeParser::HtmlWriter *htmlWriter) = 0;
 
 protected:

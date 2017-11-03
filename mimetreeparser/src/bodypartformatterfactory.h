@@ -52,7 +52,7 @@ public:
     BodyPartFormatterFactory();
     virtual ~BodyPartFormatterFactory();
 
-    static BodyPartFormatterFactory* instance();
+    static BodyPartFormatterFactory *instance();
 
     /**
      *  Returns all suitable formatters for the given mimetype.

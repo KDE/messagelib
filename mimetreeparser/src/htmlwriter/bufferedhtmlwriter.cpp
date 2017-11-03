@@ -19,7 +19,6 @@
 
 #include "bufferedhtmlwriter.h"
 
-
 using namespace MimeTreeParser;
 
 BufferedHtmlWriter::BufferedHtmlWriter()

@@ -24,7 +24,6 @@
 
 #include <QtPlugin>
 
-
 namespace MessageViewer {
 namespace Interface {
 class BodyPartURLHandler;

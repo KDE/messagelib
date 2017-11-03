@@ -128,7 +128,7 @@ public:
     void clearSubParts();
 
     Interface::ObjectTreeSource *source() const;
-    NodeHelper* nodeHelper() const;
+    NodeHelper *nodeHelper() const;
 
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
@@ -373,7 +373,7 @@ protected:
     QString mFromAddress;
     bool mDecryptMessage;
     QByteArray mVerifiedText;
-    std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> mDecryptRecipients;
+    std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > mDecryptRecipients;
 
     friend class DefaultRendererPrivate;
     friend class EncryptedBodyPartFormatter;

@@ -65,7 +65,7 @@ inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Pro
 // Read-only introspection of std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> object.
 namespace Grantlee {
 template<>
-inline QVariant TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>&>::lookUp(std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> const &object, const QString &property)
+inline QVariant TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> &>::lookUp(std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> const &object, const QString &property)
 {
     if (property == QStringLiteral("keyID")) {
         return QString::fromLatin1(object.first.keyID());
@@ -128,7 +128,7 @@ void MessagePartRendererManager::initializeRenderer()
 {
     Grantlee::registerMetaType<GpgME::DecryptionResult::Recipient>();
     Grantlee::registerMetaType<const QGpgME::Protocol *>();
-    Grantlee::registerMetaType<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>>();
+    Grantlee::registerMetaType<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> >();
     m_engine = new GrantleeTheme::Engine;
     foreach (const auto &p, QCoreApplication::libraryPaths()) {
         m_engine->addPluginPath(p + QStringLiteral("/messageviewer"));

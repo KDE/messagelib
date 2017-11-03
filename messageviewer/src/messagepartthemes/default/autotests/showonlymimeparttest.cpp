@@ -57,7 +57,7 @@ void ShowOnlyMimePartTest::testDrawFrame()
     QFETCH(bool, showOnlyMimePart);
 
     QString commonName(QStringLiteral("frametest.mbox.html.content.") + QString::number(content)
-                        + ((showOnlyMimePart)?QStringLiteral(".single"):QStringLiteral(".full")));
+                       + ((showOnlyMimePart) ? QStringLiteral(".single") : QStringLiteral(".full")));
 
     QString outFileName(commonName);
 
@@ -104,7 +104,7 @@ void ShowOnlyMimePartTest::testRelated()
     QFETCH(bool, showOnlyMimePart);
 
     QString commonName(QStringLiteral("html-multipart-related.mbox.html.content.") + QString::number(content)
-                        + ((showOnlyMimePart)?QStringLiteral(".single"):QStringLiteral(".full")));
+                       + ((showOnlyMimePart) ? QStringLiteral(".single") : QStringLiteral(".full")));
 
     QString outFileName(commonName);
 
@@ -124,7 +124,7 @@ void ShowOnlyMimePartTest::testRelated()
     fileWriter.begin();
     fileWriter.write(cssHelper.htmlHead(false));
 
-    QVERIFY(msg->contents().size()> content);
+    QVERIFY(msg->contents().size() > content);
 
     otp.parseObjectTree(msg->contents().at(content));
 

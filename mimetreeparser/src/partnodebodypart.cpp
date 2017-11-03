@@ -37,7 +37,6 @@
 #include "mimetreeparser_debug.h"
 #include <KMime/Content>
 
-
 using namespace MimeTreeParser;
 
 PartNodeBodyPart::PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content, NodeHelper *nodeHelper)

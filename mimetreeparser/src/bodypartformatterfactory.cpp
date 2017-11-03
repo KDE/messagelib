@@ -99,7 +99,7 @@ BodyPartFormatterFactory::~BodyPartFormatterFactory()
     delete d;
 }
 
-BodyPartFormatterFactory* BodyPartFormatterFactory::instance()
+BodyPartFormatterFactory *BodyPartFormatterFactory::instance()
 {
     static BodyPartFormatterFactory s_instance;
     return &s_instance;
@@ -160,7 +160,7 @@ void BodyPartFormatterFactory::loadPlugins()
             return;
         }
 
-        auto plugin = qobject_cast<MimeTreeParser::Interface::BodyPartFormatterPlugin*>(loader.instance());
+        auto plugin = qobject_cast<MimeTreeParser::Interface::BodyPartFormatterPlugin *>(loader.instance());
         if (!plugin) {
             return;
         }
@@ -171,8 +171,8 @@ void BodyPartFormatterFactory::loadPlugins()
             const auto mimetype = metaData.value(QLatin1String("mimetype")).toString();
             if (mimetype.isEmpty()) {
                 qCWarning(MIMETREEPARSER_LOG) << "BodyPartFormatterFactory: plugin" << path
-                                             << "returned empty mimetype specification for index"
-                                             << i;
+                                              << "returned empty mimetype specification for index"
+                                              << i;
                 break;
             }
             // priority should always be higher than the built-in ones, otherwise what's the point?

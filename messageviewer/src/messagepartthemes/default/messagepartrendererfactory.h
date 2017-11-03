@@ -58,7 +58,7 @@ public:
 
     static MessagePartRendererFactory *instance();
 
-    QVector<MessagePartRendererBase*> renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &mp) const;
+    QVector<MessagePartRendererBase *> renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &mp) const;
 
 private:
     Q_DISABLE_COPY(MessagePartRendererFactory)

@@ -34,7 +34,6 @@ KMime::Message::Ptr MessageViewer::Test::readAndParseMail(const QString &mailFil
     return msg;
 }
 
-
 void MessageViewer::Test::compareFile(const QString &outFile, const QString &referenceFile)
 {
     QVERIFY(QFile::exists(outFile));

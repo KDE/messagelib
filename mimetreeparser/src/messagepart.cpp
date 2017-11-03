@@ -99,7 +99,7 @@ PartMetaData *MessagePart::partMetaData() const
     return &d->mMetaData;
 }
 
-Interface::BodyPartMemento* MessagePart::memento() const
+Interface::BodyPartMemento *MessagePart::memento() const
 {
     return nodeHelper()->bodyPartMemento(content(), "__plugin__");
 }
@@ -192,7 +192,7 @@ Interface::ObjectTreeSource *MessagePart::source() const
     return mOtp->mSource;
 }
 
-NodeHelper* MessagePart::nodeHelper() const
+NodeHelper *MessagePart::nodeHelper() const
 {
     Q_ASSERT(mOtp);
     return mOtp->nodeHelper();

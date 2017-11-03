@@ -36,7 +36,6 @@
 
 #include "mimetreeparser_export.h"
 
-
 namespace KMime {
 class Content;
 }

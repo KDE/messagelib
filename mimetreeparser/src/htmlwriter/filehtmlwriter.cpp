@@ -32,7 +32,6 @@
 #include "filehtmlwriter.h"
 #include "mimetreeparser_debug.h"
 
-
 using namespace MimeTreeParser;
 
 FileHtmlWriter::FileHtmlWriter(const QString &filename)

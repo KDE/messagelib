@@ -62,8 +62,9 @@ void MessagePartRendererFactoryPrivate::setup()
 
 void MessagePartRendererFactoryPrivate::loadPlugins()
 {
-    if (m_pluginSubdir.isEmpty())
+    if (m_pluginSubdir.isEmpty()) {
         return;
+    }
 
     KPluginLoader::forEachPlugin(m_pluginSubdir, [this](const QString &path) {
         QPluginLoader loader(path);
@@ -135,7 +136,7 @@ MessagePartRendererFactory::MessagePartRendererFactory()
 
 MessagePartRendererFactory::~MessagePartRendererFactory() = default;
 
-void MessagePartRendererFactory::setPluginPath(const QString& subdir)
+void MessagePartRendererFactory::setPluginPath(const QString &subdir)
 {
     d->m_pluginSubdir = subdir;
 }
@@ -146,7 +147,7 @@ MessagePartRendererFactory *MessagePartRendererFactory::instance()
     return &s_instance;
 }
 
-QVector<MessagePartRendererBase*> MessagePartRendererFactory::renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePartPtr &mp) const
+QVector<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePartPtr &mp) const
 {
     d->setup();
 
@@ -154,30 +155,35 @@ QVector<MessagePartRendererBase*> MessagePartRendererFactory::renderersForPart(c
     QMimeDatabase db;
     const auto mt = db.mimeTypeForName(mtName);
     auto ancestors = mt.allAncestors();
-    if (mt.isValid() || !mtName.isEmpty())
+    if (mt.isValid() || !mtName.isEmpty()) {
         ancestors.prepend(mt.isValid() ? mt.name() : mtName);
+    }
 
     auto candidates = d->m_renderers.value(mo->className());
 
     // remove candidates with a mimetype set that don't match the mimetype of the part
     candidates.erase(std::remove_if(candidates.begin(), candidates.end(), [ancestors](const RendererInfo &info) {
-        if (info.mimeType.isEmpty())
+        if (info.mimeType.isEmpty()) {
             return false;
+        }
         return !ancestors.contains(info.mimeType);
     }), candidates.end());
 
     // sort most specific mimetpypes first
     std::stable_sort(candidates.begin(), candidates.end(), [ancestors](const RendererInfo &lhs, const RendererInfo &rhs) {
-        if (lhs.mimeType == rhs.mimeType)
+        if (lhs.mimeType == rhs.mimeType) {
             return lhs.priority > rhs.priority;
-        if (lhs.mimeType.isEmpty())
+        }
+        if (lhs.mimeType.isEmpty()) {
             return false;
-        if (rhs.mimeType.isEmpty())
+        }
+        if (rhs.mimeType.isEmpty()) {
             return true;
+        }
         return ancestors.indexOf(lhs.mimeType) < ancestors.indexOf(rhs.mimeType);
     });
 
-    QVector<MessagePartRendererBase*> r;
+    QVector<MessagePartRendererBase *> r;
     for (const auto &candidate : candidates) {
         r.push_back(candidate.renderer);
     }
