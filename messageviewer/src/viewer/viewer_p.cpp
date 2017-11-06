@@ -957,90 +957,6 @@ void ViewerPrivate::displayMessage()
     htmlWriter()->end();
 }
 
-void ViewerPrivate::collectionFetchedForStoringDecryptedMessage(KJob *job)
-{
-    if (job->error()) {
-        return;
-    }
-
-    Akonadi::Collection col;
-    const Akonadi::Collection::List lstCol
-        = static_cast<Akonadi::CollectionFetchJob *>(job)->collections();
-    for (const Akonadi::Collection &c : lstCol) {
-        if (c == mMessageItem.parentCollection()) {
-            col = c;
-            break;
-        }
-    }
-
-    if (!col.isValid()) {
-        return;
-    }
-    const Akonadi::AgentInstance::List instances = Akonadi::AgentManager::self()->instances();
-    const QString itemResource = col.resource();
-    Akonadi::AgentInstance resourceInstance;
-    for (const Akonadi::AgentInstance &instance : instances) {
-        if (instance.identifier() == itemResource) {
-            resourceInstance = instance;
-            break;
-        }
-    }
-    bool isInOutbox = true;
-    Akonadi::Collection outboxCollection = Akonadi::SpecialMailCollections::self()->collection(
-        Akonadi::SpecialMailCollections::Outbox, resourceInstance);
-    if (resourceInstance.isValid() && outboxCollection != col) {
-        isInOutbox = false;
-    }
-
-    if (!isInOutbox) {
-        KMime::Message::Ptr unencryptedMessage = mNodeHelper->unencryptedMessage(mMessage);
-        if (unencryptedMessage) {
-            mMessageItem.setPayload<KMime::Message::Ptr>(unencryptedMessage);
-            Akonadi::ItemModifyJob *job = new Akonadi::ItemModifyJob(mMessageItem, mSession);
-            connect(job, &KJob::result, this, &ViewerPrivate::itemModifiedResult);
-        }
-    }
-}
-
-void ViewerPrivate::postProcessMessage(MimeTreeParser::ObjectTreeParser *otp, MimeTreeParser::KMMsgEncryptionState encryptionState)
-{
-    if (MessageViewer::MessageViewerSettings::self()->storeDisplayedMessagesUnencrypted()) {
-        // Hack to make sure the S/MIME CryptPlugs follows the strict requirement
-        // of german government:
-        // --> All received encrypted messages *must* be stored in unencrypted form
-        //     after they have been decrypted once the user has read them.
-        //     ( "Aufhebung der Verschluesselung nach dem Lesen" )
-        //
-        // note: Since there is no configuration option for this, we do that for
-        //       all kinds of encryption now - *not* just for S/MIME.
-        //       This could be changed in the objectTreeToDecryptedMsg() function
-        //       by deciding when (or when not, resp.) to set the 'dataNode' to
-        //       something different than 'curNode'.
-
-        const bool messageAtLeastPartiallyEncrypted
-            = (MimeTreeParser::KMMsgFullyEncrypted == encryptionState)
-              || (MimeTreeParser::KMMsgPartiallyEncrypted
-                  == encryptionState);
-        // only proceed if we were called the normal way - not by
-        // double click on the message (==not running in a separate window)
-        if (decryptMessage()    // only proceed if the message has actually been decrypted
-            && !otp->hasPendingAsyncJobs()     // only proceed if no pending async jobs are running:
-            && messageAtLeastPartiallyEncrypted) {
-            //check if the message is in the outbox folder
-            //FIXME: using root() is too much, but using mMessageItem.parentCollection() returns no collections in job->collections()
-            //FIXME: this is done async, which means it is possible that the user selects another message while
-            //       this job is running. In that case, collectionFetchedForStoringDecryptedMessage() will work
-            //       on the wrong item!
-            Akonadi::CollectionFetchJob *job = new Akonadi::CollectionFetchJob(
-                Akonadi::Collection::root(),
-                Akonadi::CollectionFetchJob::Recursive,
-                mSession);
-            connect(job, &KJob::result,
-                    this, &ViewerPrivate::collectionFetchedForStoringDecryptedMessage);
-        }
-    }
-}
-
 void ViewerPrivate::parseContent(KMime::Content *content)
 {
     assert(content != nullptr);
@@ -1094,8 +1010,6 @@ void ViewerPrivate::parseContent(KMime::Content *content)
         || mNodeHelper->signatureState(content) == MimeTreeParser::KMMsgSignatureStateUnknown) {
         mNodeHelper->setSignatureState(content, signatureState);
     }
-
-    postProcessMessage(&otp, encryptionState);
 
     showHideMimeTree();
 }

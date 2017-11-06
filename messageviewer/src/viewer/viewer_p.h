@@ -229,8 +229,6 @@ public:
     */
     void prepareHandleAttachment(KMime::Content *node);
 
-    void postProcessMessage(MimeTreeParser::ObjectTreeParser *otp, MimeTreeParser::KMMsgEncryptionState encryptionState);
-
     QString createAtmFileLink(const QString &atmFileName) const;
     KService::Ptr getServiceOffer(KMime::Content *content);
     KMime::Content::List selectedContents();
@@ -444,8 +442,6 @@ private Q_SLOTS:
     void slotItemMoved(const Akonadi::Item &, const Akonadi::Collection &, const Akonadi::Collection &);
 
     void itemModifiedResult(KJob *job);
-
-    void collectionFetchedForStoringDecryptedMessage(KJob *job);
 
     void slotClear();
 
