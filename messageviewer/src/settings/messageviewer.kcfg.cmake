@@ -142,18 +142,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <label>List of emails in scam white list</label>
       <default></default>
     </entry>
-    <entry name="AdBlockEnabled" type="Bool">
-      <label>Enabled ad block</label>
-      <default>false</default>
-    </entry>
-    <entry name="HideAdsEnabled" type="Bool">
-      <label>Hide advertisement enabled</label>
-      <default>false</default>
-    </entry>
-    <entry name="AdBlockUpdateInterval" type="Int">
-      <label>Update interval list of adblock</label>
-      <default>7</default>
-    </entry>
     <entry name="whiteReferer" type="StringList">
         <default></default>
     </entry>
