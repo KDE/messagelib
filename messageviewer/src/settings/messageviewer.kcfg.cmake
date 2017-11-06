@@ -46,7 +46,12 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     </entry>
   </group>
   <group name="Reader">
-    <entry name="AutoImportKeys" type="Bool">
+   <entry name="CloseAfterReplyOrForward" type="Bool">
+     <label>Close message window after replying or forwarding</label>
+     <default>false</default>
+   </entry>
+
+  <entry name="AutoImportKeys" type="Bool">
       <default>false</default>
     </entry>
     <entry name="StoreDisplayedMessagesUnencrypted" type="Bool" key="store-displayed-messages-unencrypted">
