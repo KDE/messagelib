@@ -72,11 +72,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <label>Reduce font size for quoted text</label>
       <whatsthis>Enable this option to show quoted text with a smaller font.</whatsthis>
     </entry>
-    <entry name="ShowUserAgent" type="Bool">
-      <default>false</default>
-      <label>Show user agent</label>
-      <whatsthis>Enable this option to get the User-Agent and X-Mailer header lines displayed.</whatsthis>
-    </entry>
     <entry name="AllowAttachmentEditing" type="Bool">
       <default>false</default>
       <label>Allow to edit attachments of existing mails.</label>

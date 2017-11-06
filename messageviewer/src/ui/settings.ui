@@ -175,13 +175,6 @@
        </item>
       </layout>
      </item>
-     <item>
-      <widget class="QCheckBox" name="kcfg_ShowUserAgent">
-       <property name="text">
-        <string>Show user agent in fancy headers</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </item>
    <item row="3" column="3">

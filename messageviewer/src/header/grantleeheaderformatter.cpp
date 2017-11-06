@@ -245,18 +245,6 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
                                                                                    HeaderStyleUtil::
                                                                                    LongDate)));
 
-    if (MessageViewer::MessageViewerSettings::self()->showUserAgent()) {
-        if (auto hdr = message->userAgent(false)) {
-            headerObject.insert(QStringLiteral("useragent"),
-                                d->headerStyleUtil.strToHtml(hdr->asUnicodeString()));
-        }
-
-        if (auto hrd = message->headerByType("X-Mailer")) {
-            headerObject.insert(QStringLiteral("xmailer"),
-                                d->headerStyleUtil.strToHtml(hrd->asUnicodeString()));
-        }
-    }
-
     if (message->hasHeader("Resent-From")) {
         headerObject.insert(QStringLiteral("resentfromi18n"), i18n("resent from"));
         const QVector<KMime::Types::Mailbox> resentFrom
