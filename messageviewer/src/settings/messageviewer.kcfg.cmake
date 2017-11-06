@@ -142,9 +142,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <label>List of emails in scam white list</label>
       <default></default>
     </entry>
-    <entry name="whiteReferer" type="StringList">
-        <default></default>
-    </entry>
   </group>
   <group name="MDN">
     <entry name="notSendWhenEncrypted" type="Bool" key="not-send-when-encrypted">
