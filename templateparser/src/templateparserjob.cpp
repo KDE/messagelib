@@ -1115,9 +1115,11 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     if (mMode == NewMessage && plainBody.isEmpty() && !mExtractHtmlInfoResult.mPlainText.isEmpty()) {
         plainBody = mExtractHtmlInfoResult.mPlainText;
     }
+    /*
     if (mMode == NewMessage && htmlBody.isEmpty() && !mExtractHtmlInfoResult.mHtmlElement.isEmpty()) {
         htmlBody = mExtractHtmlInfoResult.mHtmlElement;
     }
+    */
 
     addProcessedBodyToMessage(plainBody, htmlBody);
     Q_EMIT parsingDone(mForceCursorPosition);
