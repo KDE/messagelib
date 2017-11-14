@@ -974,7 +974,7 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
     auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
     auto content = msgPart->content();
 
-    if (!content) {
+    if (!content || !mp) {
         return MimeTreeParser::IconType::NoIcon;
     }
 
