@@ -852,8 +852,8 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
 
     if (isHiddenHint(msgPart)) {
         QByteArray cid = msgPart->content()->contentID()->identifier();
-        if (!cid.isEmpty()) {
-            auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
+        auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
+        if (!cid.isEmpty() && mp) {
             QString fileName = mp->temporaryFilePath();
             QString href = QUrl::fromLocalFile(fileName).url();
             htmlWriter->embedPart(cid, href);
