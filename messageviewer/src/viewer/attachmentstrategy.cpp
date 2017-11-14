@@ -96,9 +96,10 @@ public:
 
     Display defaultDisplay(KMime::Content *node) const override
     {
-        if (node->contentType()->isText()
-            && node->contentDisposition()->filename().trimmed().isEmpty()
-            && node->contentType()->name().trimmed().isEmpty()) {
+        if (node->contentType()->isText() &&
+            (!node->parent()
+             || (node->contentDisposition()->filename().trimmed().isEmpty()
+                 && node->contentType()->name().trimmed().isEmpty()))) {
             // text/* w/o filename parameter:
             return Inline;
         }
