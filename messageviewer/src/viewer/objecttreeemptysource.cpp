@@ -65,11 +65,6 @@ bool EmptySource::htmlLoadExternal() const
     return false;
 }
 
-bool EmptySource::showSignatureDetails() const
-{
-    return false;
-}
-
 void EmptySource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
     Q_UNUSED(mode);
@@ -84,11 +79,6 @@ MimeTreeParser::Util::HtmlMode EmptySource::preferredMode() const
 void EmptySource::setAllowDecryption(bool allowDecryption)
 {
     d->mAllowDecryption = allowDecryption;
-}
-
-int EmptySource::levelQuote() const
-{
-    return 1;
 }
 
 const QTextCodec *EmptySource::overrideCodec()
@@ -122,24 +112,9 @@ bool EmptySource::autoImportKeys() const
     return true;
 }
 
-bool EmptySource::showEmoticons() const
-{
-    return false;
-}
-
-bool EmptySource::showExpandQuotesMark() const
-{
-    return false;
-}
-
 const MimeTreeParser::BodyPartFormatterFactory *EmptySource::bodyPartFormatterFactory()
 {
     return MimeTreeParser::BodyPartFormatterFactory::instance();
-}
-
-bool EmptySource::isPrinting() const
-{
-    return false;
 }
 
 void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart)
@@ -161,4 +136,29 @@ void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, bool sho
     renderer.setShowSignatureDetails(showSignatureDetails());
 
     renderer.render(msgPart, htmlWriter());
+}
+
+bool EmptySource::isPrinting() const
+{
+    return false;
+}
+
+bool EmptySource::showEmoticons() const
+{
+    return false;
+}
+
+bool EmptySource::showExpandQuotesMark() const
+{
+    return false;
+}
+
+bool EmptySource::showSignatureDetails() const
+{
+    return false;
+}
+
+int EmptySource::levelQuote() const
+{
+    return 1;
 }
