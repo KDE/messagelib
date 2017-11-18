@@ -94,17 +94,17 @@ QString MailViewerSource::createMessageHeader(KMime::Message *message)
     return mViewer->writeMsgHeader(message);
 }
 
-const AttachmentStrategy *MailViewerSource::attachmentStrategy()
+const AttachmentStrategy *MailViewerSource::attachmentStrategy() const
 {
     return mViewer->attachmentStrategy();
 }
 
-CSSHelperBase *MailViewerSource::cssHelper()
+CSSHelperBase *MailViewerSource::cssHelper() const
 {
     return mViewer->cssHelper();
 }
 
-HtmlWriter *MailViewerSource::htmlWriter()
+HtmlWriter *MailViewerSource::htmlWriter() const
 {
     return mViewer->htmlWriter();
 }

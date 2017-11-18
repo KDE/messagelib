@@ -42,14 +42,14 @@ public:
     void setAllowDecryption(bool allowDecryption);
     const QTextCodec *overrideCodec() override;
     QString createMessageHeader(KMime::Message *message) override;
-    virtual const AttachmentStrategy *attachmentStrategy();
-    virtual HtmlWriter *htmlWriter();
-    virtual CSSHelperBase *cssHelper();
-
     bool autoImportKeys() const override;
+
     const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;
     void render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart) override;
 
+    virtual const AttachmentStrategy *attachmentStrategy() const;
+    virtual HtmlWriter *htmlWriter() const;
+    virtual CSSHelperBase *cssHelper() const;
     /** Return true if external sources should be loaded in a html mail */
     virtual bool htmlLoadExternal() const;
     virtual bool showSignatureDetails() const;

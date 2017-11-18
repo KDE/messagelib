@@ -42,9 +42,9 @@ public:
     int levelQuote() const override;
     const QTextCodec *overrideCodec() override;
     QString createMessageHeader(KMime::Message *message) override;
-    const AttachmentStrategy *attachmentStrategy() override;
-    HtmlWriter *htmlWriter() override;
-    CSSHelperBase *cssHelper() override;
+    const AttachmentStrategy *attachmentStrategy() const override;
+    HtmlWriter *htmlWriter() const override;
+    CSSHelperBase *cssHelper() const override;
 
     bool autoImportKeys() const override;
     bool showSignatureDetails() const override;

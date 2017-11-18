@@ -56,12 +56,12 @@ public:
     {
     }
 
-    HtmlWriter *htmlWriter() override
+    HtmlWriter *htmlWriter() const override
     {
         return mWriter;
     }
 
-    CSSHelperBase *cssHelper() override
+    CSSHelperBase *cssHelper() const override
     {
         return mCSSHelper;
     }
@@ -81,7 +81,7 @@ public:
         mAttachmentStrategy = strategy;
     }
 
-    const AttachmentStrategy *attachmentStrategy() override
+    const AttachmentStrategy *attachmentStrategy() const override
     {
         return AttachmentStrategy::create(mAttachmentStrategy);
     }

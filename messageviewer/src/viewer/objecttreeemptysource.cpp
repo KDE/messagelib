@@ -102,17 +102,17 @@ QString EmptySource::createMessageHeader(KMime::Message *message)
     return QString(); //do nothing
 }
 
-const AttachmentStrategy *EmptySource::attachmentStrategy()
+const AttachmentStrategy *EmptySource::attachmentStrategy() const
 {
     return AttachmentStrategy::smart();
 }
 
-HtmlWriter *EmptySource::htmlWriter()
+HtmlWriter *EmptySource::htmlWriter() const
 {
     return nullptr;
 }
 
-CSSHelperBase *EmptySource::cssHelper()
+CSSHelperBase *EmptySource::cssHelper() const
 {
     return nullptr;
 }
