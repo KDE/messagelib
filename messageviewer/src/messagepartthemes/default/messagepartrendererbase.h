@@ -64,7 +64,10 @@ public:
 
     virtual bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
     virtual MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) = 0;
+    virtual bool showEmoticons() const = 0;
+    virtual bool showExpandQuotesMark() const = 0;
     virtual bool showOnlyOneMimePart() const = 0;
+    virtual int levelQuote() const = 0;
 
 protected:
     virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) = 0;

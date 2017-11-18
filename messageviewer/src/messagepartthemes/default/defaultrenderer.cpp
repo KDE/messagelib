@@ -1033,9 +1033,25 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
     return MimeTreeParser::NoIcon;
 }
 
+
+bool DefaultRendererPrivate::showEmoticons() const
+{
+    return mShowEmoticons;
+}
+
+bool DefaultRendererPrivate::showExpandQuotesMark() const
+{
+    return mShowExpandQuotesMark;
+}
+
 bool DefaultRendererPrivate::showOnlyOneMimePart() const
 {
     return mShowOnlyOneMimePart;
+}
+
+int DefaultRendererPrivate::levelQuote() const
+{
+    return mLevelQuote;
 }
 
 DefaultRenderer::DefaultRenderer(CSSHelperBase *cssHelper)
@@ -1056,6 +1072,21 @@ void DefaultRenderer::setShowOnlyOneMimePart(bool onlyOneMimePart)
 void DefaultRenderer::setAttachmentStrategy(const AttachmentStrategy *strategy)
 {
     d->mAttachmentStrategy = strategy;
+}
+
+void DefaultRenderer::setShowEmoticons(bool showEmoticons)
+{
+    d->mShowEmoticons = showEmoticons;
+}
+
+void DefaultRenderer::setShowExpandQuotesMark(bool showExpandQuotesMark)
+{
+    d->mShowExpandQuotesMark = showExpandQuotesMark;
+}
+
+void DefaultRenderer::setLevelQuote(int levelQuote)
+{
+    d->mLevelQuote = levelQuote;
 }
 
 void DefaultRenderer::render(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer)

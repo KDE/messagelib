@@ -22,7 +22,7 @@
 #include "utils/iconnamecache.h"
 #include "viewer/csshelperbase.h"
 
-#include <MimeTreeParser/ObjectTreeSource>
+#include <MessageViewer/MessagePartRendererBase>
 
 #include <KTextToHTML>
 
@@ -106,12 +106,12 @@ bool looksLikeParaBreak(const QString &s, unsigned int newLinePos)
     return prevLineLength + wordLength + 1 < WRAP_COL;
 }
 
-QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource *source, MessageViewer::CSSHelperBase *cssHelper)
+QString quotedHTML(const QString &s, MessageViewer::RenderContext *context, MessageViewer::CSSHelperBase *cssHelper)
 {
     Q_ASSERT(cssHelper);
 
     KTextToHTML::Options convertFlags = KTextToHTML::PreserveSpaces | KTextToHTML::HighlightText;
-    if (source->showEmoticons()) {
+    if (context->showEmoticons()) {
         convertFlags |= KTextToHTML::ReplaceSmileys;
     }
     QString htmlStr;
@@ -143,7 +143,7 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
 
     QString collapseIconPath;
     QString expandIconPath;
-    if (source->showExpandQuotesMark()) {
+    if (context->showExpandQuotesMark()) {
         collapseIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(QStringLiteral(
                                                                                            "quotecollapse.png"));
         expandIconPath
@@ -191,8 +191,8 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
         bool actHidden = false;
 
         // This quoted line needs be hidden
-        if (source->showExpandQuotesMark() && source->levelQuote() >= 0
-            && source->levelQuote() <= actQuoteLevel) {
+        if (context->showExpandQuotesMark() && context->levelQuote() >= 0
+            && context->levelQuote() <= actQuoteLevel) {
             actHidden = true;
         }
 
@@ -212,7 +212,7 @@ QString quotedHTML(const QString &s, MimeTreeParser::Interface::ObjectTreeSource
             if (actQuoteLevel == -1) {
                 htmlStr += normalStartTag;
             } else {
-                if (source->showExpandQuotesMark()) {
+                if (context->showExpandQuotesMark()) {
                     // Add blockquote
                     if (previousQuoteDepth < actQuoteLevel) {
                         htmlStr

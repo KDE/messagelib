@@ -23,6 +23,7 @@
 
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MessageViewer/BufferedHtmlWriter>
+#include <MessageViewer/MessagePartRendererBase>
 #include <MessageViewer/CSSHelperBase>
 #include <MimeTreeParser/MessagePart>
 #include <MessageViewer/IconNameCache>
@@ -32,6 +33,63 @@
 using namespace MessageViewer;
 
 QTEST_GUILESS_MAIN(QuoteHtmlTest)
+
+class MyRenderContext : public MessageViewer::RenderContext
+{
+public:
+    virtual ~MyRenderContext() {}
+
+    CSSHelperBase *cssHelper() const override
+    {
+        return mCssHelper;
+    }
+
+    void renderSubParts(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter) override
+    {
+        Q_UNUSED(msgPart);
+        Q_UNUSED(htmlWriter);
+    }
+
+    bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override
+    {
+        Q_UNUSED(msgPart);
+        return false;
+    }
+
+    MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override
+    {
+        Q_UNUSED(msgPart);
+        return MimeTreeParser::IconType::NoIcon;
+    }
+
+    bool showEmoticons() const override
+    {
+        return false;
+    }
+
+    bool showExpandQuotesMark() const override
+    {
+        return mShowExpandQuotesMark;
+    }
+
+    int levelQuote() const override
+    {
+        return mLevelQuote;
+    }
+
+    bool mShowExpandQuotesMark = false;
+    int mLevelQuote = 1;
+    CSSHelperBase *mCssHelper = nullptr;
+
+protected:
+    bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) override
+    {
+        Q_UNUSED(mo);
+        Q_UNUSED(msgPart);
+        Q_UNUSED(writer);
+        return false;
+    }
+};
 
 void QuoteHtmlTest::initTestCase()
 {
@@ -140,9 +198,10 @@ void QuoteHtmlTest::testQuoteHtml()
     QFETCH(int, quotelevel);
     BufferedHtmlWriter testWriter;
     Test::CSSHelper testCSSHelper;
-    Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
-    emptySource.setShowExpandQuotesMark(showExpandQuotesMark);
-    emptySource.setLevelQuote(quotelevel);
+    MyRenderContext context;
+    context.mCssHelper = &testCSSHelper;
+    context.mLevelQuote = quotelevel;
+    context.mShowExpandQuotesMark = showExpandQuotesMark;
 
-    QCOMPARE(quotedHTML(data, &emptySource, &testCSSHelper), result);
+    QCOMPARE(quotedHTML(data, &context, &testCSSHelper), result);
 }

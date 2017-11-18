@@ -43,7 +43,7 @@ bool MessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, 
         htmlWriter->write(block.enter());
     }
 
-    htmlWriter->write(quotedHTML(msgPart->text(), msgPart->source(), context->cssHelper()));
+    htmlWriter->write(quotedHTML(msgPart->text(), context, context->cssHelper()));
     htmlWriter->write(block.exit());
     return true;
 }

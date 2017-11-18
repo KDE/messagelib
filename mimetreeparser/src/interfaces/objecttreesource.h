@@ -65,8 +65,6 @@ public:
     /** Return true to include the signature details in the generated html */
     virtual bool showSignatureDetails() const = 0;
 
-    virtual int levelQuote() const = 0;
-
     /** The override codec that should be used for the mail */
     virtual const QTextCodec *overrideCodec() = 0;
 
@@ -74,10 +72,6 @@ public:
 
     /** should keys be imported automatically **/
     virtual bool autoImportKeys() const = 0;
-
-    virtual bool showEmoticons() const = 0;
-
-    virtual bool showExpandQuotesMark() const = 0;
 
     virtual const BodyPartFormatterFactory *bodyPartFormatterFactory() = 0;
 

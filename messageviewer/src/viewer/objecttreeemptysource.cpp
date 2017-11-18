@@ -148,8 +148,13 @@ void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, bool sho
         qCWarning(MESSAGEVIEWER_LOG) << "no htmlWriter - skipping rendering.";
         return;
     }
+
     auto renderer = DefaultRenderer(cssHelper());
-    renderer.setShowOnlyOneMimePart(showOnlyOneMimePart);
     renderer.setAttachmentStrategy(attachmentStrategy());
+    renderer.setLevelQuote(levelQuote());
+    renderer.setShowEmoticons(showEmoticons());
+    renderer.setShowExpandQuotesMark(showExpandQuotesMark());
+    renderer.setShowOnlyOneMimePart(showOnlyOneMimePart);
+
     renderer.render(msgPart, htmlWriter());
 }

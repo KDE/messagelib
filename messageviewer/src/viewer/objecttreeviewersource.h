@@ -20,7 +20,7 @@
 #ifndef MAILVIEWER_OBJECTTREEVIEWERSOURCE_H
 #define MAILVIEWER_OBJECTTREEVIEWERSOURCE_H
 
-#include <MimeTreeParser/ObjectTreeSource>
+#include "objecttreeemptysource.h"
 
 class QString;
 
@@ -30,7 +30,7 @@ class HtmlWriter;
 class ViewerPrivate;
 
 /** An ObjectTreeParser source working on a MailViewer object */
-class MailViewerSource : public MimeTreeParser::Interface::ObjectTreeSource
+class MailViewerSource : public MessageViewer::EmptySource
 {
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);
@@ -43,14 +43,13 @@ public:
     int levelQuote() const override;
     const QTextCodec *overrideCodec() override;
     QString createMessageHeader(KMime::Message *message) override;
-    const AttachmentStrategy *attachmentStrategy();
-    virtual HtmlWriter *htmlWriter();
+    const AttachmentStrategy *attachmentStrategy() override;
+    HtmlWriter *htmlWriter() override;
+    CSSHelperBase *cssHelper() override;
 
     bool autoImportKeys() const override;
     bool showEmoticons() const override;
     bool showExpandQuotesMark() const override;
-    const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;
-    void render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart) override;
     bool isPrinting() const override;
 private:
     ViewerPrivate *mViewer = nullptr;

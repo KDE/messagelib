@@ -31,7 +31,7 @@
 using namespace MessageViewer;
 
 MailViewerSource::MailViewerSource(ViewerPrivate *viewer)
-    : MimeTreeParser::Interface::ObjectTreeSource()
+    : MessageViewer::EmptySource()
     , mViewer(viewer)
 {
 }
@@ -99,6 +99,11 @@ const AttachmentStrategy *MailViewerSource::attachmentStrategy()
     return mViewer->attachmentStrategy();
 }
 
+CSSHelperBase *MailViewerSource::cssHelper()
+{
+    return mViewer->cssHelper();
+}
+
 HtmlWriter *MailViewerSource::htmlWriter()
 {
     return mViewer->htmlWriter();
@@ -119,20 +124,7 @@ bool MailViewerSource::showExpandQuotesMark() const
     return MessageViewer::MessageViewerSettings::self()->showExpandQuotesMark();
 }
 
-const MimeTreeParser::BodyPartFormatterFactory *MailViewerSource::bodyPartFormatterFactory()
-{
-    return MimeTreeParser::BodyPartFormatterFactory::instance();
-}
-
 bool MailViewerSource::isPrinting() const
 {
     return mViewer->mPrinting;
-}
-
-void MailViewerSource::render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart)
-{
-    auto renderer = DefaultRenderer(mViewer->cssHelper());
-    renderer.setShowOnlyOneMimePart(showOnlyOneMimePart);
-    renderer.setAttachmentStrategy(attachmentStrategy());
-    renderer.render(msgPart, htmlWriter());
 }

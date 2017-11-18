@@ -42,7 +42,6 @@ public:
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
     MimeTreeParser::Util::HtmlMode preferredMode() const override;
     void setAllowDecryption(bool allowDecryption);
-    int levelQuote() const override;
     const QTextCodec *overrideCodec() override;
     QString createMessageHeader(KMime::Message *message) override;
     virtual const AttachmentStrategy *attachmentStrategy();
@@ -50,11 +49,13 @@ public:
     virtual CSSHelperBase *cssHelper();
 
     bool autoImportKeys() const override;
-    bool showEmoticons() const override;
-    bool showExpandQuotesMark() const override;
     const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;
     void render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart) override;
     bool isPrinting() const override;
+
+    virtual bool showEmoticons() const;
+    virtual bool showExpandQuotesMark() const;
+    virtual int levelQuote() const;
 private:
     EmptySourcePrivate *const d;
 };

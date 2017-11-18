@@ -63,16 +63,6 @@ public:
         return true;
     }
 
-    bool showEmoticons() const override
-    {
-        return false;
-    }
-
-    bool showExpandQuotesMark() const override
-    {
-        return false;
-    }
-
     const BodyPartFormatterFactory *bodyPartFormatterFactory() override
     {
         return &mBodyPartFormatterFactory;
@@ -112,11 +102,6 @@ public:
     void setPreferredMode(MimeTreeParser::Util::HtmlMode mode)
     {
         mPreferredMode = mode;
-    }
-
-    int levelQuote() const override
-    {
-        return 1;
     }
 
     const QTextCodec *overrideCodec() override

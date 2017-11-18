@@ -31,7 +31,7 @@ macro(add_mimetreeparser_crypto_unittest _source)
         KF5::MimeTreeParser
         Qt5::Test
         KF5::Mime
-        Gpgmepp
+        QGpgme
     )
     add_gpg_crypto_test(${_name} mimetreeparser-${_name})
 endmacro ()
