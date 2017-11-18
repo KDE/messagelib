@@ -224,6 +224,8 @@ void QuoteHtmlTest::testQuoteHtml()
     context.mCssHelper = &testCSSHelper;
     context.mLevelQuote = quotelevel;
     context.mShowExpandQuotesMark = showExpandQuotesMark;
-
-    QCOMPARE(quotedHTML(data, &context, &testCSSHelper), result);
+    testWriter.begin();
+    quotedHTML(data, &context, &testWriter);
+    testWriter.end();
+    QCOMPARE (testWriter.data(), result.toUtf8());
 }

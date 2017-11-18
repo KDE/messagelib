@@ -42,8 +42,7 @@ bool MessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, 
     if (msgPart->isAttachment()) {
         htmlWriter->write(block.enter());
     }
-
-    htmlWriter->write(quotedHTML(msgPart->text(), context, context->cssHelper()));
+    quotedHTML(msgPart->text(), context, htmlWriter);
     htmlWriter->write(block.exit());
     return true;
 }

@@ -22,6 +22,7 @@
 #include "utils/iconnamecache.h"
 #include "viewer/csshelperbase.h"
 
+#include <MessageViewer/HtmlWriter>
 #include <MessageViewer/MessagePartRendererBase>
 
 #include <KTextToHTML>
@@ -106,15 +107,16 @@ bool looksLikeParaBreak(const QString &s, unsigned int newLinePos)
     return prevLineLength + wordLength + 1 < WRAP_COL;
 }
 
-QString quotedHTML(const QString &s, MessageViewer::RenderContext *context, MessageViewer::CSSHelperBase *cssHelper)
+void quotedHTML(const QString &s, MessageViewer::RenderContext *context, MessageViewer::HtmlWriter *htmlWriter)
 {
+    const auto cssHelper = context->cssHelper();
     Q_ASSERT(cssHelper);
 
     KTextToHTML::Options convertFlags = KTextToHTML::PreserveSpaces | KTextToHTML::HighlightText;
     if (context->showEmoticons()) {
         convertFlags |= KTextToHTML::ReplaceSmileys;
     }
-    QString htmlStr;
+
     const QString normalStartTag = cssHelper->nonQuotedFontTag();
     QString quoteFontTag[3];
     QString deepQuoteFontTag[3];
@@ -199,60 +201,58 @@ QString quotedHTML(const QString &s, MessageViewer::RenderContext *context, Mess
         if (actQuoteLevel != currQuoteLevel) {
             /* finish last quotelevel */
             if (currQuoteLevel == -1) {
-                htmlStr.append(normalEndTag);
+                htmlWriter->write(normalEndTag);
             } else if (currQuoteLevel >= 0 && !curHidden) {
-                htmlStr.append(quoteEnd);
+                htmlWriter->write(quoteEnd);
             }
             //Close blockquote
             if (previousQuoteDepth > actQuoteLevel) {
-                htmlStr += cssHelper->addEndBlockQuote(previousQuoteDepth - actQuoteLevel);
+                htmlWriter->write(cssHelper->addEndBlockQuote(previousQuoteDepth - actQuoteLevel));
             }
 
             /* start new quotelevel */
             if (actQuoteLevel == -1) {
-                htmlStr += normalStartTag;
+                htmlWriter->write(normalStartTag);
             } else {
                 if (context->showExpandQuotesMark()) {
                     // Add blockquote
                     if (previousQuoteDepth < actQuoteLevel) {
-                        htmlStr
-                            += cssHelper->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
+                        htmlWriter->write(cssHelper->addStartBlockQuote(actQuoteLevel - previousQuoteDepth));
                     }
                     if (actHidden) {
                         //only show the QuoteMark when is the first line of the level hidden
                         if (!curHidden) {
                             //Expand all quotes
-                            htmlStr += QLatin1String("<div class=\"quotelevelmark\" >");
-                            htmlStr += QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
-                                                      "<img src=\"%2\"/></a>")
-                                       .arg(-1)
-                                       .arg(expandIconPath);
-                            htmlStr += QLatin1String("</div><br/>");
+                            htmlWriter->write(QLatin1String("<div class=\"quotelevelmark\" >"));
+                            htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
+                                                             "<img src=\"%2\"/></a>")
+                                                            .arg(-1)
+                                                            .arg(expandIconPath));
+                            htmlWriter->write(QLatin1String("</div><br/>"));
                         }
                     } else {
-                        htmlStr += QLatin1String("<div class=\"quotelevelmark\" >");
-                        htmlStr += QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
+                        htmlWriter->write(QLatin1String("<div class=\"quotelevelmark\" >"));
+                        htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
                                                   "<img src=\"%2\"/></a>")
                                    .arg(actQuoteLevel)
-                                   .arg(collapseIconPath);
-                        htmlStr += QLatin1String("</div>");
+                                   .arg(collapseIconPath));
+                        htmlWriter->write(QLatin1String("</div>"));
                         if (actQuoteLevel < 3) {
-                            htmlStr += quoteFontTag[actQuoteLevel];
+                            htmlWriter->write(quoteFontTag[actQuoteLevel]);
                         } else {
-                            htmlStr += deepQuoteFontTag[actQuoteLevel % 3];
+                            htmlWriter->write(deepQuoteFontTag[actQuoteLevel % 3]);
                         }
                     }
                 } else {
                     // Add blockquote
                     if (previousQuoteDepth < actQuoteLevel) {
-                        htmlStr
-                            += cssHelper->addStartBlockQuote(actQuoteLevel - previousQuoteDepth);
+                        htmlWriter->write(cssHelper->addStartBlockQuote(actQuoteLevel - previousQuoteDepth));
                     }
 
                     if (actQuoteLevel < 3) {
-                        htmlStr += quoteFontTag[actQuoteLevel];
+                        htmlWriter->write(quoteFontTag[actQuoteLevel]);
                     } else {
-                        htmlStr += deepQuoteFontTag[actQuoteLevel % 3];
+                        htmlWriter->write(deepQuoteFontTag[actQuoteLevel % 3]);
                     }
                 }
             }
@@ -267,34 +267,31 @@ QString quotedHTML(const QString &s, MessageViewer::RenderContext *context, Mess
                 if (startNewPara) {
                     paraIsRTL = line.isRightToLeft();
                 }
-                htmlStr += QStringLiteral("<div dir=\"%1\">").arg(paraIsRTL ? QStringLiteral(
-                                                                      "rtl") : QStringLiteral("ltr"));
+                htmlWriter->write(QStringLiteral("<div dir=\"%1\">")
+                                    .arg(paraIsRTL ? QStringLiteral("rtl") : QStringLiteral("ltr")));
                 // if quoteLengh == 0 && foundQuote => a simple quote
                 if (foundQuote) {
                     quoteLength++;
                     const int rightString = (line.length()) - quoteLength;
                     if (rightString > 0) {
-                        htmlStr += QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(
-                                                                                                  quoteLength));
-                        htmlStr += QStringLiteral("<font color=\"%1\">").arg(cssHelper->quoteColorName(
-                                                                                 actQuoteLevel))
-                                   + KTextToHTML::convertToHtml(line.right(
-                                                                    rightString),
-                                                                convertFlags) + QStringLiteral(
-                            "</font>");
+                        htmlWriter->write(QStringLiteral("<span class=\"quotemarks\">%1</span>")
+                                            .arg(line.left(quoteLength)));
+                        htmlWriter->write(QStringLiteral("<font color=\"%1\">")
+                                            .arg(cssHelper->quoteColorName(actQuoteLevel)));
+                        htmlWriter->write(KTextToHTML::convertToHtml(line.right(rightString),convertFlags));
+                        htmlWriter->write(QStringLiteral("</font>"));
                     } else {
-                        htmlStr
-                            += QStringLiteral("<span class=\"quotemarksemptyline\">%1</span>").arg(line.left(
-                                                                                                       quoteLength));
+                        htmlWriter->write(QStringLiteral("<span class=\"quotemarksemptyline\">%1</span>")
+                                            .arg(line.left(quoteLength)));
                     }
                 } else {
-                    htmlStr += KTextToHTML::convertToHtml(line, convertFlags);
+                    htmlWriter->write(KTextToHTML::convertToHtml(line, convertFlags));
                 }
 
-                htmlStr += QLatin1String("</div>");
+                htmlWriter->write(QLatin1String("</div>"));
                 startNewPara = looksLikeParaBreak(s, pos);
             } else {
-                htmlStr += QLatin1String("<br/>");
+                htmlWriter->write(QLatin1String("<br/>"));
                 // after an empty line, always start a new paragraph
                 startNewPara = true;
             }
@@ -304,13 +301,8 @@ QString quotedHTML(const QString &s, MessageViewer::RenderContext *context, Mess
 
     /* really finish the last quotelevel */
     if (currQuoteLevel == -1) {
-        htmlStr.append(normalEndTag);
+        htmlWriter->write(normalEndTag);
     } else {
-        htmlStr += quoteEnd + cssHelper->addEndBlockQuote(currQuoteLevel + 1);
+        htmlWriter->write(quoteEnd + cssHelper->addEndBlockQuote(currQuoteLevel + 1));
     }
-
-    // qCDebug(MESSAGEVIEWER_LOG) << "========================================\n"
-    //                            << htmlStr
-    //                            << "\n======================================\n";
-    return htmlStr;
 }

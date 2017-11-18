@@ -23,10 +23,10 @@
 #include <QString>
 
 namespace MessageViewer {
-class CSSHelperBase;
+class HtmlWriter;
 class RenderContext;
 }
 
-QString quotedHTML(const QString &s, MessageViewer::RenderContext *context, MessageViewer::CSSHelperBase *cssHelper);
+void quotedHTML(const QString &s, MessageViewer::RenderContext *context, MessageViewer::HtmlWriter *htmlWriter);
 
 #endif
