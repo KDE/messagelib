@@ -88,12 +88,6 @@ public:
         return nullptr;
     }
 
-    QString createMessageHeader(KMime::Message *message) override
-    {
-        Q_UNUSED(message);
-        return QString(); //do nothing
-    }
-
     void render(const MessagePart::Ptr &msgPart, bool showOnlyOneMimePart) override
     {
         Q_UNUSED(msgPart);

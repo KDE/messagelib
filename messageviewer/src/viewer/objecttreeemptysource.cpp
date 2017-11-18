@@ -151,6 +151,7 @@ void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, bool sho
 
     auto renderer = DefaultRenderer(cssHelper());
     renderer.setAttachmentStrategy(attachmentStrategy());
+    renderer.setCreateMessageHeader(std::bind(&EmptySource::createMessageHeader, this, std::placeholders::_1));
     renderer.setHtmlLoadExternal(htmlLoadExternal());
     renderer.setIsPrinting(isPrinting());
     renderer.setLevelQuote(levelQuote());

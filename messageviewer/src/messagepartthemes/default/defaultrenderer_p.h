@@ -70,6 +70,8 @@ public:
     CSSHelperBase *mCSSHelper = nullptr;
     const MessagePartRendererFactory *mRendererFactory = nullptr;
     const AttachmentStrategy *mAttachmentStrategy = nullptr;
+    std::function<QString(KMime::Message*)> mCreateMessageHeader;
+
     int mLevelQuote = 1;
 
     bool mShowEmoticons = false;

@@ -41,7 +41,7 @@ public:
     MimeTreeParser::Util::HtmlMode preferredMode() const override;
     void setAllowDecryption(bool allowDecryption);
     const QTextCodec *overrideCodec() override;
-    QString createMessageHeader(KMime::Message *message) override;
+    virtual QString createMessageHeader(KMime::Message *message);
     bool autoImportKeys() const override;
 
     const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;

@@ -22,6 +22,12 @@
 
 #include <QSharedPointer>
 
+#include <functional>
+
+namespace KMime {
+class Message;
+}
+
 namespace MimeTreeParser {
 class MessagePart;
 typedef QSharedPointer<MessagePart> MessagePartPtr;
@@ -47,6 +53,7 @@ public:
     void setShowSignatureDetails(bool showSignatureDetails);
     void setLevelQuote(int levelQuote);
     void setHtmlLoadExternal(bool htmlLoadExternal);
+    void setCreateMessageHeader(std::function<QString(KMime::Message*)>);
     void render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *writer);
 private:
     DefaultRendererPrivate *d;

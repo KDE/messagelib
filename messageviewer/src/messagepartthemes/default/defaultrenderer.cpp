@@ -380,7 +380,7 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
     block.setProperty("link",
                       mp->nodeHelper()->asHREF(mp->message().data(), QStringLiteral("body")));
 
-    c.insert(QStringLiteral("msgHeader"), mp->source()->createMessageHeader(mp->message().data()));
+    c.insert(QStringLiteral("msgHeader"), mCreateMessageHeader(mp->message().data()));
     c.insert(QStringLiteral("content"), QVariant::fromValue<GrantleeCallback>([this, mp, htmlWriter](Grantlee::OutputStream *) {
         renderSubParts(mp, htmlWriter);
     }));
@@ -1115,6 +1115,11 @@ void DefaultRenderer::setLevelQuote(int levelQuote)
 void DefaultRenderer::setHtmlLoadExternal(bool htmlLoadExternal)
 {
     d->mHtmlLoadExternal = htmlLoadExternal;
+}
+
+void DefaultRenderer::setCreateMessageHeader(std::function<QString(KMime::Message*)> createMessageHeader)
+{
+    d->mCreateMessageHeader = createMessageHeader;
 }
 
 void DefaultRenderer::render(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer)

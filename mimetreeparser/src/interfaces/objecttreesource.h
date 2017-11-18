@@ -62,8 +62,6 @@ public:
     /** The override codec that should be used for the mail */
     virtual const QTextCodec *overrideCodec() = 0;
 
-    virtual QString createMessageHeader(KMime::Message *message) = 0;
-
     /** should keys be imported automatically **/
     virtual bool autoImportKeys() const = 0;
 
