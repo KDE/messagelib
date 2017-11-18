@@ -59,12 +59,6 @@ public:
     /** Return true if an encrypted mail should be decrypted */
     virtual bool decryptMessage() const = 0;
 
-    /** Return true if external sources should be loaded in a html mail */
-    virtual bool htmlLoadExternal() const = 0;
-
-    /** Return true to include the signature details in the generated html */
-    virtual bool showSignatureDetails() const = 0;
-
     /** The override codec that should be used for the mail */
     virtual const QTextCodec *overrideCodec() = 0;
 
@@ -76,8 +70,6 @@ public:
     virtual const BodyPartFormatterFactory *bodyPartFormatterFactory() = 0;
 
     virtual void render(const MessagePartPtr &msgPart, bool showOnlyOneMimePart) = 0;
-
-    virtual bool isPrinting() const = 0;
 
 private:
     Q_DISABLE_COPY(ObjectTreeSource)

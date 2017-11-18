@@ -67,9 +67,29 @@ public:
         return false;
     }
 
+    bool isPrinting() const override
+    {
+        return false;
+    }
+
+    bool htmlLoadExternal() const override
+    {
+        return false;
+    }
+
     bool showExpandQuotesMark() const override
     {
         return mShowExpandQuotesMark;
+    }
+
+    bool showOnlyOneMimePart() const override
+    {
+        return false;
+    }
+
+    bool showSignatureDetails() const override
+    {
+        return false;
     }
 
     int levelQuote() const override

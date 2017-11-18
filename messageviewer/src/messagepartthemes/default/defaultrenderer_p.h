@@ -59,20 +59,25 @@ public:
     bool isHiddenHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
     MimeTreeParser::IconType displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart) override;
     bool showEmoticons() const override;
+    bool isPrinting() const override;
+    bool htmlLoadExternal() const override;
     bool showExpandQuotesMark() const override;
     bool showOnlyOneMimePart() const override;
+    bool showSignatureDetails() const override;
     int levelQuote() const override;
 
     MimeTreeParser::MessagePart::Ptr mMsgPart;
     CSSHelperBase *mCSSHelper = nullptr;
     const MessagePartRendererFactory *mRendererFactory = nullptr;
     const AttachmentStrategy *mAttachmentStrategy = nullptr;
-
     int mLevelQuote = 1;
 
     bool mShowEmoticons = false;
+    bool mIsPrinting = false;
+    bool mHtmlLoadExternal = false;
     bool mShowExpandQuotesMark = false;
     bool mShowOnlyOneMimePart = false;
+    bool mShowSignatureDetails = false;
 };
 }
 #endif

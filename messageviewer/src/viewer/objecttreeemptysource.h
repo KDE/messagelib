@@ -37,8 +37,6 @@ public:
     EmptySource();
     ~EmptySource();
     bool decryptMessage() const override;
-    bool htmlLoadExternal() const override;
-    bool showSignatureDetails() const override;
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
     MimeTreeParser::Util::HtmlMode preferredMode() const override;
     void setAllowDecryption(bool allowDecryption);
@@ -51,10 +49,13 @@ public:
     bool autoImportKeys() const override;
     const MimeTreeParser::BodyPartFormatterFactory *bodyPartFormatterFactory() override;
     void render(const MimeTreeParser::MessagePartPtr &msgPart, bool showOnlyOneMimePart) override;
-    bool isPrinting() const override;
 
+    /** Return true if external sources should be loaded in a html mail */
+    virtual bool htmlLoadExternal() const;
+    virtual bool showSignatureDetails() const;
     virtual bool showEmoticons() const;
     virtual bool showExpandQuotesMark() const;
+    virtual bool isPrinting() const;
     virtual int levelQuote() const;
 private:
     EmptySourcePrivate *const d;

@@ -42,8 +42,11 @@ public:
     void setShowOnlyOneMimePart(bool onlyOneMimePart);
     void setAttachmentStrategy(const AttachmentStrategy *strategy);
     void setShowEmoticons(bool showEmoticons);
+    void setIsPrinting(bool isPrinting);
     void setShowExpandQuotesMark(bool showExpandQuotesMark);
+    void setShowSignatureDetails(bool showSignatureDetails);
     void setLevelQuote(int levelQuote);
+    void setHtmlLoadExternal(bool htmlLoadExternal);
     void render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *writer);
 private:
     DefaultRendererPrivate *d;

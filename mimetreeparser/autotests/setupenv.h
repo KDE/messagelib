@@ -43,19 +43,8 @@ class TestObjectTreeSource : public MimeTreeParser::Interface::ObjectTreeSource
 public:
     TestObjectTreeSource()
         : mPreferredMode(Util::Html)
-        , mHtmlLoadExternal(false)
         , mDecryptMessage(false)
     {
-    }
-
-    bool htmlLoadExternal() const override
-    {
-        return mHtmlLoadExternal;
-    }
-
-    void setHtmlLoadExternal(bool loadExternal)
-    {
-        mHtmlLoadExternal = loadExternal;
     }
 
     bool autoImportKeys() const override
@@ -76,16 +65,6 @@ public:
     void setAllowDecryption(bool allowDecryption)
     {
         mDecryptMessage = allowDecryption;
-    }
-
-    void setShowSignatureDetails(bool showSignatureDetails)
-    {
-        mShowSignatureDetails = showSignatureDetails;
-    }
-
-    bool showSignatureDetails() const override
-    {
-        return mShowSignatureDetails;
     }
 
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override
@@ -121,17 +100,10 @@ public:
         Q_UNUSED(showOnlyOneMimePart);
     }
 
-    bool isPrinting() const override
-    {
-        return false;
-    }
-
 private:
     BodyPartFormatterFactory mBodyPartFormatterFactory;
     MimeTreeParser::Util::HtmlMode mPreferredMode;
-    bool mHtmlLoadExternal = false;
     bool mDecryptMessage = false;
-    bool mShowSignatureDetails = false;
 };
 }
 }

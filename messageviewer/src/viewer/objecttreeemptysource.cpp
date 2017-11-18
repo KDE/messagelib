@@ -151,10 +151,13 @@ void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, bool sho
 
     auto renderer = DefaultRenderer(cssHelper());
     renderer.setAttachmentStrategy(attachmentStrategy());
+    renderer.setHtmlLoadExternal(htmlLoadExternal());
+    renderer.setIsPrinting(isPrinting());
     renderer.setLevelQuote(levelQuote());
     renderer.setShowEmoticons(showEmoticons());
     renderer.setShowExpandQuotesMark(showExpandQuotesMark());
     renderer.setShowOnlyOneMimePart(showOnlyOneMimePart);
+    renderer.setShowSignatureDetails(showSignatureDetails());
 
     renderer.render(msgPart, htmlWriter());
 }

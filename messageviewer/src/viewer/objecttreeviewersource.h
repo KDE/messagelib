@@ -30,14 +30,13 @@ class HtmlWriter;
 class ViewerPrivate;
 
 /** An ObjectTreeParser source working on a MailViewer object */
-class MailViewerSource : public MessageViewer::EmptySource
+class MailViewerSource : public MessageViewer::EmptySource 
 {
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);
     ~MailViewerSource();
     bool decryptMessage() const override;
     bool htmlLoadExternal() const override;
-    bool showSignatureDetails() const override;
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
     MimeTreeParser::Util::HtmlMode preferredMode() const override;
     int levelQuote() const override;
@@ -48,6 +47,7 @@ public:
     CSSHelperBase *cssHelper() override;
 
     bool autoImportKeys() const override;
+    bool showSignatureDetails() const override;
     bool showEmoticons() const override;
     bool showExpandQuotesMark() const override;
     bool isPrinting() const override;

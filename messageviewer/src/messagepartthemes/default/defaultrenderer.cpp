@@ -404,10 +404,9 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
 
     auto preferredMode = mp->source()->preferredMode();
     bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
-    const bool isPrinting = mp->source()->isPrinting();
     block.setProperty("htmlMail", isHtmlPreferred);
-    block.setProperty("loadExternal", mp->source()->htmlLoadExternal());
-    block.setProperty("isPrinting", isPrinting);
+    block.setProperty("loadExternal", htmlLoadExternal());
+    block.setProperty("isPrinting", isPrinting());
     {
         QString extraHead;
         //laurent: FIXME port to async method webengine
@@ -518,7 +517,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     block.setProperty("inProgress", metaData.inProgress);
     block.setProperty("errorText", metaData.errorText);
 
-    block.setProperty("detailHeader", mp->source()->showSignatureDetails());
+    block.setProperty("detailHeader", showSignatureDetails());
     block.setProperty("printing", false);
     block.setProperty("addr", metaData.signerMailAddresses.join(QLatin1Char(',')));
     block.setProperty("technicalProblem", metaData.technicalProblem);
@@ -1039,6 +1038,17 @@ bool DefaultRendererPrivate::showEmoticons() const
     return mShowEmoticons;
 }
 
+bool DefaultRendererPrivate::isPrinting() const
+{
+    return mIsPrinting;
+}
+
+bool DefaultRendererPrivate::htmlLoadExternal() const
+{
+    return mHtmlLoadExternal;
+}
+
+
 bool DefaultRendererPrivate::showExpandQuotesMark() const
 {
     return mShowExpandQuotesMark;
@@ -1047,6 +1057,11 @@ bool DefaultRendererPrivate::showExpandQuotesMark() const
 bool DefaultRendererPrivate::showOnlyOneMimePart() const
 {
     return mShowOnlyOneMimePart;
+}
+
+bool DefaultRendererPrivate::showSignatureDetails() const
+{
+    return mShowSignatureDetails;
 }
 
 int DefaultRendererPrivate::levelQuote() const
@@ -1079,14 +1094,29 @@ void DefaultRenderer::setShowEmoticons(bool showEmoticons)
     d->mShowEmoticons = showEmoticons;
 }
 
+void DefaultRenderer::setIsPrinting(bool isPrinting)
+{
+    d->mIsPrinting = isPrinting;
+}
+
 void DefaultRenderer::setShowExpandQuotesMark(bool showExpandQuotesMark)
 {
     d->mShowExpandQuotesMark = showExpandQuotesMark;
 }
 
+void DefaultRenderer::setShowSignatureDetails(bool showSignatureDetails)
+{
+    d->mShowSignatureDetails = showSignatureDetails;
+}
+
 void DefaultRenderer::setLevelQuote(int levelQuote)
 {
     d->mLevelQuote = levelQuote;
+}
+
+void DefaultRenderer::setHtmlLoadExternal(bool htmlLoadExternal)
+{
+    d->mHtmlLoadExternal = htmlLoadExternal;
 }
 
 void DefaultRenderer::render(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer)
