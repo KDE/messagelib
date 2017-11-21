@@ -34,6 +34,8 @@
 #ifndef __MESSAGEVIEWER_URLHANDLERMANAGER_H__
 #define __MESSAGEVIEWER_URLHANDLERMANAGER_H__
 
+#include "messageviewer_private_export.h"
+
 #include <QVector>
 
 class QUrl;
@@ -49,12 +51,12 @@ namespace Interface {
 class BodyPartURLHandler;
 }
 class ViewerPrivate;
-
+class BodyPartURLHandlerManager;
 /**
   * @short Singleton to manage the list of URLHandlers
   * @author Marc Mutz <mutz@kde.org>
   */
-class URLHandlerManager
+class MESSAGEVIEWER_TESTS_EXPORT URLHandlerManager
 {
     static URLHandlerManager *self;
 
@@ -80,7 +82,6 @@ public:
 private:
     typedef QVector<const MimeTreeParser::URLHandler *> HandlerList;
     HandlerList mHandlers;
-    class BodyPartURLHandlerManager;
     BodyPartURLHandlerManager *mBodyPartURLHandlerManager = nullptr;
 };
 }

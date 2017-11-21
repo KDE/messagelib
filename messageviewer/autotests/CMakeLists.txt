@@ -1,9 +1,11 @@
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
+add_definitions( -DMAIL_DATA_DIR="${CMAKE_SOURCE_DIR}/mimetreeparser/autotests/data" )
 add_definitions( -DGRANTLEETHEME_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
+
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
-    ecm_add_test(${_source}
+    ecm_add_test(${_source} setupenv.cpp util.cpp
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo QGpgme Qt5::Test KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore
@@ -20,6 +22,7 @@ macro(add_messageviewer_class_unittest _source _additionalSource)
 endmacro ()
 
 add_messageviewer_unittest( messagedisplayformatattributetest.cpp )
+add_messageviewer_unittest(urlhandlermanagertest.cpp)
 
 # convenience macro to add qtest unit tests
 macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)

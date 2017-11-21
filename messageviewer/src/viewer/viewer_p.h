@@ -21,6 +21,8 @@
 #ifndef MAILVIEWER_P_H
 #define MAILVIEWER_P_H
 
+#include "messageviewer_private_export.h"
+
 #include <MimeTreeParser/NodeHelper>
 #include "config-messageviewer.h"
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
@@ -188,7 +190,7 @@ some of them again passed to the MimeTreeParser::ObjectTreeParser when it needs 
 
 @author andras@kdab.net
  */
-class ViewerPrivate : public QObject
+class MESSAGEVIEWER_TESTS_EXPORT ViewerPrivate : public QObject
 {
     Q_OBJECT
 public:
