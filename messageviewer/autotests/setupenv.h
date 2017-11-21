@@ -21,10 +21,6 @@
 #ifndef MESSAGECORE_TESTS_UTIL_H
 #define MESSAGECORE_TESTS_UTIL_H
 
-#include <gpgme++/key.h>
-#include <viewer/objecttreeemptysource.h>
-#include <viewer/attachmentstrategy.h>
-
 namespace MessageViewer {
 namespace Test {
 /**
