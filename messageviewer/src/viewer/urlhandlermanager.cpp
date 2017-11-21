@@ -420,7 +420,11 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
         return nullptr;
     }
     //KMime::ContentIndex index( urlParts[1] );
-    *path = QUrl::fromPercentEncoding(urlParts.at(2).toLatin1());
+    QByteArray query(urlParts.at(2).toLatin1());
+    if (url.hasQuery()) {
+        query += "?" + url.query().toLatin1();
+    }
+    *path = QUrl::fromPercentEncoding(query);
     return w->nodeFromUrl(QUrl(urlParts.at(1)));
 }
 
