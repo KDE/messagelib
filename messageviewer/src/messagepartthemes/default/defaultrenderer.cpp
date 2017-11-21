@@ -1122,8 +1122,24 @@ void DefaultRenderer::setCreateMessageHeader(std::function<QString(KMime::Messag
     d->mCreateMessageHeader = createMessageHeader;
 }
 
+QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
+{
+    const QString line
+        = QStringLiteral("%1 * %3\n").arg(indent,
+                                          QString::fromUtf8(messagePart->metaObject()->className()));
+    QString ret = line;
+
+    indent += QStringLiteral(" ");
+    foreach (const auto &subPart, messagePart->subParts()) {
+        ret += renderTreeHelper(subPart, indent);
+    }
+    return ret;
+}
+
 void DefaultRenderer::render(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer)
 {
+    qCDebug(MESSAGEVIEWER_LOG) << "MimeTreeParser structur:";
+    qCDebug(MESSAGEVIEWER_LOG) << qPrintable(renderTreeHelper(msgPart, QString()));
     d->mMsgPart = msgPart;
     d->renderFactory(d->mMsgPart, writer);
 }
