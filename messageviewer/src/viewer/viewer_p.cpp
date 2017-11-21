@@ -35,8 +35,8 @@
 #include "messageviewer/headerstyle.h"
 #include "messageviewer/headerstrategy.h"
 #include "kpimtextedit/slidecontainer.h"
-#include "Gravatar/GravatarCache"
-#include "gravatarsettings.h"
+#include <Gravatar/GravatarCache>
+#include <gravatar/gravatarsettings.h>
 #include "job/attachmenteditjob.h"
 #include "job/modifymessagedisplayformatjob.h"
 #include "config-messageviewer.h"
