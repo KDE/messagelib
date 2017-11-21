@@ -8,7 +8,7 @@ macro(add_messageviewer_unittest _source)
     ecm_add_test(${_source} setupenv.cpp util.cpp
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
-        LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo QGpgme Qt5::Test KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore
+        LINK_LIBRARIES KF5::MessageViewer KF5::Libkleo QGpgme Qt5::Test KF5::KIOCore KF5::Mime KF5::AkonadiCore KF5::CalendarCore KF5::WebEngineViewer
     )
 endmacro ()
 
