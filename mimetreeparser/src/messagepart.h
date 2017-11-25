@@ -116,7 +116,7 @@ public:
     void setNeverDisplayInline(bool displayInline);
     bool isImage() const;
     void setIsImage(bool image);
-    
+
     PartMetaData *partMetaData() const;
 
     Interface::BodyPartMemento *memento() const;
@@ -350,7 +350,7 @@ public:
     const QGpgME::Protocol *cryptoProto() const;
     QString fromAddress() const;
 
-    const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &decryptRecipients() const;
+    const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > &decryptRecipients() const;
 
 private:
     /** Handles the dectyptioon of a given content

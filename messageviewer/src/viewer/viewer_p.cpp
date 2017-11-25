@@ -990,7 +990,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     mNodeHelper->setNodeUnprocessed(mMessage.data(), true);
     MailViewerSource otpSource(this);
     MimeTreeParser::ObjectTreeParser otp(&otpSource, mNodeHelper);
-                                         //TODO: needs to end up in renderer: mMessage.data() != content /* show only single node */);
+    //TODO: needs to end up in renderer: mMessage.data() != content /* show only single node */);
     otp.setAllowAsync(!mPrinting);
     otp.parseObjectTree(content, mMessage.data() != content /* parse/show only single node */);
 
@@ -1117,8 +1117,8 @@ void ViewerPrivate::readConfig()
     }
 
     setAttachmentStrategy(AttachmentStrategy::create(MessageViewer::
-                                                                     MessageViewerSettings::self()->
-                                                                     attachmentStrategy()));
+                                                     MessageViewerSettings::self()->
+                                                     attachmentStrategy()));
     KToggleAction *raction = actionForAttachmentStrategy(attachmentStrategy());
     if (raction) {
         raction->setChecked(true);

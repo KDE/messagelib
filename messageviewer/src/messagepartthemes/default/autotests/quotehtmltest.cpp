@@ -37,7 +37,9 @@ QTEST_GUILESS_MAIN(QuoteHtmlTest)
 class MyRenderContext : public MessageViewer::RenderContext
 {
 public:
-    virtual ~MyRenderContext() {}
+    virtual ~MyRenderContext()
+    {
+    }
 
     CSSHelperBase *cssHelper() const override
     {

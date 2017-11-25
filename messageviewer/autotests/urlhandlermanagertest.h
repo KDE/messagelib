@@ -25,7 +25,7 @@ class BodyPartUrlHandlerManagerTest : public QObject
     Q_OBJECT
 public:
     explicit BodyPartUrlHandlerManagerTest(QObject *parent = nullptr);
-    
+
 private Q_SLOTS:
     void testHandleClick_data();
     void testHandleClick();

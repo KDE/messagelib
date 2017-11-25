@@ -1,4 +1,3 @@
-
 /*
   Copyright (C) 2017 Sandro Knauß <sknauss@kde.org>
 
@@ -28,7 +27,6 @@ class Content;
 }
 
 namespace MessageViewer {
-
 class MESSAGEVIEWER_TESTS_EXPORT BodyPartURLHandlerManager : public MimeTreeParser::URLHandler
 {
 public:

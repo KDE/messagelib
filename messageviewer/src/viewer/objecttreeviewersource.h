@@ -30,7 +30,7 @@ class HtmlWriter;
 class ViewerPrivate;
 
 /** An ObjectTreeParser source working on a MailViewer object */
-class MailViewerSource : public MessageViewer::EmptySource 
+class MailViewerSource : public MessageViewer::EmptySource
 {
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);

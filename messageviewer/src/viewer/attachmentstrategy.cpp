@@ -96,10 +96,10 @@ public:
 
     Display defaultDisplay(KMime::Content *node) const override
     {
-        if (node->contentType()->isText() &&
-            (!node->parent()
-             || (node->contentDisposition()->filename().trimmed().isEmpty()
-                 && node->contentType()->name().trimmed().isEmpty()))) {
+        if (node->contentType()->isText()
+            && (!node->parent()
+                || (node->contentDisposition()->filename().trimmed().isEmpty()
+                    && node->contentType()->name().trimmed().isEmpty()))) {
             // text/* w/o filename parameter:
             return Inline;
         }
@@ -294,7 +294,7 @@ const AttachmentStrategy *AttachmentStrategy::create(Type type)
         return headerOnly();
     }
     qCCritical(MESSAGEVIEWER_LOG) << "Unknown attachment startegy ( type =="
-                                   << (int)type << ") requested!";
+                                  << (int)type << ") requested!";
     return nullptr; // make compiler happy
 }
 

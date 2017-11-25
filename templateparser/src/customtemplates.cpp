@@ -61,7 +61,7 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
 
     connect(mUi->mName, &KLineEdit::returnPressed, this, &CustomTemplates::slotAddClicked);
 
-    connect(mUi->mInsertCommand, QOverload<const QString &,int>::of(&TemplateParser::TemplatesInsertCommand::insertCommand), this, &CustomTemplates::slotInsertCommand);
+    connect(mUi->mInsertCommand, QOverload<const QString &, int>::of(&TemplateParser::TemplatesInsertCommand::insertCommand), this, &CustomTemplates::slotInsertCommand);
 
     connect(mUi->mAdd, &QPushButton::clicked, this, &CustomTemplates::slotAddClicked);
     connect(mUi->mRemove, &QPushButton::clicked, this, &CustomTemplates::slotRemoveClicked);

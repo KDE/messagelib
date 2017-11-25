@@ -968,7 +968,7 @@ bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr
     return hidden;
 }
 
-MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParser::MessagePart::Ptr& msgPart)
+MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParser::MessagePart::Ptr &msgPart)
 {
     auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
     auto content = msgPart->content();
@@ -1032,7 +1032,6 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
     return MimeTreeParser::NoIcon;
 }
 
-
 bool DefaultRendererPrivate::showEmoticons() const
 {
     return mShowEmoticons;
@@ -1047,7 +1046,6 @@ bool DefaultRendererPrivate::htmlLoadExternal() const
 {
     return mHtmlLoadExternal;
 }
-
 
 bool DefaultRendererPrivate::showExpandQuotesMark() const
 {

@@ -306,7 +306,7 @@ public:
 
     /** Parse beginning at a given node and recursively parsing
       the children of that node and it's next sibling. */
-    void parseObjectTree(KMime::Content *node, bool parseOnlySingleNode=false);
+    void parseObjectTree(KMime::Content *node, bool parseOnlySingleNode = false);
     MessagePartPtr parsedPart() const;
 
 private:

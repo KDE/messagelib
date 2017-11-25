@@ -1316,7 +1316,7 @@ QString EncryptedMessagePart::fromAddress() const
     return mFromAddress;
 }
 
-const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &EncryptedMessagePart::decryptRecipients() const
+const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > &EncryptedMessagePart::decryptRecipients() const
 {
     return mDecryptRecipients;
 }

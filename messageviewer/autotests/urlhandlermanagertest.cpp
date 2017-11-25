@@ -1,4 +1,3 @@
-
 /*
   Copyright (c) 2017 Sandro Knauß <sknauss@kde.org>
 
@@ -39,17 +38,17 @@ public:
     {
         QCOMPARE(path, mPath);
     }
-    
+
     void testViewer(MessageViewer::Viewer *viewerInstance) const
     {
         QCOMPARE(viewerInstance, mViewerInstance);
     }
-    
+
     void testContent(KMime::Content *content) const
     {
         QCOMPARE(content, mContent);
     }
-    
+
     bool handleClick(MessageViewer::Viewer *viewerInstance, MimeTreeParser::Interface::BodyPart *part, const QString &path) const override
     {
         testContent(part->content());
@@ -81,14 +80,10 @@ public:
     KMime::Content *mContent;
 };
 
-
-
 BodyPartUrlHandlerManagerTest::BodyPartUrlHandlerManagerTest(QObject *parent)
     : QObject(parent)
 {
 }
-
-
 
 void BodyPartUrlHandlerManagerTest::testHandleClick_data()
 {
@@ -96,7 +91,7 @@ void BodyPartUrlHandlerManagerTest::testHandleClick_data()
     QTest::addColumn<QString>("path");
     QTest::addColumn<KMime::ContentIndex>("index");
     QTest::addColumn<bool>("ret");
-    
+
     QTest::newRow("completly_empty") << "" << QStringLiteral("") << KMime::ContentIndex() << false;
     QTest::newRow("empty") << "x-kmail:" << QStringLiteral("") << KMime::ContentIndex() << false;
     QTest::newRow("pgpkey") << "x-kmail:/bodypart/1234/2/pgpkey" << QStringLiteral("pgpkey") << KMime::ContentIndex(QStringLiteral("2")) << true;
@@ -110,25 +105,23 @@ void BodyPartUrlHandlerManagerTest::testHandleClick()
     QFETCH(QString, path);
     QFETCH(KMime::ContentIndex, index);
     QFETCH(bool, ret);
-    
+
     BodyPartURLHandlerManager manager;
     TestBodyPartURLHandler handler;
-    
-    manager.registerHandler(&handler,QStringLiteral(""));
+
+    manager.registerHandler(&handler, QStringLiteral(""));
     Viewer v(nullptr);
-    ViewerPrivate vp(&v,nullptr, nullptr);
+    ViewerPrivate vp(&v, nullptr, nullptr);
     const KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")));
     vp.setMessage(msg, MimeTreeParser::Delayed);
-    
+
     handler.mViewerInstance = &v;
     handler.mPath = path;
     handler.mHandleClick = true;
     handler.mContent = msg->content(index);
-    
+
     QCOMPARE(manager.handleClick(QUrl(url), &vp), ret);
     manager.unregisterHandler(&handler);
 }
-
-
 
 QTEST_MAIN(BodyPartUrlHandlerManagerTest)
