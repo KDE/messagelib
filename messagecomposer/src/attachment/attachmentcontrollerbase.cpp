@@ -252,7 +252,9 @@ void AttachmentControllerBase::Private::editSelectedAttachmentWith()
 void AttachmentControllerBase::Private::removeSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
-    for (const AttachmentPart::Ptr &part : qAsConst(selectedParts)) {
+    //We must store list, otherwise when we remove it changes selectedParts (as selection changed) => it will crash.
+    const AttachmentPart::List toRemove = selectedParts;
+    for (const AttachmentPart::Ptr &part : toRemove) {
         model->removeAttachment(part);
     }
 }
