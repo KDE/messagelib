@@ -110,16 +110,9 @@ private:
 
     Q_PRIVATE_SLOT(d, void compressJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void loadJobResult(KJob *))
-    Q_PRIVATE_SLOT(d, void openSelectedAttachments())
-    Q_PRIVATE_SLOT(d, void viewSelectedAttachments())
-    Q_PRIVATE_SLOT(d, void editSelectedAttachment())
-    Q_PRIVATE_SLOT(d, void editSelectedAttachmentWith())
-    Q_PRIVATE_SLOT(d, void removeSelectedAttachments())
     Q_PRIVATE_SLOT(d, void saveSelectedAttachmentAs())
-    Q_PRIVATE_SLOT(d, void selectedAttachmentProperties())
     Q_PRIVATE_SLOT(d, void editDone(MessageViewer::EditorWatcher *))
     Q_PRIVATE_SLOT(d, void slotAttachmentContentCreated(KJob *))
-    Q_PRIVATE_SLOT(d, void reloadAttachment())
     Q_PRIVATE_SLOT(d, void updateJobResult(KJob *))
     Q_PRIVATE_SLOT(d, void attachVcardFromAddressBook(KJob *))
 };

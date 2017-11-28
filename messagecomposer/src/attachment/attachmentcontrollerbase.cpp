@@ -490,40 +490,40 @@ void AttachmentControllerBase::createActions()
     connect(d->removeContextAction, &QAction::triggered, this, [this]() { d->removeSelectedAttachments(); });
 
     d->openContextAction = new QAction(i18nc("to open", "Open"), this);
-    connect(d->openContextAction, SIGNAL(triggered(bool)), this, SLOT(openSelectedAttachments()));
+    connect(d->openContextAction, &QAction::triggered, this, [this]() { d->openSelectedAttachments(); });
 
     d->viewContextAction = new QAction(i18nc("to view", "View"), this);
-    connect(d->viewContextAction, SIGNAL(triggered(bool)), this, SLOT(viewSelectedAttachments()));
+    connect(d->viewContextAction, &QAction::triggered, this, [this]() { d->viewSelectedAttachments(); });
 
     d->editContextAction = new QAction(i18nc("to edit", "Edit"), this);
-    connect(d->editContextAction, SIGNAL(triggered(bool)), this, SLOT(editSelectedAttachment()));
+    connect(d->editContextAction, &QAction::triggered, this, [this]() { d->editSelectedAttachment(); });
 
     d->editWithContextAction = new QAction(i18n("Edit With..."), this);
-    connect(d->editWithContextAction, SIGNAL(triggered(bool)), this, SLOT(editSelectedAttachmentWith()));
+    connect(d->editWithContextAction, &QAction::triggered, this, [this]() { d->editSelectedAttachmentWith(); });
 
     d->saveAsAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")),
                                   i18n("&Save Attachment As..."), this);
     d->saveAsContextAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")),
                                          i18n("Save As..."), this);
-    connect(d->saveAsAction, SIGNAL(triggered(bool)),
-            this, SLOT(saveSelectedAttachmentAs()));
-    connect(d->saveAsContextAction, SIGNAL(triggered(bool)),
-            this, SLOT(saveSelectedAttachmentAs()));
+    connect(d->saveAsAction, &QAction::triggered,
+            this, [this]() { d->saveSelectedAttachmentAs(); });
+    connect(d->saveAsContextAction, &QAction::triggered,
+            this, [this]() { d->saveSelectedAttachmentAs(); });
 
     d->propertiesAction = new QAction(i18n("Attachment Pr&operties..."), this);
     d->propertiesContextAction = new QAction(i18n("Properties"), this);
-    connect(d->propertiesAction, SIGNAL(triggered(bool)),
-            this, SLOT(selectedAttachmentProperties()));
-    connect(d->propertiesContextAction, SIGNAL(triggered(bool)),
-            this, SLOT(selectedAttachmentProperties()));
+    connect(d->propertiesAction, &QAction::triggered,
+            this, [this]() { d->selectedAttachmentProperties(); });
+    connect(d->propertiesContextAction, &QAction::triggered,
+            this, [this]() { d->selectedAttachmentProperties(); });
 
     d->selectAllAction = new QAction(i18n("Select All"), this);
     connect(d->selectAllAction, &QAction::triggered,
             this, &AttachmentControllerBase::selectedAllAttachment);
 
     d->reloadAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18n("Reload"), this);
-    connect(d->reloadAttachmentAction, SIGNAL(triggered(bool)),
-            this, SLOT(reloadAttachment()));
+    connect(d->reloadAttachmentAction, &QAction::triggered,
+            this, [this]() {d->reloadAttachment();});
 
     // Insert the actions into the composer window's menu.
     KActionCollection *collection = d->mActionCollection;
