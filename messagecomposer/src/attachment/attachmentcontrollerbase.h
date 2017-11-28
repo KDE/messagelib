@@ -108,13 +108,7 @@ private:
     class Private;
     Private *const d;
 
-    Q_PRIVATE_SLOT(d, void compressJobResult(KJob *))
-    Q_PRIVATE_SLOT(d, void loadJobResult(KJob *))
-    Q_PRIVATE_SLOT(d, void saveSelectedAttachmentAs())
     Q_PRIVATE_SLOT(d, void editDone(MessageViewer::EditorWatcher *))
-    Q_PRIVATE_SLOT(d, void slotAttachmentContentCreated(KJob *))
-    Q_PRIVATE_SLOT(d, void updateJobResult(KJob *))
-    Q_PRIVATE_SLOT(d, void attachVcardFromAddressBook(KJob *))
 };
 } //
 

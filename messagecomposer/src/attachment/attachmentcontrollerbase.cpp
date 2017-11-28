@@ -275,7 +275,7 @@ void AttachmentControllerBase::Private::reloadAttachment()
 {
     Q_ASSERT(selectedParts.count() == 1);
     AttachmentUpdateJob *ajob = new AttachmentUpdateJob(selectedParts.first(), q);
-    connect(ajob, SIGNAL(result(KJob*)), q, SLOT(updateJobResult(KJob*)));
+    connect(ajob, &AttachmentUpdateJob::result, q, [this](KJob *job) { updateJobResult(job); });
     ajob->start();
 }
 
@@ -560,7 +560,7 @@ void AttachmentControllerBase::compressAttachment(const AttachmentPart::Ptr &par
         qCDebug(MESSAGECOMPOSER_LOG) << "Compressing part.";
 
         AttachmentCompressJob *ajob = new AttachmentCompressJob(part, this);
-        connect(ajob, SIGNAL(result(KJob*)), this, SLOT(compressJobResult(KJob*)));
+        connect(ajob, &AttachmentCompressJob::result, this, [this](KJob *job) { d->compressJobResult(job); });
         ajob->start();
     } else {
         qCDebug(MESSAGECOMPOSER_LOG) << "Uncompressing part.";
@@ -718,8 +718,7 @@ void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
     MessageComposer::Composer *composer = new MessageComposer::Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
     MessageComposer::AttachmentJob *attachmentJob = new MessageComposer::AttachmentJob(part, composer);
-    connect(attachmentJob, SIGNAL(result(KJob*)),
-            this, SLOT(slotAttachmentContentCreated(KJob*)));
+    connect(attachmentJob, &AttachmentJob::result, this, [this](KJob *job) { d->slotAttachmentContentCreated(job); });
     attachmentJob->start();
 }
 
@@ -934,7 +933,7 @@ void AttachmentControllerBase::addAttachmentUrlSync(const QUrl &url)
 void AttachmentControllerBase::addAttachment(const QUrl &url)
 {
     MessageCore::AttachmentFromUrlBaseJob *ajob = MessageCore::AttachmentFromUrlUtils::createAttachmentJob(url, this);
-    connect(ajob, SIGNAL(result(KJob*)), this, SLOT(loadJobResult(KJob*)));
+    connect(ajob, &AttachmentFromUrlBaseJob::result, this, [this](KJob *job) { d->loadJobResult(job); });
     ajob->start();
 }
 
