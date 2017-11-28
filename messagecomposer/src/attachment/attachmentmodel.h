@@ -104,7 +104,7 @@ public:
     bool addAttachment(MessageCore::AttachmentPart::Ptr part);
     bool updateAttachment(MessageCore::AttachmentPart::Ptr part);
     bool replaceAttachment(MessageCore::AttachmentPart::Ptr oldPart, MessageCore::AttachmentPart::Ptr newPart);
-    bool removeAttachment(MessageCore::AttachmentPart::Ptr part);
+    bool removeAttachment(const MessageCore::AttachmentPart::Ptr &part);
     MessageCore::AttachmentPart::List attachments() const;
 
     Qt::ItemFlags flags(const QModelIndex &index) const override;

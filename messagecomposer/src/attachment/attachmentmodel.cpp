@@ -406,7 +406,7 @@ bool AttachmentModel::replaceAttachment(AttachmentPart::Ptr oldPart, AttachmentP
     return true;
 }
 
-bool AttachmentModel::removeAttachment(AttachmentPart::Ptr part)
+bool AttachmentModel::removeAttachment(const AttachmentPart::Ptr &part)
 {
     int idx = d->parts.indexOf(part);
     if (idx < 0) {
