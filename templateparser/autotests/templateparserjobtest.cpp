@@ -20,6 +20,7 @@
 #include "templateparserjobtest.h"
 
 #define private public
+#include "templateparserjob_p.h"
 #include "templateparserjob.h"
 #undef protected
 
@@ -86,9 +87,9 @@ void TemplateParserJobTest::test_convertedHtml()
     TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
-    parser->mOtp->parseObjectTree(msg.data());
-    QVERIFY(parser->mOtp->htmlContent().isEmpty());
-    QVERIFY(!parser->mOtp->plainTextContent().isEmpty());
+    parser->d->mOtp->parseObjectTree(msg.data());
+    QVERIFY(parser->d->mOtp->htmlContent().isEmpty());
+    QVERIFY(!parser->d->mOtp->plainTextContent().isEmpty());
 
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(QString());
@@ -144,8 +145,8 @@ void TemplateParserJobTest::test_replyPlain()
     //KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     //parser->setIdentityManager(identMan);
 
-    parser->mOtp->parseObjectTree(msg.data());
-    parser->mOrigMsg = msg;
+    parser->d->mOtp->parseObjectTree(msg.data());
+    parser->d->mOrigMsg = msg;
     //QVERIFY(parser->mOtp->htmlContent().isEmpty());
     //QVERIFY(!parser->mOtp->plainTextContent().isEmpty());
 
@@ -198,7 +199,7 @@ void TemplateParserJobTest::test_processWithTemplatesForBody()
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(true);
-    parser->mOrigMsg = msg;
+    parser->d->mOrigMsg = msg;
 
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(command);
@@ -287,7 +288,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent()
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(false);
-    parser->mOrigMsg = msg;
+    parser->d->mOrigMsg = msg;
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(command);
     QVERIFY(spy.wait());
@@ -331,7 +332,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone()
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(false);
-    parser->mOrigMsg = msg;
+    parser->d->mOrigMsg = msg;
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(command);
     QVERIFY(spy.wait());

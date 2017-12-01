@@ -47,7 +47,7 @@ add_library(KF5::TemplateParser ALIAS KF5TemplateParser)
 target_link_libraries(KF5TemplateParser
     PRIVATE
     KF5::Mime
-    KF5::MessageViewer
+    KF5::MimeTreeParser
     KF5::IdentityManagement
     KF5::MessageCore
     KF5::XmlGui

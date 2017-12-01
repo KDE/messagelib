@@ -21,18 +21,12 @@
 #define TEMPLATEPARSERJOB_H
 
 #include "templateparser_export.h"
-#include "templateparserextracthtmlinforesult.h"
-#include <MessageViewer/ObjectTreeEmptySource>
 
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 
 #include <QObject>
 
-class TemplateParserTester;
-
-namespace MimeTreeParser {
-class ObjectTreeParser;
-}
+#include <memory>
 
 namespace KIdentityManagement {
 class IdentityManager;
@@ -42,7 +36,10 @@ namespace MessageCore {
 class ImageCollector;
 }
 
+class TemplateParserExtractHtmlInfoResult;
+
 namespace TemplateParser {
+class TemplateParserJobPrivate;
 /**
  * \brief The TemplateParser transforms a message with a given template.
  *
@@ -367,28 +364,7 @@ private:
      */
     void makeValidHtml(QString &body);
 
-    friend class ::TemplateParserTester;
-
-    Mode mMode;
-    qint64 mFolder = -1;          //Used to find a template
-    uint mIdentity;
-    KMime::Message::Ptr mMsg;             // Msg to write to
-    KMime::Message::Ptr mOrigMsg;         // Msg to read from
-    QString mSelection;
-    bool mAllowDecryption;
-    bool mDebug;
-    QString mQuoteString;
-    QString mTo, mCC;
-    KIdentityManagement::IdentityManager *m_identityManager = nullptr;
-    bool mWrap;
-    int mColWrap;
-    QStringList m_charsets;
-    MimeTreeParser::ObjectTreeParser *mOtp = nullptr;
-    MessageViewer::EmptySource *mEmptySource = nullptr;
-    QString mHeadElement;
-    Quotes mQuotes;
-    TemplateParserExtractHtmlInfoResult mExtractHtmlInfoResult;
-    bool mForceCursorPosition;
+    std::unique_ptr<TemplateParserJobPrivate> d;
 };
 }
 
