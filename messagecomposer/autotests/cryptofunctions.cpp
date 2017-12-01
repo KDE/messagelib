@@ -21,15 +21,14 @@
 #include "cryptofunctions.h"
 
 #include "testobjecttreesource.h"
+#include "setupenv.h"
 
-#include "MessageComposer/Util"
+#include <MessageComposer/Util>
 
 #include <Libkleo/Enum>
 #include <KMime/Message>
 #include <KMime/Content>
 
-#include <MessageViewer/CSSHelper>
-#include <MessageViewer/ObjectTreeEmptySource>
 #include <MimeTreeParser/ObjectTreeParser>
 
 #include <MessageCore/NodeHelper>
@@ -37,7 +36,6 @@
 #include <QtTest>
 #include <stdlib.h>
 #include <gpgme++/keylistresult.h>
-#include <setupenv.h>
 
 using namespace MessageComposer;
 

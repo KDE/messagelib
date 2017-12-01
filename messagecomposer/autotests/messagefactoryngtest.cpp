@@ -21,37 +21,35 @@
 
 #include "messagefactoryngtest.h"
 
+#include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
+#include "setupenv.h"
 
 #include <MessageCore/StringUtil>
-#include <MessageCore/NodeHelper>
 
-#include "MessageComposer/Composer"
-#include "MessageComposer/MessageFactoryNG"
-#include "MessageComposer/GlobalPart"
-#include "MessageComposer/MessageComposerSettings"
-#include "MessageComposer/Util"
+#include <MessageComposer/Composer>
+#include <MessageComposer/MessageFactoryNG>
+#include <MessageComposer/GlobalPart>
+#include <MessageComposer/MessageComposerSettings>
+#include <MessageComposer/Util>
 
-#include "MessageComposer/InfoPart"
-#include "MessageComposer/TextPart"
+#include <MessageComposer/InfoPart>
+#include <MessageComposer/TextPart>
 
-#include <setupenv.h>
+#include <KMime/DateFormatter>
 
-#include <MimeTreeParser/NodeHelper>
-#include <MimeTreeParser/ObjectTreeParser>
+#include <KIdentityManagement/KIdentityManagement/IdentityManager>
+#include <KIdentityManagement/KIdentityManagement/Identity>
 
-#include "qtest_messagecomposer.h"
-#include <kmime/kmime_dateformatter.h>
+#include "globalsettings_templateparser.h"
 
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
-#include <KIdentityManagement/kidentitymanagement/identity.h>
-#include <qtest.h>
-#include <QDateTime>
 #include <KCharsets>
+
+#include <QDateTime>
 #include <QDir>
 #include <QLocale>
-#include "globalsettings_templateparser.h"
 #include <QSignalSpy>
+#include <QTest>
 
 using namespace MessageComposer;
 
@@ -840,14 +838,6 @@ void MessageFactoryTest::testCreateMDN()
 
     QVERIFY(mdn.data());
     //qDebug() << "mdn" << mdn->encodedContent();
-    /*
-      // parse the result and make sure it is valid in various ways
-      TestHtmlWriter testWriter;
-      TestCSSHelper testCSSHelper;
-      TestObjectTreeSource testSource( &testWriter, &testCSSHelper );
-      MimeTreeParser::NodeHelper* nh = new MimeTreeParser::NodeHelper;
-      MimeTreeParser::ObjectTreeParser otp( &testSource, nh, 0, false, true, 0 );
-      MimeTreeParser::ProcessResult pResult( nh ); */
 
     QString mdnContent = QString::fromLatin1("The message sent on %1 to %2 with subject \"%3\" has been displayed. "
                                              "This is no guarantee that the message has been read or understood.");

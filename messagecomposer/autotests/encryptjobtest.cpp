@@ -20,15 +20,13 @@
 
 #include "encryptjobtest.h"
 
-#include <QDebug>
-#include <qtest.h>
 #include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
+#include "setupenv.h"
 
-#include <kmime/kmime_content.h>
+#include <KMime/Content>
 
 #include <Libkleo/Enum>
-#include <kjob.h>
 
 #include <MessageComposer/Composer>
 #include <MessageComposer/EncryptJob>
@@ -37,12 +35,13 @@
 #include <MessageComposer/GlobalPart>
 
 #include <MimeTreeParser/ObjectTreeParser>
-#include <MessageViewer/ObjectTreeEmptySource>
 #include <MimeTreeParser/NodeHelper>
-#include <setupenv.h>
 
 #include <stdlib.h>
 #include <KCharsets>
+
+#include <QDebug>
+#include <QTest>
 
 QTEST_MAIN(EncryptJobTest)
 

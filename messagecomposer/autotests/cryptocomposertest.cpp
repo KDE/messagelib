@@ -24,13 +24,11 @@
 #include "cryptofunctions.h"
 
 #include "testobjecttreesource.h"
-
-#include <QDebug>
-#include <qtest.h>
+#include "setupenv.h"
 
 #include <Libkleo/Enum>
 
-#include <kmime/kmime_headers.h>
+#include <KMime/Headers>
 using namespace KMime;
 
 #include <MessageComposer/Composer>
@@ -39,20 +37,21 @@ using namespace KMime;
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/TextPart>
-#include "MessageComposer/Util"
-#include <attachment/attachmentmodel.h>
-#include <attachment/attachmentcontrollerbase.h>
+#include <MessageComposer/Util>
+#include <MessageComposer/AttachmentControllerBase>
+#include <MessageComposer/AttachmentModel>
 using namespace MessageComposer;
 
 #include <MessageCore/AttachmentPart>
 #include <MessageCore/NodeHelper>
-#include <setupenv.h>
+using namespace MessageCore;
 
 #include <MimeTreeParser/ObjectTreeParser>
 
-using MessageCore::AttachmentPart;
-
 #include <gpgme++/key.h>
+
+#include <QDebug>
+#include <QTest>
 
 Q_DECLARE_METATYPE(MessageCore::AttachmentPart)
 
