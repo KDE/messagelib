@@ -22,8 +22,6 @@
 #define MESSAGECORE_TESTS_UTIL_H
 
 #include <gpgme++/key.h>
-#include <MessageViewer/ObjectTreeEmptySource>
-#include <MessageViewer/CSSHelperBase>
 
 namespace MessageComposer {
 namespace Test {
@@ -39,32 +37,6 @@ void setupEnv();
 * Returns list of keys used in various crypto routines
 */
 std::vector<GpgME::Key> getKeys(bool smime = false);
-
-// We can't use EmptySource, since that doesn't provide a HTML writer. Therefore, derive
-// from EmptySource so we can provide our own HTML writer.
-// This is only needed because ObjectTreeParser has a bug and doesn't decrypt inline PGP messages
-// when there is no HTML writer, see FIXME comment in ObjectTreeParser::writeBodyString().
-class TestObjectTreeSource : public MessageViewer::EmptySource
-{
-public:
-    TestObjectTreeSource(MessageViewer::CSSHelperBase *cssHelper)
-        : mCSSHelper(cssHelper)
-    {
-    }
-
-    MessageViewer::HtmlWriter *htmlWriter() const override
-    {
-        return nullptr;
-    }
-
-    MessageViewer::CSSHelperBase *cssHelper() const override
-    {
-        return mCSSHelper;
-    }
-
-private:
-    MessageViewer::CSSHelperBase *mCSSHelper = nullptr;
-};
 }
 }
 

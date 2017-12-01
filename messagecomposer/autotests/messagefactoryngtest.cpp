@@ -35,7 +35,6 @@
 #include "MessageComposer/InfoPart"
 #include "MessageComposer/TextPart"
 
-#include "testcsshelper.h"
 #include <setupenv.h>
 
 #include <MimeTreeParser/NodeHelper>

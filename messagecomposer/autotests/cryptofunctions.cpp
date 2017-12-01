@@ -20,7 +20,7 @@
 
 #include "cryptofunctions.h"
 
-#include "testcsshelper.h"
+#include "testobjecttreesource.h"
 
 #include "MessageComposer/Util"
 
@@ -60,8 +60,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
-    TestCSSHelper testCSSHelper;
-    MessageComposer::Test::TestObjectTreeSource testSource(&testCSSHelper);
+    MimeTreeParser::Test::TestObjectTreeSource testSource;
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
     MimeTreeParser::ProcessResult pResult(nh);
@@ -131,9 +130,8 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
-    TestCSSHelper testCSSHelper;
-    MessageComposer::Test::TestObjectTreeSource testSource(&testCSSHelper);
-    testSource.setAllowDecryption(true);
+    MimeTreeParser::Test::TestObjectTreeSource testSource;
+    testSource.mDecryptMessage = true;
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
@@ -185,9 +183,8 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
-    TestCSSHelper testCSSHelper;
-    MessageComposer::Test::TestObjectTreeSource testSource(&testCSSHelper);
-    testSource.setAllowDecryption(true);
+    MimeTreeParser::Test::TestObjectTreeSource testSource;
+    testSource.mDecryptMessage = true;
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 

@@ -23,7 +23,7 @@
 #include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
 
-#include "testcsshelper.h"
+#include "testobjecttreesource.h"
 
 #include <QDebug>
 #include <qtest.h>
@@ -152,12 +152,10 @@ void CryptoComposerTest::testEncryptSameAttachments()
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
 
-    TestCSSHelper testCSSHelper;
-    MessageComposer::Test::TestObjectTreeSource testSource(&testCSSHelper);
-    testSource.setAllowDecryption(true);
+    MimeTreeParser::Test::TestObjectTreeSource testSource;
+    testSource.mDecryptMessage = true;
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
-    MimeTreeParser::ProcessResult pResult(nh);
 
     otp.parseObjectTree(message.data());
     KMime::Message::Ptr unencrypted = nh->unencryptedMessage(message);
