@@ -9,8 +9,21 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src/part)
 macro( add_messagecomposer_test _source )
     ecm_add_test(${_source}
         NAME_PREFIX "messagecomposer-"
-        LINK_LIBRARIES KF5::Mime KF5::MessageComposer KF5::MimeTreeParser KF5::MessageCore KF5::TemplateParser
-                       KF5::PimTextEdit Qt5::Test KF5::IdentityManagement KF5::Contacts KF5::AkonadiCore KF5::XmlGui KF5::Libkdepim KF5::IconThemes KF5::Completion
+        LINK_LIBRARIES 
+            KF5::Mime
+            KF5::MessageComposer
+            KF5::MimeTreeParser
+            KF5::MessageCore
+            KF5::TemplateParser
+            KF5::PimTextEdit
+            Qt5::Test
+            KF5::IdentityManagement
+            KF5::Contacts
+            KF5::AkonadiCore
+            KF5::XmlGui
+            KF5::Libkdepim
+            KF5::IconThemes
+            KF5::Completion
     )
 endmacro()
 
