@@ -32,6 +32,7 @@ set(libmimetreeparser_main_SRCS
     objecttreeparser.cpp
     messagepart.cpp
     partnodebodypart.cpp
+    simpleobjecttreesource.cpp
     memento/cryptobodypartmemento.cpp
     memento/decryptverifybodypartmemento.cpp
     memento/verifydetachedbodypartmemento.cpp
@@ -51,6 +52,7 @@ ecm_generate_headers(MimeTreeParser_Camelcasemain_HEADERS
     ObjectTreeParser
     PartMetaData
     PartNodeBodyPart
+    SimpleObjectTreeSource
     REQUIRED_HEADERS MimeTreeParser_main_HEADERS
     PREFIX MimeTreeParser
     )

@@ -20,7 +20,6 @@
 
 #include "cryptofunctions.h"
 
-#include "testobjecttreesource.h"
 #include "setupenv.h"
 
 #include <MessageComposer/Util>
@@ -30,6 +29,7 @@
 #include <KMime/Content>
 
 #include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/SimpleObjectTreeSource>
 
 #include <MessageCore/NodeHelper>
 
@@ -58,10 +58,9 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
-    MimeTreeParser::Test::TestObjectTreeSource testSource;
+    MimeTreeParser::SimpleObjectTreeSource testSource;
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
-    MimeTreeParser::ProcessResult pResult(nh);
 
     // ensure the signed part exists and is parseable
     if (f & Kleo::OpenPGPMIMEFormat) {
@@ -128,8 +127,8 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
-    MimeTreeParser::Test::TestObjectTreeSource testSource;
-    testSource.mDecryptMessage = true;
+    MimeTreeParser::SimpleObjectTreeSource testSource;
+    testSource.setDecryptMessage(true);
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
@@ -181,8 +180,8 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
-    MimeTreeParser::Test::TestObjectTreeSource testSource;
-    testSource.mDecryptMessage = true;
+    MimeTreeParser::SimpleObjectTreeSource testSource;
+    testSource.setDecryptMessage(true);
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 

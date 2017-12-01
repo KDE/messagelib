@@ -20,7 +20,7 @@
 #include "util.h"
 
 #include "setupenv.h"
-#include "testobjecttreesource.h"
+#include <MimeTreeParser/SimpleObjectTreeSource>
 
 #include <qtest.h>
 
@@ -56,8 +56,8 @@ void AttachmentTest::testEncryptedAttachment()
     QFETCH(QString, mbox);
     auto msg = readAndParseMail(mbox);
     NodeHelper nodeHelper;
-    Test::TestObjectTreeSource testSource;
-    testSource.mDecryptMessage = true;
+    SimpleObjectTreeSource testSource;
+    testSource.setDecryptMessage(true);
     ObjectTreeParser otp(&testSource, &nodeHelper);
     otp.parseObjectTree(msg.data());
 

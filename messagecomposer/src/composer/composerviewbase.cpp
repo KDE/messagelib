@@ -46,8 +46,8 @@
 #include <MessageComposer/RecipientsEditor>
 #include "settings/messagecomposersettings.h"
 
-#include <MessageViewer/ObjectTreeEmptySource>
 #include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/SimpleObjectTreeSource>
 #ifndef QT_NO_CURSOR
 #include <Libkdepim/KCursorSaver>
 #endif
@@ -180,9 +180,9 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     KMime::Content *msgContent = new KMime::Content;
     msgContent->setContent(m_msg->encodedContent());
     msgContent->parse();
-    MessageViewer::EmptySource emptySource;
+    MimeTreeParser::SimpleObjectTreeSource emptySource;
     MimeTreeParser::ObjectTreeParser otp(&emptySource);  //All default are ok
-    emptySource.setAllowDecryption(allowDecryption);
+    emptySource.setDecryptMessage(allowDecryption);
     otp.parseObjectTree(msgContent);
 
     // Load the attachments
@@ -231,7 +231,7 @@ void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
     KMime::Content *msgContent = new KMime::Content;
     msgContent->setContent(msg->encodedContent());
     msgContent->parse();
-    MessageViewer::EmptySource emptySource;
+    MimeTreeParser::SimpleObjectTreeSource emptySource;
     MimeTreeParser::ObjectTreeParser otp(&emptySource);  //All default are ok
     otp.parseObjectTree(msgContent);
     // Set the HTML text and collect HTML images

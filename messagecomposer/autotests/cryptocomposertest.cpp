@@ -23,7 +23,6 @@
 #include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
 
-#include "testobjecttreesource.h"
 #include "setupenv.h"
 
 #include <Libkleo/Enum>
@@ -47,6 +46,7 @@ using namespace MessageComposer;
 using namespace MessageCore;
 
 #include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/SimpleObjectTreeSource>
 
 #include <gpgme++/key.h>
 
@@ -151,8 +151,8 @@ void CryptoComposerTest::testEncryptSameAttachments()
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
 
-    MimeTreeParser::Test::TestObjectTreeSource testSource;
-    testSource.mDecryptMessage = true;
+    MimeTreeParser::SimpleObjectTreeSource testSource;
+    testSource.setDecryptMessage(true);
     MimeTreeParser::NodeHelper *nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
