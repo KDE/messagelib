@@ -20,6 +20,7 @@
 #include "util.h"
 
 #include "setupenv.h"
+#include "testobjecttreesource.h"
 
 #include <qtest.h>
 
@@ -56,7 +57,7 @@ void AttachmentTest::testEncryptedAttachment()
     auto msg = readAndParseMail(mbox);
     NodeHelper nodeHelper;
     Test::TestObjectTreeSource testSource;
-    testSource.setAllowDecryption(true);
+    testSource.mDecryptMessage = true;
     ObjectTreeParser otp(&testSource, &nodeHelper);
     otp.parseObjectTree(msg.data());
 

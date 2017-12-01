@@ -18,14 +18,8 @@
   02110-1301, USA.
 */
 
-#ifndef MESSAGECORE_TESTS_UTIL_H
-#define MESSAGECORE_TESTS_UTIL_H
-
-#include <gpgme++/key.h>
-#include <MimeTreeParser/BodyPartFormatter>
-#include <MimeTreeParser/BodyPartFormatterFactory>
-#include <MimeTreeParser/MessagePart>
-#include <MimeTreeParser/ObjectTreeSource>
+#ifndef MIMETREEPARSER_TESTS_SETUPENV_H
+#define MIMETREEPARSER_TESTS_SETUPENV_H
 
 namespace MimeTreeParser {
 namespace Test {
@@ -36,69 +30,6 @@ namespace Test {
 */
 void setupEnv();
 
-// We can't use EmptySource, since we need to control some emelnets of the source for tests to also test
-// loadExternal and htmlMail.
-class TestObjectTreeSource : public MimeTreeParser::Interface::ObjectTreeSource
-{
-public:
-    TestObjectTreeSource()
-        : mPreferredMode(Util::Html)
-        , mDecryptMessage(false)
-    {
-    }
-
-    bool autoImportKeys() const override
-    {
-        return true;
-    }
-
-    const BodyPartFormatterFactory *bodyPartFormatterFactory() override
-    {
-        return &mBodyPartFormatterFactory;
-    }
-
-    bool decryptMessage() const override
-    {
-        return mDecryptMessage;
-    }
-
-    void setAllowDecryption(bool allowDecryption)
-    {
-        mDecryptMessage = allowDecryption;
-    }
-
-    void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override
-    {
-        Q_UNUSED(mode);
-        Q_UNUSED(availableModes);
-    }
-
-    MimeTreeParser::Util::HtmlMode preferredMode() const override
-    {
-        return mPreferredMode;
-    }
-
-    void setPreferredMode(MimeTreeParser::Util::HtmlMode mode)
-    {
-        mPreferredMode = mode;
-    }
-
-    const QTextCodec *overrideCodec() override
-    {
-        return nullptr;
-    }
-
-    void render(const MessagePart::Ptr &msgPart, bool showOnlyOneMimePart) override
-    {
-        Q_UNUSED(msgPart);
-        Q_UNUSED(showOnlyOneMimePart);
-    }
-
-private:
-    BodyPartFormatterFactory mBodyPartFormatterFactory;
-    MimeTreeParser::Util::HtmlMode mPreferredMode;
-    bool mDecryptMessage = false;
-};
 }
 }
 
