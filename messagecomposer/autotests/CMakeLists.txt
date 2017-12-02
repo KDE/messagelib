@@ -12,7 +12,7 @@ macro( add_messagecomposer_test _source )
         LINK_LIBRARIES 
             KF5::Mime
             KF5::MessageComposer
-            KF5::MimeTreeParser
+            KF5::MessageViewer
             KF5::MessageCore
             KF5::TemplateParser
             KF5::PimTextEdit
@@ -35,7 +35,7 @@ macro( add_messagecomposer_cryptotest _source )
         ${_name}
         KF5::Mime
         KF5::MessageComposer
-        KF5::MimeTreeParser
+        KF5::MessageViewer
         KF5::MessageCore
         KF5::Libkleo
         KF5::Libkdepim
