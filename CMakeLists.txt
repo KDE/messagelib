@@ -13,8 +13,6 @@ option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branc
 
 set(KF5_VERSION "5.39.0")
 
-find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
-
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
 set(AKONADIMIME_LIB_VERSION "5.6.90")
@@ -41,6 +39,8 @@ set(AKONADI_CONTACT_VERSION "5.6.90")
 if (${MIMETREEPARSER_ONLY_BUILD})
    set(ECM_VERSION "5.26.0")
    set(KMIME_LIB_VERSION "5.1.40")
+else()
+    set(ECM_VERSION ${KF5_VERSION})
 endif()
 
 find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
