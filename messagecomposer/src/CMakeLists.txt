@@ -164,11 +164,11 @@ target_link_libraries(KF5MessageComposer
     KF5::IdentityManagement
     KF5::AkonadiMime
     KF5::Libkleo
+    KF5::MessageViewer
     PRIVATE
     KF5::MailTransportAkonadi
     KF5::PimTextEdit
     KF5::TemplateParser
-    KF5::MessageViewer
     KF5::AkonadiWidgets
     KF5::LibkdepimAkonadi
     KF5::KIOCore
