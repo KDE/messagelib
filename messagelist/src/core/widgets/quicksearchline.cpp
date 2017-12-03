@@ -20,7 +20,8 @@
 
 #include "quicksearchline.h"
 #include "messagelistsettings.h"
-
+#include <kcoreaddons_version.h>
+#include <KStringHandler>
 #include <Akonadi/KMime/MessageStatus>
 
 #include "searchlinestatus.h"
@@ -86,7 +87,11 @@ void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
         minimumStringLength = 5;
     }
     if (!text.trimmed().isEmpty()) {
+#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 41, 0)
         if (text.length() >= minimumStringLength) {
+#else
+        if (KStringHandler::logicalLength(text) > minimumStringLength) {
+#endif
             Q_EMIT searchEditTextEdited(text);
         }
     } else {
