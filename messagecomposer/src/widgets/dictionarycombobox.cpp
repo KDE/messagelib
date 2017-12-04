@@ -85,6 +85,9 @@ bool DictionaryComboBox::assignDictionnaryName(const QString &name)
 void DictionaryComboBox::setCurrentByDictionaryName(const QString &name)
 {
     assignDictionnaryName(name);
+    if (name != autoDeleteString()) {
+        //TODO
+    }
 }
 
 bool DictionaryComboBox::assignByDictionnary(const QString &dictionary)
