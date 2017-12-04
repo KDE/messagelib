@@ -118,7 +118,9 @@ void DictionaryComboBox::setCurrentByDictionary(const QString &dictionary)
 void DictionaryComboBox::reloadCombo()
 {
     clear();
+#if 0 //Temporary comment it.
     addItem(i18n("AutoDetect Language"), autoDeleteString());
+#endif
     Sonnet::Speller *speller = new Sonnet::Speller();
     QMap<QString, QString> dictionaries = speller->availableDictionaries();
     QMapIterator<QString, QString> i(dictionaries);
