@@ -52,7 +52,7 @@
 #include <Libkdepim/KCursorSaver>
 #endif
 
-#include <sonnet/dictionarycombobox.h>
+#include "widgets/dictionarycombobox.h"
 #include <KIdentityManagement/Identity>
 
 #include <MessageCore/StringUtil>
@@ -1053,12 +1053,12 @@ void ComposerViewBase::setFollowUpDate(const QDate &followUpDate)
     mFollowUpDate = followUpDate;
 }
 
-Sonnet::DictionaryComboBox *ComposerViewBase::dictionary() const
+MessageComposer::DictionaryComboBox *ComposerViewBase::dictionary() const
 {
     return m_dictionary;
 }
 
-void ComposerViewBase::setDictionary(Sonnet::DictionaryComboBox *dictionary)
+void ComposerViewBase::setDictionary(MessageComposer::DictionaryComboBox *dictionary)
 {
     m_dictionary = dictionary;
 }

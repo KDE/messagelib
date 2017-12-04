@@ -36,7 +36,7 @@ class QTimer;
 class KJob;
 class QWidget;
 
-namespace Sonnet {
+namespace MessageComposer {
 class DictionaryComboBox;
 }
 
@@ -162,8 +162,8 @@ public:
     Akonadi::CollectionComboBox *fccCombo() const;
     void setFcc(const Akonadi::Collection &id);
 
-    Sonnet::DictionaryComboBox *dictionary() const;
-    void setDictionary(Sonnet::DictionaryComboBox *dictionary);
+    MessageComposer::DictionaryComboBox *dictionary() const;
+    void setDictionary(MessageComposer::DictionaryComboBox *dictionary);
 
     /**
     * Widgets for editing differ in client classes, so
@@ -331,7 +331,7 @@ private:
     KIdentityManagement::IdentityManager *m_identMan = nullptr;
     MessageComposer::RichTextComposerNg *m_editor = nullptr;
     MailTransport::TransportComboBox *m_transport = nullptr;
-    Sonnet::DictionaryComboBox *m_dictionary = nullptr;
+    MessageComposer::DictionaryComboBox *m_dictionary = nullptr;
     Akonadi::CollectionComboBox *m_fccCombo = nullptr;
     Akonadi::Collection m_fccCollection;
     QWidget *m_parentWidget = nullptr;
