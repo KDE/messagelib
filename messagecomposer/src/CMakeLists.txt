@@ -113,8 +113,12 @@ set(messagecomposer_plugineditorinit_SRCS
    plugineditorinit/plugineditorinitinterface.cpp
    )
 
+set(messagecomposer_widgets_SRCS
+   widgets/dictionarycombobox.cpp
+   )
 
 set( messagecomposer_src
+    ${messagecomposer_widgets_SRCS}
     ${messagecomposer_plugineditorinit_SRCS}
     ${messagecomposer_plugineditor_SRCS}
     ${messagecomposer_richtextcomposerng_SRCS}
@@ -184,6 +188,7 @@ target_link_libraries(KF5MessageComposer
     KF5::FollowupReminder
     KF5::Archive
     KF5::Contacts
+    KF5::SonnetCore
     )
 
 target_include_directories(KF5MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer/;${KDE_INSTALL_INCLUDEDIR_KF5}/messagecomposer>")
@@ -220,6 +225,15 @@ ecm_generate_headers(MessageComposer_Camelplugineditorinit_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorinit
     )
+
+ecm_generate_headers(MessageComposer_Camelwidgets_HEADERS
+    HEADER_NAMES
+    DictionaryComboBox
+    REQUIRED_HEADERS MessageComposer_widgets_HEADERS
+    PREFIX MessageComposer
+    RELATIVE widgets
+    )
+
 
 ecm_generate_headers(MessageComposer_Camelplugineditorcheckbeforesend_HEADERS
     HEADER_NAMES
@@ -381,6 +395,7 @@ install(FILES
     ${MessageComposer_Camelcasejob_HEADERS}
     ${MessageComposer_Camelcaseattachement_HEADERS}
     ${MessageComposer_Camelplugineditor_HEADERS}
+    ${MessageComposer_Camelwidgets_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
     COMPONENT Devel
     )
@@ -391,6 +406,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposersettings_base.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_debug.h
+    ${MessageComposer_widgets_HEADERS}
     ${MessageComposer_composer_HEADERS}
     ${MessageComposer_composerng_HEADERS}
     ${MessageComposer_sender_HEADERS}
