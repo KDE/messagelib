@@ -111,7 +111,6 @@ Q_SIGNALS:
 
 private:
     DictionaryComboBoxPrivate *const d;
-    Q_PRIVATE_SLOT(d, void slotDictionaryChanged(int))
 };
 
 }

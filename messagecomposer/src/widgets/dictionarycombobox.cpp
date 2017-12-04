@@ -24,11 +24,10 @@
 #include "messagecomposer_debug.h"
 #include <KLocalizedString>
 
-namespace MessageComposer
-{
+using namespace MessageComposer;
 
 //@cond PRIVATE
-class DictionaryComboBoxPrivate
+class MessageComposer::DictionaryComboBoxPrivate
 {
 public:
     explicit DictionaryComboBoxPrivate(DictionaryComboBox *combo) : q(combo) {}
@@ -47,8 +46,8 @@ DictionaryComboBox::DictionaryComboBox(QWidget *parent)
     : QComboBox(parent), d(new DictionaryComboBoxPrivate(this))
 {
     reloadCombo();
-    connect(this, SIGNAL(activated(int)),
-            SLOT(slotDictionaryChanged(int)));
+    connect(this, QOverload<int>::of(&QComboBox::activated),
+        this, [this](int item) {d->slotDictionaryChanged(item);} );
 }
 
 DictionaryComboBox::~DictionaryComboBox()
@@ -125,8 +124,6 @@ void DictionaryComboBox::reloadCombo()
         addItem(i.key(), i.value());
     }
     delete speller;
-}
-
 }
 
 #include "moc_dictionarycombobox.cpp"
