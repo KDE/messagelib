@@ -22,6 +22,7 @@
 #include "dictionarycombobox.h"
 #include <SonnetCore/sonnet/speller.h>
 #include "messagecomposer_debug.h"
+#include <KLocalizedString>
 
 namespace MessageComposer
 {
@@ -115,6 +116,7 @@ void DictionaryComboBox::setCurrentByDictionary(const QString &dictionary)
 void DictionaryComboBox::reloadCombo()
 {
     clear();
+    addItem(QStringLiteral("autodetect"), i18n("AutoDetect Language"));
     Sonnet::Speller *speller = new Sonnet::Speller();
     QMap<QString, QString> dictionaries = speller->availableDictionaries();
     QMapIterator<QString, QString> i(dictionaries);
