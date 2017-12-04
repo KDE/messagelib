@@ -94,6 +94,8 @@ public:
     void setCurrentByDictionary(const QString &dictionary);
 
 
+    QString autoDeleteString() const;
+
 Q_SIGNALS:
     /**
      * @em Emitted whenever the current dictionary changes. Either
