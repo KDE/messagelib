@@ -226,16 +226,16 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                             htmlWriter->write(QLatin1String("<div class=\"quotelevelmark\" >"));
                             htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
                                                              "<img src=\"%2\"/></a>")
-                                                            .arg(-1)
-                                                            .arg(expandIconPath));
+                                              .arg(-1)
+                                              .arg(expandIconPath));
                             htmlWriter->write(QLatin1String("</div><br/>"));
                         }
                     } else {
                         htmlWriter->write(QLatin1String("<div class=\"quotelevelmark\" >"));
                         htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
-                                                  "<img src=\"%2\"/></a>")
-                                   .arg(actQuoteLevel)
-                                   .arg(collapseIconPath));
+                                                         "<img src=\"%2\"/></a>")
+                                          .arg(actQuoteLevel)
+                                          .arg(collapseIconPath));
                         htmlWriter->write(QLatin1String("</div>"));
                         if (actQuoteLevel < 3) {
                             htmlWriter->write(quoteFontTag[actQuoteLevel]);
@@ -268,21 +268,21 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                     paraIsRTL = line.isRightToLeft();
                 }
                 htmlWriter->write(QStringLiteral("<div dir=\"%1\">")
-                                    .arg(paraIsRTL ? QStringLiteral("rtl") : QStringLiteral("ltr")));
+                                  .arg(paraIsRTL ? QStringLiteral("rtl") : QStringLiteral("ltr")));
                 // if quoteLengh == 0 && foundQuote => a simple quote
                 if (foundQuote) {
                     quoteLength++;
                     const int rightString = (line.length()) - quoteLength;
                     if (rightString > 0) {
                         htmlWriter->write(QStringLiteral("<span class=\"quotemarks\">%1</span>")
-                                            .arg(line.left(quoteLength)));
+                                          .arg(line.left(quoteLength)));
                         htmlWriter->write(QStringLiteral("<font color=\"%1\">")
-                                            .arg(cssHelper->quoteColorName(actQuoteLevel)));
-                        htmlWriter->write(KTextToHTML::convertToHtml(line.right(rightString),convertFlags));
+                                          .arg(cssHelper->quoteColorName(actQuoteLevel)));
+                        htmlWriter->write(KTextToHTML::convertToHtml(line.right(rightString), convertFlags));
                         htmlWriter->write(QStringLiteral("</font>"));
                     } else {
                         htmlWriter->write(QStringLiteral("<span class=\"quotemarksemptyline\">%1</span>")
-                                            .arg(line.left(quoteLength)));
+                                          .arg(line.left(quoteLength)));
                     }
                 } else {
                     htmlWriter->write(KTextToHTML::convertToHtml(line, convertFlags));

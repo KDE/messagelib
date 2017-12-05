@@ -100,15 +100,15 @@ QString WebEngineScript::setElementByIdVisible(const QString &elementStr, bool v
 {
     if (visibility) {
         const QString source = QStringLiteral("var element = document.getElementById('%1'); "
-                                                   "if (element) { "
-                                                   "    element.style.removeProperty( 'display' );"
-                                                   "}").arg(elementStr);
+                                              "if (element) { "
+                                              "    element.style.removeProperty( 'display' );"
+                                              "}").arg(elementStr);
         return source;
     } else {
         const QString source = QStringLiteral("var element = document.getElementById('%1'); "
-                                                   "if (element) { "
-                                                   "    element.style.display = \"none\";"
-                                                   "}").arg(elementStr);
+                                              "if (element) { "
+                                              "    element.style.display = \"none\";"
+                                              "}").arg(elementStr);
         return source;
     }
 }
@@ -116,20 +116,20 @@ QString WebEngineScript::setElementByIdVisible(const QString &elementStr, bool v
 QString WebEngineScript::searchElementPosition(const QString &elementStr)
 {
     const QString source = QStringLiteral("var element = document.getElementById('%1'); "
-                                               "if (element) { "
-                                               "    var geometry = element.getBoundingClientRect(); "
-                                               "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
-                                               "}").arg(elementStr);
+                                          "if (element) { "
+                                          "    var geometry = element.getBoundingClientRect(); "
+                                          "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
+                                          "}").arg(elementStr);
     return source;
 }
 
 QString WebEngineScript::scrollPercentage(int percent)
 {
     const QString source = QStringLiteral("var current = document.body.scrollTop;"
-                                               "var docElement = document.documentElement;"
-                                               "var height = docElement.clientHeight;"
-                                               "var newPosition = current + height * %1 /100;"
-                                               "window.scrollTo(window.scrollX, newPosition);").arg(percent);
+                                          "var docElement = document.documentElement;"
+                                          "var height = docElement.clientHeight;"
+                                          "var newPosition = current + height * %1 /100;"
+                                          "window.scrollTo(window.scrollX, newPosition);").arg(percent);
     return source;
 }
 
@@ -154,18 +154,18 @@ QString WebEngineScript::scrollToPosition(const QPoint &pos)
 QString WebEngineScript::removeStyleToElement(const QString &elementStr)
 {
     const QString source = QStringLiteral("var element = document.getElementById('%1'); "
-                                               "if (element) { "
-                                               "    element.removeAttribute(\"style\");"
-                                               "}").arg(elementStr);
+                                          "if (element) { "
+                                          "    element.removeAttribute(\"style\");"
+                                          "}").arg(elementStr);
     return source;
 }
 
 QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style)
 {
     const QString source = QStringLiteral("var element = document.getElementById('%1'); "
-                                               "if (element) { "
-                                               "    element.style = '%2';"
-                                               "}").arg(elementStr, style);
+                                          "if (element) { "
+                                          "    element.style = '%2';"
+                                          "}").arg(elementStr, style);
     return source;
 }
 
@@ -178,9 +178,9 @@ QString WebEngineScript::scrollToRelativePosition(qreal pos)
 QString WebEngineScript::isScrolledToBottom()
 {
     return QStringLiteral("(function() { "
-                               "var docElement = document.documentElement;"
-                               "var viewportHeight = docElement.clientHeight;"
-                               "var isAtBottom = document.body.scrollTop + viewportHeight >= document.body.scrollHeight;"
-                               "return Boolean(isAtBottom); "
-                               "}());");
+                          "var docElement = document.documentElement;"
+                          "var viewportHeight = docElement.clientHeight;"
+                          "var isAtBottom = document.body.scrollTop + viewportHeight >= document.body.scrollHeight;"
+                          "return Boolean(isAtBottom); "
+                          "}());");
 }

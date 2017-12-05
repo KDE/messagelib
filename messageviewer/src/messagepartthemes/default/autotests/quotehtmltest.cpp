@@ -227,5 +227,5 @@ void QuoteHtmlTest::testQuoteHtml()
     testWriter.begin();
     quotedHTML(data, &context, &testWriter);
     testWriter.end();
-    QCOMPARE (testWriter.data(), result.toUtf8());
+    QCOMPARE(testWriter.data(), result.toUtf8());
 }

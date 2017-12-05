@@ -29,7 +29,6 @@ namespace Test {
 * * set KDEHOME
 */
 void setupEnv();
-
 }
 }
 
