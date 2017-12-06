@@ -30,7 +30,7 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
                                                                   this));
     viewer->show();
-    QTest::qWaitForWindowExposed(viewer);
+    QVERIFY(QTest::qWaitForWindowExposed(viewer));
 
     QWidget *mViewer = viewer->findChild<QWidget *>(QStringLiteral("mViewer"));
     QVERIFY(mViewer);

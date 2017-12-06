@@ -48,7 +48,7 @@ void ViewerGrantleeThemeSupportTest::shouldUpdateThemeMenu()
     MessageViewer::Viewer *viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(
                                                                   this));
     viewer->show();
-    QTest::qWaitForWindowExposed(viewer);
+    QVERIFY(QTest::qWaitForWindowExposed(viewer));
 }
 
 QTEST_MAIN(ViewerGrantleeThemeSupportTest)
