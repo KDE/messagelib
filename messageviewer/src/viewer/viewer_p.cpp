@@ -708,7 +708,7 @@ QString ViewerPrivate::createAtmFileLink(const QString &atmFileName) const
     QFileInfo atmFileInfo(atmFileName);
 
     // tempfile name is /TMP/attachmentsRANDOM/atmFileInfo.fileName()"
-    const QString tmpPath = QDir::tempPath() + QLatin1Char('/') +  QLatin1String("attachments");
+    const QString tmpPath = QDir::tempPath() + QLatin1String("/attachments");
     QDir().mkpath(tmpPath);
     QTemporaryDir *linkDir = new QTemporaryDir(tmpPath);
     QString linkPath = linkDir->path() + QLatin1Char('/') + atmFileInfo.fileName();
