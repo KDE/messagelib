@@ -23,8 +23,6 @@
 #include "templateparser_debug.h"
 #include <KLocalizedString>
 
-#include <QSignalMapper>
-
 #undef I18N_NOOP
 #define I18N_NOOP(t) 0, t
 #undef I18N_NOOP2
@@ -393,15 +391,15 @@ static const InsertCommand miscCommands[] = {
 };
 static const int miscCommandsCount = sizeof(miscCommands) / sizeof(*miscCommands);
 
-static void fillMenuFromActionMap(const QMap< QString, TemplatesInsertCommand::Command > &map, KActionMenu *menu, QSignalMapper *mapper)
+void TemplatesInsertCommand::fillMenuFromActionMap(const QMap< QString, TemplatesInsertCommand::Command > &map, KActionMenu *menu)
 {
     QMap< QString, TemplatesInsertCommand::Command >::const_iterator it = map.constBegin();
     QMap< QString, TemplatesInsertCommand::Command >::const_iterator end = map.constEnd();
 
     while (it != end) {
         QAction *action = new QAction(it.key(), menu);   //krazy:exclude=tipsandthis
-        QObject::connect(action, SIGNAL(triggered(bool)), mapper, SLOT(map()));
-        mapper->setMapping(action, it.value());
+        const TemplatesInsertCommand::Command cmd = it.value();
+        connect(action, &QAction::triggered, this, [this, cmd]{ slotMapped(cmd); });
         menu->addAction(action);
         ++it;
     }
@@ -415,9 +413,6 @@ TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &n
 
     QMap< QString, Command > commandMap;
 
-    QSignalMapper *mapper = new QSignalMapper(this);
-    connect(mapper, SIGNAL(mapped(int)),
-            this, SLOT(slotMapped(int)));
 
     mMenu = new KActionMenu(i18n("Insert Command"), this);
     setToolTip(
@@ -438,7 +433,7 @@ TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &n
         commandMap.insert(originalCommands[i].getLocalizedDisplayName(), originalCommands[i].command);
     }
 
-    fillMenuFromActionMap(commandMap, menu, mapper);
+    fillMenuFromActionMap(commandMap, menu);
     commandMap.clear();
 
     // ******************************************************
@@ -449,7 +444,7 @@ TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &n
         commandMap.insert(currentCommands[i].getLocalizedDisplayName(), currentCommands[i].command);
     }
 
-    fillMenuFromActionMap(commandMap, menu, mapper);
+    fillMenuFromActionMap(commandMap, menu);
     commandMap.clear();
 
     // ******************************************************
@@ -460,7 +455,7 @@ TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &n
         commandMap.insert(extCommands[i].getLocalizedDisplayName(), extCommands[i].command);
     }
 
-    fillMenuFromActionMap(commandMap, menu, mapper);
+    fillMenuFromActionMap(commandMap, menu);
     commandMap.clear();
 
     // ******************************************************
@@ -471,7 +466,7 @@ TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &n
         commandMap.insert(miscCommands[i].getLocalizedDisplayName(), miscCommands[i].command);
     }
 
-    fillMenuFromActionMap(commandMap, menu, mapper);
+    fillMenuFromActionMap(commandMap, menu);
 
     setMenu(mMenu->menu());
 }
@@ -480,9 +475,9 @@ TemplatesInsertCommand::~TemplatesInsertCommand()
 {
 }
 
-void TemplatesInsertCommand::slotMapped(int cmd)
+void TemplatesInsertCommand::slotMapped(TemplatesInsertCommand::Command cmd)
 {
-    Q_EMIT insertCommand(static_cast<Command>(cmd));
+    Q_EMIT insertCommand(cmd);
 
     switch (cmd) {
     case TemplatesInsertCommand::CBlank:
