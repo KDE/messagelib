@@ -80,7 +80,6 @@
 #include <QDesktopWidget>
 #include <QFileInfo>
 #include <QItemSelectionModel>
-#include <QSignalMapper>
 #include <QSplitter>
 #include <QTreeView>
 #include <QPrinter>
@@ -601,16 +600,11 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     }
     const QString contentTypeStr = QLatin1String(node->contentType()->mimeType());
 
-    QSignalMapper *attachmentMapper = new QSignalMapper(menu);
-    connect(attachmentMapper, SIGNAL(mapped(int)),
-            this, SLOT(slotHandleAttachment(int)));
-
     QAction *action
         = menu->addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("to open",
                                                                                    "Open"));
     action->setEnabled(!deletedAttachment);
-    connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
-    attachmentMapper->setMapping(action, Viewer::Open);
+    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Open);});
     if (!deletedAttachment) {
         createOpenWithMenu(menu, contentTypeStr, true);
     }
@@ -628,8 +622,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
             ) {
             action = menu->addAction(i18nc("to view something", "View"));
             action->setEnabled(!deletedAttachment);
-            connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
-            attachmentMapper->setMapping(action, Viewer::View);
+            connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::View);});
         }
     }
 
@@ -646,13 +639,11 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     action = menu->addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n(
                                  "Save As..."));
     action->setEnabled(!deletedAttachment);
-    connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
-    attachmentMapper->setMapping(action, Viewer::Save);
+    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Save);});
 
     action = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"));
     action->setEnabled(!deletedAttachment);
-    connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
-    attachmentMapper->setMapping(action, Viewer::Copy);
+    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Copy);});
 
     const bool isEncapsulatedMessage = node->parent() && node->parent()->bodyIsMessage();
     const bool canChange = mMessageItem.isValid() && mMessageItem.parentCollection().isValid()
@@ -664,15 +655,15 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         action
             = menu->addAction(QIcon::fromTheme(QStringLiteral("document-properties")), i18n(
                                   "Edit Attachment"));
-        connect(action, SIGNAL(triggered()), attachmentMapper, SLOT(map()));
-        attachmentMapper->setMapping(action, Viewer::Edit);
+        connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Edit);});
+
         action->setEnabled(canChange);
     }
     action
         = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-delete")),
                           i18n("Delete Attachment"));
-    connect(action, SIGNAL(triggered()), attachmentMapper, SLOT(map()));
-    attachmentMapper->setMapping(action, Viewer::Delete);
+    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Delete);});
+
     action->setEnabled(canChange && !deletedAttachment);
 #if 0
     menu->addSeparator();
@@ -692,8 +683,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
 #endif
     menu->addSeparator();
     action = menu->addAction(i18n("Properties"));
-    connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
-    attachmentMapper->setMapping(action, Viewer::Properties);
+    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Properties);});
     menu->exec(globalPos);
     delete menu;
 }
