@@ -44,7 +44,6 @@
 #include <QTimer>
 #include <QApplication>
 #include <QScrollBar>
-#include <QSignalMapper>
 #include <QLineEdit>
 #include <QMenu>
 #include <KLocalizedString>
@@ -723,7 +722,6 @@ void View::slotHeaderContextMenuRequested(const QPoint &pnt)
     // the menu for the columns
     QMenu menu;
 
-    QSignalMapper *showColumnSignalMapper = new QSignalMapper(&menu);
     int idx = 0;
     for (const auto col : qAsConst(columns)) {
         QAction *act = menu.addAction(col->label());
@@ -732,12 +730,10 @@ void View::slotHeaderContextMenuRequested(const QPoint &pnt)
         if (idx == 0) {
             act->setEnabled(false);
         }
-        QObject::connect(act, SIGNAL(triggered()), showColumnSignalMapper, SLOT(map()));
-        showColumnSignalMapper->setMapping(act, idx);
+        QObject::connect(act, &QAction::triggered, this, [this, idx] {slotShowHideColumn(idx);});
 
         idx++;
     }
-    QObject::connect(showColumnSignalMapper, SIGNAL(mapped(int)), this, SLOT(slotShowHideColumn(int)));
 
     menu.addSeparator();
     {
