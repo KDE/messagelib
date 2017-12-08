@@ -38,7 +38,6 @@ Q_SIGNALS:
     void focusDown();
 
 protected:
-
     void keyPressEvent(QKeyEvent *) override;
 };
 }

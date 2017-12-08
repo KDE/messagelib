@@ -98,8 +98,6 @@ protected:
 private:
     void attachFiles(const QList<QUrl> &urls, const QString &encoding);
     void attachDirectory(const QUrl &url);
-
-private Q_SLOTS:
     void slotPutResult(KJob *job);
     void slotOpenWithDialog();
     void slotOpenWithAction(QAction *act);
@@ -107,8 +105,6 @@ private Q_SLOTS:
 private:
     class Private;
     Private *const d;
-
-    Q_PRIVATE_SLOT(d, void editDone(MessageViewer::EditorWatcher *))
 };
 } //
 

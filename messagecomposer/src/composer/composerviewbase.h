@@ -341,18 +341,22 @@ private:
     // Used mainly to prevent closing the window if a composer is active
     QList< MessageComposer::Composer * > m_composers;
 
-    bool m_sign, m_encrypt, m_neverEncrypt, m_mdnRequested, m_urgent;
+    bool m_sign = false;
+    bool m_encrypt = false;
+    bool m_neverEncrypt = false;
+    bool m_mdnRequested = false;
+    bool m_urgent = false;
     Kleo::CryptoMessageFormat m_cryptoMessageFormat;
     QString mExpandedFrom, m_from, m_replyTo, m_subject;
     QStringList mExpandedTo, mExpandedCc, mExpandedBcc;
     QList< QByteArray > m_charsets;
     QMap<QByteArray, QString> m_customHeader;
 
-    int m_pendingQueueJobs;
+    int m_pendingQueueJobs = 0;
 
     QTimer *m_autoSaveTimer = nullptr;
     QString m_autoSaveUUID;
-    bool m_autoSaveErrorShown; // Stops an error message being shown every time autosave is executed.
+    bool m_autoSaveErrorShown = false; // Stops an error message being shown every time autosave is executed.
     int m_autoSaveInterval;
 
     MessageComposer::MessageSender::SendMethod mSendMethod;

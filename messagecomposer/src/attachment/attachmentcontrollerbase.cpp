@@ -750,8 +750,8 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
         QUrl::fromLocalFile(tempFile->fileName()),
         QString::fromLatin1(part->mimeType()), openWithOption,
         this, d->wParent);
-    connect(watcher, SIGNAL(editDone(MessageViewer::EditorWatcher*)),
-            this, SLOT(editDone(MessageViewer::EditorWatcher*)));
+    connect(watcher, &MessageViewer::EditorWatcher::editDone,
+            this, [this](MessageViewer::EditorWatcher *watcher)  { d->editDone(watcher);});
 
     switch (watcher->start()) {
     case MessageViewer::EditorWatcher::NoError:

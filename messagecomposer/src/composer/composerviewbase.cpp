@@ -110,18 +110,9 @@ ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
     , m_dictionary(nullptr)
     , m_fccCombo(nullptr)
     , m_parentWidget(parentGui)
-    , m_sign(false)
-    , m_encrypt(false)
-    , m_neverEncrypt(false)
-    , m_mdnRequested(false)
-    , m_urgent(false)
     , m_cryptoMessageFormat(Kleo::AutoFormat)
-    , m_pendingQueueJobs(0)
-    , m_autoSaveTimer(nullptr)
-    , m_autoSaveErrorShown(false)
-    , m_autoSaveInterval(1 * 1000 * 60)
-    ,                                     // default of 1 min
-    mSendLaterInfo(nullptr)
+    , m_autoSaveInterval(1 * 1000 * 60) // default of 1 min
+    , mSendLaterInfo(nullptr)
 {
     m_charsets << "utf-8"; // default, so we have a backup in case client code forgot to set.
 
