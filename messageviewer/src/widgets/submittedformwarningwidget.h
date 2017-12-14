@@ -21,13 +21,11 @@
 #ifndef SUBMITTEDFORMWARNINGWIDGET_H
 #define SUBMITTEDFORMWARNINGWIDGET_H
 
-#include "messageviewer_export.h"
-
 #include <KMessageWidget>
 
 namespace MessageViewer {
 class SubmittedFormWarningWidgetPrivate;
-class MESSAGEVIEWER_EXPORT SubmittedFormWarningWidget : public KMessageWidget
+class SubmittedFormWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
