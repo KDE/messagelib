@@ -1064,6 +1064,8 @@ void ViewerPrivate::initHtmlWidget()
             &ViewerPrivate::slotMessageMayBeAScam);
     connect(mViewer, &MailWebEngineView::formSubmittedForbidden, this,
             &ViewerPrivate::slotFormSubmittedForbidden);
+    connect(mViewer, &MailWebEngineView::mailTrackingFound, this,
+            &ViewerPrivate::slotMailTrackingFound);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::showDetails, mViewer,
             &MailWebEngineView::slotShowDetails);
     connect(mScamDetectionWarning, &ScamDetectionWarningWidget::moveMessageToTrash, this,
@@ -3187,6 +3189,11 @@ void ViewerPrivate::slotAddToWhiteList()
             MessageViewer::MessageViewerSettings::self()->save();
         }
     }
+}
+
+void ViewerPrivate::slotMailTrackingFound()
+{
+    //TODO
 }
 
 void ViewerPrivate::slotFormSubmittedForbidden()

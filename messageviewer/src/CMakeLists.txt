@@ -55,6 +55,7 @@ set(libmessageviewer_mailviewer_SRCS
     viewer/webengine/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
     viewer/webengine/cidreferencesurlinterceptor/cidreferencesurlinterceptor.cpp
     viewer/webengine/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.cpp
+    viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.cpp
     viewer/webengine/mailwebenginescript.cpp
     )
 

@@ -25,6 +25,7 @@
 #include "../urlhandlermanager.h"
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"
 #include "blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h"
+#include "blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h"
 #include "cidreferencesurlinterceptor/cidreferencesurlinterceptor.h"
 #include <WebEngineViewer/InterceptorManager>
 #include <WebEngineViewer/WebEngineManageScript>
@@ -101,8 +102,14 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
         = new MessageViewer::BlockExternalResourcesUrlInterceptor(this);
     connect(blockExternalUrl, &BlockExternalResourcesUrlInterceptor::formSubmittedForbidden, this,
             &MailWebEngineView::formSubmittedForbidden);
-
     d->mNetworkAccessManager->addInterceptor(blockExternalUrl);
+
+    MessageViewer::BlockMailTrackingUrlInterceptor *blockMailTrackingUrl
+        = new MessageViewer::BlockMailTrackingUrlInterceptor(this);
+    connect(blockMailTrackingUrl, &BlockMailTrackingUrlInterceptor::mailTrackingFound, this,
+            &MailWebEngineView::mailTrackingFound);
+    d->mNetworkAccessManager->addInterceptor(blockMailTrackingUrl);
+
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
     connect(
