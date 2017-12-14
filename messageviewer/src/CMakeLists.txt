@@ -84,6 +84,7 @@ set(libmessageviewer_widgets_SRCS
     widgets/openattachmentfolderwidget.cpp
     widgets/mailsourceviewtextbrowserwidget.cpp
     widgets/submittedformwarningwidget.cpp
+    widgets/mailtrackingwarningwidget.cpp
     )
 
 set(libmessageviewer_widgets_webengine_SRCS
