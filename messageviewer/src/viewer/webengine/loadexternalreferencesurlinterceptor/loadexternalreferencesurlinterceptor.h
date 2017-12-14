@@ -22,9 +22,7 @@
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 
 namespace MessageViewer {
-class LoadExternalReferencesUrlInterceptorPrivate;
-class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::
-    NetworkPluginUrlInterceptorInterface
+class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:
@@ -35,7 +33,7 @@ public:
     void setAllowExternalContent(bool b);
     bool allowExternalContent() const;
 private:
-    LoadExternalReferencesUrlInterceptorPrivate *const d;
+    bool mAllowLoadExternalReference = false;
 };
 }
 #endif // LOADEXTERNALREFERENCESURLINTERCEPTOR_H
