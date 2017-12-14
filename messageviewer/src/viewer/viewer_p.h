@@ -39,6 +39,7 @@
 #include <ksharedconfig.h>
 #include <QPointer>
 #include <QUrl>
+#include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
 
 #include <QObject>
 #include <QTimer>
@@ -435,7 +436,7 @@ private Q_SLOTS:
     void slotMessageIsNotAScam();
     void slotAddToWhiteList();
     void slotFormSubmittedForbidden();
-    void slotMailTrackingFound();
+    void slotMailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &blacklist);
 
     /** Show hide all fields specified inside this function */
     void toggleFullAddressList();

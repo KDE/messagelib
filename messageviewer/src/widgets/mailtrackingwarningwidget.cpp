@@ -38,13 +38,21 @@ MailTrackingWarningWidget::~MailTrackingWarningWidget()
 
 }
 
-void MailTrackingWarningWidget::addTracker()
+void MailTrackingWarningWidget::addTracker(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &tracker)
 {
-
+    blackListFound item = mBackLists.value(tracker.mCompanyName);
+    if (item.url.isEmpty()) {
+        item.url = tracker.mCompanyUrl;
+        mBackLists.insert(tracker.mCompanyName, item);
+    } else {
+        item.number = item.number + 1;
+        mBackLists.insert(tracker.mCompanyName, item);
+    }
+    //show info
 }
 
 void MailTrackingWarningWidget::hideAndClear()
 {
-    //TODO clear !
+    mBackLists.clear();
     setVisible(false);
 }

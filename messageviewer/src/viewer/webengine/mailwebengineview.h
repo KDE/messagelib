@@ -22,6 +22,7 @@
 #include "messageviewer_export.h"
 #include <WebEngineViewer/WebEngineView>
 #include <boost/function.hpp>
+#include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
 class QPrinter;
 class KActionCollection;
 namespace WebEngineViewer {
@@ -91,7 +92,7 @@ Q_SIGNALS:
     void openUrl(const QUrl &url);
     void messageMayBeAScam();
     void formSubmittedForbidden();
-    void mailTrackingFound();
+    void mailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
     /// Emitted when the user right-clicks somewhere
     /// @param url if an URL was under the cursor, this parameter contains it. Otherwise empty
     /// @param point position where the click happened, in local coordinates

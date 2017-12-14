@@ -22,6 +22,9 @@
 #define MAILTRACKINGWARNINGWIDGET_H
 
 #include <KMessageWidget>
+#include <QMap>
+
+#include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
 
 namespace MessageViewer {
 class MailTrackingWarningWidget : public KMessageWidget
@@ -30,8 +33,14 @@ class MailTrackingWarningWidget : public KMessageWidget
 public:
     explicit MailTrackingWarningWidget(QWidget *parent = nullptr);
     ~MailTrackingWarningWidget();
-    void addTracker();
+    void addTracker(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
     void hideAndClear();
+private:
+    struct blackListFound {
+        QString url;
+        int number = 1;
+    };
+    QMap<QString, blackListFound> mBackLists;
 };
 }
 

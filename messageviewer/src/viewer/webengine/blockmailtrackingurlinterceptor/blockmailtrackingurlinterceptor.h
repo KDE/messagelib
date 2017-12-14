@@ -46,8 +46,8 @@ public:
     bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
 Q_SIGNALS:
-    //Add info about company
-    void mailTrackingFound();
+    void mailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
+
 private:
     void initializeList();
     QVector<MailTrackerBlackList> mBackList;
