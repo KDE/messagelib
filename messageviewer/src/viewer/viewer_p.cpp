@@ -145,6 +145,7 @@
 #include <viewerplugins/viewerplugininterface.h>
 #include <WebEngineViewer/ZoomActionMenu>
 #include <kpimtextedit/texttospeechwidget.h>
+#include <widgets/mailtrackingwarningwidget.h>
 
 #include <grantleetheme/grantleethememanager.h>
 #include <grantleetheme/grantleetheme.h>
@@ -1264,6 +1265,7 @@ void ViewerPrivate::resetStateForNewMessage()
     mScamDetectionWarning->setVisible(false);
     mOpenAttachmentFolderWidget->setVisible(false);
     mSubmittedFormWarning->setVisible(false);
+    mMailTrackingWarning->setVisible(false);
 
     if (mPrinting) {
         if (MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettings()) {
@@ -1473,6 +1475,10 @@ void ViewerPrivate::createWidgets()
     mSubmittedFormWarning = new SubmittedFormWarningWidget(readerBox);
     mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));
     readerBoxVBoxLayout->addWidget(mSubmittedFormWarning);
+
+    mMailTrackingWarning = new MailTrackingWarningWidget(readerBox);
+    mMailTrackingWarning->setObjectName(QStringLiteral("mailtrackingwarning"));
+    readerBoxVBoxLayout->addWidget(mMailTrackingWarning);
 
     mScamDetectionWarning = new ScamDetectionWarningWidget(readerBox);
     mScamDetectionWarning->setObjectName(QStringLiteral("scandetectionwarning"));
@@ -3193,7 +3199,7 @@ void ViewerPrivate::slotAddToWhiteList()
 
 void ViewerPrivate::slotMailTrackingFound()
 {
-    //TODO
+    mMailTrackingWarning->animatedShow();
 }
 
 void ViewerPrivate::slotFormSubmittedForbidden()

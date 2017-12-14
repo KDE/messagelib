@@ -93,6 +93,7 @@ class ViewerPluginToolManager;
 class ViewerPluginInterface;
 class SubmittedFormWarningWidget;
 class MailSourceWebEngineViewer;
+class MailTrackingWarningWidget;
 /**
 \brief Private class for the Viewer, the main widget in the messageviewer library.
 
@@ -679,6 +680,7 @@ public:
     MessageViewer::ScamDetectionWarningWidget *mScamDetectionWarning = nullptr;
     MessageViewer::OpenAttachmentFolderWidget *mOpenAttachmentFolderWidget = nullptr;
     MessageViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
+    MessageViewer::MailTrackingWarningWidget *mMailTrackingWarning = nullptr;
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
     Viewer::DisplayFormatMessage mDisplayFormatMessageOverwrite;
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
@@ -691,6 +693,7 @@ public:
     QPrinter *mCurrentPrinter = nullptr;
     QList<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
+
 };
 }
 
