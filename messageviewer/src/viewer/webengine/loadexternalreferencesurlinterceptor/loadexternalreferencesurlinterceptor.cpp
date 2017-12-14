@@ -23,31 +23,18 @@
 
 using namespace MessageViewer;
 
-class MessageViewer::LoadExternalReferencesUrlInterceptorPrivate
-{
-public:
-    LoadExternalReferencesUrlInterceptorPrivate()
-        : mAllowLoadExternalReference(false)
-    {
-    }
-
-    bool mAllowLoadExternalReference;
-};
-
 LoadExternalReferencesUrlInterceptor::LoadExternalReferencesUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
-    , d(new LoadExternalReferencesUrlInterceptorPrivate)
 {
 }
 
 LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
 {
-    delete d;
 }
 
 bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
-    if (d->mAllowLoadExternalReference) {
+    if (mAllowLoadExternalReference) {
         return false;
     } else {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage
@@ -61,10 +48,10 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
 
 void LoadExternalReferencesUrlInterceptor::setAllowExternalContent(bool b)
 {
-    d->mAllowLoadExternalReference = b;
+    mAllowLoadExternalReference = b;
 }
 
 bool LoadExternalReferencesUrlInterceptor::allowExternalContent() const
 {
-    return d->mAllowLoadExternalReference;
+    return mAllowLoadExternalReference;
 }

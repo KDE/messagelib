@@ -1261,6 +1261,7 @@ void ViewerPrivate::resetStateForNewMessage()
     mViewerPluginToolManager->closeAllTools();
     mScamDetectionWarning->setVisible(false);
     mOpenAttachmentFolderWidget->setVisible(false);
+    mSubmittedFormWarning->setVisible(false);
 
     if (mPrinting) {
         if (MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettings()) {
