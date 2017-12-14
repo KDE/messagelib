@@ -21,11 +21,26 @@
 #define BLOCKMAILTRACKINGURLINTERCEPTOR_H
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
+
+#include <QVector>
 namespace MessageViewer {
 class BlockMailTrackingUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:
+    struct MailTrackerBlackList
+    {
+        MailTrackerBlackList(const QString &company, const QString &pattern, const QString &url)
+            : mCompanyName(company), mCompanyUrl(url), mPattern(pattern)
+        {
+
+        }
+        QString mCompanyName;
+        QString mCompanyUrl;
+        QString mPattern;
+    };
+
+
     explicit BlockMailTrackingUrlInterceptor(QObject *parent = nullptr);
     ~BlockMailTrackingUrlInterceptor();
     bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
@@ -33,7 +48,10 @@ public:
 Q_SIGNALS:
     //Add info about company
     void mailTrackingFound();
+private:
+    void initializeList();
+    QVector<MailTrackerBlackList> mBackList;
 };
 }
-
+Q_DECLARE_TYPEINFO(MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList, Q_MOVABLE_TYPE);
 #endif // BLOCKMAILTRACKINGURLINTERCEPTOR_H

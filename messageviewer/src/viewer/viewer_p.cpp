@@ -1265,7 +1265,7 @@ void ViewerPrivate::resetStateForNewMessage()
     mScamDetectionWarning->setVisible(false);
     mOpenAttachmentFolderWidget->setVisible(false);
     mSubmittedFormWarning->setVisible(false);
-    mMailTrackingWarning->setVisible(false);
+    mMailTrackingWarning->hideAndClear();
 
     if (mPrinting) {
         if (MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettings()) {

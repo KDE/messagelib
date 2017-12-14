@@ -30,6 +30,8 @@ class MailTrackingWarningWidget : public KMessageWidget
 public:
     explicit MailTrackingWarningWidget(QWidget *parent = nullptr);
     ~MailTrackingWarningWidget();
+    void addTracker();
+    void hideAndClear();
 };
 }
 

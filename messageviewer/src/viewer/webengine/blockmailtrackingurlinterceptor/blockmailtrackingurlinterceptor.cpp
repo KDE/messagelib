@@ -20,11 +20,13 @@
 
 #include "blockmailtrackingurlinterceptor.h"
 
+#include <QWebEngineUrlRequestInfo>
+
 using namespace MessageViewer;
 BlockMailTrackingUrlInterceptor::BlockMailTrackingUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
-
+    initializeList();
 }
 
 MessageViewer::BlockMailTrackingUrlInterceptor::~BlockMailTrackingUrlInterceptor()
@@ -34,6 +36,41 @@ MessageViewer::BlockMailTrackingUrlInterceptor::~BlockMailTrackingUrlInterceptor
 
 bool BlockMailTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
+    //Test Url
     //TODO
+    const QUrl urlRequestUrl(info.requestUrl());
+    if (urlRequestUrl.url().contains(QLatin1String("foo"))) {
+        return true;
+    }
     return false;
+}
+
+void BlockMailTrackingUrlInterceptor::initializeList()
+{
+//    mBackList = QVector<MailTrackerBlackList>{
+//        {QStringLiteral("Sidekick"), QStringLiteral("t.signaux"), QStringLiteral("http://getsidekick.com") },
+//        {QStringLiteral("Sidekick"), QStringLiteral("t.sidekickopen"), QStringLiteral("http://getsidekick.com")},
+//        {QStringLiteral("Sidekick"), QStringLiteral("t.sigopn"), QStringLiteral("http://getsidekick.com")},
+//        {QStringLiteral("Banana Tag"), QStringLiteral("bl-1.com"), QStringLiteral("http://bananatag.com")},
+//        {QStringLiteral("Boomerang"), QStringLiteral("mailstat.us/tr"), QStringLiteral("http://boomeranggmail.com")},
+//        {QStringLiteral("Cirrus Inisght"), QStringLiteral("tracking.cirrusinsight.com"), QStringLiteral("http://cirrusinsight.com")},
+//        {QStringLiteral("Yesware"), QStringLiteral("app.yesware.com"), QStringLiteral("http://yesware.com")},
+//        {QStringLiteral("Yesware"), QStringLiteral("t.yesware.com"), QStringLiteral("http://yesware.com")},
+//        {QStringLiteral("Streak"), QStringLiteral("mailfoogae.appspot.com"), QStringLiteral("http://streak.com")},
+//        {QStringLiteral("LaunchBit"), QStringLiteral("launchbit.com/taz-pixel',url:'http://launchbit.com")},
+//        {QStringLiteral("MailChimp"), QStringLiteral("list-manage.com/track"), QStringLiteral("http://mailchimp.com")},
+//        {QStringLiteral("Postmark"), QStringLiteral("cmail1.com/t"), QStringLiteral("http://postmarkapp.com")},
+//        {QStringLiteral("iContact"), QStringLiteral("click.icptrack.com/icp/',url:'http://icontact.com")},
+//        {QStringLiteral("Infusionsoft"), QStringLiteral("infusionsoft.com/app/emailOpened"), QStringLiteral("http://infusionsoft.com")},
+//        {QStringLiteral("Intercom"), QStringLiteral("via.intercom.io/o"), QStringLiteral("http://intercom.io")},
+//        {QStringLiteral("Mandrill"), QStringLiteral("mandrillapp.com/track"), QStringLiteral("http://mandrillapp.com")},
+//        {QStringLiteral("Hubspot"), QStringLiteral("t.hsms06.com"), QStringLiteral("http://hubspot.com")},
+//        {QStringLiteral("RelateIQ"), QStringLiteral("app.relateiq.com/t.png"), QStringLiteral("http://relateiq.com")},
+//        {QStringLiteral("RJ Metrics"), QStringLiteral("go.rjmetrics.com"), QStringLiteral("http://rjmetrics.com")},
+//        {QStringLiteral("Mixpanel"), QStringLiteral("api.mixpanel.com/track"), QStringLiteral("http://mixpanel.com")},
+//        {QStringLiteral("Front App"), QStringLiteral("web.frontapp.com/api"), QStringLiteral("http://frontapp.com")},
+//        {QStringLiteral("Mailtrack.io"), QStringLiteral("mailtrack.io/trace"), QStringLiteral("http://mailtrack.io")},
+//        {QStringLiteral("ToutApp"), QStringLiteral("go.toutapp.com"), QStringLiteral("http://toutapp.com")},
+//        {QStringLiteral("Outreach"), QStringLiteral("app.outreach.io"), QStringLiteral("http://outreach.io")}
+//    };
 }

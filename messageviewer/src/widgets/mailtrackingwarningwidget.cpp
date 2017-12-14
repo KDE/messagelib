@@ -37,3 +37,14 @@ MailTrackingWarningWidget::~MailTrackingWarningWidget()
 {
 
 }
+
+void MailTrackingWarningWidget::addTracker()
+{
+
+}
+
+void MailTrackingWarningWidget::hideAndClear()
+{
+    //TODO clear !
+    setVisible(false);
+}
