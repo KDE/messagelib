@@ -21,7 +21,11 @@
 #ifndef MAILTRACKINGWARNINGWIDGET_H
 #define MAILTRACKINGWARNINGWIDGET_H
 
+
 #include <KMessageWidget>
+
+#include "messageviewer_private_export.h"
+
 #include <QMap>
 #include <QPointer>
 
@@ -29,7 +33,7 @@
 
 namespace MessageViewer {
 class MailTrackingDetailsDialog;
-class MailTrackingWarningWidget : public KMessageWidget
+class MESSAGEVIEWER_TESTS_EXPORT MailTrackingWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
