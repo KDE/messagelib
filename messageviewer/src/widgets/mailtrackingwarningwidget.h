@@ -23,10 +23,12 @@
 
 #include <KMessageWidget>
 #include <QMap>
+#include <QPointer>
 
 #include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
 
 namespace MessageViewer {
+class MailTrackingDetailsDialog;
 class MailTrackingWarningWidget : public KMessageWidget
 {
     Q_OBJECT
@@ -37,11 +39,14 @@ public:
     void hideAndClear();
 private:
     void slotShowDetails(const QString &content);
+    QString generateDetails() const;
+
     struct blackListFound {
         QString url;
         int number = 1;
     };
     QMap<QString, blackListFound> mBackLists;
+    QPointer<MailTrackingDetailsDialog> mMailTrackingDetailDialog;
 };
 }
 

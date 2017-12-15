@@ -18,6 +18,7 @@
 */
 
 #include "mailtrackingwarningwidget.h"
+#include "mailtrackingdetailsdialog.h"
 #include <KLocalizedString>
 
 using namespace MessageViewer;
@@ -44,8 +45,27 @@ MailTrackingWarningWidget::~MailTrackingWarningWidget()
 void MailTrackingWarningWidget::slotShowDetails(const QString &content)
 {
     if (content == QLatin1String("mailtrackingdetails")) {
+        if (!mMailTrackingDetailDialog) {
+            mMailTrackingDetailDialog = new MessageViewer::MailTrackingDetailsDialog;
+        }
+        mMailTrackingDetailDialog->setDetails(generateDetails());
+        mMailTrackingDetailDialog->show();
+
         //TODO
     }
+}
+
+QString MailTrackingWarningWidget::generateDetails() const
+{
+    QString details = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
+
+    QMapIterator<QString, blackListFound> i(mBackLists);
+    while (i.hasNext()) {
+        i.next();
+        details += QLatin1String("<li>") + i18n("%1 tracker from the company %2 (%3)", i.value().number, i.key(), i.value().url);
+    }
+    details += QLatin1String("</ul>");
+    return {};
 }
 
 void MailTrackingWarningWidget::addTracker(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &tracker)
@@ -58,7 +78,6 @@ void MailTrackingWarningWidget::addTracker(const MessageViewer::BlockMailTrackin
         item.number = item.number + 1;
         mBackLists.insert(tracker.mCompanyName, item);
     }
-    //TODO create list
     if (!isVisible()) {
         animatedShow();
     }
