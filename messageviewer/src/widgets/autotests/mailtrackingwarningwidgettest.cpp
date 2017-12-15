@@ -18,6 +18,7 @@
 */
 
 #include "mailtrackingwarningwidgettest.h"
+#include "widgets/mailtrackingwarningwidget.h"
 #include <QTest>
 
 QTEST_MAIN(MailTrackingWarningWidgetTest)
@@ -26,4 +27,13 @@ MailTrackingWarningWidgetTest::MailTrackingWarningWidgetTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void MailTrackingWarningWidgetTest::shouldHaveDefaultValues()
+{
+    MessageViewer::MailTrackingWarningWidget w;
+    QVERIFY(!w.isVisible());
+    QVERIFY(!w.isCloseButtonVisible());
+    QVERIFY(w.wordWrap());
+    QVERIFY(!w.text().isEmpty());
 }
