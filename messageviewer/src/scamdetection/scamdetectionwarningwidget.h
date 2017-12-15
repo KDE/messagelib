@@ -21,13 +21,13 @@
 #ifndef SCAMDETECTIONWARNINGWIDGET_H
 #define SCAMDETECTIONWARNINGWIDGET_H
 
-#include "messageviewer_export.h"
+#include "messageviewer_private_export.h"
 
 #include <KMessageWidget>
 
 namespace MessageViewer {
 class ScamDetectionWarningWidgetPrivate;
-class MESSAGEVIEWER_EXPORT ScamDetectionWarningWidget : public KMessageWidget
+class MESSAGEVIEWER_TESTS_EXPORT ScamDetectionWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
