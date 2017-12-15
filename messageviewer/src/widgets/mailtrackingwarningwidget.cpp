@@ -30,12 +30,22 @@ MailTrackingWarningWidget::MailTrackingWarningWidget(QWidget *parent)
     setWordWrap(true);
 
     //Add info here.
-    setText(i18n("Some Mail Tracker was found and was blocked."));
+    setText(i18n("Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails\">(Details...)"));
+    connect(this, &MailTrackingWarningWidget::linkActivated, this,
+            &MailTrackingWarningWidget::slotShowDetails);
+
 }
 
 MailTrackingWarningWidget::~MailTrackingWarningWidget()
 {
 
+}
+
+void MailTrackingWarningWidget::slotShowDetails(const QString &content)
+{
+    if (content == QLatin1String("mailtrackingdetails")) {
+        //TODO
+    }
 }
 
 void MailTrackingWarningWidget::addTracker(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &tracker)
@@ -47,6 +57,10 @@ void MailTrackingWarningWidget::addTracker(const MessageViewer::BlockMailTrackin
     } else {
         item.number = item.number + 1;
         mBackLists.insert(tracker.mCompanyName, item);
+    }
+    //TODO create list
+    if (!isVisible()) {
+        animatedShow();
     }
     //show info
 }

@@ -36,6 +36,7 @@ public:
     void addTracker(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
     void hideAndClear();
 private:
+    void slotShowDetails(const QString &content);
     struct blackListFound {
         QString url;
         int number = 1;

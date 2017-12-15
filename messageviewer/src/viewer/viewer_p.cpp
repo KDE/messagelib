@@ -3199,7 +3199,7 @@ void ViewerPrivate::slotAddToWhiteList()
 
 void ViewerPrivate::slotMailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &blacklist)
 {
-    mMailTrackingWarning->animatedShow();
+    mMailTrackingWarning->addTracker(blacklist);
 }
 
 void ViewerPrivate::slotFormSubmittedForbidden()
