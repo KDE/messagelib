@@ -9,3 +9,4 @@ macro(add_messageviewer_widget_unittest _source)
 endmacro ()
 
 add_messageviewer_widget_unittest(mailtrackingwarningwidgettest.cpp)
+add_messageviewer_widget_unittest(mailtrackingdetailsdialogtest.cpp)

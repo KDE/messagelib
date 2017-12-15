@@ -17,32 +17,20 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef MAILTRACKINGDETAILSDIALOG_H
-#define MAILTRACKINGDETAILSDIALOG_H
+#include "mailtrackingdetailsdialogtest.h"
+#include "widgets/mailtrackingdetailsdialog.h"
+#include <QTest>
+#include <QStandardPaths>
 
-#include <QDialog>
-#include "messageviewer_private_export.h"
+QTEST_MAIN(MailTrackingDetailsDialogTest)
 
-namespace KPIMTextEdit
+MailTrackingDetailsDialogTest::MailTrackingDetailsDialogTest(QObject *parent)
+    : QObject(parent)
 {
-class RichTextEditorWidget;
+    QStandardPaths::setTestModeEnabled(true);
 }
 
-namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT MailTrackingDetailsDialog : public QDialog
+void MailTrackingDetailsDialogTest::shouldHaveDefaultValue()
 {
-    Q_OBJECT
-public:
-    explicit MailTrackingDetailsDialog(QWidget *parent = nullptr);
-    ~MailTrackingDetailsDialog();
-
-    void setDetails(const QString &details);
-private:
-    void writeConfig();
-    void readConfig();
-
-     KPIMTextEdit::RichTextEditorWidget *mDetails = nullptr;
-};
+    //TOOD
 }
-
-#endif // MAILTRACKINGDETAILSDIALOG_H

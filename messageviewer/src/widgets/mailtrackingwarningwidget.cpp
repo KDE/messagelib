@@ -33,7 +33,6 @@ MailTrackingWarningWidget::MailTrackingWarningWidget(QWidget *parent)
     setText(i18n("Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails\">(Details...)"));
     connect(this, &MailTrackingWarningWidget::linkActivated, this,
             &MailTrackingWarningWidget::slotShowDetails);
-
 }
 
 MailTrackingWarningWidget::~MailTrackingWarningWidget()
