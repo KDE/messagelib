@@ -62,7 +62,6 @@ void MailTrackingWarningWidget::addTracker(const MessageViewer::BlockMailTrackin
     if (!isVisible()) {
         animatedShow();
     }
-    //show info
 }
 
 void MailTrackingWarningWidget::hideAndClear()
