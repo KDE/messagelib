@@ -50,8 +50,6 @@ void MailTrackingWarningWidget::slotShowDetails(const QString &content)
         }
         mMailTrackingDetailDialog->setDetails(generateDetails());
         mMailTrackingDetailDialog->show();
-
-        //TODO
     }
 }
 
@@ -65,7 +63,7 @@ QString MailTrackingWarningWidget::generateDetails() const
         details += QLatin1String("<li>") + i18n("%1 tracker from the company %2 (%3)", i.value().number, i.key(), i.value().url);
     }
     details += QLatin1String("</ul>");
-    return {};
+    return details;
 }
 
 void MailTrackingWarningWidget::addTracker(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &tracker)
