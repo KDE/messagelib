@@ -435,16 +435,13 @@ private:
     Q_PRIVATE_SLOT(d, void onSelectionChanged(const QItemSelection &, const QItemSelection &))
     Q_PRIVATE_SLOT(d, void onCloseTabClicked())
     Q_PRIVATE_SLOT(d, void activateTab())
-    Q_PRIVATE_SLOT(d, void moveTabLeft())
     Q_PRIVATE_SLOT(d, void moveTabRight())
     Q_PRIVATE_SLOT(d, void activateNextTab())
     Q_PRIVATE_SLOT(d, void activatePreviousTab())
     Q_PRIVATE_SLOT(d, void closeTab(QWidget *))
     Q_PRIVATE_SLOT(d, void onCurrentTabChanged())
-    Q_PRIVATE_SLOT(d, void onTabContextMenuRequest(const QPoint &))
     Q_PRIVATE_SLOT(d, void updateTabControls())
     Q_PRIVATE_SLOT(d, void changeQuicksearchVisibility(bool))
-    Q_PRIVATE_SLOT(d, void slotTabCloseRequested(int index))
 
     bool eventFilter(QObject *obj, QEvent *event) override;
 

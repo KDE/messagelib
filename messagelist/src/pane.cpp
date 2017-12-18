@@ -164,7 +164,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
             this, [this]() {d->onCloseTabClicked(); });
 
     setTabsClosable(true);
-    connect(this, SIGNAL(tabCloseRequested(int)), this, SLOT(slotTabCloseRequested(int)));
+    connect(this, &Pane::tabCloseRequested, this, [this](int index) { d->slotTabCloseRequested(index);});
 
     readConfig(restoreSession);
     setMovable(true);
@@ -175,8 +175,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
             this, SLOT(onCurrentTabChanged()));
 
     setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(this, SIGNAL(customContextMenuRequested(QPoint)),
-            this, SLOT(onTabContextMenuRequest(QPoint)));
+    connect(this, &Pane::customContextMenuRequested, this, [this](const QPoint &point) { d->onTabContextMenuRequest(point);});
 
     connect(MessageListSettings::self(), SIGNAL(configChanged()),
             this, SLOT(updateTabControls()));
@@ -269,7 +268,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mMoveTabLeftAction = new QAction(i18n("Move Tab Left"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_left"), d->mMoveTabLeftAction);
         d->mMoveTabLeftAction->setEnabled(false);
-        connect(d->mMoveTabLeftAction, SIGNAL(triggered(bool)), SLOT(moveTabLeft()));
+        connect(d->mMoveTabLeftAction, &QAction::triggered, [this]() { d->moveTabLeft(); });
 
         d->mMoveTabRightAction = new QAction(i18n("Move Tab Right"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_right"), d->mMoveTabRightAction);
