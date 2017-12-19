@@ -251,29 +251,29 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mCloseTabAction = new QAction(i18n("Close Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("close_current_tab"), d->mCloseTabAction);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mCloseTabAction, QList<QKeySequence>() << QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_W) << QKeySequence(Qt::CTRL + Qt::Key_W));
-        connect(d->mCloseTabAction, SIGNAL(triggered(bool)), SLOT(onCloseTabClicked()));
+        connect(d->mCloseTabAction, &QAction::triggered, this, [this]() { d->onCloseTabClicked(); });
         d->mActionMenu->addAction(d->mCloseTabAction);
         d->mCloseTabAction->setEnabled(false);
 
         d->mActivateNextTabAction = new QAction(i18n("Activate Next Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_next_tab"), d->mActivateNextTabAction);
         d->mActivateNextTabAction->setEnabled(false);
-        connect(d->mActivateNextTabAction, SIGNAL(triggered(bool)), SLOT(activateNextTab()));
+        connect(d->mActivateNextTabAction, &QAction::triggered, [this]() { d->activateNextTab(); });
 
         d->mActivatePreviousTabAction = new QAction(i18n("Activate Previous Tab"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_previous_tab"), d->mActivatePreviousTabAction);
         d->mActivatePreviousTabAction->setEnabled(false);
-        connect(d->mActivatePreviousTabAction, SIGNAL(triggered(bool)), SLOT(activatePreviousTab()));
+        connect(d->mActivatePreviousTabAction, &QAction::triggered, this, [this]() { d->activatePreviousTab(); });
 
         d->mMoveTabLeftAction = new QAction(i18n("Move Tab Left"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_left"), d->mMoveTabLeftAction);
         d->mMoveTabLeftAction->setEnabled(false);
-        connect(d->mMoveTabLeftAction, &QAction::triggered, [this]() { d->moveTabLeft(); });
+        connect(d->mMoveTabLeftAction, &QAction::triggered, this, [this]() { d->moveTabLeft(); });
 
         d->mMoveTabRightAction = new QAction(i18n("Move Tab Right"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_right"), d->mMoveTabRightAction);
         d->mMoveTabRightAction->setEnabled(false);
-        connect(d->mMoveTabRightAction, &QAction::triggered, [this]() { d->moveTabRight(); });
+        connect(d->mMoveTabRightAction, &QAction::triggered, this, [this]() { d->moveTabRight(); });
     }
 }
 

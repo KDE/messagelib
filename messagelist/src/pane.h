@@ -433,9 +433,6 @@ private:
     void readConfig(bool restoreSession);
 
     Q_PRIVATE_SLOT(d, void onSelectionChanged(const QItemSelection &, const QItemSelection &))
-    Q_PRIVATE_SLOT(d, void onCloseTabClicked())
-    Q_PRIVATE_SLOT(d, void activateNextTab())
-    Q_PRIVATE_SLOT(d, void activatePreviousTab())
     Q_PRIVATE_SLOT(d, void closeTab(QWidget *))
     Q_PRIVATE_SLOT(d, void onCurrentTabChanged())
     Q_PRIVATE_SLOT(d, void updateTabControls())
