@@ -199,7 +199,7 @@ void Pane::Private::addActivateTabAction(int i)
     QAction *action = new QAction(i18n("Activate Tab %1", i), q);
     mXmlGuiClient->actionCollection()->addAction(actionname, action);
     mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(QStringLiteral("Alt+%1").arg(i)));
-    connect(action, SIGNAL(triggered(bool)), q, SLOT(activateTab()));
+    connect(action, &QAction::triggered, q, [this]() { activateTab(); });
 }
 
 void Pane::Private::slotTabCloseRequested(int index)
@@ -273,7 +273,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mMoveTabRightAction = new QAction(i18n("Move Tab Right"), this);
         d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_right"), d->mMoveTabRightAction);
         d->mMoveTabRightAction->setEnabled(false);
-        connect(d->mMoveTabRightAction, SIGNAL(triggered(bool)), SLOT(moveTabRight()));
+        connect(d->mMoveTabRightAction, &QAction::triggered, [this]() { d->moveTabRight(); });
     }
 }
 
