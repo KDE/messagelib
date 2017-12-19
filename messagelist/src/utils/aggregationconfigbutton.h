@@ -51,8 +51,6 @@ Q_SIGNALS:
     void configureDialogCompleted();
 
 private:
-    Q_PRIVATE_SLOT(d, void slotConfigureAggregations())
-
     AggregationConfigButtonPrivate *const d;
 };
 } // namespace Utils

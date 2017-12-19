@@ -434,7 +434,6 @@ private:
 
     Q_PRIVATE_SLOT(d, void onSelectionChanged(const QItemSelection &, const QItemSelection &))
     Q_PRIVATE_SLOT(d, void closeTab(QWidget *))
-    Q_PRIVATE_SLOT(d, void onCurrentTabChanged())
     Q_PRIVATE_SLOT(d, void updateTabControls())
     Q_PRIVATE_SLOT(d, void changeQuicksearchVisibility(bool))
 

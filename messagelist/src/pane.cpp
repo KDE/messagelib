@@ -171,8 +171,8 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
 
     connect(d->mSelectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
             this, SLOT(onSelectionChanged(QItemSelection,QItemSelection)));
-    connect(this, SIGNAL(currentChanged(int)),
-            this, SLOT(onCurrentTabChanged()));
+    connect(this, &Pane::currentChanged,
+            this, [this]() { d->onCurrentTabChanged(); });
 
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this, &Pane::customContextMenuRequested, this, [this](const QPoint &point) { d->onTabContextMenuRequest(point);});
