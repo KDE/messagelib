@@ -112,8 +112,8 @@ void AttachmentPropertiesDialog::Private::polishUi()
     } else {
         // Update the icon when the selected mime type changes.
 
-        connect(ui->mimeType, SIGNAL(currentIndexChanged(QString)),
-                q, SLOT(mimeTypeChanged(QString)));
+        connect(ui->mimeType, QOverload<const QString &>::of(&QComboBox::currentIndexChanged),
+                q, [this](const QString &str) { mimeTypeChanged(str); });
         populateMimeTypes();
         populateEncodings();
         buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help, q);

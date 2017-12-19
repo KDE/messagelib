@@ -632,8 +632,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     const bool hasScrollbar = mViewer->hasVerticalScrollBar();
     if (attachmentInHeader && hasScrollbar) {
         action = menu->addAction(i18n("Scroll To"));
-        connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
-        attachmentMapper->setMapping(action, Viewer::ScrollTo);
+        connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::ScrollTo);});
     }
 #endif
 
@@ -672,15 +671,13 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     action
         = menu->addAction(QIcon::fromTheme(QStringLiteral("mail-reply-sender")),
                           i18n("Reply To Author"));
-    connect(action, SIGNAL(triggered()), attachmentMapper, SLOT(map()));
-    attachmentMapper->setMapping(action, Viewer::ReplyMessageToAuthor);
+    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::ReplyMessageToAuthor);});
 
     menu->addSeparator();
 
     action = menu->addAction(QIcon::fromTheme(QStringLiteral("mail-reply-all")), i18n(
                                  "Reply To All"));
-    connect(action, SIGNAL(triggered()), attachmentMapper, SLOT(map()));
-    attachmentMapper->setMapping(action, Viewer::ReplyMessageToAll);
+    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::ReplyMessageToAll);});
 #endif
     menu->addSeparator();
     action = menu->addAction(i18n("Properties"));
@@ -1804,7 +1801,7 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
                             this, &ViewerPrivate::slotAttachmentCopy);
 #if 0  //FIXME Laurent Comment for the moment it crash see Bug 287177
             popup.addAction(QIcon::fromTheme("edit-delete"), i18n("Delete Attachment"),
-                            this, SLOT(slotAttachmentDelete()));
+                            this, &ViewerPrivate::slotAttachmentDelete);
 #endif
             if (MessageViewer::MessageViewerSettings::self()->allowAttachmentEditing()) {
                 popup.addAction(QIcon::fromTheme(QStringLiteral("document-properties")),

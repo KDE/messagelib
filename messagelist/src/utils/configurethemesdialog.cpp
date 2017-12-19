@@ -133,8 +133,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     d->mCloneThemeButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mCloneThemeButton, 1, 1);
 
-    connect(d->mCloneThemeButton, SIGNAL(clicked()),
-            SLOT(cloneThemeButtonClicked()));
+    connect(d->mCloneThemeButton, &QPushButton::clicked, this, [this]() { d->cloneThemeButtonClicked(); });
 
     QFrame *f = new QFrame(base);
     f->setFrameStyle(QFrame::Sunken | QFrame::HLine);
@@ -144,13 +143,11 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     d->mExportThemeButton = new QPushButton(i18n("Export Theme..."), base);
     g->addWidget(d->mExportThemeButton, 3, 1);
 
-    connect(d->mExportThemeButton, SIGNAL(clicked()),
-            SLOT(exportThemeButtonClicked()));
+    connect(d->mExportThemeButton, &QPushButton::clicked, this, [this]() { d->exportThemeButtonClicked(); });
 
     d->mImportThemeButton = new QPushButton(i18n("Import Theme..."), base);
     g->addWidget(d->mImportThemeButton, 4, 1);
-    connect(d->mImportThemeButton, SIGNAL(clicked()),
-            SLOT(importThemeButtonClicked()));
+    connect(d->mImportThemeButton, &QPushButton::clicked, this, [this]() { d->importThemeButtonClicked(); });
 
     f = new QFrame(base);
     f->setFrameStyle(QFrame::Sunken | QFrame::HLine);
@@ -162,18 +159,17 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     d->mDeleteThemeButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mDeleteThemeButton, 6, 1);
 
-    connect(d->mDeleteThemeButton, SIGNAL(clicked()), SLOT(deleteThemeButtonClicked()));
+    connect(d->mDeleteThemeButton, &QPushButton::clicked, this, [this]() { d->deleteThemeButtonClicked(); });
 
     d->mEditor = new ThemeEditor(base);
     g->addWidget(d->mEditor, 8, 0, 1, 2);
 
-    connect(d->mEditor, SIGNAL(themeNameChanged()),
-            SLOT(editedThemeNameChanged()));
+    connect(d->mEditor, &ThemeEditor::themeNameChanged, this, [this]() { d->editedThemeNameChanged(); });
 
     g->setColumnStretch(0, 1);
     g->setRowStretch(4, 1);
 
-    connect(okButton, SIGNAL(clicked()), SLOT(okButtonClicked()));
+    connect(okButton, &QPushButton::clicked, this, [this]() { d->okButtonClicked(); } );
 
     d->fillThemeList();
 }

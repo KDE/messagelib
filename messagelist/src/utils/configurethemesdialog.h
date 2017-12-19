@@ -42,12 +42,6 @@ Q_SIGNALS:
 
 private:
     Q_PRIVATE_SLOT(d, void themeListItemClicked(QListWidgetItem *))
-    Q_PRIVATE_SLOT(d, void cloneThemeButtonClicked())
-    Q_PRIVATE_SLOT(d, void deleteThemeButtonClicked())
-    Q_PRIVATE_SLOT(d, void editedThemeNameChanged())
-    Q_PRIVATE_SLOT(d, void okButtonClicked())
-    Q_PRIVATE_SLOT(d, void importThemeButtonClicked())
-    Q_PRIVATE_SLOT(d, void exportThemeButtonClicked())
 
     class Private;
     Private *const d;

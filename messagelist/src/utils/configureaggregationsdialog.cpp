@@ -169,8 +169,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     d->mEditor = new AggregationEditor(base);
     g->addWidget(d->mEditor, 8, 0, 1, 2);
 
-    connect(d->mEditor, SIGNAL(aggregationNameChanged()),
-            SLOT(editedAggregationNameChanged()));
+    connect(d->mEditor, &AggregationEditor::aggregationNameChanged, this, [this]() { d->editedAggregationNameChanged(); });
 
     g->setColumnStretch(0, 1);
     g->setRowStretch(7, 1);
