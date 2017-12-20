@@ -58,7 +58,9 @@ QString MailTrackingWarningWidget::generateDetails() const
     QMapIterator<QString, blackListFound> i(mBackLists);
     while (i.hasNext()) {
         i.next();
-        details += QLatin1String("<li>") + i18n("%1 tracker from the company %2 (%3)", i.value().number, i.key(), i.value().url);
+        details += QLatin1String("<li>") + i18np("1 tracker from the company %2 (%3)",
+                                                 "%1 trackers from the company %2 (%3)",
+                                                 i.value().number, i.key(), i.value().url);
     }
     details += QLatin1String("</ul>");
     return details;
