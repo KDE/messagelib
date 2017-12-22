@@ -413,7 +413,7 @@ public:
     void goOnline();
     void goResourceOnline();
 
-    void showOpenAttachmentFolderWidget(const QUrl &url);
+    void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
 
     bool mimePartTreeIsEmpty() const;
 

@@ -314,7 +314,7 @@ public:
     void saveMainFrameScreenshotInFile(const QString &filename);
     bool mimePartTreeIsEmpty() const;
 
-    void showOpenAttachmentFolderWidget(const QUrl &url);
+    void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
     QList<QAction *> viewerPluginActionList(
         MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;

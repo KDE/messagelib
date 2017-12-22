@@ -31,7 +31,7 @@ public:
     explicit OpenAttachmentFolderWidget(QWidget *parent = nullptr);
     ~OpenAttachmentFolderWidget();
 
-    void setFolder(const QUrl &url);
+    void setUrls(const QList<QUrl> &urls);
 
 public Q_SLOTS:
     void slotShowWarning();
@@ -41,7 +41,7 @@ private:
     void slotOpenAttachmentFolder();
     void slotTimeOut();
     void slotExplicitlyClosed();
-    QUrl mUrl;
+    QList<QUrl> mUrls;
     QTimer *mTimer = nullptr;
 };
 }

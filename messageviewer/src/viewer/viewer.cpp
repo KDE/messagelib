@@ -655,10 +655,10 @@ void Viewer::setPluginName(const QString &pluginName)
     return d->setPluginName(pluginName);
 }
 
-void Viewer::showOpenAttachmentFolderWidget(const QUrl &url)
+void Viewer::showOpenAttachmentFolderWidget(const QList<QUrl> &urls)
 {
     Q_D(Viewer);
-    d->showOpenAttachmentFolderWidget(url);
+    d->showOpenAttachmentFolderWidget(urls);
 }
 
 QList<QAction *> Viewer::viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features)

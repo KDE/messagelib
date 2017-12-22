@@ -377,8 +377,9 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     delete dialog;
     if (choice == AttachmentDialog::Save) {
         QUrl currentUrl;
-        if (Util::saveContents(mMainWindow, KMime::Content::List() << node, currentUrl)) {
-            showOpenAttachmentFolderWidget(currentUrl);
+        QList<QUrl> urlList;
+        if (Util::saveContents(mMainWindow, KMime::Content::List() << node, currentUrl, urlList)) {
+            showOpenAttachmentFolderWidget(urlList);
         }
     } else if (choice == AttachmentDialog::Open) { // Open
         if (offer) {
@@ -2540,9 +2541,9 @@ void ViewerPrivate::slotAttachmentOpen()
 #endif
 }
 
-void ViewerPrivate::showOpenAttachmentFolderWidget(const QUrl &url)
+void ViewerPrivate::showOpenAttachmentFolderWidget(const QList<QUrl> &urls)
 {
-    mOpenAttachmentFolderWidget->setFolder(url);
+    mOpenAttachmentFolderWidget->setUrls(urls);
     mOpenAttachmentFolderWidget->slotShowWarning();
 }
 
@@ -2586,8 +2587,9 @@ void ViewerPrivate::slotAttachmentSaveAs()
 {
     const auto contents = selectedContents();
     QUrl currentUrl;
-    if (Util::saveAttachments(contents, mMainWindow, currentUrl)) {
-        showOpenAttachmentFolderWidget(currentUrl);
+    QList<QUrl> urlList;
+    if (Util::saveAttachments(contents, mMainWindow, currentUrl, urlList)) {
+        showOpenAttachmentFolderWidget(urlList);
     }
 }
 
@@ -2595,8 +2597,9 @@ void ViewerPrivate::slotAttachmentSaveAll()
 {
     const auto contents = mMessage->attachments();
     QUrl currentUrl;
-    if (Util::saveAttachments(contents, mMainWindow, currentUrl)) {
-        showOpenAttachmentFolderWidget(currentUrl);
+    QList<QUrl> urlList;
+    if (Util::saveAttachments(contents, mMainWindow, currentUrl, urlList)) {
+        showOpenAttachmentFolderWidget(urlList);
     }
 }
 
@@ -2729,9 +2732,10 @@ void ViewerPrivate::slotHandleAttachment(int choice)
     case Viewer::Save:
     {
         QUrl currentUrl;
+        QList<QUrl> urlList;
         if (Util::saveContents(mMainWindow, KMime::Content::List() << mCurrentContent,
-                               currentUrl)) {
-            showOpenAttachmentFolderWidget(currentUrl);
+                               currentUrl, urlList)) {
+            showOpenAttachmentFolderWidget(urlList);
         }
         break;
     }

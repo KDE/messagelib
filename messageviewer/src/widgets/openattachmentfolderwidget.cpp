@@ -20,8 +20,7 @@
 #include "openattachmentfolderwidget.h"
 
 #include <KLocalizedString>
-
-#include <KRun>
+#include <KIO/OpenFileManagerWindowJob>
 
 #include <QTimer>
 
@@ -63,15 +62,15 @@ void OpenAttachmentFolderWidget::slotExplicitlyClosed()
     }
 }
 
-void OpenAttachmentFolderWidget::setFolder(const QUrl &url)
+void OpenAttachmentFolderWidget::setUrls(const QList<QUrl> &urls)
 {
-    mUrl = url;
+    mUrls = urls;
 }
 
 void OpenAttachmentFolderWidget::slotOpenAttachmentFolder()
 {
-    if (!mUrl.isEmpty()) {
-        new KRun(mUrl, this);
+    if (!mUrls.isEmpty()) {
+        KIO::highlightInFileManager(mUrls);
         slotHideWarning();
     }
 }
