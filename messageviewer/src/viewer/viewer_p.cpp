@@ -376,9 +376,8 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     const int choice = dialog->exec();
     delete dialog;
     if (choice == AttachmentDialog::Save) {
-        QUrl currentUrl;
         QList<QUrl> urlList;
-        if (Util::saveContents(mMainWindow, KMime::Content::List() << node, currentUrl, urlList)) {
+        if (Util::saveContents(mMainWindow, KMime::Content::List() << node, urlList)) {
             showOpenAttachmentFolderWidget(urlList);
         }
     } else if (choice == AttachmentDialog::Open) { // Open
@@ -2586,9 +2585,8 @@ void ViewerPrivate::slotActivatePlugin(ViewerPluginInterface *interface)
 void ViewerPrivate::slotAttachmentSaveAs()
 {
     const auto contents = selectedContents();
-    QUrl currentUrl;
     QList<QUrl> urlList;
-    if (Util::saveAttachments(contents, mMainWindow, currentUrl, urlList)) {
+    if (Util::saveAttachments(contents, mMainWindow, urlList)) {
         showOpenAttachmentFolderWidget(urlList);
     }
 }
@@ -2596,9 +2594,8 @@ void ViewerPrivate::slotAttachmentSaveAs()
 void ViewerPrivate::slotAttachmentSaveAll()
 {
     const auto contents = mMessage->attachments();
-    QUrl currentUrl;
     QList<QUrl> urlList;
-    if (Util::saveAttachments(contents, mMainWindow, currentUrl, urlList)) {
+    if (Util::saveAttachments(contents, mMainWindow, urlList)) {
         showOpenAttachmentFolderWidget(urlList);
     }
 }
@@ -2731,10 +2728,8 @@ void ViewerPrivate::slotHandleAttachment(int choice)
         break;
     case Viewer::Save:
     {
-        QUrl currentUrl;
         QList<QUrl> urlList;
-        if (Util::saveContents(mMainWindow, KMime::Content::List() << mCurrentContent,
-                               currentUrl, urlList)) {
+        if (Util::saveContents(mMainWindow, KMime::Content::List() << mCurrentContent, urlList)) {
             showOpenAttachmentFolderWidget(urlList);
         }
         break;

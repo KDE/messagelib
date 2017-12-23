@@ -52,7 +52,7 @@ bool handleUrlWithQDesktopServices(const QUrl &url);
 
 KMime::Content::List allContents(const KMime::Content *message);
 
-bool saveContents(QWidget *parent, const KMime::Content::List &contents, QUrl &currentFolder, QList<QUrl> &urlList);
+bool saveContents(QWidget *parent, const KMime::Content::List &contents, QList<QUrl> &urlList);
 bool saveContent(QWidget *parent, KMime::Content *content, const QUrl &url);
 }
 }

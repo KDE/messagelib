@@ -128,10 +128,11 @@ KMime::Content::List Util::allContents(const KMime::Content *message)
     return result;
 }
 
-bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, QUrl &currentFolder, QList<QUrl> &urlList)
+bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, QList<QUrl> &urlList)
 {
     QUrl url, dirUrl;
     QString recentDirClass;
+    QUrl currentFolder;
     const bool multiple = (contents.count() > 1);
     if (multiple) {
         // get the dir
@@ -424,14 +425,14 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
     return true;
 }
 
-bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent, QUrl &currentFolder, QList<QUrl> &urlList)
+bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &urlList)
 {
     if (contents.isEmpty()) {
         KMessageBox::information(parent, i18n("Found no attachments to save."));
         return false;
     }
 
-    return Util::saveContents(parent, contents, currentFolder, urlList);
+    return Util::saveContents(parent, contents, urlList);
 }
 
 bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)

@@ -730,9 +730,8 @@ bool AttachmentURLHandler::handleShiftClick(const QUrl &url, ViewerPrivate *wind
     if (!window) {
         return false;
     }
-    QUrl currentUrl;
     QList<QUrl> urlList;
-    if (Util::saveContents(window->viewer(), KMime::Content::List() << node, currentUrl, urlList)) {
+    if (Util::saveContents(window->viewer(), KMime::Content::List() << node, urlList)) {
         window->viewer()->showOpenAttachmentFolderWidget(urlList);
     }
 
