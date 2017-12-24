@@ -37,7 +37,6 @@ MailTrackingWarningWidget::MailTrackingWarningWidget(QWidget *parent)
 
 MailTrackingWarningWidget::~MailTrackingWarningWidget()
 {
-
 }
 
 void MailTrackingWarningWidget::slotShowDetails(const QString &content)

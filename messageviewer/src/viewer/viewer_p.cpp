@@ -605,7 +605,9 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         = menu->addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("to open",
                                                                                    "Open"));
     action->setEnabled(!deletedAttachment);
-    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Open);});
+    connect(action, &QAction::triggered, this, [this]() {
+        slotHandleAttachment(Viewer::Open);
+    });
     if (!deletedAttachment) {
         createOpenWithMenu(menu, contentTypeStr, true);
     }
@@ -623,7 +625,9 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
             ) {
             action = menu->addAction(i18nc("to view something", "View"));
             action->setEnabled(!deletedAttachment);
-            connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::View);});
+            connect(action, &QAction::triggered, this, [this]() {
+                slotHandleAttachment(Viewer::View);
+            });
         }
     }
 
@@ -632,18 +636,24 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     const bool hasScrollbar = mViewer->hasVerticalScrollBar();
     if (attachmentInHeader && hasScrollbar) {
         action = menu->addAction(i18n("Scroll To"));
-        connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::ScrollTo);});
+        connect(action, &QAction::triggered, this, [this]() {
+            slotHandleAttachment(Viewer::ScrollTo);
+        });
     }
 #endif
 
     action = menu->addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n(
                                  "Save As..."));
     action->setEnabled(!deletedAttachment);
-    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Save);});
+    connect(action, &QAction::triggered, this, [this]() {
+        slotHandleAttachment(Viewer::Save);
+    });
 
     action = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"));
     action->setEnabled(!deletedAttachment);
-    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Copy);});
+    connect(action, &QAction::triggered, this, [this]() {
+        slotHandleAttachment(Viewer::Copy);
+    });
 
     const bool isEncapsulatedMessage = node->parent() && node->parent()->bodyIsMessage();
     const bool canChange = mMessageItem.isValid() && mMessageItem.parentCollection().isValid()
@@ -655,14 +665,18 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         action
             = menu->addAction(QIcon::fromTheme(QStringLiteral("document-properties")), i18n(
                                   "Edit Attachment"));
-        connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Edit);});
+        connect(action, &QAction::triggered, this, [this]() {
+            slotHandleAttachment(Viewer::Edit);
+        });
 
         action->setEnabled(canChange);
     }
     action
         = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-delete")),
                           i18n("Delete Attachment"));
-    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Delete);});
+    connect(action, &QAction::triggered, this, [this]() {
+        slotHandleAttachment(Viewer::Delete);
+    });
 
     action->setEnabled(canChange && !deletedAttachment);
 #if 0
@@ -671,17 +685,23 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     action
         = menu->addAction(QIcon::fromTheme(QStringLiteral("mail-reply-sender")),
                           i18n("Reply To Author"));
-    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::ReplyMessageToAuthor);});
+    connect(action, &QAction::triggered, this, [this]() {
+        slotHandleAttachment(Viewer::ReplyMessageToAuthor);
+    });
 
     menu->addSeparator();
 
     action = menu->addAction(QIcon::fromTheme(QStringLiteral("mail-reply-all")), i18n(
                                  "Reply To All"));
-    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::ReplyMessageToAll);});
+    connect(action, &QAction::triggered, this, [this]() {
+        slotHandleAttachment(Viewer::ReplyMessageToAll);
+    });
 #endif
     menu->addSeparator();
     action = menu->addAction(i18n("Properties"));
-    connect(action, &QAction::triggered, this, [this]() { slotHandleAttachment(Viewer::Properties);});
+    connect(action, &QAction::triggered, this, [this]() {
+        slotHandleAttachment(Viewer::Properties);
+    });
     menu->exec(globalPos);
     delete menu;
 }

@@ -23,8 +23,7 @@
 #include <QDialog>
 #include "messageviewer_private_export.h"
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class RichTextEditorWidget;
 }
 
@@ -41,7 +40,7 @@ private:
     void writeConfig();
     void readConfig();
 
-     KPIMTextEdit::RichTextEditorWidget *mDetails = nullptr;
+    KPIMTextEdit::RichTextEditorWidget *mDetails = nullptr;
 };
 }
 

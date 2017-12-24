@@ -17,10 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef MAILTRACKINGWARNINGWIDGET_H
 #define MAILTRACKINGWARNINGWIDGET_H
-
 
 #include <KMessageWidget>
 

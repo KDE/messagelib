@@ -694,7 +694,6 @@ public:
     QPrinter *mCurrentPrinter = nullptr;
     QList<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
-
 };
 }
 

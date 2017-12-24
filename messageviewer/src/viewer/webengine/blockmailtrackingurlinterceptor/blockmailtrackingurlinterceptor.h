@@ -31,15 +31,16 @@ public:
     struct MailTrackerBlackList
     {
         MailTrackerBlackList(const QString &company, const QString &pattern, const QString &url)
-            : mCompanyName(company), mCompanyUrl(url), mPattern(pattern)
+            : mCompanyName(company)
+            , mCompanyUrl(url)
+            , mPattern(pattern)
         {
-
         }
+
         QString mCompanyName;
         QString mCompanyUrl;
         QString mPattern;
     };
-
 
     explicit BlockMailTrackingUrlInterceptor(QObject *parent = nullptr);
     ~BlockMailTrackingUrlInterceptor();

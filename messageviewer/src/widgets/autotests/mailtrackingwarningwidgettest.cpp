@@ -26,7 +26,6 @@ QTEST_MAIN(MailTrackingWarningWidgetTest)
 MailTrackingWarningWidgetTest::MailTrackingWarningWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void MailTrackingWarningWidgetTest::shouldHaveDefaultValues()
