@@ -580,7 +580,7 @@ void AttachmentControllerBase::showContextMenu()
     Q_EMIT refreshSelection();
 
     const int numberOfParts(d->selectedParts.count());
-    QMenu *menu = new QMenu;
+    QMenu menu;
 
     const bool enableEditAction = (numberOfParts == 1)
                                   && (!d->selectedParts.first()->isMessageOrMessageCollection());
@@ -601,40 +601,39 @@ void AttachmentControllerBase::showContextMenu()
                 || parentMimeType.contains(QStringLiteral("image/png"))
                 || parentMimeType.contains(QStringLiteral("image/jpeg"))
                 ) {
-                menu->addAction(d->viewContextAction);
+                menu.addAction(d->viewContextAction);
             }
-            d->createOpenWithMenu(menu, d->selectedParts.first());
+            d->createOpenWithMenu(&menu, d->selectedParts.first());
         }
-        menu->addAction(d->openContextAction);
+        menu.addAction(d->openContextAction);
     }
     if (enableEditAction) {
-        menu->addAction(d->editWithContextAction);
-        menu->addAction(d->editContextAction);
+        menu.addAction(d->editWithContextAction);
+        menu.addAction(d->editContextAction);
     }
     if (numberOfParts > 0) {
-        menu->addAction(d->removeContextAction);
+        menu.addAction(d->removeContextAction);
     }
     if (numberOfParts == 1) {
         if (!d->selectedParts.first()->url().isEmpty()) {
-            menu->addAction(d->reloadAttachmentAction);
+            menu.addAction(d->reloadAttachmentAction);
         }
-        menu->addAction(d->saveAsContextAction);
-        menu->addSeparator();
-        menu->addAction(d->propertiesContextAction);
+        menu.addAction(d->saveAsContextAction);
+        menu.addSeparator();
+        menu.addAction(d->propertiesContextAction);
     }
 
     const int nbAttachment = d->model->rowCount();
     if (nbAttachment != numberOfParts) {
-        menu->addSeparator();
-        menu->addAction(d->selectAllAction);
+        menu.addSeparator();
+        menu.addAction(d->selectAllAction);
     }
     if (numberOfParts == 0) {
-        menu->addSeparator();
-        menu->addAction(d->addContextAction);
+        menu.addSeparator();
+        menu.addAction(d->addContextAction);
     }
 
-    menu->exec(QCursor::pos());
-    delete menu;
+    menu.exec(QCursor::pos());
 }
 
 void AttachmentControllerBase::slotOpenWithDialog()

@@ -642,17 +642,17 @@ bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoin
         return false;
     }
 
-    QMenu *menu = new QMenu();
+    QMenu menu;
     QAction *open
-        = menu->addAction(QIcon::fromTheme(QStringLiteral("view-pim-contacts")),
+        = menu.addAction(QIcon::fromTheme(QStringLiteral("view-pim-contacts")),
                           i18n("&Open in Address Book"));
 #ifndef QT_NO_CLIPBOARD
     QAction *copy
-        = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-copy")),
+        = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")),
                           i18n("&Copy Email Address"));
 #endif
 
-    QAction *a = menu->exec(p);
+    QAction *a = menu.exec(p);
     if (a == open) {
         runKAddressBook(url);
 #ifndef QT_NO_CLIPBOARD
@@ -666,7 +666,6 @@ bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoin
         }
 #endif
     }
-    delete menu;
 
     return true;
 }

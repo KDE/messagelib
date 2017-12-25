@@ -594,7 +594,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
 {
     Q_UNUSED(name);
     prepareHandleAttachment(node);
-    QMenu *menu = new QMenu();
+    QMenu menu;
     bool deletedAttachment = false;
     if (node->contentType(false)) {
         deletedAttachment = (node->contentType()->mimeType() == "text/x-moz-deleted");
@@ -602,14 +602,14 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     const QString contentTypeStr = QLatin1String(node->contentType()->mimeType());
 
     QAction *action
-        = menu->addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("to open",
+        = menu.addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("to open",
                                                                                    "Open"));
     action->setEnabled(!deletedAttachment);
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Open);
     });
     if (!deletedAttachment) {
-        createOpenWithMenu(menu, contentTypeStr, true);
+        createOpenWithMenu(&menu, contentTypeStr, true);
     }
 
     QMimeDatabase mimeDb;
@@ -623,7 +623,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
             || parentMimeType.contains(QStringLiteral("image/png"))
             || parentMimeType.contains(QStringLiteral("image/jpeg"))
             ) {
-            action = menu->addAction(i18nc("to view something", "View"));
+            action = menu.addAction(i18nc("to view something", "View"));
             action->setEnabled(!deletedAttachment);
             connect(action, &QAction::triggered, this, [this]() {
                 slotHandleAttachment(Viewer::View);
@@ -642,14 +642,14 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     }
 #endif
 
-    action = menu->addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n(
+    action = menu.addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n(
                                  "Save As..."));
     action->setEnabled(!deletedAttachment);
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Save);
     });
 
-    action = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"));
+    action = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"));
     action->setEnabled(!deletedAttachment);
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Copy);
@@ -663,7 +663,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
 
     if (MessageViewer::MessageViewerSettings::self()->allowAttachmentEditing()) {
         action
-            = menu->addAction(QIcon::fromTheme(QStringLiteral("document-properties")), i18n(
+            = menu.addAction(QIcon::fromTheme(QStringLiteral("document-properties")), i18n(
                                   "Edit Attachment"));
         connect(action, &QAction::triggered, this, [this]() {
             slotHandleAttachment(Viewer::Edit);
@@ -672,7 +672,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         action->setEnabled(canChange);
     }
     action
-        = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-delete")),
+        = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")),
                           i18n("Delete Attachment"));
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Delete);
@@ -697,13 +697,12 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         slotHandleAttachment(Viewer::ReplyMessageToAll);
     });
 #endif
-    menu->addSeparator();
-    action = menu->addAction(i18n("Properties"));
+    menu.addSeparator();
+    action = menu.addAction(i18n("Properties"));
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Properties);
     });
-    menu->exec(globalPos);
-    delete menu;
+    menu.exec(globalPos);
 }
 
 void ViewerPrivate::prepareHandleAttachment(KMime::Content *node)
