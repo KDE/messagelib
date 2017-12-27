@@ -214,7 +214,7 @@ void EditorWatcher::checkEditDone()
 
     // check if it's a mime type that's mostly handled read-only
     const bool isReadOnlyMimeType = (readOnlyMimeTypes.contains(mMimeType)
-                                     || mMimeType.startsWith(QStringLiteral("image/")));
+                                     || mMimeType.startsWith(QLatin1String("image/")));
 
     // nobody can edit that fast, we seem to be unable to detect
     // when the editor will be closed

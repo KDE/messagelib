@@ -120,7 +120,7 @@ public:
                 mimeType = MimeTreeParser::Util::mimetype(name);
             }
 
-            if (mimeType.isValid() && mimeType.name().startsWith(QStringLiteral("multipart/"))) {
+            if (mimeType.isValid() && mimeType.name().startsWith(QLatin1String("multipart/"))) {
                 return QIcon::fromTheme(QStringLiteral("folder"));
             } else if (!iconName.isEmpty() && iconName != QStringLiteral("unknown")) {
                 return QIcon::fromTheme(iconName);

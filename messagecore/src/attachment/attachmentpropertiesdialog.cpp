@@ -308,7 +308,7 @@ void AttachmentPropertiesDialog::Private::saveToPart()
     mPart->setEncrypted(ui->encrypt->isChecked());
     mPart->setInline(ui->autoDisplay->isChecked());
 
-    if (ui->mimeType->currentText().startsWith(QStringLiteral("message"))
+    if (ui->mimeType->currentText().startsWith(QLatin1String("message"))
         && ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE7Bit
         && ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE8Bit) {
         qCWarning(MESSAGECORE_LOG) << "Encoding on message/rfc822 must be \"7bit\" or \"8bit\".";

@@ -114,10 +114,10 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         const QString href = mapVariant.value(QStringLiteral("src")).toString();
         const QUrl url(href);
         if (!title.isEmpty()) {
-            if (title.startsWith(QStringLiteral("http:"))
-                || title.startsWith(QStringLiteral("https:"))
-                || title.startsWith(QStringLiteral("www."))) {
-                if (title.startsWith(QStringLiteral("www."))) {
+            if (title.startsWith(QLatin1String("http:"))
+                || title.startsWith(QLatin1String("https:"))
+                || title.startsWith(QLatin1String("www."))) {
+                if (title.startsWith(QLatin1String("www."))) {
                     const QString completUrl = url.scheme() + QLatin1String("://") + title;
                     if (completUrl != href
                         && href != (completUrl + QLatin1Char('/'))) {
