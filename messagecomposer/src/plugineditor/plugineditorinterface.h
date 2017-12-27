@@ -69,6 +69,9 @@ public:
     KPIMTextEdit::RichTextEditor *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor);
 
+    void setNeedSelectedText(bool b);
+    bool needSelectedText() const;
+
     static QString actionXmlExtension(ActionType::Type type);
 Q_SIGNALS:
     void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);

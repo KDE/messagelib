@@ -51,6 +51,7 @@ public:
     }
 
     ActionType mActionType;
+    bool mSelectedText = false;
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
     PluginEditor *plugin = nullptr;
@@ -85,6 +86,16 @@ KPIMTextEdit::RichTextEditor *PluginEditorInterface::richTextEditor() const
 void PluginEditorInterface::setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor)
 {
     d->mRichTextEditor = richTextEditor;
+}
+
+void PluginEditorInterface::setNeedSelectedText(bool b)
+{
+    d->mSelectedText = b;
+}
+
+bool PluginEditorInterface::needSelectedText() const
+{
+    return d->mSelectedText;
 }
 
 QString PluginEditorInterface::actionXmlExtension(ActionType::Type type)
