@@ -1,7 +1,7 @@
 /*
   Copyright (C) 2010 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.com
   Copyright (c) 2010 Leo Franchi <lfranchi@kde.org>
-  Copyright (c) 2017 Laurent Montel <montel@kde.org>
+  Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
