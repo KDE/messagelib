@@ -82,7 +82,7 @@ std::pair< GpgME::DecryptionResult, GpgME::VerificationResult > QGpgMEJobExecuto
 
 GpgME::ImportResult QGpgMEJobExecutor::exec(QGpgME::ImportJob *job, const QByteArray &certData)
 {
-    connect(job, SIGNAL(result(GpgME::ImportResult)), SLOT(importResult(GpgME::ImportResult)));
+    connect(job, &QGpgME::AbstractImportJob::result, this, &QGpgMEJobExecutor::importResult);
     GpgME::Error err = job->start(certData);
     if (err) {
         return ImportResult(err);

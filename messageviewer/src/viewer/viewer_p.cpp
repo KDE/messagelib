@@ -1615,8 +1615,8 @@ void ViewerPrivate::createActions()
                                               i18n("&Set Encoding"), this);
     mSelectEncodingAction->setToolBarMode(KSelectAction::MenuMode);
     ac->addAction(QStringLiteral("encoding"), mSelectEncodingAction);
-    connect(mSelectEncodingAction, SIGNAL(triggered(int)),
-            SLOT(slotSetEncoding()));
+    connect(mSelectEncodingAction, QOverload<int>::of(&KSelectAction::triggered),
+            this, &ViewerPrivate::slotSetEncoding);
     QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
     encodings.prepend(i18n("Auto"));
     mSelectEncodingAction->setItems(encodings);
