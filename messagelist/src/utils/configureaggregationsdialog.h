@@ -51,9 +51,6 @@ Q_SIGNALS:
     void okClicked();
 
 private:
-    Q_PRIVATE_SLOT(d, void aggregationListItemClicked(QListWidgetItem *cur))
-    Q_PRIVATE_SLOT(d, void editedAggregationNameChanged())
-
     class Private;
     Private *const d;
 };
