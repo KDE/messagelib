@@ -60,8 +60,8 @@ TemplatesConfiguration::TemplatesConfiguration(QWidget *parent, const QString &n
     connect(lineEdit_quote, &QLineEdit::textChanged,
             this, &TemplatesConfiguration::slotTextChanged);
 
-    connect(mInsertCommand, SIGNAL(insertCommand(QString,int)),
-            this, SLOT(slotInsertCommand(QString,int)));
+    connect(mInsertCommand, QOverload<const QString &, int>::of(&TemplateParser::TemplatesInsertCommand::insertCommand),
+            this, &TemplatesConfiguration::slotInsertCommand);
 
     d->mHelpString
         = i18n("<p>Here you can create and manage templates to use when "
