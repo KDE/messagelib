@@ -2758,11 +2758,13 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
         }
 
         // Update the newest/oldest message, since we might be supposed to select those later
-        if (!mOldestItem || mOldestItem->date() > mi->date()) {
-            mOldestItem = mi;
-        }
-        if (!mNewestItem || mNewestItem->date() < mi->date()) {
-            mNewestItem = mi;
+        if (mi->date() != static_cast<uint>(-1)) {
+            if (!mOldestItem || mOldestItem->date() > mi->date()) {
+                mOldestItem = mi;
+            }
+            if (!mNewestItem || mNewestItem->date() < mi->date()) {
+                mNewestItem = mi;
+            }
         }
 
         // Ok.. it passed the initial checks: we will not be discarding it.
