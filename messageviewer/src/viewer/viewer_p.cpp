@@ -603,7 +603,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
 
     QAction *action
         = menu.addAction(QIcon::fromTheme(QStringLiteral("document-open")), i18nc("to open",
-                                                                                   "Open"));
+                                                                                  "Open"));
     action->setEnabled(!deletedAttachment);
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Open);
@@ -643,7 +643,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
 #endif
 
     action = menu.addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n(
-                                 "Save As..."));
+                                "Save As..."));
     action->setEnabled(!deletedAttachment);
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Save);
@@ -664,7 +664,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     if (MessageViewer::MessageViewerSettings::self()->allowAttachmentEditing()) {
         action
             = menu.addAction(QIcon::fromTheme(QStringLiteral("document-properties")), i18n(
-                                  "Edit Attachment"));
+                                 "Edit Attachment"));
         connect(action, &QAction::triggered, this, [this]() {
             slotHandleAttachment(Viewer::Edit);
         });
@@ -673,7 +673,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     }
     action
         = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")),
-                          i18n("Delete Attachment"));
+                         i18n("Delete Attachment"));
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::Delete);
     });
