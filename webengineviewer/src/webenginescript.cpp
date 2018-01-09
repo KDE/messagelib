@@ -123,9 +123,18 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
     return source;
 }
 
+static QString scrollTop()
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+    return QStringLiteral("document.documentElement.scrollTop");
+#else
+    return QStringLiteral("document.body.scrollTop");
+#endif
+}
+
 QString WebEngineScript::scrollPercentage(int percent)
 {
-    const QString source = QStringLiteral("var current = document.documentElement.scrollTop;"
+    const QString source = QStringLiteral("var current = ") + scrollTop() + QStringLiteral(";"
                                                "var docElement = document.documentElement;"
                                                "var height = docElement.clientHeight;"
                                                "var newPosition = current + height * %1 /100;"
@@ -180,7 +189,7 @@ QString WebEngineScript::isScrolledToBottom()
     return QStringLiteral("(function() { "
                                "var docElement = document.documentElement;"
                                "var viewportHeight = docElement.clientHeight;"
-                               "var isAtBottom = document.documentElement.scrollTop + viewportHeight >= document.body.scrollHeight;"
+                               "var isAtBottom = ") + scrollTop() + QStringLiteral(" + viewportHeight >= document.body.scrollHeight;"
                                "return Boolean(isAtBottom); "
                                "}());");
 }
