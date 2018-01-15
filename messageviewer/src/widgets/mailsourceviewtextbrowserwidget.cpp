@@ -30,6 +30,7 @@
  *  your version.
  */
 
+#include "messageviewer_debug.h"
 #include "mailsourceviewtextbrowserwidget.h"
 #include "messageviewer/messageviewerutil.h"
 #include "findbar/findbarsourceview.h"
@@ -76,6 +77,9 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
 
     KSyntaxHighlighting::Definition def;
     def = mRepo.definitionForName(syntax);
+    if (!def.isValid()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Invalid definition name";
+    }
 
     KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(
         mTextBrowser->document());
