@@ -75,8 +75,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     mTextBrowser->setLineWrapMode(QPlainTextEdit::NoWrap);
     mTextBrowser->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
 
-    KSyntaxHighlighting::Definition def;
-    def = mRepo.definitionForName(syntax);
+    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(syntax);
     if (!def.isValid()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Invalid definition name";
     }
