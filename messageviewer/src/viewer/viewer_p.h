@@ -286,6 +286,9 @@ private:
     void initHtmlWidget();
     void createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr, bool fromCurrentContent);
 public:
+
+    void itemFetchResult(KJob *job);
+
     /** Read settings from app's config file. */
     void readConfig();
 
@@ -441,7 +444,6 @@ private Q_SLOTS:
     /** Show hide all fields specified inside this function */
     void toggleFullAddressList();
 
-    void itemFetchResult(KJob *job);
 
     void slotItemChanged(const Akonadi::Item &item, const QSet<QByteArray> &partIdentifiers);
     void slotItemMoved(const Akonadi::Item &, const Akonadi::Collection &, const Akonadi::Collection &);

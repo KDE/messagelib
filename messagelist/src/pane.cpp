@@ -219,7 +219,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
     showHideQuicksearch->setChecked(MessageListSettings::showQuickSearch());
 
     d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("show_quick_search"), showHideQuicksearch);
-    connect(showHideQuicksearch, SIGNAL(triggered(bool)), this, SLOT(changeQuicksearchVisibility(bool)));
+    connect(showHideQuicksearch, &KToggleAction::triggered, this, [this](bool state) { d->changeQuicksearchVisibility(state); });
 
     for (int i = 0; i < count(); ++i) {
         Widget *w = qobject_cast<Widget *>(widget(i));

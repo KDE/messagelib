@@ -107,8 +107,8 @@ StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selec
 
     qCDebug(MESSAGELIST_LOG) << "Using model:" << model->metaObject()->className();
 
-    connect(d->mModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-            this, SLOT(onSourceDataChanged(QModelIndex,QModelIndex)));
+    connect(d->mModel, &QAbstractItemModel::dataChanged,
+            this, [this](const QModelIndex &id1, const QModelIndex &id2) { d->onSourceDataChanged(id1, id2);});
 
     connect(d->mModel, &QAbstractItemModel::layoutAboutToBeChanged, this, &StorageModel::layoutAboutToBeChanged);
     connect(d->mModel, &QAbstractItemModel::layoutChanged, this, &StorageModel::layoutChanged);
