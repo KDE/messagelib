@@ -41,8 +41,6 @@ Q_SIGNALS:
     void okClicked();
 
 private:
-    Q_PRIVATE_SLOT(d, void themeListItemClicked(QListWidgetItem *))
-
     class Private;
     Private *const d;
 };
