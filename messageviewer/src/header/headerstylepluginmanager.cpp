@@ -92,7 +92,7 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
     const QVector<KPluginMetaData> plugins
         = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](
                                          const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QStringLiteral("MessageViewerHeaderStyle/Plugin"));
+        return md.serviceTypes().contains(QLatin1String("MessageViewerHeaderStyle/Plugin"));
     });
 
     QVectorIterator<KPluginMetaData> i(plugins);

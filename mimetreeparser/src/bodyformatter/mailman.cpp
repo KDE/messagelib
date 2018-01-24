@@ -49,7 +49,7 @@ bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content *curNode) const
         return true;
     }
     if (KMime::Headers::Base *header = curNode->headerByType("X-Mailer")) {
-        if (header->asUnicodeString().contains(QStringLiteral("MAILMAN"), Qt::CaseInsensitive)) {
+        if (header->asUnicodeString().contains(QLatin1String("MAILMAN"), Qt::CaseInsensitive)) {
             return true;
         }
     }

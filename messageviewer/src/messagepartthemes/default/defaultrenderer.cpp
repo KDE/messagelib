@@ -240,10 +240,10 @@ QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code, G
 
 bool containsExternalReferences(const QString &str, const QString &extraHead)
 {
-    const bool hasBaseInHeader = extraHead.contains(QStringLiteral(
+    const bool hasBaseInHeader = extraHead.contains(QLatin1String(
                                                         "<base href=\""), Qt::CaseInsensitive);
-    if (hasBaseInHeader && (str.contains(QStringLiteral("href=\"/"), Qt::CaseInsensitive)
-                            || str.contains(QStringLiteral("<img src=\"/"), Qt::CaseInsensitive))) {
+    if (hasBaseInHeader && (str.contains(QLatin1String("href=\"/"), Qt::CaseInsensitive)
+                            || str.contains(QLatin1String("<img src=\"/"), Qt::CaseInsensitive))) {
         return true;
     }
     int httpPos = str.indexOf(QLatin1String("\"http:"), Qt::CaseInsensitive);

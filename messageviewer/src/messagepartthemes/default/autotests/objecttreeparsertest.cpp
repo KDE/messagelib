@@ -205,7 +205,7 @@ void ObjectTreeParserTester::test_HTML()
     otp.parseObjectTree(msg.data());
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "Some HTML text");
-    QVERIFY(otp.htmlContent().contains(QStringLiteral(
+    QVERIFY(otp.htmlContent().contains(QLatin1String(
                                            "Some <span style=\" font-weight:600;\">HTML</span> text")));
     QCOMPARE(otp.htmlContentCharset().data(), "windows-1252");
 }
@@ -245,7 +245,7 @@ void ObjectTreeParserTester::test_HTMLOnly()
     otp.parseObjectTree(msg.data());
 
     QVERIFY(otp.plainTextContent().isEmpty());
-    QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
+    QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
 }
 
 void ObjectTreeParserTester::test_HTMLOnlyText()
@@ -266,7 +266,7 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
     testWriter.end();
 
     QVERIFY(otp.plainTextContent().isEmpty());
-    QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
+    QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
     QVERIFY(testWriter.data().contains("This is an HTML message. For security reasons, only the raw HTML code is shown."));
     QVERIFY(testWriter.data().contains("SOME* HTML text. <br>"));
 }
@@ -289,7 +289,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
         testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
-        QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
+        QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
         QVERIFY(testWriter.data().contains("<b>SOME</b> HTML text."));
         QVERIFY(testWriter.data().contains("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
     }
@@ -304,7 +304,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
         otp.parseObjectTree(msg.data());
         testWriter.end();
 
-        QVERIFY(otp.htmlContent().contains(QStringLiteral("<b>SOME</b> HTML text.")));
+        QVERIFY(otp.htmlContent().contains(QLatin1String("<b>SOME</b> HTML text.")));
         QVERIFY(testWriter.data().contains("<b>SOME</b> HTML text."));
         QVERIFY(!testWriter.data().contains("This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
     }
@@ -326,7 +326,7 @@ void ObjectTreeParserTester::test_Alternative()
         testWriter.end();
 
         QVERIFY(otp.htmlContent().isEmpty());
-        QVERIFY(otp.plainTextContent().contains(QStringLiteral(
+        QVERIFY(otp.plainTextContent().contains(QLatin1String(
                                                     "If you can see this text it means that your email client couldn't display our newsletter properly.")));
         QVERIFY(testWriter.data().contains("If you can see this text it means that your email client couldn't display our newsletter properly."));
     }
@@ -342,9 +342,9 @@ void ObjectTreeParserTester::test_Alternative()
         otp.parseObjectTree(msg.data());
         testWriter.end();
 
-        QVERIFY(otp.plainTextContent().contains(QStringLiteral(
+        QVERIFY(otp.plainTextContent().contains(QLatin1String(
                                                     "If you can see this text it means that your email client couldn't display our newsletter properly.")));
-        QVERIFY(otp.htmlContent().contains(QStringLiteral(
+        QVERIFY(otp.htmlContent().contains(QLatin1String(
                                                "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
         QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }
@@ -379,7 +379,7 @@ void ObjectTreeParserTester::test_Alternative()
         testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
-        QVERIFY(otp.htmlContent().contains(QStringLiteral(
+        QVERIFY(otp.htmlContent().contains(QLatin1String(
                                                "Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
         QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }

@@ -176,7 +176,7 @@ void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &ad
 {
     const QStringList customs = addressee.customs();
     for (const QString &custom : customs) {
-        if (custom.contains(QStringLiteral("MailPreferedFormatting"))) {
+        if (custom.contains(QLatin1String("MailPreferedFormatting"))) {
             const QString value
                 = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral(
                                        "MailPreferedFormatting"));
@@ -187,7 +187,7 @@ void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &ad
             } else {
                 mForceDisplayTo = Viewer::UseGlobalSetting;
             }
-        } else if (custom.contains(QStringLiteral("MailAllowToRemoteContent"))) {
+        } else if (custom.contains(QLatin1String("MailAllowToRemoteContent"))) {
             const QString value
                 = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral(
                                        "MailAllowToRemoteContent"));

@@ -104,7 +104,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     plugins
         += KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](
                                           const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QStringLiteral("MessageViewer/ViewerCommonPlugin"));
+        return md.serviceTypes().contains(QLatin1String("MessageViewer/ViewerCommonPlugin"));
     });
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(

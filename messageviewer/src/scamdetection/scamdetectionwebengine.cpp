@@ -141,7 +141,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         if (!foundScam) {
             //2) detect if url href has ip and not server name.
             const QString hostname = url.host();
-            if (hostname.contains(ip4regExp) && !hostname.contains(QStringLiteral("127.0.0.1"))) { //hostname
+            if (hostname.contains(ip4regExp) && !hostname.contains(QLatin1String("127.0.0.1"))) { //hostname
                 d->mDetails += QLatin1String("<li>") + i18n(
                     "This email contains a link which points to a numerical IP address (%1) instead of a typical textual website address. This is often the case in scam emails.",
                     addWarningColor(hostname)) + QLatin1String("</li>");
@@ -151,14 +151,14 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                     "This email contains a link which points to a hexadecimal IP address (%1) instead of a typical textual website address. This is often the case in scam emails.",
                     addWarningColor(hostname)) + QLatin1String("</li>");
                 foundScam = true;
-            } else if (url.toString().contains(QStringLiteral("url?q="))) { //4) redirect url.
+            } else if (url.toString().contains(QLatin1String("url?q="))) { //4) redirect url.
                 d->mDetails += QLatin1String("<li>") + i18n(
                     "This email contains a link (%1) which has a redirection",
                     addWarningColor(url.toString())) + QLatin1String("</li>");
                 foundScam = true;
             } else if ((url.toString().count(QStringLiteral("http://")) > 1)
                        || (url.toString().count(QStringLiteral("https://")) > 1)) { //5) more that 1 http in url.
-                if (!url.toString().contains(QStringLiteral("kmail:showAuditLog"))) {
+                if (!url.toString().contains(QLatin1String("kmail:showAuditLog"))) {
                     d->mDetails += QLatin1String("<li>") + i18n(
                         "This email contains a link (%1) which contains multiple http://. This is often the case in scam emails.",
                         addWarningColor(url.toString())) + QLatin1String("</li>");

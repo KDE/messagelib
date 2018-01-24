@@ -132,7 +132,7 @@ void MessageFactoryNG::createReplyAsync()
 
     if (auto hdr = m_origMsg->headerByType("List-Post")) {
         const QString hdrListPost = hdr->asUnicodeString();
-        if (hdrListPost.contains(QStringLiteral("mailto:"), Qt::CaseInsensitive)) {
+        if (hdrListPost.contains(QLatin1String("mailto:"), Qt::CaseInsensitive)) {
             QRegExp rx(QStringLiteral("<mailto:([^@>]+)@([^>]+)>"), Qt::CaseInsensitive);
             if (rx.indexIn(hdrListPost, 0) != -1) {   // matched
                 KMime::Types::Mailbox mailbox;
@@ -938,7 +938,7 @@ bool MessageFactoryNG::MDNMDNUnknownOption(const KMime::Message::Ptr &msg)
     if (auto hrd = msg->headerByType("Disposition-Notification-Options")) {
         notificationOptions = hrd->asUnicodeString();
     }
-    if (notificationOptions.contains(QStringLiteral("required"), Qt::CaseSensitive)) {
+    if (notificationOptions.contains(QLatin1String("required"), Qt::CaseSensitive)) {
         // ### hacky; should parse...
         // There is a required option that we don't understand. We need to
         // ask the user what we should do:

@@ -89,7 +89,7 @@ QVector<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pl
 bool PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 {
     const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("kmail"), [](const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QStringLiteral("KMailEditor/PluginCheckBeforeSend"));
+        return md.serviceTypes().contains(QLatin1String("KMailEditor/PluginCheckBeforeSend"));
     });
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
