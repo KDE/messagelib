@@ -27,6 +27,7 @@
 #include <QMimeDatabase>
 #include <QString>
 
+using namespace MimeTreeParser;
 using namespace MimeTreeParser::Util;
 
 bool MimeTreeParser::Util::isTypeBlacklisted(KMime::Content *node)
@@ -127,10 +128,28 @@ QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
 
     QByteArray mimeType = node->contentType()->mimeType();
     if (mimeType.isNull() || mimeType == "application/octet-stream") {
-        const QString mime = mimetype(node->contentDisposition()->filename()).name();
+        const QString mime = MimeTreeParser::Util::mimetype(node->contentDisposition()->filename()).name();
         mimeType = mime.toLatin1();
     }
     mimeType = mimeType.toLower();
-    return iconNameForMimetype(QLatin1String(mimeType), node->contentDisposition()->filename(),
+    return MimeTreeParser::Util::iconNameForMimetype(QLatin1String(mimeType), node->contentDisposition()->filename(),
                                node->contentType()->name());
+}
+
+QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)
+{
+    switch (mode) {
+    case Normal: ///< A normal plaintext message, non-multipart
+        return QStringLiteral("Normal PlainText Message, non-multipart");
+    case Html:           ///< A HTML message, non-multipart
+        return QStringLiteral("A HTML message, non-multipart");
+    case MultipartPlain: ///< A multipart/alternative message, the plain text part is currently displayed
+        return QStringLiteral("A multipart/alternative message, the plain text part is currently displayed");
+    case MultipartHtml:  ///< A multipart/altervative message, the HTML part is currently displayed
+        return QStringLiteral("A multipart/altervative message, the HTML part is currently displayed");
+    case MultipartIcal:  ///< A multipart/altervative message, the ICal part is currently displayed
+        return QStringLiteral("A multipart/altervative message, the ICal part is currently displayed");
+
+    }
+    return {};
 }
