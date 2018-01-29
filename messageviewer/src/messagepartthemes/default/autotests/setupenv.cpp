@@ -30,9 +30,9 @@
 
 void MessageViewer::Test::setupEnv()
 {
-    setenv("KDEHOME", QFile::encodeName(QDir::homePath() + QString::fromLatin1(
-                                            "/.qttest")).constData(), 1);
-    setenv("TZ", "UTC", 1);
+    qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QString::fromLatin1(
+                                            "/.qttest")).constData());
+    qputenv("TZ", "UTC");
     QStandardPaths::setTestModeEnabled(true);
     QIcon::setThemeName(QStringLiteral("breeze"));
     QLocale::setDefault(QLocale(QStringLiteral("en_US")));
