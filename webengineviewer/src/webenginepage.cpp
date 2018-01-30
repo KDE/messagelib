@@ -81,7 +81,8 @@ void WebEnginePage::javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMe
 {
     Q_UNUSED(level);
     Q_UNUSED(sourceID);
-    qDebug() << lineNumber << ":" << message;
+    //Don't convert to debug categories
+    qDebug() << "WebEnginePage::javaScriptConsoleMessage lineNumber: " << lineNumber << " message: " << message;
     Q_EMIT showConsoleMessage(message);
 }
 
