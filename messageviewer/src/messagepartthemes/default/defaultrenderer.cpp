@@ -429,7 +429,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
         plaintext.replace(QLatin1Char('\n'), QStringLiteral("<br>"));
         c.insert(QStringLiteral("plaintext"), plaintext);
     }
-    mp->source()->setHtmlMode(MimeTreeParser::Util::Html, QList<MimeTreeParser::Util::HtmlMode>() << MimeTreeParser::Util::Html);
+    mp->source()->setHtmlMode(MimeTreeParser::Util::Html, QList<MimeTreeParser::Util::HtmlMode>() << MimeTreeParser::Util::Html << MimeTreeParser::Util::Normal);
 
     HTMLBlock::Ptr aBlock;
     if (mp->isAttachment()) {
