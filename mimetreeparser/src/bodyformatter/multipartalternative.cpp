@@ -78,11 +78,11 @@ MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyP
         preferredMode = Util::MultipartPlain;
     }
 
-    qDebug() << " MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyPart &part) const";
-    for (int i = 0; i < mp->availableModes().count(); ++i) {
-        qDebug() << "MultiPartAlternativeBodyPartFormatter::processe Modes " << MimeTreeParser::Util::htmlModeToString(mp->availableModes().at(i));
-    }
-    qDebug() << "MultiPartAlternativeBodyPartFormatter::process prefered " << MimeTreeParser::Util::htmlModeToString(preferredMode);
+//    qDebug() << " MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyPart &part) const";
+//    for (int i = 0; i < mp->availableModes().count(); ++i) {
+//        qDebug() << "MultiPartAlternativeBodyPartFormatter::processe Modes " << MimeTreeParser::Util::htmlModeToString(mp->availableModes().at(i));
+//    }
+//    qDebug() << "MultiPartAlternativeBodyPartFormatter::process prefered " << MimeTreeParser::Util::htmlModeToString(preferredMode);
 
     part.source()->setHtmlMode(preferredMode, mp->availableModes());
     mp->setPreferredMode(preferredMode);
