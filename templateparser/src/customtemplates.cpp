@@ -452,7 +452,7 @@ void CustomTemplates::slotItemChanged(QTreeWidgetItem *item, int column)
     if (item) {
         CustomTemplateItem *vitem = static_cast<CustomTemplateItem *>(item);
         if (column == 1) {
-            const QString newName = vitem->text(1);
+            const QString newName = vitem->text(1).trimmed();
             if (!newName.isEmpty()) {
                 const QString oldName = vitem->oldName();
                 if (nameAlreadyExists(newName, item)) {
