@@ -174,6 +174,7 @@ void CustomTemplatesMenu::update()
             d->mCustomTemplateActions.append(action);
             ++replyallc;
             action = new QAction(nameAction, d->mOwnerActionCollection);   //krazy:exclude=tipsandthis
+            connect(action, &QAction::triggered, this, [this, idx] { slotForwardSelected(idx); });
             d->mCustomForwardActionMenu->addAction(action);
             d->mCustomTemplateActions.append(action);
             ++forwardc;
