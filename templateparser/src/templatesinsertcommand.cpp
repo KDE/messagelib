@@ -388,6 +388,7 @@ static const InsertCommand miscCommands[] = {
         I18N_NOOP("Language"),
         TemplatesInsertCommand::CLanguage
     },
+    //TODO add support for custom variable. %CUSTOM="???" ?
 };
 static const int miscCommandsCount = sizeof(miscCommands) / sizeof(*miscCommands);
 
