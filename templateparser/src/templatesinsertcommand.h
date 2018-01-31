@@ -20,11 +20,11 @@
 #define TEMPLATEPARSER_TEMPLATESINSERTCOMMAND_H
 
 #include <QPushButton>
-
+#include "templateparser_export.h"
 class KActionMenu;
 
 namespace TemplateParser {
-class TemplatesInsertCommand : public QPushButton
+class TEMPLATEPARSER_EXPORT TemplatesInsertCommand : public QPushButton
 {
     Q_OBJECT
 public:
