@@ -684,7 +684,7 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
             for (int i = 0; i < extraNodes.size(); ++i) {
                 KMime::Content *const extraNode = extraNodes[i];
                 if (topLevel == extraNode) {
-                    indexStr.prepend(QLatin1String("e%1:").arg(i));
+                    indexStr.prepend(QStringLiteral("e%1:").arg(i));
                     const QString parentIndex = persistentIndex(it.key());
                     if (!parentIndex.isEmpty()) {
                         indexStr = QStringLiteral("%1:%2").arg(parentIndex, indexStr);
