@@ -345,7 +345,7 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
             } else if (!photoMemento->photo().url().isEmpty()) {
                 settings.photoURL = photoMemento->photo().url();
                 if (settings.photoURL.startsWith(QLatin1Char('/'))) {
-                    settings.photoURL.prepend(QStringLiteral("file:"));
+                    settings.photoURL.prepend(QLatin1String("file:"));
                 }
             } else if (!photoMemento->gravatarPixmap().isNull()) {
                 const QImage photo = photoMemento->gravatarPixmap().toImage();
