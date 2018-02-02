@@ -1,6 +1,7 @@
 {
     "KPlugin": {
         "Description": "This plugin provides a default Grantlee mail header.",
+        "Description[ar]": "توفّر هذه الملحقة ترويسة بريد «غرانتلي» مبدئيّة.",
         "Description[ca@valencia]": "Este connector proporciona una capçalera «Grantlee» predeterminada al correu.",
         "Description[ca]": "Aquest connector proporciona una capçalera «Grantlee» predeterminada al correu.",
         "Description[cs]": "Tento modul poskytuje výchozí hlavičku e-mailu Grantlee.",
@@ -27,6 +28,7 @@
         "Description[zh_CN]": "此插件提供默认 Grantlee 邮件头。",
         "EnabledByDefault": "true",
         "Name": "Default Grantlee Header Style",
+        "Name[ar]": "نمط ترويسات «غرانتلي» المبدئيّ",
         "Name[ca@valencia]": "Estil de capçalera «Grantlee» predeterminat",
         "Name[ca]": "Estil de capçalera «Grantlee» predeterminat",
         "Name[cs]": "Výchozí styl hlavičky Grantlee",

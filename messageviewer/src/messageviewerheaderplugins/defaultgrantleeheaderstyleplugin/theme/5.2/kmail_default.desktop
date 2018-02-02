@@ -2,6 +2,7 @@
 Author=KMail 5.2 Default Theme
 AuthorEmail=montel@kde.org
 Description=KMail Default Theme 5.2 (Based on Breeze Flat author Kristofer Rickheden Gustavsson)
+Description[ar]=سمة «بريدك» المبدئيّة ٥٫٢ (مبنيّة على ”نسيم مسطّح“ لمؤلّفها Kristofer Rickheden Gustavsson)
 Description[ca]=Tema per omissió pel KMail 5.2 (basat en la Brisa Flat de l'autor Kristofer Rickheden Gustavsson)
 Description[ca@valencia]=Tema per omissió pel KMail 5.2 (basat en la Brisa Flat de l'autor Kristofer Rickheden Gustavsson)
 Description[da]=KMail standardtema 5.2 (baseret på Breeze Flat, ophavsmand Kristofer Rickheden Gustavsson)
@@ -29,6 +30,7 @@ Description[x-test]=xxKMail Default Theme 5.2 (Based on Breeze Flat author Krist
 Description[zh_CN]=KMail 默认主题 5.2 (基于微风扁平化作者 Kristofer Rickheden Gustavsson)
 FileName=header.html
 Name=KMail 5.2
+Name[ar]=بريدك ٥٫٢
 Name[ast]=KMail 5.2
 Name[ca]=KMail 5.2
 Name[ca@valencia]=KMail 5.2
