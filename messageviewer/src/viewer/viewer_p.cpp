@@ -2508,7 +2508,7 @@ QString ViewerPrivate::attachmentInjectionHtml()
     html.prepend(link);
 
     if (isFancyTheme) {
-        html.prepend(QLatin1String("<div style=\"float:left;\">%1&nbsp;</div>").arg(i18n(
+        html.prepend(QStringLiteral("<div style=\"float:left;\">%1&nbsp;</div>").arg(i18n(
                                                                                          "Attachments:")));
     }
     return html;
