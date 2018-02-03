@@ -116,6 +116,7 @@ protected:
     KActionMenu *mMenu = nullptr;
 
 private:
+    void fillMenu();
     void fillMenuFromActionMap(const QMap<QString, TemplatesInsertCommandPushButton::Command> &map, KActionMenu *menu);
 };
 }
