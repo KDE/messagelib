@@ -655,7 +655,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                         for (QStringList::ConstIterator it = blockAddrs.constBegin();
                              it != end; ++it) {
                             if (!bStart) {
-                                greenCaseWarning.append(QStringLiteral(", <br />&nbsp; &nbsp;"));
+                                greenCaseWarning.append(QLatin1String(", <br />&nbsp; &nbsp;"));
                             }
 
                             bStart = false;
