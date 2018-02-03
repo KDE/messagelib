@@ -400,7 +400,7 @@ void TemplatesInsertCommand::fillMenuFromActionMap(const QMap< QString, Template
     while (it != end) {
         QAction *action = new QAction(it.key(), menu);   //krazy:exclude=tipsandthis
         const TemplatesInsertCommand::Command cmd = it.value();
-        connect(action, &QAction::triggered, this, [this, cmd]{ slotMapped(cmd); });
+        connect(action, &QAction::triggered, this, [this, cmd]{ slotInsertCommand(cmd); });
         menu->addAction(action);
         ++it;
     }
@@ -476,7 +476,7 @@ TemplatesInsertCommand::~TemplatesInsertCommand()
 {
 }
 
-void TemplatesInsertCommand::slotMapped(TemplatesInsertCommand::Command cmd)
+void TemplatesInsertCommand::slotInsertCommand(TemplatesInsertCommand::Command cmd)
 {
     Q_EMIT insertCommand(cmd);
 

@@ -110,7 +110,7 @@ Q_SIGNALS:
     void insertCommand(const QString &cmd, int adjustCursor = 0);
 
 public Q_SLOTS:
-    void slotMapped(Command cmd);
+    void slotInsertCommand(Command cmd);
 
 protected:
     KActionMenu *mMenu = nullptr;
