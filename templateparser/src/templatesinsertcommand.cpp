@@ -24,7 +24,7 @@
 #include <KLocalizedString>
 
 #undef I18N_NOOP
-#define I18N_NOOP(t) 0, t
+#define I18N_NOOP(t) nullptr, t
 #undef I18N_NOOP2
 #define I18N_NOOP2(c, t) c, t
 
