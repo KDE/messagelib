@@ -125,7 +125,7 @@ void WebEngineView::initializeJQueryScript()
     QFile file(QStringLiteral(":/data/jquery.min.js"));
     file.open(QIODevice::ReadOnly);
     QString jquery = QString::fromUtf8(file.readAll());
-    jquery.append(QStringLiteral("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
+    jquery.append(QLatin1String("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
     d->mManagerScript->addScript(page()->profile(), jquery, QStringLiteral("jquery"), QWebEngineScript::DocumentCreation);
 }
 

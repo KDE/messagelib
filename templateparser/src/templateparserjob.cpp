@@ -1094,7 +1094,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
         } else {
             plainBody.append(c);
             if (c == QLatin1Char('\n') || c == QLatin1Char('\r')) {
-                htmlBody.append(QStringLiteral("<br />"));
+                htmlBody.append(QLatin1String("<br />"));
                 htmlBody.append(c);
                 if (tmpl.size() > i + 1
                     && ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r'))

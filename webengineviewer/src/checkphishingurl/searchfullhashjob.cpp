@@ -215,7 +215,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 
     QVariantMap threatMap;
     QVariantList platformList;
-    platformList.append(QStringLiteral("WINDOWS"));
+    platformList.append(QLatin1String("WINDOWS"));
     threatMap.insert(QStringLiteral("platformTypes"), platformList);
 
     const QVariantList threatTypesList = { QStringLiteral("MALWARE") };
