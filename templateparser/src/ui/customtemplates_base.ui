@@ -336,7 +336,7 @@
           <widget class="KKeySequenceWidget" name="mKeySequenceWidget"/>
          </item>
          <item row="0" column="0">
-          <widget class="TemplateParser::TemplatesInsertCommand" name="mInsertCommand" native="true"/>
+          <widget class="TemplateParser::TemplatesInsertCommandPushButton" name="mInsertCommand" native="true"/>
          </item>
         </layout>
        </item>
@@ -370,9 +370,9 @@
    <header>templatestextedit.h</header>
   </customwidget>
   <customwidget>
-   <class>TemplateParser::TemplatesInsertCommand</class>
+   <class>TemplateParser::TemplatesInsertCommandPushButton</class>
    <extends>QWidget</extends>
-   <header>templatesinsertcommand.h</header>
+   <header>templatesinsertcommandpushbutton.h</header>
   </customwidget>
   <customwidget>
    <class>TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget</class>

@@ -24,12 +24,12 @@
 class KActionMenu;
 
 namespace TemplateParser {
-class TEMPLATEPARSER_EXPORT TemplatesInsertCommand : public QPushButton
+class TEMPLATEPARSER_EXPORT TemplatesInsertCommandPushButton : public QPushButton
 {
     Q_OBJECT
 public:
-    explicit TemplatesInsertCommand(QWidget *parent, const QString &name = QString());
-    ~TemplatesInsertCommand();
+    explicit TemplatesInsertCommandPushButton(QWidget *parent, const QString &name = QString());
+    ~TemplatesInsertCommandPushButton();
 
 public:
     //TODO: apidox for all these enums
@@ -106,7 +106,7 @@ public:
     };
 
 Q_SIGNALS:
-    void insertCommand(TemplatesInsertCommand::Command cmd);
+    void insertCommand(TemplatesInsertCommandPushButton::Command cmd);
     void insertCommand(const QString &cmd, int adjustCursor = 0);
 
 public Q_SLOTS:
@@ -116,7 +116,7 @@ protected:
     KActionMenu *mMenu = nullptr;
 
 private:
-    void fillMenuFromActionMap(const QMap<QString, TemplatesInsertCommand::Command> &map, KActionMenu *menu);
+    void fillMenuFromActionMap(const QMap<QString, TemplatesInsertCommandPushButton::Command> &map, KActionMenu *menu);
 };
 }
 

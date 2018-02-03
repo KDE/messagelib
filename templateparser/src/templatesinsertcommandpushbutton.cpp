@@ -16,7 +16,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include "templatesinsertcommand.h"
+#include "templatesinsertcommandpushbutton.h"
 
 #include <QAction>
 #include <KActionMenu>
@@ -33,7 +33,7 @@ using namespace TemplateParser;
 struct InsertCommand {
     const char *context;
     const char *name;
-    const TemplatesInsertCommand::Command command;
+    const TemplatesInsertCommandPushButton::Command command;
 
     QString getLocalizedDisplayName() const
     {
@@ -44,147 +44,147 @@ struct InsertCommand {
 static const InsertCommand originalCommands[] = {
     {
         I18N_NOOP("Quoted Message Text"),
-        TemplatesInsertCommand::CQuote
+        TemplatesInsertCommandPushButton::CQuote
     },
 
     {
         I18N_NOOP("Message Text as Is"),
-        TemplatesInsertCommand::CText
+        TemplatesInsertCommandPushButton::CText
     },
 
     {
         I18N_NOOP("Message Id"),
-        TemplatesInsertCommand::COMsgId
+        TemplatesInsertCommandPushButton::COMsgId
     },
 
     {
         I18N_NOOP("Date"),
-        TemplatesInsertCommand::CODate
+        TemplatesInsertCommandPushButton::CODate
     },
 
     {
         I18N_NOOP("Date in Short Format"),
-        TemplatesInsertCommand::CODateShort
+        TemplatesInsertCommandPushButton::CODateShort
     },
 
     {
         I18N_NOOP("Date in C Locale"),
-        TemplatesInsertCommand::CODateEn
+        TemplatesInsertCommandPushButton::CODateEn
     },
 
     {
         I18N_NOOP("Day of Week"),
-        TemplatesInsertCommand::CODow
+        TemplatesInsertCommandPushButton::CODow
     },
 
     {
         I18N_NOOP("Time"),
-        TemplatesInsertCommand::COTime
+        TemplatesInsertCommandPushButton::COTime
     },
 
     {
         I18N_NOOP("Time in Long Format"),
-        TemplatesInsertCommand::COTimeLong
+        TemplatesInsertCommandPushButton::COTimeLong
     },
 
     {
         I18N_NOOP("Time in C Locale"),
-        TemplatesInsertCommand::COTimeLongEn
+        TemplatesInsertCommandPushButton::COTimeLongEn
     },
 
     {
         I18N_NOOP("To Field Address"),
-        TemplatesInsertCommand::COToAddr
+        TemplatesInsertCommandPushButton::COToAddr
     },
 
     {
         I18N_NOOP("To Field Name"),
-        TemplatesInsertCommand::COToName
+        TemplatesInsertCommandPushButton::COToName
     },
 
     {
         I18N_NOOP("To Field First Name"),
-        TemplatesInsertCommand::COToFName
+        TemplatesInsertCommandPushButton::COToFName
     },
 
     {
         I18N_NOOP("To Field Last Name"),
-        TemplatesInsertCommand::COToLName
+        TemplatesInsertCommandPushButton::COToLName
     },
 
     {
         I18N_NOOP("CC Field Address"),
-        TemplatesInsertCommand::COCCAddr
+        TemplatesInsertCommandPushButton::COCCAddr
     },
 
     {
         I18N_NOOP("CC Field Name"),
-        TemplatesInsertCommand::COCCName
+        TemplatesInsertCommandPushButton::COCCName
     },
 
     {
         I18N_NOOP("CC Field First Name"),
-        TemplatesInsertCommand::COCCFName
+        TemplatesInsertCommandPushButton::COCCFName
     },
 
     {
         I18N_NOOP("CC Field Last Name"),
-        TemplatesInsertCommand::COCCLName
+        TemplatesInsertCommandPushButton::COCCLName
     },
 
     {
         I18N_NOOP("From Field Address"),
-        TemplatesInsertCommand::COFromAddr
+        TemplatesInsertCommandPushButton::COFromAddr
     },
 
     {
         I18N_NOOP("From Field Name"),
-        TemplatesInsertCommand::COFromName
+        TemplatesInsertCommandPushButton::COFromName
     },
 
     {
         I18N_NOOP("From Field First Name"),
-        TemplatesInsertCommand::COFromFName
+        TemplatesInsertCommandPushButton::COFromFName
     },
 
     {
         I18N_NOOP("From Field Last Name"),
-        TemplatesInsertCommand::COFromLName
+        TemplatesInsertCommandPushButton::COFromLName
     },
 
     {
         I18N_NOOP("Addresses of all recipients"),
-        TemplatesInsertCommand::COAddresseesAddr
+        TemplatesInsertCommandPushButton::COAddresseesAddr
     },
 
     {
         I18N_NOOP2("Template value for subject of the message", "Subject"),
-        TemplatesInsertCommand::COFullSubject
+        TemplatesInsertCommandPushButton::COFullSubject
     },
 
     {
         I18N_NOOP("Quoted Headers"),
-        TemplatesInsertCommand::CQHeaders
+        TemplatesInsertCommandPushButton::CQHeaders
     },
 
     {
         I18N_NOOP("Headers as Is"),
-        TemplatesInsertCommand::CHeaders
+        TemplatesInsertCommandPushButton::CHeaders
     },
 
     {
         I18N_NOOP("Header Content"),
-        TemplatesInsertCommand::COHeader
+        TemplatesInsertCommandPushButton::COHeader
     },
 
     {
         I18N_NOOP("Reply as Quoted Plain Text"),
-        TemplatesInsertCommand::CQuotePlain
+        TemplatesInsertCommandPushButton::CQuotePlain
     },
 
     {
         I18N_NOOP("Reply as Quoted HTML Text"),
-        TemplatesInsertCommand::CQuoteHtml
+        TemplatesInsertCommandPushButton::CQuoteHtml
     }
 };
 static const int originalCommandsCount
@@ -193,106 +193,106 @@ static const int originalCommandsCount
 static const InsertCommand currentCommands[] = {
     {
         I18N_NOOP("Date"),
-        TemplatesInsertCommand::CDate
+        TemplatesInsertCommandPushButton::CDate
     },
 
     {
         I18N_NOOP("Date in Short Format"),
-        TemplatesInsertCommand::CDateShort
+        TemplatesInsertCommandPushButton::CDateShort
     },
 
     {
         I18N_NOOP("Date in C Locale"),
-        TemplatesInsertCommand::CDateEn
+        TemplatesInsertCommandPushButton::CDateEn
     },
 
     {
         I18N_NOOP("Day of Week"),
-        TemplatesInsertCommand::CDow
+        TemplatesInsertCommandPushButton::CDow
     },
 
     {
         I18N_NOOP("Time"),
-        TemplatesInsertCommand::CTime
+        TemplatesInsertCommandPushButton::CTime
     },
 
     {
         I18N_NOOP("Time in Long Format"),
-        TemplatesInsertCommand::CTimeLong
+        TemplatesInsertCommandPushButton::CTimeLong
     },
 
     {
         I18N_NOOP("Time in C Locale"),
-        TemplatesInsertCommand::CTimeLongEn
+        TemplatesInsertCommandPushButton::CTimeLongEn
     },
     {
         I18N_NOOP("To Field Address"),
-        TemplatesInsertCommand::CToAddr
+        TemplatesInsertCommandPushButton::CToAddr
     },
 
     {
         I18N_NOOP("To Field Name"),
-        TemplatesInsertCommand::CToName
+        TemplatesInsertCommandPushButton::CToName
     },
 
     {
         I18N_NOOP("To Field First Name"),
-        TemplatesInsertCommand::CToFName
+        TemplatesInsertCommandPushButton::CToFName
     },
 
     {
         I18N_NOOP("To Field Last Name"),
-        TemplatesInsertCommand::CToLName
+        TemplatesInsertCommandPushButton::CToLName
     },
 
     {
         I18N_NOOP("CC Field Address"),
-        TemplatesInsertCommand::CCCAddr
+        TemplatesInsertCommandPushButton::CCCAddr
     },
 
     {
         I18N_NOOP("CC Field Name"),
-        TemplatesInsertCommand::CCCName
+        TemplatesInsertCommandPushButton::CCCName
     },
 
     {
         I18N_NOOP("CC Field First Name"),
-        TemplatesInsertCommand::CCCFName
+        TemplatesInsertCommandPushButton::CCCFName
     },
 
     {
         I18N_NOOP("CC Field Last Name"),
-        TemplatesInsertCommand::CCCLName
+        TemplatesInsertCommandPushButton::CCCLName
     },
 
     {
         I18N_NOOP("From Field Address"),
-        TemplatesInsertCommand::CFromAddr
+        TemplatesInsertCommandPushButton::CFromAddr
     },
 
     {
         I18N_NOOP("From field Name"),
-        TemplatesInsertCommand::CFromName
+        TemplatesInsertCommandPushButton::CFromName
     },
 
     {
         I18N_NOOP("From Field First Name"),
-        TemplatesInsertCommand::CFromFName
+        TemplatesInsertCommandPushButton::CFromFName
     },
 
     {
         I18N_NOOP("From Field Last Name"),
-        TemplatesInsertCommand::CFromLName
+        TemplatesInsertCommandPushButton::CFromLName
     },
 
     {
         I18N_NOOP2("Template subject command.", "Subject"),
-        TemplatesInsertCommand::CFullSubject
+        TemplatesInsertCommandPushButton::CFullSubject
     },
 
     {
         I18N_NOOP("Header Content"),
-        TemplatesInsertCommand::CHeader
+        TemplatesInsertCommandPushButton::CHeader
     }
 };
 static const int currentCommandsCount = sizeof(currentCommands) / sizeof(*currentCommands);
@@ -300,27 +300,27 @@ static const int currentCommandsCount = sizeof(currentCommands) / sizeof(*curren
 static const InsertCommand extCommands[] = {
     {
         I18N_NOOP("Pipe Original Message Body and Insert Result as Quoted Text"),
-        TemplatesInsertCommand::CQuotePipe
+        TemplatesInsertCommandPushButton::CQuotePipe
     },
 
     {
         I18N_NOOP("Pipe Original Message Body and Insert Result as Is"),
-        TemplatesInsertCommand::CTextPipe
+        TemplatesInsertCommandPushButton::CTextPipe
     },
 
     {
         I18N_NOOP("Pipe Original Message with Headers and Insert Result as Is"),
-        TemplatesInsertCommand::CMsgPipe
+        TemplatesInsertCommandPushButton::CMsgPipe
     },
 
     {
         I18N_NOOP("Pipe Current Message Body and Insert Result as Is"),
-        TemplatesInsertCommand::CBodyPipe
+        TemplatesInsertCommandPushButton::CBodyPipe
     },
 
     {
         I18N_NOOP("Pipe Current Message Body and Replace with Result"),
-        TemplatesInsertCommand::CClearPipe
+        TemplatesInsertCommandPushButton::CClearPipe
     }
 };
 
@@ -330,83 +330,83 @@ static const int extCommandsCount
 static const InsertCommand miscCommands[] = {
     {
         I18N_NOOP2("Inserts user signature, also known as footer, into message", "Signature"),
-        TemplatesInsertCommand::CSignature
+        TemplatesInsertCommandPushButton::CSignature
     },
 
     {
         I18N_NOOP("Insert File Content"),
-        TemplatesInsertCommand::CInsert
+        TemplatesInsertCommandPushButton::CInsert
     },
 
     {
         I18N_NOOP2("All characters, up to and including the next newline, "
                    "are discarded without performing any macro expansion",
                    "Discard to Next Line"),
-        TemplatesInsertCommand::CDnl
+        TemplatesInsertCommandPushButton::CDnl
     },
 
     {
         I18N_NOOP("Template Comment"),
-        TemplatesInsertCommand::CRem
+        TemplatesInsertCommandPushButton::CRem
     },
 
     {
         I18N_NOOP("No Operation"),
-        TemplatesInsertCommand::CNop
+        TemplatesInsertCommandPushButton::CNop
     },
 
     {
         I18N_NOOP("Clear Generated Message"),
-        TemplatesInsertCommand::CClear
+        TemplatesInsertCommandPushButton::CClear
     },
 
     {
         I18N_NOOP("Turn Debug On"),
-        TemplatesInsertCommand::CDebug
+        TemplatesInsertCommandPushButton::CDebug
     },
 
     {
         I18N_NOOP("Turn Debug Off"),
-        TemplatesInsertCommand::CDebugOff
+        TemplatesInsertCommandPushButton::CDebugOff
     },
 
     {
         I18N_NOOP("Cursor position"),
-        TemplatesInsertCommand::CCursor
+        TemplatesInsertCommandPushButton::CCursor
     },
 
     {
         I18N_NOOP("Blank text"),
-        TemplatesInsertCommand::CBlank
+        TemplatesInsertCommandPushButton::CBlank
     },
 
     {
         I18N_NOOP("Dictionary Language"),
-        TemplatesInsertCommand::CDictionaryLanguage
+        TemplatesInsertCommandPushButton::CDictionaryLanguage
     },
     {
         I18N_NOOP("Language"),
-        TemplatesInsertCommand::CLanguage
+        TemplatesInsertCommandPushButton::CLanguage
     },
     //TODO add support for custom variable. %CUSTOM="???" ?
 };
 static const int miscCommandsCount = sizeof(miscCommands) / sizeof(*miscCommands);
 
-void TemplatesInsertCommand::fillMenuFromActionMap(const QMap< QString, TemplatesInsertCommand::Command > &map, KActionMenu *menu)
+void TemplatesInsertCommandPushButton::fillMenuFromActionMap(const QMap< QString, TemplatesInsertCommandPushButton::Command > &map, KActionMenu *menu)
 {
-    QMap< QString, TemplatesInsertCommand::Command >::const_iterator it = map.constBegin();
-    QMap< QString, TemplatesInsertCommand::Command >::const_iterator end = map.constEnd();
+    QMap< QString, TemplatesInsertCommandPushButton::Command >::const_iterator it = map.constBegin();
+    QMap< QString, TemplatesInsertCommandPushButton::Command >::const_iterator end = map.constEnd();
 
     while (it != end) {
         QAction *action = new QAction(it.key(), menu);   //krazy:exclude=tipsandthis
-        const TemplatesInsertCommand::Command cmd = it.value();
+        const TemplatesInsertCommandPushButton::Command cmd = it.value();
         connect(action, &QAction::triggered, this, [this, cmd]{ slotInsertCommand(cmd); });
         menu->addAction(action);
         ++it;
     }
 }
 
-TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &name)
+TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *parent, const QString &name)
     : QPushButton(parent)
 {
     setObjectName(name);
@@ -472,220 +472,220 @@ TemplatesInsertCommand::TemplatesInsertCommand(QWidget *parent, const QString &n
     setMenu(mMenu->menu());
 }
 
-TemplatesInsertCommand::~TemplatesInsertCommand()
+TemplatesInsertCommandPushButton::~TemplatesInsertCommandPushButton()
 {
 }
 
-void TemplatesInsertCommand::slotInsertCommand(TemplatesInsertCommand::Command cmd)
+void TemplatesInsertCommandPushButton::slotInsertCommand(TemplatesInsertCommandPushButton::Command cmd)
 {
     Q_EMIT insertCommand(cmd);
 
     switch (cmd) {
-    case TemplatesInsertCommand::CBlank:
+    case TemplatesInsertCommandPushButton::CBlank:
         Q_EMIT insertCommand(QStringLiteral("%BLANK"));
         break;
-    case TemplatesInsertCommand::CQuote:
+    case TemplatesInsertCommandPushButton::CQuote:
         Q_EMIT insertCommand(QStringLiteral("%QUOTE"));
         break;
-    case TemplatesInsertCommand::CText:
+    case TemplatesInsertCommandPushButton::CText:
         Q_EMIT insertCommand(QStringLiteral("%TEXT"));
         break;
-    case TemplatesInsertCommand::COMsgId:
+    case TemplatesInsertCommandPushButton::COMsgId:
         Q_EMIT insertCommand(QStringLiteral("%OMSGID"));
         break;
-    case TemplatesInsertCommand::CODate:
+    case TemplatesInsertCommandPushButton::CODate:
         Q_EMIT insertCommand(QStringLiteral("%ODATE"));
         break;
-    case TemplatesInsertCommand::CODateShort:
+    case TemplatesInsertCommandPushButton::CODateShort:
         Q_EMIT insertCommand(QStringLiteral("%ODATESHORT"));
         break;
-    case TemplatesInsertCommand::CODateEn:
+    case TemplatesInsertCommandPushButton::CODateEn:
         Q_EMIT insertCommand(QStringLiteral("%ODATEEN"));
         break;
-    case TemplatesInsertCommand::CODow:
+    case TemplatesInsertCommandPushButton::CODow:
         Q_EMIT insertCommand(QStringLiteral("%ODOW"));
         break;
-    case TemplatesInsertCommand::COTime:
+    case TemplatesInsertCommandPushButton::COTime:
         Q_EMIT insertCommand(QStringLiteral("%OTIME"));
         break;
-    case TemplatesInsertCommand::COTimeLong:
+    case TemplatesInsertCommandPushButton::COTimeLong:
         Q_EMIT insertCommand(QStringLiteral("%OTIMELONG"));
         break;
-    case TemplatesInsertCommand::COTimeLongEn:
+    case TemplatesInsertCommandPushButton::COTimeLongEn:
         Q_EMIT insertCommand(QStringLiteral("%OTIMELONGEN"));
         break;
-    case TemplatesInsertCommand::COToAddr:
+    case TemplatesInsertCommandPushButton::COToAddr:
         Q_EMIT insertCommand(QStringLiteral("%OTOADDR"));
         break;
-    case TemplatesInsertCommand::COToName:
+    case TemplatesInsertCommandPushButton::COToName:
         Q_EMIT insertCommand(QStringLiteral("%OTONAME"));
         break;
-    case TemplatesInsertCommand::COToFName:
+    case TemplatesInsertCommandPushButton::COToFName:
         Q_EMIT insertCommand(QStringLiteral("%OTOFNAME"));
         break;
-    case TemplatesInsertCommand::COToLName:
+    case TemplatesInsertCommandPushButton::COToLName:
         Q_EMIT insertCommand(QStringLiteral("%OTOLNAME"));
         break;
-    case TemplatesInsertCommand::COCCAddr:
+    case TemplatesInsertCommandPushButton::COCCAddr:
         Q_EMIT insertCommand(QStringLiteral("%OCCADDR"));
         break;
-    case TemplatesInsertCommand::COCCName:
+    case TemplatesInsertCommandPushButton::COCCName:
         Q_EMIT insertCommand(QStringLiteral("%OCCNAME"));
         break;
-    case TemplatesInsertCommand::COCCFName:
+    case TemplatesInsertCommandPushButton::COCCFName:
         Q_EMIT insertCommand(QStringLiteral("%OCCFNAME"));
         break;
-    case TemplatesInsertCommand::COCCLName:
+    case TemplatesInsertCommandPushButton::COCCLName:
         Q_EMIT insertCommand(QStringLiteral("%OCCLNAME"));
         break;
-    case TemplatesInsertCommand::COFromAddr:
+    case TemplatesInsertCommandPushButton::COFromAddr:
         Q_EMIT insertCommand(QStringLiteral("%OFROMADDR"));
         break;
-    case TemplatesInsertCommand::COFromName:
+    case TemplatesInsertCommandPushButton::COFromName:
         Q_EMIT insertCommand(QStringLiteral("%OFROMNAME"));
         break;
-    case TemplatesInsertCommand::COFromFName:
+    case TemplatesInsertCommandPushButton::COFromFName:
         Q_EMIT insertCommand(QStringLiteral("%OFROMFNAME"));
         break;
-    case TemplatesInsertCommand::COFromLName:
+    case TemplatesInsertCommandPushButton::COFromLName:
         Q_EMIT insertCommand(QStringLiteral("%OFROMLNAME"));
         break;
-    case TemplatesInsertCommand::COFullSubject:
+    case TemplatesInsertCommandPushButton::COFullSubject:
         Q_EMIT insertCommand(QStringLiteral("%OFULLSUBJECT"));
         break;
-    case TemplatesInsertCommand::CQHeaders:
+    case TemplatesInsertCommandPushButton::CQHeaders:
         Q_EMIT insertCommand(QStringLiteral("%QHEADERS"));
         break;
-    case TemplatesInsertCommand::CHeaders:
+    case TemplatesInsertCommandPushButton::CHeaders:
         Q_EMIT insertCommand(QStringLiteral("%HEADERS"));
         break;
-    case TemplatesInsertCommand::COHeader:
+    case TemplatesInsertCommandPushButton::COHeader:
         Q_EMIT insertCommand(QStringLiteral("%OHEADER=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CMsgId:
+    case TemplatesInsertCommandPushButton::CMsgId:
         Q_EMIT insertCommand(QStringLiteral("%MSGID"));
         break;
-    case TemplatesInsertCommand::CDate:
+    case TemplatesInsertCommandPushButton::CDate:
         Q_EMIT insertCommand(QStringLiteral("%DATE"));
         break;
-    case TemplatesInsertCommand::CDateShort:
+    case TemplatesInsertCommandPushButton::CDateShort:
         Q_EMIT insertCommand(QStringLiteral("%DATESHORT"));
         break;
-    case TemplatesInsertCommand::CDateEn:
+    case TemplatesInsertCommandPushButton::CDateEn:
         Q_EMIT insertCommand(QStringLiteral("%DATEEN"));
         break;
-    case TemplatesInsertCommand::CDow:
+    case TemplatesInsertCommandPushButton::CDow:
         Q_EMIT insertCommand(QStringLiteral("%DOW"));
         break;
-    case TemplatesInsertCommand::CTime:
+    case TemplatesInsertCommandPushButton::CTime:
         Q_EMIT insertCommand(QStringLiteral("%TIME"));
         break;
-    case TemplatesInsertCommand::CTimeLong:
+    case TemplatesInsertCommandPushButton::CTimeLong:
         Q_EMIT insertCommand(QStringLiteral("%TIMELONG"));
         break;
-    case TemplatesInsertCommand::CTimeLongEn:
+    case TemplatesInsertCommandPushButton::CTimeLongEn:
         Q_EMIT insertCommand(QStringLiteral("%TIMELONGEN"));
         break;
-    case TemplatesInsertCommand::COAddresseesAddr:
+    case TemplatesInsertCommandPushButton::COAddresseesAddr:
         Q_EMIT insertCommand(QStringLiteral("%OADDRESSEESADDR"));
         break;
-    case TemplatesInsertCommand::CToAddr:
+    case TemplatesInsertCommandPushButton::CToAddr:
         Q_EMIT insertCommand(QStringLiteral("%TOADDR"));
         break;
-    case TemplatesInsertCommand::CToName:
+    case TemplatesInsertCommandPushButton::CToName:
         Q_EMIT insertCommand(QStringLiteral("%TONAME"));
         break;
-    case TemplatesInsertCommand::CToFName:
+    case TemplatesInsertCommandPushButton::CToFName:
         Q_EMIT insertCommand(QStringLiteral("%TOFNAME"));
         break;
-    case TemplatesInsertCommand::CToLName:
+    case TemplatesInsertCommandPushButton::CToLName:
         Q_EMIT insertCommand(QStringLiteral("%TOLNAME"));
         break;
-    case TemplatesInsertCommand::CCCAddr:
+    case TemplatesInsertCommandPushButton::CCCAddr:
         Q_EMIT insertCommand(QStringLiteral("%CCADDR"));
         break;
-    case TemplatesInsertCommand::CCCName:
+    case TemplatesInsertCommandPushButton::CCCName:
         Q_EMIT insertCommand(QStringLiteral("%CCNAME"));
         break;
-    case TemplatesInsertCommand::CCCFName:
+    case TemplatesInsertCommandPushButton::CCCFName:
         Q_EMIT insertCommand(QStringLiteral("%CCFNAME"));
         break;
-    case TemplatesInsertCommand::CCCLName:
+    case TemplatesInsertCommandPushButton::CCCLName:
         Q_EMIT insertCommand(QStringLiteral("%CCLNAME"));
         break;
-    case TemplatesInsertCommand::CFromAddr:
+    case TemplatesInsertCommandPushButton::CFromAddr:
         Q_EMIT insertCommand(QStringLiteral("%FROMADDR"));
         break;
-    case TemplatesInsertCommand::CFromName:
+    case TemplatesInsertCommandPushButton::CFromName:
         Q_EMIT insertCommand(QStringLiteral("%FROMNAME"));
         break;
-    case TemplatesInsertCommand::CFromFName:
+    case TemplatesInsertCommandPushButton::CFromFName:
         Q_EMIT insertCommand(QStringLiteral("%FROMFNAME"));
         break;
-    case TemplatesInsertCommand::CFromLName:
+    case TemplatesInsertCommandPushButton::CFromLName:
         Q_EMIT insertCommand(QStringLiteral("%FROMLNAME"));
         break;
-    case TemplatesInsertCommand::CFullSubject:
+    case TemplatesInsertCommandPushButton::CFullSubject:
         Q_EMIT insertCommand(QStringLiteral("%FULLSUBJECT"));
         break;
-    case TemplatesInsertCommand::CHeader:
+    case TemplatesInsertCommandPushButton::CHeader:
         Q_EMIT insertCommand(QStringLiteral("%HEADER=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CSystem:
+    case TemplatesInsertCommandPushButton::CSystem:
         Q_EMIT insertCommand(QStringLiteral("%SYSTEM=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CQuotePipe:
+    case TemplatesInsertCommandPushButton::CQuotePipe:
         Q_EMIT insertCommand(QStringLiteral("%QUOTEPIPE=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CTextPipe:
+    case TemplatesInsertCommandPushButton::CTextPipe:
         Q_EMIT insertCommand(QStringLiteral("%TEXTPIPE=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CMsgPipe:
+    case TemplatesInsertCommandPushButton::CMsgPipe:
         Q_EMIT insertCommand(QStringLiteral("%MSGPIPE=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CBodyPipe:
+    case TemplatesInsertCommandPushButton::CBodyPipe:
         Q_EMIT insertCommand(QStringLiteral("%BODYPIPE=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CClearPipe:
+    case TemplatesInsertCommandPushButton::CClearPipe:
         Q_EMIT insertCommand(QStringLiteral("%CLEARPIPE=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CCursor:
+    case TemplatesInsertCommandPushButton::CCursor:
         Q_EMIT insertCommand(QStringLiteral("%CURSOR"));
         break;
-    case TemplatesInsertCommand::CSignature:
+    case TemplatesInsertCommandPushButton::CSignature:
         Q_EMIT insertCommand(QStringLiteral("%SIGNATURE"));
         break;
-    case TemplatesInsertCommand::CInsert:
+    case TemplatesInsertCommandPushButton::CInsert:
         Q_EMIT insertCommand(QStringLiteral("%INSERT=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CDnl:
+    case TemplatesInsertCommandPushButton::CDnl:
         Q_EMIT insertCommand(QStringLiteral("%-"));
         break;
-    case TemplatesInsertCommand::CRem:
+    case TemplatesInsertCommandPushButton::CRem:
         Q_EMIT insertCommand(QStringLiteral("%REM=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CNop:
+    case TemplatesInsertCommandPushButton::CNop:
         Q_EMIT insertCommand(QStringLiteral("%NOP"));
         break;
-    case TemplatesInsertCommand::CClear:
+    case TemplatesInsertCommandPushButton::CClear:
         Q_EMIT insertCommand(QStringLiteral("%CLEAR"));
         break;
-    case TemplatesInsertCommand::CDebug:
+    case TemplatesInsertCommandPushButton::CDebug:
         Q_EMIT insertCommand(QStringLiteral("%DEBUG"));
         break;
-    case TemplatesInsertCommand::CDebugOff:
+    case TemplatesInsertCommandPushButton::CDebugOff:
         Q_EMIT insertCommand(QStringLiteral("%DEBUGOFF"));
         break;
-    case TemplatesInsertCommand::CQuotePlain:
+    case TemplatesInsertCommandPushButton::CQuotePlain:
         Q_EMIT insertCommand(QStringLiteral("%FORCEDPLAIN"));
         break;
-    case TemplatesInsertCommand::CQuoteHtml:
+    case TemplatesInsertCommandPushButton::CQuoteHtml:
         Q_EMIT insertCommand(QStringLiteral("%FORCEDHTML"));
         break;
-    case TemplatesInsertCommand::CDictionaryLanguage:
+    case TemplatesInsertCommandPushButton::CDictionaryLanguage:
         Q_EMIT insertCommand(QStringLiteral("%DICTIONARYLANGUAGE=\"\""), -1);
         break;
-    case TemplatesInsertCommand::CLanguage:
+    case TemplatesInsertCommandPushButton::CLanguage:
         Q_EMIT insertCommand(QStringLiteral("%LANGUAGE=\"\""), -1);
         break;
     default:
