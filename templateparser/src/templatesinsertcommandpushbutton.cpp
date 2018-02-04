@@ -414,6 +414,15 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
 
     fillMenu();
     setMenu(mMenu->menu());
+    setToolTip(
+        i18nc("@info:tooltip",
+              "Select a command to insert into the template"));
+    setWhatsThis(
+        i18nc("@info:whatsthis",
+              "Traverse this menu to find a command to insert into the current template "
+              "being edited.  The command will be inserted at the cursor location, "
+              "so you want to move your cursor to the desired insertion point first."));
+
 }
 
 TemplatesInsertCommandPushButton::~TemplatesInsertCommandPushButton()
@@ -426,14 +435,6 @@ void TemplatesInsertCommandPushButton::fillMenu()
 
 
     mMenu = new KActionMenu(i18n("Insert Command"), this);
-    setToolTip(
-        i18nc("@info:tooltip",
-              "Select a command to insert into the template"));
-    setWhatsThis(
-        i18nc("@info:whatsthis",
-              "Traverse this menu to find a command to insert into the current template "
-              "being edited.  The command will be inserted at the cursor location, "
-              "so you want to move your cursor to the desired insertion point first."));
 
     // ******************************************************
     KActionMenu *menu = new KActionMenu(i18n("Original Message"), mMenu);

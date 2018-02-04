@@ -20,8 +20,10 @@
 #ifndef TEMPLATESCOMMANDMENU_H
 #define TEMPLATESCOMMANDMENU_H
 
+#include <QMap>
 #include <QObject>
 #include "templateparser_private_export.h"
+class KActionMenu;
 namespace TemplateParser {
 class TEMPLATEPARSER_TESTS_EXPORT TemplatesCommandMenu : public QObject
 {
@@ -29,6 +31,94 @@ class TEMPLATEPARSER_TESTS_EXPORT TemplatesCommandMenu : public QObject
 public:
     explicit TemplatesCommandMenu(QObject *parent = nullptr);
     ~TemplatesCommandMenu();
+
+    //TODO: apidox for all these enums
+    enum Command {
+        CDnl = 1,
+        CRem,
+        CInsert,
+        CSystem,
+        CQuotePipe,
+        CQuote,
+        CQHeaders,
+        CHeaders,
+        CTextPipe,
+        CMsgPipe,
+        CBodyPipe,
+        CClearPipe,
+        CText,
+        CToAddr,
+        CToName,
+        CFromAddr,
+        CFromName,
+        CFullSubject,
+        CMsgId,
+        COHeader,
+        CHeader,
+        COToAddr,
+        COToName,
+        COFromAddr,
+        COFromName,
+        COFullSubject,
+        COMsgId,
+        CDateEn,
+        CDateShort,
+        CDate,
+        CDow,
+        CTimeLongEn,
+        CTimeLong,
+        CTime,
+        CODateEn,
+        CODateShort,
+        CODate,
+        CODow,
+        COTimeLongEn,
+        COTimeLong,
+        COTime,
+        CBlank,
+        CNop,
+        CClear,
+        CDebug,
+        CDebugOff,
+        CToFName,
+        CToLName,
+        CFromFName,
+        CFromLName,
+        COToFName,
+        COToLName,
+        COFromFName,
+        COFromLName,
+        CCursor,
+        CCCAddr,
+        CCCName,
+        CCCFName,
+        CCCLName,
+        COCCAddr,
+        COCCName,
+        COCCFName,
+        COCCLName,
+        COAddresseesAddr,
+        CSignature,
+        CQuotePlain,
+        CQuoteHtml,
+        CDictionaryLanguage,
+        CLanguage
+    };
+
+Q_SIGNALS:
+    void insertCommand(TemplatesCommandMenu::Command cmd);
+    void insertCommand(const QString &cmd, int adjustCursor = 0);
+
+public Q_SLOTS:
+    void slotInsertCommand(TemplatesCommandMenu::Command cmd);
+
+protected:
+    KActionMenu *mMenu = nullptr;
+
+private:
+    void fillMenu();
+    void fillMenuFromActionMap(const QMap<QString, TemplatesCommandMenu::Command> &map, KActionMenu *menu);
+
 };
 }
 

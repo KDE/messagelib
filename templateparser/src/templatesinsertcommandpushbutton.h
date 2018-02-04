@@ -31,7 +31,6 @@ public:
     explicit TemplatesInsertCommandPushButton(QWidget *parent, const QString &name = QString());
     ~TemplatesInsertCommandPushButton();
 
-public:
     //TODO: apidox for all these enums
     enum Command {
         CDnl = 1,
