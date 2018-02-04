@@ -14,6 +14,7 @@ set(templateparser_LIB_SRCS
     templatesconfiguration.cpp
     templatesinsertcommandpushbutton.cpp
     templatescommandmenu.cpp
+    templatesinsertcommandaction.cpp
     templatestextedit.cpp
     templatestexteditor.cpp
     templatewebengineview.cpp
@@ -83,6 +84,7 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     TemplatesTextEdit
     TemplatesUtil
     TemplatesInsertCommandPushButton
+    TemplatesInsertCommandAction
     TemplateParserJob
     TemplateParserExtractHtmlInfoResult
     TemplateParserEmailAddressRequesterBase
