@@ -26,12 +26,15 @@
 #include "templateparser_export.h"
 
 namespace TemplateParser {
+class TemplatesCommandMenu;
 class TEMPLATEPARSER_EXPORT TemplatesInsertCommandAction : public QAction
 {
     Q_OBJECT
 public:
     explicit TemplatesInsertCommandAction(QObject *parent = nullptr);
     ~TemplatesInsertCommandAction();
+private:
+    TemplatesCommandMenu *mMenuCommand = nullptr;
 };
 
 }

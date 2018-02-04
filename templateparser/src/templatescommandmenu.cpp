@@ -412,12 +412,17 @@ void TemplatesCommandMenu::fillMenuFromActionMap(const QMap< QString, TemplatesC
 TemplatesCommandMenu::TemplatesCommandMenu(QObject *parent)
     : QObject(parent)
 {
-
+    fillMenu();
 }
 
 TemplatesCommandMenu::~TemplatesCommandMenu()
 {
 
+}
+
+QMenu *TemplatesCommandMenu::menu() const
+{
+    return mMenu->menu();
 }
 
 void TemplatesCommandMenu::fillMenu()

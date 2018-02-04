@@ -18,12 +18,15 @@
 */
 
 
+#include "templatescommandmenu.h"
 #include "templatesinsertcommandaction.h"
 using namespace TemplateParser;
 
 TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
     : QAction(parent)
 {
+    mMenuCommand = new TemplatesCommandMenu(this);
+    mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
 
 }
 

@@ -24,6 +24,7 @@
 #include <QObject>
 #include "templateparser_private_export.h"
 class KActionMenu;
+class QMenu;
 namespace TemplateParser {
 class TEMPLATEPARSER_TESTS_EXPORT TemplatesCommandMenu : public QObject
 {
@@ -105,6 +106,7 @@ public:
         CLanguage
     };
 
+    QMenu *menu() const;
 Q_SIGNALS:
     void insertCommand(TemplatesCommandMenu::Command cmd);
     void insertCommand(const QString &cmd, int adjustCursor = 0);
