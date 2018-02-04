@@ -35,6 +35,7 @@ public:
     ~TemplatesInsertCommandAction();
 private:
     TemplatesCommandMenu *mMenuCommand = nullptr;
+    void slotInsertCommand(const QString &cmd, int adjustCursor);
 };
 
 }

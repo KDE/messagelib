@@ -27,10 +27,17 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
 {
     mMenuCommand = new TemplatesCommandMenu(this);
     mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
+    //connect(mMenuCommand, &TemplatesCommandMenu::insertCommand, this, &TemplatesInsertCommandAction::slotInsertCommand);
 
+    setMenu(mMenuCommand->menu());
 }
 
 TemplatesInsertCommandAction::~TemplatesInsertCommandAction()
 {
 
+}
+
+void TemplatesInsertCommandAction::slotInsertCommand(const QString &cmd, int adjustCursor)
+{
+    //TODO
 }
