@@ -413,6 +413,7 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
     setText(i18n("&Insert Command"));
 
     fillMenu();
+    setMenu(mMenu->menu());
 }
 
 TemplatesInsertCommandPushButton::~TemplatesInsertCommandPushButton()
@@ -478,7 +479,6 @@ void TemplatesInsertCommandPushButton::fillMenu()
 
     fillMenuFromActionMap(commandMap, menu);
 
-    setMenu(mMenu->menu());
 }
 
 
