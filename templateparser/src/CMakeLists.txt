@@ -13,6 +13,7 @@ set(templateparser_LIB_SRCS
     customtemplatesmenu.cpp
     templatesconfiguration.cpp
     templatesinsertcommandpushbutton.cpp
+    templatescommandmenu.cpp
     templatestextedit.cpp
     templatestexteditor.cpp
     templatewebengineview.cpp
