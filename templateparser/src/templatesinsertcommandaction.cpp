@@ -27,7 +27,7 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
 {
     mMenuCommand = new TemplatesCommandMenu(this);
     mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
-    //connect(mMenuCommand, &TemplatesCommandMenu::insertCommand, this, &TemplatesInsertCommandAction::slotInsertCommand);
+    connect(mMenuCommand, QOverload<const QString &, int>::of(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandAction::insertCommand);
 
     setMenu(mMenuCommand->menu());
 }
@@ -35,9 +35,4 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
 TemplatesInsertCommandAction::~TemplatesInsertCommandAction()
 {
 
-}
-
-void TemplatesInsertCommandAction::slotInsertCommand(const QString &cmd, int adjustCursor)
-{
-    //TODO
 }

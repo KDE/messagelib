@@ -17,27 +17,12 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "templatesinsertcommandactiontest.h"
+#include <QTest>
+QTEST_MAIN(TemplatesInsertCommandActionTest)
 
-#ifndef TEMPLATESINSERTCOMMANDACTION_H
-#define TEMPLATESINSERTCOMMANDACTION_H
-
-#include <QAction>
-
-#include "templateparser_export.h"
-
-namespace TemplateParser {
-class TemplatesCommandMenu;
-class TEMPLATEPARSER_EXPORT TemplatesInsertCommandAction : public QAction
+TemplatesInsertCommandActionTest::TemplatesInsertCommandActionTest(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
-public:
-    explicit TemplatesInsertCommandAction(QObject *parent = nullptr);
-    ~TemplatesInsertCommandAction();
-Q_SIGNALS:
-    void insertCommand(const QString &cmd, int adjustCursor);
-private:
-    TemplatesCommandMenu *mMenuCommand = nullptr;
-};
 
 }
-#endif // TEMPLATESINSERTCOMMANDACTION_H
