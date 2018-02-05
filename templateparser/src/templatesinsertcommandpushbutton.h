@@ -24,6 +24,7 @@
 class KActionMenu;
 
 namespace TemplateParser {
+class TemplatesCommandMenu;
 class TEMPLATEPARSER_EXPORT TemplatesInsertCommandPushButton : public QPushButton
 {
     Q_OBJECT
@@ -31,92 +32,11 @@ public:
     explicit TemplatesInsertCommandPushButton(QWidget *parent, const QString &name = QString());
     ~TemplatesInsertCommandPushButton();
 
-    //TODO: apidox for all these enums
-    enum Command {
-        CDnl = 1,
-        CRem,
-        CInsert,
-        CSystem,
-        CQuotePipe,
-        CQuote,
-        CQHeaders,
-        CHeaders,
-        CTextPipe,
-        CMsgPipe,
-        CBodyPipe,
-        CClearPipe,
-        CText,
-        CToAddr,
-        CToName,
-        CFromAddr,
-        CFromName,
-        CFullSubject,
-        CMsgId,
-        COHeader,
-        CHeader,
-        COToAddr,
-        COToName,
-        COFromAddr,
-        COFromName,
-        COFullSubject,
-        COMsgId,
-        CDateEn,
-        CDateShort,
-        CDate,
-        CDow,
-        CTimeLongEn,
-        CTimeLong,
-        CTime,
-        CODateEn,
-        CODateShort,
-        CODate,
-        CODow,
-        COTimeLongEn,
-        COTimeLong,
-        COTime,
-        CBlank,
-        CNop,
-        CClear,
-        CDebug,
-        CDebugOff,
-        CToFName,
-        CToLName,
-        CFromFName,
-        CFromLName,
-        COToFName,
-        COToLName,
-        COFromFName,
-        COFromLName,
-        CCursor,
-        CCCAddr,
-        CCCName,
-        CCCFName,
-        CCCLName,
-        COCCAddr,
-        COCCName,
-        COCCFName,
-        COCCLName,
-        COAddresseesAddr,
-        CSignature,
-        CQuotePlain,
-        CQuoteHtml,
-        CDictionaryLanguage,
-        CLanguage
-    };
-
 Q_SIGNALS:
-    void insertCommand(TemplatesInsertCommandPushButton::Command cmd);
     void insertCommand(const QString &cmd, int adjustCursor = 0);
 
-public Q_SLOTS:
-    void slotInsertCommand(Command cmd);
-
-protected:
-    KActionMenu *mMenu = nullptr;
-
 private:
-    void fillMenu();
-    void fillMenuFromActionMap(const QMap<QString, TemplatesInsertCommandPushButton::Command> &map, KActionMenu *menu);
+    TemplatesCommandMenu *mMenuCommand = nullptr;
 };
 }
 
