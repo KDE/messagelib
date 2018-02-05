@@ -18,6 +18,8 @@
 */
 
 #include "templatesinsertcommandactiontest.h"
+#include "templatesinsertcommandaction.h"
+#include "templatescommandmenu.h"
 #include <QTest>
 QTEST_MAIN(TemplatesInsertCommandActionTest)
 
@@ -25,4 +27,12 @@ TemplatesInsertCommandActionTest::TemplatesInsertCommandActionTest(QObject *pare
     : QObject(parent)
 {
 
+}
+
+void TemplatesInsertCommandActionTest::shouldHaveDefaultValue()
+{
+    TemplateParser::TemplatesInsertCommandAction act;
+    QVERIFY(act.menu());
+    TemplateParser::TemplatesCommandMenu *menu = act.findChild<TemplateParser::TemplatesCommandMenu *>(QStringLiteral("templatescommandmenu"));
+    QVERIFY(menu);
 }

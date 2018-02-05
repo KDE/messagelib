@@ -28,6 +28,9 @@ class TemplatesInsertCommandActionTest : public QObject
 public:
     explicit TemplatesInsertCommandActionTest(QObject *parent = nullptr);
     ~TemplatesInsertCommandActionTest() = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // TEMPLATESINSERTCOMMANDACTIONTEST_H
