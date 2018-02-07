@@ -175,11 +175,11 @@ QString ImageScaling::generateNewName()
     }
     if (d->mName.endsWith(QLatin1String(".png"))) {
         if (type != QLatin1String("PNG")) {
-            d->mName.replace(QStringLiteral(".png"), QStringLiteral(".jpg"));
+            d->mName.replace(QLatin1String(".png"), QLatin1String(".jpg"));
         }
     } else if (d->mName.endsWith(QLatin1String(".jpg"))) {
         if (type != QLatin1String("JPG")) {
-            d->mName.replace(QStringLiteral(".jpg"), QStringLiteral(".png"));
+            d->mName.replace(QLatin1String(".jpg"), QLatin1String(".png"));
         }
     } else {
         if (type == QLatin1String("PNG")) {

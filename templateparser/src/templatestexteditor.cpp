@@ -40,7 +40,7 @@ TemplatesTextEditor::TemplatesTextEditor(QWidget *parent)
     const QStringList lst = TemplateParser::Util::keywords();
     for (QString str : lst) {
         excludeKeyWord << str.remove(QLatin1Char('%'));
-        excludeKeyWord << str.replace(QStringLiteral("\\("), QStringLiteral("("));
+        excludeKeyWord << str.replace(QLatin1String("\\("), QLatin1String("("));
     }
     addIgnoreWords(excludeKeyWord);
     setWordWrapMode(QTextOption::NoWrap);
@@ -84,7 +84,7 @@ void TemplatesTextEditor::initCompleter()
     const QStringList lst = TemplateParser::Util::keywords();
     excludeKeyWord.reserve(lst.count());
     for (QString str : lst) {
-        excludeKeyWord << str.replace(QStringLiteral("\\("), QStringLiteral("("));
+        excludeKeyWord << str.replace(QLatin1String("\\("), QLatin1String("("));
     }
     listWord << excludeKeyWord;
     listWord << Util::keywordsWithArgs();
