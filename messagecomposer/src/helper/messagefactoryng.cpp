@@ -954,7 +954,7 @@ uint MessageFactoryNG::identityUoid(const KMime::Message::Ptr &msg)
         idString = hdr->asUnicodeString().trimmed();
     }
     bool ok = false;
-    int id = idString.toUInt(&ok);
+    uint id = idString.toUInt(&ok);
 
     if (!ok || id == 0) {
         id = m_identityManager->identityForAddress(msg->to()->asUnicodeString() + QLatin1String(", ") + msg->cc()->asUnicodeString()).uoid();

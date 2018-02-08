@@ -48,10 +48,10 @@ public:
     {
     }
 
-    KMime::Content *content = nullptr;
+    QStringList recipients;
     std::vector<GpgME::Key> keys;
     Kleo::CryptoMessageFormat format;
-    QStringList recipients;
+    KMime::Content *content = nullptr;
 
     // copied from messagecomposer.cpp
     bool binaryHint(Kleo::CryptoMessageFormat f)

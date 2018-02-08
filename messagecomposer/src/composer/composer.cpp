@@ -48,17 +48,6 @@ class MessageComposer::ComposerPrivate : public JobBasePrivate
 public:
     ComposerPrivate(Composer *qq)
         : JobBasePrivate(qq)
-        , started(false)
-        , finished(false)
-        , sign(false)
-        , encrypt(false)
-        , noCrypto(false)
-        , autoSaving(false)
-        , globalPart(nullptr)
-        , infoPart(nullptr)
-        , textPart(nullptr)
-        , skeletonMessage(nullptr)
-        , resultContent(nullptr)
     {
     }
 
@@ -73,32 +62,32 @@ public:
     void attachmentsFinished(KJob *job);   // slot
 
     void composeFinalStep(KMime::Content *headers, KMime::Content *content);
-    bool started;
-    bool finished;
-    bool sign;
-    bool encrypt;
-    bool noCrypto;
-    bool autoSaving;
+
+    QList<QPair<QStringList, std::vector<GpgME::Key> > > encData;
+    std::vector<GpgME::Key> signers;
+    AttachmentPart::List attachmentParts;
+    // attachments with different sign/encrypt settings from
+    // main message body. added at the end of the process
+    AttachmentPart::List lateAttachmentParts;
+    QList<KMime::Message::Ptr> resultMessages;
 
     Kleo::CryptoMessageFormat format;
-    std::vector<GpgME::Key> signers;
-    QList<QPair<QStringList, std::vector<GpgME::Key> > > encData;
-
-    QList<KMime::Message::Ptr> resultMessages;
 
     // Stuff that the application plays with.
     GlobalPart *globalPart = nullptr;
     InfoPart *infoPart = nullptr;
     TextPart *textPart = nullptr;
-    AttachmentPart::List attachmentParts;
-    // attachments with different sign/encrypt settings from
-    // main message body. added at the end of the process
-    AttachmentPart::List lateAttachmentParts;
 
     // Stuff that we play with.
     KMime::Message *skeletonMessage = nullptr;
     KMime::Content *resultContent = nullptr;
 
+    bool started = false;
+    bool finished = false;
+    bool sign = false;
+    bool encrypt = false;
+    bool noCrypto = false;
+    bool autoSaving = false;
     Q_DECLARE_PUBLIC(Composer)
 };
 

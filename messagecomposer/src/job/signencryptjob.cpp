@@ -49,12 +49,12 @@ public:
     {
     }
 
-    KMime::Content *content = nullptr;
     std::vector<GpgME::Key> signers;
-    Kleo::CryptoMessageFormat format;
 
     std::vector<GpgME::Key> encKeys;
     QStringList recipients;
+    Kleo::CryptoMessageFormat format;
+    KMime::Content *content = nullptr;
 
     // copied from messagecomposer.cpp
     bool binaryHint(Kleo::CryptoMessageFormat f)

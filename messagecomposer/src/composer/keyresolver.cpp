@@ -113,11 +113,6 @@ CopyKeysAndEncryptionPreferences(const Kleo::KeyResolver::Item &oldItem, const K
     return Kleo::KeyResolver::Item(oldItem.address, newItem.keys, newItem.pref, oldItem.signPref, oldItem.format);
 }
 
-static inline bool WithRespectToKeyID(const GpgME::Key &left, const GpgME::Key &right)
-{
-    return qstrcmp(left.keyID(), right.keyID()) == 0;
-}
-
 static bool ValidOpenPGPEncryptionKey(const GpgME::Key &key)
 {
     if (key.protocol() != GpgME::OpenPGP) {
@@ -226,19 +221,9 @@ static inline bool NotValidTrustedOpenPGPEncryptionKey(const GpgME::Key &key)
     return !ValidTrustedOpenPGPEncryptionKey(key);
 }
 
-static inline bool NotValidOpenPGPEncryptionKey(const GpgME::Key &key)
-{
-    return !ValidOpenPGPEncryptionKey(key);
-}
-
 static inline bool NotValidTrustedSMIMEEncryptionKey(const GpgME::Key &key)
 {
     return !ValidTrustedSMIMEEncryptionKey(key);
-}
-
-static inline bool NotValidSMIMEEncryptionKey(const GpgME::Key &key)
-{
-    return !ValidSMIMEEncryptionKey(key);
 }
 
 static inline bool NotValidTrustedEncryptionKey(const GpgME::Key &key)
@@ -249,11 +234,6 @@ static inline bool NotValidTrustedEncryptionKey(const GpgME::Key &key)
 static inline bool NotValidEncryptionKey(const GpgME::Key &key)
 {
     return !ValidEncryptionKey(key);
-}
-
-static inline bool NotValidSigningKey(const GpgME::Key &key)
-{
-    return !ValidSigningKey(key);
 }
 
 static inline bool NotValidOpenPGPSigningKey(const GpgME::Key &key)

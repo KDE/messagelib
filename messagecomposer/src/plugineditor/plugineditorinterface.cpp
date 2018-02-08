@@ -51,10 +51,10 @@ public:
     }
 
     ActionType mActionType;
-    bool mSelectedText = false;
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
     PluginEditor *plugin = nullptr;
+    bool mSelectedText = false;
 };
 
 PluginEditorInterface::PluginEditorInterface(QObject *parent)

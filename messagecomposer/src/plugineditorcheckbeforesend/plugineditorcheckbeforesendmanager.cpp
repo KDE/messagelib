@@ -35,9 +35,9 @@ public:
     {
     }
 
+    PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    PimCommon::PluginUtilData pluginData;
     PluginEditorCheckBeforeSend *plugin = nullptr;
     bool isEnabled = true;
 };

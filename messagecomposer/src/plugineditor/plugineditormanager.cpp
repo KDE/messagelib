@@ -40,8 +40,8 @@ public:
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
     int order = 0;
-    PluginEditor *plugin = nullptr;
     bool isEnabled = true;
+    PluginEditor *plugin = nullptr;
 };
 
 namespace {

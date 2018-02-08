@@ -144,7 +144,7 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml)
         const QString fontSizeStr = styleRegex.cap(1);
         const int ptValue = fontSizeStr.toInt(&ok);
         if (ok) {
-            double emValue = (double)ptValue / 12;
+            double emValue = static_cast<double>(ptValue) / 12;
             const QString emValueStr = QString::number(emValue, 'g', 2);
             cleanHtml.replace(styleRegex.pos(1), QString(fontSizeStr + QLatin1String("px")).length(), emValueStr + QLatin1String("em"));
         }

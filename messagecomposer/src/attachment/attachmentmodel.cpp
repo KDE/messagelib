@@ -51,15 +51,15 @@ public:
     Private(AttachmentModel *qq);
     ~Private();
 
-    AttachmentModel *const q;
     AttachmentPart::List parts;
+    QList<QTemporaryDir *> tempDirs;
+    AttachmentModel *const q;
     bool modified = false;
     bool encryptEnabled = false;
     bool signEnabled = false;
     bool encryptSelected = false;
     bool signSelected = false;
     bool autoDisplayEnabled = false;
-    QList<QTemporaryDir *> tempDirs;
 };
 
 AttachmentModel::Private::Private(AttachmentModel *qq)
