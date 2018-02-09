@@ -49,6 +49,7 @@ HtmlStatusBar::HtmlStatusBar(QWidget *parent)
 {
     setAlignment(Qt::AlignHCenter | Qt::AlignTop);
     setAutoFillBackground(true);
+    setCursor(QCursor(Qt::PointingHandCursor));
     update();
 }
 
