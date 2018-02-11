@@ -29,7 +29,7 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <QFrame>
-#include <QHash>
+#include <QMap>
 
 #include <KLocalizedString>
 #include <KIconLoader>
@@ -257,9 +257,9 @@ void ConfigureAggregationsDialog::Private::fillAggregationList()
     if (!Manager::instance()) {
         return;
     }
-    const QHash< QString, Aggregation * > &sets = Manager::instance()->aggregations();
-    QHash< QString, Aggregation * >::ConstIterator end(sets.constEnd());
-    for (QHash< QString, Aggregation * >::ConstIterator it = sets.constBegin(); it != end; ++it) {
+    const QMap< QString, Aggregation * > &sets = Manager::instance()->aggregations();
+    QMap< QString, Aggregation * >::ConstIterator end(sets.constEnd());
+    for (QMap< QString, Aggregation * >::ConstIterator it = sets.constBegin(); it != end; ++it) {
         (void)new AggregationListWidgetItem(mAggregationList, *(*it));
     }
 }

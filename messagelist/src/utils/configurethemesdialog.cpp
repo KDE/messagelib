@@ -29,7 +29,7 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <QFrame>
-#include <QHash>
+#include <QMap>
 
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -252,10 +252,10 @@ void ConfigureThemesDialog::Private::editedThemeNameChanged()
 
 void ConfigureThemesDialog::Private::fillThemeList()
 {
-    const QHash< QString, Theme * > &sets = Manager::instance()->themes();
+    const QMap< QString, Theme * > &sets = Manager::instance()->themes();
 
-    QHash< QString, Theme * >::ConstIterator end(sets.constEnd());
-    for (QHash< QString, Theme * >::ConstIterator it = sets.constBegin(); it != end; ++it) {
+    QMap< QString, Theme * >::ConstIterator end(sets.constEnd());
+    for (QMap< QString, Theme * >::ConstIterator it = sets.constBegin(); it != end; ++it) {
         (void)new ThemeListWidgetItem(mThemeList, *(*it));
     }
 }
