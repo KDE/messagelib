@@ -23,7 +23,7 @@
 
 #include <core/sortorder.h>
 #include <QList>
-#include <QHash>
+#include <QMap>
 #include <QObject>
 
 #include <collection.h>
@@ -61,8 +61,8 @@ protected:
 private:
     static Manager *mInstance;
     QList< Widget * > mWidgetList;
-    QHash< QString, Aggregation * > mAggregations;
-    QHash< QString, Theme * > mThemes;
+    QMap< QString, Aggregation * > mAggregations;
+    QMap< QString, Theme * > mThemes;
     KMime::DateFormatter *mDateFormatter = nullptr;
     QString mCachedLocalizedUnknownText;
 
@@ -102,7 +102,7 @@ public:
     void addAggregation(Aggregation *set);
     void removeAllAggregations();
 
-    const QHash< QString, Aggregation * > &aggregations() const
+    const QMap< QString, Aggregation * > &aggregations() const
     {
         return mAggregations;
     }
@@ -132,7 +132,7 @@ public:
     void addTheme(Theme *set);
     void removeAllThemes();
 
-    const QHash< QString, Theme * > &themes() const
+    const QMap< QString, Theme * > &themes() const
     {
         return mThemes;
     }

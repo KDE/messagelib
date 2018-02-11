@@ -128,7 +128,7 @@ const Aggregation *Manager::defaultAggregation()
     }
 
     // try just the first one
-    QHash< QString, Aggregation * >::ConstIterator it = mAggregations.constBegin();
+    QMap< QString, Aggregation * >::ConstIterator it = mAggregations.constBegin();
     if (it != mAggregations.constEnd()) {
         return *it;
     }
@@ -379,8 +379,8 @@ void Manager::createDefaultAggregations()
 
 void Manager::removeAllAggregations()
 {
-    QHash< QString, Aggregation * >::ConstIterator end(mAggregations.constEnd());
-    for (QHash< QString, Aggregation * >::ConstIterator it = mAggregations.constBegin(); it != end; ++it) {
+    QMap< QString, Aggregation * >::ConstIterator end(mAggregations.constEnd());
+    for (QMap< QString, Aggregation * >::ConstIterator it = mAggregations.constBegin(); it != end; ++it) {
         delete(*it);
     }
 
@@ -448,7 +448,7 @@ const Theme *Manager::defaultTheme()
     }
 
     // try just the first one
-    QHash< QString, Theme * >::ConstIterator it = mThemes.constBegin();
+    QMap< QString, Theme * >::ConstIterator it = mThemes.constBegin();
     if (it != mThemes.constEnd()) {
         return *it;
     }
@@ -807,8 +807,8 @@ void Manager::createDefaultThemes()
 
 void Manager::removeAllThemes()
 {
-    QHash< QString, Theme * >::ConstIterator end(mThemes.constEnd());
-    for (QHash< QString, Theme * >::ConstIterator it = mThemes.constBegin(); it != end; ++it) {
+    QMap< QString, Theme * >::ConstIterator end(mThemes.constEnd());
+    for (QMap< QString, Theme * >::ConstIterator it = mThemes.constBegin(); it != end; ++it) {
         delete(*it);
     }
 
@@ -950,8 +950,8 @@ void Manager::saveConfiguration()
         conf.writeEntry("Count", mAggregations.count());
 
         int idx = 0;
-        QHash< QString, Aggregation * >::ConstIterator end(mAggregations.end());
-        for (QHash< QString, Aggregation * >::ConstIterator it = mAggregations.constBegin(); it != end; ++it) {
+        QMap< QString, Aggregation * >::ConstIterator end(mAggregations.end());
+        for (QMap< QString, Aggregation * >::ConstIterator it = mAggregations.constBegin(); it != end; ++it) {
             conf.writeEntry(QStringLiteral("Set%1").arg(idx), (*it)->saveToString());
             ++idx;
         }
@@ -966,8 +966,8 @@ void Manager::saveConfiguration()
         conf.writeEntry("Count", mThemes.count());
 
         int idx = 0;
-        QHash< QString, Theme * >::ConstIterator end(mThemes.constEnd());
-        for (QHash< QString, Theme * >::ConstIterator it = mThemes.constBegin(); it != end; ++it) {
+        QMap< QString, Theme * >::ConstIterator end(mThemes.constEnd());
+        for (QMap< QString, Theme * >::ConstIterator it = mThemes.constBegin(); it != end; ++it) {
             conf.writeEntry(QStringLiteral("Set%1").arg(idx), (*it)->saveToString());
             ++idx;
         }
