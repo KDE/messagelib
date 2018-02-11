@@ -37,7 +37,7 @@ class MESSAGECOMPOSER_EXPORT MessagePart : public QObject
 
 public:
     explicit MessagePart(QObject *parent = nullptr);
-    virtual ~MessagePart();
+    ~MessagePart() override;
 
 private:
     class Private;

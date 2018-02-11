@@ -47,7 +47,7 @@ public:
     /**
      * Destroys the attachment load job.
      */
-    virtual ~AttachmentLoadJob();
+    ~AttachmentLoadJob() override;
 
     /**
      * Starts the attachment load job.

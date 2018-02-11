@@ -48,7 +48,7 @@ class MESSAGECOMPOSER_EXPORT EncryptJob : public ContentJobBase, public MessageC
 
 public:
     explicit EncryptJob(QObject *parent = nullptr);
-    virtual ~EncryptJob();
+    ~EncryptJob() override;
 
     void setContent(KMime::Content *content);
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);

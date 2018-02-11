@@ -35,7 +35,7 @@ class MESSAGECOMPOSER_EXPORT AttachmentFromPublicKeyJob : public MessageCore::At
 
 public:
     explicit AttachmentFromPublicKeyJob(const QString &fingerprint, QObject *parent = nullptr);
-    virtual ~AttachmentFromPublicKeyJob();
+    ~AttachmentFromPublicKeyJob() override;
 
     QString fingerprint() const;
     void setFingerprint(const QString &fingerprint);

@@ -63,7 +63,7 @@ public:
     /**
      * Destroys the attachment properties dialog.
      */
-    virtual ~AttachmentPropertiesDialog();
+    ~AttachmentPropertiesDialog() override;
 
     /**
      * Returns the modified attachment.

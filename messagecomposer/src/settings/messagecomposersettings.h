@@ -48,7 +48,7 @@ private Q_SLOTS:
 
 private:
     MessageComposerSettings();
-    virtual ~MessageComposerSettings();
+    ~MessageComposerSettings() override;
     static MessageComposerSettings *mSelf;
 
     QTimer *mConfigSyncTimer = nullptr;

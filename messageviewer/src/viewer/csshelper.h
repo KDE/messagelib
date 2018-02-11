@@ -41,7 +41,7 @@ class MESSAGEVIEWER_EXPORT CSSHelper : public CSSHelperBase
 {
 public:
     explicit CSSHelper(const QPaintDevice *pd);
-    virtual ~CSSHelper();
+    ~CSSHelper() override;
 
     /** @return HTML head including style sheet definitions and the
     &gt;body&lt; tag */

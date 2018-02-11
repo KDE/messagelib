@@ -33,7 +33,7 @@ class MESSAGECOMPOSER_EXPORT InfoPart : public MessageComposer::MessagePart
 
 public:
     explicit InfoPart(QObject *parent = nullptr);
-    virtual ~InfoPart();
+    ~InfoPart() override;
 
     QString from() const;
     void setFrom(const QString &from);

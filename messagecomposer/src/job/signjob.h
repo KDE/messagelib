@@ -46,7 +46,7 @@ class MESSAGECOMPOSER_EXPORT SignJob : public ContentJobBase
 
 public:
     explicit SignJob(QObject *parent = nullptr);
-    virtual ~SignJob();
+    ~SignJob() override;
 
     void setContent(KMime::Content *content);
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);

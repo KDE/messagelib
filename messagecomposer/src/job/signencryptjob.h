@@ -48,7 +48,7 @@ class MESSAGECOMPOSER_EXPORT SignEncryptJob : public ContentJobBase, public Mess
 
 public:
     explicit SignEncryptJob(QObject *parent = nullptr);
-    virtual ~SignEncryptJob();
+    ~SignEncryptJob() override;
 
     void setContent(KMime::Content *content);
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);

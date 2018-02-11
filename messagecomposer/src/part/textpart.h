@@ -33,7 +33,7 @@ class MESSAGECOMPOSER_EXPORT TextPart : public MessagePart
 
 public:
     explicit TextPart(QObject *parent = nullptr);
-    virtual ~TextPart();
+    ~TextPart() override;
 
     // default true
     bool isWordWrappingEnabled() const;

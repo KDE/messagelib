@@ -47,7 +47,7 @@ private Q_SLOTS:
 
 private:
     MessageViewerSettings();
-    virtual ~MessageViewerSettings();
+    ~MessageViewerSettings() override;
     static MessageViewerSettings *mSelf;
 
     QTimer *mConfigSyncTimer = nullptr;

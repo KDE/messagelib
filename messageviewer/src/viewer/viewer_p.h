@@ -199,7 +199,7 @@ public:
 
     ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollection *actionCollection);
 
-    virtual ~ViewerPrivate();
+    ~ViewerPrivate() override;
 
     /** Returns message part from given URL or null if invalid. The URL's path is a KMime::ContentIndex path, or an index for the extra nodes,
     followed by : and the ContentIndex path. */

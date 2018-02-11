@@ -32,7 +32,7 @@ class MESSAGECOMPOSER_EXPORT GlobalPart : public MessageComposer::MessagePart
 
 public:
     explicit GlobalPart(QObject *parent = nullptr);
-    virtual ~GlobalPart();
+    ~GlobalPart() override;
 
     // default true
     bool isGuiEnabled() const;

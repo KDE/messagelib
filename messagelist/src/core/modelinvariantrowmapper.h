@@ -91,7 +91,7 @@ class ModelInvariantRowMapper : public QObject
 
 public:
     explicit ModelInvariantRowMapper();
-    virtual ~ModelInvariantRowMapper();
+    ~ModelInvariantRowMapper() override;
 
     /**
     * Sets the maximum time we can spend inside a single lazy update step.

@@ -68,7 +68,7 @@ public:
     };
 
     explicit MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col = Akonadi::Collection(), QObject *parent = nullptr);
-    virtual ~MessageFactoryNG();
+    ~MessageFactoryNG() override;
 
     /**
     * Create a new message that is a reply to this message, filling all

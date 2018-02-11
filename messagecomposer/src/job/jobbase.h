@@ -49,7 +49,7 @@ public:
     };
 
     explicit JobBase(QObject *parent = nullptr);
-    virtual ~JobBase();
+    ~JobBase() override;
 
     // asserts if no Composer parent
     GlobalPart *globalPart();

@@ -27,7 +27,7 @@ class AttachmentMessagePartRenderer : public MessagePartRendererBase
 {
 public:
     AttachmentMessagePartRenderer();
-    virtual ~AttachmentMessagePartRenderer();
+    ~AttachmentMessagePartRenderer() override;
     bool render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const override;
 };
 }

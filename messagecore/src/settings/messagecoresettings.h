@@ -34,7 +34,7 @@ public:
 
 private:
     MessageCoreSettings();
-    virtual ~MessageCoreSettings();
+    ~MessageCoreSettings() override;
     static MessageCoreSettings *mSelf;
 };
 }

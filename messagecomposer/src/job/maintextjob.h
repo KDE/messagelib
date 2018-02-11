@@ -33,7 +33,7 @@ class MESSAGECOMPOSER_EXPORT MainTextJob : public ContentJobBase
 
 public:
     explicit MainTextJob(TextPart *textPart = nullptr, QObject *parent = nullptr);
-    virtual ~MainTextJob();
+    ~MainTextJob() override;
 
     TextPart *textPart() const;
     void setTextPart(TextPart *part);

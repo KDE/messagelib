@@ -48,7 +48,7 @@ public:
     /**
      * Destroys the attachment compress job.
      */
-    virtual ~AttachmentCompressJob();
+    ~AttachmentCompressJob() override;
 
     /**
      * Starts the attachment compress job.

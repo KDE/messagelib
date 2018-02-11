@@ -64,8 +64,8 @@ void AntiSpamConfig::readConfig()
     KConfig config(QStringLiteral("kmail.antispamrc"));
     config.setReadDefaults(true);
     KConfigGroup general(&config, "General");
-    unsigned int totalTools = general.readEntry("tools", 0);
-    for (unsigned int i = 1; i <= totalTools; ++i) {
+    int totalTools = general.readEntry("tools", 0);
+    for (int i = 1; i <= totalTools; ++i) {
         KConfigGroup tool(&config, QStringLiteral("Spamtool #%1").arg(i));
         if (tool.hasKey("ScoreHeader")) {
             const QString name = tool.readEntry("ScoreName");

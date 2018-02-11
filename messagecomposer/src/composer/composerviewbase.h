@@ -80,7 +80,7 @@ class MESSAGECOMPOSER_EXPORT ComposerViewBase : public QObject
     Q_OBJECT
 public:
     explicit ComposerViewBase(QObject *parent = nullptr, QWidget *widget = nullptr);
-    virtual ~ComposerViewBase();
+    ~ComposerViewBase() override;
 
     enum Confirmation {
         LetUserConfirm, NoConfirmationNeeded

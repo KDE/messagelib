@@ -31,7 +31,7 @@ class GroupHeaderItem : public Item
 {
 public:
     explicit GroupHeaderItem(const QString &label);
-    virtual ~GroupHeaderItem();
+    ~GroupHeaderItem() override;
 
     const QString &label() const;
     void setLabel(const QString &label);

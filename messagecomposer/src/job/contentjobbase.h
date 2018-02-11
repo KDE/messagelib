@@ -38,7 +38,7 @@ class MESSAGECOMPOSER_EXPORT ContentJobBase : public JobBase
 
 public:
     explicit ContentJobBase(QObject *parent = nullptr);
-    virtual ~ContentJobBase();
+    ~ContentJobBase() override;
 
     /**
       Starts processing this ContentJobBase asynchronously.
