@@ -79,7 +79,7 @@ bool Aggregation::load(QDataStream &stream)
     }
 
     stream >> val;
-    mGrouping = (Grouping)val;
+    mGrouping = static_cast<Grouping>(val);
     switch (mGrouping) {
     case NoGrouping:
     case GroupByDate:
@@ -92,7 +92,6 @@ bool Aggregation::load(QDataStream &stream)
     default:
         // b0rken
         return false;
-        break;
     }
 
     stream >> val; // Formerly contained group sorting
@@ -124,7 +123,6 @@ bool Aggregation::load(QDataStream &stream)
     default:
         // b0rken
         return false;
-        break;
     }
 
     stream >> val;
@@ -138,7 +136,6 @@ bool Aggregation::load(QDataStream &stream)
     default:
         // b0rken
         return false;
-        break;
     }
 
     stream >> val;
@@ -154,7 +151,6 @@ bool Aggregation::load(QDataStream &stream)
     default:
         // b0rken
         return false;
-        break;
     }
 
     stream >> val; // Formely contained message sorting
@@ -171,7 +167,6 @@ bool Aggregation::load(QDataStream &stream)
     default:
         // b0rken
         return false;
-        break;
     }
 
     return true;

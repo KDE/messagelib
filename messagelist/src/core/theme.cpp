@@ -818,9 +818,9 @@ void Theme::Column::save(QDataStream &stream) const
     stream << mPixmapName;
     stream << mVisibleByDefault;
     stream << mIsSenderOrReceiver;
-    stream << (int)mMessageSorting;
+    stream << static_cast<int>(mMessageSorting);
 
-    stream << (int)mGroupHeaderRows.count();
+    stream << static_cast<int>(mGroupHeaderRows.count());
 
     int cnt = mGroupHeaderRows.count();
 
@@ -830,7 +830,7 @@ void Theme::Column::save(QDataStream &stream) const
     }
 
     cnt = mMessageRows.count();
-    stream << (int)cnt;
+    stream << static_cast<int>(cnt);
 
     for (int i = 0; i < cnt; ++i) {
         Row *row = mMessageRows.at(i);
@@ -1147,7 +1147,7 @@ bool Theme::load(QDataStream &stream)
     int val;
 
     stream >> val;
-    mGroupHeaderBackgroundMode = (GroupHeaderBackgroundMode)val;
+    mGroupHeaderBackgroundMode = static_cast<GroupHeaderBackgroundMode>(val);
     switch (mGroupHeaderBackgroundMode) {
     case Transparent:
     case AutoColor:
@@ -1157,13 +1157,12 @@ bool Theme::load(QDataStream &stream)
     default:
         qCDebug(MESSAGELIST_LOG) << "Invalid theme group header background mode";
         return false; // b0rken
-        break;
     }
 
     stream >> mGroupHeaderBackgroundColor;
 
     stream >> val;
-    mGroupHeaderBackgroundStyle = (GroupHeaderBackgroundStyle)val;
+    mGroupHeaderBackgroundStyle = static_cast<GroupHeaderBackgroundStyle>(val);
     switch (mGroupHeaderBackgroundStyle) {
     case PlainRect:
     case PlainJoinedRect:
@@ -1178,7 +1177,6 @@ bool Theme::load(QDataStream &stream)
     default:
         qCDebug(MESSAGELIST_LOG) << "Invalid theme group header background style";
         return false; // b0rken
-        break;
     }
 
     stream >> val;
@@ -1191,7 +1189,6 @@ bool Theme::load(QDataStream &stream)
     default:
         qCDebug(MESSAGELIST_LOG) << "Invalid theme view header policy";
         return false; // b0rken
-        break;
     }
 
     if (themeVersion >= gThemeMinimumVersionWithIconSizeField) {

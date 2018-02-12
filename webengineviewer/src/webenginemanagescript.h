@@ -34,7 +34,7 @@ public:
     ~WebEngineManageScript();
     void addScript(QWebEngineProfile *profile, const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
 
-    static qint32 scriptWordId()
+    static quint32 scriptWordId()
     {
         return QWebEngineScript::UserWorld + 1;
     }

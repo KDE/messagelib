@@ -418,7 +418,7 @@ void Widget::viewDropEvent(QDropEvent *e)
         action = DragCopy;
     } else {
         action = DragCancel;
-        int keybstate = QApplication::keyboardModifiers();
+        const auto keybstate = QApplication::keyboardModifiers();
         if (keybstate & Qt::CTRL) {
             action = DragCopy;
         } else if (keybstate & Qt::SHIFT) {

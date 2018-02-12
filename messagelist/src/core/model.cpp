@@ -3490,7 +3490,6 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
         case ViewItemJobInterrupted:
             // current job interrupted by timeout: propagate status to caller
             return ViewItemJobInterrupted;
-            break;
         case ViewItemJobCompleted:
             // pass 3 has been completed
             job->setCurrentPass(ViewItemJob::Pass4);
@@ -3519,7 +3518,6 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
         case ViewItemJobInterrupted:
             // current job interrupted by timeout: propagate status to caller
             return ViewItemJobInterrupted;
-            break;
         case ViewItemJobCompleted:
             // pass 4 has been completed
             job->setCurrentPass(ViewItemJob::Pass5);
@@ -3969,7 +3967,7 @@ void ModelPrivate::viewItemJobStep()
                 // deal with selection below
                 break;
             default:
-                qCWarning(MESSAGELIST_LOG) << "ERROR: Unrecognized pre-selection mode " << (int)mPreSelectionMode;
+                qCWarning(MESSAGELIST_LOG) << "ERROR: Unrecognized pre-selection mode " << static_cast<int>(mPreSelectionMode);
                 break;
             }
 

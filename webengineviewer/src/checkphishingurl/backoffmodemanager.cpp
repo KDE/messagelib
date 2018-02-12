@@ -96,10 +96,10 @@ void BackOffModeManagerPrivate::load()
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("BackOffMode"));
     isInOffMode = grp.readEntry("Enabled", false);
     if (isInOffMode) {
-        const uint delay = grp.readEntry("Delay", 0);
-        const uint now = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
+        const qint64 delay = grp.readEntry("Delay", 0);
+        const qint64 now = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
         if (delay > now) {
-            const int diff = (delay - now);
+            const qint64 diff = (delay - now);
             updateTimer(diff);
         } else {
             //Disable mode.

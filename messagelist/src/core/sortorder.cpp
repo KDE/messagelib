@@ -327,7 +327,6 @@ bool SortOrder::isValidMessageSorting(SortOrder::MessageSorting ms)
     default:
         // b0rken
         return false;
-        break;
     }
 
     return true;
