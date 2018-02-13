@@ -223,7 +223,9 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 
     for (int i = 0; i < count(); ++i) {
         Widget *w = qobject_cast<Widget *>(widget(i));
-        w->setXmlGuiClient(d->mXmlGuiClient);
+        if (w) {
+            w->setXmlGuiClient(d->mXmlGuiClient);
+        }
     }
 
     // Setup "View->Message List" actions.
@@ -612,7 +614,9 @@ void Pane::Private::changeQuicksearchVisibility(bool show)
 {
     for (int i = 0; i < q->count(); ++i) {
         Widget *w = qobject_cast<Widget *>(q->widget(i));
-        w->changeQuicksearchVisibility(show);
+        if (w) {
+            w->changeQuicksearchVisibility(show);
+        }
     }
 }
 
@@ -682,7 +686,9 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
             }
 
             Widget *other = qobject_cast<Widget *>(q->widget(i));
-            widgets << other;
+            if (other) {
+                widgets << other;
+            }
         }
 
         foreach (Widget *other, widgets) {
@@ -729,7 +735,7 @@ void Pane::updateTabIconText(const Akonadi::Collection &collection, const QStrin
 {
     for (int i = 0; i < count(); ++i) {
         Widget *w = qobject_cast<Widget *>(widget(i));
-        if (w->currentCollection() == collection) {
+        if (w && (w->currentCollection() == collection)) {
             const int index = indexOf(w);
             setTabText(index, label);
             setTabIcon(index, icon);
@@ -1054,7 +1060,9 @@ void Pane::saveCurrentSelection()
 {
     for (int i = 0; i < count(); ++i) {
         Widget *w = qobject_cast<Widget *>(widget(i));
-        w->saveCurrentSelection();
+        if (w) {
+            w->saveCurrentSelection();
+        }
     }
 }
 
@@ -1062,7 +1070,9 @@ void Pane::updateTagComboBox()
 {
     for (int i = 0; i < count(); ++i) {
         Widget *w = qobject_cast<Widget *>(widget(i));
-        w->populateStatusFilterCombo();
+        if (w) {
+            w->populateStatusFilterCombo();
+        }
     }
 }
 
@@ -1082,9 +1092,11 @@ void Pane::writeConfig(bool restoreSession)
 
         for (int i = 0; i < count(); ++i) {
             Widget *w = qobject_cast<Widget *>(widget(i));
-            KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(i));
-            grp.writeEntry(QStringLiteral("collectionId"), w->currentCollection().id());
-            grp.writeEntry(QStringLiteral("HeaderState"), w->view()->header()->saveState());
+            if (w) {
+                KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(i));
+                grp.writeEntry(QStringLiteral("collectionId"), w->currentCollection().id());
+                grp.writeEntry(QStringLiteral("HeaderState"), w->view()->header()->saveState());
+            }
         }
     }
     conf.sync();
@@ -1130,7 +1142,9 @@ void Pane::restoreHeaderSettings(int index)
     KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(index));
     if (grp.exists()) {
         Widget *w = qobject_cast<Widget *>(widget(index));
-        w->view()->header()->restoreState(grp.readEntry(QStringLiteral("HeaderState"), QByteArray()));
+        if (w) {
+            w->view()->header()->restoreState(grp.readEntry(QStringLiteral("HeaderState"), QByteArray()));
+        }
     }
 }
 
@@ -1177,7 +1191,9 @@ void Pane::populateStatusFilterCombo()
 {
     for (int i = 0; i < count(); ++i) {
         Widget *w = qobject_cast<Widget *>(widget(i));
-        w->populateStatusFilterCombo();
+        if (w) {
+            w->populateStatusFilterCombo();
+        }
     }
 }
 
