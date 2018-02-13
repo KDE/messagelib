@@ -188,6 +188,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
 
 Pane::~Pane()
 {
+    saveCurrentSelection();
     writeConfig(true);
     delete d;
 }
@@ -606,6 +607,11 @@ void Pane::Private::closeTab(QWidget *w)
         return;
     }
 
+    Widget *wWidget = qobject_cast<Widget *>(w);
+    if (wWidget) {
+        wWidget->saveCurrentSelection();
+    }
+
     delete w;
     updateTabControls();
 }
@@ -692,6 +698,7 @@ void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
         }
 
         foreach (Widget *other, widgets) {
+            other->saveCurrentSelection();
             delete other;
         }
 
