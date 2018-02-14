@@ -1111,6 +1111,10 @@ void ViewerPrivate::readConfig()
     delete mCSSHelper;
     mCSSHelper = new CSSHelper(mViewer);
 
+    mForceEmoticons = MessageViewer::MessageViewerSettings::self()->showEmoticons();
+    if (mDisableEmoticonAction) {
+        mDisableEmoticonAction->setChecked(!mForceEmoticons);
+    }
     mUseFixedFont = MessageViewer::MessageViewerSettings::self()->useFixedFont();
     if (mToggleFixFontAction) {
         mToggleFixFontAction->setChecked(mUseFixedFont);
@@ -1166,6 +1170,7 @@ void ViewerPrivate::slotGeneralFontChanged()
 
 void ViewerPrivate::writeConfig(bool sync)
 {
+    MessageViewer::MessageViewerSettings::self()->setShowEmoticons(mForceEmoticons);
     MessageViewer::MessageViewerSettings::self()->setUseFixedFont(mUseFixedFont);
     if (attachmentStrategy()) {
         MessageViewer::MessageViewerSettings::self()->setAttachmentStrategy(QLatin1String(
