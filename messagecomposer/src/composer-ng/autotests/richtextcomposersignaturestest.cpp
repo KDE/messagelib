@@ -43,16 +43,17 @@ void RichTextComposerSignaturesTest::shouldCleanSignature()
     emptySignature.setText(QStringLiteral("bla      Bla\t"));
     emptySignature.setEnabledSignature(true);
     emptySignature.setInlinedHtml(false);
-    richtextComposerNg.insertSignature(emptySignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
-
 
     KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
     newSignature.setText(QStringLiteral("Foo      Bla\t"));
     newSignature.setEnabledSignature(true);
     newSignature.setInlinedHtml(false);
 
-    composerSignature->replaceSignature(emptySignature, newSignature);
+    richtextComposerNg.insertSignature(emptySignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
     composerSignature->cleanWhitespace(newSignature);
-    QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nFoo      Bla\t"));
+
+
+    composerSignature->replaceSignature(emptySignature, newSignature);
+    QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nbla Bla "));
 
 }
