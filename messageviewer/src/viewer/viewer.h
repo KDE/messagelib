@@ -110,7 +110,7 @@ public:
     * @param f window flags
     */
     explicit Viewer(QWidget *parent, QWidget *widget = nullptr, KActionCollection *actionCollection = nullptr);
-    virtual ~Viewer();
+    ~Viewer() override;
 
     /**
     * Returns the current message displayed in the viewer.
