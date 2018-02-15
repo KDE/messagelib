@@ -67,7 +67,7 @@ void RichTextComposerSignaturesTest::shouldCleanSignature()
 void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
 {
     MessageComposer::RichTextComposerNg richtextComposerNg;
-    richtextComposerNg.setText(QStringLiteral("foo\n"));
+    richtextComposerNg.setText(QStringLiteral("foo\nbla  \nfoo"));
     richtextComposerNg.createActions(new KActionCollection(this));
     MessageComposer::RichTextComposerSignatures *composerSignature = richtextComposerNg.composerSignature();
     QVERIFY(composerSignature);
@@ -87,12 +87,13 @@ void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
 
 
     composerSignature->replaceSignature(signature1, signature2);
-    QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("foo\n--\nbla Bla "));
+    const QString result = QStringLiteral("foo\nbla\nfoo--\nbla Bla ");
+    QCOMPARE(richtextComposerNg.toPlainText(), result);
 
     for (int i = 0; i < 10; i++) {
         composerSignature->replaceSignature(signature2, signature1);
         composerSignature->replaceSignature(signature1, signature2);
     }
-    QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("foo\n--\nbla Bla "));
+    QCOMPARE(richtextComposerNg.toPlainText(), result);
 
 }
