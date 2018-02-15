@@ -39,21 +39,27 @@ void RichTextComposerSignaturesTest::shouldCleanSignature()
     MessageComposer::RichTextComposerSignatures *composerSignature = richtextComposerNg.composerSignature();
     QVERIFY(composerSignature);
 
-    KIdentityManagement::Signature emptySignature;
-    emptySignature.setText(QStringLiteral("bla      Bla\t"));
-    emptySignature.setEnabledSignature(true);
-    emptySignature.setInlinedHtml(false);
+    KIdentityManagement::Signature signature1;
+    signature1.setText(QStringLiteral("bla      Bla\t"));
+    signature1.setEnabledSignature(true);
+    signature1.setInlinedHtml(false);
 
-    KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
-    newSignature.setText(QStringLiteral("Foo      Bla\t"));
-    newSignature.setEnabledSignature(true);
-    newSignature.setInlinedHtml(false);
+    KIdentityManagement::Signature signature2(QStringLiteral("Signature"));
+    signature2.setText(QStringLiteral("Foo      Bla\t"));
+    signature2.setEnabledSignature(true);
+    signature2.setInlinedHtml(false);
 
-    richtextComposerNg.insertSignature(emptySignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
-    composerSignature->cleanWhitespace(newSignature);
+    richtextComposerNg.insertSignature(signature1, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
+    composerSignature->cleanWhitespace(signature2);
 
 
-    composerSignature->replaceSignature(emptySignature, newSignature);
+    composerSignature->replaceSignature(signature1, signature2);
+    QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nbla Bla "));
+
+    for (int i = 0; i < 10; i++) {
+        composerSignature->replaceSignature(signature2, signature1);
+        composerSignature->replaceSignature(signature1, signature2);
+    }
     QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nbla Bla "));
 
 }
