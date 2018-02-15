@@ -8,3 +8,4 @@ macro(add_composerng_autocorrect_unittest _source)
 endmacro()
 
 add_composerng_autocorrect_unittest(richtextcomposerngtest.cpp)
+add_composerng_autocorrect_unittest(richtextcomposersignaturestest.cpp)
