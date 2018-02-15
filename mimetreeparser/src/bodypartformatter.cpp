@@ -106,7 +106,7 @@ public:
         part.processResult()->setInlineEncryptionState(mp->encryptionState());
 
         auto preferredMode = part.source()->preferredMode();
-        bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
+        const bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
         if (node->parent() && node->parent()->contentType()->subType() == "related" && isHtmlPreferred) {
             part.nodeHelper()->setNodeDisplayedEmbedded(node, true);
             part.nodeHelper()->setNodeDisplayedHidden(node, true);

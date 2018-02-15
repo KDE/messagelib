@@ -359,7 +359,7 @@ void DefaultRendererPrivate::render(const MimeMessagePart::Ptr &mp, HtmlWriter *
     if (mp->isAttachment()) {
         aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
     }
-
+    auto preferredMode = mp->source()->preferredMode();
     if (mp->isRoot()) {
         rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
     }
@@ -403,7 +403,7 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
     c.insert(QStringLiteral("block"), &block);
 
     auto preferredMode = mp->source()->preferredMode();
-    bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
+    const bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
     block.setProperty("htmlMail", isHtmlPreferred);
     block.setProperty("loadExternal", htmlLoadExternal());
     block.setProperty("isPrinting", isPrinting());

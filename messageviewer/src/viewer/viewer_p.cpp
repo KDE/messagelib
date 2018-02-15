@@ -989,7 +989,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
 
     KMime::Message *message = dynamic_cast<KMime::Message *>(content);
     if (message) {
-        htmlWriter()->write(writeMsgHeader(message, hasVCard ? vCardContent : nullptr, true));
+        htmlWriter()->write(writeMessageHeader(message, hasVCard ? vCardContent : nullptr, true));
     }
 
     // Pass control to the OTP now, which does the real work
@@ -1021,10 +1021,10 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     showHideMimeTree();
 }
 
-QString ViewerPrivate::writeMsgHeader(KMime::Message *aMsg, KMime::Content *vCardNode, bool topLevel)
+QString ViewerPrivate::writeMessageHeader(KMime::Message *aMsg, KMime::Content *vCardNode, bool topLevel)
 {
     if (!headerStylePlugin()) {
-        qCCritical(MESSAGEVIEWER_LOG) << "trying to writeMsgHeader() without a header style set!";
+        qCCritical(MESSAGEVIEWER_LOG) << "trying to writeMessageHeader() without a header style set!";
         return {};
     }
     QString href;
