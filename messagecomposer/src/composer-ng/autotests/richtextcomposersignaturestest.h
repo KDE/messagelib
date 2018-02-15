@@ -30,6 +30,7 @@ public:
     ~RichTextComposerSignaturesTest() = default;
 private Q_SLOTS:
     void shouldCleanSignature();
+    void shouldReplaceSignatureWhenText();
 };
 
 #endif // RICHTEXTCOMPOSERSIGNATURESTEST_H
