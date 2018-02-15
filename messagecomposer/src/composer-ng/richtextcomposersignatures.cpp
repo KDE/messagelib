@@ -143,17 +143,14 @@ RichTextComposerSignatures::RichTextComposerSignaturesPrivate::signaturePosition
 
 bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig)
 {
-    qDebug() << "bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig)";
     bool found = false;
     if (oldSig == newSig) {
         return false;
     }
-    qDebug() << "111bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig)";
     QString oldSigText = oldSig.toPlainText();
     if (oldSigText.isEmpty()) {
         return false;
     }
-    qDebug() << "222bool RichTextComposerSignatures::replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig)";
     QTextCursor cursor(d->richTextComposer->document());
     cursor.beginEditBlock();
     int currentSearchPosition = 0;
