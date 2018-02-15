@@ -28,6 +28,8 @@ class RichTextComposerSignaturesTest : public QObject
 public:
     explicit RichTextComposerSignaturesTest(QObject *parent = nullptr);
     ~RichTextComposerSignaturesTest() = default;
+private Q_SLOTS:
+    void shouldCleanSignature();
 };
 
 #endif // RICHTEXTCOMPOSERSIGNATURESTEST_H

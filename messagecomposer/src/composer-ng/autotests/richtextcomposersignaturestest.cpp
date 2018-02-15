@@ -21,6 +21,7 @@
 #include "richtextcomposersignaturestest.h"
 #include "../richtextcomposerng.h"
 #include "../richtextcomposersignatures.h"
+#include <KActionCollection>
 #include <QTest>
 
 QTEST_MAIN(RichTextComposerSignaturesTest)
@@ -28,5 +29,30 @@ QTEST_MAIN(RichTextComposerSignaturesTest)
 RichTextComposerSignaturesTest::RichTextComposerSignaturesTest(QObject *parent)
     : QObject(parent)
 {
+
+}
+
+void RichTextComposerSignaturesTest::shouldCleanSignature()
+{
+    MessageComposer::RichTextComposerNg richtextComposerNg;
+    richtextComposerNg.createActions(new KActionCollection(this));
+    MessageComposer::RichTextComposerSignatures *composerSignature = richtextComposerNg.composerSignature();
+    QVERIFY(composerSignature);
+
+    KIdentityManagement::Signature emptySignature;
+    emptySignature.setText(QStringLiteral("bla      Bla\t"));
+    emptySignature.setEnabledSignature(true);
+    emptySignature.setInlinedHtml(false);
+    richtextComposerNg.insertSignature(emptySignature, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
+
+
+    KIdentityManagement::Signature newSignature(QStringLiteral("Signature"));
+    newSignature.setText(QStringLiteral("Foo      Bla\t"));
+    newSignature.setEnabledSignature(true);
+    newSignature.setInlinedHtml(false);
+
+    composerSignature->replaceSignature(emptySignature, newSignature);
+    composerSignature->cleanWhitespace(newSignature);
+    QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nFoo      Bla\t"));
 
 }
