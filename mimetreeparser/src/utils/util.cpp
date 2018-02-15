@@ -146,9 +146,9 @@ QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)
     case MultipartPlain: ///< A multipart/alternative message, the plain text part is currently displayed
         return QStringLiteral("A multipart/alternative message, the plain text part is currently displayed");
     case MultipartHtml:  ///< A multipart/altervative message, the HTML part is currently displayed
-        return QStringLiteral("A multipart/altervative message, the HTML part is currently displayed");
+        return QStringLiteral("A multipart/alternative message, the HTML part is currently displayed");
     case MultipartIcal:  ///< A multipart/altervative message, the ICal part is currently displayed
-        return QStringLiteral("A multipart/altervative message, the ICal part is currently displayed");
+        return QStringLiteral("A multipart/alternative message, the ICal part is currently displayed");
 
     }
     return {};
