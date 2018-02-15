@@ -72,16 +72,6 @@ bool HtmlStatusBar::isNormal() const
     return mode() == MimeTreeParser::Util::Normal;
 }
 
-bool HtmlStatusBar::isMultipartHtml() const
-{
-    return mode() == MimeTreeParser::Util::MultipartHtml;
-}
-
-bool HtmlStatusBar::isMultipartPlain() const
-{
-    return mode() == MimeTreeParser::Util::MultipartPlain;
-}
-
 void HtmlStatusBar::update()
 {
     QPalette pal = palette();
@@ -100,16 +90,6 @@ void HtmlStatusBar::setNormalMode()
 void HtmlStatusBar::setHtmlMode()
 {
     setMode(MimeTreeParser::Util::Html);
-}
-
-void HtmlStatusBar::setMultipartPlainMode()
-{
-    setMode(MimeTreeParser::Util::MultipartPlain);
-}
-
-void HtmlStatusBar::setMultipartHtmlMode()
-{
-    setMode(MimeTreeParser::Util::MultipartHtml);
 }
 
 void HtmlStatusBar::setAvailableModes(const QList<MimeTreeParser::Util::HtmlMode> &availableModes)

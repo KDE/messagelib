@@ -70,14 +70,12 @@ public:
     };
 
     explicit HtmlStatusBar(QWidget *parent = nullptr);
-    ~HtmlStatusBar();
+    ~HtmlStatusBar() override;
 
     /** @return current mode. */
     MimeTreeParser::Util::HtmlMode mode() const;
     bool isHtml() const;
     bool isNormal() const;
-    bool isMultipartHtml() const;
-    bool isMultipartPlain() const;
 
     // Update the status bar, for example when the color scheme changed.
     void update();
@@ -89,10 +87,6 @@ public Q_SLOTS:
     void setHtmlMode();
     /** Switch to "normal mode". */
     void setNormalMode();
-    /** Switch to "multipart html mode". */
-    void setMultipartHtmlMode();
-    /** Switch to "multipart plain mode". */
-    void setMultipartPlainMode();
     /** Switch to mode @p m */
     void setMode(MimeTreeParser::Util::HtmlMode m, UpdateMode mode = Update);
 
