@@ -32,7 +32,7 @@ class CryptoBodyPartMemento : public QObject, public Interface::BodyPartMemento
     Q_OBJECT
 public:
     CryptoBodyPartMemento();
-    ~CryptoBodyPartMemento();
+    ~CryptoBodyPartMemento() override;
 
     virtual bool start() = 0;
     virtual void exec() = 0;

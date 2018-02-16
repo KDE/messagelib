@@ -40,7 +40,7 @@ class VerifyDetachedBodyPartMemento : public CryptoBodyPartMemento
     Q_OBJECT
 public:
     VerifyDetachedBodyPartMemento(QGpgME::VerifyDetachedJob *job, QGpgME::KeyListJob *klj, const QByteArray &signature, const QByteArray &plainText);
-    ~VerifyDetachedBodyPartMemento();
+    ~VerifyDetachedBodyPartMemento() override;
 
     bool start() override;
     void exec() override;
