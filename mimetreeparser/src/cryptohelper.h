@@ -15,8 +15,8 @@
     Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
  */
 
-#ifndef __MIMETREEPARSER_CRYPTOHELPER_H__
-#define __MIMETREEPARSER_CRYPTOHELPER_H__
+#ifndef MIMETREEPARSER_CRYPTOHELPER_H
+#define MIMETREEPARSER_CRYPTOHELPER_H
 
 #include <QByteArray>
 #include <QList>

@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_MANAGER_H__
-#define __MESSAGELIST_CORE_MANAGER_H__
+#ifndef MESSAGELIST_CORE_MANAGER_H
+#define MESSAGELIST_CORE_MANAGER_H
 
 #include <core/sortorder.h>
 #include <QList>
@@ -174,4 +174,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MANAGER_H__
+#endif //!__MESSAGELIST_CORE_MANAGER_H

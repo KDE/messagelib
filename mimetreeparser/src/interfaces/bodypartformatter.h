@@ -31,8 +31,8 @@
     your version.
 */
 
-#ifndef __MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H__
-#define __MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H__
+#ifndef MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H
+#define MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H
 
 #include "mimetreeparser_export.h"
 
@@ -80,4 +80,4 @@ public:
 
 Q_DECLARE_INTERFACE(MimeTreeParser::Interface::BodyPartFormatterPlugin, "org.kde.messageviewer.bodypartformatter/1.1")
 
-#endif // __MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H__
+#endif // MIMETREEPARSER_INTERFACE_BODYPARTFORMATTER_H

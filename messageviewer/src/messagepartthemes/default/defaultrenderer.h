@@ -17,8 +17,8 @@
    02110-1301, USA.
 */
 
-#ifndef __MESSAGEVIEWER_DEFAULTRENDERER_H__
-#define __MESSAGEVIEWER_DEFAULTRENDERER_H__
+#ifndef MESSAGEVIEWER_DEFAULTRENDERER_H
+#define MESSAGEVIEWER_DEFAULTRENDERER_H
 
 #include <QSharedPointer>
 
@@ -59,4 +59,4 @@ private:
     DefaultRendererPrivate *d;
 };
 }
-#endif //__MESSAGEVIEWER_MAILRENDERER_H__
+#endif //__MESSAGEVIEWER_MAILRENDERER_H

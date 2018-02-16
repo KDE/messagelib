@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_MODEL_P_H__
-#define __MESSAGELIST_CORE_MODEL_P_H__
+#ifndef MESSAGELIST_CORE_MODEL_P_H
+#define MESSAGELIST_CORE_MODEL_P_H
 
 #include "model.h"
 #include "threadingcache.h"
@@ -451,4 +451,4 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MODEL_P_H__
+#endif //!__MESSAGELIST_CORE_MODEL_P_H

@@ -29,8 +29,8 @@
     your version.
 */
 
-#ifndef __KDEPIM__MESSAGEVIEWER__STL_UTIL_H__
-#define __KDEPIM__MESSAGEVIEWER__STL_UTIL_H__
+#ifndef KDEPIM__MESSAGEVIEWER__STL_UTIL_H
+#define KDEPIM__MESSAGEVIEWER__STL_UTIL_H
 
 namespace MessageViewer {
 template<typename T>
@@ -43,4 +43,4 @@ struct DeleteAndSetToZero {
 };
 }
 
-#endif // __KDEPIM__MESSAGEVIEWER__STL_UTIL_H__
+#endif // KDEPIM__MESSAGEVIEWER__STL_UTIL_H

@@ -16,8 +16,8 @@
    Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
    02110-1301, USA.
 */
-#ifndef __MESSAGEVIEWER_DEFAULTRENDERER_P_H__
-#define __MESSAGEVIEWER_DEFAULTRENDERER_P_H__
+#ifndef MESSAGEVIEWER_DEFAULTRENDERER_P_H
+#define MESSAGEVIEWER_DEFAULTRENDERER_P_H
 
 #include "defaultrenderer.h"
 #include "messagepartrendererbase.h"

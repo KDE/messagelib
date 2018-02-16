@@ -16,8 +16,8 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef __MESSAGELIST_UTILS_THEMECOMBOBOX_H__
-#define __MESSAGELIST_UTILS_THEMECOMBOBOX_H__
+#ifndef MESSAGELIST_UTILS_THEMECOMBOBOX_H
+#define MESSAGELIST_UTILS_THEMECOMBOBOX_H
 
 #include <messagelist_export.h>
 #include <KComboBox>
@@ -62,4 +62,4 @@ private:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_THEMECOMBOBOX_H__
+#endif //!__MESSAGELIST_UTILS_THEMECOMBOBOX_H

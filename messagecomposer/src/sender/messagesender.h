@@ -30,8 +30,8 @@
     your version.
 */
 
-#ifndef __KMAIL_MESSAGESENDER_H__
-#define __KMAIL_MESSAGESENDER_H__
+#ifndef KMAIL_MESSAGESENDER_H
+#define KMAIL_MESSAGESENDER_H
 
 #include <kmime/kmime_message.h>
 namespace MessageComposer {
@@ -93,4 +93,4 @@ inline MessageSender::~MessageSender()
 }
 }
 
-#endif /* __KMAIL_MESSAGESENDER_H__ */
+#endif /* __KMAIL_MESSAGESENDER_H */

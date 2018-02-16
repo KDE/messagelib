@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_ITEM_H__
-#define __MESSAGELIST_CORE_ITEM_H__
+#ifndef MESSAGELIST_CORE_ITEM_H
+#define MESSAGELIST_CORE_ITEM_H
 
 #include <QList>
 #include <QString>
@@ -410,4 +410,4 @@ protected:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_ITEM_H__
+#endif //!__MESSAGELIST_CORE_ITEM_H

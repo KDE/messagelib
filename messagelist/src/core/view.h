@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_VIEW_H__
-#define __MESSAGELIST_CORE_VIEW_H__
+#ifndef MESSAGELIST_CORE_VIEW_H
+#define MESSAGELIST_CORE_VIEW_H
 
 #include <QTreeView>
 #include <QList>
@@ -646,4 +646,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_VIEW_H__
+#endif //!__MESSAGELIST_CORE_VIEW_H

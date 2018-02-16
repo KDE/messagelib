@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_MODELINVARIANTINDEX_H__
-#define __MESSAGELIST_CORE_MODELINVARIANTINDEX_H__
+#ifndef MESSAGELIST_CORE_MODELINVARIANTINDEX_H
+#define MESSAGELIST_CORE_MODELINVARIANTINDEX_H
 
 #include <qglobal.h> // defines uint, at least.
 
@@ -71,4 +71,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MODELINVARIANTINDEX_H__
+#endif //!__MESSAGELIST_CORE_MODELINVARIANTINDEX_H

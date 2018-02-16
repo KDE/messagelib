@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H__
-#define __MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H__
+#ifndef MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H
+#define MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H
 
 #include <QDialog>
 
@@ -57,4 +57,4 @@ private:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H__
+#endif //!__MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_H

@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_UTILS_COMBOBOXUTILS_H__
-#define __MESSAGELIST_UTILS_COMBOBOXUTILS_H__
+#ifndef MESSAGELIST_UTILS_COMBOBOXUTILS_H
+#define MESSAGELIST_UTILS_COMBOBOXUTILS_H
 
 #include <QList>
 #include <QPair>
@@ -54,4 +54,4 @@ void setIntegerOptionComboValue(KComboBox *combo, int value);
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_COMBOBOXUTILS_H__
+#endif //!__MESSAGELIST_UTILS_COMBOBOXUTILS_H

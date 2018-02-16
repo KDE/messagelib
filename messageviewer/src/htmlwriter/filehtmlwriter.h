@@ -29,8 +29,8 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_FILEHTMLWRITER_H__
-#define __MESSAGEVIEWER_FILEHTMLWRITER_H__
+#ifndef MESSAGEVIEWER_FILEHTMLWRITER_H
+#define MESSAGEVIEWER_FILEHTMLWRITER_H
 
 #include "messageviewer_export.h"
 #include <MessageViewer/HtmlWriter>
@@ -56,4 +56,4 @@ private:
 };
 } // namespace MessageViewer
 
-#endif // __MESSAGEVIEWER_FILEHTMLWRITER_H__
+#endif // MESSAGEVIEWER_FILEHTMLWRITER_H

@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_DELEGATE_H__
-#define __MESSAGELIST_CORE_DELEGATE_H__
+#ifndef MESSAGELIST_CORE_DELEGATE_H
+#define MESSAGELIST_CORE_DELEGATE_H
 
 #include <core/themedelegate.h>
 
@@ -43,4 +43,4 @@ protected:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_DELEGATE_H__
+#endif //!__MESSAGELIST_CORE_DELEGATE_H

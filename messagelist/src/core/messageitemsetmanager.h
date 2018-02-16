@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H__
-#define __MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H__
+#ifndef MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H
+#define MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H
 
 #include <QHash>
 #include <QList>
@@ -62,4 +62,4 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H__
+#endif //!__MESSAGELIST_CORE_MESSAGEITEMSETMANAGER_H

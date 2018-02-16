@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H__
-#define __MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H__
+#ifndef MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H
+#define MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H
 
 #include "core/modelinvariantrowmapper.h"
 
@@ -74,4 +74,4 @@ public:
 } // Core
 } // MessageList
 
-#endif //!__MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H__
+#endif //!__MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_P_H

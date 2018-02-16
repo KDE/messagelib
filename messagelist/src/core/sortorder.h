@@ -17,8 +17,8 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  *******************************************************************************/
-#ifndef __MESSAGELIST_CORE_SORTORDER_H__
-#define __MESSAGELIST_CORE_SORTORDER_H__
+#ifndef MESSAGELIST_CORE_SORTORDER_H
+#define MESSAGELIST_CORE_SORTORDER_H
 
 #include <core/aggregation.h>
 
@@ -220,4 +220,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif // __MESSAGELIST_CORE_SORTORDER_H__
+#endif // MESSAGELIST_CORE_SORTORDER_H

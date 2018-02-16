@@ -31,8 +31,8 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_HEADERSTYLE_H__
-#define __MESSAGEVIEWER_HEADERSTYLE_H__
+#ifndef MESSAGEVIEWER_HEADERSTYLE_H
+#define MESSAGEVIEWER_HEADERSTYLE_H
 
 #include "messageviewer_export.h"
 
@@ -127,4 +127,4 @@ private:
 };
 }
 
-#endif // __MESSAGEVIEWER_HEADERSTYLE_H__
+#endif // MESSAGEVIEWER_HEADERSTYLE_H

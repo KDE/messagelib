@@ -29,8 +29,8 @@
     your version.
 */
 
-#ifndef __KDEPIM_KMAIL_KLEO_UTIL_H__
-#define __KDEPIM_KMAIL_KLEO_UTIL_H__
+#ifndef KDEPIM_KMAIL_KLEO_UTIL_H
+#define KDEPIM_KMAIL_KLEO_UTIL_H
 
 #include "libkleo/enum.h"
 
@@ -92,4 +92,4 @@ static inline bool containsOpenPGP(unsigned int f)
     return f & (Kleo::OpenPGPMIMEFormat | Kleo::InlineOpenPGPFormat);
 }
 
-#endif // __KDEPIM_KMAIL_KLEO_UTIL_H__
+#endif // KDEPIM_KMAIL_KLEO_UTIL_H

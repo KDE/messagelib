@@ -17,8 +17,8 @@
   02110-1301, USA.
 */
 
-#ifndef __MESSAGEVIEWER_TESTS_UTIL_H__
-#define __MESSAGEVIEWER_TESTS_UTIL_H__
+#ifndef MESSAGEVIEWER_TESTS_UTIL_H
+#define MESSAGEVIEWER_TESTS_UTIL_H
 
 #include <KMime/Message>
 
@@ -28,4 +28,4 @@ KMime::Message::Ptr readAndParseMail(const QString &mailFile);
 }
 }
 
-#endif //__MESSAGEVIEWER_TESTS_UTIL_H__
+#endif //__MESSAGEVIEWER_TESTS_UTIL_H

@@ -17,8 +17,8 @@
    02110-1301, USA.
 */
 
-#ifndef __MIMETREEPARSER_HTMLBLOCK_H__
-#define __MIMETREEPARSER_HTMLBLOCK_H__
+#ifndef MIMETREEPARSER_HTMLBLOCK_H
+#define MIMETREEPARSER_HTMLBLOCK_H
 
 #include "messageviewer_export.h"
 
@@ -93,4 +93,4 @@ private:
     HtmlWriter *mWriter = nullptr;
 };
 }
-#endif //__MIMETREEPARSER_HTMLBLOCK_H__
+#endif //__MIMETREEPARSER_HTMLBLOCK_H

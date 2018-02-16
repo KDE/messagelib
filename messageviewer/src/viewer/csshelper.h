@@ -29,8 +29,8 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_CSSHELPER_H__
-#define __MESSAGEVIEWER_CSSHELPER_H__
+#ifndef MESSAGEVIEWER_CSSHELPER_H
+#define MESSAGEVIEWER_CSSHELPER_H
 
 #include <MessageViewer/CSSHelperBase>
 
@@ -49,4 +49,4 @@ public:
 };
 }
 
-#endif // __MESSAGEVIEWER_CSSHELPER_H__
+#endif // MESSAGEVIEWER_CSSHELPER_H

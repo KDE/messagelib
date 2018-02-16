@@ -31,7 +31,7 @@ class MESSAGEVIEWER_EXPORT MessageDisplayFormatAttribute : public Akonadi::Attri
 {
 public:
     explicit MessageDisplayFormatAttribute();
-    ~MessageDisplayFormatAttribute();
+    ~MessageDisplayFormatAttribute() override;
 
     MessageDisplayFormatAttribute *clone() const override;
     QByteArray type() const override;

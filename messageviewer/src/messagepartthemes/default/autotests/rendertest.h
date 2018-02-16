@@ -17,8 +17,8 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#ifndef __MESSAGEVIEWER_TEST_RENDERTEST_H__
-#define __MESSAGEVIEWER_TEST_RENDERTEST_H__
+#ifndef MESSAGEVIEWER_TEST_RENDERTEST_H
+#define MESSAGEVIEWER_TEST_RENDERTEST_H
 
 #include <QObject>
 #include <MimeTreeParser/MessagePart>

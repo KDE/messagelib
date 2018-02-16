@@ -17,8 +17,8 @@
    02110-1301, USA.
 */
 
-#ifndef __MIMETREEPARSER_BODYFORAMATTER_MAILMAN_H__
-#define __MIMETREEPARSER_BODYFORAMATTER_MAILMAN_H__
+#ifndef MIMETREEPARSER_BODYFORAMATTER_MAILMAN_H
+#define MIMETREEPARSER_BODYFORAMATTER_MAILMAN_H
 
 #include "interfaces/bodypartformatter.h"
 #include "interfaces/bodypart.h"

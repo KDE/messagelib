@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_THEME_H__
-#define __MESSAGELIST_CORE_THEME_H__
+#ifndef MESSAGELIST_CORE_THEME_H
+#define MESSAGELIST_CORE_THEME_H
 
 #include <QList>
 #include <QPair>
@@ -1021,4 +1021,4 @@ protected:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_SKIN_H__
+#endif //!__MESSAGELIST_CORE_SKIN_H

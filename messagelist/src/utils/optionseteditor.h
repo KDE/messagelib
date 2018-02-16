@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_UTILS_OPTIONSETEDITOR_H__
-#define __MESSAGELIST_UTILS_OPTIONSETEDITOR_H__
+#ifndef MESSAGELIST_UTILS_OPTIONSETEDITOR_H
+#define MESSAGELIST_UTILS_OPTIONSETEDITOR_H
 
 #include <QTabWidget>
 
@@ -72,4 +72,4 @@ private:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_OPTIONSETEDITOR_H__
+#endif //!__MESSAGELIST_UTILS_OPTIONSETEDITOR_H

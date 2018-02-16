@@ -29,8 +29,8 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_HEADERSTRATEGY_H__
-#define __MESSAGEVIEWER_HEADERSTRATEGY_H__
+#ifndef MESSAGEVIEWER_HEADERSTRATEGY_H
+#define MESSAGEVIEWER_HEADERSTRATEGY_H
 
 #include "messageviewer_export.h"
 #include <QStringList>
@@ -68,4 +68,4 @@ public:
 };
 }
 
-#endif // __MESSAGEVIEWER_HEADERSTRATEGY_H__
+#endif // MESSAGEVIEWER_HEADERSTRATEGY_H

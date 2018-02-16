@@ -16,8 +16,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef __MIMETREEPARSER_ENUMS_H__
-#define __MIMETREEPARSER_ENUMS_H__
+#ifndef MIMETREEPARSER_ENUMS_H
+#define MIMETREEPARSER_ENUMS_H
 
 namespace MimeTreeParser {
 /**

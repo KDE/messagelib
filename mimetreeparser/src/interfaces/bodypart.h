@@ -31,8 +31,8 @@
     your version.
 */
 
-#ifndef __MIMETREEPARSER_INTERFACES_BODYPART_H__
-#define __MIMETREEPARSER_INTERFACES_BODYPART_H__
+#ifndef MIMETREEPARSER_INTERFACES_BODYPART_H
+#define MIMETREEPARSER_INTERFACES_BODYPART_H
 
 #include "mimetreeparser_export.h"
 
@@ -103,4 +103,4 @@ public:
 } // namespace Interface
 }
 
-#endif // __MIMETREEPARSER_INTERFACES_BODYPART_H__
+#endif // MIMETREEPARSER_INTERFACES_BODYPART_H

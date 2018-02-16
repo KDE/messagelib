@@ -16,8 +16,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef __MESSAGEVIEWER_URLHANDLERMANAGER_P_H__
-#define __MESSAGEVIEWER_URLHANDLERMANAGER_P_H__
+#ifndef MESSAGEVIEWER_URLHANDLERMANAGER_P_H
+#define MESSAGEVIEWER_URLHANDLERMANAGER_P_H
 
 #include "urlhandlermanager.h"
 #include <MessageViewer/URLHandler>
@@ -34,7 +34,7 @@ public:
     {
     }
 
-    ~BodyPartURLHandlerManager();
+    ~BodyPartURLHandlerManager() override;
 
     bool handleClick(const QUrl &, ViewerPrivate *) const override;
     bool handleContextMenuRequest(const QUrl &, const QPoint &, ViewerPrivate *) const override;
@@ -57,7 +57,7 @@ public:
     {
     }
 
-    ~KMailProtocolURLHandler()
+    ~KMailProtocolURLHandler() override
     {
     }
 
@@ -77,7 +77,7 @@ public:
     {
     }
 
-    ~ExpandCollapseQuoteURLManager()
+    ~ExpandCollapseQuoteURLManager() override
     {
     }
 
@@ -98,7 +98,7 @@ public:
     {
     }
 
-    ~SMimeURLHandler()
+    ~SMimeURLHandler() override
     {
     }
 
@@ -118,7 +118,7 @@ public:
     {
     }
 
-    ~MailToURLHandler()
+    ~MailToURLHandler() override
     {
     }
 
@@ -142,7 +142,7 @@ public:
     {
     }
 
-    ~ContactUidURLHandler()
+    ~ContactUidURLHandler() override
     {
     }
 
@@ -158,7 +158,7 @@ public:
     {
     }
 
-    ~HtmlAnchorHandler()
+    ~HtmlAnchorHandler() override
     {
     }
 
@@ -181,7 +181,7 @@ public:
     {
     }
 
-    ~AttachmentURLHandler()
+    ~AttachmentURLHandler() override
     {
     }
 
@@ -203,7 +203,7 @@ public:
     {
     }
 
-    ~ShowAuditLogURLHandler()
+    ~ShowAuditLogURLHandler() override
     {
     }
 
@@ -222,7 +222,7 @@ public:
     {
     }
 
-    ~InternalImageURLHandler()
+    ~InternalImageURLHandler() override
     {
     }
 
@@ -251,7 +251,7 @@ public:
     {
     }
 
-    ~EmbeddedImageURLHandler()
+    ~EmbeddedImageURLHandler() override
     {
     }
 
@@ -281,7 +281,7 @@ public:
     {
     }
 
-    ~KRunURLHandler()
+    ~KRunURLHandler() override
     {
     }
 
@@ -297,4 +297,4 @@ public:
     }
 };
 }
-#endif // __MESSAGEVIEWER_URLHANDLERMANAGER_P_H__
+#endif // MESSAGEVIEWER_URLHANDLERMANAGER_P_H

@@ -16,8 +16,8 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#ifndef __MESSAGEVIEWER_ICONNAMECACHE_H__
-#define __MESSAGEVIEWER_ICONNAMECACHE_H__
+#ifndef MESSAGEVIEWER_ICONNAMECACHE_H
+#define MESSAGEVIEWER_ICONNAMECACHE_H
 
 #include <QMap>
 #include <QString>

@@ -29,8 +29,8 @@
     your version.
 */
 
-#ifndef __MIMETREEPARSER_CSSHELPERBASE_H__
-#define __MIMETREEPARSER_CSSHELPERBASE_H__
+#ifndef MIMETREEPARSER_CSSHELPERBASE_H
+#define MIMETREEPARSER_CSSHELPERBASE_H
 
 #include "messageviewer_export.h"
 

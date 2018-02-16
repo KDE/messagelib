@@ -16,8 +16,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 */
 
-#ifndef __MESSAGELIST_PANE_H__
-#define __MESSAGELIST_PANE_H__
+#ifndef MESSAGELIST_PANE_H
+#define MESSAGELIST_PANE_H
 
 #include <messagelist/enums.h>
 #include <messagelist/view.h>
@@ -444,4 +444,4 @@ private:
 };
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_PANE_H__
+#endif //!__MESSAGELIST_PANE_H

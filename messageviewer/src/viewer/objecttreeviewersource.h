@@ -34,7 +34,7 @@ class MailViewerSource : public MessageViewer::EmptySource
 {
 public:
     explicit MailViewerSource(ViewerPrivate *viewer);
-    ~MailViewerSource();
+    ~MailViewerSource() override;
     bool decryptMessage() const override;
     bool htmlLoadExternal() const override;
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;

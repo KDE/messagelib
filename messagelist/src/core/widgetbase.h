@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_WIDGETBASE_H__
-#define __MESSAGELIST_CORE_WIDGETBASE_H__
+#ifndef MESSAGELIST_CORE_WIDGETBASE_H
+#define MESSAGELIST_CORE_WIDGETBASE_H
 
 #include <QWidget>
 #include <QString>
@@ -267,4 +267,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_WIDGET_H__
+#endif //!__MESSAGELIST_CORE_WIDGET_H

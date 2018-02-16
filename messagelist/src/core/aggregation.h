@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_AGGREGATION_H__
-#define __MESSAGELIST_CORE_AGGREGATION_H__
+#ifndef MESSAGELIST_CORE_AGGREGATION_H
+#define MESSAGELIST_CORE_AGGREGATION_H
 
 class QDataStream;
 
@@ -296,4 +296,4 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_AGGREGATION_H__
+#endif //!__MESSAGELIST_CORE_AGGREGATION_H

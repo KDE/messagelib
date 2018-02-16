@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_MESSAGEITEM_H__
-#define __MESSAGELIST_CORE_MESSAGEITEM_H__
+#ifndef MESSAGELIST_CORE_MESSAGEITEM_H
+#define MESSAGELIST_CORE_MESSAGEITEM_H
 
 #include <core/item.h>
 #include <core/modelinvariantindex.h>
@@ -232,4 +232,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MESSAGEITEM_H__
+#endif //!__MESSAGELIST_CORE_MESSAGEITEM_H

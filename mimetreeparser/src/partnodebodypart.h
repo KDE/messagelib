@@ -31,8 +31,8 @@
     your version.
 */
 
-#ifndef __MIMETREEPARSER_PARTNODEBODYPART_H__
-#define __MIMETREEPARSER_PARTNODEBODYPART_H__
+#ifndef MIMETREEPARSER_PARTNODEBODYPART_H
+#define MIMETREEPARSER_PARTNODEBODYPART_H
 
 #include "mimetreeparser_export.h"
 #include "mimetreeparser/bodypart.h"
@@ -71,4 +71,4 @@ private:
 };
 }
 
-#endif // __MIMETREEPARSER_PARTNODEBODYPART_H__
+#endif // MIMETREEPARSER_PARTNODEBODYPART_H

@@ -35,7 +35,7 @@ class MESSAGEVIEWER_EXPORT EmptySource : public MimeTreeParser::Interface::Objec
 {
 public:
     EmptySource();
-    ~EmptySource();
+    ~EmptySource() override;
     bool decryptMessage() const override;
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
     MimeTreeParser::Util::HtmlMode preferredMode() const override;

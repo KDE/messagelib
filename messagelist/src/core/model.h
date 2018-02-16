@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_MODEL_H__
-#define __MESSAGELIST_CORE_MODEL_H__
+#ifndef MESSAGELIST_CORE_MODEL_H
+#define MESSAGELIST_CORE_MODEL_H
 
 #include <QAbstractItemModel>
 #include <QList>
@@ -222,4 +222,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MODEL_H__
+#endif //!__MESSAGELIST_CORE_MODEL_H

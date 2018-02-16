@@ -31,8 +31,8 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_ANTISPAMCONFIG_H__
-#define __MESSAGEVIEWER_ANTISPAMCONFIG_H__
+#ifndef MESSAGEVIEWER_ANTISPAMCONFIG_H
+#define MESSAGEVIEWER_ANTISPAMCONFIG_H
 
 #include <QRegExp>
 #include <QVector>
@@ -156,4 +156,4 @@ private:
 };
 }
 
-#endif // __MESSAGEVIEWER_ANTISPAMCONFIG_H__
+#endif // MESSAGEVIEWER_ANTISPAMCONFIG_H

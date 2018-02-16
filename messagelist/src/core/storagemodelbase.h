@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_STORAGEMODELBASE_H__
-#define __MESSAGELIST_CORE_STORAGEMODELBASE_H__
+#ifndef MESSAGELIST_CORE_STORAGEMODELBASE_H
+#define MESSAGELIST_CORE_STORAGEMODELBASE_H
 
 #include <QAbstractItemModel>
 
@@ -122,4 +122,4 @@ public:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_STORAGEMODEL_H__
+#endif //!__MESSAGELIST_CORE_STORAGEMODEL_H

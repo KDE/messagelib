@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_ENUMS_H__
-#define __MESSAGELIST_CORE_ENUMS_H__
+#ifndef MESSAGELIST_CORE_ENUMS_H
+#define MESSAGELIST_CORE_ENUMS_H
 
 namespace MessageList {
 namespace Core {
@@ -63,4 +63,4 @@ enum ExistingSelectionBehaviour {
 }
 }
 
-#endif //!__MESSAGELIST_CORE_ENUMS_H__
+#endif //!__MESSAGELIST_CORE_ENUMS_H

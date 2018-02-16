@@ -18,8 +18,8 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef __MESSAGEVIEWER_TEST_SHOWONLYMIMEPARTTEST_H__
-#define __MESSAGEVIEWER_TEST_SHOWONLYMIMEPARTTEST_H__
+#ifndef MESSAGEVIEWER_TEST_SHOWONLYMIMEPARTTEST_H
+#define MESSAGEVIEWER_TEST_SHOWONLYMIMEPARTTEST_H
 
 #include <QObject>
 

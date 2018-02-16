@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_UTILS_CONFIGURETHEMESDIALOG_P_H__
-#define __MESSAGELIST_UTILS_CONFIGURETHEMESDIALOG_P_H__
+#ifndef MESSAGELIST_UTILS_CONFIGURETHEMESDIALOG_P_H
+#define MESSAGELIST_UTILS_CONFIGURETHEMESDIALOG_P_H
 
 #include "utils/configurethemesdialog.h"
 
@@ -70,4 +70,4 @@ public:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_CONFIGURESKINSDIALOG_P_H__
+#endif //!__MESSAGELIST_UTILS_CONFIGURESKINSDIALOG_P_H

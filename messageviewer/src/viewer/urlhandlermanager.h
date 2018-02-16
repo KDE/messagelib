@@ -31,8 +31,8 @@
     your version.
 */
 
-#ifndef __MESSAGEVIEWER_URLHANDLERMANAGER_H__
-#define __MESSAGEVIEWER_URLHANDLERMANAGER_H__
+#ifndef MESSAGEVIEWER_URLHANDLERMANAGER_H
+#define MESSAGEVIEWER_URLHANDLERMANAGER_H
 
 #include "messageviewer_private_export.h"
 
@@ -86,4 +86,4 @@ private:
 };
 }
 
-#endif // __MESSAGEVIEWER_URLHANDLERMANAGER_H__
+#endif // MESSAGEVIEWER_URLHANDLERMANAGER_H

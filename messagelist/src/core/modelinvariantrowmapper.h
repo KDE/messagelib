@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H__
-#define __MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H__
+#ifndef MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H
+#define MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H
 
 #include <QObject>
 #include <QHash>
@@ -186,4 +186,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H__
+#endif //!__MESSAGELIST_CORE_MODELINVARIANTROWMAPPER_H

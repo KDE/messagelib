@@ -13,8 +13,8 @@
     Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, US
 */
 
-#ifndef __MIMETREEPARSER_PARTMETADATA_H__
-#define __MIMETREEPARSER_PARTMETADATA_H__
+#ifndef MIMETREEPARSER_PARTMETADATA_H
+#define MIMETREEPARSER_PARTMETADATA_H
 
 #include "mimetreeparser_export.h"
 
@@ -63,4 +63,4 @@ public:
 };
 }
 
-#endif // __MIMETREEPARSER_PARTMETADATA_H__
+#endif // MIMETREEPARSER_PARTMETADATA_H

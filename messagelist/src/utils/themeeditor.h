@@ -18,8 +18,8 @@
  *
  *******************************************************************************/
 
-#ifndef __MESSAGELIST_UTILS_THEMEEDITOR_H__
-#define __MESSAGELIST_UTILS_THEMEEDITOR_H__
+#ifndef MESSAGELIST_UTILS_THEMEEDITOR_H
+#define MESSAGELIST_UTILS_THEMEEDITOR_H
 
 #include <utils/optionseteditor.h>
 #include <core/themedelegate.h>
@@ -231,4 +231,4 @@ private:
 } // namespace Utils
 } // namespace MessageList
 
-#endif //!__MESSAGELIST_UTILS_SKINEDITOR_H__
+#endif //!__MESSAGELIST_UTILS_SKINEDITOR_H

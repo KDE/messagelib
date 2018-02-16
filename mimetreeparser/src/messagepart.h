@@ -17,8 +17,8 @@
    02110-1301, USA.
 */
 
-#ifndef __MIMETREEPARSER_MESSAGEPART_H__
-#define __MIMETREEPARSER_MESSAGEPART_H__
+#ifndef MIMETREEPARSER_MESSAGEPART_H
+#define MIMETREEPARSER_MESSAGEPART_H
 
 #include "mimetreeparser_export.h"
 
@@ -416,4 +416,4 @@ protected:
 };
 }
 
-#endif //__MIMETREEPARSER_MESSAGEPART_H__
+#endif //__MIMETREEPARSER_MESSAGEPART_H

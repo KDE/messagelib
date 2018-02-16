@@ -29,8 +29,8 @@
     your version.
 */
 
-#ifndef __KMAIL_INTERFACES_URLHANDLER_H__
-#define __KMAIL_INTERFACES_URLHANDLER_H__
+#ifndef KMAIL_INTERFACES_URLHANDLER_H
+#define KMAIL_INTERFACES_URLHANDLER_H
 
 #include <QUrl>
 
@@ -116,4 +116,4 @@ public:
 };
 }
 
-#endif // __KMAIL_INTERFACES_URLHANDLER_H__
+#endif // KMAIL_INTERFACES_URLHANDLER_H
