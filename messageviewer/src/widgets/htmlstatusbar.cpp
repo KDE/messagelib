@@ -39,6 +39,7 @@
 #include <KLocalizedString>
 #include <kconfiggroup.h>
 
+#include <KSharedConfig>
 #include <QMouseEvent>
 
 using namespace MessageViewer;
@@ -183,9 +184,8 @@ QColor HtmlStatusBar::fgColor() const
             color = conf.readEntry("ColorbarForegroundPlain", defaultColor);
         }
         return color;
-    default:
-        return Qt::black;
     }
+    return Qt::black;
 }
 
 QColor HtmlStatusBar::bgColor() const
@@ -211,7 +211,6 @@ QColor HtmlStatusBar::bgColor() const
             color = conf.readEntry("ColorbarBackgroundPlain", defaultColor);
         }
         return color;
-    default:
-        return Qt::white;
     }
+    return Qt::white;
 }
