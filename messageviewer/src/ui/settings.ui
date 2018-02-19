@@ -93,13 +93,6 @@
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="kcfg_showColorBar">
-       <property name="text">
-        <string>Show &amp;HTML Side Bar</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QCheckBox" name="kcfg_ShrinkQuotes">
        <property name="text">
         <string>Reduce font size for &amp;quoted text</string>
@@ -224,7 +217,6 @@
  </customwidgets>
  <tabstops>
   <tabstop>kcfg_AccessKeyEnabled</tabstop>
-  <tabstop>kcfg_showColorBar</tabstop>
   <tabstop>kcfg_ShrinkQuotes</tabstop>
   <tabstop>kcfg_ShowExpandQuotesMark</tabstop>
   <tabstop>kcfg_CollapseQuoteLevelSpin</tabstop>

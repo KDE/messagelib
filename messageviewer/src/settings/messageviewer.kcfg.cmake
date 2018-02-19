@@ -58,10 +58,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
   <entry name="AutoImportKeys" type="Bool">
       <default>false</default>
     </entry>
-    <entry name="showColorBar" type="Bool">
-      <default>true</default>
-      <label>Show HTML Side Bar</label>
-    </entry>
     <entry name="ShowExpandQuotesMark" type="Bool">
       <default>false</default>
       <label>Show expand/collapse quote marks</label>

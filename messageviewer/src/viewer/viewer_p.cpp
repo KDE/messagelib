@@ -1439,7 +1439,7 @@ void ViewerPrivate::adjustLayout()
     }
 #endif
 
-    if (MessageViewer::MessageViewerSettings::self()->showColorBar() && mMsgDisplay) {
+    if (mMsgDisplay) {
         mColorBar->show();
     } else {
         mColorBar->hide();
@@ -2278,11 +2278,7 @@ void ViewerPrivate::updateReaderWin()
     htmlWriter()->reset();
     //TODO: if the item doesn't have the payload fetched, try to fetch it? Maybe not here, but in setMessageItem.
     if (mMessage) {
-        if (MessageViewer::MessageViewerSettings::self()->showColorBar()) {
-            mColorBar->show();
-        } else {
-            mColorBar->hide();
-        }
+        mColorBar->show();
         displayMessage();
     } else if (mMessagePartNode) {
         setMessagePart(mMessagePartNode);
