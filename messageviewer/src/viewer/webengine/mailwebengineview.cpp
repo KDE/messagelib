@@ -295,15 +295,12 @@ void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)
 
 void MailWebEngineView::removeAttachmentMarking(const QString &id)
 {
-    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::removeStyleToElement(QLatin1String("*#")
-                                                                                 + id));
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::removeStyleToElement(id));
 }
 
 void MailWebEngineView::markAttachment(const QString &id, const QString &style)
 {
-    //TODO verify "*#" + id
-    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::setStyleToElement(QLatin1String("*#")
-                                                                              + id, style));
+    runJavaScriptInWordId(WebEngineViewer::WebEngineScript::setStyleToElement(id, style));
 }
 
 void MailWebEngineView::scrollToAnchor(const QString &anchor)

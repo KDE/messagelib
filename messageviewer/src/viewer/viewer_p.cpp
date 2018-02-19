@@ -2951,7 +2951,7 @@ void ViewerPrivate::scrollToAttachment(KMime::Content *node)
 {
     const QString indexStr = node->index().toString();
     // The anchors for this are created in ObjectTreeParser::parseObjectTree()
-    mViewer->scrollToAnchor(QLatin1String("att") + indexStr);
+    mViewer->scrollToAnchor(QLatin1String("attachmentDiv") + indexStr);
 
     // Remove any old color markings which might be there
     const KMime::Content *root = node->topLevel();
