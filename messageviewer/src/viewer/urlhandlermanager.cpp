@@ -709,9 +709,10 @@ bool AttachmentURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         return false;
     }
     //Laurent workaround until I fix scrolltoattachment
-#if 0
+#if 1
     const bool inHeader = attachmentIsInHeader(url);
     const bool shouldShowDialog = !w->nodeHelper()->isNodeDisplayedEmbedded(node) || !inHeader;
+    qDebug() << " inHeader: " << inHeader << " shouldShowDialog: "<<shouldShowDialog;
     if (inHeader) {
         w->scrollToAttachment(node);
     }

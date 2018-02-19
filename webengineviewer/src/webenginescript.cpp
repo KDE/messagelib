@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "webenginescript.h"
-
+#include <QDebug>
 using namespace WebEngineViewer;
 
 QString WebEngineScript::findAllImages()
@@ -156,7 +156,7 @@ QString WebEngineScript::scrollDown(int pixel)
 
 QString WebEngineScript::scrollToPosition(const QPoint &pos)
 {
-    const QString source = QStringLiteral("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x(), pos.y());
+    const QString source = QStringLiteral("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x()).arg(pos.y());
     return source;
 }
 
