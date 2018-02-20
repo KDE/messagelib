@@ -631,19 +631,10 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         }
     }
 
-#if 0 //Reimplement in the future
-    const bool attachmentInHeader = mViewer->isAttachmentInjectionPoint(globalPos);
-    const bool hasScrollbar = mViewer->hasVerticalScrollBar();
-    if (attachmentInHeader && hasScrollbar) {
-#else
-        action = menu.addAction(i18n("Scroll To"));
-        connect(action, &QAction::triggered, this, [this]() {
-            slotHandleAttachment(Viewer::ScrollTo);
-        });
-#endif
-#if 0
-    }
-#endif
+    action = menu.addAction(i18n("Scroll To"));
+    connect(action, &QAction::triggered, this, [this]() {
+        slotHandleAttachment(Viewer::ScrollTo);
+    });
 
     action = menu.addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n(
                                 "Save As..."));
