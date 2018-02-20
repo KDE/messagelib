@@ -635,10 +635,13 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     const bool attachmentInHeader = mViewer->isAttachmentInjectionPoint(globalPos);
     const bool hasScrollbar = mViewer->hasVerticalScrollBar();
     if (attachmentInHeader && hasScrollbar) {
-        action = menu->addAction(i18n("Scroll To"));
+#else
+        action = menu.addAction(i18n("Scroll To"));
         connect(action, &QAction::triggered, this, [this]() {
             slotHandleAttachment(Viewer::ScrollTo);
         });
+#endif
+#if 0
     }
 #endif
 
