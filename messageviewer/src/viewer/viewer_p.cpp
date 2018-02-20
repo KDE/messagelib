@@ -2957,7 +2957,10 @@ void ViewerPrivate::scrollToAttachment(KMime::Content *node)
     const KMime::Content *root = node->topLevel();
     const int totalChildCount = Util::allContents(root).size();
     for (int i = 0; i < totalChildCount + 1; ++i) {
+        //Not optimal I need to optimize it. But for the moment it removes yellow mark
         mViewer->removeAttachmentMarking(QStringLiteral("attachmentDiv%1").arg(i + 1));
+        mViewer->removeAttachmentMarking(QStringLiteral("attachmentDiv1.%1").arg(i + 1));
+        mViewer->removeAttachmentMarking(QStringLiteral("attachmentDiv2.%1").arg(i + 1));
     }
 
     // Don't mark hidden nodes, that would just produce a strange yellow line
