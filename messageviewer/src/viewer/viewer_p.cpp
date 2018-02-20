@@ -637,9 +637,12 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     const bool attachmentInHeader = mViewer->isAttachmentInjectionPoint(globalPos);
     const bool hasScrollbar = mViewer->hasVerticalScrollBar();
     if (attachmentInHeader && hasScrollbar) {
+#else
         action = menu->addAction(i18n("Scroll To"));
         connect(action, SIGNAL(triggered(bool)), attachmentMapper, SLOT(map()));
         attachmentMapper->setMapping(action, Viewer::ScrollTo);
+#endif
+#if 0
     }
 #endif
 
