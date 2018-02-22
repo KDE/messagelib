@@ -749,6 +749,7 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
     if (!node) {
         return false;
     }
+    //TODO fix me embedded
     if (node->header<KMime::Headers::Subject>()) {
         if (!node->contents().isEmpty()) {
             node = node->contents().constLast();

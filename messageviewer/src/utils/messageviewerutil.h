@@ -59,6 +59,7 @@ namespace MessageViewer {
 namespace Util {
 // return true if we should proceed, false if we should abort
 bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
+MESSAGEVIEWER_EXPORT bool saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
 MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
 
 MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &saveUrl);

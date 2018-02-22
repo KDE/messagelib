@@ -435,7 +435,7 @@ bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent
     return Util::saveContents(parent, contents, urlList);
 }
 
-bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)
+bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)
 {
     QString fileName;
     if (retrievedMsgs.isEmpty()) {
@@ -445,10 +445,10 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
 
     if (msgBase.hasPayload<KMime::Message::Ptr>()) {
         fileName
-            = MessageCore::StringUtil::cleanFileName(MimeTreeParser::NodeHelper::cleanSubject(
-                                                         msgBase.
-                                                         payload
-                                                         <KMime::Message::Ptr>().data()).trimmed());
+                = MessageCore::StringUtil::cleanFileName(MimeTreeParser::NodeHelper::cleanSubject(
+                                                             msgBase.
+                                                             payload
+                                                             <KMime::Message::Ptr>().data()).trimmed());
         fileName.remove(QLatin1Char('\"'));
     } else {
         fileName = i18n("message");
@@ -470,10 +470,10 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
     }
     QString localFile = startUrl.toLocalFile() + QLatin1Char('/') + fileName;
     QString saveFileName
-        = QFileDialog::getSaveFileName(parent,
-                                       i18np("Save Message", "Save Messages",
-                                             retrievedMsgs.count()), localFile, filter, nullptr,
-                                       opt);
+            = QFileDialog::getSaveFileName(parent,
+                                           i18np("Save Message", "Save Messages",
+                                                 retrievedMsgs.count()), localFile, filter, nullptr,
+                                           opt);
 
     if (!saveFileName.isEmpty()) {
         const QString localFileName = saveFileName;
@@ -503,13 +503,20 @@ bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *
                                i18n("Error saving message"));
             return false;
         }
-        QUrl url = QUrl::fromLocalFile(saveFileName);
-        if (url.isLocalFile()) {
-            KRecentDirs::add(fileClass, url.adjusted(
+        QUrl localUrl = QUrl::fromLocalFile(saveFileName);
+        if (localUrl.isLocalFile()) {
+            KRecentDirs::add(fileClass, localUrl.adjusted(
                                  QUrl::RemoveFilename | QUrl::StripTrailingSlash).path());
         }
+        url = localUrl;
     }
     return true;
+}
+
+bool Util::saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)
+{
+    QUrl url;
+    return saveMessageInMboxAndGetUrl(url, retrievedMsgs, parent, appendMessages);
 }
 
 QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent)
