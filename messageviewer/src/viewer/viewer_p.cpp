@@ -72,6 +72,7 @@
 #include <KEmailAddress>
 #include <AkonadiCore/ItemModifyJob>
 #include <AkonadiCore/ItemCreateJob>
+#include <messageflags.h>
 
 #include <mailtransportakonadi/errorattribute.h>
 
@@ -2751,6 +2752,25 @@ void ViewerPrivate::slotHandleAttachment(int choice)
         break;
     case Viewer::Save:
     {
+        const bool isEncapsulatedMessage = mCurrentContent->parent() && mCurrentContent->parent()->bodyIsMessage();
+        if (isEncapsulatedMessage) {
+
+            KMime::Message::Ptr message = KMime::Message::Ptr(new KMime::Message);
+            message->setContent(mCurrentContent->parent()->bodyAsMessage()->encodedContent());
+            message->parse();
+            Akonadi::Item item;
+
+            item.setPayload<KMime::Message::Ptr>(message);
+            Akonadi::MessageFlags::copyMessageFlags(*message, item);
+            item.setMimeType(KMime::Message::mimeType());
+
+            Util::saveMessageInMbox(Akonadi::Item::List() << item, mMainWindow);
+
+            //TODO reimplement openattachementfolder widget!!!!
+            //showOpenAttachmentFolderWidget(urlList);
+           return;
+        }
+
         QList<QUrl> urlList;
         if (Util::saveContents(mMainWindow, KMime::Content::List() << mCurrentContent, urlList)) {
             showOpenAttachmentFolderWidget(urlList);
