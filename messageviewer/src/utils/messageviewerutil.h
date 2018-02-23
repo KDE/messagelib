@@ -61,7 +61,7 @@ namespace Util {
 bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
 MESSAGEVIEWER_EXPORT bool saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
 MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
-
+MESSAGEVIEWER_EXPORT QString generateMboxFileName(const Akonadi::Item &msgBase);
 MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &saveUrl);
 
 MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);

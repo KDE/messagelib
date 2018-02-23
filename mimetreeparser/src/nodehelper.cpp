@@ -209,6 +209,28 @@ void NodeHelper::setPartMetaData(KMime::Content *node, const PartMetaData &metaD
     mPartMetaDatas.insert(node, metaData);
 }
 
+QString NodeHelper::writeFileToTempFile(KMime::Content *node, const QString &filename)
+{
+    QString fname = createTempDir(persistentIndex(node));
+    if (fname.isEmpty()) {
+        return QString();
+    }
+    fname += QLatin1Char('/') + filename;
+    QFile f(fname);
+    if (!f.open(QIODevice::ReadWrite)) {
+        qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
+        return QString();
+    }
+    f.write(QByteArray());
+    mAttachmentFilesDir->addTempFile(fname);
+    // make file read-only so that nobody gets the impression that he might
+    // edit attached files (cf. bug #52813)
+    f.setPermissions(QFileDevice::ReadUser);
+    f.close();
+
+    return fname;
+}
+
 QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
 {
     // If the message part is already written to a file, no point in doing it again.

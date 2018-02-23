@@ -122,6 +122,8 @@ public:
      */
     QString writeNodeToTempFile(KMime::Content *node);
 
+    QString writeFileToTempFile(KMime::Content *node, const QString &filename);
+
     /**
      * Returns the temporary file path and name where this node was saved, or an empty url
      * if it wasn't saved yet with writeNodeToTempFile()

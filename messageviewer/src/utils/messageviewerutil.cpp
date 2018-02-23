@@ -435,13 +435,9 @@ bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent
     return Util::saveContents(parent, contents, urlList);
 }
 
-bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)
+QString Util::generateMboxFileName(const Akonadi::Item &msgBase)
 {
     QString fileName;
-    if (retrievedMsgs.isEmpty()) {
-        return false;
-    }
-    const Akonadi::Item msgBase = retrievedMsgs.first();
 
     if (msgBase.hasPayload<KMime::Message::Ptr>()) {
         fileName
@@ -457,6 +453,16 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
     if (!fileName.endsWith(QLatin1String(".mbox"))) {
         fileName += QLatin1String(".mbox");
     }
+    return fileName;
+}
+
+bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)
+{
+    if (retrievedMsgs.isEmpty()) {
+        return false;
+    }
+    const Akonadi::Item msgBase = retrievedMsgs.first();
+    QString fileName = generateMboxFileName(msgBase);
 
     const QString filter = i18n("email messages (*.mbox);;all files (*)");
 

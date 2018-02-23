@@ -52,6 +52,8 @@
 
 #include <KMime/Content>
 #include <KEmailAddress>
+#include <kmbox/mbox.h>
+#include "messageflags.h"
 
 #include <KRun>
 #include <KIconLoader>
@@ -749,37 +751,45 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
     if (!node) {
         return false;
     }
-#if 0
-    const bool isEncapsulatedMessage = mCurrentContent->parent() && mCurrentContent->parent()->bodyIsMessage();
+    QString fileName;
+    QUrl tUrl;
+    const bool isEncapsulatedMessage = node->parent() && node->parent()->bodyIsMessage();
     if (isEncapsulatedMessage) {
         KMime::Message::Ptr message = KMime::Message::Ptr(new KMime::Message);
-        message->setContent(mCurrentContent->parent()->bodyAsMessage()->encodedContent());
+        message->setContent(node->parent()->bodyAsMessage()->encodedContent());
         message->parse();
         Akonadi::Item item;
         item.setPayload<KMime::Message::Ptr>(message);
         Akonadi::MessageFlags::copyMessageFlags(*message, item);
         item.setMimeType(KMime::Message::mimeType());
-        QUrl url;
-        if (MessageViewer::Util::saveMessageInMboxAndGetUrl(url, Akonadi::Item::List() << item, mMainWindow)) {
-            showOpenAttachmentFolderWidget(QList<QUrl>() << url);
-        }
-        return;
-    }
+        fileName = window->nodeHelper()->writeFileToTempFile(node, Util::generateMboxFileName(item));
 
-#endif
-    //TODO fix me embedded
-    QString fileName;
-    QUrl tUrl;
-    if (node->header<KMime::Headers::Subject>()) {
-        if (!node->contents().isEmpty()) {
-            node = node->contents().constLast();
-            fileName = window->nodeHelper()->writeNodeToTempFile(node);
-            tUrl = QUrl::fromLocalFile(fileName);
+        KMBox::MBox mbox;
+        QFile::remove(fileName);
+
+        if (!mbox.load(fileName)) {
+            qCWarning(MESSAGEVIEWER_LOG) << "MBOX: Impossible to open file";
+            return false;
         }
-    }
-    if (fileName.isEmpty()) {
-        tUrl = window->nodeHelper()->tempFileUrlFromNode(node);
-        fileName = tUrl.path();
+        mbox.appendMessage(item.payload<KMime::Message::Ptr>());
+
+        if (!mbox.save()) {
+            qCWarning(MESSAGEVIEWER_LOG) << "MBOX: Impossible to save file";
+            return false;
+        }
+        tUrl = QUrl::fromLocalFile(fileName);
+    } else {
+        if (node->header<KMime::Headers::Subject>()) {
+            if (!node->contents().isEmpty()) {
+                node = node->contents().constLast();
+                fileName = window->nodeHelper()->writeNodeToTempFile(node);
+                tUrl = QUrl::fromLocalFile(fileName);
+            }
+        }
+        if (fileName.isEmpty()) {
+            tUrl = window->nodeHelper()->tempFileUrlFromNode(node);
+            fileName = tUrl.path();
+        }
     }
     if (!fileName.isEmpty()) {
         QFile f(fileName);
