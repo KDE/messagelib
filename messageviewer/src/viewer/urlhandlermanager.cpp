@@ -749,16 +749,38 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
     if (!node) {
         return false;
     }
+#if 0
+    const bool isEncapsulatedMessage = mCurrentContent->parent() && mCurrentContent->parent()->bodyIsMessage();
+    if (isEncapsulatedMessage) {
+        KMime::Message::Ptr message = KMime::Message::Ptr(new KMime::Message);
+        message->setContent(mCurrentContent->parent()->bodyAsMessage()->encodedContent());
+        message->parse();
+        Akonadi::Item item;
+        item.setPayload<KMime::Message::Ptr>(message);
+        Akonadi::MessageFlags::copyMessageFlags(*message, item);
+        item.setMimeType(KMime::Message::mimeType());
+        QUrl url;
+        if (MessageViewer::Util::saveMessageInMboxAndGetUrl(url, Akonadi::Item::List() << item, mMainWindow)) {
+            showOpenAttachmentFolderWidget(QList<QUrl>() << url);
+        }
+        return;
+    }
+
+#endif
     //TODO fix me embedded
+    QString fileName;
+    QUrl tUrl;
     if (node->header<KMime::Headers::Subject>()) {
         if (!node->contents().isEmpty()) {
             node = node->contents().constLast();
-            window->nodeHelper()->writeNodeToTempFile(node);
+            fileName = window->nodeHelper()->writeNodeToTempFile(node);
+            tUrl = QUrl::fromLocalFile(fileName);
         }
     }
-    const QUrl tUrl = window->nodeHelper()->tempFileUrlFromNode(node);
-
-    const QString fileName = tUrl.path();
+    if (fileName.isEmpty()) {
+        tUrl = window->nodeHelper()->tempFileUrlFromNode(node);
+        fileName = tUrl.path();
+    }
     if (!fileName.isEmpty()) {
         QFile f(fileName);
         f.setPermissions(
