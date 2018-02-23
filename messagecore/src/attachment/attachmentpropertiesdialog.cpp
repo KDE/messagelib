@@ -199,11 +199,9 @@ void AttachmentPropertiesDialog::Private::populateWhatsThis()
                                     "message.</p>");
 
     if (mReadOnly) {
-        uiReadOnly->mimeType->setWhatsThis(msgMimeType);
         uiReadOnly->size->setWhatsThis(msgSize);
         uiReadOnly->name->setWhatsThis(msgName);
         uiReadOnly->encoding->setWhatsThis(msgEncoding);
-        uiReadOnly->description->setWhatsThis(msgDescription);
     } else {
         ui->mimeType->setWhatsThis(msgMimeType);
         ui->size->setWhatsThis(msgSize);
