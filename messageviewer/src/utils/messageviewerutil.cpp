@@ -439,7 +439,7 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
 {
     QString fileName;
     if (retrievedMsgs.isEmpty()) {
-        return true;
+        return false;
     }
     const Akonadi::Item msgBase = retrievedMsgs.first();
 
