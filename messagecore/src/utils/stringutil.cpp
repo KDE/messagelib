@@ -183,8 +183,7 @@ QMap<QString, QString> parseMailtoUrl(const QUrl &url)
         values.insertMulti(queryItem.first, queryItem.second);
     }
 
-    QStringList to;
-    to << KEmailAddress::decodeMailtoUrl(url);
+    QStringList to = {KEmailAddress::decodeMailtoUrl(url)};
 
     const QString toStr = values.value(QStringLiteral("to"));
     if (!toStr.isEmpty()) {
