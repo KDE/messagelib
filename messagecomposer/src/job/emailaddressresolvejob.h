@@ -52,7 +52,7 @@ public:
     /**
      * Destroys the email address resolve job.
      */
-    ~EmailAddressResolveJob();
+    ~EmailAddressResolveJob() override;
 
     /**
      * Starts the job.

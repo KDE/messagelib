@@ -40,7 +40,7 @@ class RecipientsPicker : public QDialog
 
 public:
     explicit RecipientsPicker(QWidget *parent);
-    ~RecipientsPicker();
+    ~RecipientsPicker() override;
 
     void setRecipients(const Recipient::List &);
 

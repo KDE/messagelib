@@ -32,7 +32,7 @@ class Delegate : public ThemeDelegate
     Q_OBJECT
 public:
     explicit Delegate(View *pParent);
-    ~Delegate();
+    ~Delegate() override;
 
 protected:
     /**

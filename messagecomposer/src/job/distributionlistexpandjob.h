@@ -45,7 +45,7 @@ public:
     /**
      * Destroys the distribution list expand job.
      */
-    ~DistributionListExpandJob();
+    ~DistributionListExpandJob() override;
 
     /**
      * Starts the job.

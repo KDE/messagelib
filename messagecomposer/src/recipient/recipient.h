@@ -48,7 +48,7 @@ public:
     };
 
     Recipient(const QString &email = QString(), Type type = To);   //krazy:exclude=explicit
-    ~Recipient();
+    ~Recipient() override;
     void setType(Type type);
     Type type() const;
 

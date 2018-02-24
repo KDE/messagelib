@@ -73,7 +73,7 @@ public:
     };
 
     explicit AttachmentModel(QObject *parent);
-    ~AttachmentModel();
+    ~AttachmentModel() override;
 
     bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) override;
     QMimeData *mimeData(const QModelIndexList &indexes) const override;

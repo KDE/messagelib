@@ -43,7 +43,7 @@ public:
     * Destroys the job.
     */
 
-    ~AttachmentFromFolderJob();
+    ~AttachmentFromFolderJob() override;
 
     /**
      * Sets the @p compression method, either KZip::Deflate or KZip::NoCompression.

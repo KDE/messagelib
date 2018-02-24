@@ -42,7 +42,7 @@ class MESSAGECOMPOSER_EXPORT InsertTextFileJob : public KJob
 
 public:
     InsertTextFileJob(QTextEdit *editor, const QUrl &url);
-    ~InsertTextFileJob();
+    ~InsertTextFileJob() override;
 
     void setEncoding(const QString &encoding);
 

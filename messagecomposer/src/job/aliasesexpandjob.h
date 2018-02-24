@@ -54,7 +54,7 @@ public:
     /**
      * Destroys the aliases expand job.
      */
-    ~AliasesExpandJob();
+    ~AliasesExpandJob() override;
 
     /**
      * Starts the job.

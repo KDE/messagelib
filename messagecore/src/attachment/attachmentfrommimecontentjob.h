@@ -50,7 +50,7 @@ public:
     /**
      * Destroys the job.
      */
-    ~AttachmentFromMimeContentJob();
+    ~AttachmentFromMimeContentJob() override;
 
     /**
      * Sets the mime @p content to load the attachment from.

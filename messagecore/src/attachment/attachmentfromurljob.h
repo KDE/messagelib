@@ -46,7 +46,7 @@ public:
     /**
      * Destroys the job.
      */
-    ~AttachmentFromUrlJob();
+    ~AttachmentFromUrlJob() override;
 
 protected Q_SLOTS:
     void doStart() override;
