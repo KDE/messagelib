@@ -2765,12 +2765,11 @@ void ViewerPrivate::slotHandleAttachment(int choice)
             if (MessageViewer::Util::saveMessageInMboxAndGetUrl(url, Akonadi::Item::List() << item, mMainWindow)) {
                 showOpenAttachmentFolderWidget(QList<QUrl>() << url);
             }
-            return;
-        }
-
-        QList<QUrl> urlList;
-        if (Util::saveContents(mMainWindow, KMime::Content::List() << mCurrentContent, urlList)) {
-            showOpenAttachmentFolderWidget(urlList);
+        } else {
+            QList<QUrl> urlList;
+            if (Util::saveContents(mMainWindow, KMime::Content::List() << mCurrentContent, urlList)) {
+                showOpenAttachmentFolderWidget(urlList);
+            }
         }
         break;
     }
