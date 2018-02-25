@@ -29,7 +29,7 @@ class TEMPLATEPARSER_TESTS_EXPORT TemplateParserEmailAddressRequesterLineEdit : 
     Q_OBJECT
 public:
     explicit TemplateParserEmailAddressRequesterLineEdit(QWidget *parent = nullptr);
-    ~TemplateParserEmailAddressRequesterLineEdit();
+    ~TemplateParserEmailAddressRequesterLineEdit() override;
 
     QString text() const override;
     void setText(const QString &str) override;

@@ -31,7 +31,7 @@ class WEBENGINEVIEWER_EXPORT FindBarWebEngineView : public FindBarBase
     Q_OBJECT
 public:
     explicit FindBarWebEngineView(QWebEngineView *view, QWidget *parent = nullptr);
-    ~FindBarWebEngineView();
+    ~FindBarWebEngineView() override;
 
 private:
     void clearSelections() override;

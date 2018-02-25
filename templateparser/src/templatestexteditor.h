@@ -32,7 +32,7 @@ class TemplatesTextEditor : public KPIMTextEdit::PlainTextEditor
     Q_OBJECT
 public:
     explicit TemplatesTextEditor(QWidget *parent = nullptr);
-    ~TemplatesTextEditor();
+    ~TemplatesTextEditor() override;
 
 protected:
     void initCompleter();

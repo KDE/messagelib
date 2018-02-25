@@ -29,7 +29,7 @@ class WEBENGINEVIEWER_TESTS_EXPORT DownloadLocalDatabaseThread : public QThread
     Q_OBJECT
 public:
     explicit DownloadLocalDatabaseThread(QObject *parent = nullptr);
-    ~DownloadLocalDatabaseThread();
+    ~DownloadLocalDatabaseThread() override;
 
     void setDataBaseState(const QString &value);
 
