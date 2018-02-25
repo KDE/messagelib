@@ -42,7 +42,7 @@ class MESSAGEVIEWER_EXPORT FileHtmlWriter : public HtmlWriter
 {
 public:
     explicit FileHtmlWriter(const QString &filename);
-    ~FileHtmlWriter();
+    ~FileHtmlWriter() override;
 
     void begin() override;
     void end() override;

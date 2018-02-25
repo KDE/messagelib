@@ -34,7 +34,7 @@ class MESSAGEVIEWER_EXPORT BufferedHtmlWriter : public HtmlWriter
 {
 public:
     BufferedHtmlWriter();
-    ~BufferedHtmlWriter();
+    ~BufferedHtmlWriter() override;
 
     void begin() override;
     void end() override;

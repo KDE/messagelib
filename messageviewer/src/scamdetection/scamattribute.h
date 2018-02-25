@@ -29,7 +29,7 @@ class ScamAttribute : public Akonadi::Attribute
 {
 public:
     explicit ScamAttribute();
-    ~ScamAttribute();
+    ~ScamAttribute() override;
 
     ScamAttribute *clone() const override;
     QByteArray type() const override;

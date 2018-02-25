@@ -43,7 +43,7 @@ public:
     };
 
     explicit BlockMailTrackingUrlInterceptor(QObject *parent = nullptr);
-    ~BlockMailTrackingUrlInterceptor();
+    ~BlockMailTrackingUrlInterceptor() override;
     bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
 Q_SIGNALS:

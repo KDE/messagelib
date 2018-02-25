@@ -36,7 +36,7 @@ class MESSAGEVIEWER_EXPORT MailWebEngineView : public WebEngineViewer::WebEngine
     Q_OBJECT
 public:
     explicit MailWebEngineView(KActionCollection *ac, QWidget *parent = nullptr);
-    ~MailWebEngineView();
+    ~MailWebEngineView() override;
 
     void scrollUp(int pixels);
     void scrollDown(int pixels);

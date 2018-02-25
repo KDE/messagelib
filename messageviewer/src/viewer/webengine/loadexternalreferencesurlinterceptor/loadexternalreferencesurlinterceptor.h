@@ -27,7 +27,7 @@ class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::NetworkPlug
     Q_OBJECT
 public:
     explicit LoadExternalReferencesUrlInterceptor(QObject *parent = nullptr);
-    ~LoadExternalReferencesUrlInterceptor();
+    ~LoadExternalReferencesUrlInterceptor() override;
 
     bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
     void setAllowExternalContent(bool b);

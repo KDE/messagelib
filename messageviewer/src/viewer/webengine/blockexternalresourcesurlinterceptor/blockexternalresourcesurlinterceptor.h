@@ -28,7 +28,7 @@ class BlockExternalResourcesUrlInterceptor : public WebEngineViewer::
     Q_OBJECT
 public:
     explicit BlockExternalResourcesUrlInterceptor(QObject *parent = nullptr);
-    ~BlockExternalResourcesUrlInterceptor();
+    ~BlockExternalResourcesUrlInterceptor() override;
 
     bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
     void setAllowExternalContent(bool b);

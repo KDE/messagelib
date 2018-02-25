@@ -53,7 +53,7 @@ class MESSAGEVIEWER_EXPORT RichHeaderStrategy : public HeaderStrategy
 {
 public:
     RichHeaderStrategy();
-    ~RichHeaderStrategy();
+    ~RichHeaderStrategy() override;
 
 public:
     const char *name() const override

@@ -33,7 +33,7 @@ class WebEnginePartHtmlWriter : public QObject, public BufferedHtmlWriter
     Q_OBJECT
 public:
     explicit WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent = nullptr);
-    ~WebEnginePartHtmlWriter();
+    ~WebEnginePartHtmlWriter() override;
 
     void begin() override;
     void end() override;

@@ -47,7 +47,7 @@ public:
     /**
      * Destroys the mark message read handler.
      */
-    ~MarkMessageReadHandler();
+    ~MarkMessageReadHandler() override;
 
     /**
      * @copydoc AbstractMessageLoadedHandler::setItem()

@@ -42,7 +42,7 @@ class ContactDisplayMessageMemento : public QObject, public MimeTreeParser::Inte
     Q_OBJECT
 public:
     explicit ContactDisplayMessageMemento(const QString &emailAddress);
-    ~ContactDisplayMessageMemento();
+    ~ContactDisplayMessageMemento() override;
     void processAddress(const KContacts::Addressee &addressee);
     bool allowToRemoteContent() const;
     KContacts::Picture photo() const;

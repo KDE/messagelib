@@ -34,7 +34,7 @@ class DefaultRendererPrivate : public RenderContext
 {
 public:
     DefaultRendererPrivate(CSSHelperBase *cssHelper, const MessagePartRendererFactory *rendererFactory);
-    ~DefaultRendererPrivate();
+    ~DefaultRendererPrivate() override;
 
     CSSHelperBase *cssHelper() const override;
 

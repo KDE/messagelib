@@ -28,7 +28,7 @@ class MESSAGEVIEWER_EXPORT GrantleeHeaderStyle : public HeaderStyle
 {
 public:
     GrantleeHeaderStyle();
-    ~GrantleeHeaderStyle();
+    ~GrantleeHeaderStyle() override;
 
 public:
     const char *name() const override;

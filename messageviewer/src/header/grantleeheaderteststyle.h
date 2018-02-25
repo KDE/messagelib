@@ -30,7 +30,7 @@ class MESSAGEVIEWER_EXPORT GrantleeHeaderTestStyle : public HeaderStyle
     friend class GrantleeHeaderStyle;
 public:
     GrantleeHeaderTestStyle();
-    ~GrantleeHeaderTestStyle();
+    ~GrantleeHeaderTestStyle() override;
 
 public:
     const char *name() const override;

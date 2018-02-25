@@ -27,7 +27,7 @@ class DefaultGrantleeHeaderStrategy : public HeaderStrategy
 {
 public:
     DefaultGrantleeHeaderStrategy();
-    ~DefaultGrantleeHeaderStrategy();
+    ~DefaultGrantleeHeaderStrategy() override;
 
 public:
     const char *name() const override

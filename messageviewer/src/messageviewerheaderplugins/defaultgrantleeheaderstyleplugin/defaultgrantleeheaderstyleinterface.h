@@ -29,7 +29,7 @@ class DefaultGrantleeHeaderStyleInterface : public MessageViewer::HeaderStyleInt
     Q_OBJECT
 public:
     explicit DefaultGrantleeHeaderStyleInterface(HeaderStylePlugin *plugin, QObject *parent = nullptr);
-    ~DefaultGrantleeHeaderStyleInterface();
+    ~DefaultGrantleeHeaderStyleInterface() override;
 
     void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) override;
     void activateAction() override;

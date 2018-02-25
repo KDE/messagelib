@@ -28,7 +28,7 @@ class MESSAGEVIEWER_EXPORT PlainHeaderStyle : public HeaderStyle
 {
 public:
     PlainHeaderStyle();
-    ~PlainHeaderStyle();
+    ~PlainHeaderStyle() override;
 
 public:
     const char *name() const override;

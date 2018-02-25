@@ -44,7 +44,7 @@ public:
         UserRole = Qt::UserRole + 100
     };
     explicit MimeTreeModel(QObject *parent = nullptr);
-    ~MimeTreeModel();
+    ~MimeTreeModel() override;
 
     void setRoot(KMime::Content *root);
 

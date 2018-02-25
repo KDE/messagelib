@@ -28,7 +28,7 @@ class CidReferencesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInte
     Q_OBJECT
 public:
     explicit CidReferencesUrlInterceptor(QObject *parent = nullptr);
-    ~CidReferencesUrlInterceptor();
+    ~CidReferencesUrlInterceptor() override;
 
     bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 };
