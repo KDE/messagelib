@@ -731,9 +731,24 @@ bool AttachmentURLHandler::handleShiftClick(const QUrl &url, ViewerPrivate *wind
     if (!window) {
         return false;
     }
-    QList<QUrl> urlList;
-    if (Util::saveContents(window->viewer(), KMime::Content::List() << node, urlList)) {
-        window->viewer()->showOpenAttachmentFolderWidget(urlList);
+    const bool isEncapsulatedMessage = node->parent() && node->parent()->bodyIsMessage();
+    if (isEncapsulatedMessage) {
+        KMime::Message::Ptr message = KMime::Message::Ptr(new KMime::Message);
+        message->setContent(node->parent()->bodyAsMessage()->encodedContent());
+        message->parse();
+        Akonadi::Item item;
+        item.setPayload<KMime::Message::Ptr>(message);
+        Akonadi::MessageFlags::copyMessageFlags(*message, item);
+        item.setMimeType(KMime::Message::mimeType());
+        QUrl url;
+        if (MessageViewer::Util::saveMessageInMboxAndGetUrl(url, Akonadi::Item::List() << item, window->viewer())) {
+            window->viewer()->showOpenAttachmentFolderWidget(QList<QUrl>() << url);
+        }
+    } else {
+        QList<QUrl> urlList;
+        if (Util::saveContents(window->viewer(), KMime::Content::List() << node, urlList)) {
+            window->viewer()->showOpenAttachmentFolderWidget(urlList);
+        }
     }
 
     return true;
