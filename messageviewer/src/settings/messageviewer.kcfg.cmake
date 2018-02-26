@@ -74,10 +74,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <label>Reduce font size for quoted text</label>
       <whatsthis>Enable this option to show quoted text with a smaller font.</whatsthis>
     </entry>
-    <entry name="AllowAttachmentEditing" type="Bool">
-      <default>false</default>
-      <label>Allow to edit attachments of existing mails.</label>
-    </entry>
     <entry name="AlwaysDecrypt" type="Bool">
       <default>false</default>
       <label>Always decrypt messages when viewing or ask before decrypting</label>

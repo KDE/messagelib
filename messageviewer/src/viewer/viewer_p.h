@@ -218,10 +218,6 @@ public:
     void attachmentProperties(KMime::Content *node);
     void attachmentCopy(const KMime::Content::List &contents);
 
-    /** Edit the attachment the @param node points to. Returns false if the user
-    cancelled the editing, true in all other cases! */
-    void editAttachment(KMime::Content *node, bool showWarning = true);
-
     void scrollToAnchor(const QString &anchor);
 
     void showAttachmentPopup(KMime::Content *node, const QString &name, const QPoint &p);
@@ -528,7 +524,6 @@ public Q_SLOTS:
     void slotAttachmentProperties();
     void slotAttachmentCopy();
     void slotAttachmentDelete();
-    void slotAttachmentEdit();
     void slotLevelQuote(int l);
 
     /** Toggle display mode between HTML and plain text. */

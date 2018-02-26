@@ -37,7 +37,6 @@
 #include "kpimtextedit/slidecontainer.h"
 #include <Gravatar/GravatarCache>
 #include <gravatar/gravatarsettings.h>
-#include "job/attachmenteditjob.h"
 #include "job/modifymessagedisplayformatjob.h"
 #include "config-messageviewer.h"
 #include "webengine/mailwebenginescript.h"
@@ -479,17 +478,6 @@ void ViewerPrivate::itemModifiedResult(KJob *job)
     }
 }
 
-void ViewerPrivate::editAttachment(KMime::Content *node, bool showWarning)
-{
-    MessageViewer::AttachmentEditJob *job = new MessageViewer::AttachmentEditJob(mSession, this);
-    connect(job, &AttachmentEditJob::refreshMessage, this, &ViewerPrivate::slotRefreshMessage);
-    job->setMainWindow(mMainWindow);
-    job->setMessageItem(mMessageItem);
-    job->setMessage(mMessage);
-    job->addAttachment(node, showWarning);
-    job->canDeleteJob();
-}
-
 void ViewerPrivate::scrollToAnchor(const QString &anchor)
 {
     mViewer->scrollToAnchor(anchor);
@@ -656,16 +644,6 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
                                != Akonadi::Collection::ReadOnly)
                            && !isEncapsulatedMessage;
 
-    if (MessageViewer::MessageViewerSettings::self()->allowAttachmentEditing()) {
-        action
-            = menu.addAction(QIcon::fromTheme(QStringLiteral("document-properties")), i18n(
-                                 "Edit Attachment"));
-        connect(action, &QAction::triggered, this, [this]() {
-            slotHandleAttachment(Viewer::Edit);
-        });
-
-        action->setEnabled(canChange);
-    }
     action
         = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")),
                          i18n("Delete Attachment"));
@@ -1822,11 +1800,6 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
             popup.addAction(QIcon::fromTheme("edit-delete"), i18n("Delete Attachment"),
                             this, &ViewerPrivate::slotAttachmentDelete);
 #endif
-            if (MessageViewer::MessageViewerSettings::self()->allowAttachmentEditing()) {
-                popup.addAction(QIcon::fromTheme(QStringLiteral("document-properties")),
-                                i18n("Edit Attachment"),
-                                this, &ViewerPrivate::slotAttachmentEdit);
-            }
         }
 
         if (!content->isTopLevel()) {
@@ -2704,29 +2677,6 @@ void ViewerPrivate::slotAttachmentDelete()
     update();
 }
 
-void ViewerPrivate::slotAttachmentEdit()
-{
-    const auto contents = selectedContents();
-    if (contents.isEmpty()) {
-        return;
-    }
-
-    MessageViewer::AttachmentEditJob *job = new MessageViewer::AttachmentEditJob(mSession, this);
-    connect(job, &AttachmentEditJob::refreshMessage, this, &ViewerPrivate::slotRefreshMessage);
-    job->setMainWindow(mMainWindow);
-    job->setMessageItem(mMessageItem);
-    job->setMessage(mMessage);
-
-    bool showWarning = true;
-    for (KMime::Content *content : contents) {
-        if (!job->addAttachment(content, showWarning)) {
-            break;
-        }
-        showWarning = false;
-    }
-    job->canDeleteJob();
-}
-
 void ViewerPrivate::slotLevelQuote(int l)
 {
     if (mLevelQuote != l) {
@@ -2743,9 +2693,6 @@ void ViewerPrivate::slotHandleAttachment(int choice)
     switch (choice) {
     case Viewer::Delete:
         deleteAttachment(mCurrentContent);
-        break;
-    case Viewer::Edit:
-        editAttachment(mCurrentContent);
         break;
     case Viewer::Properties:
         attachmentProperties(mCurrentContent);

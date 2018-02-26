@@ -137,7 +137,6 @@ public:
         Save = 4,
         Properties = 5,
         Delete = 6,
-        Edit = 7,
         Copy = 8,
         ScrollTo = 9,
         ReplyMessageToAuthor = 10,

@@ -151,7 +151,6 @@ set(libmessageviewer_antispam_SRCS
     )
 
 set(libmessageviewer_job_SRCS
-    job/attachmenteditjob.cpp
     job/modifymessagedisplayformatjob.cpp
     )
 
