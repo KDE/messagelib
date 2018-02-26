@@ -1138,7 +1138,7 @@ QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QS
 
 void DefaultRenderer::render(const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer)
 {
-    qCDebug(MESSAGEVIEWER_LOG) << "MimeTreeParser structur:";
+    qCDebug(MESSAGEVIEWER_LOG) << "MimeTreeParser structure:";
     qCDebug(MESSAGEVIEWER_LOG) << qPrintable(renderTreeHelper(msgPart, QString()));
     d->mMsgPart = msgPart;
     d->renderFactory(d->mMsgPart, writer);
