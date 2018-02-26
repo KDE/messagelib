@@ -34,7 +34,7 @@ public:
     explicit WebEnginePage(QObject *parent = nullptr);
     explicit WebEnginePage(QWebEngineProfile *profile, QObject *parent = nullptr);
 
-    ~WebEnginePage();
+    ~WebEnginePage() override;
     WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
 
     void saveHtml(QWebEngineDownloadItem *download);

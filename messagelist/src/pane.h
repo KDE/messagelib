@@ -61,7 +61,7 @@ public:
     * Create a Pane wrapping the specified model and selection.
     */
     explicit Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *selectionModel, QWidget *parent = nullptr);
-    ~Pane();
+    ~Pane() override;
 
     virtual MessageList::StorageModel *createStorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent);
 

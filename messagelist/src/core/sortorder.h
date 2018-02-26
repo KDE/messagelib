@@ -85,7 +85,7 @@ public:
         // Warning: Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
 
-    explicit SortOrder();
+    SortOrder();
 
     /**
     * Returns the GroupSorting

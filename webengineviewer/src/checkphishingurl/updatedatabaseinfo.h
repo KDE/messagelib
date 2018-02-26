@@ -27,7 +27,8 @@
 namespace WebEngineViewer {
 struct Addition;
 struct Removal;
-struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
+struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo
+{
     UpdateDataBaseInfo();
     bool isValid() const;
 

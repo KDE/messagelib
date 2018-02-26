@@ -60,7 +60,7 @@ class View : public QTreeView
     Q_OBJECT
 public:
     explicit View(Widget *parent);
-    ~View();
+    ~View() override;
 
     /**
     * Returns the Model attacched to this View. You probably never need to manipulate

@@ -44,7 +44,7 @@ class ThemeDelegate : public QStyledItemDelegate
 
 public:
     explicit ThemeDelegate(QAbstractItemView *parent);
-    ~ThemeDelegate();
+    ~ThemeDelegate() override;
     /**
     * Called when the global fonts change (from systemsettings)
     */

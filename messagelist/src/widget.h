@@ -51,7 +51,7 @@ public:
     * Create a new message list widget.
     */
     explicit Widget(QWidget *parent);
-    ~Widget();
+    ~Widget() override;
 
     /**
     * Sets the XML GUI client which the view is used in.

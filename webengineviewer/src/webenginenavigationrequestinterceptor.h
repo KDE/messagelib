@@ -29,7 +29,7 @@ class WebEngineNavigationRequestInterceptor : public QWebEnginePage
     Q_OBJECT
 public:
     explicit WebEngineNavigationRequestInterceptor(QWebEnginePage *page);
-    ~WebEngineNavigationRequestInterceptor();
+    ~WebEngineNavigationRequestInterceptor() override;
 
 protected:
     bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) override;

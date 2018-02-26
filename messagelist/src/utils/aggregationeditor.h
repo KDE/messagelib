@@ -41,7 +41,7 @@ class AggregationEditor : public OptionSetEditor
     Q_OBJECT
 public:
     explicit AggregationEditor(QWidget *parent);
-    ~AggregationEditor();
+    ~AggregationEditor() override;
 
 private:
     Core::Aggregation *mCurrentAggregation = nullptr;  // shallow, may be null!

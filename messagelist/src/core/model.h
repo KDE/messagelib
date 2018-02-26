@@ -77,7 +77,7 @@ public:
     /**
     * Destroys the mighty model along with the tree of items it manages.
     */
-    ~Model();
+    ~Model() override;
 
     /**
     * Returns the StorageModel currently set.
