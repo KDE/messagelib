@@ -35,7 +35,7 @@ class MIMETREEPARSER_EXPORT SimpleObjectTreeSource : public Interface::ObjectTre
 {
 public:
     SimpleObjectTreeSource();
-    ~SimpleObjectTreeSource();
+    ~SimpleObjectTreeSource() override;
 
     bool autoImportKeys() const override;
 
