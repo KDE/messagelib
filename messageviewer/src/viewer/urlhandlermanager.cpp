@@ -731,6 +731,10 @@ bool AttachmentURLHandler::handleShiftClick(const QUrl &url, ViewerPrivate *wind
     if (!window) {
         return false;
     }
+    if (node->contentType()->mimeType() == "text/x-moz-deleted") {
+        return false;
+    }
+
     const bool isEncapsulatedMessage = node->parent() && node->parent()->bodyIsMessage();
     if (isEncapsulatedMessage) {
         KMime::Message::Ptr message = KMime::Message::Ptr(new KMime::Message);
@@ -764,6 +768,9 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
 #ifndef QT_NO_DRAGANDDROP
     KMime::Content *node = nodeForUrl(url, window);
     if (!node) {
+        return false;
+    }
+    if (node->contentType()->mimeType() == "text/x-moz-deleted") {
         return false;
     }
     QString fileName;

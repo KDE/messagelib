@@ -583,11 +583,16 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
 {
     Q_UNUSED(name);
     prepareHandleAttachment(node);
-    QMenu menu;
     bool deletedAttachment = false;
     if (node->contentType(false)) {
         deletedAttachment = (node->contentType()->mimeType() == "text/x-moz-deleted");
     }
+    //Not necessary to show popup menu when attachment was removed
+    if (deletedAttachment) {
+        return;
+    }
+
+    QMenu menu;
     const QString contentTypeStr = QLatin1String(node->contentType()->mimeType());
 
     QAction *action
@@ -1797,7 +1802,7 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
             popup.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"),
                             this, &ViewerPrivate::slotAttachmentCopy);
 #if 0  //FIXME Laurent Comment for the moment it crash see Bug 287177
-            popup.addAction(QIcon::fromTheme("edit-delete"), i18n("Delete Attachment"),
+            popup.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Attachment"),
                             this, &ViewerPrivate::slotAttachmentDelete);
 #endif
         }
