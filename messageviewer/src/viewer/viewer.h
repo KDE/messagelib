@@ -132,15 +132,15 @@ public:
 
     enum AttachmentAction {
         Open = 1,
-        OpenWith = 2,
-        View = 3,
-        Save = 4,
-        Properties = 5,
-        Delete = 6,
-        Copy = 8,
-        ScrollTo = 9,
-        ReplyMessageToAuthor = 10,
-        ReplyMessageToAll = 11
+        OpenWith,
+        View,
+        Save,
+        Properties,
+        Delete,
+        Copy,
+        ScrollTo,
+        ReplyMessageToAuthor,
+        ReplyMessageToAll
     };
 
     enum ResourceOnlineMode {
