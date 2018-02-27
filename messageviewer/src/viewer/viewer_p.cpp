@@ -2679,7 +2679,7 @@ void ViewerPrivate::slotAttachmentDelete()
         }
         showWarning = false;
     }
-    update();
+    update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::slotLevelQuote(int l)
