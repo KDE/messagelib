@@ -343,7 +343,7 @@ public:
     void createWidgets();
     void createActions();
 
-    void showContextMenu(KMime::Content *content, const QPoint &point);
+    void showContextMenu(KMime::Content *content, const QPoint &point, bool allowToDelete = true);
 
     KToggleAction *actionForAttachmentStrategy(const AttachmentStrategy *);
     /** Read override codec from configuration */

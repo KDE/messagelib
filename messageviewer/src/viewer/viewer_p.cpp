@@ -1753,7 +1753,7 @@ void ViewerPrivate::createActions()
     ac->setDefaultShortcut(mFindInMessageAction, KStandardShortcut::find().first());
 }
 
-void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
+void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos, bool allowToDelete)
 {
 #ifndef QT_NO_TREEVIEW
     if (!content) {
@@ -1801,13 +1801,15 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
         if (isAttachment) {
             popup.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"),
                             this, &ViewerPrivate::slotAttachmentCopy);
-#if 0  //FIXME Laurent Comment for the moment it crash see Bug 287177
-            popup.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Attachment"),
-                            this, &ViewerPrivate::slotAttachmentDelete);
-#endif
+            if (allowToDelete) {
+                //FIXME Laurent Comment for the moment it crash see Bug 287177
+                popup.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Attachment"),
+                                this, &ViewerPrivate::slotAttachmentDelete);
+            }
         }
 
         if (!content->isTopLevel()) {
+            popup.addSeparator();
             popup.addAction(i18n("Properties"), this, &ViewerPrivate::slotAttachmentProperties);
         }
     }
@@ -2511,7 +2513,7 @@ void ViewerPrivate::slotMimeTreeContextMenuRequested(const QPoint &pos)
     QModelIndex index = mMimePartTree->indexAt(pos);
     if (index.isValid()) {
         KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
-        showContextMenu(content, pos);
+        showContextMenu(content, pos, false);
     }
 #endif
 }
