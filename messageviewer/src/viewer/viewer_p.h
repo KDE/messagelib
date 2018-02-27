@@ -343,7 +343,7 @@ public:
     void createWidgets();
     void createActions();
 
-    void showContextMenu(KMime::Content *content, const QPoint &point, bool allowToDelete = true);
+    void showContextMenu(KMime::Content *content, const QPoint &point);
 
     KToggleAction *actionForAttachmentStrategy(const AttachmentStrategy *);
     /** Read override codec from configuration */
@@ -523,7 +523,6 @@ public Q_SLOTS:
     void slotAttachmentView();
     void slotAttachmentProperties();
     void slotAttachmentCopy();
-    void slotAttachmentDelete();
     void slotLevelQuote(int l);
 
     /** Toggle display mode between HTML and plain text. */

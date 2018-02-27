@@ -1753,7 +1753,7 @@ void ViewerPrivate::createActions()
     ac->setDefaultShortcut(mFindInMessageAction, KStandardShortcut::find().first());
 }
 
-void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos, bool allowToDelete)
+void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
 {
 #ifndef QT_NO_TREEVIEW
     if (!content) {
@@ -1801,11 +1801,6 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos, 
         if (isAttachment) {
             popup.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy"),
                             this, &ViewerPrivate::slotAttachmentCopy);
-            if (allowToDelete) {
-                //FIXME Laurent Comment for the moment it crash see Bug 287177
-                popup.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Attachment"),
-                                this, &ViewerPrivate::slotAttachmentDelete);
-            }
         }
 
         if (!content->isTopLevel()) {
@@ -2513,7 +2508,7 @@ void ViewerPrivate::slotMimeTreeContextMenuRequested(const QPoint &pos)
     QModelIndex index = mMimePartTree->indexAt(pos);
     if (index.isValid()) {
         KMime::Content *content = static_cast<KMime::Content *>(index.internalPointer());
-        showContextMenu(content, pos, false);
+        showContextMenu(content, pos);
     }
 #endif
 }
@@ -2665,23 +2660,6 @@ void ViewerPrivate::attachmentCopy(const KMime::Content::List &contents)
     mimeData->setUrls(urls);
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 #endif
-}
-
-void ViewerPrivate::slotAttachmentDelete()
-{
-    const auto contents = selectedContents();
-    if (contents.isEmpty()) {
-        return;
-    }
-
-    bool showWarning = true;
-    for (KMime::Content *content : contents) {
-        if (!deleteAttachment(content, showWarning)) {
-            return;
-        }
-        showWarning = false;
-    }
-    update(MimeTreeParser::Force);
 }
 
 void ViewerPrivate::slotLevelQuote(int l)
