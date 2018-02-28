@@ -155,22 +155,34 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml)
     }
 }
 
+bool RichTextComposerNg::convertPlainText(MessageComposer::TextPart *textPart)
+{
+    return false;
+}
+
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
-    if (composerControler()->isFormattingUsed() && MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
-        Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
+    if (composerControler()->isFormattingUsed()) {
+        if (!convertPlainText(textPart)) {
+            if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
+                Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
 
-        Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
-        pmd->processDocument(document());
-        const QString plainText = pb->getResult();
-        textPart->setCleanPlainText(composerControler()->toCleanPlainText(plainText));
-        QTextDocument *doc = new QTextDocument(plainText);
-        doc->adjustSize();
+                Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
+                pmd->processDocument(document());
+                const QString plainText = pb->getResult();
+                textPart->setCleanPlainText(composerControler()->toCleanPlainText(plainText));
+                QTextDocument *doc = new QTextDocument(plainText);
+                doc->adjustSize();
 
-        textPart->setWrappedPlainText(composerControler()->toWrappedPlainText(doc));
-        delete doc;
-        delete pmd;
-        delete pb;
+                textPart->setWrappedPlainText(composerControler()->toWrappedPlainText(doc));
+                delete doc;
+                delete pmd;
+                delete pb;
+            } else {
+                textPart->setCleanPlainText(composerControler()->toCleanPlainText());
+                textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
+            }
+        }
     } else {
         textPart->setCleanPlainText(composerControler()->toCleanPlainText());
         textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());

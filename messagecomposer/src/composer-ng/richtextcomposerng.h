@@ -50,6 +50,9 @@ public:
     QString toCleanHtml() const;
 
     void forceAutoCorrection(bool selectedText = false) override;
+
+    virtual bool convertPlainText(MessageComposer::TextPart *textPart);
+
 private:
     bool processAutoCorrection(QKeyEvent *event) override;
     RichTextComposerNgPrivate *const d;
