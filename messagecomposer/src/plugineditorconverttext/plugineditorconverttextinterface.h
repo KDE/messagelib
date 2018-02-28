@@ -39,6 +39,8 @@ public:
 
     //TODO add action too
 
+    virtual bool reformatText();
+
     virtual bool convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
 
     void setParentWidget(QWidget *parent);

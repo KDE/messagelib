@@ -45,6 +45,11 @@ PluginEditorConvertTextInterface::~PluginEditorConvertTextInterface()
     delete d;
 }
 
+bool PluginEditorConvertTextInterface::reformatText()
+{
+    return true;
+}
+
 void PluginEditorConvertTextInterface::setParentWidget(QWidget *parent)
 {
     d->mParentWidget = parent;
