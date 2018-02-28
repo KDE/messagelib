@@ -28,6 +28,7 @@ class RichTextComposer;
 }
 
 namespace MessageComposer {
+class TextPart;
 class PluginEditorConvertTextInterfacePrivate;
 class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextInterface : public QObject
 {
@@ -36,7 +37,9 @@ public:
     explicit PluginEditorConvertTextInterface(QObject *parent = nullptr);
     ~PluginEditorConvertTextInterface();
 
-    virtual bool exec() = 0;
+    //TODO add action too
+
+    virtual bool convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
 
     void setParentWidget(QWidget *parent);
     QWidget *parentWidget() const;
