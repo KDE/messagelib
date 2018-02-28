@@ -113,12 +113,20 @@ set(messagecomposer_plugineditorinit_SRCS
    plugineditorinit/plugineditorinitinterface.cpp
    )
 
+set(messagecomposer_plugineditorconverttext_SRCS
+   plugineditorconverttext/plugineditorconverttextconfigurewidget.cpp
+   plugineditorconverttext/plugineditorconverttext.cpp
+   plugineditorconverttext/plugineditorconverttextmanager.cpp
+   plugineditorconverttext/plugineditorconverttextinterface.cpp
+   )
+
 set(messagecomposer_widgets_SRCS
    widgets/dictionarycombobox.cpp
    )
 
 set( messagecomposer_src
     ${messagecomposer_widgets_SRCS}
+    ${messagecomposer_plugineditorconverttext_SRCS}
     ${messagecomposer_plugineditorinit_SRCS}
     ${messagecomposer_plugineditor_SRCS}
     ${messagecomposer_richtextcomposerng_SRCS}
@@ -224,6 +232,17 @@ ecm_generate_headers(MessageComposer_Camelplugineditorinit_HEADERS
     REQUIRED_HEADERS MessageComposer_plugineditorinit_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorinit
+    )
+
+ecm_generate_headers(MessageComposer_Camelplugineditorconverttext_HEADERS
+    HEADER_NAMES
+    PluginEditorConvertTextConfigureWidget
+    PluginEditorConvertText
+    PluginEditorConvertTextManager
+    PluginEditorConvertTextInterface
+    REQUIRED_HEADERS MessageComposer_plugineditorconverttext_HEADERS
+    PREFIX MessageComposer
+    RELATIVE plugineditorconverttext
     )
 
 ecm_generate_headers(MessageComposer_Camelwidgets_HEADERS
@@ -380,6 +399,7 @@ ecm_generate_pri_file(BASE_NAME MessageComposer
 
 
 install(FILES
+    ${MessageComposer_Camelplugineditorconverttext_HEADERS}
     ${MessageComposer_Camelplugineditorinit_HEADERS}
     ${MessageComposer_Camelplugineditorcheckbeforesend_HEADERS}
     ${MessageComposer_Camelcasecomposer_HEADERS}
@@ -402,6 +422,7 @@ install(FILES
 
 install(FILES
     ${MessageComposer_HEADERS}
+    ${MessageComposer_plugineditorconverttext_HEADERS}
     ${MessageComposer_plugineditorinit_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposersettings_base.h
