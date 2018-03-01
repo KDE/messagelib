@@ -29,6 +29,7 @@ public:
         , mEditor(nullptr)
     {
     }
+    PluginActionType mActionType;
 
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextComposer *mEditor = nullptr;
@@ -58,6 +59,16 @@ void PluginEditorConvertTextInterface::setParentWidget(QWidget *parent)
 QWidget *PluginEditorConvertTextInterface::parentWidget() const
 {
     return d->mParentWidget;
+}
+
+void PluginEditorConvertTextInterface::setActionType(PluginActionType type)
+{
+    d->mActionType = type;
+}
+
+PluginActionType PluginEditorConvertTextInterface::actionType() const
+{
+    return d->mActionType;
 }
 
 KPIMTextEdit::RichTextComposer *PluginEditorConvertTextInterface::richTextEditor() const

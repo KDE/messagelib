@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
+#include <MessageComposer/PluginActionType>
 
 namespace KPIMTextEdit {
 class RichTextComposer;
@@ -37,8 +38,6 @@ public:
     explicit PluginEditorConvertTextInterface(QObject *parent = nullptr);
     ~PluginEditorConvertTextInterface();
 
-    //TODO add action too
-
     virtual bool reformatText();
 
     virtual bool convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
@@ -49,6 +48,8 @@ public:
     KPIMTextEdit::RichTextComposer *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
+    void setActionType(PluginActionType type);
+    PluginActionType actionType() const;
 public Q_SLOTS:
     virtual void reloadConfig();
 

@@ -21,28 +21,6 @@
 
 using namespace MessageComposer;
 
-ActionType::ActionType()
-    : mAction(nullptr)
-    , mType(Tools)
-{
-}
-
-ActionType::ActionType(QAction *action, ActionType::Type type)
-    : mAction(action)
-    , mType(type)
-{
-}
-
-QAction *ActionType::action() const
-{
-    return mAction;
-}
-
-ActionType::Type ActionType::type() const
-{
-    return mType;
-}
-
 class MessageComposer::PluginEditorInterfacePrivate
 {
 public:
@@ -50,7 +28,7 @@ public:
     {
     }
 
-    ActionType mActionType;
+    PluginActionType mActionType;
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
     PluginEditor *plugin = nullptr;
@@ -68,12 +46,12 @@ PluginEditorInterface::~PluginEditorInterface()
     delete d;
 }
 
-void PluginEditorInterface::setActionType(ActionType type)
+void PluginEditorInterface::setActionType(PluginActionType type)
 {
     d->mActionType = type;
 }
 
-ActionType PluginEditorInterface::actionType() const
+PluginActionType PluginEditorInterface::actionType() const
 {
     return d->mActionType;
 }
@@ -96,27 +74,4 @@ void PluginEditorInterface::setNeedSelectedText(bool b)
 bool PluginEditorInterface::needSelectedText() const
 {
     return d->mSelectedText;
-}
-
-QString PluginEditorInterface::actionXmlExtension(ActionType::Type type)
-{
-    switch (type) {
-    case MessageComposer::ActionType::Tools:
-        return QStringLiteral("_plugins_tools");
-    case MessageComposer::ActionType::Edit:
-        return QStringLiteral("_plugins_edit");
-    case MessageComposer::ActionType::File:
-        return QStringLiteral("_plugins_file");
-    case MessageComposer::ActionType::Action:
-        return QStringLiteral("_plugins_actions");
-    case MessageComposer::ActionType::PopupMenu:
-        return QStringLiteral("_popupmenu_actions");
-    case MessageComposer::ActionType::ToolBar:
-        return QStringLiteral("_toolbar_actions");
-    case MessageComposer::ActionType::Options:
-        return QStringLiteral("_plugins_options");
-    case MessageComposer::ActionType::None:
-        return QString();
-    }
-    return {};
 }

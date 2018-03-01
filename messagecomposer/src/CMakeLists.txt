@@ -96,6 +96,7 @@ set(messagecomposer_plugineditor_SRCS
     plugineditor/plugineditormanager.cpp
     plugineditor/plugineditor.cpp
     plugineditor/plugineditorinterface.cpp
+    plugineditor/pluginactiontype.cpp
     )
 
 set(messagecomposer_plugineditorcheckbeforesend_SRCS
@@ -216,6 +217,7 @@ install(TARGETS
 ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
     HEADER_NAMES
     PluginEditor
+    PluginActionType
     PluginEditorInterface
     PluginEditorManager
     REQUIRED_HEADERS MessageComposer_plugineditor_HEADERS

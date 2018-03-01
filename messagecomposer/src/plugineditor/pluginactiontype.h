@@ -17,43 +17,37 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PLUGINEDITORINTERFACE_H
-#define PLUGINEDITORINTERFACE_H
+#ifndef PLUGINACTIONTYPE_H
+#define PLUGINACTIONTYPE_H
 
-#include <QObject>
-#include <PimCommon/AbstractGenericPluginInterface>
-#include <MessageComposer/PluginActionType>
 #include "messagecomposer_export.h"
+#include <QString>
 class QAction;
 
-namespace KPIMTextEdit {
-class RichTextEditor;
-}
-
 namespace MessageComposer {
-class PluginEditorInterfacePrivate;
-class PluginEditor;
-class MESSAGECOMPOSER_EXPORT PluginEditorInterface : public PimCommon::AbstractGenericPluginInterface
+class MESSAGECOMPOSER_EXPORT PluginActionType
 {
-    Q_OBJECT
 public:
-    explicit PluginEditorInterface(QObject *parent = nullptr);
-    ~PluginEditorInterface();
+    enum Type {
+        Tools = 0,
+        Edit = 1,
+        File = 2,
+        Action = 3,
+        PopupMenu = 4,
+        ToolBar = 5,
+        Options = 6,
+        None = 7
+    };
+    PluginActionType();
 
-    void setActionType(PluginActionType type);
-    PluginActionType actionType() const;
+    PluginActionType(QAction *action, Type type);
+    QAction *action() const;
+    Type type() const;
 
-    KPIMTextEdit::RichTextEditor *richTextEditor() const;
-    void setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor);
-
-    void setNeedSelectedText(bool b);
-    bool needSelectedText() const;
-
-Q_SIGNALS:
-    void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);
-
+    static QString actionXmlExtension(PluginActionType::Type type);
 private:
-    PluginEditorInterfacePrivate *const d;
+    QAction *mAction = nullptr;
+    Type mType;
 };
 }
 
