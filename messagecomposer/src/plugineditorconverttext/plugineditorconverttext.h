@@ -25,7 +25,7 @@
 
 namespace MessageComposer {
 class PluginEditorConverttextPrivate;
-class PluginEditorConverttextInterface;
+class PluginEditorConvertTextInterface;
 
 class MESSAGECOMPOSER_EXPORT PluginEditorConvertText : public QObject
 {
@@ -34,7 +34,7 @@ public:
     explicit PluginEditorConvertText(QObject *parent = nullptr);
     ~PluginEditorConvertText();
 
-    virtual PluginEditorConverttextInterface *createInterface(QObject *parent) = 0;
+    virtual PluginEditorConvertTextInterface *createInterface(QObject *parent) = 0;
 
     virtual bool hasConfigureDialog() const;
 

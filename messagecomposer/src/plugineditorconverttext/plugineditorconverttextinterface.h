@@ -27,7 +27,7 @@
 namespace KPIMTextEdit {
 class RichTextComposer;
 }
-
+class KActionCollection;
 namespace MessageComposer {
 class TextPart;
 class PluginEditorConvertTextInterfacePrivate;
@@ -50,6 +50,8 @@ public:
 
     void setActionType(PluginActionType type);
     PluginActionType actionType() const;
+
+    virtual void createAction(KActionCollection *ac);
 public Q_SLOTS:
     virtual void reloadConfig();
 

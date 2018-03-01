@@ -19,6 +19,8 @@
 
 #include "plugineditorconverttextinterface.h"
 
+#include <KActionCollection>
+
 using namespace MessageComposer;
 
 class MessageComposer::PluginEditorConvertTextInterfacePrivate
@@ -69,6 +71,11 @@ void PluginEditorConvertTextInterface::setActionType(PluginActionType type)
 PluginActionType PluginEditorConvertTextInterface::actionType() const
 {
     return d->mActionType;
+}
+
+void PluginEditorConvertTextInterface::createAction(KActionCollection *ac)
+{
+
 }
 
 KPIMTextEdit::RichTextComposer *PluginEditorConvertTextInterface::richTextEditor() const
