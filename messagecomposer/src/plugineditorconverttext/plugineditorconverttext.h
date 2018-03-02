@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
-
+class KActionCollection;
 namespace MessageComposer {
 class PluginEditorConverttextPrivate;
 class PluginEditorConvertTextInterface;
@@ -34,7 +34,7 @@ public:
     explicit PluginEditorConvertText(QObject *parent = nullptr);
     ~PluginEditorConvertText();
 
-    virtual PluginEditorConvertTextInterface *createInterface(QObject *parent) = 0;
+    virtual PluginEditorConvertTextInterface *createInterface(KActionCollection *ac, QObject *parent) = 0;
 
     virtual bool hasConfigureDialog() const;
 
