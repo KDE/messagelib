@@ -175,6 +175,19 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                 foundScam = true;
             }
         }
+        if (!foundScam) {
+            const QString text = mapVariant.value(QStringLiteral("text")).toString();
+            if (!text.isEmpty()) {
+                if (text.startsWith(QLatin1String("http:/")) || text.startsWith(QLatin1String("https:/"))) {
+                    if(text != href) {
+                        d->mDetails += QLatin1String("<li>") + i18n(
+                            "This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is often the case in scam emails to mislead the recipient",
+                            addWarningColor(text), addWarningColor(href)) + QLatin1String("</li>");
+                        foundScam = true;
+                    }
+                }
+            }
+        }
     }
     if (mapResult.value(QStringLiteral("forms")).toInt() > 0) {
         d->mDetails += QLatin1String("<li></b>") + i18n(
