@@ -55,6 +55,9 @@ public:
 public Q_SLOTS:
     virtual void reloadConfig();
 
+Q_SIGNALS:
+    void textReformated();
+
 private:
     PluginEditorConvertTextInterfacePrivate *const d;
 };
