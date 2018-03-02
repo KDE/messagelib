@@ -107,7 +107,7 @@ void ScamDetectionWebEngineTest::scamtest_data()
     //Numeric value
     QTest::newRow("numeric no scam") << QStringLiteral(
         "<html><body><a href=\"http://baseball2.2ndhalfplays.com/nested/attribs/\">http://baseball2.2ndhalfplays.com/nested/attribs</html>")
-                                     << true;
+                                     << false;
     QTest::newRow("numeric scam1") << QStringLiteral(
         "<html><body><a href=\"http://25.15.55.88/\">test</a></body></html>") << true;
     QTest::newRow("numeric scam2") << QStringLiteral(
