@@ -219,6 +219,7 @@ QString NodeHelper::writeFileToTempFile(KMime::Content *node, const QString &fil
     QFile f(fname);
     if (!f.open(QIODevice::ReadWrite)) {
         qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
+        mAttachmentFilesDir->addTempFile(fname);
         return QString();
     }
     f.write(QByteArray());
@@ -267,6 +268,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
     QFile f(fname);
     if (!f.open(QIODevice::ReadWrite)) {
         qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
+        mAttachmentFilesDir->addTempFile(fname);
         return QString();
     }
     f.write(data);
@@ -314,6 +316,7 @@ QString NodeHelper::createTempDir(const QString &param)
         // Not there or not writable
         if (!QDir().mkpath(fname)
             || !fFile.setPermissions(QFileDevice::WriteUser | QFileDevice::ReadUser | QFileDevice::ExeUser)) {
+            mAttachmentFilesDir->addTempDir(fname);
             return QString(); //failed create
         }
     }
