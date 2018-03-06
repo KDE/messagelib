@@ -127,6 +127,12 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("scam-amp") << QStringLiteral(
         "<a href=\"https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=gcompris\">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;amp;product=gcompris</a></div>")
                               << false;
+
+    QTest::newRow("scam-encoded-url1") << QStringLiteral(
+        "<a href=\"https://github.com/KDAB/KDStateMachineEditor.git|1.2\">https://github.com/KDAB/KDStateMachineEditor.git|1.2</a>")
+                              << false;
+
+
 }
 
 void ScamDetectionWebEngineTest::scamtest()
