@@ -122,7 +122,11 @@ void ScamDetectionWebEngineTest::scamtest_data()
 
     QTest::newRow("scam") << QStringLiteral(
                                  "<html><body><a href=\"http://dfgdgsfdgsfdgsfd.foo.com/#contact@bla.org\">https://www.bli.com/manager/dedicated/index.html#/billing/mean</a></html>")
-                          <<true;
+                          << true;
+
+    QTest::newRow("scam-amp") << QStringLiteral(
+                                 "<a href=\"https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=gcompris\">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;amp;product=gcompris</a></div>")
+                          << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
