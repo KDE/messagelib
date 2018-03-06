@@ -441,10 +441,10 @@ QString Util::generateMboxFileName(const Akonadi::Item &msgBase)
 
     if (msgBase.hasPayload<KMime::Message::Ptr>()) {
         fileName
-                = MessageCore::StringUtil::cleanFileName(MimeTreeParser::NodeHelper::cleanSubject(
-                                                             msgBase.
-                                                             payload
-                                                             <KMime::Message::Ptr>().data()).trimmed());
+            = MessageCore::StringUtil::cleanFileName(MimeTreeParser::NodeHelper::cleanSubject(
+                                                         msgBase.
+                                                         payload
+                                                         <KMime::Message::Ptr>().data()).trimmed());
         fileName.remove(QLatin1Char('\"'));
     } else {
         fileName = i18n("message");
@@ -476,10 +476,10 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
     }
     QString localFile = startUrl.toLocalFile() + QLatin1Char('/') + fileName;
     QString saveFileName
-            = QFileDialog::getSaveFileName(parent,
-                                           i18np("Save Message", "Save Messages",
-                                                 retrievedMsgs.count()), localFile, filter, nullptr,
-                                           opt);
+        = QFileDialog::getSaveFileName(parent,
+                                       i18np("Save Message", "Save Messages",
+                                             retrievedMsgs.count()), localFile, filter, nullptr,
+                                       opt);
 
     if (!saveFileName.isEmpty()) {
         const QString localFileName = saveFileName;

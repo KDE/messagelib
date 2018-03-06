@@ -440,7 +440,6 @@ private Q_SLOTS:
     /** Show hide all fields specified inside this function */
     void toggleFullAddressList();
 
-
     void slotItemChanged(const Akonadi::Item &item, const QSet<QByteArray> &partIdentifiers);
     void slotItemMoved(const Akonadi::Item &, const Akonadi::Collection &, const Akonadi::Collection &);
 

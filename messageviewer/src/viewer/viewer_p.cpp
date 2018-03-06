@@ -2141,7 +2141,7 @@ Viewer::DisplayFormatMessage translateToDisplayFormat(MimeTreeParser::Util::Html
 
 void ViewerPrivate::slotToggleHtmlMode()
 {
-    const auto availableModes = mColorBar->availableModes();    
+    const auto availableModes = mColorBar->availableModes();
     const int availableModeSize(availableModes.size());
 //    for (int i = 0; i < availableModeSize; ++i) {
 //        qDebug() << " Mode " << MimeTreeParser::Util::htmlModeToString(availableModes.at(i));

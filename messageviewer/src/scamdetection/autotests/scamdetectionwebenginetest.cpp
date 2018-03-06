@@ -118,15 +118,15 @@ void ScamDetectionWebEngineTest::scamtest_data()
         "<html><body><a href=\"http://255.500.1.1/\">test</a></body></html>") << true;
     QTest::newRow("numeric scam5") << QStringLiteral(
         "<html><body><a href=\"http://baseball.2ndhalfplays.com/nested/attribs/\">http://baseball2.2ndhalfplays.com/nested/attribs</html>")
-                                      << true;
+                                   << true;
 
     QTest::newRow("scam") << QStringLiteral(
-                                 "<html><body><a href=\"http://dfgdgsfdgsfdgsfd.foo.com/#contact@bla.org\">https://www.bli.com/manager/dedicated/index.html#/billing/mean</a></html>")
+        "<html><body><a href=\"http://dfgdgsfdgsfdgsfd.foo.com/#contact@bla.org\">https://www.bli.com/manager/dedicated/index.html#/billing/mean</a></html>")
                           << true;
 
     QTest::newRow("scam-amp") << QStringLiteral(
-                                 "<a href=\"https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=gcompris\">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;amp;product=gcompris</a></div>")
-                          << false;
+        "<a href=\"https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=gcompris\">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;amp;product=gcompris</a></div>")
+                              << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
