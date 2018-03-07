@@ -47,6 +47,9 @@ LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
 
 bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
+    if (info.requestUrl().scheme() == QStringLiteral("data")
+        || info.requestUrl().scheme() == QStringLiteral("file"))
+        return false;
     if (d->mAllowLoadExternalReference) {
         return false;
     } else {
