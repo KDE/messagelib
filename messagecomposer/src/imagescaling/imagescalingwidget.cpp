@@ -21,10 +21,11 @@
 #include "ui_imagescalingwidget.h"
 #include "settings/messagecomposersettings.h"
 
-#include <QComboBox>
 #include <KLocalizedString>
 #include <KMessageBox>
 
+#include <QButtonGroup>
+#include <QComboBox>
 #include <QImageWriter>
 #include <QWhatsThis>
 
