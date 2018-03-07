@@ -176,7 +176,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             }
         }
         if (!foundScam) {
-            const QString text = mapVariant.value(QStringLiteral("text")).toString();
+            const QString text = QUrl(mapVariant.value(QStringLiteral("text")).toString()).toDisplayString();
             if (!text.isEmpty()) {
                 if (text.startsWith(QLatin1String("http:/")) || text.startsWith(QLatin1String("https:/"))) {
                     if (text != href) {

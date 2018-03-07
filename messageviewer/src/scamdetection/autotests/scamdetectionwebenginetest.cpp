@@ -132,6 +132,12 @@ void ScamDetectionWebEngineTest::scamtest_data()
         "<a href=\"https://github.com/KDAB/KDStateMachineEditor.git|1.2\">https://github.com/KDAB/KDStateMachineEditor.git|1.2</a>")
                               << false;
 
+    QTest::newRow("scam-lowercase") << QStringLiteral(
+        "<a href=\"http://www.Kde.org\">http://www.Kde.org</a>")
+                              << false;
+    QTest::newRow("scam-lowercase-2") << QStringLiteral(
+        "<a href=\"http://www.Kde.org/KDE/bla\">http://www.Kde.org/KDE/bla</a>")
+                              << false;
 
 }
 
