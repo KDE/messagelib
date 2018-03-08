@@ -75,7 +75,7 @@ PluginActionType PluginEditorConvertTextInterface::actionType() const
 
 void PluginEditorConvertTextInterface::createAction(KActionCollection *ac)
 {
-
+    Q_UNUSED(ac);
 }
 
 KPIMTextEdit::RichTextComposer *PluginEditorConvertTextInterface::richTextEditor() const
