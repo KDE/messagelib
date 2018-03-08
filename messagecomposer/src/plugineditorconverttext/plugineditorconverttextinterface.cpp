@@ -50,7 +50,7 @@ PluginEditorConvertTextInterface::~PluginEditorConvertTextInterface()
 
 bool PluginEditorConvertTextInterface::reformatText()
 {
-    return true;
+    return false;
 }
 
 void PluginEditorConvertTextInterface::setParentWidget(QWidget *parent)
