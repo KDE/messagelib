@@ -138,7 +138,9 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("scam-lowercase-2") << QStringLiteral(
         "<a href=\"http://www.Kde.org/KDE/bla\">http://www.Kde.org/KDE/bla</a>")
                               << false;
-
+    QTest::newRow("scam-lowercase-3") << QStringLiteral(
+        "<a href=\"http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git\">http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git</a>")
+                              << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
