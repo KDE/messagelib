@@ -2030,3 +2030,8 @@ void ComposerViewBase::addFollowupReminder(const QString &messageId)
         }
     }
 }
+
+KMime::Message::Ptr ComposerViewBase::msg() const
+{
+    return m_msg;
+}

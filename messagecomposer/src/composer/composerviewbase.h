@@ -230,6 +230,8 @@ public:
     Akonadi::Collection followUpCollection() const;
     void setFollowUpCollection(const Akonadi::Collection &followUpCollection);
 
+    KMime::Message::Ptr msg() const;
+
 public Q_SLOTS:
     void identityChanged(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, bool msgCleared = false);
 
