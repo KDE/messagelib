@@ -23,6 +23,7 @@
 #include <QObject>
 #include "messagecomposer_export.h"
 #include <MessageComposer/PluginActionType>
+#include <KMime/Message>
 
 namespace KPIMTextEdit {
 class RichTextComposer;
@@ -52,6 +53,10 @@ public:
     PluginActionType actionType() const;
 
     virtual void createAction(KActionCollection *ac);
+
+    void setMessage(const KMime::Message::Ptr &);
+    KMime::Message::Ptr message() const;
+
 public Q_SLOTS:
     virtual void reloadConfig();
 
