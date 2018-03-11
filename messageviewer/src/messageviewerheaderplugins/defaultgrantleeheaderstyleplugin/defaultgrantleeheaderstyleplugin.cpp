@@ -25,10 +25,6 @@
 #include <kpluginfactory.h>
 using namespace MessageViewer;
 
-#include <kcoreaddons_version.h>
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 44, 0)
-#define K_PLUGIN_CLASS_WITH_JSON(classname, json) K_PLUGIN_FACTORY_WITH_JSON(classname ## Factory, json, registerPlugin<classname >(); )
-#endif
 
 K_PLUGIN_CLASS_WITH_JSON(DefaultGrantleeHeaderStylePlugin,
                          "messageviewer_defaultgrantleeheaderstyleplugin.json")
