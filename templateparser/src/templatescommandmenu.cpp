@@ -362,17 +362,6 @@ static const InsertCommand miscCommands[] = {
         I18N_NOOP("Clear Generated Message"),
         TemplatesCommandMenu::CClear
     },
-
-    {
-        I18N_NOOP("Turn Debug On"),
-        TemplatesCommandMenu::CDebug
-    },
-
-    {
-        I18N_NOOP("Turn Debug Off"),
-        TemplatesCommandMenu::CDebugOff
-    },
-
     {
         I18N_NOOP("Cursor position"),
         TemplatesCommandMenu::CCursor
@@ -394,6 +383,20 @@ static const InsertCommand miscCommands[] = {
     //TODO add support for custom variable. %CUSTOM="???" ?
 };
 static const int miscCommandsCount = sizeof(miscCommands) / sizeof(*miscCommands);
+
+
+static const InsertCommand debugCommands[] = {
+    {
+        I18N_NOOP("Turn Debug On"),
+        TemplatesCommandMenu::CDebug
+    },
+
+    {
+        I18N_NOOP("Turn Debug Off"),
+        TemplatesCommandMenu::CDebugOff
+    }
+};
+static const int debugCommandsCount = sizeof(debugCommands) / sizeof(*debugCommands);
 
 void TemplatesCommandMenu::fillMenuFromActionMap(const QMap< QString, TemplatesCommandMenu::Command > &map, KActionMenu *menu)
 {
@@ -472,6 +475,18 @@ void TemplatesCommandMenu::fillMenu()
 
     for (int i = 0; i < miscCommandsCount; ++i) {
         commandMap.insert(miscCommands[i].getLocalizedDisplayName(), miscCommands[i].command);
+    }
+
+    fillMenuFromActionMap(commandMap, menu);
+    commandMap.clear();
+
+    //TODO exclude it.
+    // ******************************************************
+    menu = new KActionMenu(i18nc("Debug template commands menu", "Debug"), mMenu);
+    mMenu->addAction(menu);
+
+    for (int i = 0; i < debugCommandsCount; ++i) {
+        commandMap.insert(debugCommands[i].getLocalizedDisplayName(), debugCommands[i].command);
     }
 
     fillMenuFromActionMap(commandMap, menu);
