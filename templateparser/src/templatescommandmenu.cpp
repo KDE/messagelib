@@ -430,11 +430,14 @@ QMenu *TemplatesCommandMenu::menu() const
 void TemplatesCommandMenu::fillMenu()
 {
     mMenu = new KActionMenu(i18n("Insert Command"), this);
-    fillSubMenus();
 }
 
 void TemplatesCommandMenu::fillSubMenus()
 {
+    if (mWasInitialized) {
+        return;
+    }
+    mWasInitialized = true;
     QMap< QString, Command > commandMap;
     // ******************************************************
     KActionMenu *menu = new KActionMenu(i18n("Original Message"), mMenu);
@@ -493,6 +496,16 @@ void TemplatesCommandMenu::fillSubMenus()
         fillMenuFromActionMap(commandMap, menu);
     }
 
+}
+
+TemplatesCommandMenu::MenuType TemplatesCommandMenu::type() const
+{
+    return mType;
+}
+
+void TemplatesCommandMenu::setType(const MenuType &type)
+{
+    mType = type;
 }
 
 

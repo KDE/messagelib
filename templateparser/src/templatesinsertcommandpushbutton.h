@@ -22,10 +22,11 @@
 
 #include <QPushButton>
 #include "templateparser_export.h"
+#include "templatescommandmenu.h"
+
 class KActionMenu;
 
 namespace TemplateParser {
-class TemplatesCommandMenu;
 class TEMPLATEPARSER_EXPORT TemplatesInsertCommandPushButton : public QPushButton
 {
     Q_OBJECT
@@ -33,10 +34,14 @@ public:
     explicit TemplatesInsertCommandPushButton(QWidget *parent, const QString &name = QString());
     ~TemplatesInsertCommandPushButton();
 
+    TemplatesCommandMenu::MenuType type() const;
+    void setType(const TemplatesCommandMenu::MenuType &type);
+
 Q_SIGNALS:
     void insertCommand(const QString &cmd, int adjustCursor = 0);
 
 private:
+    void slotButtonClicked();
     TemplatesCommandMenu *mMenuCommand = nullptr;
 };
 }

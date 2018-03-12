@@ -34,7 +34,8 @@ public:
     ~TemplatesCommandMenu();
 
     enum MenuType {
-        ExistingMessage,
+        ReplyForwardMessage,
+        NewMessage,
         All
     };
 
@@ -113,6 +114,11 @@ public:
 
     QMenu *menu() const;
     void fillMenu();
+    void fillSubMenus();
+
+    MenuType type() const;
+    void setType(const MenuType &type);
+
 Q_SIGNALS:
     void insertCommand(TemplatesCommandMenu::Command cmd);
     void insertCommand(const QString &cmd, int adjustCursor = 0);
@@ -125,7 +131,8 @@ protected:
 
 private:
     void fillMenuFromActionMap(const QMap<QString, TemplatesCommandMenu::Command> &map, KActionMenu *menu);
-    void fillSubMenus();
+    MenuType mType = All;
+    bool mWasInitialized = false;
 };
 }
 

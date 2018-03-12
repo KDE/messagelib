@@ -17,7 +17,6 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include "templatescommandmenu.h"
 #include "templatesinsertcommandpushbutton.h"
 
 #include <QAction>
@@ -49,10 +48,25 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
               "Traverse this menu to find a command to insert into the current template "
               "being edited.  The command will be inserted at the cursor location, "
               "so you want to move your cursor to the desired insertion point first."));
-
+    connect(this, &QPushButton::clicked, this, &TemplatesInsertCommandPushButton::slotButtonClicked);
 }
 
 TemplatesInsertCommandPushButton::~TemplatesInsertCommandPushButton()
 {
+}
+
+TemplatesCommandMenu::MenuType TemplatesInsertCommandPushButton::type() const
+{
+    return mMenuCommand->type();
+}
+
+void TemplatesInsertCommandPushButton::setType(const TemplatesCommandMenu::MenuType &type)
+{
+    mMenuCommand->setType(type);
+}
+
+void TemplatesInsertCommandPushButton::slotButtonClicked()
+{
+    mMenuCommand->fillSubMenus();
 }
 
