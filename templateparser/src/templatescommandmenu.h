@@ -33,6 +33,11 @@ public:
     explicit TemplatesCommandMenu(QObject *parent = nullptr);
     ~TemplatesCommandMenu();
 
+    enum MenuType {
+        ExistingMessage,
+        All
+    };
+
     //TODO: apidox for all these enums
     enum Command {
         CDnl = 1,
