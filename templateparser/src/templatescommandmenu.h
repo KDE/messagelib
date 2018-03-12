@@ -107,6 +107,7 @@ public:
     };
 
     QMenu *menu() const;
+    void fillMenu();
 Q_SIGNALS:
     void insertCommand(TemplatesCommandMenu::Command cmd);
     void insertCommand(const QString &cmd, int adjustCursor = 0);
@@ -118,9 +119,8 @@ protected:
     KActionMenu *mMenu = nullptr;
 
 private:
-    void fillMenu();
     void fillMenuFromActionMap(const QMap<QString, TemplatesCommandMenu::Command> &map, KActionMenu *menu);
-
+    void fillSubMenus();
 };
 }
 

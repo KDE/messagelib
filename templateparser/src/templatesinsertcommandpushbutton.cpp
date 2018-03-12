@@ -37,6 +37,7 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
 
     mMenuCommand = new TemplatesCommandMenu(this);
     mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
+    mMenuCommand->fillMenu();
     connect(mMenuCommand, QOverload<const QString &, int>::of(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandPushButton::insertCommand);
 
     setMenu(mMenuCommand->menu());

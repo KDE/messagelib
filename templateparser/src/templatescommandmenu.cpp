@@ -415,7 +415,6 @@ void TemplatesCommandMenu::fillMenuFromActionMap(const QMap< QString, TemplatesC
 TemplatesCommandMenu::TemplatesCommandMenu(QObject *parent)
     : QObject(parent)
 {
-    fillMenu();
 }
 
 TemplatesCommandMenu::~TemplatesCommandMenu()
@@ -430,11 +429,13 @@ QMenu *TemplatesCommandMenu::menu() const
 
 void TemplatesCommandMenu::fillMenu()
 {
-    QMap< QString, Command > commandMap;
-
-
     mMenu = new KActionMenu(i18n("Insert Command"), this);
+    fillSubMenus();
+}
 
+void TemplatesCommandMenu::fillSubMenus()
+{
+    QMap< QString, Command > commandMap;
     // ******************************************************
     KActionMenu *menu = new KActionMenu(i18n("Original Message"), mMenu);
     mMenu->addAction(menu);
