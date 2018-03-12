@@ -439,17 +439,20 @@ void TemplatesCommandMenu::fillSubMenus()
     }
     mWasInitialized = true;
     QMap< QString, Command > commandMap;
+    KActionMenu *menu = nullptr;
     // ******************************************************
-    KActionMenu *menu = new KActionMenu(i18n("Original Message"), mMenu);
-    mMenu->addAction(menu);
+    if ((mType == All) | (mType == ReplyForwardMessage)) {
+        menu = new KActionMenu(i18n("Original Message"), mMenu);
+        mMenu->addAction(menu);
 
-    // Map sorts commands
-    for (int i = 0; i < originalCommandsCount; ++i) {
-        commandMap.insert(originalCommands[i].getLocalizedDisplayName(), originalCommands[i].command);
+        // Map sorts commands
+        for (int i = 0; i < originalCommandsCount; ++i) {
+            commandMap.insert(originalCommands[i].getLocalizedDisplayName(), originalCommands[i].command);
+        }
+
+        fillMenuFromActionMap(commandMap, menu);
+        commandMap.clear();
     }
-
-    fillMenuFromActionMap(commandMap, menu);
-    commandMap.clear();
 
     // ******************************************************
     menu = new KActionMenu(i18n("Current Message"), mMenu);
