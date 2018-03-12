@@ -54,6 +54,7 @@ private Q_SLOTS:
     void slotError(QNetworkReply::NetworkError error);
     void slotCheckUrlFinished(QNetworkReply *reply);
 private:
+    Q_DISABLE_COPY(SearchFullHashJob)
     SearchFullHashJobPrivate *const d;
 };
 }

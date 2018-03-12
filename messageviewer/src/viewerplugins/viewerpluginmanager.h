@@ -50,6 +50,7 @@ public:
     QString configPrefixSettingKey() const;
     MessageViewer::ViewerPlugin *pluginFromIdentifier(const QString &id);
 private:
+    Q_DISABLE_COPY(ViewerPluginManager)
     ViewerPluginManagerPrivate *const d;
 };
 }
