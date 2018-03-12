@@ -359,7 +359,6 @@ void DefaultRendererPrivate::render(const MimeMessagePart::Ptr &mp, HtmlWriter *
     if (mp->isAttachment()) {
         aBlock = HTMLBlock::Ptr(new AttachmentMarkBlock(htmlWriter, mp->attachmentContent()));
     }
-    auto preferredMode = mp->source()->preferredMode();
     if (mp->isRoot()) {
         rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
     }
