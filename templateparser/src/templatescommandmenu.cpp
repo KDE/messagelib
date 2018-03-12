@@ -480,16 +480,17 @@ void TemplatesCommandMenu::fillMenu()
     fillMenuFromActionMap(commandMap, menu);
     commandMap.clear();
 
-    //TODO exclude it.
-    // ******************************************************
-    menu = new KActionMenu(i18nc("Debug template commands menu", "Debug"), mMenu);
-    mMenu->addAction(menu);
+    if (!qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING")) {
+        // ******************************************************
+        menu = new KActionMenu(i18nc("Debug template commands menu", "Debug"), mMenu);
+        mMenu->addAction(menu);
 
-    for (int i = 0; i < debugCommandsCount; ++i) {
-        commandMap.insert(debugCommands[i].getLocalizedDisplayName(), debugCommands[i].command);
+        for (int i = 0; i < debugCommandsCount; ++i) {
+            commandMap.insert(debugCommands[i].getLocalizedDisplayName(), debugCommands[i].command);
+        }
+
+        fillMenuFromActionMap(commandMap, menu);
     }
-
-    fillMenuFromActionMap(commandMap, menu);
 
 }
 
