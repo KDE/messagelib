@@ -34,11 +34,15 @@ public:
     ~TemplatesCommandMenu();
 
     enum MenuType {
-        ReplyForwardMessage,
-        NewMessage,
-        All
+        ReplyForwardMessage = 1,
+        CurrentMessage = 2,
+        External = 4,
+        Misc = 8,
+        Debug = 16,
+        Default = ReplyForwardMessage | CurrentMessage | External | Misc | Debug
     };
-
+    Q_FLAG(MenuType)
+    Q_DECLARE_FLAGS(MenuTypes, MenuType)
     //TODO: apidox for all these enums
     enum Command {
         CDnl = 1,
@@ -116,8 +120,8 @@ public:
     void fillMenu();
     void fillSubMenus();
 
-    MenuType type() const;
-    void setType(const MenuType &type);
+    MenuTypes type() const;
+    void setType(MenuTypes type);
 
 Q_SIGNALS:
     void insertCommand(TemplatesCommandMenu::Command cmd);
@@ -131,7 +135,7 @@ protected:
 
 private:
     void fillMenuFromActionMap(const QMap<QString, TemplatesCommandMenu::Command> &map, KActionMenu *menu);
-    MenuType mType = All;
+    MenuTypes mType = Default;
     bool mWasInitialized = false;
 };
 }

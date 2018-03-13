@@ -34,8 +34,8 @@ public:
     explicit TemplatesInsertCommandPushButton(QWidget *parent, const QString &name = QString());
     ~TemplatesInsertCommandPushButton();
 
-    TemplatesCommandMenu::MenuType type() const;
-    void setType(const TemplatesCommandMenu::MenuType &type);
+    TemplatesCommandMenu::MenuTypes type() const;
+    void setType(TemplatesCommandMenu::MenuTypes type);
 
 Q_SIGNALS:
     void insertCommand(const QString &cmd, int adjustCursor = 0);

@@ -55,12 +55,12 @@ TemplatesInsertCommandPushButton::~TemplatesInsertCommandPushButton()
 {
 }
 
-TemplatesCommandMenu::MenuType TemplatesInsertCommandPushButton::type() const
+TemplatesCommandMenu::MenuTypes TemplatesInsertCommandPushButton::type() const
 {
     return mMenuCommand->type();
 }
 
-void TemplatesInsertCommandPushButton::setType(const TemplatesCommandMenu::MenuType &type)
+void TemplatesInsertCommandPushButton::setType(TemplatesCommandMenu::MenuTypes type)
 {
     mMenuCommand->setType(type);
 }

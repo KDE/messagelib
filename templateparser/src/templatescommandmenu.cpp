@@ -441,7 +441,7 @@ void TemplatesCommandMenu::fillSubMenus()
     QMap< QString, Command > commandMap;
     KActionMenu *menu = nullptr;
     // ******************************************************
-    if ((mType == All) | (mType == ReplyForwardMessage)) {
+    if (mType & ReplyForwardMessage) {
         menu = new KActionMenu(i18n("Original Message"), mMenu);
         mMenu->addAction(menu);
 
@@ -455,62 +455,69 @@ void TemplatesCommandMenu::fillSubMenus()
     }
 
     // ******************************************************
-    menu = new KActionMenu(i18n("Current Message"), mMenu);
-    mMenu->addAction(menu);
-
-    for (int i = 0; i < currentCommandsCount; ++i) {
-        commandMap.insert(currentCommands[i].getLocalizedDisplayName(), currentCommands[i].command);
-    }
-
-    fillMenuFromActionMap(commandMap, menu);
-    commandMap.clear();
-
-    // ******************************************************
-    menu = new KActionMenu(i18n("Process with External Programs"), mMenu);
-    mMenu->addAction(menu);
-
-    for (int i = 0; i < extCommandsCount; ++i) {
-        commandMap.insert(extCommands[i].getLocalizedDisplayName(), extCommands[i].command);
-    }
-
-    fillMenuFromActionMap(commandMap, menu);
-    commandMap.clear();
-
-    // ******************************************************
-    menu = new KActionMenu(i18nc("Miscellaneous template commands menu", "Miscellaneous"), mMenu);
-    mMenu->addAction(menu);
-
-    for (int i = 0; i < miscCommandsCount; ++i) {
-        commandMap.insert(miscCommands[i].getLocalizedDisplayName(), miscCommands[i].command);
-    }
-
-    fillMenuFromActionMap(commandMap, menu);
-    commandMap.clear();
-
-    if (!qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING")) {
-        // ******************************************************
-        menu = new KActionMenu(i18nc("Debug template commands menu", "Debug"), mMenu);
+    if (mType & CurrentMessage) {
+        menu = new KActionMenu(i18n("Current Message"), mMenu);
         mMenu->addAction(menu);
 
-        for (int i = 0; i < debugCommandsCount; ++i) {
-            commandMap.insert(debugCommands[i].getLocalizedDisplayName(), debugCommands[i].command);
+        for (int i = 0; i < currentCommandsCount; ++i) {
+            commandMap.insert(currentCommands[i].getLocalizedDisplayName(), currentCommands[i].command);
         }
 
         fillMenuFromActionMap(commandMap, menu);
+        commandMap.clear();
+    }
+
+    // ******************************************************
+    if (mType & External) {
+        menu = new KActionMenu(i18n("Process with External Programs"), mMenu);
+        mMenu->addAction(menu);
+
+        for (int i = 0; i < extCommandsCount; ++i) {
+            commandMap.insert(extCommands[i].getLocalizedDisplayName(), extCommands[i].command);
+        }
+
+        fillMenuFromActionMap(commandMap, menu);
+        commandMap.clear();
+    }
+
+    // ******************************************************
+    if (mType & Misc) {
+        menu = new KActionMenu(i18nc("Miscellaneous template commands menu", "Miscellaneous"), mMenu);
+        mMenu->addAction(menu);
+
+        for (int i = 0; i < miscCommandsCount; ++i) {
+            commandMap.insert(miscCommands[i].getLocalizedDisplayName(), miscCommands[i].command);
+        }
+
+        fillMenuFromActionMap(commandMap, menu);
+        commandMap.clear();
+    }
+
+    // ******************************************************
+    if (!qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING")) {
+        if (mType & Debug) {
+            menu = new KActionMenu(i18nc("Debug template commands menu", "Debug"), mMenu);
+            mMenu->addAction(menu);
+
+            for (int i = 0; i < debugCommandsCount; ++i) {
+                commandMap.insert(debugCommands[i].getLocalizedDisplayName(), debugCommands[i].command);
+            }
+
+            fillMenuFromActionMap(commandMap, menu);
+        }
     }
 
 }
 
-TemplatesCommandMenu::MenuType TemplatesCommandMenu::type() const
+TemplatesCommandMenu::MenuTypes TemplatesCommandMenu::type() const
 {
     return mType;
 }
 
-void TemplatesCommandMenu::setType(const MenuType &type)
+void TemplatesCommandMenu::setType(MenuTypes type)
 {
     mType = type;
 }
-
 
 void TemplatesCommandMenu::slotInsertCommand(TemplatesCommandMenu::Command cmd)
 {
