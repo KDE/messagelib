@@ -22,7 +22,7 @@
 
 #include <QMap>
 #include <QObject>
-#include "templateparser_private_export.h"
+#include "templateparser_export.h"
 class KActionMenu;
 class QMenu;
 namespace TemplateParser {
