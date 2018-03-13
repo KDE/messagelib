@@ -517,6 +517,10 @@ TemplatesCommandMenu::MenuTypes TemplatesCommandMenu::type() const
 void TemplatesCommandMenu::setType(MenuTypes type)
 {
     mType = type;
+//    delete mMenu;
+//    mWasInitialized = false;
+//    fillMenu();
+//    fillSubMenus();
 }
 
 void TemplatesCommandMenu::slotInsertCommand(TemplatesCommandMenu::Command cmd)
