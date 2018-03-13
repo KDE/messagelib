@@ -37,9 +37,10 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
     mMenuCommand = new TemplatesCommandMenu(this);
     mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
     mMenuCommand->fillMenu();
+    mMenuCommand->fillSubMenus();
+    setMenu(mMenuCommand->menu());
     connect(mMenuCommand, QOverload<const QString &, int>::of(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandPushButton::insertCommand);
 
-    setMenu(mMenuCommand->menu());
     setToolTip(
         i18nc("@info:tooltip",
               "Select a command to insert into the template"));
@@ -48,7 +49,6 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
               "Traverse this menu to find a command to insert into the current template "
               "being edited.  The command will be inserted at the cursor location, "
               "so you want to move your cursor to the desired insertion point first."));
-    connect(this, &QPushButton::clicked, this, &TemplatesInsertCommandPushButton::slotButtonClicked);
 }
 
 TemplatesInsertCommandPushButton::~TemplatesInsertCommandPushButton()
@@ -63,10 +63,6 @@ TemplatesCommandMenu::MenuTypes TemplatesInsertCommandPushButton::type() const
 void TemplatesInsertCommandPushButton::setType(TemplatesCommandMenu::MenuTypes type)
 {
     mMenuCommand->setType(type);
-}
-
-void TemplatesInsertCommandPushButton::slotButtonClicked()
-{
-    mMenuCommand->fillSubMenus();
+    setMenu(mMenuCommand->menu());
 }
 

@@ -41,7 +41,6 @@ Q_SIGNALS:
     void insertCommand(const QString &cmd, int adjustCursor = 0);
 
 private:
-    void slotButtonClicked();
     TemplatesCommandMenu *mMenuCommand = nullptr;
 };
 }
