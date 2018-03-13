@@ -30,7 +30,6 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
     mMenuCommand->fillSubMenus();
     mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
     connect(mMenuCommand, QOverload<const QString &, int>::of(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandAction::insertCommand);
-
     setMenu(mMenuCommand->menu());
 }
 
@@ -47,4 +46,5 @@ TemplatesCommandMenu::MenuTypes TemplatesInsertCommandAction::type() const
 void TemplatesInsertCommandAction::setType(TemplatesCommandMenu::MenuTypes type)
 {
     mMenuCommand->setType(type);
+    setMenu(mMenuCommand->menu());
 }
