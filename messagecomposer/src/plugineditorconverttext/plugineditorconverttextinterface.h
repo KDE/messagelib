@@ -54,7 +54,7 @@ public:
 
     virtual void createAction(KActionCollection *ac);
 
-    void setMessage(const KMime::Message::Ptr &);
+    virtual void setMessage(const KMime::Message::Ptr &);
     KMime::Message::Ptr message() const;
 
 public Q_SLOTS:
