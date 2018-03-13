@@ -22,7 +22,7 @@
 
 #include <QPushButton>
 #include "templateparser_export.h"
-#include "templatescommandmenu.h"
+#include <TemplateParser/TemplatesCommandMenu>
 
 class KActionMenu;
 

@@ -21,20 +21,24 @@
 #ifndef TEMPLATESINSERTCOMMANDACTION_H
 #define TEMPLATESINSERTCOMMANDACTION_H
 
-#include <QAction>
+#include <QWidgetAction>
+#include <TemplateParser/TemplatesCommandMenu>
 
 #include "templateparser_export.h"
-
 namespace TemplateParser {
-class TemplatesCommandMenu;
-class TEMPLATEPARSER_EXPORT TemplatesInsertCommandAction : public QAction
+class TEMPLATEPARSER_EXPORT TemplatesInsertCommandAction : public QWidgetAction
 {
     Q_OBJECT
 public:
     explicit TemplatesInsertCommandAction(QObject *parent = nullptr);
     ~TemplatesInsertCommandAction();
+
+    TemplatesCommandMenu::MenuTypes type() const;
+    void setType(TemplatesCommandMenu::MenuTypes type);
+
 Q_SIGNALS:
     void insertCommand(const QString &cmd, int adjustCursor);
+
 private:
     TemplatesCommandMenu *mMenuCommand = nullptr;
 };

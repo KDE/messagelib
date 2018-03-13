@@ -18,12 +18,12 @@
 */
 
 
-#include "templatescommandmenu.h"
+
 #include "templatesinsertcommandaction.h"
 using namespace TemplateParser;
 
 TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
-    : QAction(parent)
+    : QWidgetAction(parent)
 {
     mMenuCommand = new TemplatesCommandMenu(this);
     mMenuCommand->fillMenu();
@@ -37,4 +37,14 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
 TemplatesInsertCommandAction::~TemplatesInsertCommandAction()
 {
 
+}
+
+TemplatesCommandMenu::MenuTypes TemplatesInsertCommandAction::type() const
+{
+    return mMenuCommand->type();
+}
+
+void TemplatesInsertCommandAction::setType(TemplatesCommandMenu::MenuTypes type)
+{
+    mMenuCommand->setType(type);
 }

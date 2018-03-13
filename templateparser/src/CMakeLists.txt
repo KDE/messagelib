@@ -84,6 +84,7 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     TemplatesTextEdit
     TemplatesUtil
     TemplatesInsertCommandPushButton
+    TemplatesCommandMenu
     TemplatesInsertCommandAction
     TemplateParserJob
     TemplateParserExtractHtmlInfoResult

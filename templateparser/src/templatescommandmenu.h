@@ -26,7 +26,7 @@
 class KActionMenu;
 class QMenu;
 namespace TemplateParser {
-class TEMPLATEPARSER_TESTS_EXPORT TemplatesCommandMenu : public QObject
+class TEMPLATEPARSER_EXPORT TemplatesCommandMenu : public QObject
 {
     Q_OBJECT
 public:
