@@ -18,6 +18,8 @@
 */
 
 #include "plugineditorconverttextinterface.h"
+#include "plugineditorconverterinitialdata.h"
+#include "plugineditorconverterbeforeconvertingdata.h"
 
 #include <KActionCollection>
 
@@ -36,6 +38,8 @@ public:
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextComposer *mEditor = nullptr;
     KMime::Message::Ptr mMewMsg;
+    PluginEditorConverterInitialData mInitialData;
+    PluginEditorConverterBeforeConvertingData mBeforeConvertingData;
 };
 
 PluginEditorConvertTextInterface::PluginEditorConvertTextInterface(QObject *parent)
@@ -87,6 +91,26 @@ void PluginEditorConvertTextInterface::setMessage(const KMime::Message::Ptr &msg
 KMime::Message::Ptr PluginEditorConvertTextInterface::message() const
 {
     return d->mMewMsg;
+}
+
+void PluginEditorConvertTextInterface::setInitialData(const PluginEditorConverterInitialData &data)
+{
+    d->mInitialData = data;
+}
+
+PluginEditorConverterInitialData PluginEditorConvertTextInterface::initialData() const
+{
+    return d->mInitialData;
+}
+
+void PluginEditorConvertTextInterface::setBeforeConvertingData(const PluginEditorConverterBeforeConvertingData &data)
+{
+    d->mBeforeConvertingData = data;
+}
+
+PluginEditorConverterBeforeConvertingData PluginEditorConvertTextInterface::beforeConvertingData() const
+{
+    return d->mBeforeConvertingData;
 }
 
 KPIMTextEdit::RichTextComposer *PluginEditorConvertTextInterface::richTextEditor() const

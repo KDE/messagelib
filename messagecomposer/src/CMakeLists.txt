@@ -119,6 +119,8 @@ set(messagecomposer_plugineditorconverttext_SRCS
    plugineditorconverttext/plugineditorconverttext.cpp
    plugineditorconverttext/plugineditorconverttextmanager.cpp
    plugineditorconverttext/plugineditorconverttextinterface.cpp
+   plugineditorconverttext/plugineditorconverterinitialdata.cpp
+   plugineditorconverttext/plugineditorconverterbeforeconvertingdata.cpp
    )
 
 set(messagecomposer_widgets_SRCS
@@ -242,6 +244,8 @@ ecm_generate_headers(MessageComposer_Camelplugineditorconverttext_HEADERS
     PluginEditorConvertText
     PluginEditorConvertTextManager
     PluginEditorConvertTextInterface
+    PluginEditorConverterInitialData
+    PluginEditorConverterBeforeConvertingData
     REQUIRED_HEADERS MessageComposer_plugineditorconverttext_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorconverttext

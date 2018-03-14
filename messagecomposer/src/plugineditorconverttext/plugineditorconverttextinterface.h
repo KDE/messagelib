@@ -25,6 +25,7 @@
 #include <MessageComposer/PluginActionType>
 #include <KMime/Message>
 
+
 namespace KPIMTextEdit {
 class RichTextComposer;
 }
@@ -32,6 +33,8 @@ class KActionCollection;
 namespace MessageComposer {
 class TextPart;
 class PluginEditorConvertTextInterfacePrivate;
+class PluginEditorConverterInitialData;
+class PluginEditorConverterBeforeConvertingData;
 class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextInterface : public QObject
 {
     Q_OBJECT
@@ -56,6 +59,12 @@ public:
 
     virtual void setMessage(const KMime::Message::Ptr &);
     KMime::Message::Ptr message() const;
+
+    void setInitialData(const PluginEditorConverterInitialData &data);
+    PluginEditorConverterInitialData initialData() const;
+
+    void setBeforeConvertingData(const PluginEditorConverterBeforeConvertingData &data);
+    PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
 
 public Q_SLOTS:
     virtual void reloadConfig();
