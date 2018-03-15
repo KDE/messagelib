@@ -37,7 +37,6 @@ public:
 
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextComposer *mEditor = nullptr;
-    KMime::Message::Ptr mMewMsg;
     PluginEditorConverterInitialData mInitialData;
     PluginEditorConverterBeforeConvertingData mBeforeConvertingData;
 };
@@ -81,16 +80,6 @@ PluginActionType PluginEditorConvertTextInterface::actionType() const
 void PluginEditorConvertTextInterface::createAction(KActionCollection *ac)
 {
     Q_UNUSED(ac);
-}
-
-void PluginEditorConvertTextInterface::setMessage(const KMime::Message::Ptr &msg)
-{
-    d->mMewMsg = msg;
-}
-
-KMime::Message::Ptr PluginEditorConvertTextInterface::message() const
-{
-    return d->mMewMsg;
 }
 
 void PluginEditorConvertTextInterface::setInitialData(const PluginEditorConverterInitialData &data)

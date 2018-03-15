@@ -33,3 +33,13 @@ void PluginEditorConverterBeforeConvertingData::setNewMessage(bool newMessage)
 {
     mNewMessage = newMessage;
 }
+
+KMime::Message::Ptr PluginEditorConverterBeforeConvertingData::message() const
+{
+    return mMessage;
+}
+
+void PluginEditorConverterBeforeConvertingData::setMessage(const KMime::Message::Ptr &message)
+{
+    mMessage = message;
+}

@@ -21,6 +21,7 @@
 #define PLUGINEDITORCONVERTERBEFORECONVERTINGDATA_H
 
 #include "messagecomposer_export.h"
+#include <KMime/Message>
 namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT PluginEditorConverterBeforeConvertingData
 {
@@ -30,7 +31,11 @@ public:
     bool newMessage() const;
     void setNewMessage(bool newMessage);
 
+    KMime::Message::Ptr message() const;
+    void setMessage(const KMime::Message::Ptr &message);
+
 private:
+    KMime::Message::Ptr mMessage;
     bool mNewMessage = true;
 };
 }

@@ -21,11 +21,22 @@
 #define PLUGINEDITORCONVERTERINITIALDATA_H
 
 #include "messagecomposer_export.h"
+#include <KMime/Message>
 namespace MessageComposer {
 class MESSAGECOMPOSER_EXPORT PluginEditorConverterInitialData
 {
 public:
     PluginEditorConverterInitialData();
+
+    bool newMessage() const;
+    void setNewMessage(bool newMessage);
+
+    KMime::Message::Ptr mewMsg() const;
+    void setMewMsg(const KMime::Message::Ptr &mewMsg);
+
+private:
+    KMime::Message::Ptr mMewMsg;
+    bool mNewMessage = true;
 };
 }
 #endif // PLUGINEDITORCONVERTERINITIALDATA_H

@@ -25,3 +25,23 @@ PluginEditorConverterInitialData::PluginEditorConverterInitialData()
 {
 
 }
+
+bool PluginEditorConverterInitialData::newMessage() const
+{
+    return mNewMessage;
+}
+
+void PluginEditorConverterInitialData::setNewMessage(bool newMessage)
+{
+    mNewMessage = newMessage;
+}
+
+KMime::Message::Ptr PluginEditorConverterInitialData::mewMsg() const
+{
+    return mMewMsg;
+}
+
+void PluginEditorConverterInitialData::setMewMsg(const KMime::Message::Ptr &mewMsg)
+{
+    mMewMsg = mewMsg;
+}

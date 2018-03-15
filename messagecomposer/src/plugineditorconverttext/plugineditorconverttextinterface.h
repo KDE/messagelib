@@ -57,13 +57,10 @@ public:
 
     virtual void createAction(KActionCollection *ac);
 
-    virtual void setMessage(const KMime::Message::Ptr &);
-    KMime::Message::Ptr message() const;
-
-    void setInitialData(const PluginEditorConverterInitialData &data);
+    virtual void setInitialData(const PluginEditorConverterInitialData &data);
     PluginEditorConverterInitialData initialData() const;
 
-    void setBeforeConvertingData(const PluginEditorConverterBeforeConvertingData &data);
+    virtual void setBeforeConvertingData(const PluginEditorConverterBeforeConvertingData &data);
     PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
 
 public Q_SLOTS:
