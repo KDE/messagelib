@@ -25,6 +25,7 @@ set(templateparser_LIB_SRCS
     templateparseremailaddressrequesterbase.cpp
     templateparseremailaddressrequesterlineedit.cpp
     templateparseremailaddressrequesterinterfacewidget.cpp
+    templateconvertcommandjob.cpp
     )
 
 
@@ -89,6 +90,7 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
     TemplateParserJob
     TemplateParserExtractHtmlInfoResult
     TemplateParserEmailAddressRequesterBase
+    TemplateConvertCommandJob
     REQUIRED_HEADERS TemplateParser_HEADERS
     PREFIX TemplateParser
     )
