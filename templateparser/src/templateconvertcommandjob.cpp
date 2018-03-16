@@ -31,3 +31,28 @@ TemplateConvertCommandJob::~TemplateConvertCommandJob()
 {
 
 }
+
+QString TemplateConvertCommandJob::convertText()
+{
+    return {};
+}
+
+QString TemplateConvertCommandJob::currentText() const
+{
+    return mCurrentText;
+}
+
+void TemplateConvertCommandJob::setCurrentText(const QString &currentText)
+{
+    mCurrentText = currentText;
+}
+
+KMime::Message::Ptr TemplateConvertCommandJob::originalMessage() const
+{
+    return mOriginalMessage;
+}
+
+void TemplateConvertCommandJob::setOriginalMessage(const KMime::Message::Ptr &originalMessage)
+{
+    mOriginalMessage = originalMessage;
+}

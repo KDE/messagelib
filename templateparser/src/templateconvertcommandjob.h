@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include "templateparser_export.h"
+#include <KMime/Message>
 
 namespace TemplateParser {
 class TEMPLATEPARSER_EXPORT TemplateConvertCommandJob : public QObject
@@ -30,7 +31,17 @@ class TEMPLATEPARSER_EXPORT TemplateConvertCommandJob : public QObject
 public:
     explicit TemplateConvertCommandJob(QObject *parent = nullptr);
     ~TemplateConvertCommandJob();
-    void start();
+    QString convertText();
+
+    QString currentText() const;
+    void setCurrentText(const QString &currentText);
+
+    KMime::Message::Ptr originalMessage() const;
+    void setOriginalMessage(const KMime::Message::Ptr &originalMessage);
+
+private:
+    QString mCurrentText;
+    KMime::Message::Ptr mOriginalMessage;
 };
 }
 
