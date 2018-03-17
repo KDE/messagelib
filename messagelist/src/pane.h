@@ -335,6 +335,8 @@ public:
     * If the specified folder is not open yet then behaviour
     * depends on the preferEmptyTab value as follows.
     *
+    * @param etmIndex the index for the collection in the EntityTreeModel (source model)
+    *
     * If preferEmptyTab is set to false then the (new) folder is loaded
     * in the current tab. If preferEmptyTab is set to true then the (new) folder is
     * loaded in the first empty tab (or a new one if there are no empty ones).
@@ -347,7 +349,9 @@ public:
     * like "loading..."
     */
     void setCurrentFolder(
-        const Akonadi::Collection &fld, bool preferEmptyTab = false, MessageList::Core::PreSelectionMode preSelectionMode = MessageList::Core::PreSelectLastSelected,
+        const Akonadi::Collection &fld,
+        const QModelIndex &etmIndex,
+        bool preferEmptyTab = false, MessageList::Core::PreSelectionMode preSelectionMode = MessageList::Core::PreSelectLastSelected,
         const QString &overrideLabel = QString());
 
     void resetModelStorage();
@@ -433,8 +437,6 @@ Q_SIGNALS:
 private:
     void restoreHeaderSettings(int index);
     void readConfig(bool restoreSession);
-
-    Q_PRIVATE_SLOT(d, void onSelectionChanged(const QItemSelection &, const QItemSelection &))
 
     bool eventFilter(QObject *obj, QEvent *event) override;
 

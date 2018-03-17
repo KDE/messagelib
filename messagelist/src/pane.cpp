@@ -68,7 +68,7 @@ public:
     {
     }
 
-    void onSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
+    void setCurrentFolder(const QModelIndex &etmIndex);
     void onNewTabClicked();
     void onCloseTabClicked();
     void activateTab();
@@ -84,7 +84,6 @@ public:
     void changeQuicksearchVisibility(bool);
     void addActivateTabAction(int i);
     void slotTabCloseRequested(int index);
-    QItemSelection mapSelectionToSource(const QItemSelection &selection) const;
     QItemSelection mapSelectionFromSource(const QItemSelection &selection) const;
     void updateTabControls();
 
@@ -169,8 +168,6 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     readConfig(restoreSession);
     setMovable(true);
 
-    connect(d->mSelectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-            this, SLOT(onSelectionChanged(QItemSelection,QItemSelection)));
     connect(this, &Pane::currentChanged,
             this, [this]() { d->onCurrentTabChanged(); });
 
@@ -453,7 +450,7 @@ void Pane::setQuickSearchClickMessage(const QString &msg)
     }
 }
 
-void Pane::Private::onSelectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
+void Pane::Private::setCurrentFolder(const QModelIndex &etmIndex)
 {
     if (mPreferEmptyTab) {
         q->createNewTab();
@@ -465,11 +462,12 @@ void Pane::Private::onSelectionChanged(const QItemSelection &selected, const QIt
     w->saveCurrentSelection();
 
     // Deselect old before we select new - so that the messagelist can clear first.
-    s->select(mapSelectionToSource(deselected), QItemSelectionModel::Deselect);
+    s->clear();
     if (s->selection().isEmpty()) {
         w->view()->model()->setPreSelectionMode(mPreSelectionMode);
     }
-    s->select(mapSelectionToSource(selected), QItemSelectionModel::Select);
+    Q_ASSERT(s->model() == etmIndex.model());
+    s->select(etmIndex, QItemSelectionModel::Select);
 
     QString label;
     QIcon icon;
@@ -499,15 +497,10 @@ void Pane::Private::onSelectionChanged(const QItemSelection &selected, const QIt
     q->setTabIcon(index, icon);
     q->setTabToolTip(index, toolTip);
     if (mPreferEmptyTab) {
-        disconnect(mSelectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-                   q, SLOT(onSelectionChanged(QItemSelection,QItemSelection)));
-
         mSelectionModel->select(mapSelectionFromSource(s->selection()),
                                 QItemSelectionModel::ClearAndSelect);
-
-        connect(mSelectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-                q, SLOT(onSelectionChanged(QItemSelection,QItemSelection)));
     }
+    mPreferEmptyTab = false;
 }
 
 void Pane::Private::activateTab()
@@ -645,14 +638,8 @@ void Pane::Private::onCurrentTabChanged()
 
     QItemSelectionModel *s = mWidgetSelectionHash[w];
 
-    disconnect(mSelectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-               q, SLOT(onSelectionChanged(QItemSelection,QItemSelection)));
-
     mSelectionModel->select(mapSelectionFromSource(s->selection()),
                             QItemSelectionModel::ClearAndSelect);
-
-    connect(mSelectionModel, SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-            q, SLOT(onSelectionChanged(QItemSelection,QItemSelection)));
 }
 
 void Pane::Private::onTabContextMenuRequest(const QPoint &pos)
@@ -722,8 +709,9 @@ Akonadi::Collection Pane::currentFolder() const
     return {};
 }
 
-void Pane::setCurrentFolder(const Akonadi::Collection &collection, bool, Core::PreSelectionMode preSelectionMode, const QString &overrideLabel)
+void Pane::setCurrentFolder(const Akonadi::Collection &collection, const QModelIndex &etmIndex, bool, Core::PreSelectionMode preSelectionMode, const QString &overrideLabel)
 {
+    d->setCurrentFolder(etmIndex);
     d->mPreSelectionMode = preSelectionMode;
     Widget *w = static_cast<Widget *>(currentWidget());
     if (w) {
@@ -788,17 +776,6 @@ QItemSelectionModel *Pane::createNewTab()
     d->updateTabControls();
     setCurrentWidget(w);
     return s;
-}
-
-QItemSelection Pane::Private::mapSelectionToSource(const QItemSelection &selection) const
-{
-    QItemSelection result = selection;
-
-    for (const QAbstractProxyModel *proxy : qAsConst(mProxyStack)) {
-        result = proxy->mapSelectionToSource(result);
-    }
-
-    return result;
 }
 
 QItemSelection Pane::Private::mapSelectionFromSource(const QItemSelection &selection) const
