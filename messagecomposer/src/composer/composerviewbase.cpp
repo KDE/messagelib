@@ -1558,6 +1558,7 @@ void ComposerViewBase::setFcc(const Akonadi::Collection &fccCollection)
 void ComposerViewBase::slotFccCollectionCheckResult(KJob *job)
 {
     if (job->error()) {
+        qCWarning(MESSAGECOMPOSER_LOG) << " void ComposerViewBase::slotFccCollectionCheckResult(KJob *job) errror " << job->errorString();
         const Akonadi::Collection sentMailCol
             = Akonadi::SpecialMailCollections::self()->defaultCollection(Akonadi::SpecialMailCollections::SentMail);
         if (m_fccCombo) {
