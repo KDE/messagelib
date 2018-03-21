@@ -23,7 +23,7 @@
 
 #include <QString>
 
-#include <core/item.h>
+#include "core/item.h"
 
 namespace MessageList {
 namespace Core {

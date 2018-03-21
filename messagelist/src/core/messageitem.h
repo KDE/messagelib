@@ -21,8 +21,8 @@
 #ifndef MESSAGELIST_CORE_MESSAGEITEM_H
 #define MESSAGELIST_CORE_MESSAGEITEM_H
 
-#include <core/item.h>
-#include <core/modelinvariantindex.h>
+#include "core/item.h"
+#include "core/modelinvariantindex.h"
 
 #include <QPixmap>
 #include <QString>

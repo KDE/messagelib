@@ -21,7 +21,7 @@
 #ifndef MESSAGELIST_CORE_MANAGER_H
 #define MESSAGELIST_CORE_MANAGER_H
 
-#include <core/sortorder.h>
+#include "core/sortorder.h"
 #include <QList>
 #include <QMap>
 #include <QObject>
