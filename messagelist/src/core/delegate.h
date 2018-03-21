@@ -21,7 +21,7 @@
 #ifndef MESSAGELIST_CORE_DELEGATE_H
 #define MESSAGELIST_CORE_DELEGATE_H
 
-#include <core/themedelegate.h>
+#include "core/themedelegate.h"
 
 namespace MessageList {
 namespace Core {

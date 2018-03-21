@@ -19,9 +19,8 @@
 #ifndef MESSAGELIST_WIDGET_H
 #define MESSAGELIST_WIDGET_H
 
-#include <core/widgetbase.h>
-#include <core/view.h>
-#include <item.h>
+#include <MessageList/WidgetBase>
+#include <MessageList/View>
 #include <MessageList/QuickSearchLine>
 
 #include <kmime/kmime_message.h>

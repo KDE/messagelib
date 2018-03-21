@@ -26,9 +26,7 @@
 #include <QHash>
 #include <QMultiHash>
 
-#include <core/aggregation.h>
 #include <core/enums.h>
-#include <core/sortorder.h>
 
 #include <time.h> // time_t
 
@@ -45,6 +43,8 @@ class Theme;
 class StorageModel;
 class View;
 class ModelPrivate;
+class SortOrder;
+class Aggregation;
 
 /**
  * This class manages the huge tree of displayable objects: GroupHeaderItems and MessageItems.
