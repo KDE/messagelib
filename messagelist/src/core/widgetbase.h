@@ -26,7 +26,6 @@
 #include <QList>
 
 #include <core/enums.h>
-#include <core/sortorder.h>
 #include <core/widgets/quicksearchline.h>
 
 class QLineEdit;
