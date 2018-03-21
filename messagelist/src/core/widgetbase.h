@@ -25,8 +25,8 @@
 #include <QString>
 #include <QList>
 
-#include <core/enums.h>
-#include <core/widgets/quicksearchline.h>
+#include <MessageList/Enums>
+#include <MessageList/QuickSearchLine>
 
 class QLineEdit;
 class QActionGroup;
