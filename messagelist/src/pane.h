@@ -433,9 +433,6 @@ private:
     void readConfig(bool restoreSession);
 
     Q_PRIVATE_SLOT(d, void onSelectionChanged(const QItemSelection &, const QItemSelection &))
-    Q_PRIVATE_SLOT(d, void closeTab(QWidget *))
-    Q_PRIVATE_SLOT(d, void updateTabControls())
-    Q_PRIVATE_SLOT(d, void changeQuicksearchVisibility(bool))
 
     bool eventFilter(QObject *obj, QEvent *event) override;
 

@@ -177,8 +177,8 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     setContextMenuPolicy(Qt::CustomContextMenu);
     connect(this, &Pane::customContextMenuRequested, this, [this](const QPoint &point) { d->onTabContextMenuRequest(point);});
 
-    connect(MessageListSettings::self(), SIGNAL(configChanged()),
-            this, SLOT(updateTabControls()));
+    connect(MessageListSettings::self(), &MessageListSettings::configChanged,
+            this, [this]() { d->updateTabControls(); });
 
     connect(this, &QTabWidget::tabBarDoubleClicked,
             this, &Pane::createNewTab);
