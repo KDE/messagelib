@@ -1920,6 +1920,7 @@ void Kleo::KeyResolver::addKeys(const std::vector<Item> &items)
 
 Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreferences(const QString &address) const
 {
+#ifdef HAVE_A_FIX_FOR_LOCK
     const Private::ContactPreferencesMap::iterator it
         = d->mContactPreferencesMap.find(address);
     if (it != d->mContactPreferencesMap.end()) {
@@ -1947,6 +1948,10 @@ Kleo::KeyResolver::ContactPreferences Kleo::KeyResolver::lookupContactPreference
     // insert into map and grab resulting iterator
     d->mContactPreferencesMap.insert(std::make_pair(address, pref));
     return pref;
+#else
+    Q_UNUSED(address)
+    return ContactPreferences();
+#endif
 }
 
 void Kleo::KeyResolver::saveContactPreference(const QString &email, const ContactPreferences &pref) const
