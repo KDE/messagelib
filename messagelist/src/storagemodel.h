@@ -82,8 +82,6 @@ public:
     void resetModelStorage();
 
 private:
-    Q_PRIVATE_SLOT(d, void loadSettings())
-
     class Private;
     Private *const d;
 };

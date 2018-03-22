@@ -125,8 +125,8 @@ StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selec
             this, [this]() { d->onSelectionChanged(); });
 
     d->loadSettings();
-    connect(MessageListSettings::self(), SIGNAL(configChanged()),
-            this, SLOT(loadSettings()));
+    connect(MessageListSettings::self(), &MessageListSettings::configChanged,
+            this, [this]() {d->loadSettings();});
 }
 
 StorageModel::~StorageModel()
