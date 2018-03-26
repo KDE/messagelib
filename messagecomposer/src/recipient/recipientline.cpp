@@ -132,9 +132,7 @@ void RecipientLineNG::slotTypeModified()
 void RecipientLineNG::analyzeLine(const QString &text)
 {
     const QStringList r = KEmailAddress::splitAddressList(text);
-    if (r.count() != mRecipientsCount) {
-        mRecipientsCount = r.count();
-    }
+    mRecipientsCount = r.count();
     mModified = true;
     Q_EMIT countChanged();
 }
