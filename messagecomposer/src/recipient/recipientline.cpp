@@ -58,7 +58,7 @@ void RecipientLineEdit::keyPressEvent(QKeyEvent *ev)
     if (ev->key() == Qt::Key_Left && cursorPosition() == 0
         && !ev->modifiers().testFlag(Qt::ShiftModifier)) {      // Shift would be pressed during selection
         Q_EMIT leftPressed();
-    } else if (ev->key() == Qt::Key_Right && cursorPosition() == (int)text().length()
+    } else if (ev->key() == Qt::Key_Right && cursorPosition() == text().length()
                && !ev->modifiers().testFlag(Qt::ShiftModifier)) {  // Shift would be pressed during selection
         Q_EMIT rightPressed();
     } else {
