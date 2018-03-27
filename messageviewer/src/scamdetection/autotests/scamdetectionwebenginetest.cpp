@@ -141,6 +141,11 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("scam-lowercase-3") << QStringLiteral(
         "<a href=\"http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git\">http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git</a>")
                               << false;
+
+
+    QTest::newRow("toplevelrepo") << QStringLiteral(
+        "<a href=\"https://www.amazon.fr/gp/goldbox/ref=pe_btn/?nocache=1510065600354\">https://www.amazon.fr/gp/../gp/goldbox/ref=pe_btn/?nocache=1510065600354</a>")
+                              << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
