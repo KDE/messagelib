@@ -186,10 +186,12 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
 
                                 if (QString::fromUtf8(QUrl(text).toEncoded()) != href) {
                                     if (QUrl(href).toDisplayString() != text) {
-                                        d->mDetails += QLatin1String("<li>") + i18n(
-                                                    "This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is often the case in scam emails to mislead the recipient",
-                                                    addWarningColor(text), addWarningColor(href)) + QLatin1String("</li>");
-                                        foundScam = true;
+                                        if (QUrl::fromUserInput(text).toDisplayString(QUrl::NormalizePathSegments) != href) {
+                                            d->mDetails += QLatin1String("<li>") + i18n(
+                                                        "This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is often the case in scam emails to mislead the recipient",
+                                                        addWarningColor(text), addWarningColor(href)) + QLatin1String("</li>");
+                                            foundScam = true;
+                                        }
                                     }
                                 }
                             }
