@@ -207,7 +207,7 @@ void Widget::populateStatusFilterCombo()
     d->mStatusFilterComboPopulationInProgress = true;
     KComboBox *tagFilterComboBox = d->quickSearchLine->tagFilterComboBox();
     d->mCurrentStatusFilterIndex = (tagFilterComboBox->currentIndex() != -1) ? tagFilterComboBox->currentIndex() : 0;
-    disconnect(tagFilterComboBox, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &Widget::statusSelected);
+    disconnect(tagFilterComboBox, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &Widget::statusSelected);
 
     tagFilterComboBox->clear();
 
