@@ -129,7 +129,7 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     mScriptCombo = new QComboBox;
     vScriptLayout->addWidget(mScriptCombo);
     fillScriptCombo(mScriptCombo);
-    connect(mScriptCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &TestScriptWidget::slotCurrentIndexChanged);
+    connect(mScriptCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &TestScriptWidget::slotCurrentIndexChanged);
 
     mScriptEdit = new QTextEdit;
     mScriptEdit->setAcceptRichText(false);

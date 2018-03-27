@@ -50,7 +50,7 @@ AggregationEditor::AggregationEditor(QWidget *parent)
     mGroupingCombo = new KComboBox(tab);
     tabg->addWidget(mGroupingCombo, 0, 1);
 
-    connect(mGroupingCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::activated), this, &AggregationEditor::groupingComboActivated);
+    connect(mGroupingCombo, QOverload<int>::of(&KComboBox::activated), this, &AggregationEditor::groupingComboActivated);
 
     tabg->addWidget(new QLabel(i18n("Group expand policy:"), tab), 3, 0);
     mGroupExpandPolicyCombo = new KComboBox(tab);
@@ -60,7 +60,7 @@ AggregationEditor::AggregationEditor(QWidget *parent)
     mThreadingCombo = new KComboBox(tab);
     tabg->addWidget(mThreadingCombo, 4, 1);
 
-    connect(mThreadingCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::activated), this, &AggregationEditor::threadingComboActivated);
+    connect(mThreadingCombo, QOverload<int>::of(&KComboBox::activated), this, &AggregationEditor::threadingComboActivated);
 
     tabg->addWidget(new QLabel(i18n("Thread leader:"), tab), 5, 0);
     mThreadLeaderCombo = new KComboBox(tab);
