@@ -146,6 +146,10 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("toplevelrepo") << QStringLiteral(
         "<a href=\"https://www.amazon.fr/gp/goldbox/ref=pe_btn/?nocache=1510065600354\">https://www.amazon.fr/gp/../gp/goldbox/ref=pe_btn/?nocache=1510065600354</a>")
                               << false;
+
+    QTest::newRow("toplevelrepo2") << QStringLiteral(
+        "<a href=\"https://www.amazon.fr/gp/../gp/goldbox/ref=pe_btn/?nocache=1510065600354\">https://www.amazon.fr/gp/goldbox/ref=pe_btn/?nocache=1510065600354</a>")
+                              << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
