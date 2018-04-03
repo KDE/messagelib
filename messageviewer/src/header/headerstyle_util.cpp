@@ -59,7 +59,7 @@ QString HeaderStyleUtil::directionOf(const QString &str) const
 
 QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flags) const
 {
-    return KTextToHTML::convertToHtml(str, flags);
+    return KTextToHTML::convertToHtml(str, flags, 4096, 512);
 }
 
 // Prepare the date string (when printing always use the localized date)
