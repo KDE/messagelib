@@ -278,14 +278,14 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                                           .arg(line.left(quoteLength)));
                         htmlWriter->write(QStringLiteral("<font color=\"%1\">")
                                           .arg(cssHelper->quoteColorName(actQuoteLevel)));
-                        htmlWriter->write(KTextToHTML::convertToHtml(line.right(rightString), convertFlags));
+                        htmlWriter->write(KTextToHTML::convertToHtml(line.right(rightString), convertFlags, 4096, 512));
                         htmlWriter->write(QStringLiteral("</font>"));
                     } else {
                         htmlWriter->write(QStringLiteral("<span class=\"quotemarksemptyline\">%1</span>")
                                           .arg(line.left(quoteLength)));
                     }
                 } else {
-                    htmlWriter->write(KTextToHTML::convertToHtml(line, convertFlags));
+                    htmlWriter->write(KTextToHTML::convertToHtml(line, convertFlags, 4096, 512));
                 }
 
                 htmlWriter->write(QLatin1String("</div>"));
