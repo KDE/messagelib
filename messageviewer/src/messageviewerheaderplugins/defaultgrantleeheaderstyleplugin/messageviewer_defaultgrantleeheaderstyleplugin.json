@@ -26,6 +26,7 @@
         "Description[uk]": "Цей додаток визначає типовий заголовок повідомлення Grantlee.",
         "Description[x-test]": "xxThis plugin provides a default Grantlee mail header.xx",
         "Description[zh_CN]": "此插件提供默认 Grantlee 邮件头。",
+        "Description[zh_TW]": "這個附加元件提供了預設的 Grantlee 郵件標頭",
         "EnabledByDefault": "true",
         "Name": "Default Grantlee Header Style",
         "Name[ar]": "نمط ترويسات «غرانتلي» المبدئيّ",
@@ -55,6 +56,7 @@
         "Name[uk]": "Типовий стиль заголовків Grantlee",
         "Name[x-test]": "xxDefault Grantlee Header Stylexx",
         "Name[zh_CN]": "默认 Grantlee 头样式",
+        "Name[zh_TW]": "預設 Grantlee 標頭檔案樣式",
         "ServiceTypes": [
             "MessageViewerHeaderStyle/Plugin"
         ],

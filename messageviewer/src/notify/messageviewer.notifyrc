@@ -33,6 +33,7 @@ Comment[tr]=İleti Görüntüleyici
 Comment[uk]=Перегляд повідомлень
 Comment[x-test]=xxMessage Viewerxx
 Comment[zh_CN]=信件查看器
+Comment[zh_TW]=訊息檢視器
 
 [Event/adblock-list-download-done]
 Name=New Ad-Block list download done
@@ -69,6 +70,7 @@ Name[tr]=Yeni Reklam Engelleme liste indirme tamamlandı
 Name[uk]=Завершено отримання нового списку блокування реклами
 Name[x-test]=xxNew Ad-Block list download donexx
 Name[zh_CN]=新的广告屏蔽列表下载完成
+Name[zh_TW]=全新的廣告封鎖列表已經下載完成
 Comment=New Ad-Block list download done
 Comment[ar]=تمّ تنزيل قائمة «حاجب إعلانات» جديدة
 Comment[ca]=La baixada de la nova llista de bloqueig publicitari ha finalitzat
@@ -103,6 +105,7 @@ Comment[tr]=Yeni Reklam Engelleme liste indirme tamamlandı
 Comment[uk]=Завершено отримання нового списку блокування реклами
 Comment[x-test]=xxNew Ad-Block list download donexx
 Comment[zh_CN]=新的广告屏蔽列表下载完成
+Comment[zh_TW]=全新的廣告封鎖列表已經下載完成
 Action=Popup
 
 [Event/adblock-list-download-failed]
@@ -139,6 +142,7 @@ Name[tr]=Yeni Reklam Engelleme liste indirme başarısız
 Name[uk]=Не вдалося отримати новий список блокування реклами
 Name[x-test]=xxNew Ad-Block list download failedxx
 Name[zh_CN]=新的广告屏蔽列表下载失败
+Name[zh_TW]=全新的廣告封鎖列表下載失敗
 Comment=New Ad-Block list download failed
 Comment[ar]=فشل تنزيل قائمة «حاجب إعلانات» جديدة
 Comment[ca]=La baixada de la nova llista de bloqueig publicitari ha fallat
@@ -172,5 +176,6 @@ Comment[tr]=Yeni Reklam Engelleme liste indirme başarısız
 Comment[uk]=Не вдалося отримати новий список блокування реклами
 Comment[x-test]=xxNew Ad-Block list download failedxx
 Comment[zh_CN]=新的广告屏蔽列表下载失败
+Comment[zh_TW]=全新的廣告封鎖列表下載失敗
 Action=Popup
 
