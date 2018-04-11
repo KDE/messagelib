@@ -74,7 +74,7 @@ void AttachmentCompressJobTest::testCompress()
     QVERIFY(zip.open(QIODevice::ReadOnly));
     const KArchiveDirectory *dir = zip.directory();
     QCOMPARE(dir->entries().count(), 1);
-    const KZipFileEntry *entry = (KZipFileEntry *)dir->entry(dir->entries()[0]);
+    const KZipFileEntry *entry = (KZipFileEntry *)dir->entry(dir->entries().at(0));
     QCOMPARE(entry->data(), data);
     QCOMPARE(entry->name(), name);
     zip.close();
