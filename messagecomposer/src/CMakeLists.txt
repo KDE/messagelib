@@ -123,12 +123,8 @@ set(messagecomposer_plugineditorconverttext_SRCS
    plugineditorconverttext/plugineditorconverterbeforeconvertingdata.cpp
    )
 
-set(messagecomposer_widgets_SRCS
-   widgets/dictionarycombobox.cpp
-   )
 
 set( messagecomposer_src
-    ${messagecomposer_widgets_SRCS}
     ${messagecomposer_plugineditorconverttext_SRCS}
     ${messagecomposer_plugineditorinit_SRCS}
     ${messagecomposer_plugineditor_SRCS}
@@ -249,14 +245,6 @@ ecm_generate_headers(MessageComposer_Camelplugineditorconverttext_HEADERS
     REQUIRED_HEADERS MessageComposer_plugineditorconverttext_HEADERS
     PREFIX MessageComposer
     RELATIVE plugineditorconverttext
-    )
-
-ecm_generate_headers(MessageComposer_Camelwidgets_HEADERS
-    HEADER_NAMES
-    DictionaryComboBox
-    REQUIRED_HEADERS MessageComposer_widgets_HEADERS
-    PREFIX MessageComposer
-    RELATIVE widgets
     )
 
 
@@ -421,7 +409,6 @@ install(FILES
     ${MessageComposer_Camelcasejob_HEADERS}
     ${MessageComposer_Camelcaseattachement_HEADERS}
     ${MessageComposer_Camelplugineditor_HEADERS}
-    ${MessageComposer_Camelwidgets_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
     COMPONENT Devel
     )
@@ -433,7 +420,6 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposersettings_base.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_debug.h
-    ${MessageComposer_widgets_HEADERS}
     ${MessageComposer_composer_HEADERS}
     ${MessageComposer_composerng_HEADERS}
     ${MessageComposer_sender_HEADERS}

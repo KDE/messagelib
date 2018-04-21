@@ -51,8 +51,7 @@
 #ifndef QT_NO_CURSOR
 #include <Libkdepim/KCursorSaver>
 #endif
-
-#include "widgets/dictionarycombobox.h"
+#include <Sonnet/DictionaryComboBox>
 #include <KIdentityManagement/Identity>
 
 #include <MessageCore/StringUtil>
@@ -1044,12 +1043,12 @@ void ComposerViewBase::setFollowUpDate(const QDate &followUpDate)
     mFollowUpDate = followUpDate;
 }
 
-MessageComposer::DictionaryComboBox *ComposerViewBase::dictionary() const
+Sonnet::DictionaryComboBox *ComposerViewBase::dictionary() const
 {
     return m_dictionary;
 }
 
-void ComposerViewBase::setDictionary(MessageComposer::DictionaryComboBox *dictionary)
+void ComposerViewBase::setDictionary(Sonnet::DictionaryComboBox *dictionary)
 {
     m_dictionary = dictionary;
 }
