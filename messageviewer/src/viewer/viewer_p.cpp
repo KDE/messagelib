@@ -206,7 +206,6 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     , mHtmlWriter(nullptr)
     , mDecrytMessageOverwrite(false)
     , mShowSignatureDetails(false)
-    , mShowAttachmentQuicklist(true)
     , mForceEmoticons(true)
     , mRecursionCountForDisplayMessage(0)
     , mCurrentContent(nullptr)
@@ -933,7 +932,7 @@ void ViewerPrivate::displayMessage()
         mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotMessageRendered,
         Qt::UniqueConnection);
 
-    const QString html = attachmentInjectionHtml();
+    const QString html = attachmentHtml();
     const QString js
         = html.isEmpty() ? QString() : MessageViewer::MailWebEngineScript::injectAttachments(html, QStringLiteral(
                                                                                                  "attachmentInjectionPoint"));
@@ -2430,7 +2429,7 @@ HeaderStylePlugin *ViewerPrivate::headerStylePlugin() const
     return mHeaderStylePlugin;
 }
 
-QString ViewerPrivate::attachmentInjectionHtml()
+QString ViewerPrivate::attachmentHtml()
 {
     const QColor background
         = KColorScheme(QPalette::Active, KColorScheme::View).background().color();
@@ -2439,44 +2438,12 @@ QString ViewerPrivate::attachmentInjectionHtml()
         return QString();
     }
 
-    const QString listVisibility = !mShowAttachmentQuicklist ? QStringLiteral(
-        "style=\"display:none;\"") : QString();
-    html = QStringLiteral("<div id=\"attachmentlist\" %1>").arg(listVisibility) + html
-           + QStringLiteral("</div>");
-
-    const QString urlHandleShow = QStringLiteral("kmail:showAttachmentQuicklist");
-    const QString imgSrcShow = QStringLiteral("quicklistClosed.png");
-    const QString urlHandleHide = QStringLiteral("kmail:hideAttachmentQuicklist");
-    const QString imgSrcHide = QStringLiteral("quicklistOpened.png");
-
-    //TODO make it as a virtual method
-    QString link;
     QString textAlign = QStringLiteral("right");
 
     const bool isFancyTheme = (headerStylePlugin()->name() == QStringLiteral("fancy"));
     if (isFancyTheme) {
         textAlign = QStringLiteral("left");
     }
-
-    const QString visibility = QStringLiteral("style=\"display:none;\"");
-    link += QStringLiteral("<div style=\"text-align: %1;\">").arg(textAlign)
-            +QStringLiteral("<a id=\"kmailshowattachment\" href=\"%1\" %2>").arg(urlHandleShow).arg(
-        mShowAttachmentQuicklist ? QString() : visibility)
-            +QStringLiteral("<img src=\"%1\">").arg(QUrl::fromLocalFile(MessageViewer::IconNameCache
-                                                                        ::instance()->
-                                                                        iconPathFromLocal(
-                                                                            imgSrcShow)).url())
-            +QStringLiteral("</a>")
-            +QStringLiteral("<a id=\"kmailhideattachment\" href=\"%1\" %2>").arg(urlHandleHide).arg(
-        mShowAttachmentQuicklist ? visibility : QString())
-            +QStringLiteral("<img src=\"%1\">").arg(QUrl::fromLocalFile(MessageViewer::IconNameCache
-                                                                        ::instance()->
-                                                                        iconPathFromLocal(
-                                                                            imgSrcHide)).url())
-            +QStringLiteral("</a>")
-            +QStringLiteral("</div>");
-
-    html.prepend(link);
 
     if (isFancyTheme) {
         html.prepend(QStringLiteral("<div style=\"float:left;\">%1&nbsp;</div>").arg(i18n(
@@ -2899,12 +2866,6 @@ void ViewerPrivate::setFullToAddressList(bool showFullTo)
 void ViewerPrivate::setFullCcAddressList(bool showFullCc)
 {
     mViewer->executeHideShowCcAddressScripts(showFullCc);
-}
-
-void ViewerPrivate::setShowAttachmentQuicklist(bool showAttachmentQuicklist)
-{
-    mShowAttachmentQuicklist = showAttachmentQuicklist;
-    mViewer->executeHideShowAttachmentsScripts(mShowAttachmentQuicklist);
 }
 
 void ViewerPrivate::setHideEncryptionDetails(bool encDetails)

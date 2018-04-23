@@ -365,12 +365,6 @@ void MailWebEngineView::executeHideShowCcAddressScripts(bool hide)
     runJavaScriptInWordId(source);
 }
 
-void MailWebEngineView::executeHideShowAttachmentsScripts(bool hide)
-{
-    const QString source = MessageViewer::MailWebEngineScript::manageShowHideAttachments(hide);
-    runJavaScriptInWordId(source);
-}
-
 void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml)
 {
     const QString html = delayedHtml();
