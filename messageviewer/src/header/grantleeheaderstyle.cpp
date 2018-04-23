@@ -73,11 +73,6 @@ QString GrantleeHeaderStyle::format(KMime::Message *message) const
     return d->mGrantleeFormatter->toHtml(settings);
 }
 
-bool GrantleeHeaderStyle::hasAttachmentQuickList() const
-{
-    return true;
-}
-
 bool GrantleeHeaderStyle::showMailAction() const
 {
     return d->mShowMailAction;

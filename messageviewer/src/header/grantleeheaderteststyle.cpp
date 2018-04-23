@@ -84,8 +84,3 @@ void GrantleeHeaderTestStyle::setExtraDisplayHeaders(const QStringList &extraDis
 {
     d->mExtraDisplay = extraDisplay;
 }
-
-bool GrantleeHeaderTestStyle::hasAttachmentQuickList() const
-{
-    return true;
-}
