@@ -55,20 +55,6 @@ QString MailWebEngineScript::manageShowHideCcAddress(bool hide)
     return MailWebEngineScript::createShowHideAddressScript(QStringLiteral("Cc"), hide);
 }
 
-QString MailWebEngineScript::manageShowHideAttachments(bool hide)
-{
-    QString source = checkJQuery("manageShowHideAttachments");
-    if (hide) {
-        source += QString::fromLatin1("qt.jQuery(\"#kmailhideattachment\").hide();"
-                                      "qt.jQuery(\"#kmailshowattachment\").show();"
-                                      "if (!qt.jQuery(\"#attachmentlist\")) { console.warn('attachmentlist not found'); } else { qt.jQuery(\"#attachmentlist\").show(); }");
-    } else {
-        source += QString::fromLatin1("qt.jQuery('#kmailshowattachment').hide();"
-                                      "qt.jQuery(\"#kmailhideattachment\").show();"
-                                      "if (!qt.jQuery(\"#attachmentlist\")) { console.warn('attachmentlist not found'); } else { qt.jQuery(\"#attachmentlist\").hide(); }");
-    }
-    return source;
-}
 
 QString MailWebEngineScript::manageShowHideEncryptionDetails(bool hide)
 {

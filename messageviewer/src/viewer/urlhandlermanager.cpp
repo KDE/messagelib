@@ -413,12 +413,6 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
         } else if (urlPath == QLatin1String("hideEncryptionDetails")) {
             w->setHideEncryptionDetails(true);
             return true;
-        } else if (urlPath == QLatin1String("showAttachmentQuicklist")) {
-            w->setShowAttachmentQuicklist(false);
-            return true;
-        } else if (urlPath == QLatin1String("hideAttachmentQuicklist")) {
-            w->setShowAttachmentQuicklist(true);
-            return true;
         } else if (urlPath == QLatin1String("showFullToAddressList")) {
             w->setFullToAddressList(false);
             return true;
@@ -458,10 +452,6 @@ QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate
             return i18n("Show encryption details.");
         } else if (urlPath == QLatin1String("hideEncryptionDetails")) {
             return i18n("Hide encryption details.");
-        } else if (urlPath == QLatin1String("showAttachmentQuicklist")) {
-            return i18n("Hide attachment list.");
-        } else if (urlPath == QLatin1String("hideAttachmentQuicklist")) {
-            return i18n("Show attachment list.");
         } else if (urlPath == QLatin1String("showFullToAddressList")) {
             return i18n("Hide full \"To\" list");
         } else if (urlPath == QLatin1String("hideFullToAddressList")) {

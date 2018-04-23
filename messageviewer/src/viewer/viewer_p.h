@@ -391,9 +391,6 @@ public:
     /** Show signature details. */
     void setShowSignatureDetails(bool showDetails = true);
 
-    /* show or hide the list that points to the attachments */
-    void setShowAttachmentQuicklist(bool showAttachmentQuicklist = true);
-
     /* show or hide encryption details */
     void setHideEncryptionDetails(bool encDetails = true);
 
@@ -576,7 +573,6 @@ Q_SIGNALS:
     void pageIsScrolledToBottom(bool);
     void printingFinished();
 private:
-    QString attachmentInjectionHtml();
     QString recipientsQuickListLinkHtml(const QString &);
 
     Akonadi::Relation relatedNoteRelation() const;
@@ -591,6 +587,7 @@ private:
 
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     void slotDelayPrintPreview();
+    QString attachmentHtml();
 public:
     bool mHtmlMailGlobalSetting;
     bool mHtmlLoadExternalGlobalSetting;
@@ -657,7 +654,6 @@ public:
     int mLevelQuote;
     bool mDecrytMessageOverwrite;
     bool mShowSignatureDetails;
-    bool mShowAttachmentQuicklist;
     bool mForceEmoticons;
     int mRecursionCountForDisplayMessage;
     KMime::Content *mCurrentContent = nullptr;
