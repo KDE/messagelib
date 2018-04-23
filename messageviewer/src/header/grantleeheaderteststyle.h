@@ -41,8 +41,6 @@ public:
     void setMainFilename(const QString &);
     void setExtraDisplayHeaders(const QStringList &);
 
-    bool hasAttachmentQuickList() const override;
-
 private:
     GrantleeHeaderTestStylePrivate *const d;
 };

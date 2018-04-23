@@ -79,11 +79,6 @@ HeaderStyle::~HeaderStyle()
     delete d;
 }
 
-bool HeaderStyle::hasAttachmentQuickList() const
-{
-    return false;
-}
-
 void HeaderStyle::setMessagePath(const QString &path)
 {
     d->mMessagePath = path;
