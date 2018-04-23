@@ -43,14 +43,6 @@ class MessageViewer::HeaderStylePrivate
 {
 public:
     HeaderStylePrivate()
-        : mStrategy(nullptr)
-        , mNodeHelper(nullptr)
-        , mSourceObject(nullptr)
-        , mPrinting(false)
-        , mTopLevel(true)
-        , mAllowAsync(false)
-        , mReadOnlyMessage(false)
-        , mShowEmoticons(true)
     {
     }
 
@@ -62,11 +54,11 @@ public:
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     QObject *mSourceObject = nullptr;
     Akonadi::MessageStatus mMessageStatus;
-    bool mPrinting;
-    bool mTopLevel;
-    bool mAllowAsync;
-    bool mReadOnlyMessage;
-    bool mShowEmoticons;
+    bool mPrinting = false;
+    bool mTopLevel = true;
+    bool mAllowAsync = false;
+    bool mReadOnlyMessage = false;
+    bool mShowEmoticons = true;
 };
 
 HeaderStyle::HeaderStyle()

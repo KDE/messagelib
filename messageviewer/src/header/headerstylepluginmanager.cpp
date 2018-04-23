@@ -32,8 +32,6 @@ class HeaderStylePluginInfo
 {
 public:
     HeaderStylePluginInfo()
-        : plugin(nullptr)
-        , isEnabled(false)
     {
     }
 
@@ -41,7 +39,7 @@ public:
     QString metaDataFileName;
     PimCommon::PluginUtilData pluginData;
     MessageViewer::HeaderStylePlugin *plugin = nullptr;
-    bool isEnabled;
+    bool isEnabled = false;
 };
 
 class MessageViewer::HeaderStylePluginManagerPrivate

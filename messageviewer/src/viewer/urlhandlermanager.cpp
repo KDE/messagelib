@@ -254,7 +254,6 @@ URLHandlerManager::URLHandlerManager()
     registerHandler(new ShowAuditLogURLHandler());
     registerHandler(new InternalImageURLHandler);
     registerHandler(new KRunURLHandler());
-    //registerHandler(new EmbeddedImageURLHandler());
 }
 
 URLHandlerManager::~URLHandlerManager()
@@ -432,7 +431,8 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
 
 QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
-    if (url.scheme() == QLatin1String("kmail")) {
+    const QString schemeStr = url.scheme();
+    if (schemeStr == QLatin1String("kmail")) {
         const QString urlPath(url.path());
         if (urlPath == QLatin1String("showHTML")) {
             return i18n("Turn on HTML rendering for this message.");
@@ -463,7 +463,7 @@ QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate
         } else {
             return QString();
         }
-    } else if (url.scheme() == QLatin1String("help")) {
+    } else if (schemeStr == QLatin1String("help")) {
         return i18n("Open Documentation");
     }
     return QString();
@@ -953,17 +953,4 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     } else {
         return false;
     }
-}
-
-bool EmbeddedImageURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
-{
-    Q_UNUSED(url);
-    Q_UNUSED(window);
-    return false;
-}
-
-bool EmbeddedImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window) const
-{
-    Q_UNUSED(window);
-    return url.scheme() == QLatin1String("cid");
 }
