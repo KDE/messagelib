@@ -35,6 +35,14 @@
 
 using namespace MessageViewer;
 
+static const char *const richHeaders[] = {
+    "subject", "date", "from", "cc", "bcc", "to",
+    "organization", "organisation", "reply-to",
+    "user-agent", "x-mailer", "x-bugzilla-url", "disposition-notification-to"
+};
+static const int numRichHeaders = sizeof richHeaders / sizeof *richHeaders;
+
+
 RichHeaderStrategy::RichHeaderStrategy()
     : HeaderStrategy()
     , mHeadersToDisplay(stringList(richHeaders, numRichHeaders))
