@@ -36,11 +36,10 @@ class EmptySourcePrivate
 {
 public:
     EmptySourcePrivate()
-        : mAllowDecryption(false)
     {
     }
 
-    bool mAllowDecryption;
+    bool mAllowDecryption = false;
 };
 }
 
