@@ -932,12 +932,6 @@ void ViewerPrivate::displayMessage()
         mPartHtmlWriter.data(), &WebEnginePartHtmlWriter::finished, this, &ViewerPrivate::slotMessageRendered,
         Qt::UniqueConnection);
 
-    const QString html = attachmentHtml();
-    const QString js
-        = html.isEmpty() ? QString() : MessageViewer::MailWebEngineScript::injectAttachments(html, QStringLiteral(
-                                                                                                 "attachmentInjectionPoint"));
-    mViewer->addScript(js, QStringLiteral("attachment_injection"), QWebEngineScript::DocumentReady);
-
     htmlWriter()->end();
 }
 
@@ -1016,6 +1010,7 @@ QString ViewerPrivate::writeMessageHeader(KMime::Message *aMsg, KMime::Content *
     headerStylePlugin()->headerStyle()->setSourceObject(this);
     headerStylePlugin()->headerStyle()->setNodeHelper(mNodeHelper);
     headerStylePlugin()->headerStyle()->setMessagePath(mMessagePath);
+    headerStylePlugin()->headerStyle()->setAttachmentHtml(attachmentHtml());
     if (mMessageItem.isValid()) {
         Akonadi::MessageStatus status;
         status.setStatusFromFlags(mMessageItem.flags());

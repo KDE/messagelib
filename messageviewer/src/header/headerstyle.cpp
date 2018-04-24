@@ -51,6 +51,7 @@ public:
     const HeaderStrategy *mStrategy = nullptr;
     QString mVCardName;
     QString mCollectionName;
+    QString mAttachmentHtml;
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     QObject *mSourceObject = nullptr;
     Akonadi::MessageStatus mMessageStatus;
@@ -69,6 +70,16 @@ HeaderStyle::HeaderStyle()
 HeaderStyle::~HeaderStyle()
 {
     delete d;
+}
+
+void HeaderStyle::setAttachmentHtml(const QString &html)
+{
+    d->mAttachmentHtml = html;
+}
+
+QString HeaderStyle::attachmentHtml() const
+{
+    return d->mAttachmentHtml;
 }
 
 void HeaderStyle::setMessagePath(const QString &path)

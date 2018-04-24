@@ -31,18 +31,6 @@ MailWebEngineScriptTest::~MailWebEngineScriptTest()
 {
 }
 
-void MailWebEngineScriptTest::shouldInjectAttachment()
-{
-    const QString expectedResult = QStringLiteral("qt.jQuery('#bla').append('foo')");
-    QString script = MessageViewer::MailWebEngineScript::injectAttachments(QStringLiteral(
-                                                                               "foo"),
-                                                                           QStringLiteral("bla"));
-    // skip the checks at the beginning of the script
-    script = script.mid(script.indexOf(QLatin1Char('\n')) + 1);
-    script = script.mid(script.indexOf(QLatin1Char('\n')) + 1);
-    QCOMPARE(script, expectedResult);
-}
-
 void MailWebEngineScriptTest::shouldReplaceInnerHtml()
 {
     const QString expectedResult = QStringLiteral(
