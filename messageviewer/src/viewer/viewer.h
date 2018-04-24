@@ -323,6 +323,8 @@ public:
 
     bool printingMode() const;
 
+    QString attachmentHtml() const;
+
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
