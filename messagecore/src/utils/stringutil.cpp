@@ -381,6 +381,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     bool expandableInserted = false;
     KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
 
+    //TODO port code to css. Avoid js support
     for (const KMime::Types::Mailbox &mailbox : mailboxList) {
         if (!mailbox.prettyAddress().isEmpty()) {
             numberAddresses++;
