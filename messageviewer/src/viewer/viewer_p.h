@@ -424,7 +424,6 @@ public:
     void checkPhishingUrl();
     void executeRunner(const QUrl &url);
     QUrl imageUrl() const;
-    QString attachmentHtml() const;
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -575,6 +574,7 @@ Q_SIGNALS:
     void pageIsScrolledToBottom(bool);
     void printingFinished();
 private:
+    QString attachmentHtml() const;
     QString recipientsQuickListLinkHtml(const QString &);
 
     Akonadi::Relation relatedNoteRelation() const;

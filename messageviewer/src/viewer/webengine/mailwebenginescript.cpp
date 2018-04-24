@@ -69,14 +69,6 @@ QString MailWebEngineScript::manageShowHideEncryptionDetails(bool hide)
     return source;
 }
 
-QString MailWebEngineScript::injectAttachments(const QString &delayedHtml, const QString &elementStr)
-{
-    const QString source = checkJQuery("injectAttachments") + QString::fromLatin1(
-        "if (!document.getElementById('%1')) { console.warn('NOT FOUND: %1'); };\n"
-        "qt.jQuery('#%1').append('%2')").arg(elementStr, delayedHtml);
-    return source;
-}
-
 QString MailWebEngineScript::replaceInnerHtml(const QString &field, const QString &html)
 {
     const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String(

@@ -119,6 +119,8 @@ public:
     bool showEmoticons() const;
     void setShowEmoticons(bool b);
 
+    void setAttachmentHtml(const QString &html);
+    QString attachmentHtml() const;
 private:
     HeaderStylePrivate *const d;
 };

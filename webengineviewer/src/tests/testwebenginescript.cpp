@@ -171,7 +171,6 @@ void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
     WebEngineViewer::WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style);
     WebEngineViewer::WebEngineScript::scrollToRelativePosition(int pos);
     WebEngineViewer::WebEngineScript::removeStyleToElement(const QString &element);
-    WebEngineViewer::WebEngineScript::injectAttachments(const QString &delayedHtml, const QString &element);
     WebEngineViewer::WebEngineScript::toggleFullAddressList(const QString &field, const QString &html, bool doShow);
     WebEngineViewer::WebEngineScript::replaceInnerHtml(const QString &field, const QString &html, bool doShow);
     WebEngineViewer::WebEngineScript::updateToggleFullAddressList(const QString &field, bool doShow);

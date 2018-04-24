@@ -29,7 +29,6 @@ public:
     explicit MailWebEngineScriptTest(QObject *parent = nullptr);
     ~MailWebEngineScriptTest();
 private Q_SLOTS:
-    void shouldInjectAttachment();
     void shouldReplaceInnerHtml();
 };
 
