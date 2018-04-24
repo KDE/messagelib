@@ -424,6 +424,7 @@ public:
     void checkPhishingUrl();
     void executeRunner(const QUrl &url);
     QUrl imageUrl() const;
+    QString attachmentHtml() const;
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -555,6 +556,7 @@ public Q_SLOTS:
 
     void slotGeneralFontChanged();
 
+
 Q_SIGNALS:
     void showStatusBarMessage(const QString &message);
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
@@ -587,7 +589,6 @@ private:
 
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     void slotDelayPrintPreview();
-    QString attachmentHtml();
 public:
     bool mHtmlMailGlobalSetting;
     bool mHtmlLoadExternalGlobalSetting;

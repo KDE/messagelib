@@ -467,6 +467,12 @@ bool Viewer::printingMode() const
     return d->printingMode();
 }
 
+QString Viewer::attachmentHtml() const
+{
+    Q_D(const Viewer);
+    return d->attachmentHtml();
+}
+
 void Viewer::setPrinting(bool enable)
 {
     Q_D(Viewer);

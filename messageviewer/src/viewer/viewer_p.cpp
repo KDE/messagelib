@@ -2429,7 +2429,7 @@ HeaderStylePlugin *ViewerPrivate::headerStylePlugin() const
     return mHeaderStylePlugin;
 }
 
-QString ViewerPrivate::attachmentHtml()
+QString ViewerPrivate::attachmentHtml() const
 {
     const QColor background
         = KColorScheme(QPalette::Active, KColorScheme::View).background().color();
