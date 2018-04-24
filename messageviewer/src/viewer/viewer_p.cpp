@@ -2429,20 +2429,18 @@ QString ViewerPrivate::attachmentHtml() const
     const QColor background
         = KColorScheme(QPalette::Active, KColorScheme::View).background().color();
     QString html = renderAttachments(mMessage.data(), background);
-    if (html.isEmpty()) {
-        return QString();
-    }
+    if (!html.isEmpty()) {
+        QString textAlign = QStringLiteral("right");
 
-    QString textAlign = QStringLiteral("right");
+        const bool isFancyTheme = (headerStylePlugin()->name() == QStringLiteral("fancy"));
+        if (isFancyTheme) {
+            textAlign = QStringLiteral("left");
+        }
 
-    const bool isFancyTheme = (headerStylePlugin()->name() == QStringLiteral("fancy"));
-    if (isFancyTheme) {
-        textAlign = QStringLiteral("left");
-    }
-
-    if (isFancyTheme) {
-        html.prepend(QStringLiteral("<div style=\"float:left;\">%1&nbsp;</div>").arg(i18n(
-                                                                                         "Attachments:")));
+        if (isFancyTheme) {
+            html.prepend(QStringLiteral("<div style=\"float:left;\">%1&nbsp;</div>").arg(i18n(
+                                                                                             "Attachments:")));
+        }
     }
     return html;
 }
