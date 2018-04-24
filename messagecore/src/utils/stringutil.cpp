@@ -293,9 +293,9 @@ QString quoteHtmlChars(const QString &str, bool removeLineBreaks)
 {
     QString result;
 
-    unsigned int strLength(str.length());
+    int strLength(str.length());
     result.reserve(6 * strLength); // maximal possible length
-    for (unsigned int i = 0; i < strLength; ++i) {
+    for (int i = 0; i < strLength; ++i) {
         switch (str[i].toLatin1()) {
         case '<':
             result += QLatin1String("&lt;");
@@ -586,8 +586,8 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
         return wildString;
     }
 
-    unsigned int strLength(wildString.length());
-    for (uint i = 0; i < strLength;) {
+    int strLength(wildString.length());
+    for (int i = 0; i < strLength;) {
         QChar ch = wildString[i++];
         if (ch == QLatin1Char('%') && i < strLength) {
             ch = wildString[i++];
@@ -598,8 +598,8 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
                     break;
                 }
 
-                uint j = 0;
-                const unsigned int strLength(fromDisplayString.length());
+                int j = 0;
+                const int strLength(fromDisplayString.length());
                 for (; j < strLength && fromDisplayString[j] > QLatin1Char(' '); ++j) {
                 }
                 for (; j < strLength && fromDisplayString[j] <= QLatin1Char(' '); ++j) {
