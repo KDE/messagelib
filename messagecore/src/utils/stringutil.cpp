@@ -382,12 +382,13 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
 
     //TODO port code to css. Avoid js support
+    const QString visibility = QStringLiteral(" style=\"display:none;\"");
+    const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
     for (const KMime::Types::Mailbox &mailbox : mailboxList) {
         if (!mailbox.prettyAddress().isEmpty()) {
             numberAddresses++;
             if (expandable == ExpandableAddresses && !expandableInserted && numberAddresses > collapseNumber) {
                 result = QLatin1String("<span id=\"icon") + fieldName + QLatin1String("\"></span>") + result;
-                const QString visibility = QStringLiteral(" style=\"display:none;\"");
 
                 result += QLatin1String("<span id=\"dots") + fieldName + QLatin1String("\">...</span><span id=\"hidden") + fieldName + QLatin1String("\")") + visibility + QLatin1String(">");
                 expandableInserted = true;
@@ -399,7 +400,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
                           + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
             }
             const bool foundMe = (im->identities().count() == 1) && (im->identityForAddress(mailbox.prettyAddress()) != KIdentityManagement::Identity::null());
-            const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
+
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.
                     result += foundMe ? i18nMe : quoteHtmlChars(mailbox.name(), true);
