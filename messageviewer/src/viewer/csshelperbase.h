@@ -128,6 +128,7 @@ private:
     QString screenCssDefinitions(const CSSHelperBase *helper, bool fixed) const;
     // returns CSS rules common to both screen and print media types
     QString commonCssDefinitions() const;
+    QString fullAddressList() const;
 
 private:
     const QPaintDevice *mPaintDevice = nullptr;

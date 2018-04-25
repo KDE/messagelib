@@ -2452,7 +2452,6 @@ void ViewerPrivate::executeCustomScriptsAfterLoading()
     // inject attachments in header view
     // we have to do that after the otp has run so we also see encrypted parts
 
-    toggleFullAddressList();
     mViewer->scrollToRelativePosition(mViewer->relativePosition());
     mViewer->clearRelativePosition();
 }
@@ -2851,16 +2850,6 @@ void ViewerPrivate::setShowSignatureDetails(bool showDetails)
     mShowSignatureDetails = showDetails;
 }
 
-void ViewerPrivate::setFullToAddressList(bool showFullTo)
-{
-    mViewer->executeHideShowToAddressScripts(showFullTo);
-}
-
-void ViewerPrivate::setFullCcAddressList(bool showFullCc)
-{
-    mViewer->executeHideShowCcAddressScripts(showFullCc);
-}
-
 void ViewerPrivate::setHideEncryptionDetails(bool encDetails)
 {
     mViewer->executeHideShowEncryptionDetails(encDetails);
@@ -2900,52 +2889,6 @@ void ViewerPrivate::setUseFixedFont(bool useFixedFont)
     mUseFixedFont = useFixedFont;
     if (mToggleFixFontAction) {
         mToggleFixFontAction->setChecked(mUseFixedFont);
-    }
-}
-
-void ViewerPrivate::toggleFullAddressList()
-{
-    toggleFullAddressList(QStringLiteral("To"));
-    toggleFullAddressList(QStringLiteral("Cc"));
-}
-
-QString ViewerPrivate::recipientsQuickListLinkHtml(const QString &field)
-{
-    const QString urlHandleShow = QLatin1String("kmail:hideFull") + field + QLatin1String(
-        "AddressList");
-    const QString imgSrcShow = QStringLiteral("quicklistOpened.png");
-    const QString urlHandleHide = QLatin1String("kmail:showFull") + field + QLatin1String(
-        "AddressList");
-    const QString imgSrcHide = QStringLiteral("quicklistClosed.png");
-    const QString visibility = QStringLiteral("style=\"display:none;\"");
-
-    return QStringLiteral("<span style=\"text-align: right;\">")
-           +QStringLiteral("<a id=\"kmail%2show\" href=\"%1\">").arg(urlHandleShow).arg(field)
-           +QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(MessageViewer::
-                                                                                    IconNameCache::
-                                                                                    instance()->
-                                                                                    iconPathFromLocal(
-                                                                                        imgSrcShow)).url(),
-                                                                /*altTextShow*/ QString())
-           +QStringLiteral("</a>")
-           +QStringLiteral("<a id=\"kmail%2hide\" href=\"%1\" %3>").arg(urlHandleHide).arg(field).
-           arg(visibility)
-           +QStringLiteral("<img src=\"%1\" alt=\"%2\" />").arg(QUrl::fromLocalFile(MessageViewer::
-                                                                                    IconNameCache::
-                                                                                    instance()->
-                                                                                    iconPathFromLocal(
-                                                                                        imgSrcHide)).url(),
-                                                                /*altTextHide*/ QString())
-           +QStringLiteral("</a>")
-           +QStringLiteral("</span>");
-}
-
-void ViewerPrivate::toggleFullAddressList(const QString &field)
-{
-    if (field == QLatin1String("To") || (field == QLatin1String("Cc"))) {
-        mViewer->toggleFullAddressList(field,
-                                       bind(&ViewerPrivate::recipientsQuickListLinkHtml, this,
-                                            field));
     }
 }
 

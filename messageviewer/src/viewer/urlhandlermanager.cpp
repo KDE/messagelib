@@ -412,18 +412,6 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
         } else if (urlPath == QLatin1String("hideEncryptionDetails")) {
             w->setHideEncryptionDetails(true);
             return true;
-        } else if (urlPath == QLatin1String("showFullToAddressList")) {
-            w->setFullToAddressList(false);
-            return true;
-        } else if (urlPath == QLatin1String("hideFullToAddressList")) {
-            w->setFullToAddressList(true);
-            return true;
-        } else if (urlPath == QLatin1String("showFullCcAddressList")) {
-            w->setFullCcAddressList(false);
-            return true;
-        } else if (urlPath == QLatin1String("hideFullCcAddressList")) {
-            w->setFullCcAddressList(true);
-            return true;
         }
     }
     return false;
@@ -452,14 +440,6 @@ QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate
             return i18n("Show encryption details.");
         } else if (urlPath == QLatin1String("hideEncryptionDetails")) {
             return i18n("Hide encryption details.");
-        } else if (urlPath == QLatin1String("showFullToAddressList")) {
-            return i18n("Hide full \"To\" list");
-        } else if (urlPath == QLatin1String("hideFullToAddressList")) {
-            return i18n("Show full \"To\" list");
-        } else if (urlPath == QLatin1String("showFullCcAddressList")) {
-            return i18n("Hide full \"Cc\" list");
-        } else if (urlPath == QLatin1String("hideFullCcAddressList")) {
-            return i18n("Show full \"Cc\" list");
         } else {
             return QString();
         }

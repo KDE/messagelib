@@ -30,10 +30,12 @@
 */
 
 #include "csshelperbase.h"
+#include "utils/iconnamecache.h"
 
 #include <QApplication>
 #include <QPaintDevice>
 #include <QPalette>
+#include <QUrl>
 
 namespace MessageViewer {
 namespace {
@@ -190,6 +192,27 @@ QString CSSHelperBase::quoteFontTag(int level) const
     } else {
         return QStringLiteral("<div class=\"quotelevel%1\">").arg(effectiveLevel);
     }
+}
+
+QString CSSHelperBase::fullAddressList() const
+{
+    const QString imgSrcShow = QStringLiteral("quicklistOpened.png");
+    const QString imgSrcHide = QStringLiteral("quicklistClosed.png");
+    const QString imgShowUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcShow)).url();
+    const QString imgHideUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcHide)).url();
+
+    QString css = QStringLiteral("input[type=checkbox].addresslist_checkbox {display: none}\n"
+                                 ".addresslist_label_short {border: 1px; border-radius: 5px; padding: 0px 4px 0px 4px; white-space: nowrap}\n"
+                                 ".addresslist_label_full {border: 1px; border-radius: 5px; padding: 0px 4px 0px 4px; white-space: nowrap}\n");
+    css += QStringLiteral(".addresslist_label_short {background-image:url(%1);\nbackground-repeat: no-repeat}\n").arg(imgShowUrl);
+    css += QStringLiteral(".addresslist_label_full {background-image:url(%1);\nbackground-repeat: no-repeat}\n\n").arg(imgHideUrl);
+    for (const QString &str : {QStringLiteral("Cc"), QStringLiteral("To"), QStringLiteral("Bcc")}) {
+        css += QStringLiteral("input ~ span.fullFull%1AddressList {display: block}\n"
+                              "input ~ span.shortFull%1AddressList {display: none}\n"
+                              "input:checked ~ span.fullFull%1AddressList {display: none}\n"
+                              "input:checked ~ span.shortFull%1AddressList {display: block}\n\n").arg(str);
+    }
+    return css;
 }
 
 QString CSSHelperBase::nonQuotedFontTag() const
@@ -597,7 +620,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
              pal.color(QPalette::Foreground).name(),
              pal.color(QPalette::Background).name())
         .arg(pal.color(QPalette::Mid).name())
-        + quoteCSS;
+        + quoteCSS + fullAddressList();
 }
 
 QString CSSHelperBase::commonCssDefinitions() const

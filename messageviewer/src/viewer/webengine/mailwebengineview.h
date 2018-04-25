@@ -61,12 +61,9 @@ public:
     void setAllowExternalContent(bool b);
 
     QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
-    void toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml);
 
     void setPrintElementBackground(bool printElementBackground);
 
-    void executeHideShowToAddressScripts(bool hide);
-    void executeHideShowCcAddressScripts(bool hide);
     void executeHideShowEncryptionDetails(bool hide);
     void setLinkHovered(const QUrl &url);
     void setViewer(MessageViewer::ViewerPrivate *viewer);

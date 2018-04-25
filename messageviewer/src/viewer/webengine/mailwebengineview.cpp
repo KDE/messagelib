@@ -347,31 +347,10 @@ void MailWebEngineView::scrollPageUp(int percent)
     scrollPageDown(-percent);
 }
 
-void MailWebEngineView::executeHideShowToAddressScripts(bool hide)
-{
-    const QString source = MessageViewer::MailWebEngineScript::manageShowHideToAddress(hide);
-    runJavaScriptInWordId(source);
-}
-
 void MailWebEngineView::executeHideShowEncryptionDetails(bool hide)
 {
     const QString source = MessageViewer::MailWebEngineScript::manageShowHideEncryptionDetails(hide);
     runJavaScriptInWordId(source);
-}
-
-void MailWebEngineView::executeHideShowCcAddressScripts(bool hide)
-{
-    const QString source = MessageViewer::MailWebEngineScript::manageShowHideCcAddress(hide);
-    runJavaScriptInWordId(source);
-}
-
-void MailWebEngineView::toggleFullAddressList(const QString &field, const boost::function<QString()> &delayedHtml)
-{
-    const QString html = delayedHtml();
-    if (html.isEmpty()) {
-        return;
-    }
-    runJavaScriptInWordId(MessageViewer::MailWebEngineScript::replaceInnerHtml(field, html));
 }
 
 void MailWebEngineView::scrollToRelativePosition(qreal pos)
