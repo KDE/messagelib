@@ -384,6 +384,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     //TODO port code to css. Avoid js support https://siongui.github.io/2017/02/27/css-only-toggle-dom-element/
     const QString visibility = QStringLiteral(" style=\"display:none;\"");
     const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
+    const bool onlyOneIdentity = (im->identities().count() == 1);
     for (const KMime::Types::Mailbox &mailbox : mailboxList) {
         const QString prettyAddressStr = mailbox.prettyAddress();
         if (!prettyAddressStr.isEmpty()) {
@@ -400,7 +401,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
                           + QString::fromLatin1(QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
                           + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
             }
-            const bool foundMe = (im->identities().count() == 1) && (im->identityForAddress(prettyAddressStr) != KIdentityManagement::Identity::null());
+            const bool foundMe = onlyOneIdentity && (im->identityForAddress(prettyAddressStr) != KIdentityManagement::Identity::null());
 
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.
