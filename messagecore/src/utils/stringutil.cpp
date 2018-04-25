@@ -385,7 +385,8 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     const QString visibility = QStringLiteral(" style=\"display:none;\"");
     const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
     for (const KMime::Types::Mailbox &mailbox : mailboxList) {
-        if (!mailbox.prettyAddress().isEmpty()) {
+        const QString prettyAddressStr = mailbox.prettyAddress();
+        if (!prettyAddressStr.isEmpty()) {
             numberAddresses++;
             if (expandable == ExpandableAddresses && !expandableInserted && numberAddresses > collapseNumber) {
                 result = QLatin1String("<span id=\"icon") + fieldName + QLatin1String("\"></span>") + result;
@@ -399,13 +400,13 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
                           + QString::fromLatin1(QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
                           + QLatin1String("\" ") + cssStyle + QLatin1Char('>');
             }
-            const bool foundMe = (im->identities().count() == 1) && (im->identityForAddress(mailbox.prettyAddress()) != KIdentityManagement::Identity::null());
+            const bool foundMe = (im->identities().count() == 1) && (im->identityForAddress(prettyAddressStr) != KIdentityManagement::Identity::null());
 
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.
                     result += foundMe ? i18nMe : quoteHtmlChars(mailbox.name(), true);
                 } else {
-                    result += foundMe ? i18nMe : quoteHtmlChars(mailbox.prettyAddress(), true);
+                    result += foundMe ? i18nMe : quoteHtmlChars(prettyAddressStr, true);
                 }
             } else {
                 result += foundMe ? i18nMe : quoteHtmlChars(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary), true);
