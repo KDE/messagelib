@@ -42,33 +42,10 @@ public:
     {
     }
 
-    //QByteArray detectCharset( const QByteArray &data );
-
     AttachmentPart::Ptr part;
 
     Q_DECLARE_PUBLIC(AttachmentJob)
 };
-
-#if 0
-QByteArray AttachmentJobPrivate::detectCharset(const QByteArray &data)
-{
-    KEncodingProber prober;
-    prober.feed(data);
-    qCDebug(MESSAGECOMPOSER_LOG) << "Autodetected charset" << prober.encoding() << "with confidence" << prober.confidence();
-
-    // The prober detects binary attachments as UTF-16LE with confidence 99%, which
-    // obviously is wrong, so work around this here (most mail clients don't understand
-    // UTF-16LE).
-    const QByteArray detectedEncoding = prober.encoding();
-    if (prober.confidence() > 0.6 && !detectedEncoding.toLower().contains("utf-16")) {
-        return detectedEncoding;
-    } else {
-        qCWarning(MESSAGECOMPOSER_LOG) << "Could not autodetect charset; using UTF-8.";
-        return QByteArrayLiteral("utf-8");
-    }
-}
-
-#endif
 
 AttachmentJob::AttachmentJob(AttachmentPart::Ptr part, QObject *parent)
     : ContentJobBase(*new AttachmentJobPrivate(this), parent)
