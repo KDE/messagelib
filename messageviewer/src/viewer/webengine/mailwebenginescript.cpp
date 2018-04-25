@@ -28,34 +28,6 @@ static QString checkJQuery(const char *scriptName)
                                                                                                    scriptName));
 }
 
-QString MailWebEngineScript::createShowHideAddressScript(const QString &field, bool hide)
-{
-    QString source = checkJQuery("createShowHideAddressScript");
-    if (hide) {
-        source += QString::fromLatin1("qt.jQuery(\"#kmail%1show\").hide();"
-                                      "qt.jQuery(\"#kmail%1hide\").show();"
-                                      "qt.jQuery(\"#dotsFull%1AddressList\").hide();"
-                                      "qt.jQuery(\"#hiddenFull%1AddressList\").show();").arg(field);
-    } else {
-        source += QString::fromLatin1("qt.jQuery(\"#kmail%1hide\").hide();"
-                                      "qt.jQuery(\"#kmail%1show\").show();"
-                                      "qt.jQuery(\"#dotsFull%1AddressList\").show();"
-                                      "qt.jQuery(\"#hiddenFull%1AddressList\").hide();").arg(field);
-    }
-    return source;
-}
-
-QString MailWebEngineScript::manageShowHideToAddress(bool hide)
-{
-    return MailWebEngineScript::createShowHideAddressScript(QStringLiteral("To"), hide);
-}
-
-QString MailWebEngineScript::manageShowHideCcAddress(bool hide)
-{
-    return MailWebEngineScript::createShowHideAddressScript(QStringLiteral("Cc"), hide);
-}
-
-
 QString MailWebEngineScript::manageShowHideEncryptionDetails(bool hide)
 {
     QString source = checkJQuery("manageShowHideEncryptionDetails");
@@ -69,11 +41,3 @@ QString MailWebEngineScript::manageShowHideEncryptionDetails(bool hide)
     return source;
 }
 
-QString MailWebEngineScript::replaceInnerHtml(const QString &field, const QString &html)
-{
-    const QString replaceInnerHtmlStr = QLatin1String("iconFull") + field + QLatin1String(
-        "AddressList");
-    const QString source = checkJQuery("replaceInnerHtml") + QString::fromLatin1(
-        "qt.jQuery('#%1').append('%2')").arg(replaceInnerHtmlStr, html);
-    return source;
-}

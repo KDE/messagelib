@@ -398,11 +398,6 @@ public:
     void setUseFixedFont(bool useFixedFont);
 
     void attachmentView(KMime::Content *atmNode);
-    void setFullToAddressList(bool showFullTo);
-    void setFullCcAddressList(bool showFullCc);
-
-    /** Show/Hide the field with id "field" */
-    void toggleFullAddressList(const QString &field);
 
     void setZoomFactor(qreal zoomFactor);
 
@@ -433,9 +428,6 @@ private Q_SLOTS:
     void slotAddToWhiteList();
     void slotFormSubmittedForbidden();
     void slotMailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &blacklist);
-
-    /** Show hide all fields specified inside this function */
-    void toggleFullAddressList();
 
     void slotItemChanged(const Akonadi::Item &item, const QSet<QByteArray> &partIdentifiers);
     void slotItemMoved(const Akonadi::Item &, const Akonadi::Collection &, const Akonadi::Collection &);
@@ -575,7 +567,6 @@ Q_SIGNALS:
     void printingFinished();
 private:
     QString attachmentHtml() const;
-    QString recipientsQuickListLinkHtml(const QString &);
 
     Akonadi::Relation relatedNoteRelation() const;
     void addHelpTextAction(QAction *act, const QString &text);

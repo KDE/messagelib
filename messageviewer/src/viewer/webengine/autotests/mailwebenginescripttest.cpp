@@ -31,17 +31,4 @@ MailWebEngineScriptTest::~MailWebEngineScriptTest()
 {
 }
 
-void MailWebEngineScriptTest::shouldReplaceInnerHtml()
-{
-    const QString expectedResult = QStringLiteral(
-        "qt.jQuery('#iconFullGGAddressList').append('<a>hello word</a>')");
-    QString script = MessageViewer::MailWebEngineScript::replaceInnerHtml(QStringLiteral(
-                                                                              "GG"),
-                                                                          QStringLiteral(
-                                                                              "<a>hello word</a>"));
-    // skip the checks at the beginning of the script
-    script = script.mid(script.indexOf(QLatin1Char('\n')) + 1);
-    QCOMPARE(script, expectedResult);
-}
-
 QTEST_MAIN(MailWebEngineScriptTest)

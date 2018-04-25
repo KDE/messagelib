@@ -28,8 +28,6 @@ class MailWebEngineScriptTest : public QObject
 public:
     explicit MailWebEngineScriptTest(QObject *parent = nullptr);
     ~MailWebEngineScriptTest();
-private Q_SLOTS:
-    void shouldReplaceInnerHtml();
 };
 
 #endif // MAILWEBENGINESCRIPTTEST_H

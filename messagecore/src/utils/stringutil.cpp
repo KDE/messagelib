@@ -390,10 +390,15 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
         if (!prettyAddressStr.isEmpty()) {
             numberAddresses++;
             if (expandable == ExpandableAddresses && !expandableInserted && numberAddresses > collapseNumber) {
-                result = QLatin1String("<span id=\"icon") + fieldName + QLatin1String("\"></span>") + result;
-
-                result += QLatin1String("<span id=\"dots") + fieldName + QLatin1String("\">...</span><span id=\"hidden") + fieldName + QLatin1String("\")") + visibility + QLatin1String(">");
+                const QString actualListAddress = result;
+                QString shortListAddress = actualListAddress;
+                if (link == ShowLink) {
+                    shortListAddress.truncate(result.length() - 2);
+                }
+                result = QStringLiteral("<span><input type=\"checkbox\" class=\"addresslist_checkbox\" id=\"%1\" checked=\"checked\"/><span class=\"short%1\">").arg(fieldName) + shortListAddress;
+                result += QStringLiteral("<label class=\"addresslist_label_short\" for=\"%1\">+</label></span>").arg(fieldName);
                 expandableInserted = true;
+                result += QStringLiteral("<span class=\"full%1\">").arg(fieldName) + actualListAddress;
             }
 
             if (link == ShowLink) {
@@ -418,13 +423,12 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
         }
     }
 
-    // cut of the trailing ", "
     if (link == ShowLink) {
         result.truncate(result.length() - 2);
     }
 
     if (expandableInserted) {
-        result += QLatin1String("</span>");
+        result += QStringLiteral("<label class=\"addresslist_label_full\" for=\"%1\">-</label></span>").arg(fieldName);
     }
     return result;
 }

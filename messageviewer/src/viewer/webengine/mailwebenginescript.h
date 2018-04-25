@@ -24,11 +24,7 @@
 
 namespace MessageViewer {
 namespace MailWebEngineScript {
-MESSAGEVIEWER_EXPORT QString replaceInnerHtml(const QString &field, const QString &html);
-MESSAGEVIEWER_EXPORT QString manageShowHideToAddress(bool hide);
-MESSAGEVIEWER_EXPORT QString manageShowHideCcAddress(bool hide);
 MESSAGEVIEWER_EXPORT QString manageShowHideEncryptionDetails(bool hide);
-MESSAGEVIEWER_EXPORT QString createShowHideAddressScript(const QString &field, bool hide);
 }
 }
 #endif // MAILWEBENGINESCRIPT_H
