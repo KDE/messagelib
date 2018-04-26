@@ -286,10 +286,16 @@ void Viewer::setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage forma
     d->setDisplayFormatMessageOverwrite(format);
 }
 
-void Viewer::setHtmlLoadExtOverride(bool override)
+void Viewer::setHtmlLoadExtDefault(bool loadExtDefault)
 {
     Q_D(Viewer);
-    d->setHtmlLoadExtOverride(override);
+    d->setHtmlLoadExtDefault(loadExtDefault);
+}
+
+void Viewer::setHtmlLoadExtOverride(bool loadExtOverride)
+{
+    Q_D(Viewer);
+    d->setHtmlLoadExtOverride(loadExtOverride);
 }
 
 bool Viewer::htmlLoadExtOverride() const

@@ -243,7 +243,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     mDisplayFormatMessageOverwrite = MessageViewer::Viewer::UseGlobalSetting;
     mHtmlLoadExtOverride = false;
 
-    mHtmlLoadExternalGlobalSetting = false;
+    mHtmlLoadExternalDefaultSetting = false;
     mHtmlMailGlobalSetting = false;
 
     mUpdateReaderWinTimer.setObjectName(QStringLiteral("mUpdateReaderWinTimer"));
@@ -1093,8 +1093,6 @@ void ViewerPrivate::readConfig()
     }
 
     mHtmlMailGlobalSetting = MessageViewer::MessageViewerSettings::self()->htmlMail();
-    mHtmlLoadExternalGlobalSetting
-        = MessageViewer::MessageViewerSettings::self()->htmlLoadExternal();
 
     readGravatarConfig();
     if (mHeaderStyleMenuManager) {
@@ -2811,8 +2809,8 @@ bool ViewerPrivate::htmlLoadExternal() const
         return mHtmlLoadExtOverride;
     }
 
-    return (mHtmlLoadExternalGlobalSetting && !mHtmlLoadExtOverride)
-           || (!mHtmlLoadExternalGlobalSetting && mHtmlLoadExtOverride);
+    return (mHtmlLoadExternalDefaultSetting && !mHtmlLoadExtOverride)
+           || (!mHtmlLoadExternalDefaultSetting && mHtmlLoadExtOverride);
 }
 
 void ViewerPrivate::setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format)
@@ -2834,9 +2832,14 @@ Viewer::DisplayFormatMessage ViewerPrivate::displayFormatMessageOverwrite() cons
     return mDisplayFormatMessageOverwrite;
 }
 
-void ViewerPrivate::setHtmlLoadExtOverride(bool override)
+void ViewerPrivate::setHtmlLoadExtDefault(bool loadExtDefault)
 {
-    mHtmlLoadExtOverride = override;
+    mHtmlLoadExternalDefaultSetting = loadExtDefault;
+}
+
+void ViewerPrivate::setHtmlLoadExtOverride(bool loadExtOverride)
+{
+    mHtmlLoadExtOverride = loadExtOverride;
 }
 
 bool ViewerPrivate::htmlLoadExtOverride() const
