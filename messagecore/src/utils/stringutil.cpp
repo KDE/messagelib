@@ -396,7 +396,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
                     shortListAddress.truncate(result.length() - 2);
                 }
                 result = QStringLiteral("<span><input type=\"checkbox\" class=\"addresslist_checkbox\" id=\"%1\" checked=\"checked\"/><span class=\"short%1\">").arg(fieldName) + shortListAddress;
-                result += QStringLiteral("<label class=\"addresslist_label_short\" for=\"%1\">+</label></span>").arg(fieldName);
+                result += QStringLiteral("<label class=\"addresslist_label_short\" for=\"%1\"></label></span>").arg(fieldName);
                 expandableInserted = true;
                 result += QStringLiteral("<span class=\"full%1\">").arg(fieldName) + actualListAddress;
             }
@@ -428,7 +428,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     }
 
     if (expandableInserted) {
-        result += QStringLiteral("<label class=\"addresslist_label_full\" for=\"%1\">-</label></span>").arg(fieldName);
+        result += QStringLiteral("<label class=\"addresslist_label_full\" for=\"%1\"></label></span>").arg(fieldName);
     }
     return result;
 }
