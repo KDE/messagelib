@@ -36,6 +36,7 @@
 
 #include <QColor>
 #include <QFont>
+#include <QUrl>
 
 class QString;
 class QPaintDevice;
@@ -118,6 +119,9 @@ protected:
     QColor cPgpEncrB;
     // color of frame of warning preceding the source of HTML messages
     QColor cHtmlWarning;
+
+    QString imgShowUrl;
+    QString imgHideUrl;
 
 private:
     QString quoteCssDefinition() const;
