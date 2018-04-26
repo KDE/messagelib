@@ -99,16 +99,6 @@ div.fancy.header table a:hover {
   background-color: transparent ! important;
 }
 
-span.pimsmileytext {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  visibility: hidden;
-}
-
-img.pimsmileyimg {
-}
-
 div.quotelevelmark {
   position: absolute;
   margin-left:-10px;
