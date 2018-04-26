@@ -379,8 +379,19 @@ public:
     /** Get the load external references override setting */
     bool htmlLoadExtOverride() const;
 
-    /** Override default load external references setting */
-    void setHtmlLoadExtOverride(bool override);
+    /** Default behavior for loading external references.
+     *  Use this for specifying the external reference loading behavior as
+     *  specified in the user settings.
+     *  @see setHtmlLoadExtOverride
+     */
+    void setHtmlLoadExtDefault(bool loadExtDefault);
+
+    /** Override default load external references setting
+     *  @warning This must only be called when the user has explicitly
+     *  been asked to retrieve external references!
+     *  @see setHtmlLoadExtDefault
+     */
+    void setHtmlLoadExtOverride(bool loadExtOverride);
 
     /** Enforce message decryption. */
     void setDecryptMessageOverwrite(bool overwrite = true);
@@ -580,10 +591,10 @@ private:
 
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     void slotDelayPrintPreview();
-public:
     bool mHtmlMailGlobalSetting;
-    bool mHtmlLoadExternalGlobalSetting;
+    bool mHtmlLoadExternalDefaultSetting;
     bool mHtmlLoadExtOverride;
+public:
     KMime::Message::Ptr mMessage; //the current message, if it was set manually
     Akonadi::Item mMessageItem; //the message item from Akonadi
     // widgets:

@@ -209,8 +209,19 @@ public:
     /** Get the load external references override setting */
     bool htmlLoadExtOverride() const;
 
-    /** Override default load external references setting */
-    void setHtmlLoadExtOverride(bool override);
+    /** Default behavior for loading external references.
+     *  Use this for specifying the external reference loading behavior as
+     *  specified in the user settings.
+     *  @see setHtmlLoadExtOverride
+     */
+    void setHtmlLoadExtDefault(bool loadExtDefault);
+
+    /** Override default load external references setting
+     *  @warning This must only be called when the user has explicitly
+     *  been asked to retrieve external references!
+     *  @see setHtmlLoadExtDefault
+     */
+    void setHtmlLoadExtOverride(bool loadExtOverride);
 
     /** Is html mail to be supported? Takes into account override */
     bool htmlMail() const;
