@@ -381,8 +381,6 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     bool expandableInserted = false;
     KIdentityManagement::IdentityManager *im = KIdentityManagement::IdentityManager::self();
 
-    //TODO port code to css. Avoid js support https://siongui.github.io/2017/02/27/css-only-toggle-dom-element/
-    const QString visibility = QStringLiteral(" style=\"display:none;\"");
     const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
     const bool onlyOneIdentity = (im->identities().count() == 1);
     for (const KMime::Types::Mailbox &mailbox : mailboxList) {
