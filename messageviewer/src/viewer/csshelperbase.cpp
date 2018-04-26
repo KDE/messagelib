@@ -729,16 +729,6 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "  background-color: transparent ! important;\n"
                        "}\n\n"
 
-                       "span.pimsmileytext {\n"
-                       "  position: absolute;\n"
-                       "  top: 0px;\n"
-                       "  left: 0px;\n"
-                       "  visibility: hidden;\n"
-                       "}\n\n"
-
-                       "img.pimsmileyimg {\n"
-                       "}\n\n"
-
                        "div.quotelevelmark {\n"
                        "  position: absolute;\n"
                        "  margin-left:-10px;\n"
