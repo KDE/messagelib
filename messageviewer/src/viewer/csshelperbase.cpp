@@ -201,8 +201,8 @@ QString CSSHelperBase::quoteFontTag(int level) const
 QString CSSHelperBase::fullAddressList() const
 {
     QString css = QStringLiteral("input[type=checkbox].addresslist_checkbox {display: none}\n"
-                                 ".addresslist_label_short {border: 1px; border-radius: 5px; padding: 0px 4px 0px 4px; white-space: nowrap}\n"
-                                 ".addresslist_label_full {border: 1px; border-radius: 5px; padding: 0px 6px 0px 6px; white-space: nowrap}\n");
+                                 ".addresslist_label_short {border: 1px; border-radius: 5px; padding: 0px 10px 0px 10px; white-space: nowrap}\n"
+                                 ".addresslist_label_full {border: 1px; border-radius: 5px; padding: 0px 10px 0px 10px; white-space: nowrap}\n");
     css += QStringLiteral(".addresslist_label_short {background-image:url(%1);\nbackground-repeat: no-repeat}\n").arg(imgShowUrl);
     css += QStringLiteral(".addresslist_label_full {background-image:url(%1);\nbackground-repeat: no-repeat}\n\n").arg(imgHideUrl);
     for (const QString &str : {QStringLiteral("Cc"), QStringLiteral("To"), QStringLiteral("Bcc")}) {
@@ -329,7 +329,7 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
         .arg(headerFont,
              pal.color(QPalette::Background).name(),
              pal.color(QPalette::Foreground).name())
-        + quoteCSS;
+        + quoteCSS + fullAddressList();
 }
 
 QString CSSHelperBase::quoteCssDefinition() const
