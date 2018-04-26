@@ -511,7 +511,7 @@ blockquote blockquote blockquote blockquote blockquote blockquote blockquote blo
 
 input[type=checkbox].addresslist_checkbox {display: none}
 .addresslist_label_short {border: 1px; border-radius: 5px; padding: 0px 4px 0px 4px; white-space: nowrap}
-.addresslist_label_full {border: 1px; border-radius: 5px; padding: 0px 4px 0px 4px; white-space: nowrap}
+.addresslist_label_full {border: 1px; border-radius: 5px; padding: 0px 6px 0px 6px; white-space: nowrap}
 .addresslist_label_short {background-image:url(file:///opt/kde5-qt5.10/share/libmessageviewer/pics/quicklistOpened.png);
 background-repeat: no-repeat}
 .addresslist_label_full {background-image:url(file:///opt/kde5-qt5.10/share/libmessageviewer/pics/quicklistClosed.png);
