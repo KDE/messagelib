@@ -2802,6 +2802,15 @@ bool ViewerPrivate::htmlMail() const
 
 bool ViewerPrivate::htmlLoadExternal() const
 {
+    if (!mNodeHelper || !mMessage) {
+        return mHtmlLoadExtOverride;
+    }
+
+    // when displaying an encrypted message, only load external resources on explicit request
+    if (mNodeHelper->overallEncryptionState(mMessage.data()) != MimeTreeParser::KMMsgNotEncrypted) {
+        return mHtmlLoadExtOverride;
+    }
+
     return (mHtmlLoadExternalGlobalSetting && !mHtmlLoadExtOverride)
            || (!mHtmlLoadExternalGlobalSetting && mHtmlLoadExtOverride);
 }
