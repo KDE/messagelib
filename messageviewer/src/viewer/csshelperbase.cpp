@@ -76,6 +76,10 @@ CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
     , mPaintDevice(pd)
 {
     recalculatePGPColors();
+    const QString imgSrcShow = QStringLiteral("quicklistOpened.png");
+    const QString imgSrcHide = QStringLiteral("quicklistClosed.png");
+    imgShowUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcShow)).url();
+    imgHideUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcHide)).url();
 }
 
 CSSHelperBase::~CSSHelperBase()
@@ -196,11 +200,6 @@ QString CSSHelperBase::quoteFontTag(int level) const
 
 QString CSSHelperBase::fullAddressList() const
 {
-    const QString imgSrcShow = QStringLiteral("quicklistOpened.png");
-    const QString imgSrcHide = QStringLiteral("quicklistClosed.png");
-    const QString imgShowUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcShow)).url();
-    const QString imgHideUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcHide)).url();
-
     QString css = QStringLiteral("input[type=checkbox].addresslist_checkbox {display: none}\n"
                                  ".addresslist_label_short {border: 1px; border-radius: 5px; padding: 0px 4px 0px 4px; white-space: nowrap}\n"
                                  ".addresslist_label_full {border: 1px; border-radius: 5px; padding: 0px 4px 0px 4px; white-space: nowrap}\n");
