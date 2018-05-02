@@ -938,6 +938,7 @@ void ViewerPrivate::displayMessage()
 void ViewerPrivate::parseContent(KMime::Content *content)
 {
     assert(content != nullptr);
+    mNodeHelper->removeTempFiles();
 
     // Check if any part of this message is a v-card
     // v-cards can be either text/x-vcard or text/directory, so we need to check
@@ -964,7 +965,6 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     }
 
     // Pass control to the OTP now, which does the real work
-    mNodeHelper->removeTempFiles();
     mNodeHelper->setNodeUnprocessed(mMessage.data(), true);
     MailViewerSource otpSource(this);
     MimeTreeParser::ObjectTreeParser otp(&otpSource, mNodeHelper);
