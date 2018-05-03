@@ -29,6 +29,7 @@
 #include <QCompleter>
 #include <QContextMenuEvent>
 #include <QStringListModel>
+#include <QAbstractItemView>
 #include <KColorScheme>
 
 static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
@@ -43,10 +44,10 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
     , mFilterMenu(nullptr)
     , mContainsOutboundMessages(false)
 {
-    QCompleter *completer = new QCompleter(this);
+    mCompleter = new QCompleter(this);
     mCompleterListModel = new QStringListModel(this);
-    completer->setModel(mCompleterListModel);
-    setCompleter(completer);
+    mCompleter->setModel(mCompleterListModel);
+    setCompleter(mCompleter);
 
     setClearButtonEnabled(true);
     initializeActions();
@@ -61,6 +62,21 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
 
 SearchLineStatus::~SearchLineStatus()
 {
+}
+
+void SearchLineStatus::keyPressEvent(QKeyEvent *e)
+{
+    if (e->key() == Qt::Key_Escape) {
+        qDebug() << " void SearchLineStatus::keyPressEvent(QKeyEvent *e)" << mCompleter->widget();
+        if (mCompleter->popup()->isVisible()) {
+            QLineEdit::keyPressEvent(e);
+        } else {
+            Q_EMIT forceLostFocus();
+            qDebug() << " void SearchLineStatus::keyPressEvent(QKeyEvent *e)ESCAPre";
+        }
+    } else {
+        QLineEdit::keyPressEvent(e);
+    }
 }
 
 void SearchLineStatus::slotClear()

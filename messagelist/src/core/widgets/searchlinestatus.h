@@ -47,9 +47,11 @@ Q_SIGNALS:
     void filterActionChanged(const QList<Akonadi::MessageStatus> &lst);
     void searchOptionChanged();
     void clearButtonClicked();
+    void forceLostFocus();
 
 protected:
     void contextMenuEvent(QContextMenuEvent *e) override;
+    void keyPressEvent(QKeyEvent *e) override;
 
 private Q_SLOTS:
     void slotToggledLockAction();
@@ -72,9 +74,10 @@ private:
     bool mHasFilter;
     QIcon mWithoutFilter;
     QIcon mWithFilter;
-    QAction *mLockAction;
-    QAction *mFiltersAction;
-    QMenu *mFilterMenu;
+    QAction *mLockAction = nullptr;
+    QAction *mFiltersAction = nullptr;
+    QMenu *mFilterMenu = nullptr;
+    QCompleter *mCompleter = nullptr;
     QList<QAction *> mFilterListActions;
     QAction *mSearchEveryWhereAction;
     QAction *mSearchAgainstBodyAction;

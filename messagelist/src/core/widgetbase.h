@@ -224,6 +224,7 @@ Q_SIGNALS:
     * could be useful
     */
     void statusMessage(const QString &message);
+    void forceLostFocus();
 
 protected Q_SLOTS:
     /**

@@ -145,6 +145,7 @@ Widget::Widget(QWidget *pParent)
     connect(d->quickSearchLine, &QuickSearchLine::searchEditTextEdited, this, &Widget::searchEditTextEdited);
     connect(d->quickSearchLine, &QuickSearchLine::searchOptionChanged, this, &Widget::searchEditTextEdited);
     connect(d->quickSearchLine, &QuickSearchLine::statusButtonsClicked, this, &Widget::slotStatusButtonsClicked);
+    connect(d->quickSearchLine, &QuickSearchLine::forceLostFocus, this, &Widget::forceLostFocus);
     g->addWidget(d->quickSearchLine, 0);
     d->quickSearchWarning = new QuickSearchWarning(this);
     g->addWidget(d->quickSearchWarning, 0);

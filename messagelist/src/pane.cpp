@@ -782,6 +782,9 @@ QItemSelectionModel *Pane::createNewTab()
     connect(w, &Core::Widget::statusMessage,
             this, &Pane::statusMessage);
 
+    connect(w, &Core::Widget::forceLostFocus,
+            this, &Pane::forceLostFocus);
+
     d->updateTabControls();
     setCurrentWidget(w);
     return s;

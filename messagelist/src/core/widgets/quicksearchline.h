@@ -35,7 +35,7 @@ class MESSAGELIST_EXPORT QuickSearchLine : public QWidget
     Q_OBJECT
 public:
     explicit QuickSearchLine(QWidget *parent = nullptr);
-    ~QuickSearchLine();
+    ~QuickSearchLine() override;
 
     enum SearchOption {
         SearchEveryWhere = 1,
@@ -72,6 +72,7 @@ Q_SIGNALS:
     void searchEditTextEdited(const QString &);
     void searchOptionChanged();
     void statusButtonsClicked();
+    void forceLostFocus();
 
 protected:
     bool eventFilter(QObject *object, QEvent *e) override;
