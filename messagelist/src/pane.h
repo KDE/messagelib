@@ -428,6 +428,8 @@ Q_SIGNALS:
     */
     void currentTabChanged();
 
+    void forceLostFocus();
+
 private:
     void restoreHeaderSettings(int index);
     void readConfig(bool restoreSession);

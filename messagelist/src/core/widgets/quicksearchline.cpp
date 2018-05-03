@@ -50,6 +50,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     mSearchEdit = new SearchLineStatus(this);
     connect(mSearchEdit, &SearchLineStatus::filterActionChanged, this, &QuickSearchLine::slotFilterActionChanged);
     connect(mSearchEdit, &SearchLineStatus::searchOptionChanged, this, &QuickSearchLine::searchOptionChanged);
+    connect(mSearchEdit, &SearchLineStatus::forceLostFocus, this, &QuickSearchLine::forceLostFocus);
     mSearchEdit->setPlaceholderText(i18nc("Search for messages.", "Search"));
     mSearchEdit->setObjectName(QStringLiteral("quicksearch"));
     mSearchEdit->setClearButtonEnabled(true);
