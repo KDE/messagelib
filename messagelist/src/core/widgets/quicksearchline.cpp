@@ -86,7 +86,7 @@ void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
         minimumStringLength = 5;
     }
     if (!text.trimmed().isEmpty()) {
-        if (KStringHandler::logicalLength(text) > minimumStringLength) {
+        if (KStringHandler::logicalLength(text) >= minimumStringLength) {
             Q_EMIT searchEditTextEdited(text);
         }
     } else {
