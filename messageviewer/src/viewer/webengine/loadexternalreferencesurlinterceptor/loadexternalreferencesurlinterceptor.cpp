@@ -34,12 +34,16 @@ LoadExternalReferencesUrlInterceptor::~LoadExternalReferencesUrlInterceptor()
 
 bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
+    const QString scheme = info.requestUrl().scheme();
+    if (scheme == QStringLiteral("data")
+        || scheme == QStringLiteral("file"))
+        return false;
     if (mAllowLoadExternalReference) {
         return false;
     } else {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage
             && !info.requestUrl().isLocalFile()
-            && (info.requestUrl().scheme() != QLatin1String("cid"))) {
+            && (scheme != QLatin1String("cid"))) {
             return true;
         }
     }
