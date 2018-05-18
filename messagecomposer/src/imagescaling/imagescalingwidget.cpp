@@ -90,13 +90,13 @@ ImageScalingWidget::ImageScalingWidget(QWidget *parent)
 
     d->ui->pattern->setEnabled(false);
     d->mSourceFilenameFilterGroup = new QButtonGroup(d->ui->filterSourceGroupBox);
-    connect(d->mSourceFilenameFilterGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked), this, &ImageScalingWidget::slotSourceFilterClicked);
+    connect(d->mSourceFilenameFilterGroup, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &ImageScalingWidget::slotSourceFilterClicked);
     d->mSourceFilenameFilterGroup->addButton(d->ui->notFilterFilename, MessageComposer::MessageComposerSettings::EnumFilterSourceType::NoFilter);
     d->mSourceFilenameFilterGroup->addButton(d->ui->includeFilesWithPattern, MessageComposer::MessageComposerSettings::EnumFilterSourceType::IncludeFilesWithPattern);
     d->mSourceFilenameFilterGroup->addButton(d->ui->excludeFilesWithPattern, MessageComposer::MessageComposerSettings::EnumFilterSourceType::ExcludeFilesWithPattern);
 
     d->mRecipientFilterGroup = new QButtonGroup(d->ui->tab_4);
-    connect(d->mRecipientFilterGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked), this, &ImageScalingWidget::slotRecipientFilterClicked);
+    connect(d->mRecipientFilterGroup, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &ImageScalingWidget::slotRecipientFilterClicked);
     d->ui->doNotResizePattern->setEnabled(false);
     d->ui->resizeEmailsPattern->setEnabled(false);
     d->mRecipientFilterGroup->addButton(d->ui->doNotFilterRecipients, MessageComposer::MessageComposerSettings::EnumFilterRecipientType::NoFilter);
