@@ -96,6 +96,12 @@ const GrantleeTheme::Theme defaultTheme(const QString &name=QStringLiteral("5.2"
                 QStringLiteral("kmail_default.desktop"));
 }
 
+void GrantleeHeaderStyleTest::testName()
+{
+    auto style = GrantleeHeaderStyle();
+    QCOMPARE(style.name(), "grantlee");
+}
+
 void GrantleeHeaderStyleTest::testRenderHeaderEmpty()
 {
     auto style = GrantleeHeaderStyle();
