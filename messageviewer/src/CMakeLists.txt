@@ -33,6 +33,7 @@ configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-m
 include_directories(${GPGME_INCLUDES})
 
 if(BUILD_TESTING)
+    add_subdirectory(header/autotests)
     add_subdirectory(scamdetection/autotests)
     add_subdirectory(scamdetection/tests)
     add_subdirectory(viewerplugins/tests/)
