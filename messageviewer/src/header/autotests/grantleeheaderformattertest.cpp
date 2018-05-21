@@ -151,7 +151,7 @@ void GrantleeHeaderFormatterTest::testBlock()
     
     auto style = GrantleeHeaderStyle();
     auto formatter = GrantleeHeaderFormatter();
-    auto aMsg = readAndParseMail(QStringLiteral("allheaders.mbox"));
+    auto aMsg = readAndParseMail(QStringLiteral("headertest.mbox"));
     
     QString absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + tmplName;
     QString data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), false);

@@ -137,6 +137,17 @@ void GrantleeHeaderStyleTest::testRenderHeaderEmpty()
     testHeaderFile(style, aMsg, QStringLiteral("empty"));
 }
 
+void GrantleeHeaderStyleTest::testRenderHeaderVCard()
+{
+    auto style = GrantleeHeaderStyle();
+    auto aMsg = new KMime::Message();
+    style.setTheme(defaultTheme());
+    style.setVCardName(QStringLiteral("nofile.vcd"));
+
+    testHeaderFile(style, aMsg, QStringLiteral("vcard"));
+}
+
+
 void GrantleeHeaderStyleTest::testRenderHeader_data()
 {
     QTest::addColumn<QString>("mailFileName");

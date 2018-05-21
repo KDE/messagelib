@@ -36,7 +36,7 @@
 				{% if header.resentfrom %}
 				{{ header.resentfromi18n }}: {{ header.resentfrom|safe }}
 				{% endif %}
-				{% if vCardName %}
+				{% if header.vcardname %}
 				<a href="{{ header.vcardname|safe }}">{{ header.vcardi18n }}</a>
 				{% endif %}
 				{% if header.organization %}

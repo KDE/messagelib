@@ -31,6 +31,7 @@ private Q_SLOTS:
     void testRenderHeaderNoMessage();
     void testRenderHeaderInvalidTheme();
     void testRenderHeaderEmpty();
+    void testRenderHeaderVCard();
     void testRenderHeader_data();
     void testRenderHeader();
 };
