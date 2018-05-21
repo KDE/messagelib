@@ -102,12 +102,16 @@ void GrantleeHeaderStyleTest::testName()
     QCOMPARE(style.name(), "grantlee");
 }
 
+void GrantleeHeaderStyleTest::testRenderHeaderNoMessage()
+{
+    auto style = GrantleeHeaderStyle();
+    QCOMPARE(style.format(nullptr), QString());
+}
+
 void GrantleeHeaderStyleTest::testRenderHeaderEmpty()
 {
     auto style = GrantleeHeaderStyle();
     auto aMsg = new KMime::Message();
-    QCOMPARE(style.format(nullptr), QString());
-
     style.setTheme(defaultTheme());
 
     testHeaderFile(style, aMsg, QStringLiteral("empty"));
