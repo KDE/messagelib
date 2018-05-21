@@ -122,6 +122,13 @@ void GrantleeHeaderStyleTest::testRenderHeaderNoMessage()
     QCOMPARE(style.format(nullptr), QString());
 }
 
+void GrantleeHeaderStyleTest::testRenderHeaderInvalidTheme()
+{
+    auto style = GrantleeHeaderStyle();
+    auto aMsg = new KMime::Message();
+    QCOMPARE(style.format(aMsg), QStringLiteral("Grantlee theme \"\" is not valid."));
+}
+
 void GrantleeHeaderStyleTest::testRenderHeaderEmpty()
 {
     auto style = GrantleeHeaderStyle();

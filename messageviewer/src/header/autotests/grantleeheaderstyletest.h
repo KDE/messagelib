@@ -29,6 +29,7 @@ class GrantleeHeaderStyleTest : public QObject
 private Q_SLOTS:
     void testName();
     void testRenderHeaderNoMessage();
+    void testRenderHeaderInvalidTheme();
     void testRenderHeaderEmpty();
     void testRenderHeader_data();
     void testRenderHeader();
