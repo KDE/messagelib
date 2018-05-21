@@ -431,13 +431,13 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     return result;
 }
 
-QString emailAddrAsAnchor(KMime::Headers::Generics::MailboxList *mailboxList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
+QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
 {
     Q_ASSERT(mailboxList);
     return emailAddrAsAnchor(mailboxList->mailboxes(), display, cssStyle, link, expandable, fieldName, collapseNumber);
 }
 
-QString emailAddrAsAnchor(KMime::Headers::Generics::AddressList *addressList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
+QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
 {
     Q_ASSERT(addressList);
     return emailAddrAsAnchor(addressList->mailboxes(), display, cssStyle, link, expandable, fieldName, collapseNumber);

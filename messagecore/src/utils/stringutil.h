@@ -130,14 +130,14 @@ enum AddressMode {
    * @p The number of addresses to show before collapsing the rest, if expandable is set to
    * ExpandableAddresses.
    */
-MESSAGECORE_EXPORT QString emailAddrAsAnchor(KMime::Headers::Generics::MailboxList *mailboxList, Display display = DisplayNameOnly,
+MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display = DisplayNameOnly,
                                              const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
                                              const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Same as above method, only for AddressList headers.
    */
-MESSAGECORE_EXPORT QString emailAddrAsAnchor(KMime::Headers::Generics::AddressList *addressList, Display display = DisplayNameOnly,
+MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display = DisplayNameOnly,
                                              const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
                                              const QString &fieldName = QString(), int collapseNumber = 4);
 
