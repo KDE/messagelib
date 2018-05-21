@@ -48,6 +48,7 @@ void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString
     header.replace(QRegExp(QStringLiteral("([\n\t ])\\1+")), QStringLiteral("\\1"));
     header.replace(QRegExp(QStringLiteral(">\n+[\t ]*")), QStringLiteral(">"));
     header.replace(QRegExp(QStringLiteral("[\t ]*\n+[\t ]*<")), QStringLiteral("<"));
+    header.replace(QLatin1String("&nbsp;"), QLatin1String("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
 
     QString outName = name + QStringLiteral(".out.html");
     QString fName = name + QStringLiteral(".html");
@@ -85,6 +86,19 @@ void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString
     }
 }
 
+KMime::Message::Ptr readAndParseMail(const QString &mailFile)
+{
+    QFile file(QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + mailFile);
+    Q_ASSERT(file.open(QIODevice::ReadOnly));
+    const QByteArray data = KMime::CRLFtoLF(file.readAll());
+    Q_ASSERT(!data.isEmpty());
+    KMime::Message::Ptr msg(new KMime::Message);
+    msg->setContent(data);
+    msg->parse();
+    return msg;
+}
+
+
 const GrantleeTheme::Theme defaultTheme(const QString &name=QStringLiteral("5.2"))
 {
     const QStringList defaultThemePath = QStandardPaths::locateAll(
@@ -115,4 +129,29 @@ void GrantleeHeaderStyleTest::testRenderHeaderEmpty()
     style.setTheme(defaultTheme());
 
     testHeaderFile(style, aMsg, QStringLiteral("empty"));
+}
+
+void GrantleeHeaderStyleTest::testRenderHeader_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+
+    QDir dir(QStringLiteral(HEADER_DATA_DIR));
+    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    foreach (const QString &file, l) {
+        if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))) {
+            continue;
+        }
+        QTest::newRow(file.toLatin1().constData()) << file;
+    }
+}
+
+void GrantleeHeaderStyleTest::testRenderHeader()
+{
+    QFETCH(QString, mailFileName);
+
+    auto style = GrantleeHeaderStyle();
+    auto aMsg = readAndParseMail(mailFileName);
+    style.setTheme(defaultTheme());
+
+    testHeaderFile(style, aMsg.data(), mailFileName);
 }

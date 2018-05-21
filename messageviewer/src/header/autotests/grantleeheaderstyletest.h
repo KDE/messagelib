@@ -30,6 +30,8 @@ private Q_SLOTS:
     void testName();
     void testRenderHeaderNoMessage();
     void testRenderHeaderEmpty();
+    void testRenderHeader_data();
+    void testRenderHeader();
 };
 
 #endif
