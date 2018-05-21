@@ -222,7 +222,7 @@ QString HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, doub
                          errorMsg, filterHeader);
     }
     return QStringLiteral(
-        "<img src=\"%1\" width=\"%2\" height=\"%3\" style=\"border: 1px solid black;\" title=\"%4\"> &nbsp;")
+        "<img src=\"%1\" width=\"%2\" height=\"%3\" style=\"border: 1px solid black;\" title=\"%4\" />")
            .arg(imgToDataUrl(meterBar), QString::number(meterWidth),
                 QString::number(meterHeight), titleText) + confidenceString;
 }
