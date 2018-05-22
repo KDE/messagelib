@@ -21,7 +21,8 @@ Date: Tue, 22 May 2018 00:52:43 +0800
 Message-Id: <201805211652.w4LGqhL4028396@ssrr.link>
 Resent-From: resent@example.org
 From: =?utf-8?q?admin?= <admin@ssrr.link>
-To: spam@example.org
+To: spam1 <spam1@example.org>, spam2 <spam2@example.org>, spam3 <spam3@example.org>,
+    spam4 <spam4@example.org>, spam5 <spam5@example.org>, spam6 <spam6@example.org>
 Cc: foo@exampleorg
 Bcc: bcc@example.org
 Organization: =?ISO-8859-15?Q?Universit=E4t KDE?=
