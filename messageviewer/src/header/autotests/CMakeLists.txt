@@ -11,3 +11,14 @@ ecm_add_test(grantleeheaderstyletest.cpp
         KF5::Mime
         Qt5::Test
 )
+
+ecm_add_test(grantleeheaderformattertest.cpp
+    TEST_NAME grantleeheaderformattertest
+    NAME_PREFIX "messageviewer-header-"
+    LINK_LIBRARIES
+        KF5::GrantleeTheme
+        KF5::IconThemes
+        KF5::MessageViewer
+        KF5::Mime
+        Qt5::Test
+)
