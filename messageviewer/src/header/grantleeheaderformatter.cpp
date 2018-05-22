@@ -33,18 +33,127 @@
 #include <KIconLoader>
 #include <KColorScheme>
 
-#include <grantlee/templateloader.h>
 #include <grantlee/engine.h>
+#include <grantlee/metatype.h>
+#include <grantlee/templateloader.h>
 
 using namespace MessageCore;
 
 using namespace MessageViewer;
+
+Q_DECLARE_METATYPE(const KMime::Headers::Generics::AddressList *)
+Q_DECLARE_METATYPE(const KMime::Headers::Generics::MailboxList *)
+Q_DECLARE_METATYPE(QSharedPointer<KMime::Headers::Generics::MailboxList>)
+Q_DECLARE_METATYPE(const KMime::Headers::Date *)
+
+// Read-only introspection of KMime::Headers::Generics::AddressList object.
+namespace Grantlee {
+template<>
+inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::lookUp(const KMime::Headers::Generics::AddressList *const object, const QString &property)
+{
+    if (property == QStringLiteral("nameOnly")) {
+        return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayNameOnly);
+    } else if (property == QStringLiteral("isSet")) {
+        return !object->asUnicodeString().isEmpty();
+    } else if (property == QStringLiteral("fullAddress")) {
+        return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayFullAddress);
+    } else if (property == QStringLiteral("str")) {
+        return object->asUnicodeString();
+    } else if (property.startsWith(QStringLiteral("expandable"))) {
+        const auto &name = property.mid(10);
+        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
+            object, MessageCore::StringUtil::DisplayFullAddress,
+            QString(), MessageCore::StringUtil::ShowLink,
+            MessageCore::StringUtil::ExpandableAddresses,
+            QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+        return val;
+    }
+    return QVariant();
+}
+}
+
+// Read-only introspection of KMime::Headers::Generics::MailboxList object.
+namespace Grantlee {
+template<>
+inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::lookUp(const KMime::Headers::Generics::MailboxList *const object, const QString &property)
+{
+    if (property == QStringLiteral("nameOnly")) {
+        return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayNameOnly);
+    } else if (property == QStringLiteral("isSet")) {
+        return !object->asUnicodeString().isEmpty();
+    } else if (property == QStringLiteral("fullAddress")) {
+        return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayFullAddress);
+    } else if (property == QStringLiteral("str")) {
+        return object->asUnicodeString();
+    } else if (property.startsWith(QStringLiteral("expandable"))) {
+        const auto &name = property.mid(10);
+        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
+            object, MessageCore::StringUtil::DisplayFullAddress,
+            QString(), MessageCore::StringUtil::ShowLink,
+            MessageCore::StringUtil::ExpandableAddresses,
+            QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+        return val;
+    }
+    return QVariant();
+}
+}
+
+GRANTLEE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::MailboxList>)
+    if (property == QStringLiteral("nameOnly")) {
+        return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
+    } else if (property == QStringLiteral("isSet")) {
+        return !object->asUnicodeString().isEmpty();
+    } else if (property == QStringLiteral("fullAddress")) {
+        return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayFullAddress);
+    } else if (property == QStringLiteral("str")) {
+        return object->asUnicodeString();
+    } else if (property.startsWith(QStringLiteral("expandable"))) {
+        const auto &name = property.mid(10);
+        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
+            object.data(), MessageCore::StringUtil::DisplayFullAddress,
+            QString(), MessageCore::StringUtil::ShowLink,
+            MessageCore::StringUtil::ExpandableAddresses,
+            QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+        return val;
+    }
+GRANTLEE_END_LOOKUP
+
+
+namespace Grantlee {
+template<>
+inline QVariant TypeAccessor<const KMime::Headers::Date *>::lookUp(const KMime::Headers::Date *const object, const QString &property)
+{
+    MessageViewer::HeaderStyleUtil::HeaderStyleUtilDateFormat dateFormat;
+    if (property == QStringLiteral("str")) {
+        return HeaderStyleUtil::dateStr(object->dateTime());
+    } else if (property == QStringLiteral("short")) {
+        dateFormat = MessageViewer::HeaderStyleUtil::ShortDate;
+    } else if (property == QStringLiteral("long")) {
+        dateFormat = MessageViewer::HeaderStyleUtil::CustomDate;
+    } else if (property == QStringLiteral("fancylong")) {
+        dateFormat = MessageViewer::HeaderStyleUtil::FancyLongDate;
+    } else if (property == QStringLiteral("fancyshort")) {
+        dateFormat = MessageViewer::HeaderStyleUtil::FancyShortDate;
+    } else if(property == QStringLiteral("localelong")){
+        dateFormat = MessageViewer::HeaderStyleUtil::LongDate;
+    } else {
+        return QVariant();
+    }
+
+    return HeaderStyleUtil::strToHtml(HeaderStyleUtil::dateString(object, dateFormat));
+}
+}
+
 
 class Q_DECL_HIDDEN MessageViewer::GrantleeHeaderFormatter::Private
 {
 public:
     Private()
     {
+        Grantlee::registerMetaType<const KMime::Headers::Generics::AddressList *>();
+        Grantlee::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
+        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList>>();
+        Grantlee::registerMetaType<const KMime::Headers::Date *>();
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
         engine = new Grantlee::Engine;
         templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(
@@ -133,72 +242,30 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
 
     if (message->to(false)) {
         headerObject.insert(QStringLiteral("toi18n"), i18n("To:"));
-        headerObject.insert(QStringLiteral("to"),
-                            StringUtil::emailAddrAsAnchor(message->to(),
-                                                          StringUtil::DisplayFullAddress));
-        headerObject.insert(QStringLiteral("toNameOnly"),
-                            StringUtil::emailAddrAsAnchor(
-                                message->to(), StringUtil::DisplayNameOnly));
-        headerObject.insert(QStringLiteral("toStr"), message->to()->asUnicodeString());
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
-            message->to(), MessageCore::StringUtil::DisplayFullAddress,
-            QString(), MessageCore::StringUtil::ShowLink,
-            MessageCore::StringUtil::ExpandableAddresses,
-            QStringLiteral("FullToAddressList"));
-        headerObject.insert(QStringLiteral("toExpandable"), val);
-        headerObject.insert(QStringLiteral("toMailbox"), QVariant::fromValue(message->to()));
+        headerObject.insert(QStringLiteral("to"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(message->to())));
     }
 
     if (message->replyTo(false)) {
         headerObject.insert(QStringLiteral("replyToi18n"), i18n("Reply to:"));
-        headerObject.insert(QStringLiteral("replyTo"),
-                            StringUtil::emailAddrAsAnchor(message->replyTo(),
-                                                          StringUtil::DisplayFullAddress));
-        headerObject.insert(QStringLiteral("replyToStr"), message->replyTo()->asUnicodeString());
-        headerObject.insert(QStringLiteral("replyToNameOnly"),
-                            StringUtil::emailAddrAsAnchor(message->replyTo(),
-                                                          StringUtil::DisplayNameOnly));
+        headerObject.insert(QStringLiteral("replyTo"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(message->replyTo())));
     }
 
     if (message->cc(false)) {
         headerObject.insert(QStringLiteral("cci18n"), i18n("CC:"));
-        headerObject.insert(QStringLiteral("cc"),
-                            StringUtil::emailAddrAsAnchor(message->cc(),
-                                                          StringUtil::DisplayFullAddress));
-        headerObject.insert(QStringLiteral("ccStr"), message->cc()->asUnicodeString());
-        headerObject.insert(QStringLiteral("ccNameOnly"),
-                            StringUtil::emailAddrAsAnchor(
-                                message->cc(), StringUtil::DisplayNameOnly));
-        headerObject.insert(QStringLiteral("ccMailbox"), QVariant::fromValue(message->cc()));
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
-            message->cc(), MessageCore::StringUtil::DisplayFullAddress,
-            QString(), MessageCore::StringUtil::ShowLink,
-            MessageCore::StringUtil::ExpandableAddresses,
-            QStringLiteral("FullCcAddressList"));
-        headerObject.insert(QStringLiteral("ccExpandable"), val);
+        headerObject.insert(QStringLiteral("cc"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(message->cc())));
     }
 
     if (message->bcc(false)) {
         headerObject.insert(QStringLiteral("bcci18n"), i18n("BCC:"));
-        headerObject.insert(QStringLiteral("bcc"),
-                            StringUtil::emailAddrAsAnchor(message->bcc(),
-                                                          StringUtil::DisplayFullAddress));
-        headerObject.insert(QStringLiteral("bccNameOnly"),
-                            StringUtil::emailAddrAsAnchor(message->bcc(),
-                                                          StringUtil::DisplayNameOnly));
-        headerObject.insert(QStringLiteral("bccStr"), message->bcc()->asUnicodeString());
-        headerObject.insert(QStringLiteral("bccMailbox"), QVariant::fromValue(message->bcc()));
+        headerObject.insert(QStringLiteral("bcc"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(message->bcc())));
     }
     headerObject.insert(QStringLiteral("fromi18n"), i18n("From:"));
-    headerObject.insert(QStringLiteral("from"),
-                        StringUtil::emailAddrAsAnchor(message->from(),
-                                                      StringUtil::DisplayFullAddress));
-    headerObject.insert(QStringLiteral("fromStr"), message->from()->asUnicodeString());
+    headerObject.insert(QStringLiteral("from"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::MailboxList *>(message->from())));
 
     //Sender
+    headerObject.insert(QStringLiteral("senderi18n"), i18n("Sender:"));
     headerObject.insert(QStringLiteral("sender"),
                         d->headerStyleUtil.strToHtml(message->sender()->asUnicodeString()));
-    headerObject.insert(QStringLiteral("senderi18n"), i18n("Sender:"));
     headerObject.insert(QStringLiteral("listidi18n"), i18n("List-Id:"));
 
     if (auto hrd = message->headerByType("List-Id")) {
@@ -210,57 +277,22 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
         headerObject.insert(QStringLiteral("spamstatusi18n"), i18n("Spam Status:"));
         headerObject.insert(QStringLiteral("spamHTML"), spamHtml);
     }
-    headerObject.insert(QStringLiteral("datei18n"), i18n("Date:"));
 
-    headerObject.insert(QStringLiteral("dateshort"),
-                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
-                                                                                   isPrinting,
-                                                                                   MessageViewer::
-                                                                                   HeaderStyleUtil::
-                                                                                   ShortDate)));
-    headerObject.insert(QStringLiteral("datelong"),
-                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
-                                                                                   isPrinting,
-                                                                                   MessageViewer::
-                                                                                   HeaderStyleUtil::
-                                                                                   CustomDate)));
-    headerObject.insert(QStringLiteral("date"),
-                        d->headerStyleUtil.dateStr(message->date()->dateTime()));
-    headerObject.insert(QStringLiteral("datefancylong"),
-                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
-                                                                                   isPrinting,
-                                                                                   MessageViewer::
-                                                                                   HeaderStyleUtil::
-                                                                                   FancyLongDate)));
-    headerObject.insert(QStringLiteral("datefancyshort"),
-                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
-                                                                                   isPrinting,
-                                                                                   MessageViewer::
-                                                                                   HeaderStyleUtil::
-                                                                                   FancyShortDate)));
-    headerObject.insert(QStringLiteral("datelocalelong"),
-                        d->headerStyleUtil.strToHtml(d->headerStyleUtil.dateString(message,
-                                                                                   isPrinting,
-                                                                                   MessageViewer::
-                                                                                   HeaderStyleUtil::
-                                                                                   LongDate)));
+    headerObject.insert(QStringLiteral("datei18n"), i18n("Date:"));
+    headerObject.insert(QStringLiteral("date"), QVariant::fromValue(static_cast<const KMime::Headers::Date *>(message->date())));
 
     if (message->hasHeader("Resent-From")) {
         headerObject.insert(QStringLiteral("resentfromi18n"), i18n("resent from"));
-        const QVector<KMime::Types::Mailbox> resentFrom
-            = d->headerStyleUtil.resentFromList(message);
         headerObject.insert(QStringLiteral("resentfrom"),
-                            StringUtil::emailAddrAsAnchor(resentFrom,
-                                                          StringUtil::DisplayFullAddress));
+                            QVariant::fromValue(HeaderStyleUtil::resentFromList(message)));
     }
 
     if (message->hasHeader("Resent-To")) {
-        const QVector<KMime::Types::Mailbox> resentTo = d->headerStyleUtil.resentToList(message);
+        auto resentTo = HeaderStyleUtil::resentToList(message);
         headerObject.insert(QStringLiteral("resenttoi18n"),
-                            i18np("receiver was", "receivers were", resentTo.count()));
+                            i18np("receiver was", "receivers were", resentTo->mailboxes().count()));
         headerObject.insert(QStringLiteral("resentto"),
-                            StringUtil::emailAddrAsAnchor(resentTo,
-                                                          StringUtil::DisplayFullAddress));
+                            QVariant::fromValue(HeaderStyleUtil::resentToList(message)));
     }
 
     if (auto organization = message->organization(false)) {

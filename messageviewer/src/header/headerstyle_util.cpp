@@ -56,38 +56,39 @@ QString HeaderStyleUtil::directionOf(const QString &str) const
     return str.isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
 }
 
-QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flags) const
+QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flags)
 {
     return KTextToHTML::convertToHtml(str, flags, 4096, 512);
 }
 
-// Prepare the date string (when printing always use the localized date)
-QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const
+// Prepare the date string
+QString HeaderStyleUtil::dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat)
 {
-    const QDateTime dateTime = message->date()->dateTime();
+    return dateString(message->date(), dateFormat);
+}
+
+QString HeaderStyleUtil::dateString(const KMime::Headers::Date *date, HeaderStyleUtilDateFormat dateFormat)
+{
+    const QDateTime dateTime = date->dateTime();
     if (!dateTime.isValid()) {
         qCDebug(MESSAGEVIEWER_LOG) << "Unable to parse date";
         return i18nc("Unknown date", "Unknown");
     }
 
-    const time_t unixTime = dateTime.toSecsSinceEpoch();
-    if (printing) {
+    const time_t unixTime = dateTime.toTime_t();
+    switch (dateFormat) {
+    case ShortDate:
         return KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, unixTime);
-    } else {
-        switch (dateFormat) {
-        case ShortDate:
-            return KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, unixTime);
-        case LongDate:
-            return KMime::DateFormatter::formatDate(KMime::DateFormatter::CTime, unixTime);
-        case FancyShortDate:
-            return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime);
-        case FancyLongDate:
-        //Laurent fix me
-        //TODO return QLocale::system().toString(dateTime, QLocale::LongFormat);
-        case CustomDate:
-        default:
-            return dateStr(dateTime);
-        }
+    case LongDate:
+        return KMime::DateFormatter::formatDate(KMime::DateFormatter::CTime, unixTime);
+    case FancyShortDate:
+        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime);
+    case FancyLongDate:
+    //Laurent fix me
+    //TODO return QLocale::system().toString(dateTime, QLocale::LongFormat);
+    case CustomDate:
+    default:
+        return dateStr(dateTime);
     }
 }
 
@@ -236,7 +237,7 @@ QString HeaderStyleUtil::imgToDataUrl(const QImage &image) const
                                                          QString::fromLatin1(ba.toBase64()));
 }
 
-QString HeaderStyleUtil::dateStr(const QDateTime &dateTime) const
+QString HeaderStyleUtil::dateStr(const QDateTime &dateTime)
 {
     const time_t unixTime = dateTime.toSecsSinceEpoch();
     return KMime::DateFormatter::formatDate(
@@ -245,48 +246,34 @@ QString HeaderStyleUtil::dateStr(const QDateTime &dateTime) const
         unixTime, MessageCore::MessageCoreSettings::self()->customDateFormat());
 }
 
-QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime) const
+QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime)
 {
     KMime::DateFormatter formatter(KMime::DateFormatter::Fancy);
     return formatter.dateString(dateTime);
 }
 
-QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentFromList(KMime::Message *message) const
+QSharedPointer<KMime::Headers::Generics::MailboxList> mailboxesFromHeader(const KMime::Headers::Base *hrd)
 {
-    // Get the resent-from header into a Mailbox
-    QVector<KMime::Types::Mailbox> resentFrom;
-    if (auto hrd = message->headerByType("Resent-From")) {
-        const QByteArray data = hrd->as7BitString(false);
-        const char *start = data.data();
-        const char *end = start + data.length();
-        KMime::Types::AddressList addressList;
-        KMime::HeaderParsing::parseAddressList(start, end, addressList);
-        for (const KMime::Types::Address &addr : qAsConst(addressList)) {
-            for (const KMime::Types::Mailbox &mbox : qAsConst(addr.mailboxList)) {
-                resentFrom.append(mbox);
-            }
-        }
-    }
-    return resentFrom;
+    QSharedPointer<KMime::Headers::Generics::MailboxList> mailboxList(new KMime::Headers::Generics::MailboxList());
+    const QByteArray &data = hrd->as7BitString(false);
+    mailboxList->from7BitString(data);
+    return mailboxList;
 }
 
-QVector<KMime::Types::Mailbox> HeaderStyleUtil::resentToList(KMime::Message *message) const
+QSharedPointer<KMime::Headers::Generics::MailboxList> HeaderStyleUtil::resentFromList(KMime::Message *message)
 {
-    // Get the resent-from header into a Mailbox
-    QVector<KMime::Types::Mailbox> resentTo;
-    if (auto hrd = message->headerByType("Resent-To")) {
-        const QByteArray data = hrd->as7BitString(false);
-        const char *start = data.data();
-        const char *end = start + data.length();
-        KMime::Types::AddressList addressList;
-        KMime::HeaderParsing::parseAddressList(start, end, addressList);
-        for (const KMime::Types::Address &addr : qAsConst(addressList)) {
-            for (const KMime::Types::Mailbox &mbox : qAsConst(addr.mailboxList)) {
-                resentTo.append(mbox);
-            }
-        }
+    if (auto hrd = message->headerByType("Resent-From")) {
+        return mailboxesFromHeader(hrd);
     }
-    return resentTo;
+    return nullptr;
+}
+
+QSharedPointer<KMime::Headers::Generics::MailboxList> HeaderStyleUtil::resentToList(KMime::Message *message)
+{
+    if (auto hrd = message->headerByType("Resent-To")) {
+        return mailboxesFromHeader(hrd);
+    }
+    return nullptr;
 }
 
 void HeaderStyleUtil::updateXFaceSettings(QImage photo, xfaceSettings &settings) const

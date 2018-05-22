@@ -13,9 +13,9 @@
 		<div class="row">
 			<div class="headerleft">{{ header.fromi18n }}</div>
 			<div class="headerright">
-				{{ header.from|safe }}
-				{% if header.resentfrom %}
-				{{ header.resentfromi18n }}: {{ header.resentfrom|safe }}
+				{{ header.from.fullAddress|safe }}
+				{% if header.resentfrom.isSet %}
+				{{ header.resentfromi18n }}: {{ header.resentfrom.fullAddress|safe }}
 				{% endif %}
 				{% if header.vcardname %}
 				<a href="{{ header.vcardname|safe }}">{{ header.vcardi18n }}</a>
@@ -25,22 +25,22 @@
 				{% endif %}
 			</div>
 		</div>
-                {% if header.to %}
+                {% if header.to.isSet %}
 		<div class="row">
 			<div class="headerleft">{{ header.toi18n }}</div>
-			<div class="headerright">{{ header.toExpandable|safe }}</div>
+			<div class="headerright">{{ header.to.expandableTo|safe }}</div>
 		</div>
                 {% endif %}
-		{% if header.cc %}
+		{% if header.cc.isSet %}
 		<div class="row">
 			<div class="headerleft">{{ header.cci18n }}</div>
-			<div class="headerright">{{ header.ccExpandable|safe }}</div>
+			<div class="headerright">{{ header.cc.expandableCc|safe }}</div>
 		</div>
 		{% endif %}
-		{% if header.bcc %}
+		{% if header.bcc.isSet %}
 		<div class="row">
 			<div class="headerleft">{{ header.bcci18n }}</div>
-			<div class="headerright">{{ header.bcc|safe }}</div>
+			<div class="headerright">{{ header.bcc.fullAddress|safe }}</div>
 		</div>
 		{% endif %}
 		{% if header.sender %}
@@ -57,7 +57,7 @@
 		{% endif %}
 		<div class="row">
 			<div class="headerleft">{{ header.datei18n }}</div>
-			<div class="headerrightdate" dir="{{ header.applicationDir }}">{{ header.dateshort }}</div>
+			<div class="headerrightdate" dir="{{ header.applicationDir }}">{{ header.date.short }}</div>
 		</div>
 		{% if header.spamHTML %}
 		<div class="row">

@@ -121,14 +121,10 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     }
 
     if (strategy->showHeader(QStringLiteral("date"))) {
+        const auto dateFormat = isPrinting()? MessageViewer::HeaderStyleUtil::ShortDate : MessageViewer::HeaderStyleUtil::CustomDate;
         headerStr.append(i18n("Date: ")
-                         + d->mHeaderStyleUtil.strToHtml(d->mHeaderStyleUtil.dateString(message,
-                                                                                        isPrinting(),
-                                                                                        /* short = */
-                                                                                        MessageViewer
-                                                                                        ::
-                                                                                        HeaderStyleUtil
-                                                                                        ::CustomDate))
+                         + HeaderStyleUtil::strToHtml(HeaderStyleUtil::dateString(message,
+                                                                                  dateFormat))
                          + QLatin1String("<br/>\n"));
     }
 

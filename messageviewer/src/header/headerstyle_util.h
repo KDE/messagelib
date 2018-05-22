@@ -61,9 +61,10 @@ public:
 
     Q_REQUIRED_RESULT QString directionOf(const QString &str) const;
 
-    Q_REQUIRED_RESULT QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
+    static Q_REQUIRED_RESULT QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
+    static Q_REQUIRED_RESULT QString dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat);
+    static Q_REQUIRED_RESULT QString dateString(const KMime::Headers::Date *date, HeaderStyleUtilDateFormat dateFormat);
 
-    Q_REQUIRED_RESULT QString dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const;
 
     Q_REQUIRED_RESULT QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
@@ -71,12 +72,12 @@ public:
 
     Q_REQUIRED_RESULT QString spamStatus(KMime::Message *message) const;
 
-    Q_REQUIRED_RESULT QString dateStr(const QDateTime &dateTime) const;
+    static Q_REQUIRED_RESULT QString dateStr(const QDateTime &dateTime);
 
-    Q_REQUIRED_RESULT QString dateShortStr(const QDateTime &dateTime) const;
+    static Q_REQUIRED_RESULT QString dateShortStr(const QDateTime &dateTime);
+    static Q_REQUIRED_RESULT QSharedPointer<KMime::Headers::Generics::MailboxList> resentFromList(KMime::Message *message);
 
-    Q_REQUIRED_RESULT QVector<KMime::Types::Mailbox> resentFromList(KMime::Message *message) const;
-    Q_REQUIRED_RESULT QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message) const;
+    static Q_REQUIRED_RESULT QSharedPointer<KMime::Headers::Generics::MailboxList> resentToList(KMime::Message *message);
 
     Q_REQUIRED_RESULT xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 private:
