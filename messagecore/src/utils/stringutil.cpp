@@ -426,7 +426,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     }
 
     if (expandableInserted) {
-        result += QStringLiteral("<label class=\"addresslist_label_full\" for=\"%1\"></label></span>").arg(fieldName);
+        result += QStringLiteral("<label class=\"addresslist_label_full\" for=\"%1\"></label></span></span>").arg(fieldName);
     }
     return result;
 }
