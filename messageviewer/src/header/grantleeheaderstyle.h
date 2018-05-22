@@ -34,9 +34,6 @@ public:
     const char *name() const override;
 
     QString format(KMime::Message *message) const override;
-
-    bool showMailAction() const;
-    void setShowMailAction(bool showAction);
 private:
     GrantleeHeaderStylePrivate *const d;
 };

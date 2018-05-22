@@ -39,7 +39,6 @@ public:
     }
 
     GrantleeHeaderFormatter *mGrantleeFormatter = nullptr;
-    bool mShowMailAction = true;
 };
 
 GrantleeHeaderStyle::GrantleeHeaderStyle()
@@ -71,9 +70,4 @@ QString GrantleeHeaderStyle::format(KMime::Message *message) const
     settings.message = message;
     settings.showEmoticons = showEmoticons();
     return d->mGrantleeFormatter->toHtml(settings);
-}
-
-bool GrantleeHeaderStyle::showMailAction() const
-{
-    return d->mShowMailAction;
 }
