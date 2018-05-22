@@ -49,7 +49,6 @@ using namespace MessageViewer;
 //
 HeaderStyleUtil::HeaderStyleUtil()
 {
-    mIconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
 }
 
 QString HeaderStyleUtil::directionOf(const QString &str) const
