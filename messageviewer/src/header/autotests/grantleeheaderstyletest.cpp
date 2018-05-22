@@ -98,7 +98,6 @@ KMime::Message::Ptr readAndParseMail(const QString &mailFile)
     return msg;
 }
 
-
 const GrantleeTheme::Theme defaultTheme(const QString &name=QStringLiteral("5.2"))
 {
     const QStringList defaultThemePath = QStandardPaths::locateAll(
