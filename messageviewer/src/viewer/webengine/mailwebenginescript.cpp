@@ -40,4 +40,3 @@ QString MailWebEngineScript::manageShowHideEncryptionDetails(bool hide)
     }
     return source;
 }
-

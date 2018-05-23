@@ -558,7 +558,6 @@ public Q_SLOTS:
 
     void slotGeneralFontChanged();
 
-
 Q_SIGNALS:
     void showStatusBarMessage(const QString &message);
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);

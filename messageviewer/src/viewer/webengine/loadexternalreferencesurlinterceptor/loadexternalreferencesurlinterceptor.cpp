@@ -36,8 +36,9 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
 {
     const QString scheme = info.requestUrl().scheme();
     if (scheme == QStringLiteral("data")
-        || scheme == QStringLiteral("file"))
+        || scheme == QStringLiteral("file")) {
         return false;
+    }
     if (mAllowLoadExternalReference) {
         return false;
     } else {

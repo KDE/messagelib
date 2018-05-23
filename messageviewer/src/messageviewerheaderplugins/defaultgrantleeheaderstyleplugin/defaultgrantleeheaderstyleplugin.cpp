@@ -25,7 +25,6 @@
 #include <kpluginfactory.h>
 using namespace MessageViewer;
 
-
 K_PLUGIN_CLASS_WITH_JSON(DefaultGrantleeHeaderStylePlugin,
                          "messageviewer_defaultgrantleeheaderstyleplugin.json")
 

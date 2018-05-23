@@ -37,8 +37,8 @@ QTEST_MAIN(GrantleeHeaderStyleTest)
 void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString &name)
 {
     QString header = QStringLiteral("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
-                       "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-                       "<body>\n");
+                                    "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+                                    "<body>\n");
     header += style.format(msg) + QStringLiteral("</div>\n</div>");
     header += QStringLiteral("\n</body>\n</html>\n");
 
@@ -53,7 +53,7 @@ void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString
     QString outName = name + QStringLiteral(".out.html");
     QString fName = name + QStringLiteral(".html");
 
-    QVERIFY(QFile(QStringLiteral(HEADER_DATA_DIR"/") + fName).exists());
+    QVERIFY(QFile(QStringLiteral(HEADER_DATA_DIR "/") + fName).exists());
 
     {
         QFile f(outName);
@@ -64,19 +64,19 @@ void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString
     // TODO add proper cmake check for xmllint and diff
     {
         const QStringList args = QStringList()
-                        << QStringLiteral("--format")
-                        << QStringLiteral("--encode") << QStringLiteral("UTF8")
-                        << QStringLiteral("--output") << fName
-                        << outName;
+                                 << QStringLiteral("--format")
+                                 << QStringLiteral("--encode") << QStringLiteral("UTF8")
+                                 << QStringLiteral("--output") << fName
+                                 << outName;
         QCOMPARE(QProcess::execute(QStringLiteral("xmllint"), args), 0);
     }
 
     {
         // compare to reference file
         const QStringList args = QStringList()
-                                << QStringLiteral("-u")
-                                << fName
-                                << QStringLiteral(HEADER_DATA_DIR"/") + fName;
+                                 << QStringLiteral("-u")
+                                 << fName
+                                 << QStringLiteral(HEADER_DATA_DIR "/") + fName;
         QProcess proc;
         proc.setProcessChannelMode(QProcess::ForwardedChannels);
         proc.start(QStringLiteral("diff"), args);
@@ -98,15 +98,15 @@ KMime::Message::Ptr readAndParseMail(const QString &mailFile)
     return msg;
 }
 
-const GrantleeTheme::Theme defaultTheme(const QString &name=QStringLiteral("5.2"))
+const GrantleeTheme::Theme defaultTheme(const QString &name = QStringLiteral("5.2"))
 {
     const QStringList defaultThemePath = QStandardPaths::locateAll(
-                QStandardPaths::GenericDataLocation,
-                QStringLiteral("messageviewer/defaultthemes/"),
-                QStandardPaths::LocateDirectory);
+        QStandardPaths::GenericDataLocation,
+        QStringLiteral("messageviewer/defaultthemes/"),
+        QStandardPaths::LocateDirectory);
     return GrantleeTheme::ThemeManager::loadTheme(defaultThemePath.at(0) + QStringLiteral("/")+name,
-                name,
-                QStringLiteral("kmail_default.desktop"));
+                                                  name,
+                                                  QStringLiteral("kmail_default.desktop"));
 }
 
 void GrantleeHeaderStyleTest::testName()
@@ -146,7 +146,6 @@ void GrantleeHeaderStyleTest::testRenderHeaderVCard()
 
     testHeaderFile(style, aMsg, QStringLiteral("vcard"));
 }
-
 
 void GrantleeHeaderStyleTest::testRenderHeader_data()
 {

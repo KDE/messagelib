@@ -638,8 +638,8 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                               +i18nc("Start of warning message.", "Warning:")
                               +QStringLiteral("</u> ")
                               +i18n(
-                            "Sender's mail address is not stored in the %1 used for signing.",
-                            certificate)
+                                  "Sender's mail address is not stored in the %1 used for signing.",
+                                  certificate)
                               +QStringLiteral("<br />")
                               +i18n("sender: ")
                               +msgFrom

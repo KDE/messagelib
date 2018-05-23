@@ -36,8 +36,9 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
 {
     const QString scheme = info.requestUrl().scheme();
     if (scheme == QStringLiteral("data")
-        || scheme == QStringLiteral("file"))
+        || scheme == QStringLiteral("file")) {
         return false;
+    }
     const QWebEngineUrlRequestInfo::ResourceType resourceType = info.resourceType();
     const QWebEngineUrlRequestInfo::NavigationType navigationType = info.navigationType();
     if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeMedia

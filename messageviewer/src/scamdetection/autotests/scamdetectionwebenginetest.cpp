@@ -130,26 +130,25 @@ void ScamDetectionWebEngineTest::scamtest_data()
 
     QTest::newRow("scam-encoded-url1") << QStringLiteral(
         "<a href=\"https://github.com/KDAB/KDStateMachineEditor.git|1.2\">https://github.com/KDAB/KDStateMachineEditor.git|1.2</a>")
-                              << false;
+                                       << false;
 
     QTest::newRow("scam-lowercase") << QStringLiteral(
         "<a href=\"http://www.Kde.org\">http://www.Kde.org</a>")
-                              << false;
+                                    << false;
     QTest::newRow("scam-lowercase-2") << QStringLiteral(
         "<a href=\"http://www.Kde.org/KDE/bla\">http://www.Kde.org/KDE/bla</a>")
-                              << false;
+                                      << false;
     QTest::newRow("scam-lowercase-3") << QStringLiteral(
         "<a href=\"http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git\">http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git</a>")
-                              << false;
-
+                                      << false;
 
     QTest::newRow("toplevelrepo") << QStringLiteral(
         "<a href=\"https://www.amazon.fr/gp/goldbox/ref=pe_btn/?nocache=1510065600354\">https://www.amazon.fr/gp/../gp/goldbox/ref=pe_btn/?nocache=1510065600354</a>")
-                              << false;
+                                  << false;
 
     QTest::newRow("toplevelrepo2") << QStringLiteral(
         "<a href=\"https://www.amazon.fr/gp/../gp/goldbox/ref=pe_btn/?nocache=1510065600354\">https://www.amazon.fr/gp/goldbox/ref=pe_btn/?nocache=1510065600354</a>")
-                              << false;
+                                   << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
