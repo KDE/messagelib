@@ -26,6 +26,7 @@
 #include "MessageComposer/AttachmentJob"
 #include "MessageComposer/AttachmentFromPublicKeyJob"
 #include "MessageComposer/AttachmentVcardFromAddressBookJob"
+#include "MessageComposer/AttachmentClipBoardJob"
 #include "MessageComposer/Composer"
 #include "MessageComposer/GlobalPart"
 
@@ -100,6 +101,7 @@ public:
     void slotAttachmentContentCreated(KJob *job);   // slot
     void addAttachmentPart(AttachmentPart::Ptr part);
     void attachVcardFromAddressBook(KJob *job);   //slot
+    void attachClipBoardElement(KJob *job);
     void selectedAllAttachment();
     void createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part);
     void reloadAttachment();
@@ -135,6 +137,7 @@ public:
     QAction *addOwnVcardAction = nullptr;
     QAction *reloadAttachmentAction = nullptr;
     QAction *attachVCardsAction = nullptr;
+    QAction *attachClipBoardAction = nullptr;
 
     // If part p is compressed, uncompressedParts[p] is the uncompressed part.
     QHash<AttachmentPart::Ptr, AttachmentPart::Ptr> uncompressedParts;
@@ -403,6 +406,18 @@ void AttachmentControllerBase::Private::attachVcardFromAddressBook(KJob *job)
     q->addAttachment(part);
 }
 
+void AttachmentControllerBase::Private::attachClipBoardElement(KJob *job)
+{
+    if (job->error()) {
+        qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get vcard";
+        return;
+    }
+
+    MessageComposer::AttachmentClipBoardJob *ajob = static_cast<MessageComposer::AttachmentClipBoardJob *>(job);
+    AttachmentPart::Ptr part = ajob->attachmentPart();
+    q->addAttachment(part);
+}
+
 static QTemporaryFile *dumpAttachmentToTempFile(const AttachmentPart::Ptr &part)   // local
 {
     QTemporaryFile *file = new QTemporaryFile;
@@ -477,12 +492,20 @@ void AttachmentControllerBase::createActions()
     d->attachVCardsAction->setIconText(i18n("Attach"));
     connect(d->attachVCardsAction, &QAction::triggered, this, &AttachmentControllerBase::showAttachVcard);
 
+    d->attachClipBoardAction = new QAction(QIcon::fromTheme(QStringLiteral("mail-attachment")), i18n("&Attach Clipboard..."), this);
+    d->attachClipBoardAction->setIconText(i18n("Attach Clipboard"));
+    connect(d->attachClipBoardAction, &QAction::triggered, this, &AttachmentControllerBase::showAttachClipBoard);
+
+
     d->attachmentMenu->addAction(d->addAttachmentFileAction);
     d->attachmentMenu->addAction(d->addAttachmentDirectoryAction);
     d->attachmentMenu->addSeparator();
     d->attachmentMenu->addAction(d->addOwnVcardAction);
     d->attachmentMenu->addSeparator();
     d->attachmentMenu->addAction(d->attachVCardsAction);
+    d->attachmentMenu->addSeparator();
+    d->attachmentMenu->addAction(d->attachClipBoardAction);
+
 
     d->removeAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("&Remove Attachment"), this);
     d->removeContextAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this);     // FIXME need two texts. is there a better way?
@@ -868,6 +891,13 @@ void AttachmentControllerBase::showAttachVcard()
         }
     }
     delete dlg;
+}
+
+void AttachmentControllerBase::showAttachClipBoard()
+{
+    MessageComposer::AttachmentClipBoardJob *job = new MessageComposer::AttachmentClipBoardJob(this);
+    connect(job, &AttachmentClipBoardJob::result, this, [this](KJob *job) {d->attachClipBoardElement(job);});
+    job->start();
 }
 
 void AttachmentControllerBase::showAddAttachmentCompressedDirectoryDialog()

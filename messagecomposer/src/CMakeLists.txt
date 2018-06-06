@@ -30,6 +30,7 @@ set( messagecomposer_job_src
     job/distributionlistexpandjob.cpp
     job/savecontactpreferencejob.cpp
     job/attachmentvcardfromaddressbookjob.cpp
+    job/attachmentclipboardjob.cpp
     )
 
 set( messagecomposer_composer_src
@@ -382,6 +383,7 @@ ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     JobBase
     AliasesExpandJob
     SkeletonMessageJob
+    AttachmentClipBoardJob
     REQUIRED_HEADERS MessageComposer_job_HEADERS
     PREFIX MessageComposer
     RELATIVE job

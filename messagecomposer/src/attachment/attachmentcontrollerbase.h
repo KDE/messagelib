@@ -78,6 +78,7 @@ public Q_SLOTS:
     void addAttachments(const QList<QUrl> &urls);
     void showAttachPublicKeyDialog();
     void showAttachVcard();
+    void showAttachClipBoard();
     virtual void attachMyPublicKey();
 
 Q_SIGNALS:
