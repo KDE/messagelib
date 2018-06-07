@@ -492,8 +492,8 @@ void AttachmentControllerBase::createActions()
     d->attachVCardsAction->setIconText(i18n("Attach"));
     connect(d->attachVCardsAction, &QAction::triggered, this, &AttachmentControllerBase::showAttachVcard);
 
-    d->attachClipBoardAction = new QAction(QIcon::fromTheme(QStringLiteral("mail-attachment")), i18n("&Attach Clipboard..."), this);
-    d->attachClipBoardAction->setIconText(i18n("Attach Clipboard"));
+    d->attachClipBoardAction = new QAction(QIcon::fromTheme(QStringLiteral("mail-attachment")), i18n("&Attach Text From Clipboard..."), this);
+    d->attachClipBoardAction->setIconText(i18n("Attach Text From Clipboard"));
     connect(d->attachClipBoardAction, &QAction::triggered, this, &AttachmentControllerBase::showAttachClipBoard);
 
 
