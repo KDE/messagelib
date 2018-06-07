@@ -398,6 +398,7 @@ void AttachmentControllerBase::Private::attachVcardFromAddressBook(KJob *job)
 {
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get vcard";
+        KMessageBox::sorry(wParent, job->errorString(), i18n("Failed to attach vcard"));
         return;
     }
 
@@ -409,7 +410,8 @@ void AttachmentControllerBase::Private::attachVcardFromAddressBook(KJob *job)
 void AttachmentControllerBase::Private::attachClipBoardElement(KJob *job)
 {
     if (job->error()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get vcard";
+        qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get try to attach text from clipboard";
+        KMessageBox::sorry(wParent, job->errorString(), i18n("Failed to attach text from clipboard"));
         return;
     }
 
