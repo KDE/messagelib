@@ -166,13 +166,19 @@ void WebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 
 bool WebEngineView::eventFilter(QObject *obj, QEvent *event)
 {
+    // Keyboard events are sent to parent widget
+    if (obj == this && event->type() == QEvent::ParentChange && parentWidget()) {
+        parentWidget()->installEventFilter(this);
+    }
+
     // Hack to find widget that receives input events
     if (obj == this && event->type() == QEvent::ChildAdded) {
-        QWidget *child = dynamic_cast<QWidget *>(static_cast<QChildEvent *>(event)->child());
-        if (child && child->inherits("QtWebEngineCore::RenderWidgetHostViewQtDelegateWidget")) {
-            d->mCurrentWidget = child;
-            d->mCurrentWidget->installEventFilter(this);
-        }
+        QTimer::singleShot(0, this, [this]() {
+            if (focusProxy() && d->mCurrentWidget != focusProxy()) {
+                d->mCurrentWidget = focusProxy();
+                d->mCurrentWidget->installEventFilter(this);
+            }
+        });
     }
 
     // Forward events to WebEngineView
