@@ -537,7 +537,7 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     }
     QStringList lst;
     lst << QStringLiteral("--parent-windowid")
-        << QString::number((qlonglong)w->viewer()->mainWindow()->winId())
+        << QString::number(static_cast<qlonglong>(w->viewer()->mainWindow()->winId()))
         << QStringLiteral("--query") << keyId;
     if (!QProcess::startDetached(QStringLiteral("kleopatra"), lst)) {
         KMessageBox::error(w->mMainWindow, i18n("Could not start certificate manager. "
