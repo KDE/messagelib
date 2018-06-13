@@ -638,7 +638,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     }
     receiptTo.remove(QChar::fromLatin1('\n'));
 
-    KMime::Message::Ptr receipt = KMime::Message::Ptr(new KMime::Message);
+    KMime::Message::Ptr receipt(new KMime::Message);
     const uint originalIdentity = identityUoid(m_origMsg);
     MessageHelper::initFromMessage(receipt, m_origMsg, m_identityManager, originalIdentity);
     receipt->to()->fromUnicodeString(receiptTo, QStringLiteral("utf-8").toLatin1());

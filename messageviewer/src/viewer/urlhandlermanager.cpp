@@ -707,7 +707,7 @@ bool AttachmentURLHandler::handleShiftClick(const QUrl &url, ViewerPrivate *wind
 
     const bool isEncapsulatedMessage = node->parent() && node->parent()->bodyIsMessage();
     if (isEncapsulatedMessage) {
-        KMime::Message::Ptr message = KMime::Message::Ptr(new KMime::Message);
+        KMime::Message::Ptr message(new KMime::Message);
         message->setContent(node->parent()->bodyAsMessage()->encodedContent());
         message->parse();
         Akonadi::Item item;
@@ -747,7 +747,7 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
     QUrl tUrl;
     const bool isEncapsulatedMessage = node->parent() && node->parent()->bodyIsMessage();
     if (isEncapsulatedMessage) {
-        KMime::Message::Ptr message = KMime::Message::Ptr(new KMime::Message);
+        KMime::Message::Ptr message(new KMime::Message);
         message->setContent(node->parent()->bodyAsMessage()->encodedContent());
         message->parse();
         Akonadi::Item item;

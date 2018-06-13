@@ -122,7 +122,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content, const QByteArray
 void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArray &encrContent, Kleo::CryptoMessageFormat f, bool withAttachment)
 {
     // store it in a KMime::Message, that's what OTP needs
-    KMime::Message::Ptr resultMessage = KMime::Message::Ptr(new KMime::Message);
+    KMime::Message::Ptr resultMessage(new KMime::Message);
     resultMessage->setContent(content->encodedContent());
     resultMessage->parse();
 
@@ -175,7 +175,7 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content, con
 {
     Q_UNUSED(withAttachment);
     // store it in a KMime::Message, that's what OTP needs
-    KMime::Message::Ptr resultMessage = KMime::Message::Ptr(new KMime::Message);
+    KMime::Message::Ptr resultMessage(new KMime::Message);
     resultMessage->setContent(content->encodedContent());
     resultMessage->parse();
 

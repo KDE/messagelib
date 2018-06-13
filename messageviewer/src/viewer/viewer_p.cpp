@@ -334,7 +334,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     if (isEncapsulatedMessage) {
         // the viewer/urlhandlermanager expects that the message (mMessage) it is passed is the root when doing index calculation
         // in urls. Simply passing the result of bodyAsMessage() does not cut it as the resulting pointer is a child in its tree.
-        KMime::Message::Ptr m = KMime::Message::Ptr(new KMime::Message);
+        KMime::Message::Ptr m(new KMime::Message);
         m->setContent(node->parent()->bodyAsMessage()->encodedContent());
         m->parse();
         atmViewMsg(m);
@@ -2644,7 +2644,7 @@ void ViewerPrivate::slotHandleAttachment(int choice)
     {
         const bool isEncapsulatedMessage = mCurrentContent->parent() && mCurrentContent->parent()->bodyIsMessage();
         if (isEncapsulatedMessage) {
-            KMime::Message::Ptr message = KMime::Message::Ptr(new KMime::Message);
+            KMime::Message::Ptr message(new KMime::Message);
             message->setContent(mCurrentContent->parent()->bodyAsMessage()->encodedContent());
             message->parse();
             Akonadi::Item item;
