@@ -132,7 +132,9 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
 {
     if (m_attachmentModel) {
         foreach (const MessageCore::AttachmentPart::Ptr &attachment, m_attachmentModel->attachments()) {
-            m_attachmentModel->removeAttachment(attachment);
+            if (!m_attachmentModel->removeAttachment(attachment)) {
+                qCWarning(MESSAGECOMPOSER_LOG) << "Attachment not found.";
+            }
         }
     }
     m_msg = msg;
@@ -147,19 +149,25 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
         if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-To")) {
             const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
             for (const QString &addr : spl) {
-                m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To);
+                if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To)) {
+                    qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+                }
             }
         }
         if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-CC")) {
             const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
             for (const QString &addr : spl) {
-                m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc);
+                if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc)) {
+                    qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+                }
             }
         }
         if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
             const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
             for (const QString &addr : spl) {
-                m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc);
+                if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc)) {
+                    qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+                }
             }
         }
     }
