@@ -63,7 +63,7 @@ public:
     void setText(const QString &text);
     void setPlainText(const QString &text);
     void setFixedFont();
-    MessageViewer::MailSourceViewTextBrowser *textBrowser() const;
+    Q_REQUIRED_RESULT MessageViewer::MailSourceViewTextBrowser *textBrowser() const;
 private:
     void slotFind();
     KSyntaxHighlighting::Repository mRepo;

@@ -37,12 +37,12 @@ public:
     /**
      * Returns the url that will be loaded as attachment.
      */
-    QUrl url() const;
+    Q_REQUIRED_RESULT QUrl url() const;
 
     /**
      * Returns the maximum size the attachment is allowed to have.
      */
-    qint64 maximumAllowedSize() const;
+    Q_REQUIRED_RESULT qint64 maximumAllowedSize() const;
 
     /**
     * Sets the @p url of the folder that will be loaded as attachment.

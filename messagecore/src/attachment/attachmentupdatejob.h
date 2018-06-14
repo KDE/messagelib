@@ -33,8 +33,8 @@ public:
     ~AttachmentUpdateJob() override;
 
     void start() override;
-    AttachmentPart::Ptr originalPart() const;
-    AttachmentPart::Ptr updatedPart() const;
+    Q_REQUIRED_RESULT AttachmentPart::Ptr originalPart() const;
+    Q_REQUIRED_RESULT AttachmentPart::Ptr updatedPart() const;
 private:
     //@cond PRIVATE
     class Private;

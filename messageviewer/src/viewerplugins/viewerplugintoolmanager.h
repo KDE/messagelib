@@ -42,13 +42,12 @@ public:
     void setActionCollection(KActionCollection *ac);
 
     void setServiceTypeName(const QString &serviceName);
-    QString serviceTypeName() const;
+    Q_REQUIRED_RESULT QString serviceTypeName() const;
 
     void setPluginName(const QString &pluginName);
-    QString pluginName() const;
-    bool initializePluginList();
-    QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features)
-    const;
+    Q_REQUIRED_RESULT QString pluginName() const;
+    Q_REQUIRED_RESULT bool initializePluginList();
+    Q_REQUIRED_RESULT QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
 
     void updateActions(const Akonadi::Item &messageItem);
 

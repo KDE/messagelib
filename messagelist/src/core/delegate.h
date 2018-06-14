@@ -38,7 +38,7 @@ protected:
     /**
     * Returns the Item for the specified model index. Reimplemented from ThemeDelegate.
     */
-    Item *itemFromIndex(const QModelIndex &index) const override;
+    Q_REQUIRED_RESULT Item *itemFromIndex(const QModelIndex &index) const override;
 };
 } // namespace Core
 } // namespace MessageList

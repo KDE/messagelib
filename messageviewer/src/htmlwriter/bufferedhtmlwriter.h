@@ -39,9 +39,9 @@ public:
     void begin() override;
     void end() override;
     void reset() override;
-    QIODevice *device() const override;
+    Q_REQUIRED_RESULT QIODevice *device() const override;
 
-    QByteArray data() const;
+    Q_REQUIRED_RESULT QByteArray data() const;
     void clear();
 
     void extraHead(const QString &str) override;

@@ -35,7 +35,7 @@ public:
     explicit HeaderStyleMenuManager(KActionCollection *ac, QObject *parent = nullptr);
     ~HeaderStyleMenuManager();
 
-    KActionMenu *menu() const;
+    Q_REQUIRED_RESULT KActionMenu *menu() const;
 
     void setPluginName(const QString &pluginName);
     void readConfig();

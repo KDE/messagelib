@@ -59,26 +59,26 @@ public:
         CustomDate
     };
 
-    QString directionOf(const QString &str) const;
+    Q_REQUIRED_RESULT QString directionOf(const QString &str) const;
 
-    QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
+    Q_REQUIRED_RESULT QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
-    QString dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const;
+    Q_REQUIRED_RESULT QString dateString(KMime::Message *message, bool printing, HeaderStyleUtilDateFormat dateFormat) const;
 
-    QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
+    Q_REQUIRED_RESULT QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
-    QString subjectDirectionString(KMime::Message *message) const;
+    Q_REQUIRED_RESULT QString subjectDirectionString(KMime::Message *message) const;
 
-    QString spamStatus(KMime::Message *message) const;
+    Q_REQUIRED_RESULT QString spamStatus(KMime::Message *message) const;
 
-    QString dateStr(const QDateTime &dateTime) const;
+    Q_REQUIRED_RESULT QString dateStr(const QDateTime &dateTime) const;
 
-    QString dateShortStr(const QDateTime &dateTime) const;
+    Q_REQUIRED_RESULT QString dateShortStr(const QDateTime &dateTime) const;
 
-    QVector<KMime::Types::Mailbox> resentFromList(KMime::Message *message) const;
-    QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message) const;
+    Q_REQUIRED_RESULT QVector<KMime::Types::Mailbox> resentFromList(KMime::Message *message) const;
+    Q_REQUIRED_RESULT QVector<KMime::Types::Mailbox> resentToList(KMime::Message *message) const;
 
-    xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
+    Q_REQUIRED_RESULT xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 private:
     void updateXFaceSettings(QImage photo, xfaceSettings &settings) const;
     QString drawSpamMeter(SpamError spamError, double percent, double confidence, const QString &filterHeader, const QString &confidenceHeader) const;

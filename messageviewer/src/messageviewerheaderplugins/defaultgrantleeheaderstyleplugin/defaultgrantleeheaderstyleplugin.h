@@ -33,10 +33,10 @@ public:
     explicit DefaultGrantleeHeaderStylePlugin(QObject *parent = nullptr, const QList<QVariant> & = QList<QVariant>());
     ~DefaultGrantleeHeaderStylePlugin() override;
 
-    HeaderStyle *headerStyle() const override;
-    HeaderStrategy *headerStrategy() const override;
-    HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent = nullptr) override;
-    QString name() const override;
+    Q_REQUIRED_RESULT HeaderStyle *headerStyle() const override;
+    Q_REQUIRED_RESULT HeaderStrategy *headerStrategy() const override;
+    Q_REQUIRED_RESULT HeaderStyleInterface *createView(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac, QObject *parent = nullptr) override;
+    Q_REQUIRED_RESULT QString name() const override;
 private:
     void initializePlugin();
     GrantleeHeaderStyle *mHeaderStyle = nullptr;

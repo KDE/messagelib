@@ -48,9 +48,9 @@ public:
     explicit GrantleeHeaderFormatter();
     ~GrantleeHeaderFormatter();
 
-    QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
+    Q_REQUIRED_RESULT QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
 
-    QString toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message,
+    Q_REQUIRED_RESULT QString toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message,
                    bool isPrinting) const;
 private:
     QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style,

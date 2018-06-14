@@ -55,22 +55,22 @@ public:
     WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QWebEngineContextMenuData &data);
     ~WebHitTestResult();
 
-    QString alternateText() const;
-    QRect boundingRect() const;
-    QUrl imageUrl() const;
-    bool isContentEditable() const;
-    bool isContentSelected() const;
-    bool isNull() const;
-    QString linkTitle() const;
-    QUrl linkUrl() const;
-    QUrl mediaUrl() const;
-    bool mediaPaused() const;
-    bool mediaMuted() const;
-    QPoint pos() const;
-    QString tagName() const;
-    QUrl pageUrl() const;
+    Q_REQUIRED_RESULT QString alternateText() const;
+    Q_REQUIRED_RESULT QRect boundingRect() const;
+    Q_REQUIRED_RESULT QUrl imageUrl() const;
+    Q_REQUIRED_RESULT bool isContentEditable() const;
+    Q_REQUIRED_RESULT bool isContentSelected() const;
+    Q_REQUIRED_RESULT bool isNull() const;
+    Q_REQUIRED_RESULT QString linkTitle() const;
+    Q_REQUIRED_RESULT QUrl linkUrl() const;
+    Q_REQUIRED_RESULT QUrl mediaUrl() const;
+    Q_REQUIRED_RESULT bool mediaPaused() const;
+    Q_REQUIRED_RESULT bool mediaMuted() const;
+    Q_REQUIRED_RESULT QPoint pos() const;
+    Q_REQUIRED_RESULT QString tagName() const;
+    Q_REQUIRED_RESULT QUrl pageUrl() const;
 
-    WebHitTestResult &operator=(const WebHitTestResult &webHit);
+    Q_REQUIRED_RESULT WebHitTestResult &operator=(const WebHitTestResult &webHit);
 private:
     WebHitTestResultPrivate *d;
 };

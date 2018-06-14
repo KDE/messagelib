@@ -38,7 +38,7 @@ public:
     virtual void showConfigureDialog(QWidget *parent = nullptr);
 
     void setIsEnabled(bool enabled);
-    bool isEnabled() const;
+    Q_REQUIRED_RESULT bool isEnabled() const;
 
 private:
     bool mIsEnabled = false;

@@ -41,7 +41,7 @@ public:
     explicit InvitationSettings(QWidget *parent = nullptr);
     ~InvitationSettings();
     void save();
-    QString helpAnchor() const;
+    Q_REQUIRED_RESULT QString helpAnchor() const;
     void doLoadFromGlobalSettings();
     void doResetToDefaultsOther();
 

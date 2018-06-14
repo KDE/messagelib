@@ -57,28 +57,28 @@ public:
     virtual QString htmlHead(bool fixedFont = false) const;
 
     /** @return The collected CSS definitions as a string */
-    QString cssDefinitions(bool fixedFont = false) const;
+    Q_REQUIRED_RESULT QString cssDefinitions(bool fixedFont = false) const;
 
     /** @return a &lt;div&gt; start tag with embedded style
         information suitable for quoted text with quote level @p level */
-    QString quoteFontTag(int level) const;
+    Q_REQUIRED_RESULT QString quoteFontTag(int level) const;
     /** @return a &lt;div&gt; start tag with embedded style
         information suitable for non-quoted text */
-    QString nonQuotedFontTag() const;
+    Q_REQUIRED_RESULT QString nonQuotedFontTag() const;
 
-    QFont bodyFont(bool fixedFont = false, bool printing = false) const;
+    Q_REQUIRED_RESULT QFont bodyFont(bool fixedFont = false, bool printing = false) const;
 
     void setBodyFont(const QFont &font);
     void setPrintFont(const QFont &font);
 
     /** @return the quote color for the given level, where level ranges from 0 to 2 **/
-    QColor quoteColor(int level) const;
-    QString quoteColorName(int level) const;
+    Q_REQUIRED_RESULT QColor quoteColor(int level) const;
+    Q_REQUIRED_RESULT QString quoteColorName(int level) const;
 
-    QColor pgpWarnColor() const;
+    Q_REQUIRED_RESULT QColor pgpWarnColor() const;
 
-    QString addEndBlockQuote(int numberBlock) const;
-    QString addStartBlockQuote(int numberBlock) const;
+    Q_REQUIRED_RESULT QString addEndBlockQuote(int numberBlock) const;
+    Q_REQUIRED_RESULT QString addStartBlockQuote(int numberBlock) const;
 protected:
     /** Recalculate PGP frame and body colors (should be called after changing
         color settings) */

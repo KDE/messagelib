@@ -53,7 +53,7 @@ public:
     /**
      * Returns the compression method used
      */
-    KZip::Compression compression() const;
+    Q_REQUIRED_RESULT KZip::Compression compression() const;
 
 protected Q_SLOTS:
     void doStart() override;

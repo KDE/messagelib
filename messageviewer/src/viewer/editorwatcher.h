@@ -61,7 +61,7 @@ public:
 
     ~EditorWatcher();
     ErrorEditorWatcher start();
-    bool fileChanged() const;
+    Q_REQUIRED_RESULT bool fileChanged() const;
     QUrl url() const;
 Q_SIGNALS:
     void editDone(MessageViewer::EditorWatcher *watcher);

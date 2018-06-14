@@ -33,7 +33,7 @@ public:
     explicit GroupHeaderItem(const QString &label);
     ~GroupHeaderItem() override;
 
-    const QString &label() const;
+    Q_REQUIRED_RESULT const QString &label() const;
     void setLabel(const QString &label);
 
 private:

@@ -86,32 +86,32 @@ public:
     {
     }
 
-    QString agent() const
+    Q_REQUIRED_RESULT QString agent() const
     {
         return mAgent;
     }
 
-    float score() const
+    Q_REQUIRED_RESULT float score() const
     {
         return mScore;
     }
 
-    float confidence() const
+    Q_REQUIRED_RESULT float confidence() const
     {
         return mConfidence;
     }
 
-    SpamError error() const
+    Q_REQUIRED_RESULT SpamError error() const
     {
         return mError;
     }
 
-    QString spamHeader() const
+    Q_REQUIRED_RESULT QString spamHeader() const
     {
         return mHeader;
     }
 
-    QString confidenceHeader() const
+    Q_REQUIRED_RESULT QString confidenceHeader() const
     {
         return mConfidenceHeader;
     }

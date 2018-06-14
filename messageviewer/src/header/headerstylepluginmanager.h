@@ -35,13 +35,13 @@ public:
     explicit HeaderStylePluginManager(QObject *parent = nullptr);
     ~HeaderStylePluginManager();
 
-    QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;
-    QStringList pluginListName() const;
+    Q_REQUIRED_RESULT QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QStringList pluginListName() const;
 
-    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
-    QString configPrefixSettingKey() const;
-    QString configGroupName() const;
-    MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 private:
     HeaderStylePluginManagerPrivate *const d;
 };

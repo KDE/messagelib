@@ -32,7 +32,7 @@ public:
     ~WebEngineNavigationRequestInterceptor() override;
 
 protected:
-    bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) override;
+    Q_REQUIRED_RESULT bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) override;
 
 private:
     QWebEnginePage *mTargetPage = nullptr;

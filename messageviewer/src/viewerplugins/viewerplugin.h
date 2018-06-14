@@ -34,13 +34,13 @@ public:
     explicit ViewerPlugin(QObject *parent = nullptr);
     ~ViewerPlugin();
 
-    virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent, KActionCollection *ac) = 0;
-    virtual QString viewerPluginName() const = 0;
+    Q_REQUIRED_RESULT virtual MessageViewer::ViewerPluginInterface *createView(QWidget *parent, KActionCollection *ac) = 0;
+    Q_REQUIRED_RESULT virtual QString viewerPluginName() const = 0;
     virtual void showConfigureDialog(QWidget *parent = nullptr);
-    virtual bool hasConfigureDialog() const;
+    Q_REQUIRED_RESULT virtual bool hasConfigureDialog() const;
 
     void setIsEnabled(bool enabled);
-    bool isEnabled() const;
+    Q_REQUIRED_RESULT bool isEnabled() const;
 
 Q_SIGNALS:
     void configChanged();

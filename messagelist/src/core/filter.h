@@ -49,12 +49,12 @@ public:
     * Returns true if the specified parameters match this filter and false otherwise.
     * The msg pointer must not be null.
     */
-    bool match(const MessageItem *item) const;
+    Q_REQUIRED_RESULT bool match(const MessageItem *item) const;
 
     /**
     * Returns the currently set status mask
     */
-    QList<Akonadi::MessageStatus> status() const
+    Q_REQUIRED_RESULT QList<Akonadi::MessageStatus> status() const
     {
         return mStatus;
     }
@@ -110,9 +110,9 @@ public:
     * Returns true if this filter is empty (0 status mask, empty search string and empty tag)
     * and it's useless to call match() that will always return true.
     */
-    bool isEmpty() const;
+    Q_REQUIRED_RESULT bool isEmpty() const;
 
-    QuickSearchLine::SearchOptions currentOptions() const;
+    Q_REQUIRED_RESULT QuickSearchLine::SearchOptions currentOptions() const;
 Q_SIGNALS:
     void finished();
 

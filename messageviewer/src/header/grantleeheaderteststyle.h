@@ -35,7 +35,7 @@ public:
 public:
     const char *name() const override;
 
-    QString format(KMime::Message *message) const override;
+    Q_REQUIRED_RESULT QString format(KMime::Message *message) const override;
 
     void setAbsolutePath(const QString &);
     void setMainFilename(const QString &);

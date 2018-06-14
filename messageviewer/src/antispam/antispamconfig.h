@@ -68,37 +68,37 @@ public:
     {
     }
 
-    QString name() const
+    Q_REQUIRED_RESULT QString name() const
     {
         return mName;
     }
 
-    SpamAgentTypes scoreType() const
+    Q_REQUIRED_RESULT SpamAgentTypes scoreType() const
     {
         return mType;
     }
 
-    QByteArray header() const
+    Q_REQUIRED_RESULT QByteArray header() const
     {
         return mField;
     }
 
-    QByteArray confidenceHeader() const
+    Q_REQUIRED_RESULT QByteArray confidenceHeader() const
     {
         return mConfidenceField;
     }
 
-    QRegExp scorePattern() const
+    Q_REQUIRED_RESULT QRegExp scorePattern() const
     {
         return mScore;
     }
 
-    QRegExp thresholdPattern() const
+    Q_REQUIRED_RESULT QRegExp thresholdPattern() const
     {
         return mThreshold;
     }
 
-    QRegExp confidencePattern() const
+    Q_REQUIRED_RESULT QRegExp confidencePattern() const
     {
         return mConfidence;
     }

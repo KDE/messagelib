@@ -74,7 +74,7 @@ public:
      */
     MailingList &operator=(const MailingList &other);
 
-    bool operator==(const MailingList &other) const;
+    Q_REQUIRED_RESULT bool operator==(const MailingList &other) const;
     /**
      * Destroys the mailing list.
      */
@@ -83,7 +83,7 @@ public:
     /**
      * Returns the features the mailing list supports.
      */
-    Features features() const;
+    Q_REQUIRED_RESULT Features features() const;
 
     /**
      * Sets the @p handler for the mailing list.
@@ -93,7 +93,7 @@ public:
     /**
      * Returns the handler for the mailing list.
      */
-    Handler handler() const;
+    Q_REQUIRED_RESULT Handler handler() const;
 
     /**
      * Sets the list of List-Post @p urls.
@@ -103,7 +103,7 @@ public:
     /**
      * Returns the list of List-Post urls.
      */
-    QList<QUrl> postUrls() const;
+    Q_REQUIRED_RESULT QList<QUrl> postUrls() const;
 
     /**
      * Sets the list of List-Subscribe @p urls.
@@ -113,7 +113,7 @@ public:
     /**
      * Returns the list of List-Subscribe urls.
      */
-    QList<QUrl> subscribeUrls() const;
+    Q_REQUIRED_RESULT QList<QUrl> subscribeUrls() const;
 
     /**
      * Sets the list of List-Unsubscribe @p urls.
@@ -123,7 +123,7 @@ public:
     /**
      * Returns the list of List-Unsubscribe urls.
      */
-    QList<QUrl> unsubscribeUrls() const;
+    Q_REQUIRED_RESULT QList<QUrl> unsubscribeUrls() const;
 
     /**
      * Sets the list of List-Help @p urls.
@@ -133,7 +133,7 @@ public:
     /**
      * Returns the list of List-Help urls.
      */
-    QList<QUrl> helpUrls() const;
+    Q_REQUIRED_RESULT QList<QUrl> helpUrls() const;
 
     /**
      * Sets the list of List-Archive @p urls.
@@ -143,7 +143,7 @@ public:
     /**
      * Returns the list of List-Archive urls.
      */
-    QList<QUrl> archiveUrls() const;
+    Q_REQUIRED_RESULT QList<QUrl> archiveUrls() const;
 
     /**
      * Sets the list of List-Owner @p urls.
@@ -153,7 +153,7 @@ public:
     /**
      * Returns the list of List-Owner urls.
      */
-    QList<QUrl> ownerUrls() const;
+    Q_REQUIRED_RESULT QList<QUrl> ownerUrls() const;
 
     /**
      * Sets the Archived-At @p url.
@@ -163,7 +163,7 @@ public:
     /**
      * Returns the Archived-At @p url.
      */
-    QList<QUrl> archivedAtUrls() const;
+    Q_REQUIRED_RESULT QList<QUrl> archivedAtUrls() const;
 
     /**
      * Sets the @p id of the mailing list.
@@ -173,7 +173,7 @@ public:
     /**
      * Returns the @p id of the mailing list.
      */
-    QString id() const;
+    Q_REQUIRED_RESULT QString id() const;
 
     /**
      * Saves the configuration for the mailing list to the config @p group.

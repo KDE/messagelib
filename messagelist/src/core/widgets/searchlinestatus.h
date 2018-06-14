@@ -32,14 +32,14 @@ class MESSAGELIST_TESTS_EXPORT SearchLineStatus : public QLineEdit
     Q_OBJECT
 public:
     explicit SearchLineStatus(QWidget *parent = nullptr);
-    ~SearchLineStatus();
+    ~SearchLineStatus() override;
 
     void setLocked(bool b);
-    bool locked() const;
+    Q_REQUIRED_RESULT bool locked() const;
 
     void setContainsOutboundMessages(bool containsOutboundMessages);
-    bool containsOutboundMessages() const;
-    QuickSearchLine::SearchOptions searchOptions() const;
+    Q_REQUIRED_RESULT bool containsOutboundMessages() const;
+    Q_REQUIRED_RESULT QuickSearchLine::SearchOptions searchOptions() const;
     void addCompletionItem(const QString &str);
     void slotClearHistory();
     void clearFilterButtonClicked();

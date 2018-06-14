@@ -49,26 +49,26 @@ namespace StringUtil {
 /**
    * Parses a mailto: url and extracts the information in the QMap (field name as key).
    */
-MESSAGECORE_EXPORT QMap<QString, QString> parseMailtoUrl(const QUrl &url);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QMap<QString, QString> parseMailtoUrl(const QUrl &url);
 
 /**
    * Strips the signature blocks from a message text. "-- " is considered as a signature block separator.
    *
    * @param message The message to remove the signature block from.
    */
-MESSAGECORE_EXPORT QString stripSignature(const QString &message);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString stripSignature(const QString &message);
 
 /**
    * Splits the given address list @p text into separate addresses.
    */
-MESSAGECORE_EXPORT KMime::Types::AddressList splitAddressField(const QByteArray &text);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT KMime::Types::AddressList splitAddressField(const QByteArray &text);
 
 /**
    * Generates the Message-Id. It uses either the Message-Id @p suffix
    * defined by the user or the given email address as suffix. The @p address
    * must be given as addr-spec as defined in RFC 2822.
    */
-MESSAGECORE_EXPORT QString generateMessageId(const QString &address, const QString &suffix);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString generateMessageId(const QString &address, const QString &suffix);
 
 /**
    * Quotes the following characters which have a special meaning in HTML:
@@ -76,7 +76,7 @@ MESSAGECORE_EXPORT QString generateMessageId(const QString &address, const QStri
    * @p removeLineBreaks is false. If @p removeLineBreaks is true, then
    * '\\n' is removed. Last but not least '\\r' is removed.
    */
-MESSAGECORE_EXPORT QString quoteHtmlChars(const QString &text, bool removeLineBreaks = false);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString quoteHtmlChars(const QString &text, bool removeLineBreaks = false);
 
 /**
    * Removes all private header fields (e.g. *Status: and X-KMail-*) from the given @p message.
@@ -87,12 +87,12 @@ MESSAGECORE_EXPORT void removePrivateHeaderFields(const KMime::Message::Ptr &mes
 /**
    * Returns the @p message contents with the headers that should not be sent stripped off.
    */
-MESSAGECORE_EXPORT QByteArray asSendableString(const KMime::Message::Ptr &message);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QByteArray asSendableString(const KMime::Message::Ptr &message);
 
 /**
    * Return the message header with the headers that should not be sent stripped off.
    */
-MESSAGECORE_EXPORT QByteArray headerAsSendableString(const KMime::Message::Ptr &message);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QByteArray headerAsSendableString(const KMime::Message::Ptr &message);
 
 /**
    * Used to determine if the visible part of the anchor contains
@@ -130,34 +130,34 @@ enum AddressMode {
    * @p The number of addresses to show before collapsing the rest, if expandable is set to
    * ExpandableAddresses.
    */
-MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display = DisplayNameOnly,
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display = DisplayNameOnly,
                                              const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
                                              const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Same as above method, only for AddressList headers.
    */
-MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display = DisplayNameOnly,
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display = DisplayNameOnly,
                                              const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
                                              const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Same as the above, only for Mailbox::List types.
    */
-MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QVector<KMime::Types::Mailbox> &mailboxList, Display display = DisplayNameOnly,
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QVector<KMime::Types::Mailbox> &mailboxList, Display display = DisplayNameOnly,
                                              const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
                                              const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Returns true if the given address is contained in the given address list.
    */
-MESSAGECORE_EXPORT bool addressIsInAddressList(const QString &address, const QStringList &addresses);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT bool addressIsInAddressList(const QString &address, const QStringList &addresses);
 
 /**
    * Uses the hostname as domain part and tries to determine the real name
    * from the entries in the password file.
    */
-MESSAGECORE_EXPORT QString guessEmailAddressFromLoginName(const QString &userName);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString guessEmailAddressFromLoginName(const QString &userName);
 
 /**
    *  Relayouts the given string so that the invidual lines don't exceed the given
@@ -174,27 +174,27 @@ MESSAGECORE_EXPORT QString guessEmailAddressFromLoginName(const QString &userNam
    *  @param maxLineLength reformat text to be this amount of columns at maximum. Note that this
    *                       also includes the trailing \n!
    */
-MESSAGECORE_EXPORT QString smartQuote(const QString &message, int maxLineLength);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString smartQuote(const QString &message, int maxLineLength);
 
 /**
   * Convert quote wildcards into the final quote prefix.
   * @param wildString the string to be converted
   * @param fromDisplayString displayable string of the from email address
   */
-MESSAGECORE_EXPORT QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayString);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayString);
 
 /**
    * Cleans a filename by replacing characters not allowed or wanted on the filesystem
    *  e.g. ':', '/', '\' with '_'
    */
-MESSAGECORE_EXPORT QString cleanFileName(const QString &fileName);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString cleanFileName(const QString &fileName);
 
 /**
    * Removes the forward and reply markes (e.g. Re: or Fwd:) from a @p subject string.
    * Additional markers to act on can be specified in the MessageCore::GlobalSettings
    * object.
    */
-MESSAGECORE_EXPORT QString stripOffPrefixes(const QString &subject);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString stripOffPrefixes(const QString &subject);
 
 MESSAGECORE_EXPORT void setEncodingFile(QUrl &url, const QString &encoding);
 }

@@ -45,15 +45,15 @@ public:
     ~ContactDisplayMessageMemento() override;
     void processAddress(const KContacts::Addressee &addressee);
     bool allowToRemoteContent() const;
-    KContacts::Picture photo() const;
+    Q_REQUIRED_RESULT KContacts::Picture photo() const;
 
-    bool finished() const;
+    Q_REQUIRED_RESULT bool finished() const;
 
     void detach() override;
 
-    QPixmap gravatarPixmap() const;
+    Q_REQUIRED_RESULT QPixmap gravatarPixmap() const;
 
-    QImage imageFromUrl() const;
+    Q_REQUIRED_RESULT QImage imageFromUrl() const;
 
 Q_SIGNALS:
     // TODO: Factor our update and detach into base class

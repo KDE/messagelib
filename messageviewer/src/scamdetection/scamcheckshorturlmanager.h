@@ -33,7 +33,7 @@ public:
     explicit ScamCheckShortUrlManager(QObject *parent = nullptr);
     ~ScamCheckShortUrlManager();
     static ScamCheckShortUrlManager *self();
-    ScamCheckShortUrl *scamCheckShortUrl() const;
+    Q_REQUIRED_RESULT ScamCheckShortUrl *scamCheckShortUrl() const;
 private:
     ScamCheckShortUrlManagerPrivate *const d;
 };

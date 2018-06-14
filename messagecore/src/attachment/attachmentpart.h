@@ -69,7 +69,7 @@ public:
     /**
      * Returns the name of the attachment.
      */
-    QString name() const;
+    Q_REQUIRED_RESULT QString name() const;
 
     /**
      * Sets the file @p name of the attachment.
@@ -82,7 +82,7 @@ public:
     /**
      * Returns the file name of the attachment.
      */
-    QString fileName() const;
+    Q_REQUIRED_RESULT QString fileName() const;
 
     /**
      * Sets the @p description of the attachment.
@@ -92,7 +92,7 @@ public:
     /**
      * Returns the description of the attachment.
      */
-    QString description() const;
+    Q_REQUIRED_RESULT QString description() const;
 
     /**
      * Sets whether the attachment will be displayed inline the message.
@@ -102,7 +102,7 @@ public:
     /**
      * Returns whether the attachment will be displayed inline the message.
      */
-    bool isInline() const;
+    Q_REQUIRED_RESULT bool isInline() const;
 
     /**
      * Sets whether encoding of the attachment will be determined automatically.
@@ -112,7 +112,7 @@ public:
     /**
      * Returns whether encoding of the attachment will be determined automatically.
      */
-    bool isAutoEncoding() const;
+    Q_REQUIRED_RESULT bool isAutoEncoding() const;
 
     /**
      * Sets the @p encoding that will be used for the attachment.
@@ -124,7 +124,7 @@ public:
     /**
      * Returns the encoding that will be used for the attachment.
      */
-    KMime::Headers::contentEncoding encoding() const;
+    Q_REQUIRED_RESULT KMime::Headers::contentEncoding encoding() const;
 
     /**
      * Sets the @p charset that will be used for the attachment.
@@ -134,7 +134,7 @@ public:
     /**
      * Returns the charset that will be used for the attachment.
      */
-    QByteArray charset() const;
+    Q_REQUIRED_RESULT QByteArray charset() const;
 
     /**
      * Sets the @p mimeType of the attachment.
@@ -144,7 +144,7 @@ public:
     /**
      * Returns the mime type of the attachment.
      */
-    QByteArray mimeType() const;
+    Q_REQUIRED_RESULT QByteArray mimeType() const;
 
     /**
      * Sets whether the attachment is @p compressed.
@@ -154,7 +154,7 @@ public:
     /**
      * Returns whether the attachment is compressed.
      */
-    bool isCompressed() const;
+    Q_REQUIRED_RESULT bool isCompressed() const;
 
     /**
      * Sets whether the attachment is @p encrypted.
@@ -164,7 +164,7 @@ public:
     /**
      * Returns whether the attachment is encrypted.
      */
-    bool isEncrypted() const;
+    Q_REQUIRED_RESULT bool isEncrypted() const;
 
     /**
      * Sets whether the attachment is @p signed.
@@ -174,7 +174,7 @@ public:
     /**
      * Returns whether the attachment is signed.
      */
-    bool isSigned() const;
+    Q_REQUIRED_RESULT bool isSigned() const;
 
     /**
      * Sets the payload @p data of the attachment.
@@ -184,21 +184,21 @@ public:
     /**
      * Returns the payload data of the attachment.
      */
-    QByteArray data() const;
+    Q_REQUIRED_RESULT QByteArray data() const;
 
     /**
      * Returns the size of the attachment.
      */
-    qint64 size() const;
+    Q_REQUIRED_RESULT qint64 size() const;
 
     /**
      * Returns whether the specified attachment part is an encapsulated message
      * (message/rfc822) or a collection of encapsulated messages (multipart/digest)
      */
-    bool isMessageOrMessageCollection() const;
+    Q_REQUIRED_RESULT bool isMessageOrMessageCollection() const;
 
     void setUrl(const QUrl &url);
-    QUrl url() const;
+    Q_REQUIRED_RESULT QUrl url() const;
 
 private:
     //@cond PRIVATE

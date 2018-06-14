@@ -142,7 +142,7 @@ public:
     /**
     * Returns the currently set Grouping option.
     */
-    Grouping grouping() const;
+    Q_REQUIRED_RESULT Grouping grouping() const;
 
     /**
     * Sets the Grouping option.
@@ -162,7 +162,7 @@ public:
     /**
     * Returns the current GroupExpandPolicy.
     */
-    GroupExpandPolicy groupExpandPolicy() const
+    Q_REQUIRED_RESULT GroupExpandPolicy groupExpandPolicy() const
     {
         return mGroupExpandPolicy;
     }
@@ -187,7 +187,7 @@ public:
     /**
     * Returns the current threading method.
     */
-    Threading threading() const
+    Q_REQUIRED_RESULT Threading threading() const
     {
         return mThreading;
     }
@@ -210,7 +210,7 @@ public:
     /**
     * Returns the current thread leader determination method.
     */
-    ThreadLeader threadLeader() const
+    Q_REQUIRED_RESULT ThreadLeader threadLeader() const
     {
         return mThreadLeader;
     }
@@ -263,7 +263,7 @@ public:
     /**
     * Returns the current fill view strategy.
     */
-    FillViewStrategy fillViewStrategy() const
+    Q_REQUIRED_RESULT FillViewStrategy fillViewStrategy() const
     {
         return mFillViewStrategy;
     }

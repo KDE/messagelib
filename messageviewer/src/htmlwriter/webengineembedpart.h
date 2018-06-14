@@ -29,12 +29,12 @@ public:
     ~WebEngineEmbedPart();
 
     void clear();
-    bool isEmpty() const;
+    Q_REQUIRED_RESULT bool isEmpty() const;
 
-    QMap<QString, QString> embeddedPartMap() const;
+    Q_REQUIRED_RESULT QMap<QString, QString> embeddedPartMap() const;
 
     void addEmbedPart(const QByteArray &contentId, const QString &contentURL);
-    QString contentUrl(const QString &contentId) const;
+    Q_REQUIRED_RESULT QString contentUrl(const QString &contentId) const;
 
     static WebEngineEmbedPart *self();
 private:

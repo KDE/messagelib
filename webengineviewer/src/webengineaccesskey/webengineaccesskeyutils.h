@@ -23,7 +23,7 @@
 
 namespace WebEngineViewer {
 namespace WebEngineAccessKeyUtils {
-QString script();
+Q_REQUIRED_RESULT QString script();
 }
 }
 

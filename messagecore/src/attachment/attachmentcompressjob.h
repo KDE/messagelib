@@ -70,7 +70,7 @@ public:
      *
      * @note does not delete it unless it failed...
      */
-    AttachmentPart::Ptr compressedPart() const;
+    Q_REQUIRED_RESULT AttachmentPart::Ptr compressedPart() const;
 
     /**
      * Returns whether the compressed part is larger than the original part.

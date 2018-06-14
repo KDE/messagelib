@@ -73,15 +73,15 @@ public:
     ~HtmlStatusBar() override;
 
     /** @return current mode. */
-    MimeTreeParser::Util::HtmlMode mode() const;
-    bool isHtml() const;
-    bool isNormal() const;
+    Q_REQUIRED_RESULT MimeTreeParser::Util::HtmlMode mode() const;
+    Q_REQUIRED_RESULT bool isHtml() const;
+    Q_REQUIRED_RESULT bool isNormal() const;
 
     // Update the status bar, for example when the color scheme changed.
     void update();
 
     void setAvailableModes(const QList<MimeTreeParser::Util::HtmlMode> &availableModes);
-    const QList<MimeTreeParser::Util::HtmlMode> &availableModes();
+    Q_REQUIRED_RESULT const QList<MimeTreeParser::Util::HtmlMode> &availableModes();
 
 public Q_SLOTS:
     void setHtmlMode();

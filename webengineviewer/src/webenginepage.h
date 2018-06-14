@@ -38,7 +38,7 @@ public:
     WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
 
     void saveHtml(QWebEngineDownloadItem *download);
-    bool execPrintPreviewPage(QPrinter *printer, int timeout);
+    Q_REQUIRED_RESULT bool execPrintPreviewPage(QPrinter *printer, int timeout);
 
 Q_SIGNALS:
     void urlClicked(const QUrl &url);

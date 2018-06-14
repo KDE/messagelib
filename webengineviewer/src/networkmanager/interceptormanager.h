@@ -36,7 +36,7 @@ public:
     explicit InterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = nullptr);
     ~InterceptorManager();
     void addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
-    QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 private:
     NetworkAccessManagerWebEnginePrivate *const d;
 };

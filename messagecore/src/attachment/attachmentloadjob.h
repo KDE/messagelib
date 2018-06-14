@@ -57,7 +57,7 @@ public:
     /**
      * Returns the loaded attachment.
      */
-    AttachmentPart::Ptr attachmentPart() const;
+    Q_REQUIRED_RESULT AttachmentPart::Ptr attachmentPart() const;
 
 protected:
     /**

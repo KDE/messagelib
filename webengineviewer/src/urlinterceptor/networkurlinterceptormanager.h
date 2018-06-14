@@ -38,8 +38,8 @@ public:
     explicit NetworkUrlInterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = nullptr);
     ~NetworkUrlInterceptorManager();
 
-    QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
-    QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    Q_REQUIRED_RESULT QVector<NetworkPluginUrlInterceptorInterface *> interfaceList() const;
+    Q_REQUIRED_RESULT QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 private:
     NetworkUrlInterceptorManagerPrivate *const d;
 };

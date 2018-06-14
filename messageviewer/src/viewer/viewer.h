@@ -115,12 +115,12 @@ public:
     /**
     * Returns the current message displayed in the viewer.
     */
-    KMime::Message::Ptr message() const;
+    Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
 
     /**
     * Returns the current message item displayed in the viewer.
     */
-    Akonadi::Item messageItem() const;
+    Q_REQUIRED_RESULT Akonadi::Item messageItem() const;
 
     enum DisplayFormatMessage {
         UseGlobalSetting = 0,
@@ -166,7 +166,7 @@ public:
     /**
     * The path to the message in terms of Akonadi collection hierarchy.
     */
-    QString messagePath() const;
+    Q_REQUIRED_RESULT QString messagePath() const;
 
     /**
     * Set the path to the message in terms of Akonadi collection hierarchy.
@@ -201,7 +201,7 @@ public:
     void printPreview();
 
     /** Get the html override setting */
-    Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
+    Q_REQUIRED_RESULT Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
 
     /** Override default html mail setting */
     void setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format);
@@ -224,10 +224,10 @@ public:
     void setHtmlLoadExtOverride(bool loadExtOverride);
 
     /** Is html mail to be supported? Takes into account override */
-    bool htmlMail() const;
+    Q_REQUIRED_RESULT bool htmlMail() const;
 
     /** Is loading ext. references to be supported? Takes into account override */
-    bool htmlLoadExternal() const;
+    Q_REQUIRED_RESULT bool htmlLoadExternal() const;
 
     /**
     * Display a generic HTML splash page instead of a message.
@@ -242,10 +242,10 @@ public:
     /** Returns true if the message view is scrolled to the bottom. */
     void atBottom();
 
-    bool isFixedFont() const;
+    Q_REQUIRED_RESULT bool isFixedFont() const;
     void setUseFixedFont(bool useFixedFont);
 
-    QWidget *mainWindow();
+    Q_REQUIRED_RESULT QWidget *mainWindow();
 
     /** Enforce message decryption. */
     void setDecryptMessageOverwrite(bool overwrite = true);
@@ -254,12 +254,12 @@ public:
     * Initiates a delete, by sending a signal to delete the message item */
     void deleteMessage();
 
-    const AttachmentStrategy *attachmentStrategy() const;
+    Q_REQUIRED_RESULT const AttachmentStrategy *attachmentStrategy() const;
     void setAttachmentStrategy(const AttachmentStrategy *strategy);
 
-    QString overrideEncoding() const;
+    Q_REQUIRED_RESULT QString overrideEncoding() const;
     void setOverrideEncoding(const QString &encoding);
-    CSSHelper *cssHelper() const;
+    Q_REQUIRED_RESULT CSSHelper *cssHelper() const;
     void setPrinting(bool enable);
 
     void selectAll();
@@ -267,30 +267,30 @@ public:
 
     void setZoomFactor(qreal zoomFactor);
 
-    KToggleAction *toggleFixFontAction() const;
+    Q_REQUIRED_RESULT KToggleAction *toggleFixFontAction() const;
 
-    KToggleAction *toggleMimePartTreeAction() const;
+    Q_REQUIRED_RESULT KToggleAction *toggleMimePartTreeAction() const;
 
-    QAction *selectAllAction() const;
-    QAction *copyURLAction() const;
-    QAction *copyAction() const;
-    QAction *urlOpenAction() const;
-    QAction *speakTextAction() const;
-    QAction *copyImageLocation() const;
-    QAction *viewSourceAction() const;
-    QAction *findInMessageAction() const;
-    QAction *saveAsAction() const;
-    QAction *saveMessageDisplayFormatAction() const;
-    QAction *resetMessageDisplayFormatAction() const;
-    KToggleAction *disableEmoticonAction() const;
-    KActionMenu *shareServiceUrlMenu() const;
-    HeaderStylePlugin *headerStylePlugin() const;
+    Q_REQUIRED_RESULT QAction *selectAllAction() const;
+    Q_REQUIRED_RESULT QAction *copyURLAction() const;
+    Q_REQUIRED_RESULT QAction *copyAction() const;
+    Q_REQUIRED_RESULT QAction *urlOpenAction() const;
+    Q_REQUIRED_RESULT QAction *speakTextAction() const;
+    Q_REQUIRED_RESULT QAction *copyImageLocation() const;
+    Q_REQUIRED_RESULT QAction *viewSourceAction() const;
+    Q_REQUIRED_RESULT QAction *findInMessageAction() const;
+    Q_REQUIRED_RESULT QAction *saveAsAction() const;
+    Q_REQUIRED_RESULT QAction *saveMessageDisplayFormatAction() const;
+    Q_REQUIRED_RESULT QAction *resetMessageDisplayFormatAction() const;
+    Q_REQUIRED_RESULT KToggleAction *disableEmoticonAction() const;
+    Q_REQUIRED_RESULT KActionMenu *shareServiceUrlMenu() const;
+    Q_REQUIRED_RESULT HeaderStylePlugin *headerStylePlugin() const;
     void setPluginName(const QString &pluginName);
 
     void writeConfig(bool withSync = true);
 
-    QUrl urlClicked() const;
-    QUrl imageUrlClicked() const;
+    Q_REQUIRED_RESULT QUrl urlClicked() const;
+    Q_REQUIRED_RESULT QUrl imageUrlClicked() const;
 
     void readConfig();
 

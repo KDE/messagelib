@@ -33,7 +33,7 @@ public:
 
     void start();
 
-    QWebEngineView *engineView() const;
+    Q_REQUIRED_RESULT QWebEngineView *engineView() const;
     void setEngineView(QWebEngineView *engineView);
 
 Q_SIGNALS:

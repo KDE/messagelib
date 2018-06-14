@@ -98,7 +98,7 @@ public:
     virtual bool hasAnnotation() const;
 
     /// Returns the annotation of the message, given that hasAnnotation() is true
-    QString annotation() const;
+    Q_REQUIRED_RESULT QString annotation() const;
 
     /// Shows a dialog to edit or delete the annotation
     void editAnnotation(QWidget *parent);
@@ -109,7 +109,7 @@ public:
     */
     const Tag *findTag(const QString &szTagId) const;
 
-    QString tagListDescription() const;
+    Q_REQUIRED_RESULT QString tagListDescription() const;
 
     /// Deletes all cached tags. The next time someone asks this item for the tags, they are
     /// fetched again
@@ -122,53 +122,53 @@ public:
 
     const QColor &backgroundColor() const;
 
-    bool isBold() const
+    Q_REQUIRED_RESULT bool isBold() const
     {
         return font().bold();
     }
 
-    bool isItalic() const
+    Q_REQUIRED_RESULT bool isItalic() const
     {
         return font().italic();
     }
 
-    SignatureState signatureState() const;
+    Q_REQUIRED_RESULT SignatureState signatureState() const;
 
     void setSignatureState(SignatureState state);
 
-    EncryptionState encryptionState() const;
+    Q_REQUIRED_RESULT EncryptionState encryptionState() const;
 
     void setEncryptionState(EncryptionState state);
 
-    QByteArray messageIdMD5() const;
+    Q_REQUIRED_RESULT QByteArray messageIdMD5() const;
 
     void setMessageIdMD5(const QByteArray &md5);
 
-    QByteArray inReplyToIdMD5() const;
+    Q_REQUIRED_RESULT QByteArray inReplyToIdMD5() const;
 
     void setInReplyToIdMD5(const QByteArray &md5);
 
-    QByteArray referencesIdMD5() const;
+    Q_REQUIRED_RESULT QByteArray referencesIdMD5() const;
 
     void setReferencesIdMD5(const QByteArray &md5);
 
     void setSubjectIsPrefixed(bool subjectIsPrefixed);
 
-    bool subjectIsPrefixed() const;
+    Q_REQUIRED_RESULT bool subjectIsPrefixed() const;
 
-    QByteArray strippedSubjectMD5() const;
+    Q_REQUIRED_RESULT QByteArray strippedSubjectMD5() const;
 
     void setStrippedSubjectMD5(const QByteArray &md5);
 
-    bool aboutToBeRemoved() const;
+    Q_REQUIRED_RESULT bool aboutToBeRemoved() const;
 
     void setAboutToBeRemoved(bool aboutToBeRemoved);
 
-    ThreadingStatus threadingStatus() const;
+    Q_REQUIRED_RESULT ThreadingStatus threadingStatus() const;
 
     void setThreadingStatus(ThreadingStatus threadingStatus);
 
-    unsigned long uniqueId() const;
+    Q_REQUIRED_RESULT unsigned long uniqueId() const;
 
     Akonadi::Item akonadiItem() const;
     void setAkonadiItem(const Akonadi::Item &item);

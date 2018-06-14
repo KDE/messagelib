@@ -60,10 +60,10 @@ public:
         Display, Hide
     };
 
-    virtual QStringList headersToDisplay() const;
-    virtual QStringList headersToHide() const;
-    virtual DefaultPolicy defaultPolicy() const = 0;
-    virtual bool showHeader(const QString &header) const;
+    Q_REQUIRED_RESULT virtual QStringList headersToDisplay() const;
+    Q_REQUIRED_RESULT virtual QStringList headersToHide() const;
+    Q_REQUIRED_RESULT virtual DefaultPolicy defaultPolicy() const = 0;
+    Q_REQUIRED_RESULT virtual bool showHeader(const QString &header) const;
     static QStringList stringList(const char *const headers[], int numHeaders);
 };
 }

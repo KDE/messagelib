@@ -2781,7 +2781,9 @@ void ViewerPrivate::slotSaveMessage()
         return;
     }
 
-    Util::saveMessageInMbox(Akonadi::Item::List() << mMessageItem, mMainWindow);
+    if (!Util::saveMessageInMbox(Akonadi::Item::List() << mMessageItem, mMainWindow)) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to save as mbox";
+    }
 }
 
 void ViewerPrivate::saveRelativePosition()

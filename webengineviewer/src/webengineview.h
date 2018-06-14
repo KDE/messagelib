@@ -37,15 +37,15 @@ public:
 
     void clearRelativePosition();
     void saveRelativePosition();
-    qreal relativePosition() const;
+    Q_REQUIRED_RESULT qreal relativePosition() const;
 
     void addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
     void initializeJQueryScript();
 
-    WebEngineManageScript *webEngineManagerScript() const;
+    Q_REQUIRED_RESULT WebEngineManageScript *webEngineManagerScript() const;
     void setLinkHovered(const QUrl &url);
 
-    WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;
+    Q_REQUIRED_RESULT WebEngineViewer::LocalDataBaseManager *phishingDatabase() const;
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event) override;

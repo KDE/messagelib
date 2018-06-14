@@ -30,12 +30,12 @@ public:
     ~DefaultGrantleeHeaderStrategy() override;
 
 public:
-    const char *name() const override
+    Q_REQUIRED_RESULT const char *name() const override
     {
         return "defaultgrantlee";
     }
 
-    DefaultPolicy defaultPolicy() const override
+    Q_REQUIRED_RESULT DefaultPolicy defaultPolicy() const override
     {
         return Hide;
     }

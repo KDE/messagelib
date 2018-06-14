@@ -50,9 +50,9 @@ namespace Util {
      *                              Example: "test.zip"
      * @return the full file name of the icon file
      */
-QString MESSAGEVIEWER_EXPORT iconPathForMimetype(const QString &mimeType, int iconSize, const QString &fallbackFileName1 = QString(), const QString &fallbackFileName2 = QString());
+Q_REQUIRED_RESULT QString MESSAGEVIEWER_EXPORT iconPathForMimetype(const QString &mimeType, int iconSize, const QString &fallbackFileName1 = QString(), const QString &fallbackFileName2 = QString());
 
-QString MESSAGEVIEWER_EXPORT iconPathForContent(KMime::Content *node, int iconSize);
+Q_REQUIRED_RESULT QString MESSAGEVIEWER_EXPORT iconPathForContent(KMime::Content *node, int iconSize);
 
 struct AttachmentDisplayInfo {
     QString label;
@@ -60,7 +60,7 @@ struct AttachmentDisplayInfo {
     bool displayInHeader = false;
 };
 
-AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
+Q_REQUIRED_RESULT AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
 }
 }
 #endif

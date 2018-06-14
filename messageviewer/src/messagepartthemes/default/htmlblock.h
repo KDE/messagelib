@@ -41,8 +41,8 @@ public:
 
     virtual ~HTMLBlock();
 
-    QString enter();
-    QString exit();
+    Q_REQUIRED_RESULT QString enter();
+    Q_REQUIRED_RESULT QString exit();
 protected:
     QString dir() const;
     virtual QString enterString() const = 0;

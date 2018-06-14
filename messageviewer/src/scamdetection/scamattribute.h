@@ -31,15 +31,15 @@ public:
     explicit ScamAttribute();
     ~ScamAttribute() override;
 
-    ScamAttribute *clone() const override;
-    QByteArray type() const override;
-    QByteArray serialized() const override;
+    Q_REQUIRED_RESULT ScamAttribute *clone() const override;
+    Q_REQUIRED_RESULT QByteArray type() const override;
+    Q_REQUIRED_RESULT QByteArray serialized() const override;
     void deserialize(const QByteArray &data) override;
 
-    bool isAScam() const;
+    Q_REQUIRED_RESULT bool isAScam() const;
     void setIsAScam(bool b);
 
-    bool operator==(const ScamAttribute &other) const;
+    Q_REQUIRED_RESULT bool operator==(const ScamAttribute &other) const;
 
 private:
     friend class ScamAttributePrivate;

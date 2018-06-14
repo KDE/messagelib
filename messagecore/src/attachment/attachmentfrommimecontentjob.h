@@ -60,7 +60,7 @@ public:
     /**
      * Returns the mime content to load the attachment from.
      */
-    const KMime::Content *mimeContent() const;
+    Q_REQUIRED_RESULT const KMime::Content *mimeContent() const;
 
 protected Q_SLOTS:
     void doStart() override;

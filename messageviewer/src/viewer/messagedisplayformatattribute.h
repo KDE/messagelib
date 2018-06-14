@@ -33,18 +33,18 @@ public:
     explicit MessageDisplayFormatAttribute();
     ~MessageDisplayFormatAttribute() override;
 
-    MessageDisplayFormatAttribute *clone() const override;
-    QByteArray type() const override;
-    QByteArray serialized() const override;
+    Q_REQUIRED_RESULT MessageDisplayFormatAttribute *clone() const override;
+    Q_REQUIRED_RESULT QByteArray type() const override;
+    Q_REQUIRED_RESULT QByteArray serialized() const override;
     void deserialize(const QByteArray &data) override;
 
     void setMessageFormat(Viewer::DisplayFormatMessage format);
-    Viewer::DisplayFormatMessage messageFormat() const;
+    Q_REQUIRED_RESULT Viewer::DisplayFormatMessage messageFormat() const;
 
     void setRemoteContent(bool remote);
-    bool remoteContent() const;
+    Q_REQUIRED_RESULT bool remoteContent() const;
 
-    bool operator==(const MessageDisplayFormatAttribute &other) const;
+    Q_REQUIRED_RESULT bool operator==(const MessageDisplayFormatAttribute &other) const;
 
 private:
     friend class MessageDisplayFormatAttributePrivate;

@@ -82,45 +82,45 @@ public:
     virtual QString format(KMime::Message *message) const = 0;
 
     void setMessagePath(const QString &path);
-    QString messagePath() const;
+    Q_REQUIRED_RESULT QString messagePath() const;
 
     void setHeaderStrategy(const HeaderStrategy *strategy);
-    const HeaderStrategy *headerStrategy() const;
+    Q_REQUIRED_RESULT const HeaderStrategy *headerStrategy() const;
 
     void setVCardName(const QString &vCardName);
-    QString vCardName() const;
+    Q_REQUIRED_RESULT QString vCardName() const;
 
     void setPrinting(bool printing);
-    bool isPrinting() const;
+    Q_REQUIRED_RESULT bool isPrinting() const;
 
     void setTopLevel(bool topLevel);
-    bool isTopLevel() const;
+    Q_REQUIRED_RESULT bool isTopLevel() const;
 
     void setNodeHelper(MimeTreeParser::NodeHelper *nodeHelper);
-    MimeTreeParser::NodeHelper *nodeHelper() const;
+    Q_REQUIRED_RESULT MimeTreeParser::NodeHelper *nodeHelper() const;
 
     void setAllowAsync(bool allowAsync);
-    bool allowAsync() const;
+    Q_REQUIRED_RESULT bool allowAsync() const;
 
     void setSourceObject(QObject *sourceObject);
     QObject *sourceObject() const;
 
     void setMessageStatus(Akonadi::MessageStatus status);
-    Akonadi::MessageStatus messageStatus() const;
+    Q_REQUIRED_RESULT Akonadi::MessageStatus messageStatus() const;
 
     void setTheme(const GrantleeTheme::Theme &theme);
-    GrantleeTheme::Theme theme() const;
+    Q_REQUIRED_RESULT GrantleeTheme::Theme theme() const;
     void setCollectionName(const QString &name);
-    QString collectionName() const;
+    Q_REQUIRED_RESULT QString collectionName() const;
 
-    bool readOnlyMessage() const;
+    Q_REQUIRED_RESULT bool readOnlyMessage() const;
     void setReadOnlyMessage(bool readOnlyMessage);
 
-    bool showEmoticons() const;
+    Q_REQUIRED_RESULT bool showEmoticons() const;
     void setShowEmoticons(bool b);
 
     void setAttachmentHtml(const QString &html);
-    QString attachmentHtml() const;
+    Q_REQUIRED_RESULT QString attachmentHtml() const;
 private:
     HeaderStylePrivate *const d;
 };

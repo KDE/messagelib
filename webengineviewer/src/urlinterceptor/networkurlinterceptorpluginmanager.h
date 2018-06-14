@@ -35,11 +35,11 @@ public:
     explicit NetworkUrlInterceptorPluginManager(QObject *parent = nullptr);
     ~NetworkUrlInterceptorPluginManager();
 
-    QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
-    QString configGroupName() const;
-    QString configPrefixSettingKey() const;
-    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
-    WebEngineViewer::NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
+    Q_REQUIRED_RESULT QVector<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT WebEngineViewer::NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
 private:
     NetworkUrlInterceptorPluginManagerPrivate *const d;
 };
