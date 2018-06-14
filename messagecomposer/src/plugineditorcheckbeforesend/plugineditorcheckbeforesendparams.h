@@ -33,37 +33,37 @@ public:
     ~PluginEditorCheckBeforeSendParams();
 
     void setSubject(const QString &subject);
-    QString subject() const;
+    Q_REQUIRED_RESULT QString subject() const;
 
     void setIdentity(uint currentIdentity);
-    uint identity() const;
+    Q_REQUIRED_RESULT uint identity() const;
 
-    bool isHtmlMail() const;
+    Q_REQUIRED_RESULT bool isHtmlMail() const;
     void setHtmlMail(bool html);
 
     void setPlainText(const QString &text);
-    QString plainText() const;
+    Q_REQUIRED_RESULT QString plainText() const;
 
     void setBccAddresses(const QString &lst);
-    QString bccAddresses() const;
+    Q_REQUIRED_RESULT QString bccAddresses() const;
 
     void setToAddresses(const QString &lst);
-    QString toAddresses() const;
+    Q_REQUIRED_RESULT QString toAddresses() const;
 
     void setCcAddresses(const QString &lst);
-    QString ccAddresses() const;
+    Q_REQUIRED_RESULT QString ccAddresses() const;
 
     void setDefaultDomain(const QString &domain);
-    QString defaultDomain() const;
+    Q_REQUIRED_RESULT QString defaultDomain() const;
 
-    bool hasAttachment() const;
+    Q_REQUIRED_RESULT bool hasAttachment() const;
     void setHasAttachment(bool b);
 
-    int transportId() const;
+    Q_REQUIRED_RESULT int transportId() const;
     void setTransportId(int id);
 
     PluginEditorCheckBeforeSendParams &operator =(const PluginEditorCheckBeforeSendParams &other);
-    bool operator ==(const PluginEditorCheckBeforeSendParams &other) const;
+    Q_REQUIRED_RESULT bool operator ==(const PluginEditorCheckBeforeSendParams &other) const;
 private:
     PluginEditorCheckBeforeSendParamsPrivate *const d;
 };

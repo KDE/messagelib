@@ -76,43 +76,43 @@ public:
     ~AttachmentModel() override;
 
     bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent) override;
-    QMimeData *mimeData(const QModelIndexList &indexes) const override;
-    QStringList mimeTypes() const override;
-    Qt::DropActions supportedDropActions() const override;
+    Q_REQUIRED_RESULT QMimeData *mimeData(const QModelIndexList &indexes) const override;
+    Q_REQUIRED_RESULT QStringList mimeTypes() const override;
+    Q_REQUIRED_RESULT Qt::DropActions supportedDropActions() const override;
 
     /// for the save/discard warning
-    bool isModified() const;
+    Q_REQUIRED_RESULT bool isModified() const;
     void setModified(bool modified);
 
-    bool isEncryptEnabled() const;
+    Q_REQUIRED_RESULT bool isEncryptEnabled() const;
     void setEncryptEnabled(bool enabled);
-    bool isSignEnabled() const;
+    Q_REQUIRED_RESULT bool isSignEnabled() const;
     void setSignEnabled(bool enabled);
-    bool isEncryptSelected() const;
+    Q_REQUIRED_RESULT bool isEncryptSelected() const;
     /// sets for all
     void setEncryptSelected(bool selected);
-    bool isSignSelected() const;
+    Q_REQUIRED_RESULT bool isSignSelected() const;
     /// sets for all
     void setSignSelected(bool selected);
 
-    bool isAutoDisplayEnabled() const;
+    Q_REQUIRED_RESULT bool isAutoDisplayEnabled() const;
     void setAutoDisplayEnabled(bool enabled);
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
+    Q_REQUIRED_RESULT bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
 
-    bool addAttachment(MessageCore::AttachmentPart::Ptr part);
-    bool updateAttachment(MessageCore::AttachmentPart::Ptr part);
-    bool replaceAttachment(MessageCore::AttachmentPart::Ptr oldPart, MessageCore::AttachmentPart::Ptr newPart);
-    bool removeAttachment(const MessageCore::AttachmentPart::Ptr &part);
+    Q_REQUIRED_RESULT bool addAttachment(MessageCore::AttachmentPart::Ptr part);
+    Q_REQUIRED_RESULT bool updateAttachment(MessageCore::AttachmentPart::Ptr part);
+    Q_REQUIRED_RESULT bool replaceAttachment(MessageCore::AttachmentPart::Ptr oldPart, MessageCore::AttachmentPart::Ptr newPart);
+    Q_REQUIRED_RESULT bool removeAttachment(const MessageCore::AttachmentPart::Ptr &part);
     MessageCore::AttachmentPart::List attachments() const;
 
-    Qt::ItemFlags flags(const QModelIndex &index) const override;
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
-    QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
-    QModelIndex parent(const QModelIndex &index) const override;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    Q_REQUIRED_RESULT Qt::ItemFlags flags(const QModelIndex &index) const override;
+    Q_REQUIRED_RESULT QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    Q_REQUIRED_RESULT QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
+    Q_REQUIRED_RESULT QModelIndex parent(const QModelIndex &index) const override;
+    Q_REQUIRED_RESULT int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    Q_REQUIRED_RESULT int columnCount(const QModelIndex &parent = QModelIndex()) const override;
 
 Q_SIGNALS:
     void encryptEnabled(bool enabled);

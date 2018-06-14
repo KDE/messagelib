@@ -28,10 +28,10 @@ class MESSAGECOMPOSER_EXPORT PluginEditorConverterInitialData
 public:
     PluginEditorConverterInitialData();
 
-    bool newMessage() const;
+    Q_REQUIRED_RESULT bool newMessage() const;
     void setNewMessage(bool newMessage);
 
-    KMime::Message::Ptr mewMsg() const;
+    Q_REQUIRED_RESULT KMime::Message::Ptr mewMsg() const;
     void setMewMsg(const KMime::Message::Ptr &mewMsg);
 
 private:

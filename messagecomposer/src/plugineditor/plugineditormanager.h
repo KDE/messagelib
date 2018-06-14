@@ -36,13 +36,13 @@ public:
 
     static PluginEditorManager *self();
 
-    QVector<PluginEditor *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PluginEditor *> pluginsList() const;
 
-    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
 
-    QString configGroupName() const;
-    QString configPrefixSettingKey() const;
-    PluginEditor *pluginFromIdentifier(const QString &id);
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT PluginEditor *pluginFromIdentifier(const QString &id);
 private:
     PluginEditorManagerPrivate *const d;
 };

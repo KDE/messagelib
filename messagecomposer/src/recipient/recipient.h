@@ -50,29 +50,29 @@ public:
     Recipient(const QString &email = QString(), Type type = To);   //krazy:exclude=explicit
     ~Recipient() override;
     void setType(Type type);
-    Type type() const;
+    Q_REQUIRED_RESULT Type type() const;
 
     void setEmail(const QString &email);
-    QString email() const;
+    Q_REQUIRED_RESULT QString email() const;
 
     void setName(const QString &name);
-    QString name() const;
+    Q_REQUIRED_RESULT QString name() const;
 
-    bool isEmpty() const override;
+    Q_REQUIRED_RESULT bool isEmpty() const override;
     void clear() override;
 
-    static int typeToId(Type type);
-    static Type idToType(int id);
+    Q_REQUIRED_RESULT static int typeToId(Type type);
+    Q_REQUIRED_RESULT static Type idToType(int id);
 
-    QString typeLabel() const;
-    static QString typeLabel(Type type);
-    static QStringList allTypeLabels();
+    Q_REQUIRED_RESULT QString typeLabel() const;
+    Q_REQUIRED_RESULT static QString typeLabel(Type type);
+    Q_REQUIRED_RESULT static QStringList allTypeLabels();
 
     void setEncryptionAction(const Kleo::Action action);
-    Kleo::Action encryptionAction() const;
+    Q_REQUIRED_RESULT Kleo::Action encryptionAction() const;
 
     void setKey(const GpgME::Key &key);
-    GpgME::Key key() const;
+    Q_REQUIRED_RESULT GpgME::Key key() const;
 
 private:
     RecipientPrivate *const d;

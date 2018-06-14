@@ -37,7 +37,7 @@ public:
 
     void cleanWhitespace(const KIdentityManagement::Signature &sig);
 
-    bool replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig);
+    Q_REQUIRED_RESULT bool replaceSignature(const KIdentityManagement::Signature &oldSig, const KIdentityManagement::Signature &newSig);
 private:
     class RichTextComposerSignaturesPrivate;
     RichTextComposerSignaturesPrivate *const d;

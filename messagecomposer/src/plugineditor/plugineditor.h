@@ -31,7 +31,7 @@ public:
     explicit PluginEditor(QObject *parent = nullptr);
     ~PluginEditor();
     void setOrder(int order);
-    int order() const;
+    Q_REQUIRED_RESULT int order() const;
 
 private:
     PluginEditorPrivate *const d;

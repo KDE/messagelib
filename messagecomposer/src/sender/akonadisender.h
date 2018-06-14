@@ -50,13 +50,13 @@ protected:
 
     TODO cberzan: update docu...
     */
-    bool doSend(const KMime::Message::Ptr &msg, short sendNow) override;
+    Q_REQUIRED_RESULT bool doSend(const KMime::Message::Ptr &msg, short sendNow) override;
 
     /**
     Send queued messages, using the specified transport or the
     default, if none is given.
     */
-    bool doSendQueued(int transportId = -1) override;
+    Q_REQUIRED_RESULT bool doSendQueued(int transportId = -1) override;
 
 private:
     /**

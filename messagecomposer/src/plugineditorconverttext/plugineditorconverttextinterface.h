@@ -47,21 +47,21 @@ public:
     virtual bool convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
 
     void setParentWidget(QWidget *parent);
-    QWidget *parentWidget() const;
+    Q_REQUIRED_RESULT QWidget *parentWidget() const;
 
-    KPIMTextEdit::RichTextComposer *richTextEditor() const;
+    Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
     void setActionType(PluginActionType type);
-    PluginActionType actionType() const;
+    Q_REQUIRED_RESULT PluginActionType actionType() const;
 
     virtual void createAction(KActionCollection *ac);
 
     virtual void setInitialData(const PluginEditorConverterInitialData &data);
-    PluginEditorConverterInitialData initialData() const;
+    Q_REQUIRED_RESULT PluginEditorConverterInitialData initialData() const;
 
     virtual void setBeforeConvertingData(const PluginEditorConverterBeforeConvertingData &data);
-    PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
+    Q_REQUIRED_RESULT PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
 
 public Q_SLOTS:
     virtual void reloadConfig();

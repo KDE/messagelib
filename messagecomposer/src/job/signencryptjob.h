@@ -57,10 +57,10 @@ public:
     void setEncryptionKeys(const std::vector<GpgME::Key> &keys) override;
     void setRecipients(const QStringList &rec) override;
 
-    std::vector<GpgME::Key> encryptionKeys() const override;
-    QStringList recipients() const override;
+    Q_REQUIRED_RESULT std::vector<GpgME::Key> encryptionKeys() const override;
+    Q_REQUIRED_RESULT QStringList recipients() const override;
 
-    KMime::Content *origContent();
+    Q_REQUIRED_RESULT KMime::Content *origContent();
 
 protected Q_SLOTS:
     void process() override;

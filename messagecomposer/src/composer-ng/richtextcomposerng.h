@@ -39,19 +39,19 @@ public:
     explicit RichTextComposerNg(QWidget *parent = nullptr);
     ~RichTextComposerNg() override;
 
-    PimCommon::AutoCorrection *autocorrection() const;
+    Q_REQUIRED_RESULT PimCommon::AutoCorrection *autocorrection() const;
     void setAutocorrection(PimCommon::AutoCorrection *autocorrect);
     void setAutocorrectionLanguage(const QString &lang);
 
     void fillComposerTextPart(MessageComposer::TextPart *textPart);
-    MessageComposer::RichTextComposerSignatures *composerSignature() const;
+    Q_REQUIRED_RESULT MessageComposer::RichTextComposerSignatures *composerSignature() const;
 
     void insertSignature(const KIdentityManagement::Signature &signature, KIdentityManagement::Signature::Placement placement, KIdentityManagement::Signature::AddedText addedText);
-    QString toCleanHtml() const;
+    Q_REQUIRED_RESULT QString toCleanHtml() const;
 
     void forceAutoCorrection(bool selectedText = false) override;
 
-    virtual bool convertPlainText(MessageComposer::TextPart *textPart);
+    Q_REQUIRED_RESULT virtual bool convertPlainText(MessageComposer::TextPart *textPart);
 
 private:
     bool processAutoCorrection(QKeyEvent *event) override;

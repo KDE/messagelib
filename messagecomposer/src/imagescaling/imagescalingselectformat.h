@@ -54,7 +54,7 @@ public:
     ~ImageScalingSelectFormat();
 
     void setFormat(const QString &format);
-    QString format() const;
+    Q_REQUIRED_RESULT QString format() const;
 
 Q_SIGNALS:
     void textChanged(const QString &);

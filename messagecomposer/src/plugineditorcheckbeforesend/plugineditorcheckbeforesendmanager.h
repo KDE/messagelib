@@ -35,12 +35,12 @@ public:
 
     static PluginEditorCheckBeforeSendManager *self();
 
-    QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PluginEditorCheckBeforeSend *> pluginsList() const;
 
-    QString configGroupName() const;
-    QString configPrefixSettingKey() const;
-    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
-    PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 private:
     PluginEditorCheckBeforeSendManagerPrivate *const d;
 };

@@ -55,12 +55,12 @@ public:
     /**
      * Returns the email addresses of the list members.
      */
-    QString addresses() const;
+    Q_REQUIRED_RESULT QString addresses() const;
 
     /**
      * Returns whether the list of email addresses is empty.
      */
-    bool isEmpty() const;
+    Q_REQUIRED_RESULT bool isEmpty() const;
 
 private Q_SLOTS:
     void slotSearchDone(KJob *);

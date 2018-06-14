@@ -36,16 +36,16 @@ public:
 
     virtual PluginEditorCheckBeforeSendInterface *createInterface(QObject *parent) = 0;
 
-    virtual bool hasConfigureDialog() const;
+    Q_REQUIRED_RESULT virtual bool hasConfigureDialog() const;
 
     virtual void showConfigureDialog(QWidget *parent = nullptr);
 
     void emitConfigChanged();
 
-    virtual QString description() const;
+    Q_REQUIRED_RESULT virtual QString description() const;
 
     void setIsEnabled(bool enabled);
-    bool isEnabled() const;
+    Q_REQUIRED_RESULT bool isEnabled() const;
 
 Q_SIGNALS:
     void configChanged();

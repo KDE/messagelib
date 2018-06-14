@@ -35,40 +35,40 @@ public:
     explicit InfoPart(QObject *parent = nullptr);
     ~InfoPart() override;
 
-    QString from() const;
+    Q_REQUIRED_RESULT QString from() const;
     void setFrom(const QString &from);
-    QStringList to() const;
+    Q_REQUIRED_RESULT QStringList to() const;
     void setTo(const QStringList &to);
-    QStringList cc() const;
+    Q_REQUIRED_RESULT QStringList cc() const;
     void setCc(const QStringList &cc);
-    QStringList bcc() const;
+    Q_REQUIRED_RESULT QStringList bcc() const;
     void setBcc(const QStringList &bcc);
 
-    QString replyTo() const;
+    Q_REQUIRED_RESULT QString replyTo() const;
     void setReplyTo(const QString &replyTo);
 
-    QString subject() const;
+    Q_REQUIRED_RESULT QString subject() const;
     void setSubject(const QString &subject);
 
-    QString fcc() const;
+    Q_REQUIRED_RESULT QString fcc() const;
     void setFcc(const QString &fcc);
 
-    QString userAgent() const;
+    Q_REQUIRED_RESULT QString userAgent() const;
     void setUserAgent(const QString &userAgent);
 
-    bool urgent() const;
+    Q_REQUIRED_RESULT bool urgent() const;
     void setUrgent(bool);
 
-    QString inReplyTo() const;
+    Q_REQUIRED_RESULT QString inReplyTo() const;
     void setInReplyTo(const QString &inReplyTo);
 
-    QString references() const;
+    Q_REQUIRED_RESULT QString references() const;
     void setReferences(const QString &references);
 
     void setExtraHeaders(const KMime::Headers::Base::List &headers);
-    KMime::Headers::Base::List extraHeaders() const;
+    Q_REQUIRED_RESULT KMime::Headers::Base::List extraHeaders() const;
 
-    int transportId() const;
+    Q_REQUIRED_RESULT int transportId() const;
     void setTransportId(int tid);
 
 private:

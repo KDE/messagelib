@@ -35,7 +35,7 @@ public:
     explicit MainTextJob(TextPart *textPart = nullptr, QObject *parent = nullptr);
     ~MainTextJob() override;
 
-    TextPart *textPart() const;
+    Q_REQUIRED_RESULT TextPart *textPart() const;
     void setTextPart(TextPart *part);
 
 protected Q_SLOTS:

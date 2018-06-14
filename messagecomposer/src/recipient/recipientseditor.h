@@ -53,22 +53,22 @@ class MESSAGECOMPOSER_EXPORT RecipientsEditor : public KPIM::MultiplyingLineEdit
 public:
     explicit RecipientsEditor(QWidget *parent = nullptr);
     explicit RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *parent = nullptr);
-    ~RecipientsEditor();
+    ~RecipientsEditor() override;
 
-    Recipient::List recipients() const;
-    QSharedPointer<Recipient> activeRecipient() const;
+    Q_REQUIRED_RESULT Recipient::List recipients() const;
+    Q_REQUIRED_RESULT QSharedPointer<Recipient> activeRecipient() const;
 
-    MessageComposer::RecipientsPicker *picker() const;
+    Q_REQUIRED_RESULT MessageComposer::RecipientsPicker *picker() const;
 
     void setRecipientString(const QVector<KMime::Types::Mailbox> &mailboxes, Recipient::Type);
-    QString recipientString(Recipient::Type) const;
-    QStringList recipientStringList(Recipient::Type) const;
+    Q_REQUIRED_RESULT QString recipientString(Recipient::Type) const;
+    Q_REQUIRED_RESULT QStringList recipientStringList(Recipient::Type) const;
 
     /** Adds a recipient (or multiple recipients) to one line of the editor.
         @param recipient The recipient(s) you want to add.
         @param type      The recipient type.
     */
-    bool addRecipient(const QString &recipient, Recipient::Type type);
+    Q_REQUIRED_RESULT bool addRecipient(const QString &recipient, Recipient::Type type);
 
     /** Removes the recipient provided it can be found and has the given type.
         @param recipient The recipient(s) you want to remove.
@@ -94,7 +94,7 @@ protected Q_SLOTS:
 
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;
-    RecipientLineNG *activeLine() const override;
+    Q_REQUIRED_RESULT RecipientLineNG *activeLine() const override;
 
 private:
     RecipientsEditorPrivate *const d;

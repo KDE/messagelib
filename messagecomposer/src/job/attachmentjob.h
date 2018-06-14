@@ -38,7 +38,7 @@ public:
     explicit AttachmentJob(MessageCore::AttachmentPart::Ptr part, QObject *parent = nullptr);
     ~AttachmentJob() override;
 
-    MessageCore::AttachmentPart::Ptr attachmentPart() const;
+    Q_REQUIRED_RESULT MessageCore::AttachmentPart::Ptr attachmentPart() const;
     void setAttachmentPart(MessageCore::AttachmentPart::Ptr part);
 
 protected Q_SLOTS:

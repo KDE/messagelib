@@ -28,10 +28,10 @@ class MESSAGECOMPOSER_EXPORT PluginEditorConverterBeforeConvertingData
 public:
     PluginEditorConverterBeforeConvertingData();
 
-    bool newMessage() const;
+    Q_REQUIRED_RESULT bool newMessage() const;
     void setNewMessage(bool newMessage);
 
-    KMime::Message::Ptr message() const;
+    Q_REQUIRED_RESULT KMime::Message::Ptr message() const;
     void setMessage(const KMime::Message::Ptr &message);
 
 private:

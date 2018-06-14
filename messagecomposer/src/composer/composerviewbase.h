@@ -109,7 +109,7 @@ public:
     /**
     * Returns true if there is at least one composer job running.
     */
-    bool isComposing() const;
+    Q_REQUIRED_RESULT bool isComposing() const;
 
     /**
     * Add the given attachment to the message.
@@ -123,46 +123,46 @@ public:
     /**
     * Header fields in recipients editor.
     */
-    QString to() const;
-    QString cc() const;
-    QString bcc() const;
-    QString from() const;
-    QString replyTo() const;
-    QString subject() const;
+    Q_REQUIRED_RESULT QString to() const;
+    Q_REQUIRED_RESULT QString cc() const;
+    Q_REQUIRED_RESULT QString bcc() const;
+    Q_REQUIRED_RESULT QString from() const;
+    Q_REQUIRED_RESULT QString replyTo() const;
+    Q_REQUIRED_RESULT QString subject() const;
 
     /**
     * The following are for setting the various options and widgets in the
     *  composer.
     */
     void setAttachmentModel(MessageComposer::AttachmentModel *model);
-    MessageComposer::AttachmentModel *attachmentModel();
+    Q_REQUIRED_RESULT MessageComposer::AttachmentModel *attachmentModel();
 
     void setAttachmentController(MessageComposer::AttachmentControllerBase *controller);
-    MessageComposer::AttachmentControllerBase *attachmentController();
+    Q_REQUIRED_RESULT MessageComposer::AttachmentControllerBase *attachmentController();
 
     void setRecipientsEditor(MessageComposer::RecipientsEditor *recEditor);
-    MessageComposer::RecipientsEditor *recipientsEditor();
+    Q_REQUIRED_RESULT MessageComposer::RecipientsEditor *recipientsEditor();
 
     void setSignatureController(MessageComposer::SignatureController *sigController);
-    MessageComposer::SignatureController *signatureController();
+    Q_REQUIRED_RESULT MessageComposer::SignatureController *signatureController();
 
     void setIdentityCombo(KIdentityManagement::IdentityCombo *identCombo);
-    KIdentityManagement::IdentityCombo *identityCombo();
+    Q_REQUIRED_RESULT KIdentityManagement::IdentityCombo *identityCombo();
 
     void setIdentityManager(KIdentityManagement::IdentityManager *identMan);
-    KIdentityManagement::IdentityManager *identityManager();
+    Q_REQUIRED_RESULT KIdentityManagement::IdentityManager *identityManager();
 
     void setEditor(MessageComposer::RichTextComposerNg *editor);
-    MessageComposer::RichTextComposerNg *editor() const;
+    Q_REQUIRED_RESULT MessageComposer::RichTextComposerNg *editor() const;
 
     void setTransportCombo(MailTransport::TransportComboBox *transpCombo);
-    MailTransport::TransportComboBox *transportComboBox() const;
+    Q_REQUIRED_RESULT MailTransport::TransportComboBox *transportComboBox() const;
 
     void setFccCombo(Akonadi::CollectionComboBox *fcc);
-    Akonadi::CollectionComboBox *fccCombo() const;
+    Q_REQUIRED_RESULT Akonadi::CollectionComboBox *fccCombo() const;
     void setFcc(const Akonadi::Collection &id);
 
-    Sonnet::DictionaryComboBox *dictionary() const;
+    Q_REQUIRED_RESULT Sonnet::DictionaryComboBox *dictionary() const;
     void setDictionary(Sonnet::DictionaryComboBox *dictionary);
 
     /**
@@ -216,21 +216,21 @@ public:
     */
     ComposerViewBase::MissingAttachment checkForMissingAttachments(const QStringList &attachmentKeywords);
 
-    bool hasMissingAttachments(const QStringList &attachmentKeywords);
+    Q_REQUIRED_RESULT bool hasMissingAttachments(const QStringList &attachmentKeywords);
 
     void setSendLaterInfo(SendLater::SendLaterInfo *info);
-    SendLater::SendLaterInfo *sendLaterInfo() const;
+    Q_REQUIRED_RESULT SendLater::SendLaterInfo *sendLaterInfo() const;
     void saveMailSettings();
 
-    QDate followUpDate() const;
+    Q_REQUIRED_RESULT QDate followUpDate() const;
     void setFollowUpDate(const QDate &followUpDate);
 
     void clearFollowUp();
 
-    Akonadi::Collection followUpCollection() const;
+    Q_REQUIRED_RESULT Akonadi::Collection followUpCollection() const;
     void setFollowUpCollection(const Akonadi::Collection &followUpCollection);
 
-    KMime::Message::Ptr msg() const;
+    Q_REQUIRED_RESULT KMime::Message::Ptr msg() const;
 
 public Q_SLOTS:
     void identityChanged(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, bool msgCleared = false);

@@ -25,11 +25,11 @@ namespace MessageComposer {
 class Utils
 {
 public:
-    bool containsImage(const MessageCore::AttachmentPart::List &parts);
-    bool resizeImage(MessageCore::AttachmentPart::Ptr part);
+    Q_REQUIRED_RESULT bool containsImage(const MessageCore::AttachmentPart::List &parts);
+    Q_REQUIRED_RESULT bool resizeImage(MessageCore::AttachmentPart::Ptr part);
     void changeFileName(MessageCore::AttachmentPart::Ptr part);
-    bool filterRecipients(const QStringList &recipients);
-    bool hasImage(const QByteArray &mimetype);
+    Q_REQUIRED_RESULT bool filterRecipients(const QStringList &recipients);
+    Q_REQUIRED_RESULT bool hasImage(const QByteArray &mimetype);
 };
 }
 

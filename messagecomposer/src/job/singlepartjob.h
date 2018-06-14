@@ -46,15 +46,15 @@ public:
     explicit SinglepartJob(QObject *parent = nullptr);
     ~SinglepartJob() override;
 
-    QByteArray data() const;
+    Q_REQUIRED_RESULT QByteArray data() const;
     void setData(const QByteArray &data);
 
     /// created on first call. delete them if you don't use the content
-    KMime::Headers::ContentDescription *contentDescription();
-    KMime::Headers::ContentDisposition *contentDisposition();
-    KMime::Headers::ContentID *contentID();
-    KMime::Headers::ContentTransferEncoding *contentTransferEncoding();
-    KMime::Headers::ContentType *contentType();
+    Q_REQUIRED_RESULT KMime::Headers::ContentDescription *contentDescription();
+    Q_REQUIRED_RESULT KMime::Headers::ContentDisposition *contentDisposition();
+    Q_REQUIRED_RESULT KMime::Headers::ContentID *contentID();
+    Q_REQUIRED_RESULT KMime::Headers::ContentTransferEncoding *contentTransferEncoding();
+    Q_REQUIRED_RESULT KMime::Headers::ContentType *contentType();
 
 protected Q_SLOTS:
     void process() override;

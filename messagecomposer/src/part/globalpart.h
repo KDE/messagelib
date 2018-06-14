@@ -35,21 +35,21 @@ public:
     ~GlobalPart() override;
 
     // default true
-    bool isGuiEnabled() const;
+    Q_REQUIRED_RESULT bool isGuiEnabled() const;
     void setGuiEnabled(bool enabled);
-    QWidget *parentWidgetForGui() const;
+    Q_REQUIRED_RESULT QWidget *parentWidgetForGui() const;
     void setParentWidgetForGui(QWidget *widget);
 
-    bool isFallbackCharsetEnabled() const;
+    Q_REQUIRED_RESULT bool isFallbackCharsetEnabled() const;
     void setFallbackCharsetEnabled(bool enabled);
-    QList<QByteArray> charsets(bool forceFallback = false) const;
+    Q_REQUIRED_RESULT QList<QByteArray> charsets(bool forceFallback = false) const;
     void setCharsets(const QList<QByteArray> &charsets);
 
-    bool is8BitAllowed() const;
+    Q_REQUIRED_RESULT bool is8BitAllowed() const;
     void set8BitAllowed(bool allowed);
 
     // default is false
-    bool MDNRequested() const;
+    Q_REQUIRED_RESULT bool MDNRequested() const;
     void setMDNRequested(bool requestMDN);
 
 private:

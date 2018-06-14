@@ -36,23 +36,23 @@ public:
     ~TextPart() override;
 
     // default true
-    bool isWordWrappingEnabled() const;
+    Q_REQUIRED_RESULT bool isWordWrappingEnabled() const;
     void setWordWrappingEnabled(bool enabled);
     // default true
-    bool warnBadCharset() const;
+    Q_REQUIRED_RESULT bool warnBadCharset() const;
     void setWarnBadCharset(bool warn);
 
-    QString cleanPlainText() const;
+    Q_REQUIRED_RESULT QString cleanPlainText() const;
     void setCleanPlainText(const QString &text);
-    QString wrappedPlainText() const;
+    Q_REQUIRED_RESULT QString wrappedPlainText() const;
     void setWrappedPlainText(const QString &text);
 
-    bool isHtmlUsed() const;
-    QString cleanHtml() const;
+    Q_REQUIRED_RESULT bool isHtmlUsed() const;
+    Q_REQUIRED_RESULT QString cleanHtml() const;
     void setCleanHtml(const QString &text);
 
-    bool hasEmbeddedImages() const;
-    KPIMTextEdit::ImageList embeddedImages() const;
+    Q_REQUIRED_RESULT bool hasEmbeddedImages() const;
+    Q_REQUIRED_RESULT KPIMTextEdit::ImageList embeddedImages() const;
     void setEmbeddedImages(const KPIMTextEdit::ImageList &images);
 
 private:

@@ -90,7 +90,7 @@ public:
     * If no list is passed, use the original message passed in the MessageFactoryNG
     *  constructor.
     */
-    QPair< KMime::Message::Ptr, QList< KMime::Content * > > createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
+    Q_REQUIRED_RESULT QPair< KMime::Message::Ptr, QList< KMime::Content * > > createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
 
     /** Create a new message that is a redirect to this message, filling all
     required header fields with the proper values. The returned message
@@ -99,15 +99,15 @@ public:
     user, mail is not changed and the reply-to field is set to
     the email address of the original sender.
     */
-    KMime::Message::Ptr createRedirect(const QString &toStr, const QString &ccStr = QString(), const QString &bccStr = QString(), int transportId = -1,
+    Q_REQUIRED_RESULT KMime::Message::Ptr createRedirect(const QString &toStr, const QString &ccStr = QString(), const QString &bccStr = QString(), int transportId = -1,
                                        const QString &fcc = QString(), int identity = -1);
 
-    KMime::Message::Ptr createResend();
+    Q_REQUIRED_RESULT KMime::Message::Ptr createResend();
 
     /** Create a new message that is a delivery receipt of this message,
       filling required header fileds with the proper values. The
       returned message is not stored in any folder. */
-    KMime::Message::Ptr createDeliveryReceipt();
+    Q_REQUIRED_RESULT KMime::Message::Ptr createDeliveryReceipt();
 
     /** Create a new message that is a MDN for this message, filling all
       required fields with proper values. The returned message is not
@@ -121,7 +121,7 @@ public:
 
       @return The notification message or 0, if none should be sent, as well as the state of the MDN operation.
     **/
-    KMime::Message::Ptr createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal = 0,
+    Q_REQUIRED_RESULT KMime::Message::Ptr createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal = 0,
                                   const QVector<KMime::MDN::DispositionModifier> &m = QVector<KMime::MDN::DispositionModifier>());
 
     /**
@@ -134,7 +134,7 @@ public:
     *
     * @param msgs List of messages to be composed into a digest
     */
-    QPair< KMime::Message::Ptr, KMime::Content * > createForwardDigestMIME(const Akonadi::Item::List &items);
+    Q_REQUIRED_RESULT QPair< KMime::Message::Ptr, KMime::Content * > createForwardDigestMIME(const Akonadi::Item::List &items);
 
     /**
     * Set the identity manager to be used when creating messages.
@@ -191,7 +191,7 @@ public:
     * When creating MDNs, the user needs to be asked for confirmation in specific
     *  cases according to RFC 2298.
     */
-    static bool MDNRequested(const KMime::Message::Ptr &msg);
+    Q_REQUIRED_RESULT static bool MDNRequested(const KMime::Message::Ptr &msg);
 
     /**
     * If sending an MDN requires confirmation due to multiple addresses.
@@ -200,7 +200,7 @@ public:
     * MDN sent) ] if there is more than one distinct address in the
     * Disposition-Notification-To header.
     */
-    static bool MDNConfirmMultipleRecipients(const KMime::Message::Ptr &msg);
+    Q_REQUIRED_RESULT static bool MDNConfirmMultipleRecipients(const KMime::Message::Ptr &msg);
 
     /**
     *
@@ -213,13 +213,13 @@ public:
     * SHOULD be obtained (or no MDN sent) if there is no Return-Path
     * header in the message [...]
     */
-    static bool MDNReturnPathEmpty(const KMime::Message::Ptr &msg);
-    static bool MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &msg);
+    Q_REQUIRED_RESULT static bool MDNReturnPathEmpty(const KMime::Message::Ptr &msg);
+    Q_REQUIRED_RESULT static bool MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &msg);
 
     /**
     * If the MDN headers contain options that KMail can't parse
     */
-    static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
+    Q_REQUIRED_RESULT static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
 
 Q_SIGNALS:
     void createReplyDone(const MessageComposer::MessageFactoryNG::MessageReply &reply);

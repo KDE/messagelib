@@ -53,7 +53,7 @@ public:
     void setSelectedParts(const MessageCore::AttachmentPart::List &selectedParts);
 
     void setAttachOwnVcard(bool attachVcard);
-    bool attachOwnVcard() const;
+    Q_REQUIRED_RESULT bool attachOwnVcard() const;
     void setIdentityHasOwnVcard(bool state);
 
 public Q_SLOTS:

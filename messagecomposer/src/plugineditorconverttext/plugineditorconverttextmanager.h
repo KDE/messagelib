@@ -35,12 +35,12 @@ public:
 
     static PluginEditorConvertTextManager *self();
 
-    QVector<PluginEditorConvertText *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<PluginEditorConvertText *> pluginsList() const;
 
-    QString configGroupName() const;
-    QString configPrefixSettingKey() const;
-    QVector<PimCommon::PluginUtilData> pluginsDataList() const;
-    PluginEditorConvertText *pluginFromIdentifier(const QString &id);
+    Q_REQUIRED_RESULT QString configGroupName() const;
+    Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
+    Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
+    Q_REQUIRED_RESULT PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 private:
     PluginEditorConvertTextManagerPrivate *const d;
 };

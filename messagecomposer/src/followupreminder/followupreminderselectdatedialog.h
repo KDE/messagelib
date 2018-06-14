@@ -35,7 +35,7 @@ public:
     explicit FollowUpReminderSelectDateDialog(QWidget *parent = nullptr, QAbstractItemModel *model = nullptr);
     ~FollowUpReminderSelectDateDialog() override;
 
-    QDate selectedDate() const;
+    Q_REQUIRED_RESULT QDate selectedDate() const;
 
     void accept() override;
 

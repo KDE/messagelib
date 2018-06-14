@@ -42,7 +42,7 @@ public:
     explicit RecipientsEditorSideWidget(RecipientsEditor *editor, QWidget *parent);
     ~RecipientsEditorSideWidget();
 
-    MessageComposer::RecipientsPicker *picker() const;
+    Q_REQUIRED_RESULT MessageComposer::RecipientsPicker *picker() const;
 
 public Q_SLOTS:
     void setTotal(int recipients, int lines);

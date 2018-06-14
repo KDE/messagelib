@@ -64,14 +64,14 @@ public:
     /**
      * Returns the expanded email addresses.
      */
-    QString addresses() const;
+    Q_REQUIRED_RESULT QString addresses() const;
 
     /**
      * Returns the list of distribution lists that resolved to an empty member list.
      */
-    QStringList emptyDistributionLists() const;
+    Q_REQUIRED_RESULT QStringList emptyDistributionLists() const;
 
-    QStringList emailAddressOnly() const;
+    Q_REQUIRED_RESULT QStringList emailAddressOnly() const;
 
 private Q_SLOTS:
     void slotDistributionListExpansionDone(KJob *);

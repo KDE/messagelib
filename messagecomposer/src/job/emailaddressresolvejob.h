@@ -82,22 +82,22 @@ public:
     /**
      * Returns the expanded From field
      */
-    virtual QString expandedFrom() const;
+    Q_REQUIRED_RESULT virtual QString expandedFrom() const;
 
     /**
      * Returns the expanded To field
      */
-    virtual QStringList expandedTo() const;
+    Q_REQUIRED_RESULT virtual QStringList expandedTo() const;
 
     /**
      * Returns the expanded CC field
      */
-    virtual QStringList expandedCc() const;
+    Q_REQUIRED_RESULT virtual QStringList expandedCc() const;
 
     /**
      * Returns the expanded Bcc field
      */
-    virtual QStringList expandedBcc() const;
+    Q_REQUIRED_RESULT virtual QStringList expandedBcc() const;
 
     void setDefaultDomainName(const QString &domainName);
 private Q_SLOTS:

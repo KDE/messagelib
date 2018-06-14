@@ -52,7 +52,7 @@ public:
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
     void setSigningKeys(std::vector<GpgME::Key> &signers);
 
-    KMime::Content *origContent();
+    Q_REQUIRED_RESULT KMime::Content *origContent();
 
 protected Q_SLOTS:
     void process() override;

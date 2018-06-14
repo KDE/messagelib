@@ -52,14 +52,14 @@ public:
       Get the resulting KMime::Content that the ContentJobBase has generated.
       Jobs never delete their content.
     */
-    KMime::Content *content() const;
+    Q_REQUIRED_RESULT KMime::Content *content() const;
 
     /**
       This is meant to be used instead of KCompositeJob::addSubjob(), making
       it possible to add subjobs from the outside.
       Transfers ownership of the @p job to this object.
     */
-    bool appendSubjob(ContentJobBase *job);
+    Q_REQUIRED_RESULT bool appendSubjob(ContentJobBase *job);
 
     /**
       Set some extra content to be saved with the job, and available
@@ -71,7 +71,7 @@ public:
     /**
       Get extra content that was previously added.
      */
-    KMime::Content *extraContent() const;
+    Q_REQUIRED_RESULT KMime::Content *extraContent() const;
 
 protected:
     ContentJobBase(ContentJobBasePrivate &dd, QObject *parent);

@@ -41,13 +41,13 @@ public:
     ~PluginEditorInterface();
 
     void setActionType(PluginActionType type);
-    PluginActionType actionType() const;
+    Q_REQUIRED_RESULT PluginActionType actionType() const;
 
-    KPIMTextEdit::RichTextEditor *richTextEditor() const;
+    Q_REQUIRED_RESULT KPIMTextEdit::RichTextEditor *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextEditor *richTextEditor);
 
     void setNeedSelectedText(bool b);
-    bool needSelectedText() const;
+    Q_REQUIRED_RESULT bool needSelectedText() const;
 
 Q_SIGNALS:
     void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);

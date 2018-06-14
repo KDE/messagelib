@@ -36,7 +36,7 @@ public:
     explicit MultipartJob(QObject *parent = nullptr);
     ~MultipartJob() override;
 
-    QByteArray multipartSubtype() const;
+    Q_REQUIRED_RESULT QByteArray multipartSubtype() const;
     void setMultipartSubtype(const QByteArray &subtype);
 
 protected Q_SLOTS:

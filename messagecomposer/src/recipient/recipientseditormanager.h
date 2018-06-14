@@ -36,7 +36,7 @@ public:
     ~RecipientsEditorManager();
 
     static RecipientsEditorManager *self();
-    Akonadi::EmailAddressSelectionModel *model();
+    Q_REQUIRED_RESULT Akonadi::EmailAddressSelectionModel *model();
 
 private:
     Akonadi::EmailAddressSelectionModel *mModel = nullptr;

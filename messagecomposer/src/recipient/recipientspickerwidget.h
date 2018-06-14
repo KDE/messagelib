@@ -33,9 +33,9 @@ class RecipientsPickerWidget : public QWidget
 public:
     explicit RecipientsPickerWidget(QWidget *parent = nullptr);
     ~RecipientsPickerWidget();
-    QTreeView *view() const;
+    Q_REQUIRED_RESULT QTreeView *view() const;
 
-    Akonadi::EmailAddressSelectionWidget *emailAddressSelectionWidget() const;
+    Q_REQUIRED_RESULT Akonadi::EmailAddressSelectionWidget *emailAddressSelectionWidget() const;
 private:
     Akonadi::EmailAddressSelectionWidget *mView = nullptr;
 };

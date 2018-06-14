@@ -52,10 +52,10 @@ public:
 
     QList<KMime::Message::Ptr> resultMessages() const;
 
-    GlobalPart *globalPart() const;
-    InfoPart *infoPart() const;
-    TextPart *textPart() const;
-    MessageCore::AttachmentPart::List attachmentParts() const;
+    Q_REQUIRED_RESULT GlobalPart *globalPart() const;
+    Q_REQUIRED_RESULT InfoPart *infoPart() const;
+    Q_REQUIRED_RESULT TextPart *textPart() const;
+    Q_REQUIRED_RESULT MessageCore::AttachmentPart::List attachmentParts() const;
     void addAttachmentPart(MessageCore::AttachmentPart::Ptr part, bool autoresizeImage = false);
     void addAttachmentParts(const MessageCore::AttachmentPart::List &parts, bool autoresizeImage = false);
     void removeAttachmentPart(MessageCore::AttachmentPart::Ptr part);
@@ -70,9 +70,9 @@ public:
     /// Sets if this message being composed is an auto-saved message
     ///  if so, might need different handling, such as no crypto attachments.
     void setAutoSave(bool isAutoSave);
-    bool autoSave() const;
+    Q_REQUIRED_RESULT bool autoSave() const;
 
-    bool finished() const;
+    Q_REQUIRED_RESULT bool finished() const;
 
 public Q_SLOTS:
     void start() override;
