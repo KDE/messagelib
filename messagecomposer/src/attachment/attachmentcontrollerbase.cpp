@@ -397,8 +397,8 @@ void AttachmentControllerBase::Private::attachPublicKeyJobResult(KJob *job)
 void AttachmentControllerBase::Private::attachVcardFromAddressBook(KJob *job)
 {
     if (job->error()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get vcard";
-        KMessageBox::sorry(wParent, job->errorString(), i18n("Failed to attach vcard"));
+        qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get vCard";
+        KMessageBox::sorry(wParent, job->errorString(), i18n("Failed to attach vCard"));
         return;
     }
 
