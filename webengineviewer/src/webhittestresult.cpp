@@ -42,55 +42,35 @@ using namespace WebEngineViewer;
 class WebEngineViewer::WebHitTestResultPrivate
 {
 public:
-    WebHitTestResultPrivate(const QWebEngineContextMenuData &data, const QPoint &pos = QPoint(), const QUrl &url = QUrl())
-        : mIsNull(true)
-        , mIsContentEditable(false)
-        , mIsContentSelected(false)
-        , mMediaPaused(false)
-        , mMediaMuted(false)
-        , mPos(pos)
-        , mPageUrl(url)
-    {
-        init(data);
-    }
-
     WebHitTestResultPrivate(const QPoint &pos = QPoint(), const QUrl &url = QUrl(), const QVariant &result = QVariant())
-        : mIsNull(true)
+        : mPos(pos)
+        , mPageUrl(url)
         , mIsContentEditable(false)
         , mIsContentSelected(false)
         , mMediaPaused(false)
         , mMediaMuted(false)
-        , mPos(pos)
-        , mPageUrl(url)
+        , mIsNull(true)
     {
         init(result.toMap());
     }
 
     void init(const QVariantMap &map);
-    void init(const QWebEngineContextMenuData &data);
 
-    bool mIsNull;
-    QString mAlternateText;
+    QPoint mPos;
     QRect mBoundingRect;
     QUrl mImageUrl;
-    bool mIsContentEditable;
-    bool mIsContentSelected;
-    QString mLinkTitle;
     QUrl mLinkUrl;
     QUrl mMediaUrl;
+    QUrl mPageUrl;
+    QString mTagName;
+    QString mLinkTitle;
+    QString mAlternateText;
+    bool mIsContentEditable;
+    bool mIsContentSelected;
     bool mMediaPaused;
     bool mMediaMuted;
-    QPoint mPos;
-    QString mTagName;
-    QUrl mPageUrl;
+    bool mIsNull;
 };
-
-void WebHitTestResultPrivate::init(const QWebEngineContextMenuData &data)
-{
-    if (data.isValid()) {
-        //TODO
-    }
-}
 
 void WebHitTestResultPrivate::init(const QVariantMap &map)
 {
@@ -140,11 +120,6 @@ WebHitTestResult::WebHitTestResult(const WebHitTestResult &other)
     : d(new WebHitTestResultPrivate)
 {
     (*this) = other;
-}
-
-WebHitTestResult::WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QWebEngineContextMenuData &data)
-    : d(new WebHitTestResultPrivate(data, pos, pageUrl))
-{
 }
 
 WebHitTestResult::~WebHitTestResult()

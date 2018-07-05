@@ -52,7 +52,6 @@ public:
     WebHitTestResult();
     WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QVariant &result);
     WebHitTestResult(const WebHitTestResult &other);
-    WebHitTestResult(const QPoint &pos, const QUrl &pageUrl, const QWebEngineContextMenuData &data);
     ~WebHitTestResult();
 
     Q_REQUIRED_RESULT QString alternateText() const;
@@ -70,7 +69,7 @@ public:
     Q_REQUIRED_RESULT QString tagName() const;
     Q_REQUIRED_RESULT QUrl pageUrl() const;
 
-    Q_REQUIRED_RESULT WebHitTestResult &operator=(const WebHitTestResult &webHit);
+    WebHitTestResult &operator=(const WebHitTestResult &webHit);
 private:
     WebHitTestResultPrivate *d;
 };
