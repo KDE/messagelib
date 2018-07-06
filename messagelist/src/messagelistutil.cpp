@@ -153,6 +153,13 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
     int numLines = 0;
     const int maxLines = 5;
     const QStringList lines = content.split(QLatin1Char('\n'));
+    if (lines.isEmpty()) {
+        return QString();
+    }
+    if (lines.count() == 1 && content.length() > 100) {
+        return content.left(100);
+
+    }
     QString ret;
     for (const QString &line : lines) {
         const QString lineTrimmed = line.trimmed();
