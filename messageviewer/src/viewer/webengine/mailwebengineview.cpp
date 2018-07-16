@@ -198,9 +198,10 @@ void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
     if (d->mViewer && !d->mHoveredUrl.isEmpty()) {
         if (event->button() == Qt::LeftButton && (event->modifiers() & Qt::ShiftModifier)) {
             // special processing for shift+click
-            URLHandlerManager::instance()->handleShiftClick(d->mHoveredUrl, d->mViewer);
-            event->accept();
-            return;
+            if (URLHandlerManager::instance()->handleShiftClick(d->mHoveredUrl, d->mViewer)) {
+                event->accept();
+                return;
+            }
         }
         if (event->button() == Qt::LeftButton) {
             d->mCanStartDrag = URLHandlerManager::instance()->willHandleDrag(d->mHoveredUrl,

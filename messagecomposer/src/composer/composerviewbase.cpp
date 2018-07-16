@@ -199,7 +199,9 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     if (m_transport) {
         const MailTransport::Transport *transport = MailTransport::TransportManager::self()->transportById(transportId);
         if (transport) {
-            m_transport->setCurrentTransport(transport->id());
+            if (!m_transport->setCurrentTransport(transport->id())) {
+                qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to find transport id" << transport->id();
+            }
         }
     }
 
@@ -216,7 +218,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     }
 
     if (auto hdr = m_msg->headerByType("X-KMail-CursorPos")) {
-        m_editor->setCursorPositionFromStart(hdr->asUnicodeString().toInt());
+        m_editor->setCursorPositionFromStart(hdr->asUnicodeString().toUInt());
     }
     delete msgContent;
 }

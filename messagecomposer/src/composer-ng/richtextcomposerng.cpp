@@ -392,7 +392,7 @@ void RichTextComposerNg::forceAutoCorrection(bool selectedText)
                     cur.movePosition(QTextCursor::NextWord);
                 }
                 cursorPosition = cur.position();
-                d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
+                (void)d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
             }
         } else {
             cur.movePosition(QTextCursor::Start);
@@ -403,7 +403,7 @@ void RichTextComposerNg::forceAutoCorrection(bool selectedText)
                     cur.movePosition(QTextCursor::NextWord);
                 }
                 int cursorPosition = cur.position();
-                d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
+                (void)d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
             }
         }
         cur.endEditBlock();
