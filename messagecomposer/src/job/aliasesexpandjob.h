@@ -88,8 +88,8 @@ private:
     QString mEmailAddresses;
     QStringList mEmptyDistributionLists;
 
-    uint mDistributionListExpansionJobs;
-    uint mNicknameExpansionJobs;
+    uint mDistributionListExpansionJobs = 0;
+    uint mNicknameExpansionJobs = 0;
 
     struct DistributionListExpansionResult {
         QString addresses;

@@ -25,17 +25,15 @@ class Q_DECL_HIDDEN TextPart::Private
 {
 public:
     Private()
-        : wordWrappingEnabled(true)
-        , warnBadCharset(true)
     {
     }
 
-    bool wordWrappingEnabled;
-    bool warnBadCharset;
+    KPIMTextEdit::ImageList embeddedImages;
     QString cleanPlainText;
     QString wrappedPlainText;
     QString cleanHtml;
-    KPIMTextEdit::ImageList embeddedImages;
+    bool wordWrappingEnabled = true;
+    bool warnBadCharset = true;
 };
 
 TextPart::TextPart(QObject *parent)

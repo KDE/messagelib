@@ -28,8 +28,6 @@ MessageFactoryReplyJob::MessageFactoryReplyJob(QObject *parent)
     : QObject(parent)
     , mMsg(nullptr)
     , mOrigMsg(nullptr)
-    , mReplyAll(false)
-    , mIdentityManager(nullptr)
 {
 }
 

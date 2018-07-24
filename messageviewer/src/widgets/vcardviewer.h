@@ -43,7 +43,7 @@ private:
     void writeConfig();
 
     KContacts::Addressee::List mAddresseeList;
-    int mAddresseeListIndex;
+    int mAddresseeListIndex = 0;
     KAddressBookGrantlee::GrantleeContactViewer *mContactViewer = nullptr;
     QPushButton *mUser2Button = nullptr;
     QPushButton *mUser3Button = nullptr;

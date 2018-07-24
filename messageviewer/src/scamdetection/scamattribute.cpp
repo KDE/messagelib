@@ -29,11 +29,10 @@ class MessageViewer::ScamAttributePrivate
 {
 public:
     ScamAttributePrivate()
-        : isAScam(false)
     {
     }
 
-    bool isAScam;
+    bool isAScam = false;
 };
 
 ScamAttribute::ScamAttribute()

@@ -37,17 +37,16 @@ class MessageComposer::EmailAddressResolveJobPrivate
 {
 public:
     EmailAddressResolveJobPrivate()
-        : mJobCount(0)
     {
     }
 
-    int mJobCount;
     QVariantMap mResultMap;
-    QString mFrom;
     QStringList mTo;
     QStringList mCc;
     QStringList mBcc;
+    QString mFrom;
     QString mDefaultDomainName;
+    int mJobCount = 0;
 };
 
 EmailAddressResolveJob::EmailAddressResolveJob(QObject *parent)

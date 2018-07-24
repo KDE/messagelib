@@ -25,10 +25,6 @@ class MessageComposer::PluginEditorCheckBeforeSendParamsPrivate
 {
 public:
     PluginEditorCheckBeforeSendParamsPrivate()
-        : identity(-1)
-        , transportId(-1)
-        , isHtml(false)
-        , hasAttachment(false)
     {
     }
 
@@ -38,10 +34,10 @@ public:
     QString plainText;
     QString subject;
     QString defaultDomain;
-    uint identity;
-    int transportId;
-    bool isHtml;
-    bool hasAttachment;
+    uint identity = 0;
+    int transportId = -1;
+    bool isHtml = false;
+    bool hasAttachment = false;
 };
 
 PluginEditorCheckBeforeSendParams::PluginEditorCheckBeforeSendParams()

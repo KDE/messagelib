@@ -30,8 +30,7 @@ class MessageViewer::ViewerPluginToolManagerPrivate
 {
 public:
     ViewerPluginToolManagerPrivate(ViewerPluginToolManager *qq, QWidget *parentWidget)
-        : mActionCollection(nullptr)
-        , mParentWidget(parentWidget)
+        : mParentWidget(parentWidget)
         , q(qq)
     {
     }

@@ -43,12 +43,11 @@ public:
     AttachmentCompressJob *const q;
     AttachmentPart::Ptr mOriginalPart;
     AttachmentPart::Ptr mCompressedPart;
-    bool mCompressedPartLarger;
+    bool mCompressedPartLarger = false;
 };
 
 AttachmentCompressJob::Private::Private(AttachmentCompressJob *qq)
     : q(qq)
-    , mCompressedPartLarger(false)
 {
 }
 

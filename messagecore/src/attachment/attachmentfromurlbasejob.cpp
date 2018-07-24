@@ -26,13 +26,12 @@ public:
     Private(const QUrl &url, AttachmentFromUrlBaseJob *qq);
 
     AttachmentFromUrlBaseJob *const q;
-    qint64 mMaxSize;
+    qint64 mMaxSize = -1;
     QUrl mUrl;
 };
 
 AttachmentFromUrlBaseJob::Private::Private(const QUrl &url, AttachmentFromUrlBaseJob *qq)
     : q(qq)
-    , mMaxSize(-1)
     , mUrl(url)
 {
 }

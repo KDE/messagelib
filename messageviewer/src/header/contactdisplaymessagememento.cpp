@@ -32,9 +32,6 @@ ContactDisplayMessageMemento::ContactDisplayMessageMemento(const QString &emailA
     : QObject(nullptr)
     , mForceDisplayTo(Viewer::UseGlobalSetting)
     , mEmailAddress(emailAddress)
-    , mFinished(false)
-    , mMailAllowToRemoteContent(false)
-    , mSearchJob(nullptr)
 {
     if (!emailAddress.isEmpty()) {
         mSearchJob = new Akonadi::ContactSearchJob();

@@ -47,17 +47,8 @@ EditorWatcher::EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithO
     : QObject(parent)
     , mUrl(url)
     , mMimeType(mimeType)
-    , mEditor(nullptr)
     , mParentWidget(parentWidget)
-    , mInotifyFd(-1)
-    , mInotifyWatch(-1)
     , mOpenWithOption(option)
-    , mHaveInotify(false)
-    , mFileOpen(false)
-    , mEditorRunning(false)
-    , mFileModified(true)
-    ,                      // assume the worst unless we know better
-    mDone(false)
 {
     assert(mUrl.isLocalFile());
     mTimer.setSingleShot(true);

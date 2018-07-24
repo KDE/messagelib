@@ -25,24 +25,22 @@ class Q_DECL_HIDDEN InfoPart::Private
 {
 public:
     Private()
-        : transportId(0)
-        , urgent(false)
     {
     }
 
-    QString from;
+    KMime::Headers::Base::List extraHeaders;
     QStringList to;
     QStringList cc;
     QStringList bcc;
     QString subject;
+    QString from;
     QString fcc;
     QString replyTo;
     QString userAgent;
     QString inReplyTo;
     QString references;
-    int transportId;
-    bool urgent;
-    KMime::Headers::Base::List extraHeaders;
+    int transportId = 0;
+    bool urgent = false;
 };
 
 InfoPart::InfoPart(QObject *parent)

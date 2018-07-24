@@ -98,20 +98,9 @@ static QStringList encodeIdn(const QStringList &emails)
 ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
     : QObject(parent)
     , m_msg(KMime::Message::Ptr(new KMime::Message))
-    , m_attachmentController(nullptr)
-    , m_attachmentModel(nullptr)
-    , m_signatureController(nullptr)
-    , m_recipientsEditor(nullptr)
-    , m_identityCombo(nullptr)
-    , m_identMan(nullptr)
-    , m_editor(nullptr)
-    , m_transport(nullptr)
-    , m_dictionary(nullptr)
-    , m_fccCombo(nullptr)
     , m_parentWidget(parentGui)
     , m_cryptoMessageFormat(Kleo::AutoFormat)
     , m_autoSaveInterval(1 * 1000 * 60) // default of 1 min
-    , mSendLaterInfo(nullptr)
 {
     m_charsets << "utf-8"; // default, so we have a backup in case client code forgot to set.
 

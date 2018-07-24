@@ -28,13 +28,11 @@ class MessageViewer::MessageDisplayFormatAttributePrivate
 {
 public:
     MessageDisplayFormatAttributePrivate()
-        : messageFormat(Viewer::UseGlobalSetting)
-        , remoteContent(false)
     {
     }
 
-    Viewer::DisplayFormatMessage messageFormat;
-    bool remoteContent;
+    Viewer::DisplayFormatMessage messageFormat = Viewer::UseGlobalSetting;
+    bool remoteContent = false;
 };
 
 MessageDisplayFormatAttribute::MessageDisplayFormatAttribute()

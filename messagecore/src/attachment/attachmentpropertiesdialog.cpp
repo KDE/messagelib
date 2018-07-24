@@ -48,10 +48,6 @@ class Q_DECL_HIDDEN MessageCore::AttachmentPropertiesDialog::Private
 public:
     Private(AttachmentPropertiesDialog *qq)
         : q(qq)
-        , mReadOnly(false)
-        , ui(nullptr)
-        , uiReadOnly(nullptr)
-        , mainLayout(nullptr)
     {
     }
 
@@ -71,12 +67,12 @@ public:
     void saveToPart();
 
     AttachmentPropertiesDialog *const q;
-    bool mReadOnly;
     AttachmentPart::Ptr mPart;
 
     Ui::AttachmentPropertiesDialog *ui = nullptr;
     Ui::AttachmentPropertiesDialogReadOnly *uiReadOnly = nullptr;
     QVBoxLayout *mainLayout = nullptr;
+    bool mReadOnly = false;
 };
 
 void AttachmentPropertiesDialog::Private::init(const AttachmentPart::Ptr &part, bool readOnly)

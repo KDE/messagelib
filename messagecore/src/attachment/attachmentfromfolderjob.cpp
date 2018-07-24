@@ -39,17 +39,15 @@ public:
     void addEntity(const QFileInfoList &f, const QString &path);
 
     AttachmentFromFolderJob *const q;
-    KZip::Compression mCompression;
+    KZip::Compression mCompression = KZip::DeflateCompression;
     AttachmentPart::Ptr mCompressedFolder;
     QScopedPointer<KZip> mZip;
-    QDateTime mArchiveTime;
+    QDateTime mArchiveTime = QDateTime::currentDateTime();
 };
 
 AttachmentFromFolderJob::Private::Private(AttachmentFromFolderJob *qq)
     : q(qq)
-    , mCompression(KZip::DeflateCompression)
     , mZip(nullptr)
-    , mArchiveTime(QDateTime::currentDateTime())
 {
 }
 

@@ -69,7 +69,7 @@ private Q_SLOTS:
 private:
     QString mListName;
     QStringList mEmailAddresses;
-    bool mIsEmpty;
+    bool mIsEmpty = false;
 };
 }
 #endif

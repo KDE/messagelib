@@ -36,8 +36,6 @@ AliasesExpandJob::AliasesExpandJob(const QString &recipients, const QString &def
     : KJob(parent)
     , mRecipients(KEmailAddress::splitAddressList(recipients))
     , mDefaultDomain(defaultDomain)
-    , mDistributionListExpansionJobs(0)
-    , mNicknameExpansionJobs(0)
 {
 }
 

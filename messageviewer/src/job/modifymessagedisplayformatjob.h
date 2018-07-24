@@ -46,9 +46,9 @@ private:
     void modifyDisplayFormat();
     Akonadi::Session *mSession = nullptr;
     Akonadi::Item mMessageItem;
-    Viewer::DisplayFormatMessage mMessageFormat;
-    bool mRemoteContent;
-    bool mResetFormat;
+    Viewer::DisplayFormatMessage mMessageFormat = Viewer::UseGlobalSetting;
+    bool mRemoteContent = false;
+    bool mResetFormat = false;
 };
 }
 

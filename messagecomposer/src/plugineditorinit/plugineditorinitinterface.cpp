@@ -25,8 +25,6 @@ class MessageComposer::PluginEditorInitInterfacePrivate
 {
 public:
     PluginEditorInitInterfacePrivate()
-        : mParentWidget(nullptr)
-        , mEditor(nullptr)
     {
     }
 

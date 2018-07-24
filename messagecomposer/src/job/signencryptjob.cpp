@@ -45,7 +45,6 @@ class MessageComposer::SignEncryptJobPrivate : public ContentJobBasePrivate
 public:
     SignEncryptJobPrivate(SignEncryptJob *qq)
         : ContentJobBasePrivate(qq)
-        , content(nullptr)
     {
     }
 

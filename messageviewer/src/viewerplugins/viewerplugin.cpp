@@ -25,11 +25,10 @@ class MessageViewer::ViewerPluginPrivate
 {
 public:
     ViewerPluginPrivate()
-        : mEnabled(false)
     {
     }
 
-    bool mEnabled;
+    bool mEnabled = false;
 };
 
 ViewerPlugin::ViewerPlugin(QObject *parent)

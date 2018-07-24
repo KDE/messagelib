@@ -29,8 +29,6 @@ class MessageComposer::PluginEditorConvertTextInterfacePrivate
 {
 public:
     PluginEditorConvertTextInterfacePrivate()
-        : mParentWidget(nullptr)
-        , mEditor(nullptr)
     {
     }
     PluginActionType mActionType;

@@ -29,7 +29,6 @@
 using namespace MessageViewer;
 
 HTMLBlock::HTMLBlock()
-    : entered(false)
 {
 }
 

@@ -40,7 +40,6 @@ using namespace MessageViewer;
 
 VCardViewer::VCardViewer(QWidget *parent, const QByteArray &vCard)
     : QDialog(parent)
-    , mAddresseeListIndex(0)
 {
     setWindowTitle(i18n("vCard Viewer"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);

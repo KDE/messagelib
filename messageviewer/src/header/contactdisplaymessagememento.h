@@ -71,8 +71,8 @@ private:
     QPixmap mGravatarPixmap;
     QImage mImageFromUrl;
     QString mEmailAddress;
-    bool mFinished;
-    bool mMailAllowToRemoteContent;
+    bool mFinished = false;
+    bool mMailAllowToRemoteContent = false;
     QPointer<Akonadi::ContactSearchJob> mSearchJob;
 };
 }

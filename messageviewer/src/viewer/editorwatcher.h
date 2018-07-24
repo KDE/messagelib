@@ -78,14 +78,14 @@ private:
     KProcess *mEditor = nullptr;
     QWidget *mParentWidget = nullptr;
 
-    int mInotifyFd;
-    int mInotifyWatch;
+    int mInotifyFd = -1;
+    int mInotifyWatch = -1;
     OpenWithOption mOpenWithOption;
-    bool mHaveInotify;
-    bool mFileOpen;
-    bool mEditorRunning;
-    bool mFileModified;
-    bool mDone;
+    bool mHaveInotify = false;
+    bool mFileOpen = false;
+    bool mEditorRunning = false;
+    bool mFileModified = true;
+    bool mDone = false;
 };
 }
 

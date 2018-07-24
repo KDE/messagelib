@@ -36,12 +36,12 @@ public:
     {
     }
 
+    PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    PimCommon::PluginUtilData pluginData;
+    PluginEditor *plugin = nullptr;
     int order = 0;
     bool isEnabled = true;
-    PluginEditor *plugin = nullptr;
 };
 
 namespace {

@@ -31,7 +31,9 @@ void ContentJobBasePrivate::init(QObject *parent)
     Q_Q(ContentJobBase);
     ContentJobBase *parentJob = dynamic_cast<ContentJobBase *>(parent);
     if (parentJob) {
-        parentJob->appendSubjob(q);
+        if (!parentJob->appendSubjob(q)) {
+            qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add subjob.";
+        }
     }
 }
 

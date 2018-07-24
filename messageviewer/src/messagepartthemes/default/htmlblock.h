@@ -49,7 +49,7 @@ protected:
     virtual QString exitString() const = 0;
 
 private:
-    bool entered;
+    bool entered = false;
 };
 
 // The attachment mark is a div that is placed around the attchment. It is used for drawing

@@ -34,8 +34,7 @@ class MessageComposer::RichTextComposerNgPrivate
 {
 public:
     RichTextComposerNgPrivate(RichTextComposerNg *q)
-        : autoCorrection(nullptr)
-        , richtextComposer(q)
+        : richtextComposer(q)
     {
         richTextComposerSignatures = new MessageComposer::RichTextComposerSignatures(richtextComposer, richtextComposer);
     }

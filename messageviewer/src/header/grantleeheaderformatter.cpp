@@ -57,10 +57,10 @@ public:
         delete engine;
     }
 
-    MessageViewer::HeaderStyleUtil headerStyleUtil;
     QSharedPointer<Grantlee::FileSystemTemplateLoader> templateLoader;
-    int iconSize;
     Grantlee::Engine *engine = nullptr;
+    MessageViewer::HeaderStyleUtil headerStyleUtil;
+    int iconSize;
 };
 
 GrantleeHeaderFormatter::GrantleeHeaderFormatter()

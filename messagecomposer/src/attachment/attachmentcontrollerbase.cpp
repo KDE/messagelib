@@ -107,15 +107,13 @@ public:
     void reloadAttachment();
     void updateJobResult(KJob *);
 
+    AttachmentPart::List selectedParts;
     AttachmentControllerBase *const q;
-    bool encryptEnabled = false;
-    bool signEnabled = false;
     MessageComposer::AttachmentModel *model = nullptr;
     QWidget *wParent = nullptr;
     QHash<MessageViewer::EditorWatcher *, AttachmentPart::Ptr> editorPart;
     QHash<MessageViewer::EditorWatcher *, QTemporaryFile *> editorTempFile;
 
-    AttachmentPart::List selectedParts;
     KActionCollection *mActionCollection = nullptr;
     QAction *attachPublicKeyAction = nullptr;
     QAction *attachMyPublicKeyAction = nullptr;
@@ -138,9 +136,11 @@ public:
     QAction *reloadAttachmentAction = nullptr;
     QAction *attachVCardsAction = nullptr;
     QAction *attachClipBoardAction = nullptr;
-
     // If part p is compressed, uncompressedParts[p] is the uncompressed part.
     QHash<AttachmentPart::Ptr, AttachmentPart::Ptr> uncompressedParts;
+    bool encryptEnabled = false;
+    bool signEnabled = false;
+
 };
 
 AttachmentControllerBase::Private::Private(AttachmentControllerBase *qq)

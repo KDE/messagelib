@@ -29,9 +29,6 @@ using namespace MessageViewer;
 ModifyMessageDisplayFormatJob::ModifyMessageDisplayFormatJob(Akonadi::Session *session, QObject *parent)
     : QObject(parent)
     , mSession(session)
-    , mMessageFormat(Viewer::UseGlobalSetting)
-    , mRemoteContent(false)
-    , mResetFormat(false)
 {
 }
 

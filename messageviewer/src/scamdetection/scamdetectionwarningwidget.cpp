@@ -31,11 +31,10 @@ class MessageViewer::ScamDetectionWarningWidgetPrivate
 {
 public:
     ScamDetectionWarningWidgetPrivate()
-        : mUseInTestApps(false)
     {
     }
 
-    bool mUseInTestApps;
+    bool mUseInTestApps = false;
 };
 
 ScamDetectionWarningWidget::ScamDetectionWarningWidget(QWidget *parent)
