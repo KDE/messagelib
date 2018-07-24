@@ -1006,6 +1006,7 @@ void View::setCurrentThreadExpanded(bool expand)
 
 void View::setAllThreadsExpanded(bool expand)
 {
+    scheduleDelayedItemsLayout();
     if (d->mAggregation->grouping() == Aggregation::NoGrouping) {
         // we have no groups so threads start under the root item: just expand/unexpand all
         setChildrenExpanded(d->mModel->rootItem(), expand);
@@ -1037,6 +1038,7 @@ void View::setAllGroupsExpanded(bool expand)
         return;
     }
 
+    scheduleDelayedItemsLayout();
     for (const auto item : qAsConst(*childList)) {
         Q_ASSERT(item->type() == Item::GroupHeader);
         QModelIndex idx = d->mModel->index(item, 0);
