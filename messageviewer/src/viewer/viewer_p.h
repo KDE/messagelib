@@ -648,7 +648,7 @@ public:
     QUrl mImageUrl;
     QPoint mLastClickPosition;
     bool mCanStartDrag;
-    HtmlWriter *mHtmlWriter;
+    HtmlWriter *mHtmlWriter = nullptr;
     /** Used only to be able to connect and disconnect finished() signal
       in printMsg() and slotPrintMsg() since mHtmlWriter points only to abstract non-QObject class. */
     QPointer<WebEnginePartHtmlWriter> mPartHtmlWriter;
