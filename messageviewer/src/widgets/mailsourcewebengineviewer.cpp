@@ -37,9 +37,11 @@ using namespace MessageViewer;
 #include <QTabWidget>
 #include <QApplication>
 
+#include <KConfigGroup>
 #include <QShortcut>
 #include <QVBoxLayout>
 
+#include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QWebEnginePage>
@@ -95,10 +97,28 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
             &MailSourceWebEngineViewer::close);
 
     mainLayout->addWidget(buttonBox);
+    readConfig();
 }
 
 MailSourceWebEngineViewer::~MailSourceWebEngineViewer()
 {
+    writeConfig();
+}
+
+void MailSourceWebEngineViewer::readConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "MailSourceWebEngineViewer");
+    const QSize size = group.readEntry("Size", QSize(600, 400));
+    if (size.isValid()) {
+        resize(size);
+    }
+}
+
+void MailSourceWebEngineViewer::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "MailSourceWebEngineViewer");
+    group.writeEntry("Size", size());
+    group.sync();
 }
 
 void MailSourceWebEngineViewer::setRawSource(const QString &source)

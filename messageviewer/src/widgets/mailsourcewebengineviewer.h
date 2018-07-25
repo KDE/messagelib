@@ -39,6 +39,8 @@ public:
     void setDisplayedSource(QWebEnginePage *page);
     void setFixedFont();
 private:
+    void readConfig();
+    void writeConfig();
     MailSourceViewTextBrowserWidget *mRawBrowser = nullptr;
     FindBarSourceView *mFindBar = nullptr;
     QTabWidget *mTabWidget = nullptr;

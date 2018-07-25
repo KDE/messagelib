@@ -2167,21 +2167,6 @@ void ViewerPrivate::slotShowMessageSource()
     if (mUseFixedFont) {
         viewer->setFixedFont();
     }
-    // Well, there is no widget to be seen here, so we have to use QCursor::pos()
-    // Update: (GS) I'm not going to make this code behave according to Xinerama
-    //         configuration because this is quite the hack.
-    if (QApplication::desktop()->isVirtualDesktop()) {
-#ifndef QT_NO_CURSOR
-        int scnum = QApplication::desktop()->screenNumber(QCursor::pos());
-#else
-        int scnum = 0;
-#endif
-        viewer->resize(QApplication::desktop()->screenGeometry(scnum).width() / 2,
-                       2 * QApplication::desktop()->screenGeometry(scnum).height() / 3);
-    } else {
-        viewer->resize(QApplication::desktop()->geometry().width() / 2,
-                       2 * QApplication::desktop()->geometry().height() / 3);
-    }
     viewer->show();
 }
 
