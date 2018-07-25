@@ -1501,7 +1501,7 @@ void Kleo::KeyResolver::collapseAllSplitInfos()
         SplitInfo &si = v.front();
         for (std::vector<SplitInfo>::const_iterator it = v.begin() + 1; it != v.end(); ++it) {
             si.keys.insert(si.keys.end(), it->keys.begin(), it->keys.end());
-            qCopy(it->recipients.begin(), it->recipients.end(), std::back_inserter(si.recipients));
+            std::copy(it->recipients.begin(), it->recipients.end(), std::back_inserter(si.recipients));
         }
         v.resize(1);
     }

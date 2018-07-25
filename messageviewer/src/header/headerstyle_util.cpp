@@ -70,7 +70,7 @@ QString HeaderStyleUtil::dateString(KMime::Message *message, bool printing, Head
         return i18nc("Unknown date", "Unknown");
     }
 
-    const time_t unixTime = dateTime.toTime_t();
+    const time_t unixTime = dateTime.toSecsSinceEpoch();
     if (printing) {
         return KMime::DateFormatter::formatDate(KMime::DateFormatter::Localized, unixTime);
     } else {
@@ -238,7 +238,7 @@ QString HeaderStyleUtil::imgToDataUrl(const QImage &image) const
 
 QString HeaderStyleUtil::dateStr(const QDateTime &dateTime) const
 {
-    const time_t unixTime = dateTime.toTime_t();
+    const time_t unixTime = dateTime.toSecsSinceEpoch();
     return KMime::DateFormatter::formatDate(
         static_cast<KMime::DateFormatter::FormatType>(
             MessageCore::MessageCoreSettings::self()->dateFormat()),
