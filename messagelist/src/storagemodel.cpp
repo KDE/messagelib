@@ -234,7 +234,7 @@ bool StorageModel::initializeMessageItem(MessageList::Core::MessageItem *mi, int
         receiver = unknown;
     }
 
-    mi->initialSetup(mail->date()->dateTime().toSecsSinceEpoch(),
+    mi->initialSetup(mail->date()->dateTime().toTime_t(),
                      item.size(),
                      sender, receiver,
                      bUseReceiver);

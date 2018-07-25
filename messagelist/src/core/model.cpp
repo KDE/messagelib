@@ -1320,7 +1320,7 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
         }
 
         QDateTime dt;
-        dt.fromSecsSinceEpoch(date);
+        dt.setTime_t(date);
         QDate dDate = dt.date();
         int daysAgo = -1;
         const int daysInWeek = 7;
