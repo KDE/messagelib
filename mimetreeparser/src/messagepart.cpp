@@ -883,7 +883,7 @@ void SignedMessagePart::sigStatusToMetaData()
         }
 
         if (signature.creationTime()) {
-            partMetaData()->creationTime.setTime_t(signature.creationTime());
+            partMetaData()->creationTime.setSecsSinceEpoch(signature.creationTime());
         } else {
             partMetaData()->creationTime = QDateTime();
         }

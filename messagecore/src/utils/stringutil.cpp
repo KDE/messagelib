@@ -726,7 +726,9 @@ QString stripOffPrefixes(const QString &subject)
 
 void setEncodingFile(QUrl &url, const QString &encoding)
 {
-    url.addQueryItem(QStringLiteral("charset"), encoding);
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("charset"), encoding);
+    url.setQuery(query);
 }
 }
 }

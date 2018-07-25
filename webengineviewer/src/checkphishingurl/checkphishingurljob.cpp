@@ -24,6 +24,7 @@
 #include <QJsonDocument>
 #include <webengineviewer_debug.h>
 #include <QNetworkConfigurationManager>
+#include <QUrlQuery>
 using namespace WebEngineViewer;
 
 WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson = true;
@@ -148,8 +149,10 @@ void CheckPhishingUrlJob::start()
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork, d->mUrl);
         deleteLater();
     } else if (canStart()) {
+        QUrlQuery query;
+        query.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find"));
-        safeUrl.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
+        safeUrl.setQuery(query);
         QNetworkRequest request(safeUrl);
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 

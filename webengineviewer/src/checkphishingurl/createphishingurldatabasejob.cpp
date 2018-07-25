@@ -25,6 +25,7 @@
 
 #include <QNetworkConfigurationManager>
 #include <QJsonDocument>
+#include <QUrlQuery>
 
 using namespace WebEngineViewer;
 
@@ -76,8 +77,10 @@ void CreatePhishingUrlDataBaseJob::start()
         Q_EMIT finished(UpdateDataBaseInfo(), BrokenNetwork);
         deleteLater();
     } else {
+        QUrlQuery query;
+        query.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch"));
-        safeUrl.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
+        safeUrl.setQuery(query);
         //qCDebug(WEBENGINEVIEWER_LOG) << " safeUrl" << safeUrl;
         QNetworkRequest request(safeUrl);
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));

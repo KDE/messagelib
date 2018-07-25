@@ -44,6 +44,7 @@
 #include <QMenu>
 #include <QPointer>
 #include <QTreeView>
+#include <QUrlQuery>
 
 #include <QAction>
 #include <KActionCollection>

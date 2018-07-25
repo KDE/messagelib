@@ -71,6 +71,7 @@
 #include <QMimeDatabase>
 #include <QStandardPaths>
 #include <QUrl>
+#include <QUrlQuery>
 
 #include <algorithm>
 

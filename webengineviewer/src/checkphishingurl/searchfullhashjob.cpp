@@ -24,6 +24,7 @@
 #include <QNetworkConfigurationManager>
 #include <PimCommon/NetworkManager>
 #include <QJsonDocument>
+#include <QUrlQuery>
 #include <webengineviewer_debug.h>
 
 using namespace WebEngineViewer;
@@ -248,8 +249,10 @@ void SearchFullHashJob::start()
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork, d->mUrl);
         deleteLater();
     } else if (canStart()) {
+        QUrlQuery query;
+        query.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
         QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/fullHashes:find"));
-        safeUrl.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
+        safeUrl.setQuery(query);
         QNetworkRequest request(safeUrl);
         request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
 

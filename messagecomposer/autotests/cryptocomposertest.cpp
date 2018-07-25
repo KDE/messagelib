@@ -332,7 +332,7 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
 
     // now check the attachment separately
-    QCOMPARE(QString::fromAscii(MessageCore::NodeHelper::nextSibling(b)->body()), QString::fromAscii("abc"));
+    QCOMPARE(QString::fromLatin1(MessageCore::NodeHelper::nextSibling(b)->body()), QString::fromLatin1("abc"));
 }
 
 void CryptoComposerTest::testBCCEncrypt_data()

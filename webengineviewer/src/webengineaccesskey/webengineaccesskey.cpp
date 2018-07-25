@@ -164,7 +164,7 @@ void WebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const WebEng
     label->setFont(font);
     label->setText(accessKey);
     QFontMetrics metric(label->font());
-    label->setFixedWidth(metric.width(QStringLiteral("WW")));
+    label->setFixedWidth(metric.boundingRect(QStringLiteral("WW")).width());
     label->setPalette(QToolTip::palette());
     label->setAutoFillBackground(true);
     label->setFrameStyle(QFrame::Box | QFrame::Plain);

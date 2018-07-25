@@ -21,6 +21,7 @@
 
 #include "urlhandlermanager.h"
 #include <MessageViewer/URLHandler>
+#include <QHash>
 
 namespace KMime {
 class Content;

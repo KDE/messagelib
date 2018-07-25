@@ -141,19 +141,19 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
     case Kleo::OpenPGPMIMEFormat:
         if (sign) {
             content->contentType()->setMimeType(QByteArrayLiteral("multipart/signed"));
-            content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromAscii("application/pgp-signature"));
-            content->contentType()->setParameter(QStringLiteral("micalg"), QString::fromAscii(QByteArray(QByteArrayLiteral("pgp-") + hashAlgo)).toLower());
+            content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromLatin1("application/pgp-signature"));
+            content->contentType()->setParameter(QStringLiteral("micalg"), QString::fromLatin1(QByteArray(QByteArrayLiteral("pgp-") + hashAlgo)).toLower());
         } else {
             content->contentType()->setMimeType(QByteArrayLiteral("multipart/encrypted"));
-            content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromAscii("application/pgp-encrypted"));
+            content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromLatin1("application/pgp-encrypted"));
         }
         return;
     case Kleo::SMIMEFormat:
         if (sign) {
             qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME";
             content->contentType()->setMimeType(QByteArrayLiteral("multipart/signed"));
-            content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromAscii("application/pkcs7-signature"));
-            content->contentType()->setParameter(QStringLiteral("micalg"), QString::fromAscii(hashAlgo).toLower());
+            content->contentType()->setParameter(QStringLiteral("protocol"), QString::fromLatin1("application/pkcs7-signature"));
+            content->contentType()->setParameter(QStringLiteral("micalg"), QString::fromLatin1(hashAlgo).toLower());
             return;
         }
         // fall through (for encryption, there's no difference between
@@ -166,11 +166,11 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
         content->contentType()->setMimeType(QByteArrayLiteral("application/pkcs7-mime"));
 
         if (sign) {
-            content->contentType()->setParameter(QStringLiteral("smime-type"), QString::fromAscii("signed-data"));
+            content->contentType()->setParameter(QStringLiteral("smime-type"), QString::fromLatin1("signed-data"));
         } else {
-            content->contentType()->setParameter(QStringLiteral("smime-type"), QString::fromAscii("enveloped-data"));
+            content->contentType()->setParameter(QStringLiteral("smime-type"), QString::fromLatin1("enveloped-data"));
         }
-        content->contentType()->setParameter(QStringLiteral("name"), QString::fromAscii("smime.p7m"));
+        content->contentType()->setParameter(QStringLiteral("name"), QString::fromLatin1("smime.p7m"));
     }
 }
 
@@ -180,7 +180,7 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
     case Kleo::OpenPGPMIMEFormat:
         if (sign) {
             content->contentType()->setMimeType(QByteArrayLiteral("application/pgp-signature"));
-            content->contentType()->setParameter(QStringLiteral("name"), QString::fromAscii("signature.asc"));
+            content->contentType()->setParameter(QStringLiteral("name"), QString::fromLatin1("signature.asc"));
             content->contentDescription()->from7BitString("This is a digitally signed message part.");
         } else {
             content->contentType()->setMimeType(QByteArrayLiteral("application/octet-stream"));
@@ -189,7 +189,7 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
     case Kleo::SMIMEFormat:
         if (sign) {
             content->contentType()->setMimeType(QByteArrayLiteral("application/pkcs7-signature"));
-            content->contentType()->setParameter(QStringLiteral("name"), QString::fromAscii("smime.p7s"));
+            content->contentType()->setParameter(QStringLiteral("name"), QString::fromLatin1("smime.p7s"));
             return;
         }
         Q_FALLTHROUGH();

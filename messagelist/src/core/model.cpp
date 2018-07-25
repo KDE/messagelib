@@ -1320,7 +1320,7 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
         }
 
         QDateTime dt;
-        dt.setTime_t(date);
+        dt.fromSecsSinceEpoch(date);
         QDate dDate = dt.date();
         int daysAgo = -1;
         const int daysInWeek = 7;
@@ -1652,7 +1652,7 @@ void ModelPrivate::addMessageToSubjectBasedThreadingCache(MessageItem *mi)
     Q_ASSERT(!messagesWithTheSameStrippedSubject->contains(mi));
 
     // Ordered insert: first by date then by pointer value.
-    auto it = qLowerBound(messagesWithTheSameStrippedSubject->begin(), messagesWithTheSameStrippedSubject->end(), mi, MessageLessThanByDate());
+    auto it = std::lower_bound(messagesWithTheSameStrippedSubject->begin(), messagesWithTheSameStrippedSubject->end(), mi, MessageLessThanByDate());
     messagesWithTheSameStrippedSubject->insert(it, mi);
 }
 
@@ -1670,7 +1670,7 @@ void ModelPrivate::removeMessageFromSubjectBasedThreadingCache(MessageItem *mi)
     Q_ASSERT(messagesWithTheSameStrippedSubject);
 
     // The cache *MUST* be ordered first by date then by pointer value
-    auto it = qLowerBound(messagesWithTheSameStrippedSubject->begin(), messagesWithTheSameStrippedSubject->end(), mi, MessageLessThanByDate());
+    auto it = std::lower_bound(messagesWithTheSameStrippedSubject->begin(), messagesWithTheSameStrippedSubject->end(), mi, MessageLessThanByDate());
 
     // The binary based search must have found a message
     Q_ASSERT(it != messagesWithTheSameStrippedSubject->end());

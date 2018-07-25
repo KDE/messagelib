@@ -34,6 +34,7 @@
 #include <QDragMoveEvent>
 #include <QDropEvent>
 #include <QMimeData>
+#include <QUrlQuery>
 
 #include "messagelist_debug.h"
 #include <QIcon>
@@ -127,7 +128,8 @@ bool Widget::canAcceptDrag(const QDropEvent *e)
         if (collection.isValid()) {   // You're not supposed to drop collections here
             return false;
         } else { // Yay, this is an item!
-            const QString type = url.queryItemValue(QStringLiteral("type"));
+            QUrlQuery query(url);
+            const QString type = query.queryItemValue(QStringLiteral("type"));
             if (!target.contentMimeTypes().contains(type)) {
                 return false;
             }
@@ -488,7 +490,9 @@ void Widget::viewStartDragRequest()
     for (Core::MessageItem *mi : selection) {
         const Item i = d->itemForRow(mi->currentModelIndexRow());
         QUrl url = i.url(Item::Item::Item::UrlWithMimeType);
-        url.addQueryItem(QStringLiteral("parent"), QString::number(mi->parentCollectionId()));
+        QUrlQuery query;
+        query.addQueryItem(QStringLiteral("parent"), QString::number(mi->parentCollectionId()));
+        url.setQuery(query);
         urls << url;
     }
 

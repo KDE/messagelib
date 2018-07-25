@@ -98,7 +98,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     mStatus->setTextFormat(Qt::PlainText);
     QFontMetrics fm(mStatus->font());
     mNotFoundString = i18n("Phrase not found");
-    mStatus->setFixedWidth(fm.width(mNotFoundString));
+    mStatus->setFixedWidth(fm.boundingRect(mNotFoundString).width());
     lay->addWidget(mStatus);
 
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
