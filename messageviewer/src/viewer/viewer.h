@@ -334,6 +334,8 @@ public:
 
     bool printingMode() const;
 
+    bool showSignatureDetails() const;
+    void setShowSignatureDetails(bool showDetails);
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
