@@ -52,7 +52,7 @@
                     <ul style="list-style-type: none;">
                     {% for recipient in decryptedRecipients %}
                         {%if recipient.mainID %}
-                        <li>{{recipient.id}} (<a href="kmail:showCertificate#{{cryptoProto.displayName}} ### {{cryptoProto.name}} ### {{recipient.mainID}}">0x{{recipient.mainID}}</a>)</li>
+                            <li>{{recipient.id}} (<a href="kmail:showCertificate#{{cryptoProto.displayName}} ### {{cryptoProto.name}} ### {{recipient.mainID}}">0x{{recipient.mainID}}</a>)</li>
                         {% else %}
                             <li><a href="kmail:showCertificate#{{cryptoProto.displayName}} ### {{cryptoProto.name}} ### {{recipient.keyID}}">0x{{recipient.keyID}}</a> ({% i18n "unknown key" %})</li>
                         {% endif %}
