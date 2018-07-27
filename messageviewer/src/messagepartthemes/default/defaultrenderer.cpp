@@ -469,6 +469,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     }
     c.insert(QStringLiteral("block"), &block);
 
+    block.setProperty("isPrinting", isPrinting());
     block.setProperty("inProgress", metaData.inProgress);
     block.setProperty("isDecrypted", mp->decryptMessage());
     block.setProperty("isDecryptable", metaData.isDecryptable);
