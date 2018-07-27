@@ -517,7 +517,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     block.setProperty("errorText", metaData.errorText);
 
     block.setProperty("detailHeader", showSignatureDetails());
-    block.setProperty("printing", false);
+    block.setProperty("isPrinting", isPrinting());
     block.setProperty("addr", metaData.signerMailAddresses.join(QLatin1Char(',')));
     block.setProperty("technicalProblem", metaData.technicalProblem);
     block.setProperty("keyId", metaData.keyId);
