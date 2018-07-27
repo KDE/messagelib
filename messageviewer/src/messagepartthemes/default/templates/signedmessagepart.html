@@ -68,7 +68,9 @@
                         <i>{{block.statusStr}}</i>
                     {% endif %}
                     </td>
-                    <td align="right" valign="top" nowrap="nowrap"><a href="kmail:hideSignatureDetails">{% i18n "Hide Details" %}</a></td>
+                    {% if not block.isPrinting %}
+                        <td align="right" valign="top" nowrap="nowrap"><a href="kmail:hideSignatureDetails">{% i18n "Hide Details" %}</a></td>
+		    {% endif %}
                 </tr>
                 <tr>
                     <td align="right" valign="bottom" nowrap="nowrap">{{block.auditlog}}</td>
@@ -129,7 +131,9 @@
                         {% endif %}
                     {% endif %}
                     </td>
-                    <td align="right" valign="top" nowrap="nowrap"><a href="kmail:hideSignatureDetails">{% i18n "Hide Details" %}</a></td>
+		    {% if not block.isPrinting %}
+                        <td align="right" valign="top" nowrap="nowrap"><a href="kmail:hideSignatureDetails">{% i18n "Hide Details" %}</a></td>
+		    {% endif %}
                 </tr>
                 <tr>
                     <td align="right" valign="bottom" nowrap="nowrap">{{block.auditlog}}</td>
@@ -150,7 +154,7 @@
                         {% i18n "Unknown signature state" %}
                     {% endif %}
                     </td>
-                    {% if not block.printing %}
+                    {% if not block.isPrinting %}
                         <td align="right"><a href="kmail:showSignatureDetails">{% i18n "Show Details" %}</a></td>
                     {% endif %}
                 {% endif %}
