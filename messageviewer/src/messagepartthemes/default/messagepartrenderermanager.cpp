@@ -71,7 +71,7 @@ inline QVariant TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME
         return QString::fromLatin1(object.first.keyID());
     }
     if (property == QStringLiteral("id")) {
-        return QString::fromLatin1(object.second.userID(0).id());
+        return QString::fromUtf8(object.second.userID(0).id());
     }
     if (property == QStringLiteral("mainID")) {
         return QString::fromLatin1(object.second.keyID());
