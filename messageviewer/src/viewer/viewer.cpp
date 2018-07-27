@@ -697,13 +697,13 @@ void Viewer::setPrintElementBackground(bool printElementBackground)
 bool Viewer::showSignatureDetails() const
 {
     Q_D(const Viewer);
-    return d->viewer()->showSignatureDetails();
+    return d->showSignatureDetails();
 }
 
 void Viewer::setShowSignatureDetails(bool showDetails)
 {
     Q_D(Viewer);
-    d->viewer()->setShowSignatureDetails(showDetails);
+    d->setShowSignatureDetails(showDetails);
 }
 
 }
