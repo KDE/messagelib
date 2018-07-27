@@ -246,6 +246,7 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                                .arg(mPrintFont.family())
                                .arg(mPrintFont.pointSize());
     const QPalette &pal = QApplication::palette();
+    const QString linkColor = mLinkColor.name();
 
     const QFont printFont = bodyFont(fixed, true /* print */);
     QString quoteCSS;
@@ -270,7 +271,11 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
         .arg(printFont.family(),
              QString::number(printFont.pointSize()))
         +
-        QStringLiteral("tr.textAtmH,\n"
+        QStringLiteral("a {\n"
+                       "  color: %4 ! important;\n"
+                       "  text-decoration: none ! important;\n"
+                       "}\n\n"
+                       "tr.textAtmH,\n"
                        "tr.signInProgressH,\n"
                        "tr.rfc822H,\n"
                        "tr.encrH,\n"
@@ -328,7 +333,8 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                        )
         .arg(headerFont,
              pal.color(QPalette::Background).name(),
-             pal.color(QPalette::Foreground).name())
+             pal.color(QPalette::Foreground).name(),
+             linkColor)
         + quoteCSS + fullAddressList();
 }
 
