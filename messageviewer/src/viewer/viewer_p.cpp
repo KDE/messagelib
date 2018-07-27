@@ -1219,7 +1219,9 @@ void ViewerPrivate::resetStateForNewMessage()
 #endif
     mViewer->clearRelativePosition();
     mViewer->hideAccessKeys();
-    setShowSignatureDetails(false);
+    if (!mPrinting) {
+        setShowSignatureDetails(false);
+    }
     mFindBar->closeBar();
     mViewerPluginToolManager->closeAllTools();
     mScamDetectionWarning->setVisible(false);
