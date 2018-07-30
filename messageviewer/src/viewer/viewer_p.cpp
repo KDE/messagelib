@@ -3125,6 +3125,8 @@ void ViewerPrivate::setPrintElementBackground(bool printElementBackground)
 void ViewerPrivate::slotToggleEmoticons()
 {
     mForceEmoticons = !mForceEmoticons;
+    //Save value
+    MessageViewer::MessageViewerSettings::self()->setShowEmoticons(mForceEmoticons);
     headerStylePlugin()->headerStyle()->setShowEmoticons(mForceEmoticons);
     update(MimeTreeParser::Force);
 }
