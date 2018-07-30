@@ -1071,6 +1071,10 @@ void ViewerPrivate::readConfig()
     if (mDisableEmoticonAction) {
         mDisableEmoticonAction->setChecked(!mForceEmoticons);
     }
+    if (headerStylePlugin()) {
+        headerStylePlugin()->headerStyle()->setShowEmoticons(mForceEmoticons);
+    }
+
     mUseFixedFont = MessageViewer::MessageViewerSettings::self()->useFixedFont();
     if (mToggleFixFontAction) {
         mToggleFixFontAction->setChecked(mUseFixedFont);
