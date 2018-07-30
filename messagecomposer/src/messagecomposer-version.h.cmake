@@ -33,10 +33,4 @@
 
 #define MESSAGELIB_LIB_VERSION "@MESSAGELIB_LIB_VERSION@"
 
-/* GIT revision number, of the form "git-xxxxxxxx" */
-#define MESSAGELIB_GIT_REVISION_STRING "@messagelib_git_revision@"
-
-/* Date of last commit, of the form "YYYY-MM-DD" */
-#define MESSAGELIB_GIT_LAST_CHANGE "@messagelib_git_last_change@"
-
 #endif

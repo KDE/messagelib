@@ -111,23 +111,6 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
 
 endif()
 
-# Support for the GIT revision number in messagecomposer-version.h
-if(EXISTS "${Messagelib_SOURCE_DIR}/.git")
-  find_package(Git)
-  if(GIT_FOUND)
-    execute_process(COMMAND ${GIT_EXECUTABLE} rev-parse --short HEAD
-                    WORKING_DIRECTORY ${Messagelib_SOURCE_DIR}
-                    OUTPUT_VARIABLE messagelib_git_revision)
-    string(REGEX REPLACE "\n" "" messagelib_git_revision "${messagelib_git_revision}")
-    set(messagelib_git_revision "git-${messagelib_git_revision}")
-
-    execute_process(COMMAND ${GIT_EXECUTABLE} log -1 --oneline --format=%ci
-                    WORKING_DIRECTORY ${Messagelib_SOURCE_DIR}
-                    OUTPUT_VARIABLE messagelib_git_last_change)
-    string(REGEX REPLACE " [-0-9:+ ]*\n" "" messagelib_git_last_change "${messagelib_git_last_change}")
-  endif()
-endif ()
-
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 #add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 
