@@ -430,6 +430,8 @@ public:
     void checkPhishingUrl();
     void executeRunner(const QUrl &url);
     QUrl imageUrl() const;
+    Q_REQUIRED_RESULT qreal webViewZoomFactor() const;
+    void setWebViewZoomFactor(qreal factor);
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -588,8 +590,9 @@ private:
 
     void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
-    MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     void slotDelayPrintPreview();
+    void applyZoomValue(qreal factor);
+    MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting;
     bool mHtmlLoadExternalDefaultSetting;
     bool mHtmlLoadExtOverride;

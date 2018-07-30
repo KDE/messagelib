@@ -1035,15 +1035,34 @@ void ViewerPrivate::initHtmlWidget()
             &ViewerPrivate::pageIsScrolledToBottom);
 }
 
-void ViewerPrivate::slotWheelZoomChanged(int numSteps)
+void ViewerPrivate::applyZoomValue(qreal factor)
 {
     if (mZoomActionMenu) {
-        const qreal factor = mZoomActionMenu->zoomFactor() + numSteps * 10;
         if (factor >= 10 && factor <= 300) {
             mZoomActionMenu->setZoomFactor(factor);
             mZoomActionMenu->setWebViewerZoomFactor(factor / 100.0);
         }
     }
+}
+
+void ViewerPrivate::setWebViewZoomFactor(qreal factor)
+{
+    applyZoomValue(factor);
+}
+
+qreal ViewerPrivate::webViewZoomFactor() const
+{
+    qreal zoomFactor = -1;
+    if (mZoomActionMenu) {
+        zoomFactor = mZoomActionMenu->zoomFactor();
+    }
+    return zoomFactor;
+}
+
+void ViewerPrivate::slotWheelZoomChanged(int numSteps)
+{
+    const qreal factor = mZoomActionMenu->zoomFactor() + numSteps * 10;
+    applyZoomValue(factor);
 }
 
 void ViewerPrivate::readConfig()

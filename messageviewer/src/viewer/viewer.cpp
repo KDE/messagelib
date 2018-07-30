@@ -706,4 +706,16 @@ void Viewer::setShowSignatureDetails(bool showDetails)
     d->setShowSignatureDetails(showDetails);
 }
 
+qreal Viewer::webViewZoomFactor() const
+{
+    Q_D(const Viewer);
+    return d->webViewZoomFactor();
+}
+
+void Viewer::setWebViewZoomFactor(qreal factor)
+{
+    Q_D(Viewer);
+    d->setWebViewZoomFactor(factor);
+}
+
 }

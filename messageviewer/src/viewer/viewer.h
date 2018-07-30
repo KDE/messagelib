@@ -336,6 +336,10 @@ public:
 
     bool showSignatureDetails() const;
     void setShowSignatureDetails(bool showDetails);
+
+    Q_REQUIRED_RESULT qreal webViewZoomFactor() const;
+    void setWebViewZoomFactor(qreal factor);
+
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
