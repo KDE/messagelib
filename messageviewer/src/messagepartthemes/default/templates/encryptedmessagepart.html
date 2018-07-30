@@ -16,7 +16,7 @@
             {% if block.detailHeader %}
               <div class="enc-details">
                   {% i18n "The message is encrypted for the following keys:" %}
-                  {% if not block.printing %}
+                  {% if not block.isPrinting %}
                       <a href="kmail:hideEncryptionDetails" style="display:block;float:right;">{% i18n "Hide Details" %}</a>
                   {% endif %}
                   <ul style="list-style-type: none;">
