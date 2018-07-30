@@ -55,6 +55,11 @@ bool MailViewerSource::showSignatureDetails() const
     return mViewer->mShowSignatureDetails;
 }
 
+bool MailViewerSource::showEncryptionDetails() const
+{
+    return mViewer->mShowEncryptionDetails;
+}
+
 void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)
 {
 //    qDebug() << " void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes)";

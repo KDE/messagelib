@@ -348,12 +348,6 @@ void MailWebEngineView::scrollPageUp(int percent)
     scrollPageDown(-percent);
 }
 
-void MailWebEngineView::executeHideShowEncryptionDetails(bool hide)
-{
-    const QString source = MessageViewer::MailWebEngineScript::manageShowHideEncryptionDetails(hide);
-    runJavaScriptInWordId(source);
-}
-
 void MailWebEngineView::scrollToRelativePosition(qreal pos)
 {
     runJavaScriptInWordId(WebEngineViewer::WebEngineScript::scrollToRelativePosition(pos));

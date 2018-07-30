@@ -64,7 +64,6 @@ public:
 
     void setPrintElementBackground(bool printElementBackground);
 
-    void executeHideShowEncryptionDetails(bool hide);
     void setLinkHovered(const QUrl &url);
     void setViewer(MessageViewer::ViewerPrivate *viewer);
     bool execPrintPreviewPage(QPrinter *printer, int timeout);

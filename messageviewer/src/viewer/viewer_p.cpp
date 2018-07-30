@@ -184,9 +184,6 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     , mMainWindow(mainWindow)
     , mActionCollection(actionCollection)
     , mCanStartDrag(false)
-    , mDecrytMessageOverwrite(false)
-    , mShowSignatureDetails(false)
-    , mForceEmoticons(true)
     , mRecursionCountForDisplayMessage(0)
     , q(aParent)
     , mSession(new Akonadi::Session("MessageViewer-"
@@ -2839,9 +2836,14 @@ void ViewerPrivate::setShowSignatureDetails(bool showDetails)
     mShowSignatureDetails = showDetails;
 }
 
-void ViewerPrivate::setHideEncryptionDetails(bool encDetails)
+void ViewerPrivate::setShowEncryptionDetails(bool showEncDetails)
 {
-    mViewer->executeHideShowEncryptionDetails(encDetails);
+    mShowEncryptionDetails = showEncDetails;
+}
+
+bool ViewerPrivate::showEncryptionDetails() const
+{
+    return mShowEncryptionDetails;
 }
 
 void ViewerPrivate::scrollToAttachment(KMime::Content *node)

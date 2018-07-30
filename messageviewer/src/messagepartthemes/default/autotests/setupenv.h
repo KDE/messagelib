@@ -50,6 +50,7 @@ public:
         , mHtmlLoadExternal(false)
         , mDecryptMessage(false)
         , mShowSignatureDetails(false)
+        , mShowEncryptionDetails(false)
         , mShowExpandQuotesMark(false)
         , mPreferredMode(MimeTreeParser::Util::Html)
         , mQuoteLevel(1)
@@ -131,6 +132,16 @@ public:
         return mShowSignatureDetails;
     }
 
+    void setShowEncryptionDetails(bool showEncryptionDetails)
+    {
+        mShowEncryptionDetails = showEncryptionDetails;
+    }
+
+    bool showEncryptionDetails() const override
+    {
+        return mShowEncryptionDetails;
+    }
+
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override
     {
         Q_UNUSED(mode);
@@ -176,6 +187,7 @@ private:
     bool mHtmlLoadExternal;
     bool mDecryptMessage;
     bool mShowSignatureDetails;
+    bool mShowEncryptionDetails;
     bool mShowExpandQuotesMark;
     MimeTreeParser::Util::HtmlMode mPreferredMode;
     int mQuoteLevel;

@@ -53,6 +53,7 @@ public:
     /** Return true if external sources should be loaded in a html mail */
     virtual bool htmlLoadExternal() const;
     virtual bool showSignatureDetails() const;
+    virtual bool showEncryptionDetails() const;
     virtual bool showEmoticons() const;
     virtual bool showExpandQuotesMark() const;
     virtual bool isPrinting() const;

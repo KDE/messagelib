@@ -334,11 +334,14 @@ public:
 
     bool printingMode() const;
 
-    bool showSignatureDetails() const;
+    Q_REQUIRED_RESULT bool showSignatureDetails() const;
     void setShowSignatureDetails(bool showDetails);
 
     Q_REQUIRED_RESULT qreal webViewZoomFactor() const;
     void setWebViewZoomFactor(qreal factor);
+
+    Q_REQUIRED_RESULT bool showEncryptionDetails() const;
+    void setShowEncryptionDetails(bool showDetails);
 
 Q_SIGNALS:
     void moveMessageToTrash();

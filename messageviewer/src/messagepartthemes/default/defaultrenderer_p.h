@@ -64,6 +64,7 @@ public:
     bool showExpandQuotesMark() const override;
     bool showOnlyOneMimePart() const override;
     bool showSignatureDetails() const override;
+    bool showEncryptionDetails() const override;
     int levelQuote() const override;
 
     MimeTreeParser::MessagePart::Ptr mMsgPart;
@@ -80,6 +81,7 @@ public:
     bool mShowExpandQuotesMark = false;
     bool mShowOnlyOneMimePart = false;
     bool mShowSignatureDetails = false;
+    bool mShowEncryptionDetails = false;
 };
 }
 #endif

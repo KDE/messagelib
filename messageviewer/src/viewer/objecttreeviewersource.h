@@ -48,6 +48,7 @@ public:
 
     bool autoImportKeys() const override;
     bool showSignatureDetails() const override;
+    bool showEncryptionDetails() const override;
     bool showEmoticons() const override;
     bool showExpandQuotesMark() const override;
     bool isPrinting() const override;

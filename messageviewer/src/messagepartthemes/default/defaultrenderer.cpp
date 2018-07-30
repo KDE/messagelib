@@ -470,6 +470,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     c.insert(QStringLiteral("block"), &block);
 
     block.setProperty("isPrinting", isPrinting());
+    block.setProperty("detailHeader", showEncryptionDetails());
     block.setProperty("inProgress", metaData.inProgress);
     block.setProperty("isDecrypted", mp->decryptMessage());
     block.setProperty("isDecryptable", metaData.isDecryptable);
@@ -1062,6 +1063,11 @@ bool DefaultRendererPrivate::showSignatureDetails() const
     return mShowSignatureDetails;
 }
 
+bool DefaultRendererPrivate::showEncryptionDetails() const
+{
+    return mShowEncryptionDetails;
+}
+
 int DefaultRendererPrivate::levelQuote() const
 {
     return mLevelQuote;
@@ -1100,6 +1106,11 @@ void DefaultRenderer::setIsPrinting(bool isPrinting)
 void DefaultRenderer::setShowExpandQuotesMark(bool showExpandQuotesMark)
 {
     d->mShowExpandQuotesMark = showExpandQuotesMark;
+}
+
+void DefaultRenderer::setShowEncryptionDetails(bool showEncryptionDetails)
+{
+    d->mShowEncryptionDetails = showEncryptionDetails;
 }
 
 void DefaultRenderer::setShowSignatureDetails(bool showSignatureDetails)

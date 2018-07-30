@@ -55,6 +55,7 @@ public:
     void setHtmlLoadExternal(bool htmlLoadExternal);
     void setCreateMessageHeader(std::function<QString(KMime::Message *)>);
     void render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *writer);
+    void setShowEncryptionDetails(bool showEncryptionDetails);
 private:
     DefaultRendererPrivate *d;
 };

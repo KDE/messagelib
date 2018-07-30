@@ -37,7 +37,7 @@ QTEST_GUILESS_MAIN(QuoteHtmlTest)
 class MyRenderContext : public MessageViewer::RenderContext
 {
 public:
-    virtual ~MyRenderContext()
+    ~MyRenderContext() override
     {
     }
 
@@ -92,6 +92,11 @@ public:
     bool showSignatureDetails() const override
     {
         return false;
+    }
+
+    bool showEncryptionDetails() const override
+    {
+         return false;
     }
 
     int levelQuote() const override

@@ -706,6 +706,18 @@ void Viewer::setShowSignatureDetails(bool showDetails)
     d->setShowSignatureDetails(showDetails);
 }
 
+bool Viewer::showEncryptionDetails() const
+{
+    Q_D(const Viewer);
+    return d->showEncryptionDetails();
+}
+
+void Viewer::setShowEncryptionDetails(bool showDetails)
+{
+    Q_D(Viewer);
+    d->setShowEncryptionDetails(showDetails);
+}
+
 qreal Viewer::webViewZoomFactor() const
 {
     Q_D(const Viewer);

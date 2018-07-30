@@ -13,27 +13,30 @@
             {% if block.inProgress %}
                 {% i18n "Please wait while the message is being decrypted..." %}
             {% elif block.isDecryptable %}
-                <div class="enc-simple">
-                {% i18n "Encrypted message" %}
-                    {% if not block.isPrinting %}
-                        <a href="kmail:showEncryptionDetails" style="display:block;float:right;">{% i18n "Show Details" %}</a>
-                    {% endif %}
-                </div>
-                <div class="enc-details" style="display:none;">
-                    {% i18n "The message is encrypted for the following keys:" %}
-                    {% if not block.printing %}
-                        <a href="kmail:hideEncryptionDetails" style="display:block;float:right;">{% i18n "Hide Details" %}</a>
-                    {% endif %}
-                    <ul style="list-style-type: none;">
-                    {% for recipient in decryptedRecipients %}
-                        {%if recipient.mainID %}
-                            <li>{{recipient.id}} (<a href="kmail:showCertificate#{{cryptoProto.displayName}} ### {{cryptoProto.name}} ### {{recipient.mainID}}">0x{{recipient.mainID}}</a>)</li>
-                        {% else %}
-                            <li><a href="kmail:showCertificate#{{cryptoProto.displayName}} ### {{cryptoProto.name}} ### {{recipient.keyID}}">0x{{recipient.keyID}}</a> ({% i18n "unknown key" %})</li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
-                </div>
+            {% if block.detailHeader %}
+              <div class="enc-details">
+                  {% i18n "The message is encrypted for the following keys:" %}
+                  {% if not block.printing %}
+                      <a href="kmail:hideEncryptionDetails" style="display:block;float:right;">{% i18n "Hide Details" %}</a>
+                  {% endif %}
+                  <ul style="list-style-type: none;">
+                  {% for recipient in decryptedRecipients %}
+                      {%if recipient.mainID %}
+                          <li>{{recipient.id}} (<a href="kmail:showCertificate#{{cryptoProto.displayName}} ### {{cryptoProto.name}} ### {{recipient.mainID}}">0x{{recipient.mainID}}</a>)</li>
+                      {% else %}
+                          <li><a href="kmail:showCertificate#{{cryptoProto.displayName}} ### {{cryptoProto.name}} ### {{recipient.keyID}}">0x{{recipient.keyID}}</a> ({% i18n "unknown key" %})</li>
+                      {% endif %}
+                  {% endfor %}
+                  </ul>
+              </div>
+            {% else %}
+             <div class="enc-simple">
+               {% i18n "Encrypted message" %}
+               {% if not block.isPrinting %}
+                       <a href="kmail:showEncryptionDetails" style="display:block;float:right;">{% i18n "Show Details" %}</a>
+               {% endif %}
+             </div>
+            {% endif %}
             {% else %}
                 {% i18n "Encrypted message (decryption not possible)" %}
                 {% if block.errorText %}

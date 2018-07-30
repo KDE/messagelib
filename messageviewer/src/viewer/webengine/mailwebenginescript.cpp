@@ -28,15 +28,3 @@ static QString checkJQuery(const char *scriptName)
                                                                                                    scriptName));
 }
 
-QString MailWebEngineScript::manageShowHideEncryptionDetails(bool hide)
-{
-    QString source = checkJQuery("manageShowHideEncryptionDetails");
-    if (hide) {
-        source += QString::fromLatin1("qt.jQuery(\".enc-details\").hide();"
-                                      "qt.jQuery(\".enc-simple\").show();");
-    } else {
-        source += QString::fromLatin1("qt.jQuery('.enc-simple').hide();"
-                                      "qt.jQuery(\".enc-details\").show();");
-    }
-    return source;
-}

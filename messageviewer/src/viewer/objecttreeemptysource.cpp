@@ -133,6 +133,7 @@ void EmptySource::render(const MimeTreeParser::MessagePartPtr &msgPart, bool sho
     renderer.setShowExpandQuotesMark(showExpandQuotesMark());
     renderer.setShowOnlyOneMimePart(showOnlyOneMimePart);
     renderer.setShowSignatureDetails(showSignatureDetails());
+    renderer.setShowEncryptionDetails(showEncryptionDetails());
 
     renderer.render(msgPart, htmlWriter());
 }
@@ -153,6 +154,11 @@ bool EmptySource::showExpandQuotesMark() const
 }
 
 bool EmptySource::showSignatureDetails() const
+{
+    return false;
+}
+
+bool EmptySource::showEncryptionDetails() const
 {
     return false;
 }

@@ -408,10 +408,12 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
             w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("showEncryptionDetails")) {
-            w->setHideEncryptionDetails(false);
+            w->setShowEncryptionDetails(true);
+            w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1String("hideEncryptionDetails")) {
-            w->setHideEncryptionDetails(true);
+            w->setShowEncryptionDetails(false);
+            w->update(MimeTreeParser::Force);
             return true;
         }
     }

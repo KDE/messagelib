@@ -403,7 +403,9 @@ public:
     void setShowSignatureDetails(bool showDetails = true);
 
     /* show or hide encryption details */
-    void setHideEncryptionDetails(bool encDetails = true);
+    void setShowEncryptionDetails(bool showEncDetails);
+
+    bool showEncryptionDetails() const;
 
     void scrollToAttachment(KMime::Content *node);
     void setUseFixedFont(bool useFixedFont);
@@ -657,9 +659,10 @@ public:
     QPointer<WebEnginePartHtmlWriter> mPartHtmlWriter;
 
     int mLevelQuote;
-    bool mDecrytMessageOverwrite;
-    bool mShowSignatureDetails;
-    bool mForceEmoticons;
+    bool mDecrytMessageOverwrite = false;
+    bool mShowSignatureDetails = false;
+    bool mShowEncryptionDetails = false;
+    bool mForceEmoticons = true;
     int mRecursionCountForDisplayMessage;
     KMime::Content *mCurrentContent = nullptr;
     KMime::Content *mMessagePartNode = nullptr;

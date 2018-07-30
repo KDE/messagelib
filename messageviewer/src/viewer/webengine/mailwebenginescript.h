@@ -24,7 +24,6 @@
 
 namespace MessageViewer {
 namespace MailWebEngineScript {
-MESSAGEVIEWER_EXPORT QString manageShowHideEncryptionDetails(bool hide);
 }
 }
 #endif // MAILWEBENGINESCRIPT_H

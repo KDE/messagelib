@@ -70,6 +70,7 @@ public:
     virtual bool showExpandQuotesMark() const = 0;
     virtual bool showOnlyOneMimePart() const = 0;
     virtual bool showSignatureDetails() const = 0;
+    virtual bool showEncryptionDetails() const = 0;
     virtual int levelQuote() const = 0;
 
 protected:
