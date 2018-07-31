@@ -93,7 +93,7 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
     mEnabled = true;
 
     const QString cacheFileName = QStandardPaths::locate(QStandardPaths::CacheLocation,
-                                                         QStringLiteral("/messagelist/threading/%1").arg(id),
+                                                         QStringLiteral("messagelist/threading/%1").arg(id),
                                                          QStandardPaths::LocateFile);
     if (cacheFileName.isEmpty()) {
         qCDebug(MESSAGELIST_LOG) << "No threading cache file for collection" << id;
