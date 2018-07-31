@@ -30,6 +30,7 @@ class BlockMailTrackingUrlInterceptor : public WebEngineViewer::NetworkPluginUrl
 public:
     struct MailTrackerBlackList
     {
+        MailTrackerBlackList() = default;
         MailTrackerBlackList(const QString &company, const QString &pattern, const QString &url)
             : mCompanyName(company)
             , mCompanyUrl(url)
@@ -55,4 +56,5 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList, Q_MOVABLE_TYPE);
+Q_DECLARE_METATYPE(MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList)
 #endif // BLOCKMAILTRACKINGURLINTERCEPTOR_H

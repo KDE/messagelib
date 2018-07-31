@@ -26,6 +26,7 @@ using namespace MessageViewer;
 BlockMailTrackingUrlInterceptor::BlockMailTrackingUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
+    qRegisterMetaType<MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList>();
     initializeList();
 }
 
