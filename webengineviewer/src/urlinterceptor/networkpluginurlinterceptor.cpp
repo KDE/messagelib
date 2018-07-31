@@ -23,7 +23,6 @@ using namespace WebEngineViewer;
 
 NetworkPluginUrlInterceptor::NetworkPluginUrlInterceptor(QObject *parent)
     : QObject(parent)
-    , mIsEnabled(false)
 {
 }
 

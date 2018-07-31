@@ -34,9 +34,7 @@ class WebEngineViewer::BackOffModeManagerPrivate
 {
 public:
     BackOffModeManagerPrivate(BackOffModeManager *qq)
-        : mNumberOfHttpFailed(0)
-        , isInOffMode(false)
-        , q(qq)
+        : q(qq)
     {
         mTimer = new QTimer(q);
         mTimer->setSingleShot(true);
@@ -52,10 +50,10 @@ public:
     void updateTimer(int seconds);
     void slotTimerFinished();
 
-    int mNumberOfHttpFailed;
-    bool isInOffMode;
-    QTimer *mTimer = nullptr;
     BackOffModeManager *q;
+    QTimer *mTimer = nullptr;
+    int mNumberOfHttpFailed = 0;
+    bool isInOffMode = false;
 };
 
 void BackOffModeManagerPrivate::save()
@@ -64,8 +62,8 @@ void BackOffModeManagerPrivate::save()
     KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("BackOffMode"));
     grp.writeEntry("Enabled", isInOffMode);
     if (isInOffMode) {
-        int calculateTimeInSeconds = calculateBackModeTime();
-        uint delay = QDateTime::currentDateTime().addSecs(calculateTimeInSeconds).toSecsSinceEpoch();
+        const int calculateTimeInSeconds = calculateBackModeTime();
+        const qint64 delay = QDateTime::currentDateTime().addSecs(calculateTimeInSeconds).toSecsSinceEpoch();
         grp.writeEntry("Delay", delay);
         updateTimer(calculateTimeInSeconds);
     } else {

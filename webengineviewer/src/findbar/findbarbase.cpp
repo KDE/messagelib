@@ -102,7 +102,6 @@ FindBarBase::FindBarBase(QWidget *parent)
     lay->addWidget(mStatus);
 
     setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
-    //lay->addStretch();
     hide();
 }
 

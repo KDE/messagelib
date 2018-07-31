@@ -59,8 +59,6 @@ public:
 
     WebEngineAccessKeyPrivate(WebEngineAccessKey *qq, QWebEngineView *webEngine)
         : mWebEngine(webEngine)
-        , mAccessKeyActivated(NotActivated)
-        , mActionCollection(nullptr)
         , q(qq)
     {
     }
@@ -71,7 +69,7 @@ public:
     QHash<QChar, WebEngineViewer::WebEngineAccessKeyAnchor> mAccessKeyNodes;
     QHash<QString, QChar> mDuplicateLinkElements;
     QWebEngineView *mWebEngine = nullptr;
-    AccessKeyState mAccessKeyActivated;
+    AccessKeyState mAccessKeyActivated = NotActivated;
     KActionCollection *mActionCollection = nullptr;
     WebEngineAccessKey *q = nullptr;
 };

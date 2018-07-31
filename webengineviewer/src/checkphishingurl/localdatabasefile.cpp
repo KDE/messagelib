@@ -34,9 +34,7 @@ class WebEngineViewer::LocalDataBaseFilePrivate
 public:
     LocalDataBaseFilePrivate(const QString &filename, LocalDataBaseFile *qq)
         : mFile(filename)
-        , mData(nullptr)
         , q(qq)
-        , mValid(false)
     {
     }
 
@@ -46,10 +44,10 @@ public:
 
     QElapsedTimer mLastCheck;
     QFile mFile;
-    uchar *mData;
+    uchar *mData = nullptr;
     QDateTime mMtime;
     LocalDataBaseFile *q;
-    bool mValid;
+    bool mValid = false;
 };
 
 bool LocalDataBaseFilePrivate::load()

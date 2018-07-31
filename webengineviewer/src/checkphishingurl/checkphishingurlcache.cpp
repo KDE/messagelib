@@ -28,15 +28,13 @@ using namespace WebEngineViewer;
 
 struct UrlCacheInfo {
     UrlCacheInfo()
-        : status(CheckPhishingUrlCache::Unknown)
-        , verifyCacheAfterThisTime(0)
     {
     }
 
     bool isMalWare() const;
     bool isValid() const;
-    CheckPhishingUrlCache::UrlStatus status;
-    uint verifyCacheAfterThisTime;
+    CheckPhishingUrlCache::UrlStatus status = CheckPhishingUrlCache::Unknown;
+    uint verifyCacheAfterThisTime = 0;
 };
 
 bool UrlCacheInfo::isMalWare() const

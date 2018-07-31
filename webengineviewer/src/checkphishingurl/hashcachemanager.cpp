@@ -27,14 +27,12 @@ using namespace WebEngineViewer;
 
 struct HashCacheInfo {
     HashCacheInfo()
-        : status(HashCacheManager::Unknown)
-        , verifyCacheAfterThisTime(0)
     {
     }
 
     bool isValid() const;
-    HashCacheManager::UrlStatus status;
-    uint verifyCacheAfterThisTime;
+    HashCacheManager::UrlStatus status = HashCacheManager::Unknown;
+    uint verifyCacheAfterThisTime = 0;
 };
 
 bool HashCacheInfo::isValid() const

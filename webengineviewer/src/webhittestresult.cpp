@@ -45,11 +45,6 @@ public:
     WebHitTestResultPrivate(const QPoint &pos = QPoint(), const QUrl &url = QUrl(), const QVariant &result = QVariant())
         : mPos(pos)
         , mPageUrl(url)
-        , mIsContentEditable(false)
-        , mIsContentSelected(false)
-        , mMediaPaused(false)
-        , mMediaMuted(false)
-        , mIsNull(true)
     {
         init(result.toMap());
     }
@@ -65,11 +60,11 @@ public:
     QString mTagName;
     QString mLinkTitle;
     QString mAlternateText;
-    bool mIsContentEditable;
-    bool mIsContentSelected;
-    bool mMediaPaused;
-    bool mMediaMuted;
-    bool mIsNull;
+    bool mIsContentEditable = false;
+    bool mIsContentSelected = false;
+    bool mMediaPaused = false;
+    bool mMediaMuted = false;
+    bool mIsNull = true;
 };
 
 void WebHitTestResultPrivate::init(const QVariantMap &map)

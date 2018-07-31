@@ -29,8 +29,6 @@ class WebEngineViewer::NetworkAccessManagerWebEnginePrivate
 {
 public:
     NetworkAccessManagerWebEnginePrivate()
-        : mManager(nullptr)
-        , mNetworkUrlInterceptor(nullptr)
     {
     }
 
