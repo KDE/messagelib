@@ -20,7 +20,6 @@
 #include "mailwebenginepage.h"
 #include "webengineviewer/webengineaccesskey.h"
 #include "webengineviewer/webenginescript.h"
-#include "mailwebenginescript.h"
 #include "messageviewer/messageviewersettings.h"
 #include "../urlhandlermanager.h"
 #include "loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h"

@@ -39,7 +39,6 @@
 #include <gravatar/gravatarsettings.h>
 #include "job/modifymessagedisplayformatjob.h"
 #include "config-messageviewer.h"
-#include "webengine/mailwebenginescript.h"
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KContacts/VCardConverter>
 #include "htmlwriter/webengineembedpart.h"
