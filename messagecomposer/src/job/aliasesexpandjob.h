@@ -93,7 +93,7 @@ private:
 
     struct DistributionListExpansionResult {
         QString addresses;
-        bool isEmpty;
+        bool isEmpty = false;
     };
     QMap<QString, DistributionListExpansionResult> mDistListExpansionResults;
     QMap<QString, QString> mNicknameExpansionResults;

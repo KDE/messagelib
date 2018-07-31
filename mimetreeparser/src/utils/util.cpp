@@ -33,7 +33,7 @@ using namespace MimeTreeParser::Util;
 bool MimeTreeParser::Util::isTypeBlacklisted(KMime::Content *node)
 {
     const QByteArray mediaTypeLower = node->contentType()->mediaType().toLower();
-    bool typeBlacklisted = mediaTypeLower == "multipart";
+    bool typeBlacklisted = mediaTypeLower == QByteArrayLiteral("multipart");
     if (!typeBlacklisted) {
         typeBlacklisted = KMime::isCryptoPart(node);
     }

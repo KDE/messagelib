@@ -47,7 +47,7 @@ public:
     static QString actionXmlExtension(PluginActionType::Type type);
 private:
     QAction *mAction = nullptr;
-    Type mType;
+    Type mType = Tools;
 };
 }
 

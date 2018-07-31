@@ -40,9 +40,9 @@ public:
     {
     }
 
-    MessageComposer::RichTextComposerNg *m_editor = nullptr;
-    KIdentityManagement::IdentityCombo *m_identityCombo = nullptr;
     uint m_currentIdentityId = 0;
+    KIdentityManagement::IdentityCombo *m_identityCombo = nullptr;
+    MessageComposer::RichTextComposerNg *m_editor = nullptr;
 };
 
 SignatureController::SignatureController(QObject *parent)

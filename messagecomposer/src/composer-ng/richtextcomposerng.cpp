@@ -156,6 +156,7 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml)
 
 bool RichTextComposerNg::convertPlainText(MessageComposer::TextPart *textPart)
 {
+    Q_UNUSED(textPart);
     return false;
 }
 

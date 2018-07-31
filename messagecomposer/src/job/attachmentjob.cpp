@@ -64,7 +64,7 @@ AttachmentPart::Ptr AttachmentJob::attachmentPart() const
     return d->part;
 }
 
-void AttachmentJob::setAttachmentPart(AttachmentPart::Ptr part)
+void AttachmentJob::setAttachmentPart(const AttachmentPart::Ptr &part)
 {
     Q_D(AttachmentJob);
     d->part = part;

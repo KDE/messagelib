@@ -39,7 +39,7 @@ public:
     ~AttachmentJob() override;
 
     Q_REQUIRED_RESULT MessageCore::AttachmentPart::Ptr attachmentPart() const;
-    void setAttachmentPart(MessageCore::AttachmentPart::Ptr part);
+    void setAttachmentPart(const MessageCore::AttachmentPart::Ptr &part);
 
 protected Q_SLOTS:
     void doStart() override;

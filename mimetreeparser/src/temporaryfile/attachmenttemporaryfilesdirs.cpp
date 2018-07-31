@@ -30,13 +30,12 @@ class MimeTreeParser::AttachmentTemporaryFilesDirsPrivate
 {
 public:
     AttachmentTemporaryFilesDirsPrivate()
-        : mDelayRemoveAll(10000)
     {
     }
 
     QStringList mTempFiles;
     QStringList mTempDirs;
-    int mDelayRemoveAll;
+    int mDelayRemoveAll = 10000;
 };
 
 AttachmentTemporaryFilesDirs::AttachmentTemporaryFilesDirs(QObject *parent)

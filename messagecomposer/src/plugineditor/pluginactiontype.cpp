@@ -22,8 +22,6 @@
 using namespace MessageComposer;
 
 PluginActionType::PluginActionType()
-    : mAction(nullptr)
-    , mType(Tools)
 {
 }
 

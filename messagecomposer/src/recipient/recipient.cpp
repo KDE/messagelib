@@ -34,14 +34,13 @@ class MessageComposer::RecipientPrivate
 public:
     RecipientPrivate(const QString &email, Recipient::Type type)
         : mEmail(email)
-        , mEncryptionAction(Kleo::Impossible)
         , mType(type)
     {
     }
 
     QString mEmail;
     QString mName;
-    Kleo::Action mEncryptionAction;
+    Kleo::Action mEncryptionAction = Kleo::Impossible;
     GpgME::Key mKey;
     MessageComposer::Recipient::Type mType;
 };

@@ -56,8 +56,8 @@ private:
     void slotReplyDone();
     QString mSelection;
     QString mTemplate;
-    KMime::Message::Ptr mMsg;
-    KMime::Message::Ptr mOrigMsg;
+    KMime::Message::Ptr mMsg = nullptr;
+    KMime::Message::Ptr mOrigMsg = nullptr;
     Akonadi::Collection mCollection;
     bool mReplyAll = false;
     KIdentityManagement::IdentityManager *mIdentityManager = nullptr;

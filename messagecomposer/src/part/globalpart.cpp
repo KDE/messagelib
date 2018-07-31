@@ -28,10 +28,10 @@ public:
     {
     }
 
-    bool guiEnabled = true;
-    QWidget *parentWidgetForGui = nullptr;
-    bool fallbackCharsetEnabled = false;
     QList<QByteArray> charsets;
+    QWidget *parentWidgetForGui = nullptr;
+    bool guiEnabled = true;
+    bool fallbackCharsetEnabled = false;
     bool allow8Bit = false;
     bool MDNRequested = false;
 };

@@ -34,9 +34,9 @@ public:
     QString plainText;
     QString subject;
     QString defaultDomain;
-    uint identity = 0;
     int transportId = -1;
     bool isHtml = false;
+    uint identity = 0;
     bool hasAttachment = false;
 };
 

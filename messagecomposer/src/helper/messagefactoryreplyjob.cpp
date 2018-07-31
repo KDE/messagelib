@@ -26,8 +26,6 @@ using namespace MessageComposer;
 
 MessageFactoryReplyJob::MessageFactoryReplyJob(QObject *parent)
     : QObject(parent)
-    , mMsg(nullptr)
-    , mOrigMsg(nullptr)
 {
 }
 
