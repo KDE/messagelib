@@ -33,6 +33,13 @@
     </widget>
    </item>
    <item>
+    <widget class="QCheckBox" name="alwaysShowEncryptionSignatureDetail">
+     <property name="text">
+      <string>Always show encryption/signature details</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>

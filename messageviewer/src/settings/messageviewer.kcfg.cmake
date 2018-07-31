@@ -19,6 +19,10 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
         <label>Specifies whether the background color and images are also drawn when the page is printed.</label>
         <default>true</default>
       </entry>
+      <entry name="AlwaysShowEncryptionSignatureDetails" type="Bool" key="print-always-show-encryption-signature-details">
+      <label>Always show encryption/signature details when we print message</label>
+        <default>false</default>
+      </entry>
   </group>
 
 

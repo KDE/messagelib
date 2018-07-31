@@ -50,6 +50,8 @@ PrintingSettings::PrintingSettings(QWidget *parent)
             &PrintingSettings::changed);
     connect(d->mPrintingUi->printBackgroundColorAndImages, &QCheckBox::toggled, this,
             &PrintingSettings::changed);
+    connect(d->mPrintingUi->alwaysShowEncryptionSignatureDetail, &QCheckBox::toggled, this,
+            &PrintingSettings::changed);
 }
 
 PrintingSettings::~PrintingSettings()
@@ -65,6 +67,8 @@ void PrintingSettings::save()
                  MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
     saveCheckBox(d->mPrintingUi->printBackgroundColorAndImages,
                  MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
+    saveCheckBox(d->mPrintingUi->alwaysShowEncryptionSignatureDetail,
+                 MessageViewer::MessageViewerSettings::self()->alwaysShowEncryptionSignatureDetailsItem());
 }
 
 void PrintingSettings::doLoadFromGlobalSettings()
@@ -75,6 +79,8 @@ void PrintingSettings::doLoadFromGlobalSettings()
                MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
     loadWidget(d->mPrintingUi->printBackgroundColorAndImages,
                MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
+    loadWidget(d->mPrintingUi->alwaysShowEncryptionSignatureDetail,
+                 MessageViewer::MessageViewerSettings::self()->alwaysShowEncryptionSignatureDetailsItem());
 }
 
 void PrintingSettings::doResetToDefaultsOther()
@@ -86,5 +92,7 @@ void PrintingSettings::doResetToDefaultsOther()
                MessageViewer::MessageViewerSettings::self()->respectExpandCollapseSettingsItem());
     loadWidget(d->mPrintingUi->printBackgroundColorAndImages,
                MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
+    loadWidget(d->mPrintingUi->alwaysShowEncryptionSignatureDetail,
+                 MessageViewer::MessageViewerSettings::self()->alwaysShowEncryptionSignatureDetailsItem());
     MessageViewer::MessageViewerSettings::self()->useDefaults(bUseDefaults);
 }
