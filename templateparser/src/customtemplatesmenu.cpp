@@ -32,10 +32,6 @@ class TemplateParser::CustomTemplatesMenuPrivate
 {
 public:
     CustomTemplatesMenuPrivate()
-        : mOwnerActionCollection(nullptr)
-        , mCustomReplyActionMenu(nullptr)
-        , mCustomReplyAllActionMenu(nullptr)
-        , mCustomForwardActionMenu(nullptr)
     {
     }
 

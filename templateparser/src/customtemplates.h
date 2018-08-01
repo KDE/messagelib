@@ -123,7 +123,7 @@ class CustomTemplateItemDelegate : public QStyledItemDelegate
     Q_OBJECT
 public:
     explicit CustomTemplateItemDelegate(QObject *parent = nullptr);
-    ~CustomTemplateItemDelegate();
+    ~CustomTemplateItemDelegate() override;
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
     void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override;
