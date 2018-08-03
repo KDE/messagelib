@@ -2071,7 +2071,6 @@ void ViewerPrivate::slotUrlOn(const QString &link)
         msg = link;
     }
 
-    KPIM::BroadcastStatus::instance()->setTransientStatusMsg(msg);
     Q_EMIT showStatusBarMessage(msg);
 }
 
