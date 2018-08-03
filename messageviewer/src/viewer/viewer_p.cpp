@@ -3118,5 +3118,7 @@ void ViewerPrivate::slotToggleEmoticons()
 void ViewerPrivate::slotZoomChanged(qreal zoom)
 {
     mViewer->slotZoomChanged(zoom);
-    MessageViewer::MessageViewerSettings::self()->setZoomFactor(zoom * 100);
+    const qreal zoomFactor = zoom * 100;
+    MessageViewer::MessageViewerSettings::self()->setZoomFactor(zoomFactor);
+    Q_EMIT zoomChanged(zoomFactor);
 }

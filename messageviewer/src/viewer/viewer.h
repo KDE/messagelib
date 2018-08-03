@@ -380,6 +380,7 @@ Q_SIGNALS:
     void makeResourceOnline(MessageViewer::Viewer::ResourceOnlineMode mode);
 
     void printingFinished();
+    void zoomChanged(qreal zoomFactor);
 
 private:
     void initialize();

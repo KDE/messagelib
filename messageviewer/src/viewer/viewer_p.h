@@ -579,6 +579,7 @@ Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
     void printingFinished();
+    void zoomChanged(qreal zoomFactor);
 private:
     QString attachmentHtml() const;
 

@@ -108,6 +108,7 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::moveMessageToTrash, this, &Viewer::moveMessageToTrash);
     connect(d_ptr, &ViewerPrivate::pageIsScrolledToBottom, this, &Viewer::pageIsScrolledToBottom);
     connect(d_ptr, &ViewerPrivate::printingFinished, this, &Viewer::printingFinished);
+    connect(d_ptr, &ViewerPrivate::zoomChanged, this, &Viewer::zoomChanged);
 
     setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
 }
