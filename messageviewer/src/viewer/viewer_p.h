@@ -593,7 +593,8 @@ private:
     void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
     void slotDelayPrintPreview();
-    void applyZoomValue(qreal factor);
+    void applyZoomValue(qreal factor, bool saveConfig = true);
+    void slotZoomChanged(qreal zoom);
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting;
     bool mHtmlLoadExternalDefaultSetting;

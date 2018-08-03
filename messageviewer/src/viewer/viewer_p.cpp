@@ -1031,19 +1031,24 @@ void ViewerPrivate::initHtmlWidget()
             &ViewerPrivate::pageIsScrolledToBottom);
 }
 
-void ViewerPrivate::applyZoomValue(qreal factor)
+void ViewerPrivate::applyZoomValue(qreal factor, bool saveConfig)
 {
     if (mZoomActionMenu) {
         if (factor >= 10 && factor <= 300) {
-            mZoomActionMenu->setZoomFactor(factor);
-            mZoomActionMenu->setWebViewerZoomFactor(factor / 100.0);
+            if (mZoomActionMenu->zoomFactor() != factor) {
+                mZoomActionMenu->setZoomFactor(factor);
+                mZoomActionMenu->setWebViewerZoomFactor(factor / 100.0);
+                if (saveConfig) {
+                    MessageViewer::MessageViewerSettings::self()->setZoomFactor(factor);
+                }
+            }
         }
     }
 }
 
 void ViewerPrivate::setWebViewZoomFactor(qreal factor)
 {
-    applyZoomValue(factor);
+    applyZoomValue(factor, false);
 }
 
 qreal ViewerPrivate::webViewZoomFactor() const
@@ -1105,6 +1110,7 @@ void ViewerPrivate::readConfig()
         update();
     }
     mColorBar->update();
+    applyZoomValue(MessageViewer::MessageViewerSettings::self()->zoomFactor(), false);
 }
 
 void ViewerPrivate::readGravatarConfig()
@@ -1525,8 +1531,7 @@ void ViewerPrivate::createActions()
         return;
     }
     mZoomActionMenu = new WebEngineViewer::ZoomActionMenu(this);
-    connect(mZoomActionMenu, &WebEngineViewer::ZoomActionMenu::zoomChanged, mViewer,
-            &MailWebEngineView::slotZoomChanged);
+    connect(mZoomActionMenu, &WebEngineViewer::ZoomActionMenu::zoomChanged, this, &ViewerPrivate::slotZoomChanged);
     mZoomActionMenu->setActionCollection(ac);
     mZoomActionMenu->createZoomActions();
 
@@ -3108,4 +3113,10 @@ void ViewerPrivate::slotToggleEmoticons()
     MessageViewer::MessageViewerSettings::self()->setShowEmoticons(mForceEmoticons);
     headerStylePlugin()->headerStyle()->setShowEmoticons(mForceEmoticons);
     update(MimeTreeParser::Force);
+}
+
+void ViewerPrivate::slotZoomChanged(qreal zoom)
+{
+    mViewer->slotZoomChanged(zoom);
+    MessageViewer::MessageViewerSettings::self()->setZoomFactor(zoom * 100);
 }
