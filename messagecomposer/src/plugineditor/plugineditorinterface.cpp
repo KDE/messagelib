@@ -32,6 +32,7 @@ public:
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextEditor *mRichTextEditor = nullptr;
     PluginEditor *plugin = nullptr;
+    QWidget *statusBarWidget = nullptr;
     bool mSelectedText = false;
 };
 
@@ -74,4 +75,14 @@ void PluginEditorInterface::setNeedSelectedText(bool b)
 bool PluginEditorInterface::needSelectedText() const
 {
     return d->mSelectedText;
+}
+
+void PluginEditorInterface::setStatusBarWidget(QWidget *w)
+{
+    d->statusBarWidget = w;
+}
+
+QWidget *PluginEditorInterface::statusBarWidget() const
+{
+    return d->statusBarWidget;
 }

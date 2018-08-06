@@ -49,6 +49,9 @@ public:
     void setNeedSelectedText(bool b);
     Q_REQUIRED_RESULT bool needSelectedText() const;
 
+    void setStatusBarWidget(QWidget *w);
+    Q_REQUIRED_RESULT QWidget *statusBarWidget() const;
+
 Q_SIGNALS:
     void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);
 
