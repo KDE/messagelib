@@ -34,7 +34,7 @@ ComposerLineEdit::ComposerLineEdit(bool useCompletion, QWidget *parent)
     setShowRecentAddresses(MessageComposerSettings::self()->showRecentAddressesInComposer());
     setRecentAddressConfig(MessageComposerSettings::self()->config());
     loadContacts();
-    setEnableBalooSearch(MessageComposerSettings::showBalooSearchInComposer());
+    setEnableIndexSearch(MessageComposerSettings::showBalooSearchInComposer());
 }
 
 ComposerLineEdit::~ComposerLineEdit()

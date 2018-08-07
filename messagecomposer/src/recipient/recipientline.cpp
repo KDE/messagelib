@@ -274,12 +274,12 @@ void RecipientLineNG::setIcon(const QIcon &icon, const QString &tooltip)
 
 void RecipientLineNG::setEnableIndexSearch(bool enableIndexSearch)
 {
-    mEdit->setEnableBalooSearch(enableIndexSearch);
+    mEdit->setEnableIndexSearch(enableIndexSearch);
 }
 
 bool RecipientLineNG::enableIndexSearch() const
 {
-    return mEdit->enableBalooSearch();
+    return mEdit->enableIndexSearch();
 }
 
 void RecipientLineNG::setEnableAkonadiSearch(bool enableAkonadiSearch)
