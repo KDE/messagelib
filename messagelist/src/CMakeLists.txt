@@ -70,7 +70,7 @@ target_link_libraries(KF5MessageList
     KF5::KIOCore
     KF5::MessageCore
     KF5::PimCommonAkonadi
-    KF5::AkonadiSearchPIM
+    KF5::AkonadiSearch
     KF5::XmlGui
     KF5::IconThemes
     KF5::Completion

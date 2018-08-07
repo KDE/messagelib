@@ -21,8 +21,12 @@
 #include "core/filter.h"
 #include "core/messageitem.h"
 
-#include <AkonadiSearch/PIM/emailquery.h>
-#include <AkonadiSearch/PIM/resultiterator.h>
+#include <AkonadiSearch/SearchRunner>
+#include <AkonadiCore/SearchQuery>
+
+#include <KMime/Message>
+
+#include <QRegularExpression>
 
 using namespace MessageList::Core;
 
@@ -155,32 +159,47 @@ void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptio
         }
         needToSplitString = true;
     }
-    if (!newStr.trimmed().isEmpty()) {
-        Akonadi::Search::PIM::EmailQuery query;
-        if (options & QuickSearchLine::SearchEveryWhere) {
-            query.matches(newStr);
-            query.setSplitSearchMatchString(needToSplitString);
-        } else if (options & QuickSearchLine::SearchAgainstSubject) {
-            query.subjectMatches(newStr);
-        } else if (options & QuickSearchLine::SearchAgainstBody) {
-            query.bodyMatches(newStr);
-        } else if (options & QuickSearchLine::SearchAgainstFrom) {
-            query.setFrom(newStr);
-        } else if (options & QuickSearchLine::SearchAgainstBcc) {
-            query.setBcc(QStringList() << newStr);
-        } else if (options & QuickSearchLine::SearchAgainstTo) {
-            query.setTo(QStringList() << newStr);
-        }
-
-        //If the collection is virtual we're probably trying to filter the search collection, so we just search globally
-        if (mCurrentFolder.isValid() && !mCurrentFolder.isVirtual()) {
-            query.addCollection(mCurrentFolder.id());
-        }
-
-        Akonadi::Search::PIM::ResultIterator it = query.exec();
-        while (it.next()) {
-            mMatchingItemIds << it.id();
-        }
+    if (newStr.trimmed().isEmpty()) {
+        Q_EMIT finished();
+        return;
     }
-    Q_EMIT finished();
+
+    Akonadi::SearchQuery query;
+    if (options & QuickSearchLine::SearchEveryWhere) {
+        if (needToSplitString) {
+            const QStringList list = newStr.split(QRegularExpression(QStringLiteral("\\s")), QString::SkipEmptyParts);
+            Akonadi::SearchTerm andTerm(Akonadi::SearchTerm::RelAnd);
+            for (const auto &str : list) {
+                andTerm.addSubTerm(Akonadi::EmailSearchTerm::matches(str));
+            }
+            query.addTerm(andTerm);
+        } else {
+            query.addTerm(Akonadi::EmailSearchTerm::matches(newStr));
+        }
+    } else if (options & QuickSearchLine::SearchAgainstSubject) {
+        query.addTerm(Akonadi::EmailSearchTerm::subjectMatches(newStr));
+    } else if (options & QuickSearchLine::SearchAgainstBody) {
+        query.addTerm(Akonadi::EmailSearchTerm::bodyMatches(newStr));
+    } else if (options & QuickSearchLine::SearchAgainstFrom) {
+        query.addTerm(Akonadi::EmailSearchTerm::from({newStr}));
+    } else if (options & QuickSearchLine::SearchAgainstBcc) {
+        query.addTerm(Akonadi::EmailSearchTerm::bcc({newStr}));
+    } else if (options & QuickSearchLine::SearchAgainstTo) {
+        query.addTerm(Akonadi::EmailSearchTerm::to({newStr}));
+    }
+
+    //If the collection is virtual we're probably trying to filter the search collection, so we just search globally
+    if (mCurrentFolder.isValid() && !mCurrentFolder.isVirtual()) {
+        query.addTerm(Akonadi::SearchTerm::inCollection(mCurrentFolder.id()));
+    }
+
+    auto runner = new Akonadi::Search::SearchRunner(query, KMime::Message::mimeType());
+    connect(runner, &Akonadi::Search::SearchRunner::finished,
+            this, [this](Akonadi::Search::ResultIterator iter) {
+                while (iter.next()) {
+                    mMatchingItemIds.insert(iter.id());
+                }
+                Q_EMIT finished();
+            });
+    runner->start();
 }

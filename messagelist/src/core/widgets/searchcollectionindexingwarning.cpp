@@ -31,13 +31,12 @@
 
 #include <KLocalizedString>
 
-#include <AkonadiSearch/PIM/indexeditems.h>
+#include <AkonadiSearch/IndexedItems>
 
 using namespace MessageList::Core;
 
 SearchCollectionIndexingWarning::SearchCollectionIndexingWarning(QWidget *parent)
     : KMessageWidget(parent)
-    , mIndexedItems(new Akonadi::Search::PIM::IndexedItems(this))
 {
     setVisible(false);
     setWordWrap(true);
@@ -133,7 +132,7 @@ void SearchCollectionIndexingWarning::queryIndexerStatus()
         if (PimCommon::Util::isImapResource(col.resource()) && !col.cachePolicy().localParts().contains(QLatin1String("RFC822"))) {
             continue;
         }
-        const qlonglong result = mIndexedItems->indexedItems(col.id());
+        const qlonglong result = Akonadi::Search::IndexedItems().indexedItems(col.id());
 
         qCDebug(MESSAGELIST_LOG) << "Collection:" << col.displayName() << "(" << col.id() << "), count:" << col.statistics().count() << ", index:" << result;
         if (col.statistics().count() != result) {

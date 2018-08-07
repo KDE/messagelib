@@ -26,13 +26,6 @@
 class KJob;
 
 namespace Akonadi {
-namespace Search {
-namespace PIM {
-class IndexedItems;
-}
-}
-}
-namespace Akonadi {
 class CollectionFetchJob;
 }
 namespace MessageList {
@@ -56,7 +49,6 @@ private:
 
     Akonadi::Collection mCollection;
     Akonadi::Collection::List mCollections;
-    Akonadi::Search::PIM::IndexedItems *mIndexedItems = nullptr;
 };
 }
 }
