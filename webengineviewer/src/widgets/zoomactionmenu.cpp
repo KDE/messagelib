@@ -20,6 +20,7 @@
 #include "zoomactionmenu.h"
 #include <KLocalizedString>
 #include <KActionCollection>
+#include <kconfig_version.h>
 
 using namespace WebEngineViewer;
 namespace {
@@ -65,20 +66,22 @@ void ZoomActionMenu::setActionCollection(KActionCollection *ac)
 void ZoomActionMenu::createZoomActions()
 {
     // Zoom actions
-    d->mZoomInAction = new QAction(QIcon::fromTheme(QStringLiteral("zoom-in")), i18n("&Zoom In"), this);
+    d->mZoomInAction = KStandardAction::zoomIn(this, &ZoomActionMenu::slotZoomOut, this);
     d->mActionCollection->addAction(QStringLiteral("zoom_in"), d->mZoomInAction);
-    connect(d->mZoomInAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomIn);
-    d->mActionCollection->setDefaultShortcut(d->mZoomInAction, QKeySequence(Qt::CTRL + Qt::Key_Plus));
 
-    d->mZoomOutAction = new QAction(QIcon::fromTheme(QStringLiteral("zoom-out")), i18n("Zoom &Out"), this);
+    d->mZoomOutAction = KStandardAction::zoomOut(this, &ZoomActionMenu::slotZoomOut, this);
     d->mActionCollection->addAction(QStringLiteral("zoom_out"), d->mZoomOutAction);
-    connect(d->mZoomOutAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomOut);
-    d->mActionCollection->setDefaultShortcut(d->mZoomOutAction, QKeySequence(Qt::CTRL + Qt::Key_Minus));
 
+#if KCONFIG_VERSION < QT_VERSION_CHECK(5, 50, 0)
     d->mZoomResetAction = new QAction(i18n("Reset"), this);
     d->mActionCollection->addAction(QStringLiteral("zoom_reset"), d->mZoomResetAction);
     connect(d->mZoomResetAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomReset);
     d->mActionCollection->setDefaultShortcut(d->mZoomResetAction, QKeySequence(Qt::CTRL + Qt::Key_0));
+#else
+    d->mZoomResetAction = KStandardAction::actualSize(this, &ZoomActionMenu::slotZoomReset, this);
+    d->mActionCollection->addAction(QStringLiteral("zoom_reset"), d->mZoomResetAction);
+#endif
+
     d->createMenu();
 }
 
