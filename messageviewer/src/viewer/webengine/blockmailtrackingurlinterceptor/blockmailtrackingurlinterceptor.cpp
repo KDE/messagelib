@@ -37,9 +37,8 @@ MessageViewer::BlockMailTrackingUrlInterceptor::~BlockMailTrackingUrlInterceptor
 bool BlockMailTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
-    //qDebug() << " bool BlockMailTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)"<<urlRequestUrl;
     for (int i = 0; i < mBackList.size(); ++i) {
-        if (urlRequestUrl.url().contains(mBackList.at(i).mPattern)) {
+        if (urlRequestUrl.url().startsWith(mBackList.at(i).mCompanyUrl)) {
             Q_EMIT mailTrackingFound(mBackList.at(i));
             return true;
         }
