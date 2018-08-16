@@ -60,6 +60,11 @@ void InterceptorManager::addInterceptor(WebEngineViewer::NetworkPluginUrlInterce
     d->mNetworkUrlInterceptor->addInterceptor(interceptor);
 }
 
+void InterceptorManager::removeInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor)
+{
+    d->mNetworkUrlInterceptor->removeInterceptor(interceptor);
+}
+
 QList<QAction *> InterceptorManager::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     QList<QAction *> actions;

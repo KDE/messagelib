@@ -1102,6 +1102,7 @@ void ViewerPrivate::readConfig()
     adjustLayout();
 
     readGlobalOverrideCodec();
+    mViewer->readConfig();
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumFontSize,
                                      MessageViewer::MessageViewerSettings::self()->minimumFontSize());
     mViewer->settings()->setFontSize(QWebEngineSettings::MinimumLogicalFontSize,

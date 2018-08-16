@@ -34,6 +34,7 @@ public:
 
     void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
     void interceptRequest(QWebEngineUrlRequestInfo &info);
+    void removeInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
     QVector<NetworkPluginUrlInterceptorInterface *> listInterceptor;
 };
 
@@ -41,8 +42,13 @@ void NetworkUrlInterceptorPrivate::addInterceptor(NetworkPluginUrlInterceptorInt
 {
     if (!listInterceptor.contains(interceptor)) {
         listInterceptor.append(interceptor);
-    } else {
-        qCDebug(WEBENGINEVIEWER_LOG) << "interceptor already added. This is a problem" << interceptor;
+    }
+}
+
+void NetworkUrlInterceptorPrivate::removeInterceptor(NetworkPluginUrlInterceptorInterface *interceptor)
+{
+    if (listInterceptor.contains(interceptor)) {
+        listInterceptor.removeOne(interceptor);
     }
 }
 
@@ -75,4 +81,9 @@ void NetworkUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 void NetworkUrlInterceptor::addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor)
 {
     d->addInterceptor(interceptor);
+}
+
+void NetworkUrlInterceptor::removeInterceptor(NetworkPluginUrlInterceptorInterface *interceptor)
+{
+    d->removeInterceptor(interceptor);
 }

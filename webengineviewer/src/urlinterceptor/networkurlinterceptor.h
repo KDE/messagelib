@@ -36,6 +36,7 @@ public:
     void interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
     void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
+    void removeInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
 private:
     NetworkUrlInterceptorPrivate *const d;
 };

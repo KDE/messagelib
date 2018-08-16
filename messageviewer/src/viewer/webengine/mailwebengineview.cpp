@@ -73,6 +73,7 @@ public:
     MailWebEnginePage *mPageEngine = nullptr;
     WebEngineViewer::InterceptorManager *mNetworkAccessManager = nullptr;
     MessageViewer::ViewerPrivate *mViewer = nullptr;
+    MessageViewer::BlockMailTrackingUrlInterceptor *mBlockMailTrackingUrl = nullptr;
     bool mCanStartDrag = false;
 };
 
@@ -103,11 +104,10 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
             &MailWebEngineView::formSubmittedForbidden);
     d->mNetworkAccessManager->addInterceptor(blockExternalUrl);
 
-    MessageViewer::BlockMailTrackingUrlInterceptor *blockMailTrackingUrl
+    d->mBlockMailTrackingUrl
         = new MessageViewer::BlockMailTrackingUrlInterceptor(this);
-    connect(blockMailTrackingUrl, &BlockMailTrackingUrlInterceptor::mailTrackingFound, this,
+    connect(d->mBlockMailTrackingUrl, &BlockMailTrackingUrlInterceptor::mailTrackingFound, this,
             &MailWebEngineView::mailTrackingFound);
-    d->mNetworkAccessManager->addInterceptor(blockMailTrackingUrl);
 
     setFocusPolicy(Qt::WheelFocus);
     connect(d->mPageEngine, &MailWebEnginePage::urlClicked, this, &MailWebEngineView::openUrl);
@@ -120,6 +120,15 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
 MailWebEngineView::~MailWebEngineView()
 {
     delete d;
+}
+
+void MailWebEngineView::readConfig()
+{
+    if (MessageViewer::MessageViewerSettings::self()->mailTrackingUrlEnabled()) {
+        d->mNetworkAccessManager->addInterceptor(d->mBlockMailTrackingUrl);
+    } else  {
+        d->mNetworkAccessManager->removeInterceptor(d->mBlockMailTrackingUrl);
+    }
 }
 
 void MailWebEngineView::setLinkHovered(const QUrl &url)
