@@ -22,6 +22,7 @@
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <KConfigGroup>
+#include <QPushButton>
 #include <KSharedConfig>
 #include <KPIMTextEdit/RichTextEditorWidget>
 
@@ -38,6 +39,10 @@ MailTrackingDetailsDialog::MailTrackingDetailsDialog(QWidget *parent)
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &MailTrackingDetailsDialog::reject);
+    connect(buttonBox->button(
+                QDialogButtonBox::Close), &QPushButton::clicked, this,
+            &MailTrackingDetailsDialog::close);
 
     mDetails = new KPIMTextEdit::RichTextEditorWidget(this);
     mDetails->setObjectName(QStringLiteral("detail"));
