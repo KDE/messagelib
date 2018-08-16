@@ -89,7 +89,8 @@ void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString
 KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
     QFile file(QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + mailFile);
-    Q_ASSERT(file.open(QIODevice::ReadOnly));
+    bool openFile = file.open(QIODevice::ReadOnly);
+    Q_ASSERT(openFile);
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
     Q_ASSERT(!data.isEmpty());
     KMime::Message::Ptr msg(new KMime::Message);
