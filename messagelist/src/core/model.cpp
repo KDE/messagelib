@@ -367,6 +367,7 @@ Model::~Model()
     d->mNewestItem = nullptr;
     d->clearUnassignedMessageLists();
     d->clearOrphanChildrenHash();
+    d->clearThreadingCacheReferencesIdMD5ToMessageItem();
     d->clearThreadingCacheMessageSubjectMD5ToMessageItem();
     delete d->mPersistentSetManager;
     // Delete the invariant row mapper before removing the items.
@@ -730,6 +731,7 @@ void ModelPrivate::clear()
     mGroupHeadersThatNeedUpdate.clear();
     mThreadingCacheMessageIdMD5ToMessageItem.clear();
     mThreadingCacheMessageInReplyToIdMD5ToMessageItem.clear();
+    clearThreadingCacheReferencesIdMD5ToMessageItem();
     clearThreadingCacheMessageSubjectMD5ToMessageItem();
     mViewItemJobStepChunkTimeout = 100;
     mViewItemJobStepIdleInterval = 10;
@@ -1150,6 +1152,12 @@ void ModelPrivate::clearUnassignedMessageLists()
     }
 }
 
+void ModelPrivate::clearThreadingCacheReferencesIdMD5ToMessageItem()
+{
+    qDeleteAll(mThreadingCacheMessageReferencesIdMD5ToMessageItem);
+    mThreadingCacheMessageReferencesIdMD5ToMessageItem.clear();
+}
+
 void ModelPrivate::clearThreadingCacheMessageSubjectMD5ToMessageItem()
 {
     qDeleteAll(mThreadingCacheMessageSubjectMD5ToMessageItem);
@@ -1557,6 +1565,17 @@ MessageItem *ModelPrivate::findMessageParent(MessageItem *mi)
             return pParent; // got an imperfect parent for this message
         }
 
+        auto messagesWithTheSameReferences = mThreadingCacheMessageReferencesIdMD5ToMessageItem.value(md5, nullptr);
+        if (messagesWithTheSameReferences) {
+            Q_ASSERT(!messagesWithTheSameReferences->isEmpty());
+
+            pParent = messagesWithTheSameReferences->first();
+            if (mi != pParent && (mi->childItemCount() == 0 || !pParent->hasAncestor(mi))) {
+                mi->setThreadingStatus(MessageItem::ImperfectParentFound);
+                return pParent;
+            }
+        }
+
         // got no imperfect parent
         bMessageWasThreadable = true; // but the message was threadable
     }
@@ -1628,6 +1647,61 @@ public:
     }
 };
 
+void ModelPrivate::addMessageToReferencesBasedThreadingCache(MessageItem *mi)
+{
+    // Messages in this cache are sorted by date, and if dates are equal then they are sorted by pointer value.
+    // Sorting by date is used to optimize the parent lookup in guessMessageParent() below.
+
+    // WARNING: If the message date changes for some reason (like in the "update" step)
+    //          then the cache may become unsorted. For this reason the message about to
+    //          be changed must be first removed from the cache and then reinserted.
+
+    auto messagesWithTheSameReference = mThreadingCacheMessageReferencesIdMD5ToMessageItem.value(mi->referencesIdMD5(), nullptr);
+
+    if (!messagesWithTheSameReference) {
+        messagesWithTheSameReference = new QList< MessageItem * >();
+        mThreadingCacheMessageReferencesIdMD5ToMessageItem.insert(mi->referencesIdMD5(), messagesWithTheSameReference);
+        messagesWithTheSameReference->append(mi);
+        return;
+    }
+
+    // Found: assert that we have no duplicates in the cache.
+    Q_ASSERT(!messagesWithTheSameReference->contains(mi));
+
+    // Ordered insert: first by date then by pointer value.
+    auto it = std::lower_bound(messagesWithTheSameReference->begin(), messagesWithTheSameReference->end(), mi, MessageLessThanByDate());
+    messagesWithTheSameReference->insert(it, mi);
+}
+
+void ModelPrivate::removeMessageFromReferencesBasedThreadingCache(MessageItem *mi)
+{
+    // We assume that the caller knows what he is doing and the message is actually in the cache.
+    // If the message isn't in the cache then we should not be called at all.
+
+    auto messagesWithTheSameReference = mThreadingCacheMessageReferencesIdMD5ToMessageItem.value(mi->referencesIdMD5(), nullptr);
+
+    // We assume that the message is there so the list must be non null.
+    Q_ASSERT(messagesWithTheSameReference);
+
+    // The cache *MUST* be ordered first by date then by pointer value
+    auto it = std::lower_bound(messagesWithTheSameReference->begin(), messagesWithTheSameReference->end(), mi, MessageLessThanByDate());
+
+    // The binary based search must have found a message
+    Q_ASSERT(it != messagesWithTheSameReference->end());
+
+    // and it must have found exactly the message requested
+    Q_ASSERT(*it == mi);
+
+    // Kill it
+    messagesWithTheSameReference->erase(it);
+
+    // And kill the list if it was the last one
+    if (messagesWithTheSameReference->isEmpty()) {
+        mThreadingCacheMessageReferencesIdMD5ToMessageItem.remove(mi->referencesIdMD5());
+        delete messagesWithTheSameReference;
+    }
+}
+
 void ModelPrivate::addMessageToSubjectBasedThreadingCache(MessageItem *mi)
 {
     // Messages in this cache are sorted by date, and if dates are equal then they are sorted by pointer value.
@@ -1659,7 +1733,7 @@ void ModelPrivate::addMessageToSubjectBasedThreadingCache(MessageItem *mi)
 void ModelPrivate::removeMessageFromSubjectBasedThreadingCache(MessageItem *mi)
 {
     // We assume that the caller knows what he is doing and the message is actually in the cache.
-    // If the message isn't in the cache then we should be called at all.
+    // If the message isn't in the cache then we should not be called at all.
     //
     // The game is called "performance"
 
@@ -2782,11 +2856,13 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
             case Aggregation::PerfectReferencesAndSubject:
                 mStorageModel->fillMessageItemThreadingData(mi, curIndex, StorageModel::PerfectThreadingReferencesAndSubject);
 
-                // We also need to build the subject-based threading cache
+                // We also need to build the subject/reference-based threading cache
+                addMessageToReferencesBasedThreadingCache(mi);
                 addMessageToSubjectBasedThreadingCache(mi);
                 break;
             case Aggregation::PerfectAndReferences:
                 mStorageModel->fillMessageItemThreadingData(mi, curIndex, StorageModel::PerfectThreadingPlusReferences);
+                addMessageToReferencesBasedThreadingCache(mi);
                 break;
             default:
                 mStorageModel->fillMessageItemThreadingData(mi, curIndex, StorageModel::PerfectThreadingOnly);
@@ -3096,9 +3172,12 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
             // Remove from the cache of potential parent items
             mThreadingCacheMessageIdMD5ToMessageItem.remove(dyingMessage->messageIdMD5());
 
-            // If we also have a cache for subject-based threading then remove the message from there too
+            // If we also have a cache for subject/reference-based threading then remove the message from there too
             if (mAggregation->threading() == Aggregation::PerfectReferencesAndSubject) {
+                removeMessageFromReferencesBasedThreadingCache(dyingMessage);
                 removeMessageFromSubjectBasedThreadingCache(dyingMessage);
+            } else if (mAggregation->threading() == Aggregation::PerfectAndReferences) {
+                removeMessageFromReferencesBasedThreadingCache(dyingMessage);
             }
 
             // If this message wasn't perfectly parented then it might still be in another cache.
@@ -3261,10 +3340,13 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
         bool prevUnreadStatus = !message->status().isRead();
         bool prevImportantStatus = message->status().isImportant();
 
-        // The subject based threading cache is sorted by date: we must remove
+        // The subject/reference based threading cache is sorted by date: we must remove
         // the item and re-insert it since updateMessageItemData() may change the date too.
         if (mAggregation->threading() == Aggregation::PerfectReferencesAndSubject) {
+            removeMessageFromReferencesBasedThreadingCache(message);
             removeMessageFromSubjectBasedThreadingCache(message);
+        } else if (mAggregation->threading() == Aggregation::PerfectAndReferences) {
+            removeMessageFromReferencesBasedThreadingCache(message);
         }
 
         // Do update
@@ -3274,7 +3356,10 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
 
         // Reinsert the item to the cache, if needed
         if (mAggregation->threading() == Aggregation::PerfectReferencesAndSubject) {
+            addMessageToReferencesBasedThreadingCache(message);
             addMessageToSubjectBasedThreadingCache(message);
+        } else if (mAggregation->threading() == Aggregation::PerfectAndReferences) {
+            addMessageToReferencesBasedThreadingCache(message);
         }
 
         int propertyChangeMask = 0;

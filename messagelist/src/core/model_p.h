@@ -92,7 +92,10 @@ public:
     void clearJobList();
     void clearUnassignedMessageLists();
     void clearOrphanChildrenHash();
+    void clearThreadingCacheReferencesIdMD5ToMessageItem();
     void clearThreadingCacheMessageSubjectMD5ToMessageItem();
+    void addMessageToReferencesBasedThreadingCache(MessageItem *mi);
+    void removeMessageFromReferencesBasedThreadingCache(MessageItem *mi);
     void addMessageToSubjectBasedThreadingCache(MessageItem *mi);
     void removeMessageFromSubjectBasedThreadingCache(MessageItem *mi);
     void clear();
@@ -222,6 +225,12 @@ public:
      * MessageInReplyToIdMD5 -> MessageItem, pointers are shallow copies
      */
     QMultiHash< QByteArray, MessageItem * > mThreadingCacheMessageInReplyToIdMD5ToMessageItem;
+
+    /**
+     * Threading cache.
+     * ReferencesIdMD5 -> MessageItem, pointers are shallow copies
+     */
+    QHash< QByteArray, QList< MessageItem * > * > mThreadingCacheMessageReferencesIdMD5ToMessageItem;
 
     /**
      * Threading cache.
