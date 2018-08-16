@@ -244,7 +244,7 @@ void UnencryptedMessageTest::testOpenPGPEncryptedNotDecrypted()
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "");
 
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
-    QCOMPARE((bool)unencryptedMessage, false);
+    QVERIFY(!unencryptedMessage);
 }
 
 void UnencryptedMessageTest::testAsync_data()
