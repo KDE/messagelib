@@ -100,7 +100,7 @@ void FollowupReminderCreateJob::start()
             writeFollowupReminderInfo();
         }
     } else {
-        qCDebug(MESSAGECOMPOSER_LOG) << "FollowupReminderCreateJob info not valid ";
+        qCDebug(MESSAGECOMPOSER_LOG) << "FollowupReminderCreateJob info not valid " << *d->mInfo;
         emitResult();
         return;
     }
