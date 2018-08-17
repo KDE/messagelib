@@ -2033,7 +2033,7 @@ void ComposerViewBase::addFollowupReminder(const QString &messageId)
             MessageComposer::FollowupReminderCreateJob *job = new MessageComposer::FollowupReminderCreateJob;
             job->setSubject(m_subject);
             job->setMessageId(messageId);
-            job->setTo(m_replyTo);
+            job->setTo(m_replyTo.isEmpty() ? mExpandedTo.join(QLatin1Char(',')) : m_replyTo);
             job->setFollowUpReminderDate(mFollowUpDate);
             job->setCollectionToDo(mFollowUpCollection);
             job->start();
