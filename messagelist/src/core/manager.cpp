@@ -663,7 +663,7 @@ void Manager::createDefaultThemes()
     add_theme_simple_text_column(s, i18nc("Date of a message", "Date"), Theme::ContentItem::Date, true, SortOrder::SortMessagesByDateTime, false, false);
     add_theme_simple_text_column(s, i18n("Most Recent Date"), Theme::ContentItem::MostRecentDate, false, SortOrder::SortMessagesByDateTimeOfMostRecent, false, true);
     add_theme_simple_text_column(s, i18nc("Size of a message", "Size"), Theme::ContentItem::Size, false, SortOrder::SortMessagesBySize, false, false);
-    add_theme_simple_icon_column(s, i18nc("Attachement indication", "Attachment"), QStringLiteral(
+    add_theme_simple_icon_column(s, i18nc("Attachment indication", "Attachment"), QStringLiteral(
                                      "mail-attachment"), Theme::ContentItem::AttachmentStateIcon, false, SortOrder::SortMessagesByAttachmentStatus);
     add_theme_simple_icon_column(s, i18n("Read/Unread"), QStringLiteral("mail-mark-unread-new"), Theme::ContentItem::ReadStateIcon, false, SortOrder::SortMessagesByUnreadStatus);
     add_theme_simple_icon_column(s, i18n("Replied"), QStringLiteral("mail-replied"), Theme::ContentItem::RepliedStateIcon, false, SortOrder::NoMessageSorting);
