@@ -66,7 +66,7 @@ void ZoomActionMenu::setActionCollection(KActionCollection *ac)
 void ZoomActionMenu::createZoomActions()
 {
     // Zoom actions
-    d->mZoomInAction = KStandardAction::zoomIn(this, &ZoomActionMenu::slotZoomOut, this);
+    d->mZoomInAction = KStandardAction::zoomIn(this, &ZoomActionMenu::slotZoomIn, this);
     d->mActionCollection->addAction(QStringLiteral("zoom_in"), d->mZoomInAction);
 
     d->mZoomOutAction = KStandardAction::zoomOut(this, &ZoomActionMenu::slotZoomOut, this);
