@@ -79,7 +79,7 @@ private:
 class RootBlock : public HTMLBlock
 {
 public:
-    RootBlock(HtmlWriter *writer);
+    explicit RootBlock(HtmlWriter *writer);
     virtual ~RootBlock();
 
 protected:

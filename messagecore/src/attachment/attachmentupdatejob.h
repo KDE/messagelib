@@ -29,7 +29,7 @@ class MESSAGECORE_EXPORT AttachmentUpdateJob : public KJob
 {
     Q_OBJECT
 public:
-    AttachmentUpdateJob(const AttachmentPart::Ptr &part, QObject *parent = nullptr);
+    explicit AttachmentUpdateJob(const AttachmentPart::Ptr &part, QObject *parent = nullptr);
     ~AttachmentUpdateJob() override;
 
     void start() override;

@@ -35,7 +35,7 @@ class MessageItemSetManager;
 class ModelPrivate
 {
 public:
-    ModelPrivate(Model *owner) : q(owner)
+    explicit ModelPrivate(Model *owner) : q(owner)
     {
     }
 

@@ -164,7 +164,7 @@ class MIMETREEPARSER_EXPORT MessagePartList : public MessagePart
     Q_OBJECT
 public:
     typedef QSharedPointer<MessagePartList> Ptr;
-    MessagePartList(MimeTreeParser::ObjectTreeParser *otp);
+    explicit MessagePartList(MimeTreeParser::ObjectTreeParser *otp);
     ~MessagePartList() override;
 
     QString text() const override;
