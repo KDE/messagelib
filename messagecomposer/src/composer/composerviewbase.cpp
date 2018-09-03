@@ -2030,6 +2030,16 @@ void ComposerViewBase::addFollowupReminder(const QString &messageId)
     }
 }
 
+bool ComposerViewBase::requestDeleveryConfirmation() const
+{
+    return m_requestDeleveryConfirmation;
+}
+
+void ComposerViewBase::setRequestDeleveryConfirmation(bool requestDeleveryConfirmation)
+{
+    m_requestDeleveryConfirmation = requestDeleveryConfirmation;
+}
+
 KMime::Message::Ptr ComposerViewBase::msg() const
 {
     return m_msg;

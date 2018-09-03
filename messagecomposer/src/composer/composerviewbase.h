@@ -232,6 +232,9 @@ public:
 
     Q_REQUIRED_RESULT KMime::Message::Ptr msg() const;
 
+    bool requestDeleveryConfirmation() const;
+    void setRequestDeleveryConfirmation(bool requestDeleveryConfirmation);
+
 public Q_SLOTS:
     void identityChanged(const KIdentityManagement::Identity &ident, const KIdentityManagement::Identity &oldIdent, bool msgCleared = false);
 
@@ -348,6 +351,7 @@ private:
     bool m_neverEncrypt = false;
     bool m_mdnRequested = false;
     bool m_urgent = false;
+    bool m_requestDeleveryConfirmation = false;
     Kleo::CryptoMessageFormat m_cryptoMessageFormat;
     QString mExpandedFrom, m_from, m_replyTo, m_subject;
     QStringList mExpandedTo, mExpandedCc, mExpandedBcc;
