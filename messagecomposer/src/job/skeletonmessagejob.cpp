@@ -182,6 +182,16 @@ void SkeletonMessageJobPrivate::doStart()
         message->setHeader(extra);
     }
 
+    // Request Delevery Confirmation
+    {
+        if (globalPart->requestDeleveryConfirmation()) {
+            const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo();
+            KMime::Headers::Generic *requestDeleveryConfirmation = new KMime::Headers::Generic("Return-Receipt-To");
+            requestDeleveryConfirmation->fromUnicodeString(addr, "utf-8");
+            message->setHeader(requestDeleveryConfirmation);
+        }
+    }
+
     // MDN
     {
         if (globalPart->MDNRequested()) {

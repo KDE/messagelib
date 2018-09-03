@@ -52,6 +52,9 @@ public:
     Q_REQUIRED_RESULT bool MDNRequested() const;
     void setMDNRequested(bool requestMDN);
 
+    Q_REQUIRED_RESULT bool requestDeleveryConfirmation() const;
+    void setRequestDeleveryConfirmation(bool value);
+
 private:
     class Private;
     Private *const d;

@@ -764,6 +764,7 @@ void ComposerViewBase::fillGlobalPart(MessageComposer::GlobalPart *globalPart)
     globalPart->setParentWidgetForGui(m_parentWidget);
     globalPart->setCharsets(m_charsets);
     globalPart->setMDNRequested(m_mdnRequested);
+    globalPart->setRequestDeleveryConfirmation(m_requestDeleveryConfirmation);
 }
 
 void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, ComposerViewBase::RecipientExpansion expansion)

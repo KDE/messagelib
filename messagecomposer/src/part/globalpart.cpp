@@ -34,6 +34,7 @@ public:
     bool fallbackCharsetEnabled = false;
     bool allow8Bit = false;
     bool MDNRequested = false;
+    bool requestDeleveryConfirmation = false;
 };
 
 GlobalPart::GlobalPart(QObject *parent)
@@ -110,4 +111,14 @@ bool GlobalPart::MDNRequested() const
 void GlobalPart::setMDNRequested(bool requestMDN)
 {
     d->MDNRequested = requestMDN;
+}
+
+bool GlobalPart::requestDeleveryConfirmation() const
+{
+    return d->requestDeleveryConfirmation;
+}
+
+void GlobalPart::setRequestDeleveryConfirmation(bool value)
+{
+    d->requestDeleveryConfirmation = value;
 }

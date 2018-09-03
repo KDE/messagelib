@@ -37,6 +37,7 @@ void GlobalPartTest::shouldHaveDefaultValue()
     QVERIFY(!globalpart.isFallbackCharsetEnabled());
     QVERIFY(!globalpart.is8BitAllowed());
     QVERIFY(!globalpart.MDNRequested());
+    QVERIFY(!globalpart.requestDeleveryConfirmation());
 }
 
 QTEST_MAIN(GlobalPartTest)
