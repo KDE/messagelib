@@ -18,8 +18,8 @@
   02110-1301, USA.
 */
 
-#ifndef MESSAGECORE_TESTS_UTIL_H
-#define MESSAGECORE_TESTS_UTIL_H
+#ifndef MESSAGECORE_SETUPENV_H
+#define MESSAGECORE_SETUPENV_H
 
 namespace MessageViewer {
 namespace Test {

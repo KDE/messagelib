@@ -24,7 +24,6 @@
 #include <KActionMenu>
 #include "templateparser_debug.h"
 #include <KLocalizedString>
-#include <QAction>
 
 #undef I18N_NOOP
 #define I18N_NOOP(t) nullptr, t

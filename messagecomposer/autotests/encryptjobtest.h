@@ -18,8 +18,8 @@
   02110-1301, USA.
 */
 
-#ifndef ENCRYPTJOBJOBTEST_H
-#define ENCRYPTJOBJOBTEST_H
+#ifndef ENCRYPTJOBTEST_H
+#define ENCRYPTJOBTEST_H
 
 #include <QObject>
 

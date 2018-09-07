@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "templateparserjob_p.h"
 #include "templateparserjob.h"
+#include "templateparserjob_p.h"
 #include "templateparserextracthtmlinfo.h"
 #include "globalsettings_templateparser.h"
 #include "customtemplates_kfg.h"

@@ -17,8 +17,8 @@
   02110-1301, USA.
 */
 
-#ifndef MESSAGECOMPOSER_JOB_P_H
-#define MESSAGECOMPOSER_JOB_P_H
+#ifndef CONTENTJOBBASE_P_H
+#define CONTENTJOBBASE_P_H
 
 #include "contentjobbase.h"
 #include "job/jobbase_p.h"

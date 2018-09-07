@@ -58,7 +58,7 @@ MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyP
     KMime::Content *dataHtml = mp->childParts().contains(Util::MultipartHtml) ? mp->childParts()[Util::MultipartHtml]->content() : nullptr;
     KMime::Content *dataPlain = mp->childParts().contains(Util::MultipartPlain) ? mp->childParts()[Util::MultipartPlain]->content() : nullptr;
 
-    // Make sure that in default ical is prefered over html and plain text
+    // Make sure that in default ical is preferred over html and plain text
     if (dataIcal && ((preferredMode != Util::MultipartHtml && preferredMode != Util::MultipartPlain))) {
         if (dataHtml) {
             part.nodeHelper()->setNodeProcessed(dataHtml, false);
@@ -82,7 +82,7 @@ MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyP
 //    for (int i = 0; i < mp->availableModes().count(); ++i) {
 //        qDebug() << "MultiPartAlternativeBodyPartFormatter::processe Modes " << MimeTreeParser::Util::htmlModeToString(mp->availableModes().at(i));
 //    }
-//    qDebug() << "MultiPartAlternativeBodyPartFormatter::process prefered " << MimeTreeParser::Util::htmlModeToString(preferredMode);
+//    qDebug() << "MultiPartAlternativeBodyPartFormatter::process preferred " << MimeTreeParser::Util::htmlModeToString(preferredMode);
 
     part.source()->setHtmlMode(preferredMode, mp->availableModes());
     mp->setPreferredMode(preferredMode);

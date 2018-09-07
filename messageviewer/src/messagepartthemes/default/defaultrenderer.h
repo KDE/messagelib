@@ -42,7 +42,7 @@ class CSSHelperBase;
 class DefaultRenderer
 {
 public:
-    DefaultRenderer(CSSHelperBase *cssHelder);
+    explicit DefaultRenderer(CSSHelperBase *cssHelder);
     ~DefaultRenderer();
 
     void setShowOnlyOneMimePart(bool onlyOneMimePart);

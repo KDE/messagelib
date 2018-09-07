@@ -29,7 +29,7 @@ namespace WebEngineViewer {
 class WEBENGINEVIEWER_TESTS_EXPORT UrlHashing
 {
 public:
-    UrlHashing(const QUrl &url);
+    explicit UrlHashing(const QUrl &url);
     ~UrlHashing();
 
     static QString canonicalizeUrl(QUrl url);

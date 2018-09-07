@@ -767,7 +767,7 @@ KMime::Content *NodeHelper::fromHREF(const KMime::Message::Ptr &mMessage, const 
         // index is the last part of the folder name: /
         const QRegExp rIndex(QStringLiteral("\\D\\.([e0-9.:]+)/"));
 
-        //search the occurence at most at the end
+        //search the occurrence at most at the end
         if (rIndex.lastIndexIn(path) != -1) {
             return contentFromIndex(mMessage.data(), rIndex.cap(1));
         }

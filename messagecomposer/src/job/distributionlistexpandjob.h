@@ -20,8 +20,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef ALIASESEXPANDJOB_P_H
-#define ALIASESEXPANDJOB_P_H
+#ifndef DISTRIBUTIONLISTEXPANDJOB_H
+#define DISTRIBUTIONLISTEXPANDJOB_H
 
 #include <kjob.h>
 #include <QStringList>

@@ -16,6 +16,12 @@
   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
   02110-1301, USA.
 */
+
+#ifndef AUTOTESTS_UTIL_H
+#define AUTOTESTS_UTIL_H
+
 #include <KMime/Message>
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile);
+
+#endif

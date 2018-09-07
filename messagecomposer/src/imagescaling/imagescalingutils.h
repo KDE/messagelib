@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef AUTORESIZEIMAGEUTIL_H
-#define AUTORESIZEIMAGEUTIL_H
+#ifndef IMAGESCALINGUTILS_H
+#define IMAGESCALINGUTILS_H
 #include <MessageCore/AttachmentPart>
 
 namespace MessageComposer {
@@ -33,4 +33,4 @@ public:
 };
 }
 
-#endif // AUTORESIZEIMAGEUTIL_H
+#endif // IMAGESCALINGUTILS_H

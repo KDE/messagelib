@@ -18,8 +18,8 @@
   02110-1301, USA.
 */
 
-#ifndef SIGNJOBJOBTEST_H
-#define SIGNJOBJOBTEST_H
+#ifndef SIGNJOBTEST_H
+#define SIGNJOBTEST_H
 
 #include <QObject>
 

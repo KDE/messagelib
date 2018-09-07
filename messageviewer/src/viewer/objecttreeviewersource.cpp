@@ -66,7 +66,7 @@ void MailViewerSource::setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QL
 //    for (int i = 0; i < availableModes.count(); ++i) {
 //        qDebug() << "MailViewerSource::setHtmlMode Mode " << MimeTreeParser::Util::htmlModeToString(availableModes.at(i));
 //    }
-//    qDebug() << "MailViewerSource::setHtmlMode prefered " << MimeTreeParser::Util::htmlModeToString(mode);
+//    qDebug() << "MailViewerSource::setHtmlMode preferred " << MimeTreeParser::Util::htmlModeToString(mode);
 
     mViewer->mColorBar->setAvailableModes(availableModes);
     mViewer->mColorBar->setMode(mode);

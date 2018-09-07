@@ -17,6 +17,9 @@
    Boston, MA 02110-1301, USA.
 */
 
+#ifndef LOCALDATABASEMANAGER_P_H
+#define LOCALDATABASEMANAGER_P_H
+
 #include "localdatabasefile.h"
 #include "webengineviewer_debug.h"
 #include "downloadlocaldatabasethread.h"
@@ -144,3 +147,5 @@ public:
     QPointer<WebEngineViewer::DownloadLocalDatabaseThread> downloadLocalDatabaseThread;
 };
 }
+
+#endif

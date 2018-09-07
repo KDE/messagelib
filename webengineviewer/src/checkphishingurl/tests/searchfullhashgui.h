@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef CHECKPHISHINGURLGUI_H
-#define CHECKPHISHINGURLGUI_H
+#ifndef SEARCHFULLHASHGUI_H
+#define SEARCHFULLHASHGUI_H
 
 #include <QWidget>
 #include "../searchfullhashjob.h"
@@ -41,4 +41,4 @@ private:
     QPlainTextEdit *mResult;
 };
 
-#endif // CHECKPHISHINGURLGUI_H
+#endif // SEARCHFULLHASHGUI_H

@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef MAILNETWORKACCESSMANAGER_H
-#define MAILNETWORKACCESSMANAGER_H
+#ifndef INTERCEPTORMANAGER_H
+#define INTERCEPTORMANAGER_H
 
 #include "webengineviewer_export.h"
 #include "webengineviewer/networkpluginurlinterceptor.h"
@@ -42,4 +42,4 @@ private:
     NetworkAccessManagerWebEnginePrivate *const d;
 };
 }
-#endif // MAILNETWORKACCESSMANAGER_H
+#endif // INTERCEPTORMANAGER_H

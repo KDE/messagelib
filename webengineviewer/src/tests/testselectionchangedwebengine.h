@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef TestSelectionChangedEngine_H
-#define TestSelectionChangedEngine_H
+#ifndef TestSelectionChangedWebEngine_H
+#define TestSelectionChangedWebEngine_H
 
 #include <QWidget>
 
@@ -38,4 +38,4 @@ private:
     WebEngineViewer::WebEngineView *pageView;
 };
 
-#endif // TestSelectionChangedEngine_H
+#endif // TestSelectionChangedWebEngine_H

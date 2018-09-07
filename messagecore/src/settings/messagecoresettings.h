@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef MESSAGECORE_GLOBALSETTINGS_H
-#define MESSAGECORE_GLOBALSETTINGS_H
+#ifndef MESSAGECORE_SETTINGS_H
+#define MESSAGECORE_SETTINGS_H
 
 #include "messagecore_export.h"
 

@@ -18,8 +18,8 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef MESSAGE_ATTACHMENTFROMPUBLICKEY_H
-#define MESSAGE_ATTACHMENTFROMPUBLICKEY_H
+#ifndef MESSAGE_ATTACHMENTFROMPUBLICKEYJOB_H
+#define MESSAGE_ATTACHMENTFROMPUBLICKEYJOB_H
 
 #include <MessageCore/AttachmentLoadJob>
 

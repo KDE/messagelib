@@ -22,7 +22,6 @@
 #include "../localdatabasemanager.h"
 
 #include <QApplication>
-#include <QStandardPaths>
 #include <QPushButton>
 #include <QPlainTextEdit>
 #include <QVBoxLayout>

@@ -19,8 +19,8 @@
   Boston, MA 02110-1301, USA.
 */
 
-#ifndef QTEST_LIBKDEPIM_H
-#define QTEST_LIBKDEPIM_H
+#ifndef QTEST_MESSAGECORE_H
+#define QTEST_MESSAGECORE_H
 
 /**
  * Runs a KJob synchronously and aborts if the job failed.

@@ -26,7 +26,6 @@
 #include <QVBoxLayout>
 #include <QPointer>
 #include <WebEngineViewer/WebEngineManageScript>
-#include <WebEngineViewer/WebEnginePage>
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {

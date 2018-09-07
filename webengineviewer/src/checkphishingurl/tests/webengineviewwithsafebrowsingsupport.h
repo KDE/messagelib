@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef CHECKPHISHINGURLGUI_H
-#define CHECKPHISHINGURLGUI_H
+#ifndef WEBENGINEVIEWWITHSAFEBROWSINGSUPPORT_H
+#define WEBENGINEVIEWWITHSAFEBROWSINGSUPPORT_H
 
 #include <QWidget>
 #include "../searchfullhashjob.h"
@@ -43,4 +43,4 @@ private:
     WebEngineViewer::WebEngineView *pageView = nullptr;
 };
 
-#endif // CHECKPHISHINGURLGUI_H
+#endif // WEBENGINEVIEWWITHSAFEBROWSINGSUPPORT_H

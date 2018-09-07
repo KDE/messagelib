@@ -102,7 +102,7 @@ public:
     /** @see NodeHelper::asHREF */
     QString attachmentLink() const;
 
-    /** Returns a string respresentation of an URL that can be used
+    /** Returns a string representation of an URL that can be used
      *  to invoke a BodyPartURLHandler for this body part.
      */
     QString makeLink(const QString &path) const;
@@ -353,9 +353,9 @@ public:
     const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > &decryptRecipients() const;
 
 private:
-    /** Handles the dectyptioon of a given content
-     * returns true if the decryption was successfull
-     * if used in async mode, check if mMetaData.inProgress is true, it inicates a running decryption process.
+    /** Handles the decryption of a given content
+     * returns true if the decryption was successful
+     * if used in async mode, check if mMetaData.inPogress is true, it initiates a running decryption process.
      */
     bool okDecryptMIME(KMime::Content &data);
 
@@ -399,8 +399,8 @@ public:
 private:
     /** Handles the verification of data
      * If signature is empty it is handled as inline signature otherwise as detached signature mode.
-     * Returns true if the verfication was successfull and the block is signed.
-     * If used in async mode, check if mMetaData.inProgress is true, it inicates a running verification process.
+     * Returns true if the verification was successful and the block is signed.
+     * If used in async mode, check if mMetaData.inProgress is true, it initiates a running verification process.
      */
     bool okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode);
 

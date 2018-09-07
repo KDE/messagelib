@@ -43,7 +43,7 @@ class BodyPartFormatterFactory;
 class BodyPartFormatterFactoryPrivate
 {
 public:
-    BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory);
+    explicit BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory);
     ~BodyPartFormatterFactoryPrivate() = default;
 
     void setup();
