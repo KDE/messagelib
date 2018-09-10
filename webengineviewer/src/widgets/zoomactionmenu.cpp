@@ -20,7 +20,6 @@
 #include "zoomactionmenu.h"
 #include <KLocalizedString>
 #include <KActionCollection>
-#include <kconfig_version.h>
 
 using namespace WebEngineViewer;
 namespace {
@@ -72,15 +71,8 @@ void ZoomActionMenu::createZoomActions()
     d->mZoomOutAction = KStandardAction::zoomOut(this, &ZoomActionMenu::slotZoomOut, this);
     d->mActionCollection->addAction(QStringLiteral("zoom_out"), d->mZoomOutAction);
 
-#if KCONFIG_VERSION < QT_VERSION_CHECK(5, 50, 0)
-    d->mZoomResetAction = new QAction(i18n("Reset"), this);
-    d->mActionCollection->addAction(QStringLiteral("zoom_reset"), d->mZoomResetAction);
-    connect(d->mZoomResetAction, &QAction::triggered, this, &ZoomActionMenu::slotZoomReset);
-    d->mActionCollection->setDefaultShortcut(d->mZoomResetAction, QKeySequence(Qt::CTRL + Qt::Key_0));
-#else
     d->mZoomResetAction = KStandardAction::actualSize(this, &ZoomActionMenu::slotZoomReset, this);
     d->mActionCollection->addAction(QStringLiteral("zoom_reset"), d->mZoomResetAction);
-#endif
 
     d->createMenu();
 }
