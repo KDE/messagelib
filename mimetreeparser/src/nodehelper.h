@@ -78,12 +78,6 @@ public:
      */
     static void magicSetType(KMime::Content *node, bool autoDecode = true);
 
-    /**
-     *  Return this mails subject, with all "forward" and "reply"
-     *  prefixes removed
-     */
-    static QString cleanSubject(KMime::Message *message);
-
     /** Attach an extra node to an existing node */
     void attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content);
 
@@ -246,7 +240,7 @@ private:
         sequence of whitespace-delimited prefixes at the beginning of
         #subject() is replaced by @p newPrefix
     **/
-    static QString cleanSubject(KMime::Message *message, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
+    //static QString cleanSubject(KMime::Message *message, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
 
     void mergeExtraNodes(KMime::Content *node);
     void cleanFromExtraNodes(KMime::Content *node);

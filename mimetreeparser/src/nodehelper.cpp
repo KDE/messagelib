@@ -533,23 +533,6 @@ QString NodeHelper::replacePrefixes(const QString &str, const QStringList &prefi
     }
 }
 
-QString NodeHelper::cleanSubject(KMime::Message *message)
-{
-    return cleanSubject(message, replySubjPrefixes + forwardSubjPrefixes,
-                        true, QString()).trimmed();
-}
-
-QString NodeHelper::cleanSubject(KMime::Message *message, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
-{
-    QString cleanStr;
-    if (message) {
-        cleanStr
-            = NodeHelper::replacePrefixes(
-            message->subject()->asUnicodeString(), prefixRegExps, replace, newPrefix);
-    }
-    return cleanStr;
-}
-
 void NodeHelper::setOverrideCodec(KMime::Content *node, const QTextCodec *codec)
 {
     if (!node) {
