@@ -674,25 +674,25 @@ QString cleanFileName(const QString &name)
     return fileName;
 }
 
-QString cleanSubject(const KMime::Message::Ptr &msg)
+QString cleanSubject(KMime::Message *msg)
 {
     return cleanSubject(msg, MessageCore::MessageCoreSettings::self()->replyPrefixes() + MessageCore::MessageCoreSettings::self()->forwardPrefixes(),
                         true, QString()).trimmed();
 }
 
-QString cleanSubject(const KMime::Message::Ptr &msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
+QString cleanSubject(KMime::Message *msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
 {
     return replacePrefixes(msg->subject()->asUnicodeString(), prefixRegExps, replace,
                            newPrefix);
 }
 
-QString forwardSubject(const KMime::Message::Ptr &msg)
+QString forwardSubject(KMime::Message *msg)
 {
     return cleanSubject(msg, MessageCore::MessageCoreSettings::self()->forwardPrefixes(),
                         MessageCore::MessageCoreSettings::self()->replaceForwardPrefix(), QStringLiteral("Fwd:"));
 }
 
-QString replySubject(const KMime::Message::Ptr &msg)
+QString replySubject(KMime::Message *msg)
 {
     return cleanSubject(msg, MessageCore::MessageCoreSettings::self()->replyPrefixes(),
                         MessageCore::MessageCoreSettings::self()->replaceReplyPrefix(), QStringLiteral("Re:"));

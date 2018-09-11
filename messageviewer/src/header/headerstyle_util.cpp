@@ -112,7 +112,7 @@ QString HeaderStyleUtil::subjectDirectionString(KMime::Message *message) const
 {
     QString subjectDir;
     if (message->subject(false)) {
-        subjectDir = directionOf(MimeTreeParser::NodeHelper::cleanSubject(message));
+        subjectDir = directionOf(MessageCore::StringUtil::cleanSubject(message));
     } else {
         subjectDir = directionOf(i18n("No Subject"));
     }

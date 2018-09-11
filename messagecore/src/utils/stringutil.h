@@ -204,17 +204,17 @@ MESSAGECORE_EXPORT void setEncodingFile(QUrl &url, const QString &encoding);
       sequence of whitespace-delimited prefixes at the beginning of
       #subject() is replaced by @p newPrefix
   **/
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString cleanSubject(const KMime::Message::Ptr &msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString cleanSubject(KMime::Message *msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
 
 /** Return this mails subject, with all "forward" and "reply"
       prefixes removed */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString cleanSubject(const KMime::Message::Ptr &msg);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString cleanSubject(KMime::Message *msg);
 
 /** Return this mails subject, formatted for "forward" mails */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString forwardSubject(const KMime::Message::Ptr &msg);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString forwardSubject(KMime::Message *msg);
 
 /** Return this mails subject, formatted for "reply" mails */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replySubject(const KMime::Message::Ptr &msg);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replySubject(KMime::Message *msg);
 /** Check for prefixes @p prefixRegExps in @p str. If none
       is found, @p newPrefix + ' ' is prepended to @p str and the
       resulting string is returned. If @p replace is true, any

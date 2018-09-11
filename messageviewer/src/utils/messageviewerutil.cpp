@@ -444,7 +444,7 @@ QString Util::generateMboxFileName(const Akonadi::Item &msgBase)
             = MessageCore::StringUtil::cleanFileName(MessageCore::StringUtil::cleanSubject(
                                                          msgBase.
                                                          payload
-                                                         <KMime::Message::Ptr>()).trimmed());
+                                                         <KMime::Message::Ptr>().data()).trimmed());
         fileName.remove(QLatin1Char('\"'));
     } else {
         fileName = i18n("message");
