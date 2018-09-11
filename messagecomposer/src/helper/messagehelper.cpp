@@ -158,37 +158,6 @@ KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, cons
     return result;
 }
 
-QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
-{
-    bool recognized = false;
-    // construct a big regexp that
-    // 1. is anchored to the beginning of str (sans whitespace)
-    // 2. matches at least one of the part regexps in prefixRegExps
-    QString bigRegExp = QStringLiteral("^(?:\\s+|(?:%1))+\\s*")
-                        .arg(prefixRegExps.join(QStringLiteral(")|(?:")));
-    QRegExp rx(bigRegExp, Qt::CaseInsensitive);
-    if (rx.isValid()) {
-        QString tmp = str;
-        if (rx.indexIn(tmp) == 0) {
-            recognized = true;
-            if (replace) {
-                return tmp.replace(0, rx.matchedLength(), newPrefix + QLatin1Char(' '));
-            }
-        }
-    } else {
-        qCWarning(MESSAGECOMPOSER_LOG) << "bigRegExp = \""
-                                       << bigRegExp << "\"\n"
-                                       << "prefix regexp is invalid!";
-        // try good ole Re/Fwd:
-        recognized = str.startsWith(newPrefix);
-    }
-
-    if (!recognized) {
-        return newPrefix + QLatin1Char(' ') + str;
-    } else {
-        return str;
-    }
-}
 
 void setAutomaticFields(const KMime::Message::Ptr &msg, bool aIsMulti)
 {
@@ -203,9 +172,4 @@ void setAutomaticFields(const KMime::Message::Ptr &msg, bool aIsMulti)
     }
 }
 
-QString stripOffPrefixes(const QString &str)
-{
-    return replacePrefixes(str, MessageComposer::MessageComposerSettings::self()->replyPrefixes() + MessageComposer::MessageComposerSettings::self()->forwardPrefixes(),
-                           true, QString()).trimmed();
-}
 }

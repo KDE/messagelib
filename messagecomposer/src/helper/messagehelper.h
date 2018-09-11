@@ -54,13 +54,6 @@ void initFromMessage(const KMime::Message::Ptr &msg, const KMime::Message::Ptr &
 
 MESSAGECOMPOSER_EXPORT KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, const QByteArray &header);
 
-/** Check for prefixes @p prefixRegExps in @p str. If none
-      is found, @p newPrefix + ' ' is prepended to @p str and the
-      resulting string is returned. If @p replace is true, any
-      sequence of whitespace-delimited prefixes at the beginning of
-      @p str is replaced by @p newPrefix.
-  **/
-Q_REQUIRED_RESULT QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
 
 /** Set fields that are either automatically set (Message-id)
     or that do not change from one message to another (MIME-Version).
@@ -69,9 +62,6 @@ Q_REQUIRED_RESULT QString replacePrefixes(const QString &str, const QStringList 
     attachments / multiple body parts. */
 void setAutomaticFields(const KMime::Message::Ptr &msg, bool isMultipart = false);
 
-/** Returns @p str with all "forward" and "reply" prefixes stripped off.
-  **/
-Q_REQUIRED_RESULT QString stripOffPrefixes(const QString &str);
 }
 
 #endif

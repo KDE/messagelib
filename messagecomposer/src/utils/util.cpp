@@ -43,7 +43,7 @@
 #include <AkonadiCore/agentinstance.h>
 #include <AkonadiCore/agentinstancecreatejob.h>
 #include <AkonadiCore/agentmanager.h>
-#include <MessageComposer/MessageHelper>
+#include <MessageCore/StringUtil>
 
 KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {
@@ -435,7 +435,7 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
 
     // check whether the subject contains one of the attachment key words
     // unless the message is a reply or a forwarded message
-    bool gotMatch = (MessageHelper::stripOffPrefixes(subj) == subj) && (rx.match(subj).hasMatch());
+    bool gotMatch = (MessageCore::StringUtil::stripOffPrefixes(subj) == subj) && (rx.match(subj).hasMatch());
 
     if (!gotMatch) {
         // check whether the non-quoted text contains one of the attachment key
