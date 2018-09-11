@@ -6,24 +6,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
   <kcfgfile name="mailcomposerrc" />
   <group name="Composer">
 
-    <entry name="ReplyPrefixes" type="StringList" key="reply-prefixes">
-      <default>Re\\s*:,Re\\[\\d+\\]:,Re\\d+:</default>
-    </entry>
-
-    <entry name="ReplaceReplyPrefix" type="Bool" key="replace-reply-prefix">
-      <label>Replace recognized prefi&amp;x with "Re:"</label>
-        <default>true</default>
-    </entry>
-
-    <entry name="ForwardPrefixes" type="StringList" key="forward-prefixes">
-      <default>Fwd:,FW:</default>
-    </entry>
-
-    <entry name="ReplaceForwardPrefix" type="Bool" key="replace-forward-prefix">
-      <label>Replace recognized prefix with "&amp;Fwd:"</label>
-      <default>true</default>
-    </entry>
-
     <entry name="CustomMsgIDSuffix" type="String" key="myMessageIdSuffix">
       <default></default>
     </entry>
