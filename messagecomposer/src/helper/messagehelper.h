@@ -52,7 +52,7 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
    header of the given original message */
 void initFromMessage(const KMime::Message::Ptr &msg, const KMime::Message::Ptr &orgiMsg, KIdentityManagement::IdentityManager *, uint id, bool idHeaders = true);
 
-KMime::Types::AddrSpecList MESSAGECOMPOSER_EXPORT extractAddrSpecs(const KMime::Message::Ptr &msg, const QByteArray &header);
+MESSAGECOMPOSER_EXPORT KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, const QByteArray &header);
 
 /** Check for prefixes @p prefixRegExps in #subject(). If none
       is found, @p newPrefix + ' ' is prepended to the subject and the
