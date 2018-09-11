@@ -158,30 +158,6 @@ KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, cons
     return result;
 }
 
-QString cleanSubject(const KMime::Message::Ptr &msg)
-{
-    return cleanSubject(msg, MessageComposer::MessageComposerSettings::self()->replyPrefixes() + MessageComposer::MessageComposerSettings::self()->forwardPrefixes(),
-                        true, QString()).trimmed();
-}
-
-QString cleanSubject(const KMime::Message::Ptr &msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
-{
-    return replacePrefixes(msg->subject()->asUnicodeString(), prefixRegExps, replace,
-                           newPrefix);
-}
-
-QString forwardSubject(const KMime::Message::Ptr &msg)
-{
-    return cleanSubject(msg, MessageComposer::MessageComposerSettings::self()->forwardPrefixes(),
-                        MessageComposer::MessageComposerSettings::self()->replaceForwardPrefix(), QStringLiteral("Fwd:"));
-}
-
-QString replySubject(const KMime::Message::Ptr &msg)
-{
-    return cleanSubject(msg, MessageComposer::MessageComposerSettings::self()->replyPrefixes(),
-                        MessageComposer::MessageComposerSettings::self()->replaceReplyPrefix(), QStringLiteral("Re:"));
-}
-
 QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
 {
     bool recognized = false;

@@ -344,7 +344,7 @@ void MessageFactoryNG::createReplyAsync()
     //In-Reply-To = original msg-id
     msg->inReplyTo()->from7BitString(m_origMsg->messageID()->as7BitString(false));
 
-    msg->subject()->fromUnicodeString(MessageHelper::replySubject(m_origMsg), "utf-8");
+    msg->subject()->fromUnicodeString(MessageCore::StringUtil::replySubject(m_origMsg.data()), "utf-8");
 
     // If the reply shouldn't be blank, apply the template to the message
     if (m_quote) {
@@ -421,7 +421,7 @@ void MessageFactoryNG::createForwardAsync()
         msg->assemble();
     }
 
-    msg->subject()->fromUnicodeString(MessageHelper::forwardSubject(m_origMsg), "utf-8");
+    msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(m_origMsg.data()), "utf-8");
     MessageFactoryForwardJob *job = new MessageFactoryForwardJob;
     connect(job, &MessageFactoryForwardJob::forwardDone, this, &MessageFactoryNG::slotCreateForwardDone);
     job->setIdentityManager(m_identityManager);
@@ -449,7 +449,7 @@ QPair< KMime::Message::Ptr, QList< KMime::Content * > > MessageFactoryNG::create
         KMime::Message::Ptr firstMsg = MessageComposer::Util::message(items.first());
         const uint originalIdentity = identityUoid(firstMsg);
         MessageHelper::initFromMessage(msg, firstMsg, m_identityManager, originalIdentity);
-        msg->subject()->fromUnicodeString(MessageHelper::forwardSubject(firstMsg), "utf-8");
+        msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(firstMsg.data()), "utf-8");
     }
 
     MessageHelper::setAutomaticFields(msg, true);
