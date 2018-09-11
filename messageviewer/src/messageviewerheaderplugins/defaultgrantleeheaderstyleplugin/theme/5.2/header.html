@@ -62,10 +62,26 @@
 		{% if header.spamHTML %}
 		<div class="row">
 			<div class="headerleft">{{ header.spamstatusi18n }}</div>
-			<div class="headerrightdate">{{ header.spamHTML|safe }}</div>
+			<div class="headerright">{{ header.spamHTML|safe }}</div>
+		</div>
+		{% endif %}
+		{% if header.messageHasSecurityInfo %}
+		<div class="row">
+                        <div class="headerleft">{{ header.messageHasSecurityInfoI18n }}</div>
+			<div class="headerright">
+			{% if header.messageIsSigned %}
+			     {{ header.signedIcon|safe }}
+			{% endif %}
+		        {% if header.messageIsEncrypted %}
+                             {{ header.encryptedIcon|safe }}
+                        {% endif %}	
+                        </div>
 		</div>
 		{% endif %}
 	</div>
-	<div>{{ header.attachmentHtml|safe }}</div>
+	{% if header.hasAttachment %}
+   	<div>{{ header.attachmentHtml|safe }}</div>
+	{% endif %}
+	</div>
 </div>
 <div id="kmailContent">

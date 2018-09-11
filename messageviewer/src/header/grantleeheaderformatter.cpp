@@ -332,13 +332,35 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
             = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
                                                                      "mail-attachment"),
                                                                  KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(
-                                                                                                       iconPath).url(),
-                                                                                                   QString::number(
-                                                                                                       d
-                                                                                                       ->iconSize));
+        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
         headerObject.insert(QStringLiteral("attachmentIcon"), html);
     }
+
+    const bool messageIsSigned = KMime::isSigned(message);
+    headerObject.insert(QStringLiteral("messageIsSigned"), messageIsSigned);
+    if (messageIsSigned) {
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "mail-signed"),
+                                                                 KIconLoader::Toolbar);
+        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
+        headerObject.insert(QStringLiteral("signedIcon"), html);
+    }
+
+    const bool messageIsEncrypted = KMime::isEncrypted(message);
+    headerObject.insert(QStringLiteral("messageIsEncrypted"), messageIsEncrypted);
+    if (messageIsEncrypted) {
+        const QString iconPath
+            = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral(
+                                                                     "mail-encrypted"),
+                                                                 KIconLoader::Toolbar);
+        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(QUrl::fromLocalFile(iconPath).url(), QString::number(d->iconSize));
+        headerObject.insert(QStringLiteral("encryptedIcon"), html);
+    }
+
+    const bool messageHasSecurityInfo = messageIsEncrypted || messageIsSigned;
+    headerObject.insert(QStringLiteral("messageHasSecurityInfo"), messageHasSecurityInfo);
+    headerObject.insert(QStringLiteral("messageHasSecurityInfoI18n"), i18n("Security:"));
 
     QVariantHash mapping;
     mapping.insert(QStringLiteral("header"), headerObject);
