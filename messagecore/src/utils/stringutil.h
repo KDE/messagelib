@@ -197,6 +197,33 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString cleanFileName(const QString &fileNa
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString stripOffPrefixes(const QString &subject);
 
 MESSAGECORE_EXPORT void setEncodingFile(QUrl &url, const QString &encoding);
+
+/** Check for prefixes @p prefixRegExps in #subject(). If none
+      is found, @p newPrefix + ' ' is prepended to the subject and the
+      resulting string is returned. If @p replace is true, any
+      sequence of whitespace-delimited prefixes at the beginning of
+      #subject() is replaced by @p newPrefix
+  **/
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString cleanSubject(const KMime::Message::Ptr &msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
+
+/** Return this mails subject, with all "forward" and "reply"
+      prefixes removed */
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString cleanSubject(const KMime::Message::Ptr &msg);
+
+/** Return this mails subject, formatted for "forward" mails */
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString forwardSubject(const KMime::Message::Ptr &msg);
+
+/** Return this mails subject, formatted for "reply" mails */
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replySubject(const KMime::Message::Ptr &msg);
+/** Check for prefixes @p prefixRegExps in @p str. If none
+      is found, @p newPrefix + ' ' is prepended to @p str and the
+      resulting string is returned. If @p replace is true, any
+      sequence of whitespace-delimited prefixes at the beginning of
+      @p str is replaced by @p newPrefix.
+  **/
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
+
+
 }
 }
 

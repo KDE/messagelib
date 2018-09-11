@@ -674,24 +674,68 @@ QString cleanFileName(const QString &name)
     return fileName;
 }
 
+QString cleanSubject(const KMime::Message::Ptr &msg)
+{
+    return cleanSubject(msg, MessageCore::MessageCoreSettings::self()->replyPrefixes() + MessageCore::MessageCoreSettings::self()->forwardPrefixes(),
+                        true, QString()).trimmed();
+}
+
+QString cleanSubject(const KMime::Message::Ptr &msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
+{
+    return replacePrefixes(msg->subject()->asUnicodeString(), prefixRegExps, replace,
+                           newPrefix);
+}
+
+QString forwardSubject(const KMime::Message::Ptr &msg)
+{
+    return cleanSubject(msg, MessageCore::MessageCoreSettings::self()->forwardPrefixes(),
+                        MessageCore::MessageCoreSettings::self()->replaceForwardPrefix(), QStringLiteral("Fwd:"));
+}
+
+QString replySubject(const KMime::Message::Ptr &msg)
+{
+    return cleanSubject(msg, MessageCore::MessageCoreSettings::self()->replyPrefixes(),
+                        MessageCore::MessageCoreSettings::self()->replaceReplyPrefix(), QStringLiteral("Re:"));
+}
+
+QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
+{
+    bool recognized = false;
+    // construct a big regexp that
+    // 1. is anchored to the beginning of str (sans whitespace)
+    // 2. matches at least one of the part regexps in prefixRegExps
+    QString bigRegExp = QStringLiteral("^(?:\\s+|(?:%1))+\\s*")
+                        .arg(prefixRegExps.join(QStringLiteral(")|(?:")));
+    QRegExp rx(bigRegExp, Qt::CaseInsensitive);
+    if (rx.isValid()) {
+        QString tmp = str;
+        if (rx.indexIn(tmp) == 0) {
+            recognized = true;
+            if (replace) {
+                return tmp.replace(0, rx.matchedLength(), newPrefix + QLatin1Char(' '));
+            }
+        }
+    } else {
+        qCWarning(MESSAGECORE_LOG) << "bigRegExp = \""
+                                       << bigRegExp << "\"\n"
+                                       << "prefix regexp is invalid!";
+        // try good ole Re/Fwd:
+        recognized = str.startsWith(newPrefix);
+    }
+
+    if (!recognized) {
+        return newPrefix + QLatin1Char(' ') + str;
+    } else {
+        return str;
+    }
+}
+
+
 QString stripOffPrefixes(const QString &subject)
 {
-    static QStringList defaultReplyPrefixes = QStringList() << QStringLiteral("Re\\s*:")
-                                                            << QStringLiteral("Re\\[\\d+\\]:")
-                                                            << QStringLiteral("Re\\d+:");
+    const QStringList replyPrefixes = MessageCoreSettings::self()->replyPrefixes();
 
-    static QStringList defaultForwardPrefixes = QStringList() << QStringLiteral("Fwd:")
-                                                              << QStringLiteral("FW:");
-
-    QStringList replyPrefixes = MessageCoreSettings::self()->replyPrefixes();
-    if (replyPrefixes.isEmpty()) {
-        replyPrefixes = defaultReplyPrefixes;
-    }
-
-    QStringList forwardPrefixes = MessageCoreSettings::self()->forwardPrefixes();
-    if (forwardPrefixes.isEmpty()) {
-        forwardPrefixes = defaultForwardPrefixes;
-    }
+    const QStringList forwardPrefixes = MessageCoreSettings::self()->forwardPrefixes();
 
     const QStringList prefixRegExps = replyPrefixes + forwardPrefixes;
 

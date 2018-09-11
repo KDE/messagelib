@@ -441,10 +441,10 @@ QString Util::generateMboxFileName(const Akonadi::Item &msgBase)
 
     if (msgBase.hasPayload<KMime::Message::Ptr>()) {
         fileName
-            = MessageCore::StringUtil::cleanFileName(MimeTreeParser::NodeHelper::cleanSubject(
+            = MessageCore::StringUtil::cleanFileName(MessageCore::StringUtil::cleanSubject(
                                                          msgBase.
                                                          payload
-                                                         <KMime::Message::Ptr>().data()).trimmed());
+                                                         <KMime::Message::Ptr>()).trimmed());
         fileName.remove(QLatin1Char('\"'));
     } else {
         fileName = i18n("message");
