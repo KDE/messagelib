@@ -234,14 +234,6 @@ private:
     Q_DISABLE_COPY(NodeHelper)
     bool unencryptedMessage_helper(KMime::Content *node, QByteArray &resultingData, bool addHeaders, int recursionLevel = 1);
 
-    /** Check for prefixes @p prefixRegExps in #subject(). If none
-        is found, @p newPrefix + ' ' is prepended to the subject and the
-        resulting string is returned. If @p replace is true, any
-        sequence of whitespace-delimited prefixes at the beginning of
-        #subject() is replaced by @p newPrefix
-    **/
-    //static QString cleanSubject(KMime::Message *message, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
-
     void mergeExtraNodes(KMime::Content *node);
     void cleanFromExtraNodes(KMime::Content *node);
 
