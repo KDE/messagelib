@@ -158,15 +158,6 @@ public:
     static QByteArray charset(KMime::Content *node);
 
     /**
-     * Check for prefixes @p prefixRegExps in @p str. If none
-     * is found, @p newPrefix + ' ' is prepended to @p str and the
-     * resulting string is returned. If @p replace is true, any
-     * sequence of whitespace-delimited prefixes at the beginning of
-     * @p str is replaced by @p newPrefix.
-     */
-    static QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
-
-    /**
      * Return a QTextCodec for the specified charset.
      * This function is a bit more tolerant, than QTextCodec::codecForName
      */
