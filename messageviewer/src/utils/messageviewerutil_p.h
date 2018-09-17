@@ -35,8 +35,8 @@
 **   your version.
 **
 *******************************************************************************/
-#ifndef MAILVIEWERUTIL_P_H
-#define MAILVIEWERUTIL_P_H
+#ifndef MESSAGEVIEWERUTIL_P_H
+#define MESSAGEVIEWERUTIL_P_H
 
 #include <KMime/Content>
 class QUrl;

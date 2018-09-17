@@ -35,8 +35,8 @@
 **   your version.
 **
 *******************************************************************************/
-#ifndef MAILVIEWERUTIL_H
-#define MAILVIEWERUTIL_H
+#ifndef MESSAGEVIEWERUTIL_H
+#define MESSAGEVIEWERUTIL_H
 
 #include "messageviewer_export.h"
 #include <KMime/Content>

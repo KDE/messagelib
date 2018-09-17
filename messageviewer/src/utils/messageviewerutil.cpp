@@ -65,7 +65,6 @@
 #include <QAction>
 #include <QIcon>
 #include <QTemporaryFile>
-#include <QFileDialog>
 #include <QWidget>
 #include <QDBusConnectionInterface>
 #include <QActionGroup>
