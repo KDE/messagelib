@@ -259,6 +259,7 @@ void ComposerViewBase::saveMailSettings()
     header = new KMime::Headers::Generic("X-KMail-Fcc");
     header->fromUnicodeString(QString::number(m_fccCollection.id()), "utf-8");
     m_msg->setHeader(header);
+
     header = new KMime::Headers::Generic("X-KMail-Identity");
     header->fromUnicodeString(QString::number(identity.uoid()), "utf-8");
     m_msg->setHeader(header);
@@ -1221,6 +1222,15 @@ void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageCo
     Akonadi::Collection target;
     const KIdentityManagement::Identity identity = identityManager()->identityForUoid(m_identityCombo->currentIdentity());
     message->date()->setDateTime(QDateTime::currentDateTime());
+    if (!identity.isNull()) {
+        if (auto header = message->headerByType("X-KMail-Fcc")) {
+            const int sentCollectionId = header->asUnicodeString().toInt();
+            if (identity.fcc() == QString::number(sentCollectionId)) {
+                message->removeHeader("X-KMail-Fcc");
+            }
+        }
+    }
+
     message->assemble();
 
     Akonadi::Item item;
