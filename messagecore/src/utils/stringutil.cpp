@@ -332,8 +332,6 @@ void removePrivateHeaderFields(const KMime::Message::Ptr &message, bool cleanUpH
     message->removeHeader("X-Status");
     message->removeHeader("X-KMail-EncryptionState");
     message->removeHeader("X-KMail-SignatureState");
-    message->removeHeader("X-KMail-Transport");
-    message->removeHeader("X-KMail-Fcc");
     message->removeHeader("X-KMail-Redirect-From");
     message->removeHeader("X-KMail-Link-Message");
     message->removeHeader("X-KMail-Link-Type");
@@ -347,6 +345,8 @@ void removePrivateHeaderFields(const KMime::Message::Ptr &message, bool cleanUpH
     message->removeHeader("X-KMail-FccDisabled");
 
     if (cleanUpHeader) {
+        message->removeHeader("X-KMail-Fcc");
+        message->removeHeader("X-KMail-Transport");
         message->removeHeader("X-KMail-Identity");
         message->removeHeader("X-KMail-Dictionary");
     }
