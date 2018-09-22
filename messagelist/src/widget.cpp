@@ -490,7 +490,7 @@ void Widget::viewStartDragRequest()
     for (Core::MessageItem *mi : selection) {
         const Item i = d->itemForRow(mi->currentModelIndexRow());
         QUrl url = i.url(Item::Item::Item::UrlWithMimeType);
-        QUrlQuery query;
+        QUrlQuery query(url);
         query.addQueryItem(QStringLiteral("parent"), QString::number(mi->parentCollectionId()));
         url.setQuery(query);
         urls << url;
