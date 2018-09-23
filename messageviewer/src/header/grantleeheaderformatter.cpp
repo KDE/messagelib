@@ -265,7 +265,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     //Sender
     headerObject.insert(QStringLiteral("senderi18n"), i18n("Sender:"));
     headerObject.insert(QStringLiteral("sender"),
-                        d->headerStyleUtil.strToHtml(message->sender()->asUnicodeString()));
+                        HeaderStyleUtil::strToHtml(message->sender()->asUnicodeString()));
     headerObject.insert(QStringLiteral("listidi18n"), i18n("List-Id:"));
 
     if (auto hrd = message->headerByType("List-Id")) {
@@ -297,7 +297,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
 
     if (auto organization = message->organization(false)) {
         headerObject.insert(QStringLiteral("organization"),
-                            d->headerStyleUtil.strToHtml(organization->asUnicodeString()));
+                            HeaderStyleUtil::strToHtml(organization->asUnicodeString()));
     }
 
     if (!style->vCardName().isEmpty()) {
