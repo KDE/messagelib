@@ -245,6 +245,10 @@ void ComposerViewBase::saveMailSettings()
     header->fromUnicodeString(QString::number(m_transport->currentTransportId()), "utf-8");
     m_msg->setHeader(header);
 
+    header = new KMime::Headers::Generic("X-KMail-Transport-Name");
+    header->fromUnicodeString(m_transport->currentText(), "utf-8");
+    m_msg->setHeader(header);
+
     header = new KMime::Headers::Generic("X-KMail-Fcc");
     header->fromUnicodeString(QString::number(m_fccCollection.id()), "utf-8");
     m_msg->setHeader(header);
@@ -252,6 +256,11 @@ void ComposerViewBase::saveMailSettings()
     header = new KMime::Headers::Generic("X-KMail-Identity");
     header->fromUnicodeString(QString::number(identity.uoid()), "utf-8");
     m_msg->setHeader(header);
+
+    header = new KMime::Headers::Generic("X-KMail-Identity-Name");
+    header->fromUnicodeString(identity.identityName(), "utf-8");
+    m_msg->setHeader(header);
+
     header = new KMime::Headers::Generic("X-KMail-Dictionary");
     header->fromUnicodeString(m_dictionary->currentDictionary(), "utf-8");
     m_msg->setHeader(header);
@@ -855,7 +864,10 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     if (auto hdr = m_msg->headerByType("X-KMail-FccDisabled")) {
         extras << hdr;
     }
-    if (auto hdr = m_msg->headerByType("X-KMail-Dictionary")) {
+    if (auto hdr = m_msg->headerByType("X-KMail-Identity-Name")) {
+        extras << hdr;
+    }
+    if (auto hdr = m_msg->headerByType("X-KMail-Transport-Name")) {
         extras << hdr;
     }
 
