@@ -348,6 +348,8 @@ void removePrivateHeaderFields(const KMime::Message::Ptr &message, bool cleanUpH
         message->removeHeader("X-KMail-Fcc");
         message->removeHeader("X-KMail-Transport");
         message->removeHeader("X-KMail-Identity");
+        message->removeHeader("X-KMail-Transport-Name");
+        message->removeHeader("X-KMail-Identity-Name");
         message->removeHeader("X-KMail-Dictionary");
     }
 }
