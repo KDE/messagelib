@@ -81,24 +81,31 @@ QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code, G
             switch (status_code) {
             case 0: // GPGME_SIG_STAT_NONE
                 result = i18n("Error: Signature not verified");
+                frameColor = SIG_FRAME_COL_YELLOW;
                 break;
             case 1: // GPGME_SIG_STAT_GOOD
                 result = i18n("Good signature");
+                frameColor = SIG_FRAME_COL_GREEN;
                 break;
             case 2: // GPGME_SIG_STAT_BAD
                 result = i18n("Bad signature");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             case 3: // GPGME_SIG_STAT_NOKEY
                 result = i18n("No public key to verify the signature");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             case 4: // GPGME_SIG_STAT_NOSIG
                 result = i18n("No signature found");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             case 5: // GPGME_SIG_STAT_ERROR
                 result = i18n("Error verifying the signature");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             case 6: // GPGME_SIG_STAT_DIFF
                 result = i18n("Different results for signatures");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             /* PENDING(khz) Verify exact meaning of the following values:
             case 7: // GPGME_SIG_STAT_GOOD_EXP
