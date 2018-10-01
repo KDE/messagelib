@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef TEMPLATESINSERTCOMMANDACTION_H
 #define TEMPLATESINSERTCOMMANDACTION_H
 
@@ -42,6 +41,5 @@ Q_SIGNALS:
 private:
     TemplatesCommandMenu *mMenuCommand = nullptr;
 };
-
 }
 #endif // TEMPLATESINSERTCOMMANDACTION_H

@@ -131,22 +131,22 @@ enum AddressMode {
    * ExpandableAddresses.
    */
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display = DisplayNameOnly,
-                                             const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
-                                             const QString &fieldName = QString(), int collapseNumber = 4);
+                                                               const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
+                                                               const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Same as above method, only for AddressList headers.
    */
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display = DisplayNameOnly,
-                                             const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
-                                             const QString &fieldName = QString(), int collapseNumber = 4);
+                                                               const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
+                                                               const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Same as the above, only for Mailbox::List types.
    */
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QVector<KMime::Types::Mailbox> &mailboxList, Display display = DisplayNameOnly,
-                                             const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
-                                             const QString &fieldName = QString(), int collapseNumber = 4);
+                                                               const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
+                                                               const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Returns true if the given address is contained in the given address list.
@@ -222,8 +222,6 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replySubject(KMime::Message *msg);
       @p str is replaced by @p newPrefix.
   **/
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
-
-
 }
 }
 

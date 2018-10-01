@@ -136,10 +136,10 @@ static QString scrollTop()
 QString WebEngineScript::scrollPercentage(int percent)
 {
     const QString source = QStringLiteral("var current = ") + scrollTop() + QStringLiteral(";"
-                                          "var docElement = document.documentElement;"
-                                          "var height = docElement.clientHeight;"
-                                          "var newPosition = current + height * %1 /100;"
-                                          "window.scrollTo(window.scrollX, newPosition);").arg(percent);
+                                                                                           "var docElement = document.documentElement;"
+                                                                                           "var height = docElement.clientHeight;"
+                                                                                           "var newPosition = current + height * %1 /100;"
+                                                                                           "window.scrollTo(window.scrollX, newPosition);").arg(percent);
     return source;
 }
 
@@ -191,6 +191,6 @@ QString WebEngineScript::isScrolledToBottom()
                           "var docElement = document.documentElement;"
                           "var viewportHeight = docElement.clientHeight;"
                           "var isAtBottom = ") + scrollTop() + QStringLiteral(" + viewportHeight >= document.body.scrollHeight;"
-                          "return Boolean(isAtBottom); "
-                          "}());");
+                                                                              "return Boolean(isAtBottom); "
+                                                                              "}());");
 }

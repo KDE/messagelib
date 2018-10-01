@@ -190,23 +190,23 @@ void Aggregation::save(QDataStream &stream) const
 QList< QPair< QString, int > > Aggregation::enumerateGroupingOptions()
 {
     return { {
-                 i18nc("No grouping of messages", "None"), NoGrouping
-             },
-             {
-                 i18n("By Exact Date (of Thread Leaders)"), GroupByDate
-             },
-             {
-                 i18n("By Smart Date Ranges (of Thread Leaders)"), GroupByDateRange
-             },
-             {
-                 i18n("By Smart Sender/Receiver"), GroupBySenderOrReceiver
-             },
-             {
-                 i18n("By Sender"), GroupBySender
-             },
-             {
-                 i18n("By Receiver"), GroupByReceiver
-             } };
+        i18nc("No grouping of messages", "None"), NoGrouping
+    },
+        {
+            i18n("By Exact Date (of Thread Leaders)"), GroupByDate
+        },
+        {
+            i18n("By Smart Date Ranges (of Thread Leaders)"), GroupByDateRange
+        },
+        {
+            i18n("By Smart Sender/Receiver"), GroupBySenderOrReceiver
+        },
+        {
+            i18n("By Sender"), GroupBySender
+        },
+        {
+            i18n("By Receiver"), GroupByReceiver
+        } };
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateGroupExpandPolicyOptions(Grouping g)
@@ -226,17 +226,17 @@ QList< QPair< QString, int > > Aggregation::enumerateGroupExpandPolicyOptions(Gr
 QList< QPair< QString, int > > Aggregation::enumerateThreadingOptions()
 {
     return { {
-                 i18nc("No threading of messages", "None"), NoThreading
-             },
-             {
-                 i18n("Perfect Only"), PerfectOnly
-             },
-             {
-                 i18n("Perfect and by References"), PerfectAndReferences
-             },
-             {
-                 i18n("Perfect, by References and by Subject"), PerfectReferencesAndSubject
-             } };
+        i18nc("No threading of messages", "None"), NoThreading
+    },
+        {
+            i18n("Perfect Only"), PerfectOnly
+        },
+        {
+            i18n("Perfect and by References"), PerfectAndReferences
+        },
+        {
+            i18n("Perfect, by References and by Subject"), PerfectReferencesAndSubject
+        } };
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateThreadLeaderOptions(Grouping g, Threading t)
@@ -260,28 +260,28 @@ QList< QPair< QString, int > > Aggregation::enumerateThreadExpandPolicyOptions(T
     }
 
     return { {
-                 i18n("Never Expand Threads"), NeverExpandThreads
-             },
-             {
-                 i18n("Expand Threads With Unread Messages"), ExpandThreadsWithUnreadMessages
-             },
-             {
-                 i18n("Expand Threads With Unread or Important Messages"), ExpandThreadsWithUnreadOrImportantMessages
-             },
-             {
-                 i18n("Always Expand Threads"), AlwaysExpandThreads
-             } };
+        i18n("Never Expand Threads"), NeverExpandThreads
+    },
+        {
+            i18n("Expand Threads With Unread Messages"), ExpandThreadsWithUnreadMessages
+        },
+        {
+            i18n("Expand Threads With Unread or Important Messages"), ExpandThreadsWithUnreadOrImportantMessages
+        },
+        {
+            i18n("Always Expand Threads"), AlwaysExpandThreads
+        } };
 }
 
 QList< QPair< QString, int > > Aggregation::enumerateFillViewStrategyOptions()
 {
     return { {
-                 i18n("Favor Interactivity"), FavorInteractivity
-             },
-             {
-                 i18n("Favor Speed"), FavorSpeed
-             },
-             {
-                 i18n("Batch Job (No Interactivity)"), BatchNoInteractivity
-             } };
+        i18n("Favor Interactivity"), FavorInteractivity
+    },
+        {
+            i18n("Favor Speed"), FavorSpeed
+        },
+        {
+            i18n("Batch Job (No Interactivity)"), BatchNoInteractivity
+        } };
 }

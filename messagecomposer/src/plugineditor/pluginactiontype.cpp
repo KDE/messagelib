@@ -41,7 +41,6 @@ PluginActionType::Type PluginActionType::type() const
     return mType;
 }
 
-
 QString PluginActionType::actionXmlExtension(PluginActionType::Type type)
 {
     switch (type) {

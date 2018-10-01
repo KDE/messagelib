@@ -31,6 +31,7 @@ public:
     PluginEditorConvertTextInterfacePrivate()
     {
     }
+
     PluginActionType mActionType;
 
     QWidget *mParentWidget = nullptr;

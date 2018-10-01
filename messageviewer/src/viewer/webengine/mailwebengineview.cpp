@@ -126,7 +126,7 @@ void MailWebEngineView::readConfig()
 {
     if (MessageViewer::MessageViewerSettings::self()->mailTrackingUrlEnabled()) {
         d->mNetworkAccessManager->addInterceptor(d->mBlockMailTrackingUrl);
-    } else  {
+    } else {
         d->mNetworkAccessManager->removeInterceptor(d->mBlockMailTrackingUrl);
     }
 }

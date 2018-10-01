@@ -1064,39 +1064,39 @@ void Theme::setGroupHeaderBackgroundStyle(Theme::GroupHeaderBackgroundStyle grou
 QList<QPair<QString, int> > Theme::enumerateViewHeaderPolicyOptions()
 {
     return { {
-                 i18n("Never Show"), NeverShowHeader
-             },
-             {
-                 i18n("Always Show"), ShowHeaderAlways
-             } };
+        i18n("Never Show"), NeverShowHeader
+    },
+        {
+            i18n("Always Show"), ShowHeaderAlways
+        } };
 }
 
 QList<QPair<QString, int> > Theme::enumerateGroupHeaderBackgroundStyles()
 {
     return { {
-                 i18n("Plain Rectangles"), PlainRect
-             },
-             {
-                 i18n("Plain Joined Rectangle"), PlainJoinedRect
-             },
-             {
-                 i18n("Rounded Rectangles"), RoundedRect
-             },
-             {
-                 i18n("Rounded Joined Rectangle"), RoundedJoinedRect
-             },
-             {
-                 i18n("Gradient Rectangles"), GradientRect
-             },
-             {
-                 i18n("Gradient Joined Rectangle"), GradientJoinedRect
-             },
-             {
-                 i18n("Styled Rectangles"), StyledRect
-             },
-             {
-                 i18n("Styled Joined Rectangles"), StyledJoinedRect
-             } };
+        i18n("Plain Rectangles"), PlainRect
+    },
+        {
+            i18n("Plain Joined Rectangle"), PlainJoinedRect
+        },
+        {
+            i18n("Rounded Rectangles"), RoundedRect
+        },
+        {
+            i18n("Rounded Joined Rectangle"), RoundedJoinedRect
+        },
+        {
+            i18n("Gradient Rectangles"), GradientRect
+        },
+        {
+            i18n("Gradient Joined Rectangle"), GradientJoinedRect
+        },
+        {
+            i18n("Styled Rectangles"), StyledRect
+        },
+        {
+            i18n("Styled Joined Rectangles"), StyledJoinedRect
+        } };
 }
 
 Theme::ViewHeaderPolicy Theme::viewHeaderPolicy() const

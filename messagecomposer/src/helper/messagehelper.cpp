@@ -158,7 +158,6 @@ KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, cons
     return result;
 }
 
-
 void setAutomaticFields(const KMime::Message::Ptr &msg, bool aIsMulti)
 {
     auto header = msg->header<KMime::Headers::MIMEVersion>(true);
@@ -171,5 +170,4 @@ void setAutomaticFields(const KMime::Message::Ptr &msg, bool aIsMulti)
         msg->contentType()->setBoundary(KMime::multiPartBoundary());
     }
 }
-
 }

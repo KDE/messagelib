@@ -433,13 +433,15 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     return result;
 }
 
-QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
+QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName,
+                          int collapseNumber)
 {
     Q_ASSERT(mailboxList);
     return emailAddrAsAnchor(mailboxList->mailboxes(), display, cssStyle, link, expandable, fieldName, collapseNumber);
 }
 
-QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName, int collapseNumber)
+QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display, const QString &cssStyle, Link link, AddressMode expandable, const QString &fieldName,
+                          int collapseNumber)
 {
     Q_ASSERT(addressList);
     return emailAddrAsAnchor(addressList->mailboxes(), display, cssStyle, link, expandable, fieldName, collapseNumber);
@@ -719,8 +721,8 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
         }
     } else {
         qCWarning(MESSAGECORE_LOG) << "bigRegExp = \""
-                                       << bigRegExp << "\"\n"
-                                       << "prefix regexp is invalid!";
+                                   << bigRegExp << "\"\n"
+                                   << "prefix regexp is invalid!";
         // try good ole Re/Fwd:
         recognized = str.startsWith(newPrefix);
     }
@@ -731,7 +733,6 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
         return str;
     }
 }
-
 
 QString stripOffPrefixes(const QString &subject)
 {

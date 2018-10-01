@@ -730,5 +730,4 @@ void Viewer::setWebViewZoomFactor(qreal factor)
     Q_D(Viewer);
     d->setWebViewZoomFactor(factor);
 }
-
 }

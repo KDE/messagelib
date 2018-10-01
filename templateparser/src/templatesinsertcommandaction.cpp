@@ -17,8 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
-
 #include "templatesinsertcommandaction.h"
 using namespace TemplateParser;
 
@@ -35,7 +33,6 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
 
 TemplatesInsertCommandAction::~TemplatesInsertCommandAction()
 {
-
 }
 
 TemplatesCommandMenu::MenuTypes TemplatesInsertCommandAction::type() const

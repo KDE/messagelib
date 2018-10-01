@@ -131,7 +131,9 @@ View::View(Widget *pParent)
             Qt::UniqueConnection);
 
     // as in KDE3, when a root-item of a message thread is expanded, expand all children
-    connect(this, &View::expanded, this, [this](const QModelIndex &index) { d->expandFullThread(index);} );
+    connect(this, &View::expanded, this, [this](const QModelIndex &index) {
+        d->expandFullThread(index);
+    });
 }
 
 View::~View()
@@ -730,7 +732,9 @@ void View::slotHeaderContextMenuRequested(const QPoint &pnt)
         if (idx == 0) {
             act->setEnabled(false);
         }
-        QObject::connect(act, &QAction::triggered, this, [this, idx] {slotShowHideColumn(idx);});
+        QObject::connect(act, &QAction::triggered, this, [this, idx] {
+            slotShowHideColumn(idx);
+        });
 
         idx++;
     }

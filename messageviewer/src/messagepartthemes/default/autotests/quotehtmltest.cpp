@@ -96,7 +96,7 @@ public:
 
     bool showEncryptionDetails() const override
     {
-         return false;
+        return false;
     }
 
     int levelQuote() const override

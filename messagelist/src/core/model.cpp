@@ -915,18 +915,18 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
         =// we have no filter
           !d->mFilter
           && (
-        // we do no threading at all
-        (d->mAggregation->threading() == Aggregation::NoThreading)
-        ||  // or we never expand threads
-        (d->mAggregation->threadExpandPolicy() == Aggregation::NeverExpandThreads)
-        ||  // or we expand threads but we'll be going to expand really only a few
-        (
-            // so we don't expand them all
-            (d->mAggregation->threadExpandPolicy() != Aggregation::AlwaysExpandThreads)
-            &&  // and we'd expand only a few in fact
-            (d->mStorageModel->initialUnreadRowCountGuess() < 1000)
-        )
-        );
+              // we do no threading at all
+              (d->mAggregation->threading() == Aggregation::NoThreading)
+              || // or we never expand threads
+              (d->mAggregation->threadExpandPolicy() == Aggregation::NeverExpandThreads)
+              || // or we expand threads but we'll be going to expand really only a few
+              (
+                  // so we don't expand them all
+                  (d->mAggregation->threadExpandPolicy() != Aggregation::AlwaysExpandThreads)
+                  && // and we'd expand only a few in fact
+                  (d->mStorageModel->initialUnreadRowCountGuess() < 1000)
+              )
+              );
 
     switch (d->mAggregation->fillViewStrategy()) {
     case Aggregation::FavorInteractivity:

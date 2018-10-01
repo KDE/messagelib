@@ -29,7 +29,6 @@ QTEST_MAIN(TemplatesInsertCommandPushButtonTest)
 TemplatesInsertCommandPushButtonTest::TemplatesInsertCommandPushButtonTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void TemplatesInsertCommandPushButtonTest::shouldHaveDefaultValue()

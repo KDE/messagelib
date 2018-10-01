@@ -108,11 +108,9 @@ void TemplateParserJobPrivate::setAllowDecryption(const bool allowDecryption)
     mEmptySource->setDecryptMessage(mAllowDecryption);
 }
 
-
 TemplateParserJob::TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode)
     : d(new TemplateParserJobPrivate(amsg, amode))
 {
-
 }
 
 TemplateParserJob::~TemplateParserJob() = default;
@@ -313,7 +311,7 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
     QString htmlElement = d->mOtp->htmlContent();
 
     if (htmlElement.isEmpty()) {   //plain mails only
-        QString htmlReplace =d->mOtp->plainTextContent().toHtmlEscaped();
+        QString htmlReplace = d->mOtp->plainTextContent().toHtmlEscaped();
         htmlReplace = htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
         htmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
     }
@@ -1214,7 +1212,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
     KMime::Content *mainPart = textPart;
     if (d->mMode == Forward) {
         auto attachments = d->mOrigMsg->attachments();
-        attachments +=d->mOtp->nodeHelper()->attachmentsOfExtraContents();
+        attachments += d->mOtp->nodeHelper()->attachmentsOfExtraContents();
         if (!attachments.isEmpty()) {
             mainPart = createMultipartMixed(attachments, textPart);
             mainPart->assemble();
@@ -1481,7 +1479,7 @@ QString TemplateParserJob::plainMessageText(bool aStripSignature, AllowSelection
     if (!d->mOrigMsg) {
         return QString();
     }
-    QString result =d->mOtp->plainTextContent();
+    QString result = d->mOtp->plainTextContent();
     if (result.isEmpty()) {
         result = d->mExtractHtmlInfoResult.mPlainText;
     }

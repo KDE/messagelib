@@ -54,14 +54,12 @@ void initFromMessage(const KMime::Message::Ptr &msg, const KMime::Message::Ptr &
 
 MESSAGECOMPOSER_EXPORT KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, const QByteArray &header);
 
-
 /** Set fields that are either automatically set (Message-id)
     or that do not change from one message to another (MIME-Version).
     Call this method before sending *after* all changes to the message
     are done because this method does things different if there are
     attachments / multiple body parts. */
 void setAutomaticFields(const KMime::Message::Ptr &msg, bool isMultipart = false);
-
 }
 
 #endif

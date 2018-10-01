@@ -80,7 +80,7 @@ void PrintingSettings::doLoadFromGlobalSettings()
     loadWidget(d->mPrintingUi->printBackgroundColorAndImages,
                MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
     loadWidget(d->mPrintingUi->alwaysShowEncryptionSignatureDetail,
-                 MessageViewer::MessageViewerSettings::self()->alwaysShowEncryptionSignatureDetailsItem());
+               MessageViewer::MessageViewerSettings::self()->alwaysShowEncryptionSignatureDetailsItem());
 }
 
 void PrintingSettings::doResetToDefaultsOther()
@@ -93,6 +93,6 @@ void PrintingSettings::doResetToDefaultsOther()
     loadWidget(d->mPrintingUi->printBackgroundColorAndImages,
                MessageViewer::MessageViewerSettings::self()->printBackgroundColorImagesItem());
     loadWidget(d->mPrintingUi->alwaysShowEncryptionSignatureDetail,
-                 MessageViewer::MessageViewerSettings::self()->alwaysShowEncryptionSignatureDetailsItem());
+               MessageViewer::MessageViewerSettings::self()->alwaysShowEncryptionSignatureDetailsItem());
     MessageViewer::MessageViewerSettings::self()->useDefaults(bUseDefaults);
 }

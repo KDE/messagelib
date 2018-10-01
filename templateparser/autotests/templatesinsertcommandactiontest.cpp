@@ -27,7 +27,6 @@ QTEST_MAIN(TemplatesInsertCommandActionTest)
 TemplatesInsertCommandActionTest::TemplatesInsertCommandActionTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void TemplatesInsertCommandActionTest::shouldHaveDefaultValue()

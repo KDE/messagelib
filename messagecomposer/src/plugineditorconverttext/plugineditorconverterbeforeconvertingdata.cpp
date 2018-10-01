@@ -21,7 +21,6 @@
 using namespace MessageComposer;
 PluginEditorConverterBeforeConvertingData::PluginEditorConverterBeforeConvertingData()
 {
-
 }
 
 bool PluginEditorConverterBeforeConvertingData::newMessage() const

@@ -123,12 +123,12 @@ void TemplatesConfiguration::resetToDefault()
 {
     const int choice
         = KMessageBox::questionYesNoCancel(
-        nullptr,
-        i18n("Do you want to reset current template or all templates to default?"),
-        i18n("Reset to default"),
-        KGuiItem(i18n("Reset Current Template")),
-        KGuiItem(i18n("Reset All Templates")),
-        KStandardGuiItem::cancel());
+              nullptr,
+              i18n("Do you want to reset current template or all templates to default?"),
+              i18n("Reset to default"),
+              KGuiItem(i18n("Reset Current Template")),
+              KGuiItem(i18n("Reset All Templates")),
+              KStandardGuiItem::cancel());
 
     if (choice == KMessageBox::Cancel) {
         return;

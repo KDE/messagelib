@@ -501,7 +501,6 @@ void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
     node->contentType()->setMimeType(mimetype.toLatin1());
 }
 
-
 void NodeHelper::setOverrideCodec(KMime::Content *node, const QTextCodec *codec)
 {
     if (!node) {

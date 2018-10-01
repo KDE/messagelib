@@ -24,12 +24,10 @@ using namespace TemplateParser;
 TemplateConvertCommandJob::TemplateConvertCommandJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 TemplateConvertCommandJob::~TemplateConvertCommandJob()
 {
-
 }
 
 QString TemplateConvertCommandJob::convertText()

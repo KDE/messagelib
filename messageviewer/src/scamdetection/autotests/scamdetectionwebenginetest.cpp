@@ -156,7 +156,7 @@ void ScamDetectionWebEngineTest::scamtest_data()
 #if 0
     QTest::newRow("wierd1") << QStringLiteral(
         "<a href=\"http://www.weezevent.com?c=sys_mail\">http://www.weezevent.com?c=sys_mail</a>")
-                                   << false;
+                            << false;
 #endif
 }
 

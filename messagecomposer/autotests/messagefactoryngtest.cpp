@@ -643,7 +643,6 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 
 //   qDebug() << rdir->encodedContent();
 
-
     QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
     rx.indexIn(QString::fromLatin1(rdir->head()));
 

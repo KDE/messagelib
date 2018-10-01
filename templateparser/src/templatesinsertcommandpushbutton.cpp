@@ -24,9 +24,7 @@
 #include "templateparser_debug.h"
 #include <KLocalizedString>
 
-
 using namespace TemplateParser;
-
 
 TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *parent, const QString &name)
     : QPushButton(parent)
@@ -65,4 +63,3 @@ void TemplatesInsertCommandPushButton::setType(TemplatesCommandMenu::MenuTypes t
     mMenuCommand->setType(type);
     setMenu(mMenuCommand->menu());
 }
-

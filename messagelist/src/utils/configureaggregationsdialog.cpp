@@ -124,21 +124,27 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     d->mAggregationList->setSortingEnabled(true);
     g->addWidget(d->mAggregationList, 0, 0, 7, 1);
 
-    connect(d->mAggregationList, &AggregationListWidget::itemClicked, this, [this](QListWidgetItem *item) { d->aggregationListItemClicked(item); });
+    connect(d->mAggregationList, &AggregationListWidget::itemClicked, this, [this](QListWidgetItem *item) {
+        d->aggregationListItemClicked(item);
+    });
 
     d->mNewAggregationButton = new QPushButton(i18n("New Aggregation"), base);
     d->mNewAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
     d->mNewAggregationButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mNewAggregationButton, 0, 1);
 
-    connect(d->mNewAggregationButton, &QPushButton::clicked, this, [this]() { d->newAggregationButtonClicked(); });
+    connect(d->mNewAggregationButton, &QPushButton::clicked, this, [this]() {
+        d->newAggregationButtonClicked();
+    });
 
     d->mCloneAggregationButton = new QPushButton(i18n("Clone Aggregation"), base);
     d->mCloneAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
     d->mCloneAggregationButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mCloneAggregationButton, 1, 1);
 
-    connect(d->mCloneAggregationButton,&QPushButton::clicked, this, [this]() { d->cloneAggregationButtonClicked(); });
+    connect(d->mCloneAggregationButton, &QPushButton::clicked, this, [this]() {
+        d->cloneAggregationButtonClicked();
+    });
 
     QFrame *f = new QFrame(base);
     f->setFrameStyle(QFrame::Sunken | QFrame::HLine);
@@ -148,11 +154,15 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     d->mExportAggregationButton = new QPushButton(i18n("Export Aggregation..."), base);
     g->addWidget(d->mExportAggregationButton, 3, 1);
 
-    connect(d->mExportAggregationButton, &QPushButton::clicked, this, [this]() { d->exportAggregationButtonClicked(); });
+    connect(d->mExportAggregationButton, &QPushButton::clicked, this, [this]() {
+        d->exportAggregationButtonClicked();
+    });
 
     d->mImportAggregationButton = new QPushButton(i18n("Import Aggregation..."), base);
     g->addWidget(d->mImportAggregationButton, 4, 1);
-    connect(d->mImportAggregationButton, &QPushButton::clicked, this, [this]() { d->importAggregationButtonClicked(); });
+    connect(d->mImportAggregationButton, &QPushButton::clicked, this, [this]() {
+        d->importAggregationButtonClicked();
+    });
 
     f = new QFrame(base);
     f->setFrameStyle(QFrame::Sunken | QFrame::HLine);
@@ -164,17 +174,23 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     d->mDeleteAggregationButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mDeleteAggregationButton, 6, 1);
 
-    connect(d->mDeleteAggregationButton, &QPushButton::clicked, this, [this]() { d->deleteAggregationButtonClicked(); });
+    connect(d->mDeleteAggregationButton, &QPushButton::clicked, this, [this]() {
+        d->deleteAggregationButtonClicked();
+    });
 
     d->mEditor = new AggregationEditor(base);
     g->addWidget(d->mEditor, 8, 0, 1, 2);
 
-    connect(d->mEditor, &AggregationEditor::aggregationNameChanged, this, [this]() { d->editedAggregationNameChanged(); });
+    connect(d->mEditor, &AggregationEditor::aggregationNameChanged, this, [this]() {
+        d->editedAggregationNameChanged();
+    });
 
     g->setColumnStretch(0, 1);
     g->setRowStretch(7, 1);
 
-    connect(okButton, &QPushButton::clicked, this, [this]() { d->okButtonClicked(); });
+    connect(okButton, &QPushButton::clicked, this, [this]() {
+        d->okButtonClicked();
+    });
 
     d->fillAggregationList();
 }

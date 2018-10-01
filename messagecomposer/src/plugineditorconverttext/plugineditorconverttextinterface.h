@@ -25,7 +25,6 @@
 #include <MessageComposer/PluginActionType>
 #include <KMime/Message>
 
-
 namespace KPIMTextEdit {
 class RichTextComposer;
 }

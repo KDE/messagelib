@@ -65,7 +65,6 @@ public:
     static Q_REQUIRED_RESULT QString dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat);
     static Q_REQUIRED_RESULT QString dateString(const KMime::Headers::Date *date, HeaderStyleUtilDateFormat dateFormat);
 
-
     Q_REQUIRED_RESULT QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
     Q_REQUIRED_RESULT QString subjectDirectionString(KMime::Message *message) const;

@@ -54,7 +54,7 @@ GpgME::VerificationResult QGpgMEJobExecutor::exec(
     QGpgME::VerifyOpaqueJob *job, const QByteArray &signedData, QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Starting opaque verification job";
-    connect(job, &QGpgME::VerifyOpaqueJob::result, this, QOverload<const GpgME::VerificationResult &, const QByteArray &>::of(&QGpgMEJobExecutor::verificationResult ));
+    connect(job, &QGpgME::VerifyOpaqueJob::result, this, QOverload<const GpgME::VerificationResult &, const QByteArray &>::of(&QGpgMEJobExecutor::verificationResult));
     GpgME::Error err = job->start(signedData);
     if (err) {
         plainText.clear();

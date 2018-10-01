@@ -99,25 +99,24 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::loo
 }
 
 GRANTLEE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::MailboxList>)
-    if (property == QStringLiteral("nameOnly")) {
-        return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
-    } else if (property == QStringLiteral("isSet")) {
-        return !object->asUnicodeString().isEmpty();
-    } else if (property == QStringLiteral("fullAddress")) {
-        return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayFullAddress);
-    } else if (property == QStringLiteral("str")) {
-        return object->asUnicodeString();
-    } else if (property.startsWith(QStringLiteral("expandable"))) {
-        const auto &name = property.mid(10);
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
-            object.data(), MessageCore::StringUtil::DisplayFullAddress,
-            QString(), MessageCore::StringUtil::ShowLink,
-            MessageCore::StringUtil::ExpandableAddresses,
-            QStringLiteral("Full") + name + QStringLiteral("AddressList"));
-        return val;
-    }
+if (property == QStringLiteral("nameOnly")) {
+    return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
+} else if (property == QStringLiteral("isSet")) {
+    return !object->asUnicodeString().isEmpty();
+} else if (property == QStringLiteral("fullAddress")) {
+    return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayFullAddress);
+} else if (property == QStringLiteral("str")) {
+    return object->asUnicodeString();
+} else if (property.startsWith(QStringLiteral("expandable"))) {
+    const auto &name = property.mid(10);
+    const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
+        object.data(), MessageCore::StringUtil::DisplayFullAddress,
+        QString(), MessageCore::StringUtil::ShowLink,
+        MessageCore::StringUtil::ExpandableAddresses,
+        QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+    return val;
+}
 GRANTLEE_END_LOOKUP
-
 
 namespace Grantlee {
 template<>
@@ -134,7 +133,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Date *>::lookUp(const KMime::
         dateFormat = MessageViewer::HeaderStyleUtil::FancyLongDate;
     } else if (property == QStringLiteral("fancyshort")) {
         dateFormat = MessageViewer::HeaderStyleUtil::FancyShortDate;
-    } else if(property == QStringLiteral("localelong")){
+    } else if (property == QStringLiteral("localelong")) {
         dateFormat = MessageViewer::HeaderStyleUtil::LongDate;
     } else {
         return QVariant();
@@ -144,7 +143,6 @@ inline QVariant TypeAccessor<const KMime::Headers::Date *>::lookUp(const KMime::
 }
 }
 
-
 class Q_DECL_HIDDEN MessageViewer::GrantleeHeaderFormatter::Private
 {
 public:
@@ -152,7 +150,7 @@ public:
     {
         Grantlee::registerMetaType<const KMime::Headers::Generics::AddressList *>();
         Grantlee::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
-        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList>>();
+        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList> >();
         Grantlee::registerMetaType<const KMime::Headers::Date *>();
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
         engine = new Grantlee::Engine;
