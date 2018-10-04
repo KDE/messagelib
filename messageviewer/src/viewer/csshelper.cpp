@@ -38,6 +38,7 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <KColorScheme>
+#include <QApplication>
 
 #include <QColor>
 #include <QFont>
@@ -65,15 +66,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     cPgpErrH = MessageCore::ColorUtil::self()->pgpSignedBadMessageColor();
     cPgpErrHT = MessageCore::ColorUtil::self()->pgpSignedBadTextColor();
 
-    if (MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
-        mQuoteColor[0] = MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor();
-        mQuoteColor[1] = MessageCore::ColorUtil::self()->quoteLevel2DefaultTextColor();
-        mQuoteColor[2] = MessageCore::ColorUtil::self()->quoteLevel3DefaultTextColor();
-    } else {
-        mQuoteColor[0] = MessageCore::MessageCoreSettings::self()->quotedText1();
-        mQuoteColor[1] = MessageCore::MessageCoreSettings::self()->quotedText2();
-        mQuoteColor[2] = MessageCore::MessageCoreSettings::self()->quotedText3();
-    }
 
     mRecycleQuoteColors = false;
 
@@ -112,11 +104,15 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
             = reader.readEntry("PGPMessageWarn", cPgpWarnH);
         cPgpErrH
             = reader.readEntry("PGPMessageErr", cPgpErrH);
-        for (int i = 0; i < 3; ++i) {
-            const QString key = QLatin1String("QuotedText") + QString::number(i + 1);
-            mQuoteColor[i] = reader.readEntry(key, mQuoteColor[i]);
-        }
+        mQuoteColor[0] = MessageCore::MessageCoreSettings::self()->quotedText1();
+        mQuoteColor[1] = MessageCore::MessageCoreSettings::self()->quotedText2();
+        mQuoteColor[2] = MessageCore::MessageCoreSettings::self()->quotedText3();
+    } else {
+        mQuoteColor[0] = MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor();
+        mQuoteColor[1] = MessageCore::ColorUtil::self()->quoteLevel2DefaultTextColor();
+        mQuoteColor[2] = MessageCore::ColorUtil::self()->quoteLevel3DefaultTextColor();
     }
+
 
     if (!MessageCore::MessageCoreSettings::self()->useDefaultFonts()) {
         mBodyFont = fonts.readEntry("body-font", mBodyFont);
