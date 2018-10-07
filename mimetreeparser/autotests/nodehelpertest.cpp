@@ -88,8 +88,8 @@ void NodeHelperTest::testPersistentIndex()
      *       -> node2ExtraSubsubNode2 "e0:2.3"
      */
 
-    QCOMPARE(helper.persistentIndex(node), QStringLiteral(""));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("")), node);
+    QCOMPARE(helper.persistentIndex(node), QString());
+    QCOMPARE(helper.contentFromIndex(node, QString()), node);
 
     QCOMPARE(helper.persistentIndex(node->contents()[0]), QStringLiteral("1"));
     QCOMPARE(helper.contentFromIndex(node, QStringLiteral("1")), node->contents()[0]);
@@ -147,7 +147,7 @@ void NodeHelperTest::testHREF()
     helper.attachExtraContent(subNode, subExtra);
     helper.attachExtraContent(subsubNode2, subsubExtra);
 
-    url = QUrl(QStringLiteral(""));
+    url = QUrl(QString());
     QCOMPARE(helper.fromHREF(msg, url), node);
 
     url = QUrl(QStringLiteral("attachment:e0?place=body"));
