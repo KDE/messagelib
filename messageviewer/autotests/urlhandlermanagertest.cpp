@@ -109,7 +109,7 @@ void BodyPartUrlHandlerManagerTest::testHandleClick()
     BodyPartURLHandlerManager manager;
     TestBodyPartURLHandler handler;
 
-    manager.registerHandler(&handler, QStringLiteral(""));
+    manager.registerHandler(&handler, QLatin1String(""));
     Viewer v(nullptr);
     ViewerPrivate vp(&v, nullptr, nullptr);
     const KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")));
