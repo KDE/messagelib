@@ -41,9 +41,15 @@ public:
     explicit PluginEditorConvertTextInterface(QObject *parent = nullptr);
     ~PluginEditorConvertTextInterface();
 
+    enum class ConvertTextStatus {
+        NotConverted,
+        Converted,
+        Error
+    };
+
     virtual bool reformatText();
 
-    virtual bool convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
+    virtual PluginEditorConvertTextInterface::ConvertTextStatus convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
 
     void setParentWidget(QWidget *parent);
     Q_REQUIRED_RESULT QWidget *parentWidget() const;
