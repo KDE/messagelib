@@ -22,7 +22,7 @@
 #include <kpimtextedit/richtextcomposerimages.h>
 #include "richtextcomposersignatures.h"
 #include <pimcommon/autocorrection.h>
-
+#include <QDebug>
 #include <part/textpart.h>
 #include "settings/messagecomposersettings.h"
 #include <grantlee/markupdirector.h>
@@ -163,7 +163,7 @@ bool RichTextComposerNg::convertPlainText(MessageComposer::TextPart *textPart)
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
     if (composerControler()->isFormattingUsed()) {
-        if (!convertPlainText(textPart)) {
+        //if (!convertPlainText(textPart)) {
             if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
                 Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
 
@@ -182,10 +182,15 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
                 textPart->setCleanPlainText(composerControler()->toCleanPlainText());
                 textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
             }
-        }
+        //}
     } else {
-        textPart->setCleanPlainText(composerControler()->toCleanPlainText());
-        textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
+//        if (!convertPlainText(textPart)) {
+            textPart->setCleanPlainText(composerControler()->toCleanPlainText());
+            textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
+//        } else {
+//            //Fill text before
+//            qDebug() << " convert text ";
+//        }
     }
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
     if (composerControler()->isFormattingUsed()) {
