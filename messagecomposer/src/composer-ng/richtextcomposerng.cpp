@@ -159,7 +159,7 @@ bool RichTextComposerNg::convertPlainText(MessageComposer::TextPart *textPart)
     Q_UNUSED(textPart);
     return false;
 }
-
+#define USE_CONVERTER_PLUGIN 1
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
     if (composerControler()->isFormattingUsed()) {
