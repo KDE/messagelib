@@ -163,9 +163,15 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
 //#define USE_CONVERTER_PLUGIN 1
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
+    bool wasConverted =
+#ifdef USE_CONVERTER_PLUGIN
+            convertPlainText(textPart) != MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
+#else
+            false;
+#endif
     if (composerControler()->isFormattingUsed()) {
 #ifdef USE_CONVERTER_PLUGIN
-        if (convertPlainText(textPart) != MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted) {
+        if (!wasConverted) {
 #endif
             if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
                 Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
@@ -190,19 +196,16 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
 #endif
     } else {
 #ifdef USE_CONVERTER_PLUGIN
-        if (convertPlainText(textPart) != MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted) {
+        if (!wasConverted) {
 #endif
             textPart->setCleanPlainText(composerControler()->toCleanPlainText());
             textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
 #ifdef USE_CONVERTER_PLUGIN
-        } else {
-            //Fill text before
-            qDebug() << " convert text ";
         }
 #endif
     }
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
-    if (composerControler()->isFormattingUsed()) {
+    if (composerControler()->isFormattingUsed() && !wasConverted) {
         QString cleanHtml = d->toCleanHtml();
         d->fixHtmlFontSize(cleanHtml);
         textPart->setCleanHtml(cleanHtml);
