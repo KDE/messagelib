@@ -154,10 +154,10 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml)
     }
 }
 
-bool RichTextComposerNg::convertPlainText(MessageComposer::TextPart *textPart)
+MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextComposerNg::convertPlainText(MessageComposer::TextPart *textPart)
 {
     Q_UNUSED(textPart);
-    return false;
+    return MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::NotConverted;
 }
 #define USE_CONVERTER_PLUGIN 1
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
