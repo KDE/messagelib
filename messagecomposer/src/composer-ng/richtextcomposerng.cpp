@@ -163,7 +163,9 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
     if (composerControler()->isFormattingUsed()) {
+#ifdef USE_CONVERTER_PLUGIN
         //if (!convertPlainText(textPart)) {
+#endif
             if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
                 Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
 
@@ -182,15 +184,21 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
                 textPart->setCleanPlainText(composerControler()->toCleanPlainText());
                 textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
             }
+#ifdef USE_CONVERTER_PLUGIN
         //}
+#endif
     } else {
+#ifdef USE_CONVERTER_PLUGIN
 //        if (!convertPlainText(textPart)) {
+#endif
             textPart->setCleanPlainText(composerControler()->toCleanPlainText());
             textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
+#ifdef USE_CONVERTER_PLUGIN
 //        } else {
 //            //Fill text before
 //            qDebug() << " convert text ";
 //        }
+#endif
     }
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
     if (composerControler()->isFormattingUsed()) {
