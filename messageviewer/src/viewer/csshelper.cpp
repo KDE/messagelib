@@ -67,7 +67,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     cPgpErrH = MessageCore::ColorUtil::self()->pgpSignedBadMessageColor();
     cPgpErrHT = MessageCore::ColorUtil::self()->pgpSignedBadTextColor();
 
-
     mRecycleQuoteColors = false;
 
     QFont defaultFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
@@ -113,7 +112,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
         mQuoteColor[1] = MessageCore::ColorUtil::self()->quoteLevel2DefaultTextColor();
         mQuoteColor[2] = MessageCore::ColorUtil::self()->quoteLevel3DefaultTextColor();
     }
-
 
     if (!MessageCore::MessageCoreSettings::self()->useDefaultFonts()) {
         mBodyFont = fonts.readEntry("body-font", mBodyFont);
