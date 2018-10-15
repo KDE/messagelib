@@ -68,6 +68,7 @@ public:
     virtual void setBeforeConvertingData(const PluginEditorConverterBeforeConvertingData &data);
     Q_REQUIRED_RESULT PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
 
+    virtual void enableDisablePluginActions(bool richText);
 public Q_SLOTS:
     virtual void reloadConfig();
 

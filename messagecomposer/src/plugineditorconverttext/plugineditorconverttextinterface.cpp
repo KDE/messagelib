@@ -115,3 +115,8 @@ void PluginEditorConvertTextInterface::reloadConfig()
 {
     //Reimplement it
 }
+
+void PluginEditorConvertTextInterface::enableDisablePluginActions(bool richText)
+{
+    Q_UNUSED(richText);
+}
