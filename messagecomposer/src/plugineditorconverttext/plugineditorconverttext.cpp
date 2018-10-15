@@ -76,3 +76,8 @@ bool PluginEditorConvertText::canWorkOnHtml() const
 {
     return true;
 }
+
+bool PluginEditorConvertText::hasStatusBarSupport() const
+{
+    return false;
+}

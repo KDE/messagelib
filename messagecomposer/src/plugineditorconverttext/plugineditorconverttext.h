@@ -49,6 +49,8 @@ public:
 
     Q_REQUIRED_RESULT virtual bool canWorkOnHtml() const;
 
+    Q_REQUIRED_RESULT virtual bool hasStatusBarSupport() const;
+
 Q_SIGNALS:
     void configChanged();
 
