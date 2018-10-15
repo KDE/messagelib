@@ -165,7 +165,7 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
 {
     bool wasConverted =
 #ifdef USE_CONVERTER_PLUGIN
-        convertPlainText(textPart) != MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
+        convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
 #else
         false;
 #endif
