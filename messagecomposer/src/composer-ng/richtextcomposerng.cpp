@@ -160,7 +160,7 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
     return MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::NotConverted;
 }
 
-#define USE_CONVERTER_PLUGIN 1
+//#define USE_CONVERTER_PLUGIN 1
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
     bool wasConverted =
