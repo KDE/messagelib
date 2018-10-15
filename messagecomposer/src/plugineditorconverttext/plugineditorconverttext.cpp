@@ -71,3 +71,8 @@ bool PluginEditorConvertText::isEnabled() const
 {
     return d->mIsEnabled;
 }
+
+bool PluginEditorConvertText::canWorkOnHtml() const
+{
+    return true;
+}
