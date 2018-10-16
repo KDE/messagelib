@@ -34,6 +34,7 @@ class TextPart;
 class PluginEditorConvertTextInterfacePrivate;
 class PluginEditorConverterInitialData;
 class PluginEditorConverterBeforeConvertingData;
+class PluginEditorConvertText;
 class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextInterface : public QObject
 {
     Q_OBJECT
@@ -69,6 +70,14 @@ public:
     Q_REQUIRED_RESULT PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
 
     virtual void enableDisablePluginActions(bool richText);
+
+    virtual void setStatusBarWidget(QWidget *w);
+
+    virtual QWidget *statusBarWidget() const;
+
+    void setPlugin(PluginEditorConvertText *plugin);
+    Q_REQUIRED_RESULT PluginEditorConvertText *plugin() const;
+
 public Q_SLOTS:
     virtual void reloadConfig();
 

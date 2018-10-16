@@ -35,6 +35,8 @@ public:
     PluginActionType mActionType;
 
     QWidget *mParentWidget = nullptr;
+    QWidget *statusBarWidget = nullptr;
+    PluginEditorConvertText *plugin = nullptr;
     KPIMTextEdit::RichTextComposer *mEditor = nullptr;
     PluginEditorConverterInitialData mInitialData;
     PluginEditorConverterBeforeConvertingData mBeforeConvertingData;
@@ -119,4 +121,24 @@ void PluginEditorConvertTextInterface::reloadConfig()
 void PluginEditorConvertTextInterface::enableDisablePluginActions(bool richText)
 {
     Q_UNUSED(richText);
+}
+
+void PluginEditorConvertTextInterface::setStatusBarWidget(QWidget *w)
+{
+    d->statusBarWidget = w;
+}
+
+QWidget *PluginEditorConvertTextInterface::statusBarWidget() const
+{
+    return d->statusBarWidget;
+}
+
+void PluginEditorConvertTextInterface::setPlugin(PluginEditorConvertText *plugin)
+{
+    d->plugin = plugin;
+}
+
+PluginEditorConvertText *PluginEditorConvertTextInterface::plugin() const
+{
+    return d->plugin;
 }
