@@ -71,9 +71,9 @@ public:
 
     virtual void enableDisablePluginActions(bool richText);
 
-    virtual void setStatusBarWidget(QWidget *w);
+    void setStatusBarWidget(QWidget *w);
 
-    virtual QWidget *statusBarWidget() const;
+    QWidget *statusBarWidget() const;
 
     void setPlugin(PluginEditorConvertText *plugin);
     Q_REQUIRED_RESULT PluginEditorConvertText *plugin() const;
