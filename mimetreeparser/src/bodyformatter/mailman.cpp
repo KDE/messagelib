@@ -64,6 +64,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         return MessagePart::Ptr();
     }
 
+    //Latin1 or utf8 ?
     const QString str = QString::fromLatin1(curNode->decodedContent());
 
     //###
