@@ -94,6 +94,7 @@ protected:
     QColor mQuoteColor[3];
     bool mRecycleQuoteColors;
     bool mShrinkQuotes;
+    bool mUseBrowserColor = false;
     QColor mForegroundColor;
     QColor mLinkColor;
     QColor mBackgroundColor;
@@ -134,6 +135,7 @@ private:
     // returns CSS rules common to both screen and print media types
     QString commonCssDefinitions() const;
     QString fullAddressList() const;
+    QString linkColorDefinition() const;
 
 private:
     const QPaintDevice *mPaintDevice = nullptr;
