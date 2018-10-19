@@ -493,7 +493,7 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
 
 void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
 {
-    const QByteArray body = (aAutoDecode) ? node->decodedContent() : node->body();
+    const QByteArray body = aAutoDecode ? node->decodedContent() : node->body();
     QMimeDatabase db;
     QMimeType mime = db.mimeTypeForData(body);
 
