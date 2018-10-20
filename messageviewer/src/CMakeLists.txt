@@ -61,6 +61,7 @@ set(libmessageviewer_viewer_SRCS
     viewer/attachmentstrategy.cpp
     viewer/csshelper.cpp
     viewer/csshelperbase.cpp
+    viewer/cssfancyhelper.cpp
     viewer/editorwatcher.cpp
     viewer/objecttreeemptysource.cpp
     viewer/objecttreeviewersource.cpp
