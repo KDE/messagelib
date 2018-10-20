@@ -80,6 +80,10 @@ public:
 
     Q_REQUIRED_RESULT QString addEndBlockQuote(int numberBlock) const;
     Q_REQUIRED_RESULT QString addStartBlockQuote(int numberBlock) const;
+
+    virtual QString extraScreenCss() const;
+    virtual QString extraPrintCss() const;
+
 protected:
     /** Recalculate PGP frame and body colors (should be called after changing
         color settings) */

@@ -157,6 +157,16 @@ QString CSSHelperBase::addStartBlockQuote(int numberBlock) const
     return blockQuote;
 }
 
+QString CSSHelperBase::extraScreenCss() const
+{
+    return {};
+}
+
+QString CSSHelperBase::extraPrintCss() const
+{
+    return {};
+}
+
 QString CSSHelperBase::cssDefinitions(bool fixed) const
 {
     return
