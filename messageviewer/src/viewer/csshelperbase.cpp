@@ -247,7 +247,6 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                                .arg(mPrintFont.family())
                                .arg(mPrintFont.pointSize());
     const QPalette &pal = QApplication::palette();
-    const QString linkColor = mLinkColor.name();
 
     const QFont printFont = bodyFont(fixed, true /* print */);
     QString quoteCSS;
@@ -373,7 +372,6 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
 {
     const QString fgColor = mForegroundColor.name();
     const QString bgColor = mBackgroundColor.name();
-    const QString linkColor = mLinkColor.name();
     const QString headerFont = QStringLiteral("  font-family: \"%1\" ! important;\n"
                                               "  font-size: %2px ! important;\n")
                                .arg(mBodyFont.family())
