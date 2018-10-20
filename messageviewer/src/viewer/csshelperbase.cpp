@@ -681,6 +681,8 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "table.signOkKeyBad,\n"
                        "table.signOkKeyOk,\n"
                        "table.signInProgress,\n"
+
+
                        "div.fancy.header table {\n"
                        "  width: 100% ! important;\n"
                        "  border-width: 0px ! important;\n"
@@ -738,10 +740,7 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "div.quotelevelmark {\n"
                        "  position: absolute;\n"
                        "  margin-left:-10px;\n"
-                       "}\n\n").arg(pal.color(QPalette::Background).name()).arg(pal.color(QPalette::
-                                                                                          Foreground).name())
-        .arg(headerFont)
-    ;
+                       "}\n\n").arg(pal.color(QPalette::Background).name()).arg(pal.color(QPalette::Foreground).name()).arg(headerFont);
 }
 
 void CSSHelperBase::setBodyFont(const QFont &font)
