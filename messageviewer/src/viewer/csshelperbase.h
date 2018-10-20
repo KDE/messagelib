@@ -83,6 +83,7 @@ public:
 
     virtual QString extraScreenCss() const;
     virtual QString extraPrintCss() const;
+    virtual QString extraCommonCss() const;
 
 protected:
     /** Recalculate PGP frame and body colors (should be called after changing

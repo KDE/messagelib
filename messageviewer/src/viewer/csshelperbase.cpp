@@ -167,6 +167,11 @@ QString CSSHelperBase::extraPrintCss() const
     return {};
 }
 
+QString CSSHelperBase::extraCommonCss() const
+{
+    return {};
+}
+
 QString CSSHelperBase::cssDefinitions(bool fixed) const
 {
     return
