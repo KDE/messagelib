@@ -42,16 +42,16 @@ table.signErr,
 table.signOkKeyBad,
 table.signOkKeyOk,
 table.signInProgress,
+div.fancy.header table {
+  width: 100% ! important;
+  border-width: 0px ! important;
+  line-height: normal;
+}
+
 div.htmlWarn {
   margin: 0px 5% ! important;
   padding: 10px ! important;
   text-align: left ! important;
-  line-height: normal;
-}
-
-div.fancy.header table {
-  width: 100% ! important;
-  border-width: 0px ! important;
   line-height: normal;
 }
 

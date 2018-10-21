@@ -682,12 +682,6 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "table.signOkKeyOk,\n"
                        "table.signInProgress,\n"
 
-                       "div.htmlWarn {\n"
-                       "  margin: 0px 5% ! important;\n"
-                       "  padding: 10px ! important;\n"
-                       "  text-align: left ! important;\n"
-                       "  line-height: normal;\n"
-                       "}\n\n"
 
                        "div.fancy.header table {\n"
                        "  width: 100% ! important;\n"
@@ -695,6 +689,12 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "  line-height: normal;\n"
                        "}\n\n"
 
+                       "div.htmlWarn {\n"
+                       "  margin: 0px 5% ! important;\n"
+                       "  padding: 10px ! important;\n"
+                       "  text-align: left ! important;\n"
+                       "  line-height: normal;\n"
+                       "}\n\n"
 
                        "div.fancy.header > div {\n"
                        "  font-weight: bold ! important;\n"
