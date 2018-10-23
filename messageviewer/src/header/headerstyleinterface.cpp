@@ -68,7 +68,7 @@ void HeaderStyleInterface::setViewer(QWidget *viewer)
     mWidget = viewer;
 }
 
-void MessageViewer::HeaderStyleInterface::slotStyleChanged()
+void HeaderStyleInterface::slotStyleChanged()
 {
     Q_EMIT styleChanged(mHeaderStylePlugin);
 }
