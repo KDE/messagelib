@@ -578,7 +578,6 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
 
 QString CSSHelperBase::commonCssDefinitions() const
 {
-    const QPalette &pal = QApplication::palette();
     const QString headerFont = QStringLiteral("font-family: \"%1\" ! important;\n"
                                               "  font-size: %2px ! important;\n")
                                .arg(mBodyFont.family())
