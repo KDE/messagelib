@@ -2743,8 +2743,9 @@ void ViewerPrivate::slotUrlCopy()
         KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Address copied to clipboard."));
     } else {
         // put the url into the mouse selection and the clipboard
-        clip->setText(mClickedUrl.url(), QClipboard::Clipboard);
-        clip->setText(mClickedUrl.url(), QClipboard::Selection);
+        const QString clickedUrl = mClickedUrl.url();
+        clip->setText(clickedUrl, QClipboard::Clipboard);
+        clip->setText(clickedUrl, QClipboard::Selection);
         KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("URL copied to clipboard."));
     }
 #endif
