@@ -42,55 +42,6 @@ table.signErr,
 table.signOkKeyBad,
 table.signOkKeyOk,
 table.signInProgress,
-div.fancy.header table {
-  width: 100% ! important;
-  border-width: 0px ! important;
-  line-height: normal;
-}
-
-div.fancy.header > div {
-  font-weight: bold ! important;
-  padding: 4px ! important;
-  line-height: normal;
-}
-
-div.fancy.header table {
-  padding: 2px ! important;
-  text-align: left ! important;
-  border-collapse: separate ! important;
-}
-
-div.fancy.header table th {
-  font-family: "Sans Serif" ! important;
-  font-size: 0px ! important;
-
-  padding: 0px ! important;
-  white-space: nowrap ! important;
-  border-spacing: 0px ! important;
-  text-align: left ! important;
-  vertical-align: top ! important;
-  background-color: #d6d2d0 ! important;
-  color: #221f1e ! important;
-  border: 1px ! important;
-}
-
-div.fancy.header table td {
-  font-family: "Sans Serif" ! important;
-  font-size: 0px ! important;
-
-  padding: 0px ! important;
-  border-spacing: 0px ! important;
-  text-align: left ! important;
-  vertical-align: top ! important;
-  width: 100% ! important;
-  background-color: #d6d2d0 ! important;
-  color: #221f1e ! important;
-  border: 1px ! important;
-}
-
-div.fancy.header table a:hover {
-  background-color: transparent ! important;
-}
 
 div.htmlWarn {
   margin: 0px 5% ! important;
@@ -222,34 +173,6 @@ div.htmlWarn {
 div.header {
   font-family: "Sans Serif" ! important;
   font-size: 0px ! important;
-}
-
-div.fancy.header > div {
-  background-color: #43ace8 ! important;
-  color: #ffffff ! important;
-  border: solid #221f1e 1px ! important;
-  line-height: normal;
-}
-
-div.fancy.header > div a[href] { color: #ffffff ! important; }
-
-div.fancy.header > div a[href]:hover { text-decoration: underline ! important; }
-
-div.fancy.header > div.spamheader {
-  background-color: #cdcdcd ! important;
-  border-top: 0px ! important;
-  padding: 3px ! important;
-  color: black ! important;
-  font-weight: bold ! important;
-  font-size: smaller ! important;
-}
-
-div.fancy.header > table.outer {
-  background-color: #d6d2d0 ! important;
-  color: #221f1e ! important;
-  border-bottom: solid #221f1e 1px ! important;
-  border-left: solid #221f1e 1px ! important;
-  border-right: solid #221f1e 1px ! important;
 }
 
 div.senderpic{
@@ -405,24 +328,6 @@ tr.signErrH,
 div.header {
   font-family: "Sans Serif" ! important;
   font-size: 9pt ! important;
-}
-
-div.fancy.header > div {
-  background-color: #d6d2d0 ! important;
-  color: #221f1e ! important;
-  padding: 4px ! important;
-  border: solid #221f1e 1px ! important;
-  line-height: normal;
-}
-
-div.fancy.header > div a[href] { color: #221f1e ! important; }
-
-div.fancy.header > table.outer{
-  background-color: #d6d2d0 ! important;
-  color: #221f1e ! important;
-  border-bottom: solid #221f1e 1px ! important;
-  border-left: solid #221f1e 1px ! important;
-  border-right: solid #221f1e 1px ! important;
 }
 
 div.spamheader {

@@ -43,6 +43,7 @@ class QString;
 class QPaintDevice;
 
 namespace MessageViewer {
+class HeaderStylePlugin;
 class MESSAGEVIEWER_EXPORT CSSHelperBase
 {
 public:
@@ -81,9 +82,11 @@ public:
     Q_REQUIRED_RESULT QString addEndBlockQuote(int numberBlock) const;
     Q_REQUIRED_RESULT QString addStartBlockQuote(int numberBlock) const;
 
-    virtual Q_REQUIRED_RESULT QString extraScreenCss() const;
-    virtual Q_REQUIRED_RESULT QString extraPrintCss() const;
-    virtual Q_REQUIRED_RESULT QString extraCommonCss() const;
+    virtual Q_REQUIRED_RESULT QString extraScreenCss(const QString &headerFont) const;
+    virtual Q_REQUIRED_RESULT QString extraPrintCss(const QString &headerFont) const;
+    virtual Q_REQUIRED_RESULT QString extraCommonCss(const QString &headerFont) const;
+
+    void setHeaderPlugin(const HeaderStylePlugin *headerPlugin);
 
 protected:
     /** Recalculate PGP frame and body colors (should be called after changing
@@ -140,11 +143,12 @@ private:
     // returns CSS rules common to both screen and print media types
     QString commonCssDefinitions() const;
     QString fullAddressList() const;
-    QString linkColorDefinition() const;
-
-protected:
-    int pointsToPixel(const QPaintDevice *pd, int pointSize) const;
+    QString linkColorDefinition() const;    
+    QString defaultScreenHeaderFont() const;
+    QString defaultPrintHeaderFont() const;
+private:
     const QPaintDevice *mPaintDevice = nullptr;
+    const HeaderStylePlugin *mHeaderPlugin = nullptr;
 };
 }
 

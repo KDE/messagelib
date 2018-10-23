@@ -31,6 +31,7 @@
 */
 
 #include "csshelperbase.h"
+#include "header/headerstyleplugin.h"
 #include "utils/iconnamecache.h"
 
 #include <QApplication>
@@ -157,18 +158,36 @@ QString CSSHelperBase::addStartBlockQuote(int numberBlock) const
     return blockQuote;
 }
 
-QString CSSHelperBase::extraScreenCss() const
+QString CSSHelperBase::extraScreenCss(const QString &headerFont) const
 {
+    if (mHeaderPlugin) {
+        return mHeaderPlugin->extraScreenCss(headerFont);
+    }
     return {};
 }
 
-QString CSSHelperBase::extraPrintCss() const
+QString CSSHelperBase::extraPrintCss(const QString &headerFont) const
 {
+    if (mHeaderPlugin) {
+        return mHeaderPlugin->extraPrintCss(headerFont);
+    }
     return {};
 }
 
-QString CSSHelperBase::extraCommonCss() const
+QString CSSHelperBase::extraCommonCss(const QString &headerFont) const
 {
+    if (mHeaderPlugin) {
+        QString result = mHeaderPlugin->extraCommonCss(headerFont);
+        if (result.isEmpty()) {
+            //Add default value
+            result = QStringLiteral("div.header table {\n"
+                                    "  width: 100% ! important;\n"
+                                    "  border-width: 0px ! important;\n"
+                                    "  line-height: normal;\n"
+                                    "}\n\n");
+        }
+        return result;
+    }
     return {};
 }
 
@@ -245,25 +264,23 @@ int CSSHelperBase::fontSize(bool fixed, bool print) const
 {
     return bodyFont(fixed, print).pointSize();
 }
-
-int CSSHelperBase::pointsToPixel(const QPaintDevice *pd, int pointSize) const
+namespace {
+int pointsToPixel(const QPaintDevice *pd, int pointSize)
 {
-    if (pd) {
         return (pointSize * pd->logicalDpiY() + 36) / 72;
-    } else {
-        //TODO
-        return 10;
-    }
+}
+}
+
+void CSSHelperBase::setHeaderPlugin(const HeaderStylePlugin *headerPlugin)
+{
+    mHeaderPlugin = headerPlugin;
 }
 
 static const char *const quoteFontSizes[] = { "85", "80", "75" };
 
 QString CSSHelperBase::printCssDefinitions(bool fixed) const
 {
-    const QString headerFont = QStringLiteral("  font-family: \"%1\" ! important;\n"
-                                              "  font-size: %2pt ! important;\n")
-                               .arg(mPrintFont.family())
-                               .arg(mPrintFont.pointSize());
+    const QString headerFont = defaultPrintHeaderFont();
 
     const QFont printFont = bodyFont(fixed, true /* print */);
     QString quoteCSS;
@@ -327,17 +344,36 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                        "}\n\n"
                        )
             .arg(headerFont)
-            .arg(extraPrintCss())
+            .arg(extraPrintCss(headerFont))
         + quoteCSS + fullAddressList();
 }
-
+//#define USE_REAL_LINK 1
 QString CSSHelperBase::linkColorDefinition() const
 {
     const QString linkColor = mLinkColor.name();
-    return QStringLiteral("a {\n"
-                   "  color: %1 ! important;\n"
-                   "  text-decoration: none ! important;\n"
-                   "}\n\n").arg(linkColor);
+#ifdef   USE_REAL_LINK
+    if (true) {
+#else
+    if (mUseBrowserColor) {
+#endif
+        return QStringLiteral("div#headerbox a:link {\n"
+                              "  color: %1 ! important;\n"
+                              "  text-decoration: none ! important;\n"
+                              "}\n\n"
+                              "div.htmlWarn a:link {\n"
+                              "  color: %1 ! important;\n"
+                              "  text-decoration: none ! important;\n"
+                              "}\n\n"
+                              "div#header a:link {\n"
+                              "  color: %1 ! important;\n"
+                              "  text-decoration: none ! important;\n"
+                              "}\n\n").arg(linkColor);
+    } else {
+        return QStringLiteral("a {\n"
+                              "  color: %1 ! important;\n"
+                              "  text-decoration: none ! important;\n"
+                              "}\n\n").arg(linkColor);
+    }
 }
 
 QString CSSHelperBase::quoteCssDefinition() const
@@ -345,19 +381,19 @@ QString CSSHelperBase::quoteCssDefinition() const
     QString quoteCSS;
     QString blockQuote;
     for (int i = 0; i < 9; ++i) {
-        blockQuote += QLatin1String("blockquote ");
-        quoteCSS += QString::fromLatin1("%2{\n"
+        blockQuote += QStringLiteral("blockquote ");
+        quoteCSS += QStringLiteral("%2{\n"
                                         "  margin: 4pt 0 4pt 0;\n"
                                         "  padding: 0 0 0 1em;\n"
                                         "  border-left: 2px solid %1;\n"
                                         "  unicode-bidi: -webkit-plaintext\n"
                                         "}\n\n").arg(quoteColorName(i)).arg(blockQuote);
     }
-    quoteCSS += QLatin1String(".quotemarks{\n"
+    quoteCSS += QStringLiteral(".quotemarks{\n"
                               "  color:transparent;\n"
                               "  font-size:0px;\n"
                               "}\n\n");
-    quoteCSS += QLatin1String(".quotemarksemptyline{\n"
+    quoteCSS += QStringLiteral(".quotemarksemptyline{\n"
                               "  color:transparent;\n"
                               "  font-size:0px;\n"
                               "  line-height: 12pt;\n"
@@ -365,14 +401,29 @@ QString CSSHelperBase::quoteCssDefinition() const
     return quoteCSS;
 }
 
+QString CSSHelperBase::defaultPrintHeaderFont() const
+{
+    const QString headerFont = QStringLiteral("  font-family: \"%1\" ! important;\n"
+                                              "  font-size: %2pt ! important;\n")
+                               .arg(mPrintFont.family())
+                               .arg(mPrintFont.pointSize());
+    return headerFont;
+}
+
+QString CSSHelperBase::defaultScreenHeaderFont() const
+{
+    const QString headerFont = QStringLiteral("  font-family: \"%1\" ! important;\n"
+                                              "  font-size: %2px ! important;\n")
+                               .arg(mBodyFont.family())
+                               .arg(pointsToPixel(this->mPaintDevice, mBodyFont.pointSize()));
+    return headerFont;
+}
+
 QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fixed) const
 {
     const QString fgColor = mForegroundColor.name();
     const QString bgColor = mBackgroundColor.name();
-    const QString headerFont = QStringLiteral("  font-family: \"%1\" ! important;\n"
-                                              "  font-size: %2px ! important;\n")
-                               .arg(mBodyFont.family())
-                               .arg(pointsToPixel(helper->mPaintDevice, mBodyFont.pointSize()));
+    const QString headerFont = defaultScreenHeaderFont();
     const QString background = QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
     const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(
                                                                    fixed))) + QLatin1String("px");
@@ -395,16 +446,16 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                                    "  color: %2 ! important;\n")
                     .arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont.italic()) {
-            quoteCSS += QLatin1String("  font-style: italic ! important;\n");
+            quoteCSS += QStringLiteral("  font-style: italic ! important;\n");
         }
         if (mQuoteFont.bold()) {
-            quoteCSS += QLatin1String("  font-weight: bold ! important;\n");
+            quoteCSS += QStringLiteral("  font-weight: bold ! important;\n");
         }
         if (mShrinkQuotes) {
             quoteCSS += QLatin1String("  font-size: ") + QString::fromLatin1(quoteFontSizes[i])
                         + QLatin1String("% ! important;\n");
         }
-        quoteCSS += QLatin1String("}\n\n");
+        quoteCSS += QStringLiteral("}\n\n");
     }
 
     // CSS definitions for quote levels 4+
@@ -413,13 +464,13 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                                    "  color: %2 ! important;\n")
                     .arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont.italic()) {
-            quoteCSS += QLatin1String("  font-style: italic ! important;\n");
+            quoteCSS += QStringLiteral("  font-style: italic ! important;\n");
         }
         if (mQuoteFont.bold()) {
-            quoteCSS += QLatin1String("  font-weight: bold ! important;\n");
+            quoteCSS += QStringLiteral("  font-weight: bold ! important;\n");
         }
         if (mShrinkQuotes) {
-            quoteCSS += QLatin1String("  font-size: 70% ! important;\n");
+            quoteCSS += QStringLiteral("  font-size: 70% ! important;\n");
         }
         quoteCSS += QLatin1String("}\n\n");
     }
@@ -573,7 +624,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                        )
 
             .arg(headerFont)
-            .arg(extraScreenCss())
+            .arg(extraScreenCss(headerFont))
             .arg(pal.color(QPalette::Highlight).name())
             .arg(pal.color(QPalette::Background).name())
             + quoteCSS + fullAddressList();
@@ -581,10 +632,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
 
 QString CSSHelperBase::commonCssDefinitions() const
 {
-    const QString headerFont = QStringLiteral("font-family: \"%1\" ! important;\n"
-                                              "  font-size: %2px ! important;\n")
-                               .arg(mBodyFont.family())
-                               .arg(pointsToPixel(this->mPaintDevice, mBodyFont.pointSize()));
+    const QString headerFont = defaultScreenHeaderFont();
 
     return
         QStringLiteral("div.header {\n"
@@ -645,7 +693,7 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "div.quotelevelmark {\n"
                        "  position: absolute;\n"
                        "  margin-left:-10px;\n"
-                       "}\n\n").arg(extraCommonCss());
+                       "}\n\n").arg(extraCommonCss(headerFont));
 }
 
 void CSSHelperBase::setBodyFont(const QFont &font)

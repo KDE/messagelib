@@ -61,7 +61,6 @@ set(libmessageviewer_viewer_SRCS
     viewer/attachmentstrategy.cpp
     viewer/csshelper.cpp
     viewer/csshelperbase.cpp
-    viewer/cssfancyhelper.cpp
     viewer/editorwatcher.cpp
     viewer/objecttreeemptysource.cpp
     viewer/objecttreeviewersource.cpp
@@ -290,7 +289,6 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     AttachmentStrategy
     Viewer
     CSSHelperBase
-    CSSFancyHelper
     CSSHelper
     ObjectTreeEmptySource
     EditorWatcher

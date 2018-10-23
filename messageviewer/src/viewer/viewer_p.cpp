@@ -102,7 +102,6 @@
 //own includes
 #include "widgets/attachmentdialog.h"
 #include "csshelper.h"
-#include "cssfancyhelper.h"
 #include "settings/messageviewersettings.h"
 #include "widgets/htmlstatusbar.h"
 #include "viewer/attachmentstrategy.h"
@@ -1125,7 +1124,7 @@ void ViewerPrivate::readGravatarConfig()
 void ViewerPrivate::recreateCssHelper()
 {
     delete mCSSHelper;
-    mCSSHelper = new CSSFancyHelper(mViewer);
+    mCSSHelper = new CSSHelper(mViewer);
 }
 
 void ViewerPrivate::slotGeneralFontChanged()
@@ -1515,6 +1514,7 @@ void ViewerPrivate::createWidgets()
 
 void ViewerPrivate::slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin)
 {
+    mCSSHelper->setHeaderPlugin(plugin);
     mHeaderStylePlugin = plugin;
     update(MimeTreeParser::Force);
 }
@@ -1528,7 +1528,6 @@ void ViewerPrivate::createActions()
 {
     KActionCollection *ac = mActionCollection;
     mHeaderStyleMenuManager = new MessageViewer::HeaderStyleMenuManager(ac, this);
-    mHeaderStyleMenuManager->setViewer(mViewer);
     connect(mHeaderStyleMenuManager, &MessageViewer::HeaderStyleMenuManager::styleChanged, this,
             &ViewerPrivate::slotStyleChanged);
     connect(mHeaderStyleMenuManager, &MessageViewer::HeaderStyleMenuManager::styleUpdated, this,

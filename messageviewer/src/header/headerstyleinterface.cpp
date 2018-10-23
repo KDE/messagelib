@@ -63,11 +63,6 @@ HeaderStylePlugin *HeaderStyleInterface::headerStylePlugin() const
     return mHeaderStylePlugin;
 }
 
-void HeaderStyleInterface::setViewer(QWidget *viewer)
-{
-    mWidget = viewer;
-}
-
 void HeaderStyleInterface::slotStyleChanged()
 {
     Q_EMIT styleChanged(mHeaderStylePlugin);

@@ -20,11 +20,11 @@
 #ifndef MESSSAGEVIEWER_TESTCSSHELPER_H
 #define MESSSAGEVIEWER_TESTCSSHELPER_H
 
-#include <MessageViewer/CSSFancyHelper>
+#include <MessageViewer/CSSHelper>
 
 namespace MessageViewer {
 namespace Test {
-class TestCSSHelper : public MessageViewer::CSSFancyHelper
+class TestCSSHelper : public MessageViewer::CSSHelper
 {
 public:
     explicit TestCSSHelper(const QPaintDevice *pd);

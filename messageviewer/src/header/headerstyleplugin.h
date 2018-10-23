@@ -53,6 +53,10 @@ public:
 
     virtual void showConfigureDialog(QWidget *parent);
 
+    virtual QString extraScreenCss(const QString &headerFont) const;
+    virtual QString extraPrintCss(const QString &headerFont) const;
+    virtual QString extraCommonCss(const QString &headerFont) const;
+
 private:
     HeaderStylePluginPrivate *const d;
 };

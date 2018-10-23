@@ -27,7 +27,7 @@
 #include "viewer.h"
 #include "viewer_p.h"
 #include "widgets/configurewidget.h"
-#include "cssfancyhelper.h"
+#include "csshelper.h"
 #include "settings/messageviewersettings.h"
 #include "viewer/webengine/mailwebengineview.h"
 #include <WebEngineViewer/WebHitTestResult>
