@@ -357,8 +357,7 @@ bool Viewer::event(QEvent *e)
 {
     Q_D(Viewer);
     if (e->type() == QEvent::PaletteChange) {
-        delete d->mCSSHelper;
-        d->mCSSHelper = new CSSFancyHelper(d->mViewer);
+        d->recreateCssHelper();
         d->update(MimeTreeParser::Force);
         e->accept();
         return true;

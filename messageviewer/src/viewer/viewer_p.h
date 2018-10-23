@@ -434,6 +434,8 @@ public:
     QUrl imageUrl() const;
     Q_REQUIRED_RESULT qreal webViewZoomFactor() const;
     void setWebViewZoomFactor(qreal factor);
+    void recreateCssHelper();
+
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -561,6 +563,7 @@ public Q_SLOTS:
     void slotResetMessageDisplayFormat();
 
     void slotGeneralFontChanged();
+
 
 Q_SIGNALS:
     void showStatusBarMessage(const QString &message);

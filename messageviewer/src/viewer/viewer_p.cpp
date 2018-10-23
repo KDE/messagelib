@@ -851,7 +851,7 @@ void ViewerPrivate::displayMessage()
     }
 
     htmlWriter()->begin();
-    htmlWriter()->write(mCSSHelper->htmlHead(mUseFixedFont));
+    htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont));
 
     if (!mMainWindow) {
         q->setWindowTitle(mMessage->subject()->asUnicodeString());
@@ -1069,8 +1069,7 @@ void ViewerPrivate::slotWheelZoomChanged(int numSteps)
 
 void ViewerPrivate::readConfig()
 {
-    delete mCSSHelper;
-    mCSSHelper = new CSSFancyHelper(mViewer);
+    recreateCssHelper();
 
     mForceEmoticons = MessageViewer::MessageViewerSettings::self()->showEmoticons();
     if (mDisableEmoticonAction) {
@@ -1124,10 +1123,15 @@ void ViewerPrivate::readGravatarConfig()
     }
 }
 
-void ViewerPrivate::slotGeneralFontChanged()
+void ViewerPrivate::recreateCssHelper()
 {
     delete mCSSHelper;
     mCSSHelper = new CSSFancyHelper(mViewer);
+}
+
+void ViewerPrivate::slotGeneralFontChanged()
+{
+    recreateCssHelper();
     if (mMessage) {
         update();
     }
@@ -1348,7 +1352,7 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
         }
 
         htmlWriter()->begin();
-        htmlWriter()->write(mCSSHelper->htmlHead(mUseFixedFont));
+        htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont));
 
         parseContent(node);
 
@@ -1914,7 +1918,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             if (elidedTextSize == -1) {
                 html += info.label;
             } else {
-                QFont bodyFont = mCSSHelper->bodyFont(mUseFixedFont);
+                QFont bodyFont = cssHelper()->bodyFont(mUseFixedFont);
                 QFontMetrics fm(bodyFont);
                 html += fm.elidedText(info.label, Qt::ElideRight, elidedTextSize);
             }
@@ -2232,7 +2236,7 @@ void ViewerPrivate::updateReaderWin()
         mMimePartTree->hide();
 #endif
         htmlWriter()->begin();
-        htmlWriter()->write(mCSSHelper->htmlHead(mUseFixedFont) + QLatin1String("</body></html>"));
+        htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont) + QLatin1String("</body></html>"));
         htmlWriter()->end();
     }
 
