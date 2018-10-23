@@ -42,11 +42,11 @@
 //    was the case, then the previous line will be shorter than the wrap size (which we already
 //    know because of item 2 above), but adding the first word from the next line will make it
 //    longer than the wrap size.
-bool looksLikeParaBreak(const QString &s, unsigned int newLinePos)
+bool looksLikeParaBreak(const QString &s, int newLinePos)
 {
-    const unsigned int WRAP_COL = 78;
+    const int WRAP_COL = 78;
 
-    unsigned int length = s.length();
+    int length = s.length();
     // 1. Is newLinePos at an end of the text?
     if (newLinePos >= length - 1 || newLinePos == 0) {
         return false;
@@ -55,14 +55,14 @@ bool looksLikeParaBreak(const QString &s, unsigned int newLinePos)
     // 2. Is the previous line really a paragraph -- longer than the wrap size?
 
     // First char of prev line -- works also for first line
-    unsigned prevStart = s.lastIndexOf(QLatin1Char('\n'), newLinePos - 1) + 1;
-    unsigned prevLineLength = newLinePos - prevStart;
+    int prevStart = s.lastIndexOf(QLatin1Char('\n'), newLinePos - 1) + 1;
+    int prevLineLength = newLinePos - prevStart;
     if (prevLineLength > WRAP_COL) {
         return true;
     }
 
     // find next line to delimit search for first word
-    unsigned int nextStart = newLinePos + 1;
+    int nextStart = newLinePos + 1;
     int nextEnd = s.indexOf(QLatin1Char('\n'), nextStart);
     if (nextEnd == -1) {
         nextEnd = length;
@@ -70,7 +70,7 @@ bool looksLikeParaBreak(const QString &s, unsigned int newLinePos)
     QString nextLine = s.mid(nextStart, nextEnd - nextStart);
     length = nextLine.length();
     // search for first word in next line
-    unsigned int wordStart;
+    int wordStart;
     bool found = false;
     for (wordStart = 0; !found && wordStart < length; wordStart++) {
         switch (nextLine[wordStart].toLatin1()) {
@@ -127,10 +127,10 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
     const QString normalEndTag = QStringLiteral("</div>");
     const QString quoteEnd = QStringLiteral("</div>");
 
-    const unsigned int length = s.length();
+    const int length = s.length();
     bool paraIsRTL = false;
     bool startNewPara = true;
-    unsigned int pos, beg;
+    int pos, beg;
 
     // skip leading empty lines
     for (pos = 0; pos < length && s[pos] <= QLatin1Char(' '); ++pos) {
@@ -157,7 +157,7 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
     while (beg < length) {
         /* search next occurrence of '\n' */
         pos = s.indexOf(QLatin1Char('\n'), beg, Qt::CaseInsensitive);
-        if (pos == (unsigned int)(-1)) {
+        if (pos == -1) {
             pos = length;
         }
 
