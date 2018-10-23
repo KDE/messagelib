@@ -179,8 +179,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     , mNodeHelper(new MimeTreeParser::NodeHelper)
     , mOldGlobalOverrideEncoding(QStringLiteral("---"))
     , mMsgDisplay(true)
-    ,                   // init with dummy value
-    mCSSHelper(nullptr)
+    , mCSSHelper(nullptr)
     , mMainWindow(mainWindow)
     , mActionCollection(actionCollection)
     , mCanStartDrag(false)
