@@ -142,7 +142,7 @@ private:
     QString fullAddressList() const;
     QString linkColorDefinition() const;
 
-private:
+protected:
     const QPaintDevice *mPaintDevice = nullptr;
 };
 }
