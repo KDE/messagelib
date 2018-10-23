@@ -48,13 +48,6 @@ div.fancy.header table {
   line-height: normal;
 }
 
-div.htmlWarn {
-  margin: 0px 5% ! important;
-  padding: 10px ! important;
-  text-align: left ! important;
-  line-height: normal;
-}
-
 div.fancy.header > div {
   font-weight: bold ! important;
   padding: 4px ! important;
@@ -97,6 +90,13 @@ div.fancy.header table td {
 
 div.fancy.header table a:hover {
   background-color: transparent ! important;
+}
+
+div.htmlWarn {
+  margin: 0px 5% ! important;
+  padding: 10px ! important;
+  text-align: left ! important;
+  line-height: normal;
 }
 
 div.quotelevelmark {
