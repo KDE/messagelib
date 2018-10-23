@@ -246,11 +246,14 @@ int CSSHelperBase::fontSize(bool fixed, bool print) const
     return bodyFont(fixed, print).pointSize();
 }
 
-namespace {
-int pointsToPixel(const QPaintDevice *pd, int pointSize)
+int CSSHelperBase::pointsToPixel(const QPaintDevice *pd, int pointSize) const
 {
-    return (pointSize * pd->logicalDpiY() + 36) / 72;
-}
+    if (pd) {
+        return (pointSize * pd->logicalDpiY() + 36) / 72;
+    } else {
+        //TODO
+        return 10;
+    }
 }
 
 static const char *const quoteFontSizes[] = { "85", "80", "75" };

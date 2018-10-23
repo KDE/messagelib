@@ -49,6 +49,7 @@ public:
     QActionGroup *group = nullptr;
     KActionMenu *headerMenu = nullptr;
     HeaderStyleMenuManager *q = nullptr;
+    QWidget *viewer = nullptr;
 };
 
 void HeaderStyleMenuManagerPrivate::addHelpTextAction(QAction *act, const QString &text)
@@ -187,4 +188,9 @@ void HeaderStyleMenuManager::slotStyleChanged(MessageViewer::HeaderStylePlugin *
 void HeaderStyleMenuManager::readConfig()
 {
     d->readSettings();
+}
+
+void HeaderStyleMenuManager::setViewer(QWidget *viewer)
+{
+    d->viewer = viewer;
 }

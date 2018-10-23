@@ -23,12 +23,7 @@
 #include <QPalette>
 
 using namespace MessageViewer;
-namespace {
-int pointsToPixel(const QPaintDevice *pd, int pointSize)
-{
-    return (pointSize * pd->logicalDpiY() + 36) / 72;
-}
-}
+
 CSSFancyHelper::CSSFancyHelper(const QPaintDevice *pd)
     : CSSHelper(pd)
 {

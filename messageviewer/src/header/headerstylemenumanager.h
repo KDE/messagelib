@@ -39,6 +39,7 @@ public:
 
     void setPluginName(const QString &pluginName);
     void readConfig();
+    void setViewer(QWidget *viewer);
 
 public Q_SLOTS:
     void slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin);

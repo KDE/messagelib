@@ -40,6 +40,7 @@ public:
     virtual void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) = 0;
     virtual void activateAction() = 0;
     Q_REQUIRED_RESULT HeaderStylePlugin *headerStylePlugin() const;
+    void setViewer(QWidget *viewer);
 
 Q_SIGNALS:
     void styleChanged(MessageViewer::HeaderStylePlugin *plugin);
@@ -52,6 +53,7 @@ protected:
     void addActionToMenu(KActionMenu *menu, QActionGroup *actionGroup);
     QList<KToggleAction *> mAction;
     HeaderStylePlugin *mHeaderStylePlugin = nullptr;
+    QWidget *mWidget = nullptr;
 };
 }
 #endif // HEADERSTYLEINTERFACE_H

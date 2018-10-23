@@ -143,6 +143,7 @@ private:
     QString linkColorDefinition() const;
 
 protected:
+    int pointsToPixel(const QPaintDevice *pd, int pointSize) const;
     const QPaintDevice *mPaintDevice = nullptr;
 };
 }

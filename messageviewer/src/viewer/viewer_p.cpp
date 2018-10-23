@@ -1525,6 +1525,7 @@ void ViewerPrivate::createActions()
 {
     KActionCollection *ac = mActionCollection;
     mHeaderStyleMenuManager = new MessageViewer::HeaderStyleMenuManager(ac, this);
+    mHeaderStyleMenuManager->setViewer(mViewer);
     connect(mHeaderStyleMenuManager, &MessageViewer::HeaderStyleMenuManager::styleChanged, this,
             &ViewerPrivate::slotStyleChanged);
     connect(mHeaderStyleMenuManager, &MessageViewer::HeaderStyleMenuManager::styleUpdated, this,
