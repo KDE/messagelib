@@ -22,7 +22,6 @@
 
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MessageViewer/BufferedHtmlWriter>
-#include <MessageViewer/CSSHelperBase>
 
 #include <QTest>
 

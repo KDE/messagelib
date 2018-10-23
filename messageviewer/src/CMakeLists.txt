@@ -290,6 +290,7 @@ ecm_generate_headers(MessageViewer_Camelcaseviewer_HEADERS
     AttachmentStrategy
     Viewer
     CSSHelperBase
+    CSSFancyHelper
     CSSHelper
     ObjectTreeEmptySource
     EditorWatcher

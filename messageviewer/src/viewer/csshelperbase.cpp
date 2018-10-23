@@ -261,7 +261,6 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                                               "  font-size: %2pt ! important;\n")
                                .arg(mPrintFont.family())
                                .arg(mPrintFont.pointSize());
-    const QPalette &pal = QApplication::palette();
 
     const QFont printFont = bodyFont(fixed, true /* print */);
     QString quoteCSS;
@@ -299,26 +298,7 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                        "%1"
                        "}\n\n"
 
-                       "div.fancy.header > div {\n"
-                       "  background-color: %2 ! important;\n"
-                       "  color: %3 ! important;\n"
-                       "  padding: 4px ! important;\n"
-                       "  border: solid %3 1px ! important;\n"
-                       "  line-height: normal;\n"
-                       "}\n\n"
-
-                       "div.fancy.header > div a[href] { color: %3 ! important; }\n\n"
-
-                       "div.fancy.header > table.outer{\n"
-                       "  all: inherit;\n"
-                       "  width: auto ! important;\n"
-                       "  border-spacing: 0;\n"
-                       "  background-color: %2 ! important;\n"
-                       "  color: %3 ! important;\n"
-                       "  border-bottom: solid %3 1px ! important;\n"
-                       "  border-left: solid %3 1px ! important;\n"
-                       "  border-right: solid %3 1px ! important;\n"
-                       "}\n\n"
+                       "%2"
 
                        "div.spamheader {\n"
                        "  display:none ! important;\n"
@@ -343,9 +323,8 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                        "  display:none ! important;\n"
                        "}\n\n"
                        )
-        .arg(headerFont,
-             pal.color(QPalette::Background).name(),
-             pal.color(QPalette::Foreground).name())
+            .arg(headerFont)
+            .arg(extraPrintCss())
         + quoteCSS + fullAddressList();
 }
 
@@ -576,42 +555,13 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                        "%1"
                        "}\n\n"
 
-                       "div.fancy.header > div {\n"
-                       "  background-color: %2 ! important;\n"
-                       "  color: %3 ! important;\n"
-                       "  border: solid %4 1px ! important;\n"
-                       "  line-height: normal;\n"
-                       "}\n\n"
-
-                       "div.fancy.header > div a[href] { color: %3 ! important; }\n\n"
-
-                       "div.fancy.header > div a[href]:hover { text-decoration: underline ! important; }\n\n"
-
-                       "div.fancy.header > div.spamheader {\n"
-                       "  background-color: #cdcdcd ! important;\n"
-                       "  border-top: 0px ! important;\n"
-                       "  padding: 3px ! important;\n"
-                       "  color: black ! important;\n"
-                       "  font-weight: bold ! important;\n"
-                       "  font-size: smaller ! important;\n"
-                       "}\n\n"
-
-                       "div.fancy.header > table.outer {\n"
-                       "  all: inherit;\n"
-                       "  width: auto ! important;\n"
-                       "  border-spacing: 0;\n"
-                       "  background-color: %5 ! important;\n"
-                       "  color: %4 ! important;\n"
-                       "  border-bottom: solid %4 1px ! important;\n"
-                       "  border-left: solid %4 1px ! important;\n"
-                       "  border-right: solid %4 1px ! important;\n"
-                       "}\n\n"
+                       "%2"
 
                        "div.senderpic{\n"
                        "  padding: 0px ! important;\n"
                        "  font-size:0.8em ! important;\n"
-                       "  border:1px solid %6 ! important;\n"
-                       "  background-color:%5 ! important;\n"
+                       "  border:1px solid %4 ! important;\n"
+                       "  background-color:%3 ! important;\n"
                        "}\n\n"
 
                        "div.senderstatus{\n"
@@ -619,13 +569,11 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                        "}\n\n"
                        )
 
-        .arg(headerFont)
-        .arg(pal.color(QPalette::Highlight).name(),
-             pal.color(QPalette::HighlightedText).name(),
-             pal.color(QPalette::Foreground).name(),
-             pal.color(QPalette::Background).name())
-        .arg(pal.color(QPalette::Mid).name())
-        + quoteCSS + fullAddressList();
+            .arg(headerFont)
+            .arg(extraScreenCss())
+            .arg(pal.color(QPalette::Highlight).name())
+            .arg(pal.color(QPalette::Background).name())
+            + quoteCSS + fullAddressList();
 }
 
 QString CSSHelperBase::commonCssDefinitions() const
@@ -682,53 +630,7 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "table.signOkKeyOk,\n"
                        "table.signInProgress,\n"
 
-
-                       "div.fancy.header table {\n"
-                       "  width: 100% ! important;\n"
-                       "  border-width: 0px ! important;\n"
-                       "  line-height: normal;\n"
-                       "}\n\n"
-
-                       "div.fancy.header > div {\n"
-                       "  font-weight: bold ! important;\n"
-                       "  padding: 4px ! important;\n"
-                       "  line-height: normal;\n"
-                       "}\n\n"
-
-                       "div.fancy.header table {\n"
-                       "  padding: 2px ! important;\n"
-                       "  text-align: left ! important;\n"
-                       "  border-collapse: separate ! important;\n"
-                       "}\n\n"
-
-                       "div.fancy.header table th {\n"
-                       "  %3\n"
-                       "  padding: 0px ! important;\n"
-                       "  white-space: nowrap ! important;\n"
-                       "  border-spacing: 0px ! important;\n"
-                       "  text-align: left ! important;\n"
-                       "  vertical-align: top ! important;\n"
-                       "  background-color: %1 ! important;\n"
-                       "  color: %2 ! important;\n"
-                       "  border: 1px ! important;\n"
-
-                       "}\n\n"
-
-                       "div.fancy.header table td {\n"
-                       "  %3\n"
-                       "  padding: 0px ! important;\n"
-                       "  border-spacing: 0px ! important;\n"
-                       "  text-align: left ! important;\n"
-                       "  vertical-align: top ! important;\n"
-                       "  width: 100% ! important;\n"
-                       "  background-color: %1 ! important;\n"
-                       "  color: %2 ! important;\n"
-                       "  border: 1px ! important;\n"
-                       "}\n\n"
-
-                       "div.fancy.header table a:hover {\n"
-                       "  background-color: transparent ! important;\n"
-                       "}\n\n"
+                       "%1"
 
                        "div.htmlWarn {\n"
                        "  margin: 0px 5% ! important;\n"
@@ -741,7 +643,7 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "div.quotelevelmark {\n"
                        "  position: absolute;\n"
                        "  margin-left:-10px;\n"
-                       "}\n\n").arg(pal.color(QPalette::Background).name()).arg(pal.color(QPalette::Foreground).name()).arg(headerFont);
+                       "}\n\n").arg(extraCommonCss());
 }
 
 void CSSHelperBase::setBodyFont(const QFont &font)

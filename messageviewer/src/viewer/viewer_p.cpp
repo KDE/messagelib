@@ -102,6 +102,7 @@
 //own includes
 #include "widgets/attachmentdialog.h"
 #include "csshelper.h"
+#include "cssfancyhelper.h"
 #include "settings/messageviewersettings.h"
 #include "widgets/htmlstatusbar.h"
 #include "viewer/attachmentstrategy.h"
@@ -1069,7 +1070,7 @@ void ViewerPrivate::slotWheelZoomChanged(int numSteps)
 void ViewerPrivate::readConfig()
 {
     delete mCSSHelper;
-    mCSSHelper = new CSSHelper(mViewer);
+    mCSSHelper = new CSSFancyHelper(mViewer);
 
     mForceEmoticons = MessageViewer::MessageViewerSettings::self()->showEmoticons();
     if (mDisableEmoticonAction) {
@@ -1126,7 +1127,7 @@ void ViewerPrivate::readGravatarConfig()
 void ViewerPrivate::slotGeneralFontChanged()
 {
     delete mCSSHelper;
-    mCSSHelper = new CSSHelper(mViewer);
+    mCSSHelper = new CSSFancyHelper(mViewer);
     if (mMessage) {
         update();
     }

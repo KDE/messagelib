@@ -40,10 +40,10 @@ CSSFancyHelper::~CSSFancyHelper()
 
 }
 
-QString MessageViewer::CSSFancyHelper::extraScreenCss() const
+QString CSSFancyHelper::extraScreenCss() const
 {
     const QPalette &pal = QApplication::palette();
-    return QStringLiteral("div.fancy.header > div {\n"
+    const QString val = QStringLiteral("div.fancy.header > div {\n"
                           "  background-color: %1 ! important;\n"
                           "  color: %2 ! important;\n"
                           "  border: solid %3 1px ! important;\n"
@@ -77,12 +77,13 @@ QString MessageViewer::CSSFancyHelper::extraScreenCss() const
                                 pal.color(QPalette::HighlightedText).name(),
                                 pal.color(QPalette::Foreground).name(),
                                 pal.color(QPalette::Background).name());
+    return val;
 }
 
-QString MessageViewer::CSSFancyHelper::extraPrintCss() const
+QString CSSFancyHelper::extraPrintCss() const
 {
     const QPalette &pal = QApplication::palette();
-    return QStringLiteral("div.fancy.header > div {\n"
+    const QString val = QStringLiteral("div.fancy.header > div {\n"
                           "  background-color: %1 ! important;\n"
                           "  color: %2 ! important;\n"
                           "  padding: 4px ! important;\n"
@@ -104,16 +105,17 @@ QString MessageViewer::CSSFancyHelper::extraPrintCss() const
                           "}\n\n"
                           ).arg(pal.color(QPalette::Background).name(),
                                 pal.color(QPalette::Foreground).name());
+    return val;
 }
 
-QString MessageViewer::CSSFancyHelper::extraCommonCss() const
+QString CSSFancyHelper::extraCommonCss() const
 {
     const QPalette &pal = QApplication::palette();
     const QString headerFont = QStringLiteral("font-family: \"%1\" ! important;\n"
                                               "  font-size: %2px ! important;\n")
                                .arg(mBodyFont.family())
                                .arg(pointsToPixel(this->mPaintDevice, mBodyFont.pointSize()));
-    return QStringLiteral(
+    const QString val = QStringLiteral(
                 "div.fancy.header table {\n"
                 "  width: 100% ! important;\n"
                 "  border-width: 0px ! important;\n"
@@ -159,5 +161,9 @@ QString MessageViewer::CSSFancyHelper::extraCommonCss() const
 
                 "div.fancy.header table a:hover {\n"
                 "  background-color: transparent ! important;\n"
-                "}\n\n").arg(pal.color(QPalette::Background).name()).arg(pal.color(QPalette::Foreground).name()).arg(headerFont);
+                "}\n\n")
+            .arg(pal.color(QPalette::Background).name())
+            .arg(pal.color(QPalette::Foreground).name())
+            .arg(headerFont);
+    return val;
 }

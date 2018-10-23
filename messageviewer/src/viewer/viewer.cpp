@@ -27,7 +27,7 @@
 #include "viewer.h"
 #include "viewer_p.h"
 #include "widgets/configurewidget.h"
-#include "csshelper.h"
+#include "cssfancyhelper.h"
 #include "settings/messageviewersettings.h"
 #include "viewer/webengine/mailwebengineview.h"
 #include <WebEngineViewer/WebHitTestResult>
@@ -358,7 +358,7 @@ bool Viewer::event(QEvent *e)
     Q_D(Viewer);
     if (e->type() == QEvent::PaletteChange) {
         delete d->mCSSHelper;
-        d->mCSSHelper = new CSSHelper(d->mViewer);
+        d->mCSSHelper = new CSSFancyHelper(d->mViewer);
         d->update(MimeTreeParser::Force);
         e->accept();
         return true;
