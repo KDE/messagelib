@@ -1812,15 +1812,15 @@ KToggleAction *ViewerPrivate::actionForAttachmentStrategy(
     }
     QString actionName;
     if (as == AttachmentStrategy::iconic()) {
-        actionName = QStringLiteral("view_attachments_as_icons");
+        actionName = QLatin1String("view_attachments_as_icons");
     } else if (as == AttachmentStrategy::smart()) {
-        actionName = QStringLiteral("view_attachments_smart");
+        actionName = QLatin1String("view_attachments_smart");
     } else if (as == AttachmentStrategy::inlined()) {
-        actionName = QStringLiteral("view_attachments_inline");
+        actionName = QLatin1String("view_attachments_inline");
     } else if (as == AttachmentStrategy::hidden()) {
-        actionName = QStringLiteral("view_attachments_hide");
+        actionName = QLatin1String("view_attachments_hide");
     } else if (as == AttachmentStrategy::headerOnly()) {
-        actionName = QStringLiteral("view_attachments_headeronly");
+        actionName = QLatin1String("view_attachments_headeronly");
     }
 
     if (actionName.isEmpty()) {
