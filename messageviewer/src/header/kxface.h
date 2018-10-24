@@ -553,27 +553,27 @@ private:
 
     void RevPush(const Prob *p);
     void BigPush(Prob *p);
-    int  BigPop(register const Prob *p);
-    void BigDiv(register unsigned char a, register unsigned char *r);
-    void BigMul(register unsigned char a);
+    int  BigPop(const Prob *p);
+    void BigDiv(unsigned char a, unsigned char *r);
+    void BigMul(unsigned char a);
     void BigAdd(unsigned char a);
     void BigClear();
 
     QByteArray WriteFace();
     void UnCompAll(char *fbuf);
-    void UnCompress(register char *f, register int wid, register int hei, register int lev);
-    void BigWrite(register char *fbuf);
-    void BigRead(register char *fbuf);
+    void UnCompress(char *f, int wid, int hei, int lev);
+    void BigWrite(char *fbuf);
+    void BigRead(char *fbuf);
     void ReadFace(char *fbuf);
     void GenFace();
     void UnGenFace();
-    void Gen(register char *f);
+    void Gen(char *f);
     void PopGreys(char *f, int wid, int hei);
     void CompAll(char *fbuf);
-    void Compress(register char *f, register int wid, register int hei, register int lev);
+    void Compress(char *f, int wid, int hei, int lev);
     int  AllWhite(char *f, int wid, int hei);
     int  AllBlack(char *f, int wid, int hei);
-    int  Same(register char *f, register int wid, register int hei);
+    int  Same(char *f, int wid, int hei);
     void PushGreys(char *f, int wid, int hei);
 };
 }
