@@ -38,7 +38,7 @@
 #include <QPaintDevice>
 #include <QPalette>
 #include <QUrl>
-
+//#define USE_HTML_STYLE_COLOR 1
 namespace MessageViewer {
 namespace {
 // some QColor manipulators that hide the ugly QColor API w.r.t. HSV:
@@ -350,7 +350,27 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
 QString CSSHelperBase::linkColorDefinition() const
 {
     const QString linkColor = mLinkColor.name();
-    if (mUseBrowserColor) {
+    if (mUseBrowserColor) {        
+#ifdef USE_HTML_STYLE_COLOR
+        const QString bgColor = mBackgroundColor.name();
+        const QString background = QStringLiteral("  background: %1 ! important;\n").arg(bgColor);
+
+        return QStringLiteral("div#headerbox a:link {\n"
+                              "  color: %1 ! important;\n"
+                              "  text-decoration: none ! important;\n"
+                              "}\n\n"
+                              "div.htmlWarn a:link {\n"
+                              "  color: %1 ! important;\n"
+                              "  text-decoration: none ! important;\n"
+                              "}\n\n"
+                              "div#header a:link {\n"
+                              "  color: %1 ! important;\n"
+                              "  text-decoration: none ! important;\n"
+                              "}\n\n"
+                              "div#headerbox {\n"
+                              "    %2"
+                              "}\n\n").arg(linkColor).arg(background);
+#else
         return QStringLiteral("div#headerbox a:link {\n"
                               "  color: %1 ! important;\n"
                               "  text-decoration: none ! important;\n"
@@ -363,6 +383,7 @@ QString CSSHelperBase::linkColorDefinition() const
                               "  color: %1 ! important;\n"
                               "  text-decoration: none ! important;\n"
                               "}\n\n").arg(linkColor);
+#endif
     } else {
         return QStringLiteral("a {\n"
                               "  color: %1 ! important;\n"
@@ -416,10 +437,15 @@ QString CSSHelperBase::defaultScreenHeaderFont() const
 
 QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fixed) const
 {
-    const QString fgColor = mForegroundColor.name();
     const QString bgColor = mBackgroundColor.name();
     const QString headerFont = defaultScreenHeaderFont();
+#ifdef USE_HTML_STYLE_COLOR
+    const QString fgColor = mUseBrowserColor ? QStringLiteral("black") : mForegroundColor.name();
+    const QString background = mUseBrowserColor ? QString() : QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
+#else
+    const QString fgColor = mForegroundColor.name();
     const QString background = QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
+#endif
     const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(
                                                                    fixed))) + QLatin1String("px");
     const QPalette &pal = QApplication::palette();
