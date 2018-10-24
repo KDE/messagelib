@@ -18,6 +18,7 @@
 */
 #include "webenginescript.h"
 #include <QDebug>
+#include <QtWebEngine/QtWebEngineVersion>
 using namespace WebEngineViewer;
 
 QString WebEngineScript::findAllImages()
@@ -126,7 +127,7 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
 
 static QString scrollTop()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+#if QTWEBENGINE_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     return QStringLiteral("document.documentElement.scrollTop");
 #else
     return QStringLiteral("document.body.scrollTop");
