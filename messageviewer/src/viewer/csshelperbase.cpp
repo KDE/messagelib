@@ -176,8 +176,9 @@ QString CSSHelperBase::extraPrintCss(const QString &headerFont) const
 
 QString CSSHelperBase::extraCommonCss(const QString &headerFont) const
 {
+    QString result;
     if (mHeaderPlugin) {
-        QString result = mHeaderPlugin->extraCommonCss(headerFont);
+        result = mHeaderPlugin->extraCommonCss(headerFont);
         if (result.isEmpty()) {
             //Add default value
             result = QStringLiteral("div.header table {\n"
@@ -186,9 +187,8 @@ QString CSSHelperBase::extraCommonCss(const QString &headerFont) const
                                     "  line-height: normal;\n"
                                     "}\n\n");
         }
-        return result;
     }
-    return {};
+    return result;
 }
 
 QString CSSHelperBase::cssDefinitions(bool fixed) const
