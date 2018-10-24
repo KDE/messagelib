@@ -347,15 +347,10 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
             .arg(extraPrintCss(headerFont))
         + quoteCSS + fullAddressList();
 }
-//#define USE_REAL_LINK 1
 QString CSSHelperBase::linkColorDefinition() const
 {
     const QString linkColor = mLinkColor.name();
-#ifdef   USE_REAL_LINK
-    if (true) {
-#else
     if (mUseBrowserColor) {
-#endif
         return QStringLiteral("div#headerbox a:link {\n"
                               "  color: %1 ! important;\n"
                               "  text-decoration: none ! important;\n"

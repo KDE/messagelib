@@ -122,6 +122,7 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
 
     mShrinkQuotes = MessageViewer::MessageViewerSettings::self()->shrinkQuotes();
 
+    mUseBrowserColor = MessageCore::MessageCoreSettings::self()->useRealHtmlMailColor();
     recalculatePGPColors();
 }
 

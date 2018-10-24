@@ -146,7 +146,7 @@ private:
     QString linkColorDefinition() const;    
     QString defaultScreenHeaderFont() const;
     QString defaultPrintHeaderFont() const;
-private:
+
     const QPaintDevice *mPaintDevice = nullptr;
     const HeaderStylePlugin *mHeaderPlugin = nullptr;
 };
