@@ -32,7 +32,7 @@
 
 using namespace MessageViewer;
 
-QTEST_GUILESS_MAIN(QuoteHtmlTest)
+QTEST_MAIN(QuoteHtmlTest)
 
 class MyRenderContext : public MessageViewer::RenderContext
 {
