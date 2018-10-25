@@ -367,6 +367,9 @@ QString CSSHelperBase::linkColorDefinition() const
                               "  color: %1 ! important;\n"
                               "  text-decoration: none ! important;\n"
                               "}\n\n"
+                              "div.header {\n"
+                              "    %2"
+                              "}\n\n"
                               "div#headerbox {\n"
                               "    %2"
                               "}\n\n").arg(linkColor).arg(background);
