@@ -294,19 +294,21 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
 // this at all...
 QString processHtml(const QString &htmlSource, QString &extraHead)
 {
-    auto s = htmlSource.trimmed();
+    QString s = htmlSource.trimmed();
     s = s.replace(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive), QString()).trimmed();
     s = s.replace(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive), QString()).trimmed();
 
     // head
     s = s.replace(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive), QString()).trimmed();
-    if (s.startsWith(QLatin1String("<head>", Qt::CaseInsensitive))) {
-        const auto idx = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
-        if (idx < 0) {
+    const int startIndex = s.indexOf(QLatin1String("<head>"), Qt::CaseInsensitive);
+    if (startIndex >= 0) {
+        const auto endIndex = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
+
+        if (endIndex < 0) {
             return htmlSource;
         }
-        extraHead = s.mid(6, idx - 6);
-        s = s.mid(idx + 7).trimmed();
+        extraHead = s.mid(startIndex + 6 , endIndex - startIndex - 6);
+        s = s.mid(endIndex + 7).trimmed();
     }
 
     // body
