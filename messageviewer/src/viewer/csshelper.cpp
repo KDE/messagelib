@@ -91,7 +91,11 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     mRecycleQuoteColors = reader.readEntry("RecycleQuoteColors", false);
 
     mForegroundColor = KColorScheme(QPalette::Active).foreground().color();
-    if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
+    if (MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
+        mQuoteColor[0] = MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor();
+        mQuoteColor[1] = MessageCore::ColorUtil::self()->quoteLevel2DefaultTextColor();
+        mQuoteColor[2] = MessageCore::ColorUtil::self()->quoteLevel3DefaultTextColor();
+    } else {
         mLinkColor
             = reader.readEntry("LinkColor", mLinkColor);
         cPgpEncrH
@@ -107,10 +111,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
         mQuoteColor[0] = MessageCore::MessageCoreSettings::self()->quotedText1();
         mQuoteColor[1] = MessageCore::MessageCoreSettings::self()->quotedText2();
         mQuoteColor[2] = MessageCore::MessageCoreSettings::self()->quotedText3();
-    } else {
-        mQuoteColor[0] = MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor();
-        mQuoteColor[1] = MessageCore::ColorUtil::self()->quoteLevel2DefaultTextColor();
-        mQuoteColor[2] = MessageCore::ColorUtil::self()->quoteLevel3DefaultTextColor();
     }
 
     if (!MessageCore::MessageCoreSettings::self()->useDefaultFonts()) {
