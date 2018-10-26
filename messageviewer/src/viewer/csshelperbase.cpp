@@ -449,10 +449,18 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
     const QString fgColor = mUseBrowserColor ? QStringLiteral("black") : mForegroundColor.name();
     const QString background = mUseBrowserColor ? QString() : QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
     const QString signWarnBColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpWarnB.name();
+    const QString cPgpErrBColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpErrB.name();
+    const QString cPgpEncrBColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpEncrB.name();
+    const QString cPgpOk1BColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpOk1B.name();
+    const QString cPgpOk0BColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpOk0B.name();
 #else
     const QString fgColor = mForegroundColor.name();
     const QString background = QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
     const QString signWarnBColorName = cPgpWarnB.name();
+    const QString cPgpErrBColorName = cPgpErrB.name();
+    const QString cPgpEncrBColorName = cPgpEncrB.name();
+    const QString cPgpOk1BColorName = cPgpOk1B.name();
+    const QString cPgpOk0BColorName = cPgpOk0B.name();
 #endif
     const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(
                                                                    fixed))) + QLatin1String("px");
@@ -561,7 +569,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
              cPgpEncrH.name(),
              cPgpEncrHT.name(),
              headerFont,
-             cPgpEncrB.name())
+             cPgpEncrBColorName)
         + QStringLiteral("table.signOkKeyOk {\n"
                          "  background-color: %1 ! important;\n"
                          "}\n\n"
@@ -577,7 +585,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
              cPgpOk1H.name(),
              cPgpOk1HT.name(),
              headerFont,
-             cPgpOk1B.name())
+             cPgpOk1BColorName)
         + QStringLiteral("table.signOkKeyBad {\n"
                          "  background-color: %1 ! important;\n"
                          "}\n\n"
@@ -593,7 +601,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
              cPgpOk0H.name(),
              cPgpOk0HT.name(),
              headerFont,
-             cPgpOk0B.name())
+             cPgpOk0BColorName)
         + QStringLiteral("table.signWarn {\n"
                          "  background-color: %1 ! important;\n"
                          "}\n\n"
@@ -626,7 +634,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
              cPgpErrH.name(),
              cPgpErrHT.name(),
              headerFont,
-             cPgpErrB.name())
+             cPgpErrBColorName)
         +
         QStringLiteral("div.htmlWarn {\n"
                        "  border: 2px solid %1 ! important;\n"
