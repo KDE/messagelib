@@ -264,10 +264,11 @@ int CSSHelperBase::fontSize(bool fixed, bool print) const
 {
     return bodyFont(fixed, print).pointSize();
 }
+
 namespace {
 int pointsToPixel(const QPaintDevice *pd, int pointSize)
 {
-        return (pointSize * pd->logicalDpiY() + 36) / 72;
+    return (pointSize * pd->logicalDpiY() + 36) / 72;
 }
 }
 
@@ -304,53 +305,54 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
                        "}\n\n")
         .arg(printFont.family(),
              QString::number(printFont.pointSize()))
-        + linkColorDefinition() +
-        QStringLiteral(
-                       "tr.textAtmH,\n"
-                       "tr.signInProgressH,\n"
-                       "tr.rfc822H,\n"
-                       "tr.encrH,\n"
-                       "tr.signOkKeyOkH,\n"
-                       "tr.signOkKeyBadH,\n"
-                       "tr.signWarnH,\n"
-                       "tr.signErrH,\n"
-                       "div.header {\n"
-                       "%1"
-                       "}\n\n"
+        + linkColorDefinition()
+        +QStringLiteral(
+        "tr.textAtmH,\n"
+        "tr.signInProgressH,\n"
+        "tr.rfc822H,\n"
+        "tr.encrH,\n"
+        "tr.signOkKeyOkH,\n"
+        "tr.signOkKeyBadH,\n"
+        "tr.signWarnH,\n"
+        "tr.signErrH,\n"
+        "div.header {\n"
+        "%1"
+        "}\n\n"
 
-                       "%2"
+        "%2"
 
-                       "div.spamheader {\n"
-                       "  display:none ! important;\n"
-                       "}\n\n"
+        "div.spamheader {\n"
+        "  display:none ! important;\n"
+        "}\n\n"
 
-                       "div.htmlWarn {\n"
-                       "  border: 2px solid #ffffff ! important;\n"
-                       "  line-height: normal;\n"
-                       "}\n\n"
+        "div.htmlWarn {\n"
+        "  border: 2px solid #ffffff ! important;\n"
+        "  line-height: normal;\n"
+        "}\n\n"
 
-                       "div.senderpic{\n"
-                       "  font-size:0.8em ! important;\n"
-                       "  border:1px solid black ! important;\n"
-                       "  background-color:%2 ! important;\n"
-                       "}\n\n"
+        "div.senderpic{\n"
+        "  font-size:0.8em ! important;\n"
+        "  border:1px solid black ! important;\n"
+        "  background-color:%2 ! important;\n"
+        "}\n\n"
 
-                       "div.senderstatus{\n"
-                       "  text-align:center ! important;\n"
-                       "}\n\n"
+        "div.senderstatus{\n"
+        "  text-align:center ! important;\n"
+        "}\n\n"
 
-                       "div.noprint {\n"
-                       "  display:none ! important;\n"
-                       "}\n\n"
-                       )
-            .arg(headerFont)
-            .arg(extraPrintCss(headerFont))
+        "div.noprint {\n"
+        "  display:none ! important;\n"
+        "}\n\n"
+        )
+        .arg(headerFont)
+        .arg(extraPrintCss(headerFont))
         + quoteCSS + fullAddressList();
 }
+
 QString CSSHelperBase::linkColorDefinition() const
 {
     const QString linkColor = mLinkColor.name();
-    if (mUseBrowserColor) {        
+    if (mUseBrowserColor) {
 #ifdef USE_HTML_STYLE_COLOR
         const QString bgColor = mBackgroundColor.name();
         const QString background = QStringLiteral("  background: %1 ! important;\n").arg(bgColor);
@@ -402,21 +404,21 @@ QString CSSHelperBase::quoteCssDefinition() const
     for (int i = 0; i < 9; ++i) {
         blockQuote += QStringLiteral("blockquote ");
         quoteCSS += QStringLiteral("%2{\n"
-                                        "  margin: 4pt 0 4pt 0;\n"
-                                        "  padding: 0 0 0 1em;\n"
-                                        "  border-left: 2px solid %1;\n"
-                                        "  unicode-bidi: -webkit-plaintext\n"
-                                        "}\n\n").arg(quoteColorName(i)).arg(blockQuote);
+                                   "  margin: 4pt 0 4pt 0;\n"
+                                   "  padding: 0 0 0 1em;\n"
+                                   "  border-left: 2px solid %1;\n"
+                                   "  unicode-bidi: -webkit-plaintext\n"
+                                   "}\n\n").arg(quoteColorName(i)).arg(blockQuote);
     }
     quoteCSS += QStringLiteral(".quotemarks{\n"
-                              "  color:transparent;\n"
-                              "  font-size:0px;\n"
-                              "}\n\n");
+                               "  color:transparent;\n"
+                               "  font-size:0px;\n"
+                               "}\n\n");
     quoteCSS += QStringLiteral(".quotemarksemptyline{\n"
-                              "  color:transparent;\n"
-                              "  font-size:0px;\n"
-                              "  line-height: 12pt;\n"
-                              "}\n\n");
+                               "  color:transparent;\n"
+                               "  font-size:0px;\n"
+                               "  line-height: 12pt;\n"
+                               "}\n\n");
     return quoteCSS;
 }
 
@@ -512,7 +514,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
              fgColor,
              background)
         + linkColorDefinition()
-            +
+        +
         QStringLiteral("a.white {\n"
                        "  color: white ! important;\n"
                        "}\n\n"
@@ -542,64 +544,64 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                        "%3"
                        "}\n\n").arg(fgColor, bgColor, headerFont)
         + QStringLiteral("table.encr {\n"
-                       "  background-color: %1 ! important;\n"
-                       "}\n\n"
+                         "  background-color: %1 ! important;\n"
+                         "}\n\n"
 
-                       "tr.encrH {\n"
-                       "  background-color: %2 ! important;\n"
-                       "  color: %3 ! important;\n"
-                       "%4"
-                       "}\n\n"
+                         "tr.encrH {\n"
+                         "  background-color: %2 ! important;\n"
+                         "  color: %3 ! important;\n"
+                         "%4"
+                         "}\n\n"
 
-                       "tr.encrB { background-color: %5 ! important; }\n\n")
+                         "tr.encrB { background-color: %5 ! important; }\n\n")
         .arg(cPgpEncrF.name(),
              cPgpEncrH.name(),
              cPgpEncrHT.name(),
              headerFont,
              cPgpEncrB.name())
         + QStringLiteral("table.signOkKeyOk {\n"
-                       "  background-color: %1 ! important;\n"
-                       "}\n\n"
+                         "  background-color: %1 ! important;\n"
+                         "}\n\n"
 
-                       "tr.signOkKeyOkH {\n"
-                       "  background-color: %2 ! important;\n"
-                       "  color: %3 ! important;\n"
-                       "%4"
-                       "}\n\n"
+                         "tr.signOkKeyOkH {\n"
+                         "  background-color: %2 ! important;\n"
+                         "  color: %3 ! important;\n"
+                         "%4"
+                         "}\n\n"
 
-                       "tr.signOkKeyOkB { background-color: %5 ! important; }\n\n")
+                         "tr.signOkKeyOkB { background-color: %5 ! important; }\n\n")
         .arg(cPgpOk1F.name(),
              cPgpOk1H.name(),
              cPgpOk1HT.name(),
              headerFont,
              cPgpOk1B.name())
         + QStringLiteral("table.signOkKeyBad {\n"
-                       "  background-color: %1 ! important;\n"
-                       "}\n\n"
+                         "  background-color: %1 ! important;\n"
+                         "}\n\n"
 
-                       "tr.signOkKeyBadH {\n"
-                       "  background-color: %2 ! important;\n"
-                       "  color: %3 ! important;\n"
-                       "%4"
-                       "}\n\n"
+                         "tr.signOkKeyBadH {\n"
+                         "  background-color: %2 ! important;\n"
+                         "  color: %3 ! important;\n"
+                         "%4"
+                         "}\n\n"
 
-                       "tr.signOkKeyBadB { background-color: %5 ! important; }\n\n")
+                         "tr.signOkKeyBadB { background-color: %5 ! important; }\n\n")
         .arg(cPgpOk0F.name(),
              cPgpOk0H.name(),
              cPgpOk0HT.name(),
              headerFont,
              cPgpOk0B.name())
         + QStringLiteral("table.signWarn {\n"
-                       "  background-color: %1 ! important;\n"
-                       "}\n\n"
+                         "  background-color: %1 ! important;\n"
+                         "}\n\n"
 
-                       "tr.signWarnH {\n"
-                       "  background-color: %2 ! important;\n"
-                       "  color: %3 ! important;\n"
-                       "%4"
-                       "}\n\n"
+                         "tr.signWarnH {\n"
+                         "  background-color: %2 ! important;\n"
+                         "  color: %3 ! important;\n"
+                         "%4"
+                         "}\n\n"
 
-                       "tr.signWarnB { background-color: %5 ! important; }\n\n")
+                         "tr.signWarnB { background-color: %5 ! important; }\n\n")
         .arg(cPgpWarnF.name(),
              cPgpWarnH.name(),
              cPgpWarnHT.name(),
@@ -647,11 +649,11 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                        "}\n\n"
                        )
 
-            .arg(headerFont)
-            .arg(extraScreenCss(headerFont))
-            .arg(pal.color(QPalette::Highlight).name())
-            .arg(pal.color(QPalette::Background).name())
-            + quoteCSS + fullAddressList();
+        .arg(headerFont)
+        .arg(extraScreenCss(headerFont))
+        .arg(pal.color(QPalette::Highlight).name())
+        .arg(pal.color(QPalette::Background).name())
+        + quoteCSS + fullAddressList();
 }
 
 QString CSSHelperBase::commonCssDefinitions() const
@@ -712,7 +714,6 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "  text-align: left ! important;\n"
                        "  line-height: normal;\n"
                        "}\n\n"
-
 
                        "div.quotelevelmark {\n"
                        "  position: absolute;\n"

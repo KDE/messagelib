@@ -143,7 +143,7 @@ private:
     // returns CSS rules common to both screen and print media types
     QString commonCssDefinitions() const;
     QString fullAddressList() const;
-    QString linkColorDefinition() const;    
+    QString linkColorDefinition() const;
     QString defaultScreenHeaderFont() const;
     QString defaultPrintHeaderFont() const;
 

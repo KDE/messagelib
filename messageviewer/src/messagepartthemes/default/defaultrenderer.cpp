@@ -307,7 +307,7 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
         if (endIndex < 0) {
             return htmlSource;
         }
-        extraHead = s.mid(startIndex + 6 , endIndex - startIndex - 6);
+        extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
         s = s.mid(endIndex + 7).trimmed();
     }
 

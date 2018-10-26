@@ -436,7 +436,6 @@ public:
     void setWebViewZoomFactor(qreal factor);
     void recreateCssHelper();
 
-
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
     void slotModifyItemDone(KJob *job);
@@ -563,7 +562,6 @@ public Q_SLOTS:
     void slotResetMessageDisplayFormat();
 
     void slotGeneralFontChanged();
-
 
 Q_SIGNALS:
     void showStatusBarMessage(const QString &message);
