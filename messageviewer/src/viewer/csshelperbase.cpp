@@ -448,9 +448,11 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
 #ifdef USE_HTML_STYLE_COLOR
     const QString fgColor = mUseBrowserColor ? QStringLiteral("black") : mForegroundColor.name();
     const QString background = mUseBrowserColor ? QString() : QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
+    const QString signWarnBColorName = mUseBrowserColor ? QStringLiteral("white") : cPgpWarnB.name();
 #else
     const QString fgColor = mForegroundColor.name();
     const QString background = QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
+    const QString signWarnBColorName = cPgpWarnB.name();
 #endif
     const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(
                                                                    fixed))) + QLatin1String("px");
@@ -607,7 +609,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
              cPgpWarnH.name(),
              cPgpWarnHT.name(),
              headerFont,
-             cPgpWarnB.name())
+             signWarnBColorName)
         +
         QStringLiteral("table.signErr {\n"
                        "  background-color: %1 ! important;\n"
