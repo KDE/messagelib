@@ -33,13 +33,13 @@
 #include "csshelperbase.h"
 #include "header/headerstyleplugin.h"
 #include "utils/iconnamecache.h"
-#include "config-messageviewer.h"
+
 
 #include <QApplication>
 #include <QPaintDevice>
 #include <QPalette>
 #include <QUrl>
-
+#define USE_HTML_STYLE_COLOR 1
 namespace MessageViewer {
 namespace {
 // some QColor manipulators that hide the ugly QColor API w.r.t. HSV:
