@@ -37,7 +37,7 @@ class DecryptVerifyBodyPartMemento : public CryptoBodyPartMemento
 {
     Q_OBJECT
 public:
-    DecryptVerifyBodyPartMemento(QGpgME::DecryptVerifyJob *job, const QByteArray &cipherText);
+    explicit DecryptVerifyBodyPartMemento(QGpgME::DecryptVerifyJob *job, const QByteArray &cipherText);
     ~DecryptVerifyBodyPartMemento() override;
 
     bool start() override;

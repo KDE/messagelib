@@ -33,7 +33,7 @@ class TEMPLATEPARSER_EXPORT CustomTemplatesMenu : public QObject
     Q_OBJECT
 
 public:
-    CustomTemplatesMenu(QWidget *parent, KActionCollection *ac);
+    explicit CustomTemplatesMenu(QWidget *parent, KActionCollection *ac);
     ~CustomTemplatesMenu();
 
     KActionMenu *replyActionMenu() const;

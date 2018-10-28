@@ -41,7 +41,7 @@ class VerifyOpaqueBodyPartMemento : public CryptoBodyPartMemento
 {
     Q_OBJECT
 public:
-    VerifyOpaqueBodyPartMemento(QGpgME::VerifyOpaqueJob *job, QGpgME::KeyListJob *klj, const QByteArray &signature);
+    explicit VerifyOpaqueBodyPartMemento(QGpgME::VerifyOpaqueJob *job, QGpgME::KeyListJob *klj, const QByteArray &signature);
     ~VerifyOpaqueBodyPartMemento() override;
 
     bool start() override;

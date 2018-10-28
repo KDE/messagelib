@@ -59,7 +59,7 @@ class MESSAGEVIEWER_EXPORT AttachmentMarkBlock : public HTMLBlock
 {
 public:
     AttachmentMarkBlock(HtmlWriter *writer, KMime::Content *node);
-    virtual ~AttachmentMarkBlock();
+    ~AttachmentMarkBlock() override;
 
 protected:
     QString enterString() const override;
@@ -80,7 +80,7 @@ class RootBlock : public HTMLBlock
 {
 public:
     explicit RootBlock(HtmlWriter *writer);
-    virtual ~RootBlock();
+    ~RootBlock() override;
 
 protected:
     QString enterString() const override;
