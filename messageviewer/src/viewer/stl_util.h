@@ -30,8 +30,8 @@
     your version.
 */
 
-#ifndef KDEPIM__MESSAGEVIEWER__STL_UTIL_H
-#define KDEPIM__MESSAGEVIEWER__STL_UTIL_H
+#ifndef KDEPIM_MESSAGEVIEWER_STL_UTIL_H
+#define KDEPIM_MESSAGEVIEWER_STL_UTIL_H
 
 namespace MessageViewer {
 template<typename T>
