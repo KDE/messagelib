@@ -19,7 +19,6 @@
 */
 
 #include "composerviewbase.h"
-#include "config-messagecomposer.h"
 
 #include "attachment/attachmentcontrollerbase.h"
 #include "attachment/attachmentmodel.h"
@@ -133,9 +132,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
         m_recipientsEditor->setRecipientString(m_msg->to()->mailboxes(), MessageComposer::Recipient::To);
         m_recipientsEditor->setRecipientString(m_msg->cc()->mailboxes(), MessageComposer::Recipient::Cc);
         m_recipientsEditor->setRecipientString(m_msg->bcc()->mailboxes(), MessageComposer::Recipient::Bcc);
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
         m_recipientsEditor->setRecipientString(m_msg->replyTo()->mailboxes(), MessageComposer::Recipient::ReplyTo);
-#endif
         m_recipientsEditor->setFocusBottom();
 
         // If we are loading from a draft, load unexpanded aliases as well
@@ -163,7 +160,6 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
                 }
             }
         }
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
         if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
             const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
             for (const QString &addr : spl) {
@@ -172,7 +168,6 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
                 }
             }
         }
-#endif
     }
 
     // First, we copy the message and then parse it to the object tree parser.
@@ -403,9 +398,7 @@ void ComposerViewBase::readyForSending()
     job->setTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::To));
     job->setCc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Cc));
     job->setBcc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Bcc));
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
     job->setReplyTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::ReplyTo));
-#endif
 
     connect(job, &MessageComposer::EmailAddressResolveJob::result, this, &ComposerViewBase::slotEmailAddressResolved);
     job->start();
@@ -451,11 +444,9 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
             case MessageComposer::Recipient::Bcc:
                 mExpandedBcc << r->email();
                 break;
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
             case MessageComposer::Recipient::ReplyTo:
                 mExpandedReplyTo << r->email();
                 break;
-#endif
             case MessageComposer::Recipient::Undefined:
                 Q_ASSERT(!"Unknown recpient type!");
                 break;
@@ -477,13 +468,11 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
                 unExpandedBcc << exp;
             }
         }
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
         foreach (const QString &exp, resolveJob->expandedReplyTo()) {
             if (!mExpandedReplyTo.contains(exp)) {  // this address was expanded, so save it explicitly
                 unExpandedReplyTo << exp;
             }
         }
-#endif
         auto header = new KMime::Headers::Generic("X-KMail-UnExpanded-To");
         header->from7BitString(unExpandedTo.join(QStringLiteral(", ")).toLatin1());
         m_msg->setHeader(header);
@@ -493,11 +482,9 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
         header = new KMime::Headers::Generic("X-KMail-UnExpanded-BCC");
         header->from7BitString(unExpandedBcc.join(QStringLiteral(", ")).toLatin1());
         m_msg->setHeader(header);
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
         header = new KMime::Headers::Generic("X-KMail-UnExpanded-Reply-To");
         header->from7BitString(unExpandedReplyTo.join(QStringLiteral(", ")).toLatin1());
         m_msg->setHeader(header);
-#endif
         autoresizeImage = false;
     }
 
@@ -828,25 +815,18 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     }
 
     infoPart->setTransportId(m_transport->currentTransportId());
-#ifndef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
-    infoPart->setReplyTo(replyTo());
-#endif
     if (expansion == UseExpandedRecipients) {
         infoPart->setFrom(mExpandedFrom);
         infoPart->setTo(mExpandedTo);
         infoPart->setCc(mExpandedCc);
         infoPart->setBcc(mExpandedBcc);
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
         infoPart->setReplyTo(mExpandedReplyTo);
-#endif
     } else {
         infoPart->setFrom(from());
         infoPart->setTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::To));
         infoPart->setCc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Cc));
         infoPart->setBcc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Bcc));
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
         infoPart->setReplyTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::ReplyTo));
-#endif
     }
     infoPart->setSubject(subject());
     infoPart->setUserAgent(QStringLiteral("KMail"));
@@ -879,11 +859,9 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     if (auto hdr = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
         extras << hdr;
     }
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
     if (auto hdr = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
         extras << hdr;
     }
-#endif
     if (auto hdr = m_msg->organization(false)) {
         extras << hdr;
     }
@@ -1470,11 +1448,7 @@ QString ComposerViewBase::from() const
 
 QString ComposerViewBase::replyTo() const
 {
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
     return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::ReplyTo));
-#else
-    return MessageComposer::Util::cleanedUpHeaderString(m_replyTo);
-#endif
 }
 
 QString ComposerViewBase::subject() const
@@ -1547,11 +1521,9 @@ void ComposerViewBase::updateRecipients(const KIdentityManagement::Identity &ide
     } else if (type == MessageComposer::Recipient::Cc) {
         oldIdentList = oldIdent.cc();
         newIdentList = ident.cc();
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
     } else if (type == MessageComposer::Recipient::ReplyTo) {
         oldIdentList = oldIdent.replyToAddr();
         newIdentList = ident.replyToAddr();
-#endif
     }  else {
         return;
     }
@@ -1574,9 +1546,7 @@ void ComposerViewBase::identityChanged(const KIdentityManagement::Identity &iden
 {
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::Bcc);
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::Cc);
-#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::ReplyTo);
-#endif
 
     KIdentityManagement::Signature oldSig = const_cast<KIdentityManagement::Identity &>
                                             (oldIdent).signature();
@@ -1665,11 +1635,6 @@ Akonadi::CollectionComboBox *ComposerViewBase::fccCombo() const
 void ComposerViewBase::setFrom(const QString &from)
 {
     m_from = from;
-}
-
-void ComposerViewBase::setReplyTo(const QString &replyTo)
-{
-    m_replyTo = replyTo;
 }
 
 void ComposerViewBase::setSubject(const QString &subject)
@@ -2107,7 +2072,7 @@ void ComposerViewBase::addFollowupReminder(const QString &messageId)
             MessageComposer::FollowupReminderCreateJob *job = new MessageComposer::FollowupReminderCreateJob;
             job->setSubject(m_subject);
             job->setMessageId(messageId);
-            job->setTo(m_replyTo.isEmpty() ? mExpandedTo.join(QLatin1Char(',')) : m_replyTo);
+            job->setTo(mExpandedReplyTo.isEmpty() ? mExpandedTo.join(QLatin1Char(',')) : mExpandedReplyTo.join(QLatin1Char(',')));
             job->setFollowUpReminderDate(mFollowUpDate);
             job->setCollectionToDo(mFollowUpCollection);
             job->start();

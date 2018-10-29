@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-set(PIM_VERSION "5.9.61")
+set(PIM_VERSION "5.9.62")
 
 if (POLICY CMP0053)
     cmake_policy(SET CMP0053 NEW)
@@ -9,12 +9,6 @@ project(Messagelib VERSION ${PIM_VERSION})
 
 option(MIMETREEPARSER_ONLY_BUILD "Build only mimetreeparser" FALSE)
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
-
-option(IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT "EXperimental" FALSE)
-
-if (IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT)
-    set(IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT TRUE)
-endif()
 
 set(KF5_VERSION "5.51.0")
 

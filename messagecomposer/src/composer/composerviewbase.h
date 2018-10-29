@@ -24,7 +24,6 @@
 #include "messagecomposer_export.h"
 #include "messagecomposer/messagesender.h"
 #include "MessageComposer/Recipient"
-
 #include <AkonadiCore/collection.h>
 #include <KMime/Message>
 
@@ -170,7 +169,6 @@ public:
     *  values are set before sending.
     */
     void setFrom(const QString &from);
-    void setReplyTo(const QString &replyTo);
     void setSubject(const QString &subject);
 
     /**
@@ -353,7 +351,9 @@ private:
     bool m_urgent = false;
     bool m_requestDeleveryConfirmation = false;
     Kleo::CryptoMessageFormat m_cryptoMessageFormat;
-    QString mExpandedFrom, m_from, m_replyTo, m_subject;
+    QString mExpandedFrom;
+    QString m_from;
+    QString m_subject;
     QStringList mExpandedTo, mExpandedCc, mExpandedBcc, mExpandedReplyTo;
     QList< QByteArray > m_charsets;
     QMap<QByteArray, QString> m_customHeader;

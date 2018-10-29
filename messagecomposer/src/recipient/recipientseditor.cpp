@@ -257,7 +257,11 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
         } else {
             RecipientLineNG *last_rec = qobject_cast< RecipientLineNG * >(lines().at(lines().count() - 2));
             if (last_rec) {
-                rec->setRecipientType(last_rec->recipientType());
+                if (last_rec->recipientType() == Recipient::ReplyTo) {
+                    rec->setRecipientType(Recipient::To);
+                } else {
+                    rec->setRecipientType(last_rec->recipientType());
+                }
             }
         }
         line->fixTabOrder(lines().constLast()->tabOut());
