@@ -28,7 +28,7 @@
 
 using namespace KPIM;
 using namespace MessageComposer;
-
+#define IMPLEMENT_REPLY_TO 1
 class MessageComposer::RecipientPrivate
 {
 public:
@@ -120,6 +120,8 @@ QString Recipient::typeLabel(Recipient::Type type)
         return i18nc("@label:listbox Carbon Copy recipient of an email message.", "CC");
     case Bcc:
         return i18nc("@label:listbox Blind carbon copy recipient of an email message.", "BCC");
+    case ReplyTo:
+        return i18nc("@label:listbox Reply-To recipient of an email message.", "Reply-To");
     case Undefined:
         break;
     }
@@ -133,6 +135,9 @@ QStringList Recipient::allTypeLabels()
     types.append(typeLabel(To));
     types.append(typeLabel(Cc));
     types.append(typeLabel(Bcc));
+#ifdef IMPLEMENT_REPLY_TO
+    types.append(typeLabel(ReplyTo));
+#endif
     return types;
 }
 
