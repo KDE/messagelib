@@ -79,14 +79,25 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     buttonBox->addButton(mUser2Button, QDialogButtonBox::ActionRole);
     mUser3Button = new QPushButton;
     buttonBox->addButton(mUser3Button, QDialogButtonBox::ActionRole);
+#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
+    mUser4Button = new QPushButton;
+    buttonBox->addButton(mUser4Button, QDialogButtonBox::ActionRole);
+#endif
+
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RecipientsPicker::reject);
     mainLayout->addWidget(buttonBox);
+#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
+    mUser4Button->setText(i18n("Add as &Reply-To"));
+#endif
     mUser3Button->setText(i18n("Add as &To"));
     mUser2Button->setText(i18n("Add as CC"));
     mUser1Button->setText(i18n("Add as &BCC"));
     connect(mUser1Button, &QPushButton::clicked, this, &RecipientsPicker::slotBccClicked);
     connect(mUser2Button, &QPushButton::clicked, this, &RecipientsPicker::slotCcClicked);
     connect(mUser3Button, &QPushButton::clicked, this, &RecipientsPicker::slotToClicked);
+#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
+    connect(mUser4Button, &QPushButton::clicked, this, &RecipientsPicker::slotReplyToClicked);
+#endif
 
     mView->emailAddressSelectionWidget()->searchLineEdit()->setFocus();
 
@@ -106,6 +117,9 @@ void RecipientsPicker::slotSelectionChanged()
     mUser1Button->setEnabled(hasSelection);
     mUser2Button->setEnabled(hasSelection);
     mUser3Button->setEnabled(hasSelection);
+#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
+    mUser4Button->setEnabled(hasSelection);
+#endif
 }
 
 void RecipientsPicker::setRecipients(const Recipient::List &)
@@ -119,11 +133,22 @@ void RecipientsPicker::setDefaultType(Recipient::Type type)
     mUser1Button->setDefault(type == Recipient::To);
     mUser2Button->setDefault(type == Recipient::Cc);
     mUser3Button->setDefault(type == Recipient::Bcc);
+#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
+    mUser4Button->setDefault(type == Recipient::ReplyTo);
+#endif
+
 }
 
 void RecipientsPicker::slotToClicked()
 {
     pick(Recipient::To);
+}
+
+void RecipientsPicker::slotReplyToClicked()
+{
+#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
+    pick(Recipient::ReplyTo);
+#endif
 }
 
 void RecipientsPicker::slotCcClicked()

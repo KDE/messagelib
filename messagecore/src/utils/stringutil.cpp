@@ -342,6 +342,7 @@ void removePrivateHeaderFields(const KMime::Message::Ptr &message, bool cleanUpH
     message->removeHeader("X-KMail-UnExpanded-To");
     message->removeHeader("X-KMail-UnExpanded-CC");
     message->removeHeader("X-KMail-UnExpanded-BCC");
+    message->removeHeader("X-KMail-UnExpanded-Reply-To");
     message->removeHeader("X-KMail-FccDisabled");
 
     if (cleanUpHeader) {

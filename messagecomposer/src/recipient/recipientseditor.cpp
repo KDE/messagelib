@@ -249,7 +249,7 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
     if (count > 0) {
         if (count == 1) {
             RecipientLineNG *last_rec = qobject_cast< RecipientLineNG * >(lines().first());
-            if (last_rec && last_rec->recipientType() == Recipient::Bcc) {
+            if (last_rec && (last_rec->recipientType() == Recipient::Bcc || last_rec->recipientType() == Recipient::ReplyTo)) {
                 rec->setRecipientType(Recipient::To);
             } else {
                 rec->setRecipientType(Recipient::Cc);

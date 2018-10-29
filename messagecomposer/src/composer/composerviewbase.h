@@ -354,7 +354,7 @@ private:
     bool m_requestDeleveryConfirmation = false;
     Kleo::CryptoMessageFormat m_cryptoMessageFormat;
     QString mExpandedFrom, m_from, m_replyTo, m_subject;
-    QStringList mExpandedTo, mExpandedCc, mExpandedBcc;
+    QStringList mExpandedTo, mExpandedCc, mExpandedBcc, mExpandedReplyTo;
     QList< QByteArray > m_charsets;
     QMap<QByteArray, QString> m_customHeader;
 

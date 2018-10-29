@@ -22,6 +22,7 @@
 #define MESSAGECOMPOSER_RECIPIENTSPICKER_H
 
 #include <MessageComposer/Recipient>
+#include "config-messagecomposer.h"
 
 #include <kcontacts/addressee.h>
 #include <QDialog>
@@ -61,6 +62,7 @@ protected Q_SLOTS:
     void slotToClicked();
     void slotCcClicked();
     void slotBccClicked();
+    void slotReplyToClicked();
     void slotPicked();
     void slotSearchLDAP();
     void ldapSearchResult();
@@ -72,6 +74,9 @@ private:
     KLDAP::LdapSearchDialog *mLdapSearchDialog = nullptr;
 
     Recipient::Type mDefaultType;
+#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
+    QPushButton *mUser4Button = nullptr;
+#endif
     QPushButton *mUser3Button = nullptr;
     QPushButton *mUser2Button = nullptr;
     QPushButton *mUser1Button = nullptr;

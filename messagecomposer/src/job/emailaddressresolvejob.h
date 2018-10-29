@@ -78,6 +78,10 @@ public:
      * Sets the from address to expand.
      */
     virtual void setBcc(const QStringList &from);
+    /**
+     * Sets the Reply-To address to expand.
+     */
+    virtual void setReplyTo(const QStringList &replyTo);
 
     /**
      * Returns the expanded From field
@@ -100,6 +104,10 @@ public:
     Q_REQUIRED_RESULT virtual QStringList expandedBcc() const;
 
     void setDefaultDomainName(const QString &domainName);
+    /**
+     * Returns the expanded Reply-To field
+     */
+    Q_REQUIRED_RESULT virtual QStringList expandedReplyTo() const;
 private Q_SLOTS:
     void slotAliasExpansionDone(KJob *);
 
