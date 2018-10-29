@@ -32,10 +32,10 @@ public:
     QStringList to;
     QStringList cc;
     QStringList bcc;
+    QStringList replyTo;
     QString subject;
     QString from;
     QString fcc;
-    QString replyTo;
     QString userAgent;
     QString inReplyTo;
     QString references;
@@ -104,12 +104,12 @@ void InfoPart::setSubject(const QString &subject)
     d->subject = subject;
 }
 
-QString InfoPart::replyTo() const
+QStringList InfoPart::replyTo() const
 {
     return d->replyTo;
 }
 
-void InfoPart::setReplyTo(const QString &replyTo)
+void InfoPart::setReplyTo(const QStringList &replyTo)
 {
     d->replyTo = replyTo;
 }

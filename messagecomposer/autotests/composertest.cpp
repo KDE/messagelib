@@ -107,7 +107,7 @@ void ComposerTest::testNonAsciiHeaders()
     const QString to = toDisplayName + mailbox;
     const QString cc = ccDisplayName + mailbox;
     const QString bcc = bccDisplayName + mailbox;
-    const QString replyto = replyToDisplayName + mailbox;
+    const QStringList replyto = QStringList{replyToDisplayName + mailbox};
 
     composer->infoPart()->setFrom(from);
     composer->infoPart()->setTo(QStringList() << to);

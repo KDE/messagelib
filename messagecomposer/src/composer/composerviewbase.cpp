@@ -404,7 +404,7 @@ void ComposerViewBase::readyForSending()
     job->setCc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Cc));
     job->setBcc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Bcc));
 #ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
-    job->setReplyTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::replyTo()));
+    job->setReplyTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::ReplyTo));
 #endif
 
     connect(job, &MessageComposer::EmailAddressResolveJob::result, this, &ComposerViewBase::slotEmailAddressResolved);
@@ -828,7 +828,9 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     }
 
     infoPart->setTransportId(m_transport->currentTransportId());
+#ifndef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
     infoPart->setReplyTo(replyTo());
+#endif
     if (expansion == UseExpandedRecipients) {
         infoPart->setFrom(mExpandedFrom);
         infoPart->setTo(mExpandedTo);
@@ -1546,7 +1548,7 @@ void ComposerViewBase::updateRecipients(const KIdentityManagement::Identity &ide
         oldIdentList = oldIdent.cc();
         newIdentList = ident.cc();
 #ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
-    } else if (type == MessageComposer::Recipient::replyTo()) {
+    } else if (type == MessageComposer::Recipient::ReplyTo) {
         oldIdentList = oldIdent.replyToAddr();
         newIdentList = ident.replyToAddr();
 #endif
