@@ -23,6 +23,7 @@
 */
 
 #include "recipient.h"
+#include "config-messagecomposer.h"
 
 #include <KLocalizedString>
 
@@ -135,7 +136,7 @@ QStringList Recipient::allTypeLabels()
     types.append(typeLabel(To));
     types.append(typeLabel(Cc));
     types.append(typeLabel(Bcc));
-#ifdef IMPLEMENT_REPLY_TO
+#ifdef IMPLEMENT_REPLY_TO_SUPPORT_RECIPIENT
     types.append(typeLabel(ReplyTo));
 #endif
     return types;
