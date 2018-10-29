@@ -124,6 +124,7 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
     QString to;
     QString cc;
     QString bcc;
+    QString replyTo;
 
     Recipient::List recipients = mEditor->recipients();
     Recipient::List::ConstIterator it;
@@ -140,6 +141,9 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
         case Recipient::Bcc:
             bcc += emailLine;
             break;
+        case Recipient::ReplyTo:
+            replyTo += emailLine;
+            break;
         default:
             break;
         }
@@ -151,6 +155,9 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
     }
     if (!bcc.isEmpty()) {
         text += i18nc("@info:tooltip %1 list of emails", "BCC:%1", bcc);
+    }
+    if (!replyTo.isEmpty()) {
+        text += i18nc("@info:tooltip %1 list of emails", "Reply-To:%1", replyTo);
     }
 
 

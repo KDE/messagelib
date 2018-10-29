@@ -28,7 +28,7 @@
 
 using namespace KPIM;
 using namespace MessageComposer;
-#define IMPLEMENT_REPLY_TO 1
+//#define IMPLEMENT_REPLY_TO 1
 class MessageComposer::RecipientPrivate
 {
 public:
