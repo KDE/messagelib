@@ -129,7 +129,7 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
     Recipient::List::ConstIterator it;
     Recipient::List::ConstIterator end(recipients.constEnd());
     for (it = recipients.constBegin(); it != end; ++it) {
-        QString emailLine = (*it)->email().toHtmlEscaped() + QLatin1String("\n");
+        QString emailLine = QLatin1String("&nbsp;&nbsp;") + (*it)->email().toHtmlEscaped() + QLatin1String("<br/>");
         switch ((*it)->type()) {
         case Recipient::To:
             to += emailLine;
@@ -153,7 +153,8 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
         text += i18nc("@info:tooltip %1 list of emails", "BCC:%1", bcc);
     }
 
-    mTotalLabel->setToolTip(text);
+
+    mTotalLabel->setToolTip(QStringLiteral("<html><head><body>%1</body></head></html>").arg(text));
 }
 
 void RecipientsEditorSideWidget::pickRecipient()
