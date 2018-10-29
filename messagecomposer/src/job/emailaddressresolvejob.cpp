@@ -30,6 +30,7 @@
 #include "MessageComposer/InfoPart"
 
 #include <KEmailAddress>
+#include <QVariant>
 
 using namespace MessageComposer;
 
