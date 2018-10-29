@@ -97,7 +97,6 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     , d(new Private(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowModality(Qt::ApplicationModal);   // FIXME: Sure ?
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
