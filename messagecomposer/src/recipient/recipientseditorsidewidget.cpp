@@ -46,7 +46,7 @@ RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, Q
 
     mTotalLabel = new QLabel(this);
     mTotalLabel->setAlignment(Qt::AlignCenter);
-    mTotalLabel->setTextFormat(Qt::RichText);
+    mTotalLabel->setTextFormat(Qt::PlainText);
     topLayout->addWidget(mTotalLabel);
     mTotalLabel->hide();
 
@@ -119,7 +119,7 @@ void RecipientsEditorSideWidget::setTotal(int recipients, int lines)
 
 void RecipientsEditorSideWidget::updateTotalToolTip()
 {
-    QString text = QStringLiteral("<qt>");
+    QString text;
 
     QString to;
     QString cc;
@@ -129,7 +129,7 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
     Recipient::List::ConstIterator it;
     Recipient::List::ConstIterator end(recipients.constEnd());
     for (it = recipients.constBegin(); it != end; ++it) {
-        QString emailLine = QLatin1String("&nbsp;&nbsp;") + (*it)->email().toHtmlEscaped() + QLatin1String("<br/>");
+        QString emailLine = (*it)->email().toHtmlEscaped() + QLatin1String("\n");
         switch ((*it)->type()) {
         case Recipient::To:
             to += emailLine;
@@ -145,15 +145,14 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
         }
     }
 
-    text += xi18nc("@info:tooltip %1 list of emails", "<interface>To:</interface><nl/>%1", to);
+    text += i18nc("@info:tooltip %1 list of emails", "To:%1", to);
     if (!cc.isEmpty()) {
-        text += xi18nc("@info:tooltip %1 list of emails", "<interface>CC:</interface><nl/>%1", cc);
+        text += i18nc("@info:tooltip %1 list of emails", "CC:%1", cc);
     }
     if (!bcc.isEmpty()) {
-        text += xi18nc("@info:tooltip %1 list of emails", "<interface>BCC:</interface><nl/>%1", bcc);
+        text += i18nc("@info:tooltip %1 list of emails", "BCC:%1", bcc);
     }
 
-    text.append(QLatin1String("</qt>"));
     mTotalLabel->setToolTip(text);
 }
 
