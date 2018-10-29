@@ -117,7 +117,7 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
         mBodyFont = fonts.readEntry("body-font", mBodyFont);
         mPrintFont = fonts.readEntry("print-font", mPrintFont);
         mFixedFont = fonts.readEntry("fixed-font", mFixedFont);
-        mFixedPrintFont = mFixedFont; // FIXME when we have a separate fixed print font
+        mFixedPrintFont = mFixedFont;
     }
 
     mShrinkQuotes = MessageViewer::MessageViewerSettings::self()->shrinkQuotes();
