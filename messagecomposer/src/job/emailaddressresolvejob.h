@@ -62,52 +62,52 @@ public:
     /**
      * Sets the from address to expand.
      */
-    virtual void setFrom(const QString &from);
+    void setFrom(const QString &from);
 
     /**
      * Sets the from address to expand.
      */
-    virtual void setTo(const QStringList &from);
+    void setTo(const QStringList &from);
 
     /**
      * Sets the from address to expand.
      */
-    virtual void setCc(const QStringList &from);
+    void setCc(const QStringList &from);
 
     /**
      * Sets the from address to expand.
      */
-    virtual void setBcc(const QStringList &from);
+    void setBcc(const QStringList &from);
     /**
      * Sets the Reply-To address to expand.
      */
-    virtual void setReplyTo(const QStringList &replyTo);
+    void setReplyTo(const QStringList &replyTo);
 
     /**
      * Returns the expanded From field
      */
-    Q_REQUIRED_RESULT virtual QString expandedFrom() const;
+    Q_REQUIRED_RESULT  QString expandedFrom() const;
 
     /**
      * Returns the expanded To field
      */
-    Q_REQUIRED_RESULT virtual QStringList expandedTo() const;
+    Q_REQUIRED_RESULT QStringList expandedTo() const;
 
     /**
      * Returns the expanded CC field
      */
-    Q_REQUIRED_RESULT virtual QStringList expandedCc() const;
+    Q_REQUIRED_RESULT QStringList expandedCc() const;
 
     /**
      * Returns the expanded Bcc field
      */
-    Q_REQUIRED_RESULT virtual QStringList expandedBcc() const;
+    Q_REQUIRED_RESULT QStringList expandedBcc() const;
 
     void setDefaultDomainName(const QString &domainName);
     /**
      * Returns the expanded Reply-To field
      */
-    Q_REQUIRED_RESULT virtual QStringList expandedReplyTo() const;
+    Q_REQUIRED_RESULT QStringList expandedReplyTo() const;
 private Q_SLOTS:
     void slotAliasExpansionDone(KJob *);
 
