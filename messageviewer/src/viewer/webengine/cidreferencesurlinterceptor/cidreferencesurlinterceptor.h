@@ -30,7 +30,7 @@ public:
     explicit CidReferencesUrlInterceptor(QObject *parent = nullptr);
     ~CidReferencesUrlInterceptor() override;
 
-    bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
+    Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 };
 }
 #endif // CIDREFERENCESURLINTERCEPTOR_H

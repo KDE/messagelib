@@ -80,7 +80,7 @@ protected:
     {
     }
 
-    virtual ~IconicAttachmentStrategy()
+    ~IconicAttachmentStrategy() override
     {
     }
 
@@ -123,7 +123,7 @@ protected:
     {
     }
 
-    virtual ~SmartAttachmentStrategy()
+    ~SmartAttachmentStrategy() override
     {
     }
 
@@ -157,7 +157,7 @@ protected:
     {
     }
 
-    virtual ~InlinedAttachmentStrategy()
+    ~InlinedAttachmentStrategy() override
     {
     }
 
@@ -191,7 +191,7 @@ protected:
     {
     }
 
-    virtual ~HiddenAttachmentStrategy()
+    ~HiddenAttachmentStrategy() override
     {
     }
 
@@ -235,7 +235,7 @@ protected:
     {
     }
 
-    virtual ~HeaderOnlyAttachmentStrategy()
+    ~HeaderOnlyAttachmentStrategy() override
     {
     }
 
@@ -295,7 +295,7 @@ const AttachmentStrategy *AttachmentStrategy::create(Type type)
         return headerOnly();
     }
     qCCritical(MESSAGEVIEWER_LOG) << "Unknown attachment startegy ( type =="
-                                  << (int)type << ") requested!";
+                                  << static_cast<int>(type) << ") requested!";
     return nullptr; // make compiler happy
 }
 

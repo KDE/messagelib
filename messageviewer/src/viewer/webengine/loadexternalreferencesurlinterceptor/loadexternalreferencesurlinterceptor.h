@@ -31,7 +31,7 @@ public:
 
     bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
     void setAllowExternalContent(bool b);
-    bool allowExternalContent() const;
+    Q_REQUIRED_RESULT bool allowExternalContent() const;
 private:
     bool mAllowLoadExternalReference = false;
 };

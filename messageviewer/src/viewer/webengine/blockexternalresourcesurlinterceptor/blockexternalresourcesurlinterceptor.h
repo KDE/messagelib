@@ -30,9 +30,9 @@ public:
     explicit BlockExternalResourcesUrlInterceptor(QObject *parent = nullptr);
     ~BlockExternalResourcesUrlInterceptor() override;
 
-    bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
+    Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
     void setAllowExternalContent(bool b);
-    bool allowExternalContent() const;
+    Q_REQUIRED_RESULT bool allowExternalContent() const;
 Q_SIGNALS:
     void formSubmittedForbidden();
 };

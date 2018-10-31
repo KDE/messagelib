@@ -37,7 +37,7 @@ public:
     void clearModel();
     void setRoot(KMime::Content *root);
 
-    KMime::Content::List selectedContents();
+    Q_REQUIRED_RESULT  KMime::Content::List selectedContents() const;
 
 private:
     void slotMimePartDestroyed();

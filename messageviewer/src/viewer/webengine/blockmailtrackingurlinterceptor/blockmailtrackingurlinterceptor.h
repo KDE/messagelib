@@ -45,7 +45,7 @@ public:
 
     explicit BlockMailTrackingUrlInterceptor(QObject *parent = nullptr);
     ~BlockMailTrackingUrlInterceptor() override;
-    bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
+    Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
 Q_SIGNALS:
     void mailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);

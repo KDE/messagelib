@@ -86,7 +86,7 @@ void MimePartTreeView::setRoot(KMime::Content *root)
     mMimePartModel->setRoot(root);
 }
 
-KMime::Content::List MimePartTreeView::selectedContents()
+KMime::Content::List MimePartTreeView::selectedContents() const
 {
     KMime::Content::List contents;
     QItemSelectionModel *selectModel = selectionModel();

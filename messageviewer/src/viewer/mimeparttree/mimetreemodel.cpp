@@ -41,7 +41,6 @@ class Q_DECL_HIDDEN MimeTreeModel::Private
 {
 public:
     Private()
-        : root(nullptr)
     {
     }
 
