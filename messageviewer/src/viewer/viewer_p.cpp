@@ -1270,11 +1270,11 @@ void ViewerPrivate::resetStateForNewMessage()
             mLevelQuote = -1;
         }
     } else {
-        mDisplayFormatMessageOverwrite
-            = (mDisplayFormatMessageOverwrite
-               == MessageViewer::Viewer::UseGlobalSetting) ? MessageViewer::Viewer::UseGlobalSetting
-              :
-              MessageViewer::Viewer::Unknown;
+//        mDisplayFormatMessageOverwrite
+//            = (mDisplayFormatMessageOverwrite
+//               == MessageViewer::Viewer::UseGlobalSetting) ? MessageViewer::Viewer::UseGlobalSetting
+//              :
+//              MessageViewer::Viewer::Unknown;
     }
 }
 
