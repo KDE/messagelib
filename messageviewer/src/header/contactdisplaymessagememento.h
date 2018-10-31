@@ -44,7 +44,6 @@ public:
     explicit ContactDisplayMessageMemento(const QString &emailAddress);
     ~ContactDisplayMessageMemento() override;
     void processAddress(const KContacts::Addressee &addressee);
-    bool allowToRemoteContent() const;
     Q_REQUIRED_RESULT KContacts::Picture photo() const;
 
     Q_REQUIRED_RESULT bool finished() const;
@@ -66,13 +65,11 @@ private Q_SLOTS:
     void slotGravatarResolvUrlFinished(Gravatar::GravatarResolvUrlJob *);
 private:
     bool searchPhoto(const KContacts::AddresseeList &list);
-    Viewer::DisplayFormatMessage mForceDisplayTo;
     KContacts::Picture mPhoto;
     QPixmap mGravatarPixmap;
     QImage mImageFromUrl;
     QString mEmailAddress;
     bool mFinished = false;
-    bool mMailAllowToRemoteContent = false;
     QPointer<Akonadi::ContactSearchJob> mSearchJob;
 };
 }

@@ -30,7 +30,6 @@ using namespace MessageViewer;
 
 ContactDisplayMessageMemento::ContactDisplayMessageMemento(const QString &emailAddress)
     : QObject(nullptr)
-    , mForceDisplayTo(Viewer::UseGlobalSetting)
     , mEmailAddress(emailAddress)
 {
     if (!emailAddress.isEmpty()) {
@@ -68,7 +67,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
     const int contactSize(searchJob->contacts().size());
     if (contactSize >= 1) {
         if (contactSize > 1) {
-            qCDebug(MESSAGEVIEWER_LOG) << " more than 1 contact was found we return first contact";
+            qCWarning(MESSAGEVIEWER_LOG) << " more than 1 contact was found we return first contact";
         }
 
         const KContacts::Addressee addressee = searchJob->contacts().at(0);
@@ -139,17 +138,13 @@ void ContactDisplayMessageMemento::detach()
                nullptr);
 }
 
-bool ContactDisplayMessageMemento::allowToRemoteContent() const
-{
-    return mMailAllowToRemoteContent;
-}
-
 bool ContactDisplayMessageMemento::searchPhoto(const KContacts::AddresseeList &list)
 {
     bool foundPhoto = false;
     for (const KContacts::Addressee &addressee : list) {
-        if (!addressee.photo().isEmpty()) {
-            mPhoto = addressee.photo();
+        const KContacts::Picture photo = addressee.photo();
+        if (!photo.isEmpty()) {
+            mPhoto = photo;
             foundPhoto = true;
             break;
         }
@@ -169,6 +164,8 @@ QPixmap ContactDisplayMessageMemento::gravatarPixmap() const
 
 void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &addressee)
 {
+    Viewer::DisplayFormatMessage forceDisplayTo = Viewer::UseGlobalSetting;
+    bool mailAllowToRemoteContent = false;
     const QStringList customs = addressee.customs();
     for (const QString &custom : customs) {
         if (custom.contains(QLatin1String("MailPreferedFormatting"))) {
@@ -176,20 +173,20 @@ void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &ad
                 = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral(
                                        "MailPreferedFormatting"));
             if (value == QLatin1String("TEXT")) {
-                mForceDisplayTo = Viewer::Text;
+                forceDisplayTo = Viewer::Text;
             } else if (value == QLatin1String("HTML")) {
-                mForceDisplayTo = Viewer::Html;
+                forceDisplayTo = Viewer::Html;
             } else {
-                mForceDisplayTo = Viewer::UseGlobalSetting;
+                forceDisplayTo = Viewer::UseGlobalSetting;
             }
         } else if (custom.contains(QLatin1String("MailAllowToRemoteContent"))) {
             const QString value
                 = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral(
                                        "MailAllowToRemoteContent"));
-            mMailAllowToRemoteContent = (value == QLatin1String("TRUE"));
+            mailAllowToRemoteContent = (value == QLatin1String("TRUE"));
         }
     }
-    Q_EMIT changeDisplayMail(mForceDisplayTo, mMailAllowToRemoteContent);
+    Q_EMIT changeDisplayMail(forceDisplayTo, mailAllowToRemoteContent);
 }
 
 KContacts::Picture ContactDisplayMessageMemento::photo() const
