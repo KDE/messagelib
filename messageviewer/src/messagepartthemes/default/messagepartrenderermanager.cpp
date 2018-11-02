@@ -130,7 +130,7 @@ void MessagePartRendererManager::initializeRenderer()
     Grantlee::registerMetaType<const QGpgME::Protocol *>();
     Grantlee::registerMetaType<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> >();
     m_engine = new GrantleeTheme::Engine;
-    foreach (const auto &p, QCoreApplication::libraryPaths()) {
+    for (const auto &p : QCoreApplication::libraryPaths()) {
         m_engine->addPluginPath(p + QStringLiteral("/messageviewer"));
     }
     m_engine->addDefaultLibrary(QStringLiteral("messageviewer_grantlee_extension"));

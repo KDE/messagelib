@@ -340,7 +340,7 @@ Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
 
 void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
 {
-    foreach (const auto &m, msgPart->subParts()) {
+    for (const auto &m : msgPart->subParts()) {
         renderFactory(m, htmlWriter);
     }
 }
@@ -792,7 +792,7 @@ void DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp, HtmlW
 
     auto mode = mp->preferredMode();
     if (mode == MimeTreeParser::Util::MultipartPlain && mp->text().trimmed().isEmpty()) {
-        foreach (const auto m, mp->availableModes()) {
+        for (const auto m : mp->availableModes()) {
             if (m != MimeTreeParser::Util::MultipartPlain) {
                 mode = m;
                 break;
@@ -1144,13 +1144,11 @@ void DefaultRenderer::setCreateMessageHeader(std::function<QString(KMime::Messag
 
 QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
-    const QString line
+    QString ret
         = QStringLiteral("%1 * %3\n").arg(indent,
                                           QString::fromUtf8(messagePart->metaObject()->className()));
-    QString ret = line;
-
     indent += QLatin1Char(' ');
-    foreach (const auto &subPart, messagePart->subParts()) {
+    for (const auto &subPart : messagePart->subParts()) {
         ret += renderTreeHelper(subPart, indent);
     }
     return ret;

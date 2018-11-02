@@ -913,7 +913,8 @@ void MessageFactoryTest::test_multipartAlternative_data()
     QTest::addColumn<QString>("expected");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    foreach (const QString &file, dir.entryList(QStringList(QLatin1String("plain_message.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks)) {
+    const QStringList lst = dir.entryList(QStringList(QLatin1String("plain_message.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    for (const QString &file : lst) {
         QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 0 << ""
                                                    <<"> This *is* the *message* text *from* Sudhendu Kumar<dontspamme@yoohoo.com>\n"
             "> \n"

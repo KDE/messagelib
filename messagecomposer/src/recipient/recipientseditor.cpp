@@ -166,7 +166,7 @@ QString RecipientsEditor::recipientString(Recipient::Type type) const
 QStringList RecipientsEditor::recipientStringList(Recipient::Type type) const
 {
     QStringList selectedRecipients;
-    foreach (const Recipient::Ptr &r, recipients()) {
+    for (const Recipient::Ptr &r : recipients()) {
         if (r->type() == type) {
             selectedRecipients << r->email();
         }

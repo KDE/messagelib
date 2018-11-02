@@ -154,7 +154,7 @@ void GrantleeHeaderStyleTest::testRenderHeader_data()
 
     QDir dir(QStringLiteral(HEADER_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))) {
             continue;
         }
