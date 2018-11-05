@@ -52,6 +52,7 @@ if (DKIM_CHECKER_BUILD)
         dkim-verify/dkimmanagerkey.cpp
         dkim-verify/dkimmanagerkeywidget.cpp
         dkim-verify/dkimmanagerkeydialog.cpp
+        dkim-verify/dkimdownloadkeyjob.cpp
         )
 endif()
 

@@ -17,24 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "dkiminfotest.h"
-#include "dkim-verify/dkiminfo.h"
-#include <QTest>
+#ifndef DKIMDOWNLOADKEYJOBTEST_H
+#define DKIMDOWNLOADKEYJOBTEST_H
 
-QTEST_GUILESS_MAIN(DKIMInfoTest)
+#include <QObject>
 
-DKIMInfoTest::DKIMInfoTest(QObject *parent)
-    : QObject(parent)
+class DKIMDownloadKeyJobTest : public QObject
 {
+    Q_OBJECT
+public:
+    explicit DKIMDownloadKeyJobTest(QObject *parent = nullptr);
+    ~DKIMDownloadKeyJobTest() = default;
+};
 
-}
-
-void DKIMInfoTest::shouldHaveDefaultValue()
-{
-    MessageViewer::DKIMInfo info;
-    QVERIFY(info.version().isEmpty());
-
-    QVERIFY(info.hashingAlgorithm().isEmpty());
-    QVERIFY(info.domain().isEmpty());
-    QVERIFY(info.selector().isEmpty());
-}
+#endif // DKIMDOWNLOADKEYJOBTEST_H

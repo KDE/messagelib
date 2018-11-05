@@ -30,3 +30,43 @@ void DKIMInfo::parseDKIM()
 {
     //TODO
 }
+
+QString DKIMInfo::version() const
+{
+    return mVersion;
+}
+
+void DKIMInfo::setVersion(const QString &version)
+{
+    mVersion = version;
+}
+
+QString DKIMInfo::hashingAlgorithm() const
+{
+    return mHashingAlgorithm;
+}
+
+void DKIMInfo::setHashingAlgorithm(const QString &hashingAlgorithm)
+{
+    mHashingAlgorithm = hashingAlgorithm;
+}
+
+QString DKIMInfo::domain() const
+{
+    return mDomain;
+}
+
+void DKIMInfo::setDomain(const QString &domain)
+{
+    mDomain = domain;
+}
+
+QString DKIMInfo::selector() const
+{
+    return mSelector;
+}
+
+void DKIMInfo::setSelector(const QString &selector)
+{
+    mSelector = selector;
+}

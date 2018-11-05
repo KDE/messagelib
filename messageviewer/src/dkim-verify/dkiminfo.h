@@ -22,7 +22,7 @@
 #define DKIMINFO_H
 
 #include "messageviewer_private_export.h"
-
+#include <QString>
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMInfo
 {
@@ -30,6 +30,23 @@ public:
     DKIMInfo();
 
     void parseDKIM();
+    Q_REQUIRED_RESULT QString version() const;
+    void setVersion(const QString &version);
+
+    Q_REQUIRED_RESULT QString hashingAlgorithm() const;
+    void setHashingAlgorithm(const QString &hashingAlgorithm);
+
+    Q_REQUIRED_RESULT QString domain() const;
+    void setDomain(const QString &domain);
+
+    Q_REQUIRED_RESULT QString selector() const;
+    void setSelector(const QString &selector);
+
+private:
+    QString mVersion;
+    QString mHashingAlgorithm;
+    QString mDomain;
+    QString mSelector;
 };
 }
 
