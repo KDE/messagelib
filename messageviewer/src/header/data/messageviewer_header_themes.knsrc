@@ -1,9 +1,12 @@
 [KNewStuff3]
 Name=KMail Header Theme
 Name[ca]=Tema de capçalera pel KMail
+Name[ca@valencia]=Tema de capçalera pel KMail
 Name[gl]=Tema da cabeceira de KMail
 Name[nl]=Header-thema van KMail
+Name[pl]=Wygląd nagłówka KMail
 Name[pt]=Tema de Cabeçalhos do KMail
+Name[sv]=Kmail huvudtema
 Name[uk]=Тема заголовків KMail
 Name[x-test]=xxKMail Header Themexx
 ProvidersUrl=http://download.kde.org/ocs/providers.xml
