@@ -46,7 +46,13 @@ add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
 
 if (DKIM_CHECKER_BUILD)
-    add_definitions(dkim-verify)
+    add_subdirectory(dkim-verify)
+    set(dkim_verify_SRCS
+        dkim-verify/dkiminfo.cpp
+        dkim-verify/dkimmanagerkey.cpp
+        dkim-verify/dkimmanagerkeywidget.cpp
+        dkim-verify/dkimmanagerkeydialog.cpp
+        )
 endif()
 
 if(DEBUG_SIGNATURE)
@@ -182,6 +188,7 @@ set(libmessageviewer_interfaces_SRCS
     )
 
 set(libmessageviewer_SRCS
+    ${dkim_verify_SRCS}
     ${libmessageviewer_messagepartthemes_default_SRCS}
     ${libmessageviewer_htmlwriter_SRCS}
     ${libmessageviewer_messagepartthemes_SRCS}
