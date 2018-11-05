@@ -44,6 +44,11 @@ add_subdirectory(pics)
 add_subdirectory(kconf_update)
 add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
+
+if (DKIM_CHECKER_BUILD)
+    add_definitions(dkim-verify)
+endif()
+
 if(DEBUG_SIGNATURE)
     add_definitions(-DDEBUG_SIGNATURE)
 endif()
