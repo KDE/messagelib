@@ -42,11 +42,15 @@ public:
     Q_REQUIRED_RESULT QString selector() const;
     void setSelector(const QString &selector);
 
+    Q_REQUIRED_RESULT QString bodyHash() const;
+    void setBodyHash(const QString &bodyHash);
+
 private:
     QString mVersion;
     QString mHashingAlgorithm;
     QString mDomain;
     QString mSelector;
+    QString mBodyHash;
 };
 }
 

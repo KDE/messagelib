@@ -70,3 +70,13 @@ void DKIMInfo::setSelector(const QString &selector)
 {
     mSelector = selector;
 }
+
+QString DKIMInfo::bodyHash() const
+{
+    return mBodyHash;
+}
+
+void DKIMInfo::setBodyHash(const QString &bodyHash)
+{
+    mBodyHash = bodyHash;
+}
