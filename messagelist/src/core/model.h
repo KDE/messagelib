@@ -118,7 +118,7 @@ public:
 
     /**
     * Returns true if the view is currently loading, that is
-    * it's in the first (possibly lenghty) job batch after attacching to a StorageModel.
+    * it's in the first (possibly lenghty) job batch after attaching to a StorageModel.
     */
     bool isLoading() const;
 

@@ -202,7 +202,7 @@ public:
      * the signature.
      *
      * This only works if the message was run through ObjectTreeParser::parseObjectTree() with the
-     * currrent NodeHelper before, because parseObjectTree() actually decrypts the message and stores
+     * current NodeHelper before, because parseObjectTree() actually decrypts the message and stores
      * the decrypted nodes by calling attachExtraContent().
      *
      * @return the unencrypted message or an invalid pointer if the original message didn't contain

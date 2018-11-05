@@ -68,7 +68,7 @@ enum Result {
      \section Step 2: Lookup and check per-recipient crypto preferences / Opportunistic Encryption
 
      First, \c checkSigningPreferences() goes through all recipient's
-     signing perferences, to determine whether or not to sign. It also
+     signing preferences, to determine whether or not to sign. It also
      takes into account the available signing keys and whether or not
      the user explicitly requested signing.
 

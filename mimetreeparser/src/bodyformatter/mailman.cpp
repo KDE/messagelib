@@ -105,7 +105,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     MessagePartList::Ptr mpl(new MessagePartList(part.objectTreeParser()));
     mpl->appendSubPart(createAndParseTempNode(part, part.topLevelContent(), digestHeaderStr.toLatin1().constData(), "Digest Header"));
     //mReader->queueHtml("<br><hr><br>");
-    // temporarily change curent node's Content-Type
+    // temporarily change current node's Content-Type
     // to get our embedded RfC822 messages properly inserted
     curNode->contentType()->setMimeType("multipart/digest");
     while (-1 < nextDelim) {
@@ -154,7 +154,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
             nextDelim = str.indexOf(delimZ2, thisDelim, Qt::CaseInsensitive);
         }
     }
-    // reset curent node's Content-Type
+    // reset current node's Content-Type
     curNode->contentType()->setMimeType("text/plain");
     int thisEoL = str.indexOf(QLatin1String("_____________"), thisDelim);
     if (-1 < thisEoL) {

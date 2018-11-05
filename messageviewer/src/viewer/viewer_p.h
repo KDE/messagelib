@@ -250,7 +250,7 @@ public:
 
     KMime::Message::Ptr message() const;
 
-    /** Returns whether the message should be decryted. */
+    /** Returns whether the message should be decrypted. */
     bool decryptMessage() const;
 
     /** Display a generic HTML splash page instead of a message. */

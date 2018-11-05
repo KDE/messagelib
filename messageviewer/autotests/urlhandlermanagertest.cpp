@@ -92,7 +92,7 @@ void BodyPartUrlHandlerManagerTest::testHandleClick_data()
     QTest::addColumn<KMime::ContentIndex>("index");
     QTest::addColumn<bool>("ret");
 
-    QTest::newRow("completly_empty") << QString() << QString() << KMime::ContentIndex() << false;
+    QTest::newRow("completely_empty") << QString() << QString() << KMime::ContentIndex() << false;
     QTest::newRow("empty") << QStringLiteral("x-kmail:") << QString() << KMime::ContentIndex() << false;
     QTest::newRow("pgpkey") << QStringLiteral("x-kmail:/bodypart/1234/2/pgpkey") << QStringLiteral("pgpkey") << KMime::ContentIndex(QStringLiteral("2")) << true;
     QTest::newRow("test") << QStringLiteral("x-kmail:/bodypart/1234/1/test") << QStringLiteral("test") << KMime::ContentIndex(QStringLiteral("1")) << true;

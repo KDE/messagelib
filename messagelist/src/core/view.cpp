@@ -1739,7 +1739,7 @@ void View::markMessageItemsAsAboutToBeRemoved(QList<MessageItem *> &items, bool 
         Q_ASSERT(aMessage);
 
         // Avoid infinite loops by carrying only a limited number of attempts.
-        // If there is any message that is not in the set then items.count() attemps should find it.
+        // If there is any message that is not in the set then items.count() attempts should find it.
         int maxAttempts = items.count();
 
         while (items.contains(aMessage) && (maxAttempts > 0)) {
@@ -1958,7 +1958,7 @@ void View::mouseDoubleClickEvent(QMouseEvent *e)
         case Qt::LeftButton:
 
             if (d->mDelegate->hitContentItem()) {
-                // Double clikcking on clickable icons does NOT activate the message
+                // Double clicking on clickable icons does NOT activate the message
                 if (d->mDelegate->hitContentItem()->isIcon() && d->mDelegate->hitContentItem()->isClickable()) {
                     return;
                 }
@@ -1972,7 +1972,7 @@ void View::mouseDoubleClickEvent(QMouseEvent *e)
         }
         break;
     case Item::GroupHeader:
-        // Don't let QTreeView handle the selection (as it deselects the curent messages)
+        // Don't let QTreeView handle the selection (as it deselects the current messages)
         switch (e->button()) {
         case Qt::LeftButton:
             if (it->childItemCount() > 0) {
@@ -2134,7 +2134,7 @@ void View::mousePressEvent(QMouseEvent *e)
         break;
     case Item::GroupHeader:
     {
-        // Don't let QTreeView handle the selection (as it deselects the curent messages)
+        // Don't let QTreeView handle the selection (as it deselects the current messages)
         GroupHeaderItem *groupHeaderItem = static_cast< GroupHeaderItem * >(it);
 
         switch (e->button()) {

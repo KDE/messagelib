@@ -52,7 +52,7 @@ private:
     bool entered = false;
 };
 
-// The attachment mark is a div that is placed around the attchment. It is used for drawing
+// The attachment mark is a div that is placed around the attachment. It is used for drawing
 // a yellow border around the attachment when scrolling to it. When scrolling to it, the border
 // color of the div is changed, see KMReaderWin::scrollToAttachment().
 class MESSAGEVIEWER_EXPORT AttachmentMarkBlock : public HTMLBlock

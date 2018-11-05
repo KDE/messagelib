@@ -106,7 +106,7 @@ QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncodin
         }
 #endif
         // This flipping is done so that the decoded uint32 is interpreted
-        // correcly as a string of 4 bytes.
+        // correctly as a string of 4 bytes.
         list << htonl(lastValue);
     }
 

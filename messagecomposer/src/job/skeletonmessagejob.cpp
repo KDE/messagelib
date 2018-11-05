@@ -192,7 +192,7 @@ void SkeletonMessageJobPrivate::doStart()
         message->setHeader(extra);
     }
 
-    // Request Delevery Confirmation
+    // Request Delivery Confirmation
     {
         if (globalPart->requestDeleveryConfirmation()) {
             //TODO fix me multi address

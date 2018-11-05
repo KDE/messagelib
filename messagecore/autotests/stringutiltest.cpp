@@ -63,8 +63,8 @@ void StringUtilTest::test_SmartQuote_data()
 
     //                                                               40
     //                                                               ↓
-    QTest::newRow("4") << " Space at start, but also two lines in this long sentennce."
-                       << " Space at start, but also two lines in\nthis long sentennce.";
+    QTest::newRow("4") << " Space at start, but also two lines in this long sentence."
+                       << " Space at start, but also two lines in\nthis long sentence.";
 
     QTest::newRow("5") << " Space at start and end. "
                        << " Space at start and end.";

@@ -172,7 +172,7 @@ void HashCacheManagerPrivate::addHashStatus(const QByteArray &hash, HashCacheMan
         mHashList.insert(hash, info);
         break;
     case HashCacheManager::Unknown:
-        qCWarning(WEBENGINEVIEWER_LOG()) << "HashCacheManagerPrivate::addHashStatus unknow status detected!";
+        qCWarning(WEBENGINEVIEWER_LOG()) << "HashCacheManagerPrivate::addHashStatus unknown status detected!";
         return;
     }
     save();

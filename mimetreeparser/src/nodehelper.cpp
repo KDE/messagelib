@@ -335,7 +335,7 @@ void NodeHelper::forceCleanTempFiles()
 
 void NodeHelper::removeTempFiles()
 {
-    //Don't delete it it will delete in class
+    //Don't delete as it will be deleted in class
     mAttachmentFilesDir->removeTempFiles();
     mAttachmentFilesDir = new AttachmentTemporaryFilesDirs();
 }

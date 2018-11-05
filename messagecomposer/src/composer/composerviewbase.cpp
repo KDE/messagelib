@@ -448,7 +448,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
                 mExpandedReplyTo << r->email();
                 break;
             case MessageComposer::Recipient::Undefined:
-                Q_ASSERT(!"Unknown recpient type!");
+                Q_ASSERT(!"Unknown recipient type!");
                 break;
             }
         }
@@ -489,7 +489,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
     }
 
     Q_ASSERT(m_composers.isEmpty()); //composers should be empty. The caller of this function
-    //checks for emptyness before calling it
+    //checks for emptiness before calling it
     //so just ensure it actually is empty
     //and document it
     // we first figure out if we need to create multiple messages with different crypto formats

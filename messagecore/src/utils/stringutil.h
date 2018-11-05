@@ -163,7 +163,7 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString guessEmailAddressFromLoginName(cons
    *  Relayouts the given string so that the invidual lines don't exceed the given
    *  maximal length.
    *
-   *  As the name of the function implies, it it smart, which means it deals with quoting
+   *  As the name of the function implies, it is smart, which means it deals with quoting
    *  correctly. This means if a line already starts with quote characters and needs to be
    *  broken, the same quote characters are prepended to the next line as well.
    *

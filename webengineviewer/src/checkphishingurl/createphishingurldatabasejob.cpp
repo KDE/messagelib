@@ -381,7 +381,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                     } else if (str == QLatin1String("PARTIAL_UPDATE")) {
                                         databaseInfo.responseType = UpdateDataBaseInfo::PartialUpdate;
                                     } else {
-                                        qCDebug(WEBENGINEVIEWER_LOG) << " unknow responsetype " << str;
+                                        qCDebug(WEBENGINEVIEWER_LOG) << " unknown responsetype " << str;
                                         databaseInfo.responseType = UpdateDataBaseInfo::Unknown;
                                     }
                                 } else if (mapKey == QLatin1String("threatEntryType")) {
@@ -389,7 +389,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                 } else if (mapKey == QLatin1String("threatType")) {
                                     databaseInfo.threatType = mapIt.value().toString();
                                 } else {
-                                    qCDebug(WEBENGINEVIEWER_LOG) << " unknow key " << mapKey;
+                                    qCDebug(WEBENGINEVIEWER_LOG) << " unknown key " << mapKey;
                                 }
                             }
                         }

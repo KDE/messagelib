@@ -47,9 +47,9 @@ class Widget;
  * is created automatically when the first MessageList::Widget object is created
  * and destroyed automatically when the last MessageList::Widget object is destroyed.
  *
- * This class takes care of loading/storing/mantaining the settings for the
+ * This class takes care of loading/storing/maintaining the settings for the
  * whole MessageList framework. It also keeps track of all the existing
- * MessageList::Widget objects and takes care of uptdating them when settings change.
+ * MessageList::Widget objects and takes care of updating them when settings change.
  */
 class Manager : public QObject
 {

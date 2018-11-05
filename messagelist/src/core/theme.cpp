@@ -34,7 +34,7 @@ using namespace MessageList::Core;
 //
 // Theme versioning
 //
-// The themes simply have a DWORD version number attacched.
+// The themes simply have a DWORD version number attached.
 // The earliest version we're able to load is 0x1013.
 //
 // Theme revision history:
@@ -491,7 +491,7 @@ bool Theme::Row::LoadContentItem(int val, QDataStream &stream, int themeVersion,
 
         // Add the annotation item next to the attachment icon, so that users upgrading from old
         // versions don't manually need to set this.
-        // Don't do this for the stand-alone attchment column.
+        // Don't do this for the stand-alone attachment column.
         if (ci->type() == ContentItem::AttachmentStateIcon
             && themeVersion < gThemeMinimumVersionWithAnnotationIcon
             && val > 1) {

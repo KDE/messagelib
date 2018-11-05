@@ -57,7 +57,7 @@ void MessageViewer::Test::compareFile(const QString &outFile, const QString &ref
         f.close();
     }
 
-    // validate xml and pretty-print for comparisson
+    // validate xml and pretty-print for comparison
     // TODO add proper cmake check for xmllint and diff
     QStringList args = QStringList()
                        << QStringLiteral("--format")

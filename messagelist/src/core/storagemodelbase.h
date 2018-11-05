@@ -77,7 +77,7 @@ public:
     /**
     * This method should use the inner model implementation to fill in the
     * base data for the specified MessageItem from the underlying storage slot at
-    * the specified row index. Must return true if the data fetch was succesfull
+    * the specified row index. Must return true if the data fetch was successful
     * and false otherwise. For base data we intend: subject, sender, receiver,
     * senderOrReceiver, size, date, encryption state, signature state and status.
     * If bUseReceiver is true then the "senderOrReceiver"

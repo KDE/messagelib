@@ -162,7 +162,7 @@ void ObjectTreeParserTester::test_inlinePGPDecryption()
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "some random text");
 
-    // This test is only a workaround, till we can set the memento to the propper node of the mail.
+    // This test is only a workaround, till we can set the memento to the proper node of the mail.
     KMime::Content *content = new KMime::Content;
     QVERIFY(nodeHelper.bodyPartMemento(content, "decryptverify"));
 
@@ -187,7 +187,7 @@ void ObjectTreeParserTester::test_inlinePGPSigned()
     otp.parseObjectTree(msg.data());
     testWriter.end();
 
-    // This test is only a workaround, till we can set the memento to the propper node of the mail.
+    // This test is only a workaround, till we can set the memento to the proper node of the mail.
     QVERIFY(nodeHelper.bodyPartMemento(nullptr, "verification"));
 }
 

@@ -73,7 +73,7 @@ public:
     virtual const char *name() const = 0;
 
     //
-    // Bahavioural:
+    // Behavioral:
     //
 
     enum Display {

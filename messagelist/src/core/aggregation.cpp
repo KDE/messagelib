@@ -153,8 +153,8 @@ bool Aggregation::load(QDataStream &stream)
         return false;
     }
 
-    stream >> val; // Formely contained message sorting
-    stream >> val; // Formely contained message sort direction
+    stream >> val; // Formerly contained message sorting
+    stream >> val; // Formerly contained message sort direction
 
     stream >> val;
     mFillViewStrategy = (FillViewStrategy)val;

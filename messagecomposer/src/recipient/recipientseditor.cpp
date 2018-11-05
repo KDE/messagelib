@@ -103,7 +103,7 @@ RecipientsEditor::RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *p
     connect(this, &RecipientsEditor::lineAdded, this, &RecipientsEditor::slotLineAdded);
     connect(this, &RecipientsEditor::lineDeleted, this, &RecipientsEditor::slotLineDeleted);
 
-    addData(); // one defaut line
+    addData(); // one default line
 }
 
 RecipientsEditor::~RecipientsEditor()

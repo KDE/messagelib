@@ -37,7 +37,7 @@ namespace MessageComposer {
 class RichTextComposerNg;
 
 /** Controls signature (the footer thing, not the crypto thing) operations
- *  happening on a KMEditor triggerd by identity selection or menu actions.
+ *  happening on a KMEditor triggered by identity selection or menu actions.
  *  @since 4.5
  */
 class SignatureControllerPrivate;

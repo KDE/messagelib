@@ -136,7 +136,7 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
         }
     }
 
-    // We now try signature verification if necessarry.
+    // We now try signature verification if necessary.
     if (signTestNode) {
         if (isSigned) {
             qCDebug(MIMETREEPARSER_LOG) << "pkcs7 mime     ==      S/MIME TYPE: opaque signed data";

@@ -281,7 +281,7 @@ public:
     Item *mRootItem;
 
     /**
-     * The view we're attacched to. Shallow pointer (the View owns us).
+     * The view we're attached to. Shallow pointer (the View owns us).
      */
     View *mView;
 

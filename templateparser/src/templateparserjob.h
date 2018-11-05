@@ -354,7 +354,7 @@ private:
     bool isHtmlSignature() const;
 
     /**
-     * Does the necessary conversions like escaping charecters, changing "\n" to
+     * Does the necessary conversions like escaping characters, changing "\n" to
      * breakline tag before appending text to htmlBody.
      */
     static QString plainToHtml(const QString &body);

@@ -547,7 +547,7 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
         // Still not found? Stupid apple mail actually puts the attachments inside of the
         // multipart/alternative, which is wrong. Therefore we also have to look for multipart/mixed
         // here.
-        // Do this only when prefering HTML mail, though, since otherwise the attachments are hidden
+        // Do this only when preferring HTML mail, though, since otherwise the attachments are hidden
         // when displaying plain text.
         if (!dataHtml) {
             dataHtml = findTypeInDirectChilds(node, "multipart/mixed");
@@ -868,7 +868,7 @@ void SignedMessagePart::sigStatusToMetaData()
         }
         for (uint iMail = 0; iMail < key.numUserIDs(); ++iMail) {
             // The following if /should/ always result in TRUE but we
-            // won't trust implicitely the plugin that gave us these data.
+            // won't trust implicitly the plugin that gave us these data.
             if (key.userID(iMail).email()) {
                 QString email = QString::fromUtf8(key.userID(iMail).email());
                 // ### work around gpgme 0.3.QString text() const override;x / cryptplug bug where the

@@ -58,7 +58,7 @@ enum SpamError {
     error values indicate the following errors:
       noError                                               Spam Headers successfully parsed
       uninitializedStructUsed                               Unintialized struct used
-      errorExtractingAgentString                            Error extracing agent string
+      errorExtractingAgentString                            Error extracting agent string
       couldNotConverScoreToFloat                            Couldn't convert score to float
       couldNotConvertThresholdToFloatOrThresholdIsNegative  Couldn't convert threshold to float or threshold is negative
       couldNotFindTheScoreField                             Couldn't find the score field

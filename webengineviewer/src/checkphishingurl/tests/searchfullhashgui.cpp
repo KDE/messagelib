@@ -109,7 +109,7 @@ void SearchFullHashGui::slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::Url
         resultStr = QStringLiteral("Url MalWare");
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
-        resultStr = QStringLiteral("Url Unknow state");
+        resultStr = QStringLiteral("Url Unknown state");
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
         resultStr = QStringLiteral("Broken Network");

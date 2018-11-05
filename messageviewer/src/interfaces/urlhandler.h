@@ -77,7 +77,7 @@ public:
     /**
       * Called when hovering over a link.
       *
-      * @return a string to be shown in the status bar while hoverin
+      * @return a string to be shown in the status bar while hovering
       * over this link.
       */
     virtual QString statusBarMessage(const QUrl &url, MessageViewer::ViewerPrivate *w) const = 0;

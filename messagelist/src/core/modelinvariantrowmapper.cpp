@@ -210,7 +210,7 @@ ModelInvariantIndex *ModelInvariantRowMapperPrivate::modelIndexRowToModelInvaria
         //   if ( potentialPreviousModelIndexRow >= shift->mMinimumRowIndex )
         //     previousIndexRow = potentialPreviousModelIndexRow;
         //
-        // or by simplyfying...
+        // or by simplifying...
 
         int potentialPreviousModelIndexRow = previousIndexRow - shift->mShift;
         if (potentialPreviousModelIndexRow >= shift->mMinimumRowIndex) {

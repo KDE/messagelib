@@ -123,7 +123,7 @@ processed normally, the processMultipartXXX() functions call stdChildHandling() 
 should be handled normally. stdChildHandling() creates its own ObjectTreeParser, which is a clone
 of the current ObjectTreeParser, and processes the node. stdChildHandling() is not called for all
 children of the multipart node, for example processMultiPartAlternativeSubtype() only calls it on
-one of the children, as the other one doesn't need to be displayed. Similary,
+one of the children, as the other one doesn't need to be displayed. Similarly,
 processMultiPartSignedSubtype() doesn't call stdChildHandling() for the signature node, only for the
 signed node.
 
@@ -174,7 +174,7 @@ of the Viewer, which will cause parseObjectTree() to be called again.
 \par Async Crypto Operations
 
 The above case describes decryption the message in place. However, decryption and also verifying of
-the signature can take a long time, so synchronous decryption and verifing would cause the Viewer to
+the signature can take a long time, so synchronous decryption and verifying would cause the Viewer to
 block. Therefore it is possible to run these operations in async mode, see allowAsync().
 In the first run of the async mode, all the ObjectTreeParser does is starting the decrypt or the
 verify job, and informing the user that the operation is in progress with
@@ -289,7 +289,7 @@ public:
     /**
     * Similar to plainTextContent(), but returns the HTML source of the first text/html MIME part.
     *
-    * Not to be consfused with the HTML code that the message viewer widget displays, that HTML
+    * Not to be confused with the HTML code that the message viewer widget displays, that HTML
     * is written out by htmlWriter() and a totally different pair of shoes.
     */
     QString htmlContent() const;

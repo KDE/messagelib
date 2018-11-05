@@ -148,7 +148,7 @@ SpamScores SpamHeaderAnalyzer::getSpamScores(KMime::Message *message)
 
                 // Normalize the score. Anything below 0 means 0%, anything above
                 // threshold mean 100%. Values between 0 and threshold are mapped
-                // linearily to 0% - 100%.
+                // linearly to 0% - 100%.
                 if (score < 0.0) {
                     score = 0.0;
                 } else if (score > threshold) {

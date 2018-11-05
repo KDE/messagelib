@@ -25,7 +25,7 @@
 
 #include "MessageCore/StringUtil"
 
-// See the MessageList::ItemPrivate::insertChildItem() function below for an explaination of this macro.
+// See the MessageList::ItemPrivate::insertChildItem() function below for an explanation of this macro.
 #if __GNUC__ >= 3  //krazy:exclude=cpp
 #define GCC_DONT_INLINE_THIS __attribute__((noinline))
 #else
@@ -248,7 +248,7 @@ public:
     int mThisItemIndexGuess;                    ///< The guess for the index in the parent's child list
     Item::Type mType : 4;                       ///< The type of this item
     Item::InitialExpandStatus mInitialExpandStatus : 4; ///< The expand status we have to honor when we attach to the viewable root
-    bool mIsViewable : 1;                       ///< Is this item attacched to the viewable root ?
+    bool mIsViewable : 1;                       ///< Is this item attached to the viewable root ?
     bool mUseReceiver : 1;                      ///< senderOrReceiver() returns receiver rather than sender
 };
 
