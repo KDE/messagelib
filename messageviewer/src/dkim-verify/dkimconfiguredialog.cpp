@@ -16,52 +16,50 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#include "dkimmanagerkeydialog.h"
-#include "dkimmanagerkeywidget.h"
 
-#include <KLocalizedString>
-
+#include "dkimconfiguredialog.h"
+#include "dkimconfigurewidget.h"
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
+#include <KLocalizedString>
 #include <KConfigGroup>
 #include <KSharedConfig>
 
 using namespace MessageViewer;
-DKIMManagerKeyDialog::DKIMManagerKeyDialog(QWidget *parent)
+DKIMConfigureDialog::DKIMConfigureDialog(QWidget *parent)
     : QDialog(parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
 
-    mManagerWidget = new DKIMManagerKeyWidget(this);
-    mManagerWidget->setObjectName(QStringLiteral("managerWidget"));
-    mainLayout->addWidget(mManagerWidget);
+    mConfigureWidget = new DKIMConfigureWidget(this);
+    mConfigureWidget->setObjectName(QStringLiteral("mConfigureWidget"));
+    mainLayout->addWidget(mConfigureWidget);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QStringLiteral("buttonbox"));
-    connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMManagerKeyDialog::accept);
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMManagerKeyDialog::reject);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    buttonBox->setObjectName(QStringLiteral("buttonBox"));
     mainLayout->addWidget(buttonBox);
-    readConfig();
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMConfigureDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMConfigureDialog::reject);
 }
 
-DKIMManagerKeyDialog::~DKIMManagerKeyDialog()
+DKIMConfigureDialog::~DKIMConfigureDialog()
 {
-    writeConfig();
+
 }
 
-void DKIMManagerKeyDialog::readConfig()
+void DKIMConfigureDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "DKIMManagerKeyDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), "DKIMConfigureDialog");
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
     }
 }
 
-void DKIMManagerKeyDialog::writeConfig()
+void DKIMConfigureDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "DKIMManagerKeyDialog");
+    KConfigGroup group(KSharedConfig::openConfig(), "DKIMConfigureDialog");
     group.writeEntry("Size", size());
     group.sync();
 }

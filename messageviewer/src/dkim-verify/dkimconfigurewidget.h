@@ -17,43 +17,21 @@
    Boston, MA 02110-1301, USA.
 */
 
+#ifndef DKIMCONFIGUREWIDGET_H
+#define DKIMCONFIGUREWIDGET_H
 
-#ifndef DKIMINFO_H
-#define DKIMINFO_H
-
+#include <QWidget>
 #include "messageviewer_private_export.h"
-#include <QString>
+
 namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMInfo
+class MESSAGEVIEWER_TESTS_EXPORT DKIMConfigureWidget : public QWidget
 {
+    Q_OBJECT
 public:
-    DKIMInfo();
+    explicit DKIMConfigureWidget(QWidget *parent = nullptr);
+    ~DKIMConfigureWidget();
 
-    void parseDKIM();
-    Q_REQUIRED_RESULT QString version() const;
-    void setVersion(const QString &version);
-
-    Q_REQUIRED_RESULT QString hashingAlgorithm() const;
-    void setHashingAlgorithm(const QString &hashingAlgorithm);
-
-    Q_REQUIRED_RESULT QString domain() const;
-    void setDomain(const QString &domain);
-
-    Q_REQUIRED_RESULT QString selector() const;
-    void setSelector(const QString &selector);
-
-    Q_REQUIRED_RESULT QString bodyHash() const;
-    void setBodyHash(const QString &bodyHash);
-
-    Q_REQUIRED_RESULT bool isValid() const;
-
-private:
-    QString mVersion;
-    QString mHashingAlgorithm;
-    QString mDomain;
-    QString mSelector;
-    QString mBodyHash;
 };
 }
 
-#endif // DKIMINFO_H
+#endif // DKIMCONFIGUREWIDGET_H

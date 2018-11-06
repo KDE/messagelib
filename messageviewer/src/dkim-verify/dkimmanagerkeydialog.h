@@ -32,6 +32,8 @@ public:
     explicit DKIMManagerKeyDialog(QWidget *parent = nullptr);
     ~DKIMManagerKeyDialog();
 private:
+    void readConfig();
+    void writeConfig();
     DKIMManagerKeyWidget *mManagerWidget = nullptr;
 };
 }

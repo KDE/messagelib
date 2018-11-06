@@ -80,3 +80,10 @@ void DKIMInfo::setBodyHash(const QString &bodyHash)
 {
     mBodyHash = bodyHash;
 }
+
+bool DKIMInfo::isValid() const
+{
+    //TODO verify
+
+    return !mSelector.isEmpty() && !mDomain.isEmpty() && !mBodyHash.isEmpty() && !mHashingAlgorithm.isEmpty();
+}

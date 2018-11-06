@@ -17,24 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef DKIMMANAGERKEY_H
-#define DKIMMANAGERKEY_H
+#ifndef DKIMCONFIGUREWIDGETTEST_H
+#define DKIMCONFIGUREWIDGETTEST_H
 
 #include <QObject>
-#include "messageviewer_private_export.h"
-namespace MessageViewer {
-class MESSAGEVIEWER_TESTS_EXPORT DKIMManagerKey : public QObject
+
+class DKIMConfigureWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit DKIMManagerKey(QObject *parent = nullptr);
-    ~DKIMManagerKey() override;
-
-    static DKIMManagerKey *self();
-
-    void loadKeys();
-    void saveKeys();
+    explicit DKIMConfigureWidgetTest(QObject *parent = nullptr);
+    ~DKIMConfigureWidgetTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
-}
 
-#endif // DKIMMANAGERKEY_H
+#endif // DKIMCONFIGUREWIDGETTEST_H

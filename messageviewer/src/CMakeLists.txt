@@ -53,6 +53,8 @@ if (DKIM_CHECKER_BUILD)
         dkim-verify/dkimmanagerkeywidget.cpp
         dkim-verify/dkimmanagerkeydialog.cpp
         dkim-verify/dkimdownloadkeyjob.cpp
+        dkim-verify/dkimconfiguredialog.cpp
+        dkim-verify/dkimconfigurewidget.cpp
         )
 endif()
 

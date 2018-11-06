@@ -17,38 +17,33 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "dkimmanagerkeydialogtest.h"
-#include "dkim-verify/dkimmanagerkeydialog.h"
-#include "dkim-verify/dkimmanagerkeywidget.h"
-#include <QVBoxLayout>
-#include <QDialogButtonBox>
+#include "dkimconfiguredialogtest.h"
+#include "dkim-verify/dkimconfiguredialog.h"
+#include "dkim-verify/dkimconfigurewidget.h"
 #include <QTest>
 #include <QStandardPaths>
+#include <QVBoxLayout>
+#include <QDialogButtonBox>
 
-QTEST_MAIN(DKIMManagerKeyDialogTest)
+QTEST_MAIN(DKIMConfigureDialogTest)
 
-DKIMManagerKeyDialogTest::DKIMManagerKeyDialogTest(QObject *parent)
+DKIMConfigureDialogTest::DKIMConfigureDialogTest(QObject *parent)
     : QObject(parent)
 {
     QStandardPaths::setTestModeEnabled(true);
 }
 
-DKIMManagerKeyDialogTest::~DKIMManagerKeyDialogTest()
+void DKIMConfigureDialogTest::shouldHaveDefaultValue()
 {
-
-}
-
-void DKIMManagerKeyDialogTest::shouldHaveDefaultValue()
-{
-    MessageViewer::DKIMManagerKeyDialog dlg;
+    MessageViewer::DKIMConfigureDialog dlg;
 
     QVBoxLayout *mainLayout = dlg.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
 
-    MessageViewer::DKIMManagerKeyWidget *w = dlg.findChild<MessageViewer::DKIMManagerKeyWidget *>(QStringLiteral("managerWidget"));
-    QVERIFY(w);
+    MessageViewer::DKIMConfigureWidget *mConfigureWidget = dlg.findChild<MessageViewer::DKIMConfigureWidget *>(QStringLiteral("mConfigureWidget"));
+    QVERIFY(mConfigureWidget);
 
-    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
     QVERIFY(buttonBox);
-    QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Close});
+    QCOMPARE(buttonBox->standardButtons(), {QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 }

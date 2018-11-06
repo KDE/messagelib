@@ -26,7 +26,23 @@ DKIMManagerKey::DKIMManagerKey(QObject *parent)
 
 }
 
-MessageViewer::DKIMManagerKey::~DKIMManagerKey()
+DKIMManagerKey::~DKIMManagerKey()
 {
 
+}
+
+DKIMManagerKey *DKIMManagerKey::self()
+{
+    static DKIMManagerKey s_self;
+    return &s_self;
+}
+
+void DKIMManagerKey::loadKeys()
+{
+    //TODO
+}
+
+void DKIMManagerKey::saveKeys()
+{
+    //TODO
 }
