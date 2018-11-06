@@ -19,6 +19,7 @@
 
 
 #include "dkimconfiguretabwidgettest.h"
+#include "dkim-verify/dkimconfiguretabwidget.h"
 #include <QTest>
 
 QTEST_MAIN(DKIMConfigureTabWidgetTest)
@@ -27,4 +28,9 @@ DKIMConfigureTabWidgetTest::DKIMConfigureTabWidgetTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void DKIMConfigureTabWidgetTest::shouldHaveDefaultValue()
+{
+    //TODO
 }

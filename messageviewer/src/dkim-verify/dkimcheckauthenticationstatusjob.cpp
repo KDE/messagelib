@@ -17,20 +17,21 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "dkimcheckauthenticationstatusjob.h"
+using namespace MessageViewer;
 
-#ifndef DKIMCONFIGURETABWIDGETTEST_H
-#define DKIMCONFIGURETABWIDGETTEST_H
-
-#include <QObject>
-
-class DKIMConfigureTabWidgetTest : public QObject
+DKIMCheckAuthenticationStatusJob::DKIMCheckAuthenticationStatusJob(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
-public:
-    explicit DKIMConfigureTabWidgetTest(QObject *parent = nullptr);
-    ~DKIMConfigureTabWidgetTest() = default;
-private Q_SLOTS:
-    void shouldHaveDefaultValue();
-};
 
-#endif // DKIMCONFIGURETABWIDGETTEST_H
+}
+
+DKIMCheckAuthenticationStatusJob::~DKIMCheckAuthenticationStatusJob()
+{
+
+}
+
+void DKIMCheckAuthenticationStatusJob::start()
+{
+
+}

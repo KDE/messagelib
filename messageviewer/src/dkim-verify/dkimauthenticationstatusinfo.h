@@ -17,20 +17,16 @@
    Boston, MA 02110-1301, USA.
 */
 
+#ifndef DKIMAUTHENTICATIONSTATUSINFO_H
+#define DKIMAUTHENTICATIONSTATUSINFO_H
 
-#ifndef DKIMCONFIGURETABWIDGETTEST_H
-#define DKIMCONFIGURETABWIDGETTEST_H
-
-#include <QObject>
-
-class DKIMConfigureTabWidgetTest : public QObject
+#include "messageviewer_private_export.h"
+namespace MessageViewer {
+class MESSAGEVIEWER_TESTS_EXPORT DKIMAuthenticationStatusInfo
 {
-    Q_OBJECT
 public:
-    explicit DKIMConfigureTabWidgetTest(QObject *parent = nullptr);
-    ~DKIMConfigureTabWidgetTest() = default;
-private Q_SLOTS:
-    void shouldHaveDefaultValue();
+    DKIMAuthenticationStatusInfo();
 };
+}
 
-#endif // DKIMCONFIGURETABWIDGETTEST_H
+#endif // DKIMAUTHENTICATIONSTATUSINFO_H

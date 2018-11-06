@@ -17,20 +17,13 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "dkimauthenticationstatusinfotest.h"
+#include <QTest>
 
-#ifndef DKIMCONFIGURETABWIDGETTEST_H
-#define DKIMCONFIGURETABWIDGETTEST_H
+QTEST_GUILESS_MAIN(DKIMAuthenticationStatusInfoTest)
 
-#include <QObject>
-
-class DKIMConfigureTabWidgetTest : public QObject
+DKIMAuthenticationStatusInfoTest::DKIMAuthenticationStatusInfoTest(QObject *parent)
+    : QObject(parent)
 {
-    Q_OBJECT
-public:
-    explicit DKIMConfigureTabWidgetTest(QObject *parent = nullptr);
-    ~DKIMConfigureTabWidgetTest() = default;
-private Q_SLOTS:
-    void shouldHaveDefaultValue();
-};
 
-#endif // DKIMCONFIGURETABWIDGETTEST_H
+}

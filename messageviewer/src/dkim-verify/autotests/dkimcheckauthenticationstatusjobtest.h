@@ -17,20 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
-
-#ifndef DKIMCONFIGURETABWIDGETTEST_H
-#define DKIMCONFIGURETABWIDGETTEST_H
+#ifndef DKIMCHECKAUTHENTICATIONSTATUSJOBTEST_H
+#define DKIMCHECKAUTHENTICATIONSTATUSJOBTEST_H
 
 #include <QObject>
 
-class DKIMConfigureTabWidgetTest : public QObject
+class DKIMCheckAuthenticationStatusJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit DKIMConfigureTabWidgetTest(QObject *parent = nullptr);
-    ~DKIMConfigureTabWidgetTest() = default;
-private Q_SLOTS:
-    void shouldHaveDefaultValue();
+    explicit DKIMCheckAuthenticationStatusJobTest(QObject *parent = nullptr);
+    ~DKIMCheckAuthenticationStatusJobTest() = default;
 };
 
-#endif // DKIMCONFIGURETABWIDGETTEST_H
+#endif // DKIMCHECKAUTHENTICATIONSTATUSJOBTEST_H
