@@ -30,7 +30,7 @@ BlockMailTrackingUrlInterceptor::BlockMailTrackingUrlInterceptor(QObject *parent
     initializeList();
 }
 
-MessageViewer::BlockMailTrackingUrlInterceptor::~BlockMailTrackingUrlInterceptor()
+BlockMailTrackingUrlInterceptor::~BlockMailTrackingUrlInterceptor()
 {
 }
 
