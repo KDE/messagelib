@@ -55,6 +55,7 @@ if (DKIM_CHECKER_BUILD)
         dkim-verify/dkimdownloadkeyjob.cpp
         dkim-verify/dkimconfiguredialog.cpp
         dkim-verify/dkimconfigurewidget.cpp
+        dkim-verify/dkimchecksignaturejob.cpp
         )
 endif()
 
