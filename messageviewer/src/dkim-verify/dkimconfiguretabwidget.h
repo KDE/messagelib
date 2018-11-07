@@ -23,14 +23,16 @@
 #include "messageviewer_private_export.h"
 
 #include <QWidget>
-
+class QTabWidget;
 namespace MessageViewer {
-class DKIMConfigureTabWidget : public QWidget
+class MESSAGEVIEWER_TESTS_EXPORT DKIMConfigureTabWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit DKIMConfigureTabWidget(QWidget *parent = nullptr);
     ~DKIMConfigureTabWidget();
+private:
+    QTabWidget *mTabWidget = nullptr;
 };
 }
 
