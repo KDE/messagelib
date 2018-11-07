@@ -18,6 +18,9 @@
 */
 
 #include "dkiminfo.h"
+#include "messageviewer_debug.h"
+
+#include <QStringList>
 
 using namespace MessageViewer;
 
@@ -26,8 +29,30 @@ DKIMInfo::DKIMInfo()
 
 }
 
-void DKIMInfo::parseDKIM()
+void DKIMInfo::parseDKIM(const QString &header)
 {
+    if (header.isEmpty()) {
+        //TODO error ?
+        return;
+    }
+    const QStringList items = header.split(QLatin1Char(';'));
+    for (int i = 0; i < items.count(); ++i) {
+        const QString elem = items.at(i).trimmed();
+        if (elem.startsWith(QStringLiteral("v="))) {
+            //Version
+        } else if (elem.startsWith(QStringLiteral("a="))) {
+        } else if (elem.startsWith(QStringLiteral("c="))) {
+        } else if (elem.startsWith(QStringLiteral("i="))) {
+        } else if (elem.startsWith(QStringLiteral("q="))) {
+        } else if (elem.startsWith(QStringLiteral("d="))) {
+        } else if (elem.startsWith(QStringLiteral("s="))) {
+        } else if (elem.startsWith(QStringLiteral("b="))) {
+        } else if (elem.startsWith(QStringLiteral("h="))) {
+        } else if (elem.startsWith(QStringLiteral("hb="))) {
+        } else {
+            qCWarning(MESSAGEVIEWER_LOG) << " Unknown elemenet type" << elem;
+        }
+    }
     //TODO
 }
 

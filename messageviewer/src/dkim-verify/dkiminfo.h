@@ -29,7 +29,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMInfo
 public:
     DKIMInfo();
 
-    void parseDKIM();
+    void parseDKIM(const QString &header);
     Q_REQUIRED_RESULT QString version() const;
     void setVersion(const QString &version);
 
