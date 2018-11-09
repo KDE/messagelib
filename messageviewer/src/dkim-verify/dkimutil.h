@@ -17,25 +17,15 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "dkimconfiguretabwidget.h"
-#include <QVBoxLayout>
+#ifndef DKIMUTIL_H
+#define DKIMUTIL_H
 
-using namespace MessageViewer;
-DKIMConfigureTabWidget::DKIMConfigureTabWidget(QWidget *parent)
-    : QWidget(parent)
+namespace MessageViewer {
+class DKIMUtil
 {
-    QHBoxLayout *mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
-    mainLayout->setMargin(0);
-
+public:
+    DKIMUtil();
+};
 }
 
-DKIMConfigureTabWidget::~DKIMConfigureTabWidget()
-{
-
-}
-
-void DKIMConfigureTabWidget::init()
-{
-    //TODO
-}
+#endif // DKIMUTIL_H

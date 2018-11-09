@@ -16,26 +16,19 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
+#ifndef DKIMCONFIGURETABTEST_H
+#define DKIMCONFIGURETABTEST_H
 
-#include "dkimconfiguretabwidget.h"
-#include <QVBoxLayout>
+#include <QObject>
 
-using namespace MessageViewer;
-DKIMConfigureTabWidget::DKIMConfigureTabWidget(QWidget *parent)
-    : QWidget(parent)
+class DKIMConfigureTabTest : public QObject
 {
-    QHBoxLayout *mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
-    mainLayout->setMargin(0);
+    Q_OBJECT
+public:
+    explicit DKIMConfigureTabTest(QObject *parent = nullptr);
+    ~DKIMConfigureTabTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
+};
 
-}
-
-DKIMConfigureTabWidget::~DKIMConfigureTabWidget()
-{
-
-}
-
-void DKIMConfigureTabWidget::init()
-{
-    //TODO
-}
+#endif // DKIMCONFIGURETABTEST_H

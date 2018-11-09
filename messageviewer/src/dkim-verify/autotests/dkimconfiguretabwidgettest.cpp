@@ -40,7 +40,4 @@ void DKIMConfigureTabWidgetTest::shouldHaveDefaultValue()
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->margin(), 0);
 
-
-    QTabWidget *mTabWidget = w.findChild<QTabWidget *>(QStringLiteral("tabwidget"));
-    QVERIFY(mTabWidget);
 }

@@ -29,3 +29,8 @@ DKIMCheckSignatureJob::~DKIMCheckSignatureJob()
 {
 
 }
+
+void DKIMCheckSignatureJob::start()
+{
+    //TODO
+}

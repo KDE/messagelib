@@ -17,25 +17,27 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "dkimconfiguretabwidget.h"
-#include <QVBoxLayout>
+#include "dkimconfiguretabtest.h"
+#include "dkim-verify/dkimconfiguretab.h"
+#include <QHBoxLayout>
+#include <QTabWidget>
+#include <QTest>
+QTEST_MAIN(DKIMConfigureTabTest)
 
-using namespace MessageViewer;
-DKIMConfigureTabWidget::DKIMConfigureTabWidget(QWidget *parent)
-    : QWidget(parent)
-{
-    QHBoxLayout *mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
-    mainLayout->setMargin(0);
-
-}
-
-DKIMConfigureTabWidget::~DKIMConfigureTabWidget()
+DKIMConfigureTabTest::DKIMConfigureTabTest(QObject *parent)
+    : QObject(parent)
 {
 
 }
 
-void DKIMConfigureTabWidget::init()
+void DKIMConfigureTabTest::shouldHaveDefaultValue()
 {
-    //TODO
+    MessageViewer::DKIMConfigureTab w;
+
+    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout*>(QStringLiteral("mainlayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->margin(), 0);
+
+    QTabWidget *mTabWidget = w.findChild<QTabWidget *>(QStringLiteral("tabwidget"));
+    QVERIFY(mTabWidget);
 }

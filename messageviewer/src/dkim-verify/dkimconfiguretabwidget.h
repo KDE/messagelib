@@ -32,7 +32,7 @@ public:
     explicit DKIMConfigureTabWidget(QWidget *parent = nullptr);
     ~DKIMConfigureTabWidget();
 private:
-    QTabWidget *mTabWidget = nullptr;
+    void init();
 };
 }
 

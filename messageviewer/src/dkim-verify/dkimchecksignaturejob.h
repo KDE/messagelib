@@ -29,6 +29,7 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMCheckSignatureJob : public QObject
 public:
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
     ~DKIMCheckSignatureJob();
+    void start();
 };
 }
 
