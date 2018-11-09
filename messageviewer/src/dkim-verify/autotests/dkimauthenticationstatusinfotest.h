@@ -28,6 +28,9 @@ class DKIMAuthenticationStatusInfoTest : public QObject
 public:
     explicit DKIMAuthenticationStatusInfoTest(QObject *parent = nullptr);
     ~DKIMAuthenticationStatusInfoTest() = default;
+
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // DKIMAUTHENTICATIONSTATUSINFOTEST_H

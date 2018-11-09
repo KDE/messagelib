@@ -21,11 +21,19 @@
 #define DKIMAUTHENTICATIONSTATUSINFO_H
 
 #include "messageviewer_private_export.h"
+#include <QString>
+
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMAuthenticationStatusInfo
 {
 public:
     DKIMAuthenticationStatusInfo();
+
+    Q_REQUIRED_RESULT QString authservId() const;
+    void setAuthservId(const QString &authservId);
+
+private:
+    QString mAuthservId;
 };
 }
 

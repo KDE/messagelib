@@ -24,3 +24,13 @@ DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
 {
 
 }
+
+QString DKIMAuthenticationStatusInfo::authservId() const
+{
+    return mAuthservId;
+}
+
+void DKIMAuthenticationStatusInfo::setAuthservId(const QString &authservId)
+{
+    mAuthservId = authservId;
+}

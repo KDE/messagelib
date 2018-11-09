@@ -18,6 +18,7 @@
 */
 
 #include "dkimauthenticationstatusinfotest.h"
+#include "dkim-verify/dkimauthenticationstatusinfo.h"
 #include <QTest>
 
 QTEST_GUILESS_MAIN(DKIMAuthenticationStatusInfoTest)
@@ -26,4 +27,10 @@ DKIMAuthenticationStatusInfoTest::DKIMAuthenticationStatusInfoTest(QObject *pare
     : QObject(parent)
 {
 
+}
+
+void DKIMAuthenticationStatusInfoTest::shouldHaveDefaultValue()
+{
+    MessageViewer::DKIMAuthenticationStatusInfo info;
+    QVERIFY(info.authservId().isEmpty());
 }
