@@ -24,6 +24,7 @@
 #include "messageviewer_private_export.h"
 
 namespace MessageViewer {
+class DKIMConfigureTab;
 class MESSAGEVIEWER_TESTS_EXPORT DKIMConfigureWidget : public QWidget
 {
     Q_OBJECT
@@ -34,6 +35,8 @@ public:
     void loadSettings();
     void saveSettings();
     void resetSettings();
+private:
+    DKIMConfigureTab *mTabWidget = nullptr;
 };
 }
 

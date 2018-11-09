@@ -18,6 +18,7 @@
 */
 
 #include "dkimconfiguretab.h"
+#include "dkimconfiguretabwidget.h"
 
 #include <KSharedConfig>
 #include <QHBoxLayout>
@@ -44,29 +45,29 @@ DKIMConfigureTab::~DKIMConfigureTab()
 
 void DKIMConfigureTab::loadSettings()
 {
-//    for (AutomaticAddContactsTabWidget *w : qAsConst(mListTabWidget)) {
-//        w->loadSettings();
-//    }
+    for (DKIMConfigureTabWidget *w : qAsConst(mListTabWidget)) {
+        w->loadSettings();
+    }
 }
 
 void DKIMConfigureTab::saveSettings()
 {
-//    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-//    // first, delete all filter groups:
-//    const QStringList filterGroups = config->groupList().filter(QRegularExpression(QStringLiteral("Automatic Add Contacts \\d+")));
-//    for (const QString &group : filterGroups) {
-//        config->deleteGroup(group);
-//    }
-//    for (AutomaticAddContactsTabWidget *w : qAsConst(mListTabWidget)) {
-//        w->saveSettings();
-//    }
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    // first, delete all filter groups:
+    const QStringList filterGroups = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM \\d+")));
+    for (const QString &group : filterGroups) {
+        config->deleteGroup(group);
+    }
+    for (DKIMConfigureTabWidget *w : qAsConst(mListTabWidget)) {
+        w->saveSettings();
+    }
 }
 
 void DKIMConfigureTab::resetSettings()
 {
-//    for (AutomaticAddContactsTabWidget *w : qAsConst(mListTabWidget)) {
-//        w->resetSettings();
-    //    }
+    for (DKIMConfigureTabWidget *w : qAsConst(mListTabWidget)) {
+        w->resetSettings();
+    }
 }
 
 void DKIMConfigureTab::init()

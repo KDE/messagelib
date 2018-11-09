@@ -18,6 +18,7 @@
 */
 
 #include "dkimconfigurewidget.h"
+#include "dkimconfiguretab.h"
 #include <QWidget>
 #include <QVBoxLayout>
 
@@ -30,6 +31,10 @@ DKIMConfigureWidget::DKIMConfigureWidget(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setMargin(0);
+
+    mTabWidget = new DKIMConfigureTab(this);
+    mTabWidget->setObjectName(QStringLiteral("tabwidget"));
+    mainLayout->addWidget(mTabWidget);
 }
 
 DKIMConfigureWidget::~DKIMConfigureWidget()
@@ -39,15 +44,15 @@ DKIMConfigureWidget::~DKIMConfigureWidget()
 
 void DKIMConfigureWidget::loadSettings()
 {
-
+    mTabWidget->loadSettings();
 }
 
 void DKIMConfigureWidget::saveSettings()
 {
-
+    mTabWidget->saveSettings();
 }
 
 void DKIMConfigureWidget::resetSettings()
 {
-
+    mTabWidget->resetSettings();
 }

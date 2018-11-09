@@ -19,6 +19,7 @@
 
 #include "dkimconfigurewidgettest.h"
 #include "dkim-verify/dkimconfigurewidget.h"
+#include "dkim-verify/dkimconfiguretab.h"
 #include <QTest>
 #include <QVBoxLayout>
 
@@ -36,4 +37,8 @@ void DKIMConfigureWidgetTest::shouldHaveDefaultValue()
     QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->margin(), 0);
+
+
+    MessageViewer::DKIMConfigureTab *mTabWidget = w.findChild<MessageViewer::DKIMConfigureTab *>(QStringLiteral("tabwidget"));
+    QVERIFY(mTabWidget);
 }
