@@ -21,6 +21,7 @@
 #include "dkimconfigurewidget.h"
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <KLocalizedString>
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -40,15 +41,27 @@ DKIMConfigureDialog::DKIMConfigureDialog(QWidget *parent)
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     mainLayout->addWidget(buttonBox);
-    //TODO save/load.
-    connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMConfigureDialog::accept);
+
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMConfigureDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMConfigureDialog::reject);
+    connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &DKIMConfigureDialog::slotReset);
     mConfigureWidget->loadSettings();
 }
 
 DKIMConfigureDialog::~DKIMConfigureDialog()
 {
 
+}
+
+void DKIMConfigureDialog::slotAccepted()
+{
+    mConfigureWidget->saveSettings();
+    accept();
+}
+
+void DKIMConfigureDialog::slotReset()
+{
+    mConfigureWidget->resetSettings();
 }
 
 void DKIMConfigureDialog::readConfig()

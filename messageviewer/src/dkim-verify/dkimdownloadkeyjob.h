@@ -30,6 +30,9 @@ public:
     ~DKIMDownloadKeyJob();
 
     void start();
+Q_SIGNALS:
+    void success();
+    void error(const QString &err);
 };
 }
 

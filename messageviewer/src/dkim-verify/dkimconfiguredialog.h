@@ -33,7 +33,9 @@ public:
     ~DKIMConfigureDialog();
 
 private:
+    void slotReset();
     void readConfig();
+    void slotAccepted();
     void writeConfig();
     DKIMConfigureWidget *mConfigureWidget = nullptr;
 };
