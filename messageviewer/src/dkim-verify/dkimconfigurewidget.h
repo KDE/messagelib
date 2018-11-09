@@ -31,6 +31,9 @@ public:
     explicit DKIMConfigureWidget(QWidget *parent = nullptr);
     ~DKIMConfigureWidget();
 
+    void loadSettings();
+    void saveSettings();
+    void resetSettings();
 };
 }
 

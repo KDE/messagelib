@@ -19,7 +19,9 @@
 
 #include "dkimconfiguretab.h"
 
+#include <KSharedConfig>
 #include <QHBoxLayout>
+#include <QRegularExpression>
 #include <QTabWidget>
 
 using namespace MessageViewer;
@@ -38,4 +40,36 @@ DKIMConfigureTab::DKIMConfigureTab(QWidget *parent)
 DKIMConfigureTab::~DKIMConfigureTab()
 {
 
+}
+
+void DKIMConfigureTab::loadSettings()
+{
+//    for (AutomaticAddContactsTabWidget *w : qAsConst(mListTabWidget)) {
+//        w->loadSettings();
+//    }
+}
+
+void DKIMConfigureTab::saveSettings()
+{
+//    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+//    // first, delete all filter groups:
+//    const QStringList filterGroups = config->groupList().filter(QRegularExpression(QStringLiteral("Automatic Add Contacts \\d+")));
+//    for (const QString &group : filterGroups) {
+//        config->deleteGroup(group);
+//    }
+//    for (AutomaticAddContactsTabWidget *w : qAsConst(mListTabWidget)) {
+//        w->saveSettings();
+//    }
+}
+
+void DKIMConfigureTab::resetSettings()
+{
+//    for (AutomaticAddContactsTabWidget *w : qAsConst(mListTabWidget)) {
+//        w->resetSettings();
+    //    }
+}
+
+void DKIMConfigureTab::init()
+{
+    //TODO
 }

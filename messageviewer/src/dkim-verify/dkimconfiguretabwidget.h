@@ -31,6 +31,10 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMConfigureTabWidget : public QWidget
 public:
     explicit DKIMConfigureTabWidget(QWidget *parent = nullptr);
     ~DKIMConfigureTabWidget();
+
+    void loadSettings();
+    void saveSettings();
+    void resetSettings();
 private:
     void init();
 };

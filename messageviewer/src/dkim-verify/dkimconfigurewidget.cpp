@@ -36,3 +36,18 @@ DKIMConfigureWidget::~DKIMConfigureWidget()
 {
 
 }
+
+void DKIMConfigureWidget::loadSettings()
+{
+
+}
+
+void DKIMConfigureWidget::saveSettings()
+{
+
+}
+
+void DKIMConfigureWidget::resetSettings()
+{
+
+}

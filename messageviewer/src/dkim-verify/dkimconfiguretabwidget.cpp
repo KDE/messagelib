@@ -35,6 +35,21 @@ DKIMConfigureTabWidget::~DKIMConfigureTabWidget()
 
 }
 
+void DKIMConfigureTabWidget::loadSettings()
+{
+
+}
+
+void DKIMConfigureTabWidget::saveSettings()
+{
+
+}
+
+void DKIMConfigureTabWidget::resetSettings()
+{
+
+}
+
 void DKIMConfigureTabWidget::init()
 {
     //TODO

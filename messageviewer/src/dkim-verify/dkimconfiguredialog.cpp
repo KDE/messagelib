@@ -36,11 +36,14 @@ DKIMConfigureDialog::DKIMConfigureDialog(QWidget *parent)
     mConfigureWidget->setObjectName(QStringLiteral("mConfigureWidget"));
     mainLayout->addWidget(mConfigureWidget);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    //TODO reset to default ???
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     mainLayout->addWidget(buttonBox);
+    //TODO save/load.
     connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMConfigureDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMConfigureDialog::reject);
+    mConfigureWidget->loadSettings();
 }
 
 DKIMConfigureDialog::~DKIMConfigureDialog()
