@@ -37,7 +37,6 @@ DKIMConfigureDialog::DKIMConfigureDialog(QWidget *parent)
     mConfigureWidget->setObjectName(QStringLiteral("mConfigureWidget"));
     mainLayout->addWidget(mConfigureWidget);
 
-    //TODO reset to default ???
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
     buttonBox->setObjectName(QStringLiteral("buttonBox"));
     mainLayout->addWidget(buttonBox);
