@@ -30,6 +30,7 @@ public:
     explicit DKIMManagerKeyWidget(QWidget *parent = nullptr);
     ~DKIMManagerKeyWidget();
 
+    //TODO make it private ?
     void loadKeys();
     void saveKeys();
 private:
