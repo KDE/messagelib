@@ -18,10 +18,26 @@
 */
 
 #include "dkimmanagerkeywidgettest.h"
+#include "dkim-verify/dkimmanagerkeywidget.h"
 #include <QTest>
+#include <QTreeWidget>
+#include <QVBoxLayout>
 QTEST_MAIN(DKIMManagerKeyWidgetTest)
 DKIMManagerKeyWidgetTest::DKIMManagerKeyWidgetTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void DKIMManagerKeyWidgetTest::shouldHaveDefaultValue()
+{
+    MessageViewer::DKIMManagerKeyWidget w;
+
+    QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->margin(), 0);
+
+    QTreeWidget *mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
+    QVERIFY(mTreeWidget);
+    //TODO verify that it's empty
 }
