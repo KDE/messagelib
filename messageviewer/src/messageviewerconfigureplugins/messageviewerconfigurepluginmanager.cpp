@@ -121,7 +121,7 @@ void MessageViewerConfigurePluginManagerPrivate::initializePluginList()
                 continue;
             }
             const QVariant p
-                = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Header-Order")).toVariant();
+                = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Configure-Order")).toVariant();
             int order = -1;
             if (p.isValid()) {
                 order = p.toInt();
