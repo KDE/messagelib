@@ -18,8 +18,10 @@
 */
 
 #include "dkimmanagerkeywidget.h"
+#include "dkimmanagerkey.h"
 
 #include <KLocalizedString>
+#include <QTreeWidget>
 #include <QVBoxLayout>
 
 using namespace MessageViewer;
@@ -29,9 +31,23 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setMargin(0);
+
+    mTreeWidget = new QTreeWidget(this);
+    mTreeWidget->setObjectName(QStringLiteral("treewidget"));
+    mainLayout->addWidget(mTreeWidget);
 }
 
 DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
 {
 
+}
+
+void DKIMManagerKeyWidget::loadKeys()
+{
+    //TODO
+}
+
+void DKIMManagerKeyWidget::saveKeys()
+{
+    //TODO
 }

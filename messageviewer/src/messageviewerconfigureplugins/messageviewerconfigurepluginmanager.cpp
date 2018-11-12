@@ -77,12 +77,12 @@ QVector<PimCommon::PluginUtilData> MessageViewerConfigurePluginManagerPrivate::p
 
 QString MessageViewerConfigurePluginManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("HeaderStylePlugins");
+    return QStringLiteral("MessageViewerConfigurePlugins");
 }
 
 QString MessageViewerConfigurePluginManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("PluginHeaderStyle");
+    return QStringLiteral("MessageViewerConfigurePlugin");
 }
 
 void MessageViewerConfigurePluginManagerPrivate::initializePluginList()
@@ -90,7 +90,7 @@ void MessageViewerConfigurePluginManagerPrivate::initializePluginList()
     const QVector<KPluginMetaData> plugins
         = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](
                                          const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QLatin1String("MessageViewerHeaderStyle/Plugin"));
+        return md.serviceTypes().contains(QLatin1String("MessageViewerConfigurePlugin/Plugin"));
     });
 
     QVectorIterator<KPluginMetaData> i(plugins);

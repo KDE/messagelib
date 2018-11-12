@@ -30,6 +30,8 @@ public:
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
     ~DKIMCheckSignatureJob();
     void start();
+
+    bool canStart() const;
 };
 }
 

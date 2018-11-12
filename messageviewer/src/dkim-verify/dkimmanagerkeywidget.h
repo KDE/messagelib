@@ -21,6 +21,7 @@
 
 #include <QWidget>
 #include "messageviewer_private_export.h"
+class QTreeWidget;
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMManagerKeyWidget : public QWidget
 {
@@ -28,6 +29,11 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMManagerKeyWidget : public QWidget
 public:
     explicit DKIMManagerKeyWidget(QWidget *parent = nullptr);
     ~DKIMManagerKeyWidget();
+
+    void loadKeys();
+    void saveKeys();
+private:
+    QTreeWidget *mTreeWidget = nullptr;
 };
 }
 

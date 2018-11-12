@@ -34,3 +34,9 @@ void DKIMCheckSignatureJob::start()
 {
     //TODO
 }
+
+bool DKIMCheckSignatureJob::canStart() const
+{
+    //TODO
+    return false;
+}

@@ -21,7 +21,7 @@
 #include "messageviewer_debug.h"
 
 #include <QStringList>
-
+#include "messageviewer_debug.h"
 using namespace MessageViewer;
 
 DKIMInfo::DKIMInfo()
@@ -32,6 +32,7 @@ DKIMInfo::DKIMInfo()
 void DKIMInfo::parseDKIM(const QString &header)
 {
     if (header.isEmpty()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Error: trying to parse empty header";
         //TODO error ?
         return;
     }
@@ -39,7 +40,7 @@ void DKIMInfo::parseDKIM(const QString &header)
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QStringLiteral("v="))) {
-            //Version
+            mVersion = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QStringLiteral("a="))) {
         } else if (elem.startsWith(QStringLiteral("c="))) {
         } else if (elem.startsWith(QStringLiteral("i="))) {

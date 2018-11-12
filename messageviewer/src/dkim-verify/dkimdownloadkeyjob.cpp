@@ -18,6 +18,7 @@
 */
 
 #include "dkimdownloadkeyjob.h"
+#include "messageviewer_debug.h"
 using namespace MessageViewer;
 DKIMDownloadKeyJob::DKIMDownloadKeyJob(QObject *parent)
     : QObject(parent)
@@ -32,5 +33,16 @@ DKIMDownloadKeyJob::~DKIMDownloadKeyJob()
 
 void DKIMDownloadKeyJob::start()
 {
+    if (!canStart()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start download public keys";
+        deleteLater();
+        return;
+    }
     //TODO
+}
+
+bool DKIMDownloadKeyJob::canStart() const
+{
+    //TODO
+    return false;
 }
