@@ -18,6 +18,7 @@
 */
 
 #include "dkimcheckauthenticationstatusjob.h"
+#include "messageviewer_debug.h"
 using namespace MessageViewer;
 
 DKIMCheckAuthenticationStatusJob::DKIMCheckAuthenticationStatusJob(QObject *parent)
@@ -33,5 +34,15 @@ DKIMCheckAuthenticationStatusJob::~DKIMCheckAuthenticationStatusJob()
 
 void DKIMCheckAuthenticationStatusJob::start()
 {
+    if (!canStart()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start job";
+        deleteLater();
+        return;
+    }
+}
 
+bool DKIMCheckAuthenticationStatusJob::canStart() const
+{
+    //TODO
+    return false;
 }

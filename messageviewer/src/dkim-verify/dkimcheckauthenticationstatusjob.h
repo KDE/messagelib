@@ -31,6 +31,8 @@ public:
     ~DKIMCheckAuthenticationStatusJob();
 
     void start();
+
+    bool canStart() const;
 };
 }
 
