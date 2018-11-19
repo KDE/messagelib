@@ -24,7 +24,7 @@
 #include "messageviewer_export.h"
 #include <PimCommon/PluginUtil>
 namespace MessageViewer {
-class ConfigureSettingsPlugin;
+class MessageViewerConfigureSettingsPlugin;
 class MessageViewerConfigureSettingsPluginManagerPrivate;
 class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginManager : public QObject
 {
@@ -35,7 +35,7 @@ public:
     explicit MessageViewerConfigureSettingsPluginManager(QObject *parent = nullptr);
     ~MessageViewerConfigureSettingsPluginManager();
 
-    Q_REQUIRED_RESULT QVector<MessageViewer::ConfigureSettingsPlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
     Q_REQUIRED_RESULT QStringList pluginListName() const;
 
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
