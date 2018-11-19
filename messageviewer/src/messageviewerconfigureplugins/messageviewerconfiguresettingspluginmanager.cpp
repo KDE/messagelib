@@ -238,7 +238,3 @@ QVector<PimCommon::PluginUtilData> MessageViewerConfigureSettingsPluginManager::
     return d->pluginDataList();
 }
 
-MessageViewer::MessageViewerConfigureSettingsPlugin *MessageViewerConfigureSettingsPluginManager::pluginFromIdentifier(const QString &id)
-{
-    return d->pluginFromIdentifier(id);
-}

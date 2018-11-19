@@ -178,6 +178,10 @@ set(libmessageviewer_viewerplugins_SRCS
     viewerplugins/viewerplugintoolmanager.cpp
     )
 
+set(libmessageviewer_configureplugins_SRCS
+    messageviewerconfigureplugins/messageviewerconfiguresettingsplugin.cpp
+    )
+
 set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/converthtmltoplaintext.cpp
     messagepartthemes/default/defaultrenderer.cpp
@@ -215,6 +219,7 @@ set(libmessageviewer_SRCS
     settings/messageviewersettings.cpp
     ${libmessageviewer_mailviewer_SRCS}
     ${libmessageviewer_interfaces_SRCS}
+    ${libmessageviewer_configureplugins_SRCS}
     )
 
 qt5_add_resources(libmessageviewer_SRCS messagepartthemes.qrc)
