@@ -36,8 +36,7 @@ void DKIMConfigureTabWidgetTest::shouldHaveDefaultValue()
 {
     MessageViewer::DKIMConfigureTabWidget w;
 
-    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout*>(QStringLiteral("mainlayout"));
+    QVBoxLayout *mainLayout = w.findChild<QVBoxLayout*>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->margin(), 0);
-
 }

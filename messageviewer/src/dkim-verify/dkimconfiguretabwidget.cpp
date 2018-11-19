@@ -18,13 +18,16 @@
 */
 
 #include "dkimconfiguretabwidget.h"
+#include <KConfigGroup>
+#include <KSharedConfig>
+#include <KLocalizedString>
 #include <QVBoxLayout>
 
 using namespace MessageViewer;
 DKIMConfigureTabWidget::DKIMConfigureTabWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setMargin(0);
 
