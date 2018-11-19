@@ -40,7 +40,6 @@ DKIMConfigureTab::DKIMConfigureTab(QWidget *parent)
 
 DKIMConfigureTab::~DKIMConfigureTab()
 {
-
 }
 
 void DKIMConfigureTab::loadSettings()

@@ -39,7 +39,6 @@ DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
 
 DKIMManagerKeyWidget::~DKIMManagerKeyWidget()
 {
-
 }
 
 void DKIMManagerKeyWidget::loadKeys()

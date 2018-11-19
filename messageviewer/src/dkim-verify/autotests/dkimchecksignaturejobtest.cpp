@@ -24,5 +24,4 @@ QTEST_MAIN(DKIMCheckSignatureJobTest)
 DKIMCheckSignatureJobTest::DKIMCheckSignatureJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }

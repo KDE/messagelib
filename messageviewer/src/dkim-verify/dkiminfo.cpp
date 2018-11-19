@@ -26,7 +26,6 @@ using namespace MessageViewer;
 
 DKIMInfo::DKIMInfo()
 {
-
 }
 
 void DKIMInfo::parseDKIM(const QString &header)

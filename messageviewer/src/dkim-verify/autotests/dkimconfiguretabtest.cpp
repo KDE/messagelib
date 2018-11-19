@@ -27,14 +27,13 @@ QTEST_MAIN(DKIMConfigureTabTest)
 DKIMConfigureTabTest::DKIMConfigureTabTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMConfigureTabTest::shouldHaveDefaultValue()
 {
     MessageViewer::DKIMConfigureTab w;
 
-    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout*>(QStringLiteral("mainlayout"));
+    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->margin(), 0);
 

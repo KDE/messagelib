@@ -35,7 +35,6 @@ DKIMManagerKeyDialogTest::DKIMManagerKeyDialogTest(QObject *parent)
 
 DKIMManagerKeyDialogTest::~DKIMManagerKeyDialogTest()
 {
-
 }
 
 void DKIMManagerKeyDialogTest::shouldHaveDefaultValue()

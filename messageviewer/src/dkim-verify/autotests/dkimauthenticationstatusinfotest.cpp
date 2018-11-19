@@ -26,7 +26,6 @@ QTEST_GUILESS_MAIN(DKIMAuthenticationStatusInfoTest)
 DKIMAuthenticationStatusInfoTest::DKIMAuthenticationStatusInfoTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMAuthenticationStatusInfoTest::shouldHaveDefaultValue()

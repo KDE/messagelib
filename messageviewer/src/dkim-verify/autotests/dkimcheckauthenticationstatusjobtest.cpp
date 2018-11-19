@@ -25,5 +25,4 @@ QTEST_MAIN(DKIMCheckAuthenticationStatusJobTest)
 DKIMCheckAuthenticationStatusJobTest::DKIMCheckAuthenticationStatusJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }

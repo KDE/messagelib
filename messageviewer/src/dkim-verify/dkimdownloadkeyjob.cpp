@@ -23,12 +23,10 @@ using namespace MessageViewer;
 DKIMDownloadKeyJob::DKIMDownloadKeyJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DKIMDownloadKeyJob::~DKIMDownloadKeyJob()
 {
-
 }
 
 void DKIMDownloadKeyJob::start()

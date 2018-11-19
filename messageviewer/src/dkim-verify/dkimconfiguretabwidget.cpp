@@ -30,27 +30,22 @@ DKIMConfigureTabWidget::DKIMConfigureTabWidget(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setMargin(0);
-
 }
 
 DKIMConfigureTabWidget::~DKIMConfigureTabWidget()
 {
-
 }
 
 void DKIMConfigureTabWidget::loadSettings()
 {
-
 }
 
 void DKIMConfigureTabWidget::saveSettings()
 {
-
 }
 
 void DKIMConfigureTabWidget::resetSettings()
 {
-
 }
 
 void DKIMConfigureTabWidget::init()

@@ -22,12 +22,10 @@ using namespace MessageViewer;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DKIMCheckSignatureJob::~DKIMCheckSignatureJob()
 {
-
 }
 
 void DKIMCheckSignatureJob::start()

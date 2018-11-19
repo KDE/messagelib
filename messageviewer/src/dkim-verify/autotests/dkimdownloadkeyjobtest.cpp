@@ -24,5 +24,4 @@ QTEST_MAIN(DKIMDownloadKeyJobTest)
 DKIMDownloadKeyJobTest::DKIMDownloadKeyJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }

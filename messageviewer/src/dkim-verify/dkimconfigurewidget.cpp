@@ -39,7 +39,6 @@ DKIMConfigureWidget::DKIMConfigureWidget(QWidget *parent)
 
 DKIMConfigureWidget::~DKIMConfigureWidget()
 {
-
 }
 
 void DKIMConfigureWidget::loadSettings()

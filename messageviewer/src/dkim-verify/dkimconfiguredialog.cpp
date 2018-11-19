@@ -49,7 +49,6 @@ DKIMConfigureDialog::DKIMConfigureDialog(QWidget *parent)
 
 DKIMConfigureDialog::~DKIMConfigureDialog()
 {
-
 }
 
 void DKIMConfigureDialog::slotAccepted()

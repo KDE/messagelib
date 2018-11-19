@@ -22,5 +22,4 @@
 using namespace MessageViewer;
 DKIMUtil::DKIMUtil()
 {
-
 }

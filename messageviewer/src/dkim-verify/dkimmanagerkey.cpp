@@ -23,12 +23,10 @@ using namespace MessageViewer;
 DKIMManagerKey::DKIMManagerKey(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DKIMManagerKey::~DKIMManagerKey()
 {
-
 }
 
 DKIMManagerKey *DKIMManagerKey::self()

@@ -30,7 +30,6 @@ public:
     ~DKIMManagerKeyWidgetTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
-
 };
 
 #endif // DKIMMANAGERKEYWIDGETTEST_H

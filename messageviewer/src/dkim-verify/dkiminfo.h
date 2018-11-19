@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef DKIMINFO_H
 #define DKIMINFO_H
 

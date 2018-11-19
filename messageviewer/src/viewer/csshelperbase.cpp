@@ -34,7 +34,6 @@
 #include "header/headerstyleplugin.h"
 #include "utils/iconnamecache.h"
 
-
 #include <QApplication>
 #include <QPaintDevice>
 #include <QPalette>

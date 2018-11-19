@@ -28,7 +28,6 @@ QTEST_MAIN(DKIMConfigureWidgetTest)
 DKIMConfigureWidgetTest::DKIMConfigureWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMConfigureWidgetTest::shouldHaveDefaultValue()
@@ -37,7 +36,6 @@ void DKIMConfigureWidgetTest::shouldHaveDefaultValue()
     QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->margin(), 0);
-
 
     MessageViewer::DKIMConfigureTab *mTabWidget = w.findChild<MessageViewer::DKIMConfigureTab *>(QStringLiteral("tabwidget"));
     QVERIFY(mTabWidget);

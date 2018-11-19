@@ -24,12 +24,10 @@ using namespace MessageViewer;
 DKIMCheckAuthenticationStatusJob::DKIMCheckAuthenticationStatusJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 DKIMCheckAuthenticationStatusJob::~DKIMCheckAuthenticationStatusJob()
 {
-
 }
 
 void DKIMCheckAuthenticationStatusJob::start()

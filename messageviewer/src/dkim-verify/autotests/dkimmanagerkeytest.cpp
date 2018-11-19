@@ -24,5 +24,4 @@ QTEST_MAIN(DKIMManagerKeyTest)
 DKIMManagerKeyTest::DKIMManagerKeyTest(QObject *parent)
     : QObject(parent)
 {
-
 }

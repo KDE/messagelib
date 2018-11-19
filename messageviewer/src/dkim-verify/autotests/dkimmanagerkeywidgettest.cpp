@@ -26,7 +26,6 @@ QTEST_MAIN(DKIMManagerKeyWidgetTest)
 DKIMManagerKeyWidgetTest::DKIMManagerKeyWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMManagerKeyWidgetTest::shouldHaveDefaultValue()

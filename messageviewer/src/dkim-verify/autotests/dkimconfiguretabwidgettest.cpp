@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "dkimconfiguretabwidgettest.h"
 #include "dkim-verify/dkimconfiguretabwidget.h"
 #include <QTabWidget>
@@ -29,14 +28,13 @@ QTEST_MAIN(DKIMConfigureTabWidgetTest)
 DKIMConfigureTabWidgetTest::DKIMConfigureTabWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMConfigureTabWidgetTest::shouldHaveDefaultValue()
 {
     MessageViewer::DKIMConfigureTabWidget w;
 
-    QVBoxLayout *mainLayout = w.findChild<QVBoxLayout*>(QStringLiteral("mainlayout"));
+    QVBoxLayout *mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->margin(), 0);
 }

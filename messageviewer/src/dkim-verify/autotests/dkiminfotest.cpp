@@ -26,7 +26,6 @@ QTEST_GUILESS_MAIN(DKIMInfoTest)
 DKIMInfoTest::DKIMInfoTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void DKIMInfoTest::shouldHaveDefaultValue()

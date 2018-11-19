@@ -22,7 +22,6 @@
 using namespace MessageViewer;
 DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo()
 {
-
 }
 
 QString DKIMAuthenticationStatusInfo::authservId() const
