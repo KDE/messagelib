@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2018 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -17,19 +17,19 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PLUGINEDITORCHECKBEFORESENDCONFIGUREWIDGET_H
-#define PLUGINEDITORCHECKBEFORESENDCONFIGUREWIDGET_H
+#ifndef MESSAGEVIEWERCONFIGURESETTINGSPLUGINWIDGET_H
+#define MESSAGEVIEWERCONFIGURESETTINGSPLUGINWIDGET_H
 
-#include "messagecomposer_export.h"
+#include "messageviewer_export.h"
 #include <QWidget>
 
-namespace MessageComposer {
-class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendConfigureWidget : public QWidget
+namespace MessageViewer {
+class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit PluginEditorCheckBeforeSendConfigureWidget(QWidget *parent = nullptr);
-    ~PluginEditorCheckBeforeSendConfigureWidget();
+    explicit MessageViewerConfigureSettingsPluginWidget(QWidget *parent = nullptr);
+    ~MessageViewerConfigureSettingsPluginWidget();
 
     virtual void loadSettings() = 0;
     virtual void saveSettings() = 0;
@@ -39,4 +39,4 @@ Q_SIGNALS:
     void configureChanged();
 };
 }
-#endif // PLUGINEDITORCHECKBEFORESENDCONFIGUREWIDGET_H
+#endif // MESSAGEVIEWERCONFIGURESETTINGSPLUGINWIDGET_H

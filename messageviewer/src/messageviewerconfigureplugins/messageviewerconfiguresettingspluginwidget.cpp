@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2018 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -17,20 +17,20 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "plugineditorcheckbeforesendconfigurewidget.h"
+#include "messageviewerconfiguresettingspluginwidget.h"
 
-using namespace MessageComposer;
+using namespace MessageViewer;
 
-PluginEditorCheckBeforeSendConfigureWidget::PluginEditorCheckBeforeSendConfigureWidget(QWidget *parent)
+MessageViewerConfigureSettingsPluginWidget::MessageViewerConfigureSettingsPluginWidget(QWidget *parent)
     : QWidget(parent)
 {
 }
 
-PluginEditorCheckBeforeSendConfigureWidget::~PluginEditorCheckBeforeSendConfigureWidget()
+MessageViewerConfigureSettingsPluginWidget::~MessageViewerConfigureSettingsPluginWidget()
 {
 }
 
-QString PluginEditorCheckBeforeSendConfigureWidget::helpAnchor() const
+QString MessageViewerConfigureSettingsPluginWidget::helpAnchor() const
 {
     return QString();
 }

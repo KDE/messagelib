@@ -181,6 +181,7 @@ set(libmessageviewer_viewerplugins_SRCS
 set(libmessageviewer_configureplugins_SRCS
     messageviewerconfigureplugins/messageviewerconfiguresettingsplugin.cpp
     messageviewerconfigureplugins/messageviewerconfiguresettingspluginmanager.cpp
+    messageviewerconfigureplugins/messageviewerconfiguresettingspluginwidget.cpp
     )
 
 set(libmessageviewer_messagepartthemes_default_SRCS
@@ -385,6 +386,7 @@ ecm_generate_headers(MessageViewer_CamelcaseConfigurePlugins_HEADERS
     HEADER_NAMES
     MessageViewerConfigureSettingsPluginManager
     MessageViewerConfigureSettingsPlugin
+    MessageViewerConfigureSettingsPluginWidget
     REQUIRED_HEADERS MessageViewer_ConfigurePlugins_HEADERS
     PREFIX MessageViewer
     RELATIVE messageviewerconfigureplugins
