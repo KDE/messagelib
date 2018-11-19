@@ -171,7 +171,8 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::loadPlugin(ConfigureSet
                                                                                         QVariantList()
                                                                                         << item->metaDataFileNameBaseName);
         item->plugin->setIsEnabled(item->isEnabled);
-        item->pluginData.mHasConfigureDialog = false;
+        //By default it's true
+        item->pluginData.mHasConfigureDialog = true;
         mPluginDataList.append(item->pluginData);
     }
 }
