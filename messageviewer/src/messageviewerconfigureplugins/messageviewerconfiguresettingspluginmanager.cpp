@@ -18,7 +18,7 @@
 */
 
 #include "messageviewerconfiguresettingspluginmanager.h"
-#include "MessageViewerconfiguresettingsplugin.h"
+#include "messageviewerconfiguresettingsplugin.h"
 #include "messageviewer_debug.h"
 #include <KPluginFactory>
 #include <KPluginLoader>

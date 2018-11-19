@@ -34,6 +34,8 @@ public:
 
     virtual void showConfigureDialog(QWidget *parent);
 
+    Q_REQUIRED_RESULT bool isEnabled() const;
+    void setIsEnabled(bool enabled);
 private:
     MessageViewerConfigureSettingsPluginPrivate *const d;
 };
