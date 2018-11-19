@@ -36,7 +36,6 @@ public:
     ~MessageViewerConfigureSettingsPluginManager();
 
     Q_REQUIRED_RESULT QVector<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
-    Q_REQUIRED_RESULT QStringList pluginListName() const;
 
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;

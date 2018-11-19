@@ -180,6 +180,7 @@ set(libmessageviewer_viewerplugins_SRCS
 
 set(libmessageviewer_configureplugins_SRCS
     messageviewerconfigureplugins/messageviewerconfiguresettingsplugin.cpp
+    messageviewerconfigureplugins/messageviewerconfiguresettingspluginmanager.cpp
     )
 
 set(libmessageviewer_messagepartthemes_default_SRCS
@@ -380,6 +381,15 @@ ecm_generate_headers(MessageViewer_Camelcasesettings_HEADERS
     RELATIVE settings
     )
 
+ecm_generate_headers(MessageViewer_CamelcaseConfigurePlugins_HEADERS
+    HEADER_NAMES
+    MessageViewerConfigureSettingsPluginManager
+    MessageViewerConfigureSettingsPlugin
+    REQUIRED_HEADERS MessageViewer_ConfigurePlugins_HEADERS
+    PREFIX MessageViewer
+    RELATIVE messageviewerconfigureplugins
+    )
+
 
 ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
     HEADER_NAMES
@@ -429,6 +439,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 
 
 install(FILES
+    ${MessageViewer_CamelcaseConfigurePlugins_HEADERS}
     ${MessageViewer_Camelcasewebengine_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
     ${MessageViewer_Camelcaseviewerplugin_HEADERS}
@@ -447,6 +458,7 @@ install(FILES
     )
 
 install(FILES
+    ${MessageViewer_ConfigurePlugins_HEADERS}
     ${MessageViewer_webengine_HEADERS}
     ${MessageViewer_scam_HEADERS}
     ${MessageViewer_viewerplugin_HEADERS}
