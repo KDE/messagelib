@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "messageviewerconfigurepluginmanager.h"
-#include "headerstyleplugin.h"
+#include "messageviewerconfigureSettingspluginmanager.h"
+#include "configuresettingsplugin.h"
 #include "messageviewer_debug.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -28,39 +28,39 @@
 
 using namespace MessageViewer;
 
-class HeaderStylePluginInfo
+class ConfigureSettingsPluginInfo
 {
 public:
-    HeaderStylePluginInfo()
+    ConfigureSettingsPluginInfo()
     {
     }
 
     PimCommon::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    MessageViewer::HeaderStylePlugin *plugin = nullptr;
+    MessageViewer::ConfigureSettingsPlugin *plugin = nullptr;
     bool isEnabled = false;
 };
 
-class MessageViewer::MessageViewerConfigurePluginManagerPrivate
+class MessageViewer::MessageViewerConfigureSettingsPluginManagerPrivate
 {
 public:
-    MessageViewerConfigurePluginManagerPrivate(MessageViewerConfigurePluginManager *qq)
+    MessageViewerConfigureSettingsPluginManagerPrivate(MessageViewerConfigureSettingsPluginManager *qq)
         : q(qq)
     {
     }
 
-    QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;
+    QVector<MessageViewer::ConfigureSettingsPlugin *> pluginsList() const;
     QVector<PimCommon::PluginUtilData> pluginDataList() const;
     void initializePluginList();
-    void loadPlugin(HeaderStylePluginInfo *item);
+    void loadPlugin(ConfigureSettingsPluginInfo *item);
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
-    MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
+    MessageViewer::ConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
-    QVector<HeaderStylePluginInfo> mPluginList;
-    MessageViewerConfigurePluginManager *q;
+    QVector<ConfigureSettingsPluginInfo> mPluginList;
+    MessageViewerConfigureSettingsPluginManager *q;
 };
 
 namespace {
@@ -70,27 +70,27 @@ QString pluginVersion()
 }
 }
 
-QVector<PimCommon::PluginUtilData> MessageViewerConfigurePluginManagerPrivate::pluginDataList() const
+QVector<PimCommon::PluginUtilData> MessageViewerConfigureSettingsPluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
 
-QString MessageViewerConfigurePluginManagerPrivate::configGroupName() const
+QString MessageViewerConfigureSettingsPluginManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("MessageViewerConfigurePlugins");
+    return QStringLiteral("MessageViewerConfigureSettingsPlugins");
 }
 
-QString MessageViewerConfigurePluginManagerPrivate::configPrefixSettingKey() const
+QString MessageViewerConfigureSettingsPluginManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("MessageViewerConfigurePlugin");
+    return QStringLiteral("MessageViewerConfigureSettingsPlugin");
 }
 
-void MessageViewerConfigurePluginManagerPrivate::initializePluginList()
+void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
 {
     const QVector<KPluginMetaData> plugins
         = KPluginLoader::findPlugins(QStringLiteral("messageviewer"), [](
                                          const KPluginMetaData &md) {
-        return md.serviceTypes().contains(QLatin1String("MessageViewerConfigurePlugin/Plugin"));
+        return md.serviceTypes().contains(QLatin1String("MessageViewerConfigureSettingsPlugin/Plugin"));
     });
 
     QVectorIterator<KPluginMetaData> i(plugins);
@@ -100,7 +100,7 @@ void MessageViewerConfigurePluginManagerPrivate::initializePluginList()
     QSet<QString> unique;
     QVector<int> listOrder;
     while (i.hasPrevious()) {
-        HeaderStylePluginInfo info;
+        ConfigureSettingsPluginInfo info;
 
         const KPluginMetaData data = i.previous();
 
@@ -144,17 +144,17 @@ void MessageViewerConfigurePluginManagerPrivate::initializePluginList()
                 " doesn't have correction plugin version. It will not be loaded.";
         }
     }
-    QVector<HeaderStylePluginInfo>::iterator end(mPluginList.end());
-    for (QVector<HeaderStylePluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
+    QVector<ConfigureSettingsPluginInfo>::iterator end(mPluginList.end());
+    for (QVector<ConfigureSettingsPluginInfo>::iterator it = mPluginList.begin(); it != end; ++it) {
         loadPlugin(&(*it));
     }
 }
 
-QVector<MessageViewer::HeaderStylePlugin *> MessageViewerConfigurePluginManagerPrivate::pluginsList() const
+QVector<MessageViewer::ConfigureSettingsPlugin *> MessageViewerConfigureSettingsPluginManagerPrivate::pluginsList() const
 {
-    QVector<MessageViewer::HeaderStylePlugin *> lst;
-    QVector<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end;
+    QVector<MessageViewer::ConfigureSettingsPlugin *> lst;
+    QVector<ConfigureSettingsPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<ConfigureSettingsPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end;
          ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
@@ -163,11 +163,11 @@ QVector<MessageViewer::HeaderStylePlugin *> MessageViewerConfigurePluginManagerP
     return lst;
 }
 
-void MessageViewerConfigurePluginManagerPrivate::loadPlugin(HeaderStylePluginInfo *item)
+void MessageViewerConfigureSettingsPluginManagerPrivate::loadPlugin(ConfigureSettingsPluginInfo *item)
 {
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
-        item->plugin = pluginLoader.factory()->create<MessageViewer::HeaderStylePlugin>(q,
+        item->plugin = pluginLoader.factory()->create<MessageViewer::ConfigureSettingsPlugin>(q,
                                                                                         QVariantList()
                                                                                         << item->metaDataFileNameBaseName);
         item->plugin->setIsEnabled(item->isEnabled);
@@ -176,11 +176,11 @@ void MessageViewerConfigurePluginManagerPrivate::loadPlugin(HeaderStylePluginInf
     }
 }
 
-MessageViewer::HeaderStylePlugin *MessageViewerConfigurePluginManagerPrivate::pluginFromIdentifier(
+MessageViewer::ConfigureSettingsPlugin *MessageViewerConfigureSettingsPluginManagerPrivate::pluginFromIdentifier(
     const QString &id)
 {
-    QVector<HeaderStylePluginInfo>::ConstIterator end(mPluginList.constEnd());
-    for (QVector<HeaderStylePluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end;
+    QVector<ConfigureSettingsPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<ConfigureSettingsPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end;
          ++it) {
         if ((*it).pluginData.mIdentifier == id) {
             return (*it).plugin;
@@ -189,55 +189,55 @@ MessageViewer::HeaderStylePlugin *MessageViewerConfigurePluginManagerPrivate::pl
     return {};
 }
 
-MessageViewerConfigurePluginManager *MessageViewerConfigurePluginManager::self()
+MessageViewerConfigureSettingsPluginManager *MessageViewerConfigureSettingsPluginManager::self()
 {
-    static MessageViewerConfigurePluginManager s_self;
+    static MessageViewerConfigureSettingsPluginManager s_self;
     return &s_self;
 }
 
-MessageViewerConfigurePluginManager::MessageViewerConfigurePluginManager(QObject *parent)
+MessageViewerConfigureSettingsPluginManager::MessageViewerConfigureSettingsPluginManager(QObject *parent)
     : QObject(parent)
-    , d(new MessageViewer::MessageViewerConfigurePluginManagerPrivate(this))
+    , d(new MessageViewer::MessageViewerConfigureSettingsPluginManagerPrivate(this))
 {
     d->initializePluginList();
 }
 
-MessageViewerConfigurePluginManager::~MessageViewerConfigurePluginManager()
+MessageViewerConfigureSettingsPluginManager::~MessageViewerConfigureSettingsPluginManager()
 {
     delete d;
 }
 
-QVector<MessageViewer::HeaderStylePlugin *> MessageViewerConfigurePluginManager::pluginsList() const
+QVector<MessageViewer::ConfigureSettingsPlugin *> MessageViewerConfigureSettingsPluginManager::pluginsList() const
 {
     return d->pluginsList();
 }
 
-QStringList MessageViewerConfigurePluginManager::pluginListName() const
+QStringList MessageViewerConfigureSettingsPluginManager::pluginListName() const
 {
     QStringList lst;
     lst.reserve(d->pluginsList().count());
-    for (MessageViewer::HeaderStylePlugin *plugin : d->pluginsList()) {
+    for (MessageViewer::ConfigureSettingsPlugin *plugin : d->pluginsList()) {
         lst << plugin->name();
     }
     return lst;
 }
 
-QString MessageViewerConfigurePluginManager::configGroupName() const
+QString MessageViewerConfigureSettingsPluginManager::configGroupName() const
 {
     return d->configGroupName();
 }
 
-QString MessageViewerConfigurePluginManager::configPrefixSettingKey() const
+QString MessageViewerConfigureSettingsPluginManager::configPrefixSettingKey() const
 {
     return d->configPrefixSettingKey();
 }
 
-QVector<PimCommon::PluginUtilData> MessageViewerConfigurePluginManager::pluginsDataList() const
+QVector<PimCommon::PluginUtilData> MessageViewerConfigureSettingsPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }
 
-MessageViewer::HeaderStylePlugin *MessageViewerConfigurePluginManager::pluginFromIdentifier(const QString &id)
+MessageViewer::ConfigureSettingsPlugin *MessageViewerConfigureSettingsPluginManager::pluginFromIdentifier(const QString &id)
 {
     return d->pluginFromIdentifier(id);
 }

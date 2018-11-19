@@ -17,33 +17,32 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef MESSAGEVIEWERCONFIGUREPLUGINMANAGER_H
-#define MESSAGEVIEWERCONFIGUREPLUGINMANAGER_H
+#ifndef MESSAGEVIEWERCONFIGURESETTINGSPLUGINMANAGER_H
+#define MESSAGEVIEWERCONFIGURESETTINGSPLUGINMANAGER_H
 
 #include <QObject>
 #include "messageviewer_export.h"
 #include <PimCommon/PluginUtil>
 namespace MessageViewer {
-class HeaderStylePlugin;
-class MessageViewerConfigurePluginManagerPrivate;
-class MESSAGEVIEWER_EXPORT MessageViewerConfigurePluginManager : public QObject
+class ConfigureSettingsPlugin;
+class MessageViewerConfigureSettingsPluginManagerPrivate;
+class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginManager : public QObject
 {
     Q_OBJECT
 public:
-    static MessageViewerConfigurePluginManager *self();
+    static MessageViewerConfigureSettingsPluginManager *self();
 
-    explicit MessageViewerConfigurePluginManager(QObject *parent = nullptr);
-    ~MessageViewerConfigurePluginManager();
+    explicit MessageViewerConfigureSettingsPluginManager(QObject *parent = nullptr);
+    ~MessageViewerConfigureSettingsPluginManager();
 
-    Q_REQUIRED_RESULT QVector<MessageViewer::HeaderStylePlugin *> pluginsList() const;
+    Q_REQUIRED_RESULT QVector<MessageViewer::ConfigureSettingsPlugin *> pluginsList() const;
     Q_REQUIRED_RESULT QStringList pluginListName() const;
 
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
-    Q_REQUIRED_RESULT MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 private:
-    MessageViewerConfigurePluginManagerPrivate *const d;
+    MessageViewerConfigureSettingsPluginManagerPrivate *const d;
 };
 }
-#endif // MESSAGEVIEWERCONFIGUREPLUGINMANAGER_H
+#endif // MESSAGEVIEWERCONFIGURESETTINGSPLUGINMANAGER_H
