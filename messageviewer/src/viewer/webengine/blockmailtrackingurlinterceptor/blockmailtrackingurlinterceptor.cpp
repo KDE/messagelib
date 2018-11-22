@@ -54,7 +54,7 @@ void BlockMailTrackingUrlInterceptor::initializeList()
         {QStringLiteral("Sidekick"), QStringLiteral("t.sigopn"), QStringLiteral("http://getsidekick.com")},
         {QStringLiteral("Banana Tag"), QStringLiteral("bl-1.com"), QStringLiteral("http://bananatag.com")},
         {QStringLiteral("Boomerang"), QStringLiteral("mailstat.us/tr"), QStringLiteral("http://boomeranggmail.com")},
-        {QStringLiteral("Cirrus Inisght"), QStringLiteral("tracking.cirrusinsight.com"), QStringLiteral("http://cirrusinsight.com")},
+        {QStringLiteral("Cirrus Insight"), QStringLiteral("tracking.cirrusinsight.com"), QStringLiteral("http://cirrusinsight.com")},
         {QStringLiteral("Yesware"), QStringLiteral("app.yesware.com"), QStringLiteral("http://yesware.com")},
         {QStringLiteral("Yesware"), QStringLiteral("t.yesware.com"), QStringLiteral("http://yesware.com")},
         {QStringLiteral("Streak"), QStringLiteral("mailfoogae.appspot.com"), QStringLiteral("http://streak.com")},

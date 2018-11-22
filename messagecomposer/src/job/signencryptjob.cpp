@@ -200,7 +200,7 @@ void SignEncryptJob::process()
         return;
     }
     if (res.second.error()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "encrypyting failed:" << res.second.error().asString();
+        qCDebug(MESSAGECOMPOSER_LOG) << "encrypting failed:" << res.second.error().asString();
         setError(res.second.error().code());
         setErrorText(QString::fromLocal8Bit(res.second.error().asString()));
         emitResult();

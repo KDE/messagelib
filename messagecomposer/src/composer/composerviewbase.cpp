@@ -1047,7 +1047,7 @@ void ComposerViewBase::fillQueueJobHeaders(MailTransport::MessageQueueJob *qjob,
 
 void ComposerViewBase::initAutoSave()
 {
-    qCDebug(MESSAGECOMPOSER_LOG) << "initalising autosave";
+    qCDebug(MESSAGECOMPOSER_LOG) << "initialising autosave";
 
     // Ensure that the autosave directory exists.
     QDir dataDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/"));

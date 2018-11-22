@@ -3452,7 +3452,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
     // It attempts to process messages until a timeout forces it to return to the caller.
 
     // A macro would improve readability here but since this is a good point
-    // to place debugger breakpoints then we need it explicitely.
+    // to place debugger breakpoints then we need it explicitly.
     // A (template) helper would need to pass many parameters and would not be inlined...
 
     if (job->currentPass() == ViewItemJob::Pass1Fill) {

@@ -54,7 +54,7 @@ using namespace MessageViewer;
 void MessagePartRendererFactoryPrivate::setup()
 {
     if (m_renderers.isEmpty()) {
-        initalize_builtin_renderers();
+        initialize_builtin_renderers();
         loadPlugins();
     }
     Q_ASSERT(!m_renderers.isEmpty());
@@ -104,7 +104,7 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
     });
 }
 
-void MessagePartRendererFactoryPrivate::initalize_builtin_renderers()
+void MessagePartRendererFactoryPrivate::initialize_builtin_renderers()
 {
     insert("MimeTreeParser::MessagePart", new MessagePartRenderer());
     insert("MimeTreeParser::TextMessagePart", new TextMessagePartRenderer());

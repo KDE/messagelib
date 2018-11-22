@@ -604,7 +604,7 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
             ch = wildString[i++];
             switch (ch.toLatin1()) {
             case 'f':
-            {           // sender's initals
+            {           // sender's initials
                 if (fromDisplayString.isEmpty()) {
                     break;
                 }

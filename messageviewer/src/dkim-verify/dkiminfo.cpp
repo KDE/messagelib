@@ -50,7 +50,7 @@ void DKIMInfo::parseDKIM(const QString &header)
         } else if (elem.startsWith(QStringLiteral("h="))) {
         } else if (elem.startsWith(QStringLiteral("hb="))) {
         } else {
-            qCWarning(MESSAGEVIEWER_LOG) << " Unknown elemenet type" << elem;
+            qCWarning(MESSAGEVIEWER_LOG) << " Unknown element type" << elem;
         }
     }
     //TODO

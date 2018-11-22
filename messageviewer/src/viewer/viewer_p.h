@@ -206,7 +206,7 @@ public:
     KMime::Content *nodeFromUrl(const QUrl &url) const;
 
     /** Open the attachment pointed to the node.
-    * @param fileName - if not empty, use this file to load the attachment content
+    * @param url - if not empty, use this file to load the attachment content
     */
     void openAttachment(KMime::Content *node, const QUrl &url);
 

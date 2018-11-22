@@ -52,7 +52,7 @@ enum SpamError {
 };
 
 /**
-    @short A simple tupel of error, agent, score, confidence and header.
+    @short A simple tuple of error, agent, score, confidence and header.
 
     The score returned is positive if no error has occurred.
     error values indicate the following errors:

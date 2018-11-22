@@ -44,7 +44,7 @@ namespace Util {
      *
      * @param mimeType The primary mime type used to find the icon, e.g. "application/zip". Alias
      *                 mimetypes are resolved.
-     * @param size Size of the requested icon, e.g. KIconLoader::Desktop
+     * @param iconSize Size of the requested icon, e.g. KIconLoader::Desktop
      * @param fallbackFileName(1|2) When the icon is not found by the given mime type, use the file
      *                              name extensions of these file names to look the icon up.
      *                              Example: "test.zip"

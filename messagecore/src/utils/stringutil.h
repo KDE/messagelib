@@ -160,7 +160,7 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT bool addressIsInAddressList(const QString &
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString guessEmailAddressFromLoginName(const QString &userName);
 
 /**
-   *  Relayouts the given string so that the invidual lines don't exceed the given
+   *  Relayouts the given string so that the individual lines don't exceed the given
    *  maximal length.
    *
    *  As the name of the function implies, it is smart, which means it deals with quoting

@@ -50,7 +50,7 @@ class MessagePartRendererFactoryPrivate
 public:
     void setup();
     void loadPlugins();
-    void initalize_builtin_renderers();
+    void initialize_builtin_renderers();
     void insert(const QByteArray &type, MessagePartRendererBase *formatter, const QString &mimeType = QString(), int priority = 0);
 
     QHash<QByteArray, std::vector<RendererInfo> > m_renderers;

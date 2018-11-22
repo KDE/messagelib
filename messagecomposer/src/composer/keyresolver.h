@@ -107,7 +107,7 @@ enum Result {
      iterating over the available message formats and retrieving the
      set of signing keys to use with a call to \c signingKeys().
 
-     \section Step 5: Get encrytion key sets.
+     \section Step 5: Get encryption key sets.
 
      If after key resolving, encryption is still requested and
      apparently possible, you can get the result of all this by

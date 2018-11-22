@@ -172,7 +172,7 @@ public:
 
     /**
      * Fixes an encoding received by a KDE function and returns the proper,
-     * MIME-compilant encoding name instead.
+     * MIME-compliant encoding name instead.
      * @see encodingForName
      */
     static QString fixEncoding(const QString &encoding);   //TODO(Andras) move to a utility class?

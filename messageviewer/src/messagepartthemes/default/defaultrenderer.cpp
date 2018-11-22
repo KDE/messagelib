@@ -914,7 +914,7 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
             render(mp, htmlWriter);
         }
     } else {
-        qCWarning(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
+        qCWarning(MESSAGEVIEWER_LOG) << "We got a unknown classname, using default behaviour for "
                                      << className;
     }
 }

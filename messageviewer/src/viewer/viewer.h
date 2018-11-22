@@ -105,7 +105,7 @@ public:
     /**
     * Create a mail viewer widget
     * @param parent parent widget
-    * @param mainWindow the application's main window
+    * @param widget the application's main widget
     * @param actionCollection the action collection where the widget's actions will belong to
     * @param f window flags
     */
@@ -150,7 +150,7 @@ public:
 
     /**
     * Set the message that shall be shown.
-    * @param msg - the message to be shown. If 0, an empty page is displayed.
+    * @param message - the message to be shown. If 0, an empty page is displayed.
     * @param updateMode - update the display immediately or not. See UpdateMode.
     */
     void setMessage(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
@@ -190,7 +190,7 @@ public:
 
     /**
     * Sets a message as the current one and print it immediately.
-    * @param message the message to display and print
+    * @param msg the message to display and print
     */
     void printMessage(const Akonadi::Item &msg);
 

@@ -959,7 +959,7 @@ void Widget::searchEditTextEdited()
 
 void Widget::slotStatusButtonsClicked()
 {
-    // We also arbitrairly set tagId to an empty string, though we *could* allow filtering
+    // We also arbitrarily set tagId to an empty string, though we *could* allow filtering
     // by status AND tag...
     if (d->mFilter) {
         d->mFilter->setTagId(QString());

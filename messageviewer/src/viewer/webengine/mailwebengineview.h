@@ -90,8 +90,6 @@ Q_SIGNALS:
     void formSubmittedForbidden();
     void mailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
     /// Emitted when the user right-clicks somewhere
-    /// @param url if an URL was under the cursor, this parameter contains it. Otherwise empty
-    /// @param point position where the click happened, in local coordinates
     void popupMenu(const WebEngineViewer::WebHitTestResult &result);
     void pageIsScrolledToBottom(bool);
 
