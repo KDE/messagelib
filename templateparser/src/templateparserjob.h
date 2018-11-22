@@ -163,7 +163,7 @@ public:
     };
 
 public:
-    explicit TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode);
+    explicit TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode, QObject *parent = nullptr);
     ~TemplateParserJob();
 
     /**
