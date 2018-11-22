@@ -34,7 +34,7 @@ public:
     explicit PluginEditorConvertText(QObject *parent = nullptr);
     ~PluginEditorConvertText();
 
-    virtual PluginEditorConvertTextInterface *createInterface(KActionCollection *ac, QObject *parent) = 0;
+    virtual PluginEditorConvertTextInterface *createInterface(QObject *parent) = 0;
 
     Q_REQUIRED_RESULT virtual bool hasConfigureDialog() const;
 
