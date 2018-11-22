@@ -108,8 +108,9 @@ void TemplateParserJobPrivate::setAllowDecryption(const bool allowDecryption)
     mEmptySource->setDecryptMessage(mAllowDecryption);
 }
 
-TemplateParserJob::TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode)
-    : d(new TemplateParserJobPrivate(amsg, amode))
+TemplateParserJob::TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode, QObject *parent)
+    : QObject(parent)
+    , d(new TemplateParserJobPrivate(amsg, amode))
 {
 }
 
@@ -265,6 +266,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg, qint64 afo
     if (aorig_msg == nullptr) {
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
         Q_EMIT parsingDone(d->mForceCursorPosition);
+        deleteLater();
         return;
     }
 
@@ -273,6 +275,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg, qint64 afo
     const QString tmpl = findTemplate();
     if (tmpl.isEmpty()) {
         Q_EMIT parsingDone(d->mForceCursorPosition);
+        deleteLater();
         return;
     }
     processWithTemplate(tmpl);
@@ -1128,6 +1131,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
 
     addProcessedBodyToMessage(plainBody, htmlBody);
     Q_EMIT parsingDone(d->mForceCursorPosition);
+    deleteLater();
 }
 
 QString TemplateParserJob::getPlainSignature() const
