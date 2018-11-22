@@ -22,8 +22,8 @@
 #define MESSAGECOMPOSER_SIGNJOB_H
 
 #include "contentjobbase.h"
-#include "part/infopart.h"
 #include "messagecomposer_export.h"
+#include <MessageComposer/InfoPart>
 #include <Libkleo/Enum>
 
 #include <gpgme++/key.h>
