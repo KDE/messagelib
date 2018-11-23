@@ -959,6 +959,7 @@ Theme::Theme(const Theme &src)
 
 Theme::~Theme()
 {
+    clearPixmapCache();
     removeAllColumns();
 }
 
