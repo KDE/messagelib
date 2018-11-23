@@ -625,7 +625,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
     const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
 
     qCDebug(MESSAGECOMPOSER_LOG) << "filling crypto info";
-    Kleo::KeyResolver *keyResolver = new Kleo::KeyResolver(encryptToSelf(),
+    QScopedPointer<Kleo::KeyResolver> keyResolver(new Kleo::KeyResolver(encryptToSelf(),
                                                            showKeyApprovalDialog(),
                                                            id.pgpAutoEncrypt(),
                                                            m_cryptoMessageFormat,
@@ -634,7 +634,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
                                                            encryptRootCertNearExpiryWarningThresholdInDays(),
                                                            signingRootCertNearExpiryWarningThresholdInDays(),
                                                            encryptChainCertNearExpiryWarningThresholdInDays(),
-                                                           signingChainCertNearExpiryWarningThresholdInDays());
+                                                           signingChainCertNearExpiryWarningThresholdInDays()));
 
     QStringList encryptToSelfKeys;
     QStringList signKeys;
@@ -692,7 +692,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
 
     bool result = true;
     bool canceled = false;
-    signSomething = determineWhetherToSign(doSignCompletely, keyResolver, signSomething, result, canceled);
+    signSomething = determineWhetherToSign(doSignCompletely, keyResolver.data(), signSomething, result, canceled);
     if (!result) {
         // TODO handle failure
         qCDebug(MESSAGECOMPOSER_LOG) << "determineWhetherToSign: failed to resolve keys! oh noes";
@@ -706,7 +706,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
     }
 
     canceled = false;
-    encryptSomething = determineWhetherToEncrypt(doEncryptCompletely, keyResolver, encryptSomething, signSomething, result, canceled);
+    encryptSomething = determineWhetherToEncrypt(doEncryptCompletely, keyResolver.data(), encryptSomething, signSomething, result, canceled);
     if (!result) {
         // TODO handle failure
         qCDebug(MESSAGECOMPOSER_LOG) << "determineWhetherToEncrypt: failed to resolve keys! oh noes";
