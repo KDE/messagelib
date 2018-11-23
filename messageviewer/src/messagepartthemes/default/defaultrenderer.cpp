@@ -308,6 +308,11 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
             return htmlSource;
         }
         extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
+        //Don't authorize to refresh content.
+        if (s.contains(QStringLiteral("http-equiv=\"REFRESH\""), Qt::CaseInsensitive)) {
+            extraHead.clear();
+        }
+
         s = s.mid(endIndex + 7).trimmed();
     }
 
