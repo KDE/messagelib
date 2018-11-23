@@ -904,9 +904,11 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
 
 void ComposerViewBase::slotSendComposeResult(KJob *job)
 {
-    qCDebug(MESSAGECOMPOSER_LOG) << "compose job might have error error" << job->error() << "errorString" << job->errorString();
     Q_ASSERT(dynamic_cast< MessageComposer::Composer * >(job));
     MessageComposer::Composer *composer = static_cast< MessageComposer::Composer * >(job);
+    if (composer->error() != MessageComposer::Composer::NoError) {
+        qCDebug(MESSAGECOMPOSER_LOG) << "compose job might have error: " << job->error() << " errorString: " << job->errorString();
+    }
 
     if (composer->error() == MessageComposer::Composer::NoError) {
         Q_ASSERT(m_composers.contains(composer));
