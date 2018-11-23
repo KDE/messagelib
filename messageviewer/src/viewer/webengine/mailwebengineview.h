@@ -22,7 +22,7 @@
 #include "messageviewer_export.h"
 #include <WebEngineViewer/WebEngineView>
 #include <boost/function.hpp>
-#include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
+#include <MessageViewer/BlockMailTrackingUrlInterceptor>
 class QPrinter;
 class KActionCollection;
 namespace WebEngineViewer {

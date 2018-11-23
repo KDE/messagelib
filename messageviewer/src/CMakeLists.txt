@@ -284,6 +284,15 @@ install(TARGETS
     EXPORT KF5MessageViewerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
     )
 
+ecm_generate_headers(MessageViewer_Camelblockmailtrackingurlinterceptor_HEADERS
+    HEADER_NAMES
+    BlockMailTrackingUrlInterceptor
+
+    REQUIRED_HEADERS MessageViewer_blockmailtrackingurlinterceptor_HEADERS
+    PREFIX MessageViewer
+    RELATIVE viewer/webengine/blockmailtrackingurlinterceptor
+    )
+
 ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
     HEADER_NAMES
     MailWebEnginePage
@@ -437,6 +446,7 @@ install(FILES
     ${MessageViewer_Camelfindbar_HEADERS}
     ${MessageViewer_Camelcasescam_HEADERS}
     ${MessageViewer_Camelcaserenderer_HEADERS}
+    ${MessageViewer_Camelblockmailtrackingurlinterceptor_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     COMPONENT Devel
     )
@@ -456,6 +466,7 @@ install(FILES
     ${MessageViewer_antispam_HEADERS}
     ${MessageViewer_findbar_HEADERS}
     ${MessageViewer_renderer_HEADERS}
+    ${MessageViewer_blockmailtrackingurlinterceptor_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h

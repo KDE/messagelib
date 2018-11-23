@@ -21,10 +21,10 @@
 #define BLOCKMAILTRACKINGURLINTERCEPTOR_H
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
-
+#include "messageviewer_export.h"
 #include <QVector>
 namespace MessageViewer {
-class BlockMailTrackingUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
+class MESSAGEVIEWER_EXPORT BlockMailTrackingUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:
