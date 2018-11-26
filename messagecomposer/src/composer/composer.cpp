@@ -571,7 +571,7 @@ bool Composer::finished() const
 {
     Q_D(const Composer);
 
-    return d->autoSaving;
+    return d->finished;
 }
 
 bool Composer::autoSave() const
