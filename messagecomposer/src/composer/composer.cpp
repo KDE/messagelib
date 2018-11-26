@@ -80,7 +80,6 @@ public:
 
     // Stuff that we play with.
     KMime::Message *skeletonMessage = nullptr;
-    KMime::Content *resultContent = nullptr;
 
     bool started = false;
     bool finished = false;
@@ -572,7 +571,7 @@ bool Composer::finished() const
 {
     Q_D(const Composer);
 
-    return d->autoSaving;
+    return d->finished;
 }
 
 bool Composer::autoSave() const

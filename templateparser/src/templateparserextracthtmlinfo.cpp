@@ -26,8 +26,6 @@ using namespace TemplateParser;
 
 TemplateParserExtractHtmlInfo::TemplateParserExtractHtmlInfo(QObject *parent)
     : QObject(parent)
-    , mTemplateWebEngineView(nullptr)
-    , mExtractHtmlElementWebEngineView(nullptr)
 {
 }
 
