@@ -80,7 +80,6 @@ public:
 
     // Stuff that we play with.
     KMime::Message *skeletonMessage = nullptr;
-    KMime::Content *resultContent = nullptr;
 
     bool started = false;
     bool finished = false;
