@@ -1140,7 +1140,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         const GpgME::VerificationResult &verifyResult = m->verifyResult();
         partMetaData()->isSigned = verifyResult.signatures().size() > 0;
 
-        if (verifyResult.signatures().size() > 0) {
+        if (partMetaData()->isSigned) {
             auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, MessagePart::text(), mCryptoProto, mFromAddress, content()));
             subPart->setVerificationResult(m, nullptr);
             appendSubPart(subPart);
