@@ -337,7 +337,7 @@ void NodeHelper::removeTempFiles()
 {
     //Don't delete as it will be deleted in class
     mAttachmentFilesDir->removeTempFiles();
-    mAttachmentFilesDir = new AttachmentTemporaryFilesDirs();
+    mAttachmentFilesDir = new AttachmentTemporaryFilesDirs(this);
 }
 
 void NodeHelper::addTempFile(const QString &file)
