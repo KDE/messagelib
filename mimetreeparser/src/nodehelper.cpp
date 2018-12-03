@@ -44,9 +44,6 @@
 #include <QFileDevice>
 
 namespace MimeTreeParser {
-QStringList replySubjPrefixes(QStringList() << QStringLiteral("Re\\s*:") << QStringLiteral("Re\\[\\d+\\]:") << QStringLiteral("Re\\d+:"));
-QStringList forwardSubjPrefixes(QStringList() << QStringLiteral("Fwd:") << QStringLiteral("FW:"));
-
 NodeHelper::NodeHelper()
     : mAttachmentFilesDir(new AttachmentTemporaryFilesDirs())
 {
