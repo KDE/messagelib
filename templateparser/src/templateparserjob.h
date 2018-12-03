@@ -36,7 +36,7 @@ namespace MessageCore {
 class ImageCollector;
 }
 
-class TemplateParserExtractHtmlInfoResult;
+struct TemplateParserExtractHtmlInfoResult;
 
 namespace TemplateParser {
 class TemplateParserJobPrivate;
