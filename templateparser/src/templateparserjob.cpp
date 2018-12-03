@@ -1228,8 +1228,6 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
     d->mMsg->setHeader(mainPart->contentTransferEncoding());
     d->mMsg->assemble();
     d->mMsg->parse();
-
-    delete mainPart; // no longer needed
 }
 
 KMime::Content *TemplateParserJob::createMultipartMixed(const QVector<KMime::Content *> &attachments, KMime::Content *textPart) const
