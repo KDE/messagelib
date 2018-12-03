@@ -32,6 +32,7 @@
 
 #include <QByteArray>
 #include <QHash>
+#include <QScopedPointer>
 #include <QString>
 
 #include <vector>
@@ -39,8 +40,9 @@
 namespace MessageViewer {
 class MessagePartRendererBase;
 
-struct RendererInfo {
-    MessagePartRendererBase *renderer;
+struct RendererInfo
+{
+    QSharedPointer<MessagePartRendererBase> renderer;
     QString mimeType;
     int priority;
 };
