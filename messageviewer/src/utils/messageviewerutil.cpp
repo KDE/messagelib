@@ -69,6 +69,7 @@
 #include <QDBusConnectionInterface>
 #include <QActionGroup>
 #include <QDesktopServices>
+#include <QRegularExpression>
 
 using namespace MessageViewer;
 
@@ -539,4 +540,13 @@ QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, Q
     actionGroup->addAction(act);
     act->setData(QVariant::fromValue(service));
     return act;
+}
+
+bool Util::excludeExtraHeader(const QString &s)
+{
+    QRegularExpression ref(QStringLiteral("http-equiv=\\s*(\'|\")(&#82;|R)EFRESH(\'|\")"), QRegularExpression::CaseInsensitiveOption);
+    if (s.contains(ref)) {
+        return true;
+    }
+    return false;
 }
