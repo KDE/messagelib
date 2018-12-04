@@ -21,6 +21,8 @@
 
 #include "defaultrenderer_p.h"
 
+#include "utils/messageviewerutil.h"
+
 #include "messageviewer_debug.h"
 
 #include "converthtmltoplaintext.h"
@@ -309,7 +311,7 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
         }
         extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
         //Don't authorize to refresh content.
-        if (s.contains(QStringLiteral("http-equiv=\"REFRESH\""), Qt::CaseInsensitive)) {
+        if (MessageViewer::Util::excludeExtraHeader(s)) {
             extraHead.clear();
         }
 
