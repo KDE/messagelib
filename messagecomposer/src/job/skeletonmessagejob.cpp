@@ -93,14 +93,12 @@ void SkeletonMessageJobPrivate::doStart()
         const QStringList lstReplyTo = infoPart->replyTo();
         QByteArray sReplyTo;
         for (const QString &a : lstReplyTo) {
-
             KMime::Types::Mailbox address;
             address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
             if (!sReplyTo.isEmpty()) {
                 sReplyTo.append(",");
             }
             sReplyTo.append(address.as7BitString("utf-8"));
-
         }
         replyTo->fromUnicodeString(QString::fromLatin1(sReplyTo), "utf-8");
         message->setHeader(replyTo);

@@ -160,7 +160,6 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
         text += i18nc("@info:tooltip %1 list of emails", "Reply-To:%1", replyTo);
     }
 
-
     mTotalLabel->setToolTip(QStringLiteral("<html><head><body>%1</body></head></html>").arg(text));
 }
 

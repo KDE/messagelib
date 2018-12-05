@@ -167,8 +167,8 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::loadPlugin(ConfigureSet
     KPluginLoader pluginLoader(item->metaDataFileName);
     if (pluginLoader.factory()) {
         item->plugin = pluginLoader.factory()->create<MessageViewer::MessageViewerConfigureSettingsPlugin>(q,
-                                                                                        QVariantList()
-                                                                                        << item->metaDataFileNameBaseName);
+                                                                                                           QVariantList()
+                                                                                                           << item->metaDataFileNameBaseName);
         item->plugin->setIsEnabled(item->isEnabled);
         //By default it's true
         item->pluginData.mHasConfigureDialog = true;
@@ -213,4 +213,3 @@ QVector<PimCommon::PluginUtilData> MessageViewerConfigureSettingsPluginManager::
 {
     return d->pluginDataList();
 }
-

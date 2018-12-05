@@ -41,7 +41,6 @@ MessageViewerConfigureSettingsPlugin::~MessageViewerConfigureSettingsPlugin()
     delete d;
 }
 
-
 void MessageViewerConfigureSettingsPlugin::setIsEnabled(bool enabled)
 {
     d->mIsEnabled = enabled;

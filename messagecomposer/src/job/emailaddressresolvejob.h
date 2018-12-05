@@ -86,7 +86,7 @@ public:
     /**
      * Returns the expanded From field
      */
-    Q_REQUIRED_RESULT  QString expandedFrom() const;
+    Q_REQUIRED_RESULT QString expandedFrom() const;
 
     /**
      * Returns the expanded To field

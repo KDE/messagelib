@@ -15,7 +15,6 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "messageviewerutilstest.h"
 #include "utils/messageviewerutil.h"
 #include <QTest>
@@ -24,7 +23,6 @@ QTEST_GUILESS_MAIN(MessageViewerUtilsTest)
 MessageViewerUtilsTest::MessageViewerUtilsTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void MessageViewerUtilsTest::shouldExcludeHeader_data()

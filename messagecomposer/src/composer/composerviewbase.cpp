@@ -626,15 +626,15 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
 
     qCDebug(MESSAGECOMPOSER_LOG) << "filling crypto info";
     QScopedPointer<Kleo::KeyResolver> keyResolver(new Kleo::KeyResolver(encryptToSelf(),
-                                                           showKeyApprovalDialog(),
-                                                           id.pgpAutoEncrypt(),
-                                                           m_cryptoMessageFormat,
-                                                           encryptKeyNearExpiryWarningThresholdInDays(),
-                                                           signingKeyNearExpiryWarningThresholdInDays(),
-                                                           encryptRootCertNearExpiryWarningThresholdInDays(),
-                                                           signingRootCertNearExpiryWarningThresholdInDays(),
-                                                           encryptChainCertNearExpiryWarningThresholdInDays(),
-                                                           signingChainCertNearExpiryWarningThresholdInDays()));
+                                                                        showKeyApprovalDialog(),
+                                                                        id.pgpAutoEncrypt(),
+                                                                        m_cryptoMessageFormat,
+                                                                        encryptKeyNearExpiryWarningThresholdInDays(),
+                                                                        signingKeyNearExpiryWarningThresholdInDays(),
+                                                                        encryptRootCertNearExpiryWarningThresholdInDays(),
+                                                                        signingRootCertNearExpiryWarningThresholdInDays(),
+                                                                        encryptChainCertNearExpiryWarningThresholdInDays(),
+                                                                        signingChainCertNearExpiryWarningThresholdInDays()));
 
     QStringList encryptToSelfKeys;
     QStringList signKeys;
@@ -1526,7 +1526,7 @@ void ComposerViewBase::updateRecipients(const KIdentityManagement::Identity &ide
     } else if (type == MessageComposer::Recipient::ReplyTo) {
         oldIdentList = oldIdent.replyToAddr();
         newIdentList = ident.replyToAddr();
-    }  else {
+    } else {
         return;
     }
 
