@@ -616,9 +616,11 @@ QAction *Viewer::findInMessageAction() const
 
 void Viewer::slotChangeDisplayMail(Viewer::DisplayFormatMessage mode, bool loadExternal)
 {
-    setHtmlLoadExtOverride(loadExternal);
-    setDisplayFormatMessageOverwrite(mode);
-    update(MimeTreeParser::Force);
+    if ((htmlLoadExtOverride() != loadExternal) || (displayFormatMessageOverwrite() != mode)) {
+        setHtmlLoadExtOverride(loadExternal);
+        setDisplayFormatMessageOverwrite(mode);
+        update(MimeTreeParser::Force);
+    }
 }
 
 QAction *Viewer::saveMessageDisplayFormatAction() const
