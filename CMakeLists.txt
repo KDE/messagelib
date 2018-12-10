@@ -12,7 +12,7 @@ option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branc
 
 option(DKIM_CHECKER_BUILD "DKIM CHECKER (experimental)" FALSE)
 
-set(KF5_VERSION "5.51.0")
+set(KF5_VERSION "5.53.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
