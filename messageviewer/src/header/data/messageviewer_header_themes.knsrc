@@ -15,6 +15,7 @@ Name[pt_BR]=Tema de cabeçalho do KMail
 Name[sv]=Kmail huvudtema
 Name[uk]=Тема заголовків KMail
 Name[x-test]=xxKMail Header Themexx
+Name[zh_CN]=KMail主题标题
 ProvidersUrl=http://download.kde.org/ocs/providers.xml
 Categories=KMail Header Theme
 TargetDir=messageviewer/themes
