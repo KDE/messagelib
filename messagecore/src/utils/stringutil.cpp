@@ -172,25 +172,45 @@ static bool flushPart(QString &msg, QStringList &textParts, const QString &inden
     return appendEmptyLine;
 }
 
-QMap<QString, QString> parseMailtoUrl(const QUrl &url)
+QList<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
 {
-    QMap<QString, QString> values;
+    QList<QPair<QString, QString> > values;
     if (url.scheme() != QLatin1String("mailto")) {
         return values;
     }
     QUrlQuery query(url);
+    QString toStr;
+    int i = 0;
+    int indexTo = -1;
     Q_FOREACH (const auto &queryItem, query.queryItems(QUrl::FullyDecoded)) {
-        values.insertMulti(queryItem.first, queryItem.second);
+        if (queryItem.first == QLatin1String("to")) {
+            toStr = queryItem.second;
+            indexTo = i;
+        } else {
+            QPair<QString, QString> pairElement;
+            pairElement.first = queryItem.first;
+            pairElement.second = queryItem.second;
+            values.append(pairElement);
+        }
+        i++;
     }
 
     QStringList to = {KEmailAddress::decodeMailtoUrl(url)};
 
-    const QString toStr = values.value(QStringLiteral("to"));
     if (!toStr.isEmpty()) {
         to << toStr;
     }
-
-    values.insert(QStringLiteral("to"), to.join(QStringLiteral(", ")));
+    const QString fullTo = to.join(QStringLiteral(", "));
+    if (!fullTo.isEmpty()) {
+        QPair<QString, QString> pairElement;
+        pairElement.first = QStringLiteral("to");
+        pairElement.second = fullTo;
+        if (indexTo != -1) {
+            values.insert(indexTo, pairElement);
+        } else {
+            values.prepend(pairElement);
+        }
+    }
     return values;
 }
 
