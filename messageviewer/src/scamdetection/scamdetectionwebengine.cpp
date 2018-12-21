@@ -100,7 +100,6 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         Q_EMIT resultScanDetection(foundScam);
         return;
     }
-    d->mDetails = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
     QRegularExpression ip4regExp(QStringLiteral(
                                      "\\b[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{0,3})?(?:\\.[0-9]{0,3})?"));
     const QVariantMap mapResult = resultList.at(0).toMap();
@@ -205,10 +204,12 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                        + QLatin1String("</b></li>");
         foundScam = true;
     }
-    d->mDetails += QLatin1String("</ul>");
-    // qDebug()<<" d->mDetails "<< d->mDetails;
     if (foundScam) {
-        Q_EMIT messageMayBeAScam();
+        d->mDetails.prepend(QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>"));
+        d->mDetails += QLatin1String("</ul>");
+        if (foundScam) {
+            Q_EMIT messageMayBeAScam();
+        }
     }
     Q_EMIT resultScanDetection(foundScam);
 }
