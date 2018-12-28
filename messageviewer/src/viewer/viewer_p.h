@@ -125,13 +125,13 @@ updateReaderWin() again is only a thin wrapper that resets some state and then c
 displayMessage().
 displayMessage() itself is again a thin wrapper, which starts the HtmlWriter and then calls
 parseMsg().
-Finally, parseMsg() does the real work. It uses MimeTreeParser::ObjectTreeParser ::parseObjectTree() to let the
+Finally, parseMsg() does the real work. It uses MimeTreeParser::ObjectTreeParser parseObjectTree() to let the
 MimeTreeParser::ObjectTreeParser parse the message and generate the HTML code for it.
 As mentioned before, it can happen that the MimeTreeParser::ObjectTreeParser needs to do some operation that happens
 async, for example decrypting. In this case, the MimeTreeParser::ObjectTreeParser will create a BodyPartMemento,
 which basically is a wrapper around the job that does the async operation. Once the async operation
 is finished. the BodyPartMemento will trigger an update() of ViewerPrivate, so that
-MimeTreeParser::ObjectTreeParser ::parseObjectTree() gets called again and the MimeTreeParser::ObjectTreeParser then can generate
+MimeTreeParser::ObjectTreeParser parseObjectTree() gets called again and the MimeTreeParser::ObjectTreeParser then can generate
 HTML which has the decrypted content of the message. Again, see the documentation of MimeTreeParser::ObjectTreeParser for the details.
 Additionally, parseMsg() does some evil hack for saving unencrypted messages should the config
 option for that be set.
@@ -206,13 +206,17 @@ public:
     KMime::Content *nodeFromUrl(const QUrl &url) const;
 
     /** Open the attachment pointed to the node.
+    * @param node the node
     * @param url - if not empty, use this file to load the attachment content
     */
     void openAttachment(KMime::Content *node, const QUrl &url);
 
-    /** Delete the attachment the @param node points to. Returns false if the user
+    /** Delete the attachment the @p node points to. Returns false if the user
     cancelled the deletion, true in all other cases (including failure to delete
-    the attachment!) */
+    the attachment!)
+    * @param node the node
+    * @param showWarning whether some warning should be shown
+    */
     bool deleteAttachment(KMime::Content *node, bool showWarning = true);
 
     void attachmentProperties(KMime::Content *node);

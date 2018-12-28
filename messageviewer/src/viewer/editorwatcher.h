@@ -52,6 +52,9 @@ public:
 
     /**
      * Constructs an EditorWatcher.
+     * @param url the given URL.
+     * @param mimeType the data MIME type.
+     * @param option the open option.
      * @param parent the parent object of this EditorWatcher, which will take care of deleting
      *               this EditorWatcher if the parent is deleted.
      * @param parentWidget the parent widget of this EditorWatcher, which will be used as the parent

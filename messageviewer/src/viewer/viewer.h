@@ -107,7 +107,6 @@ public:
     * @param parent parent widget
     * @param widget the application's main widget
     * @param actionCollection the action collection where the widget's actions will belong to
-    * @param f window flags
     */
     explicit Viewer(QWidget *parent, QWidget *widget = nullptr, KActionCollection *actionCollection = nullptr);
     ~Viewer() override;
@@ -233,6 +232,7 @@ public:
     * Display a generic HTML splash page instead of a message.
     * @param templateName - the template to be loaded
     * @param data - data for the template
+    * @param domain the domain.
     */
     void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
 
