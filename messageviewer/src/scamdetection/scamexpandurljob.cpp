@@ -101,6 +101,9 @@ void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
         KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Short url \'%1\' redirects to \'%2\'.",
                                                              shortUrl.url(),
                                                              longUrl.toDisplayString()));
+    } else {
+        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.",
+                                                             shortUrl.url()));
     }
     deleteLater();
 }
