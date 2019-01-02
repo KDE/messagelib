@@ -69,7 +69,7 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
         deleteLater();
         return;
     }
-    const QUrl newUrl(QStringLiteral("http://api.longurl.org/v2/expand?url=%1&format=json").arg(
+    const QUrl newUrl(QStringLiteral("https://lengthenurl.info/api/longurl/shorturl/?inputURL=%1&format=json").arg(
                           url.url()));
 
     qCDebug(MESSAGEVIEWER_LOG) << " newUrl " << newUrl;
@@ -86,12 +86,14 @@ void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
     if (!reply->property("shortUrl").isNull()) {
         shortUrl.setUrl(reply->property("shortUrl").toString());
     }
-    QJsonDocument jsonDoc = QJsonDocument::fromBinaryData(reply->readAll());
+    const QByteArray ba = reply->readAll();
+    //qDebug() << " reply->readAll()" << ba;
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(ba);
     reply->deleteLater();
     if (!jsonDoc.isNull()) {
         const QMap<QString, QVariant> map = jsonDoc.toVariant().toMap();
         QUrl longUrl;
-        const QVariant longUrlVar = map.value(QStringLiteral("long-url"));
+        const QVariant longUrlVar = map.value(QStringLiteral("LongURL"));
         if (longUrlVar.isValid()) {
             longUrl.setUrl(longUrlVar.toString());
         } else {
