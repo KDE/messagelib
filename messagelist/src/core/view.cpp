@@ -46,6 +46,8 @@
 #include <QScrollBar>
 #include <QLineEdit>
 #include <QMenu>
+#include <QPainter>
+
 #include <KLocalizedString>
 #include "messagelist_debug.h"
 
@@ -72,7 +74,10 @@ public:
     }
 
     void expandFullThread(const QModelIndex &index);
+    void generalPaletteChanged();
 
+
+    QColor mTextColor;
     View *const q;
 
     Widget *mWidget = nullptr;
@@ -666,6 +671,32 @@ void View::resizeEvent(QResizeEvent *e)
     triggerDelayedSaveThemeColumnState();
 }
 
+void View::paintEvent(QPaintEvent *event)
+{
+#if 0
+    if (/*mFirstResult &&*/ (!model() || model()->rowCount() == 0)) {
+        QPainter p(viewport());
+
+        QFont font = p.font();
+        font.setItalic(true);
+        p.setFont(font);
+
+        if (!d->mTextColor.isValid()) {
+            d->generalPaletteChanged();
+        }
+        p.setPen(d->mTextColor);
+
+        p.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, i18n("No result found"));
+    } else {
+        QTreeView::paintEvent(event);
+    }
+#else
+    QTreeView::paintEvent(event);
+#endif
+}
+
+
+
 void View::modelAboutToEmitLayoutChanged()
 {
     // QHeaderView goes totally NUTS with a layoutChanged() call
@@ -961,6 +992,14 @@ void View::setChildrenExpanded(const Item *root, bool expand)
             setExpanded(idx, false);
         }
     }
+}
+
+void View::Private::generalPaletteChanged()
+{
+    const QPalette palette = q->viewport()->palette();
+    QColor color = palette.text().color();
+    color.setAlpha(128);
+    mTextColor = color;
 }
 
 void View::Private::expandFullThread(const QModelIndex &index)
@@ -2724,3 +2763,4 @@ void View::setQuickSearchClickMessage(const QString &msg)
 }
 
 #include "moc_view.cpp"
+

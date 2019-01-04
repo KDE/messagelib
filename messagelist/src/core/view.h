@@ -413,6 +413,7 @@ protected:
     */
     void resizeEvent(QResizeEvent *e) override;
 
+    void paintEvent(QPaintEvent *event) override;
     /**
     * Reimplemented in order to kill the QTreeView column auto-resizing
     */
