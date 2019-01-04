@@ -879,7 +879,7 @@ QList< MessageItem * > View::selectionAsMessageItemList(bool includeCollapsedChi
     if (lSelected.isEmpty()) {
         return selectedMessages;
     }
-    for (const auto idx : qAsConst(lSelected)) {
+    for (const auto &idx : qAsConst(lSelected)) {
         // The asserts below are theoretically valid but at the time
         // of writing they fail because of a bug in QItemSelectionModel::selectedRows()
         // which returns also non-selectable items.
