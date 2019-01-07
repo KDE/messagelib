@@ -80,7 +80,9 @@ void SearchCollectionIndexingWarning::setCollection(const Akonadi::Collection &c
 
     Akonadi::PersistentSearchAttribute *attr = collection.attribute<Akonadi::PersistentSearchAttribute>();
     Akonadi::Collection::List cols;
-    Q_FOREACH (qint64 col, attr->queryCollections()) {
+    const QVector<qint64> queryCols = attr->queryCollections();
+    cols.reserve(queryCols.count());
+    for (qint64 col : queryCols) {
         cols.push_back(Akonadi::Collection(col));
     }
     if (cols.isEmpty()) {

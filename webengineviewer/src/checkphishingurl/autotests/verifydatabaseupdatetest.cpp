@@ -124,7 +124,7 @@ void VerifyDataBaseUpdateTest::shouldVerifyCheckSums()
 
     QByteArray newSsha256;
     std::sort(itemToStore.begin(), itemToStore.end(), WebEngineViewer::Addition::lessThan);
-    Q_FOREACH (const WebEngineViewer::Addition &add, itemToStore) {
+    for (const WebEngineViewer::Addition &add : qAsConst(itemToStore)) {
         QByteArray ba = add.hashString;
         newSsha256 += ba;
     }
