@@ -356,6 +356,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     const bool messageHasAttachment = KMime::hasAttachment(message) || !attachmentHtml.isEmpty();
     headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
     headerObject.insert(QStringLiteral("attachmentHtml"), attachmentHtml);
+    headerObject.insert(QStringLiteral("attachmentI18n"), i18n("Attachments:"));
 
     if (messageHasAttachment) {
         const QString iconPath

@@ -78,10 +78,14 @@
                         </div>
 		</div>
 		{% endif %}
-	</div>
-	{% if header.hasAttachment %}
-                <div>{{ header.attachmentHtml|safe }}</div>
-	{% endif %}
-	</div>
+                {% if header.hasAttachment %}
+                <div class="row">
+                        <div class="headerleft">{{ header.attachmentI18n }}</div>
+                        <div class="headerright">{{ header.attachmentHtml|safe }}</div>
+                </div>
+                {% endif %}
+
+        </div>
+        </div>
 </div>
 <div id="kmailContent">
