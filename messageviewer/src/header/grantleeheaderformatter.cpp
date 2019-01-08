@@ -352,10 +352,10 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("vcardi18n"), i18n("[vcard]"));
     headerObject.insert(QStringLiteral("readOnlyMessage"), style->readOnlyMessage());
 
-    const bool messageHasAttachment = KMime::hasAttachment(message);
+    const QString attachmentHtml = style->attachmentHtml();
+    const bool messageHasAttachment = KMime::hasAttachment(message) || !attachmentHtml.isEmpty();
     headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
-
-    headerObject.insert(QStringLiteral("attachmentHtml"), style->attachmentHtml());
+    headerObject.insert(QStringLiteral("attachmentHtml"), attachmentHtml);
 
     if (messageHasAttachment) {
         const QString iconPath
