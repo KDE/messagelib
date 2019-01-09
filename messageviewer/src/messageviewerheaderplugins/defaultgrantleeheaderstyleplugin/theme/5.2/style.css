@@ -48,6 +48,11 @@ div#headerbox div.headerright {
     font-weight: bold;
     padding: 0.1em;
 }
+div#headerbox div.headerleftnowrap {
+    display: table-cell;
+    padding: 0.1em 1em;
+    white-space: pre; /* this will avoid line breaks*/
+}
 div#headerbox div.headerrightdate {
     color: rgb(120, 125, 129) !important;
     display: table-cell;
