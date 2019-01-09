@@ -353,7 +353,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("readOnlyMessage"), style->readOnlyMessage());
 
     const QString attachmentHtml = style->attachmentHtml();
-    const bool messageHasAttachment = KMime::hasAttachment(message);// || !attachmentHtml.isEmpty();
+    const bool messageHasAttachment = KMime::hasAttachment(message) && !attachmentHtml.isEmpty();
     headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
     headerObject.insert(QStringLiteral("attachmentHtml"), attachmentHtml);
 
