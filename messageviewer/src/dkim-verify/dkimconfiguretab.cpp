@@ -68,8 +68,3 @@ void DKIMConfigureTab::resetSettings()
         w->resetSettings();
     }
 }
-
-void DKIMConfigureTab::init()
-{
-    //TODO
-}

@@ -37,7 +37,6 @@ public:
     void resetSettings();
 
 private:
-    void init();
     QList<DKIMConfigureTabWidget *> mListTabWidget;
     QTabWidget *mTabWidget = nullptr;
 };
