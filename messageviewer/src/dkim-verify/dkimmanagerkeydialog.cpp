@@ -65,3 +65,14 @@ void DKIMManagerKeyDialog::writeConfig()
     group.writeEntry("Size", size());
     group.sync();
 }
+
+void DKIMManagerKeyDialog::loadKeys()
+{
+    mManagerWidget->loadKeys();
+}
+
+void DKIMManagerKeyDialog::saveKeys()
+{
+    mManagerWidget->saveKeys();
+}
+

@@ -18,6 +18,7 @@
 */
 
 #include "dkimchecksignaturejob.h"
+#include "messageviewer_debug.h"
 using namespace MessageViewer;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
     : QObject(parent)
@@ -30,6 +31,12 @@ DKIMCheckSignatureJob::~DKIMCheckSignatureJob()
 
 void DKIMCheckSignatureJob::start()
 {
+    //TODO
+    if (!canStart()) {
+        qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start job";
+        deleteLater();
+        return;
+    }
     //TODO
 }
 

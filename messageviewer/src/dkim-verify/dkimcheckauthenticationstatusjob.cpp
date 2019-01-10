@@ -37,6 +37,7 @@ void DKIMCheckAuthenticationStatusJob::start()
         deleteLater();
         return;
     }
+    //TODO
 }
 
 bool DKIMCheckAuthenticationStatusJob::canStart() const

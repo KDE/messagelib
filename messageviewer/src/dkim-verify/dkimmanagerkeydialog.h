@@ -34,6 +34,8 @@ public:
 private:
     void readConfig();
     void writeConfig();
+    void loadKeys();
+    void saveKeys();
     DKIMManagerKeyWidget *mManagerWidget = nullptr;
 };
 }
