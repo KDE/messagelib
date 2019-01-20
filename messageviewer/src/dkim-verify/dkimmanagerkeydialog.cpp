@@ -75,4 +75,3 @@ void DKIMManagerKeyDialog::saveKeys()
 {
     mManagerWidget->saveKeys();
 }
-

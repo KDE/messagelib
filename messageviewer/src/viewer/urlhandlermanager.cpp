@@ -690,7 +690,7 @@ bool AttachmentURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         w->scrollToAttachment(node);
     }
     //if (shouldShowDialog || w->nodeHelper()->isNodeDisplayedHidden(node)) {
-        w->openAttachment(node, w->nodeHelper()->tempFileUrlFromNode(node));
+    w->openAttachment(node, w->nodeHelper()->tempFileUrlFromNode(node));
     //}
 
     return true;

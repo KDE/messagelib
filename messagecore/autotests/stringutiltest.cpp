@@ -479,7 +479,6 @@ void StringUtilTest::test_parseMailToBug832795()
     QCOMPARE(data.at(3).first, QLatin1String("body"));
     QCOMPARE(data.at(3).second, QLatin1String(
                  "On Thu, 28 Jul 2016References=<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>body=On Thu, 28 Jul 2016 23:39:03 +0200 Dominik George <nik@naturalnet.de> wrote:\n> Package: kmail\n> Version: 4:16.04.3-1\n"));
-
 }
 
 void StringUtilTest::test_stripOffMessagePrefix_data()

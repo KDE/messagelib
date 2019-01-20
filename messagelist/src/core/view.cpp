@@ -76,7 +76,6 @@ public:
     void expandFullThread(const QModelIndex &index);
     void generalPaletteChanged();
 
-
     QColor mTextColor;
     View *const q;
 
@@ -694,8 +693,6 @@ void View::paintEvent(QPaintEvent *event)
     QTreeView::paintEvent(event);
 #endif
 }
-
-
 
 void View::modelAboutToEmitLayoutChanged()
 {
@@ -2763,4 +2760,3 @@ void View::setQuickSearchClickMessage(const QString &msg)
 }
 
 #include "moc_view.cpp"
-
