@@ -78,8 +78,8 @@ CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
     , mPaintDevice(pd)
 {
     recalculatePGPColors();
-    const QString imgSrcShow = QStringLiteral("quicklistOpened.png");
-    const QString imgSrcHide = QStringLiteral("quicklistClosed.png");
+    const QString imgSrcShow = QStringLiteral("quicklistClosed.png");
+    const QString imgSrcHide = QStringLiteral("quicklistOpened.png");
     imgShowUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcShow)).url();
     imgHideUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcHide)).url();
 }
