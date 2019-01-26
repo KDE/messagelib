@@ -913,7 +913,7 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         || (scheme == QLatin1String("ftps")) || (scheme == QLatin1String("sftp"))
         || (scheme == QLatin1String("help")) || (scheme == QLatin1String("vnc"))
         || (scheme == QLatin1String("smb")) || (scheme == QLatin1String("fish"))
-        || (scheme == QLatin1String("news"))) {
+        || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel"))) {
         KPIM::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
         QTimer::singleShot(2000, KPIM::BroadcastStatus::instance(), &KPIM::BroadcastStatus::reset);
 
