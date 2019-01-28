@@ -51,6 +51,10 @@ public:
 
     Q_REQUIRED_RESULT virtual bool hasStatusBarSupport() const;
 
+    Q_REQUIRED_RESULT virtual bool hasPopupMenuSupport() const;
+
+    Q_REQUIRED_RESULT virtual bool hasToolBarSupport() const;
+
 Q_SIGNALS:
     void configChanged();
 

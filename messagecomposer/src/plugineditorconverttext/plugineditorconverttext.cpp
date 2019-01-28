@@ -77,7 +77,17 @@ bool PluginEditorConvertText::canWorkOnHtml() const
     return true;
 }
 
+bool PluginEditorConvertText::hasToolBarSupport() const
+{
+    return false;
+}
+
 bool PluginEditorConvertText::hasStatusBarSupport() const
+{
+    return false;
+}
+
+bool PluginEditorConvertText::hasPopupMenuSupport() const
 {
     return false;
 }
