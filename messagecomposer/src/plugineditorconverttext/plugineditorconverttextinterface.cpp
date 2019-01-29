@@ -32,7 +32,7 @@ public:
     {
     }
 
-    PluginActionType mActionType;
+    QVector<PluginActionType> mActionTypes;
 
     QWidget *mParentWidget = nullptr;
     QWidget *statusBarWidget = nullptr;
@@ -68,14 +68,19 @@ QWidget *PluginEditorConvertTextInterface::parentWidget() const
     return d->mParentWidget;
 }
 
-void PluginEditorConvertTextInterface::setActionType(PluginActionType type)
+void PluginEditorConvertTextInterface::setActionType(const QVector<PluginActionType> &type)
 {
-    d->mActionType = type;
+    d->mActionTypes = type;
 }
 
-PluginActionType PluginEditorConvertTextInterface::actionType() const
+QVector<PluginActionType> PluginEditorConvertTextInterface::actionTypes() const
 {
-    return d->mActionType;
+    return d->mActionTypes;
+}
+
+void PluginEditorConvertTextInterface::addActionType(const PluginActionType &type)
+{
+    d->mActionTypes += type;
 }
 
 void PluginEditorConvertTextInterface::createAction(KActionCollection *ac)

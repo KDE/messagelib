@@ -58,8 +58,9 @@ public:
     Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
-    void setActionType(PluginActionType type);
-    Q_REQUIRED_RESULT PluginActionType actionType() const;
+    void setActionType(const QVector<PluginActionType> &type);
+    void addActionType(const PluginActionType &type);
+    Q_REQUIRED_RESULT QVector<PluginActionType> actionTypes() const;
 
     virtual void createAction(KActionCollection *ac);
 
