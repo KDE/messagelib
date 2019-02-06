@@ -22,11 +22,41 @@
 
 #include <PimCommon/CustomToolsViewInterface>
 #include "messagecomposer_export.h"
+#include <QDebug>
 namespace KPIMTextEdit {
 class RichTextComposer;
 }
 namespace MessageComposer {
 class PluginEditorGrammarCustomToolsViewInterfacePrivate;
+
+class MESSAGECOMPOSER_EXPORT PluginGrammarAction
+{
+public:
+    PluginGrammarAction();
+
+    Q_REQUIRED_RESULT QString replacement() const;
+    void setReplacement(const QString &replacement);
+
+    Q_REQUIRED_RESULT int start() const;
+    void setStart(int start);
+
+    Q_REQUIRED_RESULT int end() const;
+    void setEnd(int end);
+
+    Q_REQUIRED_RESULT QStringList suggestions() const;
+    void setSuggestions(const QStringList &suggestions);
+
+    Q_REQUIRED_RESULT int blockId() const;
+    void setBlockId(int blockId);
+
+private:
+    QStringList mSuggestions;
+    QString mReplacement;
+    int mStart = -1;
+    int mEnd = -1;
+    int mBlockId = -1;
+};
+
 class MESSAGECOMPOSER_EXPORT PluginEditorGrammarCustomToolsViewInterface : public PimCommon::CustomToolsViewInterface
 {
     Q_OBJECT
@@ -40,8 +70,14 @@ public:
 
     Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
+
+Q_SIGNALS:
+    void replaceText(const MessageComposer::PluginGrammarAction &act);
+
 private:
     PluginEditorGrammarCustomToolsViewInterfacePrivate *const d;
 };
 }
+Q_DECLARE_METATYPE(MessageComposer::PluginGrammarAction)
+MESSAGECOMPOSER_EXPORT QDebug operator <<(QDebug d, const MessageComposer::PluginGrammarAction &t);
 #endif // PLUGINEDITORGRAMMARCUSTOMTOOLSVIEWINTERFACE_H

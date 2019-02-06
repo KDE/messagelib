@@ -64,3 +64,67 @@ void PluginEditorGrammarCustomToolsViewInterface::setRichTextEditor(KPIMTextEdit
 {
     d->mEditor = richTextEditor;
 }
+
+PluginGrammarAction::PluginGrammarAction()
+{
+}
+
+QString PluginGrammarAction::replacement() const
+{
+    return mReplacement;
+}
+
+void PluginGrammarAction::setReplacement(const QString &replacement)
+{
+    mReplacement = replacement;
+}
+
+int PluginGrammarAction::start() const
+{
+    return mStart;
+}
+
+void PluginGrammarAction::setStart(int start)
+{
+    mStart = start;
+}
+
+int PluginGrammarAction::end() const
+{
+    return mEnd;
+}
+
+void PluginGrammarAction::setEnd(int end)
+{
+    mEnd = end;
+}
+
+QStringList PluginGrammarAction::suggestions() const
+{
+    return mSuggestions;
+}
+
+void PluginGrammarAction::setSuggestions(const QStringList &suggestions)
+{
+    mSuggestions = suggestions;
+}
+
+int PluginGrammarAction::blockId() const
+{
+    return mBlockId;
+}
+
+void PluginGrammarAction::setBlockId(int blockId)
+{
+    mBlockId = blockId;
+}
+
+QDebug operator <<(QDebug d, const PluginGrammarAction &t)
+{
+    d << "start " << t.start();
+    d << "end " << t.end();
+    d << "blockId " << t.blockId();
+    d << "suggestion " << t.suggestions();
+    d << "replacement " << t.replacement();
+    return d;
+}

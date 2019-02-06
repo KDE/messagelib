@@ -20,6 +20,7 @@
 #include "plugineditorgrammarmanager.h"
 #include <PimCommon/CustomToolsPlugin>
 #include "messagecomposer_debug.h"
+#include "plugineditorgrammarcustomtoolsviewinterface.h"
 #include <QFileInfo>
 #include <QSet>
 #include <KPluginLoader>
@@ -165,6 +166,7 @@ PluginEditorGrammarManager::PluginEditorGrammarManager(QObject *parent)
     : QObject(parent)
     , d(new MessageComposer::PluginEditorGrammarManagerPrivate(this))
 {
+    qRegisterMetaType<MessageComposer::PluginGrammarAction>();
 }
 
 PluginEditorGrammarManager::~PluginEditorGrammarManager()
