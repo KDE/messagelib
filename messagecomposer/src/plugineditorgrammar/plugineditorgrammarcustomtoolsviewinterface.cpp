@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "plugineditorgrammarcustomtoolsviewinterface.h"
 #include <KPIMTextEdit/RichTextComposer>
 using namespace MessageComposer;
@@ -32,17 +31,14 @@ public:
     KPIMTextEdit::RichTextComposer *mEditor = nullptr;
 };
 
-
 PluginEditorGrammarCustomToolsViewInterface::PluginEditorGrammarCustomToolsViewInterface(QWidget *parent)
     : PimCommon::CustomToolsViewInterface(parent)
     , d(new PluginEditorGrammarCustomToolsViewInterfacePrivate)
 {
-
 }
 
 PluginEditorGrammarCustomToolsViewInterface::~PluginEditorGrammarCustomToolsViewInterface()
 {
-
 }
 
 void PluginEditorGrammarCustomToolsViewInterface::setParentWidget(QWidget *parent)

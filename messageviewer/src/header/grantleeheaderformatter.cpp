@@ -200,8 +200,7 @@ QString GrantleeHeaderFormatter::toHtml(
         settings.showEmoticons);
 }
 
-QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message,
-                                        bool isPrinting) const
+QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const
 {
     d->templateLoader->setTemplateDirs(QStringList() << absolutPath);
     Grantlee::Template headerTemplate = d->engine->loadByName(filename);
@@ -211,8 +210,7 @@ QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, 
     return format(absolutPath, headerTemplate, displayExtraHeaders, isPrinting, style, message);
 }
 
-QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting,
-                                        const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons) const
+QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons) const
 {
     QVariantHash headerObject;
 

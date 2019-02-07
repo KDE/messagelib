@@ -64,7 +64,6 @@ public:
     explicit PluginEditorGrammarCustomToolsViewInterface(QWidget *parent = nullptr);
     ~PluginEditorGrammarCustomToolsViewInterface();
 
-
     void setParentWidget(QWidget *parent);
     Q_REQUIRED_RESULT QWidget *parentWidget() const;
 

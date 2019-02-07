@@ -131,8 +131,7 @@ public:
     explicit Aggregation();
     explicit Aggregation(const Aggregation &opt);
     explicit Aggregation(
-        const QString &name, const QString &description, Grouping grouping, GroupExpandPolicy groupExpandPolicy, Threading threading, ThreadLeader threadLeader, ThreadExpandPolicy threadExpandPolicy,
-        FillViewStrategy fillViewStrategy, bool readOnly);
+        const QString &name, const QString &description, Grouping grouping, GroupExpandPolicy groupExpandPolicy, Threading threading, ThreadLeader threadLeader, ThreadExpandPolicy threadExpandPolicy, FillViewStrategy fillViewStrategy, bool readOnly);
     static bool compareName(Aggregation *agg1, Aggregation *agg2)
     {
         return agg1->name() < agg2->name();

@@ -129,8 +129,7 @@ enum Result {
 class KeyResolver
 {
 public:
-    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, int encrKeyNearExpiryThresholdDays, int signKeyNearExpiryThresholdDays,
-                int encrRootCertNearExpiryThresholdDays, int signRootCertNearExpiryThresholdDays, int encrChainCertNearExpiryThresholdDays, int signChainCertNearExpiryThresholdDays);
+    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, int encrKeyNearExpiryThresholdDays, int signKeyNearExpiryThresholdDays, int encrRootCertNearExpiryThresholdDays, int signRootCertNearExpiryThresholdDays, int encrChainCertNearExpiryThresholdDays, int signChainCertNearExpiryThresholdDays);
 
     ~KeyResolver();
 
@@ -256,8 +255,7 @@ private:
     Kleo::Result resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
     Kleo::Result resolveSigningKeysForEncryption();
     Kleo::Result resolveSigningKeysForSigningOnly();
-    Kleo::Result checkKeyNearExpiry(const GpgME::Key &key, const char *dontAskAgainName, bool mine, bool sign, bool ca = false, int recurse_limit = 100,
-                                    const GpgME::Key &orig_key = GpgME::Key::null) const;
+    Kleo::Result checkKeyNearExpiry(const GpgME::Key &key, const char *dontAskAgainName, bool mine, bool sign, bool ca = false, int recurse_limit = 100, const GpgME::Key &orig_key = GpgME::Key::null) const;
     void collapseAllSplitInfos();
     void addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int formats);
     void addKeys(const std::vector<Item> &items, CryptoMessageFormat f);

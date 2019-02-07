@@ -61,8 +61,7 @@ typedef QSharedPointer<MimeMessagePart> MimeMessagePartPtr;
 class MIMETREEPARSER_EXPORT ProcessResult
 {
 public:
-    explicit ProcessResult(NodeHelper *nodeHelper, KMMsgSignatureState inlineSignatureState = KMMsgNotSigned, KMMsgEncryptionState inlineEncryptionState = KMMsgNotEncrypted,
-                           bool neverDisplayInline = false)
+    explicit ProcessResult(NodeHelper *nodeHelper, KMMsgSignatureState inlineSignatureState = KMMsgNotSigned, KMMsgEncryptionState inlineEncryptionState = KMMsgNotEncrypted, bool neverDisplayInline = false)
         : mInlineSignatureState(inlineSignatureState)
         , mInlineEncryptionState(inlineEncryptionState)
         , mNeverDisplayInline(neverDisplayInline)

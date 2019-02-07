@@ -657,8 +657,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     return receipt;
 }
 
-KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal,
-                                                const QVector<KMime::MDN::DispositionModifier> &m)
+KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal, const QVector<KMime::MDN::DispositionModifier> &m)
 {
     // extract where to send to:
     QString receiptTo;

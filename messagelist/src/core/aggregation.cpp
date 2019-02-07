@@ -29,8 +29,7 @@ using namespace MessageList::Core;
 static const int gAggregationCurrentVersion = 0x1009; // increase if you add new fields of change the meaning of some
 
 Aggregation::Aggregation(
-    const QString &name, const QString &description, Grouping grouping, GroupExpandPolicy groupExpandPolicy, Threading threading, ThreadLeader threadLeader, ThreadExpandPolicy threadExpandPolicy,
-    FillViewStrategy fillViewStrategy, bool readOnly)
+    const QString &name, const QString &description, Grouping grouping, GroupExpandPolicy groupExpandPolicy, Threading threading, ThreadLeader threadLeader, ThreadExpandPolicy threadExpandPolicy, FillViewStrategy fillViewStrategy, bool readOnly)
     : OptionSet(name, description, readOnly)
     , mGrouping(grouping)
     , mGroupExpandPolicy(groupExpandPolicy)

@@ -161,8 +161,7 @@ static inline void paint_right_aligned_elided_text(const QString &text, Theme::C
     }
 }
 
-static inline void compute_bounding_rect_for_right_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir,
-                                                                       const QFont &font)
+static inline void compute_bounding_rect_for_right_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir, const QFont &font)
 {
     Q_UNUSED(font);
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);
@@ -201,8 +200,7 @@ static inline void paint_left_aligned_elided_text(const QString &text, Theme::Co
     }
 }
 
-static inline void compute_bounding_rect_for_left_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir,
-                                                                      const QFont &font)
+static inline void compute_bounding_rect_for_left_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir, const QFont &font)
 {
     Q_UNUSED(font);
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);

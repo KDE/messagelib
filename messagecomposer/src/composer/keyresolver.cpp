@@ -646,8 +646,7 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::Private {
     ContactPreferencesMap mContactPreferencesMap;
 };
 
-Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int f, int encrWarnThresholdKey, int signWarnThresholdKey, int encrWarnThresholdRootCert,
-                               int signWarnThresholdRootCert, int encrWarnThresholdChainCert, int signWarnThresholdChainCert)
+Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int f, int encrWarnThresholdKey, int signWarnThresholdKey, int encrWarnThresholdRootCert, int signWarnThresholdRootCert, int encrWarnThresholdChainCert, int signWarnThresholdChainCert)
     : mEncryptToSelf(encToSelf)
     , mShowApprovalDialog(showApproval)
     , mOpportunisticEncyption(oppEncryption)

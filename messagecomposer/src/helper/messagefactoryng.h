@@ -99,8 +99,7 @@ public:
     user, mail is not changed and the reply-to field is set to
     the email address of the original sender.
     */
-    Q_REQUIRED_RESULT KMime::Message::Ptr createRedirect(const QString &toStr, const QString &ccStr = QString(), const QString &bccStr = QString(), int transportId = -1,
-                                                         const QString &fcc = QString(), int identity = -1);
+    Q_REQUIRED_RESULT KMime::Message::Ptr createRedirect(const QString &toStr, const QString &ccStr = QString(), const QString &bccStr = QString(), int transportId = -1, const QString &fcc = QString(), int identity = -1);
 
     Q_REQUIRED_RESULT KMime::Message::Ptr createResend();
 
@@ -121,8 +120,7 @@ public:
 
       @return The notification message or 0, if none should be sent, as well as the state of the MDN operation.
     **/
-    Q_REQUIRED_RESULT KMime::Message::Ptr createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal = 0,
-                                                    const QVector<KMime::MDN::DispositionModifier> &m = QVector<KMime::MDN::DispositionModifier>());
+    Q_REQUIRED_RESULT KMime::Message::Ptr createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal = 0, const QVector<KMime::MDN::DispositionModifier> &m = QVector<KMime::MDN::DispositionModifier>());
 
     /**
     * Create a new forwarded MIME digest. If the user is trying to forward multiple messages
