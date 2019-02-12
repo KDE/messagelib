@@ -40,8 +40,8 @@ public:
     Q_REQUIRED_RESULT int start() const;
     void setStart(int start);
 
-    Q_REQUIRED_RESULT int end() const;
-    void setEnd(int end);
+    Q_REQUIRED_RESULT int length() const;
+    void setLength(int length);
 
     Q_REQUIRED_RESULT QStringList suggestions() const;
     void setSuggestions(const QStringList &suggestions);
@@ -53,7 +53,7 @@ private:
     QStringList mSuggestions;
     QString mReplacement;
     int mStart = -1;
-    int mEnd = -1;
+    int mLength = -1;
     int mBlockId = -1;
 };
 

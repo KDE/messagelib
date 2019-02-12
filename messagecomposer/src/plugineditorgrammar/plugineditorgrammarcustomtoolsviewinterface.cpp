@@ -85,14 +85,14 @@ void PluginGrammarAction::setStart(int start)
     mStart = start;
 }
 
-int PluginGrammarAction::end() const
+int PluginGrammarAction::length() const
 {
-    return mEnd;
+    return mLength;
 }
 
-void PluginGrammarAction::setEnd(int end)
+void PluginGrammarAction::setLength(int end)
 {
-    mEnd = end;
+    mLength = end;
 }
 
 QStringList PluginGrammarAction::suggestions() const
@@ -118,7 +118,7 @@ void PluginGrammarAction::setBlockId(int blockId)
 QDebug operator <<(QDebug d, const PluginGrammarAction &t)
 {
     d << "start " << t.start();
-    d << "end " << t.end();
+    d << "length " << t.length();
     d << "blockId " << t.blockId();
     d << "suggestion " << t.suggestions();
     d << "replacement " << t.replacement();
