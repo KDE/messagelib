@@ -62,8 +62,8 @@ TestCSSHelper::TestCSSHelper(const QPaintDevice *pd)
 
     QPalette pal;
 
-    pal.setColor(QPalette::Background, QColor(0xd6, 0xd2, 0xd0));
-    pal.setColor(QPalette::Foreground, QColor(0x22, 0x1f, 0x1e));
+    pal.setColor(QPalette::Window, QColor(0xd6, 0xd2, 0xd0));
+    pal.setColor(QPalette::WindowText, QColor(0x22, 0x1f, 0x1e));
     pal.setColor(QPalette::Highlight, QColor(0x43, 0xac, 0xe8));
     pal.setColor(QPalette::HighlightedText, QColor(0xff, 0xff, 0xff));
     pal.setColor(QPalette::Mid, QColor(0xb3, 0xab, 0xa7));

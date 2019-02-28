@@ -42,7 +42,7 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     QWidget *toolManagerWidget = new QWidget(this);
     vbox->addWidget(toolManagerWidget);
     vbox = new QVBoxLayout;
-    vbox->setMargin(0);
+    vbox->setContentsMargins(0, 0, 0, 0);
     vbox->setSpacing(0);
     toolManagerWidget->setLayout(vbox);
     MessageViewer::ViewerPluginToolManager *toolManager

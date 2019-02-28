@@ -26,7 +26,7 @@ using namespace MessageCore;
 
 static bool isLightTheme()
 {
-    return qApp->palette().color(QPalette::Background).value() >= 128;
+    return qApp->palette().color(QPalette::Window).value() >= 128;
 }
 
 Q_GLOBAL_STATIC(ColorUtil, s_self)

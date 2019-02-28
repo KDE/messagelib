@@ -1435,7 +1435,7 @@ void ViewerPrivate::createWidgets()
     //TODO: Make a MDN bar similar to Mozillas password bar and show MDNs here as soon as a
     //      MDN enabled message is shown.
     QVBoxLayout *vlay = new QVBoxLayout(q);
-    vlay->setMargin(0);
+    vlay->setContentsMargins(0, 0, 0, 0);
     mSplitter = new QSplitter(Qt::Vertical, q);
     connect(mSplitter, &QSplitter::splitterMoved, this, &ViewerPrivate::saveSplitterSizes);
     mSplitter->setObjectName(QStringLiteral("mSplitter"));
@@ -1451,13 +1451,13 @@ void ViewerPrivate::createWidgets()
 
     mBox = new QWidget(mSplitter);
     QHBoxLayout *mBoxHBoxLayout = new QHBoxLayout(mBox);
-    mBoxHBoxLayout->setMargin(0);
+    mBoxHBoxLayout->setContentsMargins(0, 0, 0, 0);
 
     mColorBar = new HtmlStatusBar(mBox);
     mBoxHBoxLayout->addWidget(mColorBar);
     QWidget *readerBox = new QWidget(mBox);
     QVBoxLayout *readerBoxVBoxLayout = new QVBoxLayout(readerBox);
-    readerBoxVBoxLayout->setMargin(0);
+    readerBoxVBoxLayout->setContentsMargins(0, 0, 0, 0);
     mBoxHBoxLayout->addWidget(readerBox);
 
     mColorBar->setObjectName(QStringLiteral("mColorBar"));

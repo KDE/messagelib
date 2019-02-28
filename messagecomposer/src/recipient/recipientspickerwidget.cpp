@@ -30,7 +30,7 @@ RecipientsPickerWidget::RecipientsPickerWidget(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     mView = new Akonadi::EmailAddressSelectionWidget(false, MessageComposer::RecipientsEditorManager::self()->model()->model(), this);
     layout->addWidget(mView);

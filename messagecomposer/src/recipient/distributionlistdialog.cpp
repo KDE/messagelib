@@ -123,7 +123,7 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     setModal(false);
 
     QBoxLayout *topLayout = new QVBoxLayout(topFrame);
-    topLayout->setMargin(0);
+    topLayout->setContentsMargins(0, 0, 0, 0);
 
     QBoxLayout *titleLayout = new QHBoxLayout();
     topLayout->addItem(titleLayout);

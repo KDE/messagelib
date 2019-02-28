@@ -135,7 +135,7 @@ Widget::Widget(QWidget *pParent)
     setObjectName(QStringLiteral("messagelistwidget"));
 
     QVBoxLayout *g = new QVBoxLayout(this);
-    g->setMargin(0);
+    g->setContentsMargins(0, 0, 0, 0);
     g->setSpacing(0);
 
     d->quickSearchLine = new QuickSearchLine;

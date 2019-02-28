@@ -662,7 +662,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
         .arg(headerFont)
         .arg(extraScreenCss(headerFont))
         .arg(pal.color(QPalette::Highlight).name())
-        .arg(pal.color(QPalette::Background).name())
+        .arg(pal.color(QPalette::Window).name())
         + quoteCSS + fullAddressList();
 }
 
