@@ -31,8 +31,10 @@ TemplateParserExtractHtmlInfo::TemplateParserExtractHtmlInfo(QObject *parent)
 
 TemplateParserExtractHtmlInfo::~TemplateParserExtractHtmlInfo()
 {
-    mTemplateWebEngineView->deleteLater();
-    mExtractHtmlElementWebEngineView->deleteLater();
+    if (mTemplateWebEngineView)
+        mTemplateWebEngineView->deleteLater();
+    if (mExtractHtmlElementWebEngineView)
+        mExtractHtmlElementWebEngineView->deleteLater();
 }
 
 void TemplateParserExtractHtmlInfo::setHtmlForExtractingTextPlain(const QString &html)
