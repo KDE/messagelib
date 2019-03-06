@@ -20,7 +20,7 @@
 #define MESSAGELIST_UTILS_THEMECOMBOBOX_H
 
 #include <messagelist_export.h>
-#include <KComboBox>
+#include <QComboBox>
 #include <collection.h>
 namespace MessageList {
 namespace Core {
@@ -32,9 +32,9 @@ namespace Utils {
 class ThemeComboBoxPrivate;
 
 /**
- * A specialized KComboBox that lists all message list themes.
+ * A specialized QComboBox that lists all message list themes.
  */
-class MESSAGELIST_EXPORT ThemeComboBox : public KComboBox
+class MESSAGELIST_EXPORT ThemeComboBox : public QComboBox
 {
     Q_OBJECT
 

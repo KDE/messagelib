@@ -23,7 +23,7 @@
 
 #include <utils/optionseteditor.h>
 
-class KComboBox;
+class QComboBox;
 
 namespace MessageList {
 namespace Core {
@@ -47,13 +47,13 @@ private:
     Core::Aggregation *mCurrentAggregation = nullptr;  // shallow, may be null!
 
     // Grouping, Threading and Sorting tab
-    KComboBox *mGroupingCombo = nullptr;
-    KComboBox *mGroupExpandPolicyCombo = nullptr;
-    KComboBox *mThreadingCombo = nullptr;
-    KComboBox *mThreadLeaderCombo = nullptr;
-    KComboBox *mThreadExpandPolicyCombo = nullptr;
+    QComboBox *mGroupingCombo = nullptr;
+    QComboBox *mGroupExpandPolicyCombo = nullptr;
+    QComboBox *mThreadingCombo = nullptr;
+    QComboBox *mThreadLeaderCombo = nullptr;
+    QComboBox *mThreadExpandPolicyCombo = nullptr;
     // Advanced tab
-    KComboBox *mFillViewStrategyCombo = nullptr;
+    QComboBox *mFillViewStrategyCombo = nullptr;
 
 public:
     /**

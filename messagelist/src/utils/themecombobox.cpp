@@ -30,7 +30,7 @@ using namespace MessageList::Core;
 using namespace MessageList::Utils;
 
 ThemeComboBox::ThemeComboBox(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
     , d(new ThemeComboBoxPrivate(this))
 {
     if (Manager::instance()) {

@@ -29,7 +29,7 @@
 #include <QPushButton>
 #include <QCheckBox>
 
-#include <KComboBox>
+#include <QComboBox>
 #include <KLocalizedString>
 
 using namespace MessageList::Utils;
@@ -47,27 +47,27 @@ AggregationEditor::AggregationEditor(QWidget *parent)
     QGridLayout *tabg = new QGridLayout(tab);
 
     tabg->addWidget(new QLabel(i18n("Grouping:"), tab), 0, 0);
-    mGroupingCombo = new KComboBox(tab);
+    mGroupingCombo = new QComboBox(tab);
     tabg->addWidget(mGroupingCombo, 0, 1);
 
-    connect(mGroupingCombo, QOverload<int>::of(&KComboBox::activated), this, &AggregationEditor::groupingComboActivated);
+    connect(mGroupingCombo, QOverload<int>::of(&QComboBox::activated), this, &AggregationEditor::groupingComboActivated);
 
     tabg->addWidget(new QLabel(i18n("Group expand policy:"), tab), 3, 0);
-    mGroupExpandPolicyCombo = new KComboBox(tab);
+    mGroupExpandPolicyCombo = new QComboBox(tab);
     tabg->addWidget(mGroupExpandPolicyCombo, 3, 1);
 
     tabg->addWidget(new QLabel(i18n("Threading:"), tab), 4, 0);
-    mThreadingCombo = new KComboBox(tab);
+    mThreadingCombo = new QComboBox(tab);
     tabg->addWidget(mThreadingCombo, 4, 1);
 
-    connect(mThreadingCombo, QOverload<int>::of(&KComboBox::activated), this, &AggregationEditor::threadingComboActivated);
+    connect(mThreadingCombo, QOverload<int>::of(&QComboBox::activated), this, &AggregationEditor::threadingComboActivated);
 
     tabg->addWidget(new QLabel(i18n("Thread leader:"), tab), 5, 0);
-    mThreadLeaderCombo = new KComboBox(tab);
+    mThreadLeaderCombo = new QComboBox(tab);
     tabg->addWidget(mThreadLeaderCombo, 5, 1);
 
     tabg->addWidget(new QLabel(i18n("Thread expand policy:"), tab), 6, 0);
-    mThreadExpandPolicyCombo = new KComboBox(tab);
+    mThreadExpandPolicyCombo = new QComboBox(tab);
     tabg->addWidget(mThreadExpandPolicyCombo, 6, 1);
 
     tabg->setColumnStretch(1, 1);
@@ -80,7 +80,7 @@ AggregationEditor::AggregationEditor(QWidget *parent)
     tabg = new QGridLayout(tab);
 
     tabg->addWidget(new QLabel(i18n("Fill view strategy:"), tab), 0, 0);
-    mFillViewStrategyCombo = new KComboBox(tab);
+    mFillViewStrategyCombo = new QComboBox(tab);
     tabg->addWidget(mFillViewStrategyCombo, 0, 1);
 
     tabg->setColumnStretch(1, 1);

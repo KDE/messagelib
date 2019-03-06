@@ -24,32 +24,32 @@
 #include <QList>
 #include <QPair>
 
-class KComboBox;
+class QComboBox;
 
 namespace MessageList {
 namespace Utils {
 /**
- * Namespace containing some helper functions for KComboBox widgets.
+ * Namespace containing some helper functions for QComboBox widgets.
  */
 namespace ComboBoxUtils {
 /**
-   * Fills the specified KComboBox with the options available in optionDescriptors.
+   * Fills the specified QComboBox with the options available in optionDescriptors.
    * Each option descriptor contains a description string and a distinct integer (possibly enum)
    * identifier value.
    */
-void fillIntegerOptionCombo(KComboBox *combo, const QList< QPair< QString, int > > &optionDescriptors);
+void fillIntegerOptionCombo(QComboBox *combo, const QList< QPair< QString, int > > &optionDescriptors);
 
 /**
    * Returns the identifier of the currently selected option in the specified combo.
    * If the combo has no current selection or something goes wrong then the defaultValue
    * is returned instead.
    */
-int getIntegerOptionComboValue(KComboBox *combo, int defaultValue);
+int getIntegerOptionComboValue(QComboBox *combo, int defaultValue);
 
 /**
    * Sets the currently selected option in the specified combo.
    */
-void setIntegerOptionComboValue(KComboBox *combo, int value);
+void setIntegerOptionComboValue(QComboBox *combo, int value);
 } // namespace ComboBoxUtils
 } // namespace Utils
 } // namespace MessageList
