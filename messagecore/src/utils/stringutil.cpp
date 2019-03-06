@@ -182,7 +182,8 @@ QList<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
     QString toStr;
     int i = 0;
     int indexTo = -1;
-    Q_FOREACH (const auto &queryItem, query.queryItems(QUrl::FullyDecoded)) {
+    const auto listQuery = query.queryItems(QUrl::FullyDecoded);
+    for (const auto &queryItem : listQuery) {
         if (queryItem.first == QLatin1String("to")) {
             toStr = queryItem.second;
             indexTo = i;
