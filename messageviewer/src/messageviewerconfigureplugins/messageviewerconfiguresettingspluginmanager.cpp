@@ -56,6 +56,7 @@ public:
     void loadPlugin(ConfigureSettingsPluginInfo *item);
     QString configGroupName() const;
     QString configPrefixSettingKey() const;
+    MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
 private:
     QVector<PimCommon::PluginUtilData> mPluginDataList;
     QVector<ConfigureSettingsPluginInfo> mPluginList;
@@ -176,6 +177,17 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::loadPlugin(ConfigureSet
     }
 }
 
+MessageViewerConfigureSettingsPlugin *MessageViewerConfigureSettingsPluginManagerPrivate::pluginFromIdentifier(const QString &id)
+{
+    QVector<ConfigureSettingsPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    for (QVector<ConfigureSettingsPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
+        if ((*it).pluginData.mIdentifier == id) {
+            return (*it).plugin;
+        }
+    }
+    return {};
+}
+
 MessageViewerConfigureSettingsPluginManager *MessageViewerConfigureSettingsPluginManager::self()
 {
     static MessageViewerConfigureSettingsPluginManager s_self;
@@ -212,4 +224,9 @@ QString MessageViewerConfigureSettingsPluginManager::configPrefixSettingKey() co
 QVector<PimCommon::PluginUtilData> MessageViewerConfigureSettingsPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
+}
+
+MessageViewerConfigureSettingsPlugin *MessageViewerConfigureSettingsPluginManager::pluginFromIdentifier(const QString &id)
+{
+    return d->pluginFromIdentifier(id);
 }

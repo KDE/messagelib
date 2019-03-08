@@ -40,6 +40,7 @@ public:
     Q_REQUIRED_RESULT QVector<PimCommon::PluginUtilData> pluginsDataList() const;
     Q_REQUIRED_RESULT QString configPrefixSettingKey() const;
     Q_REQUIRED_RESULT QString configGroupName() const;
+    MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
 private:
     MessageViewerConfigureSettingsPluginManagerPrivate *const d;
 };
