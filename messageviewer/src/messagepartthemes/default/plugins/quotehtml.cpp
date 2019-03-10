@@ -178,9 +178,11 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
             switch (line[p].toLatin1()) {
             case '>':
             case '|':
-                actQuoteLevel++;
-                quoteLength = p;
-                foundQuote = true;
+                if (p == 0 || foundQuote) {
+                    actQuoteLevel++;
+                    quoteLength = p;
+                    foundQuote = true;
+                }
                 break;
             case ' ':  // spaces and tabs are allowed between the quote markers
             case '\t':
