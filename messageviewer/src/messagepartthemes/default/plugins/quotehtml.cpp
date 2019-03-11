@@ -25,7 +25,6 @@
 #include <MessageViewer/HtmlWriter>
 #include <MessageViewer/MessagePartRendererBase>
 
-#include <kcoreaddons_version.h>
 #include <KTextToHTML>
 
 #include <QSharedPointer>
@@ -113,11 +112,7 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
     const auto cssHelper = context->cssHelper();
     Q_ASSERT(cssHelper);
 
-    KTextToHTML::Options convertFlags = KTextToHTML::PreserveSpaces | KTextToHTML::HighlightText
-#if KCOREADDONS_VERSION_MINOR >= 56 // remove once we depend on KF5 5.56
-    | KTextToHTML::ConvertPhoneNumbers
-#endif
-    ;
+    KTextToHTML::Options convertFlags = KTextToHTML::PreserveSpaces | KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
     if (context->showEmoticons()) {
         convertFlags |= KTextToHTML::ReplaceSmileys;
     }
