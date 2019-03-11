@@ -26,8 +26,6 @@ public:
     MessageViewerConfigureSettingsPluginPrivate()
     {
     }
-
-    bool mIsEnabled = false;
 };
 
 MessageViewerConfigureSettingsPlugin::MessageViewerConfigureSettingsPlugin(QObject *parent)
@@ -39,16 +37,6 @@ MessageViewerConfigureSettingsPlugin::MessageViewerConfigureSettingsPlugin(QObje
 MessageViewerConfigureSettingsPlugin::~MessageViewerConfigureSettingsPlugin()
 {
     delete d;
-}
-
-void MessageViewerConfigureSettingsPlugin::setIsEnabled(bool enabled)
-{
-    d->mIsEnabled = enabled;
-}
-
-bool MessageViewerConfigureSettingsPlugin::isEnabled() const
-{
-    return d->mIsEnabled;
 }
 
 void MessageViewerConfigureSettingsPlugin::showConfigureDialog(QWidget *parent)

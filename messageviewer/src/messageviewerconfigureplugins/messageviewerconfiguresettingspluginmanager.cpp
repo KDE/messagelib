@@ -39,7 +39,6 @@ public:
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     MessageViewer::MessageViewerConfigureSettingsPlugin *plugin = nullptr;
-    bool isEnabled = false;
 };
 
 class MessageViewer::MessageViewerConfigureSettingsPluginManagerPrivate
@@ -107,11 +106,6 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
         //1) get plugin data => name/description etc.
         info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
         //2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.first,
-                                                                                pair.second,
-                                                                                info.pluginData.mEnableByDefault,
-                                                                                info.pluginData.mIdentifier);
-        info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         const QString version = data.version();
@@ -170,7 +164,6 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::loadPlugin(ConfigureSet
         item->plugin = pluginLoader.factory()->create<MessageViewer::MessageViewerConfigureSettingsPlugin>(q,
                                                                                                            QVariantList()
                                                                                                            << item->metaDataFileNameBaseName);
-        item->plugin->setIsEnabled(item->isEnabled);
         //By default it's true
         item->pluginData.mHasConfigureDialog = true;
         mPluginDataList.append(item->pluginData);
