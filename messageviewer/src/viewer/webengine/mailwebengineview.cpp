@@ -34,7 +34,6 @@
 #include <QContextMenuEvent>
 #include <WebEngineViewer/WebHitTest>
 
-#include <QWebEngineProfile>
 #include <QPrinter>
 
 #include <WebEngineViewer/WebHitTestResult>
@@ -81,7 +80,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     : WebEngineViewer::WebEngineView(parent)
     , d(new MessageViewer::MailWebEngineViewPrivate)
 {
-    d->mPageEngine = new MailWebEnginePage(new QWebEngineProfile(this), this);
+    d->mPageEngine = new MailWebEnginePage(this);
     setPage(d->mPageEngine);
     d->mWebViewAccessKey = new WebEngineViewer::WebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);

@@ -29,16 +29,6 @@ MailWebEnginePage::MailWebEnginePage(QObject *parent)
     initialize();
 }
 
-MailWebEnginePage::MailWebEnginePage(QWebEngineProfile *profile, QObject *parent)
-    : WebEngineViewer::WebEnginePage(profile, parent)
-{
-    initialize();
-}
-
-MailWebEnginePage::~MailWebEnginePage()
-{
-}
-
 void MailWebEnginePage::initialize()
 {
     settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
