@@ -54,14 +54,10 @@ if (DKIM_CHECKER_BUILD)
         dkim-verify/dkimmanagerkeywidget.cpp
         dkim-verify/dkimmanagerkeydialog.cpp
         dkim-verify/dkimdownloadkeyjob.cpp
-        dkim-verify/dkimconfiguredialog.cpp
-        dkim-verify/dkimconfigurewidget.cpp
         dkim-verify/dkimchecksignaturejob.cpp
-        dkim-verify/dkimconfiguretabwidget.cpp
         dkim-verify/dkimcheckauthenticationstatusjob.cpp
         dkim-verify/dkimauthenticationstatusinfo.cpp
         dkim-verify/dkimutil.cpp
-        dkim-verify/dkimconfiguretab.cpp
         )
 endif()
 
