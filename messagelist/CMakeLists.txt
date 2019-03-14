@@ -1,7 +1,7 @@
 ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGELIST
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagelist_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5MessageListConfigVersion.cmake"
-    SOVERSION 6
+    SOVERSION 5
     )
 
 ########### Targets ###########
