@@ -28,7 +28,7 @@ using namespace MessageList::Core;
 using namespace MessageList::Utils;
 
 AggregationComboBox::AggregationComboBox(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
     , d(new AggregationComboBoxPrivate(this))
 {
     if (Manager::instance()) {

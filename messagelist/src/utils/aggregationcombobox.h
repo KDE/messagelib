@@ -20,7 +20,7 @@
 #define MESSAGELIST_UTILS_AGGREGATIONCOMBOBOX_H
 
 #include <messagelist_export.h>
-#include <KComboBox>
+#include <QComboBox>
 #include <collection.h>
 namespace MessageList {
 namespace Core {
@@ -31,9 +31,9 @@ class StorageModel;
 namespace Utils {
 class AggregationComboBoxPrivate;
 /**
- * A specialized KComboBox that lists all message list aggregations.
+ * A specialized QComboBox that lists all message list aggregations.
  */
-class MESSAGELIST_EXPORT AggregationComboBox : public KComboBox
+class MESSAGELIST_EXPORT AggregationComboBox : public QComboBox
 {
     Q_OBJECT
 
