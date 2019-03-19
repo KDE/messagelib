@@ -310,6 +310,7 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
             return htmlSource;
         }
         extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
+        //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
         //Don't authorize to refresh content.
         if (MessageViewer::Util::excludeExtraHeader(s)) {
             extraHead.clear();
