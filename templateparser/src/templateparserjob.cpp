@@ -1524,7 +1524,7 @@ QString TemplateParserJob::quotedPlainText(const QString &selection) const
     const int firstNonWS = content.indexOf(QRegExp(QLatin1String("\\S")));
     const int lineStart = content.lastIndexOf(QLatin1Char('\n'), firstNonWS);
     if (lineStart >= 0) {
-        content.remove(0, static_cast<unsigned int>(lineStart));
+        content.remove(0, lineStart);
     }
 
     const QString indentStr
@@ -1559,7 +1559,7 @@ uint TemplateParserJob::identityUoid(const KMime::Message::Ptr &msg) const
         idString = hrd->asUnicodeString().trimmed();
     }
     bool ok = false;
-    int id = idString.toUInt(&ok);
+    unsigned int id = idString.toUInt(&ok);
 
     if (!ok || id == 0) {
         id = d->m_identityManager->identityForAddress(
