@@ -29,7 +29,7 @@
 #include "recipientseditorsidewidget.h"
 
 #include "settings/messagecomposersettings.h"
-#include <MessageComposer/DistributionListDialog>
+#include "distributionlistdialog.h"
 
 #include "messagecomposer_debug.h"
 
