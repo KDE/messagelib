@@ -64,8 +64,8 @@
 #include <Libkleo/KeySelectionDialog>
 
 #include <MessageCore/AttachmentCompressJob>
-#include "messagecore/attachmentfrommimecontentjob.h"
-#include "messagecore/attachmentfromurljob.h"
+#include "attachment/attachmentfrommimecontentjob.h"
+#include "attachment/attachmentfromurljob.h"
 #include <MessageCore/AttachmentPropertiesDialog>
 #include "messagecore/attachmentupdatejob.h"
 #include <MessageCore/AttachmentFromUrlUtils>

@@ -94,7 +94,6 @@ install(FILES
     ${MimeTreeParser_main_HEADERS}
     ${MimeTreeParser_temporaryfile_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_export.h
-    ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_debug.h
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/mimetreeparser
     COMPONENT Devel
