@@ -23,7 +23,6 @@
 #define MESSAGEVIEWER_H
 
 #include "messageviewer_export.h"
-#include "config-messageviewer.h"
 #include "messageviewer/viewerplugininterface.h"
 #include <MimeTreeParser/Enums>
 
