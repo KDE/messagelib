@@ -22,7 +22,7 @@
 
 #include <qtest.h>
 
-#include <MessageCore/AttachmentFromUrlJob>
+#include "messagecore/attachmentfromurljob.h"
 #include <MessageCore/StringUtil>
 using namespace MessageCore;
 

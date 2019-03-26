@@ -64,11 +64,10 @@
 #include <Libkleo/KeySelectionDialog>
 
 #include <MessageCore/AttachmentCompressJob>
-#include <MessageCore/AttachmentFromFolderJob>
-#include <MessageCore/AttachmentFromMimeContentJob>
-#include <MessageCore/AttachmentFromUrlJob>
+#include "messagecore/attachmentfrommimecontentjob.h"
+#include "messagecore/attachmentfromurljob.h"
 #include <MessageCore/AttachmentPropertiesDialog>
-#include <MessageCore/AttachmentUpdateJob>
+#include "messagecore/attachmentupdatejob.h"
 #include <MessageCore/AttachmentFromUrlUtils>
 #include <settings/messagecomposersettings.h>
 #include <KIO/Job>

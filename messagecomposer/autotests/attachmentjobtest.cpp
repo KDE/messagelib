@@ -32,7 +32,7 @@ using namespace KMime;
 #include <MessageComposer/AttachmentJob>
 using namespace MessageComposer;
 
-#include <MessageCore/AttachmentFromUrlJob>
+//#include "messagecore/attachmentfromfolderjob.h"
 #include <MessageCore/AttachmentPart>
 using namespace MessageCore;
 
