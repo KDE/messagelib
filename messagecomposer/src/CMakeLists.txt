@@ -365,7 +365,6 @@ ecm_generate_headers(MessageComposer_Camelcaserecipient_HEADERS
     HEADER_NAMES
     Recipient
     RecipientsEditor
-    DistributionListDialog
     RecipientLine
     REQUIRED_HEADERS MessageComposer_recipient_HEADERS
     PREFIX MessageComposer
