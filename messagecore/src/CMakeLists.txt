@@ -117,15 +117,13 @@ ecm_generate_headers(MessageCore_Camelcasesettings_HEADERS
 
 ecm_generate_headers(MessageCore_Camelcaseattachment_HEADERS
     HEADER_NAMES
-    AttachmentFromMimeContentJob
     AttachmentFromUrlBaseJob
-    AttachmentFromUrlJob
-    AttachmentLoadJob
     AttachmentPart
     AttachmentPropertiesDialog
     AttachmentCompressJob
     AttachmentUpdateJob
-    AttachmentFromUrlUtils
+    AttachmentFromUrlUtils    
+    AttachmentLoadJob
 
     REQUIRED_HEADERS MessageCore_attachment_HEADERS
     PREFIX MessageCore

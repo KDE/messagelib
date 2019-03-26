@@ -27,7 +27,7 @@
 #include <kmime/kmime_headers.h>
 using namespace KMime;
 
-#include <MessageCore/AttachmentFromMimeContentJob>
+#include "messagecore/attachmentfrommimecontentjob.h"
 using namespace MessageCore;
 
 QTEST_MAIN(AttachmentFromMimeContentJobTest)

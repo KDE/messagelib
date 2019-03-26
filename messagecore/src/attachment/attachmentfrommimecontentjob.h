@@ -20,7 +20,7 @@
 #ifndef MESSAGECORE_ATTACHMENTFROMMIMECONTENTJOB_H
 #define MESSAGECORE_ATTACHMENTFROMMIMECONTENTJOB_H
 
-#include "messagecore_export.h"
+#include "messagecore_private_export.h"
 
 #include "attachmentloadjob.h"
 
@@ -34,7 +34,7 @@ namespace MessageCore {
  *
  * @author Constantin Berzan <exit3219@gmail.com>
  */
-class MESSAGECORE_EXPORT AttachmentFromMimeContentJob : public AttachmentLoadJob
+class MESSAGECORE_TESTS_EXPORT AttachmentFromMimeContentJob : public AttachmentLoadJob
 {
     Q_OBJECT
 
