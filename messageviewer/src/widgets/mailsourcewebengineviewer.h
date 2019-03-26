@@ -21,7 +21,6 @@
 #define MAILSOURCEWEBENGINEVIEWER_H
 
 #include <QDialog>
-#include "config-messageviewer.h"
 class QTabWidget;
 class QWebEnginePage;
 
