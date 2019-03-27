@@ -20,12 +20,12 @@
 #ifndef ATTACHMENTUPDATEJOB_H
 #define ATTACHMENTUPDATEJOB_H
 
-#include "messagecore_private_export.h"
+#include "messagecore_export.h"
 #include <KJob>
 #include "attachmentpart.h"
 
 namespace MessageCore {
-class MESSAGECORE_TESTS_EXPORT AttachmentUpdateJob : public KJob
+class MESSAGECORE_EXPORT AttachmentUpdateJob : public KJob
 {
     Q_OBJECT
 public:
