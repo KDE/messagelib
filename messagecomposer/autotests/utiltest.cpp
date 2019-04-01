@@ -21,7 +21,7 @@
 #include "utiltest.h"
 
 #include <QTextDocument>
-#include <qtest.h>
+#include <QTest>
 #include <QStandardPaths>
 
 #include <MessageComposer/Util>

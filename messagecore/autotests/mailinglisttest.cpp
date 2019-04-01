@@ -17,7 +17,7 @@
 
 #include "mailinglisttest.h"
 #include "misc/mailinglist.h"
-#include <qtest.h>
+#include <QTest>
 #include <KConfigGroup>
 #include "messagecore_debug.h"
 #include <KSharedConfig>

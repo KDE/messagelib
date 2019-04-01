@@ -20,10 +20,10 @@
 #define MESSAGEVIEWER_EDITORWATCHER_H
 
 #include "messageviewer_export.h"
-#include <qurl.h>
+#include <QUrl>
 
-#include <qobject.h>
-#include <qtimer.h>
+#include <QObject>
+#include <QTimer>
 #include <QTime>
 class KProcess;
 

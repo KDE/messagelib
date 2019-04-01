@@ -20,7 +20,7 @@
 #include "imagescalingtest.h"
 #include "settings/messagecomposersettings.h"
 #include "../imagescaling.h"
-#include <qtest.h>
+#include <QTest>
 #include <QStandardPaths>
 
 ImageScalingTest::ImageScalingTest(QObject *parent)

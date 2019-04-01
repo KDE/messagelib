@@ -21,7 +21,7 @@
 #define TESTWEBENGINE_H
 
 #include <QWidget>
-#include <qwebengineview.h>
+#include <QWebEngineView>
 namespace WebEngineViewer {
 class WebEnginePage;
 class WebHitTestResult;

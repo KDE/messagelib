@@ -23,7 +23,7 @@
 #include <QBuffer>
 #include "messagecore_debug.h"
 #include <KZip>
-#include <qtest.h>
+#include <QTest>
 
 #include <MessageCore/AttachmentCompressJob>
 using namespace MessageCore;

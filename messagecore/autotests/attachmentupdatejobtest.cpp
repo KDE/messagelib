@@ -17,7 +17,7 @@
 #include "attachmentupdatejobtest.h"
 #include <attachment/attachmentupdatejob.h>
 #include <MessageCore/AttachmentPart>
-#include <qtest.h>
+#include <QTest>
 #include "qtest_messagecore.h"
 
 #define PATH_ATTACHMENTS QLatin1String(KDESRCDIR "/attachments/")

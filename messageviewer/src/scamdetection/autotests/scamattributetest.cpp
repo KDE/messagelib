@@ -19,7 +19,7 @@
 */
 #include "scamattributetest.h"
 #include "../scamattribute.h"
-#include <qtest.h>
+#include <QTest>
 ScamAttributeTest::ScamAttributeTest(QObject *parent)
     : QObject(parent)
 {

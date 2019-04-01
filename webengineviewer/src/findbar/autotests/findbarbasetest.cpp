@@ -23,7 +23,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QToolButton>
-#include <qtest.h>
+#include <QTest>
 #include <QSignalSpy>
 #include <PimCommon/LineEditWithCompleterNg>
 
