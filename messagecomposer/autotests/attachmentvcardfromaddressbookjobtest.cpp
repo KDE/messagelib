@@ -20,7 +20,7 @@
 
 #include "attachmentvcardfromaddressbookjobtest.h"
 #include "MessageComposer/AttachmentVcardFromAddressBookJob"
-#include <qtest.h>
+#include <QTest>
 #include <KContacts/Addressee>
 
 AttachmentVcardFromAddressBookJobTest::AttachmentVcardFromAddressBookJobTest(QObject *parent)

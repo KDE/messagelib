@@ -22,7 +22,7 @@
 
 #include "qtest_messagecomposer.h"
 
-#include <qtest.h>
+#include <QTest>
 
 #include <kmime/kmime_headers.h>
 using namespace KMime;

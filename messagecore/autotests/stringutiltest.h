@@ -19,7 +19,7 @@
 #ifndef STRINGUTILTEST_H
 #define STRINGUTILTEST_H
 
-#include <qobject.h>
+#include <QObject>
 
 class StringUtilTest : public QObject
 {

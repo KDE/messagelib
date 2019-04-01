@@ -19,7 +19,7 @@
 
 #include "infoparttest.h"
 #include "../src/part/infopart.h"
-#include <qtest.h>
+#include <QTest>
 InfoPartTest::InfoPartTest(QObject *parent)
     : QObject(parent)
 {

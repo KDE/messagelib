@@ -20,7 +20,7 @@
 #include "findbarbase.h"
 #include <PimCommon/LineEditWithCompleterNg>
 
-#include <qicon.h>
+#include <QIcon>
 #include <KLocalizedString>
 #include <klineedit.h>
 #include <KColorScheme>

@@ -21,7 +21,7 @@
 #include "attachmenttemporaryfilesdirstest.h"
 #include "../attachmenttemporaryfilesdirs.h"
 #include <QTemporaryDir>
-#include <qtest.h>
+#include <QTest>
 #include <QDebug>
 
 using namespace MimeTreeParser;

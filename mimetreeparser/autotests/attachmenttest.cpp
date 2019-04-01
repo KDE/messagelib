@@ -22,7 +22,7 @@
 #include "setupenv.h"
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
-#include <qtest.h>
+#include <QTest>
 
 using namespace MimeTreeParser;
 

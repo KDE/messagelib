@@ -20,7 +20,7 @@
 
 #include "nodehelper.h"
 
-#include <qtest.h>
+#include <QTest>
 
 using namespace MimeTreeParser;
 

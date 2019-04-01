@@ -18,7 +18,7 @@
 #include "quicksearchwarningtest.h"
 #include "../src/core/widgets/quicksearchwarning.h"
 #include <QAction>
-#include <qtest.h>
+#include <QTest>
 QuickSearchWarningTest::QuickSearchWarningTest(QObject *parent)
     : QObject(parent)
 {

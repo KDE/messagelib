@@ -16,7 +16,7 @@
 */
 
 #include "viewertest.h"
-#include <qtest.h>
+#include <QTest>
 #include "messageviewer/viewer.h"
 #include <qtestmouse.h>
 #include <KActionCollection>

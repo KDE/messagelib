@@ -19,7 +19,7 @@
 
 #include "followupreminderselectdatedialogtest.h"
 #include "../src/followupreminder/followupreminderselectdatedialog.h"
-#include <qtest.h>
+#include <QTest>
 #include <KDateComboBox>
 #include <AkonadiWidgets/CollectionComboBox>
 

@@ -28,7 +28,7 @@
 #include <kmimetypetrader.h>
 #include <KIO/DesktopExecParser>
 
-#include <qsocketnotifier.h>
+#include <QSocketNotifier>
 
 #include <cassert>
 #include <memory>

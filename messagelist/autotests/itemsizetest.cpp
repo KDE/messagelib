@@ -19,7 +19,7 @@
 
 #include "../src/core/messageitem_p.h"
 #include <QDebug>
-#include <qtest.h>
+#include <QTest>
 #include <QObject>
 
 using namespace MessageList::Core;

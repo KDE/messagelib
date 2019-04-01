@@ -25,7 +25,7 @@
 #include "recipientseditortest.h"
 #include <MessageComposer/RecipientsEditor>
 
-#include <qdebug.h>
+#include <QDebug>
 
 #include <kmessagebox.h>
 

@@ -20,7 +20,7 @@
 #include "attachmentfromurljobtest.h"
 #include "qtest_messagecore.h"
 
-#include <qtest.h>
+#include <QTest>
 
 #include "attachment/attachmentfromurljob.h"
 #include <MessageCore/StringUtil>

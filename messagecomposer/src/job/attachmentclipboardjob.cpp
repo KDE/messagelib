@@ -20,7 +20,7 @@
 #include <KLocalizedString>
 #include <QApplication>
 #include <QClipboard>
-#include <qinputdialog.h>
+#include <QInputDialog>
 
 using namespace MessageComposer;
 

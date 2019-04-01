@@ -24,7 +24,7 @@
 
 #include <gpgme++/keylistresult.h>
 
-#include <qstringlist.h>
+#include <QStringList>
 
 #include <cassert>
 

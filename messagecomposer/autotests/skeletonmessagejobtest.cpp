@@ -20,7 +20,7 @@
 #include "skeletonmessagejobtest.h"
 
 #include <QDebug>
-#include <qtest.h>
+#include <QTest>
 
 #include <kmime/kmime_message.h>
 
