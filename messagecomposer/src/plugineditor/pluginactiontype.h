@@ -52,4 +52,4 @@ private:
 }
 Q_DECLARE_TYPEINFO(MessageComposer::PluginActionType, Q_MOVABLE_TYPE);
 
-#endif // PLUGINEDITORINTERFACE_H
+#endif

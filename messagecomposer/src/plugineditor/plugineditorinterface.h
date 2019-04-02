@@ -54,6 +54,7 @@ public:
 
 Q_SIGNALS:
     void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);
+    void insertText(const QString &str);
 
 private:
     PluginEditorInterfacePrivate *const d;
