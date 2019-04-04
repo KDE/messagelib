@@ -41,6 +41,7 @@ private Q_SLOTS:
     void test_parseMailToBug366981();
     void test_parseDuplicateQueryItems();
     void test_parseMAilToBug402378();
+    void test_parseMailToBug406208();
 };
 
 #endif
