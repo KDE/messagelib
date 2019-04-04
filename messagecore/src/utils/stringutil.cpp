@@ -178,24 +178,29 @@ QList<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
     if (url.scheme() != QLatin1String("mailto")) {
         return values;
     }
-    QUrlQuery query(url);
+    QString str = url.toString();
     QString toStr;
     int i = 0;
     int indexTo = -1;
-    const auto listQuery = query.queryItems(QUrl::FullyDecoded);
-    for (const auto &queryItem : listQuery) {
-        if (queryItem.first == QLatin1String("to")) {
-            toStr = queryItem.second;
-            indexTo = i;
-        } else {
-            QPair<QString, QString> pairElement;
-            pairElement.first = queryItem.first;
-            pairElement.second = queryItem.second;
-            values.append(pairElement);
+    //Workaround line with # see bug 406208
+    const int indexOf = str.indexOf(QLatin1Char('?'));
+    if (indexOf != -1) {
+        str = str.right(str.length() - indexOf - 1);
+        QUrlQuery query(str);
+        const auto listQuery = query.queryItems(QUrl::FullyDecoded);
+        for (const auto &queryItem : listQuery) {
+            if (queryItem.first == QLatin1String("to")) {
+                toStr = queryItem.second;
+                indexTo = i;
+            } else {
+                QPair<QString, QString> pairElement;
+                pairElement.first = queryItem.first;
+                pairElement.second = queryItem.second;
+                values.append(pairElement);
+            }
+            i++;
         }
-        i++;
     }
-
     QStringList to = {KEmailAddress::decodeMailtoUrl(url)};
 
     if (!toStr.isEmpty()) {
