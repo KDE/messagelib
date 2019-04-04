@@ -465,18 +465,32 @@ void StringUtilTest::test_parseMAilToBug402378()
 
 void StringUtilTest::test_parseMailToBug406208()
 {
-    QString ba(QStringLiteral(
-                         "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428&subject=Le%20Courrier%20l'effet%20%23metoo%C2%A0%3F"));
-    QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
-    QList<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
-    QCOMPARE(data.size(), 2);
-    QCOMPARE(data.at(0).first, QLatin1String("body"));
-    QCOMPARE(data.at(0).second, QLatin1String(
-                 "http://www.lecourrierdelarchitecte.com/article_8428"));
-    QCOMPARE(data.at(1).first, QLatin1String("subject"));
-    //It fails here as # is a separator in url...
-//    QCOMPARE(data.at(1).second, QLatin1String("Le Courrier l'effet #metoo ?"));
-
+    {
+        QString ba(QStringLiteral(
+                       "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
+        QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
+        qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
+        QList<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+        QCOMPARE(data.size(), 2);
+        QCOMPARE(data.at(0).first, QLatin1String("body"));
+        QCOMPARE(data.at(0).second, QLatin1String(
+                     "http://www.lecourrierdelarchitecte.com/article_8428"));
+        QCOMPARE(data.at(1).first, QLatin1String("subject"));
+        QCOMPARE(data.at(1).second, QLatin1String("Le Courrier l'effet #metoo ?"));
+    }
+    {
+        QString ba(QStringLiteral(
+                       "mailto:?body=http%3A%2F%2Fwww.lecourrierdelarchitecte.com%2Farticle_8428%20%23%23bla&subject=Le%20Courrier%20l'effet%20%23metoo%20%3F"));
+        QUrl urlDecoded(QUrl::fromPercentEncoding(ba.toUtf8()));
+        qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
+        QList<QPair<QString, QString> > data = StringUtil::parseMailtoUrl(urlDecoded);
+        QCOMPARE(data.size(), 2);
+        QCOMPARE(data.at(0).first, QLatin1String("body"));
+        QCOMPARE(data.at(0).second, QLatin1String(
+                     "http://www.lecourrierdelarchitecte.com/article_8428 ##bla"));
+        QCOMPARE(data.at(1).first, QLatin1String("subject"));
+        QCOMPARE(data.at(1).second, QLatin1String("Le Courrier l'effet #metoo ?"));
+    }
 }
 
 void StringUtilTest::test_parseMailToBug832795()
