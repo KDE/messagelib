@@ -43,7 +43,7 @@ Composer::Composer(QWidget *parent)
     : QWidget(parent)
 {
     QGridLayout *topLayout = new QGridLayout(this);
-    topLayout->setMargin(4);
+    topLayout->setContentsMargins(4, 4, 4, 4);
     topLayout->setSpacing(4);
 
     QLabel *label = new QLabel(QStringLiteral("From:"), this);
