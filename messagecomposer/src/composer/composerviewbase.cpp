@@ -1428,19 +1428,28 @@ MessageComposer::Composer *ComposerViewBase::createSimpleComposer()
 //-----------------------------------------------------------------------------
 QString ComposerViewBase::to() const
 {
-    return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::To));
+    if (m_recipientsEditor) {
+        return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::To));
+    }
+    return {};
 }
 
 //-----------------------------------------------------------------------------
 QString ComposerViewBase::cc() const
 {
-    return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Cc));
+    if (m_recipientsEditor) {
+        return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Cc));
+    }
+    return {};
 }
 
 //-----------------------------------------------------------------------------
 QString ComposerViewBase::bcc() const
 {
-    return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Bcc));
+    if (m_recipientsEditor) {
+        return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Bcc));
+    }
+    return {};
 }
 
 QString ComposerViewBase::from() const
@@ -1450,7 +1459,10 @@ QString ComposerViewBase::from() const
 
 QString ComposerViewBase::replyTo() const
 {
-    return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::ReplyTo));
+    if (m_recipientsEditor) {
+        return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::ReplyTo));
+    }
+    return {};
 }
 
 QString ComposerViewBase::subject() const
