@@ -39,10 +39,11 @@ endmacro ()
 
 add_messageviewer_mailsourceviewbrowserwidget_unittest( mailsourceviewtextbrowserwidgettest.cpp )
 ########### viewertest_gui ###############
+if (KDEPIM_RUN_AKONADI_TEST)
+	set(KDEPIMLIBS_RUN_ISOLATED_TESTS TRUE)
+	set(KDEPIMLIBS_RUN_SQLITE_ISOLATED_TESTS TRUE)
 
-set(KDEPIMLIBS_RUN_ISOLATED_TESTS TRUE)
-set(KDEPIMLIBS_RUN_SQLITE_ISOLATED_TESTS TRUE)
-
-add_akonadi_isolated_test_advanced(viewertest.cpp "" "KF5::MessageViewer;KF5::XmlGui")
-add_akonadi_isolated_test_advanced(viewergrantleethemesupporttest.cpp "" "KF5::MessageViewer;KF5::XmlGui")
-add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KF5::MessageViewer;KF5::Libkleo;QGpgme;KF5::KIOCore;KF5::Mime;KF5::AkonadiCore;KF5::CalendarCore;KF5::WebEngineViewer")
+	add_akonadi_isolated_test_advanced(viewertest.cpp "" "KF5::MessageViewer;KF5::XmlGui")
+	add_akonadi_isolated_test_advanced(viewergrantleethemesupporttest.cpp "" "KF5::MessageViewer;KF5::XmlGui")
+	add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KF5::MessageViewer;KF5::Libkleo;QGpgme;KF5::KIOCore;KF5::Mime;KF5::AkonadiCore;KF5::CalendarCore;KF5::WebEngineViewer")
+endif()
