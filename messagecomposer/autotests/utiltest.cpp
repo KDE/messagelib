@@ -27,7 +27,7 @@
 #include <MessageComposer/Util>
 using namespace MessageComposer;
 
-QTEST_APPLESS_MAIN(UtilTest)
+QTEST_MAIN(UtilTest)
 
 UtilTest::UtilTest(QObject *parent)
     : QObject(parent)
