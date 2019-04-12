@@ -76,7 +76,7 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
     QNetworkReply *reply = d->mNetworkAccessManager->get(QNetworkRequest(newUrl));
     reply->setProperty("shortUrl", url.url());
     connect(reply,
-            QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error), this,
+            qOverload<QNetworkReply::NetworkError>(&QNetworkReply::error), this,
             &ScamExpandUrlJob::slotError);
 }
 

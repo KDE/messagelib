@@ -112,12 +112,12 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
 
 endif()
 
+set(CMAKE_CXX_STANDARD 14)
 #add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 
 if(BUILD_TESTING)
    add_definitions(-DBUILD_TESTING)
 endif()
-
 
 add_subdirectory(mimetreeparser)
 if (NOT ${MIMETREEPARSER_ONLY_BUILD})

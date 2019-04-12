@@ -60,7 +60,7 @@ TemplatesConfiguration::TemplatesConfiguration(QWidget *parent, const QString &n
     connect(lineEdit_quote, &QLineEdit::textChanged,
             this, &TemplatesConfiguration::slotTextChanged);
 
-    connect(mInsertCommand, QOverload<const QString &, int>::of(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand),
+    connect(mInsertCommand, qOverload<const QString &, int>(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand),
             this, &TemplatesConfiguration::slotInsertCommand);
 
     d->mHelpString

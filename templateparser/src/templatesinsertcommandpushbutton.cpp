@@ -37,7 +37,7 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
     mMenuCommand->fillMenu();
     mMenuCommand->fillSubMenus();
     setMenu(mMenuCommand->menu());
-    connect(mMenuCommand, QOverload<const QString &, int>::of(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandPushButton::insertCommand);
+    connect(mMenuCommand, qOverload<const QString &, int>(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandPushButton::insertCommand);
 
     setToolTip(
         i18nc("@info:tooltip",

@@ -98,12 +98,12 @@ RecipientLineNG::RecipientLineNG(QWidget *parent)
     connect(mEdit, &RecipientLineEdit::rightPressed, this, &RecipientLineNG::rightPressed);
     connect(mEdit, &RecipientLineEdit::iconClicked, this, &RecipientLineNG::iconClicked);
 
-    connect(mEdit, &RecipientLineEdit::leftPressed, mCombo, QOverload<>::of(&QWidget::setFocus));
+    connect(mEdit, &RecipientLineEdit::leftPressed, mCombo, qOverload<>(&QWidget::setFocus));
     connect(mEdit, &RecipientLineEdit::editingFinished, this, &RecipientLineNG::slotEditingFinished);
     connect(mEdit, &RecipientLineEdit::clearButtonClicked, this, &RecipientLineNG::slotPropagateDeletion);
-    connect(mCombo, &RecipientComboBox::rightPressed, mEdit, QOverload<>::of(&QWidget::setFocus));
+    connect(mCombo, &RecipientComboBox::rightPressed, mEdit, qOverload<>(&QWidget::setFocus));
 
-    connect(mCombo, QOverload<int>::of(&RecipientComboBox::activated),
+    connect(mCombo, qOverload<int>(&RecipientComboBox::activated),
             this, &RecipientLineNG::slotTypeModified);
 
     connect(mEdit, &RecipientLineEdit::addAddress, this, &RecipientLineNG::slotAddRecipient);

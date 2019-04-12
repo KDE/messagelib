@@ -109,7 +109,7 @@ EditorWatcher::ErrorEditorWatcher EditorWatcher::start()
     const QStringList params = parser.resultingArguments();
     mEditor = new KProcess(this);
     mEditor->setProgram(params);
-    connect(mEditor, QOverload<int, QProcess::ExitStatus>::of(&KProcess::finished),
+    connect(mEditor, qOverload<int, QProcess::ExitStatus>(&KProcess::finished),
             this, &EditorWatcher::editorExited);
     mEditor->start();
     if (!mEditor->waitForStarted()) {
