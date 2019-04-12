@@ -31,13 +31,13 @@ DKIMCheckSignatureJob::~DKIMCheckSignatureJob()
 
 void DKIMCheckSignatureJob::start()
 {
-    //TODO
     if (!canStart()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Impossible to start job";
         deleteLater();
         return;
     }
     //TODO
+    deleteLater();
 }
 
 bool DKIMCheckSignatureJob::canStart() const
