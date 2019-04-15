@@ -255,19 +255,15 @@ static inline const QPixmap *get_encryption_state_icon(const Theme *theme, Messa
     case MessageItem::FullyEncrypted:
         *treatAsEnabled = true;
         return theme->pixmap(Theme::IconFullyEncrypted);
-        break;
     case MessageItem::PartiallyEncrypted:
         *treatAsEnabled = true;
         return theme->pixmap(Theme::IconPartiallyEncrypted);
-        break;
     case MessageItem::EncryptionStateUnknown:
         *treatAsEnabled = false;
         return theme->pixmap(Theme::IconUndefinedEncrypted);
-        break;
     case MessageItem::NotEncrypted:
         *treatAsEnabled = false;
         return theme->pixmap(Theme::IconNotEncrypted);
-        break;
     default:
         // should never happen
         Q_ASSERT(false);
@@ -284,19 +280,15 @@ static inline const QPixmap *get_signature_state_icon(const Theme *theme, Messag
     case MessageItem::FullySigned:
         *treatAsEnabled = true;
         return theme->pixmap(Theme::IconFullySigned);
-        break;
     case MessageItem::PartiallySigned:
         *treatAsEnabled = true;
         return theme->pixmap(Theme::IconPartiallySigned);
-        break;
     case MessageItem::SignatureStateUnknown:
         *treatAsEnabled = false;
         return theme->pixmap(Theme::IconUndefinedSigned);
-        break;
     case MessageItem::NotSigned:
         *treatAsEnabled = false;
         return theme->pixmap(Theme::IconNotSigned);
-        break;
     default:
         // should never happen
         Q_ASSERT(false);
