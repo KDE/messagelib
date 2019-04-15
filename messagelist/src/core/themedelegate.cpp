@@ -810,7 +810,6 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
     default:
         Q_ASSERT(false);
         return; // bug
-        break;
     }
 
     Qt::LayoutDirection layoutDir = mItemView->layoutDirection();
