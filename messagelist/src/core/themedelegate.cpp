@@ -823,7 +823,8 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         // paint right aligned stuff first
         int r = right;
         int l = left;
-        for (const auto itemit : qAsConst(row->rightItems())) {
+        const auto rightItems = row->rightItems();
+        for (const auto itemit : rightItems) {
             auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             if (ci->canUseCustomColor()) {
@@ -986,7 +987,8 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         }
 
         // then paint left aligned stuff
-        for (const auto itemit : qAsConst(row->leftItems())) {
+        const auto leftItems = row->leftItems();
+        for (const auto itemit : leftItems) {
             auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             if (ci->canUseCustomColor()) {
@@ -1257,7 +1259,8 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
 
         int r = right;
         int l = left;
-        for (const auto itemit : qAsConst(mHitRow->rightItems())) {
+        const auto rightItems = mHitRow->rightItems();
+        for (const auto itemit : rightItems) {
             auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             mHitContentItemRect = QRect();
@@ -1401,7 +1404,8 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
         // then check left aligned stuff
         mHitContentItemRight = false;
 
-        for (const auto itemit : qAsConst(mHitRow->leftItems())) {
+        const auto leftItems = mHitRow->leftItems();
+        for (const auto itemit : leftItems) {
             auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             mHitContentItemRect = QRect();
