@@ -11,8 +11,6 @@ endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
 
-configure_file(config-messagecomposer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messagecomposer.h)
-
 set( messagecomposer_job_src
     job/jobbase.cpp
     job/contentjobbase.cpp
