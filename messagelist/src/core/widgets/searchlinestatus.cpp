@@ -68,12 +68,10 @@ SearchLineStatus::~SearchLineStatus()
 void SearchLineStatus::keyPressEvent(QKeyEvent *e)
 {
     if (e->key() == Qt::Key_Escape) {
-        qDebug() << " void SearchLineStatus::keyPressEvent(QKeyEvent *e)" << mCompleter->widget();
         if (mCompleter->popup()->isVisible()) {
             QLineEdit::keyPressEvent(e);
         } else {
             Q_EMIT forceLostFocus();
-            qDebug() << " void SearchLineStatus::keyPressEvent(QKeyEvent *e)ESCAPre";
         }
     } else {
         QLineEdit::keyPressEvent(e);
