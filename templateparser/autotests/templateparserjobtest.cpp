@@ -158,8 +158,8 @@ void TemplateParserJobTest::test_processWithTemplatesForBody_data()
     QTest::addColumn<QString>("expected");
     QTest::addColumn<QString>("selection");
 
-    QTest::newRow("%OTEXT") << "%OTEXT" << "Original text.\nLine two." << "Original text.\nLine two." << "";
-    QTest::newRow("%OTEXT") << "%OTEXT" << "-----BEGIN PGP MESSAGE-----\nVersion: GnuPG v1.4.12 (GNU/Linux)\n"
+    QTest::newRow("%OTEXT-plain") << "%OTEXT" << "Original text.\nLine two." << "Original text.\nLine two." << "";
+    QTest::newRow("%OTEXT-encrypted") << "%OTEXT" << "-----BEGIN PGP MESSAGE-----\nVersion: GnuPG v1.4.12 (GNU/Linux)\n"
                                            "\n"
                                            "hQEMAwzOQ1qnzNo7AQgA1345CrnOBTGf2eo4ABR6wkOdasI9SELRBKA1fNkFcq+Z\n"
                                            "Qg0gWB5RLapU+VFRc5hK1zPOZ1dY6j3+uPHO4RhjfUgfiZ8T7oaWav15yP+07u21\n"
