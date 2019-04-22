@@ -71,8 +71,11 @@ void TemplateParserJobTest::test_convertedHtml()
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
     KMime::Message::Ptr msg(new KMime::Message);
-    msg->setContent(mailData);
-    msg->parse();
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
+    QCOMPARE(origMsg->subject()->as7BitString(false).constData(), "Plain Message Test");
+    QCOMPARE(origMsg->contents().size(), 0);
 
     // load expected result
     QFile referenceFile(referenceFileName);
@@ -81,19 +84,18 @@ void TemplateParserJobTest::test_convertedHtml()
     const QString referenceData = QString::fromLatin1(referenceRawData);
     QVERIFY(!referenceData.isEmpty());
 
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Plain Message Test");
-    QCOMPARE(msg->contents().size(), 0);
 
     TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
-    parser->d->mOtp->parseObjectTree(msg.data());
-    QVERIFY(parser->d->mOtp->htmlContent().isEmpty());
-    QVERIFY(!parser->d->mOtp->plainTextContent().isEmpty());
+
+    parser->d->mOrigMsg = origMsg;
 
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(QString());
     QVERIFY(spy.wait());
+    QVERIFY(parser->d->mOtp->htmlContent().isEmpty());
+    QVERIFY(!parser->d->mOtp->plainTextContent().isEmpty());
 
     const QString convertedHtmlContent = parser->htmlMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
     QVERIFY(!convertedHtmlContent.isEmpty());
