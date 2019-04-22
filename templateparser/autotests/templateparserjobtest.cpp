@@ -128,37 +128,27 @@ void TemplateParserJobTest::test_replyPlain()
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
     KMime::Message::Ptr msg(new KMime::Message);
-    msg->setContent(mailData);
-    msg->parse();
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
 
     // load expected result
     QFile referenceFile(referenceFileName);
     QVERIFY(referenceFile.open(QIODevice::ReadOnly));
     const QByteArray referenceRawData = KMime::CRLFtoLF(referenceFile.readAll());
     const QString referenceData = QString::fromLatin1(referenceRawData);
-//    QVERIFY(!referenceData.isEmpty());
-
-//    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Plain Message Test");
-//   QCOMPARE(msg->contents().size(), 0);
+    QVERIFY(!referenceData.isEmpty());
 
     TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
-    //KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
-    //parser->setIdentityManager(identMan);
+    parser->d->mOrigMsg = origMsg;
 
-    parser->d->mOtp->parseObjectTree(msg.data());
-    parser->d->mOrigMsg = msg;
-    //QVERIFY(parser->mOtp->htmlContent().isEmpty());
-    //QVERIFY(!parser->mOtp->plainTextContent().isEmpty());
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(QString());
+    QVERIFY(spy.wait());
 
-//    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
-//    parser->processWithTemplate(QString());
-//    QVERIFY(spy.wait());
+    const QString convertedHtmlContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
 
-//    QBENCHMARK {
-//        const QString convertedHtmlContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
-
-//        QCOMPARE(convertedHtmlContent, referenceData);
-//    }
+    QCOMPARE(convertedHtmlContent, referenceData);
 }
 
 void TemplateParserJobTest::test_processWithTemplatesForBody_data()
