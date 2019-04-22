@@ -38,6 +38,8 @@ private Q_SLOTS:
     void testOpenPGPEncryptedNotDecrypted();
     void testAsync_data();
     void testAsync();
+    void testHtmlContent_data();
+    void testHtmlContent();
 };
 
 #endif // MIMETREEPARSER_TESTS_OBJECTTREEPARSERTEST_H

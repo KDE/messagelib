@@ -1,0 +1,30 @@
+From maillists@whattf.com  Tue Jul 05 19:20:58 2011
+Return-path: <maillists@whattf.com>
+Envelope-to: maillists@whattf.com
+Date: Mon, 24 Oct 2016 11:53:00 +0100
+To: maillists@whattf.com
+From: maillists@whattf.com
+MIME-Version: 1.0
+Subject: Test
+Content-Type: multipart/related; boundary="----=_Part_20324_1054669183.1477306380301"
+MIME-Version: 1.0
+
+------=_Part_20324_1054669183.1477306380301
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+<html><head></head><body>HTML Text</body></html>
+------=_Part_20324_1054669183.1477306380301
+Content-Type: image/png
+Content-Disposition: attachment; filename="image1.png"
+Content-ID: cid1
+
+Image1
+------=_Part_20324_1054669183.1477306380301
+Content-Type: image/png
+Content-Disposition: attachment; filename="image2.png"
+Content-ID: cid2
+
+Image2
+------=_Part_20324_1054669183.1477306380301--
+

@@ -280,3 +280,30 @@ void ObjectTreeParserTest::testAsync()
         QCOMPARE(otp.plainTextContent(), output);
     }
 }
+
+void ObjectTreeParserTest::testHtmlContent_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("output");
+
+    QTest::newRow("html-attachments1") << QStringLiteral("html-attachment1.mbox") << QStringLiteral(
+        "<html><head></head><body><p><span style=\"font-family:Arial;\">A Body Text</span></p></body></html>");
+    QTest::newRow("html-attachments2") << QStringLiteral("html-attachment2.mbox")
+                                       << QStringLiteral("<html><head></head><body>HTML Text</body></html>");
+}
+
+void ObjectTreeParserTest::testHtmlContent()
+{
+    QFETCH(QString, mailFileName);
+    QFETCH(QString, output);
+
+    KMime::Message::Ptr originalMessage = readAndParseMail(mailFileName);
+    NodeHelper nodeHelper;
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource, &nodeHelper);
+    testSource.setDecryptMessage(true);
+    otp.parseObjectTree(originalMessage.data());
+
+    QVERIFY(otp.plainTextContent().isEmpty());
+    QCOMPARE(otp.htmlContent(), output);
+}
