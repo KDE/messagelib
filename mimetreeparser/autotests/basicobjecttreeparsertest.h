@@ -1,6 +1,6 @@
 /*
   Copyright (c) 2010 Thomas McGuire <thomas.mcguire@kdab.com>
-  Copyright (c) 2016 Sandro Knauß <sknauss@kde.org>
+  Copyright (c) 2019 Sandro Knauß <sknauss@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -18,19 +18,26 @@
   02110-1301, USA.
 */
 
-#ifndef MESSAGEVIEWER_TESTS_UNENCRYPTEDMESSAGETEST_H
-#define MESSAGEVIEWER_TESTS_UNENCRYPTEDMESSAGETEST_H
+#ifndef MIMETREEPARSER_TESTS_OBJECTTREEPARSERTEST_H
+#define MIMETREEPARSER_TESTS_OBJECTTREEPARSERTEST_H
 
 #include <QObject>
 
-class UnencryptedMessageTest : public QObject
+class ObjectTreeParserTest : public QObject
 {
     Q_OBJECT
 private Q_SLOTS:
     void initTestCase();
-    void testNotDecrypted_data();
-    void testNotDecrypted();
-    void testSMimeAutoCertImport();
+    void testMailWithoutEncryption();
+    void testSMIMESignedEncrypted();
+    void testOpenPGPSignedEncrypted();
+    void testOpenPGPEncryptedAndSigned();
+    void testForwardedOpenPGPSignedEncrypted();
+    void testSignedForwardedOpenPGPSignedEncrypted();
+    void testOpenPGPEncrypted();
+    void testOpenPGPEncryptedNotDecrypted();
+    void testAsync_data();
+    void testAsync();
 };
 
-#endif // MESSAGEVIEWER_TESTS_UNENCRYPTEDMESSAGETEST_H
+#endif // MIMETREEPARSER_TESTS_OBJECTTREEPARSERTEST_H
