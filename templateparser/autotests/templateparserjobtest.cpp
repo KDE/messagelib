@@ -192,14 +192,15 @@ void TemplateParserJobTest::test_processWithTemplatesForBody()
     QFETCH(QString, selection);
 
     KMime::Message::Ptr msg(new KMime::Message());
-    msg->setBody(text.toLocal8Bit());
-    msg->parse();
+    KMime::Message::Ptr origMsg(new KMime::Message());
+    origMsg->setBody(text.toLocal8Bit());
+    origMsg->parse();
     TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     parser->setSelection(selection);
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(true);
-    parser->d->mOrigMsg = msg;
+    parser->d->mOrigMsg = origMsg;
 
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(command);
@@ -252,7 +253,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%INSERT") << insertFileNameCommand << fileName << "test insert file!\n" << false;
     insertFileNameCommand = QStringLiteral("%PUT=\"%1\"").arg(insertFileName);
     QTest::newRow("%PUT") << insertFileNameCommand << fileName << "test insert file!\n" << false;
-    QTest::newRow("%MSGID") << "%MSGID" << fileName << "<20150@foo.kde.org>" << false;
+    QTest::newRow("%OMSGID") << "%OMSGID" << fileName << "<20150@foo.kde.org>" << false;
     QTest::newRow("%SYSTEM") << "%SYSTEM=\"echo foo\"" << fileName << "foo\n" << false;
     QTest::newRow("%DEBUG") << "%DEBUG" << fileName << "" << false;
     QTest::newRow("%DEBUGOFF") << "%DEBUGOFF" << fileName << "" << false;
@@ -281,14 +282,15 @@ void TemplateParserJobTest::test_processWithTemplatesForContent()
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
     KMime::Message::Ptr msg(new KMime::Message);
-    msg->setContent(mailData);
-    msg->parse();
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
 
     TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(false);
-    parser->d->mOrigMsg = msg;
+    parser->d->mOrigMsg = origMsg;
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(command);
     QVERIFY(spy.wait());
@@ -325,14 +327,15 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone()
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
     KMime::Message::Ptr msg(new KMime::Message);
-    msg->setContent(mailData);
-    msg->parse();
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
 
     TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
     parser->setIdentityManager(identMan);
     parser->setAllowDecryption(false);
-    parser->d->mOrigMsg = msg;
+    parser->d->mOrigMsg = origMsg;
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(command);
     QVERIFY(spy.wait());
