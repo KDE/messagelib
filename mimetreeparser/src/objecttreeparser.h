@@ -327,8 +327,6 @@ private:
 
     const QTextCodec *codecFor(KMime::Content *node) const;
 
-    void copyContentFrom(const ObjectTreeParser *other);
-
 private:
     Interface::ObjectTreeSource *mSource;
     NodeHelper *mNodeHelper;

@@ -135,18 +135,6 @@ QString ObjectTreeParser::htmlContent() const
     return mHtmlContent;
 }
 
-void ObjectTreeParser::copyContentFrom(const ObjectTreeParser *other)
-{
-    mPlainTextContent += other->plainTextContent();
-    mHtmlContent += other->htmlContent();
-    if (!other->plainTextContentCharset().isEmpty()) {
-        mPlainTextContentCharset = other->plainTextContentCharset();
-    }
-    if (!other->htmlContentCharset().isEmpty()) {
-        mHtmlContentCharset = other->htmlContentCharset();
-    }
-}
-
 //-----------------------------------------------------------------------------
 
 void ObjectTreeParser::parseObjectTree(KMime::Content *node, bool parseOnlySingleNode)
