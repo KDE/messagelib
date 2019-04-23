@@ -638,10 +638,10 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
             const auto &extraNodes = it.value();
             for (int i = 0; i < extraNodes.size(); i++) {
                 if (extraNodes[i] == node) {
-                    indexStr = QString::fromLatin1("e%1").arg(i);
+                    indexStr = QStringLiteral("e%1").arg(i);
                     const QString parentIndex = persistentIndex(it.key());
                     if (!parentIndex.isEmpty()) {
-                        indexStr = QString::fromLatin1("%1:%2").arg(parentIndex, indexStr);
+                        indexStr = QStringLiteral("%1:%2").arg(parentIndex, indexStr);
                     }
                     return indexStr;
                 }

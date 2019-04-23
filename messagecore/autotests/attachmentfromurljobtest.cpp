@@ -42,14 +42,14 @@ void AttachmentFromUrlJobTest::testAttachments_data()
     QTest::addColumn<QByteArray>("mimetype");
 
     // PATH_ATTACHMENTS is defined by CMake.
-    QTest::newRow("png image") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("image.png"))
-                               << QString::fromLatin1("image.png")
+    QTest::newRow("png image") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("image.png"))
+                               << QStringLiteral("image.png")
                                << QByteArray("image/png");
-    QTest::newRow("pdf doc") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("doc.pdf"))
-                             << QString::fromLatin1("doc.pdf")
+    QTest::newRow("pdf doc") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("doc.pdf"))
+                             << QStringLiteral("doc.pdf")
                              << QByteArray("application/pdf");
-    QTest::newRow("text file") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("file.txt"))
-                               << QString::fromLatin1("file.txt")
+    QTest::newRow("text file") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"))
+                               << QStringLiteral("file.txt")
                                << QByteArray("text/plain");
 }
 
@@ -79,7 +79,7 @@ void AttachmentFromUrlJobTest::testAttachments()
 
 void AttachmentFromUrlJobTest::testAttachmentTooBig()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("doc.pdf"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("doc.pdf"));
 
     AttachmentFromUrlJob *ljob = new AttachmentFromUrlJob(url, this);
     ljob->setMaximumAllowedSize(1024);   // 1KiB, whereas the file is >9KiB.
@@ -89,7 +89,7 @@ void AttachmentFromUrlJobTest::testAttachmentTooBig()
 void AttachmentFromUrlJobTest::testAttachmentCharset()
 {
     const QByteArray charset("iso-8859-2");
-    const QString filename = QString::fromLatin1("file.txt");
+    const QString filename = QStringLiteral("file.txt");
     QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + filename);
     MessageCore::StringUtil::setEncodingFile(url, QString::fromLatin1(charset));
 

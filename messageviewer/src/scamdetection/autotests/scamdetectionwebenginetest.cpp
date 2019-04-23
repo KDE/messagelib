@@ -166,7 +166,7 @@ void ScamDetectionWebEngineTest::scamtest()
     QFETCH(bool, result);
 
     TestWebEngineScamDetection scamDetection;
-    QSignalSpy scamDetectionSpy(&scamDetection, SIGNAL(resultScanDetection(bool)));
+    QSignalSpy scamDetectionSpy(&scamDetection, &TestWebEngineScamDetection::resultScanDetection);
     scamDetection.setHtml(html);
     QVERIFY(scamDetectionSpy.wait());
     QCOMPARE(scamDetectionSpy.count(), 1);

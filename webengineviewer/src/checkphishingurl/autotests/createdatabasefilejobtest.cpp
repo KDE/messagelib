@@ -79,7 +79,7 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
 
     const QByteArray ba = readJsonFile(filename);
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
-    QSignalSpy spy1(&job, SIGNAL(finished(WebEngineViewer::UpdateDataBaseInfo,WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)));
+    QSignalSpy spy1(&job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::finished);
     job.parseResult(ba);
     QCOMPARE(spy1.count(), 1);
     const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
@@ -89,7 +89,7 @@ void CreateDatabaseFileJobTest::shouldCreateFile()
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
 
-    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString,QString)));
+    QSignalSpy spy2(&databasejob, &WebEngineViewer::CreateDatabaseFileJob::finished);
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
     bool successCreateDataBase = spy2.at(0).at(0).toBool();
@@ -217,7 +217,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     databasejob.setUpdateDataBaseInfo(info);
 
-    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString,QString)));
+    QSignalSpy spy2(&databasejob, &WebEngineViewer::CreateDatabaseFileJob::finished);
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
     bool successCreateDataBase = spy2.at(0).at(0).toBool();
@@ -301,7 +301,7 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
 
     updateDatabasejob.setUpdateDataBaseInfo(updateinfo);
 
-    QSignalSpy spy3(&updateDatabasejob, SIGNAL(finished(bool,QString,QString)));
+    QSignalSpy spy3(&updateDatabasejob, &WebEngineViewer::CreateDatabaseFileJob::finished);
     updateDatabasejob.start();
     QCOMPARE(spy3.count(), 1);
     successCreateDataBase = spy3.at(0).at(0).toBool();
@@ -350,7 +350,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
 
     databasejob.setUpdateDataBaseInfo(info);
 
-    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString,QString)));
+    QSignalSpy spy2(&databasejob, &WebEngineViewer::CreateDatabaseFileJob::finished);
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
     bool successCreateDataBase = spy2.at(0).at(0).toBool();
@@ -392,7 +392,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     QString firstFilename = QStringLiteral("newdatabase2.json");
     const QByteArray ba = readJsonFile(firstFilename);
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
-    QSignalSpy spy1(&job, SIGNAL(finished(WebEngineViewer::UpdateDataBaseInfo,WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)));
+    QSignalSpy spy1(&job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::finished);
     job.parseResult(ba);
     QCOMPARE(spy1.count(), 1);
     const WebEngineViewer::UpdateDataBaseInfo info = spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>();
@@ -402,7 +402,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     databasejob.setFileName(createDataBaseName);
     databasejob.setUpdateDataBaseInfo(info);
 
-    QSignalSpy spy2(&databasejob, SIGNAL(finished(bool,QString,QString)));
+    QSignalSpy spy2(&databasejob, &WebEngineViewer::CreateDatabaseFileJob::finished);
     databasejob.start();
     QCOMPARE(spy2.count(), 1);
     bool successCreateDataBase = spy2.at(0).at(0).toBool();
@@ -419,7 +419,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     const QByteArray baUpdate = readJsonFile(updateFilename);
 
     WebEngineViewer::CreatePhishingUrlDataBaseJob jobUpdate;
-    QSignalSpy spy3(&jobUpdate, SIGNAL(finished(WebEngineViewer::UpdateDataBaseInfo,WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult)));
+    QSignalSpy spy3(&jobUpdate, &WebEngineViewer::CreatePhishingUrlDataBaseJob::finished);
     jobUpdate.parseResult(baUpdate);
     QCOMPARE(spy3.count(), 1);
 
@@ -430,7 +430,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     databasejob2.setFileName(createDataBaseName);
     databasejob2.setUpdateDataBaseInfo(infoUpdate);
 
-    QSignalSpy spy4(&databasejob2, SIGNAL(finished(bool,QString,QString)));
+    QSignalSpy spy4(&databasejob2, &WebEngineViewer::CreateDatabaseFileJob::finished);
     databasejob2.start();
     QCOMPARE(spy4.count(), 1);
     successCreateDataBase = spy4.at(0).at(0).toBool();

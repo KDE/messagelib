@@ -141,7 +141,7 @@ void Viewer::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMod
         d->setMessageItem(item, updateMode);
     } else {
         Akonadi::ItemFetchJob *job = createFetchJob(item);
-        connect(job, &Akonadi::ItemFetchJob::result, [this, d](KJob *job) {
+        connect(job, &Akonadi::ItemFetchJob::result, [ d](KJob *job) {
                 d->itemFetchResult(job);
             });
         d->displaySplashPage(i18n("Loading message..."));
@@ -644,7 +644,7 @@ KToggleAction *Viewer::disableEmoticonAction() const
 void Viewer::saveMainFrameScreenshotInFile(const QString &filename)
 {
     Q_D(Viewer);
-    return d->saveMainFrameScreenshotInFile(filename);
+    d->saveMainFrameScreenshotInFile(filename);
 }
 
 KActionMenu *Viewer::shareServiceUrlMenu() const
@@ -662,7 +662,7 @@ HeaderStylePlugin *Viewer::headerStylePlugin() const
 void Viewer::setPluginName(const QString &pluginName)
 {
     Q_D(Viewer);
-    return d->setPluginName(pluginName);
+    d->setPluginName(pluginName);
 }
 
 void Viewer::showOpenAttachmentFolderWidget(const QList<QUrl> &urls)

@@ -344,8 +344,7 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
         "  display:none ! important;\n"
         "}\n\n"
         )
-        .arg(headerFont)
-        .arg(extraPrintCss(headerFont))
+        .arg(headerFont, extraPrintCss(headerFont))
         + quoteCSS + fullAddressList();
 }
 
@@ -374,7 +373,7 @@ QString CSSHelperBase::linkColorDefinition() const
                               "}\n\n"
                               "div#headerbox {\n"
                               "    %2"
-                              "}\n\n").arg(linkColor).arg(background);
+                              "}\n\n").arg(linkColor, background);
 #else
         return QStringLiteral("div#headerbox a:link {\n"
                               "  color: %1 ! important;\n"
@@ -408,7 +407,7 @@ QString CSSHelperBase::quoteCssDefinition() const
                                    "  padding: 0 0 0 1em;\n"
                                    "  border-left: 2px solid %1;\n"
                                    "  unicode-bidi: -webkit-plaintext\n"
-                                   "}\n\n").arg(quoteColorName(i)).arg(blockQuote);
+                                   "}\n\n").arg(quoteColorName(i), blockQuote);
     }
     quoteCSS += QStringLiteral(".quotemarks{\n"
                                "  color:transparent;\n"
@@ -659,10 +658,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
                        "}\n\n"
                        )
 
-        .arg(headerFont)
-        .arg(extraScreenCss(headerFont))
-        .arg(pal.color(QPalette::Highlight).name())
-        .arg(pal.color(QPalette::Window).name())
+        .arg(headerFont, extraScreenCss(headerFont), pal.color(QPalette::Highlight).name(), pal.color(QPalette::Window).name())
         + quoteCSS + fullAddressList();
 }
 

@@ -643,10 +643,10 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 
 //   qDebug() << rdir->encodedContent();
 
-    QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
+    QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
     rx.indexIn(QString::fromLatin1(rdir->head()));
 
-    QRegExp rxmessageid(QString::fromLatin1("Message-ID: ([^\n]+)"));
+    QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
     rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
     //qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
     QString baseline = QString::fromLatin1("From: me@me.me\n"
@@ -697,10 +697,10 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
 
     QString msgId = MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), QString());
 
-    QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
+    QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
     rx.indexIn(QString::fromLatin1(rdir->head()));
 
-    QRegExp rxmessageid(QString::fromLatin1("Message-ID: ([^\n]+)"));
+    QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
     rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
     //qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
     QString baseline = QString::fromLatin1("From: me@me.me\n"
@@ -747,10 +747,10 @@ void MessageFactoryTest::testCreateRedirect()
 
 //   qDebug() << rdir->encodedContent();
 
-    QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
+    QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
     rx.indexIn(QString::fromLatin1(rdir->head()));
 
-    QRegExp rxmessageid(QString::fromLatin1("Message-ID: ([^\n]+)"));
+    QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
     rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
     //qWarning() << "messageid:" << rxmessageid.cap(1) << "(" << rdir->head() << ")";
     QString baseline = QString::fromLatin1("From: me@me.me\n"
@@ -795,10 +795,10 @@ void MessageFactoryTest::testCreateResend()
 
 //   qDebug() << msg->encodedContent();
 
-    QRegExp rx(QString::fromLatin1("Resent-Message-ID: ([^\n]*)"));
+    QRegExp rx(QLatin1String("Resent-Message-ID: ([^\n]*)"));
     rx.indexIn(QString::fromLatin1(rdir->head()));
 
-    QRegExp rxmessageid(QString::fromLatin1("Message-ID: ([^\n]+)"));
+    QRegExp rxmessageid(QLatin1String("Message-ID: ([^\n]+)"));
     rxmessageid.indexIn(QString::fromLatin1(rdir->head()));
 
     QString baseline = QString::fromLatin1("From: me@me.me\n"
@@ -853,11 +853,11 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
 {
     Composer *composer = new Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
-    composer->infoPart()->setFrom(QString::fromLatin1("me@me.me"));
-    composer->infoPart()->setTo(QStringList(QString::fromLatin1("you@you.you")));
-    composer->infoPart()->setCc(QStringList(QString::fromLatin1("cc@cc.cc")));
-    composer->infoPart()->setBcc(QStringList(QString::fromLatin1("bcc@bcc.bcc")));
-    composer->textPart()->setWrappedPlainText(QString::fromLatin1("All happy families are alike; each unhappy family is unhappy in its own way."));
+    composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
+    composer->infoPart()->setTo(QStringList(QLatin1String("you@you.you")));
+    composer->infoPart()->setCc(QStringList(QLatin1String("cc@cc.cc")));
+    composer->infoPart()->setBcc(QStringList(QLatin1String("bcc@bcc.bcc")));
+    composer->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
     composer->infoPart()->setSubject(QStringLiteral("Test Email Subject"));
     composer->globalPart()->setMDNRequested(true);
     composer->exec();
@@ -874,11 +874,11 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
 {
     Composer *composer = new Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
-    composer->infoPart()->setFrom(QString::fromLatin1("me@me.me"));
+    composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
     composer->infoPart()->setTo(QStringList() << QStringLiteral("you@you.you") << QStringLiteral("you2@you.you"));
     composer->infoPart()->setCc(QStringList() << QStringLiteral("cc@cc.cc") << QStringLiteral("cc2@cc.cc"));
     composer->infoPart()->setBcc(QStringList() << QStringLiteral("bcc@bcc.bcc") << QStringLiteral("bcc2@bcc.bcc"));
-    composer->textPart()->setWrappedPlainText(QString::fromLatin1("All happy families are alike; each unhappy family is unhappy in its own way."));
+    composer->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
     composer->infoPart()->setSubject(QStringLiteral("Test Email Subject"));
     composer->globalPart()->setMDNRequested(true);
     composer->exec();
@@ -913,7 +913,7 @@ void MessageFactoryTest::test_multipartAlternative_data()
     QTest::addColumn<QString>("expected");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const QStringList lst = dir.entryList(QStringList(QLatin1String("plain_message.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const QStringList lst = dir.entryList(QStringList(QStringLiteral("plain_message.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : lst) {
         QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << 0 << ""
                                                    <<"> This *is* the *message* text *from* Sudhendu Kumar<dontspamme@yoohoo.com>\n"

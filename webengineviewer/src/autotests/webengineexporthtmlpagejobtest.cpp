@@ -34,8 +34,8 @@ WebEngineExportHtmlPageJobTest::~WebEngineExportHtmlPageJobTest()
 void WebEngineExportHtmlPageJobTest::shouldHaveDefaultValue()
 {
     WebEngineViewer::WebEngineExportHtmlPageJob job;
-    QSignalSpy spyFailed(&job, SIGNAL(failed()));
-    QSignalSpy spySuccess(&job, SIGNAL(success(QString)));
+    QSignalSpy spyFailed(&job, &WebEngineViewer::WebEngineExportHtmlPageJob::failed);
+    QSignalSpy spySuccess(&job, &WebEngineViewer::WebEngineExportHtmlPageJob::success);
     QVERIFY(!job.engineView());
     job.start();
     QCOMPARE(spyFailed.count(), 1);

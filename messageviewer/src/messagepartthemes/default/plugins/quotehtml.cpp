@@ -225,20 +225,20 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                         //only show the QuoteMark when is the first line of the level hidden
                         if (!curHidden) {
                             //Expand all quotes
-                            htmlWriter->write(QLatin1String("<div class=\"quotelevelmark\" >"));
+                            htmlWriter->write(QStringLiteral("<div class=\"quotelevelmark\" >"));
                             htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
                                                              "<img src=\"%2\"/></a>")
                                               .arg(-1)
                                               .arg(expandIconPath));
-                            htmlWriter->write(QLatin1String("</div><br/>"));
+                            htmlWriter->write(QStringLiteral("</div><br/>"));
                         }
                     } else {
-                        htmlWriter->write(QLatin1String("<div class=\"quotelevelmark\" >"));
+                        htmlWriter->write(QStringLiteral("<div class=\"quotelevelmark\" >"));
                         htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
                                                          "<img src=\"%2\"/></a>")
                                           .arg(actQuoteLevel)
                                           .arg(collapseIconPath));
-                        htmlWriter->write(QLatin1String("</div>"));
+                        htmlWriter->write(QStringLiteral("</div>"));
                         if (actQuoteLevel < 3) {
                             htmlWriter->write(quoteFontTag[actQuoteLevel]);
                         } else {
@@ -290,10 +290,10 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                     htmlWriter->write(KTextToHTML::convertToHtml(line, convertFlags, 4096, 512));
                 }
 
-                htmlWriter->write(QLatin1String("</div>"));
+                htmlWriter->write(QStringLiteral("</div>"));
                 startNewPara = looksLikeParaBreak(s, pos);
             } else {
-                htmlWriter->write(QLatin1String("<br/>"));
+                htmlWriter->write(QStringLiteral("<br/>"));
                 // after an empty line, always start a new paragraph
                 startNewPara = true;
             }

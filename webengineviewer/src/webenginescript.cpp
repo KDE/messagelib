@@ -140,7 +140,7 @@ QString WebEngineScript::scrollPercentage(int percent)
 
 QString WebEngineScript::scrollUp(int pixel)
 {
-    const QString source = QString::fromLatin1("window.scrollBy(0, %1);").arg(-pixel);
+    const QString source = QStringLiteral("window.scrollBy(0, %1);").arg(-pixel);
     return source;
 }
 

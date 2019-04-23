@@ -1812,15 +1812,15 @@ KToggleAction *ViewerPrivate::actionForAttachmentStrategy(
     }
     QString actionName;
     if (as == AttachmentStrategy::iconic()) {
-        actionName = QLatin1String("view_attachments_as_icons");
+        actionName = QStringLiteral("view_attachments_as_icons");
     } else if (as == AttachmentStrategy::smart()) {
-        actionName = QLatin1String("view_attachments_smart");
+        actionName = QStringLiteral("view_attachments_smart");
     } else if (as == AttachmentStrategy::inlined()) {
-        actionName = QLatin1String("view_attachments_inline");
+        actionName = QStringLiteral("view_attachments_inline");
     } else if (as == AttachmentStrategy::hidden()) {
-        actionName = QLatin1String("view_attachments_hide");
+        actionName = QStringLiteral("view_attachments_hide");
     } else if (as == AttachmentStrategy::headerOnly()) {
-        actionName = QLatin1String("view_attachments_headeronly");
+        actionName = QStringLiteral("view_attachments_headeronly");
     }
 
     if (actionName.isEmpty()) {
@@ -1883,7 +1883,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             if (result) {
                 html += QStringLiteral("<div style=\"background:%1; %2"
                                        "vertical-align:middle; float:%3;\">").arg(bgColor.name()).
-                        arg(margin).arg(align);
+                        arg(margin, align);
             }
             html += subHtml;
             if (result) {

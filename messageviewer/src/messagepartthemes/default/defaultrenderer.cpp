@@ -1145,7 +1145,7 @@ void DefaultRenderer::setHtmlLoadExternal(bool htmlLoadExternal)
     d->mHtmlLoadExternal = htmlLoadExternal;
 }
 
-void DefaultRenderer::setCreateMessageHeader(std::function<QString(KMime::Message *)> createMessageHeader)
+void DefaultRenderer::setCreateMessageHeader(const std::function<QString(KMime::Message *)> &createMessageHeader)
 {
     d->mCreateMessageHeader = createMessageHeader;
 }

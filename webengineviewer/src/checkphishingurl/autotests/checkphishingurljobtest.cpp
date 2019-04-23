@@ -90,7 +90,7 @@ void CheckPhishingUrlJobTest::shouldParseResult()
 
     WebEngineViewer::CheckPhishingUrlJob job;
     job.setUrl(checkedUrl);
-    QSignalSpy spy1(&job, SIGNAL(result(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus,QUrl,uint)));
+    QSignalSpy spy1(&job, &WebEngineViewer::CheckPhishingUrlJob::result);
     job.parse(input);
     QCOMPARE(spy1.count(), 1);
     QCOMPARE(spy1.at(0).at(0).value<WebEngineViewer::CheckPhishingUrlUtil::UrlStatus>(), urlStatus);
