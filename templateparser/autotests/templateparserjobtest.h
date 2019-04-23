@@ -36,6 +36,9 @@ private Q_SLOTS:
     void test_convertedHtml();
     void test_convertedHtml_data();
 
+    void test_replyHtml();
+    void test_replyHtml_data();
+
     void test_replyPlain();
     void test_replyPlain_data();
 

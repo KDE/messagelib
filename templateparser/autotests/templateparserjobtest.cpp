@@ -101,6 +101,66 @@ void TemplateParserJobTest::test_convertedHtml()
     QCOMPARE(convertedHtmlContent, referenceData);
 }
 
+void TemplateParserJobTest::test_replyHtml_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    foreach (const QString &file, l) {
+        const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".html.reply");
+        if (!QFile::exists(expectedFile)) {
+            continue;
+        }
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+    }
+}
+
+void TemplateParserJobTest::test_replyHtml()
+{
+    QFETCH(QString, mailFileName);
+    QFETCH(QString, referenceFileName);
+
+    // load input mail
+    QFile mailFile(mailFileName);
+    QVERIFY(mailFile.open(QIODevice::ReadOnly));
+    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
+    QVERIFY(!mailData.isEmpty());
+    KMime::Message::Ptr msg(new KMime::Message);
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
+
+    // load expected result
+    QFile referenceFile(referenceFileName);
+    QVERIFY(referenceFile.open(QIODevice::ReadOnly));
+    const QByteArray referenceRawData = KMime::CRLFtoLF(referenceFile.readAll());
+    const QString referenceData = QString::fromLatin1(referenceRawData);
+    QVERIFY(!referenceData.isEmpty());
+
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
+    KIdentityManagement::IdentityManager *identMan = new KIdentityManagement::IdentityManager;
+    parser->setIdentityManager(identMan);
+
+    parser->d->mOrigMsg = origMsg;
+
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(QString());
+    QVERIFY(spy.wait());
+
+    QString convertedHtmlContent = parser->htmlMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
+    QVERIFY(!convertedHtmlContent.isEmpty());
+
+    // referenceData is read from a file and most text editors add a \n at the end of the last line
+    if (!convertedHtmlContent.endsWith(QStringLiteral("\n"))) {
+        convertedHtmlContent += QStringLiteral("\n");
+    }
+
+    QCOMPARE(convertedHtmlContent, referenceData);
+}
+
+
 void TemplateParserJobTest::test_replyPlain_data()
 {
     QTest::addColumn<QString>("mailFileName");
