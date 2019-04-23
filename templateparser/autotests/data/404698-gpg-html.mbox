@@ -1,0 +1,131 @@
+Subject: Testcase 'reply-mix-crlf' (PGP/MIME HTML)
+To: brucewayne45@web.de
+From: brucewayne45@web.de
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY"
+
+--BOUNDARY
+Content-Type: text/plain
+
+Please reply to this message
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+--BOUNDARY
+Content-Type: multipart/encrypted; protocol="application/pgp-encrypted"; boundary="DELIMITER"
+
+--DELIMITER
+Content-Type: application/pgp-encrypted
+
+Version: 1
+
+--DELIMITER
+Content-Type: application/octet-stream; name="encrypted.asc"
+Content-Disposition: inline; filename="encrypted.asc"
+
+-----BEGIN PGP MESSAGE-----
+
+hQELAwzOQ1qnzNo7AQf3Zp/i09urv4DVCcbCu75LQqVtkanqYIaVF+CgUX2aeReD
+VIf6Q58I5lX0+ZighYMjoqFyLoIg8KfazaiCZ7prwTOjTUxgVIaEUt46E/zaIU64
+y0M09xrD0ZXvdCb2DPbzBI2YGCUOg+WRN0Bjv90DXgqXLDzdHqJ4w/iFTF3sXTW0
+nxAeOqNWwr4vSOG2AfTbIHpAspl2woqnoKds0dxA8DgGD9ffGx1/VL9aoNPuhdGf
+GWko1NfHnwgTaLEBr5Yr5uaDfPvtMfIdtw6HVc5xZfmlPfES9NeL0aHmHe9htuFf
+fyEHzFHJDxqny5/PqULxcxBpKJH2jQuGWtzswOj/0sD4ASnTPJ/AmGqI2pWT1KIS
+m1mSw7VBTK/f47EeQhdWIbIVt6+oqfjum+aAkwEEOGcUHNcNwclKYlHT1hUesNr5
+mj0XpKVUz1WBRI0O5Vedt7xNJOUIhBSOeiDrZ3dhn8kD12aJvP0NUx88jeR87U3k
+F5UvDfsWyjqN4GMzjVV3vLsGShR+8C7I2+DPebyoLUfkqeEUUJOwYg4YL+gjAVHR
+VKNvQIQWC5PFMm5LasDF0UdfTtKI+kWYgGTWVKQawr3nBJmly2b2By9biUh2Z4Ly
+pUHqKpHEKW5O+VLd0dgzYV9x5Wq7zkKKX44B55W050bh3u9iztfZvghd16Cy7OYB
+9h20ZMKFffkZCorrhiN6mHr1YkPXI30ZwC1xkQ6YuUlwIpE5gJr4D14+/zFcJsU0
+grdLbDzFApcwrGrxjiFGMb8tbS6XYyB0uVh0NEX7YGUHYtZnE6JLR0XVYjvSUFGs
+plvgdpXbohA3J9T8Grd1M5O7D+SmrXHrZGj8oJW2DST6QmbphlkVBf0LrNK+sqSU
+nKxX/pzNqA4Sh/lLJOQ7eON4or2u9JpiP5Zr++Wl99xWBel5iZC9s/8=
+=mtFc
+-----END PGP MESSAGE-----
+
+
+--DELIMITER--
+
+--BOUNDARY
+
+--BOUNDARY
+Content-Type: multipart/encrypted; protocol="application/pgp-encrypted"; boundary="DELIMITER"
+
+--DELIMITER
+Content-Type: application/pgp-encrypted
+
+Version: 1
+
+--DELIMITER
+Content-Type: application/octet-stream; name="encrypted.asc"
+Content-Disposition: inline; filename="encrypted.asc"
+
+-----BEGIN PGP MESSAGE-----
+
+hQEMAwzOQ1qnzNo7AQf9EgAO1PAwK3tquVubNpsRpK6kfvjAVSDXNiUtuMN5G7KG
+aqnVl5PmfdLdEbGLjcHyFMsZ8k2alSyG0lFWdXQUqfYE5TSo3en5Zqyc+kK/5pDI
+GZ6V5E5I0JPVIeY5lSFIVvSBXCBncK7jdRAtN3WfDL50UQYJX8fAOGc6iiMKDEb8
+jKwJbS0qwjHDwaKKwseE/yuYO3YFUWsijsnxwUXhU0iq3Yv7JIhXKldHFPe+jCOy
+v2OQ2064I9mCNi6LjQPcqyXVTESB5/6Sdl1L9/ETjep5Gzlhp8WJTZNIzWJhqmPe
+6hebCCJowQ6CxiqVInh46fPfSGw/YuFGRlyWZCSVa9LA+wGb+KaR0oDwHjBsUkhh
+VhdNS7kRtx3kec9KaJQHCDFt0aUaMgnFdnNDS3AEQ+5PbplyKYT5PjA1TkhHGXmb
+VQ07Xyab3zGPE5DUsUYt/c+bfN3EmaOc8JAZBOJzYw0nL9fSt5E1feo3Ntwse5S1
+yMMK7ALfv6W4/ItWf1KTDCo/A2QiAzZO9Gy8kFOx3nXYeh5BN2Efe5tmdtxgypQP
++b3TJbl98elyS6jiV4xB+gooVTrK3DIJbZi8xcHnBqtg3bSVML5pDJBM1MCcS3cP
+eVgJ5JkE1qqiHuk4NFm0KIKMWyjgXUp8XJ7pOpHtu5COEyz3TwpOjmcYUMjQnyQs
+/c9DD/oTZZq4y7VTFab9W0iBS0aadHzSR3TQdneIap7MOay79+fZQEqK8zel4qkN
+ngaxDyBYA9wy3gsigbb5lBEqX9M8o7VLpz6Hn3CXqxpgaPvE+GFN+r5Os1/bcuSK
+EfJTTtPuqx3MjVH9y+wW3fThb5xSoDNgb3Z93HVMGZzcKh9Kt47ZBhxMfb/4N7lE
+Hh3qvh6KIJNnVlhm+JqqlVbAUEAg6bFH+CI1RtsCPnrmHjT6ysqeNKciAvVB
+=VRca
+-----END PGP MESSAGE-----
+
+--DELIMITER--
