@@ -160,49 +160,36 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
     return MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::NotConverted;
 }
 
-#define USE_CONVERTER_PLUGIN 1
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
     bool wasConverted =
-#ifdef USE_CONVERTER_PLUGIN
-        convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
-#else
-        false;
-#endif
+            convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
     if (composerControler()->isFormattingUsed()) {
-#ifdef USE_CONVERTER_PLUGIN
         if (!wasConverted) {
-#endif
-        if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
-            Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
+            if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
+                Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
 
-            Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
-            pmd->processDocument(document());
-            const QString plainText = pb->getResult();
-            textPart->setCleanPlainText(composerControler()->toCleanPlainText(plainText));
-            QTextDocument *doc = new QTextDocument(plainText);
-            doc->adjustSize();
+                Grantlee::MarkupDirector *pmd = new Grantlee::MarkupDirector(pb);
+                pmd->processDocument(document());
+                const QString plainText = pb->getResult();
+                textPart->setCleanPlainText(composerControler()->toCleanPlainText(plainText));
+                QTextDocument *doc = new QTextDocument(plainText);
+                doc->adjustSize();
 
-            textPart->setWrappedPlainText(composerControler()->toWrappedPlainText(doc));
-            delete doc;
-            delete pmd;
-            delete pb;
-        } else {
+                textPart->setWrappedPlainText(composerControler()->toWrappedPlainText(doc));
+                delete doc;
+                delete pmd;
+                delete pb;
+            } else {
+                textPart->setCleanPlainText(composerControler()->toCleanPlainText());
+                textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
+            }
+        }
+    } else {
+        if (!wasConverted) {
             textPart->setCleanPlainText(composerControler()->toCleanPlainText());
             textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
         }
-#ifdef USE_CONVERTER_PLUGIN
-    }
-#endif
-    } else {
-#ifdef USE_CONVERTER_PLUGIN
-        if (!wasConverted) {
-#endif
-        textPart->setCleanPlainText(composerControler()->toCleanPlainText());
-        textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
-#ifdef USE_CONVERTER_PLUGIN
-    }
-#endif
     }
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
     if (composerControler()->isFormattingUsed() && !wasConverted) {
