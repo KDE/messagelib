@@ -29,7 +29,7 @@
 #include "messagepartrendererbase.h"
 #include "messagepartrendererfactory.h"
 #include "htmlblock.h"
-
+#include <QtWebEngineWidgets>
 #include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
 #include "viewer/attachmentstrategy.h"
@@ -310,11 +310,14 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
             return htmlSource;
         }
         extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
+#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 13, 0)
         //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
         //Don't authorize to refresh content.
         if (MessageViewer::Util::excludeExtraHeader(s)) {
             extraHead.clear();
         }
+#endif
+
 
         s = s.mid(endIndex + 7).trimmed();
     }
