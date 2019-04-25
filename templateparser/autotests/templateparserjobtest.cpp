@@ -210,15 +210,13 @@ void TemplateParserJobTest::test_replyPlain()
     //QVERIFY(parser->mOtp->htmlContent().isEmpty());
     //QVERIFY(!parser->mOtp->plainTextContent().isEmpty());
 
-//    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
-//    parser->processWithTemplate(QString());
-//    QVERIFY(spy.wait());
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(QString());
+    QVERIFY(spy.wait());
 
-//    QBENCHMARK {
-//        const QString convertedHtmlContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
+    const QString convertedPlainTextContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
 
-//        QCOMPARE(convertedHtmlContent, referenceData);
-//    }
+    QCOMPARE(convertedPlainTextContent, referenceData);
 }
 
 void TemplateParserJobTest::test_processWithTemplatesForBody_data()
