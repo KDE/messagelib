@@ -219,6 +219,168 @@ void TemplateParserJobTest::test_replyPlain()
     QCOMPARE(convertedPlainTextContent, referenceData);
 }
 
+void TemplateParserJobTest::test_forwardPlain_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    foreach (const QString &file, l) {
+        const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".plain.reply");
+        if (!QFile::exists(expectedFile)) {
+            continue;
+        }
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+    }
+}
+
+void TemplateParserJobTest::test_forwardPlain()
+{
+    QFETCH(QString, mailFileName);
+    QFETCH(QString, referenceFileName);
+
+    // load input mail
+    QFile mailFile(mailFileName);
+    QVERIFY(mailFile.open(QIODevice::ReadOnly));
+    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
+    QVERIFY(!mailData.isEmpty());
+    KMime::Message::Ptr msg(new KMime::Message);
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
+
+    // load expected result
+    QFile referenceFile(referenceFileName);
+    QVERIFY(referenceFile.open(QIODevice::ReadOnly));
+    const QByteArray referenceRawData = KMime::CRLFtoLF(referenceFile.readAll());
+    const QString referenceData = QString::fromLatin1(referenceRawData);
+    QVERIFY(!referenceData.isEmpty());
+
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Forward);
+    parser->d->mOrigMsg = origMsg;
+
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(QString());
+    QVERIFY(spy.wait());
+
+    const QString convertedPlainTextContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
+
+    QCOMPARE(convertedPlainTextContent, referenceData);
+}
+
+void TemplateParserJobTest::test_forwardHtml_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    foreach (const QString &file, l) {
+        const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".html.reply");
+        if (!QFile::exists(expectedFile)) {
+            continue;
+        }
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+    }
+}
+
+void TemplateParserJobTest::test_forwardHtml()
+{
+    QFETCH(QString, mailFileName);
+    QFETCH(QString, referenceFileName);
+
+    // load input mail
+    QFile mailFile(mailFileName);
+    QVERIFY(mailFile.open(QIODevice::ReadOnly));
+    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
+    QVERIFY(!mailData.isEmpty());
+    KMime::Message::Ptr msg(new KMime::Message);
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
+
+    // load expected result
+    QFile referenceFile(referenceFileName);
+    QVERIFY(referenceFile.open(QIODevice::ReadOnly));
+    const QByteArray referenceRawData = KMime::CRLFtoLF(referenceFile.readAll());
+    const QString referenceData = QString::fromLatin1(referenceRawData);
+    QVERIFY(!referenceData.isEmpty());
+
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Forward);
+    parser->d->mOrigMsg = origMsg;
+
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(QString());
+    QVERIFY(spy.wait());
+
+    QString convertedHtmlContent = parser->htmlMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
+    // referenceData is read from a file and most text editors add a \n at the end of the last line
+    if (!convertedHtmlContent.endsWith(QStringLiteral("\n"))) {
+        convertedHtmlContent += QStringLiteral("\n");
+    }
+
+    QCOMPARE(convertedHtmlContent, referenceData);
+}
+
+void TemplateParserJobTest::test_forwardedAttachments_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+    QTest::addColumn<QString>("referenceFileName");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    foreach (const QString &file, l) {
+        if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html.reply"))) {
+            continue;
+        }
+        QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".forwarded.mbox");
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') +  file) << expectedFile;
+    }
+}
+
+void TemplateParserJobTest::test_forwardedAttachments()
+{
+    QFETCH(QString, mailFileName);
+    QFETCH(QString, referenceFileName);
+
+    // load input mail
+    QFile mailFile(mailFileName);
+    QVERIFY(mailFile.open(QIODevice::ReadOnly));
+    const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
+    QVERIFY(!mailData.isEmpty());
+    KMime::Message::Ptr msg(new KMime::Message);
+    KMime::Message::Ptr origMsg(new KMime::Message);
+    origMsg->setContent(mailData);
+    origMsg->parse();
+
+    bool referenceExists = QFile::exists(referenceFileName);
+
+    TemplateParser::TemplateParserJob *parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Forward);
+    parser->d->mOrigMsg = origMsg;
+
+    QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
+    parser->processWithTemplate(QString());
+    QVERIFY(spy.wait());
+
+    if (referenceExists) {
+        QFile referenceFile(referenceFileName);
+        QVERIFY(referenceFile.open(QIODevice::ReadOnly));
+        const QByteArray referenceRawData = KMime::CRLFtoLF(referenceFile.readAll());
+        const KMime::Message::Ptr referenceMsg(new KMime::Message);
+        referenceMsg->setContent(referenceRawData);
+        referenceMsg->parse();
+
+        QCOMPARE(msg->contents().size(), referenceMsg->contents().size());
+        for (int i=1; i < msg->contents().size(); i++) {
+            QCOMPARE(msg->contents()[i]->encodedContent(), referenceMsg->contents()[i]->encodedContent());
+        }
+    } else {
+        QCOMPARE(msg->contents().size(), 0);
+    }
+
+}
+
 void TemplateParserJobTest::test_processWithTemplatesForBody_data()
 {
     QTest::addColumn<QString>("command");

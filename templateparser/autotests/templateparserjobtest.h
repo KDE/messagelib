@@ -42,6 +42,15 @@ private Q_SLOTS:
     void test_replyPlain();
     void test_replyPlain_data();
 
+    void test_forwardPlain();
+    void test_forwardPlain_data();
+
+    void test_forwardHtml();
+    void test_forwardHtml_data();
+
+    void test_forwardedAttachments();
+    void test_forwardedAttachments_data();
+
     /**
      * Tests whether templates are returning required body or not
      */
