@@ -153,6 +153,14 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("toplevelrepo3") << QStringLiteral(
         "<a href=\"https://www.amazon.fr/gp/../gp/goldbox/ref=pe_d//\">https://www.amazon.fr/gp/../gp/goldbox/ref=pe_d//</a>")
                                    << false;
+    QTest::newRow("endwith%22") << QStringLiteral(
+                                          "<a href=\"http://www.kde.org/standards/kcfg/1.0/kcfg.xsd\" \"=\"\">http://www.kde.org/standards/kcfg/1.0/kcfg.xsd\"</a>")
+                                   << false;
+
+    QTest::newRow("contains%5C") << QStringLiteral(
+        "<a href=\"http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg%5CnUse\">http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg/nUse</a>")
+                                   << false;
+
 #if 0
     QTest::newRow("wierd1") << QStringLiteral(
         "<a href=\"http://www.weezevent.com?c=sys_mail\">http://www.weezevent.com?c=sys_mail</a>")
