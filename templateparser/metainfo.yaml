@@ -10,5 +10,5 @@ release: false
 libraries:
  - qmake: TemplateParser
    cmake: "KF5::TemplateParser"
-   cmakename: KF5TemplateParser
+cmakename: KF5TemplateParser
 

@@ -10,5 +10,5 @@ release: false
 libraries:
  - qmake: MessageComposer
    cmake: "KF5::MessageComposer"
-   cmakename: KF5MessageComposer
+cmakename: KF5MessageComposer
 
