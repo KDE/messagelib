@@ -40,7 +40,6 @@ public:
     Q_REQUIRED_RESULT qreal relativePosition() const;
 
     void addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint);
-    void initializeJQueryScript();
 
     Q_REQUIRED_RESULT WebEngineManageScript *webEngineManagerScript() const;
     void setLinkHovered(const QUrl &url);

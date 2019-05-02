@@ -113,7 +113,6 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     connect(
         page(), &QWebEnginePage::scrollPositionChanged, d->mWebViewAccessKey,
         &WebEngineViewer::WebEngineAccessKey::hideAccessKeys);
-    initializeScripts();
 }
 
 MailWebEngineView::~MailWebEngineView()
@@ -144,11 +143,6 @@ void MailWebEngineView::runJavaScriptInWordId(const QString &script)
 void MailWebEngineView::setViewer(MessageViewer::ViewerPrivate *viewer)
 {
     d->mViewer = viewer;
-}
-
-void MailWebEngineView::initializeScripts()
-{
-    initializeJQueryScript();
 }
 
 void MailWebEngineView::contextMenuEvent(QContextMenuEvent *e)

@@ -100,7 +100,6 @@ private Q_SLOTS:
     void slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result);
     void slotLoadFinished();
 private:
-    void initializeScripts();
     void runJavaScriptInWordId(const QString &script);
     MailWebEngineViewPrivate *const d;
 };
