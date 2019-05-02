@@ -175,11 +175,13 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             }
         }
         if (!foundScam) {
-            QString text = QUrl(mapVariant.value(QStringLiteral("text")).toString()).toDisplayString(QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
+            QUrl displayUrl = QUrl(mapVariant.value(QStringLiteral("text")).toString());
+            QString text = displayUrl.toDisplayString(QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
             if (text.endsWith(QLatin1String("%22"))) {
                 text.chop(3);
             }
-            QString normalizedHref = QUrl(href).toDisplayString(QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
+            const QUrl normalizedHrefUrl = QUrl(href);
+            QString normalizedHref = normalizedHrefUrl.toDisplayString(QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
             normalizedHref.replace(QStringLiteral("%5C"), QStringLiteral("/"));
             //qDebug() << "text " << text << " href "<<href << " normalizedHref " << normalizedHref;
 
@@ -190,10 +192,13 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                             if (normalizedHref.toHtmlEscaped() != text) {
                                 if (QString::fromUtf8(QUrl(text).toEncoded()) != normalizedHref) {
                                     if (QUrl(normalizedHref).toDisplayString() != text) {
-                                        if (QUrl::fromUserInput(text).toDisplayString(QUrl::NormalizePathSegments) != QUrl::fromUserInput(normalizedHref).toDisplayString(QUrl::NormalizePathSegments)) {
+                                        const bool qurlqueryequal = displayUrl.query() == normalizedHrefUrl.query();
+                                        const QString displayUrlWithoutQuery = displayUrl.toDisplayString(QUrl::RemoveQuery|QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
+                                        const QString hrefUrlWithoutQuery = normalizedHrefUrl.toDisplayString(QUrl::RemoveQuery|QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
+                                        if (qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
                                             d->mDetails += QLatin1String("<li>") + i18n(
-                                                "This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is often the case in scam emails to mislead the recipient",
-                                                addWarningColor(text), addWarningColor(normalizedHref)) + QLatin1String("</li>");
+                                                        "This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is often the case in scam emails to mislead the recipient",
+                                                        addWarningColor(text), addWarningColor(normalizedHref)) + QLatin1String("</li>");
                                             foundScam = true;
                                         }
                                     }
