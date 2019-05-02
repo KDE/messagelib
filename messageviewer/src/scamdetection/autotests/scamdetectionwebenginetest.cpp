@@ -160,12 +160,9 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("contains%5C") << QStringLiteral(
         "<a href=\"http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg%5CnUse\">http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg/nUse</a>")
                                    << false;
-
-#if 0
     QTest::newRow("wierd1") << QStringLiteral(
         "<a href=\"http://www.weezevent.com?c=sys_mail\">http://www.weezevent.com?c=sys_mail</a>")
                             << false;
-#endif
 }
 
 void ScamDetectionWebEngineTest::scamtest()
