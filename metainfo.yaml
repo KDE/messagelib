@@ -1,5 +1,5 @@
 name: messagelib
-description: Messagelib Library 
+description: Messagelib Library which contains MessageComposer, MessageCore, MessageList, MessageViewer, MimeTreeParser, TemplateParser and WebEngineViewer 
 maintainer: mlaurent
 public_lib: true
 type: functional
