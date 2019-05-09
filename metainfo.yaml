@@ -9,7 +9,6 @@ platforms:
 irc: akonadi
 portingAid: false
 deprecated: false
-release: false
 libraries:
  - qmake: MessageComposer
    cmake: "KF5::MessageComposer"
