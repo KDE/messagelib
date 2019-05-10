@@ -342,6 +342,8 @@ public:
     Q_REQUIRED_RESULT bool showEncryptionDetails() const;
     void setShowEncryptionDetails(bool showDetails);
 
+    void hasMultiMessages(bool messages);
+
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
@@ -380,6 +382,9 @@ Q_SIGNALS:
 
     void printingFinished();
     void zoomChanged(qreal zoomFactor);
+    void showNextMessage();
+    void showPreviousMessage();
+
 
 private:
     void initialize();

@@ -110,6 +110,7 @@
 #include "messageviewer/messageviewerutil.h"
 #include "utils/messageviewerutil_p.h"
 #include "widgets/vcardviewer.h"
+#include "widgets/shownextmessagewidget.h"
 
 #include <WebEngineViewer/FindBarWebEngineView>
 #include "viewer/webengine/mailwebengineview.h"
@@ -1127,6 +1128,11 @@ void ViewerPrivate::recreateCssHelper()
     mCSSHelper = new CSSHelper(mViewer);
 }
 
+void ViewerPrivate::hasMultiMessages(bool messages)
+{
+    mShowNextMessageWidget->setVisible(messages);
+}
+
 void ViewerPrivate::slotGeneralFontChanged()
 {
     recreateCssHelper();
@@ -1462,6 +1468,14 @@ void ViewerPrivate::createWidgets()
 
     mColorBar->setObjectName(QStringLiteral("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+
+
+    mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(readerBox);
+    mShowNextMessageWidget->setObjectName(QStringLiteral("shownextmessagewidget"));
+    readerBoxVBoxLayout->addWidget(mShowNextMessageWidget);
+    mShowNextMessageWidget->hide();
+    connect(mShowNextMessageWidget, &ShowNextMessageWidget::showPreviousMessage, this, &ViewerPrivate::showPreviousMessage);
+    connect(mShowNextMessageWidget, &ShowNextMessageWidget::showNextMessage, this, &ViewerPrivate::showNextMessage);
 
     mSubmittedFormWarning = new SubmittedFormWarningWidget(readerBox);
     mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));

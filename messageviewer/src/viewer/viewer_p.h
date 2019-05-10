@@ -94,6 +94,7 @@ class ViewerPluginInterface;
 class SubmittedFormWarningWidget;
 class MailSourceWebEngineViewer;
 class MailTrackingWarningWidget;
+class ShowNextMessageWidget;
 /**
 \brief Private class for the Viewer, the main widget in the messageviewer library.
 
@@ -438,6 +439,7 @@ public:
     Q_REQUIRED_RESULT qreal webViewZoomFactor() const;
     void setWebViewZoomFactor(qreal factor);
     void recreateCssHelper();
+    void hasMultiMessages(bool messages);
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
@@ -584,6 +586,8 @@ Q_SIGNALS:
     void pageIsScrolledToBottom(bool);
     void printingFinished();
     void zoomChanged(qreal zoomFactor);
+    void showNextMessage();
+    void showPreviousMessage();
 private:
     QString attachmentHtml() const;
 
@@ -699,6 +703,7 @@ public:
     QPrinter *mCurrentPrinter = nullptr;
     QList<QPointer<MessageViewer::MailSourceWebEngineViewer> > mListMailSourceViewer;
     WebEngineViewer::LocalDataBaseManager *mPhishingDatabase = nullptr;
+    MessageViewer::ShowNextMessageWidget *mShowNextMessageWidget = nullptr;
 };
 }
 

@@ -110,6 +110,9 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::printingFinished, this, &Viewer::printingFinished);
     connect(d_ptr, &ViewerPrivate::zoomChanged, this, &Viewer::zoomChanged);
 
+    connect(d_ptr, &ViewerPrivate::showNextMessage, this, &Viewer::showNextMessage);
+    connect(d_ptr, &ViewerPrivate::showPreviousMessage, this, &Viewer::showPreviousMessage);
+
     setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
 }
 
@@ -712,6 +715,12 @@ bool Viewer::showEncryptionDetails() const
 {
     Q_D(const Viewer);
     return d->showEncryptionDetails();
+}
+
+void Viewer::hasMultiMessages(bool messages)
+{
+    Q_D(Viewer);
+    d->hasMultiMessages(messages);
 }
 
 void Viewer::setShowEncryptionDetails(bool showDetails)
