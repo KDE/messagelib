@@ -43,6 +43,7 @@ ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
     mNextMessage->setEnabled(false);
     connect(mNextMessage, &QPushButton::clicked, this, &ShowNextMessageWidget::showNextMessage);
     mainLayout->addWidget(mNextMessage);
+    setMaximumHeight(mNextMessage->height() + 4);
 }
 
 ShowNextMessageWidget::~ShowNextMessageWidget()
