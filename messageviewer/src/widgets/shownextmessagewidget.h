@@ -23,6 +23,7 @@
 
 #include <QWidget>
 #include "messageviewer_private_export.h"
+class QPushButton;
 namespace MessageViewer {
 class MESSAGEVIEWER_TESTS_EXPORT ShowNextMessageWidget : public QWidget
 {
@@ -30,6 +31,15 @@ class MESSAGEVIEWER_TESTS_EXPORT ShowNextMessageWidget : public QWidget
 public:
     explicit ShowNextMessageWidget(QWidget *parent = nullptr);
     ~ShowNextMessageWidget();
+
+    void updateButton(bool hasPreviousMessage, bool hasNextMessage);
+Q_SIGNALS:
+    void showNextMessage();
+    void showPreviousMessage();
+
+private:
+    QPushButton *mNextMessage = nullptr;
+    QPushButton *mPreviousMessage = nullptr;
 };
 }
 
