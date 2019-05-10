@@ -3135,3 +3135,8 @@ void ViewerPrivate::slotZoomChanged(qreal zoom)
     MessageViewer::MessageViewerSettings::self()->setZoomFactor(zoomFactor);
     Q_EMIT zoomChanged(zoomFactor);
 }
+
+void ViewerPrivate::updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton)
+{
+    mShowNextMessageWidget->updateButton(enablePreviousButton, enableNextButton);
+}

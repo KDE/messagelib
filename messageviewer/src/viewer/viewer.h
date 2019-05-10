@@ -343,6 +343,7 @@ public:
     void setShowEncryptionDetails(bool showDetails);
 
     void hasMultiMessages(bool messages);
+    void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
 
 Q_SIGNALS:
     void moveMessageToTrash();

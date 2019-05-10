@@ -440,6 +440,7 @@ public:
     void setWebViewZoomFactor(qreal factor);
     void recreateCssHelper();
     void hasMultiMessages(bool messages);
+    void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
 
 private Q_SLOTS:
     void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);

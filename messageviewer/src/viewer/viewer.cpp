@@ -723,6 +723,12 @@ void Viewer::hasMultiMessages(bool messages)
     d->hasMultiMessages(messages);
 }
 
+void Viewer::updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton)
+{
+    Q_D(Viewer);
+    d->updateShowMultiMessagesButton(enablePreviousButton, enableNextButton);
+}
+
 void Viewer::setShowEncryptionDetails(bool showDetails)
 {
     Q_D(Viewer);
