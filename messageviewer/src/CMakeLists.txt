@@ -101,6 +101,7 @@ set(libmessageviewer_widgets_SRCS
     widgets/submittedformwarningwidget.cpp
     widgets/mailtrackingwarningwidget.cpp
     widgets/mailtrackingdetailsdialog.cpp
+    widgets/shownextmessagewidget.cpp
     )
 
 set(libmessageviewer_widgets_webengine_SRCS
