@@ -482,6 +482,11 @@ QString HtmlMessagePart::text() const
     return mBodyHTML;
 }
 
+QString MimeTreeParser::HtmlMessagePart::plaintextContent() const
+{
+    return QString();
+}
+
 bool HtmlMessagePart::isHtml() const
 {
     return true;
