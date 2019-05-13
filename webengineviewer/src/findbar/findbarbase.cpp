@@ -40,7 +40,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setContentsMargins(2, 2, 2, 2);
+    lay->setContentsMargins(0, 0, 0, 0);
 
     QToolButton *closeBtn = new QToolButton(this);
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
