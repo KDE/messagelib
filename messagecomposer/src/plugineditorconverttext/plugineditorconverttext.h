@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -34,7 +34,7 @@ public:
     explicit PluginEditorConvertText(QObject *parent = nullptr);
     ~PluginEditorConvertText();
 
-    virtual PluginEditorConvertTextInterface *createInterface(KActionCollection *ac, QObject *parent) = 0;
+    virtual PluginEditorConvertTextInterface *createInterface(QObject *parent) = 0;
 
     Q_REQUIRED_RESULT virtual bool hasConfigureDialog() const;
 
@@ -46,6 +46,14 @@ public:
 
     void setIsEnabled(bool enabled);
     Q_REQUIRED_RESULT bool isEnabled() const;
+
+    Q_REQUIRED_RESULT virtual bool canWorkOnHtml() const;
+
+    Q_REQUIRED_RESULT virtual bool hasStatusBarSupport() const;
+
+    Q_REQUIRED_RESULT virtual bool hasPopupMenuSupport() const;
+
+    Q_REQUIRED_RESULT virtual bool hasToolBarSupport() const;
 
 Q_SIGNALS:
     void configChanged();

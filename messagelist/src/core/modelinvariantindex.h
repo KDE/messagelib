@@ -47,7 +47,7 @@ public:
 
 public:
     /**
-    * Returns true if this ModelInvariantIndex is valid, that is, it has been attacched
+    * Returns true if this ModelInvariantIndex is valid, that is, it has been attached
     * to a ModelInvariantRowMapper. Returns false otherwise.
     * An invalid index will always map to the current row -1 (which is invalid as QModelIndex row).
     */

@@ -132,6 +132,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
         m_recipientsEditor->setRecipientString(m_msg->to()->mailboxes(), MessageComposer::Recipient::To);
         m_recipientsEditor->setRecipientString(m_msg->cc()->mailboxes(), MessageComposer::Recipient::Cc);
         m_recipientsEditor->setRecipientString(m_msg->bcc()->mailboxes(), MessageComposer::Recipient::Bcc);
+        m_recipientsEditor->setRecipientString(m_msg->replyTo()->mailboxes(), MessageComposer::Recipient::ReplyTo);
         m_recipientsEditor->setFocusBottom();
 
         // If we are loading from a draft, load unexpanded aliases as well
@@ -155,6 +156,14 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
             const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
             for (const QString &addr : spl) {
                 if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc)) {
+                    qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
+                }
+            }
+        }
+        if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
+            const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
+            for (const QString &addr : spl) {
+                if (!m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::ReplyTo)) {
                     qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
                 }
             }
@@ -245,6 +254,10 @@ void ComposerViewBase::saveMailSettings()
     header->fromUnicodeString(QString::number(m_transport->currentTransportId()), "utf-8");
     m_msg->setHeader(header);
 
+    header = new KMime::Headers::Generic("X-KMail-Transport-Name");
+    header->fromUnicodeString(m_transport->currentText(), "utf-8");
+    m_msg->setHeader(header);
+
     header = new KMime::Headers::Generic("X-KMail-Fcc");
     header->fromUnicodeString(QString::number(m_fccCollection.id()), "utf-8");
     m_msg->setHeader(header);
@@ -252,6 +265,11 @@ void ComposerViewBase::saveMailSettings()
     header = new KMime::Headers::Generic("X-KMail-Identity");
     header->fromUnicodeString(QString::number(identity.uoid()), "utf-8");
     m_msg->setHeader(header);
+
+    header = new KMime::Headers::Generic("X-KMail-Identity-Name");
+    header->fromUnicodeString(identity.identityName(), "utf-8");
+    m_msg->setHeader(header);
+
     header = new KMime::Headers::Generic("X-KMail-Dictionary");
     header->fromUnicodeString(m_dictionary->currentDictionary(), "utf-8");
     m_msg->setHeader(header);
@@ -380,6 +398,8 @@ void ComposerViewBase::readyForSending()
     job->setTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::To));
     job->setCc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Cc));
     job->setBcc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Bcc));
+    job->setReplyTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::ReplyTo));
+
     connect(job, &MessageComposer::EmailAddressResolveJob::result, this, &ComposerViewBase::slotEmailAddressResolved);
     job->start();
 }
@@ -400,12 +420,14 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
         mExpandedTo = resolveJob->expandedTo();
         mExpandedCc = resolveJob->expandedCc();
         mExpandedBcc = resolveJob->expandedBcc();
+        mExpandedReplyTo = resolveJob->expandedReplyTo();
         if (autoresizeImage) {
             QStringList listEmails;
             listEmails << mExpandedFrom;
             listEmails << mExpandedTo;
             listEmails << mExpandedCc;
             listEmails << mExpandedBcc;
+            listEmails << mExpandedReplyTo;
             MessageComposer::Utils resizeUtils;
             autoresizeImage = resizeUtils.filterRecipients(listEmails);
         }
@@ -422,12 +444,15 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
             case MessageComposer::Recipient::Bcc:
                 mExpandedBcc << r->email();
                 break;
+            case MessageComposer::Recipient::ReplyTo:
+                mExpandedReplyTo << r->email();
+                break;
             case MessageComposer::Recipient::Undefined:
-                Q_ASSERT(!"Unknown recpient type!");
+                Q_ASSERT(!"Unknown recipient type!");
                 break;
             }
         }
-        QStringList unExpandedTo, unExpandedCc, unExpandedBcc;
+        QStringList unExpandedTo, unExpandedCc, unExpandedBcc, unExpandedReplyTo;
         foreach (const QString &exp, resolveJob->expandedTo()) {
             if (!mExpandedTo.contains(exp)) {  // this address was expanded, so save it explicitly
                 unExpandedTo << exp;
@@ -443,6 +468,11 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
                 unExpandedBcc << exp;
             }
         }
+        foreach (const QString &exp, resolveJob->expandedReplyTo()) {
+            if (!mExpandedReplyTo.contains(exp)) {  // this address was expanded, so save it explicitly
+                unExpandedReplyTo << exp;
+            }
+        }
         auto header = new KMime::Headers::Generic("X-KMail-UnExpanded-To");
         header->from7BitString(unExpandedTo.join(QStringLiteral(", ")).toLatin1());
         m_msg->setHeader(header);
@@ -452,11 +482,14 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
         header = new KMime::Headers::Generic("X-KMail-UnExpanded-BCC");
         header->from7BitString(unExpandedBcc.join(QStringLiteral(", ")).toLatin1());
         m_msg->setHeader(header);
+        header = new KMime::Headers::Generic("X-KMail-UnExpanded-Reply-To");
+        header->from7BitString(unExpandedReplyTo.join(QStringLiteral(", ")).toLatin1());
+        m_msg->setHeader(header);
         autoresizeImage = false;
     }
 
     Q_ASSERT(m_composers.isEmpty()); //composers should be empty. The caller of this function
-    //checks for emptyness before calling it
+    //checks for emptiness before calling it
     //so just ensure it actually is empty
     //and document it
     // we first figure out if we need to create multiple messages with different crypto formats
@@ -592,16 +625,16 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
     const KIdentityManagement::Identity &id = m_identMan->identityForUoidOrDefault(m_identityCombo->currentIdentity());
 
     qCDebug(MESSAGECOMPOSER_LOG) << "filling crypto info";
-    Kleo::KeyResolver *keyResolver = new Kleo::KeyResolver(encryptToSelf(),
-                                                           showKeyApprovalDialog(),
-                                                           id.pgpAutoEncrypt(),
-                                                           m_cryptoMessageFormat,
-                                                           encryptKeyNearExpiryWarningThresholdInDays(),
-                                                           signingKeyNearExpiryWarningThresholdInDays(),
-                                                           encryptRootCertNearExpiryWarningThresholdInDays(),
-                                                           signingRootCertNearExpiryWarningThresholdInDays(),
-                                                           encryptChainCertNearExpiryWarningThresholdInDays(),
-                                                           signingChainCertNearExpiryWarningThresholdInDays());
+    QScopedPointer<Kleo::KeyResolver> keyResolver(new Kleo::KeyResolver(encryptToSelf(),
+                                                                        showKeyApprovalDialog(),
+                                                                        id.pgpAutoEncrypt(),
+                                                                        m_cryptoMessageFormat,
+                                                                        encryptKeyNearExpiryWarningThresholdInDays(),
+                                                                        signingKeyNearExpiryWarningThresholdInDays(),
+                                                                        encryptRootCertNearExpiryWarningThresholdInDays(),
+                                                                        signingRootCertNearExpiryWarningThresholdInDays(),
+                                                                        encryptChainCertNearExpiryWarningThresholdInDays(),
+                                                                        signingChainCertNearExpiryWarningThresholdInDays()));
 
     QStringList encryptToSelfKeys;
     QStringList signKeys;
@@ -659,7 +692,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
 
     bool result = true;
     bool canceled = false;
-    signSomething = determineWhetherToSign(doSignCompletely, keyResolver, signSomething, result, canceled);
+    signSomething = determineWhetherToSign(doSignCompletely, keyResolver.data(), signSomething, result, canceled);
     if (!result) {
         // TODO handle failure
         qCDebug(MESSAGECOMPOSER_LOG) << "determineWhetherToSign: failed to resolve keys! oh noes";
@@ -673,7 +706,7 @@ QList< MessageComposer::Composer * > ComposerViewBase::generateCryptoMessages(bo
     }
 
     canceled = false;
-    encryptSomething = determineWhetherToEncrypt(doEncryptCompletely, keyResolver, encryptSomething, signSomething, result, canceled);
+    encryptSomething = determineWhetherToEncrypt(doEncryptCompletely, keyResolver.data(), encryptSomething, signSomething, result, canceled);
     if (!result) {
         // TODO handle failure
         qCDebug(MESSAGECOMPOSER_LOG) << "determineWhetherToEncrypt: failed to resolve keys! oh noes";
@@ -782,17 +815,18 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     }
 
     infoPart->setTransportId(m_transport->currentTransportId());
-    infoPart->setReplyTo(replyTo());
     if (expansion == UseExpandedRecipients) {
         infoPart->setFrom(mExpandedFrom);
         infoPart->setTo(mExpandedTo);
         infoPart->setCc(mExpandedCc);
         infoPart->setBcc(mExpandedBcc);
+        infoPart->setReplyTo(mExpandedReplyTo);
     } else {
         infoPart->setFrom(from());
         infoPart->setTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::To));
         infoPart->setCc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Cc));
         infoPart->setBcc(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::Bcc));
+        infoPart->setReplyTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::ReplyTo));
     }
     infoPart->setSubject(subject());
     infoPart->setUserAgent(QStringLiteral("KMail"));
@@ -825,6 +859,9 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     if (auto hdr = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
         extras << hdr;
     }
+    if (auto hdr = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
+        extras << hdr;
+    }
     if (auto hdr = m_msg->organization(false)) {
         extras << hdr;
     }
@@ -855,7 +892,10 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     if (auto hdr = m_msg->headerByType("X-KMail-FccDisabled")) {
         extras << hdr;
     }
-    if (auto hdr = m_msg->headerByType("X-KMail-Dictionary")) {
+    if (auto hdr = m_msg->headerByType("X-KMail-Identity-Name")) {
+        extras << hdr;
+    }
+    if (auto hdr = m_msg->headerByType("X-KMail-Transport-Name")) {
         extras << hdr;
     }
 
@@ -864,9 +904,11 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
 
 void ComposerViewBase::slotSendComposeResult(KJob *job)
 {
-    qCDebug(MESSAGECOMPOSER_LOG) << "compose job might have error error" << job->error() << "errorString" << job->errorString();
     Q_ASSERT(dynamic_cast< MessageComposer::Composer * >(job));
     MessageComposer::Composer *composer = static_cast< MessageComposer::Composer * >(job);
+    if (composer->error() != MessageComposer::Composer::NoError) {
+        qCDebug(MESSAGECOMPOSER_LOG) << "compose job might have error: " << job->error() << " errorString: " << job->errorString();
+    }
 
     if (composer->error() == MessageComposer::Composer::NoError) {
         Q_ASSERT(m_composers.contains(composer));
@@ -1007,7 +1049,7 @@ void ComposerViewBase::fillQueueJobHeaders(MailTransport::MessageQueueJob *qjob,
 
 void ComposerViewBase::initAutoSave()
 {
-    qCDebug(MESSAGECOMPOSER_LOG) << "initalising autosave";
+    qCDebug(MESSAGECOMPOSER_LOG) << "initialising autosave";
 
     // Ensure that the autosave directory exists.
     QDir dataDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kmail2/"));
@@ -1386,19 +1428,28 @@ MessageComposer::Composer *ComposerViewBase::createSimpleComposer()
 //-----------------------------------------------------------------------------
 QString ComposerViewBase::to() const
 {
-    return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::To));
+    if (m_recipientsEditor) {
+        return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::To));
+    }
+    return {};
 }
 
 //-----------------------------------------------------------------------------
 QString ComposerViewBase::cc() const
 {
-    return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Cc));
+    if (m_recipientsEditor) {
+        return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Cc));
+    }
+    return {};
 }
 
 //-----------------------------------------------------------------------------
 QString ComposerViewBase::bcc() const
 {
-    return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Bcc));
+    if (m_recipientsEditor) {
+        return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::Bcc));
+    }
+    return {};
 }
 
 QString ComposerViewBase::from() const
@@ -1408,7 +1459,10 @@ QString ComposerViewBase::from() const
 
 QString ComposerViewBase::replyTo() const
 {
-    return MessageComposer::Util::cleanedUpHeaderString(m_replyTo);
+    if (m_recipientsEditor) {
+        return MessageComposer::Util::cleanedUpHeaderString(m_recipientsEditor->recipientString(MessageComposer::Recipient::ReplyTo));
+    }
+    return {};
 }
 
 QString ComposerViewBase::subject() const
@@ -1481,6 +1535,9 @@ void ComposerViewBase::updateRecipients(const KIdentityManagement::Identity &ide
     } else if (type == MessageComposer::Recipient::Cc) {
         oldIdentList = oldIdent.cc();
         newIdentList = ident.cc();
+    } else if (type == MessageComposer::Recipient::ReplyTo) {
+        oldIdentList = oldIdent.replyToAddr();
+        newIdentList = ident.replyToAddr();
     } else {
         return;
     }
@@ -1503,6 +1560,7 @@ void ComposerViewBase::identityChanged(const KIdentityManagement::Identity &iden
 {
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::Bcc);
     updateRecipients(ident, oldIdent, MessageComposer::Recipient::Cc);
+    updateRecipients(ident, oldIdent, MessageComposer::Recipient::ReplyTo);
 
     KIdentityManagement::Signature oldSig = const_cast<KIdentityManagement::Identity &>
                                             (oldIdent).signature();
@@ -1591,11 +1649,6 @@ Akonadi::CollectionComboBox *ComposerViewBase::fccCombo() const
 void ComposerViewBase::setFrom(const QString &from)
 {
     m_from = from;
-}
-
-void ComposerViewBase::setReplyTo(const QString &replyTo)
-{
-    m_replyTo = replyTo;
 }
 
 void ComposerViewBase::setSubject(const QString &subject)
@@ -2033,7 +2086,7 @@ void ComposerViewBase::addFollowupReminder(const QString &messageId)
             MessageComposer::FollowupReminderCreateJob *job = new MessageComposer::FollowupReminderCreateJob;
             job->setSubject(m_subject);
             job->setMessageId(messageId);
-            job->setTo(m_replyTo.isEmpty() ? mExpandedTo.join(QLatin1Char(',')) : m_replyTo);
+            job->setTo(mExpandedReplyTo.isEmpty() ? mExpandedTo.join(QLatin1Char(',')) : mExpandedReplyTo.join(QLatin1Char(',')));
             job->setFollowUpReminderDate(mFollowUpDate);
             job->setCollectionToDo(mFollowUpCollection);
             job->start();

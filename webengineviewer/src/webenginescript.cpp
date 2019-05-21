@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 #include "webenginescript.h"
-#include <QDebug>
 using namespace WebEngineViewer;
 
 QString WebEngineScript::findAllImages()
@@ -126,26 +125,22 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
 
 static QString scrollTop()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     return QStringLiteral("document.documentElement.scrollTop");
-#else
-    return QStringLiteral("document.body.scrollTop");
-#endif
 }
 
 QString WebEngineScript::scrollPercentage(int percent)
 {
     const QString source = QStringLiteral("var current = ") + scrollTop() + QStringLiteral(";"
-                                          "var docElement = document.documentElement;"
-                                          "var height = docElement.clientHeight;"
-                                          "var newPosition = current + height * %1 /100;"
-                                          "window.scrollTo(window.scrollX, newPosition);").arg(percent);
+                                                                                           "var docElement = document.documentElement;"
+                                                                                           "var height = docElement.clientHeight;"
+                                                                                           "var newPosition = current + height * %1 /100;"
+                                                                                           "window.scrollTo(window.scrollX, newPosition);").arg(percent);
     return source;
 }
 
 QString WebEngineScript::scrollUp(int pixel)
 {
-    const QString source = QString::fromLatin1("window.scrollBy(0, %1);").arg(-pixel);
+    const QString source = QStringLiteral("window.scrollBy(0, %1);").arg(-pixel);
     return source;
 }
 
@@ -191,6 +186,6 @@ QString WebEngineScript::isScrolledToBottom()
                           "var docElement = document.documentElement;"
                           "var viewportHeight = docElement.clientHeight;"
                           "var isAtBottom = ") + scrollTop() + QStringLiteral(" + viewportHeight >= document.body.scrollHeight;"
-                          "return Boolean(isAtBottom); "
-                          "}());");
+                                                                              "return Boolean(isAtBottom); "
+                                                                              "}());");
 }

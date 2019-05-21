@@ -55,7 +55,7 @@
 #include <Akonadi/Contact/ContactSearchJob>
 #include <KLocalizedString>
 #include "messagecomposer_debug.h"
-#include <qinputdialog.h>
+#include <QInputDialog>
 #include <kmessagebox.h>
 
 #include <QStringList>
@@ -646,8 +646,7 @@ struct Q_DECL_HIDDEN Kleo::KeyResolver::Private {
     ContactPreferencesMap mContactPreferencesMap;
 };
 
-Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int f, int encrWarnThresholdKey, int signWarnThresholdKey, int encrWarnThresholdRootCert,
-                               int signWarnThresholdRootCert, int encrWarnThresholdChainCert, int signWarnThresholdChainCert)
+Kleo::KeyResolver::KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int f, int encrWarnThresholdKey, int signWarnThresholdKey, int encrWarnThresholdRootCert, int signWarnThresholdRootCert, int encrWarnThresholdChainCert, int signWarnThresholdChainCert)
     : mEncryptToSelf(encToSelf)
     , mShowApprovalDialog(showApproval)
     , mOpportunisticEncyption(oppEncryption)
@@ -1731,12 +1730,12 @@ std::vector<GpgME::Key> Kleo::KeyResolver::selectKeys(
 
     QPointer<Kleo::KeySelectionDialog> dlg
         = new Kleo::KeySelectionDialog(
-        i18n("Encryption Key Selection"),
-        msg, KEmailAddress::extractEmailAddress(person), selectedKeys,
-        Kleo::KeySelectionDialog::ValidEncryptionKeys
-        & ~(opgp ? 0 : Kleo::KeySelectionDialog::OpenPGPKeys)
-        & ~(x509 ? 0 : Kleo::KeySelectionDialog::SMIMEKeys),
-        true, true);  // multi-selection and "remember choice" box
+              i18n("Encryption Key Selection"),
+              msg, KEmailAddress::extractEmailAddress(person), selectedKeys,
+              Kleo::KeySelectionDialog::ValidEncryptionKeys
+              & ~(opgp ? 0 : Kleo::KeySelectionDialog::OpenPGPKeys)
+              & ~(x509 ? 0 : Kleo::KeySelectionDialog::SMIMEKeys),
+              true, true); // multi-selection and "remember choice" box
 
     if (dlg->exec() != QDialog::Accepted) {
         delete dlg;

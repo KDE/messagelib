@@ -53,7 +53,7 @@ public:
     void setShowSignatureDetails(bool showSignatureDetails);
     void setLevelQuote(int levelQuote);
     void setHtmlLoadExternal(bool htmlLoadExternal);
-    void setCreateMessageHeader(std::function<QString(KMime::Message *)>);
+    void setCreateMessageHeader(const std::function<QString(KMime::Message *)>&);
     void render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *writer);
     void setShowEncryptionDetails(bool showEncryptionDetails);
 private:

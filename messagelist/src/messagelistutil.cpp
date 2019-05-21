@@ -1,10 +1,11 @@
 /*
   This file is part of KMail, the KDE mail client.
-  Copyright (c) 2011-2018 Montel Laurent <montel@kde.org>
+  Copyright (c) 2011-2019 Montel Laurent <montel@kde.org>
 
   KMail is free software; you can redistribute it and/or modify it
-  under the terms of the GNU General Public License, version 2, as
-  published by the Free Software Foundation.
+  under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
 
   KMail is distributed in the hope that it will be useful, but
   WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -158,7 +159,6 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
     }
     if (lines.count() == 1 && content.length() > 100) {
         return content.left(100);
-
     }
     QString ret;
     for (const QString &line : lines) {

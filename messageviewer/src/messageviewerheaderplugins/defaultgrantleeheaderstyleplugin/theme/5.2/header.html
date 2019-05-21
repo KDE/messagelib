@@ -61,7 +61,7 @@
 		</div>
 		{% if header.spamHTML %}
 		<div class="row">
-			<div class="headerleft">{{ header.spamstatusi18n }}</div>
+			<div class="headerleftnowrap">{{ header.spamstatusi18n }}</div>
 			<div class="headerright">{{ header.spamHTML|safe }}</div>
 		</div>
 		{% endif %}
@@ -78,10 +78,14 @@
                         </div>
 		</div>
 		{% endif %}
-	</div>
-	{% if header.hasAttachment %}
-   	<div>{{ header.attachmentHtml|safe }}</div>
-	{% endif %}
-	</div>
+                {% if header.hasAttachment %}
+                <div class="row">
+                        <div class="headerleft">{{ header.attachmentI18n }}</div>
+                        <div class="headerright">{{ header.attachmentHtml|safe }}</div>
+                </div>
+                {% endif %}
+
+        </div>
+        </div>
 </div>
 <div id="kmailContent">

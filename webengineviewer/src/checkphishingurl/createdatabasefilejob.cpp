@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -89,7 +89,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QVector<Additi
             break;
         }
         case UpdateDataBaseInfo::UnknownCompression:
-            qCWarning(WEBENGINEVIEWER_LOG) << "Unknow compression type in addition element";
+            qCWarning(WEBENGINEVIEWER_LOG) << "Unknown compression type in addition element";
             break;
         }
     }
@@ -201,7 +201,7 @@ void CreateDatabaseFileJobPrivate::createBinaryFile()
 {
     switch (mInfoDataBase.responseType) {
     case UpdateDataBaseInfo::Unknown:
-        qCWarning(WEBENGINEVIEWER_LOG) << " Reponse Type of database info is \"unknow\". It's a bug!";
+        qCWarning(WEBENGINEVIEWER_LOG) << " Response Type of database info is \"unknown\". It's a bug!";
         break;
     case UpdateDataBaseInfo::FullUpdate:
     case UpdateDataBaseInfo::PartialUpdate:

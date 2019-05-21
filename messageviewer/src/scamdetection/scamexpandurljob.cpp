@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2016-2018 Montel Laurent <montel@kde.org>
+  Copyright (c) 2016-2019 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -69,14 +69,14 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
         deleteLater();
         return;
     }
-    const QUrl newUrl(QStringLiteral("http://api.longurl.org/v2/expand?url=%1&format=json").arg(
+    const QUrl newUrl(QStringLiteral("https://lengthenurl.info/api/longurl/shorturl/?inputURL=%1&format=json").arg(
                           url.url()));
 
     qCDebug(MESSAGEVIEWER_LOG) << " newUrl " << newUrl;
     QNetworkReply *reply = d->mNetworkAccessManager->get(QNetworkRequest(newUrl));
     reply->setProperty("shortUrl", url.url());
     connect(reply,
-            QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error), this,
+            qOverload<QNetworkReply::NetworkError>(&QNetworkReply::error), this,
             &ScamExpandUrlJob::slotError);
 }
 
@@ -86,21 +86,29 @@ void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
     if (!reply->property("shortUrl").isNull()) {
         shortUrl.setUrl(reply->property("shortUrl").toString());
     }
-    QJsonDocument jsonDoc = QJsonDocument::fromBinaryData(reply->readAll());
+    const QByteArray ba = reply->readAll();
+    //qDebug() << " reply->readAll()" << ba;
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(ba);
     reply->deleteLater();
     if (!jsonDoc.isNull()) {
         const QMap<QString, QVariant> map = jsonDoc.toVariant().toMap();
         QUrl longUrl;
-        const QVariant longUrlVar = map.value(QStringLiteral("long-url"));
+        const QVariant longUrlVar = map.value(QStringLiteral("LongURL"));
         if (longUrlVar.isValid()) {
             longUrl.setUrl(longUrlVar.toString());
         } else {
+            qCWarning(MESSAGEVIEWER_LOG) << "JSon is not corect" << ba;
+            KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.",
+                                                                 shortUrl.url()));
             deleteLater();
             return;
         }
         KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Short url \'%1\' redirects to \'%2\'.",
                                                              shortUrl.url(),
                                                              longUrl.toDisplayString()));
+    } else {
+        KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.",
+                                                             shortUrl.url()));
     }
     deleteLater();
 }

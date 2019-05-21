@@ -28,16 +28,6 @@ class UnencryptedMessageTest : public QObject
     Q_OBJECT
 private Q_SLOTS:
     void initTestCase();
-    void testMailWithoutEncryption();
-    void testSMIMESignedEncrypted();
-    void testOpenPGPSignedEncrypted();
-    void testOpenPGPEncryptedAndSigned();
-    void testForwardedOpenPGPSignedEncrypted();
-    void testSignedForwardedOpenPGPSignedEncrypted();
-    void testOpenPGPEncrypted();
-    void testOpenPGPEncryptedNotDecrypted();
-    void testAsync_data();
-    void testAsync();
     void testNotDecrypted_data();
     void testNotDecrypted();
     void testSMimeAutoCertImport();

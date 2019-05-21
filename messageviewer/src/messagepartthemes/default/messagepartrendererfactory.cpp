@@ -54,7 +54,7 @@ using namespace MessageViewer;
 void MessagePartRendererFactoryPrivate::setup()
 {
     if (m_renderers.isEmpty()) {
-        initalize_builtin_renderers();
+        initialize_builtin_renderers();
         loadPlugins();
     }
     Q_ASSERT(!m_renderers.isEmpty());
@@ -104,7 +104,7 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
     });
 }
 
-void MessagePartRendererFactoryPrivate::initalize_builtin_renderers()
+void MessagePartRendererFactoryPrivate::initialize_builtin_renderers()
 {
     insert("MimeTreeParser::MessagePart", new MessagePartRenderer());
     insert("MimeTreeParser::TextMessagePart", new TextMessagePartRenderer());
@@ -121,7 +121,7 @@ void MessagePartRendererFactoryPrivate::insert(const QByteArray &type, MessagePa
     const auto mt = db.mimeTypeForName(mimeType);
 
     RendererInfo info;
-    info.renderer = renderer;
+    info.renderer.reset(renderer);
     info.mimeType = mt.isValid() ? mt.name() : mimeType;
     info.priority = priority;
 
@@ -185,7 +185,7 @@ QVector<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(
 
     QVector<MessagePartRendererBase *> r;
     for (const auto &candidate : candidates) {
-        r.push_back(candidate.renderer);
+        r.push_back(candidate.renderer.data());
     }
     return r;
 }

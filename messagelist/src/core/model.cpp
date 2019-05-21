@@ -109,7 +109,7 @@ Q_GLOBAL_STATIC(QTimer, _k_heartBeatTimer)
  * Pass 2 scans the list of messages that haven't been attached in
  * the first pass and performs perfect and reference based threading.
  * Since grouping of messages may depend on the "shape" of the thread
- * then certain threads aren't attacched to the view yet.
+ * then certain threads aren't attached to the view yet.
  * Unassigned messages get stuffed into a list waiting for Pass3
  * or directly to a list waiting for Pass4 (that is, Pass3 may be skipped
  * if there is no hope to find an imperfect parent by subject based threading).
@@ -117,7 +117,7 @@ Q_GLOBAL_STATIC(QTimer, _k_heartBeatTimer)
  * Pass 3 scans the list of messages that haven't been attached in
  * the first and second passes and performs subject based threading.
  * Since grouping of messages may depend on the "shape" of the thread
- * then certain threads aren't attacched to the view yet.
+ * then certain threads aren't attached to the view yet.
  * Anything unattached gets stuffed into the list waiting for Pass4.
  *
  * Pass 4 scans the unattached threads and puts them in the appropriate
@@ -159,7 +159,7 @@ public:
         Pass1Update = 2,      ///< Update messages
         Pass2 = 3,            ///< Thread everything by using caches, try to attach more to the view
         Pass3 = 4,            ///< Do more threading (this time try to guess), try to attach more to the view
-        Pass4 = 5,            ///< Attach anything is still unattacched
+        Pass4 = 5,            ///< Attach anything is still unattached
         Pass5 = 6,            ///< Eventually Re-sort group headers and remove the empty ones
         LastIndex = 7         ///< Keep this at the end, needed to get the size of the enum
     };
@@ -873,7 +873,7 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
     //   The larger this time, the greater the number of messages per second that this
     //   engine can process but also greater time with frozen UI -> less interactivity.
     //   Reasonable values start at 50 msecs. Values larger than 300 msecs are very likely
-    //   to be percieved by the user as UI non-reactivity.
+    //   to be perceived by the user as UI non-reactivity.
     //
     // - The number of messages processed in each job step subchunk.
     //
@@ -915,18 +915,18 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
         =// we have no filter
           !d->mFilter
           && (
-        // we do no threading at all
-        (d->mAggregation->threading() == Aggregation::NoThreading)
-        ||  // or we never expand threads
-        (d->mAggregation->threadExpandPolicy() == Aggregation::NeverExpandThreads)
-        ||  // or we expand threads but we'll be going to expand really only a few
-        (
-            // so we don't expand them all
-            (d->mAggregation->threadExpandPolicy() != Aggregation::AlwaysExpandThreads)
-            &&  // and we'd expand only a few in fact
-            (d->mStorageModel->initialUnreadRowCountGuess() < 1000)
-        )
-        );
+              // we do no threading at all
+              (d->mAggregation->threading() == Aggregation::NoThreading)
+              || // or we never expand threads
+              (d->mAggregation->threadExpandPolicy() == Aggregation::NeverExpandThreads)
+              || // or we expand threads but we'll be going to expand really only a few
+              (
+                  // so we don't expand them all
+                  (d->mAggregation->threadExpandPolicy() != Aggregation::AlwaysExpandThreads)
+                  && // and we'd expand only a few in fact
+                  (d->mStorageModel->initialUnreadRowCountGuess() < 1000)
+              )
+              );
 
     switch (d->mAggregation->fillViewStrategy()) {
     case Aggregation::FavorInteractivity:
@@ -1031,7 +1031,7 @@ void Model::setPreSelectionMode(PreSelectionMode preSelect)
 // It's governed by the following goals:
 //
 // - Be flexible: allow different configurations from "unsorted flat list" to a "grouped and threaded
-//     list with different sorting algorightms applied to each aggregation level"
+//     list with different sorting algorithms applied to each aggregation level"
 // - Be reasonably fast
 // - Be non blocking: UI shouldn't freeze while the algorithm is running
 // - Be interruptible: user must be able to abort the execution and just switch to another folder in the middle
@@ -1464,7 +1464,7 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
 
         // This function may be also called to re-group a message.
         // That is, to eventually find a new group for a message that has changed
-        // its properties (but was already attacched to a group).
+        // its properties (but was already attached to a group).
         // So it may happen that we find out that in fact re-grouping wasn't really
         // needed because the message is already in the correct group.
         if (mi->parent() == ghi) {
@@ -1878,10 +1878,10 @@ bool ModelPrivate::handleItemPropertyChanges(int propertyChangeMask, Item *paren
     // place in that ActionItemStatus may be set).
 
     if (parent->type() == Item::InvisibleRoot) {
-        // item is either a message or a group attacched to the root.
+        // item is either a message or a group attached to the root.
         // It might need resorting.
         if (item->type() == Item::GroupHeader) {
-            // item is a group header attacched to the root.
+            // item is a group header attached to the root.
             if (
                 (
                     // max date changed
@@ -1962,7 +1962,7 @@ bool ModelPrivate::handleItemPropertyChanges(int propertyChangeMask, Item *paren
     }
 
     if (parent->type() == Item::GroupHeader) {
-        // item is a message attacched to a GroupHeader.
+        // item is a message attached to a GroupHeader.
         // It might need re-grouping or re-sorting (within the same group)
 
         // Check re-grouping here.
@@ -1990,7 +1990,7 @@ bool ModelPrivate::handleItemPropertyChanges(int propertyChangeMask, Item *paren
         }
 
         // Re-grouping wasn't needed. Re-sorting might be.
-    } // else item is a message attacched to another message and might need re-sorting only.
+    } // else item is a message attached to another message and might need re-sorting only.
 
     // Check if message needs re-sorting.
 
@@ -2071,7 +2071,7 @@ void ModelPrivate::messageDetachedUpdateParentProperties(Item *oldParent, Messag
 
         Item *grandParent = oldParent->parent();
 
-        // If there is no grandParent then oldParent isn't attacched to the view.
+        // If there is no grandParent then oldParent isn't attached to the view.
         // Re-sorting / re-grouping isn't needed for sure.
         if (!grandParent) {
             break;    // from the for(;;) loop
@@ -2088,7 +2088,7 @@ void ModelPrivate::messageDetachedUpdateParentProperties(Item *oldParent, Messag
     } // for(;;) loop
 
     // If the last message was removed from a group header then this group will need an update
-    // for sure. We will need to remove it (unless a message is attacched back to it)
+    // for sure. We will need to remove it (unless a message is attached back to it)
     if (oldParent->type() == Item::GroupHeader) {
         if (oldParent->childItemCount() == 0) {
             mGroupHeadersThatNeedUpdate.insert(static_cast< GroupHeaderItem * >(oldParent), static_cast< GroupHeaderItem * >(oldParent));
@@ -2122,7 +2122,7 @@ void ModelPrivate::propagateItemPropertiesToParent(Item *item)
 
         Item *grandParent = pParent->parent();
 
-        // If there is no grandParent then pParent isn't attacched to the view.
+        // If there is no grandParent then pParent isn't attached to the view.
         // Re-sorting / re-grouping isn't needed for sure.
         if (!grandParent) {
             break;    // from the for(;;) loop
@@ -2550,7 +2550,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4
     // In this pass we scan mUnassignedMessageListForPass4 which now
     // contains both items with parents and items without parents.
     // We scan mUnassignedMessageList for messages without parent (the ones that haven't been
-    // attacched to the viewable tree yet) and find a suitable group for them. Then we simply
+    // attached to the viewable tree yet) and find a suitable group for them. Then we simply
     // clear mUnassignedMessageList.
 
     // We call this pass "Grouping"
@@ -2606,8 +2606,8 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3
         // If we're here, then threading is requested for sure.
         auto mi = mUnassignedMessageListForPass3[curIndex];
         if ((!mi->parent()) || (mi->threadingStatus() == MessageItem::ParentMissing)) {
-            // Parent is missing (either "physically" with the item being not attacched or "logically"
-            // with the item being attacched to a group or directly to the root.
+            // Parent is missing (either "physically" with the item being not attached or "logically"
+            // with the item being attached to a group or directly to the root.
             if (mi->subjectIsPrefixed()) {
                 // We can try to guess it
                 auto mparent = guessMessageParent(mi);
@@ -2670,7 +2670,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3
 ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2(ViewItemJob *job, const QElapsedTimer &elapsedTimer)
 {
     // In this pass we scan the mUnassignedMessageList and try to do construct the threads.
-    // If some thread leader message got attacched to the viewable tree in Pass1Fill then
+    // If some thread leader message got attached to the viewable tree in Pass1Fill then
     // we'll also attach all of its children too. The thread leaders we were unable
     // to attach in Pass1Fill and their children (which we find here) will make it to the small Pass3
 
@@ -2895,7 +2895,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                 mUnassignedMessageListForPass4.append(mi);
             } else {
                 // Check if this item is a perfect parent for some imperfectly threaded
-                // message (that is actually attacched to it, but not necessairly to the
+                // message (that is actually attached to it, but not necessarily to the
                 // viewable root). If it is, then remove the imperfect child from its
                 // current parent rebuild the hierarchy on the fly.
                 bool needsImmediateReAttach = false;
@@ -3452,7 +3452,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJob(View
     // It attempts to process messages until a timeout forces it to return to the caller.
 
     // A macro would improve readability here but since this is a good point
-    // to place debugger breakpoints then we need it explicited.
+    // to place debugger breakpoints then we need it explicitly.
     // A (template) helper would need to pass many parameters and would not be inlined...
 
     if (job->currentPass() == ViewItemJob::Pass1Fill) {

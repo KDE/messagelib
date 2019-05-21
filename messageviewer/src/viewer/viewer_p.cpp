@@ -3,7 +3,7 @@
   Copyright (C) 2009 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
   Copyright (c) 2009 Andras Mantia <andras@kdab.net>
   Copyright (c) 2010 Torgny Nyblom <nyblom@kde.org>
-  Copyright (C) 2011-2018 Laurent Montel <montel@kde.org>
+  Copyright (C) 2011-2019 Laurent Montel <montel@kde.org>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -110,6 +110,7 @@
 #include "messageviewer/messageviewerutil.h"
 #include "utils/messageviewerutil_p.h"
 #include "widgets/vcardviewer.h"
+#include "widgets/shownextmessagewidget.h"
 
 #include <WebEngineViewer/FindBarWebEngineView>
 #include "viewer/webengine/mailwebengineview.h"
@@ -178,8 +179,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     , mNodeHelper(new MimeTreeParser::NodeHelper)
     , mOldGlobalOverrideEncoding(QStringLiteral("---"))
     , mMsgDisplay(true)
-    ,                   // init with dummy value
-    mCSSHelper(nullptr)
+    , mCSSHelper(nullptr)
     , mMainWindow(mainWindow)
     , mActionCollection(actionCollection)
     , mCanStartDrag(false)
@@ -850,7 +850,7 @@ void ViewerPrivate::displayMessage()
     }
 
     htmlWriter()->begin();
-    htmlWriter()->write(mCSSHelper->htmlHead(mUseFixedFont));
+    htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont));
 
     if (!mMainWindow) {
         q->setWindowTitle(mMessage->subject()->asUnicodeString());
@@ -1068,8 +1068,7 @@ void ViewerPrivate::slotWheelZoomChanged(int numSteps)
 
 void ViewerPrivate::readConfig()
 {
-    delete mCSSHelper;
-    mCSSHelper = new CSSHelper(mViewer);
+    recreateCssHelper();
 
     mForceEmoticons = MessageViewer::MessageViewerSettings::self()->showEmoticons();
     if (mDisableEmoticonAction) {
@@ -1123,10 +1122,20 @@ void ViewerPrivate::readGravatarConfig()
     }
 }
 
-void ViewerPrivate::slotGeneralFontChanged()
+void ViewerPrivate::recreateCssHelper()
 {
     delete mCSSHelper;
     mCSSHelper = new CSSHelper(mViewer);
+}
+
+void ViewerPrivate::hasMultiMessages(bool messages)
+{
+    mShowNextMessageWidget->setVisible(messages);
+}
+
+void ViewerPrivate::slotGeneralFontChanged()
+{
+    recreateCssHelper();
     if (mMessage) {
         update();
     }
@@ -1267,11 +1276,11 @@ void ViewerPrivate::resetStateForNewMessage()
             mLevelQuote = -1;
         }
     } else {
-        mDisplayFormatMessageOverwrite
-            = (mDisplayFormatMessageOverwrite
-               == MessageViewer::Viewer::UseGlobalSetting) ? MessageViewer::Viewer::UseGlobalSetting
-              :
-              MessageViewer::Viewer::Unknown;
+//        mDisplayFormatMessageOverwrite
+//            = (mDisplayFormatMessageOverwrite
+//               == MessageViewer::Viewer::UseGlobalSetting) ? MessageViewer::Viewer::UseGlobalSetting
+//              :
+//              MessageViewer::Viewer::Unknown;
     }
 }
 
@@ -1347,7 +1356,7 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
         }
 
         htmlWriter()->begin();
-        htmlWriter()->write(mCSSHelper->htmlHead(mUseFixedFont));
+        htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont));
 
         parseContent(node);
 
@@ -1432,7 +1441,7 @@ void ViewerPrivate::createWidgets()
     //TODO: Make a MDN bar similar to Mozillas password bar and show MDNs here as soon as a
     //      MDN enabled message is shown.
     QVBoxLayout *vlay = new QVBoxLayout(q);
-    vlay->setMargin(0);
+    vlay->setContentsMargins(0, 0, 0, 0);
     mSplitter = new QSplitter(Qt::Vertical, q);
     connect(mSplitter, &QSplitter::splitterMoved, this, &ViewerPrivate::saveSplitterSizes);
     mSplitter->setObjectName(QStringLiteral("mSplitter"));
@@ -1448,17 +1457,25 @@ void ViewerPrivate::createWidgets()
 
     mBox = new QWidget(mSplitter);
     QHBoxLayout *mBoxHBoxLayout = new QHBoxLayout(mBox);
-    mBoxHBoxLayout->setMargin(0);
+    mBoxHBoxLayout->setContentsMargins(0, 0, 0, 0);
 
     mColorBar = new HtmlStatusBar(mBox);
     mBoxHBoxLayout->addWidget(mColorBar);
     QWidget *readerBox = new QWidget(mBox);
     QVBoxLayout *readerBoxVBoxLayout = new QVBoxLayout(readerBox);
-    readerBoxVBoxLayout->setMargin(0);
+    readerBoxVBoxLayout->setContentsMargins(0, 0, 0, 0);
     mBoxHBoxLayout->addWidget(readerBox);
 
     mColorBar->setObjectName(QStringLiteral("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+
+
+    mShowNextMessageWidget = new MessageViewer::ShowNextMessageWidget(readerBox);
+    mShowNextMessageWidget->setObjectName(QStringLiteral("shownextmessagewidget"));
+    readerBoxVBoxLayout->addWidget(mShowNextMessageWidget);
+    mShowNextMessageWidget->hide();
+    connect(mShowNextMessageWidget, &ShowNextMessageWidget::showPreviousMessage, this, &ViewerPrivate::showPreviousMessage);
+    connect(mShowNextMessageWidget, &ShowNextMessageWidget::showNextMessage, this, &ViewerPrivate::showNextMessage);
 
     mSubmittedFormWarning = new SubmittedFormWarningWidget(readerBox);
     mSubmittedFormWarning->setObjectName(QStringLiteral("submittedformwarning"));
@@ -1511,6 +1528,7 @@ void ViewerPrivate::createWidgets()
 
 void ViewerPrivate::slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin)
 {
+    mCSSHelper->setHeaderPlugin(plugin);
     mHeaderStylePlugin = plugin;
     update(MimeTreeParser::Force);
 }
@@ -1586,7 +1604,7 @@ void ViewerPrivate::createActions()
                                               i18n("&Set Encoding"), this);
     mSelectEncodingAction->setToolBarMode(KSelectAction::MenuMode);
     ac->addAction(QStringLiteral("encoding"), mSelectEncodingAction);
-    connect(mSelectEncodingAction, QOverload<int>::of(&KSelectAction::triggered),
+    connect(mSelectEncodingAction, qOverload<int>(&KSelectAction::triggered),
             this, &ViewerPrivate::slotSetEncoding);
     QStringList encodings = MimeTreeParser::NodeHelper::supportedEncodings(false);
     encodings.prepend(i18n("Auto"));
@@ -1879,7 +1897,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             if (result) {
                 html += QStringLiteral("<div style=\"background:%1; %2"
                                        "vertical-align:middle; float:%3;\">").arg(bgColor.name()).
-                        arg(margin).arg(align);
+                        arg(margin, align);
             }
             html += subHtml;
             if (result) {
@@ -1912,7 +1930,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             if (elidedTextSize == -1) {
                 html += info.label;
             } else {
-                QFont bodyFont = mCSSHelper->bodyFont(mUseFixedFont);
+                QFont bodyFont = cssHelper()->bodyFont(mUseFixedFont);
                 QFontMetrics fm(bodyFont);
                 html += fm.elidedText(info.label, Qt::ElideRight, elidedTextSize);
             }
@@ -1920,7 +1938,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
         }
     }
 
-    Q_FOREACH (KMime::Content *extraNode, mNodeHelper->extraContents(node)) {
+    for (KMime::Content *extraNode : mNodeHelper->extraContents(node)) {
         html += renderAttachments(extraNode, bgColor);
     }
 
@@ -2230,7 +2248,7 @@ void ViewerPrivate::updateReaderWin()
         mMimePartTree->hide();
 #endif
         htmlWriter()->begin();
-        htmlWriter()->write(mCSSHelper->htmlHead(mUseFixedFont) + QLatin1String("</body></html>"));
+        htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont) + QLatin1String("</body></html>"));
         htmlWriter()->end();
     }
 
@@ -2408,13 +2426,7 @@ QString ViewerPrivate::attachmentHtml() const
         = KColorScheme(QPalette::Active, KColorScheme::View).background().color();
     QString html = renderAttachments(mMessage.data(), background);
     if (!html.isEmpty()) {
-        QString textAlign = QStringLiteral("right");
-
         const bool isFancyTheme = (headerStylePlugin()->name() == QStringLiteral("fancy"));
-        if (isFancyTheme) {
-            textAlign = QStringLiteral("left");
-        }
-
         if (isFancyTheme) {
             html.prepend(QStringLiteral("<div style=\"float:left;\">%1&nbsp;</div>").arg(i18n(
                                                                                              "Attachments:")));
@@ -2744,8 +2756,9 @@ void ViewerPrivate::slotUrlCopy()
         KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("Address copied to clipboard."));
     } else {
         // put the url into the mouse selection and the clipboard
-        clip->setText(mClickedUrl.url(), QClipboard::Clipboard);
-        clip->setText(mClickedUrl.url(), QClipboard::Selection);
+        const QString clickedUrl = mClickedUrl.url();
+        clip->setText(clickedUrl, QClipboard::Clipboard);
+        clip->setText(clickedUrl, QClipboard::Selection);
         KPIM::BroadcastStatus::instance()->setStatusMsg(i18n("URL copied to clipboard."));
     }
 #endif
@@ -3121,4 +3134,9 @@ void ViewerPrivate::slotZoomChanged(qreal zoom)
     const qreal zoomFactor = zoom * 100;
     MessageViewer::MessageViewerSettings::self()->setZoomFactor(zoomFactor);
     Q_EMIT zoomChanged(zoomFactor);
+}
+
+void ViewerPrivate::updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton)
+{
+    mShowNextMessageWidget->updateButton(enablePreviousButton, enableNextButton);
 }

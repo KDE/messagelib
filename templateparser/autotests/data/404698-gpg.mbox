@@ -1,0 +1,120 @@
+Subject: Testcase 'reply-mix-crlf' (PGP/MIME)
+To: brucewayne45@web.de
+From: brucewayne45@web.de
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY"
+
+--BOUNDARY
+Content-Type: text/plain
+
+Please reply to this message
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+--BOUNDARY
+Content-Type: multipart/encrypted; protocol="application/pgp-encrypted"; boundary="DELIMITER"
+
+--DELIMITER
+Content-Type: application/pgp-encrypted
+
+Version: 1
+
+--DELIMITER
+Content-Type: application/octet-stream; name="encrypted.asc"
+Content-Disposition: inline; filename="encrypted.asc"
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+hIwDGJlthTT7oq0BA/9NtLLXbiIJVS6pOynwEeSznrQK7kYVla8RM43//JECCkGJ
+azEaSBznabBv6epaFmQtVHLMXlCbZnMmW9loyqPBfMoAms6kKKBdG/jqhus89iXE
++seXngC233Va/gZMb2DxOqIokVNfj9tpR7xQ8wS/jHTDiLNc1GOQC7ku42z2bNLA
+IQFRD/qbBFz89hU4wP4cYoAysOnEDojFrsrnCidTHJOJrndM6PPUtH/jQCyfr/EG
+2tSpJwYKvmT6ly3yqaGLBtRPIxiv+dMe+7yw0t40qbjvvaTGavErEBJEKX5eWbTN
+/sjajHpUHqs6SIiMheH9dr+WfzFONtVbPEgGRmOERhlgTl/nLo86AZpjJroIGKJJ
+tTHCcoQGAWG+N7wrCE1RxR0kkMs4nRozj0TLu6ZyXMs+H063MewTPNxNAiQT1Nbi
+udKWmfLBlxn06p+JDzUKxj8PFwObdbxTvACzbAvBY1aHMQ==
+=mLl3
+-----END PGP MESSAGE-----
+
+
+--DELIMITER--
+
+--BOUNDARY
+
+--BOUNDARY
+Content-Type: multipart/encrypted; protocol="application/pgp-encrypted"; boundary="DELIMITER"
+
+--DELIMITER
+Content-Type: application/pgp-encrypted
+
+Version: 1
+
+--DELIMITER
+Content-Type: application/octet-stream; name="encrypted.asc"
+Content-Disposition: inline; filename="encrypted.asc"
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2.0.15 (GNU/Linux)
+
+hQEMAwzOQ1qnzNo7AQgAtWfDWWI2JUGuptpackiIxpWViEEpGAeruETubiIPwxNb
+DNmXrMDhbm/zIbPntIGWJDgUMfABZCUgmlJLWhsceDTt+tXnWGha2VYrN2/WsF6/
+Pqs/TavTvMIJQHDaIH5yDDCaMoq/mGSbcu7go2H8Sw7aBEYlM8jGlqc1HziXnZ1q
+3vDiA+4qWfvbNoSRo1kb9Pcq997yg6WqZXH2hJ7cp+hIQ4uTP1/+qgYHMvfPlzQk
+XcDguGbIer88ELhuR5622unGBAB4dqp+5w6n9c6rrCH81qhV4W0nqSEvj1tBj78S
+ZTi6VBAo5eS0e3iOJqMpwUZz6hQUpJw2wnNRGvLgI9KZAag0HkgPdMeANowg7vpE
+L4nU7B0ybhswA2Y7QT/wwCDZu9N1JGeBmy0dgy4sA38Ki27rn2/lIaP0j14JycwM
+RTJ1uwI+ZuQiwXlyYtdFZJWe8nraWARch0oKqhaR7aSsxGWo63eiGEQhkQCBFBb3
+Vg0nNCZRBauEqIESEW5EV2zrJqdfNYcz+f9IP125dnQEKgLZ6FxTt3+v
+=mhNl
+-----END PGP MESSAGE-----
+
+--DELIMITER--

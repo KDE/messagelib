@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2014-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2014-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -86,7 +86,7 @@ void MimePartTreeView::setRoot(KMime::Content *root)
     mMimePartModel->setRoot(root);
 }
 
-KMime::Content::List MimePartTreeView::selectedContents()
+KMime::Content::List MimePartTreeView::selectedContents() const
 {
     KMime::Content::List contents;
     QItemSelectionModel *selectModel = selectionModel();

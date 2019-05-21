@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -31,9 +31,12 @@ public:
     PluginEditorConvertTextInterfacePrivate()
     {
     }
-    PluginActionType mActionType;
+
+    QVector<PluginActionType> mActionTypes;
 
     QWidget *mParentWidget = nullptr;
+    QWidget *statusBarWidget = nullptr;
+    PluginEditorConvertText *plugin = nullptr;
     KPIMTextEdit::RichTextComposer *mEditor = nullptr;
     PluginEditorConverterInitialData mInitialData;
     PluginEditorConverterBeforeConvertingData mBeforeConvertingData;
@@ -65,14 +68,19 @@ QWidget *PluginEditorConvertTextInterface::parentWidget() const
     return d->mParentWidget;
 }
 
-void PluginEditorConvertTextInterface::setActionType(PluginActionType type)
+void PluginEditorConvertTextInterface::setActionType(const QVector<PluginActionType> &type)
 {
-    d->mActionType = type;
+    d->mActionTypes = type;
 }
 
-PluginActionType PluginEditorConvertTextInterface::actionType() const
+QVector<PluginActionType> PluginEditorConvertTextInterface::actionTypes() const
 {
-    return d->mActionType;
+    return d->mActionTypes;
+}
+
+void PluginEditorConvertTextInterface::addActionType(const PluginActionType &type)
+{
+    d->mActionTypes += type;
 }
 
 void PluginEditorConvertTextInterface::createAction(KActionCollection *ac)
@@ -113,4 +121,29 @@ void PluginEditorConvertTextInterface::setRichTextEditor(KPIMTextEdit::RichTextC
 void PluginEditorConvertTextInterface::reloadConfig()
 {
     //Reimplement it
+}
+
+void PluginEditorConvertTextInterface::enableDisablePluginActions(bool richText)
+{
+    Q_UNUSED(richText);
+}
+
+void PluginEditorConvertTextInterface::setStatusBarWidget(QWidget *w)
+{
+    d->statusBarWidget = w;
+}
+
+QWidget *PluginEditorConvertTextInterface::statusBarWidget() const
+{
+    return d->statusBarWidget;
+}
+
+void PluginEditorConvertTextInterface::setPlugin(PluginEditorConvertText *plugin)
+{
+    d->plugin = plugin;
+}
+
+PluginEditorConvertText *PluginEditorConvertTextInterface::plugin() const
+{
+    return d->plugin;
 }

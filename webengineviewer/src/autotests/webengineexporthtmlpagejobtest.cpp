@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -34,8 +34,8 @@ WebEngineExportHtmlPageJobTest::~WebEngineExportHtmlPageJobTest()
 void WebEngineExportHtmlPageJobTest::shouldHaveDefaultValue()
 {
     WebEngineViewer::WebEngineExportHtmlPageJob job;
-    QSignalSpy spyFailed(&job, SIGNAL(failed()));
-    QSignalSpy spySuccess(&job, SIGNAL(success(QString)));
+    QSignalSpy spyFailed(&job, &WebEngineViewer::WebEngineExportHtmlPageJob::failed);
+    QSignalSpy spySuccess(&job, &WebEngineViewer::WebEngineExportHtmlPageJob::success);
     QVERIFY(!job.engineView());
     job.start();
     QCOMPARE(spyFailed.count(), 1);

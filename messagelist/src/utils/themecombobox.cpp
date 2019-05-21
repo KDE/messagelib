@@ -14,7 +14,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include "themecombobox.h"
 
@@ -30,7 +30,7 @@ using namespace MessageList::Core;
 using namespace MessageList::Utils;
 
 ThemeComboBox::ThemeComboBox(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
     , d(new ThemeComboBoxPrivate(this))
 {
     if (Manager::instance()) {

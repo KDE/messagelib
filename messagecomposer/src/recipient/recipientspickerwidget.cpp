@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2017-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -30,7 +30,7 @@ RecipientsPickerWidget::RecipientsPickerWidget(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     mView = new Akonadi::EmailAddressSelectionWidget(false, MessageComposer::RecipientsEditorManager::self()->model()->model(), this);
     layout->addWidget(mView);

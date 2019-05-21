@@ -21,13 +21,15 @@
 
 #include "defaultrenderer_p.h"
 
+#include "utils/messageviewerutil.h"
+
 #include "messageviewer_debug.h"
 
 #include "converthtmltoplaintext.h"
 #include "messagepartrendererbase.h"
 #include "messagepartrendererfactory.h"
 #include "htmlblock.h"
-
+#include <QtWebEngineWidgets>
 #include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
 #include "viewer/attachmentstrategy.h"
@@ -81,24 +83,31 @@ QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code, G
             switch (status_code) {
             case 0: // GPGME_SIG_STAT_NONE
                 result = i18n("Error: Signature not verified");
+                frameColor = SIG_FRAME_COL_YELLOW;
                 break;
             case 1: // GPGME_SIG_STAT_GOOD
                 result = i18n("Good signature");
+                frameColor = SIG_FRAME_COL_GREEN;
                 break;
             case 2: // GPGME_SIG_STAT_BAD
                 result = i18n("Bad signature");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             case 3: // GPGME_SIG_STAT_NOKEY
                 result = i18n("No public key to verify the signature");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             case 4: // GPGME_SIG_STAT_NOSIG
                 result = i18n("No signature found");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             case 5: // GPGME_SIG_STAT_ERROR
                 result = i18n("Error verifying the signature");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             case 6: // GPGME_SIG_STAT_DIFF
                 result = i18n("Different results for signatures");
+                frameColor = SIG_FRAME_COL_RED;
                 break;
             /* PENDING(khz) Verify exact meaning of the following values:
             case 7: // GPGME_SIG_STAT_GOOD_EXP
@@ -287,25 +296,36 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
 // this at all...
 QString processHtml(const QString &htmlSource, QString &extraHead)
 {
-    auto s = htmlSource.trimmed();
-    s = s.replace(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive), QString()).trimmed();
-    s = s.replace(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive), QString()).trimmed();
+    QString s = htmlSource.trimmed();
+    s = s.remove(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive)).trimmed();
+    s = s.remove(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
 
     // head
     s = s.replace(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive), QString()).trimmed();
-    if (s.startsWith(QLatin1String("<head>", Qt::CaseInsensitive))) {
-        const auto idx = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
-        if (idx < 0) {
+    const int startIndex = s.indexOf(QLatin1String("<head>"), Qt::CaseInsensitive);
+    if (startIndex >= 0) {
+        const auto endIndex = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
+
+        if (endIndex < 0) {
             return htmlSource;
         }
-        extraHead = s.mid(6, idx - 6);
-        s = s.mid(idx + 7).trimmed();
+        extraHead = s.mid(startIndex + 6, endIndex - startIndex - 6);
+#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 13, 0)
+        //Remove this hack with https://codereview.qt-project.org/#/c/256100/2 is merged
+        //Don't authorize to refresh content.
+        if (MessageViewer::Util::excludeExtraHeader(s)) {
+            extraHead.clear();
+        }
+#endif
+
+
+        s = s.mid(endIndex + 7).trimmed();
     }
 
     // body
-    s = s.replace(QRegExp(QStringLiteral("<body[^>]*>"), Qt::CaseInsensitive), QString()).trimmed();
-    s = s.replace(QRegExp(QStringLiteral("</html>$"), Qt::CaseInsensitive), QString()).trimmed();
-    s = s.replace(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive), QString()).trimmed();
+    s = s.remove(QRegExp(QStringLiteral("<body[^>]*>"), Qt::CaseInsensitive)).trimmed();
+    s = s.remove(QRegExp(QStringLiteral("</html>$"), Qt::CaseInsensitive)).trimmed();
+    s = s.remove(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive)).trimmed();
     return s;
 }
 
@@ -331,7 +351,7 @@ Interface::ObjectTreeSource *DefaultRendererPrivate::source() const
 
 void DefaultRendererPrivate::renderSubParts(const MessagePart::Ptr &msgPart, HtmlWriter *htmlWriter)
 {
-    foreach (const auto &m, msgPart->subParts()) {
+    for (const auto &m : msgPart->subParts()) {
         renderFactory(m, htmlWriter);
     }
 }
@@ -783,7 +803,7 @@ void DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp, HtmlW
 
     auto mode = mp->preferredMode();
     if (mode == MimeTreeParser::Util::MultipartPlain && mp->text().trimmed().isEmpty()) {
-        foreach (const auto m, mp->availableModes()) {
+        for (const auto m : mp->availableModes()) {
             if (m != MimeTreeParser::Util::MultipartPlain) {
                 mode = m;
                 break;
@@ -905,7 +925,7 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
             render(mp, htmlWriter);
         }
     } else {
-        qCWarning(MESSAGEVIEWER_LOG) << "We got a unkonwn classname, using default behaviour for "
+        qCWarning(MESSAGEVIEWER_LOG) << "We got a unknown classname, using default behaviour for "
                                      << className;
     }
 }
@@ -1128,20 +1148,18 @@ void DefaultRenderer::setHtmlLoadExternal(bool htmlLoadExternal)
     d->mHtmlLoadExternal = htmlLoadExternal;
 }
 
-void DefaultRenderer::setCreateMessageHeader(std::function<QString(KMime::Message *)> createMessageHeader)
+void DefaultRenderer::setCreateMessageHeader(const std::function<QString(KMime::Message *)> &createMessageHeader)
 {
     d->mCreateMessageHeader = createMessageHeader;
 }
 
 QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
-    const QString line
+    QString ret
         = QStringLiteral("%1 * %3\n").arg(indent,
                                           QString::fromUtf8(messagePart->metaObject()->className()));
-    QString ret = line;
-
     indent += QLatin1Char(' ');
-    foreach (const auto &subPart, messagePart->subParts()) {
+    for (const auto &subPart : messagePart->subParts()) {
         ret += renderTreeHelper(subPart, indent);
     }
     return ret;

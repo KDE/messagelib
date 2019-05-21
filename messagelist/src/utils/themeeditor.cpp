@@ -48,7 +48,7 @@
 #include <QMimeData>
 
 #include <QColorDialog>
-#include <KComboBox>
+#include <QComboBox>
 #include <KLineEdit>
 #include <KLocalizedString>
 #include <QMenu>
@@ -68,7 +68,6 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
     : QDialog(parent)
     , mColumn(column)
 {
-    setWindowModality(Qt::ApplicationModal);   // FIXME: Sure ?
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
@@ -93,7 +92,7 @@ ThemeColumnPropertiesDialog::ThemeColumnPropertiesDialog(QWidget *parent, Theme:
     l = new QLabel(i18n("Header click sorts messages:"), base);
     g->addWidget(l, 1, 0);
 
-    mMessageSortingCombo = new KComboBox(base);
+    mMessageSortingCombo = new QComboBox(base);
     mMessageSortingCombo->setToolTip(i18n("The sorting order that clicking on this column header will switch to."));
     g->addWidget(mMessageSortingCombo, 1, 1);
 
@@ -1460,7 +1459,7 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     l = new QLabel(i18n("Header:"), tab);
     tabg->addWidget(l, 0, 0);
 
-    mViewHeaderPolicyCombo = new KComboBox(tab);
+    mViewHeaderPolicyCombo = new QComboBox(tab);
     tabg->addWidget(mViewHeaderPolicyCombo, 0, 1);
 
     l = new QLabel(i18n("Icon size:"), tab);
@@ -1471,7 +1470,7 @@ ThemeEditor::ThemeEditor(QWidget *parent)
     mIconSizeSpinBox->setMaximum(64);
     mIconSizeSpinBox->setSuffix(ki18ncp("suffix in a spinbox", " pixel", " pixels"));
 
-    QObject::connect(mIconSizeSpinBox, QOverload<int>::of(&KPluralHandlingSpinBox::valueChanged), this, &ThemeEditor::slotIconSizeSpinBoxValueChanged);
+    QObject::connect(mIconSizeSpinBox, qOverload<int>(&KPluralHandlingSpinBox::valueChanged), this, &ThemeEditor::slotIconSizeSpinBoxValueChanged);
 
     tabg->addWidget(mIconSizeSpinBox, 1, 1);
 

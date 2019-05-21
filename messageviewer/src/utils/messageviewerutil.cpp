@@ -69,6 +69,7 @@
 #include <QDBusConnectionInterface>
 #include <QActionGroup>
 #include <QDesktopServices>
+#include <QRegularExpression>
 
 using namespace MessageViewer;
 
@@ -280,7 +281,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
 
 bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url)
 {
-    // FIXME: This is all horribly broken. First of all, creating a NodeHelper and then immediatley
+    // FIXME: This is all horribly broken. First of all, creating a NodeHelper and then immediately
     //        reading out the encryption/signature state will not work at all.
     //        Then, topLevel() will not work for attachments that are inside encrypted parts.
     //        What should actually be done is either passing in an ObjectTreeParser that has already
@@ -539,4 +540,13 @@ QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, Q
     actionGroup->addAction(act);
     act->setData(QVariant::fromValue(service));
     return act;
+}
+
+bool Util::excludeExtraHeader(const QString &s)
+{
+    QRegularExpression ref(QStringLiteral("http-equiv=\\s*(\'|\")(&#82;|R)EFRESH(\'|\")"), QRegularExpression::CaseInsensitiveOption);
+    if (s.contains(ref)) {
+        return true;
+    }
+    return false;
 }

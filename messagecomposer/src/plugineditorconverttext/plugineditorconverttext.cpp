@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2017-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -70,4 +70,24 @@ void PluginEditorConvertText::setIsEnabled(bool enabled)
 bool PluginEditorConvertText::isEnabled() const
 {
     return d->mIsEnabled;
+}
+
+bool PluginEditorConvertText::canWorkOnHtml() const
+{
+    return true;
+}
+
+bool PluginEditorConvertText::hasToolBarSupport() const
+{
+    return false;
+}
+
+bool PluginEditorConvertText::hasStatusBarSupport() const
+{
+    return false;
+}
+
+bool PluginEditorConvertText::hasPopupMenuSupport() const
+{
+    return false;
 }

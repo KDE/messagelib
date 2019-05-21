@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -48,7 +48,7 @@ public:
      */
     void addCheckingUrlResult(const QUrl &url, bool correctUrl, uint cacheDuration = 0);
     /**
-     * @brief urlStatus Return the status of cached Url. When we didn't stored it it returns Unknown
+     * @brief urlStatus Return the status of cached Url. When we didn't stored it, it returns Unknown
      * @param url
      * @return the status of url
      */

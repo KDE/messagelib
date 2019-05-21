@@ -33,16 +33,16 @@ class MessageComposer::RecipientPrivate
 {
 public:
     RecipientPrivate(const QString &email, Recipient::Type type)
-        : mEmail(email)
-        , mType(type)
+        : mType(type)
+        , mEmail(email)
     {
     }
 
+    Kleo::Action mEncryptionAction = Kleo::Impossible;
+    MessageComposer::Recipient::Type mType;
     QString mEmail;
     QString mName;
-    Kleo::Action mEncryptionAction = Kleo::Impossible;
     GpgME::Key mKey;
-    MessageComposer::Recipient::Type mType;
 };
 
 Recipient::Recipient(const QString &email, Recipient::Type type)
@@ -120,6 +120,8 @@ QString Recipient::typeLabel(Recipient::Type type)
         return i18nc("@label:listbox Carbon Copy recipient of an email message.", "CC");
     case Bcc:
         return i18nc("@label:listbox Blind carbon copy recipient of an email message.", "BCC");
+    case ReplyTo:
+        return i18nc("@label:listbox Reply-To recipient of an email message.", "Reply-To");
     case Undefined:
         break;
     }
@@ -133,6 +135,7 @@ QStringList Recipient::allTypeLabels()
     types.append(typeLabel(To));
     types.append(typeLabel(Cc));
     types.append(typeLabel(Bcc));
+    types.append(typeLabel(ReplyTo));
     return types;
 }
 

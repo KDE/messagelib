@@ -25,6 +25,10 @@
     <entry name="UseDefaultColors" type="Bool" key="defaultColors">
       <default>true</default>
     </entry>
+    <entry name="UseRealHtmlMailColor" type="Bool" key="realHtmlMailColor">
+      <default>false</default>
+    </entry>
+
     <entry name="OverrideCharacterEncoding" type="String" key="encoding">
       <default></default>
       <whatsthis>Changing this from its default 'Auto' will force the use of the specified encoding for all emails, regardless of what they specify themselves.</whatsthis>

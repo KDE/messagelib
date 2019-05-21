@@ -80,7 +80,7 @@ MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyP
 
 //    qDebug() << " MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyPart &part) const";
 //    for (int i = 0; i < mp->availableModes().count(); ++i) {
-//        qDebug() << "MultiPartAlternativeBodyPartFormatter::processe Modes " << MimeTreeParser::Util::htmlModeToString(mp->availableModes().at(i));
+//        qDebug() << "MultiPartAlternativeBodyPartFormatter::processed Modes " << MimeTreeParser::Util::htmlModeToString(mp->availableModes().at(i));
 //    }
 //    qDebug() << "MultiPartAlternativeBodyPartFormatter::process preferred " << MimeTreeParser::Util::htmlModeToString(preferredMode);
 

@@ -20,7 +20,7 @@
 #include "multipartjobtest.h"
 
 #include <QDebug>
-#include <qtest.h>
+#include <QTest>
 
 #include <kmime/kmime_content.h>
 using namespace KMime;

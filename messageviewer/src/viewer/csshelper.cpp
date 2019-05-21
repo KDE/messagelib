@@ -5,8 +5,9 @@
     Copyright (c) 2003 Marc Mutz <mutz@kde.org>
 
     KMail is free software; you can redistribute it and/or modify it
-    under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
 
     KMail is distributed in the hope that it will be useful, but
     WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -38,6 +39,7 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <KColorScheme>
+#include <QApplication>
 
 #include <QColor>
 #include <QFont>
@@ -65,16 +67,6 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     cPgpErrH = MessageCore::ColorUtil::self()->pgpSignedBadMessageColor();
     cPgpErrHT = MessageCore::ColorUtil::self()->pgpSignedBadTextColor();
 
-    if (MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
-        mQuoteColor[0] = MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor();
-        mQuoteColor[1] = MessageCore::ColorUtil::self()->quoteLevel2DefaultTextColor();
-        mQuoteColor[2] = MessageCore::ColorUtil::self()->quoteLevel3DefaultTextColor();
-    } else {
-        mQuoteColor[0] = MessageCore::MessageCoreSettings::self()->quotedText1();
-        mQuoteColor[1] = MessageCore::MessageCoreSettings::self()->quotedText2();
-        mQuoteColor[2] = MessageCore::MessageCoreSettings::self()->quotedText3();
-    }
-
     mRecycleQuoteColors = false;
 
     QFont defaultFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
@@ -99,7 +91,11 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     mRecycleQuoteColors = reader.readEntry("RecycleQuoteColors", false);
 
     mForegroundColor = KColorScheme(QPalette::Active).foreground().color();
-    if (!MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
+    if (MessageCore::MessageCoreSettings::self()->useDefaultColors()) {
+        mQuoteColor[0] = MessageCore::ColorUtil::self()->quoteLevel1DefaultTextColor();
+        mQuoteColor[1] = MessageCore::ColorUtil::self()->quoteLevel2DefaultTextColor();
+        mQuoteColor[2] = MessageCore::ColorUtil::self()->quoteLevel3DefaultTextColor();
+    } else {
         mLinkColor
             = reader.readEntry("LinkColor", mLinkColor);
         cPgpEncrH
@@ -112,21 +108,21 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
             = reader.readEntry("PGPMessageWarn", cPgpWarnH);
         cPgpErrH
             = reader.readEntry("PGPMessageErr", cPgpErrH);
-        for (int i = 0; i < 3; ++i) {
-            const QString key = QLatin1String("QuotedText") + QString::number(i + 1);
-            mQuoteColor[i] = reader.readEntry(key, mQuoteColor[i]);
-        }
+        mQuoteColor[0] = MessageCore::MessageCoreSettings::self()->quotedText1();
+        mQuoteColor[1] = MessageCore::MessageCoreSettings::self()->quotedText2();
+        mQuoteColor[2] = MessageCore::MessageCoreSettings::self()->quotedText3();
     }
 
     if (!MessageCore::MessageCoreSettings::self()->useDefaultFonts()) {
         mBodyFont = fonts.readEntry("body-font", mBodyFont);
         mPrintFont = fonts.readEntry("print-font", mPrintFont);
         mFixedFont = fonts.readEntry("fixed-font", mFixedFont);
-        mFixedPrintFont = mFixedFont; // FIXME when we have a separate fixed print font
+        mFixedPrintFont = mFixedFont;
     }
 
     mShrinkQuotes = MessageViewer::MessageViewerSettings::self()->shrinkQuotes();
 
+    mUseBrowserColor = MessageCore::MessageCoreSettings::self()->useRealHtmlMailColor();
     recalculatePGPColors();
 }
 

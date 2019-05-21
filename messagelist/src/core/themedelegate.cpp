@@ -161,8 +161,7 @@ static inline void paint_right_aligned_elided_text(const QString &text, Theme::C
     }
 }
 
-static inline void compute_bounding_rect_for_right_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir,
-                                                                       const QFont &font)
+static inline void compute_bounding_rect_for_right_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir, const QFont &font)
 {
     Q_UNUSED(font);
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);
@@ -201,8 +200,7 @@ static inline void paint_left_aligned_elided_text(const QString &text, Theme::Co
     }
 }
 
-static inline void compute_bounding_rect_for_left_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir,
-                                                                      const QFont &font)
+static inline void compute_bounding_rect_for_left_aligned_elided_text(const QString &text, Theme::ContentItem *ci, int &left, int top, int &right, QRect &outRect, Qt::LayoutDirection layoutDir, const QFont &font)
 {
     Q_UNUSED(font);
     const QFontMetrics &fontMetrics = cachedFontMetrics(ci);
@@ -257,19 +255,15 @@ static inline const QPixmap *get_encryption_state_icon(const Theme *theme, Messa
     case MessageItem::FullyEncrypted:
         *treatAsEnabled = true;
         return theme->pixmap(Theme::IconFullyEncrypted);
-        break;
     case MessageItem::PartiallyEncrypted:
         *treatAsEnabled = true;
         return theme->pixmap(Theme::IconPartiallyEncrypted);
-        break;
     case MessageItem::EncryptionStateUnknown:
         *treatAsEnabled = false;
         return theme->pixmap(Theme::IconUndefinedEncrypted);
-        break;
     case MessageItem::NotEncrypted:
         *treatAsEnabled = false;
         return theme->pixmap(Theme::IconNotEncrypted);
-        break;
     default:
         // should never happen
         Q_ASSERT(false);
@@ -286,19 +280,15 @@ static inline const QPixmap *get_signature_state_icon(const Theme *theme, Messag
     case MessageItem::FullySigned:
         *treatAsEnabled = true;
         return theme->pixmap(Theme::IconFullySigned);
-        break;
     case MessageItem::PartiallySigned:
         *treatAsEnabled = true;
         return theme->pixmap(Theme::IconPartiallySigned);
-        break;
     case MessageItem::SignatureStateUnknown:
         *treatAsEnabled = false;
         return theme->pixmap(Theme::IconUndefinedSigned);
-        break;
     case MessageItem::NotSigned:
         *treatAsEnabled = false;
         return theme->pixmap(Theme::IconNotSigned);
-        break;
     default:
         // should never happen
         Q_ASSERT(false);
@@ -812,7 +802,6 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
     default:
         Q_ASSERT(false);
         return; // bug
-        break;
     }
 
     Qt::LayoutDirection layoutDir = mItemView->layoutDirection();
@@ -825,7 +814,8 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         // paint right aligned stuff first
         int r = right;
         int l = left;
-        for (const auto itemit : qAsConst(row->rightItems())) {
+        const auto rightItems = row->rightItems();
+        for (const auto itemit : rightItems) {
             auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             if (ci->canUseCustomColor()) {
@@ -988,7 +978,8 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
         }
 
         // then paint left aligned stuff
-        for (const auto itemit : qAsConst(row->leftItems())) {
+        const auto leftItems = row->leftItems();
+        for (const auto itemit : leftItems) {
             auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             if (ci->canUseCustomColor()) {
@@ -1259,7 +1250,8 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
 
         int r = right;
         int l = left;
-        for (const auto itemit : qAsConst(mHitRow->rightItems())) {
+        const auto rightItems = mHitRow->rightItems();
+        for (const auto itemit : rightItems) {
             auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             mHitContentItemRect = QRect();
@@ -1403,7 +1395,8 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
         // then check left aligned stuff
         mHitContentItemRight = false;
 
-        for (const auto itemit : qAsConst(mHitRow->leftItems())) {
+        const auto leftItems = mHitRow->leftItems();
+        for (const auto itemit : leftItems) {
             auto ci = const_cast<Theme::ContentItem *>(itemit);
 
             mHitContentItemRect = QRect();

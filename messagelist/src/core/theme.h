@@ -145,7 +145,7 @@ public:
             */
             ReadStateIcon = 7 | ApplicableToMessageItems | IsIcon,
             /**
-            * The icon that displays the atachment state (may be disabled)
+            * The icon that displays the attachment state (may be disabled)
             */
             AttachmentStateIcon = 8 | CanBeDisabled | ApplicableToMessageItems | IsIcon,
             /**
@@ -821,7 +821,7 @@ public:
     };
 
     /**
-    * How do we manage the QHeaderView attacched to our View ?
+    * How do we manage the QHeaderView attached to our View ?
     */
     enum ViewHeaderPolicy {
         ShowHeaderAlways,

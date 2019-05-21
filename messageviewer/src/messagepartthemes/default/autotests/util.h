@@ -22,15 +22,16 @@
 
 #include "interfaces/htmlwriter.h"
 #include <MessageViewer/CSSHelperBase>
+#include <MessageViewer/CSSHelper>
 
 #include <KMime/Message>
 
 namespace MessageViewer {
 namespace Test {
-class CSSHelper : public MessageViewer::CSSHelperBase
+class CSSHelper : public MessageViewer::CSSHelper
 {
 public:
-    CSSHelper() : MessageViewer::CSSHelperBase(nullptr)
+    CSSHelper() : MessageViewer::CSSHelper(nullptr)
     {
         for (int i = 0; i < 3; ++i) {
             mQuoteColor[i] = QColor(0x00, 0x80 - i * 0x10, 0x00);

@@ -30,6 +30,7 @@
 #include "MessageComposer/InfoPart"
 
 #include <KEmailAddress>
+#include <QVariant>
 
 using namespace MessageComposer;
 
@@ -41,10 +42,11 @@ public:
     }
 
     QVariantMap mResultMap;
+    QString mFrom;
     QStringList mTo;
     QStringList mCc;
     QStringList mBcc;
-    QString mFrom;
+    QStringList mReplyTo;
     QString mDefaultDomainName;
     int mJobCount = 0;
 };
@@ -112,6 +114,12 @@ void EmailAddressResolveJob::start()
         connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
         jobs << job;
     }
+    if (containsAliases(d->mReplyTo)) {
+        AliasesExpandJob *job = new AliasesExpandJob(d->mReplyTo.join(QStringLiteral(", ")), d->mDefaultDomainName, this);
+        job->setProperty("id", QStringLiteral("infoPartReplyTo"));
+        connect(job, &AliasesExpandJob::result, this, &EmailAddressResolveJob::slotAliasExpansionDone);
+        jobs << job;
+    }
 
     d->mJobCount = jobs.count();
 
@@ -166,6 +174,12 @@ void EmailAddressResolveJob::setBcc(const QStringList &bcc)
     d->mResultMap.insert(QStringLiteral("infoPartBcc"), bcc.join(QStringLiteral(", ")));
 }
 
+void EmailAddressResolveJob::setReplyTo(const QStringList &replyTo)
+{
+    d->mReplyTo = replyTo;
+    d->mResultMap.insert(QStringLiteral("infoPartReplyTo"), replyTo.join(QStringLiteral(", ")));
+}
+
 QString EmailAddressResolveJob::expandedFrom() const
 {
     return d->mResultMap.value(QStringLiteral("infoPartFrom")).toString();
@@ -184,4 +198,9 @@ QStringList EmailAddressResolveJob::expandedCc() const
 QStringList EmailAddressResolveJob::expandedBcc() const
 {
     return KEmailAddress::splitAddressList(d->mResultMap.value(QStringLiteral("infoPartBcc")).toString());
+}
+
+QStringList EmailAddressResolveJob::expandedReplyTo() const
+{
+    return KEmailAddress::splitAddressList(d->mResultMap.value(QStringLiteral("infoPartReplyTo")).toString());
 }

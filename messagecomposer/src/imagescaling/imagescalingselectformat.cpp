@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2013-2018 Montel Laurent <montel@kde.org>
+   Copyright (C) 2013-2019 Montel Laurent <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -101,7 +101,7 @@ ImageScalingSelectFormat::ImageScalingSelectFormat(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     mFormat = new QLineEdit;
     connect(mFormat, &QLineEdit::textChanged, this, &ImageScalingSelectFormat::textChanged);
     mFormat->setReadOnly(true);

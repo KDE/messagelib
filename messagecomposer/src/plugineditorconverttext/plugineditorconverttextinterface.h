@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -25,7 +25,6 @@
 #include <MessageComposer/PluginActionType>
 #include <KMime/Message>
 
-
 namespace KPIMTextEdit {
 class RichTextComposer;
 }
@@ -35,6 +34,7 @@ class TextPart;
 class PluginEditorConvertTextInterfacePrivate;
 class PluginEditorConverterInitialData;
 class PluginEditorConverterBeforeConvertingData;
+class PluginEditorConvertText;
 class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextInterface : public QObject
 {
     Q_OBJECT
@@ -42,9 +42,15 @@ public:
     explicit PluginEditorConvertTextInterface(QObject *parent = nullptr);
     ~PluginEditorConvertTextInterface();
 
+    enum class ConvertTextStatus {
+        NotConverted,
+        Converted,
+        Error
+    };
+
     virtual bool reformatText();
 
-    virtual bool convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
+    virtual PluginEditorConvertTextInterface::ConvertTextStatus convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
 
     void setParentWidget(QWidget *parent);
     Q_REQUIRED_RESULT QWidget *parentWidget() const;
@@ -52,8 +58,9 @@ public:
     Q_REQUIRED_RESULT KPIMTextEdit::RichTextComposer *richTextEditor() const;
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
-    void setActionType(PluginActionType type);
-    Q_REQUIRED_RESULT PluginActionType actionType() const;
+    void setActionType(const QVector<PluginActionType> &type);
+    void addActionType(const PluginActionType &type);
+    Q_REQUIRED_RESULT QVector<PluginActionType> actionTypes() const;
 
     virtual void createAction(KActionCollection *ac);
 
@@ -62,6 +69,15 @@ public:
 
     virtual void setBeforeConvertingData(const PluginEditorConverterBeforeConvertingData &data);
     Q_REQUIRED_RESULT PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
+
+    virtual void enableDisablePluginActions(bool richText);
+
+    void setStatusBarWidget(QWidget *w);
+
+    QWidget *statusBarWidget() const;
+
+    void setPlugin(PluginEditorConvertText *plugin);
+    Q_REQUIRED_RESULT PluginEditorConvertText *plugin() const;
 
 public Q_SLOTS:
     virtual void reloadConfig();

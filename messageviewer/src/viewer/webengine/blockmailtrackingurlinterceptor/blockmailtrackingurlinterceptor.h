@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2017-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -21,10 +21,10 @@
 #define BLOCKMAILTRACKINGURLINTERCEPTOR_H
 
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
-
+#include "messageviewer_export.h"
 #include <QVector>
 namespace MessageViewer {
-class BlockMailTrackingUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
+class MESSAGEVIEWER_EXPORT BlockMailTrackingUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT
 public:
@@ -45,7 +45,7 @@ public:
 
     explicit BlockMailTrackingUrlInterceptor(QObject *parent = nullptr);
     ~BlockMailTrackingUrlInterceptor() override;
-    bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
+    Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
 Q_SIGNALS:
     void mailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);

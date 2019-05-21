@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2006 Dmitry Morozhnikov <dmiceman@mail.ru>
- * Copyright (C) 2018 Laurent Montel <montel@kde.org>
+ * Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,9 +24,7 @@
 #include "templateparser_debug.h"
 #include <KLocalizedString>
 
-
 using namespace TemplateParser;
-
 
 TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *parent, const QString &name)
     : QPushButton(parent)
@@ -39,7 +37,7 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
     mMenuCommand->fillMenu();
     mMenuCommand->fillSubMenus();
     setMenu(mMenuCommand->menu());
-    connect(mMenuCommand, QOverload<const QString &, int>::of(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandPushButton::insertCommand);
+    connect(mMenuCommand, qOverload<const QString &, int>(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandPushButton::insertCommand);
 
     setToolTip(
         i18nc("@info:tooltip",
@@ -65,4 +63,3 @@ void TemplatesInsertCommandPushButton::setType(TemplatesCommandMenu::MenuTypes t
     mMenuCommand->setType(type);
     setMenu(mMenuCommand->menu());
 }
-

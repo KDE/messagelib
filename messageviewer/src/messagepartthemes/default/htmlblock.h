@@ -52,14 +52,14 @@ private:
     bool entered = false;
 };
 
-// The attachment mark is a div that is placed around the attchment. It is used for drawing
+// The attachment mark is a div that is placed around the attachment. It is used for drawing
 // a yellow border around the attachment when scrolling to it. When scrolling to it, the border
 // color of the div is changed, see KMReaderWin::scrollToAttachment().
 class MESSAGEVIEWER_EXPORT AttachmentMarkBlock : public HTMLBlock
 {
 public:
     AttachmentMarkBlock(HtmlWriter *writer, KMime::Content *node);
-    virtual ~AttachmentMarkBlock();
+    ~AttachmentMarkBlock() override;
 
 protected:
     QString enterString() const override;
@@ -80,7 +80,7 @@ class RootBlock : public HTMLBlock
 {
 public:
     explicit RootBlock(HtmlWriter *writer);
-    virtual ~RootBlock();
+    ~RootBlock() override;
 
 protected:
     QString enterString() const override;

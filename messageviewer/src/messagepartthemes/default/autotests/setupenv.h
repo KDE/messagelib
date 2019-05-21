@@ -38,7 +38,7 @@ namespace Test {
 */
 void setupEnv();
 
-// We can't use EmptySource, since we need to control some emelnets of the source for tests to also test
+// We can't use EmptySource, since we need to control some elements of the source for tests to also test
 // loadExternal and htmlMail.
 class ObjectTreeSource : public MessageViewer::EmptySource
 {

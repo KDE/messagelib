@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018 Montel Laurent <montel@kde.org>
+   Copyright (C) 2018-2019 Montel Laurent <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "richtextcomposersignaturestest.h"
 #include "../richtextcomposerng.h"
 #include "../richtextcomposersignatures.h"
@@ -29,7 +28,6 @@ QTEST_MAIN(RichTextComposerSignaturesTest)
 RichTextComposerSignaturesTest::RichTextComposerSignaturesTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void RichTextComposerSignaturesTest::shouldCleanSignature()
@@ -52,7 +50,6 @@ void RichTextComposerSignaturesTest::shouldCleanSignature()
     richtextComposerNg.insertSignature(signature1, KIdentityManagement::Signature::Start, KIdentityManagement::Signature::AddNewLines);
     composerSignature->cleanWhitespace(signature2);
 
-
     composerSignature->replaceSignature(signature1, signature2);
     QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nbla Bla "));
 
@@ -61,7 +58,6 @@ void RichTextComposerSignaturesTest::shouldCleanSignature()
         composerSignature->replaceSignature(signature1, signature2);
     }
     QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nbla Bla "));
-
 }
 
 void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
@@ -85,7 +81,6 @@ void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
     richtextComposerNg.insertSignature(signature1, KIdentityManagement::Signature::End, KIdentityManagement::Signature::AddSeparator);
     composerSignature->cleanWhitespace(signature2);
 
-
     composerSignature->replaceSignature(signature1, signature2);
     const QString result = QStringLiteral("foo\nbla\nfoo--\nbla Bla ");
     QCOMPARE(richtextComposerNg.toPlainText(), result);
@@ -95,5 +90,4 @@ void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
         composerSignature->replaceSignature(signature1, signature2);
     }
     QCOMPARE(richtextComposerNg.toPlainText(), result);
-
 }

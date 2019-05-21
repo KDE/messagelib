@@ -61,6 +61,7 @@ protected Q_SLOTS:
     void slotToClicked();
     void slotCcClicked();
     void slotBccClicked();
+    void slotReplyToClicked();
     void slotPicked();
     void slotSearchLDAP();
     void ldapSearchResult();
@@ -72,6 +73,7 @@ private:
     KLDAP::LdapSearchDialog *mLdapSearchDialog = nullptr;
 
     Recipient::Type mDefaultType;
+    QPushButton *mUser4Button = nullptr;
     QPushButton *mUser3Button = nullptr;
     QPushButton *mUser2Button = nullptr;
     QPushButton *mUser1Button = nullptr;

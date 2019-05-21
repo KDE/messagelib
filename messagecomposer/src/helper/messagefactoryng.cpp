@@ -1,7 +1,7 @@
 /*
   Copyright (C) 2010 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.com
   Copyright (c) 2010 Leo Franchi <lfranchi@kde.org>
-  Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
+  Copyright (C) 2017-2019 Laurent Montel <montel@kde.org>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -657,8 +657,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     return receipt;
 }
 
-KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal,
-                                                const QVector<KMime::MDN::DispositionModifier> &m)
+KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a, KMime::MDN::DispositionType d, KMime::MDN::SendingMode s, int mdnQuoteOriginal, const QVector<KMime::MDN::DispositionModifier> &m)
 {
     // extract where to send to:
     QString receiptTo;

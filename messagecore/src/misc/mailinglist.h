@@ -52,7 +52,7 @@ public:
     };
 
     /**
-     * Defines the features a mailinglist can suppport.
+     * Defines the features a mailinglist can support.
      */
     enum Feature {
         None = 0 << 0,         ///< No mailing list fields exist.

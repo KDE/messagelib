@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
    Copyright 2009 Thomas McGuire <mcguire@kde.org>
 
    This program is free software; you can redistribute it and/or
@@ -16,7 +16,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include "stringutil.h"
 
@@ -172,25 +172,51 @@ static bool flushPart(QString &msg, QStringList &textParts, const QString &inden
     return appendEmptyLine;
 }
 
-QMap<QString, QString> parseMailtoUrl(const QUrl &url)
+QList<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
 {
-    QMap<QString, QString> values;
+    QList<QPair<QString, QString> > values;
     if (url.scheme() != QLatin1String("mailto")) {
         return values;
     }
-    QUrlQuery query(url);
-    Q_FOREACH (const auto &queryItem, query.queryItems(QUrl::FullyDecoded)) {
-        values.insertMulti(queryItem.first, queryItem.second);
+    QString str = url.toString();
+    QString toStr;
+    int i = 0;
+    int indexTo = -1;
+    //Workaround line with # see bug 406208
+    const int indexOf = str.indexOf(QLatin1Char('?'));
+    if (indexOf != -1) {
+        str = str.right(str.length() - indexOf - 1);
+        QUrlQuery query(str);
+        const auto listQuery = query.queryItems(QUrl::FullyDecoded);
+        for (const auto &queryItem : listQuery) {
+            if (queryItem.first == QLatin1String("to")) {
+                toStr = queryItem.second;
+                indexTo = i;
+            } else {
+                QPair<QString, QString> pairElement;
+                pairElement.first = queryItem.first;
+                pairElement.second = queryItem.second;
+                values.append(pairElement);
+            }
+            i++;
+        }
     }
-
     QStringList to = {KEmailAddress::decodeMailtoUrl(url)};
 
-    const QString toStr = values.value(QStringLiteral("to"));
     if (!toStr.isEmpty()) {
         to << toStr;
     }
-
-    values.insert(QStringLiteral("to"), to.join(QStringLiteral(", ")));
+    const QString fullTo = to.join(QStringLiteral(", "));
+    if (!fullTo.isEmpty()) {
+        QPair<QString, QString> pairElement;
+        pairElement.first = QStringLiteral("to");
+        pairElement.second = fullTo;
+        if (indexTo != -1) {
+            values.insert(indexTo, pairElement);
+        } else {
+            values.prepend(pairElement);
+        }
+    }
     return values;
 }
 
@@ -342,12 +368,15 @@ void removePrivateHeaderFields(const KMime::Message::Ptr &message, bool cleanUpH
     message->removeHeader("X-KMail-UnExpanded-To");
     message->removeHeader("X-KMail-UnExpanded-CC");
     message->removeHeader("X-KMail-UnExpanded-BCC");
+    message->removeHeader("X-KMail-UnExpanded-Reply-To");
     message->removeHeader("X-KMail-FccDisabled");
 
     if (cleanUpHeader) {
         message->removeHeader("X-KMail-Fcc");
         message->removeHeader("X-KMail-Transport");
         message->removeHeader("X-KMail-Identity");
+        message->removeHeader("X-KMail-Transport-Name");
+        message->removeHeader("X-KMail-Identity-Name");
         message->removeHeader("X-KMail-Dictionary");
     }
 }
@@ -599,7 +628,7 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
             ch = wildString[i++];
             switch (ch.toLatin1()) {
             case 'f':
-            {           // sender's initals
+            {           // sender's initials
                 if (fromDisplayString.isEmpty()) {
                     break;
                 }
@@ -717,8 +746,8 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
         }
     } else {
         qCWarning(MESSAGECORE_LOG) << "bigRegExp = \""
-                                       << bigRegExp << "\"\n"
-                                       << "prefix regexp is invalid!";
+                                   << bigRegExp << "\"\n"
+                                   << "prefix regexp is invalid!";
         // try good ole Re/Fwd:
         recognized = str.startsWith(newPrefix);
     }
@@ -729,7 +758,6 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
         return str;
     }
 }
-
 
 QString stripOffPrefixes(const QString &subject)
 {

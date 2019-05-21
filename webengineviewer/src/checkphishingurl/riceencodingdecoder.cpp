@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    Code based in v4_rice.cc
 
@@ -106,7 +106,7 @@ QList<quint32> RiceEncodingDecoder::decodeRiceHashesDelta(const RiceDeltaEncodin
         }
 #endif
         // This flipping is done so that the decoded uint32 is interpreted
-        // correcly as a string of 4 bytes.
+        // correctly as a string of 4 bytes.
         list << htonl(lastValue);
     }
 

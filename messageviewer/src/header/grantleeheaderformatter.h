@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2013-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2013-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -50,11 +50,9 @@ public:
 
     Q_REQUIRED_RESULT QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
 
-    Q_REQUIRED_RESULT QString toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message,
-                   bool isPrinting) const;
+    Q_REQUIRED_RESULT QString toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const;
 private:
-    QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style,
-                   KMime::Message *message, bool showEmoticons = true) const;
+    QString format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons = true) const;
     class Private;
     Private *const d;
 };

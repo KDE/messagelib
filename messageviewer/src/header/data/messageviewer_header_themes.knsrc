@@ -1,4 +1,25 @@
 [KNewStuff3]
+Name=KMail Header Theme
+Name[ca]=Tema de capçalera pel KMail
+Name[ca@valencia]=Tema de capçalera pel KMail
+Name[de]=KMail-Vorspanndesign
+Name[en_GB]=KMail Header Theme
+Name[es]=Temas de encabezado de KMail
+Name[fi]=KMail-otsaketeema
+Name[fr]=Thème d'en-tête KMail
+Name[gl]=Tema da cabeceira de KMail
+Name[it]=Tema della intestazioni di KMail
+Name[ko]=KMail 헤더 테마
+Name[nl]=Header-thema van KMail
+Name[pl]=Wygląd nagłówka KMail
+Name[pt]=Tema de Cabeçalhos do KMail
+Name[pt_BR]=Tema de cabeçalho do KMail
+Name[ru]=Оформление заголовков KMail
+Name[sv]=Kmail huvudtema
+Name[uk]=Тема заголовків KMail
+Name[x-test]=xxKMail Header Themexx
+Name[zh_CN]=KMail主题标题
+Name[zh_TW]=KMail 開頭主題
 ProvidersUrl=http://download.kde.org/ocs/providers.xml
 Categories=KMail Header Theme
 TargetDir=messageviewer/themes

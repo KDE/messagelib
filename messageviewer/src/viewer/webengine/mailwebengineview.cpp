@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -34,7 +34,6 @@
 #include <QContextMenuEvent>
 #include <WebEngineViewer/WebHitTest>
 
-#include <QWebEngineProfile>
 #include <QPrinter>
 
 #include <WebEngineViewer/WebHitTestResult>
@@ -81,7 +80,7 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     : WebEngineViewer::WebEngineView(parent)
     , d(new MessageViewer::MailWebEngineViewPrivate)
 {
-    d->mPageEngine = new MailWebEnginePage(new QWebEngineProfile(this), this);
+    d->mPageEngine = new MailWebEnginePage(this);
     setPage(d->mPageEngine);
     d->mWebViewAccessKey = new WebEngineViewer::WebEngineAccessKey(this, this);
     d->mWebViewAccessKey->setActionCollection(ac);
@@ -114,7 +113,6 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     connect(
         page(), &QWebEnginePage::scrollPositionChanged, d->mWebViewAccessKey,
         &WebEngineViewer::WebEngineAccessKey::hideAccessKeys);
-    initializeScripts();
 }
 
 MailWebEngineView::~MailWebEngineView()
@@ -126,7 +124,7 @@ void MailWebEngineView::readConfig()
 {
     if (MessageViewer::MessageViewerSettings::self()->mailTrackingUrlEnabled()) {
         d->mNetworkAccessManager->addInterceptor(d->mBlockMailTrackingUrl);
-    } else  {
+    } else {
         d->mNetworkAccessManager->removeInterceptor(d->mBlockMailTrackingUrl);
     }
 }
@@ -145,11 +143,6 @@ void MailWebEngineView::runJavaScriptInWordId(const QString &script)
 void MailWebEngineView::setViewer(MessageViewer::ViewerPrivate *viewer)
 {
     d->mViewer = viewer;
-}
-
-void MailWebEngineView::initializeScripts()
-{
-    initializeJQueryScript();
 }
 
 void MailWebEngineView::contextMenuEvent(QContextMenuEvent *e)

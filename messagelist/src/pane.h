@@ -349,10 +349,7 @@ public:
     * like "loading..."
     */
     void setCurrentFolder(
-        const Akonadi::Collection &fld,
-        const QModelIndex &etmIndex,
-        bool preferEmptyTab = false, MessageList::Core::PreSelectionMode preSelectionMode = MessageList::Core::PreSelectLastSelected,
-        const QString &overrideLabel = QString());
+        const Akonadi::Collection &fld, const QModelIndex &etmIndex, bool preferEmptyTab = false, MessageList::Core::PreSelectionMode preSelectionMode = MessageList::Core::PreSelectLastSelected, const QString &overrideLabel = QString());
 
     void resetModelStorage();
 

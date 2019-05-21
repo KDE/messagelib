@@ -80,7 +80,6 @@ public:
 
     // Stuff that we play with.
     KMime::Message *skeletonMessage = nullptr;
-    KMime::Content *resultContent = nullptr;
 
     bool started = false;
     bool finished = false;
@@ -354,8 +353,7 @@ void ComposerPrivate::contentJobFinished(KJob *job)
     }
 }
 
-void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime::Content *content, const AttachmentPart::List &parts, const std::vector<GpgME::Key> &keys,
-                                                 const QStringList &recipients)
+void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers, KMime::Content *content, const AttachmentPart::List &parts, const std::vector<GpgME::Key> &keys, const QStringList &recipients)
 {
     Q_Q(Composer);
 
@@ -572,7 +570,7 @@ bool Composer::finished() const
 {
     Q_D(const Composer);
 
-    return d->autoSaving;
+    return d->finished;
 }
 
 bool Composer::autoSave() const

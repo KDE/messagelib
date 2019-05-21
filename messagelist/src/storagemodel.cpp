@@ -108,7 +108,9 @@ StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selec
     qCDebug(MESSAGELIST_LOG) << "Using model:" << model->metaObject()->className();
 
     connect(d->mModel, &QAbstractItemModel::dataChanged,
-            this, [this](const QModelIndex &id1, const QModelIndex &id2) { d->onSourceDataChanged(id1, id2);});
+            this, [this](const QModelIndex &id1, const QModelIndex &id2) {
+        d->onSourceDataChanged(id1, id2);
+    });
 
     connect(d->mModel, &QAbstractItemModel::layoutAboutToBeChanged, this, &StorageModel::layoutAboutToBeChanged);
     connect(d->mModel, &QAbstractItemModel::layoutChanged, this, &StorageModel::layoutChanged);
@@ -122,11 +124,15 @@ StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selec
     connect(d->mModel, &QAbstractItemModel::rowsRemoved, this, &StorageModel::rowsRemoved);
 
     connect(d->mSelectionModel, &QItemSelectionModel::selectionChanged,
-            this, [this]() { d->onSelectionChanged(); });
+            this, [this]() {
+        d->onSelectionChanged();
+    });
 
     d->loadSettings();
     connect(MessageListSettings::self(), &MessageListSettings::configChanged,
-            this, [this]() {d->loadSettings();});
+            this, [this]() {
+        d->loadSettings();
+    });
 }
 
 StorageModel::~StorageModel()

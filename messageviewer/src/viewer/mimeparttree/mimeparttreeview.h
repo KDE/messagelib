@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2014-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2014-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -37,7 +37,7 @@ public:
     void clearModel();
     void setRoot(KMime::Content *root);
 
-    KMime::Content::List selectedContents();
+    Q_REQUIRED_RESULT KMime::Content::List selectedContents() const;
 
 private:
     void slotMimePartDestroyed();

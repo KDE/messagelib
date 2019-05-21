@@ -10,5 +10,5 @@ release: false
 libraries:
  - qmake: MessageList
    cmake: "KF5::MessageList"
-   cmakename: KF5MessageList
+cmakename: KF5MessageList
 

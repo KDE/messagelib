@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2015-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2015-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -63,7 +63,7 @@ HeaderStylePlugin *HeaderStyleInterface::headerStylePlugin() const
     return mHeaderStylePlugin;
 }
 
-void MessageViewer::HeaderStyleInterface::slotStyleChanged()
+void HeaderStyleInterface::slotStyleChanged()
 {
     Q_EMIT styleChanged(mHeaderStylePlugin);
 }

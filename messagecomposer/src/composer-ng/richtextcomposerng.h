@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2015-2018 Montel Laurent <montel@kde.org>
+   Copyright (C) 2015-2019 Montel Laurent <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -22,6 +22,7 @@
 
 #include "messagecomposer_export.h"
 #include <kpimtextedit/richtextcomposer.h>
+#include <MessageComposer/PluginEditorConvertTextInterface>
 #include <KIdentityManagement/Signature>
 
 namespace PimCommon {
@@ -51,7 +52,7 @@ public:
 
     void forceAutoCorrection(bool selectedText = false) override;
 
-    Q_REQUIRED_RESULT virtual bool convertPlainText(MessageComposer::TextPart *textPart);
+    Q_REQUIRED_RESULT virtual MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus convertPlainText(MessageComposer::TextPart *textPart);
 
 private:
     bool processAutoCorrection(QKeyEvent *event) override;

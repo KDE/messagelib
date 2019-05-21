@@ -51,7 +51,7 @@ void RenderTest::testRenderSmart_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))) {
             continue;
         }
@@ -79,7 +79,7 @@ void RenderTest::testRenderSmartAsync_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         if (!QFile::exists(dir.path() + QLatin1Char('/') + file
                            + QStringLiteral(".inProgress.html"))) {
             continue;
@@ -111,7 +111,7 @@ void RenderTest::testRenderSmartDetails_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         QString fname = dir.path() + QStringLiteral("/details/") + file + QStringLiteral(".html");
         if (!QFile::exists(fname)) {
             continue;
@@ -138,7 +138,7 @@ void RenderTest::testRenderInlined_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         QString fname = dir.path() + QStringLiteral("/inlined/") + file + QStringLiteral(".html");
         if (!QFile::exists(fname)) {
             fname = dir.path() + QStringLiteral("/") + file + QStringLiteral(".html");
@@ -169,7 +169,7 @@ void RenderTest::testRenderIconic_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         QString fname = dir.path() + QStringLiteral("/iconic/") + file + QStringLiteral(".html");
         if (!QFile::exists(fname)) {
             fname = dir.path() + QStringLiteral("/") + file + QStringLiteral(".html");
@@ -200,7 +200,7 @@ void RenderTest::testRenderHidden_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         QString fname = dir.path() + QStringLiteral("/hidden/") + file + QStringLiteral(".html");
         if (!QFile::exists(fname)) {
             fname = dir.path() + QStringLiteral("/") + file + QStringLiteral(".html");
@@ -231,7 +231,7 @@ void RenderTest::testRenderHeaderOnly_data()
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         QString fname = dir.path() + QStringLiteral("/headeronly/") + file
                         + QStringLiteral(".html");
         if (!QFile::exists(fname)) {

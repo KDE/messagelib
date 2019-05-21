@@ -30,7 +30,7 @@
 
 void MessageViewer::Test::setupEnv()
 {
-    qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QString::fromLatin1(
+    qputenv("KDEHOME", QFile::encodeName(QDir::homePath() + QLatin1String(
                                              "/.qttest")).constData());
     qputenv("TZ", "UTC");
     QStandardPaths::setTestModeEnabled(true);

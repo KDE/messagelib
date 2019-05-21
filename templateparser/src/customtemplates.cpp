@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2006 Dmitry Morozhnikov <dmiceman@mail.ru>
- * Copyright (C) 2011-2018 Laurent Montel <montel@kde.org>
+ * Copyright (C) 2011-2019 Laurent Montel <montel@kde.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,14 +61,14 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
 
     connect(mUi->mName, &KLineEdit::returnPressed, this, &CustomTemplates::slotAddClicked);
 
-    connect(mUi->mInsertCommand, QOverload<const QString &, int>::of(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand), this, &CustomTemplates::slotInsertCommand);
+    connect(mUi->mInsertCommand, qOverload<const QString &, int>(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand), this, &CustomTemplates::slotInsertCommand);
 
     connect(mUi->mAdd, &QPushButton::clicked, this, &CustomTemplates::slotAddClicked);
     connect(mUi->mRemove, &QPushButton::clicked, this, &CustomTemplates::slotRemoveClicked);
     connect(mUi->mDuplicate, &QPushButton::clicked, this, &CustomTemplates::slotDuplicateClicked);
     connect(mUi->mList, &QTreeWidget::currentItemChanged, this, &CustomTemplates::slotListSelectionChanged);
     connect(mUi->mList, &QTreeWidget::itemChanged, this, &CustomTemplates::slotItemChanged);
-    connect(mUi->mType, QOverload<int>::of(&KComboBox::activated), this, &CustomTemplates::slotTypeActivated);
+    connect(mUi->mType, qOverload<int>(&KComboBox::activated), this, &CustomTemplates::slotTypeActivated);
 
     connect(mUi->mKeySequenceWidget, &KKeySequenceWidget::keySequenceChanged, this, &CustomTemplates::slotShortcutChanged);
 

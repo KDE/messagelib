@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -90,7 +90,7 @@ void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::U
         resultStr = QStringLiteral("Url MalWare");
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
-        resultStr = QStringLiteral("Url Unknow state");
+        resultStr = QStringLiteral("Url Unknown state");
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
         resultStr = QStringLiteral("Broken Network");

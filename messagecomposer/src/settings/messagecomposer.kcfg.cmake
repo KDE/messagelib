@@ -89,10 +89,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
         <label>Warn before sending unsigned messages</label>
         <default>false</default>
     </entry>
-    <entry name="CryptoWarnRecvNotInCert" type="Bool" key="crypto-warn-recv-not-in-cert">
-        <label>Warn if the receiver's address is not in the certificate</label>
-        <default>true</default>
-    </entry>
     <entry name="CryptoWarnWhenNearExpire" type="Bool" key="crypto-warn-when-near-expire">
         <label>Warn if certificates/keys expire soon (configure thresholds below)</label>
         <default>true</default>

@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2014-2018 Montel Laurent <montel@kde.org>
+  Copyright (c) 2014-2019 Montel Laurent <montel@kde.org>
 
   This program is free software; you can redistribute it and/or modify it
   under the terms of the GNU General Public License, version 2, as
@@ -19,7 +19,7 @@
 #include "../src/widgets/mailsourceviewtextbrowserwidget.h"
 #include "../src/findbar/findbarsourceview.h"
 #include "kpimtextedit/texttospeechwidget.h"
-#include <qtest.h>
+#include <QTest>
 
 MailSourceViewTextBrowserWidgetTest::MailSourceViewTextBrowserWidgetTest(QObject *parent)
     : QObject(parent)

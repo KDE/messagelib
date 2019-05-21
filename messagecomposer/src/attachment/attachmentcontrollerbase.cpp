@@ -64,11 +64,10 @@
 #include <Libkleo/KeySelectionDialog>
 
 #include <MessageCore/AttachmentCompressJob>
-#include <MessageCore/AttachmentFromFolderJob>
-#include <MessageCore/AttachmentFromMimeContentJob>
-#include <MessageCore/AttachmentFromUrlJob>
+#include "attachment/attachmentfrommimecontentjob.h"
+#include "attachment/attachmentfromurljob.h"
 #include <MessageCore/AttachmentPropertiesDialog>
-#include <MessageCore/AttachmentUpdateJob>
+#include "messagecore/attachmentupdatejob.h"
 #include <MessageCore/AttachmentFromUrlUtils>
 #include <settings/messagecomposersettings.h>
 #include <KIO/Job>
@@ -141,7 +140,6 @@ public:
     QHash<AttachmentPart::Ptr, AttachmentPart::Ptr> uncompressedParts;
     bool encryptEnabled = false;
     bool signEnabled = false;
-
 };
 
 AttachmentControllerBase::Private::Private(AttachmentControllerBase *qq)
@@ -279,7 +277,9 @@ void AttachmentControllerBase::Private::reloadAttachment()
 {
     Q_ASSERT(selectedParts.count() == 1);
     AttachmentUpdateJob *ajob = new AttachmentUpdateJob(selectedParts.first(), q);
-    connect(ajob, &AttachmentUpdateJob::result, q, [this](KJob *job) { updateJobResult(job); });
+    connect(ajob, &AttachmentUpdateJob::result, q, [this](KJob *job) {
+        updateJobResult(job);
+    });
     ajob->start();
 }
 
@@ -375,7 +375,9 @@ void AttachmentControllerBase::exportPublicKey(const QString &fingerprint)
     }
 
     MessageComposer::AttachmentFromPublicKeyJob *ajob = new MessageComposer::AttachmentFromPublicKeyJob(fingerprint, this);
-    connect(ajob, &AttachmentFromPublicKeyJob::result, this, [this](KJob *job) {d->attachPublicKeyJobResult(job); });
+    connect(ajob, &AttachmentFromPublicKeyJob::result, this, [this](KJob *job) {
+        d->attachPublicKeyJobResult(job);
+    });
     ajob->start();
 }
 
@@ -445,7 +447,9 @@ AttachmentControllerBase::AttachmentControllerBase(MessageComposer::AttachmentMo
     d->model = model;
     connect(model, &MessageComposer::AttachmentModel::attachUrlsRequested, this, &AttachmentControllerBase::addAttachments);
     connect(model, &MessageComposer::AttachmentModel::attachmentRemoved,
-            this, [this](const MessageCore::AttachmentPart::Ptr &attr) { d->attachmentRemoved(attr); });
+            this, [this](const MessageCore::AttachmentPart::Ptr &attr) {
+        d->attachmentRemoved(attr);
+    });
     connect(model, &AttachmentModel::attachmentCompressRequested,
             this, &AttachmentControllerBase::compressAttachment);
     connect(model, &MessageComposer::AttachmentModel::encryptEnabled, this, &AttachmentControllerBase::setEncryptEnabled);
@@ -499,7 +503,6 @@ void AttachmentControllerBase::createActions()
     d->attachClipBoardAction->setIconText(i18n("Attach Text From Clipboard"));
     connect(d->attachClipBoardAction, &QAction::triggered, this, &AttachmentControllerBase::showAttachClipBoard);
 
-
     d->attachmentMenu->addAction(d->addAttachmentFileAction);
     d->attachmentMenu->addAction(d->addAttachmentDirectoryAction);
     d->attachmentMenu->addSeparator();
@@ -509,39 +512,58 @@ void AttachmentControllerBase::createActions()
     d->attachmentMenu->addSeparator();
     d->attachmentMenu->addAction(d->attachClipBoardAction);
 
-
     d->removeAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("&Remove Attachment"), this);
     d->removeContextAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this);     // FIXME need two texts. is there a better way?
-    connect(d->removeAction, &QAction::triggered, this, [this]() { d->removeSelectedAttachments(); });
-    connect(d->removeContextAction, &QAction::triggered, this, [this]() { d->removeSelectedAttachments(); });
+    connect(d->removeAction, &QAction::triggered, this, [this]() {
+        d->removeSelectedAttachments();
+    });
+    connect(d->removeContextAction, &QAction::triggered, this, [this]() {
+        d->removeSelectedAttachments();
+    });
 
     d->openContextAction = new QAction(i18nc("to open", "Open"), this);
-    connect(d->openContextAction, &QAction::triggered, this, [this]() { d->openSelectedAttachments(); });
+    connect(d->openContextAction, &QAction::triggered, this, [this]() {
+        d->openSelectedAttachments();
+    });
 
     d->viewContextAction = new QAction(i18nc("to view", "View"), this);
-    connect(d->viewContextAction, &QAction::triggered, this, [this]() { d->viewSelectedAttachments(); });
+    connect(d->viewContextAction, &QAction::triggered, this, [this]() {
+        d->viewSelectedAttachments();
+    });
 
     d->editContextAction = new QAction(i18nc("to edit", "Edit"), this);
-    connect(d->editContextAction, &QAction::triggered, this, [this]() { d->editSelectedAttachment(); });
+    connect(d->editContextAction, &QAction::triggered, this, [this]() {
+        d->editSelectedAttachment();
+    });
 
     d->editWithContextAction = new QAction(i18n("Edit With..."), this);
-    connect(d->editWithContextAction, &QAction::triggered, this, [this]() { d->editSelectedAttachmentWith(); });
+    connect(d->editWithContextAction, &QAction::triggered, this, [this]() {
+        d->editSelectedAttachmentWith();
+    });
 
     d->saveAsAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")),
                                   i18n("&Save Attachment As..."), this);
     d->saveAsContextAction = new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")),
                                          i18n("Save As..."), this);
     connect(d->saveAsAction, &QAction::triggered,
-            this, [this]() { d->saveSelectedAttachmentAs(); });
+            this, [this]() {
+        d->saveSelectedAttachmentAs();
+    });
     connect(d->saveAsContextAction, &QAction::triggered,
-            this, [this]() { d->saveSelectedAttachmentAs(); });
+            this, [this]() {
+        d->saveSelectedAttachmentAs();
+    });
 
     d->propertiesAction = new QAction(i18n("Attachment Pr&operties..."), this);
     d->propertiesContextAction = new QAction(i18n("Properties"), this);
     connect(d->propertiesAction, &QAction::triggered,
-            this, [this]() { d->selectedAttachmentProperties(); });
+            this, [this]() {
+        d->selectedAttachmentProperties();
+    });
     connect(d->propertiesContextAction, &QAction::triggered,
-            this, [this]() { d->selectedAttachmentProperties(); });
+            this, [this]() {
+        d->selectedAttachmentProperties();
+    });
 
     d->selectAllAction = new QAction(i18n("Select All"), this);
     connect(d->selectAllAction, &QAction::triggered,
@@ -549,7 +571,9 @@ void AttachmentControllerBase::createActions()
 
     d->reloadAttachmentAction = new QAction(QIcon::fromTheme(QStringLiteral("view-refresh")), i18n("Reload"), this);
     connect(d->reloadAttachmentAction, &QAction::triggered,
-            this, [this]() {d->reloadAttachment();});
+            this, [this]() {
+        d->reloadAttachment();
+    });
 
     // Insert the actions into the composer window's menu.
     KActionCollection *collection = d->mActionCollection;
@@ -586,7 +610,9 @@ void AttachmentControllerBase::compressAttachment(const AttachmentPart::Ptr &par
         qCDebug(MESSAGECOMPOSER_LOG) << "Compressing part.";
 
         AttachmentCompressJob *ajob = new AttachmentCompressJob(part, this);
-        connect(ajob, &AttachmentCompressJob::result, this, [this](KJob *job) { d->compressJobResult(job); });
+        connect(ajob, &AttachmentCompressJob::result, this, [this](KJob *job) {
+            d->compressJobResult(job);
+        });
         ajob->start();
     } else {
         qCDebug(MESSAGECOMPOSER_LOG) << "Uncompressing part.";
@@ -743,7 +769,9 @@ void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
     MessageComposer::Composer *composer = new MessageComposer::Composer;
     composer->globalPart()->setFallbackCharsetEnabled(true);
     MessageComposer::AttachmentJob *attachmentJob = new MessageComposer::AttachmentJob(part, composer);
-    connect(attachmentJob, &AttachmentJob::result, this, [this](KJob *job) { d->slotAttachmentContentCreated(job); });
+    connect(attachmentJob, &AttachmentJob::result, this, [this](KJob *job) {
+        d->slotAttachmentContentCreated(job);
+    });
     attachmentJob->start();
 }
 
@@ -776,7 +804,9 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageV
         QString::fromLatin1(part->mimeType()), openWithOption,
         this, d->wParent);
     connect(watcher, &MessageViewer::EditorWatcher::editDone,
-            this, [this](MessageViewer::EditorWatcher *watcher)  { d->editDone(watcher);});
+            this, [this](MessageViewer::EditorWatcher *watcher)  {
+        d->editDone(watcher);
+    });
 
     switch (watcher->start()) {
     case MessageViewer::EditorWatcher::NoError:
@@ -889,7 +919,9 @@ void AttachmentControllerBase::showAttachVcard()
         const Akonadi::EmailAddressSelection::List selectedEmail = dlg->selectedAddresses();
         for (const Akonadi::EmailAddressSelection &selected : selectedEmail) {
             MessageComposer::AttachmentVcardFromAddressBookJob *ajob = new MessageComposer::AttachmentVcardFromAddressBookJob(selected.item(), this);
-            connect(ajob, &AttachmentVcardFromAddressBookJob::result, this, [this](KJob *job) {d->attachVcardFromAddressBook(job);});
+            connect(ajob, &AttachmentVcardFromAddressBookJob::result, this, [this](KJob *job) {
+                d->attachVcardFromAddressBook(job);
+            });
             ajob->start();
         }
     }
@@ -899,7 +931,9 @@ void AttachmentControllerBase::showAttachVcard()
 void AttachmentControllerBase::showAttachClipBoard()
 {
     MessageComposer::AttachmentClipBoardJob *job = new MessageComposer::AttachmentClipBoardJob(this);
-    connect(job, &AttachmentClipBoardJob::result, this, [this](KJob *job) {d->attachClipBoardElement(job);});
+    connect(job, &AttachmentClipBoardJob::result, this, [this](KJob *job) {
+        d->attachClipBoardElement(job);
+    });
     job->start();
 }
 
@@ -965,7 +999,9 @@ void AttachmentControllerBase::addAttachmentUrlSync(const QUrl &url)
 void AttachmentControllerBase::addAttachment(const QUrl &url)
 {
     MessageCore::AttachmentFromUrlBaseJob *ajob = MessageCore::AttachmentFromUrlUtils::createAttachmentJob(url, this);
-    connect(ajob, &AttachmentFromUrlBaseJob::result, this, [this](KJob *job) { d->loadJobResult(job); });
+    connect(ajob, &AttachmentFromUrlBaseJob::result, this, [this](KJob *job) {
+        d->loadJobResult(job);
+    });
     ajob->start();
 }
 

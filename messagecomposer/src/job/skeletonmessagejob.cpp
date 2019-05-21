@@ -90,9 +90,17 @@ void SkeletonMessageJobPrivate::doStart()
     // Reply To:
     if (!infoPart->replyTo().isEmpty()) {
         KMime::Headers::ReplyTo *replyTo = new KMime::Headers::ReplyTo;
-        KMime::Types::Mailbox address;
-        address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->replyTo()));
-        replyTo->fromUnicodeString(QString::fromLatin1(address.as7BitString("utf-8")), "utf-8");
+        const QStringList lstReplyTo = infoPart->replyTo();
+        QByteArray sReplyTo;
+        for (const QString &a : lstReplyTo) {
+            KMime::Types::Mailbox address;
+            address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
+            if (!sReplyTo.isEmpty()) {
+                sReplyTo.append(",");
+            }
+            sReplyTo.append(address.as7BitString("utf-8"));
+        }
+        replyTo->fromUnicodeString(QString::fromLatin1(sReplyTo), "utf-8");
         message->setHeader(replyTo);
     }
 
@@ -182,10 +190,11 @@ void SkeletonMessageJobPrivate::doStart()
         message->setHeader(extra);
     }
 
-    // Request Delevery Confirmation
+    // Request Delivery Confirmation
     {
         if (globalPart->requestDeleveryConfirmation()) {
-            const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo();
+            //TODO fix me multi address
+            const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
             KMime::Headers::Generic *requestDeleveryConfirmation = new KMime::Headers::Generic("Return-Receipt-To");
             requestDeleveryConfirmation->fromUnicodeString(addr, "utf-8");
             message->setHeader(requestDeleveryConfirmation);
@@ -195,7 +204,8 @@ void SkeletonMessageJobPrivate::doStart()
     // MDN
     {
         if (globalPart->MDNRequested()) {
-            const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo();
+            //TODO fix me multi address
+            const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
             KMime::Headers::Generic *mdn = new KMime::Headers::Generic("Disposition-Notification-To");
             mdn->fromUnicodeString(addr, "utf-8");
             message->setHeader(mdn);

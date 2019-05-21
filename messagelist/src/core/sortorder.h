@@ -171,6 +171,7 @@ public:
 
     /**
      * Returns the default sort order for the given aggregation.
+     * @param aggregation the given aggregation.
      * @param oldSortOrder the previously used sort order. If possible, the new sort order
      *                     will be based on that old sort order, i.e. the message sorting and
      *                     message sort direction is adopted.
@@ -184,6 +185,7 @@ public:
 
     /**
      * Reads the sort order from a config group.
+     * @param conf the config group.
      * @param storageId the id of the folder, which is prepended to each key. This way,
      *                  more than one sort order can be saved in the same config group
      * @param storageUsesPrivateSortOrder this boolean will be true if the sort order
@@ -194,6 +196,8 @@ public:
 
     /**
      * Writes the sort order to a config group.
+     * @param conf the config group.
+     * @param storageId the storage identifier.
      * @param storageUsesPrivateSortOrder if false, this sort order will be saved as the
      *                                    global sort order.
      * @sa readConfig

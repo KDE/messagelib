@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -90,7 +90,7 @@ WebEngineAccessKeyAnchorFromHtmlTest::WebEngineAccessKeyAnchorFromHtmlTest(QObje
 void WebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAnchor()
 {
     TestWebEngineAccessKey w;
-    QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVector<WebEngineViewer::WebEngineAccessKeyAnchor>)));
+    QSignalSpy accessKeySpy(&w, &TestWebEngineAccessKey::accessKeySearchFinished);
     w.setHtml(QStringLiteral("<body>foo</body>"));
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
@@ -101,7 +101,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAn
 void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
 {
     TestWebEngineAccessKey w;
-    QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVector<WebEngineViewer::WebEngineAccessKeyAnchor>)));
+    QSignalSpy accessKeySpy(&w, &TestWebEngineAccessKey::accessKeySearchFinished);
     w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a></body>"));
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
@@ -112,7 +112,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
 void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnTwoAnchor()
 {
     TestWebEngineAccessKey w;
-    QSignalSpy accessKeySpy(&w, SIGNAL(accessKeySearchFinished(QVector<WebEngineViewer::WebEngineAccessKeyAnchor>)));
+    QSignalSpy accessKeySpy(&w, &TestWebEngineAccessKey::accessKeySearchFinished);
     w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a><a href=\"http://www.kde.vv\">foo</a></body>"));
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);

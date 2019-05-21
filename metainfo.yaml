@@ -1,0 +1,34 @@
+name: messagelib
+description: Messagelib Library which contains MessageComposer, MessageCore, MessageList, MessageViewer, MimeTreeParser, TemplateParser and WebEngineViewer 
+maintainer: mlaurent
+public_lib: true
+type: functional
+group: kdepim
+platforms:
+    - name: linux
+irc: akonadi
+portingAid: false
+deprecated: false
+libraries:
+ - qmake: MessageComposer
+   cmake: "KF5::MessageComposer"
+cmakename: KF5MessageComposer
+ - qmake: MessageCore
+   cmake: "KF5::MessageCore"
+cmakename: KF5MessageCore
+ - qmake: MessageList
+   cmake: "KF5::MessageList"
+cmakename: KF5MessageList
+ - qmake: MessageViewer
+   cmake: "KF5::MessageViewer"
+cmakename: KF5MessageViewer
+ - qmake: MimeTreeParser
+   cmake: "KF5::MimeTreeParser"
+cmakename: KF5MimeTreeParser
+ - qmake: TemplateParser
+   cmake: "KF5::TemplateParser"
+cmakename: KF5TemplateParser
+ - qmake: WebEngineViewer
+   cmake: "KF5::WebEngineViewer"
+cmakename: KF5WebEngineViewer
+

@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -17,8 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
-
 #include "templatesinsertcommandaction.h"
 using namespace TemplateParser;
 
@@ -29,13 +27,12 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
     mMenuCommand->fillMenu();
     mMenuCommand->fillSubMenus();
     mMenuCommand->setObjectName(QStringLiteral("templatescommandmenu"));
-    connect(mMenuCommand, QOverload<const QString &, int>::of(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandAction::insertCommand);
+    connect(mMenuCommand, qOverload<const QString &, int>(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandAction::insertCommand);
     setMenu(mMenuCommand->menu());
 }
 
 TemplatesInsertCommandAction::~TemplatesInsertCommandAction()
 {
-
 }
 
 TemplatesCommandMenu::MenuTypes TemplatesInsertCommandAction::type() const

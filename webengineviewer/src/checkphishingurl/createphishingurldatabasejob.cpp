@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -90,7 +90,7 @@ void CreatePhishingUrlDataBaseJob::start()
         qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
         //curl -H "Content-Type: application/json" -X POST -d '{"client":{"clientId":"KDE","clientVersion":"5.4.0"},"threatInfo":{"platformTypes":["WINDOWS"],"threatEntries":[{"url":"http://www.kde.org"}],"threatEntryTypes":["URL"],"threatTypes":["MALWARE"]}}' https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
-        connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error), this, &CreatePhishingUrlDataBaseJob::slotError);
+        connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::error), this, &CreatePhishingUrlDataBaseJob::slotError);
     }
 }
 
@@ -381,7 +381,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                     } else if (str == QLatin1String("PARTIAL_UPDATE")) {
                                         databaseInfo.responseType = UpdateDataBaseInfo::PartialUpdate;
                                     } else {
-                                        qCDebug(WEBENGINEVIEWER_LOG) << " unknow responsetype " << str;
+                                        qCDebug(WEBENGINEVIEWER_LOG) << " unknown responsetype " << str;
                                         databaseInfo.responseType = UpdateDataBaseInfo::Unknown;
                                     }
                                 } else if (mapKey == QLatin1String("threatEntryType")) {
@@ -389,7 +389,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                 } else if (mapKey == QLatin1String("threatType")) {
                                     databaseInfo.threatType = mapIt.value().toString();
                                 } else {
-                                    qCDebug(WEBENGINEVIEWER_LOG) << " unknow key " << mapKey;
+                                    qCDebug(WEBENGINEVIEWER_LOG) << " unknown key " << mapKey;
                                 }
                             }
                         }

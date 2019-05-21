@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -78,6 +78,9 @@ WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
                                     "        return false;"
                                     "    return window.getSelection().containsNode(e, true);"
                                     "}"
+                                    "function attributeStr(e, a) {"
+                                    "    return e.getAttribute(a) || '';"
+                                    "}"
                                     "var res = {"
                                     "    alternateText: e.getAttribute('alt'),"
                                     "    boundingRect: '',"
@@ -92,16 +95,16 @@ WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
                                     "var r = e.getBoundingClientRect();"
                                     "res.boundingRect = [r.top, r.left, r.width, r.height];"
                                     "if (e.tagName.toLowerCase() == 'img')"
-                                    "    res.imageUrl = e.getAttribute('src');"
+                                    "    res.imageUrl = attributeStr(e, 'src').trim();"
                                     "if (e.tagName.toLowerCase() == 'a') {"
                                     "    res.linkTitle = e.text;"
-                                    "    res.linkUrl = e.getAttribute('href');"
+                                    "    res.linkUrl = attributeStr(e, 'href').trim();"
                                     "}"
                                     "while (e) {"
                                     "    if (res.linkTitle == '' && e.tagName.toLowerCase() == 'a')"
                                     "        res.linkTitle = e.text;"
                                     "    if (res.linkUrl == '' && e.tagName.toLowerCase() == 'a')"
-                                    "        res.linkUrl = e.getAttribute('href');"
+                                    "        res.linkUrl = attributeStr(e, 'href').trim();"
                                     "    if (res.mediaUrl == '' && isMediaElement(e)) {"
                                     "        res.mediaUrl = e.currentSrc;"
                                     "        res.mediaPaused = e.paused;"

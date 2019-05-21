@@ -44,8 +44,8 @@ public:
     Q_REQUIRED_RESULT QStringList bcc() const;
     void setBcc(const QStringList &bcc);
 
-    Q_REQUIRED_RESULT QString replyTo() const;
-    void setReplyTo(const QString &replyTo);
+    Q_REQUIRED_RESULT QStringList replyTo() const;
+    void setReplyTo(const QStringList &replyTo);
 
     Q_REQUIRED_RESULT QString subject() const;
     void setSubject(const QString &subject);

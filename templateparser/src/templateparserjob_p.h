@@ -38,9 +38,7 @@ namespace MessageCore {
 class ImageCollector;
 }
 
-
-namespace TemplateParser
-{
+namespace TemplateParser {
 class TemplateParserJobPrivate
 {
 public:

@@ -10,5 +10,5 @@ release: false
 libraries:
  - qmake: WebEngineViewer
    cmake: "KF5::WebEngineViewer"
-   cmakename: KF5WebEngineViewer
+cmakename: KF5WebEngineViewer
 

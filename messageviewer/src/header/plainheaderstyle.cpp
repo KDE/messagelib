@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2013-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2013-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -121,7 +121,7 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
     }
 
     if (strategy->showHeader(QStringLiteral("date"))) {
-        const auto dateFormat = isPrinting()? MessageViewer::HeaderStyleUtil::ShortDate : MessageViewer::HeaderStyleUtil::CustomDate;
+        const auto dateFormat = isPrinting() ? MessageViewer::HeaderStyleUtil::ShortDate : MessageViewer::HeaderStyleUtil::CustomDate;
         headerStr.append(i18n("Date: ")
                          + HeaderStyleUtil::strToHtml(HeaderStyleUtil::dateString(message,
                                                                                   dateFormat))

@@ -10,5 +10,5 @@ release: false
 libraries:
  - qmake: MessageViewer
    cmake: "KF5::MessageViewer"
-   cmakename: KF5MessageViewer
+cmakename: KF5MessageViewer
 

@@ -10,5 +10,5 @@ release: false
 libraries:
  - qmake: MimeTreeParser
    cmake: "KF5::MimeTreeParser"
-   cmakename: KF5MimeTreeParser
+cmakename: KF5MimeTreeParser
 

@@ -46,6 +46,8 @@
 #include <QScrollBar>
 #include <QLineEdit>
 #include <QMenu>
+#include <QPainter>
+
 #include <KLocalizedString>
 #include "messagelist_debug.h"
 
@@ -72,7 +74,9 @@ public:
     }
 
     void expandFullThread(const QModelIndex &index);
+    void generalPaletteChanged();
 
+    QColor mTextColor;
     View *const q;
 
     Widget *mWidget = nullptr;
@@ -131,7 +135,9 @@ View::View(Widget *pParent)
             Qt::UniqueConnection);
 
     // as in KDE3, when a root-item of a message thread is expanded, expand all children
-    connect(this, &View::expanded, this, [this](const QModelIndex &index) { d->expandFullThread(index);} );
+    connect(this, &View::expanded, this, [this](const QModelIndex &index) {
+        d->expandFullThread(index);
+    });
 }
 
 View::~View()
@@ -664,6 +670,30 @@ void View::resizeEvent(QResizeEvent *e)
     triggerDelayedSaveThemeColumnState();
 }
 
+void View::paintEvent(QPaintEvent *event)
+{
+#if 0
+    if (/*mFirstResult &&*/ (!model() || model()->rowCount() == 0)) {
+        QPainter p(viewport());
+
+        QFont font = p.font();
+        font.setItalic(true);
+        p.setFont(font);
+
+        if (!d->mTextColor.isValid()) {
+            d->generalPaletteChanged();
+        }
+        p.setPen(d->mTextColor);
+
+        p.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, i18n("No result found"));
+    } else {
+        QTreeView::paintEvent(event);
+    }
+#else
+    QTreeView::paintEvent(event);
+#endif
+}
+
 void View::modelAboutToEmitLayoutChanged()
 {
     // QHeaderView goes totally NUTS with a layoutChanged() call
@@ -730,7 +760,9 @@ void View::slotHeaderContextMenuRequested(const QPoint &pnt)
         if (idx == 0) {
             act->setEnabled(false);
         }
-        QObject::connect(act, &QAction::triggered, this, [this, idx] {slotShowHideColumn(idx);});
+        QObject::connect(act, &QAction::triggered, this, [this, idx] {
+            slotShowHideColumn(idx);
+        });
 
         idx++;
     }
@@ -875,7 +907,7 @@ QList< MessageItem * > View::selectionAsMessageItemList(bool includeCollapsedChi
     if (lSelected.isEmpty()) {
         return selectedMessages;
     }
-    for (const auto idx : qAsConst(lSelected)) {
+    for (const auto &idx : qAsConst(lSelected)) {
         // The asserts below are theoretically valid but at the time
         // of writing they fail because of a bug in QItemSelectionModel::selectedRows()
         // which returns also non-selectable items.
@@ -957,6 +989,14 @@ void View::setChildrenExpanded(const Item *root, bool expand)
             setExpanded(idx, false);
         }
     }
+}
+
+void View::Private::generalPaletteChanged()
+{
+    const QPalette palette = q->viewport()->palette();
+    QColor color = palette.text().color();
+    color.setAlpha(128);
+    mTextColor = color;
 }
 
 void View::Private::expandFullThread(const QModelIndex &index)
@@ -1735,7 +1775,7 @@ void View::markMessageItemsAsAboutToBeRemoved(QList<MessageItem *> &items, bool 
         Q_ASSERT(aMessage);
 
         // Avoid infinite loops by carrying only a limited number of attempts.
-        // If there is any message that is not in the set then items.count() attemps should find it.
+        // If there is any message that is not in the set then items.count() attempts should find it.
         int maxAttempts = items.count();
 
         while (items.contains(aMessage) && (maxAttempts > 0)) {
@@ -1954,7 +1994,7 @@ void View::mouseDoubleClickEvent(QMouseEvent *e)
         case Qt::LeftButton:
 
             if (d->mDelegate->hitContentItem()) {
-                // Double clikcking on clickable icons does NOT activate the message
+                // Double clicking on clickable icons does NOT activate the message
                 if (d->mDelegate->hitContentItem()->isIcon() && d->mDelegate->hitContentItem()->isClickable()) {
                     return;
                 }
@@ -1968,7 +2008,7 @@ void View::mouseDoubleClickEvent(QMouseEvent *e)
         }
         break;
     case Item::GroupHeader:
-        // Don't let QTreeView handle the selection (as it deselects the curent messages)
+        // Don't let QTreeView handle the selection (as it deselects the current messages)
         switch (e->button()) {
         case Qt::LeftButton:
             if (it->childItemCount() > 0) {
@@ -2130,7 +2170,7 @@ void View::mousePressEvent(QMouseEvent *e)
         break;
     case Item::GroupHeader:
     {
-        // Don't let QTreeView handle the selection (as it deselects the curent messages)
+        // Don't let QTreeView handle the selection (as it deselects the current messages)
         GroupHeaderItem *groupHeaderItem = static_cast< GroupHeaderItem * >(it);
 
         switch (e->button()) {

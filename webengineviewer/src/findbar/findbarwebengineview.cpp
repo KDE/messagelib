@@ -1,4 +1,4 @@
-/* Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+/* Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -59,7 +59,7 @@ void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
     if (!isAutoSearch && !mLastSearchStr.contains(searchWord, Qt::CaseSensitive)) {
         clearSelections();
     }
-    d->mView->findText(QString()); //Clear an existing highligh
+    d->mView->findText(QString()); //Clear an existing highlight
     mLastSearchStr = searchWord;
     d->mView->findText(mLastSearchStr, searchOptions, [this](bool found) {
         setFoundMatch(found);
@@ -71,7 +71,7 @@ void FindBarWebEngineView::updateSensitivity(bool sensitivity)
     QWebEnginePage::FindFlags searchOptions;
     if (sensitivity) {
         searchOptions |= QWebEnginePage::FindCaseSensitively;
-        d->mView->findText(QString()); //Clear an existing highligh
+        d->mView->findText(QString()); //Clear an existing highlight
     }
     d->mView->findText(QString(), searchOptions, [this](bool found) {
         setFoundMatch(found);

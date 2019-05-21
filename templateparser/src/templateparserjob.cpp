@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2017-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -29,6 +29,7 @@
 #include <MessageCore/StringUtil>
 
 #include <MimeTreeParser/ObjectTreeParser>
+#include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
 #include <KIdentityManagement/Identity>
@@ -108,11 +109,10 @@ void TemplateParserJobPrivate::setAllowDecryption(const bool allowDecryption)
     mEmptySource->setDecryptMessage(mAllowDecryption);
 }
 
-
-TemplateParserJob::TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode)
-    : d(new TemplateParserJobPrivate(amsg, amode))
+TemplateParserJob::TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode, QObject *parent)
+    : QObject(parent)
+    , d(new TemplateParserJobPrivate(amsg, amode))
 {
-
 }
 
 TemplateParserJob::~TemplateParserJob() = default;
@@ -267,6 +267,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg, qint64 afo
     if (aorig_msg == nullptr) {
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
         Q_EMIT parsingDone(d->mForceCursorPosition);
+        deleteLater();
         return;
     }
 
@@ -275,6 +276,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg, qint64 afo
     const QString tmpl = findTemplate();
     if (tmpl.isEmpty()) {
         Q_EMIT parsingDone(d->mForceCursorPosition);
+        deleteLater();
         return;
     }
     processWithTemplate(tmpl);
@@ -295,28 +297,58 @@ void TemplateParserJob::processWithIdentity(uint uoid, const KMime::Message::Ptr
     process(aorig_msg, afolder);
 }
 
+MimeTreeParser::MessagePart::Ptr toplevelTextNode(MimeTreeParser::MessagePart::Ptr messageTree)
+{
+    foreach (const auto &mp, messageTree->subParts()) {
+        auto text = mp.dynamicCast<MimeTreeParser::TextMessagePart>();
+        const auto attach = mp.dynamicCast<MimeTreeParser::AttachmentMessagePart>();
+        if (text && !attach) {
+            // TextMessagePart can have several subparts cause of PGP inline, we search for the first part with content
+            foreach (const auto &sub, mp->subParts()) {
+                if (!sub->text().trimmed().isEmpty()) {
+                    return sub;
+                }
+            }
+            return text;
+        } else if (const auto html = mp.dynamicCast<MimeTreeParser::HtmlMessagePart>()) {
+            return html;
+        } else if (const auto alternative = mp.dynamicCast<MimeTreeParser::AlternativeMessagePart>()) {
+            return alternative;
+        } else {
+            auto ret = toplevelTextNode(mp);
+            if (ret) {
+                return ret;
+            }
+        }
+    }
+    return MimeTreeParser::MessagePart::Ptr();
+}
+
 void TemplateParserJob::processWithTemplate(const QString &tmpl)
 {
     d->mOtp->parseObjectTree(d->mOrigMsg.data());
 
-    TemplateParserExtractHtmlInfo *job = new TemplateParserExtractHtmlInfo(this);
-    connect(job, &TemplateParserExtractHtmlInfo::finished, this, &TemplateParserJob::slotExtractInfoDone);
+    const auto mp = toplevelTextNode(d->mOtp->parsedPart());
 
-    QString plainText = d->mOtp->plainTextContent();
-    if (plainText.isEmpty()) {   //HTML-only mails
-        plainText = d->mOtp->htmlContent();
-    }
+    QString plainText = mp->plaintextContent();
+    QString htmlElement;
 
-    job->setHtmlForExtractingTextPlain(plainText);
-    job->setTemplate(tmpl);
-
-    QString htmlElement = d->mOtp->htmlContent();
-
-    if (htmlElement.isEmpty()) {   //plain mails only
-        QString htmlReplace =d->mOtp->plainTextContent().toHtmlEscaped();
+    if (mp->isHtml()) {
+        htmlElement = d->mOtp->htmlContent();
+        if (plainText.isEmpty()) {   //HTML-only mails
+            plainText = htmlElement;
+        }
+    } else {   //plain mails only
+        QString htmlReplace = plainText.toHtmlEscaped();
         htmlReplace = htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
         htmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
     }
+
+    TemplateParserExtractHtmlInfo *job = new TemplateParserExtractHtmlInfo(this);
+    connect(job, &TemplateParserExtractHtmlInfo::finished, this, &TemplateParserJob::slotExtractInfoDone);
+
+    job->setHtmlForExtractingTextPlain(plainText);
+    job->setTemplate(tmpl);
 
     job->setHtmlForExtractionHeaderAndBody(htmlElement);
     job->start();
@@ -1130,6 +1162,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
 
     addProcessedBodyToMessage(plainBody, htmlBody);
     Q_EMIT parsingDone(d->mForceCursorPosition);
+    deleteLater();
 }
 
 QString TemplateParserJob::getPlainSignature() const
@@ -1214,7 +1247,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
     KMime::Content *mainPart = textPart;
     if (d->mMode == Forward) {
         auto attachments = d->mOrigMsg->attachments();
-        attachments +=d->mOtp->nodeHelper()->attachmentsOfExtraContents();
+        attachments += d->mOtp->nodeHelper()->attachmentsOfExtraContents();
         if (!attachments.isEmpty()) {
             mainPart = createMultipartMixed(attachments, textPart);
             mainPart->assemble();
@@ -1481,7 +1514,8 @@ QString TemplateParserJob::plainMessageText(bool aStripSignature, AllowSelection
     if (!d->mOrigMsg) {
         return QString();
     }
-    QString result =d->mOtp->plainTextContent();
+    const auto mp = toplevelTextNode(d->mOtp->parsedPart());
+    QString result = mp->plaintextContent();
     if (result.isEmpty()) {
         result = d->mExtractHtmlInfoResult.mPlainText;
     }
@@ -1522,7 +1556,7 @@ QString TemplateParserJob::quotedPlainText(const QString &selection) const
     const int firstNonWS = content.indexOf(QRegExp(QLatin1String("\\S")));
     const int lineStart = content.lastIndexOf(QLatin1Char('\n'), firstNonWS);
     if (lineStart >= 0) {
-        content.remove(0, static_cast<unsigned int>(lineStart));
+        content.remove(0, lineStart);
     }
 
     const QString indentStr
@@ -1557,7 +1591,7 @@ uint TemplateParserJob::identityUoid(const KMime::Message::Ptr &msg) const
         idString = hrd->asUnicodeString().trimmed();
     }
     bool ok = false;
-    int id = idString.toUInt(&ok);
+    unsigned int id = idString.toUInt(&ok);
 
     if (!ok || id == 0) {
         id = d->m_identityManager->identityForAddress(

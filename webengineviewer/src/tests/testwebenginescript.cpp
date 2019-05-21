@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -129,7 +129,7 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     mScriptCombo = new QComboBox;
     vScriptLayout->addWidget(mScriptCombo);
     fillScriptCombo(mScriptCombo);
-    connect(mScriptCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &TestScriptWidget::slotCurrentIndexChanged);
+    connect(mScriptCombo, qOverload<int>(&QComboBox::currentIndexChanged), this, &TestScriptWidget::slotCurrentIndexChanged);
 
     mScriptEdit = new QTextEdit;
     mScriptEdit->setAcceptRichText(false);

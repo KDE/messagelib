@@ -6,8 +6,9 @@
  *  Copyright (c) 2003      Zack Rusin <zack@kde.org>
  *
  *  KMail is free software; you can redistribute it and/or modify it
- *  under the terms of the GNU General Public License, version 2, as
- *  published by the Free Software Foundation.
+ *  under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
  *
  *  KMail is distributed in the hope that it will be useful, but
  *  WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -62,7 +63,7 @@ MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &
     : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget;
     mTextToSpeechWidget->setObjectName(QStringLiteral("texttospeech"));
     lay->addWidget(mTextToSpeechWidget);

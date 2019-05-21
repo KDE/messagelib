@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2015-2018 Montel Laurent <montel@kde.org>
+   Copyright (C) 2015-2019 Montel Laurent <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -20,7 +20,7 @@
 #include "imagescalingtest.h"
 #include "settings/messagecomposersettings.h"
 #include "../imagescaling.h"
-#include <qtest.h>
+#include <QTest>
 #include <QStandardPaths>
 
 ImageScalingTest::ImageScalingTest(QObject *parent)

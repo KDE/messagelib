@@ -1,0 +1,88 @@
+Subject: Testcase 'reply-mix-crlf' (S/MIME)
+To: brucewayne45@web.de
+From: brucewayne45@web.de
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY"
+
+--BOUNDARY
+Content-Type: text/plain
+
+Please reply to this message
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+--BOUNDARY
+Content-Type: application/pkcs7-mime; name="smime.p7m"; smime-type=enveloped-data
+Content-Transfer-Encoding: base64
+
+MIAGCSqGSIb3DQEHA6CAMIACAQAxgfwwgfkCAQAwYjBVMQswCQYDVQQGEwJVUzENMAsGA1UECgwE
+S0RBQjEWMBQGA1UEAwwNdW5pdHRlc3QgY2VydDEfMB0GCSqGSIb3DQEJARYQdGVzdEBleGFtcGxl
+LmNvbQIJANNFIDoYY4XJMA0GCSqGSIb3DQEBAQUABIGAJwmmaOeidXUHSQGOf2OBIsPYafVqdORe
+y54pEXbXiAfSVUWgI4a9CsiWwcDX8vlaX9ZLLr+L2VmOfr6Yc5214yxzausZVvnUFjy6LUXotuEX
+tSar4EW7XI9DjaZc1l985naMsTx9JUa5GyQ9J6PGqhosAKpKMGgKkFAHaOwE1/IwgAYJKoZIhvcN
+AQcBMBQGCCqGSIb3DQMHBAieDfmz3WGbN6CABHgEpsLrNn0PAZTDUfNomDypvSCl5bQH+9cKm80m
+upMV2r8RBiXS7OaP4SpCxq18afDTTPatvboHIoEX92taTbq8soiAgEs6raSGtEYZNvFL0IYqm7MA
+o5HCOmjiEcInyPf14lL3HnPk10FaP3hh58qTHUh4LPYtL7UECOZELYnUfUVhAAAAAAAAAAAAAA==
+
+--BOUNDARY
+Content-Type: application/pkcs7-mime; name="smime.p7m"; smime-type=enveloped-data
+Content-Transfer-Encoding: base64
+
+MIAGCSqGSIb3DQEHA6CAMIACAQAxgfwwgfkCAQAwYjBVMQswCQYDVQQGEwJVUzENMAsGA1UECgwE
+S0RBQjEWMBQGA1UEAwwNdW5pdHRlc3QgY2VydDEfMB0GCSqGSIb3DQEJARYQdGVzdEBleGFtcGxl
+LmNvbQIJANNFIDoYY4XJMA0GCSqGSIb3DQEBAQUABIGAJwmmaOeidXUHSQGOf2OBIsPYafVqdORe
+y54pEXbXiAfSVUWgI4a9CsiWwcDX8vlaX9ZLLr+L2VmOfr6Yc5214yxzausZVvnUFjy6LUXotuEX
+tSar4EW7XI9DjaZc1l985naMsTx9JUa5GyQ9J6PGqhosAKpKMGgKkFAHaOwE1/IwgAYJKoZIhvcN
+AQcBMBQGCCqGSIb3DQMHBAieDfmz3WGbN6CABHgEpsLrNn0PAZTDUfNomDypvSCl5bQH+9cKm80m
+upMV2r8RBiXS7OaP4SpCxq18afDTTPatvboHIoEX92taTbq8soiAgEs6raSGtEYZNvFL0IYqm7MA
+o5HCOmjiEcInyPf14lL3HnPk10FaP3hh58qTHUh4LPYtL7UECOZELYnUfUVhAAAAAAAAAAAAAA==
+
+--BOUNDARY--

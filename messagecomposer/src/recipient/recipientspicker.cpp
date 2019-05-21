@@ -79,14 +79,19 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     buttonBox->addButton(mUser2Button, QDialogButtonBox::ActionRole);
     mUser3Button = new QPushButton;
     buttonBox->addButton(mUser3Button, QDialogButtonBox::ActionRole);
+    mUser4Button = new QPushButton;
+    buttonBox->addButton(mUser4Button, QDialogButtonBox::ActionRole);
+
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RecipientsPicker::reject);
     mainLayout->addWidget(buttonBox);
+    mUser4Button->setText(i18n("Add as &Reply-To"));
     mUser3Button->setText(i18n("Add as &To"));
     mUser2Button->setText(i18n("Add as CC"));
     mUser1Button->setText(i18n("Add as &BCC"));
     connect(mUser1Button, &QPushButton::clicked, this, &RecipientsPicker::slotBccClicked);
     connect(mUser2Button, &QPushButton::clicked, this, &RecipientsPicker::slotCcClicked);
     connect(mUser3Button, &QPushButton::clicked, this, &RecipientsPicker::slotToClicked);
+    connect(mUser4Button, &QPushButton::clicked, this, &RecipientsPicker::slotReplyToClicked);
 
     mView->emailAddressSelectionWidget()->searchLineEdit()->setFocus();
 
@@ -106,6 +111,7 @@ void RecipientsPicker::slotSelectionChanged()
     mUser1Button->setEnabled(hasSelection);
     mUser2Button->setEnabled(hasSelection);
     mUser3Button->setEnabled(hasSelection);
+    mUser4Button->setEnabled(hasSelection);
 }
 
 void RecipientsPicker::setRecipients(const Recipient::List &)
@@ -119,11 +125,17 @@ void RecipientsPicker::setDefaultType(Recipient::Type type)
     mUser1Button->setDefault(type == Recipient::To);
     mUser2Button->setDefault(type == Recipient::Cc);
     mUser3Button->setDefault(type == Recipient::Bcc);
+    mUser4Button->setDefault(type == Recipient::ReplyTo);
 }
 
 void RecipientsPicker::slotToClicked()
 {
     pick(Recipient::To);
+}
+
+void RecipientsPicker::slotReplyToClicked()
+{
+    pick(Recipient::ReplyTo);
 }
 
 void RecipientsPicker::slotCcClicked()

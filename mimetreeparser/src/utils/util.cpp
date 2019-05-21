@@ -133,7 +133,7 @@ QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
     }
     mimeType = mimeType.toLower();
     return MimeTreeParser::Util::iconNameForMimetype(QLatin1String(mimeType), node->contentDisposition()->filename(),
-                               node->contentType()->name());
+                                                     node->contentType()->name());
 }
 
 QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)
@@ -145,11 +145,10 @@ QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)
         return QStringLiteral("A HTML message, non-multipart");
     case MultipartPlain: ///< A multipart/alternative message, the plain text part is currently displayed
         return QStringLiteral("A multipart/alternative message, the plain text part is currently displayed");
-    case MultipartHtml:  ///< A multipart/altervative message, the HTML part is currently displayed
+    case MultipartHtml:  ///< A multipart/alternative message, the HTML part is currently displayed
         return QStringLiteral("A multipart/alternative message, the HTML part is currently displayed");
-    case MultipartIcal:  ///< A multipart/altervative message, the ICal part is currently displayed
+    case MultipartIcal:  ///< A multipart/alternative message, the ICal part is currently displayed
         return QStringLiteral("A multipart/alternative message, the ICal part is currently displayed");
-
     }
     return {};
 }

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2006 Dmitry Morozhnikov <dmiceman@mail.ru>
- * Copyright (C) 2012-2018 Laurent Montel <montel@kde.org>
+ * Copyright (C) 2012-2019 Laurent Montel <montel@kde.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@ TemplatesConfiguration::TemplatesConfiguration(QWidget *parent, const QString &n
     connect(lineEdit_quote, &QLineEdit::textChanged,
             this, &TemplatesConfiguration::slotTextChanged);
 
-    connect(mInsertCommand, QOverload<const QString &, int>::of(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand),
+    connect(mInsertCommand, qOverload<const QString &, int>(&TemplateParser::TemplatesInsertCommandPushButton::insertCommand),
             this, &TemplatesConfiguration::slotInsertCommand);
 
     d->mHelpString
@@ -123,12 +123,12 @@ void TemplatesConfiguration::resetToDefault()
 {
     const int choice
         = KMessageBox::questionYesNoCancel(
-        nullptr,
-        i18n("Do you want to reset current template or all templates to default?"),
-        i18n("Reset to default"),
-        KGuiItem(i18n("Reset Current Template")),
-        KGuiItem(i18n("Reset All Templates")),
-        KStandardGuiItem::cancel());
+              nullptr,
+              i18n("Do you want to reset current template or all templates to default?"),
+              i18n("Reset to default"),
+              KGuiItem(i18n("Reset Current Template")),
+              KGuiItem(i18n("Reset All Templates")),
+              KStandardGuiItem::cancel());
 
     if (choice == KMessageBox::Cancel) {
         return;

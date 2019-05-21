@@ -131,8 +131,7 @@ public:
     explicit Aggregation();
     explicit Aggregation(const Aggregation &opt);
     explicit Aggregation(
-        const QString &name, const QString &description, Grouping grouping, GroupExpandPolicy groupExpandPolicy, Threading threading, ThreadLeader threadLeader, ThreadExpandPolicy threadExpandPolicy,
-        FillViewStrategy fillViewStrategy, bool readOnly);
+        const QString &name, const QString &description, Grouping grouping, GroupExpandPolicy groupExpandPolicy, Threading threading, ThreadLeader threadLeader, ThreadExpandPolicy threadExpandPolicy, FillViewStrategy fillViewStrategy, bool readOnly);
     static bool compareName(Aggregation *agg1, Aggregation *agg2)
     {
         return agg1->name() < agg2->name();
@@ -227,7 +226,7 @@ public:
 
     /**
     * Enumerates the thread leader determination methods compatible with the specified Threading
-    * and the specified Gouping options.
+    * and the specified Grouping options.
     * The returned descriptors are pairs in that the first item is the localized description
     * of the option value and the second item is the integer option value itself.
     * If the returned list is empty then the value of the option is meaningless in the current context.

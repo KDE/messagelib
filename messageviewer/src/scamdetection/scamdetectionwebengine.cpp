@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2016-2018 Montel Laurent <montel@kde.org>
+  Copyright (c) 2016-2019 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -100,7 +100,6 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         Q_EMIT resultScanDetection(foundScam);
         return;
     }
-    d->mDetails = QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>");
     QRegularExpression ip4regExp(QStringLiteral(
                                      "\\b[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{0,3})?(?:\\.[0-9]{0,3})?"));
     const QVariantMap mapResult = resultList.at(0).toMap();
@@ -176,18 +175,30 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             }
         }
         if (!foundScam) {
-            const QString text = QUrl(mapVariant.value(QStringLiteral("text")).toString()).toDisplayString();
+            QUrl displayUrl = QUrl(mapVariant.value(QStringLiteral("text")).toString());
+            QString text = displayUrl.toDisplayString(QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
+            if (text.endsWith(QLatin1String("%22"))) {
+                text.chop(3);
+            }
+            const QUrl normalizedHrefUrl = QUrl(href);
+            QString normalizedHref = normalizedHrefUrl.toDisplayString(QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
+            normalizedHref.replace(QStringLiteral("%5C"), QStringLiteral("/"));
+            //qDebug() << "text " << text << " href "<<href << " normalizedHref " << normalizedHref;
+
             if (!text.isEmpty()) {
                 if (text.startsWith(QLatin1String("http:/")) || text.startsWith(QLatin1String("https:/"))) {
-                    if (text != href) {
-                        if (href != (text + QLatin1Char('/'))) {
-                            if (href.toHtmlEscaped() != text) {
-                                if (QString::fromUtf8(QUrl(text).toEncoded()) != href) {
-                                    if (QUrl(href).toDisplayString() != text) {
-                                        if (QUrl::fromUserInput(text).toDisplayString(QUrl::NormalizePathSegments) != QUrl::fromUserInput(href).toDisplayString(QUrl::NormalizePathSegments)) {
+                    if (text != normalizedHref) {
+                        if (normalizedHref != (text + QLatin1Char('/'))) {
+                            if (normalizedHref.toHtmlEscaped() != text) {
+                                if (QString::fromUtf8(QUrl(text).toEncoded()) != normalizedHref) {
+                                    if (QUrl(normalizedHref).toDisplayString() != text) {
+                                        const bool qurlqueryequal = displayUrl.query() == normalizedHrefUrl.query();
+                                        const QString displayUrlWithoutQuery = displayUrl.toDisplayString(QUrl::RemoveQuery|QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
+                                        const QString hrefUrlWithoutQuery = normalizedHrefUrl.toDisplayString(QUrl::RemoveQuery|QUrl::StripTrailingSlash|QUrl::NormalizePathSegments);
+                                        if (qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
                                             d->mDetails += QLatin1String("<li>") + i18n(
-                                                "This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is often the case in scam emails to mislead the recipient",
-                                                addWarningColor(text), addWarningColor(href)) + QLatin1String("</li>");
+                                                        "This email contains a link which reads as '%1' in the text, but actually points to '%2'. This is often the case in scam emails to mislead the recipient",
+                                                        addWarningColor(text), addWarningColor(normalizedHref)) + QLatin1String("</li>");
                                             foundScam = true;
                                         }
                                     }
@@ -205,10 +216,12 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                        + QLatin1String("</b></li>");
         foundScam = true;
     }
-    d->mDetails += QLatin1String("</ul>");
-    // qDebug()<<" d->mDetails "<< d->mDetails;
     if (foundScam) {
-        Q_EMIT messageMayBeAScam();
+        d->mDetails.prepend(QLatin1String("<b>") + i18n("Details:") + QLatin1String("</b><ul>"));
+        d->mDetails += QLatin1String("</ul>");
+        if (foundScam) {
+            Q_EMIT messageMayBeAScam();
+        }
     }
     Q_EMIT resultScanDetection(foundScam);
 }

@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2014-2018 Montel Laurent <montel@kde.org>
+  Copyright (c) 2014-2019 Montel Laurent <montel@kde.org>
 
   This program is free software; you can redistribute it and/or modify it
   under the terms of the GNU General Public License, version 2, as
@@ -17,7 +17,7 @@
 #include "attachmentupdatejobtest.h"
 #include <attachment/attachmentupdatejob.h>
 #include <MessageCore/AttachmentPart>
-#include <qtest.h>
+#include <QTest>
 #include "qtest_messagecore.h"
 
 #define PATH_ATTACHMENTS QLatin1String(KDESRCDIR "/attachments/")
@@ -44,12 +44,12 @@ void AttachmentUpdateJobTest::shouldHaveDefaultValue()
 
 void AttachmentUpdateJobTest::shouldUpdateAttachment()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QString::fromLatin1("name.txt");
-    const QString description = QString::fromLatin1("description");
+    const QString name = QStringLiteral("name.txt");
+    const QString description = QStringLiteral("description");
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -69,13 +69,13 @@ void AttachmentUpdateJobTest::shouldUpdateAttachment()
 
 void AttachmentUpdateJobTest::shouldHaveSameNameDescriptionAfterUpdate()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QString::fromLatin1("name.txt");
-    const QString description = QString::fromLatin1("description");
-    const QString filename = QString::fromLatin1("filename");
+    const QString name = QStringLiteral("name.txt");
+    const QString description = QStringLiteral("description");
+    const QString filename = QStringLiteral("filename");
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -97,12 +97,12 @@ void AttachmentUpdateJobTest::shouldHaveSameNameDescriptionAfterUpdate()
 
 void AttachmentUpdateJobTest::shouldHaveSameCryptoSignStatusAfterUpdate()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QString::fromLatin1("name.txt");
-    const QString description = QString::fromLatin1("description");
+    const QString name = QStringLiteral("name.txt");
+    const QString description = QStringLiteral("description");
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -124,12 +124,12 @@ void AttachmentUpdateJobTest::shouldHaveSameCryptoSignStatusAfterUpdate()
 
 void AttachmentUpdateJobTest::shouldHaveSameEncodingAfterUpdate()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QString::fromLatin1("name.txt");
-    const QString description = QString::fromLatin1("description");
+    const QString name = QStringLiteral("name.txt");
+    const QString description = QStringLiteral("description");
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -150,12 +150,12 @@ void AttachmentUpdateJobTest::shouldHaveSameEncodingAfterUpdate()
 
 void AttachmentUpdateJobTest::shouldHaveSameMimetypeAfterUpdate()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QString::fromLatin1("name.txt");
-    const QString description = QString::fromLatin1("description");
+    const QString name = QStringLiteral("name.txt");
+    const QString description = QStringLiteral("description");
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -177,8 +177,8 @@ void AttachmentUpdateJobTest::shouldHaveSameMimetypeAfterUpdate()
 void AttachmentUpdateJobTest::shouldNotUpdateWhenUrlIsEmpty()
 {
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QString::fromLatin1("name.txt");
-    const QString description = QString::fromLatin1("description");
+    const QString name = QStringLiteral("name.txt");
+    const QString description = QStringLiteral("description");
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -195,7 +195,7 @@ void AttachmentUpdateJobTest::shouldNotUpdateWhenUrlIsEmpty()
 
 void AttachmentUpdateJobTest::shouldHaveSameInlineStatus()
 {
-    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QString::fromLatin1("file.txt"));
+    const QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1String("file.txt"));
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");

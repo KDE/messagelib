@@ -21,13 +21,13 @@
 #include "qtest_messagecore.h"
 
 #include "messagecore_debug.h"
-#include <qtest.h>
+#include <QTest>
 
 #include <kmime/kmime_content.h>
 #include <kmime/kmime_headers.h>
 using namespace KMime;
 
-#include <MessageCore/AttachmentFromMimeContentJob>
+#include "attachment/attachmentfrommimecontentjob.h"
 using namespace MessageCore;
 
 QTEST_MAIN(AttachmentFromMimeContentJobTest)

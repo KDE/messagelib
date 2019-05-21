@@ -251,7 +251,6 @@ static const int num_detectors = sizeof(magic_detector) / sizeof(magic_detector[
 
 static QStringList headerToAddress(const QString &header)
 {
-
     QStringList addresses;
     if (header.isEmpty()) {
         return addresses;

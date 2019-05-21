@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2015-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2015-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -76,4 +76,22 @@ void HeaderStylePlugin::showConfigureDialog(QWidget *parent)
 {
     Q_UNUSED(parent);
     //Reimplement
+}
+
+QString HeaderStylePlugin::extraScreenCss(const QString &headerFont) const
+{
+    Q_UNUSED(headerFont);
+    return {};
+}
+
+QString HeaderStylePlugin::extraPrintCss(const QString &headerFont) const
+{
+    Q_UNUSED(headerFont);
+    return {};
+}
+
+QString HeaderStylePlugin::extraCommonCss(const QString &headerFont) const
+{
+    Q_UNUSED(headerFont);
+    return {};
 }

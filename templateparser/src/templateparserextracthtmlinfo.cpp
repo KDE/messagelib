@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2017-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -26,15 +26,17 @@ using namespace TemplateParser;
 
 TemplateParserExtractHtmlInfo::TemplateParserExtractHtmlInfo(QObject *parent)
     : QObject(parent)
-    , mTemplateWebEngineView(nullptr)
-    , mExtractHtmlElementWebEngineView(nullptr)
 {
 }
 
 TemplateParserExtractHtmlInfo::~TemplateParserExtractHtmlInfo()
 {
-    delete mTemplateWebEngineView;
-    delete mExtractHtmlElementWebEngineView;
+    if (mTemplateWebEngineView) {
+        mTemplateWebEngineView->deleteLater();
+    }
+    if (mExtractHtmlElementWebEngineView) {
+        mExtractHtmlElementWebEngineView->deleteLater();
+    }
 }
 
 void TemplateParserExtractHtmlInfo::setHtmlForExtractingTextPlain(const QString &html)

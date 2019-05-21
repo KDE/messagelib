@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -22,7 +22,7 @@
 #include "messageviewer_export.h"
 #include <WebEngineViewer/WebEngineView>
 #include <boost/function.hpp>
-#include <viewer/webengine/blockmailtrackingurlinterceptor/blockmailtrackingurlinterceptor.h>
+#include <MessageViewer/BlockMailTrackingUrlInterceptor>
 class QPrinter;
 class KActionCollection;
 namespace WebEngineViewer {
@@ -90,8 +90,6 @@ Q_SIGNALS:
     void formSubmittedForbidden();
     void mailTrackingFound(const MessageViewer::BlockMailTrackingUrlInterceptor::MailTrackerBlackList &);
     /// Emitted when the user right-clicks somewhere
-    /// @param url if an URL was under the cursor, this parameter contains it. Otherwise empty
-    /// @param point position where the click happened, in local coordinates
     void popupMenu(const WebEngineViewer::WebHitTestResult &result);
     void pageIsScrolledToBottom(bool);
 
@@ -102,7 +100,6 @@ private Q_SLOTS:
     void slotWebHitFinished(const WebEngineViewer::WebHitTestResult &result);
     void slotLoadFinished();
 private:
-    void initializeScripts();
     void runJavaScriptInWordId(const QString &script);
     MailWebEngineViewPrivate *const d;
 };

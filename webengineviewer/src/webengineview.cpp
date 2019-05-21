@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -118,15 +118,6 @@ WebEngineView::~WebEngineView()
 WebEngineManageScript *WebEngineView::webEngineManagerScript() const
 {
     return d->mManagerScript;
-}
-
-void WebEngineView::initializeJQueryScript()
-{
-    QFile file(QStringLiteral(":/data/jquery.min.js"));
-    file.open(QIODevice::ReadOnly);
-    QString jquery = QString::fromUtf8(file.readAll());
-    jquery.append(QLatin1String("\nvar qt = { 'jQuery': jQuery.noConflict(true) };"));
-    d->mManagerScript->addScript(page()->profile(), jquery, QStringLiteral("jquery"), QWebEngineScript::DocumentCreation);
 }
 
 void WebEngineView::addScript(const QString &source, const QString &scriptName, QWebEngineScript::InjectionPoint injectionPoint)

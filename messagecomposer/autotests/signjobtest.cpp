@@ -21,7 +21,7 @@
 #include "signjobtest.h"
 
 #include <QDebug>
-#include <qtest.h>
+#include <QTest>
 #include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
 
@@ -162,7 +162,7 @@ void SignJobTest::testMixedContent()
 {
     std::vector< GpgME::Key > keys = MessageComposer::Test::getKeys();
 
-    QString data = QString::fromUtf8("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
+    QString data = QStringLiteral("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
 
     MessageComposer::Composer *composer = new MessageComposer::Composer;
     MessageComposer::SignJob *sJob = new MessageComposer::SignJob(composer);

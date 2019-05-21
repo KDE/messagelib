@@ -30,7 +30,7 @@ class Message;
 
 namespace MessageCore {
 /**
- * @short Contains some static functions for nagivating in KMime::Node trees.
+ * @short Contains some static functions for navigating in KMime::Node trees.
  */
 namespace NodeHelper {
 /**

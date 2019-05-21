@@ -544,8 +544,7 @@ void Manager::addTheme(Theme *set)
     mThemes.insert(set->id(), set);
 }
 
-static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting, bool alignRight,
-                                                   bool addGroupHeaderItem)
+static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting, bool alignRight, bool addGroupHeaderItem)
 {
     Theme::Column *c = new Theme::Column();
     c->setLabel(name);
@@ -583,8 +582,7 @@ static Theme::Column *add_theme_simple_text_column(Theme *s, const QString &name
     return c;
 }
 
-static Theme::Column *add_theme_simple_icon_column(Theme *s, const QString &name, const QString &pixmapName, Theme::ContentItem::Type type, bool visibleByDefault,
-                                                   SortOrder::MessageSorting messageSorting)
+static Theme::Column *add_theme_simple_icon_column(Theme *s, const QString &name, const QString &pixmapName, Theme::ContentItem::Type type, bool visibleByDefault, SortOrder::MessageSorting messageSorting)
 {
     Theme::Column *c = new Theme::Column();
     c->setLabel(name);

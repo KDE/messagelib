@@ -7,8 +7,9 @@
     Copyright (c) 2009 Andras Mantia <andras@kdab.net>
 
     KMail is free software; you can redistribute it and/or modify it
-    under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
 
     KMail is distributed in the hope that it will be useful, but
     WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -688,9 +689,9 @@ bool AttachmentURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     if (inHeader) {
         w->scrollToAttachment(node);
     }
-    if (shouldShowDialog || w->nodeHelper()->isNodeDisplayedHidden(node)) {
-        w->openAttachment(node, w->nodeHelper()->tempFileUrlFromNode(node));
-    }
+    //if (shouldShowDialog || w->nodeHelper()->isNodeDisplayedHidden(node)) {
+    w->openAttachment(node, w->nodeHelper()->tempFileUrlFromNode(node));
+    //}
 
     return true;
 }
@@ -912,7 +913,7 @@ bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         || (scheme == QLatin1String("ftps")) || (scheme == QLatin1String("sftp"))
         || (scheme == QLatin1String("help")) || (scheme == QLatin1String("vnc"))
         || (scheme == QLatin1String("smb")) || (scheme == QLatin1String("fish"))
-        || (scheme == QLatin1String("news"))) {
+        || (scheme == QLatin1String("news")) || (scheme == QLatin1String("tel"))) {
         KPIM::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
         QTimer::singleShot(2000, KPIM::BroadcastStatus::instance(), &KPIM::BroadcastStatus::reset);
 

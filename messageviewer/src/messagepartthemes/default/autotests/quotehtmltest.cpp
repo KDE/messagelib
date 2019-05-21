@@ -14,7 +14,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include "quotehtmltest.h"
 #include "../plugins/quotehtml.h"
@@ -32,7 +32,7 @@
 
 using namespace MessageViewer;
 
-QTEST_GUILESS_MAIN(QuoteHtmlTest)
+QTEST_MAIN(QuoteHtmlTest)
 
 class MyRenderContext : public MessageViewer::RenderContext
 {
@@ -96,7 +96,7 @@ public:
 
     bool showEncryptionDetails() const override
     {
-         return false;
+        return false;
     }
 
     int levelQuote() const override

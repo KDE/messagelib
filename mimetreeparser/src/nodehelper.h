@@ -177,7 +177,7 @@ public:
 
     /**
      * Fixes an encoding received by a KDE function and returns the proper,
-     * MIME-compilant encoding name instead.
+     * MIME-compliant encoding name instead.
      * @see encodingForName
      */
     static QString fixEncoding(const QString &encoding);   //TODO(Andras) move to a utility class?
@@ -207,7 +207,7 @@ public:
      * the signature.
      *
      * This only works if the message was run through ObjectTreeParser::parseObjectTree() with the
-     * currrent NodeHelper before, because parseObjectTree() actually decrypts the message and stores
+     * current NodeHelper before, because parseObjectTree() actually decrypts the message and stores
      * the decrypted nodes by calling attachExtraContent().
      *
      * @return the unencrypted message or an invalid pointer if the original message didn't contain

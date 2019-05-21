@@ -234,6 +234,7 @@ public:
     ~HtmlMessagePart() override;
 
     QString text() const override;
+    QString plaintextContent() const override;
 
     void fix() const override;
     bool isHtml() const override;

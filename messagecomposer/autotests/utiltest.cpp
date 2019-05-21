@@ -1,6 +1,6 @@
 /*
   Copyright (c) 2009 Constantin Berzan <exit3219@gmail.com>
-  Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
+  Copyright (C) 2017-2019 Laurent Montel <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -21,13 +21,13 @@
 #include "utiltest.h"
 
 #include <QTextDocument>
-#include <qtest.h>
+#include <QTest>
 #include <QStandardPaths>
 
 #include <MessageComposer/Util>
 using namespace MessageComposer;
 
-QTEST_APPLESS_MAIN(UtilTest)
+QTEST_MAIN(UtilTest)
 
 UtilTest::UtilTest(QObject *parent)
     : QObject(parent)

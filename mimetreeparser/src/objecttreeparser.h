@@ -7,8 +7,9 @@
     Copyright (c) 2009 Andras Mantia <andras@kdab.net>
 
     KMail is free software; you can redistribute it and/or modify it
-    under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
 
     KMail is distributed in the hope that it will be useful, but
     WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -60,8 +61,7 @@ typedef QSharedPointer<MimeMessagePart> MimeMessagePartPtr;
 class MIMETREEPARSER_EXPORT ProcessResult
 {
 public:
-    explicit ProcessResult(NodeHelper *nodeHelper, KMMsgSignatureState inlineSignatureState = KMMsgNotSigned, KMMsgEncryptionState inlineEncryptionState = KMMsgNotEncrypted,
-                           bool neverDisplayInline = false)
+    explicit ProcessResult(NodeHelper *nodeHelper, KMMsgSignatureState inlineSignatureState = KMMsgNotSigned, KMMsgEncryptionState inlineEncryptionState = KMMsgNotEncrypted, bool neverDisplayInline = false)
         : mInlineSignatureState(inlineSignatureState)
         , mInlineEncryptionState(inlineEncryptionState)
         , mNeverDisplayInline(neverDisplayInline)
@@ -122,7 +122,7 @@ processed normally, the processMultipartXXX() functions call stdChildHandling() 
 should be handled normally. stdChildHandling() creates its own ObjectTreeParser, which is a clone
 of the current ObjectTreeParser, and processes the node. stdChildHandling() is not called for all
 children of the multipart node, for example processMultiPartAlternativeSubtype() only calls it on
-one of the children, as the other one doesn't need to be displayed. Similary,
+one of the children, as the other one doesn't need to be displayed. Similarly,
 processMultiPartSignedSubtype() doesn't call stdChildHandling() for the signature node, only for the
 signed node.
 
@@ -173,7 +173,7 @@ of the Viewer, which will cause parseObjectTree() to be called again.
 \par Async Crypto Operations
 
 The above case describes decryption the message in place. However, decryption and also verifying of
-the signature can take a long time, so synchronous decryption and verifing would cause the Viewer to
+the signature can take a long time, so synchronous decryption and verifying would cause the Viewer to
 block. Therefore it is possible to run these operations in async mode, see allowAsync().
 In the first run of the async mode, all the ObjectTreeParser does is starting the decrypt or the
 verify job, and informing the user that the operation is in progress with
@@ -288,7 +288,7 @@ public:
     /**
     * Similar to plainTextContent(), but returns the HTML source of the first text/html MIME part.
     *
-    * Not to be consfused with the HTML code that the message viewer widget displays, that HTML
+    * Not to be confused with the HTML code that the message viewer widget displays, that HTML
     * is written out by htmlWriter() and a totally different pair of shoes.
     */
     QString htmlContent() const;
@@ -327,8 +327,6 @@ private:
 
     const QTextCodec *codecFor(KMime::Content *node) const;
 
-    void copyContentFrom(const ObjectTreeParser *other);
-
 private:
     Interface::ObjectTreeSource *mSource;
     NodeHelper *mNodeHelper;
@@ -344,7 +342,7 @@ private:
     /// children. If that is the case, this variable is set to true.
     /// The code needs to behave differently if this is set. For example, it should not process the
     /// siblings. Also, consider inline images: Normally, those nodes are completely hidden, as the
-    /// HTML node embedds them. However, when showing only the node of the image, one has to show them,
+    /// HTML node embeds them. However, when showing only the node of the image, one has to show them,
     /// as their is no HTML node in which they are displayed. There are many more cases where this
     /// variable needs to be obeyed.
     /// This variable is set to false again when processing the children in stdChildHandling(), as

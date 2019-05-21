@@ -8,8 +8,9 @@
     Copyright (c) 2015 Sandro Knauß <sknauss@kde.org>
 
     KMail is free software; you can redistribute it and/or modify it
-    under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
 
     KMail is distributed in the hope that it will be useful, but
     WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -132,18 +133,6 @@ QString ObjectTreeParser::plainTextContent() const
 QString ObjectTreeParser::htmlContent() const
 {
     return mHtmlContent;
-}
-
-void ObjectTreeParser::copyContentFrom(const ObjectTreeParser *other)
-{
-    mPlainTextContent += other->plainTextContent();
-    mHtmlContent += other->htmlContent();
-    if (!other->plainTextContentCharset().isEmpty()) {
-        mPlainTextContentCharset = other->plainTextContentCharset();
-    }
-    if (!other->htmlContentCharset().isEmpty()) {
-        mHtmlContentCharset = other->htmlContentCharset();
-    }
 }
 
 //-----------------------------------------------------------------------------

@@ -14,12 +14,12 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #ifndef STRINGUTILTEST_H
 #define STRINGUTILTEST_H
 
-#include <qobject.h>
+#include <QObject>
 
 class StringUtilTest : public QObject
 {
@@ -40,6 +40,8 @@ private Q_SLOTS:
     void test_formatQuotePrefix();
     void test_parseMailToBug366981();
     void test_parseDuplicateQueryItems();
+    void test_parseMAilToBug402378();
+    void test_parseMailToBug406208();
 };
 
 #endif

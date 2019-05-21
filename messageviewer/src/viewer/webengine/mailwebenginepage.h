@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -28,8 +28,7 @@ class MESSAGEVIEWER_EXPORT MailWebEnginePage : public WebEngineViewer::WebEngine
     Q_OBJECT
 public:
     explicit MailWebEnginePage(QObject *parent = nullptr);
-    explicit MailWebEnginePage(QWebEngineProfile *profile, QObject *parent = nullptr);
-    ~MailWebEnginePage();
+    virtual ~MailWebEnginePage() = default;
 
     void setPrintElementBackground(bool printElementBackground);
 

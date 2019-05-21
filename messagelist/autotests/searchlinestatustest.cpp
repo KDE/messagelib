@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2016-2018 Montel Laurent <montel@kde.org>
+  Copyright (c) 2016-2019 Montel Laurent <montel@kde.org>
 
   This program is free software; you can redistribute it and/or modify it
   under the terms of the GNU General Public License, version 2, as
@@ -44,7 +44,7 @@ void SearchLineStatusTest::shouldHaveDefaultValue()
     QCOMPARE(w.completer()->model()->rowCount(), 0);
 
     //Verify if qt qlineedit name changed
-    QAction *act = w.findChild<QAction *>(QLatin1String("_q_qlineeditclearaction"));
+    QAction *act = w.findChild<QAction *>(QStringLiteral("_q_qlineeditclearaction"));
     QVERIFY(act);
 }
 

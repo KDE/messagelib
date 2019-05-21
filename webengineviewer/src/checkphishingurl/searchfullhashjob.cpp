@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -259,7 +259,7 @@ void SearchFullHashJob::start()
         //qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;
         Q_EMIT debugJson(baPostData);
         QNetworkReply *reply = d->mNetworkAccessManager->post(request, baPostData);
-        connect(reply, QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error), this, &SearchFullHashJob::slotError);
+        connect(reply, qOverload<QNetworkReply::NetworkError>(&QNetworkReply::error), this, &SearchFullHashJob::slotError);
     } else {
         Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl, d->mUrl);
         deleteLater();

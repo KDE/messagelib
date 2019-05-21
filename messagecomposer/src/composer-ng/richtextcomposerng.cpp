@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2015-2018 Montel Laurent <montel@kde.org>
+   Copyright (C) 2015-2019 Montel Laurent <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -22,7 +22,7 @@
 #include <kpimtextedit/richtextcomposerimages.h>
 #include "richtextcomposersignatures.h"
 #include <pimcommon/autocorrection.h>
-
+#include <QDebug>
 #include <part/textpart.h>
 #include "settings/messagecomposersettings.h"
 #include <grantlee/markupdirector.h>
@@ -154,16 +154,18 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml)
     }
 }
 
-bool RichTextComposerNg::convertPlainText(MessageComposer::TextPart *textPart)
+MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextComposerNg::convertPlainText(MessageComposer::TextPart *textPart)
 {
     Q_UNUSED(textPart);
-    return false;
+    return MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::NotConverted;
 }
 
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
+    bool wasConverted =
+            convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
     if (composerControler()->isFormattingUsed()) {
-        if (!convertPlainText(textPart)) {
+        if (!wasConverted) {
             if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
                 Grantlee::PlainTextMarkupBuilder *pb = new Grantlee::PlainTextMarkupBuilder();
 
@@ -184,11 +186,13 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
             }
         }
     } else {
-        textPart->setCleanPlainText(composerControler()->toCleanPlainText());
-        textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
+        if (!wasConverted) {
+            textPart->setCleanPlainText(composerControler()->toCleanPlainText());
+            textPart->setWrappedPlainText(composerControler()->toWrappedPlainText());
+        }
     }
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
-    if (composerControler()->isFormattingUsed()) {
+    if (composerControler()->isFormattingUsed() && !wasConverted) {
         QString cleanHtml = d->toCleanHtml();
         d->fixHtmlFontSize(cleanHtml);
         textPart->setCleanHtml(cleanHtml);
@@ -358,7 +362,7 @@ void RichTextComposerNg::insertSignature(const KIdentityManagement::Signature &s
 
         // We added the text of the signature above, now it is time to add the images as well.
         if (signature.isInlinedHtml()) {
-            foreach (const KIdentityManagement::Signature::EmbeddedImagePtr &image, signature.embeddedImages()) {
+            for (const KIdentityManagement::Signature::EmbeddedImagePtr &image : signature.embeddedImages()) {
                 composerControler()->composerImages()->loadImage(image->image, image->name, image->name);
             }
         }

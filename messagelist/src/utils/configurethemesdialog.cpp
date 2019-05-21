@@ -97,7 +97,6 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     , d(new Private(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowModality(Qt::ApplicationModal);   // FIXME: Sure ?
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
@@ -119,21 +118,27 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     g->addWidget(d->mThemeList, 0, 0, 7, 1);
 
     connect(d->mThemeList, &ThemeListWidget::itemClicked,
-            this, [this](QListWidgetItem *item) { d->themeListItemClicked(item); });
+            this, [this](QListWidgetItem *item) {
+        d->themeListItemClicked(item);
+    });
 
     d->mNewThemeButton = new QPushButton(i18n("New Theme"), base);
     d->mNewThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
     d->mNewThemeButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mNewThemeButton, 0, 1);
 
-    connect(d->mNewThemeButton, &QPushButton::clicked, this, [this]() {d->newThemeButtonClicked(); });
+    connect(d->mNewThemeButton, &QPushButton::clicked, this, [this]() {
+        d->newThemeButtonClicked();
+    });
 
     d->mCloneThemeButton = new QPushButton(i18n("Clone Theme"), base);
     d->mCloneThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
     d->mCloneThemeButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mCloneThemeButton, 1, 1);
 
-    connect(d->mCloneThemeButton, &QPushButton::clicked, this, [this]() { d->cloneThemeButtonClicked(); });
+    connect(d->mCloneThemeButton, &QPushButton::clicked, this, [this]() {
+        d->cloneThemeButtonClicked();
+    });
 
     QFrame *f = new QFrame(base);
     f->setFrameStyle(QFrame::Sunken | QFrame::HLine);
@@ -143,11 +148,15 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     d->mExportThemeButton = new QPushButton(i18n("Export Theme..."), base);
     g->addWidget(d->mExportThemeButton, 3, 1);
 
-    connect(d->mExportThemeButton, &QPushButton::clicked, this, [this]() { d->exportThemeButtonClicked(); });
+    connect(d->mExportThemeButton, &QPushButton::clicked, this, [this]() {
+        d->exportThemeButtonClicked();
+    });
 
     d->mImportThemeButton = new QPushButton(i18n("Import Theme..."), base);
     g->addWidget(d->mImportThemeButton, 4, 1);
-    connect(d->mImportThemeButton, &QPushButton::clicked, this, [this]() { d->importThemeButtonClicked(); });
+    connect(d->mImportThemeButton, &QPushButton::clicked, this, [this]() {
+        d->importThemeButtonClicked();
+    });
 
     f = new QFrame(base);
     f->setFrameStyle(QFrame::Sunken | QFrame::HLine);
@@ -159,17 +168,23 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     d->mDeleteThemeButton->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     g->addWidget(d->mDeleteThemeButton, 6, 1);
 
-    connect(d->mDeleteThemeButton, &QPushButton::clicked, this, [this]() { d->deleteThemeButtonClicked(); });
+    connect(d->mDeleteThemeButton, &QPushButton::clicked, this, [this]() {
+        d->deleteThemeButtonClicked();
+    });
 
     d->mEditor = new ThemeEditor(base);
     g->addWidget(d->mEditor, 8, 0, 1, 2);
 
-    connect(d->mEditor, &ThemeEditor::themeNameChanged, this, [this]() { d->editedThemeNameChanged(); });
+    connect(d->mEditor, &ThemeEditor::themeNameChanged, this, [this]() {
+        d->editedThemeNameChanged();
+    });
 
     g->setColumnStretch(0, 1);
     g->setRowStretch(4, 1);
 
-    connect(okButton, &QPushButton::clicked, this, [this]() { d->okButtonClicked(); } );
+    connect(okButton, &QPushButton::clicked, this, [this]() {
+        d->okButtonClicked();
+    });
 
     d->fillThemeList();
 }

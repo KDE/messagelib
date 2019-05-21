@@ -89,12 +89,12 @@ public:
     Q_REQUIRED_RESULT Type type() const;
 
     /**
-    * The initial expand status we have to honor when attacching to the viewable root.
+    * The initial expand status we have to honor when attaching to the viewable root.
     */
     Q_REQUIRED_RESULT InitialExpandStatus initialExpandStatus() const;
 
     /**
-    * Set the initial expand status we have to honor when attacching to the viewable root.
+    * Set the initial expand status we have to honor when attaching to the viewable root.
     */
     void setInitialExpandStatus(InitialExpandStatus initialExpandStatus);
 
@@ -111,7 +111,7 @@ public:
 
     /**
     * Makes this item viewable, that is, notifies its existence to any listener
-    * attacched to the "rowsInserted()" signal, most notably QTreeView.
+    * attached to the "rowsInserted()" signal, most notably QTreeView.
     *
     * This will also make all the children viewable.
     */

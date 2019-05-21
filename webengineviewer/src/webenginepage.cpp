@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -33,8 +33,24 @@
 using namespace WebEngineViewer;
 
 WebEnginePage::WebEnginePage(QObject *parent)
-    : QWebEnginePage(parent)
+    : QWebEnginePage(new QWebEngineProfile, parent)
 {
+    // Create a private (off the record) QWebEngineProfile here to isolate the
+    // browsing settings, and adopt it as a child so that it will be deleted
+    // when we are destroyed.  The profile must remain active for as long as
+    // any QWebEnginePage's belonging to it exist, see the API documentation
+    // of QWebEnginePage::QWebEnginePage(QWebEngineProfile *, QObject *).
+    // Deleting it as our child on destruction is safe.
+    //
+    // Do not try to save a line of code by setting the parent on construction:
+    //
+    //    WebEnginePage::WebEnginePage(QObject *parent)
+    //      : QWebEnginePage(new QWebEngineProfile(this), parent)
+    //
+    // because the QWebEngineProfile constructor will call out to the QWebEnginePage
+    // and crash because the QWebEnginePage is not fully constructed yet.
+    profile()->setParent(this);
+
     init();
 }
 
@@ -42,10 +58,6 @@ WebEnginePage::WebEnginePage(QWebEngineProfile *profile, QObject *parent)
     : QWebEnginePage(profile, parent)
 {
     init();
-}
-
-WebEnginePage::~WebEnginePage()
-{
 }
 
 void WebEnginePage::init()

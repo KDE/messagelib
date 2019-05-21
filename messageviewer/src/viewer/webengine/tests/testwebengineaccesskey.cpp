@@ -34,7 +34,7 @@ TestWidget::TestWidget(QWidget *parent)
 {
     WebEngineViewer::MessageViewerSettings::self()->setAccessKeyEnabled(true);
     QHBoxLayout *hbox = new QHBoxLayout(this);
-    hbox->setMargin(0);
+    hbox->setContentsMargins(0, 0, 0, 0);
     TestWebEngineAccesskey *webEngine = new TestWebEngineAccesskey(this);
     hbox->addWidget(webEngine);
 

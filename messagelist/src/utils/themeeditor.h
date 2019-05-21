@@ -33,7 +33,7 @@
 
 class QCheckBox;
 
-class KComboBox;
+class QComboBox;
 class KPluralHandlingSpinBox;
 class KLineEdit;
 
@@ -58,7 +58,7 @@ protected:
     KLineEdit *mNameEdit = nullptr;
     QCheckBox *mVisibleByDefaultCheck = nullptr;
     QCheckBox *mIsSenderOrReceiverCheck = nullptr;
-    KComboBox *mMessageSortingCombo = nullptr;
+    QComboBox *mMessageSortingCombo = nullptr;
 
 protected Q_SLOTS:
     void slotOkButtonClicked();
@@ -225,7 +225,7 @@ private:
     ThemePreviewWidget *mPreviewWidget = nullptr;
 
     // Advanced tab
-    KComboBox *mViewHeaderPolicyCombo = nullptr;
+    QComboBox *mViewHeaderPolicyCombo = nullptr;
     KPluralHandlingSpinBox *mIconSizeSpinBox = nullptr;
 };
 } // namespace Utils

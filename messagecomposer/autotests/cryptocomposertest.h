@@ -73,7 +73,7 @@ private Q_SLOTS:
 
     // TODO test the code for autodetecting the charset of a text attachment.
 private:
-    void fillComposerData(MessageComposer::Composer *composer, QString data);
+    void fillComposerData(MessageComposer::Composer *composer, const QString &data);
     void fillComposerCryptoData(MessageComposer::Composer *composer);
 
     // convenience, shared code

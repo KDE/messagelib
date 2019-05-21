@@ -25,7 +25,7 @@
 #include "messagecore_debug.h"
 #include <QComboBox>
 #include <QLineEdit>
-#include <qtest.h>
+#include <QTest>
 
 #include <kmime/kmime_content.h>
 using namespace KMime;

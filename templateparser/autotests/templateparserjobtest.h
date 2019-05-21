@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2017-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -36,8 +36,20 @@ private Q_SLOTS:
     void test_convertedHtml();
     void test_convertedHtml_data();
 
+    void test_replyHtml();
+    void test_replyHtml_data();
+
     void test_replyPlain();
     void test_replyPlain_data();
+
+    void test_forwardPlain();
+    void test_forwardPlain_data();
+
+    void test_forwardHtml();
+    void test_forwardHtml_data();
+
+    void test_forwardedAttachments();
+    void test_forwardedAttachments_data();
 
     /**
      * Tests whether templates are returning required body or not

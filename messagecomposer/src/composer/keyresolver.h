@@ -68,7 +68,7 @@ enum Result {
      \section Step 2: Lookup and check per-recipient crypto preferences / Opportunistic Encryption
 
      First, \c checkSigningPreferences() goes through all recipient's
-     signing perferences, to determine whether or not to sign. It also
+     signing preferences, to determine whether or not to sign. It also
      takes into account the available signing keys and whether or not
      the user explicitly requested signing.
 
@@ -107,7 +107,7 @@ enum Result {
      iterating over the available message formats and retrieving the
      set of signing keys to use with a call to \c signingKeys().
 
-     \section Step 5: Get encrytion key sets.
+     \section Step 5: Get encryption key sets.
 
      If after key resolving, encryption is still requested and
      apparently possible, you can get the result of all this by
@@ -129,8 +129,7 @@ enum Result {
 class KeyResolver
 {
 public:
-    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, int encrKeyNearExpiryThresholdDays, int signKeyNearExpiryThresholdDays,
-                int encrRootCertNearExpiryThresholdDays, int signRootCertNearExpiryThresholdDays, int encrChainCertNearExpiryThresholdDays, int signChainCertNearExpiryThresholdDays);
+    KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, int encrKeyNearExpiryThresholdDays, int signKeyNearExpiryThresholdDays, int encrRootCertNearExpiryThresholdDays, int signRootCertNearExpiryThresholdDays, int encrChainCertNearExpiryThresholdDays, int signChainCertNearExpiryThresholdDays);
 
     ~KeyResolver();
 
@@ -256,8 +255,7 @@ private:
     Kleo::Result resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
     Kleo::Result resolveSigningKeysForEncryption();
     Kleo::Result resolveSigningKeysForSigningOnly();
-    Kleo::Result checkKeyNearExpiry(const GpgME::Key &key, const char *dontAskAgainName, bool mine, bool sign, bool ca = false, int recurse_limit = 100,
-                                    const GpgME::Key &orig_key = GpgME::Key::null) const;
+    Kleo::Result checkKeyNearExpiry(const GpgME::Key &key, const char *dontAskAgainName, bool mine, bool sign, bool ca = false, int recurse_limit = 100, const GpgME::Key &orig_key = GpgME::Key::null) const;
     void collapseAllSplitInfos();
     void addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int formats);
     void addKeys(const std::vector<Item> &items, CryptoMessageFormat f);

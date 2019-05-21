@@ -10,5 +10,5 @@ release: false
 libraries:
  - qmake: MessageCore
    cmake: "KF5::MessageCore"
-   cmakename: KF5MessageCore
+cmakename: KF5MessageCore
 

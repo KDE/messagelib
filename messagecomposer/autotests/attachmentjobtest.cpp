@@ -21,7 +21,7 @@
 #include "qtest_messagecomposer.h"
 
 #include <QDebug>
-#include <qtest.h>
+#include <QTest>
 
 #include <kmime/kmime_content.h>
 #include <kmime/kmime_headers.h>
@@ -32,7 +32,7 @@ using namespace KMime;
 #include <MessageComposer/AttachmentJob>
 using namespace MessageComposer;
 
-#include <MessageCore/AttachmentFromUrlJob>
+//#include "messagecore/attachmentfromfolderjob.h"
 #include <MessageCore/AttachmentPart>
 using namespace MessageCore;
 

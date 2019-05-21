@@ -22,11 +22,11 @@
 
 #include <QVariant>
 
-#include <KComboBox>
+#include <QComboBox>
 
 using namespace MessageList::Utils;
 
-void ComboBoxUtils::fillIntegerOptionCombo(KComboBox *combo, const QList< QPair< QString, int > > &optionDescriptors)
+void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QList< QPair< QString, int > > &optionDescriptors)
 {
     int val = getIntegerOptionComboValue(combo, -1);
     combo->clear();
@@ -58,7 +58,7 @@ void ComboBoxUtils::fillIntegerOptionCombo(KComboBox *combo, const QList< QPair<
     }
 }
 
-void ComboBoxUtils::setIntegerOptionComboValue(KComboBox *combo, int value)
+void ComboBoxUtils::setIntegerOptionComboValue(QComboBox *combo, int value)
 {
     if (combo->itemData(combo->currentIndex()).toInt() == value) {
         return;
@@ -71,7 +71,7 @@ void ComboBoxUtils::setIntegerOptionComboValue(KComboBox *combo, int value)
     }
 }
 
-int ComboBoxUtils::getIntegerOptionComboValue(KComboBox *combo, int defaultValue)
+int ComboBoxUtils::getIntegerOptionComboValue(QComboBox *combo, int defaultValue)
 {
     const int idx = combo->currentIndex();
     if (idx < 0) {

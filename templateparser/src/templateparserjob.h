@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2017-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2017-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -36,7 +36,7 @@ namespace MessageCore {
 class ImageCollector;
 }
 
-class TemplateParserExtractHtmlInfoResult;
+struct TemplateParserExtractHtmlInfoResult;
 
 namespace TemplateParser {
 class TemplateParserJobPrivate;
@@ -163,7 +163,7 @@ public:
     };
 
 public:
-    explicit TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode);
+    explicit TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode, QObject *parent = nullptr);
     ~TemplateParserJob();
 
     /**
@@ -354,7 +354,7 @@ private:
     bool isHtmlSignature() const;
 
     /**
-     * Does the necessary conversions like escaping charecters, changing "\n" to
+     * Does the necessary conversions like escaping characters, changing "\n" to
      * breakline tag before appending text to htmlBody.
      */
     static QString plainToHtml(const QString &body);

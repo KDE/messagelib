@@ -41,7 +41,7 @@ GpgME::VerificationResult QGpgMEJobExecutor::exec(
     QGpgME::VerifyDetachedJob *job, const QByteArray &signature, const QByteArray &signedData)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Starting detached verification job";
-    connect(job, &QGpgME::VerifyDetachedJob::result, this, QOverload<const GpgME::VerificationResult &>::of(&QGpgMEJobExecutor::verificationResult));
+    connect(job, &QGpgME::VerifyDetachedJob::result, this, qOverload<const GpgME::VerificationResult &>(&QGpgMEJobExecutor::verificationResult));
     GpgME::Error err = job->start(signature, signedData);
     if (err) {
         return VerificationResult(err);
@@ -54,7 +54,7 @@ GpgME::VerificationResult QGpgMEJobExecutor::exec(
     QGpgME::VerifyOpaqueJob *job, const QByteArray &signedData, QByteArray &plainText)
 {
     qCDebug(MIMETREEPARSER_LOG) << "Starting opaque verification job";
-    connect(job, &QGpgME::VerifyOpaqueJob::result, this, QOverload<const GpgME::VerificationResult &, const QByteArray &>::of(&QGpgMEJobExecutor::verificationResult ));
+    connect(job, &QGpgME::VerifyOpaqueJob::result, this, qOverload<const GpgME::VerificationResult &, const QByteArray &>(&QGpgMEJobExecutor::verificationResult));
     GpgME::Error err = job->start(signedData);
     if (err) {
         plainText.clear();

@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -30,9 +30,9 @@ public:
     explicit BlockExternalResourcesUrlInterceptor(QObject *parent = nullptr);
     ~BlockExternalResourcesUrlInterceptor() override;
 
-    bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
+    Q_REQUIRED_RESULT bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
     void setAllowExternalContent(bool b);
-    bool allowExternalContent() const;
+    Q_REQUIRED_RESULT bool allowExternalContent() const;
 Q_SIGNALS:
     void formSubmittedForbidden();
 };

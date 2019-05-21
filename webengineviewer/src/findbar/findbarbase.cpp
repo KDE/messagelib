@@ -1,5 +1,5 @@
 /* Copyright (C) 2010 Torgny Nyblom <nyblom@kde.org>
- * Copyright (C) 2010-2018 Laurent Montel <montel@kde.org>
+ * Copyright (C) 2010-2019 Laurent Montel <montel@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -20,7 +20,7 @@
 #include "findbarbase.h"
 #include <PimCommon/LineEditWithCompleterNg>
 
-#include <qicon.h>
+#include <QIcon>
 #include <KLocalizedString>
 #include <klineedit.h>
 #include <KColorScheme>
@@ -40,7 +40,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setMargin(2);
+    lay->setContentsMargins(2, 2, 2, 2);
 
     QToolButton *closeBtn = new QToolButton(this);
     closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));

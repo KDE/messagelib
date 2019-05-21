@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2013-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2013-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -100,25 +100,24 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::loo
 }
 
 GRANTLEE_BEGIN_LOOKUP(QSharedPointer<KMime::Headers::Generics::MailboxList>)
-    if (property == QStringLiteral("nameOnly")) {
-        return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
-    } else if (property == QStringLiteral("isSet")) {
-        return !object->asUnicodeString().isEmpty();
-    } else if (property == QStringLiteral("fullAddress")) {
-        return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayFullAddress);
-    } else if (property == QStringLiteral("str")) {
-        return object->asUnicodeString();
-    } else if (property.startsWith(QStringLiteral("expandable"))) {
-        const auto &name = property.mid(10);
-        const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
-            object.data(), MessageCore::StringUtil::DisplayFullAddress,
-            QString(), MessageCore::StringUtil::ShowLink,
-            MessageCore::StringUtil::ExpandableAddresses,
-            QStringLiteral("Full") + name + QStringLiteral("AddressList"));
-        return val;
-    }
+if (property == QStringLiteral("nameOnly")) {
+    return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayNameOnly);
+} else if (property == QStringLiteral("isSet")) {
+    return !object->asUnicodeString().isEmpty();
+} else if (property == QStringLiteral("fullAddress")) {
+    return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayFullAddress);
+} else if (property == QStringLiteral("str")) {
+    return object->asUnicodeString();
+} else if (property.startsWith(QStringLiteral("expandable"))) {
+    const auto &name = property.mid(10);
+    const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
+        object.data(), MessageCore::StringUtil::DisplayFullAddress,
+        QString(), MessageCore::StringUtil::ShowLink,
+        MessageCore::StringUtil::ExpandableAddresses,
+        QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+    return val;
+}
 GRANTLEE_END_LOOKUP
-
 
 namespace Grantlee {
 template<>
@@ -135,7 +134,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Date *>::lookUp(const KMime::
         dateFormat = MessageViewer::HeaderStyleUtil::FancyLongDate;
     } else if (property == QStringLiteral("fancyshort")) {
         dateFormat = MessageViewer::HeaderStyleUtil::FancyShortDate;
-    } else if(property == QStringLiteral("localelong")){
+    } else if (property == QStringLiteral("localelong")) {
         dateFormat = MessageViewer::HeaderStyleUtil::LongDate;
     } else {
         return QVariant();
@@ -145,7 +144,6 @@ inline QVariant TypeAccessor<const KMime::Headers::Date *>::lookUp(const KMime::
 }
 }
 
-
 class Q_DECL_HIDDEN MessageViewer::GrantleeHeaderFormatter::Private
 {
 public:
@@ -153,7 +151,7 @@ public:
     {
         Grantlee::registerMetaType<const KMime::Headers::Generics::AddressList *>();
         Grantlee::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
-        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList>>();
+        Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList> >();
         Grantlee::registerMetaType<const KMime::Headers::Date *>();
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
         engine = new Grantlee::Engine;
@@ -203,8 +201,7 @@ QString GrantleeHeaderFormatter::toHtml(
         settings.showEmoticons);
 }
 
-QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message,
-                                        bool isPrinting) const
+QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, const QString &absolutPath, const QString &filename, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool isPrinting) const
 {
     d->templateLoader->setTemplateDirs(QStringList() << absolutPath);
     Grantlee::Template headerTemplate = d->engine->loadByName(filename);
@@ -214,8 +211,7 @@ QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders, 
     return format(absolutPath, headerTemplate, displayExtraHeaders, isPrinting, style, message);
 }
 
-QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting,
-                                        const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons) const
+QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grantlee::Template &headerTemplate, const QStringList &displayExtraHeaders, bool isPrinting, const MessageViewer::HeaderStyle *style, KMime::Message *message, bool showEmoticons) const
 {
     QVariantHash headerObject;
     const auto nodeHelper = style->nodeHelper();
@@ -367,10 +363,11 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("vcardi18n"), i18n("[vcard]"));
     headerObject.insert(QStringLiteral("readOnlyMessage"), style->readOnlyMessage());
 
-    const bool messageHasAttachment = KMime::hasAttachment(message);
+    const QString attachmentHtml = style->attachmentHtml();
+    const bool messageHasAttachment = KMime::hasAttachment(message) && !attachmentHtml.isEmpty();
     headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
-
-    headerObject.insert(QStringLiteral("attachmentHtml"), style->attachmentHtml());
+    headerObject.insert(QStringLiteral("attachmentHtml"), attachmentHtml);
+    headerObject.insert(QStringLiteral("attachmentI18n"), i18n("Attachments:"));
 
     if (messageHasAttachment) {
         const QString iconPath

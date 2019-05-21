@@ -21,7 +21,7 @@
 #include "signencrypttest.h"
 
 #include <QDebug>
-#include <qtest.h>
+#include <QTest>
 #include "qtest_messagecomposer.h"
 #include "cryptofunctions.h"
 

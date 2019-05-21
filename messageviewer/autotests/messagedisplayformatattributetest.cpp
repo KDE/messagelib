@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2014-2018 Montel Laurent <montel@kde.org>
+  Copyright (c) 2014-2019 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -20,7 +20,7 @@
 
 #include "messagedisplayformatattributetest.h"
 #include "../src/viewer/messagedisplayformatattribute.h"
-#include <qtest.h>
+#include <QTest>
 
 MessageDisplayFormatAttributeTest::MessageDisplayFormatAttributeTest(QObject *parent)
     : QObject(parent)

@@ -20,7 +20,7 @@
 #include "bodypartformatterfactory.h"
 #include "interfaces/bodypartformatter.h"
 
-#include <qtest.h>
+#include <QTest>
 
 using namespace MimeTreeParser;
 

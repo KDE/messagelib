@@ -7,8 +7,9 @@
     Copyright (c) 2009 Andras Mantia <andras@kdab.net>
 
     KMail is free software; you can redistribute it and/or modify it
-    under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
 
     KMail is distributed in the hope that it will be useful, but
     WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -79,7 +80,7 @@ protected:
     {
     }
 
-    virtual ~IconicAttachmentStrategy()
+    ~IconicAttachmentStrategy() override
     {
     }
 
@@ -122,7 +123,7 @@ protected:
     {
     }
 
-    virtual ~SmartAttachmentStrategy()
+    ~SmartAttachmentStrategy() override
     {
     }
 
@@ -156,7 +157,7 @@ protected:
     {
     }
 
-    virtual ~InlinedAttachmentStrategy()
+    ~InlinedAttachmentStrategy() override
     {
     }
 
@@ -190,7 +191,7 @@ protected:
     {
     }
 
-    virtual ~HiddenAttachmentStrategy()
+    ~HiddenAttachmentStrategy() override
     {
     }
 
@@ -234,7 +235,7 @@ protected:
     {
     }
 
-    virtual ~HeaderOnlyAttachmentStrategy()
+    ~HeaderOnlyAttachmentStrategy() override
     {
     }
 
@@ -294,7 +295,7 @@ const AttachmentStrategy *AttachmentStrategy::create(Type type)
         return headerOnly();
     }
     qCCritical(MESSAGEVIEWER_LOG) << "Unknown attachment startegy ( type =="
-                                  << (int)type << ") requested!";
+                                  << static_cast<int>(type) << ") requested!";
     return nullptr; // make compiler happy
 }
 

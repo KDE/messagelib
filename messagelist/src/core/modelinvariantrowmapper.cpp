@@ -68,7 +68,9 @@ ModelInvariantRowMapper::ModelInvariantRowMapper()
     d->mLazyUpdateChunkInterval = 50;
     d->mLazyUpdateIdleInterval = 50;
 
-    connect(d->mUpdateTimer, &QTimer::timeout, this, [this]() { d->slotPerformLazyUpdate(); });
+    connect(d->mUpdateTimer, &QTimer::timeout, this, [this]() {
+        d->slotPerformLazyUpdate();
+    });
 }
 
 ModelInvariantRowMapper::~ModelInvariantRowMapper()
@@ -208,7 +210,7 @@ ModelInvariantIndex *ModelInvariantRowMapperPrivate::modelIndexRowToModelInvaria
         //   if ( potentialPreviousModelIndexRow >= shift->mMinimumRowIndex )
         //     previousIndexRow = potentialPreviousModelIndexRow;
         //
-        // or by simplyfying...
+        // or by simplifying...
 
         int potentialPreviousModelIndexRow = previousIndexRow - shift->mShift;
         if (potentialPreviousModelIndexRow >= shift->mMinimumRowIndex) {

@@ -3,7 +3,7 @@
   Copyright (c) 1997 Markus Wuebben <markus.wuebben@kde.org>
   Copyright (C) 2009 Klarälvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
   Copyright (c) 2009 Andras Mantia <andras@kdab.net>
-  Copyright (C) 2013-2018 Laurent Montel <montel@kde.org>
+  Copyright (C) 2013-2019 Laurent Montel <montel@kde.org>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -110,6 +110,9 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::printingFinished, this, &Viewer::printingFinished);
     connect(d_ptr, &ViewerPrivate::zoomChanged, this, &Viewer::zoomChanged);
 
+    connect(d_ptr, &ViewerPrivate::showNextMessage, this, &Viewer::showNextMessage);
+    connect(d_ptr, &ViewerPrivate::showPreviousMessage, this, &Viewer::showPreviousMessage);
+
     setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
 }
 
@@ -141,7 +144,7 @@ void Viewer::setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMod
         d->setMessageItem(item, updateMode);
     } else {
         Akonadi::ItemFetchJob *job = createFetchJob(item);
-        connect(job, &Akonadi::ItemFetchJob::result, [this, d](KJob *job) {
+        connect(job, &Akonadi::ItemFetchJob::result, [ d](KJob *job) {
                 d->itemFetchResult(job);
             });
         d->displaySplashPage(i18n("Loading message..."));
@@ -357,8 +360,7 @@ bool Viewer::event(QEvent *e)
 {
     Q_D(Viewer);
     if (e->type() == QEvent::PaletteChange) {
-        delete d->mCSSHelper;
-        d->mCSSHelper = new CSSHelper(d->mViewer);
+        d->recreateCssHelper();
         d->update(MimeTreeParser::Force);
         e->accept();
         return true;
@@ -617,9 +619,11 @@ QAction *Viewer::findInMessageAction() const
 
 void Viewer::slotChangeDisplayMail(Viewer::DisplayFormatMessage mode, bool loadExternal)
 {
-    setHtmlLoadExtOverride(loadExternal);
-    setDisplayFormatMessageOverwrite(mode);
-    update(MimeTreeParser::Force);
+    if ((htmlLoadExtOverride() != loadExternal) || (displayFormatMessageOverwrite() != mode)) {
+        setHtmlLoadExtOverride(loadExternal);
+        setDisplayFormatMessageOverwrite(mode);
+        update(MimeTreeParser::Force);
+    }
 }
 
 QAction *Viewer::saveMessageDisplayFormatAction() const
@@ -643,7 +647,7 @@ KToggleAction *Viewer::disableEmoticonAction() const
 void Viewer::saveMainFrameScreenshotInFile(const QString &filename)
 {
     Q_D(Viewer);
-    return d->saveMainFrameScreenshotInFile(filename);
+    d->saveMainFrameScreenshotInFile(filename);
 }
 
 KActionMenu *Viewer::shareServiceUrlMenu() const
@@ -661,7 +665,7 @@ HeaderStylePlugin *Viewer::headerStylePlugin() const
 void Viewer::setPluginName(const QString &pluginName)
 {
     Q_D(Viewer);
-    return d->setPluginName(pluginName);
+    d->setPluginName(pluginName);
 }
 
 void Viewer::showOpenAttachmentFolderWidget(const QList<QUrl> &urls)
@@ -713,6 +717,18 @@ bool Viewer::showEncryptionDetails() const
     return d->showEncryptionDetails();
 }
 
+void Viewer::hasMultiMessages(bool messages)
+{
+    Q_D(Viewer);
+    d->hasMultiMessages(messages);
+}
+
+void Viewer::updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton)
+{
+    Q_D(Viewer);
+    d->updateShowMultiMessagesButton(enablePreviousButton, enableNextButton);
+}
+
 void Viewer::setShowEncryptionDetails(bool showDetails)
 {
     Q_D(Viewer);
@@ -730,5 +746,4 @@ void Viewer::setWebViewZoomFactor(qreal factor)
     Q_D(Viewer);
     d->setWebViewZoomFactor(factor);
 }
-
 }

@@ -44,9 +44,6 @@
 #include <QFileDevice>
 
 namespace MimeTreeParser {
-QStringList replySubjPrefixes(QStringList() << QStringLiteral("Re\\s*:") << QStringLiteral("Re\\[\\d+\\]:") << QStringLiteral("Re\\d+:"));
-QStringList forwardSubjPrefixes(QStringList() << QStringLiteral("Fwd:") << QStringLiteral("FW:"));
-
 NodeHelper::NodeHelper()
     : mAttachmentFilesDir(new AttachmentTemporaryFilesDirs())
 {
@@ -335,7 +332,7 @@ void NodeHelper::forceCleanTempFiles()
 
 void NodeHelper::removeTempFiles()
 {
-    //Don't delete it it will delete in class
+    //Don't delete as it will be deleted in class
     mAttachmentFilesDir->removeTempFiles();
     mAttachmentFilesDir = new AttachmentTemporaryFilesDirs();
 }
@@ -493,7 +490,7 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
 
 void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
 {
-    const QByteArray body = (aAutoDecode) ? node->decodedContent() : node->body();
+    const QByteArray body = aAutoDecode ? node->decodedContent() : node->body();
     QMimeDatabase db;
     QMimeType mime = db.mimeTypeForData(body);
 
@@ -675,10 +672,10 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
             const auto &extraNodes = it.value();
             for (int i = 0; i < extraNodes.size(); i++) {
                 if (extraNodes[i] == node) {
-                    indexStr = QString::fromLatin1("e%1").arg(i);
+                    indexStr = QStringLiteral("e%1").arg(i);
                     const QString parentIndex = persistentIndex(it.key());
                     if (!parentIndex.isEmpty()) {
-                        indexStr = QString::fromLatin1("%1:%2").arg(parentIndex, indexStr);
+                        indexStr = QStringLiteral("%1:%2").arg(parentIndex, indexStr);
                     }
                     return indexStr;
                 }

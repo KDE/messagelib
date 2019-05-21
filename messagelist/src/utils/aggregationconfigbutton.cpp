@@ -14,7 +14,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include "utils/aggregationconfigbutton.h"
 
@@ -49,7 +49,9 @@ AggregationConfigButton::AggregationConfigButton(QWidget *parent, const Aggregat
     , d(new AggregationConfigButtonPrivate(this))
 {
     d->mAggregationComboBox = aggregationComboBox;
-    connect(this, &AggregationConfigButton::pressed, this, [this]() { d->slotConfigureAggregations(); });
+    connect(this, &AggregationConfigButton::pressed, this, [this]() {
+        d->slotConfigureAggregations();
+    });
 
     // Keep aggregation combo up-to-date with any changes made in the configure dialog.
     if (d->mAggregationComboBox != nullptr) {

@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2014-2018 Montel Laurent <montel@kde.org>
+   Copyright (C) 2014-2019 Montel Laurent <montel@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -67,9 +67,9 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     topLayout->addWidget(mainWidget);
     topLayout->addWidget(buttonBox);
     QVBoxLayout *mainLayout = new QVBoxLayout(mainWidget);
-    mainLayout->setMargin(0);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
     QFormLayout *formLayout = new QFormLayout;
-    formLayout->setMargin(0);
+    formLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->addLayout(formLayout);
 
     d->mDateComboBox = new KDateComboBox;
@@ -90,7 +90,7 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     formLayout->addRow(i18n("Store ToDo in:"), d->mCollectionCombobox);
 
     connect(d->mDateComboBox->lineEdit(), &QLineEdit::textChanged, this, &FollowUpReminderSelectDateDialog::slotDateChanged);
-    connect(d->mCollectionCombobox, QOverload<int>::of(&Akonadi::CollectionComboBox::currentIndexChanged), this, &FollowUpReminderSelectDateDialog::updateOkButton);
+    connect(d->mCollectionCombobox, qOverload<int>(&Akonadi::CollectionComboBox::currentIndexChanged), this, &FollowUpReminderSelectDateDialog::updateOkButton);
     updateOkButton();
 }
 

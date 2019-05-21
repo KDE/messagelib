@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2013-2018 Montel Laurent <montel@kde.org>
+  Copyright (c) 2013-2019 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -50,7 +50,7 @@ ScamDetectionWarningWidget::ScamDetectionWarningWidget(QWidget *parent)
     connect(this, &ScamDetectionWarningWidget::linkActivated, this,
             &ScamDetectionWarningWidget::slotShowDetails);
 
-    QMenu *menu = new QMenu();
+    QMenu *menu = new QMenu(this);
     QAction *action = new QAction(i18n("Move to Trash"), this);
     connect(action, &QAction::triggered, this, &ScamDetectionWarningWidget::moveMessageToTrash);
     action->setMenu(menu);

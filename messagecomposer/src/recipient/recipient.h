@@ -44,7 +44,7 @@ public:
     typedef QList<Recipient::Ptr> List;
 
     enum Type {
-        To, Cc, Bcc, Undefined
+        To, Cc, Bcc, ReplyTo, Undefined
     };
 
     Recipient(const QString &email = QString(), Type type = To);   //krazy:exclude=explicit

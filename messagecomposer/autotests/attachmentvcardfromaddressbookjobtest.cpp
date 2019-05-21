@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2015-2018 Montel Laurent <montel@kde.org>
+  Copyright (c) 2015-2019 Montel Laurent <montel@kde.org>
 
   This library is free software; you can redistribute it and/or modify it
   under the terms of the GNU Library General Public License as published by
@@ -20,7 +20,7 @@
 
 #include "attachmentvcardfromaddressbookjobtest.h"
 #include "MessageComposer/AttachmentVcardFromAddressBookJob"
-#include <qtest.h>
+#include <QTest>
 #include <KContacts/Addressee>
 
 AttachmentVcardFromAddressBookJobTest::AttachmentVcardFromAddressBookJobTest(QObject *parent)

@@ -39,11 +39,28 @@ if(BUILD_TESTING)
     add_subdirectory(viewer/webengine/tests)
     add_subdirectory(messagepartthemes/default/autotests)
     add_subdirectory(widgets/autotests/)
+    add_subdirectory(utils/autotests)
 endif()
 add_subdirectory(pics)
 add_subdirectory(kconf_update)
 add_subdirectory(about)
 add_subdirectory(messageviewerheaderplugins)
+
+if (DKIM_CHECKER_BUILD)
+    add_subdirectory(dkim-verify)
+    set(dkim_verify_SRCS
+        dkim-verify/dkiminfo.cpp
+        dkim-verify/dkimmanagerkey.cpp
+        dkim-verify/dkimmanagerkeywidget.cpp
+        dkim-verify/dkimmanagerkeydialog.cpp
+        dkim-verify/dkimdownloadkeyjob.cpp
+        dkim-verify/dkimchecksignaturejob.cpp
+        dkim-verify/dkimcheckauthenticationstatusjob.cpp
+        dkim-verify/dkimauthenticationstatusinfo.cpp
+        dkim-verify/dkimutil.cpp
+        )
+endif()
+
 if(DEBUG_SIGNATURE)
     add_definitions(-DDEBUG_SIGNATURE)
 endif()
@@ -84,6 +101,7 @@ set(libmessageviewer_widgets_SRCS
     widgets/submittedformwarningwidget.cpp
     widgets/mailtrackingwarningwidget.cpp
     widgets/mailtrackingdetailsdialog.cpp
+    widgets/shownextmessagewidget.cpp
     )
 
 set(libmessageviewer_widgets_webengine_SRCS
@@ -158,6 +176,12 @@ set(libmessageviewer_viewerplugins_SRCS
     viewerplugins/viewerplugintoolmanager.cpp
     )
 
+set(libmessageviewer_configureplugins_SRCS
+    messageviewerconfigureplugins/messageviewerconfiguresettingsplugin.cpp
+    messageviewerconfigureplugins/messageviewerconfiguresettingspluginmanager.cpp
+    messageviewerconfigureplugins/messageviewerconfiguresettingspluginwidget.cpp
+    )
+
 set(libmessageviewer_messagepartthemes_default_SRCS
     messagepartthemes/default/converthtmltoplaintext.cpp
     messagepartthemes/default/defaultrenderer.cpp
@@ -177,6 +201,7 @@ set(libmessageviewer_interfaces_SRCS
     )
 
 set(libmessageviewer_SRCS
+    ${dkim_verify_SRCS}
     ${libmessageviewer_messagepartthemes_default_SRCS}
     ${libmessageviewer_htmlwriter_SRCS}
     ${libmessageviewer_messagepartthemes_SRCS}
@@ -194,6 +219,7 @@ set(libmessageviewer_SRCS
     settings/messageviewersettings.cpp
     ${libmessageviewer_mailviewer_SRCS}
     ${libmessageviewer_interfaces_SRCS}
+    ${libmessageviewer_configureplugins_SRCS}
     )
 
 qt5_add_resources(libmessageviewer_SRCS messagepartthemes.qrc)
@@ -261,6 +287,15 @@ set_target_properties(KF5MessageViewer PROPERTIES
 install(TARGETS
     KF5MessageViewer
     EXPORT KF5MessageViewerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
+    )
+
+ecm_generate_headers(MessageViewer_Camelblockmailtrackingurlinterceptor_HEADERS
+    HEADER_NAMES
+    BlockMailTrackingUrlInterceptor
+
+    REQUIRED_HEADERS MessageViewer_blockmailtrackingurlinterceptor_HEADERS
+    PREFIX MessageViewer
+    RELATIVE viewer/webengine/blockmailtrackingurlinterceptor
     )
 
 ecm_generate_headers(MessageViewer_Camelcasewebengine_HEADERS
@@ -354,6 +389,16 @@ ecm_generate_headers(MessageViewer_Camelcasesettings_HEADERS
     RELATIVE settings
     )
 
+ecm_generate_headers(MessageViewer_CamelcaseConfigurePlugins_HEADERS
+    HEADER_NAMES
+    MessageViewerConfigureSettingsPluginManager
+    MessageViewerConfigureSettingsPlugin
+    MessageViewerConfigureSettingsPluginWidget
+    REQUIRED_HEADERS MessageViewer_ConfigurePlugins_HEADERS
+    PREFIX MessageViewer
+    RELATIVE messageviewerconfigureplugins
+    )
+
 
 ecm_generate_headers(MessageViewer_Camelcaseheader_HEADERS
     HEADER_NAMES
@@ -403,6 +448,7 @@ ecm_generate_pri_file(BASE_NAME MessageViewer
 
 
 install(FILES
+    ${MessageViewer_CamelcaseConfigurePlugins_HEADERS}
     ${MessageViewer_Camelcasewebengine_HEADERS}
     ${MessageViewer_Camelcaseheader_HEADERS}
     ${MessageViewer_Camelcaseviewerplugin_HEADERS}
@@ -416,11 +462,13 @@ install(FILES
     ${MessageViewer_Camelfindbar_HEADERS}
     ${MessageViewer_Camelcasescam_HEADERS}
     ${MessageViewer_Camelcaserenderer_HEADERS}
+    ${MessageViewer_Camelblockmailtrackingurlinterceptor_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageViewer
     COMPONENT Devel
     )
 
 install(FILES
+    ${MessageViewer_ConfigurePlugins_HEADERS}
     ${MessageViewer_webengine_HEADERS}
     ${MessageViewer_scam_HEADERS}
     ${MessageViewer_viewerplugin_HEADERS}
@@ -435,6 +483,7 @@ install(FILES
     ${MessageViewer_antispam_HEADERS}
     ${MessageViewer_findbar_HEADERS}
     ${MessageViewer_renderer_HEADERS}
+    ${MessageViewer_blockmailtrackingurlinterceptor_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
     ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h

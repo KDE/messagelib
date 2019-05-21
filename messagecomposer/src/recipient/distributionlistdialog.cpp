@@ -123,7 +123,7 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     setModal(false);
 
     QBoxLayout *topLayout = new QVBoxLayout(topFrame);
-    topLayout->setMargin(0);
+    topLayout->setContentsMargins(0, 0, 0, 0);
 
     QBoxLayout *titleLayout = new QHBoxLayout();
     topLayout->addItem(titleLayout);
@@ -269,6 +269,7 @@ void DistributionListDialog::slotUser1()
     Akonadi::ContactGroupSearchJob *job = new Akonadi::ContactGroupSearchJob();
     job->setQuery(Akonadi::ContactGroupSearchJob::Name, name);
     job->setProperty("name", name);
+    qDebug() << " name " << name;
     connect(job, &Akonadi::ContactSearchJob::result, this, &DistributionListDialog::slotDelayedUser1);
 }
 
@@ -278,6 +279,7 @@ void DistributionListDialog::slotDelayedUser1(KJob *job)
     const QString name = searchJob->property("name").toString();
 
     if (!searchJob->contactGroups().isEmpty()) {
+        qDebug() << " searchJob->contactGroups()" << searchJob->contactGroups().count();
         KMessageBox::information(this,
                                  xi18nc("@info", "<para>Distribution list with the given name <resource>%1</resource> "
                                                  "already exists. Please select a different name.</para>", name));

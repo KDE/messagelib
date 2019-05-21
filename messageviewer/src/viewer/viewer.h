@@ -23,7 +23,6 @@
 #define MESSAGEVIEWER_H
 
 #include "messageviewer_export.h"
-#include "config-messageviewer.h"
 #include "messageviewer/viewerplugininterface.h"
 #include <MimeTreeParser/Enums>
 
@@ -105,9 +104,8 @@ public:
     /**
     * Create a mail viewer widget
     * @param parent parent widget
-    * @param mainWindow the application's main window
+    * @param widget the application's main widget
     * @param actionCollection the action collection where the widget's actions will belong to
-    * @param f window flags
     */
     explicit Viewer(QWidget *parent, QWidget *widget = nullptr, KActionCollection *actionCollection = nullptr);
     ~Viewer() override;
@@ -150,7 +148,7 @@ public:
 
     /**
     * Set the message that shall be shown.
-    * @param msg - the message to be shown. If 0, an empty page is displayed.
+    * @param message - the message to be shown. If 0, an empty page is displayed.
     * @param updateMode - update the display immediately or not. See UpdateMode.
     */
     void setMessage(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
@@ -190,7 +188,7 @@ public:
 
     /**
     * Sets a message as the current one and print it immediately.
-    * @param message the message to display and print
+    * @param msg the message to display and print
     */
     void printMessage(const Akonadi::Item &msg);
 
@@ -233,6 +231,7 @@ public:
     * Display a generic HTML splash page instead of a message.
     * @param templateName - the template to be loaded
     * @param data - data for the template
+    * @param domain the domain.
     */
     void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
 
@@ -343,6 +342,9 @@ public:
     Q_REQUIRED_RESULT bool showEncryptionDetails() const;
     void setShowEncryptionDetails(bool showDetails);
 
+    void hasMultiMessages(bool messages);
+    void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
+
 Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
@@ -381,6 +383,9 @@ Q_SIGNALS:
 
     void printingFinished();
     void zoomChanged(qreal zoomFactor);
+    void showNextMessage();
+    void showPreviousMessage();
+
 
 private:
     void initialize();

@@ -135,7 +135,7 @@ Widget::Widget(QWidget *pParent)
     setObjectName(QStringLiteral("messagelistwidget"));
 
     QVBoxLayout *g = new QVBoxLayout(this);
-    g->setMargin(0);
+    g->setContentsMargins(0, 0, 0, 0);
     g->setSpacing(0);
 
     d->quickSearchLine = new QuickSearchLine;
@@ -208,7 +208,7 @@ void Widget::populateStatusFilterCombo()
     d->mStatusFilterComboPopulationInProgress = true;
     KComboBox *tagFilterComboBox = d->quickSearchLine->tagFilterComboBox();
     d->mCurrentStatusFilterIndex = (tagFilterComboBox->currentIndex() != -1) ? tagFilterComboBox->currentIndex() : 0;
-    disconnect(tagFilterComboBox, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &Widget::statusSelected);
+    disconnect(tagFilterComboBox, qOverload<int>(&KComboBox::currentIndexChanged), this, &Widget::statusSelected);
 
     tagFilterComboBox->clear();
 
@@ -223,7 +223,7 @@ void Widget::addMessageTagItem(const QPixmap &icon, const QString &text, const Q
 void Widget::setCurrentStatusFilterItem()
 {
     d->quickSearchLine->updateComboboxVisibility();
-    connect(d->quickSearchLine->tagFilterComboBox(), QOverload<int>::of(&KComboBox::currentIndexChanged),
+    connect(d->quickSearchLine->tagFilterComboBox(), qOverload<int>(&KComboBox::currentIndexChanged),
             this, &Widget::statusSelected);
     d->quickSearchLine->tagFilterComboBox()->setCurrentIndex(d->mCurrentStatusFilterIndex >= d->quickSearchLine->tagFilterComboBox()->count() ? 0 : d->mCurrentStatusFilterIndex);
     d->mStatusFilterComboPopulationInProgress = false;
@@ -959,7 +959,7 @@ void Widget::searchEditTextEdited()
 
 void Widget::slotStatusButtonsClicked()
 {
-    // We also arbitrairly set tagId to an empty string, though we *could* allow filtering
+    // We also arbitrarily set tagId to an empty string, though we *could* allow filtering
     // by status AND tag...
     if (d->mFilter) {
         d->mFilter->setTagId(QString());

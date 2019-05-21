@@ -329,7 +329,7 @@ void TextMessagePart::parseContent()
          * because mailmain adds an unencrypted part at the end this should not break the overall status
          *
          * That's why we first set the tmp status and if one crypted/signed block comes afterwards, than
-         * the status is set to unencryped
+         * the status is set to unencrypted
          */
         bool fullySignedOrEncrypted = true;
         bool fullySignedOrEncryptedTmp = true;
@@ -482,6 +482,11 @@ QString HtmlMessagePart::text() const
     return mBodyHTML;
 }
 
+QString MimeTreeParser::HtmlMessagePart::plaintextContent() const
+{
+    return QString();
+}
+
 bool HtmlMessagePart::isHtml() const
 {
     return true;
@@ -547,7 +552,7 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
         // Still not found? Stupid apple mail actually puts the attachments inside of the
         // multipart/alternative, which is wrong. Therefore we also have to look for multipart/mixed
         // here.
-        // Do this only when prefering HTML mail, though, since otherwise the attachments are hidden
+        // Do this only when preferring HTML mail, though, since otherwise the attachments are hidden
         // when displaying plain text.
         if (!dataHtml) {
             dataHtml = findTypeInDirectChilds(node, "multipart/mixed");
@@ -868,7 +873,7 @@ void SignedMessagePart::sigStatusToMetaData()
         }
         for (uint iMail = 0; iMail < key.numUserIDs(); ++iMail) {
             // The following if /should/ always result in TRUE but we
-            // won't trust implicitely the plugin that gave us these data.
+            // won't trust implicitly the plugin that gave us these data.
             if (key.userID(iMail).email()) {
                 QString email = QString::fromUtf8(key.userID(iMail).email());
                 // ### work around gpgme 0.3.QString text() const override;x / cryptplug bug where the
@@ -1140,7 +1145,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         const GpgME::VerificationResult &verifyResult = m->verifyResult();
         partMetaData()->isSigned = verifyResult.signatures().size() > 0;
 
-        if (verifyResult.signatures().size() > 0) {
+        if (partMetaData()->isSigned) {
             auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, MessagePart::text(), mCryptoProto, mFromAddress, content()));
             subPart->setVerificationResult(m, nullptr);
             appendSubPart(subPart);

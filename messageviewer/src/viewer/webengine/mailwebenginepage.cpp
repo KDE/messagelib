@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2016-2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2016-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -20,6 +20,7 @@
 #include <QFontDatabase>
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
+#include <QtWebEngineWidgets>
 
 using namespace MessageViewer;
 
@@ -27,16 +28,6 @@ MailWebEnginePage::MailWebEnginePage(QObject *parent)
     : WebEngineViewer::WebEnginePage(parent)
 {
     initialize();
-}
-
-MailWebEnginePage::MailWebEnginePage(QWebEngineProfile *profile, QObject *parent)
-    : WebEngineViewer::WebEnginePage(profile, parent)
-{
-    initialize();
-}
-
-MailWebEnginePage::~MailWebEnginePage()
-{
 }
 
 void MailWebEnginePage::initialize()
@@ -59,6 +50,9 @@ void MailWebEnginePage::initialize()
 
     settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, false);
     settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, false);
+#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 13, 0)
+    settings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, false);
+#endif
     profile()->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
     profile()->setHttpCacheType(QWebEngineProfile::MemoryHttpCache);
 

@@ -15,7 +15,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include "grantleeheaderstyletest.h"
 
@@ -154,7 +154,7 @@ void GrantleeHeaderStyleTest::testRenderHeader_data()
 
     QDir dir(QStringLiteral(HEADER_DATA_DIR));
     const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
-    foreach (const QString &file, l) {
+    for (const QString &file : l) {
         if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))) {
             continue;
         }

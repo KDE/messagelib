@@ -63,13 +63,13 @@ public:
     ~View() override;
 
     /**
-    * Returns the Model attacched to this View. You probably never need to manipulate
+    * Returns the Model attached to this View. You probably never need to manipulate
     * it directly.
     */
     Model *model() const;
 
     /**
-    * Returns the Delegate attacched to this View. You probably never need to manipulate
+    * Returns the Delegate attached to this View. You probably never need to manipulate
     * it directly. Model uses it to obtain size hints.
     */
     Delegate *delegate() const;
@@ -413,6 +413,7 @@ protected:
     */
     void resizeEvent(QResizeEvent *e) override;
 
+    void paintEvent(QPaintEvent *event) override;
     /**
     * Reimplemented in order to kill the QTreeView column auto-resizing
     */
@@ -579,13 +580,13 @@ public Q_SLOTS:
     void slotExpandAllGroups();
 
     /**
-    * Expands the currect item.
+    * Expands the current item.
     * If it's a Message, it expands its thread, if its a group header it expands the group
     */
     void slotExpandCurrentItem();
 
     /**
-    * Collapses the currect item.
+    * Collapses the current item.
     * If it's a Message, it collapses its thread, if its a group header it collapses the group
     */
     void slotCollapseCurrentItem();
@@ -628,7 +629,7 @@ protected Q_SLOTS:
     void slotSelectionChanged(const QItemSelection &current, const QItemSelection &);
 
     /**
-    * Saves the state of the columns (width and visility) to the currently selected theme object.
+    * Saves the state of the columns (width and visibility) to the currently selected theme object.
     */
     void saveThemeColumnState();
 

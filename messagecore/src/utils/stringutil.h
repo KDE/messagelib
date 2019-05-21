@@ -14,7 +14,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #ifndef MESSAGECORE_STRINGUTIL_H
 #define MESSAGECORE_STRINGUTIL_H
@@ -49,7 +49,7 @@ namespace StringUtil {
 /**
    * Parses a mailto: url and extracts the information in the QMap (field name as key).
    */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QMap<QString, QString> parseMailtoUrl(const QUrl &url);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QList<QPair<QString, QString> > parseMailtoUrl(const QUrl &url);
 
 /**
    * Strips the signature blocks from a message text. "-- " is considered as a signature block separator.
@@ -130,23 +130,17 @@ enum AddressMode {
    * @p The number of addresses to show before collapsing the rest, if expandable is set to
    * ExpandableAddresses.
    */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display = DisplayNameOnly,
-                                             const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
-                                             const QString &fieldName = QString(), int collapseNumber = 4);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList, Display display = DisplayNameOnly, const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses, const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Same as above method, only for AddressList headers.
    */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display = DisplayNameOnly,
-                                             const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
-                                             const QString &fieldName = QString(), int collapseNumber = 4);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList, Display display = DisplayNameOnly, const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses, const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Same as the above, only for Mailbox::List types.
    */
-Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QVector<KMime::Types::Mailbox> &mailboxList, Display display = DisplayNameOnly,
-                                             const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses,
-                                             const QString &fieldName = QString(), int collapseNumber = 4);
+Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QVector<KMime::Types::Mailbox> &mailboxList, Display display = DisplayNameOnly, const QString &cssStyle = QString(), Link link = ShowLink, AddressMode expandable = FullAddresses, const QString &fieldName = QString(), int collapseNumber = 4);
 
 /**
    * Returns true if the given address is contained in the given address list.
@@ -160,10 +154,10 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT bool addressIsInAddressList(const QString &
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString guessEmailAddressFromLoginName(const QString &userName);
 
 /**
-   *  Relayouts the given string so that the invidual lines don't exceed the given
+   *  Relayouts the given string so that the individual lines don't exceed the given
    *  maximal length.
    *
-   *  As the name of the function implies, it it smart, which means it deals with quoting
+   *  As the name of the function implies, it is smart, which means it deals with quoting
    *  correctly. This means if a line already starts with quote characters and needs to be
    *  broken, the same quote characters are prepended to the next line as well.
    *
@@ -222,8 +216,6 @@ Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replySubject(KMime::Message *msg);
       @p str is replaced by @p newPrefix.
   **/
 Q_REQUIRED_RESULT MESSAGECORE_EXPORT QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
-
-
 }
 }
 

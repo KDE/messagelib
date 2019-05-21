@@ -29,7 +29,7 @@
 #include "recipientseditorsidewidget.h"
 
 #include "settings/messagecomposersettings.h"
-#include <MessageComposer/DistributionListDialog>
+#include "distributionlistdialog.h"
 
 #include "messagecomposer_debug.h"
 
@@ -103,7 +103,7 @@ RecipientsEditor::RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *p
     connect(this, &RecipientsEditor::lineAdded, this, &RecipientsEditor::slotLineAdded);
     connect(this, &RecipientsEditor::lineDeleted, this, &RecipientsEditor::slotLineDeleted);
 
-    addData(); // one defaut line
+    addData(); // one default line
 }
 
 RecipientsEditor::~RecipientsEditor()
@@ -166,7 +166,7 @@ QString RecipientsEditor::recipientString(Recipient::Type type) const
 QStringList RecipientsEditor::recipientStringList(Recipient::Type type) const
 {
     QStringList selectedRecipients;
-    foreach (const Recipient::Ptr &r, recipients()) {
+    for (const Recipient::Ptr &r : recipients()) {
         if (r->type() == type) {
             selectedRecipients << r->email();
         }
@@ -249,7 +249,7 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
     if (count > 0) {
         if (count == 1) {
             RecipientLineNG *last_rec = qobject_cast< RecipientLineNG * >(lines().first());
-            if (last_rec && last_rec->recipientType() == Recipient::Bcc) {
+            if (last_rec && (last_rec->recipientType() == Recipient::Bcc || last_rec->recipientType() == Recipient::ReplyTo)) {
                 rec->setRecipientType(Recipient::To);
             } else {
                 rec->setRecipientType(Recipient::Cc);
@@ -257,7 +257,11 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
         } else {
             RecipientLineNG *last_rec = qobject_cast< RecipientLineNG * >(lines().at(lines().count() - 2));
             if (last_rec) {
-                rec->setRecipientType(last_rec->recipientType());
+                if (last_rec->recipientType() == Recipient::ReplyTo) {
+                    rec->setRecipientType(Recipient::To);
+                } else {
+                    rec->setRecipientType(last_rec->recipientType());
+                }
             }
         }
         line->fixTabOrder(lines().constLast()->tabOut());

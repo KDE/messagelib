@@ -23,7 +23,7 @@
 #include <QHash>
 
 #include "messagecore_debug.h"
-#include <qtest.h>
+#include <QTest>
 
 #include <MessageCore/AttachmentPart>
 using namespace MessageCore;

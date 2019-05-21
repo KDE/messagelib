@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2018 Laurent Montel <montel@kde.org>
+   Copyright (C) 2018-2019 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -16,7 +16,6 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-
 
 #include "templatescommandmenu.h"
 
@@ -383,7 +382,6 @@ static const InsertCommand miscCommands[] = {
 };
 static const int miscCommandsCount = sizeof(miscCommands) / sizeof(*miscCommands);
 
-
 static const InsertCommand debugCommands[] = {
     {
         I18N_NOOP("Turn Debug On"),
@@ -405,7 +403,9 @@ void TemplatesCommandMenu::fillMenuFromActionMap(const QMap< QString, TemplatesC
     while (it != end) {
         QAction *action = new QAction(it.key(), menu);   //krazy:exclude=tipsandthis
         const TemplatesCommandMenu::Command cmd = it.value();
-        connect(action, &QAction::triggered, this, [this, cmd]{ slotInsertCommand(cmd); });
+        connect(action, &QAction::triggered, this, [this, cmd] {
+            slotInsertCommand(cmd);
+        });
         menu->addAction(action);
         ++it;
     }
@@ -418,7 +418,6 @@ TemplatesCommandMenu::TemplatesCommandMenu(QObject *parent)
 
 TemplatesCommandMenu::~TemplatesCommandMenu()
 {
-
 }
 
 QMenu *TemplatesCommandMenu::menu() const
@@ -505,7 +504,6 @@ void TemplatesCommandMenu::fillSubMenus()
             fillMenuFromActionMap(commandMap, menu);
         }
     }
-
 }
 
 TemplatesCommandMenu::MenuTypes TemplatesCommandMenu::type() const

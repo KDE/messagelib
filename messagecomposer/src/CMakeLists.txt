@@ -123,7 +123,10 @@ set(messagecomposer_plugineditorconverttext_SRCS
    plugineditorconverttext/plugineditorconverterinitialdata.cpp
    plugineditorconverttext/plugineditorconverterbeforeconvertingdata.cpp
    )
-
+set(messagecomposer_plugineditorgrammar_SRCS
+    plugineditorgrammar/plugineditorgrammarmanager.cpp
+    plugineditorgrammar/plugineditorgrammarcustomtoolsviewinterface.cpp
+    )
 
 set( messagecomposer_src
     ${messagecomposer_plugineditorconverttext_SRCS}
@@ -140,6 +143,7 @@ set( messagecomposer_src
     ${messagecomposer_sender_src}
     ${messagecomposer_followupreminder_SRCS}
     ${messagecomposer_plugineditorcheckbeforesend_SRCS}
+    ${messagecomposer_plugineditorgrammar_SRCS}
     utils/util.cpp
     settings/messagecomposersettings.cpp
     )
@@ -248,6 +252,15 @@ ecm_generate_headers(MessageComposer_Camelplugineditorconverttext_HEADERS
     RELATIVE plugineditorconverttext
     )
 
+ecm_generate_headers(MessageComposer_Camelplugineditorgrammar_HEADERS
+    HEADER_NAMES
+    PluginEditorGrammarManager
+    PluginEditorGrammarCustomToolsViewInterface
+    REQUIRED_HEADERS MessageComposer_plugineditorgrammar_HEADERS
+    PREFIX MessageComposer
+    RELATIVE plugineditorgrammar
+    )
+
 
 ecm_generate_headers(MessageComposer_Camelplugineditorcheckbeforesend_HEADERS
     HEADER_NAMES
@@ -350,7 +363,6 @@ ecm_generate_headers(MessageComposer_Camelcaserecipient_HEADERS
     HEADER_NAMES
     Recipient
     RecipientsEditor
-    DistributionListDialog
     RecipientLine
     REQUIRED_HEADERS MessageComposer_recipient_HEADERS
     PREFIX MessageComposer
@@ -411,6 +423,7 @@ install(FILES
     ${MessageComposer_Camelcasejob_HEADERS}
     ${MessageComposer_Camelcaseattachement_HEADERS}
     ${MessageComposer_Camelplugineditor_HEADERS}
+    ${MessageComposer_Camelplugineditorgrammar_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
     COMPONENT Devel
     )
@@ -436,6 +449,7 @@ install(FILES
     ${MessageComposer_job_HEADERS}
     ${MessageComposer_plugineditor_HEADERS}
     ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
+    ${MessageComposer_plugineditorgrammar_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/messagecomposer
     COMPONENT Devel
