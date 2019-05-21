@@ -12,7 +12,7 @@ option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branc
 option(KDEPIM_RUN_AKONADI_TEST "Enable autotest based on Akonadi." TRUE)
 option(DKIM_CHECKER_BUILD "DKIM CHECKER (experimental)" FALSE)
 
-set(KF5_MIN_VERSION "5.57.0")
+set(KF5_MIN_VERSION "5.58.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
@@ -66,6 +66,7 @@ find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Gui Test)
 find_package(KF5Codecs ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5I18n ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
+find_package(KF5NewStuff ${KMIME_LIB_VERSION} CONFIG REQUIRED)
 find_package(QGpgme ${GPGME_LIB_VERSION} CONFIG REQUIRED)
 message(STATUS "GPGME Version ${QGpgme_VERSION}")
 if (NOT ${MIMETREEPARSER_ONLY_BUILD})

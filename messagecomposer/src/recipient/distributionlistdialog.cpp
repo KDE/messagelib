@@ -106,21 +106,25 @@ DistributionListDialog::DistributionListDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "Save Distribution List"));
+    setModal(false);
+
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
+
+
     QWidget *topFrame = new QWidget(this);
     mainLayout->addWidget(topFrame);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel, this);
-    mUser1Button = new QPushButton;
+    mUser1Button = new QPushButton(this);
     buttonBox->addButton(mUser1Button, QDialogButtonBox::ActionRole);
     mUser1Button->setText(i18nc("@action:button", "Save List"));
     mUser1Button->setEnabled(false);
     mUser1Button->setDefault(true);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &DistributionListDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DistributionListDialog::reject);
+
     mainLayout->addWidget(buttonBox);
 
-    setModal(false);
 
     QBoxLayout *topLayout = new QVBoxLayout(topFrame);
     topLayout->setContentsMargins(0, 0, 0, 0);
