@@ -29,6 +29,7 @@ class GrantleeHeaderFormatterTest : public QObject
 private Q_SLOTS:
     void testInvalid();
     void testPrint();
+    void testFancyDate();
     void testBlock_data();
     void testBlock();
 };
