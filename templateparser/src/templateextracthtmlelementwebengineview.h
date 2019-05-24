@@ -31,11 +31,11 @@ public:
     explicit TemplateExtractHtmlElementWebEngineView(QObject *parent = nullptr);
     ~TemplateExtractHtmlElementWebEngineView();
 
-    QString bodyElement() const;
+    Q_REQUIRED_RESULT QString bodyElement() const;
 
-    QString headerElement() const;
+    Q_REQUIRED_RESULT QString headerElement() const;
 
-    QString htmlElement() const;
+    Q_REQUIRED_RESULT QString htmlElement() const;
 
     void setHtmlContent(const QString &html);
 

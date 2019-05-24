@@ -34,7 +34,7 @@ public:
 
     void setHtmlContent(const QString &html);
 
-    QString plainText() const;
+    Q_REQUIRED_RESULT QString plainText() const;
 
 Q_SIGNALS:
     void loadContentDone(bool success);
