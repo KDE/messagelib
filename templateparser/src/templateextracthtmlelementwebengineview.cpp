@@ -41,11 +41,10 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 
 using namespace TemplateParser;
 
-TemplateExtractHtmlElementWebEngineView::TemplateExtractHtmlElementWebEngineView(QWidget *parent)
-    : QWebEngineView(parent)
+TemplateExtractHtmlElementWebEngineView::TemplateExtractHtmlElementWebEngineView(QObject *parent)
+    : QObject(parent)
 {
     mPage = new TemplateWebEnginePage(this);
-    setPage(mPage);
     connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateExtractHtmlElementWebEngineView::slotLoadFinished);
 }
 
@@ -64,7 +63,7 @@ void TemplateExtractHtmlElementWebEngineView::setHtmlContent(const QString &html
 {
     clear();
     mHtmlElement = html;
-    setHtml(html);
+    mPage->setHtml(html);
 }
 
 QString extractHeaderBodyScript()
