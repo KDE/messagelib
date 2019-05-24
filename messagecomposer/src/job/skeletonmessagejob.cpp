@@ -19,7 +19,6 @@
 
 #include "settings/messagecomposersettings.h"
 #include "job/skeletonmessagejob.h"
-#include "messagecomposer-version.h"
 
 #include "part/infopart.h"
 #include "part/globalpart.h"
