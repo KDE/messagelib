@@ -17,41 +17,34 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEW_H
-#define TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEW_H
+#ifndef TEMPLATEWEBENGINEVIEW_H
+#define TEMPLATEWEBENGINEVIEW_H
 
 #include <QWebEngineView>
-#include "templateparser_private_export.h"
+#include "templateparser_export.h"
+
 namespace TemplateParser {
 class TemplateWebEnginePage;
-class TEMPLATEPARSER_TESTS_EXPORT TemplateExtractHtmlElementWebEngineView : public QObject
+class TEMPLATEPARSER_EXPORT TemplateExtractTextFromMail : public QObject
 {
     Q_OBJECT
 public:
-    explicit TemplateExtractHtmlElementWebEngineView(QObject *parent = nullptr);
-    ~TemplateExtractHtmlElementWebEngineView();
-
-    Q_REQUIRED_RESULT QString bodyElement() const;
-
-    Q_REQUIRED_RESULT QString headerElement() const;
-
-    Q_REQUIRED_RESULT QString htmlElement() const;
+    explicit TemplateExtractTextFromMail(QObject *parent = nullptr);
+    ~TemplateExtractTextFromMail();
 
     void setHtmlContent(const QString &html);
+
+    Q_REQUIRED_RESULT QString plainText() const;
 
 Q_SIGNALS:
     void loadContentDone(bool success);
 
 private:
-    void clear();
-    void slotLoadFinished(bool success);
-    void handleHtmlInfo(const QVariant &result);
+    void slotLoadFinished(bool ok);
+    void setPlainText(const QString &plainText);
 
-    QString mBodyElement;
-    QString mHeaderElement;
-    QString mHtmlElement;
-
+    QString mExtractedPlainText;
     TemplateWebEnginePage *mPage = nullptr;
 };
 }
-#endif // TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEW_H
+#endif // TEMPLATEWEBENGINEVIEW_H

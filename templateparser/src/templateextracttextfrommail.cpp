@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "templatewebengineview.h"
+#include "templateextracttextfrommail.h"
 #include "templatewebenginepage.h"
 #include "templateparser_debug.h"
 
@@ -40,40 +40,40 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
     return wrapper;
 }
 
-TemplateWebEngineView::TemplateWebEngineView(QObject *parent)
+TemplateExtractTextFromMail::TemplateExtractTextFromMail(QObject *parent)
     : QObject(parent)
 {
     mPage = new TemplateWebEnginePage(this);
-    connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateWebEngineView::slotLoadFinished);
+    connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateExtractTextFromMail::slotLoadFinished);
 }
 
-TemplateWebEngineView::~TemplateWebEngineView()
+TemplateExtractTextFromMail::~TemplateExtractTextFromMail()
 {
 }
 
-void TemplateWebEngineView::setHtmlContent(const QString &html)
+void TemplateExtractTextFromMail::setHtmlContent(const QString &html)
 {
     mExtractedPlainText.clear();
     mPage->setHtml(html);
 }
 
-void TemplateWebEngineView::slotLoadFinished(bool ok)
+void TemplateExtractTextFromMail::slotLoadFinished(bool ok)
 {
     if (ok) {
-        mPage->toPlainText(invoke(this, &TemplateWebEngineView::setPlainText));
+        mPage->toPlainText(invoke(this, &TemplateExtractTextFromMail::setPlainText));
     } else {
         qCWarning(TEMPLATEPARSER_LOG) << "Loading page failed";
         Q_EMIT loadContentDone(false);
     }
 }
 
-void TemplateWebEngineView::setPlainText(const QString &plainText)
+void TemplateExtractTextFromMail::setPlainText(const QString &plainText)
 {
     mExtractedPlainText = plainText;
     Q_EMIT loadContentDone(true);
 }
 
-QString TemplateWebEngineView::plainText() const
+QString TemplateExtractTextFromMail::plainText() const
 {
     return mExtractedPlainText;
 }

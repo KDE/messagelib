@@ -17,31 +17,31 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "templatewebengineviewtest.h"
-#include "templatewebengineview.h"
+#include "templateextracttextfrommailtest.h"
+#include "templateextracttextfrommail.h"
 #include <QTest>
 #include <QSignalSpy>
 
-TemplateWebEngineViewTest::TemplateWebEngineViewTest(QObject *parent)
+TemplateExtractTextFromMailTest::TemplateExtractTextFromMailTest(QObject *parent)
     : QObject(parent)
 {
 }
 
-TemplateWebEngineViewTest::~TemplateWebEngineViewTest()
+TemplateExtractTextFromMailTest::~TemplateExtractTextFromMailTest()
 {
 }
 
-void TemplateWebEngineViewTest::shouldHaveDefaultValue()
+void TemplateExtractTextFromMailTest::shouldHaveDefaultValue()
 {
-    TemplateParser::TemplateWebEngineView w;
+    TemplateParser::TemplateExtractTextFromMail w;
     QVERIFY(w.plainText().isEmpty());
 }
 
-void TemplateWebEngineViewTest::shouldExtractHtml()
+void TemplateExtractTextFromMailTest::shouldExtractHtml()
 {
-    TemplateParser::TemplateWebEngineView w;
+    TemplateParser::TemplateExtractTextFromMail w;
     QVERIFY(w.plainText().isEmpty());
-    QSignalSpy spy(&w, &TemplateParser::TemplateWebEngineView::loadContentDone);
+    QSignalSpy spy(&w, &TemplateParser::TemplateExtractTextFromMail::loadContentDone);
     w.setHtmlContent(QStringLiteral("<html><head></head><body>HTML Text</body></html>"));
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
@@ -50,4 +50,4 @@ void TemplateWebEngineViewTest::shouldExtractHtml()
     QCOMPARE(w.plainText(), QStringLiteral("HTML Text"));
 }
 
-QTEST_MAIN(TemplateWebEngineViewTest)
+QTEST_MAIN(TemplateExtractTextFromMailTest)

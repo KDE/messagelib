@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "templateextracthtmlelementwebengineview.h"
+#include "templateextracthtmlelementfrommail.h"
 #include "templateparser_debug.h"
 #include "templatewebenginepage.h"
 #include <QWebEngineScript>
@@ -41,25 +41,25 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 
 using namespace TemplateParser;
 
-TemplateExtractHtmlElementWebEngineView::TemplateExtractHtmlElementWebEngineView(QObject *parent)
+TemplateExtractHtmlElementFromMail::TemplateExtractHtmlElementFromMail(QObject *parent)
     : QObject(parent)
 {
     mPage = new TemplateWebEnginePage(this);
-    connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateExtractHtmlElementWebEngineView::slotLoadFinished);
+    connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateExtractHtmlElementFromMail::slotLoadFinished);
 }
 
-TemplateExtractHtmlElementWebEngineView::~TemplateExtractHtmlElementWebEngineView()
+TemplateExtractHtmlElementFromMail::~TemplateExtractHtmlElementFromMail()
 {
 }
 
-void TemplateExtractHtmlElementWebEngineView::clear()
+void TemplateExtractHtmlElementFromMail::clear()
 {
     mBodyElement.clear();
     mHeaderElement.clear();
     mHtmlElement.clear();
 }
 
-void TemplateExtractHtmlElementWebEngineView::setHtmlContent(const QString &html)
+void TemplateExtractHtmlElementFromMail::setHtmlContent(const QString &html)
 {
     clear();
     mHtmlElement = html;
@@ -78,18 +78,18 @@ QString extractHeaderBodyScript()
     return source;
 }
 
-void TemplateExtractHtmlElementWebEngineView::slotLoadFinished(bool success)
+void TemplateExtractHtmlElementFromMail::slotLoadFinished(bool success)
 {
     if (success) {
         mPage->runJavaScript(extractHeaderBodyScript(),
                              (QWebEngineScript::UserWorld + 2),
-                             invoke(this, &TemplateExtractHtmlElementWebEngineView::handleHtmlInfo));
+                             invoke(this, &TemplateExtractHtmlElementFromMail::handleHtmlInfo));
     } else {
         Q_EMIT loadContentDone(false);
     }
 }
 
-void TemplateExtractHtmlElementWebEngineView::handleHtmlInfo(const QVariant &result)
+void TemplateExtractHtmlElementFromMail::handleHtmlInfo(const QVariant &result)
 {
     if (result.isValid()) {
         const QVariantMap map = result.toMap();
@@ -102,17 +102,17 @@ void TemplateExtractHtmlElementWebEngineView::handleHtmlInfo(const QVariant &res
     }
 }
 
-QString TemplateExtractHtmlElementWebEngineView::htmlElement() const
+QString TemplateExtractHtmlElementFromMail::htmlElement() const
 {
     return mHtmlElement;
 }
 
-QString TemplateExtractHtmlElementWebEngineView::headerElement() const
+QString TemplateExtractHtmlElementFromMail::headerElement() const
 {
     return mHeaderElement;
 }
 
-QString TemplateExtractHtmlElementWebEngineView::bodyElement() const
+QString TemplateExtractHtmlElementFromMail::bodyElement() const
 {
     return mBodyElement;
 }

@@ -17,21 +17,20 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEWTEST_H
-#define TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEWTEST_H
+#ifndef TEMPLATEWEBENGINEVIEWTEST_H
+#define TEMPLATEWEBENGINEVIEWTEST_H
 
 #include <QObject>
 
-class TemplateExtractHtmlElementWebEngineViewTest : public QObject
+class TemplateExtractTextFromMailTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit TemplateExtractHtmlElementWebEngineViewTest(QObject *parent = nullptr);
-    ~TemplateExtractHtmlElementWebEngineViewTest() = default;
+    explicit TemplateExtractTextFromMailTest(QObject *parent = nullptr);
+    ~TemplateExtractTextFromMailTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
-    void shouldExtractHtml_data();
     void shouldExtractHtml();
 };
 
-#endif // TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEWTEST_H
+#endif // TEMPLATEWEBENGINEVIEWTEST_H
