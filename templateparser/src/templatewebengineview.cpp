@@ -40,11 +40,10 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
     return wrapper;
 }
 
-TemplateWebEngineView::TemplateWebEngineView(QWidget *parent)
-    : QWebEngineView(parent)
+TemplateWebEngineView::TemplateWebEngineView(QObject *parent)
+    : QObject(parent)
 {
     mPage = new TemplateWebEnginePage(this);
-    setPage(mPage);
     connect(mPage, &TemplateWebEnginePage::loadFinished, this, &TemplateWebEngineView::slotLoadFinished);
 }
 
@@ -55,7 +54,7 @@ TemplateWebEngineView::~TemplateWebEngineView()
 void TemplateWebEngineView::setHtmlContent(const QString &html)
 {
     mExtractedPlainText.clear();
-    setHtml(html);
+    mPage->setHtml(html);
 }
 
 void TemplateWebEngineView::slotLoadFinished(bool ok)

@@ -25,11 +25,11 @@
 
 namespace TemplateParser {
 class TemplateWebEnginePage;
-class TEMPLATEPARSER_EXPORT TemplateWebEngineView : public QWebEngineView
+class TEMPLATEPARSER_EXPORT TemplateWebEngineView : public QObject
 {
     Q_OBJECT
 public:
-    explicit TemplateWebEngineView(QWidget *parent = nullptr);
+    explicit TemplateWebEngineView(QObject *parent = nullptr);
     ~TemplateWebEngineView();
 
     void setHtmlContent(const QString &html);

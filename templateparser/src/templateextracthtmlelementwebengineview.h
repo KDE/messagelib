@@ -24,11 +24,11 @@
 #include "templateparser_private_export.h"
 namespace TemplateParser {
 class TemplateWebEnginePage;
-class TEMPLATEPARSER_TESTS_EXPORT TemplateExtractHtmlElementWebEngineView : public QWebEngineView
+class TEMPLATEPARSER_TESTS_EXPORT TemplateExtractHtmlElementWebEngineView : public QObject
 {
     Q_OBJECT
 public:
-    explicit TemplateExtractHtmlElementWebEngineView(QWidget *parent = nullptr);
+    explicit TemplateExtractHtmlElementWebEngineView(QObject *parent = nullptr);
     ~TemplateExtractHtmlElementWebEngineView();
 
     QString bodyElement() const;
