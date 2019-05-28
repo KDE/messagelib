@@ -57,11 +57,11 @@
 		{% endif %}
 		<div class="row">
 			<div class="headerleft">{{ header.datei18n }}</div>
-			<div class="headerrightdate" dir="{{ header.applicationDir }}">{{ header.date.short }}</div>
+			<div class="headerright date" dir="{{ header.applicationDir }}">{{ header.date.short }}</div>
 		</div>
 		{% if header.spamHTML %}
 		<div class="row">
-			<div class="headerleftnowrap">{{ header.spamstatusi18n }}</div>
+			<div class="headerleft nowrap">{{ header.spamstatusi18n }}</div>
 			<div class="headerright">{{ header.spamHTML|safe }}</div>
 		</div>
 		{% endif %}
