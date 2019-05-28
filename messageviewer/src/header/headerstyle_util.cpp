@@ -83,8 +83,7 @@ QString HeaderStyleUtil::dateString(const QDateTime &dateTime, HeaderStyleUtilDa
     case FancyShortDate:
         return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime);
     case FancyLongDate:
-    //Laurent fix me
-    //TODO return QLocale::system().toString(dateTime, QLocale::LongFormat);
+        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime, QString(), false);
     case CustomDate:
     default:
         return dateStr(dateTime);
