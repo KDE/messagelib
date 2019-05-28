@@ -99,6 +99,43 @@ KMime::Message::Ptr readAndParseMail(const QString &mailFile)
     return msg;
 }
 
+void GrantleeHeaderStyleTest::initTestCase()
+{
+    QStandardPaths::setTestModeEnabled(true);
+    qputenv("LC_ALL", "C");
+    expectedDataLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
+    expectedDataLocation += QDir::separator() + QStringLiteral("messageviewer/defaultthemes");
+    QDir targetDir(expectedDataLocation);
+    QDir sourceDir(QStringLiteral(GRANTLEETHEME_DATA_DIR));
+    const auto themeDirs = sourceDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+
+    if (targetDir.exists()) {
+        QVERIFY(targetDir.removeRecursively()); // Start with a fresh copy
+    }
+
+    for (const auto &themeDir : themeDirs) {
+        const QString &dirName = targetDir.filePath(themeDir.fileName());
+        QVERIFY(targetDir.mkpath(themeDir.fileName()));
+        const auto files = QDir(themeDir.absoluteFilePath()).entryInfoList(QDir::Files | QDir::Readable | QDir::NoSymLinks);
+        for (const auto &file : files) {
+            const QString &newPath = dirName + QDir::separator() + file.fileName();
+            QVERIFY(QFile(file.absoluteFilePath()).copy(newPath));
+        }
+    }
+    QFile antispamFile(QStringLiteral(HEADER_DATA_DIR "/kmail.antispamrc"));
+    const QString &newPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QDir::separator() + QStringLiteral("kmail.antispamrc");
+    antispamFile.copy(newPath);
+}
+
+void GrantleeHeaderStyleTest::cleanupTestCase()
+{
+    QDir targetDir(expectedDataLocation);
+
+    if (targetDir.exists()) {
+        QVERIFY(targetDir.removeRecursively()); // Start with a fresh copy
+    }
+}
+
 const GrantleeTheme::Theme defaultTheme(const QString &name = QStringLiteral("5.2"))
 {
     const QStringList defaultThemePath = QStandardPaths::locateAll(
