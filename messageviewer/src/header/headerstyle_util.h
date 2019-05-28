@@ -74,9 +74,6 @@ public:
     static Q_REQUIRED_RESULT QString dateStr(const QDateTime &dateTime);
 
     static Q_REQUIRED_RESULT QString dateShortStr(const QDateTime &dateTime);
-    static Q_REQUIRED_RESULT QSharedPointer<KMime::Headers::Generics::MailboxList> resentFromList(KMime::Message *message);
-
-    static Q_REQUIRED_RESULT QSharedPointer<KMime::Headers::Generics::MailboxList> resentToList(KMime::Message *message);
 
     Q_REQUIRED_RESULT xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 private:
