@@ -43,10 +43,10 @@
 			<div class="headerright">{{ header.bcc.fullAddress|safe }}</div>
 		</div>
 		{% endif %}
-		{% if header.sender %}
+		{% if header.sender.isSet %}
 		<div class="row">
 			<div class="headerleft">{{ header.senderi18n }}</div>
-			<div class="headerright">{{ header.sender|safe }}</div>
+			<div class="headerright">{{ header.sender.fullAddress|safe }}</div>
 		</div>
 		{% endif %}
 		{% if header.listid %}

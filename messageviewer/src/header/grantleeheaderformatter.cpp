@@ -144,6 +144,116 @@ inline QVariant TypeAccessor<QDateTime &>::lookUp(QDateTime const &object, const
 }
 }
 
+class Q_DECL_HIDDEN HeaderFormatter
+{
+public:
+    virtual ~HeaderFormatter(){}
+    virtual QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) = 0;
+    virtual QString i18nName() = 0;
+};
+
+class DefaultHeaderFormatter: public HeaderFormatter
+{
+public:
+    DefaultHeaderFormatter(const QByteArray &h)
+        : header(h)
+    {
+    }
+
+    QString i18nName() override {
+        if (header == "list-id") {
+            return i18n("List-Id:");
+        } else {
+            return QString();
+        }
+    }
+
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override {
+        return nodeHelper->mailHeaderAsBase(header.constData(), message)->asUnicodeString();
+    }
+private:
+    QByteArray header;
+};
+
+class SubjectFormatter: public HeaderFormatter
+{
+public:
+    QString i18nName() override {
+        return i18n("Subject:");
+    }
+
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override {
+        KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
+        // TODO: somehow, we need to get settings from format method.
+        //if (showEmoticons) {
+        //    flags |= KTextToHTML::ReplaceSmileys;
+        //}
+        auto subjectStr = nodeHelper->mailHeaderAsBase("subject", message)->asUnicodeString();
+
+        if (subjectStr.isEmpty()) {
+            return i18n("No Subject");
+        }
+
+        return HeaderStyleUtil::strToHtml(subjectStr, flags);
+    }
+};
+
+class DateFormatter: public HeaderFormatter
+{
+public:
+    QString i18nName() override {
+        return i18n("Date:");
+    }
+
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override {
+        const auto value = nodeHelper->dateHeader(message);
+        return value;
+    }
+};
+
+
+
+class AddressHeaderFormatter: public HeaderFormatter
+{
+public:
+    AddressHeaderFormatter(const QByteArray &h)
+    : header(h)
+    {
+    }
+
+    QString i18nName() override {
+        if (header == "to") {
+            return i18n("To:");
+        } else if (header == "Reply-To") {
+            return i18n("Reply To:");
+        } else if (header == "replyFrom") {
+            return i18n("Reply From:");
+        } else if (header == "cc") {
+            return i18n("CC:");
+        } else if (header == "bcc") {
+            return i18n("BCC:");
+        } else if (header == "from") {
+            return i18n("From:");
+        } else if (header == "sender") {
+            return i18n("Sender:");
+        } else if (header == "Resent-From") {
+            return i18n("resent from:");
+        } else if (header == "Resent-To") {
+            return i18n("resent to:");
+        } else {
+            return QString();
+        }
+    }
+
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override {
+        const auto value = nodeHelper->mailHeaderAsAddressList(header.constData(), message);
+        return QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(value));
+    }
+
+protected:
+    QByteArray header;
+};
+
 class Q_DECL_HIDDEN MessageViewer::GrantleeHeaderFormatter::Private
 {
 public:
@@ -158,6 +268,16 @@ public:
         templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(
             new Grantlee::FileSystemTemplateLoader);
         engine->addTemplateLoader(templateLoader);
+
+        QVector<QByteArray> addressHeaders;
+        addressHeaders << "to" << "reply-To" << "reply-From" << "cc" << "bcc" << "from" << "sender" << "resent-From" << "resent-To";
+
+        for (const auto &header: addressHeaders) {
+            registerHeaderFormatter(header, QSharedPointer<HeaderFormatter>(new AddressHeaderFormatter(header)));
+        }
+
+        registerHeaderFormatter("subject", QSharedPointer<HeaderFormatter>(new SubjectFormatter()));
+        registerHeaderFormatter("date", QSharedPointer<HeaderFormatter>(new DateFormatter()));
     }
 
     ~Private()
@@ -165,7 +285,12 @@ public:
         delete engine;
     }
 
+    void registerHeaderFormatter(const QByteArray &header, QSharedPointer<HeaderFormatter> formatter) {
+        headerFormatter[header] = formatter;
+    }
+
     QSharedPointer<Grantlee::FileSystemTemplateLoader> templateLoader;
+    QMap<QByteArray, QSharedPointer<HeaderFormatter>> headerFormatter;
     Grantlee::Engine *engine = nullptr;
     MessageViewer::HeaderStyleUtil headerStyleUtil;
     int iconSize;
@@ -226,86 +351,37 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     headerObject.insert(QStringLiteral("applicationDir"),
                         QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral(
                             "ltr"));
+
+    // TODO: use correct subject from nodeHelper->mailHeader
     headerObject.insert(QStringLiteral("subjectDir"),
                         d->headerStyleUtil.subjectDirectionString(message));
 
-    headerObject.insert(QStringLiteral("subjecti18n"), i18n("Subject:"));
-    KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
-    if (showEmoticons) {
-        flags |= KTextToHTML::ReplaceSmileys;
-    }
+    QVector<QByteArray> defaultHeaders;
+    defaultHeaders << "to" << "reply-To" << "reply-From" << "cc" << "bcc" << "from" << "sender" << "resent-From" << "resent-To" << "subject" << "organization" << "list-id" << "date";
 
-    headerObject.insert(QStringLiteral("subject"),
-                        d->headerStyleUtil.subjectString(message, flags));
-
-    if (nodeHelper->hasMailHeader("to", message)) {
-        const auto value = nodeHelper->mailHeaderAsAddressList("to",message);
-        headerObject.insert(QStringLiteral("toi18n"), i18n("To:"));
-        headerObject.insert(QStringLiteral("to"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(value)));
-    }
-
-    if (nodeHelper->hasMailHeader("replyTo", message)) {
-        const auto value = nodeHelper->mailHeaderAsAddressList("replyTo",message);
-        headerObject.insert(QStringLiteral("replyToi18n"), i18n("Reply to:"));
-        headerObject.insert(QStringLiteral("replyTo"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(value)));
-    }
-
-    if (nodeHelper->hasMailHeader("cc", message)) {
-        const auto value = nodeHelper->mailHeaderAsAddressList("cc",message);
-        headerObject.insert(QStringLiteral("cci18n"), i18n("CC:"));
-        headerObject.insert(QStringLiteral("cc"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(value)));
-    }
-
-    if (nodeHelper->hasMailHeader("bcc", message)) {
-        const auto value = nodeHelper->mailHeaderAsAddressList("bcc",message);
-        headerObject.insert(QStringLiteral("bcci18n"), i18n("BCC:"));
-        headerObject.insert(QStringLiteral("bcc"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(value)));
-    }
-
-    {
-        const auto value = nodeHelper->mailHeaderAsAddressList("from",message);
-        headerObject.insert(QStringLiteral("fromi18n"), i18n("From:"));
-        headerObject.insert(QStringLiteral("from"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(value)));
-    }
-    //Sender
-    headerObject.insert(QStringLiteral("senderi18n"), i18n("Sender:"));
-    headerObject.insert(QStringLiteral("sender"),
-                        HeaderStyleUtil::strToHtml(nodeHelper->mailHeaderAsBase("sender", message)->asUnicodeString()));
-    headerObject.insert(QStringLiteral("listidi18n"), i18n("List-Id:"));
-
-    if (nodeHelper->hasMailHeader("List-Id", message)) {
-        const auto value = nodeHelper->mailHeaderAsAddressList("List-Id", message);
-        headerObject.insert(QStringLiteral("listid"), value->asUnicodeString());
+    for (const auto &header: defaultHeaders) {
+            qDebug() << "add Header" << header;
+            QSharedPointer<HeaderFormatter> formatter;
+            if (d->headerFormatter.contains(header)) {
+                formatter = d->headerFormatter.value(header);
+            } else {
+                formatter = QSharedPointer<HeaderFormatter>(new DefaultHeaderFormatter(header));
+            }
+            const auto i18nName = formatter->i18nName();
+            const auto objectName = QString::fromUtf8(header).remove(QLatin1Char('-'));
+            if (nodeHelper->hasMailHeader(header.constData(), message)) {
+                const auto value = formatter->format(message, nodeHelper);
+                headerObject.insert(objectName, value);
+            }
+            if (!i18nName.isEmpty()) {
+                headerObject.insert(objectName+QStringLiteral("i18n"), i18nName);
+            }
     }
 
     const QString spamHtml = d->headerStyleUtil.spamStatus(message);
     if (!spamHtml.isEmpty()) {
         headerObject.insert(QStringLiteral("spamstatusi18n"), i18n("Spam Status:"));
         headerObject.insert(QStringLiteral("spamHTML"), spamHtml);
-    }
-
-    {
-        const auto value = nodeHelper->dateHeader(message);
-        headerObject.insert(QStringLiteral("datei18n"), i18n("Date:"));
-        headerObject.insert(QStringLiteral("date"), QVariant::fromValue(message->date()->dateTime()));
-    }
-
-    if (nodeHelper->hasMailHeader("Resent-From", message)) {
-        const auto value = nodeHelper->mailHeaderAsAddressList("Resent-From", message);
-        headerObject.insert(QStringLiteral("resentfromi18n"), i18n("resent from"));
-        headerObject.insert(QStringLiteral("resentfrom"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(value)));
-    }
-
-    if (nodeHelper->hasMailHeader("Resent-To", message)) {
-        const auto resentTo = nodeHelper->mailHeaderAsAddressList("Resent-From", message);
-        headerObject.insert(QStringLiteral("resenttoi18n"),
-                            i18np("receiver was", "receivers were", resentTo->mailboxes().count()));
-        headerObject.insert(QStringLiteral("resentto"), QVariant::fromValue(static_cast<const KMime::Headers::Generics::AddressList *>(resentTo)));
-    }
-
-    if (auto organization = message->organization(false)) {
-        headerObject.insert(QStringLiteral("organization"),
-                            HeaderStyleUtil::strToHtml(organization->asUnicodeString()));
     }
 
     if (!style->vCardName().isEmpty()) {
