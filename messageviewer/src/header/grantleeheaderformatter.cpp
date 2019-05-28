@@ -45,7 +45,7 @@ using namespace MessageViewer;
 Q_DECLARE_METATYPE(const KMime::Headers::Generics::AddressList *)
 Q_DECLARE_METATYPE(const KMime::Headers::Generics::MailboxList *)
 Q_DECLARE_METATYPE(QSharedPointer<KMime::Headers::Generics::MailboxList>)
-Q_DECLARE_METATYPE(const KMime::Headers::Date *)
+Q_DECLARE_METATYPE(QDateTime)
 
 // Read-only introspection of KMime::Headers::Generics::AddressList object.
 namespace Grantlee {
@@ -121,15 +121,15 @@ GRANTLEE_END_LOOKUP
 
 namespace Grantlee {
 template<>
-inline QVariant TypeAccessor<const KMime::Headers::Date *>::lookUp(const KMime::Headers::Date *const object, const QString &property)
+inline QVariant TypeAccessor<QDateTime &>::lookUp(QDateTime const &object, const QString &property)
 {
     MessageViewer::HeaderStyleUtil::HeaderStyleUtilDateFormat dateFormat;
     if (property == QStringLiteral("str")) {
-        return HeaderStyleUtil::dateStr(object->dateTime());
+        return HeaderStyleUtil::dateStr(object);
     } else if (property == QStringLiteral("short")) {
         dateFormat = MessageViewer::HeaderStyleUtil::ShortDate;
     } else if (property == QStringLiteral("long")) {
-        dateFormat = MessageViewer::HeaderStyleUtil::CustomDate;
+        dateFormat = MessageViewer::HeaderStyleUtil::LongDate;
     } else if (property == QStringLiteral("fancylong")) {
         dateFormat = MessageViewer::HeaderStyleUtil::FancyLongDate;
     } else if (property == QStringLiteral("fancyshort")) {
@@ -152,7 +152,7 @@ public:
         Grantlee::registerMetaType<const KMime::Headers::Generics::AddressList *>();
         Grantlee::registerMetaType<const KMime::Headers::Generics::MailboxList *>();
         Grantlee::registerMetaType<QSharedPointer<KMime::Headers::Generics::MailboxList> >();
-        Grantlee::registerMetaType<const KMime::Headers::Date *>();
+        Grantlee::registerMetaType<QDateTime>();
         iconSize = KIconLoader::global()->currentSize(KIconLoader::Toolbar);
         engine = new Grantlee::Engine;
         templateLoader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(
@@ -287,8 +287,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     {
         const auto value = nodeHelper->dateHeader(message);
         headerObject.insert(QStringLiteral("datei18n"), i18n("Date:"));
-        // TODO: rewrite that QDateTime is expected in GRANTLEE
-        headerObject.insert(QStringLiteral("date"), QVariant::fromValue(static_cast<const KMime::Headers::Date *>(message->date())));
+        headerObject.insert(QStringLiteral("date"), QVariant::fromValue(message->date()->dateTime()));
     }
 
     if (nodeHelper->hasMailHeader("Resent-From", message)) {
