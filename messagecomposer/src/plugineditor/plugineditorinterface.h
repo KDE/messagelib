@@ -24,7 +24,6 @@
 #include <PimCommon/AbstractGenericPluginInterface>
 #include <MessageComposer/PluginActionType>
 #include "messagecomposer_export.h"
-class QAction;
 
 namespace KPIMTextEdit {
 class RichTextEditor;

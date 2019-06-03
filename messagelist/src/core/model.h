@@ -37,7 +37,6 @@ typedef long int MessageItemSetReference;
 class Filter;
 class GroupHeaderItem;
 class Item;
-class Manager;
 class MessageItem;
 class Theme;
 class StorageModel;
