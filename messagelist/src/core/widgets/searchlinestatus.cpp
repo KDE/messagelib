@@ -73,6 +73,8 @@ void SearchLineStatus::keyPressEvent(QKeyEvent *e)
         } else {
             Q_EMIT forceLostFocus();
         }
+    } else if (e->key() == Qt::Key_Q && (e->modifiers() & (Qt::ShiftModifier | Qt::AltModifier))) {
+        mLockAction->trigger();
     } else {
         QLineEdit::keyPressEvent(e);
     }
