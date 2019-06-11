@@ -2694,7 +2694,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
         if ((!mi->parent()) || (mi->threadingStatus() == MessageItem::ParentMissing)) {
             qint64 parentId;
             auto mparent = mThreadingCache.parentForItem(mi, parentId);
-            if (mparent) {
+            if (mparent && !mparent->hasAncestor(mi)) {
                 mi->setThreadingStatus(MessageItem::PerfectParentFound);
                 attachMessageToParent(mparent, mi, SkipCacheUpdate);
             } else {
