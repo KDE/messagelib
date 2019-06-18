@@ -79,6 +79,7 @@ public:
     {
     }
 
+    virtual QString name() const = 0;
     /** Called when LMB-clicking on a link in the reader. Should
     start processing equivalent to "opening" the link.
 

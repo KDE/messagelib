@@ -34,6 +34,10 @@ using namespace MessageViewer;
 class TestBodyPartURLHandler : public Interface::BodyPartURLHandler
 {
 public:
+    QString name() const override
+    {
+        return QStringLiteral("TestBodyPartURLHandler");
+    }
     void testPath(const QString &path) const
     {
         QCOMPARE(path, mPath);
