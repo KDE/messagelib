@@ -22,8 +22,6 @@
 
 #include "messagecomposer_export.h"
 #include <QByteArray>
-#include <QImage>
-#include <QBuffer>
 
 namespace MessageComposer {
 class ImageScalingPrivate;

@@ -19,7 +19,6 @@
 #include "dkimmanagerkeydialog.h"
 #include "dkimmanagerkeywidget.h"
 
-#include <KLocalizedString>
 
 #include <QVBoxLayout>
 #include <QDialogButtonBox>

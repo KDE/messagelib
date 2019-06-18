@@ -32,7 +32,6 @@
 
 #include <QByteArray>
 #include <QHash>
-#include <QScopedPointer>
 #include <QString>
 
 #include <vector>

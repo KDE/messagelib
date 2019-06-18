@@ -28,7 +28,6 @@
 #include "interfaces/htmlwriter.h"
 
 #include <KIconLoader>
-#include <KLocalizedString>
 #include <QUrl>
 
 using namespace MessageViewer;

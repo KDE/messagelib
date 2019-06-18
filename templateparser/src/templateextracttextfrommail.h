@@ -20,9 +20,8 @@
 #ifndef TEMPLATEWEBENGINEVIEW_H
 #define TEMPLATEWEBENGINEVIEW_H
 
-#include <QWebEngineView>
 #include "templateparser_export.h"
-
+#include <QObject>
 namespace TemplateParser {
 class TemplateWebEnginePage;
 class TEMPLATEPARSER_EXPORT TemplateExtractTextFromMail : public QObject

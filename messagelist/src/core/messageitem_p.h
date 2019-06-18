@@ -28,7 +28,6 @@
 #include <Monitor>
 #include <Tag>
 #include <KJob>
-#include <QPointer>
 #include <QCache>
 
 namespace MessageList {

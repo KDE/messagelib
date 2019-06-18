@@ -22,7 +22,6 @@
 #include <grantlee/exception.h>
 #include <grantlee/parser.h>
 
-#include <QDebug>
 
 using namespace MessageViewer;
 

@@ -21,6 +21,7 @@
 #define TEMPLATEPARSEREXTRACTHTMLINFORESULT_H
 
 #include "templateparser_export.h"
+#include <QString>
 #include <QObject>
 struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult {
     void clear();

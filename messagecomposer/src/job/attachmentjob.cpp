@@ -22,7 +22,6 @@
 
 #include "job/attachmentjob.h"
 
-#include <KEncodingProber>
 
 #include "contentjobbase_p.h"
 #include "part/globalpart.h"

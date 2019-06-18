@@ -42,11 +42,9 @@
 
 #include <KPluginLoader>
 
+#include <QMimeDatabase>
 #include <QJsonArray>
 #include <QJsonObject>
-#include <QMimeDatabase>
-#include <QMimeType>
-
 #include <algorithm>
 
 using namespace MessageViewer;

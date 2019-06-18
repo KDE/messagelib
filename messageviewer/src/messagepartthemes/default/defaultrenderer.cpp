@@ -29,7 +29,6 @@
 #include "messagepartrendererbase.h"
 #include "messagepartrendererfactory.h"
 #include "htmlblock.h"
-#include <QtWebEngineWidgets>
 #include "utils/iconnamecache.h"
 #include "utils/mimetype.h"
 #include "viewer/attachmentstrategy.h"
@@ -49,7 +48,6 @@
 #include <KIconLoader>
 #include <KLocalizedString>
 
-#include <QApplication>
 #include <QUrl>
 
 #include <grantlee/context.h>

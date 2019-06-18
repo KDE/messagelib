@@ -20,7 +20,6 @@
 #include "dkimmanagerkeywidget.h"
 #include "dkimmanagerkey.h"
 
-#include <KLocalizedString>
 #include <QTreeWidget>
 #include <QVBoxLayout>
 

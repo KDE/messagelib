@@ -34,7 +34,6 @@
 #include <MessageCore/MessageCoreSettings>
 
 #include <KEmailAddress>
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KTextToHTML>
 

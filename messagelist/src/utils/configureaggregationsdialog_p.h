@@ -22,7 +22,7 @@
 #define MESSAGELIST_UTILS_CONFIGUREAGGREGATIONSDIALOG_P_H
 
 #include "utils/configureaggregationsdialog.h"
-
+#include <QListWidgetItem>
 namespace MessageList {
 namespace Core {
 class Aggregation;

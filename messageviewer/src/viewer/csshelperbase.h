@@ -37,7 +37,6 @@
 
 #include <QColor>
 #include <QFont>
-#include <QUrl>
 
 class QString;
 class QPaintDevice;
