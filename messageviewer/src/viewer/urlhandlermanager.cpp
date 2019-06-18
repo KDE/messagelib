@@ -163,8 +163,12 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
 QVector<const Interface::BodyPartURLHandler *> BodyPartURLHandlerManager::handlersForPart(KMime::Content *node) const
 {
     if (auto ct = node->contentType(false)) {
-        const auto mimeType = ct->mimeType();
+        auto mimeType = ct->mimeType();
         if (!mimeType.isEmpty()) {
+            // Bug 390900
+            if (mimeType == "text/x-vcard") {
+                mimeType = "text/vcard";
+            }
             return mHandlers.value(mimeType);
         }
     }
