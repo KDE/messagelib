@@ -28,7 +28,6 @@ class CustomToolsPlugin;
 }
 namespace MessageComposer {
 class PluginEditorGrammarManagerPrivate;
-class PluginEditorConvertText;
 class MESSAGECOMPOSER_EXPORT PluginEditorGrammarManager : public QObject
 {
     Q_OBJECT

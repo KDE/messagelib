@@ -20,22 +20,23 @@
 #ifndef TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEW_H
 #define TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEW_H
 
-#include <QWebEngineView>
 #include "templateparser_private_export.h"
+#include <QObject>
+#include <QString>
 namespace TemplateParser {
 class TemplateWebEnginePage;
-class TEMPLATEPARSER_TESTS_EXPORT TemplateExtractHtmlElementWebEngineView : public QWebEngineView
+class TEMPLATEPARSER_TESTS_EXPORT TemplateExtractHtmlElementFromMail : public QObject
 {
     Q_OBJECT
 public:
-    explicit TemplateExtractHtmlElementWebEngineView(QWidget *parent = nullptr);
-    ~TemplateExtractHtmlElementWebEngineView();
+    explicit TemplateExtractHtmlElementFromMail(QObject *parent = nullptr);
+    ~TemplateExtractHtmlElementFromMail();
 
-    QString bodyElement() const;
+    Q_REQUIRED_RESULT QString bodyElement() const;
 
-    QString headerElement() const;
+    Q_REQUIRED_RESULT QString headerElement() const;
 
-    QString htmlElement() const;
+    Q_REQUIRED_RESULT QString htmlElement() const;
 
     void setHtmlContent(const QString &html);
 

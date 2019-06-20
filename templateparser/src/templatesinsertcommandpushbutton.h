@@ -24,7 +24,6 @@
 #include "templateparser_export.h"
 #include <TemplateParser/TemplatesCommandMenu>
 
-class KActionMenu;
 
 namespace TemplateParser {
 class TEMPLATEPARSER_EXPORT TemplatesInsertCommandPushButton : public QPushButton

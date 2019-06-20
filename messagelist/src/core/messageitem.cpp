@@ -31,7 +31,7 @@
 #include <tagfetchscope.h>
 #include <KIconLoader>
 #include <KLocalizedString>
-
+#include <QPointer>
 #include "messagelist_debug.h"
 using namespace MessageList::Core;
 

@@ -34,10 +34,6 @@ namespace KIdentityManagement {
 class IdentityManager;
 }
 
-namespace MessageCore {
-class ImageCollector;
-}
-
 namespace TemplateParser {
 class TemplateParserJobPrivate
 {

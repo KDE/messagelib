@@ -54,7 +54,6 @@
 
 #include <KMime/Content>
 
-#include <QUrl>
 
 using namespace MimeTreeParser;
 

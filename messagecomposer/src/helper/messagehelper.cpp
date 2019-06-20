@@ -18,7 +18,6 @@
 */
 
 #include "messagehelper.h"
-#include "messagecomposer-version.h"
 #include "utils/util.h"
 #include "settings/messagecomposersettings.h"
 

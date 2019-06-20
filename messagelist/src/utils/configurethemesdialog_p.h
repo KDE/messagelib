@@ -22,12 +22,11 @@
 #define MESSAGELIST_UTILS_CONFIGURETHEMESDIALOG_P_H
 
 #include "utils/configurethemesdialog.h"
-
+class QListWidgetItem;
 namespace MessageList {
 namespace Core {
 class Theme;
 }
-
 namespace Utils {
 class ThemeEditor;
 class ThemeListWidget;

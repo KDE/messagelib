@@ -20,7 +20,6 @@
 
 #include <QGpgME/DecryptVerifyJob>
 
-#include <QStringList>
 
 using namespace QGpgME;
 using namespace GpgME;

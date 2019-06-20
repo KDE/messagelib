@@ -22,7 +22,6 @@
 
 #include <QObject>
 #include "messagecomposer_export.h"
-class KActionCollection;
 namespace MessageComposer {
 class PluginEditorConverttextPrivate;
 class PluginEditorConvertTextInterface;

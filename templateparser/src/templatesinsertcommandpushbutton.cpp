@@ -19,8 +19,6 @@
 
 #include "templatesinsertcommandpushbutton.h"
 
-#include <QAction>
-#include <KActionMenu>
 #include "templateparser_debug.h"
 #include <KLocalizedString>
 

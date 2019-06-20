@@ -17,21 +17,33 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEWTEST_H
-#define TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEWTEST_H
+#ifndef TEMPLATEWEBENGINEVIEW_H
+#define TEMPLATEWEBENGINEVIEW_H
 
+#include "templateparser_export.h"
 #include <QObject>
-
-class TemplateExtractHtmlElementWebEngineViewTest : public QObject
+namespace TemplateParser {
+class TemplateWebEnginePage;
+class TEMPLATEPARSER_EXPORT TemplateExtractTextFromMail : public QObject
 {
     Q_OBJECT
 public:
-    explicit TemplateExtractHtmlElementWebEngineViewTest(QObject *parent = nullptr);
-    ~TemplateExtractHtmlElementWebEngineViewTest() = default;
-private Q_SLOTS:
-    void shouldHaveDefaultValue();
-    void shouldExtractHtml_data();
-    void shouldExtractHtml();
-};
+    explicit TemplateExtractTextFromMail(QObject *parent = nullptr);
+    ~TemplateExtractTextFromMail();
 
-#endif // TEMPLATEEXTRACTHTMLELEMENTWEBENGINEVIEWTEST_H
+    void setHtmlContent(const QString &html);
+
+    Q_REQUIRED_RESULT QString plainText() const;
+
+Q_SIGNALS:
+    void loadContentDone(bool success);
+
+private:
+    void slotLoadFinished(bool ok);
+    void setPlainText(const QString &plainText);
+
+    QString mExtractedPlainText;
+    TemplateWebEnginePage *mPage = nullptr;
+};
+}
+#endif // TEMPLATEWEBENGINEVIEW_H

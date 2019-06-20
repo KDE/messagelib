@@ -4,8 +4,6 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECOMPOSER
     SOVERSION 5
     )
 
-configure_file(src/messagecomposer-version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/src/messagecomposer-version.h @ONLY)
-
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5MessageComposer")
 

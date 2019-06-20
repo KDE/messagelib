@@ -14,9 +14,9 @@ set(templateparser_LIB_SRCS
     templatesinsertcommandaction.cpp
     templatestextedit.cpp
     templatestexteditor.cpp
-    templatewebengineview.cpp
+    templateextracttextfrommail.cpp
     templatewebenginepage.cpp
-    templateextracthtmlelementwebengineview.cpp
+    templateextracthtmlelementfrommail.cpp
     templateparserextracthtmlinfo.cpp
     templateparserextracthtmlinforesult.cpp
     templateparseremailaddressrequesterbase.cpp

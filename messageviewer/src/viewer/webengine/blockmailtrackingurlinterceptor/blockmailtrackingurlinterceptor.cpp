@@ -20,7 +20,6 @@
 #include "blockmailtrackingurlinterceptor.h"
 
 #include <QWebEngineUrlRequestInfo>
-#include <QDebug>
 
 using namespace MessageViewer;
 BlockMailTrackingUrlInterceptor::BlockMailTrackingUrlInterceptor(QObject *parent)

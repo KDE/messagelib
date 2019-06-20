@@ -19,7 +19,8 @@
 
 #include "imagescaling.h"
 #include "settings/messagecomposersettings.h"
-
+#include <QImage>
+#include <QBuffer>
 using namespace MessageComposer;
 
 class MessageComposer::ImageScalingPrivate

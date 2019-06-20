@@ -29,7 +29,6 @@
 
 #include "messagepartrendererbase.h"
 
-#include <QApplication>
 
 using namespace MessageViewer;
 

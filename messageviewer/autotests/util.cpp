@@ -19,7 +19,6 @@
 #include "util.h"
 
 #include <QFile>
-#include <QTest>
 
 KMime::Message::Ptr MessageViewer::Test::readAndParseMail(const QString &mailFile)
 {

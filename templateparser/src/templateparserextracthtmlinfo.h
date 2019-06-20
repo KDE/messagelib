@@ -25,8 +25,8 @@
 #include "templateparserextracthtmlinforesult.h"
 
 namespace TemplateParser {
-class TemplateWebEngineView;
-class TemplateExtractHtmlElementWebEngineView;
+class TemplateExtractTextFromMail;
+class TemplateExtractHtmlElementFromMail;
 
 class TEMPLATEPARSER_TESTS_EXPORT TemplateParserExtractHtmlInfo : public QObject
 {
@@ -54,8 +54,8 @@ private:
 
     QString mTemplateStr;
 
-    TemplateWebEngineView *mTemplateWebEngineView = nullptr;
-    TemplateExtractHtmlElementWebEngineView *mExtractHtmlElementWebEngineView = nullptr;
+    TemplateExtractTextFromMail *mTemplateWebEngineView = nullptr;
+    TemplateExtractHtmlElementFromMail *mExtractHtmlElementWebEngineView = nullptr;
 };
 }
 #endif // TEMPLATEPARSEREXTRACTHTMLINFO_H

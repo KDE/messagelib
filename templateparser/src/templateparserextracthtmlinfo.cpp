@@ -18,8 +18,8 @@
 */
 
 #include "templateparserextracthtmlinfo.h"
-#include "templateextracthtmlelementwebengineview.h"
-#include "templatewebengineview.h"
+#include "templateextracthtmlelementfrommail.h"
+#include "templateextracttextfrommail.h"
 #include "templateparser_debug.h"
 
 using namespace TemplateParser;
@@ -59,8 +59,8 @@ void TemplateParserExtractHtmlInfo::start()
     mResult.clear();
     mResult.mTemplate = mTemplateStr;
     if (!mHtmlForExtractingTextPlain.isEmpty()) {
-        mTemplateWebEngineView = new TemplateWebEngineView;
-        connect(mTemplateWebEngineView, &TemplateWebEngineView::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished);
+        mTemplateWebEngineView = new TemplateExtractTextFromMail;
+        connect(mTemplateWebEngineView, &TemplateExtractTextFromMail::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished);
         mTemplateWebEngineView->setHtmlContent(mHtmlForExtractingTextPlain);
     } else {
         qCDebug(TEMPLATEPARSER_LOG) << "html string is empty for extracting to plainText";
@@ -76,8 +76,8 @@ void TemplateParserExtractHtmlInfo::slotExtractToPlainTextFinished(bool success)
         qCDebug(TEMPLATEPARSER_LOG) << "Impossible to extract plaintext";
     }
     if (!mHtmlForExtractionHeaderAndBody.isEmpty()) {
-        mExtractHtmlElementWebEngineView = new TemplateExtractHtmlElementWebEngineView;
-        connect(mExtractHtmlElementWebEngineView, &TemplateExtractHtmlElementWebEngineView::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished);
+        mExtractHtmlElementWebEngineView = new TemplateExtractHtmlElementFromMail;
+        connect(mExtractHtmlElementWebEngineView, &TemplateExtractHtmlElementFromMail::loadContentDone, this, &TemplateParserExtractHtmlInfo::slotExtractHtmlElementFinished);
         mExtractHtmlElementWebEngineView->setHtmlContent(mHtmlForExtractionHeaderAndBody);
     } else {
         qCDebug(TEMPLATEPARSER_LOG) << "html string is empty for extracting to header and body";

@@ -20,7 +20,6 @@
 #include <QFontDatabase>
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
-#include <QtWebEngineWidgets>
 
 using namespace MessageViewer;
 

@@ -22,7 +22,6 @@
 #include <kpimtextedit/richtextcomposerimages.h>
 #include "richtextcomposersignatures.h"
 #include <pimcommon/autocorrection.h>
-#include <QDebug>
 #include <part/textpart.h>
 #include "settings/messagecomposersettings.h"
 #include <grantlee/markupdirector.h>

@@ -49,8 +49,12 @@ public:
     Q_REQUIRED_RESULT int blockId() const;
     void setBlockId(int blockId);
 
+    Q_REQUIRED_RESULT QStringList infoUrls() const;
+    void setInfoUrls(const QStringList &urls);
+
 private:
     QStringList mSuggestions;
+    QStringList mInfoUrls;
     QString mReplacement;
     int mStart = -1;
     int mLength = -1;

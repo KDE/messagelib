@@ -115,6 +115,16 @@ void PluginGrammarAction::setBlockId(int blockId)
     mBlockId = blockId;
 }
 
+QStringList PluginGrammarAction::infoUrls() const
+{
+    return mInfoUrls;
+}
+
+void PluginGrammarAction::setInfoUrls(const QStringList &urls)
+{
+    mInfoUrls = urls;
+}
+
 QDebug operator <<(QDebug d, const PluginGrammarAction &t)
 {
     d << "start " << t.start();
@@ -122,5 +132,6 @@ QDebug operator <<(QDebug d, const PluginGrammarAction &t)
     d << "blockId " << t.blockId();
     d << "suggestion " << t.suggestions();
     d << "replacement " << t.replacement();
+    d << "urls " << t.infoUrls();
     return d;
 }

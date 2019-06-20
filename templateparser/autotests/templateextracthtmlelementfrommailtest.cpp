@@ -17,25 +17,25 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "templateextracthtmlelementwebengineviewtest.h"
-#include "templateextracthtmlelementwebengineview.h"
+#include "templateextracthtmlelementfrommailtest.h"
+#include "templateextracthtmlelementfrommail.h"
 #include <QTest>
 #include <QSignalSpy>
 
-TemplateExtractHtmlElementWebEngineViewTest::TemplateExtractHtmlElementWebEngineViewTest(QObject *parent)
+TemplateExtractHtmlElementFromMailTest::TemplateExtractHtmlElementFromMailTest(QObject *parent)
     : QObject(parent)
 {
 }
 
-void TemplateExtractHtmlElementWebEngineViewTest::shouldHaveDefaultValue()
+void TemplateExtractHtmlElementFromMailTest::shouldHaveDefaultValue()
 {
-    TemplateParser::TemplateExtractHtmlElementWebEngineView w;
+    TemplateParser::TemplateExtractHtmlElementFromMail w;
     QVERIFY(w.bodyElement().isEmpty());
     QVERIFY(w.headerElement().isEmpty());
     QVERIFY(w.htmlElement().isEmpty());
 }
 
-void TemplateExtractHtmlElementWebEngineViewTest::shouldExtractHtml_data()
+void TemplateExtractHtmlElementFromMailTest::shouldExtractHtml_data()
 {
     QTest::addColumn<QString>("html");
     QTest::addColumn<QString>("body");
@@ -44,14 +44,14 @@ void TemplateExtractHtmlElementWebEngineViewTest::shouldExtractHtml_data()
     QTest::newRow("empty") << QString() << QString() << QString();
 }
 
-void TemplateExtractHtmlElementWebEngineViewTest::shouldExtractHtml()
+void TemplateExtractHtmlElementFromMailTest::shouldExtractHtml()
 {
     QFETCH(QString, html);
     QFETCH(QString, body);
     QFETCH(QString, header);
-    TemplateParser::TemplateExtractHtmlElementWebEngineView w;
+    TemplateParser::TemplateExtractHtmlElementFromMail w;
     QVERIFY(w.htmlElement().isEmpty());
-    QSignalSpy spy(&w, &TemplateParser::TemplateExtractHtmlElementWebEngineView::loadContentDone);
+    QSignalSpy spy(&w, &TemplateParser::TemplateExtractHtmlElementFromMail::loadContentDone);
     w.setHtmlContent(html);
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
@@ -62,4 +62,4 @@ void TemplateExtractHtmlElementWebEngineViewTest::shouldExtractHtml()
     QCOMPARE(w.bodyElement(), body);
 }
 
-QTEST_MAIN(TemplateExtractHtmlElementWebEngineViewTest)
+QTEST_MAIN(TemplateExtractHtmlElementFromMailTest)

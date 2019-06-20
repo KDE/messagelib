@@ -30,6 +30,7 @@
 #include <QPushButton>
 #include <QFrame>
 #include <QMap>
+#include <QListWidget>
 
 #include <KMessageBox>
 #include <KLocalizedString>

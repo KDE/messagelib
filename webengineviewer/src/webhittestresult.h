@@ -42,7 +42,6 @@
 #include <QRect>
 #include <QString>
 #include <QVariant>
-#include <QWebEngineContextMenuData>
 
 namespace WebEngineViewer {
 class WebHitTestResultPrivate;
