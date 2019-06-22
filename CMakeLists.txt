@@ -12,7 +12,7 @@ option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branc
 option(KDEPIM_RUN_AKONADI_TEST "Enable autotest based on Akonadi." TRUE)
 option(DKIM_CHECKER_BUILD "DKIM CHECKER (experimental)" FALSE)
 
-set(KF5_MIN_VERSION "5.58.0")
+set(KF5_MIN_VERSION "5.59.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
@@ -129,9 +129,5 @@ if (NOT ${MIMETREEPARSER_ONLY_BUILD})
    add_subdirectory(webengineviewer)
 endif()
 
-if (${ECM_VERSION} STRGREATER "5.58.0")
-    install(FILES messagelib.renamecategories messagelib.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
-else()
-    install(FILES messagelib.renamecategories messagelib.categories  DESTINATION ${KDE_INSTALL_CONFDIR})
-endif()
+install(FILES messagelib.renamecategories messagelib.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
