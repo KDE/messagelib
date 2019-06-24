@@ -67,7 +67,7 @@ void WebEnginePage::init()
 
 WebEngineViewer::WebHitTest *WebEnginePage::hitTestContent(const QPoint &pos)
 {
-    return new WebHitTest(this, mapToViewport(pos));
+    return new WebHitTest(this, mapToViewport(pos), pos);
 }
 
 QPoint WebEnginePage::mapToViewport(const QPoint &pos) const

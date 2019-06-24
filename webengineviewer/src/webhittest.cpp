@@ -45,18 +45,19 @@ InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
 class WebEngineViewer::WebHitTestPrivate
 {
 public:
-    WebHitTestPrivate(const QPoint &pos)
-        : m_pos(pos)
+    WebHitTestPrivate(const QPoint &pos, const QPoint &zoomedPos)
+        : m_zoomedPos(zoomedPos), m_pos(pos)
     {
     }
 
+    QPoint m_zoomedPos;
     QPoint m_pos;
     QUrl m_pageUrl;
 };
 
-WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
+WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &zoomedPos, const QPoint &pos, QObject *parent)
     : QObject(parent)
-    , d(new WebHitTestPrivate(pos))
+    , d(new WebHitTestPrivate(pos, zoomedPos))
 {
     QString source = QStringLiteral("(function() {"
                                     "var e = document.elementFromPoint(%1, %2);"
@@ -115,7 +116,7 @@ WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
                                     "return res;"
                                     "})()");
 
-    const QString &js = source.arg(d->m_pos.x()).arg(d->m_pos.y());
+    const QString &js = source.arg(d->m_zoomedPos.x()).arg(d->m_zoomedPos.y());
     d->m_pageUrl = page->url();
     page->runJavaScript(js,
                         WebEngineViewer::WebEngineManageScript::scriptWordId(),
