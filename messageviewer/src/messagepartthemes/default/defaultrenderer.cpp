@@ -56,6 +56,8 @@
 #include <grantlee/templateloader.h>
 #include <grantlee/template.h>
 
+#include <qtwebenginewidgetsversion.h>
+
 using namespace MimeTreeParser;
 using namespace MessageViewer;
 
