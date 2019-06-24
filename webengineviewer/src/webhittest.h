@@ -31,7 +31,7 @@ class WEBENGINEVIEWER_EXPORT WebHitTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent = nullptr);
+    explicit WebHitTest(QWebEnginePage *page, const QPoint &zoomedPos, const QPoint &pos, QObject *parent = nullptr);
     ~WebHitTest();
 
 Q_SIGNALS:
