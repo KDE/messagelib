@@ -115,7 +115,7 @@ WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &pos, QObject *parent)
                                     "return res;"
                                     "})()");
 
-    const QString &js = source.arg(pos.x()).arg(pos.y());
+    const QString &js = source.arg(d->m_pos.x()).arg(d->m_pos.y());
     d->m_pageUrl = page->url();
     page->runJavaScript(js,
                         WebEngineViewer::WebEngineManageScript::scriptWordId(),
@@ -133,3 +133,4 @@ void WebHitTest::handleHitTest(const QVariant &result)
     Q_EMIT finished(webHitResult);
     deleteLater();
 }
+
