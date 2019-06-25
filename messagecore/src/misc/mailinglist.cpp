@@ -547,9 +547,21 @@ QString MailingList::id() const
 
 void MailingList::writeConfig(KConfigGroup &group) const
 {
-    group.writeEntry("MailingListFeatures", static_cast<int>(d->mFeatures));
-    group.writeEntry("MailingListHandler", static_cast<int>(d->mHandler));
-    group.writeEntry("MailingListId", d->mId);
+    if (d->mFeatures != Feature::None) {
+        group.writeEntry("MailingListFeatures", static_cast<int>(d->mFeatures));
+    } else {
+        group.deleteEntry("MailingListFeatures");
+    }
+    if (d->mHandler != Handler::KMail) {
+        group.writeEntry("MailingListHandler", static_cast<int>(d->mHandler));
+    } else {
+        group.deleteEntry("MailingListHandler");
+    }
+    if (!d->mId.isEmpty()) {
+        group.writeEntry("MailingListId", d->mId);
+    } else {
+        group.deleteEntry("MailingListId");
+    }
     QStringList lst = QUrl::toStringList(d->mPostUrls);
     if (!lst.isEmpty()) {
         group.writeEntry("MailingListPostingAddress", lst);
