@@ -22,6 +22,7 @@
 #include <QWebEngineProfile>
 #include <QWebEngineView>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
+#include <qtwebenginewidgetsversion.h>
 
 using namespace WebEngineViewer;
 
@@ -47,7 +48,7 @@ InterceptorManager::InterceptorManager(QWebEngineView *webEngine, KActionCollect
     for (WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface : d->mManager->interfaceList()) {
         d->mNetworkUrlInterceptor->addInterceptor(interface);
     }
-#if QTWEBENGINE_VERSION < QT_VERSION_CHECK(5, 13, 0)
+#if QTWEBENGINEWIDGETS_VERSION < QT_VERSION_CHECK(5, 13, 0)
     webEngine->page()->profile()->setRequestInterceptor(d->mNetworkUrlInterceptor);
 #else
     webEngine->page()->profile()->setUrlRequestInterceptor(d->mNetworkUrlInterceptor);
