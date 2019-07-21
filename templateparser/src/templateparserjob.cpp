@@ -1493,7 +1493,7 @@ QString TemplateParserJob::pipe(const QString &cmd, const QString &buf)
     }
 
     if (success) {
-        return QString::fromLatin1(process.readAllStandardOutput());
+        return QTextCodec::codecForLocale()->toUnicode(process.readAllStandardOutput());
     } else {
         return QString();
     }
