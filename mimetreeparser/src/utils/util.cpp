@@ -128,8 +128,11 @@ QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
 
     QByteArray mimeType = node->contentType()->mimeType();
     if (mimeType.isNull() || mimeType == "application/octet-stream") {
-        const QString mime = MimeTreeParser::Util::mimetype(node->contentDisposition()->filename()).name();
-        mimeType = mime.toLatin1();
+        const QString fileName = node->contentDisposition()->filename();
+        if (!fileName.isEmpty()) {
+            const QString mime = MimeTreeParser::Util::mimetype(fileName).name();
+            mimeType = mime.toLatin1();
+        }
     }
     mimeType = mimeType.toLower();
     return MimeTreeParser::Util::iconNameForMimetype(QLatin1String(mimeType), node->contentDisposition()->filename(),
