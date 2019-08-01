@@ -26,7 +26,7 @@
 
 #include <AkonadiWidgets/CollectionComboBox>
 
-#include <KCalCore/Todo>
+#include <KCalendarCore/Todo>
 
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
@@ -84,7 +84,7 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     d->mCollectionCombobox = new Akonadi::CollectionComboBox(model);
     d->mCollectionCombobox->setMinimumWidth(250);
     d->mCollectionCombobox->setAccessRightsFilter(Akonadi::Collection::CanCreateItem);
-    d->mCollectionCombobox->setMimeTypeFilter(QStringList() << KCalCore::Todo::todoMimeType());
+    d->mCollectionCombobox->setMimeTypeFilter(QStringList() << KCalendarCore::Todo::todoMimeType());
     d->mCollectionCombobox->setObjectName(QStringLiteral("collectioncombobox"));
 
     formLayout->addRow(i18n("Store ToDo in:"), d->mCollectionCombobox);

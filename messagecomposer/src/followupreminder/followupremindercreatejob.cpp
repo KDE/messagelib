@@ -20,7 +20,7 @@
 #include "followupremindercreatejob.h"
 #include "messagecomposer_debug.h"
 #include "FollowupReminder/FollowUpReminderUtil"
-#include <KCalCore/Todo>
+#include <KCalendarCore/Todo>
 #include <KLocalizedString>
 #include <AkonadiCore/ItemCreateJob>
 
@@ -87,12 +87,12 @@ void FollowupReminderCreateJob::start()
 {
     if (d->mInfo->isValid()) {
         if (d->mCollection.isValid()) {
-            KCalCore::Todo::Ptr todo(new KCalCore::Todo);
+            KCalendarCore::Todo::Ptr todo(new KCalendarCore::Todo);
             todo->setSummary(i18n("Wait answer from \"%1\" send to \"%2\"", d->mInfo->subject(), d->mInfo->to()));
             todo->setDtDue(QDateTime(d->mInfo->followUpReminderDate(), QTime(0, 0, 0)));
             Akonadi::Item newTodoItem;
-            newTodoItem.setMimeType(KCalCore::Todo::todoMimeType());
-            newTodoItem.setPayload<KCalCore::Todo::Ptr>(todo);
+            newTodoItem.setMimeType(KCalendarCore::Todo::todoMimeType());
+            newTodoItem.setPayload<KCalendarCore::Todo::Ptr>(todo);
 
             Akonadi::ItemCreateJob *createJob = new Akonadi::ItemCreateJob(newTodoItem, d->mCollection);
             connect(createJob, &Akonadi::ItemCreateJob::result, this, &FollowupReminderCreateJob::slotCreateNewTodo);
