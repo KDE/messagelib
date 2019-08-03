@@ -20,6 +20,7 @@
 #include "templatewebenginepage.h"
 #include <QWebEngineSettings>
 #include <QWebEngineProfile>
+#include <qtwebenginewidgetsversion.h>
 
 using namespace TemplateParser;
 
