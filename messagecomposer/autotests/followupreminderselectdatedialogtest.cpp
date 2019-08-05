@@ -67,7 +67,7 @@ void FollowupReminderSelectDateDialogTest::shouldHaveDefaultValue()
     Akonadi::CollectionComboBox *combobox = dlg.findChild<Akonadi::CollectionComboBox *>(QStringLiteral("collectioncombobox"));
     QVERIFY(combobox);
     QDate currentDate = QDate::currentDate();
-    QCOMPARE(datecombobox->date(), currentDate);
+    QCOMPARE(datecombobox->date(), currentDate.addDays(1));
 
     QPushButton *okButton = dlg.findChild<QPushButton *>(QStringLiteral("ok_button"));
     QVERIFY(okButton);
