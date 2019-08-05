@@ -53,6 +53,19 @@
 
 using namespace MessageComposer;
 
+MessageFactoryTest::MessageFactoryTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
+
+MessageFactoryTest::~MessageFactoryTest()
+{
+    // Workaround QTestLib not flushing deleteLater()s on exit, which
+    // leads to WebEngine asserts (view not deleted)
+    QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+}
+
 #ifndef Q_OS_WIN
 void initLocale()
 {
@@ -137,20 +150,16 @@ void MessageFactoryTest::cleanupTestCase()
 
 void MessageFactoryTest::initTestCase()
 {
-    // Force fake XDG dirs so that KIdentityManagement does not
-    // read actual user data when running tests locally
-    QStandardPaths::setTestModeEnabled(true);
     qRegisterMetaType<MessageComposer::MessageFactoryNG::MessageReply>();
     mIdentMan = new KIdentityManagement::IdentityManager;
 
-    KIdentityManagement::Identity &ident = mIdentMan->modifyIdentityForUoid(mIdentMan->identityForUoidOrDefault(0).uoid());
+    KIdentityManagement::Identity &ident = mIdentMan->modifyIdentityForUoid(mIdentMan->defaultIdentity().uoid());
     ident.setFullName(QStringLiteral("another"));
     ident.setPrimaryEmailAddress(QStringLiteral("another@another.com"));
 
     mIdentMan->newFromScratch(QStringLiteral("test1"));
     mIdentMan->newFromScratch(QStringLiteral("test2"));
     mIdentMan->newFromScratch(QStringLiteral("test3"));
-    mIdentMan->setAsDefault(ident.uoid());
     mIdentMan->commit();
 }
 
