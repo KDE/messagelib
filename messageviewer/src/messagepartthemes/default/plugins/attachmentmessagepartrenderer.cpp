@@ -59,7 +59,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
     }
 
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
-                                                                                             ":/asiconpart.html"));
+                                                                                             "asiconpart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     c.insert(QStringLiteral("block"), msgPart.data());
 
