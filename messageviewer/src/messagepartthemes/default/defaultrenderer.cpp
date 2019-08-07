@@ -38,7 +38,6 @@
 #include "htmlwriter/bufferedhtmlwriter.h"
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
-#include <GrantleeTheme/QtResourceTemplateLoader>
 
 #include <QGpgME/Protocol>
 
