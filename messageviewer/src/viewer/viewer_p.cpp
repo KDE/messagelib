@@ -809,21 +809,23 @@ void ViewerPrivate::displaySplashPage(const QString &message)
 
 void ViewerPrivate::displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain)
 {
-    mMsgDisplay = false;
-    adjustLayout();
+    if (mViewer) {
+        mMsgDisplay = false;
+        adjustLayout();
 
-    GrantleeTheme::ThemeManager manager(QStringLiteral("splashPage"),
-                                        QStringLiteral("splash.theme"),
-                                        nullptr,
-                                        QStringLiteral("messageviewer/about/"));
-    GrantleeTheme::Theme theme = manager.theme(QStringLiteral("default"));
-    if (theme.isValid()) {
-        mViewer->setHtml(theme.render(templateName, data, domain),
-                         QUrl::fromLocalFile(theme.absolutePath() + QLatin1Char('/')));
-    } else {
-        qCDebug(MESSAGEVIEWER_LOG) << "Theme error: failed to find splash theme";
+        GrantleeTheme::ThemeManager manager(QStringLiteral("splashPage"),
+                                            QStringLiteral("splash.theme"),
+                                            nullptr,
+                                            QStringLiteral("messageviewer/about/"));
+        GrantleeTheme::Theme theme = manager.theme(QStringLiteral("default"));
+        if (theme.isValid()) {
+            mViewer->setHtml(theme.render(templateName, data, domain),
+                             QUrl::fromLocalFile(theme.absolutePath() + QLatin1Char('/')));
+        } else {
+            qCDebug(MESSAGEVIEWER_LOG) << "Theme error: failed to find splash theme";
+        }
+        mViewer->show();
     }
-    mViewer->show();
 }
 
 void ViewerPrivate::enableMessageDisplay()
@@ -1251,12 +1253,14 @@ void ViewerPrivate::resetStateForNewMessage()
 #ifndef QT_NO_TREEVIEW
     mMimePartTree->clearModel();
 #endif
-    mViewer->clearRelativePosition();
-    mViewer->hideAccessKeys();
+    if (mViewer) {
+        mViewer->clearRelativePosition();
+        mViewer->hideAccessKeys();
+        mFindBar->closeBar();
+    }
     if (!mPrinting) {
         setShowSignatureDetails(false);
     }
-    mFindBar->closeBar();
     mViewerPluginToolManager->closeAllTools();
     mScamDetectionWarning->setVisible(false);
     mOpenAttachmentFolderWidget->setVisible(false);
@@ -2233,24 +2237,25 @@ void ViewerPrivate::updateReaderWin()
     }
     mRecursionCountForDisplayMessage++;
 
-    mViewer->setAllowExternalContent(htmlLoadExternal());
-    htmlWriter()->reset();
-    //TODO: if the item doesn't have the payload fetched, try to fetch it? Maybe not here, but in setMessageItem.
-    if (mMessage) {
-        mColorBar->show();
-        displayMessage();
-    } else if (mMessagePartNode) {
-        setMessagePart(mMessagePartNode);
-    } else {
-        mColorBar->hide();
+    if (mViewer) {
+        mViewer->setAllowExternalContent(htmlLoadExternal());
+        htmlWriter()->reset();
+        //TODO: if the item doesn't have the payload fetched, try to fetch it? Maybe not here, but in setMessageItem.
+        if (mMessage) {
+            mColorBar->show();
+            displayMessage();
+        } else if (mMessagePartNode) {
+            setMessagePart(mMessagePartNode);
+        } else {
+            mColorBar->hide();
 #ifndef QT_NO_TREEVIEW
-        mMimePartTree->hide();
+            mMimePartTree->hide();
 #endif
-        htmlWriter()->begin();
-        htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont) + QLatin1String("</body></html>"));
-        htmlWriter()->end();
+            htmlWriter()->begin();
+            htmlWriter()->write(cssHelper()->htmlHead(mUseFixedFont) + QLatin1String("</body></html>"));
+            htmlWriter()->end();
+        }
     }
-
     mRecursionCountForDisplayMessage--;
 }
 
@@ -2779,7 +2784,9 @@ void ViewerPrivate::slotSaveMessage()
 
 void ViewerPrivate::saveRelativePosition()
 {
-    mViewer->saveRelativePosition();
+    if (mViewer) {
+        mViewer->saveRelativePosition();
+    }
 }
 
 //TODO(Andras) inline them
