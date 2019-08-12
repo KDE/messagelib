@@ -7,6 +7,7 @@ if(BUILD_TESTING)
     add_subdirectory( imagescaling/autotests )
     add_subdirectory( imagescaling/tests )
     add_subdirectory( composer-ng/autotests )
+    add_subdirectory( statusbarwidget/autotests )
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
@@ -32,6 +33,10 @@ set( messagecomposer_job_src
     job/attachmentvcardfromaddressbookjob.cpp
     job/attachmentclipboardjob.cpp
     )
+
+set( messagecomposer_statusbarwidget_src
+    statusbarwidget/statusbarlabeltoggledstate.cpp
+   )
 
 set( messagecomposer_composer_src
     composer/composer.cpp
@@ -129,6 +134,7 @@ set(messagecomposer_plugineditorgrammar_SRCS
     )
 
 set( messagecomposer_src
+    ${messagecomposer_statusbarwidget_src}
     ${messagecomposer_plugineditorconverttext_SRCS}
     ${messagecomposer_plugineditorinit_SRCS}
     ${messagecomposer_plugineditor_SRCS}
@@ -216,6 +222,13 @@ install(TARGETS
     EXPORT KF5MessageComposerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
     )
 
+ecm_generate_headers(MessageComposer_Camelstatusbarwidget_HEADERS
+    HEADER_NAMES
+    StatusBarLabelToggledState
+    REQUIRED_HEADERS MessageComposer_statusbarwidget_HEADERS
+    PREFIX MessageComposer
+    RELATIVE statusbarwidget
+    )
 
 ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
     HEADER_NAMES
@@ -424,6 +437,7 @@ install(FILES
     ${MessageComposer_Camelcaseattachement_HEADERS}
     ${MessageComposer_Camelplugineditor_HEADERS}
     ${MessageComposer_Camelplugineditorgrammar_HEADERS}
+    ${MessageComposer_Camelstatusbarwidget_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
     COMPONENT Devel
     )
@@ -432,6 +446,7 @@ install(FILES
     ${MessageComposer_HEADERS}
     ${MessageComposer_plugineditorconverttext_HEADERS}
     ${MessageComposer_plugineditorinit_HEADERS}
+    ${MessageComposer_statusbarwidget_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposersettings_base.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_debug.h
