@@ -51,7 +51,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    mView = new Akonadi::RecipientsPickerWidget(false, this);
+    mView = new Akonadi::RecipientsPickerWidget(false, nullptr, this);
     mainLayout->addWidget(mView);
     mainLayout->setStretchFactor(mView, 1);
 
