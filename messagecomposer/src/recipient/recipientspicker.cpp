@@ -20,10 +20,10 @@
 */
 
 #include "recipientspicker.h"
-#include "recipientspickerwidget.h"
 #include "settings/messagecomposersettings.h"
 
 #include <Akonadi/Contact/EmailAddressSelectionWidget>
+#include <Akonadi/Contact/RecipientsPickerWidget>
 #include <kcontacts/contactgroup.h>
 #include <Libkdepim/LdapSearchDialog>
 
@@ -52,7 +52,7 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    mView = new RecipientsPickerWidget(this);
+    mView = new Akonadi::RecipientsPickerWidget(false, this);
     mainLayout->addWidget(mView);
     mainLayout->setStretchFactor(mView, 1);
 

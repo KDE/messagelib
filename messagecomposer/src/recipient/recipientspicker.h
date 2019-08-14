@@ -32,8 +32,11 @@ namespace KLDAP {
 class LdapSearchDialog;
 }
 
-namespace MessageComposer {
+namespace Akonadi {
 class RecipientsPickerWidget;
+}
+
+namespace MessageComposer {
 class RecipientsPicker : public QDialog
 {
     Q_OBJECT
@@ -68,7 +71,7 @@ protected Q_SLOTS:
     void slotSelectionChanged();
 
 private:
-    MessageComposer::RecipientsPickerWidget *mView = nullptr;
+    Akonadi::RecipientsPickerWidget *mView = nullptr;
 
     KLDAP::LdapSearchDialog *mLdapSearchDialog = nullptr;
 
