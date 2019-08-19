@@ -33,3 +33,11 @@ cmakename: KF5MessageCore
 #cmakename: KF5MimeTreeParser
 #cmakename: KF5TemplateParser
 
+public_source_dirs:
+ - messagecomposer
+ - messagecore
+ - messagelist
+ - messageviewer
+ - mimetreeparser
+ - templateparser
+ - webengineviewer
