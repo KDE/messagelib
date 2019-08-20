@@ -87,6 +87,14 @@ public:
 
     void setHeaderPlugin(const HeaderStylePlugin *headerPlugin);
 
+    enum InlineMessageType {
+        Positive,
+        Information,
+        Warning,
+        Error,
+        MESSAGE_TYPE_COUNT
+    };
+
 protected:
     /** Recalculate PGP frame and body colors (should be called after changing
         color settings) */
@@ -126,8 +134,9 @@ protected:
     QColor cPgpEncrH;
     QColor cPgpEncrHT;
     QColor cPgpEncrB;
-    // color of frame of warning preceding the source of HTML messages
-    QColor cHtmlWarning;
+
+    // colors for inline message boxes, see KMessageWidget or Kirigami::InlineMessage
+    QColor cInlineMessage[MESSAGE_TYPE_COUNT];
 
     QString imgShowUrl;
     QString imgHideUrl;

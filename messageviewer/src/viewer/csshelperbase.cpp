@@ -69,12 +69,22 @@ inline int getValueOf(const QColor &c)
     c.getHsv(&h, &s, &v);
     return v;
 }
+
+static const struct {
+    CSSHelperBase::InlineMessageType type;
+    const char *cssName;
+} inlineMessageStyles[] = {
+    { CSSHelperBase::Positive, "inlineMessagePositive" },
+    { CSSHelperBase::Information, "inlineMessageInformation" },
+    { CSSHelperBase::Warning, "inlineMessageWarning" },
+    { CSSHelperBase::Error, "inlineMessageError" }
+};
+
 }
 
 CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
     : mRecycleQuoteColors(false)
     , mShrinkQuotes(false)
-    , cHtmlWarning(QColor(0xFF, 0x40, 0x40))
     , mPaintDevice(pd)
 {
     recalculatePGPColors();
@@ -296,6 +306,12 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
     }
     quoteCSS += quoteCssDefinition();
 
+    QStringList inlineMessageCss;
+    inlineMessageCss.reserve(MESSAGE_TYPE_COUNT);
+    for (const auto &msgStyle : inlineMessageStyles) {
+        inlineMessageCss.push_back(QLatin1String("div.") + QString::fromLatin1(msgStyle.cssName));
+    }
+
     return
         QStringLiteral("body {\n"
                        "  font-family: \"%1\" ! important;\n"
@@ -325,7 +341,7 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
         "  display:none ! important;\n"
         "}\n\n"
 
-        "div.htmlWarn {\n"
+        "%3 {\n"
         "  border: 2px solid #ffffff ! important;\n"
         "  line-height: normal;\n"
         "}\n\n"
@@ -344,7 +360,7 @@ QString CSSHelperBase::printCssDefinitions(bool fixed) const
         "  display:none ! important;\n"
         "}\n\n"
         )
-        .arg(headerFont, extraPrintCss(headerFont))
+        .arg(headerFont, extraPrintCss(headerFont), inlineMessageCss.join(QLatin1String(", ")))
         + quoteCSS + fullAddressList();
 }
 
@@ -360,10 +376,6 @@ QString CSSHelperBase::linkColorDefinition() const
                               "  color: %1 ! important;\n"
                               "  text-decoration: none ! important;\n"
                               "}\n\n"
-                              "div.htmlWarn a:link {\n"
-                              "  color: %1 ! important;\n"
-                              "  text-decoration: none ! important;\n"
-                              "}\n\n"
                               "div#header a:link {\n"
                               "  color: %1 ! important;\n"
                               "  text-decoration: none ! important;\n"
@@ -376,10 +388,6 @@ QString CSSHelperBase::linkColorDefinition() const
                               "}\n\n").arg(linkColor, background);
 #else
         return QStringLiteral("div#headerbox a:link {\n"
-                              "  color: %1 ! important;\n"
-                              "  text-decoration: none ! important;\n"
-                              "}\n\n"
-                              "div.htmlWarn a:link {\n"
                               "  color: %1 ! important;\n"
                               "  text-decoration: none ! important;\n"
                               "}\n\n"
@@ -511,6 +519,25 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
     }
 
     quoteCSS += quoteCssDefinition();
+
+    // CSS definitions for inline message boxes
+    QString inlineMessageCss;
+    for (const auto &msgStyle : inlineMessageStyles) {
+        const auto c = cInlineMessage[msgStyle.type];
+        inlineMessageCss += QStringLiteral(R"(
+            div.%1 {
+                border: 1px solid rgba(%2, %3, %4) ! important;
+                border-radius: 2px;
+                box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+                background-color: rgba(%2, %3, %4, 0.2) ! important;
+            }
+            div.%1 a:link {
+                color: %5 ! important;
+                text-decoration: none ! important;
+            }
+         )").arg(QString::fromLatin1(msgStyle.cssName)).arg(c.red()).arg(c.green()).arg(c.blue()).arg(mLinkColor.name());
+    }
+
     return
         QStringLiteral("body {\n"
                        "  font-family: \"%1\" ! important;\n"
@@ -634,11 +661,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
              headerFont,
              cPgpErrBColorName)
         +
-        QStringLiteral("div.htmlWarn {\n"
-                       "  border: 2px solid %1 ! important;\n"
-                       "  line-height: normal;\n"
-                       "}\n\n")
-        .arg(cHtmlWarning.name())
+        inlineMessageCss
         +
         QStringLiteral("div.header {\n"
                        "%1"
@@ -665,6 +688,12 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, bool fi
 QString CSSHelperBase::commonCssDefinitions() const
 {
     const QString headerFont = defaultScreenHeaderFont();
+
+    QStringList inlineMessageCss;
+    inlineMessageCss.reserve(MESSAGE_TYPE_COUNT);
+    for (const auto &msgStyle : inlineMessageStyles) {
+        inlineMessageCss.push_back(QLatin1String("div.") + QString::fromLatin1(msgStyle.cssName));
+    }
 
     return
         QStringLiteral("div.header {\n"
@@ -718,17 +747,24 @@ QString CSSHelperBase::commonCssDefinitions() const
 
                        "%1"
 
-                       "div.htmlWarn {\n"
-                       "  margin: 0px 5% ! important;\n"
+                       "%2 {\n"
+                       "  margin: 0px 5% 10px 5% ! important;\n"
                        "  padding: 10px ! important;\n"
                        "  text-align: left ! important;\n"
                        "  line-height: normal;\n"
                        "}\n\n"
 
+                       "hr {\n"
+                       "  border: 0;\n"
+                       "  height: 0;\n"
+                       "  border-top: 1px solid rgba(%3, %4, %5, 0.3);\n"
+                       "}\n\n"
+
                        "div.quotelevelmark {\n"
                        "  position: absolute;\n"
                        "  margin-left:-10px;\n"
-                       "}\n\n").arg(extraCommonCss(headerFont));
+                       "}\n\n").arg(extraCommonCss(headerFont), inlineMessageCss.join(QLatin1String(", ")))
+                        .arg(mForegroundColor.red()).arg(mForegroundColor.green()).arg(mForegroundColor.blue());
 }
 
 void CSSHelperBase::setBodyFont(const QFont &font)

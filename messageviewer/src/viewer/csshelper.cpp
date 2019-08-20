@@ -47,6 +47,16 @@
 
 using namespace MessageViewer;
 
+static const struct {
+    CSSHelperBase::InlineMessageType type;
+    KColorScheme::ForegroundRole role;
+} inlineMessageColors[] = {
+    { CSSHelperBase::Positive, KColorScheme::PositiveText },
+    { CSSHelperBase::Information, KColorScheme::ActiveText },
+    { CSSHelperBase::Warning, KColorScheme::NeutralText },
+    { CSSHelperBase::Error, KColorScheme::NegativeText }
+};
+
 CSSHelper::CSSHelper(const QPaintDevice *pd)
     : CSSHelperBase(pd)
 {
@@ -54,7 +64,9 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
     mForegroundColor = QApplication::palette().color(QPalette::Text);
     mLinkColor = MessageCore::ColorUtil::self()->linkColor();
     mBackgroundColor = QApplication::palette().color(QPalette::Base);
-    cHtmlWarning = QColor(0xFF, 0x40, 0x40);   // warning frame color: light red
+    for (const auto &msgColor : inlineMessageColors) {
+        cInlineMessage[msgColor.type] = KColorScheme(QPalette::Active).foreground(msgColor.role).color();
+    }
 
     cPgpEncrH = MessageCore::ColorUtil::self()->pgpEncryptedMessageColor();
     cPgpEncrHT = MessageCore::ColorUtil::self()->pgpEncryptedTextColor();

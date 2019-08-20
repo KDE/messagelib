@@ -1,6 +1,6 @@
 {% if not block.isPrinting %}
 {% if not block.htmlMail or not block.loadExternal and block.containsExternalReferences %}
-    <div class="htmlWarn">
+    <div class="inlineMessageError">
         {% if not block.htmlMail %}
             {% i18n_var "<b>Note:</b> This is an HTML message. For security reasons, only the raw HTML code is shown. If you trust the sender of this message then you can activate formatted HTML display for this message <a href='kmail:showHTML'>by clicking here</a>." as msg %}
         {% elif not block.loadExternal and block.containsExternalReferences %}

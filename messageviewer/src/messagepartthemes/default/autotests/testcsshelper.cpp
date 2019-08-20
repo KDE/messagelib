@@ -45,7 +45,11 @@ TestCSSHelper::TestCSSHelper(const QPaintDevice *pd)
     cPgpWarnHT = QColor(0xf6, 0x74, 0x00);
     cPgpErrHT = QColor(0xda, 0x44, 0x53);
 
-    cHtmlWarning = QColor(0xff, 0x40, 0x40);
+    cInlineMessage[Positive] = QColor(0, 255, 0);
+    cInlineMessage[Information] = QColor(0, 0, 255);
+    cInlineMessage[Warning] = QColor(255, 255, 0);
+    cInlineMessage[Error] = QColor(255, 0, 0);
+
     for (int i = 0; i < 3; ++i) {
         mQuoteColor[i] = QColor(0x00, 0x80 - i * 0x10, 0x00);
     }
