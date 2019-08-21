@@ -27,7 +27,7 @@
 #include <QPushButton>
 #include <AkonadiCore/EntityTreeModel>
 #include <QStandardItemModel>
-#include <KCalCore/Todo>
+#include <KCalendarCore/Todo>
 
 FollowupReminderSelectDateDialogTest::FollowupReminderSelectDateDialogTest(QObject *parent)
     : QObject(parent)
@@ -45,7 +45,7 @@ QStandardItemModel *FollowupReminderSelectDateDialogTest::defaultItemModel()
         Akonadi::Collection collection(id);
         collection.setRights(Akonadi::Collection::AllRights);
         collection.setName(QString::number(id));
-        collection.setContentMimeTypes(QStringList() << KCalCore::Todo::todoMimeType());
+        collection.setContentMimeTypes(QStringList() << KCalendarCore::Todo::todoMimeType());
 
         QStandardItem *item = new QStandardItem(collection.name());
         item->setData(QVariant::fromValue(collection),
@@ -67,7 +67,7 @@ void FollowupReminderSelectDateDialogTest::shouldHaveDefaultValue()
     Akonadi::CollectionComboBox *combobox = dlg.findChild<Akonadi::CollectionComboBox *>(QStringLiteral("collectioncombobox"));
     QVERIFY(combobox);
     QDate currentDate = QDate::currentDate();
-    QCOMPARE(datecombobox->date(), currentDate);
+    QCOMPARE(datecombobox->date(), currentDate.addDays(1));
 
     QPushButton *okButton = dlg.findChild<QPushButton *>(QStringLiteral("ok_button"));
     QVERIFY(okButton);

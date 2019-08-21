@@ -26,7 +26,7 @@
 
 #include <AkonadiWidgets/CollectionComboBox>
 
-#include <KCalCore/Todo>
+#include <KCalendarCore/Todo>
 
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
@@ -73,10 +73,10 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     mainLayout->addLayout(formLayout);
 
     d->mDateComboBox = new KDateComboBox;
+    QDate currentDate = QDate::currentDate().addDays(1);
     d->mDateComboBox->setMinimumDate(QDate::currentDate());
     d->mDateComboBox->setObjectName(QStringLiteral("datecombobox"));
 
-    QDate currentDate = QDate::currentDate();
     d->mDateComboBox->setDate(currentDate);
 
     formLayout->addRow(i18n("Date:"), d->mDateComboBox);
@@ -84,7 +84,7 @@ FollowUpReminderSelectDateDialog::FollowUpReminderSelectDateDialog(QWidget *pare
     d->mCollectionCombobox = new Akonadi::CollectionComboBox(model);
     d->mCollectionCombobox->setMinimumWidth(250);
     d->mCollectionCombobox->setAccessRightsFilter(Akonadi::Collection::CanCreateItem);
-    d->mCollectionCombobox->setMimeTypeFilter(QStringList() << KCalCore::Todo::todoMimeType());
+    d->mCollectionCombobox->setMimeTypeFilter(QStringList() << KCalendarCore::Todo::todoMimeType());
     d->mCollectionCombobox->setObjectName(QStringLiteral("collectioncombobox"));
 
     formLayout->addRow(i18n("Store ToDo in:"), d->mCollectionCombobox);
@@ -125,7 +125,7 @@ Akonadi::Collection FollowUpReminderSelectDateDialog::collection() const
 void FollowUpReminderSelectDateDialog::accept()
 {
     const QDate date = selectedDate();
-    if (date <= QDate::currentDate()) {
+    if (date < QDate::currentDate()) {
         KMessageBox::error(this, i18n("The selected date must be greater than the current date."), i18n("Invalid date"));
         return;
     }

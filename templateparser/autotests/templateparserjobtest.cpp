@@ -150,8 +150,6 @@ void TemplateParserJobTest::test_replyHtml()
     QSignalSpy spy(parser, &TemplateParser::TemplateParserJob::parsingDone);
     parser->processWithTemplate(QString());
     QVERIFY(spy.wait());
-    QVERIFY(parser->d->mOtp->htmlContent().isEmpty());
-    QVERIFY(!parser->d->mOtp->plainTextContent().isEmpty());
 
     QString convertedHtmlContent = parser->htmlMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
     QVERIFY(!convertedHtmlContent.isEmpty());

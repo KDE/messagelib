@@ -67,7 +67,12 @@ void WebEnginePage::init()
 
 WebEngineViewer::WebHitTest *WebEnginePage::hitTestContent(const QPoint &pos)
 {
-    return new WebHitTest(this, pos);
+    return new WebHitTest(this, mapToViewport(pos), pos);
+}
+
+QPoint WebEnginePage::mapToViewport(const QPoint &pos) const
+{
+    return QPoint(pos.x() / zoomFactor(), pos.y() / zoomFactor());
 }
 
 void WebEnginePage::saveHtml(QWebEngineDownloadItem *download)

@@ -38,7 +38,6 @@
 #include "htmlwriter/bufferedhtmlwriter.h"
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
-#include <GrantleeTheme/QtResourceTemplateLoader>
 
 #include <QGpgME/Protocol>
 
@@ -55,6 +54,8 @@
 #include <grantlee/metatype.h>
 #include <grantlee/templateloader.h>
 #include <grantlee/template.h>
+
+#include <qtwebenginewidgetsversion.h>
 
 using namespace MimeTreeParser;
 using namespace MessageViewer;
@@ -389,7 +390,7 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
     if (!mp->hasSubParts()) {
         return;
     }
-    Grantlee::Template t = MessagePartRendererManager::self()->loadByName(QStringLiteral(":/encapsulatedrfc822messagepart.html"));
+    Grantlee::Template t = MessagePartRendererManager::self()->loadByName(QStringLiteral("encapsulatedrfc822messagepart.html"));
     Grantlee::Context c = MessagePartRendererManager::self()->createContext();
     QObject block;
 
@@ -413,7 +414,7 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
 void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
-                                                                                             ":/htmlmessagepart.html"));
+                                                                                             "htmlmessagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
@@ -462,7 +463,7 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
     const auto metaData = *mp->partMetaData();
 
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
-                                                                                             ":/encryptedmessagepart.html"));
+                                                                                             "encryptedmessagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
@@ -512,7 +513,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     const bool isSMIME = cryptoProto && (cryptoProto == QGpgME::smime());
 
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
-                                                                                             ":/signedmessagepart.html"));
+                                                                                             "signedmessagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
@@ -820,7 +821,7 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
 {
     const GpgME::ImportResult &importResult(mp->importResult());
     Grantlee::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral(
-                                                                                             ":/certmessagepart.html"));
+                                                                                             "certmessagepart.html"));
     Grantlee::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 

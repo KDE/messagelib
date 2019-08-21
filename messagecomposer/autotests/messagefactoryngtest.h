@@ -30,6 +30,11 @@ class IdentityManager;
 class MessageFactoryTest : public QObject
 {
     Q_OBJECT
+
+public:
+    explicit MessageFactoryTest(QObject *parent = nullptr);
+    ~MessageFactoryTest();
+
 private Q_SLOTS:
     void initTestCase();
 

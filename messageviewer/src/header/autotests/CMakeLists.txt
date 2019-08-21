@@ -24,3 +24,9 @@ ecm_add_test(grantleeheaderformattertest.cpp
         KF5::Mime
         Qt5::Test
 )
+
+set_tests_properties(
+    messageviewer-header-grantleeheaderstyletest
+    messageviewer-header-grantleeheaderformattertest
+    PROPERTIES ENVIRONMENT "LC_ALL=C;TZ=UTC"
+)

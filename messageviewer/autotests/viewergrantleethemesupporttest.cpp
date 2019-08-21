@@ -49,6 +49,8 @@ void ViewerGrantleeThemeSupportTest::shouldUpdateThemeMenu()
                                                                   this));
     viewer->show();
     QVERIFY(QTest::qWaitForWindowExposed(viewer));
+
+    delete viewer;
 }
 
 QTEST_MAIN(ViewerGrantleeThemeSupportTest)

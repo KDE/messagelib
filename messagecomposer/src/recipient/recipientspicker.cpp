@@ -20,10 +20,10 @@
 */
 
 #include "recipientspicker.h"
-#include "recipientspickerwidget.h"
 #include "settings/messagecomposersettings.h"
 
 #include <Akonadi/Contact/EmailAddressSelectionWidget>
+#include <Akonadi/Contact/RecipientsPickerWidget>
 #include <kcontacts/contactgroup.h>
 #include <Libkdepim/LdapSearchDialog>
 
@@ -45,14 +45,13 @@ using namespace MessageComposer;
 
 RecipientsPicker::RecipientsPicker(QWidget *parent)
     : QDialog(parent)
-    , mLdapSearchDialog(nullptr)
 {
     setObjectName(QStringLiteral("RecipientsPicker"));
     setWindowTitle(i18n("Select Recipient"));
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    mView = new RecipientsPickerWidget(this);
+    mView = new Akonadi::RecipientsPickerWidget(false, nullptr, this);
     mainLayout->addWidget(mView);
     mainLayout->setStretchFactor(mView, 1);
 

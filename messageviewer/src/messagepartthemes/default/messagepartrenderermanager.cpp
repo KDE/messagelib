@@ -22,7 +22,6 @@
 #include <KIconLoader>
 #include <QStandardPaths>
 #include <GrantleeTheme/GrantleeKi18nLocalizer>
-#include <GrantleeTheme/QtResourceTemplateLoader>
 #include <GrantleeTheme/GrantleeThemeEngine>
 
 #include <gpgme++/verificationresult.h>
@@ -137,7 +136,8 @@ void MessagePartRendererManager::initializeRenderer()
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
 
     auto loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>(
-        new GrantleeTheme::QtResourceTemplateLoader());
+        new Grantlee::FileSystemTemplateLoader());
+    loader->setTemplateDirs({QStringLiteral(":/")});
     m_engine->addTemplateLoader(loader);
 }
 

@@ -671,6 +671,10 @@ QString CSSHelperBase::commonCssDefinitions() const
                        "  margin-bottom: 10pt ! important;\n"
                        "}\n\n"
 
+                       "pre.highlightattachment {\n"
+                       "  white-space: pre-wrap;\n"
+                       "}\n\n"
+
                        "table.textAtm {\n"
                        "  margin-top: 10pt ! important;\n"
                        "  margin-bottom: 10pt ! important;\n"

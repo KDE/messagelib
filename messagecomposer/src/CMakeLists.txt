@@ -7,6 +7,7 @@ if(BUILD_TESTING)
     add_subdirectory( imagescaling/autotests )
     add_subdirectory( imagescaling/tests )
     add_subdirectory( composer-ng/autotests )
+    add_subdirectory( statusbarwidget/autotests )
 endif()
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/part)
@@ -33,6 +34,10 @@ set( messagecomposer_job_src
     job/attachmentclipboardjob.cpp
     )
 
+set( messagecomposer_statusbarwidget_src
+    statusbarwidget/statusbarlabeltoggledstate.cpp
+   )
+
 set( messagecomposer_composer_src
     composer/composer.cpp
     composer/signaturecontroller.cpp
@@ -49,8 +54,6 @@ set( messagecomposer_recipient_src
     recipient/recipientseditorsidewidget.cpp
     recipient/kwindowpositioner.cpp
     recipient/distributionlistdialog.cpp
-    recipient/recipientseditormanager.cpp
-    recipient/recipientspickerwidget.cpp
     )
 
 set( messagecomposer_imagescaling_src
@@ -129,6 +132,7 @@ set(messagecomposer_plugineditorgrammar_SRCS
     )
 
 set( messagecomposer_src
+    ${messagecomposer_statusbarwidget_src}
     ${messagecomposer_plugineditorconverttext_SRCS}
     ${messagecomposer_plugineditorinit_SRCS}
     ${messagecomposer_plugineditor_SRCS}
@@ -195,7 +199,7 @@ target_link_libraries(KF5MessageComposer
     KF5::XmlGui         # for KActionCollection
     KF5::SonnetUi
     Grantlee5::TextDocument
-    KF5::CalendarCore   # for KCalCore/Todo
+    KF5::CalendarCore   # for KCalendarCore/Todo
     KF5::SendLater
     KF5::FollowupReminder
     KF5::Archive
@@ -216,6 +220,13 @@ install(TARGETS
     EXPORT KF5MessageComposerTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK}
     )
 
+ecm_generate_headers(MessageComposer_Camelstatusbarwidget_HEADERS
+    HEADER_NAMES
+    StatusBarLabelToggledState
+    REQUIRED_HEADERS MessageComposer_statusbarwidget_HEADERS
+    PREFIX MessageComposer
+    RELATIVE statusbarwidget
+    )
 
 ecm_generate_headers(MessageComposer_Camelplugineditor_HEADERS
     HEADER_NAMES
@@ -424,6 +435,7 @@ install(FILES
     ${MessageComposer_Camelcaseattachement_HEADERS}
     ${MessageComposer_Camelplugineditor_HEADERS}
     ${MessageComposer_Camelplugineditorgrammar_HEADERS}
+    ${MessageComposer_Camelstatusbarwidget_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/MessageComposer
     COMPONENT Devel
     )
@@ -432,6 +444,7 @@ install(FILES
     ${MessageComposer_HEADERS}
     ${MessageComposer_plugineditorconverttext_HEADERS}
     ${MessageComposer_plugineditorinit_HEADERS}
+    ${MessageComposer_statusbarwidget_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposersettings_base.h
     ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_debug.h

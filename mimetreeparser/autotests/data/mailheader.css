@@ -2,6 +2,10 @@ div.header {
   margin-bottom: 10pt ! important;
 }
 
+pre.highlightattachment {
+  white-space: pre-wrap;
+}
+
 table.textAtm {
   margin-top: 10pt ! important;
   margin-bottom: 10pt ! important;

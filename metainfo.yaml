@@ -5,30 +5,39 @@ public_lib: true
 type: functional
 group: kdepim
 platforms:
-    - name: linux
+    - name: Linux
 irc: akonadi
 portingAid: false
 deprecated: false
 libraries:
  - qmake: MessageComposer
    cmake: "KF5::MessageComposer"
-cmakename: KF5MessageComposer
  - qmake: MessageCore
    cmake: "KF5::MessageCore"
-cmakename: KF5MessageCore
  - qmake: MessageList
    cmake: "KF5::MessageList"
-cmakename: KF5MessageList
  - qmake: MessageViewer
    cmake: "KF5::MessageViewer"
-cmakename: KF5MessageViewer
  - qmake: MimeTreeParser
    cmake: "KF5::MimeTreeParser"
-cmakename: KF5MimeTreeParser
  - qmake: TemplateParser
    cmake: "KF5::TemplateParser"
-cmakename: KF5TemplateParser
  - qmake: WebEngineViewer
    cmake: "KF5::WebEngineViewer"
-cmakename: KF5WebEngineViewer
+cmakename: KF5MessageCore
+# FIXME kapidox does not support more than one cmake module per repo yet
+#cmakename: KF5MessageComposer
+#cmakename: KF5WebEngineViewer
+#cmakename: KF5MessageList
+#cmakename: KF5MessageViewer
+#cmakename: KF5MimeTreeParser
+#cmakename: KF5TemplateParser
 
+public_source_dirs:
+ - messagecomposer
+ - messagecore
+ - messagelist
+ - messageviewer
+ - mimetreeparser
+ - templateparser
+ - webengineviewer
