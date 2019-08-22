@@ -356,7 +356,6 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
     defaultHeaders << "to" << "reply-To" << "reply-From" << "cc" << "bcc" << "from" << "sender" << "resent-From" << "resent-To" << "subject" << "organization" << "list-id" << "date";
 
     for (const auto &header: defaultHeaders) {
-            qDebug() << "add Header" << header;
             QSharedPointer<HeaderFormatter> formatter;
             if (d->headerFormatter.contains(header)) {
                 formatter = d->headerFormatter.value(header);
