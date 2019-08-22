@@ -220,7 +220,7 @@ public:
     QString i18nName() override {
         if (header == "to") {
             return i18n("To:");
-        } else if (header == "Reply-To") {
+        } else if (header == "reply-To") {
             return i18n("Reply To:");
         } else if (header == "replyFrom") {
             return i18n("Reply From:");
@@ -232,9 +232,9 @@ public:
             return i18n("From:");
         } else if (header == "sender") {
             return i18n("Sender:");
-        } else if (header == "Resent-From") {
+        } else if (header == "resent-From") {
             return i18n("resent from:");
-        } else if (header == "Resent-To") {
+        } else if (header == "resent-To") {
             return i18n("resent to:");
         } else {
             return QString();
