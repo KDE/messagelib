@@ -249,6 +249,30 @@ QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime)
     return formatter.dateString(dateTime);
 }
 
+QSharedPointer<KMime::Headers::Generics::MailboxList> mailboxesFromHeader(const KMime::Headers::Base *hrd)
+{
+    QSharedPointer<KMime::Headers::Generics::MailboxList> mailboxList(new KMime::Headers::Generics::MailboxList());
+    const QByteArray &data = hrd->as7BitString(false);
+    mailboxList->from7BitString(data);
+    return mailboxList;
+}
+
+QSharedPointer<KMime::Headers::Generics::MailboxList> HeaderStyleUtil::resentFromList(KMime::Message *message)
+{
+    if (auto hrd = message->headerByType("Resent-From")) {
+        return mailboxesFromHeader(hrd);
+    }
+    return nullptr;
+}
+
+QSharedPointer<KMime::Headers::Generics::MailboxList> HeaderStyleUtil::resentToList(KMime::Message *message)
+{
+    if (auto hrd = message->headerByType("Resent-To")) {
+        return mailboxesFromHeader(hrd);
+    }
+    return nullptr;
+}
+
 void HeaderStyleUtil::updateXFaceSettings(QImage photo, xfaceSettings &settings) const
 {
     if (!photo.isNull()) {
