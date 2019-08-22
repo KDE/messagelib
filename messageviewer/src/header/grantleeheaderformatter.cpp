@@ -190,10 +190,6 @@ public:
         //}
         auto subjectStr = nodeHelper->mailHeaderAsBase("subject", message)->asUnicodeString();
 
-        if (subjectStr.isEmpty()) {
-            return i18n("No Subject");
-        }
-
         return HeaderStyleUtil::strToHtml(subjectStr, flags);
     }
 };
@@ -376,6 +372,10 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
             if (!i18nName.isEmpty()) {
                 headerObject.insert(objectName+QStringLiteral("i18n"), i18nName);
             }
+    }
+
+    if (!nodeHelper->hasMailHeader("subject", message)) {
+         headerObject.insert(QStringLiteral("subject"), i18n("No Subject"));
     }
 
     const QString spamHtml = d->headerStyleUtil.spamStatus(message);
