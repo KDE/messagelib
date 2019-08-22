@@ -498,6 +498,40 @@ void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
     node->contentType()->setMimeType(mimetype.toLatin1());
 }
 
+bool NodeHelper::hasMailHeader(const char *header, const KMime::Message *message) const
+{
+    return message->hasHeader(header);
+}
+
+KMime::Headers::Base * NodeHelper::mailHeaderAsBase(const char *header, const KMime::Message *message) const
+{
+    return message->headerByType(header);
+}
+
+KMime::Headers::Generics::AddressList * NodeHelper::mailHeaderAsAddressList(const char *header, KMime::Message *message) const
+{
+    /* works without this is maybe faster ?
+    if(strcmp(header, "to") == 0) {
+        return message->to();
+    } else if(strcmp(header, "replyTo") == 0) {
+        return message->replyTo();
+    } else if(strcmp(header, "bcc") == 0) {
+        return message->bcc();
+    } else if(strcmp(header, "cc") == 0) {
+        return message->cc();
+    } */
+    auto addressList = new KMime::Headers::Generics::AddressList();
+    const auto hrd = message->headerByType(header);
+    const QByteArray &data = hrd->as7BitString(false);
+    addressList->from7BitString(data);
+    return addressList;
+}
+
+QDateTime NodeHelper::dateHeader(KMime::Message *message) const
+{
+    return message->date()->dateTime();
+}
+
 void NodeHelper::setOverrideCodec(KMime::Content *node, const QTextCodec *codec)
 {
     if (!node) {

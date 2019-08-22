@@ -63,12 +63,11 @@ QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flag
 // Prepare the date string
 QString HeaderStyleUtil::dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat)
 {
-    return dateString(message->date(), dateFormat);
+    return dateString(message->date()->dateTime(), dateFormat);
 }
 
-QString HeaderStyleUtil::dateString(const KMime::Headers::Date *date, HeaderStyleUtilDateFormat dateFormat)
+QString HeaderStyleUtil::dateString(const QDateTime &dateTime, HeaderStyleUtilDateFormat dateFormat)
 {
-    const QDateTime dateTime = date->dateTime();
     if (!dateTime.isValid()) {
         qCDebug(MESSAGEVIEWER_LOG) << "Unable to parse date";
         return i18nc("Unknown date", "Unknown");
@@ -83,8 +82,7 @@ QString HeaderStyleUtil::dateString(const KMime::Headers::Date *date, HeaderStyl
     case FancyShortDate:
         return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime);
     case FancyLongDate:
-    //Laurent fix me
-    //TODO return QLocale::system().toString(dateTime, QLocale::LongFormat);
+        return KMime::DateFormatter::formatDate(KMime::DateFormatter::Fancy, unixTime, QString(), false);
     case CustomDate:
     default:
         return dateStr(dateTime);

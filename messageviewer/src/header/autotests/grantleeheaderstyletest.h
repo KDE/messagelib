@@ -26,6 +26,10 @@ class GrantleeHeaderStyleTest : public QObject
 {
     Q_OBJECT
 
+public Q_SLOTS:
+    void initTestCase();
+    void cleanupTestCase();
+
 private Q_SLOTS:
     void testName();
     void testRenderHeaderNoMessage();
@@ -34,6 +38,9 @@ private Q_SLOTS:
     void testRenderHeaderVCard();
     void testRenderHeader_data();
     void testRenderHeader();
+
+private:
+    QString expectedDataLocation;
 };
 
 #endif

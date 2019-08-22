@@ -78,6 +78,11 @@ public:
      */
     static void magicSetType(KMime::Content *node, bool autoDecode = true);
 
+    bool hasMailHeader(const char *header, const KMime::Message *message) const;
+    KMime::Headers::Base *mailHeaderAsBase(const char *header, const KMime::Message *message) const;
+    KMime::Headers::Generics::AddressList *mailHeaderAsAddressList(const char *header, KMime::Message *message) const;
+    QDateTime dateHeader(KMime::Message *message) const;
+
     /** Attach an extra node to an existing node */
     void attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content);
 

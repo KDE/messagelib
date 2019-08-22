@@ -62,7 +62,6 @@ void AntiSpamConfig::readConfig()
 {
     mAgents.clear();
     KConfig config(QStringLiteral("kmail.antispamrc"));
-    config.setReadDefaults(true);
     KConfigGroup general(&config, "General");
     int totalTools = general.readEntry("tools", 0);
     for (int i = 1; i <= totalTools; ++i) {

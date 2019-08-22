@@ -132,6 +132,31 @@ void GrantleeHeaderFormatterTest::testPrint()
     }
 }
 
+void GrantleeHeaderFormatterTest::testFancyDate()
+{
+    QString tmplName = QStringLiteral("fancydate.tmpl");
+
+    auto style = GrantleeHeaderStyle();
+    auto formatter = GrantleeHeaderFormatter();
+    KMime::Message::Ptr msg(new KMime::Message);
+
+    {
+        auto datetime(QDateTime::currentDateTime());
+        datetime.setTime(QTime(12,34,56));
+        datetime = datetime.addDays(-1);
+
+        const QByteArray data = "From: from@example.com\nDate: " + datetime.toString(Qt::RFC2822Date).toLocal8Bit() + "\nTo: to@example.com\n\ncontent";
+        msg->setContent(KMime::CRLFtoLF(data));
+        msg->parse();
+    }
+
+    const QString &absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + tmplName;
+
+    const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, msg.data(), false);
+    testHeaderFile(QStringLiteral("<div><div>")+data, absolutePath, QStringLiteral("fancydate"));
+
+}
+
 void GrantleeHeaderFormatterTest::testBlock_data()
 {
     QTest::addColumn<QString>("tmplName");
