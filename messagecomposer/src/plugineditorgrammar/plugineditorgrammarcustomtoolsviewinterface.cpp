@@ -23,10 +23,6 @@ using namespace MessageComposer;
 class MessageComposer::PluginEditorGrammarCustomToolsViewInterfacePrivate
 {
 public:
-    PluginEditorGrammarCustomToolsViewInterfacePrivate()
-    {
-    }
-
     QWidget *mParentWidget = nullptr;
     KPIMTextEdit::RichTextComposer *mEditor = nullptr;
 };
@@ -37,9 +33,7 @@ PluginEditorGrammarCustomToolsViewInterface::PluginEditorGrammarCustomToolsViewI
 {
 }
 
-PluginEditorGrammarCustomToolsViewInterface::~PluginEditorGrammarCustomToolsViewInterface()
-{
-}
+PluginEditorGrammarCustomToolsViewInterface::~PluginEditorGrammarCustomToolsViewInterface() = default;
 
 void PluginEditorGrammarCustomToolsViewInterface::setParentWidget(QWidget *parent)
 {
