@@ -122,8 +122,12 @@ void GrantleeHeaderStyleTest::initTestCase()
             QVERIFY(QFile(file.absoluteFilePath()).copy(newPath));
         }
     }
+    const auto configDir = QDir(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation));
+    if (!configDir.exists()) {
+        QVERIFY(configDir.mkpath(QStringLiteral(".")));
+    }
     QFile antispamFile(QStringLiteral(HEADER_DATA_DIR "/kmail.antispamrc"));
-    const QString &newPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QDir::separator() + QStringLiteral("kmail.antispamrc");
+    const QString &newPath = configDir.filePath(QStringLiteral("kmail.antispamrc"));
     antispamFile.copy(newPath);
 }
 
