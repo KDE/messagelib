@@ -124,7 +124,6 @@ void GrantleeHeaderStyleTest::initTestCase()
     }
     QFile antispamFile(QStringLiteral(HEADER_DATA_DIR "/kmail.antispamrc"));
     const QString &newPath = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QDir::separator() + QStringLiteral("kmail.antispamrc");
-    qDebug() << "Writing kmail.antispamrc to " << newPath;
     antispamFile.copy(newPath);
 }
 

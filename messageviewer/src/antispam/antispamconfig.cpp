@@ -36,8 +36,6 @@
 #include <kconfig.h>
 #include <kconfiggroup.h>
 
-#include <QDebug>
-
 using namespace MessageViewer;
 
 AntiSpamConfig *AntiSpamConfig::instance()
@@ -66,7 +64,6 @@ void AntiSpamConfig::readConfig()
     KConfig config(QStringLiteral("kmail.antispamrc"));
     KConfigGroup general(&config, "General");
     int totalTools = general.readEntry("tools", 0);
-    qDebug() << "found " << totalTools << " AntiSpamTools.";
     for (int i = 1; i <= totalTools; ++i) {
         KConfigGroup tool(&config, QStringLiteral("Spamtool #%1").arg(i));
         if (tool.hasKey("ScoreHeader")) {
