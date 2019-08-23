@@ -40,6 +40,8 @@ private Q_SLOTS:
     void testAsync();
     void testHtmlContent_data();
     void testHtmlContent();
+    void testRenderedTree();
+    void testRenderedTree_data();
 };
 
 #endif // MIMETREEPARSER_TESTS_OBJECTTREEPARSERTEST_H

@@ -23,9 +23,12 @@
 #include "setupenv.h"
 
 #include <MimeTreeParser/NodeHelper>
+#include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 
+#include <QDebug>
+#include <QProcess>
 #include <QTest>
 
 using namespace MimeTreeParser;
@@ -35,6 +38,47 @@ QTEST_MAIN(ObjectTreeParserTest)
 void ObjectTreeParserTest::initTestCase()
 {
     Test::setupEnv();
+}
+
+QString stringifyMessagePartTree(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
+{
+    const QString line
+        = QStringLiteral("%1 * %3\n").arg(indent,
+                                          QString::fromUtf8(messagePart->metaObject()->className()));
+    QString ret = line;
+
+    indent += QStringLiteral(" ");
+    foreach (const auto &subPart, messagePart->subParts()) {
+        ret += stringifyMessagePartTree(subPart, indent);
+    }
+    return ret;
+}
+
+void testMessagePartTree(const MessagePart::Ptr &messagePart, const QString &mailFileName)
+{
+    QString renderedTree = stringifyMessagePartTree(messagePart, QString());
+
+    const QString treeFileName = QLatin1String(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName
+                                 + QStringLiteral(".tree");
+    const QString outTreeFileName = mailFileName + QStringLiteral(".tree");
+
+    {
+        QFile f(outTreeFileName);
+        f.open(QIODevice::WriteOnly);
+        f.write(renderedTree.toUtf8());
+        f.close();
+    }
+    // compare to reference file
+    const QStringList args = QStringList()
+                             << QStringLiteral("-u")
+                             << treeFileName
+                             << outTreeFileName;
+    QProcess proc;
+    proc.setProcessChannelMode(QProcess::ForwardedChannels);
+    proc.start(QStringLiteral("diff"), args);
+    QVERIFY(proc.waitForFinished());
+
+    QCOMPARE(proc.exitCode(), 0);
 }
 
 void ObjectTreeParserTest::testMailWithoutEncryption()
@@ -306,4 +350,32 @@ void ObjectTreeParserTest::testHtmlContent()
 
     QVERIFY(otp.plainTextContent().isEmpty());
     QCOMPARE(otp.htmlContent(), output);
+}
+
+void ObjectTreeParserTest::testRenderedTree_data()
+{
+    QTest::addColumn<QString>("mailFileName");
+
+    QDir dir(QStringLiteral(MAIL_DATA_DIR));
+    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    for (const QString &file : l) {
+        if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".tree"))) {
+            continue;
+        }
+        QTest::newRow(file.toLatin1().constData()) << file;
+    }
+ 
+}
+
+void ObjectTreeParserTest::testRenderedTree()
+{
+    QFETCH(QString, mailFileName);
+    KMime::Message::Ptr originalMessage = readAndParseMail(mailFileName);
+    NodeHelper nodeHelper;
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource, &nodeHelper);
+    testSource.setDecryptMessage(true);
+    otp.parseObjectTree(originalMessage.data());
+
+    testMessagePartTree(otp.parsedPart(), mailFileName);
 }
