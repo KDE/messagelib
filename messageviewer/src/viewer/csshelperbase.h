@@ -81,9 +81,9 @@ public:
     Q_REQUIRED_RESULT QString addEndBlockQuote(int numberBlock) const;
     Q_REQUIRED_RESULT QString addStartBlockQuote(int numberBlock) const;
 
-    virtual Q_REQUIRED_RESULT QString extraScreenCss(const QString &headerFont) const;
-    virtual Q_REQUIRED_RESULT QString extraPrintCss(const QString &headerFont) const;
-    virtual Q_REQUIRED_RESULT QString extraCommonCss(const QString &headerFont) const;
+    Q_REQUIRED_RESULT QString extraScreenCss(const QString &headerFont) const;
+    Q_REQUIRED_RESULT QString extraPrintCss(const QString &headerFont) const;
+    Q_REQUIRED_RESULT QString extraCommonCss(const QString &headerFont) const;
 
     void setHeaderPlugin(const HeaderStylePlugin *headerPlugin);
 
