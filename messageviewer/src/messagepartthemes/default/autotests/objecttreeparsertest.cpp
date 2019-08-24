@@ -164,7 +164,7 @@ void ObjectTreeParserTester::test_inlinePGPDecryption()
 
     // This test is only a workaround, till we can set the memento to the proper node of the mail.
     KMime::Content *content = new KMime::Content;
-    QVERIFY(nodeHelper.bodyPartMemento(content, "decryptverify"));
+    QVERIFY(nodeHelper.bodyPartMemento(content, "decryptverify-attachment:?place=0"));
 
     QVERIFY(otp.htmlContent().isEmpty());
 }
@@ -188,7 +188,7 @@ void ObjectTreeParserTester::test_inlinePGPSigned()
     testWriter.end();
 
     // This test is only a workaround, till we can set the memento to the proper node of the mail.
-    QVERIFY(nodeHelper.bodyPartMemento(nullptr, "verification"));
+    QVERIFY(nodeHelper.bodyPartMemento(nullptr, "verification-attachment:?place=0"));
 }
 
 void ObjectTreeParserTester::test_HTML()

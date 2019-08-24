@@ -363,6 +363,9 @@ public:
     void startDecryption(const QByteArray &text, const QTextCodec *aCodec);
     void startDecryption(KMime::Content *data = nullptr);
 
+    void setMementoName(const QByteArray &name);
+    QByteArray mementoName() const;
+    
     QByteArray mDecryptedData;
 
     QString plaintextContent() const override;
@@ -383,10 +386,11 @@ private:
 protected:
     bool mPassphraseError;
     bool mNoSecKey;
+    bool mDecryptMessage;
     const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
-    bool mDecryptMessage;
     QByteArray mVerifiedText;
+    QByteArray mMementoName;
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > mDecryptRecipients;
 
     friend class EncryptedBodyPartFormatter;
@@ -409,6 +413,9 @@ public:
 
     void startVerification(const QByteArray &text, const QTextCodec *aCodec);
     void startVerificationDetached(const QByteArray &text, KMime::Content *textNode, const QByteArray &signature);
+
+    void setMementoName(const QByteArray &name);
+    QByteArray mementoName() const;
 
     QByteArray mDecryptedData;
     std::vector<GpgME::Signature> mSignatures;
@@ -434,6 +441,7 @@ protected:
     const QGpgME::Protocol *mCryptoProto;
     QString mFromAddress;
     QByteArray mVerifiedText;
+    QByteArray mMementoName;
 
     friend EncryptedMessagePart;
 };

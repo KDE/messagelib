@@ -334,7 +334,9 @@ void TextMessagePart::parseContent()
         bool fullySignedOrEncrypted = true;
         bool fullySignedOrEncryptedTmp = true;
 
+        int blockIndex = -1;
         for (const auto &block : blocks) {
+            blockIndex += 1;
             if (!fullySignedOrEncryptedTmp) {
                 fullySignedOrEncrypted = false;
             }
@@ -346,6 +348,7 @@ void TextMessagePart::parseContent()
                 EncryptedMessagePart::Ptr mp(new EncryptedMessagePart(mOtp, QString(), cryptProto, fromAddress, nullptr));
                 mp->setDecryptMessage(decryptMessage());
                 mp->setIsEncrypted(true);
+                mp->setMementoName(mp->mementoName() + "-" + nodeHelper()->asHREF(content(), QString::number(blockIndex)).toLocal8Bit() );
                 appendSubPart(mp);
                 if (!decryptMessage()) {
                     continue;
@@ -356,6 +359,7 @@ void TextMessagePart::parseContent()
                 }
             } else if (block.type() == ClearsignedBlock) {
                 SignedMessagePart::Ptr mp(new SignedMessagePart(mOtp, QString(), cryptProto, fromAddress, nullptr));
+                mp->setMementoName(mp->mementoName() + "-" + nodeHelper()->asHREF(content(), QString::number(blockIndex)).toLocal8Bit() );
                 appendSubPart(mp);
                 mp->startVerification(block.text(), aCodec);
             } else {
@@ -689,6 +693,7 @@ SignedMessagePart::SignedMessagePart(ObjectTreeParser *otp, const QString &text,
     : MessagePart(otp, text)
     , mCryptoProto(cryptoProto)
     , mFromAddress(fromAddress)
+    , mMementoName("verification")
 {
     setContent(node);
     partMetaData()->technicalProblem = (mCryptoProto == nullptr);
@@ -713,6 +718,16 @@ bool SignedMessagePart::isSigned() const
     return partMetaData()->isSigned;
 }
 
+QByteArray SignedMessagePart::mementoName() const
+{
+    return mMementoName;
+}
+
+void SignedMessagePart::setMementoName(const QByteArray& name)
+{
+    mMementoName = name;
+}
+
 bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode)
 {
     NodeHelper *nodeHelper = mOtp->nodeHelper();
@@ -723,9 +738,9 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
     partMetaData()->status = i18n("Wrong Crypto Plug-In.");
     partMetaData()->status_code = GPGME_SIG_STAT_NONE;
 
-    const QByteArray mementoName = "verification";
+    const QByteArray _mementoName = mementoName();
 
-    CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(content(), mementoName));
+    CryptoBodyPartMemento *m = dynamic_cast<CryptoBodyPartMemento *>(nodeHelper->bodyPartMemento(content(), _mementoName));
     Q_ASSERT(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completely wrong
 
     if (!m && mCryptoProto) {
@@ -751,7 +766,7 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
             } else {
                 m->exec();
             }
-            nodeHelper->setBodyPartMemento(content(), mementoName, m);
+            nodeHelper->setBodyPartMemento(content(), _mementoName, m);
         }
     } else if (m && m->isRunning()) {
         partMetaData()->inProgress = true;
@@ -1015,9 +1030,10 @@ EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp, const QString 
     : MessagePart(otp, text)
     , mPassphraseError(false)
     , mNoSecKey(false)
+    , mDecryptMessage(false)
     , mCryptoProto(cryptoProto)
     , mFromAddress(fromAddress)
-    , mDecryptMessage(false)
+    , mMementoName("decryptverify")
 {
     setContent(node);
     partMetaData()->technicalProblem = (mCryptoProto == nullptr);
@@ -1069,6 +1085,16 @@ bool EncryptedMessagePart::passphraseError() const
     return mPassphraseError;
 }
 
+QByteArray EncryptedMessagePart::mementoName() const
+{
+    return mMementoName;
+}
+
+void EncryptedMessagePart::setMementoName(const QByteArray& name)
+{
+    mMementoName = name;
+}
+
 void EncryptedMessagePart::startDecryption(const QByteArray &text, const QTextCodec *aCodec)
 {
     KMime::Content *content = new KMime::Content;
@@ -1104,9 +1130,10 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
 
     Q_ASSERT(decryptMessage());
 
+    const QByteArray _mementoName = mementoName();
     // Check whether the memento contains a result from last time:
     const DecryptVerifyBodyPartMemento *m
-        = dynamic_cast<DecryptVerifyBodyPartMemento *>(nodeHelper->bodyPartMemento(&data, "decryptverify"));
+        = dynamic_cast<DecryptVerifyBodyPartMemento *>(nodeHelper->bodyPartMemento(&data, _mementoName));
 
     Q_ASSERT(!m || mCryptoProto); //No CryptoPlugin and having a bodyPartMemento -> there is something completely wrong
 
@@ -1131,7 +1158,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
                 newM->exec();
                 m = newM;
             }
-            nodeHelper->setBodyPartMemento(&data, "decryptverify", newM);
+            nodeHelper->setBodyPartMemento(&data, _mementoName, newM);
         }
     } else if (m && m->isRunning()) {
         partMetaData()->inProgress = true;
