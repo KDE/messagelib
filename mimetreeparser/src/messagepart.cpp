@@ -1222,6 +1222,11 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         } else {
             mPassphraseError = decryptResult.error().isCanceled() || decryptResult.error().code() == GPG_ERR_NO_SECKEY;
             partMetaData()->isEncrypted = bDecryptionOk || decryptResult.error().code() != GPG_ERR_NO_DATA;
+
+            if (decryptResult.error().isCanceled()) {
+                setDecryptMessage(false);
+            }
+
             partMetaData()->errorText = QString::fromLocal8Bit(decryptResult.error().asString());
             if (partMetaData()->isEncrypted && decryptResult.numRecipients() > 0) {
                 partMetaData()->keyId = decryptResult.recipient(0).keyID();
