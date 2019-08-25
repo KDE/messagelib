@@ -340,7 +340,7 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
         }
     } else {   //plain mails only
         QString htmlReplace = plainText.toHtmlEscaped();
-        htmlReplace = htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
+        htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
         htmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
     }
 

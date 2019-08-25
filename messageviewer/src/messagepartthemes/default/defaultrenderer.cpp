@@ -300,7 +300,7 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
     s = s.remove(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
 
     // head
-    s = s.replace(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive), QString()).trimmed();
+    s.replace(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive), QString()).trimmed();
     const int startIndex = s.indexOf(QLatin1String("<head>"), Qt::CaseInsensitive);
     if (startIndex >= 0) {
         const auto endIndex = s.indexOf(QLatin1String("</head>"), Qt::CaseInsensitive);
