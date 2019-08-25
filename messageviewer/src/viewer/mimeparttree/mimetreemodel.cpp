@@ -121,7 +121,7 @@ public:
 
             if (mimeType.isValid() && mimeType.name().startsWith(QLatin1String("multipart/"))) {
                 return QIcon::fromTheme(QStringLiteral("folder"));
-            } else if (!iconName.isEmpty() && iconName != QStringLiteral("unknown")) {
+            } else if (!iconName.isEmpty() && iconName != QLatin1String("unknown")) {
                 return QIcon::fromTheme(iconName);
             } else if (mimeType.isValid() && !mimeType.iconName().isEmpty()) {
                 return QIcon::fromTheme(mimeType.iconName());
