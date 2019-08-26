@@ -206,7 +206,7 @@ QList<QPair<QString, QString> > parseMailtoUrl(const QUrl &url)
     if (!toStr.isEmpty()) {
         to << toStr;
     }
-    const QString fullTo = to.join(QStringLiteral(", "));
+    const QString fullTo = to.join(QLatin1String(", "));
     if (!fullTo.isEmpty()) {
         QPair<QString, QString> pairElement;
         pairElement.first = QStringLiteral("to");

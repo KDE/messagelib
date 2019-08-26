@@ -474,16 +474,16 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
             }
         }
         auto header = new KMime::Headers::Generic("X-KMail-UnExpanded-To");
-        header->from7BitString(unExpandedTo.join(QStringLiteral(", ")).toLatin1());
+        header->from7BitString(unExpandedTo.join(QLatin1String(", ")).toLatin1());
         m_msg->setHeader(header);
         header = new KMime::Headers::Generic("X-KMail-UnExpanded-CC");
-        header->from7BitString(unExpandedCc.join(QStringLiteral(", ")).toLatin1());
+        header->from7BitString(unExpandedCc.join(QLatin1String(", ")).toLatin1());
         m_msg->setHeader(header);
         header = new KMime::Headers::Generic("X-KMail-UnExpanded-BCC");
-        header->from7BitString(unExpandedBcc.join(QStringLiteral(", ")).toLatin1());
+        header->from7BitString(unExpandedBcc.join(QLatin1String(", ")).toLatin1());
         m_msg->setHeader(header);
         header = new KMime::Headers::Generic("X-KMail-UnExpanded-Reply-To");
-        header->from7BitString(unExpandedReplyTo.join(QStringLiteral(", ")).toLatin1());
+        header->from7BitString(unExpandedReplyTo.join(QLatin1String(", ")).toLatin1());
         m_msg->setHeader(header);
         autoresizeImage = false;
     }

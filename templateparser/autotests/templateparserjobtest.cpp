@@ -155,7 +155,7 @@ void TemplateParserJobTest::test_replyHtml()
     QVERIFY(!convertedHtmlContent.isEmpty());
 
     // referenceData is read from a file and most text editors add a \n at the end of the last line
-    if (!convertedHtmlContent.endsWith(QStringLiteral("\n"))) {
+    if (!convertedHtmlContent.endsWith(QLatin1String("\n"))) {
         convertedHtmlContent += QStringLiteral("\n");
     }
 
@@ -310,7 +310,7 @@ void TemplateParserJobTest::test_forwardHtml()
 
     QString convertedHtmlContent = parser->htmlMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
     // referenceData is read from a file and most text editors add a \n at the end of the last line
-    if (!convertedHtmlContent.endsWith(QStringLiteral("\n"))) {
+    if (!convertedHtmlContent.endsWith(QLatin1String("\n"))) {
         convertedHtmlContent += QStringLiteral("\n");
     }
 

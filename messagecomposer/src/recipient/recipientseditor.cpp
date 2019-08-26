@@ -160,7 +160,7 @@ Recipient::Ptr RecipientsEditor::activeRecipient() const
 
 QString RecipientsEditor::recipientString(Recipient::Type type) const
 {
-    return recipientStringList(type).join(QStringLiteral(", "));
+    return recipientStringList(type).join(QLatin1String(", "));
 }
 
 QStringList RecipientsEditor::recipientStringList(Recipient::Type type) const

@@ -1548,7 +1548,7 @@ void Kleo::KeyResolver::dump() const
                 qCDebug(MESSAGECOMPOSER_LOG) << "  " << kit->shortKeyID();
             }
             qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " recipients: "
-                                         << qPrintable(sit->recipients.join(QStringLiteral(", ")));
+                                         << qPrintable(sit->recipients.join(QLatin1String(", ")));
         }
     }
 #endif
@@ -1762,7 +1762,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::getEncryptionKeys(const QString &pers
 
     if (!fingerprints.empty()) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Using encryption keys 0x"
-                                     << fingerprints.join(QStringLiteral(", 0x"))
+                                     << fingerprints.join(QLatin1String(", 0x"))
                                      << "for" << person;
         std::vector<GpgME::Key> keys = lookup(fingerprints);
         if (!keys.empty()) {
@@ -1845,7 +1845,7 @@ std::vector<GpgME::Key> Kleo::KeyResolver::lookup(const QStringList &patterns, b
     if (patterns.empty()) {
         return std::vector<GpgME::Key>();
     }
-    qCDebug(MESSAGECOMPOSER_LOG) << "( \"" << patterns.join(QStringLiteral("\", \"")) << "\"," << secret << ")";
+    qCDebug(MESSAGECOMPOSER_LOG) << "( \"" << patterns.join(QLatin1String("\", \"")) << "\"," << secret << ")";
     std::vector<GpgME::Key> result;
     if (mCryptoMessageFormats & (InlineOpenPGPFormat | OpenPGPMIMEFormat)) {
         if (const QGpgME::Protocol *p = QGpgME::openpgp()) {

@@ -46,7 +46,7 @@ void DistributionListExpandJob::start()
 
 QString DistributionListExpandJob::addresses() const
 {
-    return mEmailAddresses.join(QStringLiteral(", "));
+    return mEmailAddresses.join(QLatin1String(", "));
 }
 
 bool DistributionListExpandJob::isEmpty() const

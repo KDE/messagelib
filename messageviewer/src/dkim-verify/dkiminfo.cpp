@@ -38,17 +38,17 @@ void DKIMInfo::parseDKIM(const QString &header)
     const QStringList items = header.split(QLatin1Char(';'));
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
-        if (elem.startsWith(QStringLiteral("v="))) {
+        if (elem.startsWith(QLatin1String("v="))) {
             mVersion = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QStringLiteral("a="))) {
-        } else if (elem.startsWith(QStringLiteral("c="))) {
-        } else if (elem.startsWith(QStringLiteral("i="))) {
-        } else if (elem.startsWith(QStringLiteral("q="))) {
-        } else if (elem.startsWith(QStringLiteral("d="))) {
-        } else if (elem.startsWith(QStringLiteral("s="))) {
-        } else if (elem.startsWith(QStringLiteral("b="))) {
-        } else if (elem.startsWith(QStringLiteral("h="))) {
-        } else if (elem.startsWith(QStringLiteral("hb="))) {
+        } else if (elem.startsWith(QLatin1String("a="))) {
+        } else if (elem.startsWith(QLatin1String("c="))) {
+        } else if (elem.startsWith(QLatin1String("i="))) {
+        } else if (elem.startsWith(QLatin1String("q="))) {
+        } else if (elem.startsWith(QLatin1String("d="))) {
+        } else if (elem.startsWith(QLatin1String("s="))) {
+        } else if (elem.startsWith(QLatin1String("b="))) {
+        } else if (elem.startsWith(QLatin1String("h="))) {
+        } else if (elem.startsWith(QLatin1String("hb="))) {
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << " Unknown element type" << elem;
         }

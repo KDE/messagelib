@@ -60,7 +60,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::loo
         return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayFullAddress);
     } else if (property == QStringLiteral("str")) {
         return object->asUnicodeString();
-    } else if (property.startsWith(QStringLiteral("expandable"))) {
+    } else if (property.startsWith(QLatin1String("expandable"))) {
         const auto &name = property.mid(10);
         const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
             object, MessageCore::StringUtil::DisplayFullAddress,
@@ -86,7 +86,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::loo
         return StringUtil::emailAddrAsAnchor(object, StringUtil::DisplayFullAddress);
     } else if (property == QStringLiteral("str")) {
         return object->asUnicodeString();
-    } else if (property.startsWith(QStringLiteral("expandable"))) {
+    } else if (property.startsWith(QLatin1String("expandable"))) {
         const auto &name = property.mid(10);
         const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
             object, MessageCore::StringUtil::DisplayFullAddress,
@@ -108,7 +108,7 @@ if (property == QStringLiteral("nameOnly")) {
     return StringUtil::emailAddrAsAnchor(object.data(), StringUtil::DisplayFullAddress);
 } else if (property == QStringLiteral("str")) {
     return object->asUnicodeString();
-} else if (property.startsWith(QStringLiteral("expandable"))) {
+} else if (property.startsWith(QLatin1String("expandable"))) {
     const auto &name = property.mid(10);
     const QString val = MessageCore::StringUtil::emailAddrAsAnchor(
         object.data(), MessageCore::StringUtil::DisplayFullAddress,
