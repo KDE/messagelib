@@ -120,7 +120,7 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
 
                 //const QString cacheDuration = map[QStringLiteral("cacheDuration")].toString();
 
-                if (threatTypeStr == QStringLiteral("MALWARE")) {
+                if (threatTypeStr == QLatin1String("MALWARE")) {
                     const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
                     QList<QByteArray> hashList;
                     QMap<QString, QVariant>::const_iterator urlMapIt = urlMap.cbegin();

@@ -43,7 +43,7 @@ Q_DECLARE_METATYPE(GpgME::Key)
 
 // Read-only introspection of GpgME::DecryptionResult::Recipient object.
 GRANTLEE_BEGIN_LOOKUP(GpgME::DecryptionResult::Recipient)
-if (property == QStringLiteral("keyID")) {
+if (property == QLatin1String("keyID")) {
     return QString::fromLatin1(object.keyID());
 }
 GRANTLEE_END_LOOKUP
@@ -52,9 +52,9 @@ namespace Grantlee {
 template<>
 inline QVariant TypeAccessor<const QGpgME::Protocol *>::lookUp(const QGpgME::Protocol *const object, const QString &property)
 {
-    if (property == QStringLiteral("name")) {
+    if (property == QLatin1String("name")) {
         return object->name();
-    } else if (property == QStringLiteral("displayName")) {
+    } else if (property == QLatin1String("displayName")) {
         return object->displayName();
     }
     return QVariant();
@@ -66,13 +66,13 @@ namespace Grantlee {
 template<>
 inline QVariant TypeAccessor<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> &>::lookUp(std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> const &object, const QString &property)
 {
-    if (property == QStringLiteral("keyID")) {
+    if (property == QLatin1String("keyID")) {
         return QString::fromLatin1(object.first.keyID());
     }
-    if (property == QStringLiteral("id")) {
+    if (property == QLatin1String("id")) {
         return QString::fromUtf8(object.second.userID(0).id());
     }
-    if (property == QStringLiteral("mainID")) {
+    if (property == QLatin1String("mainID")) {
         return QString::fromLatin1(object.second.keyID());
     }
     return QVariant();

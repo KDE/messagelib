@@ -883,42 +883,42 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
         return;
     }
 
-    if (className == QStringLiteral("MimeTreeParser::MessagePartList")) {
+    if (className == QLatin1String("MimeTreeParser::MessagePartList")) {
         auto mp = msgPart.dynamicCast<MessagePartList>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QStringLiteral("MimeTreeParser::MimeMessagePart")) {
+    } else if (className == QLatin1String("MimeTreeParser::MimeMessagePart")) {
         auto mp = msgPart.dynamicCast<MimeMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QStringLiteral("MimeTreeParser::EncapsulatedRfc822MessagePart")) {
+    } else if (className == QLatin1String("MimeTreeParser::EncapsulatedRfc822MessagePart")) {
         auto mp = msgPart.dynamicCast<EncapsulatedRfc822MessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QStringLiteral("MimeTreeParser::HtmlMessagePart")) {
+    } else if (className == QLatin1String("MimeTreeParser::HtmlMessagePart")) {
         auto mp = msgPart.dynamicCast<HtmlMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QStringLiteral("MimeTreeParser::SignedMessagePart")) {
+    } else if (className == QLatin1String("MimeTreeParser::SignedMessagePart")) {
         auto mp = msgPart.dynamicCast<SignedMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QStringLiteral("MimeTreeParser::EncryptedMessagePart")) {
+    } else if (className == QLatin1String("MimeTreeParser::EncryptedMessagePart")) {
         auto mp = msgPart.dynamicCast<EncryptedMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QStringLiteral("MimeTreeParser::AlternativeMessagePart")) {
+    } else if (className == QLatin1String("MimeTreeParser::AlternativeMessagePart")) {
         auto mp = msgPart.dynamicCast<AlternativeMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QStringLiteral("MimeTreeParser::CertMessagePart")) {
+    } else if (className == QLatin1String("MimeTreeParser::CertMessagePart")) {
         auto mp = msgPart.dynamicCast<CertMessagePart>();
         if (mp) {
             render(mp, htmlWriter);

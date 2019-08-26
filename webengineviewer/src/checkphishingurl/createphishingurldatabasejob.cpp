@@ -299,7 +299,7 @@ QVector<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVaria
                     QMapIterator<QString, QVariant> rawIndicesIt(map);
                     while (rawIndicesIt.hasNext()) {
                         rawIndicesIt.next();
-                        if (rawIndicesIt.key() == QStringLiteral("indices")) {
+                        if (rawIndicesIt.key() == QLatin1String("indices")) {
                             const QVariantList lst = rawIndicesIt.value().toList();
                             QList<quint32> indexList;
                             indexList.reserve(lst.count());

@@ -35,8 +35,8 @@ BlockExternalResourcesUrlInterceptor::~BlockExternalResourcesUrlInterceptor()
 bool BlockExternalResourcesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QString scheme = info.requestUrl().scheme();
-    if (scheme == QStringLiteral("data")
-        || scheme == QStringLiteral("file")) {
+    if (scheme == QLatin1String("data")
+        || scheme == QLatin1String("file")) {
         return false;
     }
     const QWebEngineUrlRequestInfo::ResourceType resourceType = info.resourceType();
