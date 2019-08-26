@@ -137,8 +137,8 @@ void Filter::setSearchString(const QString &search, QuickSearchLine::SearchOptio
     bool needToSplitString = false;
     QString newStr = mSearchString;
     if (mSearchString.startsWith(QLatin1Char('"')) && mSearchString.startsWith(QLatin1Char('"'))) {
-        newStr = newStr.remove(0, 1);
-        newStr = newStr.remove(newStr.length() - 1, 1);
+        newStr.remove(0, 1);
+        newStr.remove(newStr.length() - 1, 1);
         mSearchList = QStringList() << newStr;
     } else {
         const QStringList searchListTmp = mSearchString.split(QLatin1Char(' '), QString::SkipEmptyParts);

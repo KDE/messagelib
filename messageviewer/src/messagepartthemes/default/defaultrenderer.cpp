@@ -296,8 +296,8 @@ bool containsExternalReferences(const QString &str, const QString &extraHead)
 QString processHtml(const QString &htmlSource, QString &extraHead)
 {
     QString s = htmlSource.trimmed();
-    s = s.remove(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
+    s.remove(QRegExp(QStringLiteral("^<!DOCTYPE[^>]*>"), Qt::CaseInsensitive)).trimmed();
+    s.remove(QRegExp(QStringLiteral("^<html[^>]*>"), Qt::CaseInsensitive)).trimmed();
 
     // head
     s.replace(QRegExp(QStringLiteral("^<head/>"), Qt::CaseInsensitive), QString()).trimmed();
@@ -322,9 +322,9 @@ QString processHtml(const QString &htmlSource, QString &extraHead)
     }
 
     // body
-    s = s.remove(QRegExp(QStringLiteral("<body[^>]*>"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("</html>$"), Qt::CaseInsensitive)).trimmed();
-    s = s.remove(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive)).trimmed();
+    s.remove(QRegExp(QStringLiteral("<body[^>]*>"), Qt::CaseInsensitive)).trimmed();
+    s.remove(QRegExp(QStringLiteral("</html>$"), Qt::CaseInsensitive)).trimmed();
+    s.remove(QRegExp(QStringLiteral("</body>$"), Qt::CaseInsensitive)).trimmed();
     return s;
 }
 

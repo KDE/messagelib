@@ -429,7 +429,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath, const Grant
         const QByteArray baHeader = header.toLocal8Bit();
         if (auto hrd = message->headerByType(baHeader.constData())) {
             //Grantlee doesn't support '-' in variable name => remove it.
-            header = header.remove(QLatin1Char('-'));
+            header.remove(QLatin1Char('-'));
             headerObject.insert(header, hrd->asUnicodeString());
         }
     }
