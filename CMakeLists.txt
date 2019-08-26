@@ -12,7 +12,7 @@ option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branc
 option(KDEPIM_RUN_AKONADI_TEST "Enable autotest based on Akonadi." TRUE)
 option(DKIM_CHECKER_BUILD "DKIM CHECKER (experimental)" FALSE)
 
-set(KF5_MIN_VERSION "5.60.0")
+set(KF5_MIN_VERSION "5.61.0")
 
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
