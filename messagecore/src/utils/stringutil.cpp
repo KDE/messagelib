@@ -451,7 +451,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList, Displa
     }
 
     if (link == ShowLink) {
-        result.truncate(result.length() - 2);
+        result.chop(2);
     }
 
     if (expandableInserted) {
