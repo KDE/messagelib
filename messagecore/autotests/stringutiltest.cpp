@@ -424,13 +424,13 @@ void StringUtilTest::test_parseDuplicateQueryItems()
     QCOMPARE(values.size(), 5);
     int valueCC = 0;
     for (int i = 0; i < values.size(); ++i) {
-        if (values.at(i).first == QLatin1Literal("to")) {
+        if (values.at(i).first == QLatin1String("to")) {
             QCOMPARE(values.at(i).second, QLatin1String("test@test.com"));
-        } else if (values.at(i).first == QLatin1Literal("subject")) {
+        } else if (values.at(i).first == QLatin1String("subject")) {
             QCOMPARE(values.at(i).second, QLatin1String("test"));
-        } else if (values.at(i).first == QLatin1Literal("body")) {
+        } else if (values.at(i).first == QLatin1String("body")) {
             QCOMPARE(values.at(i).second, QLatin1String("line1\r\nline2"));
-        } else if (values.at(i).first == QLatin1Literal("cc")) {
+        } else if (values.at(i).first == QLatin1String("cc")) {
             const QString ccVal = values.at(i).second;
             valueCC++;
             if ((ccVal != QLatin1String("someone_else@example.com")) && (ccVal != QLatin1String("someone_else2@example.com"))) {
