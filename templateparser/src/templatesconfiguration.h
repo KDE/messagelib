@@ -24,6 +24,9 @@
 class QPlainTextEdit;
 namespace TemplateParser {
 class TemplatesConfigurationPrivate;
+/**
+ * @brief The TemplatesConfiguration class
+ */
 class TEMPLATEPARSER_EXPORT TemplatesConfiguration : public QWidget, Ui::TemplatesConfigurationBase
 {
     Q_OBJECT

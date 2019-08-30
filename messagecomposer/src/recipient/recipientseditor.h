@@ -36,6 +36,9 @@ class Mailbox;
 }
 }
 namespace MessageComposer {
+/**
+ * @brief The RecipientLineFactory class
+ */
 class MESSAGECOMPOSER_EXPORT RecipientLineFactory : public KPIM::MultiplyingLineFactory
 {
     Q_OBJECT
@@ -47,6 +50,9 @@ public:
 
 class RecipientsPicker;
 class RecipientsEditorPrivate;
+/**
+ * @brief The RecipientsEditor class
+ */
 class MESSAGECOMPOSER_EXPORT RecipientsEditor : public KPIM::MultiplyingLineEditor
 {
     Q_OBJECT

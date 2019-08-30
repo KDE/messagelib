@@ -25,6 +25,9 @@
 #include "globalsettings_messagecore.h"
 
 namespace MessageCore {
+/**
+ * @brief The MessageCoreSettings class
+ */
 class MESSAGECORE_EXPORT MessageCoreSettings : public MessageCore::MessageCoreSettingsBase
 {
     Q_OBJECT

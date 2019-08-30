@@ -42,7 +42,9 @@
 namespace MessageViewer {
 class MessagePartRendererBase;
 class MessagePartRendererFactoryPrivate;
-
+/**
+ * @brief The MessagePartRendererFactory class
+ */
 class MESSAGEVIEWER_EXPORT MessagePartRendererFactory
 {
 public:

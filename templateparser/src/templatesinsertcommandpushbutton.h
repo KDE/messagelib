@@ -26,6 +26,10 @@
 
 
 namespace TemplateParser {
+/**
+ * @brief The TemplatesInsertCommandPushButton class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEMPLATEPARSER_EXPORT TemplatesInsertCommandPushButton : public QPushButton
 {
     Q_OBJECT

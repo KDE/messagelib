@@ -26,6 +26,10 @@
 namespace MessageComposer {
 class PluginEditorManagerPrivate;
 class PluginEditor;
+/**
+ * @brief The PluginEditorManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorManager : public QObject
 {
     Q_OBJECT

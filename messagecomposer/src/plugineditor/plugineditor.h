@@ -24,6 +24,10 @@
 #include <PimCommon/AbstractGenericPlugin>
 namespace MessageComposer {
 class PluginEditorPrivate;
+/**
+ * @brief The PluginEditor class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditor : public PimCommon::AbstractGenericPlugin
 {
     Q_OBJECT

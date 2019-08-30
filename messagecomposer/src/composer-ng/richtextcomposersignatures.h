@@ -28,6 +28,10 @@ class Signature;
 
 namespace MessageComposer {
 class RichTextComposerNg;
+/**
+ * @brief The RichTextComposerSignatures class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT RichTextComposerSignatures : public QObject
 {
     Q_OBJECT

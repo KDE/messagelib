@@ -28,6 +28,10 @@
 #include <QStringList>
 
 namespace MessageViewer {
+/**
+ * @brief The ScamCheckShortUrl class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT ScamCheckShortUrl : public QObject
 {
     Q_OBJECT

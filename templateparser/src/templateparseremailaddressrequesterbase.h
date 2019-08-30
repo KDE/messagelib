@@ -23,6 +23,10 @@
 #include <QWidget>
 #include "templateparser_export.h"
 namespace TemplateParser {
+/**
+ * @brief The TemplateParserEmailAddressRequesterBase class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEMPLATEPARSER_EXPORT TemplateParserEmailAddressRequesterBase : public QWidget
 {
     Q_OBJECT

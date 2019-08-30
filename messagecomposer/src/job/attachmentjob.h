@@ -29,7 +29,8 @@ namespace MessageComposer {
 class AttachmentJobPrivate;
 
 /**
-*/
+ * @brief The AttachmentJob class
+ */
 class MESSAGECOMPOSER_EXPORT AttachmentJob : public ContentJobBase
 {
     Q_OBJECT

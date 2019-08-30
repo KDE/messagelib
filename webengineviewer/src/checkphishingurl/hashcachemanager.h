@@ -26,6 +26,10 @@
 namespace WebEngineViewer {
 class HashCacheManagerPrivate;
 //https://developers.google.com/safe-browsing/v4/caching
+/**
+ * @brief The HashCacheManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT HashCacheManager : public QObject
 {
     Q_OBJECT

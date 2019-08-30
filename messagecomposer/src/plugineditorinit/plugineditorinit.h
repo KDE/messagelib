@@ -26,7 +26,10 @@
 namespace MessageComposer {
 class PluginEditorInitPrivate;
 class PluginEditorInitInterface;
-
+/**
+ * @brief The PluginEditorInit class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorInit : public QObject
 {
     Q_OBJECT

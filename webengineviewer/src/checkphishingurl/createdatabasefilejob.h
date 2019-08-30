@@ -26,6 +26,10 @@
 
 namespace WebEngineViewer {
 class CreateDatabaseFileJobPrivate;
+/**
+ * @brief The CreateDatabaseFileJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT CreateDatabaseFileJob : public QObject
 {
     Q_OBJECT

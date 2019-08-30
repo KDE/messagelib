@@ -25,6 +25,10 @@
 
 namespace MessageViewer {
 class GrantleeHeaderTestStylePrivate;
+/**
+ * @brief The GrantleeHeaderTestStyle class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT GrantleeHeaderTestStyle : public HeaderStyle
 {
     friend class GrantleeHeaderStyle;

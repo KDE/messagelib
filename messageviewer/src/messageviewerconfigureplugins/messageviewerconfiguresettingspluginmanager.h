@@ -26,6 +26,10 @@
 namespace MessageViewer {
 class MessageViewerConfigureSettingsPlugin;
 class MessageViewerConfigureSettingsPluginManagerPrivate;
+/**
+ * @brief The MessageViewerConfigureSettingsPluginManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginManager : public QObject
 {
     Q_OBJECT

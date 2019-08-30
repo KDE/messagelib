@@ -40,7 +40,9 @@ namespace MessageViewer {
 //
 // Convenience function
 //
-
+/**
+ * @brief The HeaderStrategy class
+ */
 class MESSAGEVIEWER_EXPORT HeaderStrategy
 {
 protected:

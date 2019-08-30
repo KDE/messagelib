@@ -37,7 +37,8 @@ namespace MessageComposer {
 class SinglepartJobPrivate;
 
 /**
-*/
+ * @brief The SinglepartJob class
+ */
 class MESSAGECOMPOSER_EXPORT SinglepartJob : public ContentJobBase
 {
     Q_OBJECT

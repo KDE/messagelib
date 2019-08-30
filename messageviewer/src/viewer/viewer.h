@@ -56,12 +56,12 @@ class AttachmentStrategy;
 class HeaderStylePlugin;
 class CSSHelper;
 class ViewerPrivate;
+class Viewer;
 
 /**
  * An interface to plug in a handler that is called when
  * an message item has been loaded into the view.
  */
-class Viewer;
 class MESSAGEVIEWER_EXPORT AbstractMessageLoadedHandler
 {
 public:

@@ -28,6 +28,10 @@
 namespace WebEngineViewer {
 class SearchFullHashJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
+/**
+ * @brief The SearchFullHashJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT SearchFullHashJob : public QObject
 {
     Q_OBJECT

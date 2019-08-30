@@ -25,6 +25,10 @@
 
 #include "templateparser_export.h"
 namespace TemplateParser {
+/**
+ * @brief The TemplatesInsertCommandAction class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEMPLATEPARSER_EXPORT TemplatesInsertCommandAction : public QWidgetAction
 {
     Q_OBJECT

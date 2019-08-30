@@ -26,6 +26,10 @@
 #include "messageviewer_export.h"
 namespace MessageViewer {
 class ScamExpandUrlJobPrivate;
+/**
+ * @brief The ScamExpandUrlJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT ScamExpandUrlJob : public QObject
 {
     Q_OBJECT

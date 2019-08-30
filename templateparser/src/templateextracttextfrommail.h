@@ -24,6 +24,10 @@
 #include <QObject>
 namespace TemplateParser {
 class TemplateWebEnginePage;
+/**
+ * @brief The TemplateExtractTextFromMail class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEMPLATEPARSER_EXPORT TemplateExtractTextFromMail : public QObject
 {
     Q_OBJECT

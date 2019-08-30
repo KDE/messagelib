@@ -26,6 +26,10 @@
 namespace WebEngineViewer {
 class NetworkUrlInterceptorPrivate;
 class NetworkPluginUrlInterceptorInterface;
+/**
+ * @brief The NetworkUrlInterceptor class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptor : public QWebEngineUrlRequestInterceptor
 {
     Q_OBJECT

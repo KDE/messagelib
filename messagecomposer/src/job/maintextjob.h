@@ -26,7 +26,9 @@
 namespace MessageComposer {
 class MainTextJobPrivate;
 class TextPart;
-
+/**
+ * @brief The MainTextJob class
+ */
 class MESSAGECOMPOSER_EXPORT MainTextJob : public ContentJobBase
 {
     Q_OBJECT

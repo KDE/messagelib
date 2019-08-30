@@ -28,6 +28,10 @@ class CustomToolsPlugin;
 }
 namespace MessageComposer {
 class PluginEditorGrammarManagerPrivate;
+/**
+ * @brief The PluginEditorGrammarManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorGrammarManager : public QObject
 {
     Q_OBJECT

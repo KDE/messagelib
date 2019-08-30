@@ -22,6 +22,10 @@
 #include "MessageCore/AttachmentLoadJob"
 #include "messagecomposer_export.h"
 namespace MessageComposer {
+/**
+ * @brief The AttachmentClipBoardJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT AttachmentClipBoardJob : public MessageCore::AttachmentLoadJob
 {
     Q_OBJECT

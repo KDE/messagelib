@@ -27,7 +27,8 @@ namespace MessageComposer {
 class MultipartJobPrivate;
 
 /**
-*/
+ * @brief The MultipartJob class
+ */
 class MESSAGECOMPOSER_EXPORT MultipartJob : public ContentJobBase
 {
     Q_OBJECT

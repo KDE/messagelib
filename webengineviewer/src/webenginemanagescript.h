@@ -26,6 +26,10 @@
 
 class QWebEngineProfile;
 namespace WebEngineViewer {
+/**
+ * @brief The WebEngineManageScript class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT WebEngineManageScript : public QObject
 {
     Q_OBJECT

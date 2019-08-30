@@ -28,9 +28,9 @@
 
 namespace MessageComposer {
 class MessagePartPrivate;
-
 /**
-*/
+ * @brief The MessagePart class
+ */
 class MESSAGECOMPOSER_EXPORT MessagePart : public QObject
 {
     Q_OBJECT

@@ -33,10 +33,10 @@
 namespace MessageComposer {
 class Composer;
 
+class EmailAddressResolveJobPrivate;
 /**
  * @short A job to resolve nicknames, distribution lists and email addresses for queued emails.
  */
-class EmailAddressResolveJobPrivate;
 class MESSAGECOMPOSER_EXPORT EmailAddressResolveJob : public KJob
 {
     Q_OBJECT

@@ -72,7 +72,7 @@ class AttachmentControllerBase;
 class AttachmentModel;
 class SignatureController;
 /**
- *
+ * @brief The ComposerViewBase class
  */
 class MESSAGECOMPOSER_EXPORT ComposerViewBase : public QObject
 {

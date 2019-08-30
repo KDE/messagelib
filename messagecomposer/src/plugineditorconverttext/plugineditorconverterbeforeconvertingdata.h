@@ -23,6 +23,10 @@
 #include "messagecomposer_export.h"
 #include <KMime/Message>
 namespace MessageComposer {
+/**
+ * @brief The PluginEditorConverterBeforeConvertingData class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorConverterBeforeConvertingData
 {
 public:

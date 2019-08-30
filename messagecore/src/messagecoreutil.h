@@ -25,6 +25,9 @@
 #include <QColor>
 
 namespace MessageCore {
+/**
+ * @brief The ColorUtil class
+ */
 class MESSAGECORE_EXPORT ColorUtil
 {
 public:

@@ -25,7 +25,10 @@
 namespace MessageComposer {
 class PluginEditorConverttextPrivate;
 class PluginEditorConvertTextInterface;
-
+/**
+ * @brief The PluginEditorConvertText class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorConvertText : public QObject
 {
     Q_OBJECT

@@ -26,6 +26,10 @@ class KActionCollection;
 class QAction;
 namespace WebEngineViewer {
 class WebHitTestResult;
+/**
+ * @brief The NetworkPluginUrlInterceptorInterface class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObject
 {
     Q_OBJECT

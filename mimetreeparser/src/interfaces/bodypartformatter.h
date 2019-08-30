@@ -46,7 +46,9 @@ typedef QSharedPointer<MessagePart> MessagePartPtr;
 
 namespace Interface {
 class BodyPart;
-
+/**
+ * @brief The BodyPartFormatter class
+ */
 class MIMETREEPARSER_EXPORT BodyPartFormatter
 {
 public:

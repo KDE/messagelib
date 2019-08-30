@@ -25,6 +25,10 @@
 #include <KMime/Message>
 
 namespace TemplateParser {
+/**
+ * @brief The TemplateConvertCommandJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEMPLATEPARSER_EXPORT TemplateConvertCommandJob : public QObject
 {
     Q_OBJECT

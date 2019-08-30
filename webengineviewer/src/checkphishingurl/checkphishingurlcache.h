@@ -26,6 +26,10 @@
 
 namespace WebEngineViewer {
 class CheckPhishingUrlCachePrivate;
+/**
+ * @brief The CheckPhishingUrlCache class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT CheckPhishingUrlCache : public QObject
 {
     Q_OBJECT

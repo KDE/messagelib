@@ -57,7 +57,9 @@ class MessagePartPrivate;
 namespace Interface {
 class ObjectTreeSource;
 }
-
+/**
+ * @brief The MessagePart class
+ */
 class MIMETREEPARSER_EXPORT MessagePart : public QObject
 {
     Q_OBJECT
@@ -142,7 +144,9 @@ protected:
 private:
     std::unique_ptr<MessagePartPrivate> d;
 };
-
+/**
+ * @brief The MimeMessagePart class
+ */
 class MIMETREEPARSER_EXPORT MimeMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -158,7 +162,9 @@ public:
 private:
     bool mOnlyOneMimePart;
 };
-
+/**
+ * @brief The MessagePartList class
+ */
 class MIMETREEPARSER_EXPORT MessagePartList : public MessagePart
 {
     Q_OBJECT
@@ -178,7 +184,9 @@ enum IconType {
     IconExternal,
     IconInline
 };
-
+/**
+ * @brief The TextMessagePart class
+ */
 class MIMETREEPARSER_EXPORT TextMessagePart : public MessagePartList
 {
     Q_OBJECT
@@ -215,7 +223,9 @@ private:
     KMMsgEncryptionState mEncryptionState;
     bool mDecryptMessage;
 };
-
+/**
+ * @brief The AttachmentMessagePart class
+ */
 class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
 {
     Q_OBJECT
@@ -224,7 +234,9 @@ public:
     AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage);
     ~AttachmentMessagePart() override;
 };
-
+/**
+ * @brief The HtmlMessagePart class
+ */
 class MIMETREEPARSER_EXPORT HtmlMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -246,7 +258,9 @@ private:
     QString mBodyHTML;
     QByteArray mCharset;
 };
-
+/**
+ * @brief The AlternativeMessagePart class
+ */
 class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -277,7 +291,9 @@ private:
     QMap<Util::HtmlMode, KMime::Content *> mChildNodes;
     QMap<Util::HtmlMode, MimeMessagePart::Ptr> mChildParts;
 };
-
+/**
+ * @brief The CertMessagePart class
+ */
 class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -295,7 +311,9 @@ private:
     GpgME::ImportResult mImportResult;
     const QGpgME::Protocol *mCryptoProto;
 };
-
+/**
+ * @brief The EncapsulatedRfc822MessagePart class
+ */
 class MIMETREEPARSER_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
 {
     Q_OBJECT
@@ -313,7 +331,9 @@ public:
 private:
     const KMime::Message::Ptr mMessage;
 };
-
+/**
+ * @brief The EncryptedMessagePart class
+ */
 class MIMETREEPARSER_EXPORT EncryptedMessagePart : public MessagePart
 {
     Q_OBJECT
@@ -371,7 +391,9 @@ protected:
 
     friend class EncryptedBodyPartFormatter;
 };
-
+/**
+ * @brief The SignedMessagePart class
+ */
 class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
 {
     Q_OBJECT

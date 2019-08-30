@@ -28,6 +28,9 @@ class KActionMenu;
 
 namespace TemplateParser {
 class CustomTemplatesMenuPrivate;
+/**
+ * @brief The CustomTemplatesMenu class
+ */
 class TEMPLATEPARSER_EXPORT CustomTemplatesMenu : public QObject
 {
     Q_OBJECT

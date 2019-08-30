@@ -38,6 +38,9 @@ class QAction;
 
 namespace MessageComposer {
 class AttachmentModel;
+/**
+ * @brief The AttachmentControllerBase class
+ */
 class MESSAGECOMPOSER_EXPORT AttachmentControllerBase : public QObject
 {
     Q_OBJECT

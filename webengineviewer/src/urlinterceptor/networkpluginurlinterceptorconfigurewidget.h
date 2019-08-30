@@ -24,6 +24,10 @@
 #include "webengineviewer_export.h"
 
 namespace WebEngineViewer {
+/**
+ * @brief The NetworkPluginUrlInterceptorConfigureWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidget : public QWidget
 {
     Q_OBJECT

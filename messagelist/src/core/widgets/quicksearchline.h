@@ -30,6 +30,10 @@ class QToolButton;
 namespace MessageList {
 namespace Core {
 class SearchLineStatus;
+/**
+ * @brief The QuickSearchLine class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGELIST_EXPORT QuickSearchLine : public QWidget
 {
     Q_OBJECT

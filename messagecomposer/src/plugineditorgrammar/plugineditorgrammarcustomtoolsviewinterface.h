@@ -30,7 +30,10 @@ class RichTextComposer;
 }
 namespace MessageComposer {
 class PluginEditorGrammarCustomToolsViewInterfacePrivate;
-
+/**
+ * @brief The PluginGrammarAction class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginGrammarAction
 {
 public:
@@ -63,6 +66,10 @@ private:
     int mBlockId = -1;
 };
 
+/**
+ * @brief The PluginEditorGrammarCustomToolsViewInterface class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorGrammarCustomToolsViewInterface : public PimCommon::CustomToolsViewInterface
 {
     Q_OBJECT

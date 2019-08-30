@@ -42,7 +42,9 @@
 namespace MessageViewer {
 class CSSHelperBase;
 class HtmlWriter;
-
+/**
+ * @brief The RenderContext class
+ */
 class MESSAGEVIEWER_EXPORT RenderContext
 {
 public:
@@ -76,7 +78,9 @@ public:
 protected:
     virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) = 0;
 };
-
+/**
+ * @brief The MessagePartRendererBase class
+ */
 class MESSAGEVIEWER_EXPORT MessagePartRendererBase
 {
 public:

@@ -31,6 +31,10 @@ class HeaderStyle;
 class HeaderStrategy;
 class HeaderStylePluginPrivate;
 class HeaderStyleInterface;
+/**
+ * @brief The HeaderStylePlugin class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT HeaderStylePlugin : public QObject
 {
     Q_OBJECT

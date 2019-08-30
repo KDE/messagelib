@@ -31,15 +31,8 @@
 
 namespace MessageComposer {
 /**
-  Columns:
-  name
-  size
-  encoding
-  mime type
-  compress
-  encrypt
-  sign
-*/
+ * @brief The AttachmentModel class
+ */
 class MESSAGECOMPOSER_EXPORT AttachmentModel : public QAbstractItemModel
 {
     Q_OBJECT

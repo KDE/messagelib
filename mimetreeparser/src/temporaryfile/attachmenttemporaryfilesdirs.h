@@ -27,7 +27,10 @@
 
 namespace MimeTreeParser {
 class AttachmentTemporaryFilesDirsPrivate;
-
+/**
+ * @brief The AttachmentTemporaryFilesDirs class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MIMETREEPARSER_EXPORT AttachmentTemporaryFilesDirs : public QObject
 {
     Q_OBJECT

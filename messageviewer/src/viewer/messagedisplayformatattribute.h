@@ -26,7 +26,10 @@
 #include "messageviewer/viewer.h"
 namespace MessageViewer {
 class MessageDisplayFormatAttributePrivate;
-
+/**
+ * @brief The MessageDisplayFormatAttribute class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT MessageDisplayFormatAttribute : public Akonadi::Attribute
 {
 public:

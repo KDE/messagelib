@@ -27,6 +27,9 @@
 #include "KPIMTextEdit/RichTextComposerImages"
 
 namespace MessageComposer {
+/**
+ * @brief The TextPart class
+ */
 class MESSAGECOMPOSER_EXPORT TextPart : public MessagePart
 {
     Q_OBJECT

@@ -28,6 +28,10 @@ class WebEngineViewPrivate;
 class WebEngineManageScript;
 class LocalDataBaseManager;
 
+/**
+ * @brief The WebEngineView class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT WebEngineView : public QWebEngineView
 {
     Q_OBJECT

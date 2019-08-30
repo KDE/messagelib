@@ -31,11 +31,11 @@ class Job;
 }
 
 namespace MessageComposer {
+class InsertTextFileJobPrivate;
 /**
  * A job that downloads a given URL, interprets the result as a text file with the
  * given encoding and then inserts the text into the editor.
  */
-class InsertTextFileJobPrivate;
 class MESSAGECOMPOSER_EXPORT InsertTextFileJob : public KJob
 {
     Q_OBJECT

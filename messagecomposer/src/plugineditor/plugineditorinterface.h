@@ -32,6 +32,10 @@ class RichTextEditor;
 namespace MessageComposer {
 class PluginEditorInterfacePrivate;
 class PluginEditor;
+/**
+ * @brief The PluginEditorInterface class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorInterface : public PimCommon::AbstractGenericPluginInterface
 {
     Q_OBJECT

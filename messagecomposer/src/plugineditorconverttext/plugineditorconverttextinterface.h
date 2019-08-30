@@ -35,6 +35,10 @@ class PluginEditorConvertTextInterfacePrivate;
 class PluginEditorConverterInitialData;
 class PluginEditorConverterBeforeConvertingData;
 class PluginEditorConvertText;
+/**
+ * @brief The PluginEditorConvertTextInterface class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextInterface : public QObject
 {
     Q_OBJECT

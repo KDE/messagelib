@@ -38,6 +38,9 @@
 #include "messageviewer_export.h"
 
 namespace MessageViewer {
+/**
+ * @brief The CSSHelper class
+ */
 class MESSAGEVIEWER_EXPORT CSSHelper : public CSSHelperBase
 {
 public:

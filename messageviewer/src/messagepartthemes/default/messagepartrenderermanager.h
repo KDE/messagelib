@@ -37,7 +37,9 @@ namespace MessageViewer {
 class GlobalContext;
 
 typedef std::function<void (Grantlee::OutputStream *stream)> GrantleeCallback;
-
+/**
+ * @brief The MessagePartRendererManager class
+ */
 class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
 {
     Q_OBJECT

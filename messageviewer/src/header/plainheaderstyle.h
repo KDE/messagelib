@@ -24,6 +24,10 @@
 #include "messageviewer_export.h"
 namespace MessageViewer {
 class PlainHeaderStylePrivate;
+/**
+ * @brief The PlainHeaderStyle class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT PlainHeaderStyle : public HeaderStyle
 {
 public:

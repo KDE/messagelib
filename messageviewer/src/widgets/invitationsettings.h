@@ -34,6 +34,9 @@
 
 namespace MessageViewer {
 class InvitationSettingsPrivate;
+/**
+ * @brief The InvitationSettings class
+ */
 class MESSAGEVIEWER_EXPORT InvitationSettings : public QWidget
 {
     Q_OBJECT

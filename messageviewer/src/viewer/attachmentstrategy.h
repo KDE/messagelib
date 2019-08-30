@@ -43,6 +43,9 @@ class Content;
 }
 
 namespace MessageViewer {
+/**
+ * @brief The AttachmentStrategy class
+ */
 class MESSAGEVIEWER_EXPORT AttachmentStrategy
 {
 protected:

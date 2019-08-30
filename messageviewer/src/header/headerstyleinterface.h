@@ -30,6 +30,10 @@ class KActionMenu;
 namespace MessageViewer {
 class HeaderStyle;
 class HeaderStylePlugin;
+/**
+ * @brief The HeaderStyleInterface class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT HeaderStyleInterface : public QObject
 {
     Q_OBJECT

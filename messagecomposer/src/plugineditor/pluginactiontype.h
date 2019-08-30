@@ -25,6 +25,10 @@
 class QAction;
 
 namespace MessageComposer {
+/**
+ * @brief The PluginActionType class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginActionType
 {
 public:

@@ -27,12 +27,12 @@
 class KConfigDialogManager;
 
 namespace MessageViewer {
+class ConfigureWidgetPrivate;
 /**
  * Configure widget that can be used in a KConfigDialog.
  *
  * @author Andras Mantia <andras@kdab.net>
  */
-class ConfigureWidgetPrivate;
 class MESSAGEVIEWER_EXPORT ConfigureWidget : public QWidget
 {
     Q_OBJECT

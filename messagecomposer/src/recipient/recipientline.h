@@ -43,7 +43,9 @@ Q_SIGNALS:
 protected:
     void keyPressEvent(QKeyEvent *ev) override;
 };
-
+/**
+ * @brief The RecipientLineEdit class
+ */
 class MESSAGECOMPOSER_EXPORT RecipientLineEdit : public MessageComposer::ComposerLineEdit
 {
     Q_OBJECT
@@ -59,6 +61,9 @@ protected:
     void keyPressEvent(QKeyEvent *ev) override;
 };
 
+/**
+ * @brief The RecipientLineNG class
+ */
 class MESSAGECOMPOSER_EXPORT RecipientLineNG : public KPIM::MultiplyingLine
 {
     Q_OBJECT

@@ -26,6 +26,9 @@
 #include <QList>
 
 namespace MessageComposer {
+/**
+ * @brief The GlobalPart class
+ */
 class MESSAGECOMPOSER_EXPORT GlobalPart : public MessageComposer::MessagePart
 {
     Q_OBJECT

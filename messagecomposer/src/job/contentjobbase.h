@@ -31,7 +31,9 @@ class Content;
 
 namespace MessageComposer {
 class ContentJobBasePrivate;
-
+/**
+ * @brief The ContentJobBase class
+ */
 class MESSAGECOMPOSER_EXPORT ContentJobBase : public JobBase
 {
     Q_OBJECT

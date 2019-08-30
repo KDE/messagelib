@@ -26,6 +26,10 @@
 namespace MessageComposer {
 class PluginEditorCheckBeforeSendManagerPrivate;
 class PluginEditorCheckBeforeSend;
+/**
+ * @brief The PluginEditorCheckBeforeSendManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendManager : public QObject
 {
     Q_OBJECT

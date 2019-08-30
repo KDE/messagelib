@@ -23,6 +23,10 @@
 #include <WebEngineViewer/WebEnginePage>
 
 namespace MessageViewer {
+/**
+ * @brief The MailWebEnginePage class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT MailWebEnginePage : public WebEngineViewer::WebEnginePage
 {
     Q_OBJECT

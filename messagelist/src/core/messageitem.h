@@ -38,7 +38,9 @@ class Item;
 namespace MessageList {
 namespace Core {
 class MessageItemPrivate;
-
+/**
+ * @brief The MessageItem class
+ */
 class MESSAGELIST_EXPORT MessageItem : public Item, public ModelInvariantIndex
 {
 public:

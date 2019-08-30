@@ -27,6 +27,10 @@ class KActionCollection;
 namespace MessageViewer {
 class ViewerPluginPrivate;
 class ViewerPluginInterface;
+/**
+ * @brief The ViewerPlugin class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT ViewerPlugin : public QObject
 {
     Q_OBJECT

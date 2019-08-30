@@ -40,8 +40,8 @@ class InfoPart;
 class TextPart;
 
 /**
-  The message composer.
-*/
+ * @brief The Composer class
+ */
 class MESSAGECOMPOSER_EXPORT Composer : public JobBase
 {
     Q_OBJECT

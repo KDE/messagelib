@@ -24,6 +24,10 @@
 
 namespace MessageViewer {
 class PrintingSettingsPrivate;
+/**
+ * @brief The PrintingSettings class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT PrintingSettings : public QWidget
 {
     Q_OBJECT

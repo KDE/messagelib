@@ -31,6 +31,9 @@ class HtmlWriter;
 
 /** An ObjectTreeSource that does not work on anything */
 class EmptySourcePrivate;
+/**
+ * @brief The EmptySource class
+ */
 class MESSAGEVIEWER_EXPORT EmptySource : public MimeTreeParser::Interface::ObjectTreeSource
 {
 public:

@@ -24,6 +24,10 @@
 #include <QWidget>
 
 namespace MessageComposer {
+/**
+ * @brief The PluginEditorInitConfigureWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT PluginEditorInitConfigureWidget : public QWidget
 {
     Q_OBJECT

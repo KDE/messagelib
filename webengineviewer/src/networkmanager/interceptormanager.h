@@ -29,6 +29,10 @@ namespace WebEngineViewer {
 class WebHitTestResult;
 class NetworkPluginUrlInterceptorInterface;
 class NetworkAccessManagerWebEnginePrivate;
+/**
+ * @brief The InterceptorManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT InterceptorManager : public QObject
 {
     Q_OBJECT

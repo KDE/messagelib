@@ -39,6 +39,9 @@
 #include <QFile>
 
 namespace MessageViewer {
+/**
+ * @brief The FileHtmlWriter class
+ */
 class MESSAGEVIEWER_EXPORT FileHtmlWriter : public HtmlWriter
 {
 public:

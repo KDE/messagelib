@@ -57,7 +57,9 @@ class MimeMessagePart;
 
 typedef QSharedPointer<MessagePart> MessagePartPtr;
 typedef QSharedPointer<MimeMessagePart> MimeMessagePartPtr;
-
+/**
+ * @brief The ProcessResult class
+ */
 class MIMETREEPARSER_EXPORT ProcessResult
 {
 public:

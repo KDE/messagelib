@@ -26,9 +26,10 @@
 #include "messagecomposer_export.h"
 
 namespace MessageComposer {
-/**
-*/
 // TODO I have no idea how to test this.  Have a fake keyring???
+/**
+ * @brief The AttachmentFromPublicKeyJob class
+ */
 class MESSAGECOMPOSER_EXPORT AttachmentFromPublicKeyJob : public MessageCore::AttachmentLoadJob
 {
     Q_OBJECT

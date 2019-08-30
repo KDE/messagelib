@@ -25,6 +25,9 @@
 #include "messagecomposer_export.h"
 #include <LibkdepimAkonadi/AddresseeLineEdit>
 namespace MessageComposer {
+/**
+ * @brief The ComposerLineEdit class
+ */
 class MESSAGECOMPOSER_EXPORT ComposerLineEdit : public KPIM::AddresseeLineEdit
 {
     Q_OBJECT

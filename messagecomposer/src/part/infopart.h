@@ -27,6 +27,9 @@
 #include <kmime/kmime_message.h>
 #include <kmime/kmime_headers.h>
 namespace MessageComposer {
+/**
+ * @brief The InfoPart class
+ */
 class MESSAGECOMPOSER_EXPORT InfoPart : public MessageComposer::MessagePart
 {
     Q_OBJECT

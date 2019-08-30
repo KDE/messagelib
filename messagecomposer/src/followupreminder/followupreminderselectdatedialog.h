@@ -28,6 +28,10 @@ class QAbstractItemModel;
 
 namespace MessageComposer {
 class FollowUpReminderSelectDateDialogPrivate;
+/**
+ * @brief The FollowUpReminderSelectDateDialog class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT FollowUpReminderSelectDateDialog : public QDialog
 {
     Q_OBJECT

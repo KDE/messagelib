@@ -31,6 +31,9 @@
 class QTimer;
 
 namespace MessageComposer {
+/**
+ * @brief The MessageComposerSettings class
+ */
 class MESSAGECOMPOSER_EXPORT MessageComposerSettings : public MessageComposer::MessageComposerSettingsBase
 {
     Q_OBJECT

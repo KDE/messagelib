@@ -24,6 +24,10 @@
 #include "kpimtextedit/plaintexteditorwidget.h"
 
 namespace TemplateParser {
+/**
+ * @brief The TemplatesTextEdit class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEMPLATEPARSER_EXPORT TemplatesTextEdit : public KPIMTextEdit::PlainTextEditorWidget
 {
     Q_OBJECT

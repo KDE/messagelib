@@ -23,6 +23,10 @@
 #include <QLabel>
 #include "messagecomposer_export.h"
 namespace MessageComposer {
+/**
+ * @brief The StatusBarLabelToggledState class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT StatusBarLabelToggledState : public QLabel
 {
     Q_OBJECT

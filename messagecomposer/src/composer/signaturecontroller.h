@@ -35,12 +35,13 @@ class IdentityCombo;
 
 namespace MessageComposer {
 class RichTextComposerNg;
-
-/** Controls signature (the footer thing, not the crypto thing) operations
+class SignatureControllerPrivate;
+/**
+ * @brief The SignatureController class
+ * Controls signature (the footer thing, not the crypto thing) operations
  *  happening on a KMEditor triggered by identity selection or menu actions.
  *  @since 4.5
  */
-class SignatureControllerPrivate;
 class MESSAGECOMPOSER_EXPORT SignatureController : public QObject
 {
     Q_OBJECT

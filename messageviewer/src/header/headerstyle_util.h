@@ -32,6 +32,10 @@
 #include "messageviewer/viewer.h"
 #include "messageviewer_export.h"
 namespace MessageViewer {
+/**
+ * @brief The HeaderStyleUtil class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT HeaderStyleUtil
 {
 public:

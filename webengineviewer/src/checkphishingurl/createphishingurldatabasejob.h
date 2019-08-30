@@ -29,6 +29,10 @@ namespace WebEngineViewer {
 struct UpdateDataBaseInfo;
 class CreatePhishingUrlDataBaseJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
+/**
+ * @brief The CreatePhishingUrlDataBaseJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
     Q_OBJECT

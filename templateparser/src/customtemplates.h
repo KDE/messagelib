@@ -32,7 +32,9 @@ class Ui_CustomTemplatesBase;
 
 namespace TemplateParser {
 class CustomTemplateItem;
-
+/**
+ * @brief The CustomTemplates class
+ */
 class TEMPLATEPARSER_EXPORT CustomTemplates : public QWidget
 {
     Q_OBJECT

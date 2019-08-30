@@ -510,6 +510,9 @@ class QImage;
 class QString;
 
 namespace MessageViewer {
+/**
+ * @brief The KXFace class
+ */
 class MESSAGEVIEWER_EXPORT KXFace : public QObject
 {
     Q_OBJECT

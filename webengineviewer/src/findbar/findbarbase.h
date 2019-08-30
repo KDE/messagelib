@@ -30,6 +30,9 @@ namespace PimCommon {
 class LineEditWithCompleterNg;
 }
 namespace WebEngineViewer {
+/**
+ * @brief The FindBarBase class
+ */
 class WEBENGINEVIEWER_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT

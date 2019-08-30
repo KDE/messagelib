@@ -26,6 +26,10 @@
 class KActionMenu;
 class QMenu;
 namespace TemplateParser {
+/**
+ * @brief The TemplatesCommandMenu class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class TEMPLATEPARSER_EXPORT TemplatesCommandMenu : public QObject
 {
     Q_OBJECT

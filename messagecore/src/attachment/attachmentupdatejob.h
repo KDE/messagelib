@@ -25,6 +25,10 @@
 #include "attachmentpart.h"
 
 namespace MessageCore {
+/**
+ * @brief The AttachmentUpdateJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECORE_EXPORT AttachmentUpdateJob : public KJob
 {
     Q_OBJECT

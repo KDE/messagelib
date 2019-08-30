@@ -45,6 +45,9 @@
 
 namespace WebEngineViewer {
 class WebHitTestResultPrivate;
+/**
+ * @brief The WebHitTestResult class
+ */
 class WEBENGINEVIEWER_EXPORT WebHitTestResult
 {
 public:

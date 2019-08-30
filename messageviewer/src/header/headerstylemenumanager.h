@@ -28,6 +28,10 @@ class KActionCollection;
 namespace MessageViewer {
 class HeaderStylePlugin;
 class HeaderStyleMenuManagerPrivate;
+/**
+ * @brief The HeaderStyleMenuManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT HeaderStyleMenuManager : public QObject
 {
     Q_OBJECT

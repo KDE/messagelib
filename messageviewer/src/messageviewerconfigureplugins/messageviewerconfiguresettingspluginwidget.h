@@ -24,6 +24,10 @@
 #include <QWidget>
 
 namespace MessageViewer {
+/**
+ * @brief The MessageViewerConfigureSettingsPluginWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginWidget : public QWidget
 {
     Q_OBJECT

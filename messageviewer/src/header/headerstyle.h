@@ -54,6 +54,7 @@ class Theme;
 
 namespace MessageViewer {
 class HeaderStrategy;
+class HeaderStylePrivate;
 
 /** This class encapsulates the visual appearance of message
     headers. Together with HeaderStrategy, which determines
@@ -64,7 +65,6 @@ class HeaderStrategy;
     @author Marc Mutz <mutz@kde.org>
     @see HeaderStrategy
 **/
-class HeaderStylePrivate;
 class MESSAGEVIEWER_EXPORT HeaderStyle
 {
 protected:

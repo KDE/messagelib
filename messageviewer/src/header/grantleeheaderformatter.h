@@ -30,6 +30,10 @@ class Message;
 
 namespace MessageViewer {
 class HeaderStyle;
+/**
+ * @brief The GrantleeHeaderFormatter class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGEVIEWER_EXPORT GrantleeHeaderFormatter
 {
 public:

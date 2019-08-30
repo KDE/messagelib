@@ -27,6 +27,10 @@ class QWebEngineDownloadItem;
 class QPrinter;
 namespace WebEngineViewer {
 class WebHitTest;
+/**
+ * @brief The WebEnginePage class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT WebEnginePage : public QWebEnginePage
 {
     Q_OBJECT

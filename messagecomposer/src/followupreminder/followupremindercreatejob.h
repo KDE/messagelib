@@ -29,6 +29,10 @@
 #include "messagecomposer_export.h"
 namespace MessageComposer {
 class FollowupReminderCreateJobPrivate;
+/**
+ * @brief The FollowupReminderCreateJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT FollowupReminderCreateJob : public KJob
 {
     Q_OBJECT

@@ -24,6 +24,10 @@
 #include "webengineviewer_export.h"
 class QWebEngineView;
 namespace WebEngineViewer {
+/**
+ * @brief The WebEngineExportHtmlPageJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT WebEngineExportHtmlPageJob : public QObject
 {
     Q_OBJECT

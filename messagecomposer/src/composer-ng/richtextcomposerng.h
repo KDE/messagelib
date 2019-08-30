@@ -33,6 +33,10 @@ namespace MessageComposer {
 class TextPart;
 class RichTextComposerSignatures;
 class RichTextComposerNgPrivate;
+/**
+ * @brief The RichTextComposerNg class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class MESSAGECOMPOSER_EXPORT RichTextComposerNg : public KPIMTextEdit::RichTextComposer
 {
     Q_OBJECT
