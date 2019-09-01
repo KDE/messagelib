@@ -26,6 +26,7 @@
 #include "mimetreeparser/enums.h"
 
 #include <KMime/Message>
+#include <KMime/Headers>
 
 #include <QList>
 #include <QMap>
@@ -36,6 +37,8 @@ class QTextCodec;
 
 namespace MimeTreeParser {
 class AttachmentTemporaryFilesDirs;
+class MessagePart;
+typedef QSharedPointer<MessagePart> MessagePartPtr;
 namespace Interface {
 class BodyPartMemento;
 }
@@ -78,10 +81,12 @@ public:
      */
     static void magicSetType(KMime::Content *node, bool autoDecode = true);
 
-    bool hasMailHeader(const char *header, const KMime::Message *message) const;
-    KMime::Headers::Base *mailHeaderAsBase(const char *header, const KMime::Message *message) const;
-    KMime::Headers::Generics::AddressList *mailHeaderAsAddressList(const char *header, KMime::Message *message) const;
-    QDateTime dateHeader(KMime::Message *message) const;
+    void clearOverrideHeaders();
+    void registerOverrideHeader(KMime::Content *message, MessagePartPtr);
+    bool hasMailHeader(const char *header, const KMime::Content *message) const;
+    KMime::Headers::Base const *mailHeaderAsBase(const char *header, const KMime::Content *message) const;
+    KMime::Headers::Generics::AddressList const *mailHeaderAsAddressList(const char *header, const KMime::Content *message) const;
+    QDateTime dateHeader(KMime::Content *message) const;
 
     /** Attach an extra node to an existing node */
     void attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content);
@@ -259,6 +264,7 @@ private:
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
     QMap<KMime::Message::Content *, QList<KMime::Content *> > mExtraContents;
     AttachmentTemporaryFilesDirs *mAttachmentFilesDir = nullptr;
+    QMap<const KMime::Content *, QVector<MessagePartPtr>> mHeaderOverwrite;
 
     friend class NodeHelperTest;
 };

@@ -263,6 +263,18 @@ void MessagePart::setIsImage(bool image)
     d->mIsImage = image;
 }
 
+bool MessagePart::hasHeader(const char *header) const
+{
+    Q_UNUSED(header);
+    return false;
+}
+
+KMime::Headers::Base * MimeTreeParser::MessagePart::header(const char* header) const
+{
+    Q_UNUSED(header);
+    return nullptr;
+}
+
 //-----MessagePartList----------------------
 MessagePartList::MessagePartList(ObjectTreeParser *otp)
     : MessagePart(otp, QString())
@@ -1025,6 +1037,24 @@ QString SignedMessagePart::fromAddress() const
     return mFromAddress;
 }
 
+bool SignedMessagePart::hasHeader(const char* header) const
+{
+        const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
+        if (extraContent) {
+            return extraContent->hasHeader(header);
+        }
+        return false;
+}
+
+KMime::Headers::Base * SignedMessagePart::header(const char* header) const
+{
+    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
+    if (extraContent) {
+        return extraContent->headerByType(header);
+    }
+    return nullptr;
+}
+
 //-----CryptMessageBlock---------------------
 EncryptedMessagePart::EncryptedMessagePart(ObjectTreeParser *otp, const QString &text, const QGpgME::Protocol *cryptoProto, const QString &fromAddress, KMime::Content *node)
     : MessagePart(otp, text)
@@ -1356,6 +1386,24 @@ QString EncryptedMessagePart::fromAddress() const
 const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > &EncryptedMessagePart::decryptRecipients() const
 {
     return mDecryptRecipients;
+}
+
+bool EncryptedMessagePart::hasHeader(const char* header) const
+{
+        const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
+        if (extraContent) {
+            return extraContent->hasHeader(header);
+        }
+        return false;
+}
+
+KMime::Headers::Base * EncryptedMessagePart::header(const char* header) const
+{
+    const auto extraContent = mOtp->nodeHelper()->decryptedNodeForContent(content());
+    if (extraContent) {
+        return extraContent->headerByType(header);
+    }
+    return nullptr;
 }
 
 EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message)

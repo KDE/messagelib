@@ -194,6 +194,8 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
     // reset pending async jobs state (we'll rediscover pending jobs as we go)
     mHasPendingAsyncJobs = false;
 
+    mNodeHelper->clearOverrideHeaders();
+
     // reset "processed" flags for...
     if (onlyOneMimePart) {
         // ... this node and all descendants

@@ -82,17 +82,20 @@ MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interface::BodyPar
     mp->setIsEncrypted(true);
     mp->setDecryptMessage(part.source()->decryptMessage());
     PartMetaData *messagePart(mp->partMetaData());
+
     if (!part.source()->decryptMessage()) {
         part.nodeHelper()->setNodeProcessed(data, false);  // Set the data node to done to prevent it from being processed
     } else if (KMime::Content *newNode = part.nodeHelper()->decryptedNodeForContent(data)) {
+        part.nodeHelper()->registerOverrideHeader(data->parent(), mp);
+
         // if we already have a decrypted node for part.objectTreeParser() encrypted node, don't do the decryption again
         return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, true));
     } else {
         mp->startDecryption(data);
-
         qCDebug(MIMETREEPARSER_LOG) << "decrypted, signed?:" << messagePart->isSigned;
 
         if (!messagePart->inProgress) {
+            part.nodeHelper()->registerOverrideHeader(data->parent(), mp);
             part.nodeHelper()->setNodeProcessed(data, false);   // Set the data node to done to prevent it from being processed
         }
     }

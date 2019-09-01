@@ -20,6 +20,7 @@
 #include "nodehelper.h"
 #include "mimetreeparser_debug.h"
 #include "partmetadata.h"
+#include "messagepart.h"
 #include "interfaces/bodypart.h"
 #include "temporaryfile/attachmenttemporaryfilesdirs.h"
 
@@ -498,17 +499,24 @@ void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
     node->contentType()->setMimeType(mimetype.toLatin1());
 }
 
-bool NodeHelper::hasMailHeader(const char *header, const KMime::Message *message) const
+bool NodeHelper::hasMailHeader(const char *header, const KMime::Content *message) const
 {
     return message->hasHeader(header);
 }
 
-KMime::Headers::Base * NodeHelper::mailHeaderAsBase(const char *header, const KMime::Message *message) const
+KMime::Headers::Base const * NodeHelper::mailHeaderAsBase(const char *header, const KMime::Content *message) const
 {
+    if (mHeaderOverwrite.contains(message)) {
+        foreach (const auto messagePart, mHeaderOverwrite.value(message)) {
+            if (messagePart->hasHeader(header)) {
+                return messagePart->header(header); // Found.
+            }
+        }
+    }
     return message->headerByType(header);
 }
 
-KMime::Headers::Generics::AddressList * NodeHelper::mailHeaderAsAddressList(const char *header, KMime::Message *message) const
+KMime::Headers::Generics::AddressList const * NodeHelper::mailHeaderAsAddressList(const char *header, const KMime::Content *message) const
 {
     /* works without this is maybe faster ?
     if(strcmp(header, "to") == 0) {
@@ -521,15 +529,32 @@ KMime::Headers::Generics::AddressList * NodeHelper::mailHeaderAsAddressList(cons
         return message->cc();
     } */
     auto addressList = new KMime::Headers::Generics::AddressList();
-    const auto hrd = message->headerByType(header);
+    const auto hrd = mailHeaderAsBase(header, message);
     const QByteArray &data = hrd->as7BitString(false);
     addressList->from7BitString(data);
     return addressList;
 }
 
-QDateTime NodeHelper::dateHeader(KMime::Message *message) const
+void NodeHelper::clearOverrideHeaders()
 {
-    return message->date()->dateTime();
+    mHeaderOverwrite.clear();
+}
+
+void NodeHelper::registerOverrideHeader(KMime::Content *message, MessagePart::Ptr part)
+{
+    if (!mHeaderOverwrite.contains(message)) {
+        mHeaderOverwrite[message] = QVector<MessagePart::Ptr>();
+    }
+    mHeaderOverwrite[message].append(part);
+}
+
+QDateTime NodeHelper::dateHeader(KMime::Content *message) const
+{
+    const auto dateHeader = mailHeaderAsBase("date", message);
+    if (dateHeader != nullptr) {
+        return static_cast<const KMime::Headers::Date *>(dateHeader)->dateTime();
+    }
+    return QDateTime();
 }
 
 void NodeHelper::setOverrideCodec(KMime::Content *node, const QTextCodec *codec)

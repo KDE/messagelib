@@ -71,11 +71,13 @@ MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(Interface::Bo
     if (!part.source()->decryptMessage()) {
         part.nodeHelper()->setNodeProcessed(data, false);  // Set the data node to done to prevent it from being processed
     } else if (KMime::Content *newNode = part.nodeHelper()->decryptedNodeForContent(data)) {
+        part.nodeHelper()->registerOverrideHeader(data->parent(), mp);
         // if we already have a decrypted node for this encrypted node, don't do the decryption again
         return MessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, false));
     } else {
         mp->startDecryption(data);
         if (!messagePart->inProgress) {
+            part.nodeHelper()->registerOverrideHeader(data->parent(), mp);
             part.nodeHelper()->setNodeProcessed(data, false);   // Set the data node to done to prevent it from being processed
             if (messagePart->isDecryptable && messagePart->isSigned) {
                 part.nodeHelper()->setSignatureState(node, KMMsgFullySigned);

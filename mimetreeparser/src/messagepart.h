@@ -135,6 +135,9 @@ public:
     Interface::ObjectTreeSource *source() const;
     NodeHelper *nodeHelper() const;
 
+    virtual bool hasHeader(const char *header) const;
+    virtual KMime::Headers::Base *header(const char *header) const;
+
 protected:
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
     QString renderInternalText() const;
@@ -376,6 +379,8 @@ public:
 
     const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key> > &decryptRecipients() const;
 
+    bool hasHeader(const char *header) const override;
+    KMime::Headers::Base* header(const char* header) const override;
 private:
     /** Handles the decryption of a given content
      * returns true if the decryption was successful
@@ -426,6 +431,8 @@ public:
     const QGpgME::Protocol *cryptoProto() const;
     QString fromAddress() const;
 
+    bool hasHeader(const char *header) const override;
+    KMime::Headers::Base *header(const char *header) const override;
 private:
     /** Handles the verification of data
      * If signature is empty it is handled as inline signature otherwise as detached signature mode.

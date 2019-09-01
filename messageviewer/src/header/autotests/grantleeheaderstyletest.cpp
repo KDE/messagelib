@@ -20,6 +20,7 @@
 #include "grantleeheaderstyletest.h"
 
 #include <MessageViewer/GrantleeHeaderStyle>
+#include <MimeTreeParser/NodeHelper>
 
 #include <GrantleeTheme/GrantleeThemeManager>
 
@@ -208,6 +209,8 @@ void GrantleeHeaderStyleTest::testRenderHeader()
     QFETCH(QString, mailFileName);
 
     auto style = GrantleeHeaderStyle();
+    MimeTreeParser::NodeHelper nodeHelper;
+    style.setNodeHelper(&nodeHelper);
     auto aMsg = readAndParseMail(mailFileName);
     style.setTheme(defaultTheme());
 

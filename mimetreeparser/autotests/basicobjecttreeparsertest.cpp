@@ -352,6 +352,26 @@ void ObjectTreeParserTest::testHtmlContent()
     QCOMPARE(otp.htmlContent(), output);
 }
 
+void ObjectTreeParserTest::testMemoryHole()
+{
+    const QString fileName = QStringLiteral("openpgp-encrypted-memoryhole.mbox");
+    KMime::Message::Ptr originalMessage = readAndParseMail(fileName);
+    NodeHelper nodeHelper;
+    SimpleObjectTreeSource testSource;
+    ObjectTreeParser otp(&testSource, &nodeHelper);
+    testSource.setDecryptMessage(true);
+    otp.parseObjectTree(originalMessage.data());
+
+    QCOMPARE(nodeHelper.mailHeaderAsBase("from", originalMessage.data())->asUnicodeString(), QStringLiteral("you@example.com"));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("to", originalMessage.data())->asUnicodeString(), QStringLiteral("me@example.com"));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("subject", originalMessage.data())->asUnicodeString(), QStringLiteral("hidden subject"));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("cc", originalMessage.data())->asUnicodeString(), QStringLiteral("cc@example.com"));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("message-id", originalMessage.data())->asUnicodeString(), QStringLiteral("<myhiddenreference@me>"));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("references", originalMessage.data())->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("in-reply-to", originalMessage.data())->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
+    QCOMPARE(nodeHelper.dateHeader(originalMessage.data()), QDateTime(QDate(2018, 1, 2), QTime(3,4,5)));
+}
+
 void ObjectTreeParserTest::testRenderedTree_data()
 {
     QTest::addColumn<QString>("mailFileName");

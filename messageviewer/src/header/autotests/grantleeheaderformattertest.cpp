@@ -20,6 +20,7 @@
 #include "grantleeheaderformattertest.h"
 
 #include <MessageViewer/GrantleeHeaderStyle>
+#include <MimeTreeParser/NodeHelper>
 #include "../grantleeheaderformatter.h"
 
 #include <QFile>
@@ -102,6 +103,8 @@ void GrantleeHeaderFormatterTest::testInvalid()
 {
     auto style = GrantleeHeaderStyle();
     auto formatter = GrantleeHeaderFormatter();
+    MimeTreeParser::NodeHelper nodeHelper;
+    style.setNodeHelper(&nodeHelper);
     auto aMsg = readAndParseMail(QStringLiteral("allheaders.mbox"));
 
     QString filename = QStringLiteral("invalid");
@@ -117,6 +120,8 @@ void GrantleeHeaderFormatterTest::testPrint()
 
     auto style = GrantleeHeaderStyle();
     auto formatter = GrantleeHeaderFormatter();
+    MimeTreeParser::NodeHelper nodeHelper;
+    style.setNodeHelper(&nodeHelper);
     KMime::Message::Ptr aMsg(new KMime::Message);
 
     const QString &absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + tmplName;
@@ -138,6 +143,8 @@ void GrantleeHeaderFormatterTest::testFancyDate()
 
     auto style = GrantleeHeaderStyle();
     auto formatter = GrantleeHeaderFormatter();
+    MimeTreeParser::NodeHelper nodeHelper;
+    style.setNodeHelper(&nodeHelper);
     KMime::Message::Ptr msg(new KMime::Message);
 
     {
@@ -177,6 +184,8 @@ void GrantleeHeaderFormatterTest::testBlock()
 
     auto style = GrantleeHeaderStyle();
     auto formatter = GrantleeHeaderFormatter();
+    MimeTreeParser::NodeHelper nodeHelper;
+    style.setNodeHelper(&nodeHelper);
     auto aMsg = readAndParseMail(QStringLiteral("headertest.mbox"));
 
     QString absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + tmplName;
