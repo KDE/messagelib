@@ -259,7 +259,7 @@ QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QS
                                           QString::fromUtf8(messagePart->metaObject()->className()));
     QString ret = line;
 
-    indent += QStringLiteral(" ");
+    indent += QLatin1Char(' ');
     foreach (const auto &subPart, messagePart->subParts()) {
         ret += renderTreeHelper(subPart, indent);
     }
