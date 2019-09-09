@@ -147,7 +147,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default></default>
     </entry>
     <entry name="MailTrackingUrlEnabled" type="Bool">
-      <label>Enable Mail Tracking Url</label>
+      <label>Scan emails for tracking URLs</label>
       <default>true</default>
     </entry>    
   </group>
