@@ -18,6 +18,7 @@
 */
 
 #include "plugincomposerinterface.h"
+#include "composer/composerviewbase.h"
 using namespace MessageComposer;
 
 PluginComposerInterface::PluginComposerInterface()
@@ -33,4 +34,28 @@ ComposerViewBase *PluginComposerInterface::composerViewBase() const
 void PluginComposerInterface::setComposerViewBase(ComposerViewBase *composerViewBase)
 {
     mComposerViewBase = composerViewBase;
+}
+
+QString PluginComposerInterface::subject() const
+{
+    if (mComposerViewBase) {
+        return mComposerViewBase->subject();
+    }
+    return {};
+}
+
+QString PluginComposerInterface::to() const
+{
+    if (mComposerViewBase) {
+        return mComposerViewBase->to();
+    }
+    return {};
+}
+
+QString PluginComposerInterface::cc() const
+{
+    if (mComposerViewBase) {
+        return mComposerViewBase->cc();
+    }
+    return {};
 }

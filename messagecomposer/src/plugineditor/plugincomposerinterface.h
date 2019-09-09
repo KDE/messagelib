@@ -31,11 +31,15 @@ class ComposerViewBase;
 class MESSAGECOMPOSER_EXPORT PluginComposerInterface
 {
 public:
-    PluginComposerInterface();
-    Q_REQUIRED_RESULT ComposerViewBase *composerViewBase() const;
+    PluginComposerIn^terface();
     void setComposerViewBase(ComposerViewBase *composerViewBase);
 
+    Q_REQUIRED_RESULT QString subject() const;
+    Q_REQUIRED_RESULT QString to() const;
+    Q_REQUIRED_RESULT QString cc() const;
 private:
+    //Make it as private as we don't want that plugin has too many action on composer
+    Q_REQUIRED_RESULT ComposerViewBase *composerViewBase() const;
     ComposerViewBase *mComposerViewBase = nullptr;
 };
 }
